@@ -68,6 +68,7 @@
 		StartBurning()
 		user.visible_message(span_notice("[user] lights [src] with [W]."), span_notice("You light [src] with [W]."))
 		return
+	..()
 
 /obj/structure/destructible/tribal_torch/proc/StartBurning()
 	if(!burning)

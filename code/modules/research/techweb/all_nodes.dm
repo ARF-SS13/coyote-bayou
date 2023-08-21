@@ -55,7 +55,7 @@
 	display_name = "Experimental Surgery"
 	description = "When evolution isn't fast enough."
 	prereq_ids = list("adv_surgery")
-	design_ids = list("surgery_revival","surgery_vein_thread","surgery_nerve_splice","surgery_nerve_ground","surgery_viral_bond", "autosurgeon")
+	design_ids = list("surgery_revival","surgery_pacify","surgery_vein_thread","surgery_nerve_splice","surgery_nerve_ground","surgery_viral_bond", "autosurgeon")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -321,6 +321,7 @@
 	design_ids = list("s-receiver", "s-bus", "s-broadcaster", "s-processor", "s-hub", "s-server", "s-relay", "comm_monitor", "comm_server",
 	"s-ansible", "s-filter", "s-amplifier", "ntnet_relay", "s-treatment", "s-analyzer", "s-crystal", "s-transmitter")
 */
+
 /datum/techweb_node/integrated_HUDs
 	id = "integrated_HUDs"
 	display_name = "Integrated HUDs"
@@ -398,7 +399,7 @@
 	display_name = "Cybernetic Implants"
 	description = "Electronic implants that improve humans."
 	prereq_ids = list("adv_biotech", "adv_datatheory")
-	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud", "ci-service")
+	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", /*"ci-medhud", "ci-sechud",*/ "ci-service")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -434,7 +435,7 @@
 	description = "Basic fragile prosthetics for the impaired."
 	starting_node = TRUE
 	prereq_ids = list("biotech")
-	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg", "autosurgeon")
+	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg")
 
 ////////////////////////Tools////////////////////////
 /datum/techweb_node/basic_mining

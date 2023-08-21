@@ -367,3 +367,13 @@
 	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient, using its smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented. Has an extended volume capacity thanks to bluespace foam."
 	amount_per_transfer_from_this = 50
 	volume = 50
+
+/obj/item/reagent_containers/syringe/random
+	name = "randomized syringe"
+	desc = "A long forgotten prescription. who knows what it contains."
+
+/obj/item/reagent_containers/syringe/random/Initialize()
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/syringe_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[syringe_name] syringe"
+	. = ..()

@@ -266,7 +266,7 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	)
 
 /// High level raiders
-/datum/random_mob_spawner_group/raider_low
+/datum/random_mob_spawner_group/raider_high
 	group_tag = MOB_SPAWNER_KIND_RAIDER_HIGH
 	group_list = list(
 		MOB_SPAWNER_RAIDER_RANGED,
@@ -617,17 +617,29 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	num_mobs_to_spawn_easy = 3
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
-		/mob/living/simple_animal/hostile/gecko = 10
+		/mob/living/simple_animal/hostile/gecko = 10,
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/fire = 2,
+		/mob/living/simple_animal/hostile/gecko/legacy = 10,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 4,
 		)
 	num_mobs_to_spawn_medium = 4
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_QUICK
 	mob_list_medium = list(
-		/mob/living/simple_animal/hostile/gecko = 15
+		/mob/living/simple_animal/hostile/gecko = 7,
+		/mob/living/simple_animal/hostile/gecko/big = 5,
+		/mob/living/simple_animal/hostile/gecko/fire = 6,
+		/mob/living/simple_animal/hostile/gecko/legacy = 8,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 8,
 		)
 	num_mobs_to_spawn_hard = 5
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_QUICKER
 	mob_list_hard = list(
-		/mob/living/simple_animal/hostile/gecko = 20
+		/mob/living/simple_animal/hostile/gecko = 8,
+		/mob/living/simple_animal/hostile/gecko/big = 6,
+		/mob/living/simple_animal/hostile/gecko/fire = 8,
+		/mob/living/simple_animal/hostile/gecko/legacy = 6,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 12,
 		)
 
 /// Bloatfly (Dan in an airplane)

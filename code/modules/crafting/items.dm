@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	if(!place_to_put_it || !isturf(place_to_put_it))
 		place_to_put_it = get_turf(src) //just dump it on the floor you filthy animal
 	// base 1 loot roll, +1 if technophreak, 50% for +1, and 25% for +1
-	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(50)) + (prob(25))
+	var/loot_rolls = 1 + (HAS_TRAIT(user, TRAIT_TECHNOPHREAK)) + (prob(25)) + (prob(10))
 	for(var/i in 1 to loot_rolls)
 		var/obj/I = pick(src.Loot)
 		new I (place_to_put_it)
@@ -271,14 +271,22 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
+				/obj/item/stack/crafting/metalparts/three,
+				/obj/item/stack/crafting/metalparts,
 				/obj/item/stack/crafting/electronicparts/three,
+				/obj/item/stack/crafting/electronicparts,
 				/obj/item/stack/sheet/mineral/titanium,
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/cloth/ten,
+				/obj/item/stack/sheet/leather,
+				/obj/item/stack/sheet/leather/five,
 				/obj/item/stack/sheet/leather/ten,
+				/obj/item/stack/sheet/prewar,
 				/obj/item/stack/sheet/prewar/five,
-				/obj/item/stack/crafting/goodparts/five,
-				/obj/item/stack/ore/blackpowder/five
+				/obj/item/stack/crafting/goodparts/three,
+				/obj/item/stack/crafting/goodparts,
+				/obj/item/stack/ore/blackpowder/five,
+				/obj/item/stack/ore/blackpowder
 				)
 
 
@@ -288,8 +296,12 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	icon_state = "toolsalvage"
 	Loot = list(/obj/item/weldingtool/advanced,
 				/obj/item/crowbar/hightech,
+				/obj/item/crowbar/hightech,
+				/obj/item/screwdriver/hightech,
 				/obj/item/screwdriver/hightech,
 				/obj/item/wrench/hightech,
+				/obj/item/wrench/hightech,
+				/obj/item/wirecutters/hightech,
 				/obj/item/wirecutters/hightech,
 				/obj/item/multitool/advanced)
 
@@ -303,5 +315,6 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/advanced_crafting_components/conductors,
 				/obj/item/advanced_crafting_components/lenses,
 				/obj/item/advanced_crafting_components/flux,
+				/obj/item/blueprint/research,
 				/obj/item/blueprint/research)
 

@@ -15,38 +15,15 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
-	select = FALSE
-	automatic_burst_overlay = FALSE
-	semi_auto = TRUE
 	can_suppress = TRUE
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
-	)
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
@@ -75,17 +52,10 @@
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
-	w_class = WEIGHT_CLASS_SMALL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.6)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // plug em in the skull!
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fastest
@@ -105,19 +75,12 @@
 	name = "Browning Hi-power"
 	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
 	icon_state = "ninemil"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -125,6 +88,91 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol.
+/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
+	name = "M3 Civillian Pistol"
+	desc = "This pistol is the civillian or police version of the M3 Magnum, uses common and abundant 9mm"
+	icon_state = "m3civ"
+	item_state = "m3civ"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
+//9mm automatic pistol. smol magazine, zippy gun
+/obj/item/gun/ballistic/automatic/pistol/ninemil/auto
+	name = "9mm autopistol"
+	desc = "A compact 9mm pistol with an autoseer installed. only accepts single stack magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "pistol"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/fast
+	)
+
+//scorpion machine pistol. like the M93R, but full auto instead of burst, for better or worse
+/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
+	name = "Skorpion 9mm"
+	desc = "A Czech machine pistol developed in the 60s"
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "skorpion"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
+	)
+
+//ruby pistol. single stack bootgun, otherwise unexceptional
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby
+	name = "Ruby"
+	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s"
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "ruby"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	weapon_class = WEAPON_CLASS_TINY
+
+//C93 pistol. damage bonus but single stack magazine. not the best gun, but hey, it's old
+/obj/item/gun/ballistic/automatic/pistol/ninemil/c93
+	name = "9mm Borchardt"
+	desc = "The first mass produced semiautomatic pistol, designed before doublestack magazines existed."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "borchardt"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+
+//Luger. pretty much the same as a C93, same smol magazine, same semi-auto old gun
+/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
+	name = "9mm Luger"
+	desc = "A classy german 9mm pistol, which takes single stack magazines."
+	icon_state = "luger"
+
+//9mm coldwar-modern sidearms. Same as the browning hipower pistol
+/obj/item/gun/ballistic/automatic/pistol/ninemil/glock
+	name = "glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	icon_state = "glock"
+	item_state = "glock"
+	reskinnable_component = /datum/component/reskinnable/glock
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
+	name = "Pink glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	icon_state = "plock"
+	item_state = "plock"
 
 /* * * * * * * * * * *
  * Maria
@@ -140,15 +188,8 @@
 	name = "Maria"
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -165,19 +206,12 @@
 	name = "Beretta M9FS"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -185,6 +219,23 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+
+//9mm carbine: pistol capacity, but two shot burst. needs suppressor set correctly
+/obj/item/gun/ballistic/automatic/pistol/beretta/carbine
+	name = "9mm carbine"
+	desc = "A lightweight carbine manufactured by Hi-Point, takes pistol magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "citykiller" //old citykiller sprite looks close enough to a hi-point carbine
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = CARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two/fast,
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * * * * * * * *
  * Beretta M9R Burst
@@ -195,29 +246,19 @@
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "Beretta M93R"
-	desc = "A rare select fire variant of the M93R."
+	desc = "An uncommon model of the M9 pistol that's capable of burst fire. It has a built in foregrip allowing for incredibly accurate shots."
 	icon_state = "m93r"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-	extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	//extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) //as sad as it is to remove, want to bring the power level down slightly so it can be common
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster,
 		/datum/firemode/burst/three/faster,
 	)
-
-	automatic_burst_overlay = TRUE
-	semi_auto = FALSE
 
 /* * * * * * * * * * *
  * Worn Beretta M9R Burst
@@ -229,43 +270,64 @@
 	name = "Trusty Beretta M93R"
 	desc = "A rare select fire variant of the M93R. Aged and reliable, but still with that strong punch!"
 	icon_state = "m93r"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
-	extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	//extra_mag_types = list(/obj/item/ammo_box/magazine/uzim9mm) // let it take smg mags
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = AUTOPISTOL_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster,
 		/datum/firemode/burst/three/faster
 	)
 
-	automatic_burst_overlay = TRUE
-	semi_auto = FALSE
+/* * * * * * * * *
+* VG77 Pistol
+* + Common burst pistol
+* - lower damage
+* + burst fire
+* - slowest burst fire rate but normal semi-automatic
+* - Unreskinnable due to lack of sprites
+* + Able to be dual wielded
+* * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/vg77
+	name = "MP77 Pistol"
+	desc = "A MP77 pistol from the H&K company. This pistol is based off the VP70, a pistol created by the same company. Made for much more cheaper markets, it's chambered in 9mm and comes with a three burst fire mode. Albeit it seems to be slow in such a ROF. Quite stylish however."
+	icon_state = "mp77"
+	item_state = "mp77"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast,
+		/datum/firemode/burst/three/slower,
+	)
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	can_scope = FALSE
 
 /* * * * * * * * * *
- * MEDIUM PISTOLS  *
- * * * * * * * * * */
+* MEDIUM PISTOLS
+* * * * * * * * * */
 
 /* * * * * * * * * * *
- * N99 Pistol Semi-Auto
- * Baseline Medium pistol
- * 10mm
- * Common
- * * * * * * * * * * */
+* N99 Pistol Semi-Auto
+* Baseline Medium pistol
+* 10mm
+* Common
+* * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
 	desc = "A large, pre-war styled, gas-operated 10mm pistol."
-	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "n99"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
@@ -273,15 +335,9 @@
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
 		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
 		/obj/item/ammo_box/magazine/m10mm/rifle)
-
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -289,16 +345,6 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * Executive Pistol Burst Only
@@ -313,21 +359,26 @@
 	name = "the Executive"
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
 	icon_state = "executive"
-
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 2
-	semi_auto = FALSE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto,
 		/datum/firemode/burst/three
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/n99/executive/worn
+	name = "the Executive"
+	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
+	icon_state = "executive"
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /* * * * * * * * * * *
  * Crusader Pistol Semi-Auto
  * Cool Medium pistol
@@ -341,18 +392,20 @@
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
 	icon_state = "crusader"
 	item_state = "crusader"
-
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	init_recoil = HANDGUN_RECOIL(0.8)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony
+	name = "\improper Painted pistol"
+	desc = "A variant of the n99 with a custom paint job done on it. The paint used is of the highest quality!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "ponycrusader"
+	item_state = "ponycrusader"
 
 /* * * * * * * * * * *
  * Type 17 Semi-Auto
@@ -366,65 +419,37 @@
 	name = "Type 17"
 	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
 	icon_state = "chinapistol"
-	w_class = WEIGHT_CLASS_SMALL
-
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.6)
+	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
 
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 
-// Tox's Type 17
-/obj/item/gun/ballistic/automatic/pistol/type17/tox
+//automatic 9mm, compact and high performance
+/obj/item/gun/ballistic/automatic/pistol/type17/c96auto
+	name = "Mauser M712"
+	desc = "A late model of the classic Mauser C96, featuring a removable box magazine and automatic fire select. takes 20 round stick magazines."
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "c96"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
+	)
+
+// Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
+/obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
-	icon_state = "chinapistol"
-	w_class = WEIGHT_CLASS_SMALL
-
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = HANDGUN_RECOIL(0.6)
-
-	can_suppress = FALSE
-	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
-
 
 /* * * * * * * * * * *
  * Sig P220
@@ -439,20 +464,13 @@
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.7)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -465,20 +483,13 @@
 	name = "Trusty Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol. A trusty copy valued for its reliability."
 	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45/rubber
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.7)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -491,21 +502,13 @@
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(0.8)
 	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -519,21 +522,16 @@
 	desc = "These large Sig Sauer pistols have seen much wear, and have been kept maintained with parts from the more common P220, necessitating the rechambering to .45ACP."
 	icon_state = "pistol14"
 	item_state = "gun"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
 	auto_eject_sound = 'sound/weapons/gun_magazine_remove_full.ogg'
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto
 	)
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -556,22 +554,17 @@
 	desc = "An obscure pistol that fits a 10mm magazine and is capable of full auto. Fires from an open bolt. Innacurate on the first shot, but it doesn't get much worse. Or better."
 	icon_state = "bornheim"
 	item_state = "pistolchrome"
-	icon_prefix = "bornheim"
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
-	init_recoil = HANDGUN_RECOIL(2.3)
+	init_recoil = HANDGUN_RECOIL(2.3, 2.3)
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
 		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
 		/obj/item/ammo_box/magazine/m10mm/rifle)
-
-	fire_delay = GUN_FIRE_DELAY_FASTER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 3
-
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/fast,
@@ -584,6 +577,7 @@
  * Less melee force
  * More accurate
  * Common
+ * Muh three world wars
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
@@ -591,35 +585,19 @@
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
-	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
-
-	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
 	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 21
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * M1911 Custom Semi-Auto
@@ -634,14 +612,30 @@
 	name = "M1911 Custom"
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+///////////////////
+//// M6 (renammed) SOCOM pistol///////////////
+/// Uses M1911 custom as a base ////
+////////////////////////////////////
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom
+	name = "M3 SOCOM"
+	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
+	icon_state = "M6SOCOM"
+	item_state = "M6SOCOM"
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
+	name = "Santa Muerte"
+	desc = "A custom built 1911 with a brushed brass plated grip, a shiny chrome finish, and a custom muzzle brake.. It has an excerpt of a prayer to lady death etched neatly in it's slide, evoking her protection from evil forces."
+	icon_state = "santa_muerte"
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_firemodes = list(
 		/datum/firemode/semi_auto
@@ -663,17 +657,10 @@
 	icon_state = "mk23"
 	init_mag_type = /obj/item/ammo_box/magazine/m45/socom
 	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -686,17 +673,6 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Tacticool
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
-
 
 /* * * * * * * * * * * * * *
  * HEAVY SEMI-AUTO PISTOLS *
@@ -716,33 +692,15 @@
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
-	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * El Capitan Semi-Auto
@@ -758,17 +716,10 @@
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
+	init_mag_type = /obj/item/ammo_box/magazine/m14mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 //T3 might've been a lil much. will see
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -790,35 +741,44 @@
 	icon_state = "automag"
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
-	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_ONE_HAND_AKIMBO // DOUBLE DEAGLE
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
+	mag_type = /obj/item/ammo_box/magazine/m44/automag
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
-	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+/* * * * * * * * * *
+* .44 automag copycats. same as the original one with or without added flavor * 
+* * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/automag/m6
+	name = "M3 Magnum"
+	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
+	icon_state = "m3magnum"
+	item_state = "m3magnum"
+	zoom_factor = 1.1
+
+/obj/item/gun/ballistic/automatic/pistol/goldendeag
+	name = "Aureum Tactum"
+	desc = "The golden gun, er..well somewhat. Chambered in a lesser form of .44 magnum, the Aureum Tactum golden desert eagle is fully automatic. Albeit it requires a good grip for obvious reasons."
+	icon_state = "uniquedeag"
+	item_state = "uniquedeag"
+	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
+	mag_type = /obj/item/ammo_box/magazine/m44/automag
+	init_recoil = LMG_RECOIL (2, 2)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150
 	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /* * * * * * * * * * *
  * 14mm Semi-Auto
@@ -835,31 +795,14 @@
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	init_mag_type = /obj/item/ammo_box/magazine/m14mm
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * 14mm Compact Semi-Auto
@@ -876,20 +819,45 @@
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
-	w_class = WEIGHT_CLASS_SMALL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+/* * * * * * * * * * * *
+* K8 Assault Pistol
+* Custom gun for Seerman
+* Based off the Hello Cutie Cyberpunk Red pistol
+* placeholder for much heavier caliber pistols
+* New sound file
+* Muh frontal mag
+* Muh 14mm
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
+	name = "Custom K8 Assault Pistol"
+	desc = "A custom K8 Assault pistol manufactured by the Sanroo Arms company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
+	icon_state = "toxcyberplaceholder"
+	item_state = "toxcybergun"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
  * Super Duper Heavy pistol
@@ -905,17 +873,10 @@
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
-	w_class = WEIGHT_CLASS_SMALL
-
-	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)

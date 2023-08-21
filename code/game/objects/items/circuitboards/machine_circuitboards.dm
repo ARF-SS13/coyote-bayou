@@ -13,24 +13,40 @@
 
 /obj/item/circuitboard/machine/vr_sleeper
 	name = "VR Sleeper (Machine Board)"
-	build_path = /obj/machinery/vr_sleeper
+	build_path = /obj/machinery/microwave/sleeper
 	req_components = list(
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stack/cable_coil = 1,
-		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stack/cable_coil = 2,
 		/obj/item/stack/sheet/glass = 2)
 
+/obj/machinery/microwave/sleeper
+	name = "VR Sleeper"
+	desc = "A microwave modified to alter the subconscious state of the user, allowing them to experience life as a gas station burrito."
+
 /obj/item/circuitboard/machine/vr_sleeper/bos
-	name = "Brotherhood VR Sleeper (Machine Board)"
-	build_path = /obj/machinery/vr_sleeper/bos
+	name = "High-Tech VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/microwave/sleeper/bos
+	
+/obj/machinery/microwave/sleeper/bos
+	name = "High-Tech VR Sleeper"
+	desc = "An advanced, space age microwave modified to alter the subconscious state of the user, allowing them to experience life as a futuristic refueling station burrito."
 
 /obj/item/circuitboard/machine/vr_sleeper/followers
-	name = "Followers VR Sleeper (Machine Board)"
-	build_path = /obj/machinery/vr_sleeper/followers
+	name = "Medical VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/microwave/sleeper/followers
+	
+/obj/machinery/microwave/sleeper/followers
+	name = "Medical VR Sleeper"
+	desc = "A medical microwave modified to alter the subconscious state of the user, allowing them to experience life as a surgical gas station burrito."
 
 /obj/item/circuitboard/machine/vr_sleeper/den
-	name = "Den VR Sleeper (Machine Board)"
-	build_path = /obj/machinery/vr_sleeper/den
+	name = "Suburban VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/microwave/sleeper/den
+
+/obj/machinery/microwave/sleeper/den
+	name = "Suburban VR Sleeper"
+	desc = "A blue-collar microwave modified to alter the subconscious state of the user, allowing them to experience life as a gas station burrito on its way to work."
 
 /obj/item/circuitboard/machine/announcement_system
 	name = "Announcement System (Machine Board)"
@@ -1199,6 +1215,38 @@
 		/obj/item/stack/sheet/mineral/wood = 3)
 	tool_behaviour = TOOL_MSRELOADER
 
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/examine(mob/user)
+	. = ..()
+	. += "You can put this thing together by:"
+	. += "\t[span_notice("hitting it")] with 3 wood, or [span_notice("using it on a table")]. Any table should do."
+	. += "You [span_italic("could")] use it as normal on a machine frame, if you really wanted to."
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W, /obj/item/stack/sheet/mineral/wood))
+		var/obj/item/stack/sheet/mineral/wood/wud = W
+		if(!wud.use(3))
+			to_chat(user, span_alert("You need 3 wood to set up a handloader!"))
+			return
+		if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, allow_movement = TRUE))
+			to_chat(user, span_alert("You were interrupted!"))
+			return
+		var/turf/put_here
+		denseloop:
+			for(var/turf/tuf in orange(1, user))
+				if(tuf.density)
+					continue
+				for(var/atom/atm in tuf.contents)
+					if(atm.density)
+						continue denseloop
+				put_here = tuf
+		if(!put_here)
+			to_chat(user, span_alert("There's nowhere around you to put the thing! Try clearing some space."))
+			return
+		var/obj/machinery/autolathe/ammo/improvised/impy = new(put_here)
+		impy.frament()
+		qdel(src)
+
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe Dispenser (Machine Board)"
 	build_path = /obj/machinery/pipedispenser
@@ -1223,6 +1271,13 @@
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 1,
 		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/cable_coil = 1,
+		/obj/item/stack/sheet/glass = 2)
+
+/obj/item/circuitboard/machine/cardpuncher
+	name = "Card Puncher (Machine Board)"
+	build_path = /obj/machinery/cardpuncher
+	req_components = list(
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 2)
 

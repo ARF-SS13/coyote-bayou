@@ -31,6 +31,7 @@
 	throw_range = 7
 	force = 0
 	total_mass = TOTAL_MASS_TINY_ITEM
+	w_class = WEIGHT_CLASS_TINY
 
 
 /*
@@ -138,14 +139,14 @@
  */
 /obj/item/toy/gun
 	name = "cap gun"
-	desc = "Looks almost like the real thing! Ages 8 and up. Please recycle in an autolathe when you're out of caps."
+	desc = "Looks almost like the real thing! Ages 8 and up. Please recycle in an autolathe when you're out of coins."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "revolver"
 	item_state = "gun"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
 	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
@@ -162,7 +163,7 @@
 			to_chat(user, span_warning("It's already fully loaded!"))
 			return 1
 		if (A.amount_left <= 0)
-			to_chat(user, span_warning("There are no more caps!"))
+			to_chat(user, span_warning("There are no more coins!"))
 			return 1
 		if (A.amount_left < (7 - src.bullets))
 			src.bullets += A.amount_left
@@ -487,7 +488,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 5
 	throwforce = 5
 	total_mass = null
@@ -514,7 +515,7 @@
 
 /obj/item/toy/snappop/Initialize()
 	. = ..()
-	
+
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -589,6 +590,7 @@
 /obj/item/toy/prize/ripley
 	name = "toy Ripley"
 	desc = "Mini-Mecha action figure! Collect them all! 1/12."
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/toy/prize/fireripley
 	name = "toy firefighting Ripley"
@@ -640,7 +642,7 @@
 	desc = "A generic action figure modeled after nothing in particular."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "owlprize"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	var/cooldown = FALSE
 	var/messages = list("I'm super generic!", "Mathematics class is of variable difficulty!")
 	var/span = "danger"
@@ -829,15 +831,15 @@
 	update_icon()
 
 /obj/item/toy/cards/deck/update_icon_state()
-	switch(cards.len)
-		if(original_size*0.5 to INFINITY)
-			icon_state = "deck_[deckstyle]_full"
-		if(original_size*0.25 to original_size*0.5)
-			icon_state = "deck_[deckstyle]_half"
-		if(1 to original_size*0.25)
-			icon_state = "deck_[deckstyle]_low"
-		else
-			icon_state = "deck_[deckstyle]_empty"
+	var/cardlen = cards.len
+	if(cardlen > original_size*0.5)
+		icon_state = "deck_[deckstyle]_full"
+	else if(cardlen > original_size*0.25)
+		icon_state = "deck_[deckstyle]_half"
+	else if(cardlen > 0)
+		icon_state = "deck_[deckstyle]_low"
+	else
+		icon_state = "deck_[deckstyle]_empty"
 
 /obj/item/toy/cards/deck/attack_self(mob/user)
 	if(cooldown < world.time - 50)
@@ -1227,7 +1229,7 @@
 	desc = "A stylish steampunk watch made out of thousands of tiny cogwheels."
 	icon = 'icons/obj/clockwork_objects.dmi'
 	icon_state = "clockwork_slab"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
 
@@ -1327,7 +1329,7 @@
 	toysay = "Suit sensors!"
 
 /obj/item/toy/figure/assistant
-	name = "Assistant action figure"
+	name = "Wastelander action figure"
 	icon_state = "assistant"
 	toysay = "Grey tide world wide!"
 
@@ -1339,7 +1341,7 @@
 /obj/item/toy/figure/bartender
 	name = "Bartender action figure"
 	icon_state = "bartender"
-	toysay = "Where is Pun Pun?"
+	toysay = "More whiskey!"
 
 /obj/item/toy/figure/borg
 	name = "Cyborg action figure"
@@ -1353,24 +1355,24 @@
 	toysay = "Blaze it!"
 
 /obj/item/toy/figure/captain
-	name = "Captain action figure"
+	name = "Overseer action figure"
 	icon_state = "captain"
-	toysay = "Any heads of staff?"
+	toysay = "Someone come get this Wastelander!"
 
 /obj/item/toy/figure/cargotech
 	name = "Cargo Technician action figure"
 	icon_state = "cargotech"
-	toysay = "For Cargonia!"
+	toysay = "Put him on the train."
 
 /obj/item/toy/figure/ce
 	name = "Chief Engineer action figure"
 	icon_state = "ce"
-	toysay = "Wire the solars!"
+	toysay = "Activate the Antimatter Reactor!"
 
 /obj/item/toy/figure/chaplain
 	name = "Chaplain action figure"
 	icon_state = "chaplain"
-	toysay = "Praise Space Jesus!"
+	toysay = "Praise Jesus!"
 
 /obj/item/toy/figure/chef
 	name = "Chef action figure"
@@ -1380,7 +1382,7 @@
 /obj/item/toy/figure/chemist
 	name = "Chemist action figure"
 	icon_state = "chemist"
-	toysay = "Get your pills!"
+	toysay = "Get your stims!"
 
 /obj/item/toy/figure/ian
 	name = "Ian action figure"
@@ -1390,7 +1392,7 @@
 /obj/item/toy/figure/detective
 	name = "Detective action figure"
 	icon_state = "detective"
-	toysay = "This airlock has grey jumpsuit and insulated glove fibers on it."
+	toysay = "I'm not investigating the 100th bomb this week."
 
 /obj/item/toy/figure/dsquad
 	name = "Death Squad Officer action figure"
@@ -1400,7 +1402,7 @@
 /obj/item/toy/figure/engineer
 	name = "Engineer action figure"
 	icon_state = "engineer"
-	toysay = "Oh god, the singularity is loose!"
+	toysay = "The photonic stabilizer is exploding!"
 
 /obj/item/toy/figure/geneticist
 	name = "Geneticist action figure"
@@ -1408,12 +1410,12 @@
 	toysay = "Smash!"
 
 /obj/item/toy/figure/hop
-	name = "Head of Personnel action figure"
+	name = "Council action figure"
 	icon_state = "hop"
-	toysay = "Giving out all access!"
+	toysay = "I am the Law!"
 
 /obj/item/toy/figure/hos
-	name = "Head of Security action figure"
+	name = "Sheriff action figure"
 	icon_state = "hos"
 	toysay = "Go ahead, make my day."
 
@@ -1430,7 +1432,7 @@
 /obj/item/toy/figure/lawyer
 	name = "Lawyer action figure"
 	icon_state = "lawyer"
-	toysay = "My client is a dirty traitor!"
+	toysay = "My client is a dirty raider!"
 
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
@@ -1443,9 +1445,9 @@
 	toysay = "The patient is already dead!"
 
 /obj/item/toy/figure/miner
-	name = "Shaft Miner action figure"
+	name = "Miner action figure"
 	icon_state = "miner"
-	toysay = "COLOSSUS RIGHT OUTSIDE THE BASE!"
+	toysay = "There are so many ants!"
 
 /obj/item/toy/figure/ninja
 	name = "Ninja action figure"
@@ -1481,9 +1483,9 @@
 	toysay = "Get that fucking disk!"
 
 /obj/item/toy/figure/secofficer
-	name = "Security Officer action figure"
+	name = "Deputy action figure"
 	icon_state = "secofficer"
-	toysay = "I am the law!"
+	toysay = "Another bomb!"
 	toysound = 'sound/runtime/complionator/dredd.ogg'
 
 /obj/item/toy/figure/virologist
@@ -1494,7 +1496,7 @@
 /obj/item/toy/figure/warden
 	name = "Warden action figure"
 	icon_state = "warden"
-	toysay = "Seventeen minutes for coughing at an officer!"
+	toysay = "Execute them!"
 
 
 /obj/item/toy/dummy
@@ -1547,7 +1549,7 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("declares an attack against")
-	
+
 /obj/item/toy/tragicthegarnering/attack_self(mob/user)
 	if(Adjacent(user))
 		user.visible_message("<span class='notice'>[user] resists the urge to play with his deck of Tragic", \

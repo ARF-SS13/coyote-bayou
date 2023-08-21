@@ -227,7 +227,7 @@
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
 
 /mob/living/carbon/restrained(ignore_grab)
-	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))
+	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_NECK))
 
 /mob/living/carbon/proc/canBeHandcuffed()
 	return 0
@@ -287,28 +287,250 @@
 					visible_message(span_danger("[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."), \
 									span_userdanger("[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name]."), \
 									target = usr, target_message = span_danger("You [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."))
-	if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE))
-		var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
-		if(!L)
+		if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE))
+			var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
+			if(!L)
+				return
+			var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
+			if(!I || I.loc != src) //no item, no limb, or item is not in limb or in the person anymore
+				return
+			SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
 			return
-		var/obj/item/I = locate(href_list["embedded_object"]) in L.embedded_objects
-		if(!I || I.loc != src) //no item, no limb, or item is not in limb or in the person anymore
-			return
-		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
+		if(href_list["remove_covering"] && usr.canUseTopic(src, BE_CLOSE))
+			var/obj/item/bodypart/L = locate(href_list["limb"]) in bodyparts
+			if(!L)
+				return
+			var/mob/bandage_breaker = href_list["other_doer"]
+			if(!ismob(bandage_breaker))
+				bandage_breaker = null
+			if(href_list["bandage"])
+				if(!L.destroy_coverings("bandage", TRUE, bandage_breaker))
+					show_message(span_alert("You couldn't remove anything!"))
+			if(href_list["suture"])
+				if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
+					show_message(span_alert("You couldn't remove anything!"))
+		switch(href_list["action"])
+			if("change_chat_color")
+				change_chat_color()
+			if("genital_return")
+				show_genital_panel()
+			if("open_genital_layering")
+				show_genital_layering_panel()
+			if("change_genital_outfit_layering")
+				var/list/genital_layering = GENITAL_CLOTHING_FLAG_LIST_CARBON
+				var/new_visibility = input(usr, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
+				if(new_visibility)
+					var/new_bit = genital_layering[new_visibility]
+					for(var/nadlet in GENITAL_VIS_FLAGS_LIST)
+						DISABLE_BITFIELD(dna.features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING | GENITAL_UNDER_UNDERWEAR)
+						ENABLE_BITFIELD(dna.features[nadlet], new_bit)
+					dna.features["genital_visibility_flags"] = new_bit
+					for(var/obj/item/organ/genital/nad in internal_organs)
+						nad.update_genital_visibility(new_bit)
+				if(ishuman(src)) // lesigh
+					var/mob/living/carbon/human/dip = src
+					dip.update_body(TRUE)
+				show_genital_layering_panel()
+			if("change_genital_clothing_respect", "change_genital_underwear_respect", "change_genital_override") // they all do the same darn thing
+				var/obj/item/organ/genital/clotheme = locate(href_list["which"])
+				if(clotheme)
+					switch(href_list["action"])
+						if("change_genital_clothing_respect")
+							clotheme.update_genital_visibility(GENITAL_RESPECT_CLOTHING)
+						if("change_genital_underwear_respect")
+							clotheme.update_genital_visibility(GENITAL_RESPECT_UNDERWEAR)
+						if("change_genital_override")
+							var/current_override = GENITAL_NO_OVERRIDE
+							if(CHECK_BITFIELD(clotheme.genital_visflags, GENITAL_ALWAYS_HIDDEN))
+								current_override = GENITAL_ALWAYS_HIDDEN
+							if(CHECK_BITFIELD(clotheme.genital_visflags, GENITAL_ALWAYS_VISIBLE))
+								current_override = GENITAL_ALWAYS_VISIBLE
+							switch(current_override)
+								if(GENITAL_ALWAYS_VISIBLE)
+									clotheme.update_genital_visibility(GENITAL_ALWAYS_HIDDEN)
+								if(GENITAL_ALWAYS_HIDDEN)
+									clotheme.update_genital_visibility(GENITAL_NO_OVERRIDE)
+								if(GENITAL_NO_OVERRIDE)
+									clotheme.update_genital_visibility(GENITAL_ALWAYS_VISIBLE)
+				if(ishuman(src)) // lesigh
+					var/mob/living/carbon/human/dip = src
+					dip.update_body(TRUE)
+				show_genital_layering_panel()
+			if("change_genital_order")
+				dna.shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
+				if(ishuman(src)) // lesigh
+					var/mob/living/carbon/human/dip = src
+					dip.update_body(TRUE)
+				show_genital_layering_panel()
+
+/mob/living/carbon/proc/show_genital_layering_panel()
+	if(!dna)
 		return
-	if(href_list["remove_covering"] && usr.canUseTopic(src, BE_CLOSE))
-		var/obj/item/bodypart/L = locate(href_list["limb"]) in bodyparts
-		if(!L)
-			return
-		var/mob/bandage_breaker = href_list["other_doer"]
-		if(!ismob(bandage_breaker))
-			bandage_breaker = null
-		if(href_list["bandage"])
-			if(!L.destroy_coverings("bandage", TRUE, bandage_breaker))
-				show_message(span_alert("You couldn't remove anything!"))
-		if(href_list["suture"])
-			if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
-				show_message(span_alert("You couldn't remove anything!"))
+	var/list/all_genitals = dna?.decode_cockstring() // yum
+	var/list/genitals_we_have = list()
+	var/list/dat = list()
+	dat += {"<a 
+				class='clicky'
+				href='
+					?src=[REF(src)];
+					action=genital_return'>
+						Go back
+			</a>"}
+	dat += "<table class='table_genital_list'>"
+	dat += "<tr>"
+	dat += "<td class='genital_name'></td>"
+	dat += "<td colspan='2' class='genital_name'>Shift</td>"
+	dat += "<td colspan='2' class='genital_name'>Hidden by...</td>"
+	dat += "<td class='genital_name'>Override</td>"
+	dat += "</tr>"
+
+	for(var/nad in all_genitals)
+		if(dna.features[nad] == TRUE)
+			genitals_we_have += nad
+	if(LAZYLEN(genitals_we_have))
+		for(var/i in 1 to LAZYLEN(genitals_we_have))
+			dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
+	else
+		dat += "You dont seem to have any movable genitals!"
+	dat += "<tr>"
+	dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
+	/* var/genital_shirtlayer
+	if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
+		genital_shirtlayer = "Over Underwear"
+	else if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
+		genital_shirtlayer = "Over Clothes"
+	else
+		genital_shirtlayer = "Under Underwear" */
+
+	dat += {"<td colspan='3' class='coverage_on'>
+			Over Clothes
+			</td>"}
+	dat += "</table>"
+
+	winshow(src, "erp_window", TRUE)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 400, 500)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(src, "erp_window", src)
+
+/// need: genital name, some kinda href shit
+/// returns a hunk of html designed to fit into a table
+/mob/living/carbon/proc/add_genital_layer_piece(has_name, index, max_index)
+	var/magic_word
+	var/obj/item/organ/genital/the_nad
+	switch(has_name)
+		if(CS_BUTT)
+			magic_word = "Butt"
+			the_nad = has_butt()
+		if(CS_VAG)
+			magic_word = "Vagina"
+			the_nad = has_vagina()
+		if(CS_BALLS)
+			magic_word = "Testicles"
+			the_nad = has_balls()
+		if(CS_PENIS)
+			magic_word = "Penis"
+			the_nad = has_penis()
+		if(CS_BELLY)
+			magic_word = "Belly"
+			the_nad = has_belly()
+		if(CS_BOOB)
+			magic_word = "Breasts"
+			the_nad = has_breasts()
+		if(CS_MISC) // idk some kind of broken genital
+			magic_word = "Chunk"
+			the_nad = has_breasts()
+	var/list/doot = list()
+	doot += "<tr class='talign'>"
+	// the nad's name and index
+	doot += "<td class='genital_name'>[magic_word] - [index]</td>"
+	if(index <= 1) // first one doesnt get an up-arrow
+		doot += "<td class='genital_arrow_off'>&darr;</td>" // im gonna do a magic trick
+	else // make an up arrow
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border'
+					href='
+						?src=[REF(src)];
+						action=change_genital_order;
+						direction=up;
+						which=[has_name]'>
+							&uarr;
+				</a>
+				</td>"}
+	if(index >= max_index) // last one doesnt get a down-arrow
+		doot += "<td class='genital_arrow_off'>&darr;</td>" // imma make these disappear!
+	else // make a down arrow
+		doot += {"<td class='genital_arrow_on'>
+				<a 
+					class='clicky_no_border' 
+					href='
+						?src=[REF(src)];
+						action=change_genital_order;
+						direction=down;
+						which=[has_name]'>
+							&darr;
+				</a>
+				</td>"}
+	// and throw in the coverage buttons
+	doot += {"<td class='[CHECK_BITFIELD(the_nad.genital_visflags, GENITAL_RESPECT_CLOTHING)? "coverage_on" : "coverage_off"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?src=[REF(src)];
+				action=change_genital_clothing_respect;
+				which=[REF(the_nad)]'>
+					Clothes
+		</a>
+		</td>"}
+	doot += {"<td class='[CHECK_BITFIELD(the_nad.genital_visflags, GENITAL_RESPECT_UNDERWEAR)? "coverage_on" : "coverage_off"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?src=[REF(src)];
+				action=change_genital_underwear_respect;
+				which=[REF(the_nad)]'>
+					Underwear
+		</a>
+		</td>"}
+	/// and the override
+	var/peen_vis_override
+	if(CHECK_BITFIELD(the_nad.genital_visflags, GENITAL_ALWAYS_HIDDEN))
+		peen_vis_override = "Always Hidden"
+	else if(CHECK_BITFIELD(the_nad.genital_visflags, GENITAL_ALWAYS_VISIBLE))
+		peen_vis_override = "Always Visible"
+	else
+		peen_vis_override = "Check Coverage"
+	doot += {"<td class='[CHECK_BITFIELD(the_nad.genital_visflags, GENITAL_ALWAYS_HIDDEN|GENITAL_ALWAYS_VISIBLE)? "coverage_on" : "coverage_off"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?src=[REF(src)];
+				action=change_genital_override;
+				which=[REF(the_nad)]'>
+					[peen_vis_override]
+		</a>
+		</td>"}
+	doot += "</tr>"
+	return doot.Join()
+
+/mob/living/carbon/verb/change_runechat_color()
+	set category = "IC"
+	set name = "Runechat Color"
+	set desc = "Lets you change your runechat color!"
+	change_chat_color()
+
+/mob/living/carbon/proc/change_chat_color()
+	var/my_chat_color = dna.features["chat_color"]
+	var/new_runecolor = input(src, "Choose your character's runechat color:", "Character Preference","#[my_chat_color]") as color|null
+	if(new_runecolor)
+		new_runecolor = sanitize_hexcolor(new_runecolor, 6)
+		dna.features["chat_color"] = new_runecolor
+		client.prefs.features["chat_color"] = new_runecolor
+		client.prefs.save_preferences()
+		chat_color = "#[new_runecolor]"
+		chat_color_darkened = "#[new_runecolor]"
+		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -986,7 +1208,7 @@
 		stomach_contents.Add(C)
 		log_combat(src, C, "devoured")
 
-/mob/living/carbon/proc/create_bodyparts()
+/mob/living/carbon/proc/create_bodyparts(actually_dont)
 	var/l_arm_index_next = -1
 	var/r_arm_index_next = 0
 	for(var/X in bodyparts)
@@ -1002,6 +1224,11 @@
 			r_arm_index_next += 2
 			O.held_index = r_arm_index_next //2, 4, 6, 8...
 			hand_bodyparts += O
+	if(actually_dont)
+		for(var/obj/item/bodypart/O in bodyparts)
+			if(O.body_zone == BODY_ZONE_CHEST)
+				continue
+			qdel(O)
 
 /mob/living/carbon/do_after_coefficent()
 	. = ..()
@@ -1259,3 +1486,11 @@
  */
 /mob/living/carbon/proc/get_biological_state()
 	return BIO_FLESH_BONE
+
+/mob/living/carbon/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+

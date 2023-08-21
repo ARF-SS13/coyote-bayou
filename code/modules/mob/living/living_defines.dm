@@ -161,8 +161,4 @@
 	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.
 	//---End
 
-	//Used in living/recoil.dm
-	var/recoil = 0 //What our current recoil level is
-	var/recoil_reduction_timer
-
 	var/disconnect_time //how long have we been dc'd for

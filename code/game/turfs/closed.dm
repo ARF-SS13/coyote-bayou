@@ -44,8 +44,18 @@
 		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
 			humanAM.disable_sprint_mode()
 			humanAM.AdjustKnockdown(25)
-			visible_message(span_warning("[humanAM] runs straight into [src]!"))
-			//playsound(src.loc, 'sound/effects/slap.ogg', 100, 1)  Double check on this later, not currently working but soon tm ~tk
+			playsound(get_turf(src), 'sound/effects/wallsmack.ogg', 100, 0, 0)
+			if(HAS_TRAIT(humanAM, TRAIT_ZOOMIES))
+				humanAM.adjustBruteLoss(20) //falling from 1 story is 11 damage. falling from 2 stories is 31
+				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
+				visible_message(span_warning("[humanAM] runs straight into [src] with a sickening impact!"))
+			if(HAS_TRAIT(humanAM, TRAIT_SUPER_ZOOMIES))
+				humanAM.adjustBruteLoss(40)
+				visible_message(span_warning("[humanAM] runs straight into [src] with a violent impact!"))
+				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
+				playsound(get_turf(src), 'sound/effects/wounds/crack2.ogg', 100, 0, 0)
+			else
+				visible_message(span_warning("[humanAM] runs straight into [src]!"))
 
 /turf/closed/indestructible
 	name = "wall"
@@ -156,6 +166,12 @@
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'icons/fallout/turfs/mining.dmi' //fortuna edit. fixing icon path.
 	icon_state = "rock"
+
+/turf/closed/indestructible/rock/sand
+	name = "dense sandstone"
+	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
+	icon = 'modular_coyote/icons/turfs/walls.dmi'
+	icon_state = "cliff-top-goonorig"
 
 /turf/closed/indestructible/f13vaultrusted
 	name = "rusty vault wall"

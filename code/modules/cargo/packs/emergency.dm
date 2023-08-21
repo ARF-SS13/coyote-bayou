@@ -7,10 +7,26 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/emergency
-	group = "Emergency"
+	group = "Kits"
+
+/datum/supply_pack/emergency/stealthkit
+	name = "Kit - Stealth Mercenary"
+	desc = "All your needs for covert operations. Contains a stealth boy and ultracite cell, dark clothing, boots, and a chameleon mask. Even comes with some light weight armor and a specialized rifle with a scope rail and silencer."
+	cost = 12500
+	contains = list(
+		/obj/item/clothing/under/f13/locust,
+		/obj/item/clothing/shoes/combat/coldres,
+		/obj/item/clothing/mask/chameleon,
+		/obj/item/clothing/suit/armor/medium/odstcqb,
+		/obj/item/stealthboy,
+		/obj/item/stock_parts/cell/bluespace,
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
+		/obj/item/gun_upgrade/muzzle/silencer,
+)
+	crate_name = "Stealth Mercenary Kit"
 
 /datum/supply_pack/emergency/vehicle
-	name = "Biker Gang Kit" //TUNNEL SNAKES OWN THIS TOWN
+	name = "Kit - Biker Gang" //TUNNEL SNAKES OWN THIS TOWN
 	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
 	cost = 100000
 	contains = list(/obj/vehicle/ridden/atv,
@@ -62,12 +78,11 @@
 	crate_type = /obj/structure/closet/crate/internals */
 
 /datum/supply_pack/emergency/medicalemergency
-	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
+	name = "Kit - Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
 	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
 	cost = 10000
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
-					/obj/item/clothing/glasses/hud/health,
 					/obj/item/defibrillator/loaded,
 					/obj/item/storage/belt/medical,
 					/obj/item/storage/firstaid/toxin,
@@ -81,7 +96,7 @@
 	crate_type = /obj/structure/closet/crate/medical
 
 /datum/supply_pack/emergency/medemergencylite
-	name = "Emergency Medical Supplies (Lite)"
+	name = "Kit - Surplus Medical Supplies"
 	desc = "A less than optimal, but still effective, set of tools for emergency care. Contains a box of bodybags, some normal (and advanced) health analyzers, healing sprays, a single first aid kit, charcoal, some gauze, a bottle of toxins, and some spare medipens."
 	cost = 2800
 	contains = list(/obj/item/storage/box/bodybags,

@@ -24,7 +24,7 @@ $include policy.txt
 @SERVERNAME Coyote Bayou
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] Fallout 1/Wasteland Inspired HRP Furry PVE/PVP experience with high amounts of replayability. Join at https://discord.gg/YV9JjUAvJS
+SERVERTAGLINE [18+] CDDA/QoC/FO/Biomutant/STALKER inspired HRP Furry Roleplaying experience. Our newts go hard. Join at https://discord.gg/coyotebayou
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
 
@@ -155,7 +155,7 @@ LOG_MANIFEST
 # LOG_TWITTER
 
 ## Enable logging pictures
-# LOG_PICTURES
+LOG_PICTURES
 
 ## log virus and actions
 LOG_VIRUS
@@ -298,7 +298,7 @@ GITHUBURL https://github.com/ARF-SS13/coyote-bayou
 ## from https://github.com/rg3/youtube-dl/releases
 ## or your package manager
 ## The default value assumes youtube-dl is in your system PATH
-INVOKE_YOUTUBEDL youtube-dl
+INVOKE_YOUTUBEDL yt-dlp
 
 ## In-game features
 ##Toggle for having jobs load up from the .txt
@@ -419,7 +419,7 @@ ALLOW_MAP_VOTING 1
 ##   APPROVAL (can vote for as many as you want), I
 ##   IRV (vote by ranked choice, winner determined by instant runoff algorithm)
 ##   SCORE (give individual rankings of each choice, winner determined by majority judgement algorithm)
-MAP_VOTE_TYPE SCORE
+MAP_VOTE_TYPE IRV
 
 ## Map rotate chance delta
 ## This is the chance of map rotation factored to the round length.
@@ -539,7 +539,7 @@ FAIL2TOPIC_MAX_FAILS 5
 FAIL2TOPIC_RULE_NAME _dd_fail2topic
 
 ## Enable automatic profiling - Byond 513.1506 and newer only.
-#AUTO_PROFILE
+#AUTO_PROFILE
 
 ## Uncomment to enable global ban DB using the provided URL. The API should expect to receive a ckey at the end of the URL.
 ## More API details can be found here: https://centcom.melonmesa.com

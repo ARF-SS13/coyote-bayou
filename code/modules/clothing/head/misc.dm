@@ -365,7 +365,7 @@
 /obj/item/clothing/head/jester/alt
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
-	icon_state = "jester_hat2"
+	icon_state = "jester2"
 	dynamic_hair_suffix = ""
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
@@ -602,3 +602,122 @@
 	attack_verb = list("crowned")
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
+/obj/item/clothing/head/mk2/one
+	name = "MK2 helment"
+	desc = "The mk2 helmet commonly refered as the brodie due to its inventor Latvian inventor John Leopold Brodie, it was commonly used by Commonwealth nations, its also refered as the battle bowler.."
+	icon_state = "mk2_nettan_1"
+	item_state= "mk2_nettan_1"
+
+/obj/item/clothing/head/mk2/two
+	name = "MK2 helment"
+	desc = "The mk2 helmet commonly refered as the brodie due to its inventor Latvian inventor John Leopold Brodie, it was commonly used by Commonwealth nations, its also refered as the battle bowler.."
+	icon_state = "mk2_nettan_2"
+	item_state= "mk2_nettan_2"
+
+/obj/item/clothing/head/mk2/four
+	name = "MK2 helment"
+	desc = "The mk2 helmet commonly refered as the brodie due to its inventor Latvian inventor John Leopold Brodie, it was commonly used by Commonwealth nations, its also refered as the battle bowler.."
+	icon_state = "mk2_nettan_4"
+	item_state= "mk2_nettan_4"
+
+/obj/item/clothing/head/mk2/two
+	name = "MK2 helment"
+	desc = "The mk2 helmet commonly refered as the brodie due to its inventor Latvian inventor John Leopold Brodie, it was commonly used by Commonwealth nations, its also refered as the battle bowler.."
+	icon_state = "mk2_nettan_2"
+	item_state= "mk2_nettan_2"
+
+/obj/item/clothing/head/mk2/two
+	name = "MK2 helment"
+	desc = "The mk2 helmet commonly refered as the brodie due to its inventor Latvian inventor John Leopold Brodie, it was commonly used by Commonwealth nations, its also refered as the battle bowler.."
+	icon_state = "mk2_nettan_2"
+	item_state= "mk2_nettan_2"
+
+/obj/item/clothing/head/military_turban
+	name = "Military Turban"
+	desc = "A Military green Turban used by pre war Raj recently freed of its British overlords."
+	icon_state = "turban_mil"
+	item_state = "turban_mil"
+
+/obj/item/clothing/head/burma/cowboy/black
+	name = "Burma Cowboy hat, black"
+	desc = "A wide brimmed hat in an aussie style brim more common around the wastes now a days being an easily replicate able style of fur felt hat. This one is a dark colour,...some what stupid if your trying to get heat away from you..."
+	icon_state = "burma_cowboy_black"
+	item_state = "burma_cowboy_black"
+
+/obj/item/clothing/head/burma/cowboy/black/ribbon
+	name = "Burma Cowboy hat, black with ribbon"
+	desc = "A wide brimmed hat in an aussie style brim more common around the wastes now a days being an easily replicate able style of fur felt hat. This one is a dark colour,...some what stupid if your trying to get heat away from you..."
+	icon_state = "burma_cowboy_black_ribbon"
+	item_state = "burma_cowboy_black_ribon"
+
+/obj/item/clothing/head/burma/cowboy/brown
+	name = "Burma Cowboy hat, brown"
+	desc = "A wide brimmed hat in an aussie style brim more common around the wastes now a days being an easily replicate able style of fur felt hat."
+	icon_state = "burma_cowboy_brown"
+	item_state = "burma_cowboy_brown"
+
+/obj/item/clothing/head/burma/pith
+	name = "Pith"
+	desc = "A lightweight sun helmet with a puggaree hat band, commonly worn by imperalists. Some post war gangs and Nations have adopted this style of hat, all though some noticeably different shapes but still its a useful garment."
+	icon_state = "pith_burma"
+	item_state = "pith_burma"
+
+/obj/item/clothing/head/burma/glengarry
+	name = "Glengarry"
+	desc = "A woolen Scottish military hat, with a plaid pattern and tails that come off it. Notably in the pre war this was used by several different specific bagpipe regiments of Commonwealth nations..And was used primarly by the british for its scottish brigades."
+	icon_state = "glengarry"
+	item_state = "glengarry"
+
+/obj/item/clothing/head/fifi
+	name = "fifi"
+	desc = "A colorful firlly hat"
+	icon_state = "fifi_hat"
+	item_state = "fifi_hat"
+
+/obj/item/clothing/head/croc_hat
+	name = "Croc teeth lined hat"
+	desc = "A black hat with sharp looking teeth. Crikey!"
+	icon_state = "croc_hat"
+	item_state = "croc_hat"
+
+/obj/item/clothing/head/pinched_cowboy
+	name = "Pinched Cowboy"
+	desc = "A brown felt cowboy hat with a pinched look in the middle. Snazy."
+	icon_state = "pinched_cowboy"
+	item_state = "pinched_cowboy"
+
+/obj/item/clothing/head/floppy_hat
+	name = "floppy bush hat"
+	desc = "commonly used by military forces in hot tropical climates. Its design is similar to a bucket hat but with a stiffer brim"
+	icon_state = "giggle_hat"
+	item_state = "giggle_hat"
+
+/obj/item/clothing/head/japan_cap
+	name = "green floppy cap"
+	desc = "A pre war japanese cap used for soldiers in the Japanese defense force for pacific and jungle combat."
+	icon_state = "japan_cap"
+	item_state = "japan_cap"
+/*
+/obj/item/clothing/head/tribal_helmant
+	name = "tribal helmet"
+	desc = "A helmet, for tribals! Probably."
+	icon_state = "tribal_helmant"
+	item_state = "tribal_helmant"
+*/
+/obj/item/clothing/head/adrian
+	name = "adrian helmet"
+	desc = "A helmet, amazing!"
+	icon_state = "adrian"
+	item_state = "adrian"
+
+/obj/item/clothing/head/mk2_nettan_5
+	name = "Nettan Helmet"
+	desc = "A helmet, amazing!"
+	icon_state = "mk2_nettan_5"
+	item_state = "mk2_nettan_5"
+
+/obj/item/clothing/head/m1_standard
+	name = "Standard Helmet"
+	desc = "A helmet, amazing!"
+	icon_state = "m1_standard"
+	item_state = "m1_standard"

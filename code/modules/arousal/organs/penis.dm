@@ -8,7 +8,7 @@
 	masturbation_verb = "stroke"
 	arousal_verb = "You pop a boner"
 	unarousal_verb = "Your boner goes down"
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN|GENITAL_CAN_TAUR
+	genital_flags = CAN_MASTURBATE_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_TAUR|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5
 	shape = DEF_COCK_SHAPE
@@ -19,6 +19,8 @@
 	var/prev_length = 6 //really should be renamed to prev_length
 	var/diameter = 4.38
 	var/diameter_ratio = COCK_DIAMETER_RATIO_DEF //0.25; check citadel_defines.dm
+	associated_has = CS_PENIS // for cockstring stuff
+	hide_flag = HIDE_PENIS // for hideflag stuff
 
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
@@ -26,6 +28,15 @@
 		return
 	prev_length = length
 	length = clamp(length + modifier, min, max)
+	update()
+	..()
+
+/obj/item/organ/genital/penis/set_size(new_size)
+	var/new_value = clamp(new_size, CONFIG_GET(number/penis_min_inches_prefs), CONFIG_GET(number/penis_max_inches_prefs))
+	if(new_value == length)
+		return
+	prev_length = length
+	length = CEILING(new_value, 1)
 	update()
 	..()
 
@@ -50,9 +61,6 @@
 			new_size = 3
 		if(35 to INFINITY) //If comical
 			new_size = 4 //no new sprites for anything larger yet
-	if(linked_organ)
-		linked_organ.size = clamp(size + new_size, BALLS_SIZE_MIN, BALLS_SIZE_MAX)
-		linked_organ.update()
 	size = new_size
 
 	if(owner)
@@ -71,15 +79,14 @@
 	icon_state = "penis_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
 
-	if(owner)
+	if(ishuman(owner))
 		if(owner.dna.species.use_skintones)
-			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
-				var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
-				color = SKINTONE2HEX(H.skin_tone)
-				if(!H.dna.skin_tone_override)
-					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["cock_color"]]"
+			var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
+			color = SKINTONE2HEX(H.skin_tone)
+			if(!H.dna.skin_tone_override)
+				icon_state += "_s"
+		// else
+		// 	color = "#[owner.dna.features["cock_color"]]"
 		if(genital_flags & GENITAL_CAN_TAUR && S?.taur_icon && (!S.feat_taur || owner.dna.features[S.feat_taur]) && owner.dna.species.mutant_bodyparts["taur"])
 			var/datum/sprite_accessory/taur/T = GLOB.taur_list[owner.dna.features["taur"]]
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.
@@ -93,8 +100,52 @@
 		color = SKINTONE2HEX(H.skin_tone)
 	else
 		color = "#[D.features["cock_color"]]"
-	length = D.features["cock_length"]
+	length = D.features["cock_size"]
 	diameter_ratio = D.features["cock_diameter_ratio"]
 	shape = D.features["cock_shape"]
 	prev_length = length
-	toggle_visibility(D.features["cock_visibility"], FALSE)
+	update_genital_visibility(D.features["cock_visibility_flags"], FALSE, TRUE)
+
+/obj/item/organ/genital/penis/size_kind()
+	return "[size] inch[size!=1?"es":""]"
+
+/obj/item/organ/genital/penis/resize_genital(mob/user)
+	var/min_size = CONFIG_GET(number/penis_min_inches_prefs)
+	var/max_size = CONFIG_GET(number/penis_max_inches_prefs)
+	var/new_length = input(user, "Penis length in inches:\n([min_size]-[max_size])", "Character Preference") as num|null
+	if(new_length)
+		set_size(clamp(round(new_length), min_size, max_size))
+	. = ..()
+
+/obj/item/organ/genital/penis/reshape_genital(mob/user)
+	var/new_shape = input(user, "Penis shape:", "Character Preference") as null|anything in GLOB.cock_shapes_list
+	if(new_shape)
+		shape = new_shape
+	. = ..()
+
+/obj/item/organ/genital/penis/arousal_term()
+	if(aroused_state)
+		return "Hard and throbbing"
+	return "Limp and just fine"
+
+/obj/item/organ/genital/penis/on_arouse()
+	owner?.show_message(span_userlove("You feel your penis become erect."))
+	. = ..()
+
+/obj/item/organ/genital/penis/on_unarouse()
+	owner?.show_message(span_userlove("You feel your erection fade."))
+	. = ..()
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/penis/get_sprite_accessory()
+	return GLOB.cock_shapes_list[shape]
+
+/obj/item/organ/genital/penis/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			return
+		if("BEHIND")
+			. = ..()
+

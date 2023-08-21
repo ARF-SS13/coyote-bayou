@@ -177,10 +177,12 @@
 /datum/sprite_accessory/tails/human/corvid
 	name = "Corvid"
 	icon_state = "crow"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails_animated/human/corvid
 	name = "Corvid"
 	icon_state = "crow"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/human/cow
 	name = "Cow"
@@ -199,10 +201,12 @@
 /datum/sprite_accessory/tails/human/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails_animated/human/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/human/datashark
 	name = "Datashark"
@@ -335,6 +339,7 @@
 /datum/sprite_accessory/tails_animated/human/ltiger
 	name = "Light Tiger"
 	icon_state = "ltiger"
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/human/murid
 	name = "Murid"

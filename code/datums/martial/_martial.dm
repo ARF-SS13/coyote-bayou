@@ -28,7 +28,9 @@
 /datum/martial_art/proc/can_use(mob/living/carbon/human/H)
 	return TRUE
 
-/datum/martial_art/proc/add_to_streak(element,mob/living/carbon/human/D)
+/datum/martial_art/proc/add_to_streak(element,mob/living/carbon/human/D, allow_anyone)
+	if(allow_anyone)
+		current_target = D
 	if(D != current_target)
 		reset_streak(D)
 	streak = streak+element
@@ -43,13 +45,23 @@
 /datum/martial_art/proc/damage_roll(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	//Here we roll for our damage to be added into the damage var in the various attack procs. This is changed depending on whether we are in combat mode, lying down, or if our target is in combat mode.
 	var/damage = rand(A.dna.species.punchdamagelow, A.dna.species.punchdamagehigh)
-	if(SEND_SIGNAL(D, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		damage *= 1.2
+	//if(SEND_SIGNAL(D, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
+	//	damage *= 1.2
 	if(!CHECK_MOBILITY(A, MOBILITY_STAND))
 		damage *= 0.7
-	if(SEND_SIGNAL(A, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		damage *= 0.8
+	//if(SEND_SIGNAL(A, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
+	//	damage *= 0.8
 	return damage
+
+/// lets actually check armor, aight?
+/datum/martial_art/proc/deal_damage(mob/living/carbon/human/attacker, mob/living/defender, damage, damage_type = BRUTE, zone = BODY_ZONE_CHEST, armor_type = "melee", woundbonus = 0)
+	if(!isliving(defender))
+		return
+	var/armormult = clamp(defender.getarmor(zone, armor_type), 0, 1)
+	if(HAS_TRAIT(attacker, TRAIT_PANICKED_ATTACKER))
+		damage *= 0.2
+	defender.apply_damage(damage, damage_type, BODY_ZONE_CHEST, blocked = armormult, wound_bonus = woundbonus)
+	log_combat(attacker, defender, "martial art ([src])")
 
 /datum/martial_art/proc/teach(mob/living/carbon/human/H, make_temporary = FALSE)
 	if(!istype(H) || !H.mind)

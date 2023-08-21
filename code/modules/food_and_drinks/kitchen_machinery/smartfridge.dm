@@ -454,7 +454,7 @@
 		/obj/item/reagent_containers/medspray/sterilizine = 1)
 
 /obj/machinery/smartfridge/organ/preloaded/Initialize()
-	..()
+	. = ..()
 	var/list = list(/obj/item/organ/tongue, /obj/item/organ/brain, /obj/item/organ/heart, /obj/item/organ/liver, /obj/item/organ/ears, /obj/item/organ/eyes, /obj/item/organ/tail, /obj/item/organ/stomach)
 	var/newtype = pick(list)
 	load(new newtype(src.loc))
@@ -693,7 +693,9 @@
 		/obj/item/reagent_containers/glass/bottle/primitive,
 		/obj/item/stack/medical/poultice,
 		/obj/item/smelling_salts,
-		/obj/item/reagent_containers/pill/healingpowder
+		/obj/item/reagent_containers/pill/healingpowder,
+		/obj/item/reagent_containers/pill/antivenom,
+		/obj/item/reagent_containers/pill/fiery_purgative
 	))
 	if(is_type_in_typecache(O, alchemyrack_typecache))
 		return TRUE

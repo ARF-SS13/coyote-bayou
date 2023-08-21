@@ -25,8 +25,8 @@ Snek for Enclave East*/
 	speak = list("Grrfff!", "Woof!", "Bark!", "Awoo?")
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "woofs!", "whines.","pants.")
-	emote_see = list("stares at nothing.", "sniffs the air.","licks its paw.")
-	faction = list("dog")
+	emote_see = list("stares at nothing.", "sniffs the air.", "licks its paw.")
+	faction = list("dog", "neutral")
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
@@ -51,7 +51,7 @@ Snek for Enclave East*/
 	speak_emote = list("hisses")
 	emote_hear = list("slithers", "sways.")
 	emote_see = list("stares blankly.", "tastes the air.","coils around the nearest object.")
-	faction = list("dog")
+	faction = list("dog", "neutral")
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
@@ -82,7 +82,7 @@ Snek for Enclave East*/
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "growls", "whines.","pants.")
 	emote_see = list("stares at nothing.", "sniffs the air.","drools on the ground")
-	faction = list("dog")
+	faction = list("dog", "neutral")
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10

@@ -28,3 +28,5 @@
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/peachjuice = 0)
 	tastes = list("peach" = 1)
+	distill_reagent = /datum/reagent/consumable/ethanol/peachcider
+	

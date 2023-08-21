@@ -4,7 +4,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "portablechemicalmixer_open"
 	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_price = 2000
 	custom_premium_price = 2000
 
@@ -16,12 +16,10 @@
 /obj/item/storage/portable_chem_mixer/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 200
-	STR.max_items = 50
+	STR.max_combined_w_class = STORAGE_BAG_MAX_TOTAL_SPACE
+	STR.max_items = STORAGE_BAG_MAX_ITEMS
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/glass/beaker,
-	))
+	STR.can_hold = GLOB.typical_reagent_containers
 
 /obj/item/storage/portable_chem_mixer/Destroy()
 	QDEL_NULL(beaker)
@@ -63,7 +61,7 @@
 /obj/item/storage/portable_chem_mixer/proc/update_contents()
 	dispensable_reagents.Cut()
 
-	for (var/obj/item/reagent_containers/glass/beaker/B in contents)
+	for (var/obj/item/reagent_containers/B in contents)
 		var/key = B.reagents.get_master_reagent_id()
 		if (!(key in dispensable_reagents))
 			dispensable_reagents[key] = list()

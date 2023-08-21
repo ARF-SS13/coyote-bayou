@@ -87,7 +87,7 @@
 	desc = "As a ravenous ghoul, your claws are your best friends. It's your primary tool, as it is capable of infecting \
 		humans, butchering all other living things to \
 		sustain yourself, smashing open doors, and opening \
-		nuka-cola bottles."
+		Cosmic-cola bottles."
 	item_flags = ABSTRACT | DROPDEL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	icon = 'icons/effects/blood.dmi'

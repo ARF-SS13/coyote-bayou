@@ -1,7 +1,142 @@
-////////////////////////////
+//new themed weapon lists! mostly for cargo crates, but can also populate dungeons. has a mix of low to high tier weaponry
+
+/obj/effect/spawner/lootdrop/f13/weapon/combloc
+	name = "communist bloc themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/automatic/pistol/type17 = 20,
+	/obj/item/gun/ballistic/automatic/type93 = 5,
+	/obj/item/gun/ballistic/rifle/mosin = 20,
+	/obj/item/gun/ballistic/revolver/shotpistol = 5,
+	/obj/item/gun/ballistic/rifle/hunting/obrez = 10,
+	/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
+	/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 10,
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/vault
+	name = "vault security themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10,
+	/obj/item/gun/ballistic/automatic/pistol/n99 = 20,
+	/obj/item/gun/energy/laser/complianceregulator = 10,
+	/obj/item/gun/ballistic/automatic/smg/smg10mm = 5,
+	/obj/item/gun/ballistic/shotgun/police = 1,
+	/obj/item/gun/ballistic/revolver/colt357/auto = 5,
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/police
+	name = "police themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/revolver/police = 20,
+	/obj/item/gun/ballistic/automatic/smg/american180 = 10,
+	/obj/item/gun/ballistic/automatic/assault_carbine = 10,
+	/obj/item/gun/ballistic/automatic/armalite = 10,
+	/obj/item/gun/ballistic/shotgun/police = 1,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
+	/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
+	/obj/item/shield/riot = 10,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 1,
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/weapon_22
+	name = ".22 caliber themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 20,
+	/obj/item/gun/ballistic/automatic/sportcarbine = 20,
+	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 10,
+	/obj/item/gun/ballistic/revolver/detective = 10,
+	/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 10,
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/milsurplus
+	name = "American world war themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/automatic/m1carbine = 20,
+	/obj/item/gun/ballistic/automatic/m1carbine/compact = 5,
+	/obj/item/gun/ballistic/automatic/m1carbine/m2 = 5,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil = 20,
+	/obj/item/gun/ballistic/automatic/pistol/m1911  = 20, //muh three world wars
+	/obj/item/melee/onehanded/knife/trench = 10,
+	/obj/item/melee/onehanded/knife/bayonet = 10,
+	/obj/item/gun/ballistic/shotgun/trench = 10,
+	/obj/item/shovel/trench = 10,
+	/obj/item/gun/ballistic/automatic/smg/greasegun = 5,
+	/obj/item/gun/ballistic/automatic/smg/tommygun = 5,
+	/obj/item/gun/ballistic/automatic/m1garand = 5,
+	/obj/item/m2flamethrowertank = 1
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/energy //not an exhaustive list, dunno if people want it to be
+	name = "energy themed weapons"
+	loot = list(
+	/obj/item/gun/energy/laser/wattz = 20,
+	/obj/item/gun/energy/laser/wattzs = 20,
+	/obj/item/gun/energy/laser/pistol = 10,
+	/obj/item/gun/energy/laser/complianceregulator = 10,
+	/obj/item/gun/energy/laser/auto = 10,
+	/obj/item/gun/energy/laser/wattz2k = 10,
+	/obj/item/gun/energy/laser/wattz2ks = 5,
+	/obj/item/gun/energy/laser/aer9 = 10,
+	/obj/item/gun/energy/laser/plasma/pistol = 5,
+	/obj/item/gun/energy/laser/plasma = 1,
+	/obj/item/gun/energy/laser/rcw = 1
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/junk
+	name = "junk themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 1,
+	/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/piperifle = 10,
+	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,
+	/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/knifegun = 10,
+	/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
+	/obj/item/gun/ballistic/automatic/autopipe = 5,
+	/obj/item/gun/ballistic/revolver/winchesterrebored = 5,
+	/obj/item/melee/onehanded/machete/scrapsabre = 10,
+	/obj/item/melee/onehanded/knife/cosmicdirty = 5,
+	/obj/item/melee/onehanded/club/tireiron = 10,
+	/obj/item/twohanded/fireaxe/bmprsword = 5,
+	/obj/item/melee/onehanded/club = 10,
+	/obj/item/twohanded/spear/scrapspear = 10,
+	/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
+	/obj/item/melee/unarmed/lacerator = 10,
+	/obj/item/shishkebabpack = 5,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 10,
+)
+
+/obj/effect/spawner/lootdrop/f13/weapon/western //yeehowody
+	name = "old west themed weapons"
+	loot = list(
+	/obj/item/gun/ballistic/revolver/colt357 = 20,
+	/obj/item/gun/ballistic/revolver/m29 = 10,
+	/obj/item/gun/ballistic/revolver/m29/alt = 1,
+	/obj/item/gun/ballistic/revolver/revolver44 = 5,
+	/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
+	/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
+	/obj/item/gun/ballistic/revolver/widowmaker = 10,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 5,
+	/obj/item/melee/onehanded/knife/bowie = 20,
+	/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
+	/obj/item/gun/ballistic/revolver/hunting = 5,
+	/obj/item/gun/ballistic/rifle/repeater/trail = 10,
+	/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
+	/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
+	/obj/item/gun/ballistic/revolver/m2405 = 1,
+	/obj/item/gun/ballistic/revolver/sequoia = 1,
+	/obj/item/gun/ballistic/rifle/repeater/brush = 5
+)
+
+
+
+
 /// Themes loot spawners ///
 ////////////////////////////	-mix of crafting materials, guns, ammo, junk, sorted into themes. The sub-lists are further down in the document.
 
+/* this whole section is old code and much of it is broken with my new list changes. I don't think we are using any of this anyways
 /obj/effect/spawner/lootdrop/waste_loot_poor
 	name = "wasteloot poor"
 	loot = list(
@@ -168,7 +303,7 @@
 		/obj/item/twohanded/baseball/golfclub = 2,
 		/obj/item/melee/onehanded/machete/scrapsabre = 2,
 		/obj/item/twohanded/fireaxe/bmprsword = 2,
-		/obj/item/twohanded/sledgehammer = 2,
+		/obj/item/twohanded/sledgehammer/simple = 2,
 		/obj/item/twohanded/spear/scrapspear = 2,
 		/obj/item/twohanded/chainsaw = 1,
 		)
@@ -476,3 +611,4 @@
 		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn,
 		/obj/item/ammo_box/magazine/m10mm/adv/empty,
 		)
+*/

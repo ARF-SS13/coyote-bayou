@@ -74,7 +74,8 @@
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
 /obj/structure/sign/flag_texas
-	name = "Texas Flag"
+	name = "Tejaxicoana Flag"
+	desc = "Tejas. Mexico. Louisiana. Ancient places with no memory. The states that stood behind or near this flag are long gone, leaving a pale star on a white and red background. The meanings of its colors are forgotten by almost everyone, but the lone star shines."
 	icon_state = "flag_texas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
@@ -104,7 +105,8 @@
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
 /obj/structure/sign/flag_arkansas
-	name = "Arkansas Flag"
+	name = "Akansea Flag"
+	desc = "What is there to say of the flag so brave as to be so blood-dyed? It is a land now sun-bleached and ruined. To be quite honest, you don't understand how a word can be pronounced so differently from how it's spelled."
 	icon_state = "flag_arkansas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
@@ -120,11 +122,96 @@
 	name = "Gas Pump"
 	icon_state = "oilpump1X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
+	var/uses_left = 2
+	var/inuse = FALSE
+
+/obj/structure/gas_pump/oilpump1X/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
+		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+			return
+		inuse = TRUE //one at a time boys, this isn't some kind of weird party
+		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
+			inuse = FALSE
+			return //the tool fails this check, so stop
+		user.visible_message("[user] starts disassembling [src].")
+		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
+			inuse = FALSE
+			return //you can't use the tool, so stop
+		for(var/i1 in 1 to 2) //so, I hate waiting
+			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+				user.visible_message("[user] stops disassembling [src].")
+				inuse = FALSE
+				return //you did something, like moving, so stop
+			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
+			user.visible_message("[user] slices through a [fake_dismantle].")
+			I.play_tool_sound(src, 100)
+		var/turf/usr_turf = get_turf(user)
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
+			if(prob(25))
+				new /obj/item/salvage/low(usr_turf)
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
+			if(prob(10))
+				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
+			if(prob(5))
+				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
+		inuse = FALSE //putting this after the -- because the first check prevents cheesing
+		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump2X
 	name = "Gas Pump"
 	icon_state = "oilpump2X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
+
+	var/uses_left = 2
+	var/inuse = FALSE
+
+/obj/structure/gas_pump/oilpump2X/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
+		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+			return
+		inuse = TRUE //one at a time boys, this isn't some kind of weird party
+		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
+			inuse = FALSE
+			return //the tool fails this check, so stop
+		user.visible_message("[user] starts disassembling [src].")
+		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
+			inuse = FALSE
+			return //you can't use the tool, so stop
+		for(var/i1 in 1 to 2) //so, I hate waiting
+			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+				user.visible_message("[user] stops disassembling [src].")
+				inuse = FALSE
+				return //you did something, like moving, so stop
+			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
+			user.visible_message("[user] slices through a [fake_dismantle].")
+			I.play_tool_sound(src, 100)
+		var/turf/usr_turf = get_turf(user)
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
+			if(prob(25))
+				new /obj/item/salvage/low(usr_turf)
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
+			if(prob(10))
+				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
+			if(prob(5))
+				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
+		inuse = FALSE //putting this after the -- because the first check prevents cheesing
+		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump3X
 	name = "Gas Pump"
@@ -164,3 +251,341 @@
 	icon_state = "deer"
 	attack_verb = list("headbutt", "booped", "bapped", "bumped")
 	squeak_override = list('sound/items/deerplush.ogg' = 1)
+
+/obj/structure/bed/small_nest
+	name = "small nest"
+	desc = "A small round nest that looks soft"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon_state = "nest_chair"
+	max_integrity = 80
+
+/obj/structure/bed/big_nest
+	name = "big nest"
+	desc = "A big round nest that looks soft"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon_state = "nest_chair_large"
+	max_integrity = 80
+
+//alien coins from virgo
+
+/obj/item/coin/iron/strangecoin1
+	name = "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-p"
+
+/obj/item/coin/iron/strangecoin2
+	name = "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-g"
+
+/obj/item/coin/iron/strangecoin3
+	name = "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle-s"
+
+/obj/item/coin/iron/strangecoin4
+	name = "strange coin"
+	desc = "A strange triangle shaped coin."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "triangle"
+
+//Playground
+
+/obj/structure/playground/slide
+	name = "Slide"
+	desc = "A slide! Oh god, it's metal. Don't go down in the summer."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "slide"
+
+/obj/structure/playground/merrygoround
+	name = "Merry go Round!"
+	desc = "Speeeeen."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "merry_go_round"
+
+/obj/structure/playground/ride/brown
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "brown_ride"
+
+/obj/structure/playground/ride/white
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "white_ride"
+
+/obj/structure/playground/ride/white2
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "white2_ride"
+
+/obj/structure/playground/ride/black
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "black_ride"
+
+/obj/structure/playground/ride/red
+	name = "spring rider"
+	desc = "Bo-ing!"
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "red_ride"
+
+/obj/structure/playground/hopscotch_number
+	name = "hopscotch"
+	desc = "Hop to it."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "hopscotch_number"
+
+/obj/structure/playground/hopscotch
+	name = "hopscotch"
+	desc = "Hop to it."
+	icon = 'modular_coyote/icons/objects/playground64x32.dmi'
+	icon_state = "hopscotch"
+
+/obj/structure/playground/tireswing
+	name = "Tire swing"
+	desc = "Swing Low."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "tire_swing"
+
+/obj/structure/playground/seesaw
+	name = "See Saw"
+	desc = "For all your ups and downs in life."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "see_saw"
+
+/obj/structure/playground/sandbox
+	name = "Sandbox"
+	desc = "Gritty."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "sandbox"
+
+/obj/structure/playground/swings
+	name = "Swings"
+	desc = "Swing high! Swing low! Jump off and break your toe!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "swings"
+
+/obj/structure/playground/vollyball
+	name = "Vollyball"
+	desc = "What goes around comes around."
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "vollyball"
+
+/obj/structure/playground/monkeybars
+	name = "Monkey Bars"
+	desc = "Funny..there's no monkeys!"
+	icon = 'modular_coyote/icons/objects/playground100x100.dmi'
+	icon_state = "monkeybars"
+
+//Things from Mojave Sun, credit for the spirits go to them.
+
+//Rugs
+
+/obj/structure/rug/carpet
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet"
+
+/obj/structure/rug/carpet2
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet2"
+
+/obj/structure/rug/carpet3
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet3"
+
+/obj/structure/rug/carpet4
+	name = "run carpet"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
+	icon_state = "carpet4"
+
+//bigger rugs
+
+/obj/structure/rug/big/rug_rubber
+	name = "rubber rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_rubber"
+
+/obj/structure/rug/big/rug_rubber
+	name = "rubber rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_rubber"
+
+/obj/structure/rug/big/rug_fancy
+	name = "fancy rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_fancy"
+
+/obj/structure/rug/big/rug_red
+	name = "red rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_red"
+
+/obj/structure/rug/big/rug_yellow
+	name = "yellow rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_yellow"
+
+/obj/structure/rug/big/rug_blue_shag
+	name = "blue shag rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_blue_shag"
+
+/obj/structure/rug/big/rug_blue
+	name = "blue rug"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/64x64_rugs.dmi'
+	icon_state = "rug_blue"
+
+/obj/structure/rug/mat
+	name = "mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_blank"
+
+/obj/structure/rug/mat/welcome
+	name = "welcome mat"
+	desc = "Roll around on it!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mat_welcome"
+
+
+/obj/structure/props/micstand
+	name = "microphone stand"
+	desc = "A mic stand."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "micstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
+
+/obj/structure/nightstand
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand"
+	density = TRUE
+	opacity = TRUE
+	anchored = TRUE
+
+/obj/structure/nightstand/small
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_small"
+
+/obj/structure/nightstand/white
+	name = "Night Stand"
+	desc = "A night stand! Maybe even a one, night stand."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "nightstand_alt"
+
+//From Mojave sun, credit to them for the sprite
+/obj/structure/wood_counter
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter"
+
+/obj/structure/wood_counter/bend
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_bend"
+
+/obj/structure/wood_counter/intersect
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_intersect"
+
+/obj/structure/wood_counter/cross
+	name = "Wooden Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wood_counter_cross"
+
+/obj/structure/craft_counter
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter"
+
+/obj/structure/craft_counter/bend
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_bend"
+
+/obj/structure/craft_counter/intersect
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_intersect"
+
+/obj/structure/craft_counter/cross
+	name = "Crafted Counter"
+	desc = "Count your wood? Or is it wood your count.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "craft_counter_cross"
+
+/obj/structure/toilet_paper
+	name = "Toilet Paper Holder"
+	desc = "Look before you shit! I mean, sit!"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "paper_roller"
+
+/obj/structure/towel_rack
+	name = "Towel Rack"
+	desc = "People still use these?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "towel_rack"
+
+/obj/structure/mirror/alt
+	name = "mirror"
+	desc = "Mirror mirror on the wall, who's the most robust of them all?"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mirror"
+
+/obj/structure/cupboard
+	name = "cupboard"
+	desc = "Yep. It's a cupboard. Good job."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "cuboard"
+
+/obj/structure/sink/cupboard
+	name = "Sink Cupboard"
+	desc = "A rather nice looking sink. How quint."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "sink"
+
+/obj/structure/dvd_player
+	name = "Dvd Player"
+	desc = "An old and dusty looking machine. Maybe it even still works.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "dvd_player"
+
+/obj/item/coin/dvd
+	name = "Dvd"
+	desc = "A shiny disk! Don't scratch it."
+	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "dvd"

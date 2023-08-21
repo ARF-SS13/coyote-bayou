@@ -14,6 +14,7 @@
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
 	maxHealth = 100 
 	health = 100
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
@@ -149,7 +150,7 @@
 		'sound/f13npc/sentry/taunt6.ogg'
 		)
 	emote_taunt = list("spins its barrels")
-	aggrosound = list(
+	emote_taunt_sound = list(
 		'sound/f13npc/sentry/aggro1.ogg',
 		'sound/f13npc/sentry/aggro2.ogg',
 		'sound/f13npc/sentry/aggro3.ogg',
@@ -240,7 +241,7 @@
 	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	ranged = FALSE
 	see_in_dark = 8

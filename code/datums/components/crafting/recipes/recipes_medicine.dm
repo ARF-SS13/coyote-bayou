@@ -1,33 +1,34 @@
-/datum/crafting_recipe/redpotion
-	name = "Red Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/red
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 1,
-				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/redambrosia
+	name = "Elixir Vitae"
+	result = /obj/item/reagent_containers/pill/redambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 2,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 10,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
 
-/datum/crafting_recipe/bluepotion
-	name = "Blue Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/blue
-	reqs = list(/obj/item/reagent_containers/food/snacks/rawantbrain = 1,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/blueambrosia
+	name = "Elixir Mentem"
+	result = /obj/item/reagent_containers/pill/blueambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 1,
+				/obj/item/reagent_containers/food/snacks/grown/aloe = 10,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 10,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
 
-/datum/crafting_recipe/greenpotion
-	name = "Green Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/green
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/greenambrosia
+	name = "Elixir Animae"
+	result = /obj/item/reagent_containers/pill/greenambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 1,
+				/obj/item/fishy/eel = 5,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
@@ -36,8 +37,8 @@
 
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
-	result = /obj/item/stack/medical/gauze/adv/one
-	time = 50
+	result = /obj/item/stack/medical/gauze/adv/five
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/abraxo_cleaner/sterilizine = 10)
 	category = CAT_MEDICAL
@@ -46,7 +47,7 @@
 /datum/crafting_recipe/brute_pack
 	name = "Suture Pack"
 	result = /obj/item/stack/medical/suture/five
-	time = 50
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
@@ -62,7 +63,7 @@
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
 	result = /obj/item/stack/medical/mesh/five
-	time = 50
+	time = 40
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/medicine/silver_sulfadiazine = 10)
 	category = CAT_MEDICAL
@@ -88,7 +89,7 @@
 	result = /obj/item/reagent_containers/pill/bitterdrink
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
-				/obj/item/reagent_containers/food/drinks/bottle = 1)
+				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
@@ -99,7 +100,7 @@
 	result = /obj/item/storage/box/medicine/bitterdrink5
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
-				/obj/item/reagent_containers/food/drinks/bottle = 5)
+				/obj/item/reagent_containers/food/drinks = 5)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
@@ -137,7 +138,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/garlic = 2,   //Pungent garlic.
 				/obj/item/reagent_containers/food/snacks/grown/bee_balm = 2) //Beebalm was a smelling salt utilized in the victorian era for vaporous herbal remedies to things like sore throats.
 	tools = list(TOOL_ALCHEMY_TABLE)
-	time = 50
+	time = 40
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak // Heals the same amount as healing powder and bitters for its material cost, just more refined and faster.
@@ -150,6 +151,17 @@
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
+
+/datum/crafting_recipe/fake_stimpak
+	name = "Fake stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/fake
+	reqs = list(/datum/reagent/consumable/ketchup = 10,
+				/datum/reagent/consumable/cherryjelly = 10,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = TRUE
 
 /datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
 	name = "Stimpak (from chems)"
@@ -300,7 +312,7 @@
 /datum/crafting_recipe/extract_gaia
 	name = "Extract gaia"
 	result = /obj/item/reagent_containers/glass/bottle/gaia
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 6,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 20,
 	/datum/reagent/water = 50)
 	time = 20
 	tools = list(TOOL_ALCHEMY_TABLE)
@@ -315,7 +327,7 @@
 	/obj/item/crafting/lunchbox = 1,
 	/obj/item/stack/cable_coil = 30
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 
@@ -326,7 +338,7 @@
 	/obj/item/stock_parts/chem_cartridge/crafted = 1,
 	/datum/reagent/consumable/nutriment = 60
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
 
@@ -341,7 +353,7 @@
 	/obj/item/stack/crafting/electronicparts = 5,
 	/datum/reagent/consumable/nutriment = 60
 	)
-	time = 100
+	time = 75
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
 

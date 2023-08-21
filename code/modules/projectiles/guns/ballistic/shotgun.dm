@@ -14,21 +14,11 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_prefix = "shotgunpump"
-	icon_state = "shotgun"
+	icon_state = "pump"
 	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 
@@ -36,27 +26,15 @@
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
-	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
-	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+		/datum/firemode/semi_auto/slower
 	)
 
-
-/obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
+/* /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
 
 /obj/item/gun/ballistic/shotgun/can_shoot()
@@ -77,17 +55,17 @@
 	if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
 		user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
-
+ */
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
 		. = 1
 
-/obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
+/* /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
 		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
-	playsound(M, pump_sound, 60, 1)
+	playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -111,15 +89,15 @@
 	if (chambered)
 		. += "A [chambered.BB ? "live" : "spent"] one is in the chamber."
 
-/obj/item/gun/ballistic/shotgun/lethal
+ *//obj/item/gun/ballistic/shotgun/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 
-/// Pump if click with empty thing
+/* /// Pump if click with empty thing
 /obj/item/gun/ballistic/shotgun/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
 		attack_self(user)
 	else
-		..()
+		..() */
 
 /* * * * * * * * * * * * * *
  * Double barrel shotguns  *
@@ -133,44 +111,26 @@
  * Common
  * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun made in the post-war era."
+	name = "caravan rifle"
+	desc = "An over-under hunting rifle, for large game."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "caravan"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/caravan
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed,
 		/datum/firemode/burst/two/shotgun_fixed,
 	)
-
+	can_scope = TRUE
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
-	)
+
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter) | istype(A, /obj/item/twohanded/chainsaw))
@@ -204,19 +164,9 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
-	icon_prefix = "shotgundouble"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	w_class = WEIGHT_CLASS_BULKY
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -225,16 +175,6 @@
 	)
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
-	)
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -275,40 +215,30 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotpistol"
 	item_state = "357colt"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT | ITEM_SLOT_POCKET
-	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/single
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/shotgun_fixed
 	)
 
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
-	)
 
 /obj/item/gun/ballistic/revolver/shotpistol/update_icon_state()
 	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
 		icon_state = "[initial(icon_state)]-e"
 	else
 		icon_state = "[initial(icon_state)]"
+
+/obj/item/gun/ballistic/revolver/shotpistol/flair_gun
+	name = "Flair Gun"
+	desc = "This plastic orange flare gun has been reinforced with a high strength prewar alloy pipe insert, allowing it to fit a .50 bmg cartridge. Hopefully your hand is reinforced too."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "flaregun50_civ"
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/single/fifty
+
 
 /* * * * * * * * *
  * Pump shotguns *
@@ -326,21 +256,12 @@
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
-	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP //penis
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
@@ -366,28 +287,20 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
-	icon_prefix = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
+	
 	var/stock = FALSE
 	can_flashlight = TRUE
 	gunlight_state = "flightangle"
 	flight_x_offset = 23
 	flight_y_offset = 21
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
@@ -404,19 +317,23 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		slot_flags = ITEM_SLOT_BACK
+		slot_flags = INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_dat = getRecoil(RIFLE_RECOIL(2.2)[1],RIFLE_RECOIL(2.2)[2],RIFLE_RECOIL(2.2)[3])
+		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
-		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
+		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
-	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
+	var/datum/reskin/myskin = get_current_skin()
+	if(myskin)
+		icon_state = "[myskin?.icon_state][stock ? "" : "fold"]"
+	else
+		icon_state = "shotgunpolice[stock ? "" : "fold"]"
 
 /* * * * * * * * * * *
  * Trench shotgun
@@ -432,15 +349,8 @@
 	icon_state = "trench"
 	item_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 
@@ -449,7 +359,7 @@
 	knife_x_offset = 24
 	knife_y_offset = 22
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
@@ -459,6 +369,43 @@
 		icon_state = "[initial(icon_state)]"
 
 
+
+
+/* * * * * * * * * * * *
+* s163 minotaur shotgun
+* + pump action shotgun
+* + Can be supressed
+* + Common 'police' shotgun used by I.C police forces
+* - doesn't have a folding stock and can not be modified heavily like the police shotgun
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/shotgun/s163
+	name = "S163 Minotaur shotgun"
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 6+1 magazine tube capacity alongside a built in small ammo counter"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
+	icon_state = "s163"
+	item_state = "s163"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	can_scope = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_suppress = TRUE
+	casing_ejector = FALSE
+	spawnwithmagazine = TRUE
+	cock_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	init_recoil = SHOTGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+/obj/item/gun/ballistic/shotgun/
 /* * * * * * * * * * * *
  * Semi-auto shotguns  *
  * * * * * * * * * * * */
@@ -466,27 +413,11 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
-	)
+
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -510,26 +441,36 @@
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 
+	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
-/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/worn
+	name = " Venn Family Shotgun"
+	desc = "A semi automatic shotgun with a four round tube. Has an etching into the side."
+	icon_state = "auto5"
+	item_state = "shotgunauto5"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+	casing_ejector = TRUE // makes it eject casings -- and not need pumping!!!
+	fire_sound = 'sound/f13weapons/auto5.ogg'
+
+
+/* /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
-	src.pump(user)
+	src.pump(user) */
 
 /* * * * * * * * * * *
  * Lever-Action shotgun
@@ -539,32 +480,22 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
-	name = "lever action shotgun"
+	name = "mare's leg shotgun"
 	desc = "A speedy pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2 //can bump to T1 if this is too poor
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
-	can_bayonet = TRUE
+	can_bayonet = FALSE //doesn't need one, needs some disadvantage compared to a trench gun
 	bayonet_state = "bayonet"
 	knife_x_offset = 23
 	knife_y_offset = 23
@@ -581,24 +512,14 @@
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -615,24 +536,13 @@
 	desc = "A speedy lever action shotgun with a sunrise painted on the furnishings, morbid in context of it's purpose."
 	icon_state = "latribal"
 	item_state = "shotgunlever"
-	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -650,20 +560,11 @@
 	icon_state = "neostead"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_BASE
-	init_recoil = RIFLE_RECOIL(2.2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 
 	var/toggled = FALSE
@@ -713,23 +614,14 @@
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_FIRE_DELAY_SLOW
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_BASE
-	init_recoil = RIFLE_RECOIL(2.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
-
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * Riot shotgun
@@ -747,38 +639,15 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot"
-	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
-
-
-	automatic_burst_overlay = FALSE
-	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
-	)
-
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 1)
 
 /* * * * * * * * * * *
  * Jackhammer shotgun
@@ -794,36 +663,33 @@
 	item_state = "cshotgun1"
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	is_automatic = TRUE
-
-	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_SHOTGUN_BASE
-	init_recoil = RIFLE_RECOIL(2.8)
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = AUTOSHOTGUN_RECOIL(1, 0.8)
 
-	automatic = 1
-	w_class = WEIGHT_CLASS_BULKY
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(SHOTGUN_VOLUME),
-		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(SHOTGUN_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
-		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+// Ballistic Fist			Keywords: Damage max 42, Shotgun
+/obj/item/gun/ballistic/revolver/ballisticfist
+	name = "ballistic fist"
+	desc = "This powerfist has been modified to have two shotgun barrels welded to it, with the trigger integrated into the knuckle guard. For those times when you want to punch someone and shoot them in the face at the same time."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "ballisticfist"
+	item_state = "powerfist"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	weapon_class = WEAPON_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
 	)
+	init_recoil = SHOTGUN_RECOIL(1, 1)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting

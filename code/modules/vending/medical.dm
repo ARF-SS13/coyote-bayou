@@ -167,3 +167,46 @@
 					/obj/item/reagent_containers/glass/bottle/crank = 1)
 	default_price = PRICE_ALMOST_CHEAP
 	extra_price = PRICE_ALMOST_EXPENSIVE
+
+/obj/machinery/vending/medical/becomingnook
+	name = "\improper Becoming Nook"
+	desc = "A becoming nook. Useful for becoming an Aristocrat."
+	product_ads = "You are very becoming!;Implantations available, upgrade your license chip today."
+	product_slogans = "You are very becoming, Aristocrat."
+	products = list(/obj/item/implanter = 3,
+					/obj/item/implantcase/mindshield = 3,
+					/obj/item/implantcase/chem = 3,
+					/obj/item/implantcase/adrenaline = 3,
+					/obj/item/organ/heart/cybernetic = 5,
+					/obj/item/organ/liver/cybernetic = 5,
+					/obj/item/organ/eyes/robotic = 5,
+					/obj/item/organ/ears/cybernetic = 5,
+					/obj/item/organ/tongue/cybernetic = 5,
+					/obj/item/organ/lungs/cybernetic = 5,
+					/obj/item/organ/stomach = 5,
+					/obj/item/organ/liver/cybernetic = 5,
+					/obj/item/organ/cyberimp/arm/toolset = 5,
+					/obj/item/organ/cyberimp/arm/surgery = 5,
+					/obj/item/organ/cyberimp/arm/janitor = 5,
+					/obj/item/organ/cyberimp/arm/service = 5)
+	contraband = list(/obj/item/organ/cyberimp/arm/esword = 3)
+	premium = list(/obj/item/organ/heart/cybernetic/upgraded = 8,
+					/obj/item/organ/liver/cybernetic/upgraded = 8,
+					/obj/item/organ/eyes/robotic/glow = 8,
+					/obj/item/organ/eyes/robotic/flashlight = 2,
+					/obj/item/organ/eyes/robotic/shield = 8,
+					/obj/item/organ/cyberimp/brain/anti_stun = 8,
+					/obj/item/organ/cyberimp/brain/anti_drop = 8)
+	default_price = PRICE_ALMOST_EXPENSIVE
+	extra_price = PRICE_EXPENSIVE
+
+/obj/machinery/vending/medical/researchgrants
+	name = "\improper Research Grants"
+	desc = "A vendor that allows the clinic to purchase researchable documents for syncing up with other research facilities."
+	product_ads = ""
+	product_slogans = ""
+	products = list(/obj/item/blueprint/research = 5)
+	contraband = list()
+	premium = list(/obj/item/blueprint/research = 10)
+	default_price = PRICE_RESEARCH
+	extra_price = PRICE_RESEARCH_PLUS

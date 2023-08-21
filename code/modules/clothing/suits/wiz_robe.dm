@@ -2,35 +2,35 @@
 	name = "wizard hat"
 	desc = "Strange-looking hat-wear that most certainly belongs to a real magic user."
 	icon_state = "wizard"
-	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
-	permeability_coefficient = 0.01
-	strip_delay = 50
-	equip_delay_other = 50
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+//	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
+//	permeability_coefficient = 0.01
+//	strip_delay = 50
+//	equip_delay_other = 50
+//	resistance_flags = FIRE_PROOF | ACID_PROOF
 	dog_fashion = /datum/dog_fashion/head/blue_wizard
 	beepsky_fashion = /datum/beepsky_fashion/wizard
-	var/magic_flags = SPELL_WIZARD_HAT
+//	var/magic_flags = SPELL_WIZARD_HAT
 
-/obj/item/clothing/head/wizard/ComponentInitialize()
-	. = ..()
-	if(magic_flags)
-		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_HEAD)
+///obj/item/clothing/head/wizard/ComponentInitialize()
+//	. = ..()
+//	if(magic_flags)
+//		AddElement(/datum/element/spellcasting, magic_flags, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
-	desc = "Strange-looking red hat-wear that most certainly belongs to a real magic user."
+	desc = "Strange-looking red hat"
 	icon_state = "redwizard"
 	dog_fashion = /datum/dog_fashion/head/red_wizard
 
 /obj/item/clothing/head/wizard/yellow
 	name = "yellow wizard hat"
-	desc = "Strange-looking yellow hat-wear that most certainly belongs to a powerful magic user."
+	desc = "Strange-looking yellow hat"
 	icon_state = "yellowwizard"
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/black
 	name = "black wizard hat"
-	desc = "Strange-looking black hat-wear that most certainly belongs to a real skeleton. Spooky."
+	desc = "Strange-looking black wizard hat"
 	icon_state = "blackwizard"
 	dog_fashion = null
 
@@ -41,12 +41,18 @@
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
 	resistance_flags = FLAMMABLE
-	magic_flags = NONE
+//	magic_flags = NONE
 
 /obj/item/clothing/head/wizard/marisa
 	name = "witch hat"
 	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
 	icon_state = "marisa"
+	dog_fashion = null
+
+/obj/item/clothing/head/wizard/violet
+	name = "wizard hat"
+	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
+	icon_state = "violetwizard"
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/magus
@@ -55,7 +61,7 @@
 	icon_state = "magus"
 	item_state = "magus"
 	dog_fashion = null
-	magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
+//	magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
 
 /obj/item/clothing/head/wizard/santa
 	name = "Santa's hat"
@@ -69,21 +75,21 @@
 	desc = "A magnificent, gem-lined robe that seems to radiate power."
 	icon_state = "wizard"
 	item_state = "wizrobe"
-	gas_transfer_coefficient = 0.01
-	permeability_coefficient = 0.01
+//	gas_transfer_coefficient = 0.01
+//	permeability_coefficient = 0.01
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/teleportation_scroll)
+//	allowed = list(/obj/item/teleportation_scroll)
 	flags_inv = HIDEJUMPSUIT
-	strip_delay = 50
-	equip_delay_other = 50
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+//	strip_delay = 50
+//	equip_delay_other = 50
+//	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	var/magic_flags = SPELL_WIZARD_ROBE
+//	var/magic_flags = SPELL_WIZARD_ROBE
 
-/obj/item/clothing/suit/wizrobe/ComponentInitialize()
-	. = ..()
-	if(magic_flags)
-		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_OCLOTHING)
+///obj/item/clothing/suit/wizrobe/ComponentInitialize()
+//	. = ..()
+//	if(magic_flags)
+//		AddElement(/datum/element/spellcasting, magic_flags, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"
@@ -111,19 +117,19 @@
 
 /obj/item/clothing/suit/wizrobe/magusblue
 	name = "\improper Magus robe"
-	desc = "A set of armored robes that seem to radiate a dark power."
+	desc = "A set of wizard robes."
 	icon_state = "magusblue"
 	item_state = "magusblue"
 	mutantrace_variation = STYLE_DIGITIGRADE
-	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
+//	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 /obj/item/clothing/suit/wizrobe/magusred
 	name = "\improper Magus robe"
-	desc = "A set of armored robes that seem to radiate a dark power."
+	desc = "A set of wizard robes."
 	icon_state = "magusred"
 	item_state = "magusred"
 	mutantrace_variation = STYLE_DIGITIGRADE
-	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
+//	magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 /obj/item/clothing/suit/wizrobe/santa
 	name = "Santa's suit"
@@ -135,37 +141,37 @@
 /obj/item/clothing/suit/wizrobe/fake
 	desc = "A rather dull blue robe meant to mimick real wizard robes."
 	icon_state = "wizard-fake"
-	gas_transfer_coefficient = 1
-	permeability_coefficient = 1
+//	gas_transfer_coefficient = 1
+//	permeability_coefficient = 1
 	resistance_flags = FLAMMABLE
-	magic_flags = NONE
+//	magic_flags = NONE
 
 /obj/item/clothing/head/wizard/marisa/fake
 	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
 	resistance_flags = FLAMMABLE
-	magic_flags = NONE
+//	magic_flags = NONE
 
 /obj/item/clothing/suit/wizrobe/marisa/fake
 	desc = "Magic is all about the spell power, ZE!"
-	gas_transfer_coefficient = 1
-	permeability_coefficient = 1
+//	gas_transfer_coefficient = 1
+//	permeability_coefficient = 1
 	resistance_flags = FLAMMABLE
-	magic_flags = NONE
+//	magic_flags = NONE
 
 /obj/item/clothing/suit/wizrobe/paper
 	name = "papier-mache robe" // no non-latin characters!
 	desc = "A robe held together by various bits of clear-tape and paste."
 	icon_state = "wizard-paper"
 	item_state = "wizard-paper"
-	var/robe_charge = TRUE
-	actions_types = list(/datum/action/item_action/stickmen)
+//	var/robe_charge = TRUE
+//	actions_types = list(/datum/action/item_action/stickmen)
 
-/obj/item/clothing/suit/wizrobe/paper/item_action_slot_check(slot, mob/user, datum/action/A)
-	if(A.type == /datum/action/item_action/stickmen && slot != SLOT_WEAR_SUIT)
-		return FALSE
-	return ..()
+///obj/item/clothing/suit/wizrobe/paper/item_action_slot_check(slot, mob/user, datum/action/A)
+//	if(A.type == /datum/action/item_action/stickmen && slot != SLOT_WEAR_SUIT)
+//		return FALSE
+//	return ..()
 
 //Stickmemes. VV-friendly.
 /datum/action/item_action/stickmen
@@ -310,7 +316,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, ITEM_SLOT_HEAD)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
 	name = "battlemage helmet"
@@ -324,7 +330,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, ITEM_SLOT_OCLOTHING)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/attack_self(mob/user)
 	return

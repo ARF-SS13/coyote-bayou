@@ -68,6 +68,7 @@
 #define EXP_TYPE_ANTAG			"Antag"
 #define EXP_TYPE_SPECIAL		"Special"
 #define EXP_TYPE_GHOST			"Ghost"
+#define EXP_TYPE_BIKER			"Ashdown Overlook"
 #define EXP_TYPE_ADMIN			"Admin"
 //f13 stuff
 #define EXP_TYPE_FALLOUT		"Fallout"
@@ -107,3 +108,10 @@
 
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
+
+/// Changelog entries
+#define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
+
+/// The master Preferences Changelog to check the player's prefs against.
+/// includes a list of actions that need to be taken to update the player's prefs.
+#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE)

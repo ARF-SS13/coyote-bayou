@@ -4,7 +4,7 @@
 	icon_state = "magrifle"
 	item_state = "arg"
 	force = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/mmag
 	fire_sound = 'sound/weapons/magrifle.ogg'
 	can_suppress = FALSE
@@ -12,7 +12,6 @@
 	actions_types = null
 	fire_delay = 3
 	casing_ejector = FALSE
-	dualwield_spread_mult = 1.4
 	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/stock_parts/cell/cell
@@ -57,7 +56,7 @@
 
 /obj/item/gun/ballistic/automatic/magrifle/hyperburst
 	name = "\improper Hyper-Burst rifle"
-	desc = "An extremely beefed up version of a stolen Nanotrasen weapon prototype, this 'rifle' is more like a cannon, with an extremely large bore barrel capable of generating several smaller magnetic 'barrels' to simultaneously launch multiple projectiles at once."
+	desc = "An extremely beefed up version of a stolen US Government weapon prototype, this 'rifle' is more like a cannon, with an extremely large bore barrel capable of generating several smaller magnetic 'barrels' to simultaneously launch multiple projectiles at once."
 	icon_state = "hyperburst"
 	slot_flags = NONE //too lazy for the sprites rn and it's pretty stronk anyway.
 	mag_type = /obj/item/ammo_box/magazine/mhyper
@@ -76,12 +75,11 @@
 	desc = "A handgun utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon_state = "magpistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/mmag/small
 	fire_delay = 2
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
-	automatic_burst_overlay = FALSE
 
 /obj/item/gun/ballistic/automatic/magrifle/pistol/update_overlays()
 	. = ..()

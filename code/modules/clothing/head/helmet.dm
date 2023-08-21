@@ -108,14 +108,120 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+
+/obj/item/clothing/head/kevlarhelmet
+	name = "Base for kevlar helmets of various degrees"
+	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+
+/obj/item/clothing/head/kevlarhelmet/rus1
+	name = "Modern Russian helmet"
+	desc = "A modern Russian 6b47. Saw use pre-war by the Russian military. Mainly in use by slavic based wastelanders, it finds itself now in the bayou."
+	icon_state = "6b47rus"
+	item_state = "6b47rus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/rus2
+	name = "KGB Russian Helmet"
+	desc = "A STSh-81 Helmet. Instead of being made of titanium alloys, it's made of the normal materials one would find in a ballistic helmet. Somehow, it's found itself in the bayou. It's far from its original home."
+	icon_state = "kgbhelmet"
+	item_state = "kgbhelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/canadian
+	name = "Canadian Helmet"
+	desc = "A Canadian CG634 standard issue helmet. It saw use in the Canadian army. Now it ends up in this region. Far from the North it seems."
+	icon_state = "canadiancg634"
+	item_state = "canadiancg634"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/unitednation
+	name = "U.N Helmet"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue, perfect for sky camo and keeping peace."
+	icon_state = "unhelmet"
+	item_state = "unhelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/unitednation/medical
+	name = "U.N Medical Helmet"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue with a red medical cross"
+	icon_state = "unmedical"
+	item_state = "unmedical"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/newshelmet
+	name = "War Press helmet"
+	desc = "A war press helmet. This helmet saw use by pre-war War correspondents. Lets any shooters know you're just there to take a news and footage...if you have any cameras on you."
+	icon_state = "warpress"
+	item_state = "warpress"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/americandesert
+	name = "American desert helmet"
+	desc = "An desert themed PASGT American helmet. This saw heavy use in the Gulf War during pre-war times. This helmet's cover was repaired to pristine condition"
+	icon_state = "pasgtdesert"
+	item_state = "pasgtdesert"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/china1
+	name = "Modern Chinese helmet"
+	desc = "A QGF03 Chinese helmet. This helmet saw primary usage in the People's Liberation Army during pre-war times. The cover's been restored."
+	icon_state = "qgf03china"
+	item_state = "qgf03china"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/hueypilot
+	name = "Aircrew Helmet"
+	desc = "A aircrewmen helmet. This helmet is outfitted for pilot's and comes with a cool cosmetic microphone. As a pilot once said 'I love the smell of vertibird fuel in the evening'."
+	icon_state = "pilothelmet"
+	item_state = "pilothelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ghillie
+	name = "Ghillie helmet"
+	desc = "A steel helmet covered in the user's own macabre of leaves, grass, and flora patterns. Meant to disguise the wearer's head in grassy regions"
+	icon_state = "ghillie"
+	item_state = "ghillie"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ukhelmet
+	name = "MK6 Helmet"
+	desc = "A British MK6 helmet. It was outphased by the MK7, but the MK6 saw extensive use by the British military, PMCs, and foreign countries. Reliable, hardy, and cool looking. Who dares wins."
+	icon_state = "mk6"
+	item_state = "mk6"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/merekcustom
+	name = "salvaged battle helmet"
+	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material."
+	icon_state = "helmetalt"
+	item_state = "helmetalt"
+	armor = ARMOR_VALUE_LIGHT
+	can_flashlight = FALSE
+
+
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
-	name = "light security helmet"
-	desc = "A reliable, blue tinted helmet reminding you that you <i>still</i> owe that engineer a beer."
+	name = "Vault-Tec security helmet"
+	desc = "A light, open-faced helmet commonly worn by Vault-Tec security personnel."
 	icon_state = "blueshift"
 	item_state = "blueshift"
 
@@ -193,7 +299,7 @@
 
 /obj/item/clothing/head/helmet/swat/nanotrasen
 	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet with the Nanotrasen logo emblazoned on the top."
+	desc = "An extremely robust, space-worthy helmet with the US Government logo emblazoned on the top."
 	icon_state = "swat"
 	item_state = "swat"
 
@@ -252,6 +358,68 @@
 	item_state = "redtaghelm"
 	// Offer about the same protection as a hardhat.
 	dog_fashion = null
+
+/obj/item/clothing/head/helmet/unmchelmet
+	name = "Standard issue UNMC helmet"
+	desc = "A standard issued UNMC Helmet. The flashlight mount doesn't work and it has no visor. Despite that, it seems to be in good condition. Don't lose your head now, soldier."
+	icon_state = "unmch"
+	item_state = "unmch"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/toxinfil
+	name = "Gen 3 Leo MIRAGE Helmet"
+	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	icon_state = "custominfil"
+	item_state = "custominfil"
+
+/obj/item/clothing/head/helmet/unmchelmet/medic
+	name = "Standard issue UNMC Medical Helmet"
+	desc = "A standard issued UNMC Helmet, this one seems to be resembling that of a medical personal's color scheme with a white paint and a red cross."
+	icon_state = "unmcmh"
+	item_state = "unmcmh"
+	flags_inv = HIDEHAIR
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+/obj/item/clothing/head/helmet/retrohazmathelmet
+	name = "Old Hazmat helmet"
+	desc = "A old style hazmat helmet. It's a bit well worn and the visor has a crack on it. But other than that, it seems to still work."
+	icon_state = "rhazhelm"
+	item_state = "rhazhelm"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_ENV_T4) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/unmcstealthhelmet
+	name = "American infiltrator helmet"
+	desc = "A helmet belonging, albeit dysfunctional, to the American stealth suit. Now when you get to look cool while chanting 'USA' from the shadows"
+	icon_state = "usainfilhelm"
+	item_state = "usainfilhelm"
+	flags_inv = HIDEHAIR|HIDESNOUT
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/unmcwinterhelmet
+	name = "Winter UNMC Helmet"
+	desc = "A standard issued UNMC Helmet.This version seems to have white paint all over it, a type of camoflauge. As an added bonus, it seems a bit more sturdy to laser based weaponary. The flashlight mount doesn't work and it has no visor. Despite that, it seems to be in good condition. Don't lose your head now, soldier."
+	icon_state = "unmcwh"
+	item_state = "unmcwh"
+	flags_inv = HIDEHAIR
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 , ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
 
 /obj/item/clothing/head/helmet/bluetaghelm
 	name = "blue laser tag helmet"

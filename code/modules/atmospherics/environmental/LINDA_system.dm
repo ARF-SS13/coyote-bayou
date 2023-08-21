@@ -112,14 +112,19 @@
 	return adjacent_turfs
 
 /atom/proc/air_update_turf(command = 0)
+	return
+	/*
 	if(!isturf(loc) && command)
 		return
 	var/turf/T = get_turf(loc)
 	T.air_update_turf(command)
-
+	*/
 /turf/air_update_turf(command = 0)
+	return
+	/*
 	if(command)
 		ImmediateCalculateAdjacentTurfs()
+	*/
 
 /atom/movable/proc/move_update_air(turf/T)
 	if(isturf(T))

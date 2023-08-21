@@ -15,8 +15,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 5
 	melee_damage_upper = 14
 	attack_verb_simple = "clobbers"
@@ -27,6 +27,12 @@
 	status_flags = CANPUSH
 	del_on_death = FALSE
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
+	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
+	loot_drop_amount = 2
+	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
+	loot_amount_random = TRUE
+	/// slots in a list of trash loot
+	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 2
 	melee_queue_distance = 5
@@ -42,6 +48,11 @@
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
+
+/mob/living/simple_animal/hostile/raider/Initialize()
+	. = ..()
+	if(random_trash_loot)
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -97,8 +108,8 @@
 	icon_living = "raider_ranged"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
@@ -110,7 +121,8 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
@@ -140,6 +152,9 @@
 	obj_damage = 300
 	rapid_melee = 1
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
+	loot_drop_amount = MOB_LOOT_ALL
+	loot_amount_random = FALSE
+	random_trash_loot = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 // LEGENDARY RANGED RAIDER
@@ -161,6 +176,9 @@
 	extra_projectiles = 1
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29, /obj/item/stack/f13Cash/random/high)
+	loot_drop_amount = MOB_LOOT_ALL
+	loot_amount_random = FALSE
+	random_trash_loot = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -188,15 +206,19 @@
 	waddle_up_time = 2
 	waddle_side_time = 1
 	ranged_cooldown_time = 2 SECONDS
-	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/simple
-	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/bullet/c10mm/improvised
+	loot = list(/obj/item/gun/ballistic/automatic/smg/smg10mm, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
+	loot_drop_amount = MOB_LOOT_ALL
+	loot_amount_random = FALSE
+	random_trash_loot = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
 	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	despawns_when_lonely = FALSE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
@@ -296,7 +318,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
 	speak_emote = list(
 		"mutters",
-		"counts his caps to himself",
+		"counts his coins to himself",
 		"yells at someone to pick up the pace",
 		"barks",
 		"grumbles",
@@ -346,6 +368,7 @@
 	projectiletype = /obj/item/projectile/bullet/c45/simple
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 5
 	footstep_type = FOOTSTEP_MOB_SHOE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -364,9 +387,10 @@
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 1
 
@@ -386,6 +410,7 @@
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/medium/combat/rusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 5
 	footstep_type = FOOTSTEP_MOB_SHOE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -421,6 +446,7 @@
 	health = 125
 	rapid_melee = 1
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 
@@ -443,6 +469,7 @@
 	melee_damage_lower = 12
 	melee_damage_upper = 37
 	loot = list(/obj/item/twohanded/spear)
+	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 1
 
@@ -470,6 +497,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 37
 	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 5
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /////////////
@@ -506,6 +534,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 38
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot_drop_amount = 5
 
 /mob/living/simple_animal/hostile/raider/junker/creator
 	name = "Junker Field Creator"
@@ -530,6 +559,7 @@
 	var/spawn_time = 15 SECONDS
 	var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot_drop_amount = 5
 
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
@@ -570,4 +600,232 @@
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	loot_drop_amount = 10
+	loot_amount_random = FALSE
 
+
+// Cultist Stuff
+
+/mob/living/simple_animal/hostile/raider/cultist/melee
+	name = "Cultist Shredder"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cult_axeghoul"
+	icon_living = "cult_axeghoul"
+	icon_dead = "cult_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	turns_per_move = 5
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 80
+	health = 80
+	melee_damage_lower = 10
+	melee_damage_upper = 24
+	attack_verb_simple = "clobbers"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	a_intent = INTENT_HARM
+	faction = list("raider", "hostile")
+	check_friendly_fire = TRUE
+	status_flags = CANPUSH
+	del_on_death = FALSE
+	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 2
+	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 1.5
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
+	retreat_distance = 1 //mob retreats 1 tile when in min distance
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged
+	name = "Cultist Gunner"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist_pistol"
+	icon_living = "cultist_pistol"
+	icon_dead = "cultist_dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	faction = list("raider", "hostile")
+	maxHealth = 85
+	health = 85
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/bullet/c10mm/simple
+	projectilesound = 'sound/f13weapons/ninemil.ogg'
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/n99, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 3
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/shotgun
+	name = "Cultist Crowd Controller"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist_shotgun"
+	icon_living = "cultist_shotgun"
+	icon_dead = "cultist_dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 80
+	health = 80
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 4 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	extra_projectiles = 1
+	loot = list(/obj/item/gun/ballistic/shotgun/trench, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 6
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/smg
+	name = "Cultist Bulletmage"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist2_smg"
+	icon_living = "cultist2_smg"
+	icon_dead = "cultist2_dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 80
+	health = 80
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 1 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/bullet/c22
+	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	extra_projectiles = 2
+	loot = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22, /obj/item/stack/f13Cash/random/med)
+	loot_drop_amount = 8
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/tesla
+	name = "Cultist Lasermage"
+	desc = "A nightmare in a robe. Now with 100% less conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist3_tesla"
+	icon_living = "cultist3_tesla"
+	icon_dead = "cultist3_dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 150
+	health = 150
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/energy/teslacannon/oasis
+	projectilesound = 'sound/weapons/resonator_fire.ogg'
+	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
+	extra_projectiles = 2
+	loot = list(/obj/item/gun/energy/laser/auto/oasis, /obj/item/stack/f13Cash/random/high)
+	loot_drop_amount = 8
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/raider/cultist/ranged/radiation
+	name = "Cultist Converter"
+	desc = "A nightmare in a robe. Now with 69% more conversion!"
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
+	icon_state = "cultist3_tesla"
+	icon_living = "cultist3_tesla"
+	icon_dead = "cultist3_dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 150
+	health = 150
+	rapid_melee = 2
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot
+	retreat_distance = 4 //mob retreats 1 tile when in min distance
+	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	projectiletype = /obj/item/projectile/energy/nuclear_particle
+	projectilesound = 'sound/weapons/resonator_fire.ogg'
+	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
+	extra_projectiles = 1
+	loot = list(/obj/item/gun/energy/gammagun, /obj/item/stack/f13Cash/random/high)
+	loot_drop_amount = 10
+	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)

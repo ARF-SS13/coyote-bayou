@@ -240,8 +240,8 @@
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
 	visor_flags_cover = MASKCOVERSMOUTH
-	slot_flags = ITEM_SLOT_MASK
-	adjusted_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_MASK
+	adjusted_flags = INV_SLOTBIT_HEAD
 	icon_state = "bandbotany"
 	mutantrace_variation = STYLE_MUZZLE
 
@@ -255,7 +255,7 @@
 		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_WEAR_MASK) == src))
 			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
 			return
-	if(slot_flags & ITEM_SLOT_HEAD)
+	if(slot_flags & INV_SLOTBIT_HEAD)
 		to_chat(user, span_warning("You must undo [src] before you can tie it into a neckerchief!"))
 	else
 		if(user.is_holding(src))

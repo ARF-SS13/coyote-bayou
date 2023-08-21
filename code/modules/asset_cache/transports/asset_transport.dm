@@ -60,6 +60,9 @@
 /datum/asset_transport/proc/get_asset_url(asset_name, datum/asset_cache_item/asset_cache_item)
 	if (!istype(asset_cache_item))
 		asset_cache_item = SSassets.cache[asset_name]
+	
+	if(!asset_cache_item)
+		return // stop.
 	// To ensure code that breaks on cdns breaks in local testing, we only
 	// use the normal filename on legacy assets and name space assets.
 	var/keep_local_name = dont_mutate_filenames \

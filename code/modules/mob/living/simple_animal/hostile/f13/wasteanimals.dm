@@ -85,6 +85,349 @@
 		"min_n2" = 0,
 		"max_n2" = 0
 		)
+	faction = list("gecko", "critter-friend") // critter-friend is a flag for related beast friend/master quirk. Makes hostile mob passive for quirk holder.
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_CLAW
+	idlesound = list(
+		'sound/f13npc/gecko/geckocall1.ogg',
+		'sound/f13npc/gecko/geckocall2.ogg',
+		'sound/f13npc/gecko/geckocall3.ogg',
+		'sound/f13npc/gecko/geckocall4.ogg',
+		'sound/f13npc/gecko/geckocall5.ogg'
+		)
+
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(30, 35, 40, 45),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/mob/living/simple_animal/hostile/gecko/become_the_mob(mob/user)
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
+
+//Fire Geckos//
+
+/mob/living/simple_animal/hostile/gecko/fire
+	name = "fire spitter gecko"
+	desc = "A large mutated reptile with sharp teeth and a warm disposition. Sorta smells like sulphur."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
+		/obj/item/stack/sheet/animalhide/gecko = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 35
+	health = 35
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 4
+	melee_damage_upper = 12
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 8
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	pass_flags = PASSTABLE
+	speak_emote = list(
+		"squeaks",
+		"cackles",
+		"snickers",
+		"shriek",
+		"scream",
+		"skrem",
+		"scrambles",
+		"warbles",
+		"chirps",
+		"cries",
+		"kyaas",
+		"chortles",
+		"gecks"
+		)
+	emote_see = list(
+		"screeches",
+		"licks its eyes",
+		"twitches",
+		"scratches its frills",
+		"gonks",
+		"honks",
+		"scronks",
+		"sniffs",
+		"gecks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"tears at",
+		"dabs",
+		"scratches",
+		"gnaws",
+		"chews",
+		"chomps",
+		"lunges",
+		"gecks"
+		)
+	atmos_requirements = list(
+		"min_oxy" = 5,
+		"max_oxy" = 0,
+		"min_tox" = 0,
+		"max_tox" = 1,
+		"min_co2" = 0,
+		"max_co2" = 5,
+		"min_n2" = 0,
+		"max_n2" = 0
+		)
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_CLAW
+	ranged = TRUE
+	check_friendly_fire = TRUE
+	projectiletype = /obj/item/projectile/geckofire
+	projectilesound = 'sound/magic/fireball.ogg'
+
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 40, 40, 255, 45, 45),
+		MOB_SPEED_LIST(2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(28, 30, 32),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2, 3),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/mob/living/simple_animal/hostile/gecko/fire/Initialize()
+	.=..()
+	resize = 0.8
+	update_transform()
+
+
+/* firey gecko spit
+ * DAMAGE: 5
+ * STAMIN: 5
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
+/obj/item/projectile/geckofire
+	name = "flaming gecko spit"
+	icon = 'icons/effects/fire.dmi'
+	icon_state = "3"
+	range = 4
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_DAMAGE_FIRE
+	stamina = BULLET_STAMINA_SHOTGUN_PELLET * BULLET_STAMINA_FIRE
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET * BULLET_WOUND_FIRE
+	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET * 0.35
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+/obj/item/projectile/geckofire/on_hit(atom/target)
+	. = ..()
+	if(prob(1))
+		name = "flaming gecko yartz"
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(2)
+		if(M.fire_stacks > 2)
+			M.IgniteMob()
+
+
+//Smaller Legacy Geckos//
+//Faster and more aggressive than normal geckos, but also easier even squishier.
+
+/mob/living/simple_animal/hostile/gecko/legacy
+	name = "newt"
+	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way."
+	icon = 'icons/fallout/mobs/legacymobs.dmi'
+	icon_state = "legacy_gecko"
+	icon_living = "legacy_gecko"
+	icon_dead = "legacy_gecko_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	randpixel = 8
+	density = FALSE
+	sidestep_per_cycle = 2
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
+		/obj/item/stack/sheet/animalhide/gecko = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 35
+	health = 35
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 7
+	melee_damage_upper = 18
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 7
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 1
+	pass_flags = PASSTABLE
+	speak_emote = list(
+		"squeaks",
+		"cackles",
+		"snickers",
+		"shriek",
+		"scream",
+		"skrem",
+		"scrambles",
+		"warbles",
+		"chirps",
+		"cries",
+		"kyaas",
+		"chortles",
+		"gecks"
+		)
+	emote_see = list(
+		"screeches",
+		"licks its eyes",
+		"twitches",
+		"scratches its frills",
+		"gonks",
+		"honks",
+		"scronks",
+		"sniffs",
+		"gecks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"tears at",
+		"dabs",
+		"scratches",
+		"gnaws",
+		"chews",
+		"chomps",
+		"lunges",
+		"gecks"
+		)
+	atmos_requirements = list(
+		"min_oxy" = 5,
+		"max_oxy" = 0,
+		"min_tox" = 0,
+		"max_tox" = 1,
+		"min_co2" = 0,
+		"max_co2" = 5,
+		"min_n2" = 0,
+		"max_n2" = 0
+		)
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_CLAW
+
+	sound_pitch = 70
+	vary_pitches = list(40, 80)
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
+	
+	
+/mob/living/simple_animal/hostile/gecko/legacy/alpha
+	name = "alpha newt"
+	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way. This one's drooling a lot and looks sort of tired."
+	icon = 'icons/fallout/mobs/legacymobs.dmi'
+	icon_state = "legacy_gecko2"
+	icon_living = "legacy_gecko2"
+	icon_dead = "legacy_gecko_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
+		/obj/item/stack/sheet/animalhide/gecko = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 35
+	health = 35
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 7
+	melee_damage_upper = 18
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 9
+	
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -96,27 +439,97 @@
 		'sound/f13npc/gecko/gecko_charge2.ogg',
 		'sound/f13npc/gecko/gecko_charge3.ogg'
 		)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/gecko
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
-
-
 
 	variation_list = list(
-		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
-		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(30, 35, 40, 45),
-		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
-		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_COLOR_VARIATION(180, 255, 255, 255, 255, 255), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(30, 35, 40),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		)
+
+/mob/living/simple_animal/hostile/gecko/legacy/alpha/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
+
+/mob/living/simple_animal/hostile/gecko/big
+	name = "big gecko"
+	name = "big gecko"
+	desc = "A large mutated reptile with sharp teeth. This one's pretty big, but its eyes seem clouded and it moves a bit clumsily."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 6,
+		/obj/item/stack/sheet/animalhide/gecko = 2)
+	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 35
+	health = 35
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 12
+	melee_damage_upper = 24
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 4
+	vision_range = 4
+
+
+	faction = list("gecko")
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_HEAVY
+
+	sound_pitch = -75
+	vary_pitches = list(-100, -80)
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	emote_taunt_sound = list('sound/f13npc/gecko/gecko_alert.ogg')
+	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+	can_ghost_into = TRUE // not a bad idea at all
+	desc_short = "Short, angry, and as confused as they are tasty."
+	desc_important = "Still in development! Report wierdness on the discord!"
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(120, 80, 80, 250, 100, 100), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
+		MOB_SPEED_LIST(2.5, 2.8, 3.0),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
+		MOB_HEALTH_LIST(100, 110, 120),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
+		MOB_MINIMUM_DISTANCE_LIST(1, 2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
 	)
+
+/mob/living/simple_animal/hostile/gecko/big/Initialize()
+	.=..()
+	resize = 1.5
+	update_transform()
 
 /mob/living/simple_animal/hostile/gecko/playable
 	health = 40
@@ -124,7 +537,7 @@
 	speed = 0
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -135,6 +548,8 @@
 
 /// Testing its randomness
 /mob/living/simple_animal/hostile/gecko/debug
+	sound_pitch = 100
+	vary_pitches = list(-200, 200)
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),\
@@ -150,6 +565,22 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
+
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1)),
+		MOB_HEALTH_LIST(50),
+		MOB_RETREAT_DISTANCE_LIST(4),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(2),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
+
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug/stamcrit/Initialize()
+	. = ..()
+	new /obj/item/gun/energy/disabler/debug(get_turf(src))
 
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	. = ..()
@@ -187,8 +618,15 @@
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
 
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
 	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -214,12 +652,16 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 
+/mob/living/simple_animal/hostile/stalker/Initialize()
+	. = ..()
+	recenter_wide_sprite()
+
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 80
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -231,7 +673,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -269,14 +711,14 @@
 	attack_verb_simple = "bites"
 	speak_emote = list("howls")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("nightstalkers", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 	emote_taunt_sound = list('sound/f13npc/nightstalker/taunt1.ogg', 'sound/f13npc/nightstalker/taunt2.ogg')
 	emote_taunt = list("growls", "snarls")
-	aggrosound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
+	emote_taunt_sound = list('sound/f13npc/nightstalker/aggro1.ogg', 'sound/f13npc/nightstalker/aggro2.ogg', 'sound/f13npc/nightstalker/aggro3.ogg')
 	idlesound = list('sound/f13npc/nightstalker/idle1.ogg')
 	death_sound = 'sound/f13npc/nightstalker/death.ogg'
 	attack_sound = 'sound/f13npc/nightstalker/attack1.ogg'
@@ -289,7 +731,7 @@
 	maxHealth = 80
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -302,7 +744,50 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+
+/datum/reagent/toxin/rattler_venom
+	name = "rattler venom"
+	description = "A dangerous venom that causes intense pain and internal bleeding."
+	reagent_state = LIQUID
+	color = "#801E28" // rgb: 128, 30, 40
+	toxpwr = 0.5
+	taste_description = "pain"
+	taste_mult = 1.3
+	var/base_bleed = 15
+	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 250 // Losing a multiple of this much will stack on an extra divisor
+
+/datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
+	var/divisor = 1
+	var/blood_i_lost = clamp(BLOOD_VOLUME_NORMAL - M.get_blood(), 0, BLOOD_VOLUME_NORMAL)
+	while(blood_i_lost > blood_loss_tier)
+		blood_i_lost -= blood_loss_tier
+		divisor *= bleed_tier_divisor
+	var/blood_to_lose = max(round(base_bleed / max(divisor,1)), 1)
+	M.bleed(blood_to_lose)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
+	..()
+
+/datum/reagent/toxin/rattler_venom/on_mob_life_synth(mob/living/M)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
+	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -334,7 +819,7 @@
 	desc = "A surprisingly high quality steak that could come in a variety of textures and may taste of either good chicken or rich beef"
 
 /////////////
-// MOLERAT //
+// MOLERAT //  It's time ~TK
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
@@ -372,15 +857,180 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
+	emote_taunt_sound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
 	desc_short = "Small, squishy, and numerous."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
 
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(5),
+		MOB_HEALTH_LIST(15, 20, 25, 26),
+		MOB_RETREAT_DISTANCE_LIST(0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+	)
+
+/mob/living/simple_animal/hostile/molerat/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/molerat
+	. = ..()
+
+/mob/living/simple_animal/hostile/gelcube
+	name = "gelatinous cube"
+	desc = "A big green radioactive cube creature, it jiggles with menacing wiggles and is making some sort of goofy face at you."
+	icon = 'modular_coyote/icons/mob/vatgrowing.dmi'
+	icon_state = "gelatinous"
+	icon_living = "gelatinous"
+	icon_dead = "gelatinous_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	can_ghost_into = TRUE
+	speak_chance = 0
+	turns_per_move = 10
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	butcher_difficulty = 1.5
+	loot = list(/obj/item/stack/f13Cash/random/med)
+	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
+	loot_drop_amount = 10
+	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
+	loot_amount_random = TRUE
+	/// slots in a list of trash loot
+	var/random_trash_loot = TRUE
+	response_help_simple = "jiggles"
+	response_disarm_simple = "wiggles"
+	response_harm_simple = "shakes"
+	taunt_chance = 30
+	speed = 12
+	maxHealth = 850
+	health = 850
+	harm_intent_damage = 30
+	obj_damage = 15
+	melee_damage_lower = 35
+	melee_damage_upper = 45
+	move_to_delay = 12
+	attack_verb_simple = "goops"
+	attack_sound = 'sound/effects/attackblob.ogg'
+	speak_emote = list("glorbles")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("the tungsten cube") //at last, I am at peace ~TK
+	gold_core_spawnable = HOSTILE_SPAWN
+	a_intent = INTENT_HARM
+
+	emote_taunt_sound = list('sound/effects/bubbles.ogg')
+	emote_taunt = list("blorgles")
+	emote_taunt_sound = list('sound/misc/splort.ogg')
+	idlesound = list('sound/vore/prey/squish_01.ogg') //God forgive me for what I must do. Its just a perfect sound. ~TK
+	death_sound = 'sound/misc/crack.ogg'
+	waddle_amount = 4
+	waddle_up_time = 3
+	waddle_side_time = 2
+	desc_short = "Big, squishy, and gelatinous."
+
+/mob/living/simple_animal/hostile/gelcube/Initialize()
+	. = ..()
+	if(random_trash_loot)
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+
+
+////////////
+//T-Birds//
+//////////
+
+/mob/living/simple_animal/hostile/bloodbird
+	name = "Blood Bird"
+	desc = "A large mutated turkey vulture."
+	icon = 'icons/fallout/mobs/animals/bloodbird.dmi'
+	icon_state = "bloodbird"
+	icon_living = "bloodbird"
+	icon_dead = "bloodbird_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak_chance = 0
+	turns_per_move = 5
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
+		/obj/item/feather = 3)
+	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	butcher_difficulty = 1
+	response_help_simple = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple = "hits"
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 100
+	health = 100
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 9
+	vision_range = 8
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 1
+	pass_flags = PASSTABLE
+	speak_emote = list(
+		"cackles",
+		"squawks",
+		"clacks",
+		)
+	emote_see = list(
+		"screeches",
+		"gonks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"rends",
+		"mutilates"
+		)
+	faction = list("terror bird")
+	a_intent = INTENT_HARM
+	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	idlesound = list(
+		'sound/creatures/terrorbird/clack1.ogg',
+		'sound/creatures/terrorbird/clack2.ogg',
+		'sound/creatures/terrorbird/clack3.ogg',
+		)
+
+	emote_taunt = list("screeches")
+	emote_taunt_sound = list(
+		'sound/creatures/terrorbird/hoot1.ogg',
+		'sound/creatures/terrorbird/hoot2.ogg',
+		'sound/creatures/terrorbird/hoot3.ogg',
+		'sound/creatures/terrorbird/hoot4.ogg',
+		)
+	emote_taunt_sound = list(
+		'sound/creatures/terrorbird/growl1.ogg',
+		'sound/creatures/terrorbird/growl2.ogg',
+		'sound/creatures/terrorbird/growl3.ogg',
+		)
+	death_sound = list(
+		'sound/creatures/terrorbird/groan1.ogg',
+		'sound/creatures/terrorbird/groan2.ogg',
+	)
+	can_ghost_into = FALSE //One day Kotetsu will return to us. ~TK
+	desc_short = "What a terrifying bird."
+	
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(80, 90, 100, 110),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 1),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(90),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(90),
+	)

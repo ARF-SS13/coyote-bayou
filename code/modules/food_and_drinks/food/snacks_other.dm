@@ -403,7 +403,6 @@
 	force = 20
 	throwforce = 10
 	block_chance = 50
-	armour_penetration = 0.95
 	attack_verb = list("slapped", "slathered")
 	w_class = WEIGHT_CLASS_BULKY
 	tastes = list("cherry" = 1, "crepe" = 1)
@@ -675,6 +674,13 @@
 			burn()
 	..()
 
+/obj/item/reagent_containers/food/snacks/welding_fuel
+	name = "Processed Welding Fuel"
+	desc = "A bottle of processed welding fuel, perfect for long road trips."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle3"
+	list_reagents = list(/datum/reagent/fuel = 30)
+
 //Easter Stuff
 
 /obj/item/reagent_containers/food/snacks/chocolatebunny
@@ -896,4 +902,27 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("peppers" = 1, "salsa" = 3, "tortilla chips" = 1, "onion" = 1)
 	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/popcorn/caramel
+	name = "caramel popcorn"
+	icon_state = "caramel_popcorn"
+	desc = "Caramel-covered popcorn. Sweet!"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/consumable/caramel = 4,
+	)
+	tastes = list("caramel" = 2, "popcorn" = 1)
+	foodtype = JUNKFOOD | SUGAR
+
+/obj/item/reagent_containers/food/snacks/moth_cheese_cakes
+	name = "\improper ælorölen" //ælo = cheese, rölen = balls
+	desc = "Ælorölen (cheese balls) are a traditional mothic dessert, made of soft cheese, powdered sugar and flour, rolled into balls, battered and then deep fried. They're often served with either chocolate sauce or honey, or sometimes both!"
+	icon_state = "moth_cheese_cakes"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment =8,
+		/datum/reagent/consumable/sugar = 12,
+	)
+	tastes = list("cheesecake" = 1, "chocolate" = 1, "honey" = 1)
+	foodtype = SUGAR | FRIED | DAIRY | GRAIN
 	w_class = WEIGHT_CLASS_SMALL

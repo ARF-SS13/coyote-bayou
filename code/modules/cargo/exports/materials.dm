@@ -1,5 +1,5 @@
 /datum/export/material
-	k_elasticity = 0
+	k_elasticity = 1/1000
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
@@ -33,7 +33,7 @@
 	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
-	cost = 100
+	cost = 25 //way too common to be uber valuable
 	material_id = /datum/material/plasma
 	message = "cm3 of ultracite"
 
@@ -53,7 +53,7 @@
 	message = "cm3 of silver"
 
 /datum/export/material/titanium
-	cost = 60
+	cost = 12 //titanium is everywhere on our server
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 	export_types = list(/obj/item/stack/sheet/mineral/titanium)
@@ -70,7 +70,7 @@
 	material_id = /datum/material/iron
 	export_types = list(
 		/obj/item/stack/sheet/metal, /obj/item/stack/tile/plasteel,
-		/obj/item/stack/sheet/plasteel, /obj/item/stack/rods, 
+		/obj/item/stack/sheet/plasteel, /obj/item/stack/rods,
 		/obj/item/stack/ore, /obj/item/coin)
 
 /datum/export/material/glass
@@ -87,11 +87,13 @@
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
 	/obj/item/ingot/adamantine)
 
-/* /datum/export/material/prewar
+/* 
+/datum/export/material/prewar
 	cost = 15
 	material_id = /datum/material/prewar
 	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar) */
+	export_types = (/obj/item/stack/sheet/prewar) 
+*/
 
 /datum/export/material/mythril
 	cost = 1000
@@ -100,8 +102,9 @@
 
 /datum/export/material/bscrystal
 	cost = 150
-	message = "cm3 of bluespace crystals"
+	message = "cm3 of ultracite crystals"
 	material_id = /datum/material/bluespace
+	export_types = list(/obj/item/stack/sheet/bluespace_crystal)
 
 /datum/export/material/runite
 	cost = 300
@@ -109,37 +112,105 @@
 	material_id = /datum/material/runite
 
 /datum/export/material/leather
-	cost = 7
+	cost = 20
+	message = " "
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
+	k_elasticity = 1/1000
+
+/datum/export/material/expalloy
+	cost = 100 // Limited, unless clinic goes out of their way, which takes time.
+	message = " "
+	unit_name = "polymer alloy"
+	material_id = /datum/material/leather
+	export_types = list(/obj/item/stack/sheet/mineral/abductor)
 
 /datum/export/material/bone
-	cost = 3
+	cost = 20
+	message = " "
 	unit_name = "bone"
 	material_id = /datum/material/bone
 	export_types = list(/obj/item/stack/sheet/bone)
 
 /datum/export/material/sinew
-	cost = 3
+	cost = 10
+	message = " "
 	unit_name = "pieces of sinew"
 	material_id = /datum/material/sinew
 	export_types = list(/obj/item/stack/sheet/sinew)
 
 /datum/export/material/chitin
-	cost = 4
+	cost = 100
+	message = " "
 	unit_name = "pieces of chitin"
 	material_id = /datum/material/chitin
 	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
 
 /datum/export/material/f13cash
-	cost = 2
-	unit_name = "caps"
+	cost = 10
+	message = ""
+	unit_name = "copper coin"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
 
+/datum/export/material/f13cash/silver
+	cost = 100
+	unit_name = "silver coin"
+	export_types = list(/obj/item/stack/f13Cash/denarius)
+
+/datum/export/material/f13cash/gold
+	cost = 1000
+	unit_name = "gold coin"
+	export_types = list(/obj/item/stack/f13Cash/aureus)
+
+/datum/export/material/f13cash/scrip
+	cost = 6 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
+	unit_name = "scrip"
+	export_types = list(/obj/item/stack/f13Cash/ncr)
+	k_elasticity = 0/1000
+
+
 /datum/export/material/deathclawhide
-	cost = 175
+	cost = 1000
+	message = " "
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+	k_elasticity = 0/1000
+
+
+/datum/export/material/geckohide
+	cost = 100 //will see if this works out...
+	message = " "
+	unit_name = "gecko hide"
+	material_id = /datum/material/geckohide
+	export_types = list(/obj/item/stack/sheet/animalhide/gecko)
+
+/datum/export/material/molerathide
+	cost = 100
+	message = " "
+	unit_name = "molerat hide"
+	material_id = /datum/material/molerathide
+	export_types = list(/obj/item/stack/sheet/animalhide/molerat)
+
+/datum/export/material/wolfhide
+	cost = 200
+	message = " "
+	unit_name = "dog hide"
+	material_id = /datum/material/wolfhide
+	export_types = list(/obj/item/stack/sheet/animalhide/wolf)
+
+/datum/export/material/radstaghide
+	cost = 250
+	message = " "
+	unit_name = "radstag hide"
+	material_id = /datum/material/radstaghide
+	export_types = list(/obj/item/stack/sheet/animalhide/radstag)
+
+/datum/export/material/brahminhide
+	cost = 150
+	message = " "
+	unit_name = "brahmin hide"
+	material_id = /datum/material/brahminhide
+	export_types = list(/obj/item/stack/sheet/animalhide/brahmin)

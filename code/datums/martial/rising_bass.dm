@@ -13,6 +13,8 @@
 	var/datum/action/risingbassmove/sidekick = new/datum/action/risingbassmove/sidekick()
 	var/datum/action/risingbassmove/deftswitch = new/datum/action/risingbassmove/deftswitch()
 	var/repulsecool = 0
+	var/physdammod = 0.7
+	var/stamdammod = 0.28
 
 /datum/martial_art/the_rising_bass/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,SIDE_KICK_COMBO))
@@ -213,6 +215,9 @@
 		return BULLET_ACT_HIT
 	A.visible_message(span_danger("[A] dodges the projectile cleanly, they're immune to ranged weapons!"), span_userdanger("You dodge out of the way of the projectile!"))
 	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+
+	var/totalStamDam = (P.damage > P.stamina) ? P.damage * physdammod : P.stamina * stamdammod
+	A.adjustStaminaLossBuffered(totalStamDam) //Changed it so the autododge takes more stamina than carp. -Farmwizard
 	return BULLET_ACT_FORCE_PIERCE
 
 /mob/living/carbon/human/proc/rising_bass_help()
@@ -236,6 +241,7 @@
 	sidekick.Grant(H)
 	ADD_TRAIT(H, TRAIT_NOGUNS, RISING_BASS_TRAIT)
 	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RISING_BASS_TRAIT)
+	ADD_TRAIT(H, TRAIT_NODRUGS, RISING_BASS_TRAIT)
 
 /datum/martial_art/the_rising_bass/on_remove(mob/living/carbon/human/H)
 	. = ..()
@@ -243,3 +249,4 @@
 	sidekick.Remove(H)
 	REMOVE_TRAIT(H, TRAIT_NOGUNS, RISING_BASS_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RISING_BASS_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_NODRUGS, RISING_BASS_TRAIT)

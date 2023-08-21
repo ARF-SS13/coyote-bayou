@@ -107,6 +107,14 @@
 	build_path = /obj/item/storage/portable_chem_mixer
 	category = list("initial", "Medical")
 
+/datum/design/portable_chem_mixer
+	name = "FOODCO Kitchen Buddy 2000"
+	id = "portable_blender"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
+	build_path = /obj/item/storage/blender_belt
+	category = list("initial", "Medical")
+
 /datum/design/circular_saw
 	name = "Circular Saw"
 	id = "circular_saw"

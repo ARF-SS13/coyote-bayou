@@ -49,10 +49,14 @@
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
 
+/// Prepare, or re-prepare
 /atom/proc/prepare_huds()
-	hud_list = list()
+	if(!islist(hud_list))
+		hud_list = list()
 	for(var/hud in hud_possible)
 		var/hint = hud_possible[hud]
+		if(hud_list[hud])
+			continue
 		switch(hint)
 			if(HUD_LIST_LIST)
 				hud_list[hud] = list()
@@ -81,11 +85,14 @@
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
 
-/mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
+/mob/proc/show_message(msg, type, alt_msg, alt_type, pref_check)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(audiovisual_redirect)
 		audiovisual_redirect.show_message(msg ? "<avredirspan class='small'>[msg]</avredirspan>" : null, type, alt_msg ? "<avredirspan class='small'>[alt_msg]</avredirspan>" : null, alt_type)
 
 	if(!client)
+		return
+	
+	if(pref_check && !CHECK_PREFS(src, pref_check))
 		return
 
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
@@ -132,12 +139,22 @@
  * * target (optional) is the other mob involved with the visible message. For example, the attacker in many combat messages.
  * * target_message (optional) is what the target mob will see e.g. "[src] does something to you!"
  */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
+/atom/proc/visible_message(
+		message,
+		self_message,
+		blind_message,
+		vision_distance = DEFAULT_MESSAGE_RANGE,
+		ignored_mobs,
+		mob/target,
+		target_message,
+		visible_message_flags = NONE,
+		pref_check
+		)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
 	var/list/hearers = get_hearers_in_view(vision_distance, src) //caches the hearers and then removes ignored mobs.
-	if(!length(hearers))
+	if(!length(hearers)) // yes, hearers is correct
 		return
 	hearers -= ignored_mobs
 
@@ -164,6 +181,8 @@
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
+		if(pref_check && !CHECK_PREFS(M, pref_check))
+			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = message
 		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
@@ -178,10 +197,10 @@
 			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
-mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
+mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
 	if(self_message && target != src)
-		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -194,7 +213,15 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
  */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, ignored_mobs, audible_message_flags = NONE)
+/atom/proc/audible_message(
+		message,
+		deaf_message,
+		hearing_distance = DEFAULT_MESSAGE_RANGE,
+		self_message,
+		ignored_mobs,
+		audible_message_flags = NONE,
+		pref_check
+		)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -210,6 +237,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
+		if(pref_check && !CHECK_PREFS(M, pref_check))
+			continue
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
@@ -227,10 +256,10 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
  */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE)
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
 	if(self_message)
-		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.
@@ -344,7 +373,13 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(is_blind())
 		to_chat(src, span_warning("Something is there but you can't see it!"))
 		return
+	return true_examinate(A)
 
+/// Splits the examine verb into two parts, one to determine if examining is possible, and one to actually do the examining.
+/// Allows code to force an examination without checking if its visible.
+/mob/proc/true_examinate(atom/A)
+	if(!A)
+		return
 	face_atom(A)
 	var/list/result
 	if(client)
@@ -607,6 +642,18 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 					usr.stripPanelUnequip(what,src,slot)
 			else
 				usr.stripPanelEquip(what,src,slot)
+	//Coyote Add
+	if(href_list["flavor_more"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavortext, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["oocnotes"])
+		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
+		onclose(usr, "[name]")
+	if(href_list["enlargeImageCreature"])
+		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
+		popup.set_content(dat)
+		popup.open()
 
 	if(usr.machine == src)
 		if(Adjacent(usr))
@@ -758,6 +805,38 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(!canface())
 		return FALSE
 	if(pixel_y >= -16)
+		pixel_y--
+		is_shifted = TRUE
+
+/mob/living/eastshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x <= (16 + get_standard_pixel_x_offset()))
+		pixel_x++
+		is_shifted = TRUE
+
+/mob/living/westshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_x >= -(16 + get_standard_pixel_x_offset()))
+		pixel_x--
+		is_shifted = TRUE
+
+/mob/living/northshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y <= (16 + get_standard_pixel_y_offset()))
+		pixel_y++
+		is_shifted = TRUE
+
+/mob/living/southshift()
+	set hidden = TRUE
+	if(!canface())
+		return FALSE
+	if(pixel_y >= -(16 + get_standard_pixel_y_offset()))
 		pixel_y--
 		is_shifted = TRUE
 

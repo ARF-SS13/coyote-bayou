@@ -20,16 +20,16 @@
  */
 /obj/item/projectile/bullet/a556
 	name = "5.56 FMJ bullet"
-	damage = BULLET_DAMAGE_RIFLE_223_MATCH
+	damage = BULLET_DAMAGE_RIFLE_223
 	stamina = BULLET_STAMINA_RIFLE_223
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_RIFLE_223_MATCH
+	recoil = BULLET_RECOIL_RIFLE_223
 
-	wound_bonus = BULLET_WOUND_RIFLE_223_MATCH
+	wound_bonus = BULLET_WOUND_RIFLE_223
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_RIFLE_223_MATCH
+	pixels_per_second = BULLET_SPEED_RIFLE_223
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* 5.56 sport
@@ -38,7 +38,7 @@
  * RECOIL: 1
  * WOUNDS: 6.5
  * WNAKED: 3.75
- */
+ 
 /obj/item/projectile/bullet/a556/sport
 	name = "surplus .223 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_223
@@ -52,7 +52,7 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_223
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
+*/
 /* 5.56 handload
  * DAMAGE: 22
  * STAMIN: 3.75
@@ -158,7 +158,6 @@
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
 	damage = -9
-	armour_penetration = 0
 	irradiate = 300
 */
 
@@ -257,7 +256,6 @@
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
 	damage = -2
-	armour_penetration = 0.3
 	irradiate = 300
 */
 
@@ -380,7 +378,7 @@
  * WNAKED: 3.75
  */
 /obj/item/projectile/bullet/m5mm
-	name = "surplus 5mm bullet"
+	name = "5mm bullet"
 	damage = BULLET_DAMAGE_RIFLE_5MM
 	stamina = BULLET_STAMINA_RIFLE_5MM
 	spread = BULLET_SPREAD_SURPLUS
@@ -400,6 +398,7 @@
  * WOUNDS: 6.5
  * WNAKED: 3.75
  */
+/*
 /obj/item/projectile/bullet/m5mm/match
 	name = "5mm bullet"
 	damage = BULLET_DAMAGE_RIFLE_5MM_MATCH
@@ -413,7 +412,7 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_5MM_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
+*/
 /* 5mm fmj
  * DAMAGE: less
  * STAMIN: 6.25
@@ -422,7 +421,7 @@
  * WNAKED: 3.75
  */
 /obj/item/projectile/bullet/m5mm/improvised
-	name = "5mm bullet"
+	name = "handload 5mm bullet"
 	damage = BULLET_DAMAGE_RIFLE_5MM_HANDLOAD
 	stamina = BULLET_STAMINA_RIFLE_5MM
 	spread = BULLET_SPREAD_SURPLUS
@@ -520,6 +519,7 @@
  * WOUNDS: 25
  * WNAKED: 15
  */
+/*
 /obj/item/projectile/bullet/a762
 	name = "7.62 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_308_MATCH
@@ -533,7 +533,7 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_308_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
+*/
 /* 7.62mm surplus
  * DAMAGE: 45
  * STAMIN: 45
@@ -541,8 +541,8 @@
  * WOUNDS: 25
  * WNAKED: 15
  */
-/obj/item/projectile/bullet/a762/sport
-	name = "surplus .308 bullet"
+/obj/item/projectile/bullet/a308
+	name = ".308 bullet"
 	damage = BULLET_DAMAGE_RIFLE_308
 	stamina = BULLET_STAMINA_RIFLE_308
 	spread = BULLET_SPREAD_SURPLUS
@@ -562,7 +562,7 @@
  * WOUNDS: 15
  * WNAKED: 15
  */
-/obj/item/projectile/bullet/a762/improvised
+/obj/item/projectile/bullet/a308/improvised
 	name = "handloaded .308 bullet"
 	damage = BULLET_DAMAGE_RIFLE_308_HANDLOAD
 	stamina = BULLET_STAMINA_RIFLE_308
@@ -583,8 +583,8 @@
  * WOUNDS: 40
  * WNAKED: 30
  */
-/obj/item/projectile/bullet/a762/rubber
-	name = "7.62 rubber bullet"
+/obj/item/projectile/bullet/a308/rubber
+	name = ".308 rubber bullet"
 	damage = RUBBERY_DAMAGE_RIFLE_308
 	stamina = RUBBERY_STAMINA_RIFLE_308
 	spread = BULLET_SPREAD_SURPLUS
@@ -607,8 +607,8 @@
  * WOUNDS: 12
  * WNAKED: 9
  */
-/obj/item/projectile/bullet/a762/microshrapnel
-	name = "7.62 microshrapnel bullet"
+/obj/item/projectile/bullet/a308/microshrapnel
+	name = ".308 microshrapnel bullet"
 	damage = BULLET_DAMAGE_RIFLE_308 * BULLET_DAMAGE_MICROSHRAPNEL
 	stamina = BULLET_STAMINA_RIFLE_308 * BULLET_STAMINA_MICROSHRAPNEL
 	spread = BULLET_SPREAD_SURPLUS
@@ -641,6 +641,54 @@
 	armour_penetration = 0
 	irradiate = 300
 */
+/* .30-06
+	60 base damage
+*/
+
+/obj/item/projectile/bullet/a3006
+	name = ".30-06 bullet"
+	damage = BULLET_DAMAGE_RIFLE_3006
+	stamina = BULLET_STAMINA_RIFLE_3006
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006
+
+	wound_bonus = BULLET_WOUND_RIFLE_3006
+	bare_wound_bonus = BULLET_WOUND_RIFLE_3006_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+/obj/item/projectile/bullet/a3006/improvised
+	name = "handloaded .3006 bullet"
+	damage = BULLET_DAMAGE_RIFLE_3006_HANDLOAD
+	stamina = BULLET_STAMINA_RIFLE_3006
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_RIFLE_3006_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_RIFLE_3006_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_RIFLE_3006_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006_HANDLOAD
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+/obj/item/projectile/bullet/a3006/rubber
+	name = ".3006 rubber bullet"
+	damage = RUBBERY_DAMAGE_RIFLE_3006
+	stamina = RUBBERY_STAMINA_RIFLE_3006
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = RUBBERY_RECOIL_RIFLE_3006
+
+	wound_bonus = RUBBERY_WOUND_RIFLE_3006
+	bare_wound_bonus = BULLET_WOUND_RIFLE_3006_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+
+	pixels_per_second = BULLET_SPEED_RIFLE_3006
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /////////
 // .50 //
@@ -666,17 +714,17 @@
  * WNAKED: 30
  */
 /obj/item/projectile/bullet/a50MG
-	name = "match .50MG slug"
-	damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	name = ".50MG slug"
+	damage = BULLET_DAMAGE_RIFLE_50MG
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_RIFLE_50MG_MATCH
+	recoil = BULLET_RECOIL_RIFLE_50MG
 
-	wound_bonus = BULLET_WOUND_RIFLE_50MG_MATCH
+	wound_bonus = BULLET_WOUND_RIFLE_50MG
 	bare_wound_bonus = BULLET_WOUND_RIFLE_50MG_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_RIFLE_50MG_MATCH
+	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* .50MG surplus
@@ -686,6 +734,7 @@
  * WOUNDS: 40
  * WNAKED: 30
  */
+/*
 /obj/item/projectile/bullet/a50MG/surplus
 	name = "surplus .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG
@@ -699,7 +748,7 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
+*/
 /* .50MG handloaded
  * DAMAGE: 56
  * STAMIN: 84
@@ -895,7 +944,7 @@
  * WNAKED: 15
  */
 /obj/item/projectile/bullet/c4570
-	name = ".45-70 match bullet"
+	name = ".45-70 bullet"
 	damage = BULLET_DAMAGE_RIFLE_4570
 	stamina = BULLET_STAMINA_RIFLE_4570
 	spread = BULLET_SPREAD_SURPLUS
@@ -915,6 +964,7 @@
  * WOUNDS: 25
  * WNAKED: 15
  */
+/*
 /obj/item/projectile/bullet/c4570/surplus
 	name = ".45-70 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_4570
@@ -928,7 +978,7 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_4570
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
+*/
 /* .45-70 handloaded
  * DAMAGE: 42 // cant kill a ghoul
  * STAMIN: 33
@@ -938,16 +988,16 @@
  */
 /obj/item/projectile/bullet/c4570/improvised
 	name = ".45-70 FMJ bullet"
-	damage = BULLET_DAMAGE_RIFLE_4570
+	damage = BULLET_DAMAGE_RIFLE_4570_HANDLOAD
 	stamina = BULLET_STAMINA_RIFLE_4570
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_RIFLE_4570
+	recoil = BULLET_RECOIL_RIFLE_4570_HANDLOAD
 
-	wound_bonus = BULLET_WOUND_RIFLE_4570
+	wound_bonus = BULLET_WOUND_RIFLE_4570_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_4570_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
-	pixels_per_second = BULLET_SPEED_RIFLE_4570
+	pixels_per_second = BULLET_SPEED_RIFLE_4570_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* .45-70 explode
@@ -1083,7 +1133,6 @@
 
 	movement_type = FLYING | UNSTOPPABLE
 	hitscan = TRUE
-	armour_penetration = 0.5
 	tracer_type = /obj/effect/projectile/tracer/laser/blue
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue

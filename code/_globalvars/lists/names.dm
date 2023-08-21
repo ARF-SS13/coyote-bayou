@@ -25,6 +25,7 @@ GLOBAL_LIST_INIT(ing_verbs, world.file2list("strings/names/ing_verbs.txt"))
 GLOBAL_LIST_INIT(adverbs, world.file2list("strings/names/adverbs.txt"))
 GLOBAL_LIST_INIT(adjectives, world.file2list("strings/names/adjectives.txt"))
 GLOBAL_LIST_INIT(dream_strings, world.file2list("strings/dreamstrings.txt"))
+GLOBAL_LIST_INIT(cow_names, world.file2list("strings/names/cow.txt"))
 //loaded on startup because of "
 //would include in rsc if ' was used
 

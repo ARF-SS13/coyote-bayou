@@ -23,7 +23,7 @@
 /datum/supply_pack/misc/artsupply
 	name = "Art Supplies"
 	desc = "Make some happy little accidents with six canvasses, two easels, two boxes of crayons, and a rainbow crayon!"
-	cost = 800
+	cost = 500
 	contains = list(/obj/structure/easel,
 					/obj/structure/easel,
 					/obj/item/canvas/nineteenXnineteen,
@@ -54,7 +54,7 @@
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"
 	desc = "High stacks of papers on your desk Are a big problem - make it Pea-sized with these bureaucratic supplies! Contains five pens, some camera film, hand labeler supplies, a paper bin, three folders, two clipboards and two stamps as well as a briefcase."//that was too forced
-	cost = 1500
+	cost = 500
 	contains = list(/obj/structure/filingcabinet/chestdrawer/wheeled,
 					/obj/item/camera_film,
 					/obj/item/hand_labeler,
@@ -90,7 +90,7 @@
 /datum/supply_pack/misc/fountainpens
 	name = "Calligraphy Crate"
 	desc = "Sign death warrants in style with these seven executive fountain pens."
-	cost = 730
+	cost = 750
 	contains = list(/obj/item/storage/box/fountainpens,
 					/obj/item/paper_bin)
 	crate_type = /obj/structure/closet/crate/wooden
@@ -103,7 +103,7 @@
 /datum/supply_pack/misc/coloredsheets
 	name = "Bedsheet Crate"
 	desc = "Give your night life a splash of color with this crate filled with bedsheets! Contains a total of nine different-colored sheets."
-	cost = 1250
+	cost = 250
 	contains = list(/obj/item/bedsheet/blue,
 					/obj/item/bedsheet/green,
 					/obj/item/bedsheet/orange,
@@ -117,8 +117,8 @@
 
 /datum/supply_pack/misc/bicycle
 	name = "Bicycle"
-	desc = "Nanotrasen reminds all employees to never toy with powers outside their control."
-	cost = 1000000
+	desc = "The council reminds all citizens to never toy with powers outside their control."
+	cost = 250000 // 75% cheaper. Unlikely that someone will be able to get this much, but if they do, why not reward the dedication?
 	contains = list(/obj/vehicle/ridden/bicycle)
 	crate_name = "Bicycle Crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -126,7 +126,7 @@
 /datum/supply_pack/misc/bigband
 	name = "Big Band Instrument Collection"
 	desc = "Get your sad station movin' and groovin' with this fine collection! Contains nine different instruments!"
-	cost = 5000
+	cost = 1200
 	crate_name = "Big band musical instruments collection"
 	contains = list(/obj/item/instrument/violin,
 					/obj/item/instrument/guitar,
@@ -142,7 +142,7 @@
 /datum/supply_pack/misc/casinocrate
 	name = "Casino Crate"
 	desc = "Start up your own grand casino with this crate filled with slot machine and arcade boards!"
-	cost = 3000
+	cost = 1500
 	contains = list(/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/orion_trail,
@@ -199,7 +199,7 @@
 /datum/supply_pack/misc/candles
 	name = "Candle Crate"
 	desc = "Set up a romantic dinner or host a séance with these extra candles and crayons."
-	cost = 850
+	cost = 400
 	contains = list(/obj/item/storage/fancy/candle_box,
 					/obj/item/storage/fancy/candle_box,
 					/obj/item/storage/box/matches)
@@ -309,22 +309,107 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/misc/capstwofifty
-	name = "Caps Conversion 250"
-	desc = "Converts credits into caps! 250 Version"
-	cost = 5000
+	name = "Coins Conversion 250"
+	desc = "Converts credits into Coins! 250 Version"
+	cost = 2500
 	contains = list(/obj/item/stack/f13Cash/caps/twofivezero)
-	crate_name = "caps crate 1"
+	crate_name = "Coins crate 1"
 
 /datum/supply_pack/misc/capsfivehundred
-	name = "Caps Conversion 500"
-	desc = "Converts credits into caps! 500 Version"
-	cost = 10000
+	name = "Coins Conversion 500"
+	desc = "Converts credits into coins! 500 Version"
+	cost = 5000
 	contains = list(/obj/item/stack/f13Cash/caps/fivezerozero)
-	crate_name = "caps crate 2"
+	crate_name = "coins crate 2"
 
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////// Misc + Decor ////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
+
+/datum/supply_pack/misc/capsule
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Basic"
+	desc = "A basic C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 100
+	contains = list(/obj/item/survivalcapsule)
+
+/datum/supply_pack/misc/capsuleluxury
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Luxury"
+	desc = "A luxury C.A.M.P. capsule packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/luxury)
+
+/datum/supply_pack/misc/capsuleluxuryelite
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Luxury Elite"
+	desc = "A luxury bar C.A.M.P. capsule packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 600
+	contains = list(/obj/item/survivalcapsule/luxuryelite)
+
+/datum/supply_pack/misc/capsulesuper
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Super Deluxe"
+	desc = "The best of the best, no luxury witheld super-deluxe C.A.M.P. packed and designed by the Texarkana Trade Union. Dispensers, machinery, sleeping quarters, vendors, it has it all.  Shake it and throw it!"
+	cost = 1000
+	contains = list(/obj/item/survivalcapsule/super_deluxe)
+
+/datum/supply_pack/misc/capsulepremium
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Premium"
+	desc = "An intermediatly priced, carpeted, C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 500
+	contains = list(/obj/item/survivalcapsule/premium)
+
+/datum/supply_pack/misc/capsulequad
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Spacious"
+	desc = "An expanded tent with four living quarters and a soda fountain C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/quad)
+
+/datum/supply_pack/misc/capsulemerchant
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Merchant"
+	desc = "A partially covered merchants stall.  This one has a sleeping quarters too. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/merchant)
+
+/datum/supply_pack/misc/capsuleparty
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Party"
+	desc = "A large, spacious tent with a booze dispenser and some food. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/party)
+
+/datum/supply_pack/misc/capsulekitchen
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Cook-N-Go"
+	desc = "A rapid, ready to deploy field mess kitchen. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 300
+	contains = list(/obj/item/survivalcapsule/kitchen)
+
+/datum/supply_pack/misc/capsulefarm
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Farm-N-Go"
+	desc = "A ready to go, loaded farming plot with three brahmin, and a small living quarter. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 300
+	contains = list(/obj/item/survivalcapsule/farm)
+
+/datum/supply_pack/misc/capsulefortune
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Occult"
+	desc = "A camp with three brahmin and all your supernatural needs. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 300
+	contains = list(/obj/item/survivalcapsule/fortuneteller)
+
+/datum/supply_pack/misc/capsulesmith
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Blacksmithery"
+	desc = "An all-in-one smithery, with a workbench, lathe, and forge as its key components. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 300
+	contains = list(/obj/item/survivalcapsule/blacksmith)
+
 
 /datum/supply_pack/misc/carpet
 	goody = PACK_GOODY_PUBLIC

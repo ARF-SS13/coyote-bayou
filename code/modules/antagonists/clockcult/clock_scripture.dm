@@ -307,10 +307,10 @@ Judgement 5 converts
 	var/ranged_message = "This is a huge goddamn bug, how'd you cast this?"
 	var/timeout_time = 0
 	var/allow_mobility = TRUE //if moving and swapping hands is allowed during the while
-	var/datum/progressbar/progbar
+	var/my_bar
 
 /datum/clockwork_scripture/ranged_ability/Destroy()
-	qdel(progbar)
+	SSprogress_bars.remove_bar(my_bar)
 	return ..()
 
 /datum/clockwork_scripture/ranged_ability/scripture_effects()
@@ -327,15 +327,12 @@ Judgement 5 converts
 	var/end_time = world.time + timeout_time
 	var/successful = FALSE
 	if(timeout_time)
-		progbar = new(invoker, timeout_time, slab)
+		my_bar = SSprogress_bars.add_bar(slab, list(), timeout_time, TRUE, TRUE)
 	var/turf/T = get_turf(invoker)
 	while(slab && slab.slab_ability && !slab.slab_ability.finished && (slab.slab_ability.in_progress || !timeout_time || world.time <= end_time) && \
-		(allow_mobility || (can_recite() && T == get_turf(invoker))))
-		if(progbar)
-			if(slab.slab_ability.in_progress)
-				qdel(progbar)
-			else
-				progbar.update(end_time - world.time)
+		(allow_mobility || (can_recite() && T == get_turf(invoker)))) // Aint just furries who got that hyper cock
+		if(slab.slab_ability.in_progress)
+			SSprogress_bars.remove_bar(my_bar)
 		stoplag(1)
 	if(slab)
 		if(slab.slab_ability)

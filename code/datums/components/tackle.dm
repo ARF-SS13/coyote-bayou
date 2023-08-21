@@ -28,6 +28,11 @@
 	var/min_distance
 	///The throwdatum we're currently dealing with, if we need it
 	var/datum/thrownthing/tackle
+	/// Is it just a simple dive-kick?
+	var/simple_dunk
+
+/datum/component/tackler/simple
+	simple_dunk = TRUE
 
 /datum/component/tackler/Initialize(stamina_cost = 25, base_knockdown = 1 SECONDS, range = 4, speed = 1, skill_mod = 0, min_distance = min_distance)
 	if(!iscarbon(parent))
@@ -42,8 +47,7 @@
 
 	var/mob/living/carbon/P = parent
 	to_chat(P, span_notice("You are now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand."))
-	P.tackling = TRUE
-	addtimer(CALLBACK(src, .proc/resetTackle), base_knockdown, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, .proc/resetTackle), max(base_knockdown, 3 SECONDS), TIMER_STOPPABLE)
 
 /datum/component/tackler/Destroy()
 	var/mob/living/carbon/P = parent
@@ -108,11 +112,12 @@
 	if(get_dist(user, A) < min_distance)
 		A = get_ranged_target_turf(user, get_dir(user, A), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
 
-	user.Knockdown(base_knockdown, TRUE, TRUE)
+	if(base_knockdown)
+		user.Knockdown(base_knockdown, TRUE, TRUE)
 	user.adjustStaminaLoss(stamina_cost)
-	user.throw_at(A, range, speed, user, FALSE)
+	user.throw_at(A, range, speed, user, TRUE)
 	user.toggle_throw_mode()
-	addtimer(CALLBACK(src, .proc/resetTackle), base_knockdown, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, .proc/resetTackle), max(base_knockdown, 3 SECONDS), TIMER_STOPPABLE)
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
@@ -137,6 +142,10 @@
 */
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
 	if(!user.tackling || !tackle)
+		return
+
+	if(simple_dunk && isliving(hit))
+		simple_sack(user, hit)
 		return
 
 	if(!iscarbon(hit))
@@ -228,6 +237,81 @@
  * In addition, after subtracting the defender's mod and adding the attacker's mod to the roll, the component's base (skill) mod is added as well. Some sources of tackles
  *	are better at taking people down, like the bruiser and rocket gloves, while the dolphin gloves have a malus in exchange for better mobility.
 */
+/datum/component/tackler/proc/simple_sack(mob/living/carbon/user, mob/living/hit)
+	if(!iscarbon(user) || !isliving(hit))
+		return
+
+	var/roll = iscarbon(hit) ? rollTackle(hit) : 5 // extra damage to simplemobs
+	user.tackling = FALSE
+
+	var/tackle_damage = PUNCH_DAMAGE_AVERAGE
+	if(HAS_TRAIT(user, TRAIT_IRONFIST))
+		tackle_damage = IRON_FIST_PUNCH_DAMAGE_AVERAGE
+	else if(HAS_TRAIT(user, TRAIT_STEELFIST))
+		tackle_damage = STEEL_FIST_PUNCH_DAMAGE_AVERAGE
+	var/damage_mod = 1
+
+	switch(roll)
+		if(-INFINITY to -5)
+			damage_mod *= 0.5
+		if(-4 to -2)
+			damage_mod *= 0.8
+		if(2 to 3)
+			damage_mod *= 1.2
+		if(4 to INFINITY)
+			damage_mod *= 1.5
+
+	if(tackle?.dist_travelled)
+		damage_mod *= (1 + (0.5*tackle.dist_travelled))
+
+	switch(damage_mod)
+		if(-INFINITY to 1)
+			user.visible_message(
+				span_warning("[user] rams into [hit] with a flying tackle!"), 
+				span_userdanger("You rams into [hit] with a flying tackle!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] rams into you!"))
+		if(1.1 to 3)
+			user.visible_message(
+				span_warning("[user] slams into [hit] with a deadly charge!"), 
+				span_userdanger("You slam into [hit] with a deadly charge!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] slams into you!"))
+		if(3.1 to INFINITY)
+			user.visible_message(
+				span_warning("[user] CRASHES into [hit] with an atomic clothesline!"), 
+				span_userdanger("You CRASH into [hit] with a atomic clothesline!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] CRASHES into you!"))
+	playsound(user, 'sound/effects/flesh_impact_1.ogg', 60, TRUE)
+	if(damage_mod >= 2)
+		hit.emote("scream")
+	user.emote("scream")
+	
+	var/armormult = clamp(hit.getarmor(BODY_ZONE_CHEST, "melee"), 0, 1)
+
+	hit.apply_damage(tackle_damage, STAMINA, BODY_ZONE_CHEST, armormult)
+	hit.apply_damage(tackle_damage, BRUTE, BODY_ZONE_CHEST, armormult)
+	if(hit.anchored)
+		return
+	var/atom/throw_target = get_ranged_target_turf(hit, get_dir(user, hit), rand(CEILING(damage_mod * 0.5, 1), CEILING(damage_mod, 1)), 2)
+	hit.safe_throw_at(throw_target, 10, 1, user, TRUE)
+
+	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, CEILING(damage_mod, 1))
+	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
+
+/**
+ * rollTackle()
+ *
+ * This handles all of the modifiers for the actual carbon-on-carbon tackling, and gets its own proc because of how many there are (with plenty more in mind!)
+ *
+ * The base roll is between (-3, 3), with negative numbers favoring the target, and positive numbers favoring the tackler. The target and the tackler are both assessed for
+ *	how easy they are to knock over, with clumsiness and dwarfiness being strong maluses for each, and gigantism giving a bonus for each. These numbers and ideas
+ *	are absolutely subject to change.
+
+ * In addition, after subtracting the defender's mod and adding the attacker's mod to the roll, the component's base (skill) mod is added as well. Some sources of tackles
+ *	are better at taking people down, like the bruiser and rocket gloves, while the dolphin gloves have a malus in exchange for better mobility.
+*/
 /datum/component/tackler/proc/rollTackle(mob/living/carbon/target)
 	var/defense_mod = 0
 	var/attack_mod = 0
@@ -250,7 +334,7 @@
 
 	if(ishuman(target))
 		var/mob/living/carbon/human/T = target
-		var/suit_slot = T.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+		var/suit_slot = T.get_item_by_slot(INV_SLOTBIT_OCLOTHING)
 
 		if(isnull(T.wear_suit) && isnull(T.w_uniform)) // who honestly puts all of their effort into tackling a naked guy?
 			defense_mod += 2
@@ -284,7 +368,7 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/S = sacker
 
-		var/suit_slot = S.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+		var/suit_slot = S.get_item_by_slot(INV_SLOTBIT_OCLOTHING)
 		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/heavy/riot))) // tackling in riot armor is more effective, but tiring
 			attack_mod += 2
 			sacker.adjustStaminaLoss(20)
@@ -331,8 +415,8 @@
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/S = user
-		var/head_slot = S.get_item_by_slot(ITEM_SLOT_HEAD)
-		var/suit_slot = S.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+		var/head_slot = S.get_item_by_slot(INV_SLOTBIT_HEAD)
+		var/suit_slot = S.get_item_by_slot(INV_SLOTBIT_OCLOTHING)
 		if(head_slot && (istype(head_slot,/obj/item/clothing/head/helmet) || istype(head_slot,/obj/item/clothing/head/hardhat)))
 			oopsie_mod -= 6
 		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/)))
@@ -405,6 +489,7 @@
 /datum/component/tackler/proc/resetTackle()
 	var/mob/living/carbon/P = parent
 	P.tackling = FALSE
+	to_chat(P, span_green("You can tackle again!"))
 	QDEL_NULL(tackle)
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 

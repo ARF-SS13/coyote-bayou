@@ -7,7 +7,7 @@
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1 | HEAR_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
@@ -491,7 +491,7 @@
 	item_state = "radio"
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 GLOBAL_VAR_INIT(redwater_frequency, null)
 GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
@@ -500,11 +500,13 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "a rugged radio used by even more rugged folk. Looks kinda heavy!"
+	desc = "a rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone
 	sharpness = SHARP_NONE
+
+
 
 /obj/item/radio/redwater/Initialize()
 	. = ..()
@@ -527,4 +529,4 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 /obj/item/radio/redwater/examine(mob/user)
 	. = ..()
 	if(GLOB.redwater_frequency)
-		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to [span_boldnotice(GLOB.redwater_frequency * 0.1)]!\""
+		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to <span class='boldnotice'>[GLOB.redwater_frequency * 0.1]</span>!\""

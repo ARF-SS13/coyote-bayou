@@ -1,3 +1,5 @@
+/* why is any of this here and not with the rest of the loadout stuff?
+
 /datum/gear/suit/goner_red
 	name = "olive drab trenchcoat, red"
 	path = /obj/item/clothing/suit/armor/light/duster/goner/red
@@ -21,3 +23,4 @@
 	path = /obj/item/clothing/suit/armor/light/duster/goner/yellow
 	cost = 4
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+*/

@@ -2,6 +2,14 @@
 // This file is quadruple wrapped for your pleasure
 // (
 
+#define IS_NAN(a) (a!=a)
+
+#define IS_INF__UNSAFE(a) (a==a && a-a!=a-a)
+#define IS_INF(a) (isnum(a) && IS_INF__UNSAFE(a))
+
+#define IS_FINITE__UNSAFE(a) (a-a==a-a)
+#define IS_FINITE(a) (isnum(a) && IS_FINITE__UNSAFE(a))
+
 #define NUM_E 2.71828183
 
 #define SQRT_2 1.414214
@@ -31,6 +39,8 @@
 #define SIGN(x) ( (x)!=0 ? (x) / abs(x) : 0 )
 
 #define CEILING(x, y) ( -round(-(x) / (y)) * (y) )
+
+#define ROUND_UP(x) ( -round(-(x)))
 
 // round() acts like floor(x, 1) by default but can't handle other values
 #define FLOOR(x, y) ( round((x) / (y)) * (y) )
@@ -88,6 +98,9 @@
 // Returns the nth root of x.
 #define ROOT(n, x) ((x) ** (1 / (n)))
 
+/// decrements a number by another number, to a minimum of another number
+#define DECREMENTBY(val, dec, min) (val = max(val - dec, min))
+
 // The quadratic formula. Returns a list with the solutions, or an empty list
 // if they are imaginary.
 /proc/SolveQuadratic(a, b, c)
@@ -95,7 +108,7 @@
 	. = list()
 	var/d		= b*b - 4 * a * c
 	var/bottom  = 2 * a
-	if(d < 0)
+	if(d < 0 || !IS_FINITE__UNSAFE(d) || !IS_FINITE__UNSAFE(bottom))
 		return
 	var/root = sqrt(d)
 	. += (-b + root) / bottom
@@ -230,3 +243,50 @@
 /// Gives the number of pixels in an orthogonal line of tiles.
 #define TILES_TO_PIXELS(tiles)			(tiles * PIXELS)
 // )
+
+/proc/shorten_number(number, decimals = 2)
+	var/unit = ""
+	var/thousands = 0
+	while(number > 1000)
+		number *= 0.001
+		thousands++
+	switch(thousands)
+		if(-INFINITY to 0)
+			return "[number]"
+		if(1)
+			unit = "K"
+		if(2)
+			unit = "M"
+		if(3)
+			unit = "G"
+		if(4)
+			unit = "T"
+		if(5)
+			unit = "Q"
+		if(6)
+			unit = "QQ"
+		else
+			unit = "QQQ"
+	var/roundie = 1 * (0.1**decimals)
+	return "[round(number, roundie)][unit]"
+
+
+
+#define RANDOM(min, max) (rand(min*1000, max*1000)*0.001)
+
+/proc/pad_number(number, decimals = 0) // this proc doesnt work, lol
+	if(decimals <= 0)
+		return "[number]"
+	var/digits_in_number = 0
+	var/number_copy = number
+	while(number_copy > 10)
+		number_copy /= 10
+		digits_in_number++
+	if(digits_in_number >= decimals)
+		return "[number]"
+	var/return_string = ""
+	for(var/i in 1 to decimals - digits_in_number)
+		return_string += "0"
+	return_string += "[number]"
+	return return_string
+

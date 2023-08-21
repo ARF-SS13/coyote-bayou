@@ -13,6 +13,34 @@ Format:
 	disabled (disables the map)
 endmap
 
-map pahrump
+map pahrump-everything
 	default
+endmap
+
+map pahrump-only
+    adminonly
+endmap
+
+map pahrump-garland
+    adminonly
+endmap
+
+map pahrump-redriver
+    adminonly
+endmap
+
+map pahrump-redriver-garland
+    adminonly
+endmap
+
+map pahrump-rocksprings
+    adminonly
+endmap
+
+map pahrump-rocksprings-garland
+    adminonly
+endmap
+
+map pahrump-rocksprings-redriver
+    adminonly
 endmap

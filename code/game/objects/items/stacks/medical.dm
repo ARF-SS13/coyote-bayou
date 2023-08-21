@@ -82,26 +82,108 @@
 	var/start_sound
 	/// Sound to play on end
 	var/end_sound
+	/// For innate heals like licking
+	var/needs_reservoir = FALSE
+	///flavor message if your innate heal fails
+	var/too_dry = "Placeholder, tell a coder"
+
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
 	INVOKE_ASYNC(src, .proc/try_heal, M, user)
 
-/obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, silent = FALSE)
-	if(heal(M, user))
+/obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, just_check = FALSE)
+	if(heal(M, user, just_check))
+		if(just_check)
+			return TRUE
 		log_combat(user, M, "healed", src.name)
 		if(!infinite_uses)
 			use(1)
 		if(repeating && amount > 0)
-			try_heal(M, user, TRUE)
+			try_heal(M, user)
+	return FALSE
 
-/obj/item/stack/medical/proc/heal(mob/living/M, mob/user)
+/obj/item/stack/medical/proc/heal(mob/living/M, mob/user, just_check)
 	if(iscarbon(M))
-		return heal_carbon(M, user, heal_brute, 0)
+		return heal_carbon(M, user, just_check)
 	if(isanimal(M) && can_heal_critters)
-		return heal_critter(M, user)
+		return heal_critter(M, user, just_check)
 	to_chat(user, span_warning("You can't heal [M] with \the [src]!"))
 
+/* * * * * * * * * * * * * * * * * * *
+ * Proc that actually does the healing
+ * * * * * * * * * * * * * * * * * * */
+/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/living/user, just_check)
+	if(!iscarbon(C) || !user)
+		return FALSE
+	if(is_healing)
+		user.show_message(span_alert("You're already doing something with this!"))
+		return FALSE
+	if(!user.can_inject(C, TRUE))
+		user.show_message(span_alert("You can't get through [C]'s outer bits!"))
+		return FALSE
+
+	var/list/output_list = pick_a_bodypart(C, user)
+	if(!islist(output_list))
+		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
+		return FALSE
+	if(!istype(output_list["bodypart"], /obj/item/bodypart))
+		if(output_list["bodypart"] == UNABLE_TO_HEAL)
+			to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
+			return FALSE
+		else
+			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
+			return FALSE
+	var/mob/living/carbon/carbuser
+	if(iscarbon(user))
+		carbuser = user
+	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+		to_chat(user, span_warning("[too_dry]"))
+		return FALSE
+	if(just_check)
+		return TRUE
+	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
+	var/heal_operations = output_list["operations"]
+	do_medical_message(user, C, affected_bodypart, "start")
+	is_healing = TRUE
+	var/covering_output = null
+	//var/is_skilled = 1
+	if(start_sound)
+		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
+	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE, allow_lying = TRUE))
+		to_chat(user, span_warning("You were interrupted!"))
+		is_healing = FALSE
+		return FALSE
+	is_healing = FALSE
+	/// now we start doing 'healy' things!
+	if(needs_reservoir)
+		carbuser.heal_reservoir -= 1
+	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
+		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
+			if(prob(50))
+				C.emote("scream") // a
+			C.update_damage_overlays()
+	if(heal_operations & DO_HEAL_DAMAGE)
+		if(affected_bodypart.heal_damage(heal_brute, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
+			C.update_damage_overlays()
+	/* if(heal_operations & DO_UNBLEED_WOUND)
+		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
+			if(wounds_to_unbleed.blood_flow)
+				wounds_to_unbleed.treat_bleed(src, user, (user == C), is_skilled ? 1 : unskilled_effectiveness_mult)
+				break */
+	if(heal_operations & DO_UNBURN_WOUND)
+		for(var/datum/wound/burn/wounds_to_unburn in affected_bodypart.wounds)
+			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
+				wounds_to_unburn.treat_burn(src, user, (user == C))
+				break
+	if(heal_operations & DO_APPLY_BANDAGE)
+		covering_output = affected_bodypart.apply_gauze(src, 1)
+	if(heal_operations & DO_APPLY_SUTURE)
+		covering_output = affected_bodypart.apply_suture(src, 1)
+	if(end_sound)
+		playsound(get_turf(user), end_sound, 50, 1, SOUND_DISTANCE(4))
+	do_medical_message(user, C, affected_bodypart, "end", 1, covering_output)
+	return TRUE
 
 /// Returns a bodypart and a bitfield in a list with the first valid bodypart we can work on
 /// Returns just a number (FALSE) if nothing is found
@@ -121,12 +203,12 @@
 	// limb is missing, output a message and move on
 	if(do_these_things == BODYPART_INORGANIC)
 		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
-	
+
 	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
 	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
 		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
 		return output_heal_instructions
-	
+
 	// Part wasn't there, or needed no healing. Lets find one that does need healing!
 	var/obj/item/bodypart/affecting
 	for(var/limb_slot_to_check in GLOB.main_body_parts)
@@ -170,90 +252,115 @@
 			if(burndies.flesh_damage || burndies.infestation)
 				ENABLE_BITFIELD(., DO_UNBURN_WOUND)
 
+/// returns how long it should take to use this thing
+/obj/item/stack/medical/proc/get_delay_time(mob/user, mob/target, is_skilled = TRUE)
+	. = other_delay
+	if(user == target)
+		. = self_delay
+	if(!is_skilled)
+		. *= unskilled_speed_mult
+
+/* * * * * * * * * * * * * * * * * * *
+ * Outputs a message at the start or end of use
+ */
+/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, obj/item/bodypart/part, which_message, is_skilled, bandage_code)
+	if(!user || !target)
+		return
+	var/target_part = istype(part) ? "[part.name]" : "wounds"
+	switch(which_message)
+		if("start")
+			user.visible_message(
+				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."),
+				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
+/*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
+				switch(needed_trait)
+					if(TRAIT_SURGERY_LOW)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("Your first aid training helps you breeze through this!"))
+						else
+							user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
+					if(TRAIT_SURGERY_MID)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("Your medical training makes this easy as could be!"))
+						else
+							user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
+					if(TRAIT_SURGERY_HIGH)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
+						else
+							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!")) */
+
+		if("end")
+			if(isnull(bandage_code))
+				user.visible_message(
+					span_green("[user] applies \a [src] to [target]'s [target_part]."),
+					span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] [target_part]."))
+			else
+				if(bandage_code & BANDAGE_NEW_APPLIED)
+					user.visible_message(
+						span_green("[user] applies a fresh new [src] to [target]'s [target_part]!"),
+						span_green("You apply a fresh new [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
+				if(bandage_code & BANDAGE_WAS_REPAIRED)
+					user.visible_message(
+						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src]!"),
+						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+				if(bandage_code & BANDAGE_WAS_REPAIRED_TO_FULL)
+					user.visible_message(
+						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src], repairing them completely!"),
+						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
+				if(bandage_code & BANDAGE_TIMER_REFILLED)
+					user.visible_message(
+						span_green("[user] freshens up the bandages on [target]'s [target_part] with [src]!"),
+						span_green("You freshen up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+
+				if(bandage_code & SUTURE_NEW_APPLIED)
+					user.visible_message(
+						span_green("[user] applies a fresh new set of [src] to [target]'s [target_part]!"),
+						span_green("You apply a fresh new set of [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
+				if(bandage_code & SUTURE_WAS_REPAIRED)
+					user.visible_message(
+						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src]!"),
+						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+				if(bandage_code & SUTURE_WAS_REPAIRED_TO_FULL)
+					user.visible_message(
+						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src], repairing them completely!"),
+						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
+				if(bandage_code & SUTURE_TIMER_REFILLED)
+					user.visible_message(
+						span_green("[user] freshens up the sutures on [target]'s [target_part] with [src]!"),
+						span_green("You freshen up the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+
 /* * * * * * * * * * * * * * * * * * *
  * Proc that heals simplemobs
  * * * * * * * * * * * * * * * * * * */
-/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user)
+/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user, just_check)
 	if(!isanimal(M))
 		return
 	var/mob/living/simple_animal/critter = M
 	if(M.stat == DEAD)
-		to_chat(user, span_notice(" [M] is dead. You can not help [M.p_them()]!"))
-		return 
+		to_chat(user, span_notice("[M] is dead. You can not help [M.p_them()]!"))
+		return
+	if (heal_mobs <= 0)
+		to_chat(user, span_warning("[M] cannot be healed with [src]!"))
+		return FALSE
 	if (!(critter.healable))
 		to_chat(user, span_warning("[M] cannot be healed!"))
 		return FALSE
-	else if (critter.health == critter.maxHealth)
+	if (critter.health >= critter.maxHealth)
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
+	var/mob/living/carbon/carbuser
+	if(iscarbon(user))
+		carbuser = user
+	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+		to_chat(user, span_warning("[too_dry]"))
+		return FALSE
+	if(just_check)
+		return TRUE
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
-	return TRUE
-
-/* * * * * * * * * * * * * * * * * * *
- * Proc that actually does the healing
- * * * * * * * * * * * * * * * * * * */
-/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/living/user)
-	if(!iscarbon(C) || !user)
-		return FALSE
-	if(is_healing)
-		user.show_message(span_alert("You're already doing something with this!"))
-		return
-	if(!user.can_inject(C, TRUE))
-		return
-	
-	var/list/output_list = pick_a_bodypart(C, user)
-	if(!islist(output_list))
-		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
-		return FALSE
-	if(!istype(output_list["bodypart"], /obj/item/bodypart))
-		if(output_list["bodypart"] == UNABLE_TO_HEAL)
-			to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
-			return FALSE
-		else
-			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
-			return FALSE
-
-	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
-	var/heal_operations = output_list["operations"]
-	do_medical_message(user, C, affected_bodypart, "start")
-	is_healing = TRUE
-	var/covering_output = null
-	//var/is_skilled = 1
-	if(start_sound)
-		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
-	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE))
-		to_chat(user, span_warning("You were interrupted!"))
-		is_healing = FALSE
-		return
-	is_healing = FALSE
-	/// now we start doing 'healy' things!
-	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
-		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
-			if(prob(50))
-				C.emote("scream") // a
-			C.update_damage_overlays()
-	if(heal_operations & DO_HEAL_DAMAGE)
-		if(affected_bodypart.heal_damage(heal_brute, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
-			C.update_damage_overlays()
-	/* if(heal_operations & DO_UNBLEED_WOUND)
-		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
-			if(wounds_to_unbleed.blood_flow)
-				wounds_to_unbleed.treat_bleed(src, user, (user == C), is_skilled ? 1 : unskilled_effectiveness_mult)
-				break */
-	if(heal_operations & DO_UNBURN_WOUND)
-		for(var/datum/wound/burn/wounds_to_unburn in affected_bodypart.wounds)
-			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
-				wounds_to_unburn.treat_burn(src, user, (user == C))
-				break
-	if(heal_operations & DO_APPLY_BANDAGE)
-		covering_output = affected_bodypart.apply_gauze(src, 1)
-	if(heal_operations & DO_APPLY_SUTURE)
-		covering_output = affected_bodypart.apply_suture(src, 1)
-
-	if(end_sound)
-		playsound(get_turf(user), end_sound, 50, 1, SOUND_DISTANCE(4))
-	do_medical_message(user, C, affected_bodypart, "end", 1, covering_output)
+	if(needs_reservoir)
+		carbuser.heal_reservoir -= 1
 	return TRUE
 
 /// Returns if the user is skilled enough to use this thing effectively (unused, currently)
@@ -283,84 +390,6 @@
 			if(HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
 				return VICTIM_HAS_THE_SKILLS */
 
-
-/// returns how long it should take to use this thing
-/obj/item/stack/medical/proc/get_delay_time(mob/user, mob/target, is_skilled = TRUE)
-	. = other_delay
-	if(user == target)
-		. = self_delay
-	if(!is_skilled)
-		. *= unskilled_speed_mult
-
-/* * * * * * * * * * * * * * * * * * *
- * Outputs a message at the start or end of use
- */
-/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, obj/item/bodypart/part, which_message, is_skilled, bandage_code)
-	if(!user || !target)
-		return
-	var/target_part = istype(part) ? "[part.name]" : "wounds"
-	switch(which_message)
-		if("start")
-			user.visible_message(
-				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."), 
-				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
-/*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
-				switch(needed_trait)
-					if(TRAIT_SURGERY_LOW)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your first aid training helps you breeze through this!"))
-						else
-							user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
-					if(TRAIT_SURGERY_MID)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your medical training makes this easy as could be!"))
-						else
-							user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
-					if(TRAIT_SURGERY_HIGH)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
-						else
-							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!")) */
-
-		if("end")
-			if(isnull(bandage_code))
-				user.visible_message(
-					span_green("[user] applies \a [src] to [target]'s [target_part]."), 
-					span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] [target_part]."))
-			else
-				if(bandage_code & BANDAGE_NEW_APPLIED)
-					user.visible_message(
-						span_green("[user] applies a fresh new [src] to [target]'s [target_part]!"), 
-						span_green("You apply a fresh new [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
-				if(bandage_code & BANDAGE_WAS_REPAIRED)
-					user.visible_message(
-						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src]!"), 
-						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
-				if(bandage_code & BANDAGE_WAS_REPAIRED_TO_FULL)
-					user.visible_message(
-						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src], repairing them completely!"), 
-						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
-				if(bandage_code & BANDAGE_TIMER_REFILLED)
-					user.visible_message(
-						span_green("[user] freshens up the bandages on [target]'s [target_part] with [src]!"), 
-						span_green("You freshen up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
-				
-				if(bandage_code & SUTURE_NEW_APPLIED)
-					user.visible_message(
-						span_green("[user] applies a fresh new set of [src] to [target]'s [target_part]!"), 
-						span_green("You apply a fresh new set of [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
-				if(bandage_code & SUTURE_WAS_REPAIRED)
-					user.visible_message(
-						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src]!"), 
-						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
-				if(bandage_code & SUTURE_WAS_REPAIRED_TO_FULL)
-					user.visible_message(
-						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src], repairing them completely!"), 
-						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
-				if(bandage_code & SUTURE_TIMER_REFILLED)
-					user.visible_message(
-						span_green("[user] freshens up the sutures on [target]'s [target_part] with [src]!"), 
-						span_green("You freshen up the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 
 /obj/item/stack/medical/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
@@ -394,11 +423,16 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	//needed_trait = TRAIT_SURGERY_LOW
 	infinite_uses = TRUE
-	heal_brute = 1
-	heal_burn = 1
+	needs_reservoir = TRUE
+	too_dry = "Your tongue is too dry to keep licking. A break will help. Drinking some water would help too."
+	var/third_person_verb = "lapping at"
+	var/action_verb = "lick at"
+	var/action_verb_2 = "lick"
+	heal_brute = 2
+	heal_burn = 2
 	heal_mobs = 5
-	self_delay = 1 SECONDS
-	other_delay = 1 SECONDS
+	self_delay = 2 SECONDS
+	other_delay = 2 SECONDS
 	end_sound = 'sound/effects/lick.ogg'
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack/lick
@@ -410,13 +444,33 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_notice("[user] starts lapping at [target]'s [target_part]..."), 
-				span_notice("You lick at [user == target ? "your" : "[target]'s"] [target_part]..."))
+				span_notice("[user] starts [third_person_verb] [target]'s [target_part]..."),
+				span_notice("You [action_verb] [user == target ? "your" : "[target]'s"] [target_part]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] lick [target]'s [target_part]!"), 
-				span_green("You lick [user == target ? "your" : "[target]'s"] [target_part]!"))
+				span_green("[user] [action_verb_2]s [target]'s [target_part]!"),
+				span_green("You [action_verb_2] [user == target ? "your" : "[target]'s"] [target_part]!"))
+
+/obj/item/stack/medical/bruise_pack/lick/touch
+	name = "magic healing"
+	singular_name = "magic healing"
+	desc = "A mystical source of healing that draws from an unknown source of power to sooth mild wounds."
+	too_dry = "Your well of magical energy feels dry. A break will help. Drinking some water would help too."
+	third_person_verb = "touching"
+	action_verb = "touch"
+	action_verb_2 = "magically sooth"
+	end_sound = 'sound/effects/healingtouch.ogg'
+
+/obj/item/stack/medical/bruise_pack/lick/tend
+	name = "triage tending"
+	singular_name = "triage tending"
+	desc = "A small Miscellanious supply of medical equipment for treating small wounds."
+	too_dry = "You can't focus enough to keep working. A break will help. Drinking some water would help too."
+	third_person_verb = "tending to"
+	action_verb = "tend"
+	action_verb_2 = "tend"
+	end_sound = 'sound/items/tendingwounds.ogg'
 
 /obj/item/stack/medical/bruise_pack/one
 	amount = 1
@@ -432,7 +486,7 @@
 /* * * * * * * * * * * * * * * * * * *
  * + Quick to apply
  * + Low skill needed
- * + Prevents further blood loss 
+ * + Prevents further blood loss
  * + Heals a little brute and burn
  * - Doesnt stop bleeding on its own
  * - Falls apart easily
@@ -542,13 +596,26 @@
 /obj/item/stack/medical/gauze/adv/one
 	amount = 1
 
+/obj/item/stack/medical/gauze/adv/five
+	amount = 5
+
 /obj/item/stack/medical/gauze/cyborg
 	custom_materials = null
 	is_cyborg = 1
 	cost = 250
 	merge_type = /obj/item/stack/medical/gauze/cyborg
 
+/obj/item/stack/medical/gauze/second_wind
+	name = "tough film"
+	singular_name = "tough film"
+	desc = "A wad of goop that, when spread over a patch of skin (or cyberskin), forms a tough oily film that prevents bloodloss."
+	covering_hitpoints = 3
+	heal_per_tick = 0.01
+	bandage_power = 0.01
+	is_bandage = TRUE
+
 /// ...
+/*
 /obj/item/stack/medical/gauze/lick
 	name = "coagulating saliva"
 	desc = "A fresh coating of somehow medicinal saliva, good for slowing the blood flow on a wound. Not the best of treatments, but somehow better than nothing."
@@ -574,6 +641,7 @@
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = null
 	merge_type = /obj/item/stack/medical/gauze/lick
+*/
 
 /* * * * * *
  * SUTURES
@@ -668,6 +736,9 @@
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated
 
+/obj/item/stack/medical/suture/medicated/five
+	amount = 5
+
 /obj/item/stack/medical/ointment
 	name = "ointment"
 	desc = "Basic burn ointment, rated effective for second degree burns with proper bandaging. Not very effective at treating infection, but better than nothing. USE WITH A BANDAGE."
@@ -676,6 +747,7 @@
 	icon_state = "ointment"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	heal_mobs = 20
 	amount = 12
 	max_amount = 12
 	self_delay = 40
@@ -713,6 +785,7 @@
 	amount = 15
 	max_amount = 15
 	heal_burn = 10
+	heal_mobs = 30
 	sanitization = 2
 	flesh_regeneration = 6
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
@@ -739,6 +812,9 @@
 
 /obj/item/stack/medical/mesh/advanced/one
 	amount = 1
+
+/obj/item/stack/medical/mesh/advanced/five
+	amount = 5
 
 /obj/item/stack/medical/mesh/Initialize()
 	. = ..()

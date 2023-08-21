@@ -35,21 +35,21 @@ SUBSYSTEM_DEF(nightcycle)
 
 	// Variables for badmining
 	var/sunrise_sun_color = "#ffd1b3"
-	var/sunrise_sun_power = 80
+	var/sunrise_sun_power = 95
 	var/morning_sun_color = "#fba52b"
-	var/morning_sun_power = 130
+	var/morning_sun_power = 145
 	var/latemorn_sun_color = "#fba52b"
-	var/latemorn_sun_power = 170
+	var/latemorn_sun_power = 185
 	var/daytime_sun_color = "#faf7cb"
-	var/daytime_sun_power = 200
+	var/daytime_sun_power = 215
 	var/afternoon_sun_color = "#faf7cb"
-	var/afternoon_sun_power = 180
+	var/afternoon_sun_power = 195
 	var/lateafternoon_sun_color = "#faf7cb"
-	var/lateafternoon_sun_power = 160
+	var/lateafternoon_sun_power = 175
 	var/sunset_sun_color = "#f5b151"
-	var/sunset_sun_power = 120
+	var/sunset_sun_power = 135
 	var/fullsunset_sun_color = "#f37588"
-	var/fullsunset_sun_power = 70
+	var/fullsunset_sun_power = 85
 	var/nighttime_sun_color = "#676b74"
 	var/nighttime_sun_power = 40
 
@@ -89,11 +89,11 @@ SUBSYSTEM_DEF(nightcycle)
 				new_time = DAYTIME
 			if (CYCLE_AFTERNOON to CYCLE_LATEAFTERNOON)
 				new_time = AFTERNOON
-			if (CYCLE_LATEAFTERNOON to CYCLE_SUNSET)
+			if (CYCLE_LATEAFTERNOON to CYCLE_FULLSUNSET)
 				new_time = LATEAFTERNOON
-			if (CYCLE_SUNSET to CYCLE_FULLSUNSET)
+			if (CYCLE_FULLSUNSET to CYCLE_SUNSET)
 				new_time = SUNSET
-			if (CYCLE_FULLSUNSET to CYCLE_NIGHTTIME)
+			if (CYCLE_SUNSET to CYCLE_NIGHTTIME)
 				new_time = FULLSUNSET
 			else
 				new_time = NIGHTTIME
@@ -132,7 +132,7 @@ SUBSYSTEM_DEF(nightcycle)
 			current_sun_color = sunset_sun_color
 			current_sun_power = sunset_sun_power
 		if (FULLSUNSET)
-			message_admins("Transitioning into full sunset...")
+			message_admins("Transitioning into full sunset (title drop)...")
 			current_sun_color = fullsunset_sun_color
 			current_sun_power = fullsunset_sun_power
 			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)
@@ -202,6 +202,12 @@ SUBSYSTEM_DEF(nightcycle)
 		if(neighbor.flags_1 & INITIALIZED_1)
 			neighbor.smooth_sunlight_border()
 
+//Proc to update the lighting of a single turf when a new plating is put down on a sunlight source turf
+/turf/proc/setup_single_sunlight_source()
+	vis_contents += SSnightcycle.sunlight_source_object
+	luminosity = 1
+	sunlight_state = SUNLIGHT_SOURCE //should be a value of 2
+
 #define SUNLIGHT_ADJ_IN_DIR(source, junction, direction, direction_flag) \
 	do { \
 		var/turf/neighbor = get_step(source, direction); \
@@ -258,14 +264,16 @@ SUBSYSTEM_DEF(nightcycle)
 			switch(sunlight_state)
 				if(SUNLIGHT_SOURCE)
 					// The no-sunlight neighbors were turned into border during Initialize() already.
-					RE_SMOOTH_BORDER_NEIGHBORS(src)
+					//RE_SMOOTH_BORDER_NEIGHBORS(src)
+					sunlight_state = NO_SUNLIGHT //you're indoors, behave and stop shining light everywhere
 				//if(SUNLIGHT_BORDER)
 				//	CRASH("Turf changed from no-sunlight to border on ChangeTurf(). No turf should be border by default.")
 		if(SUNLIGHT_SOURCE)
 			switch(sunlight_state)
 				if(NO_SUNLIGHT)
 					// Have them decide whether they're still border or not.
-					RE_SMOOTH_BORDER_NEIGHBORS(src)
+					//RE_SMOOTH_BORDER_NEIGHBORS(src)
+					setup_single_sunlight_source() //light yourself up, but don't bother your neighbors
 				//if(SUNLIGHT_BORDER)
 				//	CRASH("Turf changed from sunlight-source to border on ChangeTurf(). No turf should be border by default.")
 		if(SUNLIGHT_BORDER)

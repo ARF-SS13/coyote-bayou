@@ -8,7 +8,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/limbs_id		//this is used if you want to use a different species limb sprites. Mainly used for angels as they look like humans.
 	var/name	// this is the fluff name. these will be left generic (such as 'Lizardperson' for the lizard race) so servers can change them to whatever
 	var/default_color = "#FFFFFF"	// if alien colors are disabled, this is the color that will be used by that race
-
 	var/sexes = 1 // whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/has_field_of_vision = TRUE
 
@@ -597,6 +596,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
 	H.remove_overlay(BODY_LAYER)
+	H.remove_overlay(UNDERWEAR_LAYER)
+	H.remove_overlay(UNDERWEAR_OVERHANDS_LAYER)
 
 	var/list/standing = list()
 
@@ -638,8 +639,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				standing += left_eye
 				standing += right_eye
 
+	var/list/standing_undies = list()
+	var/list/standing_overdies = list()
 	//Underwear, Undershirts & Socks
 	if(!(NO_UNDERWEAR in species_traits))
+		var/overhands
+		var/layer_to_put_it_on = UNDERWEAR_LAYER
+		if(H.client?.prefs)
+			var/datum/preferences/P = H.client.prefs
+			if(P.underwear_overhands)
+				layer_to_put_it_on = UNDERWEAR_OVERHANDS_LAYER
+				overhands = TRUE
 		var/datum/sprite_accessory/taur/TA
 		if(mutant_bodyparts["taur"] && H.dna.features["taur"])
 			TA = GLOB.taur_list[H.dna.features["taur"]]
@@ -650,10 +660,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/datum/sprite_accessory/underwear/socks/S = GLOB.socks_list[H.socks]
 			if(S)
 				var/digilegs = ((DIGITIGRADE in species_traits) && S.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -BODY_LAYER)
+				var/mutable_appearance/MA = mutable_appearance(S.icon, "[S.icon_state][digilegs]", -layer_to_put_it_on)
 				if(S.has_color)
 					MA.color = "#[H.socks_color]"
-				standing += MA
+				if(overhands)
+					standing_overdies += MA
+				else
+					standing_undies += MA
 
 		if(H.underwear && !H.hidden_underwear)
 			if(H.saved_underwear)
@@ -662,10 +675,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/datum/sprite_accessory/underwear/bottom/B = GLOB.underwear_list[H.underwear]
 			if(B)
 				var/digilegs = ((DIGITIGRADE in species_traits) && B.has_digitigrade) ? "_d" : ""
-				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -BODY_LAYER)
+				var/mutable_appearance/MA = mutable_appearance(B.icon, "[B.icon_state][digilegs]", -layer_to_put_it_on)
 				if(B.has_color)
 					MA.color = "#[H.undie_color]"
-				standing += MA
+				if(overhands)
+					standing_overdies += MA
+				else
+					standing_undies += MA
 
 		if(H.undershirt && !H.hidden_undershirt)
 			if(H.saved_undershirt)
@@ -675,13 +691,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(T)
 				var/state = "[T.icon_state][((DIGITIGRADE in species_traits) && T.has_digitigrade) ? "_d" : ""]"
 				var/mutable_appearance/MA
-				if(H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
-					MA = wear_alpha_masked_version(state, T.icon, BODY_LAYER, FEMALE_UNIFORM_TOP)
+				if(T.use_sex_mask && H.dna.species.sexes && H.dna.features["body_model"] == FEMALE)
+					MA = wear_alpha_masked_version(state, T.icon, layer_to_put_it_on, FEMALE_UNIFORM_TOP)
 				else
-					MA = mutable_appearance(T.icon, state, -BODY_LAYER)
+					MA = mutable_appearance(T.icon, state, -layer_to_put_it_on)
 				if(T.has_color)
 					MA.color = "#[H.shirt_color]"
-				standing += MA
+				if(overhands)
+					standing_overdies += MA
+				else
+					standing_undies += MA
 
 	//Warpaint and tattoos
 	if(H.warpaint)
@@ -691,10 +710,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(standing.len)
 		H.overlays_standing[BODY_LAYER] = standing
 
+	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies
+	H.overlays_standing[UNDERWEAR_OVERHANDS_LAYER] = standing_overdies
 
-	if(standing.len)
-		H.overlays_standing[BODY_LAYER] = standing
-
+	H.apply_overlay(UNDERWEAR_LAYER)
+	H.apply_overlay(UNDERWEAR_OVERHANDS_LAYER)
 	H.apply_overlay(BODY_LAYER)
 	handle_mutant_bodyparts(H)
 
@@ -786,6 +806,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
+	var/image/tail_hack // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -897,6 +918,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
+			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
+				tail_hack = accessory_overlay
 			standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
@@ -993,6 +1016,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
+	H.tail_hud_update(tail_hack)
+
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.
@@ -1052,7 +1077,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_WEAR_MASK)
 			if(H.wear_mask)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_MASK))
+			if(!(I.slot_flags & INV_SLOTBIT_MASK))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1060,25 +1085,25 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_NECK)
 			if(H.wear_neck)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_NECK) )
+			if( !(I.slot_flags & INV_SLOTBIT_NECK) )
 				return FALSE
 			return TRUE
 		if(SLOT_BACK)
 			if(H.back)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_BACK) )
+			if( !(I.slot_flags & INV_SLOTBIT_BACK) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_WEAR_SUIT)
 			if(H.wear_suit)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_OCLOTHING) )
+			if( !(I.slot_flags & INV_SLOTBIT_OCLOTHING) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_GLOVES)
 			if(H.gloves)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_GLOVES) )
+			if( !(I.slot_flags & INV_SLOTBIT_GLOVES) )
 				return FALSE
 			if(num_arms < 2)
 				return FALSE
@@ -1086,7 +1111,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_SHOES)
 			if(H.shoes)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_FEET) )
+			if( !(I.slot_flags & INV_SLOTBIT_FEET) )
 				return FALSE
 			if(num_legs < 2)
 				return FALSE
@@ -1105,13 +1130,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(return_warning)
 						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_BELT))
+			if(!(I.slot_flags & INV_SLOTBIT_BELT))
 				return
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_GLASSES)
 			if(H.glasses)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_EYES))
+			if(!(I.slot_flags & INV_SLOTBIT_EYES))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1119,7 +1144,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_HEAD)
 			if(H.head)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_HEAD))
+			if(!(I.slot_flags & INV_SLOTBIT_HEAD))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1127,7 +1152,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_EARS)
 			if(H.ears)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_EARS))
+			if(!(I.slot_flags & INV_SLOTBIT_EARS))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1135,7 +1160,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_W_UNIFORM)
 			if(H.w_uniform)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ICLOTHING) )
+			if( !(I.slot_flags & INV_SLOTBIT_ICLOTHING) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_WEAR_ID)
@@ -1147,7 +1172,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(return_warning)
 						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ID) )
+			if( !(I.slot_flags & INV_SLOTBIT_ID) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_L_STORE)
@@ -1162,9 +1187,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
-			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
+			if(I.slot_flags & INV_SLOTBIT_DENYPOCKET)
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_POCKET) )
+			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & INV_SLOTBIT_POCKET) )
 				return TRUE
 		if(SLOT_R_STORE)
 			if(HAS_TRAIT(I, TRAIT_NODROP))
@@ -1178,9 +1203,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
-			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
+			if(I.slot_flags & INV_SLOTBIT_DENYPOCKET)
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_POCKET) )
+			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & INV_SLOTBIT_POCKET) )
 				return TRUE
 			return FALSE
 		if(SLOT_S_STORE)
@@ -1188,19 +1213,19 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if(H.s_store)
 				return FALSE
-			if(!H.wear_suit)
+			/*if(!H.wear_suit)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a suit before you can attach this [I.name]!")
 				return FALSE
 			if(!H.wear_suit.allowed)
 				if(return_warning)
 					return_warning[1] = "You somehow have a suit with no defined allowed items for suit storage, stop that."
-				return FALSE
+				return FALSE*/
 			if(I.w_class > WEIGHT_CLASS_BULKY)
 				if(return_warning)
 					return_warning[1] = "The [I.name] is too big to attach."
 				return FALSE
-			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_suit.allowed) )
+			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, GLOB.default_all_armor_slot_allowed) )
 				return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)
@@ -1466,16 +1491,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
 		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
 			damage = user.dna.species.punchdamagehigh
+		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER))
+			damage *= 0.2 // too scared!
 		var/punchedstam = target.getStaminaLoss()
 		var/punchedbrute = target.getBruteLoss()
 
 		//CITADEL CHANGES - makes resting and disabled combat mode reduce punch damage, makes being out of combat mode result in you taking more damage
-		if(!SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-			damage *= 1.2
+		//if(!SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
+		//	damage *= 1.2
 		if(!CHECK_MOBILITY(user, MOBILITY_STAND))
 			damage *= 0.65
-		if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-			damage *= 0.8
+		//if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
+		//	damage *= 0.8
 		//END OF CITADEL CHANGES
 
 		var/obj/item/bodypart/affecting = target.get_bodypart(ran_zone(user.zone_selected))
@@ -1703,8 +1730,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if("disarm")
 			disarm(M, H, attacker_style)
 
-/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H, attackchain_flags = NONE, damage_multiplier = 1)
-	var/totitemdamage = H.pre_attacked_by(I, user) * damage_multiplier
+/datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H, attackchain_flags = NONE, damage_multiplier = 1, damage_addition = 0, damage_override)
+	var/totitemdamage = 0
+	if(damage_override)
+		totitemdamage = damage_override
+	else
+		totitemdamage = (H.pre_attacked_by(I, user) * damage_multiplier) + damage_addition
 
 	if(!affecting) //Something went wrong. Maybe the limb is missing?
 		affecting = H.get_bodypart(BODY_ZONE_CHEST) //If the limb is missing, or something went terribly wrong, just hit the chest instead
@@ -1727,7 +1758,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/armor_block = H.run_armor_check(affecting, "melee", span_notice("Your armor has protected your [hit_area]."), span_notice("Your armor has softened a hit to your [hit_area]."),I.armour_penetration)
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
 	var/dt = max(H.run_armor_check(def_zone, "damage_threshold") - I.damage_threshold_penetration, 0)
-	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
+	var/Iforce = totitemdamage //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 	var/Iwound_bonus = I.wound_bonus
 
 	// this way, you can't wound with a surgical tool on help intent if they have a surgery active and are laying down, so a misclick with a circular saw on the wrong limb doesn't bleed them dry (they still get hit tho)
@@ -1746,10 +1777,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return 0 //item force is zero
 
 	var/bloody = 0
-	if(((I.damtype == BRUTE) && I.force && prob(25 + (I.force * 2))))
+	if(((I.damtype == BRUTE) && totitemdamage && prob(25 + (totitemdamage * 2))))
 		if(affecting.status == BODYPART_ORGANIC)
 			I.add_mob_blood(H)	//Make the weapon bloody, not the person.
-			if(prob(I.force * 2))	//blood spatter!
+			if(prob(totitemdamage * 2))	//blood spatter!
 				bloody = 1
 				var/turf/location = H.loc
 				if(istype(location))
@@ -1760,7 +1791,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		switch(hit_area)
 			if(BODY_ZONE_HEAD)
 				if(!I.get_sharpness() && armor_block < 50)
-					if(prob(I.force))
+					if(prob(totitemdamage))
 						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 						if(H.stat == CONSCIOUS)
 							H.visible_message(span_danger("[H] has been knocked senseless!"), \
@@ -1770,9 +1801,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						if(prob(10))
 							H.gain_trauma(/datum/brain_trauma/mild/concussion)
 					else
-						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, I.force * 0.2)
+						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, totitemdamage * 0.2)
 
-					if(H.stat == CONSCIOUS && H != user && prob(I.force + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
+					if(H.stat == CONSCIOUS && H != user && prob(totitemdamage + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
 						var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
 						if(rev)
 							rev.remove_revolutionary(FALSE, user)
@@ -1790,7 +1821,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 			if(BODY_ZONE_CHEST)
 				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
-					if(prob(I.force))
+					if(prob(totitemdamage))
 						H.visible_message(span_danger("[H] has been knocked down!"), \
 									span_userdanger("[H] has been knocked down!"))
 						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
@@ -1942,8 +1973,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		target.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION)
 		log_combat(user, target, "shoved", append_message)
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0)
-	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone, wound_bonus, bare_wound_bonus, sharpness) // make sure putting wound_bonus here doesn't screw up other signals or uses for this signal
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE)
+	if(sendsignal)
+		SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!forced && hit_percent <= 0)
@@ -1973,8 +2005,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!BP)
 			BP = H.bodyparts[1]
 
-	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
-		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	if(!forced && damage > 0 && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 0.1)
 
 	switch(damagetype)
 		if(BRUTE)

@@ -227,47 +227,39 @@
 
 	action_icon_state = "repulse"
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 50)
-	var/list/mobs = list()
-	var/list/objs = list()
-	var/list/thrownatoms = list()
+/obj/effect/proc_holder/spell/aoe_turf/repulse/spin
+	name = "Repulse"
+	desc = "This spell throws everything around the user away."
+	sound = 'sound/effects/spindicoot.ogg'
+	charge_max = 150
+	clothes_req = NONE
+	antimagic_allowed = TRUE
+	invocation_type = "none"
+	sparkle_path = /obj/effect/temp_visual/small_smoke/halfsecond
+	anti_magic_check = FALSE
+
+/obj/effect/proc_holder/spell/aoe_turf/repulse/spin/cast(list/targets,mob/user = usr, stun_amt = 50)
 	var/atom/throwtarget
-	var/distfromcaster
 	playMagSound()
 	for(var/turf/T in targets) //Done this way so things don't get thrown all around hilariously.
-		for(var/mob/M in T)
-			mobs += M
-		for(var/obj/O in T)
-			objs += O
-	thrownatoms = mobs + objs		//mobs first
-	var/safety = 50
-	for(var/am in thrownatoms)
-		if(!safety)
-			break
-		var/atom/movable/AM = am
-		if(AM == user || AM.anchored)
-			continue
-
-		if(ismob(AM))
-			var/mob/M = AM
-			if(M.anti_magic_check(anti_magic_check, FALSE))
+		new sparkle_path(T, get_dir(user, T)) //created sparkles will disappear on their own
+		var/safety = 50
+		for(var/atom/movable/AM in T)
+			if(!safety)
+				break
+			if(AM == user || AM.anchored)
 				continue
 
-		throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
-		distfromcaster = get_dist(user, AM)
-		if(distfromcaster == 0)
+			throwtarget = get_ranged_target_turf(AM, get_dir(user, get_step_away(AM, user)), 3, 2)
 			if(isliving(AM))
 				var/mob/living/M = AM
-				M.DefaultCombatKnockdown(100, override_hardstun = 20)
-				M.adjustBruteLoss(5)
-				to_chat(M, span_userdanger("You're slammed into the floor by [user]!"))
-		else
-			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
-			if(isliving(AM))
-				var/mob/living/M = AM
-				M.DefaultCombatKnockdown(stun_amt, override_hardstun = stun_amt * 0.2)
+				var/armormult = clamp(M.getarmor(BODY_ZONE_CHEST, "melee"), 0, 1)
+				M.apply_damage(10 * (isanimal(M) ? 3 : 1), BRUTE, BODY_ZONE_CHEST, blocked = armormult)
+				log_combat(user, M, "martial art (raging boar)")
 				to_chat(M, span_userdanger("You're thrown back by [user]!"))
-			AM.throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user)//So stuff gets tossed around at the same time.
+				playsound(M, 'sound/effects/flesh_impact_1.ogg', 50, TRUE)
+				M.emote("scream") // this martial art has a lot of screaming huh?
+			AM.throw_at(throwtarget, 3, 1, user)
 			safety--
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
@@ -320,7 +312,6 @@
 /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket
 	name = "Thrown Lightning"
 	desc = "Forged from eldrich energies, a packet of pure power, known as a spell packet will appear in your hand, that when thrown will stun the target."
-	clothes_req = SPELL_WIZARD_GARB
 	item_type = /obj/item/spellpacket/lightningbolt
 	charge_max = 10
 
@@ -334,6 +325,7 @@
 	desc = "Some birdseed wrapped in cloth that somehow crackles with electricity."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snappop"
+	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/spellpacket/lightningbolt/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -341,7 +333,7 @@
 		if(isliving(hit_atom))
 			var/mob/living/M = hit_atom
 			if(!M.anti_magic_check())
-				M.electrocute_act(80, src, null, SHOCK_ILLUSION)
+				M.electrocute_act(10, src, null, SHOCK_ILLUSION)
 		qdel(src)
 
 /obj/item/spellpacket/lightningbolt/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)

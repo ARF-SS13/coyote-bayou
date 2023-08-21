@@ -90,15 +90,21 @@
 	var/turfs_impacted = FALSE // Did this weather already impact turfs?
 	var/carbons_only = FALSE //Does this weather affect only carbon mobs?
 
+	///Outdoor looping sound effects
+	var/datum/looping_sound/sound_ao
+	var/sound_ao_type
+	///Indoor looping sound effects
+	var/datum/looping_sound/sound_ai
+	var/sound_ai_type
+
 /datum/weather/New(z_levels)
 	..()
 	impacted_z_levels = z_levels
+	if(sound_ao_type)
+		sound_ao = new sound_ao_type(list(), FALSE, TRUE)
+	if(sound_ai_type)
+		sound_ai = new sound_ai_type(list(), FALSE, TRUE)
 	telegraph()
-
-/datum/weather/Destroy(force, ...)
-	. = ..()
-	if(SSweather.current_weather == src)
-		SSweather.end_weather()
 
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
@@ -152,6 +158,10 @@
 	update_areas()
 	alert_players(weather_message, weather_sound)
 	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
+	sound_ao?.start()
+	sound_ai?.start()
+	for(var/P in GLOB.player_list)
+		handle_looping_sound(P)
 
 /**
  * Weather enters the winding down phase, stops effects
@@ -194,10 +204,15 @@
 	SSweather.end_weather(TRUE, TRUE, FALSE)
 	if(forced)
 		alert_players(end_message, end_sound)
-	qdel(src)
+	sound_ao?.stop()
+	sound_ai?.stop()
 
 /datum/weather/process()
-	if(aesthetic || (stage != MAIN_STAGE))
+	if(stage != MAIN_STAGE)
+		return
+	for(var/P in GLOB.player_list)
+		handle_looping_sound(P)
+	if(aesthetic)
 		return
 	if(!turfs_impacted && affects_turfs)
 		turfs_impacted = TRUE
@@ -209,6 +224,26 @@
 		var/mob/living/L = i
 		if(can_weather_act(L))
 			weather_act(L)
+
+/**
+ * Adds or removes mobs from the output_atoms list
+ * for the weather's looping sound effects
+ */
+/datum/weather/proc/handle_looping_sound(mob/living/L)
+	if(!L || !ismob(L))
+		return
+	var/turf/mob_turf = get_turf(L)
+	if(mob_turf?.z in impacted_z_levels)
+		var/area/mob_area = get_area(L)
+		if(mob_area.outdoors)//Mob is outdoors, add them to the outdoors list and remove them from the indoors
+			sound_ao?.output_atoms |= L
+			sound_ai?.output_atoms -= L
+		else//Mob is indoors, add them to the indoor list and remove from outdoors
+			sound_ai?.output_atoms |= L
+			sound_ao?.output_atoms -= L
+	else
+		sound_ao?.output_atoms -= L
+		sound_ai?.output_atoms -= L
 
 /**
  * Returns TRUE if the living mob can be affected by the weather

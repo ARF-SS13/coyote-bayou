@@ -10,6 +10,33 @@
 	lose_text = span_notice("You can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
+/datum/quirk/no_chocolate
+	name = "Chocolate intolerance"
+	desc = "Your metabolism finds chocolate rather disagreeable."
+	value = 0
+	mob_trait = TRAIT_NO_CHOCOLATE
+	gain_text = span_notice("You feel like eating chocolate is a bad idea.")
+	lose_text = span_notice("You feel like it's safe to eat chocolate again")
+	medical_record_text = "Patient has an aversion to theobromine, and therefore cannot have chocolate."
+
+/datum/quirk/white_woman
+	name = "Peanutbutter difficulties"
+	desc = "Your tongue has difficulty handling the adhesiveness of peanut butter"
+	value = 0
+	mob_trait = TRAIT_WHITE_WOMAN
+	gain_text = span_notice("Your tongue lacks the manipulation to properly eat peanut butter.")
+	lose_text = span_notice("Your tongue is skilled at taking on sticky peanut butter.")
+	medical_record_text = "Patient's tongue lacks the dexterity required to eat peanut butter."
+
+/datum/quirk/autobrew //sugary foods create ethanol
+	name = "Autobrewery syndrome"
+	desc = "Your natural gut flora ferments many sugary foods and drinks into alcohol. taking penicillin or eating healthy prevents this."
+	value = 0
+	mob_trait = TRAIT_AUTOBREW
+	gain_text = span_notice("you feel rather fuzzy.")
+	lose_text = span_notice("you feel more coherent.")
+	medical_record_text = "Patient shows chronically unusual blood alcohol levels."
+
 /datum/quirk/snob
 	name = "Snob"
 	desc = "You care about the finer things, if a room doesn't look nice its just not really worth it, is it?"
@@ -19,7 +46,7 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
 	name = "FEV Exposure"
 	desc = " "
@@ -30,12 +57,12 @@
 	mob_trait = TRAIT_FEV
 
 /datum/quirk/fev/add()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 8 //Their fists hurt more
-	mob_tar.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = 8 //Their fists hurt more
+	H.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT) //:trollge:
-	mob_tar.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
-	mob_tar.health += 30
+	H.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
+	H.health += 30
 */
 
 /datum/quirk/pineapple_liker
@@ -330,3 +357,127 @@
 	value = 0
 	mob_trait = TRAIT_HEAT_DETECT
 
+/datum/quirk/smol
+	name = "Smol!"
+	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, others can Alt-Click to pick you up like an item!"
+	value = 0
+	mob_trait = TRAIT_SMOL
+	gain_text = span_notice("You feel scoopable! Others can ALT-CLICK you to pick you up!")
+	lose_text = span_notice("You feel a lot less scoopable.")
+
+/datum/quirk/smol/add()
+	if(istype(quirk_holder))
+		quirk_holder.AddElement(/datum/element/mob_holder, "corgi") // dog
+
+/datum/quirk/smol/remove()
+	if(istype(quirk_holder))
+		quirk_holder.RemoveElement(/datum/element/mob_holder) // undog
+
+/datum/quirk/cat
+	name = "A cat!"
+	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_CAT
+/datum/quirk/rat
+	name = "A rat!"
+	desc = "You identify as a rat! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_RAT
+/datum/quirk/spider
+	name = "A spider!"
+	desc = "You identify as a spider! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_SPIDER
+/datum/quirk/lizard
+	name = "A lizard or reptillian!"
+	desc = "You identify as a lizard/reptillian! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_LIZARD
+/datum/quirk/robot
+	name = "A robot/synth!"
+	desc = "You identify as a robot/synth! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_ROBOT
+
+/datum/quirk/bird
+	name = "A bird!"
+	desc = "You identify as a bird! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_BIRD
+
+/datum/quirk/dog
+	name = "A dog!"
+	desc = "You identify as a dog! (Mostly to help identify your species mechanically)"
+	value = 0
+	mob_trait = TRAIT_DOG
+
+/datum/quirk/photographer
+	name = "Photographer"
+	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
+	value = 0
+	mob_trait = TRAIT_PHOTOGRAPHER
+	gain_text = span_notice("You know everything about photography.")
+	lose_text = span_danger("You forget how photo cameras work.")
+	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
+
+/datum/quirk/photographer/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
+	photo_album.persistence_id = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_load()
+	photo_album.name = "[human_holder.real_name]'s photo album"
+
+	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(photo_album))
+			photo_album.forceMove(get_turf(photo_album))
+
+	var/obj/item/camera/cam = new(get_turf(human_holder))
+	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(cam))
+			cam.forceMove(get_turf(cam))
+/datum/quirk/journalist
+	name = "Journalist"
+	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
+	value = 0
+	mob_trait = TRAIT_JOURNALIST
+	gain_text = span_notice("You feel like you need to harrass politicians.")
+	lose_text = span_danger("You forget how to be a journalist. :(")
+	medical_record_text = ""
+
+/datum/quirk/journalist/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/folder/folder = new(get_turf(human_holder))
+	folder.persistenceID = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	folder.PersistenceLoad()
+	folder.name = "[human_holder.real_name]'s journal"
+
+	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(folder))
+			folder.forceMove(get_turf(human_holder))
+
+/datum/quirk/lick_heal
+	name = "Innate healing - Saliva"
+	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick the injuries of yourself or others. Drinking water helps recover from a dry tongue faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TONGUE
+	gain_text = span_notice("You feel a slight tingle in your mouth.")
+	lose_text = span_danger("The tingle in your mouth fades.")
+	locked = FALSE
+
+/datum/quirk/touch_heal
+	name = "Innate healing - Magic"
+	desc = "Your touch has a mild healing effect on burns and bruises. Use *touch to sooth the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TOUCH
+	gain_text = span_notice("You feel a slight tingle in your hands.")
+	lose_text = span_danger("The tingle in your palm fades.")
+	locked = FALSE
+
+/datum/quirk/tend_heal
+	name = "Innate healing - Triage"
+	desc = "You keep a tiny kit of medical supplies stashed away for emergencies. Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
+	value = 0
+	mob_trait = TRAIT_HEAL_TEND
+	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
+	lose_text = span_danger("You lost your triage kit...")
+	locked = FALSE

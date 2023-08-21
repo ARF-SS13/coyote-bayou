@@ -7,6 +7,7 @@
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-geckohide"
 	merge_type = /obj/item/stack/sheet/animalhide/gecko
+	custom_materials = list(/datum/material/geckohide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/molerat
 	name = "molerat skin"
@@ -15,6 +16,7 @@
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-molerat"
 	merge_type = /obj/item/stack/sheet/animalhide/molerat
+	custom_materials = list(/datum/material/molerathide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/deathclaw
 	name = "deathclaw skin"
@@ -32,6 +34,7 @@
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-skin"
 	merge_type = /obj/item/stack/sheet/animalhide/wolf
+	custom_materials = list(/datum/material/wolfhide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/radstag
 	name = "radstag hide"
@@ -39,6 +42,7 @@
 	singular_name = "radstag hide piece"
 	icon_state = "sheet-hide"
 	merge_type = /obj/item/stack/sheet/animalhide/radstag
+	custom_materials = list(/datum/material/radstaghide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/brahmin
 	name = "brahmin skin"
@@ -46,3 +50,4 @@
 	singular_name = "brahmin skin piece"
 	icon_state = "sheet-hide" //ToDo: Brahmin Mat
 	merge_type = /obj/item/stack/sheet/animalhide/brahmin
+	custom_materials = list(/datum/material/brahminhide=MINERAL_MATERIAL_AMOUNT)

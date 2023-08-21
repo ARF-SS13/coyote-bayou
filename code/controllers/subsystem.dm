@@ -117,6 +117,7 @@
 //previously, this would have been named 'process()' but that name is used everywhere for different things!
 //fire() seems more suitable. This is the procedure that gets called every 'wait' deciseconds.
 //Sleeping in here prevents future fires until returned.
+// If used, don't call this parent, it'll make the SS never fire again
 /datum/controller/subsystem/proc/fire(resumed = FALSE)
 	flags |= SS_NO_FIRE
 	CRASH("Subsystem [src]([type]) does not fire() but did not set the SS_NO_FIRE flag. Please add the SS_NO_FIRE flag to any subsystem that doesn't fire so it doesn't get added to the processing list and waste cpu.")
@@ -247,7 +248,7 @@
 /datum/controller/subsystem/Initialize(start_timeofday)
 	initialized = TRUE
 	SEND_SIGNAL(src, COMSIG_SUBSYSTEM_POST_INITIALIZE, start_timeofday)
-	var/time = (REALTIMEOFDAY - start_timeofday) / 10
+	var/time = (REALTIMEOFDAY - start_timeofday) * 0.1
 	var/msg = "Initialized [name] subsystem within [time] second[time == 1 ? "" : "s"]!"
 	to_chat(world, span_boldannounce("[msg]"))
 	log_world(msg)

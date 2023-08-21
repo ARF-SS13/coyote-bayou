@@ -30,6 +30,11 @@
 #define ITEM_CAN_BLOCK						(1<<14)
 /// Thing is just your hand, and shouldnt block anything
 #define HAND_ITEM							(1<<15)
+/// Has this thing been run through a blender at least once?
+#define BEEN_JUICED							(1<<16)
+
+/// This thing was clicked on, and something said not to pick it up (cus its gonna do something cool)
+#define ITEM_CLICKED_NOPICKUP				(1<<1)
 
 // Flags for the clothing_flags var on /obj/item/clothing
 

@@ -153,7 +153,7 @@
 	icon_state = "dueling_pistol"
 	item_state = "gun"
 	ammo_x_offset = 2
-	w_class = WEIGHT_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/duel)
 	automatic_charge_overlays = FALSE
 	var/unlocked = FALSE

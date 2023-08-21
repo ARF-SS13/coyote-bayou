@@ -79,18 +79,26 @@
 
 // use power from a cell
 /obj/item/stock_parts/cell/use(amount, can_explode = TRUE)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0 && can_explode)
 		explode()
 		return 0
-	if(charge < amount)
+	if(charge <= 0)
 		return 0
-	charge = (charge - amount)
+	var/used = min(charge,amount)
+	charge = (charge - used)
 	if(!istype(loc, /obj/machinery/power/apc))
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
-	return 1
+	return used
+
+// check power in a cell
+/obj/item/stock_parts/cell/proc/check_charge(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
+	return (charge >= amount)
 
 // recharge the cell
 /obj/item/stock_parts/cell/proc/give(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0)
 		explode()
 		return 0
@@ -144,6 +152,7 @@
 	charge -= 10 * severity
 	if(charge < 0)
 		charge = 0
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 
 /obj/item/stock_parts/cell/ex_act(severity, target)
 	..()
@@ -229,7 +238,7 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/crap
-	name = "\improper Nanotrasen brand rechargeable AA battery"
+	name = "\improper US Government brand rechargeable AA battery"
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
@@ -315,8 +324,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/bluespace
-	name = "bluespace power cell"
-	desc = "A rechargeable transdimensional power cell."
+	name = "ultracite power cell"
+	desc = "A rechargeable high capacity ultracite power cell."
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)
@@ -366,6 +375,16 @@
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "yellow slime extract"
 	custom_materials = null
+	rating = 5 //self-recharge makes these desirable
+	self_recharge = 1 // Infused slime cores self-recharge, over time
+
+/obj/item/stock_parts/cell/high/slime/blue
+	name = "charged slime core"
+	desc = "A yellow slime core infused with plasma, it crackles with power."
+	icon = 'icons/mob/slimes.dmi'
+	icon_state = "yellow slime extract"
+	custom_materials = null
+	maxcharge = 5000
 	rating = 5 //self-recharge makes these desirable
 	self_recharge = 1 // Infused slime cores self-recharge, over time
 
@@ -449,10 +468,6 @@
 		name = "used [initial(name)]"
 	. = ..()
 
-/obj/item/stock_parts/cell/ammo/New()
-	..()
-	return
-
 // Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
@@ -463,14 +478,31 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (1001 to 2000)
-			icon_state = "mfc-full"
-		if (51 to 1000)
-			icon_state = "mfc-half"
-		if (0 to 50)
-			icon_state = "mfc-empty"
+	if(charge >= (maxcharge*0.65))
+		icon_state = "mfc-full"
+	else if(charge >= (maxcharge*0.35))
+		icon_state = "mfc-half"
+	else
+		icon_state = "mfc-empty"
 	. = ..()
+
+// Enhanced Microfusion cell - large energy weapons
+/obj/item/stock_parts/cell/ammo/mfc/large
+	name = "enhanced microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has been modified to hold double the normal charge."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 3000
+	w_class = WEIGHT_CLASS_SMALL
+
+// Crafted Microfusion cell - large energy weapons
+/obj/item/stock_parts/cell/ammo/mfc/bad
+	name = "shoddy microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
+	icon_state = "mfc-full"
+	maxcharge = 1000
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
@@ -486,7 +518,33 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 1500
-	
+
+/obj/item/stock_parts/cell/ammo/ec/update_icon()
+	if(charge >= maxcharge * 0.75)
+		icon_state = "ec-full"
+	else if(charge >= maxcharge * 0.50)
+		icon_state = "ec-twothirds"
+	else if(charge >= maxcharge * 0.25)
+		icon_state = "ec-onethirds"
+	else
+		icon_state = "ec-empty"
+	. = ..()
+
+// Enhanced energy cell - small energy weapons
+/obj/item/stock_parts/cell/ammo/ec/large
+	name = "enhanced energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has been modified to hold far more energy."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "ec-full"
+	maxcharge = 2250
+
+// Crafted Energy cell - small energy weapons
+/obj/item/stock_parts/cell/ammo/ec/bad
+	name = "shoddy energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one looks a little suspect though."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
+	icon_state = "ec-full"
+	maxcharge = 750
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
@@ -496,17 +554,12 @@
 	icon_state = "ec-full"
 	maxcharge = 2000
 
-/obj/item/stock_parts/cell/ammo/ec/update_icon()
-	switch(charge)
-		if (1101 to 1600)
-			icon_state = "ec-full"
-		if (551 to 1100)
-			icon_state = "ec-twothirds"
-		if (51 to 550)
-			icon_state = "ec-onethirds"
-		if (0 to 50)
-			icon_state = "ec-empty"
-	. = ..()
+// Microfusion breeder? Okay, sure.
+/obj/item/stock_parts/cell/ammo/breeder/xal
+	name = "S.I.D.A. breeder"
+	maxcharge = 1100
+
+
 
 // Electron charge pack - rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp
@@ -518,14 +571,31 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
-	switch(charge)
-		if (1501 to 2400)
-			icon_state = "ecp-full"
-		if (101 to 1500)
-			icon_state = "ecp-half"
-		if (0 to 100)
-			icon_state = "ecp-empty"
+	if(charge >= maxcharge*0.65)
+		icon_state = "ecp-full"
+	else if(charge >= maxcharge*0.35)
+		icon_state = "ecp-half"
+	else
+		icon_state = "ecp-empty"
 	. = ..()
+
+// Enhanced electron charge pack - rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp/large
+	name = "enhanced electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has been modified to hold far more energy."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "ecp-full"
+	maxcharge = 3600
+	w_class = WEIGHT_CLASS_SMALL
+
+// Crafted Electron charge pack - bad rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp/bad
+	name = "counterfeit electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one looks slightly off, somehow."
+	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give a shitty icon
+	icon_state = "ecp-full"
+	maxcharge = 1200
+	w_class = WEIGHT_CLASS_SMALL
 
 // Alien power cell
 /obj/item/stock_parts/cell/ammo/alien

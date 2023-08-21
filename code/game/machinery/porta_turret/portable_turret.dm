@@ -251,26 +251,19 @@
 /obj/machinery/porta_turret/proc/check_should_process()
 	if (!on || !anchored || (stat & BROKEN) || !powered())
 		//end_processing()
-		if(datum_flags & DF_ISPROCESSING)
-			if(processing_state == TURRET_PROCESS_FAST)
-				STOP_PROCESSING(SSfastprocess, src)
-			else if(processing_state == TURRET_PROCESS_MACHINE)
-				STOP_PROCESSING(SSmachines, src)
-			processing_state = TURRET_PROCESS_OFF
+		STOP_PROCESSING(SSfastprocess, src)
+		STOP_PROCESSING(SSmachines, src)
+		processing_state = TURRET_PROCESS_OFF
 		return FALSE
 	//START_PROCESSING(SSmachines, src)
 	//begin_processing()
 	if(activity_state == TURRET_SLEEP_MODE)
-		if(CHECK_BITFIELD(datum_flags, DF_ISPROCESSING))
-			if(processing_state == TURRET_PROCESS_FAST)
-				STOP_PROCESSING(SSfastprocess, src)
+		STOP_PROCESSING(SSfastprocess, src)
 		START_PROCESSING(SSmachines, src)
 		processing_state = TURRET_PROCESS_MACHINE
 		return TRUE
 	else
-		if(CHECK_BITFIELD(datum_flags, DF_ISPROCESSING))
-			if(processing_state == TURRET_PROCESS_MACHINE)
-				STOP_PROCESSING(SSmachines, src)
+		STOP_PROCESSING(SSmachines, src)
 		START_PROCESSING(SSfastprocess, src)
 		processing_state = TURRET_PROCESS_FAST
 		return TRUE
@@ -1968,7 +1961,7 @@
 		if(!casing.BB)
 			continue
 		if(our_mag.give_round(casing))
-			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag)
+			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag, FALSE)
 		else
 			continue
 		count++
@@ -2068,6 +2061,10 @@
 	w_class = WEIGHT_CLASS_GIGANTIC
 	start_ammo_count = 100
 	randomize_ammo_count = TRUE
+
+/obj/item/ammo_box/magazine/internal/turret/get_random_bullet_amount(num_bullets = max_ammo)
+	var/amount = FLOOR(rand(num_bullets * 0.5, num_bullets), 1)
+	return amount
 
 /// A packed up turrent
 /obj/item/turret_box

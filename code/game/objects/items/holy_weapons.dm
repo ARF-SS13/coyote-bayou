@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
@@ -385,7 +385,7 @@
 	desc = "It has a mysterious, protective aura."
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	block_chance = 50
 	var/shield_icon = "shield-red"
 
@@ -408,7 +408,7 @@
 	name = "holy claymore"
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
 	block_chance = 30
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -428,7 +428,7 @@
 	inhand_y_dimension = 64
 	name = "dark blade"
 	desc = "Spread the glory of the dark gods!"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	hitsound = 'sound/hallucinations/growl1.ogg'
 
 /obj/item/nullrod/claymore/chainsaw_sword
@@ -437,7 +437,7 @@
 	name = "ripper"
 	desc = "A miniature chainsaw, as amazing as it sounds."
 	force = 45
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
@@ -448,21 +448,21 @@
 	item_state = "swordon"
 	name = "force weapon"
 	desc = "The blade glows with the power of faith. Or possibly a battery."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/katana
 	name = "\improper Hanzo steel"
 	desc = "Capable of cutting clean through a holy claymore."
 	icon_state = "katana"
 	item_state = "katana"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"
 	desc = "Once the harbinger of an interdimensional war, its sharpness fluctuates wildly."
 	icon_state = "multiverse"
 	item_state = "multiverse"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
 	force = rand(1, 30)
@@ -474,7 +474,7 @@
 	icon_state = "swordblue"
 	item_state = "swordblue"
 	desc = "If you strike me down, I shall become more robust than you can possibly imagine."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/saber/red
 	name = "dark energy sword"
@@ -490,7 +490,7 @@
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 4.13
 	throwforce = 1
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -504,8 +504,7 @@
 	name = "reaper scythe"
 	desc = "Ask not for whom the bell tolls..."
 	w_class = WEIGHT_CLASS_BULKY
-	armour_penetration = 0.6
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 
@@ -593,7 +592,7 @@
 	desc = "Suffer not a heretic to live."
 	chaplain_spawnable = FALSE
 	force = 30
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
@@ -606,7 +605,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "relic war hammer"
 	desc = "This war hammer cost the chaplain forty thousand space dollars."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
@@ -678,7 +677,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
 	block_chance = 40
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_NONE
 	hitsound = "swing_hit"
 	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
@@ -769,7 +768,7 @@
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")
-	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_BELT // its a necklace lol
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_BELT // its a necklace lol
 	var/praying = FALSE
 	var/deity_name = "Giex" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
 

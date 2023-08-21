@@ -34,6 +34,13 @@
 	cost = 300 //double their export value
 	contains = list(/obj/item/stack/sheet/metal/fifty)
 
+/datum/supply_pack/materials/brick50
+	goody = PACK_GOODY_PUBLIC
+	name = "50 Bricks"
+	desc = "Set a nice foundation with brick and mortar!"
+	cost = 300 //double their export value
+	contains = list(/obj/item/stack/sheet/mineral/brick/fifty)
+
 /datum/supply_pack/materials/plasteel20
 	goody = PACK_GOODY_PUBLIC
 	name = "20 Plasteel Sheets"
@@ -72,16 +79,29 @@
 					/obj/item/ingot/adamantine
 					)
 
+/datum/supply_pack/materials/deathclawhide
+	goody = PACK_GOODY_PUBLIC
+	name = "Five Deathclaw Hides"
+	desc = "Intimidate your enemies by modifying your kit with some deathclaw skin!"
+	cost = 6000
+	contains = list(/obj/item/stack/sheet/animalhide/deathclaw,
+	                /obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw,
+					/obj/item/stack/sheet/animalhide/deathclaw
+	)
+
+/* disabled pending rework of advcrafting lootdrop
 /datum/supply_pack/materials/weaponparts
 	goody = PACK_GOODY_PUBLIC
 	name = "Weapon Parts"
 	desc = "A random collection of recovered weapon parts. A gunsmith's wet dream."
-	cost = 2500
+	cost = 750
 	contains = list(/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting)
-					
+*/
 /* /datum/supply_pack/materials/rcdammo
 	goody = PACK_GOODY_PUBLIC
 	name = "Large RCD ammo Single-Pack"
@@ -162,15 +182,34 @@
 /datum/supply_pack/materials/fueltank
 	name = "Fuel Tank Crate"
 	desc = "Contains a welding fuel tank. Caution, highly flammable."
-	cost = 800
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
+/datum/supply_pack/materials/housekit
+	name = "House Building Kit"
+	desc = "Contains 200 wooden planks, 200 bricks, 100 metal sheets and 100 glass sheets. Perfect for building a modest home!"
+	cost = 4500
+	contains = list(/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/glass/fifty,
+					/obj/item/stack/sheet/glass/fifty)
+	crate_name = "house building kit"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
 /datum/supply_pack/materials/watertank
 	name = "Water Tank Crate"
 	desc = "Contains a tank of dihydrogen monoxide... sounds dangerous."
-	cost = 600
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
@@ -186,7 +225,7 @@
 /datum/supply_pack/materials/hightank
 	name = "Large Water Tank Crate"
 	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
-	cost = 1200
+	cost = 800
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large

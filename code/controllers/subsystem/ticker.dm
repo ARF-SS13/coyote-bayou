@@ -495,15 +495,15 @@ SUBSYSTEM_DEF(ticker)
 		var/vote_type = CONFIG_GET(string/map_vote_type)
 		switch(vote_type)
 			if("PLURALITY")
-				SSvote.initiate_vote("map","server", display = SHOW_RESULTS)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS + SHOW_WINNER)
 			if("APPROVAL")
-				SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = APPROVAL_VOTING)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS + SHOW_WINNER, votesystem = APPROVAL_VOTING)
 			if("IRV")
-				SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = INSTANT_RUNOFF_VOTING)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS + SHOW_WINNER, votesystem = INSTANT_RUNOFF_VOTING)
 			if("SCORE")
-				SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = MAJORITY_JUDGEMENT_VOTING)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS + SHOW_WINNER, votesystem = MAJORITY_JUDGEMENT_VOTING)
 			else
-				SSvote.initiate_vote("map","server", display = SHOW_RESULTS)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS + SHOW_WINNER)
 		// fallback
 
 /datum/controller/subsystem/ticker/proc/HasRoundStarted()
@@ -574,7 +574,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Oasis Publishing"
+	var/news_source = "Nash Publishing"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
 			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."
@@ -622,7 +622,7 @@ SUBSYSTEM_DEF(ticker)
 	if(SSblackbox.first_death)
 		var/list/ded = SSblackbox.first_death
 		//fortuna addition. list of random names for the roundend news investigator
-		var/list/investigator = list("Oasis Investigators","A band of couriers","Patrolling rangers","A few mysterious strangers","The NCR","The Legion","The Brotherhood","The Den")
+		var/list/investigator = list("Nash Investigators","A band of couriers","Patrolling wasters","A few mysterious strangers")
 		if(ded.len)
 			news_message += "[pick(investigator)] discovered the corpse of a person of interest in the area. Their name was: [ded["name"]], the [ded["role"]], who died in a nearby [ded["area"]].[ded["last_words"] ? " Their last words were: \"[ded["last_words"]]\"" : ""]"
 		else

@@ -550,3 +550,146 @@ ul.sparse {
   overflow: hidden;
   padding: 0;
 }
+
+a.clicky {
+	display:inline-block;
+	background-color: rgba(0, 128, 0, 0.3);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	margin: auto;
+	text-align: center;
+	flex:45%;
+}
+a.clicky_no_border {
+	display:inline-table;
+	text-align: center;
+	width: 90%;
+}
+.gen_container {
+	padding-bottom:5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.gen_setting_name {
+	padding-bottom:5px;
+	color: #517087;
+	font-size: 14px;
+	font-weight: bold;
+	flex:45%;
+}
+.table_genital_list {
+	border: 1px solid green;
+	padding: 5px;
+	width:95%;
+	margin: auto;
+}
+.gen_name {
+	background-color: rgba(0, 128, 0, 0.3);
+	font-weight: bold;
+	text-align: center;
+}
+tr.talign {
+	vertical-align:top;
+}
+td.talign {
+	vertical-align:top;
+}
+table.table_genital_list {
+	border: 1px solid green;
+	width: 95%;
+	margin: auto;
+	padding: 0px;
+}
+td.genital_name { 
+	background-color: rgba(0, 128, 0, 0.4);
+	border: 1px solid rgba(0, 128, 0, 0.3);
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	width: auto;
+} 
+td.genital_arrow_on { 
+	background-color: rgba(0, 128, 0, 0.8);
+	outline-style: inset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+	margin: auto;
+	width: auto;
+} 
+td.genital_arrow_off { 
+	color: rgba(0, 128, 0, 0);
+	background-color: rgba(0, 128, 0, 0.4);
+	outline-style: inset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+	margin: auto;
+	width: auto;
+} 
+td.coverage_on { 
+	background-color: rgba(0, 128, 0, 0.8);
+	outline-style: inset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+	margin: auto;
+	width: auto;
+} 
+td.coverage_off { 
+	color : rgba(0, 128, 0, 0);
+	background-color: rgba(0, 128, 0, 0.4);
+	outline-style: inset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+	margin: auto;
+	width: auto;
+} 
+table.undies_table {
+	border: 1px solid green;
+	width: 75%;
+	margin: auto;
+	padding: 0px;
+}
+td.undies_cell {
+	border: 1px solid green;
+	width: 33%;
+	margin: auto;
+	padding: 0px;
+}
+.undies_header { 
+	color: #00ff00;
+	background-color: rgba(0, 128, 0, 0.4);
+	border: 1px solid rgba(0, 128, 0, 0.3);
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+	padding: auto;
+	width: auto;
+} 
+.undies_flex_container {
+	display: inline-flex;
+	align-self: stretch;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.undies_label {
+	color: #00ff00;
+	background-color: rgba(0, 128, 0, 0.4);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	font-weight: bold;
+	text-align: center;
+}
+.undies_link {
+	display: block;
+	background-color: rgba(0, 128, 0, 0.8);
+	outline-style: outset;
+	outline-width: 1px;
+	outline-color: green;
+	text-align: center;
+}
+

@@ -64,6 +64,7 @@
 	var/mutant_part_string //Also used in species.handle_mutant_bodyparts() to generate the overlay icon state.
 	var/alpha_mask_state
 	var/matrixed_sections = MATRIX_NONE //if color_src is MATRIXED, how many sections does it have? 1-3
+	var/use_sex_mask = TRUE
 
 	//Special / holdover traits for Citadel specific sprites.
 	var/extra = FALSE
@@ -86,3 +87,4 @@
 	var/has_digitigrade = FALSE
 	var/covers_groin = FALSE
 	var/covers_chest = FALSE
+	var/covers_belly = FALSE

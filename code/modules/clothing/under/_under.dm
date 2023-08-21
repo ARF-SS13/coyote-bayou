@@ -4,7 +4,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	permeability_coefficient = 0.9
 	block_priority = BLOCK_PRIORITY_UNIFORM
-	slot_flags = ITEM_SLOT_ICLOTHING
+	slot_flags = INV_SLOTBIT_ICLOTHING
 	armor = ARMOR_VALUE_CLOTHES
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
 	limb_integrity = 30
@@ -61,8 +61,8 @@
 
 /obj/item/clothing/under/New()
 	if(random_sensor)
-		//make the sensor mode favor higher levels, except coords.
-		sensor_mode = pick(SENSOR_OFF, SENSOR_LIVING, SENSOR_LIVING, SENSOR_VITALS, SENSOR_VITALS, SENSOR_VITALS, SENSOR_COORDS, SENSOR_COORDS)
+		//make the sensor mode favor higher levels, except coords. *Kelp here, making these default to off. Valid options: SENSOR_OFF SENSOR_LIVING SENSOR_VITALS SENSOR_COORDS
+		sensor_mode = pick(SENSOR_OFF,SENSOR_OFF,SENSOR_OFF)
 	..()
 
 /obj/item/clothing/under/equipped(mob/user, slot)

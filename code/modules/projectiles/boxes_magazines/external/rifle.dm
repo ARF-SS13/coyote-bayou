@@ -17,7 +17,7 @@
 /obj/item/ammo_box/magazine/m556
 	name = "toploader magazine (5.56mm)"
 	icon_state = "5.56m"
-	ammo_type = /obj/item/ammo_casing/a556/sport
+	ammo_type = /obj/item/ammo_casing/a556
 	caliber = list(CALIBER_556)
 	max_ammo = 30
 	multiple_sprites = 2
@@ -107,66 +107,69 @@
 /obj/item/ammo_box/magazine/m5mm/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/garand308
-	name = "en-bloc clip (7.62x51mm Match)"
+/obj/item/ammo_box/magazine/garand3006
+	name = "en-bloc clip (.30-06)"
 	icon_state = "enbloc-8"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	randomize_ammo_count = FALSE
 	max_ammo = 8
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-/obj/item/ammo_box/magazine/garand308/update_icon()
+/obj/item/ammo_box/magazine/garand3006/update_icon()
 	..()
 	if (ammo_count() >= 8)
 		icon_state = "enbloc-8"
 	else
 		icon_state = "enbloc-[ammo_count()]"
 
-/obj/item/ammo_box/magazine/garand308/empty
+/obj/item/ammo_box/magazine/garand3006/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/sks
-	name = "7.62mm clip (SKS match)"
-	icon_state = "enbloc-10"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
-	max_ammo = 10
+	name = ".308 SKS clip"
+	icon_state = "enbloc-8"
+	randomize_ammo_count = FALSE
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 8
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/sks/update_icon()
 	..()
 	if (ammo_count() >= 10)
-		icon_state = "enbloc-10"
+		icon_state = "enbloc-8"
 	else
 		icon_state = "enbloc-[ammo_count()]"
 
 /obj/item/ammo_box/magazine/sks/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/m762
-	name = "rifle magazine (7.62x51mm)"
+/obj/item/ammo_box/magazine/m308
+	name = "rifle magazine (.308)"
 	icon_state = "mag308"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	randomize_ammo_count = FALSE
+	caliber = list(CALIBER_308)
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m762/empty
+/obj/item/ammo_box/magazine/m308/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/m762/ext
-	name = "extended rifle magazine (7.62x51)"
+/obj/item/ammo_box/magazine/m308/ext
+	name = "extended rifle magazine (.308)"
 	icon_state = "extmag308"
 	max_ammo = 20
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_EXTENDED_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m762/ext/empty
+/obj/item/ammo_box/magazine/m308/ext/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m473
@@ -178,6 +181,20 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/m473custom
+	name = "g11 magazine (4.73mm)"
+	icon_state = "473mmc"
+	caliber = list(CALIBER_CASELESS)
+	ammo_type = /obj/item/ammo_casing/caseless/g11
+	max_ammo = 30
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
+/obj/item/ammo_box/magazine/m473custom/empty
+	start_empty = 1
 
 /obj/item/ammo_box/magazine/m473/explosive
 	name = "g11 magazine (4.73mm explosive)"
@@ -191,7 +208,7 @@
 
 /obj/item/ammo_box/magazine/m473/small
 	name = "4.7mm carbine magazine"
-	icon_state = "46x30mmt"
+	icon_state = "473small"
 	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -203,10 +220,14 @@
 	icon_state = "2mm"
 	ammo_type = /obj/item/ammo_casing/c2mm
 	caliber = list(CALIBER_2MM)
+	randomize_ammo_count = FALSE
 	max_ammo = 10
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MISC)
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m2mm/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m2mm/blender
 	name = "2mm \"Blender\" electromagnetic magazine"

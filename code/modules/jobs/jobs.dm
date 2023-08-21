@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"NCR Captain",
 	"NCR Veteran Ranger",
 
-	"Legion Centurion",
+	"Pizza Centurion",
 
 	"Chief of Police",
 
@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
-"Mr. Handy"))
+"Death Machine"))
 //Whitelisted positions list FO13 anything that shows up here requires that the user have an entry in the 'role_whitelist' table of id,ckey,"faction"
 //NCR Assistant and Legion Camp Follower re-added to whitelisting.  BoS Initiate removed from whitelist.
 
@@ -84,19 +84,19 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Scribe",
 "BoS Off-Duty",
 
-"Legion Centurion",
-"Legion Explorer",
-"Legion Slavemaster",
-"Legion Veteran Decanus",
-"Veteran Legionnaire",
-"Legion Prime Decanus",
-"Prime Legionnaire",
-"Legion Recruit Decanus",
-"Legion Scout",
-"Legion Auxilia",
-"Legion Slave",
+"Lil Ceasar's Centurion",
+"Lil Ceasar's Explorer",
+"Lil Ceasar's Middle Manager",
+"Lil Ceasar's Veteran Decanus",
+"Lil Ceasar's Legionnaire",
+"Lil Ceasar's Prime Decanus",
+"Lil Ceasar's Legionnaire",
+"Lil Ceasar's Recruit Decanus",
+"Lil Ceasar's Scout",
+"Lil Ceasar's Cook",
+"Lil Ceasar's Delivery Personel",
 
-"Mayor",
+"High Alderperson",
 "Sheriff",
 "Deputy",
 "Texarkana Quartermaster",
@@ -153,8 +153,8 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"Mayor",
-	"Secretary",
+	"High Alderperson",
+	"Councilperson",
 	"Sheriff",
 	"Deputy",
 //	"Farmer",
@@ -166,32 +166,34 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Texarkana Trade Worker",
 	"Barkeep",
 	"Citizen",
+	"Preacher",
+	"Vertibird Pilot",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
 	"Legate",
-	"Legion Orator",
-	"Legion Centurion",
-	"Legion Veteran Decanus",
+	"Lil' Ceasar's Talking Head",
+	"Lil' Ceasar's Centurion",
+	"Lil' Ceasar's Veteran Decanus",
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
-	"Legion Orator",
-	"Legion Centurion",
-	"Legion Veteran Decanus",
-	"Legion Prime Decanus",
-	"Legion Recruit Decanus",
-	"Legion Vexillarius",
-	"Legion Explorer",
-	"Legion Scout",
-	"Veteran Legionnaire",
-	"Prime Legionnaire",
-	"Recruit Legionnaire",
-	"Legion Forgemaster",
-	"Legion Immune",
-	"Legion Auxilia",
-	"Legion Slave",
-	"Legion Slavemaster"
+	"Lil' Ceasar's Talking Head",
+	"Lil' Ceasar's Centurion",
+	"Lil' Ceasar's Veteran Decanus",
+	"Lil' Ceasar's Prime Decanus",
+	"Lil' Ceasar's Recruit Decanus",
+	"Lil' Ceasar's Vexillarius",
+	"Lil' Ceasar's Explorer",
+	"Lil' Ceasar's Scout",
+	"Lil' Ceasar's Veteran Legionnaire",
+	"Lil' Ceasar's Prime Legionnaire",
+	"Lil' Ceasar's Recruit Legionnaire",
+	"Lil' Ceasar's Legion Forgemaster",
+	"Lil' Ceasar's Legion Immune",
+	"Lil' Ceasar's Legion Cook",
+	"Lil' Ceasar's Delivery Personel",
+	"Lil' Ceasar's Middle Manager"
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
@@ -237,7 +239,6 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 //	"Outlaw",
 	"Faithful",
 	"Vigilante",
-	"Preacher",
 	"Far-Lands Tribals",
 	"Wastelander",
 ))
@@ -275,7 +276,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Officer",
 ))
 GLOBAL_LIST_INIT(silicon_positions, list(
-	"Mr. Handy",
+	"Sentient Machine",
 ))
 //Tribls
 GLOBAL_LIST_INIT(tribal_positions, list(
@@ -287,6 +288,17 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Hunter",
 	"Spirit-Pledged",
 	"Guardian",
+))
+//bikrs
+GLOBAL_LIST_INIT(biker_positions, list(
+	"Overbiker",
+	"Hells Nomad",
+	"Ashdown Citizen",
+))
+//bikrs
+GLOBAL_LIST_INIT(debug_positions, list(
+	"oh my u shouldnt see this uwu~",
+	"hi superlagg~",
 ))
 //Followers
 GLOBAL_LIST_INIT(followers_positions, list(
@@ -300,16 +312,19 @@ GLOBAL_LIST_INIT(followers_positions, list(
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
 	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
-	EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
+	// EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
 	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
-	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
+	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
-	"Redwater" = list("jobs" = redwater_positions, "color" = "#f81717"),
+	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
+	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
+	// "Redwater" = list("jobs" = redwater_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
@@ -336,6 +351,8 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_FOLLOWERS = list("titles" = followers_positions),
 	EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	EXP_TYPE_TRIBAL = list("titles" = tribal_positions),
+	EXP_TYPE_BIKER = list("titles" = biker_positions),
+	"debug" = list("titles" = debug_positions),
 	EXP_TYPE_RANGER = list("titles" = list("NCR Veteran Ranger","NCR Ranger")),
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),

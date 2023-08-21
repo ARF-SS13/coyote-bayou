@@ -36,6 +36,16 @@ GLOBAL_LIST_INIT(tier_three_parts, list(
 	/datum/crafting_recipe/super_capacitor,
 	/datum/crafting_recipe/ultra_micro_laser))
 
+GLOBAL_LIST_INIT(energyweapon_cell_crafting, list(
+	/datum/crafting_recipe/enhancedenergycell,
+	/datum/crafting_recipe/enhancedmfcell,
+	/datum/crafting_recipe/enhancedecp))
+
+	// armored_hazard_suit is going to get SEVA Mk. 2 and Explorer Mk. 2 in the future. Might tie it to Hardsuits as well.
+GLOBAL_LIST_INIT(armored_hazard_suit, list(
+	/datum/crafting_recipe/combathazardsuit,
+	/datum/crafting_recipe/combathazardhood))
+
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/ninemil,
 	/datum/crafting_recipe/huntingrifle,
@@ -43,6 +53,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/huntingshotgun,
 	/datum/crafting_recipe/m1911,
 	/datum/crafting_recipe/varmintrifle,
+	/datum/crafting_recipe/salvaged_eastern_rifle,
 	/datum/crafting_recipe/autoaxe,
 	/datum/crafting_recipe/steelsaw,
 	/datum/crafting_recipe/tools/forged/entrenching_tool,
@@ -57,18 +68,45 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/booster,
 	/datum/crafting_recipe/heatsink,
 	/datum/crafting_recipe/laserguide,
-	/datum/crafting_recipe/gigalens))
+	/datum/crafting_recipe/gigalens,
+	/datum/crafting_recipe/ecpbad,
+	/datum/crafting_recipe/mfcbad,
+	/datum/crafting_recipe/ecbad,
+	/datum/crafting_recipe/gun/flintlock,
+	/datum/crafting_recipe/gun/flintlock_laser))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
-	/datum/crafting_recipe/tribal/bonetalisman,
+	///datum/crafting_recipe/tribal/bonetalisman, //broken item, unneeded
 	/datum/crafting_recipe/spearfisher,
+	/datum/crafting_recipe/bitterdrink,
+	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
-	/datum/crafting_recipe/redpotion,
-	/datum/crafting_recipe/bluepotion,
-	/datum/crafting_recipe/greenpotion,
+	/datum/crafting_recipe/redambrosia,
+	/datum/crafting_recipe/blueambrosia,
+	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
+
+GLOBAL_LIST_INIT(energyweapon_crafting, list(
+	/datum/crafting_recipe/aer9_hotwired))
+
+GLOBAL_LIST_INIT(pa_repair, list(
+	/datum/crafting_recipe/repair_t45,
+	/datum/crafting_recipe/repair_t45_helm,
+	/datum/crafting_recipe/scrap_pa,
+	/datum/crafting_recipe/scrap_pa_helm,
+	/datum/crafting_recipe/repair_t45/hotrod,
+	/datum/crafting_recipe/repair_t45_helm/hotrod))
+
+
+GLOBAL_LIST_INIT(weapons_of_texarkana, list(
+	/datum/crafting_recipe/policepistol,
+	/datum/crafting_recipe/durathread_vest,
+	/datum/crafting_recipe/policerifle,
+	/datum/crafting_recipe/steelbib/heavy,
+	/datum/crafting_recipe/armyhelmetheavy,
+	/datum/crafting_recipe/huntingshotgun))
 
 
 //predominantly positive traits
@@ -85,12 +123,11 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/horrifying_tastes
 	name = "Cannibal"
-	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor."
+	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((This is an OOC trait and should only be found out in character and not through technology.))"
 	mob_trait = TRAIT_LONGPORKLOVER
 	value = 1
 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
 	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
-	medical_record_text = "Patient refuses to comment on their dietary preferences."
 
 /datum/quirk/horrifying_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -166,10 +203,10 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/freerunning
 	name = "Freerunning"
-	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up."
-	value = 1
+	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up. You can also climb some walls!"
+	value = 2
 	mob_trait = TRAIT_FREERUNNING
-	gain_text = span_notice("You feel lithe on your feet!")
+	gain_text = span_notice("You feel lithe on your feet! (Alt click walls to climb them!)")
 	lose_text = span_danger("You feel clumsy again.")
 	medical_record_text = "Patient scored highly on cardio tests."
 
@@ -221,7 +258,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 /datum/quirk/quick_step
 	name = "Speed Walker"
 	desc = "You walk with determined strides, and out-pace most people, at least, if you're both walking."
-	value = 1
+	value = 3
 	mob_trait = TRAIT_SPEEDY_STEP
 	gain_text = span_notice("You feel determined. No time to lose.")
 	lose_text = span_danger("You feel less determined. What's the rush, man?")
@@ -247,21 +284,21 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
-/datum/quirk/photographer
-	name = "Photographer"
-	desc = "You know how to handle a camera, shortening the delay between each shot."
-	value = 0
-	mob_trait = TRAIT_PHOTOGRAPHER
-	gain_text = span_notice("You know everything about photography.")
-	lose_text = span_danger("You forget how photo cameras work.")
-	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
+/* //placeholder test concluded
+/datum/quirk/wizard
+	name = "Wasteland Wizard"
+	desc = "You're a wizard, Harry. Spell trained for who knows how long, or naturally inclined. You can't use guns, but you sure can do some other shit. This isn't a lisence to be a greifer or break rules. "
+	value = 4
+	mob_trait = TRAIT_SWAMPWIZARD
+	gain_text = span_notice("You know everything about magic.")
+	lose_text = span_danger("You forgor how the magic.")
 
-/datum/quirk/photographer/on_spawn()
+/datum/quirk/wizard/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/camera/camera = new(get_turf(H))
-	H.put_in_hands(camera)
-	H.equip_to_slot(camera, SLOT_NECK)
+	var/obj/item/spellbook/B = new(get_turf(H))
+	H.put_in_hands(B)
 	H.regenerate_icons()
+*/
 
 /datum/quirk/selfaware
 	name = "Self-Aware"
@@ -317,11 +354,19 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.tier_three_parts
+	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+	H.mind.learned_recipes |= GLOB.pa_repair
+	H.mind.learned_recipes |= GLOB.armored_hazard_suit
 
 /datum/quirk/technophreak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.tier_three_parts
+		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+		H.mind.learned_recipes -= GLOB.pa_repair
+		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
@@ -337,6 +382,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(!H.mind.learned_recipes)
 		H.mind.learned_recipes = list()
 	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/gunsmith/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -392,13 +438,13 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	H.update_sight()
 
 /datum/quirk/nukalover
-	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
+	name = "Cola Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
-	lose_text = span_danger("What's the big deal about nuka-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+	lose_text = span_danger("What's the big deal about cosmic-cola?")
+	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -500,9 +546,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	locked = FALSE
 
 /datum/quirk/lifegiver/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth += 10
-	mob_tar.health += 10
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth += 10
+	H.health += 10
 
 /datum/quirk/lifegiverplus
 	name = "Health - Tougher"
@@ -514,10 +560,10 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	medical_record_text = "Patient has much higher capacity for injury."
 	locked = FALSE
 
-/datum/quirk/lifegiver/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth += 20
-	mob_tar.health += 20
+/datum/quirk/lifegiverplus/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth += 20
+	H.health += 20
 
 /datum/quirk/iron_fist
 	name = "Fists of Iron"
@@ -529,9 +575,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	locked = FALSE
 
 /datum/quirk/iron_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 6
-	mob_tar.dna.species.punchdamagehigh = 12
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = IRON_FIST_PUNCH_DAMAGE_LOW
+	H.dna.species.punchdamagehigh = IRON_FIST_PUNCH_DAMAGE_MAX
 
 /datum/quirk/steel_fist
 	name = "Fists of Steel"
@@ -543,9 +589,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	locked = FALSE
 
 /datum/quirk/steel_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 10
-	mob_tar.dna.species.punchdamagehigh = 16
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
+	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
 
 /datum/quirk/light_step
 	name = "Glass Walker"
@@ -587,29 +633,16 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/lick_heal
-	name = "Soothing Saliva"
-	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
-	value = 1
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
+/datum/quirk/improved_heal
+	name = "Improved Innate Healing"
+	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
+	value = 2
+	mob_trait = TRAIT_IMPROVED_HEALING
+	gain_text = span_notice("You feel well hydrated.")
+	lose_text = span_danger("You feel rather dry.")
 	locked = FALSE
 
-/datum/quirk/lick_heal/on_spawn()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	our_tongue.initialize_lickpack(/obj/item/stack/medical/bruise_pack/lick)
-
-/datum/quirk/lick_heal/remove()
-	var/mob/living/carbon/human/human_holder = quirk_holder
-	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!our_tongue)
-		return //welp
-	QDEL_NULL(our_tongue.lick_healer)
-
+/*
 /datum/quirk/lick_bandage
 	name = "Sanguine Saliva"
 	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
@@ -632,7 +665,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	if(!our_tongue)
 		return //welp
 	QDEL_NULL(our_tongue.lick_bandage)
-
+*/
 // This does the same thing as basic explosive crafting by giving basic_recipe and adv_recipe. -Possum
 /*
 /datum/quirk/advanced_explosive_crafting
@@ -749,18 +782,18 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	lose_text = span_danger("You know? Being cold kind of sucks actually.")
 	locked =  FALSE
 
-/datum/quirk/radimmune
+/* /datum/quirk/radimmune
 	name = "Radiation - Immune"
 	desc = "Gieger Counters are for suckers."
 	value = 5
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE
+	locked =  FALSE */
 
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
-	desc = "Gieger Counters are for suckers, mostly."
+	desc = "Gieger Counters are for suckers, mostly. Gives 75% innate rad resist."
 	value = 4
 	mob_trait = TRAIT_75_RAD_RESIST
 	gain_text = span_notice("You've decided radiation just doesn't matter much.")
@@ -769,7 +802,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 
 /datum/quirk/radimmunesorta
 	name = "Radiation - Sorta Immune"
-	desc = "Gieger Counters are for suckers, sorta."
+	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
 	value = 3
 	mob_trait = TRAIT_50_RAD_RESIST
 	gain_text = span_notice("You've decided radiation only kind of matters.")
@@ -785,14 +818,16 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
 	locked =  FALSE
 
+/*
 /datum/quirk/thickskin
 	name = "Thick Skin"
-	desc = "You just don't get splinters, or shrapnel for that matter.  MASSIVE UNINTENDED EFFECTS, BEING REWORKED~TK"
+	desc = "You just don't get splinters, or shrapnel for that matter.  BROKEN AS OF 2/9/23, TAKE LICK HEALING TO CLOSE WOUNDS."
 	value = 3
 	mob_trait = TRAIT_PIERCEIMMUNE
 	gain_text = span_notice("Your skin feels way stronger.")
 	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
 	locked =  TRUE
+*/
 
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
@@ -860,7 +895,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 12 //WIP for sure, lmfao ~TK
+	value = 4
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -869,7 +904,7 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
 	desc = "You're a better than average shot."
-	value = 6
+	value = 2
 	mob_trait = TRAIT_NICE_SHOT
 	gain_text = span_notice("Your aim is amazing, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -893,39 +928,139 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
 
-/datum/quirk/ratlord
-	name = "Beast Master - Rats (Experimental)"
-	desc = "Whenever by psychic means or not, you gained ability to call forth friendly type of rats. <u>Do note they will attack <b>only</b> the hostile mobs</u>."
-	value = 4 //might be pve imbalanced af tho
-	mob_trait = TRAIT_PIEDPIPER
+/datum/quirk/playdead
+	name = "Class Act"
+	desc = "You're good at acting! *deathgasp will be extra convincing to rudimentary tests, such as healthhuds and examine, doing so may deal a small quantity of toxin damage."
+	value = 1
+	mob_trait = TRAIT_PLAY_DEAD
+	gain_text = span_notice("You feel confident at playing dead.")
+	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
+	locked =  FALSE
+
+/datum/quirk/ratfriend
+	name = "Beast Friend - Rats"
+	desc = "Rattos and wild mice outright ignore you now."
+	value = 2
+	mob_trait = TRAIT_BEASTFRIEND_RAT
+	gain_text = span_notice("Rats are friends!")
+	lose_text = span_danger("God of rats curses your name...") // Perhaps make killing related mobs lose the quirk?
+	locked = FALSE
+
+/datum/quirk/ratfriend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("rat-friend")
+
+/datum/quirk/ratfriend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.faction -= list("rat-friend")
+
+/datum/quirk/ratmaster
+	name = "Beast Master - Rats"
+	desc = "Whenever by psychic means or not, you gained ability to control the rats of Wasteland.\
+	<br>Taming will make them passive toward other players and tamed fauna (but also makes them a target for wild rats)."
+	value = 4
+	mob_trait = TRAIT_BEASTMASTER_RAT
 	gain_text = span_notice("You feel like being a giant rat, that makes all of the rules!")
 	lose_text = span_danger("You've lost your rat crown...")
 	locked = FALSE
-	var/obj/effect/proc_holder/mob_common/summon_backup/rat/tame/gather
-	var/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame/moveto
-	var/obj/effect/proc_holder/mob_common/make_nest/rat/tame/build
-	var/obj/effect/proc_holder/mob_common/unmake_nest/clear
+	var/obj/effect/proc_holder/mob_common/taming_mobs/rat/tame
+	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/rat/gather
+	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/rat/moveto
 // Damn this action button code structure
 
-/datum/quirk/ratlord/add()
+/datum/quirk/ratmaster/add()
 	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("rat-friend")
+	tame = new
+	H.AddAbility(tame)
 	gather = new
 	H.AddAbility(gather)
 	moveto = new
 	H.AddAbility(moveto)
-	build = new
-	H.AddAbility(build)
-	clear = new
-	H.AddAbility(clear)
 
-/datum/quirk/ratlord/remove()
+/datum/quirk/ratmaster/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
+		H.faction -= list("rat-friend")
+		H.RemoveAbility(tame)
+		QDEL_NULL(tame)
 		H.RemoveAbility(gather)
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
-		H.RemoveAbility(build)
-		QDEL_NULL(build)
-		H.RemoveAbility(clear)
-		QDEL_NULL(clear)
+
+/datum/quirk/critterfriend
+	name = "Beast Friend - Small Critters"
+	desc = "Roaches, most types of geckos and young nightstalkers outright ignore you now."
+	value = 2
+	mob_trait = TRAIT_BEASTFRIEND_SMALLCRITTER
+	gain_text = span_notice("Some if not all wasteland critters doesn't seem to mind you now!")
+	lose_text = span_danger("You feel critters of wasteland wouldn't be so friendly with you anymore...")
+	locked = FALSE
+
+/datum/quirk/critterfriend/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("critter-friend")
+
+/datum/quirk/critterfriend/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.faction -= list("critter-friend")
+
+/datum/quirk/crittermaster
+	name = "Beast Master - Small Critters"
+	desc = "Whenever by psychic means or not, you gained ability to control roaches, most geckos and molerats (last ones will be initially hostile and needs to be tamed).\
+	<br>Taming will make them passive toward other players and tamed fauna. Young and adult nightstalkers can be also tamed, but not controlled."
+	value = 4
+	mob_trait = TRAIT_BEASTMASTER_SMALLCRITTER
+	gain_text = span_notice("You tapped to potentials of the critter horde!")
+	lose_text = span_danger("Small critters refuse to obey your commands now.")
+	locked = FALSE
+	var/obj/effect/proc_holder/mob_common/taming_mobs/small_critter/tame
+	var/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/small_critter/gather
+	var/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/small_critter/moveto
+
+/datum/quirk/crittermaster/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.faction |= list("critter-friend")
+	tame = new
+	H.AddAbility(tame)
+	gather = new
+	H.AddAbility(gather)
+	moveto = new
+	H.AddAbility(moveto)
+
+/datum/quirk/crittermaster/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.faction -= list("critter-friend")
+		H.RemoveAbility(tame)
+		QDEL_NULL(tame)
+		H.RemoveAbility(gather)
+		QDEL_NULL(gather)
+		H.RemoveAbility(moveto)
+		QDEL_NULL(moveto)
+
+/datum/quirk/zoomies
+	name = "Zoomies"
+	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Just...don't run into things."
+	value = 1
+	mob_trait = TRAIT_ZOOMIES
+
+/datum/quirk/super_zoomies
+	name = "Zoomies - Super"
+	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
+	value = 3
+	mob_trait = TRAIT_SUPER_ZOOMIES
+
+/datum/quirk/artifact_identify
+	name = "Artifact Hunter"
+	desc = "You have a keen eye for identifying magical otherworldly trash! You can identify artifacts with a glance."
+	value = 2
+	mob_trait = TRAIT_ARTIFACT_IDENTIFY
+	gain_text = span_notice("You feel perceptive!.")
+	lose_text = span_danger("You feel imperceptive.")
+	locked =  FALSE
+
+

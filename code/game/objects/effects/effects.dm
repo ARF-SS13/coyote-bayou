@@ -9,7 +9,7 @@
 
 	vis_flags = VIS_INHERIT_PLANE
 
-/obj/effect/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, atom/attacked_by)
+/obj/effect/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	return
 
 /obj/effect/fire_act(exposed_temperature, exposed_volume)

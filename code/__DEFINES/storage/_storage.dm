@@ -14,6 +14,8 @@
 #define STORAGE_FLAGS_VOLUME_DEFAULT (STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
 #define STORAGE_FLAGS_VOLUME_AND_NUMBER (STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS | STORAGE_LIMIT_MAX_ITEMS)
 
+#define NO_REMOVE_FROM_STORAGE (1<<10)
+
 // UI defines
 /// Size of volumetric box icon
 #define VOLUMETRIC_STORAGE_BOX_ICON_SIZE 32
@@ -24,9 +26,9 @@
 /// Maximum number of objects that will be allowed to be displayed using the volumetric display system. Arbitrary number to prevent server lockups.
 #define MAXIMUM_VOLUMETRIC_ITEMS 256
 /// How much padding to give between items
-#define VOLUMETRIC_STORAGE_ITEM_PADDING 1
+#define VOLUMETRIC_STORAGE_ITEM_PADDING 0 // padding makes items bunch up wierdly
 /// How much padding to give to edges
-#define VOLUMETRIC_STORAGE_EDGE_PADDING 1
+#define VOLUMETRIC_STORAGE_EDGE_PADDING 0
 
 //ITEM INVENTORY WEIGHT, FOR w_class
 /// Usually items smaller then a human hand, ex: Playing Cards, Lighter, Scalpel, Coins/Money

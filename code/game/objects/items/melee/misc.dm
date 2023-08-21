@@ -13,16 +13,16 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 14
 	throwforce = 10
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	max_reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
+	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
 /obj/item/melee/chainofcommand/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -68,7 +68,6 @@
 	force = 18
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY
-	armour_penetration = 0.95
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -169,7 +168,6 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 15
 	throwforce = 25
-	armour_penetration = 1
 	flags_1 = CONDUCT_1
 	obj_flags = UNIQUE_RENAME
 	w_class = WEIGHT_CLASS_BULKY
@@ -260,7 +258,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 5
@@ -295,7 +293,6 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_BULKY
 	force = 0.001
-	armour_penetration = 1
 	var/obj/machinery/power/supermatter_crystal/shard
 	var/balanced = 1
 	force_string = "INFINITE"
@@ -376,7 +373,7 @@
 	desc = "A telescopic roasting stick with a miniature shield generator designed to ensure entry into various high-tech shielded cooking ovens and firepits."
 	icon_state = "roastingstick_0"
 	item_state = "null"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -490,12 +487,11 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.
 	custom_materials = list(/datum/material/iron = 12000)  //Defaults to an Iron Mace.
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 14
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 8
 	block_chance = 10
-	armour_penetration = 1
 	attack_verb = list("smacked", "struck", "cracked", "beaten")
 	var/overlay_state = "mace_handle"
 	var/mutable_appearance/overlay

@@ -1,4 +1,4 @@
-	//Baseline hardsuits
+armor	//Baseline hardsuits
 /obj/item/clothing/head/helmet/space/hardsuit
 	name = "hardsuit helmet"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment. Has radiation shielding."
@@ -402,7 +402,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, ITEM_SLOT_HEAD)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/wizard
 	icon_state = "hardsuit-wiz"
@@ -418,8 +418,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, FALSE, FALSE, ITEM_SLOT_OCLOTHING, INFINITY, FALSE)
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, ITEM_SLOT_OCLOTHING)
+	AddComponent(/datum/component/anti_magic, TRUE, FALSE, FALSE, INV_SLOTBIT_OCLOTHING, INFINITY, FALSE)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, INV_SLOTBIT_OCLOTHING)
 
 	//Medical hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/medical
@@ -541,7 +541,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/captain
 	name = "captain's SWAT suit"
-	desc = "A MK.II SWAT suit with streamlined joints and armor made out of superior materials, insulated against intense heat. The most advanced tactical armor available Usually reserved for heavy hitter corporate security, this one has a regal finish in Nanotrasen company colors. Better not let the assistants get a hold of it."
+	desc = "A MK.II SWAT suit with streamlined joints and armor made out of superior materials, insulated against intense heat. The most advanced tactical armor available Usually reserved for heavy hitter corporate security, this one has a regal finish in US Government company colors. Better not let the assistants get a hold of it."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -655,20 +655,24 @@
 	item_state = "rig0-soviet"
 	hardsuit_type = "soviet"
 	icon_state = "rig0-soviet"
+	armor = ARMOR_VALUE_MEDIUM
 	mutantrace_variation = NONE
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
+
+
 
 /obj/item/clothing/suit/space/hardsuit/soviet
 	name = "soviet hardsuit"
 	desc = "Crafted with the pride of the proletariat. The last thing the enemy sees is the bottom of this armor's boot."
 	item_state = "rig-soviet"
 	icon_state = "rig-soviet"
-	slowdown = 0.8
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/soviet
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	mutantrace_variation = NONE
-
-/obj/item/clothing/suit/space/hardsuit/soviet/Initialize()
-	. = ..()
-	allowed = GLOB.security_hardsuit_allowed
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 /////////////SHIELDED//////////////////////////////////
 
@@ -692,7 +696,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/shielded, current_charges, max_charges, recharge_delay, recharge_rate, ITEM_SLOT_OCLOTHING, shield_state)
+	AddComponent(/datum/component/shielded, current_charges, max_charges, recharge_delay, recharge_rate, INV_SLOTBIT_OCLOTHING, shield_state)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded
 	resistance_flags = FIRE_PROOF | ACID_PROOF

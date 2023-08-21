@@ -90,7 +90,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m44 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/storage/bag/money/small/ncr = 1,
+	//	/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/megaphone = 1,
 		)
 
@@ -127,7 +127,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	r_hand = /obj/item/melee/onehanded/club/ncrflag
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m44 = 2,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 
@@ -183,7 +183,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/legholster
 	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncr = 1,
+	//	/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/megaphone = 1,
 		/obj/item/grenade/syndieminibomb/concussion = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
@@ -259,8 +259,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
 		/obj/item/ammo_box/magazine/m45 = 3,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
-		/obj/item/ammo_box/magazine/garand308 = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
+		/obj/item/ammo_box/magazine/garand3006 = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
 		/obj/item/grenade/syndieminibomb/concussion = 1,
 		/obj/item/stack/crafting/armor_plate = 5
@@ -325,7 +325,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/ncrarmor/mantle/reinforced
 	belt = /obj/item/storage/belt/legholster
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/grenade/f13/frag = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
 		/obj/item/ammo_box/magazine/m45 = 3,
@@ -409,7 +409,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/storage/belt/shoulderholster
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		/obj/item/stack/crafting/armor_plate = 5
@@ -486,7 +486,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 2,
-		/obj/item/storage/bag/money/small/ncr = 2,
+	//	/obj/item/storage/bag/money/small/ncr = 2,
 		)
 
 /datum/outfit/loadout/repbrahminbaron
@@ -495,7 +495,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncr = 1,
+	//	/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/storage/box/ration/menu_two = 1
 		)
 
@@ -504,7 +504,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/under/rank/security/detective/grey
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncr = 1,
+	//	/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		/obj/item/clothing/accessory/waistcoat = 1,
 		/obj/item/clothing/suit/toggle/lawyer/black = 1,
@@ -517,7 +517,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncr = 1,
+	//	/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/storage/box/ration/menu_two = 1
 		)
 
@@ -577,7 +577,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 2,
 		/obj/item/grenade/smokebomb = 1,
 		)
@@ -670,7 +670,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/clothing/mask/gas/ranger = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/grenade/smokebomb = 1,
@@ -685,7 +685,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/clothing/neck/mantle/ranger
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/ammo_box/magazine/w3006 = 3,
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 2,
 		)
@@ -697,7 +697,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/clothing/neck/mantle/ranger
 	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/magazine/w3006 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 2,
@@ -778,7 +778,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/ammo_box/magazine/m45/socom = 2,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 /datum/outfit/loadout/shockht
@@ -860,7 +860,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = null
 	backpack_contents = list(
 		/obj/item/shovel/trench = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/grenade/f13/frag = 1,
 		/obj/item/stack/crafting/armor_plate = 5
@@ -939,7 +939,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
 		/obj/item/ammo_box/magazine/m45 = 3,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/melee/classic_baton/militarypolice = 1,
 		/obj/item/stack/crafting/armor_plate = 4,
@@ -990,7 +990,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/stack/crafting/armor_plate = 4,
@@ -1067,7 +1067,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/ncr/CPL
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/stack/crafting/armor_plate = 5,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/grenade/f13/frag = 2,
@@ -1164,7 +1164,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/ncrarmor
 	glasses	= null
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/stack/crafting/armor_plate = 4,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/grenade/f13/frag = 1
@@ -1227,7 +1227,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/ncrarmor/conscript
 	glasses	= null
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 /datum/outfit/loadout/conscriptvarmint
@@ -1299,7 +1299,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
 		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/stack/crafting/armor_plate = 5
 		)
@@ -1386,12 +1386,12 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	gloves = /obj/item/clothing/gloves/color/yellow
 	suit_store = /obj/item/gun/ballistic/automatic/m1garand
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/garand308 = 2,
+		/obj/item/ammo_box/magazine/garand3006 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/grenade/plastic/c4 = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/stack/sheet/metal/twenty = 2,
 		/obj/item/stack/sheet/glass/ten = 2,
 		/obj/item/book/granter/trait/explosives = 1,
@@ -1450,7 +1450,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/varmint = 1,
 		/obj/item/ammo_box/magazine/m556/rifle/small = 2,
 		/obj/item/shovel/trench = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 // Technician	Salvaging
@@ -1467,7 +1467,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/metaldetector = 1,
 		/obj/item/weldingtool/largetank = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 // Corpsman		Chemistry, simple medical
@@ -1484,7 +1484,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/lowsurgery = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+	//	/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 // Off-duty		Snazzy jacket, saved up money for leave
@@ -1498,7 +1498,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/reagent_containers/food/snacks/cheesyburrito = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,
-		/obj/item/storage/bag/money/small/ncrofficers = 1,
+	//	/obj/item/storage/bag/money/small/ncrofficers = 1,
 		)
 
 // NCR Citizen

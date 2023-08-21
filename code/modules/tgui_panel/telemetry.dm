@@ -47,7 +47,7 @@
 		message_admins("[key_name(client)] sent telemetry outside of the allocated time window.")
 		return
 	if(telemetry_analyzed_at)
-		message_admins("[key_name(client)] sent telemetry more than once.")
+		//message_admins("[key_name(client)] sent telemetry more than once.")
 		return
 	telemetry_analyzed_at = world.time
 	if(!payload)

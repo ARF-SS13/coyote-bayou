@@ -45,7 +45,7 @@ other types of metals and chemistry for reagents).
 	/// Checks if the material price is less than that of what it gives back, and then adds some if so
 	/// Spams the chat with bullshit if so, its a debugging tool~
 	var/debug_materials = FALSE
-
+	
 /datum/design/error_design
 	name = "ERROR"
 	desc = "This usually means something in the database has corrupted. If this doesn't go away automatically, inform Central Command so their techs can fix this ASAP(tm)"
@@ -66,6 +66,7 @@ other types of metals and chemistry for reagents).
 		else
 			temp_list[i] = amount
 	materials = temp_list
+
 
 /datum/design/proc/material_cost_autobalance()
 	if(ispath(build_path, /obj/item/ammo_box))
@@ -109,6 +110,7 @@ other types of metals and chemistry for reagents).
 		var/materials_returned = whine_sublist["mats_returned"]
 		var/suggested_amount_of_mat = materials_returned * 1.50
 		message_admins("[src] - [name_of_mat]: costs [cost_of_design], but returns [materials_returned] if reinserted. Suggested mat cost: [suggested_amount_of_mat]")
+
 
 /datum/design/proc/get_asset_path()
 	if(research_icon && research_icon_state)

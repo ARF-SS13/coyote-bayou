@@ -1,5 +1,5 @@
 ## Sunset Wasteland
-Based and maintained from Citadel Station by way of Desert Rose, Fortuna and The Wasteland.
+Based and maintained from Citadel Station by way of Desert Rose, Fortuna, The Wasteland, and Sunset Wasteland.  
 
 [![CI Suite](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Percentage of issues still open")
@@ -182,6 +182,8 @@ See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools
 tgui clientside is licensed as a subproject under the MIT license.
 Font Awesome font files, used by tgui, are licensed under the SIL Open Font License v1.1
 tgui assets are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+See `LICENSE.txt` and `ATTRIBUTIONS.txt` within the `\modular_coyote\icons\mob folder` for licensing and attribution information regarding some of the icons in that folder.
 
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
 

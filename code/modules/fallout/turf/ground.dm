@@ -86,9 +86,60 @@ GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/wasteplant/wild_pinyon = 3,
 	/obj/structure/flora/wasteplant/wild_xander = 5,
 	/obj/structure/flora/wasteplant/wild_agave = 5,
-	/obj/structure/flora/tree/joshua = 3,
-	/obj/structure/flora/tree/cactus = 2,
-	/obj/structure/flora/tree/wasteland = 2
+	/obj/structure/flora/tree_stump = 1,
+	/obj/structure/flora/tree_log = 1,
+	/obj/structure/flora/tree_timber = 1,
+	/obj/structure/flora/timber = 1,
+	/obj/structure/flora/tree_stump = 1,
+	/obj/structure/flora/branch = 1,
+	/obj/structure/flora/branch_broken = 1,
+	/obj/structure/flora/brushwood = 1,
+	/obj/structure/flora/brushwoodalt = 1,
+	/obj/structure/flora/tree/med_pine = 1,
+	/obj/structure/flora/tree/med_pine_dead = 1,
+	/obj/structure/flora/grass/coyote/one = 1,
+	/obj/structure/flora/grass/coyote/two = 1,
+	/obj/structure/flora/grass/coyote/three = 1,
+	/obj/structure/flora/grass/coyote/four = 1,
+	/obj/structure/flora/grass/coyote/five = 1,
+	/obj/structure/flora/grass/coyote/six = 1,
+	/obj/structure/flora/grass/coyote/seven = 1,
+	/obj/structure/flora/grass/coyote/eight = 1,
+	/obj/structure/flora/grass/coyote/nine = 1,
+	/obj/structure/flora/grass/coyote/ten = 1,
+	/obj/structure/flora/grass/coyote/eleven = 1,
+	/obj/structure/flora/grass/coyote/twelve = 1,
+	/obj/structure/flora/grass/coyote/thirteen = 1,
+	/obj/structure/flora/grass/coyote/fourteen = 1,
+	/obj/structure/flora/grass/coyote/fiveteen = 1,
+	/obj/structure/flora/grass/coyote/sixteen = 1,
+	/obj/structure/flora/grass/coyote/seventeen = 1,
+	/obj/structure/flora/grass/coyote/eighteen = 1,
+	/obj/structure/flora/grass/coyote/nineteen = 1,
+	/obj/structure/flora/grass/coyote/twenty = 1,
+	/obj/structure/flora/grass/coyote/twentyone = 1,
+	/obj/structure/flora/grass/coyote/twentytwo = 1,
+	/obj/structure/flora/grass/coyote/twentythree = 1,
+	/obj/structure/flora/grass/coyote/twentyfour = 1,
+	/obj/structure/flora/grass/coyote/twentyfive = 1,
+	/obj/structure/flora/grass/coyote/twentysix = 1,
+	/obj/structure/flora/grass/coyote/twentyseven = 1,
+	/obj/structure/flora/grass/coyote/twentyeight = 1,
+	/obj/structure/flora/grass/coyote/twentynine = 1,
+	/obj/structure/flora/grass/coyote/thirty = 1,
+	/obj/structure/flora/tree/wasteland = 2,
+	/obj/structure/flora/tree/pink_tree = 3,
+	/obj/structure/flora/tree/oak_one = 3,
+	/obj/structure/flora/tree/oak_two = 3,
+	/obj/structure/flora/tree/oak_three = 3,
+	/obj/structure/flora/tree/oak_four = 3,
+	/obj/structure/flora/tree/oak_five = 3,
+	/obj/structure/flora/wild_plant/thistle = 10,
+	/obj/structure/flora/wild_plant/petunia = 10,
+	/obj/structure/flora/wild_plant/petunia/purple = 10,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 10,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  10,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 10
 	))
 
 GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
@@ -189,8 +240,9 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
-						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
-						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
+						//obj/effect/spawner/lootdrop/f13/weapon/wasteland = 6,
+						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
+						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
 						)
 
 //For sculpting with more precision, the random picking does not work very well. Slowdown 0.5 instead of 1. No random armor or gunpowder or titanium. Use directions for control. - Pebbles
@@ -613,3 +665,61 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 
 /obj/effect/overlay/gravel/edge/corner
 	icon_state = "gravelcorner"
+
+
+//New Coyote Dirts
+/turf/open/indestructible/ground/outside/dirt/light_grass
+	name = "lightly grassed dirt"
+	icon = 'modular_coyote/icons/turfs/lightgrass.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigdirtturf2
+	name = "big dirt turf 2"
+	icon = 'modular_coyote/icons/turfs/Big_Dirt_Turf_2.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigdirtturf
+	name = "big dirt turf"
+	icon = 'modular_coyote/icons/turfs/Big_Dirt_Turfs.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/biggrass
+	name = "big grass"
+	icon = 'modular_coyote/icons/turfs/Big_Grass.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/biggrassdirt2
+	name = "grassier"
+	icon = 'modular_coyote/icons/turfs/Big_Grass_Turf_2.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/bigiceturf
+	name = "crunchy ice"
+	icon = 'modular_coyote/icons/turfs/Big_Ice_Turf.dmi'
+	icon_state = null
+
+
+/turf/open/indestructible/ground/outside/dirt/bigsandturf
+	name = "crunchy sand"
+	icon = 'modular_coyote/icons/turfs/Big_Sand_Turf.dmi'
+	icon_state = null
+
+/turf/open/indestructible/ground/outside/dirt/rockysnow
+	name = "snow on rocks"
+	icon = 'modular_coyote/icons/turfs/Big_Snow_and_Rock_Turf.dmi'
+	icon_state = null
+
+
+/turf/open/indestructible/ground/outside/dirt/bigsnow
+	name = "thick snow"
+	icon = 'modular_coyote/icons/turfs/Big_Snow_turf.dmi'
+	icon_state = null
+
+//////////////
+// 	 gob	//
+//////////////
+
+/turf/open/indestructible/ground/outside/dirt/desertsand
+	name = "desertsand"
+	icon = 'modular_coyote/icons/turfs/desertsand.dmi'
+	icon_state = "sand1"

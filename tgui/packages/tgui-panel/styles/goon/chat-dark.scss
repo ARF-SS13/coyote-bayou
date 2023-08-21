@@ -455,6 +455,10 @@ em {
   color: #f0420d;
 }
 
+.respondersradio {
+  color: #dd3535;
+}
+
 .yell {
   font-weight: bold;
 }
@@ -1032,6 +1036,32 @@ em {
 
   100% {
     color: #f75a5a;
+  }
+}
+
+.blinker {
+  opacity: 100%;
+  animation: blinker 1000ms linear infinite;
+}
+
+@keyframes phobia {
+  0% {
+    opacity: 100%;
+  }
+
+  49% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+
+  99% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
   }
 }
 

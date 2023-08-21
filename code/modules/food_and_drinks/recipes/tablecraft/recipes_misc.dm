@@ -270,6 +270,15 @@
 	result = /obj/item/storage/fancy/pickles_jar
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/caramel_popcorn
+	name = "Caramel Popcorn"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/popcorn = 1,
+		/datum/reagent/consumable/caramel = 3,
+	)
+	result = /obj/item/reagent_containers/food/snacks/popcorn/caramel
+	subcategory = CAT_MISCFOOD
+
 /*
 /datum/crafting_recipe/food/melonkeg
 	name ="Melon keg"

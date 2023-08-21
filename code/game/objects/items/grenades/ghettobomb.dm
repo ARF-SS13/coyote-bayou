@@ -7,7 +7,7 @@
 	item_state = "ied"
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT //fenny stinky
 	throw_speed = 3
 	throw_range = 6
 	active = 0

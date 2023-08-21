@@ -48,8 +48,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	maxHealth = 110
-	health = 110
+	maxHealth = 90
+	health = 90
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 6
@@ -97,8 +97,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 90
-	health = 90
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 8
@@ -255,7 +255,7 @@
 	emote_taunt = list("snips")
 
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
-	aggrosound = list('sound/f13npc/scorpion/aggro.ogg', )
+	emote_taunt_sound = list('sound/f13npc/scorpion/aggro.ogg', )
 	idlesound = list('sound/creatures/radscorpion_snip.ogg', )
 	death_sound = 'sound/f13npc/scorpion/death.ogg'
 
@@ -346,7 +346,7 @@
 	response_harm_simple = "hits"
 	emote_taunt = list("buzzes")
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
-	aggrosound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
+	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
@@ -374,7 +374,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -408,21 +408,37 @@
 	update_transform()
 
 /datum/reagent/toxin/cazador_venom
-	name = "Cazador venom"
-	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
+	name = "cazador venom"
+	description = "A painful but relatively harmless venom, originally synthesized by tarantula hawks."
+	reagent_state = LIQUID
 	color = "#801E28" // rgb: 128, 30, 40
-	toxpwr = 1
+	toxpwr = 0.5
 	taste_description = "pain"
 	taste_mult = 1.3
 
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 15)
-		M.adjustToxLoss(5, 0)
+/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(10, 0)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/cazador_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
 	..()
 
 /datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
-	if(volume >= 15)
-		M.adjustFireLoss(5, 0)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
 	..()
 
 //////////////
@@ -466,11 +482,12 @@
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("hostile", "gecko")
+	faction = list("hostile", "gecko", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
 	a_intent = INTENT_HARM
+	idlesound = list('sound/f13npc/bloatfly/fly.ogg')
 	blood_volume = 0
 	casingtype = /obj/item/ammo_casing/shotgun/bloatfly
 	projectiletype = null
@@ -488,8 +505,6 @@
 			MOB_CASING_ENTRY(/obj/item/ammo_casing/shotgun/bloatfly/three, 3)\
 		)
 	)
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
@@ -501,6 +516,11 @@
 		return BULLET_ACT_FORCE_PIERCE
 	else
 		. = ..()
+
+/mob/living/simple_animal/hostile/bloatfly/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()
 
 //////////////
 // RADROACH //
@@ -540,17 +560,30 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("gecko", "critter-friend")
 	a_intent = INTENT_HARM
 	pass_flags = PASSTABLE | PASSMOB
 	density = FALSE
 	gold_core_spawnable = HOSTILE_SPAWN
 	randpixel = 12
+	variation_list = list(
+		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(5, 10, 1),
+		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 1, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
+	)
 
-	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
+	emote_taunt_sound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	desc_short = "One of countless bugs that move in gross hordes."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+
+/mob/living/simple_animal/hostile/radroach/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
+	. = ..()

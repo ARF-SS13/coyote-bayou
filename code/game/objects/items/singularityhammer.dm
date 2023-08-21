@@ -5,7 +5,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 5
 	throwforce = 15
 	throw_range = 1
@@ -88,12 +88,15 @@
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
-	force = 5
+	slot_flags = INV_SLOTBIT_BACK
+	force = 35
+	force_unwielded = 35
+	force_wielded = 47
 	throwforce = 30
 	throw_range = 7
 	w_class = WEIGHT_CLASS_HUGE
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/mjollnir/Initialize()
 	. = ..()
@@ -115,6 +118,7 @@
 /obj/item/mjollnir/update_icon_state()
 	icon_state = "mjollnir0"
 
+/*
 /obj/item/mjollnir/proc/shock(mob/living/target)
 	target.Stun(60)
 	var/datum/effect_system/lightning_spread/s = new /datum/effect_system/lightning_spread
@@ -136,3 +140,4 @@
 	. = ..()
 	if(isliving(hit_atom))
 		shock(hit_atom)
+*/

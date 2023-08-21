@@ -913,6 +913,26 @@
 	name = "Gloomy Long"
 	icon_state = "hair_gloomylong"
 
+/datum/sprite_accessory/hair/gloomylongmessy
+	name = "Gloomy Long & Messy"
+	icon_state = "hair_gloomylongmessy"
+
+/datum/sprite_accessory/hair/gloomylongerbedhead
+	name = "Gloomy Longer Bedhead"
+	icon_state = "hair_gloomylongerbedhead"
+
+/datum/sprite_accessory/hair/gloomyrockstar
+	name = "Gloomy Rockstar"
+	icon_state = "hair_gloomyrockstar"
+
+/datum/sprite_accessory/hair/gloomylongcurly
+	name = "Gloomy Long & Curly"
+	icon_state = "hair_gloomycurly"
+
+/datum/sprite_accessory/hair/gloomyskank
+	name = "Gloomy Skank"
+	icon_state = "hair_gloomyskank"
+
 /datum/sprite_accessory/hair/simple
 	name = "Simple"
 	icon_state = "hair_simple"
@@ -1032,3 +1052,135 @@
 /datum/sprite_accessory/hair/pigtbelle
 	name = "Cotton Belle"
 	icon_state = "hair_pigtbelle"
+
+/datum/sprite_accessory/hair/spicy
+	name = "Spicy"
+	icon_state = "hair_spicy"
+
+/datum/sprite_accessory/hair/hyenamane
+	name = "Hyena mane"
+	icon_state = "hair_hyenamane"
+
+/datum/sprite_accessory/hair/halfshavedlong
+	name = "Half-shaved long"
+	icon_state = "halfshave_long"
+
+/datum/sprite_accessory/hair/halfshavedmessy
+	name = "Half-shaved messy"
+	icon_state = "halfshave_messy"
+
+/datum/sprite_accessory/hair/halfshavedmessylong
+	name = "Half-shave long messy"
+	icon_state = "halfshave_messylong"
+
+/datum/sprite_accessory/hair/halfshavedglamorous
+	name = "Half-shave glamorous"
+	icon_state = "halfshave_glamorous"
+
+/datum/sprite_accessory/hair/voxafro
+	name = "Vox Afro"
+	icon_state = "hair_vox_afro"
+
+/datum/sprite_accessory/hair/voxcrestedquills
+	name = "Vox Crested Quills"
+	icon_state = "hair_vox_crestedquills"
+
+
+/datum/sprite_accessory/hair/voxemperorquills
+	name = "Vox Emperor Quils"
+	icon_state = "hair_vox_emperorquills"
+
+
+/datum/sprite_accessory/hair/voxhorns
+	name = "Vox Horns"
+	icon_state = "hair_vox_horns"
+
+
+/datum/sprite_accessory/hair/voxkeelquills
+	name = "Vox Keel Quills"
+	icon_state = "hair_vox_keelquills"
+
+
+/datum/sprite_accessory/hair/voxkeetquills
+	name = "Vox Keet Quills"
+	icon_state = "hair_vox_keetquills"
+
+
+/datum/sprite_accessory/hair/voxkingly
+	name = "Vox Kingly"
+	icon_state = "hair_vox_kingly"
+
+
+/datum/sprite_accessory/hair/voxmohawk
+	name = "Vox Mohawk"
+	icon_state = "hair_vox_mohawk"
+
+
+/datum/sprite_accessory/hair/voxnights
+	name = "Vox Nights"
+	icon_state = "hair_vox_nights"
+
+
+/datum/sprite_accessory/hair/voxrazorclipped
+	name = "Vox Razorclipped"
+	icon_state = "hair_vox_razorclipped"
+
+
+/datum/sprite_accessory/hair/voxrazor
+	name = "Vox Razor"
+	icon_state = "hair_vox_razor"
+
+
+/datum/sprite_accessory/hair/voxshortquills
+	name = "Vox Short Quills"
+	icon_state = "hair_vox_shortquills"
+
+
+/datum/sprite_accessory/hair/voxtielquills
+	name = "Vox Tiel Quills"
+	icon_state = "hair_vox_tielquills"
+
+
+/datum/sprite_accessory/hair/voxyasu
+	name = "Vox Yasu"
+	icon_state = "hair_vox_yasu"
+
+//  THE LIMIT HAS BEEN REACHED//
+//TIME FOR HAIR 2//
+
+/datum/sprite_accessory/hair/voxsurf
+	name = "Vox Surf"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_surf"
+
+
+/datum/sprite_accessory/hair/voxcropped
+	name = "Vox Cropped"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_cropped"
+
+
+/datum/sprite_accessory/hair/voxrows
+	name = "Vox Rows"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_rows"
+
+
+/datum/sprite_accessory/hair/voxpony
+	name = "Vox Ponytail"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_pony"
+
+
+/datum/sprite_accessory/hair/voxmange
+	name = "Vox Mangy"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_mange"
+
+
+/datum/sprite_accessory/hair/voxruffhawk
+	name = "Vox Hawk"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "hair_vox_ruffhawk"
+
+

@@ -6,6 +6,7 @@
 	icon_state = "762-casing"
 	caliber = CALIBER_195
 	projectile_type = /obj/item/projectile/bullet/mm195x129
+	sound_properties = CSP_RIFLE_LIGHT
 
 /obj/item/ammo_casing/mm195x129/ap
 	name = "1.95x129mm armor-piercing bullet casing"

@@ -13,14 +13,14 @@
 	fluid_rate = MILK_RATE
 	layer_index = BREAST_LAYER_INDEX
 	shape = DEF_BREASTS_SHAPE
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
+	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	masturbation_verb = "massage"
 	arousal_verb = "Your breasts start feeling sensitive"
 	unarousal_verb = "Your breasts no longer feel sensitive"
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
-	var/cached_size //these two vars pertain size modifications and so should be expressed in NUMBERS.
-	var/prev_size //former cached_size value, to allow update_size() to early return should be there no significant changes.
+	associated_has = CS_BOOB // for cockstring stuff
+	hide_flag = HIDE_BOOBS // for hideflag stuff
 
 GLOBAL_LIST_INIT(breast_values, list(
 	"a" = 1,
@@ -100,8 +100,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["breasts_color"]]"
+		// else // color isnt neccessarilllallilaryly whats in the features
+		// 	color = "#[owner.dna.features["breasts_color"]]"
 
 //Allows breasts to grow and change size, with sprite changes too.
 //maximum wah
@@ -113,6 +113,20 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	var/new_value = clamp(cached_size + modifier, min, max)
 	if(new_value == cached_size)
 		return
+	prev_size = cached_size
+	cached_size = new_value
+	update()
+	..()
+
+/obj/item/organ/genital/breasts/set_size(new_size)
+	var/new_value = new_size
+	if(istext(new_size) && (new_size in GLOB.breast_values))
+		new_value = GLOB.breast_values[new_size]
+	if(!isnum(new_value))
+		return
+	if(new_value == cached_size)
+		return
+	new_value = clamp(new_value, 0, 16)
 	prev_size = cached_size
 	cached_size = new_value
 	update()
@@ -150,14 +164,59 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	size = D.features["breasts_size"]
 	shape = D.features["breasts_shape"]
 	if(!D.features["breasts_producing"])
-		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
+		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_MASTURBATE_WITH)
 	if(!isnum(size))
 		cached_size = GLOB.breast_values[size]
 	else
 		cached_size = size
 		size = GLOB.breast_values[size]
 	prev_size = cached_size
-	toggle_visibility(D.features["breasts_visibility"], FALSE)
+	update_genital_visibility(D.features["breasts_visibility_flags"], FALSE, TRUE)
+
+/obj/item/organ/genital/breasts/size_kind()
+	return "[uppertext(size)]-cup"
+
+/obj/item/organ/genital/breasts/resize_genital(mob/user)
+	var/new_size = input(user, "Pick a new cup size", "Character Preference", size) as null|anything in CONFIG_GET(keyed_list/breasts_cups_prefs)
+	if(new_size)
+		set_size(new_size)
+	. = ..()
+
+/obj/item/organ/genital/breasts/reshape_genital(mob/user)
+	var/new_shape
+	new_shape = input(user, "Number of breasts", "Character Preference") as null|anything in GLOB.breasts_shapes_list
+	if(new_shape)
+		shape = new_shape
+	. = ..() // call your parents and tell them how big you got!
+
+/obj/item/organ/genital/breasts/arousal_term()
+	if(aroused_state)
+		return "Aroused and perky"
+	return "Just fine"
+
+/// your butt sets people breasts fire when horny
+/obj/item/organ/genital/breasts/on_arouse()
+	owner?.show_message(span_userlove("You feel your breasts become sensitive and their nipples stiffen."))
+	. = ..()
+
+/// your womb eats a burger when unhorny
+/obj/item/organ/genital/breasts/on_unarouse()
+	owner?.show_message(span_userlove("Your nipples soften back to normal."))
+	. = ..()
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/breasts/get_sprite_accessory()
+	return GLOB.breasts_shapes_list[shape]
+
+/obj/item/organ/genital/breasts/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			return
+		if("BEHIND")
+			. = ..()
+
 
 #undef BREASTS_ICON_MIN_SIZE
 #undef BREASTS_ICON_MAX_SIZE

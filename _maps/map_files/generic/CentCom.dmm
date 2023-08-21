@@ -2796,28 +2796,10 @@
 /area/centcom/evac)
 "jX" = (
 /obj/effect/landmark/thunderdome/two,
-/obj/machinery/camera{
-	c_tag = "Arena";
-	light_power = 25;
-	light_range = 25;
-	name = "thunderdome 1";
-	network = list("thunder");
-	pixel_x = 10;
-	resistance_flags = 64
-	},
 /turf/open/floor/plasteel,
 /area/tdome/arena)
 "jY" = (
 /obj/effect/landmark/thunderdome/one,
-/obj/machinery/camera{
-	c_tag = "Arena";
-	light_power = 25;
-	light_range = 25;
-	name = "Thunderdome 2";
-	network = list("thunder");
-	pixel_x = 10;
-	resistance_flags = 64
-	},
 /turf/open/floor/plasteel,
 /area/tdome/arena)
 "jZ" = (
@@ -4076,9 +4058,6 @@
 	name = "Vault Door";
 	req_access_txt = "53"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -4557,7 +4536,6 @@
 /turf/open/ai_visible,
 /area/ai_multicam_room)
 "qb" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/airlock/centcom{
 	name = "Administrative Office";
 	req_access_txt = "109"
@@ -7773,11 +7751,6 @@
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "GB" = (
-/obj/machinery/camera{
-	c_tag = "Communications Relay";
-	dir = 8;
-	network = list("mine")
-	},
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "GG" = (
@@ -8126,13 +8099,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Jg" = (
-/obj/machinery/camera{
-	c_tag = "Red Team";
-	network = list("thunder");
-	pixel_x = 11;
-	pixel_y = -9;
-	resistance_flags = 64
-	},
 /obj/effect/landmark/thunderdome/two,
 /turf/open/floor/plasteel/neutral,
 /area/tdome/arena)
@@ -8163,23 +8129,10 @@
 /turf/open/floor/plasteel,
 /area/tdome/arena)
 "Jl" = (
-/obj/machinery/camera{
-	c_tag = "Green Team";
-	network = list("thunder");
-	pixel_x = 12;
-	pixel_y = -10;
-	resistance_flags = 64
-	},
 /obj/effect/landmark/thunderdome/one,
 /turf/open/floor/plasteel/neutral,
 /area/tdome/arena)
 "Jq" = (
-/obj/machinery/camera{
-	c_tag = "Arena";
-	network = list("thunder");
-	pixel_x = 10;
-	resistance_flags = 64
-	},
 /turf/open/floor/circuit/green,
 /area/tdome/arena)
 "Js" = (
@@ -9061,7 +9014,6 @@
 	name = "Control Room";
 	req_access_txt = "19; 61"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
 "Su" = (
@@ -34113,22 +34065,22 @@ aa
 aa
 rb
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
+qx
+qx
+qx
+qx
+qx
+qx
 qx
 qx
 iy
@@ -37197,22 +37149,22 @@ aa
 aa
 rb
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
 qx
 qx
-QS
+qx
+qx
+qx
+qx
+qx
+qx
 qx
 qx
 iy

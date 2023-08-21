@@ -9,6 +9,11 @@
 	name = "autolathe"
 	desc = "It produces items using metal and glass."
 	icon_state = "autolathe"
+	var/icon_state_base = "autolathe"
+	var/icon_state_open = "autolathe_t"
+	var/icon_state_busy = "autolathe_n"
+	var/icon_state_loading_metal = "autolathe_r"
+	var/icon_state_loading_other = "autolathe_o"
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
@@ -111,7 +116,7 @@
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
-	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", O))
+	if(default_deconstruction_screwdriver(user, icon_state_open, icon_state_base, O))
 		updateUsrDialog()
 		return TRUE
 
@@ -147,9 +152,9 @@
 	if(istype(item_inserted, /obj/item/stack/ore/bluespace_crystal))
 		use_power(MINERAL_MATERIAL_AMOUNT / 10)
 	else if(item_inserted.custom_materials?.len && item_inserted.custom_materials[SSmaterials.GetMaterialRef(/datum/material/glass)])
-		flick("autolathe_r",src)//plays glass insertion animation by default otherwise
+		flick(icon_state_loading_metal,src)//plays glass insertion animation by default otherwise
 	else
-		flick("autolathe_o",src)//plays metal insertion animation
+		flick(icon_state_loading_other,src)//plays metal insertion animation
 
 		use_power(min(1000, amount_inserted / 100))
 	updateUsrDialog()
@@ -175,6 +180,9 @@
 				return
 
 			var/multiplier = text2num(href_list["multiplier"])
+			if(!multiplier || !IS_FINITE(multiplier))
+				stack_trace("Invalid multiplier value in stack creation [multiplier], [usr] is likely attempting an exploit")
+				return
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
 
 			/////////////////
@@ -211,7 +219,7 @@
 			if(materials.has_materials(materials_used))
 				busy = TRUE
 				use_power(power)
-				icon_state = "[icon_state]_n"
+				icon_state = icon_state_busy
 				var/time = is_stack ? 10 : base_print_speed * coeff * multiplier
 				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack), time)
 			else
@@ -250,7 +258,7 @@
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 
-	icon_state = "autolathe"
+	icon_state = icon_state_base
 	busy = FALSE
 	updateDialog()
 
@@ -637,7 +645,7 @@
 	if(!mat_box.has_space(mat_amount))
 		return AUTOLATHE_STOP_INSERTING
 	if(thing_bag)
-		if(!SEND_SIGNAL(thing_bag, COMSIG_TRY_STORAGE_TAKE, thing, src))
+		if(!SEND_SIGNAL(thing_bag, COMSIG_TRY_STORAGE_TAKE, thing, src, FALSE, thing.loc, null))
 			return AUTOLATHE_SKIP_INSERTING
 	// Forgive me for this.
 	if(mat_box.after_insert)
@@ -729,7 +737,7 @@
 		if(!mats.has_space(mat_amount))
 			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
 			return
-		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
+		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src, FALSE, casing.loc, null))
 			continue
 		// Forgive me for this.
 		if(mats.after_insert)
@@ -754,6 +762,10 @@
 	return dat
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
+	if("Handloaded Ammo" in D.category)
+		return ..()
+	if("Handmade Magazines" in D.category)
+		return ..()
 	if("Simple Ammo" in D.category)
 		if(simple == 0)
 			return FALSE
@@ -838,12 +850,19 @@
 	name = "improvised handloader bench"
 	icon = 'icons/obj/machines/reloadingbench.dmi'
 	desc = "Literally just a handloader bolted to a crate. Takes in metal and blackpowder, and outputs some of the lowest quality ammunition known to mankind."
+	icon_state = "ammolathe_improv"
+	icon_state_base = "ammolathe_improv"
+	icon_state_open = "ammolathe_improv_t"
+	icon_state_busy = "ammolathe_improv_n"
+	icon_state_loading_metal = "ammolathe_improv_r"
+	icon_state_loading_other = "ammolathe_improv_o"
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo/improvised
 	//stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo_improvised
 	categories = list(
 					"Handloaded Ammo",
 					"Handmade Magazines",
-					"Materials"
+					"Materials",
+					"Simple Magazines"
 					)
 	allowed_materials = list(
 		/datum/material/iron,
@@ -854,6 +873,32 @@
 	var/max_mats = 75000 * 3
 	/// Same thing with manipulators, and its lack thereof
 	var/default_workspeed = 1
+	/// someone made us with wood
+	var/wooded = TRUE
+	/// someone stuck us into a machine frame for some reason
+	var/framed = TRUE
+
+/obj/machinery/autolathe/ammo/improvised/proc/tableize()
+	icon_state_base = "autolathe_tabletop"
+	icon_state_open = "autolathe_tabletop_t"
+	icon_state_busy = "autolathe_tabletop_n"
+	icon_state_loading_metal = "autolathe_tabletop_r"
+	icon_state_loading_other = "autolathe_tabletop_o"
+	icon_state = icon_state_base
+	wooded = FALSE
+	frament()
+
+/obj/machinery/autolathe/ammo/improvised/proc/frament()
+	framed = FALSE
+
+/obj/machinery/autolathe/ammo/improvised/deconstruct(disassembled = TRUE)
+	if(framed)
+		return ..()
+	on_deconstruction()
+	if(wooded)
+		new /obj/item/stack/sheet/mineral/wood/three(get_turf(src))
+	new /obj/item/circuitboard/machine/autolathe/ammo/improvised(get_turf(src))
+	qdel(src)
 
 /obj/machinery/autolathe/ammo/improvised/RefreshParts()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)

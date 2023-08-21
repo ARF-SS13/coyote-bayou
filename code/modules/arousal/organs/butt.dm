@@ -44,10 +44,10 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	var/size_name = "nonexistent"
 	layer_index = BUTT_LAYER_INDEX
 	shape = DEF_BUTT_SHAPE // unused
-	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
+	genital_flags = UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE
 	masturbation_verb = "massage"
-	var/cached_size //these two vars pertain size modifications and so should be expressed in NUMBERS.
-	var/prev_size //former cached_size value, to allow update_size() to early return should be there no significant changes.
+	associated_has = CS_BUTT // for cockstring stuff
+	hide_flag = HIDE_BUTT // for hideflag stuff
 
 /obj/item/organ/genital/butt/modify_size(modifier, min = BUTT_SIZE_MIN, max = BUTT_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)
@@ -56,6 +56,16 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	prev_size = cached_size
 	cached_size = new_value
 	size = round(cached_size)
+	update()
+	..()
+
+/obj/item/organ/genital/butt/set_size(new_size)
+	var/new_value = clamp(new_size, CONFIG_GET(number/butt_min_size_prefs), CONFIG_GET(number/butt_max_size_prefs))
+	if(new_value == cached_size)
+		return
+	prev_size = cached_size
+	cached_size = new_value
+	size = CEILING(cached_size, 1)
 	update()
 	..()
 
@@ -108,8 +118,8 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 				color = SKINTONE2HEX(H.skin_tone)
 				if(!H.dna.skin_tone_override)
 					icon_state += "_s"
-		else
-			color = "#[owner.dna.features["butt_color"]]"
+		// else
+		// 	color = "#[owner.dna.features["butt_color"]]"
 
 
 /obj/item/organ/genital/butt/get_features(mob/living/carbon/human/H)
@@ -123,4 +133,30 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 		size = BUTT_SIZE_DEF
 	prev_size = size
 	cached_size = size
-	toggle_visibility(D.features["butt_visibility"], FALSE)
+	update_genital_visibility(D.features["butt_visibility_flags"], FALSE, TRUE)
+
+/obj/item/organ/genital/butt/resize_genital(mob/user)
+	var/min_size = CONFIG_GET(number/butt_min_size_prefs)
+	var/max_size = CONFIG_GET(number/butt_max_size_prefs)
+	var/new_length = input(user, "Butt size:\n([min_size]-[max_size])", "Character Preference") as num|null
+	if(new_length)
+		set_size(clamp(round(new_length), min_size, max_size))
+	. = ..() // call your parents and tell them how big you got!
+
+/obj/item/organ/genital/butt/mask_part(icon_in, state_in, layer_in, position_in)
+	//if(layer_in == GENITAL_OVER_CLOTHES_FRONT_LAYER && position_in == "MID")
+	return cut_up_genital(icon_in,state_in,list("arm_right_no_north","arm_left_no_north"))
+
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/butt/get_sprite_accessory()
+	return GLOB.butt_shapes_list[shape]
+
+/obj/item/organ/genital/butt/get_layer_number(position)
+	switch(position)
+		if("FRONT")
+			. = ..()
+		if("MID")
+			. = ..()
+		if("BEHIND")
+			return
+

@@ -24,6 +24,7 @@
 	icon_state = "roundlight"
 
 //christ this was a mistake, but it's here just in case someone wants to selectively fix -- Pooj
+//I told you that fucking 7 years ago you insufferable cunt. ~Tk420634
 /************* Lizard compatable snoots ***********
 /datum/sprite_accessory/snouts/bird
 	name = "Beak"
@@ -189,6 +190,18 @@
 	extra_color_src = MUTCOLORS3
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/snouts/mam_snouts/fchemlight
+	name = "RadDog (Top)"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "fchemlight"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/chemlight
+	name = "RadDog"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "chemlight"
+	matrixed_sections = MATRIX_ALL
+
 /datum/sprite_accessory/snouts/mam_snouts/husky
 	name = "Husky"
 	icon_state = "husky"
@@ -214,6 +227,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/lcanidalt
 	name = "Mammal, Long ALT"
 	icon_state = "lcanidalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/lcanidalt2
+	name = "Mammal, Long ALT 2"
+	icon_state = "lcanidalt2"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/snouts/mam_snouts/scanid
@@ -487,3 +506,208 @@
 	name = "WahCoon ALT (Top)"
 	icon_state = "fwahalt"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/spots
+	name = "spots"
+	icon_state = "hspots"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fox
+	name = "fox"
+	icon_state = "fox"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/snub
+	name = "snub"
+	icon_state = "snub"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/foxalt
+	name = "fox alt"
+	icon_state = "foxalt"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/shortalt
+	name = "short, alt"
+	icon_state = "short"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/rabbit
+	name = "rabbit"
+	icon_state = "rabbit"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/zebra
+	name = "zebra"
+	icon_state = "hzebra"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/anubus
+	name = "anubus"
+	icon_state = "hanubus"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/panda
+	name = "panda"
+	icon_state = "hpanda"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/jackal
+	name = "jackal"
+	icon_state = "hjackal"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fskullbird
+	name = "female skullbird"
+	icon_state = "fskullbird"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/mskullbird
+	name = "male skullbird"
+	icon_state = "skullbird"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/orca
+	name = "orca"
+	icon_state = "orca"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/fsharpcolor
+	name = "sharp color alt"
+	icon_state = "fsharpcolor"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/stubby
+	name = "stubby alt"
+	icon_state = "stubby"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/bigmandible
+	name = "big mandible"
+	icon_state = "bigmandible"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/smallmandible
+	name = "small mandible"
+	icon_state = "smallmandible"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/proboscis
+	name = "proboscis"
+	icon_state = "proboscis"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/tarantula
+	name = "tarantula"
+	icon_state = "tarantula"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/deer
+	name = "deer"
+	icon_state = "deer"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/spider
+	name = "spider"
+	icon_state = "spider"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/scarab
+	name = "scarab"
+	icon_state = "scarab"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/rhinobeetle
+	name = "rhinobeetle"
+	icon_state = "rhinobeetle"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/vulp
+	name = "vulp"
+	icon_state = "vulp"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/vulp2
+	name = "vulp alt"
+	icon_state = "vulp2"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/easterndw
+	name = "eastern dragon"
+	icon_state = "easterndw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/feasterndw
+	name = "female eastern dragon"
+	icon_state = "feasterndw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/easterndnw
+	name = "eastern dragon, no whiskers"
+	icon_state = "easterndnw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/feasterndnw
+	name = "female eastern dragon, no whiskers"
+	icon_state = "feasterndnw"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/magus
+	name = "magus"
+	icon_state = "magus"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/duck
+	name = "duck"
+	icon_state = "duck"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/goose
+	name = "goose"
+	icon_state = "goose"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/owl
+	name = "owl"
+	icon_state = "owl"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/beaktiny
+	name = "tiny beak"
+	icon_state = "beaktiny"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/deoxys
+	name = "deoxys"
+	icon_state = "deoxys"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/sloog //No idea what the fuck this is
+	name = "sloog"
+	icon_state = "sloog"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/snouts/mam_snouts/slooglips
+	name = "sloog lips"
+	icon_state = "slooglips"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/corvidbeak
+	name = "corvid beak"
+	icon_state = "corvidbeak"
+	matrixed_sections = MATRIX_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/tajaran
+	name = "tajaran"
+	icon_state = "tajaran"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/tajaranshort
+	name = "tajaran short"
+	icon_state = "tajaranshort"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/cow
+	name = "cow"
+	icon_state = "cow"
+	matrixed_sections = MATRIX_ALL

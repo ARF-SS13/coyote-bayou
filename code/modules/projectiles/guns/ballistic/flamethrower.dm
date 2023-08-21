@@ -7,7 +7,7 @@
 	item_state = "m2_flamethrower_back"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/ballistic/m2flamethrower/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
@@ -96,6 +96,7 @@
 	icon = 'icons/obj/guns/flamethrower.dmi'
 	icon_state = "m2_flamethrower_on"
 	item_state = "m2flamethrower"
+	weapon_class = WEAPON_CLASS_RIFLE
 	flags_1 = CONDUCT_1
 	slowdown = 0.3
 	slot_flags = null

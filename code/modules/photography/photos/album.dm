@@ -50,7 +50,7 @@
 			continue
 		var/obj/item/photo/P = load_photo_from_disk(i)
 		if(istype(P))
-			if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, P, null, TRUE, TRUE))
+			if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, P, null))
 				qdel(P)
 
 /obj/item/storage/photo_album/HoS

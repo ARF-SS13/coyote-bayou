@@ -21,6 +21,24 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
+
+//ratshot pellet: 6 damage instead of 8, fewer pellets. would make many tiny damage pellets but performance
+/obj/item/projectile/bullet/pellet/shotgun_ratshot
+	name = "ratshot pellet"
+	damage = BULLET_DAMAGE_RATSHOT_PELLET
+	stamina = BULLET_STAMINA_SHOTGUN_PELLET
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = BULLET_WOUND_SHOTGUN_PELLET
+	bare_wound_bonus = BULLET_WOUND_SHOTGUN_PELLET_NAKED_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
 /* rubber pellet
  * DAMAGE: 1
  * STAMIN: 11
@@ -403,7 +421,6 @@
 /obj/item/projectile/bullet/pellet/magnum_buckshot
 	name = "magnum buckshot pellet"
 	damage = 15
-	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
 

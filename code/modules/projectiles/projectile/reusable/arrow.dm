@@ -1,4 +1,250 @@
 /obj/item/projectile/bullet/reusable/arrow
+	name = "arrow"
+	desc = "a simple arrow."
+	icon_state = "arrow"
+	damage = BULLET_DAMAGE_ARROW_METAL
+	stamina = BULLET_STAMINA_ARROW_METAL
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_METAL
+
+	wound_bonus = BULLET_WOUND_ARROW_METAL
+	bare_wound_bonus = BULLET_WOUND_ARROW_METAL_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_METAL
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 25
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+
+/obj/item/projectile/bullet/reusable/arrow/metal
+	name = "metal arrow"
+	desc = "a simple arrow with a metal head."
+	icon_state = "arrow"
+	damage = BULLET_DAMAGE_ARROW_METAL
+	stamina = BULLET_STAMINA_ARROW_METAL
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_METAL
+
+	wound_bonus = BULLET_WOUND_ARROW_METAL
+	bare_wound_bonus = BULLET_WOUND_ARROW_METAL_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_METAL
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 25
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/metal
+
+/obj/item/projectile/bullet/reusable/arrow/bone
+	name = "bone arrow"
+	desc = "an arrow made of bone and sinew."
+	icon_state = "arrow"
+	damage = BULLET_DAMAGE_ARROW_BONE
+	stamina = BULLET_STAMINA_ARROW_BONE
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_BONE
+
+	wound_bonus = BULLET_WOUND_ARROW_BONE
+	bare_wound_bonus = BULLET_WOUND_ARROW_BONE_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_BONE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 25
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone
+
+/obj/item/projectile/bullet/reusable/arrow/titanium
+	name = "titanium arrow"
+	desc = "a durable arrow with a sturdy titanium head."
+	icon_state = "arrow"
+	damage = BULLET_DAMAGE_ARROW_TITANIUM
+	stamina = BULLET_STAMINA_ARROW_TITANIUM
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_TITANIUM
+
+	wound_bonus = BULLET_WOUND_ARROW_TITANIUM
+	bare_wound_bonus = BULLET_WOUND_ARROW_TITANIUM_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_TITANIUM
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 10  //premium material just means durable. don't need to make as many
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/titanium
+
+/obj/item/projectile/bullet/reusable/arrow/flint
+	name = "flint arrow"
+	desc = "a primitive arrow with a head made of knapped flint."
+	icon_state = "arrow"
+	damage = BULLET_DAMAGE_ARROW_FLINT
+	stamina = BULLET_STAMINA_ARROW_FLINT
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_FLINT
+
+	wound_bonus = BULLET_WOUND_ARROW_FLINT
+	bare_wound_bonus = BULLET_WOUND_ARROW_FLINT_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_FLINT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 35
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/flint
+
+/obj/item/projectile/bullet/reusable/arrow/glass //glass arrows behave very similar to flint irl
+	name = "glass arrow"
+	desc = "a primitive arrow with a head made of knapped glass."
+	damage = BULLET_DAMAGE_ARROW_GLASS
+	stamina = BULLET_STAMINA_ARROW_GLASS
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_GLASS
+
+	wound_bonus = BULLET_WOUND_ARROW_GLASS
+	bare_wound_bonus = BULLET_WOUND_ARROW_GLASS_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_GLASS
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 35
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/glass
+
+/obj/item/projectile/bullet/reusable/arrow/explosive //possibly OP
+	name = "explosive arrow"
+	desc = "a heavy arrow containing an explosive payload."
+	damage = BULLET_DAMAGE_ARROW_EXPLOSIVE
+	stamina = BULLET_STAMINA_ARROW_EXPLOSIVE
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_EXPLOSIVE
+
+	wound_bonus = BULLET_WOUND_ARROW_EXPLOSIVE
+	bare_wound_bonus = BULLET_WOUND_ARROW_EXPLOSIVE_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_EXPLOSIVE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	break_chance = 100
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/explosive
+
+/obj/item/projectile/bullet/reusable/arrow/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 0, 2, 0, adminlog = FALSE, flame_range = 0) //dynamite sized explosion, no cruel flash or fire to make pvp miserable
+
+
+/obj/item/projectile/bullet/reusable/arrow/jagged //oldcode serrated and broadhead combined
+	name = "jagged arrow"
+	desc = "a mean looking arrow made to shed blood and infection. it tends to stay stuck in the target and snap off, so good luck recovering it."
+	damage = BULLET_DAMAGE_ARROW_BARBED
+	stamina = BULLET_STAMINA_ARROW_BARBED
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_BARBED
+
+	wound_bonus = BULLET_WOUND_ARROW_BARBED
+	bare_wound_bonus = BULLET_WOUND_ARROW_BARBED_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_BARBED
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_EDGED
+	supereffective_damage = BULLET_BANE_DAMAGE_ARROW_BARBED
+	supereffective_flags = BULLET_BANE_FLAGS_ARROW_BARBED
+	break_chance = 100 //high power, costly
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/jagged
+	embedding = list(
+		embed_chance=50, 
+		fall_chance=60, 
+		jostle_chance=15, 
+		ignore_throwspeed_threshold=FALSE, 
+		pain_stam_pct=0.2, 
+		pain_mult=2, 
+		jostle_pain_mult=1, 
+		rip_time= 3 SECONDS, 
+		projectile_payload = /obj/item/shrapnel
+		) //iunno how, but this needs to not drop the arrow when removed. needs to disappear just like if it breaks. is copypasted from serrated arrow for now...
+
+/obj/item/projectile/bullet/reusable/arrow/field
+	name = "field arrow"
+	desc = "a simple arrow with a small, sturdy head."
+	damage = BULLET_DAMAGE_ARROW_FIELD
+	stamina = BULLET_STAMINA_ARROW_FIELD
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_FIELD
+
+	wound_bonus = BULLET_WOUND_ARROW_FIELD
+	bare_wound_bonus = BULLET_WOUND_ARROW_FIELD_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_FIELD
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	break_chance = 5 //real sturdy. this is the easy to make and supply "handload" of the arrow world
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/field
+
+/* I...don't really wanna touch this till nonlethal ammo is looked at, or I understand it. but should be sorta equivalent to a .308?
+*/
+/obj/item/projectile/bullet/reusable/arrow/blunt
+	name = "blunt arrow"
+	desc = "an arrow with a wrapped leather tip, made for bruising."
+	damage = BULLET_DAMAGE_ARROW_BLUNT
+	stamina = BULLET_STAMINA_ARROW_BLUNT
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_BLUNT
+
+	wound_bonus = BULLET_WOUND_ARROW_BLUNT
+	bare_wound_bonus = BULLET_WOUND_ARROW_BLUNT_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_BLUNT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	sharpness = SHARP_NONE
+	break_chance = 20
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
+
+/obj/item/projectile/bullet/reusable/arrow/ion  //the original was written strangely for some reason. think it was a simple mimicry of ion gun projectile
+	name = "ion arrow"
+	desc = "an arrow containing an EMP warhead."
+	damage = BULLET_DAMAGE_ARROW_ION
+	stamina = BULLET_STAMINA_ARROW_ION
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_ION
+
+	wound_bonus = BULLET_WOUND_ARROW_ION
+	bare_wound_bonus = BULLET_WOUND_ARROW_ION_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_ION
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	sharpness = SHARP_NONE
+	supereffective_damage = BULLET_BANE_DAMAGE_ARROW_ION //lets try something new
+	supereffective_flags = BULLET_BANE_FLAGS_ARROW_ION
+	break_chance = 100 //one zap and we done
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/ion
+
+/obj/item/projectile/bullet/reusable/arrow/ion/on_hit(atom/target, blocked = FALSE)
+	..()
+	target.emp_act(15)//5 severity is very, very low
+
+/obj/item/projectile/bullet/reusable/arrow/practice
+	name = "practice arrow"
+	desc = "a harmless arrow with a padded, fabric tip. for practice, not for annoying people with."
+	damage = BULLET_DAMAGE_ARROW_PRACTICE
+	stamina = BULLET_STAMINA_ARROW_PRACTICE
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_ARROW_PRACTICE
+
+	wound_bonus = BULLET_WOUND_ARROW_PRACTICE
+	bare_wound_bonus = BULLET_WOUND_ARROW_PRACTICE_NAKED_MULT
+	
+	pixels_per_second = BULLET_SPEED_ARROW_PRACTICE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	sharpness = SHARP_NONE
+	break_chance = 5 //simple and sturdy
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/practice
+
+/obj/item/projectile/bullet/reusable/arrow/practice/sticky
+	name = "sticky practice arrow"
+	desc = "a harmless arrow with soft tip made from layers of tape. for annoying people with."
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/sticky
+	break_chance = 0
+	embedding = list(
+		embed_chance = 100, 
+		fall_chance = 10, 
+		pain_mult = 0, 
+		jostle_pain_mult = 0, 
+		ignore_throwspeed_threshold = TRUE,
+		projectile_payload = /obj/item/shrapnel
+		)
+
+
+/* 
+
+/obj/item/projectile/bullet/reusable/arrow
 	name = "metal arrow"
 	desc = "a simple arrow with a metal head."
 	damage = 40
@@ -12,6 +258,15 @@
 	desc = "Fire harderned arrow."
 	damage = 0.5
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ash
+
+/obj/item/projectile/bullet/reusable/arrow/gold
+	name = "golden arrow"
+	desc = "Arrow made with gold and wood."
+	damage = 25
+	armour_penetration = 0.15
+	supereffective_damage = 40
+	supereffective_faction = list("hostile","supermutant", "raider", "china")
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/gold
 
 /obj/item/projectile/bullet/reusable/arrow/bone //extra mob damage
 	name = "bone arrow"
@@ -132,3 +387,4 @@
 	emp_radius = 1
 	damage = 20
 	armour_penetration = 0.5
+ */

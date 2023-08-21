@@ -4,7 +4,7 @@
 	icon_state = "nuclear_particle"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	flag = "rad"
-	irradiate = 5000
+	irradiate = 500
 	pixels_per_second = TILES_TO_PIXELS(25)
 	hitsound = 'sound/weapons/emitter2.ogg'
 	impact_type = /obj/effect/projectile/impact/xray
@@ -34,3 +34,34 @@
 /obj/item/projectile/energy/nuclear_particle/grenade
 	name = "gamma particle"
 	irradiate = 500
+
+
+
+/obj/item/projectile/energy/nuclear_particle/plasmabounce
+	name = "Toroidal Plasma Ball"
+	icon_state = "plasma_bounce2"
+	pass_flags = PASSTABLE
+	flag = "energy"
+	damage = 70
+	irradiate = 0
+	is_reflectable = TRUE
+	movement_type = FLYING
+	pixels_per_second = TILES_TO_PIXELS(15)
+	hitsound = 'sound/weapons/emitter2.ogg'
+	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
+	impact_type = /obj/effect/projectile/impact/laser/blue
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion
+	ricochets_max = 10
+	ricochet_chance = 100
+	ricochet_auto_aim_angle = 70
+	ricochet_auto_aim_range = 10
+	ricochet_incidence_leeway = 0
+	light_system = MOVABLE_LIGHT
+	light_range = 4
+	light_power = 3
+	
+/obj/item/projectile/energy/nuclear_particle/plasmabounce/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismob(target) )
+		target.ex_act(EXPLODE_LIGHT)
+		return

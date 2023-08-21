@@ -238,7 +238,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/nonviolent
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
-	value = -1
+	value = -6
 	mob_trait = TRAIT_PACIFISM
 	gain_text = span_danger("You feel repulsed by the thought of violence!")
 	lose_text = span_notice("You think you can defend yourself again.")
@@ -336,6 +336,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
+	if(!quirk_holder)
+		return // guy don't exist no more, therefore stop it.
 	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
@@ -394,10 +396,50 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -5
 	timeout = 3 MINUTES
 
+/datum/quirk/catphobia
+	name = "Phobia - Cats"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
+	value = -1
+	mob_trait = TRAIT_CATPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of catgirl paradise's creatures grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You wish to go to catgirl paradise some day.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/catphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/catphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/ratphobia
+	name = "Phobia - Rats"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with rats."
+	value = -1
+	mob_trait = TRAIT_RATPHOBIA
+	gain_text = span_danger("You begin to tremble as you could hear in your head, \"Rats, rats, we're the rats.\nWe prey at night, we stalk at night, we're the rats.\" it echoes in your mind hauntingly.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You're the giant rat now who makes all the rules.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/ratphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/rats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/ratphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/rats, TRAUMA_RESILIENCE_ABSOLUTE)
+
 /datum/quirk/spiderphobia
 	name = "Phobia - Spiders"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
-	value = -2
+	value = -1
 	mob_trait = TRAIT_SPIDERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of eight legged monsters grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -414,6 +456,82 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/spiders, TRAUMA_RESILIENCE_ABSOLUTE)
 
+/datum/quirk/lizardphobia
+	name = "Phobia - Lizards"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with lizards and reptiles."
+	value = -1
+	mob_trait = TRAIT_LIZARDPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of those scalie smooth brains grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Now you can't help but giggle at the sounds of turtles moaning which had appeared in your head.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/lizardphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/lizards, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/lizardphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/lizards, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/robotphobia
+	name = "Phobia - Robots/Synths"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
+	value = -2 // I do this because there's many enemy mobs which fit in this category, which effects a lot of gameplay.
+	mob_trait = TRAIT_ROBOTPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of not understanding what x=x<<1 even means...Those robots are too scary to understand that, the fear grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You've learnt bitshifting!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to bitwise operations."
+	locked = FALSE
+
+/datum/quirk/robotphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/robotphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/birdphobia
+	name = "Phobia - Birds"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
+	value = -1
+	mob_trait = TRAIT_BIRDPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of winged dubious creatures grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bird up!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/birdphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/birds, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/birdphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/birds, TRAUMA_RESILIENCE_ABSOLUTE)
+/datum/quirk/dogphobia
+	name = "Phobia - Dogs"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with dogs."
+	value = -1
+	mob_trait = TRAIT_DOGPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of loud bork borks, which grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bork bork!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/dogphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/dogphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
@@ -518,7 +636,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
-	value = 0 //HALP MAINTS
+	value = -2 //HALP MAINTS
 	gain_text = span_danger("You find yourself unable to speak!")
 	lose_text = span_notice("You feel a growing strength in your vocal chords.")
 	medical_record_text = "Functionally mute, patient is unable to use their voice in any capacity."
@@ -563,6 +681,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/blindness/remove()
 	quirk_holder?.cure_blind(ROUNDSTART_TRAIT)
+
+/datum/quirk/deafness
+	name = "Deaf"
+	desc = "You are completely deaf, nothing can counteract this."
+	value = -3
+	mob_trait = TRAIT_DEAF
+	gain_text = span_danger("You can't hear anything.")
+	lose_text = span_notice("You miraculously gain back your hearing.")
+	medical_record_text = "Patient has permanent deafness."
 
 /datum/quirk/coldblooded
 	name = "Cold-blooded"
@@ -618,9 +745,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/flimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 10
-	mob_tar.health -= 10
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 10
+	H.health -= 10
 
 /datum/quirk/veryflimsy
 	name = "Health - Very Flimsy"
@@ -632,25 +759,25 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/veryflimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 20
-	mob_tar.health -= 20
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 20
+	H.health -= 20
 
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
-	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
-	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
+	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
+	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
+	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
 	value = -1
 	mood_quirk = TRUE
-	medical_record_text = "Patient feels more secure when wearing a gas mask."
+	medical_record_text = "Patient feels more secure when wearing a mask."
 	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/maskmask = H.get_item_by_slot(ITEM_SLOT_MASK)
-	if(istype(maskmask) && !istype(maskmask, /obj/item/clothing/mask/cigarette))
+	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(mask))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -667,12 +794,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -3
 	timeout = 0
 
-/datum/quirk/masked_mook/on_spawn()
+/* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas/gasmask = new(get_turf(quirk_holder))
-	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
-	H.regenerate_icons()
+	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
+	H.equip_to_slot(gas, SLOT_WEAR_MASK)
+	H.regenerate_icons()*/
 
 /datum/quirk/paper_skin
 	name = "Paper Skin"
@@ -702,9 +829,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/noodle_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 0
-	mob_tar.dna.species.punchdamagehigh = 0
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = 0
+	H.dna.species.punchdamagehigh = 0
 
 /datum/quirk/gentle
 	name = "Melee - Gentle"
@@ -762,7 +889,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/primitive
 	name = "Primitive"
-	desc = "Unga Bunga"
+	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
 	value = -2
 	mob_trait = TRAIT_MONKEYLIKE
 	gain_text = span_notice("yOu reTurN tO MonKE")
@@ -772,7 +899,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/nosleep
 	name = "Can Not Sleep"
 	desc = "For whatever reason you literally lack the ability to sleep."
-	value = -1
+	value = -2
 	mob_trait = TRAIT_SLEEPIMMUNE
 	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
 	lose_text = span_danger("You could kind of go for a nap.")
@@ -803,4 +930,25 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_TECHNOPHOBE
 	gain_text = span_notice("All my homies hate machines.")
 	lose_text = span_danger("Maybe industrial society isn't so bad...")
+	locked =  FALSE
+
+/datum/quirk/nodrugs
+	name = "Clean Veins"
+	desc = "Your body reacts violently to street drugs. Medicines work... for the most part."
+	value = -1
+	mob_trait = TRAIT_NODRUGS
+	gain_text = span_notice("You feel like a winner!")
+	lose_text = span_danger("You feel like a loser!")
+	locked =  FALSE
+
+/datum/quirk/hardcore
+	name = "Hardcore"
+	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
+		and the only way you'll be able to live again is if someone finds and revives your body! Furthermore, you're unlikely to \
+		recieve any sort of divine intervention if you die, so be careful!"
+	value = -1
+	mob_trait = TRAIT_NO_SECOND_WIND
+	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
+		You will also not be able to be revived by divine intervention! Be careful!")
+	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
 	locked =  FALSE

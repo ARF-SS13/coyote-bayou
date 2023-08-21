@@ -2,6 +2,22 @@
 	category = LOADOUT_CATEGORY_BACKPACK
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 	slot = SLOT_IN_BACKPACK
+	cost = 1
+
+/datum/gear/backpack/redwater
+	name = "contraband radio"
+	path = /obj/item/radio/redwater
+	cost = 0
+
+/datum/gear/backpack/denid
+	name = "contraband keycard"
+	path = /obj/item/card/id/denid
+	cost = 0
+
+/datum/gear/backpack/tattoo_kit
+	name = "Tattoo kit"
+	path = /obj/item/storage/box/tattoo_kit
+	cost = 0
 
 /datum/gear/backpack/necklace //this is here because loadout doesn't support proper accessories
 	name = "Renameable Necklace"
@@ -14,38 +30,33 @@
 /datum/gear/backpack/tapeplayer
 	name = "Taperecorder"
 	path = /obj/item/taperecorder
-	cost = 2
 
 /datum/gear/backpack/razor
 	name = "electric razor"
 	path = /obj/item/razor
-	cost = 2
 
 /datum/gear/backpack/donuts
 	name = "donut box"
 	path = /obj/item/storage/fancy/donut_box
 	cost = 2
 
-//// "Toys"
+//// "Toys" -- toys going back to general subcategory till we have more of them
 
 /datum/gear/backpack/crayons
 	name = "Box of Crayons"
 	path = /obj/item/storage/crayons
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
-	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 
 /datum/gear/backpack/toykatana
 	name = "Toy Katana"
 	path = /obj/item/toy/katana
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
-	cost = 3
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
 
 //// Pens - not catagorized
 
 /datum/gear/backpack/pen
 	name = "Pen"
 	path = /obj/item/pen
-	cost = 2
 
 /datum/gear/backpack/pen/red
 	name = "Fountain Pen"
@@ -72,7 +83,7 @@
 	path = /obj/item/pen/fountain/captain
 
 
-//// Belts, not alot of belts in the catagory to make there own.
+/* //// Belts, not alot of belts in the catagory to make there own.
 
 /datum/gear/backpack/redbelt
 	name = "primitive belt"
@@ -82,7 +93,7 @@
 /datum/gear/backpack/fannypack
 	name = "fannypack"
 	path = /obj/item/storage/belt/fannypack
-	cost = 3
+	cost = 3 */ // 'Moved' to belt_loadout.dm
 
 //// Cigarettes here, they dont need a special category
 
@@ -101,6 +112,7 @@
 /datum/gear/backpack/cigarettes/cigpack_greytort
 	name = "Grey Tortoise Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
+	cost = 2
 
 /datum/gear/backpack/cigarettes/carp_classic
 	name = "Carp Classic Smokes"
@@ -121,7 +133,6 @@
 /datum/gear/backpack/cigarettes/shady_jims
 	name = "Shady Jim's Super Slims Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_shadyjims
-	cost = 2
 
 /datum/gear/backpack/cigarettes/xeno_filtered
 	name = "Xeno Filtered Smokes"
@@ -131,25 +142,19 @@
 /datum/gear/backpack/cigarettes/cigars
 	name = "Premium cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars
-	cost = 2
 
 /datum/gear/backpack/cigarettes/cigars/cohiba
 	name = "Cohiba Robusto cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/cohiba
-	cost = 2
 
 /datum/gear/backpack/cigarettes/cigars/havana
 	name = "Havanian cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/havana
-	cost = 2
-
-//// Backpacks, Lets keep these at cost 3, that way they arent over in points.
 
 /datum/gear/backpack/backpack
 	name = "hiking backpack"
 	path = /obj/item/storage/backpack/old
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
-	cost = 3
 
 /datum/gear/backpack/backpack/duffel
 	name = "duffelbag"
@@ -171,6 +176,11 @@
 	name = "trekker satchel"
 	path = /obj/item/storage/backpack/satchel/trekker
 
+/datum/gear/backpack/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	path = /obj/item/storage/backpack/trekker/marinepack
+	cost = 1
+
 /datum/gear/backpack/backpack/sec
 	name = "security backpack"
 	path = /obj/item/storage/backpack/security
@@ -186,6 +196,14 @@
 /datum/gear/hands/backpack/old
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
+
+/datum/gear/backpack/coinpouch
+	name = "coin pouch"
+	path = /obj/item/storage/wallet/stash/pouch
+
+/datum/gear/backpack/backpack/snailshell
+	name = "snail shell"
+	path = /obj/item/storage/backpack/satchel/snailshell
 
 /////////////////////
 //Coyote Additions//
@@ -203,7 +221,7 @@
 	name = "Ration - Brahmin BBQ"
 	path = /obj/item/storage/box/ration/menu_one
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //lollipop and grey tort
 
 /datum/gear/backpack/snack/ration_2
 	name = "Ration - Glazed Sausage"
@@ -227,7 +245,7 @@
 	name = "Ration - Squeakpie"
 	path = /obj/item/storage/box/ration/menu_five
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //bonus lollipop heals
 
 /datum/gear/backpack/snack/ration_6
 	name = "Ration - Hillhogger"
@@ -245,7 +263,7 @@
 	name = "Ration - Veggie"
 	path = /obj/item/storage/box/ration/menu_eight
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2
 
 /datum/gear/backpack/snack/ration_9
 	name = "Ration - Fillet"
@@ -263,7 +281,7 @@
 	name = "Ration - Hotdawg"
 	path = /obj/item/storage/box/ration/menu_eleven
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
-	cost = 1
+	cost = 2 //lollipop
 
 /datum/gear/backpack/snack/ration_breakfast
 	name = "Ration - Breakfast"
@@ -283,9 +301,9 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
 
-//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!)
+//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!) (but nobody used it cus we dont have vault stuff lol) (love all you nerds)
 
-//Vault Guns
+/* //Vault Guns
 /datum/gear/backpack/vaultguns/n99
 	name = "10mm Pistol"
 	path = /obj/item/gun/ballistic/automatic/pistol/n99
@@ -330,12 +348,12 @@
 							"Vault-tec Engineer",
 							"Vault Dweller"
 						)
-
+ */ // Covered more betterly by loadout beacons!
 
 
 //Skirt Accessories
 
-/datum/gear/backpack/pinkishskirt 
+/datum/gear/backpack/pinkishskirt
 	name = "Pinkish Skirt"
 	path = /obj/item/clothing/accessory/pinkishskirt
 	cost = 1
@@ -430,3 +448,139 @@
 	name = "Cropped Denim Jacket - Accessory"
 	path = /obj/item/clothing/accessory/ncrfjacketcrop
 	cost = 1
+
+/datum/gear/backpack/chestpatch
+	name = "generic patch (chest)"
+	path = /obj/item/clothing/accessory/patch
+
+/datum/gear/backpack/armpatch
+	name = "generic patch (arm)"
+	path = /obj/item/clothing/accessory/patch/arm
+
+/datum/gear/backpack/headphones
+	name = "Headphones"
+	path = /obj/item/clothing/ears/headphones
+	cost = 1
+
+/datum/gear/backpack/holotag
+	name = "Broken Holotag"
+	path = /obj/item/card/id/rusted/brokenholodog
+	cost = 0
+
+/datum/gear/backpack/dogtag
+	name = "Rusted tags"
+	path = /obj/item/card/id/rusted
+	cost = 0
+
+/datum/gear/backpack/vaultid
+	name = "Faded ID card"
+	path = /obj/item/card/id/rusted/fadedvaultid
+	cost = 0
+
+/datum/gear/backpack/pipboy
+	name = "Pipboy"
+	path = /obj/item/pda
+	cost = 2
+
+/datum/gear/backpack/id
+	name = "Reprogramable ID"
+	path =  /obj/item/card/id/selfassign
+	cost = 1
+
+/datum/gear/backpack/headset
+	name = "headset"
+	path = /obj/item/radio/headset
+	cost = 1
+
+/datum/gear/backpack/twocolorcollar
+	name = "Two Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/choker
+
+/datum/gear/backpack/onecolorcollar
+	name = "One Color Lockable Leather Collar"
+	path = /obj/item/clothing/neck/petcollar/locked
+	cost = 1
+
+/datum/gear/backpack/shockcollar
+	name = "Kinky Shock Collar"
+	path = /obj/item/electropack/shockcollar
+	cost = 1
+
+/datum/gear/backpack/shockcollarshimusa
+	name = "Kinky Shock Collar w/ Shackles"
+	path = /obj/item/electropack/shockcollar/shimsusa_shackles
+	cost = 1
+
+//Cameras
+
+/datum/gear/backpack/camera/early
+	name  = "early camera"
+	path = /obj/item/camera/early
+	cost = 3
+
+/datum/gear/backpack/camera/earlymodern
+	name  = "early modern camera"
+	path = /obj/item/camera/earlymodern
+	cost = 3
+
+/datum/gear/backpack/camera/coldwar
+	name  = "coldwar camera"
+	path = /obj/item/camera/coldwar
+	cost = 3
+
+/datum/gear/backpack/firebow
+	name  = "Tribal Firestarter"
+	path = /obj/item/firebow
+	cost = 0
+
+/datum/gear/backpack/broom
+	name  = "Broom staff"
+	path = /obj/item/staff/broom
+	cost = 0
+
+//pride pins
+
+/datum/gear/backpack/pride
+	name  = "Pride Pin"
+	path = /obj/item/clothing/accessory/pride
+	cost = 0
+
+/datum/gear/backpack/pride/bi
+	name  = "Bisexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/bi
+	cost = 0
+
+/datum/gear/backpack/pride/trans
+	name  = "Transexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/trans
+	cost = 0
+
+/datum/gear/backpack/pride/ace
+	name  = "Asexual Pride Pin"
+	path = /obj/item/clothing/accessory/pride/ace
+	cost = 0
+
+/datum/gear/backpack/pride/enby
+	name  = "Nonbinery Pride Pin"
+	path = /obj/item/clothing/accessory/pride/enby
+	cost = 0
+
+/datum/gear/backpack/pride/lesbian
+	name  = "Lesbian Pride Pin"
+	path = /obj/item/clothing/accessory/pride/lesbian
+	cost = 0
+
+/datum/gear/backpack/pride/intersex
+	name  = "Intersex Pride Pin"
+	path = /obj/item/clothing/accessory/pride/intersex
+	cost = 0
+
+/datum/gear/backpack/deafpin
+	name  = "Deaf Personal Pin"
+	path = /obj/item/clothing/accessory/deafpin
+	cost = 0
+
+/datum/gear/backpack/sheriffvest
+	name  = "Cowboy Vest"
+	path = /obj/item/clothing/accessory/sheriffvest
+	cost = 0

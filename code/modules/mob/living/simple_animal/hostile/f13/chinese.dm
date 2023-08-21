@@ -29,6 +29,14 @@
 	del_on_death = 1
 	tastes = list("people" = 1, "dust" = 2)
 
+/mob/living/simple_animal/hostile/chinese/Aggro()
+	. = ..()
+	if(.)
+		return
+	summon_backup(15)
+	if(!ckey)
+		say(pick("操你祖宗十八代", "乡巴佬", "傻逼" , "妈你个", "操你大爷", "祝你生孩子没屁眼", "扯鸡巴蛋", "狗改不了吃屎", "爆你菊花" ))
+
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"
 	icon_living = "chinesepistol"

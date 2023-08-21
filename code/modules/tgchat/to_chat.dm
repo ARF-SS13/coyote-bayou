@@ -72,7 +72,8 @@
 	// FIXME: These flags are now pointless and have no effect
 	handle_whitespace = TRUE,
 	trailing_newline = TRUE,
-	confidential = FALSE
+	confidential = FALSE,
+	pref_check
 )
 	if(Master.current_runlevel == RUNLEVEL_INIT || !SSchat?.initialized)
 		to_chat_immediate(target, html, type, text)
@@ -91,8 +92,14 @@
 
 	// Build a message
 	var/message = list()
-	if(type) message["type"] = type
-	if(text) message["text"] = text
-	if(html) message["html"] = html
-	if(avoid_highlighting) message["avoidHighlighting"] = avoid_highlighting
+	if(type)
+		message["type"] = type
+	if(text)
+		message["text"] = text
+	if(html)
+		message["html"] = html
+	if(avoid_highlighting)
+		message["avoidHighlighting"] = avoid_highlighting
+	if(pref_check)
+		message["prefCheck"] = pref_check
 	SSchat.queue(target, message)

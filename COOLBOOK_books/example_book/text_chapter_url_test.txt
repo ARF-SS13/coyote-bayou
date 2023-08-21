@@ -1,0 +1,44 @@
+%TITLE:Images can be URLs too! TXT route
+%TOP_IMAGE<1|fit;URL>:https://cdn.discordapp.com/attachments/999170698029305946/1113708397079035924/image.png
+%TOP_IMAGE<2|stretch;URL>:https://cdn.discordapp.com/attachments/999170698029305946/1113708980208930887/image.png
+%BOTTOM_IMAGE<1|fit;URL>:https://cdn.discordapp.com/attachments/999170698029305946/1113703412069052466/80d589e0d0fbe879b751a42aa8b13b28.png
+%BOTTOM_IMAGE<2|stretch;URL>:https://media.tenor.com/fNs8_8hiJFgAAAAC/cat-blind-flashbang-light-mode.gif
+
+Hi! All the images in this chapter are pulled from URLs!
+This will be how you, as a bookmaker, put images in the books you make.
+
+Most images are hosted on the server and injected in via TGS, but you'd need to be a webmaster to do <i>that</i>,
+since it involves needing access to the server console thing. And while you technically <i>could</i> PR your images
+and have them hosted on the server's repo, its not always the best idea to do so. For example, if you're making a
+book with a bunch of <i>risque</i> images (or just images you kinda sorta don't have the rights to (naughty naughty)),
+you probably don't want them on the server's repo. Could get us (and then you!) in trouble! So, to get around this (sorta),
+you can host your images on Discord and pull them in from there!
+
+To do this, you'll need to upload your images to Discord, and then right click on them and select \"Copy Link\". This will
+give you a URL that you can use to pull the image into your book. You can then use the URL in the chapter's metadata like you
+see above. The format is similar to the typical TXT chapter image format, but with the addition of tag 'URL', and the URL itself.
+The tag 'URL' is used to tell the COOLBOOK system that the image is a URL, and to try downloading it into the server's cache.
+That's it! 
+
+--PAGEBREAK--
+
+A few things to note:
+- The URL must be a direct, valid link to the image. If you're using Discord, you can get this by right clicking on the image and selecting \"Copy Link\".
+
+- The URL must be either a PNG, a JPG, or a GIF. While I'm like 90% sure other formats would work, I haven't tested them and don't exactly trust them to work.
+just tested, webp doesnt work. so yeah, only PNG, JPG, and GIF.
+
+- The image must be under 150kb in size. This is so players with slower internet connections arent <i>totally</i> wrecked by the download.
+Do note that this runs on the honor system (that a dev will check when you PR, so... sorta-honor system), cus I'm too much of a noob to figure out how to do that lol
+
+- You should be okay with the image getting stretched to fit into a roughly 400x150 pixel width and height space.
+
+- While explicit images <i>are</i> allowed, please be reasonable with them. Try to keep them in specifically marked NSFW chapters/books.
+
+- Images hosted on Discord may, at some point, cease to work. If this happens, just reupload the image and update the URL in a PR.
+
+- After PRing your book, you can ask a headcooder to upload your images to TGS, to make them a lot more reliable. Though, try to give your book a week or so before asking.
+
+- And above all, <i>have fun!</i>
+
+=3

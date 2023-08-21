@@ -4,20 +4,38 @@
 		/mob/living/simple_animal/hostile/ghoul/zombie/glowing)
 #define RTS_SMALLCRITTER_ALLOWED list(\
 		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko/legacy,\
+		/mob/living/simple_animal/hostile/gecko/fire,\
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha,\
+		/mob/living/simple_animal/hostile/gecko/big,\
 		/mob/living/simple_animal/hostile/molerat,\
 		/mob/living/simple_animal/hostile/bloatfly,\
 		/mob/living/simple_animal/hostile/radroach)
 #define RTS_RATS_ALLOWED list(\
 		/mob/living/simple_animal/hostile/rat,\
 		/mob/living/simple_animal/hostile/rat/skitter)
-#define RTS_FRATS_ALLOWED list(\
-		/mob/living/simple_animal/hostile/rat/tame,\
-		/mob/living/simple_animal/hostile/rat/skitter/curious)
 #define RTS_ROBOT_ALLOWED list(\
 		/mob/living/simple_animal/hostile/handy,\
 		/mob/living/simple_animal/hostile/handy/protectron,\
 		/mob/living/simple_animal/hostile/eyebot)
 
+// Separate defines for taming and control, else use above.
+#define TAME_SMALLCRITTER_ALLOWED list(\
+		/mob/living/simple_animal/hostile/stalker,\
+		/mob/living/simple_animal/hostile/stalkeryoung,\
+		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko/legacy,\
+		/mob/living/simple_animal/hostile/gecko/fire,\
+		/mob/living/simple_animal/hostile/molerat,\
+		/mob/living/simple_animal/hostile/radroach)
+
+#define CONTROL_SMALLCRITTER_ALLOWED list(\
+		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko,\
+		/mob/living/simple_animal/hostile/gecko/legacy,\
+		/mob/living/simple_animal/hostile/gecko/fire,\
+		/mob/living/simple_animal/hostile/molerat,\
+		/mob/living/simple_animal/hostile/radroach)
 
 
 /datum/action/innate/ghostify
@@ -101,6 +119,7 @@
 
 /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	banned_from_lowpop = FALSE
+	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/summon_backup/rat
@@ -108,12 +127,25 @@
 	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_RATS_ALLOWED
 
-/obj/effect/proc_holder/mob_common/summon_backup/rat/tame
-	allowed_mobs = RTS_FRATS_ALLOWED
-
 /obj/effect/proc_holder/mob_common/summon_backup/robot
 	allowed_mobs = RTS_ROBOT_ALLOWED
 	banned_from_lowpop = TRUE
+
+// Beastmaster Edition
+/obj/effect/proc_holder/mob_common/summon_backup/beastmaster
+	name = "Gather"
+	banned_from_lowpop = FALSE
+	immune_to_lowpop = TRUE
+
+/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/rat
+	name = "Gather - Rats"
+	desc = "Draws rodents nearby."
+	allowed_mobs = RTS_RATS_ALLOWED
+
+/obj/effect/proc_holder/mob_common/summon_backup/beastmaster/small_critter
+	name = "Gather - Small Critters"
+	desc = "Draws small critters nearby."
+	allowed_mobs = CONTROL_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/summon_backup/activate(mob/user)
 	if(!istype(user, /mob/living))
@@ -172,12 +204,24 @@
 	immune_to_lowpop = TRUE
 	allowed_mobs = RTS_RATS_ALLOWED
 
-/obj/effect/proc_holder/mob_common/direct_mobs/rat/tame
-	allowed_mobs = RTS_FRATS_ALLOWED
-
 /obj/effect/proc_holder/mob_common/direct_mobs/robot
 	allowed_mobs = RTS_ROBOT_ALLOWED
 	banned_from_lowpop = TRUE
+
+// Beastmaster Edition
+/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster
+	banned_from_lowpop = FALSE
+	immune_to_lowpop = TRUE
+
+/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/rat
+	name = "Send Mobs - Rats"
+	desc = "Direct nearby rodents to the tile."
+	allowed_mobs = RTS_RATS_ALLOWED
+
+/obj/effect/proc_holder/mob_common/direct_mobs/beastmaster/small_critter
+	name = "Send Mobs - Small Critters"
+	desc = "Direct nearby small critters to the tile."
+	allowed_mobs = CONTROL_SMALLCRITTER_ALLOWED
 
 /obj/effect/proc_holder/mob_common/direct_mobs/Trigger(mob/user)
 	if(!..())
@@ -198,7 +242,7 @@
 		remove_ranged_ability()
 		return
 
-	var/mob/living/simple_animal/user = ranged_ability_user
+	var/mob/living/user = ranged_ability_user
 
 	var/turf/the_turf = get_turf(target)
 	if(!the_turf)
@@ -254,9 +298,6 @@
 	immune_to_lowpop = TRUE
 	banned_from_lowpop = FALSE
 	nest_to_spawn = /obj/structure/nest/rat
-
-/obj/effect/proc_holder/mob_common/make_nest/rat/tame
-	nest_to_spawn = /obj/structure/nest/rat/tame
 
 /obj/effect/proc_holder/mob_common/make_nest/mouse
 	immune_to_lowpop = TRUE
@@ -390,3 +431,66 @@
 
 /obj/effect/proc_holder/mob_common/on_lose(mob/living/user)
 	..()
+
+/*
+ * Tame the mobs! (beastmaster)
+ */
+/obj/effect/proc_holder/mob_common/taming_mobs
+	name = "Tame"
+	desc = "Try to make hostile mobs docile. Melee range."
+	action_icon = 'icons/effects/crayondecal.dmi'
+	action_icon_state = "peace"
+	banned_from_lowpop = FALSE
+	immune_to_lowpop = TRUE
+	COOLDOWN_DECLARE(taming_cooldown)
+
+/obj/effect/proc_holder/mob_common/taming_mobs/rat
+	name = "Tame - Rats"
+	desc = "Try to make rats and mice docile. Melee range."
+	allowed_mobs = RTS_RATS_ALLOWED
+
+/obj/effect/proc_holder/mob_common/taming_mobs/small_critter
+	name = "Tame - Small Critters"
+	desc = "Try to make small critters docile. Melee range."
+	allowed_mobs = TAME_SMALLCRITTER_ALLOWED
+
+/obj/effect/proc_holder/mob_common/taming_mobs/is_available(mob/living/user)
+	if(!..())
+		return FALSE
+	if(COOLDOWN_TIMELEFT(src, taming_cooldown))
+		user.show_message(span_alert("You can't do this for another <u>[(taming_cooldown-world.time)*0.1] seconds</u>."))
+		return FALSE
+	return TRUE
+
+// Alert animation behavior here is reversed: instead of the tamed, it is done by the ones who aren't (minus dead or already tamed).
+/obj/effect/proc_holder/mob_common/taming_mobs/Trigger(mob/user)
+	if(!..())
+		return
+	var/list/who_to_check = list()
+	var/allmobs = FALSE
+	if(!LAZYLEN(allowed_mobs))
+		allmobs = TRUE
+	else
+		who_to_check = allowed_mobs
+	for(var/mob/living/simple_animal/hostile/M in range(1, get_turf(user))) // Requires you to be close and personal for taming
+		if(allmobs || (M.type in who_to_check))
+			if(M.stat == DEAD) // hevy is ded
+				continue
+			if(M.AIStatus == AI_OFF || M.ckey) // The mob is being played
+				M.do_alert_animation(M)
+				user.show_message(span_notice("The <i><b>[M.name]</b></i> ain't that simple..."))
+				continue
+			if("neutral" in M.faction) // Mob is already tamed, or just don't need to be (e.g. curious mice)
+				continue
+			if(prob(35)) // Failure chance
+				M.do_alert_animation(M)
+				user.show_message(span_red("The <b>[M.name]</b> wasn't tamed."))
+				COOLDOWN_START(src, taming_cooldown, 30 SECONDS)
+				continue
+			M.faction |= "neutral" // Kinda want to perserve some of F3/NV behavior of tamed not helping with other/same-faction animal
+			user.show_message(span_green("The <b>[M.name]</b> is tamed!"))
+			M.name = "tamed [initial(M.name)]"
+			M.desc = "[initial(M.desc)] This one appears to be tame."
+			M.make_ghostable(user)
+			M.make_a_nest = null // Unless is it possible to make nest dug by neutral/tamed mob also spawn neutrals without creating yet another nest type.
+			COOLDOWN_START(src, taming_cooldown, 60 SECONDS)

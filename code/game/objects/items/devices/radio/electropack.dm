@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=2500)
 
@@ -142,7 +142,7 @@
 	icon_state = "slavecollar"
 	item_state = "slavecollar"
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_NECK //no more pocket shockers. Now done without lazyness
+	slot_flags = INV_SLOTBIT_NECK //no more pocket shockers. Now done without lazyness
 	w_class = WEIGHT_CLASS_SMALL
 	strip_delay = 60
 	equip_delay_other = 60
@@ -164,11 +164,13 @@
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
+/*
 /obj/item/electropack/shockcollar/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
 		to_chat(user, span_warning("The collar is fastened tight! You'll need help taking this off!"))
 		return
 	return ..()
+*/ //Removed due to these being basically for kink stuff only. ~TK
 
 /obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //we have to override this because of text
 	if(!signal || signal.data["code"] != code)
@@ -228,7 +230,7 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollarb"
 	item_state = "slavecollarb"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
 	strip_delay = 60

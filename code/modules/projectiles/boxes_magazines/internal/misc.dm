@@ -28,8 +28,27 @@
 	caliber = list(CALIBER_FUEL)
 	max_ammo = 12 //6 bursts, iirc its about the same ammount as the IRL M2
 
+/obj/item/ammo_box/magazine/internal/cylinder/sling
+	name = "sling pouch"
+	ammo_type = /obj/item/ammo_casing/caseless/rock
+	caliber = list(CALIBER_ROCK)
+	max_ammo = 1
+	can_change_caliber = FALSE
+
+/obj/item/ammo_box/magazine/internal/cylinder/brick
+	name = "brick launcher chamber"
+	ammo_type = /obj/item/ammo_casing/caseless/brick
+	caliber = list(CALIBER_BRICK)
+	max_ammo = 1
+	can_change_caliber = FALSE
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test
 	max_ammo = 30
+
+/obj/item/ammo_box/magazine/internal/cylinder/flintlock
+	name = "flintlock internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	caliber = list(CALIBER_FLINTLOCK)
+	max_ammo = 1

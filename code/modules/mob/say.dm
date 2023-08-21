@@ -5,7 +5,7 @@
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = input(usr, "", "say") as text|null
+	var/message = input(usr, EMOTE_HEADER_TEXT, "say") as text|null
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()
 	if(!length(message))
@@ -28,7 +28,7 @@
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = stripped_multiline_input_or_reflect(usr, "", "me")
+	var/message = stripped_multiline_input_or_reflect(usr, EMOTE_HEADER_TEXT, "me")
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()
 	if(GLOB.say_disabled)
@@ -77,8 +77,6 @@
 	return treated_sentence
 
 /mob/say_mod(input, message_mode)
-	if(message_mode == MODE_WHISPER_CRIT)
-		return ..()
 	if((input[1] == "!") && (length_char(input) > 1))
 		message_mode = MODE_CUSTOM_SAY
 		return copytext_char(input, 2)

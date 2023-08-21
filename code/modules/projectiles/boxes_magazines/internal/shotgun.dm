@@ -45,6 +45,12 @@
 	name = "single-barrel shotgun internal magazine"
 	max_ammo = 1
 
+/obj/item/ammo_box/magazine/internal/shot/single/fifty
+	name = "single-barrel fifty cal internal magazine"
+	max_ammo = 1
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2
@@ -64,6 +70,12 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/shot/grenade
+	name = "pump grenade launcher internal magazine"
+	ammo_type = /obj/item/ammo_casing/a40mm
+	caliber = list(CALIBER_40MM)
+	max_ammo = 3
+
 /obj/item/ammo_box/magazine/internal/shot/bounty
 	name = "triple-barrel shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/incapacitate
@@ -76,10 +88,17 @@
 	max_ammo = 12
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/shot/volcanic
+	name = ".45acp internal tube magazine"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 5
+	multiload = 0
+
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list(CALIBER_357, CALIBER_38)
+	caliber = list(CALIBER_357)
 	max_ammo = 12
 	multiload = 1
 
@@ -92,8 +111,8 @@
 
 /obj/item/ammo_box/magazine/internal/shot/tube380
 	name = "308 internal tube magazine" //long ranger
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 7
 	multiload = 1
 

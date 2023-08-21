@@ -102,6 +102,7 @@ also be like that but I can't be arsed to go back and change them all*/
 #define ACCESS_NCROFFDUTY	132 //general NCR access
 #define ACCESS_CLINIC		133 //Oasis clinic access
 #define ACCESS_ENCLAVE 		134 //enclave minibunker
+#define ACCESS_BIKER 		135 //general not-khan cowbikers
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.
 #define ACCESS_SYNDICATE_LEADER 151//Nuke Op Leader Access

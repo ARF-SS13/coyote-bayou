@@ -9,8 +9,8 @@
 				/obj/item/stack/crafting/goodparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 40
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/trading_machine
 	name = "Vending machine"
@@ -22,9 +22,8 @@
 				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
-
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate
@@ -33,8 +32,8 @@
 				  /obj/item/stack/tile/plasteel = 1,
 				  /obj/item/stack/cable_coil = 2,
 				  /obj/item/assembly/igniter = 1)
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/mousetrap
 	name = "Mousetrap"
@@ -42,8 +41,8 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/igniter
 	name = "Igniter"
@@ -53,8 +52,8 @@
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/cable_coil = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/health_sensor
 	name = "Health sensor"
@@ -63,8 +62,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/timer
 	name = "Timer"
@@ -73,8 +72,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/signaler
 	name = "Remote signaling device"
@@ -84,8 +83,8 @@
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/cable_coil = 2)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/infrared
 	name = "Infrared emitter"
@@ -94,8 +93,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/proximity
 	name = "Proximity sensor"
@@ -104,8 +103,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
@@ -115,8 +114,8 @@
 				  /obj/item/stack/tile/plasteel = 1,
 				  /obj/item/stack/cable_coil = 2,
 				  /obj/item/assembly/igniter = 1)
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/mousetrap
 	name = "Mouse Trap"
@@ -124,8 +123,8 @@
 	time = 10
 	reqs = list(/obj/item/stack/sheet/cardboard = 1,
 				/obj/item/stack/rods = 1)
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /////////////////////
 //Farming & Cooking//
@@ -137,7 +136,7 @@
 	reqs = 	list(/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/rods = 1)
 	time = 30
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/dryingrack //In sandstone inhand now
@@ -146,7 +145,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/metal = 3)
 	time = 30
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/seedextractor //In metal inhand now
@@ -155,7 +154,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
 				/obj/item/stack/sheet/metal = 5)
 	time = 40
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/stove
@@ -169,9 +168,8 @@
 				/obj/item/assembly/igniter = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-
 /datum/crafting_recipe/bellystove
 	name = "Pot belly stove"
 	result = /obj/structure/campfire/stove
@@ -180,7 +178,18 @@
 				/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_WELDER)
 	time = 80
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/fireplace
+	name = "Stone fireplace"
+	result = /obj/structure/fireplace
+	reqs = list(/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/mineral/sandstone = 20)
+
+	time = 80
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/grill
@@ -191,7 +200,7 @@
 				/obj/item/stack/crafting/goodparts = 5)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/fishingrod
@@ -201,7 +210,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/beartrap
@@ -210,8 +219,46 @@
 	reqs = list(/obj/item/stack/crafting/goodparts = 1) //For the mechanism of the bear trap, crafting parts are needed.
 	tools = list(TOOL_WORKBENCH)
 	time = 80
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
+	
+/datum/crafting_recipe/stairsnorth
+	name = "North facing stairs"
+	result = /obj/structure/stairs/north
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairseast
+	name = "East facing stairs"
+	result = /obj/structure/stairs/east
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairssouth
+	name = "South facing stairs"
+	result = /obj/structure/stairs/south
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairswest
+	name = "West facing stairs"
+	result = /obj/structure/stairs/west
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /*
 /datum/crafting_recipe/msgterminal
 	name = "Communications terminal"
@@ -222,8 +269,8 @@
 				/obj/item/assembly/signaler = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 80
-	category = CAT_CRAFTING
-	subcategory = CAT_ROBOT
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/pigeonterminal
 	name = "Pigeon carrier (Communications terminal)"
@@ -234,6 +281,15 @@
 				/obj/item/assembly/signaler = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 80
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 */
+
+/datum/crafting_recipe/brickwall
+	name = "Brick Wall"
+	result = /turf/closed/wall/mineral/brick
+	reqs = list(/obj/item/ammo_casing/caseless/brick = 8)
+	time = 60
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+

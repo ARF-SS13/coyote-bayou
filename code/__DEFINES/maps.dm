@@ -124,6 +124,10 @@ require only minor tweaks.
 #define AWAY_MISSION_NAME "Away Mission"
 #define VIRT_REALITY_NAME "Virtual Reality"
 
+#define Z_FORCE_X		"Force X"
+#define Z_FORCE_Y		"Force Y"
+#define Z_FORCE_Z		"Force Z"
+
 #define Z_FORCE_NORTH	"Force North"
 #define Z_FORCE_SOUTH	"Force South"
 #define Z_FORCE_EAST	"Force East"

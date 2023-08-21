@@ -5,7 +5,10 @@
 	icon_deny = "theater-deny"
 	product_slogans = "Dress for success!;Suited and booted!;It's show time!;Why leave style up to fate?"
 	vend_reply = "Thank you and have a spook-tastic Halloween!"
-	products = list(/obj/item/clothing/suit/chickensuit = 1,
+	products = list(/obj/item/tattoo_gun = 5,
+					/obj/item/tattoo_holder/blank = 20,
+					/obj/item/tattoo_holder/blank/temporary = 20,
+					/obj/item/clothing/suit/chickensuit = 1,
 						/obj/item/clothing/head/chicken = 1,
 						/obj/item/clothing/under/costume/gladiator = 1,
 						/obj/item/clothing/head/helmet/gladiator = 1,

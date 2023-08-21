@@ -1,33 +1,44 @@
 /datum/gear/glasses
 	category = LOADOUT_CATEGORY_GLASSES
 	slot = SLOT_GLASSES
+	cost = 1
 
 /datum/gear/glasses/blindfold
 	name = "Blindfold"
 	path = /obj/item/clothing/glasses/sunglasses/blindfold
-	cost = 2
 
 /datum/gear/glasses/fakeblindfold
 	name = "Fake Blindfold"
 	path = /obj/item/clothing/glasses/fakeblindfold
-	//No cost because there's no mechanical use
 
 /datum/gear/glasses/sunglasses
 	name = "Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses
-	cost = 2
+
+/datum/gear/glasses/eyepatch/syndicate // the special effects were commented out by someone else, so this is just cosmetic now.
+	name = "cybernetic eyepatch"
+	path = /obj/item/clothing/glasses/eyepatch/syndicate
 
 /datum/gear/glasses/sunglasses/big
 	name = "Large sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/gear/glasses/biker
+	name = "biker goggles"
+	path = /obj/item/clothing/glasses/f13/biker
+	cost = 1
+
+/datum/gear/glasses/sandstorm
+	name = "sandstorm goggles"
+	path = /obj/item/clothing/glasses/legiongoggles
+
 /datum/gear/glasses/geist_gazers
 	name = "Geist Gazers Glasses"
 	path = /obj/item/clothing/glasses/geist_gazers
 
-/datum/gear/glasses/psychglasses
-	name = "Psych Glasses"
-	path = /obj/item/clothing/glasses/psych
+//	/datum/gear/glasses/psychglasses
+//	name = "Psych Glasses"
+//	path = /obj/item/clothing/glasses/psych
 
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
@@ -48,7 +59,6 @@
 /datum/gear/glasses/monocle
 	name = "Monocle"
 	path = /obj/item/clothing/glasses/monocle
-	cost = 2
 
 /datum/gear/glasses/orange
 	name = "Orange glasses"

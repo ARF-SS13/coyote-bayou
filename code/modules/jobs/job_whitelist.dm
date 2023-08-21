@@ -6,9 +6,23 @@
 	return TRUE
 
 /datum/job/proc/whitelist_locked(client/C, jobname)
-	if((C.prefs.job_whitelists[jobname]) || (!CONFIG_GET(flag/use_role_whitelist)))
+	if(!whitelist_path)
+		return FALSE // come on in
+	var/list/whitelist = world.file2list(whitelist_path)
+	if(!LAZYLEN(whitelist))
+		return FALSE // no whitelist = everyone gets in
+	var/seekee = C.ckey
+	if(!seekee)
+		return TRUE // who?
+	if(seekee in whitelist)
 		return FALSE
-	return TRUE
+	for(var/key in whitelist)
+		if(ckey(seekee) == ckey(key))
+			return FALSE
+	return FALSE			
+	//if((C.prefs.job_whitelists[jobname]) || (!CONFIG_GET(flag/use_role_whitelist)))
+	//	return FALSE
+	//return TRUE
 
 
 //Get this client's whitelists from the database, if any.

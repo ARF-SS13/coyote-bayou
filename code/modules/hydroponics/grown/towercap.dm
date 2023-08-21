@@ -167,6 +167,27 @@
 	var/grill = FALSE
 	var/stones = FALSE
 	var/fire_stack_strength = 5
+	var/datum/looping_sound/fireplace/soundloop
+
+/obj/structure/bonfire/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+
+/obj/structure/bonfire/Destroy()
+	QDEL_NULL(soundloop)
+	return ..()
+
+/datum/looping_sound/fireplace
+	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 0.2 SECONDS, 1))
+	start_length = 2
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 1 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle2.ogg', 1 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/machines/fire_crackle3.ogg', 1 SECONDS, 1),
+		)
+	mid_length = 0
+	end_sound = list(SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 1 SECONDS, 1))
+	volume = 100
 
 /obj/structure/bonfire/dense
 	density = TRUE
@@ -230,9 +251,13 @@
 			else
 				return ..()
 	//IGNITE. Use a hot object to light the bonfire.
-	if(W.get_temperature())
+	var/ignition = W.ignition_effect(src, user)
+	if(ignition)
+		visible_message(ignition)
 		StartBurning()
+		soundloop.start()
 		return
+
 	//COOKING. Place an object on the bonfire as if it were a table, using its grill.
 	if(grill)
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))
@@ -268,6 +293,7 @@
 		return
 
 /obj/structure/bonfire/proc/CheckOxygen()
+	/*
 	if(isopenturf(loc))
 		var/turf/open/O = loc
 		if(O.air)
@@ -275,6 +301,8 @@
 			if(loc_air.get_moles(GAS_O2) > 13)
 				return TRUE
 	return FALSE
+	*/
+	return TRUE
 
 /obj/structure/bonfire/proc/StartBurning()
 	if(!burning && CheckOxygen())
@@ -377,7 +405,7 @@
 			to_chat(player, msg_dead)
 			continue
 		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
-			if(!is_type_in_list(get_area(player), GLOB.outdoor_areas))
+			if(!player.z == Z_LEVEL_NASH_UNDERGROUND) //Can be seen while indoors, just not sent. Still, can't see while underground.
 				continue
 			var/dirmessage = "somewhere in the distance"
 			if(player.z == B.z)

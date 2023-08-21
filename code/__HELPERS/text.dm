@@ -94,18 +94,24 @@
 
 // Used to get a properly sanitized input, of max_length
 // no_trim is self explanatory but it prevents the input from being trimed if you intend to parse newlines or whitespace.
-/proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+/proc/stripped_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE, i_will_sanitize_dont_worry = FALSE)
 	var/name = input(user, message, title, default) as text|null
+	if(isnull(name))
+		return
+	if(!check_rights_for(user?.client, R_ADMIN) || i_will_sanitize_dont_worry) // only *we* get to make malicious shit~
+		name = strip_html_simple(name, max_length) // you throw the <html link that goatsies everyone>
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)
 	else
 		return trim(html_encode(name), max_length) //trim is "outside" because html_encode can expand single symbols into multiple symbols (such as turning < into &lt;)
 
 // Used to get a properly sanitized multiline input, of max_length
-/proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+/proc/stripped_multiline_input(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE, i_will_sanitize_dont_worry = FALSE)
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.
 		return null
+	if(!check_rights_for(user?.client, R_ADMIN) || i_will_sanitize_dont_worry)
+		name = strip_html_simple(name, max_length) // Oh cool the description is literally tubgirl
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)
 	else
@@ -114,10 +120,12 @@
 /**
  * stripped_multiline_input but reflects to the user instead if it's too big and returns null.
  */
-/proc/stripped_multiline_input_or_reflect(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
+/proc/stripped_multiline_input_or_reflect(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE, i_will_sanitize_dont_worry = FALSE)
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.
 		return null
+	if(!check_rights_for(user?.client, R_ADMIN) || i_will_sanitize_dont_worry)
+		name = strip_html_simple(name, max_length) // I'd prefer not to stab myself with a url
 	if(length(name) > max_length)
 		to_chat(user, name)
 		to_chat(user, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^"))

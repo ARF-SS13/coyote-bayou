@@ -52,13 +52,18 @@
 // SECURE DOOR - LEGION
 
 /obj/machinery/door/unpowered/securedoor/legion
-	name = "Legion Castrum"
+	name = "Legion Castrator"
 	req_access_txt = "123"
 
 //khoor
 /obj/machinery/door/unpowered/securedoor/khandoor
 	name = "khan door"
 	req_access_txt = "125"
+
+//bikoor
+/obj/machinery/door/unpowered/securedoor/bikerdoor
+	name = "Hell's Nomad door"
+	req_access = list(ACCESS_BIKER)
 
 
 // ------------------------------------

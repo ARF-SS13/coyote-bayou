@@ -12,7 +12,7 @@
 
 /mob/living/simple_animal/hostile/poison/bees
 	name = "radbee"
-	desc = "Buzzy buzzy radbee, stingy sti- oh god I'm vomiting blood!"
+	desc = "Buzzy buzzy radbee, stingy sti- oh FUCK, I'm vomiting blood!"
 	icon_state = ""
 	icon_living = ""
 	icon = 'icons/mob/bees.dmi'
@@ -312,3 +312,8 @@
 /mob/living/simple_animal/hostile/poison/bees/short/Initialize()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/death), 50 SECONDS)
+
+/mob/living/simple_animal/hostile/poison/bees/short/frenly //these bees need to be frenly or they'd murder everyone
+	faction = list("neutral")
+	melee_damage_lower = 1 //they'll be fighting simplemobs, so they need to be robeest
+	melee_damage_upper = 10

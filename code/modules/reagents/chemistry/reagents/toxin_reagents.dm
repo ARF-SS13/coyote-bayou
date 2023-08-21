@@ -71,8 +71,8 @@
 	..()
 
 /datum/reagent/toxin/FEV_solution/one/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(40,EFFECT_IRRADIATE,0)
-	C.adjustCloneLoss(3,0) // ~15 units will get you near crit condition.
+	C.apply_effect(40*REM,EFFECT_IRRADIATE,0)
+	C.adjustCloneLoss(3*REM,0) // ~15 units will get you near crit condition.
 	return ..()
 
 //FEV - II: The super mutie kind
@@ -158,24 +158,24 @@
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
 		holder.remove_reagent(/datum/reagent/medicine/epinephrine, 2*REM)
-	C.adjustPlasma(20)
+	C.adjustPlasma(20*REM)
 	return ..()
 
-/datum/reagent/toxin/plasma/reaction_obj(obj/O, reac_volume)
-	if((!O) || (!reac_volume))
-		return 0
-	var/temp = holder ? holder.chem_temp : T20C
-	O.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
+// /datum/reagent/toxin/plasma/reaction_obj(obj/O, reac_volume)
+// 	if((!O) || (!reac_volume))
+// 		return 0
+// 	var/temp = holder ? holder.chem_temp : T20C
+// 	O.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
 
-/datum/reagent/toxin/plasma/reaction_turf(turf/open/T, reac_volume)
-	if(istype(T))
-		var/temp = holder ? holder.chem_temp : T20C
-		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
-	return
+// /datum/reagent/toxin/plasma/reaction_turf(turf/open/T, reac_volume)
+// 	if(istype(T))
+// 		var/temp = holder ? holder.chem_temp : T20C
+// 		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
+// 	return
 
 /datum/reagent/toxin/plasma/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with plasma is stronger than fuel!
 	if(method == TOUCH || method == VAPOR)
-		M.adjust_fire_stacks(reac_volume / 5)
+		M.adjust_fire_stacks(reac_volume*REM / 5)
 		return
 	..()
 
@@ -195,8 +195,8 @@
 		. = FALSE
 
 	if(.)
-		C.adjustOxyLoss(5, 0)
-		C.losebreath += 2
+		C.adjustOxyLoss(5*REM, 0)
+		C.losebreath += 2*REM
 		if(prob(20))
 			C.emote("gasp")
 	..()
@@ -232,7 +232,13 @@
 
 /datum/reagent/toxin/minttoxin/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_FAT))
-		M.gib()
+		M.unequip_everything()
+		M.visible_message(span_userdanger("[src]'s belly suddenly explodes in a shower of gore!"))
+		M.spew_organ()
+		explosion(M, 0, 1, 1)
+		for(var/i in 1 to 10)
+			M.spawn_gibs(FALSE) // a *shower* of gore
+		qdel(src)
 	return ..()
 
 /datum/reagent/toxin/carpotoxin
@@ -323,7 +329,7 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/toxin/mindbreaker/on_mob_life(mob/living/carbon/M)
-	M.hallucination += 5
+	M.hallucination += 5*REM
 	return ..()
 
 /datum/reagent/toxin/plantbgone
@@ -358,7 +364,7 @@
 			var/mob/living/carbon/C = M
 			if(!C.wear_mask) // If not wearing a mask
 				var/damage = min(round(0.4*reac_volume, 0.1),10)
-				C.adjustToxLoss(damage)
+				C.adjustToxLoss(damage*REM)
 
 /datum/reagent/toxin/plantbgone/weedkiller
 	name = "Weed Killer"
@@ -408,7 +414,7 @@
 /datum/reagent/toxin/spore/on_mob_life(mob/living/carbon/C)
 	C.damageoverlaytemp = 60
 	C.update_damage_hud()
-	C.blur_eyes(3)
+	C.blur_eyes(3*REM)
 	return ..()
 
 /datum/reagent/toxin/spore_burning
@@ -421,7 +427,7 @@
 	value = REAGENT_VALUE_VERY_RARE
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
-	M.adjust_fire_stacks(2)
+	M.adjust_fire_stacks(2*REM)
 	M.IgniteMob()
 	return ..()
 
@@ -532,7 +538,7 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/toxin/polonium/on_mob_life(mob/living/carbon/M)
-	M.radiation += 4
+	M.radiation += 4*REM
 	..()
 
 /datum/reagent/toxin/histamine
@@ -550,7 +556,7 @@
 		switch(pick(1, 2, 3, 4))
 			if(1)
 				to_chat(M, span_danger("You can barely see!"))
-				M.blur_eyes(3)
+				M.blur_eyes(3*REM)
 			if(2)
 				M.emote("cough")
 			if(3)
@@ -579,8 +585,8 @@
 
 /datum/reagent/toxin/formaldehyde/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15))
-		holder.remove_reagent(type, 1.2)
+		holder.add_reagent(/datum/reagent/toxin/histamine, pick(5,15)*REM)
+		holder.remove_reagent(type, 1.2*REM)
 	else
 		return ..()
 
@@ -598,14 +604,14 @@
 	M.adjustBruteLoss((0.3*volume)*REM, 0)
 	. = 1
 	if(prob(15))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10))
-		M.reagents.remove_reagent(type, 1.1)
+		M.reagents.add_reagent(/datum/reagent/toxin/histamine, pick(5,10)*REM)
+		M.reagents.remove_reagent(type, 1.1*REM)
 	else
 		..()
 
 /datum/reagent/toxin/venom/on_mob_life_synth(mob/living/carbon/M)
 	toxpwr = 0.2*volume
-	M.adjustBruteLoss((0.3*volume)*REM, 0)
+	M.adjustBruteLoss((0.3*volume)*REM, include_roboparts = TRUE)
 	. = 1
 	..()
 
@@ -622,7 +628,7 @@
 	if(M.toxloss <= 60)
 		M.adjustToxLoss(1*REM, 0)
 	if(current_cycle >= 18)
-		M.Sleeping(40, 0)
+		M.Sleeping(40*REM, 0)
 	..()
 	return TRUE
 
@@ -637,10 +643,10 @@
 
 /datum/reagent/toxin/cyanide/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		M.losebreath += 1
+		M.losebreath += 1*REM
 	if(prob(8))
 		to_chat(M, "You feel horrendously weak!")
-		M.Stun(40, 0)
+		M.Stun(40*REM, 0)
 		M.adjustToxLoss(2*REM, 0)
 	return ..()
 
@@ -682,8 +688,8 @@
 		M.adjustBruteLoss(0.2*REM, 0)
 		. = 1
 	if(prob(3))
-		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3))
-		M.reagents.remove_reagent(type,1.2)
+		M.reagents.add_reagent(/datum/reagent/toxin/histamine,rand(1,3)*REM)
+		M.reagents.remove_reagent(type,1.2*REM)
 		return
 	..()
 
@@ -701,11 +707,11 @@
 		var/picked_option = rand(1,3)
 		switch(picked_option)
 			if(1)
-				C.DefaultCombatKnockdown(60, 0)
+				C.DefaultCombatKnockdown(60*REM, 0)
 				. = TRUE
 			if(2)
 				C.losebreath += 10
-				C.adjustOxyLoss(rand(5,25), 0)
+				C.adjustOxyLoss(rand(5,25)*REM, 0)
 				. = TRUE
 			if(3)
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
@@ -713,8 +719,8 @@
 					if(C.stat == CONSCIOUS)
 						C.visible_message(span_userdanger("[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!"))
 				else
-					C.losebreath += 10
-					C.adjustOxyLoss(rand(5,25), 0)
+					C.losebreath += 10*REM
+					C.adjustOxyLoss(rand(5,25)*REM, 0)
 					. = TRUE
 	return ..() || .
 
@@ -730,10 +736,10 @@
 
 /datum/reagent/toxin/pancuronium/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 10)
-		M.Stun(40, 0)
+		M.Stun(40*REM, 0)
 		. = TRUE
 	if(prob(20))
-		M.losebreath += 4
+		M.losebreath += 4*REM
 	..()
 
 /datum/reagent/toxin/sodium_thiopental
@@ -747,7 +753,7 @@
 
 /datum/reagent/toxin/sodium_thiopental/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 10)
-		M.Sleeping(40, 0)
+		M.Sleeping(40*REM, 0)
 	M.adjustStaminaLoss(10*REM, 0)
 	..()
 	return TRUE
@@ -762,7 +768,7 @@
 
 /datum/reagent/toxin/sulfonal/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 22)
-		M.Sleeping(40, 0)
+		M.Sleeping(40*REM, 0)
 	return ..()
 
 /datum/reagent/toxin/amanitin
@@ -775,14 +781,14 @@
 	value = REAGENT_VALUE_RARE
 
 /datum/reagent/toxin/amanitin/on_mob_end_metabolize(mob/living/M)
-	var/toxdamage = current_cycle*3*REM
+	var/toxdamage = current_cycle*3
 	M.log_message("has taken [toxdamage] toxin damage from amanitin toxin", LOG_ATTACK)
 	M.adjustToxLoss(toxdamage)
 	..()
 
 /datum/reagent/toxin/lipolicide
 	name = "Lipolicide"
-	description = "A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body."
+	description = "A powerful toxin that will rapidly digest and metabolize the contents of the user's stomach. Deadly if ingested on an empty stomach."
 	taste_description = "mothballs"
 	reagent_state = LIQUID
 	color = "#F0FFF0"
@@ -806,7 +812,7 @@
 	value = REAGENT_VALUE_EXCEPTIONAL
 
 /datum/reagent/toxin/coniine/on_mob_life(mob/living/carbon/M)
-	M.losebreath += 5
+	M.losebreath += 5*REM
 	return ..()
 
 /datum/reagent/toxin/spewium
@@ -822,11 +828,11 @@
 
 /datum/reagent/toxin/spewium/on_mob_life(mob/living/carbon/C)
 	.=..()
-	if(current_cycle >=11 && prob(min(50,current_cycle)))
+	if(current_cycle >=11 && prob(min(50,current_cycle)*REM))
 		C.vomit(10, prob(10), prob(50), rand(0,4), TRUE, prob(30))
 		for(var/datum/reagent/toxin/R in C.reagents.reagent_list)
 			if(R != src)
-				C.reagents.remove_reagent(R.type,1)
+				C.reagents.remove_reagent(R.type,1*REM)
 
 /datum/reagent/toxin/spewium/overdose_process(mob/living/carbon/C)
 	. = ..()
@@ -846,7 +852,7 @@
 
 /datum/reagent/toxin/curare/on_mob_life(mob/living/carbon/M)
 	if(current_cycle >= 11)
-		M.DefaultCombatKnockdown(60, 0)
+		M.DefaultCombatKnockdown(60*REM, 0)
 	M.adjustOxyLoss(1*REM, 0)
 	. = 1
 	..()
@@ -939,11 +945,11 @@
 	value = REAGENT_VALUE_VERY_RARE
 
 /datum/reagent/toxin/anacea/on_mob_life(mob/living/carbon/M)
-	var/remove_amt = 5
+	var/remove_amt = 5*REM
 	if(holder.has_reagent(/datum/reagent/medicine/calomel) || holder.has_reagent(/datum/reagent/medicine/pen_acid) || holder.has_reagent(/datum/reagent/medicine/pen_acid/pen_jelly))
-		remove_amt = 0.5
+		remove_amt = 0.5*REM
 	for(var/datum/reagent/medicine/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,remove_amt)
+		M.reagents.remove_reagent(R.type,remove_amt*REM)
 	return ..()
 
 //ACID
@@ -995,8 +1001,8 @@
 /datum/reagent/toxin/acid/reaction_obj(obj/O, reac_volume)
 	if(ismob(O.loc)) //handled in human acid_act()
 		return
-	reac_volume = round(reac_volume,0.1)
-	O.acid_act(acidpwr, reac_volume)
+	reac_volume = round(reac_volume*REM,0.1)
+	O.acid_act(acidpwr*REM, reac_volume)
 
 /datum/reagent/toxin/acid/reaction_turf(turf/T, reac_volume)
 	if (!istype(T))
@@ -1029,24 +1035,24 @@
 		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(current_cycle/10, 0)
+	M.adjustFireLoss(current_cycle/10*REM, 0)
 	. = 1
 	..()
 
 /datum/reagent/toxin/acid/fantiacid/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(current_cycle/10, 0)
+	M.adjustFireLoss(current_cycle/10*REM, 0)
 	. = 8
 	..()
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life_synth(mob/living/carbon/M)
-	M.adjustBruteLoss(current_cycle*0.1, 0)
-	M.adjustFireLoss(current_cycle*0.1, 0)
+	M.adjustBruteLoss(current_cycle*0.1*REM, 0)
+	M.adjustFireLoss(current_cycle*0.1*REM, 0)
 	. = 1
 	..()
 
 /datum/reagent/toxin/acid/fantiacid/on_mob_life_synth(mob/living/carbon/M)
-	M.adjustBruteLoss(current_cycle*0.1, 0)
-	M.adjustFireLoss(current_cycle*0.1, 0)
+	M.adjustBruteLoss(current_cycle*0.1*REM, 0)
+	M.adjustFireLoss(current_cycle*0.1*REM, 0)
 	. = 8
 	..()
 
@@ -1064,7 +1070,7 @@
 /datum/reagent/toxin/delayed/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > delay)
 		holder.remove_reagent(type, actual_metaboliztion_rate * M.metabolism_efficiency)
-		M.adjustToxLoss(actual_toxpwr*REM, 0)
+		M.adjustToxLoss(actual_toxpwr, 0)
 		if(prob(10))
 			M.DefaultCombatKnockdown(20, 0)
 		. = 1
@@ -1085,10 +1091,10 @@
 	M.say("oof ouch my bones", forced = /datum/reagent/toxin/bonehurtingjuice)
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/M)
-	M.adjustStaminaLoss(7.5, 0)
+	M.adjustStaminaLoss(7.5*REM, 0)
 	if(HAS_TRAIT(M, TRAIT_CALCIUM_HEALER))
-		M.adjustBruteLoss(3.5, 0)
-	if(prob(12))
+		M.adjustBruteLoss(3.5*REM, 0)
+	if(prob(12*REM))
 		switch(rand(1, 3))
 			if(1)
 				var/list/possible_says = list("oof.", "ouch!", "my bones.", "oof ouch.", "oof ouch my bones.")
@@ -1162,9 +1168,9 @@
 	value = REAGENT_VALUE_RARE
 
 /datum/reagent/toxin/bungotoxin/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, 3)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 3*REM)
 	M.confused = M.dizziness //add a tertiary effect here if this is isn't an effective poison.
-	if(current_cycle >= 12 && prob(8))
+	if(current_cycle >= 12 && prob(8*REM))
 		var/tox_message = pick("You feel your heart spasm in your chest.", "You feel faint.","You feel you need to catch your breath.","You feel a prickle of pain in your chest.")
 		to_chat(M, span_notice("[tox_message]"))
 	. = 1
@@ -1180,11 +1186,11 @@
 	taste_description = "sugary sweetness"
 
 /datum/reagent/toxin/leadacetate/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_EARS,1)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN,1)
+	M.adjustOrganLoss(ORGAN_SLOT_EARS,1*REM)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN,1*REM)
 	if(prob(1))
 		to_chat(M, span_notice("Ah, what was that? You thought you heard something..."))
-		M.confused += 5
+		M.confused += 5*REM
 	return ..()
 
 /datum/reagent/toxin/metabtoxin
@@ -1214,3 +1220,5 @@
 		if(initial(liber.filterToxins))
 			liber.filterToxins = TRUE
 	L.metabolism_efficiency += metab_inibition
+
+

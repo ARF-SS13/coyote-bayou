@@ -26,19 +26,23 @@ GLOBAL_LIST_EMPTY(PDAs)
 	item_state = "Pip-boy"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
-
+	
 	//Main variables
 	var/owner = null // String name of owner
 	var/default_cartridge = 0 // Access level defined by cartridge
 	var/obj/item/cartridge/cartridge = null //current cartridge
 	var/mode = 0 //Controls what menu the PDA will display. 0 is hub; the rest are either built in or based on cartridge.
-	var/list/overlays_icons = list('icons/obj/pda.dmi' = list("pda-r", "screen_default", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
-	var/static/list/standard_overlays_icons = list("pda-r", "blank", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay")
-	var/list/current_overlays //set on Initialize.
+	/// The PDA's current skin
+	var/skindex = "PipBoy 3000"
+	/// The skins
+	reskinnable_component = /datum/component/reskinnable/pda
+	// var/list/overlays_icons = list('icons/obj/pda.dmi' = list("pda-r", "screen_default", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
+	// var/static/list/standard_overlays_icons = list("pda-r", "blank", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay")
+	// var/list/current_overlays //set on Initialize.
 	var/obj/item/radio/radio = null //the radio inside the pipboy
 
 	//variables exclusively used on 'update_overlays' (which should never be called directly, and 'update_icon' doesn't use args anyway)
@@ -80,6 +84,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/equipped = FALSE  //used here to determine if this is the first time its been picked up
 	var/allow_emojis = TRUE //if the pda can send emojis and actually have them parsed as such
 	var/list/pipsounds = list("modular_coyote/sound/pipsounds/pip1.ogg", "modular_coyote/sound/pipsounds/pip2.ogg", "modular_coyote/sound/pipsounds/pip3.ogg")
+	// var/disableoverlays = FALSE //disables overlay for odd-shaped, shittier pipboy sprites
 
 	var/obj/item/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
@@ -90,9 +95,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/list/contained_item = list(/obj/item/pen, /obj/item/toy/crayon, /obj/item/lipstick, /obj/item/flashlight/pen, /obj/item/clothing/mask/cigarette)
 	var/obj/item/inserted_item //Used for pen, crayon, and lipstick insertion or removal. Same as above.
-	var/list/overlays_offsets // offsets to use for certain overlays
-	var/overlays_x_offset = 0
-	var/overlays_y_offset = 0
+	// var/list/overlays_offsets // offsets to use for certain overlays
+	// var/overlays_x_offset = 0
+	// var/overlays_y_offset = 0
 
 	var/underline_flag = TRUE //flag for underline
 
@@ -113,8 +118,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 	. += id ? span_notice("Alt-click to remove the id.") : ""
 	if(inserted_item && (!isturf(loc)))
 		. += span_notice("Ctrl-click to remove [inserted_item].")
-	if(LAZYLEN(GLOB.pda_reskins))
-		. += span_notice("Ctrl-shift-click it to reskin it.")
 
 /obj/item/pda/Initialize()
 	. = ..()
@@ -130,44 +133,35 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item =	new /obj/item/pen(src)
 	radio = new /obj/item/radio(src)
 	new_overlays = TRUE
-	update_icon()
 
-/obj/item/pda/CtrlShiftClick(mob/living/user)
+/obj/item/pda/ComponentInitialize()
 	. = ..()
-	if(GLOB.pda_reskins && user.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
-		reskin_obj(user)
-
-/obj/item/pda/reskin_obj(mob/M)
-	if(!LAZYLEN(GLOB.pda_reskins))
-		return
-	var/dat = "<b>Reskin options for [name]:</b>"
-	for(var/V in GLOB.pda_reskins)
-		var/output = icon2html(GLOB.pda_reskins[V], M, icon_state)
-		dat += "\n[V]: <span class='reallybig'>[output]</span>"
-	to_chat(M, dat)
-
-	var/choice = input(M, "Choose the a reskin for [src]","Reskin Object") as null|anything in GLOB.pda_reskins
-	var/new_icon = GLOB.pda_reskins[choice]
-	if(QDELETED(src) || isnull(new_icon) || new_icon == icon || !M.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	icon = new_icon
-	new_overlays = TRUE
 	update_icon()
-	to_chat(M, "[src] is now skinned as '[choice]'.")
 
-/obj/item/pda/proc/set_new_overlays()
-	if(!overlays_offsets || !(icon in overlays_offsets))
-		overlays_x_offset = 0
-		overlays_y_offset = 0
-	else
-		var/list/new_offsets = overlays_offsets[icon]
-		if(new_offsets)
-			overlays_x_offset = new_offsets[1]
-			overlays_y_offset = new_offsets[2]
-	if(!(icon in overlays_icons))
-		current_overlays = standard_overlays_icons
-		return
-	current_overlays = overlays_icons[icon]
+
+// /obj/item/pda/CtrlShiftClick(mob/living/user)
+// 	. = ..()
+// 	if(GLOB.pda_reskins && user.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
+// 		reskin_obj(user)
+
+// /obj/item/pda/reskin_obj(mob/M)
+// 	if(!LAZYLEN(GLOB.pda_reskins))
+// 		return
+// 	var/dat = "<b>Reskin options for [name]:</b>"
+// 	for(var/V in GLOB.pda_reskins)
+// 		var/output = icon2html(GLOB.pda_reskins[V], M, icon_state)
+// 		dat += "\n[V]: <span class='reallybig'>[output]</span>"
+// 	to_chat(M, dat)
+
+// 	var/choice = input(M, "Choose the a reskin for [src]","Reskin Object") as null|anything in GLOB.pda_reskins
+// 	var/new_icon = GLOB.pda_reskins[choice]
+// 	if(QDELETED(src) || isnull(new_icon) || new_icon == icon || !M.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+// 		return
+// 	icon = new_icon
+// 	new_overlays = TRUE
+// 	update_icon()
+// 	to_chat(M, "[src] is now skinned as '[choice]'.")
+
 
 /obj/item/pda/equipped(mob/user, slot)
 	. = ..()
@@ -226,25 +220,40 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/update_overlays()
 	. = ..()
-	if(new_overlays)
-		set_new_overlays()
-	var/screen_state = new_alert ? current_overlays[PDA_OVERLAY_ALERT] : current_overlays[PDA_OVERLAY_SCREEN]
-	var/mutable_appearance/overlay = mutable_appearance(icon, screen_state)
-	overlay.pixel_x = overlays_x_offset
-	overlay.pixel_y = overlays_y_offset
+	cut_overlays()
+	var/datum/reskin/pda/myskin = get_current_skin()
+	if(!myskin)
+		return
+	icon = myskin.icon
+	icon_state = myskin.icon_state
+	if(myskin.disable_overlays)
+		return
+	var/mutable_appearance/overlay = mutable_appearance()
+	overlay.pixel_x = myskin.overlay_offset_x
+	overlay.pixel_y = myskin.overlay_offset_y
+	if(new_alert)
+		overlay.icon = myskin.alert_icon
+		overlay.icon_state = myskin.alert_icon_state
+	else
+		overlay.icon = myskin.screen_icon
+		overlay.icon_state = myskin.screen_icon_state
 	. += new /mutable_appearance(overlay)
 	if(id)
-		overlay.icon_state = current_overlays[PDA_OVERLAY_ID]
+		overlay.icon = myskin.id_card_icon
+		overlay.icon_state = myskin.id_card_icon_state
 		. += new /mutable_appearance(overlay)
 	if(inserted_item)
-		overlay.icon_state = current_overlays[PDA_OVERLAY_ITEM]
+		overlay.icon = myskin.insert_icon
+		overlay.icon_state = myskin.insert_icon_state
 		. += new /mutable_appearance(overlay)
 	if(fon)
-		overlay.icon_state = current_overlays[PDA_OVERLAY_LIGHT]
+		overlay.icon = myskin.flashlight_icon
+		overlay.icon_state = myskin.flashlight_icon_state
 		. += new /mutable_appearance(overlay)
 	if(pai)
-		overlay.icon_state = "[current_overlays[PDA_OVERLAY_PAI]][pai.pai ? "" : "_off"]"
-		. += overlay
+		overlay.icon = pai.pai ? myskin.pai_on_icon : myskin.pai_icon
+		overlay.icon_state = pai.pai ? myskin.pai_on_icon_state : myskin.pai_icon_state
+		. += new /mutable_appearance(overlay)
 	new_overlays = FALSE
 	new_alert = FALSE
 
@@ -383,6 +392,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li><a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
 				dat += "</ul>"
+
+				if (cartridge)
+					if(cartridge.access & CART_RESIZE)
+						dat += "<h4>Experimental</h4>"
+						dat += "<ul>"
+						dat += "<li><a href='byond://?src=[REF(src)];choice=50'>[PDAIMG(medical)]Experimental Nanite-Factory</a></li>"
+						dat += "</ul>"
 
 			if (1)
 				dat += "<h4>[PDAIMG(notes)] Notekeeper V2.2</h4>"

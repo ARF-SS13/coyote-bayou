@@ -12,7 +12,7 @@
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "woofs!", "yaps.","pants.")
 	emote_see = list("shakes its head.", "chases its tail.","shivers.")
-	faction = list("dog")
+	faction = list("dog", "neutral")
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
@@ -29,7 +29,7 @@
 //Corgis and pugs are now under one dog subtype
 
 /mob/living/simple_animal/pet/dog/corgi
-	name = "\improper corgi"
+	name = "corgi"
 	real_name = "corgi"
 	desc = "It's a corgi."
 	icon_state = "corgi"
@@ -62,7 +62,7 @@
 	return ..()
 
 /mob/living/simple_animal/pet/dog/pug
-	name = "\improper pug"
+	name = "pug"
 	real_name = "pug"
 	desc = "It's a pug."
 	icon = 'icons/mob/pets.dmi'
@@ -547,7 +547,7 @@
 
 
 /mob/living/simple_animal/pet/dog/corgi/puppy
-	name = "\improper corgi puppy"
+	name = "corgi puppy"
 	real_name = "corgi"
 	desc = "It's a corgi puppy!"
 	icon_state = "puppy"
@@ -567,7 +567,7 @@
 
 
 /mob/living/simple_animal/pet/dog/corgi/puppy/void		//Tribute to the corgis born in nullspace
-	name = "\improper void puppy"
+	name = "void puppy"
 	real_name = "voidy"
 	desc = "A corgi puppy that has been infused with deep space energy. It's staring back..."
 	icon_state = "void_puppy"

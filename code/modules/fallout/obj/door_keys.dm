@@ -4,7 +4,7 @@
 	icon = 'icons/fallout/objects/keys.dmi'
 	icon_state = "empty_key"
 	w_class = WEIGHT_CLASS_TINY
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	var/id = null
 	var/static/list/used_ids = list()
 

@@ -358,6 +358,8 @@ Example config:
 				currentmap = null
 			if ("disabled")
 				currentmap = null
+			if ("adminonly")
+				currentmap.admin_only = TRUE
 			else
 				log_config("Unknown command in map vote config: '[command]'")
 

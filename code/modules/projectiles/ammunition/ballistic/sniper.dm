@@ -12,6 +12,7 @@
 		/datum/material/iron = (MATS_RIFLE_HEAVY_CASING * MATS_AMMO_CASING_MATCH_MULT) + (MATS_RIFLE_HEAVY_BULLET * MATS_AMMO_BULLET_MATCH_MULT),
 		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER * MATS_AMMO_POWDER_MATCH_MULT)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_RIFLE_HEAVY
 
 /obj/item/ammo_casing/a50MG/improvised
 	name = "shoddy .50MG bullet casing"

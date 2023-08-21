@@ -261,7 +261,7 @@
 			dat+="<HR><B>Feed Security functions:</B><BR>"
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_wanted=1'>[(wanted_already) ? ("Manage") : ("Publish")] \"Wanted\" Issue</A>"
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_story=1'>Censor Feed Stories</A>"
-			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with Nanotrasen D-Notice (disables and locks the channel).</A>"
+			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with US Government D-Notice (disables and locks the channel).</A>"
 			dat+="<BR><HR><A href='?src=[REF(src)];[HrefToken()];ac_set_signature=1'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admin_signature]</FONT></A>"
 		if(1)
 			dat+= "Station Feed Channels<HR>"
@@ -315,7 +315,7 @@
 		if(9)
 			dat+="<B>[admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[created by: <FONT COLOR='maroon'>[admincaster_feed_channel.returnAuthor(-1)]</FONT>\]</FONT><HR>"
 			if(src.admincaster_feed_channel.censored)
-				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
+				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a US Government D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
 				if( !length(src.admincaster_feed_channel.messages) )
@@ -376,7 +376,7 @@
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[ created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.returnAuthor(-1)]</FONT> \]</FONT><BR>"
 			dat+="Channel messages listed below. If you deem them dangerous to the station, you can <A href='?src=[REF(src)];[HrefToken()];ac_toggle_d_notice=[REF(src.admincaster_feed_channel)]'>Bestow a D-Notice upon the channel</A>.<HR>"
 			if(src.admincaster_feed_channel.censored)
-				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
+				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a US Government D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
 				if( !length(src.admincaster_feed_channel.messages) )
@@ -757,6 +757,69 @@
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/refill_nearby_ammo()
+	set category = "Debug"
+	set desc = "Refills Nearby Guns and Magazines. Even refills things in containers and inventories!"
+	set name = "Refill Nearby Ammo"
+
+	var/maxrange = max(input(usr, "How far away should we look for guns/mags?", "Refill Ammo", 1) as num|null, 1)
+	var/multi = alert(usr, "Fill all guns/mags within [maxrange] units, or just the closest one?", "Admin Fill Ammo", "All", "Closest")
+	if(multi == "All")
+		multi = TRUE
+	else
+		multi = FALSE
+
+	var/list/filled = refill_ammo(usr, multi, maxrange)
+	if(!LAZYLEN(filled))
+		to_chat(usr, "Couldn't find anything to refill!")
+		return
+	to_chat(usr, "Refilled [english_list(filled)].")
+	var/list/short_filled = filled.Copy(1,min(3,LAZYLEN(filled)))
+	if(LAZYLEN(filled) > 3)
+		short_filled += "[LAZYLEN(filled) - 3] more weapons.]"
+	var/turf/here = get_turf(usr)
+	if(LAZYLEN(filled) == 1)
+		message_admins("[key_name_admin(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
+		log_admin("[key_name(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
+	else
+		message_admins("[key_name_admin(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
+		log_admin("[key_name(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "afilled") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/proc/refill_ammo(atom/origin, multi, range)
+	if(!isatom(origin))
+		return
+	var/list/origin_hands = list()
+	var/list/origin_contents = list()
+	var/list/all_in_range = list()
+	/// First check the origin for guns
+	if(isliving(origin))
+		var/mob/living/live_origin = origin
+		if(live_origin.get_active_held_item())
+			origin_hands += live_origin.get_active_held_item()
+		if(live_origin.get_inactive_held_item())
+			origin_contents += live_origin.get_inactive_held_item()
+	if(multi)
+		for(var/obj/item/contained in origin.contents)
+			origin_contents += contained
+			var/list/scrape = list()
+			SEND_SIGNAL(contained, COMSIG_TRY_STORAGE_RETURN_INVENTORY, scrape, TRUE) // Recursive search!
+			origin_contents |= scrape
+		/// now get *everything* in range. EVERYTHING!!!
+		var/list/turf_spiral = spiral_range_turfs(range, origin, TRUE)
+		for(var/turf/spiral_turf in turf_spiral)
+			all_in_range |= get_all_in_turf(spiral_turf, TRUE, 10) // EV ERY THING
+	var/list/load_these = origin_hands + origin_contents + all_in_range
+	if(!LAZYLEN(load_these))
+		return FALSE
+	. = list()
+	for(var/obj/item/load_this in load_these) // Will fill up held items first, then contents, then everything else
+		if(!SEND_SIGNAL(load_this, COMSIG_GUN_MAG_ADMIN_RELOAD))
+			continue
+		. |= load_this
+		if(!multi)
+			return
+
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
 /datum/admins/proc/spawn_atom(object as text)
@@ -785,6 +848,7 @@
 		for(var/i in 1 to amount)
 			var/atom/A = new chosen(T)
 			A.flags_1 |= ADMIN_SPAWNED_1
+			SEND_SIGNAL(A,COMSIG_ATOM_POST_ADMIN_SPAWN)
 
 	log_admin("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
 	message_admins("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")

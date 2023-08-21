@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized,FALSE)
 /proc/auxtools_atmos_init()
 
 /datum/gas_mixture/New(volume)
+	/*
 	if (!isnull(volume))
 		initial_volume = volume
 	AUXTOOLS_CHECK(AUXMOS)
@@ -26,6 +27,8 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized,FALSE)
 		GLOB.auxtools_atmos_initialized = TRUE
 	__gasmixture_register()
 	reaction_results = new
+	*/
+	return
 
 /datum/gas_mixture/vv_edit_var(var_name, var_value)
 	if(var_name == NAMEOF(src, _extools_pointer_gasmixture))
@@ -122,20 +125,30 @@ we use a hook instead
 	return L
 
 /datum/gas_mixture/proc/heat_capacity() //joules per kelvin
+	return 1
 
 /datum/gas_mixture/proc/partial_heat_capacity(gas_type)
+	return 1
 
 /datum/gas_mixture/proc/total_moles()
+	return 1
 
 /datum/gas_mixture/proc/return_pressure() //kilopascals
+	return ONE_ATMOSPHERE
 
 /datum/gas_mixture/proc/return_temperature() //kelvins
+	return T20C
 
 /datum/gas_mixture/proc/set_min_heat_capacity(n)
+	return 1
 /datum/gas_mixture/proc/set_temperature(new_temp)
+	return 1
 /datum/gas_mixture/proc/set_volume(new_volume)
+	return 1
 /datum/gas_mixture/proc/get_moles(gas_type)
+	return 1
 /datum/gas_mixture/proc/set_moles(gas_type, moles)
+	return 1
 
 // VV WRAPPERS - EXTOOLS HOOKED PROCS DO NOT TAKE ARGUMENTS FROM CALL() FOR SOME REASON.
 /datum/gas_mixture/proc/vv_set_moles(gas_type, moles)

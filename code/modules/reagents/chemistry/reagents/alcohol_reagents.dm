@@ -989,7 +989,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/grog
 	name = "Grog"
-	description = "Watered down rum, Nanotrasen approves!"
+	description = "Watered down rum, US Government approves!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 1 //Basically nothing
 	taste_description = "a poor excuse for alcohol"
@@ -1044,7 +1044,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/amasec
 	name = "Amasec"
-	description = "Official drink of the Nanotrasen Gun-Club!"
+	description = "Official drink of the US Government Gun-Club!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	quality = DRINK_GOOD
@@ -1166,6 +1166,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "whiskeyglass"
 	glass_name = "hard cider"
 	glass_desc = "Tastes like autumn... no wait, fall!"
+	shot_glass_icon_state = "shotglassbrown"
+	
+/datum/reagent/consumable/ethanol/peachcider
+	name = "Peach Cider"
+	description = "Peach juice, for adults."
+	color = "#C9896B"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	boozepwr = 25
+	taste_description = "peaches and that smell of pollen assaulting your nasal passages"
+	glass_icon_state = "whiskeyglass"
+	glass_name = "Peach cider"
+	glass_desc = "Peaches, but alcoholic! How quaint!"
 	shot_glass_icon_state = "shotglassbrown"
 
 /datum/reagent/consumable/ethanol/fetching_fizz //A reference to one of my favorite games of all time. Pulls nearby ores to the imbiber!

@@ -5,6 +5,8 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/tesla_revolver
 	name = "tesla gun"
@@ -15,6 +17,8 @@
 	can_flashlight = 0
 	pin = null
 	shaded_charge = 1
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/e_gun/advtaser
 	name = "hybrid taser"
@@ -25,6 +29,8 @@
 	// Not enough guns have altfire systems like this yet for this to be a universal framework.
 	var/last_altfire = 0
 	var/altfire_delay = CLICK_CD_RANGE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/e_gun/advtaser/altafterattack(atom/target, mob/user, proximity_flag, params)
 	. = TRUE
@@ -46,6 +52,8 @@
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 5
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/e_gun/advtaser/cyborg/mean
 	desc = "An integrated hybrid taser that draws directly from a cyborg's power cell."
@@ -59,6 +67,19 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 3
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+
+/obj/item/gun/energy/disabler/debug
+	name = "debug disabler"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "wattz1000"
+	item_state = "laser-pistol"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/debug)
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/disabler/cyborg
 	name = "cyborg disabler"
@@ -70,8 +91,12 @@
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 5
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/disabler/cyborg/mean
 	desc = "An integrated disabler that draws from a cyborg's power cell."
 	use_cyborg_cell = TRUE
 	selfcharge = EGUN_NO_SELFCHARGE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY

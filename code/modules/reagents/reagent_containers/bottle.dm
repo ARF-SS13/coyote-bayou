@@ -429,15 +429,15 @@
 
 /obj/item/reagent_containers/glass/bottle/ichor/red
 	name = "healing potion"
-	list_reagents = list(/datum/reagent/red_ichor = 1)
+	list_reagents = list(/datum/reagent/red_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/ichor/blue
 	name = "blue potion"
-	list_reagents = list(/datum/reagent/blue_ichor = 1)
+	list_reagents = list(/datum/reagent/blue_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/ichor/green
 	name = "green potion"
-	list_reagents = list(/datum/reagent/green_ichor = 1)
+	list_reagents = list(/datum/reagent/green_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/blackpowder
 	name = "blackpowder bottle"
@@ -512,3 +512,13 @@
 /obj/item/reagent_containers/glass/bottle/crank
 	name = "crank bottle"
 	list_reagents = list(/datum/reagent/drug/crank = 30)
+
+/obj/item/reagent_containers/glass/bottle/random
+	name = "randomized bottle"
+	desc = "A long forgotten prescription. who knows what it contains."
+
+/obj/item/reagent_containers/glass/bottle/random/Initialize()
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/bottle_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[bottle_name] bottle"
+	. = ..()

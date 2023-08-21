@@ -10,7 +10,7 @@
 	throw_speed = 3
 	throw_range = 7
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
 	var/preprime_sound = 'sound/f13weapons/garand_ping.ogg'
@@ -48,6 +48,10 @@
 	user.transferItemToLoc(src, user, TRUE)//>eat a grenade set to 5 seconds >rush captain
 	sleep(det_time)//so you dont die instantly
 	return BRUTELOSS
+
+/obj/item/grenade/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_VORE_ATOM_DIGESTED, .proc/vore_prime)
 
 /obj/item/grenade/deconstruct(disassembled = TRUE)
 	if(!disassembled)
@@ -98,6 +102,19 @@
 	GLOB.bombers += message
 	message_admins(message)
 	log_game("[key_name(user)] has primed \a [src] for detonation at [AREACOORD(T)].")
+
+// heh
+/obj/item/grenade/proc/vore_prime(datum/source, obj/vore_belly/belly, mob/living/vorer)
+	SIGNAL_HANDLER
+	if(active)
+		return
+	vorer?.visible_message(
+		span_alert("[vorer]'s [belly] starts ticking?"),
+		span_userdanger("Uh oh."),
+		pref_check = VOREPREF_VORE_MESSAGES
+	)
+	INVOKE_ASYNC(src, .proc/preprime, vorer, null, FALSE, 100)
+	return TRUE
 
 // for electric beep on activation
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)

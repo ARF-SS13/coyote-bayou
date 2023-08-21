@@ -71,7 +71,7 @@ export const PersonalCrafting = (props, context) => {
           </Dimmer>
         )}
         <Section
-          title="Personal Crafting"
+          title="If materials fail to register; switch categories and try again."
           buttons={(
             <Fragment>
               <Button.Checkbox

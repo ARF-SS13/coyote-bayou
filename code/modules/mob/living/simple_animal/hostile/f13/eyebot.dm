@@ -19,8 +19,9 @@
 	move_to_delay = 3
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 40 
+	maxHealth = 40
 	health = 40
+	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
 		MOB_EMP_STUN,
 		MOB_EMP_BERSERK,
@@ -57,7 +58,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
-	aggrosound = list('sound/f13npc/eyebot/aggro.ogg')
+	emote_taunt_sound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
@@ -72,12 +73,15 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A flying metal meatball with lasers."
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
 	name = "ED-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/become_the_mob(mob/user)
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/robot
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/robot
+	. = ..()
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
@@ -86,7 +90,7 @@
 	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -109,12 +113,15 @@
 
 	projectiletype = /obj/item/projectile/energy/electrode
 	projectilesound = 'sound/weapons/resonator_blast.ogg'
-	send_mobs = null
-	call_backup = null
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye/New()
 	..()
 	name = "FEB-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/floatingeye/become_the_mob(mob/user)
+	send_mobs = null
+	call_backup = null
+	. = ..()
 
 /mob/living/simple_animal/pet/dog/eyebot //It's a propaganda eyebot, not a dog, but...
 	name = "propaganda eyebot"
@@ -152,11 +159,16 @@
 	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
 	adjustBruteLoss(emp_damage)
 
+/mob/living/simple_animal/pet/dog/eyebot/panzer
+	name = "Pvt. Eye"
+	desc = "This eyebot's weapons module has been removed and replaced with a transmitter of some kind. It appears to be simply observing and feeding information to something passively."
+	emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
+	speak_chance = 1
+
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
 	maxHealth = 200
 	attack_verb_simple = "zaps"
-	aggrosound = null
 	speak_chance = 0
 	idlesound = null
 	see_in_dark = 8
@@ -167,8 +179,11 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	speed = 1
+
+/mob/living/simple_animal/pet/dog/eyebot/playable/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
+	. = ..()
 
 //Junkers
 /mob/living/simple_animal/hostile/eyebot/reinforced
@@ -185,5 +200,8 @@
 	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6
+
+/mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)
 	send_mobs = null
 	call_backup = null
+	. = ..()

@@ -228,6 +228,7 @@ SUBSYSTEM_DEF(mapping)
 	var/total_z = 0
 	var/list/parsed_maps = list()
 	for (var/file in files)
+		var/start_part_time = world.time
 		var/full_path = "_maps/[path]/[file]"
 		var/datum/parsed_map/pm = new(file(full_path))
 		var/bounds = pm?.bounds
@@ -236,6 +237,9 @@ SUBSYSTEM_DEF(mapping)
 			continue
 		parsed_maps[pm] = total_z  // save the start Z of this file
 		total_z += bounds[MAP_MAXZ] - bounds[MAP_MINZ] + 1
+		var/time_taken = world.time - start_part_time
+		if (!silent)
+			INIT_ANNOUNCE("Parsed [file] in [time_taken * 0.1] seconds.")
 
 	if (!length(traits))  // null or empty - default
 		for (var/i in 1 to total_z)
@@ -256,9 +260,16 @@ SUBSYSTEM_DEF(mapping)
 
 	// load the maps
 	for (var/P in parsed_maps)
+		var/start_part_time = world.time
 		var/datum/parsed_map/pm = P
 		if (!pm.load(1, 1, start_z + parsed_maps[P], no_changeturf = TRUE, orientation = orientation))
 			errorList |= pm.original_path
+		if(!silent)
+			var/time_taken = world.time - start_part_time
+			var/list/fullfile = splittext(pm.original_path, "/")
+			var/filename = fullfile[LAZYLEN(fullfile)]
+			INIT_ANNOUNCE("Loaded [filename] in [(time_taken)/10]s!")
+
 	if(!silent)
 		INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	return parsed_maps
@@ -356,6 +367,9 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			mapvotes.Remove(map)
 			continue
 		if (VM.config_max_users > 0 && players > VM.config_max_users)
+			mapvotes.Remove(map)
+			continue
+		if (VM.admin_only == TRUE)
 			mapvotes.Remove(map)
 			continue
 

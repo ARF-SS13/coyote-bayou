@@ -23,7 +23,12 @@
 
 
 /datum/preferences/proc/update_preview_icon(current_tab)
-	var/equip_job = (current_tab != APPEARANCE_TAB)
+	var/equip_job = TRUE
+	switch(current_tab)
+		if(APPEARANCE_TAB)
+			equip_job = FALSE
+		if(ERP_TAB)
+			equip_job = FALSE
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob = get_highest_job()
 
@@ -37,7 +42,7 @@
 			return
 
 	// Set up the dummy for its photoshoot
-	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
+	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy()
 	// Apply the Dummy's preview background first so we properly layer everything else on top of it.
 	mannequin.add_overlay(mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', bgstate, layer = SPACE_LAYER))
 	copy_to(mannequin, initial_spawn = TRUE)
@@ -54,7 +59,7 @@
 
 	COMPILE_OVERLAYS(mannequin)
 	parent.show_character_previews(new /mutable_appearance(mannequin))
-	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
+	SSdummy.return_dummy(mannequin)
 
 /datum/preferences/proc/get_highest_job()
 	var/highest_pref = 0

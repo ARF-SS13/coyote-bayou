@@ -3,29 +3,6 @@ Miauw's big Say() rewrite.
 This file has the basic atom/movable level speech procs.
 And the base of the send_speech() proc, which is the core of saycode.
 */
-GLOBAL_LIST_INIT(freqtospan, list(
-	"[FREQ_SCIENCE]" = "sciradio",
-	"[FREQ_MEDICAL]" = "medradio",
-	"[FREQ_ENGINEERING]" = "engradio",
-	"[FREQ_SUPPLY]" = "suppradio",
-	"[FREQ_SERVICE]" = "servradio",
-	"[FREQ_SECURITY]" = "secradio",
-	"[FREQ_COMMAND]" = "comradio",
-	"[FREQ_AI_PRIVATE]" = "aiprivradio",
-	"[FREQ_SYNDICATE]" = "syndradio",
-	"[FREQ_CENTCOM]" = "centcomradio",
-	"[FREQ_CTF_RED]" = "redteamradio",
-	"[FREQ_CTF_BLUE]" = "blueteamradio",
-	"[FREQ_VAULT]" = "vaultradio",
-	"[FREQ_NCR]" = "ncrradio",
-	"[FREQ_BOS]" = "bosradio",
-	"[FREQ_ENCLAVE]" = "enclaveradio",
-	"[FREQ_TOWN]" = "townradio",
-	"[FREQ_TOWN_COMMERCE]" = "servradio",
-	"[FREQ_TOWN_PD]" = "secradio",
-	"[FREQ_TOWN_MAYOR]" = "comradio",
-	"[FREQ_RANGER]" = "rangerradio"
-	))
 
 /atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
 	if(!can_speak())
@@ -37,7 +14,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		language = get_selected_language()
 	send_speech(message, 7, src, , spans, message_language=language, just_chat = just_chat)
 
-/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+/atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
 /atom/movable/proc/can_speak()
@@ -47,7 +24,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
-		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source)
+		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)
 	if(!source)

@@ -6,6 +6,53 @@
 	w_class = WEIGHT_CLASS_SMALL
 	pressure_resistance = 2
 	resistance_flags = FLAMMABLE
+	var/persistenceID
+
+/obj/item/folder/Initialize()
+	. = ..()
+	LAZYADD(SSpersistence.folders, src)
+
+/obj/item/folder/Destroy()
+	LAZYREMOVE(SSpersistence.folders, src)
+	..()
+
+/obj/item/folder/proc/PersistenceLoad()
+	var/list/data = SSpersistence.GetFolders()
+	if(data)
+		if(data[persistenceID])
+			PopulatePaperFromList(data[persistenceID])
+
+/obj/item/folder/proc/PopulatePaperFromList(list/ids)
+	var/list/current_ids = StorePaperDataList()
+	for(var/i in ids)
+		if(i in current_ids)
+			continue
+		var/obj/item/paper/P = new /obj/item/paper()
+		if(P.LoadData(ids[i]))
+			P.pers_id = i
+			P.forceMove(src)
+	update_icon()
+
+/obj/item/folder/proc/StorePaperDataList()
+	var/list/L = list()
+	for(var/i in contents)
+		if(istype(i, /obj/item/paper))
+			L += i
+
+	if(!L.len)
+		return
+	. = list()
+	var/list/paperData = list()
+	for(var/i in L)
+		var/obj/item/paper/P = i
+		if(!P.pers_id)
+			P.pers_id = "[persistenceID]_[md5(strip_html(P.info))]" // cursed but it'll make it unique at least.
+		var/list/dat = P.SaveData()
+		if(dat.len)
+			paperData[P.pers_id] = dat
+	
+	if(paperData.len)
+		. = paperData
 
 /obj/item/folder/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] begins filing an imaginary death warrant! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -98,7 +145,7 @@
 
 /obj/item/folder/documents
 	name = "folder- 'TOP SECRET'"
-	desc = "A folder stamped \"Top Secret - Property of Nanotrasen Corporation. Unauthorized distribution is punishable by death.\""
+	desc = "A folder stamped \"Top Secret - Property of US Government Corporation. Unauthorized distribution is punishable by death.\""
 
 /obj/item/folder/documents/Initialize()
 	. = ..()

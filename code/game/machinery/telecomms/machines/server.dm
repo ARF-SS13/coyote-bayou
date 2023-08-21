@@ -114,7 +114,7 @@
 
 /obj/machinery/telecomms/server/presets/bos
 	id = "BOS Server"
-	freq_listening = list(FREQ_BOS)
+	freq_listening = list(FREQ_ASHDOWN)
 	autolinkers = list("bos")
 
 /obj/machinery/telecomms/server/presets/enclave
@@ -133,13 +133,13 @@
 	autolinkers = list("den")
 
 /obj/machinery/telecomms/server/presets/legion
-	id = "Legion Server"
+	id = "Larper Server (Ask for their manager, they love that)"
 	freq_listening = list(FREQ_TOWN_PD)
 	autolinkers = list("legion")
-
+///man fuck telecomms
 /obj/machinery/telecomms/server/presets/ranger
 	id = "Ranger Server"
-	freq_listening = list(FREQ_RANGER)
+	freq_listening = list(FREQ_BIKER)
 	autolinkers = list("ranger")
 
 /obj/machinery/telecomms/server/presets/khans
@@ -157,6 +157,11 @@
 	id = "Command Server"
 	freq_listening = list(FREQ_COMMAND)
 	autolinkers = list("command")
+
+/obj/machinery/telecomms/server/presets/responders
+	id = "Responders Server"
+	freq_listening = list(FREQ_RESPONDERS)
+	autolinkers = list("responders")
 
 /obj/machinery/telecomms/server/presets/engineering
 	id = "Engineering Server"

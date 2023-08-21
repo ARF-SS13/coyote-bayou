@@ -4,30 +4,40 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher
 	desc = "A break-operated grenade rifle. Projectiles travel slowly."
 	name = "grenade rifle"
-	icon_state = "dshotgun-sawn"
+	icon = 'modular_coyote/icons/objects/gun.dmi'
+	icon_state = "m79" // shinier sprite! but also points left :V
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = /obj/item/firing_pin
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(null),
-		SP_DISTANT_RANGE(null)
-	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
+
+//pump grenade launcher
+
+/obj/item/gun/ballistic/shotgun/grenade
+	name = "pump grenade launcher"
+	desc = "A bulky but surprisingly lightweight grenade launcher with a stiff pump."
+	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
+	icon_state = "china_lake"
+	item_state = "shotguntrench"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+
+	can_bayonet = FALSE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	desc = "A 6-shot grenade launcher."
@@ -45,11 +55,9 @@
 	desc = "A prototype pistol designed to fire self propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m75
 	init_mag_type = /obj/item/ammo_box/magazine/m75
-	burst_size = 1
-	fire_delay = 0
 	actions_types = list()
 	casing_ejector = FALSE
 
@@ -61,16 +69,10 @@
 	desc = "A weapon favored by carp hunters. Fires specialized spears using kinetic energy."
 	icon_state = "speargun"
 	item_state = "speargun"
-	slot_flags = ITEM_SLOT_BACK
-	w_class = WEIGHT_CLASS_BULKY
-	force = 10
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
-	automatic_burst_overlay = FALSE
 	mag_type = /obj/item/ammo_box/magazine/internal/speargun
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	burst_size = 1
-	fire_delay = 0
-	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
 
@@ -88,6 +90,29 @@
 		update_icon()
 		chamber_round()
 
+//yep~
+/obj/item/gun/ballistic/fatman
+	name = "fatman"
+	desc =  "a man-portable launcher for tactical nuclear ordnance. what's not to love?"
+	icon = 'modular_coyote/icons/objects/gun.dmi'
+	icon_state = "fatman"
+	item_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
+	mag_type = /obj/item/ammo_box/magazine/internal/mininuke
+	fire_sound = 'sound/weapons/rocketlaunch.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	can_suppress = FALSE
+	slowdown = 1
+	projectile_speed_multiplier = 0.4 //run
+	casing_ejector = FALSE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	magazine_wording = "mininuke"
+
+/obj/item/gun/ballistic/fatman/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]_empty" //civ13 used a different empty designator
+	else
+		icon_state = "[initial(icon_state)]"
+
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper rocket launcher"
 	desc = "Technically, this is actually a rocket propelled grenade launcher, rather than a true rocket launcher. The person you shot is unlikely to care much, though."
@@ -95,9 +120,8 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
-	burst_size = 1
 	slowdown = 1
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -110,9 +134,7 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
-	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
-	burst_size = 1
 	slowdown = 1
 	projectile_speed_multiplier = 0.1
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -200,3 +222,24 @@
 			span_userdanger("You look around after realizing you're still here, then proceed to choke yourself to death with [src]!"))
 		sleep(20)
 		return OXYLOSS
+
+/obj/item/gun/ballistic/rocketlauncher/brick
+	name = "\improper brick launcher"
+	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "launcher"
+	item_state = "rocketlauncher"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
+	fire_sound = 'sound/weapons/rocketlaunch.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	can_suppress = FALSE
+	burst_size = 1
+	casing_ejector = FALSE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	magazine_wording = "rocket"
+
+/obj/item/gun/ballistic/rocketlauncher/brick/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"

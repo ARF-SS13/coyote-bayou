@@ -4,7 +4,7 @@
 	id = "bolt_clip"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 8000)
-	build_path = /obj/item/ammo_box/a762
+	build_path = /obj/item/ammo_box/a308
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -33,6 +33,6 @@
 	id = "sl357ap"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 30000, /datum/material/titanium = 45000)
-	build_path = /obj/item/ammo_box/a357/ap
+	build_path = /obj/item/ammo_box/a357
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

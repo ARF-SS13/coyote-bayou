@@ -186,3 +186,5 @@
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
 	var/is_fullscreen = 0
+	/// ckeys of mobs we'd like to see the genitals of
+	var/list/genital_exceptions = list()

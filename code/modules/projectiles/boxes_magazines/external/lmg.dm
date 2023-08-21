@@ -26,17 +26,17 @@
 	ammo_type = /obj/item/ammo_casing/mm712x82/match
 	caliber = list(CALIBER_712)
 
-/obj/item/ammo_box/magazine/w308
-	name = "sniper rifle magazine (7.62x51)"
+/obj/item/ammo_box/magazine/w3006
+	name = "sniper rifle magazine (.30-06)"
 	icon_state = "sniper_mag"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
 	max_ammo = 7
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_SMALL_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/w308/empty
+/obj/item/ammo_box/magazine/w3006/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/lmg
@@ -50,6 +50,78 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
 
 /obj/item/ammo_box/magazine/lmg/empty
+	start_empty = 1
+
+
+/obj/item/ammo_box/magazine/rpd
+	name = "rpd drum magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "rpdm"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/rpd/empty
+	start_empty = 1
+
+
+
+/obj/item/ammo_box/magazine/ratling
+	name = "Ratling box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	caliber = list(CALIBER_FLINTLOCK)
+	max_ammo = 200
+	w_class = WEIGHT_CLASS_GIGANTIC // It holds 200 my guy
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+
+/obj/item/ammo_box/magazine/ratling/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/lewis
+	name = "extended pan magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "lanoe"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 97
+	w_class = WEIGHT_CLASS_NORMAL // suffer
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+
+/obj/item/ammo_box/magazine/lewis/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/lewis/l47
+	name = "pan magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "lewis"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 47
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/lewis/l47/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/bren
+	name = "bren magazine (.308)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "bren"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_EXTENDED_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/bren/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/cz53
@@ -66,10 +138,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/mg34
-	name = "ammo box (7.62)"
+	name = "ammo box (.308)"
 	icon_state = "r80"
-	ammo_type = /obj/item/ammo_casing/a762
-	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
@@ -78,21 +150,24 @@
 /obj/item/ammo_box/magazine/mg34/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/mm762
+/obj/item/ammo_box/magazine/mm308
 	name = "ammo belt (.308)"
 	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762/sport
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 80
-	w_class = WEIGHT_CLASS_NORMAL
-	caliber = list(CALIBER_762)
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_NECK //sling these big belts all over your fuckin self
+	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
-/obj/item/ammo_box/magazine/mm762/empty
+/obj/item/ammo_box/magazine/mm308/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/mm762/can_load()
+/* I think we want to be able to load up belts of the stuff
+/obj/item/ammo_box/magazine/mm308/can_load()
 	return 0
+*/
 
-/obj/item/ammo_box/magazine/mm762/update_icon()
+/obj/item/ammo_box/magazine/mm308/update_icon()
 	..()
 	icon_state = "762belt-[round(ammo_count(),20)]"

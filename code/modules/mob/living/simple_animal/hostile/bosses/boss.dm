@@ -11,6 +11,7 @@
 	var/datum/boss_active_timed_battle/atb
 	var/point_regen_delay = 20
 	var/point_regen_amount = 1
+	despawns_when_lonely = FALSE
 
 
 /mob/living/simple_animal/hostile/boss/Initialize()

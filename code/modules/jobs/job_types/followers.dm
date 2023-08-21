@@ -48,12 +48,12 @@ Administrator
 	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FF95FF"
-	exp_requirements = 750
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 
 /datum/outfit/job/followers/f13leadpractitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -104,7 +104,7 @@ Administrator
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1
 	)
 
@@ -121,7 +121,7 @@ Administrator
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 540
+	exp_requirements = 0
 	exp_type = EXP_TYPE_FOLLOWERS
 
 	outfit = /datum/outfit/job/followers/f13Professor
@@ -130,8 +130,8 @@ Administrator
 	/datum/outfit/loadout/medical_specialist
 	)
 
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /datum/outfit/job/followers/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -178,7 +178,7 @@ Administrator
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/storage/firstaid/ancient=1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 		)
 
 /datum/outfit/loadout/environmental_scientist
@@ -216,7 +216,7 @@ Practitioner
 	description = "You are a Town Doctor. Whether a doctor in training or a less experienced doctor of some form, you are tasked with providing medical aid where and when it's needed."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 300
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13practitioner
 	matchmaking_allowed = list(
@@ -285,7 +285,7 @@ Practitioner
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/physician
@@ -377,7 +377,7 @@ Follower Volunteer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
 		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/volunteer_emt
@@ -468,7 +468,7 @@ Follower Volunteer
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /*

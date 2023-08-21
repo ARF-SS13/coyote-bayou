@@ -69,7 +69,7 @@
 	name = "Pair of testicles" //Clarifies it for something else
 
 /datum/sprite_accessory/testicles/sheath
-	icon_state = "single"
+	icon_state = "sheath"
 	name = "Sheath"
 
 //Vaginas
@@ -138,3 +138,19 @@
 /datum/sprite_accessory/butt/pair
 	icon_state = "pair"
 	name = "Pair"
+
+//BELLY BELLY BELLY
+/datum/sprite_accessory/belly
+	icon = 'icons/obj/genitals/belly_onmob.dmi'
+	icon_state = "obese"
+	name = "Belly"
+	color_src = "belly_color"
+
+/datum/sprite_accessory/belly/tummy
+	icon_state = "tummy"
+	name = "Tummy"
+
+/// obeast
+/datum/sprite_accessory/belly/obese
+	icon_state = "obese"
+	name = "Obese"

@@ -5,7 +5,7 @@
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/pahrump.json"
+	var/config_filename = "_maps/pahrump-everything.json"
 	var/defaulted = TRUE  // set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -13,23 +13,130 @@
 	var/voteweight = 1
 	var/max_round_search_span = 0 //If this is nonzero, then if the map has been played more than max_rounds_played within the search span (max determined by define in persistence.dm), this map won't be available.
 	var/max_rounds_played = 0
+	var/admin_only = FALSE
 
 
 	// Config actually from the JSON - should default to Box
 	var/map_name = "Yuma"
 	var/map_path = "map_files/Pahrump-Sunset"
-	var/map_file = list("Dungeons.dmm", "Pahrump-Sunset-Lower.dmm", "Pahrump-Sunset.dmm", "Pahrump-Sunset-Upper.dmm", "Pahrump-Sunset-Upper-2.dmm", "RockSprings.dmm", "RedRiver.dmm")
+	var/map_file = list("Dungeons.dmm", "Pahrump-Sunset-Lower.dmm", "Pahrump-Sunset.dmm", "Pahrump-Sunset-Upper.dmm", "Pahrump-Sunset-Upper-2.dmm", "RockSprings.dmm", "RockSprings-Upper.dmm", "RedRiver.dmm", "Garland-City.dmm", "Westlands.dmm")
 	var/list/added_jobs = list()     //Overrides the "none" faction using job name
 	var/list/removed_jobs = list()   //Removes the "none" faction using job name - can also use #all# (case sensitive)
 
 	var/traits = list(
 					list(
 						ZTRAIT_GRAVITY = 1,
-						ZTRAIT_STATION = 1
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_UP = 1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = null
 						),
 					list(
 						ZTRAIT_GRAVITY = 1,
-						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_DUNGEON = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 0
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 1,
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/transparent/openspace,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 2,
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/transparent/openspace,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						ZTRAIT_ABOVE = 1,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 3
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_SOUTH = 1,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 1,
+						Z_FORCE_Z = 1
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/transparent/openspace,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 1,
+						Z_FORCE_Z = 2
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_NORTH = 1,
+						Z_FORCE_X = 2,
+						Z_FORCE_Y = 3,
+						Z_FORCE_Z = 1
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_UP = 1,
+						ZTRAIT_DOWN = -1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_EAST = 1,
+						Z_FORCE_X = 3,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 1
+						),
+					list(
+						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_BASETURF = /turf/open/indestructible/ground/inside/mountain,
+						ZTRAIT_STATION = 1,
+						ZTRAIT_NOPARALLAX = 1,
+						ZTRAIT_LINKAGE = CROSSLINKED,
+						Z_FORCE_WEST = 1,
+						Z_FORCE_X = 1,
+						Z_FORCE_Y = 2,
+						Z_FORCE_Z = 1
 						)
 					)
 	var/space_ruin_levels = 0

@@ -35,7 +35,6 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	damage = 55
-	armour_penetration = 0.35
 	wound_bonus = 30
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
@@ -53,11 +52,11 @@
 
 /obj/item/projectile/energy/teslacannon/oasis
 	name = "shock beam"
-	damage = 10 //high damage but low ap
-	armour_penetration = 0.01 //avoid pa deflect
+	damage = 12 //high damage but low ap
 	flag = "energy"
 	wound_bonus = -5
 	bare_wound_bonus = 35
+	recoil = BULLET_RECOIL_LASER
 
 /obj/item/projectile/energy/teslacannon/oasis/on_hit(atom/target, blocked = FALSE)
 	. = ..()

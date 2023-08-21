@@ -12,10 +12,42 @@
 	icon_state = "stairs"
 	resistance_flags = INDESTRUCTIBLE
 	anchored = TRUE
-
 	var/force_open_above = FALSE // replaces the turf above this stair obj with /turf/open/transparent/openspace
 	var/terminator_mode = STAIR_TERMINATOR_AUTOMATIC
 	var/turf/listeningTo
+
+/// Two things will remain after the end of the world, furries and *stairs*
+
+/obj/structure/stairs/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
+	return FALSE
+
+/obj/structure/stairs/fire_act(exposed_temperature, exposed_volume)
+	return FALSE
+
+/obj/structure/stairs/acid_act()
+	return FALSE
+
+/obj/structure/stairs/mech_melee_attack(obj/mecha/M)
+	return FALSE
+
+/obj/structure/stairs/blob_act(obj/structure/blob/B)
+	return FALSE
+
+/obj/structure/stairs/attack_hulk(mob/living/carbon/human/user, does_attack_animation = 0)
+	return FALSE
+
+/obj/structure/stairs/experience_pressure_difference()
+	return FALSE
+
+/obj/structure/stairs/ex_act(severity, target)
+	return FALSE
+
+/obj/structure/stairs/singularity_act()
+	return FALSE
+
+/obj/structure/stairs/ConveyorMove()
+	return FALSE
+
 
 /obj/structure/stairs/north
 	dir = NORTH
@@ -133,8 +165,8 @@
 
 /obj/structure/stairs/intercept_zImpact(atom/movable/AM, levels = 1)
 	. = ..()
-	if(isTerminator())
-		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE
+	if(levels == 1 && isTerminator()) // Stairs won't save you from a steep fall.
+		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE | FALL_RETAIN_PULL
 
 /obj/structure/stairs/proc/isTerminator()			//If this is the last stair in a chain and should move mobs up
 	if(terminator_mode != STAIR_TERMINATOR_AUTOMATIC)

@@ -30,7 +30,9 @@ GLOBAL_LIST_INIT(huds, list(
 	ANTAG_HUD_BLOODSUCKER = new/datum/atom_hud/antag/bloodsucker(),
 	ANTAG_HUD_FUGITIVE = new/datum/atom_hud/antag(),
 	ANTAG_HUD_HERETIC = new/datum/atom_hud/antag/hidden(),
-	DATA_HUD_CLIENT = new/datum/atom_hud/data/client()
+	DATA_HUD_CLIENT = new/datum/atom_hud/data/client(),
+	GENITAL_PORNHUD = new/datum/atom_hud/data/human/genital(),
+	TAIL_HUD_DATUM = new/datum/atom_hud/data/human/tail(),
 	))
 
 /datum/atom_hud
@@ -66,14 +68,15 @@ GLOBAL_LIST_INIT(huds, list(
 			for(var/atom/A in hudatoms)
 				remove_from_single_hud(M, A)
 
-/datum/atom_hud/proc/remove_from_hud(atom/A)
+/datum/atom_hud/proc/remove_from_hud(atom/A, clear_list)
 	if(!A)
 		return FALSE
 	if(!(hudusers[A])) // don't unregister if it's also a mob in our users list
 		UnregisterSignal(A, COMSIG_PARENT_QDELETING)
 	for(var/mob/M in hudusers)
 		remove_from_single_hud(M, A)
-	hudatoms -= A
+	if(!clear_list)
+		hudatoms -= A
 	return TRUE
 
 /datum/atom_hud/proc/remove_from_single_hud(mob/M, atom/A) //unsafe, no sanity apart from client
@@ -106,7 +109,7 @@ GLOBAL_LIST_INIT(huds, list(
 		for(var/atom/A in hudatoms)
 			add_to_single_hud(M, A)
 
-/datum/atom_hud/proc/add_to_hud(atom/A)
+/datum/atom_hud/proc/add_to_hud(atom/A, send_signal)
 	if(!A)
 		return FALSE
 	hudatoms |= A
@@ -116,7 +119,7 @@ GLOBAL_LIST_INIT(huds, list(
 			add_to_single_hud(M, A)
 	return TRUE
 
-/datum/atom_hud/proc/add_to_single_hud(mob/M, atom/A) //unsafe, no sanity apart from client
+/datum/atom_hud/proc/add_to_single_hud(mob/M, atom/A, send_signal) //unsafe, no sanity apart from client
 	if(!M || !M.client || !A)
 		return
 	for(var/i in hud_icons)
@@ -128,7 +131,7 @@ GLOBAL_LIST_INIT(huds, list(
 	for(var/datum/atom_hud/hud in GLOB.all_huds)
 		if(hud && hud.hudusers[src])
 			for(var/atom/A in hud.hudatoms)
-				hud.add_to_single_hud(src, A)
+				hud.add_to_single_hud(src, A, TRUE)
 
 /mob/dead/new_player/reload_huds()
 	return

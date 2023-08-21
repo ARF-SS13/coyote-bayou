@@ -6,7 +6,7 @@
 	item_state = "utility"
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	w_class = WEIGHT_CLASS_NORMAL // Okay they can go back in ur backpack
@@ -262,9 +262,9 @@
 
 /obj/item/storage/belt/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 ///////////////////
 /// Belt bandolier
@@ -274,7 +274,7 @@
 	desc = "A mean-looking belt sack for holding lots of ammo."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
@@ -370,12 +370,10 @@
 	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
-/obj/item/storage/belt/military/snack/ComponentInitialize()
-	. = ..()
-	var/amount = 21
-	var/rig_snacks
-	while(contents.len <= amount)
-		rig_snacks = pick(list(
+/obj/item/storage/belt/military/snack/PopulateContents()
+	var/rigsnax
+	for(var/snackies in 1 to 21)
+		rigsnax = pick(list(
 		/obj/item/reagent_containers/food/snacks/candy,
 		/obj/item/reagent_containers/food/drinks/dry_ramen,
 		/obj/item/reagent_containers/food/snacks/chips,
@@ -400,9 +398,18 @@
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
 		))
-		new rig_snacks(src)
+		new rigsnax(src)
 
+/obj/item/storage/belt/military/plush
+	name = "tactical plushie rig"
+	desc = "a set of military grade tactical pouches, made to hold a large number of plushies."
+	component_type = /datum/component/storage/concrete/belt/specialized/plush
 
+/obj/item/storage/belt/military/plush/PopulateContents()
+	var/rigplush
+	for(var/plooshies in 1 to 21)
+		rigplush = pick(GLOB.valid_plushie_paths)
+		new rigplush(src)
 
 /* * * * * * *
  * NECKPRONS
@@ -413,18 +420,19 @@
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
 	desc = "An over-the-shoulder length of webbing that can hold all sorts of ammostuffs."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
 	item_state = "bandolier"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/neckpron/specialized/bandolier
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
 	desc = "A drab looking bandolier that goes on your upper body."
-	icon_state = "bandolier-durathread"
-	item_state = "bandolier-durathread"
-	slot_flags = ITEM_SLOT_NECK
+	icon_state = "bandolier"
+	item_state = "bandolier"
+	slot_flags = INV_SLOTBIT_NECK
 	resistance_flags = FIRE_PROOF
 
 /////////////////
@@ -437,13 +445,13 @@
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c22(src)
+	new /obj/item/ammo_box/c22(src)
 
 /obj/item/storage/belt/shoulderholster/ranger44/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/revolver44(src)
@@ -453,9 +461,9 @@
 
 /obj/item/storage/belt/shoulderholster/ranger357/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/belt/shoulderholster/ranger45/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/revolver45(src)
@@ -483,7 +491,7 @@
 	icon_state = "outlaws_cloak"
 	item_state = "outlaws_cloak"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/peacefulcoat
@@ -494,7 +502,7 @@
 	icon_state = "peacefulcoat"
 	item_state = "peacefulcoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/poachercoat
@@ -505,7 +513,7 @@
 	icon_state = "poachercoat"
 	item_state = "poachercoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/poachervest
@@ -516,7 +524,7 @@
 	icon_state = "poachervest"
 	item_state = "poachervest"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/dantecoat
@@ -527,7 +535,7 @@
 	icon_state = "dantecoat"
 	item_state = "dantecoat"
 	body_parts_covered = CHEST|GROIN|ARMS
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 //////////////////
@@ -538,7 +546,7 @@
 	desc = "An over the shoulder medical holder, lifts and separates medical supplies to make you a more appealing healer."
 	icon_state = "medolier"
 	item_state = "medolier"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/medical
 
 /*	STR.max_items = 15
@@ -684,42 +692,37 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
-	fitting_swords = list(/obj/item/melee/smith/machete,
-	/obj/item/melee/smith/machete/reforged,
-	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/sword,
-	/obj/item/melee/smith/twohand/axe,
-	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/sword/sabre,
-	/obj/item/melee/onehanded/machete,
-	/obj/item/melee/onehanded/club,
-	/obj/item/melee/classic_baton,
-	/obj/item/twohanded/fireaxe,
-	/obj/item/twohanded/baseball,
-	/obj/item/twohanded/sledgehammer/simple,
-	/obj/item/melee/transforming/energy/axe/protonaxe,
-	/obj/item/melee/powered/ripper)
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	starting_sword = null
+
+/obj/item/storage/belt/sabre/heavy/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = 4
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
+	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/knife
 	name = "knife bandolier"
 	desc = "A bandolier lined with loops, perfect for slipping in a few small blades."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
 	item_state = "bandolier"
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	starting_sword = null
 
 /obj/item/storage/belt/sabre/knife/ComponentInitialize()
 	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.knifebelt_allowed
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage) //up to seven knives and daggers
+	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded)) //any small sized stabby
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/rapier
@@ -745,8 +748,16 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
-	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
+	slot_flags = INV_SLOTBIT_NECK
+
+/obj/item/storage/belt/sword/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 3
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
+	STR.quickdraw = TRUE
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
 /obj/item/storage/belt/sword/twin
@@ -754,15 +765,15 @@
 	desc = "A set of sheathes and straps for carrying two curved japanese style swords."
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
-	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
-	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
-	STR.max_volume = 7
-	STR.can_hold = typecacheof(fitting_swords)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 6
+	STR.can_hold = typecacheof(list(/obj/item/melee, /obj/item/twohanded))
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/waistsheath
@@ -826,3 +837,23 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_items = 5
 	STR.clickopen = TRUE
+
+//NCR Ranger's stuff
+
+/obj/item/storage/belt/military/commonwealth_brit
+	name = "burma webbing"
+	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
+	icon_state = "brit_webbing"
+	item_state = "brit_webbing"
+
+/obj/item/storage/belt/bandolier/boer_band
+	name = "leather bandolier"
+	desc = "An old style of bandolier used by primarily those who ride upon horses."
+	icon_state = "boer_band"
+	item_state = "boer_band"
+
+/obj/item/storage/belt/military/french_webbing
+	name = "french webbing"
+	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
+	icon_state = "french_webbing"
+	item_state = "french_webbing"

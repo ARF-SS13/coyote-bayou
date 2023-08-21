@@ -44,6 +44,10 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	var/randomizer_difficulty
 	/// If a playermob spawns this, keep track of it
 	var/spawned_by_ckey
+	/// hold off on spawning, gotta set it up first
+	var/delay_start = FALSE
+	/// Some cool factions to override the default ones
+	var/list/faction = list()
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -51,7 +55,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	AddComponent(/datum/component/spawner,\
 		_mob_types = mob_types,\
 		_spawn_time = spawn_time,\
-		_faction = list(),\
+		_faction = faction,\
 		_spawn_text = spawn_text,\
 		_max_mobs = max_mobs,\
 		_range = radius,\
@@ -62,12 +66,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		_coverable_by_dense_things = coverable_by_dense_things,\
 		_randomizer_tag = randomizer_tag,\
 		_randomizer_kind = randomizer_kind,\
-		_randomizer_difficulty = randomizer_difficulty\
+		_randomizer_difficulty = randomizer_difficulty,\
+		_delay_start = delay_start\
 		)
 
 /obj/structure/nest/Destroy()
-	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
-	visible_message("[src] collapses!")
+	remove_nest()
 	if(spawned_by_ckey)
 		GLOB.player_made_nests[spawned_by_ckey][type] -= src
 	. = ..()
@@ -99,6 +103,10 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
 			return
 
+/obj/structure/nest/proc/remove_nest()
+	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
+	visible_message("[src] collapses!")
+
 /obj/structure/nest/proc/try_seal(mob/user, obj/item/stack/S, itempath, cover_state, timer)
 	if(!coverable)
 		to_chat(user, span_warning("\The [src] is unable to be covered!"))
@@ -121,7 +129,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	S.use(4)
 	if(!made_loot)
 		made_loot = TRUE
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
+		var/obj/effect/spawner/lootdrop/f13/common/junk = new(get_turf(src))
+		if(junk && !QDELETED(junk))
+			qdel(junk)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
@@ -220,14 +230,6 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_time = 7 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
 
-/obj/structure/nest/rat/tame
-	name = "tame rat nest"
-	desc = "A man-made nest full of squeakers."
-	mob_types = list(
-		/mob/living/simple_animal/hostile/rat/tame = 9,
-		/mob/living/simple_animal/hostile/rat/skitter/curious = 1
-	)
-
 /obj/structure/nest/mouse
 	name = "mouse nest"
 	max_mobs = 6
@@ -297,9 +299,36 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/cazador/young = 3)
 
 /obj/structure/nest/gecko
-	name = "gecko nest"
-	max_mobs = 2
-	mob_types = list(/mob/living/simple_animal/hostile/gecko = 25)
+	name = "gecko eggs"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "nest_gecko"
+	desc = "A pile of gecko eggs on top of a clay mound."
+	max_mobs = 3
+	spawn_text = "crawls out from the"
+	spawnsound = 'sound/misc/crack.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko = 6,
+		/mob/living/simple_animal/hostile/gecko/fire = 1,
+		/mob/living/simple_animal/hostile/gecko/legacy = 6,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
+		/mob/living/simple_animal/hostile/gecko/big = 2
+		)
+
+/obj/structure/nest/gelcube
+	name = "slimy tunnel"
+	desc = "A vent leading deep into some ill forgotten pit."
+	spawn_time = 120 SECONDS
+	max_mobs = 1
+	icon_state = "ventblue"
+	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 10)
+
+/obj/structure/nest/gelcube/debug
+	name = "horrible debug hole"
+	desc = "If you can see this, yell at Fenny. Or lagg. Or both. Or neither. Either way this is a debug nest."
+	spawn_time = 2 SECONDS
+	max_mobs = 1
+	icon_state = "ventblue"
+	mob_types = list(/mob/living/simple_animal/hostile/gelcube = 100)
 
 /obj/structure/nest/wolf
 	name = "wolf den"
@@ -329,6 +358,21 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/stalker = 5,
 					/mob/living/simple_animal/hostile/stalkeryoung = 5)
+
+// Nests for mobs that are special and/or dont have any nearby nests to unbirth into
+/obj/structure/nest/special
+	name = "special nest"
+	max_mobs = 20
+	delay_start = TRUE
+	mob_types = list()
+
+/obj/structure/nest/special/remove_nest()
+	return 
+/obj/structure/nest/special/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration, atom/attacked_by)
+	. = ..()
+	if(.)
+		SEND_SIGNAL(src, COMSIG_SPAWNER_SPAWN_NOW)
+	return 
 
 //Event Nests
 /obj/structure/nest/zombieghoul
@@ -391,5 +435,18 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	randomizer_kind = MOB_SPAWNER_KIND_DEBUG
 	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
 
+//Fennis adding non-angi mob spawners//
 
+/obj/structure/nest/frog
+	name = "tadpoles"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "frog"
+	desc = "Are those tadpoles?"
+	max_mobs = 2
+	spawn_text = "hops out of the water!"
+	spawnsound = 'sound/f13effects/sunsetsounds/frogwarcry.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/retaliate/frog = 10,
+		/mob/living/simple_animal/hostile/retaliate/frog/red = 2
+	)
 

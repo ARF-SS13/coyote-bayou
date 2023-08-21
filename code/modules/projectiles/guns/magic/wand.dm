@@ -4,12 +4,12 @@
 	ammo_type = /obj/item/ammo_casing/magic
 	icon_state = "nothingwand"
 	item_state = "wand"
-	w_class = WEIGHT_CLASS_SMALL
-	can_charge = 0
+	weapon_class = WEAPON_CLASS_SMALL
+	can_charge = TRUE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi' //not really a gun and some toys use these inhands
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	var/variable_charges = 1
+	var/variable_charges = FALSE
 
 /obj/item/gun/magic/wand/Initialize()
 	if(prob(75) && variable_charges) //25% chance of listed max charges, 50% chance of 1/2 max charges, 25% chance of 1/3 max charges
@@ -87,12 +87,13 @@
 /////////////////////////////////////
 
 /obj/item/gun/magic/wand/resurrection
-	name = "wand of healing"
+	name = "Stick of healing"
 	desc = "This wand uses healing magics to heal and revive. They are rarely utilized within the Wizard Federation for some reason."
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	fire_sound = 'sound/magic/staff_healing.ogg'
 	icon_state = "revivewand"
-	max_charges = 10 //10, 5, 5, 4
+	max_charges = 1 //10, 5, 5, 4
+	recharge_rate = 30 MINUTES
 
 /obj/item/gun/magic/wand/resurrection/zap_self(mob/living/user)
 	..()

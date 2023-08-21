@@ -37,4 +37,5 @@
 /datum/component/storage/concrete/neckpron/specialized/gun/Initialize()
 	. = ..()
 	can_hold = GLOB.gunbelt_allowed
+	quickdraw = TRUE
 

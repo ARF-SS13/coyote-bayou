@@ -12,7 +12,7 @@
 	possible_transfer_amounts = list()
 	resistance_flags = ACID_PROOF
 	reagent_flags = OPENCONTAINER
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	var/ignore_flags = 0
 	var/infinite = FALSE
@@ -185,12 +185,30 @@
 	volume = 30
 	list_reagents = list(/datum/reagent/consumable/sugar = 30)
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/fake
+	name = "stimpak"
+	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
+	amount_per_transfer_from_this = 26
+	volume = 26
+	list_reagents = list(/datum/reagent/medicine/fake_stimpak = 26)
+
+
 /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
 	name = "epipak"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
 	amount_per_transfer_from_this = 15
 	volume = 15
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/spaceacillin = 3, /datum/reagent/medicine/coagulant = 2)
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/random
+	name = "randomized stimpak"
+	desc = "A long forgotten prescription. who knows what it contains."
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/random/Initialize()
+	list_reagents = list(get_random_reagent_id() = rand(5,15))
+	var/stim_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
+	name = "[stim_name] stimpak"
+	. = ..()
 
 // ---------------------------------
 // SUPER STIMPAK

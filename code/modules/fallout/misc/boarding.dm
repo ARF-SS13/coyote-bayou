@@ -31,7 +31,7 @@
 			visible_message(span_danger("[user] pries off a board!"))
 			planks --
 			checkplanks()
-			new /obj/item/stack/sheet/mineral/wood(user.loc)
+			new /obj/item/stack/sheet/mineral/wood(user.loc, 1)
 			return
 	else
 		return..()
@@ -41,7 +41,7 @@
 	if(obj_integrity <= (planks - 1) * 50)
 		planks --
 		if(prob(50))
-			new /obj/item/stack/sheet/mineral/wood(src.loc)
+			new /obj/item/stack/sheet/mineral/wood(src.loc, 1)
 		checkplanks()
 	return
 

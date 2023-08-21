@@ -93,3 +93,17 @@
 		var/datum/R = resolve()
 		if(R)
 			usr.client.debug_variables(R)
+
+/// Creates a weakerref to the given input. literally just "\ref[input]"
+/// Basically a weakref, minus the datum memory use (and reliability, there's no guarantee this'll point to anything, or even the right thing!!!)
+/// Use with care, and ample checks
+#define WEAKERREF(input) "\ref[input]"
+/// Turns a ref into a thing. no guarantee its anything, so check that it *is* something
+/// also a proc cus SSradturf compiles before this one. whatever
+/proc/RESOLVEREF(ref) 
+	return locate(ref)
+
+/proc/RESOLVEWEAKREF(datum/weakref/wr)
+	if(!isweakref(wr))
+		return
+	return wr.resolve()

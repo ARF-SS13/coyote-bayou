@@ -1,7 +1,7 @@
 /obj/structure/furnace
 	name = "furnace"
 	desc = "A furnace."
-	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "furnace0"
 	density = TRUE
 	anchored = TRUE
@@ -13,12 +13,13 @@
 	light_power = 0.75
 	light_color = LIGHT_COLOR_FIRE
 	light_on = FALSE
-
+	var/datum/looping_sound/furnace/soundloop
 
 /obj/structure/furnace/Initialize()
 	. = ..()
 	create_reagents(250, TRANSPARENT)
 	START_PROCESSING(SSobj, src)
+	soundloop = new(list(src), FALSE)
 
 /obj/structure/furnace/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -30,12 +31,14 @@
 		return TRUE
 	if(reagents.remove_reagent(/datum/reagent/fuel, fueluse))
 		working = TRUE
+		soundloop.start()
 		set_light_on(TRUE)
 		if(icon_state == "furnace0")
 			icon_state = "furnace1"
 
 	else
 		working = FALSE
+		soundloop.stop()
 		set_light_on(FALSE)
 		icon_state = "furnace0"
 
@@ -74,9 +77,14 @@
 /obj/structure/furnace/infinite
 	name = "fuelless furnace"
 	debug = TRUE
-	icon_state = "ratfurnace"
+	icon_state = "furnace1"
+
+/datum/looping_sound/furnace
+	mid_sounds = list(SOUND_LOOP_ENTRY('code/modules/smithing/sound/furnace1.ogg', 7 SECONDS, 1))
+	volume = 40
 
 
+//tg holdover
 /obj/structure/furnace/infinite/ratvar
 	name = "brass furnace"
 	desc = "A brass furnace. Powered by... something, but seems otherwise safe." //todo:sprites they're safe for noncultists because you're just putting ingots in them. also there';s a reason to steal them ig

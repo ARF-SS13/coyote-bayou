@@ -74,7 +74,6 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 20
 	wound_bonus = 0
-	armour_penetration = 0.4
 	health = 120
 	maxHealth = 120
 	armored = TRUE
@@ -119,7 +118,6 @@ mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Seve
 	obj_damage = 11
 	melee_damage_lower = 1
 	melee_damage_upper = 1
-	armour_penetration = 0
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"
 	attacked_sound = 'sound/items/eatfood.ogg'
@@ -177,6 +175,10 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 	wound_bonus = 5
 	bare_wound_bonus = 25
 	faction = list("yaoguai")
+
+/mob/living/simple_animal/hostile/bear/yaoguai/Initialize()
+	. = ..()
+	recenter_wide_sprite()
 
 /*mob/living/simple_animal/hostile/bear/yaoguai/frozen
 	name = "frozen yao guai"

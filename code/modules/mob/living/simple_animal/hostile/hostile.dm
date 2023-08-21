@@ -10,10 +10,10 @@
 	var/rapid = 0 //How many shots per volley.
 	var/rapid_fire_delay = 2 //Time between rapid fire shots
 
-	var/dodging = FALSE
+	var/dodging = TRUE
 	var/approaching_target = FALSE //We should dodge now
 	var/in_melee = FALSE	//We should sidestep now
-	var/dodge_prob = 30
+	var/dodge_prob = 15
 	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
 
 	var/extra_projectiles = 0 //how many projectiles above 1?
@@ -98,9 +98,17 @@
 	var/reveal_phrase = "" //Uncamouflages the mob (if it were to become invisible via the alpha var) upon hearing
 	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
 
-	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
-	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
-
+	/// Probability it'll do some other kind of melee attack, like a knockback hit.
+	var/alternate_attack_prob = 0
+	/// At what percent of their health does the mob change states? Like, get ANGY on low-health or something. set to 0 or FALSE to disable
+	/// Is a decimal, 0 through 1. 0.5 means half health, 0.25 is quarter health, etc
+	var/low_health_threshold = 0
+	/// Has the mob done its Low Health thing?
+	var/is_low_health = FALSE
+	/// Does this mob un-itself if nobody's on the Z level?
+	var/despawns_when_lonely = TRUE
+	/// timer for despawning when lonely
+	var/lonely_timer_id
 
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
@@ -117,22 +125,14 @@
 	friends = null
 	foes = null
 	GiveTarget(null)
-	if(make_a_nest)
-		QDEL_NULL(make_a_nest)
 	if(smoke)
 		QDEL_NULL(smoke)
 	return ..()
 
-/mob/living/simple_animal/hostile/make_ghostable()
-	. = ..()
-	if(ispath(make_a_nest))
-		var/obj/effect/proc_holder/mob_common/make_nest/MN = make_a_nest
-		make_a_nest = new MN
-		AddAbility(make_a_nest)
-		unmake_a_nest = new
-		AddAbility(unmake_a_nest)
-
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		walk(src, 0)
+
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
 		if(decompose)
@@ -140,10 +140,36 @@
 				visible_message(span_notice("\The dead body of the [src] decomposes!"))
 				gib(FALSE, FALSE, FALSE, TRUE)
 		return
+	queue_naptime()
+	check_health()
+
+/mob/living/simple_animal/hostile/proc/check_health()
+	if(low_health_threshold <= 0)
+		return FALSE
+	if(stat == DEAD)
+		return FALSE
+	if (QDELETED(src)) // diseases can qdel the mob via transformations
+		return FALSE
+	
+	if(is_low_health && health > (maxHealth * low_health_threshold)) // no longer low health
+		make_high_health()
+		return TRUE
+	if(!is_low_health && health < (maxHealth * low_health_threshold))
+		make_low_health()
+		return TRUE
+
+/// Override this with what should happen when going from low health to high health
+/mob/living/simple_animal/hostile/proc/make_high_health()
+	return
+
+/// Override this with what should happen when going from high health to low health
+/mob/living/simple_animal/hostile/proc/make_low_health()
+	return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
 		return 0
+
 	var/list/possible_targets = ListTargets() //we look around for potential targets and make it a list for later use.
 
 	if(environment_smash)
@@ -155,10 +181,13 @@
 		if(!MoveToTarget(possible_targets))     //if we lose our target
 			if(AIShouldSleep(possible_targets))	// we try to acquire a new one
 				toggle_ai(AI_IDLE)			// otherwise we go idle
+	consider_despawning()
 	return 1
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		return
 	if(dodging && target && in_melee && isturf(loc) && isturf(target.loc))
 		var/datum/cb = CALLBACK(src,.proc/sidestep)
 		if(sidestep_per_cycle > 1) //For more than one just spread them equally - this could changed to some sensible distribution later
@@ -167,6 +196,50 @@
 				addtimer(cb, (i - 1)*sidestep_delay)
 		else //Otherwise randomize it to make the players guessing.
 			addtimer(cb,rand(1,SSnpcpool.wait))
+
+/mob/living/simple_animal/hostile/toggle_ai(togglestatus)
+	. = ..()
+	queue_naptime()
+
+/mob/living/simple_animal/hostile/proc/queue_naptime()
+	var/go2bed = consider_despawning()
+	if(go2bed)
+		if(lonely_timer_id)
+			return
+		lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
+	else
+		if(!lonely_timer_id)
+			return
+		deltimer(lonely_timer_id)
+		lonely_timer_id = null	
+		unqueue_unbirth()
+
+/mob/living/simple_animal/hostile/proc/consider_despawning()
+	if(!despawns_when_lonely)
+		return FALSE
+	if(ckey)
+		return FALSE
+	if(lazarused)
+		return FALSE
+	if(stat == DEAD)
+		return FALSE
+	if(CHECK_BITFIELD(datum_flags, DF_VAR_EDITED))
+		return FALSE
+	if(CHECK_BITFIELD(flags_1, ADMIN_SPAWNED_1))
+		return FALSE
+	if(health <= 0)
+		return FALSE
+	if(AIStatus == AI_ON || AIStatus == AI_OFF)
+		return FALSE
+	return TRUE
+
+/mob/living/simple_animal/hostile/become_the_mob(mob/user)
+	if(lonely_timer_id)
+		deltimer(lonely_timer_id)
+		lonely_timer_id = null	
+	unqueue_unbirth()
+	. = ..()
+
 
 /mob/living/simple_animal/hostile/proc/sidestep()
 	if(!target || !isturf(target.loc) || !isturf(loc) || stat == DEAD)
@@ -185,7 +258,7 @@
 		Move(get_step(src,chosen_dir))
 		face_atom(target) //Looks better if they keep looking at you when dodging
 
-/mob/living/simple_animal/hostile/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
+/mob/living/simple_animal/hostile/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
 	if (peaceful == TRUE)
 		peaceful = FALSE
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
@@ -193,13 +266,14 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/bullet_act(obj/item/projectile/P)
+	. = ..()
 	if (peaceful == TRUE)
 		peaceful = FALSE
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
 		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
-	return ..()
+	//return ..()
 
 /mob/living/simple_animal/hostile/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
@@ -393,7 +467,7 @@
 			walk(src,0)
 			return 1
 		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our target
-			if(target_distance <= retreat_distance) //If target's closer than our retreat distance, run
+			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If target's closer than our retreat distance, run
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 				walk_away(src,target,retreat_distance,move_to_delay)
 			else
@@ -434,8 +508,9 @@
 		approaching_target = TRUE
 	else
 		approaching_target = FALSE
-	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-	walk_to(src, target, minimum_distance, delay)
+	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+		walk_to(src, target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
@@ -457,7 +532,13 @@
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
 	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target)
 	in_melee = TRUE
+	if(prob(alternate_attack_prob) && AlternateAttackingTarget(target))
+		return FALSE
 	return target.attack_animal(src)
+
+/// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
+/mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
+	return
 
 /mob/living/simple_animal/hostile/proc/Aggro()
 	if(ckey)
@@ -468,7 +549,7 @@
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
-		playsound(loc, taunt_choice, 50, 0)
+		playsound(loc, taunt_choice, 50, 0, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2]))
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
@@ -548,7 +629,9 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
+			vary = FALSE, 
+			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 		qdel(casing)
@@ -562,7 +645,9 @@
 			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
 			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
 			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
-			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE], 
+			vary = FALSE, 
+			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
 		P.starting = startloc
 		P.firer = src
@@ -710,16 +795,10 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if (!length(SSmobs.clients_by_zlevel[T.z])) // It's fine to use .len here but doesn't compile on 511
 		toggle_ai(AI_Z_OFF)
 		return
+	
+	tlist = ListTargetsLazy(T.z)
 
-	var/cheap_search = isturf(T) && !is_station_level(T.z)
-	if (cheap_search)
-		tlist = ListTargetsLazy(T.z)
-	else
-		tlist = ListTargets()
-
-	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
-		if(cheap_search) //Try again with full effort
-			FindTarget()
+	if(AIStatus == AI_IDLE && tlist.len)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/ListTargetsLazy(_Z)//Step 1, find out what we can see
@@ -745,6 +824,23 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	target = new_target
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+
+/mob/living/simple_animal/hostile/proc/queue_unbirth()
+	SSidlenpcpool.add_to_culling(src)
+
+/mob/living/simple_animal/hostile/proc/unqueue_unbirth()
+	SSidlenpcpool.remove_from_culling(src)
+
+/// return to monke-- stuffs a mob into their own special nest
+/mob/living/simple_animal/hostile/proc/unbirth_self(forced)
+	if(!forced && !consider_despawning()) // check again plz
+		return
+	var/obj/structure/nest/my_home
+	if(isweakref(nest))
+		my_home = RESOLVEWEAKREF(nest)
+	if(!my_home)
+		my_home = new/obj/structure/nest/special(get_turf(src))
+	SEND_SIGNAL(my_home, COMSIG_SPAWNER_ABSORB_MOB, src)
 
 /mob/living/simple_animal/hostile/setup_variations()
 	if(!..())
@@ -799,7 +895,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/un_emp_stun()
 	active_emp_flags -= MOB_EMP_STUN
 	LoseTarget()
-	toggle_ai(AI_OFF)
+	toggle_ai(AI_ON)
 
 /mob/living/simple_animal/hostile/proc/do_emp_berserk(intensity)
 	if(!intensity)

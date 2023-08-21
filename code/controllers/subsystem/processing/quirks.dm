@@ -40,8 +40,30 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Master Martial Artist", "Fists of Noodle"),
 			list("Master Martial Artist", "Sure Strike"),
 			list("Heavy Sleeper","Can Not Sleep"),
-			list("Dead Eye", "Straight Shooter", "Poor Aim")
-			)
+			list("Dead Eye", "Straight Shooter", "Poor Aim"),
+			list("Beast Friend - Rats", "Beast Master - Rats"),
+			list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
+			list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
+			list("Pacifist", "Fists of Noodle"),
+			list("Pacifist", "Melee - Gentle"),
+			list("Pacifist", "Melee - Wimpy"),
+			list("Pacifist", "Poor Aim"),
+			list("Pacifist", "Fat-Fingered"),
+			list("Speed Walker", "Mobility - Can not Run"),
+			list("Zoomies", "Zoomies - Super"),
+			list("Wasteland Wizard", "Melee - Big Leagues"),
+			list("Wasteland Wizard", "Melee - Little Leagues"),
+			list("Wasteland Wizard", "Bolt Worker"),
+			list("Wasteland Wizard", "Bow Trained"),
+			list("Wasteland Wizard", "Dead Eye"),
+			list("Wasteland Wizard", "Straight Shooter"),
+			list("Wasteland Wizard", "Sure Strike"),
+			list("Wasteland Wizard", "Master Martial Artist"),
+			list("Wasteland Wizard", "Trained Grappler"),
+			list("Wasteland Wizard", "Fists of Iron"),
+			list("Wasteland Wizard", "Fists of Steel"),
+			list("Wasteland Wizard", "Mute")
+		)
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()

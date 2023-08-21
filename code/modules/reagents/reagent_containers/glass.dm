@@ -1,5 +1,6 @@
 /obj/item/reagent_containers/glass
 	name = "glass"
+	w_class = WEIGHT_CLASS_SMALL //1984, makes it so you can only fit small beakers into wallets
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
 	volume = 50
@@ -121,6 +122,7 @@
 	name = "beaker"
 	desc = "A beaker. It can hold up to 60 units. Unable to withstand extreme pHes."
 	icon = 'icons/obj/chemical.dmi'
+	w_class = WEIGHT_CLASS_TINY
 	volume = 60
 	icon_state = "beaker"
 	item_state = "beaker"
@@ -173,6 +175,7 @@
 	name = "Atomic Red bottle"
 	desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk. Unable to withstand extreme pH, its a soda bottle."
 	icon_state = "bigred"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/glass_dish
 	name = "glass dish"
@@ -188,6 +191,7 @@
 	custom_materials = list(/datum/material/glass = 2500)
 	icon_state = "flasklarge"
 	volume = 80
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/flask
 	name = "small flask"
@@ -203,6 +207,7 @@
 	icon_state = "flaskspouty"
 	possible_transfer_amounts = list(1,2,3,4,5,10,15,20,25,30,50,100,120)
 	volume = 120
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/large
 	name = "large beaker"
@@ -213,6 +218,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,40,50,60,120)
 	container_HP = 3
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/plastic
 	name = "x-large beaker"
@@ -224,6 +230,7 @@
 	possible_transfer_amounts = list(5,10,15,20,25,30,40,50,60,120,180)
 	container_flags = TEMP_WEAK|APTFT_ALTCLICK|APTFT_VERB
 	cached_icon = "beakerlarge"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/meta
 	name = "metamaterial beaker"
@@ -234,6 +241,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,40,50,60,120,200,240)
 	container_flags = APTFT_ALTCLICK|APTFT_VERB
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/noreact
 	name = "cryostasis beaker"
@@ -246,6 +254,7 @@
 	amount_per_transfer_from_this = 10
 	container_flags = APTFT_ALTCLICK|APTFT_VERB
 	container_HP = 10//shouldn't be needed
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/bluespace
 	name = "bluespace beaker"
@@ -258,6 +267,7 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50,100,300)
 	container_HP = 5
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/glass/beaker/cryoxadone
 	list_reagents = list(/datum/reagent/medicine/cryoxadone = 30)
@@ -299,6 +309,7 @@
 	custom_price = PRICE_CHEAP_AS_FREE
 	list_reagents = list(/datum/reagent/water = 49.5, /datum/reagent/fluorine = 0.5)//see desc, don't think about it too hard
 	custom_materials = list(/datum/material/glass=0)
+	hitsound = 'sound/effects/bottlecrinkle.ogg'
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,50)
@@ -411,7 +422,7 @@
 			else
 				to_chat(user, span_notice("You fill [src] to the brim."))
 		return TRUE
-	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
+	if(I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 	if(I.juice_results || I.grind_results)
 		if(user.transferItemToLoc(I, src))

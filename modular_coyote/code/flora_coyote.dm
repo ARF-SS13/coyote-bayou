@@ -515,3 +515,612 @@
 	icon = 'icons/turf/walls/mountain_wall.dmi'
 	icon_state = "snow"
 	anchored = TRUE
+
+//Flora from Chompers.
+
+//Trees
+/obj/structure/flora/tree/chomp/palmtreeb
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreeb1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtreeb1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreech
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/palmtreech1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmtree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtreeb
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtreeb1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/mpalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "mpalmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree1
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree3
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree3"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/spalmtree4
+	name = "palm tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "spalmtree4"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree
+	name = "tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree1
+	name = "tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/desert_tree3
+	name = "tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "desert_tree3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/large_boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "large_boulder"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/tall_boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "tall_boulder"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/boulder
+	name = "large rock"
+	desc = "best not to be caught between it."
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "boulder"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus1
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus2
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/chomp/lcactus3
+	name = "cactus"
+	desc = "Jump on it!"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "lcactus3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmrs_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump1
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palmls_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump2
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
+	icon_state = "palml_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmstump3
+	name = "palm stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "palmr_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/desertstump
+	name = "tree stump"
+	desc = "kinda stumpy"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "desert_stump"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant0
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "potplant0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant1
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "potplant1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/potplant2
+	name = "Potted Plant"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "potplant2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket0
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket1
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket2
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket3
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket4
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket4"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket5
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket5"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/thicket6
+	name = "thicket"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "thicket6"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub0
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub1
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub2
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub3
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub4
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub4"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrub5
+	name = "shrub"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrub5"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush0
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "bush0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush1
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "bush1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush2
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "bush2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush3
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "bush3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bush5
+	name = "bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "bush5"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti0
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "barrelcacti0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti1
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "barrelcacti1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti2
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "barrelcacti2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/barrelcacti3
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "barrelcacti3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill0
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "anthill0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill1
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "anthill1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/anthill2
+	name = "ant hill"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "anthill2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy0
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "palmy0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy1
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "palmy1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmy2
+	name = "palm bush"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "palmy2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber0
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrubber0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber1
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrubber1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/shrubber2
+	name = "shrubbery"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "shrubber2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti0
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "lbarrelcacti0"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti1
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "lbarrelcacti1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/lbarrelcacti2
+	name = "barrel cactus"
+	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
+	icon_state = "lbarrelcacti2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmuria
+	name = "palmuria"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "palmuria"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/palmuria1
+	name = "palmuria"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "palmuria1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lribs
+	name = "ribs"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lribs"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lribs1
+	name = "ribs"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lribs1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lskull
+	name = "skull"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lskull"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lskull_w
+	name = "forested skull"
+	desc = "\"If we are really dying, let us hear the rattle in our throats and feel cold in the extremities; if we are alive, let us go about our business.\" <br> <br> Beast, what were you, how did you die?"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lskull_wood"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lbone
+	name = "bone"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lbone"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lrock"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock1
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lrock1"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock2
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lrock2"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock3
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lrock3"
+	anchored = TRUE
+
+/obj/structure/flora/chomp/bones/lrock4
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/desert_props_64x64.dmi'
+	icon_state = "lrock4"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/thistle
+	name = "thistle"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "thistle"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/blue
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purple
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/purplewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_purplewhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/redwhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_redwhite"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/petunia/bluewhite
+	name = "Petunia"
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "petunia_bluewhite"
+	anchored = TRUE
+
+/obj/structure/flora/tree/pink_tree
+	name = "Pink tree"
+	icon = 'modular_coyote/icons/objects/trees.dmi'
+	icon_state = "pink_tree"
+	anchored = TRUE
+
+
+//flowers
+
+/obj/structure/flora/wild_plant/flower/orange
+	name = "orange flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_orange"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/white
+	name = "white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_white"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_two
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/red_two
+	name = "red flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_red2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/blue_two
+	name = "blue flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_blue2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/purple_two
+	name = "purple flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_purple2"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/yellowhite
+	name = "yellow and white flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_yw"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_three
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink3"
+	anchored = TRUE
+
+/obj/structure/flora/wild_plant/flower/pink_four
+	name = "pink flowers"
+	icon = 'modular_coyote/icons/objects/flowers.dmi'
+	icon_state = "flower_pink4"
+	anchored = TRUE

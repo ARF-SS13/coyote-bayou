@@ -13,6 +13,8 @@
 	medhud.add_to_hud(src)
 	var/datum/atom_hud/data/client/clienthud = GLOB.huds[DATA_HUD_CLIENT]
 	clienthud.add_to_hud(src)
+	var/datum/atom_hud/data/human/tail/tailhud = GLOB.huds[TAIL_HUD_DATUM]
+	tailhud.add_to_hud(src)
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
@@ -28,6 +30,8 @@
 	med_hud_set_status()
 
 /mob/living/Destroy()
+	if(mind)
+		mind.RemoveAllSpells()
 	end_parry_sequence()
 	stop_active_blocking()
 	if(LAZYLEN(status_effects))
@@ -576,12 +580,11 @@
 	med_hud_set_health()
 	med_hud_set_status()
 
-//proc used to ressuscitate a mob
-/mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE)
+/mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE, force_revive = FALSE)
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive)
-	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
+	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
 		suiciding = 0
@@ -1000,10 +1003,45 @@
 	return loc_temp
 
 /mob/living/proc/get_standard_pixel_x_offset(lying = 0)
+	if(client?.prefs?.custom_pixel_x)
+		return client.prefs.custom_pixel_x
 	return initial(pixel_x)
 
 /mob/living/proc/get_standard_pixel_y_offset(lying = 0)
+	if(client?.prefs?.custom_pixel_y)
+		return client.prefs.custom_pixel_y
 	return initial(pixel_y)
+
+/mob/living/verb/change_my_offsets()
+	set name = "Pixel Offsets"
+	set category = "IC"
+
+	if(!client)
+		return
+	if(!client.prefs)
+		return
+	var/px = client.prefs.custom_pixel_x
+	var/py = client.prefs.custom_pixel_y
+	var/defult = "[px], [py]"
+	var/newoffsets = input(src, "Change how your character is positioned on a tile by default.\n\
+								The first number is how many pixels right (or down if negative) to be shifted.\n\
+								The second number is how many pixels up (or down is negative) to be shifted.", "Perspective!", defult) as text|null
+	if(!newoffsets)
+		to_chat(src, "Offsets unchanged.")
+		return
+	var/list/offsets = splittext(newoffsets, ",")
+	if(LAZYLEN(offsets) != 2)
+		to_chat(src, "Offsets unchanged.")
+		return
+	var/pxo = sanitize_integer(text2num(offsets[1]), PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	var/pyo = sanitize_integer(text2num(offsets[2]), PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	client.prefs.custom_pixel_x	= pxo
+	client.prefs.custom_pixel_y	= pyo
+	pixel_x = pxo
+	pixel_y = pyo
+
+	to_chat(src, "Offsets changed to [pxo], [pyo].")
+	client.prefs.save_character()
 
 /mob/living/cancel_camera()
 	..()
@@ -1110,22 +1148,22 @@
 		G.Recall()
 		to_chat(G, span_holoparasite("Your summoner has changed form!"))
 
-/mob/living/rad_act(amount)
+/mob/living/rad_act(amount, skip_protection = FALSE)
 	. = ..()
 
 	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION))
-		return
-	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
-		return
+		if(!skip_protection)
+			return
 
-	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
+	// amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
 	
-	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
-		amount *= 0.25
-	else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
-		amount *= 0.5
+	if(!skip_protection)
+		if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
+			amount *= 0.25
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
+			amount *= 0.5
 
-	var/blocked = getarmor(null, "rad")
+	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 	if(HAS_TRAIT(src,TRAIT_RADIMMUNE)) //prevents you from being burned by rads if radimmune but you can still accumulate
 		return
@@ -1339,6 +1377,7 @@
 	update_stamina()
 	update_mobility()
 	if(healing_chems)
+		reagents.remove_all(999)
 		reagents.add_reagent_list(healing_chems)
 
 /mob/living/canface()
@@ -1464,3 +1503,14 @@
 
 /mob/living/proc/update_water()
 	return
+
+//Coyote Add
+/mob/living/proc/despawn()
+	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
+	for(var/i in contents)
+		var/atom/movable/content = i
+		dat += " [content.type]"
+	log_game(dat)
+	ghostize()
+	qdel(src)
+//End Coyote Add

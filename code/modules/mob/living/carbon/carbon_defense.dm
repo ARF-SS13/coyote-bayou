@@ -64,8 +64,9 @@
 	if(incapacitated())
 		return
 	if (get_active_held_item())
-		if (HAS_TRAIT_FROM(src, TRAIT_AUTO_CATCH_ITEM,RISING_BASS_TRAIT))
+		if (HAS_TRAIT(src, TRAIT_AUTO_CATCH_ITEM))
 			visible_message(span_warning("[src] chops [I] out of the air!"))
+			adjustStaminaLossBuffered(8)
 			return TRUE
 		return
 	I.attack_hand(src)
@@ -74,8 +75,12 @@
 		throw_mode_off()
 		return TRUE
 
-/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
-	var/totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+/mob/living/carbon/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
+	var/totitemdamage
+	if(damage_override)
+		totitemdamage = damage_override
+	else
+		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
 	var/impacting_zone = (user == src)? check_zone(user.zone_selected) : ran_zone(user.zone_selected)
 	var/list/block_return = list()
 	if((user != src) && (mob_run_block(I, totitemdamage, "the [I]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, impacting_zone, block_return) & BLOCK_SUCCESS))
@@ -87,7 +92,7 @@
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
 	send_item_attack_message(I, user, affecting.name, affecting, totitemdamage)
 	I.do_stagger_action(src, user, totitemdamage)
-	if(I.force)
+	if(totitemdamage)
 		apply_damage(totitemdamage, I.damtype, affecting, wound_bonus = I.wound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness()) //CIT CHANGE - replaces I.force with totitemdamage
 		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
 			var/basebloodychance = affecting.brute_dam + totitemdamage

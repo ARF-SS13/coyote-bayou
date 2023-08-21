@@ -45,7 +45,7 @@
 /mob/living/simple_animal/hostile/russian/ranged/mosin
 	loot = list(/obj/effect/mob_spawn/human/corpse/russian/ranged,
 				/obj/item/gun/ballistic/rifle/mosin)
-	casingtype = /obj/item/ammo_casing/a762
+	casingtype = /obj/item/ammo_casing/a308
 
 /mob/living/simple_animal/hostile/russian/ranged/trooper
 	icon_state = "russianrangedelite"

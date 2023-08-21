@@ -6,6 +6,11 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 
+/obj/item/clothing/under/rank/captain/pilot
+	desc = "A blue jumpsuit with gold markings. One shoulder stripe reads \"Nash\" while the other reads \"Pilot\"."
+	name = "pilot's jumpsuit"
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/under/rank/captain/util
 	name = "Command Utiltiy Uniform"
 	desc = "A utility uniform for command personnel."

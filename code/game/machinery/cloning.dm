@@ -90,6 +90,8 @@
 	if(is_operational() && mob_occupant)
 		if(mob_occupant.stat != DEAD)
 			. += "Current clone cycle is [round(get_completion())]% complete."
+	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
+		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
 
 /obj/machinery/clonepod/return_air()
 	// We want to simulate the clone not being in contact with
@@ -536,7 +538,7 @@
 //Experimental cloner; clones a body regardless of the owner's status, letting a ghost control it instead
 /obj/machinery/clonepod/experimental
 	name = "experimental cloning pod"
-	desc = "An ancient cloning pod. It seems to be an early prototype of the experimental cloners used in Nanotrasen Stations."
+	desc = "An ancient cloning pod. It seems to be an early prototype of the experimental cloners used in US Government Stations."
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = null

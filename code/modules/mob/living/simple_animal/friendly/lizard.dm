@@ -7,7 +7,7 @@
 	speak_emote = list("hisses")
 	health = 5
 	maxHealth = 5
-	faction = list("Lizard")
+	faction = list("Lizard", "neutral")
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	melee_damage_lower = 1
@@ -30,7 +30,7 @@
 
 /mob/living/simple_animal/hostile/lizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/mob_holder, worn_state = "lizard", inv_slots = ITEM_SLOT_HEAD) //you can hold lizards now.
+	AddElement(/datum/element/mob_holder, worn_state = "lizard", inv_slots = INV_SLOTBIT_HEAD) //you can hold lizards now.
 
 /mob/living/simple_animal/hostile/lizard/CanAttack(atom/the_target)//Can we actually attack a possible target?
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it

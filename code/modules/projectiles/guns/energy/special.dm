@@ -4,13 +4,14 @@
 	icon_state = "ionrifle"
 	item_state = "ionrifle"	//so the human update icon uses the icon_state instead.
 	can_flashlight = 1
-	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
 	ammo_x_offset = 3
 	flight_x_offset = 17
 	flight_y_offset = 9
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = RIFLE_RECOIL(1.5, 1.5)
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -19,11 +20,24 @@
 	name = "ion carbine"
 	desc = "The MK.II Prototype Ion Projector is a lightweight carbine version of the larger ion rifle, built to be ergonomic and efficient."
 	icon_state = "ioncarbine"
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	item_state = "ioncarbine4"
+	ammo_type = list(/obj/item/ammo_casing/energy/ion/carbine)
 	ammo_x_offset = 2
 	flight_x_offset = 18
 	flight_y_offset = 11
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = CARBINE_RECOIL(1.5, 1.5)
+
+/obj/item/gun/energy/ionrifle/compact // needs a mob sprite assigned, 5/5/2023; this is intended to be a roundstart pistol in the same tier as the Wattz 1k pistol
+	name = "pulse pistol"
+	desc = "This weapon makes a continual and quiet hum, even when the power cell is removed. Written on the side is 'Type III Pulse Projector,' whatever that means."
+	icon_state = "tesla"
+	item_state = "tesla"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = HANDGUN_RECOIL(1.5, 1.5)
 
 /obj/item/gun/energy/decloner
 	name = "biological demolecularisor"
@@ -32,6 +46,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/declone)
 	pin = null
 	ammo_x_offset = 1
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
 
 /obj/item/gun/energy/decloner/update_overlays()
 	..()
@@ -48,6 +64,8 @@
 	modifystate = 1
 	ammo_x_offset = 1
 	selfcharge = EGUN_SELFCHARGE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/meteorgun
 	name = "meteor gun"
@@ -59,6 +77,8 @@
 	cell_type = "/obj/item/stock_parts/cell/potato"
 	clumsy_check = 0 //Admin spawn only, might as well let clowns use it.
 	selfcharge = EGUN_SELFCHARGE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/meteorgun/pen
 	name = "meteor pen"
@@ -68,7 +88,8 @@
 	item_state = "pen"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	w_class = WEIGHT_CLASS_TINY
+	weapon_class = WEAPON_CLASS_TINY
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/mindflayer
 	name = "\improper Mind Flayer"
@@ -77,16 +98,18 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/mindflayer)
 	ammo_x_offset = 2
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow
 	name = "mini energy crossbow"
 	desc = "A weapon favored by syndicate stealth specialists."
 	icon_state = "crossbow"
 	item_state = "crossbow"
-	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=2000)
 	silenced = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	obj_flags = 0
 	overheat_time = 20
@@ -101,15 +124,17 @@
 	icon_state = "crossbow_halloween"
 	item_state = "crossbow"
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/halloween)
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	name = "energy crossbow"
 	desc = "A reverse engineered weapon using syndicate technology. This thing seems incredibly unwieldly, and seems to be using similar internals to the Proto-Kinetic Accelerator. It might not play nice when brought near weapons similar to it."
 	icon_state = "crossbowlarge"
-	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=4000)
 	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = null
 	unique_frequency = FALSE
@@ -125,7 +150,8 @@
 	force = 12
 	sharpness = SHARP_EDGED
 	can_charge = 0
-
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	heat = 3800
 	usesound = list('sound/items/welder.ogg', 'sound/items/welder2.ogg')
 	tool_behaviour = TOOL_WELDER
@@ -164,6 +190,15 @@
 /obj/item/gun/energy/plasmacutter/use(amount)
 	return cell.use(amount * 100)
 
+/obj/item/gun/energy/plasmacutter/use_tool(atom/target, mob/living/user, delay, amount=1, volume=0, datum/callback/extra_checks, skill_gain_mult = STD_USE_TOOL_MULT)
+
+	if(amount)
+		target.add_overlay(GLOB.welding_sparks)
+		. = ..()
+		target.cut_overlay(GLOB.welding_sparks)
+	else
+		. = ..(amount=1)
+
 /obj/item/gun/energy/plasmacutter/adv
 	name = "advanced plasma cutter"
 	icon_state = "adv_plasmacutter"
@@ -181,6 +216,8 @@
 	var/obj/effect/portal/p_blue
 	var/obj/effect/portal/p_orange
 	var/atmos_link = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/wormhole_projector/update_icon_state()
 	icon_state = "[initial(icon_state)][current_firemode_index]"
@@ -250,6 +287,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)
 	can_charge = 0
 	use_cyborg_cell = 1
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/printer/ComponentInitialize()
 	. = ..()
@@ -265,11 +304,15 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
 	cell_type = "/obj/item/stock_parts/cell/high"
 	pin = null
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
 	desc = "A weapon that can only be used to its full potential by the truly robust."
 	pin = /obj/item/firing_pin
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/instakill
 	name = "instakill rifle"
@@ -278,18 +321,24 @@
 	desc = "A specialized ASMD laser-rifle, capable of flat-out disintegrating most targets in a single hit."
 	ammo_type = list(/obj/item/ammo_casing/energy/instakill)
 	force = 60
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/instakill/red
 	desc = "A specialized ASMD laser-rifle, capable of flat-out disintegrating most targets in a single hit. This one has a red design."
 	icon_state = "instagibred"
 	item_state = "instagibred"
 	ammo_type = list(/obj/item/ammo_casing/energy/instakill/red)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/instakill/blue
 	desc = "A specialized ASMD laser-rifle, capable of flat-out disintegrating most targets in a single hit. This one has a blue design."
 	icon_state = "instagibblue"
 	item_state = "instagibblue"
 	ammo_type = list(/obj/item/ammo_casing/energy/instakill/blue)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/instakill/emp_act() //implying you could stop the instagib
 	return
@@ -302,6 +351,8 @@
 	icon_state = "gravity_gun"
 	pin = null
 	var/power = 4
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/gravity_gun/security
 	pin = /obj/item/firing_pin
@@ -317,6 +368,8 @@
 	cell_type = /obj/item/stock_parts/cell/super
 	ammo_type = list(/obj/item/ammo_casing/energy/emitter)
 	automatic_charge_overlays = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/emitter/update_icon_state()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
@@ -332,3 +385,5 @@
 	icon_state = "decloner"
 	no_pin_required = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/pickle)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY

@@ -5,7 +5,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tanks_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tanks_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	// worn_icon = 'icons/mob/clothing/back.dmi' //since these can also get thrown into suit storage slots. if something goes on the belt, set this to null.
 	hitsound = 'sound/weapons/smash.ogg'
 	pressure_resistance = ONE_ATMOSPHERE * 5
@@ -265,12 +265,15 @@
 	if(!air_contents)
 		return null
 
+	/*
 	var/tank_pressure = air_contents.return_pressure()
 	var/actual_distribute_pressure = clamp(tank_pressure, 0, distribute_pressure)
 
 	var/moles_needed = actual_distribute_pressure*volume_to_return/(R_IDEAL_GAS_EQUATION*air_contents.return_temperature())
-
+	
 	return remove_air(moles_needed)
+	*/
+	return
 
 /obj/item/tank/process()
 	//Allow for reactions

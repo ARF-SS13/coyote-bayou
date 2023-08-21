@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/trog
 	name = "trog"
-	desc = "A human who has mutated and regressed back to a primal, cannibalistic state."
+	desc = "A human who has mutated and regressed back to a primal, cannibalistic state. Rumor says they're poisonous as well. Want to find out? "
 	icon = 'icons/fallout/mobs/monsters/tunnelers.dmi'
 	icon_state = "troglodyte"
 	icon_living = "troglodyte"
@@ -63,7 +63,6 @@
 	speed = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 32
-	armour_penetration = 0.25
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'

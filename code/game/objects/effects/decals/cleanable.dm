@@ -13,11 +13,11 @@
 	if (random_icon_states && (icon_state == initial(icon_state)) && length(random_icon_states) > 0)
 		icon_state = pick(random_icon_states)
 	create_reagents(300, NONE, NO_REAGENTS_VALUE)
-	if(loc && isturf(loc))
+	/*if(loc && isturf(loc))
 		for(var/obj/effect/decal/cleanable/C in loc)
 			if(C != src && C.type == type && !QDELETED(C))
 				if (replace_decal(C))
-					return INITIALIZE_HINT_QDEL
+					return INITIALIZE_HINT_QDEL*/
 
 	if(LAZYLEN(diseases))
 		var/list/datum/disease/diseases_to_add = list()

@@ -1,18 +1,17 @@
 /datum/weather/acid_rain
 	name = "acid rain"
 	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
-	probability = 2
+	probability = 5
 
-	telegraph_duration = 700
+	telegraph_duration = 70 SECONDS
 	telegraph_overlay = "acid_rain"
 	telegraph_message = span_userdanger("Thunder rumbles far above. You hear droplets land around you, and audible fizzling can be heard as they make contact.. acid rain is coming.")
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"
 	weather_overlay = "acid_rain"
-	weather_duration_lower = 1200
-	weather_duration_upper = 2400
-	weather_sound = 'sound/ambience/acidrain_mid.ogg'
+	weather_duration_lower = 2 MINUTES
+	weather_duration_upper = 4 MINUTES
 
 	end_duration = 100
 	end_message = span_userdanger("The downpour gradually slows to a light shower. It should be safe outside now.")
@@ -28,6 +27,9 @@
 	barometer_predictable = TRUE
 
 	carbons_only = TRUE
+
+	sound_ao_type = /datum/looping_sound/acid_rain
+	sound_ai_type = /datum/looping_sound/indoor_rain_sounds
 
 /datum/weather/acid_rain/weather_act(mob/living/L)
 //	var/resist = L.getarmor(null, "acid")

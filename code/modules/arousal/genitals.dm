@@ -2,15 +2,21 @@
 	color = "#fcccb3"
 	w_class = WEIGHT_CLASS_SMALL
 	organ_flags = ORGAN_NO_DISMEMBERMENT|ORGAN_EDIBLE
+	var/associated_has = CS_MISC // for cockstring stuff
 	var/shape
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
+	var/genital_visflags
+	/// What flag is this associated with?
+	var/hide_flag = HIDE_MISC
 	var/masturbation_verb = "masturbate"
 	var/orgasm_verb = "cumming" //present continous
 	var/arousal_verb = "You feel aroused"
 	var/unarousal_verb = "You no longer feel aroused"
 	var/fluid_transfer_factor = 0 //How much would a partner get in them if they climax using this?
 	var/size = 2 //can vary between num or text, just used in icon_state strings
+	var/prev_size = 2 // the last size we were, for determining resizedness. should always be a number
+	var/cached_size = 2 // our current size, in numberform
 	var/datum/reagent/fluid_id = null
 	var/fluid_max_volume = 50
 	var/fluid_efficiency = 1
@@ -33,12 +39,8 @@
 	linked_organ = null
 	. = ..()
 
-/obj/item/organ/genital/proc/set_aroused_state(new_state)
-	if(!(genital_flags & GENITAL_CAN_AROUSE))
-		return FALSE
-	if(!((HAS_TRAIT(owner,TRAIT_PERMABONER) && !new_state) || HAS_TRAIT(owner,TRAIT_NEVERBONER) && new_state))
-		aroused_state = new_state
-	return aroused_state
+/obj/item/organ/genital/proc/update_size()
+	return
 
 /obj/item/organ/genital/proc/update()
 	if(QDELETED(src))
@@ -48,102 +50,348 @@
 	if(genital_flags & UPDATE_OWNER_APPEARANCE && owner && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
-	if(linked_organ_slot || (linked_organ && !owner))
-		update_link()
+	// if(linked_organ_slot || (linked_organ && !owner))
+	// 	update_link()
+
+/obj/item/organ/genital/proc/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
+	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
 
 //exposure and through-clothing code
 /mob/living/carbon
 	var/list/exposed_genitals = list() //Keeping track of them so we don't have to iterate through every genitalia and see if exposed
 
 /obj/item/organ/genital/proc/is_exposed()
-	if(!owner || genital_flags & (GENITAL_INTERNAL|GENITAL_HIDDEN))
+	if(!owner || CHECK_BITFIELD(genital_flags,GENITAL_INTERNAL) || CHECK_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN))
 		return FALSE
-	if(genital_flags & GENITAL_UNDIES_HIDDEN && ishuman(owner))
+	if(CHECK_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE))
+		return TRUE
+
+	. = TRUE // we're visible, unless something is hiding us
+	// I am looking at your underwear *respectfully*
+	if(CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_UNDERWEAR) && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		if(!(NO_UNDERWEAR in H.dna.species.species_traits))
 			var/datum/sprite_accessory/underwear/top/T = H.hidden_undershirt ? null : GLOB.undershirt_list[H.undershirt]
 			var/datum/sprite_accessory/underwear/bottom/B = H.hidden_underwear ? null : GLOB.underwear_list[H.underwear]
-			if(zone == BODY_ZONE_CHEST ? (T?.covers_chest || B?.covers_chest) : (T?.covers_groin || B?.covers_groin))
-				return FALSE
-	if(genital_flags & GENITAL_THROUGH_CLOTHES)
-		return TRUE
+			switch(slot)
+				if(ORGAN_CHEST_GENITALS)
+					if(T?.covers_chest)
+						return FALSE
+					if(B?.covers_chest)
+						return FALSE
+				if(ORGAN_BELLY_GENITALS)
+					if(T?.covers_belly)
+						return FALSE
+					if(B?.covers_belly)
+						return FALSE
+				if(ORGAN_GROIN_GENITALS)
+					if(T?.covers_groin)
+						return FALSE
+					if(B?.covers_groin)
+						return FALSE
+	if(CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_CLOTHING) && ishuman(owner))
+		switch(slot) //update as more genitals are added Okay - lagg
+			if(ORGAN_BELLY_GENITALS, ORGAN_CHEST_GENITALS)
+				return owner.is_chest_exposed()
+			if(ORGAN_GROIN_GENITALS) // heard it here first folks, belly is in the groin // why do my stupid comments stop being relevant just one PR after I make them
+				return owner.is_groin_exposed()
 
-	switch(zone) //update as more genitals are added
-		if(BODY_ZONE_CHEST)
-			return owner.is_chest_exposed()
-		if(BODY_ZONE_PRECISE_GROIN)
-			return owner.is_groin_exposed()
+/// fed all the flags at once on init, fed one at a time when poked by the verb
+/obj/item/organ/genital/proc/update_genital_visibility(gunt_flags, update = TRUE, initting = FALSE)
+	if(!isnum(gunt_flags))
+		gunt_flags = text2num(gunt_flags)
+	if(initting)
+		owner?.exposed_genitals -= src
+		genital_visflags = gunt_flags
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ALWAYS_VISIBLE) || (!CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_CLOTHING) && !CHECK_BITFIELD(genital_visflags, GENITAL_RESPECT_UNDERWEAR)))
+			owner?.exposed_genitals |= src
+	else
+		//if(IS_GENITAL_VIS_OVERRIDE(gunt_flags))
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ALWAYS_HIDDEN))
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
+			owner?.exposed_genitals -= src
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ALWAYS_VISIBLE))
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
+			owner?.exposed_genitals |= src
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_NO_OVERRIDE)) // i LOVE the hit new anime Genital No Override!
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN)
+			owner?.exposed_genitals -= src
+		// here be layering shit
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ABOVE_UNDERWEAR))
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_ABOVE_CLOTHING))
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			ENABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_UNDER_UNDERWEAR))
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_UNDERWEAR)
+			DISABLE_BITFIELD(genital_visflags,GENITAL_ABOVE_CLOTHING)
+			ENABLE_BITFIELD(genital_visflags,GENITAL_UNDER_UNDERWEAR)
+		
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_RESPECT_UNDERWEAR))
+			TOGGLE_BITFIELD(genital_visflags,GENITAL_RESPECT_UNDERWEAR)
+		if(CHECK_BITFIELD(gunt_flags, GENITAL_RESPECT_CLOTHING))
+			TOGGLE_BITFIELD(genital_visflags,GENITAL_RESPECT_CLOTHING)
 
-/obj/item/organ/genital/proc/toggle_visibility(visibility, update = TRUE)
-	genital_flags &= ~(GENITAL_THROUGH_CLOTHES|GENITAL_OVER_CLOTHES|GENITAL_HIDDEN|GENITAL_UNDIES_HIDDEN)
-	if(owner)
-		owner.exposed_genitals -= src
-	switch(visibility)
-		if(GEN_VISIBLE_ALWAYS)
-			genital_flags |= GENITAL_THROUGH_CLOTHES
-			if(owner)
-				owner.exposed_genitals += src
-		if(GEN_VISIBLE_OVERCLOTHES)
-			genital_flags |= GENITAL_OVER_CLOTHES
-		if(GEN_VISIBLE_NO_UNDIES)
-			genital_flags |= GENITAL_UNDIES_HIDDEN
-		if(GEN_VISIBLE_NEVER)
-			genital_flags |= GENITAL_HIDDEN
-
-	if(update && owner && ishuman(owner)) //recast to use update genitals proc
+	if(update && ishuman(owner)) //recast to use update genitals proc
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
 
+/// Allows you to rearrange your guts
 /mob/living/carbon/verb/toggle_genitals()
-	set category = "IC"
-	set name = "Expose/Hide genitals"
-	set desc = "Allows you to toggle which genitals should show through clothes or not."
+	set category = "Private"
+	set name = "Private Panel"
+	set desc = "Allows you to modify various aspects of your jiggly bits and underwear."
+	show_genital_panel()
 
+/mob/living/carbon/proc/show_genital_panel()
 	var/list/genital_list = list()
 	for(var/obj/item/organ/genital/G in internal_organs)
-		if(!CHECK_BITFIELD(G.genital_flags, GENITAL_INTERNAL))
-			genital_list += G
-	if(!genital_list.len) //There is nothing to expose
-		return
-	//Full list of exposable genitals created
-	var/obj/item/organ/genital/picked_organ
-	picked_organ = input(src, "Choose which genitalia to expose/hide", "Expose/Hide genitals") as null|anything in genital_list
-	if(picked_organ && (picked_organ in internal_organs))
-		var/picked_visibility = input(src, "Choose visibility setting", "Expose/Hide genitals") as null|anything in GLOB.genitals_visibility_toggles
-		if(picked_visibility && picked_organ && (picked_organ in internal_organs))
-			picked_organ.toggle_visibility(picked_visibility)
-	return
+		genital_list |= G
+	var/list/dat = list("<center>")
+	/// woo lookit me im a web designer from the early 2010s!
+	dat += "<table class='table_genital_list'>"
+	dat += "<tr class='talign'>"
+	dat += "<td class='talign'>"
+	dat += "<div class='gen_name'>Modify Unmentionables</div>"
+	dat += "</td></tr>"
+	dat += "<tr class='talign'><td class='talign'>"
+	dat += "<div class='gen_container'>"
+	for(var/obj/item/organ/genital/nad in genital_list)
+		dat += "<div class='gen_setting_name'>Your [nad.name]:</div>"
+		dat += {"<a 
+					class='clicky' 
+					href='
+						?src=[REF(nad)];
+						action=open_genital_window'>
+							Modify?
+				</a>"}
+	dat += "<div class='gen_setting_name'>Layering and Visibility:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_genital_layering'>
+						Modify?
+			</a>"}
+	dat += "<div class='gen_setting_name'>Underwear:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_sockdrawer'>
+						Modify?
+			</a>"}
+	dat += "<div class='gen_setting_name'>See/Unsee Genitals:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_genital_hide'>
+						Modify?
+			</a>"}
+	dat += "</div>"
+	dat += "</td></tr>"
+	dat += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	dat += "</center>"
 
-/mob/living/carbon/verb/toggle_arousal_state()
-	set category = "IC"
-	set name = "Toggle genital arousal"
-	set desc = "Allows you to toggle which genitals are showing signs of arousal."
-	var/list/genital_list = list()
-	for(var/obj/item/organ/genital/G in internal_organs)
-		if(G.genital_flags & GENITAL_CAN_AROUSE)
-			genital_list += G
-	if(!genital_list.len) //There's nothing that can show arousal
-		return
-	var/obj/item/organ/genital/picked_organ
-	picked_organ = input(src, "Choose which genitalia to toggle arousal on", "Set genital arousal", null) in genital_list
-	if(picked_organ)
-		var/original_state = picked_organ.aroused_state
-		picked_organ.set_aroused_state(!picked_organ.aroused_state)
-		if(original_state != picked_organ.aroused_state)
-			to_chat(src,span_userlove("[picked_organ.aroused_state ? picked_organ.arousal_verb : picked_organ.unarousal_verb]."))
-		else
-			to_chat(src,span_userlove("You can't make that genital [picked_organ.aroused_state ? "unaroused" : "aroused"]!"))
-		picked_organ.update_appearance()
-		update_body(TRUE)
-	return
+	winshow(src, "erp_window", TRUE)
+	var/datum/browser/popup = new(src, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 400, 500)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(src, "erp_window", src)
 
+/// returns a huge grody list thing
+/obj/item/organ/genital/proc/get_genital_panel()
+	if(!owner || !iscarbon(owner))
+		stack_trace("[src] genital menu called without an actual owner!")
+		return
+	var/anythingatall = FALSE
+	var/list/dat = list()
+	dat += {"<a 
+				class='clicky'
+				href='
+					?src=[REF(owner)];
+					action=genital_return'>
+						Go back
+			</a>"}
+	dat += "<table class='table_genital_list'>"
+	dat += "<tr class='talign'>"
+	dat += "<td class='talign'>"
+	dat += "<div class='gen_name'>[name]</div>"
+	dat += "</td></tr>"
+
+	dat += "<tr class='talign'><td class='talign'>"
+	dat += "<div class='gen_container'>"
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RECOLOR))
+		anythingatall = TRUE
+		dat += "<div class='gen_setting_name'>Color:</div>"
+		dat += {"<a 
+					class='clicky'
+					style='
+						background-color:[color]' 
+					href='
+						?src=[REF(src)];
+						action=recolor'>
+							[color]
+				</a>"}
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RESHAPE))
+		anythingatall = TRUE
+		dat += "<div class='gen_setting_name'>Shape:</div>"
+		dat += {"<a 
+					class='clicky' 
+					href='
+						?src=[REF(src)];
+						action=reshape'>
+							[shape]
+				</a>"}
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_RESIZE))
+		anythingatall = TRUE
+		dat += "<div class='gen_setting_name'>Size:</div>"
+		dat += {"<a 
+					class='clicky' 
+					href='
+						?src=[REF(src)];
+						action=resize'>
+							[size_kind()]
+				</a>"}
+	if(CHECK_BITFIELD(genital_flags, GENITAL_CAN_AROUSE))
+		anythingatall = TRUE
+		dat += "<div class='gen_setting_name'>Arousal:</div>"
+		dat += {"<a 
+					class='clicky' 
+					href='
+						?src=[REF(src)];
+						action=arouse'>
+							[arousal_term()]
+				</a>"}
+	if(!anythingatall)
+		dat += "<div class='gen_setting_name'>Nothing here! =3</div>"
+	dat += "</div>"
+	dat += "</td>"
+	dat += "</tr>"
+	dat += "</table>" // leaving this one out makes the save/undo line show up over the table, oddly enough!
+	dat += "<br>"
+	winshow(owner, "erp_window", TRUE)
+	var/datum/browser/popup = new(owner, "erp_window", "<div align='center'>Rearrange Your Guts</div>", 480, 640)
+	popup.set_content(dat.Join())
+	popup.open(FALSE)
+	onclose(owner, "erp_window", src)
+
+/obj/item/organ/genital/Topic(href, list/href_list)
+	. = ..()
+	if(owner != usr) // hope not
+		return
+	switch(href_list["action"])
+		if("open_genital_window")
+			get_genital_panel()
+			return
+		if("go_back") // return to the mob's own genital panel
+			if(iscarbon(usr))
+				var/mob/living/carbon/user = usr
+				user.show_genital_panel()
+			return
+		if("recolor")
+			var/new_color = input(usr, "Recolor:", "Character Preference","[color]") as color|null
+			if(new_color)
+				var/temp_hsv = RGBtoHSV(new_color)
+				if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+					color = sanitize_hexcolor(new_color, 6, TRUE)
+					to_chat(usr,span_notice("New color set!"))
+				else
+					to_chat(usr,span_danger("Invalid color! Your color is not bright enough."))
+			get_genital_panel()
+		if("resize")
+			resize_genital(usr)
+			get_genital_panel()
+		if("reshape")
+			reshape_genital(usr)
+			get_genital_panel()
+		if("change_vis_override")
+			var/list/genital_overrides = GENITAL_VIS_FLAG_LIST
+			var/new_visibility = input(usr, "Set a visibility override! If set, this part will always be visible/hidden, regardless of how covered it is.", "Character Preference", href_list["genital_flag"]) as null|anything in genital_overrides
+			if(new_visibility)
+				var/new_bit = genital_overrides[new_visibility]
+				update_genital_visibility(new_bit)
+			get_genital_panel()
+		if("change_vis_flag")
+			var/new_bitt = text2num(href_list["genital_flag"])
+			update_genital_visibility(new_bitt)
+			get_genital_panel()
+		if("arouse")
+			toggle_arousal()
+			get_genital_panel()
+	update()
+	
 
 /obj/item/organ/genital/proc/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	fluid_max_volume += modifier*2.5
-	fluid_rate += modifier/10
+	fluid_rate += modifier*0.1
 	return
 
-/obj/item/organ/genital/proc/update_size()
+/obj/item/organ/genital/proc/set_size(newsize)
+	// TODO: add in fluid shit in here (not actual shit)
+	return
+
+/// returns what kind of size this is
+/obj/item/organ/genital/proc/size_kind()
+	return "Size-[size]"
+
+/// Lets a user resize the genital, if possible
+/obj/item/organ/genital/proc/resize_genital(mob/user)
+	return
+
+/// Lets a user reshape the genital, if possible
+/obj/item/organ/genital/proc/reshape_genital(mob/user)
+	update()
+	return
+
+/// Erect/flaccid, drippy/dry, etc
+/obj/item/organ/genital/proc/arousal_term()
+	if(aroused_state)
+		return "Turned on"
+	return "Turned off"
+
+/// Do something when made (un)aroused
+/obj/item/organ/genital/proc/toggle_arousal(set_state, force_state)
+	var/old_arousal = aroused_state
+	if(!CHECK_BITFIELD(genital_flags, GENITAL_CAN_AROUSE))
+		aroused_state = FALSE
+		return FALSE
+	if(force_state)
+		aroused_state = !isnull(set_state) ? set_state : !aroused_state
+	else if(HAS_TRAIT(owner,TRAIT_PERMABONER) && !aroused_state)
+		aroused_state = TRUE
+	else if(HAS_TRAIT(owner,TRAIT_NEVERBONER) && aroused_state)
+		aroused_state = FALSE
+	else
+		aroused_state = !isnull(set_state) ? set_state : !aroused_state
+	if(old_arousal == aroused_state)
+		return aroused_state
+	switch(aroused_state)
+		if(TRUE)
+			on_arouse()
+		if(FALSE)
+			on_unarouse()
+	return aroused_state
+
+/// your butt sets people on fire when horny
+/obj/item/organ/genital/proc/on_arouse()
+	update_appearance()
+	owner?.update_body(TRUE)
+
+/// your womb eats a burger when unhorny
+/obj/item/organ/genital/proc/on_unarouse()
+	update_appearance()
+	owner?.update_body(TRUE)
+
+/// Extra genital panels for extra cool folks
+/obj/item/organ/genital/proc/extra_genital_panel()
 	return
 
 /obj/item/organ/genital/proc/update_appearance()
@@ -184,7 +432,7 @@
 	if(.)
 		update()
 		RegisterSignal(owner, COMSIG_MOB_DEATH, .proc/update_appearance)
-		if(genital_flags & GENITAL_THROUGH_CLOTHES)
+		if(genital_visflags & GENITAL_ALWAYS_VISIBLE)
 			owner.exposed_genitals += src
 
 /obj/item/organ/genital/Remove(special = FALSE)
@@ -217,6 +465,8 @@
 		give_genital(/obj/item/organ/genital/butt)
 	if(dna.features["has_cock"])
 		give_genital(/obj/item/organ/genital/penis)
+	if(dna.features["has_belly"])
+		give_genital(/obj/item/organ/genital/belly)
 
 /mob/living/carbon/human/proc/give_genital(obj/item/organ/genital/G)
 	if(!dna || (NOGENITALS in dna.species.species_traits) || getorganslot(initial(G.slot)))
@@ -226,116 +476,168 @@
 	G.Insert(src)
 	return G
 
+/// Called when the giblet is first stuffed into the mob
 /obj/item/organ/genital/proc/get_features(mob/living/carbon/human/H)
 	return
 
-/mob/living/carbon/human/proc/update_genitals()
+/// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
+/obj/item/organ/genital/proc/get_sprite_accessory()
+	return
+
+/// Returns what layer this awful thing should be on, for a given Position ("FRONT", "MID", "BEHIND")
+/obj/item/organ/genital/proc/get_layer_number(position)
+	switch(position)
+		if("FRONT", "MID")
+			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING)) // over clothing takes priority
+				return GENITAL_OVER_CLOTHES_FRONT_LAYER
+			if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR))
+				return GENITAL_OVER_UNDERWEAR_FRONT_LAYER
+			return GENITAL_UNDER_UNDERWEAR_FRONT_LAYER // under both underwear and clothing
+		// if("MID")
+		// 	if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_CLOTHING)) // over clothing takes priority
+		// 		return GENITAL_OVER_CLOTHES_MID_LAYER
+		// 	if(CHECK_BITFIELD(genital_visflags, GENITAL_ABOVE_UNDERWEAR))
+		// 		return GENITAL_OVER_UNDERWEAR_MID_LAYER
+		// 	return GENITAL_UNDER_UNDERWEAR_MID_LAYER // under both underwear and clothing
+		if("BEHIND")
+			return GENITALS_BEHIND_LAYER // behind is just always in the back
+
+/// Handle whether or not this thing should mask anything out. mostly just for butts
+/// returns an icon if masked, nothing otherwise (so it can be a cheaper mutable appearance thing)
+/obj/item/organ/genital/proc/mask_part(icon_in, state_in, layer, position)
+	return
+
+/// Ahah. Ahah hah. You fuckin butts thought you were sooooo clever, putting hands in front of things and making a mess of layering
+/// Lets see how clever you are with a hand-shaped hole in your ass!!!
+/// Cuts a hole in genitals
+/obj/item/organ/genital/proc/cut_up_genital(icon_in,state_in,list/masks)
+	var/icon/I = icon(icon_in, state_in)
+	var/icon/alpha
+	for(var/cookie in masks)
+		alpha = icon('icons/obj/genitals/mask.dmi', cookie)
+		I.Blend(alpha, ICON_MULTIPLY)
+	return I
+
+/// Holds a list of relevant genital layers and positions
+GLOBAL_LIST_INIT(genital_layers, list(
+	"layers" = list(
+		GENITALS_BEHIND_LAYER,
+		GENITAL_UNDER_UNDERWEAR_FRONT_LAYER,
+		GENITAL_UNDER_UNDERWEAR_MID_LAYER,
+		GENITAL_OVER_UNDERWEAR_FRONT_LAYER,
+		GENITAL_OVER_UNDERWEAR_MID_LAYER,
+		GENITAL_OVER_CLOTHES_FRONT_LAYER,
+		GENITAL_OVER_CLOTHES_MID_LAYER,
+		),
+	"positions" = list(
+		"BEHIND",
+		"MID",
+		"FRONT"
+	)
+))
+
+/// That way, we can update *EVERYONES* genitals when someone updates their genitals
+/mob/living/carbon/human/proc/signal_update_genitals()
+	update_genitals(FALSE) // and prevents infinite loops
+
+/// clears all genital overlays, and reapplies them
+/mob/living/carbon/human/proc/update_genitals(signal = TRUE)
 	if(QDELETED(src))
 		return
-	var/static/list/relevant_layers = list(
-		"[GENITALS_BEHIND_LAYER]" = "BEHIND",
-		"[GENITALS_MIDDLE_LAYER]" = "MID",
-		"[GENITALS_FRONT_LAYER]" = "FRONT"
-		)
-	var/static/list/layers_num
-	if(!layers_num)
-		for(var/L in relevant_layers)
-			LAZYSET(layers_num, L, text2num(L))
-	for(var/L in relevant_layers) //Less hardcode
-		remove_overlay(layers_num[L])
-	remove_overlay(GENITALS_EXPOSED_LAYER)
+	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
+		remove_overlay(layernum)
+	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
+	if(!islist(hud_list))
+		prepare_huds()
+	pornHUD.remove_from_hud(src, signal)
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
-	//start scanning for genitals
+	//okay cool, compile a list of genitals that are visible
 
-	var/list/gen_index[GENITAL_LAYER_INDEX_LENGTH]
-	var/list/genitals_to_add
-	var/list/fully_exposed
-	for(var/obj/item/organ/genital/G in internal_organs)
-		if(G.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
-			LAZYADD(gen_index[G.layer_index], G)
-	for(var/L in gen_index)
-		if(L) //skip nulls
-			LAZYADD(genitals_to_add, L)
-	if(!genitals_to_add)
+	var/list/genitals_to_add[GENITAL_LAYER_INDEX_LENGTH]
+	var/has_nads = FALSE
+	var/list/nad_order = splittext(dna?.features["genital_order"], ":") // NOT reversed cus the reversal is only for UI shit
+	for(var/obj/item/organ/genital/geni in internal_organs)
+		if(geni.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
+			genitals_to_add[clamp(nad_order.Find(geni.associated_has), 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
+			has_nads = TRUE
+	if(!has_nads)
 		return
-	//Now we added all genitals that aren't internal and should be rendered
-	//start applying overlays
-	for(var/layer in relevant_layers)
-		var/list/standing = list()
-		var/layertext = relevant_layers[layer]
-		for(var/A in genitals_to_add)
-			var/obj/item/organ/genital/G = A
-			if(layertext == "MID" && !istype(G, /obj/item/organ/genital/butt))
-				continue // Only butts have the mid layer right now, remove if more things get them. cuts down on overlays, maybe
-			var/datum/sprite_accessory/S
-			var/size = G.size
-			switch(G.type)
-				if(/obj/item/organ/genital/penis)
-					S = GLOB.cock_shapes_list[G.shape]
-				if(/obj/item/organ/genital/testicles)
-					S = GLOB.balls_shapes_list[G.shape]
-				if(/obj/item/organ/genital/vagina)
-					S = GLOB.vagina_shapes_list[G.shape]
-				if(/obj/item/organ/genital/breasts)
-					S = GLOB.breasts_shapes_list[G.shape]
-				if(/obj/item/organ/genital/butt)
-					S = GLOB.butt_shapes_list[G.shape]
 
-			if(!S || S.icon_state == "none")
+	/// for the fuckin preview thing
+	var/list/genital_sprites = list() // format list("[layer_number]" = list(mutable_sprites))
+	/// for the actual PornHud
+	var/list/porn_hud_images = list() // format list("has_butt" = list("FRONT" = list(img, img, img))") // I FUCKIN LOVE HUGEASS LISTS
+	for(var/obj/item/organ/genital/nad in genitals_to_add)
+		// list of sprites for these genitals (usually one or two)
+		for(var/position in GLOB.genital_layers["positions"]) // "BEHIND", "MID", "FRONT"
+			var/layer_to_put_it = nad.get_layer_number(position)
+			if(!layer_to_put_it)
+				continue // not all nads have all three. in fact none of them do!
+			var/datum/sprite_accessory/sprite_acc = nad.get_sprite_accessory()
+			if(!sprite_acc || sprite_acc.icon_state == "none")
 				continue
-			var/aroused_state = G.aroused_state && S.alt_aroused
-			var/accessory_icon = S.icon
-			var/do_center = S.center
-			var/dim_x = S.dimension_x
-			var/dim_y = S.dimension_y
-			if(G.genital_flags & GENITAL_CAN_TAUR && S.taur_icon && (!S.feat_taur || dna.features[S.feat_taur]) && dna.species.mutant_bodyparts["taur"])
+			var/aroused_state = nad.aroused_state && sprite_acc.alt_aroused
+			var/accessory_icon = sprite_acc.icon
+			var/do_center = sprite_acc.center
+			var/dim_x = sprite_acc.dimension_x
+			var/dim_y = sprite_acc.dimension_y
+			if(nad.genital_flags & GENITAL_CAN_TAUR && sprite_acc.taur_icon && (!sprite_acc.feat_taur || dna.features[sprite_acc.feat_taur]) && dna.species.mutant_bodyparts["taur"])
 				var/datum/sprite_accessory/taur/T = GLOB.taur_list[dna.features["taur"]]
-				if(T?.taur_mode & S.accepted_taurs)
-					accessory_icon = S.taur_icon
+				if(T?.taur_mode & sprite_acc.accepted_taurs)
+					accessory_icon = sprite_acc.taur_icon
 					do_center = TRUE
-					dim_x = S.taur_dimension_x
-					dim_y = S.taur_dimension_y
+					dim_x = sprite_acc.taur_dimension_x
+					dim_y = sprite_acc.taur_dimension_y
+			var/genital_state = nad.get_icon_state(src, sprite_acc, aroused_state, position)
+			if(!genital_state)
+				continue
+			/// this SHOULD(tm) make arms show up over butts from the front -- currently broken, love Lagg
+			var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
+			var/mutable_appearance/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
+			var/image/gross_image = image(grundle_out ? grundle_out : accessory_icon, src, genital_state, layer = -layer_to_put_it) // mutable appearances just... dont work for client images. rip performance
 
-			var/mutable_appearance/genital_overlay = mutable_appearance(accessory_icon, layer = -layer)
 			if(do_center)
 				genital_overlay = center_image(genital_overlay, dim_x, dim_y)
+				gross_image = center_image(genital_overlay, dim_x, dim_y)
 
+			// color color color
 			if(dna.species.use_skintones)
 				genital_overlay.color = SKINTONE2HEX(skin_tone)
+				gross_image.color = SKINTONE2HEX(skin_tone)
 			else
-				switch(S.color_src)
-					if("cock_color")
-						genital_overlay.color = "#[dna.features["cock_color"]]"
-					if("balls_color")
-						genital_overlay.color = "#[dna.features["balls_color"]]"
-					if("breasts_color")
-						genital_overlay.color = "#[dna.features["breasts_color"]]"
-					if("vag_color")
-						genital_overlay.color = "#[dna.features["vag_color"]]"
-					if("butt_color")
-						genital_overlay.color = "#[dna.features["butt_color"]]"
+				genital_overlay.color = nad.color
+				gross_image.color = nad.color
+			// set the sprite's layer
+			genital_overlay.layer = -layer_to_put_it
+			//gross_image.layer = -layer_to_put_it
+			genital_overlay.loc = src
+			gross_image.loc = src
+			gross_image.layer = (position == "BEHIND") ? layer-1 : layer+1 // idfk
+			// and then add it to the genital_sprites layer list thing
+			if(!genital_sprites["[layer_to_put_it]"])
+				genital_sprites["[layer_to_put_it]"] = list()
 
-			genital_overlay.icon_state = "[G.slot]_[S.icon_state]_[size][(dna.species.use_skintones && !dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
+			if(!porn_hud_images["[nad.associated_has]"])
+				porn_hud_images["[nad.associated_has]"] = list()
 
-			if(layers_num[layer] == GENITALS_FRONT_LAYER && ((G.genital_flags & GENITAL_THROUGH_CLOTHES) || (G.genital_flags & GENITAL_OVER_CLOTHES)))
-				genital_overlay.layer = -GENITALS_EXPOSED_LAYER
-				LAZYADD(fully_exposed, genital_overlay)
-			else
-				genital_overlay.layer = -layers_num[layer]
-				standing += genital_overlay
+			if(!porn_hud_images["[nad.associated_has]"]["[position]"])
+				porn_hud_images["[nad.associated_has]"]["[position]"] = list()
 
-		if(LAZYLEN(standing))
-			overlays_standing[layers_num[layer]] = standing
+			// cus byond doesnt like arbitrary indexes or something, idk im dum
+			genital_sprites["[layer_to_put_it]"] |= genital_overlay
+			porn_hud_images["[nad.associated_has]"]["[position]"] |= gross_image // i hate everything about this
 
-	if(LAZYLEN(fully_exposed))
-		overlays_standing[GENITALS_EXPOSED_LAYER] = fully_exposed
-		apply_overlay(GENITALS_EXPOSED_LAYER)
-
-	for(var/L in relevant_layers)
-		apply_overlay(layers_num[L])
-
+	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
+		for(var/index in genital_sprites)
+			overlays_standing[text2num(index)] = genital_sprites[index]
+			apply_overlay(text2num(index))
+	
+	if(!LAZYLEN(porn_hud_images)) // the freshest!
+		return // nothing there? *shruggo*
+	hud_list[GENITAL_HUD] = porn_hud_images
+	pornHUD.add_to_hud(src, signal)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()
@@ -346,17 +648,20 @@
 	var/breastCheck = getorganslot(ORGAN_SLOT_BREASTS)
 	var/willyCheck = getorganslot(ORGAN_SLOT_PENIS)
 	var/buttCheck = getorganslot(ORGAN_SLOT_BUTT)
+	var/bellyCheck = getorganslot(ORGAN_SLOT_BELLY)
 
 	if(organCheck == FALSE)
 		if(src.dna.species.fixed_mut_color)
 			dna.features["cock_color"] = "[dna.species.fixed_mut_color]"
 			dna.features["breasts_color"] = "[dna.species.fixed_mut_color]"
 			dna.features["butt_color"] = "[dna.species.fixed_mut_color]"
+			dna.features["belly_color"] = "[dna.species.fixed_mut_color]"
 			return
 		//So people who haven't set stuff up don't get rainbow surprises.
 		dna.features["cock_color"] = "[dna.features["mcolor"]]"
 		dna.features["breasts_color"] = "[dna.features["mcolor"]]"
 		dna.features["butt_color"] = "[dna.features["mcolor"]]"
+		dna.features["belly_color"] = "[dna.features["mcolor"]]"
 	else //If there's a new organ, make it the same colour.
 		if(breastCheck == FALSE)
 			dna.features["breasts_color"] = dna.features["cock_color"]
@@ -364,4 +669,6 @@
 			dna.features["cock_color"] = dna.features["breasts_color"]
 		else if (buttCheck == FALSE)
 			dna.features["butt_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
+		else if (bellyCheck == FALSE)
+			dna.features["belly_color"] = dna.features["cock_color"] ? dna.features["cock_color"] : dna.features["breasts_color"]
 	return TRUE

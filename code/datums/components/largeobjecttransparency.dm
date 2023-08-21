@@ -129,4 +129,4 @@
 	var/atom/par_atom = parent
 	par_atom.alpha = initial_alpha
 	if(toggle_click)
-		par_atom.mouse_opacity = MOUSE_OPACITY_OPAQUE
+		par_atom.mouse_opacity = MOUSE_OPACITY_ICON

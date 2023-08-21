@@ -10,6 +10,7 @@
 	name = "Beanbag Slug"
 	id = "beanbag_slug"
 	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 250)
 	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/beanbag
 	category = list("initial", "Security")
@@ -53,7 +54,6 @@
 	category = list("hacked", "Security")
 */
 
-/*
 /datum/design/rcd
 	name = "Rapid Construction Device (RCD)"
 	id = "rcd"
@@ -61,7 +61,6 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/construction/rcd
 	category = list("hacked", "Construction")
-*/
 
 /datum/design/rpd
 	name = "Rapid Pipe Dispenser (RPD)"

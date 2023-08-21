@@ -165,6 +165,7 @@
 		if(AM.loc == loc)
 			. += AM
 
+	SEND_SIGNAL(I, COMSIG_ITEM_RECYCLED, src)
 	I.forceMove(loc)
 	var/obj/item/grown/log/L = I
 	if(istype(L))

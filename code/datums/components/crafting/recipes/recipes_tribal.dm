@@ -37,23 +37,31 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/bow
-	name = "String Wooden Bow"
-	result = /obj/item/gun/ballistic/bow/tribal
+	name = "Short Bow"
+	result = /obj/item/gun/ballistic/bow/shortbow
 	time = 65
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10, //easy to make. you can get one as a starter
 				/obj/item/weaponcrafting/string = 1,
-				/obj/item/melee/onehanded/knife
 				)
 
-/datum/crafting_recipe/tribalwar/xbow
-	name = "Manual Crossbow"
-	result = /obj/item/gun/ballistic/bow/xbow
+/datum/crafting_recipe/tribalwar/lightxbow
+	name = "Light Crossbow"
+	result = /obj/item/gun/ballistic/bow/lightxbow
 	time = 120
-	always_available = FALSE
-	reqs = list(/obj/item/stack/crafting/metalparts = 5,
+	reqs = list(/obj/item/stack/crafting/metalparts = 5, //more spendy but an easy step up
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/mineral/wood = 15,
 				/obj/item/weaponcrafting/string = 1
+				)
+	tools = list(TOOL_WORKBENCH)
+	
+/datum/crafting_recipe/tribalwar/recurvebow
+	name = "recurve bow"
+	result = /obj/item/gun/ballistic/bow/recurvebow
+	time = 120
+	reqs = list(/obj/item/stack/sheet/leather = 5, //more spendy but an easy step up
+				/obj/item/stack/sheet/mineral/wood = 15,
+				/obj/item/weaponcrafting/string = 2
 				)
 	tools = list(TOOL_WORKBENCH)
 
@@ -77,6 +85,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
 
+/*this thing is broken and unneeded
 /datum/crafting_recipe/tribal/bonetalisman
 	name = "Bone Talisman"
 	result = /obj/item/clothing/accessory/talisman
@@ -84,7 +93,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	always_available = FALSE
-
+*/
 /datum/crafting_recipe/tribal/bonebag
 	name = "Tribal Satchel"
 	result = /obj/item/storage/backpack/satchel/bone
@@ -103,7 +112,7 @@
 			/obj/item/twohanded/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
@@ -114,7 +123,7 @@
 			/obj/item/twohanded/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 */
 
 /datum/crafting_recipe/tribal/mantlebrown
@@ -190,7 +199,7 @@
 				/obj/item/stack/ore/glass = 1,
 				/obj/item/pestle = 1,
 				/obj/item/reagent_containers/glass/mortar = 1)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/warmace
@@ -200,7 +209,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_TRIBAL
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /*datum/crafting_recipe/voodoo
@@ -212,7 +221,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/yucca = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/coyotechew
@@ -222,7 +231,7 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2, /obj/item/reagent_containers/food/snacks/grown/feracactus = 1, /obj/item/reagent_containers/food/snacks/grown/yucca = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	subcategory = CAT_PRIMAL
 	always_available = FALSE
 */
 

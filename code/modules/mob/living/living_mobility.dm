@@ -58,7 +58,7 @@
 		else
 			resist_a_rest()
 
-/mob/living/proc/resist_a_rest(automatic = FALSE, ignoretimer = FALSE) //Lets mobs resist out of resting. Major QOL change with combat reworks.
+/mob/living/proc/resist_a_rest(automatic = FALSE, ignoretimer = FALSE, silent = FALSE) //Lets mobs resist out of resting. Major QOL change with combat reworks.
 	set_resting(FALSE, TRUE)
 	return TRUE
 
@@ -81,7 +81,7 @@
 
 	var/chokehold = pulledby && pulledby.grab_state >= GRAB_NECK
 	var/restrained = restrained()
-	var/pinned = resting && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE // Cit change - adds pinning for aggressive-grabbing people on the ground
+	var/pinned = resting && pulledby && pulledby.grab_state >= GRAB_NECK // Cit change - adds pinning for aggressive-grabbing people on the ground
 	var/has_limbs = has_arms || ignore_legs || has_legs
 	var/canmove = !immobilize && !stun && conscious && !paralyze && (!stat_softcrit || !pulledby) && !chokehold && !IsFrozen() && has_limbs && !pinned && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
 	var/canresist = !stun && conscious && !stat_softcrit && !paralyze && has_limbs && !(combat_flags & COMBAT_FLAG_HARD_STAMCRIT)
@@ -166,6 +166,7 @@
 		if(layer == LYING_MOB_LAYER)
 			layer = initial(layer)
 	update_transform()
+	update_action_buttons_icon()
 	lying_prev = lying
 
 	//Handle citadel autoresist

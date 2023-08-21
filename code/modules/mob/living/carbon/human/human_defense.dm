@@ -86,7 +86,7 @@
 	..()
 
 
-/mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition)
+/mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
 	if(!I || !user)
 		return 0
 
@@ -103,7 +103,7 @@
 	SSblackbox.record_feedback("tally", "zone_targeted", 1, target_area)
 
 	// the attacked_by code varies among species
-	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src, attackchain_flags, damage_multiplier, damage_addition)
+	return dna.species.spec_attacked_by(I, user, affecting, a_intent, src, attackchain_flags, damage_multiplier, damage_addition, damage_override)
 
 /mob/living/carbon/human/attack_hulk(mob/living/carbon/human/user, does_attack_animation = FALSE)
 	if(user.a_intent == INTENT_HARM)
@@ -572,6 +572,10 @@
 
 	if(health >= 0)
 		if(src == M)
+			var/traumas = get_traumas()
+			if(traumas)
+				for(var/datum/brain_trauma/mild/phobia/fear in traumas)
+					fear.RealityCheck()
 			if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
 				to_chat(src, span_notice("You attempt to remove the durathread strand from around your neck."))
 				if(do_after(src, 35, null, src))
@@ -678,38 +682,49 @@
 				to_chat(src, bleed_text)
 			if(getStaminaLoss())
 				if(getStaminaLoss() > 30)
-					to_send += span_info("You're completely exhausted.")
+					to_send += span_info("You're completely exhausted.\n")
 				else
-					to_send += span_info("You feel fatigued.")
-			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-				if(toxloss)
-					if(toxloss > 10)
-						to_send += span_danger("You feel sick.")
-					else if(toxloss > 20)
-						to_send += span_danger("You feel nauseated.")
-					else if(toxloss > 40)
-						to_send += span_danger("You feel very unwell!")
-				if(oxyloss)
-					if(oxyloss > 10)
-						to_send += span_danger("You feel lightheaded.")
-					else if(oxyloss > 20)
-						to_send += span_danger("Your thinking is clouded and distant.")
-					else if(oxyloss > 30)
-						to_send += span_danger("You're choking!")
+					to_send += span_info("You feel fatigued.\n")
 
+			switch(toxloss)
+				if(0 to 15)
+					to_send += span_notice("You feel fine. ")
+				if(15 to 25)
+					to_send += span_danger("You feel sick. ")
+				if(25 to 40)
+					to_send += span_danger("You feel nauseated. ")
+				if(40 to INFINITY)
+					to_send += span_danger("You feel very unwell! ")
+			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
+				to_send += toxloss ? span_danger("You have [toxloss] toxin damage. ") : span_notice("You have no toxin damage. ")
+			to_send += "\n"
+			
+			switch(oxyloss)
+				if(0 to 10)
+					to_send += span_notice("You are breathing normally. ")
+				if(10 to 15)
+					to_send += span_danger("You feel lightheaded. ")
+				if(15 to 30)
+					to_send += span_danger("Your thinking is clouded and distant. ")
+				if(30 to INFINITY)
+					to_send += span_danger("You're choking! ")
+			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
+				to_send += oxyloss ? span_danger("You have [oxyloss] suffocation damage. ") : span_notice("You have no suffocation damage. ")
+			to_send += "\n"
+			
 			switch(nutrition)
 				if(NUTRITION_LEVEL_FULL to INFINITY)
-					to_send += span_info("You're completely stuffed!")
+					to_send += span_info("You're completely stuffed!\n")
 				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-					to_send += span_info("You're well fed!")
+					to_send += span_info("You're well fed!\n")
 				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					to_send += span_info("You're not hungry.")
+					to_send += span_info("You're not hungry.\n")
 				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					to_send += span_info("You could use a bite to eat.")
+					to_send += span_info("You could use a bite to eat.\n")
 				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					to_send += span_info("You feel quite hungry.")
+					to_send += span_info("You feel quite hungry.\n")
 				if(0 to NUTRITION_LEVEL_STARVING)
-					to_send += span_danger("You're starving!")
+					to_send += span_danger("You're starving!\n")
 
 
 			//TODO: Convert these messages into vague messages, thereby encouraging actual dignosis.

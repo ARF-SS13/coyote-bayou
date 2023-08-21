@@ -7,23 +7,23 @@
 #define FAR_DEPTH 6
 
 //ITEM INVENTORY SLOT BITMASKS
-#define ITEM_SLOT_OCLOTHING		(1<<0)
-#define ITEM_SLOT_ICLOTHING		(1<<1)
-#define ITEM_SLOT_GLOVES		(1<<2)
-#define ITEM_SLOT_EYES			(1<<3)
-#define ITEM_SLOT_EARS			(1<<4)
-#define ITEM_SLOT_MASK			(1<<5)
-#define ITEM_SLOT_HEAD			(1<<6)
-#define ITEM_SLOT_FEET			(1<<7)
-#define ITEM_SLOT_ID			(1<<8)
-#define ITEM_SLOT_BELT			(1<<9)
-#define ITEM_SLOT_BACK			(1<<10)
-#define ITEM_SLOT_POCKET		(1<<11) // this is to allow items with a w_class of WEIGHT_CLASS_NORMAL or WEIGHT_CLASS_BULKY to fit in pockets.
-#define ITEM_SLOT_DENYPOCKET	(1<<12) // this is to deny items with a w_class of WEIGHT_CLASS_SMALL or WEIGHT_CLASS_TINY to fit in pockets.
-#define ITEM_SLOT_NECK			(1<<13)
-#define ITEM_SLOT_HANDS			(1<<14)
-#define ITEM_SLOT_BACKPACK		(1<<15)
-#define ITEM_SLOT_SUITSTORE		(1<<16)
+#define INV_SLOTBIT_OCLOTHING		(1<<0)
+#define INV_SLOTBIT_ICLOTHING		(1<<1)
+#define INV_SLOTBIT_GLOVES			(1<<2)
+#define INV_SLOTBIT_EYES			(1<<3)
+#define INV_SLOTBIT_EARS			(1<<4)
+#define INV_SLOTBIT_MASK			(1<<5)
+#define INV_SLOTBIT_HEAD			(1<<6)
+#define INV_SLOTBIT_FEET			(1<<7)
+#define INV_SLOTBIT_ID				(1<<8)
+#define INV_SLOTBIT_BELT			(1<<9)
+#define INV_SLOTBIT_BACK			(1<<10)
+#define INV_SLOTBIT_POCKET			(1<<11) // this is to allow items with a w_class of WEIGHT_CLASS_NORMAL or WEIGHT_CLASS_BULKY to fit in pockets.
+#define INV_SLOTBIT_DENYPOCKET		(1<<12) // this is to deny items with a w_class of WEIGHT_CLASS_SMALL or WEIGHT_CLASS_TINY to fit in pockets.
+#define INV_SLOTBIT_NECK			(1<<13)
+#define INV_SLOTBIT_HANDS			(1<<14)
+#define INV_SLOTBIT_BACKPACK		(1<<15)
+#define INV_SLOTBIT_SUITSTORE		(1<<16)
 
 //A list of the variable names of all slots people can equip things in. This is used to massively reduce code complexity when checking all slots
 #define ALL_EQUIP_SLOTS list("w_uniform", "wear_suit", "back", "belt", "gloves", "shoes", "head", "wear_mask", "wear_neck", "ears", \
@@ -52,7 +52,7 @@
 #define SLOT_S_STORE		17
 #define SLOT_IN_BACKPACK	18
 #define SLOT_LEGCUFFED		19
-#define SLOT_GENERC_DEXTROUS_STORAGE	20
+#define SLOT_GENERIC_DEXTROUS_STORAGE	20
 
 
 #define SLOTS_AMT			20 // Keep this up to date!
@@ -62,37 +62,37 @@
 	. = 0
 	switch(slotdefine)
 		if(SLOT_BACK)
-			. = ITEM_SLOT_BACK
+			. = INV_SLOTBIT_BACK
 		if(SLOT_WEAR_MASK)
-			. = ITEM_SLOT_MASK
+			. = INV_SLOTBIT_MASK
 		if(SLOT_NECK)
-			. = ITEM_SLOT_NECK
+			. = INV_SLOTBIT_NECK
 		if(SLOT_BELT)
-			. = ITEM_SLOT_BELT
+			. = INV_SLOTBIT_BELT
 		if(SLOT_WEAR_ID)
-			. = ITEM_SLOT_ID
+			. = INV_SLOTBIT_ID
 		if(SLOT_EARS)
-			. = ITEM_SLOT_EARS
+			. = INV_SLOTBIT_EARS
 		if(SLOT_GLASSES)
-			. = ITEM_SLOT_EYES
+			. = INV_SLOTBIT_EYES
 		if(SLOT_GLOVES)
-			. = ITEM_SLOT_GLOVES
+			. = INV_SLOTBIT_GLOVES
 		if(SLOT_HEAD)
-			. = ITEM_SLOT_HEAD
+			. = INV_SLOTBIT_HEAD
 		if(SLOT_SHOES)
-			. = ITEM_SLOT_FEET
+			. = INV_SLOTBIT_FEET
 		if(SLOT_WEAR_SUIT)
-			. = ITEM_SLOT_OCLOTHING
+			. = INV_SLOTBIT_OCLOTHING
 		if(SLOT_W_UNIFORM)
-			. = ITEM_SLOT_ICLOTHING
+			. = INV_SLOTBIT_ICLOTHING
 		if(SLOT_L_STORE, SLOT_R_STORE)
-			. = ITEM_SLOT_POCKET
+			. = INV_SLOTBIT_POCKET
 		if(SLOT_HANDS)
-			. = ITEM_SLOT_HANDS
+			. = INV_SLOTBIT_HANDS
 		if(SLOT_IN_BACKPACK)
-			. = ITEM_SLOT_BACKPACK
+			. = INV_SLOTBIT_BACKPACK
 		if(SLOT_S_STORE)
-			. = ITEM_SLOT_SUITSTORE
+			. = INV_SLOTBIT_SUITSTORE
 
 
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
@@ -192,7 +192,6 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/magazine/m10mm/rifle,
 	/obj/item/ammo_box/magazine/autopipe,
 	/obj/item/ammo_box/magazine/m556/rifle/small,
-	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/l10mm,
 	/obj/item/ammo_box/a357,
 	/obj/item/ammo_box/m44,
@@ -200,7 +199,8 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/a45lcrev,
 	/obj/item/ammo_box/rev308,
 	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a3006,
+	/obj/item/ammo_box/c22,
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/a556/stripper,
 	/obj/item/ammo_box/needle,
@@ -210,6 +210,14 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 /// Not so little bitty ammo thingies
 GLOBAL_LIST_INIT(holster_disallowed, typecacheof(list(
 	/obj/item/ammo_box/magazine/m22/extended
+	)))
+
+GLOBAL_LIST_INIT(typical_reagent_containers, typecacheof(list(
+	/obj/item/reagent_containers/glass,
+	/obj/item/reagent_containers/medspray,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/reagent_containers/spray,
+	/obj/item/reagent_containers/syringe,
 	)))
 
 GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
@@ -246,7 +254,9 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/throwing_star/spear,
-	/obj/item/restraints/legcuffs/bola
+	/obj/item/restraints/legcuffs/bola,
+	/obj/item/pitchfork,
+	/obj/item/gun/magic/staff,
 	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
@@ -317,7 +327,9 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen,
-	/obj/item/toy
+	/obj/item/kinetic_crusher,
+	/obj/item/toy,
+	/obj/item/cult_bastard
 	)))
 
 /// Things allowed in a toolbelt
@@ -397,7 +409,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/food/drinks,
 	/obj/item/storage/bag/plants,
 	/obj/item/plant_analyzer,
-	/obj/item/scythe, 
+	/obj/item/scythe,
 	/obj/item/assembly/signaler,
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
@@ -536,7 +548,7 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 /// Things allowed in a scabbard
 GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
-	/obj/item/melee,
+	/obj/item/melee/onehanded/knife,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
@@ -555,7 +567,16 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
+	/obj/item/melee/smith/dagger,
 	/obj/item/scalpel,
+	/obj/item/gun/energy/laser/retro,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby,
+	)))
+
+GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(
+	/obj/item/toy/plush
 	)))
 
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
@@ -574,7 +595,7 @@ GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
 	/obj/item/melee/onehanded/knife,
 	/obj/item/paper,
 	/obj/item/folder,
-	/obj/item/storage/bag/money/small,
+	/obj/item/storage/wallet,
 	/obj/item/binoculars,
 	/obj/item/lipstick,
 	/obj/item/pen,
@@ -750,11 +771,11 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE STORAGE_NECKPRON_GENERIC_MAX_SIZE * STORAGE_NECKPRON_GENERIC_MAX_ITEMS
 
 /// How many items total fit in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 7
+#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 6
 /// How big a thing can fit in a holster neckpron
 #define STORAGE_NECKPRON_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE STORAGE_NECKPRON_HOLSTER_MAX_ITEMS * STORAGE_NECKPRON_HOLSTER_MAX_SIZE
+#define STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE WEIGHT_CLASS_NORMAL * 2
 
 /* * * * * * * * * * * * * * *
  * Suit slot inventory things
@@ -835,11 +856,25 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
 
 /// How many items total fit in a casing quiver
-#define STORAGE_CASING_QUIVER_MAX_ITEMS 30
+#define STORAGE_QUIVER_MAX_ITEMS 24
 /// How big a thing can fit in a casing quiver
-#define STORAGE_CASING_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
+#define STORAGE_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
-#define STORAGE_CASING_QUIVER_MAX_TOTAL_SPACE STORAGE_CASING_QUIVER_MAX_ITEMS * STORAGE_CASING_QUIVER_MAX_SIZE
+#define STORAGE_QUIVER_TOTAL_SPACE STORAGE_QUIVER_MAX_ITEMS * WEIGHT_CLASS_TINY
+
+/// How many items total fit in a casing quiver
+#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 12
+/// How big a thing can fit in a casing quiver
+#define STORAGE_QUIVER_LIGHT_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a casing quiver
+#define STORAGE_QUIVER_LIGHT_TOTAL_SPACE STORAGE_QUIVER_LIGHT_MAX_ITEMS * WEIGHT_CLASS_TINY
+
+/// How many items total fit in a casing quiver
+#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 48
+/// How big a thing can fit in a casing quiver
+#define STORAGE_QUIVER_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a casing quiver
+#define STORAGE_QUIVER_HEAVY_TOTAL_SPACE STORAGE_QUIVER_HEAVY_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /* * * *
  * Boxes
@@ -889,13 +924,13 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE
 
 /// How many items total fit in a triple survival kit
-#define STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS 21
+#define STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS 14
 /// How big a thing can fit in a triple survival kit
-#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE WEIGHT_CLASS_TINY
+#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a triple survival kit
 #define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE
 /// How many rows in a triple survival kit
-#define STORAGE_ROWS_SURVIVAL_TRIPLE 3 // triple after all~
+#define STORAGE_ROWS_SURVIVAL_TRIPLE 1 // More than one row messes with volumetric UI for this particular item
 
 /* * * * * * *
  * Backpacks!
@@ -959,4 +994,4 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)
 
 //Slots that won't trigger humans' update_genitals() on equip().
-GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERC_DEXTROUS_STORAGE))
+GLOBAL_LIST_INIT(no_genitals_update_slots, list(SLOT_L_STORE, SLOT_R_STORE, SLOT_S_STORE, SLOT_IN_BACKPACK, SLOT_LEGCUFFED, SLOT_HANDCUFFED, SLOT_HANDS, SLOT_GENERIC_DEXTROUS_STORAGE))

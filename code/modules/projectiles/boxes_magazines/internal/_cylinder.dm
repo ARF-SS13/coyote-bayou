@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder
 	name = "revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c38
-	caliber = list(CALIBER_357, CALIBER_38)
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = list(CALIBER_357)
 	max_ammo = 7
 	replace_spent_rounds = 1
 
@@ -10,16 +10,25 @@
 	for(var/obj/item/ammo_casing/bullet in stored_ammo)
 		if(bullet && (bullet.BB || countempties))
 			boolets++
-
 	return boolets
+
+/obj/item/ammo_box/magazine/internal/cylinder/fill_magazine(num_bullets)
+	if(LAZYLEN(stored_ammo))
+		QDEL_LIST(stored_ammo)
+	LAZYLENGTHEN(stored_ammo, max_ammo)
+	num_bullets = clamp(num_bullets, 0, LAZYLEN(stored_ammo))
+	for(var/i in 1 to LAZYLEN(stored_ammo))
+		var/be_spent = FALSE
+		if(i > num_bullets)
+			be_spent = TRUE
+		var/bluuet = new ammo_type(src, be_spent)
+		LAZYSET(stored_ammo, i, bluuet)
 
 /obj/item/ammo_box/magazine/internal/cylinder/get_round(keep = 0)
 	rotate()
-
-	var/b = stored_ammo[1]
+	var/b = LAZYACCESS(stored_ammo, 1)
 	if(!keep)
 		stored_ammo[1] = null
-
 	return b
 
 /obj/item/ammo_box/magazine/internal/cylinder/proc/rotate()

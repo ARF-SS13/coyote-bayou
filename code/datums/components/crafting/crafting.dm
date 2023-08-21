@@ -24,13 +24,13 @@
 					CAT_SCAVENGING,
 					CAT_FORGING,
 					CAT_TOOL,
-					CAT_ROBOT,
+					//CAT_ROBOT,
 				),
 				CAT_MISC = list(
-					CAT_FARMING,
+					//CAT_FARMING,
 					CAT_MISCELLANEOUS,
-					CAT_FURNITURE,
-					CAT_BOTTLE,
+					//CAT_FURNITURE,
+					//CAT_BOTTLE,
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
@@ -45,15 +45,15 @@
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
-					CAT_SHOES,
-					CAT_MISCCLOTHING,
+					//CAT_SHOES,
+					//CAT_MISCCLOTHING,
 					CAT_ARMOR,
-					CAT_WASTELAND,
-					CAT_BELTS
+					//CAT_WASTELAND,
+					//CAT_BELTS
 				),
 				CAT_MEDICAL = CAT_NONE,
 				CAT_DRINK = CAT_NONE,
-				CAT_EXPLOSIVE = CAT_NONE,
+				//CAT_EXPLOSIVE = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE
@@ -423,10 +423,11 @@
 			ui_interact(user)
 			var/atom/movable/result = construct_item(user, TR)
 			if(!istext(result)) //We made an item and didn't get a fail message
-				if(ismob(user) && isitem(result)) //In case the user is actually possessing a non mob like a machine
-					user.put_in_hands(result)
-				else
-					result.forceMove(user.drop_location())
+				if(ismob(user))
+					if(isitem(result)) //In case the user is actually possessing a non mob like a machine
+						user.put_in_hands(result)
+					else if(!isturf(result))
+						result.forceMove(user.drop_location())
 				to_chat(user, span_notice("[TR.name] constructed."))
 			else
 				to_chat(user, span_warning("Construction failed[result]"))

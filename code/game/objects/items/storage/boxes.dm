@@ -617,7 +617,7 @@ obj/item/storage/box/stingbangs
 	icon_state = "matchbox"
 	item_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_price = PRICE_REALLY_CHEAP
 	component_type = /datum/component/storage/concrete/box/big/match
 
@@ -818,7 +818,7 @@ obj/item/storage/box/stingbangs
 			if("None")
 				desc = "A sack neatly crafted out of paper."
 			if("NanotrasenStandard")
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+				desc = "A standard US Government paper lunch sack for loyal employees on the go."
 			if("SyndiSnacks")
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if("Heart")

@@ -13,7 +13,7 @@
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/sandwich
 	filling_color = "#FFA500"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	customfoodfilling = 0 //to avoid infinite bread-ception
 	foodtype = GRAIN
 	dunkable = TRUE

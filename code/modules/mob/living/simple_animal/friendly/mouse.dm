@@ -1,6 +1,6 @@
 /mob/living/simple_animal/mouse
-	name = "mouse"
-	desc = "It's a nasty, ugly, evil, disease-ridden rodent."
+	name = "radmouse"
+	desc = "It's a nasty, ugly, evil, disease-ridden, radioactive rodent."
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"

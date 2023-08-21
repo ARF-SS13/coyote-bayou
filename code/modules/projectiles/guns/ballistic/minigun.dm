@@ -6,7 +6,7 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/ballistic/minigunbal5mm/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
@@ -90,7 +90,7 @@
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "minigunbal_spin"
 	item_state = "minigun"
-
+	weapon_class = WEAPON_CLASS_RIFLE
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -101,7 +101,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = LMG_RECOIL(0.5)
+	init_recoil = HMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300
 	)
@@ -116,16 +116,6 @@
 	casing_ejector = TRUE
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpackbal5mm/ammo_pack
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
-	)
 
 /obj/item/gun/ballistic/minigunbal5mm/Initialize()
 	if(istype(loc, /obj/item/minigunpackbal5mm)) //We should spawn inside an ammo pack so let's use that one.

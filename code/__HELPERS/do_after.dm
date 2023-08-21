@@ -58,10 +58,10 @@
 		if(CHECK_FLAG_FAILURE)
 			return FALSE
 	// SETUP LOOP
-	var/datum/progressbar/progbar
+	var/my_bar
 	if(living_user)
 		if(!(do_after_flags & DO_AFTER_NO_PROGRESSBAR))
-			progbar = new(living_user, delay, target)
+			my_bar = SSprogress_bars.add_bar(user, list(user, target), delay, TRUE, TRUE)
 	// MAIN LOOP
 	. = TRUE
 	if(!delay)
@@ -72,7 +72,6 @@
 	var/ctt
 	while(world.time < endtime)
 		stoplag(1)
-		progbar?.update(TIMELEFT)
 		if(QDELETED(user) || QDELETED(target) || (user.loc == null) || (target.loc == null))
 			. = FALSE
 			break
@@ -116,7 +115,7 @@
 			break
 
 	// CLEANUP
-	qdel(progbar)
+	SSprogress_bars.remove_bar(my_bar)
 	// If we failed, just return.
 	if(!.)
 		return FALSE
@@ -155,7 +154,21 @@
 #undef INVOKE_CALLBACK
 #undef CHECK_FLAG_FAILURE
 
-/proc/do_mob(mob/user , mob/target, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks = null, ignorehelditem = FALSE, resume_time = 0 SECONDS)
+// gotta love having three of the same damn proc
+/proc/do_mob(
+	mob/user,
+	mob/target,
+	time = 30,
+	uninterruptible = 0,
+	progress = 1,
+	datum/callback/extra_checks = null,
+	ignorehelditem = FALSE,
+	resume_time = 0 SECONDS,
+	allow_movement = FALSE,
+	allow_lying = FALSE,
+	allow_incap = FALSE,
+	public_progbar = FALSE,)
+
 	if(!user || !target)
 		return 0
 	var/user_loc = user.loc
@@ -170,17 +183,17 @@
 	LAZYADD(target.targeted_by, user)
 
 	var/holding = user.get_active_held_item()
-	var/datum/progressbar/progbar
-	if (progress)
-		progbar = new(user, time, target)
+	var/my_bar
+	if(progress)
+		var/list/who_see = list()
+		if(!public_progbar)
+			who_see = list(user)
+		my_bar = SSprogress_bars.add_bar(user, who_see, time, TRUE, TRUE)
 
 	var/endtime = world.time+time
-	var/starttime = world.time
 	. = 1
 	while (world.time + resume_time < endtime)
 		stoplag(1)
-		if (progress)
-			progbar.update(world.time - starttime + resume_time)
 		if(QDELETED(user) || QDELETED(target))
 			. = 0
 			break
@@ -194,15 +207,32 @@
 			. = FALSE
 			break
 
-		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 			drifting = FALSE
-			user_loc = user.loc
+			user_loc = user.loc */ // aint in spess
+		if(allow_movement && get_dist(user.loc, target.loc) > 1)
+			. = FALSE
+			break
 
-		if((!drifting && user.loc != user_loc) || target.loc != target_loc || (!ignorehelditem && user.get_active_held_item() != holding) || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+		if(!drifting && !allow_movement && user.loc != user_loc)
 			. = 0
 			break
-	if(progress)
-		qdel(progbar)
+		if(target.loc != target_loc)
+			. = 0
+			break
+		if(!ignorehelditem && user.get_active_held_item() != holding)
+			. = 0
+			break
+		if(!allow_incap && user.incapacitated())
+			. = 0
+			break
+		if(!allow_lying && user.lying)
+			. = 0
+			break
+		if(extra_checks && !extra_checks.Invoke())
+			. = 0
+			break
+	SSprogress_bars.remove_bar(my_bar)
 
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
@@ -222,7 +252,19 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
+/proc/do_after(
+		mob/user, 
+		delay, 
+		needhand = 1, 
+		atom/target = null, 
+		progress = 1, 
+		datum/callback/extra_checks = null, 
+		required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), 
+		resume_time = 0 SECONDS, 
+		allow_movement = FALSE,
+		stay_close = TRUE,
+		public_progbar = FALSE,
+		)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -247,35 +289,40 @@
 
 	delay *= user.do_after_coefficent()
 
-	var/datum/progressbar/progbar
-	if (progress)
-		progbar = new(user, delay, target)
+	var/my_bar
+	if(progress)
+		var/list/who_see = list()
+		if(!public_progbar)
+			who_see = list(user)
+		my_bar = SSprogress_bars.add_bar(user, who_see, delay, TRUE, TRUE)
 
 	var/endtime = world.time + delay
-	var/starttime = world.time
 	. = 1
 	var/mob/living/L = isliving(user) && user			//evals to last thing eval'd
 	while (world.time + resume_time < endtime)
 		stoplag(1)
-		if (progress)
-			progbar.update(world.time - starttime + resume_time)
 
-		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 			drifting = FALSE
-			Uloc = user.loc
+			Uloc = user.loc */ // we aint in spess
 
 		if(L && !CHECK_ALL_MOBILITY(L, required_mobility_flags))
 			. = 0
 			break
 
-		if(QDELETED(user) || user.stat || (!drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
+		if(QDELETED(user) || user.stat || (!allow_movement && !drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
 			. = 0
 			break
 
 		if(!QDELETED(Tloc) && (QDELETED(target) || Tloc != target.loc))
-			if((Uloc != Tloc || Tloc != user) && !drifting)
+			if((Uloc != Tloc || Tloc != user) && (!drifting || !allow_movement))
 				. = 0
 				break
+
+		// mrs Byondley's first grade class teaches you that the loc of a turf is an area.
+		if(stay_close && get_dist(get_turf(user), get_turf(target)) > 1) // I dropped out in kindergarten
+			. = 0
+			break
 
 		if(target && !(target in user.do_afters))
 			. = FALSE
@@ -291,8 +338,7 @@
 			if(user.get_active_held_item() != holding)
 				. = 0
 				break
-	if(progress)
-		qdel(progbar)
+	SSprogress_bars.remove_bar(my_bar)
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
 
@@ -304,7 +350,17 @@
 	. = 1
 	return
 
-/proc/do_after_mob(mob/user, list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
+/// this proc sucks, use do_after instead
+/proc/do_after_mob(
+		mob/user, 
+		list/targets, 
+		time = 30, 
+		uninterruptible = 0, 
+		progress = 1, 
+		datum/callback/extra_checks, 
+		allow_movement = FALSE,
+		public_progbar = FALSE,
+		)
 	if(!user || !targets)
 		return 0
 	if(!islist(targets))
@@ -322,34 +378,33 @@
 		LAZYADD(target.targeted_by, user)
 
 	var/holding = user.get_active_held_item()
-	var/datum/progressbar/progbar
+	var/my_bar
 	if(progress)
-		progbar = new(user, time, targets[1])
+		var/list/who_see = list()
+		if(!public_progbar)
+			who_see = list(user)
+		my_bar = SSprogress_bars.add_bar(LAZYACCESS(targets, 1), who_see, time, TRUE, TRUE)
 
 	var/endtime = world.time + time
-	var/starttime = world.time
 	. = 1
 	mainloop:
 		while(world.time < endtime)
 			stoplag(1)
-			if(progress)
-				progbar.update(world.time - starttime)
 			if(QDELETED(user) || !targets)
 				. = 0
 				break
 			if(uninterruptible)
 				continue
 
-			if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+			/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 				drifting = FALSE
-				user_loc = user.loc
+				user_loc = user.loc */
 
 			for(var/atom/target in targets)
-				if((!drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+				if((!allow_movement && !drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
 					. = 0
 					break mainloop
-	if(progbar)
-		qdel(progbar)
+	SSprogress_bars.remove_bar(my_bar)
 	for(var/thing in targets)
 		var/atom/target = thing
 		if(!QDELETED(target))

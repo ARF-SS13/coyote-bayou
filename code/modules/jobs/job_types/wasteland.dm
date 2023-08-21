@@ -73,7 +73,7 @@ Raider
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio = 1,
 		)
 
@@ -400,7 +400,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -699,7 +699,7 @@ Raider
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -950,6 +950,7 @@ Raider
 			/datum/job/wasteland/f13wastelander,
 		),
 	)
+	/*
 	loadout_options = list(
 	/datum/outfit/loadout/vault_refugee,
 	/datum/outfit/loadout/salvager,
@@ -972,7 +973,7 @@ Raider
 //	/datum/outfit/loadout/ncrcitizen,
 //	/datum/outfit/loadout/legioncivilian,
 //	/datum/outfit/loadout/wastelander_desert_ranger)
-
+*/
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
@@ -980,16 +981,18 @@ Raider
 	id = null
 	ears = null
 	belt = /obj/item/kit_spawner/waster
-	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
+	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/storage/pill_bottle/chem_tin/radx
+		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
+		///obj/item/reagent_containers/hypospray/medipen/stimpak,
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
@@ -999,11 +1002,13 @@ Raider
 		/obj/item/clothing/under/f13/brahminm, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
+		/* people generally bring their own jackets
 	suit = pick(
 		/obj/item/clothing/suit/armor/light/kit, \
 		/obj/item/clothing/suit/armor/outfit/jacket/merc, \
 		/obj/item/clothing/suit/toggle/labcoat/wanderer)
-
+*/
+/*
 /datum/outfit/loadout/salvager
 	name = "Salvager"
 	uniform = /obj/item/clothing/under/f13/machinist
@@ -1306,6 +1311,31 @@ Raider
 		/obj/item/ammo_box/a357=2,
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
+*/
+
+/datum/job/wasteland/f13wastelander/ashdown
+	title = "Ashdown Citizen"
+	total_positions = 25
+	spawn_positions = 25
+	outfit = /datum/outfit/job/wasteland/ashdown
+
+/datum/outfit/job/wasteland/ashdown
+	name = "Ashdown Citizen"
+	jobtype = /datum/job/wasteland/f13raider
+	id = null
+	ears = /obj/item/radio/headset/headset_ashdown
+	belt = /obj/item/kit_spawner/waster
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		)
+
 
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
@@ -1330,12 +1360,33 @@ Raider
 		/datum/outfit/loadout/bodyguard,
 		)
 */
+
+/datum/job/wasteland/machine
+	title = "Sentient Machine"
+	flag = F13CYBORG
+	department_flag = CYBORG
+	faction = FACTION_WASTELAND
+	total_positions = 0 //Leave this to zero until it gets fixed
+	spawn_positions = 1
+	selection_color = "#3a3a3a"
+
+
+/datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = TRUE, datum/outfit/outfit_override = null, client/preference_source)
+	return H.Robotize(FALSE, latejoin)
+
+/datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
+	. = ..()
+	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	R.apply_pref_name("cyborg", M.client)
+	R.gender = NEUTER
+
+
 //Wasteland Preacher
 /datum/job/wasteland/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
 	faction = FACTION_WASTELAND
-	total_positions = 1
+	total_positions = 3
 	spawn_positions = 1
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
@@ -1512,7 +1563,7 @@ Raider
 		/obj/item/reagent_containers/food/drinks/flask=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
-		/obj/item/storage/bag/money/small/settler,
+		/obj/item/storage/wallet/stash/mid,
 		/obj/item/nullrod = 1,)
 //end preacher
 
@@ -1746,10 +1797,10 @@ datum/job/wasteland/f13dendoctor
 	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
-	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
+	description = "You have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
-	exp_requirements = 1500
+	exp_requirements = 0
 	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante
@@ -1777,7 +1828,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/radx=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/kit_spawner/waster = 1,
-		/obj/item/storage/bag/money/small/wastelander)
+)
 
 /*
 /datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1926,21 +1977,23 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/warpaint,
 		/datum/crafting_recipe/tribalradio,
 		/datum/crafting_recipe/tribalwar/goliathcloak,
-		/datum/crafting_recipe/tribalwar/bonebow,
-		/datum/crafting_recipe/tribalwar/tribe_bow,
-		/datum/crafting_recipe/tribalwar/sturdybow,
+		///datum/crafting_recipe/tribalwar/bonebow,
+		///datum/crafting_recipe/tribalwar/tribe_bow,
+		///datum/crafting_recipe/tribalwar/sturdybow,
 		/datum/crafting_recipe/tribalwar/warclub,
-		/datum/crafting_recipe/tribalwar/silverbow,
-		/datum/crafting_recipe/tribalwar/arrowbone,
+		///datum/crafting_recipe/tribalwar/silverbow,
+		///datum/crafting_recipe/tribalwar/arrowbone,
 		/datum/crafting_recipe/tribalwar/bonespear,
 		/datum/crafting_recipe/tribalwar/bonecodpiece,
 		/datum/crafting_recipe/tribalwar/bracers,
-		/datum/crafting_recipe/tribal/bonetalisman,
+		///datum/crafting_recipe/tribal/bonetalisman,
+		/datum/crafting_recipe/bitterdrink,
+		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		/datum/crafting_recipe/redpotion,
-		/datum/crafting_recipe/bluepotion,
-		/datum/crafting_recipe/greenpotion,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia,
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
@@ -1972,11 +2025,12 @@ datum/job/wasteland/f13dendoctor
 
 //Generic Tribals
 /datum/outfit/loadout/brawler
-	name = "Far-Lands Warrior"
+	name = "Far-Lands Mounted Warrior"
 	suit = /obj/item/clothing/suit/armor/light/tribal
 	head = /obj/item/clothing/head/helmet/f13/deathskull
 	backpack_contents = list(
 		///obj/item/twohanded/fireaxe/bmprsword = 1,
+		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/stack/medical/gauze = 1,
@@ -2034,7 +2088,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
 		///obj/item/gun/ballistic/bow/sturdy = 1,
-		///obj/item/storage/bag/tribe_quiver/archer = 1,
+		///obj/item/storage/bag/tribe_quiver/light = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/book/granter/trait/tribaltraditions =1,
@@ -2337,7 +2391,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/sex
 	name = "Domestic Slave"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+		///obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1,
 		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
@@ -2375,7 +2429,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
 	supervisors = "Your conscience (HAH), wallet, and constituents."
 	selection_color = "#df80af"
-	exp_requirements = 600
+	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND
 
 	loadout_options = list(
@@ -2404,7 +2458,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
@@ -2480,7 +2534,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/overbossranged
 	name = "Crooked Mayor"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+	//	/obj/item/storage/bag/money/small = 1,
 	//	/obj/item/gun/ballistic/revolver/colt357/mateba = 1,
 		/obj/item/clothing/under/suit/black = 1,
 		/obj/item/reagent_containers/glass/bottle/chloralhydrate = 1,

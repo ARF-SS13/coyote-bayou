@@ -18,7 +18,7 @@
 	item_state = "pen"
 	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_EARS
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -31,6 +31,7 @@
 	var/font = PEN_FONT
 	embedding = list()
 	sharpness = SHARP_POINTY
+	var/naming = FALSE
 
 /obj/item/pen/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku..."))
@@ -105,22 +106,12 @@
 	custom_materials = list(/datum/material/gold = 750)
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
-	unique_reskin = list("Oak" = "pen-fountain-o",
-						"Gold" = "pen-fountain-g",
-						"Rosewood" = "pen-fountain-r",
-						"Black and Silver" = "pen-fountain-b",
-						"Command Blue" = "pen-fountain-cb"
-						)
+	reskinnable_component = /datum/component/reskinnable/captain_pen
 	embedding = list("embed_chance" = 75)
 
 /obj/item/pen/fountain/captain/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 200, 115) //the pen is mightier than the sword
-
-/obj/item/pen/fountain/captain/reskin_obj(mob/M)
-	..()
-	if(current_skin)
-		desc = "It's an expensive [current_skin] fountain pen. The nib is quite sharp."
 
 /obj/item/pen/attack_self(mob/living/carbon/user)
 	var/deg = input(user, "What angle would you like to rotate the pen head to? (1-360)", "Rotate Pen Head") as null|num
@@ -145,32 +136,51 @@
 	else
 		. = ..()
 
-/obj/item/pen/afterattack(obj/O, mob/living/user, proximity)
+/obj/item/pen/AltClick(mob/user)
+	if(!naming)
+		naming = TRUE
+		w_class = WEIGHT_CLASS_GIGANTIC
+		sharpness = SHARP_NONE
+		to_chat(usr, "<span class='notice'>You firmly grip the pen in preparation to rename something.</span>")
+		playsound(src, 'sound/machines/button2.ogg', 100, 1)
+		return
+	if(naming)
+		naming = FALSE
+		w_class = WEIGHT_CLASS_TINY
+		sharpness = SHARP_POINTY
+		to_chat(usr, "<span class='notice'>You reset the grip on the pen</span>")
+		playsound(src, 'sound/machines/button2.ogg', 100, 1)
+		return
+
+
+/obj/item/pen/afterattack(obj/O, mob/living/user, proximity, params)
 	. = ..()
-	//Changing Name/Description of items. Only works if they have the 'unique_rename' flag set
-	if(isobj(O) && proximity && (O.obj_flags & UNIQUE_RENAME))
-		var/penchoice = input(user, "What would you like to edit?", "Rename or change description?") as null|anything in list("Rename","Change description")
-		if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
-			return
-		if(penchoice == "Rename")
-			var/input = stripped_input(user,"What do you want to name \the [O.name]?", ,"", MAX_NAME_LEN)
-			var/oldname = O.name
+	if (naming)
+		//Changing Name/Description of items. Only works if they have the 'unique_rename' flag set
+		if(isobj(O) && proximity)
+			var/penchoice = input(user, "What would you like to edit?", "Rename or change description?") as null|anything in list("Rename","Change description")
 			if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 				return
-			if(oldname == input)
-				to_chat(user, span_notice("You changed \the [O.name] to... well... \the [O.name]."))
-			else
-				O.name = input
-				to_chat(user, span_notice("\The [oldname] has been successfully been renamed to \the [input]."))
-				O.renamedByPlayer = TRUE
+			if(penchoice == "Rename")
+				var/input = stripped_input(user,"What do you want to name \the [O.name]?", ,"", MAX_NAME_LEN)
+				var/oldname = O.name
+				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
+					return
+				if(oldname == input)
+					to_chat(user, "<span class='notice'>You changed \the [O.name] to... well... \the [O.name].</span>")
+				else
+					O.name = input
+					to_chat(user, "<span class='notice'>\The [oldname] has been successfully been renamed to \the [input].</span>")
+					O.renamedByPlayer = TRUE
 
-		if(penchoice == "Change description")
-			var/input = stripped_input(user,"Describe \the [O.name] here", ,"", 100)
-			if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
-				return
-			O.desc = input
-			to_chat(user, span_notice("You have successfully changed \the [O.name]'s description."))
-
+			if(penchoice == "Change description")
+				var/input = stripped_input(user,"Describe \the [O.name] here", ,"", 100)
+				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
+					return
+				O.desc = input
+				to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
+	else
+		return
 /*
  * Sleepypens
  */
@@ -233,13 +243,13 @@
 		to_chat(user, span_warning("[src] can now be concealed."))
 	else
 		on = TRUE
-		force = 18
+		force = 30
 		throw_speed = 4
 		w_class = WEIGHT_CLASS_NORMAL
 		name = "energy dagger"
 		hitsound = 'sound/weapons/blade1.ogg'
 		embedding = list(embed_chance = 100) //rule of cool
-		throwforce = 35
+		throwforce = 45
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, span_warning("[src] is now active."))
 	updateEmbedding()

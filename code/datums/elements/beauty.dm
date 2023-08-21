@@ -10,9 +10,9 @@
 	beauty = beautyamount
 
 	if(ismovable(target))
-		RegisterSignal(target, COMSIG_ENTER_AREA, .proc/enter_area)
-		RegisterSignal(target, COMSIG_EXIT_AREA, .proc/exit_area)
-
+		RegisterSignal(target, COMSIG_ENTER_AREA, .proc/enter_area, override = TRUE)
+		RegisterSignal(target, COMSIG_EXIT_AREA, .proc/exit_area, override = TRUE)
+		
 	var/area/A = get_area(target)
 	if(A)
 		enter_area(null, A)

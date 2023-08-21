@@ -15,6 +15,7 @@
 	var/w_class_on = WEIGHT_CLASS_BULKY
 	var/clumsy_check = TRUE
 	var/total_mass_on //Total mass in ounces when transformed. Primarily for balance purposes. Don't think about it too hard.
+	var/slot_flags_on = null
 
 /obj/item/melee/transforming/Initialize()
 	. = ..()
@@ -59,6 +60,7 @@
 			updateEmbedding()
 		icon_state = icon_state_on
 		w_class = w_class_on
+		slot_flags = slot_flags_on
 	else
 		force = initial(force)
 		max_reach = initial(max_reach)
@@ -72,6 +74,7 @@
 		icon_state = initial(icon_state)
 		w_class = initial(w_class)
 		total_mass = initial(total_mass)
+		slot_flags = initial(slot_flags)
 	transform_messages(user, supress_message_text)
 	add_fingerprint(user)
 	return TRUE

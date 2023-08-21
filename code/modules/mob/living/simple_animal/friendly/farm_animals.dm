@@ -66,7 +66,7 @@
 			enemies.Cut()
 			LoseTarget()
 			src.visible_message(span_notice("[src] calms down."))
-		udder.generateMilk(milk_reagent)
+		udder?.generateMilk(milk_reagent)
 		eat_plants()
 		if(!pulledby)
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
@@ -114,7 +114,7 @@
 		if(istype(H.dna.species, /datum/species/pod))
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
 			H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
-								  span_userdanger("[src] takes a big chomp out of your [NB]!"))
+									span_userdanger("[src] takes a big chomp out of your [NB]!"))
 			NB.dismember()
 //cow
 /mob/living/simple_animal/cow
@@ -146,48 +146,178 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 200
 	maxHealth = 200
+	var/list/ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 8),
+		"4" = list(-2, 8),
+		"8" = list(2, 8)
+		)
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
-	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	var/list/food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/stack/sheet/hay)
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/is_calf = 0
 	var/has_calf = 0
 	var/young_type = null
 	blood_volume = 480
+	var/ride_move_delay = 2
+	var/hunger = 1
+	COOLDOWN_DECLARE(hunger_cooldown)
 
 	footstep_type = FOOTSTEP_MOB_SHOE
+///////////////////////
+//Dave's Brahmin Bags//
+///////////////////////
+
+
+	var/mob/living/owner = null
+	var/follow = FALSE
+
+	var/bridle = FALSE
+	var/bags = FALSE
+	var/collar = FALSE
+	var/saddle = FALSE
+	var/brand = ""
+
 
 /mob/living/simple_animal/cow/Initialize()
 	udder = new(null, milk_reagent)
 	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
 	qdel(udder)
 	udder = null
 	return ..()
 
+/mob/living/simple_animal/cow/death(gibbed)
+	. = ..()
+	if(can_buckle)
+		can_buckle = FALSE
+	if(buckled_mobs)
+		for(var/mob/living/M in buckled_mobs)
+			unbuckle_mob(M)
+	for(var/atom/movable/stuff_innit in contents)
+		stuff_innit.forceMove(get_turf(src))
+	if(collar)
+		new /obj/item/brahmincollar(get_turf(src))
+	if(bridle)
+		new /obj/item/brahminbridle(get_turf(src))
+	if(saddle)
+		new /obj/item/brahminsaddle(get_turf(src))
+
+/mob/living/simple_animal/cow/examine(mob/user)
+	. = ..()
+	if(collar)
+		. += "<br>A collar with a tag etched '[name]' is hanging from its neck."
+	if(brand)
+		. += "<br>It has a brand reading '[brand]' on its backside."
+	if(bridle)
+		. += "<br>It has a bridle and reins attached to its head."
+	if(bags)
+		. += "<br>It has some bags attached."
+	if(saddle)
+		. += "<br>It has a saddle across its back."
+	if(health <= 0 || stat != CONSCIOUS)
+		return
+	if(saddle || bridle)
+		. += "<br>Feeding this beast will let it move quickly for longer! You'll need to remove their bridle and saddle to get them pregnant."
+	else
+		. += "<br>Feeding this beast will get it pregnant! You'll need to give them a bridle and/or a saddle to feed their hunger."
+	switch(hunger)
+		if(1)
+			. += "<br>They look well fed."
+		if(2)
+			. += "<br>They look hungry."
+		if(3)
+			. += "<br>They look <i>really</i> hungry."
+		else
+			. += "<br>They look fuckin <i>famished</i>."
+
 /mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
 		udder.milkAnimal(O, user)
-		return 1
-	else if(stat == CONSCIOUS && istype(O, food_type))
+		return TRUE
+	if(stat == CONSCIOUS && is_type_in_list(O, food_types))
+		feed_em(O, user)
+		return
+	/* if (istype(O,/obj/item/brahminbags))
+		if(bags)
+			to_chat(user, span_warning("The mount already has bags attached!"))
+			return
 		if(is_calf)
-			visible_message(span_alertalien("[src] adorably chews the [O]."))
-			qdel(O)
-		if(!has_calf && !is_calf)
-			has_calf = 1
-			visible_message(span_alertalien("[src] hungrily consumes the [O]."))
-			qdel(O)
-		else
-			visible_message(span_alertalien("[src] absently munches the [O]."))
-			qdel(O)
-	else
-		return ..()
+			to_chat(user, span_warning("The young animal cannot carry the bags!"))
+			return
+		to_chat(user, span_notice("You add [O] to [src]..."))
+		bags = TRUE
+		qdel(O)
+		ComponentInitialize()
+		return */
+
+	if(istype(O,/obj/item/brahmincollar))
+		if(user != owner)
+			to_chat(user, span_warning("You need to claim the mount with a bridle before you can rename it!"))
+			return
+
+		name = input("Choose a new name for your mount!","Name", name)
+
+		if(!name)
+			return
+
+		collar = TRUE
+		to_chat(user, span_notice("You add [O] to [src]..."))
+		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a mount to [name].")) //So people don't name their brahmin the N-Word without notice
+		qdel(O)
+		return
+
+	if(istype(O,/obj/item/brahminbridle))
+		if(bridle)
+			to_chat(user, span_warning("This mount already has a bridle!"))
+			return
+
+		owner = user
+		bridle = TRUE
+		tame = TRUE
+		to_chat(user, span_notice("You add [O] to [src], claiming it as yours."))
+		qdel(O)
+		return
+
+	if(istype(O,/obj/item/brahminsaddle))
+		if(saddle)
+			to_chat(user, span_warning("This mount already has a saddle!"))
+			return
+
+		saddle = TRUE
+		can_buckle = TRUE
+		buckle_lying = FALSE
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+		D.set_riding_offsets(RIDING_OFFSET_ALL, ride_offsets)
+		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
+		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+		D.vehicle_move_delay = ride_move_delay
+		D.drive_verb = "ride"
+		to_chat(user, span_notice("You add [O] to [src]."))
+		qdel(O)
+		return
+
+	if(istype(O,/obj/item/brahminbrand))
+		if(brand)
+			to_chat(user, span_warning("This mount already has a brand!"))
+			return
+
+		brand = input("What would you like to brand on your mount?","Brand", brand)
+
+		if(!brand)
+			return
+	. = ..()
 
 /mob/living/simple_animal/cow/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
 	if(stat == CONSCIOUS)
+		handle_following()
 		if((prob(3) && has_calf))
 			has_calf++
 		if(has_calf > 10)
@@ -205,7 +335,27 @@
 					name = "cow"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
+			if(COOLDOWN_FINISHED(src, hunger_cooldown))
+				if(prob(5))
+					become_hungry()
+				COOLDOWN_START(src, hunger_cooldown, 5 MINUTES)
+			else
+				update_speed()
+
+/mob/living/simple_animal/cow/proc/become_hungry()
+	hunger++
+	update_speed()
+
+/mob/living/simple_animal/cow/proc/refuel_horse()
+	hunger = 1
+	update_speed()
+
+/mob/living/simple_animal/cow/proc/update_speed()
+	ride_move_delay = initial(ride_move_delay) + round(log(1.6,hunger), 0.2) // vOv
+	if(saddle)
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+		D.vehicle_move_delay = ride_move_delay
 
 /mob/living/simple_animal/cow/on_attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
@@ -232,6 +382,84 @@
 					span_revennotice("[internal]"))
 	else
 		..()
+
+/* /mob/living/simple_animal/cow/ComponentInitialize()
+	if(!bags)
+		return
+	AddComponent(/datum/component/storage/concrete/brahminbag)
+	return */
+
+/mob/living/simple_animal/cow/proc/feed_em(obj/item/I, mob/user)
+	if(!I || !user)
+		return
+	var/obj/item/stack/stax
+	if(istype(I, /obj/item/stack))
+		stax = I
+		if(!stax.tool_use_check(user, 2))
+			return
+
+	if(saddle || bridle)
+		visible_message(span_alertalien("[src] consumes the [I]."))
+		refuel_horse()
+	else if(is_calf)
+		visible_message(span_alertalien("[src] adorably chews the [I]."))
+	else if(!has_calf)
+		has_calf = 1
+		visible_message(span_alertalien("[src] fertilely consumes the [I]."))
+	else
+		visible_message(span_alertalien("[src] absently munches the [I]."))
+
+	if(stax)
+		stax.use(2)
+	else
+		qdel(I)
+
+/mob/living/simple_animal/cow/proc/handle_following()
+	if(stat == DEAD)
+		return
+	if(health <= 0)
+		return
+	if(owner)
+		if(!follow)
+			return
+		else if(CHECK_MOBILITY(src, MOBILITY_MOVE) && isturf(loc))
+			step_to(src, owner)
+
+/mob/living/simple_animal/cow/CtrlShiftClick(mob/user)
+	if(get_dist(user, src) > 1)
+		return
+
+	if(bridle && user.a_intent == INTENT_DISARM)
+		bridle = FALSE
+		tame = FALSE
+		owner = null
+		to_chat(user, span_notice("You remove the bridle gear from [src], dropping it on the ground."))
+		new /obj/item/brahminbridle(get_turf(user))
+
+	if(collar && user.a_intent == INTENT_GRAB)
+		collar = FALSE
+		name = initial(name)
+		to_chat(user, span_notice("You remove the collar from [src], dropping it on the ground."))
+		new /obj/item/brahmincollar(get_turf(user))
+
+	if(user == owner)
+		if(bridle && user.a_intent == INTENT_HELP)
+			if(stat == DEAD || health <= 0)
+				to_chat(user, span_alert("[src] can't obey your commands anymore. It is dead."))
+				return
+			if(follow)
+				to_chat(user, span_notice("You tug on the reins of [src], telling it to stay."))
+				follow = FALSE
+				return
+			else if(!follow)
+				to_chat(user, span_notice("You tug on the reins of [src], telling it to follow."))
+				follow = TRUE
+				return
+
+///////////////////////////
+//End Dave's Brahmin Bags//
+///////////////////////////
+
 
 //a cow that produces a random reagent in its udder
 /mob/living/simple_animal/cow/random
@@ -261,7 +489,7 @@
 /////////////
 
 /mob/living/simple_animal/chick
-	name = "\improper chick"
+	name = "chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/fallout/mobs/animals/farmanimals.dmi'
 	icon_state = "chick"
@@ -316,7 +544,7 @@
 	amount_grown = 0
 
 /mob/living/simple_animal/chicken
-	name = "\improper chicken"
+	name = "chicken"
 	desc = "Hopefully the eggs are good this season."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -356,6 +584,12 @@
 	var/list/validColors = list("brown","black","white")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
+	idlesound = list(
+		'sound/creatures/chicken/chicken1.ogg',
+		'sound/creatures/chicken/chicken2.ogg',
+		'sound/creatures/chicken/chicken3.ogg',
+		'sound/creatures/chicken/chicken4.ogg',
+		)
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -469,68 +703,586 @@
 	response_harm_simple = "kick"
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list( 
+		'sound/creatures/cow/cow1.ogg',
+		'sound/creatures/cow/cow2.ogg',
+		'sound/creatures/cow/cow3.ogg',
+		'sound/creatures/cow/cow4.ogg',
+		)
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	var/obj/item/inventory_back
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/reagent_containers/food/snacks/rawbrahminliver = 1,
+		/obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2,
+		/obj/item/stack/sheet/animalhide/brahmin = 3,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
 	butcher_difficulty = 1
 
-///////////////////////
-//Dave's Brahmin Bags//
-///////////////////////
+/mob/living/simple_animal/cow/brahmin/molerat
+	name = "tamed molerat"
+	desc = "That's a big ol' molerat, seems to be able to take a saddle!"
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "molerat"
+	icon_living = "molerat"
+	icon_dead = "molerat_dead"
+	icon_gib = "brahmin_gib"
+	speak = list("*gnarl","*scrungy")
+	speak_emote = list("grrrllgs","makes horrible molerat noises")
+	emote_hear = list("chatters.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bite"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	can_ghost_into = TRUE
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+
+	footstep_type = FOOTSTEP_MOB_HOOF
+	ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 8),
+		"4" = list(0, 8),
+		"8" = list(0, 8)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
 
 
-	var/mob/living/owner = null
-	var/follow = FALSE
+/mob/living/simple_animal/cow/brahmin/horse/honse //wuzzle
+	name = "honse"
+	desc = "That's a honse, it's the morst but it sure is snorst." //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "honse"
+	icon_living = "honse"
+	icon_dead = "honse_KO"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("wuzzles","winnies")
+	emote_hear = list("does some sort of insane horse sound.")
+	emote_see = list("perks its ears up.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 200
+	maxHealth = 200
+	ride_move_delay = 2.0
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
+		/obj/item/stack/sheet/bone = 3
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 3,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
 
-	var/bridle = FALSE
-	var/bags = FALSE
-	var/collar = FALSE
-	var/saddle = FALSE
-	var/brand = ""
+//https://media.tenor.com/JybpbLLsyX8AAAAC/fat-horse-wuzzle.gif
+//Wuzzle
 
-/mob/living/simple_animal/cow/brahmin/examine(mob/user)
-	. = ..()
-	desc = initial(desc)
-	if(collar)
-		desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
-	if(brand)
-		desc += "<br>It has a brand reading '[brand]' on its backside."
-	if(bridle)
-		desc += "<br>It has a bridle and reins attached to its head."
-	if(bags)
-		desc += "<br>It has some bags attached."
-	if(saddle)
-		desc += "<br>It has a saddle across its back."
 
+//Motorbike?
+
+/mob/living/simple_animal/cow/brahmin/motorbike //fast as fuck boiii-- costs welding fuel
+	name = "motorbike"
+	desc = "Wow, a small, working motorcycle. How cool!" //I don't care. ~gob
+	icon = 'modular_coyote/icons/mob/motorbike.dmi'
+	icon_state = "motorcycle_4dir"
+	icon_living = "motorcycle_4dir"
+	icon_dead = "motorcycle_overlay_n"
+	speak = list("*jump", "*beep")
+	speak_emote = list("beeps","honks")
+	emote_hear = list("The engine rumbles quietly.")
+	emote_see = list("The engine purrs loudly.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 75
+	maxHealth = 75 //Probably not the most durable piece of work. (equal in loss to the increase in speed)
+	ride_move_delay = 1.2 //A bit faster than a horse.
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets?"
+	response_help_simple = "pets?"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	food_types = list(/obj/item/reagent_containers/food/snacks/welding_fuel)
+	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_difficulty = 5
+
+//Horse
+
+/mob/living/simple_animal/cow/brahmin/horse //faster than a brahmin, but much less tanky
+	name = "horse"
+	desc = "That's a horse, it's not the morst but it sure is snorst." //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "horse"
+	icon_living = "horse"
+	icon_dead = "KO"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("wuzzles","winnies")
+	emote_hear = list("does some sort of insane horse sound.")
+	emote_see = list("perks its ears up.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 100
+	maxHealth = 100
+	ride_move_delay = 1.5
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 1,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+
+
+//Ridable Nightstalker
+//not hormse
+//smelly
+/mob/living/simple_animal/cow/brahmin/nightstalker //faster than a brahmin, but slower than a horse, mid ground tanky
+	name = "tamed nightstalker"
+	desc = "A crazed genetic hybrid of rattlesnake and coyote DNA. This one seems a bit less crazed, at least."
+	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
+	icon_state = "nightstalker-legion"
+	icon_living = "nightstalker-legion"
+	icon_dead = "nightstalker-legion-dead"
+	speak = list("*shiss","*gnarl","*bark")
+	speak_emote = list("barks","hisses")
+	emote_hear = list("perks its head up.")
+	emote_see = list("stares.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 150
+	maxHealth = 150
+	ride_move_delay = 1.8
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bites"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+	milk_reagent = /datum/reagent/toxin
+	ride_offsets = list(
+		"1" = list(1, 8),
+		"2" = list(1, 8),
+		"4" = list(1, 8),
+		"8" = list(1, 8)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
+	butcher_difficulty = 1
+
+
+/mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider
+	name = "tamed spider"
+	desc = "SOMEONE TAMED A FUCKING GIANT SPIDER?"
+	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "hunter"
+	icon_living = "hunter"
+	icon_dead = "hunter_dead"
+	speak = list("*chitter","*hiss")
+	speak_emote = list("chitters","hisses")
+	emote_hear = list("rubs it mandibles together.")
+	emote_see = list("stares, with all 8 eyes.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 150
+	maxHealth = 150
+	ride_move_delay = 1.8
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bites"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+	milk_reagent = /datum/reagent/toxin
+	ride_offsets = list(
+		"1" = list(0, 9),
+		"2" = list(0, 13),
+		"4" = list(-2, 9),
+		"8" = list(-2, 9)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
+	butcher_difficulty = 1
+//Bear
+/mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai
+	name = "tamed yaoguai"
+	desc = "Is that...a yaoguai with a saddle on it's back?"
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
+	icon_state = "yaoguai_r"
+	icon_living = "yaoguai_r"
+	icon_dead = "yaoguai_r_dead"
+	speak = list("roars","growls")
+	speak_emote = list("snarls","growls")
+	emote_hear = list("bares it's teeth and snarls.")
+	emote_see = list("glares around.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 300 //More tanky mount
+	maxHealth = 300
+	ride_move_delay = 1.8
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bites"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+//	milk_reagent = /datum/reagent/toxin
+	ride_offsets = list(
+		"1" = list(0, 9),
+		"2" = list(0, 13),
+		"4" = list(-2, 9),
+		"8" = list(-2, 9)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
+	butcher_difficulty = 1
+
+
+
+//Ridable Fennec
+/mob/living/simple_animal/cow/brahmin/horse/fennec //faster than a brahmin, but much less tanky
+	name = "fennec"
+	desc = "That's a fennec, screm."
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "fennec"
+	icon_living = "fennec"
+	icon_dead = "fennec_dead"
+	speak = list(
+	"*shiver",
+	"*alert",
+	"*fenbark"
+	)
+	speak_emote = list(
+		"barks",
+		"yips"
+		)
+	emote_hear = list(
+		"screams like a fenenec"
+		)
+	emote_see = list(
+		"perks its ears up."
+		)
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 100
+	maxHealth = 100
+	ride_move_delay = 1.5
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 3
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse
+	footstep_type = FOOTSTEP_MOB_HOOF
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 2,
+		/obj/item/stack/sheet/bone = 1
+		)
+	butcher_difficulty = 1
+	ride_offsets = list(
+		"1" = list(1, 6),
+		"2" = list(1, 6),
+		"4" = list(0, 6),
+		"8" = list(3, 7)
+		)
+
+
+	/*
 /obj/item/brahminbags
-	name = "brahmin bags"
-	desc = "Attach these bags to a brahmin and leave the heavy lifting to them!"
+	name = "saddle bags"
+	desc = "Attach these bags to a mount and leave the heavy lifting to them!"
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "trekkerpack"
+*/
+
+/mob/living/simple_animal/cow/brahmin/horse/choco
+	name = "yellow snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptoryellow"
+	icon_living = "raptoryellow"
+	icon_dead = "raptoryellow_dead"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("chirps","squacks")
+	emote_hear = list("makes a soft friendly chirp noise.")
+	emote_see = list("scratches at the ground.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 200
+	maxHealth = 200
+	ride_move_delay = 1.5
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse/choco
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 1,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+	ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 10),
+		"4" = list(0, 8),
+		"8" = list(0, 8)
+		)
+
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/black
+	name = "black snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblack"
+	icon_living = "raptorblack"
+	icon_dead = "raptorblack_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/blue
+	name = "blue snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblue"
+	icon_living = "raptorblue"
+	icon_dead = "raptorblue_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/white
+	name = "white snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorwhite"
+	icon_living = "raptorwhite"
+	icon_dead = "raptorwhite_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/purple
+	name = "purple snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorpurple"
+	icon_living = "raptorpurple"
+	icon_dead = "raptorpurple_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/red
+	name = "red snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorred"
+	icon_living = "raptorred"
+	icon_dead = "raptorred_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/green
+	name = "green snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorgreen"
+	icon_living = "raptorgreen"
+	icon_dead = "raptorgreen_dead"
 
 /obj/item/brahmincollar
-	name = "brahmin collar"
-	desc = "A collar with a piece of etched metal serving as a tag. Use this on a brahmin you own to rename them."
+	name = "mount collar"
+	desc = "A collar with a piece of etched metal serving as a tag. Use this on a mount you own to rename them."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "petcollar"
 
 /obj/item/brahminbridle
-	name = "brahmin bridle gear"
-	desc = "A set of headgear used to control and claim a brahmin. Consists of a bit, reins, and leather straps stored in a satchel."
+	name = "mount bridle gear"
+	desc = "A set of headgear used to control and claim a mount. Consists of a bit, reins, and leather straps stored in a satchel."
 	icon = 'icons/fallout/objects/tools.dmi'
 	icon_state = "brahminbridle"
 
 /obj/item/brahminsaddle
-	name = "brahmin saddle"
+	name = "mount saddle"
 	desc = "A saddle fit for a mutant beast of burden."
 	icon = 'icons/fallout/objects/tools.dmi'
 	icon_state = "brahminsaddle"
 
 /obj/item/brahminbrand
-	name = "brahmin branding tool"
-	desc = "Use this on a brahmin to claim it as yours!"
+	name = "mount branding tool"
+	desc = "Use this on a mount to claim it as yours!"
 	icon = 'icons/fallout/objects/tools.dmi'
 	icon_state = "brahminbrand"
 
@@ -539,7 +1291,7 @@
 
 /obj/item/storage/backpack/duffelbag/debug_brahmin_kit/PopulateContents()
 	. = ..()
-	new /obj/item/brahminbags(src)
+	//new /obj/item/brahminbags(src)
 	new /obj/item/brahmincollar(src)
 	new /obj/item/brahminbridle(src)
 	new /obj/item/brahminsaddle(src)
@@ -547,211 +1299,69 @@
 	new /obj/item/choice_beacon/pet(src)
 	new /obj/item/gun/ballistic/rifle/mag/antimateriel(src)
 
+/*
 /datum/crafting_recipe/brahminbags
-	name = "Brahmin bags"
+	name = "Saddle bags"
 	result = /obj/item/brahminbags
 	time = 60
 	reqs = list(/obj/item/storage/backpack/duffelbag = 2,
 				/obj/item/stack/sheet/cloth = 5)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+*/
 
 /datum/crafting_recipe/brahmincollar
-	name = "Brahmin collar"
+	name = "Mount collar"
 	result = /obj/item/brahmincollar
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/brahminbridle
-	name = "Brahmin bridle gear"
+	name = "Mount bridle gear"
 	result = /obj/item/brahminbridle
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/brahminsaddle
-	name = "Brahmin saddle"
+	name = "Mount saddle"
 	result = /obj/item/brahminsaddle
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/leather = 4,
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
 /datum/crafting_recipe/brahminbrand
-	name = "Brahmin branding tool"
+	name = "Mount branding tool"
 	result = /obj/item/brahminbrand
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	tools = list(TOOL_WORKBENCH)
-	subcategory = CAT_FARMING
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-/mob/living/simple_animal/cow/brahmin/death(gibbed)
-	. = ..()
-	if(can_buckle)
-		can_buckle = FALSE
-	if(buckled_mobs)
-		for(var/mob/living/M in buckled_mobs)
-			unbuckle_mob(M)
-	for(var/atom/movable/stuff_innit in contents)
-		stuff_innit.forceMove(get_turf(src))
-	if(collar)
-		new /obj/item/brahmincollar(get_turf(src))
-	if(bridle)
-		new /obj/item/brahminbridle(get_turf(src))
-	if(saddle)
-		new /obj/item/brahminsaddle(get_turf(src))
-
-/mob/living/simple_animal/cow/brahmin/attackby(obj/item/I, mob/user)
-	. = ..()
-	if(istype(I,/obj/item/brahminbags))
-		if(bags)
-			to_chat(user, span_warning("The brahmin already has bags attached!"))
-			return
-		if(is_calf)
-			to_chat(user, span_warning("The calf cannot carry the bags!"))
-			return
-		to_chat(user, span_notice("You add [I] to [src]..."))
-		bags = TRUE
-		qdel(I)
-		src.ComponentInitialize()
-		return
-
-	if(istype(I,/obj/item/brahmincollar))
-		if(user != owner)
-			to_chat(user, span_warning("You need to claim the brahmin with a bridle before you can rename it!"))
-			return
-
-		name = input("Choose a new name for your brahmin!","Name", name)
-
-		if(!name)
-			return
-
-		collar = TRUE
-		to_chat(user, span_notice("You add [I] to [src]..."))
-		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].")) //So people don't name their brahmin the N-Word without notice
-		qdel(I)
-		return
-
-	if(istype(I,/obj/item/brahminbridle))
-		if(bridle)
-			to_chat(user, span_warning("This brahmin already has a bridle!"))
-			return
-
-		owner = user
-		bridle = TRUE
-		tame = TRUE
-		to_chat(user, span_notice("You add [I] to [src], claiming it as yours."))
-		qdel(I)
-		return
-
-	if(istype(I,/obj/item/brahminsaddle))
-		if(saddle)
-			to_chat(user, span_warning("This brahmin already has a saddle!"))
-			return
-
-		saddle = TRUE
-		can_buckle = TRUE
-		buckle_lying = FALSE
-		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 8), TEXT_SOUTH = list(0, 8), TEXT_EAST = list(-2, 8), TEXT_WEST = list(2, 8)))
-		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
-		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
-		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
-		D.drive_verb = "ride"
-		to_chat(user, span_notice("You add [I] to [src]."))
-		qdel(I)
-		return
-
-	if(istype(I,/obj/item/brahminbrand))
-		if(brand)
-			to_chat(user, span_warning("This brahmin already has a brand!"))
-			return
-
-		brand = input("What would you like to brand on your brahmin?","Brand", brand)
-
-		if(!brand)
-			return
-
+/*
 /datum/component/storage/concrete/brahminbag
 	max_w_class = WEIGHT_CLASS_HUGE //Allows the storage of shotguns and other two handed items.
 	max_combined_w_class = 35
-	max_items = 30
+	max_items = 20
 	drop_all_on_destroy = TRUE
 	allow_big_nesting = TRUE
+*/
 
-
-/mob/living/simple_animal/cow/brahmin/ComponentInitialize()
-	if(!bags)
-		return
-	AddComponent(/datum/component/storage/concrete/brahminbag)
-	return
-
-/mob/living/simple_animal/cow/brahmin/BiologicalLife(seconds, times_fired)
-	if(!(. = ..()))
-		return
-	handle_following()
-
-
-/mob/living/simple_animal/cow/brahmin/proc/handle_following()
-	if(stat == DEAD)
-		return
-	if(health <= 0)
-		return
-	if(owner)
-		if(!follow)
-			return
-		else if(CHECK_MOBILITY(src, MOBILITY_MOVE) && isturf(loc))
-			step_to(src, owner)
-
-/mob/living/simple_animal/cow/brahmin/CtrlShiftClick(mob/user)
-	if(get_dist(user, src) > 1)
-		return
-
-	if(bridle && user.a_intent == INTENT_DISARM)
-		bridle = FALSE
-		tame = FALSE
-		owner = null
-		to_chat(user, span_notice("You remove the bridle gear from [src], dropping it on the ground."))
-		new /obj/item/brahminbridle(get_turf(user))
-
-	if(collar && user.a_intent == INTENT_GRAB)
-		collar = FALSE
-		name = initial(name)
-		to_chat(user, span_notice("You remove the collar from [src], dropping it on the ground."))
-		new /obj/item/brahmincollar(get_turf(user))
-
-	if(user == owner)
-		if(bridle && user.a_intent == INTENT_HELP)
-			if(stat == DEAD || health <= 0)
-				to_chat(user, span_alert("[src] can't obey your commands anymore. It is dead."))
-				return
-			if(follow)
-				to_chat(user, span_notice("You tug on the reins of [src], telling it to stay."))
-				follow = FALSE
-				return
-			else if(!follow)
-				to_chat(user, span_notice("You tug on the reins of [src], telling it to follow."))
-				follow = TRUE
-				return
-
-///////////////////////////
-//End Dave's Brahmin Bags//
-///////////////////////////
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
@@ -891,14 +1501,14 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new()
+				udder = new(null, milk_reagent)
 				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
 
 // BIGHORNER CALF
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
@@ -910,6 +1520,28 @@
 	resize = 0.7
 	update_transform()
 
+/mob/living/simple_animal/cow/brahmin/cow //return to bovine
+	name = "Cow"
+	desc = "A black and white cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow"
+	icon_living = "cow"
+	icon_dead = "cow_dead"
+	icon_gib = "brahmin_gib"
+
+/mob/living/simple_animal/cow/brahmin/cow/Initialize()
+	.=..()
+	resize = 0.85
+	update_transform()
+
+/mob/living/simple_animal/cow/brahmin/cow/tan
+	name = "Tan Cow"
+	desc = "A tan cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow_tan"
+	icon_living = "cow_tan"
+	icon_dead = "cow_tan_dead"
+	icon_gib = "brahmin_gib"
 
 /* Seems obsolete with Daves Brahmin packs, marked for death?
 	if(inventory_back && inventory_back.brahmin_fashion)

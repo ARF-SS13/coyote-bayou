@@ -4,7 +4,8 @@
 	icon_state = "top_hat"
 	item_state = "that"
 	body_parts_covered = HEAD
-	slot_flags = ITEM_SLOT_HEAD
+	w_class = WEIGHT_CLASS_SMALL //makes hoods fit nicer into cloaks, makes hats not gigantic
+	slot_flags = INV_SLOTBIT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"

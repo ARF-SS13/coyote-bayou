@@ -19,6 +19,9 @@
 			for(var/obj/item/key_try in H.contents)
 				if(check_access(key_try))
 					return TRUE
+		for(var/obj/item/bodypart/BP in H.bodyparts)
+			if(check_access(BP))
+				return TRUE
 /* 		if(H.wear_id && check_access(H.wear_id))
 			return TRUE
 		if(H.gloves && check_access(H.gloves))
@@ -456,7 +459,7 @@
 				"NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Recon Ranger",
 				"NCR Scout", "NCR Scout Sergeant", "NCR Scout Lieutenant",
 				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
-				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler",
+				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller", "Settler", "Vertibird Pilot",
 				"Wastelander", "Raider", "Great Khan", "Preacher", "Head Hunter", "Chief", "Shaman", "Villager", "Hunter")
 
 /proc/get_all_job_icons() //For all existing HUD icons

@@ -8,6 +8,21 @@
 	if(trippy)
 		SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "[type]_high")
 
+/datum/reagent/drug/proc/dont_do_drugs(mob/living/carbon/M)
+	if(!iscarbon(M))
+		return
+	if(NODRUGS(M))
+		switch(rand(1,20))
+			if(1 to 5)
+				M.vomit()
+			if(6 to 10)
+				M.emote("cry")
+			if(11 to 17)
+				M.emote("scream")
+			if(18 to 20)
+				M.emote("scrungy")
+		return TRUE
+
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
 	value = REAGENT_VALUE_VERY_COMMON
@@ -17,6 +32,10 @@
 	pH = 9
 
 /datum/reagent/drug/space_drugs/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	M.set_drugginess(15)
 	if(isturf(M.loc) && !isspaceturf(M.loc))
 		if(CHECK_MOBILITY(M, MOBILITY_MOVE))
@@ -46,6 +65,10 @@
 	pH = 8
 
 /datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(prob(1))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
@@ -67,6 +90,10 @@
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/drug/crank/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(prob(5))
 		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
 		to_chat(M, span_notice("[high_message]"))
@@ -115,6 +142,10 @@
 
 
 /datum/reagent/drug/krokodil/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel calm.", "You feel collected.", "You feel like you need to relax.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -167,6 +198,10 @@
 
 
 /datum/reagent/drug/heroin/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel like you're floating.", "Life feels like a beautiful dream.", "Everything seems right with the world.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -215,6 +250,10 @@
 
 /datum/reagent/drug/methamphetamine/on_mob_metabolize(mob/living/L)
 	..()
+	if(dont_do_drugs(L))
+		. = TRUE
+		..()
+		return
 	L.ignore_slowdown(type)
 	ADD_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
 
@@ -224,6 +263,10 @@
 	..()
 
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -313,6 +356,10 @@
 
 /datum/reagent/drug/bath_salts/on_mob_metabolize(mob/living/L)
 	..()
+	if(dont_do_drugs(L))
+		. = TRUE
+		..()
+		return
 	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	if(iscarbon(L))
@@ -328,6 +375,10 @@
 	..()
 
 /datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -409,6 +460,10 @@
 	value = REAGENT_VALUE_RARE
 
 /datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
@@ -432,6 +487,11 @@
 
 /datum/reagent/drug/happiness/on_mob_add(mob/living/L)
 	..()
+	if(dont_do_drugs(L))
+		to_chat(L, span_userdanger("You feel TOO happy!"))
+		. = TRUE
+		..()
+		return
 	ADD_TRAIT(L, TRAIT_FEARLESS, type)
 	SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "happiness_drug", /datum/mood_event/happiness_drug)
 
@@ -441,6 +501,10 @@
 	..()
 
 /datum/reagent/drug/happiness/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	M.jitteriness = 0
 	M.confused = 0
 	M.disgust = 0
@@ -512,6 +576,11 @@
 
 /datum/reagent/drug/skooma/on_mob_metabolize(mob/living/L)
 	. = ..()
+	if(dont_do_drugs(L))
+		to_chat(L, span_userdanger("But its illegal!"))
+		. = TRUE
+		..()
+		return
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/skooma)
 	L.action_cooldown_mod *= 2
 	if(ishuman(L))
@@ -525,6 +594,10 @@
 
 /datum/reagent/drug/skooma/on_mob_end_metabolize(mob/living/L)
 	. = ..()
+	if(dont_do_drugs(L))
+		. = TRUE
+		..()
+		return
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/skooma)
 	L.action_cooldown_mod *= 0.5
 	if(ishuman(L))
@@ -537,6 +610,10 @@
 			H.dna.species.punchstunthreshold += 2
 
 /datum/reagent/drug/skooma/on_mob_life(mob/living/carbon/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM)
 	M.adjustToxLoss(1*REM)
 	if(prob(10))
@@ -588,13 +665,13 @@
 
 /datum/reagent/syndicateadrenals/on_mob_metabolize(mob/living/M)
 	. = ..()
-	if(istype(M))
+	if(istype(M) && !NODRUGS(M))
 		M.action_cooldown_mod *= 0.5
 		to_chat(M, span_notice("You feel an intense surge of energy rushing through your veins."))
 
 /datum/reagent/syndicateadrenals/on_mob_end_metabolize(mob/living/M)
 	. = ..()
-	if(istype(M))
+	if(istype(M) && !NODRUGS(M))
 		M.action_cooldown_mod *= 2
 		to_chat(M, span_notice("You feel as though the world around you is going faster."))
 
@@ -616,6 +693,10 @@
 	synth_metabolism_use_human = TRUE // robots can honry too
 
 /datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		if((prob(min(current_cycle/2,5))))
 			M.emote(pick("moan","blush"))
@@ -643,6 +724,10 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO))
 		if(prob(5))
 			if(prob(current_cycle))
@@ -700,6 +785,10 @@
 	synth_metabolism_use_human = TRUE // robots can horno too
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(M && M.client?.prefs.arousable && prob(16))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
@@ -719,6 +808,10 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/M)
+	if(dont_do_drugs(M))
+		. = TRUE
+		..()
+		return
 	if(M && M.client?.prefs.arousable)
 		REMOVE_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 		if(ishuman(M))

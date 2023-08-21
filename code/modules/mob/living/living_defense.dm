@@ -82,6 +82,11 @@
 			CRASH("Invalid rediretion mode [redirection_mode]")
 
 /mob/living/bullet_act(obj/item/projectile/P, def_zone)
+	if(ranged_mob_grief(P))
+		if(ismob(P.firer))
+			var/mob/shootier = P.firer
+			shootier.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
+		return FALSE
 	var/totaldamage = P.damage
 	var/staminadamage = P.stamina
 	var/final_percent = 0
@@ -112,6 +117,19 @@
 	if(missing > 0)
 		final_percent += missing * armor_ratio
 	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/// Returns TRUE if the thing is fired by a player controlled mob, and we're too wounded to be killed
+/mob/living/proc/ranged_mob_grief(obj/item/projectile/P)
+	if(!istype(P)) // No projectile, no problem (here at least)
+		return FALSE
+	if(!isanimal(P.firer)) // Only simplemobs here pls
+		return FALSE
+	var/mob/living/simple_animal/shootre = P.firer
+	if(!shootre.ckey) // Only player controlled mobs here pls
+		return FALSE
+	if(stat) // Only if the person getting wrecked is not awake (crit, sleeping, etc)
+		return TRUE
+	return FALSE
 
 /mob/living/proc/check_projectile_dismemberment(obj/item/projectile/P, def_zone)
 	return 0
@@ -207,6 +225,7 @@
 	adjust_fire_stacks(3)
 	IgniteMob()
 
+/// SRC is GRABBED by USER
 /mob/living/proc/grabbedby(mob/living/carbon/user, supress_message = FALSE)
 	if(user == anchored || !isturf(user.loc))
 		return FALSE
@@ -236,7 +255,7 @@
 
 		if(user.grab_state) //only the first upgrade is instantaneous
 			var/old_grab_state = user.grab_state
-			var/grab_upgrade_time = instant ? 0 : 30
+			var/grab_upgrade_time = instant ? 0 : 3 SECONDS
 			visible_message(span_danger("[user] starts to tighten [user.p_their()] grip on [src]!"), \
 				span_userdanger("[user] starts to tighten [user.p_their()] grip on you!"), target = user,
 				target_message = span_danger("You start to tighten your grip on [src]!"))
@@ -245,7 +264,7 @@
 					log_combat(user, src, "attempted to neck grab", addition="neck grab")
 				if(GRAB_NECK)
 					log_combat(user, src, "attempted to strangle", addition="kill grab")
-			if(!do_mob(user, src, grab_upgrade_time))
+			if(!do_mob(user, src, grab_upgrade_time, allow_movement = TRUE, public_progbar = TRUE))
 				return 0
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state || user.a_intent != INTENT_GRAB)
 				return 0
@@ -340,16 +359,24 @@
 	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	M.DelayNextAction()
-	var/list/attack_phrases = list(
-		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
-		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
-	)
-	if(M.melee_damage_upper == 0)
+	if(M.ckey && stat && ckey && !(M.player_character)) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
+		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
+		return FALSE
+	var/list/attack_phrases = list()
+	if(M.melee_damage_upper == 0 || (M.player_character && M.a_intent == INTENT_HELP))
+		attack_phrases = list(
+		"continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
+		"simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
+		)
 		M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
 			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
 			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
 		return 0
 	else
+		attack_phrases = list(
+		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
+		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
+		)
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
 			to_chat(M, span_notice("You don't want to hurt anyone!"))
 			return FALSE

@@ -61,8 +61,22 @@
 /obj/machinery/telecomms/bus/preset_three
 	id = "Bus 3"
 	network = "tcommsat"
-	freq_listening = list(FREQ_SECURITY, FREQ_COMMAND, FREQ_VAULT, FREQ_NCR, FREQ_BOS, FREQ_ENCLAVE, FREQ_TOWN_MAYOR, FREQ_TOWN, FREQ_TOWN_PD, FREQ_RANGER, FREQ_TOWN_COMMERCE)
-	autolinkers = list("processor3", "security", "command", "den","vault", "ncr", "bos", "enclave", "town", "legion", "ranger", "khans")
+	freq_listening = list(BUS_FREQ_FUCKYOU_ALLOFTHEM)
+	autolinkers = list(
+		"processor3", 
+		"security", 
+		"command", 
+		"den",
+		"vault", 
+		"ncr", 
+		"bos", 
+		"enclave", 
+		"town", 
+		"legion", 
+		"ranger", 
+		"responders", 
+		"bikers",
+		"khans")
 
 /obj/machinery/telecomms/bus/preset_four
 	id = "Bus 4"
@@ -72,7 +86,7 @@
 
 /obj/machinery/telecomms/bus/preset_four/Initialize()
 	. = ..()
-	for(var/i = MIN_FREQ, i <= MAX_FREQ, i += 2)
+	for(var/i = MIN_FREQ, i <= MAX_FREQ, i += 1) // who's gonna stop me, the FCC?
 		freq_listening |= i
 
 /obj/machinery/telecomms/bus/preset_one/birdstation

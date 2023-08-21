@@ -342,7 +342,7 @@
 /datum/chemical_reaction/slime/slimeregen
 	name = "Slime Regen"
 	id = "m_regen"
-	results = list(/datum/reagent/medicine/regen_jelly = 5)
+	results = list(/datum/reagent/medicine/regen_jelly = 2) //editted from 5, toned down for more scarcity
 	required_reagents = list(/datum/reagent/blood = 1)
 	required_container = /obj/item/slime_extract/purple
 	required_other = TRUE
@@ -389,6 +389,7 @@
 		slime.visible_message(span_danger("The [slime] is driven into a frenzy!"))
 	..()
 
+/*slowdown is an important mechanic
 /datum/chemical_reaction/slime/slimespeed
 	name = "Slime Speed"
 	id = "m_speed"
@@ -399,6 +400,7 @@
 /datum/chemical_reaction/slime/slimespeed/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/speed(get_turf(holder.my_atom))
 	..()
+*/
 
 //Pink
 /datum/chemical_reaction/slime/docility
@@ -505,7 +507,7 @@
 	required_other = TRUE
 
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
-	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
+	new /obj/item/ingot/adamantine(get_turf(holder.my_atom))
 	..()
 
 //Bluespace
@@ -556,6 +558,7 @@
 	new /obj/item/slimepotion/enhancer(get_turf(holder.my_atom))
 	..()
 
+/*paint the town red, not blue
 /datum/chemical_reaction/slime/slime_territory
 	name = "Slime Territory"
 	id = "s_territory"
@@ -566,6 +569,7 @@
 /datum/chemical_reaction/slime/slime_territory/on_reaction(datum/reagents/holder)
 	new /obj/item/areaeditor/blueprints/slime(get_turf(holder.my_atom))
 	..()
+*/
 
 //Sepia
 /datum/chemical_reaction/slime/slimestop
@@ -585,7 +589,7 @@
 	if(istype(extract))
 		if(extract.Uses > 0)
 			var/mob/lastheld = get_mob_by_key(holder.my_atom.fingerprintslast)
-			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, ITEM_SLOT_HANDS, disable_warning = TRUE))
+			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, INV_SLOTBIT_HANDS, disable_warning = TRUE))
 				extract.forceMove(get_turf(lastheld))
 	use_slime_core(holder)
 

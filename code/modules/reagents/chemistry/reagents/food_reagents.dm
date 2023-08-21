@@ -18,6 +18,7 @@
 	ghoulfriendly = TRUE
 	effective_blood_max = 200
 	effective_blood_multiplier = 5
+	var/canbrew = FALSE //sugary consumables trigger autobrewery syndrome
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
@@ -25,6 +26,11 @@
 		M.adjust_nutrition(nutriment_factor, max_nutrition)
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	holder?.remove_reagent(type, metabolization_rate)
+	if (canbrew)
+		if (holder?.has_reagent(/datum/reagent/medicine/spaceacillin))
+			return
+		if (HAS_TRAIT(M, TRAIT_AUTOBREW))
+			holder?.add_reagent(/datum/reagent/consumable/ethanol, 0.5) //foods and drinks metabolize 0.4 per tick. 0.5 added per tick is just enough to cause slight buildup
 
 /datum/reagent/consumable/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == INGEST)
@@ -48,7 +54,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	color = "#664330" // rgb: 102, 67, 48
-
+	canbrew = TRUE
 	var/brute_heal = 1
 	var/burn_heal = 0
 
@@ -100,6 +106,7 @@
 	nutriment_factor = 15 * REAGENTS_METABOLISM //The are the best food for you!
 	brute_heal = 1
 	burn_heal = 1
+	canbrew = FALSE
 
 /datum/reagent/consumable/nutriment/vitamin/on_mob_life(mob/living/carbon/M)
 	if(M.satiety < 600)
@@ -161,6 +168,7 @@
 	overdose_threshold = 200 // Hyperglycaemic shock
 	taste_description = "sweetness"
 	value = REAGENT_VALUE_NONE
+	canbrew = TRUE
 
 // Plants should not have sugar, they can't use it and it prevents them getting water/ nutients, it is good for mold though...
 /datum/reagent/consumable/sugar/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -492,17 +500,24 @@
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "bitterness"
 
+/datum/reagent/consumable/coco/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
+	return ..()
+
 /datum/reagent/consumable/hot_coco
 	name = "Hot Chocolate"
 	description = "Made with love! And coco beans."
 	color = "#660000" // rgb: 221, 202, 134
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
-	glass_name = "glass of chocolate"
+	glass_name = "cup of hot chocolate"
 	glass_desc = "Tasty."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+	if(HAS_TRAIT(M, TRAIT_NO_CHOCOLATE))
+		M.adjustToxLoss(1, 0)
 	..()
 
 /datum/reagent/drug/mushroomhallucinogen
@@ -585,6 +600,7 @@
 	color = "#FF00FF" // rgb: 255, 0, 255
 	taste_description = "childhood whimsy"
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
 
 /datum/reagent/consumable/sprinkles/on_mob_life(mob/living/carbon/M)
 	if(M.mind && HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM))
@@ -600,6 +616,12 @@
 	value = REAGENT_VALUE_UNCOMMON
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	taste_description = "peanuts"
+	canbrew = TRUE //peanut butter has a lot of sugar
+
+/datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(HAS_TRAIT(M, TRAIT_WHITE_WOMAN))
+		M.visible_message("<b>[M]</b> [pick("licks [M.p_their()] lips", "licks [M.p_their()] nose", "licks the air")].")
+	return ..()
 
 /datum/reagent/consumable/cornoil
 	name = "Corn Oil"
@@ -730,6 +752,7 @@
 	color = "#fff882"
 	metabolization_rate = 3 * REAGENTS_METABOLISM
 	taste_description = "sweet slime"
+	canbrew = TRUE
 
 /datum/reagent/consumable/corn_syrup/on_mob_life(mob/living/carbon/M)
 	holder.add_reagent(/datum/reagent/consumable/sugar, 3)
@@ -743,6 +766,7 @@
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	taste_description = "sweetness"
+	canbrew = TRUE
 
 /datum/reagent/consumable/honey/on_mob_life(mob/living/carbon/M)
 	M.reagents.add_reagent(/datum/reagent/consumable/sugar,3)
@@ -925,6 +949,7 @@
 	taste_description = "caramel"
 	reagent_state = SOLID
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
 
 /datum/reagent/consumable/secretsauce
 	name = "secret sauce"
@@ -970,6 +995,7 @@
 	taste_mult = 2.5 //sugar's 1.5, capsacin's 1.5, so a good middle ground.
 	taste_description = "smokey sweetness"
 	value = REAGENT_VALUE_COMMON
+	canbrew = TRUE
 
 /datum/reagent/consumable/laughsyrup
 	name = "Laughin' Syrup"
@@ -1012,3 +1038,4 @@
 	color = "#efeff0"
 	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "fluffy sweet cream"
+	canbrew = TRUE

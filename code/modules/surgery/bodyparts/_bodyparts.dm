@@ -91,6 +91,8 @@
 
 	/// The scars currently afflicting this body part
 	var/list/scars
+	/// the tattoos on this part
+	var/list/tattoos = list()
 	/// Our current stored wound damage multiplier
 	var/wound_damage_multiplier = 1
 
@@ -109,7 +111,7 @@
 	var/obj/item/stack/medical/current_gauze
 	/// If we have a suture stitching our wounds closed
 	var/obj/item/stack/medical/current_suture
-	COOLDOWN_DECLARE(bandage_isnt_good_enough)
+	//COOLDOWN_DECLARE(bandage_isnt_good_enough)
 
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
@@ -127,6 +129,12 @@
 	if(owner)
 		owner.bodyparts -= src
 		owner = null
+	if(current_gauze)
+		qdel(current_gauze)
+	if(current_suture)
+		qdel(current_suture)
+	if(LAZYLEN(tattoos))
+		QDEL_LIST(tattoos)
 	return ..()
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)
@@ -158,6 +166,13 @@
 			drop_organs(user)
 	else
 		return ..()
+
+/obj/item/bodypart/GetAccess()
+	. = list()
+	for(var/spot in tattoos)
+		if(istype(tattoos[spot], /datum/tattoo))
+			var/datum/tattoo/tattie = tattoos[spot]
+			. |= tattie.tat_access
 
 /obj/item/bodypart/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	..()
@@ -1197,6 +1212,7 @@
 			span_danger("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"),
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
+		playsound(get_turf(src), 'sound/effects/bandagetear.ogg')
 		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
 	needs_processing = TRUE
 	return TRUE
@@ -1319,6 +1335,7 @@
 			span_danger("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"),
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_suture)
+		playsound(get_turf(src), 'sound/effects/bandagetear.ogg')
 		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
 	needs_processing = TRUE
 	return TRUE
@@ -1391,3 +1408,78 @@
 			. = round(. / 600, 1)
 			if(covering == COVERING_TIME_MINUTE_FUZZY)
 				. = round(., 5)
+
+/// Adds a tattoo to this bodypart
+/obj/item/bodypart/proc/add_tattoo(datum/tattoo/tat, location)
+	if(tattoos[location]) // theres a tat there
+		return FALSE
+	var/datum/tattoo/ink
+	if(ispath(tat))
+		ink = new tat(src, null, location)
+	else if(istype(tat))
+		var/datum/tattoo/tattytype = tat.type
+		ink = new tattytype(src, tat, location) // easiest just to copy over the vars, nobody'll ever know
+	else
+		return
+	if(!ink)
+		return
+	tattoos[location] = ink
+	ink.on_apply()
+	return TRUE
+
+/// Removes a tattoo to this bodypart. accepts a location, path, type, or anything in between, cus why tf not
+/obj/item/bodypart/proc/remove_tattoo(datum/tattoo/tat, location)
+	if(location)
+		if(!istype(tat) && !ispath(tat) && istype(tattoos[location], /datum/tattoo))
+			var/datum/tattoo/tattie = tattoos[location]
+			qdel(tattie)
+			tattoos[location] = null
+			return TRUE
+		if(istype(tat))
+			qdel(tat)
+			tattoos[location] = null
+			return TRUE	
+		if(ispath(tat))
+			var/datum/tattoo/tattie = tattoos[location]
+			if(tattie.type == tat)
+				qdel(tattie)
+				tattoos[location] = null
+				return TRUE
+	// no location, just a type/path? k
+	if(istype(tat))
+		for(var/key in tattoos)
+			if(tattoos[key] == tat)
+				qdel(tat)
+				tattoos[key] = null
+				return TRUE
+	if(ispath(tat))
+		for(var/key in tattoos)
+			if(!istype(tattoos[key], /datum/tattoo))
+				continue
+			var/datum/tattoo/tattie = tattoos[key]
+			if(tattie.type == tat)
+				qdel(tat)
+				tattoos[key] = null
+				return TRUE
+
+/// Gets all the cool tats' flavors
+/obj/item/bodypart/proc/get_tattoo_flavor(mob/viewer)
+	if(!LAZYLEN(tattoos))
+		return
+	var/list/msg = list()
+	for(var/key in tattoos)
+		if(istype(tattoos[key], /datum/tattoo))
+			var/datum/tattoo/tat = tattoos[key]
+			msg += tat.get_desc(viewer, owner, TRUE)
+	. = jointext(msg, "<br>")
+
+/// Returns if any tats are visible
+/obj/item/bodypart/proc/are_any_tattoos_visible(mob/viewer)
+	if(!LAZYLEN(tattoos))
+		return FALSE // cant see any!
+	for(var/key in tattoos)
+		if(!istype(tattoos[key], /datum/tattoo))
+			continue
+		var/datum/tattoo/tat = tattoos[key]
+		if(tat.is_it_visible(viewer))
+			return TRUE

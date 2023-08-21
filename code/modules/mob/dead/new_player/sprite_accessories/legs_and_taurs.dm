@@ -195,3 +195,10 @@
 	taur_mode = STYLE_SNEK_TAURIC
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/kitsune
+	name = "Kitsune"
+	icon_state = "kitsune"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN

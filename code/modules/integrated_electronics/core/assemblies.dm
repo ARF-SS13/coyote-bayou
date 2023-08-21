@@ -117,6 +117,8 @@
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.remove_from_hud(src)
 	QDEL_NULL(access_card)
+	QDEL_NULL(battery)
+	QDEL_LIST(assembly_components)
 	return ..()
 
 /obj/item/electronic_assembly/process()

@@ -272,7 +272,7 @@
 	name = "incomplete medibot assembly"
 	desc = "A first aid kit with a robot arm permanently grafted to it."
 	icon_state = "firstaid_arm"
-	created_name = "Medibot" //To preserve the name if it's a unique medbot I guess
+	created_name = "Ny4ke" //To preserve the name if it's a unique medbot I guess
 	var/skin = null //Same as medbot, set to tox or ointment for the respective kits.
 	var/healthanalyzer = /obj/item/healthanalyzer
 	var/firstaid = /obj/item/storage/firstaid

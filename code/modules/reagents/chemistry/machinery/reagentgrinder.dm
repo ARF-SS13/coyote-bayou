@@ -131,7 +131,7 @@
 			to_chat(user, span_warning("You cannot grind [I] into reagents!"))
 			return TRUE
 
-	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
+	if(I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 
 	if(user.transferItemToLoc(I, src))

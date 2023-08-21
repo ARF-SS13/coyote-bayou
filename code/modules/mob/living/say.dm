@@ -1,75 +1,3 @@
-GLOBAL_LIST_INIT(department_radio_prefixes, list(":", "."))
-
-GLOBAL_LIST_INIT(department_radio_keys, list(
-	// Location
-	MODE_KEY_R_HAND = MODE_R_HAND,
-	MODE_KEY_L_HAND = MODE_L_HAND,
-	MODE_KEY_INTERCOM = MODE_INTERCOM,
-
-	// Department
-	MODE_KEY_DEPARTMENT = MODE_DEPARTMENT,
-	RADIO_KEY_COMMAND = RADIO_CHANNEL_COMMAND,
-	RADIO_KEY_SCIENCE = RADIO_CHANNEL_SCIENCE,
-	RADIO_KEY_MEDICAL = RADIO_CHANNEL_MEDICAL,
-	RADIO_KEY_ENGINEERING = RADIO_CHANNEL_ENGINEERING,
-	RADIO_KEY_SECURITY = RADIO_CHANNEL_SECURITY,
-	RADIO_KEY_SUPPLY = RADIO_CHANNEL_SUPPLY,
-	RADIO_KEY_SERVICE = RADIO_CHANNEL_SERVICE,
-
-	// Faction
-	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
-	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
-
-	// Fallout 13
-	RADIO_KEY_VAULT = RADIO_CHANNEL_VAULT,
-	RADIO_KEY_NCR = RADIO_CHANNEL_NCR,
-	RADIO_KEY_BOS = RADIO_CHANNEL_BOS,
-	RADIO_KEY_ENCLAVE = RADIO_CHANNEL_ENCLAVE,
-	RADIO_KEY_TOWN = RADIO_CHANNEL_TOWN,
-	RADIO_KEY_TOWN_PD = RADIO_CHANNEL_TOWN_PD,
-	RADIO_KEY_RANGER = RADIO_CHANNEL_RANGER,
-	RADIO_KEY_TOWN_MAYOR = RADIO_CHANNEL_TOWN_MAYOR,
-	RADIO_KEY_TOWN_COMMERCE = RADIO_CHANNEL_TOWN_COMMERCE,
-
-	// Admin
-	MODE_KEY_ADMIN = MODE_ADMIN,
-	MODE_KEY_DEADMIN = MODE_DEADMIN,
-
-	// Misc
-	RADIO_KEY_AI_PRIVATE = RADIO_CHANNEL_AI_PRIVATE, // AI Upload channel
-	MODE_KEY_VOCALCORDS = MODE_VOCALCORDS,		// vocal cords, used by Voice of God
-
-
-	//kinda localization -- rastaf0
-	//same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
-	// Location
-	"ê" = MODE_R_HAND,
-	"ä" = MODE_L_HAND,
-	"ø" = MODE_INTERCOM,
-
-	// Department
-	"ð" = MODE_DEPARTMENT,
-	"ñ" = RADIO_CHANNEL_COMMAND,
-	"ò" = RADIO_CHANNEL_SCIENCE,
-	"ü" = RADIO_CHANNEL_MEDICAL,
-	"ó" = RADIO_CHANNEL_ENGINEERING,
-	"û" = RADIO_CHANNEL_SECURITY,
-	"ã" = RADIO_CHANNEL_SUPPLY,
-	"ì" = RADIO_CHANNEL_SERVICE,
-
-	// Faction
-	"å" = RADIO_CHANNEL_SYNDICATE,
-	"í" = RADIO_CHANNEL_CENTCOM,
-
-	// Admin
-	"ç" = MODE_ADMIN,
-	"â" = MODE_ADMIN,
-
-	// Misc
-	"ù" = RADIO_CHANNEL_AI_PRIVATE,
-	"÷" = MODE_VOCALCORDS
-))
-
 /mob/living/proc/Ellipsis(original_msg, chance = 50, keep_words)
 	if(chance <= 0)
 		return "..."
@@ -93,7 +21,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return new_msg
 
 /mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
-	var/static/list/crit_allowed_modes = list(MODE_WHISPER = TRUE, MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
+	/* var/static/list/crit_allowed_modes = list(
+		MODE_WHISPER = TRUE, 
+		MODE_CUSTOM_SAY = TRUE, 
+		MODE_SING = TRUE, 
+		MODE_HEADSET = TRUE, 
+		MODE_ROBOT = TRUE, 
+		MODE_CHANGELING = TRUE, 
+		MODE_ALIEN = TRUE
+		) */
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
 
@@ -133,10 +69,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			client.cmd_admin_say(message)
 		return
 
-	if(message_mode == MODE_DEADMIN)
-		if(client)
-			client.dsay(message)
-		return
+	// if(message_mode == MODE_DEADMIN)
+	// 	if(client)
+	// 		client.dsay(message)
+	// 	return
 
 	if(stat == DEAD)
 		say_dead(original_message)
@@ -145,12 +81,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(check_emote(original_message, just_runechat = just_chat) || !can_speak_basic(original_message, ignore_spam))
 		return
 
-	if(in_critical)
-		if(!(crit_allowed_modes[message_mode]))
-			return
-	else if(stat == UNCONSCIOUS)
-		if(!(unconscious_allowed_modes[message_mode]))
-			return
+	//if(in_critical)
+	//	if(!(crit_allowed_modes[message_mode]))
+	//		return
+	if(stat == UNCONSCIOUS && !(unconscious_allowed_modes[message_mode]))
+		return
 
 	// language comma detection.
 	var/datum/language/message_language = get_message_language(message)
@@ -179,21 +114,21 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/message_range = 7
 
-	var/succumbed = FALSE
+	//var/succumbed = FALSE
 
-	var/fullcrit = InFullCritical()
-	if((InCritical() && !fullcrit) || message_mode == MODE_WHISPER)
-		message_range = 1
-		message_mode = MODE_WHISPER
+	//var/fullcrit = InFullCritical()
+	if(in_critical || message_mode == MODE_WHISPER)
+		message_range = 1 + (!!in_critical * 2)
+		spans |= SPAN_ITALICS
 		src.log_talk(message, LOG_WHISPER)
-		if(fullcrit)
+		/* if(fullcrit) // no more dying for you!
 			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
 			// If we cut our message short, abruptly end it with a-..
 			var/message_len = length_char(message)
 			message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
 			message = Ellipsis(message, 10, 1)
 			message_mode = MODE_WHISPER_CRIT
-			succumbed = TRUE
+			succumbed = TRUE */
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
@@ -237,9 +172,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 */
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mode, just_chat)
 
-	if(succumbed)
+	/* if(succumbed)
 		succumb()
-		to_chat(src, compose_message(src, language, message, null, spans, message_mode))
+		to_chat(src, compose_message(src, language, message, null, spans, message_mode)) */
 
 	return 1
 
@@ -437,9 +372,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/say_mod(input, message_mode)
 	. = ..()
-	if(message_mode == MODE_WHISPER_CRIT)
-		. = "[verb_whisper] in [p_their()] last breath"
-	else if(message_mode != MODE_CUSTOM_SAY)
+	if(message_mode != MODE_CUSTOM_SAY)
 		if(message_mode == MODE_WHISPER)
 			. = verb_whisper
 		else if(stuttering)
@@ -448,6 +381,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			. = "gibbers"
 		else if(message_mode == MODE_SING)
 			. = verb_sing
+		else if(InCritical())
+			. = "whines"
 
 /mob/living/whisper(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	say("#[message]", bubble_type, spans, sanitize, language, ignore_spam, forced)

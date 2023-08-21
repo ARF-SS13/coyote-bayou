@@ -25,7 +25,7 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	ventcrawler = VENTCRAWLER_ALWAYS
 	unique_name = TRUE
-	faction = list("rat")
+	faction = list("rat", "rat-friend")
 	pass_flags = PASSTABLE | PASSMOB | PASSGRILLE
 	var/datum/action/cooldown/coffer
 	var/datum/action/cooldown/riot
@@ -193,13 +193,10 @@
 	randpixel = 6
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	faction = list("rat")
+	faction = list("rat", "rat-friend")
 	can_ghost_into = TRUE
 	desc_short = "Squeak!"
 	pop_required_to_jump_into = 0	
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
 	var/is_smol = FALSE
 
 	variation_list = list(
@@ -215,7 +212,7 @@
 /// nerfed rats for above-ground spawn
 /// they run around like assholes and avoid player interaction at all costs
 /mob/living/simple_animal/hostile/rat/skitter
-	name = "mouse"
+	name = "radmouse"
 	desc = "It's a scared lil rodent with anxiety issues."
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
@@ -236,9 +233,7 @@
 	minimum_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
-	faction = list("rat")
 	is_smol = TRUE
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
 
 	variation_list = list(
 		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
@@ -287,11 +282,8 @@
 	minimum_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
-	faction = list("neutral", "dog") // Alas, rats would still attack this mouse even with `rat` faction in it. Thanks to regal rats faction code.
+	faction = list("rat", "rat-friend", "neutral")
 	is_smol = TRUE
-	call_backup = null
-	send_mobs = null
-	make_a_nest = null
 
 	variation_list = list(
 		MOB_SPEED_LIST(0.2, 1.5, 1.8, 2.0, 5.0),
@@ -310,24 +302,21 @@
 	emote("squeak")
 	visible_message(span_notice("[src] sure looks friendly!"))
 
-// Servants to Pied Piper of Wasteland
-// Should be friendly toward players and docile animals, unless they've got faction differing from "neutral" (such as dogs).
-/mob/living/simple_animal/hostile/rat/tame
-	name = "tame rat"
-	desc = "It's a dubious rodent of unknown breed, that seem to be more docile with people. Still have anger issues toward raiders and hostile fauna."
-	response_help_continuous = "pets"
-	response_help_simple = "pet"
-	speak = list("Squeak!", "SQUUEEAAAAK!!", "Squeak?")
-	speak_emote = list("squeaks")
-	emote_hear = list("Squeaks.")
-	emote_see = list("charges around in a circle.", "stands on its hind legs.")
-	color = "#91fdac"
-	faction = list("neutral", "dog") // Dog faction is here to avoid 'em targeting poor corgis. Rat faction isn't here so they could target hostile ones.
-	//can_ghost_into = FALSE
-	desc_short = "Squeak friend!"
-	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat/tame
-	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat/tame
-	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat/tame
+/mob/living/simple_animal/hostile/rat/become_the_mob(mob/user)
+	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/rat
+	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/rat
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/rat
+	. = ..()
+
+/mob/living/simple_animal/hostile/rat/skitter/become_the_mob(mob/user)
+	make_a_nest = /obj/effect/proc_holder/mob_common/make_nest/mouse
+	. = ..()
+
+/mob/living/simple_animal/hostile/rat/skitter/curious/become_the_mob(mob/user)
+	call_backup = null
+	send_mobs = null
+	make_a_nest = null
+	. = ..()
 
 /mob/living/simple_animal/hostile/rat/Destroy()
 	SSmobs.cheeserats -= src

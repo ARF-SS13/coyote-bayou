@@ -5,7 +5,7 @@
 	name = "banhammer"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "toyhammer"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 0
 	force = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -40,7 +40,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 2
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL
@@ -61,7 +61,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 40
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
@@ -94,9 +94,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	block_chance = 0 // oops
-	force = 27.5 // oops
+	force = 35 // oops
 	item_flags = ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/bokken/quick_parry/proj
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/katana/timestop/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 	if(ishuman(owner))
@@ -126,7 +127,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "bokken"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 7 //how much harm mode damage we do
 	var/stamina_damage_increment = 4 //how much extra damage do we do when in non-harm mode
@@ -148,19 +149,19 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /datum/block_parry_data/bokken // fucked up parry data, emphasizing quicker, shorter parries
 	parry_stamina_cost = 8 // be wise about when you parry, though, else you won't be able to fight enough to make it count
 	parry_time_windup = 0
-	parry_time_active = 10 // small parry window
+	parry_time_active = 20 // small parry window
 	parry_time_spindown = 0
 	// parry_flags = PARRY_DEFAULT_HANDLE_FEEDBACK		// bokken users can no longer strike while parrying
 	parry_time_perfect = 1.5
 	parry_time_perfect_leeway = 1
 	parry_imperfect_falloff_percent = 7.5
 	parry_efficiency_to_counterattack = 120
-	parry_efficiency_considered_successful = 65		// VERY generous
+	parry_efficiency_considered_successful = 80		// VERY generous
 	parry_efficiency_perfect = 120
 	parry_efficiency_perfect_override = list(
 		TEXT_ATTACK_TYPE_PROJECTILE = 30,
 	)
-	parry_failed_stagger_duration = 3 SECONDS
+	parry_failed_stagger_duration = 2 SECONDS
 	parry_data = list(
 		PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5, // 7*2.5 = 17.5, 8*2.5 = 20, 9*2.5 = 22.5, 10*2.5 = 25
 	)
@@ -346,7 +347,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 12
 	throw_speed = 4
 	embedding = list("pain_mult" = 2, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 75)
-	armour_penetration = 0.15
 
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_EDGED
@@ -385,7 +385,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_speed = 2
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	armour_penetration = 1
 	attack_verb = list("bludgeoned", "whacked", "disciplined")
 	resistance_flags = FLAMMABLE
 
@@ -666,14 +665,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "vibro sword"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
-	armour_penetration = 1
 	block_chance = 40
 	throwforce = 20
 	throw_speed = 4
 	sharpness = SHARP_EDGED
 	attack_verb = list("cut", "sliced", "diced")
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/vibro_weapon/Initialize()
@@ -721,8 +719,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "pitchfork"
 	desc = "A simple tool used for moving hay."
-	force = 20
-	throwforce = 20
+	force = 25
+	throwforce = 25
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("attacked", "impaled", "pierced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -738,7 +736,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/pitchfork/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=30, icon_wielded="pitchfork1")
+	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=38, icon_wielded="pitchfork1")
 	AddElement(/datum/element/sword_point)
 
 /// triggered on wield of two handed item

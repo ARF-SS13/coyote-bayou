@@ -656,6 +656,7 @@ SUBSYSTEM_DEF(timer)
 
 /**
  * Set the wait time on a timer, mostly just useful for 
+ * Hi, future Dan here, I forgot to finish that line! anyway its just useful for
  *
  * Arguments:
  * * id a timerid or a /datum/timedevent

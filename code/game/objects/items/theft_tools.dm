@@ -97,7 +97,6 @@
 	icon_state = "screwdriver_nuke"
 	item_state = "screwdriver_nuke"
 	toolspeed = 0.5
-	random_color = FALSE
 
 /obj/item/screwdriver/nuke/nt
 	desc = "A screwdriver with an ultra thin diamon tip."
@@ -105,7 +104,7 @@
 	icon_state = "screwdriver_nt"
 
 /obj/item/paper/guides/antag/nuke_instructions
-	info = "How to break into a Nanotrasen self-destruct terminal and remove its plutonium core:<br>\
+	info = "How to break into a US Government self-destruct terminal and remove its plutonium core:<br>\
 	<ul>\
 	<li>Use a screwdriver with a very thin tip (provided) to unscrew the terminal's front panel</li>\
 	<li>Dislodge and remove the front panel with a crowbar</li>\

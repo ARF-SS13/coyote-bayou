@@ -246,6 +246,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isfinite(n) (isnum(n) && n == n)
 
+#define isclient(A) istype(A, /client)
+
 //F13 EDIT
 #define iskey(A) istype(A, /obj/item/key)
 
@@ -270,13 +272,46 @@ GLOBAL_LIST_INIT(simplemobs_wildlife, typecacheof(list(
 	/mob/living/simple_animal/hostile/fireant,
 	/mob/living/simple_animal/hostile/giantantqueen,
 	/mob/living/simple_animal/hostile/radscorpion,
+	/mob/living/simple_animal/hostile/rat,
+	/mob/living/simple_animal/hostile/regalrat,
+	/mob/living/simple_animal/hostile/carp,
 	/mob/living/simple_animal/hostile/cazador,
 	/mob/living/simple_animal/hostile/bloatfly,
 	/mob/living/simple_animal/hostile/radroach,
 	/mob/living/simple_animal/hostile/mirelurk,
+	/mob/living/simple_animal/hostile/bear/yaoguai,
 	/mob/living/simple_animal/hostile/trog,
 	/mob/living/simple_animal/hostile/wolf
 	)))
+
+GLOBAL_LIST_INIT(simplemobs_animals, typecacheof(list(
+	/mob/living/simple_animal/hostile/gecko,
+	/mob/living/simple_animal/hostile/stalker,
+	/mob/living/simple_animal/hostile/stalkeryoung,
+	/mob/living/simple_animal/hostile/molerat,
+	/mob/living/simple_animal/hostile/centaur,
+	/mob/living/simple_animal/hostile/abomination,
+	/mob/living/simple_animal/hostile/deathclaw,
+	/mob/living/simple_animal/hostile/rat,
+	/mob/living/simple_animal/hostile/regalrat,
+	/mob/living/simple_animal/hostile/carp,
+	/mob/living/simple_animal/hostile/mirelurk,
+	/mob/living/simple_animal/hostile/bear/yaoguai,
+	/mob/living/simple_animal/hostile/trog,
+	/mob/living/simple_animal/hostile/wolf
+	)))
+
+
+GLOBAL_LIST_INIT(simplemobs_insects, typecacheof(list(
+	/mob/living/simple_animal/hostile/giantant,
+	/mob/living/simple_animal/hostile/fireant,
+	/mob/living/simple_animal/hostile/giantantqueen,
+	/mob/living/simple_animal/hostile/radscorpion,
+	/mob/living/simple_animal/hostile/cazador,
+	/mob/living/simple_animal/hostile/bloatfly,
+	/mob/living/simple_animal/hostile/radroach,
+	)))
+
 
 GLOBAL_LIST_INIT(simplemobs_humanlike, typecacheof(list(
 	/mob/living/simple_animal/hostile/chinese,
@@ -288,7 +323,8 @@ GLOBAL_LIST_INIT(simplemobs_humanlike, typecacheof(list(
 	/mob/living/simple_animal/hostile/tribe,
 	/mob/living/simple_animal/hostile/raider,
 	/mob/living/simple_animal/hostile/supermutant,
-	/mob/living/simple_animal/hostile/renegade
+	/mob/living/simple_animal/hostile/renegade,
+	/mob/living/simple_animal/hostile/ghoul,
 	)))
 
 GLOBAL_LIST_INIT(simplemobs_robots, typecacheof(list(
@@ -299,6 +335,10 @@ GLOBAL_LIST_INIT(simplemobs_robots, typecacheof(list(
 	)))
 
 #define issimplewildlife(A) (A.type in GLOB.simplemobs_wildlife)
+
+#define issimpleanimalmob(A) (A.type in GLOB.simplemobs_animals)
+
+#define issimpleinsect(A) (A.type in GLOB.simplemobs_insects)
 
 #define issimplehumanlike(A) (A.type in GLOB.simplemobs_humanlike)
 
