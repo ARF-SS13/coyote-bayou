@@ -2041,7 +2041,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	empty_state = "glock-e"
 /datum/reskin/gun/pistol/plock
 	skin = "Plock"
-	name = "Pink glock Pistol"
+	name = "Pink Glock Pistol"
 	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "plock"
