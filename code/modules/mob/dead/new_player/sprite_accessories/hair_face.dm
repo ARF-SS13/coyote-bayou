@@ -147,3 +147,9 @@
 /datum/sprite_accessory/facial_hair/elvis
 	name = "Sideburns (Elvis)"
 	icon_state = "facial_elvis"
+
+//Secondary Face Traits
+
+/datum/sprite_accessory/facial_hair/tusks
+	name = "Tusks"
+	icon_state = "facial_tusks"
