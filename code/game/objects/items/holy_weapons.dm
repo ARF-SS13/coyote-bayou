@@ -1,4 +1,4 @@
-/obj/item/claymore 
+/obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
 	icon_state = "claymore"
@@ -275,7 +275,7 @@
 	item_state = "nullrod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 18
+	force = 30 // On par with a war club, note that this value determines almost every sub type without a direct force change.
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
@@ -409,7 +409,9 @@
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
-	block_chance = 30
+	force = 38 // Equal to the Spatha/forge claymore
+	wound_bonus = 30
+	block_chance = 18
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -434,9 +436,9 @@
 /obj/item/nullrod/claymore/chainsaw_sword
 	icon_state = "chainswordon"
 	item_state = "chainswordon"
-	name = "ripper"
-	desc = "A miniature chainsaw, as amazing as it sounds."
-	force = 45
+	name = "chain sword"
+	desc = "A longer more durable ripper built into a proper chain sword. Time to purge heretics!"
+	force = 45 // Equal to a standard ripper.
 	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
@@ -465,7 +467,7 @@
 	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
-	force = rand(1, 30)
+	force = rand(1, 40)
 	..()
 
 /obj/item/nullrod/claymore/saber
@@ -506,6 +508,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
+	force_unwielded = 25
+	force_wielded = 40 // Equal to 2 handed axes
+	attack_speed = CLICK_CD_MELEE * 1.1 //8.8
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 
 /obj/item/nullrod/scythe/Initialize()
@@ -607,6 +612,7 @@
 	desc = "This war hammer cost the chaplain forty thousand space dollars."
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
+	force_wielded = 65 // Equal to the sledgehammer.
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
 /obj/item/nullrod/chainsaw_hand
@@ -673,7 +679,7 @@
 
 /obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
 	name = "monk's staff"
-	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass the clown."
+	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass mutants.."
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
 	block_chance = 40
