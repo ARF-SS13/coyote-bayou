@@ -1269,7 +1269,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon_state = "pda-clear"
 /datum/reskin/pda/teachboy
 	skin = "Teachboy PDA"
-	desc = "A portable microcomputer by RobCo Industries. This model is a EDU-2 series educational device- or atleast that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
+	desc = "A portable microcomputer by RobCo Industries. This model is an EDU-2 series educational device - or at least that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
 	icon_state = "pda-teachboy-unfolded"
 	disable_overlays = TRUE
 /datum/reskin/pda/curator
@@ -2027,8 +2027,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	)
 /datum/reskin/gun/pistol/glock
 	skin = "Glock"
-	name = "glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	name = "Glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -2042,7 +2042,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/pistol/plock
 	skin = "Plock"
 	name = "Pink glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "plock"
 	item_state = "plock"
