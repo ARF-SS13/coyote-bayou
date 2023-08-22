@@ -22921,13 +22921,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/building/abandoned)
-"bWb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/mecha_wreckage/durand{
-	name = "Probably not an Atlas."
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave/coyote/antmound)
 "bWg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -65597,6 +65590,10 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/bunker)
+"lLK" = (
+/obj/item/clothing/head/helmet/f13/raider/eyebot,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave/coyote/antmound)
 "lLX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -68470,6 +68467,13 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"mrK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mecha_wreckage/durand{
+	name = "Probably not an Atlas."
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave/coyote/antmound)
 "mrO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -137821,7 +137825,7 @@ nkX
 ezS
 ezS
 nkX
-bWb
+mrK
 xMV
 upa
 glq
@@ -138078,7 +138082,7 @@ ezS
 ezS
 qlW
 glq
-upa
+lLK
 uMc
 wSk
 qlW
@@ -139102,7 +139106,7 @@ dao
 acl
 ezS
 ezS
-hOg
+eyz
 eyz
 eyz
 fCq
