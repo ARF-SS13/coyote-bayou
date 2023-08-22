@@ -22921,6 +22921,13 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/building/abandoned)
+"bWb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mecha_wreckage/durand{
+	name = "Probably not an Atlas."
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave/coyote/antmound)
 "bWg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -59647,7 +59654,9 @@
 "krB" = (
 /mob/living/simple_animal/hostile/bear/yaoguai{
 	health = 600;
-	name = "Cave Dingus"
+	name = "Surat";
+	desc = "Is that a Ghost Bear?  Will it accept your batchall, quineg?";
+	alpha = 155
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
@@ -137812,7 +137821,7 @@ nkX
 ezS
 ezS
 nkX
-qlW
+bWb
 xMV
 upa
 glq
