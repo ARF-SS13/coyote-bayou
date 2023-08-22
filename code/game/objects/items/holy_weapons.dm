@@ -1,4 +1,4 @@
-/obj/item/claymore 
+/obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
 	icon_state = "claymore"
@@ -434,8 +434,8 @@
 /obj/item/nullrod/claymore/chainsaw_sword
 	icon_state = "chainswordon"
 	item_state = "chainswordon"
-	name = "ripper"
-	desc = "A miniature chainsaw, as amazing as it sounds."
+	name = "chain sword"
+	desc = "A miniature chainsaw, as amazing as it sounds, shaped into a sword. Time to purge heretics!"
 	force = 45
 	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
@@ -605,6 +605,8 @@
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "relic war hammer"
 	desc = "This war hammer cost the chaplain forty thousand space dollars."
+	force_unwielded = 34
+	force_wielded = 65 //On par with the starting simple sledge stat. Trades block chance that the claymore gets for damage and being massive.
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
@@ -764,7 +766,7 @@
 	icon_state = "rosary"
 	item_state = null
 	name = "prayer beads"
-	desc = "A set of prayer beads used by many of the more traditional religions in space"
+	desc = "A set of prayer beads used by many of the more traditional religions in the world."
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")

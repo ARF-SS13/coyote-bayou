@@ -1086,7 +1086,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Hermes Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/hermes	
+	spawn_thing = /obj/item/storage/box/gun/revolver/hermes
 
 /obj/item/storage/box/gun/revolver/hermes/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/hermes(src)
@@ -2256,6 +2256,60 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_PREACHER
 	entry_class = LOADOUT_CAT_NULLROD
 	spawn_thing = /obj/item/storage/box/gun/preacher/nullrod
+
+/datum/loadout_box/nullrod_claymore
+	entry_tag = "Spiritual Claymore"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/claymore
+
+/datum/loadout_box/nullrod_darkblade
+	entry_tag = "Spiritual Cult Blade"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/claymore/darkblade
+
+/datum/loadout_box/nullrod_staff
+	entry_tag = "Spiritual Staff"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/staff
+
+/datum/loadout_box/nullrod_katana
+	entry_tag = "Spiritual Katana"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/claymore/katana
+
+/datum/loadout_box/nullrod_multi
+	entry_tag = "Spiritual Multi-Sword"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/claymore/multiverse
+
+/datum/loadout_box/nullrod_scythe
+	entry_tag = "Spiritual Scythe"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/scythe
+
+/datum/loadout_box/nullrod_hammer
+	entry_tag = "Spiritual Hammer"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/hammmer
+
+/datum/loadout_box/nullrod_bostaff
+	entry_tag = "Spiritual Bo Staff"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/claymore/bostaff
+
+/datum/loadout_box/nullrod_rosary
+	entry_tag = "Spiritual Rosary"
+	entry_flags = LOADOUT_FLAG_PREACHER
+	entry_class = LOADOUT_CAT_NULLROD
+	spawn_thing = /obj/item/nullrod/rosary
 
 /// misc Stuff
 
