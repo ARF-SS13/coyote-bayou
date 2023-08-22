@@ -488,3 +488,10 @@
 	name = "Wolf"
 	icon_state = "wolf"
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/pig
+	name = "Pig"
+	icon_state = "pig"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
