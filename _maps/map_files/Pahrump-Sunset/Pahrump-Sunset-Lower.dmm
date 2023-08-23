@@ -1422,15 +1422,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bat" = (
-/obj/structure/simple_door/metal/dirtystore{
-	name = "Warehouse"
-	},
 /obj/structure/car/rubbish1,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
+/turf/closed/indestructible/rock,
 /area/f13/building)
 "bbc" = (
 /obj/effect/decal/cleanable/dirt{
@@ -12256,7 +12249,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/closed/wall/rust,
+/turf/closed/indestructible/rock,
 /area/f13/building)
 "gzL" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -14233,7 +14226,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/closed/wall/rust,
+/turf/closed/indestructible/rock,
 /area/f13/building)
 "hWD" = (
 /obj/effect/mob_spawn/human/corpse/vault/security,
@@ -39543,15 +39536,15 @@ bCG
 aae
 aae
 aae
-bOb
-bOb
-bOb
-bOb
-bOb
-bOb
-bOb
-bOb
-bOb
+muT
+muT
+muT
+muT
+muT
+muT
+muT
+muT
+muT
 aae
 aae
 aae
@@ -39800,7 +39793,7 @@ bCG
 aae
 aae
 aae
-bOb
+muT
 wco
 ueB
 sxz
@@ -39808,7 +39801,7 @@ jdb
 uGn
 ueB
 rMU
-bOb
+muT
 aae
 aae
 aae
@@ -40053,11 +40046,11 @@ aae
 aae
 aae
 aae
-rBg
-rBg
-rBg
-rBg
-bOb
+muT
+muT
+muT
+muT
+muT
 ueB
 ueB
 kel
@@ -40065,9 +40058,9 @@ oJA
 ueB
 ueB
 ueB
-bOb
-bOb
-bOb
+muT
+muT
+muT
 aae
 aae
 aae
@@ -40310,7 +40303,7 @@ aae
 aae
 aae
 aae
-rBg
+muT
 qzA
 hhE
 nsX
@@ -40324,7 +40317,7 @@ ueB
 ueB
 gnQ
 lRN
-bOb
+muT
 aae
 aae
 aae
@@ -40567,7 +40560,7 @@ aae
 aae
 aae
 aae
-rBg
+muT
 rKh
 hiI
 nnI
@@ -40581,7 +40574,7 @@ ueB
 rjg
 ueB
 phe
-bOb
+muT
 aae
 aae
 aae
@@ -40824,7 +40817,7 @@ aae
 aae
 aae
 aae
-rBg
+muT
 izI
 bwU
 hhE
@@ -40838,11 +40831,11 @@ ueB
 ueB
 ueB
 oVY
-bOb
-bOb
-bOb
-bOb
-bOb
+muT
+muT
+muT
+muT
+muT
 aae
 aae
 aaa
@@ -41081,7 +41074,7 @@ bOb
 bOb
 bOb
 bOb
-rBg
+muT
 rBg
 xyL
 cWH
@@ -41099,7 +41092,7 @@ bOb
 aLH
 qug
 wYj
-bOb
+muT
 aae
 aae
 aaa
@@ -41338,7 +41331,7 @@ uHH
 bOb
 oGH
 cbK
-rBg
+muT
 xXa
 eUU
 rsd
@@ -41356,7 +41349,7 @@ hiR
 ueB
 ueB
 ueB
-bOb
+muT
 aae
 aae
 aaa
@@ -41595,7 +41588,7 @@ wEq
 bOb
 oyH
 adJ
-rBg
+muT
 frb
 rnN
 rtD
@@ -41613,7 +41606,7 @@ ueB
 ueB
 ueB
 bRa
-bOb
+muT
 aae
 aae
 aaa
@@ -41852,9 +41845,9 @@ bOb
 bOb
 qjZ
 bOb
-rBg
-rBg
-rBg
+muT
+muT
+muT
 eyd
 jxx
 bOb
@@ -41870,8 +41863,8 @@ ueB
 gUN
 jth
 ueB
-bOb
-bOb
+muT
+muT
 aae
 aaa
 aak
@@ -42111,7 +42104,7 @@ gcv
 awp
 gcv
 tkZ
-bOb
+muT
 bOb
 bOb
 bOb
@@ -42128,7 +42121,7 @@ mjN
 ueB
 ueB
 lgO
-bOb
+muT
 aae
 aaa
 aak
@@ -42368,7 +42361,7 @@ gcv
 gcv
 mEa
 tkZ
-bOb
+muT
 cTK
 iMO
 nLW
@@ -42385,7 +42378,7 @@ uay
 ueB
 ueB
 ueB
-bOb
+muT
 aae
 aaa
 aak
@@ -42625,7 +42618,7 @@ hXn
 gcv
 mEa
 tkZ
-bOb
+muT
 ueB
 ueB
 ueB
@@ -42642,7 +42635,7 @@ eoi
 ueB
 ueB
 bhR
-bOb
+muT
 aae
 aaa
 aaB
@@ -42882,7 +42875,7 @@ jNW
 hXn
 mEa
 qKz
-bOb
+muT
 weN
 ueB
 ueB
@@ -42898,8 +42891,8 @@ ueB
 gdR
 ueB
 hiR
-bOb
-bOb
+muT
+muT
 aae
 aaa
 aaB
@@ -43155,7 +43148,7 @@ weN
 aZi
 ueB
 ueB
-bOb
+muT
 aae
 aae
 aaa
@@ -43396,7 +43389,7 @@ jNW
 hXn
 gcv
 gcv
-ghe
+muT
 uoY
 ueB
 ueB
@@ -43412,7 +43405,7 @@ ueB
 ueB
 ueB
 ueB
-bOb
+muT
 aae
 aae
 aaa
@@ -43653,7 +43646,7 @@ jNW
 hXn
 mEa
 qKz
-bOb
+muT
 eHM
 jth
 ueB
@@ -43669,7 +43662,7 @@ ueB
 mUp
 whR
 faf
-bOb
+muT
 aae
 aae
 aaa
@@ -43910,7 +43903,7 @@ jNW
 hXn
 mEa
 tkZ
-bOb
+muT
 mMz
 ueB
 ueB
@@ -43922,11 +43915,11 @@ ueB
 gyE
 ueB
 jth
-bOb
-bOb
-bOb
-bOb
-bOb
+muT
+muT
+muT
+muT
+muT
 aae
 aae
 aae
@@ -44167,7 +44160,7 @@ hDm
 hXn
 mEa
 tkZ
-bOb
+muT
 xjO
 vzl
 geJ
@@ -44179,7 +44172,7 @@ weN
 sIt
 lEG
 jIp
-bOb
+muT
 aae
 aae
 aae
@@ -44424,19 +44417,19 @@ hDm
 gcv
 gcv
 tkZ
-bOb
-bOb
-bOb
-bOb
+muT
+muT
+muT
+muT
 eND
 ueB
 vcu
-bOb
-bOb
-bOb
-bOb
-bOb
-bOb
+muT
+muT
+muT
+muT
+muT
+muT
 aae
 aae
 aae
@@ -44684,7 +44677,7 @@ tkZ
 tkZ
 tkZ
 jGk
-bOb
+muT
 qxh
 iqE
 alA
@@ -44941,7 +44934,7 @@ tkZ
 gcv
 tkZ
 jGk
-bOb
+muT
 jdS
 iqE
 alA
@@ -45198,7 +45191,7 @@ tkZ
 gcv
 tkZ
 jGk
-bOb
+muT
 abB
 cPj
 ihw
@@ -45455,11 +45448,11 @@ tkZ
 gcv
 tkZ
 jGk
-bOb
-bOb
-bOb
+muT
+muT
+muT
 gyK
-bOb
+muT
 uvv
 jGk
 gcv
