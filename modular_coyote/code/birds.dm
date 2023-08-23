@@ -186,3 +186,17 @@
 	icon_state = "mtoo"
 	icon_living = "mtoo"
 	icon_dead = "mtoo-dead"
+
+/mob/living/simple_animal/bird/toucan
+	name = "toucan"
+	desc = "You can? toucan!"
+	icon_state = "toucan"
+	icon_living = "toucan"
+	icon_dead = "toucan-dead"
+
+/mob/living/simple_animal/bird/kbtoucan
+	name = "toucan"
+	desc = "You can? toucan!"
+	icon_state = "kbtoucan"
+	icon_living = "kbtoucan"
+	icon_dead = "kbtoucan-dead"
