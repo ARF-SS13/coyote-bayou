@@ -242,3 +242,24 @@
 	icon_state = "hooty"
 	icon_living = "hooty"
 	icon_dead = "hooty-dead"
+
+/mob/living/simple_animal/bird/then
+	name = "turkey hen"
+	desc = "It's a bird!"
+	icon_state = "then"
+	icon_living = "then"
+	icon_dead = "then-dead"
+
+/mob/living/simple_animal/bird/ttom
+	name = "turkey tom"
+	desc = "It's a bird!"
+	icon_state = "ttom"
+	icon_living = "ttom"
+	icon_dead = "ttom-dead"
+
+/mob/living/simple_animal/bird/gannet
+	name = "gannet"
+	desc = "It's a bird!"
+	icon_state = "gannet"
+	icon_living = "gannet"
+	icon_dead = "gannet-dead"
