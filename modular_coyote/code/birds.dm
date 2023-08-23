@@ -168,7 +168,21 @@
 
 /mob/living/simple_animal/bird/too
 	name = "Cockatoo"
-	desc = "It's a blue cock-a-teal!"
+	desc = "It's cock-a-too!"
 	icon_state = "too"
 	icon_living = "too"
 	icon_dead = "too-dead"
+
+/mob/living/simple_animal/bird/utoo
+	name = "Umbrella Cockatoo"
+	desc = "It's a umbrella cock-a-too, ready for rain!"
+	icon_state = "utoo"
+	icon_living = "utoo"
+	icon_dead = "utoo-dead"
+
+/mob/living/simple_animal/bird/mtoo
+	name = "pink Cockatoo"
+	desc = "It's a pink cock-a-too"
+	icon_state = "mtoo"
+	icon_living = "mtoo"
+	icon_dead = "mtoo-dead"
