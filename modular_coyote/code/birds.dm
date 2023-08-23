@@ -200,3 +200,24 @@
 	icon_state = "kbtoucan"
 	icon_living = "kbtoucan"
 	icon_dead = "kbtoucan-dead"
+
+/mob/living/simple_animal/bird/ikea
+	name = "ikea"
+	desc = "It's a bird!"
+	icon_state = "ikea"
+	icon_living = "ikea"
+	icon_dead = "ikea-dead"
+
+/mob/living/simple_animal/bird/goose
+	name = "goose"
+	desc = "It's a bird!"
+	icon_state = "goose"
+	icon_living = "goose"
+	icon_dead = "goose-dead"
+
+/mob/living/simple_animal/bird/gull
+	name = "gull"
+	desc = "It's a bird!"
+	icon_state = "gull"
+	icon_living = "gull"
+	icon_dead = "gull-dead"
