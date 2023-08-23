@@ -298,3 +298,31 @@
 	icon_state = "lovef"
 	icon_living = "lovef"
 	icon_dead = "lovef-dead"
+
+/mob/living/simple_animal/bird/crow
+	name = "crow"
+	desc = "It's a bird!"
+	icon_state = "crow"
+	icon_living = "crow"
+	icon_dead = "crow-dead"
+
+/mob/living/simple_animal/bird/doodle
+	name = "doodle"
+	desc = "It's a bird!"
+	icon_state = "doodle"
+	icon_living = "doodle"
+	icon_dead = "doodle-dead"
+
+/mob/living/simple_animal/bird/swan
+	name = "swan"
+	desc = "It's a bird!"
+	icon_state = "swan"
+	icon_living = "swan"
+	icon_dead = "swan-dead"
+
+/mob/living/simple_animal/bird/cassowary
+	name = "cassowary"
+	desc = "It's a bird!"
+	icon_state = "cassowary"
+	icon_living = "cassowary"
+	icon_dead = "cassowary-dead"
