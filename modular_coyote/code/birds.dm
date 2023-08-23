@@ -221,3 +221,24 @@
 	icon_state = "gull"
 	icon_living = "gull"
 	icon_dead = "gull-dead"
+
+/mob/living/simple_animal/bird/smallowl
+	name = "small owl"
+	desc = "It's a bird!"
+	icon_state = "smallowl"
+	icon_living = "smallowl"
+	icon_dead = "smallowl-dead"
+
+/mob/living/simple_animal/bird/owl
+	name = "owl"
+	desc = "It's a bird!"
+	icon_state = "owl"
+	icon_living = "owl"
+	icon_dead = "owl-dead"
+
+/mob/living/simple_animal/bird/hooty
+	name = "owl"
+	desc = "It's a bird!"
+	icon_state = "hooty"
+	icon_living = "hooty"
+	icon_dead = "hooty-dead"
