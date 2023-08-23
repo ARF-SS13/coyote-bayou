@@ -263,3 +263,38 @@
 	icon_state = "gannet"
 	icon_living = "gannet"
 	icon_dead = "gannet-dead"
+
+/mob/living/simple_animal/bird/love
+	name = "love bird"
+	desc = "It's a bird!"
+	icon_state = "love"
+	icon_living = "love"
+	icon_dead = "love-dead"
+
+/mob/living/simple_animal/bird/loveyellow
+	name = "love bird"
+	desc = "It's a bird!"
+	icon_state = "lovey"
+	icon_living = "lovey"
+	icon_dead = "lovey-dead"
+
+/mob/living/simple_animal/bird/lovemale
+	name = "love bird"
+	desc = "It's a bird!"
+	icon_state = "lovem"
+	icon_living = "lovem"
+	icon_dead = "lovem-dead"
+
+/mob/living/simple_animal/bird/loveblue
+	name = "love bird"
+	desc = "It's a bird!"
+	icon_state = "loveb"
+	icon_living = "loveb"
+	icon_dead = "loveb-dead"
+
+/mob/living/simple_animal/bird/lovefemale
+	name = "love bird"
+	desc = "It's a bird!"
+	icon_state = "lovef"
+	icon_living = "lovef"
+	icon_dead = "lovef-dead"
