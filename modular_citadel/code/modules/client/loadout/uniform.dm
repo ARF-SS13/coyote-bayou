@@ -3038,3 +3038,8 @@
 	path = /obj/item/clothing/under/costume/russian_officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/tealskirt
+	name = "teal suit skirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
