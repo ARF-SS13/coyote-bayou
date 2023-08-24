@@ -3050,9 +3050,6 @@
 	},
 /area/f13/wasteland/city)
 "alh" = (
-/obj/structure/railing{
-	color = "#A47449"
-	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
@@ -31512,16 +31509,21 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "dJD" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
 	},
-/obj/structure/curtain{
-	color = "#845f58"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
 	},
-/obj/structure/railing{
-	color = "#A47449"
+/turf/closed/wall/f13/sunset/brick_small{
+	color = "#884444"
 	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "dJE" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -85187,9 +85189,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "qlx" = (
-/obj/structure/railing{
-	color = "#A47449"
-	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
