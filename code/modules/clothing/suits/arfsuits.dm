@@ -2128,8 +2128,41 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
+/* * * * * * * * * *
+* Old medieval armors
+* * * * * * * * * * */
+/obj/item/clothing/suit/armor/medium/oldarmors
+	name = "template for old armors"
+	desc = "Template for muh old armors go brrrrr"
+	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_UP_MELEE_T2 , ARMOR_MODIFIER_UP_DT_T1)
+
+/obj/item/clothing/suit/armor/medium/oldarmors/basicknightarmor
+	name = "Full plate armor"
+	desc = "A suit of full plated armor. It's certainly not good for bullets but good against melee attacks. Unpainted and awaiting your personalization. 'For that guy we like er..no the one in the blue.' "
+	icon_state = "basicknight"
+	item_state = "basicknight"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/fancycapes
+	name = "Fancy cape"
+	desc = "A very fancy and luxuriously made cape, made of the finest materials and adorned in jewels and authentic furs. Long live the King/Queen."
+	armor = ARMOR_VALUE_CLOTHES
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_DT_T1)
+	icon_state = "fancycape"
+	item_state = "fancycape"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 ///////////////////////////////////
-//// Halo Variation armor   //////
+//// Halo Variation armor //////
 //////////////////////////////////
 
 // Just variations of any armors to be put here if unable to make into Power Armor variations.
