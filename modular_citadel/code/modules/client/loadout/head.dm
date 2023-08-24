@@ -723,6 +723,30 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/sallethelmet
+	name = "German Sallet helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/unberets
+	name = "United Nations beret"
+	path = /obj/item/clothing/head/f13/unberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/russianberet
+	name = "Russian VDV beret"
+	path = /obj/item/clothing/head/f13/rusvdvberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/morionhelmet
+	name = "Spainard Morion helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldspain
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek

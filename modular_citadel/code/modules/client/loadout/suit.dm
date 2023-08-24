@@ -416,6 +416,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/medievalarmors
+	name = "Unpainted knight armor"
+	path = /obj/item/clothing/suit/armor/medium/oldarmors/basicknightarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/armor/fancyjarlcape
+	name = "Luxury fur cape"
+	path = /obj/item/clothing/suit/armor/medium/fancycapes
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+	
 /datum/gear/suit/armor/unmcwinter
 	name = "Winterized UNMC armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcwinter
@@ -444,7 +456,7 @@
 	name = "6b45 Body Armor"
 	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
+	cost = 3
 
 /datum/gear/suit/armor/ballisticvest/no4
 	name = "War Press vest"
