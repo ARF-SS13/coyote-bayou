@@ -4047,6 +4047,16 @@
 "dKt" = (
 /turf/open/floor/carpet,
 /area/f13/caves)
+"dKu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	color = "#a1a1a1"
+	},
+/area/f13/building/mall)
 "dKF" = (
 /obj/structure/flora/stump,
 /turf/open/indestructible/ground/outside/desert,
@@ -5654,6 +5664,11 @@
 	icon_state = "common-broken3"
 	},
 /area/f13/caves)
+"fdv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/wood_common,
+/area/f13/building/abandoned)
 "fdQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/dirt{
@@ -5788,6 +5803,13 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
+"fjN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building/mall)
 "fkD" = (
 /obj/item/grown/log/tree,
 /obj/structure/campfire/stove,
@@ -11787,6 +11809,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"kpv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "kpy" = (
 /mob/living/simple_animal/hostile/raider/baseball,
 /turf/open/floor/f13{
@@ -13612,6 +13640,12 @@
 	color = "#cababa"
 	},
 /area/f13/building/tribal)
+"lZM" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "lZQ" = (
 /obj/structure/spacevine{
 	color = "#225522"
@@ -15443,6 +15477,17 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
+"nDB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluedirtychess"
+	},
+/area/f13/building/mall)
 "nEl" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -21093,6 +21138,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"sPQ" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "sQg" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 4
@@ -22365,6 +22416,7 @@
 /obj/machinery/light/broken{
 	dir = 4
 	},
+/obj/effect/landmark/carpspawn/blowout,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -26478,6 +26530,10 @@
 /obj/structure/flora/tallgrass8,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"xWD" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/closed/wall/f13/store,
+/area/f13/building/hospital)
 "xWX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/robust_softdrinks{
@@ -66756,7 +66812,7 @@ xKZ
 cVY
 ips
 qlH
-ips
+fdv
 drs
 okV
 oZc
@@ -68034,7 +68090,7 @@ oez
 oez
 oIp
 kTF
-fJA
+kpv
 kTF
 ooa
 oZc
@@ -69838,7 +69894,7 @@ fJA
 ntT
 fFL
 ips
-ips
+fdv
 okV
 qsc
 ips
@@ -71341,7 +71397,7 @@ mBg
 egq
 mYX
 mYX
-mYX
+xWD
 wCN
 owR
 bTK
@@ -74178,7 +74234,7 @@ nIR
 rRV
 szV
 mYX
-gah
+sPQ
 kJl
 bhm
 vqz
@@ -76473,7 +76529,7 @@ cym
 cym
 vGi
 whs
-xam
+lZM
 tFq
 xam
 xam
@@ -78528,7 +78584,7 @@ aFS
 wLE
 qbi
 hXy
-aSk
+fjN
 qQy
 qQy
 qQy
@@ -81387,7 +81443,7 @@ rHT
 tuW
 apx
 wxg
-tnF
+dKu
 bXK
 aFS
 ctz
@@ -82401,7 +82457,7 @@ ulG
 qDy
 iVU
 foz
-lwe
+nDB
 xss
 kCW
 aFS

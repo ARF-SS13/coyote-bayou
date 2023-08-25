@@ -2054,6 +2054,11 @@
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
+"bzO" = (
+/obj/structure/flora/rock/pile/largejungle,
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "bBb" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -3683,6 +3688,13 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cHs" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13{
+	dir = 8;
+	icon_state = "greenrusty"
+	},
+/area/f13/building)
 "cHw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "westranchgarage";
@@ -4091,6 +4103,13 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/water,
 /area/f13/caves)
+"cTW" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "cUg" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13{
@@ -9225,6 +9244,16 @@
 	icon_state = "greendirtysolid"
 	},
 /area/f13/building)
+"gCg" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "gCU" = (
 /obj/effect/decal/waste{
 	icon_state = "goo11"
@@ -9808,6 +9837,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"gZD" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
 /area/f13/building)
 "gZJ" = (
 /obj/structure/table/wood,
@@ -10766,6 +10801,10 @@
 /obj/effect/spawner/lootdrop/food,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hKg" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "hLo" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "drip3"
@@ -12654,6 +12693,10 @@
 	},
 /turf/closed/wall/f13/wood/house/clean,
 /area/f13/city)
+"iTD" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/f13/wasteland)
 "iTH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine{
@@ -16884,6 +16927,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/landmark/carpspawn/blowout,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "lLt" = (
@@ -17860,6 +17904,15 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"mor" = (
+/obj/effect/decal/marking,
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
+"moE" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "moG" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowtop";
@@ -18836,6 +18889,7 @@
 "mYp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/carpspawn/blowout,
 /turf/open/floor/plasteel/f13{
 	dir = 1;
 	icon_state = "greenrusty"
@@ -20575,6 +20629,10 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/f13,
 /area/f13/city)
+"odd" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "ode" = (
 /obj/machinery/washing_machine,
 /obj/effect/decal/cleanable/dirt,
@@ -21743,6 +21801,13 @@
 	icon_state = "housewood2"
 	},
 /area/f13/wasteland)
+"oSi" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "oSr" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -21996,6 +22061,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"pbn" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland)
 "pbs" = (
 /obj/structure/table,
 /obj/item/ammo_casing/shotgun/buckshot,
@@ -26214,6 +26285,10 @@
 "rUl" = (
 /obj/structure/car,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"rUq" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rUw" = (
 /obj/structure/flora/grass/wasteland{
@@ -32978,6 +33053,12 @@
 /obj/structure/wreck/trash/two_barrels,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"wuz" = (
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/plating/f13/outside/road{
+	icon_state = "innermiddle"
+	},
+/area/f13/wasteland)
 "wuL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -35031,6 +35112,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"xUf" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "xUg" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -35411,6 +35499,13 @@
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"yio" = (
+/obj/structure/flora/chomp/bush2{
+	color = "#224422"
+	},
+/obj/effect/landmark/carpspawn/blowout,
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "yiK" = (
 /obj/structure/chair{
 	dir = 4
@@ -38480,7 +38575,7 @@ qTT
 jQi
 tsg
 cON
-cON
+moE
 cON
 sRP
 fzC
@@ -38630,7 +38725,7 @@ cON
 cON
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -38751,7 +38846,7 @@ fzC
 fzC
 sBl
 cON
-cON
+moE
 cON
 cON
 kix
@@ -40316,7 +40411,7 @@ roN
 edm
 pnQ
 pnQ
-pnQ
+rUq
 pnQ
 sZw
 pnQ
@@ -41040,7 +41135,7 @@ elm
 elm
 elm
 qeq
-elm
+pbn
 elm
 oMo
 jtK
@@ -41224,7 +41319,7 @@ cON
 cON
 pnQ
 pnQ
-eXK
+bzO
 pnQ
 dcH
 dcH
@@ -42856,7 +42951,7 @@ gmt
 ugt
 pnQ
 pnQ
-elA
+xUf
 pnQ
 pnQ
 gEo
@@ -42910,7 +43005,7 @@ mgR
 fbY
 kfA
 pdG
-fLu
+oSi
 pnQ
 cod
 pnQ
@@ -43705,7 +43800,7 @@ iYC
 iYC
 itZ
 pnQ
-pnQ
+rUq
 pnQ
 pnQ
 pnQ
@@ -44333,7 +44428,7 @@ cON
 cON
 cON
 nVG
-nVG
+cTW
 cON
 cON
 qTT
@@ -44727,7 +44822,7 @@ puE
 sZw
 tsf
 hGV
-roN
+odd
 woa
 itZ
 pnQ
@@ -44939,7 +45034,7 @@ bUi
 opS
 sed
 pnQ
-pnQ
+rUq
 pnQ
 pnQ
 pnQ
@@ -46437,7 +46532,7 @@ elm
 rKA
 cON
 nsk
-cON
+moE
 wbR
 elm
 elm
@@ -46605,7 +46700,7 @@ jfa
 qTT
 nOw
 nOw
-cON
+moE
 cON
 dVV
 cON
@@ -46665,7 +46760,7 @@ wnL
 wnL
 uqV
 xoa
-cON
+moE
 cON
 cON
 cON
@@ -46885,7 +46980,7 @@ fzC
 cON
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -47737,7 +47832,7 @@ elm
 elm
 elm
 elm
-elm
+pbn
 elm
 elm
 elm
@@ -48054,7 +48149,7 @@ pnQ
 pnQ
 pnQ
 fyc
-pnQ
+rUq
 sZw
 pnQ
 roN
@@ -48789,7 +48884,7 @@ roN
 nOw
 nOw
 pnQ
-pnQ
+rUq
 roN
 sZw
 sZw
@@ -49363,7 +49458,7 @@ pnQ
 eXK
 pnQ
 bHr
-eXK
+bzO
 roN
 pnQ
 pnQ
@@ -49865,7 +49960,7 @@ xuA
 bvY
 eXK
 mMG
-eXK
+bzO
 tvB
 tvB
 tvB
@@ -51641,7 +51736,7 @@ pnQ
 epU
 sfz
 epU
-dIR
+gCg
 eXK
 eXK
 onB
@@ -51735,7 +51830,7 @@ epU
 sZw
 cON
 cON
-nVG
+cTW
 cON
 cON
 cON
@@ -54079,7 +54174,7 @@ cON
 nVG
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -54694,7 +54789,7 @@ pnQ
 kWY
 pnQ
 roN
-rnG
+yio
 nOw
 nOw
 edm
@@ -61564,7 +61659,7 @@ cON
 cON
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -69463,7 +69558,7 @@ poa
 poa
 poa
 poa
-poa
+iTD
 slV
 poa
 jTu
@@ -69687,7 +69782,7 @@ eUX
 eUX
 eUX
 eUX
-eUX
+hKg
 eUX
 eUX
 ihQ
@@ -72008,7 +72103,7 @@ eUX
 eUX
 vtr
 eUX
-eUX
+hKg
 eUX
 eUX
 rUl
@@ -72036,7 +72131,7 @@ fYb
 jfa
 rTk
 jfa
-poa
+iTD
 aOl
 nmL
 poa
@@ -78703,7 +78798,7 @@ cON
 cON
 nVG
 cON
-cON
+moE
 cON
 cON
 cON
@@ -80580,7 +80675,7 @@ sed
 cON
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -84351,7 +84446,7 @@ rmR
 rmR
 pDA
 rmR
-rmR
+gZD
 rmR
 rmR
 pxP
@@ -85736,7 +85831,7 @@ loN
 loN
 loN
 loN
-loN
+mor
 wmf
 jFn
 loN
@@ -85767,7 +85862,7 @@ cJA
 loN
 loN
 loN
-loN
+mor
 loN
 loN
 loN
@@ -85957,7 +86052,7 @@ nVG
 nVG
 nVG
 nVG
-cON
+moE
 cON
 cON
 cON
@@ -86415,7 +86510,7 @@ eqh
 eEW
 atJ
 rmR
-dyi
+cHs
 dqK
 imx
 dyi
@@ -88772,7 +88867,7 @@ dcy
 hXD
 wzl
 hXD
-hXD
+wuz
 hXD
 cON
 smg
@@ -90062,7 +90157,7 @@ hXD
 cON
 mBJ
 hXD
-hXD
+wuz
 hXD
 lXZ
 cON
@@ -93420,7 +93515,7 @@ nVG
 gIw
 cON
 cON
-nVG
+cTW
 cON
 nVG
 cON
@@ -93957,7 +94052,7 @@ cON
 cON
 cON
 cON
-cON
+moE
 cON
 cON
 cON
@@ -93991,7 +94086,7 @@ cON
 dEE
 cON
 cON
-cON
+moE
 cON
 trU
 cON
