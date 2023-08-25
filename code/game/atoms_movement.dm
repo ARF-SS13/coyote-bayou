@@ -497,6 +497,7 @@
 			if(old_area)
 				old_area.Exited(src, NONE)
 
+	update_z(destination.z) // Forces it so EVERYTHING keeps updated with the correct z level!!!
 	Moved(oldloc, NONE, TRUE)
 
 
