@@ -1907,7 +1907,7 @@
 	req_one_access_txt = "124"
 	},
 /obj/machinery/doorButtons/access_button{
-	idDoor = "virology_airlock_exterior";
+	idDoor = "virology_airlock_interior";
 	idSelf = "virology_airlock_control";
 	name = "Virology Access Button";
 	req_access_txt = null;
@@ -5260,8 +5260,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
+	name = "Virology";
+	req_one_access_txt = "124";
+	id_tag = "virology_airlock_interior"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/doorButtons/access_button{
@@ -5674,8 +5675,9 @@
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
+	name = "Virology";
+	req_one_access_txt = "124";
+	id_tag = "virology_airlock_exterior"
 	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
