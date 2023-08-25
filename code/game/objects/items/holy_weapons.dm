@@ -278,9 +278,11 @@
 	force = 30 // On par with a war club, note that this value determines almost every sub type without a direct force change.
 	throw_speed = 3
 	throw_range = 4
-	throwforce = 10
+	throwforce = 20
+	attack_speed = CLICK_CD_MELEE // The standard.
 	w_class = WEIGHT_CLASS_TINY
 	obj_flags = UNIQUE_RENAME
+	item_flags = ITEM_CAN_PARRY
 	wound_bonus = -10
 	var/chaplain_spawnable = TRUE
 	//total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
@@ -409,9 +411,12 @@
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
-	force = 38 // Equal to the Spatha/forge claymore
+	force = 28 // Equal to the Longblade
+	force_wielded = 50
+	force_unwielded = 28
 	wound_bonus = 30
-	block_chance = 18
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE // The standard.
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -438,7 +443,9 @@
 	item_state = "chainswordon"
 	name = "chain sword"
 	desc = "A longer more durable ripper built into a proper chain sword. Time to purge heretics!"
-	force = 45 // Equal to a standard ripper.
+	force = 45 // Equal to a standard ripper. Weaker than claymore/subtypes but can be 1-handed alot more effectively.
+	force_wielded = 45
+	force_unwielded = 45
 	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
@@ -457,6 +464,11 @@
 	desc = "Capable of cutting clean through a holy claymore."
 	icon_state = "katana"
 	item_state = "katana"
+	force = 30 //Equal to the Scraptana
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.8
+	force_wielded = 40
+	force_unwielded = 30
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/nullrod/claymore/multiverse
@@ -613,6 +625,7 @@
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	force_wielded = 65 // Equal to the sledgehammer.
+	attack_speed = CLICK_CD_MELEE * 1.8 //Also equal.
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
 /obj/item/nullrod/chainsaw_hand

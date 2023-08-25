@@ -60,7 +60,7 @@
 	name = "armwraps of unyielding resolve"
 	desc = "A series of armwraps, soaked in holy water. Makes you pretty keen to smite evil magic users."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	enhancement = 8 // Slightly weaker and lacking rapid compared to swamp star but you can still use guns and take it off. Still inferior.
+	enhancement = 30 // Equal to the mace gloves and vastly outperformed by the power fist.
 	secondary_trait = TRAIT_ANTIMAGIC
 	var/chaplain_spawnable = TRUE
 
