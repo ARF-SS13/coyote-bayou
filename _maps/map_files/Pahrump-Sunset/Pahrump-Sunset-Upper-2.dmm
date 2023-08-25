@@ -342,6 +342,10 @@
 /area/f13/wasteland)
 "cp" = (
 /obj/structure/closet/emcloset,
+/obj/machinery/camera{
+	c_tag = "Virology Airlock";
+	network = list("ss13","medbay")
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -1236,22 +1240,6 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
-"jd" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/doorButtons/airlock_controller{
-	idExterior = "virology_airlock_exterior";
-	idInterior = "virology_airlock_interior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Console";
-	pixel_x = 8;
-	pixel_y = 22;
-	req_access_txt = null;
-	req_one_access_txt = "124"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/hospital/clinic)
 "jf" = (
 /obj/structure/guncase{
 	anchored = 1
@@ -1896,24 +1884,8 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "oS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/doorButtons/airlock_controller{
-	idExterior = "virology_airlock_exterior";
-	idInterior = "virology_airlock_interior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Console";
-	req_access_txt = null;
-	pixel_y = -23;
-	req_one_access_txt = "124"
-	},
-/obj/machinery/doorButtons/access_button{
-	idDoor = "virology_airlock_exterior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	req_access_txt = null;
-	req_one_access_txt = "124";
-	pixel_y = -21;
-	pixel_x = -8
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/building/hospital/clinic)
@@ -5257,20 +5229,27 @@
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "RO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/doorButtons/access_button{
-	idDoor = "virology_airlock_exterior";
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_interior";
+	name = "Virology Interior Airlock";
+	req_access_txt = "39"
+	},
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
 	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	pixel_x = -24;
+	name = "Virology Access Console";
+	pixel_x = 24;
 	req_access_txt = null;
-	req_one_access_txt = "124"
+	req_one_access_txt = null
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/building/hospital/clinic)
@@ -5448,7 +5427,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/f13/building/hospital/clinic)
 "Ta" = (
@@ -5663,22 +5641,27 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "UA" = (
-/obj/machinery/doorButtons/access_button{
-	idDoor = "virology_airlock_exterior";
-	idSelf = "virology_airlock_control";
-	name = "Virology Access Button";
-	pixel_x = -24;
-	req_access_txt = null;
-	req_one_access_txt = "124"
-	},
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
+	},
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_exterior";
+	name = "Virology Exterior Airlock";
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Console";
+	pixel_x = -24;
+	req_access_txt = null;
+	req_one_access_txt = null
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/building/hospital/clinic)
@@ -11301,7 +11284,7 @@ SZ
 qd
 Xn
 FS
-jd
+gn
 VU
 VU
 nJ
@@ -11552,11 +11535,11 @@ FS
 FS
 FS
 FS
-Ww
+oS
 RO
-fy
-fy
-fy
+Ww
+Ww
+Ww
 UA
 yp
 VU
@@ -11809,12 +11792,12 @@ UH
 fy
 fy
 GB
-oS
-FS
+fy
+Sr
 cp
 Mi
 tq
-Sr
+FS
 gn
 nJ
 nJ
