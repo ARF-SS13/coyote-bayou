@@ -473,6 +473,7 @@
 		var/movement_dir = get_dir(src, destination)
 
 		moving_diagonally = 0
+		update_z(destination.z) // Forces it so EVERYTHING keeps updated with the correct z level!!!
 
 		loc = destination
 
@@ -484,7 +485,7 @@
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
 				destarea.Entered(src, old_area)
-
+		
 		. = TRUE
 
 	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)
@@ -497,7 +498,6 @@
 			if(old_area)
 				old_area.Exited(src, NONE)
 
-	update_z(destination.z) // Forces it so EVERYTHING keeps updated with the correct z level!!!
 	Moved(oldloc, NONE, TRUE)
 
 
