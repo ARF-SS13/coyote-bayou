@@ -40,6 +40,11 @@
 	path = /obj/item/storage/fancy/donut_box
 	cost = 2
 
+/datum/gear/backpack/locksmith
+	name = "locksmith box"
+	path = /obj/item/storage/box/tools/locksmith
+	cost = 2
+
 //// "Toys" -- toys going back to general subcategory till we have more of them
 
 /datum/gear/backpack/crayons

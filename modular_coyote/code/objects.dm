@@ -584,8 +584,17 @@
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd_player"
 
-/obj/item/coin/dvd
+/obj/item/weapon/dvd
 	name = "Dvd"
 	desc = "A shiny disk! Don't scratch it."
 	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
+
+/obj/item/storage/box/tools/locksmith
+	name = "locksmith tools"
+
+/obj/item/storage/box/tools/farming/PopulateContents()
+	new /obj/item/door_key(src)
+	new /obj/item/door_key(src)
+	new /obj/item/lock(src)
+	new /obj/item/storage/keys_set(src)
