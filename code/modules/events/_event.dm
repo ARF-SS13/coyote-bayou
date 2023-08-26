@@ -128,6 +128,7 @@
 	var/datum/round_event/E = new typepath()
 	E.current_players = get_active_player_count(alive_check = 1, afk_check = 1, human_check = 1)
 	E.control = src
+	active = TRUE
 	SSblackbox.record_feedback("tally", "event_ran", 1, "[E]")
 
 	testing("[time2text(world.time, "hh:mm:ss")] [E.type]")
@@ -251,6 +252,8 @@
 //Called when start(), announce() and end() has all been called.
 /datum/round_event/proc/kill()
 	processing = FALSE
+	control.active = FALSE
+	control = null
 	SSevents.running -= src
 
 

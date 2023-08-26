@@ -41,9 +41,10 @@
 	name = "Mob Blowout"
 	typepath = /datum/round_event/common/spawn_nests
 	weight = 15
-	min_players = 2
-	earliest_start = 180 MINUTES
-	max_occurrences = 3
+	min_players = 1
+	earliest_start = 0 MINUTES
+	infinite_occurances = TRUE
+	common_occurrence = TRUE
 
 /datum/round_event/common
 	var/start_at = 0
@@ -75,7 +76,7 @@
 		start_at = world.time + start_offset
 		announce_at = world.time + announce_offset + start_offset
 	stop_at = world.time + start_offset + announce_offset + stop_offset
-	message_admins("Common event [type] starting in [time2text(start_at - world.time)], announcing in [time2text(announce_at - world.time)], finishing in [time2text(stop_at - world.time)].")
+	message_admins("Common event [type] starting in [DisplayTimeText(start_at - world.time)], announcing in [DisplayTimeText(announce_at - world.time)], finishing in [DisplayTimeText(stop_at - world.time)].")
 	control.active = TRUE
 
 /datum/round_event/common/process()
@@ -89,30 +90,31 @@
 		announce()
 		announced = TRUE
 		return
-	if(started && !stopped)
-		tick()
-		return
 	if(!stopped && COOLDOWN_FINISHED(src, stop_at))
 		end()
 		stopped = TRUE
+		return
+	if(started && !stopped)
+		tick()
 		return
 	if(stopped)
 		kill()
 
 /datum/round_event/common/spawn_nests
 	min_start_delay = 30 MINUTES
-	max_start_delay = 1.5 HOURS
+	max_start_delay = 1 HOUR
 	min_announce_delay = 0
 	max_announce_delay = 0
-	min_duration = 15 MINUTES
-	max_duration = 30 MINUTES
+	min_duration = 5 MINUTES
+	max_duration = 10 MINUTES
 	var/list/coords_to_spawn_at = list()
+	var/max_nests_per_event = 80
 
 /datum/round_event/common/spawn_nests/start()
 	var/time_in = world.time - SSticker.round_start_time
 	var/num_to_spawn = LAZYLEN(GLOB.nest_spawn_points)
 	if(num_to_spawn <= 0)
-		CRASH("Mob spawner event blowut thhing fuking didnt have any landmarks!!! fuck")
+		return kill()
 	switch(time_in)
 		if(-INFINITY to 45 MINUTES)
 			num_to_spawn = min(2, num_to_spawn)
@@ -124,7 +126,7 @@
 			num_to_spawn *= 0.75
 		else
 			num_to_spawn *= 0.90
-	num_to_spawn = round(clamp(num_to_spawn, 0, LAZYLEN(GLOB.nest_spawn_points)))
+	num_to_spawn = round(clamp(num_to_spawn, 0, min(LAZYLEN(GLOB.nest_spawn_points), max_nests_per_event)))
 	var/list/hak = GLOB.nest_spawn_points
 	var/list/spawndidates = hak.Copy()
 	for(var/i in 1 to num_to_spawn)
@@ -157,13 +159,16 @@
 				continue
 			if(locate(/obj/structure/nest) in here)
 				continue // already a nest here lol
+			for(var/atom/A in here)
+				if(A.density)
+					continue mainloop
 			for(var/client/clint in GLOB.clients)
 				if(!isliving(clint.mob))
 					continue
 				var/mob/living/L = clint.mob
 				if(L.z != here.z)
 					continue
-				if(L in view(7, here))
+				if(L in hearers(10, here))
 					continue mainloop // my first labeled loop that ISNT cus of a bad idea!!!
 			var/mob/living/spawned = pickweight(GLOB.totally_not_carp)
 			if(!spawned)
