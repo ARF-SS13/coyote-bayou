@@ -272,7 +272,7 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
-		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
+		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
 		/obj/item/gun/ballistic/automatic/famas = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
@@ -1740,5 +1740,5 @@
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
 	/obj/item/laser_pointer = 5,
-	/obj/item/coin/dvd = 5
+	/obj/item/weapon/dvd = 5
 	)
