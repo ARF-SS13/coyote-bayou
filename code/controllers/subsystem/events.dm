@@ -5,13 +5,14 @@ SUBSYSTEM_DEF(events)
 
 	var/list/control = list()	//list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
 	var/list/running = list()	//list of all existing /datum/round_event
+	var/list/processing = list()
 	var/list/currentrun = list()
 
 	var/scheduled = 0			//The next world.time that a naturally occuring random event can be selected.
 	var/frequency_lower = 1800	//3 minutes lower bound.
 	var/frequency_upper = 6000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
 
-	var/list/holidays			//List of all holidays occuring today or null if no holidays
+	var/list/holidays = list()			//List of all holidays occuring today or null if no holidays
 	var/wizardmode = FALSE
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)
@@ -28,20 +29,21 @@ SUBSYSTEM_DEF(events)
 /datum/controller/subsystem/events/fire(resumed = 0)
 	if(!resumed)
 		checkEvent() //only check these if we aren't resuming a paused fire
-		src.currentrun = running.Copy()
-
+		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
+	var/list/current_run = currentrun
 
-	while(currentrun.len)
-		var/datum/thing = currentrun[currentrun.len]
-		currentrun.len--
-		if(thing)
-			thing.process()
-		else
-			running.Remove(thing)
+	while(current_run.len)
+		var/datum/thing = current_run[current_run.len]
+		current_run.len--
+		if(QDELETED(thing))
+			processing -= thing
+		else if(thing.process(wait) == PROCESS_KILL)
+			// fully stop so that a future START_PROCESSING will work
+			STOP_PROCESSING(src, thing)
 		if (MC_TICK_CHECK)
 			return
+
 
 //checks if we should select a random event yet, and reschedules if necessary
 /datum/controller/subsystem/events/proc/checkEvent()
@@ -151,8 +153,8 @@ SUBSYSTEM_DEF(events)
 
 //sets up the holidays and holidays list
 /datum/controller/subsystem/events/proc/getHoliday()
-	if(!CONFIG_GET(flag/allow_holidays))
-		return		// Holiday stuff was not enabled in the config!
+	// if(!CONFIG_GET(flag/allow_holidays)) // fuck configs
+	// 	return		// Holiday stuff was not enabled in the config!
 
 	var/YY = text2num(time2text(world.timeofday, "YY")) 	// get the current year
 	var/MM = text2num(time2text(world.timeofday, "MM")) 	// get the current month
@@ -170,11 +172,11 @@ SUBSYSTEM_DEF(events)
 		else
 			qdel(holiday)
 
-/*	if(holidays)
+	if(holidays)
 		holidays = shuffle(holidays)
 		// regenerate station name because holiday prefixes.
 		set_station_name(new_station_name())
-		world.update_status()*/
+		world.update_status()
 
 /datum/controller/subsystem/events/proc/toggleWizardmode()
 	wizardmode = !wizardmode

@@ -44,7 +44,7 @@ Property weights are added to the config weight of the ruleset. They are:
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(A?.owner?.current && A.owner.current.stat != DEAD)
 			threat += A.threat()
-	for(var/r in SSevents.running)
+	for(var/r in SSevents.processing)
 		var/datum/round_event/R = r
 		threat += R.threat()
 	for(var/obj/item/phylactery/P in GLOB.poi_list)
