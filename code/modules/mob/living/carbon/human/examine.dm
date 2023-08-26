@@ -491,6 +491,12 @@
 		. += ""
 		. += "<span class='love'>[t_He] [t_is] looking for a good time, you should check their OOC Notes.</span>"
 
+
+	if(HAS_TRAIT(src, TRAIT_SHY))
+		. += ""
+		. += "<span class='love'>[t_He] [t_is] is a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?</span>"
+
+
 	if(HAS_TRAIT(src, TRAIT_SMOL))
 		. += ""
 		. += span_notice("[t_He] looks easy to scoop up.</span>")
