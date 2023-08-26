@@ -593,8 +593,96 @@
 /obj/item/storage/box/tools/locksmith
 	name = "locksmith tools"
 
-/obj/item/storage/box/tools/farming/PopulateContents()
+/obj/item/storage/box/tools/locksmith/PopulateContents()
 	new /obj/item/door_key(src)
 	new /obj/item/door_key(src)
 	new /obj/item/lock(src)
 	new /obj/item/storage/keys_set(src)
+
+//New fish
+
+
+/obj/item/fishy/guppy
+	name = "guppy"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "guppy"
+
+/obj/item/fishy/firefish
+	name = "fire fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "firefish"
+
+/obj/item/fishy/greenchromis
+	name = "green chromis"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "greenchromis"
+
+/obj/item/fishy/cardinalfish
+	name = "cardinal fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "cardinalfish"
+
+/obj/item/fishy/catfish
+	name = "catfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "catfish"
+
+/obj/item/fishy/plastetra
+	name = "plastetra"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "plastetra"
+
+/obj/item/fishy/angelfish
+	name = "angel fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "angelfish"
+
+/obj/item/fishy/clownfish
+	name = "clown fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "clownfish"
+
+/obj/item/fishy/lubefish
+	name = "lube fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "lubefish"
+
+/obj/item/fishy/lanternfish
+	name = "lantern fish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "lanternfish"
+
+/obj/item/fishy/dwarf_moonfish
+	name = "dwarf moonfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "dwarf_moonfish"
+
+/obj/item/fishy/bugfish
+	name = "bugfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "bugfish"
+
+/obj/item/fishy/gunner_jellyfish
+	name = "gunner jellyfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "gunner_jellyfish"
+
+/obj/item/fishy/needlefish
+	name = "needlefish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "needlefish"
+
+/obj/item/fishy/armorfish
+	name = "armorfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "armorfish"
+
+/obj/item/fishy/pufferfish
+	name = "pufferfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "pufferfish"
+
+/obj/item/fishy/goldfish
+	name = "goldfish"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "goldfish"
