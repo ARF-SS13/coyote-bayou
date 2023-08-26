@@ -23,7 +23,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/legiongate
-	name = "Legion iron gate"
+	name = "Larper iron gate"
 	result = /obj/machinery/door/unpowered/secure_legion
 	reqs = list(/obj/item/stack/sheet/metal = 25)
 	time = 60
@@ -235,6 +235,24 @@
 	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
 	tools = list(/obj/item/multitool)
 
+/datum/crafting_recipe/radiokeyresponder
+	name = "Responders Encryption Key"
+	result = /obj/item/encryptionkey/headset_responders
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(/obj/item/multitool)
+	always_available = FALSE
+
+/datum/crafting_recipe/bowman
+	name = "Reinforced radioheadset"
+	result = /obj/item/radio/headset/upgraded
+	reqs = list(/obj/item/radio/headset = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(/obj/item/multitool,
+				/obj/item/screwdriver)
+	always_available = FALSE
+
 //////////////////////
 //Burial & Execution//
 //////////////////////
@@ -274,7 +292,7 @@
 	time = 20
 
 /datum/crafting_recipe/rip/crossexecution
-	name = "Legion Cross"
+	name = "Merciless Cross"
 	result = /obj/structure/cross
 	time = 15
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10)
@@ -517,14 +535,19 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/wateringcan
+	name = "Watering Can"
+	result = /obj/item/reagent_containers/glass/bucket/wateringcan
+	reqs = list(/obj/item/stack/sheet/metal = 1, /obj/item/stack/sheet/plastic = 1)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/skyfort_girder
 	name = "Aerial Support Girder"
 	result = /obj/item/stack/rods/scaffold
 	reqs = list(
-		/obj/item/stack/sheet/metal = 5,
-		/obj/item/stack/sheet/plastic = 1,
-		/obj/item/stack/sheet/prewar = 5,
-		/obj/item/stack/sheet/bronze = 1
+		/obj/item/stack/sheet/metal = 10,
 		)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -535,10 +558,7 @@
 	name = "Aerial Support Girder (x10)"
 	result = /obj/item/stack/rods/scaffold/ten
 	reqs = list(
-		/obj/item/stack/sheet/metal = 50,
-		/obj/item/stack/sheet/plastic = 10,
-		/obj/item/stack/sheet/prewar = 50,
-		/obj/item/stack/sheet/bronze = 10
+		/obj/item/stack/sheet/metal = 100,
 		)
 	tools = list(TOOL_WORKBENCH)
 	time = 20
@@ -593,3 +613,111 @@
 	time = 5 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
+/datum/crafting_recipe/scrap_pa
+	name = "Powered Scrap Suit"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/raider
+	reqs = list(/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1,
+				/obj/item/stack/cable_coil = 30,
+				/obj/item/stack/sheet/metal = 35,
+				/obj/item/stack/sheet/bronze = 25)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/scrap_pa_helm
+	name = "Powered Scrap Suit Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/raider
+	reqs = list(/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/bronze = 5)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45
+	name = "Refurbished T-45b Power Armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm
+	name = "Refurbished T-45b Power Armor Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 2)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45/hotrod
+	name = "Refurbished T-45b Hotrod Power Armor"
+	result = /obj/item/clothing/suit/armor/power_armor/t45b/hotrod
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stock_parts/manipulator/pico = 1,
+				/obj/item/stock_parts/cell/ammo/mfc = 1)
+	time = 35
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+/datum/crafting_recipe/repair_t45_helm/hotrod
+	name = "Refurbished T-45b Hotrod Power Armor Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/hotrod
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/electronicparts = 2)
+	time = 25
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	always_available = FALSE
+
+
+/datum/crafting_recipe/teachboy
+	name = "Refurbish Educational Pip-Boy 2000"
+	result = /obj/item/pda/teachboy
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 3)
+	time = 10
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+
+/datum/crafting_recipe/customid
+	name = "Reprogrammable ID"
+	result = /obj/item/card/id/selfassign
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/sheet/plastic = 2)
+	time = 10
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+
+/datum/crafting_recipe/welding_fuel
+	name = "Process Welding Fuel"
+	result = /obj/item/reagent_containers/food/snacks/welding_fuel
+	reqs = list(/datum/reagent/fuel = 30)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MISC
+	subcategory = CAT_MISCELLANEOUS

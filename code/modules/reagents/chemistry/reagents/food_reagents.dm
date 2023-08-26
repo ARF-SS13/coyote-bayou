@@ -27,10 +27,10 @@
 	M.CheckBloodsuckerEatFood(nutriment_factor)
 	holder?.remove_reagent(type, metabolization_rate)
 	if (canbrew)
-		if (holder.has_reagent(/datum/reagent/medicine/spaceacillin))
+		if (holder?.has_reagent(/datum/reagent/medicine/spaceacillin))
 			return
 		if (HAS_TRAIT(M, TRAIT_AUTOBREW))
-			holder.add_reagent(/datum/reagent/consumable/ethanol, 0.5) //foods and drinks metabolize 0.4 per tick. 0.5 added per tick is just enough to cause slight buildup
+			holder?.add_reagent(/datum/reagent/consumable/ethanol, 0.5) //foods and drinks metabolize 0.4 per tick. 0.5 added per tick is just enough to cause slight buildup
 
 /datum/reagent/consumable/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == INGEST)
@@ -511,7 +511,7 @@
 	color = "#660000" // rgb: 221, 202, 134
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
-	glass_name = "glass of chocolate"
+	glass_name = "cup of hot chocolate"
 	glass_desc = "Tasty."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)

@@ -86,12 +86,16 @@
 		if(isliving(pulling))
 			var/mob/living/L = pulling
 			should_slow = (drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE) ? PULL_PRONE_SLOWDOWN : FALSE
+			//var/slow_difference = L.total_multiplicative_slowdown() - total_multiplicative_slowdown()
+			//if(slow_difference >= 3)
+			//	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/shared_slowdown, multiplicative_slowdown = slow_difference)
 		else
 			should_slow = pulling.drag_delay
 		if(should_slow)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = should_slow)
 			return
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
+	//remove_movespeed_modifier(/datum/movespeed_modifier/shared_slowdown)
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 	if (buckled && buckled.loc != newloc) //not updating position
@@ -132,7 +136,7 @@
 	if(. && client)
 		reset_perspective()
 
-/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+/mob/living/update_z(new_z) // 1+ to register, null to unregister
 	if(isnull(new_z) && audiovisual_redirect)
 		return
 	if (registered_z != new_z)

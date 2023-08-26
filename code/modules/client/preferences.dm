@@ -1,4 +1,4 @@
-#define DEFAULT_SLOT_AMT	2
+#define MAX_FREE_PER_CAT	4
 #define HANDS_SLOT_AMT		2
 #define BACKPACK_SLOT_AMT	4
 
@@ -41,6 +41,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
 										//autocorrected this round, not that you'd need to check that.
 
+	// VORE~
+	// see: [code\modules\vore\eating\vore_prefs.dm]
+
 	var/UI_style = null
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
@@ -82,6 +85,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/be_random_body = 0				//whether we'll have a random body every round
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
 	var/undershirt = "Nude"				//undershirt type
@@ -176,6 +180,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
+		"genital_hide" = NONE,
+		"genital_whitelist" = "Sammt Bingus, fluntly, theBungus",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = "",
@@ -185,7 +191,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
-		"color_scheme" = OLD_CHARACTER_COLORING
+		"color_scheme" = OLD_CHARACTER_COLORING,
+		"chat_color" = "whoopsie"
 		)
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
@@ -202,6 +209,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/custom_species = null
+
+	//Creature Preferences
+	var/creature_species = 		"Eevee"
+	var/creature_name = 		"Eevee"
+	var/creature_flavor_text = 	null
+	var/creature_ooc = 			null
+	var/image/creature_image = null
+	var/creature_profilepic = null
 
 	//Quirk list
 	var/list/all_quirks = list()
@@ -293,8 +308,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/special_a = 5
 	var/special_l = 5
 
+	var/custom_pixel_x = 0
+	var/custom_pixel_y = 0
+
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
+
+	/// Versioning hack! Versioning hack! Versioning hack!
+	var/list/current_version = list()
 
 
 /datum/preferences/New(client/C)
@@ -382,7 +403,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
-			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
+			//Left Column
+			dat += "<table><tr><td width='30%'valign='top'>"
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
@@ -395,8 +417,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 			dat += "</td>"
-
-			dat +="<td width='300px' height='300px' valign='top'>"
+			//Middle Column
+			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Matchmaking preferences:</h2>"
 			if(SSmatchmaking.initialized)
 				for(var/datum/matchmaking_pref/match_pref as anything in SSmatchmaking.all_match_types)
@@ -410,11 +432,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Loading matchmaking preferences...</b><br>"
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
-
-			dat += "<b>Profile Picture:</b><BR>"
+			//Right column
+			dat +="<td width='30%' valign='top'>"
+			dat += "<h2>Profile Picture:</h2><BR>"
 			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Creature Profile Picture:</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
-
 			/*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group
@@ -519,9 +543,50 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><BR>"
+			dat += "<b>Runechat Color:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=chat_color;task=input;background-color: #[features["chat_color"]]'>#[features["chat_color"]]</span></a><BR>"
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
+
+			dat += "<h2>Creature Character</h2>"
+			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
+			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
+			if(length(creature_flavor_text) <= 40)
+				if(!length(creature_flavor_text))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_flavor_text]<br>"
+			else
+				dat += "[TextPreview(creature_flavor_text)]...<br>"
+			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
+			if(length(creature_ooc) <= 40)
+				if(!length(creature_ooc))
+					dat += "\[...\]<br>"
+				else
+					dat += "[creature_ooc]<br>"
+			else
+				dat += "[TextPreview(creature_ooc)]...<br>"
+			if(!creature_image && creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+					generate_selectable_creatures()
+				if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+					creature_species = initial(creature_species)
+				var/creature_type = GLOB.creature_selectable["[creature_species]"]
+				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
+					var/mob/living/M = new creature_type(user)
+					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+					qdel(M)
+			if(creature_image)
+				dat += "[icon2html(creature_image, user)]<br>"
+
+			dat += "<h3>Pixel Offsets</h3>"
+			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
+			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
+			dat += "<a href='?_src_=prefs;preference=pixel_x;task=input'>&harr;[px]</a><BR>"
+			dat += ", "
+			dat += "<a href='?_src_=prefs;preference=pixel_y;task=input'>&#8597;[py]</a><BR>"
+
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -909,34 +974,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<td colspan='2' class='genital_name'>Shift</td>"
 					dat += "<td colspan='2' class='genital_name'>Hidden by...</td>"
 					dat += "<td class='genital_name'>Override</td>"
+					dat += "<td class='genital_name'>See on others?</td>"
 					dat += "</tr>"
 
 					for(var/nad in all_genitals)
-						if(features[nad] == TRUE)
-							genitals_we_have += nad
-					if(LAZYLEN(genitals_we_have))
+						genitals_we_have += nad
+					if(LAZYLEN(all_genitals))
 						for(var/i in 1 to LAZYLEN(genitals_we_have))
 							dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
 					else
 						dat += "You dont seem to have any movable genitals!"
 					dat += "<tr>"
 					dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
-					var/genital_shirtlayer
+					/* var/genital_shirtlayer
 					if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 						genital_shirtlayer = "Over Underwear"
 					else if(CHECK_BITFIELD(features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
 						genital_shirtlayer = "Over Clothes"
 					else
-						genital_shirtlayer = "Under Underwear"
+						genital_shirtlayer = "Under Underwear" */
 
 					dat += {"<td colspan='3' class='coverage_on'>
+							Over Clothes
+							</td>"}
+					dat += {"<td class='coverage_on'>
 							<a 
 								class='clicky_no_border'
 								href='
 									?_src_=prefs;
-									preference=change_genital_clothing'
-									nadflag=[genital_shirtlayer]>
-										[genital_shirtlayer]
+									preference=change_genital_whitelist'>
+										Whitelisted Names
 							</a>
 							</td>"}
 					dat += "</table>"
@@ -1040,6 +1107,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										?_src_=prefs;
 										preference=clear_scars'>
 											\tClear them?
+								</a>"}
+					dat += "</td>"
+					dat += "<td class='undies_cell'>"
+					dat += "<div class='undies_label'>Underwear Settings</div>"
+					dat += {"<a 
+								class='undies_link' 
+								href='
+									?_src_=prefs;
+									preference=underwear_hands'>
+										Layered [underwear_overhands ? "OVER" : "UNDER"] hands
+							</a>"}
+					dat += {"<a 
+								class='undies_link'>
+									Cuteness: 100%
 								</a>"}
 					dat += "</td>"
 					dat += "</tr>"
@@ -1223,7 +1304,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<table align='center' width='100%'>"
 			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> loadout points remaining.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
-			dat += "<tr><td colspan=4><center>You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
+			dat += "<tr><td colspan=4><center>You can choose up to [MAX_FREE_PER_CAT] free items per category.</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
 
 			if(!length(GLOB.loadout_items))
@@ -1326,6 +1407,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<h2>Vore prefs</h2>"
+			dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
+			if(master_vore_toggle)
+				dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
+				dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Trash Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_trash_messages'>[(allow_trash_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
+				dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
+				dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
 
@@ -1419,7 +1512,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
 /// reverses it cus its more intuitive that way (for everyone but me)
-/datum/preferences/proc/decode_cockstring()
+/datum/preferences/proc/decode_cockstring(reverse = TRUE)
 	var/list/list_out = list()
 	list_out = splittext(features["genital_order"], ":")
 	list_out = reverseList(list_out)
@@ -1439,6 +1532,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		message_admins("Hey the cockstring wasn't empty, either Dan fucked up or something fucked up.")
 	. = jointext(cockstring, ":")
 	features["genital_order"] = .
+
+/// takes in whatever's at features["genital_whitelist"] and spits out a list in order of what's present
+/datum/preferences/proc/decode_cockwhitelist(reverse = TRUE)
+	var/list/list_out = list()
+	list_out = splittext(features["genital_whitelist"], ",") // would be a real dick move if the whitelist didnt accept whitespace
+	return list_out
+
+/// takes in a list of nads and outputs a cockstring, then saves it
+/datum/preferences/proc/encode_cockwhitelist(list/cockstring)
+	var/list/outlist = list()
+	for(var/ckey in cockstring)
+		outlist += ckey
+	. = jointext(outlist, ",")
+	features["genital_whitelist"] = .
+	save_preferences()
 
 /// Adds a link to a given genital
 /datum/preferences/proc/build_genital_setup()
@@ -1468,6 +1576,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			setup_flags = DEF_BALLS_FLAGS
 			thing_name = "Testicles"
 			one_or_some = "some"
+			size_flavor = " decigrundles"
 			feature_key = "balls"
 		if("has_cock")
 			setup_flags = DEF_PENIS_FLAGS
@@ -1565,35 +1674,43 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/magic_word
 	var/flag_string
 	var/override_string
+	var/hide_nad_flag
 	switch(has_name)
 		if(CS_BUTT)
 			magic_word = "Butt"
 			flag_string = "butt_visibility_flags"
 			override_string = "butt_visibility_override"
+			hide_nad_flag = HIDE_BUTT
 		if(CS_VAG)
 			magic_word = "Vagina"
 			flag_string = "vag_visibility_flags"
 			override_string = "vag_visibility_override"
+			hide_nad_flag = HIDE_VAG
 		if(CS_BALLS)
 			magic_word = "Testicles"
 			flag_string = "balls_visibility_flags"
 			override_string = "balls_visibility_override"
+			hide_nad_flag = HIDE_BALLS
 		if(CS_PENIS)
 			magic_word = "Penis"
 			flag_string = "cock_visibility_flags"
 			override_string = "cock_visibility_override"
+			hide_nad_flag = HIDE_PENIS
 		if(CS_BELLY)
 			magic_word = "Belly"
 			flag_string = "belly_visibility_flags"
 			override_string = "belly_visibility_override"
+			hide_nad_flag = HIDE_BELLY
 		if(CS_BOOB)
 			magic_word = "Breasts"
 			flag_string = "breasts_visibility_flags"
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_BOOBS
 		if(CS_MISC) // idk some kind of broken genital
 			magic_word = "Chunk"
 			flag_string = "breasts_visibility_flags" // idk
 			override_string = "breasts_visibility_override"
+			hide_nad_flag = HIDE_MISC
 	var/list/doot = list()
 	doot += "<tr class='talign'>"
 	// the nad's name and index
@@ -1666,6 +1783,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				curr_vis=[peen_vis_override];
 				task=input'>
 					[peen_vis_override]
+		</a>
+		</td>"}
+	/// and the hideflag
+	var/i_dont_like_bellies = CHECK_BITFIELD(features["genital_hide"], hide_nad_flag)
+	doot += {"<td class='[i_dont_like_bellies ? "coverage_off" : "coverage_on"]'>
+		<a 
+			class='clicky_no_border' 
+			href='
+				?_src_=prefs;
+				preference=genital_hide;
+				hideflag=[hide_nad_flag];
+				task=input'>
+					[i_dont_like_bellies ? "N" : "Y"]
 		</a>
 		</td>"}
 	doot += "</tr>"
@@ -2064,6 +2194,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
+	if(href_list["preference"] == "change_genital_whitelist")
+		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+			user, 
+			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+			"Genital Whitelist",
+			features["genital_whitelist"])
+		if(new_genital_whitelist == "")
+			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+			if(whoathere == "Yes")
+				features["genital_whitelist"] = new_genital_whitelist
+		else if(!isnull(new_genital_whitelist))
+			features["genital_whitelist"] = new_genital_whitelist
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
@@ -2073,6 +2218,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				DISABLE_BITFIELD(features[nadlet], GENITAL_ABOVE_UNDERWEAR | GENITAL_ABOVE_CLOTHING)
 				ENABLE_BITFIELD(features[nadlet], new_bit)
 			features["genital_visibility_flags"] = new_bit
+
+	if(href_list["preference"] == "genital_hide")
+		var/hideit = text2num(href_list["hideflag"])
+		TOGGLE_BITFIELD(features["genital_hide"], hideit)
 
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])
@@ -2285,23 +2434,76 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								player_mob.new_player_panel()
 						else
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+				if("creature_name")
+					var/new_name = input(user, "Choose your creature character's name:", "Character Preference")  as text|null
+					if(new_name)
+						new_name = reject_bad_name(new_name)
+						if(new_name)
+							creature_name = new_name
+							if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+								var/mob/dead/new_player/player_mob = parent.mob
+								player_mob.new_player_panel()
+						else
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+				if("creature_species")
+					if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+						generate_selectable_creatures()
+					if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+						creature_species = initial(creature_species)
+					var/result = input(user, "Select a creature species", "Species Selection") as null|anything in GLOB.creature_selectable
+					if(result)
+						creature_species = result
+						var/creature_type = GLOB.creature_selectable["[result]"]
+						var/mob/living/M = new creature_type(user)
+						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
+						qdel(M)
+
+				if("creature_flavor_text")
+					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(creature_flavor_text), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						creature_flavor_text = msg
+				if("creature_ooc")
+					var/msg = stripped_multiline_input(usr, "Set out of character notes related to roleplaying content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(creature_ooc), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						creature_ooc = msg
 
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
-/*
-				if("security_records")
-					var/rec = stripped_multiline_input(usr, "Set your security record note section. This should be IC!", "Security Records", html_decode(security_records), MAX_FLAVOR_LEN, TRUE)
-					if(!isnull(rec))
-						security_records = rec
-
-				if("medical_records")
-					var/rec = stripped_multiline_input(usr, "Set your medical record note section. This should be IC!", "Security Records", html_decode(medical_records), MAX_FLAVOR_LEN, TRUE)
-					if(!isnull(rec))
-						medical_records = rec
-*/
-
+				if("pixel_x")
+					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					if(newx)
+						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
+					else
+						custom_pixel_x = 0
+				if("pixel_y")
+					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					if(newy)
+						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
+					else
+						custom_pixel_y = 0
+				////////////////// VORE STUFF /
+				if("master_vore_toggle")
+					TOGGLE_VAR(master_vore_toggle)
+				if("allow_being_prey")
+					TOGGLE_VAR(allow_being_prey)
+				if("allow_being_fed_prey")
+					TOGGLE_VAR(allow_being_fed_prey)
+				if("allow_digestion_damage")
+					TOGGLE_VAR(allow_digestion_damage)
+				if("allow_digestion_death")
+					TOGGLE_VAR(allow_digestion_death)
+				if("allow_trash_messages")
+					TOGGLE_VAR(allow_trash_messages)
+				if("allow_vore_messages")
+					TOGGLE_VAR(allow_vore_messages)
+				if("allow_death_messages")
+					TOGGLE_VAR(allow_death_messages)
+				if("allow_eating_sounds")
+					TOGGLE_VAR(allow_eating_sounds)
+				if("allow_digestion_sounds")
+					TOGGLE_VAR(allow_digestion_sounds)
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -2480,6 +2682,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["taste"] = new_taste
 					else
 						features["taste"] = "something"
+
+				if("chat_color")
+					var/new_runecolor = input(user, "Choose your character's runechat color:", "Character Preference","#"+features["chat_color"]) as color|null
+					if(new_runecolor)
+						features["chat_color"] = sanitize_hexcolor(new_runecolor, 6)
 
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
@@ -2887,6 +3094,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_shape)
 						features["balls_shape"] = new_shape
 
+				if("balls_size")
+					var/min_B = 1
+					var/max_B = BALLS_SIZE_MAX
+					var/new_length = input(user, "Testicle size in decigrundles:\n([min_B]-[max_B])", "Character Preference") as num|null
+					if(new_length)
+						features["balls_size"] = clamp(round(new_length), min_B, max_B)
+
 				if("balls_visibility")
 					var/n_vis = input(user, "Testicles Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
@@ -3014,17 +3228,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						jumpsuit_style = PREF_SUIT
 
-/*
-				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
-					if(new_loc)
-						uplink_spawn_loc = new_loc
-
-				if("ai_core_icon")
-					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
-					if(ai_core_icon)
-						preferred_ai_core_display = ai_core_icon
-*/
 				if("sec_dept")
 					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
 					if(department)
@@ -3435,6 +3638,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("persistent_scars")
 					persistent_scars = !persistent_scars
 
+				if("underwear_hands")
+					TOGGLE_VAR(underwear_overhands)
+
 				if("clear_scars")
 					to_chat(user, span_notice("All scar slots cleared. Please save character to confirm."))
 					scars_list["1"] = ""
@@ -3596,11 +3802,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(!toggle && has_loadout_gear(loadout_slot, "[G.type]"))//toggling off and the item effectively is in chosen gear)
 				remove_gear_from_loadout(loadout_slot, "[G.type]")
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
-				/*
-				if(!is_loadout_slot_available(G.category))
-					to_chat(user, span_danger("You cannot take this loadout, as you've already chosen too many of the same category!"))
+				
+				if(!is_loadout_slot_available(G.category, G.cost))
+					to_chat(user, span_danger("You can only take [MAX_FREE_PER_CAT] free items from this category!"))
 					return
-				*/
+				
 				if(G.donoritem && !G.donator_ckey_check(user.ckey))
 					to_chat(user, span_danger("This is an item intended for donator use only. You are not authorized to use this item."))
 					return
@@ -3846,14 +4052,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			key_bindings[key] = oldkeys[key]
 	parent?.ensure_keys_set(src)
 
-/datum/preferences/proc/is_loadout_slot_available(slot)
+/datum/preferences/proc/is_loadout_slot_available(category, cost)
+	if(cost)
+		return TRUE
 	var/list/L
 	LAZYINITLIST(L)
 	for(var/i in loadout_data["SAVE_[loadout_slot]"])
-		var/datum/gear/G = i[LOADOUT_ITEM]
+		var/loadie = i[LOADOUT_ITEM]
+		var/datum/gear/G = text2path(loadie)
+		if(initial(G.cost) > 0) // oh right, these are uninitialized, mb
+			continue // non-free items are self limiting
+		if(initial(G.category) != category)
+			continue
 		var/occupied_slots = L[initial(G.category)] ? L[initial(G.category)] + 1 : 1
 		LAZYSET(L, initial(G.category), occupied_slots)
-	switch(slot)
+	for(var/things_got in L)
+		if(L[things_got] > MAX_FREE_PER_CAT)
+			return FALSE
+	return TRUE
+	/* switch(slot)
 		if(SLOT_IN_BACKPACK)
 			if(L[LOADOUT_CATEGORY_BACKPACK] < BACKPACK_SLOT_AMT)
 				return TRUE
@@ -3861,8 +4078,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(L[LOADOUT_CATEGORY_HANDS] < HANDS_SLOT_AMT)
 				return TRUE
 		else
-			if(L[slot] < DEFAULT_SLOT_AMT)
-				return TRUE
+			if(L[slot] < MAX_FREE_PER_CAT)
+				return TRUE */
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]
@@ -3888,6 +4105,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				to_chat(parent, span_userdanger("Something went wrong! Your quirks have been reset, and you'll need to set up your quirks again."))
 
 
-#undef DEFAULT_SLOT_AMT
+#undef MAX_FREE_PER_CAT
 #undef HANDS_SLOT_AMT
 #undef BACKPACK_SLOT_AMT

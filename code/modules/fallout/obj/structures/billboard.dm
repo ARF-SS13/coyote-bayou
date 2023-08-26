@@ -35,8 +35,8 @@
 	icon_state = "ritas1"
 
 /obj/structure/billboard/cola
-	name = "Nuka-Cola billboard"
-	desc = "A defaced pre-War ad for Nuka-Cola.<br>The wasteland has taken its toll on the board."
+	name = "Cosmic-Cola billboard"
+	desc = "A defaced pre-War ad for Cosmic-Cola.<br>The wasteland has taken its toll on the board."
 	icon_state = "cola1"
 
 /obj/structure/billboard/cola/New()
@@ -44,8 +44,8 @@
 	icon_state = pick("cola2","cola3","cola4")
 
 /obj/structure/billboard/cola/pristine
-	name = "pristine Nuka-Cola billboard"
-	desc = "A pre-War ad for Nuka-Cola.<br>Oddly enough, it's good as new."
+	name = "pristine Cosmic-Cola billboard"
+	desc = "A pre-War ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
 	icon_state = "cola1"
 
 /obj/structure/billboard/cola/pristine/New()
@@ -53,8 +53,8 @@
 	icon_state = "cola1"
 
 /obj/structure/billboard/cola/cola_shop
-	name = "pristine Nuka-Cola billboard"
-	desc = "A pre-War ad for Nuka-Cola.<br>Oddly enough, it's good as new."
+	name = "pristine Cosmic-Cola billboard"
+	desc = "A pre-War ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
 	icon_state = "cola_shop"
 
 /obj/structure/billboard/cola/cola_shop/New()

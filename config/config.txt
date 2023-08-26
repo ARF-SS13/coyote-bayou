@@ -155,7 +155,7 @@ LOG_MANIFEST
 # LOG_TWITTER
 
 ## Enable logging pictures
-# LOG_PICTURES
+LOG_PICTURES
 
 ## log virus and actions
 LOG_VIRUS
@@ -539,7 +539,7 @@ FAIL2TOPIC_MAX_FAILS 5
 FAIL2TOPIC_RULE_NAME _dd_fail2topic
 
 ## Enable automatic profiling - Byond 513.1506 and newer only.
-#AUTO_PROFILE
+#AUTO_PROFILE
 
 ## Uncomment to enable global ban DB using the provided URL. The API should expect to receive a ckey at the end of the URL.
 ## More API details can be found here: https://centcom.melonmesa.com

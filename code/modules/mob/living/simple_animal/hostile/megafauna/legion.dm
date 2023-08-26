@@ -29,7 +29,6 @@ Difficulty: Medium
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	speak_emote = list("echoes")
-	armour_penetration = 0.8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	speed = 1
@@ -159,7 +158,7 @@ Difficulty: Medium
 	icon_state = "staffofstorms"
 	item_state = "staffofstorms"
 	icon = 'icons/obj/guns/magic.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 25
 	damtype = BURN

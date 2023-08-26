@@ -3,7 +3,7 @@
 /// Nuka Variants
 
 /datum/chemical_reaction/nukafloat
-	name = "Nuka Float"
+	name = "Cosmic Float"
 	id = /datum/reagent/consumable/nukafloat
 	results = list(/datum/reagent/consumable/nukafloat = 15)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cream = 5)
@@ -15,7 +15,7 @@
 	required_reagents = list(/datum/reagent/consumable/sunset = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
 
 /datum/chemical_reaction/nukashine
-	name = "Nukashine"
+	name = "Cosmicshine"
 	id = /datum/reagent/consumable/ethanol/nukashine
 	results = list(/datum/reagent/consumable/ethanol/nukashine = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/beer = 1)
@@ -27,73 +27,73 @@
 	required_reagents = list(/datum/reagent/abraxo_cleaner = 1, /datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/oil = 1, /datum/reagent/consumable/ethanol = 1)
 
 /datum/chemical_reaction/nukavictory
-	name = "Nuka Victory"
+	name = "Cosmic Victory"
 	id = /datum/reagent/consumable/ethanol/nukavictory
 	results = list(/datum/reagent/consumable/ethanol/nukavictory = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/thirteenloko = 1)
 
 /datum/chemical_reaction/nukaquartz
-	name = "Nuka Quartz"
+	name = "Cosmic Quartz"
 	id = /datum/reagent/consumable/nukaquartz
 	results = list(/datum/reagent/consumable/nukaquartz = 3)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/silicon = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/nukacherry
-	name = "Nuka Cherry"
+	name = "Cosmic Cherry"
 	id = /datum/reagent/consumable/nukacherry
 	results = list(/datum/reagent/consumable/nukacherry = 4)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 3, /datum/reagent/consumable/cherryjelly = 1)
 
 /datum/chemical_reaction/nukalove
-	name = "Nuka Love"
+	name = "Cosmic Love"
 	id = /datum/reagent/consumable/ethanol/nukalove
 	results = list(/datum/reagent/consumable/ethanol/nukalove = 2)
 	required_reagents = list(/datum/reagent/consumable/nukacherry = 1, /datum/reagent/consumable/nukaquartz = 1)
 
 /datum/chemical_reaction/nukaquantum
-	name = "Nuka Quantum"
+	name = "Cosmic Quantum"
 	id = /datum/reagent/consumable/ethanol/nukaquantum
 	results = list(/datum/reagent/consumable/ethanol/nukaquantum = 3) ////results in only 3 instead of 5
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 2, /datum/reagent/radium = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/nukagrape
-	name = "Nuka Grape"
+	name = "Cosmic Grape"
 	id = "nukagrape"
 	results = list(/datum/reagent/consumable/nukagrape = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/grapejuice = 1)
 
 /datum/chemical_reaction/nukadark
-	name = "Nuka Dark"
+	name = "Cosmic Dark"
 	id = "nukadark"
 	results = list(/datum/reagent/consumable/ethanol/nukadark = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/rum = 1)
 
 /datum/chemical_reaction/nukaorange
-	name = "Nuka Orange"
+	name = "Cosmic Orange"
 	id = "nukaorange"
 	results = list(/datum/reagent/consumable/nukaorange = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/orangejuice = 1)
 
 /datum/chemical_reaction/nukawild
-	name = "Nuka Wild"
+	name = "Cosmic Wild"
 	id = "nukawild"
 	results = list(/datum/reagent/consumable/nukawild = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/sunset = 1)
 
 /datum/chemical_reaction/nukaray
-	name = "Nuka Ray"
+	name = "Cosmic Ray"
 	id = "nukaray"
 	results = list(/datum/reagent/consumable/nukaray = 2)
 	required_reagents = list(/datum/reagent/consumable/nukaorange = 1, /datum/reagent/consumable/ethanol/nukavictory = 1)
 
 /datum/chemical_reaction/nukarush
-	name = "Nuka Rush"
+	name = "Cosmic Rush"
 	id = "nukarush"
 	results = list(/datum/reagent/consumable/nukarush = 2)
 	required_reagents = list(/datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/ethanol/nukavictory = 1)
 
 /datum/chemical_reaction/nukaice
-	name = "Iced Nuka"
+	name = "Iced Cosmic"
 	id = "nukaice"
 	results = list(/datum/reagent/consumable/nukaice = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ice = 1)
@@ -101,67 +101,67 @@
 //nuka mixes
 
 /datum/chemical_reaction/nukanew
-	name = "Newka Cola"
+	name = "NewCosmic Cola"
 	id = "nukanew"
 	results = list(/datum/reagent/consumable/nukanew = 3)
 	required_reagents = list(/datum/reagent/consumable/nukaberry = 1, /datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/nukaberry
-	name = "Nuka Berry"
+	name = "Cosmic Berry"
 	id = "nukaberry"
 	results = list(/datum/reagent/consumable/nukaberry = 3)
 	required_reagents = list(/datum/reagent/consumable/nukacherry = 1, /datum/reagent/consumable/nukagrape = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/nukabomb
-	name = "Nuka Bombdrop"
+	name = "Cosmic Bombdrop"
 	id = "nukabomb"
 	results = list(/datum/reagent/consumable/ethanol/nukabomb = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/nukadark = 1, /datum/reagent/consumable/ethanol/alcoholz = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/nukacide
-	name = "Nukacide"
+	name = "Cosmiccide"
 	id = "nukacide"
 	results = list(/datum/reagent/consumable/ethanol/nukacide = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/nukabomb = 1, /datum/reagent/consumable/ethanol/nukaquantum = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/nukacooler
-	name = "Nuka Cooler"
+	name = "Cosmic Cooler"
 	id = "nukacooler"
 	results = list(/datum/reagent/consumable/nukacooler = 3)
 	required_reagents = list(/datum/reagent/consumable/nukaice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/nukafancy
-	name = "Nuka Fancy"
+	name = "Cosmic Fancy"
 	id = "nukafancy"
 	results = list(/datum/reagent/consumable/ethanol/nukafancy = 3)
 	required_reagents = list(/datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/nukacherry = 1)
 
 /datum/chemical_reaction/nukafree
-	name = "Diet Nuka"
+	name = "Diet Cosmic"
 	id = "nukafree"
 	results = list(/datum/reagent/consumable/nukafree = 3)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/sodiumchloride = 1, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/nukafrutti
-	name = "Nuka Frutti"
+	name = "Cosmic Frutti"
 	id = "nukafrutti"
 	results = list(/datum/reagent/consumable/nukafrutti = 3)
 	required_reagents = list(/datum/reagent/consumable/nukaberry = 1, /datum/reagent/consumable/nukaorange = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/nukapunch
-	name = "Nuka Punch"
+	name = "Cosmic Punch"
 	id = "nukapunch"
 	results = list(/datum/reagent/consumable/ethanol/nukapunch = 3)
 	required_reagents = list(/datum/reagent/consumable/nukaberry = 5, /datum/reagent/consumable/nukaquartz = 5, /datum/reagent/consumable/orangejuice = 5)
 
 /datum/chemical_reaction/nukasunrise
-	name = "Nuka Sunrise"
+	name = "Cosmic Sunrise"
 	id = "nukasunrise"
 	results = list(/datum/reagent/consumable/ethanol/nukasunrise = 5)
 	required_reagents = list(/datum/reagent/consumable/nukawild = 2, /datum/reagent/consumable/orangejuice = 2, /datum/reagent/consumable/grenadine = 1)
 
 /datum/chemical_reaction/nukaxtreme
-	name = "Nuka X-Treme"
+	name = "Cosmic X-Treme"
 	id = "nukaxtreme"
 	results = list(/datum/reagent/consumable/ethanol/nukaxtreme = 1)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/ethanol/nukaquantum = 5, /datum/reagent/consumable/nukagrape = 5)

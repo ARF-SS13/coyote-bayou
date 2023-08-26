@@ -46,7 +46,7 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
 	name = "FEV Exposure"
 	desc = " "
@@ -57,12 +57,12 @@
 	mob_trait = TRAIT_FEV
 
 /datum/quirk/fev/add()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 8 //Their fists hurt more
-	mob_tar.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = 8 //Their fists hurt more
+	H.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT) //:trollge:
-	mob_tar.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
-	mob_tar.health += 30
+	H.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
+	H.health += 30
 */
 
 /datum/quirk/pineapple_liker
@@ -350,12 +350,17 @@
 	value = 0
 	mob_trait = TRAIT_IN_HEAT
 
-
 /datum/quirk/heat
 	name = "ERP Seeking"
 	desc = "Your character, for whatever reason, is ACTIVELY seeking out attention from those who match your OOC Preferences. Remember to check peoples OOC notes!"
 	value = 0
 	mob_trait = TRAIT_HEAT_DETECT
+
+/datum/quirk/shy
+	name = "OOCly Shy"
+	desc = "You, and likely your character, are a bit shy. This is a fine thing to be, but letting people know this way will let them know you do want to be included in social situations when its feasible. Basically just top bait though, lets be real."
+	value = 0
+	mob_trait = TRAIT_SHY
 
 /datum/quirk/smol
 	name = "Smol!"
@@ -377,7 +382,7 @@
 	name = "A cat!"
 	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
 	value = 0
-	mob_trait = TRAIT_RAT
+	mob_trait = TRAIT_CAT
 /datum/quirk/rat
 	name = "A rat!"
 	desc = "You identify as a rat! (Mostly to help identify your species mechanically)"
@@ -410,3 +415,241 @@
 	desc = "You identify as a dog! (Mostly to help identify your species mechanically)"
 	value = 0
 	mob_trait = TRAIT_DOG
+
+/datum/quirk/photographer
+	name = "Photographer"
+	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
+	value = 0
+	mob_trait = TRAIT_PHOTOGRAPHER
+	gain_text = span_notice("You know everything about photography.")
+	lose_text = span_danger("You forget how photo cameras work.")
+	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
+
+/datum/quirk/photographer/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(human_holder))
+	photo_album.persistence_id = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_load()
+	photo_album.name = "[human_holder.real_name]'s photo album"
+
+	if(!human_holder.equip_to_slot_if_possible(photo_album, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(photo_album))
+			photo_album.forceMove(get_turf(photo_album))
+
+	var/obj/item/camera/cam = new(get_turf(human_holder))
+	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(cam))
+			cam.forceMove(get_turf(cam))
+
+/datum/quirk/journalist
+	name = "Journalist"
+	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
+	value = 0
+	mob_trait = TRAIT_JOURNALIST
+	gain_text = span_notice("You feel like you need to harrass politicians.")
+	lose_text = span_danger("You forget how to be a journalist. :(")
+	medical_record_text = ""
+
+/datum/quirk/journalist/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/folder/folder = new(get_turf(human_holder))
+	folder.persistenceID = "personal_[lowertext(human_holder.last_mind?.key)]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	folder.PersistenceLoad()
+	folder.name = "[human_holder.real_name]'s journal"
+
+	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
+		if(!human_holder.put_in_hands(folder))
+			folder.forceMove(get_turf(human_holder))
+
+/datum/quirk/lick_heal
+	name = "Innate healing - Saliva"
+	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick the injuries of yourself or others. Drinking water helps recover from a dry tongue faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TONGUE
+	gain_text = span_notice("You feel a slight tingle in your mouth.")
+	lose_text = span_danger("The tingle in your mouth fades.")
+	locked = FALSE
+
+/datum/quirk/touch_heal
+	name = "Innate healing - Magic"
+	desc = "Your touch has a mild healing effect on burns and bruises. Use *touch to sooth the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+	value = 0
+	mob_trait = TRAIT_HEAL_TOUCH
+	gain_text = span_notice("You feel a slight tingle in your hands.")
+	lose_text = span_danger("The tingle in your palm fades.")
+	locked = FALSE
+
+/datum/quirk/tend_heal
+	name = "Innate healing - Triage"
+	desc = "You keep a tiny kit of medical supplies stashed away for emergencies. Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
+	value = 0
+	mob_trait = TRAIT_HEAL_TEND
+	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
+	lose_text = span_danger("You lost your triage kit...")
+	locked = FALSE
+
+
+//Fennys insane RP quirks
+
+/datum/quirk/rpfocused
+	name = "Roleplay Seeking"
+	desc = "You are actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
+	value = 0
+	mob_trait = TRAIT_RPFOCUSED
+
+/datum/quirk/rplongterm
+	name = "Roleplay Seeking - Long Term Focus"
+	desc = "You are seeking out people to have more than one rounds worth of interaction with.  Maybe on the regular if your real world schedules allow it."
+	value = 0
+	mob_trait = TRAIT_RPLONGTERM
+
+/datum/quirk/rpshortterm
+	name = "Roleplay Seeking - Short Term Focus"
+	desc = "You are seeking out people to have occasional interaction with. Pick this if you want more casual quicker roleplay, instead of something that likely needs OOC planning between those involved."
+	value = 0
+	mob_trait = TRAIT_RPSHORTTERM
+
+/datum/quirk/rpserious
+	name = "Roleplay Seeking - Serious Roleplay"
+	desc = "You are seeking out 'Serious' Roleplay with others. This includes things like taking threats realistically and generally really digging into the setting to create believable, and not terribly wacky, situations."
+	value = 0
+	mob_trait = TRAIT_RPSERIOUS
+
+/datum/quirk/rplight
+	name = "Roleplay Seeking - Light Roleplay"
+	desc = "You are seeing out 'Light' Roleplay with others.  This includes things like generally playing into the wackyness of the game overall.  While we do ask you not to break the 4th wall (too often, anyway) this means you're seeking more silly interactions generally."
+	value = 0
+	mob_trait = TRAIT_RPLIGHT
+
+/datum/quirk/rpdaysofourlives
+	name = "Roleplay Seeking - Dramatic Roleplay"
+	desc = "You are seeking out interactions with others that are perhaps a bit overdramatic. Scandalous, gossiping, overly sad or emotional scenes. Think Days of Our Lives, or any Soap Opera. This is not a way around the OOC Drama rule, but it does mean you're seeking IC Drama roleplay!"
+	value = 0
+	mob_trait = TRAIT_RPDAYSOFOURLIVES
+
+/datum/quirk/rpscrubs
+	name = "Roleplay Seeking - Medical Roleplay"
+	desc = "You are seeking out interactions with players that are medical related.  This includes roleplaying treating wounds, or maybe even roleplaying treating them poorly."
+	value = 0
+	mob_trait = TRAIT_RPSCRUBS
+
+//ERP Focused quirks
+
+/datum/quirk/erpboykisser
+	name = "ERP Seeking - Prefers Guys"
+	desc = "When it comes to picking who to kiss, you choose boys.  Boykisser."
+	value = 0
+	mob_trait = TRAIT_ERPBOYKISSER
+
+/datum/quirk/erpgirlkisser
+	name = "ERP Seeking - Prefers Girls"
+	desc = "When it comes to picking who to kiss, you choose girls.  Girlkisser."
+	value = 0
+	mob_trait = TRAIT_ERPGIRLKISSER
+
+/datum/quirk/erpanykisser
+	name = "ERP Seeking - Prefers Anyone"
+	desc = "When it comes to picking who to kiss you'll kiss em' all."
+	value = 0
+	mob_trait = TRAIT_ERPANYKISSER
+
+/datum/quirk/erpquicky
+	name = "ERP Seeking - Relationships - Short Term"
+	desc = "You're a flinger, swing, floozy, harlot or a harem anime protagonist. You prefer your partners to come and go, and the spice of life is variety."
+	value = 0
+	mob_trait = TRAIT_ERPQUICKY
+
+/datum/quirk/erplongerm
+	name = "ERP Seeking - Relationships - Long Term"
+	desc = "A waifu or husbando, you probably don't care much which term is used but you want one partner, and to generally stick to them."
+	value = 0
+	mob_trait = TRAIT_ERPLONGTERM
+
+/datum/quirk/erpbottom //or dan, or fuzzy, or kuddles or like 9/10ths of the dev team, lmao
+	name = "ERP Seeking - I am a Bottom"
+	desc = "You're a bottom. Be you shy, bratty, or somewhere in between. You prefer to be approached and woo'd over doing the approaching (lets be real, that's scary!)"
+	value = 0
+	mob_trait = TRAIT_ERPBOTTOM
+
+/datum/quirk/erptop
+	name = "ERP Seeking - I am a Top"
+	desc = "Cruel or gentle, you're the one that likes to do the approaching and picking from the options at hand."
+	value = 0
+	mob_trait = TRAIT_ERPTOP
+
+/datum/quirk/erpswitch
+	name = "ERP Seeking - I am a Switch"
+	desc = "There's two sides to your coin, you don't mind being approached or doing the approaching. Just as long as someone gets touched."
+	value = 0
+	mob_trait = TRAIT_ERPSWITCH
+
+/datum/quirk/erpflirty
+	name = "ERP Seeking - Flirty"
+	desc = "More of a guideline, you enjoy using the *flirt system built into our say verbs, or enjoy having them used on you. It really can clarify how people feel, after all."
+	value = 0
+	mob_trait = TRAIT_ERPFLIRTY
+
+
+//Adventure Traits
+
+/datum/quirk/advseeker
+	name = "Adventure Seeking"
+	desc = "You keep an eye out for the type of person who sees this swampy wasteland as a way to grow famous and rich.  Preferably both."
+	value = 0
+	mob_trait = TRAIT_ADV_SEEKER
+
+/datum/quirk/adver
+	name = "Adventurer"
+	desc = "You are one of those people who go about in search of what was in hopes of making what is bigger and better. Or maybe you just focus on making money. It's your call."
+	value = 0
+	mob_trait = TRAIT_ADV_ER
+
+/datum/quirk/advlfg
+	name = "Adventurer - Looking for Group"
+	desc = "The wasteland calls to you, and you hope that others hear its call as well. As such, you prefer to explore with a friend, or maybe even friends."
+	value = 0
+	mob_trait = TRAIT_ADV_LFG
+
+/datum/quirk/advsolo
+	name = "Adventurer - Not Looking for Group"
+	desc = "The wasteland calls to you, and you're your own ride and die. No need to bring others along in your book."
+	value = 0
+	mob_trait = TRAIT_ADV_SOLO
+
+/datum/quirk/advgunner
+	name = "Adventurer - Class: Gunner"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Gunner at heart. Be it long gun, smg, or even black powder you're happiest with slinging lead, arrows, rocks, or the like. Generally staying somewhat back from combat."
+	value = 0
+	mob_trait = TRAIT_ADV_GUNNER
+
+/datum/quirk/advfighter
+	name = "Adventurer - Class: Fighter"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Fighter at heart. Using Melee weapons, though not usually a shield, you can do a good job of keeping critters away from friends and probably do decent damage."
+	value = 0
+	mob_trait = TRAIT_ADV_FIGHTER
+
+/datum/quirk/advtank
+	name = "Adventurer - Class: Tank"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Tank at heart. What matters most to you is your shield, and ability to block monsters from getting past you as best you can, while others do the real damage."
+	value = 0
+	mob_trait = TRAIT_ADV_TANK
+
+/datum/quirk/advbruiser
+	name = "Adventurer - Class: Bruiser"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Bruiser at heart. Two handed weapons are your jam (and jam smasher, for that matter.) With little focus on keeping yourself, or others, safe. Which means you can focus on smashing things as fast as possible."
+	value = 0
+	mob_trait = TRAIT_ADV_BRUISER
+
+/datum/quirk/advrogue
+	name = "Adventurer - Class: Rogue"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Rogue at heart. Carrying tools and offering options that the other classes may not consider. Like lockpicks, or EMP grenades. This lets others know you're focused on playing smarter, not harder."
+	value = 0
+	mob_trait = TRAIT_ADV_ROGUE
+
+
+/datum/quirk/advhealer
+	name = "Adventurer - Class: Healer"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Healer at heart. Be it with consumables or the innate healing quirks this tag lets others know you're focused on keeping them up and in the fight. That doesn't mean you can't defend yourself though."
+	value = 0
+	mob_trait = TRAIT_ADV_HEALER
+

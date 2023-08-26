@@ -17,6 +17,20 @@
 /obj/item/ammo_box/magazine/cg45/empty
 	start_empty = TRUE
 
+/obj/item/ammo_box/magazine/vss
+	name = "Vss magazine (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "vss"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 30
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/vss
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/greasegun
 	name = "Grease gun magazine (.45ACP)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

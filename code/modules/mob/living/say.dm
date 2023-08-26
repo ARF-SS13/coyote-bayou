@@ -69,10 +69,10 @@
 			client.cmd_admin_say(message)
 		return
 
-	if(message_mode == MODE_DEADMIN)
-		if(client)
-			client.dsay(message)
-		return
+	// if(message_mode == MODE_DEADMIN)
+	// 	if(client)
+	// 		client.dsay(message)
+	// 	return
 
 	if(stat == DEAD)
 		say_dead(original_message)
@@ -118,7 +118,7 @@
 
 	//var/fullcrit = InFullCritical()
 	if(in_critical || message_mode == MODE_WHISPER)
-		message_range = 3
+		message_range = 1 + (!!in_critical * 2)
 		spans |= SPAN_ITALICS
 		src.log_talk(message, LOG_WHISPER)
 		/* if(fullcrit) // no more dying for you!

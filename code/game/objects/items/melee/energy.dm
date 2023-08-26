@@ -66,24 +66,47 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
-/obj/item/melee/transforming/plasmacutter/regular
-	name = "plasma cutter"
-	desc = "A bright green plasma cutter."
-	icon_state = "plasmacutter0"
-	icon_state_on = "plasmacutter1"
+/obj/item/melee/transforming/plasmacutter/regular/celestia
+	name = "plasma cutter celestia"
+	desc = "A sapphire colored plasma cutter. This one is designed to be adept at deflecting enemy attacks."
+	icon_state = "celestia0"
+	icon_state_on = "celestia1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 10
-	force_on = 25
+	force_on = 35
 	throwforce = 5
-	throwforce_on = 20
+	throwforce_on = 15
+	block_chance = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.25
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#0F52BA"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular
+	name = "plasma cutter"
+	desc = "A bright green plasma cutter. This one boasts a high energy blade for fiercer damage."
+	icon_state = "plasmacutter0"
+	icon_state_on = "plasmacutter1"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 10
+	force_on = 40
+	throwforce = 5
+	throwforce_on = 20
+	block_chance = 15
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#00FF00"
@@ -93,9 +116,34 @@
 	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS|FIRELOSS)
 
+
+/obj/item/melee/transforming/plasmacutter/regular/eve
+	name = "plasma cutter eve"
+	desc = "A violet colored plasma cutter. This one is designed with a lightweight, more elegant frame, for quicker strikes."
+	icon_state = "eve0"
+	icon_state_on = "eve1"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 10
+	force_on = 35
+	throwforce = 5
+	throwforce_on = 15
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.85
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
+	attack_verb_on = list()
+	light_color = "#A020F0"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/regular/adam
 	name = "plasma cutter adam"
-	desc = "A bright crimson plasma cutter.."
+	desc = "A bright crimson plasma cutter. This Cutter boasts the design strenghths of all its lesser companions"
 	icon_state = "adam0"
 	icon_state_on = "adam1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -104,62 +152,41 @@
 	force_on = 40
 	throwforce = 5
 	throwforce_on = 20
+	block_chance = 20
+	attack_speed = CLICK_CD_MELEE * 0.85
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.75
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#FF0000"
 	total_mass = null
 
-/obj/item/melee/transforming/plasmacutter/regular/eve
-	name = "plasma cutter eve"
-	desc = "A violet colored plasma cutter. An inscription on it reads: In the land of the shadow of death a light has dawned."
-	icon_state = "eve0"
-	icon_state_on = "eve1"
+/obj/item/melee/transforming/plasmacutter/regular/flamberge
+	name = "Ardent Flamberge"
+	desc = "As the fire burns away thoughts of defeat, thoughts of victory etch themselves into the steel." //Really threw a fit about my fucking description, nice one DM.
+	icon_state = "flamberge"
+	icon_state_on = "ardentflamberge"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 10
-	force_on = 30
-	throwforce = 5
-	throwforce_on = 20
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	force = 35
+	force_on = 40
+	throwforce = 10
+	block_chance = 20
+	hitsound = 'sound/weapons/slash_heavy4.ogg'
+	hitsound_on = 'sound/weapons/fire03.ogg'
 	throw_speed = 3
 	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
+	tool_behaviour = TOOL_WELDER
+	w_class = WEIGHT_CLASS_BULKY
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.5
-	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
-	attack_verb_on = list()
-	light_color = "#A020F0"
-	total_mass = null
-
-/obj/item/melee/transforming/plasmacutter/regular/celestia
-	name = "plasma cutter celestia"
-	desc = "A sapphire colored plasma cutter."
-	icon_state = "celestia0"
-	icon_state_on = "celestia1"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 10
-	force_on = 20
-	throwforce = 5
-	throwforce_on = 15
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	throw_speed = 3
-	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
-	w_class_on = WEIGHT_CLASS_HUGE
-	flags_1 = CONDUCT_1
-	armour_penetration = 0.3
-	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
-	attack_verb_on = list()
-	light_color = "#0F52BA"
+	attack_verb_off = list("cleaved", "torn", "cut")
+	attack_verb_on = list("burned", "scorched", "roasted")
+	light_color = "#FF7700"
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/sword
@@ -176,11 +203,10 @@
 	throw_range = 5
 	sharpness = SHARP_EDGED
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
-	armour_penetration = 0.65
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
 	var/list/possible_colors = list("red" = LIGHT_COLOR_RED, "blue" = LIGHT_COLOR_LIGHT_CYAN, "green" = LIGHT_COLOR_GREEN, "purple" = LIGHT_COLOR_LAVENDER)
-
+	
 /datum/block_parry_data/energy_sword
 	parry_time_windup = 0
 	parry_time_active = 25
@@ -318,7 +344,7 @@
 	icon_state = "blade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 30 //Normal attacks deal esword damage
+	force = 35 //Normal attacks deal esword damage
 	hitsound = 'sound/weapons/blade1.ogg'
 	active = 1
 	throwforce = 1 //Throwing or dropping the item deletes it.
@@ -354,9 +380,9 @@
 	icon_state = "cxsword_hilt"
 	item_state = "cxsword"
 	force = 3
-	force_on = 21
+	force_on = 55
 	throwforce = 5
-	throwforce_on = 20
+	throwforce_on = 50
 	hitsound = "swing_hit" //it starts deactivated
 	hitsound_on = 'sound/weapons/nebhit.ogg'
 	attack_verb_off = list("tapped", "poked")
@@ -364,7 +390,6 @@
 	throw_range = 5
 	sharpness = SHARP_EDGED
 	embedding = list("embedded_pain_multiplier" = 6, "embed_chance" = 20, "embedded_fall_chance" = 60)
-	armour_penetration = 0.2
 	block_chance = 35
 	light_color = "#37FFF7"
 	actions_types = list()
@@ -436,7 +461,7 @@
 /obj/item/melee/transforming/plasmacutter/sword/cx/broken
 	name = "misaligned non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. This one seems to have a damaged handle and misaligned components, causing the blade to be unstable at best"
-	force_on = 15 //As strong a survival knife/bone dagger
+	force_on = 23 //As strong a survival knife/bone dagger
 
 /obj/item/melee/transforming/plasmacutter/sword/cx/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/melee/transforming/plasmacutter/sword/cx))
@@ -458,8 +483,7 @@
 			which utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable. \
 			It appears to have a wooden grip and a shaved down guard."
 	icon_state = "cxsword_hilt_traitor"
-	force_on = 30
-	armour_penetration = 0.65
+	force_on = 40
 	embedding = list("embedded_pain_multiplier" = 10, "embed_chance" = 75, "embedded_fall_chance" = 0, "embedded_impact_pain_multiplier" = 10)
 	block_chance = 50
 	hitsound_on = 'sound/weapons/blade1.ogg'

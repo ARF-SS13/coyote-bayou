@@ -17,7 +17,7 @@
 /datum/supply_pack/medical/bodybags
 	name = "Bodybags"
 	desc = "For when the bodies hit the floor. Contains 4 boxes of bodybags."
-	cost = 1200
+	cost = 500
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
@@ -27,7 +27,7 @@
 /datum/supply_pack/medical/bloodpacks
 	name = "Blood Pack Variety Crate"
 	desc = "Contains nine different blood packs for reintroducing blood to patients, plus two universal synthetic blood packs."
-	cost = 3000
+	cost = 1000
 	contains = list(/obj/item/reagent_containers/blood/random,
 					/obj/item/reagent_containers/blood/APlus,
 					/obj/item/reagent_containers/blood/AMinus,
@@ -44,7 +44,7 @@
 /datum/supply_pack/medical/chemical
 	name = "Chemical Starter Kit Crate"
 	desc = "Contains twelve different chemicals, for all the fun experiments you can make."
-	cost = 1700
+	cost = 1200
 	contains = list(/obj/item/reagent_containers/glass/bottle/hydrogen,
 					/obj/item/reagent_containers/glass/bottle/carbon,
 					/obj/item/reagent_containers/glass/bottle/nitrogen,
@@ -65,7 +65,7 @@
 /datum/supply_pack/medical/defibs
 	name = "Defibrillator Crate"
 	desc = "Contains two defibrillators for bringing the recently deceased back to life."
-	cost = 2500
+	cost = 1000
 	contains = list(/obj/item/defibrillator/loaded,
 					/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
@@ -100,6 +100,22 @@
 	cost = 250
 	contains = list(/obj/item/storage/firstaid/toxin)
 
+/datum/supply_pack/medical/tacticalkit
+	name = "Tactical Treatment Kit Single-Pack"
+	desc = "A single first aid kit focused on getting people out of a bad situation."
+	cost = 7500
+	contains = list(/obj/item/storage/firstaid/tactical)
+
+/datum/supply_pack/medical/potions
+	name = "Ambrosia Elixirs"
+	desc = "Four bottles of precious Ambrosia Elixirs. Two reds, one blue, and one green included.."
+	cost = 5000
+	contains = list(
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/blueambrosia,
+		/obj/item/reagent_containers/pill/greenambrosia,
+)
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
 	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
@@ -145,7 +161,7 @@
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip stand for intravenous delivery."
-	cost = 800
+	cost = 200
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
 /*
@@ -163,7 +179,7 @@
 /datum/supply_pack/medical/supplies
 	name = "Medical Supplies Crate"
 	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/epinephrine,
@@ -191,7 +207,7 @@
 /datum/supply_pack/medical/adv_surgery_tools
 	name = "Med-Tek Advanced Surgery Tools"
 	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of sterilizine. Requires Surgery access to open."
-	cost = 5500
+	cost = 4000
 	contains = list(/obj/item/storage/belt/medical/surgery_belt_adv,
 					/obj/item/reagent_containers/medspray/synthflesh,
 					/obj/item/reagent_containers/medspray/sterilizine)
@@ -201,7 +217,7 @@
 /datum/supply_pack/medical/alien_surgery_tools
 	name = "Alien Surgery Tools"
 	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of sterilizine. Requires Surgery access to open."
-	cost = 35000
+	cost = 7000
 	contains = list(/obj/item/scalpel/alien,
 					/obj/item/retractor/alien,
 					/obj/item/cautery/alien,
@@ -214,7 +230,7 @@
 /datum/supply_pack/medical/surgery
 	name = "Surgical Supplies Crate"
 	desc = "Do you want to perform surgery, but don't have one of those fancy shmancy degrees? Just get started with this crate containing a medical duffelbag, Sterilizine spray and collapsible roller bed."
-	cost = 1300
+	cost = 1200
 	contains = list(/obj/item/storage/backpack/duffelbag/med/surgery,
 					/obj/item/reagent_containers/medspray/sterilizine,
 					/obj/item/roller)
@@ -272,12 +288,12 @@
 /datum/supply_pack/medical/chems
 	name = "Mixed Chems"
 	desc = "A raider's dream, contains five random chems."
-	cost = 1300
-	contains = list(/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug)
+	cost = 1000
+	contains = list(/obj/effect/spawner/lootdrop/f13/trash_drugs,
+					/obj/effect/spawner/lootdrop/f13/trash_drugs,
+					/obj/effect/spawner/lootdrop/f13/common_drugs,
+					/obj/effect/spawner/lootdrop/f13/common_drugs,
+					/obj/effect/spawner/lootdrop/f13/uncommon_drugs)
 	crate_name = "chem crate"
 
 /datum/supply_pack/medical/radaway

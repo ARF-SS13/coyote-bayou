@@ -158,7 +158,6 @@
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
 	damage = -9
-	armour_penetration = 0
 	irradiate = 300
 */
 
@@ -257,7 +256,6 @@
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
 	damage = -2
-	armour_penetration = 0.3
 	irradiate = 300
 */
 
@@ -1135,7 +1133,6 @@
 
 	movement_type = FLYING | UNSTOPPABLE
 	hitscan = TRUE
-	armour_penetration = 0.5
 	tracer_type = /obj/effect/projectile/tracer/laser/blue
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue

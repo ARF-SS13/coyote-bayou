@@ -67,7 +67,6 @@
 	var/cell_type = /obj/item/stock_parts/cell{charge = 600; maxcharge = 600}
 	w_class = WEIGHT_CLASS_SMALL
 
-	var/e_cost = 100
 	projectile_type = /obj/item/projectile/beam
 
 /obj/item/ammo_casing/mws_batt/Initialize()

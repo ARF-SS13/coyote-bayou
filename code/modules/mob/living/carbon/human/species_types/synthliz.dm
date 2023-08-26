@@ -1,5 +1,5 @@
 /datum/species/synthfurry
-	name = "Synthetic Lizardperson"
+	name = "Synthetic Anthropomorph"
 	id = "synthliz"
 	say_mod = "beeps"
 	default_color = "00FF00"

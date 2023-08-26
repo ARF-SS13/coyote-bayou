@@ -14,7 +14,7 @@
 	movement_type = FLYING
 	robust_searching = 1
 	ranged_ignores_vision = TRUE
-	stat_attack = DEAD
+	stat_attack = UNCONSCIOUS
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	minbodytemp = 0
@@ -28,6 +28,7 @@
 	layer = LARGE_MOB_LAYER //Looks weird with them slipping under mineral walls and cameras and shit otherwise
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | HEAR_1
 	has_field_of_vision = FALSE //You are a frikkin boss
+	despawns_when_lonely = FALSE // you dont get lonely when you're THE BOSS
 	/// Crusher loot dropped when fauna killed with a crusher
 	var/list/crusher_loot
 	var/medal_type
@@ -58,6 +59,7 @@
 	if(small_sprite_type)
 		var/datum/action/small_sprite/small_action = new small_sprite_type()
 		small_action.Grant(src)
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/hostile/megafauna/Destroy()
 	QDEL_NULL(internal)
@@ -117,6 +119,7 @@
 		if(L.stat != DEAD)
 			if(!client && ranged && ranged_cooldown <= world.time)
 				OpenFire()
+/*
 		else
 			devour(L)
 
@@ -129,6 +132,7 @@
 	if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 		adjustBruteLoss(-L.maxHealth/2)
 	L.gib()
+*/
 
 /mob/living/simple_animal/hostile/megafauna/ex_act(severity, target)
 	switch (severity)

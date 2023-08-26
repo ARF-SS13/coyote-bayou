@@ -192,11 +192,11 @@
 	foodtype = PINEAPPLE //Pineapple to allow all that like pineapple to enjoy
 
 /obj/item/reagent_containers/food/snacks/snowcones/nuka
-	name = "Nuka Cola snowcone"
+	name = "Cosmic Cola snowcone"
 	desc = "America's favorite, cold at last. Drizzled over a snowball in a paper cup."
 	icon_state = "soda_sc"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nuka_cola = 5,  /datum/reagent/radium = 5)
-	tastes = list("ice" = 1, "water" = 1, "nuka cola" = 5)
+	tastes = list("ice" = 1, "water" = 1, "Cosmic cola" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/sunset
 	name = "\improper Sunset Sasparilla snowcone"

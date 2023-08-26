@@ -132,7 +132,7 @@
 	required_reagents = list(/datum/reagent/consumable/ice = 1, /datum/reagent/consumable/coffee = 3)
 
 /datum/chemical_reaction/nuka_cola
-	name = "Nuka Cola"
+	name = "Cosmic Cola"
 	id = /datum/reagent/consumable/nuka_cola
 	results = list(/datum/reagent/consumable/nuka_cola = 6)
 	required_reagents = list(/datum/reagent/uranium = 1, /datum/reagent/consumable/space_cola = 6)

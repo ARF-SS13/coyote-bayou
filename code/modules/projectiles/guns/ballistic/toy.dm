@@ -6,7 +6,8 @@
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/smg
-	fire_sound = 'sound/weapons/gunshot_smg.ogg'
+	//fire_sound = 'sound/weapons/gunshot_smg.ogg'
+	weapon_class = WEAPON_CLASS_NORMAL
 	force = 0
 	throwforce = 0
 	burst_size = 3
@@ -27,14 +28,10 @@
 	name = "foam force pistol"
 	desc = "A small, easily concealable toy handgun. Ages 8 and up."
 	icon_state = "pistol"
-	w_class = WEIGHT_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/pistol
 	fire_sound = 'sound/weapons/gunshot.ogg'
-	burst_size = 1
-	fire_delay = 0
-	actions_types = list()
-	automatic_burst_overlay = FALSE
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -85,8 +82,7 @@
 	item_state = "crossbow"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/crossbow
 	fire_sound = 'sound/items/syringeproj.ogg'
-	slot_flags = ITEM_SLOT_BELT
-	w_class = WEIGHT_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_SMALL
 
 /obj/item/gun/ballistic/automatic/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
 	name = "donksoft SMG"
@@ -146,13 +142,8 @@
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/foamag
 	fire_sound = 'sound/weapons/magrifle.ogg'
-	burst_size = 1
-	actions_types = null
-	fire_delay = 3
 	can_suppress = FALSE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	dualwield_spread_mult = 1.4
-	w_class = WEIGHT_CLASS_BULKY
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/burst/three,
@@ -166,10 +157,6 @@
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/mag
 	fire_sound = 'sound/weapons/magpistol.ogg'
-	fire_delay = 2
-	dualwield_spread_mult = 1.4
-	slot_flags = SLOT_BELT
-	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,

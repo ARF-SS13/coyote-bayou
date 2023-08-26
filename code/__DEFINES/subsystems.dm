@@ -92,8 +92,10 @@
 #define INIT_ORDER_TIMETRACK		47
 #define INIT_ORDER_NETWORKS			40
 #define INIT_ORDER_HOLODECK			35
+#define INIT_ORDER_ARTIFACT			34
 #define INIT_ORDER_ATOMS			30
-#define INIT_ORDER_VALIDBALL		29
+#define INIT_ORDER_ITEMSPAWNERS		29
+#define INIT_ORDER_VALIDBALL		28
 #define INIT_ORDER_LANGUAGE			25
 #define INIT_ORDER_PLANTS			21
 #define INIT_ORDER_MACHINES			20
@@ -113,6 +115,7 @@
 #define INIT_ORDER_SHUTTLE			-21
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
+#define INIT_ORDER_PREFBREAK		-51
 #define INIT_ORDER_PERSISTENCE		-95
 #define INIT_ORDER_LATELOAD			-97
 #define INIT_ORDER_DEMO				-99  // o avoid a bunch of changes related to initialization being written, do this last
@@ -122,6 +125,7 @@
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
 
+#define FIRE_PRIORITY_VORE			5
 #define FIRE_PRIORITY_IDLE_NPC		10
 #define FIRE_PRIORITY_SERVER_MAINT	10
 #define FIRE_PRIORITY_RESEARCH		10
@@ -130,6 +134,7 @@
 #define FIRE_PRIORITY_WET_FLOORS	20
 #define FIRE_PRIORITY_AIR			20
 #define FIRE_PRIORITY_FIRE			20
+#define FIRE_PRIORITY_SPAWNERS		24
 #define FIRE_PRIORITY_PROCESS		25
 #define FIRE_PRIORITY_THROWING		25
 #define FIRE_PRIORITY_SPACEDRIFT	30

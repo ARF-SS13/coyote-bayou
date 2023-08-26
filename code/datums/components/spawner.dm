@@ -1,5 +1,8 @@
 /datum/component/spawner
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
+	/// List of 'special' mobs to spawn
+	/// Format: list(special_mob_datum)
+	var/list/special_mobs = list()
 	/// Time between spawns
 	var/spawn_time = 30 SECONDS
 	/// List of mobs that we spawned that currently exist
@@ -28,6 +31,10 @@
 	var/randomizer_difficulty
 	/// spawner can be covered by dense things
 	var/coverable_by_dense_things = TRUE
+	/// Dont start spawning just yet
+	var/delay_start = FALSE
+	/// im special
+	var/am_special = FALSE
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	COOLDOWN_DECLARE(spawner_cooldown)
@@ -47,7 +54,8 @@
 		_coverable,
 		_randomizer_tag,
 		_randomizer_kind,
-		_randomizer_difficulty
+		_randomizer_difficulty,
+		_delay_start
 	)
 
 	if(!isatom(parent))
@@ -80,15 +88,29 @@
 		spawn_sound = _spawn_sound
 	if(_infinite)
 		infinite = _infinite
+	if(_delay_start)
+		delay_start = _delay_start
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
+	var/coords = atom2coords(parent)
+	GLOB.nest_spawn_points -= coords // im here! honest
 
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/stop_spawning)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/stop_spawning)
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/start_spawning)
-	start_spawning()
+	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
+	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	if(istype(parent, /obj/structure/nest))
+		var/obj/structure/nest/nest = parent
+		if(nest.spawned_by_ckey)
+			am_special = TRUE
+	if(istype(parent, /obj/structure/nest/special))
+		am_special = TRUE
+		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
+	if(!delay_start)
+		start_spawning()
 
 /datum/component/spawner/process()
 	if(should_destroy_spawner())
@@ -98,8 +120,17 @@
 		return
 	spawn_mob()
 
+/// Something told us to restart spawning
+/datum/component/spawner/proc/start_spawning()
+	START_PROCESSING(SSspawners, src)
+
+/datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
+	stop_spawning()
+	if(!am_special)
+		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
+
 /datum/component/spawner/proc/stop_spawning(datum/source, force, hint)
-	STOP_PROCESSING(SSprocessing, src)
+	STOP_PROCESSING(SSspawners, src)
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
@@ -107,10 +138,6 @@
 		if(removed_animal.nest == src)
 			removed_animal.nest = null
 	spawned_mobs = null
-
-/// Something told us to restart spawning
-/datum/component/spawner/proc/start_spawning()
-	START_PROCESSING(SSprocessing, src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
 /datum/component/spawner/proc/on_attack_generic(datum/source, mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
@@ -130,21 +157,23 @@
 
 /// Do we have any mobs left?
 /datum/component/spawner/proc/has_mobs_left()
-	return counterlist_sum(mob_types)
+	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
 
 /// Should the spawner be destroyed?
 /datum/component/spawner/proc/should_destroy_spawner()
 	if(infinite)
 		return FALSE
-	else if(has_mobs_left())
+	if(has_mobs_left())
 		return FALSE
+	if(ismob(parent))
+		return FALSE // no more self-destructing ant queens
 	return TRUE
 
 /// Check the spawned mob list, prune dead mobs, return TRUE if it isnt full
 /datum/component/spawner/proc/check_spawned_mobs()
 	if(LAZYLEN(spawned_mobs) < max_mobs)
 		return TRUE
-	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
+	for(var/datum/weakref/mob_ref in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
 			spawned_mobs -= mob_ref
@@ -163,6 +192,9 @@
 	var/atom/P = parent
 	if(coverable_by_dense_things)
 		var/turf/our_turf = get_turf(P)
+		if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
+			qdel(P) // and I aint dealing with that shit
+			return
 		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
 		if(previous_heavy_thing)
 			if(get_turf(previous_heavy_thing) == our_turf)
@@ -189,11 +221,25 @@
 				return FALSE */
 	return TRUE
 
+/// spawns a mob, then immediately tries to self-destruct
+/datum/component/spawner/proc/spawn_mob_special()
+	spawn_mob()
+	if(should_destroy_spawner())
+		qdel(parent)
+
 /// spawn the mob(s)
 /datum/component/spawner/proc/spawn_mob()
+	var/atom/P = parent
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
-	var/atom/P = parent
+	if(LAZYLEN(special_mobs))
+		var/datum/special_mob_datum/spawner_special = pick(special_mobs)
+		if(spawner_special)
+			var/mob/living/simple_animal/hostile/mobbie = spawner_special.make_special_mob(src)
+			spawned_mobs |= WEAKREF(mobbie)
+			mobbie.nest = WEAKREF(P)
+			qdel(spawner_special)
+			return
 	var/chosen_mob
 	var/mob/living/simple_animal/L
 	for(var/i = 1 to swarm_size)
@@ -284,7 +330,114 @@
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
+/// Is passed a mob via the signal, and will attempt to despawn the mob and store it in the spawner.
+/datum/component/spawner/proc/unbirth_mob(datum/source, mob/living/simple_animal/despawn_me)
+	if(QDELETED(parent))
+		return
+	if(!istype(despawn_me))
+		return
+	var/datum/special_mob_datum/sparkle = new()
+	var/sparkle_tag = sparkle.record_special_vars(despawn_me)
+	if(!sparkle_tag)
+		qdel(sparkle) // no real point in keeping it if it's empty
+		return
+	var/be_special = istype(parent, /obj/structure/nest/special)
+	special_mobs |= sparkle
+	if(be_special)
+		var/atom/sponer = parent
+		sponer.name = despawn_me.name
+		sponer.desc = despawn_me.desc
+		sponer.icon = despawn_me.icon
+		sponer.icon_state = despawn_me.icon_state
+		sponer.color = despawn_me.color
+		start_spawning()
+		// nobody'll know the difference~
+	qdel(despawn_me)
 
+/// If anything asks if we have a spawner, we say yes.
+/datum/component/spawner/proc/has_spawner()
+	return TRUE
+
+/// a datum that holds on to a bunch of vars for special mobs
+/datum/special_mob_datum // SPECIAL MOB DATUM!
+	var/name
+	var/desc
+	var/icon
+	var/icon_state
+	var/mob_type
+	var/maxHealth
+	var/color
+	var/faction
+	var/AIStatus
+	var/casingtype
+	var/projectiletype
+	var/projectilesound
+	var/sound_after_shooting
+	var/sound_after_shooting_delay
+	var/projectile_sound_properties
+	var/melee_damage_lower
+	var/melee_damage_upper
+	var/list/mob_armor
+	var/mobtag
+
+/// A proc that takes a mob datum and records all the vars that are different from the initial vars, for later use.
+/datum/special_mob_datum/proc/record_special_vars(mob/living/simple_animal/hostile/cool_mob)
+	if(!istype(cool_mob))
+		return FALSE
+	mob_type = cool_mob.type
+	name = cool_mob.name
+	desc = cool_mob.desc
+	icon = cool_mob.icon
+	icon_state = cool_mob.icon_state
+	maxHealth = cool_mob.maxHealth
+	color = cool_mob.color
+	faction = cool_mob.faction
+	AIStatus = cool_mob.AIStatus
+	projectiletype = cool_mob.projectiletype
+	projectilesound = cool_mob.projectilesound
+	sound_after_shooting = cool_mob.sound_after_shooting
+	sound_after_shooting_delay = cool_mob.sound_after_shooting_delay
+	projectile_sound_properties = cool_mob.projectile_sound_properties
+	melee_damage_lower = cool_mob.melee_damage_lower
+	melee_damage_upper = cool_mob.melee_damage_upper
+	if(ispath(cool_mob.casingtype))
+		casingtype = cool_mob.casingtype
+	/// mob_armor is even specialer
+	if(istype(cool_mob.mob_armor, /datum/armor))
+		var/datum/armor/rmr = cool_mob.mob_armor
+		mob_armor = rmr.getList() // its a datum! aaaand I dont want to save that one
+	return src
+
+/// A proc that spawns a mob from a special mob datum
+/datum/special_mob_datum/proc/make_special_mob(datum/component/spawner/myspawner)
+	if(!istype(myspawner))
+		return
+	if(!istype(myspawner.parent))
+		return
+	var/turf/putemhere = get_turf(myspawner.parent)
+	var/mob/living/simple_animal/hostile/cool_mob = new mob_type(putemhere)
+	if(cool_mob)
+		cool_mob.name = name
+		cool_mob.desc = desc
+		cool_mob.icon = icon
+		cool_mob.icon_state = icon_state
+		cool_mob.maxHealth = maxHealth
+		cool_mob.health = cool_mob.maxHealth
+		cool_mob.color = color
+		cool_mob.faction = faction
+		cool_mob.toggle_ai(AI_ON) // Mob AI needs all the help it can get
+		cool_mob.casingtype = casingtype
+		cool_mob.projectiletype = projectiletype
+		cool_mob.projectilesound = projectilesound
+		cool_mob.sound_after_shooting = sound_after_shooting
+		cool_mob.sound_after_shooting_delay = sound_after_shooting_delay
+		cool_mob.projectile_sound_properties = projectile_sound_properties
+		cool_mob.melee_damage_lower = melee_damage_lower
+		cool_mob.melee_damage_upper = melee_damage_upper
+		cool_mob.mob_armor = getArmor(arglist(mob_armor))
+	myspawner.special_mobs -= src
+	cool_mob.do_alert_animation(cool_mob)
+	return cool_mob
 
 
 

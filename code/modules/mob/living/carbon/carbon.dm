@@ -227,7 +227,7 @@
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
 
 /mob/living/carbon/restrained(ignore_grab)
-	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))
+	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_NECK))
 
 /mob/living/carbon/proc/canBeHandcuffed()
 	return 0
@@ -310,6 +310,8 @@
 				if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
 					show_message(span_alert("You couldn't remove anything!"))
 		switch(href_list["action"])
+			if("change_chat_color")
+				change_chat_color()
 			if("genital_return")
 				show_genital_panel()
 			if("open_genital_layering")
@@ -392,23 +394,16 @@
 		dat += "You dont seem to have any movable genitals!"
 	dat += "<tr>"
 	dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
-	var/genital_shirtlayer
+	/* var/genital_shirtlayer
 	if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_UNDERWEAR))
 		genital_shirtlayer = "Over Underwear"
 	else if(CHECK_BITFIELD(dna.features["genital_visibility_flags"], GENITAL_ABOVE_CLOTHING))
 		genital_shirtlayer = "Over Clothes"
 	else
-		genital_shirtlayer = "Under Underwear"
+		genital_shirtlayer = "Under Underwear" */
 
 	dat += {"<td colspan='3' class='coverage_on'>
-			<a 
-				class='clicky_no_border'
-				href='
-					?src=[REF(src)];
-					action=change_genital_outfit_layering'
-					nadflag=[genital_shirtlayer]>
-						[genital_shirtlayer]
-			</a>
+			Over Clothes
 			</td>"}
 	dat += "</table>"
 
@@ -518,6 +513,24 @@
 		</td>"}
 	doot += "</tr>"
 	return doot.Join()
+
+/mob/living/carbon/verb/change_runechat_color()
+	set category = "IC"
+	set name = "Runechat Color"
+	set desc = "Lets you change your runechat color!"
+	change_chat_color()
+
+/mob/living/carbon/proc/change_chat_color()
+	var/my_chat_color = dna.features["chat_color"]
+	var/new_runecolor = input(src, "Choose your character's runechat color:", "Character Preference","#[my_chat_color]") as color|null
+	if(new_runecolor)
+		new_runecolor = sanitize_hexcolor(new_runecolor, 6)
+		dna.features["chat_color"] = new_runecolor
+		client.prefs.features["chat_color"] = new_runecolor
+		client.prefs.save_preferences()
+		chat_color = "#[new_runecolor]"
+		chat_color_darkened = "#[new_runecolor]"
+		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -1195,7 +1208,7 @@
 		stomach_contents.Add(C)
 		log_combat(src, C, "devoured")
 
-/mob/living/carbon/proc/create_bodyparts()
+/mob/living/carbon/proc/create_bodyparts(actually_dont)
 	var/l_arm_index_next = -1
 	var/r_arm_index_next = 0
 	for(var/X in bodyparts)
@@ -1211,6 +1224,11 @@
 			r_arm_index_next += 2
 			O.held_index = r_arm_index_next //2, 4, 6, 8...
 			hand_bodyparts += O
+	if(actually_dont)
+		for(var/obj/item/bodypart/O in bodyparts)
+			if(O.body_zone == BODY_ZONE_CHEST)
+				continue
+			qdel(O)
 
 /mob/living/carbon/do_after_coefficent()
 	. = ..()
@@ -1468,3 +1486,11 @@
  */
 /mob/living/carbon/proc/get_biological_state()
 	return BIO_FLESH_BONE
+
+/mob/living/carbon/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+

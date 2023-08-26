@@ -48,8 +48,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	maxHealth = 110
-	health = 110
+	maxHealth = 90
+	health = 90
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 6
@@ -97,8 +97,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 90
-	health = 90
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 8
@@ -255,7 +255,7 @@
 	emote_taunt = list("snips")
 
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
-	aggrosound = list('sound/f13npc/scorpion/aggro.ogg', )
+	emote_taunt_sound = list('sound/f13npc/scorpion/aggro.ogg', )
 	idlesound = list('sound/creatures/radscorpion_snip.ogg', )
 	death_sound = 'sound/f13npc/scorpion/death.ogg'
 
@@ -346,7 +346,7 @@
 	response_harm_simple = "hits"
 	emote_taunt = list("buzzes")
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
-	aggrosound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
+	emote_taunt_sound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
@@ -374,7 +374,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -408,21 +408,37 @@
 	update_transform()
 
 /datum/reagent/toxin/cazador_venom
-	name = "Cazador venom"
-	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
+	name = "cazador venom"
+	description = "A painful but relatively harmless venom, originally synthesized by tarantula hawks."
+	reagent_state = LIQUID
 	color = "#801E28" // rgb: 128, 30, 40
-	toxpwr = 1
+	toxpwr = 0.5
 	taste_description = "pain"
 	taste_mult = 1.3
 
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 15)
-		M.adjustToxLoss(5, 0)
+/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/carbon/M)
+	M.adjustStaminaLoss(10, 0)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/cazador_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
 	..()
 
 /datum/reagent/toxin/cazador_venom/on_mob_life_synth(mob/living/M)
-	if(volume >= 15)
-		M.adjustFireLoss(5, 0)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
 	..()
 
 //////////////
@@ -561,7 +577,7 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(5),
 	)
 
-	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
+	emote_taunt_sound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
 	desc_short = "One of countless bugs that move in gross hordes."

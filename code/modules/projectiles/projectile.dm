@@ -166,10 +166,10 @@
 	var/list/damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	/// bullet's general zone hit accuracy
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
+	var/my_wretched_speed
 
 /obj/item/projectile/Initialize()
 	. = ..()
-
 	permutated = list()
 	decayedRange = range
 	if(LAZYLEN(embedding))
@@ -195,6 +195,140 @@
 /obj/item/projectile/proc/on_range() //if we want there to be effects when they reach the end of their range
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
+
+/obj/item/projectile/proc/create_statblock()
+	var/list/my_block = list()
+	my_block["projectile_name"] = name || "Unnamed Projectile"
+	my_block["projectile_damage"] = damage || 0
+	my_block["projectile_damage_type"] = damage_type || "brute"
+	my_block["projectile_flag"] = flag || "bullet"
+	my_block["projectile_stamina"] = stamina || 0
+	my_block["projectile_recoil"] = recoil || 0
+	my_block["projectile_hitscan"] = hitscan || 0
+	my_block["projectile_range"] = range || 1000
+	my_block["projectile_supereffective_damage"] = supereffective_damage || 0
+	my_block["projectile_supereffective_faction"] = english_list(supereffective_faction)
+	my_block["projectile_wound_bonus"] = wound_bonus || 0
+	my_block["projectile_bare_wound_bonus"] = bare_wound_bonus || 0
+	if(!my_wretched_speed || prob(1))
+		my_wretched_speed = rand(1,300)
+	switch(my_wretched_speed) // no guarantee any of these are accurate
+		if(1) // duotrimeters per second, the unit of measurement for 1/32th of a meter
+			my_block["projectile_speed"] = "[pixels_per_second * 1.8288]"
+			my_block["projectile_speed_unit"] = "dtm/s"
+			my_block["projectile_speed_unit_words"] = "duotrimeters per second"
+		if(2) // kilometers per hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 3.6]"
+			my_block["projectile_speed_unit"] = "km/h"
+			my_block["projectile_speed_unit_words"] = "kilometers per hour"
+		if(3) // miles per hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 2.237]"
+			my_block["projectile_speed_unit"] = "mph"
+			my_block["projectile_speed_unit_words"] = "miles per hour"
+		if(4) // knots
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 1.94384]"
+			my_block["projectile_speed_unit"] = "knots"
+			my_block["projectile_speed_unit_words"] = "knots"
+		if(5) // feet per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048]"
+			my_block["projectile_speed_unit"] = "ft/s"
+			my_block["projectile_speed_unit_words"] = "feet per second"
+		if(6) // feet per minute
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 60]"
+			my_block["projectile_speed_unit"] = "ft/m"
+			my_block["projectile_speed_unit_words"] = "feet per minute"
+		if(7) // feet per hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 3600]"
+			my_block["projectile_speed_unit"] = "ft/h"
+			my_block["projectile_speed_unit_words"] = "feet per hour"
+		if(8) // meters per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048]"
+			my_block["projectile_speed_unit"] = "m/s"
+			my_block["projectile_speed_unit_words"] = "meters per second"
+		if(9) // meters per minute
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 60]"
+			my_block["projectile_speed_unit"] = "m/m"
+			my_block["projectile_speed_unit_words"] = "meters per minute"
+		if(10) // meters per hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 3600]"
+			my_block["projectile_speed_unit"] = "m/h"
+			my_block["projectile_speed_unit_words"] = "meters per hour"
+		if(11) // kilometers per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001]"
+			my_block["projectile_speed_unit"] = "km/s"
+			my_block["projectile_speed_unit_words"] = "kilometers per second"
+		if(12) // kilometers per minute
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 60]"
+			my_block["projectile_speed_unit"] = "km/m"
+			my_block["projectile_speed_unit_words"] = "kilometers per minute"
+		if(13) // kilometers per hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 3600]"
+			my_block["projectile_speed_unit"] = "km/h"
+			my_block["projectile_speed_unit_words"] = "kilometers per hour"
+		if(14) // fathoms her hour
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048]"
+			my_block["projectile_speed_unit"] = "fathoms/h"
+			my_block["projectile_speed_unit_words"] = "fathoms per hour"
+		if(15) // leagues per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048]"
+			my_block["projectile_speed_unit"] = "l/s"
+			my_block["projectile_speed_unit_words"] = "leagues per second"
+		if(16) // hectares per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.0003048 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001]"
+			my_block["projectile_speed_unit"] = "hc/s"
+			my_block["projectile_speed_unit_words"] = "hectares per second"
+		if(17) // cubits per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.4572]"
+			my_block["projectile_speed_unit"] = "c/s"
+			my_block["projectile_speed_unit_words"] = "cubits per second"
+		if(18) // rods per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 5.5]"
+			my_block["projectile_speed_unit"] = "r/s"
+			my_block["projectile_speed_unit_words"] = "rods per second"
+		if(19) // furlongs per second
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001]"
+			my_block["projectile_speed_unit"] = "f/s"
+			my_block["projectile_speed_unit_words"] = "furlongs per second"
+		if(20) // fraction of light speed
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858]"
+			my_block["projectile_speed_unit"] = "c"
+			my_block["projectile_speed_unit_words"] = "fraction of light speed"
+		if(21) // mach number
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858]"
+			my_block["projectile_speed_unit"] = "mach"
+			my_block["projectile_speed_unit_words"] = "mach number"
+		if(22) // light nanoseconds per millisecond
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001]"
+			my_block["projectile_speed_unit"] = "lns/ms"
+			my_block["projectile_speed_unit_words"] = "light nanoseconds per millisecond"
+		if(23) // light years per eon
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000]"
+			my_block["projectile_speed_unit"] = "ly/eon"
+			my_block["projectile_speed_unit_words"] = "light years per eon"
+		if(24) // parsecs per eon
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.001 * 0.0003048 * 0.0003048 * 0.0001 * 0.0001 * 0.00293858 * 0.000000001 * 31557600000000 * 0.30660139]"
+			my_block["projectile_speed_unit"] = "pc/eon"
+			my_block["projectile_speed_unit_words"] = "parsecs per eon"
+		if(25) // furlongs per fortnight
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288 * 0.3048 * 0.5 * 0.5 * 0.5] fff" // furlongs per fortnight
+			my_block["projectile_speed_unit"] = "fff"
+			my_block["projectile_speed_unit_words"] = "furlongs per fortnight"
+		else
+			my_block["projectile_speed"] = "[pixels_per_second * 0.03125 * 1.8288]" // 32 pixels = 6ish feet, 1.8288 meters = 6 feet
+			my_block["projectile_speed_unit"] = "m/s"
+			my_block["projectile_speed_unit_words"] = "meters per second"
+	var/sharp_word = "None"
+	switch(sharpness)
+		if(SHARP_NONE)
+			sharp_word = "None"
+		if(SHARP_EDGED)
+			sharp_word = "Slash"
+		if(SHARP_POINTY)
+			sharp_word = "Pierce"
+	my_block["projectile_sharpness"] = sharp_word
+	my_block["projectile_spread"] = spread || 0
+	my_block["projectile_armor_penetration"] = armour_penetration || 0 // FUCK YOU FUCK YOU FUCK YOU FUCK 'U'
+	return my_block
 
 //to get the correct limb (if any) for the projectile hit message
 /mob/living/proc/check_limb_hit(hit_zone)
@@ -504,11 +638,11 @@
 			CRASH("Invalid return value for projectile ricochet check from [A].")
 
 /obj/item/projectile/proc/check_ricochet_flag(atom/A)
-	if((flag in list("energy", "laser")) && (A.flags_ricochet & RICOCHET_SHINY))
-		return TRUE
-	if((flag in list("bomb", "bullet")) && (A.flags_ricochet & RICOCHET_HARD))
-		return TRUE
-	return FALSE
+	//if((flag in list("energy", "laser")) && (A.flags_ricochet & RICOCHET_SHINY))
+		//return TRUE
+	//if((flag in list("bomb", "bullet")) && (A.flags_ricochet & RICOCHET_HARD))
+		//return TRUE
+	return TRUE
 
 /// one move is a tile.
 /obj/item/projectile/proc/return_predicted_turf_after_moves(moves, forced_angle)		//I say predicted because there's no telling that the projectile won't change direction/location in flight.
@@ -588,7 +722,7 @@
 	if(hitscan)
 		process_hitscan()
 		return
-	if(!(datum_flags & DF_ISPROCESSING))
+	if(!IS_PROCESSING(SSprojectiles, src))
 		START_PROCESSING(SSprojectiles, src)
 	pixel_move(round(PROJECTILE_FIRING_INSTANT_TRAVEL_AMOUNT / pixel_increment_amount), FALSE, allow_animation = FALSE)	//move it now!
 
@@ -935,7 +1069,6 @@
 
 /obj/item/projectile/bullet/F13/musketball
 	damage = 60
-	armour_penetration = 0.3
 
 
 

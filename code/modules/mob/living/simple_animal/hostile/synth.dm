@@ -52,7 +52,7 @@
 /mob/living/simple_animal/hostile/synth/playable
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 2 //can smash walls
@@ -82,7 +82,7 @@
 /mob/living/simple_animal/hostile/synth/mk2/playable
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 2 //can smash walls

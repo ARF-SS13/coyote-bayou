@@ -20,6 +20,6 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "insect"
 
-	allowed_limb_ids = list("insect","apid","moth","moth_not_greyscale")
+	allowed_limb_ids = list("insect","apid","moth","moth_not_greyscale","spider")
 
 	eye_type = "insect"

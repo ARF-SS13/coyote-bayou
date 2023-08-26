@@ -2,23 +2,14 @@
 	name = "plasma gun"
 	desc = "A high-power plasma gun. You shouldn't ever see this."
 	icon_state = "xray"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun)
 	cell_type = "/obj/item/stock_parts/cell/pulse/carbine"
 	ammo_x_offset = 2
 	shaded_charge = 1
 	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PLASMA_VOLUME),
-		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PLASMA_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
-	)
 
 
 /obj/item/gun/energy/plasma/rifle
@@ -27,7 +18,8 @@
 	icon_state = "alienrifle"
 	item_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	w_class = WEIGHT_CLASS_BULKY
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/rifle)
 	ammo_x_offset = 4
 
@@ -41,7 +33,8 @@
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/light)
 	ammo_x_offset = 2
-
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/plasma/MP40k
 	name = "Plasma MP40k"
@@ -51,6 +44,8 @@
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/MP40k)
 	ammo_x_offset = 3
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 //Laser rifles, technically lazer, but w/e
 
@@ -65,15 +60,27 @@
 	ammo_x_offset = 4
 	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/LaserAK
 	name = "Laser AK470"
-	desc = "A laser AK. Death solves all problems -- No man, no problem."
+	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
 	icon_state = "LaserAK"
 	item_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	cell_type = "/obj/item/stock_parts/cell/pulse/carbine"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz)
 	ammo_x_offset = 4
 	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+	/datum/firemode/semi_auto,
+	/datum/firemode/automatic/rpm300
+	)
+	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)

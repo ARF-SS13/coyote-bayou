@@ -24,7 +24,7 @@
 		dumped = TRUE
 
 /obj/structure/checkoutmachine
-	name = "\improper Nanotrasen Space-Coin Market"
+	name = "\improper US Government Space-Coin Market"
 	desc = "This is good for spacecoin because"
 	icon = 'icons/obj/money_machine.dmi'
 	icon_state = "bogdanoff"
@@ -201,9 +201,6 @@
 	var/obj/effect/dumpeetFall/DF
 	var/obj/structure/checkoutmachine/dump
 	var/mob/living/carbon/human/bogdanoff
-
-/obj/effect/ex_act()
-	return
 
 /obj/effect/dumpeetTarget/Initialize(mapload, user)
 	. = ..()

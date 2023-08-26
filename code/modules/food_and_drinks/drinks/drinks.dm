@@ -22,7 +22,16 @@
 	else
 		gulp_size = max(round(reagents.total_volume / 5), 5)
 
+/obj/item/reagent_containers/food/drinks/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
+	INVOKE_ASYNC(src, .proc/attempt_forcedrink, vorer, vorer, TRUE, TRUE, TRUE)
+	if(gut.can_taste)
+		checkLiked(min(gulp_size/reagents.total_volume, 1), vorer)
+	return TRUE
+
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
+	INVOKE_ASYNC(src, .proc/attempt_forcedrink, M, user)
+
+/obj/item/reagent_containers/food/drinks/proc/attempt_forcedrink(mob/living/M, mob/user, force, silent, vorebite)
 	if(!reagents || !reagents.total_volume)
 		to_chat(user, span_warning("[src] is empty!"))
 		return 0
@@ -34,22 +43,27 @@
 		to_chat(user, span_warning("[src]'s lid hasn't been opened!"))
 		return 0
 
-	if(M == user)
-		user.visible_message(span_notice("[user] swallows a gulp of [src]."), span_notice("You swallow a gulp of [src]."))
+	if(M == user || vorebite)
+		if(!silent)
+			user.visible_message(span_notice("[user] swallows a gulp of [src]."), span_notice("You swallow a gulp of [src]."))
 	else
-		M.visible_message(span_danger("[user] attempts to feed the contents of [src] to [M]."), span_userdanger("[user] attempts to feed the contents of [src] to [M]."))
+		if(!silent)
+			M.visible_message(span_danger("[user] attempts to feed the contents of [src] to [M]."), span_userdanger("[user] attempts to feed the contents of [src] to [M]."))
 		if(!do_mob(user, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The drink might be empty after the delay, such as by spam-feeding
-		M.visible_message(span_danger("[user] feeds the contents of [src] to [M]."), span_userdanger("[user] feeds the contents of [src] to [M]."))
+		if(!silent)
+			M.visible_message(span_danger("[user] feeds the contents of [src] to [M]."), span_userdanger("[user] feeds the contents of [src] to [M]."))
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
-	checkLiked(fraction, M)
+	if(!vorebite)
+		checkLiked(fraction, M)
 	reagents.reaction(M, INGEST, fraction)
 	reagents.trans_to(M, gulp_size, log = TRUE)
-	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
+	if(!silent)
+		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
 	return 1
 
 /obj/item/reagent_containers/food/drinks/CheckAttackCooldown(mob/user, atom/target)
@@ -491,20 +505,38 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(M == user && !src.reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
-		user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
-		playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
-		var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(user.loc)
-		crushed_can.icon_state = icon_state
-		qdel(src)
+		crush_can(user)
 	..()
+
+/obj/item/reagent_containers/food/drinks/soda_cans/proc/crush_can(mob/user, silent, vorebite)
+	if(!silent)
+		user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
+	playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
+	var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(vorebite ? loc : get_turf(src))
+	crushed_can.icon_state = icon_state
+	SEND_SIGNAL(loc, COMSIG_BELLY_HANDLE_TRASH, crushed_can)
+	qdel(src)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack_self(mob/user)
 	if(!is_drainable())
+		pop_top(user)
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/soda_cans/proc/pop_top(mob/user, silent)
+	if(!silent)
 		to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
-		ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
-		playsound(src, "can_open", 50, 1)
-		spillable = TRUE
-		return
+	playsound(src, "can_open", 50, 1)
+	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
+	spillable = TRUE
+	return
+
+/obj/item/reagent_containers/food/drinks/soda_cans/take_a_bellybite(datum/source, obj/vore_belly/gut, mob/living/vorer)
+	if(!is_drainable())
+		INVOKE_ASYNC(src, .proc/pop_top, vorer, vorer, TRUE, TRUE, TRUE)
+		return TRUE
+	if(!reagents.total_volume)
+		INVOKE_ASYNC(src, .proc/crush_can, vorer, vorer, TRUE, TRUE, TRUE)
+		return TRUE
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cola

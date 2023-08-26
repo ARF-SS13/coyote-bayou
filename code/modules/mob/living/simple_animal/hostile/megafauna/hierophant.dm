@@ -49,7 +49,6 @@ Difficulty: Normal
 	icon = 'icons/mob/lavaland/hierophant_new.dmi'
 	faction = list("boss") //asteroid mobs? get that shit out of my beautiful square house
 	speak_emote = list("preaches")
-	armour_penetration = 0.95
 	melee_damage_lower = 15
 	melee_damage_upper = 20
 	blood_volume = 0
@@ -122,6 +121,7 @@ Difficulty: Normal
 	qdel(spawned_beacon)
 	. = ..()
 
+/*
 /mob/living/simple_animal/hostile/megafauna/hierophant/devour(mob/living/L)
 	for(var/obj/item/W in L)
 		if(!L.dropItemToGround(W))
@@ -130,6 +130,7 @@ Difficulty: Normal
 	visible_message(span_hierophant_warning("[src] annihilates [L]!"),span_userdanger("You annihilate [L], restoring your health!"))
 	adjustHealth(-L.maxHealth*0.5)
 	L.dust()
+*/
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/CanAttack(atom/the_target)
 	. = ..()
@@ -164,9 +165,6 @@ Difficulty: Normal
 					INVOKE_ASYNC(src, .proc/burst, get_turf(src), 0.25) //melee attacks on living mobs cause it to release a fast burst if on cooldown
 				if(L.stat == CONSCIOUS && L.health >= 30)
 					OpenFire()
-			else
-				devour(L)
-		else
 			return ..()
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/DestroySurroundings()

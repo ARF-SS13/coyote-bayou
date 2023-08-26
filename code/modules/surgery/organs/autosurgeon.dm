@@ -30,6 +30,9 @@
 	else if(!storedorgan)
 		to_chat(user, span_notice("[src] currently has no implant stored."))
 		return
+	if(!do_after(user, 30 SECONDS, TRUE, src))  // Surgery takes at least SOME time.
+		to_chat(user, span_warning("You need to hold still while the autosurgeon operates!"))
+		return
 	storedorgan.Insert(user)//insert stored organ into the user
 	user.visible_message(span_notice("[user] presses a button on [src], and you hear a short mechanical noise."), span_notice("You feel a sharp sting as [src] plunges into your body."))
 	playsound(get_turf(user), 'sound/weapons/circsawhit.ogg', 50, 1)

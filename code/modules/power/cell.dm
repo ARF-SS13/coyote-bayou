@@ -79,22 +79,26 @@
 
 // use power from a cell
 /obj/item/stock_parts/cell/use(amount, can_explode = TRUE)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0 && can_explode)
 		explode()
 		return 0
-	if(charge < amount)
+	if(charge <= 0)
 		return 0
-	charge = (charge - amount)
+	var/used = min(charge,amount)
+	charge = (charge - used)
 	if(!istype(loc, /obj/machinery/power/apc))
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
-	return 1
+	return used
 
 // check power in a cell
 /obj/item/stock_parts/cell/proc/check_charge(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	return (charge >= amount)
 
 // recharge the cell
 /obj/item/stock_parts/cell/proc/give(amount)
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 	if(rigged && amount > 0)
 		explode()
 		return 0
@@ -148,6 +152,7 @@
 	charge -= 10 * severity
 	if(charge < 0)
 		charge = 0
+	SEND_SIGNAL(src, COMSIG_CELL_USED, charge, maxcharge)
 
 /obj/item/stock_parts/cell/ex_act(severity, target)
 	..()
@@ -233,7 +238,7 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/crap
-	name = "\improper Nanotrasen brand rechargeable AA battery"
+	name = "\improper US Government brand rechargeable AA battery"
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
@@ -319,8 +324,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/bluespace
-	name = "bluespace power cell"
-	desc = "A rechargeable transdimensional power cell."
+	name = "ultracite power cell"
+	desc = "A rechargeable high capacity ultracite power cell."
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)
@@ -473,13 +478,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (((maxcharge/2)+1) to maxcharge)
-			icon_state = "mfc-full"
-		if (((maxcharge/4)+1) to (maxcharge/2))
-			icon_state = "mfc-half"
-		if (0 to (maxcharge/4))
-			icon_state = "mfc-empty"
+	if(charge >= (maxcharge*0.65))
+		icon_state = "mfc-full"
+	else if(charge >= (maxcharge*0.35))
+		icon_state = "mfc-half"
+	else
+		icon_state = "mfc-empty"
 	. = ..()
 
 // Enhanced Microfusion cell - large energy weapons
@@ -516,15 +520,14 @@
 	maxcharge = 1500
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
-	switch(charge)
-		if ((((maxcharge/3)*2)+1) to maxcharge)
-			icon_state = "ec-full"
-		if (((maxcharge/3)+1) to ((maxcharge/3)*2))
-			icon_state = "ec-twothirds"
-		if (((maxcharge/4)+1) to (maxcharge/3))
-			icon_state = "ec-onethirds"
-		if (0 to (maxcharge/4))
-			icon_state = "ec-empty"
+	if(charge >= maxcharge * 0.75)
+		icon_state = "ec-full"
+	else if(charge >= maxcharge * 0.50)
+		icon_state = "ec-twothirds"
+	else if(charge >= maxcharge * 0.25)
+		icon_state = "ec-onethirds"
+	else
+		icon_state = "ec-empty"
 	. = ..()
 
 // Enhanced energy cell - small energy weapons
@@ -568,13 +571,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
-	switch(charge)
-		if (((maxcharge/2)+1) to maxcharge)
-			icon_state = "ecp-full"
-		if (((maxcharge/4)+1) to (maxcharge/2))
-			icon_state = "ecp-half"
-		if (0 to (maxcharge/4))
-			icon_state = "ecp-empty"
+	if(charge >= maxcharge*0.65)
+		icon_state = "ecp-full"
+	else if(charge >= maxcharge*0.35)
+		icon_state = "ecp-half"
+	else
+		icon_state = "ecp-empty"
 	. = ..()
 
 // Enhanced electron charge pack - rapid fire energy

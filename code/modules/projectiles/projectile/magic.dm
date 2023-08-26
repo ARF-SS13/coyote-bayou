@@ -4,7 +4,6 @@
 	damage = 0
 	damage_type = OXY
 	nodamage = 1
-	armour_penetration = 1
 	flag = "magic"
 
 /obj/item/projectile/magic/death
@@ -302,7 +301,6 @@
 	damage = 15
 	damage_type = BURN
 	flag = "magic"
-	dismemberment = 50
 	nodamage = 0
 
 /obj/item/projectile/magic/spellblade/on_hit(target)
@@ -320,7 +318,6 @@
 	damage = 20
 	damage_type = BURN
 	nodamage = 0
-	armour_penetration = 0
 	flag = "magic"
 	hitsound = 'sound/weapons/barragespellhit.ogg'
 
@@ -467,15 +464,15 @@
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"
 	icon_state = "fireball"
-	damage = 10
+	damage = 29
 	damage_type = BRUTE
 	nodamage = 0
 
 	//explosion values
 	var/exp_heavy = 0
-	var/exp_light = 2
-	var/exp_flash = 3
-	var/exp_fire = 2
+	var/exp_light = 0
+	var/exp_flash = 1
+	var/exp_fire = 0
 
 /obj/item/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
@@ -533,3 +530,71 @@
 	for(var/atom/movable/AM in contents)
 		AM.forceMove(get_turf(src))
 	. = ..()
+
+/obj/item/projectile/magic/healbrute
+	icon_state = "bruteheal"
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/healbrute/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-35) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-15)
+		M.adjustFireLoss(-5)
+		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-20)
+		return
+
+/obj/item/projectile/magic/healburn
+	icon_state = "burnheal"
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/spellcard/book/healburn/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-5) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-35)
+		M.adjustFireLoss(-35)
+		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-10)
+		return
+/obj/item/projectile/magic/healtoxin
+	icon_state = "toxinheal"
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/healtoxin/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-5) //HEALS
+		M.adjustOxyLoss(-50)
+		M.adjustBruteLoss(-15)
+		M.adjustFireLoss(-5)
+		M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-50)
+		M.adjustStaminaLoss(-0)
+		return

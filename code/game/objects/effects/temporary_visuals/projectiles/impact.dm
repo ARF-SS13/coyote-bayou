@@ -48,3 +48,7 @@
 /obj/effect/projectile/impact/laser/emitter
 	name = "emitter impact"
 	icon_state = "impact_emitter"
+
+/obj/effect/projectile/impact/laser/solar
+	name = "laser impact"
+	icon_state = "impact_solar"

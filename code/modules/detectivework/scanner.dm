@@ -13,7 +13,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	var/scanning = FALSE
 	var/list/log = list()
 	var/range = 8

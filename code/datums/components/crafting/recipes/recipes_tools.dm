@@ -1,14 +1,11 @@
 /datum/crafting_recipe/workbench
 	name = "Workbench"
 	result = /obj/machinery/workbench
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
-				/obj/item/lighter = 1,
-				/obj/item/reagent_containers/glass/beaker = 1,
-				/obj/item/screwdriver = 1,
-				/obj/item/crowbar = 1,
-				/obj/item/wrench = 1,
-				/obj/item/wirecutters = 1,
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/storage/toolbox = 1,
 				/obj/item/stack/crafting/metalparts = 5)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH)
 	time = 80
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL

@@ -375,7 +375,7 @@
 	icon_state = "advanced_bench"
 	desc = "A large and advanced pre-war workbench to tackle any project!"
 	machine_tool_behaviour = list(TOOL_AWORKBENCH, TOOL_WORKBENCH)
-	wrenchable = FALSE
+	wrenchable = TRUE
 	can_disassemble = TRUE
 	disassembly_steps_remaining = WB_DISASSEMBLY_STEP_SCREW | WB_DISASSEMBLY_STEP_WELD | WB_DISASSEMBLY_STEP_CUT | WB_DISASSEMBLY_STEP_CROWBAR | WB_DISASSEMBLY_STEP_CLUB
 	disassembly_start_step = WB_DISASSEMBLY_STEP_ELECTRONICS
@@ -468,15 +468,8 @@
 	disassembly_steps_remaining = WB_DISASSEMBLY_STEP_WELD | WB_DISASSEMBLY_STEP_SCREW | WB_DISASSEMBLY_STEP_CROWBAR | WB_DISASSEMBLY_STEP_CLUB
 	disassembly_start_step = WB_DISASSEMBLY_STEP_CUT
 	disassembly_loot = list(
-		/obj/item/salvage/low,
-		/obj/item/salvage/low,
-		/obj/item/salvage/low,
-		/obj/item/salvage/high,
-		/obj/item/salvage/high,
-		/obj/item/salvage/high,
-		/obj/item/blueprint/research,
-		/obj/item/blueprint/research,
-		/obj/item/stack/f13Cash/caps/fivezero,
+		/obj/item/stack/sheet/metal/twenty,
+		/obj/item/stack/sheet/plasteel/five,
 		)
 
 /obj/item/weaponcrafting/receiver

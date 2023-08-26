@@ -3,8 +3,8 @@
 	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
 	resistance_flags = NONE
-	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done
-	has_sensor = NO_SENSORS //kek
+	mutantrace_variation = NONE // Temp fix until digitigrade-adapted sprites are done
+	has_sensor = HAS_SENSORS // kelp fix :D
 
 /obj/item/clothing/under/f13/female
 	fitted = FEMALE_UNIFORM_TOP
@@ -36,6 +36,218 @@
 	icon_state = "uniform_enclave_intel"
 	item_state = "uniform_enclave_intel"
 
+// Modern-Cold War uniforms
+/obj/item/clothing/under/f13/modernbdu
+	name = "Russian uniform with telnyashka"
+	desc = "A military uniform from Russia, it comes with a summer long sleeve telnyashka, which is a 100% pure cotton shirt. Quite comfortable"
+	icon_state = "milrus"
+	item_state = "milrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/chinese
+	name = "Modern Chinese uniform"
+	desc = "A modern Chinese Type 07 uniform. Mainly used by the PLA's Navy. Quite comfortable."
+	icon_state = "type07"
+	item_state = "type07"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/cadpat
+	name = "Modern Canadian uniform"
+	desc = "A modern CadPat Canadian uniform. It was in service by the Canadian army. Quite comfortable."
+	icon_state = "cadpat"
+	item_state = "cadpat"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/americanstorm
+	name = "American DCU uniform"
+	desc = "An American DCU uniform, saw extensive use during the Gulf War."
+	icon_state = "usdcu"
+	item_state = "usdcu"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/hueyuniform
+	name = "Pilot Uniform"
+	desc = "An American themed pilot's uniform. Doesn't offer much aside from covering the bare essentials. Might wanna pair this with a bright white helmet and a flak vest. 'This is..someone, arriving at LZ'"
+	icon_state = "uspilot"
+	item_state = "uspilot"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/navalcamo
+	name = "Universal Navy BDU"
+	desc = "A Universal Navy Camo or UNC BDU. This naval based camo was used extensively by many nations before the war. Very good against blue backgrounds, horrible if you decide to hide in a bush. "
+	icon_state = "navycamo"
+	item_state = "navycamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/americanmulticam
+	name = "Multicam uniform"
+	desc = "An Multicam camo uniform, saw extensive use by numerous PMCs and nations. Also was favored heavily by American citizens."
+	icon_state = "multicam"
+	item_state = "multicam"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/russianamoeba
+	name = "KLMK camo suit"
+	desc = "A Soviet era Russian KLMK camo suit. This camo suit saw usage because of the widespread usage of NVG by NATO troops."
+	icon_state = "sovcamo"
+	item_state = "sovcamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/serbwinter
+	name = "Serbian winter suit"
+	desc = "A Serbian winter suit. This specific suit is a copy of a Russian Amoeba winter suit, which was the winter camo version of the russian 'amoeba' pattern. Quite comfy to wear actually, toasty."
+	icon_state = "sovwinter"
+	item_state = "sovwinter"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/russianemr
+	name = "EMR Russian uniform"
+	desc = "A more modern Russian uniform. Painting it is the EMR camoflauge scheme. Comes with a Telyshanka underneath."
+	icon_state = "modernrus"
+	item_state = "modernrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/americannwu
+	name = "NWU Uniform"
+	desc = "An American NWU uniform. Was once apart of a selection of uniforms by the American armed forces before the war. Now it finds use elsewhere in the region."
+	icon_state = "nwu"
+	item_state = "nwu"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ttcamo
+	name = "Tropentarn uniform"
+	desc = "A modern uniform that resembles tropentarn, a type of camoflauge that saw usage by the West German forces and by selective NATO nations. It was mainly effective in dry and arid climates, as opposed to its original counterpart. Quite comfy but needs indrustial solvent to clean."
+	icon_state = "tropentarn"
+	item_state = "tropentarn"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ucp
+	name = "Standard UCP uniform"
+	desc = "A modern albeit outdated American UCP uniform. UCP was an american uniform before it was outphased by much better camoflauge patterns selected by the U.S government. This uniform didn't see active service and was eventually replaced by OCP and NWU."
+	icon_state = "ucp"
+	item_state = "ucp"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ocp
+	name = "Standard OCP uniform"
+	desc = "A modern OCP uniform that was in service by the American military. It was apart of a selection of active camoflauge patterns. Some saw service, some only was used by specific branches. None the less, it finds a home here, in this region. Double time soldier, move it."
+	icon_state = "ocp"
+	item_state = "ocp"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/commonforest
+	name = "Standard digital forest uniform"
+	desc = "A more generic digital forest uniform. It saw usage by numerous pre-war and post-war PMC/raider companies. Also in use by post-war radstag hunters. Quite a comfortable uniform."
+	icon_state = "forestdigital"
+	item_state = "forestdigital"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/tigerstripe
+	name = "American Tigertripe uniform"
+	desc = "An American tigerstripe uniform. A rather old fashioned camoflauge scheme that saw use during the Vietnam and Korean war. Quite comfortable and comes in a more modern uniform. Burn baby burn. "
+	icon_state = "tigerstripe"
+	item_state = "tigerstripe"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+//old fashioned uniforms
+
+/obj/item/clothing/under/f13/medievalgerman
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc1"
+	item_state = "germanmerc1"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/medievalgerman2
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc2"
+	item_state = "germanmerc2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/medievalgerman3
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc3"
+	item_state = "germanmerc3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+//sci-fi or futuristic clothing
+
+/obj/item/clothing/under/f13/mechsuits
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni1"
+	item_state = "mechuni1"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/mechsuits2
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni2"
+	item_state = "mechuni2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/mechsuits3
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni3"
+	item_state = "mechuni3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/scifipilot
+	name = "Mechanized pilot uniform."
+	desc = "A more advanced form of a flight suit, this one is bulkier and weighs the legs down. Useful for performing high G turns in an aircraft. Now, it finds use as a stylish pilot's uniform"
+	icon_state = "scifisuit"
+	item_state = "scifisuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+//civilian based clothing/emergency services
+
+/obj/item/clothing/under/f13/nursescrubs
+	name = "Green nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a pleasant green color, white shoes and medical badge not included."
+	icon_state = "scrubs"
+	item_state = "scrubs"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/nursescrubs/blue
+	name = "Blue nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a refreshing blue color, white shoes and medical badge not included."
+	icon_state = "scrubs2"
+	item_state = "scrubs2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //Vault
 
 /obj/item/clothing/under/f13/housewifedress50s
@@ -43,14 +255,7 @@
 	desc = "Fancy checkered yellow dress with small shoulder puffs."
 	icon_state = "dress50s"
 	item_state = "dress50s"
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
-/obj/item/clothing/under/f13/picnicdress50s
-	name = "50s style dress"
-	desc = "Cheery polkadot casual dress."
-	icon_state = "dresspicnic50s"
-	item_state = "dresspicnic50s"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
@@ -60,6 +265,7 @@
 	icon_state = "vault"
 	item_state = "vault"
 	item_color = "vault"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	can_adjust = TRUE
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
@@ -71,6 +277,7 @@
 	icon_state = "vault13"
 	item_state = "vault13"
 	item_color = "vault13"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	can_adjust = TRUE
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
@@ -87,6 +294,12 @@
 	item_state = "ncr_uniform"
 	item_color = "ncr_uniform"
 
+/obj/item/clothing/under/f13/ncr/texas
+	name = "militia fatigues"
+	desc = "A set of fatigues belonging to the now defunct First Texas Militia. Despite being a little too warm for Texas' usual weather, they're surprisingly comfortable."
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
 /obj/item/clothing/under/f13/ncr/ncr_officer
 	name = "officer fatigues"
 	desc = "A standard service uniform for commissioned officers."
@@ -102,6 +315,11 @@
 	icon_state = "ncr_conscript"
 	item_state = "ncr_conscript"
 	item_color = "ncr_conscript"
+
+/obj/item/clothing/under/f13/ncr/conscript/texas
+	name = "militia conscript fatigues"
+	desc = "A set of conscript fatigues belonging to the now defunct First Texas Militia. Despite being derided as 'cheap' by the Militia's detractors, some still swear by the design due how cool they keep the wearer. Just be careful around sharp objects."
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/ncr/scout
 	name = "scout fatigues"
@@ -167,6 +385,7 @@
 	icon_state = "brahmin_m"
 	item_state = "brahmin_m"
 	item_color = "brahmin_m"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/brahminf
 	name = "brahmin skin outfit"
@@ -174,6 +393,7 @@
 	icon_state = "brahmin_f"
 	item_state = "brahmin_f_s"
 	item_color = "brahmin_f"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/doctorm
 	name = "doctor fatigues"
@@ -197,6 +417,7 @@
 	icon_state = "caravan"
 	item_state = "caravan"
 	item_color = "caravan"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/f13/settler
 	name = "settler outfit"
@@ -301,6 +522,7 @@
 /obj/item/clothing/under/f13/sheriff
 	name = "sheriff outfit"
 	desc = "The symbol of law and civilization, a black vest over a well starched white shirt."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
@@ -308,6 +530,7 @@
 /obj/item/clothing/under/f13/sleazeball
 	name = "loanshark outfit"
 	desc = "The symbol of profit and corruption, a black vest over a well starched white shirt."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
@@ -323,6 +546,7 @@
 /obj/item/clothing/under/f13/medic
 	name = "doctor outfit"
 	desc = "A completly white outfit deserving of a doctor."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "chef"
 	item_state = "chef"
 	item_color = "chef"
@@ -474,6 +698,7 @@
 /obj/item/clothing/under/f13/chaplain
 	name = "Chaplain outfit"
 	desc = "Apparel of a religious priest, or minister of sorts."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "chapblack"
 	item_state = "chapblack"
 	item_color = "chapblack"
@@ -481,6 +706,7 @@
 /obj/item/clothing/under/f13/machinist
 	name = "machinist bodysuit"
 	desc = "Apparel of an old-time machinist."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "machinist"
 	item_state = "machinist"
 	item_color = "machinist"
@@ -488,6 +714,7 @@
 /obj/item/clothing/under/f13/lumberjack
 	name = "lumberjack outfit"
 	desc = "Apparel of an old-time lumberjack."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "lumberjack"
 	item_state = "lumberjack"
 	item_color = "lumberjack"
@@ -502,6 +729,7 @@
 /obj/item/clothing/under/f13/merca
 	name = "merc outfit"
 	desc = "A mercenary ragtag outfit."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "merca"
 	item_state = "merca"
 	item_color = "merca"
@@ -509,6 +737,7 @@
 /obj/item/clothing/under/f13/mercc
 	name = "merc outfit"
 	desc = "A mercenary ragtag outfit."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "mercc"
 	item_state = "mercc"
 	item_color = "mercc"
@@ -530,6 +759,7 @@
 /obj/item/clothing/under/f13/combat_shirt
 	name = "combat uniform"
 	desc = "An old combat uniform, out of use around the time of the war."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "combat_shirt"
 	item_state = "combat_shirt"
 	item_color = "combat_shirt"
@@ -580,6 +810,7 @@
 /obj/item/clothing/under/f13/bluedress
 	name = "blue dress"
 	desc = "A cute, but plain, common pre-war dress."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "blue_dress"
 	item_state = "blue_dress"
 	fitted = FEMALE_UNIFORM_TOP
@@ -588,6 +819,7 @@
 /obj/item/clothing/under/f13/pinkdress
 	name = "pink dress"
 	desc = "A cute, but plain, common pre-war dress."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "pink_dress"
 	item_state = "pink_dress"
 	fitted = FEMALE_UNIFORM_TOP
@@ -596,6 +828,7 @@
 /obj/item/clothing/under/f13/greendress
 	name = "green dress"
 	desc = "A cute, but plain, common pre-war dress."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "green_dress"
 	item_state = "green_dress"
 	fitted = FEMALE_UNIFORM_TOP
@@ -604,6 +837,7 @@
 /obj/item/clothing/under/f13/blackdress
 	name = "black dress"
 	desc = "A dark and revealing dress that mixes formality and seduction."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "blackdress"
 	item_state = "blackdress"
 	fitted = FEMALE_UNIFORM_TOP
@@ -619,6 +853,7 @@
 /obj/item/clothing/under/f13/roving
 	name = "roving trader outfit "
 	desc = "It's an outfit commonly worn by the roving traders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "roving"
 	item_state = "roving"
 	item_color = "roving"
@@ -641,6 +876,7 @@
 /obj/item/clothing/under/f13/raiderrags
 	name = "raider rags"
 	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "raiderrags"
 	item_state = "raiderrags"
 	item_color = "raiderrags"
@@ -721,12 +957,14 @@
 /obj/item/clothing/under/f13/tribe
 	name = "tribal rags"
 	desc = "Dusty rags decorated with strips of leather and small pieces of turquoise."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "tribalrags"
 	item_state = "tribalrags"
 
 /obj/item/clothing/under/f13/tribe_chief
 	name = "tribal chief robes"
 	desc = "Well maintained robes adorned with fine leather and polished turquoise."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "chiefrags"
 	item_state = "chiefrags"
 	fitted = FEMALE_UNIFORM_TOP
@@ -735,12 +973,14 @@
 /obj/item/clothing/under/f13/tribe_Hhunter
 	name = "Razorclaw robes"
 	desc = "Tanned leather robes, decorated with bones of deathclaws and marked with the great machine spirit of earth."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "hhunterrags"
 	item_state = "hhunterrags"
 
 /obj/item/clothing/under/f13/tribe_shaman
 	name = "tribal shaman robes"
 	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "shamanrags"
 	item_state = "shamanrags"
 	fitted = FEMALE_UNIFORM_TOP
@@ -791,6 +1031,7 @@
 /obj/item/clothing/under/f13/wayfarer/hunter
 	name = "rugged loincloth"
 	desc = "Minimal yet hardy clothing padded in places by leather which can be taken off if need be, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "hunter"
 	item_state = "hunter"
 	item_color = "hunter"
@@ -1014,6 +1255,7 @@
 /obj/item/clothing/under/f13/machinist
 	name = "workman outfit"
 	desc = "The apparel of an old-time machinist."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "machinist"
 	item_state = "lb_suit"
 	item_color = "machinist"
@@ -1021,6 +1263,7 @@
 /obj/item/clothing/under/f13/lumberjack
 	name = "lumberjack outfit"
 	desc = "The apparel of an old-time lumberjack."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "lumberjack"
 	item_state = "r_suit"
 	item_color = "lumberjack"
@@ -1028,6 +1271,7 @@
 /obj/item/clothing/under/f13/police
 	name = "police uniform"
 	desc = "You have the right to remain violent."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "retro_police"
 	item_state = "b_suit"
 	item_color = "retro_police"
@@ -1063,6 +1307,7 @@
 /obj/item/clothing/under/f13/bdu //WalterJe military standarts.
 	name = "battle dress uniform"
 	desc = "A standard military Battle Dress Uniform."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bdu"
 	item_state = "xenos_suit"
 	item_color = "bdu"
@@ -1071,6 +1316,7 @@
 /obj/item/clothing/under/f13/dbdu
 	name = "desert battle dress uniform"
 	desc = "A military Desert Battle Dress Uniform."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "dbdu"
 	item_state = "brownjsuit"
 	item_color = "dbdu"
@@ -1086,6 +1332,7 @@
 /obj/item/clothing/under/f13/batter //I guess we're going OFF limits.
 	name = "worn baseball uniform"
 	desc = "<b>Purification in progress...</b>"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "batter"
 	item_state = "w_suit"
 	item_color = "batter"
@@ -1093,6 +1340,7 @@
 /obj/item/clothing/under/f13/bennys //Benny's suit from Fallout: New Vegas. But Benny was just a kid back in 2255, so it's just a fancy suit for you.
 	name = "fancy suit"
 	desc = "A black and white buffalo plaid suit. Fancy!"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "benny"
 	item_state = "white_suit"
 	item_color = "benny"
@@ -1100,6 +1348,7 @@
 /obj/item/clothing/under/f13/relaxedwear
 	name = "pre-war male relaxedwear"
 	desc = "A dirty long-sleeve blue shirt with a greenish brown sweater-vest and slacks."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "relaxedwear_m"
 	item_state = "g_suit"
 	item_color = "relaxedwear_m"
@@ -1107,6 +1356,7 @@
 /obj/item/clothing/under/f13/spring
 	name = "pre-war male spring outfit"
 	desc = "A dirty long-sleeve beige shirt with a red sweater-vest and brown trousers."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "spring_m"
 	item_state = "brownjsuit"
 	item_color = "spring_m"
@@ -1114,6 +1364,7 @@
 /obj/item/clothing/under/f13/formal
 	name = "pre-war male formal wear"
 	desc = "A black jacket with an old white shirt and dirty dark purple trousers.<br>Traditionally worn by the richest of the post-War world."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "formal_m"
 	item_state = "judge"
 	item_color = "formal_m"
@@ -1121,6 +1372,7 @@
 /obj/item/clothing/under/f13/bodyguard
 	name = "bodyguard outfit"
 	desc = "A grimy pair of pre-War slacks, tie, and a dress shirt with some makeshift pauldrons made of scrap metal attached with leather straps."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bodyguard"
 	item_state = "sl_suit"
 	item_color = "bodyguard"
@@ -1135,6 +1387,7 @@
 /obj/item/clothing/under/f13/rag
 	name = "torn rags"
 	desc = "Keeps the sand outta yer crack, and not much else."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "rag"
 	item_state = "lgloves"
 	item_color = "rag"
@@ -1143,6 +1396,7 @@
 /obj/item/clothing/under/f13/tribal
 	name = "male tribal outfit"
 	desc = "Clothes made from gecko hide. Oh, so like, this is what that Darwin guy meant by, like, survival of the fittest?"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "tribal_m"
 	item_state = "lgloves"
 	item_color = "tribal_m"
@@ -1151,6 +1405,7 @@
 /obj/item/clothing/under/f13/female/tribal
 	name = "female tribal outfit"
 	desc = "Clothes made from gecko hide. Oh, so like, this is what that Darwin guy meant by, like, survival of the fittest?"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "tribal_f"
 	item_state = "lgloves"
 	item_color = "tribal_f"
@@ -1160,6 +1415,7 @@
 /obj/item/clothing/under/f13/settler
 	name = "settler outfit"
 	desc = "A more or less a crudely made tan robe with a makeshift belt made from cloth.<br>Paired with worn grey pants."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "settler"
 	item_state = "brownjsuit"
 	item_color = "settler"
@@ -1167,6 +1423,7 @@
 /obj/item/clothing/under/f13/brahmin //Male version
 	name = "male brahmin-skin outfit"
 	desc = "A basic male outfit consisting of a white shirt and patched trousers with Y-shaped suspenders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "brahmin_m"
 	item_state = "brownjsuit"
 	item_color = "brahmin_m"
@@ -1174,6 +1431,7 @@
 /obj/item/clothing/under/f13/female/brahmin //Female version
 	name = "female brahmin-skin outfit"
 	desc = "A basic female outfit consisting of a rolled-up long-sleeve shirt and patched trousers with Y-shaped suspenders.<br>Fitted for female wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "brahmin_f"
 	item_state = "brownjsuit"
 	item_color = "brahmin_f"
@@ -1198,6 +1456,7 @@
 /obj/item/clothing/under/f13/mercadv //Male version
 	name = "male merc adventurer outfit"
 	desc = "A large leather jacket with torn-off sleeves, paired with a red sweater, a necklace with three teeth of unknown origin strung on, and a pair of brown leather pants.<br>There is also a rough leather bandolier for additional storage capacity.<br>Fitted for male wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "merca_m"
 	item_state = "bl_suit"
 	item_color = "merca_m"
@@ -1205,6 +1464,7 @@
 /obj/item/clothing/under/f13/female/mercadv //Female version
 	name = "female merc adventurer outfit"
 	desc = "A large leather jacket with torn-off sleeves, paired with a midriff-revealing red and black top and a pair of brown leather pants.<br>There is also a rough leather bandolier and belt for additional storage capacity.<br>Fitted for female wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "merca_f"
 	item_state = "bl_suit"
 	item_color = "merca_f"
@@ -1213,6 +1473,7 @@
 /obj/item/clothing/under/f13/merccharm //Male version
 	name = "male merc charmer outfit"
 	desc = "A blue and gray outfit resembling a three piece suit, heavily stitched and reinforced with a small metal cup on the groin area.<br>Fitted for male wastelanders."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "mercc_m"
 	item_state = "mercc_f"
 	item_color = "mercc_m"
@@ -1220,6 +1481,7 @@
 /obj/item/clothing/under/f13/mechanic
 	name = "worn blue jumpsuit"
 	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
@@ -1227,6 +1489,7 @@
 /obj/item/clothing/under/f13/petrochico
 	name = "worn green jumpsuit"
 	desc = "A dark green colored jumpsuit, with white lines on its sleeves and a Petro-Chico patch sewn on the right breast."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "petrochico"
 	item_state = "centcom"
 	item_color = "petrochico"
@@ -1234,6 +1497,7 @@
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outift"
 	desc = "A striped brown shirt, with a pair of dark blue pants on suspenders.<br>That type of outfit is commonly worn by caravaneers and travelers."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "caravaneer"
 	item_state = "syndicate-blue"
 	item_color = "caravaneer"
@@ -1241,6 +1505,7 @@
 /obj/item/clothing/under/f13/merchant
 	name = "merchant outfit "
 	desc = "An outfit commonly worn by various wastelanders - mostly wandering traders and merchants on the market.<br>So what do you say if I buy it from you with 10% discount?"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "merchant"
 	item_state = "brownjsuit"
 	item_color = "merchant"
@@ -1248,6 +1513,7 @@
 /obj/item/clothing/under/f13/worn
 	name = "worn outfit "
 	desc = "A worn khaki shirt without any buttons left, and a ragged pair of jeans.<br>It may seem a bad outfit choice at first, yet there are wastelanders out there who can't afford even that."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "worn"
 	item_state = "brownjsuit"
 	item_color = "worn"
@@ -1255,6 +1521,7 @@
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This particular jumpsuit has no number on the back."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vault"
 	item_state = "b_suit"
 	item_color = "vault"
@@ -1263,6 +1530,7 @@
 /obj/item/clothing/under/f13/vault/v13 //The Legend is here.
 	name = "Vault 13 jumpsuit"
 	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This jumpsuit has number 13 on the back."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "vault13"
 	item_color = "vault13"
 
@@ -1442,24 +1710,28 @@
 /obj/item/clothing/under/pants/f13/ghoul
 	name = "ripped pants"
 	desc = "A pair of ripped pants that were not washed for over a hundred years.<br>Thanks to these you don't get to see ghouls genitals too often.<br><i>You can also wear these, to pretend you are a feral ghoul, just saying...</i>"
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "ghoul"
 	item_color = "ghoul"
 
 /obj/item/clothing/under/pants/f13/cloth
 	name = "cloth pants"
 	desc = "A pair of worn dusty cloth pants made of various textile pieces.<br>Commonly found all over the wasteland."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "cloth"
 	item_color = "cloth"
 
 /obj/item/clothing/under/pants/f13/caravan //Caravanner - someone who travels with caravan. Caravaneer - caravan leader.
 	name = "caravanner pants"
 	desc = "A pair of wide dusty cargo pants.<br>Commonly worn by caravanners or caravan robbers."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "caravan"
 	item_color = "caravan"
 
 /obj/item/clothing/under/pants/f13/warboy //Mad Max 4 2015 babe!
 	name = "war boy pants"
 	desc = "A pair of dark brown pants, perfect for the one who grabs the sun, riding to Valhalla."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "warboy"
 	item_color = "warboy"
 	body_parts_covered = LEGS
@@ -1580,6 +1852,7 @@
 /obj/item/clothing/under/f13/atomfaithful
 	name = "faithful attire"
 	desc = "The attire worn by those Faithful to the Division."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "atomfaithful"
 	item_state = "atomfaithful"
 	item_color = "atomfaithful"
@@ -1590,6 +1863,7 @@
 /obj/item/clothing/under/f13/atomwitchunder
 	name = "seers underclothes"
 	desc = "The underclothes of the female seers of the Division."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "atomwitchunder"
 	item_state = "atomwitchunder"
 	item_color = "atomwitchunder"
@@ -1598,6 +1872,7 @@
 /obj/item/clothing/under/f13/atombeliever
 	name = "believer clothes"
 	desc = "The clothes of a true Believer in the Division."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "atombeliever"
 	item_state = "atombeliever"
 	item_color = "atombeliever"
@@ -1615,6 +1890,7 @@
 /obj/item/clothing/under/f13/fprostitute
 	name = "feminine prostitute outfit"
 	desc = "A latex outfit for someone who sells their companionship. Or really likes the breeze."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "fprostitute"
 	item_state = "fprostitute"
 	item_color = "fprostitute"
@@ -1622,6 +1898,7 @@
 /obj/item/clothing/under/f13/mprostitute
 	name = "masculine prostitute outfit"
 	desc = "A latex outfit for someone who sells their companionship. Or really likes the breeze."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "mprostitute"
 	item_state = "mprostitute"
 	item_color = "mprostitute"
@@ -1641,6 +1918,7 @@
 /obj/item/clothing/under/f13/keksweater
 	name = "Red Sweater"
 	desc = "A dark red-sweater with some cargo-pants. Perfect for when it just gets too cold down in local air-conditioned areas."
+	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "brahminsss"
 	item_state = "brahminsss"
 

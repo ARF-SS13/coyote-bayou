@@ -25,6 +25,8 @@
 	if(stat != DEAD)
 		handle_liver()
 
+	if(stat != DEAD)
+		handle_healreservoir()
 
 /mob/living/carbon/PhysicalLife(seconds, times_fired)
 	if(!(. = ..()))
@@ -85,8 +87,9 @@
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "suffocation")
 		return TRUE
 	var/obj/item/organ/lungs = getorganslot(ORGAN_SLOT_LUNGS)
-	if(reagents.has_reagent(/datum/reagent/toxin/lexorin))
-		return
+	if(reagents) // Stops the whole issue of the reagents not initialising. I don't care on how cursed this looks anymore lmao.
+		if(reagents.has_reagent(/datum/reagent/toxin/lexorin))
+			return
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 	if(ismob(loc))
@@ -140,8 +143,9 @@
 
 	//CRIT
 	if(health <= HEALTH_THRESHOLD_FULLCRIT || !lungs || lungs.failed)
-		if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
-			return
+		if(reagents) // I know this is scuffed, but it stops unit testing from getting upset :')
+			if(reagents.has_reagent(/datum/reagent/medicine/epinephrine) && lungs)
+				return
 		adjustOxyLoss(0.5)
 
 		failed_last_breath = 1
@@ -496,7 +500,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 											"Okay, hear me out, what if we make illegal things not illegal, so that sec stops arresting us for having it?",
 											"I have a crazy idea, guys. Rather than having monkeys to test on, what if we only used apes?",
 											"Woh man ok, what if we took slime cores and smashed them into other slimes, be kinda cool to see what happens.",
-											"We're NANOtrasen but we need to unlock nano parts, what's the deal with that?"
+											"We're US Government but we need to unlock nano parts, what's the deal with that?"
 											))
 
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
@@ -739,3 +743,17 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 
 	heart.beating = !status
+
+////////////////////////////////
+//RESERVOIR FOR HEALING QUIRKS//
+////////////////////////////////
+
+/mob/living/carbon/proc/handle_healreservoir()
+	var/heal_max = 5
+	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
+		heal_max = 25
+	if(heal_reservoir < heal_max)
+		if(src.reagents.has_reagent(/datum/reagent/water))
+			heal_reservoir += 0.5
+		else
+			heal_reservoir += 0.25

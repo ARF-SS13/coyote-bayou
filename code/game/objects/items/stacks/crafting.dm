@@ -36,7 +36,7 @@
 	name = "metal parts"
 	icon_state = "sheet-metalparts"
 	singular_name = "metal part"
-	custom_materials = list(/datum/material/iron = 10000)
+	custom_materials = list(/datum/material/iron = 2000)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/metalparts
 
@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(metalparts_recipes, list(\
 	name = "high quality metal parts"
 	icon_state = "sheet-goodparts"
 	singular_name = "high quality metal part"
-	custom_materials = list(/datum/material/titanium = 10000)
+	custom_materials = list(/datum/material/titanium = 2000)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/goodparts
 
@@ -72,7 +72,9 @@ GLOBAL_LIST_INIT(metalparts_recipes, list(\
 	name = "electronic parts"
 	icon_state = "sheet-electronicparts"
 	singular_name = "electronic part"
-	custom_materials = list(/datum/material/glass = 10000)
+	custom_materials = list(/datum/material/glass = 1000,
+							/datum/material/gold = 500,
+							/datum/material/silver = 500)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/electronicparts
 

@@ -380,6 +380,7 @@
 
 
 #define MAX_CHICKENS 50
+#define MAX_MOTHERCLAWS 25
 
 ///Flags used by the flags parameter of electrocute act.
 
@@ -431,6 +432,8 @@
 #define OFFSET_MUTPARTS "mutantparts"
 
 //MINOR TWEAKS/MISC
+#define PIXELSHIFT_MIN		-12	//more shifted you can be
+#define PIXELSHIFT_MAX		12	//most shifted you can be
 #define AGE_MIN				18	//youngest a character can be //CITADEL EDIT - 17 --> 18
 #define AGE_MAX				85	//oldest a character can be
 #define WIZARD_AGE_MIN		30	//youngest a wizard can be
@@ -444,6 +447,7 @@
 #define	ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases
 #define	REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+#define REM (REAGENTS_EFFECT_MULTIPLIER * effect_mult)
 
 // Roundstart trait system
 

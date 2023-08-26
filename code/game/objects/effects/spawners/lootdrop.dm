@@ -7,29 +7,90 @@
 	var/lootdoubles = TRUE	//if the same item can be spawned twice
 	var/list/loot			//a list of possible items to spawn e.g. list(/obj/item, /obj/structure, /obj/effect)
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
+	var/delay_spawn = FALSE // allows trash spawners to know what it spawned
+	/// Chance of going up a tier. 0-100
+	var/uptier_chance = 0
+	/// List of items to pick from if the spawner rolled to go up a tier
+	var/list/uptier_list
+	/// Chance of going down a tier. 0-100
+	var/downtier_chance = 0
+	/// List of items to pick from if the spawner rolled to go down a tier
+	var/list/downtier_list
+	/// did we adjust tier?
+	var/tier_adjusted = FALSE
+	/// Will we be subject to The Loot Snap? If so, what category of snap?
+	var/snap_category
 
-/obj/effect/spawner/lootdrop/Initialize(mapload)
+/obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap, survived_snap)
 	. = ..()
-	if(loot && loot.len)
-		var/atom/A = spawn_on_turf ? get_turf(src) : loc
-		var/loot_spawned = 0
-		while((lootcount-loot_spawned) && loot.len)
-			var/lootspawn = pickweight(loot)
-			if(!lootdoubles)
-				loot.Remove(lootspawn)
+	return startup_procedure(mapload, block_tier_swap, survived_snap)
 
-			if(lootspawn)
-				var/atom/movable/spawned_loot = new lootspawn(A)
-				if (!fan_out_items)
-					if (pixel_x != 0)
-						spawned_loot.pixel_x = pixel_x
-					if (pixel_y != 0)
-						spawned_loot.pixel_y = pixel_y
-				else
-					if (loot_spawned)
-						spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(loot_spawned%2)*loot_spawned/2)*-1)+((loot_spawned%2)*(loot_spawned+1)/2*1)
-			loot_spawned++
+/obj/effect/spawner/lootdrop/proc/startup_procedure(mapload, block_tier_swap, survived_snap)
+	adjust_tier(block_tier_swap)
+	if(cull_spawners(mapload, block_tier_swap, survived_snap))
+		return INITIALIZE_HINT_NORMAL
+	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
+		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/spawn_the_stuff)
+		return INITIALIZE_HINT_NORMAL // have fun!
+	spawn_the_stuff() // lov dan
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/lootdrop/proc/cull_spawners(mapload)
+	if(!mapload || tier_adjusted)
+		snap_category = null
+		return
+	if(snap_category)
+		icon = 'icons/effects/effects.dmi'
+		icon_state = "nothing" // hide it!
+		SSitemspawners.add_to_culling(src, snap_category)
+		return TRUE
+
+/obj/effect/spawner/lootdrop/proc/adjust_tier(block_tier_swap)
+	if(block_tier_swap)
+		return
+	if(LAZYLEN(uptier_list) && prob(uptier_chance))
+		loot = uptier_list
+		tier_adjusted = TRUE
+	else if(LAZYLEN(downtier_list) && prob(downtier_chance))
+		loot = downtier_list
+		tier_adjusted = TRUE
+
+/obj/effect/spawner/lootdrop/proc/spawn_the_stuff(list/listhack)
+	if(!LAZYLEN(loot))
+		qdel(src)
+		return
+	var/atom/A = spawn_on_turf ? get_turf(src) : loc
+	for(var/tospawn in 1 to min(lootcount, LAZYLEN(loot)))
+		var/lootspawn = pickweight(loot)
+		if(!lootspawn)
+			qdel(src)
+			return
+		if(!lootdoubles)
+			loot.Remove(lootspawn)
+		if(lootspawn)
+			var/atom/movable/spawned_loot = SpawnTheLootDrop(A, lootspawn)
+			if(islist(listhack))
+				listhack |= spawned_loot
+			if(fan_out_items)
+				spawned_loot.pixel_x = spawned_loot.pixel_y = ((!(tospawn%2)*tospawn/2)*-1)+((tospawn%2)*(tospawn+1)/2*1)
+			else
+				if(pixel_x != 0)
+					spawned_loot.pixel_x = pixel_x
+				if(pixel_y != 0)
+					spawned_loot.pixel_y = pixel_y
+	if(delay_spawn)
+		qdel(src)
+
+/obj/effect/spawner/lootdrop/proc/SpawnTheLootDrop(loc, path) // This makes sure the item is properly casted to the correct type, as /obj/item/stack doesn't like new() when you cast it as atom/movable :(
+	if(ispath(path, /obj/item/stack))
+		var/amount = rand(1,3)
+		var/obj/item/stack/S = new path(loc, amount)
+		return S
+	
+	var/block_recursive_tier_swap = (tier_adjusted && ispath(path, /obj/effect/spawner/lootdrop))
+	var/atom/movable/spawned_loot = new path(loc, block_recursive_tier_swap)
+	return spawned_loot
+
 
 /obj/effect/spawner/lootdrop/bedsheet
 	icon = 'icons/obj/bedsheets.dmi'

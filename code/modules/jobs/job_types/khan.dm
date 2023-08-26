@@ -34,7 +34,7 @@
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/khan = 1
+	//	/obj/item/storage/bag/money/small/khan = 1
 		)
 
 /datum/outfit/job/khan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -83,7 +83,7 @@
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/khan = 1
+	//	/obj/item/storage/bag/money/small/khan = 1
 		)
 
 /datum/outfit/job/khanleader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

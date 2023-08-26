@@ -7,7 +7,7 @@
 	slot = "vagina"
 	size = 1 //There is only 1 size right now
 	shape = DEF_VAGINA_SHAPE
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE
+	genital_flags = CAN_MASTURBATE_WITH|GENITAL_CAN_AROUSE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE
 	masturbation_verb = "finger"
 	arousal_verb = "You feel wetness on your crotch"
 	unarousal_verb = "You no longer feel wet"
@@ -21,6 +21,7 @@
 	var/clit_len = 0.25
 	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred")
 	associated_has = CS_VAG // for cockstring stuff
+	hide_flag = HIDE_VAG // for hideflag stuff
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()

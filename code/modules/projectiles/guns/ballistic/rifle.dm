@@ -20,16 +20,11 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgun"
 	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -39,16 +34,6 @@
 	spawnwithmagazine = TRUE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	cock_sound = 'sound/weapons/shotgunpump.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
-	)
 
 /* /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -82,15 +67,8 @@
 	desc = "should not exist"
 	can_scope = TRUE
 	scope_state = "scope_long"
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
@@ -100,16 +78,7 @@
 	scope_x_offset = 5
 	scope_y_offset = 13
 	cock_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Cowboy Repeater
  * Baseline Repeater
@@ -123,32 +92,65 @@
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+
+/* * * * * * * * * * * * * * * *
+* Volcanic pistol
+* -6 round capacity
+* + Slightly better than the .45 ACP base damage
+* +/- Muh lever action
+* + Based off RDO, can be dual wielded
+* + Uses .45 acp, the lord's caliber
+* * * * * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/rifle/repeater/volcanic
+	name = "Lever action pistol"
+	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself."
+	icon_state = "volcanic"
+	item_state = "volcanic"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
+	can_suppress = FALSE
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
 	)
+	reskinnable_component = /datum/component/reskinnable/volcanic
+
+
+/obj/item/gun/ballistic/rifle/repeater/customvolcanictox
+	name = "Engraved Volcanic Pistol"
+	desc = "A engraved Volcanic pistol. This pistol has an ivory grip with gold plating. The lever itself was modified to allow it to be cocked by a single hand while. The gun's reciever is engraved with a baroque style portrait of a moth and feline."
+	icon_state = "customvolcanic"
+	item_state = "goldengun"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
+	can_suppress = FALSE
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
 /* * * * * * * * * * *
  * Coyote Repeater
  * Baseline Repeater Tribal Skin
@@ -162,32 +164,15 @@
 	icon_state = "cowboyrepeatert"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Trail Repeater
  * Big Repeater
@@ -201,32 +186,15 @@
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3.3)
+	init_recoil = CARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Trail Repeater Tribal
  * Rain Stick
@@ -240,32 +208,15 @@
 	icon_state = "trailcarbinet"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3.3)
+	init_recoil = RIFLE_RECOIL(1, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Brush Repeater
  * Bigger Repeater
@@ -279,33 +230,16 @@
 	icon_state = "brushgun"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3.6)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Brush Repeater Tribal
  * Medicine Stick
@@ -319,33 +253,16 @@
 	icon_state = "brushgunt"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3.6)
+	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Ranger repeater
  * Biggest repeater
@@ -359,33 +276,16 @@
 	icon_state = "308-lever"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_BASE
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.4)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 0.9)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Ranger repeater tribal
  * Smell-The-Roses
@@ -399,33 +299,16 @@
 	icon_state = "smell-the-roses"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
-
-	slowdown = GUN_SLOWDOWN_REPEATER
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_BASE
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.4)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
-	)
+
 /* * * * * * * * * * *
  * Three oh hate
  * unique repeater
@@ -460,46 +343,29 @@
 
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
-	desc = "A sturdy hunting rifle, chambered in .30-06. and in use before the war."
+	desc = "A sturdy hunting rifle, chambered in .30-06 Springfield."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_long"
 	scope_x_offset = 4
 	scope_y_offset = 12
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	reskinnable_component = /datum/component/reskinnable/hunting_rifle
 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
 
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
 /obj/item/gun/ballistic/rifle/hunting/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -515,20 +381,11 @@
 	icon_state = "308special"
 	item_state = "308special"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(3)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_long"
 	scope_x_offset = 4
@@ -540,16 +397,6 @@
 		/datum/firemode/semi_auto/slower
 	)
 
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * Remmington Bolt-Action Rifle
@@ -559,20 +406,12 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/hunting/remington
-	name = "Remington rifle"
-	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	name = "Remington 700"
+	desc = "This bolt action rifle was popular among hunters, police, and the military before the War."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_BASE
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 /obj/item/gun/ballistic/rifle/hunting/remington/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -599,18 +438,10 @@
 	icon_state = "paciencia"
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(1, 1)
 
 	zoomable = TRUE
 	zoom_amt = 10
@@ -638,23 +469,15 @@
 /obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin-Nagant m38"
 	desc = "A rusty old Russian bolt action chambered in 7.62."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -665,18 +488,9 @@
 	knife_y_offset = 21
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
+
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
@@ -690,24 +504,17 @@
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
-	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
-	icon_state = "enfield2"
-	item_state = "308"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
+	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "smle"
+	item_state = "smle"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_FAST
-	init_recoil = RIFLE_RECOIL(2.8)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -718,42 +525,59 @@
 	knife_y_offset = 21
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
+	)
+	reskinnable_component = /datum/component/reskinnable/enfield
+
+/obj/item/gun/ballistic/rifle/enfield/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
+/obj/item/gun/ballistic/rifle/enfield/jungle
+	name = "Jungle Carbine"
+	desc = "A shortened Enfield used for secondary service in the Australian and New Zealand army for jungle warfare. Made from an SMLE, it holds 10 rounds but sadly cannot fit a scope."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "junglecarbine"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_FAST
+	init_recoil = RIFLE_RECOIL(1, 1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	cock_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+
 	)
 
 /obj/item/gun/ballistic/rifle/antique/gras
 	name = "Gras"
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // will see if it's too much
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(2.5)
+	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -764,19 +588,10 @@
 	knife_y_offset = 25
 	cock_sound = 'sound/f13weapons/grasbolt.ogg'
 	fire_sound = 'sound/f13weapons/gras.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
-	)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reskinnable_component = /datum/component/reskinnable/gras
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
@@ -797,22 +612,16 @@
 	icon = 'modular_coyote/icons/objects/churroguns.dmi'
 	icon_state = "salvaged_eastern_rifle"
 	item_state = "marksman"
-	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
-
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	draw_time = GUN_DRAW_LONG
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(0.95)
+	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
-	gun_tags = list(GUN_SCOPE)
 
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -824,16 +633,65 @@
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
 	casing_ejector = TRUE
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+
+
+
+
+
+/* * * * * * * * * * *
+ * snowflake varmint rifle
+ * identical to a varmint rifle excepting in projectile cosmetics
+ * .223 / 5.56mm
+ * Scopeable
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+
+/obj/item/gun/ballistic/rifle/magnetic
+	name = "Hephestus Ferromagnetic Rifle"
+	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "magriflev"
+	item_state = "magrifle"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/magrifle.ogg'
+	can_scope = TRUE
+	casing_ejector = TRUE
+	weapon_special_component = null
+
+/obj/item/gun/ballistic/rifle/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
+	BB.name = "ferromagnetic bullet"
+	BB.icon = 'icons/obj/projectiles.dmi'
+	BB.icon_state = "magjectile-large"
+	BB.pass_flags = PASSTABLE
+	BB.light_range = 3
+	BB.damage_type = BRUTE
+	BB.flag = "bullet"
+	BB.impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	BB.light_color = LIGHT_COLOR_RED
+	BB.is_reflectable = TRUE
+	BB.hitsound = 'sound/weapons/elecfire.ogg'
+	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 
 /* * * * * * * * * * * * * * * * * *
  * Magazine-Fed Bolt-Action Rifles *
@@ -852,17 +710,9 @@
 /obj/item/gun/ballistic/rifle/mag
 	name = "magazine fed bolt-action rifle template"
 	desc = "should not exist."
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
@@ -915,38 +765,42 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/amr
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	zoom_factor = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = HMG_RECOIL(3)
+	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+
+//no scope, less capacity, more common
+/obj/item/gun/ballistic/rifle/mag/boys
+	name = "Boys anti-tank rifle"
+	desc = "A heavy british rifle boasting a strong kick and an even stronger punch."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "boys"
+	item_state = "boys"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/boys
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HMG_RECOIL(3, 3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
 	)
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting

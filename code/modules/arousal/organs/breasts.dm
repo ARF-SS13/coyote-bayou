@@ -20,6 +20,7 @@
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
 	associated_has = CS_BOOB // for cockstring stuff
+	hide_flag = HIDE_BOOBS // for hideflag stuff
 
 GLOBAL_LIST_INIT(breast_values, list(
 	"a" = 1,
@@ -163,7 +164,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	size = D.features["breasts_size"]
 	shape = D.features["breasts_shape"]
 	if(!D.features["breasts_producing"])
-		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
+		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_MASTURBATE_WITH)
 	if(!isnum(size))
 		cached_size = GLOB.breast_values[size]
 	else

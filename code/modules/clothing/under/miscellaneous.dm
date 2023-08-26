@@ -1,9 +1,14 @@
+/obj/item/clothing/under/
+	name = "Base"
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/under/misc/pj/red
 	name = "red pj's"
 	desc = "Sleepwear."
 	icon_state = "red_pyjamas"
 	item_state = "w_suit"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/pj/blue
 	name = "blue pj's"
@@ -11,6 +16,7 @@
 	icon_state = "blue_pyjamas"
 	item_state = "w_suit"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/misc/patriotsuit
 	name = "Patriotic Suit"
@@ -271,6 +277,7 @@
 	body_parts_covered = CHEST|GROIN
 	body_parts_hidden = 0 // nudie~
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/misc/durathread
 	name = "durathread jumpsuit"
@@ -806,3 +813,783 @@
 	item_color = "kimono_earth"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+
+/obj/item/clothing/under/blueskirt_alt
+	name = "black and blue skirt"
+	icon_state = "blue_skirt2"
+	item_state = "blue_skirt2"
+	item_color = "blue_skirt2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+//NCRANGER STUFF
+
+/obj/item/clothing/under/burma
+	name = "Jungle Uniform"
+	desc = "A Commonwealth made jungle uniform commonly used in Burma"
+	icon_state = "burma"
+	item_state = "burma"
+	item_color = "burma"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/burma/britishbattledress
+	name = "British Battle Dress"
+	desc = "The No. 5 Uniform, was the combat uniform worn by British Commonwealth and Imperial forces specifically for temperate, cold or even artic conditions"
+	icon_state = "british_battle_dress"
+	item_state = "british_battle_dress"
+	can_adjust = TRUE
+
+//Stuff from Civ 13
+/obj/item/clothing/under/civ
+	name = "Base"
+	mutantrace_variation = NONE
+
+/obj/item/clothing/under/civ/indiancloth_one
+	name = "Fuzzy loincloth, just waist. Short."
+	icon_state = "indian1"
+	item_state = "indian1"
+	item_color = "indian1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_two
+	name = "Fuzzy loincloth, just waist. Longer."
+	icon_state = "indian2"
+	item_state = "indian2"
+	item_color = "indian2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+
+/obj/item/clothing/under/civ/indiancloth_three
+	name = "Fuzzy loincloth, waist and chest."
+	icon_state = "indian3"
+	item_state = "indian3"
+	item_color = "indian3"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_shaman
+	name = "Fuzzy loincloth, shaman"
+	icon_state = "indianshaman"
+	item_state = "indianshaman"
+	item_color = "indianshaman"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/indiancloth_chef
+	name = "Fuzzy loincloth, chef"
+	icon_state = "indianchef"
+	item_state = "indianchef"
+	item_color = "indianchef"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/portuguese_sailor1
+	name = "Green Sailor"
+	icon_state = "portuguese_sailor1"
+	item_state = "portuguese_sailor1"
+	item_color = "portuguese_sailor1"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/portuguese_sailor2
+	name = "Green sailor, with bow"
+	icon_state = "portuguese_sailor_alt"
+	item_state = "portuguese_sailor_alt"
+	item_color = "portuguese_sailor_alt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/sailor_port
+	name = "Pink Sailor"
+	icon_state = "sailor_port"
+	item_state = "sailor_port"
+	item_color = "sailor_port"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/spanish_sailor
+	name = "Brown Sailor"
+	icon_state = "spanish_sailor"
+	item_state = "spanish_sailor"
+	item_color = "spanish_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/spanish_soldier
+	name = "brown suit"
+	icon_state = "spanish_soldier"
+	item_state = "spanish_soldier"
+	item_color = "spanish_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/british_soldier
+	name = "white suit with black pants"
+	icon_state = "british_soldier"
+	item_state = "british_soldier"
+	item_color = "british_soldier"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/french_sailor
+	name = "french sailor"
+	icon_state = "french_sailor"
+	item_state = "french_sailor"
+	item_color = "french_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/dutch_sailor
+	name = "white shirt with orange pants"
+	icon_state = "dutch_sailor"
+	item_state = "dutch_sailor"
+	item_color = "dutch_sailor"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = TRUE
+
+/obj/item/clothing/under/civ/dress2
+	name = "blue peasant dress"
+	icon_state = "dress2"
+	item_state = "dress2"
+	item_color = "dress2"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dress3
+	name = "brown peasant dress"
+	icon_state = "dress3"
+	item_state = "dress3"
+	item_color = "dress3"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dressg
+	name = "green peasant dress"
+	icon_state = "dressg"
+	item_state = "dressg"
+	item_color = "dressg"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dressr
+	name = "red peasant dress"
+	icon_state = "dressr"
+	item_state = "dressr"
+	item_color = "dressr"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/leopardpelt
+	name = "leopard pelt"
+	icon_state = "giant_leopard_pelt"
+	item_state = "giant_leopard_pelt"
+	item_color = "giant_leopard_pelt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/arabw_robe
+	name = "blue robe"
+	icon_state = "arabw_robe"
+	item_state = "arabw_robe"
+	item_color = "arabw_robe"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/arabw_tunic
+	name = "blue tunic"
+	icon_state = "arabw_tunic"
+	item_state = "arabw_tunic"
+	item_color = "arabw_tunic"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/mayan_loincloth
+	name = "long loincloth"
+	icon_state = "mayan_loincloth"
+	item_state = "mayan_loincloth"
+	item_color = "mayan_loincloth"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/greatshendyt
+	name = "Egypt dress"
+	icon_state = "greatshendyt"
+	item_state = "greatshendyt"
+	item_color = "greatshendyt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/pharaoh
+	name = "pharaoh dress"
+	icon_state = "pharaoh"
+	item_state = "pharaoh"
+	item_color = "pharaoh"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/dark_hanfu
+	name = "dark hanfu"
+	icon_state = "dark_hanfu"
+	item_state = "dark_hanfu"
+	item_color = "dark_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/light_hanfu
+	name = "light hanfu"
+	icon_state = "light_hanfu"
+	item_state = "light_hanfu"
+	item_color = "light_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/green_hanfu
+	name = "green hanfu"
+	icon_state = "green_hanfu"
+	item_state = "green_hanfu"
+	item_color = "green_hanfu"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+//Swimsuits
+
+/obj/item/clothing/under/swimsuit/black
+	name = "black swimsuit"
+	desc = "An oldfashioned black swimsuit."
+	icon_state = "swim_black"
+	item_state = "swim_black"
+	item_color = "swim_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/blue
+	name = "blue swimsuit"
+	desc = "An oldfashioned blue swimsuit."
+	icon_state = "swim_blue"
+	item_state = "swim_blue"
+	item_color = "swim_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/purple
+	name = "purple swimsuit"
+	desc = "An oldfashioned purple swimsuit."
+	icon_state = "swim_purp"
+	item_state = "swim_purp"
+	item_color = "swim_purp"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/green
+	name = "green swimsuit"
+	desc = "An oldfashioned green swimsuit."
+	icon_state = "swim_green"
+	item_state = "swim_green"
+	item_color = "swim_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/red
+	name = "red swimsuit"
+	desc = "An oldfashioned red swimsuit."
+	icon_state = "swim_red"
+	item_state = "swim_red"
+	item_color = "swim_red"
+	can_adjust = FALSE
+
+
+/obj/item/clothing/under/swimsuit/striped
+	name = "striped swimsuit"
+	desc = "A more revealing striped swimsuit."
+	icon_state = "swim_striped"
+	item_state = "swim_striped"
+	item_color = "swim_striped"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/white
+	name = "white swimsuit"
+	desc = "A classic one piece."
+	icon_state = "swim_white"
+	item_state = "swim_white"
+	item_color = "swim_white"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/swimsuit/earth
+	name = "earthen swimsuit"
+	desc = "A design more popular on Earth these days."
+	icon_state = "swim_earth"
+	item_state = "swim_earth"
+	item_color = "swim_earth"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/revealingdress
+	name = "Revealing Dress"
+	desc = "A blue topped dress with a black bottom. Quite revealing!"
+	icon_state = "revealingdress"
+	item_state = "revealingdress"
+	item_color = "revealingdress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rippedpunk
+	name = "Ripped Punk"
+	desc = "A ripped black outfit"
+	icon_state = "rippedpunk"
+	item_state = "rippedpunk"
+	item_color = "rippedpunk"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gothic_dress_virgo
+	name = "gothic dress"
+	desc = "Hot Topic and stuff."
+	icon_state = "gothic"
+	item_state = "gothic"
+	item_color = "gothic"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/fancy_red_formaldress
+	name = "Red Formal"
+	desc = "blood red and long"
+	icon_state = "formalred"
+	item_state = "formalred"
+	item_color = "formalred"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/greenasym
+	name = "Green wrapped dress"
+	desc = "A green dress that wraps around your form."
+	icon_state = "greenasym"
+	item_state = "greenasym"
+	item_color = "greenasym"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/cyberhell
+	name = "Cyber Hell"
+	desc = "Some sort of dress. Fancy."
+	icon_state = "cyberhell"
+	item_state = "cyberhell"
+	item_color = "cyberhell"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/floofdress
+	name = "floof dress"
+	desc = "A white floofy dress"
+	icon_state = "floofdress"
+	item_state = "floofdress"
+	item_color = "floofdress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/blackngold
+	name = "black and gold dress"
+	desc = "A fancy dress of black and gold"
+	icon_state = "blackngold"
+	item_state = "blackngold"
+	item_color = "blackngold"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/sheerblue
+	name = "A sheer blue dress"
+	desc = "A pretty blue shimmering dress."
+	icon_state = "sheerblue"
+	item_state = "sheerblue"
+	item_color = "sheerblue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/whitegown
+	name = "White Gown"
+	desc = "A white gown with black sleeves"
+	icon_state = "whitegown"
+	item_state = "whitegown"
+	item_color = "whitegown"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/pinksun
+	name = "pink summer dress"
+	desc = "A dress!"
+	icon_state = "pinksun"
+	item_state = "pinksun"
+	item_color = "pinksun"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/whitesun
+	name = "white summer dress"
+	desc = "A dress!"
+	icon_state = "whitesun"
+	item_state = "whitesun"
+	item_color = "whitesun"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/bowsun
+	name = "pink summer dress with a bow"
+	desc = "A dress!"
+	icon_state = "bowsun"
+	item_state = "bowsun"
+	item_color = "bowsun"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/bluesun
+	name = "blue summer dress"
+	desc = "A dress!"
+	icon_state = "bluesun"
+	item_state = "bluesun"
+	item_color = "bluesun"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/shortpink
+	name = "short pink dress"
+	desc = "A dress!"
+	icon_state = "shortpink"
+	item_state = "shortpink"
+	item_color = "shortpink"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/twopiece
+	name = "A two piece dress"
+	desc = "A dress!"
+	icon_state = "twopiece"
+	item_state = "twopiece"
+	item_color = "twopiece"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gothic2
+	name = "gothic dress"
+	desc = "A dress!"
+	icon_state = "gothic2"
+	item_state = "gothic2"
+	item_color = "gothic2"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/wednesday
+	name = "Wednesday dress"
+	desc = "A dress!"
+	icon_state = "wednesday"
+	item_state = "wednesday"
+	item_color = "wednesday"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gayvampire
+	name = "vampire uniform"
+	desc = "I want to suck your blood"
+	icon_state = "gayvampire"
+	item_state = "gayvampire"
+	item_color = "gayvampire"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/corsetdress
+	name = "corset dress"
+	desc = "A dress!"
+	icon_state = "corsetdress"
+	item_state = "corsetdress"
+	item_color = "corsetdress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/goldwrap
+	name = "golden wrap"
+	desc = "A dress!"
+	icon_state = "goldwrap"
+	item_state = "goldwrap"
+	item_color = "goldwrap"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/golddress
+	name = "golden dress"
+	desc = "A dress!"
+	icon_state = "golddress"
+	item_state = "golddress"
+	item_color = "golddress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/countess
+	name = "countess dress"
+	desc = "A dress!"
+	icon_state = "countess"
+	item_state = "countess"
+	item_color = "countess"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/skyrat/maid
+	name = "maid dress"
+	desc = "Clean those windows! Dust the floors!"
+	icon_state = "maid_skyrat"
+	item_state = "maid_skyrat"
+	item_color = "maid_skyrat"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/skyrat/flower_kimono
+	name = "Kimono"
+	desc = "Somehow you feel like a weeb in this."
+	icon_state = "flower_kimono"
+	item_state = "flower_kimono"
+	item_color = "flower_kimono"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/hawi/orange
+	name = "orange hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_orange"
+	item_state = "tacticool_hawaiian_orange"
+	item_color = "tacticool_hawaiian_orange"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/hawi/blue
+	name = "blue hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_blue"
+	item_state = "tacticool_hawaiian_blue"
+	item_color = "tacticool_hawaiian_blue"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/hawi/purple
+	name = "purple hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_purple"
+	item_state = "tacticool_hawaiian_purple"
+	item_color = "tacticool_hawaiian_purple"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/hawi/green
+	name = "green hawaiian"
+	desc = "Surfs up!"
+	icon_state = "tacticool_hawaiian_green"
+	item_state = "tacticool_hawaiian_green"
+	item_color = "tacticool_hawaiian_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/toxotai
+	name = "Robe with black belt"
+	icon_state = "toxotai"
+	item_state = "toxotai"
+	item_color = "toxotai"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/thebes
+	name = "blue swamp hoplite"
+	icon_state = "thebes"
+	item_state = "thebes"
+	item_color = "thebes"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/corinthia
+	name = "green swamp hoplite"
+	icon_state = "corinthia"
+	item_state = "corinthia"
+	item_color = "corinthia"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/greek_commander
+	name = "swamp hoplite commander"
+	icon_state = "greek_commander"
+	item_state = "greek_commander"
+	item_color = "greek_commander"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/athens
+	name = "dark blue swamp hoplite"
+	icon_state = "athens"
+	item_state = "athens"
+	item_color = "athens"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/civ/roman_centurion
+	name = "robe with red belt"
+	icon_state = "roman_centurion"
+	item_state = "roman_centurion"
+	item_color = "roman_centurion"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/japanese_uniform
+	name = "Green uniform"
+	desc = "A green uniform. Camo!"
+	icon_state = "japan_uniform"
+	item_state = "japan_uniform"
+	item_color = "japan_uniform"
+	can_adjust = FALSE
+
+//Lucine's Sprites
+
+/obj/item/clothing/under/gorka_alt
+	name = "Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_alt"
+	item_state = "gorka_alt"
+	item_color = "gorka_alt"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gorka_ss
+	name = "Alt Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_ss"
+	item_state = "gorka_ss"
+	item_color = "gorka_ss"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gorka_tan
+	name = "Tan Gorka outfit"
+	desc = "It's a uniform I guess."
+	icon_state = "gorka_tan"
+	item_state = "gorka_tan"
+	item_color = "gorka_tan"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/puffy
+	name = "puffy dress"
+	desc = "A pink and puffy dress!"
+	icon_state = "puffydress"
+	item_state = "puffydress"
+	item_color = "puffydress"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/labor_black
+	name = "black labor suit"
+	desc = "A slim fitting black suit"
+	icon_state = "labor_black"
+	item_state = "labor_black"
+	item_color = "labor_black"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/divine_robes
+	name = "divine robes"
+	desc = "Rather holy robes."
+	icon_state = "divine_robes"
+	item_state = "divine_robes"
+	item_color = "divine_robes"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/blue_kimono
+	name = "Dark blue Kimono"
+	desc = "A dark blue kimono."
+	icon_state = "blue_kimono"
+	item_state = "blue_kimono"
+	item_color = "blue_kimono"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/miku_bikini
+	name = "Blue bikini"
+	desc = "A light blue bikini with a red bow!"
+	icon_state = "miku_bikini"
+	item_state = "miku_bikini"
+	item_color = "miku_bikini"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/shark
+	name = "shark uniform"
+	desc = "A skimpy light grey uniform. The same color as a shark!"
+	icon_state = "shark_cloth"
+	item_state = "shark_cloth"
+	item_color = "shark_cloth"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/tribal_colorful
+	name = "bright outfit"
+	desc = "A skimply outfit with bright colors."
+	icon_state = "tribal_colorful"
+	item_state = "tribal_colorful"
+	item_color = "tribal_colorful"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/tribal_colorful/top
+	name = "bright outfit top"
+	desc = "A skimply outfit with bright colors, just the top not the skirt included!"
+	icon_state = "tribal_colorful_top"
+	item_state = "tribal_colorful_top"
+	item_color = "tribal_colorful_top"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/green
+	name = "green flow dress"
+	desc = "A soft looking dress, green in color."
+	icon_state = "flow_green"
+	item_state = "flow_green"
+	item_color = "flow_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flow_dress/red
+	name = "red flow dress"
+	desc = "A soft looking dress, red in color."
+	icon_state = "flow_red"
+	item_state = "flow_red"
+	item_color = "flow_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/desert_uniform
+	name = "desert uniform"
+	desc = "A desert uniform used by commonwealth nations"
+	icon_state = "desert_uniform"
+	item_state = "desert_uniform"
+	item_color = "desert_uniform"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/shrine_maiden
+	name = "shrine maiden"
+	desc = "A tradional dress for shrine maidens to wear"
+	icon_state = "shrine_maiden"
+	item_state = "shrine_maiden"
+	item_color = "shrine_maiden"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/striped_clown
+	name = "striped clown overalls"
+	desc = "Honk honk! Oh wait you don't know clown? It's a clown uniform of course!"
+	icon_state = "striped_clown"
+	item_state = "striped_clown"
+	item_color = "striped_clown"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/engineer_alt
+	name = "engineering jumpsuit"
+	desc = "A skin tight jumpsuit in bright orange (or is it red?) and yellow."
+	icon_state = "engine_alt"
+	item_state = "engine_alt"
+	item_color = "engine_alt"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/under/witchfinder
+	name = "witch finder"
+	desc = "A dark style uniform."
+	icon_state = "witchfinder"
+	item_state = "witchfinder"
+	item_color = "witchfinder"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/jester_muli
+	name = "Jester"
+	desc = "A dark, yet multicolored, jester outfit."
+	icon_state = "jester_muli"
+	item_state = "jester_muli"
+	item_color = "jester_muli"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flannelgreen
+	name = "Green Flannel"
+	desc = "A green flannel shirt with blue jeans."
+	icon_state = "fannel_green"
+	item_state = "fannel_green"
+	item_color = "fannel_green"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/flannelred
+	name = "Red Flannel"
+	desc = "A red flannel shirt with blue jeans."
+	icon_state = "fannel_red"
+	item_state = "fannel_red"
+	item_color = "fannel_red"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/greek_dress
+	name = "Greek Dress"
+	desc = "Make sure this dress doesn't creak."
+	icon_state = "greek_dress"
+	item_state = "greek_dress"
+	item_color = "greek_dress"
+	can_adjust = TRUE
+
+// Bayou Stuff - started by Kelprunner
+
+/obj/item/clothing/under/tactiflannel
+	name = "mercenary flannel"
+	desc = "A pair of Tiger Stripe or Woodland camoflagued fatigue pants paired with a red flannel shirt. It looks a little worn."
+	icon_state = "tactiflannel"
+	item_state = "tactiflannel"
+	item_color = "tactiflannel"
+	can_adjust = TRUE
+	mutantrace_variation = STYLE_DIGITIGRADE

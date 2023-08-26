@@ -3,6 +3,8 @@
 #define BAD_INIT_SLEPT 4
 #define BAD_INIT_NO_HINT 8
 
+#define PRINT_ATOM_STATS 1
+
 SUBSYSTEM_DEF(atoms)
 	name = "Atoms"
 	init_order = INIT_ORDER_ATOMS
@@ -16,8 +18,10 @@ SUBSYSTEM_DEF(atoms)
 
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
+	to_chat(world, span_boldannounce("Initializing Genetics..."))
 	setupGenetics()
 	initialized = INITIALIZATION_INNEW_MAPLOAD
+	to_chat(world, span_boldannounce("Initializing Atoms..."))
 	InitializeAtoms()
 	return ..()
 
@@ -40,12 +44,68 @@ SUBSYSTEM_DEF(atoms)
 				CHECK_TICK
 	else
 		count = 0
+#ifdef PRINT_ATOM_STATS
+		var/all_atoms = LAZYLEN(world.contents)
+		var/portion = 1
+		var/portion_amount = 0.1
+		var/next_milestone = round(all_atoms * (portion * portion_amount))
+		var/batch_start = REALTIMEOFDAY
+		var/start_timery = REALTIMEOFDAY
+		var/this_batch = 0
+		var/atoms_did = 0
+		var/list/rates = list()
+		var/list/num_of_kinds = list(
+			/obj = 0,
+			/obj/structure = 0,
+			/obj/item = 0,
+			/mob = 0,
+			/turf = 0,
+			/area = 0,
+			)
+#endif
 		for(var/atom/A in world)
+#ifdef PRINT_ATOM_STATS
+			atoms_did++
+#endif
 			if(!(A.flags_1 & INITIALIZED_1))
 				InitAtom(A, mapload_arg)
 				++count
+#ifdef PRINT_ATOM_STATS
+				this_batch++
+				for(var/kind in num_of_kinds)
+					if(istype(A, kind))
+						num_of_kinds[kind]++
+				if(atoms_did % next_milestone == 0)
+					all_atoms = LAZYLEN(world.contents)
+					var/batch_end = REALTIMEOFDAY
+					var/batch_time = ((batch_end - batch_start) * 0.1)
+					var/batch_rate = (this_batch / batch_time)
+					var/batch_percent = (atoms_did / all_atoms) * 100
+					portion++
+					next_milestone = round(all_atoms * (portion * portion_amount))
+					rates += batch_rate
+					batch_start = REALTIMEOFDAY
+					this_batch = 0
+					var/current_time = REALTIMEOFDAY - start_timery
+					var/batch_time_left = (current_time / atoms_did) * (all_atoms - atoms_did)
+					to_chat(world, span_boldannounce("Init'd [shorten_number(atoms_did, 2)]/[shorten_number(all_atoms, 2)] ([round(batch_percent)]%) atoms in [DisplayTimeText(current_time)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+#endif
 				CHECK_TICK
-
+#ifdef PRINT_ATOM_STATS
+		var/avrate = 0
+		for(var/r in rates)
+			avrate += r
+		avrate /= rates.len
+		var/list/output_kinds = list()
+		output_kinds += "[shorten_number(num_of_kinds[/obj], 1)] objects"
+		output_kinds += "[shorten_number(num_of_kinds[/obj/item], 1)] items"
+		output_kinds += "[shorten_number(num_of_kinds[/obj/structure], 1)] structures"
+		output_kinds += "[shorten_number(num_of_kinds[/mob], 1)] mobs"
+		output_kinds += "[shorten_number(num_of_kinds[/turf], 1)] turfs"
+		output_kinds += "[shorten_number(num_of_kinds[/area], 1)] areas"
+		to_chat(world, span_boldannounce("~Initialized [shorten_number(count, 2)] atoms ([shorten_number(atoms_did - count, 2)] didn't need it)! Average rate: [shorten_number(avrate, 1)]/sec.~"))
+		to_chat(world, span_notice("Of these atoms, [english_list(output_kinds)] initialized."))
+#endif
 	testing("Initialized [count] atoms")
 	pass(count)
 

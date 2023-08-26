@@ -74,7 +74,17 @@
 
 //mob traits
 /// Forces the user to stay unconscious.
-#define TRAIT_KNOCKEDOUT "knockedout"
+#define TRAIT_ADV_SEEKER	"adventure_seeker"
+#define TRAIT_ADV_ER		"adventurer"
+#define TRAIT_ADV_LFG			"looking_for_group"
+#define TRAIT_ADV_SOLO			"solo"
+#define TRAIT_ADV_GUNNER		"gunner"
+#define TRAIT_ADV_FIGHTER		"fighter"
+#define TRAIT_ADV_TANK			"tank"
+#define TRAIT_ADV_BRUISER		"bruiser"
+#define TRAIT_ADV_ROGUE			"rogue"
+#define TRAIT_ADV_HEALER		"healer"
+#define TRAIT_KNOCKEDOUT		"knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
 #define TRAIT_EMOTEMUTE			"emotemute"
@@ -138,6 +148,23 @@
 #define TRAIT_OPTIMIST			"optimist"
 #define TRAIT_IN_HEAT			"ERP Receptive"
 #define TRAIT_HEAT_DETECT		"ERP Seeking"
+#define TRAIT_ERPBOYKISSER		"ERP Seeking - Boykisser"
+#define TRAIT_ERPGIRLKISSER		"ERP Seeking - Girlkisser"
+#define TRAIT_ERPANYKISSER		"ERP Seeking - Anykisser"
+#define TRAIT_ERPQUICKY			"ERP Seeking - Quickie Focused"
+#define TRAIT_ERPLONGTERM		"ERP Seeking - Long Term Focused"
+#define TRAIT_ERPBOTTOM			"ERP Seeking - Bottom"
+#define TRAIT_ERPTOP			"ERP Seeking - Top"
+#define TRAIT_ERPSWITCH			"ERP Seeking - Switch"
+#define TRAIT_ERPFLIRTY			"ERP Seeking - Flirty"
+#define TRAIT_SHY				"Shy"
+#define TRAIT_RPFOCUSED			"RP Focused"
+#define TRAIT_RPLONGTERM		"RP Focused Long Term" //RP Focused on long term interactions
+#define TRAIT_RPSHORTTERM		"RP Focused Short Term" //RP Focused on short term interactions
+#define TRAIT_RPSERIOUS			"RP Focused - Serious RP" //RP Focused on more serious subjects
+#define TRAIT_RPLIGHT			"RP Focused - Lighter RP" //RP Focused on more light hearted subjects
+#define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
+#define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
@@ -221,7 +248,9 @@
 #define TRAIT_DRUNK_HEALING		"drunk_healing"
 #define TRAIT_TAGGER			"tagger"
 #define TRAIT_PHOTOGRAPHER		"photographer"
+#define TRAIT_JOURNALIST		"journalist"
 #define TRAIT_MUSICIAN			"musician"
+#define TRAIT_SWAMPWIZARD		"swamp_wizard"
 #define TRAIT_PERMABONER		"permanent_arousal"
 #define TRAIT_NEVERBONER		"never_aroused"
 #define TRAIT_MASO              "masochism"
@@ -253,6 +282,7 @@
 #define TRAIT_MUTATION_STASIS			"mutation_stasis" //Prevents processed genetics mutations from processing.
 #define TRAIT_FAST_PUMP				"fast_pump"
 #define TRAIT_AUTO_DRAW				"auto_draw" //can use bows good
+#define TRAIT_PLAY_DEAD "play_dead" // gives 10u ghoul powder every *deathgasp
 #define TRAIT_NO_PROCESS_FOOD	"no-process-food" // You don't get benefits from nutriment, nor nutrition from reagent consumables
 #define TRAIT_NICE_SHOT			"nice_shot" //hnnnnnnnggggg..... you're pretty good...
 #define TRAIT_PERFECT_ATTACKER	"perfect_attacker"
@@ -276,6 +306,10 @@
 #define TRAIT_NO_CHOCOLATE "chocolate-intolerance"
 #define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
 #define TRAIT_AUTOBREW "autobrewery-syndrome"
+#define TRAIT_ZOOMIES "zoomies"
+#define TRAIT_SUPER_ZOOMIES "super zoomies"
+#define TRAIT_ENDLESS_RUNNER "endless_runner"
+#define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
@@ -328,13 +362,17 @@
 #define	TRAIT_VERYFLIMSY			"veryflimsy" //lowers HP by 20
 #define TRAIT_MARS_TEACH		"mars_teachings" //for legion unique functions
 #define TRAIT_EXPLOSIVE_CRAFTING "explosive_crafting" //can craft explosives and bombs
-#define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced explosive crafting" //can craft almost all kinds of explosives
+#define TRAIT_ADVANCED_EXPLOSIVE_CRAFTING "advanced_explosive_crafting" //can craft almost all kinds of explosives
 /// Lets your tongue heal damage on limbs
-#define TRAIT_HEAL_TONGUE "healing tongue"
+#define TRAIT_HEAL_TONGUE "healing_tongue"
+#define TRAIT_HEAL_TOUCH "healing_touch"
+#define TRAIT_HEAL_TEND "healing_triage"
+#define TRAIT_IMPROVED_HEALING "improved_healing"
 /// Lets your tongue apply awful bandages to limbs
-#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
+//#define TRAIT_BANDAGE_TONGUE "coagulating tongue"
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
+#define TRAIT_NO_SECOND_WIND "no_second_wind"
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
@@ -368,6 +406,12 @@
 #define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 /// Can't leave a storage!
 #define TRAIT_NO_STORAGE_REMOVE "TRAIT_NO_STORAGE_REMOVE"
+#define TRAIT_ARTIFACT_BLOCKER "TRAIT_ARTIFACT_BLOCKER"
+
+/// Artifact traits
+#define TRAIT_PENANCE "penance" // died with the wretched thing
+#define TRAIT_PENANCE_COMPLETE "penance_complete" // held that wretched thing for a long time
+#define TRAIT_ARTIFACT_IDENTIFY "artifact_identify" // always knows everything about artifacts
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

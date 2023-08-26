@@ -5,7 +5,7 @@
 	icon_state = "survivalkit"
 	component_type = /datum/component/storage/concrete/box/survivalkit
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_POCKET | ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_POCKET | INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit/PopulateContents()
@@ -34,8 +34,8 @@
 
 /obj/item/storage/survivalkit/tribal/PopulateContents()
 	new /obj/item/flashlight/flare/torch(src)
-	new /obj/item/flashlight/flare/torch(src)
 	new /obj/item/melee/onehanded/knife/bone(src)
+	new /obj/item/firebow(src)
 
 /obj/item/storage/survivalkit/tribal/empty/PopulateContents()
 	return
@@ -143,7 +143,7 @@
 	icon_state = "survivalkit_triple"
 	component_type = /datum/component/storage/concrete/box/survivalkit/triple
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_SUITSTORE
+	slot_flags = INV_SLOTBIT_SUITSTORE
 
 /obj/item/storage/survivalkit/triple/PopulateContents()
 	return

@@ -268,6 +268,21 @@
 	icon_state = "pill_mentat"
 	list_reagents = list(/datum/reagent/medicine/mentat = 10)
 
+/obj/item/reagent_containers/pill/mentat/grape
+	name = "Grape Mentat"
+	color = "#6699ff" //red and blue make purple
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/grapejuice = 5)
+
+/obj/item/reagent_containers/pill/mentat/orange
+	name = "Orange Mentat"
+	color = "#ffff00" //red and yellow make orange
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/orangejuice = 5)
+
+/obj/item/reagent_containers/pill/mentat/berry
+	name = "Berry Mentat"
+	color = null //just red for this one
+	list_reagents = list(/datum/reagent/medicine/mentat = 10, /datum/reagent/consumable/berryjuice = 5)
+
 /obj/item/reagent_containers/pill/fixer
 	name = "Fixer pill"
 	desc = "A bitter pill that is known to rapidly treat the addictions, withdrawal effects, and other drawbacks of other chemicals. \
@@ -314,6 +329,27 @@
 		It's pretty obvious that if you eat this pill, it'll make your breasts grow larger. Just, uh, something to keep in mind."
 	icon_state = "pill10"
 	list_reagents = list(/datum/reagent/breast_enlarger = 30)
+
+/obj/item/reagent_containers/pill/butt_enlarger
+	name = "callipygian capsule"
+	desc = "An incredibly heavy, coin-shaped pill. It smells slightly salty and with a minor odor of copper. \
+		There's an imprinted stencil of a woman with a heart shaped buttox, alongside a bold '30U' on the opposite face. \
+		It's pretty obvious that if you eat this, it'll make your butt larger or something to that effect."
+	icon_state = "pill10"
+	list_reagents = list(/datum/reagent/butt_enlarger = 30)
+
+/obj/item/reagent_containers/pill/penis_enhancement
+	name = "male enhancement pill"
+	desc = "A huge blue pill. Embossed on one side with a +6 inches and on the other is a winky face. \
+		If you had to hazard a guess, this might increase the size of your johnson. \
+		Though it won't make you confident enough to talk to women, still."
+	list_reagents = list(/datum/reagent/penis_enlarger = 30)
+
+/obj/item/reagent_containers/pill/belly_enlarger
+	name = "weight gain pill"
+	desc = "An oily, fishy smelling pill. With a +200lbs stamp on one side. \
+	It's probably safe to assume this would cause a lot of belly growth."
+	list_reagents = list(/datum/reagent/belly_enlarger = 30)
 
 /obj/item/reagent_containers/pill/random
 	name = "randomized pill"

@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/speed = 1
 
 	var/idlesound = null //What to play when idling, if anything.
-	var/aggrosound = null
+	//var/aggrosound = null
 	/// set to a value between -100 and 100 to change the mob's pitch. Set to 0 for default pitch
 	var/sound_pitch = 0
 	/// How much will the pitch vary? first is how much lower it can go, second is how high it can go. from -100 to 100. please make the first number smaller than the second
@@ -201,6 +201,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	var/obj/effect/proc_holder/mob_common/make_nest/make_a_nest
 	var/obj/effect/proc_holder/mob_common/unmake_nest/unmake_a_nest
+
+	///If this is a player's ckey then this mob was spawned as a player's character
+	var/player_character = null
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -319,6 +322,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(client)
 		to_chat(user, span_warning("Someone's in there! Wait your turn!"))
 		return FALSE
+	if(player_character && player_character != user.ckey)
+		to_chat(user, span_warning("This mob is someone else's character so you cannot hop into them!"))
+		return FALSE
 	if(!user.key)
 		return FALSE
 	if(!islist(GLOB.playmob_cooldowns[user.key]))
@@ -363,12 +369,67 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	return ..()
 
+//Coyote Add
+/mob
+	///A detailed description of this mob that can be read if you examine them.
+	var/flavortext = ""
+	///A detailed description of the player who's controlling this mob's out-of-character roleplaying preferences. Do not set.
+	var/oocnotes = ""
+	///The specific name of this mob's species or subtype. Used for examine text (ie "this is Nutty a Squirrel", where Squirrel is the verbose_species)
+	var/verbose_species = null
+
+/mob/living/simple_animal/proc/print_flavor_text()
+	if(flavortext && flavortext != "")
+		var/msg = replacetext(flavortext, "\n", " ")
+		if(length(msg) <= 40)
+			return "<span class='notice'>[msg]</span>"
+		else
+			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
+
 /mob/living/simple_animal/examine(mob/user)
-	. = ..()
-	if(lazarused)
-		. += span_danger("This creature looks like it has been revived!")
-	. += mob_armor_description
-	
+	if(player_character)
+		var/list/dat = list()
+		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
+		if(profilePicture)
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+		//Hands
+		for(var/obj/item/I in held_items)
+			if(!(I.item_flags & ABSTRACT))
+				dat += "[p_they(TRUE)] [p_are()] holding [I.get_examine_string(user)] in [p_their()] [get_held_index_name(get_held_index_of_item(I))]."
+		//Internal storage
+		if(internal_storage && !(internal_storage.item_flags & ABSTRACT))
+			dat += "[p_they(TRUE)] [p_are()] wearing [internal_storage.get_examine_string(user)]."
+		//Cosmetic hat - provides no function other than looks
+		if(head && !(head.item_flags & ABSTRACT))
+			dat += "[p_they(TRUE)] [p_are()] wearing [head.get_examine_string(user)] on [p_their()] head."
+		if(flavortext)
+			dat += "[print_flavor_text()]"
+		if(oocnotes)
+			dat += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];oocnotes=1'>\[View\]</a>"
+		if(src.getBruteLoss())
+			if(src.getBruteLoss() < (maxHealth/2))
+				dat += "<span class='warning'>[p_they(TRUE)] looks bruised.</span>"
+			else
+				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely bruised and bloodied!</B></span>"
+		if(src.getFireLoss())
+			if(src.getFireLoss() < (maxHealth/2))
+				dat += "<span class='warning'>[p_they(TRUE)] looks burned.</span>"
+			else
+				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely burned.</B></span>"
+		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
+		else if(disconnect_time)
+			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
+		if(lazarused)
+			dat += span_danger("[p_they(TRUE)] seems to have been revived!<br>")
+		dat += "<span class='info'>*---------*</span>"
+		return dat
+	else
+		. = ..()
+		. += mob_armor_description
+		if(lazarused)
+			. += span_danger("[p_they(TRUE)] seems to have been revived!")
+
 /// If user is set, the mob will be told to be loyal to that mob
 /mob/living/simple_animal/proc/make_ghostable(mob/user)
 	can_ghost_into = TRUE
@@ -398,6 +459,12 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/updatehealth()
 	..()
 	health = clamp(health, 0, maxHealth)
+	var/slow = 0
+	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
+		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
+		if(health_percent <= 50)//Start slowdown at half health
+			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
 /mob/living/simple_animal/update_stat()
 	if(status_flags & GODMODE)
@@ -582,17 +649,33 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot_drop_amount == MOB_LOOT_ALL || !isnum(loot_drop_amount))
-		for(var/drop in loot)
-			for(var/i in 1 to max(1, loot[drop]))
-				new drop(drop_location())
-		return
+		if(loot_drop_amount == MOB_LOOT_ALL)
+			loot_amount_random = FALSE
+		loot_drop_amount = LAZYLEN(loot)
 	var/list/lootlist = loot
+	var/list/droppedstuff = list()
+	var/list/turfs = list()
+	for(var/turf/T in hearers(1, src))
+		if(T.density)
+			continue
+		turfs |= T
+	if(!LAZYLEN(turfs))
+		turfs |= get_turf(src)
 	for(var/i in 1 to loot_amount_random ? rand(1,loot_drop_amount) : loot_drop_amount)
 		if(!LAZYLEN(lootlist))
 			return
 		var/dropthing = pickweight_n_take(lootlist)
 		if(ispath(dropthing))
-			new dropthing(drop_location())
+			var/turf/spawn_here = pick(turfs)
+			var/atom/newthing = new dropthing(get_turf(spawn_here))
+			if(istype(newthing, /obj/effect/spawner/lootdrop))
+				var/obj/effect/spawner/lootdrop/lut = newthing
+				if(lut.delay_spawn)
+					lut.spawn_the_stuff(droppedstuff)
+				continue
+			droppedstuff |= newthing
+	for(var/atom/thingy in droppedstuff)
+		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
@@ -612,7 +695,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(deathmessage || !del_on_death)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
-		..()
+		..(gibbed)
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
@@ -622,7 +705,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon_state = icon_dead
 		density = FALSE
 		lying = 1
-		..()
+		..(gibbed)
+
+/mob/living/simple_animal/drop_all_held_items(skip_worn = FALSE)
+	if(internal_storage && !skip_worn)
+		dropItemToGround(internal_storage)
+	if(head && !skip_worn)
+		dropItemToGround(head)
+	. = ..()
 
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
 	if(see_invisible < the_target.invisibility)
@@ -710,18 +800,17 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	else
 		..()
 
-/* /mob/living/simple_animal/update_mobility()
+/mob/living/simple_animal/update_mobility()
 	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
-		drop_all_held_items()
 		mobility_flags = NONE
 	else if(buckled)
 		mobility_flags = ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT
-	update_transform()
+//	update_transform()
 	update_action_buttons_icon()
-	return mobility_flags */
+	return mobility_flags
 
 /* /mob/living/simple_animal/update_transform()
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
@@ -789,7 +878,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(!dextrous)
 		return
-	if(!hand_index)
+	if(!hand_index && held_items.len)//Divide by zero prevention
 		hand_index = (active_hand_index % held_items.len)+1
 	var/oindex = active_hand_index
 	active_hand_index = hand_index
@@ -869,7 +958,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!ckey && !stat)//Not unconscious
 		if(AIStatus == AI_IDLE)
 			toggle_ai(AI_ON)
-
+	update_health_hud()
 
 /mob/living/simple_animal/onTransitZ(old_z, new_z)
 	..()
@@ -878,14 +967,38 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		toggle_ai(initial(AIStatus))
 
 /mob/living/simple_animal/Life()
+	update_health_hud()
 	. = ..()
-	if(stat)
+	if(stat == DEAD)
 		return
 	if (idlesound)
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
 	adjustStaminaLoss(-stamcrit_threshold * 0.01)
+
+/mob/living/simple_animal/update_health_hud()
+	if(!client || !hud_used)
+		return
+	if(hud_used.healths)
+		if(stat != DEAD)
+			. = 1
+			if(health >= maxHealth)
+				hud_used.healths.icon_state = "health0"
+			else if(health > maxHealth*0.8)
+				hud_used.healths.icon_state = "health1"
+			else if(health > maxHealth*0.6)
+				hud_used.healths.icon_state = "health2"
+			else if(health > maxHealth*0.4)
+				hud_used.healths.icon_state = "health3"
+			else if(health > maxHealth*0.2)
+				hud_used.healths.icon_state = "health4"
+			else if(health > 0)
+				hud_used.healths.icon_state = "health5"
+			else
+				hud_used.healths.icon_state = "health6"
+		else
+			hud_used.healths.icon_state = "health7"
 
 /mob/living/simple_animal/update_stamina()
 	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
@@ -914,6 +1027,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	walk(src, 0)
 	set_resting(FALSE, FALSE, FALSE)
 	update_mobility()
+
+/mob/living/simple_animal/fully_heal(admin_revive = FALSE)
+	. = ..()
+	unstamcrit()
 
 /mob/living/simple_animal/proc/sever_link_to_nest()
 	if(nest)
@@ -1169,3 +1286,89 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	descriptors += "\n"
 	if(LAZYLEN(descriptors))
 		mob_armor_description = jointext(descriptors, "")
+
+//Coyote Add
+/mob/living/simple_animal/throw_item(atom/target)
+	throw_mode_off()
+	if(!target || !isturf(loc))
+		return
+	if(istype(target, /obj/screen))
+		return
+	if(IS_STAMCRIT(src))
+		to_chat(src, span_warning("You're too exhausted."))
+		return
+
+	var/random_turn = a_intent == INTENT_HARM
+	//END OF CIT CHANGES
+
+	var/obj/item/I = get_active_held_item()
+
+	var/atom/movable/thrown_thing
+	var/mob/living/throwable_mob
+
+	if(istype(I, /obj/item/clothing/head/mob_holder))
+		var/obj/item/clothing/head/mob_holder/holder = I
+		if(holder.held_mob)
+			throwable_mob = holder.held_mob
+			holder.release()
+
+	if(!I || throwable_mob)
+		if(!throwable_mob && pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
+			throwable_mob = pulling
+
+		if(throwable_mob && !throwable_mob.buckled)
+			thrown_thing = throwable_mob
+			if(pulling)
+				stop_pulling()
+			if(HAS_TRAIT(src, TRAIT_PACIFISM))
+				to_chat(src, span_notice("You gently let go of [throwable_mob]."))
+				return
+
+			adjustStaminaLossBuffered(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2))// throwing an entire person shall be very tiring
+			var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
+			var/turf/end_T = get_turf(target)
+			if(start_T && end_T)
+				log_combat(src, throwable_mob, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+
+	else if(!CHECK_BITFIELD(I.item_flags, ABSTRACT) && !HAS_TRAIT(I, TRAIT_NODROP))
+		thrown_thing = I
+		dropItemToGround(I)
+
+		if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
+			to_chat(src, span_notice("You set [I] down gently on the ground."))
+			return
+
+		adjustStaminaLossBuffered(I.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST))
+
+	if(thrown_thing)
+		var/power_throw = 0
+		if(HAS_TRAIT(src, TRAIT_HULK))
+			power_throw++
+		if(pulling && grab_state >= GRAB_NECK)
+			power_throw++
+		visible_message(span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"), \
+						span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"))
+		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
+		do_attack_animation(target, no_effect = 1)
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
+		newtonian_move(get_dir(target, src))
+		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
+
+/mob/living/simple_animal/proc/toggle_throw_mode()
+	if(stat)
+		return
+	if(in_throw_mode)
+		throw_mode_off()
+	else
+		throw_mode_on()
+
+/mob/living/simple_animal/proc/throw_mode_off()
+	in_throw_mode = 0
+	if(client && hud_used)
+		hud_used.throw_icon.icon_state = "act_throw_off"
+
+/mob/living/simple_animal/proc/throw_mode_on()
+	in_throw_mode = 1
+	if(client && hud_used)
+		hud_used.throw_icon.icon_state = "act_throw_on"
+//End Coyote Add

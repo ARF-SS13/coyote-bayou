@@ -103,9 +103,7 @@
 	item_state = "hostrench"
 	flags_inv = 0
 	strip_delay = 80
-	unique_reskin = list("Coat" = "hostrench",
-						"Cloak" = "trenchcloak"
-						)
+	reskinnable_component = /datum/component/reskinnable/hos_trench_coat
 
 /obj/item/clothing/suit/armor/medium/vest/warden
 	name = "warden's jacket"

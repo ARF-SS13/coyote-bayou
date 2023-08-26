@@ -29,6 +29,9 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
+	waddle_amount = 5
+	waddle_up_time = 1
+	waddle_side_time = 1
 	loot = list(/obj/item/stack/f13Cash/random/med)
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
@@ -103,8 +106,8 @@
 	casingtype = /obj/item/ammo_casing/shotgun
 	loot = list(
 		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/bomb/tier1,
-		/obj/effect/spawner/lootdrop/f13/crafting
+		/obj/effect/spawner/lootdrop/f13/common_bombs,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mats
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -151,7 +154,7 @@
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
 	loot = list(
 		/obj/item/stack/f13Cash/random/med,
-		/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2
+		/obj/effect/spawner/lootdrop/f13/uncommon_mags
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -235,7 +238,7 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,
 		/obj/item/gun/ballistic/rifle/hunting,
-		/obj/effect/spawner/lootdrop/f13/armor/random
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor
 		)
 	robust_searching = TRUE
 	speak = list(
@@ -279,7 +282,7 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(
 		/obj/item/gun/ballistic/shotgun/trench,
-		/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mags,
 		/obj/item/stack/f13Cash/random/low,
 		/obj/item/clothing/suit/armor/medium/vest/breastplate/light
 		)
@@ -357,6 +360,61 @@
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
 
+// POWER ARMOR VARIANT 2.0
+/mob/living/simple_animal/hostile/renegade/traitor
+	name = "Brotherhood of Steel Traitor"
+	desc = "A former Brotherhood of Steel Paladin, now turn coat for the Renegades. You imagine this is who is responsible for the siege."
+	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
+	icon_state = "rebound_chosen"
+	icon_living = "rebound_chosen"
+	icon_dead = "mercenary_ghoul_dead"
+	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR
+	maxHealth = 300
+	health = 300
+	healable = 1
+	melee_damage_lower = 55
+	melee_damage_upper = 60
+	retreat_distance = 4
+	minimum_distance = 2
+	ranged = 1
+	attack_verb_simple = "power-fists"
+	attack_sound = 'sound/weapons/slam.ogg'
+	extra_projectiles = 4
+	ranged_cooldown_time = 2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	sight_shoot_delay_time = 0 SECONDS // he's a boss after all
+	projectiletype = /obj/item/projectile/beam/laser/laer/hitscan
+	projectilesound = 'sound/f13weapons/laerfire.ogg'
+	loot = list(
+		/obj/item/book/granter/trait/pa_wear,
+		/obj/item/stack/f13Cash/random/high,
+		/obj/item/advanced_crafting_components/alloys,
+		/obj/item/stack/sheet/plasteel/five,
+		/obj/effect/spawner/lootdrop/f13/rare_armor
+		)
+	speak = list(
+		"Death to the Brotherhood!",
+		"Loyalty doesn't feed my family's bellies!",
+		"My benefactors send their regards!",
+		"Let's see how fast you can really go!",
+		"Leave, before you get hurt!"
+		)
+	speak_emote = list("says")
+	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/renegade/meister/movement_delay()
+	return 6
+
 // HEALER VARIANT
 /mob/living/simple_animal/hostile/renegade/doc
 	name = "Renegade Doc"
@@ -388,8 +446,8 @@
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/medical/vault/meds, 
-		/obj/item/gun/ballistic/revolver/m29, 
+		/obj/effect/spawner/lootdrop/f13/common_medicine,
+		/obj/item/gun/ballistic/revolver/m29,
 		/obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 
 	projectile_sound_properties = list(

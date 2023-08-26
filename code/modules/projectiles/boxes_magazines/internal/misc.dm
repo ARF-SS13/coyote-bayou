@@ -36,7 +36,7 @@
 	can_change_caliber = FALSE
 
 /obj/item/ammo_box/magazine/internal/cylinder/brick
-	name = "brick launcher chamger"
+	name = "brick launcher chamber"
 	ammo_type = /obj/item/ammo_casing/caseless/brick
 	caliber = list(CALIBER_BRICK)
 	max_ammo = 1
@@ -46,3 +46,9 @@
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test
 	max_ammo = 30
+
+/obj/item/ammo_box/magazine/internal/cylinder/flintlock
+	name = "flintlock internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	caliber = list(CALIBER_FLINTLOCK)
+	max_ammo = 1

@@ -277,8 +277,16 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"cat tongue" = /obj/item/organ/tongue/cat,
 	"dog tongue" = /obj/item/organ/tongue/dog,
 	"french tongue" = /obj/item/organ/tongue/french,
+	"dutch tongue" = /obj/item/organ/tongue/dutch,
+	"red river tongue" = /obj/item/organ/tongue/redriver,
 	"scottish tongue" = /obj/item/organ/tongue/scottish,
+	"swedish tongue" = /obj/item/organ/tongue/swedish,
+	"japanese tongue" = /obj/item/organ/tongue/japanese,
+	"chinese tongue" = /obj/item/organ/tongue/chinese,
+	"irish tongue" = /obj/item/organ/tongue/irish,
+	"slurry tongue" = /obj/item/organ/tongue/slurry,
 	"bug tongue" = /obj/item/organ/tongue/bug,
+	"vampire tongue" = /obj/item/organ/tongue/vampire
 	//"skeleton tongue" = /obj/item/organ/tongue/bone,
 	//"fly tongue" = /obj/item/organ/tongue/fly,
 	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc
@@ -293,7 +301,7 @@ GLOBAL_LIST_INIT(unlocked_mutant_parts, list("horns", "insect_fluff"))
 GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color"))
 
 //body ids that have greyscale sprites
-GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin"))
+GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin","spider"))
 
 //body ids that have prosthetic sprites
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))
@@ -302,7 +310,7 @@ GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","g
 GLOBAL_LIST_INIT(nongendered_limb_types, list("fly", "zombie" ,"synth", "shadow", "cultgolem", "agent", "plasmaman", "clockgolem", "clothgolem", "smutant"))
 
 //list of eye types, corresponding to a respective left and right icon state for the set of eyes
-GLOBAL_LIST_INIT(eye_types, list("normal", "insect", "moth", "double", "double2", "double3", "cyclops", "shadekin"))
+GLOBAL_LIST_INIT(eye_types, list("normal", "anime", "wide", "derpy", "insect", "moth", "double", "double2", "double3", "cyclops", "shadekin"))
 
 //list linking bodypart bitflags to their actual names
 GLOBAL_LIST_INIT(bodypart_names, list(num2text(HEAD) = "Head", num2text(CHEST) = "Chest", num2text(LEG_LEFT) = "Left Leg", num2text(LEG_RIGHT) = "Right Leg", num2text(ARM_LEFT) = "Left Arm", num2text(ARM_RIGHT) = "Right Arm"))

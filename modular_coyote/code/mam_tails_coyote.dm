@@ -615,3 +615,59 @@
 	icon_state = "fluffy"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MUTCOLORS
+
+//Pony tails. From MLP
+
+/datum/sprite_accessory/tails/mam_tails/ponytail1
+	name = "Pony tail, one"
+	icon_state = "pony1"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/ponytail2
+	name = "Pony tail, two"
+	icon_state = "pony2"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/ponytail3
+	name = "Pony tail, three"
+	icon_state = "pony3"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/corgi
+	name = "Corgi tail"
+	icon_state = "corgi"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/corgi
+	name = "Corgi tail"
+	icon_state = "corgi"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/turkey
+	name = "Turkey Tail"
+	icon_state = "turkey"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/slugcat
+	name = "cat slug tail"
+	icon_state = "slugcat"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/tent
+	name = "Ocotopuss"
+	icon_state = "tent"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/xeno
+	name = "Xeno"
+	icon_state = "xeno"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS

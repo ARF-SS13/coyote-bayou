@@ -210,7 +210,7 @@
 
 /obj/item/clothing/shoes/bhop
 	name = "jump boots"
-	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement."
+	desc = "Boots with a suspiciously jet-shaped protrusion on the bottom that hums and splutters with occasional flame. A hands-free booster, for the brave."
 	icon_state = "jetboots"
 	resistance_flags = FIRE_PROOF
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
@@ -263,7 +263,7 @@
 
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"
-	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either." //Thanks Fel
+	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
 	icon_state = "wheelys"
 	actions_types = list(/datum/action/item_action/wheelys)
 	var/wheelToggle = FALSE //False means wheels are not popped out
@@ -301,7 +301,7 @@
 
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
-	desc = "They'll sure kindle something in you, and it's not childhood nostalgia..."
+	desc = "A kaleidescope of light bursts from these shoes with every footfall. A scattering of color lights up the night."
 	icon_state = "kindleKicks"
 	actions_types = list(/datum/action/item_action/kindleKicks)
 	light_system = MOVABLE_LIGHT
@@ -392,6 +392,28 @@
 	desc = "A standard pair of brown cowboy boots."
 	icon_state = "cowboyboots"
 	can_be_tied = FALSE
+
+/obj/item/clothing/shoes/unmcb
+	name = "Standard UNMC boots"
+	desc = "A set of standard UMC boots. The shin guards, knee pads, and thigh armor are mainly used to prevent scraping than actual combat. The material seems to be of a lightweight material."
+	icon_state = "unmcb"
+	item_state = "unmcb"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_MELEE_T1)
+	can_be_tied = FALSE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	equip_delay_self = 1.5
+	equip_delay_other = 1.5
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
+
+/obj/item/clothing/shoes/unmcb/winter
+	name = "Winterized UNMC Boots"
+	desc = "A set of UNMC boots, these are painted in white dye to resemble basic winter camoflauge"
+	icon_state = "unmcsnow"
+	item_state = "unmcsnow"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
 
 /obj/item/clothing/shoes/cowboyboots/black
 	name = "black cowboy boots"
@@ -501,3 +523,33 @@
 /obj/item/clothing/shoes/clown
 	name = "Clown Shoes"
 	icon_state = "clown"
+
+/obj/item/clothing/shoes/brit
+	name = "Commonwealth Boots"
+	desc = "British style black ankle boots with a canvas gaiter around the ankle"
+	icon_state = "brit_boots"
+
+/obj/item/clothing/shoes/fifi
+	name = "Fifi"
+	icon_state = "fifi_socks"
+
+/obj/item/clothing/shoes/ww2brown
+	name = "Type three service shoe"
+	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
+	icon_state = "ww2_brown"
+
+/obj/item/clothing/shoes/putt
+	name = "long puttees"
+	desc = "Long woolen leg wraps used sense the first world war"
+	icon_state = "putt"
+
+/obj/item/clothing/shoes/cowboy/alt
+	name = "Cowboy Boots, alt"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_alt"
+
+/obj/item/clothing/shoes/cowboy/ranger
+	name = "Ranger Cowboy"
+	desc = "A set of cowboy boots. Yeehaw!"
+	icon_state = "cowboy_ranger"
+

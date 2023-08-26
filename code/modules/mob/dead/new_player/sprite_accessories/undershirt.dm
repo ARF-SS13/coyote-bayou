@@ -515,3 +515,289 @@
 	name = "cropped denim jacket"
 	icon_state = "ncrcfjacketcrop"
 	covers_belly = FALSE
+
+//Fennis Nipple Additions
+
+/datum/sprite_accessory/underwear/top/nipple_a
+	name = "A-cup nipple"
+	icon_state = "pair_nip_a"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_b
+	name = "B-cup nipple"
+	icon_state = "pair_nip_b"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_c
+	name = "C-cup nipple"
+	icon_state = "pair_nip_c"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_d
+	name = "D-cup nipple"
+	icon_state = "pair_nip_d"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_e
+	name = "E-cup nipple"
+	icon_state = "pair_nip_e"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_f
+	name = "F-cup nipple"
+	icon_state = "pair_nip_f"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_g
+	name = "G-cup nipple"
+	icon_state = "pair_nip_g"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+/datum/sprite_accessory/underwear/top/nipple_h
+	name = "H-cup nipple"
+	icon_state = "pair_nip_h"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_i
+	name = "I-cup nipple"
+	icon_state = "pair_nip_I"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+/datum/sprite_accessory/underwear/top/nipple_j
+	name = "J-cup nipple"
+	icon_state = "pair_nip_j"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_k
+	name = "K-cup nipple"
+	icon_state = "pair_nip_k"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_l
+	name = "L-cup nipple"
+	icon_state = "pair_nip_l"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_m
+	name = "M-cup nipple"
+	icon_state = "pair_nip_M"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/nipple_n
+	name = "N-cup nipple"
+	icon_state = "pair_nip_n"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/bowbraalt
+	name = "Bow Bra - Alt"
+	icon_state = "bowbraalt"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/bowbra
+	name = "Bow Bra"
+	icon_state = "bowbra"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/bowbraneko
+	name = "Bow Bra - Neko"
+	icon_state = "bowbra_neko"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/bowbraswimming
+	name = "Bow Bra - Swimming"
+	icon_state = "bowbra_swimming"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/bowbraswimmingalt
+	name = "Bow Bra Swimming - Alt"
+	icon_state = "bowbra_swimming_alt"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+
+// Shapley Shirts//
+
+/datum/sprite_accessory/underwear/top/shapelypetite
+	name = "Shapely Shirt - Petite"
+	icon_state = "shapely_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelygirlish
+	name = "Shapely Shirt - Girlish"
+	icon_state = "shapely_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelycurvy
+	name = "Shapely Shirt - Curvy"
+	icon_state = "shapely_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybusty
+	name = "Shapely Shirt - Busty"
+	icon_state = "shapely_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybackbreaker
+	name = "Shapely Shirt - Backbreakers"
+	icon_state = "shapely_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Shoulderless (ss)
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesspetite
+	name = "Shapely Shoulderless Shirt - Petite"
+	icon_state = "shapelyss_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessgirlish
+	name = "Shapely Shoulderless Shirt - Girlish"
+	icon_state = "shapelyss_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesscurvy
+	name = "Shapely Shoulderless Shirt - Curvy"
+	icon_state = "shapelyss_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessbusty
+	name = "Shapely Shoulderless Shirt - Busty"
+	icon_state = "shapelyss_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlessbackbreaker
+	name = "Shapely Shoulderless Shirt - Backbreakers"
+	icon_state = "shapelyss_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Tube Top (tt)
+
+/datum/sprite_accessory/underwear/top/shapelytubetoppetite
+	name = "Shapely Tube Top Shirt - Petite"
+	icon_state = "shapelytt_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopgirlish
+	name = "Shapely Tube Top Shirt - Girlish"
+	icon_state = "shapelytt_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopcurvy
+	name = "Shapely Tube Top Shirt - Curvy"
+	icon_state = "shapelytt_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopbusty
+	name = "Shapely Tube Top Shirt - Busty"
+	icon_state = "shapelytt_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopbackbreaker
+	name = "Shapely Tube Top Shirt - Backbreakers"
+	icon_state = "shapelytt_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+	
+	//Shapely Bra (bra)
+
+/datum/sprite_accessory/underwear/top/shapelybrapetite
+	name = "Shapely Bra - Petite"
+	icon_state = "shapelybra_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybragirlish
+	name = "Shapely Bra - Girlish"
+	icon_state = "shapelybra_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybracurvy
+	name = "Shapely Bra - Curvy"
+	icon_state = "shapelybra_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabusty
+	name = "Shapely Bra - Busty"
+	icon_state = "shapelybra_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabackbreaker
+	name = "Shapely Bra - Backbreakers"
+	icon_state = "shapelybra_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE

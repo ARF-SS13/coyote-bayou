@@ -24,10 +24,10 @@
 		if(SLOT_HEAD)
 			if(head)
 				return 0
-			if(!((I.slot_flags & ITEM_SLOT_HEAD) || (I.slot_flags & ITEM_SLOT_MASK)))
+			if(!((I.slot_flags & INV_SLOTBIT_HEAD) || (I.slot_flags & INV_SLOTBIT_MASK)))
 				return 0
 			return 1
-		if(SLOT_GENERC_DEXTROUS_STORAGE)
+		if(SLOT_GENERIC_DEXTROUS_STORAGE)
 			if(internal_storage)
 				return 0
 			return 1
@@ -38,7 +38,7 @@
 	switch(slot_id)
 		if(SLOT_HEAD)
 			return head
-		if(SLOT_GENERC_DEXTROUS_STORAGE)
+		if(SLOT_GENERIC_DEXTROUS_STORAGE)
 			return internal_storage
 	return ..()
 
@@ -66,7 +66,7 @@
 		if(SLOT_HEAD)
 			head = I
 			update_inv_head()
-		if(SLOT_GENERC_DEXTROUS_STORAGE)
+		if(SLOT_GENERIC_DEXTROUS_STORAGE)
 			internal_storage = I
 			update_inv_internal_storage()
 		else
@@ -77,7 +77,7 @@
 	I.equipped(src, slot)
 
 /mob/living/simple_animal/drone/getBackSlot()
-	return SLOT_GENERC_DEXTROUS_STORAGE
+	return SLOT_GENERIC_DEXTROUS_STORAGE
 
 /mob/living/simple_animal/drone/getBeltSlot()
-	return SLOT_GENERC_DEXTROUS_STORAGE
+	return SLOT_GENERIC_DEXTROUS_STORAGE

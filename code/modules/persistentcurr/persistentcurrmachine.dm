@@ -1,6 +1,6 @@
 /obj/machinery/mineral/wasteland_vendor/bank
 	name = "Banking Machine"
-	desc = "A machine that allows you to deposit caps into your account!"
+	desc = "A machine that allows you to deposit coins into your account!"
 	var/ckey = null
 	var/banked_caps = 0
 
@@ -10,15 +10,15 @@
 	ckey = user.ckey
 	banked_caps = getMoney(ckey)
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "<b>Coins stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject coins</A><br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Bottle caps banked:</b> [banked_caps]."
+	dat += "<b>Coins banked:</b> [banked_caps]."
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Redeem caps:</b> <A href='?src=[REF(src)];choice=redeem'>Redeem caps</A><br>"
+	dat += "<b>Redeem coins:</b> <A href='?src=[REF(src)];choice=redeem'>Redeem coins</A><br>"
 	dat += "</div>"
 	dat += "<br>"
 
@@ -37,6 +37,6 @@
 
 /obj/machinery/mineral/wasteland_vendor/bank/proc/redeem_caps()
 	adjustMoney(usr.ckey, stored_caps)
-	to_chat(usr, "You have added [stored_caps] caps to your account!")
+	to_chat(usr, "You have added [stored_caps] coins to your account!")
 	stored_caps = 0
 	src.ui_interact(usr)

@@ -15,13 +15,13 @@
 
 /// The boss of the cowbikers (unused, for now)
 /datum/job/biker/boss
-	title = "Hells Nomad Boss"
+	title = "Overbiker"
 	department_flag = KHAN
 	selection_color = "#ff915e"
 	faction = FACTION_BIKER
 	exp_type = EXP_TYPE_LIVING
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	//access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 	//minimal_access = list(ACCESS_BIKER, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
 
@@ -40,7 +40,7 @@
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools = 1,
 		)
 	tattoos_they_get = list(/datum/tattoo/biker)

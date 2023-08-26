@@ -8,7 +8,7 @@
 	masturbation_verb = "stroke"
 	arousal_verb = "You pop a boner"
 	unarousal_verb = "Your boner goes down"
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_TAUR|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
+	genital_flags = CAN_MASTURBATE_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_TAUR|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5
 	shape = DEF_COCK_SHAPE
@@ -20,6 +20,7 @@
 	var/diameter = 4.38
 	var/diameter_ratio = COCK_DIAMETER_RATIO_DEF //0.25; check citadel_defines.dm
 	associated_has = CS_PENIS // for cockstring stuff
+	hide_flag = HIDE_PENIS // for hideflag stuff
 
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
@@ -60,9 +61,6 @@
 			new_size = 3
 		if(35 to INFINITY) //If comical
 			new_size = 4 //no new sprites for anything larger yet
-	if(linked_organ)
-		linked_organ.size = clamp(size + new_size, BALLS_SIZE_MIN, BALLS_SIZE_MAX)
-		linked_organ.update()
 	size = new_size
 
 	if(owner)

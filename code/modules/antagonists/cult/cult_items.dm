@@ -36,7 +36,6 @@
 	throwforce = 25
 	wound_bonus = -30
 	bare_wound_bonus = 30
-	armour_penetration = 0.65
 	actions_types = list(/datum/action/item_action/cult_dagger)
 
 /obj/item/melee/cultblade/dagger/Initialize()
@@ -106,12 +105,14 @@
 
 /obj/item/cult_bastard
 	name = "bloody bastard sword"
-	desc = "An enormous sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers."
-	w_class = WEIGHT_CLASS_HUGE
-	block_chance = 50
+	desc = "An enormous rune covered sword, used by cultists of dark gods to rapidly cut down non-believers."
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BACK
+	block_chance = 40
 	throwforce = 20
-	force = 35
-	armour_penetration = 0.75
+	force = 30
+	force_unwielded = 30
+	force_wielded = 69
 	throw_speed = 1
 	throw_range = 3
 	sharpness = SHARP_EDGED
@@ -124,6 +125,7 @@
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	weapon_special_component = /datum/component/weapon_special/ranged_spear/cult_bastard
 	actions_types = list()
 	var/datum/action/innate/dash/cult/jaunt
 	var/datum/action/innate/cult/spin2win/linked_action
@@ -140,14 +142,14 @@
 /obj/item/cult_bastard/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 50, 80)
-	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+	//AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
 	if(contents.len)
 		. += "<br><b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
-		. += "<br>The sword appears to be quite lifeless."
+		. += "<br>The sword appears to be slowly pulsating."
 
 /obj/item/cult_bastard/can_be_pulled(user)
 	return FALSE
@@ -161,7 +163,7 @@
 
 /obj/item/cult_bastard/pickup(mob/living/user)
 	. = ..()
-	if(!iscultist(user))
+	if(!iscarbon(user))
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, span_cultlarge("\"I wouldn't advise that.\""))
 			force = 5
@@ -205,19 +207,19 @@
 	if(dash_toggled && !proximity)
 		jaunt.Teleport(user, target)
 		return
-	if(proximity)
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if(H.stat != CONSCIOUS)
-				var/obj/item/soulstone/SS = new /obj/item/soulstone(src)
-				SS.attack(H, user)
-				if(!LAZYLEN(SS.contents))
-					qdel(SS)
-		if(istype(target, /obj/structure/constructshell) && contents.len)
-			var/obj/item/soulstone/SS = contents[1]
-			if(istype(SS))
-				SS.transfer_soul("CONSTRUCT",target,user)
-				qdel(SS)
+	//if(proximity)
+		//if(ishuman(target))
+			//var/mob/living/carbon/human/H = target
+			//if(H.stat != CONSCIOUS)
+				//var/obj/item/soulstone/SS = new /obj/item/soulstone(src)
+				//SS.attack(H, user)
+				//if(!LAZYLEN(SS.contents))
+					//qdel(SS)
+		//if(istype(target, /obj/structure/constructshell) && contents.len)
+			//var/obj/item/soulstone/SS = contents[1]
+			//if(istype(SS))
+				//SS.transfer_soul("CONSTRUCT",target,user)
+				//qdel(SS)
 
 /datum/action/innate/dash/cult
 	name = "Rend the Veil"
@@ -231,7 +233,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && current_charges)
+	if(iscarbon(holder) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -251,7 +253,7 @@
 	holder = user
 
 /datum/action/innate/cult/spin2win/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && cooldown <= world.time)
+	if(iscarbon(holder) && cooldown <= world.time)
 		return TRUE
 	else
 		return FALSE
@@ -261,14 +263,14 @@
 	holder.DelayNextAction(50)
 	holder.apply_status_effect(/datum/status_effect/sword_spin)
 	sword.spinning = TRUE
-	sword.block_chance = 100
+	sword.block_chance = 75
 	sword.slowdown += 1.5
 	addtimer(CALLBACK(src, .proc/stop_spinning), 50)
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
 	sword.spinning = FALSE
-	sword.block_chance = 50
+	sword.block_chance = 40
 	sword.slowdown -= 1.5
 	sleep(sword.spin_cooldown)
 	holder.update_action_buttons_icon()
@@ -298,6 +300,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEEARS
 	flags_cover = HEADCOVERSEYES
 	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T3) // eldritch magic suit which is a boss reward, reinforced combat armor tier with boosted melee and less laser, should atleast be a little better than a super common set
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -310,6 +313,8 @@
 	item_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T3) // eldritch magic suit which is a boss reward, reinforced combat armor tier with boosted melee and less laser, should atleast be a little better than a super common set
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -374,7 +379,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, ITEM_SLOT_HEAD)
+	AddElement(/datum/element/spellcasting, SPELL_CULT_HELMET, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/suit/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened armor"
@@ -387,7 +392,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_CULT_ARMOR, ITEM_SLOT_OCLOTHING)
+	AddElement(/datum/element/spellcasting, SPELL_CULT_ARMOR, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/sharpener/cult
 	name = "eldritch whetstone"
@@ -482,7 +487,7 @@
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()
-	if(!iscultist(user))
+	if(!iscarbon(user))
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, span_cultlarge("\"I wouldn't advise that.\""))
 			to_chat(user, span_warning("An overwhelming sense of nausea overpowers you!"))
@@ -700,7 +705,6 @@
 	force = 17
 	throwforce = 40
 	throw_speed = 2
-	armour_penetration = 0.65
 	block_chance = 30
 	attack_verb = list("attacked", "impaled", "stabbed", "torn", "gored")
 	sharpness = SHARP_EDGED

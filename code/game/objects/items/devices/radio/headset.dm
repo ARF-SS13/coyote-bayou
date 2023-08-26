@@ -15,14 +15,15 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_VAULT = RADIO_TOKEN_VAULT,
 	RADIO_CHANNEL_BIKER = RADIO_TOKEN_BIKER,
 	RADIO_CHANNEL_NCR = RADIO_TOKEN_NCR,
-	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
+	RADIO_CHANNEL_ASHDOWN = RADIO_TOKEN_ASHDOWN,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
 	RADIO_CHANNEL_TOWN_MAYOR = RADIO_TOKEN_TOWN_MAYOR,
 	RADIO_CHANNEL_TOWN_PD = RADIO_TOKEN_TOWN_PD,
 	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER,
+	RADIO_CHANNEL_RESPONDERS = RADIO_TOKEN_RESPONDERS,
 	RADIO_CHANNEL_TOWN_COMMERCE = RADIO_TOKEN_TOWN_COMMERCE
-))
+	))
 
 /obj/item/radio/headset
 	name = "radio headset"
@@ -33,7 +34,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	subspace_transmission = TRUE
 	canhear_range = 0 // can't hear headsets from very far away
 
-	slot_flags = ITEM_SLOT_EARS
+	slot_flags = INV_SLOTBIT_EARS
 	var/obj/item/encryptionkey/keyslot2 = null
 	dog_fashion = null
 	var/bowman = FALSE
@@ -143,6 +144,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "science radio headset"
 	desc = "A sciency headset. Like usual."
 	icon_state = "sci_headset"
+	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_sci
 
 /obj/item/radio/headset/headset_medsci
@@ -240,6 +242,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_com
 	keyslot2 = new /obj/item/encryptionkey/headset_cent
+
+/obj/item/radio/headset/upgraded
+	name = "padded radio headset"
+	desc = "An updated, modular intercom that fits over the head. Takes encryption keys and protects the ears."
+	icon_state = "headset"
+	item_state = "headset"
+	keyslot = null
+	bowman = TRUE
 
 /obj/item/radio/headset/headset_cent/empty
 	keyslot = null
@@ -398,6 +408,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
+
+/obj/item/radio/headset/headset_ashdown
+	name = "ashdown radio headset"
+	desc = "This is used by the residents of Ashdown.\nTo access the Ashdown channel, use :d as in ashDown."
+	icon_state = "mine_headset" 
+	item_state = "headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_ashdown
 
 /obj/item/radio/headset/headset_biker
 	name = "Hell's Nomads radio headset"

@@ -80,7 +80,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
@@ -143,7 +143,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
@@ -206,7 +206,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/frag = 1,
 		/obj/item/pda = 1,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/f13/enclave/peacekeeper = 1,
 		)
@@ -258,7 +258,7 @@
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/pda = 1,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
@@ -313,7 +313,7 @@
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/pda = 1,
 		/obj/item/ammo_box/magazine/m5mm = 2,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
@@ -348,7 +348,7 @@
 		/obj/item/pda = 1,
 		/obj/item/gun/energy/gammagun = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/storage/bag/money/small/wastelander = 1,
+	//	/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/clothing/head/beret/enclave/science = 1,
 		)

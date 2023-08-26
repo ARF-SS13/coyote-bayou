@@ -7,6 +7,8 @@
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
 	var/genital_flags //see citadel_defines.dm
 	var/genital_visflags
+	/// What flag is this associated with?
+	var/hide_flag = HIDE_MISC
 	var/masturbation_verb = "masturbate"
 	var/orgasm_verb = "cumming" //present continous
 	var/arousal_verb = "You feel aroused"
@@ -48,8 +50,8 @@
 	if(genital_flags & UPDATE_OWNER_APPEARANCE && owner && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
-	if(linked_organ_slot || (linked_organ && !owner))
-		update_link()
+	// if(linked_organ_slot || (linked_organ && !owner))
+	// 	update_link()
 
 /obj/item/organ/genital/proc/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
 	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
@@ -142,7 +144,7 @@
 
 /// Allows you to rearrange your guts
 /mob/living/carbon/verb/toggle_genitals()
-	set category = "IC"
+	set category = "Private"
 	set name = "Private Panel"
 	set desc = "Allows you to modify various aspects of your jiggly bits and underwear."
 	show_genital_panel()
@@ -151,10 +153,6 @@
 	var/list/genital_list = list()
 	for(var/obj/item/organ/genital/G in internal_organs)
 		genital_list |= G
-	if(!LAZYLEN(genital_list))
-		show_message(span_alert("You don't have any rearrangeable guts!"))
-		return
-
 	var/list/dat = list("<center>")
 	/// woo lookit me im a web designer from the early 2010s!
 	dat += "<table class='table_genital_list'>"
@@ -187,6 +185,14 @@
 				href='
 					?src=[REF(src)];
 					action=open_sockdrawer'>
+						Modify?
+			</a>"}
+	dat += "<div class='gen_setting_name'>See/Unsee Genitals:</div>"
+	dat += {"<a 
+				class='clicky' 
+				href='
+					?src=[REF(src)];
+					action=open_genital_hide'>
 						Modify?
 			</a>"}
 	dat += "</div>"
@@ -529,12 +535,21 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		"FRONT"
 	)
 ))
+
+/// That way, we can update *EVERYONES* genitals when someone updates their genitals
+/mob/living/carbon/human/proc/signal_update_genitals()
+	update_genitals(FALSE) // and prevents infinite loops
+
 /// clears all genital overlays, and reapplies them
-/mob/living/carbon/human/proc/update_genitals()
+/mob/living/carbon/human/proc/update_genitals(signal = TRUE)
 	if(QDELETED(src))
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
+	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
+	if(!islist(hud_list))
+		prepare_huds()
+	pornHUD.remove_from_hud(src, signal)
 	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 
@@ -550,7 +565,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	if(!has_nads)
 		return
 
+	/// for the fuckin preview thing
 	var/list/genital_sprites = list() // format list("[layer_number]" = list(mutable_sprites))
+	/// for the actual PornHud
+	var/list/porn_hud_images = list() // format list("has_butt" = list("FRONT" = list(img, img, img))") // I FUCKIN LOVE HUGEASS LISTS
 	for(var/obj/item/organ/genital/nad in genitals_to_add)
 		// list of sprites for these genitals (usually one or two)
 		for(var/position in GLOB.genital_layers["positions"]) // "BEHIND", "MID", "FRONT"
@@ -578,27 +596,48 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			/// this SHOULD(tm) make arms show up over butts from the front -- currently broken, love Lagg
 			var/icon/grundle_out = nad.mask_part(accessory_icon, genital_state, layer_to_put_it, position)
 			var/mutable_appearance/genital_overlay = mutable_appearance(grundle_out ? grundle_out : accessory_icon, genital_state, layer = -layer_to_put_it)
+			var/image/gross_image = image(grundle_out ? grundle_out : accessory_icon, src, genital_state, layer = -layer_to_put_it) // mutable appearances just... dont work for client images. rip performance
 
 			if(do_center)
 				genital_overlay = center_image(genital_overlay, dim_x, dim_y)
+				gross_image = center_image(genital_overlay, dim_x, dim_y)
 
 			// color color color
 			if(dna.species.use_skintones)
 				genital_overlay.color = SKINTONE2HEX(skin_tone)
+				gross_image.color = SKINTONE2HEX(skin_tone)
 			else
 				genital_overlay.color = nad.color
+				gross_image.color = nad.color
 			// set the sprite's layer
 			genital_overlay.layer = -layer_to_put_it
+			//gross_image.layer = -layer_to_put_it
+			genital_overlay.loc = src
+			gross_image.loc = src
+			gross_image.layer = (position == "BEHIND") ? layer-1 : layer+1 // idfk
 			// and then add it to the genital_sprites layer list thing
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
 
+			if(!porn_hud_images["[nad.associated_has]"])
+				porn_hud_images["[nad.associated_has]"] = list()
+
+			if(!porn_hud_images["[nad.associated_has]"]["[position]"])
+				porn_hud_images["[nad.associated_has]"]["[position]"] = list()
+
 			// cus byond doesnt like arbitrary indexes or something, idk im dum
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
+			porn_hud_images["[nad.associated_has]"]["[position]"] |= gross_image // i hate everything about this
 
-	for(var/index in genital_sprites)
-		overlays_standing[text2num(index)] = genital_sprites[index]
-		apply_overlay(text2num(index))
+	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
+		for(var/index in genital_sprites)
+			overlays_standing[text2num(index)] = genital_sprites[index]
+			apply_overlay(text2num(index))
+	
+	if(!LAZYLEN(porn_hud_images)) // the freshest!
+		return // nothing there? *shruggo*
+	hud_list[GENITAL_HUD] = porn_hud_images
+	pornHUD.add_to_hud(src, signal)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()

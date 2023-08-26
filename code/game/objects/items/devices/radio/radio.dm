@@ -7,7 +7,7 @@
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1 | HEAR_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
@@ -491,7 +491,7 @@
 	item_state = "radio"
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 GLOBAL_VAR_INIT(redwater_frequency, null)
 GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))

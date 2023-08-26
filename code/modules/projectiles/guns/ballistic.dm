@@ -1,8 +1,10 @@
+GLOBAL_LIST_EMPTY(gun_accepted_magazines)
+
 /obj/item/gun/ballistic
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
 	name = "projectile gun"
 	icon_state = "pistol"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_RIFLE
 	var/spawnwithmagazine = TRUE
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm/adv //Removes the need for max_ammo and caliber 
 	var/init_mag_type = null
@@ -22,17 +24,7 @@
 	/// Which direction do the casings fly out?
 	var/handedness = GUN_EJECTOR_RIGHT
 	var/cock_sound = "gun_slide_lock"
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
-	)
-
+	fire_sound = null //null tells the gun to draw from the casing instead of the gun for sound
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if(spawnwithmagazine)
@@ -52,14 +44,34 @@
 			allowed_mags |= typesof(extra_mag_types)
 	if(LAZYLEN(disallowed_mags))
 		allowed_mags -= disallowed_mags
+	register_magazines()
 	chamber_round()
 	update_icon()
 
+/obj/item/gun/ballistic/admin_fill_gun()
+	if(!istype(magazine))
+		return
+	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
+
 /obj/item/gun/ballistic/update_icon_state()
-	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]][sawn_off ? "-sawn" : ""]"
-	else
-		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+
+/obj/item/gun/ballistic/proc/register_magazines()
+	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))
+		return
+	GLOB.gun_accepted_magazines["[type]"] = ""
+	if(magazine && magazine.fixed_mag)
+		GLOB.gun_accepted_magazines["[type]"] = "This weapon has a fixed magazine that accepts [english_list(magazine.caliber)]."
+		return
+	var/list/names_of_mags = list()
+	for(var/mag in allowed_mags)
+		if(!ispath(mag))
+			continue
+		var/atom/movable/marge = mag
+		names_of_mags += initial(marge.name)
+	GLOB.gun_accepted_magazines["[type]"] = "This weapon accepts: [english_list(names_of_mags)]."
 
 /// Ejects whatever's chambered, and attempts to load a new one from the magazine
 /// chamber_round wont load another one if something's still in the chamber
@@ -350,8 +362,8 @@
 		w_class = WEIGHT_CLASS_NORMAL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
-		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_dat.modifyAllRatings(2)
+		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		recoil_tag = SSrecoil.modify_gun_recoil(recoil_tag, list(2, 2))
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
@@ -368,29 +380,32 @@
 		return 1
 		
 		
-/obj/item/gun/ballistic/get_dud_projectile()
-	var/proj_type
-	if(chambered)
-		if(!chambered.BB)
-			return null
-		proj_type = chambered.BB.type
-	else if(magazine && get_ammo(0,0))
-		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
-		if(!A)
-			return null
-		if(!A.BB)
-			return null
-		proj_type = A.BB.type
-	if(!proj_type)
-		return null
-	return new proj_type
+// /obj/item/gun/ballistic/get_dud_projectile()
+// 	var/proj_type
+// 	if(chambered)
+// 		if(!chambered.BB)
+// 			return null
+// 		proj_type = chambered.BB.type
+// 	else if(magazine && get_ammo(0,0))
+// 		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
+// 		if(!A)
+// 			return null
+// 		if(!A.BB)
+// 			return null
+// 		proj_type = A.BB.type
+// 	if(!proj_type)
+// 		return null
+// 	return new proj_type
 
 /obj/item/gun/ballistic/ui_data(mob/user)
 	var/list/data = ..()
-	if(istype(magazine) && length(magazine.caliber))
-		data["caliber"] = english_list(magazine.caliber)
-	data["current_ammo"] = get_ammo()
-	data["max_shells"] = get_max_ammo()
+	data["has_magazine"] = !!magazine
+	data["accepted_magazines"] = LAZYACCESS(GLOB.gun_accepted_magazines, "[type]")
+	if(istype(magazine))
+		data["magazine_name"] = magazine.name
+		data["magazine_calibers"] = english_list(magazine.caliber)
+	data["shots_remaining"] = get_ammo()
+	data["shots_max"] = get_max_ammo()
 
 	return data
 

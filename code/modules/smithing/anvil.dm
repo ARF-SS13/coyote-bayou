@@ -3,40 +3,50 @@
 #define WORKPIECE_FINISHED 3
 #define WORKPIECE_SLAG 5
 
+//bend start\tools, maybe add more tools?
 #define RECIPE_PICKAXE "bff" //bend fold fold
 #define RECIPE_SHOVEL "buu" //bend upset upset
 #define RECIPE_HAMMER "bpp" //bend punch punch
 #define RECIPE_PROSPECTPICK "bfs" //bend fold shrink
 #define RECIPE_KITCHENKNIFE "bsd" //bend shrink draw
 #define RECIPE_CROWBAR "bbb" //bend bend bend
+#define RECIPE_UNITOOL "bbu"  //bend bend upset
 
+//shrink start \maybe add armor here?
 #define RECIPE_RING "sss" //shrink shrink shrink
+
+//punch start \maybe add armor here?
 #define RECIPE_BALLANDCHAIN "pbu" //punch bend upset
 
+//fold start \Swords need a buff or need their math exposed to players \ Will also add more comments later
 #define RECIPE_MACHETE "fdf" //fold draw fold
 #define RECIPE_SABRE "ffdd" //fold fold draw draw
 #define RECIPE_SWORD "ffdf" // fold fold draw fold
 #define RECIPE_WAKI "fffd" //fold fold fold draw
 #define RECIPE_KATANA "fffff" //fold fold fold fold fold
+#define RECIPE_LONGSWORD "fdddf" //fold draw draw draw fold
+#define RECIPE_MACHREFORG "fddf" //fold draw draw fold
 
+//upset start \Mostly 2h weapons, save for the mace
 #define RECIPE_MACE "upu"  //upset punch upset
 #define RECIPE_AXE "udsp" //upset draw shrink punch
+#define RECIPE_SCRAP "udpp" //upset draw shrink punch \2h sword
+#define RECIPE_CRUSHER "uppu" //upset punch punch upset
 
+//draw start \Maybe add a shield here?
 #define RECIPE_DAGGER "dfs" //draw fold shrink
 #define RECIPE_SPEAR "ddbf" //draw draw bend fold
 #define RECIPE_JAVELIN "dbf" //draw bend fold
 #define RECIPE_THROWING "dbd" //draw bend draw
+#define RECIPE_TRIDENT "dbsb" //draw bend shrink bend
+#define RECIPE_SAW "dpss" //draw punch shrink shrink
+#define RECIPE_BOWIE "dff" //draw fold fold
 
-//Tablevil specific
-#define RECIPE_MACHREFORG "fddf" //fold punch punch
-#define RECIPE_SCRAP "udpp" //upset draw shrink punch
-#define RECIPE_UNITOOL "bbu"  //bend bend upset
-
-//Legion specific
-#define RECIPE_LANCE "ddfp" //draw draw fold punch
-#define RECIPE_GLADIUS "fbf" //fold bend fold
-#define RECIPE_SPATHA "ffbf" // fold fold bend fold
-#define RECIPE_WARHONED "udup" //upset draw upset punch
+//Legion themed\ not exclusive to any anvil
+#define RECIPE_LANCE "ddfp" //draw draw fold punch \spear reskin
+#define RECIPE_GLADIUS "fbf" //fold bend fold \Machete reskin
+#define RECIPE_SPATHA "ffbf" // fold fold bend fold \Sword Reskin
+#define RECIPE_WARHONED "udup" //upset draw upset punch\ 2H axe reskin
 
 GLOBAL_LIST_INIT(anvil_recipes, list(
 	RECIPE_HAMMER = /obj/item/smithing/hammerhead,
@@ -64,7 +74,12 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	RECIPE_GLADIUS =  /obj/item/smithing/gladiusblade,
 	RECIPE_SPATHA = /obj/item/smithing/spathablade,
 	RECIPE_WARHONED = /obj/item/smithing/warhonedhead,
-	RECIPE_LANCE = /obj/item/smithing/lancehead))
+	RECIPE_LANCE = /obj/item/smithing/lancehead,
+	RECIPE_CRUSHER = /obj/item/smithing/crusherhead,
+	RECIPE_TRIDENT = /obj/item/smithing/tridenthead,
+	RECIPE_LONGSWORD = /obj/item/smithing/longswordblade,
+	RECIPE_SAW = /obj/item/smithing/sawblade,
+	RECIPE_BOWIE = /obj/item/smithing/bowieblade))
 
 // Logic of smithing recipes: Tools start with bend and have 3 steps. 1h weapons have 3-4 steps. 2h weapons have 4-5 steps. Bigger bladed stuff start with a fold. Pointy stuff generally start with a draw. Unusual stuff migth start with upset.
 // Point of having a structure is obviously to help remember, not just keeping every recipe as pure rote memory with no internal logic. If you add more stuff and fuck this up and don't read comments I hope you get a prolapse. - Pebbles
@@ -77,8 +92,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	density = TRUE
 	anchored = TRUE
 	light_system = MOVABLE_LIGHT
-	light_range = 2
-	light_power = 0.75
+	light_range = 1
+	light_power = 0.4
 	light_color = LIGHT_COLOR_FIRE
 	light_on = FALSE
 	var/busy = FALSE //If someone is already interacting with this anvil
@@ -191,46 +206,46 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 	switch(stepdone)
 		if("weak hit")
-			playsound(src, 'code/modules/smithing/sound/anvil_weak.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_weak.ogg',30)
 			user.visible_message("<span class='notice'>[user] carefully hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You carefully hammer out imperfections in the metal.</span>")
 		if("strong hit")
-			playsound(src, 'code/modules/smithing/sound/anvil_strong.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_strong.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You hammer out imperfections in the metal.</span>")
 		if("heavy hit")
-			playsound(src, 'code/modules/smithing/sound/anvil_heavy.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_heavy.ogg',30)
 			do_smithing_sparks(2, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] forcefully hammers out imperfections in the metal.</span>", \
 						"<span class='notice'>You forcefuly hammer out imperfections in the metal.</span>")
 		if("fold")
-			playsound(src, 'code/modules/smithing/sound/anvil_double1.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_double1.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] folds the metal.</span>", \
 						"<span class='notice'>You fold the metal.</span>")
 		if("draw")
-			playsound(src, 'code/modules/smithing/sound/anvil_double2.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_double2.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] hammers both sides of the metal, drawing it out.</span>", \
 						"<span class='notice'>You hammer both sides of the metal, drawing it out.</span>")
 		if("shrink")
-			playsound(src, 'code/modules/smithing/sound/anvil_rapid.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_rapid.ogg',30)
 			do_smithing_sparks(1, TRUE, src)
 			user.visible_message("<span class='notice'>[user] flattens the metal, shrinking it.</span>", \
 						"<span class='notice'>You flatten the metal, shrinking it.</span>")
 		if("bend")
-			playsound(src, 'code/modules/smithing/sound/anvil_single1.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_single1.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] bends the metal, using the rounded end of the anvil.</span>", \
 						"<span class='notice'>You bend the metal, using the rounded end of the anvil.</span>")
 		if("punch")
-			playsound(src, 'code/modules/smithing/sound/anvil_single2.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_single2.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] uses the puncher to make holes in the metal.</span>", \
 						"<span class='notice'>You use the puncher to make holes in the metal.</span>")
 		if("upset")
-			playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',45)
+			playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',30)
 			do_smithing_sparks(1, TRUE, src) 
 			user.visible_message("<span class='notice'>[user] upsets the metal by hammering the thick end.</span>", \
 						"<span class='notice'>You upset the metal by hammering the thick end.</span>")

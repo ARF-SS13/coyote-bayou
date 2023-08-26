@@ -42,10 +42,54 @@
 #define MAX_MESSAGE_LEN			4096		//Citadel edit: What's the WORST that could happen?
 #define MAX_FLAVOR_LEN			4096
 #define MIN_FLAVOR_LEN			100
+#define MIN_OOC_LEN				20 // Will not allow just smileys to be on OOC notes.
 #define MAX_TASTE_LEN			40
 #define MAX_NAME_LEN			42
 #define MAX_BROADCAST_LEN		512
 #define MAX_CHARTER_LEN			80
+
+// Template for OOC notes.
+#define OOC_NOTE_TEMPLATE "Non-ERP Notes\n\
+	This exist for things like how to approach this character for IC things such as how to ask for going on adventurers!\n\
+	But this person hasn't changed the info yet!\n\
+	\n\
+	Icebreaker!\n\
+	This exists for this person to have set a quick way for you to break the IC with their character in a way that may lead to ERP, but this person hasn't changed this text to set one!\n\
+	\n\
+	Slavery: Ask\n\
+	Non-Con: Ask\n\
+	Vore: Ask\n\
+	\n\
+	\n\
+	ERP Notes\n\
+	...............Erotic Roleplay: Ask\n\
+	...............Non-Con Roleplay: Ask\n\
+	...............Partner Prefs: Ask\n\
+	.............- Slavery: Ask\n\
+	.............- Non-Con: Ask\n\
+	.............- Vore: Ask\n\
+	\n\
+	Big Yes's\n\
+	.............- This area\n\
+	.............- exists to\n\
+	.............- List out\n\
+	.............- things you\n\
+	.............- like.\n\
+	\n\
+	Hard No\n\
+	.............- This area exists\n\
+	.............- For you to list things\n\
+	.............- You very specifically\n\
+	.............- Do not like.\n\
+	\n\
+	\n\
+	\n\
+	***Roleplay Prefs***\n\
+	Character Orientation: Ask\n\
+	...Desired Post length: Ask\n\
+	\n\
+	...Desired RP System: Ask, this is for subtle, subtler, or emote.  Or, when its added, a mechanical erotic roleplay system!  Or some mix inbetween, but this person hasn't changed the text so ASK!\n\
+	.My Post Perspective: Ask!"
 
 // Is something in the IC chat filter? This is config dependent.
 #define CHAT_FILTER_CHECK(T) (config.ic_filter_regex && findtext(T, config.ic_filter_regex))
@@ -60,3 +104,22 @@
 #define ONLY_OVERHEAD (1<<1)
 // Append the player's name to the front
 #define PUT_NAME_IN (1<<2)
+
+#define EMOTE_HEADER_TEXT "\
+	The Following Chat Functions Exist \n\
+	- _text_ underlines text, +text+ bolds text, and |text| italicizes text. \n\
+	-- Works in Emote, Subtle, Say, Whisper and Radio chat. \n\
+	\n\
+	- %text lets you siiiing. \n\
+	-- Only works in non-radio Say. \n\
+	\n\
+	- @ moves your name to that position. \n\
+	-- Only works in Emotes and Subtles. \n\
+	-- Example: Takes a deep breath, @(this becomes your characters name) sure is tired. \n\
+	\n\
+	- ! at the start of a radio comm to emote over the radio \n\
+	--example: say ;! sneezes! \n\
+	"
+//Dan is the best, <3 ~TK
+//put space before the \ so it reads properly
+// use \ for readability, but one big line. \n for a new line. \n\ for a new line and readability.

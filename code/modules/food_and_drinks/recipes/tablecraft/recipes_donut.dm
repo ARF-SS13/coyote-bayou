@@ -369,6 +369,16 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/sugarcookie
 
+/datum/crafting_recipe/food/dessert/oreocookie
+	time = 15
+	name = "Oreo cookie"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/oreocookie
+
 ////////////////////////////////////////////////WAFFLES AND PANCAKES////////////////////////////////////////////////
 
 /datum/crafting_recipe/food/dessert/waffles
@@ -458,3 +468,36 @@
 		/obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
+
+/datum/crafting_recipe/food/dessert/fruitcake
+	name = "Fruit Cake"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cherries = 2,
+		/datum/reagent/consumable/ethanol/rum  = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/fruit
+
+/datum/crafting_recipe/food/dessert/plumcake
+	name = "Plum Cake"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/plum = 2,
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/plum
+
+/datum/crafting_recipe/food/dessert/weddingcake
+	name = "Wedding Cake"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/cake/plain = 4,
+		/datum/reagent/consumable/sugar = 150,
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/wedding
+
+/datum/crafting_recipe/food/dessert/mothmallow
+	name = "mothmallow tray"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/store/cake/plain = 4,
+		/datum/reagent/consumable/sugar = 150,
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/mothmallow

@@ -621,6 +621,17 @@
 	foodtype = GRAIN | JUNKFOOD | SUGAR
 	dunkable = TRUE
 
+/obj/item/reagent_containers/food/snacks/oreocookie
+	name = "oreo cookie"
+	desc = "Are you a dunker, or a 'tear it apart' type of oreo eater?"
+	icon_state = "oreo"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 3)
+	filling_color = "#CD853F"
+	tastes = list("sweetness" = 1, "chocolate" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	dunkable = TRUE
+
 /obj/item/reagent_containers/food/snacks/chococornet
 	name = "chocolate cornet"
 	desc = "Which side's the head, the fat end or the thin end?"
@@ -849,5 +860,38 @@
 	icon_state = "brownie"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
 	tastes = list("brownie" = 1, "chocolatey goodness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	w_class = WEIGHT_CLASS_SMALL
+
+
+/obj/item/reagent_containers/food/snacks/brownie_sheet_peanut
+	name = "peanut butter brownie sheet"
+	desc = "An uncut sheet of cooked peanut butter brownie, use a knife to cut it!."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "peanut_butter_brownie_sheet"
+	slice_path = /obj/item/reagent_containers/food/snacks/brownie/peanut
+	slices_num = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/sugar = 12, /datum/reagent/consumable/peanut_butter  = 20)
+	tastes = list("brownie" = 1, "chocolatey goodness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/brownie/peanut
+	name = "peanut butter brownie"
+	desc = "A square slice of delicious, chewy brownie. Often the target of potheads."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "peanut_butter_brownie"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/peanut_butter  = 5)
+	tastes = list("brownie" = 1, "chocolatey goodness" = 1, "nutty" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
+	name = "crunchy peanut butter tart"
+	desc = "A miniature pie with a peanut butter filling, creamy icing, and topping of chopped nuts."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "crunchy_peanut_butter_tart"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/sugar = 6, /datum/reagent/consumable/peanut_butter = 5,)
+	tastes = list("peanut butter" = 1, "peanuts" = 1, "cream" = 1)
 	foodtype = GRAIN | JUNKFOOD | SUGAR
 	w_class = WEIGHT_CLASS_SMALL

@@ -105,9 +105,9 @@
 		dat = reeltext
 
 	else
-		dat = {"[SPIN_PRICE] caps to play!<BR>
+		dat = {"[SPIN_PRICE] coins to play!<BR>
 		<B>Prize Money Available:</B> [money] (jackpot payout is ALWAYS 100%!)<BR>
-		<B>Caps Remaining:</B> [balance]<BR>
+		<B>Coins Remaining:</B> [balance]<BR>
 		[plays] players have tried their luck today, and [jackpots] have won a jackpot!<BR>
 		<HR><BR>
 		<A href='?src=[REF(src)];spin=1'>Play!</A><BR>
@@ -213,17 +213,17 @@
 	var/linelength = get_lines()
 
 	if(reels[1][2] + reels[2][2] + reels[3][2] + reels[4][2] + reels[5][2] == "[SEVEN][SEVEN][SEVEN][SEVEN][SEVEN]")
-		visible_message("<b>[src]</b> says, 'JACKPOT! You win [money] caps!'")
+		visible_message("<b>[src]</b> says, 'JACKPOT! You win [money] coins!'")
 		jackpots += 1
 		give_money(money)
 		money = 0
 
 	else if(linelength == 5)
-		visible_message("<b>[src]</b> says, 'Big Winner! You win [BIG_PRIZE] caps!'")
+		visible_message("<b>[src]</b> says, 'Big Winner! You win [BIG_PRIZE] coins!'")
 		give_money(BIG_PRIZE)
 
 	else if(linelength == 4)
-		visible_message("<b>[src]</b> says, 'Winner! You win [SMALL_PRIZE] caps!'")
+		visible_message("<b>[src]</b> says, 'Winner! You win [SMALL_PRIZE] coins!'")
 		give_money(SMALL_PRIZE)
 
 	else if(linelength == 3)

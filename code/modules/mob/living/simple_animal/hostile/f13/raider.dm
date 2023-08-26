@@ -15,8 +15,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 5
 	melee_damage_upper = 14
 	attack_verb_simple = "clobbers"
@@ -108,8 +108,8 @@
 	icon_living = "raider_ranged"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
@@ -121,7 +121,7 @@
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
 	variation_list = list(
@@ -218,6 +218,7 @@
 	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	despawns_when_lonely = FALSE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
@@ -317,7 +318,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
 	speak_emote = list(
 		"mutters",
-		"counts his caps to himself",
+		"counts his coins to himself",
 		"yells at someone to pick up the pace",
 		"barks",
 		"grumbles",
@@ -386,8 +387,8 @@
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -601,7 +602,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	loot_drop_amount = 10
 	loot_amount_random = FALSE
-	
+
 
 // Cultist Stuff
 
@@ -615,14 +616,14 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	melee_damage_lower = 10
 	melee_damage_upper = 24
 	attack_verb_simple = "clobbers"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
-	faction = list("raider")
+	faction = list("raider", "hostile")
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
@@ -649,6 +650,7 @@
 	icon_dead = "cultist_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	faction = list("raider", "hostile")
 	maxHealth = 85
 	health = 85
 	rapid_melee = 2
@@ -685,8 +687,8 @@
 	icon_dead = "cultist_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
@@ -723,8 +725,8 @@
 	icon_dead = "cultist2_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	maxHealth = 85
-	health = 85
+	maxHealth = 80
+	health = 80
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot

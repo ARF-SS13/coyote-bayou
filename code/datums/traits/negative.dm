@@ -336,6 +336,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
+	if(!quirk_holder)
+		return // guy don't exist no more, therefore stop it.
 	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
@@ -634,7 +636,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
-	value = 0 //HALP MAINTS
+	value = -2 //HALP MAINTS
 	gain_text = span_danger("You find yourself unable to speak!")
 	lose_text = span_notice("You feel a growing strength in your vocal chords.")
 	medical_record_text = "Functionally mute, patient is unable to use their voice in any capacity."
@@ -679,6 +681,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/blindness/remove()
 	quirk_holder?.cure_blind(ROUNDSTART_TRAIT)
+
+/datum/quirk/deafness
+	name = "Deaf"
+	desc = "You are completely deaf, nothing can counteract this."
+	value = -3
+	mob_trait = TRAIT_DEAF
+	gain_text = span_danger("You can't hear anything.")
+	lose_text = span_notice("You miraculously gain back your hearing.")
+	medical_record_text = "Patient has permanent deafness."
 
 /datum/quirk/coldblooded
 	name = "Cold-blooded"
@@ -734,9 +745,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/flimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 10
-	mob_tar.health -= 10
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 10
+	H.health -= 10
 
 /datum/quirk/veryflimsy
 	name = "Health - Very Flimsy"
@@ -748,25 +759,25 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>You feel more durable."
 
 /datum/quirk/veryflimsy/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth -= 20
-	mob_tar.health -= 20
+	var/mob/living/carbon/human/H = quirk_holder
+	H.maxHealth -= 20
+	H.health -= 20
 
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
-	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
-	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
+	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
+	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
+	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
 	value = -1
 	mood_quirk = TRUE
-	medical_record_text = "Patient feels more secure when wearing a gas mask."
+	medical_record_text = "Patient feels more secure when wearing a mask."
 	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/maskmask = H.get_item_by_slot(ITEM_SLOT_MASK)
-	if(istype(maskmask) && !istype(maskmask, /obj/item/clothing/mask/cigarette))
+	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(mask))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -783,12 +794,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -3
 	timeout = 0
 
-/datum/quirk/masked_mook/on_spawn()
+/* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas/gasmask = new(get_turf(quirk_holder))
-	H.equip_to_slot(gasmask, ITEM_SLOT_MASK)
-	H.regenerate_icons()
+	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
+	H.equip_to_slot(gas, SLOT_WEAR_MASK)
+	H.regenerate_icons()*/
 
 /datum/quirk/paper_skin
 	name = "Paper Skin"
@@ -818,9 +829,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/noodle_fist/on_spawn()
-	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 0
-	mob_tar.dna.species.punchdamagehigh = 0
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = 0
+	H.dna.species.punchdamagehigh = 0
 
 /datum/quirk/gentle
 	name = "Melee - Gentle"
@@ -888,7 +899,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/nosleep
 	name = "Can Not Sleep"
 	desc = "For whatever reason you literally lack the ability to sleep."
-	value = -1
+	value = -2
 	mob_trait = TRAIT_SLEEPIMMUNE
 	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
 	lose_text = span_danger("You could kind of go for a nap.")
@@ -928,4 +939,16 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_NODRUGS
 	gain_text = span_notice("You feel like a winner!")
 	lose_text = span_danger("You feel like a loser!")
+	locked =  FALSE
+
+/datum/quirk/hardcore
+	name = "Hardcore"
+	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
+		and the only way you'll be able to live again is if someone finds and revives your body! Furthermore, you're unlikely to \
+		recieve any sort of divine intervention if you die, so be careful!"
+	value = -1
+	mob_trait = TRAIT_NO_SECOND_WIND
+	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
+		You will also not be able to be revived by divine intervention! Be careful!")
+	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
 	locked =  FALSE

@@ -244,14 +244,14 @@
 //nuka
 
 /datum/reagent/consumable/ethanol/nukadark
-	name = "Nuka Dark"
-	description = "Nuka Cola with a alcoholic twist."
+	name = "Cosmic Dark"
+	description = "Cosmic Cola with a alcoholic twist."
 	color = "#1C2118"
 	boozepwr = 80
 	taste_description = "bitter and toxic cola"
 	glass_icon_state = "nukadarkglass"
-	glass_name = "Nuka Dark"
-	glass_desc = "Nuka Cola with a alcoholic twist."
+	glass_name = "Cosmic Dark"
+	glass_desc = "Cosmic Cola with a alcoholic twist."
 
 /datum/reagent/consumable/ethanol/nukadark/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -261,14 +261,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukavictory
-	name = "Nuka Victory"
-	description = "Nuka Cola with an <BIG>AMERICAN<BIG> twist."
+	name = "Cosmic Victory"
+	description = "Cosmic Cola with an <BIG>AMERICAN<BIG> twist."
 	color = "#FAEBD7"
 	boozepwr = 45
 	taste_description = "freedom"
 	glass_icon_state = "nukavictoryglass"
-	glass_name = "Nuka Victory"
-	glass_desc = "Nuka Cola with an AMERICAN twist."
+	glass_name = "Cosmic Victory"
+	glass_desc = "Cosmic Cola with an AMERICAN twist."
 	ghoulfriendly = TRUE //too american for ghouls not to taste it
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
@@ -285,14 +285,14 @@
 	..()
 
 /datum/reagent/consumable/ethanol/nukabomb
-	name = "Nuka Bombdrop"
-	description = "More spirit than Nuka at this Rate."
+	name = "Cosmic Bombdrop"
+	description = "More spirit than Cosmic at this Rate."
 	color = "#FAEBD7"
 	boozepwr = 200
 	taste_description = "pure alcohol"
 	glass_icon_state = "nukabombglass"
-	glass_name = "Nuka Bombdrop"
-	glass_desc = "More spirit than Nuka at this Rate."
+	glass_name = "Cosmic Bombdrop"
+	glass_desc = "More spirit than Cosmic at this Rate."
 
 /datum/reagent/consumable/ethanol/nukabomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
@@ -311,13 +311,13 @@
 	..()
 
 /datum/reagent/consumable/ethanol/nukacide
-	name = "Nukacide"
+	name = "Cosmiccide"
 	description = "The drink of a goddamn madman, say your sorrows when you drink this."
 	color = "#000000"
 	boozepwr = 300
 	taste_description = "nuclear annihilation"
 	glass_icon_state = "nukacideglass"
-	glass_name = "Nukacide"
+	glass_name = "Cosmiccide"
 	glass_desc = "The drink of a goddamn madman, say your sorrows when you drink this."
 
 /datum/reagent/consumable/ethanol/nukacide/on_mob_life(mob/living/carbon/M)
@@ -330,13 +330,13 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukafancy
-	name = "Nuka Fancy"
+	name = "Cosmic Fancy"
 	description = "A mixture of both Wild and cherry, making something absolutely tasty."
 	color = "#11111E"
 	boozepwr = 30
 	taste_description = "cherry rootbeer"
 	glass_icon_state = "nukafancyglass"
-	glass_name = "Nuka Fancy"
+	glass_name = "Cosmic Fancy"
 	glass_desc = "A mixture of both Wild and cherry, making something absolutely tasty."
 
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
@@ -351,14 +351,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukalove
-	name = "Nuka Love"
-	description = "A Nuka-Cola twist on a passionate classic."
+	name = "Cosmic Love"
+	description = "A Cosmic-Cola twist on a passionate classic."
 	color = "#8F4096"
 	boozepwr = 60
 	taste_description = "sweet cherry"
 	glass_icon_state = "nukaloveglass"
-	glass_name = "Nuka Love"
-	glass_desc = "A Nuka-Cola twist on a passionate classic."
+	glass_name = "Cosmic Love"
+	glass_desc = "A Cosmic-Cola twist on a passionate classic."
 
 /datum/reagent/consumable/ethanol/nukalove/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -369,14 +369,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukapunch
-	name = "Nuka Punch"
-	description = "A fruit punch mixture with a nuka kick."
+	name = "Cosmic Punch"
+	description = "A fruit punch mixture with a Cosmic kick."
 	color = "#4A261B"
 	boozepwr = 150
 	taste_description = "fruit punch"
 	glass_icon_state = "nukapunchglass"
-	glass_name = "Nuka Punch"
-	glass_desc = "A fruit punch mixture with a nuka kick."
+	glass_name = "Cosmic Punch"
+	glass_desc = "A fruit punch mixture with a Cosmic kick."
 
 /datum/reagent/consumable/ethanol/nukapunch/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
@@ -393,14 +393,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukasunrise
-	name = "Nuka Sunrise"
-	description = "A Nuka-Cola original drink, totally original and first of its kind!"
+	name = "Cosmic Sunrise"
+	description = "A Cosmic-Cola original drink, totally original and first of its kind!"
 	color = "#D82E04"
 	boozepwr = 30
 	taste_description = "sweetness and funshine"
 	glass_icon_state = "nukasunriseglass"
-	glass_name = "Nuka Sunrise"
-	glass_desc = "A Nuka-Cola original drink, totally original and first of its kind!"
+	glass_name = "Cosmic Sunrise"
+	glass_desc = "A Cosmic-Cola original drink, totally original and first of its kind!"
 
 /datum/reagent/consumable/ethanol/nukasunrise/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -411,14 +411,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/nukaquantum
-	name = "Nuka Quantum"
-	description = "An extremely blue and glowing combination of Nuka-Cola and (REDACTED)."
+	name = "Cosmic Quantum"
+	description = "An extremely blue and glowing combination of Cosmic-Cola and (REDACTED)."
 	color = "#6AFFFF"
 	boozepwr = 10
 	taste_description = "the eighteenth flavour"
 	glass_icon_state = "nukaquantumglass"
-	glass_name = "Nuka Quantum"
-	glass_desc = "An extremely blue and glowing combination of Nuka-Cola and (REDACTED)"
+	glass_name = "Cosmic Quantum"
+	glass_desc = "An extremely blue and glowing combination of Cosmic-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
 
@@ -435,8 +435,8 @@
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.1)
-		M.adjustFireLoss(-0.1)
+		M.adjustBruteLoss(-0.2)
+		M.adjustFireLoss(-0.2)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
@@ -458,13 +458,13 @@
 	..()
 
 /datum/reagent/consumable/ethanol/nukaxtreme //this is hell
-	name = "Nuka X-Treme"
+	name = "Cosmic X-Treme"
 	description = "Like Quantum, but <BIG>EXTREME<BIG>."
 	color = "#72E070"
 	boozepwr = 50
 	taste_description = "sugary grape"
 	glass_icon_state = "nukaxtremeglass"
-	glass_name = "Nuka X-Treme"
+	glass_name = "Cosmic X-Treme"
 	glass_desc = "Like Quantum, but <BIG>EXTREME<BIG>."
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
@@ -795,13 +795,13 @@
 	..()
 
 /datum/reagent/consumable/ethanol/nukashine
-	name = "Nukashine"
+	name = "Cosmicshine"
 	description = "You've really hit rock bottom now... your liver packed its bags and left last night. Stronger than the normal stuff, whooboy."
 	color = "#706A58"
 	boozepwr = 150
 	taste_description = "sweetness and liverpain"
 	glass_icon_state = "nukashine"
-	glass_name = "Nukashine"
+	glass_name = "Cosmicshine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night. Stronger than the normal stuff, whooboy."
 
 /datum/reagent/consumable/ethanol/olflakey

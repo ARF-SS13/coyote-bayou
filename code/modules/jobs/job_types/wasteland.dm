@@ -73,7 +73,7 @@ Raider
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio = 1,
 		)
 
@@ -400,7 +400,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -699,7 +699,7 @@ Raider
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		)
 
@@ -982,7 +982,7 @@ Raider
 	ears = null
 	belt = /obj/item/kit_spawner/waster
 	//suit_store = /obj/item/kit_spawner/tools //suit_store not workin
-	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	l_pocket = /obj/item/storage/wallet/stash/low
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -1312,6 +1312,31 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+
+/datum/job/wasteland/f13wastelander/ashdown
+	title = "Ashdown Citizen"
+	total_positions = 25
+	spawn_positions = 25
+	outfit = /datum/outfit/job/wasteland/ashdown
+
+/datum/outfit/job/wasteland/ashdown
+	name = "Ashdown Citizen"
+	jobtype = /datum/job/wasteland/f13raider
+	id = null
+	ears = /obj/item/radio/headset/headset_ashdown
+	belt = /obj/item/kit_spawner/waster
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		)
+
+
 /*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
@@ -1356,18 +1381,18 @@ Raider
 	R.gender = NEUTER
 
 
-//Wasteland Preacher
-/datum/job/wasteland/f13preacher
+//Nash Preacher
+/datum/job/oasis/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
-	faction = FACTION_WASTELAND
-	total_positions = 1
+	department_flag = DEP_OASIS
+	total_positions = 3
 	spawn_positions = 1
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/wasteland/f13preacher
+	outfit = /datum/outfit/job/oasis/f13preacher
 
 	loadout_options = list(
 	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
@@ -1427,7 +1452,7 @@ Raider
 	)
 
 
-/datum/job/wasteland/f13preacher/after_spawn(mob/living/H, mob/M)
+/datum/job/oasis/f13preacher/after_spawn(mob/living/H, mob/M)
 	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
@@ -1520,11 +1545,12 @@ Raider
 	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
 
 
-/datum/outfit/job/wasteland/f13preacher
+/datum/outfit/job/oasis/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/wasteland/f13preacher
+	jobtype = /datum/job/oasis/f13preacher
 
 	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/kit_spawner/preacher
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
@@ -1538,7 +1564,7 @@ Raider
 		/obj/item/reagent_containers/food/drinks/flask=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
-		/obj/item/storage/bag/money/small/settler,
+		/obj/item/storage/wallet/stash/mid,
 		/obj/item/nullrod = 1,)
 //end preacher
 
@@ -1772,7 +1798,7 @@ datum/job/wasteland/f13dendoctor
 	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
-	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
+	description = "You have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 0
@@ -1803,7 +1829,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/radx=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/kit_spawner/waster = 1,
-		/obj/item/storage/bag/money/small/wastelander)
+)
 
 /*
 /datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1966,9 +1992,9 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		/datum/crafting_recipe/redpotion,
-		/datum/crafting_recipe/bluepotion,
-		/datum/crafting_recipe/greenpotion,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia,
 		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
@@ -2366,7 +2392,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/sex
 	name = "Domestic Slave"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+		///obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1,
 		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
@@ -2433,7 +2459,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/bag/money/small/raider = 1,
+	//	/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
@@ -2509,7 +2535,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/overbossranged
 	name = "Crooked Mayor"
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small = 1,
+	//	/obj/item/storage/bag/money/small = 1,
 	//	/obj/item/gun/ballistic/revolver/colt357/mateba = 1,
 		/obj/item/clothing/under/suit/black = 1,
 		/obj/item/reagent_containers/glass/bottle/chloralhydrate = 1,

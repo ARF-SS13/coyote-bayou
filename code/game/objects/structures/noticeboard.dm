@@ -8,6 +8,8 @@
 	anchored = TRUE
 	max_integrity = 150
 	var/notices = 0
+	var/noticeLimit = 5 // How many papers can you stick to a noticeboard?
+	var/persistenceID = null
 
 /obj/structure/noticeboard/Initialize(mapload)
 	. = ..()
@@ -22,6 +24,74 @@
 			I.forceMove(src)
 			notices++
 	icon_state = "nboard0[notices]"
+	LAZYADD(SSpersistence.noticeBoards, src)
+
+/obj/structure/noticeboard/Destroy()
+	LAZYREMOVE(SSpersistence.noticeBoards, src)
+	..()
+
+/obj/structure/noticeboard/proc/PersistenceLoad()
+	var/list/data = SSpersistence.GetNoticeboardsPhotos()
+	if(data[persistenceID])
+		PopulatePhotosFromIDList(data[persistenceID])
+
+/obj/structure/noticeboard/proc/PopulatePhotosFromIDList(list/ids)
+	var/list/current_ids = GetPictureIDList()
+	for(var/i in ids)
+		if(i in current_ids)
+			continue
+		var/obj/item/photo/P = load_photo_from_disk(i)
+		if(P)
+			P.forceMove(src)
+			notices++
+	update_icon()
+
+/obj/structure/noticeboard/proc/PopulatePaperFromList(list/ids)
+	var/list/current_ids = StorePaperDataList()
+	for(var/i in ids)
+		if(i in current_ids)
+			continue
+		var/obj/item/paper/P = new /obj/item/paper()
+		if(P.LoadData(ids[i]))
+			P.pers_id = i
+			P.forceMove(src)
+			notices++
+	update_icon()
+
+/obj/structure/noticeboard/proc/StorePaperDataList()
+	var/list/L = list()
+	for(var/i in contents)
+		if(istype(i, /obj/item/paper))
+			L += i
+
+	if(!L.len)
+		return
+	. = list()
+	var/list/paperData = list()
+	for(var/i in L)
+		var/obj/item/paper/P = i
+		if(!P.pers_id)
+			P.pers_id = "[persistenceID]_[md5(strip_html(P.info))]" // cursed but it'll make it unique at least.
+		var/list/dat = P.SaveData()
+		if(dat.len)
+			paperData[P.pers_id] = dat
+	
+	if(paperData.len)
+		. = paperData
+	
+/obj/structure/noticeboard/proc/GetPictureIDList()
+	var/list/L = list()
+	for(var/i in contents)
+		if(istype(i, /obj/item/photo))
+			L += i
+	if(!L.len)
+		return
+	. = list()
+	for(var/i in L)
+		var/obj/item/photo/P = i
+		if(!istype(P.picture))
+			continue
+		. |= P.picture.id
 
 //attaching papers!!
 /obj/structure/noticeboard/attackby(obj/item/O, mob/user, params)
@@ -29,16 +99,20 @@
 		if(!allowed(user))
 			to_chat(user, span_info("You are not authorized to add notices"))
 			return
-		if(notices < 5)
+		if(notices < noticeLimit)
 			if(!user.transferItemToLoc(O, src))
 				return
 			notices++
-			icon_state = "nboard0[notices]"
+			update_icon()
 			to_chat(user, span_notice("You pin the [O] to the noticeboard."))
 		else
 			to_chat(user, span_notice("The notice board is full"))
 	else
 		return ..()
+
+/obj/structure/noticeboard/update_icon()
+	icon_state = "nboard0[clamp(notices, 0, 5)]"
+	..()
 
 /obj/structure/noticeboard/interact(mob/user)
 	ui_interact(user)

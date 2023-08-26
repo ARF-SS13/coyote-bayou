@@ -204,6 +204,11 @@
 	icon_state = "paramedic-vest"
 	item_state = "paramedic-vest"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 
 /obj/item/clothing/suit/toggle/labcoat/emt
 	name = "emt vest"
@@ -211,15 +216,30 @@
 	icon_state = "labcoat_emt"
 	item_state = "labcoat_emt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 
 /obj/item/clothing/suit/toggle/labcoat/emt/red
 	name = "red emt vest"
 	desc = "A red vest with reflective strips for emergency medical technicians."
 	icon_state = "labcoat_emtred"
 	item_state = "labcoat_emtred"
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 
 /obj/item/clothing/suit/toggle/labcoat/emt/highvis
 	name = "high visibility emt vest"
 	desc = "a high visibility vest for emergency medical technicians."
 	icon_state = "labcoat_highvis"
 	item_state = "labcoat_highvis"
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four

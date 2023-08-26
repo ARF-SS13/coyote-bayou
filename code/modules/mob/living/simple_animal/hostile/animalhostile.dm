@@ -55,7 +55,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
 	emote_taunt = list("gurgles", "stares")
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 
@@ -83,7 +83,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	emote_taunt_sound = list('sound/f13npc/dog/dog_charge1.ogg', 'sound/f13npc/dog/dog_charge2.ogg', 'sound/f13npc/dog/dog_charge3.ogg', 'sound/f13npc/dog/dog_charge4.ogg', 'sound/f13npc/dog/dog_charge5.ogg', 'sound/f13npc/dog/dog_charge6.ogg', 'sound/f13npc/dog/dog_charge7.ogg',)
 	emote_taunt = list("growls", "barks", "snarls")
 	taunt_chance = 30
-	aggrosound = list('sound/f13npc/dog/dog_alert1.ogg', 'sound/f13npc/dog/dog_alert2.ogg', 'sound/f13npc/dog/dog_alert3.ogg')
+	emote_taunt_sound = list('sound/f13npc/dog/dog_alert1.ogg', 'sound/f13npc/dog/dog_alert2.ogg', 'sound/f13npc/dog/dog_alert3.ogg')
 	idlesound = list('sound/f13npc/dog/dog_bark1.ogg', 'sound/f13npc/dog/dog_bark2.ogg', 'sound/f13npc/dog/dog_bark3.ogg')
 	death_sound = 'sound/f13npc/centaur/centaur_death.ogg'
 

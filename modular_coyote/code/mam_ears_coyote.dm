@@ -340,3 +340,9 @@
 	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
 	icon_state = "jackalope"
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/vap
+	name = "Vaporeon"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	icon_state = "vap"
+	matrixed_sections = MATRIX_ALL

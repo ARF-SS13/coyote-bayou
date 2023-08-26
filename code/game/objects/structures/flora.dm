@@ -20,7 +20,19 @@
 		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
 			humanAM.disable_sprint_mode()
 			humanAM.AdjustKnockdown(25)
-			visible_message(span_warning("[humanAM] runs straight into [src]!"))
+			if(HAS_TRAIT(humanAM, TRAIT_ZOOMIES))
+				humanAM.adjustBruteLoss(20) //falling from 1 story is 11 damage. falling from 2 stories is 31
+				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
+				visible_message(span_warning("[humanAM] runs straight into [src] with a sickening impact!"))
+			if(HAS_TRAIT(humanAM, TRAIT_SUPER_ZOOMIES))
+				humanAM.adjustBruteLoss(40)
+				visible_message(span_warning("[humanAM] runs straight into [src] with a violent impact!"))
+				playsound(get_turf(src), 'sound/effects/slap.ogg', 100, 0, 0)
+				playsound(get_turf(src), 'sound/effects/wounds/crack2.ogg', 100, 0, 0)
+			else
+				visible_message(span_warning("[humanAM] runs straight into [src]!"))
+
+
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
@@ -139,7 +151,7 @@
 /obj/structure/flora/tree/jungle
 	name = "tree"
 	icon_state = "tree"
-	desc = "It's seriously hampering your view of the jungle."
+	desc = "It's seriously hampering your view of the swamp."
 	icon = 'icons/obj/flora/jungletrees.dmi'
 	pixel_x = -48
 	pixel_y = -20

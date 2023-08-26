@@ -458,6 +458,10 @@ em {
   color: #686868;
 }
 
+.respondersradio {
+  color: #dd3535;
+}
+
 .enclaveradio {
   color: #67696b;
 }
@@ -1069,6 +1073,32 @@ h1.alert, h2.alert {
 
   100% {
     color: #0d0d0d;
+  }
+}
+
+.blinker {
+  opacity: 100%;
+  animation: blinker 1000ms linear infinite;
+}
+
+@keyframes phobia {
+  0% {
+    opacity: 100%;
+  }
+
+  49% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+
+  99% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
   }
 }
 

@@ -2,7 +2,7 @@
 	name = "electrode"
 	icon_state = "spark"
 	color = "#FFFF00"
-	nodamage = TRUE
+	nodamage = FALSE
 	knockdown = 60
 	knockdown_stamoverride = 36
 	knockdown_stam_max = 50
@@ -16,6 +16,8 @@
 	impact_type = /obj/effect/projectile/impact/stun
 	var/tase_duration = 50
 	var/strong_tase = TRUE
+	damage = 75
+	damage_type = STAMINA
 
 /obj/item/projectile/energy/electrode/on_hit(atom/target, blocked = FALSE)
 	. = ..()

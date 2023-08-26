@@ -62,6 +62,10 @@
 
 	return FALSE
 
+/// Proc to have a holiday do something at certain times of the round
+/datum/holiday/proc/midround_process()
+	return
+
 // The actual holidays
 
 /datum/holiday/new_year

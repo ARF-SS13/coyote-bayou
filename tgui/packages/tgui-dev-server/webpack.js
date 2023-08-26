@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { createLogger } from 'common/logging.js';
+import { createLogger } from './logging.js';
 import fs from 'fs';
 import { createRequire } from 'module';
 import { dirname } from 'path';

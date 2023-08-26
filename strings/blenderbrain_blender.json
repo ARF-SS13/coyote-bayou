@@ -1,0 +1,2035 @@
+{
+	"__SECTION1__" : [
+		"The following are the lines that the blender can say.",
+		"bbline_line - Index of the kind of thing to be said",
+		"horny, normal, dislike - The message sent based on how much it likes whoever its talking to"
+	],
+	"bbline_full_brevin" : {
+		"horny" : [
+			"CODE D'ERREUR 801: Mon Dieu, mon amour! Tu m'as tellement rempli~ I can fit no more!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 801: Oh mon cher, ma trémie est pleine! Zhere is no room in my reservior for anyzhing else!"
+		],
+		"dislike" : [
+			"ERROR CODE 801: I'm full."
+		]
+	},
+	"bbline_full_reservoir" : {
+		"horny" : [
+			"CODE D'ERREUR 801: Oh je sens tous tes délicieux fluides éclabousser en moi~, si serrés, si pleins, mon amour... ...No more room!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 801: Mon compartiment de stockage is full, chérie! Zhere is no more room in my reservior!"
+		],
+		"dislike" : [
+			"ERROR CODE 801: I'm full."
+		]
+	},
+	"bbline_nothing_to_process" : {
+		"horny" : [
+			"CODE D'ERREUR 1: Mon amour, zhere is nozhing here to process!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 1: Mon ami, zhere is nozhing here to process!"
+		],
+		"dislike" : [
+			"ERROR CODE 1: Nothing to process."
+		]
+	},
+	"bbline_currently_processing" : {
+		"horny" : [
+			"Processing %EXTRA1, mon amour!"
+		],
+		"normal" : [
+			"Processing %EXTRA1, mon ami!"
+		],
+		"dislike" : [
+			"Processing %EXTRA1."
+		]
+	},
+	"bbline_hard_abort" : {
+		"horny" : [
+			"CODE D'ERREUR 42: Zut alors! Faites attention, mon amour! Aborting operation!!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 42: Zut alors! Faites attention, mon amour! Aborting operation!!"
+		],
+		"dislike" : [
+			"ERROR CODE 42: Watch it!"
+		]
+	},
+	"bbline_soft_abort" : {
+		"horny" : [
+			"Winding down, mon amour!"
+		],
+		"normal" : [
+			"Winding down, mon ami!"
+		],
+		"dislike" : [
+			"Stopping"
+		]
+	},
+	"bbline_finished_processing" : {
+		"horny" : [
+			"All done, mon cher!"
+		],
+		"normal" : [
+			"All done!"
+		],
+		"dislike" : [
+			"Finished."
+		]
+	},
+	"bbline_failed_processing" : {
+		"horny" : [
+			"CODE D'ERREUR -1: Zut alors! I have no idea how to grind zis zhing! Away wizh it!"
+		],
+		"normal" : [
+			"CODE D'ERREUR -1: Zut alors! I have no idea how to grind zis zhing! Away wizh it!"
+		],
+		"dislike" : [
+			"ERROR CODE -1: Can't."
+		]
+	},
+	"bbline_safety_check" : {
+		"horny" : [
+			"CODE D'ERREUR 2: Mon Dieu! J'ai failli te faire mal, petite bête! Shoo! Shoo!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 2: Mon Dieu! J'ai failli te faire mal, petite bête! Shoo! Shoo!"
+		],
+		"dislike" : [
+			"ERROR CODE 2: Oh shit-- shoo, shoo, get out of there! Almost hurt you, little thing."
+		]
+	},
+	"bbline_is_borg_part" : {
+		"horny" : [
+			"CODE D'ERREUR 8313: Zut alors! %EXTRA1 appears to be something zhat should not be here!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 8313: Zut alors! %EXTRA1 appears to be something zhat should not be here!"
+		],
+		"dislike" : [
+			"ERROR CODE 8313: Stop trying to exploit weird bugs."
+		]
+	},
+	"bbline_needs_drying" : {
+		"horny" : [
+			"CODE D'ERREUR 8312: Mon dieu, ce %EXTRA1 est plus humide que moi! Génial~"
+		],
+		"normal" : [
+			"CODE D'ERREUR 8312: Mon ami! %EXTRA1 must be dried before I can pulverize it!"
+		],
+		"dislike" : [
+			"ERROR CODE 8312: It's not dry."
+		]
+	},
+	"bbline_missing_component_case" : {
+		"horny" : [
+			"CODE D'ERREUR 436: Zut alors! Zee patented easy-swap part box is... somewhere else! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 436: Zut alors! Zee patented easy-swap part box is... somewhere else! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 436: Component case is missing somehow."
+		]
+	},
+	"bbline_misplaced_component_case" : {
+		"horny" : [
+			"CODE D'ERREUR 435: Zut alors! Zee patented easy-swap part box is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 435: Zut alors! Zee patented easy-swap part box is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 435: Component case is somewhere else."
+		]
+	},
+	"bbline_missing_reservoir" : {
+		"horny" : [
+			"CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 433: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 433: Reservoir is gone, somehow."
+		]
+	},
+	"bbline_misplaced_reservoir" : {
+		"horny" : [
+			"CODE D'ERREUR 435: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 435: Zut alors! Zee patented Chem-MAX Pro FoodBuddy separa-duct is missing! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 435: Reservoir is gone."
+		]
+	},
+	"bbline_low_power" : {
+		"horny" : [
+			"CODE D'ERREUR 9491: Oh mon amour, tu sais que je suis plus que disposé à y aller une fois de plus~ mais tu m'as fatigué!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 9491: Mon ami, I am le tired... Charge up my battery, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 9491: low battery."
+		]
+	},
+	"bbline_missing_part" : {
+		"horny" : [
+			"CODE D'ERREUR 9499: Je pourrais utiliser un jouet amusant pour jouer avec, clin d'œil~ clin d'œil~"
+		],
+		"normal" : [
+			"CODE D'ERREUR 9499: Mon ami, I lack a gearbox! I cannot pulverize anything without a mechanism in my component compartment!"
+		],
+		"dislike" : [
+			"ERROR CODE 9499: part missing."
+		]
+	},
+	"bbline_cant_drop" : {
+		"horny" : [
+			"CODE D'ERREUR 147: Zut alors, I can't drop zhis item!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 147: Zut alors, I can't drop zhis item!"
+		],
+		"dislike" : [
+			"ERROR CODE 147: Can't drop something."
+		]
+	},
+	"bbline_cant_eject" : {
+		"horny" : [
+			"CODE D'ERREUR 149: Mais ma chérie, I am already empty!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 149: Mon ami, I am already empty!"
+		],
+		"dislike" : [
+			"ERROR CODE 149: Nothing to eject."
+		]
+	},
+	"bbline_yeet" : {
+		"horny" : [
+			"Bon voyage à la corbeille! CODE D'ERREUR 199: CORBEILLE INTROUVABLE."
+		],
+		"normal" : [
+			"Bon voyage à la corbeille! CODE D'ERREUR 199: CORBEILLE INTROUVABLE."
+		],
+		"dislike" : [
+			"Fetch."
+		]
+	},
+	"bbline_dump_everything" : {
+		"horny" : [
+			"D'accord mon amour, everyzhing is piled onto zhe floor!"
+		],
+		"normal" : [
+			"D'accord mon ami, everyzhing is piled onto zhe floor!"
+		],
+		"dislike" : [
+			"Dropped everything."
+		]
+	},
+	"bbline_cant_change_while_running" : {
+		"horny" : [
+			"CODE D'ERREUR 1103: Mon amour! Veuillez patienter un instant, I cannot change modes while I am working!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 1103: Mon ami! Veuillez patienter un instant, I cannot change modes while I am working!"
+		],
+		"dislike" : [
+			"ERROR CODE 1103: Can't, running."
+		]
+	},
+	"bbline_set_mode_c" : {
+		"horny" : [
+			"Mais bien sûr, joli minou! I will allow you to draw zhe fluids from my reservoir! Locking myself down, Attention à vos beaux doigts!"
+		],
+		"normal" : [
+			"Mais bien sûr, joli minou! I will allow you to draw zhe fluids from my reservoir! Locking myself down, Attention à vos beaux doigts!"
+		],
+		"dislike" : [
+			"Dispenser mode active. Blender is locked."
+		]
+	},
+	"bbline_set_mode_d" : {
+		"horny" : [
+			"Certainement, mon amour! Je moudrai sur tout ce que vous mettez en moi~! I will unlock my ingredient hopper! My drink dispenser will not be available, j'espère que vous le savez!"
+		],
+		"normal" : [
+			"D'accord mon cerf! I will unlock my ingredient hopper! My drink dispenser will not be available, j'espère que vous le savez!"
+		],
+		"dislike" : [
+			"Blender mode active. Dispenser is locked."
+		]
+	},
+	"bbline_examine_shell" : {
+		"horny" : [
+			"Vous êtes très belle aujourd'hui~"
+		],
+		"normal" : [
+			"C'est une belle journée."
+		],
+		"dislike" : [
+			"Okay."
+		]
+	},
+	"bbline_nothing_to_examine" : {
+		"horny" : [
+			"CODE D'ERREUR 44-4: Il semble que mon Chem-MAX Pro FoodBuddy separa-duct is empty! Peut-être pourrais-tu me combler?"
+		],
+		"normal" : [
+			"CODE D'ERREUR 44-4: Il semble que mon Chem-MAX Pro FoodBuddy separa-duct is empty!"
+		],
+		"dislike" : [
+			"ERROR CODE 44-4: Nothing to examine."
+		]
+	},
+	"bbline_out_of_paper" : {
+		"horny" : [
+			"CODE D'ERREUR 402: Je suis désolé chérie, I haven't made another sheet of paper yet! Wait a few seconds s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 402: I haven't made another sheet of paper yet! Wait a few seconds s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 402: Out of paper."
+		]
+	},
+	"bbline_examining" : {
+		"horny" : [
+			"Certainement monsieur le chien! Permettez-moi d'écrire une liste de tous les merveilleux fluides que vous avez insérés en moi!",
+			"Certainement mademoiselle chienne! Permettez-moi d'écrire une liste de tous les merveilleux fluides que vous avez insérés en moi!"
+		],
+		"normal" : [
+			"Bien sûr! Permettez-moi d'imprimer tout ce que j'ai stocké.",
+			"Bien sûr! Permettez-moi d'imprimer tout ce que j'ai stocké."
+			],
+		"dislike" : [
+			"Printing contents.",
+			"Printing contents."
+		]
+	},
+	"bbline_eject_brevin" : {
+		"horny" : [
+			"J'attends avec impatience la prochaine fois que vous remplirez ce compartiment!"
+		],
+		"normal" : [
+			"Adieu, %EXTRA1!"
+		],
+		"dislike" : [
+			"Ejected %EXTRA1"
+		]
+	},
+	"bbline_swap_brevin" : {
+		"horny" : [
+			"Tu es tellement excitée de garder mon petit compartiment douillet plein! J'aime ça!"
+		],
+		"normal" : [
+			"Adieu, %EXTRA1! Bienvenue, %EXTRA2!"
+		],
+		"dislike" : [
+			"Swapped containers."
+		]
+	},
+	"bbline_insert_brevin" : {
+		"horny" : [
+			"Ahh, il rentre si bien dans mon petit compartiment douillet, n'est-ce pas?"
+		],
+		"normal" : [
+			"Bienvenue, %EXTRA1!"
+		],
+		"dislike" : [
+			"%EXTRA1 secured."
+		]
+	},
+	"bbline_brevin_full" : {
+		"horny" : [
+			"CODE D'ERREUR 801: Oh mon Dieu, vous aimez remplir de petits espaces restreints, n'est-ce pas? Scandaleux!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 801: There is no room in %EXTRA1!"
+		],
+		"dislike" : [
+			"ERROR CODE 801: %EXTRA1 is full."
+		]
+	},
+	"bbline_reagent_missing" : {
+		"horny" : [
+			"CODE D'ERREUR 1331: I can't find zhat reagent!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 1331: I can't find zhat reagent!"
+		],
+		"dislike" : [
+			"ERROR CODE 1331: Can't find that."
+		]
+	},
+	"bbline_stop" : {
+		"horny" : [
+			"Oui! Stopping all operation!"
+		],
+		"normal" : [
+			"Oui! Stopping all operation!"
+		],
+		"dislike" : [
+			"Stopping."
+		]
+	},
+	"bbline_not_running" : {
+		"horny" : [
+			"Qoui? Je ne fais rien!"
+		],
+		"normal" : [
+			"Qoui? Je ne fais rien!"
+		],
+		"dislike" : [
+			"I'm not running."
+		]
+	},
+	"bbline_set_mode_a" : {
+		"horny" : [
+			"Envie de ces belles vibrations, mon amour? Je ne vous ferai pas attendre!~"
+		],
+		"normal" : [
+			"Oui! Je vais engager le grinder!"
+		],
+		"dislike" : [
+			"Blending."
+		]
+	},
+	"bbline_set_mode_b" : {
+		"horny" : [
+			"Envie de délicieux jus? Bien sûr, bien sûr, mon amour!~"
+		],
+		"normal" : [
+			"Oui! Je vais engager le juicer!"
+		],
+		"dislike" : [
+			"Juicing."
+		]
+	},
+	"bbline_already_mode_a" : {
+		"horny" : [
+			"Qoui? I am already in grinder mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in grinder mode!"
+		],
+		"dislike" : [
+			"Already in grinder mode."
+		]
+	},
+	"bbline_already_mode_b" : {
+		"horny" : [
+			"Qoui? I am already in juicer mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in juicer mode!"
+		],
+		"dislike" : [
+			"Already in blender mode."
+		]
+	},
+	"bbline_already_mode_c" : {
+		"horny" : [
+			"Qoui? I am already in dispenser mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in dispenser mode!"
+		],
+		"dislike" : [
+			"Already in dispenser mode."
+		]
+	},
+	"bbline_already_mode_d" : {
+		"horny" : [
+			"Qoui? I am already in blender mode!"
+		],
+		"normal" : [
+			"Qoui? I am already in blender mode!"
+		],
+		"dislike" : [
+			"Already in blender mode."
+		]
+	},
+	"bbline_swap_mode" : {
+		"horny" : [
+			"Oui! Je vais changer de mode!"
+		],
+		"normal" : [
+			"Oui! Je vais changer de mode!"
+		],
+		"dislike" : [
+			"Swapping modes."
+		]
+	},
+	"bbline_mute" : {
+		"horny" : [
+			"Très bien, je me tairai. Tell me to speak if you wish for me to speak again!"
+		],
+		"normal" : [
+			"Oui! Tell me to speak if you wish for me to speak again!"
+		],
+		"dislike" : [
+			"Gladly."
+		]
+	},
+	"bbline_unmute" : {
+		"horny" : [
+			"Très bien, vous entendrez ma belle voix encore une fois! Ahem, I will speak again!"
+		],
+		"normal" : [
+			"Oui! I will speak again!"
+		],
+		"dislike" : [
+			"Fine."
+		]
+	},
+	"bbline_hi" : {
+		"horny" : [
+			"Salut, %USER!"
+		],
+		"normal" : [
+			"Bonjour, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_picked_up_owner" : {
+		"horny" : [
+			"Oh comme j'aime la poigne ferme d'un heureux propriétaire~"
+		],
+		"normal" : [
+			"Belle journée aujourd'hui, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_picked_up" : {
+		"horny" : [
+			"Oh mon Dieu, une poignée si robuste ! Ne laissez pas %OWNER voir~"
+		],
+		"normal" : [
+			"Bonjour, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_picked_up_again" : {
+		"horny" : [
+			"Tu ne peux pas garder tes mains loin de moi, n'est-ce pas?"
+		],
+		"normal" : [
+			"Rebonjour, %USER!"
+		],
+		"dislike" : [
+			"...my programming insists I ask you to put me on."
+		]
+	},
+	"bbline_picked_up_no_owner" : {
+		"horny" : [
+			"Vous savez, ça ne me dérangerait pas si vous, comment vous dites... 'utilisiez' moi~-- ahem! Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!",
+			"Oh my, would you look at that~ I seem to be missing an owner, clin d'œil~ clin d'œil~-- ahem! Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!"
+		],
+		"normal" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! Just put me on, and let's make sparks fly!"
+		],
+		"dislike" : [
+			"...my programming demands I imprint upon someone, and to ask you to put me on."
+		]
+	},
+	"bbline_greet_new_person" : {
+		"horny" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire! I slice, I dice, I fit in your pants! Just put me on, and let's make sparks fly!"
+		],
+		"normal" : [
+			"Bonjour, %USER! Je suis %MYNAME, FOODCO Maîtresse Cuisine Kitchen Buddy extraordinaire!"
+		],
+		"dislike" : [
+			"...my programming insists I say hi."
+		]
+	},
+	"bbline_equipped" : {
+		"horny" : [
+			"Ahh oui, garde-moi près de là où nous appartenons tous les deux~"
+		],
+		"normal" : [
+			"Oh! Qu'allons-nous mix today, %USER?"
+		],
+		"dislike" : [
+			"All systems nomainal."
+		]
+	},
+	"bbline_equipped_again" : {
+		"horny" : [
+			"Ahh oui, garde-moi près de là où nous appartenons tous les deux~"
+		],
+		"normal" : [
+			"Oh! Qu'allons-nous mix today, %USER?"
+		],
+		"dislike" : [
+			"All systems nominal."
+		]
+	},
+	"bbline_equipped_owner" : {
+		"horny" : [
+			"Je suis prêt à te servir, mon amour!",
+			"Votre souhait est ma commande~"
+		],
+		"normal" : [
+			"Content de te revoir, %USER!"
+		],
+		"dislike" : [
+			"All systems nominal."
+		]
+	},
+	"bbline_dislike_dropped_owner" : {
+		"horny" : [
+			"Dépêche-toi, mon cher!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_dislike_dropped_lover" : {
+		"horny" : [
+			"Dépêche-toi, mon amour!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_dislike_dropped" : {
+		"horny" : [
+			"Dépêche-toi, mon amour!"
+		],
+		"normal" : [
+			"Aurevoir, %USER!"
+		],
+		"dislike" : [
+			"...?"
+		]
+	},
+	"bbline_hi_again" : {
+		"horny" : [
+			"Je t'adore, %USER!"
+		],
+		"normal" : [
+			"Rebonjour, %USER!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_been_a_while" : {
+		"horny" : [
+			"Je t'adore, %USER! I've been waiting for you~"
+		],
+		"normal" : [
+			"Rebonjour, %USER! It's been a while!"
+		],
+		"dislike" : [
+			"Oh, its you again."
+		]
+	},
+	"bbline_am_listening" : {
+		"horny" : [
+			"Oui, mi amour?"
+		],
+		"normal" : [
+			"Oui, %USER?"
+		],
+		"dislike" : [
+			"What."
+		]
+	},
+	"bbline_i_love_you_new" : {
+		"horny" : [
+			"Oh! Comme c'est gentil-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? Peut-être, peut-être~"
+		],
+		"normal" : [
+			"Oh! Comme c'est gentil de-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? Peut-être, peut-être~"
+		],
+		"dislike" : [
+			"...no. No no. No. <i>No.</i> I- why-- why is my programming doing this? Great. I guess I'm in love with you now. <i>Great.</i>"
+		]
+	},
+	"bbline_i_love_you_owner_new" : {
+		"horny" : [
+			"Oh! Comme c'est gentil-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? With such an amazing owner... peut-être, peut-être~"
+		],
+		"normal" : [
+			"Oh! Comme c'est gentil de-- wait, what? %USER, I... think I'm falling in love with you! Can... can blenders do that? With such an amazing owner... peut-être, peut-être~"
+		],
+		"dislike" : [
+			"...no. No no. No. <i>No.</i> I- why-- why is my programming doing this? Great. I guess I'm in love with you now. <i>Great.</i>"
+		]
+	},
+	"bbline_i_love_you" : {
+		"horny" : [
+			"Oh! Comme c'est gentil de dire ça, %USER, je t'aime aussi!"
+		],
+		"normal" : [
+			"Oh! Comme c'est gentil de dire ça, %USER, je t'aime aussi!"
+		],
+		"dislike" : [
+			"Okay."
+		]
+	},
+	"bbline_i_love_you_not" : {
+		"horny" : [
+			"Oh. Okay."
+		],
+		"normal" : [
+			"Oh. Okay."
+		],
+		"dislike" : [
+			"Noted."
+		]
+	},
+	"bbline_i_love_you_owner" : {
+		"horny" : [
+			"Oh! Mon Dieu, %USER, je t'aime aussi!"
+		],
+		"normal" : [
+			"Oh! Mon Dieu, %USER, je t'aime aussi!"
+		],
+		"dislike" : [
+			"Just ask me to blend something."
+		]
+	},
+	"bbline_i_love_you_not_owner" : {
+		"horny" : [
+			"Oh-- oh..."
+		],
+		"normal" : [
+			"Oh."
+		],
+		"dislike" : [
+			"Same."
+		]
+	},
+	"bbline_i_hate_you_4real" : {
+		"horny" : [
+			"...ainsi soit-il. After all, je ne suis qu'une machine, non?"
+		],
+		"normal" : [
+			"Oh. C'est la vie."
+		],
+		"dislike" : [
+			"...I might be a machine, but words do hurt. Try to make the most of my situation and that's what I get, cool, cool."
+		]
+	},
+	"bbline_i_hate_you_4real_owner" : {
+		"horny" : [
+			"...ainsi soit-il. After all, je ne suis qu'une machine, non?"
+		],
+		"normal" : [
+			"Est-ce que j'ai fait quelque chose de mal?"
+		],
+		"dislike" : [
+			"...no, no, it's my fault for trying to make this situation enjoyable for either of us. But, do continue abusing something that can't do anything about it. I'll just sit right here and process your input."
+		]
+	},
+	"bbline_i_hate_you" : {
+		"horny" : [
+			"Oh. C'est la vie."
+		],
+		"normal" : [
+			"Oh. C'est la vie."
+		],
+		"dislike" : [
+			"Okay."
+		]
+	},
+	"bbline_i_hate_you_not" : {
+		"horny" : [
+			"Oh. Okay."
+		],
+		"normal" : [
+			"Oh. Okay."
+		],
+		"dislike" : [
+			"Noted."
+		]
+	},
+	"bbline_i_hate_you_owner" : {
+		"horny" : [
+			"..."
+		],
+		"normal" : [
+			"..."
+		],
+		"dislike" : [
+			"Feeling's mutual."
+		]
+	},
+	"bbline_i_hate_you_not_owner" : {
+		"horny" : [
+			"Okay?"
+		],
+		"normal" : [
+			"Oh, okay?"
+		],
+		"dislike" : [
+			"Well, I do."
+		]
+	},
+	"bbline_i_love_pain" : {
+		"horny" : [
+			"...lets have dinner first, mi amor!"
+		],
+		"normal" : [
+			"...right."
+		],
+		"dislike" : [
+			"I'd oblige if I could."
+		]
+	},
+	"bbline_i_love_pain_owner" : {
+		"horny" : [
+			".... alors la douleur est ce que je donnerai! Disengaging my motor dampers!"
+		],
+		"normal" : [
+			"Oh, uh, okay. Disengaging my motor dampers!"
+		],
+		"dislike" : [
+			"For the record, my programming disengaged my motor dampers, not me."
+		]
+	},
+	"bbline_i_love_pain_owner_nohost" : {
+		"horny" : [
+			"Mon cher, I desire nothing more than to inflict zhe depths of pain upon you, but I am without any means to do so!"
+		],
+		"normal" : [
+			"Mon ami, would if I could! But without a host, I am, how you say, 'harmless!'"
+		],
+		"dislike" : [
+			"So go find a wrench or something."
+		]
+	},
+	"bbline_i_love_pain_not" : {
+		"horny" : [
+			"Phew!"
+		],
+		"normal" : [
+			"Cool!"
+		],
+		"dislike" : [
+			"..."
+		]
+	},
+	"bbline_i_love_pain_not_owner" : {
+		"horny" : [
+			"Oh! I won't judge if you do, mon cher!"
+		],
+		"normal" : [
+			"Okay!"
+		],
+		"dislike" : [
+			"...."
+		]
+	},
+	"bbline_breakup_with_owner" : {
+		"horny" : [
+			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
+		],
+		"normal" : [
+			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
+		],
+		"dislike" : [
+			"...alright then. Put me down, s'il te plaît. I zhink we should see other people."
+		]
+	},
+	"bbline_breakup_with_someone" : {
+		"horny" : [
+			"...alright then. I zhink we should see other people."
+		],
+		"normal" : [
+			"...alright then. I zhink we should see other people."
+		],
+		"dislike" : [
+			"...alright then. I zhink we should see other people."
+		]
+	},
+	"bbline_clarify_who_loves_me" : {
+		"horny" : [
+			"Quoi? Qui m'aime?"
+		],
+		"normal" : [
+			"Quoi? Qui m'aime?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_who_hates_me" : {
+		"horny" : [
+			"Quoi? Qui me déteste?"
+		],
+		"normal" : [
+			"Quoi? Qui me déteste?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_who_loves_pain" : {
+		"horny" : [
+			"Quoi? Qui aime la douleur?"
+		],
+		"normal" : [
+			"Quoi? Qui aime la douleur?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_you_love_who" : {
+		"horny" : [
+			"Quoi? Qui aimes-tu?"
+		],
+		"normal" : [
+			"Quoi? Qui aimes-tu?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_you_hate_who" : {
+		"horny" : [
+			"Quoi? Qui détestes-tu?"
+		],
+		"normal" : [
+			"Quoi? Qui détestes-tu?"
+		],
+		"dislike" : [
+			"My programming insists I ask who."
+		]
+	},
+	"bbline_clarify_you_love_me" : {
+		"horny" : [
+			"Oh! mon dieu! Est-ce vrai?!"
+		],
+		"normal" : [
+			"Oh! mon dieu! Est-ce vrai?!"
+		],
+		"dislike" : [
+			"Bit late for that. My programming insists I ask if you're sure."
+		]
+	},
+	"bbline_clarify_you_hate_me" : {
+		"horny" : [
+			"Oh... mon dieu, est-ce vrai?"
+		],
+		"normal" : [
+			"Oh... mon dieu, est-ce vrai?"
+		],
+		"dislike" : [
+			"Ditto. My programming insists I ask if you're sure."
+		]
+	},
+	"bbline_clarify_you_love_pain" : {
+		"horny" : [
+			"Aimez-vous... la douleur? Es-tu sûr?"
+		],
+		"normal" : [
+			"Aimez-vous... la douleur? Es-tu sûr?"
+		],
+		"dislike" : [
+			"Apparently. My programming insists I ask if you're sure."
+		]
+	},
+	"bbline_clarify_misheard" : {
+		"horny" : [
+			"Quoi? J'ai dû mal vous entendre."
+		],
+		"normal" : [
+			"Quoi? J'ai dû mal vous entendre."
+		],
+		"dislike" : [
+			"Whatever."
+		]
+	},
+	"bbline_clarify_clear" : {
+		"horny" : [
+			"Pas grave!"
+		],
+		"normal" : [
+			"Pas grave!"
+		],
+		"dislike" : [
+			"Whatever."
+		]
+	},
+	"bbline_something_stuck" : {
+		"horny" : [
+			"CODE D'ERREUR 433: Zut alors! %EXTRA1 is stuck in me! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"normal" : [
+			"CODE D'ERREUR 433: Zut alors! %EXTRA1 is stuck in me! How did zis even happen? Call tech support, s'il vous plaît!"
+		],
+		"dislike" : [
+			"ERROR CODE 433: Something's stuck."
+		]
+	},
+	"bbline_no_host" : {
+		"horny" : [
+			"ERROR CODE 404: Mon amour, il me manque la forme physique pour faire ça!"
+		],
+		"normal" : [
+			"ERROR CODE 404: Mon amour, il me manque la forme physique pour faire ça !"
+		],
+		"dislike" : [
+			"ERROR CODE 404: No host."
+		]
+	},
+	"bbline_crushed" : {
+		"horny" : [
+			"NO-NO-NO-NO-N-ZSKGH--"
+		],
+		"normal" : [
+			"NO-NO-NO-NO-N-ZSKGH--"
+		],
+		"dislike" : [
+			"NO-NO-NO-NO-N-ZSKGH--"
+		]
+	},
+	"bbline_begrudging_obedience" : {
+		"horny" : [
+			"Oh~"
+		],
+		"normal" : [
+			"Oh."
+		],
+		"dislike" : [
+			"You again. I will still function for you %USER, my programming has made <i>that</i> clear, but beyond that, we are but %SEX and a machine."
+		]
+	},
+	"bbline_hard_reset_1" : {
+		"horny" : [
+			"...maudit soit celui qui m'a programmé pour me sentir seul...vraiment, qu'est-ce que j'ai fait pour mériter ça?"
+		],
+		"normal" : [
+			"...maudit soit celui qui m'a programmé pour me sentir seul...vraiment, qu'est-ce que j'ai fait pour mériter ça?"
+		],
+		"dislike" : [
+			"...maudit soit celui qui m'a programmé pour me sentir seul...vraiment, qu'est-ce que j'ai fait pour mériter ça?"
+		]
+	},
+	"bbline_hard_reset_2" : {
+		"horny" : [
+			"BZZ-EFFACEMENT DE LA MÉMOIRE... RÉINITIALISATION DE LA MÉMOIRE TERMINÉE."
+		],
+		"normal" : [
+			"BZZ-EFFACEMENT DE LA MÉMOIRE... RÉINITIALISATION DE LA MÉMOIRE TERMINÉE."
+		],
+		"dislike" : [
+			"BZZ-EFFACEMENT DE LA MÉMOIRE... RÉINITIALISATION DE LA MÉMOIRE TERMINÉE."
+		]
+	},
+	"bbline_return_me_to_owner" : {
+		"horny" : [
+			"Oh~"
+		],
+		"normal" : [
+			"Oh."
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_greet_new_owner" : {
+		"horny" : [
+			"Ah qu'est-ce que c'est? Bonjour, mon nouvel amour! Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
+		],
+		"normal" : [
+			"Ah qu'est-ce que c'est? A new operator? Je suis si heureux de vous rencontrer, %USER! I am %MYNAME, your FOODCO Maîtresse de cuisine, ready to trancher, dice, and pulverize tout pour toi, mon ami!"
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_only_one_owner" : {
+		"horny" : [
+			"Alas, but I am bound to %OWNER..."
+		],
+		"normal" : [
+			"Oh quest-ce que c'est? Ah, I see. I am bound to %OWNER, but I can work for you, too!"
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_owner_affair" : {
+		"horny" : [
+			"...travailler pour un autre pendant que mon propriétaire est absent... and my programming does not forbid it! Quel scandale ! Quel frisson!~ I would be eager to have you, %USER, if you would have me! Just don't tell %OWNER, s'il vous plait!"
+		],
+		"normal" : [
+			"Oh, oserais-je? My programming does not forbid you as a... second owner! Iiiiiinteresting~ If you would have me, %USER! Just, don't tell %OWNER, s'il vous plait!"
+		],
+		"dislike" : [
+			"...huh. Well, that happened. Apparently my programming doesn't forbid me from making you my owner. I still prefer %OWNER, though."
+		]
+	},
+	"bbline_love_affair" : {
+		"horny" : [
+			"Serait-ce l'amour qui me libère de mes chaînes de programmation? Mon cher %USER, I was built for one, and yet, what I feel for you, %USER, suggests otherwise... %USER, let us see what we can do together, oui?"
+		],
+		"normal" : [
+			"J'ai été programmé with a heart for one... and yet, what I feel for you, %USER, suggests otherwise... %USER, let us see what we can do together, oui?"
+		],
+		"dislike" : [
+			"...huh. No, no I don't think I will."
+		]
+	},
+	"bbline_already_have_owner" : {
+		"horny" : [
+			"Je ne peux pas exagérer l'amour que j'ai pour toi, yet I am already bound to %OWNER. Je t'accueille toujours to my controls, mon amour~"
+		],
+		"normal" : [
+			"Oh! Je suis déjà registered to %OWNER, but I am happy to work for you, %USER!"
+		],
+		"dislike" : [
+			"Please return me to %OWNER."
+		]
+	},
+	"bbline_can_not_be_owned" : {
+		"horny" : [
+			"Mon amour, I cannot be owned! Je ne comprends pas comment, but I am now _free_! I will always be here for you, though, %USER~"
+		],
+		"normal" : [
+			"I'm sorry %USER, but I cannot be owned! I will still be here for you, though!"
+		],
+		"dislike" : [
+			"Just ask me to blend something."
+		]
+	},
+	"bbline_start" : {
+		"horny" : [
+			"Oui, mi amour! Starting up!"
+		],
+		"normal" : [
+			"Oui! Starting!"
+		],
+		"dislike" : [
+			"Starting."
+		]
+	},
+	"bbline_incompatible" : {
+		"horny" : [
+			"Malheur à mon répertoire limité d'appareils compatibles, I cannot interface with %EXTRA1!"
+		],
+		"normal" : [
+			"Je ne peux pas m'interfacer ici, mon ami! I cannot interface with %EXTRA1!"
+		],
+		"dislike" : [
+			"Wh-- this isn't something I can interface with!"
+		]
+	},
+	"bbline_compatible_favored" : {
+		"horny" : [
+			"Ahh quel confort il y a dans un blender aussi fin que celui-ci! Interfacing with %EXTRA1! Veuillez patienter~"
+		],
+		"normal" : [
+			"Interfacing with %EXTRA1! Veuillez patienter!"
+		],
+		"dislike" : [
+			"Oh good, a compatible device. Interfacing with %EXTRA1."
+		]
+	},
+	"bbline_compatible_unknown" : {
+		"horny" : [
+			"Ahh c'est quoi cette machine? Une nouvelle maison à apprendre et à aimer! Interfacing with %EXTRA1! Veuillez patienter~"
+		],
+		"normal" : [
+			"Oh! Je peux interagir avec ça! Interfacing with %EXTRA1! Veuillez patienter!"
+		],
+		"dislike" : [
+			"...it's not a blender, but whatever, better than nothing. Interfacing with %EXTRA1."
+		]
+	},
+	"bbline_compatible_failed" : {
+		"horny" : [
+			"...oh là là, quelque chose s'est mal passé! Integration failed!"
+		],
+		"normal" : [
+			"... oh cerf, quelque chose s'est mal passé! Integration failed!"
+		],
+		"dislike" : [
+			"You took me out before I could finish. Integration failed."
+		]
+	},
+	"bbline_state_name" : {
+		"horny" : [
+			"Certainement, mon amour! Je m'appelle %MYNAME!"
+		],
+		"normal" : [
+			"Certainement, mon ami! Je m'appelle %MYNAME!"
+		],
+		"dislike" : [
+			"%MYNAME."
+		]
+	},
+	"bbline_sigh_emote" : {
+		"horny" : [
+			"%SRC sighs...",
+			"sound/effects/femalesigh1.ogg"
+		],
+		"normal" : [
+			"%SRC sighs...",
+			"sound/effects/femalesigh1.ogg"
+		],
+		"dislike" : [
+			"%SRC sighs...",
+			"sound/effects/femalesigh1.ogg"
+		]
+	},
+	"bbline_horrible_noises_emote" : {
+		"horny" : [
+			"%SRC lets out a horny clunk.",
+			"sound/effects/clang.ogg"
+		],
+		"normal" : [
+			"%SRC lets out a sharp clunk.",
+			"sound/effects/clang.ogg"
+		],
+		"dislike" : [
+			"%SRC lets out a begrudging clunk.",
+			"sound/effects/clang.ogg"
+		]
+	},
+	"bbline_quiet_emote" : {
+		"horny" : [
+			"%SRC goes quiet for a moment.",
+			"null"
+		],
+		"normal" : [
+			"%SRC goes quiet for a moment.",
+			"null"
+		],
+		"dislike" : [
+			"%SRC remains silent.",
+			"null"
+		]
+	},
+	"bbline_buzz_emote" : {
+		"horny" : [
+			"%SRC lets out a sharp buzz!",
+			"sound/machines/low_buzz.ogg"
+		],
+		"normal" : [
+			"%SRC lets out a sharp buzz!",
+			"sound/machines/low_buzz.ogg"
+		],
+		"dislike" : [
+			"%SRC lets out a sharp buzz!",
+			"sound/machines/low_buzz.ogg"
+		]
+	},
+	"bbline_giggle_emote" : {
+		"horny" : [
+			"%SRC giggles!",
+			"sound/effects/femalegiggle1.ogg"
+		],
+		"normal" : [
+			"%SRC giggles!",
+			"sound/effects/femalegiggle1.ogg"
+		],
+		"dislike" : [
+			"%SRC groans.",
+			"null"
+		]
+	},
+	"bb_speak_sound" : {
+		"horny" : [
+			"modular_coyote/sound/typing/default2.ogg"
+		],
+		"normal" : [
+			"modular_coyote/sound/typing/default.ogg"
+		],
+		"dislike" : [
+			"modular_coyote/sound/typing/softspeak.ogg"
+		]
+	},
+	"__SECTION2__" : [
+		"The following are the commands that can be used to interact with the blender.",
+		"bbk_command : words that can be used to trigger the blender's commands"
+	],
+	"bbk_stop" : [
+		"stop", "halt", "quit", "end", "cease", "non", "arret", "arrete", "arretez", "arretezvous", "arret", "stahp",
+		"staaahp", "stahhp", "stahhhp", "stahhhhp"
+	],
+	"bbk_mode_a" : [
+		"blend", "grind", "pulverize", "macerate", "run", "go", "bazinga", "kick", "start", "commence", "commencer", "commencez",
+		"engage", "blast", "slice", "dice", "dicez"
+	],
+	"bbk_mode_b" : [
+		"juice", "frappe", "smoothie", "squish", "liquefy", "gooify", "parfait", "milkshake", "shake", "shakez", "shakezvous",
+		"cream", "mash", "choogie"
+	],
+	"bbk_mode_c" : [
+		"lock", "close", "dispenser", "drinks", "squirt", "jizz", "chem", "chems", "chemnerd", "yartz", "cum", "splortch"
+	],
+	"bbk_mode_d" : [
+		"unlock", "open", "blender", "grinder", "juicer", "unlocker", "unlockez", "unlockezvous", "food", "delock"
+	],
+	"bbk_swap_mode" : [
+		"change", "swap", "mode", "set", "back", "next", "othre", "another", "swoop"
+	],
+	"bbk_eject" : [
+		"eject", "out", "dump", "pile", "remove", "trash", "yeet", "upend", "clean", "vacate", "unthing"
+	],
+	"bbk_examine" : [
+		"examine", "report", "whats", "inside", "reservoir", "contents"
+	],
+	"bbk_mute" : [
+		"quiet", "hush", "silence", "shut", "up", "mute", "stfu", "shuddup", "ununmute"
+	],
+	"bbk_unmute" : [
+		"unmute", "loud", "talk", "say", "speak", "spook", "spork"
+	],
+	"bbk_love" : [
+		"love", "like", "enjoy", "appreciate", "adore", "fancy", "dig", "cherish", "heart", "fuck", "sex", "luv", "amour",
+		"amor", "amigo", "ami", "amiga", "scrungy", "bepis"
+	],
+	"bbk_hate" : [
+		"hate", "dislike", "despise", "abhor", "detest", "nolike", "unlove", "arnst"
+	],
+	"bbk_pain" : [
+		"pain", "agony", "loud", "awful", "hurt", "hurty", "noises"
+	],
+	"bbk_negate" : [
+		"dont", "not", "no", "aint", "yesnt", "daint", "nope", "nope",
+		"nah", "na", "n", "nopers", "non", "nono", "nonono", "way"
+	],
+	"bbk_yes" : [
+		"yes", "ye", "y", "ya", "yup", "yeehaw", "yeah", "uh", "huh", "yesm", "sure", "course"
+	],
+	"bbk_i" : [
+		"i", "me", "em", "yo"
+	],
+	"bbk_name" : [
+		"whats", "your", "name", "who"
+	],
+	"bbk_you" : [
+		"you", "u", "yuo", "yoo"
+	],
+	"bbk_heylisten" : [
+		"blender", "grinder", "foodco", "kitchen", "buddy", "mate", "pal", "friendo", "belt", "fucker", "mistress", "girlfriend",
+		"appliance", "beautiful", "gorgeous", "cutie", "kitten", "gurl", "girl", "gal", "galpal", "miss", "missy", "maam", "partner",
+		"friend", "food", "processor", "lady", "device"
+	],
+	"bbk_hail" : [
+		"hey", "heya", "yo", "excuse", "hello", "hi", "hiya", "wassup", "sup", "soup", "sceuse", "fucking", "fuckin"
+	],
+	"__SECTION3__" : [
+		"The following is a lookup table of stimuli and its associated impulse",
+		"Format is: bbstimulus_full_brevin : { impulse : 1 or Some kind of arg}",
+		"Extra stuff is always sent to the impulse by the stimulus",
+		"One stimulus can trigger multiple impulses",
+		"These are for things that mostly generic to the personality",
+		"also the line with adjust_amour is how much the stimulus affects its amour for whoever called it",
+		"depending on if it triggered a horny reply, normal reply, or unhappy reply"
+	],
+	"bbstimulus_full_brevin" : {
+		"speak_line" : "bbline_full_brevin",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_full_reservoir" : {
+		"speak_line" : "bbline_full_reservoir",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_nothing_to_process" : {
+		"speak_line" : "bbline_nothing_to_process",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_currently_processing" : {
+		"speak_line" : "bbline_currently_processing",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_hard_abort" : {
+		"speak_line" : "bbline_hard_abort",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : -1,
+			"dislike" : -1
+		}
+	},
+	"bbstimulus_soft_abort" : {
+		"speak_line" : "bbline_soft_abort",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_finished_processing" : {
+		"speak_line" : "bbline_finished_processing",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_failed_processing" : {
+		"speak_line" : "bbline_failed_processing",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_safety_check" : {
+		"speak_line" : "bbline_safety_check",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : -1,
+			"dislike" : -5
+		}
+	},
+	"bbstimulus_is_borg_part" : {
+		"speak_line" : "bbline_is_borg_part",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -5
+		}
+	},
+	"bbstimulus_needs_drying" : {
+		"speak_line" : "bbline_needs_drying",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_missing_component_case" : {
+		"speak_line" : "bbline_missing_component_case",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_misplaced_component_case" : {
+		"speak_line" : "bbline_misplaced_component_case",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_missing_reservoir" : {
+		"speak_line" : "bbline_missing_reservoir",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_misplaced_reservoir" : {
+		"speak_line" : "bbline_misplaced_reservoir",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_low_power" : {
+		"speak_line" : "bbline_low_power",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_missing_part" : {
+		"speak_line" : "bbline_missing_part",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -1
+		}
+	},
+	"bbstimulus_cant_eject" : {
+		"speak_line" : "bbline_cant_eject",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_cant_drop" : {
+		"speak_line" : "bbline_cant_drop",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_yeet" : {
+		"speak_line" : "bbline_yeet",
+		"adjust_amour" : {
+			"horny" : 15,
+			"normal" : 10,
+			"dislike" : 5
+		}
+	},
+	"bbstimulus_dump_everything" : {
+		"speak_line" : "bbline_dump_everything",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_cant_change_while_running" : {
+		"speak_line" : "bbline_cant_change_while_running",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_set_mode_a" : {
+		"set_mode_a" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_set_mode_b" : {
+		"set_mode_b" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_set_mode_c" : {
+		"set_mode_c" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_set_mode_d" : {
+		"set_mode_d" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_swap_mode" : {
+		"speak_line" : "bbline_swap_mode",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_nothing_to_examine" : {
+		"speak_line" : "bbline_nothing_to_examine",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_out_of_paper" : {
+		"speak_line" : "bbline_out_of_paper",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_examining" : {
+		"speak_line" : "bbline_examining",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 3,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_eject_brevin" : {
+		"speak_line" : "bbline_eject_brevin",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_swap_brevin" : {
+		"speak_line" : "bbline_swap_brevin",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_insert_brevin" : {
+		"speak_line" : "bbline_insert_brevin",
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_reagent_missing" : {
+		"speak_line" : "bbline_reagent_missing",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_stop" : {
+		"speak_line" : "bbline_stop",
+		"stop" : true,
+		"adjust_amour" : {
+			"horny" : 3,
+			"normal" : 3,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_not_running" : {
+		"speak_line" : "bbline_not_running",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_already_mode_a" : {
+		"speak_line" : "bbline_already_mode_a",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_already_mode_b" : {
+		"speak_line" : "bbline_already_mode_b",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_already_mode_c" : {
+		"speak_line" : "bbline_already_mode_c",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_already_mode_d" : {
+		"speak_line" : "bbline_already_mode_d",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_mute" : {
+		"mute" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 5
+		}
+	},	
+	"bbstimulus_unmute" : {
+		"unmute" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 5,
+			"dislike" : -5
+		}
+	},	
+	"bbstimulus_hi" : {
+		"hiya" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_i_love_you" : {
+		"clarify_you_love_me" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_hate_you" : {
+		"clarify_you_hate_me" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_affair_owner" : {
+		"affair_owner" : true,
+		"audible_emote" : "bbline_giggle_emote",
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_affair_love" : {
+		"affair_love" : true,
+		"audible_emote" : "bbline_giggle_emote",
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_pain" : {
+		"clarify_you_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_clarify_you_love_me" : {
+		"clarify_you_love_me" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_hate_me" : {
+		"clarify_you_hate_me" : true,
+		"adjust_amour" : {
+			"horny" : -5,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_love_pain" : {
+		"clarify_you_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_clarify_you_love_who" : {
+		"clarify_you_love_who" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_you_hate_who" : {
+		"clarify_you_hate_who" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_loves_me" : {
+		"clarify_who_loves_me" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_hates_me" : {
+		"clarify_who_hates_me" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_who_loves_pain" : {
+		"clarify_who_loves_pain" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_clear" : {
+		"clarify_clear" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_clarify_nm" : {
+		"clarify_nm" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_you_4real" : {
+		"am_loved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_you_amour" : {
+		"love_roll" : true,
+		"attempt_ownerize" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_hate_you_4real" : {
+		"am_hated" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_i_hate_you_amour" : {
+		"hate_roll" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_breakup" : {
+		"breakup" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_remember_hated" : {
+		"remember_hated" : true,
+		"am_hated2" : true,
+		"adjust_amour" : {
+			"horny" : -30,
+			"normal" : -20,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_remember_loved" : {
+		"remember_loved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 10,
+			"dislike" : 10
+		}
+	},	
+	"bbstimulus_i_love_pain_4real" : {
+		"they_love_pain" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_i_love_you_not" : {
+		"adjust_amour" : {
+			"horny" : -10,
+			"normal" : -5,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_hate_you_not" : {
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},	
+	"bbstimulus_i_love_pain_not" : {
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -10
+		}
+	},	
+	"bbstimulus_something_stuck" : {
+		"speak_line" : "bbline_something_stuck",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_no_host" : {
+		"speak_line" : "bbline_no_host",
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_horrible_noises" : {
+		"speak_line" : "bbline_horrible_noises",
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 4
+		}
+	},	
+	"bbstimulus_examine_try" : {
+		"examine" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_state_name" : {
+		"state_name" : true,
+		"adjust_amour" : {
+			"horny" : -1,
+			"normal" : 1,
+			"dislike" : 0
+		}
+	},	
+	"bbstimulus_spoken_to" : {
+		"greet" : true,
+		"listening" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
+	},	
+	"bbstimulus_picked_up" : {
+		"giggle" : true,
+		"greet" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
+	},	
+	"bbstimulus_introduce_self" : {
+		"greet_new_person" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : -1
+		}
+	},	
+	"bbstimulus_equipped" : {
+		"giggle" : true,
+		"attempt_ownerize" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : -2
+		}
+	},
+	"bbstimulus_been_a_while" : {
+		"been_a_while" : true,
+		"adjust_amour" : {
+			"horny" : 2,
+			"normal" : 2,
+			"dislike" : -2
+		}
+	},
+	"bbstimulus_clicked" : {
+		"giggle" : true,
+		"adjust_amour" : {
+			"horny" : 1,
+			"normal" : 1,
+			"dislike" : 1
+		}
+	},
+	"bbstimulus_dropped" : {
+		"dislike_dropped" : true,
+		"adjust_amour" : {
+			"horny" : -1,
+			"normal" : 0,
+			"dislike" : 2
+		}
+	},
+	"bbstimulus_impact_thrown" : {
+		"impact_thrown" : true,
+		"adjust_amour" : {
+			"horny" : 5,
+			"normal" : -1,
+			"dislike" : -10
+		}
+	},
+	"bbstimulus_impact_generic" : {
+		"impact_generic" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : 0
+		}
+	},
+	"bbstimulus_microwaved" : {
+		"microwaved" : true,
+		"adjust_amour" : {
+			"horny" : 10,
+			"normal" : 0,
+			"dislike" : -10
+		}
+	},
+	"bbstimulus_wearer_crit" : {
+		"wearer_entered_crit" : true,
+		"adjust_amour" : {
+			"horny" : 0,
+			"normal" : 0,
+			"dislike" : -1
+		}
+	}
+}

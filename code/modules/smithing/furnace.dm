@@ -79,7 +79,12 @@
 	debug = TRUE
 	icon_state = "furnace1"
 
+/datum/looping_sound/furnace
+	mid_sounds = list(SOUND_LOOP_ENTRY('code/modules/smithing/sound/furnace1.ogg', 7 SECONDS, 1))
+	volume = 40
 
+
+//tg holdover
 /obj/structure/furnace/infinite/ratvar
 	name = "brass furnace"
 	desc = "A brass furnace. Powered by... something, but seems otherwise safe." //todo:sprites they're safe for noncultists because you're just putting ingots in them. also there';s a reason to steal them ig
@@ -87,7 +92,3 @@
 /obj/structure/furnace/infinite/narsie
 	name = "rune furnace"
 	desc = "A runed furnace. Powered by... something, but seems otherwise safe."
-
-/datum/looping_sound/furnace
-	mid_sounds = list(SOUND_LOOP_ENTRY('code/modules/smithing/sound/furnace1.ogg', 7 SECONDS, 1))
-	volume = 40

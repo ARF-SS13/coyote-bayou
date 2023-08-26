@@ -129,5 +129,5 @@
 
 /obj/structure/sign/logo
 	name = "nanotrasen logo"
-	desc = "The Nanotrasen corporate logo."
+	desc = "The US Government corporate logo."
 	icon_state = "nanotrasen_sign1"

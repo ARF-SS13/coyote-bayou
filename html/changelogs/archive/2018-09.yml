@@ -484,7 +484,7 @@
   - code_imp: Particle accelerator control box now uses multitool_act and better ui_interact
   - bugfix: Particle accelerator wires can be opened by borgs with multitools now.
   bandit:
-  - tweak: Due to cost-cutting measures throughout the company, Nanotrasen has changed
+  - tweak: Due to cost-cutting measures throughout the company, US Government has changed
       the recipes for food supplied to sustenance vendors in all station brigs. Nanotrasen
       prides itself in its quality standards and is sure crew members will notice
       no difference in taste!
@@ -602,7 +602,7 @@
   - code_imp: squeezed a little bit more perf out of atmos
   - code_imp: DB queries are now async by default, the code that runs in /world/New
       has been adjusted to continue blocking as it apparently is not allowed to sleep.
-  Nanotrasen Reserve Bank:
+  US Government Reserve Bank:
   - imageadd: Holochips have been given a noticeable redesign, and now use a combination
       of color and shape to show how many credits are in an individual chip, along
       with using a new coloring scheme outright.

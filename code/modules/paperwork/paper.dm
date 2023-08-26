@@ -31,7 +31,7 @@
 	throw_range = 1
 	throw_speed = 1
 	pressure_resistance = 0
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	body_parts_covered = HEAD
 	resistance_flags = FLAMMABLE
 	max_integrity = 50
@@ -55,6 +55,7 @@
 	/// This is an associated list
 	var/list/form_fields = list()
 	var/field_counter = 1
+	var/pers_id
 
 /obj/item/paper/Destroy()
 	stamps = null
@@ -63,6 +64,38 @@
 	stamped = null
 	. = ..()
 
+/obj/item/paper/proc/SaveData()
+	if(!pers_id)
+		return
+
+	var/list/dat = list()
+	dat["name"] = name
+	//dat["icon"] = icon
+	dat["icon_state"] = icon_state
+	dat["info"] = info
+	dat["color"] = color
+	dat["stamps"] = stamps
+	dat["stamped"] = stamped
+	dat["form_fields"] = form_fields
+	dat["field_counter"] = field_counter
+
+	return dat
+
+/obj/item/paper/proc/LoadData(list/dat)
+	if(!dat.len)
+		return FALSE
+	
+	name = dat["name"]
+	//icon = dat["icon"]
+	icon_state = dat["icon_state"]
+	info = dat["info"]
+	color = dat["color"]
+	stamps = dat["stamps"]
+	stamped = dat["stamped"]
+	form_fields = dat["form_fields"]
+	field_counter = dat["field_counter"]
+
+	return TRUE
 /**
  * This proc copies this sheet of paper to a new
  * sheet,  Makes it nice and easy for carbon and
@@ -169,7 +202,7 @@
 
 
 /obj/item/paper/can_interact(mob/user)
-	if(in_contents_of(/obj/machinery/door/airlock))
+	if(in_contents_of(/obj/machinery/door/airlock) || in_contents_of(/obj/structure/noticeboard))
 		return TRUE
 	return ..()
 

@@ -18,7 +18,7 @@
 	possible_transfer_amounts = list(10,20,30,50,120)
 	volume = 120
 	flags_inv = HIDEHAIR
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	resistance_flags = NONE
 	slot_equipment_priority = list( \
 		SLOT_BACK, SLOT_WEAR_ID,\
@@ -28,7 +28,7 @@
 		SLOT_EARS, SLOT_GLASSES,\
 		SLOT_BELT, SLOT_S_STORE,\
 		SLOT_L_STORE, SLOT_R_STORE,\
-		SLOT_GENERC_DEXTROUS_STORAGE
+		SLOT_GENERIC_DEXTROUS_STORAGE
 	)
 	container_flags = APTFT_ALTCLICK|APTFT_VERB
 	container_HP = 1
@@ -119,6 +119,14 @@
 	possible_transfer_amounts = list(10,25,50,100,150)
 	volume = 150
 
+/obj/item/reagent_containers/glass/bucket/wateringcan
+	name = "Watering Can"
+	desc = "It's a watering can, made of plastic."
+	icon_state = "watering_can"
+	item_flags = NO_MAT_REDEMPTION
+	possible_transfer_amounts = list(10,25,50,100,150, 200, 250,300)
+	volume = 300
+
 ///////////
 // SPADE //
 /////////// - slower shovel, but can remove plants without removing the soil too
@@ -168,7 +176,7 @@
 // RAKE
 // ------
 
-/obj/item/cultivator/rake 
+/obj/item/cultivator/rake
 	name = "rake"
 	icon_state = "rake"
 	item_state = "rake"
@@ -197,7 +205,7 @@
 	flags_1 = CONDUCT_1
 	force = 24
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 4
@@ -249,8 +257,7 @@
 	attack_speed = CLICK_CD_MELEE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
-	armour_penetration = 0.4
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/swiping = FALSE

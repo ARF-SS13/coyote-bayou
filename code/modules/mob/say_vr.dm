@@ -32,7 +32,7 @@ proc/get_top_level_mob(mob/S)
 	message = null
 	//mob_type_blacklist_typecache = list(/mob/living/brain)
 	var/subtler = FALSE
-	var/message_range = 1
+	message_range = 1
 
 /datum/emote/living/subtle/subtler
 	key = "subtler"
@@ -103,7 +103,7 @@ proc/get_top_level_mob(mob/S)
 
 /mob/living/verb/subtle()
 	set name = "Subtle"
-	set category = "IC"
+	set category = "Private"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
@@ -112,7 +112,7 @@ proc/get_top_level_mob(mob/S)
 ///////////////// VERB CODE 2
 /mob/living/verb/subtler()
 	set name = "Subtler Anti-Ghost"
-	set category = "IC"
+	set category = "Private"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return

@@ -71,7 +71,7 @@
 	desc = "Use in case of bomb."
 	icon_state = "bombsuit"
 	clothing_flags = THICKMATERIAL
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_HEAVY
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T3)
 	flags_inv = HIDEFACE|HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	dynamic_hair_suffix = ""
@@ -97,8 +97,11 @@
 	permeability_coefficient = 0.01
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	slowdown = 2
-	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T3)
 	flags_inv = HIDEJUMPSUIT|HIDETAUR
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -152,7 +155,7 @@
 	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
 	icon_state = "rad"
 	item_state = "rad_suit"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
 	clothing_flags = THICKMATERIAL

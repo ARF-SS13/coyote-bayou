@@ -18,7 +18,7 @@
 	item_state = "pen"
 	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_EARS
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -106,22 +106,12 @@
 	custom_materials = list(/datum/material/gold = 750)
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
-	unique_reskin = list("Oak" = "pen-fountain-o",
-						"Gold" = "pen-fountain-g",
-						"Rosewood" = "pen-fountain-r",
-						"Black and Silver" = "pen-fountain-b",
-						"Command Blue" = "pen-fountain-cb"
-						)
+	reskinnable_component = /datum/component/reskinnable/captain_pen
 	embedding = list("embed_chance" = 75)
 
 /obj/item/pen/fountain/captain/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 200, 115) //the pen is mightier than the sword
-
-/obj/item/pen/fountain/captain/reskin_obj(mob/M)
-	..()
-	if(current_skin)
-		desc = "It's an expensive [current_skin] fountain pen. The nib is quite sharp."
 
 /obj/item/pen/attack_self(mob/living/carbon/user)
 	var/deg = input(user, "What angle would you like to rotate the pen head to? (1-360)", "Rotate Pen Head") as null|num
@@ -189,7 +179,7 @@
 					return
 				O.desc = input
 				to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
-	else	
+	else
 		return
 /*
  * Sleepypens
@@ -253,13 +243,13 @@
 		to_chat(user, span_warning("[src] can now be concealed."))
 	else
 		on = TRUE
-		force = 18
+		force = 30
 		throw_speed = 4
 		w_class = WEIGHT_CLASS_NORMAL
 		name = "energy dagger"
 		hitsound = 'sound/weapons/blade1.ogg'
 		embedding = list(embed_chance = 100) //rule of cool
-		throwforce = 35
+		throwforce = 45
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, span_warning("[src] is now active."))
 	updateEmbedding()

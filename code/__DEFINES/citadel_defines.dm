@@ -2,6 +2,10 @@
 //Be sure to update the min/max of these if you do change them.
 //Measurements are in imperial units. Inches, feet, yards, miles. Tsp, tbsp, cups, quarts, gallons, etc
 
+/// Defines for SSgenitals to store both a weakref of a mob, and a fuckhuge list of images
+#define GENITAL_MOBREF "mob_weakref"
+#define GENITAL_SPRITES "genital"
+
 //Filters
 #define CIT_FILTER_STAMINACRIT filter(type="drop_shadow", x=0, y=0, size=-3, color="#04080F")
 
@@ -48,7 +52,7 @@
 #define DEF_BUTT_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
 #define DEF_VAG_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_HAVE
 #define DEF_WOMB_FLAGS GENITAL_CAN_HAVE
-#define DEF_BALLS_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_HAVE
+#define DEF_BALLS_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_HAVE | GENITAL_CAN_RESIZE
 #define DEF_PENIS_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
 #define DEF_BREASTS_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
 #define DEF_BELLY_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESHAPE | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
@@ -70,6 +74,14 @@
 #define GEN_VIS_OVERALL_FLAG_DEFAULT GENITAL_ABOVE_UNDERWEAR
 #define IS_GENITAL_VIS_OVERRIDE(x) (CHECK_BITFIELD(x,GENITAL_NO_OVERRIDE) || CHECK_BITFIELD(x,GENITAL_ALWAYS_HIDDEN) || CHECK_BITFIELD(x,GENITAL_ALWAYS_VISIBLE))
 
+//genital dislike flags
+#define HIDE_BUTT	(1<<0)
+#define HIDE_VAG	(1<<1)
+#define HIDE_BALLS	(1<<2)
+#define HIDE_PENIS	(1<<3)
+#define HIDE_BELLY	(1<<4)
+#define HIDE_BOOBS	(1<<5)
+#define HIDE_MISC	(1<<6)
 
 #define DEF_VAGINA_SHAPE	"Human"
 
@@ -88,7 +100,7 @@
 
 #define BALLS_SIZE_MIN		1
 #define BALLS_SIZE_DEF		2
-#define BALLS_SIZE_MAX		3
+#define BALLS_SIZE_MAX		5
 
 #define CUM_RATE			2 // units per 10 seconds
 #define CUM_RATE_MULT		1
@@ -142,9 +154,9 @@
 #define XENOBIO_UPGRADE_SLIMEADV			4
 
 //Citadel toggles because bitflag memes
-#define MEDIHOUND_SLEEPER	(1<<0)
-#define EATING_NOISES		(1<<1)
-#define DIGESTION_NOISES	(1<<2)
+//#define VOREALLOW_DOGBORGS	(1<<0)
+//#define VOREALLOW_EATING_NOISES		(1<<1)
+//#define VOREALLOW_DIGESTION_NOISES	(1<<2)
 #define BREAST_ENLARGEMENT	(1<<3)
 #define PENIS_ENLARGEMENT	(1<<4)
 #define FORCED_FEM			(1<<5)
@@ -156,13 +168,10 @@
 #define BIMBOFICATION		(1<<11)
 #define NO_AUTO_WAG			(1<<12)
 #define GENITAL_EXAMINE		(1<<13)
-#define VORE_EXAMINE		(1<<14)
+//#define VOREALLOW_SEEING_BELLY_DESC		(1<<14)
 #define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
 #define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
 #define TOGGLES_CITADEL 0
-
-//belly sound pref things
-#define NORMIE_HEARCHECK 4
 
 //icon states for the default eyes and for a state for no eye
 #define DEFAULT_EYES_TYPE			"normal"
@@ -171,7 +180,7 @@
 #define DEFAULT_NO_EYE_STATE		"no_eye"
 
 //special species definitions
-#define MINIMUM_MUTANT_COLOR	"#202020" //this is how dark players mutant parts and skin can be
+#define MINIMUM_MUTANT_COLOR	"#000000" //I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa I hate poojawa ~TK
 
 //defines for different matrix sections
 #define MATRIX_RED			"red"

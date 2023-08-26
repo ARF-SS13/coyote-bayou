@@ -24,6 +24,7 @@ SUBSYSTEM_DEF(job)
 	if(CONFIG_GET(flag/load_jobs_from_txt))
 		LoadJobs()
 	generate_selectable_species()
+	generate_selectable_creatures()//Coyote add. Found in _pmon_defines.dm
 	set_overflow_role(CONFIG_GET(string/overflow_job))
 	return ..()
 
@@ -711,6 +712,7 @@ SUBSYSTEM_DEF(job)
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
+		var/list/displaceables = DISPLACEABLE_SLOTS
 		for(var/i in chosen_gear)
 			var/datum/gear/G = istext(i[LOADOUT_ITEM]) ? text2path(i[LOADOUT_ITEM]) : i[LOADOUT_ITEM]
 			if(!G) // aint there? ditch it
@@ -735,11 +737,22 @@ SUBSYSTEM_DEF(job)
 			if(i[LOADOUT_CUSTOM_DESCRIPTION])
 				var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
 				I.desc = custom_description
-			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE, displace_worn = (G.slot in DISPLACEABLE_SLOTS))) // If the job's dresscode compliant, try to put it in its slot, first. Destroy whatever's in there if you must.
+			var/displace_me = FALSE
+			if(G.slot in displaceables) /// mm yes, displace me in my G.slot~
+				displace_me = TRUE
+				displaceables -= G.slot
+			var/equipped_okay = M.equip_to_slot_if_possible(
+				I,
+				G.slot,
+				disable_warning = TRUE,
+				bypass_equip_delay_self = TRUE,
+				displace_worn = displace_me
+				)
+			if(!equipped_okay) // If the job's dresscode compliant, try to put it in its slot, first. Destroy whatever's in there if you must.
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
 					var/obj/item/storage/backpack/B = C.back
-					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE)) // Otherwise, try to put it in the backpack, for carbons.
+					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE, null, null)) // Otherwise, try to put it in the backpack, for carbons.
 						if(can_drop)
 							I.forceMove(get_turf(C))
 						else

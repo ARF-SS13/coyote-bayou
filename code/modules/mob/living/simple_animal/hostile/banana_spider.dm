@@ -94,7 +94,7 @@
 
 /obj/item/reagent_containers/food/snacks/deadbanana_spider
 	name = "dead banana spider"
-	desc = "Thank god it's gone...but it does look slippery."
+	desc = "Thank the heavens it's gone...but it does look slippery."
 	icon_state = "bananaspider"
 	bitesize = 3
 	eatverb = "devours"

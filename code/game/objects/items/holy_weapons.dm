@@ -1,4 +1,4 @@
-/obj/item/claymore 
+/obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
 	icon_state = "claymore"
@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
@@ -275,12 +275,14 @@
 	item_state = "nullrod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 18
+	force = 30 // On par with a war club, note that this value determines almost every sub type without a direct force change.
 	throw_speed = 3
 	throw_range = 4
-	throwforce = 10
+	throwforce = 20
+	attack_speed = CLICK_CD_MELEE // The standard.
 	w_class = WEIGHT_CLASS_TINY
 	obj_flags = UNIQUE_RENAME
+	item_flags = ITEM_CAN_PARRY
 	wound_bonus = -10
 	var/chaplain_spawnable = TRUE
 	//total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
@@ -385,7 +387,7 @@
 	desc = "It has a mysterious, protective aura."
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	block_chance = 50
 	var/shield_icon = "shield-red"
 
@@ -408,8 +410,13 @@
 	name = "holy claymore"
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	block_chance = 30
+	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
+	force = 28 // Equal to the Longblade
+	force_wielded = 50
+	force_unwielded = 28
+	wound_bonus = 30
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE // The standard.
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -428,16 +435,18 @@
 	inhand_y_dimension = 64
 	name = "dark blade"
 	desc = "Spread the glory of the dark gods!"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	hitsound = 'sound/hallucinations/growl1.ogg'
 
 /obj/item/nullrod/claymore/chainsaw_sword
 	icon_state = "chainswordon"
 	item_state = "chainswordon"
-	name = "ripper"
-	desc = "A miniature chainsaw, as amazing as it sounds."
-	force = 45
-	slot_flags = ITEM_SLOT_BELT
+	name = "chain sword"
+	desc = "A longer more durable ripper built into a proper chain sword. Time to purge heretics!"
+	force = 45 // Equal to a standard ripper. Weaker than claymore/subtypes but can be 1-handed alot more effectively.
+	force_wielded = 45
+	force_unwielded = 45
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
@@ -448,24 +457,29 @@
 	item_state = "swordon"
 	name = "force weapon"
 	desc = "The blade glows with the power of faith. Or possibly a battery."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/katana
 	name = "\improper Hanzo steel"
 	desc = "Capable of cutting clean through a holy claymore."
 	icon_state = "katana"
 	item_state = "katana"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	force = 30 //Equal to the Scraptana
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.8
+	force_wielded = 40
+	force_unwielded = 30
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"
 	desc = "Once the harbinger of an interdimensional war, its sharpness fluctuates wildly."
 	icon_state = "multiverse"
 	item_state = "multiverse"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
-	force = rand(1, 30)
+	force = rand(1, 40)
 	..()
 
 /obj/item/nullrod/claymore/saber
@@ -474,7 +488,7 @@
 	icon_state = "swordblue"
 	item_state = "swordblue"
 	desc = "If you strike me down, I shall become more robust than you can possibly imagine."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/saber/red
 	name = "dark energy sword"
@@ -490,7 +504,7 @@
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 4.13
 	throwforce = 1
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -504,9 +518,11 @@
 	name = "reaper scythe"
 	desc = "Ask not for whom the bell tolls..."
 	w_class = WEIGHT_CLASS_BULKY
-	armour_penetration = 0.6
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
+	force_unwielded = 25
+	force_wielded = 40 // Equal to 2 handed axes
+	attack_speed = CLICK_CD_MELEE * 1.1 //8.8
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 
 /obj/item/nullrod/scythe/Initialize()
@@ -593,7 +609,7 @@
 	desc = "Suffer not a heretic to live."
 	chaplain_spawnable = FALSE
 	force = 30
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
@@ -606,8 +622,10 @@
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "relic war hammer"
 	desc = "This war hammer cost the chaplain forty thousand space dollars."
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
+	force_wielded = 65 // Equal to the sledgehammer.
+	attack_speed = CLICK_CD_MELEE * 1.8 //Also equal.
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
 /obj/item/nullrod/chainsaw_hand
@@ -674,11 +692,11 @@
 
 /obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
 	name = "monk's staff"
-	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass the clown."
+	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass mutants.."
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
 	block_chance = 40
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_NONE
 	hitsound = "swing_hit"
 	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
@@ -769,7 +787,7 @@
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")
-	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_BELT // its a necklace lol
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_BELT // its a necklace lol
 	var/praying = FALSE
 	var/deity_name = "Giex" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
 

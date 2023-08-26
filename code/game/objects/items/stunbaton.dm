@@ -8,9 +8,9 @@
 	item_state = "baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
-	force = 10
-	throwforce = 7
+	slot_flags = INV_SLOTBIT_BELT
+	force = 30
+	throwforce = 21
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("beaten")
 	armor = ARMOR_VALUE_GENERIC_ITEM
@@ -236,7 +236,7 @@
 
 /obj/item/melee/baton/stunsword
 	name = "stunsword"
-	desc = "not actually sharp, this sword is functionally identical to a stunbaton"
+	desc = "Not actually sharp, this sword is functionally identical to a stunbaton"
 	icon_state = "stunsword"
 	item_state = "sword"
 
@@ -286,7 +286,7 @@
 	stamforce = 25
 	hitcost = 7000
 	throw_hit_chance = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	var/obj/item/assembly/igniter/sparkler
 
 /obj/item/melee/baton/cattleprod/Initialize()

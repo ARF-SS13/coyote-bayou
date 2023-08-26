@@ -9,6 +9,32 @@
  * Backpack
  */
 
+/obj/item/storage/debug
+	name = "debug testsack"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_backpack"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack/smaller
+
+/obj/item/storage/debug_box
+	name = "debug testbox"
+	desc = "A testing device used to hold various debug things for testing."
+	icon_state = "eq_box"
+	item_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
+	resistance_flags = NONE
+	max_integrity = 300
+	component_type = /datum/component/storage/concrete/debug_sack
+
 /obj/item/storage/backpack
 	name = "hiking backpack"
 	desc = "You wear this on your back and put items into it."
@@ -17,7 +43,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/backpack
@@ -56,7 +82,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/backpack/spear_quiver
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
@@ -78,13 +104,13 @@
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 		user.put_in_hands(L)
 		to_chat(user, span_notice("You take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user, FALSE)
 		user.put_in_hands(W)
 		to_chat(user, span_notice("You take a bola out of the quiver."))
 	else
@@ -157,7 +183,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for US Government officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -282,11 +308,11 @@
 	desc = "A grotesque satchel made of sinews and bones."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "goliath_saddle"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for US Government officers."
 	icon_state = "satchel-cap"
 	item_state = "captainpack"
 	resistance_flags = FIRE_PROOF
@@ -465,7 +491,7 @@
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/syndie
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things. There is a US Government logo on the back."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 
@@ -641,6 +667,14 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	icon_state = "satchel-trekker"
 	item_state = "satchel-trekker"
 
+/obj/item/storage/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	desc = "A standard issued lightweight UNMC backpack. Used in pre-war times, it know finds use by those who equip it. Quite streamline looking too."
+	icon_state = "marinepack"
+	item_state = "marinepack"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
+
 /obj/item/storage/backpack/satchel/old
 	name = "old satchel"
 	desc = "The leather is stiff and cracking, but the satchel still works."
@@ -664,13 +698,19 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	item_state = "satchel_enclave"
 
 /obj/item/storage/backpack/legionr
-	name = "Legion red flag"
-	desc = "Legion cape made from what looks like red piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	name = "Larper 'red' flag"
+	desc = "A larper cape made from what looks like red piece of cloth, with a golden baby cow on the back. With a lot of pockets underneath"
 	icon_state = "legioncaper"
 	item_state = "legioncaper"
 
 /obj/item/storage/backpack/legionb
-	name = "Legion black flag"
-	desc = "Legion cape made from what looks like black piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	name = "Larper purple flag"
+	desc = "Lee-gion brand cape made from what looks like pinkish dark blue piece of cluth, with a golden bull cucking a sheep on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
 	item_state = "legioncapeb"
+
+/obj/item/storage/backpack/satchel/snailshell
+	name = "Snail shell"
+	desc = "A hard brown spiral of a shell that fits well on a back. You can somehow store items in it..huh! Snailtastic."
+	icon_state = "snailshell"
+	item_state = "snailshell"

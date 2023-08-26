@@ -58,6 +58,8 @@
 	if(!isliving(defender))
 		return
 	var/armormult = clamp(defender.getarmor(zone, armor_type), 0, 1)
+	if(HAS_TRAIT(attacker, TRAIT_PANICKED_ATTACKER))
+		damage *= 0.2
 	defender.apply_damage(damage, damage_type, BODY_ZONE_CHEST, blocked = armormult, wound_bonus = woundbonus)
 	log_combat(attacker, defender, "martial art ([src])")
 

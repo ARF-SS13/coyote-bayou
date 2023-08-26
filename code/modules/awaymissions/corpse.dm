@@ -18,7 +18,7 @@
 	var/important_info = ""
 	var/faction = null
 	var/permanent = FALSE	//If true, the spawner will not disappear upon running out of uses.
-	var/random = FALSE		//Don't set a name or gender, just go random
+	var/random = TRUE		//Don't set a name or gender, just go random
 	var/antagonist_type
 	var/objectives = null
 	var/uses = 1			//how many times can we spawn from it. set to -1 for infinite.
@@ -96,6 +96,8 @@
 		if(!mob_gender)
 			mob_gender = pick(MALE, FEMALE)
 		M.gender = mob_gender
+	else
+		randomize_human(M, null, prob(50), TRUE)
 	if(faction)
 		M.faction = list(faction)
 	if(disease)
@@ -336,7 +338,7 @@
 	name = "Cook"
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 
-
+random
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
 	outfit = /datum/outfit/job/doctor
@@ -518,7 +520,7 @@
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a Nanotrasen Commander!"
+	short_desc = "You are a US Government Commander!"
 
 /obj/effect/mob_spawn/human/nanotrasensoldier/alive
 	death = FALSE
@@ -529,7 +531,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	faction = "nanotrasenprivate"
-	short_desc = "You are a Nanotrasen Private Security Officer!"
+	short_desc = "You are a US Government Private Security Officer!"
 
 
 /////////////////Spooky Undead//////////////////////

@@ -161,7 +161,7 @@
 	. = ..()
 	if (!recipes)
 		return
-	if (!src || get_amount() <= 0)
+	if (!src || get_amount() < 1)
 		user << browse(null, "window=stack")
 	user.set_machine(src) //for correct work of onclose
 	var/list/recipe_list = recipes
@@ -364,19 +364,19 @@
 	update_weight()
 	return TRUE
 
-/obj/item/stack/tool_use_check(mob/living/user, amount)
-	if(get_amount() < amount)
-		if(singular_name)
-			if(amount > 1)
-				to_chat(user, span_warning("You need at least [amount] [singular_name]\s to do this!"))
-			else
-				to_chat(user, span_warning("You need at least [amount] [singular_name] to do this!"))
-		else
-			to_chat(user, span_warning("You need at least [amount] to do this!"))
-
+/obj/item/stack/tool_use_check(mob/living/user, amount, silent)
+	if(get_amount() > amount)
+		return TRUE
+	if(silent)
 		return FALSE
-
-	return TRUE
+	if(singular_name)
+		if(amount > 1)
+			to_chat(user, span_warning("You need at least [amount] [singular_name]\s to do this!"))
+		else
+			to_chat(user, span_warning("You need at least [amount] [singular_name] to do this!"))
+	else
+		to_chat(user, span_warning("You need at least [amount] to do this!"))
+	return FALSE
 
 /obj/item/stack/proc/zero_amount()
 	if(is_cyborg)
@@ -434,6 +434,14 @@
 		CRASH("Stack merge attempted on qdeleted source stack.")
 	if(target_stack == src)
 		CRASH("Stack attempted to merge into itself.")
+	if(!istype(target_stack))
+		CRASH("Stack merge attempted on non-stack target stack. (target_stack = [target_stack]) (src = [src]) motherfucking stacks")
+	if(amount < 1)
+		qdel(src)
+		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
+	if(target_stack.amount < 1)
+		qdel(target_stack)
+		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
 
 	var/transfer = get_amount()
 	if(target_stack.is_cyborg)

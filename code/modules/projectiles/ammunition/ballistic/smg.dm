@@ -11,6 +11,7 @@
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
+	sound_properties = CSP_PISTOL_45
 
 /obj/item/ammo_casing/c45/improvised
 	name = "shoddy .45 bullet casing"

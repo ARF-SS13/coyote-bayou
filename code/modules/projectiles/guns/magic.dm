@@ -7,19 +7,25 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	fire_sound = 'sound/weapons/emitter.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
 	flags_1 =  CONDUCT_1
 	w_class = WEIGHT_CLASS_HUGE
 	var/checks_antimagic = TRUE
 	var/max_charges = 6
 	var/charges = 0
-	var/recharge_rate = 4
+	var/recharge_rate = 10 SECONDS
 	var/charge_tick = 0
 	var/can_charge = 1
+	var/datum/looping_sound/wand_charge_1/soundloop
 	var/ammo_type
-	var/no_den_usage
-	clumsy_check = 0
+	var/charge_timer
+	var/no_den_usage = FALSE
+	clumsy_check = FALSE
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
 	pin = /obj/item/firing_pin/magic
+
+/obj/item/gun/magic/update_icon_state()
+	return // icon_prefix is buhhuuulllllshit and shouldnt be used
 
 /obj/item/gun/magic/afterattack(atom/target, mob/living/user, flag)
 	if(no_den_usage)
@@ -38,37 +44,55 @@
 	return charges
 
 /obj/item/gun/magic/recharge_newshot()
-	if (charges && chambered && !chambered.BB)
+	if (chambered && !chambered.BB)
 		chambered.newshot()
 
 /obj/item/gun/magic/process_chamber()
-	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
-		charges--//... drain a charge
-		recharge_newshot()
+	charges-- // deduct a charge
+	recharge_newshot() // Make sure there's still a bullet in the chamber
+	start_charging() // Start charging a new shot
 
 /obj/item/gun/magic/Initialize()
 	. = ..()
 	charges = max_charges
 	chambered = new ammo_type(src)
-	if(can_charge)
-		START_PROCESSING(SSobj, src)
-
+	soundloop = new(list(src), FALSE)
 
 /obj/item/gun/magic/Destroy()
-	if(can_charge)
-		STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(soundloop)
 	return ..()
 
+/obj/item/gun/magic/proc/start_charging()
+	if(charge_timer)
+		return FALSE // Already charging
+	if(!can_charge)
+		return FALSE // Can't charge
+	if(charges >= max_charges)
+		return FALSE // Already full
+	soundloop.start()
+	charge_start_message()
+	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
 
-/obj/item/gun/magic/process()
-	charge_tick++
-	if(charge_tick < recharge_rate || charges >= max_charges)
-		return 0
-	charge_tick = 0
+/obj/item/gun/magic/proc/charge()
+	recharge_newshot()
+	if(charges >= max_charges)
+		charges = max_charges
+		charge_full_message()
+		soundloop.stop()
+		charge_timer = null
+		return FALSE
 	charges++
-	if(charges == 1)
-		recharge_newshot()
-	return 1
+	charge_partial_message()
+	charge_timer = addtimer(CALLBACK(src, .proc/charge), recharge_rate, TIMER_UNIQUE|TIMER_STOPPABLE)
+
+/obj/item/gun/magic/proc/charge_full_message()
+	audible_message("[src] lets out a satisfied hum and falls quiet.")
+	
+/obj/item/gun/magic/proc/charge_partial_message()
+	audible_message("[src] lets out a faint hum.")
+
+/obj/item/gun/magic/proc/charge_start_message()
+	audible_message("[src] begins setting out a soft hum.")
 
 /obj/item/gun/magic/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	to_chat(user, span_warning("The [name] whizzles quietly."))

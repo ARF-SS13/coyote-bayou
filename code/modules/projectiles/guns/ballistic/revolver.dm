@@ -6,28 +6,19 @@
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
-	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
 	casing_ejector = FALSE
 	spawnwithmagazine = TRUE
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
 	handedness = GUN_EJECTOR_ANY
 
 
-	var/select = 0
+	var/select = 0 //doesn't do anything?
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 
 /obj/item/gun/ballistic/revolver/Initialize()
@@ -139,30 +130,22 @@
 	name = ".22LR revolver"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
-	obj_flags = UNIQUE_RENAME
+/*	obj_flags = UNIQUE_RENAME
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
 		GUN_MISFIRE_HURTS_USER(5, 5, 15, BRUTELOSS | FIRELOSS),
 		GUN_MISFIRE_THROWS_GUN(2)
 	)
 
-/* /obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+	/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
 	if(!(CALIBER_357 in magazine.caliber))
@@ -190,30 +173,41 @@
 	item_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+
+
+/* * * * * * * * * * *
+ * Hermes revolver
+ * Light, Fast and hyper accurate 
+ * 9mm
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/hermes
+	name = "Hermes Sporting Revolver"
+	desc = "A slick, well machined 9mm revolver made for olympic target shooting, extremely accurate and fast firing, though lacking in stopping power"
+	icon_state = "hermes"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/hermes
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/faster,
+		/datum/firemode/automatic/rpm300,
 	)
+	use_casing_sounds = TRUE
+
 /* * * * * * * * * *
  * HEAVY REVOLVERS *
  * * * * * * * * * */
@@ -231,30 +225,13 @@
 	icon_state = "357colt"
 	item_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 
 //full auto .357 revolver. shoots wayfast
 /obj/item/gun/ballistic/revolver/colt357/auto
@@ -268,6 +245,36 @@
 	)
 
 /* * * * * * * * * * *
+ * Medusa Revolver
+ * Slow, innacurate but convenient
+ * From .22 up to .44
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/medusa
+	name = "Medusa Multi-Caliber Revolver"
+	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder, able to fit from .22 up to .44, though the loose chambering makes it quite innacurate"
+	icon_state = "medusa" 
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/medusa
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	added_spread = GUN_SPREAD_POOR
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 22
+	flight_y_offset = 15
+
+	use_casing_sounds = TRUE
+
+/* * * * * * * * * * *
  * Mateba revolver
  * Cool? heavy revolver
  * .357 magnum
@@ -279,17 +286,10 @@
 	desc = "A pre-war high-power autorevolver commonly used by people who think they look cool."
 	icon_state = "mateba"
 	item_state = "mateba"
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
-	init_recoil = HANDGUN_RECOIL(1.2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -307,15 +307,8 @@
 	desc = "Just holding this gun makes you feel like an ace. This revolver was handmade from pieces of other guns in some workshop after the war. A one-of-a-kind gun, it was someone's lucky gun for many a year, it's in good condition and hasn't changed hands often."
 	icon_state = "lucky37"
 	item_state = "lucky"
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -341,33 +334,33 @@
 	desc = "Pre-war double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-	w_class = WEIGHT_CLASS_TINY
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1)
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+
+/obj/item/gun/ballistic/revolver/police/webley
+	name = "Webley Revolver"
+	desc = "The Webley Revolver was the pre-war standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "webley"
+	item_state = "police"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	weapon_class = WEAPON_CLASS_TINY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
+
 
 /* * * * * * * * * * *
  * .44 magnum revolver
@@ -383,32 +376,14 @@
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
-	)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -424,17 +399,9 @@
 	desc = "Powerful handgun with a bit of a kick. This one has nickled finish and pearly grip, and has been kept in good condition by its owner."
 	item_state = "44magnum"
 	icon_state = "mysterious_m29"
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -455,22 +422,12 @@
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
 	icon_state = "m29peace"
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-	automatic = 0
-	autofire_shot_delay = 0
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
 
 /* * * * * * * * * * *
@@ -491,18 +448,10 @@
 	name = "snubnose .44 magnum revolver"
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
 	icon_state = "m29_snub"
-	w_class = WEIGHT_CLASS_TINY
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -524,34 +473,50 @@
 	item_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+
+/* * * * * * * * * * * * * *
+* Lemat Revolver
+* -9mm chambering
+* + 9 shot cylinder
+* + Common revolver
+* + Slightly better damage than 9mm
+* * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/revolver/Lemat
+	name = "Grapeshot Revolver"
+	desc = "A 9 shot revolver from a time long forgotten. The revolver itself has been refitted to be 9mm. Unlike the original version, this one needs no wax caps or .36cal balls to be fitted into the cylinder. It also does not take a shotgun shell. But at least you have 9 shots to put a target down"
+	item_state = "lemat"
+	icon_state = "lemat"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
 	)
+
+/obj/item/gun/ballistic/revolver/Lemat/custom
+	name = "Engraved LeMat Revolver"
+	desc = "An engraved golden LeMat revolver with an ivory grip handle. Engraved onto the barrel of the gun is the phrase 'Bound by love' in Icelandic. The ivory grip has the face of a moth on both sides."
+	item_state = "goldengun"
+	icon_state = "toxlemat"
 
 /* * * * * * * * * * *
  * Desert ranger revolver
@@ -567,18 +532,11 @@
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	name = "desert ranger revolver"
 	desc = "I hadn't noticed, but there on his hip, was a really spiffy looking iron..."
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1, 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -598,34 +556,74 @@
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	item_state = "m2405"
 	icon_state = "m2405"
-	w_class = WEIGHT_CLASS_NORMAL
-
-	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
-	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
-	burst_size = 1
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = RIFLE_RECOIL(2.2)
+	init_recoil = RIFLE_RECOIL(2.2, 2.2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+
+
+
+/* * * * * * * * * * * *
+* Colt Buntline revolver
+* - 6 shots only like any else revolver
+* + Revolver rifle configuration, allows use of scopes
+* + Carbine class
+* + .357 ammo
+* + Uncommon
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/revolver/buntline
+	name = "Colt Buntline"
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	icon_state = "coltcarbine"
+	item_state = "coltcarbine"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = SMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
 	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+/* * * * * * * * * * *
+* Judge revolver
+* + 3 shot shotgun revolver for balance
+* - less damage
+* - Two handed only
+* + Lightweight, compact, and rare uncommon
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/taurjudge
+	name = "Taurus Judge"
+	desc = "A Taurus manfactured Judge. This model specifically takes 3 shotgun shells, useful for unloading hell upon the enemy. Do they feel lucky?"
+	icon_state = "judge"
+	item_state = "judge"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
 
 /* * * * * * * * * * *
  * Hunting revolver
@@ -639,34 +637,16 @@
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
-	)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -681,18 +661,11 @@
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70. This one is very worn."
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_firemodes = list(
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/slower
 	)
 /* * * * * * * * * * *
  * Sequoia revolvers
@@ -711,32 +684,15 @@
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //it does plenty of damage without a boost >.>
-	init_recoil = HANDGUN_RECOIL(1.2)
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_HEAVY_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
-	)
 
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
@@ -744,16 +700,10 @@
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -764,16 +714,9 @@
 	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears slight singe-marks..."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
@@ -790,32 +733,15 @@
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * .223 revolver
@@ -834,31 +760,14 @@
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
-	)
 
 /* * * * * * * * * * *
  * Needler 'revolver'
@@ -872,17 +781,10 @@
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = HANDGUN_RECOIL(0.8)
+	init_recoil = HANDGUN_RECOIL(0.8, 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -896,15 +798,8 @@
 	desc = "An ultracite enhanced needler pistol." //Sounds like lame bethesda stuff to me
 	icon_state = "ultraneedler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
-
-	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
@@ -1020,7 +915,7 @@
 	..()
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = INV_SLOTBIT_BACK
 			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()

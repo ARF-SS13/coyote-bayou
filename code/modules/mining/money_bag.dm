@@ -32,6 +32,7 @@
 	for(var/i = 0, i < 5, i++)
 		new /obj/item/stack/spacecash/c1000(src)
 
+/*
 /obj/item/storage/bag/money/small
 	name = "money stash"
 	icon_state = "moneypouch"
@@ -40,16 +41,19 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+
 
 /obj/item/storage/bag/money/small/Initialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_TINY
-	STR.max_items = 6
-	STR.max_combined_w_class = 6
-	STR.cant_hold = typecacheof(list(/obj/item/screwdriver/power))
-	STR.can_hold = GLOB.storage_wallet_can_hold
+	STR.max_items = 5
+	STR.max_combined_w_class = 5
+	STR.allow_quick_gather = FALSE
+	STR.click_gather = FALSE
+	STR.limited_random_access = FALSE
+	STR.limited_random_access = FALSE
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()
@@ -122,4 +126,4 @@
 /obj/item/storage/bag/money/small/raider/mobboss/PopulateContents()
 	new /obj/item/stack/f13Cash/random/low(src)
 	//mob boss, reasonably wealthy
-
+*/

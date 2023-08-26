@@ -92,7 +92,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // LEGATE
 
 /datum/job/CaesarsLegion/Legionnaire/f13legate
-	title = "Legion Legate"
+	title = "Lil Ceasar's Legate"
 	flag = F13LEGATE
 	head_announce = list("Security")
 	supervisors = "Caesar"
@@ -125,7 +125,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	gloves = /obj/item/clothing/gloves/legion/legate
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
-	r_pocket = /obj/item/storage/bag/money/small/legion
+	//r_pocket = /obj/item/storage/bag/money/small/legion
 	l_pocket = /obj/item/flashlight/lantern
 	r_hand = /obj/item/melee/powerfist/f13/goliath
 	l_hand = /obj/item/tank/internals/oxygen
@@ -138,7 +138,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // ORATOR
 
 /datum/job/CaesarsLegion/Legionnaire/f13orator
-	title = "Legion Orator"
+	title = "Lil Ceasar's Talking Head"
 	flag = F13ORATOR
 	supervisors = "Centurion"
 	selection_color = "#ffdddd"
@@ -162,7 +162,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	gloves = null
 	backpack = /obj/item/storage/backpack/legionr
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
-	r_pocket = /obj/item/storage/bag/money/small/legofficers
+	//r_pocket = /obj/item/storage/bag/money/small/legofficers
 	l_pocket = /obj/item/flashlight/lantern
 	l_hand = /obj/item/melee/onehanded/machete/spatha
 	backpack_contents = list(
@@ -186,7 +186,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // CENTURION
 
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	title = "Legion Centurion"
+	title = "Lil Ceasar's Legion Centurion"
 	flag = F13CENTURION
 	head_announce = list("Security")
 	total_positions = 1
@@ -236,7 +236,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
-		/obj/item/storage/bag/money/small/legion = 1,
+	//	/obj/item/storage/bag/money/small/legion = 1,
 		/obj/item/warpaint_bowl = 1,
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
@@ -326,7 +326,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/storage/bag/money/small/legofficers = 1,
+	//	/obj/item/storage/bag/money/small/legofficers = 1,
 		/obj/item/binoculars = 1,
 		)
 
@@ -428,7 +428,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/melee/onehanded/machete/gladius = 1,
-		/obj/item/storage/bag/money/small/legofficers = 1,
+	//	/obj/item/storage/bag/money/small/legofficers = 1,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/bitterdrink = 1,
@@ -519,7 +519,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/storage/bag/money/small/legofficers = 1,
+	//	/obj/item/storage/bag/money/small/legofficers = 1,
 		)
 
 /datum/outfit/loadout/recdeclegion
@@ -603,7 +603,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/megaphone/cornu = 1,
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/warpaint_bowl = 1,
 		)
 
@@ -686,7 +686,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/restraints/handcuffs = 1,
 		)
@@ -770,7 +770,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/reagent_containers/pill/bitterdrink = 1,
@@ -868,7 +868,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	r_pocket = /obj/item/flashlight/lantern
 	l_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/melee/onehanded/machete/forgedmachete = 1,
 		)
@@ -945,7 +945,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	glasses = /obj/item/clothing/glasses/legiongoggles
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/melee/onehanded/machete = 1,
 		)
@@ -998,7 +998,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	l_pocket = /obj/item/flashlight/lantern
 	suit_store = /obj/item/melee/onehanded/machete/forgedmachete
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2
 		)
 
@@ -1031,7 +1031,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/stack/sheet/metal/twenty = 2,
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,
@@ -1129,7 +1129,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/folder/red = 1,
 		/obj/item/paper/natural = 2,
 		/obj/item/pen/fountain = 1,
-		/obj/item/storage/bag/money/small/legion = 1,
+	//	/obj/item/storage/bag/money/small/legion = 1,
 		/obj/item/taperecorder = 1,
 		/obj/item/clothing/under/f13/legauxilia = 1,
 		)
@@ -1140,7 +1140,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	gloves = /obj/item/clothing/gloves/f13/crudemedical
 	belt = /obj/item/storage/belt/medical/primitive
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stack/sticky_tape/surgical = 1,
 		/obj/item/stack/medical/bone_gel = 1,
@@ -1156,7 +1156,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,
+	//	/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/stack/sheet/metal/twenty = 2,
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,

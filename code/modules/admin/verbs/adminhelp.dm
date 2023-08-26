@@ -237,6 +237,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. = ADMIN_FULLMONTY_NONAME(initiator.mob)
 	if(state == AHELP_ACTIVE)
 		. += ClosureLinks(ref_src)
+	if(SSsecondwind.is_hardcore(initiator_ckey))
+		. += " !!HC!!"
 
 //private
 /datum/admin_help/proc/ClosureLinks(ref_src)
@@ -586,21 +588,24 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/adm = get_admin_counts(requiredflags)
 	var/list/activemins = adm["present"]
 	. = activemins.len
-	if(. <= 0)
-		var/final = ""
-		var/list/afkmins = adm["afk"]
-		var/list/stealthmins = adm["stealth"]
-		var/list/powerlessmins = adm["noflags"]
-		var/list/allmins = adm["total"]
-		if(!afkmins.len && !stealthmins.len && !powerlessmins.len)
-			final = "[msg] - No admins online"
-		else
-			final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
-		send2irc(source,final)
-		send2otherserver(source,final)
+	// if(. <= 0) // To revert change, uncomment the front of this line and indent the rest of this proc below
+	var/final = ""
+	var/list/afkmins = adm["afk"]
+	var/list/stealthmins = adm["stealth"]
+	var/list/powerlessmins = adm["noflags"]
+	var/list/allmins = adm["total"]
+	if(. > 0)
+		final = "[msg] - [.] active admins online"
+	else if(!afkmins.len && !stealthmins.len && !powerlessmins.len)
+		final = "[msg] - No admins online"
+	else
+		final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
+	send2irc(source,final)
+	send2otherserver(source,final)
 
 
 /proc/send2tgs_adminless_only(source, msg, requiredflags = R_BAN)
+	/*
 	var/list/adm = get_admin_counts(requiredflags)
 	var/list/activemins = adm["present"]
 	. = activemins.len
@@ -616,6 +621,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
 		send2adminchat(source,final)
 		send2otherserver(source,final)
+	*/
+	send2irc_adminless_only(source, msg, requiredflags) // Because why duplicate code?
 
 /proc/send2irc(msg,msg2)
 	msg = replacetext(replacetext(msg, "\proper", ""), "\improper", "")

@@ -5,7 +5,8 @@
 	desc = "A Med-Tek syringe gun, which synthesizes chemical darts from stored reagents."
 	icon_state = "chemgun"
 	item_state = "chemgun"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
 	throw_speed = 3
 	throw_range = 7
 	force = 4

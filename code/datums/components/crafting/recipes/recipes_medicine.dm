@@ -1,33 +1,34 @@
-/datum/crafting_recipe/redpotion
-	name = "Red Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/red
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/geranium = 1,
-				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/redambrosia
+	name = "Elixir Vitae"
+	result = /obj/item/reagent_containers/pill/redambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 2,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 10,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
 
-/datum/crafting_recipe/bluepotion
-	name = "Blue Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/blue
-	reqs = list(/obj/item/reagent_containers/food/snacks/rawantbrain = 1,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/blueambrosia
+	name = "Elixir Mentem"
+	result = /obj/item/reagent_containers/pill/blueambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 1,
+				/obj/item/reagent_containers/food/snacks/grown/aloe = 10,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 10,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
 	always_available = FALSE
 
-/datum/crafting_recipe/greenpotion
-	name = "Green Potion"
-	result = /obj/item/reagent_containers/glass/bottle/ichor/green
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot = 1,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+/datum/crafting_recipe/greenambrosia
+	name = "Elixir Animae"
+	result = /obj/item/reagent_containers/pill/greenambrosia
+	reqs = list(/datum/reagent/medicine/gaia = 120,
+				/obj/item/reagent_containers/pill/bitterdrink = 1,
+				/obj/item/fishy/eel = 5,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
@@ -88,7 +89,7 @@
 	result = /obj/item/reagent_containers/pill/bitterdrink
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
-				/obj/item/reagent_containers/food/drinks = 1)
+				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
 	category = CAT_MEDICAL
@@ -311,7 +312,7 @@
 /datum/crafting_recipe/extract_gaia
 	name = "Extract gaia"
 	result = /obj/item/reagent_containers/glass/bottle/gaia
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 6,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 20,
 	/datum/reagent/water = 50)
 	time = 20
 	tools = list(TOOL_ALCHEMY_TABLE)

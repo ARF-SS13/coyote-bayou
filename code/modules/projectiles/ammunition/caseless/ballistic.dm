@@ -10,6 +10,7 @@
 		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
 		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_MATCH
+	sound_properties = CSP_RIFLE_LIGHT
 
 /obj/item/ammo_casing/caseless/g11/rubber
 	name = "4.73mm polyurethane cartridge"

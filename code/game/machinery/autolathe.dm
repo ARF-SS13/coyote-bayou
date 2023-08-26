@@ -645,7 +645,7 @@
 	if(!mat_box.has_space(mat_amount))
 		return AUTOLATHE_STOP_INSERTING
 	if(thing_bag)
-		if(!SEND_SIGNAL(thing_bag, COMSIG_TRY_STORAGE_TAKE, thing, src))
+		if(!SEND_SIGNAL(thing_bag, COMSIG_TRY_STORAGE_TAKE, thing, src, FALSE, thing.loc, null))
 			return AUTOLATHE_SKIP_INSERTING
 	// Forgive me for this.
 	if(mat_box.after_insert)
@@ -737,7 +737,7 @@
 		if(!mats.has_space(mat_amount))
 			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
 			return
-		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
+		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src, FALSE, casing.loc, null))
 			continue
 		// Forgive me for this.
 		if(mats.after_insert)
@@ -861,7 +861,8 @@
 	categories = list(
 					"Handloaded Ammo",
 					"Handmade Magazines",
-					"Materials"
+					"Materials",
+					"Simple Magazines"
 					)
 	allowed_materials = list(
 		/datum/material/iron,

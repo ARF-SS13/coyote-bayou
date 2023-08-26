@@ -408,11 +408,11 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	terminal = "NCR Terminal"
 	terminalType = 2
 
-/obj/machinery/msgterminal/legion
+/obj/machinery/msgterminal/pigeon
 	terminalid = "legion"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "pigeoncrate"
-	terminal = "Legion Pigeon Carrier"
+	terminal = "Messenger Pigeon Carrier"
 	terminalType = 2
 
 /*

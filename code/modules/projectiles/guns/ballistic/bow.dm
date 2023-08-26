@@ -3,13 +3,10 @@
 	desc = "base type of bow used to define features for multiple-loading bows"
 	icon_state = "bow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
-	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
-	slot_flags = ITEM_SLOT_BACK
 	item_flags = NONE
 	pin = null
 	no_pin_required = TRUE
@@ -20,22 +17,15 @@
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
 	dryfire_sound = ""
+	var/release_text = "You gently release the bowstring, removing the arrow."
+	var/draw_noun = "string"
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower //we start very sloow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-	gun_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(null),
-		SP_DISTANT_RANGE(null)
-	)
+
 	/// Can this bow link to a quiver?
 	var/can_link_to_quiver = TRUE
 	/// Is this bow drawing from a quiver, if linked?
@@ -73,7 +63,7 @@
 		user.put_in_hands(chambered)
 		chambered = null
 		update_icon()
-		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
+		to_chat(user, span_notice(release_text))
 		return
 /* 	if(recentdraw > world.time || !get_ammo(FALSE))
 		return */
@@ -84,7 +74,7 @@
 	if(!draw_load(M))
 		return TRUE
 	if(visible)
-		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
+		M.visible_message(span_warning("[M] draws the [draw_noun] on [src]!"), span_warning("You draw the [draw_noun] on [src]!"))
 	playsound(M, draw_sound, 60, 1)
 	draw_load(M)
 	update_icon()
@@ -198,13 +188,22 @@
 	desc = "A lightweight bow, rather lacking in firepower"
 	icon_state = "bow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
 	)
+
+/obj/item/gun/ballistic/bow/shortbow/yumi
+	name = "yumi bow"
+	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"
+	icon_state = "yumi"
+	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)	
 //dunno if you want to include more information for each bow, but this is the basics
 
 //tier 2 bows. craftable bows
@@ -214,9 +213,7 @@
 	desc = "A light bow designed for ease of draw."
 	icon_state = "tribalbow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow
@@ -228,10 +225,8 @@
 	desc = "A compact crossbow, with decent firepower."
 	icon_state = "xbow"
 	item_state = "xbow"
-	icon_prefix = "xbow"
-	w_class = WEIGHT_CLASS_BULKY
 	trigger_guard = TRIGGER_GUARD_NONE
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	weapon_class = WEAPON_CLASS_CARBINE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
@@ -245,9 +240,7 @@
 	desc = "A finely crafted bow with an excellent draw."
 	icon_state = "tribalbow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 			/datum/firemode/semi_auto //fast bow. skilled archers will make the most use out of this. mebbe needs buff iuno
@@ -259,9 +252,7 @@
 	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
 	icon_state = "ashenbow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow //a bit faster
@@ -273,10 +264,8 @@
 	desc = "A large crossbow with a heavy draw, for maximum killing power."
 	icon_state = "crossbow"
 	item_state = "crossbow"
-	icon_prefix = "crossbow"
 	trigger_guard = TRIGGER_GUARD_NONE
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
@@ -290,35 +279,32 @@
 	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
 	icon_state = "pipebow"
 	item_state = "bow"
-	icon_prefix = "bow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	init_firemodes = list(
 			/datum/firemode/semi_auto
 	)
 
 // Special bows?
+/* maybe at some point
 /obj/item/gun/ballistic/bow/gold
 	name = "golden bow"
 	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
 	icon_state = "goldbow"
 	item_state = "goldbow"
-	icon_prefix = "goldbow"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow
 	)
-
+*/
 /* old bows, stinky, like fenny
 /obj/item/gun/ballistic/bow/xbow
 	name = "magazine-fed crossbow"
 	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
 	icon_state = "xbow"
 	item_state = "xbow"
-	icon_prefix = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	zoom_factor = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
@@ -331,7 +317,6 @@
 	desc = "A simple wooden bow with small pieces of turquiose, cheaply made and small enough to fit most bags, better then nothing I guess."
 	icon_state = "tribalbow"
 	item_state = "tribalbow"
-	icon_prefix = "tribalbow"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 
@@ -342,7 +327,6 @@
 	desc = "A bone bow, made of pieces of sinew and deathclaw skin for extra structure, it is a fierce weapon that all expert hunters and bowmen carry, allowing for ease of firing many arrows."
 	icon_state = "ashenbow"
 	item_state = "ashenbow"
-	icon_prefix = "ashenbow"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/claw
 	fire_delay = 2
@@ -353,7 +337,6 @@
 	name = "sturdy bow"
 	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra stopping power in the shot speed of the arrows."
 	icon_state = "bow"
-	icon_prefix = "bow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/sturdy
 	extra_speed = 300
@@ -364,7 +347,6 @@
 	desc = "A firm sturdy silver bow created by the earth, its durability and rather strong material allow it to be an excellent option for those looking for the ability to fire more arrows than normally."
 	icon_state = "pipebow"
 	item_state = "pipebow"
-	icon_prefix = "pipebow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/silver
 	fire_delay = 1.5
@@ -375,7 +357,6 @@
 	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
 	icon_state = "goldbow"
 	item_state = "goldbow"
-	icon_prefix = "goldbow"
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/gold
 	fire_delay = 1.5
@@ -386,7 +367,6 @@
 	name = "crossbow"
 	desc = "A crossbow."
 	icon_state = "crossbow"
-	icon_prefix = "crossbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross

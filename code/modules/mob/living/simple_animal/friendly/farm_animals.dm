@@ -66,7 +66,7 @@
 			enemies.Cut()
 			LoseTarget()
 			src.visible_message(span_notice("[src] calms down."))
-		udder.generateMilk(milk_reagent)
+		udder?.generateMilk(milk_reagent)
 		eat_plants()
 		if(!pulledby)
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
@@ -183,6 +183,7 @@
 /mob/living/simple_animal/cow/Initialize()
 	udder = new(null, milk_reagent)
 	. = ..()
+	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
 	qdel(udder)
@@ -334,7 +335,7 @@
 					name = "cow"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
 			if(COOLDOWN_FINISHED(src, hunger_cooldown))
 				if(prob(5))
 					become_hungry()
@@ -488,7 +489,7 @@
 /////////////
 
 /mob/living/simple_animal/chick
-	name = "\improper chick"
+	name = "chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/fallout/mobs/animals/farmanimals.dmi'
 	icon_state = "chick"
@@ -543,7 +544,7 @@
 	amount_grown = 0
 
 /mob/living/simple_animal/chicken
-	name = "\improper chicken"
+	name = "chicken"
 	desc = "Hopefully the eggs are good this season."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -583,6 +584,12 @@
 	var/list/validColors = list("brown","black","white")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
+	idlesound = list(
+		'sound/creatures/chicken/chicken1.ogg',
+		'sound/creatures/chicken/chicken2.ogg',
+		'sound/creatures/chicken/chicken3.ogg',
+		'sound/creatures/chicken/chicken4.ogg',
+		)
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -701,6 +708,12 @@
 	waddle_side_time = 2
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list( 
+		'sound/creatures/cow/cow1.ogg',
+		'sound/creatures/cow/cow2.ogg',
+		'sound/creatures/cow/cow3.ogg',
+		'sound/creatures/cow/cow4.ogg',
+		)
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	var/obj/item/inventory_back
 	footstep_type = FOOTSTEP_MOB_HOOF
@@ -745,6 +758,8 @@
 	waddle_side_time = 2
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+
 	footstep_type = FOOTSTEP_MOB_HOOF
 	ride_offsets = list(
 		"1" = list(0, 8),
@@ -763,8 +778,101 @@
 	butcher_difficulty = 1
 
 
+/mob/living/simple_animal/cow/brahmin/horse/honse //wuzzle
+	name = "honse"
+	desc = "That's a honse, it's the morst but it sure is snorst." //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/horse.dmi'
+	icon_state = "honse"
+	icon_living = "honse"
+	icon_dead = "honse_KO"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("wuzzles","winnies")
+	emote_hear = list("does some sort of insane horse sound.")
+	emote_see = list("perks its ears up.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 200
+	maxHealth = 200
+	ride_move_delay = 2.0
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
+		/obj/item/stack/sheet/bone = 3
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 3,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+
 //https://media.tenor.com/JybpbLLsyX8AAAAC/fat-horse-wuzzle.gif
 //Wuzzle
+
+
+//Motorbike?
+
+/mob/living/simple_animal/cow/brahmin/motorbike //fast as fuck boiii-- costs welding fuel
+	name = "motorbike"
+	desc = "Wow, a small, working motorcycle. How cool!" //I don't care. ~gob
+	icon = 'modular_coyote/icons/mob/motorbike.dmi'
+	icon_state = "motorcycle_4dir"
+	icon_living = "motorcycle_4dir"
+	icon_dead = "motorcycle_overlay_n"
+	speak = list("*jump", "*beep")
+	speak_emote = list("beeps","honks")
+	emote_hear = list("The engine rumbles quietly.")
+	emote_see = list("The engine purrs loudly.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 75
+	maxHealth = 75 //Probably not the most durable piece of work. (equal in loss to the increase in speed)
+	ride_move_delay = 1.2 //A bit faster than a horse.
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets?"
+	response_help_simple = "pets?"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	food_types = list(/obj/item/reagent_containers/food/snacks/welding_fuel)
+	young_type = /mob/living/simple_animal/cow/brahmin/motorbike
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_results = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
+		/obj/structure/tires/two = 1
+		)
+	butcher_difficulty = 5
+
 //Horse
 
 /mob/living/simple_animal/cow/brahmin/horse //faster than a brahmin, but much less tanky
@@ -797,6 +905,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
@@ -844,6 +953,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
 	food_types = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
@@ -851,10 +961,10 @@
 		)
 	milk_reagent = /datum/reagent/toxin
 	ride_offsets = list(
-		"1" = list(15, 8),
-		"2" = list(15, 8),
-		"4" = list(15, 8),
-		"8" = list(15, 8)
+		"1" = list(1, 8),
+		"2" = list(1, 8),
+		"4" = list(1, 8),
+		"8" = list(1, 8)
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
@@ -899,6 +1009,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 2
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
 	food_types = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
@@ -921,6 +1032,61 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
 	butcher_difficulty = 1
+//Bear
+/mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai
+	name = "tamed yaoguai"
+	desc = "Is that...a yaoguai with a saddle on it's back?"
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
+	icon_state = "yaoguai_r"
+	icon_living = "yaoguai_r"
+	icon_dead = "yaoguai_r_dead"
+	speak = list("roars","growls")
+	speak_emote = list("snarls","growls")
+	emote_hear = list("bares it's teeth and snarls.")
+	emote_see = list("glares around.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 300 //More tanky mount
+	maxHealth = 300
+	ride_move_delay = 1.8
+	can_ghost_into = TRUE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "bites"
+	response_harm_simple = "bites"
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/nightstalker
+	food_types = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog
+		)
+//	milk_reagent = /datum/reagent/toxin
+	ride_offsets = list(
+		"1" = list(0, 9),
+		"2" = list(0, 13),
+		"4" = list(-2, 9),
+		"8" = list(-2, 9)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/stack/sheet/sinew = 2,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+		)
+	butcher_difficulty = 1
+
 
 
 //Ridable Fennec
@@ -965,6 +1131,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 3
 	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	food_types = list(
@@ -995,6 +1162,105 @@
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "trekkerpack"
 */
+
+/mob/living/simple_animal/cow/brahmin/horse/choco
+	name = "yellow snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptoryellow"
+	icon_living = "raptoryellow"
+	icon_dead = "raptoryellow_dead"
+	speak = list("*shiver", "*alert")
+	speak_emote = list("chirps","squacks")
+	emote_hear = list("makes a soft friendly chirp noise.")
+	emote_see = list("scratches at the ground.")
+	speak_chance = 1
+	turns_per_move = -1 //no random movement
+	see_in_dark = 6
+	health = 200
+	maxHealth = 200
+	ride_move_delay = 1.5
+	can_ghost_into = FALSE
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	attack_sound = 'sound/weapons/punch1.ogg'
+	idlesound = list()
+	young_type = /mob/living/simple_animal/cow/brahmin/horse/choco
+	footstep_type = FOOTSTEP_MOB_HOOF
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/crafting/wonderglue = 1,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
+	ride_offsets = list(
+		"1" = list(0, 8),
+		"2" = list(0, 10),
+		"4" = list(0, 8),
+		"8" = list(0, 8)
+		)
+
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/black
+	name = "black snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblack"
+	icon_living = "raptorblack"
+	icon_dead = "raptorblack_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/blue
+	name = "blue snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorblue"
+	icon_living = "raptorblue"
+	icon_dead = "raptorblue_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/white
+	name = "white snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorwhite"
+	icon_living = "raptorwhite"
+	icon_dead = "raptorwhite_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/purple
+	name = "purple snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorpurple"
+	icon_living = "raptorpurple"
+	icon_dead = "raptorpurple_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/red
+	name = "red snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorred"
+	icon_living = "raptorred"
+	icon_dead = "raptorred_dead"
+
+/mob/living/simple_animal/cow/brahmin/horse/choco/green
+	name = "green snipe"
+	desc = "A very large chicken. Has a saddle!" //Someone please set a better description later ~TK
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_state = "raptorgreen"
+	icon_living = "raptorgreen"
+	icon_dead = "raptorgreen_dead"
 
 /obj/item/brahmincollar
 	name = "mount collar"
@@ -1235,14 +1501,14 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new()
+				udder = new(null, milk_reagent)
 				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
 				visible_message(span_alertalien("[src] has fully grown."))
 		else
-			udder.generateMilk(milk_reagent)
+			udder?.generateMilk(milk_reagent)
 
 // BIGHORNER CALF
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
@@ -1254,6 +1520,28 @@
 	resize = 0.7
 	update_transform()
 
+/mob/living/simple_animal/cow/brahmin/cow //return to bovine
+	name = "Cow"
+	desc = "A black and white cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow"
+	icon_living = "cow"
+	icon_dead = "cow_dead"
+	icon_gib = "brahmin_gib"
+
+/mob/living/simple_animal/cow/brahmin/cow/Initialize()
+	.=..()
+	resize = 0.85
+	update_transform()
+
+/mob/living/simple_animal/cow/brahmin/cow/tan
+	name = "Tan Cow"
+	desc = "A tan cow!"
+	icon = 'modular_coyote/icons/mob/cow.dmi'
+	icon_state = "cow_tan"
+	icon_living = "cow_tan"
+	icon_dead = "cow_tan_dead"
+	icon_gib = "brahmin_gib"
 
 /* Seems obsolete with Daves Brahmin packs, marked for death?
 	if(inventory_back && inventory_back.brahmin_fashion)

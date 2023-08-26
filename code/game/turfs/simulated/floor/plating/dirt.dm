@@ -4,7 +4,7 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dirt"
-	baseturfs = /turf/open/chasm/jungle
+	baseturfs = /turf/open/floor/plating/dirt
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	attachment_holes = FALSE

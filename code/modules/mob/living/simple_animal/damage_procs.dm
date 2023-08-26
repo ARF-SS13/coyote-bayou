@@ -43,17 +43,17 @@
 /mob/living/simple_animal/adjustStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
-	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
+	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT || amount > 0)
 		return
 	if(damage_coeff[STAMINA])
 		staminaloss = clamp((staminaloss + (amount * damage_coeff[STAMINA] * CONFIG_GET(number/damage_multiplier))), 0, stamcrit_threshold * 1.2)
-		update_stamina()
+	update_stamina()
 	return staminaloss
 
 /mob/living/simple_animal/setStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
-	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
+	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT || amount > 0)
 		return
 	staminaloss = amount
 	update_stamina()

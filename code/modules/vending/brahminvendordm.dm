@@ -5,7 +5,9 @@
 	icon_deny = "detdrobe-deny"
 	product_slogans = "Apply your brZZT- Giddeyup, yall!;Apply your brilliant deductiZZT-are better than one!;Apply your brilliant deductive methoZZT-your two-headed friends!;Apply your brilliant deductive methods in style! ...ZZT-ahmin, today!"
 	vend_reply = "Thank you for using the DetDroZZT-le Supply!"
-	products = list(
+	products = list(/obj/item/tattoo_gun = 5,
+		/obj/item/tattoo_holder/blank = 20,
+		/obj/item/tattoo_holder/blank/temporary = 20,
 		///obj/item/brahminbags = 10,
 		/obj/item/brahminbrand = 10,
 		/obj/item/brahminbridle = 10,
@@ -84,7 +86,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 		user.show_message(span_notice("...and the uplink starts making noises like it's doing something!"))
 	addtimer(CALLBACK(src, .proc/drop_cow, user), 7.5 SECONDS)
 	addtimer(VARSET_CALLBACK(GLOB, orbital_cow_catapult_ready, TRUE), COW_CANNON_RELOAD_DELAY)
-	addtimer(CALLBACK(GLOB, .proc/reset_beacon), COW_CANNON_RELOAD_DELAY)
+	addtimer(CALLBACK(src, .proc/reset_beacon), COW_CANNON_RELOAD_DELAY)
 
 /obj/item/brahmin_beacon/proc/drop_cow(mob/user)
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()

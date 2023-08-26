@@ -9,13 +9,14 @@
 	arousal_verb = "Your balls ache a little"
 	unarousal_verb = "Your balls finally stop aching, again"
 	linked_organ_slot = ORGAN_SLOT_PENIS
-	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE
+	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE|GENITAL_CAN_RESIZE
 	var/size_name = "average"
 	shape = DEF_BALLS_SHAPE
 	fluid_id = /datum/reagent/consumable/semen
 	masturbation_verb = "massage"
 	layer_index = TESTICLES_LAYER_INDEX
 	associated_has = CS_BALLS // for cockstring stuff
+	hide_flag = HIDE_BALLS // for hideflag stuff
 
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())
@@ -24,20 +25,23 @@
 	// in memoriam "Your balls finally feel full, again." ??-2020
 
 /obj/item/organ/genital/testicles/upon_link()
-	size = linked_organ.size
 	update_size()
 	update_appearance()
 
 /obj/item/organ/genital/testicles/update_size(modified = FALSE)
 	switch(size)
-		if(BALLS_SIZE_MIN)
+		if(1)
 			size_name = "average"
-		if(BALLS_SIZE_DEF)
-			size_name = "enlarged"
-		if(BALLS_SIZE_MAX)
-			size_name = "engorged"
+		if(2)
+			size_name = "large"
+		if(3)
+			size_name = "huge"
+		if(4)
+			size_name = "abnormally huge"
+		if(5)
+			size_name = "massive"
 		else
-			size_name = "nonexistant"
+			size_name = "ultimate"
 
 /obj/item/organ/genital/testicles/update_appearance()
 	. = ..()
@@ -45,7 +49,7 @@
 	var/icon_shape = S ? S.icon_state : "single"
 	icon_state = "testicles_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
-	desc = "You see an [size_name] [lowershape]."
+	desc = "You see \a [size_name] [lowershape]."
 	if(owner)
 		if(owner.dna.species.use_skintones)
 			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
@@ -62,6 +66,7 @@
 		color = SKINTONE2HEX(H.skin_tone)
 	else
 		color = "#[D.features["balls_color"]]"
+	size = D.features["balls_size"]
 	shape = D.features["balls_shape"]
 	fluid_rate = D.features["balls_cum_rate"]
 	fluid_mult = D.features["balls_cum_mult"]
@@ -94,4 +99,8 @@
 			return
 		if("BEHIND")
 			. = ..()
+
+/obj/item/organ/genital/testicles/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
+	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "-s" : ""]_[aroused_state]_[layertext]"
+
 

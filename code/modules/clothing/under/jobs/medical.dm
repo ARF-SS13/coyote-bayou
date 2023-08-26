@@ -85,6 +85,7 @@
 	item_state = "w_suit"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/medical/paramedic/red
 	name = "red paramedic jumpsuit"
@@ -95,6 +96,7 @@
 /obj/item/clothing/under/rank/medical/paramedic/light
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic."
 	icon_state = "paramedic-light"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/medical/paramedic/skirt
 	name = "paramedic jumpskirt"
@@ -142,18 +144,21 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in baby blue."
 	icon_state = "scrubsblue"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/medical/doctor/green
 	name = "green medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in dark green."
 	icon_state = "scrubsgreen"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/medical/doctor/purple
 	name = "purple medical scrubs"
 	desc = "It's made of a special fiber that provides minor protection against biohazards. This one is in deep purple."
 	icon_state = "scrubspurple"
 	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/rank/medical/doctor/skirt
 	name = "medical doctor's jumpskirt"

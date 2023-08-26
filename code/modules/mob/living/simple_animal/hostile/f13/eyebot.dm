@@ -19,7 +19,7 @@
 	move_to_delay = 3
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
-	maxHealth = 40 
+	maxHealth = 40
 	health = 40
 	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
@@ -58,7 +58,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
-	aggrosound = list('sound/f13npc/eyebot/aggro.ogg')
+	emote_taunt_sound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
@@ -90,7 +90,7 @@
 	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null
-	aggrosound = null
+	emote_taunt_sound = null
 	idlesound = null
 	see_in_dark = 8
 	wander = 0
@@ -159,11 +159,16 @@
 	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
 	adjustBruteLoss(emp_damage)
 
+/mob/living/simple_animal/pet/dog/eyebot/panzer
+	name = "Pvt. Eye"
+	desc = "This eyebot's weapons module has been removed and replaced with a transmitter of some kind. It appears to be simply observing and feeding information to something passively."
+	emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
+	speak_chance = 1
+
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
 	maxHealth = 200
 	attack_verb_simple = "zaps"
-	aggrosound = null
 	speak_chance = 0
 	idlesound = null
 	see_in_dark = 8

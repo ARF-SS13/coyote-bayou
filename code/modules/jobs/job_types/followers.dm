@@ -52,8 +52,8 @@ Administrator
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 
 /datum/outfit/job/followers/f13leadpractitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -104,7 +104,7 @@ Administrator
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1
 	)
 
@@ -130,8 +130,8 @@ Administrator
 	/datum/outfit/loadout/medical_specialist
 	)
 
-	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /datum/outfit/job/followers/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -178,7 +178,7 @@ Administrator
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/storage/firstaid/ancient=1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 		)
 
 /datum/outfit/loadout/environmental_scientist
@@ -285,7 +285,7 @@ Practitioner
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/physician
@@ -377,7 +377,7 @@ Follower Volunteer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
 		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /datum/outfit/loadout/volunteer_emt
@@ -468,7 +468,7 @@ Follower Volunteer
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/storage/belt/army/followers = 1,
-		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 	)
 
 /*

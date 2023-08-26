@@ -115,6 +115,18 @@
 	subcategory = CAT_MELEE
 	always_available = FALSE
 
+/datum/crafting_recipe/policebaton
+	name = "Police Baton"
+	result = /obj/item/melee/classic_baton/police
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/prewar = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 ////////////////
 ///POWER CELLS//
 ///////////////
@@ -144,7 +156,7 @@
 	name = "Enhanced Energy Cell"
 	result = /obj/item/stock_parts/cell/ammo/ec/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -178,7 +190,7 @@
 	name = "Enhanced Microfusion Cell"
 	result = /obj/item/stock_parts/cell/ammo/mfc/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc = 1, //Don't wanna require 2 cells just to condense them down to 1 slot.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -212,7 +224,7 @@
 	name = "Enhanced Electron Charge Pack"
 	result = /obj/item/stock_parts/cell/ammo/ecp/large
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp = 1, //Don't wanna require 2 cells just to condense them down to 1 slot for not much other benefit.
-				/obj/item/stack/crafting/electronicparts = 5,,
+				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
 				/obj/item/advanced_crafting_components/conductors = 1) //Uses up high end mats and cells you don't get a lot of.
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
@@ -243,8 +255,54 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/flintlock
+	name = "Powderbag and musket balls"
+	result = /obj/item/ammo_box/flintlock
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/ore/blackpowder = 3)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/field_arrow
+	name = "Field Arrow"
+	result = /obj/item/stack/arrowhead/field
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/metal_arrow
+	name = "Metal Arrow"
+	result = /obj/item/stack/arrowhead/metal
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/bone_arrow
+	name = "Bone Arrow"
+	result = /obj/item/stack/arrowhead/bone
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/glass_arrow
+	name = "Glass Knapped Arrow"
+	result = /obj/item/stack/arrowhead/glass
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
+	)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /////////////////
 ///ammo        //
@@ -521,6 +579,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/ratling_gun_ammobox
+	name = "Ratling gun ammo box"
+	result = /obj/item/ammo_box/magazine/ratling/empty
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /////////////////
 ///GUN CRAFTING//
 /////////////////
@@ -561,6 +629,31 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/gun/flintlock
+	name = "flintlock pistol"
+	result = /obj/item/gun/flintlock
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/bronze = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/gun/flintlock_laser
+	name = "flintlock laser pistol"
+	result = /obj/item/gun/flintlock/laser
+	reqs = list(/obj/item/gun/flintlock = 1,
+				/obj/item/stack/crafting/electronicparts = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
 
 /datum/crafting_recipe/gun/pepperbox
 	name = "Pepperbox gun (10mm)"
@@ -667,6 +760,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/gun/twinrcw
+	name = "Twin-shot RCW Carbine"
+	result = /obj/item/gun/energy/laser/auto/twin
+	reqs = list(/obj/item/gun/energy/laser/auto = 1,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/cable_coil = 3)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //browning hi-power
 /datum/crafting_recipe/ninemil
@@ -860,6 +964,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//craftable ratling gun
+/datum/crafting_recipe/ratling_gun
+	name = "Ratling gun"
+	result = /obj/item/gun/ballistic/automatic/ratling_gun
+	reqs = list(/obj/item/gun_upgrade/barrel/forged = 5,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/manipulator/pico = 3,
+				/obj/item/stack/sheet/bronze = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 300 //30 sec
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //craftable psuedo-ratslayer
 /datum/crafting_recipe/verminkiller
 	name = "Upgraded Varmint Rifle"
@@ -880,6 +998,20 @@
 	result = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/tommygun
+	name = "Thompson Submachinegun"
+	result = /obj/item/gun/ballistic/automatic/smg/tommygun
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	time = 120
 	category = CAT_WEAPONRY
@@ -1389,6 +1521,38 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/aer9_hotwired
+	name = "Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/aer9_hotwired_rynn
+	name = "Custom Hotwired AER-9"
+	result = /obj/item/gun/energy/laser/aer9/focused/rynn
+	reqs = list(/obj/item/gun/energy/laser/aer9 = 1,
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //plasma rifle
 /datum/crafting_recipe/plasmarifle
 	name = "Plasma Rifle"
@@ -1558,7 +1722,7 @@
 
 //magneto
 /datum/crafting_recipe/magnetowattz
-	name = "Wattz 1000 Magneto-laser Pistol"
+	name = "Wattz 1000 smart-laser Pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto
 	reqs = list(/obj/item/gun/energy/laser/wattz = 1,
 				/obj/item/stack/crafting/electronicparts = 2)

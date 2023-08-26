@@ -1,8 +1,9 @@
 /obj/item/gun/magic/staff
-	slot_flags = ITEM_SLOT_BACK
+	weapon_class = WEAPON_CLASS_RIFLE
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	item_flags = NEEDS_PERMIT | NO_MAT_REDEMPTION
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/magic/staff/change
 	name = "staff of change"
@@ -27,6 +28,8 @@
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	icon_state = "staffofhealing"
 	item_state = "staffofhealing"
+	max_charges = 1
+	recharge_rate = 30 MINUTES
 
 /obj/item/gun/magic/staff/healing/handle_suicide() //Stops people trying to commit suicide to heal themselves
 	return
@@ -39,13 +42,28 @@
 	icon_state = "staffofchaos"
 	item_state = "staffofchaos"
 	max_charges = 10
-	recharge_rate = 2
+	recharge_rate = 1 MINUTES
 	no_den_usage = 1
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/change, /obj/item/projectile/magic/animate, /obj/item/projectile/magic/resurrection,
 	/obj/item/projectile/magic/death, /obj/item/projectile/magic/teleport, /obj/item/projectile/magic/door, /obj/item/projectile/magic/aoe/fireball,
 	/obj/item/projectile/magic/spellblade, /obj/item/projectile/magic/arcane_barrage, /obj/item/projectile/magic/locker)
 
 /obj/item/gun/magic/staff/chaos/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+	chambered.projectile_type = pick(allowed_projectile_types)
+	. = ..()
+
+/obj/item/gun/magic/staff/healing/triheal
+	name = "staff of unstable blessings"
+	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
+	fire_sound = 'sound/magic/mystical.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/chaos
+	icon_state = "triheal"
+	item_state = "broom"
+	max_charges = 3
+	recharge_rate = 30 SECONDS
+	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
+
+/obj/item/gun/magic/staff/healing/triheal/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	chambered.projectile_type = pick(allowed_projectile_types)
 	. = ..()
 
@@ -57,7 +75,7 @@
 	icon_state = "staffofdoor"
 	item_state = "staffofdoor"
 	max_charges = 10
-	recharge_rate = 2
+	recharge_rate = 30 SECONDS
 	no_den_usage = 1
 
 /obj/item/gun/magic/staff/spellblade
@@ -70,15 +88,11 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	force = 20
-	armour_penetration = 0.95
-	block_chance = 50
+	force = 40
+	block_chance = 20
 	sharpness = SHARP_EDGED
 	max_charges = 4
 
-/obj/item/gun/magic/staff/spellblade/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 15, 125, 0, hitsound)
 
 /obj/item/gun/magic/staff/spellblade/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	// Do not block projectiles.
@@ -94,6 +108,4 @@
 	icon_state = "locker"
 	item_state = "locker"
 	max_charges = 6
-	recharge_rate = 4
-
-
+	recharge_rate = 10 SECONDS

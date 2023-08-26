@@ -134,7 +134,7 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola
-	name = "Nuka-Cola"
+	name = "Cosmic-Cola"
 	desc = "The most popular flavored soft drink in the United States before the Great War."
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "nukacola"
@@ -706,13 +706,13 @@
 	desc = "Ironic name as the fruit used is from ashy plants."
 
 /obj/item/export/bottle/nukashine
-	name = "Nukashine"
+	name = "Cosmicshine"
 	icon_state = "nukashine"
 	desc = "Theres nothing like homebrew nukashine in times like these!"
 
 /obj/item/reagent_containers/food/drinks/bottle/nukashine
-	name = "Nukashine"
-	desc = "You've really hit rock bottom now... yet theres nothing like homebrew nukashine in times like these!"
+	name = "Cosmicshine"
+	desc = "You've really hit rock bottom now... yet theres nothing like homebrew Cosmicshine in times like these!"
 	icon_state = "nukashine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukashine = 100)
 	foodtype = NUKA
