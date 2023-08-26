@@ -83,6 +83,7 @@
 	color = color_mad
 	reach += 1
 	speed *= 0.8
+	move_to_delay *= 0.5
 	obj_damage += 200
 	melee_damage_lower *= 1.5
 	melee_damage_upper *= 1.4
@@ -100,6 +101,7 @@
 	color = initial(color)
 	reach = initial(reach)
 	speed = initial(speed)
+	move_to_delay = initial(move_to_delay)
 	obj_damage = initial(obj_damage)
 	melee_damage_lower = initial(melee_damage_lower)
 	melee_damage_upper = initial(melee_damage_upper)
@@ -127,15 +129,15 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/deathclaw/Bump(atom/A)
-	if(is_low_health)
-		if((isturf(A) || isobj(A)) && A.density)
+	if((isturf(A) || isobj(A)) && A.density)
+		if(health <= 0)
+			playsound(get_turf(src), 'sound/effects/Flesh_Break_2.ogg', 100, 1, ignore_walls = TRUE)
+			visible_message(span_danger("[src] smashes into \the [A] and explodes in a violent spray of gore![prob(25) ? " Holy shit!" : ""]"))
+			gib()
+			return
+		if(is_low_health && health > 0)
 			A.ex_act(EXPLODE_HEAVY)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-			if(stat || health <= 0)
-				playsound(get_turf(src), 'sound/effects/Flesh_Break_2.ogg', 100, 1, ignore_walls = TRUE)
-				visible_message(span_danger("[src] smashes into \the [A] and explodes in a violent spray of gore![prob(25) ? " Holy shit!" : ""]"))
-				gib()
-				return
 		DestroySurroundings()
 	..()
 
