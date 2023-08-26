@@ -350,6 +350,11 @@
 	value = 0
 	mob_trait = TRAIT_IN_HEAT
 
+/datum/quirk/shy
+	name = "OOCly Shy"
+	desc = "You, and likely your character, are a bit shy. This is a fine thing to be, but letting people know this way will let them know you do want to be included in social situations when its feasible. Basically just top bait though, lets be real."
+	value = 0
+	mob_trait = TRAIT_SHY
 
 /datum/quirk/heat
 	name = "ERP Seeking"

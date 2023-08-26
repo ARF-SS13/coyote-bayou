@@ -33,6 +33,8 @@
 	var/coverable_by_dense_things = TRUE
 	/// Dont start spawning just yet
 	var/delay_start = FALSE
+	/// im special
+	var/am_special = FALSE
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	COOLDOWN_DECLARE(spawner_cooldown)
@@ -91,14 +93,21 @@
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
+	var/coords = atom2coords(parent)
+	GLOB.nest_spawn_points -= coords // im here! honest
 
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/stop_spawning)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/stop_spawning)
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/start_spawning)
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
 	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	if(istype(parent, /obj/structure/nest))
+		var/obj/structure/nest/nest = parent
+		if(nest.spawned_by_ckey)
+			am_special = TRUE
 	if(istype(parent, /obj/structure/nest/special))
+		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
 	if(!delay_start)
 		start_spawning()
@@ -114,6 +123,11 @@
 /// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
 	START_PROCESSING(SSspawners, src)
+
+/datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
+	stop_spawning()
+	if(!am_special)
+		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
 
 /datum/component/spawner/proc/stop_spawning(datum/source, force, hint)
 	STOP_PROCESSING(SSspawners, src)

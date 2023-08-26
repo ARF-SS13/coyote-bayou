@@ -1381,18 +1381,18 @@ Raider
 	R.gender = NEUTER
 
 
-//Wasteland Preacher
-/datum/job/wasteland/f13preacher
+//Nash Preacher
+/datum/job/oasis/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
-	faction = FACTION_WASTELAND
+	department_flag = DEP_OASIS
 	total_positions = 3
 	spawn_positions = 1
 	supervisors = "your faith"
 	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/wasteland/f13preacher
+	outfit = /datum/outfit/job/oasis/f13preacher
 
 	loadout_options = list(
 	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
@@ -1452,7 +1452,7 @@ Raider
 	)
 
 
-/datum/job/wasteland/f13preacher/after_spawn(mob/living/H, mob/M)
+/datum/job/oasis/f13preacher/after_spawn(mob/living/H, mob/M)
 	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
@@ -1545,11 +1545,12 @@ Raider
 	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
 
 
-/datum/outfit/job/wasteland/f13preacher
+/datum/outfit/job/oasis/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/wasteland/f13preacher
+	jobtype = /datum/job/oasis/f13preacher
 
 	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/kit_spawner/preacher
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless

@@ -15,8 +15,8 @@
 	response_harm_continuous = "bats"
 	response_harm_simple = "bat"
 	speak_emote = list("chrips")
-	maxHealth = 50
-	health = 50
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 5
 	friendly_verb_continuous = "nudges"
 	friendly_verb_simple = "nudge"
@@ -30,6 +30,24 @@
 	verb_ask = "chirps inquisitively"
 	verb_exclaim = "chirps intensely"
 	verb_yell = "chirps intensely"
+	idlesound = list(
+		'sound/f13ambience/bird_1.ogg',
+		'sound/f13ambience/bird_2.ogg',
+		'sound/f13ambience/bird_3.ogg',
+		'sound/f13ambience/bird_4.ogg',
+		'sound/f13ambience/bird_5.ogg',
+		'sound/f13ambience/bird_6.ogg',
+		'sound/f13ambience/bird_7.ogg',
+		'sound/f13ambience/bird_8.ogg',
+	)
+
+
+
+
+/mob/living/simple_animal/bird/Initialize()
+	.=..()
+	resize = 0.5
+	update_transform()
 
 /mob/living/simple_animal/bird/redparrot
 	name = "red parrot"
@@ -305,6 +323,10 @@
 	icon_state = "crow"
 	icon_living = "crow"
 	icon_dead = "crow-dead"
+	idlesound = list(
+		'sound/f13ambience/crow_1.ogg',
+		'sound/f13ambience/crow_2.ogg',
+	)
 
 /mob/living/simple_animal/bird/doodle
 	name = "doodle"

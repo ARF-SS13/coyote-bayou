@@ -8,6 +8,12 @@
 "ah" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/ruins)
+"ai" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "aj" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -22,6 +28,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"ar" = (
+/obj/structure/closet/l3closet/virology,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "au" = (
 /obj/effect/turf_decal/trimline/neutral{
 	dir = 6;
@@ -38,6 +52,16 @@
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
+/area/f13/wasteland)
+"az" = (
+/obj/structure/table,
+/obj/item/hand_labeler,
+/obj/item/radio/headset/headset_med,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "aA" = (
 /obj/structure/rack/shelf_metal,
@@ -116,6 +140,30 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"aZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/doorButtons/access_button{
+	idDoor = "virology_airlock_exterior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_x = -24;
+	req_access_txt = "39"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_exterior";
+	name = "Virology Exterior Airlock";
+	req_access_txt = "39"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "bc" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -160,6 +208,14 @@
 "bo" = (
 /turf/open/indestructible,
 /area/f13/tcoms)
+"br" = (
+/obj/structure/table,
+/obj/machinery/light_switch{
+	pixel_x = -23
+	},
+/obj/machinery/reagentgrinder,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "bs" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -284,6 +340,17 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"cp" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/camera{
+	c_tag = "Virology Airlock";
+	network = list("ss13","medbay")
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "cr" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -354,6 +421,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cL" = (
+/obj/machinery/iv_drip,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "cO" = (
 /obj/machinery/shower{
 	dir = 1
@@ -400,6 +471,10 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"db" = (
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "dj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood{
@@ -421,6 +496,17 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"dt" = (
+/obj/structure/chair/stool,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
+"dv" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "dA" = (
 /obj/structure/dresser,
 /obj/structure/sign/painting/library{
@@ -428,6 +514,12 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
+"dC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "dD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/validball_spawner,
@@ -509,6 +601,11 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"eo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "es" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 8
@@ -531,6 +628,19 @@
 "eC" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
+"eE" = (
+/obj/structure/table/glass,
+/obj/item/clothing/gloves/color/latex,
+/obj/item/healthanalyzer,
+/obj/item/clothing/glasses/hud/health,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "eI" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -647,6 +757,10 @@
 	smooth = 1
 	},
 /area/f13/building)
+"fy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "fB" = (
 /obj/structure/chair/sofa/left{
 	dir = 8
@@ -666,6 +780,14 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"fM" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "fN" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -743,6 +865,12 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/f13/building)
+"gn" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic)
 "gr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack/shelf_metal,
@@ -752,6 +880,17 @@
 "gw" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital/clinic)
+"gx" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "gy" = (
 /obj/structure/railing{
 	dir = 9
@@ -779,6 +918,25 @@
 	},
 /turf/open/floor/plating/rust,
 /area/f13/building/abandoned)
+"gM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_interior";
+	name = "Virology Interior Airlock";
+	req_access_txt = "39"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "gQ" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "pink";
@@ -807,6 +965,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bonfire/prelit,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"ha" = (
+/obj/structure/closet/secure_closet/medical1,
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "hc" = (
 /obj/structure/fence/cut/large{
@@ -842,6 +1009,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"hD" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "hH" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
@@ -999,6 +1173,40 @@
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"iO" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/building/hospital/clinic)
+"iQ" = (
+/obj/structure/table/glass,
+/obj/item/radio/intercom{
+	pixel_x = -25
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/storage/box/beakers{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/storage/box/syringes,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "iT" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1009,6 +1217,16 @@
 	color = "#A47449"
 	},
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"iZ" = (
+/obj/structure/closet/l3closet,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "ja" = (
 /obj/structure/barricade/sandbags,
@@ -1218,6 +1436,14 @@
 /obj/structure/table/plasmaglass,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"ld" = (
+/obj/structure/table,
+/obj/item/storage/secure/safe{
+	pixel_x = 5;
+	pixel_y = 29
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "lg" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1259,6 +1485,11 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
+"lF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "lG" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
@@ -1269,6 +1500,13 @@
 "lH" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
+"lI" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "lJ" = (
 /obj/machinery/vending/kink{
 	pixel_y = 20;
@@ -1305,6 +1543,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"lU" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "mk" = (
 /obj/structure/cable,
 /obj/machinery/power/solar,
@@ -1323,6 +1568,20 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"mv" = (
+/obj/machinery/disposal/bin,
+/obj/structure/sign/warning/deathsposal{
+	pixel_y = -32
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "mE" = (
 /obj/structure/dresser,
 /turf/open/floor/wood_common{
@@ -1448,13 +1707,12 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "nC" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain{
+	color = "#845f58"
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
+/turf/open/floor/plating,
+/area/f13/building/hospital/clinic)
 "nD" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_end_fill";
@@ -1468,6 +1726,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"nJ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic)
 "nL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
@@ -1580,6 +1842,10 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"op" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall/r_wall,
+/area/f13/wasteland)
 "ou" = (
 /obj/structure/curtain{
 	color = "#363636";
@@ -1622,6 +1888,12 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building)
+"oS" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "oU" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/spacevine,
@@ -1726,6 +1998,12 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"pH" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "pK" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -1760,6 +2038,24 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"qd" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_x = -32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
+"qg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 10
+	},
+/turf/closed/wall,
+/area/f13/wasteland)
 "qi" = (
 /obj/machinery/microwave/gas_stove{
 	pixel_y = 16
@@ -1770,6 +2066,16 @@
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"qp" = (
+/obj/machinery/smartfridge/chemistry/virology/preloaded,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "qt" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -1783,6 +2089,13 @@
 /obj/effect/decal/cleanable/semen/femcum,
 /turf/open/floor/grass/fakebasalt,
 /area/f13/building)
+"qx" = (
+/mob/living/carbon/monkey,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "qA" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -2086,6 +2399,13 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"tq" = (
+/obj/structure/closet/l3closet,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "tu" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -2107,6 +2427,10 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
+/area/f13/building)
+"ty" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
@@ -2162,6 +2486,14 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"uv" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "uw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2214,13 +2546,13 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "uR" = (
-/obj/structure/spacevine,
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 4
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
 	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "uT" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -2257,6 +2589,10 @@
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"vj" = (
+/obj/machinery/iv_drip,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "vo" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/indestructible/rock{
@@ -2350,6 +2686,13 @@
 	dir = 8
 	},
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"vX" = (
+/obj/structure/closet/l3closet,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "wd" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled,
@@ -2559,6 +2902,18 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"yb" = (
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -2583,6 +2938,18 @@
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"yn" = (
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Console";
+	pixel_x = 8;
+	pixel_y = 22;
+	req_access_txt = "39"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "yo" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -2590,7 +2957,16 @@
 /turf/open/floor/grass/fakebasalt,
 /area/f13/building)
 "yp" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe/free,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "yt" = (
@@ -2600,6 +2976,10 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"yu" = (
+/obj/structure/closet/secure_closet/personal/patient,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "yv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -2622,12 +3002,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"yI" = (
+/obj/machinery/vending/wardrobe/viro_wardrobe,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "yJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"yP" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "yT" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2649,6 +3040,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building)
+"zg" = (
+/obj/structure/table,
+/obj/item/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/machinery/newscaster{
+	pixel_x = -30
+	},
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "zj" = (
 /obj/structure/chair/sofa/corner,
 /obj/effect/decal/cleanable/dirt,
@@ -2659,11 +3063,7 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "zr" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_corner_fill";
-	dir = 4
-	},
-/turf/open/floor/wood_wide,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "zx" = (
 /obj/structure/railing{
@@ -2699,6 +3099,9 @@
 /area/f13/wasteland)
 "zH" = (
 /obj/machinery/vending/medical/researchgrants,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "zJ" = (
@@ -2731,6 +3134,13 @@
 	light_range = 2
 	},
 /area/f13/wasteland)
+"zR" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "zT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2778,10 +3188,36 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Aj" = (
+/obj/structure/table/glass,
+/obj/item/clothing/gloves/color/latex,
+/obj/machinery/requests_console{
+	department = "Virology";
+	name = "Virology Requests Console";
+	pixel_x = -32
+	},
+/obj/item/healthanalyzer,
+/obj/item/clothing/glasses/hud/health,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "As" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Au" = (
+/obj/machinery/vending/medical,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
+"Aw" = (
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "Ay" = (
 /obj/structure/railing{
@@ -2789,6 +3225,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/building/hospital/clinic)
+"AG" = (
+/obj/item/storage/secure/safe{
+	pixel_x = 5;
+	pixel_y = 29
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "AI" = (
 /obj/structure/fence{
 	dir = 4;
@@ -2817,6 +3260,9 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"AL" = (
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "AM" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
@@ -2852,6 +3298,11 @@
 "AV" = (
 /turf/open/transparent/openspace,
 /area/f13/ruins)
+"AW" = (
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "AZ" = (
 /obj/structure/railing{
 	dir = 1
@@ -3082,6 +3533,10 @@
 	icon_state = "interior1"
 	},
 /area/f13/building)
+"CP" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/f13/wasteland)
 "CQ" = (
 /obj/effect/landmark/vertibird{
 	id = "Nash - Christus Saint Michaels Hospital - Rooftop";
@@ -3129,6 +3584,10 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
+"Dj" = (
+/obj/structure/table,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Dk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/neutral{
@@ -3174,6 +3633,20 @@
 	smooth = 1
 	},
 /area/f13/building/hospital)
+"DF" = (
+/obj/structure/sign/warning/biohazard,
+/turf/closed/wall,
+/area/f13/wasteland)
+"DJ" = (
+/obj/machinery/smartfridge/chemistry/virology/preloaded,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "DL" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -3218,6 +3691,15 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Ep" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Eq" = (
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -3248,6 +3730,14 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"EC" = (
+/obj/machinery/computer/pandemic,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "ED" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
@@ -3320,6 +3810,10 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/tcoms)
+"FB" = (
+/obj/structure/chair/stool,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "FG" = (
 /obj/effect/decal/fakelattice,
 /obj/structure/disposalpipe/segment{
@@ -3374,6 +3868,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"Gf" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/vending/wardrobe/science_wardrobe/free,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic)
+"Gh" = (
+/turf/closed/wall,
+/area/f13/wasteland)
 "Gi" = (
 /obj/structure/sign/departments/examroom{
 	pixel_x = -32
@@ -3423,13 +3927,9 @@
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "GB" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 5
-	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/f13/building/hospital/clinic)
 "GG" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/light/floor,
@@ -3539,6 +4039,14 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Hv" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/virology/glass{
+	name = "Monkey Pen";
+	req_access_txt = "39"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Hw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -3568,6 +4076,12 @@
 /obj/structure/fluff/beach_umbrella/science,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"HL" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "HM" = (
 /obj/structure/railing/corner{
 	color = null
@@ -3610,6 +4124,16 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Ih" = (
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green,
+/obj/structure/closet/crate/bin/trashbin{
+	pixel_x = 17
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Ii" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken{
@@ -3679,6 +4203,7 @@
 /area/f13/building)
 "IE" = (
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "IG" = (
@@ -3993,6 +4518,10 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"LD" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic)
 "LJ" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
@@ -4026,6 +4555,28 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"Mg" = (
+/mob/living/carbon/monkey,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
+"Mh" = (
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
+"Mi" = (
+/obj/structure/closet/l3closet,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Mk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/semen,
@@ -4063,6 +4614,12 @@
 	dir = 4
 	},
 /turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"MC" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "MH" = (
 /obj/structure/cable{
@@ -4156,10 +4713,12 @@
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "Nv" = (
-/obj/machinery/vending/wardrobe/science_wardrobe/free,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
@@ -4235,6 +4794,17 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Oa" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/camera{
+	c_tag = "Virology Airlock";
+	network = list("ss13","medbay")
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Of" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -4259,12 +4829,7 @@
 	},
 /area/f13/wasteland)
 "Om" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
-	},
-/obj/structure/spacevine,
-/turf/open/floor/wood_wide,
+/turf/closed/wall/r_wall,
 /area/f13/wasteland)
 "Oo" = (
 /obj/structure/disposalpipe/segment,
@@ -4292,6 +4857,19 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
+/area/f13/wasteland)
+"OB" = (
+/obj/structure/table,
+/obj/item/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/machinery/newscaster{
+	pixel_x = -30
+	},
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "OH" = (
 /obj/structure/curtain{
@@ -4326,6 +4904,16 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"OU" = (
+/obj/structure/table,
+/obj/item/hand_labeler,
+/obj/item/radio/headset/headset_med,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "OX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/bunker,
@@ -4336,6 +4924,19 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Pa" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/pen/red,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Pc" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -4390,6 +4991,32 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"PD" = (
+/obj/structure/chair/folding{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic)
+"PF" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/machinery/doorButtons/access_button{
+	idDoor = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_x = 8;
+	pixel_y = -28;
+	req_access_txt = "39"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "PL" = (
 /obj/structure/sign/departments/restroom{
 	pixel_x = 32
@@ -4465,6 +5092,13 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"QD" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "QE" = (
 /mob/living/simple_animal/hostile/renegade/soldier{
 	name = "Jimothy Jones"
@@ -4496,6 +5130,30 @@
 /obj/structure/fluff/beach_umbrella/security,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"QX" = (
+/obj/structure/table/glass,
+/obj/item/radio/intercom{
+	pixel_x = -25
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/storage/box/beakers{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/storage/box/syringes,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "QZ" = (
 /obj/structure/chair/sofa/corner{
 	dir = 4
@@ -4508,6 +5166,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Re" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "Rg" = (
 /obj/machinery/light,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
@@ -4583,6 +5247,31 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"RO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_interior";
+	name = "Virology Interior Airlock";
+	req_access_txt = "39"
+	},
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Console";
+	pixel_x = 24;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "RP" = (
 /obj/structure/fence/end/wooden{
 	pixel_x = -7;
@@ -4665,6 +5354,20 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Sp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
+"Sr" = (
+/obj/structure/sign/warning/biohazard,
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/building/hospital/clinic)
 "St" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -4698,6 +5401,12 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"SC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "SI" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4728,6 +5437,17 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"SZ" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Ta" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/house,
@@ -4747,6 +5467,19 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"Te" = (
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/item/pen/red,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Th" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -4773,6 +5506,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"Tv" = (
+/obj/machinery/computer/pandemic,
+/obj/effect/turf_decal/tile/green,
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "TC" = (
 /obj/item/flag/locust,
@@ -4802,6 +5543,30 @@
 /obj/effect/decal/cleanable/semen/femcum,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"TI" = (
+/obj/structure/table/glass,
+/obj/structure/reagent_dispensers/virusfood{
+	pixel_x = -30
+	},
+/obj/item/book/manual/wiki/infections{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
+"TK" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "TN" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -4819,6 +5584,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"TV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "TX" = (
 /obj/structure/railing{
 	dir = 8
@@ -4869,6 +5643,11 @@
 /obj/item/binoculars,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"Ux" = (
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Uy" = (
 /mob/living/simple_animal/hostile/renegade/soldier{
 	name = "Joe Bob"
@@ -4880,6 +5659,31 @@
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"UA" = (
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/virology{
+	autoclose = 0;
+	frequency = 1449;
+	id_tag = "virology_airlock_exterior";
+	name = "Virology Exterior Airlock";
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/obj/machinery/doorButtons/airlock_controller{
+	idExterior = "virology_airlock_exterior";
+	idInterior = "virology_airlock_interior";
+	idSelf = "virology_airlock_control";
+	name = "Virology Access Console";
+	pixel_x = -24;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "UB" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace{
@@ -4893,6 +5697,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"UH" = (
+/mob/living/carbon/monkey,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "UM" = (
 /obj/structure/junk/small,
 /turf/open/indestructible/ground/outside/roof,
@@ -4912,6 +5722,14 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"US" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/virology{
+	name = "Break Room";
+	req_access_txt = "39"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "UY" = (
 /obj/structure/window/fulltile/store,
 /obj/structure/curtain{
@@ -4941,6 +5759,11 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Vk" = (
+/obj/structure/chair/stool,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Vn" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
 /obj/machinery/power/terminal{
@@ -5027,6 +5850,25 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
+"VN" = (
+/obj/structure/table/glass,
+/obj/structure/reagent_dispensers/virusfood{
+	pixel_x = -30
+	},
+/obj/item/book/manual/wiki/infections{
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "VU" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
@@ -5089,6 +5931,9 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Ww" = (
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "WA" = (
 /obj/structure/railing{
 	dir = 4
@@ -5125,6 +5970,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"WT" = (
+/obj/machinery/vending/wardrobe/viro_wardrobe,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "WU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1
@@ -5144,6 +5993,7 @@
 /obj/structure/sign/poster/prewar/poster72{
 	pixel_x = -32
 	},
+/obj/machinery/vending/wardrobe/medi_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "Xj" = (
@@ -5154,6 +6004,17 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
+"Xn" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/building/hospital/clinic)
 "Xo" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/spacevine,
@@ -5311,6 +6172,18 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
+"YO" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/sign/warning/securearea{
+	pixel_x = -32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Zc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
 	faction = list("raider")
@@ -5330,6 +6203,12 @@
 	faction = list("raider")
 	},
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Zk" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "Zn" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -7299,21 +8178,21 @@ rm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+zr
+zr
+zr
+zr
+zr
+zr
+zr
+zr
 jy
 PM
 hm
@@ -7556,21 +8435,21 @@ rm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+AL
+fM
+OB
+br
+AL
+Om
+zr
+zr
+zr
+zr
+zr
+zr
+zr
+zr
 Cr
 PM
 hm
@@ -7813,21 +8692,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+AG
+AL
+dt
+AL
+AL
+Om
+zr
+zr
+zr
+zr
+zr
+zr
+zr
+zr
 Cr
 PM
 hm
@@ -8070,21 +8949,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+MC
+AL
+AL
+dv
+AL
+Om
+zr
+zr
+zr
+zr
+zr
+zr
+zr
+zr
 Cr
 PM
 hm
@@ -8327,21 +9206,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Ux
+cL
+WT
+Gh
+US
+qg
+Om
+Om
+Om
+Om
+Om
+zr
+zr
+zr
 Cr
 PM
 hm
@@ -8584,21 +9463,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Om
+Om
+Om
+Om
+lU
+yb
+qp
+Aj
+QX
+VN
+Om
+Om
+zr
+zr
 Cr
 PM
 hm
@@ -8841,21 +9720,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Gh
+gx
+YO
+PF
+Om
+yn
+AL
+AL
+AL
+AL
+AL
+ar
+Om
+zr
+zr
 Cr
 PM
 hm
@@ -9098,21 +9977,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+aZ
+TV
+SC
+Sp
+gM
+AL
+AL
+dt
+AL
+Zk
+dC
+ha
+op
+zr
+zr
 Cr
 PM
 hm
@@ -9128,11 +10007,11 @@ hm
 hm
 hm
 hm
-nO
-aB
-cm
-aB
-cm
+Wr
+Wr
+Wr
+Wr
+Wr
 Wr
 Wr
 Wr
@@ -9355,21 +10234,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+DF
+Oa
+iZ
+vX
+Om
+AL
+AL
+Tv
+az
+Pa
+mv
+Om
+Om
+zr
+zr
 Cr
 PM
 hm
@@ -9385,13 +10264,13 @@ hm
 hm
 hm
 hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
+FS
+FS
+FS
+FS
+FS
+FS
+FS
 Wr
 Wr
 Wr
@@ -9612,21 +10491,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Om
+Om
+Om
+Om
+AL
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 hm
@@ -9642,13 +10521,13 @@ hm
 hm
 hm
 hm
-nO
-aB
-cm
-aB
-cm
-Wr
-Wr
+FS
+ld
+Ep
+zg
+TK
+Dj
+FS
 Wr
 Wr
 SR
@@ -9869,21 +10748,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+AL
+Aw
+AL
+CP
+AL
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -9899,13 +10778,13 @@ hm
 hm
 hm
 hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
+nC
+fy
+fy
+Vk
+Ww
+Ww
+FS
 Wr
 Wr
 Xv
@@ -10126,21 +11005,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Aw
+AL
+AL
+CP
+AL
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -10157,23 +11036,23 @@ hm
 hm
 hm
 nC
-Wr
-mY
-mY
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+Ww
+fy
+Ww
+fy
+fy
+FS
+FS
+FS
+FS
 FS
 zH
-Dc
+Gf
 Gi
 VU
-VU
+ES
 Xg
-VU
+pf
 Gi
 VU
 Dc
@@ -10383,21 +11262,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+pH
+Aw
+AL
+Hv
+AL
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -10413,26 +11292,26 @@ hm
 hm
 hm
 hm
-Om
-mY
-mY
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+nC
+AW
+vj
+yI
 FS
-ES
+uv
+FS
+SZ
+qd
+Xn
+FS
+gn
+VU
+VU
+nJ
 VU
 VU
 VU
 VU
-VU
-VU
-VU
-VU
+nJ
 VU
 IW
 nO
@@ -10640,21 +11519,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Aw
+AL
+AL
+CP
+AL
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -10670,26 +11549,26 @@ hm
 hm
 hm
 hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
 FS
+FS
+FS
+FS
+FS
+oS
+RO
+Ww
+Ww
+Ww
+UA
 yp
 VU
-VU
-VU
+nJ
+nJ
 VU
 ge
 ge
 lL
-VU
+nJ
 jB
 UY
 nO
@@ -10897,21 +11776,21 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+AL
+Aw
+AL
+CP
+zr
+AL
+zr
+zr
+zr
+zr
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -10927,20 +11806,20 @@ hm
 hm
 hm
 hm
-nO
-aB
-cm
-aB
-cm
-Wr
-Wr
-Wr
-Wr
-Xv
+GB
+UH
+fy
+fy
+GB
+fy
+Sr
+cp
+Mi
+tq
 FS
-pf
-VU
-VU
+gn
+nJ
+nJ
 VU
 VU
 gw
@@ -11154,21 +12033,21 @@ rm
 rm
 rm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+zr
+zr
+zr
 Cr
 PM
 Wr
@@ -11184,19 +12063,19 @@ hm
 hm
 hm
 hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+GB
+hD
+qx
+fy
+GB
+fy
+FS
+FS
+FS
+FS
 FS
 Nv
-VU
+nJ
 PL
 VU
 VU
@@ -11424,8 +12303,8 @@ hm
 hm
 hm
 hm
-hm
-hm
+zr
+zr
 Cr
 PM
 Wr
@@ -11441,26 +12320,26 @@ hm
 hm
 hm
 hm
-nO
-Wr
-Wr
-Wr
-mY
-Wr
-Wr
-Wr
-Wr
-Xv
+GB
+Mg
+ai
+fy
+GB
+fy
+FS
+AW
+Dj
+yu
 FS
 FS
 of
 FS
 VU
+nJ
 VU
 VU
 VU
-VU
-VU
+nJ
 VU
 WI
 nO
@@ -11698,26 +12577,26 @@ hm
 hm
 hm
 hm
-nO
-Wr
-mY
-mY
-mY
-Wr
-Wr
-Wr
-Wr
-Xv
+GB
+fy
+db
+fy
+uv
+fy
+uv
+eo
+Ww
+fy
 FS
 fG
 ye
 FS
 VU
 sq
+PD
 sq
-sq
-HN
-HN
+LD
+LD
 BM
 FS
 nO
@@ -11953,18 +12832,18 @@ Wr
 hm
 hm
 hm
-hm
-hm
+FS
+FS
+FS
+FS
+FS
+FS
+FS
+Ww
 GB
-uR
-Nk
-zr
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+AW
+zR
+yu
 FS
 BQ
 Pc
@@ -12210,18 +13089,18 @@ Wr
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+FS
+uR
+DJ
+eE
+iQ
+TI
+Au
+fy
+GB
+GB
+GB
+GB
 FS
 vG
 ky
@@ -12467,18 +13346,18 @@ Wr
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
+FS
+fy
+fy
+Ww
+Ww
+Ww
+fy
+Ww
+GB
+AW
+lI
+yu
 FS
 FS
 FS
@@ -12724,19 +13603,19 @@ Wr
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-SR
-mO
+FS
+FB
+Ww
+QD
+fy
+fy
+fy
+Ww
+uv
+Ww
+Ww
+Ww
+FS
 mO
 mO
 mO
@@ -12981,19 +13860,19 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-nO
-Wr
-Wr
-Wr
-Wr
-Wr
-Xv
-zD
+FS
+EC
+OU
+Te
+Ih
+Mh
+Ww
+HL
+GB
+AW
+Dj
+yu
+FS
 zD
 zD
 zD
@@ -13238,19 +14117,19 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-bC
-Mx
-Mx
-Mx
-Mx
-Mx
-Fg
-hm
+FS
+GB
+GB
+GB
+GB
+GB
+iO
+FS
+iO
+GB
+GB
+GB
+FS
 hm
 hm
 hm
@@ -46133,7 +47012,7 @@ Yc
 dj
 uz
 kn
-uz
+Re
 uz
 uz
 dj
@@ -47421,7 +48300,7 @@ uz
 uz
 Ok
 dj
-uz
+Re
 uz
 KZ
 uz
@@ -49212,7 +50091,7 @@ hm
 hm
 hc
 uz
-uz
+Re
 uz
 uz
 KI
@@ -50204,7 +51083,7 @@ To
 Dm
 SK
 pp
-SK
+yP
 SK
 xs
 dH
@@ -50966,7 +51845,7 @@ hm
 NT
 BJ
 xC
-La
+lF
 SK
 SK
 eQ
@@ -54830,7 +55709,7 @@ SK
 SK
 La
 SK
-SK
+yP
 SK
 La
 SK
@@ -59466,7 +60345,7 @@ SK
 SK
 SK
 SK
-SK
+yP
 SK
 La
 SK
@@ -59703,7 +60582,7 @@ IO
 IO
 SK
 SK
-SK
+yP
 SK
 La
 La
@@ -61762,7 +62641,7 @@ Rm
 GP
 GP
 DP
-GP
+ty
 wo
 XI
 fx
@@ -62541,7 +63420,7 @@ xC
 SK
 SK
 IO
-SK
+yP
 SK
 BJ
 SK
