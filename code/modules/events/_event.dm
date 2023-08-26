@@ -251,9 +251,8 @@
 //which should be the only place it's referenced.
 //Called when start(), announce() and end() has all been called.
 /datum/round_event/proc/kill()
+	STOP_PROCESSING(SSevents, src)
 	processing = FALSE
 	control.active = FALSE
 	control = null
 	SSevents.running -= src
-
-
