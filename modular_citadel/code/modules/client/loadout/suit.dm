@@ -394,7 +394,7 @@
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai4
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	
+
 /datum/gear/suit/samurai5
 	name = "Yoroi - White"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai5
@@ -424,31 +424,31 @@
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	
+
 /datum/gear/suit/samuraiwar1
 	name = "Padded Yoroi - Reddish Brown"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
-	
+
 /datum/gear/suit/samuraiwar2
 	name = "Padded Yoroi - Blue"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
-	
+
 /datum/gear/suit/samuraiwar3
 	name = "Padded Yoroi - Brown"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar3
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
-		
+
 /datum/gear/suit/samuraiwar4
 	name = "Padded Yoroi - Black"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar4
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 3
-	
+
 /datum/gear/suit/samuraiwar5
 	name = "Padded Yoroi - White"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
@@ -571,7 +571,7 @@
 	path = /obj/item/clothing/suit/armor/medium/fancycapes
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
-	
+
 /datum/gear/suit/armor/unmcwinter
 	name = "Winterized UNMC armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcwinter
@@ -1457,6 +1457,12 @@
 	path = /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
+/datum/gear/suit/farmer
+	name = "Farmer Overalls"
+	path = /obj/item/clothing/suit/armor/outfit/overalls/farmer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 1
 
 // BEGIN_INTERNALS
 // END_INTERNALS
