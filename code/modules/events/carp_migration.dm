@@ -102,7 +102,7 @@
 
 /datum/round_event/common/spawn_nests
 	min_start_delay = 30 MINUTES
-	max_start_delay = 1 HOUR
+	max_start_delay = 1 HOURS
 	min_announce_delay = 0
 	max_announce_delay = 0
 	min_duration = 5 MINUTES
