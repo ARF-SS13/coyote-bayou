@@ -37,43 +37,149 @@
 		hasAnnounced = TRUE
 */
 
-/datum/round_event_control/carp_migration/blowoutmobs
+/datum/round_event_control/spawn_nests
 	name = "Mob Blowout"
-	typepath = /datum/round_event/carp_migration
+	typepath = /datum/round_event/common/spawn_nests
 	weight = 15
 	min_players = 2
 	earliest_start = 180 MINUTES
 	max_occurrences = 3
 
-/datum/round_event/carp_migration
-	announceWhen	= 3
-	startWhen = 50
-	var/hasAnnounced = FALSE
+/datum/round_event/common
+	var/start_at = 0
+	var/started = FALSE
+	var/announce_at = 0
+	var/announced = FALSE
+	var/stop_at = 0
+	var/stopped = FALSE
+	var/min_start_delay = 1 MINUTES
+	var/max_start_delay = 2 MINUTES
+	var/min_announce_delay = 0
+	var/max_announce_delay = 0
+	var/min_duration = 0
+	var/max_duration = 0
+	var/announce_then_start = FALSE
 
-/datum/round_event/carp_migration/setup()
-	startWhen = rand(40, 60)
+/datum/round_event/common/kill()
+	. = ..()
+	control.active = FALSE
 
-
-/datum/round_event/carp_migration/blowout/announce(fake)
-	if(prob(50))
-		priority_announce("In the blink of an eye the landscape shifts like a bad cathode ray tube telivision hit by a magnet.  The world seems suddenly more dangerous and wild.")
+/datum/round_event/common/setup()
+	var/start_offset = rand(min_start_delay, max_start_delay)
+	var/announce_offset = rand(min_announce_delay, max_announce_delay)
+	var/stop_offset = rand(min_duration, max_duration)
+	if(announce_then_start)
+		start_at = world.time + start_offset + announce_offset
+		announce_at = world.time + announce_offset
 	else
-		print_command_report("In the blink of an eye the landscape shifts like a bad cathode ray tube telivision hit by a magnet.  The world seems suddenly more dangerous and wild.")
+		start_at = world.time + start_offset
+		announce_at = world.time + announce_offset + start_offset
+	stop_at = world.time + start_offset + announce_offset + stop_offset
+	message_admins("Common event [type] starting in [time2text(start_at - world.time)], announcing in [time2text(announce_at - world.time)], finishing in [time2text(stop_at - world.time)].")
+	control.active = TRUE
 
-	var/mob/living/simple_animal/spawned
-	for(var/obj/effect/landmark/carpspawn/blowout/C in GLOB.landmarks_list)
-		var/turf/here = get_turf(C)
-		if(!here)
+/datum/round_event/common/process()
+	if(!processing)
+		return
+	if(!started && COOLDOWN_FINISHED(src, start_at))
+		start()
+		started = TRUE
+		return
+	if(!announced && COOLDOWN_FINISHED(src, announce_at))
+		announce()
+		announced = TRUE
+		return
+	if(started && !stopped)
+		tick()
+		return
+	if(!stopped && COOLDOWN_FINISHED(src, stop_at))
+		end()
+		stopped = TRUE
+		return
+	if(stopped)
+		kill()
+
+/datum/round_event/common/spawn_nests
+	min_start_delay = 30 MINUTES
+	max_start_delay = 1.5 HOURS
+	min_announce_delay = 0
+	max_announce_delay = 0
+	min_duration = 15 MINUTES
+	max_duration = 30 MINUTES
+	var/list/coords_to_spawn_at = list()
+
+/datum/round_event/common/spawn_nests/start()
+	var/time_in = world.time - SSticker.round_start_time
+	var/num_to_spawn = LAZYLEN(GLOB.nest_spawn_points)
+	if(num_to_spawn <= 0)
+		CRASH("Mob spawner event blowut thhing fuking didnt have any landmarks!!! fuck")
+	switch(time_in)
+		if(-INFINITY to 45 MINUTES)
+			num_to_spawn = min(2, num_to_spawn)
+		if(45 MINUTES to 1.5 HOURS)
+			num_to_spawn *= 0.25
+		if(1.5 HOURS to 3 HOURS)
+			num_to_spawn *= 0.5
+		if(3 HOURS to 4 HOURS)
+			num_to_spawn *= 0.75
+		else
+			num_to_spawn *= 0.90
+	num_to_spawn = round(clamp(num_to_spawn, 0, LAZYLEN(GLOB.nest_spawn_points)))
+	var/list/hak = GLOB.nest_spawn_points
+	var/list/spawndidates = hak.Copy()
+	for(var/i in 1 to num_to_spawn)
+		if(!LAZYLEN(spawndidates))
+			break
+		var/coordie = pick(spawndidates)
+		spawndidates -= coordie
+		coords_to_spawn_at |= coordie
+	message_admins("Readied [LAZYLEN(coords_to_spawn_at)] nests. Firing soon-ish.")
+
+/datum/round_event/common/spawn_nests/tick()
+	if(!LAZYLEN(coords_to_spawn_at))
+		kill()
+		return
+	for(var/coordie in coords_to_spawn_at)
+		var/turf/here = coords2turf(coordie)
+		if(!isturf(here))
+			coords_to_spawn_at -= coordie
 			continue
-		if(locate(/obj/structure/nest) in here)
-			continue // already a nest here lol
-		spawned = pickweight(GLOB.totally_not_carp)
-		if(!spawned)
-			stack_trace("Spawner thing broke!")
-			continue
-		spawned = new spawned(get_turf(C))
-	if(isatom(spawned))
-		fishannounce(spawned)
+		if(prob(10))
+			do_sparks(1, FALSE, here, /datum/effect_system/spark_spread/quantum)
+
+/datum/round_event/common/spawn_nests/end(fake)
+	var/list/stuff_spawned = list()
+	var/numspawned = 0
+	mainloop:
+		for(var/C in coords_to_spawn_at)
+			var/turf/here = get_turf(coords2turf(C))
+			if(!isturf(here))
+				continue
+			if(locate(/obj/structure/nest) in here)
+				continue // already a nest here lol
+			for(var/client/clint in GLOB.clients)
+				if(!isliving(clint.mob))
+					continue
+				var/mob/living/L = clint.mob
+				if(L.z != here.z)
+					continue
+				if(L in view(7, here))
+					continue mainloop // my first labeled loop that ISNT cus of a bad idea!!!
+			var/mob/living/spawned = pickweight(GLOB.totally_not_carp)
+			if(!spawned)
+				stack_trace("Spawner thing broke!")
+				continue
+			spawned = new spawned(here)
+			numspawned++
+			if(LAZYLEN(stuff_spawned) <= 10)
+				stuff_spawned += "[spawned.name] [ADMIN_FLW(spawned)]"
+	if(numspawned > LAZYLEN(stuff_spawned))
+		var/andmanymore = numspawned - LAZYLEN(stuff_spawned)
+		stuff_spawned += "[andmanymore] other lovely pest[andmanymore > 1 ? "s":""]"
+	var/report = "Smething fucked up!"
+	if(LAZYLEN(stuff_spawned))
+		report = "[english_list(stuff_spawned)]"
+	message_admins("[report]")
 
 GLOBAL_LIST_INIT(totally_not_carp, list(
 	/obj/structure/nest/ghoul = 8,
@@ -108,7 +214,16 @@ GLOBAL_LIST_INIT(totally_not_carp, list(
 	/obj/structure/nest/tunneler = 2,
 ))
 
-/datum/round_event/carp_migration/blowout/proc/fishannounce(atom/fish)
-	if (!hasAnnounced)
-		announce_to_ghosts(fish) //Only anounce the first fish
-		hasAnnounced = TRUE
+GLOBAL_LIST_EMPTY(nest_spawn_points)
+
+/obj/effect/landmark/nest_spawn
+	name = "carpspawn"
+	icon_state = "carp_spawn"
+
+/obj/effect/landmark/nest_spawn/Initialize()
+	. = ..()
+	var/turf/here = get_turf(src)
+	if(isturf(here))
+		GLOB.nest_spawn_points |= atom2coords(here)
+	return INITIALIZE_HINT_QDEL
+
