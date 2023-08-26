@@ -13,7 +13,7 @@
 	var/dodging = TRUE
 	var/approaching_target = FALSE //We should dodge now
 	var/in_melee = FALSE	//We should sidestep now
-	var/dodge_prob = 15
+	var/dodge_prob = 5
 	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
 
 	var/extra_projectiles = 0 //how many projectiles above 1?
