@@ -172,11 +172,11 @@ SUBSYSTEM_DEF(events)
 		else
 			qdel(holiday)
 
-	if(holidays)
-		holidays = shuffle(holidays)
-		// regenerate station name because holiday prefixes.
-		set_station_name(new_station_name())
-		world.update_status()
+//	if(holidays)
+//		holidays = shuffle(holidays)
+//		// regenerate station name because holiday prefixes.
+//		set_station_name(new_station_name())
+//		world.update_status()
 
 /datum/controller/subsystem/events/proc/toggleWizardmode()
 	wizardmode = !wizardmode
