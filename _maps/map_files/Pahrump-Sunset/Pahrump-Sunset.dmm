@@ -38447,6 +38447,10 @@
 /area/f13/wasteland)
 "ftP" = (
 /obj/machinery/chem_master/condimaster,
+/obj/structure/sink{
+	pixel_y = 0;
+	pixel_x = -12
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
