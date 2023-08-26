@@ -18,9 +18,9 @@
 	var/all_done
 	var/warning_time = 1 MINUTES
 	var/warned
-	var/sparkles_time = 2 MINUTES
+	var/sparkles_time = 3 MINUTES
 	var/sparkling
-	var/pizza_time = 3 MINUTES
+	var/pizza_time = 5 MINUTES
 	var/pillar_johned
 
 /datum/holiday/weekly/potluck/celebrate()
@@ -42,11 +42,17 @@
 		return
 	var/tss = world.time - roundstart_time
 	if(!warned && tss >= warning_time)
-		to_chat(world, span_nicegreen("You feel an otherworldly sense of mirth and togetherness. Huh."))
+		var/list/partyzones = list()
+		for(var/obj/effect/landmark/party/party in GLOB.party_landmarks)
+			partyzones += party.get_zone()
+		var/msg = "some unknown place"
+		if(LAZYLEN(warning_time))
+			msg = "[english_list(partyzones)]"
+		to_chat(world, span_nicegreen("You feel an otherworldly sense of mirth and togetherness coalescing in [msg]. Huh."))
 		warned = TRUE
 		return
 	if(!sparkling && tss >= sparkles_time)
-		to_chat(world, span_nicegreen("Impending potluck approaches."))
+		to_chat(world, span_nicegreen("Impending meet-n-greet approaches."))
 		for(var/obj/effect/landmark/party/party in GLOB.party_landmarks)
 			party.start_sparkling()
 		sparkling = TRUE
@@ -100,7 +106,7 @@ GLOBAL_LIST_EMPTY(party_landmarks)
 		if(!A)
 			return "the middle of nowhere (literally)"
 		return A.name
-	return "\the [region]"
+	return "[region]"
 
 /obj/effect/landmark/party/proc/pizza_time()
 	playsound(src, 'sound/effects/lightning_impact.ogg', 100, TRUE, SOUND_DISTANCE(25))
@@ -154,10 +160,16 @@ GLOBAL_LIST_EMPTY(party_landmarks)
 /datum/map_template/ruin/party // nobody ruins my parties but me
 	prefix = "_maps/party_prefabs/"
 
-/datum/map_template/ruin/party/potluck
-	id = "potluck"
-	suffix = "potluck.dmm"
-	name = "Interdimensional Potluck"
+/datum/map_template/ruin/party/foodboard
+	id = "lunchboard"
+	suffix = "pfab_1.dmm"
+	name = "Food Board"
+	description = "Someones throwing a party! Bring something!"
+
+/datum/map_template/ruin/party/barparts
+	id = "barparts"
+	suffix = "pfab_2.dmm"
+	name = "Bar Board"
 	description = "Someones throwing a party! Bring something!"
 
 /// comment these out before merging
