@@ -345,4 +345,4 @@
 	name = "Vaporeon"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	icon_state = "vap"
-	matrixed_sections = ALL
+	matrixed_sections = MATRIX_ALL
