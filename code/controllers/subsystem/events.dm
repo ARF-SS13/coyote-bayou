@@ -3,6 +3,7 @@ SUBSYSTEM_DEF(events)
 	init_order = INIT_ORDER_EVENTS
 	runlevels = RUNLEVEL_GAME
 
+	var/list/common_control = list() // list of all datum/round_event_control that ignore weight and just happen anyway
 	var/list/control = list()	//list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
 	var/list/running = list()	//list of all existing /datum/round_event
 	var/list/currentrun = list()
@@ -19,7 +20,10 @@ SUBSYSTEM_DEF(events)
 		var/datum/round_event_control/E = new type()
 		if(!E.typepath)
 			continue				//don't want this one! leave it for the garbage collector
-		control += E				//add it to the list of all events (controls)
+		if(E.common_occurrence)
+			common_control += E		//add it to the list of all looping events
+		else
+			control += E				//add it to the list of all events (controls)
 	reschedule()
 	getHoliday()
 	return ..()
@@ -45,6 +49,7 @@ SUBSYSTEM_DEF(events)
 
 //checks if we should select a random event yet, and reschedules if necessary
 /datum/controller/subsystem/events/proc/checkEvent()
+	spawnLoopingEvent()
 	if(scheduled <= world.time)
 		spawnEvent()
 		reschedule()
@@ -85,6 +90,18 @@ SUBSYSTEM_DEF(events)
 		if(sum_of_weights <= 0)				//we've hit our goal
 			if(TriggerEvent(E))
 				return
+
+//Runs through the looping "guaranted" events
+/datum/controller/subsystem/events/proc/spawnLoopingEvent()
+	set waitfor = FALSE	//for the admin prompt
+	// if(!CONFIG_GET(flag/allow_random_events))
+	// 	return
+
+	for(var/datum/round_event_control/E in common_control)
+		if(!E.canSpawnLoopingEvent())
+			continue
+		if(E.preRunCommonEvent())
+			E.runCommonEvent(TRUE)
 
 /datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/E)
 	. = E.preRunEvent()

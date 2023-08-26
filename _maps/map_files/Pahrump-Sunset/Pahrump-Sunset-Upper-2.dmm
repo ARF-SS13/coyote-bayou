@@ -1485,6 +1485,11 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
+"lF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "lG" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
@@ -2423,6 +2428,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"ty" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -3006,6 +3015,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"yP" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "yT" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5153,6 +5166,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Re" = (
+/obj/effect/landmark/nest_spawn,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "Rg" = (
 /obj/machinery/light,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
@@ -46993,7 +47012,7 @@ Yc
 dj
 uz
 kn
-uz
+Re
 uz
 uz
 dj
@@ -48281,7 +48300,7 @@ uz
 uz
 Ok
 dj
-uz
+Re
 uz
 KZ
 uz
@@ -50072,7 +50091,7 @@ hm
 hm
 hc
 uz
-uz
+Re
 uz
 uz
 KI
@@ -51064,7 +51083,7 @@ To
 Dm
 SK
 pp
-SK
+yP
 SK
 xs
 dH
@@ -51826,7 +51845,7 @@ hm
 NT
 BJ
 xC
-La
+lF
 SK
 SK
 eQ
@@ -55690,7 +55709,7 @@ SK
 SK
 La
 SK
-SK
+yP
 SK
 La
 SK
@@ -60326,7 +60345,7 @@ SK
 SK
 SK
 SK
-SK
+yP
 SK
 La
 SK
@@ -60563,7 +60582,7 @@ IO
 IO
 SK
 SK
-SK
+yP
 SK
 La
 La
@@ -62622,7 +62641,7 @@ Rm
 GP
 GP
 DP
-GP
+ty
 wo
 XI
 fx
@@ -63401,7 +63420,7 @@ xC
 SK
 SK
 IO
-SK
+yP
 SK
 BJ
 SK
