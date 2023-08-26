@@ -1550,6 +1550,7 @@ Raider
 	jobtype = /datum/job/oasis/f13preacher
 
 	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town
 	belt = /obj/item/kit_spawner/preacher
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
