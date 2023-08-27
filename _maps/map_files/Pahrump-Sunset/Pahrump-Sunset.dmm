@@ -85291,7 +85291,10 @@
 "qnq" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/item/stack/rods/two,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
