@@ -526,21 +526,6 @@
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 
-/obj/item/nullrod/scythe/talking/chainsword
-	icon_state = "chainswordon"
-	item_state = "chainswordon"
-	name = "possessed chainsaw sword"
-	desc = "Suffer not a heretic to live."
-	chaplain_spawnable = FALSE
-	force = 45 // Equal to a standard ripper. Weaker than claymore/subtypes but can be 1-handed alot more effectively.
-	force_wielded = 45
-	force_unwielded = 45
-	slot_flags = INV_SLOTBIT_BELT
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
-	hitsound = 'sound/weapons/chainsawhit.ogg'
-	tool_behaviour = TOOL_SAW
-	toolspeed = 0.5
-
 /obj/item/nullrod/hammmer
 	icon_state = "hammeron"
 	item_state = "hammeron"
@@ -554,10 +539,6 @@
 	attack_speed = CLICK_CD_MELEE * 1.8 //Also equal.
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
-/obj/item/nullrod/chainsaw_hand/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
 
 /obj/item/nullrod/armblade
 	name = "dark blessing"
@@ -756,6 +737,11 @@
 	toolspeed = 2
 	chaplain_spawnable = FALSE
 
+/obj/item/nullrod/chainsaw_hand/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
+	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
+
 // Do carp even spawn in game? Placed here pending a better replacement, like making yourself friendly to ghouls.
 /obj/item/nullrod/carp
 	name = "carp-sie plushie"
@@ -853,4 +839,20 @@
 	throwforce = 1
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	chaplain_spawnable = FALSE
+
+/obj/item/nullrod/scythe/talking/chainsword
+	icon_state = "chainswordon"
+	item_state = "chainswordon"
+	name = "possessed chainsaw sword"
+	desc = "Suffer not a heretic to live."
+	chaplain_spawnable = FALSE
+	force = 45 // Equal to a standard ripper. Weaker than claymore/subtypes but can be 1-handed alot more effectively.
+	force_wielded = 45
+	force_unwielded = 45
+	slot_flags = INV_SLOTBIT_BELT
+	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+	tool_behaviour = TOOL_SAW
+	toolspeed = 0.5
 	chaplain_spawnable = FALSE
