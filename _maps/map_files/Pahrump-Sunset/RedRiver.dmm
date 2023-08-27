@@ -21589,6 +21589,14 @@
 	icon_state = "redsolid"
 	},
 /area/f13/building/abandoned)
+"jZJ" = (
+/obj/effect/landmark/party{
+	region = "Nash's bar"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "jZL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -29452,13 +29460,19 @@
 	},
 /area/f13/wasteland/city)
 "nUp" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_y = 9
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4;
+	pixel_x = -18;
+	pixel_y = 14
 	},
+/obj/effect/landmark/party{
+	region = "Nash's bar"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "nUt" = (
 /obj/structure/flora/small_bush,
@@ -107554,8 +107568,8 @@ qES
 qES
 qES
 guz
-eJW
-eJW
+sAa
+eUV
 eJW
 fde
 eFz
@@ -107811,7 +107825,7 @@ oDo
 uKL
 qES
 guz
-sAa
+iKV
 eUV
 eJW
 eJW
@@ -108068,7 +108082,7 @@ oDo
 uKL
 qES
 cUP
-eJW
+uCG
 eJW
 eJW
 eJW
@@ -108325,8 +108339,8 @@ qES
 qES
 lWl
 aLl
-iKV
-eUV
+uwX
+eJW
 gAb
 gFv
 cYp
@@ -108582,10 +108596,10 @@ qES
 bdy
 cYp
 tNo
-sjq
+okQ
 eJW
 eJW
-eJW
+iZc
 qsc
 qsc
 qsc
@@ -108837,9 +108851,9 @@ qES
 euo
 euo
 sHR
-uCG
-eJW
-gAb
+iXF
+rVB
+xwj
 eJW
 eJW
 eJW
@@ -109094,9 +109108,9 @@ iKf
 faV
 tfU
 dmM
-uwX
-eJW
-eJW
+mJr
+rVB
+gfO
 eJW
 oEO
 eJW
@@ -109351,9 +109365,9 @@ mGg
 xNc
 eSK
 aLl
-okQ
 eJW
 eJW
+jZJ
 eJW
 gAb
 eJW
@@ -109608,7 +109622,7 @@ ctM
 xNc
 eSK
 tNo
-nUp
+eJW
 eJW
 gAb
 eJW
@@ -109617,7 +109631,7 @@ eJW
 gAb
 eJW
 eJW
-vtp
+nUp
 eJW
 eJW
 nsO
