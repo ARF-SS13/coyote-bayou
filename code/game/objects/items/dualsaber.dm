@@ -352,7 +352,7 @@
 /obj/item/dualsaber/hypereutactic/chaplain
 	name = "divine lightblade"
 	desc = "A giant blade of bright and holy light, said to cut down the wicked with ease."
-	force = 5
+	force = 5 // Just a hilt in base mode.
 	block_parry_data = /datum/block_parry_data/chaplain
 	var/chaplain_spawnable = TRUE
 	can_reflect = FALSE
@@ -376,8 +376,10 @@
 	parry_failed_stagger_duration = 3 SECONDS
 	parry_failed_clickcd_duration = 2 SECONDS
 
+// Fifty seems like alot, given its high parry chance and the fact it works like a light, but it has the huge disadvantage for a null rod weapon by being locked and unchangeable after creation.
+// It also is hard locked in being 2 handed only, as its 1 hand deals only 5 damage.
 /obj/item/dualsaber/hypereutactic/chaplain/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=20, \
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=50, \
 					wieldsound='sound/weapons/nebon.ogg', unwieldsound='sound/weapons/nebhit.ogg')
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
