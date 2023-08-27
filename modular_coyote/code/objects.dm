@@ -604,85 +604,102 @@
 
 /obj/item/fishy/guppy
 	name = "guppy"
+	desc = "I caught a guppy! Welcome to the team, newbie!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "guppy"
 
 /obj/item/fishy/firefish
 	name = "fire fish"
+	desc = "I caught fire...fish! Ouch ouch hot!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "firefish"
 
 /obj/item/fishy/greenchromis
 	name = "green chromis"
+	desc = "Wow that sure is a green fish! Might be good for the enviroment."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "greenchromis"
 
 /obj/item/fishy/cardinalfish
 	name = "cardinal fish"
+	desc = "Better call the pope."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "cardinalfish"
 
 /obj/item/fishy/catfish
 	name = "catfish"
+	desc = "I caught a puffer fish! I thought you would be tougher, fish!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "catfish"
 
 /obj/item/fishy/plastetra
 	name = "plastetra"
+	desc = "Plaster this guy on the dinner plate."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "plastetra"
 
 /obj/item/fishy/angelfish
 	name = "angel fish"
+	desc = "I caught an angelfish! That other fish told me to do it!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "angelfish"
 
 /obj/item/fishy/clownfish
 	name = "clown fish"
+	desc = "I caught a clown fish! How many can fit in a carfish?"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "clownfish"
 
 /obj/item/fishy/lubefish
 	name = "lube fish"
+	desc = "This fish looks quite slick, better hold on tight"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "lubefish"
 
 /obj/item/fishy/lanternfish
 	name = "lantern fish"
+	desc = "When your fish boss is watching, you'd better look e-fish-ent."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "lanternfish"
 
 /obj/item/fishy/dwarf_moonfish
 	name = "dwarf moonfish"
+	desc = "When a fish meets the love of their live, they say they've 'met the gill of my dreams.'"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "dwarf_moonfish"
 
 /obj/item/fishy/bugfish
 	name = "bugfish"
+	desc = "Surfing the net is great, unless, of course, you're a fish."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "bugfish"
 
 /obj/item/fishy/gunner_jellyfish
 	name = "gunner jellyfish"
+	desc = "Speaking of being jelly, tunas were really miffed about the whole salmon-ella thing."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "gunner_jellyfish"
 
 /obj/item/fishy/needlefish
-	name = "needlefish"
+	name = "nibble fish"
+	desc = "Yes! I caught a nibble fish! Come to think of it, I could use a bite!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "needlefish"
 
 /obj/item/fishy/armorfish
 	name = "armorfish"
+	desc = "Never try to talk to a fish before they’ve caf-fin-ated."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "armorfish"
 
 /obj/item/fishy/pufferfish
 	name = "pufferfish"
+	desc = "Never fall in love with a blowfish. You’ll always get re-puffed."
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "pufferfish"
 
 /obj/item/fishy/goldfish
 	name = "goldfish"
+	desc = "I caught a goldfish! It's worth its weight in fish!"
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "goldfish"
