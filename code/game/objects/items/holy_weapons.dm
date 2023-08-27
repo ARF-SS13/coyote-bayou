@@ -572,6 +572,7 @@
 	force_wielded = 35 // Slightly better than the null rod with much better block chance.
 	force_unwielded = 15
 	block_chance = 40
+	attack_speed = CLICK_CD_MELEE * 0.85 // Everybody was kung fu fighting!
 	slot_flags = INV_SLOTBIT_BACK
 	sharpness = SHARP_NONE
 	hitsound = "swing_hit"
@@ -715,6 +716,14 @@
 	else
 		to_chat(user, span_notice("Your prayer to [deity_name] was interrupted."))
 		praying = FALSE
+
+
+
+
+
+
+
+
 
 // Unspawnables.
 // Putting these down here for better organization. These items were set to unspawnable for a variety of reasons, see each tag above.
