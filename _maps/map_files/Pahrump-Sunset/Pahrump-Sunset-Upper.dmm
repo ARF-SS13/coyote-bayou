@@ -2185,6 +2185,32 @@
 	dir = 1;
 	pixel_x = -15
 	},
+/obj/machinery/plantgenes{
+	pixel_y = 0;
+	color = "#443300";
+	pixel_x = 4;
+	name = "Blessed G.E.C.K.E.R.";
+	desc = "A Grass Expanding Company - Kilowatt Energy Recycler.  Used for manipulating plant dna, and being a convinent name."
+	},
+/obj/structure/flora/ausbushes/fernybush{
+	pixel_y = 18;
+	layer = 3
+	},
+/obj/structure/flora/ausbushes/fernybush{
+	pixel_y = 10;
+	layer = 3;
+	pixel_x = 8
+	},
+/obj/structure/flora/ausbushes/sparsegrass{
+	pixel_x = 5;
+	pixel_y = -5;
+	layer = 2.5
+	},
+/obj/item/storage/box/disks_plantgene{
+	pixel_y = -6;
+	pixel_x = 21;
+	color = "#227722"
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -2749,7 +2775,9 @@
 /obj/item/shovel/spade,
 /obj/item/cultivator,
 /obj/item/cultivator,
-/obj/machinery/smartfridge/bottlerack/gardentool,
+/obj/machinery/smartfridge/bottlerack/gardentool{
+	color = "#336633"
+	},
 /obj/item/storage/bag/plants,
 /obj/structure/fence/wooden{
 	density = 0;
@@ -15146,6 +15174,12 @@
 	pixel_x = -15
 	},
 /obj/structure/legion_extractor,
+/obj/structure/spacevine{
+	color = "#225522";
+	pixel_y = 10;
+	pixel_x = 14;
+	layer = 2
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -18695,6 +18729,24 @@
 "qEL" = (
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
+"qFq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	color = "#225522";
+	pixel_y = 1;
+	pixel_x = -14;
+	layer = 2
+	},
+/obj/structure/spacevine{
+	color = "#225522";
+	pixel_y = 6;
+	pixel_x = 12;
+	layer = 2
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "qFA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21819,6 +21871,24 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building/mall)
+"tqT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine{
+	color = "#225522";
+	pixel_y = 6;
+	pixel_x = -3;
+	layer = 2
+	},
+/obj/structure/spacevine{
+	color = "#225522";
+	pixel_y = 2;
+	pixel_x = 11;
+	layer = 2
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "tqZ" = (
 /obj/structure/closet/crate/bin/trashbin,
 /obj/effect/decal/cleanable/dirt{
@@ -32838,8 +32908,8 @@ oez
 oez
 dtb
 sqS
-dYg
-dYg
+qFq
+tqT
 reL
 sIR
 kCD
