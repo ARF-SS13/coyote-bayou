@@ -115,7 +115,7 @@
 	mob_armor = ARMOR_VALUE_RIFT
 	maxHealth = 100
 	health = 100
-	anchored = TRUE
+	move_resist = MOVE_FORCE_OVERPOWERING
 	density = FALSE
 	a_intent = INTENT_HARM
 	del_on_death = TRUE
