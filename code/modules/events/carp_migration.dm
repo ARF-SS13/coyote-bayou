@@ -77,7 +77,8 @@
 		announce_at = world.time + announce_offset + start_offset
 	stop_at = world.time + start_offset + announce_offset + stop_offset
 	message_admins("Common event [type] starting in [DisplayTimeText(start_at - world.time)], announcing in [DisplayTimeText(announce_at - world.time)], finishing in [DisplayTimeText(stop_at - world.time)].")
-	control.active = TRUE
+	if(control) // Just to get rid of the unit test error >:(
+		control.active = TRUE
 
 /datum/round_event/common/process()
 	if(!processing)
