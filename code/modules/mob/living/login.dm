@@ -5,6 +5,7 @@
 	sync_mind()
 	mind.show_memory(src, 0)
 	SSsecondwind.init_my_second_wind(ckey)
+	SSpersonals.logged_in(src)
 
 	//Round specific stuff
 	if(SSticker.mode)

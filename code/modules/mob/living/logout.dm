@@ -1,5 +1,6 @@
 /mob/living/Logout()
 	update_z(null)
+	SSpersonals.logged_out(src)
 	..()
 	disconnect_time = world.realtime
 	if(!key && mind)	//key and mind have become separated.
