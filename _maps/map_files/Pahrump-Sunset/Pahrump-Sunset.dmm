@@ -17479,6 +17479,10 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"bhr" = (
+/obj/machinery/vending/medical/nash,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic)
 "bhu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin/trashbin,
@@ -23495,7 +23499,7 @@
 /obj/structure/sign/poster/prewar/poster62{
 	pixel_x = 32
 	},
-/obj/machinery/vending/medical/nash,
+/obj/machinery/vending/medical,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic)
 "cee" = (
@@ -24086,6 +24090,12 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/ruins,
 /area/f13/building/abandoned)
+"cjb" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "cje" = (
 /obj/structure/lamp_post,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -56833,12 +56843,8 @@
 	},
 /area/f13/wasteland/city)
 "jJv" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/transparent/openspace,
+/area/f13/building/hospital/clinic)
 "jJC" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
@@ -63400,8 +63406,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "lmU" = (
-/turf/open/transparent/openspace,
-/area/f13/building/hospital/clinic)
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/tree/jungle/small{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lnf" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -94806,7 +94816,14 @@
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "sCb" = (
 /obj/structure/table,
-/obj/item/toy/plush/beeplushie,
+/obj/item/toy/plush/beeplushie{
+	pixel_x = 7;
+	pixel_y = 3
+	},
+/obj/item/toy/plush/bird/sylas{
+	pixel_x = -9;
+	pixel_y = 4
+	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "sCg" = (
@@ -95694,12 +95711,6 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland/city/nash/starterroad)
-"sNY" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
-/area/f13/building/hospital/clinic)
 "sOh" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -123976,7 +123987,7 @@ xFZ
 iAU
 riA
 qAS
-pqC
+bhr
 iAU
 gvn
 sCb
@@ -124497,7 +124508,7 @@ xix
 rYZ
 bcq
 miR
-jJv
+lmU
 pll
 rLT
 mkb
@@ -125000,8 +125011,8 @@ tBD
 tfE
 bnE
 iAU
-lmU
-lmU
+jJv
+jJv
 wTy
 wTy
 iAU
@@ -125258,7 +125269,7 @@ ldT
 cIY
 iAU
 cPq
-sNY
+cjb
 wTy
 wTy
 pPP
