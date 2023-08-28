@@ -1097,17 +1097,17 @@
 	new /obj/item/melee/onehanded/machete/spatha(src)
 
 /datum/gear/donator/kits/seermankhajiit00
-	name = "Warmonger"
+	name = "The Absolute"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
-	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/gun/ballistic/rifle/repeater/customvolcanictox(src)
+	new /obj/item/gun/ballistic/rifle/repeater/customvolcanictox(src)
 	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
-	new /obj/item/gun/ballistic/automatic/unmcamr/toxcustom(src)
-	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
-	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/c45(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
+	new /obj/item/ammo_box/m473(src)
 
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
@@ -1121,16 +1121,17 @@
 	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
 
 /datum/gear/donator/kits/seermankhajiit003
-	name = "The Director"
+	name = "The Latos Agent"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit003
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox(src)
-	new /obj/item/ammo_box/magazine/uzim9mm/rockwell(src)
-	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
-	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1371,6 +1372,17 @@
 	// /obj/item/gun/energy/alien(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
+
+/datum/gear/donator/kits/truedark5
+	name = "Vivian loadout"
+	path = /obj/item/storage/box/large/custom_kit/truedark5
+	ckeywhitelist = list("trudark")
+
+/obj/item/storage/box/large/custom_kit/truedark5/PopulateContents()
+	new /obj/item/clothing/neck/scarf/pink(src)
+	new/obj/item/clothing/suit/jacket/leather(src)
+	new /obj/item/clothing/under/dress/skirt/polychromic/pleated(src)
+	new /obj/item/clothing/shoes/wraps/silver(src)
 
 // U
 // V

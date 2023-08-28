@@ -3,7 +3,24 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	/obj/item/fishy/salmon		=9,
 	/obj/item/fishy/eel			=2,
 	/obj/item/fishy/crawdad		=9,
-	/obj/item/fishy/shrimp		=9
+	/obj/item/fishy/shrimp		=9,
+	/obj/item/fishy/guppy		=9,
+	/obj/item/fishy/firefish		=9,
+	/obj/item/fishy/greenchromis		=9,
+	/obj/item/fishy/cardinalfish		=9,
+	/obj/item/fishy/catfish		=9,
+	/obj/item/fishy/plastetra		=9,
+	/obj/item/fishy/angelfish		=9,
+	/obj/item/fishy/clownfish		=9,
+	/obj/item/fishy/lubefish		=9,
+	/obj/item/fishy/lanternfish		=9,
+	/obj/item/fishy/goldfish		=9,
+	/obj/item/fishy/dwarf_moonfish		=9,
+	/obj/item/fishy/bugfish		=9,
+	/obj/item/fishy/gunner_jellyfish		=9,
+	/obj/item/fishy/needlefish		=9,
+	/obj/item/fishy/armorfish		=9,
+	/obj/item/fishy/pufferfish		=9
 ))
 //I have tried to have variables be highly influential so that customization can happen
 //customization, maybe some rods are better than others ;)

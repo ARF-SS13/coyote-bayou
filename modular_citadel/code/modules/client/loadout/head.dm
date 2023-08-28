@@ -669,6 +669,84 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/samuraiwarriortwo
+	name = "Stylish Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiwarriortwo
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorthree
+	name = "Stylish Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorthree
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfour
+	name = "Stylish Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfour
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfive
+	name = "Stylish Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfive
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard1
+	name = "Simple Samurai Helmet - Reddish Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard2
+	name = "Simple Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiguard2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard3
+	name = "Simple Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard4
+	name = "Simple Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiguard4
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard5
+	name = "Simple Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiguard5
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/sallethelmet
+	name = "German Sallet helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/unberets
+	name = "United Nations beret"
+	path = /obj/item/clothing/head/f13/unberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/russianberet
+	name = "Russian VDV beret"
+	path = /obj/item/clothing/head/f13/rusvdvberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/morionhelmet
+	name = "Spainard Morion helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldspain
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek
@@ -712,7 +790,7 @@ datum/gear/head/steelpot_bandolier
 	cost = 2
 
 /datum/gear/head/ballistichelmets/number5
-	name = "U.N Helmet"
+	name = "U.N Helmet Medical"
 	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2

@@ -17,6 +17,7 @@ Mineral Sheets
 		- Snow
 		- Abductor
 		- Coal
+		- Brick
 */
 
 /*
@@ -521,3 +522,34 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/coal/ten
 	amount = 10
+
+/*
+ * Bricks
+ */
+/obj/item/stack/sheet/mineral/brick 
+	name = "bricks"
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "sheet-brick"
+	item_state = "sheet-brick"
+	singular_name = "brick"
+	sheettype = "brick"
+	merge_type = /obj/item/stack/sheet/mineral/brick 
+	walltype = /turf/closed/wall/mineral/brick
+
+
+/obj/item/stack/sheet/mineral/brick/ten
+	amount = 10
+
+/obj/item/stack/sheet/mineral/brick/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/brick/fifty
+	amount = 50
+
+GLOBAL_LIST_INIT(brick_recipes, list ( \
+	new/datum/stack_recipe("throwing brick", /obj/item/ammo_casing/caseless/brick, 2), \
+	))
+
+/obj/item/stack/sheet/mineral/brick/get_main_recipes()
+	. = ..()
+	. += GLOB.brick_recipes

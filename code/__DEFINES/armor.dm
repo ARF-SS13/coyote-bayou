@@ -664,6 +664,21 @@
 		"wound" = 5, \
 		"damage_threshold" = 3)
 
+/* gross mob spawner pre-spawner thing armor
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RIFT list(\
+		"linemelee" = 100, \
+		"linebullet" = 100, \
+		"linelaser" = 0, \
+		"energy" = -100, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 100, \
+		"acid" = 100, \
+		"wound" = 100, \
+		"damage_threshold" = 10)
+
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
  * Environmental and wound armors are multiplied by these values

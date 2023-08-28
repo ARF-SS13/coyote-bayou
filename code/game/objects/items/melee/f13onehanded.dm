@@ -99,6 +99,7 @@
 /obj/item/melee/onehanded/machete/gladius
 	name = "gladius"
 	desc = "A heavy cutting blade, with a fairly good tip too."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gladius"
 	item_state = "gladius"
 	force = 36

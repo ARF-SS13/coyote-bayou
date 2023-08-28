@@ -217,6 +217,21 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
+
+/obj/item/ammo_box/magazine/m14mmcustom
+	name = "handgun magazine for 14mm"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "14mmmagnum"
+	ammo_type = /obj/item/ammo_casing/p14mm
+	caliber = list(CALIBER_14MM)
+	max_ammo = 5
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m14mmcustom/empty
+	start_empty = 1
+
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/testbullet
 	name = "Bulletcrate"

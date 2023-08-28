@@ -40,6 +40,11 @@
 	path = /obj/item/storage/fancy/donut_box
 	cost = 2
 
+/datum/gear/backpack/locksmith
+	name = "locksmith box"
+	path = /obj/item/storage/box/tools/locksmith
+	cost = 2
+
 //// "Toys" -- toys going back to general subcategory till we have more of them
 
 /datum/gear/backpack/crayons
@@ -196,6 +201,14 @@
 /datum/gear/hands/backpack/old
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
+
+/datum/gear/backpack/coinpouch
+	name = "coin pouch"
+	path = /obj/item/storage/wallet/stash/pouch
+
+/datum/gear/backpack/backpack/snailshell
+	name = "snail shell"
+	path = /obj/item/storage/backpack/satchel/snailshell
 
 /////////////////////
 //Coyote Additions//

@@ -48,8 +48,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	maxHealth = 110
-	health = 110
+	maxHealth = 90
+	health = 90
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 6
@@ -97,8 +97,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 90
-	health = 90
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 8

@@ -348,6 +348,8 @@
 	if(user.stat)
 		return
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING))
+		if(!user.can_reach(src)) // Huh, why wasn't this here? I sworn I put this here when I first made this. H m s t v e
+			return
 		if(user.restrained())
 			return
 		var/turf/aboveT = get_step_multiz(get_turf(user), UP)

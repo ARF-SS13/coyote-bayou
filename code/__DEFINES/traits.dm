@@ -74,7 +74,17 @@
 
 //mob traits
 /// Forces the user to stay unconscious.
-#define TRAIT_KNOCKEDOUT "knockedout"
+#define TRAIT_ADV_SEEKER	"adventure_seeker"
+#define TRAIT_ADV_ER		"adventurer"
+#define TRAIT_ADV_LFG			"looking_for_group"
+#define TRAIT_ADV_SOLO			"solo"
+#define TRAIT_ADV_GUNNER		"gunner"
+#define TRAIT_ADV_FIGHTER		"fighter"
+#define TRAIT_ADV_TANK			"tank"
+#define TRAIT_ADV_BRUISER		"bruiser"
+#define TRAIT_ADV_ROGUE			"rogue"
+#define TRAIT_ADV_HEALER		"healer"
+#define TRAIT_KNOCKEDOUT		"knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
 #define TRAIT_EMOTEMUTE			"emotemute"
@@ -138,6 +148,23 @@
 #define TRAIT_OPTIMIST			"optimist"
 #define TRAIT_IN_HEAT			"ERP Receptive"
 #define TRAIT_HEAT_DETECT		"ERP Seeking"
+#define TRAIT_ERPBOYKISSER		"ERP Seeking - Boykisser"
+#define TRAIT_ERPGIRLKISSER		"ERP Seeking - Girlkisser"
+#define TRAIT_ERPANYKISSER		"ERP Seeking - Anykisser"
+#define TRAIT_ERPQUICKY			"ERP Seeking - Quickie Focused"
+#define TRAIT_ERPLONGTERM		"ERP Seeking - Long Term Focused"
+#define TRAIT_ERPBOTTOM			"ERP Seeking - Bottom"
+#define TRAIT_ERPTOP			"ERP Seeking - Top"
+#define TRAIT_ERPSWITCH			"ERP Seeking - Switch"
+#define TRAIT_ERPFLIRTY			"ERP Seeking - Flirty"
+#define TRAIT_SHY				"Shy"
+#define TRAIT_RPFOCUSED			"RP Focused"
+#define TRAIT_RPLONGTERM		"RP Focused Long Term" //RP Focused on long term interactions
+#define TRAIT_RPSHORTTERM		"RP Focused Short Term" //RP Focused on short term interactions
+#define TRAIT_RPSERIOUS			"RP Focused - Serious RP" //RP Focused on more serious subjects
+#define TRAIT_RPLIGHT			"RP Focused - Lighter RP" //RP Focused on more light hearted subjects
+#define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
+#define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"

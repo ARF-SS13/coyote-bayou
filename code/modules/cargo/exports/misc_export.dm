@@ -260,6 +260,48 @@
 		/obj/item/melee/transforming/plasmacutter/regular/adam,
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+	)
+
+/datum/export/item/armorrare
+	cost = 1500
+	unit_name = "quality armor"
+	export_types = list(
+		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
+		/obj/effect/spawner/bundle/f13/armor/riot,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
+		/obj/effect/spawner/bundle/f13/armor/hotrodpa,
+		/obj/effect/spawner/bundle/f13/armor/t45d,
+		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
+		/obj/item/clothing/suit/armor/heavy/riot/vault,
+		/obj/item/clothing/suit/armor/heavy/riot/marine,
+		/obj/effect/spawner/bundle/f13/armor/t51b,
+		/obj/item/clothing/suit/armor/power_armor/t51b/pony,
+		/obj/item/clothing/suit/armor/medium/odst,
+		/obj/item/clothing/suit/armor/medium/odstlead,
+	)
+
+/datum/export/item/armoruncommon
+	cost = 1000
+	unit_name = "surplus armor"
+	export_types = list(
+		/obj/effect/spawner/bundle/f13/armor/metal/reinforced,
+		/obj/effect/spawner/bundle/f13/armor/swat,
+		/obj/effect/spawner/bundle/f13/armor/combat,
+		/obj/effect/spawner/bundle/f13/armor/bulletproof,
+		/obj/effect/spawner/bundle/f13/armor/sulphite,
+		/obj/effect/spawner/bundle/f13/armor/vault,
+		/obj/item/clothing/suit/armor/medium/raider/slam,
+		/obj/item/clothing/suit/armor/medium/raider/rebel,
+		/obj/item/clothing/suit/armor/medium/raider/slam,
+		/obj/item/clothing/suit/armor/medium/raider/wastewar,
+		/obj/item/clothing/suit/armor/medium/combat/mk2/raider,
+		/obj/item/clothing/head/helmet/f13/raider/wastehound,
+		/obj/item/clothing/head/helmet/f13/raidermetal,
+		/obj/effect/spawner/bundle/f13/armor/combat/dark,
+		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris,
+		/obj/item/clothing/suit/armor/medium/odstcqb,
 	)
 
 /datum/export/item/energycell
@@ -535,6 +577,7 @@
 
 
 /datum/export/item/toyslow
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
@@ -542,6 +585,7 @@
 
 
 /datum/export/item/toyshigh
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 1000
 	unit_name = "advanced toy"
 	export_types = list(/obj/item/toy/prize,
@@ -560,11 +604,42 @@
 	export_types = list(/obj/item/salvage/tool,
 	)
 
+/datum/export/item/advancedtools
+	cost = 500 // Tools are useful. Good tools are better. Makes selling to shop better than scrapping them.
+	unit_name = "quality tools"
+	export_types = list(/obj/item/weldingtool/advanced,
+					/obj/item/crowbar/hightech,
+					/obj/item/screwdriver/hightech,
+					/obj/item/wrench/hightech,
+					/obj/item/wirecutters/hightech,
+					/obj/item/multitool/advanced)
+
+/datum/export/item/ultratools
+	cost = 2750 // Super expensive so theyre worth something when sold. Difficult for clinic to reproduce these.
+	unit_name = "ultracite tools"
+	export_types = list(/obj/item/weldingtool/abductor,
+						/obj/item/wrench/abductor,
+						/obj/item/wirecutters/abductor,
+						/obj/item/screwdriver/abductor,
+						/obj/item/crowbar/abductor,
+						/obj/item/multitool/abductor)
+
 /datum/export/item/advancedsalvage
 	cost = 2500 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
 	unit_name = "quality salvage"
 	export_types = list(/obj/item/salvage/high,
 	)
+
+/datum/export/item/advancedsalvageloot
+	cost = 800 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	unit_name = "quality components"
+	export_types = list(/obj/item/advanced_crafting_components/receiver,
+				/obj/item/advanced_crafting_components/assembly,
+				/obj/item/advanced_crafting_components/alloys,
+				/obj/item/advanced_crafting_components/conductors,
+				/obj/item/advanced_crafting_components/lenses,
+				/obj/item/advanced_crafting_components/flux,
+)
 
 /datum/export/item/nightstalkerpelt
 	cost = 200 
@@ -573,11 +648,16 @@
 	)
 
 /datum/export/item/armorgeneric
-	cost = 250 // just a test so the shop can actually move armor since nobody ever buys it //this existing means the armor crates have to be expensive
+	cost = 300 // just a test so the shop can actually move armor since nobody ever buys it //this existing means the armor crates have to be expensive
 	unit_name = "armor item"
 	export_types = list(/obj/item/clothing/suit/armor,
 	)
 
+/datum/export/item/stealthboy
+	cost = 1500
+	unit_name = "cloaking device"
+	export_types = list(/obj/item/stealthboy
+	)
 /datum/export/item/lowfish
 	cost = 150
 	unit_name = "common fish"

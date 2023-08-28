@@ -199,3 +199,15 @@
 					/obj/item/organ/cyberimp/brain/anti_drop = 8)
 	default_price = PRICE_ALMOST_EXPENSIVE
 	extra_price = PRICE_EXPENSIVE
+
+/obj/machinery/vending/medical/researchgrants
+	name = "\improper Research Grants"
+	desc = "A vendor that allows the clinic to purchase researchable documents for syncing up with other research facilities."
+	product_ads = ""
+	product_slogans = ""
+	products = list(/obj/item/blueprint/research = 5)
+	contraband = list()
+	premium = list(/obj/item/documents/syndicate/blue = 3)
+	resistance_flags = INDESTRUCTIBLE
+	default_price = PRICE_RESEARCH
+	extra_price = PRICE_RESEARCH_PLUS

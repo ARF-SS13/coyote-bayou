@@ -50,9 +50,9 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
-	//datum/crafting_recipe/redpotion,
-	//datum/crafting_recipe/bluepotion,
-	//datum/crafting_recipe/greenpotion,
+	/datum/crafting_recipe/redambrosia,
+	/datum/crafting_recipe/blueambrosia,
+	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
@@ -203,14 +203,18 @@ Tribal Shaman
 	name = "Invoker"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanred=1
+		/obj/item/clothing/under/f13/wayfarer/shamanred=1,
+		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
+
 	)
 
 /datum/outfit/loadout/ascetic
 	name = "Ascetic"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanblue=1
+		/obj/item/clothing/under/f13/wayfarer/shamanblue=1,
+		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
+
 	)
 
 /*

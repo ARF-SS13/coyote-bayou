@@ -30,6 +30,7 @@
 		/datum/language/dwarf,
 		/datum/language/tribal,
 		/datum/language/signlanguage,
+		/datum/language/pokemon
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2

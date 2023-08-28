@@ -647,3 +647,27 @@
 	icon_state = "corgi"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/turkey
+	name = "Turkey Tail"
+	icon_state = "turkey"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/slugcat
+	name = "cat slug tail"
+	icon_state = "slugcat"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/tent
+	name = "Ocotopuss"
+	icon_state = "tent"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/xeno
+	name = "Xeno"
+	icon_state = "xeno"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS

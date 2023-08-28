@@ -22,6 +22,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ice_ruins_templates = list()
 	var/list/ice_ruins_underground_templates = list()
 	var/list/station_ruins_templates = list()
+	var/list/party_templates = list()
 	var/datum/space_level/isolated_ruins_z //Created on demand during ruin loading.
 
 	var/list/shuttle_templates = list()
@@ -444,6 +445,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			station_room_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/spacenearstation))
 			station_ruins_templates[R.id] = R
+		else if(istype(R, /datum/map_template/ruin/party))
+			party_templates[R.id] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	var/list/unbuyable = generateMapList("[global.config.directory]/unbuyableshuttles.txt")

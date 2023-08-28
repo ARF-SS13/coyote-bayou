@@ -776,6 +776,15 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	icon_state = "bird"
 	item_state = "bird"
 
+/obj/item/toy/plush/bird/sylas
+	name = "bird plushie"
+	desc = "An adorable stuffed bird plushie that resembles a bluejay with crystalline patches on it."
+	attack_verb = list("peeped", "beeped", "poofed")
+	squeak_override = list('modular_citadel/sound/voice/peep.ogg' = 1)
+	can_random_spawn = TRUE
+	icon_state = "birdsylas"
+	item_state = "birdsylas"
+
 /obj/item/toy/plush/sergal
 	name = "sergal plushie"
 	desc = "An adorable stuffed plushie that resembles a sagaru."

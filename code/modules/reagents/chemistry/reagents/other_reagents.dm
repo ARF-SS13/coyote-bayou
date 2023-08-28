@@ -320,7 +320,7 @@
 	if(!istype(M))
 		return
 	if(method == TOUCH)
-		M.adjust_fire_stacks(-(reac_volume / 10))
+		M.adjust_fire_stacks(-(reac_volume / 10) * effect_mult)
 		M.ExtinguishMob()
 	..()
 
@@ -352,11 +352,11 @@
 
 /datum/reagent/water/purified/on_mob_life(mob/living/carbon/M) // Pure water is very, very healthy
 	M.reagents.remove_all_type(/datum/reagent/toxin, 1)
-	M.adjustBruteLoss(-0.5, 0)
-	M.adjustFireLoss(-0.5, 0)
-	M.adjustOxyLoss(-0.5, 0)
-	M.adjustToxLoss(-1, 0, TRUE)
-	M.adjustStaminaLoss(-0.5, FALSE)
+	M.adjustBruteLoss(-0.5 * effect_mult, 0)
+	M.adjustFireLoss(-0.5 * effect_mult, 0)
+	M.adjustOxyLoss(-0.5 * effect_mult, 0)
+	M.adjustToxLoss(-1 * effect_mult, 0, TRUE)
+	M.adjustStaminaLoss(-0.5 * effect_mult, FALSE)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 2)
 	..()
@@ -415,10 +415,10 @@
 				for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
 					qdel(BS)
 	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
-		if(!M.stuttering)
-			M.stuttering = 1
-		M.stuttering = min(M.stuttering+4, 10)
-		M.Dizzy(5)
+		//if(!M.stuttering)
+		//	M.stuttering = 1
+		//M.stuttering = min(M.stuttering+4, 10)
+		//M.Dizzy(5)
 		if(iscultist(M) && prob(20))
 			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
@@ -481,21 +481,21 @@
 /datum/reagent/fuel/unholywater/on_mob_life(mob/living/carbon/M)
 	if(iscultist(M))
 		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustUnconscious(-20, FALSE)
-		M.AdjustAllImmobility(-40, FALSE)
-		M.adjustStaminaLoss(-10, FALSE)
-		M.adjustToxLoss(-2, FALSE, TRUE)
-		M.adjustOxyLoss(-2, FALSE)
-		M.adjustBruteLoss(-2, FALSE)
-		M.adjustFireLoss(-2, FALSE)
+		M.AdjustUnconscious(-20 * effect_mult, FALSE)
+		M.AdjustAllImmobility(-40 * effect_mult, FALSE)
+		M.adjustStaminaLoss(-10 * effect_mult, FALSE)
+		M.adjustToxLoss(-2 * effect_mult, FALSE, TRUE)
+		M.adjustOxyLoss(-2 * effect_mult, FALSE)
+		M.adjustBruteLoss(-2 * effect_mult, FALSE)
+		M.adjustFireLoss(-2 * effect_mult, FALSE)
 		if(ishuman(M) && M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
-			M.blood_volume += 3
+			M.blood_volume += 3 * effect_mult
 	else  // Will deal about 90 damage when 50 units are thrown
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, FALSE)
-		M.adjustFireLoss(2, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustBruteLoss(2, FALSE)
+		M.adjustToxLoss(2 * effect_mult, FALSE)
+		M.adjustFireLoss(2 * effect_mult, FALSE)
+		M.adjustOxyLoss(2 * effect_mult, FALSE)
+		M.adjustBruteLoss(2 * effect_mult, FALSE)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -529,23 +529,23 @@
 /datum/reagent/fuel/holyoil/on_mob_life(mob/living/carbon/M)
 	if(is_servant_of_ratvar(M))
 		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustUnconscious(-60, FALSE)
-		M.AdjustAllImmobility(-30, FALSE)
-		M.AdjustKnockdown(-40, FALSE)
-		M.adjustStaminaLoss(-15, FALSE)
-		M.adjustToxLoss(-5, FALSE, TRUE)
-		M.adjustOxyLoss(-3, FALSE)
-		M.adjustBruteLoss(-3, FALSE)
-		M.adjustFireLoss(-5, FALSE)
+		M.AdjustUnconscious(-60 * effect_mult, FALSE)
+		M.AdjustAllImmobility(-30 * effect_mult, FALSE)
+		M.AdjustKnockdown(-40 * effect_mult, FALSE)
+		M.adjustStaminaLoss(-15 * effect_mult, FALSE)
+		M.adjustToxLoss(-5 * effect_mult, FALSE, TRUE)
+		M.adjustOxyLoss(-3 * effect_mult, FALSE)
+		M.adjustBruteLoss(-3 * effect_mult, FALSE)
+		M.adjustFireLoss(-5 * effect_mult, FALSE)
 	if(iscultist(M))
-		M.AdjustUnconscious(1, FALSE)
-		M.AdjustAllImmobility(10, FALSE)
-		M.AdjustKnockdown(10, FALSE)
-		M.adjustStaminaLoss(15, FALSE)
+		M.AdjustUnconscious(1 * effect_mult, FALSE)
+		M.AdjustAllImmobility(10 * effect_mult, FALSE)
+		M.AdjustKnockdown(10 * effect_mult, FALSE)
+		M.adjustStaminaLoss(15 * effect_mult, FALSE)
 	else
-		M.adjustToxLoss(3, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustStaminaLoss(10, FALSE)
+		M.adjustToxLoss(3 * effect_mult, FALSE)
+		M.adjustOxyLoss(2 * effect_mult, FALSE)
+		M.adjustStaminaLoss(10 * effect_mult, FALSE)
 		holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -686,7 +686,7 @@
 	name = "Stable Mutation Toxin"
 	description = "A humanizing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
-	metabolization_rate = 0.5 * REM //So it instantly removes all of itself
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM //So it instantly removes all of itself
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
 	var/datum/species/race = /datum/species/human
@@ -1140,12 +1140,12 @@
 		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/fluorine/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1*REM, 0)
+	M.adjustToxLoss(1*REM * effect_mult, 0)
 	. = 1
 	..()
 
 /datum/reagent/fluorine/on_mob_life_synth(mob/living/carbon/M)
-	M.adjustBruteLoss(1*REM, 0)
+	M.adjustBruteLoss(1*REM * effect_mult, 0)
 	. = 1
 	..()
 
@@ -1413,22 +1413,22 @@
 
 /datum/reagent/fuel/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
 	if(flammable && (method == TOUCH || method == VAPOR))
-		M.adjust_fire_stacks(reac_volume / 10)
+		M.adjust_fire_stacks((reac_volume / 10) * effect_mult)
 		return
 	..()
 
 /datum/reagent/fuel/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(1, 0)
+	M.adjustToxLoss(1 * effect_mult, 0)
 	..()
 	return TRUE
 
 /datum/reagent/fuel/on_mob_life_synth(mob/living/carbon/M)
-	M.adjustStaminaLoss(-1, 0)
+	M.adjustStaminaLoss(-1 * effect_mult, 0)
 	var/heal_to_do = M.health < 25 ? heal_amount_crit : heal_amount
-	M.adjustBruteLoss(heal_to_do, TRUE, include_roboparts = TRUE)
-	M.adjustFireLoss(heal_to_do, TRUE, include_roboparts = TRUE)
+	M.adjustBruteLoss(heal_to_do * effect_mult, TRUE, include_roboparts = TRUE)
+	M.adjustFireLoss(heal_to_do * effect_mult, TRUE, include_roboparts = TRUE)
 	if(flammable && M.fire_stacks < 1)
-		M.adjust_fire_stacks(1)
+		M.adjust_fire_stacks(1 * effect_mult)
 	..()
 	return TRUE
 
@@ -1467,7 +1467,7 @@
 			qdel(C)
 
 		for(var/mob/living/simple_animal/slime/M in T)
-			M.adjustToxLoss(rand(5,10))
+			M.adjustToxLoss(rand(5,10) * effect_mult)
 
 /datum/reagent/abraxo_cleaner/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1519,16 +1519,16 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/abraxo_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(3.33)
-	M.adjustFireLoss(3.33)
-	M.adjustToxLoss(3.33)
+	M.adjustBruteLoss(3.33 * effect_mult)
+	M.adjustFireLoss(3.33 * effect_mult)
+	M.adjustToxLoss(3.33 * effect_mult)
 	..()
 
 /datum/reagent/abraxo_cleaner/ez_clean/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
-		M.adjustBruteLoss(1)
-		M.adjustFireLoss(1)
+		M.adjustBruteLoss(1 * effect_mult)
+		M.adjustFireLoss(1 * effect_mult)
 
 /datum/reagent/cryptobiolin
 	name = "Cryptobiolin"
@@ -2829,59 +2829,66 @@
 			return
 	..()
 
-/datum/reagent/red_ichor
-	name = "Red Ichor"
+/datum/reagent/red_ambrosia
+	name = "Red Ambrosia"
 	can_synth = FALSE
 	description = "A unknown red liquid, linked to healing of most mortal wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet relief"
+	fractional_mult_divisor = 10
 
-/datum/reagent/red_ichor/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-50)
-	M.adjustOxyLoss(-50)
-	M.adjustBruteLoss(-50)
-	M.adjustFireLoss(-50)
-	M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
-	M.adjustCloneLoss(-50)
-	M.adjustStaminaLoss(-50)
+/datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-50 * effect_mult)
+	M.adjustOxyLoss(-50 * effect_mult)
+	M.adjustBruteLoss(-50 * effect_mult)
+	M.adjustFireLoss(-50 * effect_mult)
+	M.adjustToxLoss(-50 * effect_mult, TRUE) //heals TOXINLOVERs
+	M.adjustCloneLoss(-50 * effect_mult)
+	M.adjustStaminaLoss(20 * effect_mult)
 	..()
 
-/datum/reagent/green_ichor
-	name = "Green Ichor"
+/datum/reagent/green_ambrosia
+	name = "Green Ambrosia"
 	can_synth = FALSE
 	description = "A unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet balance"
 
-/datum/reagent/green_ichor/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_EARS, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -100)
-	M.adjustOrganLoss(ORGAN_SLOT_EYES, -100)
+/datum/reagent/green_ambrosia/on_mob_life(mob/living/carbon/M)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_EARS, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -100 * effect_mult)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -100 * effect_mult)
 	..()
 
-/datum/reagent/blue_ichor
-	name = "Blue Ichor"
+/datum/reagent/blue_ambrosia
+	name = "Blue Ambrosia"
 	can_synth = FALSE
 	description = "A unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
+	taste_description = "sickly sweet serenity"
 
-/datum/reagent/blue_ichor/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -100)
-	M.cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	M.hallucination = 0
-	M.dizziness = 0
-	M.disgust = 0
-	M.drowsyness = 0
-	M.stuttering = 0
-	M.confused = 0
+/datum/reagent/blue_ambrosia/on_mob_life(mob/living/carbon/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -100 * effect_mult)
+	if(effect_mult == 1)
+		M.cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
+	else
+		M.cure_all_traumas(TRAUMA_RESILIENCE_BASIC)
+	M.hallucination -= (10 * effect_mult)
+	M.dizziness -= (10 * effect_mult)
+	M.disgust -= (10 * effect_mult)
+	M.drowsyness -= (10 * effect_mult)
+	M.stuttering -= (10 * effect_mult)
+	M.confused -= (10 * effect_mult)
 	M.SetSleeping(0, 0)
 	..()
 
