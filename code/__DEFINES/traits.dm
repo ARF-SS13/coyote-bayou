@@ -337,6 +337,7 @@
 
 #define TRAIT_SMUTANT		"Super Mutant"	// This is a trait usually locked for admins due to how OP it is
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
+#define TRAIT_DNAWHIZ			"dnawhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_NODRUGS		"winners_cant_do_drugs" //drugs hurt you!
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess

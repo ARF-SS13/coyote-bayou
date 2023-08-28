@@ -155,8 +155,7 @@ Tribal Shaman
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/invoker, //Red shaman
-		/datum/outfit/loadout/ascetic, //Blue shaman
+		/datum/outfit/loadout/seeker, //Seeker
 	)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/mentor = list(
@@ -199,7 +198,7 @@ Tribal Shaman
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
-/datum/outfit/loadout/invoker
+/datum/outfit/loadout/seeker
 	name = "Invoker"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
@@ -207,15 +206,15 @@ Tribal Shaman
 		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
 
 	)
-
+/*
 /datum/outfit/loadout/ascetic
 	name = "Ascetic"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
 		/obj/item/clothing/under/f13/wayfarer/shamanblue=1,
-		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
-
+		
 	)
+*/
 
 /*
 Tribal Head Hunter
@@ -319,6 +318,7 @@ Druid
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
 
 
 /datum/outfit/job/tribal/f13druid
@@ -383,6 +383,13 @@ Villager
 			/datum/job/tribal/f13hunter,
 		),
 	)
+
+/datum/outfit/job/tribal/f13villager/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, src)
+
 
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
