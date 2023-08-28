@@ -17479,20 +17479,6 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
-"bhr" = (
-/obj/structure/spacevine,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "bhu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin/trashbin,
@@ -24100,22 +24086,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/ruins,
 /area/f13/building/abandoned)
-"cjb" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/flora/junglebush/large,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "cje" = (
 /obj/structure/lamp_post,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -27641,6 +27611,9 @@
 /area/f13/building/abandoned)
 "cPq" = (
 /obj/machinery/chem_dispenser,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "cPt" = (
@@ -56860,10 +56833,9 @@
 	},
 /area/f13/wasteland/city)
 "jJv" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/tree/jungle/small{
+	color = "#d9b51c"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -63428,14 +63400,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "lmU" = (
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/transparent/openspace,
+/area/f13/building/hospital/clinic)
 "lnf" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -95729,18 +95695,11 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland/city/nash/starterroad)
 "sNY" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "sOh" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -117146,16 +117105,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"xQi" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "xQl" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
@@ -122223,18 +122172,18 @@ kiU
 wJZ
 cIY
 cIY
-cIY
-cIY
-lmU
-jJv
-jJv
-jJv
-sNY
-jJv
-jJv
-xQi
-bhr
-cjb
+aOk
+aOk
+iAU
+iAU
+iAU
+iAU
+iAU
+ugE
+ugE
+ugE
+iAU
+vAc
 aWK
 cyI
 aOk
@@ -122480,18 +122429,18 @@ cxc
 wNM
 tfE
 bnE
+bnE
 aOk
-aOk
 iAU
-iAU
-iAU
-iAU
-iAU
-iAU
-ugE
-iAU
-iAU
-vAc
+ggm
+oGu
+rkv
+uvY
+uMJ
+gFz
+aMz
+coF
+miR
 umI
 usG
 rLT
@@ -122740,15 +122689,15 @@ aOk
 bnE
 aOk
 iAU
-ggm
-oGu
-rkv
-uvY
-uMJ
-gFz
+nZx
+tPz
+tPz
+qdw
+tPz
+tPz
+tPz
 coF
-coF
-miR
+jml
 gnt
 jBw
 rLT
@@ -122994,17 +122943,17 @@ thC
 fse
 mmH
 cIY
-bnE
+mAk
 aOk
 iAU
-nZx
+nZP
 tPz
 tPz
 qdw
 tPz
 tPz
 tPz
-aMz
+bdn
 jml
 aOk
 agh
@@ -123251,18 +123200,18 @@ hDX
 cxc
 qML
 cIY
-mAk
-aOk
+cIY
+ncM
 iAU
-nZP
+nZx
 tPz
 tPz
 qdw
 tPz
 tPz
 tPz
-bdn
-jml
+tPz
+miR
 aOk
 flt
 tmp
@@ -123508,18 +123457,18 @@ hDX
 cxc
 tfE
 aOk
-cIY
-ncM
+kTH
+aOk
 iAU
-nZx
+ggm
+kSu
+cSk
+uvY
+tIt
 tPz
 tPz
-qdw
 tPz
-tPz
-tPz
-tPz
-miR
+iAU
 ncM
 flt
 cnr
@@ -123765,17 +123714,17 @@ bhi
 cxc
 eaZ
 bnE
-kTH
-aOk
+bnE
+xFZ
 iAU
-ggm
-kSu
-cSk
-uvY
-tIt
-tPz
-tPz
-tPz
+iAU
+iAU
+iAU
+iAU
+iAU
+mAv
+iAU
+cYw
 iAU
 aOk
 flt
@@ -124022,18 +123971,18 @@ mDG
 cxc
 eaZ
 aOk
-bnE
+pdC
 xFZ
 iAU
+riA
+qAS
+pqC
 iAU
-iAU
-iAU
-iAU
-iAU
-mAv
-iAU
-cYw
-iAU
+gvn
+sCb
+bcq
+bcq
+miR
 aOk
 qAx
 nFA
@@ -124279,18 +124228,18 @@ aYT
 ijI
 eaZ
 aOk
-pdC
 xFZ
+aOk
 iAU
 riA
-qAS
 pqC
-iAU
-gvn
-sCb
+pqC
+wFd
 bcq
 bcq
-miR
+bcq
+oUq
+jml
 rfD
 rax
 rLT
@@ -124536,19 +124485,19 @@ vPP
 snZ
 bqX
 noz
-xFZ
+aOk
 aOk
 iAU
 riA
 pqC
 pqC
-wFd
+uFF
+rYZ
+xix
+rYZ
 bcq
-bcq
-bcq
-oUq
-jml
-rfD
+miR
+jJv
 pll
 rLT
 mkb
@@ -124793,18 +124742,18 @@ bcO
 tBD
 kkp
 ncM
-aOk
-aOk
 iAU
-riA
-pqC
-pqC
-uFF
-rYZ
-xix
-rYZ
-bcq
-miR
+iAU
+iAU
+iAU
+aXn
+iAU
+iAU
+wGL
+jMq
+wGL
+cOL
+iAU
 rfD
 rax
 nFA
@@ -125051,18 +125000,18 @@ tBD
 tfE
 bnE
 iAU
+lmU
+lmU
+wTy
+wTy
 iAU
-iAU
-iAU
-aXn
-iAU
-iAU
-wGL
-jMq
-wGL
-cOL
-iAU
-aXa
+bGz
+bGz
+bGz
+bGz
+bGz
+hFN
+aOk
 flt
 bsh
 vTG
@@ -125309,7 +125258,7 @@ ldT
 cIY
 iAU
 cPq
-wTy
+sNY
 wTy
 wTy
 pPP
