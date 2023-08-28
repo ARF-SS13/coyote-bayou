@@ -20,7 +20,7 @@
 	http://www.chinahighlights.com/travelguide/learning-chinese/pinyin-syllables.htm
 */______qdel_list_wrapper(list/L)
 	. = ..()
-	
+
 	//New list generated with chatgpt sounding 'vaguely' like english.  Better than it sounding way too much like chinese, lol
 /datum/language/common/syllables = list(
 "a",
@@ -242,3 +242,24 @@
 
 	icon_state = "ssl"
 	default_priority = 90
+
+//pokemon language
+
+#define LANGUAGE_POKEMON "Poke-Speak"
+
+/datum/language/pokemon
+	name = LANGUAGE_POKEMON
+	desc = "The language spoken and understood by all Pokemon. Consists mostly of short syllables"
+	speech_verb = "says"
+	ask_verb = "asks"
+	exclaim_verb = "exclaims"
+	whisper_verb = "whispers"
+	key = "`"
+	icon_state = "poke"
+	syllables = list(
+		"pika", "chu", "dra", "tini", "vul", "pix", "zora", "glac", "eon", "ee", "vee",
+		"quaza", "ray", "jol", "esp", "nite", "nair", "flaa", "ffy", "might", "yena", "pooch",
+		"pony", "ta", "zu", "bat", "pin", "cer", "mag", "mar", "magi", "carp", "lap", "ras",
+		"kabu", "to", "aero", "dac", "tyl", "licki", "tung", "cu", "bone", "snor", "lax",
+		"mew", "two", "syl", "veon", "arti", "cuno"
+	)
