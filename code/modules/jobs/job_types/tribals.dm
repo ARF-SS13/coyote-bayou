@@ -191,7 +191,6 @@ Tribal Shaman
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
-		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -204,14 +203,18 @@ Tribal Shaman
 	name = "Invoker"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanred=1
+		/obj/item/clothing/under/f13/wayfarer/shamanred=1,
+		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
+
 	)
 
 /datum/outfit/loadout/ascetic
 	name = "Ascetic"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanblue=1
+		/obj/item/clothing/under/f13/wayfarer/shamanblue=1,
+		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
+
 	)
 
 /*
