@@ -328,7 +328,7 @@
 	H.grant_language(/datum/language/common)
 
 /datum/quirk/tribespeak
-	name = "Tribal Language Comprehension"
+	name = "Language - Tribal Language Comprehension"
 	desc = "You're somehow capable of understanding and speaking the common tribal languages in the area."
 	value = 0
 	gain_text = span_notice("You remember the old ways of your tribe..")
@@ -343,6 +343,23 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/tribal)
+
+/datum/quirk/draconicspeak
+	name = "Language - Draconic Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking Draconic, the dragonkin's tongue."
+	value = 0
+	gain_text = span_notice("A deep draconic roar rises within you..")
+	lose_text = span_notice("The roar within you fades away..")
+
+
+/datum/quirk/draconicspeak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/draconic)
+
+/datum/quirk/draconicspeak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/draconic)
 
 /datum/quirk/pokespeak
 	name = "Pokemon Language Comprehension"
