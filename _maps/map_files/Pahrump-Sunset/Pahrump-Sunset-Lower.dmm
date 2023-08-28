@@ -14992,6 +14992,16 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
+"inJ" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building)
 "iof" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13{
@@ -16723,18 +16733,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"jsO" = (
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
-	pixel_x = 1;
-	pixel_y = 7
-	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building)
 "jtb" = (
 /obj/machinery/vending/wallmed{
 	pixel_x = -30
@@ -19536,26 +19534,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"lnS" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger{
-	pixel_x = 9;
-	pixel_y = 5
-	},
-/obj/machinery/recharger{
-	pixel_x = -11;
-	pixel_y = 5
-	},
-/obj/machinery/recharger{
-	pixel_x = -1;
-	pixel_y = 5
-	},
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/building)
 "loh" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -21384,6 +21362,9 @@
 "mrW" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/chair/office/dark{
+	dir = 4
 	},
 /turf/open/floor/f13{
 	color = "#ffe9de";
@@ -23371,6 +23352,18 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/building)
+"nJy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger{
+	pixel_x = 1;
+	pixel_y = 7
+	},
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building)
 "nJL" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibup1"
@@ -24041,6 +24034,7 @@
 	},
 /area/f13/tunnel)
 "oiF" = (
+/obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13{
 	color = "#ffe9de";
@@ -27114,6 +27108,26 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"qev" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/machinery/recharger{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/obj/machinery/recharger{
+	pixel_x = -1;
+	pixel_y = 5
+	},
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building)
 "qeI" = (
 /obj/structure/closet{
 	storage_capacity = 10
@@ -27801,6 +27815,7 @@
 "qyZ" = (
 /obj/effect/spawner/lootdrop/f13/rare_unique,
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/rare_unique,
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -38970,6 +38985,19 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"xMN" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/building)
 "xMX" = (
 /obj/structure/reagent_dispensers/cooking_oil,
 /turf/open/floor/wood_wide/wood_wide_dark,
@@ -41110,15 +41138,15 @@ mrW
 ueB
 omO
 ueB
-sde
+xMN
 ueB
 omO
 ueB
-sde
+xMN
 ueB
 rBg
 ueB
-sde
+xMN
 ueB
 rBg
 aak
@@ -44457,7 +44485,7 @@ ueB
 oiF
 omO
 lEG
-ueB
+inJ
 ueB
 ueB
 iEO
@@ -48816,10 +48844,10 @@ omO
 tbF
 ueB
 ueB
-lnS
+qev
 hCV
 pLF
-jsO
+nJy
 ueB
 ueB
 ueB
