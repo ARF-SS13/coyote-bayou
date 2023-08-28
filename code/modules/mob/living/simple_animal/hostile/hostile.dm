@@ -21,6 +21,13 @@
 	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	/// Makes the mob throw a thing
+	var/obj/item/throw_thing
+	var/throw_thing_speed = 1
+	var/throw_thing_sound = 'sound/weapons/punchmiss.ogg'
+	/// Time between throwing things
+	var/throw_delay = 10 SECONDS
+	COOLDOWN_DECLARE(throw_cooldown)
 	/// Play a sound after they shoot?
 	var/sound_after_shooting
 	/// How long after shooting should it play?
@@ -72,6 +79,8 @@
 	var/minimum_distance = 1
 
 	var/decompose = TRUE //Does this mob decompose over time when dead?
+	var/decomposition_time = 5 MINUTES
+	COOLDOWN_DECLARE(decomposition_schedule)
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -135,10 +144,9 @@
 
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
-		if(decompose)
-			if(prob(1)) // 1% chance every cycle to decompose
-				visible_message(span_notice("\The dead body of the [src] decomposes!"))
-				gib(FALSE, FALSE, FALSE, TRUE)
+		if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
+			visible_message(span_notice("\The dead body of the [src] decomposes!"))
+			dust(TRUE)
 		return
 	queue_naptime()
 	check_health()
@@ -605,6 +613,7 @@
 		Shoot(A)
 		for(var/i in 1 to extra_projectiles)
 			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
+	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
@@ -614,6 +623,17 @@
 	if(casingtype)
 		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
 			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
+
+/mob/living/simple_animal/hostile/proc/ThrowSomething(atom/targeted_atom)
+	if(!istype(throw_thing) || !istype(targeted_atom))
+		return
+	if(!COOLDOWN_FINISHED(src, throw_cooldown))
+		return
+	COOLDOWN_START(src, throw_cooldown, throw_delay)
+	var/obj/item/tosser = new throw_thing(get_turf(src))
+	tosser.throw_at(targeted_atom, 25, throw_thing_speed, src, TRUE, TRUE)
+	playsound(src, throw_thing_sound, 100, TRUE)
+	visible_message(span_alert("[src] throws [tosser] at [targeted_atom]!"))
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
 	if( QDELETED(targeted_atom) || targeted_atom == targets_from.loc || targeted_atom == targets_from )

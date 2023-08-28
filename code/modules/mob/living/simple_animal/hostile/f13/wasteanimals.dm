@@ -126,6 +126,9 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
+/mob/living/simple_animal/hostile/gecko/summon //untameable
+	faction = list("gecko")
+
 //Fire Geckos//
 
 /mob/living/simple_animal/hostile/gecko/fire

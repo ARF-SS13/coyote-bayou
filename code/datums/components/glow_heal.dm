@@ -57,13 +57,13 @@
 				livingMob.revive(full_heal = TRUE)
 			return //dont waste cpu on dead mobs that cant be revived
 		var/health_to_consider = min(livingMob.maxHealth, 50)
-		if(healing_types && BRUTELOSS)
+		if(healing_types & BRUTELOSS)
 			livingMob.adjustBruteLoss(-health_to_consider*0.1)
-		if(healing_types && FIRELOSS)	
+		if(healing_types & FIRELOSS)	
 			livingMob.adjustFireLoss(-health_to_consider*0.1)
-		if(healing_types && TOXLOSS)	
+		if(healing_types & TOXLOSS)	
 			livingMob.adjustToxLoss(-health_to_consider*0.1)
-		if(healing_types && OXYLOSS)	
+		if(healing_types & OXYLOSS)	
 			livingMob.adjustOxyLoss(-health_to_consider*0.1)
 		var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(livingMob)) //shameless copy from blobbernaut
 		H.color = glow_color
