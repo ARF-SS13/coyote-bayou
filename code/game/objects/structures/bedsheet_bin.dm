@@ -236,6 +236,12 @@ LINEN BINS
 	var/g_mouth
 	var/g_eyes
 
+/obj/item/bedsheet/zebra
+	name = "zebra blanket"
+	desc = "A very cozy looking zebra blanket. It looks well loved, and very soft."
+	icon_state = "sheetzeb"
+	dream_messages = list("a zebra", "a handsome dog", "a german shephard", "fur")
+
 /obj/item/bedsheet/gondola/Initialize()
 	. = ..()
 	g_mouth = "sheetgondola_mouth[rand(1, 4)]"
