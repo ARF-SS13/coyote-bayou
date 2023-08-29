@@ -270,3 +270,7 @@
 	buildstacktype = /obj/item/stack/sheet/cloth
 	buildstackamount = 1
 //	decontool = /obj/item/wirecutters
+
+/obj/structure/bed/mattress/pregame/New()
+	..()
+	icon_state = "mattress[rand(0,5)]"
