@@ -72,6 +72,9 @@
 	icon_state = "sheath"
 	name = "Sheath"
 
+/datum/sprite_accessory/testicles/disguised
+	name = "Inconspicuous pair of testicles"
+
 //Vaginas
 /datum/sprite_accessory/vagina
 	icon = 'icons/obj/genitals/vagina_onmob.dmi'
