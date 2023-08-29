@@ -110,6 +110,10 @@
 	icon_state = "gaping"
 	name = "Gaping"
 
+/datum/sprite_accessory/vagina/inconspicuous
+	name = "Inconspicuous"
+	alt_aroused = FALSE
+
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts
 	icon = 'icons/obj/genitals/breasts_onmob.dmi'
