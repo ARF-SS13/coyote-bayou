@@ -86,19 +86,29 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 					turfs += T
 	return turfs
 
+/// Things that count as airtight for the purposes of blueprinting
+/// Cus some things block sight but arent airtight
+GLOBAL_LIST_INIT(room_sealers, typecacheof(
+	/obj/structure/window,
+	/obj/machinery/door,
+	/obj/structure/simple_door,
+))
+
 // Gets an atmos isolated contained space
+// Tries to find a room within a given space, considering opaque/dense turfs and certain objects as walls
 // Returns an associative list of turf|dirs pairs
 // The dirs are connected turfs in the same space
 // break_if_found is a typecache of turf/area types to return false if found
 // Please keep this proc type agnostic. If you need to restrict it do it elsewhere or add an arg.
-/proc/detect_room(turf/origin, list/break_if_found)
+/proc/detect_room(turf/origin, list/break_if_found, max_tiles = BP_MAX_ROOM_SIZE)
 	if(origin.blocks_air)
 		return list(origin)
 
 	. = list()
 	var/list/checked_turfs = list()
 	var/list/found_turfs = list(origin)
-	while(found_turfs.len)
+	var/tiles_left = max_tiles + 1
+	while(found_turfs.len && --tiles_left)
 		var/turf/sourceT = found_turfs[1]
 		found_turfs.Cut(1, 2)
 		var/dir_flags = checked_turfs[sourceT]
@@ -117,7 +127,16 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 			var/static/list/cardinal_cache = list("[NORTH]"=TRUE, "[EAST]"=TRUE, "[SOUTH]"=TRUE, "[WEST]"=TRUE)
 			if(!cardinal_cache["[dir]"] || checkT.blocks_air || !CANATMOSPASS(sourceT, checkT))
 				continue
+			if(!checkT.opacity) // any kind of vision-blocking turf
+				continue
+			for(var/atom/movable/AM in checkT.contents) // any kind of vision-blocking movable
+				if(AM.opacity)
+					continue
+				if(is_type_in_typecache(AM, GLOB.room_sealers)) // any kind of sealers
+					continue
 			found_turfs += checkT // Since checkT is connected, add it to the list to be processed
+	if(tiles_left <= 0)
+		return FALSE
 
 /proc/create_area(mob/creator)
 	// Passed into the above proc as list/break_if_found
@@ -141,7 +160,8 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		to_chat(creator, span_warning("The new area must be completely airtight and not a part of a shuttle."))
 		return
 	if(turfs.len > BP_MAX_ROOM_SIZE)
-		to_chat(creator, span_warning("The room you're in is too big. It is [((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed."))
+		to_chat(creator, span_warning("This room is too big! The new area must be inside of an air-tight room enclosed by walls, doors, and/or windows, and be no more than [BP_MAX_ROOM_SIZE] tiles in area. Maybe divide this area into smaller rooms? \
+			If your room should meet these requirements, and still don't, please make an issue report on the github at https://github.com/ARF-SS13/coyote-bayou/issues. Happy homebuilding!"))
 		return
 	var/list/areas = list("New Area" = /area)
 	for(var/i in 1 to turfs.len)
