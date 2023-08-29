@@ -57,6 +57,22 @@
 			else
 				buckle_lying = TRUE
 
+// double beds
+
+/obj/structure/bed/double
+	name = "double bed"
+	icon_state = "doublebed"
+	var/base_icon = "doublebed"
+
+/obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
+	if(M.buckled == src)
+		M.pixel_y = 13
+		M.old_y = 13
+	else
+		M.pixel_y = 0
+		M.old_y = 0
+
+/*
  * Wooden beds and old beds - Use wood for low tech like Oasis and Legion. Old for ruins.
  */
 
@@ -254,24 +270,3 @@
 	buildstacktype = /obj/item/stack/sheet/cloth
 	buildstackamount = 1
 //	decontool = /obj/item/wirecutters
-
-/obj/structure/bed/mattress/pregame/New()
-	..()
-	icon_state = "mattress[rand(0,5)]"
-
-/obj/structure/bed/double
-	name = "double bed"
-	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
-	icon_state = "doublebed"
-	base_icon = "doublebed"
-
-/obj/structure/bed/double/padded/New(var/newloc)
-	..(newloc,"wood","cotton")
-
-/obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
-	if(M.buckled == src)
-		M.pixel_y = 13
-		M.old_y = 13
-	else
-		M.pixel_y = 0
-		M.old_y = 0
