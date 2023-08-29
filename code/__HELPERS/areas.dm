@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(room_sealers, typecacheof(
 	. = list()
 	var/list/checked_turfs = list()
 	var/list/found_turfs = list(origin)
-	var/tiles_left = max_tiles + 1
+	var/tiles_left = max_tiles + 10
 	while(found_turfs.len && --tiles_left)
 		var/turf/sourceT = found_turfs[1]
 		found_turfs.Cut(1, 2)
@@ -135,8 +135,6 @@ GLOBAL_LIST_INIT(room_sealers, typecacheof(
 				if(is_type_in_typecache(AM, GLOB.room_sealers)) // any kind of sealers
 					continue
 			found_turfs += checkT // Since checkT is connected, add it to the list to be processed
-	if(tiles_left <= 0)
-		return FALSE
 
 /proc/create_area(mob/creator)
 	// Passed into the above proc as list/break_if_found
