@@ -33,7 +33,8 @@ export class Popper extends Component<PopperProps> {
     }
 
     this.renderPopperContent(() => {
-      document.body.appendChild(this.renderedContent);
+      document.body.insertAdjacentHTML("beforeend", this.renderedContent);
+      //document.body.appendChild(this.renderedContent);
 
       this.popperInstance = createPopper(
         // HACK: We don't want to create a wrapper, as it could break the layout
