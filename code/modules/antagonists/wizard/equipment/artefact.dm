@@ -128,8 +128,8 @@
 /obj/item/scrying
 	name = "scrying orb"
 	desc = "An incandescent orb of otherworldly energy, made of a cold material from before-war structures arranged in arrays of bizzare geometry. Staring into it gives you vision beyond mortal means."
-	icon = 'icons/obj/projectiles.dmi'
-	icon_state ="bluespace"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state ="scrying"
 	throw_speed = 3
 	throw_range = 7
 	throwforce = 15
