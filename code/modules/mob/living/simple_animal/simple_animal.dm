@@ -345,7 +345,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/infight_check)
 
-/mob/living/simple_animal/hostile/proc/infight_check(mob/living/simple_animal/H)
+/mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
 		return
 	if(!istype(H))
