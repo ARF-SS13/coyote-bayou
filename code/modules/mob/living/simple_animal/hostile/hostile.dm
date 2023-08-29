@@ -373,7 +373,7 @@
 	if(search_objects < 2)
 		if(isliving(the_target))
 			var/mob/living/L = the_target
-			if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src))
+			if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
 				return FALSE
 			var/faction_check = !foes[L] && faction_check_mob(L)
 			if(robust_searching)
