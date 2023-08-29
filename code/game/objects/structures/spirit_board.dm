@@ -1,8 +1,8 @@
 /obj/structure/spirit_board
-	name = "spirit board"
+	name = "a hole to the spirit realm	"
 	desc = "A wooden board with letters etched into it, used in seances."
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "spirit_board"
+	icon = 'icons/obj/objects2.dmi'
+	icon_state = "anom"
 	density = TRUE
 	anchored = FALSE
 	var/virgin = 1
@@ -11,7 +11,7 @@
 	var/lastuser = null
 
 /obj/structure/spirit_board/examine()
-	desc = "[initial(desc)] The planchette is sitting at \"[planchette]\"."
+	desc = "[initial(desc)] the universe pictures the letter \"[planchette]\" into your mind."
 	return ..()
 
 /obj/structure/spirit_board/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -27,9 +27,6 @@
 	if(!spirit_board_checks(M))
 		return 0
 
-	if(virgin)
-		virgin = 0
-		notify_ghosts("Someone has begun playing with a [src.name] in [get_area(src)]!", source = src)
 
 	planchette = input("Choose the letter.", "Seance!") as null|anything in list("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	if(!planchette || !Adjacent(M) || next_use > world.time)
@@ -38,7 +35,7 @@
 	next_use = world.time + rand(30,50)
 	lastuser = M.ckey
 	//blind message is the same because not everyone brings night vision to seances
-	var/msg = span_notice("The planchette slowly moves... and stops at the letter \"[planchette]\".")
+	var/msg = span_notice("The letter \"[planchette]\" forms in your minds eye.")
 	visible_message(msg,"",msg)
 
 /obj/structure/spirit_board/proc/spirit_board_checks(mob/M)

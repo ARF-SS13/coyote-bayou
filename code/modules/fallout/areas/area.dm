@@ -132,6 +132,11 @@
 		/datum/looping_sound/ambient/critters/birds/crow,
 		)
 
+/area/f13/building/tribal/caveofforever
+	name = "Tribal cave of forever"
+	icon_state = "orange"
+	has_gravity = 0
+
 /area/f13/building/sewers
 	name = "Sewers"
 	requires_power = TRUE
