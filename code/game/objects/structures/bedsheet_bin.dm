@@ -400,3 +400,157 @@ LINEN BINS
 	sheet_types = list(/obj/item/bedsheet, /obj/item/bedsheet/blue, /obj/item/bedsheet/green, /obj/item/bedsheet/orange, \
 						/obj/item/bedsheet/purple, /obj/item/bedsheet/red, /obj/item/bedsheet/yellow, /obj/item/bedsheet/brown, \
 						/obj/item/bedsheet/black)
+
+//Sheets from Arfs/Virgo
+
+/obj/item/bedsheet/trans
+	name = "transpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "transpride"
+
+/obj/item/bedsheet/pan
+	name = "panpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "panpride"
+
+/obj/item/bedsheet/bi
+	name = "bipride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "bipride"
+
+/obj/item/bedsheet/nonbinary
+	name = "NBpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "nonbinpride"
+
+/obj/item/bedsheet/canadaflag
+	name = "canada bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "canadaflag"
+
+/obj/item/bedsheet/deer
+	name = "deer bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "deer"
+
+/obj/item/bedsheet/britishflag
+	name = "british bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "britishflag"
+
+/obj/item/bedsheet/italianflag
+	name = "italian bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "italianflag"
+
+//The double sheets
+
+/obj/item/bedsheet/deerdouble
+	name = "deer bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "deer_double"
+
+/obj/item/bedsheet/doubletranspride
+	name = "transpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doubletranspride"
+
+/obj/item/bedsheet/doublepanpride
+	name = "panpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublepanpride"
+
+/obj/item/bedsheet/doublebipride
+	name = "bipride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublebipride"
+
+/obj/item/bedsheet/doublenonbinpride
+	name = "NBpride bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublenonbinpride"
+
+/obj/item/bedsheet/doublesheetcaptain
+	name = "royal blue bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetcaptain"
+
+/obj/item/bedsheet/doublesheetce
+	name = "fancy yellow bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetce"
+
+/obj/item/bedsheet/doublesheethop
+	name = "fancy blue bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheethop"
+
+/obj/item/bedsheet/doublesheetorange
+	name = "orange bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetorange"
+
+/obj/item/bedsheet/doublesheetrainbow
+	name = "rainbow bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetrainbow"
+
+/obj/item/bedsheet/doublesheethos
+	name = "fancy red bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheethos"
+
+/obj/item/bedsheet/doublesheet
+	name = "white bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheet"
+
+/obj/item/bedsheet/doublesheetgreen
+	name = "green bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetgreen"
+
+/obj/item/bedsheet/doublesheetpurple
+	name = "purple bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetpurple"
+
+/obj/item/bedsheet/doublesheetclown
+	name = "clown bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetclown"
+
+/obj/item/bedsheet/doublesheetian
+	name = "ian bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetian"
+
+/obj/item/bedsheet/doublesheetrd
+	name = "royal red bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetrd"
+
+/obj/item/bedsheet/doublesheetmime
+	name = "mime bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetmime"
+
+/obj/item/bedsheet/doublesheetblue
+	name = "blue bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetblue"
+
+/obj/item/bedsheet/doublesheetred
+	name = "red bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetred"
+
+/obj/item/bedsheet/doublesheetbrown
+	name = "brown bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetbrown"
+
+/obj/item/bedsheet/doublesheetyellow
+	name = "yellow bedsheet"
+	icon = 'modular_coyote/icons/objects/bedsheets.dmi'
+	icon_state = "doublesheetyellow"
