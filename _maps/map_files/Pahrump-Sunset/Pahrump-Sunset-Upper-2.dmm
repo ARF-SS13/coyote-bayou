@@ -982,6 +982,15 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/f13/building)
+"iz" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "iA" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
@@ -1329,6 +1338,14 @@
 /obj/machinery/power/solar,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/solarpanel,
+/area/f13/wasteland)
+"ml" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
 /area/f13/wasteland)
 "mo" = (
 /obj/structure/table/wood,
@@ -1717,6 +1734,27 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"pt" = (
+/obj/structure/flora/chomp/bones/lbone{
+	icon_state = "lribs";
+	pixel_y = 1;
+	pixel_x = -16;
+	light_color = "#444466";
+	light_range = 2;
+	color = "#444466"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "pv" = (
 /obj/structure/disposalpipe/broken{
 	dir = 1
@@ -2130,6 +2168,18 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"tx" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "ty" = (
 /obj/effect/landmark/nest_spawn,
 /turf/open/indestructible/ground/outside/roof,
@@ -2188,6 +2238,18 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"uv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "uw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2577,6 +2639,19 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"xX" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -3760,6 +3835,18 @@
 "IY" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"Jc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Jd" = (
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior12"
@@ -4202,6 +4289,26 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Nz" = (
+/obj/structure/flora/chomp/bones/lribs1{
+	pixel_y = 0;
+	pixel_x = -10;
+	light_color = "#444466";
+	light_range = 2;
+	color = "#444466"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "NC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -4266,6 +4373,16 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Oa" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/statue/bone/rib,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Of" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -4846,6 +4963,19 @@
 /obj/effect/decal/cleanable/semen/femcum,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"TI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "TN" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -4978,12 +5108,31 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Vc" = (
+/obj/item/melee/onehanded/knife/ritualdagger{
+	name = "Atonement Dagger"
+	},
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/item/restraints/handcuffs/sinew,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Vd" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged{
 	faction = list("raider")
 	},
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Vi" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
 /area/f13/wasteland)
 "Vk" = (
 /obj/machinery/vending/cola/random,
@@ -5320,6 +5469,15 @@
 /obj/item/flag/locust,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"Yj" = (
+/obj/effect/decal/cleanable/blood/footprints{
+	icon_state = "blood2";
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Yk" = (
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -5361,6 +5519,27 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/abandoned)
+"Za" = (
+/obj/structure/flora/chomp/bones/lskull{
+	pixel_y = -10;
+	pixel_x = -17;
+	name = "Skull of Atonement";
+	desc = "The monsterous skull of a thing that once was, but no longer is. Its empty eye sockets are judging you.";
+	color = "#444466";
+	light_range = 3
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Zc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
 	faction = list("raider")
@@ -8592,10 +8771,10 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
+TI
+tx
+iz
+uv
 hm
 hm
 rm
@@ -8848,11 +9027,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+Nz
+rm
+rm
+rm
+ml
 hm
 hm
 rm
@@ -9105,11 +9284,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+Za
+Yj
+Vc
+rm
+ml
 hm
 hm
 rm
@@ -9362,11 +9541,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+pt
+rm
+rm
+rm
+ml
 hm
 hm
 rm
@@ -9620,10 +9799,10 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
+xX
+Oa
+Vi
+Jc
 hm
 hm
 hm

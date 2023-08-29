@@ -1907,12 +1907,6 @@
 "bEN" = (
 /turf/open/floor/wood_wide,
 /area/f13/building)
-"bEY" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/wasteland)
 "bFw" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1;
@@ -5504,22 +5498,6 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
-"eWj" = (
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/wasteland)
 "eWw" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -6079,16 +6057,6 @@
 /obj/structure/sign/poster/prewar/poster82,
 /turf/closed/wall/f13/store,
 /area/f13/building)
-"fwE" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/wasteland)
 "fwH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -7370,24 +7338,9 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "gEk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	dir = 1;
-	icon_state = "post_wood"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
+/obj/structure/statue/bone/rib,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
 /area/f13/wasteland)
 "gEU" = (
@@ -14633,6 +14586,9 @@
 /obj/structure/spacevine{
 	color = "#225522"
 	},
+/obj/structure/flora/tree/jungle/small{
+	color = "#999999"
+	},
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -15639,10 +15595,11 @@
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/building)
 "nDp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass{
-	color = "#444444"
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
 /area/f13/wasteland)
 "nDB" = (
@@ -16393,20 +16350,8 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "okY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
 /area/f13/wasteland)
 "olD" = (
@@ -21715,14 +21660,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
-"tfK" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/wasteland)
 "tfP" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -24814,16 +24751,14 @@
 /area/f13/building)
 "wcK" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
+	color = "#a98c5d"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/gravel{
+/obj/structure/flora/tree/jungle/small{
 	color = "#999999"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/wasteland)
 "wcS" = (
@@ -25294,21 +25229,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "wyu" = (
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
+/obj/structure/stairs/west{
+	color = "#A47449";
 	dir = 1
 	},
-/obj/structure/fence/wooden{
-	density = 0;
+/obj/structure/stairs/west{
+	color = "#A47449";
 	dir = 1;
-	pixel_x = -15
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
+	pixel_y = 32
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -26007,23 +25935,8 @@
 	},
 /area/f13/building)
 "xht" = (
-/obj/structure/fence/wooden{
-	dir = 4
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood"
-	},
-/turf/open/floor/grass{
-	color = "#444444"
+/turf/closed/wall/f13/wood{
+	color = "#cababa"
 	},
 /area/f13/wasteland)
 "xhL" = (
@@ -29522,13 +29435,13 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+okY
+okY
+okY
+okY
+okY
+okY
 oez
 bgh
 aUi
@@ -29779,13 +29692,13 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+bYj
+bYj
+bYj
+bYj
+bYj
+okY
 oez
 gbN
 aUi
@@ -30036,19 +29949,19 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+nDp
+okY
+nDp
+okY
+bYj
+okY
+okY
 iqB
 jCJ
 iqB
 jwh
 sYU
-aUi
-nDp
 bYj
 wFz
 ygZ
@@ -30293,19 +30206,19 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+xht
+xht
+okY
+okY
+bYj
+bYj
+bYj
 mvB
 dmE
 cAn
 gSP
 lZe
-afN
-afN
 dUy
 byD
 nBD
@@ -30550,23 +30463,23 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+xht
+xht
+xht
+wyu
+gCx
+gCx
+gCx
 iqB
 gxb
 vRx
 vRx
 tKy
-wcK
-eur
 eur
 eIt
 biJ
-xiK
+wcK
 rvl
 mjO
 veV
@@ -30807,19 +30720,19 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+okY
+xht
+xht
+xht
+wyu
+iHb
+iHb
+iHb
 iqB
 lcv
 kHW
 nPQ
 iqB
-ieP
-ieP
 biJ
 ieP
 eWb
@@ -31063,20 +30976,20 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+okY
+xht
+xht
+xht
+wyu
+iHb
+iHb
+gCx
 iqB
 jCJ
 mvB
 xXK
 iqB
-bYj
-bYj
 wTd
 juI
 cVB
@@ -31320,26 +31233,26 @@ oez
 oez
 oez
 oez
-dtb
 oez
-oez
-oez
-oez
-dtb
-dtb
-dtb
-wyu
+okY
+xht
+xht
+okY
+okY
 bYj
-bYj
-bYj
-bYj
-cVB
-aUi
-nDp
-cVB
-bEY
-fwE
-ygZ
+gCx
+iHb
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
+gCx
 gCx
 gCx
 iKS
@@ -31577,26 +31490,26 @@ oez
 oez
 oez
 oez
-dtb
 oez
-oez
-oez
-oez
-oez
-dtb
-dtb
-eWj
+okY
+gEk
+okY
+gEk
+okY
 bYj
-bYj
-bYj
-cVB
-eWb
-tfK
-jrX
-cVB
-aUi
-xiK
-rvl
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
+iHb
 iHb
 iHb
 lDa
@@ -31834,15 +31747,15 @@ oez
 oez
 oez
 oez
-dtb
-dtb
 oez
-oez
-oez
-oez
-dtb
-dtb
-xht
+okY
+bYj
+bYj
+bYj
+bYj
+bYj
+okY
+okY
 bYj
 bYj
 vWX
@@ -32091,17 +32004,17 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
 oez
-oez
-oez
-dtb
-eWj
+okY
+okY
+okY
+okY
+okY
+okY
+okY
+okY
 bYj
-bYj
+qzU
 bYj
 jrX
 aUi
@@ -32348,10 +32261,10 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -32605,15 +32518,15 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
 oez
 oez
 oez
 oez
-dtb
-gEk
+oez
+oez
+oez
+oez
+okY
 bYj
 bYj
 bYj
@@ -32862,14 +32775,14 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
 oez
 oez
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
+oez
 aNu
 bTS
 ntV
@@ -33119,14 +33032,14 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
 oez
 oez
-dtb
+oez
+oez
+oez
+oez
+oez
+oez
 sqS
 qFq
 tqT
@@ -33376,14 +33289,14 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 pXV
 dYg
 dYg
@@ -33633,13 +33546,13 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 sqS
 dYg
@@ -33890,13 +33803,13 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 ykM
 dYg
@@ -34147,13 +34060,13 @@ oez
 oez
 oez
 oez
-dtb
-dtb
 oez
 oez
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
 oez
 sqS
 fdQ
@@ -38018,13 +37931,13 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oIp
+dtb
+dtb
+dtb
+dtb
+dtb
+dtb
+pys
 xyP
 xyP
 xyP
@@ -38275,13 +38188,13 @@ oez
 oez
 oez
 oez
+dtb
 oez
 oez
 oez
 oez
-oez
-oez
-oIp
+dtb
+pys
 xyP
 xyP
 xyP
@@ -38532,13 +38445,13 @@ oez
 oez
 oez
 oez
+dtb
 oez
 oez
 oez
 oez
 oez
-oez
-oIp
+pys
 xyP
 xyP
 xyP
@@ -38789,13 +38702,13 @@ oez
 oez
 oez
 oez
+dtb
+dtb
 oez
 oez
 oez
 oez
-oez
-oez
-oIp
+pys
 xyP
 xyP
 xyP
@@ -39046,10 +38959,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oIp
@@ -39303,10 +39216,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oIp
@@ -39560,10 +39473,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oIp
@@ -39817,10 +39730,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oIp
@@ -40074,11 +39987,11 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
+dtb
 oez
 oIp
 xyP
@@ -40331,13 +40244,13 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oIp
+dtb
+dtb
+dtb
+dtb
+dtb
+dtb
+pys
 xyP
 xyP
 xyP
@@ -40588,12 +40501,12 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
+dtb
+dtb
 oIp
 xyP
 xyP
@@ -40845,12 +40758,12 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
+dtb
+dtb
 hOH
 hOH
 bmB
@@ -41102,12 +41015,12 @@ oez
 oez
 oez
 oez
+dtb
+dtb
 oez
 oez
-oez
-oez
-oez
-mRK
+dtb
+dtb
 hOH
 hOH
 mNn
@@ -48587,9 +48500,9 @@ oez
 oez
 oez
 oez
-fPa
-fPa
-fPa
+oez
+oez
+oez
 hqx
 hqx
 hqx
@@ -48846,8 +48759,8 @@ oez
 oez
 dtb
 dtb
-dtb
-dtb
+hqx
+hqx
 dtb
 dtb
 dtb
@@ -49105,11 +49018,11 @@ dtb
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+hqx
+hqx
+hqx
+hqx
+hqx
 dtb
 dtb
 oez
@@ -50645,10 +50558,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oez
@@ -50902,10 +50815,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+hqx
+hqx
+hqx
+hqx
 oez
 oez
 oez
@@ -51159,10 +51072,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+hqx
+dtb
+dtb
 oez
 oez
 oez
@@ -51416,10 +51329,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+hqx
+hqx
+dtb
 oez
 oez
 oez
@@ -51673,10 +51586,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+hqx
+hqx
+hqx
 oez
 oez
 oez
@@ -51930,10 +51843,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+hqx
+hqx
+hqx
+hqx
 oez
 oez
 oez
@@ -52187,10 +52100,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 oez
 oez
 oez
@@ -55015,8 +54928,8 @@ oez
 oez
 hqx
 hqx
-dtb
-dtb
+hqx
+hqx
 hqx
 dtb
 dtb
@@ -55274,7 +55187,7 @@ hqx
 dtb
 dtb
 hqx
-dtb
+hqx
 dtb
 dtb
 dtb
@@ -55532,7 +55445,7 @@ dtb
 hqx
 dtb
 dtb
-dtb
+hqx
 dtb
 dtb
 hqx
@@ -55790,7 +55703,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
+hqx
 hqx
 hqx
 dtb
@@ -56047,8 +55960,8 @@ dtb
 dtb
 dtb
 dtb
+nkA
 hqx
-dtb
 dtb
 dtb
 dtb
@@ -56305,7 +56218,7 @@ dtb
 dtb
 dtb
 dtb
-dtb
+hqx
 dtb
 dtb
 dtb
