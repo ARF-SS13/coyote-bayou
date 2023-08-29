@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		/area/shuttle
 		))
 	//Detect the turfs connected in the curerrent enclosed area
-	var/list/turfs = detect_room(get_turf(user), area_or_turf_fail_types)
+	var/list/turfs = detect_room(get_turf(user), area_or_turf_fail_types, max_tiles = SHUTTLE_CREATOR_MAX_SIZE)
 	if(!check_area(turfs))
 		return FALSE
 	loggedOldArea = get_area(get_turf(user))
