@@ -204,6 +204,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	///If this is a player's ckey then this mob was spawned as a player's character
 	var/player_character = null
+	var/fights_other_mobs = FALSE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -342,6 +343,17 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/infight_check)
+
+/mob/living/simple_animal/hostile/proc/infight_check(mob/living/simple_animal/H)
+	if(SSmobs.debug_disable_mob_ceasefire)
+		return
+	if(!istype(H))
+		return
+	if(!H.fights_other_mobs)
+		return SIMPLEMOB_IGNORE
+	if(!fights_other_mobs)
+		return SIMPLEMOB_IGNORE
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src

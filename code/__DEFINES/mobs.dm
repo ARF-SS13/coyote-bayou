@@ -621,3 +621,5 @@
 
 /// Max distance you can see tats
 #define TATTOO_VISIBILITY_RANGE 3
+
+#define SIMPLEMOB_IGNORE 1
