@@ -194,15 +194,15 @@
 	qdel(src)
 
 /datum/surgery/proc/get_propability_multiplier()
-	var/propability = 0.5
+	var/propability = 0.75
 	var/turf/T = get_turf(target)
 
 	if(locate(/obj/structure/table/optable, T))
 		propability = 1
 	else if(locate(/obj/structure/table, T))
-		propability = 0.8
+		propability = 0.9
 	else if(locate(/obj/structure/bed, T))
-		propability = 0.7
+		propability = 0.8
 
 	return propability + success_multiplier
 
