@@ -2840,13 +2840,11 @@
 	fractional_mult_divisor = 10
 
 /datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-50 * effect_mult)
-	M.adjustOxyLoss(-50 * effect_mult)
-	M.adjustBruteLoss(-50 * effect_mult)
-	M.adjustFireLoss(-50 * effect_mult)
-	M.adjustToxLoss(-50 * effect_mult, TRUE) //heals TOXINLOVERs
-	M.adjustCloneLoss(-50 * effect_mult)
-	M.adjustStaminaLoss(20 * effect_mult)
+	M.adjustBruteLoss(-100 * effect_mult)
+	M.adjustOxyLoss(-100 * effect_mult)
+	M.adjustFireLoss(-100 * effect_mult)
+	M.adjustToxLoss(-100 * effect_mult, TRUE) //heals TOXINLOVERs
+	M.adjustStaminaLoss(80 * effect_mult)
 	..()
 
 /datum/reagent/green_ambrosia
@@ -2866,6 +2864,10 @@
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -100 * effect_mult)
 	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -100 * effect_mult)
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -100 * effect_mult)
+	M.adjustCloneLoss(-100 * effect_mult)
+	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		M.blood_volume = (BLOOD_VOLUME_NORMAL*M.blood_ratio)
+
 	..()
 
 /datum/reagent/blue_ambrosia

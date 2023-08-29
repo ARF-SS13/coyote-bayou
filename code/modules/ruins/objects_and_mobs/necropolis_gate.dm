@@ -15,6 +15,7 @@
 	light_range = 8
 	light_color = LIGHT_COLOR_LAVA
 	var/open = FALSE
+	var/autoclose = FALSE
 	var/changing_openness = FALSE
 	var/locked = FALSE
 	var/static/mutable_appearance/top_overlay
@@ -24,6 +25,7 @@
 	var/sight_blocker_distance = 1
 	var/uses
 	var/ashwalker_only = FALSE
+	autoclose = 5 SECONDS
 
 /obj/structure/necropolis_gate/Initialize()
 	. = ..()
@@ -134,7 +136,17 @@
 	if(uses && uses > 0)
 		uses -= 1
 	changing_openness = FALSE
+	if(autoclose)
+		autoclose_in(60)
 	return TRUE
+
+/obj/structure/necropolis_gate/proc/autoclose()
+	if(!QDELETED(src) && !density && !changing_openness && autoclose)
+		toggle_the_gate()
+
+/obj/structure/necropolis_gate/proc/autoclose_in(wait)
+	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
+
 
 /obj/structure/necropolis_gate/locked
 	locked = TRUE
