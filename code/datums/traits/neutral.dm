@@ -763,13 +763,13 @@
 	lose_text = span_notice("You've forgotten how to speak bird..")
 
 
-/datum/quirk/bird/add()
+/datum/quirk/birdsong/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.grant_language(/datum/language/bird)
+	H.grant_language(/datum/language/birdsong)
 
-/datum/quirk/bird/remove()
+/datum/quirk/birdsong/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
-		H.remove_language(/datum/language/bird)
+		H.remove_language(/datum/language/birdsong)
 
 
