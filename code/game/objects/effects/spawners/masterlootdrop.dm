@@ -1740,5 +1740,6 @@
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
 	/obj/item/laser_pointer = 5,
-	/obj/item/weapon/dvd = 5
+	/obj/item/weapon/dvd = 5,
+	/obj/item/storage/daki = 5
 	)

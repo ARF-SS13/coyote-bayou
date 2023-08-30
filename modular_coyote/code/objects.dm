@@ -252,10 +252,332 @@
 	attack_verb = list("headbutt", "booped", "bapped", "bumped")
 	squeak_override = list('sound/items/deerplush.ogg' = 1)
 
+/obj/item/toy/plush/icecarp
+	name = "ice carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "icecarp"
+
+/obj/item/toy/plush/silentcarp
+	name = "silent carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "silentcarp"
+
+/obj/item/toy/plush/electriccarp
+	name = "electric carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "electriccarp"
+
+/obj/item/toy/plush/goldcarp
+	name = "gold carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "goldcarp"
+
+/obj/item/toy/plush/toxincarp
+	name = "toxin carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "toxincarp"
+
+/obj/item/toy/plush/dragoncarp
+	name = "dragon carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "dragoncarp"
+
+/obj/item/toy/plush/pinkcarp
+	name = "pink carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinkcarp"
+
+/obj/item/toy/plush/candycarp
+	name = "candy carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "candycarp"
+
+/obj/item/toy/plush/nebulacarp
+	name = "nebula carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "nebulacarp"
+
+/obj/item/toy/plush/voidcarp
+	name = "void carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "voidcarp"
+
+/obj/item/toy/plush/birdsylas
+	name = "sylas bird"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "birdsylas"
+
+/obj/item/toy/plush/therapyred
+	name = "red therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyred"
+
+/obj/item/toy/plush/therapyorange
+	name = "orange therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyorange"
+
+/obj/item/toy/plush/therapyyellow
+	name = "yellow therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyyellow"
+
+/obj/item/toy/plush/therapygreen
+	name = "green therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapygreen"
+
+/obj/item/toy/plush/therapyblue
+	name = "blue therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyblue"
+
+/obj/item/toy/plush/therapypurple
+	name = "purple therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapypurple"
+
+/obj/item/toy/plush/kitten
+	name = "kitten plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "kitten"
+
+/obj/item/toy/plush/nymphplushie
+	name = "nymph plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "nymphplushie"
+
+/obj/item/toy/plush/mouse
+	name = "mouse plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "mouseplushie"
+
+/obj/item/toy/plush/lizardplushie
+	name = "lizard plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "lizardplushie"
+
+/obj/item/toy/plush/spiderplushie
+	name = "spider plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "spiderplushie"
+
+/obj/item/toy/plush/farwaplushie
+	name = "farwa plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "farwaplushie"
+
+/obj/item/toy/plush/smallcorgi
+	name = "corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "corgi"
+
+/obj/item/toy/plush/smallcorgigirl
+	name = "girly corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "girlycorgi"
+
+/obj/item/toy/plush/smallcorgirobot
+	name = "robot corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "robotcorgi"
+
+/obj/item/toy/plush/loveable
+	name = "ocotopus plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "loveable"
+
+/obj/item/toy/plush/huggable
+	name = "huggie plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "huggable"
+
+/obj/item/toy/plush/redfox
+	name = "red fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "redfox"
+
+/obj/item/toy/plush/blackfox
+	name = "black fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "blackfox"
+
+/obj/item/toy/plush/marblefox
+	name = "marble fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "marblefox"
+
+/obj/item/toy/plush/bluefox
+	name = "blue fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bluefox"
+
+/obj/item/toy/plush/orangefox
+	name = "orange fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangefox"
+
+/obj/item/toy/plush/coffeefox
+	name = "coffee fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "coffeefox"
+
+/obj/item/toy/plush/pinkfox
+	name = "pink fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinkfox"
+
+/obj/item/toy/plush/purplefox
+	name = "purple fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "purplefox"
+
+/obj/item/toy/plush/crimsonfox
+	name = "crimson fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "crimsonfox"
+
+/obj/item/toy/plush/redfox
+	name = "red fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "redfox"
+
+/obj/item/toy/plush/stag
+	name = "stag plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "deer"
+
+/obj/item/toy/plush/blackcat
+	name = "black cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "blackcat"
+
+/obj/item/toy/plush/greycat
+	name = "grey cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "greycat"
+
+/obj/item/toy/plush/whitecat
+	name = "white cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "whitecat"
+
+/obj/item/toy/plush/orangecat
+	name = "orange cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangecat"
+
+/obj/item/toy/plush/siamesecat
+	name = "siamese cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "siamesecat"
+
+/obj/item/toy/plush/tabbycat
+	name = "tabby cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "tabbycat"
+
+/obj/item/toy/plush/tuxedocat
+	name = "tuxedo cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "tuxedocat"
+
+/obj/item/toy/plush/greensquid
+	name = "green squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "greensquid"
+
+/obj/item/toy/plush/bluesquid
+	name = "blue squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bluesquid"
+
+/obj/item/toy/plush/mintsquid
+	name = "mint squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "mintsquid"
+
+/obj/item/toy/plush/orangesquid
+	name = "orange squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangesquid"
+
+/obj/item/toy/plush/pinksquid
+	name = "pink squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinksquid"
+
+/obj/item/toy/plush/yellowsquid
+	name = "yellow squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "yellowsquid"
+
+/obj/item/toy/plush/teshariplushie
+	name = "teshari plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "teshariplushie"
+
+
+//Nests from virgo
+
 /obj/structure/bed/small_nest
 	name = "small nest"
 	desc = "A small round nest that looks soft"
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "nest_chair"
 	max_integrity = 80
 
@@ -263,6 +585,7 @@
 	name = "big nest"
 	desc = "A big round nest that looks soft"
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "nest_chair_large"
 	max_integrity = 80
 
@@ -720,3 +1043,5 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "goldfish"
+
+
