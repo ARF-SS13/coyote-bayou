@@ -1309,9 +1309,10 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(/datum/firemode/semi_auto/slower
+	init_firemodes = list(/datum/firemode/semi_auto/slow ,
+	/datum/firemode/burst/two/slower
 	)
-	can_scope = FALSE
+	can_scope = TRUE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
@@ -2153,7 +2154,7 @@
 /* * * * * * * * * *
 * P47 Battle rifle
 * + Uncommon version of the M41 BR
-* - Lower damage and caliber 
+* - Lower damage and caliber
 * + Takes 20 and 10 round magazines compared to M41 10 round standard
 * + Less recoil
 * + Takes modifications unlike the M41 BR
