@@ -707,6 +707,10 @@ SUBSYSTEM_DEF(shuttle)
 	return "[pick(town_names)]"
 
 /datum/controller/subsystem/shuttle/proc/get_train_name()
+	if(prob(3))
+		if(prob(10))
+			return "Dingus Express"
+		return "Dingo Express"
 	var/first_part = ""
 	var/second_part = ""
 	var/express_synonym = ""
