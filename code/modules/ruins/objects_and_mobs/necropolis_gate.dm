@@ -103,10 +103,11 @@
 		return
 	if(autoclose == FALSE)
 		autoclose = 5 SECONDS
+		to_chat(user, span_alert("The door glows where your hand makes contact. It will now keep out outsiders."))
 	else
 		autoclose = FALSE
+		to_chat(user, span_alert("The door glows where your hand makes contact. It will now welcome all."))
 	TOGGLE_VAR(ashwalker_only)
-	to_chat(user, span_alert("The door glows where your hand makes contact. It will now keep out outsiders."))
 
 /obj/structure/necropolis_gate/proc/toggle_the_gate(mob/user, legion_damaged)
 	if(changing_openness)
