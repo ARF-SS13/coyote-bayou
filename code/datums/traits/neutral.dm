@@ -687,3 +687,89 @@
 	value = 0
 	mob_trait = TRAIT_ADV_HEALER
 
+/datum/quirk/canine
+	name = "Canine Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the canine language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the canine")
+	lose_text = span_notice("You've forgotten how to speak canine..")
+
+
+/datum/quirk/canine/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/canine)
+
+/datum/quirk/canine/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/canine)
+
+/datum/quirk/squirrel
+	name = "Squirrel Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the squirrel language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the squirrel")
+	lose_text = span_notice("You've forgotten how to speak squirrel..")
+
+
+/datum/quirk/squirrel/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/squirrel)
+
+/datum/quirk/squirrel/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/squirrel)
+
+/datum/quirk/sergal
+	name = "Sergal Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the sergal language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the sergal")
+	lose_text = span_notice("You've forgotten how to speak sergal..")
+
+
+/datum/quirk/sergal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/sergal)
+
+/datum/quirk/sergal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/sergal)
+
+/datum/quirk/mouse
+	name = "Mouse Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the mouse language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the mouse")
+	lose_text = span_notice("You've forgotten how to speak mouse..")
+
+
+/datum/quirk/mouse/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/mouse)
+
+/datum/quirk/mouse/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/mouse)
+
+/datum/quirk/birdsong
+	name = "Birdsong Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the bird language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the bird")
+	lose_text = span_notice("You've forgotten how to speak bird..")
+
+
+/datum/quirk/bird/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/bird)
+
+/datum/quirk/bird/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/bird)
+
+
