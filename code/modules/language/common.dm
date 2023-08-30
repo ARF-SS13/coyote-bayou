@@ -391,6 +391,5 @@
 	name = LANGUAGE_BIRDSONG
 	desc = "A language primarily spoken by birds"
 	speech_verb = "chirps"
-	colour = "birdsongc"
 	key = "G"
 	syllables = list ("cheep", "peep", "tweet")
