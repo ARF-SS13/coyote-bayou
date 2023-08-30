@@ -4832,6 +4832,23 @@
 	dir = 16
 	},
 /area/f13/building/hospital)
+"esX" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14;
+	pixel_y = 0
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building)
 "esZ" = (
 /obj/machinery/processor,
 /obj/effect/gibspawner/generic/animal,
@@ -9661,6 +9678,15 @@
 "isp" = (
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic)
+"itd" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "itg" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -20282,6 +20308,29 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building/mall)
+"rGh" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14;
+	pixel_y = 0
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14;
+	pixel_y = 0
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building)
 "rGU" = (
 /obj/structure/curtain,
 /obj/item/shard{
@@ -27185,6 +27234,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"yeY" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "yfr" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/spray/plantbgone{
@@ -33398,8 +33455,8 @@ xXR
 aUi
 tUY
 lRP
-vRx
-vRx
+tUY
+itd
 vRx
 lIp
 sEJ
@@ -34405,10 +34462,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+mRK
+yeY
+yeY
+dmX
 sqS
 fdQ
 xTy
@@ -34661,12 +34718,12 @@ oez
 oez
 oez
 oez
-hOH
-hOH
-bmB
-bmB
-hOH
-pEa
+rGh
+esX
+mNn
+mNn
+esX
+esX
 kCD
 xTy
 xTy
@@ -34918,12 +34975,12 @@ oez
 oez
 oez
 mRK
-hOH
-hOH
+esX
+esX
 mNn
 mNn
-hOH
-pEa
+mNn
+esX
 kCD
 xTy
 xTy
@@ -35180,7 +35237,7 @@ knV
 mNn
 mNn
 mNn
-bmB
+mNn
 dYg
 xTy
 xTy
@@ -35437,7 +35494,7 @@ mNn
 mNn
 mNn
 mNn
-bmB
+mNn
 dYg
 kCD
 anc
@@ -35451,8 +35508,8 @@ tmU
 qSl
 qSl
 mha
-tmU
-tmU
+tUY
+tUY
 osH
 xyP
 xyP
@@ -35688,13 +35745,13 @@ oez
 oez
 oez
 oez
-afb
-hOH
+oIp
+mNn
 tPg
 eJT
 mNn
-hOH
-pEa
+mNn
+esX
 wDF
 kCD
 kCD
@@ -35945,13 +36002,13 @@ oez
 oez
 oez
 oez
-oez
-hOH
-hOH
+afb
+esX
+esX
 mNn
 mNn
-hOH
-pEa
+esX
+esX
 vGd
 vGd
 vGd

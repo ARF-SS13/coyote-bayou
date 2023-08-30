@@ -89,6 +89,12 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"aS" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "aU" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
@@ -460,6 +466,23 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"dV" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "ea" = (
 /obj/structure/bonfire/prelit,
 /obj/structure/spacevine,
@@ -599,6 +622,11 @@
 /obj/item/clothing/gloves/color/red/insulated,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"fn" = (
+/obj/item/binoculars,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "fo" = (
 /obj/structure/fence{
 	icon_state = "end";
@@ -665,6 +693,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"fC" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "fG" = (
 /obj/structure/mopbucket,
 /obj/item/mop,
@@ -994,6 +1029,23 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/f13/building)
+"iy" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "iz" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -1385,6 +1437,14 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"mJ" = (
+/obj/structure/flora/tree/jungle{
+	color = "#999999"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "mM" = (
 /obj/machinery/light{
 	dir = 4
@@ -1615,11 +1675,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "oj" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
+/turf/open/floor/grass{
+	color = "#444444"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
+/area/f13/wasteland)
 "on" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 4
@@ -1844,6 +1903,45 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"qm" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"qn" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"qq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "qt" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -1963,6 +2061,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"rz" = (
+/obj/structure/flora/ausbushes/brflowers{
+	light_power = 3;
+	light_color = "#008080";
+	light_range = 2
+	},
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/wasteland)
 "rC" = (
@@ -2390,6 +2498,30 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
+/area/f13/wasteland)
+"vt" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
 "vw" = (
 /obj/structure/wreck/trash/machinepiletwo,
@@ -3531,6 +3663,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"Gf" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "Gi" = (
 /obj/structure/sign/departments/examroom{
 	pixel_x = -32
@@ -3607,6 +3745,13 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"GL" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "GN" = (
 /obj/item/stock_parts/cell/super/empty,
 /obj/effect/decal/cleanable/blood,
@@ -4516,6 +4661,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"OR" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "OX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/bunker,
@@ -4587,6 +4738,44 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
+"PH" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "PL" = (
 /obj/structure/sign/departments/restroom{
 	pixel_x = 32
@@ -4738,6 +4927,30 @@
 /obj/item/card/highbounty,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"Rq" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Rs" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Razzleberry Ramona"
@@ -4962,6 +5175,14 @@
 	icon_state = "trimline_corner_fill"
 	},
 /turf/open/floor/wood_wide,
+/area/f13/wasteland)
+"SU" = (
+/obj/structure/flora/tree/jungle/small{
+	color = "#999999"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
 /area/f13/wasteland)
 "Ta" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5271,6 +5492,37 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
+"Vx" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 2;
+	pixel_x = 17
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "VC" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbroken"
@@ -5572,6 +5824,13 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"Yw" = (
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Yy" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -5610,6 +5869,23 @@
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
+	},
+/area/f13/wasteland)
+"YV" = (
+/obj/structure/stone_tile/surrounding/burnt,
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/wasteland)
 "Za" = (
@@ -7836,8 +8112,8 @@ hm
 hm
 hm
 hm
-Ec
-Ec
+iy
+qn
 Ec
 hm
 hm
@@ -8090,13 +8366,13 @@ hm
 hm
 hm
 hm
-Ec
+iy
 Ec
 hm
 hm
-Ec
-Ec
-Ec
+PH
+Vx
+vt
 Ec
 hm
 hm
@@ -8601,7 +8877,7 @@ hm
 hm
 hm
 hm
-Ec
+Rq
 hm
 hm
 Ec
@@ -8858,9 +9134,9 @@ hm
 hm
 hm
 hm
-Ec
+Rq
 hm
-Ec
+dV
 hm
 Jc
 vq
@@ -8869,7 +9145,7 @@ tx
 iz
 uv
 hm
-Ec
+dV
 rm
 rm
 rm
@@ -9115,7 +9391,7 @@ hm
 hm
 hm
 Ec
-Ec
+dV
 hm
 hm
 hm
@@ -9371,7 +9647,7 @@ SK
 hm
 hm
 hm
-Ec
+Rq
 hm
 hm
 hm
@@ -9628,7 +9904,7 @@ SK
 hm
 hm
 hm
-Ec
+dV
 hm
 hm
 hm
@@ -9639,7 +9915,7 @@ rm
 rm
 rm
 ml
-Ec
+iy
 Ec
 rm
 rm
@@ -9889,7 +10165,7 @@ hm
 hm
 hm
 hm
-Ec
+dV
 Jc
 RK
 xX
@@ -9897,7 +10173,7 @@ Oa
 Vi
 uv
 hm
-Ec
+dV
 hm
 hm
 hm
@@ -10146,7 +10422,7 @@ Ec
 hm
 hm
 Ec
-Ec
+dV
 hX
 Jc
 YO
@@ -10403,8 +10679,8 @@ hm
 hm
 hm
 hm
-Ec
-Ec
+Rq
+Rq
 Ec
 hm
 hm
@@ -10662,12 +10938,12 @@ hm
 hm
 hm
 hm
-Ec
-Ec
+Rq
+iy
 Ec
 hm
 hm
-Ec
+dV
 hm
 hm
 hm
@@ -11174,8 +11450,8 @@ hm
 hm
 hm
 hm
+vt
 Ec
-Ec
 hm
 hm
 hm
@@ -11198,17 +11474,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+LV
+EU
+EU
+EU
+EU
+EU
+EU
+EU
+EU
+EU
+Ow
 hm
 hm
 hm
@@ -11431,6 +11707,7 @@ hm
 hm
 hm
 hm
+qm
 hm
 hm
 hm
@@ -11454,18 +11731,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+OR
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+rK
 hm
 hm
 hm
@@ -11712,17 +11988,17 @@ hm
 hm
 hm
 hm
+NC
+oj
+oj
 hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+oj
+YV
+oj
+Gf
+mJ
+oj
+rK
 hm
 hm
 hm
@@ -11969,17 +12245,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+mJ
+OR
+oj
+rz
+oj
+Gf
+Gf
+OR
+rK
 hm
 hm
 hm
@@ -12226,17 +12502,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+oj
+Gf
+aS
+oj
+oj
+SU
+GL
+OR
+rK
 hm
 hm
 hm
@@ -12483,17 +12759,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+YV
+oj
+Gf
+Gf
+oj
+oj
+YV
+oj
+rK
 hm
 hm
 hm
@@ -12740,17 +13016,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+oj
+SU
+OR
+Gf
+Gf
+oj
+oj
+oj
+rK
 hm
 hm
 hm
@@ -12978,12 +13254,12 @@ hm
 hm
 hm
 NC
-cP
+al
 Kz
+iE
+iE
 Kz
-Kz
-Kz
-cP
+al
 rK
 hm
 hm
@@ -12997,17 +13273,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+oj
+rz
+oj
+oj
+oj
+rz
+Gf
+Gf
+rK
 hm
 hm
 hm
@@ -13235,11 +13511,11 @@ hm
 hm
 hm
 NC
-li
 Kz
 Kz
-Kz
-Kz
+iE
+qq
+qq
 Kz
 rK
 hm
@@ -13254,17 +13530,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+GL
+fC
+oj
+YV
+oj
+mJ
+Gf
+oj
+rK
 hm
 hm
 hm
@@ -13492,11 +13768,11 @@ hm
 hm
 hm
 NC
-oj
+Kz
 Kj
 Kz
 Kz
-Kz
+qq
 Kz
 rK
 hm
@@ -13511,17 +13787,17 @@ hm
 hm
 hm
 hm
-hm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-rm
-hm
+NC
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+rK
 hm
 hm
 hm
@@ -13749,11 +14025,11 @@ hm
 hm
 hm
 NC
-li
-jT
 Kz
-Kz
-Kz
+fn
+iE
+iE
+iE
 Kz
 rK
 hm
@@ -13768,17 +14044,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Yw
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+zD
+OI
 hm
 hm
 hm
@@ -14006,11 +14282,11 @@ hm
 hm
 hm
 NC
-OM
 Kz
 iE
+iE
 Kz
-Kz
+iE
 Kz
 rK
 hm
@@ -14264,9 +14540,9 @@ hm
 hm
 NC
 al
-OM
-Kz
-Kz
+iE
+iE
+iE
 Kz
 al
 rK
