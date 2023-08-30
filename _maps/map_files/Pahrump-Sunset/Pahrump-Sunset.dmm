@@ -54754,6 +54754,24 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"jhE" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/abandoned)
 "jhF" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -59463,6 +59481,21 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"koT" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/abandoned)
 "koX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/trimline/neutral/line{
@@ -60718,6 +60751,13 @@
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building/abandoned)
@@ -83548,6 +83588,34 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
+"pMz" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/abandoned)
 "pMA" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -108649,6 +108717,19 @@
 	icon_state = "smoke";
 	name = "steam"
 	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building/abandoned)
 "vKS" = (
@@ -115005,6 +115086,34 @@
 	color = "#775555"
 	},
 /area/f13/building)
+"xiS" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/abandoned)
 "xiU" = (
 /obj/structure/flora/grass/coyote/twentyone,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -129196,8 +129305,8 @@ hMg
 dJE
 bpl
 kFC
-vKM
-vKM
+pMz
+xiS
 vRK
 oAi
 ceJ
@@ -129452,9 +129561,9 @@ bhx
 joj
 kQF
 jcv
-vKM
-vKM
-vKM
+koT
+pMz
+pMz
 vRK
 vRK
 rkl
@@ -129711,7 +129820,7 @@ kQF
 jcv
 tdV
 vKM
-tdV
+jhE
 vRK
 pKW
 dGz
