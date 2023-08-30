@@ -251,6 +251,7 @@
 #define LANGUAGE_SERGAL "Sergal Language"
 #define LANGUAGE_MOUSE "Mouse Language"
 #define LANGUAGE_BIRDSONG "Birdsong Language"
+#define LANGUAGE_RABBIT "Rabbit Language"
 
 /datum/language/pokemon
 	name = LANGUAGE_POKEMON
