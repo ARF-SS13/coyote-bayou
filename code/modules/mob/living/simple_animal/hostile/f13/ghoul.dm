@@ -116,7 +116,7 @@
 	can_ghost_into = TRUE
 	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
-	fights_other_mobs = FALSE // peaceful giants that HATE PEOPLE!!!!
+	ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
 	
 	variation_list = list(
 		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
