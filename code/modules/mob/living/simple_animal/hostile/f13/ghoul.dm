@@ -493,11 +493,11 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
+/*/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		try_to_ghoul_zombie_infect(H)
+		try_to_ghoul_zombie_infect(H)*/
 
 /mob/living/simple_animal/hostile/ghoul/zombie/reaver
 	name = "ravenous feral ghoul reaver"
