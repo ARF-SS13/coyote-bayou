@@ -252,6 +252,7 @@
 #define LANGUAGE_MOUSE "Mouse Language"
 #define LANGUAGE_BIRDSONG "Birdsong Language"
 #define LANGUAGE_RABBIT "Rabbit Language"
+#define LANGUAGE_INSECT "Insect Language"
 
 /datum/language/pokemon
 	name = LANGUAGE_POKEMON
@@ -560,3 +561,14 @@
 "grrawle",
 "grrwawl",
 "growl",)
+
+/datum/language/bug
+	name = LANGUAGE_INSECT
+	desc = "A jarring and clicky language developed and used by most bugs, it is designed for use with mouthparts and as a result has become a common language for various arthropod species."
+	speech_verb = "clicks"
+	ask_verb = "chitters"
+	exclaim_verb = "rasps"
+	key = "X"
+	syllables = list("vaur","uyek","uyit","avek","sc'theth","k'ztak","teth","wre'ge","lii","dra'","zo'","ra'","kax'","zz","vh","ik","ak",
+    "uhk","zir","sc'orth","sc'er","thc'yek","th'zirk","th'esk","k'ayek","ka'mil","sc'","ik'yir","yol","kig","k'zit","'","'","zrk","krg","isk'yet","na'k",
+    "sc'azz","th'sc","nil","n'ahk","sc'yeth","aur'sk","iy'it","azzg","a'","i'","o'","u'","a","i","o","u","zz","kr","ak","nrk","tzzk","bz","xic'","k'lax'","histh")
