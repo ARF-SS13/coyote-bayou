@@ -78,7 +78,7 @@
 	if(iscyborg(user))
 		return
 
-	if(!HAS_TRAIT(user, TRAIT_DNAWHIZ) && !HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+	if(!HAS_TRAIT(user, TRAIT_DNAWHIZ) || !HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
 		if(istype(I, /obj/item/seeds))
 			if(seed)
 				to_chat(user, span_warning("A sample is already loaded into the machine!"))
