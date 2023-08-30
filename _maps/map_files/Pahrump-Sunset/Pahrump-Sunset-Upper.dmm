@@ -240,6 +240,21 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
+"afR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 9
+	},
+/obj/structure/flora/ausbushes/ywflowers{
+	light_power = 3;
+	light_range = 2;
+	light_color = "#EBAF4C"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "agA" = (
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/effect/decal/cleanable/dirt,
@@ -4499,6 +4514,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"ebM" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/structure/flora/ausbushes/ywflowers{
+	light_power = 3;
+	light_range = 2;
+	light_color = "#EBAF4C"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "eco" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -6033,6 +6062,12 @@
 	color = "#AA5555"
 	},
 /area/f13/wasteland)
+"ftX" = (
+/obj/structure/spacevine,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/wasteland)
 "fuX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7114,6 +7149,18 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
+"gsp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "gsB" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8118,6 +8165,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"hja" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 5
+	},
+/obj/structure/flora/ausbushes/ywflowers{
+	light_power = 3;
+	light_range = 2;
+	light_color = "#EBAF4C"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "hjt" = (
 /obj/effect/spawner/lootdrop/f13/rare,
 /mob/living/simple_animal/hostile/ghoul/glowing/strong{
@@ -9576,6 +9637,11 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
+/obj/structure/fluff/drake_statue{
+	layer = 5;
+	pixel_y = 33;
+	color = "#444466"
+	},
 /turf/open/floor/grass{
 	color = "#444444"
 	},
@@ -9612,6 +9678,19 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"iuc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "iuq" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/stone_tile/surrounding_tile{
@@ -12266,6 +12345,20 @@
 	color = "#e4e4e4"
 	},
 /area/f13/building/mall)
+"kEv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/structure/fluff/drake_statue{
+	layer = 5;
+	pixel_y = 33;
+	color = "#444466"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "kEx" = (
 /obj/item/key/security,
 /obj/vehicle/ridden/secway,
@@ -12540,8 +12633,16 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/obj/structure/stone_tile/block,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/wasteland)
 "kUk" = (
@@ -13732,6 +13833,16 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"lXm" = (
+/obj/structure/flora/ausbushes/ppflowers{
+	light_power = 3;
+	light_color = "#CE5DAE";
+	light_range = 2
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "lXn" = (
 /obj/machinery/smoke_machine{
 	name = "generator mechanism"
@@ -14060,6 +14171,19 @@
 "mlh" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/caves)
+"mlu" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/obj/structure/flora/ausbushes/ppflowers{
+	light_power = 3;
+	light_color = "#CE5DAE";
+	light_range = 2
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "mmH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -16326,6 +16450,19 @@
 	icon_state = "common-broken5"
 	},
 /area/f13/building/abandoned)
+"okc" = (
+/obj/structure/spacevine{
+	color = "#225522"
+	},
+/obj/structure/flora/ausbushes/brflowers{
+	light_power = 3;
+	light_color = "#008080";
+	light_range = 2
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building/tribal)
 "okt" = (
 /obj/structure/flora/grass/coyote/nine,
 /turf/open/indestructible/ground/outside/dirt,
@@ -16676,16 +16813,20 @@
 	},
 /area/f13/building)
 "oAd" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
-	},
 /obj/structure/table/reinforced{
 	color = "#3c2c21";
-	max_integrity = 1000000
+	max_integrity = 1000000;
+	alpha = 0;
+	light_range = 3;
+	light_color = "#334477"
 	},
 /obj/structure/bonfire/prelit{
-	pixel_y = 12
+	pixel_y = 5;
+	name = "the speakers blaze"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -17182,6 +17323,16 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"oWH" = (
+/obj/structure/flora/ausbushes/brflowers{
+	light_power = 3;
+	light_color = "#008080";
+	light_range = 2
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "oXi" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18467,6 +18618,13 @@
 	dir = 8
 	},
 /area/f13/building/hospital)
+"qkT" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/wasteland)
 "qlH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
@@ -18549,6 +18707,14 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"qqi" = (
+/obj/structure/statue/bone/rib{
+	dir = 1
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "qqQ" = (
 /obj/structure/spacevine,
 /turf/open/transparent/openspace,
@@ -22941,6 +23107,17 @@
 	name = "temple wall"
 	},
 /area/f13/building/tribal)
+"udH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/obj/structure/statue/bone/rib,
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "udL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
@@ -23902,6 +24079,19 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic)
+"vdG" = (
+/obj/structure/flora/ausbushes/brflowers{
+	light_power = 3;
+	light_color = "#008080";
+	light_range = 2
+	},
+/obj/structure/spacevine{
+	color = "#225522"
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building/tribal)
 "vdI" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/black{
@@ -23979,6 +24169,16 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"vgR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "vgU" = (
 /obj/structure/fluff/railing,
 /obj/structure/table/reinforced{
@@ -24516,6 +24716,16 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"vIo" = (
+/obj/structure/flora/ausbushes/ywflowers{
+	light_power = 3;
+	light_range = 2;
+	light_color = "#EBAF4C"
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/wasteland)
 "vIy" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
@@ -27042,11 +27252,13 @@
 /area/f13/wasteland)
 "yhg" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 8
+	},
+/obj/item/stack/sheet/cloth/thirty{
+	name = "signal cloth";
+	color = "#995555";
+	desc = "A pile of cloth set aside specifically for sending smoke signals.  Click it to the fire to open the prompt.  This works for any cloth, not just this pile!"
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -29060,7 +29272,7 @@ oez
 oez
 bgh
 aUi
-bYj
+lXm
 aUi
 kSn
 rlI
@@ -29323,13 +29535,13 @@ yhb
 rvl
 mjO
 vAH
-sOp
+hja
 bYj
 mWj
 bCL
-tUY
+vdG
 mzi
-bCL
+okc
 tUY
 bCL
 mWj
@@ -29567,8 +29779,8 @@ oez
 okY
 okY
 okY
-okY
-okY
+ftX
+ftX
 okY
 okY
 oez
@@ -29821,10 +30033,10 @@ oez
 oez
 oez
 oez
-okY
+ftX
+vIo
 bYj
-bYj
-bYj
+oWH
 bYj
 bYj
 okY
@@ -30082,8 +30294,8 @@ okY
 nDp
 okY
 nDp
-okY
-bYj
+ftX
+lXm
 okY
 okY
 iqB
@@ -30339,8 +30551,8 @@ okY
 xht
 xht
 okY
-okY
-afN
+ftX
+kEv
 afN
 afN
 mvB
@@ -30610,7 +30822,7 @@ eIt
 biJ
 wcK
 xzR
-mjO
+kiR
 veV
 iHb
 ltE
@@ -30863,14 +31075,14 @@ kHW
 nPQ
 iqB
 biJ
-ieP
-eWb
+wTd
+juI
 axS
 yhg
-gHi
-iHb
+iuc
+vgR
 pyw
-tiD
+afR
 cuY
 nRH
 ieP
@@ -31119,13 +31331,13 @@ jCJ
 mvB
 xXK
 iqB
-wTd
-juI
+qqi
+bYj
 xXR
-afN
+gsp
 oAd
 kTS
-gCx
+ygZ
 vAH
 mJq
 vHu
@@ -31367,7 +31579,7 @@ okY
 xht
 xht
 okY
-okY
+ftX
 irb
 ygZ
 iHb
@@ -31380,8 +31592,8 @@ mjO
 mjO
 mjO
 mjO
+iKS
 mjO
-gCx
 gCx
 gCx
 iKS
@@ -31624,8 +31836,8 @@ okY
 gEk
 okY
 gEk
-okY
-yhb
+ftX
+mlu
 ycl
 uIx
 uIx
@@ -31877,10 +32089,10 @@ oez
 oez
 oez
 oez
-okY
+ftX
+vIo
 bYj
-bYj
-bYj
+oWH
 bYj
 bYj
 okY
@@ -31890,11 +32102,11 @@ ieP
 vWX
 jXI
 cGS
-cGS
+udH
 ieP
 cGS
 cGS
-ieP
+ebM
 yca
 gHi
 cBb
@@ -32134,8 +32346,8 @@ oez
 oez
 oez
 oez
-okY
-okY
+qkT
+ftX
 okY
 okY
 okY
@@ -32400,7 +32612,7 @@ oez
 oez
 okY
 bYj
-bYj
+vIo
 bYj
 ffs
 aUi
@@ -34467,7 +34679,7 @@ daP
 cVB
 bYj
 bUm
-bYj
+lXm
 bYj
 bmt
 vRx
