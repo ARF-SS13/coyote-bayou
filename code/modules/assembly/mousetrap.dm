@@ -26,7 +26,7 @@
 		if(!armed)
 			if(ishuman(usr))
 				var/mob/living/carbon/human/user = usr
-				if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+				if((HAS_TRAIT(user, TRAIT_DUMB) || CLUMSY_CHECK(user)) && prob(50))
 					to_chat(user, span_warning("Your hand slips, setting off the trigger!"))
 					pulse(FALSE)
 		update_icon()
@@ -78,7 +78,7 @@
 	if(!armed)
 		to_chat(user, span_notice("You arm [src]."))
 	else
-		if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+		if((HAS_TRAIT(user, TRAIT_DUMB) || CLUMSY_CHECK(user)) && prob(50))
 			var/which_hand = BODY_ZONE_PRECISE_L_HAND
 			if(!(user.active_hand_index % 2))
 				which_hand = BODY_ZONE_PRECISE_R_HAND
@@ -94,7 +94,7 @@
 
 /obj/item/assembly/mousetrap/on_attack_hand(mob/living/carbon/human/user)
 	if(armed)
-		if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+		if((HAS_TRAIT(user, TRAIT_DUMB) || CLUMSY_CHECK(user)) && prob(50))
 			var/which_hand = BODY_ZONE_PRECISE_L_HAND
 			if(!(user.active_hand_index % 2))
 				which_hand = BODY_ZONE_PRECISE_R_HAND

@@ -822,7 +822,7 @@
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
 
 /obj/item/melee/transforming/cleaving_saw/clumsy_transform_effect(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(CLUMSY_CHECK(user) && prob(50))
 		to_chat(user, span_warning("You accidentally cut yourself with [src], like a doofus!"))
 		user.take_bodypart_damage(10)
 

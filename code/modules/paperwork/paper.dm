@@ -152,7 +152,7 @@
 		return
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
-		if(HAS_TRAIT(H, TRAIT_CLUMSY) && prob(25))
+		if(CLUMSY_CHECK(H) && prob(25))
 			to_chat(H, span_warning("You cut yourself on the paper! Ahhhh! Ahhhhh!"))
 			H.damageoverlaytemp = 9001
 			H.update_damage_hud()
@@ -212,7 +212,7 @@
 	if(!ignition_message)
 		return
 	. = TRUE
-	if(!bypass_clumsy && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10) && Adjacent(user))
+	if(!bypass_clumsy && CLUMSY_CHECK(user) && prob(10) && Adjacent(user))
 		user.visible_message(span_warning("[user] accidentally ignites [user.p_them()]self!"), \
 							span_userdanger("You miss [src] and accidentally light yourself on fire!"))
 		if(user.is_holding(I)) //checking if they're holding it in case TK is involved

@@ -389,7 +389,7 @@ obj/item/shield/riot/bullet_proof
 	return ..()
 
 /obj/item/shield/energy/attack_self(mob/living/carbon/human/user)
-	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(clumsy_check && CLUMSY_CHECK(user) && prob(50))
 		to_chat(user, span_userdanger("You beat yourself in the head with [src]!"))
 		user.take_bodypart_damage(5)
 	active = !active

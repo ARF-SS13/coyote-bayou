@@ -321,7 +321,7 @@
 		defense_mod -= 3
 	else if(target.drunkenness > 30)
 		defense_mod -= 1
-	if(HAS_TRAIT(target, TRAIT_CLUMSY))
+	if(CLUMSY_CHECK(target))
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_FAT)) // chonkers are harder to knock over
 		defense_mod += 1
@@ -358,7 +358,7 @@
 		attack_mod += 1
 	else if(sacker.drunkenness > 30) // if you're only a bit drunk though, you're just sloppy
 		attack_mod -= 1
-	if(HAS_TRAIT(sacker, TRAIT_CLUMSY))
+	if(CLUMSY_CHECK(sacker))
 		attack_mod -= 2
 	if(HAS_TRAIT(sacker, TRAIT_DWARF))
 		attack_mod -= 2
@@ -422,7 +422,7 @@
 		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/)))
 			oopsie_mod -= 6
 
-	if(HAS_TRAIT(user, TRAIT_CLUMSY))
+	if(CLUMSY_CHECK(user))
 		oopsie_mod += 6 //honk!
 
 	var/oopsie = rand(danger_zone, 100)

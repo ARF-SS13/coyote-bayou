@@ -72,6 +72,8 @@
 		: FALSE)
 #define HAS_TRAIT_NOT_FROM(target, trait, source) (target.status_traits ? (target.status_traits[trait] ? (length(target.status_traits[trait] - source) > 0) : FALSE) : FALSE)
 
+#define CHECK_CLUMSY(mob) (CLUMSY_CHECK(mob) && !HAS_TRAIT(mob, TRAIT_ANTICLUMSY))
+
 //mob traits
 /// Forces the user to stay unconscious.
 #define TRAIT_ADV_SEEKER	"adventure_seeker"
@@ -97,6 +99,7 @@
 #define TRAIT_HUSK				"husk"
 #define TRAIT_NOCLONE			"noclone"
 #define TRAIT_CLUMSY			"clumsy"
+#define TRAIT_ANTI_CLUMSY		"no_clumsy"
 #define TRAIT_CHUNKYFINGERS		"chunkyfingers" //means that you can't use weapons with normal trigger guards.
 #define TRAIT_DUMB				"dumb"
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE

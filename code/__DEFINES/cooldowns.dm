@@ -77,7 +77,7 @@
 	var/last_tick = 0
 	var/progress = 0
 	var/target_time = 0
-	var/max_delta = 0
+	var/max_delta = 1 SECONDS
 	var/complete = FALSE
 
 /datum/counter_holder/New(target_time, max_delta)

@@ -691,7 +691,7 @@
 
 	var/modifier = 50
 
-	if(HAS_TRAIT(src, TRAIT_CLUMSY))
+	if(CLUMSY_CHECK(src))
 		modifier -= 40 //Clumsy people are more likely to hit themselves -Honk!
 
 	//CIT CHANGES START HERE

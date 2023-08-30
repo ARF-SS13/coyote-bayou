@@ -23,21 +23,33 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/spawn_chance = 0.5 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
-	var/list/buffs_by_rarity = list(
-		ART_RARITY_COMMON = 1,
-		ART_RARITY_UNCOMMON = 2,
-		ART_RARITY_RARE = 3,
-	)
-	var/list/max_effects_by_rarity = list(
-		ART_RARITY_COMMON = 2,
-		ART_RARITY_UNCOMMON = 4,
-		ART_RARITY_RARE = 6,
-	)
-	var/list/min_effects_by_rarity = list(
-		ART_RARITY_COMMON = 1,
-		ART_RARITY_UNCOMMON = 2,
-		ART_RARITY_RARE = 4,
-	)
+	// var/list/buffs_by_rarity = list(
+	// 	ART_RARITY_COMMON = list(
+	// 		ART_BUFF_GOOD = 90,
+	// 		ART_BUFF_NORMAL = 50,
+	// 		ART_BUFFS_BASE = 1
+	// 	),
+	// 	ART_RARITY_UNCOMMON = list(
+	// 		ART_BUFF_GOOD = 65,
+	// 		ART_BUFF_NORMAL = 35,
+	// 		ART_BUFFS_BASE = 2
+	// 	),
+	// 	ART_RARITY_RARE = list(
+	// 		ART_BUFF_GOOD = 35,
+	// 		ART_BUFF_NORMAL = 10,
+	// 		ART_BUFFS_BASE = 3
+	// 	),
+	// )
+	// var/list/max_effects_by_rarity = list(
+	// 	ART_RARITY_COMMON = 2,
+	// 	ART_RARITY_UNCOMMON = 4,
+	// 	ART_RARITY_RARE = 6,
+	// )
+	// var/list/min_effects_by_rarity = list(
+	// 	ART_RARITY_COMMON = 1,
+	// 	ART_RARITY_UNCOMMON = 2,
+	// 	ART_RARITY_RARE = 4,
+	// )
 	var/list/max_prefixes_by_rarity = list(
 		ART_RARITY_COMMON = 1,
 		ART_RARITY_UNCOMMON = 2,
@@ -180,10 +192,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/radiation_target_good_uncommon_min = 300
 	var/radiation_target_good_uncommon_max = 400
 	var/radiation_target_good_rare_min = 0
-	var/radiation_target_good_rare_max = 400
-	var/radiation_rate_common_min = 10
-	var/radiation_rate_common_max = 15
-	var/radiation_rate_uncommon_min = 15
+	var/radiation_target_good_rare_max = 0
+	var/radiation_rate_common_min = 5
+	var/radiation_rate_common_max = 7
+	var/radiation_rate_uncommon_min = 10
 	var/radiation_rate_uncommon_max = 20
 	var/radiation_rate_rare_min = 5
 	var/radiation_rate_rare_max = 100
@@ -199,7 +211,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/health_good_common_min = 5
 	var/health_good_uncommon_min = 5
 	var/health_good_uncommon_max = 15
-	var/health_good_rare_min = 5
+	var/health_good_rare_min = 20
 	var/health_good_rare_max = 75
 	var/health_discrete = 1
 
@@ -331,6 +343,70 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/heal_max_types_common = 1
 	var/heal_max_types_uncommon = 2
 	var/heal_max_types_rare = 3
+
+	var/dizzy_adjust_good_common_min      
+	var/dizzy_adjust_good_common_max      
+	var/dizzy_adjust_good_uncommon_min    
+	var/dizzy_adjust_good_uncommon_max    
+	var/dizzy_adjust_good_rare_min        
+	var/dizzy_adjust_good_rare_max        
+
+	var/jitter_adjust_good_common_min     
+	var/jitter_adjust_good_common_max     
+	var/jitter_adjust_good_uncommon_min   
+	var/jitter_adjust_good_uncommon_max   
+	var/jitter_adjust_good_rare_min       
+	var/jitter_adjust_good_rare_max       
+
+	var/misstep_adjust_good_common_min    
+	var/misstep_adjust_good_common_max    
+	var/misstep_adjust_good_uncommon_min  
+	var/misstep_adjust_good_uncommon_max  
+	var/misstep_adjust_good_rare_min      
+	var/misstep_adjust_good_rare_max      
+	
+	var/dizzy_adjust_bad_common_min       
+	var/dizzy_adjust_bad_common_max       
+	var/dizzy_max_bad_common_max          
+	var/dizzy_max_bad_common_min          
+	var/dizzy_adjust_bad_uncommon_min     
+	var/dizzy_adjust_bad_uncommon_max     
+	var/dizzy_max_bad_uncommon_min        
+	var/dizzy_max_bad_uncommon_max        
+
+	var/jitter_adjust_bad_common_min      
+	var/jitter_adjust_bad_common_max      
+	var/jitter_max_bad_common_min         
+	var/jitter_max_bad_common_max         
+	var/jitter_adjust_bad_uncommon_min    
+	var/jitter_adjust_bad_uncommon_max    
+	var/jitter_max_bad_uncommon_min       
+	var/jitter_max_bad_uncommon_max       
+	var/jitter_adjust_bad_rare_min        
+	var/jitter_adjust_bad_rare_max        
+	var/jitter_max_bad_rare_min           
+	var/jitter_max_bad_rare_max           
+
+	var/misstep_adjust_bad_common_min     
+	var/misstep_adjust_bad_common_max     
+	var/misstep_max_bad_common_min        
+	var/misstep_max_bad_common_max        
+	var/misstep_adjust_bad_uncommon_min   
+	var/misstep_adjust_bad_uncommon_max   
+	var/misstep_max_bad_uncommon_min      
+	var/misstep_max_bad_uncommon_max      
+	var/misstep_adjust_bad_rare_min       
+	var/misstep_adjust_bad_rare_max       
+	var/misstep_max_bad_rare_min          
+	var/misstep_max_bad_rare_max          
+
+	var/dizzy_adjust_bad_rare_min         
+	var/dizzy_adjust_bad_rare_max         
+	var/dizzy_max_bad_rare_min            
+	var/dizzy_max_bad_rare_max            
+	var/dizzy_discrete                    1
+	var/jitter_discrete                   1
+	var/misstep_discrete                  1
 
 	var/list/prefixes_speed_good = list()
 	var/list/prefixes_speed_bad = list()
@@ -606,8 +682,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(rarity == ART_RARITY_UNIQUE)
 			uniqueify(thing, overrides)
 			return
-		var/num_buffs = LAZYACCESS(buffs_by_rarity, rarity)
-		roll_effects(rarity, thing, overrides, num_buffs)
+		roll_effects(rarity, thing, overrides)
 	/// now, roll some effects
 	/// check if our item has an artifact component
 	/// and now the actual artifactification!
@@ -618,10 +693,9 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 /datum/controller/subsystem/processing/artifacts/proc/effectify(obj/item/thing, list/parameters)
 	SEND_SIGNAL(thing, COMSIG_ITEM_ARTIFACT_READ_PARAMETERS, parameters)
 
-/datum/controller/subsystem/processing/artifacts/proc/roll_effects(rarity = ART_RARITY_COMMON,  obj/item/thing, list/overrides, buffs = 0)
+/datum/controller/subsystem/processing/artifacts/proc/roll_effects(rarity = ART_RARITY_COMMON,  obj/item/thing, list/overrides)
 	if(!islist(overrides))
 		CRASH("roll_effects() called with non-list overrides!!!!!!!!!!!!!!!!!!!!!!!!")
-	var/number_of_effects = LAZYACCESS(max_effects_by_rarity, rarity)
 	var/list/effect_pool = list()
 	var/list/good_pool = list()
 	var/list/rarity_effects = LAZYACCESS(allowed_effects_by_rarity, rarity)
@@ -635,19 +709,69 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(AE.is_only_harmful)
 			continue
 		LAZYSET(good_pool, AE.kind, AE.chance_weight)
-
-	// var/list/only_effects = overrides & allowed_effects_by_rarity[rarity]
-	for(var/i in 1 to min(number_of_effects, LAZYLEN(effect_pool)))
+	var/list/effects_n_buffs = roll_effect_count(rarity, number_of_effects, effect_pool, good_pool, overrides)
+	var/buffs = LAZYACCESS(effects_n_buffs, 2)
+	for(var/i in 1 to LAZYACCESS(effects_n_buffs, 1))
 		if(!LAZYLEN(effect_pool)) // we... ran out?
 			overrides[ARTMOD_RADIATION] = list() // fuck it, its radioactive
 			break
-		var/rolled_effect = buffs >= 1 ? pickweight(good_pool) : pickweight(effect_pool)
+		var/isbuff = buffs >= 1
+		var/rolled_effect
+		if(isbuff)
+			rolled_effect = pickweight(good_pool)
+		else
+			rolled_effect = pickweight(effect_pool)
 		if(!islist(LAZYACCESS(overrides, rolled_effect)))
 			overrides[rolled_effect] = list()
-		overrides[rolled_effect][ARTVAR_IS_BUFF] = !!buffs
-		buffs = max(buffs - 1, 0)
+		if(isnull(overrides[rolled_effect][ARTVAR_IS_BUFF]))
+			overrides[rolled_effect][ARTVAR_IS_BUFF] = isbuff
+		buffs--
 		effect_pool -= rolled_effect
 		good_pool -= rolled_effect
+
+/datum/controller/subsystem/processing/artifacts/proc/roll_effect_count(rarity, number_of_effects, effect_pool, good_pool, list/overrides)
+	if(overrides[ART_OVERRIDE_EFFECT_NUMBER] && overrides[ART_OVERRIDE_BUFF_NUMBER])
+		return list(overrides[ART_OVERRIDE_EFFECT_NUMBER],overrides[ART_OVERRIDE_BUFF_NUMBER])
+	var/num_effects = 0
+	var/num_buffs = 0
+	var/chance = rand(1,100)
+	switch(rarity)
+		if(ART_RARITY_COMMON)
+			switch(chance)
+				if(-INFINITY to ART_ROLL_BAD_COMMON)
+					num_buffs = 0
+					num_effects = rand(ART_EFFECT_ROLL_MIN_COMMON, ART_EFFECT_ROLL_MAX_COMMON)
+				if(ART_ROLL_BAD_COMMON to ART_ROLL_GOOD_COMMON)
+					num_effects = rand(ART_EFFECT_ROLL_MIN_COMMON, ART_EFFECT_ROLL_MAX_COMMON)
+					num_buffs = round(num_effects * 0.5)
+				if(ART_ROLL_GOOD_COMMON to INFINITY)
+					num_buffs = rand(ART_BUFF_ROLL_MIN_COMMON, ART_BUFF_ROLL_MAX_COMMON)
+					num_effects = num_buffs
+		if(ART_RARITY_UNCOMMON)
+			switch(chance)
+				if(-INFINITY to ART_ROLL_BAD_UNCOMMON)
+					num_buffs = 0
+					num_effects = rand(ART_EFFECT_ROLL_MIN_UNCOMMON, ART_EFFECT_ROLL_MAX_UNCOMMON)
+				if(ART_ROLL_BAD_UNCOMMON to ART_ROLL_GOOD_UNCOMMON)
+					num_effects = rand(ART_EFFECT_ROLL_MIN_UNCOMMON, ART_EFFECT_ROLL_MAX_UNCOMMON)
+					num_buffs = round(num_effects * 0.5)
+				if(ART_ROLL_GOOD_UNCOMMON to INFINITY)
+					num_buffs = rand(ART_BUFF_ROLL_MIN_UNCOMMON, ART_BUFF_ROLL_MAX_UNCOMMON)
+					num_effects = num_buffs
+		if(ART_RARITY_RARE)
+			switch(chance)
+				if(-INFINITY to ART_ROLL_BAD_RARE)
+					num_buffs = 0
+					num_effects = rand(ART_EFFECT_ROLL_MIN_RARE, ART_EFFECT_ROLL_MAX_RARE)
+				if(ART_ROLL_BAD_RARE to ART_ROLL_GOOD_RARE)
+					num_effects = rand(ART_EFFECT_ROLL_MIN_RARE, ART_EFFECT_ROLL_MAX_RARE)
+					num_buffs = round(num_effects * 0.5)
+				if(ART_ROLL_GOOD_RARE to INFINITY)
+					num_buffs = rand(ART_BUFF_ROLL_MIN_RARE, ART_BUFF_ROLL_MAX_RARE)
+					num_effects = num_buffs
+	num_effects = min(num_effects, LAZYLEN(effect_pool))
+	num_buffs = min(num_buffs, LAZYLEN(good_pool), LAZYLEN(effect_pool), num_effects)
+	return list(num_effects, num_buffs)
 
 /datum/controller/subsystem/processing/artifacts/proc/catalogue_artifact(obj/item/thing, list/effectlist, rarity, unique_tag)
 	if(unique_tag)

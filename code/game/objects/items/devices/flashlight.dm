@@ -54,7 +54,7 @@
 	add_fingerprint(user)
 	if(istype(M) && on && (user.zone_selected in list(BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH)))
 
-		if((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))	//too dumb to use flashlight properly
+		if((CLUMSY_CHECK(user) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
 		if(!user.IsAdvancedToolUser())

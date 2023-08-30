@@ -153,7 +153,7 @@
 /obj/item/melee/baton/proc/common_baton_melee(mob/M, mob/living/user, disarming = FALSE)
 	if(iscyborg(M) || !isliving(M))		//can't baton cyborgs
 		return FALSE
-	if(turned_on && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(turned_on && CLUMSY_CHECK(user) && prob(50))
 		clowning_around(user)
 	if(IS_STAMCRIT(user))			//CIT CHANGE - makes it impossible to baton in stamina softcrit
 		to_chat(user, span_danger("You're too exhausted to use [src] properly."))

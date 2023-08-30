@@ -1073,7 +1073,7 @@
 
 //ACCIDENTALLY SHOOT YOURSELF IN THE FACE CODE
 /obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
+	if((CLUMSY_CHECK(user)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
 		user.visible_message(span_warning("[user] somehow manages to shoot [user.p_them()]self in the face!"), span_userdanger("You somehow shoot yourself in the face! How the hell?!"))

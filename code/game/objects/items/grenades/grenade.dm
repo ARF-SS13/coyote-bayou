@@ -60,7 +60,7 @@
 		qdel(src)
 
 /obj/item/grenade/proc/botch_check(mob/living/carbon/human/user)
-	var/clumsy = HAS_TRAIT(user, TRAIT_CLUMSY)
+	var/clumsy = CLUMSY_CHECK(user)
 	if(clumsy)
 		if(clumsy_check == GRENADE_CLUMSY_FUMBLE && prob(50))
 			to_chat(user, span_warning("Huh? How does this thing work?"))

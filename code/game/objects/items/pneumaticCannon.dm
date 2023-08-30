@@ -148,7 +148,7 @@
 	if(tank && !tank.air_contents.remove(gasPerThrow * pressureSetting))
 		to_chat(user, span_warning("\The [src] lets out a weak hiss and doesn't react!"))
 		return
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(75) && clumsyCheck && iscarbon(user))
+	if(CLUMSY_CHECK(user) && prob(75) && clumsyCheck && iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.visible_message(span_warning("[C] loses [C.p_their()] grip on [src], causing it to go off!"), span_userdanger("[src] slips out of your hands and goes off!"))
 		C.dropItemToGround(src, TRUE)

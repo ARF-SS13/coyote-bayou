@@ -844,7 +844,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		return ..()
 	if(istype(W, /obj/item/clothing/mask/cigarette))
 		var/obj/item/clothing/mask/cigarette/cig = W
-		var/clumsy = HAS_TRAIT(user, TRAIT_CLUMSY)
+		var/clumsy = CLUMSY_CHECK(user)
 		if(clumsy)
 			var/which_hand = BODY_ZONE_L_ARM
 			if(!(user.active_hand_index % 2))

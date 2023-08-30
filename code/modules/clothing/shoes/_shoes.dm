@@ -201,7 +201,7 @@
 
 		var/mod_time = lace_time
 		to_chat(user, span_notice("You quietly set to work [tied ? "untying" : "knotting"] [loc]'s [src.name]..."))
-		if(HAS_TRAIT(user, TRAIT_CLUMSY)) // based clowns trained their whole lives for this
+		if(CLUMSY_CHECK(user)) // based clowns trained their whole lives for this
 			mod_time *= 0.75
 
 		if(do_after(user, mod_time, needhand=TRUE, target=our_guy, extra_checks=CALLBACK(src, .proc/still_shoed, our_guy)))

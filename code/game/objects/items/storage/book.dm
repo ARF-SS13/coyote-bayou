@@ -121,7 +121,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 
-	if (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if (CLUMSY_CHECK(user) && prob(50))
 		to_chat(user, span_danger("[src] slips out of your hand and hits your head."))
 		user.take_bodypart_damage(10)
 		user.Unconscious(400)

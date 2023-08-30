@@ -25,7 +25,7 @@
 
 /obj/item/reagent_containers/chem_pack/AltClick(mob/living/user)
 	if(user.canUseTopic(src, BE_CLOSE, NO_DEXTERY) && !sealed)
-		if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50)))
+		if(iscarbon(user) && (CLUMSY_CHECK(user) && prob(50)))
 			to_chat(user, span_warning("Uh... whoops! You accidentally spill the content of the bag onto yourself."))
 			SplashReagents(user)
 			return

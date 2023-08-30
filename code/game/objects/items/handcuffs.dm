@@ -46,7 +46,7 @@
 	if(!istype(C))
 		return
 
-	if(iscarbon(user) && (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50)))
+	if(iscarbon(user) && (CLUMSY_CHECK(user) && prob(50)))
 		to_chat(user, span_warning("Uh... how do those things work?!"))
 		apply_cuffs(user,user)
 		return

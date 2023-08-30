@@ -1,4 +1,3 @@
-#define ART_PROCESS_NEEDS_MOB (1 << 0)
 #define CURSED  -1
 #define UNCURSED 0
 #define BLESSED  1
@@ -110,6 +109,31 @@
 #define ARTMOD_TIMER "ARTMOD_TIMER"
 #define ARTVAR_TARGET_TIME "ARTVAR_TARGET_TIME"
 #define ARTVAR_MAX_DELTA "ARTVAR_MAX_DELTA"
+
+#define ART_OVERRIDE_EFFECT_NUMBER "ART_OVERRIDE_EFFECT_NUMBER"
+#define ART_OVERRIDE_BUFF_NUMBER   "ART_OVERRIDE_BUFF_NUMBER"
+
+/// All rolls are done on a 1-100 scale, anything under the BAD roll is BAD, anything over the GOOD roll is GOOD, anything in between is NORMAL
+#define ART_ROLL_BAD_COMMON        50
+#define ART_ROLL_GOOD_COMMON       95
+#define ART_EFFECT_ROLL_MIN_COMMON 1
+#define ART_EFFECT_ROLL_MAX_COMMON 2
+#define ART_BUFF_ROLL_MIN_COMMON   1
+#define ART_BUFF_ROLL_MAX_COMMON   1
+
+#define ART_ROLL_BAD_UNCOMMON        40
+#define ART_ROLL_GOOD_UNCOMMON       75
+#define ART_EFFECT_ROLL_MIN_UNCOMMON 3
+#define ART_EFFECT_ROLL_MAX_UNCOMMON 4
+#define ART_BUFF_ROLL_MIN_UNCOMMON   2
+#define ART_BUFF_ROLL_MAX_UNCOMMON   3
+
+#define ART_ROLL_BAD_RARE        30
+#define ART_ROLL_GOOD_RARE       50
+#define ART_EFFECT_ROLL_MIN_RARE 5
+#define ART_EFFECT_ROLL_MAX_RARE 6
+#define ART_BUFF_ROLL_MIN_RARE   3
+#define ART_BUFF_ROLL_MAX_RARE   3
 
 #define ART_IDENT_MAX_DELTA 1 SECONDS // fun fact this barely works
 #define ART_IDENT_TIME 20 MINUTES

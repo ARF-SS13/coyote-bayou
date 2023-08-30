@@ -644,7 +644,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm [M]!"))
 		return
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(CLUMSY_CHECK(user) && prob(50))
 		M = user
 	var/is_human_victim = 0
 	var/obj/item/bodypart/affecting = M.get_bodypart(BODY_ZONE_HEAD)

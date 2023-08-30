@@ -498,7 +498,7 @@ obj/item/melee/onehanded/knife/switchblade
 		return //CIT CHANGE - ditto
 
 	add_fingerprint(user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+	if((CLUMSY_CHECK(user)) && prob(50))
 		to_chat(user, "<span class ='danger'>You club yourself over the head.</span>")
 		user.DefaultCombatKnockdown(60 * force)
 		if(ishuman(user))

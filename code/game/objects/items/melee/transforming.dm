@@ -88,7 +88,7 @@
 		to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
 
 /obj/item/melee/transforming/proc/clumsy_transform_effect(mob/living/user)
-	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+	if(clumsy_check && CLUMSY_CHECK(user) && prob(50))
 		to_chat(user, span_warning("You accidentally cut yourself with [src], like a doofus!"))
 		user.take_bodypart_damage(5,5)
 /obj/item/melee/transforming/cleaving_saw/old_rusty

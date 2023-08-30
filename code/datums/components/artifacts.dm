@@ -10,6 +10,12 @@
 #define ARTRFLAG_UNIDENTIFIED_NAME_SET (1 << 3)
 #define ARTRFLAG_RARENAME_SET          (1 << 4)
 
+/// Low impact processing, mainly for basic stuff
+/// Has a 10 second cooldown
+#define ART_PROCESS_BACKGROUND  (1 << 0)
+/// Processes when the artifact is being paid attention to
+#define ART_PROCESS_FOREGROUND (1 << 1)
+
 /datum/component/artifact
 	var/identified_preposition
 	var/unidentified_prefix = "thingy"
@@ -27,7 +33,8 @@
 	var/list/identifying = list()
 	var/list/identified_by = list()
 	var/list/identify_jobs = list()
-	var/process_flags = ART_PROCESS_NEEDS_MOB
+	var/process_flags = ART_PROCESS_BACKGROUND
+	COOLDOWN_DECLARE(background_cooldown)
 	var/current_slot = null
 	var/datum/weakref/current_location
 	var/datum/weakref/affecting
@@ -39,6 +46,7 @@
 	var/list/scanner_entry = list()
 	COOLDOWN_DECLARE(colorwobble)
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
+	COOLDOWN_DECLARE(process_stop)
 
 /datum/component/artifact/Initialize(rarity = ART_RARITY_COMMON)
 	if(!isitem(parent))
@@ -53,11 +61,30 @@
 	RegisterSignal(parent, COMSIG_ITEM_WELLABLE, .proc/tabulate_wellability)
 	RegisterSignal(parent, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/update_everything)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/pre_delete)
 	// RegisterSignal(parent, COMSIG_ITEM_CLICKED, .proc/on_clicked)
 	// RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/on_microwave) //c:
 	RegisterSignal(parent, COMSIG_ATOM_GET_EXAMINE_NAME, .proc/get_name)
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/get_description)
+	START_PROCESSING(SSartifacts, src)
 	src.rarity = rarity
+
+/datum/component/artifact/proc/pre_delete()
+	STOP_PROCESSING(SSartifacts, src)
+	UnregisterSignal(parent, list(
+		COMSIG_ITEM_ARTIFACT_GET_EFFECTS,
+		COMSIG_ITEM_ARTIFACT_EXISTS,
+		COMSIG_ITEM_ARTIFACT_MAKE_UNIQUE,
+		COMSIG_ITEM_ARTIFACT_IDENTIFIED,
+		COMSIG_ITEM_ARTIFACT_ADD_EFFECT,
+		COMSIG_ITEM_ARTIFACT_READ_PARAMETERS,
+		COMSIG_ITEM_ARTIFACT_FINALIZE,
+		COMSIG_ITEM_WELLABLE,
+		COMSIG_ATOM_GET_VALUE,
+		COMSIG_MOVABLE_MOVED,
+		COMSIG_ATOM_GET_EXAMINE_NAME,
+		COMSIG_PARENT_EXAMINE,
+	))
 
 /// Runs the artifact's main loop. starts when touched by a mob, stops when it doesnt have anything to do
 /datum/component/artifact/process()
@@ -68,16 +95,29 @@
 	var/update_flags = update_everything() | force_flags
 	var/atom/current_holder = GET_WEAKREF(current_location)
 	var/mob/living/current_target = GET_WEAKREF(affecting)
+	update_identification()
+	var/lead = check_lead_lined()
 	for(var/datum/artifact_effect/effect in effects)
+		if(lead)
+			effect.cleanup()
+			continue
 		effect.tick(master, current_target, current_holder, current_slot, update_flags)
 	if(COOLDOWN_FINISHED(src, colorwobble))
 		COOLDOWN_START(src, colorwobble, SSartifacts.art_effect_colorwobble_delay)
 		colorwobble(master, my_color)
 		if(isitem(current_holder))
 			colorwobble(current_holder, current_holder.color)
-		if(isliving(current_target))
-			colorwobble(current_target, current_target.color)
-	update_identification()
+		// if(isliving(current_target)) // folks dont like turning yartz blurple
+		// 	colorwobble(current_target, current_target.color)
+
+/datum/component/artifact/proc/check_lead_lined()
+	ART_MASTER
+	var/atom/movable/cont = master.loc
+	while(ismovable(cont))
+		if(HAS_TRAIT(cont, TRAIT_ARTIFACT_BLOCKER))
+			remove_status_effect(master, target, holder)
+			return TRUE
+		cont = cont.loc
 
 /datum/component/artifact/proc/colorwobble(atom/target, orig_color)
 	if(!isatom(target))
@@ -188,7 +228,8 @@
 	//UnregisterSignal(current, COMSIG_CARBON_GET_BLEED_MOD)
 
 /datum/component/artifact/proc/update_identification()
-	var/mob/hodler = GET_WEAKREF(affecting)
+	ART_MASTER
+	var/mob/living/hodler = recursive_loc_path_search(master, /mob/living)
 	if(!hodler)
 		return
 	if(!hodler.ckey)
@@ -201,35 +242,45 @@
 		id_plz = new /datum/counter_holder(time_to_ident, SSartifacts.identify_max_delta) // its 2 vars and I hate lists. wouldnt look it from the fuckhuge overrides list but man, how am I gonna pass all that polymorphic fuckdata in without more shitcode? its already up to my knees
 		identifying[ckey(hodler.ckey)] = id_plz
 	if(id_plz.check_complete())
-		qdel(id_plz)
 		identifying[ckey(hodler.ckey)] = null
+		qdel(id_plz)
 		identifying -= ckey(hodler.ckey)
 		identified_by += ckey(hodler.ckey)
 		return TRUE // yay!
 	id_plz.tick()
 
 /datum/component/artifact/proc/consider_processing()
-	if(CHECK_BITFIELD(process_flags, ART_PROCESS_NEEDS_MOB))
-		var/mob/living/someone = GET_WEAKREF(affecting)
-		if(!isliving(someone))
-			stop_processing()
-			return
-		ART_MASTER
-		if(!recursive_loc_search(master, someone))
-			stop_processing()
-			return
-	start_processing()
+	// if(CHECK_BITFIELD(process_flags, ART_PROCESS_NEEDS_MOB))
+	// 	var/mob/living/someone = GET_WEAKREF(affecting)
+	// 	if(!isliving(someone))
+	// 		stop_processing()
+	// 		return
+	// 	ART_MASTER
+	// 	if(!recursive_loc_search(master, someone))
+	// 		stop_processing()
+	// 		return
+	ART_MASTER
+	if(recursive_loc_path_search(master, /mob/living))
+		start_processing()
+		return
+	stop_processing()
 
-/datum/component/artifact/proc/stop_processing()
-	for(var/datum/artifact_effect/effect in effects)
-		effect.cleanup()
-	affecting = null
+/datum/component/artifact/proc/stop_processing(forced)
+	clean_up()
+	if(!forced && !COOLDOWN_FINISHED(src, process_stop))
+		return
 	STOP_PROCESSING(SSartifacts, src)
 
 /datum/component/artifact/proc/start_processing()
 	if(CHECK_BITFIELD(datum_flags, DF_ISPROCESSING))
 		return
 	START_PROCESSING(SSartifacts, src)
+	COOLDOWN_START(src, process_stop, 30 SECONDS)
+
+/datum/component/artifact/proc/clean_up()
+	for(var/datum/artifact_effect/effect in effects)
+		effect.cleanup()
+	affecting = null
 
 /datum/component/artifact/proc/tabulate_value()
 	SIGNAL_HANDLER
@@ -550,7 +601,7 @@
 	. = ..()
 
 /datum/artifact_effect/proc/generate_trait()
-	my_unique_trait_id = "trait_artifact_equipped_[kind]_[rand(1000000, 9999999)]"
+	my_unique_trait_id = "trait_artifact_equipped_[kind]_[rand(1000000, 9999999)]_[world.time*10]"
 
 /datum/artifact_effect/proc/on_effect_deleted()
 	cleanup(TRUE)
@@ -588,31 +639,16 @@
 	/// ensures we only apply and remove effects once
 	//var/application_flags = NONE
 	/// these handle the equip/dequip effects
-	if(check_lead_lined(master, target, holder, parent_slot))
-		return
 	update_mob(master, target, holder, parent_slot)
 	update_location(master, target, holder, parent_slot)
 	update_slut(master, target, holder, parent_slot)
 	return on_tick(master, target, holder)
 
-/datum/artifact_effect/proc/check_lead_lined(obj/item/master, mob/living/target, obj/item/holder, parent_slot)
-	if(!master)
-		return
-	if(!ismovable(master.loc))
-		return
-	var/atom/movable/cont = master.loc
-	while(ismovable(cont))
-		if(HAS_TRAIT(cont, TRAIT_ARTIFACT_BLOCKER))
-			remove_status_effect(master, target, holder)
-			return TRUE
-		cont = cont.loc
-
-
 /// compares where we were to where we are now, and updates our current location
 /datum/artifact_effect/proc/update_mob(obj/item/master, mob/living/target, obj/item/holder, parent_slot)
 	var/mob/living/prev_mob = GET_WEAKREF(applied_effects_to)
 	var/mob/living/new_mob = target
-	if(prev_mob == new_mob)
+	if(prev_mob == new_mob) // can be null == null
 		return
 	/// We've affecting a new person!
 	if(istype(new_mob, target_path))
@@ -634,7 +670,7 @@
 		apply_container_effect(master, new_loc, holder)
 	current_location = WEAKREF(new_loc)
 
-/// compares where we were to where we are now, and updates our current slot
+/// compares where we were to where we are now, and updates our current slut
 /datum/artifact_effect/proc/update_slut(obj/item/master, mob/living/target, obj/item/holder, parent_slot, application_flags)
 	if(!ismob(target))
 		return
@@ -1208,7 +1244,8 @@
 /// All values are in damage per second     ///
 /datum/artifact_effect/passive_damage
 	kind = ARTMOD_PASSIVE_DOT
-	chance_weight = 5
+	chance_weight = 0
+	special_spawn_only = TRUE
 	/// Stop doing damage if their health is below this
 	var/min_health = 5
 	/// Damage to do to brute
@@ -1611,6 +1648,7 @@
 /datum/artifact_effect/passive_damage/healer
 	kind = ARTMOD_PASSIVE_HEAL
 	chance_weight = 1
+	special_spawn_only = FALSE
 	base_value = 400
 	/// Stop healing if their health is below this
 	min_health = 5
@@ -2328,6 +2366,165 @@
 	else
 		out += span_alert("Burns off nutrition.")
 	descriptions = out
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+/// VERTIGO           ////////////
+/// Makes you dizzy  ////////////
+/// wooooaaauuuu    ////////////
+/datum/artifact_effect/vertigo
+	kind = ARTMOD_VERTIGO
+	chance_weight = 4
+	base_value = 300
+	/// How much to adjust nutrition by per second
+	var/dizzy_adjustment = 0
+	var/dizzy_max = 0
+	var/jitter_adjustment = 0
+	var/jitter_max = 0
+	var/misstep_adjustment = 0
+	var/misstep_max = 0
+	var/clumsify = FALSE
+	var/suppress_clumsy = FALSE
+
+/datum/artifact_effect/vertigo/apply_parameters(list/parameters = list())
+	if(!isnull(LAZYACCESS(parameters, ARTVAR_NUTRITION_ADJUSTMENT)))
+		nutrition_adjustment = LAZYACCESS(parameters, ARTVAR_NUTRITION_ADJUSTMENT)
+	is_buff = (nutrition_adjustment > 0)
+	. = ..()
+
+/datum/artifact_effect/vertigo/randomize(rarity, force_buff)
+	if(nutrition_adjustment == initial(nutrition_adjustment))
+		if(force_buff)
+			dizzy_max = 0
+			jitter_max = 0
+			misstep_max = 0
+			clumsify = FALSE
+			switch(rarity)
+				if(ART_RARITY_COMMON)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_good_common_min, SSartifacts.dizzy_adjust_good_common_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_good_common_min, SSartifacts.jitter_adjust_good_common_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_good_common_min, SSartifacts.misstep_adjust_good_common_max)
+				if(ART_RARITY_UNCOMMON)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_good_uncommon_min, SSartifacts.dizzy_adjust_good_uncommon_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_good_uncommon_min, SSartifacts.jitter_adjust_good_uncommon_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_good_uncommon_min, SSartifacts.misstep_adjust_good_uncommon_max)
+				if(ART_RARITY_RARE)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_good_rare_min, SSartifacts.dizzy_adjust_good_rare_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_good_rare_min, SSartifacts.jitter_adjust_good_rare_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_good_rare_min, SSartifacts.misstep_adjust_good_rare_max)
+					suppress_clumsy = TRUE
+		else
+			switch(rarity)
+				if(ART_RARITY_COMMON)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_bad_common_min, SSartifacts.dizzy_adjust_bad_common_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_bad_common_min, SSartifacts.jitter_adjust_bad_common_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_bad_common_min, SSartifacts.misstep_adjust_bad_common_max)
+					dizzy_max = RANDOM(SSartifacts.dizzy_max_bad_common_min, SSartifacts.dizzy_max_bad_common_max)
+					jitter_max = RANDOM(SSartifacts.jitter_max_bad_common_min, SSartifacts.jitter_max_bad_common_max)
+					misstep_max = RANDOM(SSartifacts.misstep_max_bad_common_min, SSartifacts.misstep_max_bad_common_max)
+				if(ART_RARITY_UNCOMMON)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_bad_uncommon_min, SSartifacts.dizzy_adjust_bad_uncommon_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_bad_uncommon_min, SSartifacts.jitter_adjust_bad_uncommon_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_bad_uncommon_min, SSartifacts.misstep_adjust_bad_uncommon_max)
+					dizzy_max = RANDOM(SSartifacts.dizzy_max_bad_uncommon_min, SSartifacts.dizzy_max_bad_uncommon_max)
+					jitter_max = RANDOM(SSartifacts.jitter_max_bad_uncommon_min, SSartifacts.jitter_max_bad_uncommon_max)
+					misstep_max = RANDOM(SSartifacts.misstep_max_bad_uncommon_min, SSartifacts.misstep_max_bad_uncommon_max)
+					clumsy = TRUE
+				if(ART_RARITY_RARE)
+					dizzy_adjustment = RANDOM(SSartifacts.dizzy_adjust_bad_rare_min, SSartifacts.dizzy_adjust_bad_rare_max)
+					jitter_adjustment = RANDOM(SSartifacts.jitter_adjust_bad_rare_min, SSartifacts.jitter_adjust_bad_rare_max)
+					misstep_adjustment = RANDOM(SSartifacts.misstep_adjust_bad_rare_min, SSartifacts.misstep_adjust_bad_rare_max)
+					dizzy_max = RANDOM(SSartifacts.dizzy_max_bad_rare_min, SSartifacts.dizzy_max_bad_rare_max)
+					jitter_max = RANDOM(SSartifacts.jitter_max_bad_rare_min, SSartifacts.jitter_max_bad_rare_max)
+					misstep_max = RANDOM(SSartifacts.misstep_max_bad_rare_min, SSartifacts.misstep_max_bad_rare_max)
+					clumsy = TRUE
+	dizzy_adjustment = round(dizzy_adjustment, SSartifacts.dizzy_discrete)
+	jitter_adjustment = round(jitter_adjustment, SSartifacts.jitter_discrete)
+	misstep_adjustment = round(misstep_adjustment, SSartifacts.misstep_discrete)
+	dizzy_max = round(dizzy_max, SSartifacts.dizzy_discrete)
+	jitter_max = round(jitter_max, SSartifacts.jitter_discrete)
+	misstep_max = round(misstep_max, SSartifacts.misstep_discrete)
+	. = ..()
+
+/datum/artifact_effect/vertigo/on_equipped(obj/item/master, mob/living/target, obj/item/holder)
+	if(clumsy)
+		ADD_TRAIT(target, TRAIT_CLUMSY, my_unique_trait_id)
+	if(suppress_clumsy)
+		ADD_TRAIT(target, TRAIT_ANTI_CLUMSY, my_unique_trait_id)
+	return TRUE
+
+/datum/artifact_effect/vertigo/on_unequipped(obj/item/master, mob/living/target, obj/item/holder)
+	REMOVE_TRAIT(target, TRAIT_CLUMSY, my_unique_trait_id)
+	REMOVE_TRAIT(target, TRAIT_ANTI_CLUMSY, my_unique_trait_id)
+	return TRUE
+
+/datum/artifact_effect/vertigo/on_tick(obj/item/master, mob/living/target, obj/item/holder)
+	if(!isliving(target))
+		return
+	target.dizzy = min(dizzy_adjustment * lag_comp_factor(), dizzy_max)
+	target.jitter = min(jitter_adjustment * lag_comp_factor(), jitter_max)
+	target.misstep = min(misstep_adjustment * lag_comp_factor(), misstep_max)
+	return TRUE
+
+/datum/artifact_effect/vertigo/get_magnitude()
+	var/amt = ((dizzy_adjustment + jitter_adjustment + misstep_adjustment) / 3)
+	if(is_buff)
+		return (abs(amt) / abs((SSartifacts.dizzy_adjust_good_rare_max + SSartifacts.jitter_adjust_good_rare_max + SSartifacts.misstep_adjust_good_rare_max)/3))
+	return (abs(amt) / abs((SSartifacts.dizzy_adjust_bad_rare_max + SSartifacts.jitter_adjust_bad_rare_max + SSartifacts.misstep_adjust_bad_rare_max)/3))
+
+/datum/artifact_effect/vertigo/get_affix_index(isprefix)
+	var/possy = 1
+	if(is_buff)
+		if(isprefix)
+			possy = round(LAZYLEN(SSartifacts.prefixes_dizzy_adjust_good_rare_max) * get_magnitude(), 1)
+		else
+			possy = round(LAZYLEN(SSartifacts.suffixes_dizzy_adjust_good_rare_max) * get_magnitude(), 1)
+	else
+		if(isprefix)
+			possy = round(LAZYLEN(SSartifacts.prefixes_dizzy_adjust_bad_rare_max) * get_magnitude(), 1)
+		else
+			possy = round(LAZYLEN(SSartifacts.suffixes_dizzy_adjust_bad_rare_max) * get_magnitude(), 1)
+	return possy
+
+/datum/artifact_effect/vertigo/update_suffix(is_buff, index)
+	var/suffix = ""
+	if(is_buff)
+		suffix = LAZYACCESS(SSartifacts.suffixes_dizzy_adjust_good_rare_max, index)
+	else
+		suffix = LAZYACCESS(SSartifacts.prefixes_dizzy_adjust_bad_rare_max, index)
+	return suffix
+
+/datum/artifact_effect/vertigo/update_prefix(is_buff, index)
+	var/prefix = ""
+	if(is_buff)
+		prefix = LAZYACCESS(SSartifacts.suffixes_dizzy_adjust_good_rare_max, index)
+	else
+		prefix = LAZYACCESS(SSartifacts.prefixes_dizzy_adjust_bad_rare_max, index)
+	return prefix
+
+/datum/artifact_effect/vertigo/update_desc()
+	var/list/out = list()
+	if(is_buff)
+		out += span_green("Keeps you moving steadily.")
+	else
+		out += span_alert("Gives you severe vertigo.")
+	descriptions = out
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
