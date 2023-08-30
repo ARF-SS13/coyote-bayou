@@ -33973,6 +33973,12 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city)
+"epL" = (
+/obj/effect/landmark/start/f13/followersdoctor,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "epQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -64135,6 +64141,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/ruins,
 /area/f13/building/abandoned)
+"lup" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/followersadministrator,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "luu" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/f13{
@@ -98139,6 +98152,12 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"tkT" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "tkV" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -98575,6 +98594,12 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building/abandoned)
+"tqo" = (
+/obj/effect/landmark/start/f13/followersadministrator,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "tqw" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
@@ -111879,6 +111904,12 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"wyi" = (
+/obj/effect/landmark/start/f13/followersguard,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "wyl" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -120608,9 +120639,9 @@ dMx
 nXB
 ubt
 pvx
-pvx
-pvx
-pvx
+tqo
+wyi
+tkT
 lTn
 lvq
 bnF
@@ -120865,9 +120896,9 @@ hda
 tMz
 ubt
 pvx
-ubt
-pvx
-pvx
+lup
+epL
+tkT
 lTn
 pMY
 pvx
@@ -121122,9 +121153,9 @@ wSw
 rye
 jRC
 vlA
-pvx
-pvx
-pvx
+epL
+epL
+tkT
 pvx
 pvx
 pvx
