@@ -169,6 +169,14 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/modernbdu/flektarn
+	name = "Modern Flektarn uniform"
+	desc = "A forest themed camo pattern that saw extensive use throughout the world and to, if there's any remnants left, this day. From Norway to the maker itself of West Germany in the 90s, this camo scheme was popular back then in the day and contains a few variants I.E tropentarn and its commercial variants."
+	icon_state = "flektarn"
+	item_state = "flektarn"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //old fashioned uniforms
 
 /obj/item/clothing/under/f13/medievalgerman

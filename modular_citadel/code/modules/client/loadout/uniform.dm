@@ -259,6 +259,11 @@
 	path = /obj/item/clothing/under/f13/modernbdu/tigerstripe
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/modernbdu/modernflektarn
+	name = "Flektarn camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/flektarn
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+	
 /datum/gear/uniform/medievalgarnment
 	name = "Medieval German mercenary gear"
 	path = /obj/item/clothing/under/f13/medievalgerman

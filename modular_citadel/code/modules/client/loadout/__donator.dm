@@ -1132,7 +1132,6 @@
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
-	new /obj/item/clothing/head/kevlarhelmet/toxinfil(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
