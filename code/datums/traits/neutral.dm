@@ -772,4 +772,21 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/birdsong)
 
+/datum/quirk/rabbit
+	name = "Rabbit Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the rabbit language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the rabbit")
+	lose_text = span_notice("You've forgotten how to speak rabbit..")
+
+
+/datum/quirk/rabbit/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/rabbit)
+
+/datum/quirk/rabbit/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/rabbit)
+
 
