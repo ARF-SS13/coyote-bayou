@@ -1,7 +1,7 @@
 //The necropolis gate is used to call forth Legion from the Necropolis.
 /obj/structure/necropolis_gate
 	name = "necropolis gate"
-	desc = "A massive stone gateway."
+	desc = "A massive stone gateway. There appears to be tribal inscriptions adorning the gateway's door. Tribals are capable of calling upon its blessings to seal it off to outsiders. (Alt click to lock access to tribals.)"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "gate_full"
 	flags_1 = ON_BORDER_1
@@ -25,7 +25,6 @@
 	var/sight_blocker_distance = 1
 	var/uses
 	var/ashwalker_only = FALSE
-	autoclose = 5 SECONDS
 
 /obj/structure/necropolis_gate/Initialize()
 	. = ..()
@@ -89,11 +88,25 @@
 		to_chat(user, span_boldannounce("It's [open ? "stuck open":"locked"]."))
 		return
 	if(ashwalker_only)
-		if(!(user.mind.assigned_role == "Ash Walker"))
+		if(!(user.mind.assigned_role in GLOB.tribal_positions))
 			to_chat(user, span_boldannounce("The gate screeches in an incoherant language!"))
 			return
 	toggle_the_gate(user)
 	return ..()
+
+/obj/structure/necropolis_gate/AltClick(mob/living/user)
+	..()
+	if(!(user.mind.assigned_role in GLOB.tribal_positions))
+		to_chat(user, span_warning("The door doesn't seem to react to your touch!"))
+		return
+	if(!user.canUseTopic(src))
+		return
+	if(autoclose == FALSE)
+		autoclose = 5 SECONDS
+	else
+		autoclose = FALSE
+	TOGGLE_VAR(ashwalker_only)
+	to_chat(user, span_alert("The door glows where your hand makes contact. It will now keep out outsiders."))
 
 /obj/structure/necropolis_gate/proc/toggle_the_gate(mob/user, legion_damaged)
 	if(changing_openness)
@@ -219,6 +232,19 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	icon_state = "door_opening"
 	duration = 38
 
+/*	/obj/effect/temp_visual/necropolislocked
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "lockeddoor_closing"
+	appearance_flags = 0
+	duration = 6
+	layer = EDGED_TURF_LAYER
+	pixel_x = -32
+	pixel_y = -32
+
+/obj/effect/temp_visual/necropolislocked/open
+	icon_state = "lockedoor_opening"
+	duration = 38
+*/
 /obj/structure/necropolis_arch
 	name = "necropolis arch"
 	desc = "A massive arch over the necropolis gate, set into a massive tower of stone."
