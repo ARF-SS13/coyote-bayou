@@ -10077,12 +10077,10 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "aIE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/turf/open/floor/wood_common{
-	color = "#888888"
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
 	},
-/area/f13/building/tribal)
+/area/f13/building/tribal/caveofforever)
 "aIF" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -35952,10 +35950,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
-"eOE" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal/caveofforever)
 "eOG" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -75973,11 +75967,6 @@
 	},
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
-"obJ" = (
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
-	},
-/area/f13/building/tribal/caveofforever)
 "obM" = (
 /obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human{
@@ -80286,13 +80275,9 @@
 	},
 /area/f13/wasteland)
 "oZr" = (
-/obj/structure/chair/wood{
-	dir = 2
-	},
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
-/area/f13/building/tribal)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/caveofforever)
 "oZu" = (
 /obj/structure/debris/v2{
 	pixel_x = -12;
@@ -95510,6 +95495,10 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building/abandoned)
+"sGn" = (
+/obj/structure/stone_tile/block,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/caveofforever)
 "sGq" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -96292,9 +96281,6 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
-"sQa" = (
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal/caveofforever)
 "sQe" = (
 /obj/machinery/button/door{
 	id = "nashgate2";
@@ -103209,10 +103195,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"uuL" = (
-/obj/structure/stone_tile/block,
-/turf/open/floor/plasteel/cult,
-/area/f13/building/tribal/caveofforever)
 "uuP" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -105648,6 +105630,9 @@
 	icon_state = "verticaloutermaintop"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"uYv" = (
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/caveofforever)
 "uYE" = (
 /obj/structure/chair/stool{
 	dir = 4;
@@ -122648,12 +122633,12 @@ eAK
 aOk
 eTM
 mct
-uuL
+sGn
 egm
 roF
 cho
-sQa
-obJ
+uYv
+aIE
 sUI
 sDb
 vaH
@@ -122905,12 +122890,12 @@ eAK
 aOk
 eTM
 mct
-uuL
+sGn
 gLJ
 gLJ
-eOE
+oZr
 dyk
-sQa
+uYv
 sUI
 jEz
 xXN
@@ -123162,12 +123147,12 @@ eAK
 aOk
 eTM
 eTM
-uuL
+sGn
 ubn
 dyk
 roF
-sQa
-sQa
+uYv
+uYv
 odP
 pGu
 xXN
@@ -123419,12 +123404,12 @@ xFZ
 aOk
 eTM
 mct
-uuL
-eOE
-eOE
+sGn
+oZr
+oZr
 roF
-sQa
-sQa
+uYv
+uYv
 sUI
 pqU
 xXN
@@ -123678,10 +123663,10 @@ eTM
 eTM
 lLM
 hsk
-eOE
+oZr
 oGQ
 egm
-obJ
+aIE
 sUI
 ocL
 vqw
@@ -123937,7 +123922,7 @@ gmJ
 tzu
 tzu
 tzu
-sQa
+uYv
 xZg
 xDM
 sUI
@@ -123956,8 +123941,8 @@ dqs
 sUI
 vQI
 oYg
-oZr
-aIE
+vQI
+rXA
 fCt
 jVd
 tfE
