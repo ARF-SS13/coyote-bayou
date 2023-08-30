@@ -789,4 +789,21 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/rabbit)
 
+/datum/quirk/bug
+	name = "Insect Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the insect language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the insect")
+	lose_text = span_notice("You've forgotten how to speak insect..")
+
+
+/datum/quirk/bug/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/bug)
+
+/datum/quirk/bug/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/bug)
+
 
