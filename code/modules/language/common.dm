@@ -396,7 +396,7 @@
 	syllables = list ("cheep", "peep", "tweet")
 
 /datum/language/rabbit
-	name = LANGUAGE_rabbit
+	name = LANGUAGE_RABBIT
 	desc = "A language primarily spoken by rabbits."
 	speech_verb = "squeaks"
 	key = "G"
