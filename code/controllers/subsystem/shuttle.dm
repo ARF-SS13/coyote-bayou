@@ -747,7 +747,7 @@ SUBSYSTEM_DEF(shuttle)
 		"Kyuulen",
 	)
 	first_part = pick(first_parts)
-	second_part = "-[rand(10, 99)]\Roman[rand(1, 9999999)]"
+	second_part = "-[rand(10, 99)]\Roman[rand(1, 150)]"
 	var/list/synonyms_for_express = list(
 		"Express",
 		"Commute",
