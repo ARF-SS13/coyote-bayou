@@ -6,21 +6,31 @@ SUBSYSTEM_DEF(autotransfer)
 	wait = 1 MINUTES
 
 	var/starttime
-	var/targettime
+	var/targettime = 4.5 HOURS
 	var/voteinterval
 	var/maxvotes
 	var/curvotes = 0
+	var/allow_vote_restart = FALSE
+	var/allow_vote_transfer = FALSE
+	var/min_end_vote_time = INFINITY // lol
+
+	var/use_config = FALSE // if TRUE, use config values instead of the above - cus fuck the config
 
 /datum/controller/subsystem/autotransfer/Initialize(timeofday)
+	// hi I'm Dan and I say fuck the config
+	if(use_config)
+		read_config()
+	return ..()
+
+/datum/controller/subsystem/autotransfer/proc/read_config()
 	var/init_vote = CONFIG_GET(number/vote_autotransfer_initial)
 	if(!init_vote) //Autotransfer voting disabled.
-		can_fire = FALSE
-		return ..()
+		return
 	starttime = world.time
 	targettime = starttime + init_vote
 	voteinterval = CONFIG_GET(number/vote_autotransfer_interval)
 	maxvotes = CONFIG_GET(number/vote_autotransfer_maximum)
-	return ..()
+
 
 /datum/controller/subsystem/autotransfer/Recover()
 	starttime = SSautotransfer.starttime
@@ -30,11 +40,11 @@ SUBSYSTEM_DEF(autotransfer)
 /datum/controller/subsystem/autotransfer/fire()
 	if(world.time < targettime)
 		return
-	if(maxvotes == NO_MAXVOTES_CAP || maxvotes > curvotes)
-		SSvote.initiate_vote("transfer","server")
-		targettime = targettime + voteinterval
-		curvotes++
-	else
-		SSshuttle.autoEnd()
+	// if(maxvotes == NO_MAXVOTES_CAP || maxvotes > curvotes)
+	// 	SSvote.initiate_vote("transfer","server")
+	// 	targettime = targettime + voteinterval
+	// 	curvotes++
+	// else
+	SSshuttle.autoEnd()
 
 #undef NO_MAXVOTES_CAP
