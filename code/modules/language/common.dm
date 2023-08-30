@@ -246,6 +246,13 @@
 //pokemon language
 
 #define LANGUAGE_POKEMON "Poke-Speak"
+#define LANGUAGE_CANINE "Canine Language"
+#define LANGUAGE_SQUIRREL "Squirrel Language"
+#define LANGUAGE_SERGAL "Sergal Language"
+#define LANGUAGE_MOUSE "Mouse Language"
+#define LANGUAGE_BIRDSONG "Birdsong Language"
+#define LANGUAGE_RABBIT "Rabbit Language"
+#define LANGUAGE_INSECT "Insect Language"
 
 /datum/language/pokemon
 	name = LANGUAGE_POKEMON
@@ -263,3 +270,305 @@
 		"kabu", "to", "aero", "dac", "tyl", "licki", "tung", "cu", "bone", "snor", "lax",
 		"mew", "two", "syl", "veon", "arti", "cuno"
 	)
+
+//Canine
+/datum/language/canine
+	name = LANGUAGE_CANINE
+	desc = "The guttural language spoken by canines, composed of growls, barks, yaps, and heavy utilization of ears and tail movements."
+	speech_verb = "rrrfts"
+	ask_verb = "rurs"
+	exclaim_verb = "barks"
+	key = "V"
+	syllables = list("rur","ya","cen","rawr","bar","kuk","tek","qat","uk","wu","vuh","tah","tch","schz","auch", \
+	"ist","ein","entch","zwichs","tut","mir","wo","bis","es","vor","nic","gro","lll","enem","zandt","tzch","noch", \
+	"hel","ischt","far","wa","baram","iereng","tech","lach","sam","mak","lich","gen","or","ag","eck","gec","stag","onn", \
+	"bin","ket","jarl","vulf","einech","cresthz","azunein","ghzth")
+
+//Squirrel
+
+/datum/language/squirrel
+	name = LANGUAGE_SQUIRREL
+	desc = "The native tongue squirrels. Squirrelkin and other beastkins can use their ears and tails in addition to speech to communitcate."
+	speech_verb = "squeaks"
+	whisper_verb = "whispers"
+	exclaim_verb = "chitters"
+	key = "S"
+	syllables = list("sque","sqah","boo","beh","nweh","boopa","nah","wah","een","sweh")
+
+//sergal
+
+/datum/language/sergal
+	name = LANGUAGE_SERGAL
+	desc = "The dominant language of the Sergals It consists of aggressive low-pitched hissing and throaty growling."
+	speech_verb = "snarls"
+	key = "T"
+	syllables = list ("grr", "gah", "woof", "arf", "arra", "rah", "wor", "sarg")
+
+//Mouse
+
+/datum/language/mouse
+	name = LANGUAGE_MOUSE
+	desc = "A language native to most rodent kind."
+	key = "E"
+	speech_verb = "squeaks"
+	whisper_verb = "squiks"
+	exclaim_verb = "squeaks loudly"
+	syllables = list ("squeek",
+"skweek",
+"sqeak",
+"squek",
+"sqweek",
+"skwek",
+"skweeq",
+"sqeek",
+"sqeac",
+"sqwek",
+"sqeik",
+"skwiek",
+"squeac",
+"sqweek",
+"skwique",
+"chitter",
+"chiter",
+"chetter",
+"cheeter",
+"chiter",
+"chitir",
+"chitteer",
+"cheetur",
+"chitter",
+"chetter",
+"chiteek",
+"cheetir",
+"chitter",
+"chiteer",
+"chittir",
+"sniffle",
+"snifel",
+"snifful",
+"sniffel",
+"sneffle",
+"sneeful",
+"sniffol",
+"snifl",
+"sneefle",
+"sniffl",
+"snifkle",
+"sniffeel",
+"snifl",
+"sneeful",
+"sniffil",
+"hiss",
+"hiz",
+"hisss",
+"hissle",
+"hise",
+"hys",
+"hess",
+"hss",
+"hiss",
+"hizze",
+"hissel",
+"hisse",
+"hyss",
+"hisz",
+"hissl",
+"chirp",
+"chirpp",
+"chirpe",
+"cheerp",
+"chrip",
+"churp",
+"chrp",
+"chirrp",
+"cheerpe",
+"chhirp",
+"churpp",
+"cheeerp",
+"chirp",
+"chhirpe",
+"chirpep",)
+
+/datum/language/birdsong
+	name = LANGUAGE_BIRDSONG
+	desc = "A language primarily spoken by birds"
+	speech_verb = "chirps"
+	key = "G"
+	syllables = list ("cheep", "peep", "tweet")
+
+/datum/language/rabbit
+	name = LANGUAGE_RABBIT
+	desc = "A language primarily spoken by rabbits."
+	speech_verb = "squeaks"
+	key = "G"
+	syllables = list ("scream",
+"screeem",
+"screem",
+"skream",
+"skreem",
+"scraem",
+"skreep",
+"skreem",
+"skriim",
+"screme",
+"skreem",
+"screm",
+"skreim",
+"screap",
+"skrim",
+"purr",
+"per",
+"puur",
+"prrr",
+"perre",
+"pur",
+"prr",
+"perri",
+"purrr",
+"perr",
+"purrre",
+"puuur",
+"prrrr",
+"perre",
+"purr",
+"prre",
+"purr",
+"prrre",
+"perre",
+"purr",
+"prrr",
+"pur",
+"puuur",
+"prr",
+"purrre",
+"perri",
+"purrr",
+"per",
+"prrrr",
+"pur",
+"purr",
+"purr",
+"prrre",
+"pur",
+"prr",
+"puur",
+"purrre",
+"per",
+"prrr",
+"puuur",
+"pur",
+"perri",
+"purr",
+"skreep",
+"screap",
+"skrim",
+"screme",
+"screm",
+"skreem",
+"skriim",
+"skreim",
+"skream",
+"screeem",
+"screem",
+"scraem",
+"scream",
+"purr",
+"per",
+"puur",
+"prrr",
+"perre",
+"pur",
+"prr",
+"perri",
+"purrr",
+"perr",
+"purrre",
+"puuur",
+"prrrr",
+"perre",
+"purr",
+"prre",
+"purr",
+"prrre",
+"perre",
+"purr",
+"prrr",
+"pur",
+"puuur",
+"prr",
+"purrre",
+"perri",
+"purrr",
+"per",
+"prrrr",
+"pur",
+"growl",
+"growle",
+"grrrowl",
+"groul",
+"grrrrowl",
+"grrowl",
+"grawl",
+"growll",
+"growlee",
+"growlll",
+"grwol",
+"grrawll",
+"growl",
+"grrawle",
+"grrrrawl",
+"grrrwole",
+"growle",
+"grrrwole",
+"grrawl",
+"growl",
+"growle",
+"grrrwole",
+"growwll",
+"grrwole",
+"grrrwole",
+"growl",
+"grrwol",
+"grawwl",
+"grrwole",
+"growl",
+"grrawle",
+"grrwawl",
+"growl",
+"grawwl",
+"growl",
+"grrwol",
+"growle",
+"grrwole",
+"growl",
+"grrawle",
+"grrrrawl",
+"grrrwole",
+"growle",
+"grrrwole",
+"grrawl",
+"growl",
+"growle",
+"grrrwole",
+"growwll",
+"grrwole",
+"grrrwole",
+"growl",
+"grrwol",
+"grawwl",
+"grrwole",
+"growl",
+"grrawle",
+"grrwawl",
+"growl",)
+
+/datum/language/bug
+	name = LANGUAGE_INSECT
+	desc = "A jarring and clicky language developed and used by most bugs, it is designed for use with mouthparts and as a result has become a common language for various arthropod species."
+	speech_verb = "clicks"
+	ask_verb = "chitters"
+	exclaim_verb = "rasps"
+	key = "X"
+	syllables = list("vaur","uyek","uyit","avek","sc'theth","k'ztak","teth","wre'ge","lii","dra'","zo'","ra'","kax'","zz","vh","ik","ak",
+	"uhk","zir","sc'orth","sc'er","thc'yek","th'zirk","th'esk","k'ayek","ka'mil","sc'","ik'yir","yol","kig","k'zit","zrk","krg","isk'yet","na'k",
+	"sc'azz","th'sc","nil","n'ahk","sc'yeth","aur'sk","iy'it","azzg","a'","i'","o'","u'","a","i","o","u","zz","kr","ak","nrk","tzzk","bz","xic'","k'lax'","histh")
