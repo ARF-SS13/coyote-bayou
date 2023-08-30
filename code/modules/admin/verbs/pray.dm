@@ -52,7 +52,9 @@
 		if(C.prefs.chat_toggles & CHAT_PRAYER)
 			to_chat(C, msg)
 			if(C.prefs.toggles & SOUND_PRAYERS)
-				if(usr.job == "Chaplain")
+				if(HAS_TRAIT(usr, TRAIT_BLINDFAITH))
+					SEND_SOUND(C, sound('sound/effects/tribalprayer.ogg'))
+				if(HAS_TRAIT(usr, TRAIT_SPIRITUAL))
 					SEND_SOUND(C, sound('sound/effects/pray.ogg'))
 				else
 					SEND_SOUND(C, sound('sound/effects/ding.ogg'))

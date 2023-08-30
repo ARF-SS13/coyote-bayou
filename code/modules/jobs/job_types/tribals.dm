@@ -168,7 +168,7 @@ Tribal Shaman
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
@@ -313,7 +313,7 @@ Druid
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
 
