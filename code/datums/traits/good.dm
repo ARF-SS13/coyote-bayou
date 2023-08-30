@@ -424,6 +424,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You are no longer able to use primitive technology.")
 	locked = TRUE
 
+/datum/quirk/dna_whiz
+	name = "Dna Whiz"
+	desc = "You can sequence plant genomes with a snap of your fingers!"
+	value = 2
+	mob_trait = TRAIT_DNAWHIZ
+	gain_text = span_notice("You know how plants work")
+	lose_text = span_danger("You forgot how plants work")
+
+
 /datum/quirk/night_vision
 	name = "Night Vision"
 	desc = "You can see slightly more clearly in full darkness than most people by one more whole tile."
