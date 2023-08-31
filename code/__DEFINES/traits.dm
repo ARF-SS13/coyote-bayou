@@ -300,6 +300,7 @@
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
 #define TRAIT_WEAPONSMITH "weaponsmith"
+#define TRAIT_MASTERWORKSMITH "masterworksmith" // same as weapon_crafting, but your smithed weapons do an additional 5 damage
 #define TRAIT_BEASTFRIEND_RAT "beastfriend-rats"
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
