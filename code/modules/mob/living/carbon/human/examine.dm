@@ -552,31 +552,31 @@ if(HAS_TRAIT(src, TRAIT_COMBATSWITCH))
 
 
 //rp focused quirks
-	if(HAS_TRAIT(src, TRAIT_RPLONGTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPLONGTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>📅 - They are looking for RP that is long term focused. Perhaps contact them via LOOC to work that out together?</span>"
 
-	if(HAS_TRAIT(src, TRAIT_RPSHORTTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPSHORTTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>⏰ - They are looking for RP that is short term focused. This generally means only things in the current round.</span>"
 
-	if(HAS_TRAIT(src, TRAIT_RPSERIOUS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPSERIOUS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>👑 - They are looking for RP that is relatively serious, if you to want to take the setting seriously maybe you should chatter at them via LOOC?</span>"
 
-	if(HAS_TRAIT(src, TRAIT_RPLIGHT) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPLIGHT) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>🤡 - They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach.</span>"
 
-	if(HAS_TRAIT(src, TRAIT_RPSCRUBS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPSCRUBS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>⛑ -They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs.</span>"
 
-	if(HAS_TRAIT(src, TRAIT_RPDAYSOFOURLIVES) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+if(HAS_TRAIT(src, TRAIT_RPDAYSOFOURLIVES) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
 		. += ""
 		. += "<span class='greenannounce'>💀 - They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera.</span>"
 
-	if(HAS_TRAIT(src, TRAIT_SMOL))
+if(HAS_TRAIT(src, TRAIT_SMOL))
 		. += ""
 		. += span_notice("[t_He] looks easy to scoop up.</span>")
 
