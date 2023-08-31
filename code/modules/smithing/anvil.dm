@@ -116,12 +116,18 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	currentquality = anvilquality
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
+	if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
+		to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+		return
 	if(istype(I, /obj/item/ingot)) // That's it we're refactoring this code because I can't im literally crying rn ; _;
 		return HandleIngot(I, user)
 
 	if(istype(I, /obj/item/melee/smith/hammer) || istype(I, /obj/item/twohanded/sledgehammer/simple)) // Hammer interactions:
 		var/obj/item/melee/smith/hammer/hammertime = I // Even though they are two seperate object paths, I believe because we're only accessing qualitymod, it casts accordingly.
-
+		// If the player has weaponsmith
+		if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
+			to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+			return
 		// if there is nothing present or something in progress.
 		if(!(workpiece_state == WORKPIECE_PRESENT || workpiece_state == WORKPIECE_INPROGRESS))
 			to_chat(user, "You can't work an empty anvil!")
