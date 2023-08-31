@@ -528,10 +528,27 @@
 		. += ""
 		. += "<span class='love'>🌹 - They look flirty, or like being flirty with them might be very effective.  Check out the *help command for *flirts.</span>"
 
-//shy quirk
+//info quirks that don't need a seeking
 	if(HAS_TRAIT(src, TRAIT_SHY))
 		. += ""
 		. += "<span class='unconcious'>They are a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_OOCAPP))
+		. += ""
+		. += "<span class='unconcious'>☎️ - L/OOC Approach Preffered</span>"
+
+	if(HAS_TRAIT(src, TRAIT_PVEFOCUS))
+		. += ""
+		. += "<span class='unconcious'>✌️ - This player prefers PVE Scenarios.</span>"
+
+if(HAS_TRAIT(src, TRAIT_PVPFOCUS))
+		. += ""
+		. += "<span class='unconcious'>🔥 - This player prefers PVP Scenarios.</span>"
+
+if(HAS_TRAIT(src, TRAIT_COMBATSWITCH))
+		. += ""
+		. += "<span class='unconcious'>🌎 - This player is happy to do PVP or PVE gameplay.</span>"
+
 
 
 //rp focused quirks
