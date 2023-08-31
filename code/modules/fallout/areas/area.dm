@@ -136,6 +136,12 @@
 	name = "Tribal cave of forever"
 	icon_state = "orange"
 	has_gravity = 0
+	ambience_area = list(
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/building/sulphurtribe/caveofnothing,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/woodcreak
+	)
 
 /area/f13/building/sewers
 	name = "Sewers"

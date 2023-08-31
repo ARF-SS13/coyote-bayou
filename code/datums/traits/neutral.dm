@@ -396,6 +396,32 @@
 	value = 0
 	mob_trait = TRAIT_SHY
 
+/datum/quirk/pvefocus
+	name = "PVE Focused"
+	desc = "Your gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
+	value = 0
+	mob_trait = TRAIT_PVEFOC
+
+/datum/quirk/pvpfocus
+	name = "PVP Focused"
+	desc = "Your gameplay focus is on PVP.  While PVE is basically inescapible in the wastes to even get from point A to point B this lets you opt in to letting others know that when shit starts to hit the fan ICly that violence is on the table for your character."
+	value = 0
+	mob_trait = TRAIT_PVPFOC
+
+/datum/quirk/loocapproach
+	name = "L/OOC Approach"
+	desc = "You prefer to be approached for Roleplay (Erotic or otherwise) via LOOC/OOC first to help work out a plan for scenes and ideas so that the experiences are a bit more tailored."
+	value = 0
+	mob_trait = TRAIT_OOCAPP
+
+
+
+/datum/quirk/pvpande
+	name = "PVP/PVE Accepting"
+	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
+	value = 0
+	mob_trait = TRAIT_COMBATSWITCH
+
 /datum/quirk/smol
 	name = "Smol!"
 	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, others can Alt-Click to pick you up like an item!"
