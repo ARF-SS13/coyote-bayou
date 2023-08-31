@@ -147,3 +147,20 @@
 /datum/sprite_accessory/facial_hair/elvis
 	name = "Sideburns (Elvis)"
 	icon_state = "facial_elvis"
+
+//-->Lizard tongue flick, done by Ekizius <3
+/datum/sprite_accessory/facial_hair/facial_lizardlick_s
+	name = "Lizard Tongue FLick"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "facial_lizardlick_s"
+
+/datum/sprite_accessory/facial_hair/facial_lizardlickslow_s
+	name = "Lizard Tongue FLick Slow"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "facial_lizardlickslow_s"
+
+/datum/sprite_accessory/facial_hair/facial_lizardlickfast_s
+	name = "Lizard Tongue FLick Fast"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "facial_lizardlickfast_s"
+//<--
