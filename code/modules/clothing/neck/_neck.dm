@@ -10,7 +10,7 @@
 
 /obj/item/clothing/neck/equipped(mob/user, slot)
 	. = ..()
-	if (slot == (SLOT_NECK) && istype(user))
+	if (slot == SLOT_NECK && istype(user))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "necklacebuff", mood_event_on_equip)
 	else
 		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "necklacebuff")
