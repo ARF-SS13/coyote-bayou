@@ -7426,7 +7426,9 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic)
 "gEk" = (
-/obj/structure/statue/bone/rib,
+/obj/structure/statue/bone/rib{
+	color = "#444466"
+	},
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
 	},
@@ -15780,7 +15782,8 @@
 /area/f13/building)
 "nDp" = (
 /obj/structure/statue/bone/rib{
-	dir = 1
+	dir = 1;
+	color = "#444466"
 	},
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"

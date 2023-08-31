@@ -267,6 +267,30 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/caveofnothing_3.ogg', 10 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/building/sulphurtribe/highwinds
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/highwinds_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/highwinds_2.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/sulphurtribe/highwinds/gong
+	chance = 70
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_3.ogg', 10 SECONDS, 1),
+	)
 
 
 //Civilzation End//
