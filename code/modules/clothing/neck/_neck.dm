@@ -1,15 +1,16 @@
 /obj/item/clothing/neck
 	name = "necklace"
 	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
 	body_parts_covered = NECK
-	slot_flags = INV_SLOTBIT_NECK
+	slot_flags = INV_SLOTBIT_NECK|INV_SLOTBIT_MASK
 	strip_delay = 40
 	equip_delay_other = 40
 	var/mood_event_on_equip = /datum/mood_event/equipped_necklace/any
 
 /obj/item/clothing/neck/equipped(mob/user, slot)
 	. = ..()
-	if (slot == SLOT_NECK && istype(user))
+	if (slot == (SLOT_NECK) && istype(user))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "necklacebuff", mood_event_on_equip)
 	else
 		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "necklacebuff")
