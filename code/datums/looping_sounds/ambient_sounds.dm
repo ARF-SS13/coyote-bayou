@@ -268,7 +268,7 @@
 	)
 
 /datum/looping_sound/ambient/building/sulphurtribe/highwinds
-	chance = 50
+	chance = 100
 	vary = FALSE
 	vary_direction = TRUE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
@@ -280,7 +280,7 @@
 	)
 
 /datum/looping_sound/ambient/building/sulphurtribe/highwinds/gong
-	chance = 50
+	chance = 70
 	vary = FALSE
 	vary_direction = TRUE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
