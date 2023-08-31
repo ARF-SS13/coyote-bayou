@@ -1054,7 +1054,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "iA" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
@@ -1200,6 +1200,11 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"jY" = (
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal/atonement)
 "kc" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Fruit Gang Strongarm"
@@ -1410,7 +1415,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "mo" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -1826,7 +1831,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "pv" = (
 /obj/structure/disposalpipe/broken{
 	dir = 1
@@ -2300,7 +2305,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "ty" = (
 /obj/effect/landmark/nest_spawn,
 /turf/open/indestructible/ground/outside/roof,
@@ -2378,7 +2383,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "uw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2498,7 +2503,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "vt" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -2829,7 +2834,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -3010,6 +3015,11 @@
 	light_range = 2
 	},
 /area/f13/wasteland)
+"zL" = (
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building/tribal/atonement)
 "zT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4503,7 +4513,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "NC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -4577,7 +4587,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Of" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -5016,7 +5026,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "RN" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -5277,7 +5287,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "TN" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -5421,7 +5431,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Vd" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged{
@@ -5437,7 +5447,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Vk" = (
 /obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
@@ -5812,7 +5822,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Yk" = (
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -5870,7 +5880,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "YV" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center,
@@ -5908,7 +5918,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Zc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
 	faction = list("raider")
@@ -8882,7 +8892,7 @@ hm
 hm
 Ec
 Jc
-Jc
+zL
 YO
 hm
 hm
@@ -9397,9 +9407,9 @@ hm
 hm
 Jc
 Nz
-rm
-rm
-rm
+jY
+jY
+jY
 ml
 hm
 hm
@@ -9656,7 +9666,7 @@ Sb
 Za
 Yj
 Vc
-rm
+jY
 ml
 hm
 hm
@@ -9911,9 +9921,9 @@ hm
 Ec
 Jc
 pt
-rm
-rm
-rm
+jY
+jY
+jY
 ml
 iy
 Ec
@@ -10424,7 +10434,7 @@ hm
 Ec
 dV
 hX
-Jc
+zL
 YO
 hm
 hm
