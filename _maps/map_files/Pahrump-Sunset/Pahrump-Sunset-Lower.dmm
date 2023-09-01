@@ -344,14 +344,6 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
-"aiU" = (
-/obj/machinery/hydroponics/constructable{
-	yieldmod = 1.3;
-	name = "HydroFarm"
-	},
-/obj/item/seeds/xander,
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
-/area/f13/building/hospital/clinic)
 "aiV" = (
 /obj/structure/table,
 /obj/structure/chopping_block,
@@ -809,10 +801,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "azS" = (
-/obj/machinery/hydroponics/constructable{
-	yieldmod = 1.3;
-	name = "HydroFarm"
-	},
+/obj/structure/table/glass,
+/obj/machinery/microwave,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "aAa" = (
@@ -2382,7 +2372,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "bDj" = (
-/obj/machinery/seed_extractor,
+/obj/structure/simple_door/room,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "bDk" = (
@@ -3967,7 +3957,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bNA" = (
-/obj/structure/table/glass,
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "bNC" = (
@@ -4248,8 +4241,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bOU" = (
-/obj/structure/table/glass,
-/obj/machinery/microwave,
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/mutfruit,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "bOW" = (
@@ -14302,6 +14298,13 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
+"hQR" = (
+/obj/machinery/plantgenes,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "hRd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15911,13 +15914,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
-"iNq" = (
-/obj/machinery/plantgenes,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/obj/item/disk/plantgene,
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
-/area/f13/building/hospital/clinic)
 "iNG" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -17300,7 +17296,7 @@
 	},
 /area/f13/building/trainstation)
 "jNq" = (
-/obj/structure/simple_door/room,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "jNJ" = (
@@ -18529,11 +18525,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
-"kEp" = (
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder/constructed,
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
-/area/f13/building/hospital/clinic)
 "kET" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -19700,6 +19691,14 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/building)
+"lrn" = (
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/xander,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "lrv" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -22168,10 +22167,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "mPJ" = (
-/obj/structure/sink/kitchen{
-	dir = 4;
-	pixel_x = -15
-	},
+/obj/machinery/seed_extractor,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "mPP" = (
@@ -29158,10 +29154,6 @@
 /obj/machinery/chem_master/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
-"ron" = (
-/obj/machinery/biogenerator,
-/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
-/area/f13/building/hospital/clinic)
 "roN" = (
 /obj/structure/railing/handrail/rusty,
 /turf/open/water,
@@ -34376,11 +34368,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "uKv" = (
-/obj/machinery/hydroponics/constructable{
-	yieldmod = 1.3;
-	name = "HydroFarm"
-	},
-/obj/item/seeds/poppy/broc,
+/obj/machinery/biogenerator,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "uKR" = (
@@ -35983,6 +35971,14 @@
 /mob/living/simple_animal/hostile/giantantqueen,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"vQu" = (
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/poppy/broc,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "vQZ" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/f13/crispysquirrel,
@@ -36220,6 +36216,11 @@
 /obj/structure/table/wood/bar,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
+"vYk" = (
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder/constructed,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "vYu" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
@@ -39305,11 +39306,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xUb" = (
-/obj/machinery/hydroponics/constructable{
-	yieldmod = 1.3;
-	name = "HydroFarm"
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -15
 	},
-/obj/item/seeds/mutfruit,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/building/hospital/clinic)
 "xUF" = (
@@ -43716,11 +43716,11 @@ aae
 aae
 aaa
 bOj
-azS
+bNA
 tyx
-mPJ
+xUb
 tyx
-jNq
+bDj
 tyx
 tyx
 tyx
@@ -43973,10 +43973,10 @@ aae
 aae
 aaa
 bOj
-azS
-tyx
-tyx
 bNA
+tyx
+tyx
+jNq
 bOj
 tyx
 qjf
@@ -44230,10 +44230,10 @@ aae
 aae
 aaa
 bOj
+bNA
+tyx
+tyx
 azS
-tyx
-tyx
-bOU
 bOj
 tyx
 tyx
@@ -44487,10 +44487,10 @@ aae
 aae
 aaa
 bOj
-uKv
+vQu
 tyx
 tyx
-kEp
+vYk
 bOj
 tyx
 tyx
@@ -44744,10 +44744,10 @@ aae
 aae
 aaa
 bOj
-aiU
+lrn
 tyx
 tyx
-bNA
+jNq
 bOj
 tyx
 qjf
@@ -45001,10 +45001,10 @@ aae
 aae
 aaa
 bOj
-xUb
+bOU
 tyx
 tyx
-ron
+uKv
 bOj
 tyx
 tyx
@@ -45258,10 +45258,10 @@ aae
 aae
 aaa
 bOj
-iNq
+hQR
 tyx
 tyx
-bDj
+mPJ
 bOj
 tyx
 tyx
