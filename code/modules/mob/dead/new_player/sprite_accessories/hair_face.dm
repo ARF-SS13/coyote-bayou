@@ -148,7 +148,7 @@
 	name = "Sideburns (Elvis)"
 	icon_state = "facial_elvis"
 
-//-->Lizard tongue flick, done by Ekizius <3
+//-->Lizard tongue flick, done by Ekizius <3.
 /datum/sprite_accessory/facial_hair/facial_lizardlick_s
 	name = "Lizard Tongue FLick"
 	icon = 'icons/mob/hair2.dmi'
