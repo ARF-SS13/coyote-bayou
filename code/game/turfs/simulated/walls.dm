@@ -347,7 +347,6 @@
 	. = ..()
 	if(user.stat)
 		return
-	if(HAS_TRAIT(user, TRAIT_FREERUNNING))
 		if(!user.can_reach(src)) // Huh, why wasn't this here? I sworn I put this here when I first made this. H m s t v e
 			return
 		if(user.restrained())
@@ -360,6 +359,7 @@
 		
 		if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25))) // 25% of your stamina loss will effect the speed on climbing.
 			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
+			if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25) * ( HAS_TRAIT(user, TRAIT_FREERUNNING) ? 0.75 : 1 ))) // 25% of your stamina loss will effect the speed on climbing. And we take off 25% for free runners.
 			if(istype(targetDest, /turf/open/transparent/openspace)) // This helps prevent boundary breaking.
 				to_chat(user, span_warning("There's nothing to stand on once you climb up..!"))
 				return
