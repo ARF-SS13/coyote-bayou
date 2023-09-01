@@ -154,7 +154,7 @@
 	name = "Tusks"
 	icon_state = "facial_tusks"
 
-//-->Lizard tongue flick, done by Ekizius <3.
+//-->Lizard tongue flick, done by Ekizius, love you dork <3.
 /datum/sprite_accessory/facial_hair/faciallizardlick
 	name = "Lizard Tongue FLick"
 	icon = 'icons/mob/hair2.dmi'
