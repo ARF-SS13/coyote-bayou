@@ -165,7 +165,6 @@
     icon = 'icons/mob/hair2.dmi'
     icon_state = "facial_lizardlickfast_s"
 
-=======
 //Secondary Face Traits
 
 /datum/sprite_accessory/facial_hair/tusks
