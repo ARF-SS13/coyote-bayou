@@ -741,7 +741,7 @@
 	result = /obj/item/gun/ballistic/rifle/hobo/lasmusket
 	reqs = list(/obj/item/trash/f13/electronic/toaster = 1,
 				/obj/item/gun/ballistic/revolver/hobo/piperifle = 1,
-				/obj/item/reagent_containers/food/drinks/bottle = 1,
+				/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/cable_coil = 3)
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
 	time = 120

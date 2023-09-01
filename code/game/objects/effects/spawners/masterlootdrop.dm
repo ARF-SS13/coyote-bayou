@@ -247,6 +247,7 @@
 		/obj/item/gun/ballistic/shotgun/s163 = 1,
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
 		/obj/item/gun/ballistic/revolver/Lemat = 2,
+		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -271,7 +272,7 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
-		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
+		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
 		/obj/item/gun/ballistic/automatic/famas = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
@@ -317,6 +318,7 @@
 		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
 		/obj/item/gun/ballistic/automatic/unmcamr = 1,
+		/obj/item/gun/ballistic/automatic/rpd = 1,
 	)
 
 ///////////////////////////
@@ -356,7 +358,7 @@
 		/obj/item/twohanded/baseball = 5,
 		/obj/item/twohanded/baseball/spiked = 1,
 		/obj/item/twohanded/baseball/golfclub = 2,
-		/obj/item/twohanded/sledgehammer = 2,
+		/obj/item/twohanded/sledgehammer/simple = 2,
 		/obj/item/twohanded/chainsaw = 1,
 		/obj/item/melee/transforming/plasmacutter/regular/celestia = 1,
 		/obj/item/melee/transforming/plasmacutter/regular/eve = 1,
@@ -513,6 +515,7 @@
 		/obj/item/gun/energy/laser/wattz2ks = 5,
 		/obj/item/gun/ballistic/automatic/m41br = 2,
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
+		/obj/item/gun/ballistic/automatic/recoilessrifle = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -1737,5 +1740,6 @@
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
 	/obj/item/laser_pointer = 5,
-	/obj/item/coin/dvd = 5
+	/obj/item/weapon/dvd = 5,
+	/obj/item/storage/daki = 5
 	)

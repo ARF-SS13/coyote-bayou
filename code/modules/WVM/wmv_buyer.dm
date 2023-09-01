@@ -69,6 +69,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/helmet/f13/power_armor = 75,
 		/obj/item/melee = 5,
 		/obj/item/melee/transforming = 5,
+		/obj/item/twohanded = 5,
 		/obj/item/gun/energy/laser = 15,
 		// pistols/revolvers, 5 caps
 		/obj/item/gun/ballistic/revolver = 5,

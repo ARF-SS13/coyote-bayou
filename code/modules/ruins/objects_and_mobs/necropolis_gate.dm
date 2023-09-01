@@ -1,7 +1,7 @@
 //The necropolis gate is used to call forth Legion from the Necropolis.
 /obj/structure/necropolis_gate
 	name = "necropolis gate"
-	desc = "A massive stone gateway."
+	desc = "A massive stone gateway. There appears to be tribal inscriptions adorning the gateway's door. Tribals are capable of calling upon its blessings to seal it off to outsiders. (Alt click to lock access to tribals.)"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "gate_full"
 	flags_1 = ON_BORDER_1
@@ -15,6 +15,7 @@
 	light_range = 8
 	light_color = LIGHT_COLOR_LAVA
 	var/open = FALSE
+	var/autoclose = FALSE
 	var/changing_openness = FALSE
 	var/locked = FALSE
 	var/static/mutable_appearance/top_overlay
@@ -87,11 +88,26 @@
 		to_chat(user, span_boldannounce("It's [open ? "stuck open":"locked"]."))
 		return
 	if(ashwalker_only)
-		if(!(user.mind.assigned_role == "Ash Walker"))
+		if(!(user.mind.assigned_role in GLOB.tribal_positions))
 			to_chat(user, span_boldannounce("The gate screeches in an incoherant language!"))
 			return
 	toggle_the_gate(user)
 	return ..()
+
+/obj/structure/necropolis_gate/AltClick(mob/living/user)
+	..()
+	if(!(user.mind.assigned_role in GLOB.tribal_positions))
+		to_chat(user, span_warning("The door doesn't seem to react to your touch!"))
+		return
+	if(!user.canUseTopic(src))
+		return
+	if(autoclose == FALSE)
+		autoclose = 5 SECONDS
+		to_chat(user, span_alert("The door glows where your hand makes contact. It will now keep out outsiders."))
+	else
+		autoclose = FALSE
+		to_chat(user, span_alert("The door glows where your hand makes contact. It will now welcome all."))
+	TOGGLE_VAR(ashwalker_only)
 
 /obj/structure/necropolis_gate/proc/toggle_the_gate(mob/user, legion_damaged)
 	if(changing_openness)
@@ -134,7 +150,17 @@
 	if(uses && uses > 0)
 		uses -= 1
 	changing_openness = FALSE
+	if(autoclose)
+		autoclose_in(60)
 	return TRUE
+
+/obj/structure/necropolis_gate/proc/autoclose()
+	if(!QDELETED(src) && !density && !changing_openness && autoclose)
+		toggle_the_gate()
+
+/obj/structure/necropolis_gate/proc/autoclose_in(wait)
+	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
+
 
 /obj/structure/necropolis_gate/locked
 	locked = TRUE
@@ -207,6 +233,19 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 	icon_state = "door_opening"
 	duration = 38
 
+/*	/obj/effect/temp_visual/necropolislocked
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "lockeddoor_closing"
+	appearance_flags = 0
+	duration = 6
+	layer = EDGED_TURF_LAYER
+	pixel_x = -32
+	pixel_y = -32
+
+/obj/effect/temp_visual/necropolislocked/open
+	icon_state = "lockedoor_opening"
+	duration = 38
+*/
 /obj/structure/necropolis_arch
 	name = "necropolis arch"
 	desc = "A massive arch over the necropolis gate, set into a massive tower of stone."

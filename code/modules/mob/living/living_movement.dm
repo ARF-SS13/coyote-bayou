@@ -136,7 +136,7 @@
 	if(. && client)
 		reset_perspective()
 
-/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
+/mob/living/update_z(new_z) // 1+ to register, null to unregister
 	if(isnull(new_z) && audiovisual_redirect)
 		return
 	if (registered_z != new_z)

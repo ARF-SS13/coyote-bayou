@@ -71,7 +71,6 @@
 /obj/item/zombie_hand/proc/check_feast(mob/living/target, mob/living/user)
 	if(target.stat == DEAD)
 		var/hp_gained = target.maxHealth
-		target.gib()
 		// zero as argument for no instant health update
 		user.adjustBruteLoss(-hp_gained, 0)
 		user.adjustToxLoss(-hp_gained, 0)
@@ -95,7 +94,7 @@
 	var/icon_left = "bloodhand_left"
 	var/icon_right = "bloodhand_right"
 	hitsound = 'sound/hallucinations/growl1.ogg'
-	force = 20
+	force = 50
 	sharpness = SHARP_POINTY
 	damtype = "brute"
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
@@ -124,12 +123,12 @@
 			var/obj/target_object = target
 			target_object.take_damage(force * 3, BRUTE, "melee", 0, attacked_by = user)
 		else if(isliving(target))
-			if(ishuman(target))
+			/*if(ishuman(target))
 				try_to_ghoul_zombie_infect(target)
-			else
-				check_feast(target, user)
+			else*/
+			check_feast(target, user)
 
-/proc/try_to_ghoul_zombie_infect(mob/living/carbon/human/target)
+/*/proc/try_to_ghoul_zombie_infect(mob/living/carbon/human/target)
 	CHECK_DNA_AND_SPECIES(target)
 
 	if(NOZOMBIE in target.dna.species.species_traits)
@@ -139,7 +138,7 @@
 	infection = target.getorganslot(ORGAN_SLOT_ZOMBIE)
 	if(!infection)
 		infection = new()
-		infection.Insert(target)
+		infection.Insert(target)*/
 
 /obj/item/ghoul_zombie_hand/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -153,7 +152,6 @@
 /obj/item/ghoul_zombie_hand/proc/check_feast(mob/living/target, mob/living/user)
 	if(target.stat == DEAD)
 		var/hp_gained = target.maxHealth
-		target.gib()
 		// zero as argument for no instant health update
 		user.adjustBruteLoss(-hp_gained, 0)
 		user.adjustToxLoss(-hp_gained, 0)

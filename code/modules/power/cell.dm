@@ -324,8 +324,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/bluespace
-	name = "bluespace power cell"
-	desc = "A rechargeable transdimensional power cell."
+	name = "ultracite power cell"
+	desc = "A rechargeable high capacity ultracite power cell."
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)

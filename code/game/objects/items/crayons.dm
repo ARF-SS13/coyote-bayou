@@ -73,6 +73,8 @@
 	var/precision_x = 0
 	var/precision_y = 0
 
+	var/marking_area_borders = FALSE
+
 /obj/item/toy/crayon/proc/isValidSurface(surface)
 	return istype(surface, /turf/open/floor)
 
@@ -234,6 +236,7 @@
 	.["y"] = precision_y
 	.["min_offset"] = -world.icon_size/2
 	.["max_offset"] = world.icon_size/2
+	.["border_marker"] = marking_area_borders
 
 
 /obj/item/toy/crayon/ui_act(action, list/params)
@@ -275,6 +278,8 @@
 			var/y = text2num(params["y"])
 			precision_y = y
 			. = TRUE
+		if("toggle_area_marker")
+			TOGGLE_VAR(marking_area_borders)
 	update_icon()
 
 /obj/item/toy/crayon/proc/select_colour(mob/user)
@@ -398,7 +403,7 @@
 	if(actually_paints)
 		switch(paint_mode)
 			if(PAINT_NORMAL)
-				var/obj/effect/decal/cleanable/crayon/C = new(target, paint_color, drawing, temp, graf_rot)
+				var/obj/effect/decal/cleanable/crayon/C = new(target, paint_color, drawing, temp, graf_rot, null, marking_area_borders)
 				C.add_hiddenprint(user)
 				if(precision_mode)
 					C.pixel_x = clamp(precision_x, -(world.icon_size/2), world.icon_size/2)
@@ -411,7 +416,7 @@
 				var/turf/left = locate(target.x-1,target.y,target.z)
 				var/turf/right = locate(target.x+1,target.y,target.z)
 				if(isValidSurface(left) && isValidSurface(right))
-					var/obj/effect/decal/cleanable/crayon/C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
+					var/obj/effect/decal/cleanable/crayon/C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON, marking_area_borders)
 					C.add_hiddenprint(user)
 					affected_turfs += left
 					affected_turfs += right

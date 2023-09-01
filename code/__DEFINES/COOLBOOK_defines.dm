@@ -9,6 +9,7 @@
 #define BOOKENTRY_TITLE "title"
 #define BOOKENTRY_AUTHOR "author"
 #define BOOKENTRY_DESCRIPTION "desc"
+#define BOOKENTRY_COVER "cover"
 #define BOOKENTRY_CONTENT "content"
 #define BOOKENTRY_IMAGE "image"
 #define BOOKENTRY_PLAYERMADE "playermade"

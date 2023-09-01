@@ -205,6 +205,32 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+//medieval and old helmets
+
+/obj/item/clothing/head/medievalhelmets
+	name = "Base for old helmets"
+	desc = "Base for old helmets 2.0 electric boogaloo"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_DOWN_BULLET_T2)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+
+/obj/item/clothing/head/medievalhelmets/oldgerman
+	name = "German sallet helmet"
+	desc = "A German based sallet helmet. Renowned and one of many famous helmet designs during the medieval era. It was a very popular design before being outphased and killed off by the burgonet helmet."
+	icon_state = "gersallet"
+	item_state = "gersallet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/medievalhelmets/oldspain
+	name = "Spainard Morion helmet"
+	desc = "An extremely popular design from Spain, this is the Morion helmet. It was famously used by Spanish Conquisitidors and made popular in pre-war films and medieval like pre-war video games. Usually comes with a loving plume."
+	icon_state = "spanishhelm"
+	item_state = "spanishhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
 /obj/item/clothing/head/helmet/merekcustom
 	name = "salvaged battle helmet"
 	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material."

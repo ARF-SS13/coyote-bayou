@@ -282,16 +282,48 @@
 		/datum/firemode/burst/three/faster
 	)
 
+/* * * * * * * * *
+* VG77 Pistol
+* + Common burst pistol
+* - lower damage
+* + burst fire
+* - slowest burst fire rate but normal semi-automatic
+* - Unreskinnable due to lack of sprites
+* + Able to be dual wielded
+* * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/vg77
+	name = "MP77 Pistol"
+	desc = "A MP77 pistol from the H&K company. This pistol is based off the VP70, a pistol created by the same company. Made for much more cheaper markets, it's chambered in 9mm and comes with a three burst fire mode. Albeit it seems to be slow in such a ROF. Quite stylish however."
+	icon_state = "mp77"
+	item_state = "mp77"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast,
+		/datum/firemode/burst/three/slower,
+	)
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	can_scope = FALSE
+
 /* * * * * * * * * *
- * MEDIUM PISTOLS  *
- * * * * * * * * * */
+* MEDIUM PISTOLS
+* * * * * * * * * */
 
 /* * * * * * * * * * *
- * N99 Pistol Semi-Auto
- * Baseline Medium pistol
- * 10mm
- * Common
- * * * * * * * * * * */
+* N99 Pistol Semi-Auto
+* Baseline Medium pistol
+* 10mm
+* Common
+* * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
@@ -730,12 +762,6 @@
 	item_state = "m3magnum"
 	zoom_factor = 1.1
 
-/obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
-	name = "Custom M6G Magnum"
-	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
-	icon_state = "m6gold"
-	item_state = "m6gold"
-
 /obj/item/gun/ballistic/automatic/pistol/goldendeag
 	name = "Aureum Tactum"
 	desc = "The golden gun, er..well somewhat. Chambered in a lesser form of .44 magnum, the Aureum Tactum golden desert eagle is fully automatic. Albeit it requires a good grip for obvious reasons."
@@ -800,6 +826,38 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+/* * * * * * * * * * * *
+* K8 Assault Pistol
+* Custom gun for Seerman
+* Based off the Hello Cutie Cyberpunk Red pistol
+* placeholder for much heavier caliber pistols
+* New sound file
+* Muh frontal mag
+* Muh 14mm
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
+	name = "Custom K8 Assault Pistol"
+	desc = "A custom K8 Assault pistol manufactured by the Sanroo Arms company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
+	icon_state = "toxcyberplaceholder"
+	item_state = "toxcybergun"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
  * Super Duper Heavy pistol

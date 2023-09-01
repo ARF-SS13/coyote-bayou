@@ -225,6 +225,79 @@
 	path = /obj/item/clothing/under/f13/modernbdu/russianamoeba
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/modernbdu/nwucamoflauge
+	name = "NWU uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americannwu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/tropentarncamo
+	name = "TropenTarn uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ttcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/tropentarncamo
+	name = "TropenTarn uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ttcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/ucpcamo
+	name = "UCP uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ucp
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/ocpcamo
+	name = "OCP uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ocp
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/forestdigitalcamo
+	name = "Common Forest Digital Camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/commonforest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/modernbdu/oldtigerstripe
+	name = "Tigerstripe camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/tigerstripe
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/modernflektarn
+	name = "Flektarn camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/flektarn
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+	
+/datum/gear/uniform/medievalgarnment
+	name = "Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/medievalgarnment2
+	name = "Royal Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/medievalgarnment3
+	name = "Distuinguished Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/mechanizeduniform
+	name = "Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/mechanizeduniform2
+	name = "Navy Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/mechanizeduniform3
+	name = "Sunburst Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/scipilot
+	name = "Bulky pilot flightsuit"
+	path = /obj/item/clothing/under/f13/scifipilot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
 /datum/gear/uniform/modernbdu/modernrussian
 	name = "EMR Russian uniform"
@@ -2717,6 +2790,41 @@
 	path = /obj/item/clothing/under/aurora/kimono
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
+/datum/gear/uniform/civ13/haori
+	name = "Haori"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori2
+	name = "Haori - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori3
+	name = "Haori - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai2
+	name = "Haori w/ jacket - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai3
+	name = "Haori w/ jacket - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+
+
+
+
+
 /datum/gear/uniform/aurora/konyang
 	name = "Magenta hanbok"
 	cost = 0
@@ -2935,3 +3043,8 @@
 	path = /obj/item/clothing/under/costume/russian_officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/tealskirt
+	name = "teal suit skirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

@@ -13,7 +13,6 @@
 		#include "map_files/Pahrump-Sunset/RockSprings-Upper.dmm"
 		#include "map_files/Pahrump-Sunset/RedRiver.dmm"
 		#include "map_files/Pahrump-Sunset/Garland-City.dmm"
-		#include "map_files/Pahrump-Sunset/Westlands.dmm"
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif

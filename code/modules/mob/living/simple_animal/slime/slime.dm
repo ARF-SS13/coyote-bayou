@@ -235,6 +235,10 @@
 		adjustBruteLoss(-abs(Proj.damage)) //fire projectiles heals slimes.
 		Proj.on_hit(src)
 		return BULLET_ACT_BLOCK
+	if((Proj.damage_type == STAMINA))
+		adjustBruteLoss(5*(Proj.damage)) //Slime not in motion is a dead slime.
+		Proj.on_hit(src)
+		return
 	return ..()
 
 /mob/living/simple_animal/slime/emp_act(severity)

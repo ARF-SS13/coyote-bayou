@@ -20,7 +20,7 @@
 	desc = "A grubby red cloak, it has gained its color from years of blood, dust, rust, and various stains."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/david
 	body_parts_covered = CHEST|GROIN|ARMS
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/david
 	name = "red cloak hood"

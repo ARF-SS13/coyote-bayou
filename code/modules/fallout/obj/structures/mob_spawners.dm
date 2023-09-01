@@ -450,3 +450,20 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/retaliate/frog/red = 2
 	)
 
+/obj/structure/nest/crows
+	name = "crowsnest"
+	icon = 'icons/fallout/mobs/nests.dmi'
+	icon_state = "frog"
+	desc = "Are those birds eggs?"
+	max_mobs = 2
+	spawn_text = "flies out of the nest!"
+	spawnsound = list(
+		'sound/f13ambience/crow_1.ogg',
+		'sound/f13ambience/crow_2.ogg',
+	)
+	mob_types = list(
+	/mob/living/simple_animal/bird/crow,
+	/mob/living/simple_animal/bird/commonblackbird
+	)
+
+

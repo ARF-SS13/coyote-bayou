@@ -128,8 +128,8 @@
 /obj/item/scrying
 	name = "scrying orb"
 	desc = "An incandescent orb of otherworldly energy, made of a cold material from before-war structures arranged in arrays of bizzare geometry. Staring into it gives you vision beyond mortal means."
-	icon = 'icons/obj/projectiles.dmi'
-	icon_state ="bluespace"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state ="scrying"
 	throw_speed = 3
 	throw_range = 7
 	throwforce = 15
@@ -140,17 +140,20 @@
 	var/cooldown = 0
 
 /obj/item/scrying/attack_self(mob/user)
-	if(cooldown <= world.time)
-		to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
-		visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
-		user.ghostize(1, voluntary = TRUE)
-		cooldown = world.time + cooldown_time
+	var/turf/T = get_turf(src)
+	if(!T)
+		to_chat(user, span_phobia("Wow you're not on a turf, cool."))
 		return
-	if(cooldown > world.time)
+	if(T.get_lumcount() > 0.2)
+		to_chat(user, span_warning("It's too bright here to use [src.name]!"))
+		return 0
+	if(!COOLDOWN_FINISHED(src,cooldown))
 		to_chat(user, span_warning("The orb is murky, your power drained."))
 		return
-	return
-
+	to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
+	visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
+	user.ghostize(1, voluntary = TRUE)
+	COOLDOWN_START(src, cooldown, cooldown_time)
 
 /////////////////////////////////////////Necromantic Stone///////////////////
 

@@ -115,6 +115,7 @@
 /datum/component/storage/concrete/box/survivalkit/specialized/synthmed/Initialize()
 	. = ..()
 	can_hold = GLOB.toolbelt_allowed
+	can_hold |= typecacheof(list(/obj/item/clothing/glasses/sunglasses/blindfold))
 
 /// combat kit
 /datum/component/storage/concrete/box/survivalkit/specialized/combat

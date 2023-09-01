@@ -82,9 +82,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
-	//datum/crafting_recipe/redpotion,
-	//datum/crafting_recipe/bluepotion,
-	//datum/crafting_recipe/greenpotion,
+	/datum/crafting_recipe/redambrosia,
+	/datum/crafting_recipe/blueambrosia,
+	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
@@ -423,6 +423,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You are now able to use primitive technology.")
 	lose_text = span_danger("You are no longer able to use primitive technology.")
 	locked = TRUE
+
+/datum/quirk/dna_whiz
+	name = "Dna Whiz"
+	desc = "You can sequence plant genomes with a snap of your fingers!"
+	value = 2
+	mob_trait = TRAIT_DNAWHIZ
+	gain_text = span_notice("You know how plants work")
+	lose_text = span_danger("You forgot how plants work")
+
 
 /datum/quirk/night_vision
 	name = "Night Vision"

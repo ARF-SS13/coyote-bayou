@@ -779,7 +779,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/baseball = 20,
 		/obj/item/twohanded/baseball/spiked = 5,
 		/obj/item/twohanded/baseball/golfclub = 10,
-		/obj/item/twohanded/sledgehammer = 10,
+		/obj/item/twohanded/sledgehammer/simple = 10,
 		/obj/item/twohanded/chainsaw = 1,
 		/obj/item/melee/transforming/plasmacutter/regular/celestia = 1,
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,

@@ -328,7 +328,7 @@
 	H.grant_language(/datum/language/common)
 
 /datum/quirk/tribespeak
-	name = "Tribal Language Comprehension"
+	name = "Language - Tribal Language Comprehension"
 	desc = "You're somehow capable of understanding and speaking the common tribal languages in the area."
 	value = 0
 	gain_text = span_notice("You remember the old ways of your tribe..")
@@ -344,18 +344,83 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/tribal)
 
+/datum/quirk/draconicspeak
+	name = "Language - Draconic Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking Draconic, the dragonkin's tongue."
+	value = 0
+	gain_text = span_notice("A deep draconic roar rises within you..")
+	lose_text = span_notice("The roar within you fades away..")
+
+
+/datum/quirk/draconicspeak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/draconic)
+
+/datum/quirk/draconicspeak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/draconic)
+
+/datum/quirk/pokespeak
+	name = "Pokemon Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the common pokemon language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the pokemon")
+	lose_text = span_notice("You've forgotten how to speak pokemon..")
+
+
+/datum/quirk/pokespeak/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/pokemon)
+
+/datum/quirk/pokespeak/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/pokemon)
+
 /datum/quirk/in_heat
 	name = "ERP Receptive"
 	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
 	value = 0
 	mob_trait = TRAIT_IN_HEAT
 
-
 /datum/quirk/heat
 	name = "ERP Seeking"
 	desc = "Your character, for whatever reason, is ACTIVELY seeking out attention from those who match your OOC Preferences. Remember to check peoples OOC notes!"
 	value = 0
 	mob_trait = TRAIT_HEAT_DETECT
+
+/datum/quirk/shy
+	name = "OOCly Shy"
+	desc = "You, and likely your character, are a bit shy. This is a fine thing to be, but letting people know this way will let them know you do want to be included in social situations when its feasible. Basically just top bait though, lets be real."
+	value = 0
+	mob_trait = TRAIT_SHY
+
+/datum/quirk/pvefocus
+	name = "PVE Focused"
+	desc = "Your gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
+	value = 0
+	mob_trait = TRAIT_PVEFOC
+
+/datum/quirk/pvpfocus
+	name = "PVP Focused"
+	desc = "Your gameplay focus is on PVP.  While PVE is basically inescapible in the wastes to even get from point A to point B this lets you opt in to letting others know that when shit starts to hit the fan ICly that violence is on the table for your character."
+	value = 0
+	mob_trait = TRAIT_PVPFOC
+
+/datum/quirk/loocapproach
+	name = "L/OOC Approach"
+	desc = "You prefer to be approached for Roleplay (Erotic or otherwise) via LOOC/OOC first to help work out a plan for scenes and ideas so that the experiences are a bit more tailored."
+	value = 0
+	mob_trait = TRAIT_OOCAPP
+
+
+
+/datum/quirk/pvpande
+	name = "PVP/PVE Accepting"
+	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
+	value = 0
+	mob_trait = TRAIT_COMBATSWITCH
 
 /datum/quirk/smol
 	name = "Smol!"
@@ -435,6 +500,7 @@
 	if(!human_holder.equip_to_slot_if_possible(cam , SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		if(!human_holder.put_in_hands(cam))
 			cam.forceMove(get_turf(cam))
+
 /datum/quirk/journalist
 	name = "Journalist"
 	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
@@ -481,3 +547,289 @@
 	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
 	lose_text = span_danger("You lost your triage kit...")
 	locked = FALSE
+
+
+//Fennys insane RP quirks
+
+/datum/quirk/rpfocused
+	name = "Roleplay Seeking"
+	desc = "You are actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
+	value = 0
+	mob_trait = TRAIT_RPFOCUSED
+
+/datum/quirk/rplongterm
+	name = "Roleplay Seeking - Long Term Focus"
+	desc = "You are seeking out people to have more than one rounds worth of interaction with.  Maybe on the regular if your real world schedules allow it."
+	value = 0
+	mob_trait = TRAIT_RPLONGTERM
+
+/datum/quirk/rpshortterm
+	name = "Roleplay Seeking - Short Term Focus"
+	desc = "You are seeking out people to have occasional interaction with. Pick this if you want more casual quicker roleplay, instead of something that likely needs OOC planning between those involved."
+	value = 0
+	mob_trait = TRAIT_RPSHORTTERM
+
+/datum/quirk/rpserious
+	name = "Roleplay Seeking - Serious Roleplay"
+	desc = "You are seeking out 'Serious' Roleplay with others. This includes things like taking threats realistically and generally really digging into the setting to create believable, and not terribly wacky, situations."
+	value = 0
+	mob_trait = TRAIT_RPSERIOUS
+
+/datum/quirk/rplight
+	name = "Roleplay Seeking - Light Roleplay"
+	desc = "You are seeing out 'Light' Roleplay with others.  This includes things like generally playing into the wackyness of the game overall.  While we do ask you not to break the 4th wall (too often, anyway) this means you're seeking more silly interactions generally."
+	value = 0
+	mob_trait = TRAIT_RPLIGHT
+
+/datum/quirk/rpdaysofourlives
+	name = "Roleplay Seeking - Dramatic Roleplay"
+	desc = "You are seeking out interactions with others that are perhaps a bit overdramatic. Scandalous, gossiping, overly sad or emotional scenes. Think Days of Our Lives, or any Soap Opera. This is not a way around the OOC Drama rule, but it does mean you're seeking IC Drama roleplay!"
+	value = 0
+	mob_trait = TRAIT_RPDAYSOFOURLIVES
+
+/datum/quirk/rpscrubs
+	name = "Roleplay Seeking - Medical Roleplay"
+	desc = "You are seeking out interactions with players that are medical related.  This includes roleplaying treating wounds, or maybe even roleplaying treating them poorly."
+	value = 0
+	mob_trait = TRAIT_RPSCRUBS
+
+//ERP Focused quirks
+
+/datum/quirk/erpboykisser
+	name = "ERP Seeking - Prefers Guys"
+	desc = "When it comes to picking who to kiss, you choose boys.  Boykisser."
+	value = 0
+	mob_trait = TRAIT_ERPBOYKISSER
+
+/datum/quirk/erpgirlkisser
+	name = "ERP Seeking - Prefers Girls"
+	desc = "When it comes to picking who to kiss, you choose girls.  Girlkisser."
+	value = 0
+	mob_trait = TRAIT_ERPGIRLKISSER
+
+/datum/quirk/erpanykisser
+	name = "ERP Seeking - Prefers Anyone"
+	desc = "When it comes to picking who to kiss you'll kiss em' all."
+	value = 0
+	mob_trait = TRAIT_ERPANYKISSER
+
+/datum/quirk/erpquicky
+	name = "ERP Seeking - Relationships - Short Term"
+	desc = "You're a flinger, swing, floozy, harlot or a harem anime protagonist. You prefer your partners to come and go, and the spice of life is variety."
+	value = 0
+	mob_trait = TRAIT_ERPQUICKY
+
+/datum/quirk/erplongerm
+	name = "ERP Seeking - Relationships - Long Term"
+	desc = "A waifu or husbando, you probably don't care much which term is used but you want one partner, and to generally stick to them."
+	value = 0
+	mob_trait = TRAIT_ERPLONGTERM
+
+/datum/quirk/erpbottom //or dan, or fuzzy, or kuddles or like 9/10ths of the dev team, lmao
+	name = "ERP Seeking - I am a Bottom"
+	desc = "You're a bottom. Be you shy, bratty, or somewhere in between. You prefer to be approached and woo'd over doing the approaching (lets be real, that's scary!)"
+	value = 0
+	mob_trait = TRAIT_ERPBOTTOM
+
+/datum/quirk/erptop
+	name = "ERP Seeking - I am a Top"
+	desc = "Cruel or gentle, you're the one that likes to do the approaching and picking from the options at hand."
+	value = 0
+	mob_trait = TRAIT_ERPTOP
+
+/datum/quirk/erpswitch
+	name = "ERP Seeking - I am a Switch"
+	desc = "There's two sides to your coin, you don't mind being approached or doing the approaching. Just as long as someone gets touched."
+	value = 0
+	mob_trait = TRAIT_ERPSWITCH
+
+/datum/quirk/erpflirty
+	name = "ERP Seeking - Flirty"
+	desc = "More of a guideline, you enjoy using the *flirt system built into our say verbs, or enjoy having them used on you. It really can clarify how people feel, after all."
+	value = 0
+	mob_trait = TRAIT_ERPFLIRTY
+
+
+//Adventure Traits
+
+/datum/quirk/advseeker
+	name = "Adventure Seeking"
+	desc = "You keep an eye out for the type of person who sees this swampy wasteland as a way to grow famous and rich.  Preferably both."
+	value = 0
+	mob_trait = TRAIT_ADV_SEEKER
+
+/datum/quirk/adver
+	name = "Adventurer"
+	desc = "You are one of those people who go about in search of what was in hopes of making what is bigger and better. Or maybe you just focus on making money. It's your call."
+	value = 0
+	mob_trait = TRAIT_ADV_ER
+
+/datum/quirk/advlfg
+	name = "Adventurer - Looking for Group"
+	desc = "The wasteland calls to you, and you hope that others hear its call as well. As such, you prefer to explore with a friend, or maybe even friends."
+	value = 0
+	mob_trait = TRAIT_ADV_LFG
+
+/datum/quirk/advsolo
+	name = "Adventurer - Not Looking for Group"
+	desc = "The wasteland calls to you, and you're your own ride and die. No need to bring others along in your book."
+	value = 0
+	mob_trait = TRAIT_ADV_SOLO
+
+/datum/quirk/advgunner
+	name = "Adventurer - Class: Gunner"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Gunner at heart. Be it long gun, smg, or even black powder you're happiest with slinging lead, arrows, rocks, or the like. Generally staying somewhat back from combat."
+	value = 0
+	mob_trait = TRAIT_ADV_GUNNER
+
+/datum/quirk/advfighter
+	name = "Adventurer - Class: Fighter"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Fighter at heart. Using Melee weapons, though not usually a shield, you can do a good job of keeping critters away from friends and probably do decent damage."
+	value = 0
+	mob_trait = TRAIT_ADV_FIGHTER
+
+/datum/quirk/advtank
+	name = "Adventurer - Class: Tank"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Tank at heart. What matters most to you is your shield, and ability to block monsters from getting past you as best you can, while others do the real damage."
+	value = 0
+	mob_trait = TRAIT_ADV_TANK
+
+/datum/quirk/advbruiser
+	name = "Adventurer - Class: Bruiser"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Bruiser at heart. Two handed weapons are your jam (and jam smasher, for that matter.) With little focus on keeping yourself, or others, safe. Which means you can focus on smashing things as fast as possible."
+	value = 0
+	mob_trait = TRAIT_ADV_BRUISER
+
+/datum/quirk/advrogue
+	name = "Adventurer - Class: Rogue"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Rogue at heart. Carrying tools and offering options that the other classes may not consider. Like lockpicks, or EMP grenades. This lets others know you're focused on playing smarter, not harder."
+	value = 0
+	mob_trait = TRAIT_ADV_ROGUE
+
+
+/datum/quirk/advhealer
+	name = "Adventurer - Class: Healer"
+	desc = "While this offers no mechanical boons this tag lets other adventurers know you're a Healer at heart. Be it with consumables or the innate healing quirks this tag lets others know you're focused on keeping them up and in the fight. That doesn't mean you can't defend yourself though."
+	value = 0
+	mob_trait = TRAIT_ADV_HEALER
+
+/datum/quirk/canine
+	name = "Canine Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the canine language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the canine")
+	lose_text = span_notice("You've forgotten how to speak canine..")
+
+
+/datum/quirk/canine/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/canine)
+
+/datum/quirk/canine/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/canine)
+
+/datum/quirk/squirrel
+	name = "Squirrel Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the squirrel language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the squirrel")
+	lose_text = span_notice("You've forgotten how to speak squirrel..")
+
+
+/datum/quirk/squirrel/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/squirrel)
+
+/datum/quirk/squirrel/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/squirrel)
+
+/datum/quirk/sergal
+	name = "Sergal Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the sergal language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the sergal")
+	lose_text = span_notice("You've forgotten how to speak sergal..")
+
+
+/datum/quirk/sergal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/sergal)
+
+/datum/quirk/sergal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/sergal)
+
+/datum/quirk/mouse
+	name = "Mouse Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the mouse language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the mouse")
+	lose_text = span_notice("You've forgotten how to speak mouse..")
+
+
+/datum/quirk/mouse/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/mouse)
+
+/datum/quirk/mouse/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/mouse)
+
+/datum/quirk/birdsong
+	name = "Birdsong Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the bird language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the bird")
+	lose_text = span_notice("You've forgotten how to speak bird..")
+
+
+/datum/quirk/birdsong/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/birdsong)
+
+/datum/quirk/birdsong/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/birdsong)
+
+/datum/quirk/rabbit
+	name = "Rabbit Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the rabbit language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the rabbit")
+	lose_text = span_notice("You've forgotten how to speak rabbit..")
+
+
+/datum/quirk/rabbit/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/rabbit)
+
+/datum/quirk/rabbit/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/rabbit)
+
+/datum/quirk/bug
+	name = "Insect Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the insect language."
+	value = 0
+	gain_text = span_notice("You remember how to sp eak the way of the insect")
+	lose_text = span_notice("You've forgotten how to speak insect..")
+
+
+/datum/quirk/bug/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.grant_language(/datum/language/bug)
+
+/datum/quirk/bug/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/bug)
+
+
