@@ -19,6 +19,14 @@
 	icon_state = "book1"
 	book_key = "druidguide"
 
+/obj/item/cool_book/shamanguide
+	name = "Gecko Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#335533"
+	book_key = "shamanguide"
+
 /obj/item/cool_book/Initialize()
 	. = ..()
 	bookify()
