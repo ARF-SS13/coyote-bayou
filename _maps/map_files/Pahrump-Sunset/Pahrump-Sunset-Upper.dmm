@@ -1243,14 +1243,6 @@
 /obj/structure/flora/brushwood,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
-"bbG" = (
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
-/area/f13/building/tribal)
 "bcY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/ammo/shotgun,
@@ -2201,19 +2193,15 @@
 	name = "Blessed G.E.C.K.E.R.";
 	desc = "A Grass Expanding Company - Kilowatt Energy Recycler.  Used for manipulating plant dna, and being a convinent name."
 	},
-/obj/structure/flora/ausbushes/fernybush{
-	pixel_y = 18;
-	layer = 3
-	},
-/obj/structure/flora/ausbushes/fernybush{
-	pixel_y = 10;
-	layer = 3;
-	pixel_x = 8
-	},
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_x = 5;
 	pixel_y = -5;
 	layer = 2.5
+	},
+/obj/item/storage/box/disks_plantgene{
+	pixel_y = -6;
+	pixel_x = 21;
+	color = "#227722"
 	},
 /obj/item/storage/box/disks_plantgene{
 	pixel_y = -6;
@@ -2804,6 +2792,9 @@
 	dir = 1;
 	pixel_x = -15
 	},
+/obj/item/cool_book/druidguide,
+/obj/item/cool_book/druidguide,
+/obj/item/cool_book/druidguide,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -8284,40 +8275,152 @@
 	},
 /area/f13/building)
 "hmy" = (
-/obj/machinery/smartfridge/bottlerack/seedbin,
-/obj/item/storage/bag/plants,
-/obj/item/storage/bag/plants,
-/obj/item/seeds/strawberry,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/tomato,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/peach,
-/obj/item/seeds/orange,
-/obj/item/seeds/lime,
-/obj/item/seeds/lemon,
-/obj/item/seeds/grape,
-/obj/item/seeds/garlic,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/cotton,
-/obj/item/seeds/corn,
-/obj/item/seeds/coconut,
-/obj/item/seeds/chili,
-/obj/item/seeds/cherry,
-/obj/item/seeds/carrot,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/berry,
-/obj/item/seeds/banana,
-/obj/item/seeds/apple,
-/obj/item/seeds/ambrosia,
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
 	pixel_x = -15
 	},
+/obj/machinery/smartfridge/bottlerack/seedbin,
+/obj/item/seeds/agave,
+/obj/item/seeds/agave,
+/obj/item/seeds/aloe,
+/obj/item/seeds/aloe,
+/obj/item/seeds/ambrosia,
+/obj/item/seeds/ambrosia,
+/obj/item/seeds/ambrosia/deus,
+/obj/item/seeds/ambrosia/deus,
+/obj/item/seeds/ambrosia/gaia,
+/obj/item/seeds/ambrosia/gaia,
+/obj/item/seeds/apple,
+/obj/item/seeds/apple,
+/obj/item/seeds/bamboo,
+/obj/item/seeds/bamboo,
+/obj/item/seeds/banana,
+/obj/item/seeds/banana,
+/obj/item/seeds/bee_balm,
+/obj/item/seeds/bee_balm,
+/obj/item/seeds/berry,
+/obj/item/seeds/berry,
+/obj/item/seeds/buffalogourd,
+/obj/item/seeds/buffalogourd,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/carrot,
+/obj/item/seeds/carrot,
+/obj/item/seeds/chanterelle,
+/obj/item/seeds/chanterelle,
+/obj/item/seeds/cherry,
+/obj/item/seeds/cherry,
+/obj/item/seeds/chili,
+/obj/item/seeds/chili,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/coconut,
+/obj/item/seeds/coconut,
+/obj/item/seeds/coffee,
+/obj/item/seeds/coffee,
+/obj/item/seeds/corn,
+/obj/item/seeds/corn,
+/obj/item/seeds/cotton,
+/obj/item/seeds/cotton,
+/obj/item/seeds/coyotetobacco,
+/obj/item/seeds/coyotetobacco,
+/obj/item/seeds/cucumber,
+/obj/item/seeds/cucumber,
+/obj/item/seeds/datura,
+/obj/item/seeds/datura,
+/obj/item/seeds/eggplant,
+/obj/item/seeds/eggplant,
+/obj/item/seeds/feracactus,
+/obj/item/seeds/feracactus,
+/obj/item/seeds/fever_blossom,
+/obj/item/seeds/fever_blossom,
+/obj/item/seeds/fungus,
+/obj/item/seeds/fungus,
+/obj/item/seeds/garlic,
+/obj/item/seeds/garlic,
+/obj/item/seeds/grape,
+/obj/item/seeds/grape,
+/obj/item/seeds/grass,
+/obj/item/seeds/grass,
+/obj/item/seeds/greenbean,
+/obj/item/seeds/greenbean,
+/obj/item/seeds/harebell,
+/obj/item/seeds/harebell,
+/obj/item/seeds/herbs,
+/obj/item/seeds/herbs,
+/obj/item/seeds/horsenettle,
+/obj/item/seeds/horsenettle,
+/obj/item/seeds/lemon,
+/obj/item/seeds/lemon,
+/obj/item/seeds/lime,
+/obj/item/seeds/lime,
+/obj/item/seeds/mutfruit,
+/obj/item/seeds/mutfruit,
+/obj/item/seeds/nettle,
+/obj/item/seeds/nettle,
+/obj/item/seeds/onion,
+/obj/item/seeds/onion,
+/obj/item/seeds/orange,
+/obj/item/seeds/orange,
+/obj/item/seeds/peach,
+/obj/item/seeds/peach,
+/obj/item/seeds/peanutseed,
+/obj/item/seeds/peanutseed,
+/obj/item/seeds/peas,
+/obj/item/seeds/peas,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/pinyon,
+/obj/item/seeds/pinyon,
+/obj/item/seeds/plum,
+/obj/item/seeds/plum,
+/obj/item/seeds/poppy,
+/obj/item/seeds/poppy,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/pricklypear,
+/obj/item/seeds/pricklypear,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/punga,
+/obj/item/seeds/punga,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/replicapod,
+/obj/item/seeds/rose,
+/obj/item/seeds/rose,
+/obj/item/seeds/strawberry,
+/obj/item/seeds/strawberry,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sunflower,
+/obj/item/seeds/sunflower,
+/obj/item/seeds/sunflower/moonflower,
+/obj/item/seeds/tato,
+/obj/item/seeds/tato,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tomato,
+/obj/item/seeds/tomato,
+/obj/item/seeds/tower,
+/obj/item/seeds/tower,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/wheat,
+/obj/item/seeds/wheat,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/xander,
+/obj/item/seeds/xander,
+/obj/item/seeds/yucca,
+/obj/item/seeds/yucca,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -9523,9 +9626,6 @@
 	},
 /area/f13/building)
 "ioD" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -11577,9 +11677,6 @@
 	},
 /area/f13/wasteland)
 "jYv" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /obj/structure/sink/greyscale{
 	color = "#715030";
 	desc = "A wooden basin used for washing one's hands and face.";
@@ -11587,6 +11684,9 @@
 	name = "Water Basin";
 	pixel_x = 2;
 	pixel_y = -2
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -18207,9 +18307,6 @@
 /obj/structure/fermenting_barrel{
 	name = "XANDER"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
@@ -18261,14 +18358,22 @@
 	},
 /area/f13/building/hospital)
 "pWY" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 6
+	color = "#a98c5d"
 	},
-/turf/open/floor/grass{
-	color = "#444444"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -15
 	},
-/area/f13/wasteland)
+/obj/structure/fermenting_barrel{
+	name = "XANDER"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "pXo" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13{
@@ -22144,10 +22249,10 @@
 	dir = 1;
 	icon_state = "post_wood"
 	},
-/turf/open/floor/grass{
-	color = "#444444"
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "tno" = (
 /obj/machinery/door/unpowered/securedoor/bikerdoor,
 /turf/open/floor/f13{
@@ -25643,10 +25748,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "wBE" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -15
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -26725,6 +26831,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "xGj" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
@@ -33183,8 +33290,8 @@ oez
 oez
 oez
 oez
-oez
 aNu
+wBE
 bTS
 ntV
 kpQ
@@ -33193,8 +33300,8 @@ hmy
 iHf
 cvg
 pSB
+pWY
 pjG
-xiK
 rlI
 tiD
 eWb
@@ -33440,8 +33547,8 @@ oez
 oez
 oez
 oez
-oez
 sqS
+kCD
 qFq
 tqT
 reL
@@ -33449,9 +33556,9 @@ sIR
 kCD
 pcM
 kCD
-wBE
+dYg
+xGj
 eVH
-pWY
 rlI
 geu
 xXR
@@ -33697,8 +33804,8 @@ oez
 oez
 oez
 oez
-oez
 pXV
+kCD
 dYg
 dYg
 eLX
@@ -33706,9 +33813,9 @@ kCD
 vpi
 kCD
 kCD
+kCD
 jYv
 jFI
-mjO
 ltE
 eQn
 fuX
@@ -33954,8 +34061,8 @@ oez
 oez
 oez
 oez
-oez
 sqS
+kCD
 dYg
 xTy
 xTy
@@ -33963,9 +34070,9 @@ xTy
 xTy
 xTy
 xTy
+dYg
 dYg
 phh
-nBD
 mQZ
 kSn
 hNY
@@ -34211,8 +34318,8 @@ oez
 oez
 oez
 oez
-oez
 ykM
+kCD
 dYg
 xTy
 xTy
@@ -34221,8 +34328,8 @@ xTy
 xTy
 xTy
 ioD
+xGj
 uWP
-ieP
 aUi
 fst
 ddK
@@ -34468,8 +34575,8 @@ oez
 mRK
 yeY
 yeY
-dmX
 sqS
+kCD
 fdQ
 xTy
 xTy
@@ -34477,9 +34584,9 @@ xTy
 xTy
 xTy
 xTy
+kCD
 xGj
 uWP
-bYj
 eWb
 ltG
 cGS
@@ -34735,8 +34842,8 @@ xTy
 xTy
 xTy
 ioD
+xGj
 daP
-cVB
 bYj
 bUm
 lXm
@@ -34992,8 +35099,8 @@ xTy
 xTy
 xTy
 kCD
+dYg
 pjG
-cVB
 bYj
 bYj
 pfr
@@ -35249,8 +35356,8 @@ xTy
 xTy
 xTy
 dYg
+dYg
 daP
-bYj
 lZQ
 bYj
 bYj
@@ -35505,9 +35612,9 @@ kCD
 kCD
 kCD
 kCD
-bbG
+kCD
+dYg
 jFI
-tmU
 qSl
 qSl
 mha
@@ -35762,9 +35869,9 @@ jPp
 anc
 kCD
 kCD
+kCD
+dYg
 bvw
-oez
-oez
 oez
 oez
 oez
@@ -36019,9 +36126,9 @@ vGd
 vGd
 vGd
 vGd
+vGd
+tmU
 nBo
-oez
-oez
 oez
 oez
 oez
