@@ -86,6 +86,7 @@ SUBSYSTEM_DEF(cool_books)
 	data["BookTitle"] = book.title
 	data["BookAuthor"] = book.author
 	data["BookDesc"] = book.desc
+	data["BookCover"] = book.cover
 	data["BookDirectory"] = book.book_directory
 	var/list/all_chapters = book.get_chapter_list()
 	data["AllChapters"] = all_chapters
@@ -137,6 +138,8 @@ SUBSYSTEM_DEF(cool_books)
 	var/title
 	/// The description of the book
 	var/desc
+	/// The icon state of the book
+	var/cover
 	/// The author of the book
 	var/author
 	/// Is the book player-made? If so, sanitize the FUCK out of it
@@ -197,6 +200,9 @@ SUBSYSTEM_DEF(cool_books)
 	desc = LAZYACCESS(chapter_data, BOOKENTRY_DESCRIPTION)
 	if(!desc)
 		desc = "Its contents are a mystery! Until you open it though."
+	cover = LAZYACCESS(chapter_data, BOOKENTRY_COVER)
+	if(!cover)
+		cover = "book1"
 	author = LAZYACCESS(chapter_data, BOOKENTRY_AUTHOR)
 	if(!author)
 		author = "Alan Smithee"
