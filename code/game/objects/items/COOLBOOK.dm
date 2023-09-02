@@ -27,6 +27,14 @@
 	color = "#335533"
 	book_key = "shamanguide"
 
+/obj/item/cool_book/warriorguide
+	name = "Gecko Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#553333"
+	book_key = "warriorguide"
+
 
 /obj/item/cool_book/Initialize()
 	. = ..()
