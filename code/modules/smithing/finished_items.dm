@@ -17,6 +17,7 @@
 	var/overlay_state = "woodenrod"
 	var/mutable_appearance/overlay
 	//var/wielded_mult = 1
+	var/is_sharpened = FALSE
 
 /obj/item/melee/smith/Initialize()
 	. = ..()
@@ -28,7 +29,35 @@
 	if(force < 0)
 		force = 0
 
+/obj/item/melee/smith/sharpener
+	name = "whetstone"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "sharpener"
+	desc = "A block that makes things sharp."
+	force = 5
 
+/obj/item/melee/smith/sharpener/attackby(obj/item/melee/smith/I, mob/user, params)
+	if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
+		to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+		return
+	if(I.is_sharpened == TRUE)
+		to_chat(user, span_warning("That weapon's already as sharp as it can get!"))
+		return
+	if(I.sharpness != 1)
+		to_chat(user, span_warning("You cant sharpen a blunt object!"))
+		return
+	if(!do_after(user, 10 SECONDS, TRUE, I))
+		to_chat(user, span_warning("You need to hold still to sharpen that!"))
+		return
+	I.force += 5
+	I.force_wielded += 5
+	I.force_unwielded += 5
+	I.throwforce += 5
+	I.is_sharpened = TRUE
+	I.desc = "[initial(desc)] It has been sharpened to a fine edge."
+	to_chat(user, span_notice("You sharpen the [I]!"))
+	qdel(src)
+	return ..()
 /obj/item/melee/smith/twohand
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
