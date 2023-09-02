@@ -20,6 +20,14 @@ SUBSYSTEM_DEF(cool_books)
 	. = ..()
 	to_chat(world, span_announce("Initialized [boox] COOLBOOK(s), with [LAZYLEN(all_images)] pictures!"))
 
+/datum/controller/subsystem/cool_books/proc/force_refresh()
+	/// BURN EM, BURN EM ALL
+	QDEL_LIST_ASSOC_VAL(all_books)
+	QDEL_LIST(all_images)
+	/// Then immediately rewrite them
+	var/boox = build_library()
+	message_admins("COOLBOOK library has been refreshed! [boox] COOLBOOK(s) loaded, with [LAZYLEN(all_images)] pictures!")
+
 /// Runs through the cool_books/ directory and compiles all the JSONs into datum/cool_book
 /datum/controller/subsystem/cool_books/proc/build_library()
 	/// First, gather up all the directories in cool_books/
@@ -154,6 +162,10 @@ SUBSYSTEM_DEF(cool_books)
 	if(!build_book(book_directory))
 		qdel(src)
 		CRASH("COOLBOOK [book_directory] failed to load!")
+
+/datum/cool_book/Destroy(force, ...)
+	QDEL_LIST_ASSOC_VAL(chapters)
+	. = ..()
 
 /datum/cool_book/proc/build_book(book_directory)
 	if(!book_directory)
@@ -331,7 +343,6 @@ SUBSYSTEM_DEF(cool_books)
 			continue
 		if(automatic_page_breaks && findtext(line, BOOK_CHAPTER_TOKEN_PAGEBREAK))
 			automatic_page_breaks = FALSE
-			continue
 		if(findtext(line, BOOK_TXT_IMG_TOP)) // time to run this fucker a bunch of times =3
 			extract_txt_img(line, BOOK_TXT_IMG_TOP)
 			continue
