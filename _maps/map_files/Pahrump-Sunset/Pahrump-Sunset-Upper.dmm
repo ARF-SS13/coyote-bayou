@@ -8275,152 +8275,80 @@
 	},
 /area/f13/building)
 "hmy" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -15
-	},
-/obj/machinery/smartfridge/bottlerack/seedbin,
-/obj/item/seeds/agave,
-/obj/item/seeds/agave,
-/obj/item/seeds/aloe,
-/obj/item/seeds/aloe,
-/obj/item/seeds/ambrosia,
-/obj/item/seeds/ambrosia,
-/obj/item/seeds/ambrosia/deus,
-/obj/item/seeds/ambrosia/deus,
-/obj/item/seeds/ambrosia/gaia,
-/obj/item/seeds/ambrosia/gaia,
-/obj/item/seeds/apple,
-/obj/item/seeds/apple,
-/obj/item/seeds/bamboo,
-/obj/item/seeds/bamboo,
-/obj/item/seeds/banana,
-/obj/item/seeds/banana,
-/obj/item/seeds/bee_balm,
-/obj/item/seeds/bee_balm,
-/obj/item/seeds/berry,
-/obj/item/seeds/berry,
-/obj/item/seeds/buffalogourd,
-/obj/item/seeds/buffalogourd,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/carrot,
-/obj/item/seeds/carrot,
-/obj/item/seeds/chanterelle,
-/obj/item/seeds/chanterelle,
-/obj/item/seeds/cherry,
-/obj/item/seeds/cherry,
-/obj/item/seeds/chili,
-/obj/item/seeds/chili,
-/obj/item/seeds/cocoapod,
-/obj/item/seeds/cocoapod,
-/obj/item/seeds/coconut,
-/obj/item/seeds/coconut,
-/obj/item/seeds/coffee,
-/obj/item/seeds/coffee,
-/obj/item/seeds/corn,
-/obj/item/seeds/corn,
-/obj/item/seeds/cotton,
-/obj/item/seeds/cotton,
-/obj/item/seeds/coyotetobacco,
-/obj/item/seeds/coyotetobacco,
-/obj/item/seeds/cucumber,
-/obj/item/seeds/cucumber,
-/obj/item/seeds/datura,
-/obj/item/seeds/datura,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/eggplant,
-/obj/item/seeds/feracactus,
-/obj/item/seeds/feracactus,
-/obj/item/seeds/fever_blossom,
-/obj/item/seeds/fever_blossom,
-/obj/item/seeds/fungus,
-/obj/item/seeds/fungus,
-/obj/item/seeds/garlic,
-/obj/item/seeds/garlic,
-/obj/item/seeds/grape,
-/obj/item/seeds/grape,
-/obj/item/seeds/grass,
-/obj/item/seeds/grass,
-/obj/item/seeds/greenbean,
-/obj/item/seeds/greenbean,
-/obj/item/seeds/harebell,
-/obj/item/seeds/harebell,
-/obj/item/seeds/herbs,
-/obj/item/seeds/herbs,
-/obj/item/seeds/horsenettle,
-/obj/item/seeds/horsenettle,
-/obj/item/seeds/lemon,
-/obj/item/seeds/lemon,
-/obj/item/seeds/lime,
-/obj/item/seeds/lime,
-/obj/item/seeds/mutfruit,
-/obj/item/seeds/mutfruit,
-/obj/item/seeds/nettle,
-/obj/item/seeds/nettle,
-/obj/item/seeds/onion,
-/obj/item/seeds/onion,
-/obj/item/seeds/orange,
-/obj/item/seeds/orange,
-/obj/item/seeds/peach,
-/obj/item/seeds/peach,
-/obj/item/seeds/peanutseed,
-/obj/item/seeds/peanutseed,
-/obj/item/seeds/peas,
-/obj/item/seeds/peas,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/pineapple,
-/obj/item/seeds/pinyon,
-/obj/item/seeds/pinyon,
-/obj/item/seeds/plum,
-/obj/item/seeds/plum,
-/obj/item/seeds/poppy,
-/obj/item/seeds/poppy,
-/obj/item/seeds/potato,
-/obj/item/seeds/potato,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/pricklypear,
-/obj/item/seeds/pricklypear,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/pumpkin,
-/obj/item/seeds/punga,
-/obj/item/seeds/punga,
-/obj/item/seeds/random,
-/obj/item/seeds/random,
-/obj/item/seeds/random,
-/obj/item/seeds/random,
-/obj/item/seeds/replicapod,
-/obj/item/seeds/rose,
-/obj/item/seeds/rose,
-/obj/item/seeds/strawberry,
-/obj/item/seeds/strawberry,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/sugarcane,
-/obj/item/seeds/sunflower,
-/obj/item/seeds/sunflower,
+/obj/item/seeds/yucca,
+/obj/item/seeds/xander,
+/obj/item/seeds/whitebeet,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/wheat,
+/obj/item/seeds/watermelon,
+/obj/item/seeds/tower,
+/obj/item/seeds/tomato,
+/obj/item/seeds/tobacco,
+/obj/item/seeds/tato,
 /obj/item/seeds/sunflower/moonflower,
-/obj/item/seeds/tato,
-/obj/item/seeds/tato,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/tomato,
-/obj/item/seeds/tomato,
-/obj/item/seeds/tower,
-/obj/item/seeds/tower,
-/obj/item/seeds/watermelon,
-/obj/item/seeds/watermelon,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/wheat/rice,
-/obj/item/seeds/whitebeet,
-/obj/item/seeds/whitebeet,
-/obj/item/seeds/xander,
-/obj/item/seeds/xander,
-/obj/item/seeds/yucca,
-/obj/item/seeds/yucca,
+/obj/item/seeds/sunflower,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/strawberry,
+/obj/item/seeds/rose,
+/obj/item/seeds/replicapod,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/random,
+/obj/item/seeds/punga,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pricklypear,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/potato,
+/obj/item/seeds/poppy,
+/obj/item/seeds/plum,
+/obj/item/seeds/pinyon,
+/obj/item/seeds/pineapple,
+/obj/item/seeds/peas,
+/obj/item/seeds/peanutseed,
+/obj/item/seeds/peach,
+/obj/item/seeds/orange,
+/obj/item/seeds/onion,
+/obj/item/seeds/nettle,
+/obj/item/seeds/mutfruit,
+/obj/item/seeds/lime,
+/obj/item/seeds/lemon,
+/obj/item/seeds/horsenettle,
+/obj/item/seeds/herbs,
+/obj/item/seeds/harebell,
+/obj/item/seeds/greenbean,
+/obj/item/seeds/grass,
+/obj/item/seeds/grape,
+/obj/item/seeds/garlic,
+/obj/item/seeds/fungus,
+/obj/item/seeds/fever_blossom,
+/obj/item/seeds/feracactus,
+/obj/item/seeds/eggplant,
+/obj/item/seeds/datura,
+/obj/item/seeds/cucumber,
+/obj/item/seeds/coyotetobacco,
+/obj/item/seeds/cotton,
+/obj/item/seeds/corn,
+/obj/item/seeds/coffee,
+/obj/item/seeds/coconut,
+/obj/item/seeds/cocoapod,
+/obj/item/seeds/chili,
+/obj/item/seeds/cherry,
+/obj/item/seeds/chanterelle,
+/obj/item/seeds/carrot,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/buffalogourd,
+/obj/item/seeds/berry,
+/obj/item/seeds/bee_balm,
+/obj/item/seeds/banana,
+/obj/item/seeds/bamboo,
+/obj/item/seeds/apple,
+/obj/item/seeds/ambrosia/gaia,
+/obj/item/seeds/ambrosia/deus,
+/obj/item/seeds/ambrosia,
+/obj/item/seeds/aloe,
+/obj/item/seeds/agave,
+/obj/machinery/smartfridge/bottlerack/seedbin,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -11519,8 +11447,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "jPp" = (
-/obj/structure/flora/twig4,
-/obj/structure/flora/tallgrass1,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/twig2,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -17568,8 +17496,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "pcM" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -18053,6 +17980,12 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"pDs" = (
+/obj/structure/flora/twig4,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "pEa" = (
 /obj/structure/fence/wooden{
 	density = 0;
@@ -19182,6 +19115,7 @@
 	pixel_x = 12;
 	layer = 2
 	},
+/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -25806,7 +25740,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/caves)
 "wDF" = (
-/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/flora/rock/pile/largejungle{
+	pixel_y = -32
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -33554,7 +33490,7 @@ tqT
 reL
 sIR
 kCD
-pcM
+kCD
 kCD
 dYg
 xGj
@@ -33812,7 +33748,7 @@ eLX
 kCD
 vpi
 kCD
-kCD
+pcM
 kCD
 jYv
 jFI
@@ -34062,7 +33998,7 @@ oez
 oez
 oez
 sqS
-kCD
+pcM
 dYg
 xTy
 xTy
@@ -34833,7 +34769,7 @@ esX
 mNn
 mNn
 esX
-esX
+mNn
 kCD
 xTy
 xTy
@@ -35090,7 +35026,7 @@ esX
 mNn
 mNn
 mNn
-esX
+mNn
 kCD
 xTy
 xTy
@@ -35098,7 +35034,7 @@ xTy
 xTy
 xTy
 xTy
-kCD
+pcM
 dYg
 pjG
 bYj
@@ -35607,13 +35543,13 @@ mNn
 mNn
 dYg
 kCD
-anc
+pcM
 kCD
 kCD
 kCD
 kCD
 kCD
-dYg
+jPp
 jFI
 qSl
 qSl
@@ -35861,14 +35797,14 @@ tPg
 eJT
 mNn
 mNn
-esX
+mNn
 wDF
 kCD
 kCD
-jPp
+kCD
 anc
 kCD
-kCD
+pDs
 kCD
 dYg
 bvw
