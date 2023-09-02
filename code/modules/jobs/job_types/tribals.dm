@@ -257,14 +257,13 @@ Tribal Head Hunter
 	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /*
@@ -511,7 +510,8 @@ Hunter
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/loadout/ranged
@@ -616,5 +616,6 @@ Guardian
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1
+		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/cool_book/warriorguide = 1
 	)
