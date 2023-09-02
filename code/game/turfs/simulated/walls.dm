@@ -22,6 +22,8 @@
 	var/girder_type = /obj/structure/girder
 	/// Wall breaks on light blast
 	var/weak_wall = TRUE
+	var/climb_time = 10 SECONDS
+	var/stairs_time = 10 SECONDS
 
 	canSmoothWith = list(
 	/turf/closed/wall,
@@ -341,39 +343,175 @@
 
 #undef MAX_DENT_DECALS
 
+/turf/closed/wall/AltClick(mob/user)
+	. = ..()
+	if(can_climb(user))
+		return climb_wall(user)
 
 // Free Running perk!
-/turf/closed/wall/AltClick(mob/living/user)
+/turf/closed/wall/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/ammo_casing/caseless/rock) || istype(W, /obj/item/ammo_casing/caseless/brick))
+		return build_rock_stairs(user, W)
 	. = ..()
+
+/turf/closed/wall/proc/can_climb(mob/living/user)
+	if(!istype(user))
+		return
+	if(INTERACTING_WITH(user, src))
+		return
 	if(user.stat)
 		return
+	if(!user.can_reach(src)) // Huh, why wasn't this here? I sworn I put this here when I first made this. H m s t v e
+		return
+	if(user.restrained())
+		return
+	if(!is_climbable(user))
+		to_chat(user, span_alert("You briefly consider climbing the wall, but it is just too perilous to climb! You'd probably fall and break your neck!"))
+		return
+	return TRUE
+
+/turf/closed/wall/proc/climb_wall(mob/living/user)
+	if(!istype(user))
+		return
+	if(!can_climb(user))
+		return
+	if(HAS_TRAIT(user, TRAIT_FAT))
+		to_chat(user, span_warning("You try to climb up [src], but your big fat gut gets in the way!"))
+		return
+	var/turf/AboveT = get_step_multiz(get_turf(user), UP)
+	var/turf/targetDest = get_step_multiz(get_turf(src), UP)
+	if(!can_climb_to(user, targetDest, AboveT))
+		return
+	var/time_to_climb = climb_time
+	if(user.getStaminaLoss() > 0)
+		time_to_climb += user.getStaminaLoss() * 0.25 // 25% of your stamina loss will effect the speed on climbing.
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING))
-		if(!user.can_reach(src)) // Huh, why wasn't this here? I sworn I put this here when I first made this. H m s t v e
-			return
-		if(user.restrained())
-			return
-		var/turf/aboveT = get_step_multiz(get_turf(user), UP)
-		if(!istype(aboveT, /turf/open/transparent/openspace))
-			to_chat(user, "You can't climb there, there is a ceiling!")
-			return
-		visible_message(span_warning("[user] attempts to climb the [name]!"), span_warning("You begin climbing the [name]"))
-		
-		if(do_mob(user, user, 40 + (user.getStaminaLoss() * 0.25))) // 25% of your stamina loss will effect the speed on climbing.
-			var/turf/targetDest = get_step_multiz(get_turf(src), UP)
-			if(istype(targetDest, /turf/open/transparent/openspace)) // This helps prevent boundary breaking.
-				to_chat(user, span_warning("There's nothing to stand on once you climb up..!"))
-				return
-			
-			var/failedPass = FALSE
-			for(var/obj/O in targetDest.contents)
-				if(!O.CanPass(user, get_dir(aboveT, targetDest)))
-					failedPass = TRUE
-					break
+		time_to_climb *= 0.25 // Free runners climb 75% faster.
+	visible_message(
+		span_warning("[user] starts climbing up [name]!"),
+		span_notice("You start climbing up [name]!")
+	)
+	SSweather.add_sound_rock(user, /datum/looping_sound/rockpile)
+	var/failed = FALSE
+	if(!do_after(user, time_to_climb, TRUE, src, TRUE, public_progbar = TRUE))
+		failed = TRUE
+	if(!can_climb_to(user, targetDest, AboveT))
+		failed = TRUE
+		return
+	SSweather.remove_sound_rock(user, /datum/looping_sound/rockpile)
+	if(failed)
+		if(HAS_TRAIT(user, TRAIT_FREERUNNING))
+			visible_message(
+				span_alert("[user] slips and falls! Shoot!"),
+				span_alert("You slip and fall! But, you land on your feet (or whatever it is you use)!"))
+		else
+			visible_message(
+				span_alert("[user] slips and falls flat on their behind! Shoot!"),
+				span_alert("You slip and fall! Shoot!"))
+			user.DefaultCombatKnockdown(1) // just a lil one
+		return
+	if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
+		visible_message(
+			span_notice("[user] climbs up [src]!"),
+			span_notice("You climb up [src]!"))
+		if(!HAS_TRAIT(user, TRAIT_FREERUNNING))
+			user.DefaultCombatKnockdown(1, override_stamdmg = 5) // just a lil one
 
-			if(!isloc(targetDest) || targetDest?.density || !targetDest.CanPass(user, get_dir(aboveT, targetDest)) || failedPass)
-				to_chat(user, span_warning("You peak towards the top of the wall, but it's not safe to climb there!"))
-				return
-			if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
-				to_chat(user, span_notice("You move upwards."))
+/turf/closed/wall/proc/build_rock_stairs(mob/living/user, obj/item/W)
+	if(!istype(user))
+		return
+	if(!can_climb(user))
+		return
+	visible_message(
+		span_warning("[user] starts piling up rocks against [name]!"),
+		span_notice("You begin piling up rocks against [name], trying to build a way up!")
+	)
+	var/turf/AboveT = get_step_multiz(get_turf(user), UP)
+	var/turf/targetDest = get_step_multiz(get_turf(src), UP)
+	if(!can_climb_to(user, targetDest, AboveT))
+		return
+	var/time_to_climb = climb_time
+	if(user.getStaminaLoss() > 0)
+		time_to_climb += user.getStaminaLoss() * 0.25 // 25% of your stamina loss will effect the speed on climbing.
+	if(HAS_TRAIT(user, TRAIT_QUICK_BUILD) || HAS_TRAIT(user, TRAIT_MONKEYLIKE))
+		time_to_climb *= 0.50 // Builders and monkes climb 50% faster.
+	SSweather.add_sound_rock(user, /datum/looping_sound/rockpile)
+	var/failed = FALSE
+	if(!do_after(user, time_to_climb, TRUE, src, TRUE, public_progbar = TRUE))
+		failed = TRUE
+	if(!can_climb_to(user, targetDest, AboveT))
+		failed = TRUE
+		return
+	SSweather.remove_sound_rock(user, /datum/looping_sound/rockpile)
+	if(failed)
+		visible_message(span_alert("[user]'s pile of stuff falls apart! Shoot!"), span_alert("Your pile of stuff falls apart! Shoot!"))
+		return
+	var/angle = get_dir(user, src)
+	switch(angle)
+		if(NORTH)
+			if(istype(W, /obj/item/ammo_casing/caseless/brick))
+				new /obj/structure/stairs/rockpile/brickpile/north(get_turf(user))
+			else
+				new /obj/structure/stairs/rockpile/north(get_turf(user))
+		if(SOUTH)
+			if(istype(W, /obj/item/ammo_casing/caseless/brick))
+				new /obj/structure/stairs/rockpile/brickpile/south(get_turf(user))
+			else
+				new /obj/structure/stairs/rockpile/south(get_turf(user))
+		if(EAST)
+			if(istype(W, /obj/item/ammo_casing/caseless/brick))
+				new /obj/structure/stairs/rockpile/brickpile/east(get_turf(user))
+			else
+				new /obj/structure/stairs/rockpile/east(get_turf(user))
+		if(WEST)
+			if(istype(W, /obj/item/ammo_casing/caseless/brick))
+				new /obj/structure/stairs/rockpile/brickpile/west(get_turf(user))
+			else
+				new /obj/structure/stairs/rockpile/west(get_turf(user))
+	visible_message(span_notice("[user] stacks a bunch of rocks against [src] as a makeshift staircase!"), span_notice("You stack a bunch of rocks against [src] as a makeshift staircase!"))
+	if(istype(W))
+		qdel(W)
+	return TRUE
 
+/turf/closed/wall/proc/is_climbable(mob/user)
+	return TRUE // This is just a placeholder for now. We'll add more stuff later.
+
+/turf/closed/wall/proc/can_climb_to(mob/living/user, turf/targetDest, turf/AboveT)
+	var/thingelephant = "something"
+	var/ceilingeleephant = "ceiling"
+	if(prob(0.1))
+		ceilingeleephant = "elephant"
+		thingelephant = "an elephant"
+	if(!istype(AboveT, /turf/open/transparent/openspace))
+		to_chat(user, "You can't get here, there is \a [ceilingeleephant] in the way!") // (0)
+		return
+	if(istype(targetDest, /turf/open/transparent/openspace))
+		to_chat(user, span_warning("There's nothing to stand on up there!"))
+		return
+	if(istype(targetDest, /turf/closed) || istype(AboveT, /turf/closed))
+		to_chat(user, span_warning("On top of the wall seems to be more wall! You can't get up there")) // (1)
+		return
+	var/list/stuff_to_check = list()
+	stuff_to_check |= targetDest.contents
+	stuff_to_check |= AboveT.contents
+	stuff_to_check |= targetDest
+	stuff_to_check |= AboveT
+	var/bad
+	for(var/atom/A in stuff_to_check)
+		if(A.density)
+			bad = TRUE
+			break
+		// if(!A.CanPass(user, get_dir(AboveT, targetDest)))
+		// 	bad = TRUE
+		// 	break
+		// if(!A.CanPass(user, get_dir(AboveT, targetDest)))
+		// 	bad = TRUE
+		// 	break
+		if(istype(A, /obj/structure)) // stop climbing into railings and stuff
+			bad = TRUE
+			break
+	if(bad)
+		to_chat(user, span_warning("There's [thingelephant] in the way! You can't go there!"))
+		return
+	return TRUE // If we got here, we can climb!
 
