@@ -56,7 +56,7 @@
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = 'sound/f13npc/deathclaw/death.ogg'
 	low_health_threshold = 0.5
-	//ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
+	ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 3, 3),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(65),

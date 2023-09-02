@@ -34,8 +34,8 @@
 	del_on_death = TRUE
 	speak_chance = 1
 	despawns_when_lonely = FALSE
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
 
 /obj/effect/mob_spawn/human/corpse/vault
 	name = "Vault Dweller"
@@ -176,8 +176,8 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
 
 // Enclave Scientist
 /mob/living/simple_animal/hostile/enclave/scientist
@@ -302,8 +302,8 @@
 	speak = list("Semper Invicta!")
 	speak_emote = list("rushes")
 	speak_chance = 1
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
 
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Brotherhood Knight"
@@ -413,8 +413,8 @@
 	speak = list("Patrolling the Mojave almost makes you wish for a nuclear winter.", "When I got this assignment I was hoping there would be more gambling.", "It's been a long tour, all I can think about now is going back home.", "You know, if you were serving, you'd probably be halfway to general by now.", "You oughtta think about enlisting. We need you here.")
 	speak_emote = list("says")
 	speak_chance = 1
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
 
 /obj/effect/mob_spawn/human/corpse/ncr
 	name = "NCR Trooper"
@@ -520,8 +520,8 @@
 	speak = list("Ave, true to Caesar.", "True to Caesar.", "Ave, Amicus.", "The new slave girls are quite beautiful.", "Give me cause, Profligate.", "Degenerates like you belong on a cross.")
 	speak_emote = list("says")
 	speak_chance = 1
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
 
 /obj/effect/mob_spawn/human/corpse/legion
 	name = "Legion Prime"
@@ -628,5 +628,5 @@
 	speak = list("For our kin!", "This will be a good hunt.", "The gods look upon me today.")
 	speak_emote = list("says")
 	speak_chance = 1
-	//ignore_other_mobs = TRUE // we fight
-	//override_ignore_other_mobs = TRUE
+	ignore_other_mobs = TRUE // we fight
+	override_ignore_other_mobs = TRUE
