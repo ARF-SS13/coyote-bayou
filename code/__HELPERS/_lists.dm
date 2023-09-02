@@ -899,4 +899,21 @@
 		input += "[i]"
 	return WeightedCascadingPicker(input, weight_mult, reverse, TRUE)
 
+/// Takes a list and reverses the associations
+/// Like, list("a" = 1, "b" = 2) becomes list(1 = "a", 2 = "b")
+/proc/invert_ass_list(list/input)
+	if(!islist(input))
+		return list() // good luck finding this runtime! =3
+	var/list/out = list()
+	for(var/ass in input)
+		var/ssa = LAZYACCESS(input, ass)
+		if(isnull(ssa))
+			continue // fully asses lists, please
+		out[ssa] = ass
+	return out
+
+
+
+
+
 

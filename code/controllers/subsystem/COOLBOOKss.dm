@@ -20,6 +20,14 @@ SUBSYSTEM_DEF(cool_books)
 	. = ..()
 	to_chat(world, span_announce("Initialized [boox] COOLBOOK(s), with [LAZYLEN(all_images)] pictures!"))
 
+/datum/controller/subsystem/cool_books/proc/force_refresh()
+	/// BURN EM, BURN EM ALL
+	QDEL_LIST_ASSOC_VAL(all_books)
+	all_images.Cut()
+	/// Then immediately rewrite them
+	var/boox = build_library()
+	message_admins("COOLBOOK library has been refreshed! [boox] COOLBOOK(s) loaded, with [LAZYLEN(all_images)] pictures!")
+
 /// Runs through the cool_books/ directory and compiles all the JSONs into datum/cool_book
 /datum/controller/subsystem/cool_books/proc/build_library()
 	/// First, gather up all the directories in cool_books/
@@ -155,6 +163,10 @@ SUBSYSTEM_DEF(cool_books)
 		qdel(src)
 		CRASH("COOLBOOK [book_directory] failed to load!")
 
+/datum/cool_book/Destroy(force, ...)
+	QDEL_LIST_ASSOC_VAL(chapters)
+	. = ..()
+
 /datum/cool_book/proc/build_book(book_directory)
 	if(!book_directory)
 		CRASH("build_book() called with no book_directory!")
@@ -170,7 +182,16 @@ SUBSYSTEM_DEF(cool_books)
 			continue // Not a problem if it's not a valid chapter file, just ignore it
 		if(!add_chapter("[book_directory][coolchapter]"))
 			stack_trace("COOLBOOK [book_directory] chapter [coolchapter] failed to load!")
+	chapters = sort_list(chapters, /datum/cool_book/proc/cmp_chapter_order) // bit of a mouthful, so open wide
+	chapters = invert_ass_list(chapters) // I swear this'll make sense later
 	return TRUE
+
+/datum/cool_book/proc/cmp_chapter_order(datum/cool_chapter/chapter1, datum/cool_chapter/chapter2)
+	if(!istype(chapter1) || !istype(chapter2))
+		CRASH("cmp_chapter_order() called with a null chapter!")
+	if(chapter1.order == chapter2.order)
+		return sorttext(chapter1.book_directory, chapter2.book_directory)
+	return (chapter1.order > chapter2.order) ? 1 : -1
 
 /datum/cool_book/proc/is_valid_chapter_file(full_file_path)
 	if(!full_file_path)
@@ -187,7 +208,7 @@ SUBSYSTEM_DEF(cool_books)
 	var/datum/cool_chapter/chapter = new(chapter_path, src)
 	if(!chapter)
 		CRASH("COOLBOOK [key] has a chapter that failed to compile! [chapter_path]")
-	chapters[chapter.chapter_title] = chapter
+	chapters[chapter] = chapter.chapter_title // it'll make sense in a bit, bear with me
 	return TRUE
 
 /datum/cool_book/proc/indexify(list/chapter_data)
@@ -291,6 +312,8 @@ SUBSYSTEM_DEF(cool_books)
 	var/list/bottom_images
 	/// Is this our index?
 	var/is_index = FALSE
+	/// What order should this appear in the book?
+	var/order = 0 // conflicts will be ordered by name, maybe
 	/// The pages in this chapter
 	/// Format: list(1 = "fuckhuge block of text", ...")
 	var/list/pages
@@ -331,13 +354,15 @@ SUBSYSTEM_DEF(cool_books)
 			continue
 		if(automatic_page_breaks && findtext(line, BOOK_CHAPTER_TOKEN_PAGEBREAK))
 			automatic_page_breaks = FALSE
-			continue
 		if(findtext(line, BOOK_TXT_IMG_TOP)) // time to run this fucker a bunch of times =3
 			extract_txt_img(line, BOOK_TXT_IMG_TOP)
 			continue
 		if(findtext(line, BOOK_TXT_IMG_BOTTOM))
 			extract_txt_img(line, BOOK_TXT_IMG_BOTTOM)
 			continue
+		if(findtext(line, BOOK_TXT_ORDER_TOKEN))
+			extract_txt_order(line)
+			continue // dont include that
 		text_out += line
 	if(!LAZYLEN(text_out))
 		text_out += "This chapter (un)intentionally left blank."
@@ -375,6 +400,19 @@ SUBSYSTEM_DEF(cool_books)
 	if(!register_image(img_filename, img_scalemode, img_page_num, token, isurl)) // images in react are wierd
 		log_world("Chapter [chapter_title] has a txt chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page_num] [token] [isurl]")
 
+/// Extracts the order of a chapter from a txt file
+/datum/cool_chapter/proc/extract_txt_order(line)
+	if(!line)
+		return
+	var/where_split = findtext(line, ":") // everything after the colon is the order number. will be a string tho
+	if(!where_split)
+		return
+	line = copytext(line, where_split + 1, length(line) + 1) // everything before the colon is metadata
+	var/order_num = text2num(line)
+	if(!order_num)
+		return
+	order = order_num
+
 /// If our chapter is a json, we just yoink out the data easy as
 /// Also handles defining an index as our index, since indexes are both chapters, and jsons.
 /datum/cool_chapter/proc/read_json(chapter_path, datum/cool_book/mybook)
@@ -395,6 +433,7 @@ SUBSYSTEM_DEF(cool_books)
 			chapter_title = "Untitled Chapter [rand(1000,9999)]-[rand(1000,9999)]-[rand(1000,9999)]"
 			stack_trace("Chapter [chapter_path] has a json chapter that lacks a chapter title! Making one up! [chapter_title]")
 	extract_json_img(jsoncontents)
+	extract_json_order(jsoncontents)
 	var/list/text_out = LAZYACCESS(jsoncontents, BOOK_CHAPTER_JSON_CONTENT)
 	if(!LAZYLEN(text_out))
 		text_out += "This chapter (un)intentionally left blank."
@@ -433,6 +472,15 @@ SUBSYSTEM_DEF(cool_books)
 				log_world("Chapter [src] has a json chapter with an image that failed to register! [img_filename] [img_scalemode] [img_page] [img_place] [isurl]")
 				continue
 			. = TRUE
+
+/// Extracts the order of a chapter from a json file
+/datum/cool_chapter/proc/extract_json_order(list/jsoncontents)
+	if(!LAZYLEN(jsoncontents))
+		return
+	var/order_num = LAZYACCESS(jsoncontents, BOOK_CHAPTER_JSON_ORDER)
+	if(!order_num)
+		return
+	order = order_num
 
 /// Registers an image to a page
 /// This is a bit of a mess, but it works

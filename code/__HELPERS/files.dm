@@ -1,21 +1,23 @@
 // Security helpers to ensure you cant arbitrarily load stuff from disk
 /proc/wrap_file(filepath)
 	if(IsAdminAdvancedProcCall())
-		// Admins shouldnt fuck with this
-		to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
-		message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
-		log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
-		return
+		// // Admins shouldnt fuck with this // ya know, you say that...
+		// to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
+		// message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
+		// log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
+		// return
+		to_chat(usr, span_boldannounce("🍆~")) // ...but I'm the dev here and I say load shit from my c drive
 
 	return file(filepath)
 
 /proc/wrap_file2text(filepath)
 	if(IsAdminAdvancedProcCall())
-		// Admins shouldnt fuck with this
-		to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
-		message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
-		log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
-		return
+		// // Admins shouldnt fuck with this 
+		// to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
+		// message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
+		// log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
+		// return
+		to_chat(usr, span_boldannounce("🍆~"))
 
 	return file2text(filepath)
 
