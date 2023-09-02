@@ -1013,8 +1013,8 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/copper/reaction_obj(obj/O, reac_volume)
-	if(istype(O, /obj/item/stack/sheet/metal))
-		var/obj/item/stack/sheet/metal/M = O
+	if(istype(O, /obj/item/stack/sheet/plasteel))
+		var/obj/item/stack/sheet/plasteel/M = O
 		reac_volume = min(reac_volume, M.amount)
 		new/obj/item/stack/sheet/bronze(get_turf(M), reac_volume)
 		M.use(reac_volume)

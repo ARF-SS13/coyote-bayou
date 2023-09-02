@@ -3,6 +3,7 @@
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
 	color = "#878687"
+	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
 	value_per_unit = 0.0025
@@ -69,7 +70,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "diamond"
 	desc = "Highly pressurized carbon"
 	color = list(48/255, 272/255, 301/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
-	strength_modifier = 1.15
+	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/diamond
 	value_per_unit = 0.25
@@ -146,6 +147,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "titanium"
 	desc = "Titanium"
 	color = "#b3c0c7"
+	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/titanium
 	value_per_unit = 0.0625
@@ -208,7 +210,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///Stronk force increase
 /datum/material/adamantine
-	name = "pre-war steel"
+	name = "ultrasteel"
 	desc = "A powerful material made out of magic, I mean science!"
 	color = "#6d7e8e"
 	strength_modifier = 1.3
@@ -220,16 +222,17 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 
 ///RPG Magic. (Admin only)
 /datum/material/mythril
-	name = "mythril"
+	name = "rose steel"
 	desc = "How this even exists is byond me"
 	color = "#f2d5d7"
+	strength_modifier = 1.15
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/mythril
 	value_per_unit = 0.75
 	beauty_modifier = 0.5
 	armor_modifiers = list("melee" = 2, "bullet" = 2, "laser" = 2, "energy" = 2, "bomb" = 2, "bio" = 2, "rad" = 2, "fire" = 2, "acid" = 2)
 
-/datum/material/mythril/on_applied_obj(atom/source, amount, material_flags)
+/*/datum/material/mythril/on_applied_obj(atom/source, amount, material_flags)
 	. = ..()
 	if(istype(source, /obj/item))
 		source.AddComponent(/datum/component/fantasy)
@@ -237,7 +240,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 /datum/material/mythril/on_removed_obj(atom/source, material_flags)
 	. = ..()
 	if(istype(source, /obj/item))
-		qdel(source.GetComponent(/datum/component/fantasy))
+		qdel(source.GetComponent(/datum/component/fantasy))*/
 
 //I don't like sand. It's coarse, and rough, and irritating, and it gets everywhere.
 /datum/material/sand
@@ -303,10 +306,10 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.3 //It really beats the cold plain plating of the station, doesn't it?
 
 /datum/material/bronze
-	name = "bronze"
+	name = "black bronze"
 	desc = "Clock Cult? Never heard of it."
-	color = "#92661A"
-	strength_modifier = 1.15
+	color = "#563100"
+	strength_modifier = 1
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/bronze
 	value_per_unit = 0.025
