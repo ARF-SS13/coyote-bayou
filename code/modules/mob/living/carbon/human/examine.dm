@@ -606,9 +606,10 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		return
 
 /mob/living/proc/get_personality_traits(mob/user)
-	. = ""
 	if(!user)
 		return
+	var/msg
+	var/out = ""
 	for(var/triat in GLOB.personality_quirks)
 		if(!HAS_TRAIT(src, triat))
 			continue
@@ -621,13 +622,17 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			if(!HAS_TRAIT(user, treit))
 				continue
 			/// The return of the cursed href link!!!
-			. += {"<a 
+			msg += {"<a 
 					href='
 						?src=[REF(user)];
 						read_personality_trait=[triat];
 						>
 							[emoji]
 				</a>"}
+	if(!isnull(msg))
+		out = "<span class='info'>[user] [p_has()] some cool traits! Click the emojis to learn more!</span>\n"
+	out += msg
+	return msg
 
 /mob/living/Topic(href, href_list)
 	. = ..()
