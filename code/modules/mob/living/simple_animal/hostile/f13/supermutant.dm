@@ -73,7 +73,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	ignore_other_mobs = TRUE // gentle giants that respect the inhabitants of the wastes. Cept for players
+	//ignore_other_mobs = TRUE // gentle giants that respect the inhabitants of the wastes. Cept for players
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
