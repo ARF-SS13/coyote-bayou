@@ -375,6 +375,9 @@
 		return
 	if(!can_climb(user))
 		return
+	if(HAS_TRAIT(user, TRAIT_FAT))
+		to_chat(user, span_wrning("You try to climb up [src], but your big fat gut gets in the way!"))
+		return
 	var/turf/AboveT = get_step_multiz(get_turf(user), UP)
 	var/turf/targetDest = get_step_multiz(get_turf(src), UP)
 	if(!can_climb_to(user, targetDest, AboveT))
