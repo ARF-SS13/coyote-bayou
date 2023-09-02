@@ -33113,7 +33113,8 @@
 /area/f13/building/coyote/nash/massfus/lobby)
 "eew" = (
 /obj/machinery/conveyor/auto{
-	dir = 4
+	dir = 4;
+	id = "spawn1"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/starterroad)
@@ -42221,7 +42222,8 @@
 /area/f13/wasteland/city/nash/downtown)
 "gnT" = (
 /obj/machinery/conveyor/auto{
-	dir = 4
+	dir = 4;
+	id = "spawn2"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/tunnel)
@@ -49403,6 +49405,15 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland)
+"hVz" = (
+/obj/machinery/conveyor_switch{
+	pixel_y = -9;
+	id = "spawn1"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/starterroad)
 "hVA" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
@@ -102063,9 +102074,7 @@
 /area/f13/tunnel/southeast)
 "ubn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/spirit_board{
-	anchored = 1
-	},
+/obj/structure/spirit_hole,
 /turf/open/floor/fakespace,
 /area/f13/building/tribal/caveofforever)
 "ubt" = (
@@ -113915,6 +113924,10 @@
 /area/f13/wasteland)
 "wSw" = (
 /obj/effect/landmark/start/f13/druid,
+/obj/machinery/conveyor_switch{
+	pixel_y = 22;
+	id = "spawn2"
+	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -115115,6 +115128,11 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
+"xik" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel,
+/area/f13/building/workshop)
 "xip" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -121709,7 +121727,7 @@ wuA
 rdC
 wJX
 uEa
-bSK
+hVz
 eew
 aEa
 ezS
@@ -131169,7 +131187,7 @@ ufD
 rIF
 bYq
 lTY
-lTY
+xik
 lTY
 lTY
 lTY
