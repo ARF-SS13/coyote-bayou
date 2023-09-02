@@ -158,6 +158,10 @@
 #define TRAIT_ERPSWITCH			"ERP Seeking - Switch"
 #define TRAIT_ERPFLIRTY			"ERP Seeking - Flirty"
 #define TRAIT_SHY				"Shy"
+#define TRAIT_PVEFOC			"PVE Focused"
+#define TRAIT_PVPFOC			"PVP Focused"
+#define TRAIT_COMBATSWITCH		"PVP/PVE Accepting"
+#define TRAIT_OOCAPP			"L/OOC Approach"
 #define TRAIT_RPFOCUSED			"RP Focused"
 #define TRAIT_RPLONGTERM		"RP Focused Long Term" //RP Focused on long term interactions
 #define TRAIT_RPSHORTTERM		"RP Focused Short Term" //RP Focused on short term interactions

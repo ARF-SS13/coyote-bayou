@@ -2848,12 +2848,6 @@
 	M.adjustStaminaLoss(80 * effect_mult)
 	..()
 
-/datum/reagent/red_ambrosia/overdose_process(mob/living/carbon/M)
-	if(!M.getorganslot(ORGAN_SLOT_ZOMBIE))
-		var/obj/item/organ/zombie_infection/ghoul/ZI = new()
-		ZI.Insert(M)
-	..()
-
 /datum/reagent/green_ambrosia
 	name = "Green Ambrosia"
 	can_synth = FALSE

@@ -801,10 +801,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "azS" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
+/obj/structure/table/glass,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "aAa" = (
 /obj/machinery/gibber,
 /turf/open/floor/plasteel/freezer,
@@ -2372,9 +2372,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "bDj" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/water,
-/area/f13/tunnel)
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "bDk" = (
 /mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/grimy,
@@ -3358,7 +3358,6 @@
 /area/f13/tunnel)
 "bLe" = (
 /obj/machinery/light/small,
-/mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bLf" = (
@@ -3799,7 +3798,6 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibtorso"
 	},
-/mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bMX" = (
@@ -3959,9 +3957,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bNA" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "bNC" = (
 /turf/closed/mineral/random/high_chance,
 /area/f13/tunnel)
@@ -4240,9 +4241,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bOU" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/mutfruit,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "bOW" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -6148,11 +6153,15 @@
 	},
 /area/f13/tunnel)
 "cne" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/closet/cabinet{
+	name = "Cuck Closet"
 	},
-/area/f13/bunker)
+/mob/living/simple_animal/hostile/deathclaw/legendary{
+	name = "Le Cuck"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "cnf" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -10995,7 +11004,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -11585,7 +11593,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gaz" = (
-/mob/living/simple_animal/hostile/deathclaw,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -14291,6 +14298,13 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
+"hQR" = (
+/obj/machinery/plantgenes,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/obj/item/disk/plantgene,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "hRd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -17282,12 +17296,9 @@
 	},
 /area/f13/building/trainstation)
 "jNq" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/structure/table/glass,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "jNJ" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -19680,6 +19691,14 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/building)
+"lrn" = (
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/xander,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "lrv" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -22148,12 +22167,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "mPJ" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
-	},
-/area/f13/caves)
+/obj/machinery/seed_extractor,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "mPP" = (
 /obj/structure/chair/sofa/right,
 /turf/open/floor/f13{
@@ -34352,10 +34368,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "uKv" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "uKR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -35956,6 +35971,14 @@
 /mob/living/simple_animal/hostile/giantantqueen,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"vQu" = (
+/obj/machinery/hydroponics/constructable{
+	yieldmod = 1.3;
+	name = "HydroFarm"
+	},
+/obj/item/seeds/poppy/broc,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "vQZ" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/f13/crispysquirrel,
@@ -36193,6 +36216,11 @@
 /obj/structure/table/wood/bar,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
+"vYk" = (
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder/constructed,
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "vYu" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
@@ -39278,11 +39306,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xUb" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -15
 	},
-/area/f13/caves)
+/turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
+/area/f13/building/hospital/clinic)
 "xUF" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/spacevine{
@@ -41857,7 +41886,7 @@ bLB
 alc
 alc
 abP
-xag
+cne
 amk
 bgY
 abP
@@ -42878,7 +42907,7 @@ aae
 aal
 aal
 pWa
-azS
+pWa
 hRd
 hRd
 hRd
@@ -43429,11 +43458,11 @@ aae
 aae
 aae
 aaa
-aaa
-aaa
-aaa
-aaa
-aae
+bOj
+bOj
+bOj
+bOj
+bOj
 bOj
 tyx
 tyx
@@ -43685,13 +43714,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
 bOj
+bNA
+tyx
+xUb
+tyx
+bDj
 tyx
 tyx
 tyx
@@ -43942,12 +43971,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+bNA
+tyx
+tyx
+jNq
 bOj
 tyx
 qjf
@@ -44199,12 +44228,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+bNA
+tyx
+tyx
+azS
 bOj
 tyx
 tyx
@@ -44456,12 +44485,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+vQu
+tyx
+tyx
+vYk
 bOj
 tyx
 tyx
@@ -44713,12 +44742,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+lrn
+tyx
+tyx
+jNq
 bOj
 tyx
 qjf
@@ -44970,12 +44999,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+bOU
+tyx
+tyx
+uKv
 bOj
 tyx
 tyx
@@ -45227,12 +45256,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+hQR
+tyx
+tyx
+mPJ
 bOj
 tyx
 tyx
@@ -45484,12 +45513,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOj
+bOj
+bOj
+bOj
+bOj
 bOj
 tyx
 qjf
@@ -67562,7 +67591,7 @@ alc
 alc
 ang
 bNu
-bNA
+alc
 pgO
 abP
 aae
@@ -68770,7 +68799,7 @@ aaa
 aak
 aae
 bJq
-bDj
+bJq
 bJq
 bJq
 aak
@@ -69792,7 +69821,7 @@ rmt
 bCG
 aaa
 bJq
-bDj
+bJq
 bJq
 bJq
 bJq
@@ -70326,7 +70355,7 @@ bJq
 bJq
 bJq
 bJq
-bOU
+boU
 boU
 aae
 aae
@@ -71611,7 +71640,7 @@ bJq
 bJq
 bJq
 bJq
-bDj
+bJq
 boU
 boU
 aae
@@ -71856,14 +71885,14 @@ aak
 aaa
 aae
 boU
-bDj
+bJq
 bJq
 bJq
 bJq
 bJq
 bJq
 boU
-bDj
+bJq
 bJq
 bJq
 bJq
@@ -84815,7 +84844,7 @@ aae
 sGn
 bPr
 bPs
-cne
+bPs
 sgV
 pwB
 vWN
@@ -97973,7 +98002,7 @@ xwF
 xwF
 dYy
 mPz
-xUb
+mPz
 aak
 xwF
 xwF
@@ -98743,7 +98772,7 @@ aak
 xwF
 mPz
 tbh
-mPJ
+tbh
 mPz
 vvq
 xwF
@@ -101041,7 +101070,7 @@ aaB
 mUb
 aaB
 ppe
-jNq
+wMO
 ppe
 aar
 mUb
@@ -102065,7 +102094,7 @@ iCD
 aaa
 xwF
 aaB
-uKv
+mUb
 mUb
 fSX
 cJr

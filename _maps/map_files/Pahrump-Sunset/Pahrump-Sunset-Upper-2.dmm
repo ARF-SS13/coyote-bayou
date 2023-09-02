@@ -941,7 +941,7 @@
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "hZ" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/f13{
@@ -1054,7 +1054,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "iA" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
@@ -1200,6 +1200,12 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"jY" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal/atonement)
 "kc" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Fruit Gang Strongarm"
@@ -1410,7 +1416,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "mo" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -1826,7 +1832,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "pv" = (
 /obj/structure/disposalpipe/broken{
 	dir = 1
@@ -2292,15 +2298,15 @@
 "tx" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
-	dir = 8
+	dir = 4
 	},
 /obj/structure/statue/bone/rib{
-	dir = 1
+	color = "#4455aa"
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "ty" = (
 /obj/effect/landmark/nest_spawn,
 /turf/open/indestructible/ground/outside/roof,
@@ -2378,7 +2384,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "uw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2486,19 +2492,16 @@
 "vq" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
-	dir = 4
+	dir = 8
 	},
-/obj/structure/flora/chomp/bones/lribs1{
-	pixel_y = 0;
-	pixel_x = -10;
-	light_color = "#444466";
-	light_range = 2;
-	color = "#444466"
+/obj/structure/statue/bone/rib{
+	dir = 1;
+	color = "#4455aa"
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "vt" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -2819,17 +2822,17 @@
 	},
 /obj/structure/flora/chomp/bones/lbone{
 	icon_state = "lribs";
-	pixel_y = 1;
-	pixel_x = -16;
+	pixel_y = 15;
+	pixel_x = -28;
 	light_color = "#444466";
 	light_range = 2;
 	color = "#444466";
-	layer = 3
+	layer = 6
 	},
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -3010,6 +3013,11 @@
 	light_range = 2
 	},
 /area/f13/wasteland)
+"zL" = (
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/building/tribal/atonement)
 "zT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4037,8 +4045,9 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "Jc" = (
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#888888"
 	},
 /area/f13/wasteland)
 "Jd" = (
@@ -4503,7 +4512,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "NC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -4570,14 +4579,14 @@
 /area/f13/building)
 "Oa" = (
 /obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
+	color = "#a98c5d"
 	},
-/obj/structure/statue/bone/rib,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Of" = (
 /obj/machinery/light/broken{
 	dir = 4
@@ -5005,18 +5014,11 @@
 	color = "#a98c5d";
 	dir = 4
 	},
-/obj/structure/flora/chomp/bones/lbone{
-	icon_state = "lribs";
-	pixel_y = 1;
-	pixel_x = -16;
-	light_color = "#444466";
-	light_range = 2;
-	color = "#444466"
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "RN" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -5176,6 +5178,13 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
+"SS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal/atonement)
 "SU" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#999999"
@@ -5268,16 +5277,18 @@
 	dir = 8
 	},
 /obj/structure/flora/chomp/bones/lribs1{
-	pixel_y = 0;
-	pixel_x = -10;
+	pixel_y = 14;
+	pixel_x = 2;
 	light_color = "#444466";
 	light_range = 2;
-	color = "#444466"
+	color = "#444466";
+	layer = 5
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "TN" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -5418,10 +5429,11 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /obj/item/restraints/handcuffs/sinew,
+/obj/structure/sacrificealtar,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Vd" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged{
@@ -5437,7 +5449,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Vk" = (
 /obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
@@ -5809,10 +5821,11 @@
 	icon_state = "blood2";
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Yk" = (
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -5870,7 +5883,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "YV" = (
 /obj/structure/stone_tile/surrounding/burnt,
 /obj/structure/stone_tile/center,
@@ -5908,7 +5921,7 @@
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal/atonement)
 "Zc" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant{
 	faction = list("raider")
@@ -8881,8 +8894,8 @@ Rq
 hm
 hm
 Ec
-Jc
-Jc
+zL
+zL
 YO
 hm
 hm
@@ -9138,18 +9151,18 @@ Rq
 hm
 dV
 hm
-Jc
-vq
+zL
+Vi
 TI
-tx
 iz
+vq
 uv
 hm
 dV
+Jc
 rm
 rm
-rm
-rm
+Jc
 rm
 hm
 hm
@@ -9395,18 +9408,18 @@ dV
 hm
 hm
 hm
-Jc
+zL
 Nz
-rm
-rm
-rm
+jY
+jY
+jY
 ml
 hm
 hm
 rm
+Jc
 rm
-rm
-rm
+Jc
 rm
 hm
 hm
@@ -9656,13 +9669,13 @@ Sb
 Za
 Yj
 Vc
-rm
-ml
+SS
+Oa
 hm
 hm
 rm
 rm
-rm
+Jc
 rm
 rm
 hm
@@ -9909,11 +9922,11 @@ hm
 hm
 hm
 Ec
-Jc
+zL
 pt
-rm
-rm
-rm
+jY
+jY
+jY
 ml
 iy
 Ec
@@ -10166,11 +10179,11 @@ hm
 hm
 hm
 dV
-Jc
+zL
 RK
 xX
-Oa
 Vi
+tx
 uv
 hm
 dV
@@ -10424,7 +10437,7 @@ hm
 Ec
 dV
 hX
-Jc
+zL
 YO
 hm
 hm
@@ -11991,8 +12004,8 @@ hm
 NC
 oj
 oj
-hm
 oj
+hm
 YV
 oj
 Gf
