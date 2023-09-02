@@ -1004,6 +1004,12 @@
 	message = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
 	sound = 'sound/effects/scrungy.ogg'
 
+/datum/emote/living/grungle
+	key = "grungle"
+	key_third_person = "sounds like a dog gargling soda water just as its about to have a laugh."
+	message = "sounds like a dog gargling soda water just as its about to have a laugh."
+	sound = 'sound/effects/gurgle.ogg'
+
 /datum/emote/living/augh
 	key = "augh"
 	key_third_person = "looks deeply troubled."
