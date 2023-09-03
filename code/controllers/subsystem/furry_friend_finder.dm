@@ -8,7 +8,11 @@ SUBSYSTEM_DEF(personals)
 	var/list/personals = list()
 	var/list/personals_cache = list()
 	var/list/readme = list()
-
+	/// Format: list("adventure_notes" = "Notes", "adventure_i_am_a" = "I Am A...", etc)
+	var/list/entry_labels = list()
+	/// Format: list("Adventure" = list("Adventure Notes", "Adventure I Am A", etc), "RP" = list("RP Notes", "RP I Am A", etc), etc)
+	var/list/entry_kinds = list()
+	
 /datum/controller/subsystem/personals/proc/Initialize(start_timeofday)
 	thingname = pick(
 		"Mango's List",
@@ -24,11 +28,19 @@ SUBSYSTEM_DEF(personals)
 
 /datum/controller/subsystem/personals/proc/setup_readme()
 	var/list/preadme = safe_json_decode(file2text("strings/personals_tooltips.json"))
-	for(var/topica in readme)
+	for(var/topica in readme) // the population of topica kansass is 126k
 		var/list/inner_lines = list()
-		for(var/line in readme[topica])
-			readme[topica][line] = replace(readme[topica][line], "%THINGNAME", thingname)
-			inner_lines += readme[topica][line]
+		for(var/line in preadme[topica])
+			if(line.findtext("%LABEL:"))
+				var/label = line.replacetext("%LABEL:", "")
+				entry_labels[topica] = label
+				continue
+			if(line.findtext("%KIND:"))
+				var/kind = line.replacetext("%KIND:", "")
+				entry_kinds[kind] = topica
+				continue
+			line = replace(line, "%THINGNAME", thingname)
+			inner_lines += line
 		readme[topica] = inner_lines.Join("<br><br>") // EBRBRBRBRBRBRBRBR
 
 /datum/controller/subsystem/personals/proc/update_all_personals()
@@ -91,35 +103,44 @@ SUBSYSTEM_DEF(personals)
 		ui.open()
 
 /datum/controller/subsystem/personals/ui_data(mob/user)
+	refresh_cache()
 	var/list/data = list()
-	data["cache"] = personals_cache // private indeed ;)
-	data["user_data"] = get_personal(user)
+	data["AllPersonals"] = personals_cache // private indeed ;)
+	var/list/personal_user = personals_cache[user]
+	if(user.client && check_rights_for(user.client, R_ADMIN))
+		personal_user["IsAdmin"] = TRUE // admemes see ALL. and I mean all~ ;)
+	else
+		personal_user["IsAdmin"] = FALSE
+	data["UserData"] = personal_user // private indeed ;)
 	return data
 
 /datum/controller/subsystem/personals/ui_static_data(mob/user)
 	var/list/data = list()
-	data["tooltips"] = readme // aaurrughh??
+	var/static/list/sort_buttons = list(
+		"Name" = "name",
+		"Species" = "species",
+		"Online" = "online",
+		"LFG" = "adventure_lfg",
+		"Healer" = "adventure_is_healer",
+	)
+	data["EntryTooltips"] = readme // aaurrughh??
+	data["EntryLabels"] = entry_labels
+	data["EntryKinds"] = entry_kinds
+	data["SortButtons"] = sort_buttons
 	return data
 
 /datum/controller/subsystem/personals/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
+	var/playername = params["Player"] // 1 is always playername, always, always always,eat pant
 	if(action == "update_entry")
 		update_personal_entry(params[1], params[2], params[3])
 	if(action == "update_visibility")
 		update_personal_visibility(params[1], params[2], params[3])
-	if(action == "readme")
-		tgui_alert(usr, message = "Thank you for choosing [thingname], the coziest way to find new folk! \
-			<br><br>This is a database of everyone currently active in the Wastes of Texarkana (that's right here!). \
-			Below, you'll find a handy, sortable list of people who are looking to meet other lovely folk (like you!). \
-			<br<br>You can customize your entry in this database using the controls just below. Anything changed will be saved and \
-			posted to the database immediately. \
-			<br><br>If you don't want certain parts (or the whole thing) to be listed, you can hide them using the visibility checkboxes. \
-			<br><br>While this window itself is technically OOC, you're allowed to interpret any information you find here ICly. \
-			You'll typically find a hint on how someone'll want to be approached, or how you might know these sorts of things, \
-			such as maybe your character saw another character in the street, or heard about them from a friend, or even just saw \
-			their entry in this 'dating app'! 'course, when in doubt, ask in LOOC!",
-			title = "Welcome to [thingname]!",
-			buttons = list("Neat!"))
+	if(action == "SetTab")
+		set_tab(
+			params[1], // Player doing 
+			params[2]
+			)
 
 /datum/controller/subsystem/personals/proc/get_tooltips() // Tips the Tooltip Tipper
 	return readme // I'm sorry i thought this would be more than it is
@@ -127,35 +148,11 @@ SUBSYSTEM_DEF(personals)
 /datum/personal_info
 	var/ckey = "butt"
 	var/name = "John Wasteland"
-	var/list/visibility = list(
-		PI_VIS_MASTER = TRUE,
-		PI_VIS_NAME = TRUE,
-		PI_VIS_SPECIES = TRUE,
-		PI_VIS_FLAVOR_TEXT = TRUE,
-		PI_VIS_OOC_TEXT = TRUE,
-		PI_VIS_PERSONAL_AD = TRUE,
-		PI_VIS_JOB = TRUE,
-		PI_VIS_ADVENTURE_ROLE = TRUE,
-		PI_VIS_IS_HEALER = TRUE,
-		PI_VIS_LFG = TRUE,
-		PI_VIS_PVP_PREF = TRUE,
-		PI_VIS_RP_I_AM_A = TRUE,
-		PI_VIS_RP_LOOKING_FOR = TRUE,
-		PI_VIS_RP_LENGTH = TRUE,
-		PI_VIS_RP_PREFERENCES = TRUE,
-		PI_VIS_RP_NOTES = TRUE,
-		PI_VIS_ERP_I_AM_A = TRUE,
-		PI_VIS_ERP_LOOKING_FOR = TRUE,
-		PI_VIS_ERP_LENGTH = TRUE,
-		PI_VIS_ERP_TYPES = TRUE,
-		PI_VIS_POSITION = TRUE,
-	)
 	var/online = FALSE
 	var/species = "Human"
 	var/flavor_text = "You see some kind of person of indistinct make and model. They look like they've seen better days."
 	var/ooc_text = "Don't touch me, cus I'm probably asleep right now."
 	/// stuff saved by this thing below here
-	var/job = "Waster"
 	var/adventure_notes = "I am an all around badass looking for cats to herd."
 	var/adventure_i_am_a = "Wastemaster"
 	var/adventure_looking_for = "Cats to herd"
@@ -165,6 +162,7 @@ SUBSYSTEM_DEF(personals)
 	var/adventure_lfg = FALSE
 	var/adventure_pvp_pref = PVP_PREF_DEFAULT
 	var/rp_notes = "Please buy me a drink!"
+	var/rp_job = "Waster"
 	var/rp_i_am_a = "40 something catboy with a drinking problem"
 	var/rp_looking_for = "succor from a tall, dark and handsome cyborg with big guns."
 	var/rp_listing_kind = RP_LISTING_KIND_DEFAULT
@@ -183,6 +181,47 @@ SUBSYSTEM_DEF(personals)
 	var/erp_gender = PLURAL
 	var/erp_position = ERP_POSITION_DEFAULT
 	var/erp_vore = ERP_VORE_DEFAULT
+	var/list/visibility = list(
+		PI_MASTER = TRUE,
+		PI_CKEY = TRUE,
+		PI_NAME = TRUE,
+		PI_VISIBILITY = TRUE,
+		PI_ONLINE = TRUE,
+		PI_SPECIES = TRUE,
+		PI_FLAVOR_TEXT = TRUE,
+		PI_OOC_TEXT = TRUE,
+		PI_ADVENTURE_NOTES = TRUE,
+		PI_ADVENTURE_I_AM_A = TRUE,
+		PI_ADVENTURE_LOOKING_FOR = TRUE,
+		PI_ADVENTURE_IN_IT_FOR = TRUE,
+		PI_ADVENTURE_LISTING_KIND = TRUE,
+		PI_ADVENTURE_IS_HEALER = TRUE,
+		PI_ADVENTURE_LFG = TRUE,
+		PI_ADVENTURE_PVP_PREF = TRUE,
+		PI_RP_NOTES = TRUE,
+		PI_RP_JOB = TRUE,
+		PI_RP_I_AM_A = TRUE,
+		PI_RP_LOOKING_FOR = TRUE,
+		PI_RP_LISTING_KIND = TRUE,
+		PI_RP_APPROACH_PREF = TRUE,
+		PI_RP_LENGTH = TRUE,
+		PI_RP_PREFERENCES = TRUE,
+		PI_ERP_NOTES = TRUE,
+		PI_ERP_I_AM_A = TRUE,
+		PI_ERP_LOOKING_FOR = TRUE,
+		PI_ERP_LISTING_KIND = TRUE,
+		PI_ERP_APPROACH_PREF = TRUE,
+		PI_ERP_LENGTH = TRUE,
+		PI_ERP_POST_LENGTH = TRUE,
+		PI_ERP_SEXUALITY = TRUE,
+		PI_ERP_SEX = TRUE,
+		PI_ERP_GENDER = TRUE,
+		PI_ERP_POSITION = TRUE,
+		PI_ERP_VORE = TRUE,
+	)
+	var/sortby = "name" // cus i dont know how to local state lol
+	var/sortdir = "asc" // cus i dont know how to local state lol
+	var/activetab = "Adventure" // okay i kinda do but i dont want to
 
 /datum/personal_info/proc/import_data(mob/living/L)
 	if(!istype(L))
@@ -200,7 +239,6 @@ SUBSYSTEM_DEF(personals)
 	ooc_text = P.features["ooc_notes"]
 	/// these are saved by the system here
 	var/list/personal_deets = safe_json_decode(P.personals)
-	job =                    personal_deets[PI_JOB]
 	adventure_notes =        personal_deets[PI_ADVENTURE_NOTES]
 	adventure_i_am_a =       personal_deets[PI_ADVENTURE_I_AM_A]
 	adventure_looking_for =  personal_deets[PI_ADVENTURE_LOOKING_FOR]
@@ -210,6 +248,7 @@ SUBSYSTEM_DEF(personals)
 	adventure_lfg =          personal_deets[PI_ADVENTURE_LFG]
 	adventure_pvp_pref =     personal_deets[PI_ADVENTURE_PVP_PREF]
 	rp_notes =               personal_deets[PI_RP_NOTES]
+	rp_job =                 personal_deets[PI_RP_JOB]
 	rp_i_am_a =              personal_deets[PI_RP_I_AM_A]
 	rp_looking_for =         personal_deets[PI_RP_LOOKING_FOR]
 	rp_listing_kind =        personal_deets[PI_RP_LISTING_KIND]
@@ -236,7 +275,6 @@ SUBSYSTEM_DEF(personals)
 		return // we'll get em next time!
 	var/datum/preferences/P = C.prefs
 	var/list/p_deets = list()
-	p_deets[PI_JOB]                    = job
 	p_deets[PI_ADVENTURE_NOTES]        = adventure_notes
 	p_deets[PI_ADVENTURE_I_AM_A]       = adventure_i_am_a
 	p_deets[PI_ADVENTURE_LOOKING_FOR]  = adventure_looking_for
@@ -246,6 +284,7 @@ SUBSYSTEM_DEF(personals)
 	p_deets[PI_ADVENTURE_LFG]          = adventure_lfg
 	p_deets[PI_ADVENTURE_PVP_PREF]     = adventure_pvp_pref
 	p_deets[PI_RP_NOTES]               = rp_notes
+	p_deets[PI_RP_JOB]                 = rp_job
 	p_deets[PI_RP_I_AM_A]              = rp_i_am_a
 	p_deets[PI_RP_LOOKING_FOR]         = rp_looking_for
 	p_deets[PI_RP_LISTING_KIND]        = rp_listing_kind

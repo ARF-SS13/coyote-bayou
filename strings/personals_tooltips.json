@@ -1,5 +1,7 @@
 {
 	"front_page": [
+		"%LABEL:Front Page",
+		"%KIND:Misc",
 		"Thank you for choosing %THINGNAME, the coziest way to find new folk!",
 		"This is a database of everyone currently active in the Wastes of Texarkana (that's right here!).",
 		"Below, you'll find a handy, sortable list of people who are looking to meet other lovely folk (like you!).",
@@ -7,64 +9,46 @@
 		"Anything changed will be saved and posted to the database immediately.",
 		"If you don't want certain parts (or the whole thing) to be listed, you can hide them using the visibility checkboxes."
 	],
-	"name": [
-		"This is your name, silly!",
-		"Shouldnt be seeing this!"
+	"readme": [
+		"Thank you for choosing %THINGNAME, the coziest way to find new folk!",
+		"This is a database of everyone currently active in the Wastes of Texarkana (that's right here!).",
+		"Below, you'll find a handy, sortable list of people who are looking to meet other lovely folk (like you!).",
+		"You can customize your entry in this database using the controls just below. Anything changed will be saved and",
+		"posted to the database immediately.",
+		"If you don't want certain parts (or the whole thing) to be listed, you can hide them using the visibility checkboxes.",
+		"While this window itself is technically OOC, you're allowed to interpret any information you find here ICly.",
+		"You'll typically find a hint on how someone'll want to be approached, or how you might know these sorts of things,",
+		"such as maybe your character saw another character in the street, or heard about them from a friend, or even just saw",
+		"their entry in this 'dating app'! 'course, when in doubt, ask in LOOC!"
 	],
+	"name": ["%LABEL:Name", "%KIND:Player", "This is your name, silly!"],
 	"online": {
-		"ON": [
-			"This person is online!",
-			"Go say hi!~"
-		],
-		"OFF": [
-			"This person is offline!",
-			"Maybe they'll be back later?"
-		]
+		"ON": ["This person is online!", "Go say hi!~"],
+		"OFF": ["This person is offline!", "Maybe they'll be back later?"]
 	},
 	"species": [
+		"%LABEL:Species",
+		"%KIND:Player",
 		"This is your custom species!",
 		"You can change this in your character preferences!"
 	],
-	"listing_kind": [
-		"How would you prefer others interpret this listing?",
-		"Say someone wants to use the information in this listing to approach you.",
-		"How would you prefer them to do so?",
-		"Maybe this could be an entry on a dating app, or a personal ad in a newspaper?",
-		"This is just for flavor, so pick whatever you like! Or, leave it up to whoever's reading!",
-		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!"
-	],
-	"rp_approach_pref": [
-		"How would you prefer others approach you for RP?",
-		"Walk right up and say hi?",
-		"Come into your workplace and chat?",
-		"Send you a message on a dating app (PDA)?",
-		"Just scoop up off the street and take you home?",
-		"Maybe you're a bit shy, and would prefer others to take the initiative?",
-		"Or maybe you're a bit of a flirt, and would prefer others to be the shy ones?",
-		"Or maybe you're a bit of a tease, and would prefer others to be the flirty ones?",
-		"Anything's good, just pick whatever you like!"
-	],
 	"flavor_text": [
+		"%LABEL:Flavor Text",
+		"%KIND:Player",
 		"This is your flavor text!",
 		"You can change this in your character prefs!",
 		"Other options coming soon(tm)."
 	],
 	"ooc_text": [
+		"%LABEL:OOC Text",
+		"%KIND:Player",
 		"This is your OOC text!",
 		"You can change this in your character prefs!",
 		"Other options coming soon(tm)."
 	],
-	"job": [
-		"This is your character's typical job!",
-		"It doesn't necessarily have to be their actual job, or even a real job!",
-		"Maybe they're a student, or a stay-at-home parent?",
-		"Maybe they're a superhero, or a supervillain?",
-		"Maybe they're federal bikini inspector? Anything goes!",
-		"This is mainly to establish a general idea of what your character does with their time.",
-		"Feel free to be as vague or specific as you like!"
-		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
-	],
 	"adventure_notes": [
+		"%LABEL:Notes",
+		"%KIND:Adventure",
 		"What sort of stuff should people know about you, relating to adventuring?",
 		"Maybe you're a seasoned veteran, or a fresh-faced rookie?",
 		"Maybe you like to plough through dungeons, or maybe you prefer to explore the wilderness?",
@@ -75,6 +59,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"adventure_i_am_a": [
+		"%LABEL:I am a...",
+		"%KIND:Adventure",
 		"What sort of role do you fill in an adventuring party?",
 		"Are you the tank, the healer, the DPS?",
 		"Are you the leader, the strategist, the tactician?",
@@ -85,7 +71,9 @@
 		"Anything goes, be as vague or specific as you like!",
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
-	"adventure_looking_for" : [
+	"adventure_looking_for": [
+		"%LABEL:Looking for...",
+		"%KIND:Adventure",
 		"What sort of role/player are you looking for in an adventuring party?",
 		"Are you looking for a tank, a healer, a DPS?",
 		"Are you looking for a leader, a strategist, a tactician?",
@@ -97,6 +85,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"adventure_in_it_for": [
+		"%LABEL:In it for...",
+		"%KIND:Adventure",
 		"What are you looking to get out of adventuring?",
 		"Are you in it to get rich?",
 		"Are you in it to save the world?",
@@ -111,24 +101,32 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"adventure_listing_kind": [
+		"%LABEL:Listing Kind",
+		"%KIND:Adventure",
 		"How would you prefer others interpret this listing?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
 		"Maybe this could be a poster in the town square? Or a personal ad in a newspaper?",
 		"Maybe this could be something overheard in the tavern? Or something through the grapevine?",
 		"This is just for flavor, so pick whatever you like! Or, leave it up to whoever's reading!",
-		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!"
+		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!",
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"adventure_is_healer": [
+		"%LABEL:Healer?",
+		"%KIND:Adventure",
 		"Are you a healer?",
 		"Everyone wants a healer in their party!"
 	],
 	"adventure_lfg": [
+		"%LABEL:LFG?",
+		"%KIND:Adventure",
 		"Are you looking for a group?",
 		"Adventure is dangerous, and it's always safer to travel in groups!"
 	],
 	"adventure_pvp_pref": [
+		"%LABEL:PvP Prefs",
+		"%KIND:Adventure",
 		"How do you feel about PvP?",
 		"Like it? Hate it? Don't care?",
 		"What would your ideal PvP situation be? 'Not at all' is a perfectly valid answer!",
@@ -141,6 +139,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_notes": [
+		"%LABEL:Notes",
+		"%KIND:RP",
 		"What sort of stuff should people know about you, relating to roleplay / character interaction?",
 		"Things that would help others understand the sort of character you're playing, and how they should interact with you.",
 		"Things like your general roleplay style, or your character's personality.",
@@ -151,7 +151,21 @@
 		"Feel free to be as vague or specific as you like!",
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
+	"rp_job": [
+		"%LABEL:Job",
+		"%KIND:RP",
+		"This is your character's typical job!",
+		"It doesn't necessarily have to be their actual job, or even a real job!",
+		"Maybe they're a student, or a stay-at-home parent?",
+		"Maybe they're a superhero, or a supervillain?",
+		"Maybe they're federal bikini inspector? Anything goes!",
+		"This is mainly to establish a general idea of what your character does with their time.",
+		"Feel free to be as vague or specific as you like!",
+		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
+	],
 	"rp_i_am_a": [
+		"%LABEL:I am a...",
+		"%KIND:RP",
 		"What sort of character are you playing? What can you say about who or what they are?",
 		"Maybe you're a witch, or a carpenter? Maybe you're a scientist, or a war veteran?",
 		"Maybe you're a shy bookworm, or a flirtatious tease?",
@@ -163,6 +177,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_looking_for": [
+		"%LABEL:Looking for...",
+		"%KIND:RP",
 		"What sort of character are you looking to meet? What can you say about who or what they are?",
 		"Maybe you're looking for a witch, or a carpenter? Maybe you're looking for a scientist, or a war veteran?",
 		"Maybe you're looking for a shy bookworm to discuss the latest issue of Scrontch / shove in a locker?",
@@ -174,6 +190,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_listing_kind": [
+		"%LABEL:Listing Kind",
+		"%KIND:RP",
 		"How would you prefer others interpret this listing?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
@@ -182,10 +200,12 @@
 		"Maybe you just know this stuff about them because you've known them for a while?",
 		"Maybe even just a lucky guess! You're a smart cookie, after all!",
 		"This is just for flavor, so pick whatever you like! Or, leave it up to whoever's reading!",
-		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!"
+		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!",
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_approach_pref": [
+		"%LABEL:Approach Pref",
+		"%KIND:RP",
 		"How would you prefer others approach you for RP?",
 		"Walk right up and say hi? Whistle at you from across the street?",
 		"Come into your workplace and chat? Send you a message on a dating app (PDA)?",
@@ -197,6 +217,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_length": [
+		"%LABEL:Length",
+		"%KIND:RP",
 		"How long do you prefer your overall RP to be, in terms of storyline length?",
 		"Are you looking for a one-off encounter, or a long-term relationship/story?",
 		"Maybe you want to keep running into someone? Maybe you just want a quick chat?",
@@ -206,6 +228,8 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"rp_preferences": [
+		"%LABEL:RP Prefs",
+		"%KIND:RP",
 		"What sort of RP do you prefer, in terms of tone and content?",
 		"Maybe you want something light-hearted and fluffy?",
 		"Maybe you want something dark and gritty?",
@@ -219,12 +243,18 @@
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
 	"erp_sex": [
+		"%LABEL:Sex",
+		"%KIND:ERP",
 		"What best describes your character's sexuality?"
 	],
 	"erp_gender": [
+		"%LABEL:Gender",
+		"%KIND:ERP",
 		"What best describes your character's gender?"
 	],
 	"erp_notes": [
+		"%LABEL:Notes",
+		"%KIND:ERP",
 		"What sort of stuff should people know about you, relating to ERP?",
 		"Things like kinks and fetishes, things you're comfortable with and things you're not.",
 		"What gets you (and/or your character) going, and what turns you (and/or your character) off?",
@@ -235,6 +265,8 @@
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_i_am_a": [
+		"%LABEL:I am a...",
+		"%KIND:ERP",
 		"What sort of character are you playing, relating to ERP?",
 		"Are you a thick, curvy, voluptuous vixen? Are you a tall, dark, handsome hunk?",
 		"Are you a shy, submissive, blushing bottom? Are you a dominant, assertive, confident top?",
@@ -249,6 +281,8 @@
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_looking_for": [
+		"%LABEL:Looking for...",
+		"%KIND:ERP",
 		"What sort of character are you looking to meet, relating to ERP?",
 		"Are you looking for a thick, curvy, voluptuous vixen to cook you dinner?",
 		"Are you looking for a tall, dark, handsome hunk to sweep you off your feet?",
@@ -265,6 +299,8 @@
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_listing_kind": [
+		"%LABEL:Listing Kind",
+		"%KIND:ERP",
 		"How would you prefer others interpret this ERP listing?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
@@ -273,10 +309,12 @@
 		"Maybe you just know this stuff about them because you've known them for a while?",
 		"Maybe even just a lucky guess! You're a smart cookie, after all!",
 		"This is just for flavor, so pick whatever you like! Or, leave it up to whoever's reading!",
-		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!"
+		"Doesn't need to actually be anything, perfectly valid to have all this just be OOC information!",
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_approach_pref": [
+		"%LABEL:Approach Pref",
+		"%KIND:ERP",
 		"How would you prefer others approach you for ERP?",
 		"Walk right up and say hi? Whistle at you from across the street?",
 		"Come into your workplace and chat? Send you a message on a dating app (PDA)?",
@@ -288,6 +326,8 @@
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_length": [
+		"%LABEL:Relationship Length",
+		"%KIND:ERP",
 		"How long do you prefer your overall ERP to be, in terms of storyline length?",
 		"Are you looking for a one-off encounter, or a long-term relationship/story?",
 		"Maybe you want to keep running into someone? Maybe you just want a quickie?",
@@ -297,26 +337,34 @@
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
 	"erp_post_length": [
+		"%LABEL:Post Length",
+		"%KIND:ERP",
 		"How long of a post do you normally make in an ERP scene?",
 		"Do you like to keep it short and sweet? Do you like to write a whole novel about your character's every thought and feeling?",
 		"Maybe you like to keep it short and sweet, but you're willing to write a whole novel if your partner does? And or vice versa?",
-		"Any preference is fine, just let others know what to expect!",
+		"Any preference is fine, just let others know what to expect!"
 	],
 	"erp_position": [
+		"%LABEL:Position",
+		"%KIND:ERP",
 		"What sort of position do you prefer to be in, in an ERP scene?",
 		"Are you a top? Are you a bottom? Are you a switch?",
 		"Are you a dom? Are you a sub? Are you also a switch?",
 		"Are you a power bottom? Are you a power top? Maybe a power switch?",
-		"Any preference is fine, just let others know what to expect!",
+		"Any preference is fine, just let others know what to expect!"
 	],
 	"erp_sexuality": [
+		"%LABEL:Sexuality",
+		"%KIND:ERP",
 		"What best describes you character's sexual orientation?"
 	],
 	"erp_vore": [
+		"%LABEL:Vore",
+		"%KIND:ERP",
 		"What best describes your character's vore preferences?",
 		"Are you a pred? Are you a prey? Are you a switch?",
 		"Not into vore? That's fine too! Just leave this blank, or write something like 'No vore please'.",
 		"If you're not into vore, its recommended to turn off your vore prefs in either character preferences, or the vore panel.",
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
-	],
+	]
 }
