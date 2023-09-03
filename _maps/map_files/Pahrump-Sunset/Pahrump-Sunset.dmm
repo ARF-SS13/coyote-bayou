@@ -36725,6 +36725,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/museum/groundfloor)
+"eVU" = (
+/obj/structure/stairs/west{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/cave/coyote/antmound)
 "eVZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -36732,6 +36738,12 @@
 	icon_state = "verticalinnermain2"
 	},
 /area/f13/wasteland/city/nash/suburbs)
+"eWc" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "eWg" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood,
@@ -115285,6 +115297,15 @@
 	color = "#999999"
 	},
 /area/f13/building/tribal)
+"xdW" = (
+/obj/structure/stairs/east{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain2"
+	},
+/area/f13/wasteland/city)
 "xec" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
@@ -119244,6 +119265,10 @@
 "ybm" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
+	},
+/obj/structure/stairs/east{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
@@ -139054,8 +139079,8 @@ aae
 aae
 aae
 aae
-xLC
-xLC
+eWc
+eWc
 xLC
 oVM
 aBo
@@ -140253,8 +140278,8 @@ oQs
 dci
 dao
 acl
-ezS
-ezS
+eVU
+eyz
 eyz
 eyz
 eyz
@@ -140510,8 +140535,8 @@ oQs
 dci
 uSV
 acl
-tNk
-ezS
+eyz
+eyz
 eyz
 mVi
 eyz
@@ -143681,7 +143706,7 @@ fDn
 wEp
 fDn
 wij
-cgE
+xdW
 ybm
 fDn
 qTv
