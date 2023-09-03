@@ -124,7 +124,7 @@
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "prospect_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 /obj/item/mining_scanner/prospector/Initialize()
 	..()
@@ -155,7 +155,7 @@
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "pickaxe"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	digrange = 2
 	toolspeed = 0.2
 
@@ -284,7 +284,7 @@
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	force = 24
 	force_unwielded = 24
 	force_wielded = 24
@@ -527,7 +527,7 @@
 	block_chance = 5
 	force_wielded = 50
 	force_unwielded = 25
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.9
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
@@ -560,13 +560,13 @@
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 15
 	force_unwielded = 15
 	force_wielded = 15
 	throwforce = 45
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 // Smaller weaker javelin, easier to store/carry, less effective
 /obj/item/melee/smith/throwingknife
@@ -580,7 +580,7 @@
 	force_wielded = 10
 	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 
 // TG stuff
