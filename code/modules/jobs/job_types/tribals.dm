@@ -127,8 +127,8 @@ Tribal Chief
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/lantern = 1,
-		/obj/item/kit_spawner/tribal = 1
+		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/chiefguide = 1
 	)
 
 /*

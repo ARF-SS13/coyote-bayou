@@ -43,6 +43,15 @@
 	color = "#333355"
 	book_key = "villagerguide"
 
+/obj/item/cool_book/chiefguide
+	name = "Deathclaw Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#888833"
+	book_key = "villagerguide"
+
+
 
 /obj/item/cool_book/Initialize()
 	. = ..()
