@@ -244,6 +244,8 @@
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	force = 47
+	force_unwielded = 47
+	force_wielded = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
@@ -259,6 +261,9 @@
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 8
 
 /obj/item/melee/smith/sword/sabre
@@ -267,6 +272,9 @@
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -278,6 +286,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_POINTY
 	force = 24
+	force_unwielded = 24
+	force_wielded = 24
 	throwforce = 30
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	block_chance = 5
@@ -298,6 +308,8 @@
 	icon_state = "bowie_smith"
 	overlay_state = "hilt_bowie"
 	force = 31
+	force_unwielded = 31
+	force_wielded = 31
 	throwforce= 34
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -310,6 +322,8 @@
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
 	force = 38
+	force_unwielded = 38
+	force_wielded = 38
 	block_chance = 5
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
@@ -319,6 +333,8 @@
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 1.1
 
@@ -327,6 +343,8 @@
 	icon_state = "macheter_smith"
 	overlay_state = "hilt_macheter"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -343,6 +361,8 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	sharpness = SHARP_EDGED
 	force = 27
+	force_unwielded = 27
+	force_wielded = 27
 	throwforce= 30
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -374,6 +394,8 @@
 	icon_state = "mace_smith"
 	overlay_state = "shaft_mace"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
@@ -541,6 +563,8 @@
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 15
+	force_unwielded = 15
+	force_wielded = 15
 	throwforce = 45
 	sharpness = SHARP_POINTY
 
@@ -552,6 +576,8 @@
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 10
+	force_unwielded = 10
+	force_wielded = 10
 	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
 	sharpness = SHARP_POINTY
