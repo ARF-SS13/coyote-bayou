@@ -50,10 +50,3 @@
 #define APPROACH_PREF_DEFAULT "Say hi to me!"
 #define ADVENTURE_IN_IT_FOR_DEFAULT "The friends we make along the way."
 
-
-
-
-
-
-
-
