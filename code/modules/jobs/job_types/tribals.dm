@@ -398,7 +398,8 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/loadout/gatherer
