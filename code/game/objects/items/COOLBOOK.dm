@@ -49,7 +49,7 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "book5"
 	color = "#888833"
-	book_key = "villagerguide"
+	book_key = "chiefguide"
 
 
 
