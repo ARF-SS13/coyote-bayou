@@ -23,10 +23,10 @@ export const Personals = (props, context) => {
   );
 };
 
-/// The control panel holder, which holds the control panels of its children
-/// The top has tabs that you can click to change which control panel is
-/// displayed. doesnt use localstate cus i have self respect and i dont
-/// know how to use it. change it if it bothers you =3
+// / The control panel holder, which holds the control panels of its children
+// / The top has tabs that you can click to change which control panel is
+// / displayed. doesnt use localstate cus i have self respect and i dont
+// / know how to use it. change it if it bothers you =3
 const PersonalControlHolder = (props, context) => {
   const { act, data } = useBackend(context);
   const { UserData } = data || [];
@@ -41,7 +41,6 @@ const PersonalControlHolder = (props, context) => {
       title={hi}
       width="100%"
       height="100%"
-      fluid
       overflowY="auto"
       buttons={(
         <Button
@@ -54,7 +53,7 @@ const PersonalControlHolder = (props, context) => {
         <Tabs.Tab
           selected={CurrentTab === 'rp'}
           onClick={() => act('SetTab', {
-            Player: {name},
+            Player: { name },
             Entry: 'rp',
           })}>
           Roleplay
@@ -62,7 +61,7 @@ const PersonalControlHolder = (props, context) => {
         <Tabs.Tab
           selected={CurrentTab === 'adv'}
           onClick={() => act('SetTab', {
-            Player: {name},
+            Player: { name },
             Entry: 'adv',
           })}>
           Adventure
@@ -70,7 +69,7 @@ const PersonalControlHolder = (props, context) => {
         <Tabs.Tab
           selected={CurrentTab === 'erp'}
           onClick={() => act('SetTab', {
-            Player: {name},
+            Player: { name },
             Entry: 'erp',
           })}>
           ERP
@@ -78,18 +77,18 @@ const PersonalControlHolder = (props, context) => {
         <Tabs.Tab
           selected={CurrentTab === 'vis'}
           onClick={() => act('SetTab', {
-            Player: {name},
+            Player: { name },
             Entry: 'vis',
           })}>
           Visibility
         </Tabs.Tab>
       </Tabs>
       {
-        tabIndex === 'rp' && (<PersonalControlPanel SettingIndex = 'RP' />) ||
-        tabIndex === 'adv' && (<PersonalControlPanel SettingIndex = 'Adventure' />) ||
-        tabIndex === 'erp' && (<PersonalControlPanel SettingIndex = 'ERP' />) ||
-        tabIndex === 'vis' && (<PersonalControlPanelVisibility />) ||
-        tabIndex === 'hide' && (<PersonalContent />)
+        tabIndex === 'rp' && (<PersonalControlPanel SettingIndex="RP" />)
+        || tabIndex === 'adv' && (<PersonalControlPanel SettingIndex="Adventure" />)
+        || tabIndex === 'erp' && (<PersonalControlPanel SettingIndex="ERP" />)
+        || tabIndex === 'vis' && (<PersonalControlPanelVisibility />)
+        || tabIndex === 'hide' && (<PersonalContent />)
       }
     </Section>
   );
@@ -103,28 +102,28 @@ const PersonalControlPanel = (SettingIndex, context) => {
   return (
     <Section
       title={SettingIndex + " Settings"} >
-        <Flex>
-          {map(EntryList, (entry, index) => (
-            <Flex.Item
-              grow={1}
-              key={index}
-              width="33%">
-              <PersonalControl EntryIndex = {entry} />
-            </Flex.Item>
-          ))}
-        </Flex>
+      <Flex>
+        {map(EntryList, (entry, index) => (
+          <Flex.Item
+            grow={1}
+            key={index}
+            width="33%">
+            <PersonalControl EntryIndex={entry} />
+          </Flex.Item>
+        ))}
+      </Flex>
     </Section>
   );
 };
 
-/// A control panel entry box thing that contains the label and the
-/// data. The header is the label, which has a cool tooltip,
-/// and the body is the data, which is a text field that can be
+// / A control panel entry box thing that contains the label and the
+// / data. The header is the label, which has a cool tooltip,
+// / and the body is the data, which is a text field that can be
 const PersonalControl = (EntryIndex, context) => {
   const { act, data } = useBackend(context);
-  /// The data for the player is stored in the UserData array
-  /// The index of the array is the same as the index of the
-  /// entry in the EntryKinds array
+  // / The data for the player is stored in the UserData array
+  // / The index of the array is the same as the index of the
+  // / entry in the EntryKinds array
   const {
     UserData,
     EntryTooltips,
@@ -151,22 +150,22 @@ const PersonalControl = (EntryIndex, context) => {
           <Button
             tooltip="Show/Hide this entry from others?"
             onClick={() => act('ToggleVisibility', {
-              Player: {PlayerName},
+              Player: { PlayerName },
               Entry: EntryIndex,
             })} >
-              <Icon
-                name={EntryVisible ? 'eye' : 'eye-slash'}
-                color="white"
-                ml={1} />
+            <Icon
+              name={EntryVisible ? 'eye' : 'eye-slash'}
+              color="white"
+              ml={1} />
           </Button>
         </Fragment>
       )}>
       <Button
         tooltip="Change?"
-        backgroundColor='transparent'
+        backgroundColor="transparent"
         fluid
         onClick={() => act('ChangeEntry', {
-          Player: {PlayerName},
+          Player: { PlayerName },
           Entry: EntryIndex,
         })}>
         {EntryData}
@@ -175,9 +174,9 @@ const PersonalControl = (EntryIndex, context) => {
   );
 };
 
-/// This one is different from the others because it's a big ol' grid
-/// of buttons that you can click to change your visibility settings
-/// Lets you hide certain things from other people
+// / This one is different from the others because it's a big ol' grid
+// / of buttons that you can click to change your visibility settings
+// / Lets you hide certain things from other people
 const PersonalControlPanelVisibility = (props, context) => {
   const { act, data } = useBackend(context);
   const { VisibilityData } = data || [];
@@ -200,26 +199,26 @@ const PersonalControlPanelVisibility = (props, context) => {
         <Flex.Item
           grow={1}
           width={EntryWidth}>
-            <Tooltip
-              content="This is the master visibility button. If unchecked, you will be hidden from everyone.">
-              <PersonalControlVisibility EntryIndex = 'Master' />
-            </Tooltip>
+          <Tooltip
+            content="This is the master visibility button. If unchecked, you will be hidden from everyone.">
+            <PersonalControlVisibility EntryIndex="Master" />
+          </Tooltip>
         </Flex.Item>
         {map(VisibilityList, (entry, index) => ( // ^ This is the master visibility button, its special
           <Flex.Item
             grow={1}
             key={index}
             width={EntryWidth}>
-            <PersonalControlVisibility EntryIndex = {index} />
+            <PersonalControlVisibility EntryIndex={index} />
           </Flex.Item>
         ))}
       </Flex>
     </Section>
   );
-}
+};
 
-/// This is the actual button that you click to change your visibility
-/// settings. It's a button that has a tooltip, a checkbox, and a label
+// / This is the actual button that you click to change your visibility
+// / settings. It's a button that has a tooltip, a checkbox, and a label
 const PersonalControlVisibility = (EntryIndex, context) => {
   const { act, data } = useBackend(context);
   const { UserData } = data || [];
@@ -233,26 +232,26 @@ const PersonalControlVisibility = (EntryIndex, context) => {
       tooltip={EntryLabel}
       fluid
       onClick={() => act('ChangeVisibility', {
-        Player: {PlayerName},
+        Player: { PlayerName },
         Entry2Change: EntryIndex,
       })}>
       {EntryLabel}
     </Button>
   );
-}
+};
 
-/// and now, the big bad muffkin personals box
-/// this is the box that displays the actual personals
-/// It has sort buttons at the top
-/// Its got a scrollable list of personals
-/// Its got realistic dragon pussy
-/// Lets do this
+// / and now, the big bad muffkin personals box
+// / this is the box that displays the actual personals
+// / It has sort buttons at the top
+// / Its got a scrollable list of personals
+// / Its got realistic dragon pussy
+// / Lets do this
 const PersonalContent = (props, context) => {
   const { act, data } = useBackend(context);
   const { PersonalsHelp } = data || "Oops! you're on your own!";
   // jk no dragon pussy yet
   // and this is a holder for the personals
-  /// holders all the way down
+  // / holders all the way down
   return (
     <Section
       title="Personals"
@@ -279,10 +278,10 @@ const PersonalContent = (props, context) => {
   );
 };
 
-/// This is the box that holds the sort buttons
-/// It has a button for each sort type, like...
-/// "Sort by name", and "Sort by... something else"
-/// I dont know what else to say about it
+// / This is the box that holds the sort buttons
+// / It has a button for each sort type, like...
+// / "Sort by name", and "Sort by... something else"
+// / I dont know what else to say about it
 const PersonalSortButtons = (props, context) => {
   const { act, data } = useBackend(context);
   const { SortButtons } = data || [];
@@ -293,15 +292,15 @@ const PersonalSortButtons = (props, context) => {
         <Flex.Item
           grow={1}
           key={index}>
-          <PersonalSortButton EntryIndex = {entry} />
+          <PersonalSortButton EntryIndex={entry} />
         </Flex.Item>
       ))}
     </Flex>
   );
 };
 
-/// its a button that sorts the personals
-/// It has a little arrow button to show which way its sorting
+// / its a button that sorts the personals
+// / It has a little arrow button to show which way its sorting
 const PersonalSortButton = (EntryIndex, context) => {
   const { act, data } = useBackend(context);
   const { UserData } = data || [];
@@ -314,7 +313,7 @@ const PersonalSortButton = (EntryIndex, context) => {
       fluid
       backgroundColor={HiLiteBG}
       onClick={() => act('SortBy', {
-        Player: {PlayerName},
+        Player: { PlayerName },
         Entry: EntryIndex,
       })}>
       {EntryIndex}
@@ -326,31 +325,31 @@ const PersonalSortButton = (EntryIndex, context) => {
   );
 };
 
-/// This is the actual personals list listing list thing
-/// It has a list of personals, and you can click on them
-/// to view more about them
-/// While collapsed... ah we'll get to that later
-/// Here be the dragon pussy, I promise
+// / This is the actual personals list listing list thing
+// / It has a list of personals, and you can click on them
+// / to view more about them
+// / While collapsed... ah we'll get to that later
+// / Here be the dragon pussy, I promise
 const PersonalList = (props, context) => {
   const { act, data } = useBackend(context);
   const { UserData, IsAdmin } = data || [];
   const { sortby, sortdir } = UserData || []; // localstate is stored in the balls
   const { cached } = data || [];
-  /// If the player reading is an admin, just show them everything
-  /// Otherwise, check if that cached entry's master visibility is true
-  /// If it is, show it. If not, remove it
-  const { CachedVisPrefilter} = cached.filter(entry => {
+  // / If the player reading is an admin, just show them everything
+  // / Otherwise, check if that cached entry's master visibility is true
+  // / If it is, show it. If not, remove it
+  const { CachedVisPrefilter } = cached.filter(entry => {
     if (IsAdmin) {
       return entry;
     } else {
       return entry.visibility.master === true;
     }
   }) || [];
-  /// yeah theres that dragon pussy in all its glory
+  // / yeah theres that dragon pussy in all its glory
   const { CacheSorted } = CachedVisPrefilter.sort((a, b) => {
     const descA = a[sortby].toLowerCase();
     const descB = b[sortby].toLowerCase();
-    switch(sortdir) {
+    switch (sortdir) {
       case 'asc':
         if (descA < descB) {
           return -1;
@@ -377,30 +376,30 @@ const PersonalList = (props, context) => {
       {map(cached, (entry, index) => (
         <Stack.Item
           key={index}>
-          <PersonalEntryHolder Personal = {cached[index]} />
+          <PersonalEntryHolder Personal={cached[index]} />
         </Stack.Item>
       ))}
     </Stack>
   );
 };
 
-/// This is the actual entry in the personals list
-/// It has a header with sort-related stuff like name and species
-/// The body has a few collapsed sections, like "RP", "Adventure", and "ERP"
-/// The footer has a button to view the full profile in all its glory
-/// I promise, the dragon pussy is coming
+// / This is the actual entry in the personals list
+// / It has a header with sort-related stuff like name and species
+// / The body has a few collapsed sections, like "RP", "Adventure", and "ERP"
+// / The footer has a button to view the full profile in all its glory
+// / I promise, the dragon pussy is coming
 const PersonalEntryHolder = (Personal, context) => {
   const { act, data } = useBackend(context);
   const { visibility } = Personal || [];
   const { UserData } = data || [];
   const { IsAdmin } = UserData || [];
-  /// This is a huge array
-  /// we all know what mrs puff says about huge arrays
-  /// they fuckin suck
+  // / This is a huge array
+  // / we all know what mrs puff says about huge arrays
+  // / they fuckin suck
   const CachedVisCalc = <PersonalVisparsed
-    VisSettings = {visibility}
-    PlayerData = {Personal}
-    IsAdmin = {IsAdmin} /> || []
+    VisSettings={visibility}
+    PlayerData={Personal}
+    IsAdmin={IsAdmin} /> || [];
 
   return (
     <Box
@@ -410,31 +409,31 @@ const PersonalEntryHolder = (Personal, context) => {
 
       <Stack fill vertical>
         <Stack.Item>
-          <PersonalHeader FilteredPlayerData = {CachedVisCalc} />
+          <PersonalHeader FilteredPlayerData={CachedVisCalc} />
         </Stack.Item>
         <Stack.Item>
           <PersonalDatapane
-            FilteredPlayerData = {CachedVisCalc}
-            DataKind = 'RP' />
+            FilteredPlayerData={CachedVisCalc}
+            DataKind="RP" />
         </Stack.Item>
         <Stack.Item>
           <PersonalDatapane
-            FilteredPlayerData = {CachedVisCalc}
-            DataKind = 'Adventure' />
+            FilteredPlayerData={CachedVisCalc}
+            DataKind="Adventure" />
         </Stack.Item>
         <Stack.Item>
           <PersonalDatapane
-            FilteredPlayerData = {CachedVisCalc}
-            DataKind = 'ERP' />
+            FilteredPlayerData={CachedVisCalc}
+            DataKind="ERP" />
         </Stack.Item>
       </Stack>
     </Box>
   );
-}
+};
 
-/// This is the online dot that shows if the player is online or not
-/// It's a little dot that's green if they're online, red if they're not
-/// Think of it as a dragon cl1t (gpt doesnt like that word)
+// / This is the online dot that shows if the player is online or not
+// / It's a little dot that's green if they're online, red if they're not
+// / Think of it as a dragon cl1t (gpt doesnt like that word)
 const PersonalOnlineDot = (FilteredPlayerData, context) => {
   const { act, data } = useBackend(context);
   const { ToolTips } = data || [];
@@ -449,33 +448,33 @@ const PersonalOnlineDot = (FilteredPlayerData, context) => {
   ); // dragon cl1t bang
 };
 
-/// This is the header of the personals entry
-/// It has the name, species, and job of the player
-/// For real this time! This is part 1 of the dragon pussy
-/// The dragon mons pubis
+// / This is the header of the personals entry
+// / It has the name, species, and job of the player
+// / For real this time! This is part 1 of the dragon pussy
+// / The dragon mons pubis
 const PersonalHeader = (FilteredPlayerData, context) => {
   const { act, data } = useBackend(context);
   const { UserData } = data || [];
   const { PlayerName } = UserData.name || [];
-  const HealerGlunt = FilteredPlayerData.adventure_is_healer ?
-    <Icon
-      name="heart"
-      color="green"
-      ml={1} /> :
-    <Icon
-      name="heart-o"
-      color="red"
-      ml={1} />;
-  let BillTheCatBikiniInspector = <PersonalOnlineDot FilteredPlayerData = {FilteredPlayerData} /> +
-    Filtered.name +
-    " the " +
-    Filtered.species +
-    " " +
-    Filtered.job +
-    " " +
-    HealerGlunt +
-    " " +
-    !!FilteredPlayerData.adventure_lfg && "[LFG]";
+  const HealerGlunt = FilteredPlayerData.adventure_is_healer
+    ? (<Icon
+        name="heart"
+        color="green"
+        ml={1} />)
+    : (<Icon
+        name="heart-o"
+        color="red"
+        ml={1} />);
+  let BillTheCatBikiniInspector = <PersonalOnlineDot FilteredPlayerData={FilteredPlayerData} />
+    + Filtered.name
+    + " the "
+    + Filtered.species
+    + " "
+    + Filtered.job
+    + " "
+    + HealerGlunt
+    + " "
+    + !!FilteredPlayerData.adventure_lfg && "[LFG]";
 
   return (
     <Section
@@ -492,14 +491,14 @@ const PersonalHeader = (FilteredPlayerData, context) => {
   );
 };
 
-/// eslint is gonna have a fu(k)in fit over all this
-/// wonder if I can disable it
+// / eslint is gonna have a fu(k)in fit over all this
+// / wonder if I can disable it
 
-/// This is a functional section of the personals entry
-/// It starts life collapsed, but you can click on it to expand it
-/// It has a shitload of RP, Adventure, or ERP stuff in it
-/// This is parts 2 thru 4 of the dragon pussy
-/// The dragon lab1a maj0ra, the dragon ov4ries, and the dragon ut3rus
+// / This is a functional section of the personals entry
+// / It starts life collapsed, but you can click on it to expand it
+// / It has a shitload of RP, Adventure, or ERP stuff in it
+// / This is parts 2 thru 4 of the dragon pussy
+// / The dragon lab1a maj0ra, the dragon ov4ries, and the dragon ut3rus
 const PersonalDatapane = (FilteredPlayerData, DataKind, context) => {
   const { act, data } = useBackend(context);
   const { EntryKinds } = data || [];
@@ -524,33 +523,33 @@ const PersonalDatapane = (FilteredPlayerData, DataKind, context) => {
       width="100%">
       <Section
         title="RP Notes">
-          <Table width="100%">
-            {SortedEntryList.map((entry, index) => (
-              <Table.Row
-                key={index}>
-                <Table.Cell
-                  width="25%">
-                  <Tooltip
-                    content={EntryTooltips[entry]}>
-                    {EntryLabels[entry]}
-                  </Tooltip>
-                </Table.Cell>
-                <Table.Cell
-                  width="75%">
-                  {FilteredPlayerData[entry]}
-                </Table.Cell>
-              </Table.Row>
-            ))}
-          </Table>
+        <Table width="100%">
+          {SortedEntryList.map((entry, index) => (
+            <Table.Row
+              key={index}>
+              <Table.Cell
+                width="25%">
+                <Tooltip
+                  content={EntryTooltips[entry]}>
+                  {EntryLabels[entry]}
+                </Tooltip>
+              </Table.Cell>
+              <Table.Cell
+                width="75%">
+                {FilteredPlayerData[entry]}
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table>
       </Section>
     </Collapsible>
   );
 };
 
-/// Helper proc that takes in a visibility list and a player data
-/// and spits out a huge array of parsed player data
-/// This is the part that actually filters out the inner bits of personals
-/// Like dragon pussy (dont filter that out)
+// / Helper proc that takes in a visibility list and a player data
+// / and spits out a huge array of parsed player data
+// / This is the part that actually filters out the inner bits of personals
+// / Like dragon pussy (dont filter that out)
 const PersonalVisparsed = (VisSettings, PlayerData, IsAdmin, context) => {
   const { act, data } = useBackend(context);
   const { UserData } = data || [];
@@ -590,12 +589,12 @@ const PersonalVisparsed = (VisSettings, PlayerData, IsAdmin, context) => {
     erp_vore = PlayerData.erp_vore,
   ];
 
-  /// If the player reading is an admin, just show them everything
+  // / If the player reading is an admin, just show them everything
   if (IsAdmin) {
     return FrickhugeArray; // Theres that dragon pussy
   } else {
-    /// Otherwise, go through every entry in PlayerData and check if it is visible
-    /// If it is, leave it be. If not, replace that entry's value with "~unknown~"
+    // / Otherwise, go through every entry in PlayerData and check if it is visible
+    // / If it is, leave it be. If not, replace that entry's value with "~unknown~"
     FrickhugeArray.forEach((entry, index) => {
       if (VisSettings[index] === true && UserVis[index] === true) {
         return entry;
@@ -605,5 +604,5 @@ const PersonalVisparsed = (VisSettings, PlayerData, IsAdmin, context) => {
     });
     return FrickhugeArray; // Theres that dragon pussy
   }
-}
+};
 
