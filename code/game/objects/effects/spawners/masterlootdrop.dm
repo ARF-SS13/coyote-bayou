@@ -1109,6 +1109,7 @@
 		/obj/item/stack/sheet/mineral/titanium/twentyfive = 3,
 		/obj/item/stack/rods/scaffold/ten = 1,
 		/obj/item/stack/sheet/lead/ten = 1,
+		/obj/item/ingot/mythril = 20,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_mats

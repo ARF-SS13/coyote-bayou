@@ -2,15 +2,56 @@
 
 /obj/item/cool_book
 	name = "Fancy Book"
-	desc = "Wow! What a fancy book! Looks like it'll support all kinds of Inferno-brand coffee tables."
-	icon = 'modular_coyote/icons/objects/survival_guide.dmi'
-	icon_state = "survbook"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
 	/// The key to the book's entry in the library.
 	var/book_key = "example"
 	/// The chapter we're on. If null, its the index page.
 	var/chapter
 	/// The page we're on
 	var/page = 1
+
+/obj/item/cool_book/druidguide
+	name = "Fancy Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "druidguide"
+
+/obj/item/cool_book/shamanguide
+	name = "Gecko Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#335533"
+	book_key = "shamanguide"
+
+/obj/item/cool_book/warriorguide
+	name = "Gecko Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#553333"
+	book_key = "warriorguide"
+
+/obj/item/cool_book/villagerguide
+	name = "Molerat Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#333355"
+	book_key = "villagerguide"
+
+/obj/item/cool_book/chiefguide
+	name = "Deathclaw Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#888833"
+	book_key = "chiefguide"
+
+
 
 /obj/item/cool_book/Initialize()
 	. = ..()
@@ -22,6 +63,7 @@
 		CRASH("Book key [book_key] does not exist in the library!")
 	name = mybook.title
 	desc = mybook.desc
+	icon_state = mybook.cover
 
 /obj/item/cool_book/ui_assets(mob/user)
 	return list(

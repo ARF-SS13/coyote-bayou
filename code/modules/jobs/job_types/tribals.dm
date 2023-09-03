@@ -127,8 +127,8 @@ Tribal Chief
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/lantern = 1,
-		/obj/item/kit_spawner/tribal = 1
+		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/chiefguide = 1
 	)
 
 /*
@@ -184,13 +184,10 @@ Tribal Shaman
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/smelling_salts/wayfarer=1,
-		/obj/item/warpaint_bowl=1,
-		/obj/item/reagent_containers/glass/mortar=1,
-		/obj/item/pestle=1,
-		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
+		/obj/item/cool_book/shamanguide = 1,
 	)
 
 
@@ -260,14 +257,13 @@ Tribal Head Hunter
 	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /*
@@ -333,7 +329,9 @@ Druid
 		/obj/item/warpaint_bowl=1,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/cool_book/druidguide=1
+
 	)
 
 /*
@@ -400,7 +398,8 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/loadout/gatherer
@@ -512,7 +511,8 @@ Hunter
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/loadout/ranged
@@ -617,5 +617,6 @@ Guardian
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1
+		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/cool_book/warriorguide = 1
 	)
