@@ -35,6 +35,23 @@
 	color = "#553333"
 	book_key = "warriorguide"
 
+/obj/item/cool_book/villagerguide
+	name = "Molerat Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#333355"
+	book_key = "villagerguide"
+
+/obj/item/cool_book/chiefguide
+	name = "Deathclaw Skin Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#888833"
+	book_key = "chiefguide"
+
+
 
 /obj/item/cool_book/Initialize()
 	. = ..()
