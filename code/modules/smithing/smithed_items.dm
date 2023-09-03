@@ -85,7 +85,6 @@
 
 /obj/item/ingot/bronze
 	custom_materials = list(/datum/material/bronze=12000)
-	name = "black bronze"
 
 /obj/item/ingot/ratvar
 	custom_materials = list(/datum/material/brass=12000)
