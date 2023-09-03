@@ -287,3 +287,42 @@
 	hasPickedUp = FALSE
 	timerEnabled = FALSE
 	damageMult = initial(damageMult)
+
+/datum/emote/living/carbon/tsk
+	key = "tsk"
+	message = "tsks audibly."
+
+/datum/emote/living/carbon/braidpull
+	key = "braidpull"
+	message = "pulls their braid fitfully."
+
+/datum/emote/living/carbon/hairfix
+	key = "hairfix"
+	message = "is trying to fix their hair."
+
+/datum/emote/living/carbon/handclasp
+	key = "clasp"
+	message = "clasps their hands in front of them."
+
+/datum/emote/living/carbon/eyeroll
+	key = "eyeroll"
+	message = "rolls their eyes."
+
+/datum/emote/living/carbon/tongueclick
+	key = "tongueclick"
+	message = "clicks their tongue as if annoyed."
+
+/datum/emote/living/carbon/kneel
+	key = "kneel"
+	message = "slowly drops to the ground, kneeling with their legs underneath them."
+
+/datum/emote/living/carbon/snicker
+	key = "snicker"
+	message = "snickers quietly to themselves."
+
+/datum/emote/living/carbon/huff
+	key = "huff"
+	message = "huffs loudly, exhausted or exasperated. Who knows."
+
+
+
