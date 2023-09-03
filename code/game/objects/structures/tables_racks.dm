@@ -696,7 +696,7 @@
  */
 
 // Wooden shelf. Construct by crafting, not rack parts.
-/obj/structure/shelf_wood
+/obj/structure/rack/shelf_wood
 	name = "wooden shelf"
 	desc = "For storage."
 	icon = 'icons/fallout/objects/furniture/stationary.dmi'
