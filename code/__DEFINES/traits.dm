@@ -170,6 +170,10 @@
 #define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
+#define TRAIT_BIGBITE			"Big Biter"
+#define TRAIT_FASTBITE			"Fast Biter"
+#define TRAIT_BIGCLAW			"Big Clawer"
+#define TRAIT_FASTCLAW			"Fast Clawer"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
 #define TRAIT_NOSLIPALL			"noslip_all"

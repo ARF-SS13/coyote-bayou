@@ -219,6 +219,23 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/biter/big
+	name = "Big Biter"
+	desc = "Talk shit, get BIG bit."
+	color = "#884444"
+	force = 15
+	force_wielded = 18
+	attack_speed = 5
+
+/obj/item/hand_item/biter/fast
+	name = "Big Biter"
+	desc = "Talk shit, get SPEED bit."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 5
+
+
 /obj/item/hand_item/clawer
 	name = "Clawer"
 	desc = "Thems some claws."
@@ -234,6 +251,22 @@
 	attack_speed = 2
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/clawer/big
+	name = "Big Clawer"
+	desc = "Thems some BIG ASS claws."
+	color = "#884444"
+	force = 7
+	force_wielded = 9
+	attack_speed = 3
+
+/obj/item/hand_item/clawer/fast
+	name = "Fast Clawer"
+	desc = "Thems some FAST ASS claws."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 1
 
 /obj/item/hand_item/shover
 	name = "shover"

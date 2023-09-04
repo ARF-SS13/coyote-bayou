@@ -165,25 +165,39 @@
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
 		return
-	var/obj/item/hand_item/biter/bite = new(user)
-	if(user.put_in_active_hand(bite))
+	var/which_biter_to_spawn
+	if(HAS_TRAIT(user, TRAIT_BIGBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/big
+	else if(HAS_TRAIT(user, TRAIT_FASTBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/fast 
+	else 
+		which_biter_to_spawn = /obj/item/hand_item/biter 
+	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
+	if(user.put_in_active_hand(bite)) 
 		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
 	else
 		qdel(bite)
 
 
 //Clawer//
-/datum/emote/living/carbon/claw
-	key = "claw"
-	key_third_person = "claws"
-	restraint_check = TRUE
+/datum/emote/living/carbon/claw 
+	key = "claw" 
+	key_third_person = "claws" 
+	restraint_check = TRUE 
 
 /datum/emote/living/carbon/claw/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to use your claws!"))
 		return
-	var/obj/item/hand_item/clawer/claw = new(user)
+	var/which_clawer_to_spawn
+	if(HAS_TRAIT(user, TRAIT_BIGCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/big
+	else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/fast
+	else 
+		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
+	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
 	if(user.put_in_active_hand(claw))
 		to_chat(user, span_notice("You get your claws ready to slice!"))
 	else
