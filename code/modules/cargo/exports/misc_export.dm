@@ -267,31 +267,45 @@
 	cost = 1500
 	unit_name = "quality armor"
 	export_types = list(
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
-		/obj/effect/spawner/bundle/f13/armor/riot,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
-		/obj/effect/spawner/bundle/f13/armor/hotrodpa,
-		/obj/effect/spawner/bundle/f13/armor/t45d,
+		/obj/item/clothing/suit/armor/heavy/salvaged_pa,
+		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa,
+		/obj/item/clothing/suit/armor/heavy/riot/combat,
+		/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
+		/obj/item/clothing/suit/armor/medium/combat/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/mk2,
+		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
+		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
 		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
-		/obj/effect/spawner/bundle/f13/armor/t51b,
-		/obj/item/clothing/suit/armor/power_armor/t51b/pony,
 		/obj/item/clothing/suit/armor/medium/odst,
 		/obj/item/clothing/suit/armor/medium/odstlead,
+	)
+
+/datum/export/item/powerarmor
+	cost = 2500
+	unit_name = "power armor"
+	export_types = list(
+		/obj/item/clothing/suit/armor/power_armor,
+		/obj/item/clothing/head/helmet/f13/power_armor,
 	)
 
 /datum/export/item/armoruncommon
 	cost = 1000
 	unit_name = "surplus armor"
 	export_types = list(
-		/obj/effect/spawner/bundle/f13/armor/metal/reinforced,
-		/obj/effect/spawner/bundle/f13/armor/swat,
-		/obj/effect/spawner/bundle/f13/armor/combat,
-		/obj/effect/spawner/bundle/f13/armor/bulletproof,
-		/obj/effect/spawner/bundle/f13/armor/sulphite,
-		/obj/effect/spawner/bundle/f13/armor/vault,
+		/obj/item/clothing/suit/armor/heavy/metal/reinforced,
+		/obj/item/clothing/head/helmet/f13/metalmask/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat,
+		/obj/item/clothing/head/helmet/f13/combat,
+		/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
+		/obj/item/clothing/head/helmet/alt,
+		/obj/item/clothing/suit/armor/heavy/metal/sulphite,
+		/obj/item/clothing/head/helmet/f13/sulphitehelm,
+		/obj/item/clothing/suit/armor/medium/vest/bulletproof/big,
+		/obj/item/clothing/head/helmet/riot/vaultsec,
 		/obj/item/clothing/suit/armor/medium/raider/slam,
 		/obj/item/clothing/suit/armor/medium/raider/rebel,
 		/obj/item/clothing/suit/armor/medium/raider/slam,
@@ -299,7 +313,8 @@
 		/obj/item/clothing/suit/armor/medium/combat/mk2/raider,
 		/obj/item/clothing/head/helmet/f13/raider/wastehound,
 		/obj/item/clothing/head/helmet/f13/raidermetal,
-		/obj/effect/spawner/bundle/f13/armor/combat/dark,
+		/obj/item/clothing/suit/armor/medium/combat/dark,
+		/obj/item/clothing/head/helmet/f13/combat/dark,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris,
 		/obj/item/clothing/suit/armor/medium/odstcqb,
 	)
