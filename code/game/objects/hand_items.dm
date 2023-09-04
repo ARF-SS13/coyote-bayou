@@ -233,7 +233,7 @@
 	color = "#448844"
 	force = 4
 	force_wielded = 7
-	attack_speed = 5
+	attack_speed = 3
 
 
 /obj/item/hand_item/clawer
