@@ -306,6 +306,7 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Town Doctor",
 	"Town Paramedic",
 	"Nurse",
+	"Senior Scientist",
 	"Town Scientist",
 ))
 
