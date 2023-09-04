@@ -685,7 +685,7 @@
 	name = "alchemy rack"
 	desc = "A neatly organized cupboard for the storage of homemade remedies and flasks."
 	icon_state = "alchemyrack"
-	max_n_of_items = 100
+	max_n_of_items = 150
 
 /obj/machinery/smartfridge/bottlerack/alchemy_rack/accept_check(obj/item/O)
 	var/static/list/alchemyrack_typecache = typecacheof(list(
@@ -693,7 +693,12 @@
 		/obj/item/reagent_containers/glass/bottle/primitive,
 		/obj/item/stack/medical/poultice,
 		/obj/item/smelling_salts,
-		/obj/item/reagent_containers/pill/healingpowder
+		/obj/item/reagent_containers/pill/healingpowder,
+		/obj/item/reagent_containers/pill/antivenom,
+		/obj/item/reagent_containers/pill/fiery_purgative,
+		/obj/item/reagent_containers/pill/redambrosia,
+		/obj/item/reagent_containers/pill/blueambrosia,
+		/obj/item/reagent_containers/pill/greenambrosia
 	))
 	if(is_type_in_typecache(O, alchemyrack_typecache))
 		return TRUE

@@ -69,3 +69,36 @@
 #define COOLDOWN_RESET(cd_source, cd_index) cd_source.cd_index = 0
 
 #define COOLDOWN_TIMELEFT(cd_source, cd_index) (max(0, cd_source.cd_index - world.time))
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/// holds a progress thing that'll only count up when told to count up. //////////////////////////////
+/// mainly for things that are supposed to take a certain amount of time under certain conditions. ///
+/datum/counter_holder
+	var/last_tick = 0
+	var/progress = 0
+	var/target_time = 0
+	var/max_delta = 0
+	var/complete = FALSE
+
+/datum/counter_holder/New(target_time, max_delta)
+	src.last_tick = world.time
+	src.target_time = target_time
+	src.max_delta = max_delta
+
+/datum/counter_holder/proc/reset()
+	last_tick = world.time
+	progress = 0
+	complete = FALSE
+
+/datum/counter_holder/proc/tick()
+	progress += min(world.time - last_tick, max_delta)
+
+/datum/counter_holder/proc/check_complete()
+	return progress >= target_time
+
+/datum/counter_holder/proc/mark_complete()
+	complete = TRUE
+
+/datum/counter_holder/proc/is_complete()
+	return complete
+

@@ -50,8 +50,8 @@
 	if(genital_flags & UPDATE_OWNER_APPEARANCE && owner && ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
-	if(linked_organ_slot || (linked_organ && !owner))
-		update_link()
+	// if(linked_organ_slot || (linked_organ && !owner))
+	// 	update_link()
 
 /obj/item/organ/genital/proc/get_icon_state(mob/living/carbon/cockhaver, datum/sprite_accessory/sprote, aroused_state, layertext)
 	return "[slot]_[sprote.icon_state]_[size][(cockhaver.dna.species.use_skintones && !cockhaver.dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"

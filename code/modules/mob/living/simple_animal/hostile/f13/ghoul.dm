@@ -116,6 +116,7 @@
 	can_ghost_into = TRUE
 	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
 	
 	variation_list = list(
 		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
@@ -492,11 +493,11 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
+/*/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		try_to_ghoul_zombie_infect(H)
+		try_to_ghoul_zombie_infect(H)*/
 
 /mob/living/simple_animal/hostile/ghoul/zombie/reaver
 	name = "ravenous feral ghoul reaver"

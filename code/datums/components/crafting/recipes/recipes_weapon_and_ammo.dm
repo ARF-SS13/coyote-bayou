@@ -579,6 +579,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/ratling_gun_ammobox
+	name = "Ratling gun ammo box"
+	result = /obj/item/ammo_box/magazine/ratling/empty
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /////////////////
 ///GUN CRAFTING//
 /////////////////
@@ -731,7 +741,7 @@
 	result = /obj/item/gun/ballistic/rifle/hobo/lasmusket
 	reqs = list(/obj/item/trash/f13/electronic/toaster = 1,
 				/obj/item/gun/ballistic/revolver/hobo/piperifle = 1,
-				/obj/item/reagent_containers/food/drinks/bottle = 1,
+				/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/cable_coil = 3)
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
 	time = 120
@@ -953,6 +963,20 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+
+//craftable ratling gun
+/datum/crafting_recipe/ratling_gun
+	name = "Ratling gun"
+	result = /obj/item/gun/ballistic/automatic/ratling_gun
+	reqs = list(/obj/item/gun_upgrade/barrel/forged = 5,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stock_parts/manipulator/pico = 3,
+				/obj/item/stack/sheet/bronze = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 300 //30 sec
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //craftable psuedo-ratslayer
 /datum/crafting_recipe/verminkiller

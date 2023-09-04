@@ -237,6 +237,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. = ADMIN_FULLMONTY_NONAME(initiator.mob)
 	if(state == AHELP_ACTIVE)
 		. += ClosureLinks(ref_src)
+	if(SSsecondwind.is_hardcore(initiator_ckey))
+		. += " !!HC!!"
 
 //private
 /datum/admin_help/proc/ClosureLinks(ref_src)

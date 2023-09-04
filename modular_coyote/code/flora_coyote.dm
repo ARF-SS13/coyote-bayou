@@ -132,6 +132,41 @@
 	icon_state = "med_pine"
 	anchored = TRUE
 
+/obj/structure/flora/tree/cherryblossom
+	name = "tree"
+	desc = "Leaves on the vine, falling so slow."
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "cherry_blossom_1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/cherryblossom2
+	name = "tree"
+	desc = "Leaves on the vine, falling so slow."
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "cherry_blossom_2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/cherryblossom2
+	name = "tree"
+	desc = "Leaves on the vine, falling so slow."
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "cherry_blossom_2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/cherryblossom3
+	name = "tree"
+	desc = "Leaves on the vine, falling so slow."
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "cherry_blossom_3"
+	anchored = TRUE
+
+/obj/structure/flora/tree/cherryblossom4
+	name = "tree"
+	desc = "Leaves on the vine, falling so slow."
+	icon = 'modular_coyote/icons/objects/flora.dmi'
+	icon_state = "cherry_blossom_4"
+	anchored = TRUE
+
 /obj/structure/flora/tree/med_pine_dead
 	name = "tree"
 	desc = "woody"

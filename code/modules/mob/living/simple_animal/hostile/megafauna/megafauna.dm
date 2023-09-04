@@ -48,6 +48,7 @@
 	var/chosen_attack = 1 // chosen attack num
 	var/list/attack_action_types = list()
 	var/small_sprite_type
+	ignore_other_mobs = TRUE // Their entire existance is to kill players
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()

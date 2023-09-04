@@ -1,3 +1,26 @@
+/obj/item/melee/coyote/
+	name = "Generic Coyote Melee Weapon"
+	desc = "Snarpening my snife for my snins."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "claymore_old"
+	item_state = "claymore"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = INV_SLOTBIT_BACK
+	force = 25
+	force_unwielded = 25
+	force_wielded = 47
+	throwforce = 23
+	wound_bonus = 20
+	bare_wound_bonus = 10
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("slashed", "sliced", "have'd at the")
+	hitsound = 'sound/weapons/slice.ogg'
+	block_chance = 5	
+
 /obj/item/melee/coyote/oldclaymore
 	name = "old claymore"
 	desc = "The owner of this knows the price of their freedom."
@@ -7,7 +30,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 25
 	force_unwielded = 25
 	force_wielded = 47
@@ -29,7 +52,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
@@ -52,7 +75,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38
@@ -75,7 +98,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 20
 	force_unwielded = 20
 	force_wielded = 28
@@ -98,7 +121,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 15
 	force_unwielded = 15
 	force_wielded = 22
@@ -121,7 +144,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 25
 	force_unwielded = 25
 	force_wielded = 35
@@ -144,7 +167,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 20
 	force_unwielded = 20
 	force_wielded = 28
@@ -168,7 +191,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 28
 	force_unwielded = 28
 	force_wielded = 35
@@ -191,7 +214,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 55
@@ -214,7 +237,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 55
@@ -237,7 +260,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 10 //Needs to be wielded
 	force_unwielded = 10
 	force_wielded = 65
@@ -258,7 +281,7 @@
 	item_state = "club"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 20
 	force_unwielded = 20
 	force_wielded = 25
@@ -285,7 +308,7 @@
 	item_state = "big_club"
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 25
 	force_unwielded = 25
 	force_wielded = 40
@@ -308,7 +331,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 28
 	force_unwielded = 28
 	force_wielded = 35
@@ -350,7 +373,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
@@ -373,7 +396,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
@@ -397,7 +420,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 40
@@ -421,7 +444,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 18
 	force_unwielded = 18
 	force_wielded = 35
@@ -444,7 +467,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 20
 	force_unwielded = 20
 	force_wielded = 30
@@ -466,7 +489,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38
@@ -489,7 +512,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
@@ -519,7 +542,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 10
 	force_unwielded = 10
 	force_wielded = 20
@@ -544,7 +567,7 @@
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 28
 	force_unwielded = 28
 	force_wielded = 38

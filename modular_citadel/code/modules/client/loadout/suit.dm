@@ -48,11 +48,100 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	cost = 0
 
-/datum/gear/suit/bomber
-	name = "Bomber jacket"
-	path = /obj/item/clothing/suit/jacket
+/datum/gear/suit/coat/black
+	name = "Thick Black Coat"
+	path = /obj/item/clothing/suit/civ13/coat/black
+	cost = 0
+
+/datum/gear/suit/coat/tan
+	name = "Thick Tan Coat"
+	path = /obj/item/clothing/suit/civ13/coat/tancoat
+	cost = 0
+
+/datum/gear/suit/coat/thickgray
+	name = "Thick Gray Coat"
+	path = /obj/item/clothing/suit/civ13/coat/gray
+	cost = 0
+
+/datum/gear/suit/coat/browncoat
+	name = "Thick Brown Coat"
+	path = /obj/item/clothing/suit/civ13/coat/gray
+	cost = 0
+
+/datum/gear/suit/coat/brownwaistcoat
+	name = "Thick Brown Waistcoat"
+	path = /obj/item/clothing/suit/civ13/coat/brownwaistcoat
+	cost = 0
+
+/datum/gear/suit/coat/sidebuttonjacket
+	name = "Overcoat - Tan with sidebuttons"
+	path = /obj/item/clothing/suit/civ13/coat/sidebuttonjacket
+	cost = 0
+
+/datum/gear/suit/coat/kozhanka
+	name = "Kozhanka Jacket"
+	path = /obj/item/clothing/suit/civ13/coat/kozhanka
+	cost = 0
+
+/datum/gear/suit/coat/kozhanka/white
+	name = "Kozhanka Jacket - White"
+	path = /obj/item/clothing/suit/civ13/coat/kozhanka/white
+	cost = 0
+
+/datum/gear/suit/coat/leathervest
+	name = "Leather Vest with Belt"
+	path = /obj/item/clothing/suit/civ13/coat/leathervest
+	cost = 0
+
+/datum/gear/suit/coat/blackvest
+	name = "Black vest - Half buttoned"
+	path = /obj/item/clothing/suit/civ13/coat/blackvest
+	cost = 0
+
+/datum/gear/suit/coat/olivevest
+	name = "Olive vest - Half buttoned"
+	path = /obj/item/clothing/suit/civ13/coat/olivevest
+	cost = 0
+
+/datum/gear/suit/coatbluevest
+	name = "Blue vest - Half buttoned"
+	path = /obj/item/clothing/suit/civ13/coat/bluevest
+	cost = 0
+
+/datum/gear/suit/greenusjacket
+	name = "US Jacket - Green"
+	path = /obj/item/clothing/suit/civ13/coat/greenusjacket
+	cost = 0
+
+/datum/gear/suit/greenusjacket
+	name = "US Jacket - Green"
+	path = /obj/item/clothing/suit/civ13/coat/greenusjacket
+	cost = 0
+
+/datum/gear/suit/ghillie
+	name = "Ghillie Suit - no hood"
+	path = /obj/item/clothing/suit/civ13/coat/ghillie
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 0
+
+/datum/gear/suit/tanovercoat
+	name = "Overcoat - Tan"
+	path = /obj/item/clothing/suit/civ13/coat/tanovercoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 0
+
+/datum/gear/suit/fluffypilotsjacket
+	name = "Pilots Jacket - Fluffy"
+	path = /obj/item/clothing/suit/civ13/coat/fluffypilotsjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 0
+
+/datum/gear/suit/monk_robes
+	name = "Nasty Monk Robes"
+	path = /obj/item/clothing/suit/civ13/coat/monk_robes
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 0
+
 
 /datum/gear/suit/bomber/oldjacketbomber
 	name = "Old bomber jacket"
@@ -277,16 +366,134 @@
 	cost = 1
 
 /datum/gear/suit/samurai  //added by TK420634 ~ 5/29/2022 "Samurai Wasteland WeebShit Edition (tm)
-	name = "Rusted Samurai Armor"
+	name = "Yoroi - Rusted"
 	path = /obj/item/clothing/suit/samurai
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
-/datum/gear/suit/rustedcowboy
-	name = "Rusted Cowboy Outfit"
-	path = /obj/item/clothing/suit/armor/light/duster/rustedcowboy
+/datum/gear/suit/samurai1
+	name = "Yoroi - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai1
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
+/datum/gear/suit/samurai2
+	name = "Yoroi - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai3
+	name = "Yoroi - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai4
+	name = "Yoroi - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samurai5
+	name = "Yoroi - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samurai5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor1
+	name = "Yoroi Lightened - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor2
+	name = "Yoroi Lightened - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor3
+	name = "Yoroi Lightened - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraipoor4
+	name = "Yoroi Lightened - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/samuraiwar1
+	name = "Padded Yoroi - Reddish Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/samuraiwar2
+	name = "Padded Yoroi - Blue"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/samuraiwar3
+	name = "Padded Yoroi - Brown"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/samuraiwar4
+	name = "Padded Yoroi - Black"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar4
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/samuraiwar5
+	name = "Padded Yoroi - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/samuraiwar5
+	name = "Padded Yoroi - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/light/kit/punk/scraparmor
+	name = "Beefy Scrap Armor"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/scraparmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/light/kit/punk/prehistoricfur
+	name = "Messy furs"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/light/kit/punk/prehistoricfur/two
+	name = "Messier furs"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/two
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/light/kit/punk/prehistoricfur/three
+	name = "Messier furs - White"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/three
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/light/kit/punk/prehistoricfur/four
+	name = "Messier furs - Gray"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/four
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+
+
+
 
 /// 	Beginning of Coats/Armor section
 // 	Below are one points as they are cosmetics
@@ -352,7 +559,79 @@
 	path = /obj/item/clothing/suit/armor/medium/unmcinfiltrator
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-	
+
+/datum/gear/suit/armor/medievalarmors
+	name = "Unpainted knight armor"
+	path = /obj/item/clothing/suit/armor/medium/oldarmors/basicknightarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/armor/fancyjarlcape
+	name = "Luxury fur cape"
+	path = /obj/item/clothing/suit/armor/medium/fancycapes
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/unmcwinter
+	name = "Winterized UNMC armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcwinter
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/unmcmedicarmor
+	name = "Medical UNMC Armor"
+	path = /obj/item/clothing/suit/armor/medium/unmcmedic
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest
+	name = "Civilian Ballistic Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no2
+	name = "6b3 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no3
+	name = "6b45 Body Armor"
+	path = /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/armor/ballisticvest/no4
+	name = "War Press vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/newsvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no5
+	name = "Ghillie suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bushsuit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no6
+	name = "511 PMC Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no7
+	name = "Police Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ballisticvest/no8
+	name = "Foreign Vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed
@@ -1172,6 +1451,18 @@
 	path = /obj/item/clothing/suit/armor/light/vest/russian
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+
+/datum/gear/suit/crusaderweak
+	name = "Crusader Chainmail w/ Tabard"
+	path = /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/farmer
+	name = "Farmer Overalls"
+	path = /obj/item/clothing/suit/armor/outfit/overalls/farmer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 1
 
 // BEGIN_INTERNALS
 // END_INTERNALS

@@ -47,7 +47,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
 	GLOB.human_list += src
-
 	var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
 	pornHud.add_to_hud(src)
 	update_body(TRUE)

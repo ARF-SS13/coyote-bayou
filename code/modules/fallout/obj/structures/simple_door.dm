@@ -32,6 +32,7 @@
 	var/close_sound = 'sound/machines/door_close.ogg'
 	var/opening_time = 2
 	var/closing_time = 4
+	var/can_atmos_pass = -2
 
 	//Multi-tile doors
 	dir = EAST

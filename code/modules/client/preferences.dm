@@ -1576,6 +1576,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			setup_flags = DEF_BALLS_FLAGS
 			thing_name = "Testicles"
 			one_or_some = "some"
+			size_flavor = " decigrundles"
 			feature_key = "balls"
 		if("has_cock")
 			setup_flags = DEF_PENIS_FLAGS
@@ -2145,7 +2146,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = 5
+	var/bal = 100
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
@@ -3092,6 +3093,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_shape = input(user, "Balls Shape", "Character Preference") as null|anything in GLOB.balls_shapes_list
 					if(new_shape)
 						features["balls_shape"] = new_shape
+
+				if("balls_size")
+					var/min_B = 1
+					var/max_B = BALLS_SIZE_MAX
+					var/new_length = input(user, "Testicle size in decigrundles:\n([min_B]-[max_B])", "Character Preference") as num|null
+					if(new_length)
+						features["balls_size"] = clamp(round(new_length), min_B, max_B)
 
 				if("balls_visibility")
 					var/n_vis = input(user, "Testicles Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)

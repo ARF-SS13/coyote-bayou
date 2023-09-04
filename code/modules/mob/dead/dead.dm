@@ -96,7 +96,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	C << link("[addr]?server_hop=[key]")
 
-/mob/dead/proc/update_z(new_z) // 1+ to register, null to unregister
+/mob/dead/update_z(new_z) // 1+ to register, null to unregister
 	if (registered_z != new_z)
 		if (registered_z)
 			SSmobs.dead_players_by_zlevel[registered_z] -= src

@@ -102,7 +102,7 @@ Slimecrossing Armor
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "peaceflower"
 	item_state = "peaceflower"
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	body_parts_covered = NONE
 	dynamic_hair_suffix = ""
 	force = 0

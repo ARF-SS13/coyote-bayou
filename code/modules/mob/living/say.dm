@@ -69,10 +69,10 @@
 			client.cmd_admin_say(message)
 		return
 
-	if(message_mode == MODE_DEADMIN)
-		if(client)
-			client.dsay(message)
-		return
+	// if(message_mode == MODE_DEADMIN)
+	// 	if(client)
+	// 		client.dsay(message)
+	// 	return
 
 	if(stat == DEAD)
 		say_dead(original_message)

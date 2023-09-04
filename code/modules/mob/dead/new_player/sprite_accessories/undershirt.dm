@@ -764,3 +764,40 @@
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
+	
+	//Shapely Bra (bra)
+
+/datum/sprite_accessory/underwear/top/shapelybrapetite
+	name = "Shapely Bra - Petite"
+	icon_state = "shapelybra_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybragirlish
+	name = "Shapely Bra - Girlish"
+	icon_state = "shapelybra_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybracurvy
+	name = "Shapely Bra - Curvy"
+	icon_state = "shapelybra_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabusty
+	name = "Shapely Bra - Busty"
+	icon_state = "shapelybra_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrabackbreaker
+	name = "Shapely Bra - Backbreakers"
+	icon_state = "shapelybra_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE

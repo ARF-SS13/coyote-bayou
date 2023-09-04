@@ -4,7 +4,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	permeability_coefficient = 0.9
 	block_priority = BLOCK_PRIORITY_UNIFORM
-	slot_flags = ITEM_SLOT_ICLOTHING
+	slot_flags = INV_SLOTBIT_ICLOTHING
 	armor = ARMOR_VALUE_CLOTHES
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
 	limb_integrity = 30

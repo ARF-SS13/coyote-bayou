@@ -79,6 +79,13 @@
 	message_param = "salutes to %t."
 	restraint_check = TRUE
 
+/datum/emote/living/carbon/human/salute/chest
+	key = "salutechest"
+	key_third_person = "salutes with hand to heart."
+	message = "salutes with hand to heart."
+	message_param = "salutes to %t with a hand to their heart."
+	restraint_check = TRUE
+
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"

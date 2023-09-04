@@ -53,6 +53,12 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/cloth = 0.2, // low because botany and because use this for medical supplies you drongo
 		/obj/item/stack/sheet/leather = 0.8,
 		/obj/item/reagent_containers/food/snacks/meat = 5,
+		/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat = 0, // To prevent people from printing effortless money at a biogen
+		/obj/item/fishy/carp		= 5,
+		/obj/item/fishy/salmon		= 10,
+		/obj/item/fishy/eel			= 2,
+		/obj/item/fishy/crawdad		= 7,
+		/obj/item/fishy/shrimp		= 3,
 		/obj/item/reagent_containers/food/snacks/meat/slab/human = 0,
 		/obj/item/stack/sheet/animalhide = 3,
 		/obj/item/clothing/suit/armor = 10,
@@ -63,6 +69,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/helmet/f13/power_armor = 75,
 		/obj/item/melee = 5,
 		/obj/item/melee/transforming = 5,
+		/obj/item/twohanded = 5,
 		/obj/item/gun/energy/laser = 15,
 		// pistols/revolvers, 5 caps
 		/obj/item/gun/ballistic/revolver = 5,
@@ -124,26 +131,26 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/revolver/hobo/knifegun = 0,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 0,
 		/obj/item/stack/sheet/animalhide/chitin = 1,
-		/obj/item/stack/sheet/animalhide/deathclaw = 25,
-		/obj/item/stack/sheet/animalhide/gecko = 3,
-		/obj/item/stack/sheet/animalhide/molerat = 3,
-		/obj/item/stack/sheet/animalhide/wolf = 10,
-		/obj/item/stack/sheet/animalhide/radstag = 15,
-		/obj/item/stack/sheet/animalhide/brahmin = 8,
-		/obj/item/clothing/head/f13/stalkerpelt = 10,
-		/obj/item/clothing/head/bearpelt = 25,
+		/obj/item/stack/sheet/animalhide/deathclaw = 20,
+		/obj/item/stack/sheet/animalhide/gecko = 2,
+		/obj/item/stack/sheet/animalhide/molerat = 2,
+		/obj/item/stack/sheet/animalhide/wolf = 8,
+		/obj/item/stack/sheet/animalhide/radstag = 12,
+		/obj/item/stack/sheet/animalhide/brahmin = 6,
+		/obj/item/clothing/head/f13/stalkerpelt = 8,
+		/obj/item/clothing/head/bearpelt = 20,
 		/obj/item/stack/sheet/animalhide/human = 0,
-		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 25, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
-		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 10,
-		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 5,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 3,
-		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6,
-		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 12,
-		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2,
-		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 4,
-		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 20, // meat high because you can't carry a lot of it, and it's actually really valuable as healing
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 8,
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2,
+		/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 9,
+		/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 3,
+		/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 3,
 		/obj/item/stock_parts/capacitor/adv = 3,
 		/obj/item/stock_parts/scanning_module/adv = 3,
 		/obj/item/stock_parts/manipulator/nano = 3,
@@ -202,10 +209,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/trappist = 15,
 		/obj/item/export/bottle/goldschlager = 15,
 		/obj/item/export/bottle/patron = 15,
-		/obj/item/card/lowbounty = 100,
-		/obj/item/card/midbounty = 200,
-		/obj/item/card/highbounty = 400,
-		/obj/item/card/kingbounty = 800,
+		/obj/item/card/lowbounty = 75,
+		/obj/item/card/midbounty = 150,
+		/obj/item/card/highbounty = 300,
+		/obj/item/card/kingbounty = 600,
 	)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
@@ -323,10 +330,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Melee Weapons: 10¢<br>"
 	dat += "<br>"
 	dat += "<b>Turn your kills into coins today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 100¢<br>"
-	dat += "Medium Roller Bounty Ticket: 200¢<br>"
-	dat += "High Roller Bounty Ticket: 400¢<br>"
-	dat += "King's Bounty Ticket: 800¢<br>"
+	dat += "Small Roller Bounty Ticket: 75¢<br>"
+	dat += "Medium Roller Bounty Ticket: 150¢<br>"
+	dat += "High Roller Bounty Ticket: 300¢<br>"
+	dat += "King's Bounty Ticket: 600¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
@@ -363,7 +370,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(user?.a_intent == INTENT_HARM)
 		return ..()
 	appraise_item(I)
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user, FALSE)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, I, user)
 
 /obj/machinery/mineral/wasteland_trader/proc/appraise_item(obj/item/I, looping)
 	if(!I)
@@ -770,10 +777,10 @@ Fence
 	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(
-						/obj/item/card/lowbounty = 100,
-						/obj/item/card/midbounty = 200,
-						/obj/item/card/highbounty = 400,
-						/obj/item/card/kingbounty = 800
+						/obj/item/card/lowbounty = 75,
+						/obj/item/card/midbounty = 150,
+						/obj/item/card/highbounty = 300,
+						/obj/item/card/kingbounty = 600
 								)
 
 /obj/machinery/mineral/wasteland_trader/bountyticket/ui_interact(mob/user)
@@ -785,10 +792,10 @@ Fence
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Turn your kills into copper today!</b><br>"
-	dat += "Small Roller Bounty Ticket: 100¢<br>"
-	dat += "Medium Roller Bounty Ticket: 200¢<br>"
-	dat += "High Roller Bounty Ticket: 400¢<br>"
-	dat += "King's Bounty Ticket: 800¢<br>"
+	dat += "Small Roller Bounty Ticket: 75¢<br>"
+	dat += "Medium Roller Bounty Ticket: 150¢<br>"
+	dat += "High Roller Bounty Ticket: 300¢<br>"
+	dat += "King's Bounty Ticket: 600¢<br>"
 	dat += ""
 	dat += "</div>"
 
