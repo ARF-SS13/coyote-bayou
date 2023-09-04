@@ -1082,13 +1082,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Biter - Big"
 	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
 	value = 22
-	mob_trait = TRAIT_BIGBITER
+	mob_trait = TRAIT_BIGBITE
 
 /datum/quirk/fastbiter
 	name = "Biter - Fast"
 	desc = "Your jaws are just UBELIEVABLY FAST.  Use *bite to bite like the WIND."
 	value = 22
-	mob_trait = TRAIT_FASTBITER
+	mob_trait = TRAIT_FASTBITE
 
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
