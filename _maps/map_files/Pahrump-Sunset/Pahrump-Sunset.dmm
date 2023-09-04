@@ -36310,6 +36310,14 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/button/door{
+	id = "countershutters";
+	name = "counter shutters";
+	pixel_x = -2;
+	pixel_y = -34;
+	req_one_access_txt = null;
+	layer = 4
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -64580,7 +64588,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/landmark/start/f13/shopkeeper,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -79402,6 +79409,10 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/status_display/supply{
+	pixel_y = 32;
+	layer = 4
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -84124,12 +84135,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"pMY" = (
-/obj/effect/landmark/start/f13/shopkeeper,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "pNk" = (
 /mob/living/simple_animal/hostile/molerat,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -92468,6 +92473,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/machinery/status_display/supply{
+	pixel_y = -32;
+	layer = 4
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -103703,7 +103712,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/landmark/start/f13/shopkeeper,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -120967,7 +120975,7 @@ amC
 pMP
 pMP
 dDs
-pMY
+pvx
 pvx
 pvx
 mSq
@@ -121738,7 +121746,7 @@ lup
 epL
 tkT
 lTn
-pMY
+pvx
 pvx
 vgV
 eaZ

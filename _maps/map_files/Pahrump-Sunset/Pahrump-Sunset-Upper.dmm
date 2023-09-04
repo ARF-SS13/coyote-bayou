@@ -10388,6 +10388,7 @@
 	dir = 1
 	},
 /obj/effect/spawner/lootdrop/trash,
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic)
 "ipZ" = (
@@ -10531,7 +10532,8 @@
 /area/f13/building/hospital)
 "ivG" = (
 /obj/machinery/door/window{
-	dir = 1
+	dir = 1;
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic)
@@ -14668,6 +14670,10 @@
 "lFY" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/crafting/metalparts/five,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "lGa" = (
@@ -15210,11 +15216,11 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "mcX" = (
-/obj/machinery/rnd/destructive_analyzer,
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/machinery/rnd/production/protolathe,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "mdq" = (
@@ -19913,7 +19919,6 @@
 	},
 /area/f13/building)
 "pZo" = (
-/mob/living/carbon/monkey,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic)
@@ -20422,8 +20427,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "qsC" = (
-/obj/machinery/rnd/production/protolathe,
-/turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
+/obj/machinery/computer/scan_consolenew{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic)
 "qtx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21003,12 +21010,8 @@
 	},
 /area/f13/building)
 "qRp" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/stack/crafting/metalparts/five,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
+/obj/machinery/dna_scannernew,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic)
 "qRD" = (
 /obj/structure/closet,
@@ -21830,6 +21833,13 @@
 	smooth = 1
 	},
 /area/f13/building/mall)
+"rww" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building/hospital/clinic)
 "rwy" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -27068,6 +27078,7 @@
 /area/f13/building/abandoned)
 "vOP" = (
 /obj/structure/bed/dogbed,
+/mob/living/carbon/monkey,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic)
 "vPu" = (
@@ -33399,8 +33410,8 @@ kiY
 nKx
 dxw
 ipY
-pzS
-pzS
+isp
+isp
 vOP
 oce
 mNn
@@ -33910,11 +33921,11 @@ oce
 rcN
 bQR
 bQR
-bQR
+klm
 bQR
 dnE
 pZo
-pzS
+isp
 isp
 oce
 mrM
@@ -34167,12 +34178,12 @@ oce
 bQR
 bQR
 xZD
-oce
-oce
-oce
-oce
-oce
-oce
+qsC
+qRp
+rww
+isp
+isp
+pzS
 oce
 oez
 eGR
@@ -34425,11 +34436,11 @@ veF
 oce
 oce
 oce
-qRp
-lNl
-sqT
-lNl
-dXl
+oce
+oce
+oce
+oce
+oce
 oce
 oez
 eGR
@@ -34684,9 +34695,9 @@ ylX
 oce
 lFY
 lNl
+sqT
 lNl
-lNl
-wIL
+dXl
 wDI
 oez
 hmG
@@ -36740,7 +36751,7 @@ wrb
 oce
 uHi
 kWL
-qsC
+kWL
 psj
 mcX
 oce

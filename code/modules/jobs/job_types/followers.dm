@@ -42,8 +42,8 @@ Administrator
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
 	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
@@ -86,6 +86,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name =	"Senior Doctor"
@@ -106,7 +107,8 @@ Administrator
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
-		/obj/item/hypospray/mkii/CMO = 1
+		/obj/item/hypospray/mkii/CMO = 1,
+		/obj/item/gun/medbeam = 1,
 	)
 
 //Professor
@@ -215,8 +217,8 @@ Administrator
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
 	description = "You are a Senior Scientist. Your rank is given due to your experience in the field compared to regular scientists. Help deal with issues that arise that normal scientists aren't prepared for, and teach those willing to learn more in the facility."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
@@ -275,8 +277,9 @@ Administrator
 	backpack_contents = list(
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/storage/wallet/stash/high = 1,
-		/obj/item/gun/medbeam,
-	)
+		/obj/item/disk/xenobio_console_upgrade/monkey = 1,
+		/obj/item/disk/xenobio_console_upgrade/slimeadv = 1,
+		)
 
 /*
 Practitioner
