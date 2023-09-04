@@ -1078,4 +1078,26 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel imperceptive.")
 	locked =  FALSE
 
+/datum/quirk/bigbiter
+	name = "Biter - Big"
+	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
+	value = 22
+	mob_trait = TRAIT_BIGBITE
 
+/datum/quirk/fastbiter
+	name = "Biter - Fast"
+	desc = "Your jaws are just UBELIEVABLY FAST.  Use *bite to bite like the WIND."
+	value = 22
+	mob_trait = TRAIT_FASTBITE
+
+/datum/quirk/bigclawer
+	name = "Clawer - Big"
+	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
+	value = 22
+	mob_trait = TRAIT_BIGCLAW
+
+/datum/quirk/fastclawer
+	name = "Clawer - Fast"
+	desc = "Your claw swipes are nearly the speed of sound, your *claw attack his WAY faster."
+	value = 22
+	mob_trait = TRAIT_FASTCLAW
