@@ -73,7 +73,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/mfcbad,
 	/datum/crafting_recipe/ecbad,
 	/datum/crafting_recipe/gun/flintlock,
-	/datum/crafting_recipe/gun/flintlock_laser))
+	/datum/crafting_recipe/gun/flintlock_laser,
+	/datum/crafting_recipe/sharpener))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	///datum/crafting_recipe/tribal/bonetalisman, //broken item, unneeded
@@ -369,12 +370,21 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
-	name = "Weaponsmith"
-	desc = "You know how to make various weapons, protective vests, and gun mods. The list is too large to try and put here."
+	name = "Weaponsmith - Basic"
+	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
 	value = 14
+
 	mob_trait = TRAIT_WEAPONSMITH
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem less adept at crafting makeshift weapons.")
+
+/datum/quirk/masterworksmith
+	name = "Weaponsmith - Masterwork"
+	desc = "Your smithed weapons now do extra damage. Requires Weaponsmith - Basic in order to benefit from!"
+	value = 28
+	mob_trait = TRAIT_MASTERWORKSMITH
+	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
+	lose_text = span_danger("You seem less adept at crafting masterworks.")
 
 /datum/quirk/gunsmith/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -823,7 +833,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 66
+	value = 33
 	mob_trait = TRAIT_NOHUNGER
 	gain_text = span_notice("Your need for food has left you.")
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")

@@ -47,13 +47,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails/nightstalker
+/datum/sprite_accessory/tails_animated/mam_tails_animated/nightstalker
 	name = "nightstalker"
 	icon_state = "nightstalker"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+/*
 /datum/sprite_accessory/tails/human/nightstalker
 	name = "nightstalker"
 	icon_state = "nightstalker"
@@ -67,7 +67,7 @@
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+*/
 /datum/sprite_accessory/tails/mam_tails/skunkalt
 	name = "Skunk Alt"
 	icon_state = "skunkalt"
@@ -89,13 +89,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails/raccoon
+/datum/sprite_accessory/tails_animated/mam_tails_animated/raccoon
 	name = "raccoon"
 	icon_state = "raccoon"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+/*
 /datum/sprite_accessory/tails/human/raccoon
 	name = "raccoon"
 	icon_state = "raccoon"
@@ -109,7 +109,7 @@
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+*/
 /datum/sprite_accessory/tails/mam_tails/pony
 	name = "pony"
 	icon_state = "pony"

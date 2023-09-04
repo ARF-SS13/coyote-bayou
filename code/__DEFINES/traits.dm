@@ -158,6 +158,10 @@
 #define TRAIT_ERPSWITCH			"ERP Seeking - Switch"
 #define TRAIT_ERPFLIRTY			"ERP Seeking - Flirty"
 #define TRAIT_SHY				"Shy"
+#define TRAIT_PVEFOC			"PVE Focused"
+#define TRAIT_PVPFOC			"PVP Focused"
+#define TRAIT_COMBATSWITCH		"PVP/PVE Accepting"
+#define TRAIT_OOCAPP			"L/OOC Approach"
 #define TRAIT_RPFOCUSED			"RP Focused"
 #define TRAIT_RPLONGTERM		"RP Focused Long Term" //RP Focused on long term interactions
 #define TRAIT_RPSHORTTERM		"RP Focused Short Term" //RP Focused on short term interactions
@@ -300,6 +304,7 @@
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
 #define TRAIT_WEAPONSMITH "weaponsmith"
+#define TRAIT_MASTERWORKSMITH "masterworksmith" // same as weapon_crafting, but your smithed weapons do an additional 5 damage
 #define TRAIT_BEASTFRIEND_RAT "beastfriend-rats"
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
