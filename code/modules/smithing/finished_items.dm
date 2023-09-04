@@ -9,7 +9,7 @@
 	mob_overlay_icon = 'code/modules/smithing/icons/onmob/slot.dmi'
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON //yeah ok
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	force = WEAPON_FORCE_TOOL_SMALL
 	obj_flags = UNIQUE_RENAME
@@ -17,6 +17,7 @@
 	var/overlay_state = "woodenrod"
 	var/mutable_appearance/overlay
 	//var/wielded_mult = 1
+	var/is_sharpened = FALSE
 
 /obj/item/melee/smith/Initialize()
 	. = ..()
@@ -28,7 +29,35 @@
 	if(force < 0)
 		force = 0
 
+/obj/item/melee/smith/sharpener
+	name = "whetstone"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "sharpener"
+	desc = "A block that makes things sharp."
+	force = 5
 
+/obj/item/melee/smith/sharpener/attackby(obj/item/melee/smith/I, mob/user, params)
+	if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
+		to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+		return
+	if(I.is_sharpened == TRUE)
+		to_chat(user, span_warning("That weapon's already as sharp as it can get!"))
+		return
+	if(I.sharpness != 1)
+		to_chat(user, span_warning("You cant sharpen a blunt object!"))
+		return
+	if(!do_after(user, 10 SECONDS, TRUE, I))
+		to_chat(user, span_warning("You need to hold still to sharpen that!"))
+		return
+	I.force += 5
+	I.force_wielded += 5
+	I.force_unwielded += 5
+	I.throwforce += 5
+	I.is_sharpened = TRUE
+	I.desc = "[initial(desc)] It has been sharpened to a fine edge."
+	to_chat(user, span_notice("You sharpen the [I]!"))
+	qdel(src)
+	return ..()
 /obj/item/melee/smith/twohand
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
@@ -82,6 +111,9 @@
 //	qualitymod = 1
 	custom_materials = list(/datum/material/iron = 1000)
 
+/obj/item/melee/smith/hammer/premadeadam
+	custom_materials = list(/datum/material/adamantine = 1000)
+
 // The true manual mining scanner, knock it on rock to scan. Could use a cooldown, can't be bothered to sort it. Lowest quality got too short range to test out.
 /obj/item/mining_scanner/prospector
 	name = "prospectors pick"
@@ -92,7 +124,7 @@
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "prospect_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 /obj/item/mining_scanner/prospector/Initialize()
 	..()
@@ -122,8 +154,8 @@
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "pickaxe"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	sharpness = SHARP_POINTY
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	sharpness = SHARP_EDGED
 	digrange = 2
 	toolspeed = 0.2
 
@@ -212,6 +244,8 @@
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	force = 47
+	force_unwielded = 47
+	force_wielded = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
@@ -227,6 +261,9 @@
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 8
 
 /obj/item/melee/smith/sword/sabre
@@ -235,6 +272,9 @@
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -244,8 +284,10 @@
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	force = 24
+	force_unwielded = 24
+	force_wielded = 24
 	throwforce = 30
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	block_chance = 5
@@ -266,6 +308,8 @@
 	icon_state = "bowie_smith"
 	overlay_state = "hilt_bowie"
 	force = 31
+	force_unwielded = 31
+	force_wielded = 31
 	throwforce= 34
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -278,6 +322,8 @@
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
 	force = 38
+	force_unwielded = 38
+	force_wielded = 38
 	block_chance = 5
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
@@ -287,6 +333,8 @@
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 1.1
 
@@ -295,6 +343,8 @@
 	icon_state = "macheter_smith"
 	overlay_state = "hilt_macheter"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -309,7 +359,10 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
+	sharpness = SHARP_EDGED
 	force = 27
+	force_unwielded = 27
+	force_wielded = 27
 	throwforce= 30
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -341,6 +394,8 @@
 	icon_state = "mace_smith"
 	overlay_state = "shaft_mace"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
@@ -369,7 +424,7 @@
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
 
 /obj/item/melee/smith/twohand/longsword
@@ -383,7 +438,7 @@
 	force_unwielded = 28
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	layer = MOB_UPPER_LAYER
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
@@ -412,7 +467,7 @@
 	block_chance = 8
 	force_wielded = 55
 	force_unwielded = 25
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	layer = MOB_UPPER_LAYER
 
 /obj/item/melee/smith/twohand/axe/afterattack(atom/A, mob/living/user, proximity)
@@ -472,7 +527,7 @@
 	block_chance = 5
 	force_wielded = 50
 	force_unwielded = 25
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.9
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
@@ -505,11 +560,13 @@
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 15
+	force_unwielded = 15
+	force_wielded = 15
 	throwforce = 45
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 // Smaller weaker javelin, easier to store/carry, less effective
 /obj/item/melee/smith/throwingknife
@@ -519,9 +576,11 @@
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 10
+	force_unwielded = 10
+	force_wielded = 10
 	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 
 // TG stuff

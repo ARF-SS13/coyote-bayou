@@ -85,6 +85,16 @@
 	max_mobs_hit = 5
 	falloff_mult = 0.5 // even harsher fallff!
 
+/datum/component/weapon_special/ranged_spear/cult_bastard
+	max_distance = 1
+	max_mobs_hit = 3
+	always_do = TRUE
+	line_effect = ATTACK_EFFECT_PUNCH
+	effect_kind = null
+	target_mode = WS_ALL_POPULATED_TILES
+	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES | WS_TARGET_WALLS
+	damage_flags = NONE
+
 /datum/component/weapon_special/Initialize()
 	if(!isitem(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -497,7 +507,7 @@
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 12
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL

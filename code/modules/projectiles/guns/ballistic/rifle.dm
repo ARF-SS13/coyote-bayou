@@ -101,6 +101,56 @@
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+/* * * * * * * * * * * * * * * *
+* Volcanic pistol
+* -6 round capacity
+* + Slightly better than the .45 ACP base damage
+* +/- Muh lever action
+* + Based off RDO, can be dual wielded
+* + Uses .45 acp, the lord's caliber
+* * * * * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/rifle/repeater/volcanic
+	name = "Lever action pistol"
+	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself."
+	icon_state = "volcanic"
+	item_state = "volcanic"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
+	can_suppress = FALSE
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	reskinnable_component = /datum/component/reskinnable/volcanic
+
+
+/obj/item/gun/ballistic/rifle/repeater/customvolcanictox
+	name = "Engraved Volcanic Pistol"
+	desc = "A engraved Volcanic pistol. This pistol has an ivory grip with gold plating. The lever itself was modified to allow it to be cocked by a single hand while. The gun's reciever is engraved with a baroque style portrait of a moth and feline."
+	icon_state = "customvolcanic"
+	item_state = "goldengun"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
+	can_suppress = FALSE
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
 /* * * * * * * * * * *
  * Coyote Repeater
  * Baseline Repeater Tribal Skin
@@ -583,6 +633,65 @@
 	fire_sound = 'sound/f13weapons/salvaged.ogg'
 	can_scope = TRUE
 	casing_ejector = TRUE
+
+
+
+
+
+/* * * * * * * * * * *
+ * snowflake varmint rifle
+ * identical to a varmint rifle excepting in projectile cosmetics
+ * .223 / 5.56mm
+ * Scopeable
+ * Same damage, literally GUN_EXTRA_DAMAGE_0
+ * Homie just wanted a resprite
+ * Unique, doesn't have to be, throw it in the loot pool if you wanna be goofy
+ * * * * * * * * * * */
+
+
+/obj/item/gun/ballistic/rifle/magnetic
+	name = "Hephestus Ferromagnetic Rifle"
+	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "magriflev"
+	item_state = "magrifle"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/magrifle.ogg'
+	can_scope = TRUE
+	casing_ejector = TRUE
+	weapon_special_component = null
+
+/obj/item/gun/ballistic/rifle/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
+	BB.name = "ferromagnetic bullet"
+	BB.icon = 'icons/obj/projectiles.dmi'
+	BB.icon_state = "magjectile-large"
+	BB.pass_flags = PASSTABLE
+	BB.light_range = 3
+	BB.damage_type = BRUTE
+	BB.flag = "bullet"
+	BB.impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	BB.light_color = LIGHT_COLOR_RED
+	BB.is_reflectable = TRUE
+	BB.hitsound = 'sound/weapons/elecfire.ogg'
+	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 
 /* * * * * * * * * * * * * * * * * *
  * Magazine-Fed Bolt-Action Rifles *

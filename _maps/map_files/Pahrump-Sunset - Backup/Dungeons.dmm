@@ -382,7 +382,6 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "anv" = (
-/obj/machinery/atmospherics/components/unary/cryo_cell,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operating)
 "anB" = (
@@ -725,18 +724,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aBG" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 1
-	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
 "aBL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 9;
-	network = "vault"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "aCp" = (
@@ -3152,7 +3144,6 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "cHJ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "cHS" = (
@@ -3405,7 +3396,7 @@
 /obj/item/gun/ballistic/automatic/sportcarbine,
 /obj/item/gun/ballistic/automatic/sportcarbine,
 /obj/item/gun/ballistic/automatic/sportcarbine,
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#d9cdb9";
 	icon_state = "floorrustysolid"
@@ -3428,7 +3419,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "cQP" = (
-/obj/machinery/atmospherics/pipe/simple,
 /obj/machinery/door/airlock/hatch{
 	req_one_access_txt = "134"
 	},
@@ -3603,7 +3593,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/enclave)
 "cYI" = (
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#d9cdb9";
 	icon_state = "floorrustysolid"
@@ -6479,9 +6469,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "fdp" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 8
-	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "fdI" = (
@@ -8706,9 +8693,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "gLf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/lattice{
 	layer = 3
 	},
@@ -9122,11 +9106,6 @@
 "hca" = (
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_y = -32
-	},
-/obj/machinery/camera/autoname{
-	dir = 1;
-	name = "RnD Checkpoint Camera";
-	network = list("BoS")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
@@ -9898,10 +9877,6 @@
 	},
 /area/f13/building)
 "hHG" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.9
-	},
 /obj/structure/lattice{
 	layer = 3
 	},
@@ -10656,9 +10631,6 @@
 "iqI" = (
 /obj/machinery/light/small{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operating)
@@ -12317,9 +12289,6 @@
 	},
 /area/f13/brotherhood/rnd)
 "jKU" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operating)
 "jLJ" = (
@@ -12519,9 +12488,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
 "jWi" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 5
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operating)
 "jWx" = (
@@ -13025,9 +12991,6 @@
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/leisure)
 "krM" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
 /obj/item/radio/intercom{
 	frequency = 1361;
 	name = "Vault Intercom";
@@ -13862,10 +13825,6 @@
 /area/f13/brotherhood/dorms)
 "kXI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer1{
-	pixel_x = 5;
-	pixel_y = 0
-	},
 /obj/structure/reagent_dispensers/barrel/explosive{
 	pixel_x = -2;
 	pixel_y = 4
@@ -14032,12 +13991,6 @@
 "lfD" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
-	},
-/obj/machinery/camera/autoname{
-	dir = 8;
-	name = "Armory Camera";
-	network = list("BoS");
-	pixel_x = -1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -14666,9 +14619,6 @@
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "lJR" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/lattice{
 	density = 1
 	},
@@ -16452,9 +16402,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "nbc" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/lattice{
 	density = 1
 	},
@@ -18184,10 +18131,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/archives)
 "oyW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.9
-	},
 /obj/structure/lattice{
 	density = 1
 	},
@@ -18501,10 +18444,6 @@
 	dir = 4;
 	layer = 3.1;
 	pixel_x = -16
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.9
 	},
 /obj/structure/lattice{
 	density = 1
@@ -18880,9 +18819,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
 "oVy" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 5
-	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "oVJ" = (
@@ -20687,7 +20623,6 @@
 	},
 /area/f13/brotherhood/offices1st)
 "qlD" = (
-/obj/machinery/atmospherics/components/unary/thermomachine/freezer,
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
 "qlG" = (
@@ -21811,9 +21746,6 @@
 /area/f13/brotherhood/operations)
 "rbP" = (
 /obj/structure/table,
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
 /obj/machinery/button/door{
 	id = 103;
 	name = "Blast Doors"
@@ -23812,9 +23744,6 @@
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
 "sDE" = (
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 10
-	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "sDT" = (
@@ -26011,7 +25940,6 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname,
 /obj/structure/rack,
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
@@ -26371,11 +26299,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "uDP" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
-	name = "Reactor Camera";
-	network = list("BoS")
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
@@ -26678,9 +26601,6 @@
 /area/f13/tunnel)
 "uPR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 9
-	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
@@ -27613,10 +27533,6 @@
 	},
 /area/f13/brotherhood/operating)
 "vxU" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4;
-	layer = 2.9
-	},
 /obj/structure/lattice{
 	density = 1
 	},
@@ -28289,9 +28205,6 @@
 /area/f13/vault)
 "wde" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "wdL" = (
@@ -29539,9 +29452,6 @@
 /area/f13/brotherhood/archives)
 "xgO" = (
 /obj/structure/decoration/vent,
-/obj/machinery/atmospherics/pipe/simple{
-	dir = 8
-	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "xha" = (
@@ -29841,9 +29751,6 @@
 	dir = 8;
 	pixel_y = -7
 	},
-/obj/machinery/atmospherics/pipe/manifold{
-	dir = 4
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -30117,7 +30024,6 @@
 /area/f13/brotherhood/rnd)
 "xGh" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "xGr" = (
@@ -30621,9 +30527,6 @@
 /obj/structure/table,
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/camera/autoname{
 	dir = 1
 	},
 /obj/item/grenade/barrier{

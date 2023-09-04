@@ -330,7 +330,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		//power armor laugh track.... spooky
-		if(istype(human_user.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/power_armor))
+		if(istype(human_user.get_item_by_slot(INV_SLOTBIT_OCLOTHING), /obj/item/clothing/suit/armor/power_armor))
 			return 'sound/voice/robolaugh.ogg'
 		return human_user.dna.species.get_laugh_sound(user)
 
@@ -1003,6 +1003,12 @@
 	key_third_person = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
 	message = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
 	sound = 'sound/effects/scrungy.ogg'
+
+/datum/emote/living/grungle
+	key = "grungle"
+	key_third_person = "sounds like a dog gargling soda water just as its about to have a laugh."
+	message = "sounds like a dog gargling soda water just as its about to have a laugh."
+	sound = 'sound/effects/gurgle.ogg'
 
 /datum/emote/living/augh
 	key = "augh"

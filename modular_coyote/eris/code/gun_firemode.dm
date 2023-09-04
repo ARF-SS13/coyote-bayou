@@ -47,6 +47,7 @@
 	shoot_delay = shoot_delay_default
 	burst_delay = burst_delay_default
 	burst_count = burst_count_default
+	damage_multiplier_default = _gun.damage_multiplier
 	damage_multiplier = damage_multiplier_default
 	shot_cost_multiplier = shot_cost_multiplier_default
 	my_gun = WEAKREF(_gun)
@@ -201,7 +202,7 @@
 	name = "Fully Automatic"
 	desc = "Automatic - 150 RPM."
 	fire_type_default = GUN_FIREMODE_AUTO
-	shoot_delay_default = GUN_FIRE_RATE_200
+	shoot_delay_default = GUN_FIRE_RATE_150
 
 /datum/firemode/burst
 	name = "Burstfire"

@@ -23,6 +23,13 @@
 	caliber = list(CALIBER_357)
 	max_ammo = 6
 
+
+/obj/item/ammo_box/magazine/internal/cylinder/lemat
+	name = "Lemat cylnder"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 9
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	name = "6520 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -38,6 +45,18 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	name = "4570 cylinder"
 	ammo_type = /obj/item/ammo_casing/c4570
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/hermes
+	name = "hermes revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 7
+
+/obj/item/ammo_box/magazine/internal/cylinder/medusa
+	name = "multi-caliber revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = MEDUSA_AMMO_CALIBERS
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/revneedler
@@ -151,6 +170,11 @@
 	caliber = list(CALIBER_45LC)
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/judge
+	name = "Cylinder for a Judge"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 3
 /obj/item/ammo_box/magazine/internal/cylinder/rev308
 	name = ".308 Sporting Revolver Cylinder"
 	ammo_type = /obj/item/ammo_casing/a308
@@ -162,3 +186,9 @@
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/magnetic
+	name = "Hephestus Internal Magazine"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = list(CALIBER_556)
+	max_ammo = 20

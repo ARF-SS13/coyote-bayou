@@ -448,7 +448,7 @@ Burning extracts:
 	item_state = "adamshield"
 	w_class = WEIGHT_CLASS_HUGE
 	armor = ARMOR_VALUE_PA
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	block_chance = 75
 	force = 0
 	throw_range = 1 //How far do you think you're gonna throw a solid crystalline shield...?

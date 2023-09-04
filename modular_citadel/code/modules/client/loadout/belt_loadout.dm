@@ -65,6 +65,11 @@
 	name = "army belt"
 	path = /obj/item/storage/belt/army
 
+/datum/gear/belt/armyold
+	name = "old style army belt"
+	path = /obj/item/storage/belt/army/assault/enclave
+	cost = 2
+
 /datum/gear/belt/army/assault
 	name = "assault belt"
 	path = /obj/item/storage/belt/army/assault

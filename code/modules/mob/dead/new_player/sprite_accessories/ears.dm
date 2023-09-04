@@ -166,7 +166,6 @@
 	name = "Fennec"
 	icon_state = "fennec"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
-
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
@@ -488,3 +487,54 @@
 	name = "Wolf"
 	icon_state = "wolf"
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/ears/mam_ears/pig
+	name = "Pig"
+	icon_state = "pig"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/human
+	name = "Human ears"
+	icon_state = "human"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MUTCOLORS3
+
+
+//Fenny makes insane earringed ears
+
+/datum/sprite_accessory/ears/mam_ears/bigwolflp
+	name = "Big Wolf - left piercing"
+	icon_state = "bigwolflp"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/mam_ears/bigwolfrp
+	name = "Big Wolf - right piercing"
+	icon_state = "bigwolfrp"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/mam_ears/bigwolfbp
+	name = "Big Wolf - both piercings"
+	icon_state = "bigwolfbp"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/human/fennec2bp
+	name = "Fennec (ALT) - both piercings"
+	icon_state = "fennec2bp"
+	matrixed_sections = MATRIX_ALL
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/human/fennec2lp
+	name = "Fennec (ALT) - left piercing"
+	icon_state = "fennec2lp"
+	matrixed_sections = MATRIX_ALL
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/human/fennec2rp
+	name = "Fennec (ALT) - right piercing"
+	icon_state = "fennec2rp"
+	matrixed_sections = MATRIX_ALL	
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+
+

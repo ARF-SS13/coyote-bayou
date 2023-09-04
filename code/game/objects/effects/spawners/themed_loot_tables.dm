@@ -303,7 +303,7 @@
 		/obj/item/twohanded/baseball/golfclub = 2,
 		/obj/item/melee/onehanded/machete/scrapsabre = 2,
 		/obj/item/twohanded/fireaxe/bmprsword = 2,
-		/obj/item/twohanded/sledgehammer = 2,
+		/obj/item/twohanded/sledgehammer/simple = 2,
 		/obj/item/twohanded/spear/scrapspear = 2,
 		/obj/item/twohanded/chainsaw = 1,
 		)

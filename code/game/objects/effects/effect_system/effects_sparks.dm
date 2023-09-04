@@ -5,12 +5,12 @@
 // will always spawn at the items location.
 /////////////////////////////////////////////
 
-/proc/do_sparks(n, c, source)
+/proc/do_sparks(n, c, source, spark_path = /datum/effect_system/spark_spread)
 	// n - number of sparks
 	// c - cardinals, bool, do the sparks only move in cardinal directions?
 	// source - source of the sparks.
 
-	var/datum/effect_system/spark_spread/sparks = new
+	var/datum/effect_system/spark_spread/sparks = new spark_path()
 	sparks.set_up(n, c, source)
 	sparks.autocleanup = TRUE
 	sparks.start()

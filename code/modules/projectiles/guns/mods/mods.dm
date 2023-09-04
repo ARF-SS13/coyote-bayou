@@ -356,12 +356,13 @@
 /obj/item/gun_upgrade/trigger/better
 	name = "Pre-war trigger"
 	desc = "This trigger seems to be made of pre-war alloys and cut to the precision of milimeters."
+	icon_state = "DNA_lock"
 
 /obj/item/gun_upgrade/trigger/better/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.8
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_TRIGGER
@@ -369,19 +370,22 @@
 /obj/item/gun_upgrade/barrel/better
 	name = "High-temperature forged barrel"
 	desc = "A barrel forged in high temperature, making the metal more resistant."
+	icon_state = "gravbarrel"
 
 /obj/item/gun_upgrade/barrel/better/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY = 0.8
-	)
-	I.destroy_on_removal = TRUE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1.1,
+		)
 	I.gun_loc_tag = GUN_BARREL
+	I.req_gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/gun_upgrade/muzzle/better
 	name = "Pre-war muzzle"
 	desc = "A pre-war muzzle, with an integrated silencer."
+	icon_state = "Glass_Widow"
 
 /obj/item/gun_upgrade/muzzle/better/New()
 	..()
@@ -395,8 +399,10 @@
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
 /obj/item/gun_upgrade/mechanism/better
+	icon = 'modular_coyote/eris/icons/tool_upgrades.dmi'
 	name = "Hydraulic mechanism"
 	desc = "A pre-war mechanism that uses hydraulic pumps to keep recoil at a minimum."
+	icon_state = "hydraulic"
 
 /obj/item/gun_upgrade/mechanism/better/New()
 	..()

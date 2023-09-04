@@ -511,7 +511,7 @@
 	color = "#660000" // rgb: 221, 202, 134
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
-	glass_name = "glass of chocolate"
+	glass_name = "cup of hot chocolate"
 	glass_desc = "Tasty."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)

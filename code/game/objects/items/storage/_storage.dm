@@ -12,6 +12,7 @@
 /obj/item/storage/Initialize()
 	. = ..()
 	PopulateContents()
+	PostPopulateContents()
 
 /obj/item/storage/ComponentInitialize()
 	AddComponent(component_type)
@@ -29,6 +30,9 @@
 //Cyberboss says: "USE THIS TO FILL IT, NOT INITIALIZE OR NEW"
 /obj/item/storage/proc/PopulateContents()
 
+//In case we ant to do smth 2 da stuf aftr spwn D:
+/obj/item/storage/proc/PostPopulateContents()
+
 /obj/item/storage/proc/dump_everything(datum/source, obj/vore_belly/gut, mob/living/vorer)
 	SIGNAL_HANDLER
 	if(!gut || !vorer)
@@ -39,7 +43,7 @@
 		for(var/obj/item/thingy in contents)
 			if(!SSvore.can_eat(thingy))
 				something = TRUE
-				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thingy, get_turf(src))
+				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thingy, get_turf(src), FALSE, thingy.loc, current_equipped_slot)
 				thingy.throw_at(get_ranged_target_turf(get_turf(src), vorer.dir, 5, 3), 10, 1, vorer, TRUE, TRUE)
 		if(something)
 			vorer.visible_message(span_alert("Stuff flies out of [vorer]'s [gut]!"), pref_check = VOREPREF_VORE_MESSAGES)

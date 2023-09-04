@@ -74,6 +74,10 @@ Simple datum which is instanced once per type and is used for every object of sa
 		o.modify_max_integrity(new_max_integrity)
 		o.force *= strength_modifier
 		o.throwforce *= strength_modifier
+		if(istype(o, /obj/item))
+			var/obj/item/itemobject = o
+			itemobject.force_wielded *= strength_modifier
+			itemobject.force_unwielded *= strength_modifier
 
 		var/list/temp_armor_list = list() //Time to add armor modifiers!
 
@@ -129,6 +133,10 @@ Simple datum which is instanced once per type and is used for every object of sa
 		o.modify_max_integrity(new_max_integrity)
 		o.force = initial(o.force)
 		o.throwforce = initial(o.throwforce)
+		if(istype(o, /obj/item))
+			var/obj/item/itemobject = o
+			itemobject.force_wielded = initial(itemobject.force_wielded)
+			itemobject.force_unwielded = initial(itemobject.force_unwielded)
 
 /datum/material/proc/on_removed_turf(turf/T, material_flags)
 	return

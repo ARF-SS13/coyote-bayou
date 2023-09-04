@@ -204,6 +204,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	///If this is a player's ckey then this mob was spawned as a player's character
 	var/player_character = null
+	var/ignore_other_mobs = TRUE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
+	var/override_ignore_other_mobs = FALSE // If TRUE, it'll ignore the idnore other mobs flag, for mobs that are supposed to be hostile to everything
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -342,6 +344,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/infight_check)
+
+/mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
+	if(SSmobs.debug_disable_mob_ceasefire)
+		return
+	if(H.client || client || player_character || H.player_character)
+		return
+	if(override_ignore_other_mobs || H.override_ignore_other_mobs)
+		return
+	if(!istype(H))
+		return
+	return (H.ignore_other_mobs || ignore_other_mobs)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
@@ -695,7 +709,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(deathmessage || !del_on_death)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
-		..()
+		..(gibbed)
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
@@ -705,7 +719,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon_state = icon_dead
 		density = FALSE
 		lying = 1
-		..()
+		..(gibbed)
 
 /mob/living/simple_animal/drop_all_held_items(skip_worn = FALSE)
 	if(internal_storage && !skip_worn)
@@ -969,7 +983,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/Life()
 	update_health_hud()
 	. = ..()
-	if(stat)
+	if(stat == DEAD)
 		return
 	if (idlesound)
 		if (prob(5))
@@ -1027,6 +1041,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	walk(src, 0)
 	set_resting(FALSE, FALSE, FALSE)
 	update_mobility()
+
+/mob/living/simple_animal/fully_heal(admin_revive = FALSE)
+	. = ..()
+	unstamcrit()
 
 /mob/living/simple_animal/proc/sever_link_to_nest()
 	if(nest)

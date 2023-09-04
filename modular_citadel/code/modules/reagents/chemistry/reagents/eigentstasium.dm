@@ -173,7 +173,7 @@
 
 /datum/reagent/fermi/eigenstate/reaction_turf(turf/T, reac_volume)
 	//if(cached_purity < 0.99) To add with next batch of fixes and tweaks.
-	/*
+
 	var/obj/structure/closet/First
 	var/obj/structure/closet/Previous
 	for(var/obj/structure/closet/C in T.contents)
@@ -200,5 +200,5 @@
 	First.alpha = 200
 	do_sparks(5,FALSE,First)
 	First.visible_message("The lockers' eigenstates spilt and merge, linking each of their contents together.")
-	*/
+
 //eigenstate END

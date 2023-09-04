@@ -324,8 +324,8 @@
 	start_charged = FALSE
 
 /obj/item/stock_parts/cell/bluespace
-	name = "bluespace power cell"
-	desc = "A rechargeable transdimensional power cell."
+	name = "ultracite power cell"
+	desc = "A rechargeable high capacity ultracite power cell."
 	icon_state = "bscell"
 	maxcharge = 40000
 	custom_materials = list(/datum/material/glass=600)
@@ -478,13 +478,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/mfc/update_icon()
-	switch(charge)
-		if (((maxcharge/2)+1) to maxcharge)
-			icon_state = "mfc-full"
-		if (((maxcharge/4)+1) to (maxcharge/2))
-			icon_state = "mfc-half"
-		if (0 to (maxcharge/4))
-			icon_state = "mfc-empty"
+	if(charge >= (maxcharge*0.65))
+		icon_state = "mfc-full"
+	else if(charge >= (maxcharge*0.35))
+		icon_state = "mfc-half"
+	else
+		icon_state = "mfc-empty"
 	. = ..()
 
 // Enhanced Microfusion cell - large energy weapons
@@ -521,15 +520,14 @@
 	maxcharge = 1500
 
 /obj/item/stock_parts/cell/ammo/ec/update_icon()
-	switch(charge)
-		if ((((maxcharge/3)*2)+1) to maxcharge)
-			icon_state = "ec-full"
-		if (((maxcharge/3)+1) to ((maxcharge/3)*2))
-			icon_state = "ec-twothirds"
-		if (((maxcharge/4)+1) to (maxcharge/3))
-			icon_state = "ec-onethirds"
-		if (0 to (maxcharge/4))
-			icon_state = "ec-empty"
+	if(charge >= maxcharge * 0.75)
+		icon_state = "ec-full"
+	else if(charge >= maxcharge * 0.50)
+		icon_state = "ec-twothirds"
+	else if(charge >= maxcharge * 0.25)
+		icon_state = "ec-onethirds"
+	else
+		icon_state = "ec-empty"
 	. = ..()
 
 // Enhanced energy cell - small energy weapons
@@ -573,13 +571,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stock_parts/cell/ammo/ecp/update_icon()
-	switch(charge)
-		if (((maxcharge/2)+1) to maxcharge)
-			icon_state = "ecp-full"
-		if (((maxcharge/4)+1) to (maxcharge/2))
-			icon_state = "ecp-half"
-		if (0 to (maxcharge/4))
-			icon_state = "ecp-empty"
+	if(charge >= maxcharge*0.65)
+		icon_state = "ecp-full"
+	else if(charge >= maxcharge*0.35)
+		icon_state = "ecp-half"
+	else
+		icon_state = "ecp-empty"
 	. = ..()
 
 // Enhanced electron charge pack - rapid fire energy

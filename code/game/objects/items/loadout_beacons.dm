@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
 	/// MUST be set
 	var/allowed_flags
@@ -413,6 +413,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/update_icon_state()
 	if(contents.len == 0)
 		qdel(src)
+
+/obj/item/storage/box/gun/PostPopulateContents()
+	for(var/obj/item/thing in contents)
+		SEND_SIGNAL(thing, COMSIG_GUN_MAG_ADMIN_RELOAD) // no more empty clippazines
 
 /// Guns for the LAWman
 /obj/item/storage/box/gun/law
@@ -1067,6 +1071,27 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c45rev(src)
 	new /obj/item/ammo_box/c45(src)
 
+/datum/loadout_box/medusa
+	entry_tag = "Medusa Revolver"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/medusa
+
+/obj/item/storage/box/gun/revolver/medusa/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/medusa(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44box(src)
+
+/datum/loadout_box/hermes
+	entry_tag = "Hermes Revolver"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/hermes	
+
+/obj/item/storage/box/gun/revolver/hermes/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hermes(src)
+	new /obj/item/ammo_box/c9mm(src)
+
 /obj/item/storage/box/gun/revolver/colt357
 	name = ".357 magnum revolver case" //what does \improper mean, is needed here?
 
@@ -1303,6 +1328,10 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
+
+/obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
+	new /obj/item/gun/ballistic/bow/shortbow/yumi(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
 /*dunno if we should have roundstart crossbow simply cause we want a lil more progression
@@ -2204,6 +2233,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
 
+/datum/loadout_box/shortbow/yumi
+	entry_tag = "Yumi Bow"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
+
+
+
 /*
 /datum/loadout_box/crossbow
 	entry_tag = "Crossbow"
@@ -2428,3 +2465,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MISC
 	spawn_thing = /obj/item/book/granter/martial/berserker
+
+/datum/loadout_box/bagorocks
+	entry_tag = "A bag for carrying rocks"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MISC
+	spawn_thing = /obj/item/ammo_box/rock/improvised

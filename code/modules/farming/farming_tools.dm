@@ -18,7 +18,7 @@
 	possible_transfer_amounts = list(10,20,30,50,120)
 	volume = 120
 	flags_inv = HIDEHAIR
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	resistance_flags = NONE
 	slot_equipment_priority = list( \
 		SLOT_BACK, SLOT_WEAR_ID,\
@@ -205,7 +205,7 @@
 	flags_1 = CONDUCT_1
 	force = 24
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 4
@@ -257,7 +257,7 @@
 	attack_speed = CLICK_CD_MELEE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/swiping = FALSE

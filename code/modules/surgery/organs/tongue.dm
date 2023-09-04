@@ -30,6 +30,14 @@
 		/datum/language/dwarf,
 		/datum/language/tribal,
 		/datum/language/signlanguage,
+		/datum/language/pokemon,
+		/datum/language/canine,
+		/datum/language/squirrel,
+		/datum/language/sergal,
+		/datum/language/mouse,
+		/datum/language/birdsong,
+		/datum/language/rabbit,
+		/datum/language/bug
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
@@ -386,3 +394,10 @@
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/irish)
+
+/obj/item/organ/tongue/slurry
+	name = "\improper Slurry tongue"
+	desc = "A tongue that is quite human-like, but speaks with a slurred and kind of goofy accent."
+	icon_state = "tonguenormal"
+	say_mod = "says"
+	initial_accents = list(/datum/accent/slurry)

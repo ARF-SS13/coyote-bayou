@@ -16,7 +16,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
@@ -40,7 +40,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 55
 	throwforce = 10
 	block_chance = 20
@@ -99,6 +99,7 @@
 /obj/item/melee/onehanded/machete/gladius
 	name = "gladius"
 	desc = "A heavy cutting blade, with a fairly good tip too."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gladius"
 	item_state = "gladius"
 	force = 36
@@ -429,7 +430,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "classic_baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 18
 	w_class = WEIGHT_CLASS_NORMAL
 	wound_bonus = 15
@@ -585,7 +586,7 @@ obj/item/melee/onehanded/knife/switchblade
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -632,7 +633,7 @@ obj/item/melee/onehanded/knife/switchblade
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("hit", "poked")
@@ -701,7 +702,7 @@ obj/item/melee/onehanded/knife/switchblade
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	attack_speed = CLICK_CD_MELEE * 0.9
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
@@ -858,7 +859,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
 	icon_state = "deathclaw_g"
 	item_state = "deathclaw_g"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 35
 	armour_penetration = 0 //HAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHA, ONE MY ASS LMFAO ~TK
@@ -872,7 +873,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. A weapon worthy of the Sulfurs."
 	icon_state = "yao_guai_g"
 	item_state = "deathclaw_g"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 23
 	sharpness = SHARP_EDGED
@@ -886,6 +887,80 @@ obj/item/melee/unarmed/punchdagger/cyborg
 		return
 	target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
 
+
+/////////////////
+// POWER FISTS //
+/////////////////		-Uses power (gas currently) for knockback. Heavy AP, specialized for attacking heavy armor
+
+// Power Fist			Throws targets. Max damage 52. Full AP.
+/obj/item/melee/unarmed/powerfist
+	name = "power fist"
+	desc = "A metal gauntlet with a piston-powered ram on top for that extra 'oomph' in your punch."
+	icon_state = "powerfist"
+	item_state = "powerfist"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	flags_1 = CONDUCT_1
+	attack_verb = list("whacked", "fisted", "power-punched")
+	force = 45 //needs more hefty damage to be worthwhile outside pvp. will have to test
+	throwforce = 10
+	throw_range = 3
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
+	var/throw_distance = 1
+	attack_speed = CLICK_CD_MELEE
+
+/obj/item/melee/unarmed/powerfist/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		return FALSE
+	var/turf/T = get_turf(src)
+	if(!T)
+		return FALSE
+	var/totalitemdamage = target.pre_attacked_by(src, user)
+	SSdamage.damage_mob(user, target, totalitemdamage)
+	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
+		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
+	new /obj/effect/temp_visual/kinetic_blast(target.loc)
+	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
+	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
+	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
+	target.throw_at(throw_target, 2 * throw_distance, 0.5 + (throw_distance / 2))
+	log_combat(user, target, "power fisted", src)
+
+// Goliath				Throws targets far. Max damage 50.
+/obj/item/melee/unarmed/powerfist/goliath
+	name = "Goliath"
+	desc = "A massive, experimental metal gauntlet crafted by some poor bastard in Redwater that since outlived their usefulness. The piston-powered ram on top is designed to throw targets very, very far."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "goliath"
+	item_state = "goliath"
+	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
+	throw_distance = 5
+// Mole Miner
+/obj/item/melee/unarmed/powerfist/moleminer
+	name = "mole miner gauntlet"
+	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
+	icon_state = "mole_miner_g"
+	item_state = "mole_miner_g"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 33 //tiger claws tier
+	throwforce = 10
+	throw_range = 7
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	tool_behaviour = TOOL_MINING
+	var/digrange = 2 //This should give it the 3x2 dig range that drills and some picks have
+	toolspeed = 0.2 //This should make it dig really quick. Like a moleminer!
+	sharpness = SHARP_EDGED
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	armor = ARMOR_VALUE_GENERIC_ITEM
 
 ///////////
 // TOOLS //
@@ -987,7 +1062,7 @@ CODE FOR BLEEDING STACK
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -1024,7 +1099,7 @@ CODE FOR BLEEDING STACK
 		to_chat(user, get_on_off_description())
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("badgered", "beat")

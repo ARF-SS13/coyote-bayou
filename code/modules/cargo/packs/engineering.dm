@@ -56,10 +56,18 @@
 	crate_name = "experimental tools crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
+/datum/supply_pack/engineering/advancedbench
+	name = "Advanced Workbench"
+	desc = "For all your crafting needs!"
+	cost = 20000
+	contains = list(/obj/machinery/workbench/advanced)
+	crate_name = "advanced workbench crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
 /datum/supply_pack/engineering/advancedtools
 	name = "Ultracite Tools Crate"
 	desc = "The best tools money can buy!"
-	cost = 15000
+	cost = 20000
 	contains = list(/obj/item/weldingtool/abductor,
 					/obj/item/wrench/abductor,
 					/obj/item/wirecutters/abductor,

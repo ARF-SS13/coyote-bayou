@@ -54,18 +54,9 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
 
 /obj/item/gun/ballistic/update_icon_state()
-	var/datum/reskin/gun/myskin = get_current_skin()
-	if(myskin)
-		if(sawn_off)
-			desc = myskin.sawn_desc
-			icon = myskin.sawn_icon
-			icon_state = myskin.sawn_icon_state
-		else
-			desc = myskin.desc
-			icon = myskin.icon
-			icon_state = myskin.icon_state
-	else
-		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
 /obj/item/gun/ballistic/proc/register_magazines()
 	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))
@@ -371,7 +362,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		w_class = WEIGHT_CLASS_NORMAL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
-		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
 		recoil_tag = SSrecoil.modify_gun_recoil(recoil_tag, list(2, 2))
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage

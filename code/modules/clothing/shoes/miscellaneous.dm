@@ -393,6 +393,28 @@
 	icon_state = "cowboyboots"
 	can_be_tied = FALSE
 
+/obj/item/clothing/shoes/unmcb
+	name = "Standard UNMC boots"
+	desc = "A set of standard UMC boots. The shin guards, knee pads, and thigh armor are mainly used to prevent scraping than actual combat. The material seems to be of a lightweight material."
+	icon_state = "unmcb"
+	item_state = "unmcb"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_MELEE_T1)
+	can_be_tied = FALSE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	equip_delay_self = 1.5
+	equip_delay_other = 1.5
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
+
+/obj/item/clothing/shoes/unmcb/winter
+	name = "Winterized UNMC Boots"
+	desc = "A set of UNMC boots, these are painted in white dye to resemble basic winter camoflauge"
+	icon_state = "unmcsnow"
+	item_state = "unmcsnow"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
+
 /obj/item/clothing/shoes/cowboyboots/black
 	name = "black cowboy boots"
 	desc = "A pair of black cowboy boots, pretty easy to scuff up."

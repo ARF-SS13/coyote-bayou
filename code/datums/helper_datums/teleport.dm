@@ -102,56 +102,61 @@
 			zlevels = list(zlevel)
 		else
 			zlevels = SSmapping.levels_by_trait(ZTRAIT_STATION)
-	var/cycles = 1000
-	for(var/cycle in 1 to cycles)
-		// DRUNK DIALLING WOOOOOOOOO
-		var/x = rand(1, world.maxx)
-		var/y = rand(1, world.maxy)
-		var/z = pick(zlevels)
-		var/random_location = locate(x,y,z)
+	var/cycles = 10000
+	mainloop:
+		for(var/cycle in 1 to cycles)
+			// DRUNK DIALLING WOOOOOOOOO
+			var/x = rand(1, world.maxx)
+			var/y = rand(1, world.maxy)
+			var/z = pick(zlevels)
+			var/random_location = locate(x,y,z)
 
-		if(!isfloorturf(random_location))
-			continue
-		var/turf/open/floor/F = random_location
-		if(!F.air)
-			continue
-
-		var/datum/gas_mixture/A = F.air
-		var/trace_gases
-		for(var/id in A.get_gases())
-			if(id in GLOB.hardcoded_gases)
+			if(!isfloorturf(random_location))
 				continue
-			trace_gases = TRUE
-			break
+			var/turf/open/floor/F = random_location
+			for(var/atom/A in F.contents)
+				if(A.density)
+					continue mainloop
+			
+			// if(!F.air)
+			// 	continue
 
-		// Can most things breathe?
-		if(trace_gases)
-			continue
+			// var/datum/gas_mixture/A = F.air
+			// var/trace_gases
+			// for(var/id in A.get_gases())
+			// 	if(id in GLOB.hardcoded_gases)
+			// 		continue
+			// 	trace_gases = TRUE
+			// 	break
 
-		var/oxy_moles = A.get_moles(GAS_O2)
-		if(oxy_moles < 16 || oxy_moles > 50)
+			// // Can most things breathe?
+			// if(trace_gases)
+			// 	continue
 
-			continue
-		if(A.get_moles(GAS_PLASMA))
-			continue
-		if(A.get_moles(GAS_CO2) >= 10)
-			continue
+			// var/oxy_moles = A.get_moles(GAS_O2)
+			// if(oxy_moles < 16 || oxy_moles > 50)
 
-		// Aim for goldilocks temperatures and pressure
-		if((A.return_temperature() <= 270) || (A.return_temperature() >= 360))
-			continue
-		var/pressure = A.return_pressure()
-		if((pressure <= 20) || (pressure >= 550))
-			continue
+			// 	continue
+			// if(A.get_moles(GAS_PLASMA))
+			// 	continue
+			// if(A.get_moles(GAS_CO2) >= 10)
+			// 	continue
 
-		if(extended_safety_checks)
-			if(islava(F)) //chasms aren't /floor, and so are pre-filtered
-				var/turf/open/lava/L = F
-				if(!L.is_safe())
-					continue
+			// // Aim for goldilocks temperatures and pressure
+			// if((A.return_temperature() <= 270) || (A.return_temperature() >= 360))
+			// 	continue
+			// var/pressure = A.return_pressure()
+			// if((pressure <= 20) || (pressure >= 550))
+			// 	continue
 
-		// DING! You have passed the gauntlet, and are "probably" safe.
-		return F
+			if(extended_safety_checks)
+				if(islava(F)) //chasms aren't /floor, and so are pre-filtered
+					var/turf/open/lava/L = F
+					if(!L.is_safe())
+						continue
+
+			// DING! You have passed the gauntlet, and are "probably" safe.
+			return F
 
 /proc/quick_safe_turf()
 	var/station_zlevel = SSmapping.levels_by_trait(ZTRAIT_STATION)

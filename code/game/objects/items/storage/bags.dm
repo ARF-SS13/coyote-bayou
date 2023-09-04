@@ -19,7 +19,7 @@
 /obj/item/storage/bag
 	name = "Generic bag thing"
 	desc = "Some sort of bag!"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/bag
@@ -86,7 +86,7 @@
 	desc = "This little bugger can be used to store and transport ores."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "satchel"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
@@ -396,7 +396,7 @@ obj/item/storage/bag/chemistry/tribal
 	desc = "A pouch for your ammo that goes in your pocket."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "ammopouch"
-	slot_flags = ITEM_SLOT_POCKET
+	slot_flags = INV_SLOTBIT_POCKET
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/ammo/ComponentInitialize()
@@ -410,7 +410,7 @@ obj/item/storage/bag/chemistry/tribal
 	desc = "A pouch for sheets and RCD ammunition that manages to hang where you would normally put things in your pocket."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "materialpouch"
-	slot_flags = ITEM_SLOT_POCKET
+	slot_flags = INV_SLOTBIT_POCKET
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/material/ComponentInitialize()
@@ -450,7 +450,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "bag_cases"
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	var/spam_protection = FALSE
 	var/mob/listeningTo
 	component_type = /datum/component/storage/concrete/bag/casing
@@ -503,10 +503,11 @@ obj/item/storage/bag/chemistry/tribal
 	name = "belt quiver"
 	desc = "A simple leather quiver designed for holding arrows."
 	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "tribal_quiver"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/bag/quiver
 
 /obj/item/storage/bag/tribe_quiver/full/PopulateContents()
@@ -516,6 +517,7 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/light
 	name = "light quiver"
 	desc = "A compact, lightweight quiver, that can be tucked just about anywhere to hold some arrows."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_SMALL
@@ -528,7 +530,8 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/heavy
 	name = "back quiver"
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
-	icon_state = "militiabelt"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	component_type = /datum/component/storage/concrete/bag/heavy_quiver
 

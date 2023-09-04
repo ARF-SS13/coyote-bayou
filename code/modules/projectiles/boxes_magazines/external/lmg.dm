@@ -52,6 +52,36 @@
 /obj/item/ammo_box/magazine/lmg/empty
 	start_empty = 1
 
+
+/obj/item/ammo_box/magazine/rpd
+	name = "rpd drum magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "rpdm"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/rpd/empty
+	start_empty = 1
+
+
+
+/obj/item/ammo_box/magazine/ratling
+	name = "Ratling box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	ammo_type = /obj/item/ammo_casing/caseless/flintlock
+	caliber = list(CALIBER_FLINTLOCK)
+	max_ammo = 200
+	w_class = WEIGHT_CLASS_GIGANTIC // It holds 200 my guy
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+
+/obj/item/ammo_box/magazine/ratling/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/lewis
 	name = "extended pan magazine (.308)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -126,7 +156,7 @@
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 80
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK | ITEM_SLOT_NECK //sling these big belts all over your fuckin self
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK | INV_SLOTBIT_NECK //sling these big belts all over your fuckin self
 	caliber = list(CALIBER_308)
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_BELT_MAGAZINE)
 
@@ -137,7 +167,7 @@
 /obj/item/ammo_box/magazine/mm308/can_load()
 	return 0
 */
-	
+
 /obj/item/ammo_box/magazine/mm308/update_icon()
 	..()
 	icon_state = "762belt-[round(ammo_count(),20)]"

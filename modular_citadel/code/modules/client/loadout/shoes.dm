@@ -7,7 +7,7 @@
 /datum/gear/shoes/laceup
 	name = "laceup shoes"
 	path = /obj/item/clothing/shoes/laceup
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/workboots
 	name = "work boots"
@@ -63,22 +63,22 @@
 /datum/gear/shoes/wraps
 	name = "golden leg wraps"
 	path = /obj/item/clothing/shoes/wraps
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapssilver
 	name = "silver leg wraps"
 	path = /obj/item/clothing/shoes/wraps/silver
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsblue
 	name = "blue leg wraps"
 	path = /obj/item/clothing/shoes/wraps/blue
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wrapsred
 	name = "red leg wraps"
 	path = /obj/item/clothing/shoes/wraps/red
-	cost = 1
+	cost = 0
 
 /datum/gear/shoes/wornboots
 	name = "worn boots"
@@ -180,6 +180,18 @@
 /datum/gear/shoes/cowboy/ranger
 	name = "Ranger Cowboy Boots"
 	path = /obj/item/clothing/shoes/cowboy/ranger
+
+/datum/gear/shoes/unmcboots
+	name = "UNMC Standard boots"
+	path = /obj/item/clothing/shoes/unmcb
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
+/datum/gear/shoes/unmcbootswinter
+	name = "Winterized UNMC Standard boots"
+	path= /obj/item/clothing/shoes/unmcb/winter
+	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
 
 /// Factions Shoes or well NCR boots.

@@ -20,6 +20,9 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	var/list/naked_player_cache = list()
 	/// Pictures of everyone at various moments, clothed~
 	/// list("ckey" = list(image, image, image))
+	var/list/very_naked_player_cache = list()
+	/// Pictures of everyone at various moments, clothed~
+	/// list("ckey" = list(image, image, image))
 	var/list/clothed_player_cache = list()
 	/// Pictures of everyone at various moments, clothed~
 	/// list("ckey" = list(image, image, image))
@@ -73,7 +76,8 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		random_clothes,
 		copy_equipment,
 		genitals,
-		cache = TRUE
+		cache = TRUE,
+		underwear = TRUE,
 	)
 	var/image_key = generate_key(slotkey, spec, clothes, template, client_or_prefs, loadout, random_body, random_species, random_clothes, copy_equipment, genitals, cache)
 	if(LAZYACCESS(image_cache, image_key))
@@ -88,35 +92,39 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		else if (istype(client_or_prefs, /datum/preferences))
 			var/datum/preferences/P = client_or_prefs
 			clint = P.parent
+	else if(istype(template) && template.client)
+		clint = template.client
+	if(!template && ishuman(clint.mob))
+		template = clint.mob
+
+	if(istype(clint))
+		var/datum/preferences/P = clint.prefs
+		P?.copy_to(mannequin)
 	if(istype(template))
 		copy_human_mob(template, mannequin)
 		if(copy_equipment)
 			copy_equipped(template, mannequin)
-	else if(istype(clint))
-		var/datum/preferences/P = clint.prefs
-		P.copy_to(mannequin)
-		if(copy_equipment && ishuman(clint.mob))
-			copy_equipped(clint.mob, mannequin)
 	else
 		if(random_species && !ispath(spec))
 			spec = pick(list(/datum/species/human, /datum/species/lizard, /datum/species/mammal))
 		if(ispath(spec))
 			mannequin.set_species(spec)
 		if(random_body)
-			randomize_human(mannequin, spec)
-	if(copy_equipment && (istype(template) || istype(clint)))
-		copy_equipped(template, mannequin)
-	else
-		if(random_clothes && !ispath(clothes))
+			randomize_human(mannequin, spec, underwear, genitals)
+	if(random_clothes)
+		if(!ispath(clothes))
 			clothes = pick(subtypesof(/datum/outfit/job))
-		if(ispath(clothes))
+		else
 			random_clothes = FALSE
 			clothes = new clothes()
-			var/datum/preferences/P = clint?.prefs
-			clothes.equip(mannequin, TRUE, P)
+			clothes.equip(mannequin, TRUE, clint)
 	if(!genitals)
 		for(var/obj/item/organ/genital/nad in mannequin.internal_organs)
 			qdel(nad) // say bye to ur naddies
+	if(!underwear)
+		mannequin.underwear = "Nude"
+		mannequin.socks = "Nude"
+		mannequin.undershirt = "Nude"
 	
 	mannequin.update_body(TRUE)
 	mannequin.update_hair()
@@ -263,10 +271,7 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 			return LAZYACCESS(image_cache, slutkey)
 	return get_dummy_image("PLAYER", template = H, client_or_prefs = clont, copy_equipment = equipped)
 
-/datum/controller/subsystem/dummy/proc/capture_snapshot_of_players(obey_cooldown)
-	if(obey_cooldown && !COOLDOWN_FINISHED(src, snapshot_cooldown))
-		return
-	COOLDOWN_START(src, snapshot_cooldown, 5 MINUTES)
+/datum/controller/subsystem/dummy/proc/capture_snapshot_of_players()
 	for(var/client/C in GLOB.clients)
 		snapshot_player(C)
 
@@ -283,6 +288,8 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 		H = C.mob
 	if(!ishuman(H))
 		return
+	if(!LAZYACCESS(very_naked_player_cache, "[C.ckey]%%[H.real_name]"))
+		very_naked_player_cache["[C.ckey]%%[H.real_name]"] = list()
 	if(!LAZYACCESS(naked_player_cache, "[C.ckey]%%[H.real_name]"))
 		naked_player_cache["[C.ckey]%%[H.real_name]"] = list()
 	if(!LAZYACCESS(clothed_player_cache, "[C.ckey]%%[H.real_name]"))
@@ -290,10 +297,13 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	if(!LAZYACCESS(randomclothed_player_cache, "[C.ckey]%%[H.real_name]"))
 		randomclothed_player_cache["[C.ckey]%%[H.real_name]"] = list()
 	var/image/naked = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE)
+	var/image/supernaked = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE, underwear = FALSE, genitals = TRUE)
 	var/image/clothed = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = FALSE, copy_equipment = TRUE)
 	var/image/clothed2 = get_dummy_image("PLAYER", template = H, client_or_prefs = C, random_body = FALSE, random_species = FALSE, random_clothes = TRUE)
 	if(naked)
 		naked_player_cache["[C.ckey]%%[H.real_name]"] |= naked
+	if(supernaked)
+		very_naked_player_cache["[C.ckey]%%[H.real_name]"] |= supernaked
 	if(clothed)
 		clothed_player_cache["[C.ckey]%%[H.real_name]"] |= clothed
 	if(clothed2)

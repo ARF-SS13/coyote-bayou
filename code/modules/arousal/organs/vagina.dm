@@ -19,7 +19,7 @@
 	var/clits = 1
 	var/clit_diam = 0.25
 	var/clit_len = 0.25
-	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred")
+	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred", "inconspicuous")
 	associated_has = CS_VAG // for cockstring stuff
 	hide_flag = HIDE_VAG // for hideflag stuff
 
@@ -44,6 +44,8 @@
 			details = "It is a plush canine spade, it "
 		if("furred")
 			details = "It has neatly groomed fur around the outer folds, it "
+		if("inconspicuous")
+			details = "It is taut with smooth skin, and it "
 		else
 			details = "It has an exotic shape and "
 	if(aroused_state)

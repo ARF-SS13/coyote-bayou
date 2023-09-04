@@ -6,7 +6,7 @@
 	icon_state = "top_hat"
 	item_state = "that"
 	body_parts_covered = HEAD
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"
@@ -203,6 +203,14 @@
 	icon_state = "metal_mask2"
 	item_state = "metal_mask2"
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_MELEE_T3)
+
+
+/obj/item/clothing/head/helmet/f13/metalmask/custom
+	name = "hockey mask"
+	desc = "A hockey mask made out of some pretty tough plastic, it's covered in scratches"
+	icon_state = "metal_mask2"
+	item_state = "metal_mask2"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
@@ -460,6 +468,7 @@
 	desc = "The helmet of the excavator power armor suit."
 	icon_state = "excavator"
 	item_state = "excavator"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
@@ -690,6 +699,23 @@
 	icon_state = "retropolice"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
+
+/obj/item/clothing/head/f13/unberet
+	name = "United Nations beret"
+	desc = "A beret in the color and with a logo of the United Nations."
+	icon_state = "unberet"
+	item_state = "unberet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	armor = ARMOR_VALUE_CLOTHES
+
+/obj/item/clothing/head/f13/rusvdvberet
+	name = "Russian VDV beret"
+	desc = "A beret in the colors and fashion of the Russian VDV"
+	icon_state = "rusvdv"
+	item_state = "rusvdv"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
 
 /obj/item/clothing/head/simplekitty
 	name = "kitty headband"

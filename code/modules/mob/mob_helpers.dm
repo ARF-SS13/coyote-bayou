@@ -399,7 +399,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			to_chat(user, span_warning("[affecting] is already in good condition!"))
 
 
-/proc/IsAdminGhost(mob/user)
+/proc/IsAdminGhost(mob/user, just_ghost)
 	if(!user)		//Are they a mob? Auto interface updates call this with a null src
 		return
 	if(!user.client) // Do they have a client?
@@ -408,6 +408,8 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		return
 	if(!check_rights_for(user.client, R_ADMIN)) // Are they allowed?
 		return
+	if(just_ghost) // Are we just checking if they're a ghost?
+		return TRUE
 	if(!user.client.AI_Interact) // Do they have it enabled?
 		return
 	return TRUE

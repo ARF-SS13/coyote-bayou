@@ -122,11 +122,96 @@
 	name = "Gas Pump"
 	icon_state = "oilpump1X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
+	var/uses_left = 2
+	var/inuse = FALSE
+
+/obj/structure/gas_pump/oilpump1X/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
+		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+			return
+		inuse = TRUE //one at a time boys, this isn't some kind of weird party
+		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
+			inuse = FALSE
+			return //the tool fails this check, so stop
+		user.visible_message("[user] starts disassembling [src].")
+		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
+			inuse = FALSE
+			return //you can't use the tool, so stop
+		for(var/i1 in 1 to 2) //so, I hate waiting
+			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+				user.visible_message("[user] stops disassembling [src].")
+				inuse = FALSE
+				return //you did something, like moving, so stop
+			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
+			user.visible_message("[user] slices through a [fake_dismantle].")
+			I.play_tool_sound(src, 100)
+		var/turf/usr_turf = get_turf(user)
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
+			if(prob(25))
+				new /obj/item/salvage/low(usr_turf)
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
+			if(prob(10))
+				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
+			if(prob(5))
+				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
+		inuse = FALSE //putting this after the -- because the first check prevents cheesing
+		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump2X
 	name = "Gas Pump"
 	icon_state = "oilpump2X"
 	icon = 'modular_coyote/icons/objects/items.dmi'
+
+	var/uses_left = 2
+	var/inuse = FALSE
+
+/obj/structure/gas_pump/oilpump2X/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
+		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
+			return
+		inuse = TRUE //one at a time boys, this isn't some kind of weird party
+		if(!I.tool_start_check(user, amount=0)) //this seems to be called everywhere, so for consistency's sake
+			inuse = FALSE
+			return //the tool fails this check, so stop
+		user.visible_message("[user] starts disassembling [src].")
+		if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
+			inuse = FALSE
+			return //you can't use the tool, so stop
+		for(var/i1 in 1 to 2) //so, I hate waiting
+			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+				user.visible_message("[user] stops disassembling [src].")
+				inuse = FALSE
+				return //you did something, like moving, so stop
+			var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
+			user.visible_message("[user] slices through a [fake_dismantle].")
+			I.play_tool_sound(src, 100)
+		var/turf/usr_turf = get_turf(user)
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
+			if(prob(25))
+				new /obj/item/salvage/low(usr_turf)
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
+			if(prob(10))
+				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
+			if(prob(5))
+				new /obj/structure/reagent_dispensers/barrel/explosive(usr_turf)
+		inuse = FALSE //putting this after the -- because the first check prevents cheesing
+		if(uses_left <= 0) //I prefer to put any qdel stuff at the very end, with src being the very last thing
+			visible_message("[src] falls apart, the final components having been removed.")
+			qdel(src)
 
 /obj/structure/gas_pump/oilpump3X
 	name = "Gas Pump"
@@ -167,10 +252,332 @@
 	attack_verb = list("headbutt", "booped", "bapped", "bumped")
 	squeak_override = list('sound/items/deerplush.ogg' = 1)
 
+/obj/item/toy/plush/icecarp
+	name = "ice carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "icecarp"
+
+/obj/item/toy/plush/silentcarp
+	name = "silent carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "silentcarp"
+
+/obj/item/toy/plush/electriccarp
+	name = "electric carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "electriccarp"
+
+/obj/item/toy/plush/goldcarp
+	name = "gold carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "goldcarp"
+
+/obj/item/toy/plush/toxincarp
+	name = "toxin carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "toxincarp"
+
+/obj/item/toy/plush/dragoncarp
+	name = "dragon carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "dragoncarp"
+
+/obj/item/toy/plush/pinkcarp
+	name = "pink carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinkcarp"
+
+/obj/item/toy/plush/candycarp
+	name = "candy carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "candycarp"
+
+/obj/item/toy/plush/nebulacarp
+	name = "nebula carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "nebulacarp"
+
+/obj/item/toy/plush/voidcarp
+	name = "void carp"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "voidcarp"
+
+/obj/item/toy/plush/birdsylas
+	name = "sylas bird"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "birdsylas"
+
+/obj/item/toy/plush/therapyred
+	name = "red therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyred"
+
+/obj/item/toy/plush/therapyorange
+	name = "orange therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyorange"
+
+/obj/item/toy/plush/therapyyellow
+	name = "yellow therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyyellow"
+
+/obj/item/toy/plush/therapygreen
+	name = "green therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapygreen"
+
+/obj/item/toy/plush/therapyblue
+	name = "blue therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapyblue"
+
+/obj/item/toy/plush/therapypurple
+	name = "purple therapy plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "therapypurple"
+
+/obj/item/toy/plush/kitten
+	name = "kitten plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "kitten"
+
+/obj/item/toy/plush/nymphplushie
+	name = "nymph plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "nymphplushie"
+
+/obj/item/toy/plush/mouse
+	name = "mouse plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "mouseplushie"
+
+/obj/item/toy/plush/lizardplushie
+	name = "lizard plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "lizardplushie"
+
+/obj/item/toy/plush/spiderplushie
+	name = "spider plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "spiderplushie"
+
+/obj/item/toy/plush/farwaplushie
+	name = "farwa plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "farwaplushie"
+
+/obj/item/toy/plush/smallcorgi
+	name = "corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "corgi"
+
+/obj/item/toy/plush/smallcorgigirl
+	name = "girly corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "girlycorgi"
+
+/obj/item/toy/plush/smallcorgirobot
+	name = "robot corgi plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "robotcorgi"
+
+/obj/item/toy/plush/loveable
+	name = "ocotopus plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "loveable"
+
+/obj/item/toy/plush/huggable
+	name = "huggie plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "huggable"
+
+/obj/item/toy/plush/redfox
+	name = "red fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "redfox"
+
+/obj/item/toy/plush/blackfox
+	name = "black fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "blackfox"
+
+/obj/item/toy/plush/marblefox
+	name = "marble fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "marblefox"
+
+/obj/item/toy/plush/bluefox
+	name = "blue fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bluefox"
+
+/obj/item/toy/plush/orangefox
+	name = "orange fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangefox"
+
+/obj/item/toy/plush/coffeefox
+	name = "coffee fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "coffeefox"
+
+/obj/item/toy/plush/pinkfox
+	name = "pink fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinkfox"
+
+/obj/item/toy/plush/purplefox
+	name = "purple fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "purplefox"
+
+/obj/item/toy/plush/crimsonfox
+	name = "crimson fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "crimsonfox"
+
+/obj/item/toy/plush/redfox
+	name = "red fox plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "redfox"
+
+/obj/item/toy/plush/stag
+	name = "stag plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "deer"
+
+/obj/item/toy/plush/blackcat
+	name = "black cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "blackcat"
+
+/obj/item/toy/plush/greycat
+	name = "grey cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "greycat"
+
+/obj/item/toy/plush/whitecat
+	name = "white cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "whitecat"
+
+/obj/item/toy/plush/orangecat
+	name = "orange cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangecat"
+
+/obj/item/toy/plush/siamesecat
+	name = "siamese cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "siamesecat"
+
+/obj/item/toy/plush/tabbycat
+	name = "tabby cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "tabbycat"
+
+/obj/item/toy/plush/tuxedocat
+	name = "tuxedo cat plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "tuxedocat"
+
+/obj/item/toy/plush/greensquid
+	name = "green squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "greensquid"
+
+/obj/item/toy/plush/bluesquid
+	name = "blue squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bluesquid"
+
+/obj/item/toy/plush/mintsquid
+	name = "mint squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "mintsquid"
+
+/obj/item/toy/plush/orangesquid
+	name = "orange squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "orangesquid"
+
+/obj/item/toy/plush/pinksquid
+	name = "pink squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "pinksquid"
+
+/obj/item/toy/plush/yellowsquid
+	name = "yellow squid plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "yellowsquid"
+
+/obj/item/toy/plush/teshariplushie
+	name = "teshari plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "teshariplushie"
+
+
+//Nests from virgo
+
 /obj/structure/bed/small_nest
 	name = "small nest"
 	desc = "A small round nest that looks soft"
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "nest_chair"
 	max_integrity = 80
 
@@ -178,6 +585,7 @@
 	name = "big nest"
 	desc = "A big round nest that looks soft"
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "nest_chair_large"
 	max_integrity = 80
 
@@ -492,3 +900,148 @@
 	desc = "A rather nice looking sink. How quint."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "sink"
+
+/obj/structure/dvd_player
+	name = "Dvd Player"
+	desc = "An old and dusty looking machine. Maybe it even still works.."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "dvd_player"
+
+/obj/item/weapon/dvd
+	name = "Dvd"
+	desc = "A shiny disk! Don't scratch it."
+	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "dvd"
+
+/obj/item/storage/box/tools/locksmith
+	name = "locksmith tools"
+
+/obj/item/storage/box/tools/locksmith/PopulateContents()
+	new /obj/item/door_key(src)
+	new /obj/item/door_key(src)
+	new /obj/item/lock(src)
+	new /obj/item/storage/keys_set(src)
+
+//New fish
+
+
+/obj/item/fishy/guppy
+	name = "guppy"
+	desc = "I caught a guppy! Welcome to the team, newbie!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "guppy"
+
+/obj/item/fishy/firefish
+	name = "fire fish"
+	desc = "I caught fire...fish! Ouch ouch hot!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "firefish"
+
+/obj/item/fishy/greenchromis
+	name = "green chromis"
+	desc = "Wow that sure is a green fish! Might be good for the enviroment."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "greenchromis"
+
+/obj/item/fishy/cardinalfish
+	name = "cardinal fish"
+	desc = "Better call the pope."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "cardinalfish"
+
+/obj/item/fishy/catfish
+	name = "catfish"
+	desc = "I caught a puffer fish! I thought you would be tougher, fish!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "catfish"
+
+/obj/item/fishy/plastetra
+	name = "plastetra"
+	desc = "Plaster this guy on the dinner plate."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "plastetra"
+
+/obj/item/fishy/angelfish
+	name = "angel fish"
+	desc = "I caught an angelfish! That other fish told me to do it!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "angelfish"
+
+/obj/item/fishy/clownfish
+	name = "clown fish"
+	desc = "I caught a clown fish! How many can fit in a carfish?"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "clownfish"
+
+/obj/item/fishy/lubefish
+	name = "lube fish"
+	desc = "This fish looks quite slick, better hold on tight"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "lubefish"
+
+/obj/item/fishy/lanternfish
+	name = "lantern fish"
+	desc = "When your fish boss is watching, you'd better look e-fish-ent."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "lanternfish"
+
+/obj/item/fishy/dwarf_moonfish
+	name = "dwarf moonfish"
+	desc = "When a fish meets the love of their live, they say they've 'met the gill of my dreams.'"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "dwarf_moonfish"
+
+/obj/item/fishy/bugfish
+	name = "bugfish"
+	desc = "Surfing the net is great, unless, of course, you're a fish."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "bugfish"
+
+/obj/item/fishy/gunner_jellyfish
+	name = "gunner jellyfish"
+	desc = "Speaking of being jelly, tunas were really miffed about the whole salmon-ella thing."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "gunner_jellyfish"
+
+/obj/item/fishy/needlefish
+	name = "nibble fish"
+	desc = "Yes! I caught a nibble fish! Come to think of it, I could use a bite!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "needlefish"
+
+/obj/item/fishy/armorfish
+	name = "armorfish"
+	desc = "Never try to talk to a fish before they’ve caf-fin-ated."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "armorfish"
+
+/obj/item/fishy/pufferfish
+	name = "pufferfish"
+	desc = "Never fall in love with a blowfish. You’ll always get re-puffed."
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "pufferfish"
+
+/obj/item/fishy/goldfish
+	name = "goldfish"
+	desc = "I caught a goldfish! It's worth its weight in fish!"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/salmon
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "goldfish"
+
+

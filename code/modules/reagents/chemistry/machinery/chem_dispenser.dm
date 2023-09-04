@@ -284,7 +284,26 @@
 						return
 					R.add_reagent(reagent, actual)
 					log_reagent("DISPENSER: ([COORD(src)]) ([REF(src)]) [key_name(usr)] dispensed [actual] of [reagent] to [beaker] ([REF(beaker)]).")
-
+					to_chat(usr, span_warning("You button the button."))
+					playsound(src, 'sound/machines/button.ogg', 100, TRUE, -1)
+					// playsound(
+					// 	source = src,
+					// 	soundin = 'sound', //sound locations, must use '
+					// 	vol = 100, //in percent of course
+					// 	vary = TRUE, //decides wether or not the really goofy pitch shift function happens
+					// 	extrarange = 0, //extra range in tiles from the source of the sound, starts at 17.  Adjust there in. Or use '= SOUND_DISTNACE(# of tiles)'
+					// 	ignore_walls = FALSE, //Is it loud enough to be heard like your parents making you a new sibling?
+						
+					// 	falloff_exponent = SOUND_FALLOFF_EXPONENT, //From here down is generally unused
+					// 	frequency = null,
+					// 	channel = 0,
+					// 	pressure_affected = TRUE,
+					// 	falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE,
+					// 	use_reverb = FALSE,
+					// 	distant_sound = null,
+					// 	distant_range = null,
+					// 	soundpref_index = null,
+					// )
 					work_animation()
 			else
 				recording_recipe[reagent_name] += amount
@@ -395,6 +414,7 @@
 			return
 		replace_beaker(user, B)
 		to_chat(user, span_notice("You add [B] to [src]."))
+		playsound(src, 'sound/machines/glassclink.ogg', 100, TRUE, -1)
 		updateUsrDialog()
 	else if(istype(I, /obj/item/stock_parts/chem_cartridge))
 		var/obj/item/stock_parts/chem_cartridge/C = I

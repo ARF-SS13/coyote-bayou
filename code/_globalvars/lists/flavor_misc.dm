@@ -284,6 +284,7 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"japanese tongue" = /obj/item/organ/tongue/japanese,
 	"chinese tongue" = /obj/item/organ/tongue/chinese,
 	"irish tongue" = /obj/item/organ/tongue/irish,
+	"slurry tongue" = /obj/item/organ/tongue/slurry,
 	"bug tongue" = /obj/item/organ/tongue/bug,
 	"vampire tongue" = /obj/item/organ/tongue/vampire
 	//"skeleton tongue" = /obj/item/organ/tongue/bone,
@@ -300,7 +301,7 @@ GLOBAL_LIST_INIT(unlocked_mutant_parts, list("horns", "insect_fluff"))
 GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color"))
 
 //body ids that have greyscale sprites
-GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin"))
+GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin","spider"))
 
 //body ids that have prosthetic sprites
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))

@@ -162,7 +162,7 @@
 		hearers -= target
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = target_message
-		if(target.see_invisible<invisibility) //if src is invisible to us,
+		if(target.see_invisible<invisibility || target.is_blind()) //if src is invisible to us,
 			msg = blind_message
 		//the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
@@ -170,11 +170,11 @@
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
-			target.show_message(msg, MSG_VISUAL,blind_message, MSG_AUDIBLE)
+			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
+	//var/raw_msg = message
 	//if(visible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
@@ -184,17 +184,18 @@
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
+		var/blind = M.is_blind()
 		var/msg = message
-		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
+		if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
 			msg = blind_message
 
-		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
+			M.create_chat_message(src, raw_message = msg, runechat_flags = visible_message_flags)
 
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
-			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
 mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
@@ -231,18 +232,20 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	hearers -= ignored_mobs
 	if(self_message)
 		hearers -= src
-	var/raw_msg = message
+//	var/raw_msg = message
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
 		message = "<b>[src]</b> [message]"
+		deaf_message = "<b>[src]</b> [deaf_message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
+		var/msg = M.can_hear() ? message : deaf_message
+		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
+			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
-			M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+			M.show_message(msg, MSG_AUDIBLE, msg, MSG_VISUAL)
 
 /**
  * Show a message to all mobs in earshot of this one

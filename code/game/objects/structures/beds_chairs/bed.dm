@@ -274,4 +274,3 @@
 /obj/structure/bed/mattress/pregame/New()
 	..()
 	icon_state = "mattress[rand(0,5)]"
-

@@ -870,3 +870,50 @@
 		return (call(cmp)(L[i],A) > 0) ? i : i+1
 	else
 		return i
+
+/// Takes a list, and applies a weight multiplier to each element, starting at 1 and multiplying by weight_mult each time
+/// Makes a weighted list that heavily favors the first elements
+/// If reverse is true, it starts at the end of the list and works backwards
+/// Only feed it an unassociated list, or an associated list with only numeric values
+/proc/WeightedCascadingPicker(list/input, weight_mult = 2, reverse, numberify)
+	if(!LAZYLEN(input))
+		return list()
+	var/list/ret = list() // Retival mankind's batman
+	var/weight = 1
+	if(reverse)
+		weight = (abs(weight_mult) ** (length(input) - 1))
+		weight_mult = (1 / abs(weight_mult))
+	for(var/i in 1 to length(input))
+		ret["[i]"] = weight
+		weight = abs(round(weight *= weight_mult))
+	var/index = text2num(pickweight(ret))
+	var/out = LAZYACCESS(input, index)
+	if(numberify)
+		out = text2num(out)
+	return out //outeval mankind's batman
+
+/// Like the above, but it takes a range instead of a list
+/proc/WeightedCascadingPickerRange(low, high, weight_mult = 2, reverse)
+	var/list/input = list()
+	for(var/i in low to high)
+		input += "[i]"
+	return WeightedCascadingPicker(input, weight_mult, reverse, TRUE)
+
+/// Takes a list and reverses the associations
+/// Like, list("a" = 1, "b" = 2) becomes list(1 = "a", 2 = "b")
+/proc/invert_ass_list(list/input)
+	if(!islist(input))
+		return list() // good luck finding this runtime! =3
+	var/list/out = list()
+	for(var/ass in input)
+		var/ssa = LAZYACCESS(input, ass)
+		if(isnull(ssa))
+			continue // fully asses lists, please
+		out[ssa] = ass
+	return out
+
+
+
+
+
+

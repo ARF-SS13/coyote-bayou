@@ -632,6 +632,24 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+/obj/item/gun/energy/laser/LaserAK/worn
+	name = "Laser AK470M"
+	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
+	icon_state = "LaserAK"
+	item_state = null
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/mfc"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+	/datum/firemode/semi_auto,
+	/datum/firemode/automatic/rpm300
+	)
+	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
 
 //AER9 Laser rifle
 /obj/item/gun/energy/laser/aer9
@@ -857,7 +875,7 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/energy/minigun/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.

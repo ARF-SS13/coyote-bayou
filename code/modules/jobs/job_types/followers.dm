@@ -85,6 +85,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name =	"Senior Doctor"
@@ -163,6 +164,7 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/cyberimp_nutriment)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
 
 /datum/outfit/job/followers/f13Professor
 	name = "Town Scientist"

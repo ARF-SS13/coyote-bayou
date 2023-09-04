@@ -12,7 +12,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_color = LIGHT_COLOR_RED
 	ricochets_max = 50	//Honk!
-	ricochet_chance = 80
+	ricochet_chance = 0
 	is_reflectable = TRUE
 	wound_bonus = -20
 	bare_wound_bonus = 10
@@ -381,6 +381,7 @@
 	tracer_type = /obj/effect/projectile/tracer/disabler
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
+	is_reflectable = FALSE
 
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
@@ -456,6 +457,13 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
+
+/obj/item/projectile/beam/laser/pistol/AK470M //AK470M
+	name = "laser beam"
+	damage = 20
+	icon_state = "arcane_barrage"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
 
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"

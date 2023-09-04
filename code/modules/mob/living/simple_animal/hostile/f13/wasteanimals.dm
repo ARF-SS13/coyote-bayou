@@ -301,6 +301,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	randpixel = 8
+	density = FALSE
 	sidestep_per_cycle = 2
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
@@ -671,7 +673,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -742,7 +744,50 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+
+/datum/reagent/toxin/rattler_venom
+	name = "rattler venom"
+	description = "A dangerous venom that causes intense pain and internal bleeding."
+	reagent_state = LIQUID
+	color = "#801E28" // rgb: 128, 30, 40
+	toxpwr = 0.5
+	taste_description = "pain"
+	taste_mult = 1.3
+	var/base_bleed = 15
+	var/bleed_tier_divisor = 3 //increasing this number makes the effect weaker
+	var/blood_loss_tier = 250 // Losing a multiple of this much will stack on an extra divisor
+
+/datum/reagent/toxin/rattler_venom/on_mob_life(mob/living/carbon/M)
+	var/divisor = 1
+	var/blood_i_lost = clamp(BLOOD_VOLUME_NORMAL - M.get_blood(), 0, BLOOD_VOLUME_NORMAL)
+	while(blood_i_lost > blood_loss_tier)
+		blood_i_lost -= blood_loss_tier
+		divisor *= bleed_tier_divisor
+	var/blood_to_lose = max(round(base_bleed / max(divisor,1)), 1)
+	M.bleed(blood_to_lose)
+	var/concentration = M.reagents.get_reagent_amount(/datum/reagent/toxin/rattler_venom)
+	M.damageoverlaytemp = concentration * 10
+	M.update_damage_hud()
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(10))
+		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		to_chat(M, span_warning("[pain_message]"))
+	..()
+
+/datum/reagent/toxin/rattler_venom/on_mob_life_synth(mob/living/M)
+	M.adjustStaminaLoss(10, 0)
+	if (M.eye_blurry < 5)
+		M.adjust_blurriness(1)
+	if (M.confused < 20)
+		M.confused += 3
+	if(prob(5))
+		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		to_chat(M, span_notice("[pain_message]"))
+	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"

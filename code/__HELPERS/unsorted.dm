@@ -1627,6 +1627,17 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(haystack.loc)
 		return recursive_loc_search(haystack.loc, needle, max_depth - 1)
 
+/// REcursively searches through the atom's loc, looking for a type path, aborting if it hits a turf
+/proc/recursive_loc_path_search(atom/haystack, pathtype, max_depth = 5)
+	if(max_depth <= 0)
+		return // we've gone too deep
+	if(istype(haystack, pathtype))
+		return haystack
+	if(isturf(haystack))
+		return
+	if(haystack.loc)
+		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
+
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
 /proc/get_all_in_turf(turf/search_me, include_turf = FALSE, max_depth = 5)
 	if(!isturf(search_me))
@@ -1652,13 +1663,33 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return atoms_found
 
 /// Goes through the common places a client can be held, and returns the first one it finds
-/proc/get_client(thing_w_client)
-	if(isclient(thing_w_client))
-		return thing_w_client
-	if(ismob(thing_w_client))
-		var/mob/mobby = thing_w_client
+/proc/get_client(clientthing)
+	if(isclient(clientthing))
+		return clientthing
+	if(ismob(clientthing))
+		var/mob/mobby = clientthing
 		if(mobby.client)
 			return mobby.client
+	if(istext(clientthing))
+		var/client/clint = LAZYACCESS(GLOB.directory, clientthing)
+		if(clint)
+			return clint
+
+/// Takes in a client, mob, or ckey, and returns the ckey
+/proc/get_ckey(clientthing)
+	var/client/clint
+	if(isclient(clientthing))
+		clint = clientthing
+		return clint.ckey
+	if(ismob(clientthing))
+		var/mob/mobby = clientthing
+		if(mobby.client)
+			return mobby.client.ckey
+		if(mobby.ckey)
+			return mobby.ckey
+	if(istext(clientthing))
+		if(clientthing in GLOB.directory)
+			return clientthing
 
 /proc/get_random_player_name(only_first)
 	var/list/client_mob_names = list()
@@ -1672,5 +1703,29 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return LAZYACCESS(first_last, 1)
 	return rname
 
+/proc/ckey2mob(ckey)
+	var/client/clint = LAZYACCESS(GLOB.directory, ckey)
+	if(!clint)
+		return null
+	return clint.mob
 
+/// Makes a gaussian distribution, returning a positive integer
+/proc/GaussianReacharound(mean, stddev, min, max)
+	var/cool_input = gaussian(mean, stddev)
+	cool_input = abs(cool_input)
+	cool_input = round(cool_input)
+	cool_input = clamp(cool_input, min, max)
+	return cool_input
 
+/proc/GaussianListPicker(list/input, mean, stddev)
+	if(!LAZYLEN(input))
+		return
+	var/index = GaussianReacharound(mean, stddev, 0, LAZYLEN(input))
+	var/output = LAZYACCESS(input, index)
+	if(!output)
+		output = pick(input) // shruggaroni
+	return output
+
+/proc/GaussianRangePicker(min, max, mean, stddev)
+	var/index = GaussianReacharound(mean, stddev, min, max)
+	return index

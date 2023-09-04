@@ -580,12 +580,11 @@
 	med_hud_set_health()
 	med_hud_set_status()
 
-//proc used to ressuscitate a mob
-/mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE)
+/mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE, force_revive = FALSE)
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive)
-	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
+	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
 		suiciding = 0
@@ -1149,22 +1148,22 @@
 		G.Recall()
 		to_chat(G, span_holoparasite("Your summoner has changed form!"))
 
-/mob/living/rad_act(amount)
+/mob/living/rad_act(amount, skip_protection = FALSE)
 	. = ..()
 
 	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION))
-		return
-	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
-		return
+		if(!skip_protection)
+			return
 
-	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
+	// amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
 	
-	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
-		amount *= 0.25
-	else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
-		amount *= 0.5
+	if(!skip_protection)
+		if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
+			amount *= 0.25
+		else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
+			amount *= 0.5
 
-	var/blocked = getarmor(null, "rad")
+	var/blocked = skip_protection ? 0 : getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 	if(HAS_TRAIT(src,TRAIT_RADIMMUNE)) //prevents you from being burned by rads if radimmune but you can still accumulate
 		return

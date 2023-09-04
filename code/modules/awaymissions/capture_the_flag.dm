@@ -467,7 +467,7 @@
 
 // MELEE GANG
 /obj/item/claymore/ctf
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	total_mass = 1
 
 /obj/item/claymore/ctf/pre_attack(atom/target, mob/user, params)

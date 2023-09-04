@@ -3,15 +3,17 @@ SUBSYSTEM_DEF(events)
 	init_order = INIT_ORDER_EVENTS
 	runlevels = RUNLEVEL_GAME
 
+	var/list/common_control = list() // list of all datum/round_event_control that ignore weight and just happen anyway
 	var/list/control = list()	//list of all datum/round_event_control. Used for selecting events based on weight and occurrences.
 	var/list/running = list()	//list of all existing /datum/round_event
+	var/list/processing = list()
 	var/list/currentrun = list()
 
 	var/scheduled = 0			//The next world.time that a naturally occuring random event can be selected.
 	var/frequency_lower = 1800	//3 minutes lower bound.
 	var/frequency_upper = 6000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
 
-	var/list/holidays			//List of all holidays occuring today or null if no holidays
+	var/list/holidays = list()			//List of all holidays occuring today or null if no holidays
 	var/wizardmode = FALSE
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)
@@ -19,7 +21,10 @@ SUBSYSTEM_DEF(events)
 		var/datum/round_event_control/E = new type()
 		if(!E.typepath)
 			continue				//don't want this one! leave it for the garbage collector
-		control += E				//add it to the list of all events (controls)
+		if(E.common_occurrence)
+			common_control += E		//add it to the list of all looping events
+		else
+			control += E				//add it to the list of all events (controls)
 	reschedule()
 	getHoliday()
 	return ..()
@@ -28,23 +33,25 @@ SUBSYSTEM_DEF(events)
 /datum/controller/subsystem/events/fire(resumed = 0)
 	if(!resumed)
 		checkEvent() //only check these if we aren't resuming a paused fire
-		src.currentrun = running.Copy()
-
+		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
+	var/list/current_run = currentrun
 
-	while(currentrun.len)
-		var/datum/thing = currentrun[currentrun.len]
-		currentrun.len--
-		if(thing)
-			thing.process()
-		else
-			running.Remove(thing)
+	while(current_run.len)
+		var/datum/thing = current_run[current_run.len]
+		current_run.len--
+		if(QDELETED(thing))
+			processing -= thing
+		else if(thing.process(wait) == PROCESS_KILL)
+			// fully stop so that a future START_PROCESSING will work
+			STOP_PROCESSING(src, thing)
 		if (MC_TICK_CHECK)
 			return
 
+
 //checks if we should select a random event yet, and reschedules if necessary
 /datum/controller/subsystem/events/proc/checkEvent()
+//	spawnLoopingEvent()
 	if(scheduled <= world.time)
 		spawnEvent()
 		reschedule()
@@ -85,6 +92,18 @@ SUBSYSTEM_DEF(events)
 		if(sum_of_weights <= 0)				//we've hit our goal
 			if(TriggerEvent(E))
 				return
+
+//Runs through the looping "guaranted" events
+/datum/controller/subsystem/events/proc/spawnLoopingEvent()
+	set waitfor = FALSE	//for the admin prompt
+	// if(!CONFIG_GET(flag/allow_random_events))
+	// 	return
+
+	for(var/datum/round_event_control/E in common_control)
+		if(!E.canSpawnLoopingEvent())
+			continue
+		if(E.preRunCommonEvent())
+			E.runCommonEvent(TRUE)
 
 /datum/controller/subsystem/events/proc/TriggerEvent(datum/round_event_control/E)
 	. = E.preRunEvent()
@@ -151,8 +170,8 @@ SUBSYSTEM_DEF(events)
 
 //sets up the holidays and holidays list
 /datum/controller/subsystem/events/proc/getHoliday()
-	if(!CONFIG_GET(flag/allow_holidays))
-		return		// Holiday stuff was not enabled in the config!
+	// if(!CONFIG_GET(flag/allow_holidays)) // fuck configs
+	// 	return		// Holiday stuff was not enabled in the config!
 
 	var/YY = text2num(time2text(world.timeofday, "YY")) 	// get the current year
 	var/MM = text2num(time2text(world.timeofday, "MM")) 	// get the current month
@@ -170,11 +189,11 @@ SUBSYSTEM_DEF(events)
 		else
 			qdel(holiday)
 
-/*	if(holidays)
-		holidays = shuffle(holidays)
-		// regenerate station name because holiday prefixes.
-		set_station_name(new_station_name())
-		world.update_status()*/
+//	if(holidays)
+//		holidays = shuffle(holidays)
+//		// regenerate station name because holiday prefixes.
+//		set_station_name(new_station_name())
+//		world.update_status()
 
 /datum/controller/subsystem/events/proc/toggleWizardmode()
 	wizardmode = !wizardmode

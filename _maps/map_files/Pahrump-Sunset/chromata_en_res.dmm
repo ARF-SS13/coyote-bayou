@@ -1160,7 +1160,7 @@
 /area/awaymission/wildwest)
 "hh" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest)
@@ -3564,7 +3564,7 @@
 /area/awaymission/wildwest)
 "xK" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /turf/open/floor/wood_common,
 /area/awaymission/wildwest)
@@ -3651,7 +3651,7 @@
 /area/awaymission/wildwest)
 "yr" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -4094,7 +4094,9 @@
 /area/awaymission/wildwest)
 "AQ" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},
@@ -4539,7 +4541,7 @@
 /area/awaymission/wildwest)
 "DU" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -5429,7 +5431,7 @@
 /area/awaymission/wildwest)
 "Ka" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /turf/open/floor/plating/rockcrete_slab,
 /area/awaymission/wildwest)
@@ -6889,7 +6891,9 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "Tp" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
 "Ts" = (

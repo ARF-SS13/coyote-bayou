@@ -199,17 +199,30 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
  * knockdown_chance = chance for a knockdown to occur
  * knockdown_time = time they're knocked down for
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time, slowdown)
+/mob/living/carbon/proc/apply_bloodloss_effects(
+	oxy_loss_cap,
+	stam_cap,
+	dizzy,
+	confusion,
+	blurry,
+	sprint_max,
+	sprint_regen,
+	sprint_cost,
+	knockdown_chance,
+	knockdown_time,
+	slowdown,
+)
+	var/stammoxy_dam = round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1)
 	if(oxy_loss_cap && getOxyLoss() < oxy_loss_cap)
-		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
+		adjustOxyLoss(stammoxy_dam)
 	if(stam_cap && getStaminaLoss() < stam_cap)
-		adjustStaminaLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-	if(dizzy)
-		Dizzy(dizzy)
+		adjustStaminaLoss(stammoxy_dam)
+	if(dizzy && (dizziness < dizzy) && prob(50))
+		Dizzy(1)
 	if(confusion && confused < confusion)
 		confused = confusion
-	if(blurry && prob(35))
-		adjust_blurriness(blurry)
+	if(blurry && (eye_blurry < blurry) && prob(35))
+		adjust_blurriness(1)
 	if(knockdown_chance && prob(knockdown_chance))
 		to_chat(src, span_warning("You stumble over, dazed by your blood loss!"))
 		AdjustKnockdown(knockdown_time, TRUE)

@@ -5,7 +5,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "ad" = (
 /mob/living/simple_animal/hostile/ghoul/reaver{
@@ -88,7 +88,6 @@
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
 "ax" = (
-/obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
@@ -197,7 +196,7 @@
 /mob/living/simple_animal/hostile/megafauna/dragon{
 	name = "Osto";
 	health = 4000;
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique, /obj/effect/spawner/lootdrop/f13/rare_unique);
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique);
 	crusher_loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique);
 	loot_amount_random = 3
 	},
@@ -523,7 +522,7 @@
 /area/awaymission/wildwest/refine)
 "cq" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall,
@@ -583,11 +582,6 @@
 /area/awaymission/wildwest/refine)
 "cA" = (
 /obj/structure/closet/wardrobe/pjs,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Surgery Operating";
-	pixel_x = 22
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/medical/abandoned)
@@ -667,7 +661,6 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "cX" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -1011,10 +1004,6 @@
 /area/awaymission/wildwest/refine)
 "et" = (
 /obj/structure/mopbucket,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Custodial Closet"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest)
@@ -1201,7 +1190,6 @@
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "ff" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -1549,7 +1537,7 @@
 /area/f13/farmhouse)
 "gG" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2221,7 +2209,7 @@
 /area/awaymission/wildwest)
 "jo" = (
 /mob/living/simple_animal/hostile/handy/assaultron/laser{
-	faction = list("wastebot","robot","ghoul","deathclaw")
+	faction = list("wastebot","robot","ghoul","deathclaw","mining")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -2423,7 +2411,6 @@
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
 "jY" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -2472,7 +2459,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/awaymission/wildwest/refine)
 "ki" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -2633,7 +2619,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2673,10 +2659,6 @@
 /area/awaymission/wildwest/refine)
 "lc" = (
 /obj/structure/mopbucket,
-/obj/machinery/camera{
-	dir = 1;
-	name = "Custodial Closet"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -2855,7 +2837,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "lV" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -3706,7 +3687,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/awaymission/wildwest/refine)
 "pp" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -3844,7 +3824,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "pV" = (
 /obj/structure/rack,
@@ -3867,7 +3847,7 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "qa" = (
 /obj/effect/decal/remains/human,
@@ -4182,7 +4162,7 @@
 /area/awaymission/wildwest)
 "rB" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -4479,7 +4459,7 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "sU" = (
 /mob/living/simple_animal/hostile/ghoul/frozenreaver,
@@ -4780,10 +4760,6 @@
 /area/awaymission/wildwest)
 "ug" = (
 /obj/structure/table,
-/obj/machinery/camera{
-	dir = 4;
-	name = "Virology Lab"
-	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -5168,7 +5144,7 @@
 /area/awaymission/wildwest/vault)
 "vM" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/r_wall/rust,
@@ -5795,7 +5771,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "yv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -5875,7 +5851,7 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "yH" = (
 /obj/structure/debris/v3,
@@ -5893,7 +5869,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "yK" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -5959,7 +5935,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "yY" = (
 /obj/structure/closet/jcloset,
@@ -6215,7 +6191,7 @@
 /area/awaymission/wildwest)
 "Af" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/wooden2,
@@ -6719,7 +6695,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -6918,7 +6894,6 @@
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
 "Da" = (
-/obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
@@ -7459,10 +7434,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/farmhouse)
 "EX" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 4
-	},
-/obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/awaymission/wildwest/refine)
@@ -7935,7 +7906,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest/vault)
 "GS" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -7974,7 +7944,7 @@
 /area/awaymission/wildwest/refine)
 "Ha" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
-	faction = list("robot")
+	faction = list("wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/rust,
@@ -8384,7 +8354,7 @@
 "IA" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8583,7 +8553,6 @@
 /turf/closed/wall/rust,
 /area/f13/farmhouse)
 "Jo" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/wildwest)
@@ -9016,7 +8985,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "KY" = (
 /obj/machinery/conveyor{
@@ -9087,7 +9056,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/awaymission/wildwest/gov)
 "Lj" = (
-/obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
@@ -9435,7 +9403,7 @@
 /area/awaymission/wildwest/refine)
 "MK" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -9516,7 +9484,9 @@
 /area/awaymission/wildwest/vault)
 "MX" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
@@ -9850,7 +9820,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "OG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10041,7 +10011,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 4;
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10159,9 +10129,6 @@
 /area/awaymission/wildwest)
 "Qe" = (
 /obj/machinery/telecomms/server/presets/security,
-/obj/machinery/camera{
-	name = "Telecomms Server Room"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
@@ -10335,11 +10302,6 @@
 /turf/open/floor/plasteel/vault,
 /area/awaymission/wildwest)
 "QQ" = (
-/obj/machinery/camera{
-	dir = 8;
-	name = "Production Room";
-	network = list("MINE")
-	},
 /obj/machinery/conveyor_switch/oneway{
 	id = "mining_internal";
 	name = "mining conveyor"
@@ -10551,7 +10513,9 @@
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "RH" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter{
+	faction = list("mining","boss","wastebot")
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/refine)
@@ -12069,7 +12033,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/water/cursed_spring,
+/turf/open/indestructible/ground/outside/water,
 /area/awaymission/wildwest/refine)
 "Yo" = (
 /obj/machinery/power/terminal{
@@ -12090,15 +12054,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "Yr" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Ys" = (
-/obj/machinery/camera{
-	dir = 8;
-	name = "Medbay Recovery Room"
-	},
 /obj/structure/bed,
 /obj/machinery/light{
 	dir = 4
@@ -12227,7 +12186,7 @@
 /area/awaymission/wildwest)
 "YR" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye{
-	faction = list("hostile","robot")
+	faction = list("hostile","robot","wastebot")
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockcrete_slab,
@@ -12301,7 +12260,6 @@
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)
 "Zj" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13,
 /area/awaymission/wildwest/vault)

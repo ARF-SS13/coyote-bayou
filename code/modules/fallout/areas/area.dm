@@ -132,6 +132,29 @@
 		/datum/looping_sound/ambient/critters/birds/crow,
 		)
 
+/area/f13/building/tribal/caveofforever
+	name = "Tribal cave of forever"
+	icon_state = "orange"
+	has_gravity = 0
+	ambience_area = list(
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/building/sulphurtribe/caveofnothing,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/woodcreak
+	)
+
+/area/f13/building/tribal/atonement
+	name = "Tribal Building - Skull of Atonement"
+	icon_state = "orange"
+	ambience_area = list(
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/torch,
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/building/sulphurtribe/highwinds,
+		/datum/looping_sound/ambient/building/sulphurtribe/highwinds/gong,
+		)
+
 /area/f13/building/sewers
 	name = "Sewers"
 	requires_power = TRUE
@@ -258,7 +281,7 @@
 	icon_state = "ncrex"
 
 /area/f13/wasteland/legion
-	name = "Legion Fortress Exterior"
+	name = "Lil Ceasar's Pizza Legion Fortress Exterior"
 	icon_state = "legionex"
 
 /area/f13/forest
