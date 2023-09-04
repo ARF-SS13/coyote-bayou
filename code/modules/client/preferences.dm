@@ -2146,7 +2146,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = 5
+	var/bal = 100
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
