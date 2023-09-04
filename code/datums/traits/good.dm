@@ -73,7 +73,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	/datum/crafting_recipe/mfcbad,
 	/datum/crafting_recipe/ecbad,
 	/datum/crafting_recipe/gun/flintlock,
-	/datum/crafting_recipe/gun/flintlock_laser))
+	/datum/crafting_recipe/gun/flintlock_laser,
+	/datum/crafting_recipe/sharpener))
 
 GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	///datum/crafting_recipe/tribal/bonetalisman, //broken item, unneeded
@@ -82,9 +83,9 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
-	//datum/crafting_recipe/redpotion,
-	//datum/crafting_recipe/bluepotion,
-	//datum/crafting_recipe/greenpotion,
+	/datum/crafting_recipe/redambrosia,
+	/datum/crafting_recipe/blueambrosia,
+	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag))
 
@@ -369,12 +370,20 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
 /datum/quirk/gunsmith
-	name = "Weaponsmith"
-	desc = "You know how to make various weapons, protective vests, and gun mods. The list is too large to try and put here."
+	name = "Weaponsmith - Basic"
+	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
 	value = 2
 	mob_trait = TRAIT_WEAPONSMITH
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem less adept at crafting makeshift weapons.")
+
+/datum/quirk/masterworksmith
+	name = "Weaponsmith - Masterwork"
+	desc = "Your smithed weapons now do extra damage. Requires Weaponsmith - Basic in order to benefit from!"
+	value = 4
+	mob_trait = TRAIT_MASTERWORKSMITH
+	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
+	lose_text = span_danger("You seem less adept at crafting masterworks.")
 
 /datum/quirk/gunsmith/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -423,6 +432,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You are now able to use primitive technology.")
 	lose_text = span_danger("You are no longer able to use primitive technology.")
 	locked = TRUE
+
+/datum/quirk/dna_whiz
+	name = "Dna Whiz"
+	desc = "You can sequence plant genomes with a snap of your fingers!"
+	value = 2
+	mob_trait = TRAIT_DNAWHIZ
+	gain_text = span_notice("You know how plants work")
+	lose_text = span_danger("You forgot how plants work")
+
 
 /datum/quirk/night_vision
 	name = "Night Vision"
@@ -1053,3 +1071,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just...REALLY don't run into things."
 	value = 3
 	mob_trait = TRAIT_SUPER_ZOOMIES
+
+/datum/quirk/artifact_identify
+	name = "Artifact Hunter"
+	desc = "You have a keen eye for identifying magical otherworldly trash! You can identify artifacts with a glance."
+	value = 2
+	mob_trait = TRAIT_ARTIFACT_IDENTIFY
+	gain_text = span_notice("You feel perceptive!.")
+	lose_text = span_danger("You feel imperceptive.")
+	locked =  FALSE
+
+

@@ -1420,3 +1420,147 @@
 	icon_state = "det_vest"
 	item_state = "det_vest"
 	armor = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/suit/civ13/coat/black
+	name = "Thick Black Coat"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "japcoat"
+	item_state = "japcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/tancoat
+	name = "Thick Tan Coat"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "japcoat2"
+	item_state = "japcoat2"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/gray
+	name = "Thick Gray Coat"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "russcoat"
+	item_state = "russcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/brown
+	name = "Thick Brown Coat"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "sov_offcoat"
+	item_state = "sov_offcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/brownwaistcoat
+	name = "Thick Brown Waistcoat"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "ger_offcoat"
+	item_state = "ger_offcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+	
+/obj/item/clothing/suit/civ13/coat/sidebuttonjacket
+	name = "Overcoat - Tan with sidebuttons"
+	desc = "Bro, why are you wearing this in humid ass east Texas?"
+	icon_state = "chi_korea_offcoat"
+	item_state = "chi_korea_offcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+
+/obj/item/clothing/suit/civ13/coat/kozhanka
+	name = "Kozhanka Coat"
+	desc = "Our Coat™"
+	icon_state = "kozhanka"
+	item_state = "kozhanka"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/kozhanka/white
+	name = "Kozhanka Coat - White"
+	desc = "Our Coat™"
+	icon_state = "kozhanka_w"
+	item_state = "kozhanka_w"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/leathervest
+	name = "Leather Vest with Belt"
+	desc = "A nice lether vest with a smart belt around your midsection."
+	icon_state = "japvest"
+	item_state = "japvest"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/blackvest
+	name = "Black vest - Half buttoned"
+	desc = "Great for showing off your chest hair.  Or cleavage.  Your call, really."
+	icon_state = "blackvest"
+	item_state = "blackvest"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/olivevest
+	name = "Olive vest - Half buttoned"
+	desc = "Great for showing off your chest hair.  Or cleavage.  Your call, really."
+	icon_state = "olivevest"
+	item_state = "olivevest"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/bluevest
+	name = "Blue vest - Half buttoned"
+	desc = "Great for showing off your chest hair.  Or cleavage.  Your call, really."
+	icon_state = "bluevest"
+	item_state = "bluevest"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+
+/obj/item/clothing/suit/civ13/coat/greenusjacket
+	name = "US Jacket - Green"
+	desc = "2000 push ups not required. Smells like mildew though."
+	icon_state = "us_jacket"
+	item_state = "us_jacket"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+
+/obj/item/clothing/suit/civ13/coat/ghillie
+	name = "Ghillie Suit - no hood"
+	desc = "Are you sure that's just not a bunch of fucking grass?"
+	icon_state = "ghillie"
+	item_state = "ghillie"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/tanovercoat
+	name = "Overcoat - Tan"
+	desc = "A nice jacket, you know, if it ever got cold around here."
+	icon_state = "ww2_japcoat"
+	item_state = "ww2_japcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/fluffypilotsjacket
+	name = "Pilots Jacket - Fluffy"
+	desc = "A nice pilots jacket.  This ones lined with kitsun- fox... fur...  Yeah..."
+	icon_state = "jappilotcoat"
+	item_state = "jappilotcoat"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+/obj/item/clothing/suit/civ13/coat/monk_robes
+	name = "Nasty Monk Robes"
+	desc = "Damn bitch, you sure that isn't a potato sack?"
+	icon_state = "monk_robes"
+	item_state = "monk_robes"
+	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+
+
+
+

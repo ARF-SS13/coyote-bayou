@@ -158,11 +158,14 @@
 
 //Ghosts
 
-#define ui_ghost_jumptomob "SOUTH:6,CENTER-2:24"
-#define ui_ghost_orbit "SOUTH:6,CENTER-1:24"
-#define ui_ghost_reenter_corpse "SOUTH:6,CENTER:24"
-#define ui_ghost_teleport "SOUTH:6,CENTER+1:24"
-#define ui_ghost_spawners "SOUTH: 6, CENTER+2:24"
+#define ui_ghost_jumptomob      "SOUTH:6,CENTER-3.25:24"		//Yes, I placed an offset of -0.25 on every define so everything is symmetrical, 
+#define ui_ghost_orbit          "SOUTH:6,CENTER-2.25:24"		//you are free to remove it completely next time you need to add some new button.
+#define ui_ghost_reenter_corpse "SOUTH:6,CENTER-1.25:24"		//Don't send me a pipebomb to my house, thank you.
+#define ui_ghost_teleport       "SOUTH:6,CENTER-0.25:24"
+#define ui_ghost_spawners       "SOUTH:6,CENTER+0.75:24"
+#define ui_ghost_second_wind    "SOUTH:38,CENTER-1.25:24"
+#define ui_ghost_move_up       	"SOUTH:6,CENTER+1.75:24"
+#define ui_ghost_move_down      "SOUTH:6,CENTER+1.75:24"
 
 
 //UI position overrides for 1:1 screen layout. (default is 7:5)

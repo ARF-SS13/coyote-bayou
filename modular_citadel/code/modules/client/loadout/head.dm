@@ -256,6 +256,28 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmchelmetwinter
+	name = "Winterized UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+/datum/gear/head/unmchelmet
+	name = "Standard UNMC Helmet"	
+	path = /obj/item/clothing/head/helmet/unmchelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/unmcmedichelmet
+	name = "Standard medical UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmchelmet/medic
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+/datum/gear/head/unmcstealthhelmet
+	name = "American infiltrator helmet"
+	path = /obj/item/clothing/head/helmet/unmcstealthhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
 /datum/gear/head/pot
 	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
@@ -647,6 +669,84 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/samuraiwarriortwo
+	name = "Stylish Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiwarriortwo
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorthree
+	name = "Stylish Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorthree
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfour
+	name = "Stylish Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfour
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfive
+	name = "Stylish Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfive
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard1
+	name = "Simple Samurai Helmet - Reddish Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard2
+	name = "Simple Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiguard2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard3
+	name = "Simple Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard4
+	name = "Simple Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiguard4
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard5
+	name = "Simple Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiguard5
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/sallethelmet
+	name = "German Sallet helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/unberets
+	name = "United Nations beret"
+	path = /obj/item/clothing/head/f13/unberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/russianberet
+	name = "Russian VDV beret"
+	path = /obj/item/clothing/head/f13/rusvdvberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/morionhelmet
+	name = "Spainard Morion helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldspain
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek
@@ -659,7 +759,77 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/crusaderhelmetweak
+	name = "Crusader Helmet"
+	path = /obj/item/clothing/head/coyote/crusaderhelmweak
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
+/datum/gear/head/ballistichelmets
+	name = "Modern Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number2
+	name = "KGB Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number3
+	name = "Canadian Ballistic Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/canadian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number4
+	name = "U.N Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number5
+	name = "U.N Helmet Medical"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number6
+	name = "War Press Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/newshelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number7
+	name = "PASGT Desert Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/americandesert
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Modern Chinese Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/china1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Aircrewman Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/hueypilot
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number9
+	name = "Ghillie Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ghillie
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number10
+	name = "MK6 Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ukhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 //Hat hats
 /datum/gear/head/yellowtricorne
@@ -1006,3 +1176,5 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/tiara
 	name = "Tiara"
 	path = /obj/item/clothing/head/aurora/sayyidah_tiara
+	
+

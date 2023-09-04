@@ -1,0 +1,15 @@
+{
+	"title": "Images can be URLs too! JSON route",
+	"order": -9999999,
+	"content": [
+		"Hi! This chapter has a filename that is all z's! Normally this would put it at the end of the book",
+		"But its here at the start? Why come? Well, its because of the order value (which is set to -9999999)!",
+		"Order is a value that can be set in the JSON or TXT file that determines where the chapter is placed in the book!",
+		"By default, chapters are sorted by their filename, but if you want to change that, you can set the order value!",
+		"Chapters with a higher order value will be placed after chapters with a lower order value!",
+		"Chapters with the same order value will be sorted by their filename!",
+		"The order doesnt need to be the actual chapter number, though it is recommended to keep it that way!",
+		"Any number will work, and you can even use negative numbers!",
+		"No letters cus those arent numbers!"
+	]
+}

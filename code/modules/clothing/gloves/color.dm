@@ -24,7 +24,7 @@
 	if(iscarbon(target) && proximity)
 		var/mob/living/carbon/C = target
 		var/mob/living/carbon/U = user
-		var/success = C.equip_to_slot_if_possible(new /obj/item/clothing/gloves/color/yellow/sprayon, ITEM_SLOT_GLOVES, TRUE, TRUE, clothing_check = TRUE)
+		var/success = C.equip_to_slot_if_possible(new /obj/item/clothing/gloves/color/yellow/sprayon, INV_SLOTBIT_GLOVES, TRUE, TRUE, clothing_check = TRUE)
 		if(success)
 			if(C == user)
 				C.visible_message(span_notice("[U] sprays their hands with glittery rubber!"))

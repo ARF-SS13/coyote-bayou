@@ -926,7 +926,7 @@
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "shotgunclip"
 	caliber = "shotgun" // slapped in to allow shell mix n match
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKET
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_POCKET
 	w_class = WEIGHT_CLASS_NORMAL
 	w_volume = ITEM_VOLUME_STRIPPER_CLIP
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -1028,19 +1028,45 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	randomize_ammo_count = TRUE
 
+//gauss
+/obj/item/ammo_box/gauss
+	name = "gauss projectile rack (2mm)"
+	desc = "A rack of 2mm gauss ammo, for when you need something dead on the other side of a building."
+	icon_state = "50mg"
+	caliber = "a50mg"
+	ammo_type = /obj/item/ammo_casing/c2mm
+	caliber = list(CALIBER_2MM)
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = FALSE
+
+//gauss blander
+/obj/item/ammo_box/gauss_blender
+	name = "gauss blender rack (2mm)"
+	desc = "A rack of 2mm gauss blender ammo, for when you want to die and take everyone with you."
+	icon_state = "50ap"
+	ammo_type = /obj/item/ammo_casing/c2mm/blender
+	caliber = list(CALIBER_2MM)
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = FALSE
+
 //.50 BMG
 /obj/item/ammo_box/a50MG
 	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
-	caliber = "a50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = list(CALIBER_50MG)
 	max_ammo = 5
 	multiple_sprites = 1
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
-	randomize_ammo_count = TRUE
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a50MG/incendiary
 	name = "anti-materiel incendiary ammo rack (.50MG)"
@@ -1147,6 +1173,14 @@
 
 */
 
+//rockbag
+/obj/item/ammo_box/rock/improvised
+	name = "rock bag"
+	desc = "Something tells you this bag was just purpose made for putting rocks in."
+	icon_state = "improvshotbag"
+	multiple_sprites = 3
+	ammo_type = /obj/item/ammo_casing/caseless/rock
+
 //Trash for removal
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
@@ -1170,3 +1204,6 @@
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+
+
+

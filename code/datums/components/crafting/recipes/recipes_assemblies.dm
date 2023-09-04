@@ -221,6 +221,44 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
+	
+/datum/crafting_recipe/stairsnorth
+	name = "North facing stairs"
+	result = /obj/structure/stairs/north
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairseast
+	name = "East facing stairs"
+	result = /obj/structure/stairs/east
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairssouth
+	name = "South facing stairs"
+	result = /obj/structure/stairs/south
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/stairswest
+	name = "West facing stairs"
+	result = /obj/structure/stairs/west
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30) 
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /*
 /datum/crafting_recipe/msgterminal
 	name = "Communications terminal"

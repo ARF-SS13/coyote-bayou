@@ -36,6 +36,226 @@
 	icon_state = "uniform_enclave_intel"
 	item_state = "uniform_enclave_intel"
 
+// Modern-Cold War uniforms
+/obj/item/clothing/under/f13/modernbdu
+	name = "Russian uniform with telnyashka"
+	desc = "A military uniform from Russia, it comes with a summer long sleeve telnyashka, which is a 100% pure cotton shirt. Quite comfortable"
+	icon_state = "milrus"
+	item_state = "milrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/chinese
+	name = "Modern Chinese uniform"
+	desc = "A modern Chinese Type 07 uniform. Mainly used by the PLA's Navy. Quite comfortable."
+	icon_state = "type07"
+	item_state = "type07"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/cadpat
+	name = "Modern Canadian uniform"
+	desc = "A modern CadPat Canadian uniform. It was in service by the Canadian army. Quite comfortable."
+	icon_state = "cadpat"
+	item_state = "cadpat"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/americanstorm
+	name = "American DCU uniform"
+	desc = "An American DCU uniform, saw extensive use during the Gulf War."
+	icon_state = "usdcu"
+	item_state = "usdcu"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/hueyuniform
+	name = "Pilot Uniform"
+	desc = "An American themed pilot's uniform. Doesn't offer much aside from covering the bare essentials. Might wanna pair this with a bright white helmet and a flak vest. 'This is..someone, arriving at LZ'"
+	icon_state = "uspilot"
+	item_state = "uspilot"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/navalcamo
+	name = "Universal Navy BDU"
+	desc = "A Universal Navy Camo or UNC BDU. This naval based camo was used extensively by many nations before the war. Very good against blue backgrounds, horrible if you decide to hide in a bush. "
+	icon_state = "navycamo"
+	item_state = "navycamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/americanmulticam
+	name = "Multicam uniform"
+	desc = "An Multicam camo uniform, saw extensive use by numerous PMCs and nations. Also was favored heavily by American citizens."
+	icon_state = "multicam"
+	item_state = "multicam"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/russianamoeba
+	name = "KLMK camo suit"
+	desc = "A Soviet era Russian KLMK camo suit. This camo suit saw usage because of the widespread usage of NVG by NATO troops."
+	icon_state = "sovcamo"
+	item_state = "sovcamo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/serbwinter
+	name = "Serbian winter suit"
+	desc = "A Serbian winter suit. This specific suit is a copy of a Russian Amoeba winter suit, which was the winter camo version of the russian 'amoeba' pattern. Quite comfy to wear actually, toasty."
+	icon_state = "sovwinter"
+	item_state = "sovwinter"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/russianemr
+	name = "EMR Russian uniform"
+	desc = "A more modern Russian uniform. Painting it is the EMR camoflauge scheme. Comes with a Telyshanka underneath."
+	icon_state = "modernrus"
+	item_state = "modernrus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/modernbdu/americannwu
+	name = "NWU Uniform"
+	desc = "An American NWU uniform. Was once apart of a selection of uniforms by the American armed forces before the war. Now it finds use elsewhere in the region."
+	icon_state = "nwu"
+	item_state = "nwu"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ttcamo
+	name = "Tropentarn uniform"
+	desc = "A modern uniform that resembles tropentarn, a type of camoflauge that saw usage by the West German forces and by selective NATO nations. It was mainly effective in dry and arid climates, as opposed to its original counterpart. Quite comfy but needs indrustial solvent to clean."
+	icon_state = "tropentarn"
+	item_state = "tropentarn"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ucp
+	name = "Standard UCP uniform"
+	desc = "A modern albeit outdated American UCP uniform. UCP was an american uniform before it was outphased by much better camoflauge patterns selected by the U.S government. This uniform didn't see active service and was eventually replaced by OCP and NWU."
+	icon_state = "ucp"
+	item_state = "ucp"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/ocp
+	name = "Standard OCP uniform"
+	desc = "A modern OCP uniform that was in service by the American military. It was apart of a selection of active camoflauge patterns. Some saw service, some only was used by specific branches. None the less, it finds a home here, in this region. Double time soldier, move it."
+	icon_state = "ocp"
+	item_state = "ocp"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/commonforest
+	name = "Standard digital forest uniform"
+	desc = "A more generic digital forest uniform. It saw usage by numerous pre-war and post-war PMC/raider companies. Also in use by post-war radstag hunters. Quite a comfortable uniform."
+	icon_state = "forestdigital"
+	item_state = "forestdigital"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/tigerstripe
+	name = "American Tigertripe uniform"
+	desc = "An American tigerstripe uniform. A rather old fashioned camoflauge scheme that saw use during the Vietnam and Korean war. Quite comfortable and comes in a more modern uniform. Burn baby burn. "
+	icon_state = "tigerstripe"
+	item_state = "tigerstripe"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/modernbdu/flektarn
+	name = "Modern Flektarn uniform"
+	desc = "A forest themed camo pattern that saw extensive use throughout the world and to, if there's any remnants left, this day. From Norway to the maker itself of West Germany in the 90s, this camo scheme was popular back then in the day and contains a few variants I.E tropentarn and its commercial variants."
+	icon_state = "flektarn"
+	item_state = "flektarn"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+//old fashioned uniforms
+
+/obj/item/clothing/under/f13/medievalgerman
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc1"
+	item_state = "germanmerc1"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/medievalgerman2
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc2"
+	item_state = "germanmerc2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/medievalgerman3
+	name = "Landsknecht gear"
+	desc = "A set of Landsknecht gear. This 'uniform' mainly saw usage by Landsknecht units, which were Germanic mercenaries used in pike and shoot formations. Quite a vibrant uniform and stylish. Go out and stick those pesky raiders."
+	icon_state = "germanmerc3"
+	item_state = "germanmerc3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+//sci-fi or futuristic clothing
+
+/obj/item/clothing/under/f13/mechsuits
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni1"
+	item_state = "mechuni1"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/mechsuits2
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni2"
+	item_state = "mechuni2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/mechsuits3
+	name = "Mech Pilot bodysuit"
+	desc = "A form fitting yet comfortable bodysuit that saw service by mech pilots. The back of the uniform provides ports for installing neuro-cybernetics and wiring to hook the pilot up to a mech. Get out your chromehound and stomp the competition."
+	icon_state = "mechuni3"
+	item_state = "mechuni3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/scifipilot
+	name = "Mechanized pilot uniform."
+	desc = "A more advanced form of a flight suit, this one is bulkier and weighs the legs down. Useful for performing high G turns in an aircraft. Now, it finds use as a stylish pilot's uniform"
+	icon_state = "scifisuit"
+	item_state = "scifisuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+//civilian based clothing/emergency services
+
+/obj/item/clothing/under/f13/nursescrubs
+	name = "Green nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a pleasant green color, white shoes and medical badge not included."
+	icon_state = "scrubs"
+	item_state = "scrubs"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/nursescrubs/blue
+	name = "Blue nursing scrubs"
+	desc = "A set of medical scrubs that mainly saw use by nurses across the world. This one is in a refreshing blue color, white shoes and medical badge not included."
+	icon_state = "scrubs2"
+	item_state = "scrubs2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //Vault
 
 /obj/item/clothing/under/f13/housewifedress50s

@@ -1076,6 +1076,32 @@ h1.alert, h2.alert {
   }
 }
 
+.blinker {
+  opacity: 100%;
+  animation: blinker 1000ms linear infinite;
+}
+
+@keyframes phobia {
+  0% {
+    opacity: 100%;
+  }
+
+  49% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+
+  99% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
 .icon {
   height: 1em;
   width: auto;

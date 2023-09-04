@@ -15,6 +15,19 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/sharpener
+	name = "Whetstone"
+	result = /obj/item/melee/smith/sharpener
+	reqs = list(
+		/obj/item/ingot/titanium = 1,
+		/obj/item/stack/sheet/plasteel = 10,
+		/obj/item/stack/sheet/mineral/diamond = 1,
+		)
+	tools = list(TOOL_WORKBENCH)
+	time = 5 SECONDS
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 /datum/crafting_recipe/tableanvil
 	name = "Table Anvil"
 	result = /obj/structure/anvil/obtainable/table
@@ -281,7 +294,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/legionlance
-	name = "Legion Lance"
+	name = "Larper Lance"
 	result = /obj/item/twohanded/spear/lance
 	reqs = list(
 		/obj/item/stack/sheet/metal = 18,
@@ -296,7 +309,7 @@
 
 
 /datum/crafting_recipe/legionshield
-	name = "Legion Shield"
+	name = "Larper Shield"
 	result = /obj/item/shield/riot/legion
 	reqs = list(
 		/obj/item/stack/sheet/metal = 8,

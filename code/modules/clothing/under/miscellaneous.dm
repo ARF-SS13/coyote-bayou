@@ -951,7 +951,7 @@
 	can_adjust = TRUE
 
 /obj/item/clothing/under/civ/dress2
-	name = "blue pheasent dress"
+	name = "blue peasant dress"
 	icon_state = "dress2"
 	item_state = "dress2"
 	item_color = "dress2"
@@ -959,7 +959,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/dress3
-	name = "brown pheasent dress"
+	name = "brown peasant dress"
 	icon_state = "dress3"
 	item_state = "dress3"
 	item_color = "dress3"
@@ -967,7 +967,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/dressg
-	name = "green pheasent dress"
+	name = "green peasant dress"
 	icon_state = "dressg"
 	item_state = "dressg"
 	item_color = "dressg"
@@ -975,7 +975,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/civ/dressr
-	name = "red pheasent dress"
+	name = "red peasant dress"
 	icon_state = "dressr"
 	item_state = "dressr"
 	item_color = "dressr"

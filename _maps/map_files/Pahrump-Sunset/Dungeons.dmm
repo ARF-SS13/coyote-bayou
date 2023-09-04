@@ -10307,7 +10307,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
 "erI" = (
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -20011,7 +20011,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "iPO" = (
-/mob/living/simple_animal/hostile/raider/firefighter,
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Slippery Jeffery";
+	retreat_distance = 2
+	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
 "iQl" = (
@@ -37058,7 +37061,7 @@
 	},
 /area/f13/bunker)
 "qjR" = (
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/item/card/midbounty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -43423,6 +43426,19 @@
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "sYc" = (
+/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /obj/item/card/midbounty,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/rnd)
@@ -52438,7 +52454,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "wXu" = (
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#d9cdb9";
@@ -52884,7 +52900,7 @@
 /obj/item/gun/ballistic/automatic/sportcarbine,
 /obj/item/gun/ballistic/automatic/sportcarbine,
 /obj/item/gun/ballistic/automatic/sportcarbine,
-/obj/structure/shelf_wood,
+/obj/structure/rack/shelf_wood,
 /obj/effect/spawner/lootdrop/f13/rare_unique,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{

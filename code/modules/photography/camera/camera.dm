@@ -13,7 +13,7 @@
 	light_power = FLASH_LIGHT_POWER
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	custom_materials = list(/datum/material/iron = 50, /datum/material/glass = 150)
 	custom_price = PRICE_NORMAL
 	var/flash_enabled = TRUE
@@ -231,6 +231,8 @@
 	desc = "An early wooden camera."
 	icon_state = "camera_early"
 	item_state = "camera_early"
+	state_on =  "camera_early"
+	state_off = "camera_early"
 
 /obj/item/camera/earlymodern
 	name = "camera"
@@ -238,6 +240,8 @@
 	desc = "An early 20th century camera."
 	icon_state = "camera_ww2"
 	item_state = "camera_ww2"
+	state_on =  "camera_ww2"
+	state_off = "camera_ww2"
 
 /obj/item/camera/coldwar
 	name = "camera"
@@ -245,3 +249,5 @@
 	desc = "A late 20th century camera."
 	icon_state = "camera_coldwar"
 	item_state = "camera_coldwar"
+	state_on =  "camera_coldwar"
+	state_off = "camera_coldwar"

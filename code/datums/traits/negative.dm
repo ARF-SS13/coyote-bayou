@@ -766,18 +766,18 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
-	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
-	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
+	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
+	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
+	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
 	value = -1
 	mood_quirk = TRUE
-	medical_record_text = "Patient feels more secure when wearing a gas mask."
+	medical_record_text = "Patient feels more secure when wearing a mask."
 	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask/gas = H.get_item_by_slot(SLOT_WEAR_MASK)
-	if(istype(gas))
+	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
+	if(istype(mask))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
@@ -794,12 +794,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -3
 	timeout = 0
 
-/datum/quirk/masked_mook/on_spawn()
+/* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
 	H.equip_to_slot(gas, SLOT_WEAR_MASK)
-	H.regenerate_icons()
+	H.regenerate_icons()*/
 
 /datum/quirk/paper_skin
 	name = "Paper Skin"
@@ -939,4 +939,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_NODRUGS
 	gain_text = span_notice("You feel like a winner!")
 	lose_text = span_danger("You feel like a loser!")
+	locked =  FALSE
+
+/datum/quirk/hardcore
+	name = "Hardcore"
+	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
+		and the only way you'll be able to live again is if someone finds and revives your body or a spirit takes mercy on you!"
+	value = -1
+	mob_trait = TRAIT_NO_SECOND_WIND
+	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
+		The spirits may be merciful, better hope they are in a good mood!")
+	lose_text = span_notice("You are no longer opted out of Second Wind! If you die, you will be able to revive yourself!")
 	locked =  FALSE

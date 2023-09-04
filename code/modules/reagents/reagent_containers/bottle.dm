@@ -429,15 +429,15 @@
 
 /obj/item/reagent_containers/glass/bottle/ichor/red
 	name = "healing potion"
-	list_reagents = list(/datum/reagent/red_ichor = 1)
+	list_reagents = list(/datum/reagent/red_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/ichor/blue
 	name = "blue potion"
-	list_reagents = list(/datum/reagent/blue_ichor = 1)
+	list_reagents = list(/datum/reagent/blue_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/ichor/green
 	name = "green potion"
-	list_reagents = list(/datum/reagent/green_ichor = 1)
+	list_reagents = list(/datum/reagent/green_ambrosia = 1)
 
 /obj/item/reagent_containers/glass/bottle/blackpowder
 	name = "blackpowder bottle"

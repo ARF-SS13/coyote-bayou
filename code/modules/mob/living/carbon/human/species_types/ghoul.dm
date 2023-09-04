@@ -51,10 +51,10 @@
 	for(var/obj/item/bodypart/head/b in C.bodyparts)
 		b.max_damage -= 20
 		b.wound_resistance = -35
-	C.faction |= "ghoul"
+	//C.faction |= "ghoul" // messes with whatnot
 /datum/species/ghoul/on_species_loss(mob/living/carbon/C)
 	..()
-	C.faction -= "ghoul"
+	//C.faction -= "ghoul" // something about dungeons
 	for(var/obj/item/bodypart/r_arm/b in C.bodyparts)
 		b.max_damage = initial(b.max_damage)
 		b.wound_resistance = initial(b.wound_resistance)

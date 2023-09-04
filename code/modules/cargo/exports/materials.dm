@@ -1,5 +1,5 @@
 /datum/export/material
-	k_elasticity = 0
+	k_elasticity = 1/1000
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
@@ -87,11 +87,13 @@
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
 	/obj/item/ingot/adamantine)
 
-/* /datum/export/material/prewar
+/* 
+/datum/export/material/prewar
 	cost = 15
 	material_id = /datum/material/prewar
 	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar) */
+	export_types = (/obj/item/stack/sheet/prewar) 
+*/
 
 /datum/export/material/mythril
 	cost = 1000
@@ -100,8 +102,9 @@
 
 /datum/export/material/bscrystal
 	cost = 150
-	message = "cm3 of bluespace crystals"
+	message = "cm3 of ultracite crystals"
 	material_id = /datum/material/bluespace
+	export_types = list(/obj/item/stack/sheet/bluespace_crystal)
 
 /datum/export/material/runite
 	cost = 300
@@ -109,15 +112,22 @@
 	material_id = /datum/material/runite
 
 /datum/export/material/leather
-	cost = 15
+	cost = 20
 	message = " "
 	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
-	k_elasticity = 1
+	k_elasticity = 1/1000
+
+/datum/export/material/expalloy
+	cost = 100 // Limited, unless clinic goes out of their way, which takes time.
+	message = " "
+	unit_name = "polymer alloy"
+	material_id = /datum/material/leather
+	export_types = list(/obj/item/stack/sheet/mineral/abductor)
 
 /datum/export/material/bone
-	cost = 10
+	cost = 20
 	message = " "
 	unit_name = "bone"
 	material_id = /datum/material/bone
@@ -158,6 +168,8 @@
 	cost = 6 // Texarkana Trade Union scrip. They like people using their money because economics or something; 1 copper = 2 scrip; if abused again, set to 5
 	unit_name = "scrip"
 	export_types = list(/obj/item/stack/f13Cash/ncr)
+	k_elasticity = 0/1000
+
 
 /datum/export/material/deathclawhide
 	cost = 1000
@@ -165,6 +177,8 @@
 	unit_name = "deathclaw hide"
 	material_id = /datum/material/deathclawhide
 	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
+	k_elasticity = 0/1000
+
 
 /datum/export/material/geckohide
 	cost = 100 //will see if this works out...

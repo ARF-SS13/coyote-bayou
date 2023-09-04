@@ -4,7 +4,7 @@
 	icon_state = "wallet"
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	var/no_refresh = FALSE
 
 	var/obj/item/card/id/front_id = null
@@ -94,3 +94,11 @@
 
 /obj/item/storage/wallet/stash/high/PopulateContents()
 	new /obj/item/stack/f13Cash/random/high(src)
+
+//Money pouch from CIV13
+
+/obj/item/storage/wallet/stash/pouch
+	name = "coin pouch"
+	desc = "It can hold a few small and personal things. Easily tucked in various discrete places."
+	icon_state = "coinpouch"
+	no_refresh = TRUE

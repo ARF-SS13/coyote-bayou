@@ -25,7 +25,7 @@
 	name = "fever blossom"
 	desc = "A glowing flower of intricate design and a rich scent. It is a known aphrodisiac."
 	icon_state = "fever_blossom"
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	filling_color = "#8000ff"
 	bitesize_mod = 3
 	tastes = list("pleasant flora" = 1)

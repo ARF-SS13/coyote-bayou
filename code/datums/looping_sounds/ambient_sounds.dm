@@ -38,6 +38,26 @@
 		SOUND_LOOP_ENTRY('sound/f13weapons/magnum_fire.ogg', 2.4 SECONDS, 1)
 		)
 
+/datum/looping_sound/ambient/debug3
+	chance = 100
+	vary = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(10, 50)
+	direct = FALSE // sound rocks need non-direct set
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/misc/announce_dig.ogg',                 1   SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/misc/sadtrombone.ogg',                  3.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/misc/voyalert.ogg',                     9 SECONDS,   1),
+		SOUND_LOOP_ENTRY('sound/misc/voybluealert.ogg',                 3.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-mid2.ogg', 1 SECONDS,   1),
+		SOUND_LOOP_ENTRY('sound/machines/sm/supermatter1.ogg',          1 SECONDS,   1),
+		SOUND_LOOP_ENTRY('sound/items/geiger/ext3.ogg',                 0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13weapons/american180.ogg',            0.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13weapons/boltfire.ogg',               1.7 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13weapons/laser_rifle.ogg',            2.2 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13weapons/magnum_fire.ogg',            2.4 SECONDS, 1)
+		)
+
 //Ambience Pack//
 
 /datum/looping_sound/ambient/critters
@@ -122,6 +142,11 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/critters/birds/louder
+	chance = 80
+	loop_delay = 0
+	volume = SOUND_LOOP_VOL_RANGE(70, 100)
+
 /datum/looping_sound/ambient/critters/birds/crow
 	chance = 40
 	vary = FALSE
@@ -133,6 +158,12 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_1.ogg', 17 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_2.ogg', 25 SECONDS, 1),
 	)
+
+/datum/looping_sound/ambient/critters/birds/crow/louder
+	chance = 80
+	loop_delay = 0
+	volume = SOUND_LOOP_VOL_RANGE(70, 100)
+
 //////////////
 //End Birds//
 /////////////
@@ -223,6 +254,45 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambitribe2.ogg', 24 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/building/sulphurtribe/caveofnothing
+	chance = 50
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/caveofnothing_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/caveofnothing_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/caveofnothing_3.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/sulphurtribe/highwinds
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/highwinds_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/highwinds_2.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/sulphurtribe/highwinds/gong
+	chance = 70
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/windgong_3.ogg', 10 SECONDS, 1),
+	)
+
+
 //Civilzation End//
 
 
@@ -253,7 +323,7 @@
 /datum/looping_sound/ambient/swamp/quiet
 	chance = 100
 	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(69, 69)
+	volume = SOUND_LOOP_VOL_RANGE(85, 90)
 	direct = TRUE
 	loop_delay = 0
 	mid_sounds = list(
@@ -439,3 +509,39 @@
 	)
 // Radio Texarkana End//
 
+//Sound Rocks
+/datum/looping_sound/soundrock/frogs
+	chance = 80
+	vary = TRUE
+	extra_range = SOUND_DISTANCE(7)
+	volume = SOUND_LOOP_VOL_RANGE(30, 90)
+	direct = FALSE // sound rocks need non-direct set
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog1.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog2.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog3.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog4.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog5.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog6.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog7.ogg', 4 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13npc/frog/frog8.ogg', 4 SECONDS, 10),
+		)
+
+/datum/looping_sound/soundrock/creek
+	chance = 100
+	vary = TRUE
+	extra_range = SOUND_DISTANCE(15)
+	volume = SOUND_LOOP_VOL_RANGE(70, 70)
+	direct = FALSE // sound rocks need non-direct set
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_01.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_02.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_03.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_04.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_05.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_06.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_07.ogg', 2 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
+		)

@@ -35,5 +35,5 @@
 /datum/component/decal/blood/proc/get_examine_name(mob/user, list/override)
 	var/atom/A = parent
 	override[EXAMINE_POSITION_ARTICLE] = A.gender == PLURAL? "some" : "a"
-	override[EXAMINE_POSITION_BEFORE] = " blood-stained "
+	override[EXAMINE_POSITION_GRODY] = "blood-stained"
 	return COMPONENT_EXNAME_CHANGED

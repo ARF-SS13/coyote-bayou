@@ -44,37 +44,76 @@
 	var/mob/dead/observer/G = usr
 	G.open_spawners_menu()
 
+/obj/screen/ghost/second_wind
+	name = "Revive yourself"
+	icon_state = "reenter_corpse"
+
+/obj/screen/ghost/second_wind/Click()
+	var/mob/dead/observer/G = usr
+	SSsecondwind.show_menu_to(G)
+
+/obj/screen/ghost/move_ghost_up
+	name = "Move up"
+	icon_state = "move_ghost_up"
+
+/obj/screen/ghost/move_ghost_up/Click()
+	var/mob/dead/observer/G = usr
+	G.up()
+
+/obj/screen/ghost/move_ghost_down
+	name = "Move down"
+	icon_state = "move_ghost_down"
+
+/obj/screen/ghost/move_ghost_down/Click()
+	var/mob/dead/observer/G = usr
+	G.down()
+
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/obj/screen/using
 
 	using = new /obj/screen/ghost/jumptomob()
-	using.screen_loc = ui_ghost_jumptomob
+	using.screen_loc = ui_ghost_jumptomob // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/orbit()
-	using.screen_loc = ui_ghost_orbit
+	using.screen_loc = ui_ghost_orbit // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/reenter_corpse()
-	using.screen_loc = ui_ghost_reenter_corpse
+	using.screen_loc = ui_ghost_reenter_corpse // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/teleport()
-	using.screen_loc = ui_ghost_teleport
+	using.screen_loc = ui_ghost_teleport // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/ghost/spawners()
-	using.screen_loc = ui_ghost_spawners
+	using.screen_loc = ui_ghost_spawners // THIS IS A DEFINE!!!
+	using.hud = src
+	static_inventory += using
+
+	using = new /obj/screen/ghost/second_wind()
+	using.screen_loc = ui_ghost_second_wind // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 
 	using = new /obj/screen/language_menu
-	using.icon = ui_style
+	using.icon = ui_style // THIS IS A DEFINE!!!
+	using.hud = src
+	static_inventory += using
+
+	using = new /obj/screen/ghost/move_ghost_up()
+	using.screen_loc = ui_ghost_move_up // THIS IS A DEFINE!!!
+	using.hud = src
+	static_inventory += using
+
+	using = new /obj/screen/ghost/move_ghost_down()
+	using.screen_loc = ui_ghost_move_down // THIS IS A DEFINE!!!
 	using.hud = src
 	static_inventory += using
 

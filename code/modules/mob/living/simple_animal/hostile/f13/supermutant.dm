@@ -73,6 +73,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	ignore_other_mobs = TRUE // gentle giants that respect the inhabitants of the wastes. Cept for players
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
@@ -166,7 +167,7 @@
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 
 	health = 130
-	retreat_distance = 1
+	retreat_distance = 2
 	minimum_distance = 1
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
 	projectiletype = null
@@ -202,6 +203,8 @@
 	sound_after_shooting = null
 	sound_after_shooting_delay = 1 SECONDS
 	extra_projectiles = 0
+	retreat_distance = 3
+	minimum_distance = 3
 	ranged_cooldown_time = 2 SECONDS
 	loot = list(
 		/obj/item/gun/ballistic/automatic/varmint

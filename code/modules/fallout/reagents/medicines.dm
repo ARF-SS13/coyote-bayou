@@ -32,9 +32,9 @@
 // heals 1 damage of either brute or burn on life, whichever's higher
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() > M.getFireLoss())	//Less effective at healing mixed damage types.
-		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(-1*REM)
 	else
-		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-1*REM)
 	. = TRUE
 	..()
 
@@ -69,8 +69,8 @@
 	..()
 
 /datum/reagent/medicine/fake_stimpak/on_mob_life(mob/living/carbon/M)
-		M.adjustBruteLoss(1*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(1*REM)
+		M.adjustFireLoss(1*REM)
 		. = TRUE
 		..()
 
@@ -125,8 +125,8 @@
 
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
-	if((M.getOrganLoss(ORGAN_SLOT_HEART) >= 20) && prob(8))
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4*REM)
+	if((M.getOrganLoss(ORGAN_SLOT_HEART) >= 20*REM) && prob(8))
 		var/superstim_od_message = pick(
 			"You feel like someone punched you in the chest, but from the inside.", 
 			"You breathe heavily, yet still feel winded.",
@@ -158,7 +158,7 @@
 		is_longporklover = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 3 * REAGENTS_METABOLISM //metabolizes much quicker if not injured
-	var/longpork_heal_rate = (is_longporklover ? longpork_lover_healing : longpork_hurting) * REAGENTS_EFFECT_MULTIPLIER
+	var/longpork_heal_rate = (is_longporklover ? longpork_lover_healing : longpork_hurting) *REM
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
 		M.adjustFireLoss(longpork_heal_rate)
 		M.adjustBruteLoss(longpork_heal_rate)
@@ -191,9 +191,9 @@
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() > M.getFireLoss())	//Less effective at healing mixed damage types.
-		M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(-2*REM)
 	else
-		M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-2*REM)
 	. = TRUE
 	..()
 
@@ -230,8 +230,8 @@
 
 /datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-1*REM)
+	M.adjustFireLoss(-1*REM)
 	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
 	. = TRUE
 	..()
@@ -325,11 +325,11 @@
 			return
 		if(method != INJECT) // Gotta be injected
 			return
-		M.radiation = max(M.radiation - (reac_volume*2), 0) //two times reaction volume, double check my work
+		M.radiation = max(M.radiation - (reac_volume*2*REM), 0) //two times reaction volume, double check my work
 	..()
 
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
-	M.radiation = max(M.radiation - 3, 0) //the other 60% works if drank or otherwise overtime
+	M.radiation = max((M.radiation - 3)*REM, 0) //the other 60% works if drank or otherwise overtime
 	. = TRUE
 	..()
 
@@ -366,26 +366,19 @@
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)
-		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-0.5*REM, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
 	if(M.oxyloss > 35)
 		M.setOxyLoss(35, 0)
 	if(M.losebreath >= 4)
 		M.losebreath = max(M.losebreath - 2, 0)
-	M.adjustStaminaLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-1*REM, 0)
 	. = 1
 	if(prob(20))
-		M.AdjustAllImmobility(-20, 0)
-		M.AdjustUnconscious(-20, 0)
+		M.AdjustAllImmobility(-20*REM, 0)
+		M.AdjustUnconscious(-20*REM, 0)
 	..()
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-	. = TRUE
 
 /datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
 	/// Dont cause the effects if they have more than 15u of mentat, and any epinephrine at all
@@ -500,7 +493,7 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(-3*REM)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
@@ -520,8 +513,8 @@
 		M.set_blindness(0)
 		M.set_blurriness(0)
 		to_chat(M, span_warning("Your vision slowly returns to normal..."))
-	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1*REM)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM)
 	if (prob(5))
 		to_chat(M, span_notice("You feel a strange mental fortitude!"))
 	..()
@@ -606,10 +599,10 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustOxyLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.75*REM, 0)
+	M.adjustOxyLoss(-0.75*REM, 0)
+	M.adjustBruteLoss(-0.75*REM, 0)
+	M.adjustFireLoss(-0.75*REM, 0)
 	..()
 
 /datum/reagent/medicine/gaia/overdose_start(mob/living/M)
@@ -632,8 +625,8 @@
 	if(HAS_TRAIT(M, TRAIT_PUNGAPOWER))
 		punga_power = 10
 	if(M.radiation > 0)
-		M.radiation = max(M.radiation - punga_power, 0) //half as strong as pentetic, twice as strong as potassium iodide
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE) //we'll be nice to the slimes today
+		M.radiation = max((M.radiation - punga_power)*REM, 0) //half as strong as pentetic, twice as strong as potassium iodide
+	M.adjustToxLoss(-0.5*REM, 0, TRUE) //we'll be nice to the slimes today
 	..()
 	. = 1
 
@@ -669,20 +662,20 @@
 		"You're going to be severely dehydrated after this...")
 
 /datum/reagent/medicine/fiery_purgative/on_mob_life(mob/living/carbon/M) //this might be OP, but I had fun with it. will see
-	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, FALSE)
+	M.adjustToxLoss(-3*REM, FALSE)
 	if(M.radiation > 0)
-		M.radiation = max(M.radiation - 16, 0) //this stuff is potent, but has side effects
+		M.radiation = max((M.radiation - 16)*REM, 0) //this stuff is potent, but has side effects
 	for(var/A in M.reagents.reagent_list)
 		var/datum/reagent/R = A
 		if(R != src)
 			M.reagents.remove_reagent(R.type,3)
 	
 	M.disgust = max(M.disgust, 100) // instant violent pain
-	M.Dizzy(5)
-	M.Jitter(5)
+	M.Dizzy(5*REM)
+	M.Jitter(5*REM)
 	M.adjust_nutrition(-5) //everything is leaving your body. everything.
 	if(M.getStaminaLoss() < 75)
-		M.adjustStaminaLoss(5*REAGENTS_EFFECT_MULTIPLIER) //double check syntax
+		M.adjustStaminaLoss(5*REM) //double check syntax
 	if(prob(10))
 		to_chat(M, span_danger("[pick(misery_message)]"))
 	if(prob(25))

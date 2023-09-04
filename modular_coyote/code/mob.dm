@@ -455,3 +455,36 @@
 /mob/living/simple_animal/uffalo/Initialize()
 	. = ..()
 	recenter_wide_sprite()
+
+/mob/living/simple_animal/pokemon/tenderclawmale
+	name = "male tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "newclaw"
+	icon_living = "newclaw"
+	icon_dead = "newclaw_d"
+
+/mob/living/simple_animal/pokemon/tenderclawfemale
+	name = "female tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "femclaw"
+	icon_living = "femclaw"
+	icon_dead = "femclaw_d"
+
+/mob/living/simple_animal/pokemon/tenderclawherm
+	name = "herm tenderclaw"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'modular_coyote/icons/mob/newclaws.dmi'
+	icon_state = "hermclaw"
+	icon_living = "hermclaw"
+	icon_dead = "hermclaw_d"
+
+/mob/living/simple_animal/pokemon/nightstalker
+	name = "nightstalker"
+	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
+	icon_state = "nightstalker"
+	icon_living = "nightstalker"
+	icon_dead = "nightstalker-dead"
+

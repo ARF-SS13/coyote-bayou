@@ -1,14 +1,31 @@
 {
-	"title" : "Images can be URLs too! JSON route",
-	"top_images" : {
-		"1" : {"image" : "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg", "resize" : "fit", "URL" : true},
-		"2" : {"image" : "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg", "resize" : "fit", "URL" : true}
+	"title": "Images can be URLs too! JSON route",
+	"top_images": {
+		"1": {
+			"image": "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg",
+			"resize": "fit",
+			"URL": true
+		},
+		"2": {
+			"image": "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg",
+			"resize": "fit",
+			"URL": true
+		}
 	},
-	"bottom_images" : {
-		"1" : {"image" : "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg", "resize" : "stretch", "URL" : true},
-		"2" : {"image" : "https://media.tenor.com/yPTb4CQcumsAAAAC/xd-meme.gif", "resize" : "stretch", "URL" : true}
+	"bottom_images": {
+		"1": {
+			"image": "https://cdn.discordapp.com/attachments/999170698029305946/1113881116487721100/IMG_8216.jpg",
+			"resize": "stretch",
+			"URL": true
+		},
+		"2": {
+			"image": "https://media.tenor.com/yPTb4CQcumsAAAAC/xd-meme.gif",
+			"resize": "stretch",
+			"URL": true
+		}
 	},
-	"content" : [
+	"order": 999,
+	"content": [
 		"Hi! All the images in this chapter are pulled from URLs!",
 		"This will be how you, as a bookmaker, put images in the books you make.",
 		"",
@@ -44,6 +61,9 @@
 		"",
 		"- After PRing your book, you can ask a headcooder to upload your images to TGS, to make them a lot more reliable. Though, try to give your book a week or so before asking.",
 		"",
-		"- And above all, <i>have fun!</i>"
+		"- And above all, <i>have fun!</i>",
+		"",
+		"Also this should be at the back of the book, cus this ALSO gives an exmaple of how to set up order.",
+		"though maybe dont make your order 999, though its perfectly valid to do so."
 	]
 }
