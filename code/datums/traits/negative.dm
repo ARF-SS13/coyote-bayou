@@ -815,6 +815,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>Your flesh feels more durable!</span>"
 	medical_record_text = "Patient suffers from weak flesh, resulting in them receiving cuts far more easily."
 
+/*
 /datum/quirk/glass_bones
 	name = "Glass Bones"
 	desc = "Your bones are far more brittle, and more vulnerable to breakage."
@@ -823,6 +824,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = "<span class='notice'>Your bones feels weak!</span>"
 	lose_text = "<span class='notice'>Your bones feels more durable!</span>"
 	medical_record_text = "Patient suffers from brittle bones, resulting in them receiving breakages far more easily."
+*/
 
 /datum/quirk/noodle_fist
 	name = "Fists of Noodle"
