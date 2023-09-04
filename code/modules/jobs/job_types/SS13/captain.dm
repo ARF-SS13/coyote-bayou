@@ -29,7 +29,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+//	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
 	threat = 5
 
 /datum/job/captain/get_access()

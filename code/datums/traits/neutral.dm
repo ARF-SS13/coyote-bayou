@@ -263,6 +263,7 @@
 			species.liked_food |= MEAT
 		if(initial(species.disliked_food) & ~MEAT)
 			species.disliked_food &= ~MEAT
+
 /datum/quirk/hydra
 	name = "Hydra Heads"
 	desc = "You are a tri-headed creature. To use, format your name like (Rucks-Sucks-Ducks) and use the action button in the top left."

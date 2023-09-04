@@ -232,7 +232,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	hearers -= ignored_mobs
 	if(self_message)
 		hearers -= src
-	var/raw_msg = message
+//	var/raw_msg = message
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
 		message = "<b>[src]</b> [message]"
 		deaf_message = "<b>[src]</b> [deaf_message]"
