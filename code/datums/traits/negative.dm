@@ -895,7 +895,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/primitive
 	name = "Primitive"
 	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
-	value = -2
+	value = -22
 	mob_trait = TRAIT_MONKEYLIKE
 	gain_text = span_notice("yOu reTurN tO MonKE")
 	lose_text = span_danger("I think, there for... I am?")
