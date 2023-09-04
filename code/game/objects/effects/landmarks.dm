@@ -912,6 +912,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Senior Doctor"
 	icon_state = "Chief Medical Officer"
 
+/obj/effect/landmark/start/f13/followersseniorscientist
+	name = "Senior Scientist"
+	icon_state = "Chief Medical Officer"
+
 /obj/effect/landmark/start/f13/followersdoctor
 	name = "Town Doctor"
 	icon_state = "Medical Doctor"
