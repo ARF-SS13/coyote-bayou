@@ -500,7 +500,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/birdphobia
 	name = "Phobia - Birds"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
-	value = -1
+	value = -11
 	mob_trait = TRAIT_BIRDPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of winged dubious creatures grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bird up!")
