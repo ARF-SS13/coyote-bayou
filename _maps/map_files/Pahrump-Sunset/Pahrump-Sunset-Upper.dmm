@@ -20427,9 +20427,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "qsC" = (
-/obj/machinery/computer/scan_consolenew{
-	dir = 8
-	},
+/obj/machinery/dna_scannernew,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic)
 "qtx" = (
@@ -21010,8 +21008,9 @@
 	},
 /area/f13/building)
 "qRp" = (
-/obj/machinery/dna_scannernew,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/obj/structure/table,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
 /area/f13/building/hospital/clinic)
 "qRD" = (
 /obj/structure/closet,
@@ -21833,13 +21832,6 @@
 	smooth = 1
 	},
 /area/f13/building/mall)
-"rww" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/mob/living/carbon/monkey,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building/hospital/clinic)
 "rwy" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -22904,6 +22896,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"smT" = (
+/obj/machinery/computer/scan_consolenew{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/area/f13/building/hospital/clinic)
 "smZ" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -25681,6 +25679,13 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"uwG" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building/hospital/clinic)
 "uwY" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -34178,9 +34183,9 @@ oce
 bQR
 bQR
 xZD
+smT
 qsC
-qRp
-rww
+uwG
 isp
 isp
 pzS
@@ -36750,7 +36755,7 @@ rmk
 wrb
 oce
 uHi
-kWL
+qRp
 kWL
 psj
 mcX
