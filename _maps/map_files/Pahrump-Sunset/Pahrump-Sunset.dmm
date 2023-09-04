@@ -3072,6 +3072,14 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"alk" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "all" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/inside/mountain,
@@ -38501,6 +38509,14 @@
 	icon_state = "innermaincornerinner - S"
 	},
 /area/f13/wasteland/massfusion)
+"fsz" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "fsE" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -39821,6 +39837,15 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"fHR" = (
+/obj/structure/ladder/unbreakable{
+	desc = "An open manhole cover leading into the sewers.";
+	height = 2;
+	id = "nashsewernearxeno";
+	name = "open manhole cover"
+	},
+/turf/open/indestructible/ground/outside/dirthole,
+/area/f13/wasteland)
 "fHV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -74345,17 +74370,7 @@
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "nCz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/recharger{
-	pixel_x = 5;
-	pixel_y = 9
-	},
-/obj/structure/table/wood,
-/obj/machinery/cell_charger{
-	pixel_x = -4;
-	pixel_y = -1
-	},
-/obj/effect/spawner/lootdrop/f13/common,
+/obj/machinery/mineral/wasteland_trader,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -82351,6 +82366,14 @@
 	color = "#884444"
 	},
 /area/f13/building)
+"pue" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/left,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "puf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -89191,7 +89214,7 @@
 	},
 /obj/structure/decoration/rag,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/brick,
+/turf/closed/wall/r_wall,
 /area/f13/building/trader)
 "qXg" = (
 /obj/structure/stone_tile/block{
@@ -91227,7 +91250,17 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "rxV" = (
-/obj/machinery/mineral/wasteland_trader,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/structure/table/wood,
+/obj/machinery/cell_charger{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -109874,6 +109907,22 @@
 	color = "#779999"
 	},
 /area/f13/bar)
+"vQs" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14
+	},
+/obj/structure/barricade/bars,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "vQv" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -110940,6 +110989,14 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
+"wfR" = (
+/obj/structure/chair/sofa/corner{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "wfU" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -116620,6 +116677,14 @@
 /obj/structure/debris/v1,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"xug" = (
+/obj/structure/chair/sofa{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "xuj" = (
 /obj/machinery/light/lampost{
 	dir = 8;
@@ -128163,7 +128228,7 @@ nvn
 nvn
 tRk
 pJj
-tRk
+fHR
 nvn
 url
 url
@@ -128883,11 +128948,11 @@ oTM
 oTM
 gzG
 fHl
-bKc
 fHl
-bZR
-bZR
-bZR
+fHl
+alk
+alk
+alk
 fHl
 bZR
 bZR
@@ -129142,9 +129207,9 @@ flt
 oxw
 inE
 pjh
-iFl
-iFl
-iFl
+wfR
+xug
+fsz
 nCz
 iFl
 iFl
@@ -129399,7 +129464,7 @@ leQ
 mMr
 bek
 eWq
-oXG
+pue
 iFl
 iFl
 iFl
@@ -129936,7 +130001,7 @@ ncP
 oaM
 ddB
 hxf
-hxf
+vQs
 mak
 hCu
 usp
@@ -130707,7 +130772,7 @@ jGB
 vpP
 bgz
 hxf
-hxf
+vQs
 mak
 hCu
 qmy
