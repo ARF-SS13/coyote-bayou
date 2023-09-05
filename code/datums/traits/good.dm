@@ -902,7 +902,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mob_trait = TRAIT_PERFECT_ATTACKER
 	gain_text = span_notice("They are already dead.")
 
+/datum/quirk/silentstep
+	name = "Silent Step"
+	desc = "Your steps just make no noise, or maybe everyone elses buttcheeks are just that loud?"
 	mob_trait = TRAIT_SILENT_STEP
+	value = 33
 	gain_text = span_notice("Your footsteps fade away.")
 	lose_text = span_danger("You're pretty sure that's the sound of your asscheeks clapping, but it might be footsteps.")
 	locked =  FALSE
@@ -1102,6 +1106,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 22
 	mob_trait = TRAIT_SPICYBITE
 
+/datum/quirk/sabrebiter
+	name = "Biter - Sabre Toothed"
+	desc = "Your *bite strength is ENORMOUS, but it takes all your focus to use it."
+	value = 33
+	mob_trait = TRAIT_SABREBITE
+
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
 	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
@@ -1125,3 +1135,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Something about your claws cause weakness in those you rake, use *claw to stun mobs/players."
 	value = 22
 	mob_trait = TRAIT_SPICYCLAW
+
+/datum/quirk/razorclaw
+	name = "Clawer - Razors"
+	desc = "Your *claw attack really does rend and tear huge guts."
+	value = 33
+	mob_trait = TRAIT_RAZORCLAW

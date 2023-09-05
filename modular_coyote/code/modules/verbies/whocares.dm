@@ -57,7 +57,8 @@
 	for(var/line in Lines)
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(GLOB.clients)]</b>"
+	msg += "<b>Total Players: [length(GLOB.clients)]</b>\n" 
+	msg += "You can set your OOC Status with the 'set-status' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!"
 	to_chat(src, msg)
 
 /client/proc/show_sum_info(client/C, _adminStatus) // A parody to show_admin_info, except it shows some, but not all. <3 
