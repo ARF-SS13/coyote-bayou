@@ -233,7 +233,30 @@
 	color = "#448844"
 	force = 4
 	force_wielded = 7
+	attack_speed = 3
+
+/obj/item/hand_item/biter/play
+	name = "Play Biter"
+	desc = "Someone really should just muzzle you."
+	color = "#ff44ff"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/biter/spicy
+	name = "Spicy Biter"
+	desc = "Your sickly little nibbler, good for dropping fools."
+	color = "#44FF44"
+	force = 5
+	force_wielded = 10
 	attack_speed = 5
+
+
+/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 
 /obj/item/hand_item/clawer
@@ -268,6 +291,28 @@
 	force_wielded = 7
 	attack_speed = 1
 
+/obj/item/hand_item/clawer/play
+	name = "Play Clawer"
+	desc = "Basically just a bean thwapper."
+	color = "#FF88FF"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/spicy
+	name = "Spicy Clawer"
+	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
+	color = "#44FF44"
+	force = 7
+	force_wielded = 11 //7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
 /obj/item/hand_item/shover
 	name = "shover"
 	desc = "Stay back!"
@@ -287,7 +332,26 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/beans
+	name = "beans"
+	desc = "Them's ya' beans. Touch em' to things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "bean"
+	color = "#ff88bb"
+	attack_verb = list("beans", "baps", "smushes")
+	hitsound = "sound/effects/attackblob.ogg"
+	force = 0
+	force_wielded = 0
+	throwforce = 0
+	attack_speed = 0
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))

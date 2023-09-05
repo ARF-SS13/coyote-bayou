@@ -154,6 +154,23 @@
 	else
 		qdel(tendy)
 
+//We are not naming this 'beaner' so help me god
+/datum/emote/living/carbon/bean
+	key = "bean"
+	key_third_person = "beans"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/bean/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
+		return
+	var/obj/item/hand_item/beans/bean = new(user)
+	if(user.put_in_active_hand(bean))
+		to_chat(user, span_notice("You ready your beans for WAR!!"))
+	else
+		qdel(bean)
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"
@@ -169,7 +186,11 @@
 	if(HAS_TRAIT(user, TRAIT_BIGBITE))
 		which_biter_to_spawn = /obj/item/hand_item/biter/big
 	else if(HAS_TRAIT(user, TRAIT_FASTBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/fast 
+		which_biter_to_spawn = /obj/item/hand_item/biter/fast
+	else if(HAS_TRAIT(user, TRAIT_PLAYBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/play
+	else if(HAS_TRAIT(user, TRAIT_SPICYBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/spicy
 	else 
 		which_biter_to_spawn = /obj/item/hand_item/biter 
 	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
@@ -195,6 +216,10 @@
 		which_clawer_to_spawn = /obj/item/hand_item/clawer/big
 	else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
 		which_clawer_to_spawn = /obj/item/hand_item/clawer/fast
+	else if(HAS_TRAIT(user, TRAIT_PLAYCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/play
+	else if(HAS_TRAIT(user, TRAIT_SPICYCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/spicy
 	else 
 		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
 	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
