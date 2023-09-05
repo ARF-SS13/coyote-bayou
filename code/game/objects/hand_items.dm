@@ -339,7 +339,7 @@
 	icon_state = "bean"
 	color = "#ff88bb"
 	attack_verb = list("beans", "baps", "smushes")
-	hitsound = "sound/effects/blobattack.ogg"
+	hitsound = "sound/effects/attackblob.ogg"
 	force = 0
 	force_wielded = 0
 	throwforce = 0
