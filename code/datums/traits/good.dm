@@ -1141,3 +1141,36 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Your *claw attack really does rend and tear huge guts."
 	value = 33
 	mob_trait = TRAIT_RAZORCLAW
+
+//tail
+
+/datum/quirk/bigtail
+	name = "Tail - Big"
+	desc = "You got that big tail, good for big wumps. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILSMASH
+
+/datum/quirk/fasttail
+	name = "Tail - Whiplike"
+	desc = "You got that FAST tail, good for whipping about. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILWHIP
+
+/datum/quirk/playtail
+	name = "Tail - Playful"
+	desc = "Your tail is just a soft extension of the rest of you. use with *tailer"
+	value = 0
+	mob_trait = TRAIT_TAILPLAY
+
+/datum/quirk/spicytail
+	name = "Tail - Venomous"
+	desc = "One way or another your *tailer can put things on their butts."
+	value = 22
+	mob_trait = TRAIT_TAILSPICY
+
+/datum/quirk/thagotail
+	name = "Tail - Thagomizer"
+	desc = "A very dangerous *tailer, for beating the snot out of things."
+	value = 33
+	mob_trait = TRAIT_TAILTHAGO
+
