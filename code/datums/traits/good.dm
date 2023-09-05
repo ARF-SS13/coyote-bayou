@@ -902,7 +902,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mob_trait = TRAIT_PERFECT_ATTACKER
 	gain_text = span_notice("They are already dead.")
 
+/datum/quirk/silentstep
+	name = "Silent Step"
+	desc = "Your steps just make no noise, or maybe everyone elses buttcheeks are just that loud?"
 	mob_trait = TRAIT_SILENT_STEP
+	value = 33
 	gain_text = span_notice("Your footsteps fade away.")
 	lose_text = span_danger("You're pretty sure that's the sound of your asscheeks clapping, but it might be footsteps.")
 	locked =  FALSE
