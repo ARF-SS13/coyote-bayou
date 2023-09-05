@@ -243,6 +243,21 @@
 	force_wielded = 0
 	attack_speed = 1
 
+/obj/item/hand_item/biter/spicy
+	name = "Spicy Biter"
+	desc = "Your sickly little nibbler, good for dropping fools."
+	color = "#44FF44"
+	force = 5
+	force_wielded = 10
+	attack_speed = 5
+
+
+/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
 
 /obj/item/hand_item/clawer
 	name = "Clawer"
@@ -283,6 +298,20 @@
 	force = 0
 	force_wielded = 0
 	attack_speed = 1
+
+/obj/item/hand_item/clawer/spicy
+	name = "Spicy Clawer"
+	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
+	color = "#44FF44"
+	force = 7
+	force_wielded = 11 //7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/hand_item/shover
 	name = "shover"

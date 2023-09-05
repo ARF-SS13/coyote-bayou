@@ -1096,6 +1096,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 0
 	mob_trait = TRAIT_PLAYBITE
 
+/datum/quirk/spicybiter
+	name = "Biter - Venomous"
+	desc = "One way or another your *bite can put things on their butts."
+	value = 22
+	mob_trait = TRAIT_SPICYBITE
+
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
 	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
@@ -1113,3 +1119,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Your claws are for being silly, not dangerous."
 	value = 0
 	mob_trait = TRAIT_PLAYCLAW
+
+/datum/quirk/spicyclaw
+	name = "Clawer - Venomous"
+	desc = "Something about your claws cause weakness in those you rake, use *claw to stun mobs/players."
+	value = 0
+	mob_trait = TRAIT_SPICYCLAW
