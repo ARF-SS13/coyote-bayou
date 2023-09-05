@@ -1123,5 +1123,5 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/spicyclaw
 	name = "Clawer - Venomous"
 	desc = "Something about your claws cause weakness in those you rake, use *claw to stun mobs/players."
-	value = 0
+	value = 22
 	mob_trait = TRAIT_SPICYCLAW
