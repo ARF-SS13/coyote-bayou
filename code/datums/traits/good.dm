@@ -1090,6 +1090,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 22
 	mob_trait = TRAIT_FASTBITE
 
+/datum/quirk/playbiter
+	name = "Biter - Pretend"
+	desc = "Your biter is a little love nipper."
+	value = 0
+	mob_trait = TRAIT_PLAYBITE
+
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
 	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
@@ -1101,3 +1107,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Your claw swipes are nearly the speed of sound, your *claw attack his WAY faster."
 	value = 22
 	mob_trait = TRAIT_FASTCLAW
+
+/datum/quirk/playclaw
+	name = "Clawer - Pretend"
+	desc = "Your claws are for being silly, not dangerous."
+	value = 0
+	mob_trait = TRAIT_PLAYCLAW

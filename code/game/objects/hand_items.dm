@@ -235,6 +235,14 @@
 	force_wielded = 7
 	attack_speed = 3
 
+/obj/item/hand_item/biter/play
+	name = "Play Biter"
+	desc = "Someone really should just muzzle you."
+	color = "#ff44ff"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
 
 /obj/item/hand_item/clawer
 	name = "Clawer"
@@ -266,6 +274,14 @@
 	color = "#448844"
 	force = 4
 	force_wielded = 7
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/play
+	name = "Play Clawer"
+	desc = "Basically just a bean thwapper."
+	color = "#FF88FF"
+	force = 0
+	force_wielded = 0
 	attack_speed = 1
 
 /obj/item/hand_item/shover
