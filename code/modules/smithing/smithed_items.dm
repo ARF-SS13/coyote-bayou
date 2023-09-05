@@ -694,6 +694,38 @@
 	finalitem.force += 5
 	..()
 
+/obj/item/smithing/unarmed/knuckles
+	name = "duster lump"
+	icon_state = "knuckles_smith"
+	finishingitem = /obj/item/stack/sheet/leatherstrips
+	finalitem = /obj/item/melee/smith/unarmed/knuckles
+
+/obj/item/smithing/unarmed/knuckles/startfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/knuckles(src)
+//	finalitem.force += quality*1.5
+	..()
+
+/obj/item/smithing/unarmed/knuckles/startmasterworkfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/knuckles(src)
+	finalitem.force += 5
+	..()
+
+/obj/item/smithing/unarmed/claws
+	name = "sharp prongs"
+	icon_state = "claws_smith"
+	finishingitem = /obj/item/stack/sheet/leatherstrips
+	finalitem = /obj/item/melee/smith/unarmed/claws
+
+/obj/item/smithing/unarmed/claws/startfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/claws(src)
+//	finalitem.force += quality*1.5
+	..()
+
+/obj/item/smithing/unarmed/claws/startmasterworkfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/claws(src)
+	finalitem.force += 5
+	..()
+
 ////////////
 // spears //
 ////////////

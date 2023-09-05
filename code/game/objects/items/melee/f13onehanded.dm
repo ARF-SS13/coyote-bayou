@@ -772,7 +772,6 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 26
-	custom_materials = list(/datum/material/iron = 2000)
 
 // Spiked knuckles	Keywords: Damage 28
 /obj/item/melee/unarmed/brass/spiked
