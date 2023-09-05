@@ -386,6 +386,16 @@
 	spillable = TRUE
 	isGlass = FALSE
 
+/obj/item/reagent_containers/food/drinks/sillycup/handcup
+	name = "a cupped hand"
+	desc = "Your hand, cupped to hold liquids."
+	icon_state = "water_cup_e"
+	possible_transfer_amounts = list()
+	volume = 5
+	spillable = TRUE
+	isGlass = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+
 /obj/item/reagent_containers/food/drinks/sillycup/on_reagent_change(changetype)
 	if(reagents.total_volume)
 		icon_state = "water_cup"
