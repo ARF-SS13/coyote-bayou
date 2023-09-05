@@ -227,6 +227,14 @@
 	force_wielded = 18
 	attack_speed = 5
 
+/obj/item/hand_item/biter/sabre
+	name = "Sabre Toothed Biter"
+	desc = "Damn bitch, you eat with them teeth?"
+	color = "#FF4444"
+	force = 5
+	force_wielded = 27
+	attack_speed = 6
+
 /obj/item/hand_item/biter/fast
 	name = "Big Biter"
 	desc = "Talk shit, get SPEED bit."
@@ -282,6 +290,14 @@
 	force = 7
 	force_wielded = 9
 	attack_speed = 3
+
+/obj/item/hand_item/clawer/razor
+	name = "Razor Sharp Clawers"
+	desc = "RIP AND TEAR."
+	color = "#FF4444"
+	force = 5
+	force_wielded = 17
+	attack_speed = 4
 
 /obj/item/hand_item/clawer/fast
 	name = "Fast Clawer"
