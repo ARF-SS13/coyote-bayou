@@ -154,6 +154,23 @@
 	else
 		qdel(tendy)
 
+//We are not naming this 'beaner' so help me god
+/datum/emote/living/carbon/bean
+	key = "bean"
+	key_third_person = "beans"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/bean/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
+		return
+	var/obj/item/hand_item/beans/bean = new(user)
+	if(user.put_in_active_hand(bean))
+		to_chat(user, span_notice("You ready your beans for WAR!!"))
+	else
+		qdel(bean)
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"

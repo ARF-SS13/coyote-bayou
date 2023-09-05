@@ -332,7 +332,26 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/beans
+	name = "beans"
+	desc = "Them's ya' beans. Touch em' to things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "bean"
+	color = "#ff88bb"
+	attack_verb = list("beans", "baps", "smushes")
+	hitsound = "sound/effects/blobattack.ogg"
+	force = 0
+	force_wielded = 0
+	throwforce = 0
+	attack_speed = 0
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))
