@@ -171,6 +171,22 @@
 	else
 		qdel(bean)
 
+/datum/emote/living/carbon/cuphand
+	key = "cuphand"
+	key_third_person = "uses their hand as a cup."
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/cuphand/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your cup your hand to hold liquids."))
+		return
+	var/obj/item/reagent_containers/food/drinks/sillycup/handcup/handcup = new(user)
+	if(user.put_in_active_hand(handcup))
+		to_chat(user, span_notice("Your cuphand is ready!"))
+	else
+		qdel(handcup)
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"
