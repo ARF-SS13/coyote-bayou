@@ -191,6 +191,8 @@
 		which_biter_to_spawn = /obj/item/hand_item/biter/play
 	else if(HAS_TRAIT(user, TRAIT_SPICYBITE))
 		which_biter_to_spawn = /obj/item/hand_item/biter/spicy
+	else if(HAS_TRAIT(user, TRAIT_SABREBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/sabre
 	else 
 		which_biter_to_spawn = /obj/item/hand_item/biter 
 	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
@@ -220,6 +222,8 @@
 		which_clawer_to_spawn = /obj/item/hand_item/clawer/play
 	else if(HAS_TRAIT(user, TRAIT_SPICYCLAW))
 		which_clawer_to_spawn = /obj/item/hand_item/clawer/spicy
+	else if(HAS_TRAIT(user, TRAIT_RAZORCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
 	else 
 		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
 	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
