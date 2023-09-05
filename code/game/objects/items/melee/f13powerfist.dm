@@ -27,12 +27,30 @@
 
 /obj/item/melee/powerfist/f13/equipped(mob/user, slot)
 	. = ..()
+	var/mob/living/carbon/human/H = user
 	if(slot == SLOT_GLOVES)
 		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
 			ADD_TRAIT(H, TRAIT_PUGILIST, GLOVE_TRAIT)
 			H.dna.species.punchdamagehigh += enhancement
 			H.dna.species.punchdamagelow += enhancement
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
+			if(sharpness == SHARP_NONE)
+				H.dna.species.attack_verb = pick("punch","jab","whack")
+		if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+			REMOVE_TRAIT(user, TRAIT_PUGILIST, GLOVE_TRAIT)
+			if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
+				H.dna.species.punchdamagehigh = 10
+				H.dna.species.punchdamagelow = 1
+			if(HAS_TRAIT(user, TRAIT_IRONFIST))
+				H.dna.species.punchdamagehigh = 12
+				H.dna.species.punchdamagelow = 6
+			if(HAS_TRAIT(user, TRAIT_STEELFIST))
+				H.dna.species.punchdamagehigh = 16
+				H.dna.species.punchdamagelow = 10
+			H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+			H.dna.species.attack_verb = "punch"
 
 /obj/item/clothing/gloves/fingerless/pugilist/dropped(mob/user)
 
