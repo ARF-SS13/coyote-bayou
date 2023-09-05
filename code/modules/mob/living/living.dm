@@ -520,10 +520,10 @@
 	set category = "IC"
 
 	if(IsSleeping())
-		if(alert(src, "Would you like to wake up soon?", "Wake", "Yes", "No") == "Yes")
+		if(alert(src, "Would you like to wake up soon? (You'll wake up after sleeping a little more, be patient and don't spam the button!)", "Wake Up", "Yes", "No") == "Yes")
 			SetSleeping(400)	//puts you to sleep for 40 seconds, so it's not abusable.
 	else
-		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
+		if(alert(src, "Are you sure you want to sleep for a long time? (You can wake up by pressing this button again)", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(18000)	//puts you to sleep for 30 minutes, better than never waking up in case my code sucks badly.
 
 /mob/proc/get_contents()
