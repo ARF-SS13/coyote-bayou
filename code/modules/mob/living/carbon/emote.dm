@@ -217,6 +217,35 @@
 	else
 		qdel(bite)
 
+//Tailer//
+/datum/emote/living/carbon/tailer
+	key = "tailer"
+	key_third_person = "tails"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/tailer/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your brains too busy to use your tail right now, maybe empty up your hands a bit?"))
+		return
+	var/which_tail_to_spawn
+	if(HAS_TRAIT(user, TRAIT_TAILWHIP))
+		which_tail_to_spawn = /obj/item/hand_item/tail/fast
+	else if(HAS_TRAIT(user, TRAIT_TAILSMASH))
+		which_tail_to_spawn = /obj/item/hand_item/tail/big
+	else if(HAS_TRAIT(user, TRAIT_TAILSPICY))
+		which_tail_to_spawn = /obj/item/hand_item/tail/spicy
+	else if(HAS_TRAIT(user, TRAIT_TAILTHAGO))
+		which_tail_to_spawn = /obj/item/hand_item/tail/thago
+	else if(HAS_TRAIT(user, TRAIT_TAILPLAY))
+		which_tail_to_spawn = /obj/item/hand_item/playfultail
+	else 
+		which_tail_to_spawn = /obj/item/hand_item/tail
+	var/obj/item/hand_item/tail = new which_tail_to_spawn(user)
+	if(user.put_in_active_hand(tail)) 
+		to_chat(user, span_notice("You swing your tail around, ready for action!"))
+	else
+		qdel(tail)
 
 //Clawer//
 /datum/emote/living/carbon/claw 
