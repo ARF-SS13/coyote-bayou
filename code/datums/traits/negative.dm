@@ -191,7 +191,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes
 	name = "Nearsighted - Trashed Vision"
 	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
-	value = -26
+	value = -33
 	gain_text = span_danger("Things far away from you start looking VERY blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract sort of ridiculous levels of nearsightedness."
@@ -601,7 +601,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -1
+	value = -11
 	mob_trait = TRAIT_CATPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the feline menace grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")

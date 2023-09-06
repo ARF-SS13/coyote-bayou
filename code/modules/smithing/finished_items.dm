@@ -156,7 +156,7 @@
 	item_state = "pickaxe"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
-	digrange = 2
+	digrange = 1
 	toolspeed = 0.2
 
 /obj/item/pickaxe/smithed/Initialize()
