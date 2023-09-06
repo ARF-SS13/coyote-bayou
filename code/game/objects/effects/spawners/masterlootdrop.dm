@@ -382,7 +382,7 @@
 /obj/effect/spawner/lootdrop/f13/rare_melee
 	name = "rare melee"
 	loot = list(
-		/obj/item/melee/powerfist/f13 = 10,
+		/obj/item/melee/unarmed/powerfist = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
 		/obj/item/twohanded/legionaxe = 10,

@@ -66,6 +66,8 @@
 
 /obj/item/ingot/titanium
 	custom_materials = list(/datum/material/titanium=12000)
+	name = "titanium ingot"
+	material_flags = MATERIAL_COLOR
 
 /obj/item/ingot/mythril
 	custom_materials = list(/datum/material/mythril=12000)
