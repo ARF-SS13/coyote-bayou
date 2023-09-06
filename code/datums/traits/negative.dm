@@ -199,6 +199,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes/add()
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
+/*
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
@@ -219,6 +220,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "nyctophobia")
 
+
 /datum/quirk/lightless
 	name = "Phobia - Bright Light"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
@@ -234,6 +236,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "brightlight")
+*/
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
