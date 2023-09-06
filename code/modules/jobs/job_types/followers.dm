@@ -217,7 +217,7 @@ Administrator
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
 	faction = "Followers"
-	total_positions = 1
+	total_positions = 2
 	spawn_positions = 1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
 	description = "You are a Senior Scientist. Your rank is given due to your experience in the field compared to regular scientists. Help deal with issues that arise that normal scientists aren't prepared for, and teach those willing to learn more in the facility."
