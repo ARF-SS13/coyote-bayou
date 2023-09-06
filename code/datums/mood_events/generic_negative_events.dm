@@ -51,12 +51,12 @@
 
 /datum/mood_event/depression
 	description = span_warning("I feel sad for no particular reason.")
-	mood_change = -12
+	mood_change = -14
 	timeout = 60 MINUTES
 
 /datum/mood_event/pessimism
 	description = span_warning("I feel kind of sad for no particular reason.")
-	mood_change = -6
+	mood_change = -8
 	timeout = 60 MINUTES
 
 /datum/mood_event/shameful_suicide //suicide_acts that return SHAME, like sord
