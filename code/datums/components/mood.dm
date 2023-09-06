@@ -133,7 +133,7 @@
 			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY2 to MOOD_LEVEL_HAPPY3)
 			mood_level = 7
-			to_chat(owner, span_good("I feel good about life and the universe! But-))
+			to_chat(owner, span_good("I feel good about life and the universe! But-"))
 			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY3 to MOOD_LEVEL_HAPPY4)
 			mood_level = 8
