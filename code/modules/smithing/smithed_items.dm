@@ -303,7 +303,7 @@
 	var/obj/item/pickaxe/smithed/finalforreal = new /obj/item/pickaxe/smithed(src)
 	finalforreal.force += quality/2
 	finalforreal.toolspeed = 0.1
-	finalforreal.digrange = 4
+	finalforreal.digrange = 2
 	finalitem = finalforreal
 	..()
 

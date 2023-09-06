@@ -539,7 +539,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
-	value = 77
+	value = 55
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = span_notice("Rain or shine, nothing slows you down.")
 	lose_text = span_danger("You walk with a less sure gait, the ground seeming less firm somehow.")
