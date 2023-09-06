@@ -86,6 +86,10 @@
 	description = span_nicegreen("My family heirloom is safe with me.")
 	mood_change = 1
 
+/datum/mood_event/masked_mook
+	description = span_nicegreen("I'm safe in my protective mask.")
+	mood_change = 3
+
 /datum/mood_event/goodmusic
 	description = span_nicegreen("There is something soothing about that music I heard.")
 	mood_change = 5
