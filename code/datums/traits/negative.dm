@@ -27,7 +27,7 @@
 	mood_quirk = TRUE
 
 /datum/quirk/depression/on_process()
-	if(prob(0.15))
+	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "depression", /datum/mood_event/depression)
 
 /datum/quirk/pessimist
@@ -41,7 +41,7 @@
 	mood_quirk = TRUE
 
 /datum/quirk/pessimist/on_process()
-	if(prob(0.15))
+	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "pessimist", /datum/mood_event/pessimism)
 
 
