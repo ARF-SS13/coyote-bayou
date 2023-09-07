@@ -345,6 +345,12 @@ SUBSYSTEM_DEF(ticker)
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]
 	send2irc("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" with no active admins online!"]")
+	
+	// Time to ping people if it is a potluck day
+	var/dow = time2text(world.reachable, "DDD")
+	if (dow == "Sun")
+		world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the Coyote Bayou meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
+
 	setup_done = TRUE
 
 	for(var/i in GLOB.start_landmarks_list)
