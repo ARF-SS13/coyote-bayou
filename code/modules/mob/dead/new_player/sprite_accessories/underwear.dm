@@ -110,6 +110,11 @@
 	icon_state = "panties_commie"
 	gender = FEMALE
 
+/datum/sprite_accessory/underwear/bottom/female_cow
+	name = "Panties - Cow"
+	icon_state = "panties_cow"
+	gender = FEMALE
+
 
 /datum/sprite_accessory/underwear/bottom/fishnet_lower
 	name = "Panties - Fishnet"
