@@ -8,7 +8,8 @@
 	var/list/weekdays = list()
 
 /datum/holiday/weekly/shouldCelebrate(dd, mm, yy, ww, ddd)
-	return (ddd in weekdays) // ez
+	var/adjustedDDD = time2text(world.realtime, "DDD", -6) //Fenny doesn't wanna use UTC, but instead Central Standard Time
+	return (adjustedDDD in weekdays) // ez
 
 /// A cool lil potluck for subby bottoms to come together and make friends to fuck them
 /datum/holiday/weekly/potluck
@@ -25,6 +26,7 @@
 
 /datum/holiday/weekly/potluck/celebrate()
 	. = ..()
+	world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the Coyote Bayou meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
 	START_PROCESSING(SSevents, src) // I love processing nonprocessing subsystems
 
 /datum/holiday/weekly/potluck/greet()
