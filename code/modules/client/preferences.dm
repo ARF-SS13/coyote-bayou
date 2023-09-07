@@ -218,7 +218,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/image/creature_image = null
 	var/creature_profilepic = null
 
-	//Quirk list
+	/// Quirk list
+	/// okay lets compromise, we'll have type paths, but they're strings, happy?
+	/// Format: list("/datum/quirk/aaa", "/datum/quirk/bbb", "/datum/quirk/ccc", etc)
 	var/list/all_quirks = list()
 
 	//Quirk category currently selected

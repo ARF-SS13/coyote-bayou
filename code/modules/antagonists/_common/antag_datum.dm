@@ -162,13 +162,13 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/remove_blacklisted_quirks()
 	var/mob/living/L = owner.current
 	if(istype(L))
-		var/list/my_quirks = L.client?.prefs.all_quirks.Copy()
+		var/list/my_quirks = SSquirks.get_pref_quirks(L)
 		SSquirks.filter_quirks(my_quirks,blacklisted_quirks)
 		for(var/q in L.roundstart_quirks)
-			var/datum/quirk/Q = q
-			if(!(SSquirks.quirk_name_by_path(Q.type) in my_quirks))
-				if(initial(Q.antag_removal_text))
-					to_chat(L, span_boldannounce("[initial(Q.antag_removal_text)]"))
+			var/datum/quirk/Q = SSquirks.get_quirk(q)
+			if(!(Q.key in my_quirks))
+				if(Q.antag_removal_text)
+					to_chat(L, span_boldannounce("[Q.antag_removal_text]"))
 				L.remove_quirk(Q.type)
 
 //Returns the team antagonist belongs to if any.

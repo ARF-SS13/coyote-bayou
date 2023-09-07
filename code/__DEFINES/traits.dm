@@ -520,3 +520,15 @@
 
 /// just a little helper to see if we're not a druggie
 #define NODRUGS(m) (HAS_TRAIT(m, TRAIT_NODRUGS))
+
+///quirk defines cus they are kinda like traits i guess
+#define QUIRK_KEY "Qkey"
+#define QUIRK_NAME "Qname"
+#define QUIRK_PATH "Qpath"
+#define QUIRK_VALUE "Qvalue"
+#define QUIRK_DESC "Qdesc"
+#define QUIRK_MECHANICS "Qmechanics"
+#define QUIRK_CONFLICTS "Qconflicts"
+#define QUIRK_CATEGORY "Qcategory"
+
+#define QUIRK_CAT_DEFAULT "Misc"
