@@ -29,14 +29,18 @@
 	var/extra_range = 0
 	var/falloff
 	var/channel
+	var/be_cheap = FALSE
+
+	var/max_to_check = 100
 
 	var/timerid
 	var/init_timerid
 
-/datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct)
+/datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct, cheapass)
 	if(!mid_sounds)
 		WARNING("A looping sound datum was created without sounds to play.")
 		return
+	be_cheap = cheapass
 
 	if(LAZYLEN(_output_atoms))
 		output_atoms |= _output_atoms
@@ -96,6 +100,12 @@
 	var/list/atoms_cache = output_atoms
 	if(!LAZYLEN(atoms_cache))
 		return // If a datum sound_loops and nobodys around to hear it, does it make a sound? no
+	if(!timerid)
+		timerid = addtimer(CALLBACK(src, .proc/sound_loop, world.time), mid_length + loop_delay, TIMER_CLIENT_TIME | TIMER_STOPPABLE | TIMER_LOOP)
+	else
+		set_timer_wait(timerid, mid_length + loop_delay)
+	if(!can_anyone_hear_me())
+		return 
 	if(!chance || prob(chance))
 		var/sound_play = get_sound(starttime)
 		if(!sound_play) // someone didnt set it up right~
@@ -105,10 +115,6 @@
 			sound_play = list(sound_play, mid_length)
 		play(sound_play)
 		mid_length = sound_play[SL_FILE_LENGTH]
-	if(!timerid)
-		timerid = addtimer(CALLBACK(src, .proc/sound_loop, world.time), mid_length + loop_delay, TIMER_CLIENT_TIME | TIMER_STOPPABLE | TIMER_LOOP)
-	else
-		set_timer_wait(timerid, mid_length + loop_delay)
 
 /// takes in list('sound/file.ogg', mid_length) and plays the file and ques up another in mid_length deciseconds
 /datum/looping_sound/proc/play(list/sound_list)
@@ -160,3 +166,21 @@
 	if(end_sound)
 		var/list/sound_end = pickweight(end_sound)
 		play(sound_end)
+
+/datum/looping_sound/proc/can_anyone_hear_me()
+	var/list/atoms_cache = output_atoms
+	if(!LAZYLEN(atoms_cache))
+		return FALSE
+	// var/list/tocheck = atoms_cache.Copy()
+	// if(LAZYLEN(tocheck) > max_to_check)
+	// 	tocheck.len = max_to_check
+	for(var/atom/outputter in atoms_cache)
+		for(var/client/C in GLOB.clients)
+			if(!C.mob)
+				continue
+			if(C.mob.z != outputter.z)
+				continue
+			var/turf/T = get_turf(outputter)
+			var/turf/CT = get_turf(C.mob)
+			if(get_dist(T, CT) <= SOUND_DISTANCE(extra_range))
+				return TRUE
