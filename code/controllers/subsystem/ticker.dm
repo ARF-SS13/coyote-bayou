@@ -347,7 +347,7 @@ SUBSYSTEM_DEF(ticker)
 	send2irc("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]:" : "of"] [hide_mode ? "secret":"[mode.name]"] has started[allmins.len ? ".":" with no active admins online!"]")
 	
 	// Time to ping people if it is a potluck day
-	var/dow = time2text(world.reachable, "DDD")
+	var/dow = time2text(world.realtime, "DDD")
 	if (dow == "Sun")
 		world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the Coyote Bayou meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
 
