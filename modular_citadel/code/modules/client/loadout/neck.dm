@@ -53,37 +53,6 @@
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged
 
-/datum/gear/neck/silver_necklace
-	name = "Silver Necklace"
-	path = /obj/item/clothing/accessory/necklace
-
-/datum/gear/neck/gold_necklace
-	name = "Gold Necklace"
-	path = /obj/item/clothing/neck/necklace/dope
-
-/datum/gear/neck/cursed_necklace
-	name = "Cursed Necklace"
-	path = /obj/item/clothing/neck/cursednecklace
-
-/datum/gear/neck/spikecollar
-	name = "Spiked Collar"
-	path = /obj/item/clothing/neck/spikecollar
-
-/datum/gear/neck/sapphirecollar
-	name = "Sapphire Collar"
-	path = /obj/item/clothing/neck/sapphirecollar
-	cost = 2
-
-/datum/gear/neck/rubycollar
-	name = "Ruby Collar"
-	path = /obj/item/clothing/neck/rubycollar
-	cost = 2
-
-/datum/gear/neck/heartcollar
-	name = "Heart Collar"
-	path = /obj/item/clothing/neck/heartcollar
-	cost = 2
-
 /datum/gear/neck/wolfpendant
 	name = "Wolf Pendant"
 	path = /obj/item/clothing/neck/wolfpendant
@@ -111,10 +80,6 @@
 	name = "red tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/tie/red
-
-/datum/gear/neck/choker
-	name = "choker"
-	path = /obj/item/clothing/neck/petcollar/choker
 
 /datum/gear/neck/scarf
 	name = "white scarf"
@@ -458,3 +423,56 @@
 	name = "Ozhua cape"
 	path = /obj/item/clothing/neck/tie/aurora/ozuhacape
 	cost = 0
+
+//Collars
+
+/datum/gear/neck/choker
+	name = "choker"
+	path = /obj/item/clothing/neck/petcollar/choker
+
+/datum/gear/neck/silver_necklace
+	name = "Silver Necklace"
+	path = /obj/item/clothing/accessory/necklace
+
+/datum/gear/neck/gold_necklace
+	name = "Gold Necklace"
+	path = /obj/item/clothing/neck/necklace/dope
+
+/datum/gear/neck/cursed_necklace
+	name = "Cursed Necklace"
+	path = /obj/item/clothing/neck/cursednecklace
+
+/datum/gear/neck/spikecollar
+	name = "Spiked Collar"
+	path = /obj/item/clothing/neck/spikecollar
+
+/datum/gear/neck/sapphirecollar
+	name = "Sapphire Collar"
+	path = /obj/item/clothing/neck/sapphirecollar
+	cost = 2
+
+/datum/gear/neck/rubycollar
+	name = "Ruby Collar"
+	path = /obj/item/clothing/neck/rubycollar
+	cost = 2
+
+/datum/gear/neck/heartcollar
+	name = "Heart Collar"
+	path = /obj/item/clothing/neck/heartcollar
+	cost = 2
+
+/datum/gear/neck/redcowbell
+	name = "Red cowbell collar"
+	path = /obj/item/clothing/neck/redcowbell
+	cost = 0
+
+/datum/gear/neck/whitecowbell
+	name = "white cowbell collar"
+	path = /obj/item/clothing/neck/whitecowbell
+	cost = 0
+
+/datum/gear/neck/bluecowbell
+	name = "Blue cowbell collar"
+	path = /obj/item/clothing/neck/bluecowbell
+	cost = 0
+

@@ -399,3 +399,21 @@ obj/item/clothing/neck/neckerchief
 	desc = "A black synthleather collar with spikey studs."
 	icon_state = "spikecollar"
 	item_state = "spikecollar"
+
+/obj/item/clothing/neck/redcowbell
+	name = "Red cowbell collar"
+	desc = "This collar appears to have red band and a yellow bell. Moo!"
+	icon_state = "collar_cowbell"
+	item_state = "collar_cowbell"
+
+/obj/item/clothing/neck/whitecowbell
+	name = "white cowbell collar"
+	desc = "This collar appears to have white band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_white"
+	item_state = "collar_cowbell_white"
+
+/obj/item/clothing/neck/bluecowbell
+	name = "blue cowbell collar"
+	desc = "This collar appears to have blue band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_bluu"
+	item_state = "collar_cowbell_blue"
