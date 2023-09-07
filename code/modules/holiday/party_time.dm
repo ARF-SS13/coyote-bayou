@@ -8,7 +8,7 @@
 	var/list/weekdays = list()
 
 /datum/holiday/weekly/shouldCelebrate(dd, mm, yy, ww, ddd)
-    var/adjustedDDD = time2text(world.realtime, "DDD", -6) //Fenny doesn't wanna use UTC, but instead Central Standard Time
+	var/adjustedDDD = time2text(world.realtime, "DDD", -6) //Fenny doesn't wanna use UTC, but instead Central Standard Time
 	return (adjustedDDD in weekdays) // ez
 
 /// A cool lil potluck for subby bottoms to come together and make friends to fuck them
