@@ -125,6 +125,10 @@
 	description = span_warning("I'm missing my family heirloom...")
 	mood_change = -12
 
+/datum/mood_event/masked_mook_incomplete
+	description = span_warning("I'm forced to breathe the horrors of the wastes!")
+	mood_change = -3
+
 /datum/mood_event/healsbadman
 	description = span_warning("I feel a lot better, but wow that was disgusting.")
 	mood_change = -4

@@ -786,21 +786,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
 	if(istype(mask))
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "masked_mook_incomplete")
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "masked_mook", /datum/mood_event/masked_mook)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "masked_mook")
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "masked_mook_incomplete", /datum/mood_event/masked_mook_incomplete)
 
-/datum/mood_event/masked_mook
-	description = span_nicegreen("I'm safe in my protective mask.")
-	mood_change = 3
-	timeout = 0
-
-/datum/mood_event/masked_mook_incomplete
-	description = span_warning("I'm forced to breathe the horrors of the wastes!")
-	mood_change = -3
-	timeout = 0
 
 /* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
