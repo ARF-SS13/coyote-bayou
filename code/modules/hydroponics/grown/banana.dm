@@ -38,19 +38,6 @@
 	if(istype(peel))
 		peel.grind_results = list(/datum/reagent/consumable/banana_peel = seed.potency * 0.2)
 
-/obj/item/reagent_containers/food/snacks/grown/banana/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is aiming [src] at [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/items/bikehorn.ogg', 50, 1, -1)
-	sleep(25)
-	if(!user)
-		return (OXYLOSS)
-	user.say("BANG!", forced = "banana")
-	sleep(25)
-	if(!user)
-		return (OXYLOSS)
-	user.visible_message("<B>[user]</B> laughs so hard they begin to suffocate!")
-	return (OXYLOSS)
-
 //Banana Peel
 /obj/item/grown/bananapeel
 	seed = /obj/item/seeds/banana
@@ -64,11 +51,6 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
-
-/obj/item/grown/bananapeel/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is deliberately slipping on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -1)
-	return (BRUTELOSS)
 
 //Banana Spider.
 /obj/item/seeds/banana/exotic_banana

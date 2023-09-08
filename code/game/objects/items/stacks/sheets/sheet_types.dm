@@ -224,11 +224,6 @@ GLOBAL_LIST_INIT(lead_recipes, list ( \
 	. = ..()
 	. += GLOB.metal_recipes
 
-/obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
-
 // Plasteel
 
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
@@ -1055,11 +1050,6 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 /obj/item/stack/sheet/hay/get_main_recipes()
 	. = ..()
 	. += GLOB.hay_recipes
-
-/obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!"))
-	addtimer(CALLBACK(user, /mob/proc/gib), 30)
-	return BRUTELOSS
 
 /obj/item/stack/sheet/hay/fifty
 	amount = 50

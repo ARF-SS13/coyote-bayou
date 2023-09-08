@@ -15,10 +15,6 @@
 	resistance_flags = NONE
 	mutantrace_variation = STYLE_MUZZLE
 
-/obj/item/clothing/mask/breath/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is wrapping \the [src]'s tube around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return OXYLOSS
-
 /obj/item/clothing/mask/breath/attack_self(mob/user)
 	adjustmask(user)
 

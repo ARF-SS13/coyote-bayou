@@ -137,8 +137,6 @@
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
-		if(suiciding)
-			. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
 		if(hellbound)
 			. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.")
 		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)

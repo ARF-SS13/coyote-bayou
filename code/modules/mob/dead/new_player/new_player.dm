@@ -553,7 +553,13 @@
 						SSticker.mode.make_antag_chance(humanc)
 
 	if(humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE, FALSE, job, FALSE)
+		SSquirks.AssignQuirks(
+			humanc,
+			humanc.client,
+			TRUE,
+			FALSE,
+			job,
+		)
 	if(humanc.client && humanc.ckey == "tk420634")
 		humanc.client.deadmin()
 

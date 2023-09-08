@@ -59,11 +59,6 @@
 	mood_change = -6
 	timeout = 60 MINUTES
 
-/datum/mood_event/shameful_suicide //suicide_acts that return SHAME, like sord
-	description = span_boldwarning("I can't even end it all!")
-	mood_change = -10
-	timeout = 380 MINUTES
-
 /datum/mood_event/dismembered
 	description = span_boldwarning("AHH! I WAS USING THAT LIMB!")
 	mood_change = -8

@@ -54,8 +54,6 @@
 			to_chat(owner, span_danger("You feel sick..."))
 	if(timer_id)
 		return
-	if(owner.suiciding)
-		return
 	if(owner.stat != DEAD && !converts_living)
 		return
 	if(!owner.getorgan(/obj/item/organ/brain))

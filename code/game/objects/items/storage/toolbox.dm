@@ -47,10 +47,6 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 		. += I
 
 
-/obj/item/storage/toolbox/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] robusts [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/storage/toolbox/emergency
 	name = "emergency toolbox"
 	icon_state = "red"
