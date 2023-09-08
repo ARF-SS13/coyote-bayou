@@ -146,7 +146,7 @@
 
 /datum/emote/living/carbon/human/tongue_flick
 	key = "flick"
-	key_third_person = "flicks their tongue out."
+	key_third_person = "flicks their forked tongue out."
 	message = "flicks their tongue out."
 
 /datum/emote/living/carbon/human/tongue_flick/run_emote(mob/user)
