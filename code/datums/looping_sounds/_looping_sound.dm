@@ -104,8 +104,6 @@
 		timerid = addtimer(CALLBACK(src, .proc/sound_loop, world.time), mid_length + loop_delay, TIMER_CLIENT_TIME | TIMER_STOPPABLE | TIMER_LOOP)
 	else
 		set_timer_wait(timerid, mid_length + loop_delay)
-	if(!can_anyone_hear_me())
-		return 
 	if(!chance || prob(chance))
 		var/sound_play = get_sound(starttime)
 		if(!sound_play) // someone didnt set it up right~
@@ -136,6 +134,8 @@
 		S.volume = volume
 	for(var/i in 1 to atoms_cache.len)
 		var/atom/thing = atoms_cache[i]
+		if(!can_anyone_hear_me(thing))
+			return 
 		if(direct)
 			SEND_SOUND(thing, S)
 		else
@@ -167,20 +167,15 @@
 		var/list/sound_end = pickweight(end_sound)
 		play(sound_end)
 
-/datum/looping_sound/proc/can_anyone_hear_me()
-	var/list/atoms_cache = output_atoms
-	if(!LAZYLEN(atoms_cache))
-		return FALSE
-	// var/list/tocheck = atoms_cache.Copy()
-	// if(LAZYLEN(tocheck) > max_to_check)
-	// 	tocheck.len = max_to_check
-	for(var/atom/outputter in atoms_cache)
-		for(var/client/C in GLOB.clients)
-			if(!C.mob)
-				continue
-			if(C.mob.z != outputter.z)
-				continue
-			var/turf/T = get_turf(outputter)
-			var/turf/CT = get_turf(C.mob)
-			if(get_dist(T, CT) <= SOUND_DISTANCE(extra_range))
-				return TRUE
+/datum/looping_sound/proc/can_anyone_hear_me(atom/thing)
+	if(!istype(thing))
+		return
+	for(var/client/C in GLOB.clients)
+		if(!C.mob)
+			continue
+		if(C.mob.z != thing.z)
+			continue
+		var/turf/T = get_turf(thing)
+		var/turf/CT = get_turf(C.mob)
+		if(get_dist(T, CT) <= SOUND_DISTANCE(extra_range))
+			return TRUE
