@@ -285,8 +285,8 @@ Works together with spawning an observer, noted above.
 	if(!QDELETED(ghost))
 		ghost.client.init_verbs()
 	if(penalize)
-		var/penalty = 15 MINUTES
-		var/roundstart_quit_limit = 15 MINUTES
+		var/penalty = 3 MINUTES
+		var/roundstart_quit_limit = 3 MINUTES
 		if(world.time < roundstart_quit_limit) //add up the time difference to their antag rolling penalty if they quit before half a (ingame) hour even passed.
 			penalty += roundstart_quit_limit - world.time
 		if(penalty)
@@ -318,8 +318,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
 
-	var/penalty = 15 MINUTES
-	var/roundstart_quit_limit = 15 MINUTES
+	var/penalty = 3 MINUTES
+	var/roundstart_quit_limit = 3 MINUTES
 	if(world.time < roundstart_quit_limit)
 		penalty += roundstart_quit_limit - world.time
 	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
@@ -364,8 +364,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(sig_flags & COMPONENT_BLOCK_GHOSTING)
 		return
 
-	var/penalty = 15 MINUTES
-	var/roundstart_quit_limit = 15 MINUTES
+	var/penalty = 3 MINUTES
+	var/roundstart_quit_limit = 3 MINUTES
 	if(world.time < roundstart_quit_limit)
 		penalty += roundstart_quit_limit - world.time
 	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
