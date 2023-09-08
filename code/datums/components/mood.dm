@@ -105,26 +105,44 @@
 			shown_mood += event.mood_change
 		mood *= mood_modifier
 		shown_mood *= mood_modifier
-
+	var/mob/living/owner = parent	
 	switch(mood)
 		if(-INFINITY to MOOD_LEVEL_SAD4)
 			mood_level = 1
+			to_chat(owner, span_warning("WAHGARBL! THIS IS HORRIBLE!!"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
 		if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
 			mood_level = 2
+			to_chat(owner, span_warning("This has got to be the lowest I've ever felt. Surely I can do something to make this better?"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
 		if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
 			mood_level = 3
+			to_chat(owner, span_warning("I can't believe things have been going so badly lately, can it get any worse?"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
 		if(MOOD_LEVEL_SAD2 to MOOD_LEVEL_SAD1)
 			mood_level = 4
+			to_chat(owner, span_warning("Maybe things aren't so good, but-"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_down.ogg'))
 		if(MOOD_LEVEL_SAD1 to MOOD_LEVEL_HAPPY1)
 			mood_level = 5
+			to_chat(owner, span_good("Oh, but... Things aren't so bad, but-"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY1 to MOOD_LEVEL_HAPPY2)
 			mood_level = 6
+			to_chat(owner, span_good("This is nice but-"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY2 to MOOD_LEVEL_HAPPY3)
 			mood_level = 7
+			to_chat(owner, span_good("I feel good about life and the universe! But-"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY3 to MOOD_LEVEL_HAPPY4)
 			mood_level = 8
+			to_chat(owner, span_good("Have things ever been better than they are RIGHT NOW, but what if-"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 		if(MOOD_LEVEL_HAPPY4 to INFINITY)
 			mood_level = 9
+			to_chat(owner, span_warning("WAHGARBL! EVERYTHING IS AWESOME!"))
+			SEND_SOUND(owner, sound('sound/f13effects/karma_up.ogg'))
 	update_mood_icon()
 
 
@@ -143,7 +161,6 @@
 		qdel(src)
 		return
 	var/mob/living/owner = parent
-
 	switch(mood_level)
 		if(1)
 			setSanity(sanity-0.2)
