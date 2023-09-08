@@ -1057,9 +1057,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			job_preferences -= j
 
 	all_quirks = SANITIZE_LIST(all_quirks)
-
-	if(GetQuirkBalance() < 0)
-		reset_quirks()
+	if(!SSquirks.VerifyQuirks(src, TRUE))
+		to_chat(src, span_warning("There was a problem with your quirks! The problem has been resolved though. Please check your quirks and make sure they're correct!"))
+		save_character()
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
@@ -1074,10 +1074,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
-	if(GetQuirkBalance() < 0)
-		reset_quirks("balance")
-	if(GetPositiveQuirkCount() > MAX_QUIRKS)
-		reset_quirks("max")
+	SSquirks.VerifyQuirks(src, TRUE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)

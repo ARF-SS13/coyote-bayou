@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
 import { map } from 'common/collections';
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Section, Stack, Tabs, Icon, Input } from '../components';
 import { Window } from '../layouts';
+import { sanitizeText } from '../sanitize';
 
 // The primary window, holds two sections:
 // the left section is the list of categories in QuirkData,
@@ -13,10 +15,28 @@ import { Window } from '../layouts';
 // Window skeleton!
 export const QuirkMenu = (props, context) => {
   const { act, data } = useBackend(context);
-  // const {
-  //   QuirkData, // the heckhuge list of all quirks and their categories
-  //   UserQuirks, // the quirks the user has
-  // } = data;
+  const {
+    UserName,
+    UserQuirkPoints,
+    UserQuirkGoods,
+    MaxQuirkPoints,
+    MaxGoodQuirks,
+  } = data;
+
+  const QuirkPointReadout = (
+    <Box
+      inline
+      color={UserQuirkPoints >= MaxQuirkPoints ? 'bad' : 'good'}>
+        {UserQuirkPoints}
+    </Box>
+  );
+  const QuirkGoodReadout = (
+    <Box
+      inline
+      color={UserQuirkGoods >= MaxGoodQuirks ? 'bad' : 'good'}>
+        {UserQuirkGoods}
+    </Box>
+  );
 
   return(
     <Window
@@ -25,10 +45,18 @@ export const QuirkMenu = (props, context) => {
       resizable>
       <Window.Content>
         <Section
-          title="Quirk Selector v0.1b"
+          title={"Welcome, " + UserName + "! Lets set up your quirks!"}
           buttons={(
             <QuirkSearchBar />
           )}>
+          <Box
+            textAlign="center"
+            fontSize="14px"
+            color="label">
+            <b>Quirk Points:</b> {QuirkPointReadout} / {MaxQuirkPoints} <br />
+            <b>Good Quirks:</b> {QuirkGoodReadout} / {MaxGoodQuirks}
+            <hr />
+          </Box>
           <Stack fill>
             <Stack.Item>
               <QuirkCategoryList />
@@ -53,13 +81,20 @@ const QuirkSearchBar = (props, context) => {
     SearchTerm,
     setSearchTerm,
   ] = useLocalState(context, 'SearchTerm', '');
+  const [
+    SelectedCategory,
+    setSelectedCategory,
+  ] = useLocalState(context, 'SelectedCategory', QuirkData[0].name);
 
   return(
     <Box inline>
       <Input
         placeholder="Search for a quirk..."
         value={SearchTerm}
-        onChange={(e, value) => setSearchTerm(value)} />
+        onChange={(e, value) =>
+          setSearchTerm(sanitizeText(value)),
+          setSelectedCategory("All")
+        } />
       <Button
         color="transparent"
         tooltip="Clear search"
@@ -234,30 +269,40 @@ const QuirkList = (props, context) => {
 // and here's the format of UserQuirks:
 // [ quirk_key_1, quirk_key_2, ... ]
 // Yeah that ones a lot smaller~
-const QuirkButton = (QuirkKey, cat, context) => {
+const QuirkButton = (QuirkKey, context) => {
   const { act, data } = useBackend(context);
   const {
+    MaxQuirkPoints,
+    MaxGoodQuirks,
     AllQuirks, // the flat heckhuge list of all quirks
-    UserQuirks, // the names of the quirks the user has
+    UserQuirkKeys,
+    UserQuirkPoints,
+    UserQuirkGoods,
     UserCkey, // the ckey of the user, to tell BYOND who to give the quirk to
   } = data;
-
   const Quirk = AllQuirks[QuirkKey];
 
-  const QuirkName = Quirk.Qname;
-  const QuirkValue = Quirk.Qvalue;
+  const QuirkName = Quirk.Qname || "Quirk";
+  const QuirkValue = Quirk.Qvalue || 0;
   const PlusOrMinus = QuirkValue == 0 ? '' : QuirkValue > 0 ? '+' : '-';
-  const QuirkDesc = Quirk.Qdesc;
-  const QuirkMechanics = Quirk.Qmechanics;
-  const QuirkConflicts = Quirk.Qconflicts; // this is an array!
+  const QuirkDesc = Quirk.Qdesc || "This is a quirk! Not much is known about it!";
+  const QuirkMechanics = Quirk.Qmechanics || "Supposedly does something!";
+  const QuirkConflicts = Quirk.Qconflicts || []; // this is an array!
 
-  const QuirkIsSelected = UserQuirks.includes(QuirkKey);
-  const UserHasConflictingQuirk = UserQuirks.some(quirk => (
+  const UserHasConflictingQuirk = UserQuirkKeys.some(quirk => (
     QuirkConflicts.includes(quirk)
-  ));
-  const UserConflictingQuirkKey = UserQuirks.find(quirk => (
-    QuirkConflicts.includes(quirk)
-  ));
+    ));
+  // const UserConflictingQuirkName = UserQuirkKeys.find(quirk => (
+  //   QuirkConflicts.includes(quirk)
+  //   ));
+
+  const QuirkIsSelected = UserQuirkKeys.includes(QuirkKey);
+
+  const UserCantAffordQuirk = (
+    UserQuirkPoints + QuirkValue > MaxQuirkPoints
+  ) || (
+    QuirkValue > 0 && UserQuirkGoods + 1 > MaxGoodQuirks
+  );
 
   return(
     <Button
@@ -266,7 +311,7 @@ const QuirkButton = (QuirkKey, cat, context) => {
       height="fit-content"
       textAlign="left"
       selected={QuirkIsSelected}
-      disabled={UserHasConflictingQuirk}
+      disabled={UserHasConflictingQuirk || UserCantAffordQuirk}
       onClick={() => act('SelectQuirk', {
         Quirk: QuirkKey,
         Ckey: UserCkey,
