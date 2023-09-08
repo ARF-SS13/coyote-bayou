@@ -48106,13 +48106,13 @@
 	},
 /area/f13/wasteland/city)
 "hzm" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_common{
+	color = "#888888"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/tribal)
 "hzp" = (
 /obj/structure/fence,
@@ -57915,13 +57915,12 @@
 /turf/open/transparent/openspace,
 /area/f13/building/coyote/nash/museum/groundfloor)
 "jKX" = (
-/obj/item/glasswork/blowing_rod,
-/obj/item/glasswork/blowing_rod,
-/obj/structure/table/wood,
-/turf/open/floor/wood_common{
-	color = "#888888"
+/obj/structure/stone_tile/block,
+/obj/structure/spirit_hole{
+	anchored = 1
 	},
-/area/f13/building/tribal)
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal/caveofforever)
 "jKZ" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt{
@@ -79212,8 +79211,7 @@
 	},
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "ozp" = (
-/obj/structure/table/wood,
-/obj/item/glasswork/glasskit,
+/obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -94695,12 +94693,6 @@
 	color = "#779999"
 	},
 /area/f13/building/trader)
-"sdh" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood_common{
-	color = "#888888"
-	},
-/area/f13/building/tribal)
 "sdl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -99582,13 +99574,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tgy" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 9
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/anvil/obtainable/basic,
+/turf/open/floor/wood_common{
+	color = "#888888"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 5
-	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/tribal)
 "tgA" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -103762,11 +103752,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/tunnel/southeast)
-"ubn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spirit_hole,
-/turf/open/floor/fakespace,
-/area/f13/building/tribal/caveofforever)
 "ubt" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel{
@@ -105284,13 +105269,12 @@
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "uwC" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 10
+/obj/structure/furnace{
+	light_range = 3
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
+/turf/open/floor/wood_common{
+	color = "#888888"
 	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/tribal)
 "uwE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -125486,8 +125470,8 @@ eAK
 aOk
 eTM
 eTM
-sGn
-ubn
+jKX
+gLJ
 dyk
 roF
 uYv
@@ -127306,7 +127290,7 @@ dNy
 xdV
 vQI
 qTj
-sdh
+vQI
 ofx
 fCt
 jjH
@@ -127561,7 +127545,7 @@ hXV
 qkI
 riS
 gPq
-oYg
+vQI
 vQI
 ozp
 fxF
@@ -127820,7 +127804,7 @@ bre
 nxE
 vQI
 vQI
-jKX
+vQI
 ofx
 fCt
 fCt
