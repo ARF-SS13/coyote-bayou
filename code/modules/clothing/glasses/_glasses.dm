@@ -135,6 +135,18 @@
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
 
+/obj/item/clothing/glasses/eyepatchl
+	name = "white eyepatch left"
+	desc = "Avast ye wasteys!"
+	icon_state = "epwhitel"
+	item_state = "eyepatch"
+
+/obj/item/clothing/glasses/eyepatchr
+	name = "white eyepatch right"
+	desc = "Avast ye wasteys!"
+	icon_state = "epwhiter"
+	item_state = "eyepatch"
+
 /obj/item/clothing/glasses/eyepatch/goji
 	name = "emblazoned eyepatch"
 	desc = "You have the eye of a mad dog!"
