@@ -12505,10 +12505,10 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "aQi" = (
-/obj/structure/car/rubbish3,
 /obj/structure/spacevine,
+/obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder - E"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/downtown)
 "aQj" = (
@@ -18181,6 +18181,20 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/building)
+"bjL" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 21;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Tucker & Carl Wayne Av.";
+	desc = "You're at the hospital.  North is the mines, east is the mall, south is the school, and west is a residential district.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - E"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "bjO" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/condiment/yeast,
@@ -20255,6 +20269,20 @@
 /obj/structure/fluff/fokoff_sign,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"bvn" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 3;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "7th & Tucker St.";
+	desc = "West is back towards Nash, north is the hospital.  You're at the school. South is old stores and east is the mall.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - S"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "bvo" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -30303,6 +30331,15 @@
 /area/f13/ruins)
 "dtM" = (
 /obj/structure/spacevine,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 22;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Texas Blvd. & Highway 82";
+	desc = "West is the depot.  North the old mines.  East is deeper into Texarkana, so is south.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
 	},
@@ -30317,6 +30354,7 @@
 /area/f13/wasteland)
 "dtX" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/car,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2bottom"
 	},
@@ -34042,6 +34080,15 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "emX" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "7th & Loop 369";
+	desc = "North is the Mall and towards Ashdown.  East is blocked by rubble.  South is back towards the country club.  West is into the ruins of Texarkana.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerturn - E"
 	},
@@ -34388,11 +34435,11 @@
 	},
 /area/f13/wasteland/city)
 "eqz" = (
-/obj/structure/tires/five,
+/obj/structure/lamp_post/doubles/bent,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2top"
+	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/wasteland/city)
+/area/f13/wasteland/city/nash/theloop)
 "eqK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -34466,6 +34513,9 @@
 	open = 0
 	},
 /obj/structure/table/booth,
+/obj/structure/barricade/bars{
+	layer = 3.5
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/underground/cave/coyote/antmound)
 "erE" = (
@@ -37547,6 +37597,12 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/building/abandoned)
+"fcx" = (
+/obj/structure/tires/five,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/city)
 "fcz" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -46968,6 +47024,21 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"hlq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Loop 369 & 71";
+	desc = "North is towards Ashdown.  East is the old train station.  South is back down the loop towards the country club.  West is towards Mass Fusion.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "hlr" = (
 /obj/machinery/light/small{
 	color = "#FF0000";
@@ -53245,6 +53316,15 @@
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "iFF" = (
 /obj/structure/barricade/sandbags,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 22;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Highway 82 & Loop 369";
+	desc = "West is Nash & the depot.  Continue East to enter Texarkana.  North is an old prison.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
 	},
@@ -53377,7 +53457,16 @@
 /obj/structure/sign/crosswalk{
 	icon_state = "stop";
 	pixel_x = 10;
-	pixel_y = 4
+	pixel_y = 4;
+	layer = 4
+	},
+/obj/structure/sign/crosswalk{
+	pixel_x = 6;
+	pixel_y = 4;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Dodd St. & Loop 369";
+	desc = "The corner of Dodd and the Texarkana loop.  Nash is to the west."
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
@@ -56044,6 +56133,20 @@
 	icon_state = "interior4"
 	},
 /area/f13/building/abandoned)
+"jnR" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Milton & School Rd.";
+	desc = North is downtown. East is the Texarkana Hotel.  South is Loop 369.  West is the school & Residential housing.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - S"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "jog" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
@@ -60831,10 +60934,17 @@
 /area/f13/building/abandoned)
 "kum" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/car,
-/obj/structure/spacevine,
 /obj/effect/decal/waste{
 	icon_state = "goo5"
+	},
+/obj/structure/sign/crosswalk{
+	pixel_x = -6;
+	pixel_y = 4;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Loop 369 & Cantrell St.";
+	desc = To the east is Texarkana in the istance, to the west the city of Nash.  North is the depot.";
+	layer = 6
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - W"
@@ -72615,6 +72725,15 @@
 	pixel_x = -9;
 	pixel_y = 3
 	},
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Highway 67 & Museum Av.";
+	desc = "North is Nash.  East is the Museum.  South is towards Redwater.  West is the Anthill.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - W"
 	},
@@ -81817,6 +81936,20 @@
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
+"pdO" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Highway 67 towards Redwater";
+	desc = "North is Nash.  East is the Museum.  South is towards Redwater.  West is the Anthill.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft2bottom"
+	},
+/area/f13/wasteland/city)
 "pec" = (
 /obj/structure/closet/locker,
 /obj/machinery/light/broken{
@@ -86390,6 +86523,20 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building/abandoned)
+"qie" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 22;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Texas Blvd. & 7th";
+	desc = "West is Nash, East is the old Hospital.  North and south are ruins.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - E"
+	},
+/area/f13/wasteland/city/nash/downtown)
 "qij" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
@@ -88595,8 +88742,16 @@
 	},
 /area/f13/wasteland)
 "qGn" = (
-/obj/structure/lamp_post/doubles/bent,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Milton & Loop 369";
+	desc = "North is the school, east is Texarkana Country Club, South is the museum.  West is back towards Nash.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -90399,6 +90554,15 @@
 /area/f13/building/abandoned)
 "rbE" = (
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 15;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "7th & Milton St.";
+	desc = "North is the hospital.  East the mall.  South is Spring Lake Park.  West is residential districts.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
 	},
@@ -97514,6 +97678,20 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ruins)
+"sKp" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Loop 369 & 71";
+	desc = "North is towards Ashdown.  East is the old train station.  South is back down the loop towards the country club.  West is towards Mass Fusion.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerturn - E"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "sKw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/sofa/right{
@@ -111949,6 +112127,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vZM" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Welcome to city of Nash!";
+	desc = "This old sign used by the old world shows the population of the town of Nash, its massively out of date and has been crossed through with black paint.  It now says 'we don't even know' across it.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -113255,6 +113442,15 @@
 /obj/structure/sign/crosswalk{
 	pixel_x = 13;
 	pixel_y = 12
+	},
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Tucker and Loop 369";
+	desc = North is the mining ruins.  East is mass fusion.  South the hospital and into the ruins.  West is back towards the depot.";
+	layer = 6
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
@@ -114832,6 +115028,15 @@
 "wGQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 22;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Texas Blvd. & Cantrell";
+	desc = "West is Nash, East is the Texarkana Business District.  North is Texarkana, south is the old museum.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
 	},
@@ -114987,8 +115192,15 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "wIk" = (
-/obj/structure/lamp_post/doubles/bent,
-/obj/structure/spacevine,
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Loop 369";
+	desc = "North is the mall, east is the blocked path to Garland City.  South is the Texarkana Country club.  West is back towards the strip mall and musuem.";
+	layer = 6
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -138183,7 +138395,7 @@ gHp
 aOk
 fVD
 pbv
-chA
+pbv
 sbI
 xjX
 qoi
@@ -138443,7 +138655,7 @@ pbv
 pbv
 lwE
 xjX
-pbv
+chA
 sbI
 xio
 fVD
@@ -141002,7 +141214,7 @@ qVj
 bhD
 fwI
 dBD
-vBQ
+wJX
 oQJ
 tAg
 gGt
@@ -141258,7 +141470,7 @@ qVj
 qVj
 qIV
 qIV
-wJX
+vBQ
 hmd
 hmd
 oQJ
@@ -145921,9 +146133,9 @@ orp
 orp
 mgg
 iIK
-iIK
-eqz
-mgg
+fcx
+tEj
+pdO
 bZf
 aOk
 aOk
@@ -149264,7 +149476,7 @@ eTv
 cFK
 cFK
 cIY
-iAq
+hlq
 iAq
 aOk
 cFK
@@ -151471,7 +151683,7 @@ fBN
 wlt
 bqu
 wtC
-wrl
+aQi
 gVf
 hCc
 aNw
@@ -151728,7 +151940,7 @@ lGX
 foY
 jXX
 gKP
-aQi
+kXL
 qWl
 hCc
 vKX
@@ -151986,7 +152198,7 @@ rcJ
 pCM
 nhk
 iZf
-tgL
+qie
 tkL
 tkL
 tkL
@@ -152036,7 +152248,7 @@ tJq
 pAJ
 gQR
 dpt
-iKD
+wUx
 wGQ
 ici
 ici
@@ -163521,7 +163733,7 @@ lwl
 aTC
 vnB
 kdi
-tgL
+bjL
 tkL
 tkL
 dJG
@@ -163546,7 +163758,7 @@ mMl
 tkL
 wPH
 tkL
-lGX
+bvn
 qAJ
 xjJ
 eIw
@@ -168689,7 +168901,7 @@ rJw
 fdw
 xRc
 rJw
-qZl
+oOc
 rbE
 tkL
 tkL
@@ -168718,7 +168930,7 @@ sDW
 mMl
 tkL
 tkL
-lGX
+jnR
 qAJ
 rJw
 sfn
@@ -168751,7 +168963,7 @@ mUt
 qGn
 gQR
 ewJ
-rIN
+wUx
 fSq
 bge
 dpt
@@ -180461,7 +180673,7 @@ axt
 dpt
 dpt
 dpt
-emX
+sKp
 piz
 piz
 piz
@@ -180569,7 +180781,7 @@ tJq
 iIK
 iIK
 iIK
-fbM
+eqz
 wIk
 gQR
 dpt

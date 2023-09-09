@@ -44422,6 +44422,20 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
+"tMw" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 1;
+	pixel_y = 11;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Highway 71 & Red Lick Rd.";
+	desc = "North is Ashdown.  East & South both take you back towards Texarkana. West takes you towards Redlick.";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerturn - S"
+	},
+/area/f13/wasteland)
 "tMW" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -106078,8 +106092,8 @@ qES
 uYt
 qES
 iKf
-roR
-oFm
+tMw
+oMa
 oMa
 gUg
 pVV
@@ -106335,8 +106349,8 @@ tfn
 qES
 nJO
 qES
-roR
-oFm
+oMa
+oMa
 oMa
 oMa
 oMa
@@ -106592,8 +106606,8 @@ wfH
 qES
 kFz
 qES
-roR
-bxV
+qHL
+pVV
 qHL
 qHL
 vaj
@@ -106849,8 +106863,8 @@ uYt
 qES
 uYt
 qES
-roR
-oFm
+duP
+oMa
 qHL
 oMa
 oMa
@@ -107106,8 +107120,8 @@ gVe
 qES
 iKf
 iKf
-hmH
-oFm
+qHL
+oMa
 gVU
 oMa
 oMa
@@ -107363,8 +107377,8 @@ fBS
 cro
 cro
 cro
-iLx
-oFm
+xXw
+oMa
 pVV
 gUg
 pVV
