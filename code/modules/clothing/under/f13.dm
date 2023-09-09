@@ -387,6 +387,13 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/customelody
+	name = "Melodys Outfit"
+	desc = "A set of black leggings, a white tshirt, and a flannel jacket with black fleece lining."
+	icon_state = "melodysoutfit"
+	item_state = "melodysoutfit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
 
 /obj/item/clothing/under/f13/futuredresses
 	name = "Blue lined sci-fi themed dress"
