@@ -28,6 +28,11 @@
 	mood_change = 2
 	timeout = 5 MINUTES
 
+/datum/mood_event/pet_pillow
+	description = span_nicegreen("This is really nice pillow! If only it were real..")
+	mood_change = 2
+	timeout = 5 MINUTES
+
 /*
 /datum/mood_event/pet_animal/add_effects(mob/animal)
 	description = span_nicegreen("\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!")
