@@ -1334,6 +1334,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
+		/obj/item/cool_book/ashdowncit = 1
 		)
 
 

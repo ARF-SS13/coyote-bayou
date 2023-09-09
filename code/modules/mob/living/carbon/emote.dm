@@ -442,4 +442,49 @@
 
 //hahadorks
 
+/datum/emote/living/carbon/powerpose
+	key = "powerpose"
+	message = "puts their hands on their hips and takes a steady pose."
+	message_param = "power poses like a super hero at %t."
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/snaplook
+	key = "snaplook"
+	message = "snaps their gaze around!"
+	message_param = "snaps their gaze around, locking onto %t!"
+
+/datum/emote/living/carbon/peace
+	key = "peace"
+	message = "throws up a peace sign!"
+	message_param = "throws up a peace sign at %t!"
+
+/datum/emote/living/carbon/thebird
+	key = "thebird"
+	message = "fires off the bird!"
+	message_param = "full sends the bird at %t!"
+
+/datum/emote/living/carbon/thebirds
+	key = "thebirds"
+	message = "gives both barrels of the bird!"
+	message_param = "double barrels the birds at %t!"
+
+/datum/emote/living/carbon/vlick
+	key = "vlick"
+	message = "pretends to lick between their spread pointer and middle finger!"
+
+/datum/emote/living/carbon/cheekpoke
+	key = "cheekpoke"
+	message = "pushes their tongue into their cheek."
+
+/datum/emote/living/carbon/headbob
+	key = "headbob"
+	message = "is bobbing their head to something."
+
+/datum/emote/living/carbon/hairflick
+	key = "hairflick"
+	message = "flicks their hair back out of their face."
+
+/datum/emote/living/carbon/hairchew
+	key = "hairchew"
+	message = "chews on their bangs a little bit."
 

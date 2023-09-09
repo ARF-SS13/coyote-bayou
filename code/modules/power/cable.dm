@@ -530,13 +530,6 @@ By design, d1 is the smallest direction and d2 is the highest
 	color = cable_color
 	update_icon()
 
-/obj/item/stack/cable_coil/suicide_act(mob/user)
-	if(locate(/obj/structure/chair/stool) in get_turf(user))
-		user.visible_message(span_suicide("[user] is making a noose with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	else
-		user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(OXYLOSS)
-
 /obj/item/stack/cable_coil/Initialize(mapload, new_amount = null)
 	. = ..()
 	pixel_x = rand(-2,2)

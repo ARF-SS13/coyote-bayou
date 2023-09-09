@@ -801,6 +801,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.regenerate_icons()*/
 */
 
+
 /datum/quirk/paper_skin
 	name = "Paper Skin"
 	desc = "Your flesh is weaker, resulting in receiving cuts more easily."

@@ -83,7 +83,7 @@
 	REMOVE_TRAIT(C, TRAIT_ANTIMAGIC, SPECIES_TRAIT)
 	..()
 
-//The suicide bombers of golemkind
+//The bombers of golemkind
 /datum/species/golem/plasma
 	name = "Plasma Golem"
 	id = "plasma golem"
@@ -683,14 +683,14 @@
 /obj/structure/cloth_pile/proc/revive()
 	if(QDELETED(src) || QDELETED(cloth_golem)) //QDELETED also checks for null, so if no cloth golem is set this won't runtime
 		return
-	if(cloth_golem.suiciding || HAS_TRAIT(cloth_golem, TRAIT_NOCLONE))
+	if(HAS_TRAIT(cloth_golem, TRAIT_NOCLONE))
 		QDEL_NULL(cloth_golem)
 		return
 
 	invisibility = INVISIBILITY_MAXIMUM //disappear before the animation
 	new /obj/effect/temp_visual/mummy_animation(get_turf(src))
 	if(cloth_golem.revive(full_heal = TRUE, admin_revive = TRUE))
-		cloth_golem.grab_ghost() //won't pull if it's a suicide
+		cloth_golem.grab_ghost()
 	sleep(20)
 	cloth_golem.forceMove(get_turf(src))
 	cloth_golem.visible_message(span_danger("[src] rises and reforms into [cloth_golem]!"),span_userdanger("You reform into yourself!"))

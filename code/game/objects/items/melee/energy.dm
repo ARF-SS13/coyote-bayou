@@ -23,12 +23,6 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/melee/transforming/plasmacutter/suicide_act(mob/user)
-	if(!active)
-		transform_weapon(user, TRUE)
-	user.visible_message(span_suicide("[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
-	return (BRUTELOSS|FIRELOSS)
-
 /obj/item/melee/transforming/plasmacutter/add_blood_DNA(list/blood_dna)
 	return FALSE
 
@@ -111,11 +105,6 @@
 	attack_verb_on = list()
 	light_color = "#00FF00"
 	total_mass = null
-
-/obj/item/melee/transforming/plasmacutter/regular/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|FIRELOSS)
-
 
 /obj/item/melee/transforming/plasmacutter/regular/eve
 	name = "plasma cutter eve"
