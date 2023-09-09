@@ -243,6 +243,45 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	body_parts_hidden = CHEST|ARMS
 
+/obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket
+	name = "CrystalJock Bomber jacket"
+	desc = "A very cyberpunk looking jacket. It is quite comfortable to wear and gives you an estimated added coolness factor of 20%. For the chooms and wastelander looking to make their wardrobe extra spiffy."
+	icon_state = "cyberjacket"
+	item_state = "cyberjacket"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
+	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/two
+	name = "Darkened Crystaljock jacket"
+	desc = "A darkened version of a very cyberpunk looking jacket. Looks very comfortable to wear."
+	icon_state = "cyberjacket2"
+	item_state = "cyberjacket2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/three
+	name = "Highlighted Crystaljock jacket"
+	desc = "A highlighted version of a very cyberpunk looking jacket. Looks very comfortable to wear."
+	icon_state = "cyberjacket3"
+	item_state = "cyberjacket3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+
+/obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom
+	name = "Luxurious Cropped Crystaljock jacket"
+	desc = "An extremely pristine and luxuriously made custom crystaljock jacket from Latos Systems finest tailors. Made with a quilted interior, white leather, and quality stitching. This is a jacket to behold with those golden zippers and a lovely symbol of a moth and cat on the back of the jacket. A jacket for the most luxuriously and lavish living chooms."
+	icon_state = "cyberjacketcustom"
+	item_state = "cyberjacketcustom"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 /obj/item/clothing/suit/armor/outfit/jacket/merc
 	name = "merc veteran coat"
 	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
