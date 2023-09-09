@@ -40,10 +40,6 @@
 			loc.visible_message(span_warning("[src] starts sounding a little off..."))
 		STOP_PROCESSING(SSprocessing, src)
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, span_warning("You don't have the dexterity to do this!"))

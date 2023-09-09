@@ -219,6 +219,54 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/biter/big
+	name = "Big Biter"
+	desc = "Talk shit, get BIG bit."
+	color = "#884444"
+	force = 15
+	force_wielded = 18
+	attack_speed = 5
+
+/obj/item/hand_item/biter/sabre
+	name = "Sabre Toothed Biter"
+	desc = "Damn bitch, you eat with them teeth?"
+	color = "#FF4444"
+	force = 5
+	force_wielded = 27
+	attack_speed = 6
+
+/obj/item/hand_item/biter/fast
+	name = "Big Biter"
+	desc = "Talk shit, get SPEED bit."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 3
+
+/obj/item/hand_item/biter/play
+	name = "Play Biter"
+	desc = "Someone really should just muzzle you."
+	color = "#ff44ff"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/biter/spicy
+	name = "Spicy Biter"
+	desc = "Your sickly little nibbler, good for dropping fools."
+	color = "#44FF44"
+	force = 5
+	force_wielded = 10
+	attack_speed = 5
+
+
+/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+
 /obj/item/hand_item/clawer
 	name = "Clawer"
 	desc = "Thems some claws."
@@ -234,6 +282,52 @@
 	attack_speed = 2
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/clawer/big
+	name = "Big Clawer"
+	desc = "Thems some BIG ASS claws."
+	color = "#884444"
+	force = 7
+	force_wielded = 9
+	attack_speed = 3
+
+/obj/item/hand_item/clawer/razor
+	name = "Razor Sharp Clawers"
+	desc = "RIP AND TEAR."
+	color = "#FF4444"
+	force = 5
+	force_wielded = 17
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/fast
+	name = "Fast Clawer"
+	desc = "Thems some FAST ASS claws."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/play
+	name = "Play Clawer"
+	desc = "Basically just a bean thwapper."
+	color = "#FF88FF"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/spicy
+	name = "Spicy Clawer"
+	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
+	color = "#44FF44"
+	force = 7
+	force_wielded = 11 //7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 /obj/item/hand_item/shover
 	name = "shover"
@@ -254,7 +348,90 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/playfultail/
+	name = "playful tail"
+	desc = "A playful tail, good for teasing."
+	icon_state = "proboscis"
+	force = 0
+	force_wielded = 0
+	attack_speed = 3
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/tail
+	name = "tailwhack"
+	desc = "A tail. Good for whacking."
+	icon_state = "proboscis"
+	force = 5
+	force_wielded = 10
+	attack_speed = 4 
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/tail/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
+
+/obj/item/hand_item/tail/fast
+	name = "fast tail"
+	desc = "A speedy tail that's very good at whackin' fast."
+	icon_state = "proboscis"
+	color = "#448844"
+	force = 3
+	force_wielded = 7
+	attack_speed = 2
+
+/obj/item/hand_item/tail/big
+	name = "big tail"
+	desc = "A big tail that whacks hard."
+	icon_state = "proboscis"
+	color = "#884444"
+	force = 10
+	force_wielded = 20
+	attack_speed = 5
+
+/obj/item/hand_item/tail/spicy
+	name = "spicy tail"
+	desc = "A tail with something that can inject venom on it."
+	icon_state = "proboscis"
+	color = "#44FF44"
+	force = 4
+	force_wielded = 8
+	attack_speed = 5
+
+/obj/item/hand_item/tail/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+/obj/item/hand_item/tail/thago
+	name = "dangerous tail"
+	desc = "A god damn mighty tail that would kill an allosaurus.  Maybe."
+	icon_state = "proboscis"
+	color = "#FF4444"
+	force = 12
+	force_wielded = 24
+	attack_speed = 6
+
+/obj/item/hand_item/beans
+	name = "beans"
+	desc = "Them's ya' beans. Touch em' to things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "bean"
+	color = "#ff88bb"
+	attack_verb = list("beans", "baps", "smushes")
+	hitsound = "sound/effects/attackblob.ogg"
+	force = 0
+	force_wielded = 0
+	throwforce = 0
+	attack_speed = 0
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))

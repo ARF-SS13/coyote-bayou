@@ -190,6 +190,7 @@
 #define F13FOLLOWERGUARD	(1<<2)
 #define F13FOLLOWERVOLUNTEER	(1<<3)
 #define F13PROFESSOR	(1<<4)
+#define F13LEADPROFESSOR (1<<5)
 
 #define KHAN		(1<<12)
 

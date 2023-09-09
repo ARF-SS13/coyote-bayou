@@ -11,10 +11,6 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_integrity = 200
 
-/obj/item/paicard/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is staring sadly at [src]! [user.p_they()] can't keep living without real human intimacy!"))
-	return OXYLOSS
-
 /obj/item/paicard/Initialize()
 	SSpai.pai_card_list += src
 	add_overlay("pai-off")

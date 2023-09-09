@@ -272,7 +272,7 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
-		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2, 
+		/obj/item/gun/ballistic/automatic/pistol/automag/m6 = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 1,
 		/obj/item/gun/ballistic/automatic/famas = 2,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 2,
@@ -382,7 +382,7 @@
 /obj/effect/spawner/lootdrop/f13/rare_melee
 	name = "rare melee"
 	loot = list(
-		/obj/item/melee/powerfist/f13 = 10,
+		/obj/item/melee/unarmed/powerfist = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
 		/obj/item/twohanded/legionaxe = 10,
@@ -1109,6 +1109,7 @@
 		/obj/item/stack/sheet/mineral/titanium/twentyfive = 3,
 		/obj/item/stack/rods/scaffold/ten = 1,
 		/obj/item/stack/sheet/lead/ten = 1,
+		/obj/item/ingot/mythril = 20,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_mats
@@ -1740,5 +1741,6 @@
 	/obj/item/restraints/handcuffs = 5,
 	/obj/item/toy/crayon/spraycan = 5,
 	/obj/item/laser_pointer = 5,
-	/obj/item/coin/dvd = 5
+	/obj/item/weapon/dvd = 5,
+	/obj/item/storage/daki = 5
 	)

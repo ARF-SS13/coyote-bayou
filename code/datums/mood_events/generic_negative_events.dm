@@ -51,18 +51,13 @@
 
 /datum/mood_event/depression
 	description = span_warning("I feel sad for no particular reason.")
-	mood_change = -12
+	mood_change = -14
 	timeout = 60 MINUTES
 
 /datum/mood_event/pessimism
 	description = span_warning("I feel kind of sad for no particular reason.")
-	mood_change = -6
+	mood_change = -8
 	timeout = 60 MINUTES
-
-/datum/mood_event/shameful_suicide //suicide_acts that return SHAME, like sord
-	description = span_boldwarning("I can't even end it all!")
-	mood_change = -10
-	timeout = 380 MINUTES
 
 /datum/mood_event/dismembered
 	description = span_boldwarning("AHH! I WAS USING THAT LIMB!")
@@ -124,6 +119,10 @@
 /datum/mood_event/family_heirloom_missing
 	description = span_warning("I'm missing my family heirloom...")
 	mood_change = -12
+
+/datum/mood_event/masked_mook_incomplete
+	description = span_warning("I'm forced to breathe the horrors of the wastes!")
+	mood_change = -3
 
 /datum/mood_event/healsbadman
 	description = span_warning("I feel a lot better, but wow that was disgusting.")

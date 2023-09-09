@@ -655,7 +655,7 @@ SUBSYSTEM_DEF(vote)
 	else
 		. += "<h2>Start a vote:</h2><hr><ul><li>"
 		//train
-		var/aveor = CONFIG_GET(flag/allow_vote_transfer)
+		var/aveor = SSautotransfer.allow_vote_transfer
 		if(trialmin || aveor)
 			. += "<a href='?src=[REF(src)];vote=transfer'>Call train</a>"
 		else
@@ -664,7 +664,7 @@ SUBSYSTEM_DEF(vote)
 			. += "\t(<a href='?src=[REF(src)];vote=toggle_allow_vote_transfer'>[aveor ? "Allowed" : "Disallowed"]</a>)"
 		. += "</li><li>"
 		//restart
-		var/avr = CONFIG_GET(flag/allow_vote_restart)
+		var/avr = SSautotransfer.allow_vote_restart
 		if(trialmin || avr)
 			. += "<a href='?src=[REF(src)];vote=restart'>Restart</a>"
 		else
@@ -703,23 +703,23 @@ SUBSYSTEM_DEF(vote)
 				reset()
 		if("toggle_restart")
 			if(usr.client.holder)
-				CONFIG_SET(flag/allow_vote_restart, !CONFIG_GET(flag/allow_vote_restart))
+				TOGGLE_VAR(SSautotransfer.allow_vote_restart)
 		if("toggle_allow_vote_transfer")
 			if(usr.client.holder)
-				CONFIG_SET(flag/allow_vote_transfer, !CONFIG_GET(flag/allow_vote_transfer))
+				TOGGLE_VAR(SSautotransfer.allow_vote_transfer)
 		if("toggle_gamemode")
 			if(usr.client.holder)
 				CONFIG_SET(flag/allow_vote_mode, !CONFIG_GET(flag/allow_vote_mode))
 		if("restart")
-			var/min_restart_time = CONFIG_GET(number/min_end_vote_time)
-			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
+			var/min_restart_time = SSautotransfer.min_end_vote_time
+			if(SSautotransfer.allow_vote_restart || usr.client.holder)
 				if(min_restart_time < world.time)
 					initiate_vote("restart",usr.key)
 				else
 					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
 		if("transfer")
-			var/min_transfer_time = CONFIG_GET(number/min_end_vote_time)
-			if(CONFIG_GET(flag/allow_vote_transfer) || usr.client.holder)
+			var/min_transfer_time = SSautotransfer.min_end_vote_time
+			if(SSautotransfer.allow_vote_transfer || usr.client.holder)
 				if(min_transfer_time < world.time)
 					initiate_vote("transfer",usr.key)
 				else

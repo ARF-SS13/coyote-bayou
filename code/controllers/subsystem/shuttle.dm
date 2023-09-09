@@ -65,8 +65,18 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/datum/turf_reservation/preview_reservation
 
+	var/train_company = "Foxen Transit Co."
+	var/train_company_slogan = "the quickest critters on rails."
+	var/train_name = "some kind of train"
+	var/local_train_station = "Texarkana Memorial Station"
+	var/where_from = "parts unknown"
+	var/where_to = "parts also unknown"
+
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
+	train_name = get_train_name()
+	where_from = get_where_from()
+	where_to = get_where_from()
 
 	for(var/pack in subtypesof(/datum/supply_pack))
 		var/datum/supply_pack/P = new pack()
@@ -658,11 +668,97 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The day has come to an end and the train called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "sound/f13/quest.ogg", "Vault-Tec")
+		priority_announce("The [train_name] from [where_from] will arrive at [local_train_station] in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/quest.ogg", "[train_company]")
 		log_game("Round end vote passed. Train has been auto-called.")
 		message_admins("Round end vote passed. Train has been auto-called.")
 	emergencyNoRecall = TRUE
 	endvote_passed = TRUE
+
+/datum/controller/subsystem/shuttle/proc/get_where_from()
+	var/list/town_names = list(
+		"Parts Unknown",
+		"Grubbyville",
+		"Great Eastern Heap",
+		"O'Craterson Valley",
+		"The River of Flame",
+		"UESC Thunderhawk-IV",
+		"O'Craterson Valley",
+		"Rustyville",
+		"New Rustyville",
+		"Rustyville II: Rusty Harder",
+		"Rustyville III: The Re-Rustening",
+		"Rustyville IV: Rusty With a Vengeance",
+		"Bloodline Township",
+		"The Divide",
+		"West Commonlands",
+		"Brick",
+		"Gorman",
+		"Central Command",
+		"The Donut",
+		"Hivenode IXII",
+		"World's Largest Potato Memorial Forest",
+		"Terrorville",
+		"The Large Rat",
+		"Spiders, New Sharon",
+		"The End of the Line",
+		"Foxtucky",
+		"The Well of Souls",
+	)
+	return "[pick(town_names)]"
+
+/datum/controller/subsystem/shuttle/proc/get_train_name()
+	if(prob(3))
+		if(prob(10))
+			return "Dingus Express"
+		return "Dingo Express"
+	var/first_part = ""
+	var/second_part = ""
+	var/express_synonym = ""
+	var/list/first_parts = list(
+		"Vixen",
+		"Foxy",
+		"Vulpine",
+		"Vulpes",
+		"Tod",
+		"Reynard",
+		"Skulk",
+		"Fennec",
+		"Cross",
+		"Silver",
+		"Red",
+		"Swift",
+		"Foxtrot",
+		"Digitalis",
+		"Vulpini",
+		"Braixen",
+		"Vulpix",
+		"Kitsune",
+		"Renard",
+		"Kyuubi",
+		"Kitsunetsuki",
+		"Kitsunemimi",
+		"Kitsunebi",
+		"Lisa",
+		"Meg",
+		"Mike",
+		"Quick-Brown-Fox",
+		"Firefox",
+		"Mozilla",
+		"Kyuulen",
+	)
+	first_part = pick(first_parts)
+	second_part = "-[rand(10, 99)]\Roman[rand(1, 150)]"
+	var/list/synonyms_for_express = list(
+		"Express",
+		"Commute",
+		"Transit",
+		"Shuttle",
+		"Train",
+		"Engine",
+	)
+	express_synonym = pick(synonyms_for_express)
+
+	return "[first_part][second_part] [express_synonym]"
 
 /datum/controller/subsystem/shuttle/proc/action_load(datum/map_template/shuttle/loading_template, obj/docking_port/stationary/destination_port)
 	// Check for an existing preview

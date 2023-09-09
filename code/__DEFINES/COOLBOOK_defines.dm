@@ -9,6 +9,7 @@
 #define BOOKENTRY_TITLE "title"
 #define BOOKENTRY_AUTHOR "author"
 #define BOOKENTRY_DESCRIPTION "desc"
+#define BOOKENTRY_COVER "cover"
 #define BOOKENTRY_CONTENT "content"
 #define BOOKENTRY_IMAGE "image"
 #define BOOKENTRY_PLAYERMADE "playermade"
@@ -24,6 +25,8 @@
 #define BOOK_TXT_IMG_DIVIDER "|"
 /// The second part of the token
 #define BOOK_TXT_IMG_END ">:"
+/// The order this chapter should be in.
+#define BOOK_TXT_ORDER_TOKEN "%ORDER:"
 
 /// Image flags! These are used to indicate how an image should be scaled
 /// By default, it will be scaled down to fit the allowed space, but not stretched
@@ -37,6 +40,7 @@
 #define BOOK_CHAPTER_JSON_CONTENT "content"
 #define BOOK_CHAPTER_INDEX "index"
 #define BOOK_CHAPTER_IS_INDEX "is_index"
+#define BOOK_CHAPTER_JSON_ORDER "order"
 /// Set this to true if you want the chapter to be automatically split into pages
 /// Otherwise you'll have to manually put page breaks in the chapter file
 #define BOOK_CHAPTER_JSON_AUTOPAGE "autopage"

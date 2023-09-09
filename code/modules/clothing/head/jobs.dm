@@ -17,15 +17,6 @@
 	dog_fashion = /datum/dog_fashion/head/chef
 	beepsky_fashion = /datum/beepsky_fashion/chef
 
-/obj/item/clothing/head/chefhat/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef."))
-	user.say("Bork Bork Bork!", forced = "chef hat suicide")
-	sleep(20)
-	user.visible_message(span_suicide("[user] climbs into an imaginary oven!"))
-	user.say("BOOORK!", forced = "chef hat suicide")
-	playsound(user, 'sound/machines/ding.ogg', 50, 1)
-	return(FIRELOSS)
-
 //Captain
 /obj/item/clothing/head/caphat
 	name = "captain's hat"

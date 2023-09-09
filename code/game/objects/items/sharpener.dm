@@ -5,8 +5,8 @@
 	desc = "A block that makes things sharp."
 	force = 5
 	var/used = 0
-	var/increment = 4
-	var/max = 30
+	var/increment = 5
+	var/max = 200
 	var/prefix = "sharpened"
 	var/requires_sharpness = 1
 
@@ -37,6 +37,8 @@
 		return
 	if(!(signal_out & COMPONENT_BLOCK_SHARPEN_APPLIED))
 		I.force = clamp(I.force + increment, 0, max)
+		I.force_wielded = clamp(I.force_wielded + increment, 0, max)
+		I.force_unwielded = clamp(I.force_unwielded + increment, 0, max)
 
 	user.visible_message(span_notice("[user] sharpens [I] with [src]!"), span_notice("You sharpen [I], making it much more deadly than before."))
 	I.sharpness = SHARP_POINTY

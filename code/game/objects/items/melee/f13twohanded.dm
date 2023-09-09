@@ -62,10 +62,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
-/obj/item/twohanded/legionaxe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/twohanded/legionaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
@@ -105,10 +101,6 @@
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-
-/obj/item/twohanded/fireaxe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
 
 /obj/item/twohanded/fireaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -226,15 +218,6 @@
 	. = ..()
 	if(explosive)
 		. += "spearbomb_overlay"
-
-/obj/item/twohanded/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(explosive) //Citadel Edit removes qdel and explosive.forcemove(AM)
-		user.say("[war_cry]", forced="spear warcry")
-		explosive.prime()
-		user.gib()
-		return BRUTELOSS
-	return BRUTELOSS
 
 /obj/item/twohanded/spear/examine(mob/user)
 	. = ..()
@@ -838,18 +821,6 @@
 		var/obj/machinery/door/D = A
 		D.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration, attacked_by = user)
 
-
-/obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)
-	if(on)
-		user.visible_message(span_suicide("[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
-		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-		if(myhead)
-			myhead.dismember()
-	else
-		user.visible_message(span_suicide("[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
-	return(BRUTELOSS)
 
 //autoaxe		Keywords: Damage 10/29, 2x attackspeed, Wound Bonus, structure bonus damage, 0.3 AP
 /obj/item/twohanded/steelsaw/autoaxe

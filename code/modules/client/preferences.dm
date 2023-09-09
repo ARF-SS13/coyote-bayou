@@ -2146,13 +2146,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = 5
+	var/bal = 100
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-			return bal + 1 //max 1 point regardless of how many prosthetics
+			return bal + 33 //max 33 point regardless of how many prosthetics
 	return bal
 
 /datum/preferences/proc/GetPositiveQuirkCount()

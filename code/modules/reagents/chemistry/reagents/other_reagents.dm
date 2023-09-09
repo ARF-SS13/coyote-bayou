@@ -415,10 +415,10 @@
 				for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
 					qdel(BS)
 	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
-		if(!M.stuttering)
-			M.stuttering = 1
-		M.stuttering = min(M.stuttering+4, 10)
-		M.Dizzy(5)
+		//if(!M.stuttering)
+		//	M.stuttering = 1
+		//M.stuttering = min(M.stuttering+4, 10)
+		//M.Dizzy(5)
 		if(iscultist(M) && prob(20))
 			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
@@ -1013,8 +1013,8 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/copper/reaction_obj(obj/O, reac_volume)
-	if(istype(O, /obj/item/stack/sheet/metal))
-		var/obj/item/stack/sheet/metal/M = O
+	if(istype(O, /obj/item/stack/sheet/plasteel))
+		var/obj/item/stack/sheet/plasteel/M = O
 		reac_volume = min(reac_volume, M.amount)
 		new/obj/item/stack/sheet/bronze(get_turf(M), reac_volume)
 		M.use(reac_volume)
@@ -2837,16 +2837,15 @@
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	ghoulfriendly = TRUE
 	taste_description = "sickly sweet relief"
+	overdose_threshold = 20
 	fractional_mult_divisor = 10
 
 /datum/reagent/red_ambrosia/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-50 * effect_mult)
-	M.adjustOxyLoss(-50 * effect_mult)
-	M.adjustBruteLoss(-50 * effect_mult)
-	M.adjustFireLoss(-50 * effect_mult)
-	M.adjustToxLoss(-50 * effect_mult, TRUE) //heals TOXINLOVERs
-	M.adjustCloneLoss(-50 * effect_mult)
-	M.adjustStaminaLoss(20 * effect_mult)
+	M.adjustBruteLoss(-100 * effect_mult)
+	M.adjustOxyLoss(-80 * effect_mult)
+	M.adjustFireLoss(-100 * effect_mult)
+	M.adjustToxLoss(-80 * effect_mult, TRUE) //heals TOXINLOVERs
+	M.adjustStaminaLoss(80 * effect_mult)
 	..()
 
 /datum/reagent/green_ambrosia
@@ -2866,6 +2865,10 @@
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, -100 * effect_mult)
 	M.adjustOrganLoss(ORGAN_SLOT_TONGUE, -100 * effect_mult)
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -100 * effect_mult)
+	M.adjustCloneLoss(-100 * effect_mult)
+	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		M.blood_volume = (BLOOD_VOLUME_NORMAL*M.blood_ratio)
+
 	..()
 
 /datum/reagent/blue_ambrosia

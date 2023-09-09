@@ -290,6 +290,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "carpspawn"
 	icon_state = "carp_spawn"
 
+
 // lone op (optional)
 /obj/effect/landmark/loneopspawn
 	name = "loneop+ninjaspawn"
@@ -781,7 +782,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/shopkeeper
-	name = "Shopkeeper"
+	name = "Texarkana Trade Worker"
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/banker
@@ -910,6 +911,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 //Followers of the Apocalypse -- nah, nash medical stuff
 /obj/effect/landmark/start/f13/followersadministrator
 	name = "Senior Doctor"
+	icon_state = "Chief Medical Officer"
+
+/obj/effect/landmark/start/f13/followersseniorscientist
+	name = "Senior Scientist"
 	icon_state = "Chief Medical Officer"
 
 /obj/effect/landmark/start/f13/followersdoctor

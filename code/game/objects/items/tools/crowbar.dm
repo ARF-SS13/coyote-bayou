@@ -26,11 +26,6 @@
 	wound_bonus = -10
 	bare_wound_bonus = 5
 
-/obj/item/crowbar/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/weapons/genhit.ogg', 50, 1, -1)
-	return (BRUTELOSS)
-
 /obj/item/crowbar/red
 	icon_state = "crowbar_red"
 	toolspeed = 0.9
@@ -75,11 +70,6 @@
 	usesound = 'sound/items/jaws_pry.ogg'
 	force = 15
 	toolspeed = 0.25
-
-/obj/item/crowbar/power/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/items/jaws_pry.ogg', 50, 1, -1)
-	return (BRUTELOSS)
 
 /obj/item/crowbar/power/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)

@@ -163,6 +163,7 @@
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
+	new /obj/item/bedsheet/zebra(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"

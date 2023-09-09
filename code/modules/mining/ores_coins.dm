@@ -406,23 +406,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/get_item_credit_value()
 	return value
 
-/obj/item/coin/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] contemplates suicide with \the [src]!"))
-	if (!attack_self(user))
-		user.visible_message(span_suicide("[user] couldn't flip \the [src]!"))
-		return SHAME
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 10)//10 = time takes for flip animation
-	return MANUAL_SUICIDE
-
-/obj/item/coin/proc/manual_suicide(mob/living/user)
-	var/index = sideslist.Find(coinflip)
-	if (index==2)//tails
-		user.visible_message(span_suicide("\the [src] lands on [coinflip]! [user] promptly falls over, dead!"))
-		user.adjustOxyLoss(200)
-		user.death(0)
-	else
-		user.visible_message(span_suicide("\the [src] lands on [coinflip]! [user] keeps on living!"))
-
 /obj/item/coin/examine(mob/user)
 	. = ..()
 	. += span_info("It's worth [value] credit\s.")
@@ -469,7 +452,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
 								span_notice("You flip [src]. It lands on [coinflip]."), \
 								span_italic("You hear the clattering of loose change."))
-	return TRUE//did the coin flip? useful for suicide_act
+	return TRUE//did the coin flip? Not useful in the slightest anymore!
 
 /obj/item/coin/gold
 	custom_materials = list(/datum/material/gold = 400)

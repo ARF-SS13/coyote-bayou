@@ -44,6 +44,7 @@ GLOBAL_LIST_EMPTY(sacred_well_items)
 				/obj/item/gun/ballistic/bow/crossbow,
 				/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor,
 				/obj/item/clothing/suit/armor/light/tribal/simple,
+				/obj/item/scrying,
 				/obj/item/clothing/suit/hooded/cloak)
 
 // sacred items

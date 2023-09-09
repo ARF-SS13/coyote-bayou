@@ -16,10 +16,6 @@
 	var/on = TRUE
 	var/shock_cooldown = FALSE
 
-/obj/item/electropack/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
-
 /obj/item/electropack/Initialize()
 	. = ..()
 	set_frequency(frequency)

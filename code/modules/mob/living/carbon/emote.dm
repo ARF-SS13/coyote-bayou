@@ -154,6 +154,39 @@
 	else
 		qdel(tendy)
 
+//We are not naming this 'beaner' so help me god
+/datum/emote/living/carbon/bean
+	key = "bean"
+	key_third_person = "beans"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/bean/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
+		return
+	var/obj/item/hand_item/beans/bean = new(user)
+	if(user.put_in_active_hand(bean))
+		to_chat(user, span_notice("You ready your beans for WAR!!"))
+	else
+		qdel(bean)
+
+/datum/emote/living/carbon/cuphand
+	key = "cuphand"
+	key_third_person = "uses their hand as a cup."
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/cuphand/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your cup your hand to hold liquids."))
+		return
+	var/obj/item/reagent_containers/food/drinks/sillycup/handcup/handcup = new(user)
+	if(user.put_in_active_hand(handcup))
+		to_chat(user, span_notice("Your cuphand is ready!"))
+	else
+		qdel(handcup)
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"
@@ -165,25 +198,80 @@
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
 		return
-	var/obj/item/hand_item/biter/bite = new(user)
-	if(user.put_in_active_hand(bite))
+	var/which_biter_to_spawn
+	if(HAS_TRAIT(user, TRAIT_BIGBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/big
+	else if(HAS_TRAIT(user, TRAIT_FASTBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/fast
+	else if(HAS_TRAIT(user, TRAIT_PLAYBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/play
+	else if(HAS_TRAIT(user, TRAIT_SPICYBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/spicy
+	else if(HAS_TRAIT(user, TRAIT_SABREBITE))
+		which_biter_to_spawn = /obj/item/hand_item/biter/sabre
+	else 
+		which_biter_to_spawn = /obj/item/hand_item/biter 
+	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
+	if(user.put_in_active_hand(bite)) 
 		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
 	else
 		qdel(bite)
 
+//Tailer//
+/datum/emote/living/carbon/tailer
+	key = "tailer"
+	key_third_person = "tails"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/tailer/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your brains too busy to use your tail right now, maybe empty up your hands a bit?"))
+		return
+	var/which_tail_to_spawn
+	if(HAS_TRAIT(user, TRAIT_TAILWHIP))
+		which_tail_to_spawn = /obj/item/hand_item/tail/fast
+	else if(HAS_TRAIT(user, TRAIT_TAILSMASH))
+		which_tail_to_spawn = /obj/item/hand_item/tail/big
+	else if(HAS_TRAIT(user, TRAIT_TAILSPICY))
+		which_tail_to_spawn = /obj/item/hand_item/tail/spicy
+	else if(HAS_TRAIT(user, TRAIT_TAILTHAGO))
+		which_tail_to_spawn = /obj/item/hand_item/tail/thago
+	else if(HAS_TRAIT(user, TRAIT_TAILPLAY))
+		which_tail_to_spawn = /obj/item/hand_item/playfultail
+	else 
+		which_tail_to_spawn = /obj/item/hand_item/tail
+	var/obj/item/hand_item/tail = new which_tail_to_spawn(user)
+	if(user.put_in_active_hand(tail)) 
+		to_chat(user, span_notice("You swing your tail around, ready for action!"))
+	else
+		qdel(tail)
 
 //Clawer//
-/datum/emote/living/carbon/claw
-	key = "claw"
-	key_third_person = "claws"
-	restraint_check = TRUE
+/datum/emote/living/carbon/claw 
+	key = "claw" 
+	key_third_person = "claws" 
+	restraint_check = TRUE 
 
 /datum/emote/living/carbon/claw/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to use your claws!"))
 		return
-	var/obj/item/hand_item/clawer/claw = new(user)
+	var/which_clawer_to_spawn
+	if(HAS_TRAIT(user, TRAIT_BIGCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/big
+	else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/fast
+	else if(HAS_TRAIT(user, TRAIT_PLAYCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/play
+	else if(HAS_TRAIT(user, TRAIT_SPICYCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/spicy
+	else if(HAS_TRAIT(user, TRAIT_RAZORCLAW))
+		which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
+	else 
+		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
+	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
 	if(user.put_in_active_hand(claw))
 		to_chat(user, span_notice("You get your claws ready to slice!"))
 	else
@@ -287,3 +375,116 @@
 	hasPickedUp = FALSE
 	timerEnabled = FALSE
 	damageMult = initial(damageMult)
+
+/datum/emote/living/carbon/tsk
+	key = "tsk"
+	message = "tsks audibly."
+
+/datum/emote/living/carbon/braidpull
+	key = "braidpull"
+	message = "pulls their braid fitfully."
+
+/datum/emote/living/carbon/hairfix
+	key = "hairfix"
+	message = "is trying to fix their hair."
+
+/datum/emote/living/carbon/handclasp
+	key = "clasp"
+	message = "clasps their hands in front of them."
+
+/datum/emote/living/carbon/eyeroll
+	key = "eyeroll"
+	message = "rolls their eyes."
+
+/datum/emote/living/carbon/tongueclick
+	key = "tongueclick"
+	message = "clicks their tongue as if annoyed."
+
+/datum/emote/living/carbon/kneel
+	key = "kneel"
+	message = "slowly drops to the ground, kneeling with their legs underneath them."
+
+/datum/emote/living/carbon/snicker
+	key = "snicker"
+	message = "snickers quietly to themselves."
+
+/datum/emote/living/carbon/huff
+	key = "huff"
+	message = "huffs loudly, exhausted or exasperated. Who knows."
+
+/datum/emote/living/carbon/wait
+	key = "wait"
+	message = "holds up one finger, giving the universal sign for 'wait a moment'."
+
+/datum/emote/living/carbon/waveon
+	key = "waveon"
+	message = "waves a hand motioning someone, or something, onward."
+
+/datum/emote/living/carbon/halt
+	key = "halt"
+	message = "raises a hand palm out, motioning for someone or something to halt."
+
+/datum/emote/living/carbon/eh
+	key = "eh"
+	message = "raises a hand then motions with it horizontal, similar to waves. A pretty noncomital thing."
+
+/datum/emote/living/carbon/daydream
+	key = "daydream"
+	message = "seems lost in a daydream, their eyes slightly glazed over and giving a thousand yard stare."
+
+/datum/emote/living/carbon/drool
+	key = "drool"
+	message = "looks like they're drooling a little."
+
+/datum/emote/living/carbon/blank
+	key = "blank"
+	message = "looks like they have no thoughts in their head."
+
+//hahadorks
+
+/datum/emote/living/carbon/powerpose
+	key = "powerpose"
+	message = "puts their hands on their hips and takes a steady pose."
+	message_param = "power poses like a super hero at %t."
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/snaplook
+	key = "snaplook"
+	message = "snaps their gaze around!"
+	message_param = "snaps their gaze around, locking onto %t!"
+
+/datum/emote/living/carbon/peace
+	key = "peace"
+	message = "throws up a peace sign!"
+	message_param = "throws up a peace sign at %t!"
+
+/datum/emote/living/carbon/thebird
+	key = "thebird"
+	message = "fires off the bird!"
+	message_param = "full sends the bird at %t!"
+
+/datum/emote/living/carbon/thebirds
+	key = "thebirds"
+	message = "gives both barrels of the bird!"
+	message_param = "double barrels the birds at %t!"
+
+/datum/emote/living/carbon/vlick
+	key = "vlick"
+	message = "pretends to lick between their spread pointer and middle finger!"
+
+/datum/emote/living/carbon/cheekpoke
+	key = "cheekpoke"
+	message = "pushes their tongue into their cheek."
+
+/datum/emote/living/carbon/headbob
+	key = "headbob"
+	message = "is bobbing their head to something."
+
+/datum/emote/living/carbon/hairflick
+	key = "hairflick"
+	message = "flicks their hair back out of their face."
+
+/datum/emote/living/carbon/hairchew
+	key = "hairchew"
+	message = "chews on their bangs a little bit."
+
