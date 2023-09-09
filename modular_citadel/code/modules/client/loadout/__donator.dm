@@ -729,13 +729,12 @@
 // L
 
 /datum/gear/donator/kits/LilKuddles
-	name = "Khajiits Memories"
+	name = "MelMels Belongings"
 	path = /obj/item/storage/box/large/custom_kit/kuddles2
 	ckeywhitelist = list("LilKuddles")
 
 /obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
-	new /obj/item/melee/coyote/oldlongsword/kuddleslongsword(src)
-	new /obj/item/clothing/suit/hooded/robes(src)
+	new /obj/item/clothing/under/f13/customelody(src)
 
 
 /datum/gear/donator/kits/lifelessghoul
