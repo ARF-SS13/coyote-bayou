@@ -32,10 +32,6 @@ GENETICS SCANNER
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	custom_materials = list(/datum/material/iron=150)
 
-/obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS
-
 /obj/item/t_scanner/attack_self(mob/user)
 
 	on = !on
@@ -90,10 +86,6 @@ GENETICS SCANNER
 	var/mode = 1
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
-
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
-	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	scanmode = (scanmode + 1) % 3
@@ -667,10 +659,6 @@ GENETICS SCANNER
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click [src] to activate the barometer function.")
-
-/obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
-	return BRUTELOSS
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)

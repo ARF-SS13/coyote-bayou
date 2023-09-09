@@ -798,15 +798,6 @@
 	var/rigged = 0		// true if rigged to explode
 	var/brightness = 2 //how much light it gives off
 
-/obj/item/light/suicide_act(mob/living/carbon/user)
-	if (status == LIGHT_BROKEN)
-		user.visible_message(span_suicide("[user] begins to stab [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		return BRUTELOSS
-	else
-		user.visible_message(span_suicide("[user] begins to eat \the [src]! It looks like [user.p_theyre()] not very bright!"))
-		shatter()
-		return BRUTELOSS
-
 /obj/item/light/tube
 	name = "light tube"
 	desc = "A replacement light tube."

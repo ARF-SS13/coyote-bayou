@@ -28,10 +28,6 @@
 		/datum/reagent/consumable/peanut_butter = list("peanutbutter", "peanut butter jar", "A deliciously and sticky spread made from peanuts."))
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 
-/obj/item/reagent_containers/food/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!"))
-	return OXYLOSS
-
 /obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
@@ -137,15 +133,6 @@
 		icon_state = "emptyshaker"
 	else
 		icon_state = "saltshakersmall"
-
-/obj/item/reagent_containers/food/condiment/saltshaker/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to swap forms with the salt shaker! It looks like [user.p_theyre()] trying to commit suicide!"))
-	var/newname = "[name]"
-	name = "[user.name]"
-	user.name = newname
-	user.real_name = newname
-	desc = "Salt. From dead crew, presumably."
-	return (TOXLOSS)
 
 /obj/item/reagent_containers/food/condiment/saltshaker/afterattack(obj/target, mob/living/user, proximity)
 	. = ..()

@@ -59,15 +59,6 @@
 		infection = new()
 		infection.Insert(target)
 
-/obj/item/zombie_hand/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(isliving(user))
-		var/mob/living/L = user
-		var/obj/item/bodypart/O = L.get_bodypart(BODY_ZONE_HEAD)
-		if(O)
-			O.dismember()
-	return (BRUTELOSS)
-
 /obj/item/zombie_hand/proc/check_feast(mob/living/target, mob/living/user)
 	if(target.stat == DEAD)
 		var/hp_gained = target.maxHealth
@@ -140,14 +131,6 @@
 		infection = new()
 		infection.Insert(target)*/
 
-/obj/item/ghoul_zombie_hand/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(isliving(user))
-		var/mob/living/L = user
-		var/obj/item/bodypart/O = L.get_bodypart(BODY_ZONE_HEAD)
-		if(O)
-			O.dismember()
-	return (BRUTELOSS)
 
 /obj/item/ghoul_zombie_hand/proc/check_feast(mob/living/target, mob/living/user)
 	if(target.stat == DEAD)

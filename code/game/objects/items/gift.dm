@@ -24,10 +24,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 	pixel_y = rand(-10,10)
 	icon_state = "giftdeliverypackage[rand(1,5)]"
 
-/obj/item/a_gift/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] peeks inside [src] and cries [user.p_them()]self to death! It looks like [user.p_they()] [user.p_were()] on the naughty list..."))
-	return (BRUTELOSS)
-
 /obj/item/a_gift/attack_self(mob/M)
 	if(M && M.mind && M.mind.special_role == "Santa")
 		to_chat(M, span_warning("You're supposed to be spreading gifts, not opening them yourself!"))

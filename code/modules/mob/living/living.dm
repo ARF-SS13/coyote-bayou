@@ -598,7 +598,6 @@
 	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
-		suiciding = 0
 		set_stat(UNCONSCIOUS) //the mob starts unconscious
 		if(!eye_blind)
 			blind_eyes(1)
