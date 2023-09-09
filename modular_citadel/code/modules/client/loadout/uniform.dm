@@ -314,6 +314,101 @@
 	path = /obj/item/clothing/under/f13/nursescrubs
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
+/datum/gear/uniform/futureeesuits
+	name = "white futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/futureeesuits/mifusuit
+	name = "Mixed futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/futureeesuits/orfusuit
+	name = "Orange futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits
+	name = "Burgundy suit"
+	path = /obj/item/clothing/under/f13/civsuits/burg
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/newblacksuit
+	name = "Black suit"
+	path = /obj/item/clothing/under/f13/civsuits/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/whimodsuit
+	name = "White suit"
+	path = /obj/item/clothing/under/f13/civsuits/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/greemodsuit
+	name = "Green suit"
+	path = /obj/item/clothing/under/f13/civsuits/four
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/remodsuit
+	name = "Red suit"
+	path = /obj/item/clothing/under/f13/civsuits/five
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/shirt
+	name = "Shirted suit"
+	path = /obj/item/clothing/under/f13/civsuits
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliancasualwear
+	name = "Red business casual"
+	path = /obj/item/clothing/under/f13/civbuscasual
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagecol
+	name = "Colorful vintage casual wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagesalm
+	name = "Salmon vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagetrop
+	name = "Tropical vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/four
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintageblue
+	name = "Teal vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/five
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/futuristicdresses
+	name = "Blue lined futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/futuristicdresses/red
+	name = "Red lined futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/futuristicdresses/skirted
+	name = "Skirted futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/civilliancasualwear/gold
+	name = "Gold business casual"
+	path = /obj/item/clothing/under/f13/civbuscasual/six
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/futursticofficer
+	name = "Full dress uniform"
+	path = /obj/item/clothing/under/f13/scifiofficer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
