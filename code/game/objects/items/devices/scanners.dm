@@ -91,6 +91,13 @@ GENETICS SCANNER
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
 
+/obj/item/healthanalyzer/tribal
+	name = "wounds book"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "health_tribal"
+	item_state = "health_tribal"
+	desc = "A big compendium containing a complete guide on all illnesses and wounds."
+
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
 	return BRUTELOSS
