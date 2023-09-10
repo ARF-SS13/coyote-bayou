@@ -159,7 +159,7 @@
 	key_third_person = "licks their chops."
 	message = "licks their chops."
 
-/datum/emote/living/carbon/human/nose_lick/can_run_emote(mob/user)
+/datum/emote/living/carbon/human/nose_lick/run_emote(mob/user)
 	. = ..()
 	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "noselickpink")
 	flick_overlay_global(emote_animation, GLOB.clients, 0.9 SECONDS)
