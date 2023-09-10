@@ -55539,6 +55539,16 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14
+	},
 /turf/closed/wall/f13/sunset/brick_small{
 	color = "#884444"
 	},
@@ -65112,6 +65122,13 @@
 	color = "#999999"
 	},
 /area/f13/underground/cave/coyote/antmound)
+"lrZ" = (
+/obj/structure/lamp_post{
+	dir = 4;
+	light_on = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lsk" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/f13/wood,
@@ -86548,12 +86565,11 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/obj/machinery/light/lampost{
-	dir = 1;
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
+	},
+/obj/structure/lamp_post{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -95442,9 +95458,9 @@
 	color = "#a98c5d";
 	dir = 8
 	},
-/obj/machinery/light/lampost{
-	dir = 1;
-	pixel_x = -32
+/obj/structure/lamp_post{
+	dir = 8;
+	light_on = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -96879,10 +96895,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 4
-	},
-/obj/machinery/light/lampost{
-	pixel_x = -11;
-	pixel_y = 8
 	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -129074,7 +129086,7 @@ wxw
 tfE
 aOk
 aOk
-aOk
+lrZ
 aOk
 sAW
 bLf
