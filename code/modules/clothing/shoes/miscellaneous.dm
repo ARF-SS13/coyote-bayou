@@ -159,7 +159,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
 
-/obj/item/clothing/shoes/workboots/mining
+/obj/item/clothing/shoes/workboots/mining 		//HMMMM
 	name = "mining boots"
 	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."
 	icon_state = "explorer"
@@ -406,6 +406,7 @@
 	equip_delay_other = 1.5
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon = 'icons/fallout/clothing/shoes.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/unmcb/winter
 	name = "Winterized UNMC Boots"
@@ -523,25 +524,30 @@
 /obj/item/clothing/shoes/clown
 	name = "Clown Shoes"
 	icon_state = "clown"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/brit
 	name = "Commonwealth Boots"
 	desc = "British style black ankle boots with a canvas gaiter around the ankle"
 	icon_state = "brit_boots"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/fifi
 	name = "Fifi"
 	icon_state = "fifi_socks"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/ww2brown
 	name = "Type three service shoe"
 	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
 	icon_state = "ww2_brown"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/putt
 	name = "long puttees"
 	desc = "Long woolen leg wraps used sense the first world war"
 	icon_state = "putt"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/cowboy/alt
 	name = "Cowboy Boots, alt"
