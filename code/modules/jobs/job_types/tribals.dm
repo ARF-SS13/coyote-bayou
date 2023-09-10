@@ -333,7 +333,6 @@ Druid
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
-		/obj/item/healthanalyzer/tribal
 	)
 
 /*
@@ -427,7 +426,6 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
-		/obj/item/healthanalyzer/tribal
 	)
 
 /datum/outfit/loadout/craftsman
