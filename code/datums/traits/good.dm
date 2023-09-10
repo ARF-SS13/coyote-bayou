@@ -853,7 +853,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
 	desc = "You're real good at just scooping people up."
-	value = 14
+	value = 6
 	mob_trait = TRAIT_QUICKER_CARRY
 	gain_text = span_notice("You feel like a MASTER fireman!")
 	lose_text = span_danger("You're ability to carry folk seems massively diminished.")
@@ -862,7 +862,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickcarry
 	name = "Quick Carry"
 	desc = "You're better than most at just scooping people up."
-	value = 18
+	value = 4
 	mob_trait = TRAIT_QUICK_CARRY
 	gain_text = span_notice("You feel like an ACCEPTABLE fireman!")
 	lose_text = span_danger("You're ability to carry folk seems a bit diminished.")
