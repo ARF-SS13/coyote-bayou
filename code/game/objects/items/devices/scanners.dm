@@ -122,6 +122,58 @@ GENETICS SCANNER
 
 	add_fingerprint(user)
 
+//-->tribal health scanner, it does the same thing but it takes time to use it
+/obj/item/healthanalyzer/tribal
+	name = "general malaise book"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "health_tribal"
+	item_state = "health_tribal"
+	desc = "A big compendium containing a complete guide on all illnesses and wounds."
+
+/obj/item/healthanalyzer/tribal/attack_self(mob/user)
+	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+	to_chat(user, span_notice("You rapidly skim through the pages, trying to find the section you need."))
+
+	if(do_after(user, 3 SECONDS, target = src))
+		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+		scanmode = (scanmode + 1) % 3
+		switch(scanmode)
+			if(SCANMODE_HEALTH)
+				to_chat(user, span_notice("You have found the physical health references."))
+			if(SCANMODE_CHEMICAL)
+				to_chat(user, span_notice("You have found the chemical contents references."))
+			if(SCANMODE_WOUND)
+				to_chat(user, span_notice("You have found the extra info on wounds."))
+
+/obj/item/healthanalyzer/tribal/attack(mob/living/M, mob/living/carbon/human/user)
+	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+	to_chat(user, span_notice("You begin to compare the malaise in front of you with the references on the book."))
+
+	if(do_after(user, 5 SECONDS, target = src))
+		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+
+		// Clumsiness/brain damage check
+		if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
+			user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
+								span_notice("You stupidly try to analyze the floor's vitals!"))
+			to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
+						\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
+						\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+						\n<span class='info'>Body temperature: ???</span>")
+			return
+
+		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
+							span_notice("You analyze [M]'s vitals."))
+
+		if(scanmode == SCANMODE_HEALTH)
+			healthscan(user, M, mode, advanced)
+		else if(scanmode == SCANMODE_CHEMICAL)
+			chemscan(user, M)
+		else
+			woundscan(user, M, src)
+
+		add_fingerprint(user)
+
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = 1, advanced = FALSE)
 	if(isliving(user) && (user.incapacitated() || user.eye_blind))

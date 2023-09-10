@@ -36,6 +36,14 @@
 	category = CAT_MEDICAL
 	always_available = FALSE
 
+/datum/crafting_recipe/healthanalyzer_tribal		//I know this is extremely arrogant of me to place this recipe as first one, but it makes sense to be, because it's an health analyzer
+	name = "General Malaise Book"					//if you don't like it, either shift it where you want or send a pipebomb to my address. -Gin
+	result = /obj/item/healthanalyzer/tribal
+	time = 20 SECONDS
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/paper = 5)
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/upgraded_gauze
 	name = "Improved Gauze"
 	result = /obj/item/stack/medical/gauze/adv/five
