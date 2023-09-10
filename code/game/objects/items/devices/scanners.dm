@@ -91,46 +91,6 @@ GENETICS SCANNER
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
 
-
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
-	return BRUTELOSS
-
-/obj/item/healthanalyzer/attack_self(mob/user)
-	scanmode = (scanmode + 1) % 3
-	switch(scanmode)
-		if(SCANMODE_HEALTH)
-			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
-		if(SCANMODE_CHEMICAL)
-			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
-		if(SCANMODE_WOUND)
-			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
-
-/obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
-
-	// Clumsiness/brain damage check
-	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
-		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
-							span_notice("You stupidly try to analyze the floor's vitals!"))
-		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
-					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
-					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
-					\n<span class='info'>Body temperature: ???</span>")
-		return
-
-	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-						span_notice("You analyze [M]'s vitals."))
-
-	if(scanmode == SCANMODE_HEALTH)
-		healthscan(user, M, mode, advanced)
-	else if(scanmode == SCANMODE_CHEMICAL)
-		chemscan(user, M)
-	else
-		woundscan(user, M, src)
-
-	add_fingerprint(user)
-
 //-->tribal health scanner, it does the same thing but it takes time to use it
 /obj/item/healthanalyzer/tribal
 	name = "general malaise book"
@@ -182,6 +142,46 @@ GENETICS SCANNER
 			woundscan(user, M, src)
 
 		add_fingerprint(user)
+
+/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
+	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
+	return BRUTELOSS
+
+/obj/item/healthanalyzer/attack_self(mob/user)
+	scanmode = (scanmode + 1) % 3
+	switch(scanmode)
+		if(SCANMODE_HEALTH)
+			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
+		if(SCANMODE_CHEMICAL)
+			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
+		if(SCANMODE_WOUND)
+			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
+
+/obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
+	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
+
+	// Clumsiness/brain damage check
+	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
+		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
+							span_notice("You stupidly try to analyze the floor's vitals!"))
+		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
+					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
+					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+					\n<span class='info'>Body temperature: ???</span>")
+		return
+
+	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
+						span_notice("You analyze [M]'s vitals."))
+
+	if(scanmode == SCANMODE_HEALTH)
+		healthscan(user, M, mode, advanced)
+	else if(scanmode == SCANMODE_CHEMICAL)
+		chemscan(user, M)
+	else
+		woundscan(user, M, src)
+
+	add_fingerprint(user)
+
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = 1, advanced = FALSE)
