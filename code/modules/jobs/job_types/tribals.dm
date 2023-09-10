@@ -192,6 +192,7 @@ Tribal Shaman
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
 		/obj/item/healthanalyzer/tribal,
+		/obj/item/cool_book/shamanguide = 1,
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
