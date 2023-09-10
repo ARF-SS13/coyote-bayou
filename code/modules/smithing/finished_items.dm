@@ -308,6 +308,8 @@
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.8
 	force = 28
+	force_unwielded = 28
+	force_wielded = 28
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 //////////////////////////
