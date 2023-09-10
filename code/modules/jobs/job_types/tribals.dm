@@ -334,6 +334,7 @@ Druid
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/cool_book/druidguide=1
+		
 	)
 
 /*
