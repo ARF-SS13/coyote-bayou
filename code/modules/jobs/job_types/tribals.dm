@@ -191,6 +191,7 @@ Tribal Shaman
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
+		/obj/item/healthanalyzer/tribal
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -332,7 +333,8 @@ Druid
 		/obj/item/warpaint_bowl=1,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/healthanalyzer/tribal
 	)
 
 /*
@@ -426,6 +428,7 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
+		/obj/item/healthanalyzer/tribal
 	)
 
 /datum/outfit/loadout/craftsman
