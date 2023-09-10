@@ -524,9 +524,9 @@
 			if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
 				SetSleeping(800)	//puts you to sleep for 80 seconds, so it's not abusable.
 				to_chat(src, span_notice("You start to wake up groggily, this is going to take a minute."))
-		else
-			SetSleeping(400)
-			to_chat(src, span_notice("You start to wake up."))
+			else
+				SetSleeping(400)
+				to_chat(src, span_notice("You start to wake up."))
 	else
 		if(alert(src, "Are you sure you want to sleep for a long time? (You can wake up by pressing this button again)", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(18000)	//puts you to sleep for 30 minutes, better than never waking up in case my code sucks badly.
