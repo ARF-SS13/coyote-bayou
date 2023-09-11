@@ -290,6 +290,52 @@
 	force = 20
 	force_wielded = 30
 
+/obj/item/hand_item/clawer/big
+	name = "Big Clawer"
+	desc = "Thems some BIG ASS claws."
+	color = "#884444"
+	force = 7
+	force_wielded = 9
+	attack_speed = 3
+
+/obj/item/hand_item/clawer/razor
+	name = "Razor Sharp Clawers"
+	desc = "RIP AND TEAR."
+	color = "#FF4444"
+	force = 5
+	force_wielded = 17
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/fast
+	name = "Fast Clawer"
+	desc = "Thems some FAST ASS claws."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/play
+	name = "Play Clawer"
+	desc = "Basically just a bean thwapper."
+	color = "#FF88FF"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/clawer/spicy
+	name = "Spicy Clawer"
+	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
+	color = "#44FF44"
+	force = 7
+	force_wielded = 11 //7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = 4
+
+/obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
 /obj/item/hand_item/shover
 	name = "shover"
 	desc = "Stay back!"
