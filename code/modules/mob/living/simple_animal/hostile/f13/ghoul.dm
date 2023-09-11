@@ -423,7 +423,7 @@
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
-	name = "Ranged Ghoul Solder"
+	name = "Ranged Ghoul Soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
