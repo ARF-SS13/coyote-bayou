@@ -16,7 +16,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/quirk_blacklist = list() //A list a list of quirks that can not be used with each other. Format: list(quirk1,quirk2),list(quirk3,quirk4)
 
 	/// Format: list("category1" = list(QUIRK_NAME = name, QUIRK_VALUE = value, etc))
-	var/list/cached_quirk_data = list() // A list of all quirks, sorted by category, for the tgui
+	var/list/cached_all_categories = list() // A list of all categories, for the tgui
 	var/list/cached_all_quirks = list() // A list of all quirks, sorted by name, for the tgui -- no categories!
 	var/top_quirk // The top quirk, for the tgui
 	var/max_points = 100 // Hey guess where this was
@@ -26,6 +26,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	/// How many people took each quirk
 	/// Format: list("/datum/quirk/path" = list("Charname", "Charname2"), ...)
 	var/list/quirks_used = list()
+
+	var/debug_categories = TRUE // makes up a bunch of categories for us
 
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(LAZYLEN(quirks))
@@ -82,7 +84,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	// 	list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
 	// ) // not // got em // fingerguns
 	..()
-	to_chat(world, span_boldannounce("Loaded [LAZYLEN(quirks)] quirks across [length(cached_quirk_data)] categories!"))
+	to_chat(world, span_boldannounce("Loaded [LAZYLEN(quirks)] quirks across [length(cached_all_quirks)] categories!"))
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 	/// Will give us a list of all quirks, sorted by point value, then name
@@ -98,36 +100,44 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	FormatifyQuirks()
 
 /datum/controller/subsystem/processing/quirks/proc/FormatifyQuirks()
-	/// Associated list of all quirk categories, pulled from all our stuff
+	cached_all_categories = list()
+	cached_all_quirks = list()
+	/// list of all quirk categories, pulled from all our stuff
 	var/list/all_categories = list()
-	for(var/cq in quirks)
-		var/datum/quirk/Q = quirks[cq]
-		all_categories[Q.category] = list()
-	/// Now, lets sort all our quirks into their categories
-	var/list/everything = list()
-	for(var/datum/quirk/Q2 in quirks)
-		all_categories[Q2.category][Q2.key] = list()
+	/// List of all quirks, packaged into helpful lil objects for tgui
+	var/list/all_quirks = list()
+	/// For debugging category stuff
+	var/list/debug_cats = list(
+		"Aldric", "Brimcon", "Cebuttris", "Delta", "Etheo", "FennyFuzlet", "Gob", "Hansolo", "Illuminated", "Jaggachi", "Kelprunner", "Lyro", "Merek", "Nayrin", "Olly", "Planetary", "Quill, Shadow", "Ranger, NCR", "Superlagg", "Thekuddlez", "Useroth", "Violent J", "Weredoggo", "xxpawnstarxx", "Yiff", "Zeronet_alpha"
+	)
+	var/debug_index = 1
+	for(var/qkey in quirks)
+		var/datum/quirk/Q2 = GetQuirk(qkey)
 		var/list/this_quirk = list()
 		this_quirk[QUIRK_KEY] = "[Q2.key]"
 		this_quirk[QUIRK_NAME] = "[Q2.name]"
-		this_quirk[QUIRK_PATH] = "[Q2.type]" // for mutual exclusion purposes
 		this_quirk[QUIRK_VALUE] = Q2.value
 		this_quirk[QUIRK_DESC] = "[Q2.desc]"
 		this_quirk[QUIRK_MECHANICS] = "[Q2.mechanics]"
 		this_quirk[QUIRK_CONFLICTS] = Q2.get_conflicts()
-		this_quirk[QUIRK_CATEGORY] = "[Q2.category]"
-		all_categories[Q2.category][Q2.key] = this_quirk
-		all_categories["All Quirks"][Q2.key] = this_quirk
-		everything[Q2.key] = this_quirk
-	cached_quirk_data = all_categories
-	cached_all_quirks = everything
+		if(debug_categories)
+			this_quirk[QUIRK_CATEGORY] = "[LAZYACCESS(debug_cats, debug_index)]"
+			all_categories |= "[LAZYACCESS(debug_cats, debug_index)]"
+			debug_index = WRAP(debug_index + 1, 1, length(debug_cats))
+		else
+			this_quirk[QUIRK_CATEGORY] = "[Q2.category]"
+			all_categories |= "[Q2.category]"
+		all_quirks += list(this_quirk)
+	cached_all_categories = sort_list(all_categories)
+	cached_all_categories.Insert(1, "All Quirks")
+	cached_all_quirks = all_quirks
 
 /// Opens the quirk tgui for the user
 /datum/controller/subsystem/processing/quirks/proc/OpenWindow(mob/user)
 	return ui_interact(user)
 
 /// Opens the quirk tgui for the user
-/datum/controller/subsystem/processing/quirks/ui_interact(mob/user)
+/datum/controller/subsystem/processing/quirks/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "QuirkMenu")
@@ -136,9 +146,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/ui_state(mob/user)
 	return GLOB.always_state
 
+/datum/controller/subsystem/processing/quirks/ui_close(mob/user)
+	. = ..()
+	SaveUserPreferences(user)
+
 /datum/controller/subsystem/processing/quirks/ui_static_data(mob/user)
 	var/list/data = list()
-	data["QuirkData"] = cached_quirk_data
+	data["AllCategories"] = cached_all_categories
 	data["AllQuirks"] = cached_all_quirks
 	data["MaxQuirkPoints"] = max_points
 	data["MaxGoodQuirks"] = max_good_quirks
@@ -147,30 +161,53 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /// Pulls all of the user's quirks, and formats them for the tgui
 /datum/controller/subsystem/processing/quirks/ui_data(mob/user)
 	var/list/data = list()
-	var/list/quirks_points_and_goods = QuirkList2TGUI(user)
+	var/list/quirks_and_goods = QuirkList2TGUI(user)
 	data["UserQuirkNames"] = LAZYACCESS(quirks_and_goods, "UserQuirkNames")
 	data["UserQuirkKeys"] = LAZYACCESS(quirks_and_goods, "UserQuirkKeys")
 	data["UserQuirkPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkPoints")
 	data["UserQuirkGoods"] = LAZYACCESS(quirks_and_goods, "UserQuirkGoods")
 	// data["UserQuirkProstheticPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkProstheticPoints")
 	data["UserCkey"] = user.ckey
-	data["UserName"] = user.real_name
+	data["UserName"] = user.client?.prefs.real_name
 	return data
 
 /datum/controller/subsystem/processing/quirks/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
-	var/c_key = params["Ckey"]
-	var/q_key = params["Quirk"]
+	var/mob/user = usr
+	if(!user)
+		return FALSE
+	// if(params["DoSound"])
+	// 	switch(params["DoSound"])
+	// 		if('ResetQuirks')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
+	// 		if('SaveQuirks')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
+	// 		if('SearchType')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
+	// 		if('SearchClear')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
+	// 		if('TabClick')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
+	// 		if('SoundAct')
+	// 			user.playsound_local(user, "sounds/effects/quirkui/HELP.ogg", 50, TRUE)
 	switch(action)
-		if("AddQuirk")
-			VerifyAndAddQuirkToPlayerPrefs(c_key, q_key)
-		if("RemoveQuirk")
-			RemoveQuirkFromPrefs(extract_prefs(c_key), q_key)
-
-	if(GetQuirkBalance() < 0)
-		reset_quirks("balance")
-	if(GetPositiveQuirkCount() > MAX_QUIRKS)
-		reset_quirks("max")
+		if("ClickQuirk") // clicked a quirk to get or unget
+			var/q_key = params["QuirkKey"]
+			var/datum/quirk/Q = GetQuirk(q_key)
+			if(!Q)
+				return
+			var/c_key = params["UserCkey"]
+			var/datum/preferences/P = extract_prefs(c_key)
+			if(!P)
+				return
+			if(q_key in P.all_quirks)
+				RemoveQuirkFromPrefs(P, q_key, FALSE)
+			else
+				VerifyAndAddQuirkToPlayerPrefs(c_key, q_key, FALSE)
+		if("ClearQuirks") // clear out all the quirks!
+			INVOKE_ASYNC(src, .proc/ConfirmClear, user)
+	INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
+	return TRUE
 
 /// returns a list of ckey'd quirk names
 /datum/controller/subsystem/processing/quirks/proc/QuirkList2TGUI(mob/user)
@@ -183,12 +220,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	out["UserQuirkPoints"] = GetQuirkBalance(P)
 	out["UserQuirkGoods"] = GetPositiveQuirkCount(P)
 	for(var/qpath in P.all_quirks) // list of type paths
-		var/datum/quirk/Q = qpath
-		out["QuirkListKeys"] |= "[Q.key]"
-		out["QuirkListNames"] |= "[Q.name]"
-		if(Q.value > 0)
-			out["QuirkGoods"]++
-		out["QuirkPoints"] += Q.value
+		var/datum/quirk/Q = GetQuirk(qpath)
+		if(!Q)
+			stack_trace("QuirkList2TGUI: Quirk [qpath] on [P.parent.ckey]'s profile does not exist! cool")
+			RemoveQuirkFromPrefs(P, qpath)
+			continue
+		out["UserQuirkNames"] |= "[Q.name]"
+		out["UserQuirkKeys"] |= "[Q.key]"
 	// for(var/modification in P.modified_limbs)
 	// 	if(P.modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
 	// 		return bal + 33 //max 33 point regardless of how many prosthetics
@@ -243,10 +281,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		return LAZYACCESS(quirks, a_quirk)
 	else if (ispath(a_quirk, /datum/quirk))
 		return LAZYACCESS(quirks, "[a_quirk]")
-		CRASH("GetQuirk: Quirk [a_quirk] is not a valid quirk!")
+	CRASH("GetQuirk: Quirk [a_quirk] is not a valid quirk!")
 
 /datum/controller/subsystem/processing/quirks/proc/VerifyAndAddQuirkToPlayerPrefs(c_key, q_key)
-	if(!c_key || !!q_key)
+	if(!c_key || !q_key)
 		return
 	var/datum/preferences/P = extract_prefs(c_key)
 	if(!P)
@@ -254,7 +292,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/datum/quirk/Q = GetQuirk(q_key)
 	if(!Q)
 		return
-	RemoveDeadQuirks(P)
+	//RemoveDeadQuirks(P)
 	if(QuirkConflict(P, Q))
 		return
 	if(!CanAffordQuirk(P, Q))
@@ -262,9 +300,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!HasEnoughGoodQuirkSlotsForThis(P, Q))
 		return
 	AddQuirkToPrefs(P, Q)
-	P.save_character()
-	return // wheee...\
-/// splat ............/
 
 /// Returns TRUE if the player has enough good quirk slots for this quirk
 /datum/controller/subsystem/processing/quirks/proc/HasEnoughGoodQuirkSlotsForThis(datum/preferences/P, datum/quirk/Q)
@@ -329,10 +364,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	to_prune = sortList(to_prune, /proc/cmp_quirk_asc) // only got the asc, so just flip it
 	to_prune = reverseList(to_prune)
 	for(var/datum/quirk/Q3 in to_prune)
-		RemoveQuirkFromPrefs(P, Q2)
-		unbalanced -= Q2.value
-		pruned += Q2
-		num_good_quirks
+		RemoveQuirkFromPrefs(P, Q3)
+		unbalanced -= Q3.value
+		pruned += Q3
+		num_good_quirks--
 		if(unbalanced <= max_points && num_good_quirks <= max_good_quirks)
 			P.save_character()
 			break
@@ -368,9 +403,35 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		P.save_character()
 		to_chat(P.parent, span_warning("Some quirks have been removed from your character because they no longer exist! Be sure to check your quirks!"))
 
+/// Asks the user if they're sure they want to clear their quirks
+/datum/controller/subsystem/processing/quirks/proc/ConfirmClear(mob/user)
+	if(!user)
+		return
+	var/c_key = user.ckey
+	var/datum/preferences/P = extract_prefs(c_key)
+	if(!P)
+		return
+	if(!LAZYLEN(P.all_quirks))
+		to_chat(user, span_alert("You didn't have any quirks to clear!"))
+		return
+	var/confirm = tgui_alert(
+		user,
+		message = "Are you sure you want to clear all your quirks?",
+		title = "Whoa hold on there a moment!!",
+		buttons = list("Yes, clear my quirks", "No, please don't"),
+		timeout = 0,
+		autofocus = TRUE)
+	if(confirm == "Yes, clear my quirks")
+		for(var/qstring in P.all_quirks)
+			RemoveQuirkFromPrefs(P, qstring)
+		P.save_character()
+		to_chat(user, span_green("Your quirks have been cleared, and your character has been saved!"))
+	else
+		to_chat(user, span_warning("Your quirks have NOT been cleared!"))
+	OpenWindow(user) // update the window
 
 /// Reads all the quirks from the player's prefs, and verifies that they should have them all
-/datum/controller/subsystem/processing/quirks/proc/VerifyQuirks(datum/preferences/P, from_prefs) // from_prefs is to prevent infinite loops, cus it can be called from the prefs save proc
+/datum/controller/subsystem/processing/quirks/proc/VerifyQuirks(datum/preferences/P, save) // from_prefs is to prevent infinite loops, cus it can be called from the prefs save proc
 	if(!P)
 		return // mind your P's
 	var/list/quirklist = P.all_quirks
@@ -392,24 +453,35 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			continue
 	if(LAZYLEN(bad_quirks))
 		for(var/qstring in bad_quirks)
-			RemoveQuirkFromPrefs(P, qstring, from_prefs)
+			RemoveQuirkFromPrefs(P, qstring, TRUE)
 		to_chat(P.parent, span_warning("Some quirks have been removed from your character because they no longer exist! Be sure to check your quirks!"))
 		. = FALSE
-	if(!from_prefs)
+	if(save)
 		P.save_character()
 
-
+/// Checks if the player has their prefs window open, and updates it if so
+/datum/controller/subsystem/processing/quirks/proc/UpdateTheWretchedPrefMenu(mob/user)
+	set waitfor = FALSE // winexists sleeps, and we need to be side awake
+	if(!user)
+		return
+	if(!winexists(user, "preferences_window"))
+		return
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return
+	P.ShowChoices(user)
 
 /// Adds a quirk to the player's prefs
-/datum/controller/subsystem/processing/quirks/proc/AddQuirkToPrefs(datum/preferences/P, datum/quirk/Q)
+/datum/controller/subsystem/processing/quirks/proc/AddQuirkToPrefs(datum/preferences/P, datum/quirk/Q, save)
 	if(!P || !istype(Q))
 		return // mind your P's and Q's
 	if(Q.key in quirks) // if it's a valid quirk
 		P.all_quirks |= Q.key
-	P.save_character()
+	if(save)
+		P.save_character()
 
 /// Removes a quirk from the player's prefs
-/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromPrefs(datum/preferences/P, Qany)
+/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromPrefs(datum/preferences/P, Qany, save)
 	if(!P || !Qany)
 		return // mind your P's and Q's
 	var/key2remove
@@ -418,12 +490,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		key2remove = Q.key
 	else
 		key2remove = "[Qany]" // ensure its a string
-	P.all_quirks -= Q.key
-	P.save_character()
+	P.all_quirks -= key2remove
+	if(save)
+		P.save_character()
 
 /// Adds a quirk to a mob
 /datum/controller/subsystem/processing/quirks/proc/AddQuirk(mob/user, Qany, spawn_effects)
-	if(!user || !Q)
+	if(!user || !Qany)
 		return
 	var/datum/quirk/T = GetQuirk(Qany)
 	if(!T)
@@ -432,8 +505,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	return TRUE
 
 /// Removes a quirk from a mob
-/datum/controller/subsystem/processing/quirks/proc/RemoveQuirk(mob/user, Qany)
-	if(!user || !Q)
+/datum/controller/subsystem/processing/quirks/proc/RemoveQuirk(mob/user, Qany, cus_antag)
+	if(!user || !Qany)
 		return
 	var/datum/quirk/T = GetQuirk(Qany)
 	if(!T)
@@ -441,19 +514,32 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/datum/quirk/U = HasQuirk(user, Qany)
 	if(!U)
 		return
+	if(cus_antag)
+		U.removed_cus_antag(user)
 	qdel(U)
 	return TRUE
 
 /// Returns if the mob has this quirk
-/datum/controller/subsystem/processing/quirks/proc/HasQuirk(mob/user, Qany)
-	if(!user || !Q)
+/datum/controller/subsystem/processing/quirks/proc/HasQuirk(mob/living/user, Qany)
+	if(!user || !Qany)
 		return
 	var/datum/quirk/T = GetQuirk(Qany)
 	if(!T)
 		return
-	for(var/datum/quirk/Q in roundstart_quirks)
+	for(var/datum/quirk/Q in user.roundstart_quirks)
 		if(Q.type == T.type)
 			return Q
+
+/// Saves the mob's prefs
+/datum/controller/subsystem/processing/quirks/proc/SaveUserPreferences(mob/user)
+	if(!user)
+		return
+	var/datum/preferences/P = extract_prefs(user)
+	if(!P)
+		return
+	P.save_character()
+	to_chat(user, span_greenannounce("Your quirks have been saved! =3"))
+	return TRUE
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects, roundstart = FALSE, datum/job/job)
 	if(!user || !cli)
@@ -467,7 +553,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	for(var/V in my_quirks)
 		var/datum/quirk/Q = GetQuirk(V)
 		if(Q)
-			AddQuirkToMob(user, Q, spawn_effects)
+			AddQuirk(user, Q, spawn_effects)
 		else
 			log_admin("Invalid quirk \"[V]\" in client [cli.ckey] preferences")
 			stack_trace("Invalid quirk \"[V]\" in client [cli.ckey] preferences")

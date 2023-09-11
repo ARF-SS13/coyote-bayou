@@ -400,9 +400,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
+				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
 				dat += "<center><h2>Quirk Setup</h2>"
-				dat += "<a href='?_src_=prefs;preference=quirkmenu'>Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+				dat += "Configure Quirks</a><br></center>"
+				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
+				dat += "</a>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column
@@ -2044,77 +2046,77 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSquirks)
 		to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
 		return
-	SSquirks.open_window(user)
+	SSquirks.OpenWindow(user)
 
-	/// RIP all taht shit
-	// var/list/dat = list()
-	// if(!SSquirks.quirks.len)
-	// 	dat += "The quirk subsystem hasn't finished initializing, please hold..."
-	// 	dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
+	/* RIP all taht shit
+	var/list/dat = list()
+	if(!SSquirks.quirks.len)
+		dat += "The quirk subsystem hasn't finished initializing, please hold..."
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center><br>"
 
-	// else
-	// 	dat += "<center><b>Choose quirk setup</b></center><br>"
-	// 	dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
-	// 	Quirks are applied at roundstart and cannot normally be removed.</div>"
-	// 	dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
-	// 	dat += "<hr>"
-	// 	dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
-	// 	dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-	// 	<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
-	// 	dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
-	// 	dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
-	// 	dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
-	// 	dat += "</center><br>"
-	// 	for(var/V in SSquirks.quirks)
-	// 		var/datum/quirk/T = SSquirks.quirks[V]
-	// 		var/value = initial(T.value)
-	// 		if(value > 0 && quirk_category != QUIRK_POSITIVE)
-	// 			continue
-	// 		if(value < 0 && quirk_category != QUIRK_NEGATIVE)
-	// 			continue
-	// 		if(value == 0 && quirk_category != QUIRK_NEUTRAL)
-	// 			continue
+	else
+		dat += "<center><b>Choose quirk setup</b></center><br>"
+		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
+		Quirks are applied at roundstart and cannot normally be removed.</div>"
+		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
+		dat += "<hr>"
+		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
+		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
+		dat += "</center><br>"
+		for(var/V in SSquirks.quirks)
+			var/datum/quirk/T = SSquirks.quirks[V]
+			var/value = initial(T.value)
+			if(value > 0 && quirk_category != QUIRK_POSITIVE)
+				continue
+			if(value < 0 && quirk_category != QUIRK_NEGATIVE)
+				continue
+			if(value == 0 && quirk_category != QUIRK_NEUTRAL)
+				continue
 
-	// 		var/quirk_name = initial(T.name)
-	// 		var/has_quirk
-	// 		var/quirk_cost = initial(T.value) * -1
-	// 		var/lock_reason = "This trait is unavailable."
-	// 		var/quirk_conflict = FALSE
-	// 		for(var/_V in all_quirks)
-	// 			if(_V == quirk_name)
-	// 				has_quirk = TRUE
-	// 		if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
-	// 			lock_reason = "Mood is disabled."
-	// 			quirk_conflict = TRUE
-	// 		if(has_quirk)
-	// 			if(quirk_conflict)
-	// 				all_quirks -= quirk_name
-	// 				has_quirk = FALSE
-	// 			else
-	// 				quirk_cost *= -1 //invert it back, since we'd be regaining this amount
-	// 		if(quirk_cost > 0)
-	// 			quirk_cost = "+[quirk_cost]"
-	// 		var/font_color = "#AAAAFF"
-	// 		if(initial(T.value) != 0)
-	// 			font_color = value > 0 ? "#AAFFAA" : "#FFAAAA"
-	// 		if(quirk_conflict)
-	// 			dat += "<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)] \
-	// 			<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
-	// 		else
-	// 			if(has_quirk)
-	// 				dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-	// 				<b><font color='[font_color]'>[quirk_name]</font></b> - [initial(T.desc)]<br>"
-	// 			else
-	// 				dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
-	// 				<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
-	// 	dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
+			var/quirk_name = initial(T.name)
+			var/has_quirk
+			var/quirk_cost = initial(T.value) * -1
+			var/lock_reason = "This trait is unavailable."
+			var/quirk_conflict = FALSE
+			for(var/_V in all_quirks)
+				if(_V == quirk_name)
+					has_quirk = TRUE
+			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
+				lock_reason = "Mood is disabled."
+				quirk_conflict = TRUE
+			if(has_quirk)
+				if(quirk_conflict)
+					all_quirks -= quirk_name
+					has_quirk = FALSE
+				else
+					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
+			if(quirk_cost > 0)
+				quirk_cost = "+[quirk_cost]"
+			var/font_color = "#AAAAFF"
+			if(initial(T.value) != 0)
+				font_color = value > 0 ? "#AAFFAA" : "#FFAAAA"
+			if(quirk_conflict)
+				dat += "<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)] \
+				<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
+			else
+				if(has_quirk)
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<b><font color='[font_color]'>[quirk_name]</font></b> - [initial(T.desc)]<br>"
+				else
+					dat += "<a href='?_src_=prefs;preference=trait;task=update;trait=[quirk_name]'>[has_quirk ? "Remove" : "Take"] ([quirk_cost] pts.)</a> \
+					<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
+		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
-	// user << browse(null, "window=preferences")
-	// var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>SPECIAL</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
-	// popup.set_window_options("can_close=0")
-	// popup.set_content(dat.Join())
-	// popup.open(0)
-	// return
+	user << browse(null, "window=preferences")
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>SPECIAL</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(0)
+	return */
 
 
 
@@ -2250,7 +2252,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return 1
 
 	else if(href_list["preference"] == "quirkmenu")
-		SSquirks.open_window(user)
+		SSquirks.OpenWindow(user)
 	// 		if("update")
 	// 			var/quirk = href_list["trait"]
 	// 			if(!SSquirks.quirks[quirk])
@@ -4090,6 +4092,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
 
+/datum/preferences/proc/get_my_quirks()
+	if(!LAZYLEN(all_quirks))
+		return "None!"
+	var/list/quirk_dats = list()
+	for(var/quirk in all_quirks)
+		var/datum/quirk/Q = SSquirks.GetQuirk(quirk)
+		quirk_dats += Q
+	if(!LAZYLEN(quirk_dats))
+		return "None?"
+	var/list/dat = list()
+	var/quirks_per_row = 5
+	var/cells_left = 5
+	dat += "<table class='undies_table'>"
+	for(var/datum/quirk/Q in quirk_dats)
+		var/goodbadneutral = Q.value > 0 ? "good" : Q.value < 0 ? "bad" : "neutral"
+		var/qname = Q.name
+		switch(Q.value)
+			if(-INFINITY to -1)
+				qname = "<font color='green'><b>[Q.name]</b></font>"
+			if(1 to INFINITY)
+				qname = "<font color='red'>[Q.name]</font>"
+			else
+				qname = "<font color='yellow'>[Q.name]</font>"
+		if(cells_left == quirks_per_row)
+			dat += "<tr>"
+		dat += "<td>[qname]</td>"
+		if(cells_left-- <= 0)
+			dat += "</tr>"
+			cells_left = quirks_per_row
+	dat += "</table>"
+	return dat.Join()
 
 #undef MAX_FREE_PER_CAT
 #undef HANDS_SLOT_AMT

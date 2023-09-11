@@ -100,6 +100,8 @@
 
 /datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
 /datum/quirk/proc/on_clone(data) //create the quirk from clone data
+/datum/quirk/proc/removed_cus_antag(mob/living/to_mob)
+	to_chat(to_mob, antag_removal_text || span_boldannounce("Your antagonistic overwrights your [src]!"))
 
 /datum/quirk/process()
 	if(QDELETED(quirk_holder))
