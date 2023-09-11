@@ -395,3 +395,13 @@ datum/chemical_reaction/rezadone
 		/datum/reagent/medicine/silver_sulfadiazine = 5,
 		)
 	required_temp = 451
+
+/datum/chemical_reaction/fake_stimfluid
+	name = "Imitation Stimfluid"
+	id = /datum/reagent/medicine/fake_stimpak
+	results = list(/datum/reagent/medicine/fake_stimpak = 2)
+	required_reagents = list(
+		/datum/reagent/consumable/brocjuice = 1,
+		/datum/reagent/consumable/xanderjuice = 1,
+		)
+	required_temp = 450
