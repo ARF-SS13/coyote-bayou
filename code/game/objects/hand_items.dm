@@ -348,6 +348,85 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/playfultail/
+	name = "playful tail"
+	desc = "A playful tail, good for teasing."
+	icon_state = "proboscis"
+	force = 0
+	force_wielded = 0
+	attack_speed = 3
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/tail
+	name = "tailwhack"
+	desc = "A tail. Good for whacking."
+	icon_state = "proboscis"
+	force = 5
+	force_wielded = 10
+	attack_speed = 4 
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/hand_item/tail/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
+
+/obj/item/hand_item/tail/fast
+	name = "fast tail"
+	desc = "A speedy tail that's very good at whackin' fast."
+	icon_state = "proboscis"
+	color = "#448844"
+	force = 3
+	force_wielded = 7
+	attack_speed = 2
+
+/obj/item/hand_item/tail/big
+	name = "big tail"
+	desc = "A big tail that whacks hard."
+	icon_state = "proboscis"
+	color = "#884444"
+	force = 10
+	force_wielded = 20
+	attack_speed = 5
+
+/obj/item/hand_item/tail/spicy
+	name = "spicy tail"
+	desc = "A tail with something that can inject venom on it."
+	icon_state = "proboscis"
+	color = "#44FF44"
+	force = 4
+	force_wielded = 8
+	attack_speed = 5
+
+/obj/item/hand_item/tail/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+/obj/item/hand_item/tail/thago
+	name = "dangerous tail"
+	desc = "A god damn mighty tail that would kill an allosaurus.  Maybe."
+	icon_state = "proboscis"
+	color = "#FF4444"
+	force = 12
+	force_wielded = 24
+	attack_speed = 6
+
+/obj/item/hand_item/beans
+	name = "beans"
+	desc = "Them's ya' beans. Touch em' to things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "bean"
+	color = "#ff88bb"
+	attack_verb = list("beans", "baps", "smushes")
+	hitsound = "sound/effects/attackblob.ogg"
+	force = 0
+	force_wielded = 0
+	throwforce = 0
+	attack_speed = 0
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
 /obj/item/hand_item/biter/creature		//creatures surely have nastier bites!
 	force = 25
 	force_wielded = 35
