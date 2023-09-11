@@ -576,6 +576,11 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 1
 
+/obj/structure/junk/small/tv
+	name = "pre-war electronic junk"
+	desc = "Broken, a useless relic of the past."
+	icon_state = "junk_tv"
+
 /obj/structure/junk/small/prewartv
 	desc = "Advertisements would've played on this tv before the bombs dropped."
 	icon = 'icons/fallout/objects/decorations.dmi'
