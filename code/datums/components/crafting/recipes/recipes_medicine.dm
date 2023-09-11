@@ -162,7 +162,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/fake_stimpak
-	name = "Fake stimpak"
+	name = "Imitation Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/fake
 	reqs = list(/datum/reagent/consumable/ketchup = 10,
 				/datum/reagent/consumable/cherryjelly = 10,
