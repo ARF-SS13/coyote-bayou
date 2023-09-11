@@ -223,6 +223,53 @@
 	force = 25
 	force_wielded = 35
 
+/obj/item/hand_item/biter/big
+	name = "Big Biter"
+	desc = "Talk shit, get BIG bit."
+	color = "#884444"
+	force = 15
+	force_wielded = 18
+	attack_speed = 5
+
+/obj/item/hand_item/biter/sabre
+	name = "Sabre Toothed Biter"
+	desc = "Damn bitch, you eat with them teeth?"
+	color = "#FF4444"
+	force = 5
+	force_wielded = 27
+	attack_speed = 6
+
+/obj/item/hand_item/biter/fast
+	name = "Big Biter"
+	desc = "Talk shit, get SPEED bit."
+	color = "#448844"
+	force = 4
+	force_wielded = 7
+	attack_speed = 3
+
+/obj/item/hand_item/biter/play
+	name = "Play Biter"
+	desc = "Someone really should just muzzle you."
+	color = "#ff44ff"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/biter/spicy
+	name = "Spicy Biter"
+	desc = "Your sickly little nibbler, good for dropping fools."
+	color = "#44FF44"
+	force = 5
+	force_wielded = 10
+	attack_speed = 5
+
+
+/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
 /obj/item/hand_item/clawer
 	name = "Clawer"
 	desc = "Thems some claws."
