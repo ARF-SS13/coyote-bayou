@@ -266,6 +266,7 @@
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
+
 /obj/item/hand_item/clawer
 	name = "Clawer"
 	desc = "Thems some claws."
