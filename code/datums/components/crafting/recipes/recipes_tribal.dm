@@ -280,6 +280,7 @@
 
 //Rustwalkers
 /datum/crafting_recipe/tribalwar/rustwalkers
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/rustwalkers/lightarmour
