@@ -211,11 +211,19 @@
 		which_biter_to_spawn = /obj/item/hand_item/biter/sabre
 	else 
 		which_biter_to_spawn = /obj/item/hand_item/biter 
-	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
-	if(user.put_in_active_hand(bite)) 
-		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
+
+	if(ishuman(user))
+		var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
+		if(user.put_in_active_hand(bite)) 
+			to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
+		else
+			qdel(bite)
 	else
-		qdel(bite)
+		var/obj/item/hand_item/biter/creature/bite = new(user)
+		if(user.put_in_active_hand(bite)) 
+			to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
+		else
+			qdel(bite)
 
 //Tailer//
 /datum/emote/living/carbon/tailer
@@ -271,11 +279,19 @@
 		which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
 	else 
 		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
-	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
-	if(user.put_in_active_hand(claw))
-		to_chat(user, span_notice("You get your claws ready to slice!"))
+
+	if(ishuman(user))
+		var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
+		if(user.put_in_active_hand(claw))
+			to_chat(user, span_notice("You get your claws ready to slice!"))
+		else
+			qdel(claw)
 	else
-		qdel(claw)
+		var/obj/item/hand_item/clawer/creature/claw = new(user)
+		if(user.put_in_active_hand(claw))
+			to_chat(user, span_notice("You get your claws ready to slice!"))
+		else
+			qdel(claw)
 
 
 //Shover//
