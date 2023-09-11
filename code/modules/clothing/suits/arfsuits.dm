@@ -650,7 +650,7 @@
 
 /obj/item/clothing/suit/armor/light/tribal/simple
 	name = "simple tribal armor"
-	desc = "Armor made of leather strips and a large, flat piece of turquoise. The wearer is displaying the Wayfinders traditional garb."
+	desc = "Armor made of leather strips and a large, flat piece of turquoise. The wearer is displaying the Sulphur Bottom traditional garb."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST|ARMS|LEGS
