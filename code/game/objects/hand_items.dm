@@ -219,10 +219,6 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
-/obj/item/hand_item/biter/creature		//creatures surely have nastier bites!
-	force = 25
-	force_wielded = 35
-
 /obj/item/hand_item/biter/big
 	name = "Big Biter"
 	desc = "Talk shit, get BIG bit."
@@ -285,10 +281,6 @@
 	attack_speed = 2
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
-
-/obj/item/hand_item/clawer/creature		//creatures surely have bigger claws!
-	force = 20
-	force_wielded = 30
 
 /obj/item/hand_item/clawer/big
 	name = "Big Clawer"
@@ -355,6 +347,14 @@
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/biter/creature		//creatures surely have nastier bites!
+	force = 25
+	force_wielded = 35
+
+
+/obj/item/hand_item/clawer/creature		//creatures surely have bigger claws!
+	force = 20
+	force_wielded = 30
 
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
