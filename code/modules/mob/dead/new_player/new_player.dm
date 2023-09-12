@@ -562,8 +562,8 @@
 		)
 	if(humanc.client && humanc.ckey == "tk420634")
 		humanc.client.deadmin()
-
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+	SSevents.holiday_on_join(humanc)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
