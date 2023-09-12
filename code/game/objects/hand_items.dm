@@ -219,10 +219,6 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
-/obj/item/hand_item/biter/creature
-	force = 25
-	force_wielded = 35
-
 /obj/item/hand_item/biter/big
 	name = "Big Biter"
 	desc = "Talk shit, get BIG bit."
@@ -286,10 +282,6 @@
 	attack_speed = 2
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
-
-/obj/item/hand_item/clawer/creature
-	force = 25
-	force_wielded = 35
 
 /obj/item/hand_item/clawer/big
 	name = "Big Clawer"
