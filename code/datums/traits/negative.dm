@@ -771,7 +771,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.maxHealth -= 20
 	H.health -= 20
 
-/*
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
@@ -799,7 +798,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
 	H.equip_to_slot(gas, SLOT_WEAR_MASK)
 	H.regenerate_icons()*/
-*/
 
 
 /datum/quirk/paper_skin
