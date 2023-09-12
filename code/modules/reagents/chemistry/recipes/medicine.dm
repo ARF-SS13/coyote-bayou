@@ -354,7 +354,7 @@ datum/chemical_reaction/rezadone
 		new /obj/item/stack/medical/mesh/advanced(location)
 
 /datum/chemical_reaction/suture
-	required_reagents = list(/datum/reagent/cellulose = 25, /datum/reagent/medicine/styptic_powder = 5)
+	required_reagents = list(/datum/reagent/cellulose = 5, /datum/reagent/medicine/styptic_powder = 5)
 
 /datum/chemical_reaction/suture/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
