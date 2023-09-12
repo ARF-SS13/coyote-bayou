@@ -170,6 +170,7 @@
 #define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
+#define TRAIT_ARMBLADE			"Arm Blade"
 #define TRAIT_TAILPLAY			"Tail Player"
 #define TRAIT_TAILWHIP			"Tail Whipper"
 #define TRAIT_TAILSMASH			"Tail Smasher"

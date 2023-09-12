@@ -1103,6 +1103,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel imperceptive.")
 	locked =  FALSE
 
+
+/datum/quirk/armblader
+	name = "Arm Blader"
+	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
+	value = 33
+	mob_trait = TRAIT_ARMBLADE
+
 /datum/quirk/bigbiter
 	name = "Biter - Big"
 	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
