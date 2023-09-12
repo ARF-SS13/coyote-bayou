@@ -199,31 +199,26 @@
 		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
 		return
 	var/which_biter_to_spawn
-	if(HAS_TRAIT(user, TRAIT_BIGBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/big
-	else if(HAS_TRAIT(user, TRAIT_FASTBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/fast
-	else if(HAS_TRAIT(user, TRAIT_PLAYBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/play
-	else if(HAS_TRAIT(user, TRAIT_SPICYBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/spicy
-	else if(HAS_TRAIT(user, TRAIT_SABREBITE))
-		which_biter_to_spawn = /obj/item/hand_item/biter/sabre
-	else 
-		which_biter_to_spawn = /obj/item/hand_item/biter 
-
 	if(ishuman(user))
-		var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
-		if(user.put_in_active_hand(bite)) 
-			to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
-		else
-			qdel(bite)
+		if(HAS_TRAIT(user, TRAIT_BIGBITE))
+			which_biter_to_spawn = /obj/item/hand_item/biter/big
+		else if(HAS_TRAIT(user, TRAIT_FASTBITE))
+			which_biter_to_spawn = /obj/item/hand_item/biter/fast
+		else if(HAS_TRAIT(user, TRAIT_PLAYBITE))
+			which_biter_to_spawn = /obj/item/hand_item/biter/play
+		else if(HAS_TRAIT(user, TRAIT_SPICYBITE))
+			which_biter_to_spawn = /obj/item/hand_item/biter/spicy
+		else if(HAS_TRAIT(user, TRAIT_SABREBITE))
+			which_biter_to_spawn = /obj/item/hand_item/biter/sabre
+		else 
+			which_biter_to_spawn = /obj/item/hand_item/biter 
 	else
-		var/obj/item/hand_item/biter/creature/bite = new(user)
-		if(user.put_in_active_hand(bite)) 
-			to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
-		else
-			qdel(bite)
+		which_biter_to_spawn = /obj/item/hand_item/biter/creature
+	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
+	if(user.put_in_active_hand(bite)) 
+		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
+	else
+		qdel(bite)
 
 //Tailer//
 /datum/emote/living/carbon/tailer
@@ -267,31 +262,26 @@
 		to_chat(user, span_warning("Your hands are too full to use your claws!"))
 		return
 	var/which_clawer_to_spawn
-	if(HAS_TRAIT(user, TRAIT_BIGCLAW))
-		which_clawer_to_spawn = /obj/item/hand_item/clawer/big
-	else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
-		which_clawer_to_spawn = /obj/item/hand_item/clawer/fast
-	else if(HAS_TRAIT(user, TRAIT_PLAYCLAW))
-		which_clawer_to_spawn = /obj/item/hand_item/clawer/play
-	else if(HAS_TRAIT(user, TRAIT_SPICYCLAW))
-		which_clawer_to_spawn = /obj/item/hand_item/clawer/spicy
-	else if(HAS_TRAIT(user, TRAIT_RAZORCLAW))
-		which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
-	else 
-		which_clawer_to_spawn =  /obj/item/hand_item/clawer 
-
 	if(ishuman(user))
-		var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
-		if(user.put_in_active_hand(claw))
-			to_chat(user, span_notice("You get your claws ready to slice!"))
-		else
-			qdel(claw)
+		if(HAS_TRAIT(user, TRAIT_BIGCLAW))
+			which_clawer_to_spawn = /obj/item/hand_item/clawer/big
+		else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
+			which_clawer_to_spawn = /obj/item/hand_item/clawer/fast
+		else if(HAS_TRAIT(user, TRAIT_PLAYCLAW))
+			which_clawer_to_spawn = /obj/item/hand_item/clawer/play
+		else if(HAS_TRAIT(user, TRAIT_SPICYCLAW))
+			which_clawer_to_spawn = /obj/item/hand_item/clawer/spicy
+		else if(HAS_TRAIT(user, TRAIT_RAZORCLAW))
+			which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
+		else 
+			which_clawer_to_spawn =  /obj/item/hand_item/clawer 
 	else
-		var/obj/item/hand_item/clawer/creature/claw = new(user)
-		if(user.put_in_active_hand(claw))
-			to_chat(user, span_notice("You get your claws ready to slice!"))
-		else
-			qdel(claw)
+		which_clawer_to_spawn =  /obj/item/hand_item/clawer/creature
+	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
+	if(user.put_in_active_hand(claw))
+		to_chat(user, span_notice("You get your claws ready to slice!"))
+	else
+		qdel(claw)
 
 
 //Shover//
