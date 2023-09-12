@@ -188,6 +188,7 @@ Tribal Shaman
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
 		/obj/item/cool_book/shamanguide = 1,
+		/obj/item/healthanalyzer/tribal = 1
 	)
 
 
@@ -330,8 +331,8 @@ Druid
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
-		/obj/item/cool_book/druidguide=1
-
+		/obj/item/cool_book/druidguide=1,
+		/obj/item/healthanalyzer/tribal=1
 	)
 
 /*
@@ -433,6 +434,7 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
+		/obj/item/healthanalyzer/tribal = 1
 	)
 
 /datum/outfit/loadout/craftsman
