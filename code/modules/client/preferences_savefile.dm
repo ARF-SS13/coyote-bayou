@@ -691,7 +691,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_preferences"]	>> job_preferences
 
 	//Quirks
-	S["all_quirks"]			>> all_quirks
+	S["char_quirks"]			>> char_quirks // renamed so it doesnt destroy old saves in case this needs to be reverted
 
 	//Records
 	S["security_records"]			>>			security_records
@@ -1056,8 +1056,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences["[j]"] != JP_LOW && job_preferences["[j]"] != JP_MEDIUM && job_preferences["[j]"] != JP_HIGH)
 			job_preferences -= j
 
-	all_quirks = SANITIZE_LIST(all_quirks)
-	if(!SSquirks.VerifyQuirks(src, FALSE))
+	char_quirks = SANITIZE_LIST(char_quirks)
+	if(!SSquirks.CheckAndVerifyPrefQuirks(src, FALSE))
 		to_chat(src, span_warning("There was a problem with your quirks! The problem has been resolved though. Please check your quirks and make sure they're correct!"))
 		save_character()
 
@@ -1074,7 +1074,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
-	SSquirks.VerifyQuirks(src, FALSE)
+	SSquirks.CheckAndVerifyPrefQuirks(src, FALSE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)
@@ -1247,7 +1247,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
-	WRITE_FILE(S["all_quirks"]			, all_quirks)
+	WRITE_FILE(S["char_quirks"]			, char_quirks)
 
 	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
 	WRITE_FILE(S["scars1"]						, scars_list["1"])

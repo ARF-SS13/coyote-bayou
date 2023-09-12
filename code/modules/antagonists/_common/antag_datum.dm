@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	if(!istype(L))
 		return
 	for(var/q in blacklisted_quirks)
-		SSquirks.RemoveQuirk(L, q, TRUE)
+		SSquirks.RemoveQuirkFromMob(L, q, TRUE)
 
 //Returns the team antagonist belongs to if any.
 /datum/antagonist/proc/get_team()

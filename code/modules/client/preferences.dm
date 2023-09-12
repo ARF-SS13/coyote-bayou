@@ -221,7 +221,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
 	/// Format: list("/datum/quirk/aaa", "/datum/quirk/bbb", "/datum/quirk/ccc", etc)
-	var/list/all_quirks = list()
+	var/list/char_quirks = list()
 
 	//Quirk category currently selected
 	var/quirk_category = QUIRK_POSITIVE 
@@ -400,8 +400,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
 				dat += "<center><h2>Quirk Setup</h2>"
+				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
 				dat += "Configure Quirks</a><br></center>"
 				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
 				dat += "</a>"
@@ -1505,7 +1505,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 	dat += "</center>"
 
-	winshow(user, "preferences_window", TRUE)
+	winset(user, "preferences_window", "is-visible=1;focus=0;")
 	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>Character Setup</div>", 640, 770)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -2060,7 +2060,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		Quirks are applied at roundstart and cannot normally be removed.</div>"
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
 		dat += "<hr>"
-		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+		dat += "<center><b>Current quirks:</b> [char_quirks.len ? char_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
@@ -2082,7 +2082,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
 			var/quirk_conflict = FALSE
-			for(var/_V in all_quirks)
+			for(var/_V in char_quirks)
 				if(_V == quirk_name)
 					has_quirk = TRUE
 			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
@@ -2090,7 +2090,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				quirk_conflict = TRUE
 			if(has_quirk)
 				if(quirk_conflict)
-					all_quirks -= quirk_name
+					char_quirks -= quirk_name
 					has_quirk = FALSE
 				else
 					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
@@ -2149,7 +2149,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 // /datum/preferences/proc/GetQuirkBalance()
 // 	var/bal = 100
-// 	for(var/V in all_quirks)
+// 	for(var/V in char_quirks)
 // 		var/datum/quirk/T = SSquirks.quirks[V]
 // 		bal -= initial(T.value)
 // 	for(var/modification in modified_limbs)
@@ -2159,7 +2159,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 // /datum/preferences/proc/GetPositiveQuirkCount()
 // 	. = 0
-// 	for(var/q in all_quirks)
+// 	for(var/q in char_quirks)
 // 		if(SSquirks.quirk_points[q] > 0)
 // 			.++
 
@@ -2259,17 +2259,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	// 				return
 	// 			for(var/V in SSquirks.quirk_blacklist) //V is a list
 	// 				var/list/L = V
-	// 				for(var/Q in all_quirks)
+	// 				for(var/Q in char_quirks)
 	// 					if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
 	// 						to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
 	// 						return
 	// 			var/value = SSquirks.quirk_points[quirk]
 	// 			var/balance = GetQuirkBalance()
-	// 			if(quirk in all_quirks)
+	// 			if(quirk in char_quirks)
 	// 				if(balance + value < 0)
 	// 					to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
 	// 					return
-	// 				all_quirks -= quirk
+	// 				char_quirks -= quirk
 	// 			else
 	// 				if(value != 0 && (GetPositiveQuirkCount() >= MAX_QUIRKS))
 	// 					to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
@@ -2277,10 +2277,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	// 				if(balance - value < 0)
 	// 					to_chat(user, span_warning("You don't have enough balance to gain this quirk!"))
 	// 					return
-	// 				all_quirks += quirk
+	// 				char_quirks += quirk
 	// 			SetQuirks(user)
 	// 		if("reset")
-	// 			all_quirks = list()
+	// 			char_quirks = list()
 	// 			SetQuirks(user)
 	// 		else
 	// 			SetQuirks(user)
@@ -4093,10 +4093,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
 
 /datum/preferences/proc/get_my_quirks()
-	if(!LAZYLEN(all_quirks))
+	if(!LAZYLEN(char_quirks))
 		return "None!"
 	var/list/quirk_dats = list()
-	for(var/quirk in all_quirks)
+	for(var/quirk in char_quirks)
 		var/datum/quirk/Q = SSquirks.GetQuirk(quirk)
 		quirk_dats += Q
 	if(!LAZYLEN(quirk_dats))
@@ -4106,13 +4106,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/cells_left = 5
 	dat += "<table class='undies_table'>"
 	for(var/datum/quirk/Q in quirk_dats)
-		var/goodbadneutral = Q.value > 0 ? "good" : Q.value < 0 ? "bad" : "neutral"
 		var/qname = Q.name
 		switch(Q.value)
 			if(-INFINITY to -1)
-				qname = "<font color='green'><b>[Q.name]</b></font>"
-			if(1 to INFINITY)
 				qname = "<font color='red'>[Q.name]</font>"
+			if(1 to INFINITY)
+				qname = "<font color='green'><b>[Q.name]</b></font>"
 			else
 				qname = "<font color='yellow'>[Q.name]</font>"
 		if(cells_left == quirks_per_row)

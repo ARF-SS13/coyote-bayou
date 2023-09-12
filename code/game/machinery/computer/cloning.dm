@@ -510,7 +510,7 @@
 	R.fields["features"] = dna.features
 	R.fields["factions"] = mob_occupant.faction
 	R.fields["quirks"] = list()
-	for(var/V in mob_occupant.roundstart_quirks)
+	for(var/V in mob_occupant.mob_quirks)
 		var/datum/quirk/T = V
 		R.fields["quirks"][T.type] = T.clone_data()
 

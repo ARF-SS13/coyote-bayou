@@ -39,7 +39,7 @@ export const QuirkMenu = (props, context) => {
   const [
     SelectedCategory,
     setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', AllCategories[0]);
+  ] = useLocalState(context, 'SelectedCategory', YourQuirks);
   const [
     SearchTerm,
     setSearchTerm,
@@ -51,6 +51,10 @@ export const QuirkMenu = (props, context) => {
     : SelectedCategory === AllQuirks[0]
       ? "Congratulations! You've been selected to open an issue on Github!"
       : "No quirks in this category!";
+  Byond.winset('preferences_window', {
+    'focus': false,
+    'is-maximized': false,
+  }); // stop. eating. my. menu. spent all day on it!
 
   return(
     <Window
@@ -151,7 +155,7 @@ const QuirkHeaderThings = (props, context) => {
             color="bad"
             textAlign="center"
             content="Reset Quirks"
-            onClick={() => act('ResetQuirks', {
+            onClick={() => act('ClearQuirks', {
               'UserCkey' : UserCkey,
               'DoSound' : "ResetQuirks",
             })} />
@@ -254,32 +258,31 @@ const QuirkSearchBar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     AllQuirks,
+    DP,
   } = data;
   const [
     SearchTerm,
     setSearchTerm,
   ] = useLocalState(context, 'SearchTerm', '');
+  const FillerText = DP ? "Dragon Pussy" : "Find-A-Quirk 0.1b (tm)";
 
   return(
     <Box inline width="fit-content">
       <Input
         width="15em"
-        placeholder="Find-A-Quirk 0.1b (tm)"
+        placeholder={FillerText}
         value={SearchTerm}
-        onInput={(e, value) =>
-          setSearchTerm(sanitizeText(value)),
-          act('Sound', {
-            'DoSound' : 'SearchType',
-          })
-        } />
+        onInput={(e, value) =>{
+          setSearchTerm(sanitizeText(value));
+          act('Sound', { 'DoSound' : 'SearchType' });
+        }} />
       <Button
         color="transparent"
         tooltip="Clear search"
-        onClick={() =>
-        setSearchTerm(''),
-        act('Sound', {
-          'DoSound' : 'SearchClear',
-        })} >
+        onClick={() => {
+          setSearchTerm('');
+          act('Sound', { 'DoSound' : 'SearchClear' });
+          }} >
         <Icon
           name="times"
           color="label" />
@@ -298,7 +301,7 @@ const QuirkCategoryList = (props, context) => {
   const AllCategories = data.AllCategories || [];
   const Firstie = AllCategories[0] || 'Oh no';
   const AllcatsMinusTheFirst = AllCategories.slice(1);
-  const AllerCats = [Firstie, YourQuirks].concat(AllcatsMinusTheFirst);
+  const AllerCats = [Firstie, YourQuirks].concat(AllcatsMinusTheFirst); // surgery
 
   return(
     <Box
@@ -319,24 +322,23 @@ const QuirkCategoryList = (props, context) => {
 /// than positive ones.
 const QuirkTab = (props, context) => {
   const { act, data } = useBackend(context);
-  const AllQuirks = data.AllQuirks || [];
-  const UserQuirks = data.UserQuirks || [];
+  const AllCategories = data.AllCategories || [];
+  const UserQuirkKeys = data.UserQuirkKeys || [];
   const CatName = props.CatName || "Oh no";
+
 
   const [
     SelectedCategory,
     setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', AllQuirks[0]);
+  ] = useLocalState(context, 'SelectedCategory', YourQuirks);
 
-  const FilteredAllQuirks = GetQuirksInCategory(CatName, context);
-  let TotalQuirkValue = 0;
-  FilteredAllQuirks.forEach(Quirk => {
-    if(UserQuirks.includes(Quirk.Qkey)) {
-      TotalQuirkValue += Quirk.Qvalue;
-    }
-  });
+  const UserQuirkObjs = QKeyArray2ObjArray(UserQuirkKeys, context) || [];
+  const UserQuirksInThisCat = UserQuirkObjs.filter(Quirk => Quirk.Qcategory === CatName) || [];
+  const TotalQuirkValueInThisCat = CatName === YourQuirks || CatName === AllCategories[0]
+    ? UserQuirkObjs.reduce((total, Quirk) => total + Quirk.Qvalue, 0)
+    : UserQuirksInThisCat.reduce((total, Quirk) => total + Quirk.Qvalue, 0);
 
-  const PlusOrMinus = TotalQuirkValue == 0 ? '' : TotalQuirkValue > 0 ? '+' : '-';
+  const PlusOrMinus = PorM(TotalQuirkValueInThisCat) || '';
 
   return(
     <Button
@@ -346,10 +348,10 @@ const QuirkTab = (props, context) => {
       py="0.25em"
       selected={SelectedCategory === CatName}
       onClick={() =>
-        setSelectedCategory(CatName),
+        {setSelectedCategory(CatName);
         act('Sound', {
           'DoSound' : 'TabClick',
-        })}>
+        })}}>
       <Flex direction="row">
         <Flex.Item grow={1}>
           <Box
@@ -362,9 +364,9 @@ const QuirkTab = (props, context) => {
           <Box
             pl="0.5rem"
             inline
-            color={TotalQuirkValue == 0 ? 'label' : TotalQuirkValue > 0 ? 'good' : 'bad'}
+            color={TotalQuirkValueInThisCat == 0 ? 'label' : TotalQuirkValueInThisCat > 0 ? 'good' : 'bad'}
             textAlign={'right'}>
-            {PlusOrMinus}{TotalQuirkValue}
+            {PlusOrMinus}{TotalQuirkValueInThisCat}
           </Box>
         </Flex.Item>
       </Flex>
@@ -422,27 +424,43 @@ const QuirkButton = (props, context) => {
   const PlusOrMinus = PorM(QuirkValue) || '';
   const QuirkDesc = QuirkObj.Qdesc || "This is a quirk! Not much is known about it!";
   const QuirkMechanics = QuirkObj.Qmechanics || "Supposedly does something!";
-  const QuirkConflicts = QuirkObj.Qconflicts || []; // this is an array!
+  const QuirkConflictObjs = QKeyArray2ObjArray(QuirkObj.Qconflicts, context) || [];
+  const UserQuirkObjs = QKeyArray2ObjArray(UserQuirkKeys, context) || [];
+  const UserConflictObjs = GetQuirksInBothLists(QuirkConflictObjs, UserQuirkObjs) || [];
 
-  const UserConflictObjects = GetUserConflictObjects(QuirkConflicts, context);
   const UserHasQuirk = UserQuirkKeys.includes(QuirkKey);
-  const CanTakeIt = UserCanTakeQuirk(QuirkObj, UserConflictObjects, UserHasQuirk, context);
-  const CanAffordIt = QuirkValue + data.UserQuirkPoints <= data.MaxQuirkPoints;
-  const CanGoodIt = QuirkValue > 0 && data.UserQuirkGoods + 1 < data.MaxGoodQuirks;
+  const CanRemoveIt = UserCanRemoveQuirk(QuirkObj, context);
+  const CanAffordIt = UserCanAffordQuirk(QuirkObj, context);
+  const CanGoodIt = UserCanGoodQuirk(QuirkObj, context);
 
-  const TitleColor = !CanTakeIt && !UserHasQuirk ? 'bad' : 'white' ;
-  const BGColor = UserHasQuirk ? "#448844" : CanTakeIt ? "" : "#884444";
+  // They can click it IF:
+  //
+  const CanClickIt = (
+    !UserHasQuirk
+    && CanAffordIt
+    && CanGoodIt
+    && UserConflictObjs.length === 0
+    ) || (
+      UserHasQuirk
+      && CanRemoveIt
+    );
+
+  const TitleColor = !CanClickIt && !UserHasQuirk ? "#221111" : 'white' ;
+  const BGColor = UserHasQuirk ? "#448844" : CanClickIt ? "" : "#884444";
+  const MiniTextColor = UserHasQuirk ? "white" : CanClickIt ? "label" : "#221111";
 
   let SoundAct = "Generic"
-  if(UserHasQuirk) {
-    SoundAct = "RemoveQuirk";
-  } else if(CanTakeIt) { // cantakeit assumes they can afford it
-    SoundAct = "AddQuirk";
-  } else if(!CanAffordIt) {
+  if(CanClickIt) {
+    if(UserHasQuirk) {
+      SoundAct = "RemoveQuirk";
+    } else if (!UserHasQuirk) {
+      SoundAct = "AddQuirk";
+    }
+  } else if(!CanAffordIt || !CanRemoveIt) {
     SoundAct = "CantAfford";
   } else if(!CanGoodIt) {
     SoundAct = "TooManyGood";
-  } else if(UserConflictObjects.length > 0) {
+  } else if(UserConflictObjs.length > 0) {
     SoundAct = "Conflicts";
   }
 
@@ -454,7 +472,7 @@ const QuirkButton = (props, context) => {
         mx="0.5rem"
         width = "100%"
         selected={UserHasQuirk}
-        disabled={!CanTakeIt && !UserHasQuirk} // if you have it, you can unhave it
+        //disabled={!CanClickIt && !UserHasQuirk} // if you have it, you can unhave it
         textAlign="left"
         backgroundColor = {BGColor}
         onClick={() =>
@@ -466,7 +484,7 @@ const QuirkButton = (props, context) => {
           })
         }>
         <NoticeBox
-          active={!CanTakeIt && !UserHasQuirk}
+          active={!CanClickIt}
           width = "100%">
 
           <Box
@@ -483,7 +501,7 @@ const QuirkButton = (props, context) => {
                 <Box
                   color={
                     QuirkValue == 0
-                    ? 'label'
+                    ? {MiniTextColor}
                     : QuirkValue > 0
                       ? 'good'
                       : 'bad'
@@ -496,8 +514,8 @@ const QuirkButton = (props, context) => {
               </Flex.Item>
             </Flex>
           </Box>
-      {UserConflictObjects.length > 0 && (
-          <ConflictBox UserConflictObjects={UserConflictObjects} />
+      {!!UserConflictObjs && UserConflictObjs.length > 0 && (
+          <ConflictBox UConObjs={UserConflictObjs} />
       )}
         <Box
           textAlign="left"
@@ -507,66 +525,111 @@ const QuirkButton = (props, context) => {
         <Box
           textAlign="left"
           fontSize="10px"
-          color="label"
+          color={MiniTextColor}
           dangerouslySetInnerHTML={{__html: QuirkMechanics}} />
+        {!!QuirkConflictObjs && QuirkConflictObjs.length > 0 && (
+          <Box>
+              <ConflictReadout QConflict={QuirkConflictObjs} TextCol={MiniTextColor} />
+          </Box>
+        )}
       </NoticeBox>
     </Button>
   );
 };
 
-/// Makes a cute little box with an exclamation point and the name of
-/// a quirk that conflicts with the quirk you're trying to take.
-const QuirkConflict = (QuirkObject) => {
-  const QuirkName = QuirkObject.Qname || "Some quirk";
+
+/// A helper function for QuirkButton to make a box with a list of
+/// quirk objects that conflict with this quirk. It takes an array of
+/// quirk keys, and returns a box with a list of quirk names.
+const ConflictReadout = (props, context) => {
+  const { act, data } = useBackend(context);
+  const AllQuirks = data.AllQuirks || [];
+  const ConflictObjects = props.QConflict || [];
+  const TextCol = props.TextCol || "label";
+  if(ConflictObjects.length === 0) {
+    return(<Box />)
+  }
+
   return(
-    <Button
-      fluid
-      backgroundColor="bad"
-      textAlign="left"
-      tooltip={QuirkName + " is incompatible with this one!"}
-      tooltipPosition="left">
-      <Icon
-        name="exclamation-triangle"
-        color="bad" />
-      {QuirkName}
-    </Button>
+    <Flex direction="column">
+      <Flex.Item shrink={0}>
+        <Box
+          textAlign="center"
+          fontSize="10px"
+          color="#884444">
+          <b>Conflicts With:</b>
+        </Box>
+      </Flex.Item>
+      <Flex.Item grow={1}>
+        <Box
+          textAlign="left"
+          fontSize="8px"
+          color={TextCol}>
+          {ConflictObjects.map(Quirk => (
+            <Box
+              px="0.25rem"
+              py="-0.25rem"
+              inline
+              key={Quirk.Qkey}>
+              {Quirk.Qname}
+            </Box>
+          ))}
+        </Box>
+      </Flex.Item>
+    </Flex>
   );
 };
 
 /// A helper function for QuirkButton to make a box with a list of
 /// quirk objects that conflict with this quirk. It takes an array of
 /// quirk objects, and returns a box with a list of quirk names.
-const ConflictBox = (UserConflictObjects) => {
+const ConflictBox = (props) => {
+  const UConObjs = props.UConObjs || [];
+  if(UConObjs.length === 0) {
+    return(<Box />)
+  }
   return(
     <Stack.Item>
-      <Box color="bad">
+      <Box color="#880022">
         !!! You have quirks that prevent this one from being taken !!!<br />
         <b>Conflicts With:</b><br />
-        {UserConflictObjects.map(conflict => (
-          QuirkConflict(conflict)
-        ))}
+        {UConObjs.map(conflict => (
+          <Button
+            fluid
+            backgroundColor="bad"
+            textAlign="left"
+            tooltip={conflict.Qname + " is incompatible with this one!"}
+            tooltipPosition="left">
+            <Icon
+              name="exclamation-triangle"
+              color="bad" />
+            {conflict.Qname}
+          </Button>
+      ))}
       </Box>
     </Stack.Item>
   );
 };
 
-/// A helper function for QuirkButton to get an array of quirk objects
-/// that conflict with this quirk. It takes an array of quirk keys,
-/// and returns an array of quirk objects.
+/// A helper function that takes two arrays of quirk objects, and returns
+/// an array of quirk objects that are in both arrays.
 /// with it, and false if they don't.
-const GetUserConflictObjects = (QuirkKeys, context) => {
-  const { data } = useBackend(context);
-  const AllQuirks = data.AllQuirks || [];
-
-  const UserConflictObjects = [];
-  QuirkKeys.forEach(QuirkKey => {
-    const QuirkObject = AllQuirks.find(Quirk => Quirk.Qkey === QuirkKey);
-    if(QuirkObject) {
-      UserConflictObjects.push(QuirkObject);
-    }
+const GetQuirksInBothLists = (QObjA, QObjB) => {
+  if (!QObjA || !QObjB) {
+    return [];
+  }
+  if(QObjA.length === 0 || QObjB.length === 0) {
+    return [];
+  }
+  const QObsInBoth = QObjA.filter(QuirkA => {
+    return QObjB.some(QuirkB => {
+      return QuirkA.Qkey === QuirkB.Qkey;
+    });
   });
-  return UserConflictObjects;
+  return QObsInBoth || [];
 };
+
+
 
 /// A helper function for QuirkButton to put a +, -, or nothing in front
 /// of a number. It takes a number, and returns a string.
@@ -597,7 +660,7 @@ const QuirkKey2Obj = (QuirkKey, context) => {
     'Qdesc' : 'Wonderful, the key2object thing broke.',
     'Qpath' : 'help',
     'Qvalue' : 10180085,
-    'Qmechanics' : 'Makes Dan go augh. Report for discount dragon pussy.',
+    'Qmechanics' : 'Makes Dan go augh. Report for discount erp.',
     'Qconflicts' : [],
     'Qcategory' : 'All Quirks',
   };
@@ -618,7 +681,7 @@ const GetQuirksInCategory = (props, context) => {
   const [
     SelectedCategory,
     setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', AllCategories[0]);
+  ] = useLocalState(context, 'SelectedCategory', YourQuirks);
 
   if(SelectedCategory === YourQuirks) {
     return AllQuirks.filter(Quirk => {
@@ -648,7 +711,7 @@ const GetQuirksInCategory = (props, context) => {
         'Qdesc' : 'Great, the quirk search proc doesnt work.',
         'Qpath' : 'help',
         'Qvalue' : 10180085,
-        'Qmechanics' : 'Makes Dan go augh. Report for free dragon pussy.',
+        'Qmechanics' : 'Makes Dan go augh. Report for free erp.',
         'Qconflicts' : [],
         'Qcategory' : 'All Quirks',
       },
@@ -668,36 +731,83 @@ const GetQuirksInCategory = (props, context) => {
       'Qdesc' : 'Great, the quirk category proc doesnt work.',
       'Qpath' : 'help',
       'Qvalue' : 10180085,
-      'Qmechanics' : 'Makes Dan go augh. Report for free dragon pussy.',
+      'Qmechanics' : 'Makes Dan go augh. Report for free erp.',
       'Qconflicts' : [],
       'Qcategory' : 'All Quirks',
     },
   ];
 };
 
-/// A helper function for QuirkButton to determine if the user can actually
-/// take this quirk. It takes a quirk object, an array of conflicting quirks,
-/// and a boolean for if the user already has this quirk. It returns true
-/// if the user can take this quirk, and false if they can't.
-const UserCanTakeQuirk = (QuirkObject, UserConflictObjects, UserHasQuirk, context) => {
-  if(!!UserHasQuirk || UserConflictObjects.length > 0) {
-    return false; // ezpz
-  }
+/// A helper function for QuirkButton to determine if the user has enough
+/// quirk points to take this quirk. If the quirk has a value that is 0 or less,
+/// it returns true, cus they can always take a negative-value quirk. If the quirk
+/// has a positive value, and if taking that quirk would put them over their quirk
+/// point limit, it returns false. Otherwise, it returns true.
+const UserCanAffordQuirk = (QuirkObject, context) => {
   const { data } = useBackend(context);
+  if(QuirkObject.Qvalue <= 0) {
+    return true;
+  }
   const MaxQuirkPoints = data.MaxQuirkPoints || 0;
-  const MaxGoodQuirks = data.MaxGoodQuirks || 0;
   const UserQuirkPoints = data.UserQuirkPoints || 0;
-  const UserQuirkGoods = data.UserQuirkGoods || 0;
 
-  if(UserHasQuirk) {
-    return false;
-  }
-  if(QuirkObject.Qvalue > 0 && UserQuirkGoods >= MaxGoodQuirks) {
-    return false;
-  }
-  if(QuirkObject.Qvalue + UserQuirkPoints > MaxQuirkPoints) {
+  if(UserQuirkPoints + QuirkObject.Qvalue > MaxQuirkPoints) {
     return false;
   }
   return true;
 };
+
+// A helper function for QuirkButton to determine if the user has enough
+/// good quirk slots to take this quirk. If the quirk has a value that is 0 or less,
+/// it returns true, cus they can always take a negative-value quirk. If the quirk
+/// has a positive value, and if taking that quirk would put them over their quirk
+/// point limit, it returns false. Otherwise, it returns true.
+const UserCanGoodQuirk = (QuirkObject, context) => {
+  const { data } = useBackend(context);
+  if(QuirkObject.Qvalue <= 0) {
+    return true;
+  }
+  const MaxGoodQuirks = data.MaxGoodQuirks || 0;
+  const UserQuirkGoods = data.UserQuirkGoods || 0;
+
+  if(UserQuirkGoods + 1 > MaxGoodQuirks) {
+    return false;
+  }
+  return true;
+};
+
+/// A helper function for QuirkButton to determine if the user can remove
+/// this quirk. If the quirk has a value that is 0 or more, it returns true,
+/// cus they can always remove a positive-value quirk. If the quirk has a negative
+/// value, and if removing that quirk would put them over their quirk point limit,
+/// it returns false. Otherwise, it returns true.
+const UserCanRemoveQuirk = (QuirkObject, context) => {
+  const { data } = useBackend(context);
+  const MaxQuirkPoints = data.MaxQuirkPoints || 0;
+  const UserQuirkPoints = data.UserQuirkPoints || 0;
+
+  if(QuirkObject.Qvalue >= 0) {
+    return true;
+  }
+  if(UserQuirkPoints - QuirkObject.Qvalue > MaxQuirkPoints) {
+    return false;
+  }
+  return true;
+};
+
+/// A helper function for QuirkButton to take an array of quirk keys,
+/// and return an array of quirk objects.
+const QKeyArray2ObjArray = (QuirkKeys, context) => {
+  const { data } = useBackend(context);
+  const AllQuirks = data.AllQuirks || [];
+  const QuirkObjects = [];
+  QuirkKeys.forEach(QuirkKey => {
+    const QuirkObject = AllQuirks.find(Quirk => Quirk.Qkey === QuirkKey);
+    if(QuirkObject) {
+      QuirkObjects.push(QuirkObject);
+    }
+  });
+  return QuirkObjects;
+};
+
 

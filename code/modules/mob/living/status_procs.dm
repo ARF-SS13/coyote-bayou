@@ -576,12 +576,12 @@
 /mob/living/proc/add_quirk(quirktype, spawn_effects) //separate proc due to the way these ones are handled
 	if(HAS_TRAIT(src, quirktype))
 		return
-	SSquirks.AddQuirk(src, quirktype, spawn_effects)
+	SSquirks.AddQuirkToMob(src, quirktype, spawn_effects)
 
 /mob/living/proc/remove_quirk(quirktype)
 	if(!HAS_TRAIT(src, quirktype))
 		return
-	SSquirks.RemoveQuirk(src, quirktype)
+	SSquirks.RemoveQuirkFromMob(src, quirktype)
 
 /mob/living/proc/has_quirk(quirktype)
 	return SSquirks.HasQuirk(src, quirktype)

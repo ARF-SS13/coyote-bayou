@@ -41,7 +41,7 @@
 	SSquirks.quirk_objects += src
 	if(gain_text)
 		to_chat(quirk_holder, gain_text)
-	quirk_holder.roundstart_quirks += src
+	quirk_holder.mob_quirks += src
 	if(mob_trait)
 		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
 	START_PROCESSING(SSquirks, src)
@@ -55,7 +55,7 @@
 	remove()
 	if(quirk_holder)
 		to_chat(quirk_holder, lose_text)
-		quirk_holder.roundstart_quirks -= src
+		quirk_holder.mob_quirks -= src
 		if(mob_trait)
 			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
 	SSquirks.quirk_objects -= src
@@ -76,15 +76,15 @@
 	var/returnlist = list() // so now we're gonna convert the list of paths to string names, like it was before, but better cus I did it
 	for(var/quirk in conflicts)
 		var/datum/quirk/qi = quirk
-		returnlist += ckey(initial(qi.name))
+		returnlist += initial(qi.key)
 	return returnlist
 
 /datum/quirk/proc/setup_quirk_for_subsystem()
 	return // mainly so it doesnt process or do anything wierd, its just gonna chill in the subsystem and be a var template
 
 /datum/quirk/proc/transfer_mob(mob/living/to_mob)
-	quirk_holder.roundstart_quirks -= src
-	to_mob.roundstart_quirks += src
+	quirk_holder.mob_quirks -= src
+	to_mob.mob_quirks += src
 	if(mob_trait)
 		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
 		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
@@ -115,14 +115,14 @@
 /mob/living/proc/get_trait_string(medical) //helper string. gets a string of all the traits the mob has
 	var/list/dat = list()
 	if(!medical)
-		for(var/V in roundstart_quirks)
+		for(var/V in mob_quirks)
 			var/datum/quirk/T = V
 			dat += T.name
 		if(!dat.len)
 			return "None"
 		return dat.Join(", ")
 	else
-		for(var/V in roundstart_quirks)
+		for(var/V in mob_quirks)
 			var/datum/quirk/T = V
 			dat += T.medical_record_text
 		if(!dat.len)
@@ -130,12 +130,12 @@
 		return dat.Join("<br>")
 
 /mob/living/proc/cleanse_trait_datums() //removes all trait datums
-	for(var/V in roundstart_quirks)
+	for(var/V in mob_quirks)
 		var/datum/quirk/T = V
 		qdel(T)
 
 /mob/living/proc/transfer_trait_datums(mob/living/to_mob)
-	for(var/V in roundstart_quirks)
+	for(var/V in mob_quirks)
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
 
