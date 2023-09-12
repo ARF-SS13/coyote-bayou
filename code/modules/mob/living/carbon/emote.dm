@@ -317,6 +317,27 @@
 	else
 		qdel(blade)
 
+//arm tentacle mutation//
+/datum/emote/living/carbon/tentarm
+	key = "tentarm"
+	key_third_person = "contorts their arm into a tentacle!"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/tentarm/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to use your tentacle arm!"))
+		return
+	var/which_tentacle_to_spawn
+	if(HAS_TRAIT(user, TRAIT_ARMTENT))
+		which_tentacle_to_spawn = /obj/item/gun/magic/tentacle
+	else 
+		to_chat(user, span_notice("You ain't got no arm tentacles, you goof!"))
+	var/obj/item/gun/magic/tentacle/tentacle = new which_tentacle_to_spawn(user) 
+	if(user.put_in_active_hand(tentacle))
+		to_chat(user, span_notice("You get your arm tentacle ready to grab!"))
+	else
+		qdel(tentacle)
 
 //Rock throw//
 /datum/emote/living/carbon/rocker

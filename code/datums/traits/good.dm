@@ -1110,6 +1110,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 33
 	mob_trait = TRAIT_ARMBLADE
 
+/datum/quirk/tentaclearm
+	name = "Arm Tentacle"
+	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
+	value = 33
+	mob_trait = TRAIT_ARMTENT
+
 /datum/quirk/bigbiter
 	name = "Biter - Big"
 	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."

@@ -260,7 +260,7 @@
 	item_state = "tentacle"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
-	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON
+	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
 	slot_flags = NONE
 	flags_1 = NONE
 	w_class = WEIGHT_CLASS_HUGE
@@ -312,7 +312,7 @@
 	name = "tentacle"
 	icon_state = "tentacle_end"
 	pass_flags = PASSTABLE
-	damage = 0
+	damage = 5
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'
