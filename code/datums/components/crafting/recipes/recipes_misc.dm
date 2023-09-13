@@ -722,6 +722,16 @@
 	category = CAT_MISC
 	subcategory = CAT_MISCELLANEOUS
 
+/datum/crafting_recipe/flare
+	name = "Flare"
+	result = /obj/item/flashlight/flare
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/datum/reagent/fuel = 5)
+	tools = list(TOOL_WRENCH)
+	time = 30
+	category = CAT_MISC
+	subcategory = CAT_MISCELLANEOUS
+
 /datum/crafting_recipe/rip/devils_toothpick
 	name = "The Devils Toothipick"
 	result = /obj/item/instrument/violin/upgraded
