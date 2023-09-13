@@ -43,6 +43,7 @@
 	if(!istype(destination))
 		return
 	var/old_size = destination.dna.features["body_size"]
+	var/old_width = destination.dna.features["body_width"]
 	destination.dna.unique_enzymes = unique_enzymes
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
@@ -61,6 +62,7 @@
 		destination.dna.default_mutation_genes = default_mutation_genes
 
 	destination.dna.update_body_size(old_size)
+	destination.dna.update_body_width(old_width)
 
 	SEND_SIGNAL(destination, COMSIG_CARBON_IDENTITY_TRANSFERRED_TO, src, transfer_SE)
 
@@ -413,8 +415,10 @@
 
 	if(newfeatures)
 		var/old_size = dna.features["body_size"]
+		var/old_width = dna.features["body_width"]
 		dna.features = newfeatures
 		dna.update_body_size(old_size)
+		dna.update_body_width(old_width)
 
 	if(mrace)
 		var/datum/species/newrace = new mrace.type
@@ -699,6 +703,13 @@
 		holder.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/small_stride, TRUE, slowdown)
 	else if(old_size < danger)
 		holder.remove_movespeed_modifier(/datum/movespeed_modifier/small_stride)
+
+/datum/dna/proc/update_body_width(old_width)
+	if(!holder || features["body_width"] == old_width)
+		return
+	//holder.resize = features["body_width"] / old_width
+	holder.transform = holder.transform.Scale(features["body_width"]/old_width, 1)
+	holder.update_transform()
 
 // duplicated code *pwns*
 /datum/dna/proc/shift_genital_order(which_one, move_up)
