@@ -165,6 +165,11 @@
 	icon = 'icons/mob/hair2.dmi'
 	icon_state = "facial_lizardlickfast_s"
 
+/datum/sprite_accessory/facial_hair/noselick
+	name = "Nose Lick"
+	icon = 'icons/mob/hair2.dmi'
+	icon_state = "noselick"
+
 //Secondary Face Traits
 
 /datum/sprite_accessory/facial_hair/tusks

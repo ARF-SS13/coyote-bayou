@@ -268,10 +268,6 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_POINTY
 
-/obj/item/scalpel/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 // Hand saw
 /obj/item/handsaw
 	name = "handsaw"

@@ -858,7 +858,7 @@
 	icon_state = "pride_bi"
 
 /obj/item/clothing/accessory/pride/trans
-	name = "Transexual Pride"
+	name = "Transgender Pride"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_trans"
 
@@ -868,7 +868,7 @@
 	icon_state = "pride_ace"
 
 /obj/item/clothing/accessory/pride/enby
-	name = "Nonbinery Pride"
+	name = "Nonbinary Pride"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_enby"
 

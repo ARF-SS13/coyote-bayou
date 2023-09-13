@@ -170,6 +170,11 @@
 #define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
 #define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
+#define TRAIT_TAILPLAY			"Tail Player"
+#define TRAIT_TAILWHIP			"Tail Whipper"
+#define TRAIT_TAILSMASH			"Tail Smasher"
+#define TRAIT_TAILSPICY			"Tail Stinger"
+#define TRAIT_TAILTHAGO			"Tail Thago"
 #define TRAIT_BIGBITE			"Big Biter"
 #define TRAIT_FASTBITE			"Fast Biter"
 #define TRAIT_PLAYBITE			"Play Biter"
@@ -479,7 +484,6 @@
 #define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
 #define HOT_POTATO_TRAIT "hot-potato"
-#define SABRE_SUICIDE_TRAIT "sabre-suicide"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
 #define EYE_OF_GOD_TRAIT "eye-of-god"

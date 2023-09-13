@@ -215,6 +215,62 @@
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 
+/datum/emote/living/fgasp
+	key = "fgasp"
+	key_third_person = "fgasps"
+	message = "gasps!"
+	message_param = "gasps at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/female_gasp.ogg'
+
+/datum/emote/living/fgiggle
+	key = "fgiggle"
+	key_third_person = "fgiggles"
+	message = "giggles."
+	message_param = "giggles at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalegiggle1.ogg'
+
+/datum/emote/living/flaugh
+	key = "flaugh"
+	key_third_person = "flaughs"
+	message = "laughs."
+	message_param = "laughs at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/voice/human/womanlaugh.ogg'
+
+/datum/emote/living/fsigh
+	key = "fsigh"
+	key_third_person = "fsighs"
+	message = "sighs."
+	message_param = "sighs at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalesigh1.ogg'
+
+/datum/emote/living/fsneeze
+	key = "fsneeze"
+	key_third_person = "fsneezes"
+	message = "sneezes."
+	message_param = "sneezes at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/female_sneeze.ogg'
+
+/datum/emote/living/fsnore
+	key = "fsnore"
+	key_third_person = "fsnores"
+	message = "snores."
+	message_param = "snores at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalesnore1.ogg'
+
+/datum/emote/living/fwhimper
+	key = "fwhimper"
+	key_third_person = "fwhimpers"
+	message = "whimpers."
+	message_param = "whimpers at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalewhimper1.ogg'
+
 /datum/emote/living/frown
 	key = "frown"
 	key_third_person = "frowns"
@@ -836,6 +892,12 @@
 	key_third_person = "mrowls"
 	message = "mrowls."
 	sound = 'sound/f13effects/sunsetsounds/mrowl.ogg'
+
+/datum/emote/meowrek
+	key = "meowrek"
+	key_third_person = "definitely sounds like a cat of all time."
+	message = "mrowls."
+	sound = 'sound/f13effects/sunsetsounds/meowrek.ogg'
 
 
 /datum/emote/nya //Kitten Must Die.ogg

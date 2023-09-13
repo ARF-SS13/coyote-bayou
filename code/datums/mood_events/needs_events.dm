@@ -10,18 +10,20 @@
 /datum/mood_event/wellfed
 	description = span_nicegreen("I'm stuffed!")
 	mood_change = 6
+	timeout = 20 MINUTES
 
 /datum/mood_event/fed
 	description = span_nicegreen("I have recently had some food.")
 	mood_change = 3
+	timeout = 10 MINUTES
 
 /datum/mood_event/hungry
 	description = span_warning("I'm getting a bit hungry.")
-	mood_change = -2
+	mood_change = -4
 
 /datum/mood_event/starving
 	description = span_boldwarning("I'm starving!")
-	mood_change = -4
+	mood_change = -6
 
 //charge
 /datum/mood_event/supercharged

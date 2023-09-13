@@ -5,7 +5,7 @@
 */
 /obj/item/clothing/shoes/f13
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done
+	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/enclave/serviceboots
 	name = "enclave service boots"
@@ -18,6 +18,7 @@
 	desc = "Ripped cloth used as improvised foot strips, instead of shoes. Crude and gets dirty fast."
 	icon_state = "rag"
 	item_state = "rag"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/rag/pawb
 	name = "tough feet"
@@ -30,12 +31,14 @@
 	desc = "A pair of tanned leather shoes."
 	icon_state = "tan"
 	item_state = "tan"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/brownie //Make a craft recipe, and delete this comment.
 	name = "brown shoes"
 	desc = "A pair of brown leather shoes made of wasteland animals hides."
 	icon_state = "brownie"
 	item_state = "brownie"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/fancy
 	name = "black shoes"
@@ -48,18 +51,21 @@
 	desc = "A pair of cowhide boots with spurs.<br>They have a Cuban heel, rounded to pointed toe, high shaft, and, traditionally, no lacing."
 	icon_state = "cowboy"
 	item_state = "cowboy"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/explorer
 	name = "worn boots"
 	desc = "A pair of slightly worn, steel-toed work boots.<br>Good at keeping toes safe from falling junk you find amid the ruins."
 	icon_state = "explorer"
 	armor = ARMOR_VALUE_LIGHT
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/raidertreads
 	name = "raider treads"
 	desc = "A decrepit boot on one foot, fuckall on the other, the height of raider fashion."
 	icon_state = "raidertreads"
 	item_state = "raidertreads"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/diesel
 	name = "male diesel boots"
@@ -70,6 +76,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/diesel/alt
 	name = "female diesel boots"
@@ -91,6 +98,7 @@
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/military/leather
 	name = "leather combat boots"
@@ -134,6 +142,7 @@
 	equip_delay_other = 100
 	permeability_coefficient = 0.9
 	can_be_tied = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/peltboots
 	name = "pelt boots"
@@ -146,6 +155,7 @@
 	item_state = "legion_pelt"
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/f13/military/legion
 	name = "rough leather boots"

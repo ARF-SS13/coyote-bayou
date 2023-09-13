@@ -252,7 +252,7 @@
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
 		/obj/item/melee/unarmed/deathclawgauntlet,
-		/obj/item/melee/powerfist/f13/goliath,
+		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
 		/obj/item/twohanded/spear/bonespear/deathclaw,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,

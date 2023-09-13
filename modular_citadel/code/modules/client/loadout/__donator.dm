@@ -729,13 +729,12 @@
 // L
 
 /datum/gear/donator/kits/LilKuddles
-	name = "Khajiits Memories"
+	name = "MelMels Belongings"
 	path = /obj/item/storage/box/large/custom_kit/kuddles2
 	ckeywhitelist = list("LilKuddles")
 
 /obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
-	new /obj/item/melee/coyote/oldlongsword/kuddleslongsword(src)
-	new /obj/item/clothing/suit/hooded/robes(src)
+	new /obj/item/clothing/under/f13/customelody(src)
 
 
 /datum/gear/donator/kits/lifelessghoul
@@ -1131,7 +1130,7 @@
 	new /obj/item/ammo_box/m473(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
-	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"

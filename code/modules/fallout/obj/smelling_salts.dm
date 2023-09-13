@@ -54,7 +54,7 @@
 /obj/item/smelling_salts/proc/can_revive(mob/living/carbon/T)
 	var/obj/item/organ/brain/BR = T.getorgan(/obj/item/organ/brain)
 	var/obj/item/organ/heart = T.getorgan(/obj/item/organ/heart)
-	if(T.suiciding || T.hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(T))
+	if(T.hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(T))
 		return
 	if((T.getBruteLoss() >= 160) || (T.getFireLoss() >= 160))
 		return

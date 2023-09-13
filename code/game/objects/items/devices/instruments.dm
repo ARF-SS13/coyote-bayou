@@ -20,10 +20,6 @@
 	song = null
 	return ..()
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/instrument/Initialize(mapload)
 	. = ..()
 	if(mapload)

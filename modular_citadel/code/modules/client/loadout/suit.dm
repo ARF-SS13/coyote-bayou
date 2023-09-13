@@ -572,6 +572,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+
+/datum/gear/suit/armor/cyberjackets
+	name = "Light Cyber jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberjackets/dark
+	name = "Dark Cyber jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/two
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberjackets/hl
+	name = "Highlighted Cyber jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/three
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/unmcwinter
 	name = "Winterized UNMC armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcwinter

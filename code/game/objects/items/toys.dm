@@ -496,11 +496,6 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-/obj/item/toy/katana/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
-	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1)
-	return(BRUTELOSS)
-
 /*
  * Snap pops
  */
@@ -756,11 +751,6 @@
 	var/card_throw_speed = 3
 	var/card_throw_range = 7
 	var/list/card_attack_verb = list("attacked")
-
-/obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!"))
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-	return BRUTELOSS
 
 /obj/item/toy/cards/proc/apply_card_vars(obj/item/toy/cards/newobj, obj/item/toy/cards/sourceobj) // Applies variables for supporting multiple types of card deck
 	if(!istype(sourceobj))
@@ -1507,7 +1497,6 @@
 	item_state = "doll"
 	var/doll_name = "Dummy"
 
-//Add changing looks when i feel suicidal about making 20 inhands for these.
 /obj/item/toy/dummy/attack_self(mob/user)
 	var/new_name = stripped_input(usr,"What would you like to name the dummy?","Input a name",doll_name,MAX_NAME_LEN)
 	if(!new_name)
@@ -1556,7 +1545,3 @@
 					span_notice("Your hand is moving on its own! But you cannot allow yourself to get hooked to the game."))
 		add_fingerprint(user)
 
-/obj/item/toy/tragicthegarnering/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] reaches zero life points! It looks like [user.p_they()] [user.p_have()] are about to enter the graveyard!"))
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-	return BRUTELOSS

@@ -31,9 +31,6 @@
 	max_charges = 1
 	recharge_rate = 30 MINUTES
 
-/obj/item/gun/magic/staff/healing/handle_suicide() //Stops people trying to commit suicide to heal themselves
-	return
-
 /obj/item/gun/magic/staff/chaos
 	name = "staff of chaos"
 	desc = "An artefact that spits bolts of chaotic magic that can potentially do anything."

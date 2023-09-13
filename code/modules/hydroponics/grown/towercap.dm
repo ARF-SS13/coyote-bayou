@@ -397,7 +397,7 @@
 
 	for(var/mob/player in GLOB.player_list)
 		if(player == M)
-			var/msg = "You send a message by smoke signal: "+span_papyrus("\"[message]\"")
+			var/msg = span_engradio("You send a message by smoke signal: "+span_papyrus("\"[message]\""))
 			to_chat(player, msg)
 			continue
 		if(istype(player, /mob/dead))
@@ -427,7 +427,7 @@
 						dirmessage = "in the southeast"
 					if(SOUTHWEST)
 						dirmessage = "in the southwest"
-			var/msg = "Smoke rises [dirmessage]: "+span_papyrus("\"[message]\"")
+			var/msg = span_engradio("Smoke rises [dirmessage]: "+span_papyrus("\"[message]\""))
 			to_chat(player, msg)
 
 /obj/structure/bonfire/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)

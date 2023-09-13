@@ -153,14 +153,6 @@
 	min_val = 0
 	max_val = 1
 
-/datum/config_entry/number/suicide_reenter_round_timer
-	config_entry_value = 30
-	min_val = 0
-
-/datum/config_entry/number/roundstart_suicide_time_limit
-	config_entry_value = 30
-	min_val = 0
-
 /datum/config_entry/number/shuttle_refuel_delay
 	config_entry_value = 12000
 	min_val = 0
@@ -467,8 +459,6 @@
 
 /datum/config_entry/number/dropped_modes
 	config_entry_value = 3
-
-/datum/config_entry/flag/suicide_allowed
 
 /datum/config_entry/keyed_list/breasts_cups_prefs
 	key_mode = KEY_MODE_TEXT

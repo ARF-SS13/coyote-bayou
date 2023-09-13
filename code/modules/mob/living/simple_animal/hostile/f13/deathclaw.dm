@@ -139,7 +139,7 @@
 		if(is_low_health && health > 0)
 			A.ex_act(EXPLODE_HEAVY)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-		DestroySurroundings()
+			DestroySurroundings()
 	..()
 
 // Mother death claw

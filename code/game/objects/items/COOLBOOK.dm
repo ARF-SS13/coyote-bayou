@@ -51,7 +51,13 @@
 	color = "#888833"
 	book_key = "chiefguide"
 
-
+/obj/item/cool_book/ashdowncit
+	name = "Guide to Ashdown"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book5"
+	color = "#CC3333"
+	book_key = "ashcitguide"
 
 /obj/item/cool_book/Initialize()
 	. = ..()

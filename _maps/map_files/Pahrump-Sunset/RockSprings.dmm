@@ -33584,6 +33584,20 @@
 /obj/structure/flora/wasteplant/wild_mutfruit,
 /turf/open/floor/grass,
 /area/f13/wasteland/redwater)
+"lCa" = (
+/obj/structure/sign/crosswalk{
+	pixel_x = 7;
+	pixel_y = 5;
+	icon = 'modular_coyote/icons/objects/street_signs.dmi';
+	icon_state = "street";
+	name = "Highway 67 & Redwater Road";
+	desc = "This Sign used to say Redwaters population on it.  Its been crossed out in blood and replaced with the words 'not you.'";
+	layer = 6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/redwater)
 "lCf" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -97240,7 +97254,7 @@ hKP
 hKP
 hKP
 hKP
-hKP
+lCa
 hKP
 iqt
 iqt

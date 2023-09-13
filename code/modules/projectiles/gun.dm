@@ -79,7 +79,7 @@ ATTACHMENTS
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
 	var/firing = FALSE
-	/// Used in gun-in-mouth execution/suicide and similar, while TRUE nothing should work on this like firing or modification and so on and so forth.
+	/// Used when its busy
 	var/busy_action = FALSE
 	/// used for inaccuracy and wielding requirements/penalties
 	var/weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -414,11 +414,6 @@ ATTACHMENTS
 	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
 		shoot_with_empty_chamber(user)
 		return
-
-	if(flag)
-		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-			handle_suicide(user, target, params)
-			return
 
 	//Exclude lasertag guns from the TRAIT_CLUMSY check.
 	if(clumsy_check)
@@ -783,42 +778,6 @@ ATTACHMENTS
 
 	if(worn_out)
 		. += ("[initial(icon_state)]_worn")
-
-/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
-	if(!ishuman(user) || !ishuman(target))
-		return
-
-	if(on_cooldown(user))
-		return
-
-	if(user == target)
-		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
-			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
-	else
-		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
-			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
-
-	busy_action = TRUE
-
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
-		if(user)
-			if(user == target)
-				user.visible_message(span_notice("[user] decided not to shoot."))
-			else if(target && target.Adjacent(user))
-				target.visible_message(span_notice("[user] has decided to spare [target]"), span_notice("[user] has decided to spare your life!"))
-		busy_action = FALSE
-		return
-
-	busy_action = FALSE
-
-	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[user] pulls the trigger!"))
-
-	playsound('sound/weapons/dink.ogg', 30, 1)
-
-	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
-
-	process_fire(target, user, TRUE, params, stam_cost = getstamcost(user))
 
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
 	if(pin)

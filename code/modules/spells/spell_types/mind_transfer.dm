@@ -55,11 +55,6 @@ Also, you never added distance checking after target is selected. I've went ahea
 			to_chat(user, span_warning("[t_He] appear[target.p_s()] to be catatonic! Not even magic can affect [target.p_their()] vacant mind."))
 		return
 
-	if(user.suiciding)
-		if(!silent)
-			to_chat(user, span_warning("You're killing yourself! You can't concentrate enough to do this!"))
-		return
-
 	var/datum/mind/TM = target.mind
 	if((target.anti_magic_check() || TM.has_antag_datum(/datum/antagonist/wizard) || TM.has_antag_datum(/datum/antagonist/cult) || TM.has_antag_datum(/datum/antagonist/clockcult) || TM.has_antag_datum(/datum/antagonist/changeling) || TM.has_antag_datum(/datum/antagonist/rev)) || cmptext(copytext(target.key,1,2),"@"))
 		if(!silent)

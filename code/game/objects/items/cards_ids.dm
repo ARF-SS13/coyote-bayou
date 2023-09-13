@@ -23,10 +23,6 @@
 	var/punched_state
 	var/list/files = list()
 
-/obj/item/card/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 /obj/item/card/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
