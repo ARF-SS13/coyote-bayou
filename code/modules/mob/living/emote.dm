@@ -893,6 +893,12 @@
 	message = "mrowls."
 	sound = 'sound/f13effects/sunsetsounds/mrowl.ogg'
 
+/datum/emote/meowrek
+	key = "meowrek"
+	key_third_person = "definitely sounds like a cat of all time."
+	message = "mrowls."
+	sound = 'sound/f13effects/sunsetsounds/meowrek.ogg'
+
 
 /datum/emote/nya //Kitten Must Die.ogg
 	key = "nya"
