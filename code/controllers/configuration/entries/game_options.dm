@@ -510,6 +510,17 @@
 	min_val = RESIZE_DEFAULT_SIZE
 	integer = FALSE
 
+/datum/config_entry/number/body_width_min
+	config_entry_value = RESIZE_DEFAULT_SIZE
+	min_val = 0.1 //to avoid issues with zeros and negative values.
+	max_val = RESIZE_DEFAULT_SIZE
+	integer = FALSE
+
+/datum/config_entry/number/body_width_max
+	config_entry_value = RESIZE_DEFAULT_SIZE
+	min_val = RESIZE_DEFAULT_SIZE
+	integer = FALSE
+
 //Pun-Pun movement slowdown given to characters with a body size smaller than this value,
 //to compensate for their smaller hitbox.
 //To disable, just make sure the value is lower than 'body_size_min'
