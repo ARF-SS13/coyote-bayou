@@ -409,6 +409,16 @@
 	path = /obj/item/clothing/under/f13/scifiofficer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/galaxy
+	name = "Red galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/galaxyblue
+	name = "Blue galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
