@@ -10,7 +10,7 @@
  */
 /datum/song
 	/// Name of the song
-	var/name = "Untitled"
+	var/name = "Saucy Sonata"
 
 	/// The atom we're attached to/playing from
 	var/atom/parent

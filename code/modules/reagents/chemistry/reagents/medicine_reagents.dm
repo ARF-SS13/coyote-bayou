@@ -2061,6 +2061,215 @@
 	. = ..()
 	M.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 
+/// Slow-decaying healing 'med' as a result of listening to good music
+/// Has better effects if it builds up in your system cus of listening longer
+/datum/reagent/medicine/music
+	name = "Toe Tappinol"
+	description = "The liquid one squirts when they're feeling the beat. Typically a good thing."
+	color = "#E62100"
+	var/list/musics = list()
+	//metabolization_rate = 2 * REAGENTS_METABOLISM // long, lingering heals that ramp up as you listen longer
+	synth_metabolism_use_human = TRUE
+	ghoulfriendly = TRUE
+	bleed_mult = 1
+	var/tapCD
+	var/max_effect_at = 50 // how many units of music you need to listen to before you get the full effect
 
+/datum/reagent/medicine/music/on_new(list/data = list("songer" = "Toe Tappin Trichamonas", "kind" = "pathogenic poka"))
+	. = ..()
+	update_musics(data)
+
+/datum/reagent/medicine/music/on_merge(list/data = list("songer" = "Toe Tappin Trichamonas", "kind" = "pathogenic poka"), amount, mob/living/carbon/M, purity)
+	. = ..()
+	update_musics(data)
+
+/datum/reagent/medicine/music/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(!M.can_hear() && prob(5))
+		to_chat(M, span_alert("Boy you wish you could hear that. Probably sounds nice. Too bad you can't!"))
+		return
+	var/songpower = min(round(volume / max_effect_at, 0.25), 1)
+	prune_music()
+	if(!LAZYLEN(musics))
+		volume = 0 // turn down for what? (nothing)
+		return
+	var/songstax = max(song_stacks(M), 0.1)
+	songpower = clamp(songpower * songstax, 0, 5)
+	var/list/hurts = list()
+	if(M.getBruteLoss())
+		hurts += "brute"
+	if(M.getFireLoss())
+		hurts += "burn"
+	if(M.getToxLoss())
+		hurts += "tox"
+	if(M.oxyloss)
+		hurts += "oxy"
+	if(M.radiation)
+		hurts += "rad"
+	var/list/hurt_parts = M.get_wounded_bodyparts()
+	if(LAZYLEN(hurt_parts))
+		hurts += "wound"
+	if(!LAZYLEN(hurts))
+		tap_toes(M, songpower, FALSE)
+		return
+	var/winner = pick(hurts)
+	switch(winner)
+		if("brute")
+			M.adjustBruteLoss(-0.5 * songpower)
+		if("burn")
+			M.adjustFireLoss(-0.5 * songpower)
+		if("tox")
+			M.adjustToxLoss(-0.5 * songpower)
+		if("oxy")
+			M.adjustOxyLoss(-5 * songpower)
+		if("rad")
+			M.radiation = max(M.radiation - 1 * songpower, 0)
+		if("wound")
+			bleed_mult = max(bleed_mult - (0.2 * songpower), 0)
+	tap_toes(M, songpower, TRUE)
+
+/datum/reagent/medicine/music/proc/tap_toes(mob/living/carbon/C, mult, healed)
+	if(!iscarbon(C))
+		return
+	if(prob(5))
+		make_a_sparkle(C)
+	if(!COOLDOWN_FINISHED(src, tapCD))
+		return
+	COOLDOWN_START(src, tapCD, 1 MINUTES)
+	var/stringload = musics2str()
+	var/makesufeel = ""
+	switch(mult)
+		if(-INFINITY to 0)
+			C.visible_message(
+				span_notice("[C] nods along to [stringload]."),
+				span_notice("You nod along to [stringload].[makesufeel]"),
+			)
+		if(0.01 to 0.25)
+			if(healed)
+				makesufeel = " It makes you feel a bit better."
+			C.visible_message(
+				span_notice("[C] nods along to [stringload]."),
+				span_notice("You nod along to [stringload].[makesufeel]"),
+			)
+		if(0.25 to 0.5)
+			if(healed)
+				makesufeel = " It makes you feel a little better."
+			C.visible_message(
+				span_notice("[C] bobs along to [stringload]."),
+				span_notice("You bob along to [stringload].[makesufeel]"),
+			)
+		if(0.5 to 0.75)
+			if(healed)
+				makesufeel = " It makes you feel somewhat better."
+			C.visible_message(
+				span_notice("[C] sways along to [stringload]."),
+				span_notice("You sway along to [stringload].[makesufeel]"),
+			)
+		if(0.75 to 1)
+			if(healed)
+				makesufeel = " It makes you feel better."
+			C.visible_message(
+				span_notice("[C] dances along to [stringload]."),
+				span_notice("You dance along to [stringload].[makesufeel]"),
+			)
+		if(1 to 2)
+			if(healed)
+				makesufeel = " It makes you feel more than a little bit better."
+			C.visible_message(
+				span_notice("[C] jams along to [stringload]."),
+				span_notice("You jam along to [stringload].[makesufeel]"),
+			)
+			if(prob(35))
+				C.emote("airguitar")
+		if(2 to INFINITY)
+			if(healed)
+				makesufeel = " It makes you feel a much better."
+			C.visible_message(
+				span_notice("[C] rocks out to [stringload]."),
+				span_notice("You rock out to [stringload].[makesufeel]"),
+			)
+			if(prob(35))
+				C.emote("airguitar")
+
+/datum/reagent/medicine/music/proc/musics2str()
+	if(!islist(musics))
+		return "Coderbus Carl's Runtime Rag"
+	if(LAZYLEN(musics) == 1)
+		for(var/m in musics)
+			return "[m]'s [LAZYACCESS(musics[m], "kind")]"
+	if(LAZYLEN(musics) == 2)
+		var/list/duetters = list()
+		var/list/mashup = list()
+		for(var/m in musics)
+			duetters += m
+			mashup += LAZYACCESS(musics[m], "kind")
+		var/d_string = "[LAZYACCESS(duetters, 1) || "Staggerin' D"] and [LAZYACCESS(duetters, 2) || "Simple Animal"]'s mashup of "
+		var/m_string = "[LAZYACCESS(mashup, 1) || "StyleBaby2000"] and [LAZYACCESS(mashup, 2) || "Pain Pain Rain Drain"]"
+		return d_string + m_string
+	if(LAZYLEN(musics) > 2)
+		var/rockstar = "Fancy Frank"
+		var/list/backups = list()
+		var/rockstar_song = "Fancy Frank's Disco Vomit Nightmare"
+		for(var/m in musics)
+			if(rockstar == "Fancy Frank")
+				rockstar = m
+				rockstar_song = LAZYACCESS(musics[m], "kind")
+			else
+				backups += m
+		return "[rockstar]'s [rockstar_song], featuring [english_list(backups)]"
+	
+/datum/reagent/medicine/music/proc/update_musics(list/dat)
+	if(!islist(musics))
+		musics = list()
+	if(!islist(dat))
+		return
+	var/songer = LAZYACCESS(dat, "songer")
+	var/kind = LAZYACCESS(dat, "kind")
+	var/when = world.time
+	if(!islist(musics[songer]))
+		musics[songer] = list()
+	musics[songer]["last_heard"] = when
+	musics[songer]["kind"] = kind
+
+/datum/reagent/medicine/music/proc/prune_music()
+	if(!islist(musics))
+		return
+	for(var/songer in musics)
+		if(LAZYACCESS(musics[songer], "last_heard") - world.time > 10 MINUTES)
+			musics -= songer
+
+/datum/reagent/medicine/music/proc/song_stacks(mob/living/carbon/M)
+	if(!islist(musics) || !iscarbon(M))
+		return 0.1
+	var/stacks = 0
+	for(var/songer in musics)
+		var/stacc = 0
+		var/timesinceheard = LAZYACCESS(musics[songer], "last_heard") - world.time
+		switch(timesinceheard)
+			if(-INFINITY to 30 SECONDS)
+				stacc = 1
+			if(30 SECONDS to 1 MINUTES)
+				stacc = 0.75
+			if(1 MINUTES to 2 MINUTES)
+				stacc = 0.5
+			if(2 MINUTES to 10 MINUTES)
+				stacc = 0.25
+			else
+				stacc = 0.05
+		if(M.real_name == songer)
+			stacc *= 0.35 // it doesnt work as well just listening to yourself
+	return stacks
+
+/datum/reagent/medicine/music/proc/make_a_sparkle(mob/living/carbon/C)
+	if(!C)
+		return
+	var/obj/effect/temp_visual/heal/still/H = new /obj/effect/temp_visual/heal/still(get_turf(C))
+	SSeffects.floaterize(H, NORTH, 1, 3 SECONDS)
+
+/obj/effect/temp_visual/heal/still
+	name = "healing glow"
+	icon_state = "heal"
+	duration = 3 SECONDS
+	color = "#c43294"
 
 
