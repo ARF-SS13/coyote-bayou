@@ -10,6 +10,8 @@
 	var/datum/song/handheld/song
 	var/list/allowed_instrument_ids
 	var/tune_time_left = 0
+	COOLDOWN_DECLARE(good_music_heal)
+	var/good_music_heal_cd = 1 SECONDS
 
 /obj/item/instrument/Initialize(mapload)
 	. = ..()
@@ -28,11 +30,23 @@
 /obj/item/instrument/process(wait)
 	if(is_tuned())
 		if (song.playing)
+			var/mob/living/player = recursive_loc_path_search(src, /mob/living)
+			var/goodmusic = (player && HAS_TRAIT(player, TRAIT_MUSICIAN))
+			if(goodmusic)
+				make_a_sparkle(player)
 			for (var/mob/living/M in song.hearing_mobs)
 				M.dizziness = max(0,M.dizziness-2)
 				M.jitteriness = max(0,M.jitteriness-2)
 				M.confused = max(M.confused-1)
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "goodmusic", /datum/mood_event/goodmusic)
+				if(ishuman(M))
+					var/mob/living/carbon/human/lstnr = M
+					var/datum/reagents/R = lstnr.reagents
+					var/list/payload = list(
+						"songer" = player.real_name,
+						"kind" = song.name,
+					)
+					R.add_reagent(/datum/reagent/medicine/music, 1, payload)
 		tune_time_left -= wait
 	else
 		tune_time_left = 0
@@ -40,9 +54,17 @@
 			loc.visible_message(span_warning("[src] starts sounding a little off..."))
 		STOP_PROCESSING(SSprocessing, src)
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
+/obj/item/instrument/proc/make_a_sparkle(mob/living/carbon/C)
+	if(!C)
+		return
+	var/obj/effect/temp_visual/music/H = new /obj/effect/temp_visual/music(get_turf(C))
+	SSeffects.floaterize(H, C.dir, rand(1,2), rand(1,3) SECONDS)
+
+/obj/effect/temp_visual/music
+	name = "lovely music"
+	icon_state = "music"
+	duration = 3 SECONDS
+	color = "#8591ff"
 
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
