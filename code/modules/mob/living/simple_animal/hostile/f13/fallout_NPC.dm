@@ -223,7 +223,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
 	healable = 1
 	attack_verb_simple = "power-fists"
-	projectiletype = /obj/item/projectile/f13plasma/repeater
+	projectiletype = /obj/item/projectile/plasmacarbine
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
