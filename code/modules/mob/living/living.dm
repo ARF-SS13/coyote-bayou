@@ -515,6 +515,17 @@
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
+/mob/living/proc/toggle_mob_sleep()
+	set name = "Sleep Toggle"
+	set category = "IC"
+
+	if(IsSleeping())
+		if(alert(src, "Would you like to wake up soon? (You'll wake up after sleeping a little more, be patient and don't spam the button!)", "Wake Up", "Yes", "No") == "Yes")
+			SetSleeping(400)	//puts you to sleep for 40 seconds, so it's not abusable.
+	else
+		if(alert(src, "Are you sure you want to sleep for a long time? (You can wake up by pressing this button again)", "Sleep", "Yes", "No") == "Yes")
+			SetSleeping(18000)	//puts you to sleep for 30 minutes, better than never waking up in case my code sucks badly.
+
 /mob/proc/get_contents()
 
 /*CIT CHANGE - comments out lay_down proc to be modified in modular_citadel
@@ -587,7 +598,6 @@
 	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
-		suiciding = 0
 		set_stat(UNCONSCIOUS) //the mob starts unconscious
 		if(!eye_blind)
 			blind_eyes(1)

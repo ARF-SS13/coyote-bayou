@@ -207,6 +207,7 @@
 	product_slogans = ""
 	products = list(/obj/item/blueprint/research = 5)
 	contraband = list()
-	premium = list(/obj/item/blueprint/research = 10)
+	premium = list(/obj/item/documents/syndicate/blue = 3)
+	resistance_flags = INDESTRUCTIBLE
 	default_price = PRICE_RESEARCH
 	extra_price = PRICE_RESEARCH_PLUS

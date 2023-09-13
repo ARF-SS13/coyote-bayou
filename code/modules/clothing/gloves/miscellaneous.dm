@@ -30,9 +30,9 @@
 	///Extra damage through the punch.
 	var/enhancement = 0 //it's a +0 to your punches because it isn't magical
 	///Main trait added by the gloves to the user on wear.
-	var/inherited_trait = TRAIT_NOGUNS //what are you, dishonoroable?
+	var/inherited_trait = NONE //what are you, dishonoroable?
 	///Secondary trait added by the gloves to the user on wear.
-	var/secondary_trait = TRAIT_FEARLESS //what are you, a coward?
+	var/secondary_trait = NONE //what are you, a coward?
 
 /obj/item/clothing/gloves/fingerless/pugilist/equipped(mob/user, slot)
 	. = ..()
@@ -60,7 +60,7 @@
 	name = "armwraps of unyielding resolve"
 	desc = "A series of armwraps, soaked in holy water. Makes you pretty keen to smite evil magic users."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	enhancement = 2 //It is not magic that makes you punch harder, but force of will. Trust me.
+	enhancement = 30 // Equal to the mace gloves and vastly outperformed by the power fist.
 	secondary_trait = TRAIT_ANTIMAGIC
 	var/chaplain_spawnable = TRUE
 

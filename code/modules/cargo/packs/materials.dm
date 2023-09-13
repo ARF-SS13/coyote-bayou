@@ -71,13 +71,19 @@
 
 /datum/supply_pack/materials/prewaralloyingot
 	goody = PACK_GOODY_PUBLIC
-	name = "4 Pre-War Ingots"
+	name = "1 Ultrasteel Ingot"
 	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
-	cost = 2775
-	contains = list(/obj/item/ingot/adamantine,
-					/obj/item/ingot/adamantine,
-					/obj/item/ingot/adamantine
-					)
+	cost = 1500
+	contains = list(/obj/item/ingot/adamantine
+	)
+
+/datum/supply_pack/materials/rosesteelingot
+	goody = PACK_GOODY_PUBLIC
+	name = "1 Rose Steel Ingot"
+	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
+	cost = 750
+	contains = list(/obj/item/ingot/mythril
+	)
 
 /datum/supply_pack/materials/deathclawhide
 	goody = PACK_GOODY_PUBLIC

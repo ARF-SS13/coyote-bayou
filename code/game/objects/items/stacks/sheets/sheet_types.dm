@@ -45,6 +45,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("stool", /obj/structure/chair/stool, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bar stool", /obj/structure/chair/stool/bar, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("double bed", /obj/structure/bed/double, 4, one_per_turf = TRUE, on_floor = TRUE), \
 	//CIT CHANGE - adds sofas to metal recipe list
 	new/datum/stack_recipe_list("sofas", list( \
 		new /datum/stack_recipe("sofa (middle)", /obj/structure/chair/sofa, one_per_turf = TRUE, on_floor = TRUE), \
@@ -222,11 +223,6 @@ GLOBAL_LIST_INIT(lead_recipes, list ( \
 /obj/item/stack/sheet/metal/get_main_recipes()
 	. = ..()
 	. += GLOB.metal_recipes
-
-/obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 
 // Plasteel
 
@@ -497,6 +493,36 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 			new/datum/stack_recipe("yellow bedsheet", /obj/item/bedsheet/yellow, 3), \
 			new/datum/stack_recipe("brown bedsheet", /obj/item/bedsheet/brown, 3), \
 			new/datum/stack_recipe("black bedsheet", /obj/item/bedsheet/black, 3), \
+			new/datum/stack_recipe("transpride bedsheet", /obj/item/bedsheet/trans, 3), \
+			new/datum/stack_recipe("panpride bedsheet", /obj/item/bedsheet/pan, 3), \
+			new/datum/stack_recipe("bipride bedsheet", /obj/item/bedsheet/bi, 3), \
+			new/datum/stack_recipe("NBpride bedsheet", /obj/item/bedsheet/nonbinary, 3), \
+			new/datum/stack_recipe("canada bedsheet", /obj/item/bedsheet/canadaflag, 3), \
+			new/datum/stack_recipe("british bedsheet", /obj/item/bedsheet/britishflag, 3), \
+			new/datum/stack_recipe("italian bedsheet", /obj/item/bedsheet/italianflag, 3), \
+			new/datum/stack_recipe("deer bedsheet", /obj/item/bedsheet/deer, 3), \
+			new/datum/stack_recipe("deer double bedsheet", /obj/item/bedsheet/deerdouble, 3), \
+			new/datum/stack_recipe("transpride double bedsheet", /obj/item/bedsheet/doubletranspride, 3), \
+			new/datum/stack_recipe("panpride double bedsheet", /obj/item/bedsheet/doublepanpride, 3), \
+			new/datum/stack_recipe("bipride double bedsheet", /obj/item/bedsheet/doublebipride, 3), \
+			new/datum/stack_recipe("NBpride double bedsheet", /obj/item/bedsheet/doublenonbinpride, 3), \
+			new/datum/stack_recipe("royal blue double bedsheet", /obj/item/bedsheet/doublesheetcaptain, 3), \
+			new/datum/stack_recipe("fancy yellow double bedsheet", /obj/item/bedsheet/doublesheetce, 3), \
+			new/datum/stack_recipe("fancy blue double bedsheet", /obj/item/bedsheet/doublesheethop, 3), \
+			new/datum/stack_recipe("orange double bedsheet", /obj/item/bedsheet/doublesheetorange, 3), \
+			new/datum/stack_recipe("rainbow double bedsheet", /obj/item/bedsheet/doublesheetrainbow, 3), \
+			new/datum/stack_recipe("fancy red double bedsheet", /obj/item/bedsheet/doublesheethos, 3), \
+			new/datum/stack_recipe("white double bedsheet", /obj/item/bedsheet/doublesheet, 3), \
+			new/datum/stack_recipe("green double bedsheet", /obj/item/bedsheet/doublesheetgreen, 3), \
+			new/datum/stack_recipe("purple double bedsheet", /obj/item/bedsheet/doublesheetpurple, 3), \
+			new/datum/stack_recipe("clown double bedsheet", /obj/item/bedsheet/doublesheetclown, 3), \
+			new/datum/stack_recipe("ian double bedsheet", /obj/item/bedsheet/doublesheetian, 3), \
+			new/datum/stack_recipe("royal red double bedsheet", /obj/item/bedsheet/doublesheetrd, 3), \
+			new/datum/stack_recipe("mime double bedsheet", /obj/item/bedsheet/doublesheetmime, 3), \
+			new/datum/stack_recipe("blue double bedsheet", /obj/item/bedsheet/doublesheetblue, 3), \
+			new/datum/stack_recipe("red double bedsheet", /obj/item/bedsheet/doublesheetred, 3), \
+			new/datum/stack_recipe("brown double bedsheet", /obj/item/bedsheet/doublesheetbrown, 3), \
+			new/datum/stack_recipe("yellow double bedsheet", /obj/item/bedsheet/doublesheetyellow, 3), \
 		)), \
 	))
 
@@ -764,7 +790,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 ))
 
 /obj/item/stack/sheet/bronze
-	name = "brass"
+	name = "black bronze"
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-building brass is actually more structurally stable bronze."
 	singular_name = "bronze sheet"
 	icon_state = "sheet-brass"
@@ -1024,11 +1050,6 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 /obj/item/stack/sheet/hay/get_main_recipes()
 	. = ..()
 	. += GLOB.hay_recipes
-
-/obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!"))
-	addtimer(CALLBACK(user, /mob/proc/gib), 30)
-	return BRUTELOSS
 
 /obj/item/stack/sheet/hay/fifty
 	amount = 50

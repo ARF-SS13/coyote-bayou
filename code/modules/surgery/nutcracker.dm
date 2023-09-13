@@ -35,7 +35,7 @@
 		return
 	if(!istype(M))
 		return
-	if(M == user) //just use the suicide verb instead
+	if(M == user)
 		return
 	if(user.zone_selected != "head")
 		return
@@ -57,13 +57,3 @@
 		else
 			to_chat(user, span_notice("Expose [M]\s head before trying to crush it!"))
 
-
-/obj/item/nutcracker/suicide_act(mob/living/carbon/user)
-	var/obj/item/bodypart/target_limb = user.get_bodypart("head")
-	if(target_limb) //I mean like... for example lings can be still alive without heads.
-		user.visible_message(span_suicide("[user] is crushing [user.p_their()] own head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		if(do_after(user, 30))
-			gib_head(user)
-	else
-		return
-	return (BRUTELOSS)

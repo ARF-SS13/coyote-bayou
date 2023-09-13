@@ -199,30 +199,6 @@
 /obj/item/gun/ballistic/rocketlauncher/update_icon_state()
 	icon_state = "[initial(icon_state)]-[chambered ? "1" : "0"]"
 
-/obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message(span_warning("[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!"), \
-		span_userdanger("You aim [src] at the ground to perform a bisnasty rocket jump..."))
-	if(can_shoot())
-		user.mob_transforming = TRUE
-		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 80, 1, 5)
-		animate(user, pixel_z = 300, time = 30, easing = LINEAR_EASING)
-		sleep(70)
-		animate(user, pixel_z = 0, time = 5, easing = LINEAR_EASING)
-		sleep(5)
-		user.mob_transforming = FALSE
-		process_fire(user, user, TRUE)
-		if(!QDELETED(user)) //if they weren't gibbed by the explosion, take care of them for good.
-			user.gib()
-		return MANUAL_SUICIDE
-	else
-		sleep(5)
-		shoot_with_empty_chamber(user)
-		sleep(20)
-		user.visible_message(span_warning("[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!"), \
-			span_userdanger("You look around after realizing you're still here, then proceed to choke yourself to death with [src]!"))
-		sleep(20)
-		return OXYLOSS
-
 /obj/item/gun/ballistic/rocketlauncher/brick
 	name = "\improper brick launcher"
 	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."

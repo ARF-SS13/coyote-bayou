@@ -79,6 +79,13 @@
 	message_param = "salutes to %t."
 	restraint_check = TRUE
 
+/datum/emote/living/carbon/human/salute/chest
+	key = "salutechest"
+	key_third_person = "salutes with hand to heart."
+	message = "salutes with hand to heart."
+	message_param = "salutes to %t with a hand to their heart."
+	restraint_check = TRUE
+
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"
@@ -143,6 +150,16 @@
 	var/mob/living/carbon/human/H = user
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
 		return TRUE
+
+/datum/emote/living/carbon/human/tongue_flick
+	key = "flick"
+	key_third_person = "flicks their forked tongue out."
+	message = "flicks their forked tongue out."
+
+/datum/emote/living/carbon/human/tongue_flick/run_emote(mob/user)
+	. = ..()
+	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "facial_lizardlickfast_s_emote")
+	flick_overlay_global(emote_animation, GLOB.clients, 1.6 SECONDS)
 
 /mob/living/carbon/human/proc/OpenWings()
 	if(!dna || !dna.species)

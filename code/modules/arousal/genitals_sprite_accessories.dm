@@ -72,6 +72,9 @@
 	icon_state = "sheath"
 	name = "Sheath"
 
+/datum/sprite_accessory/testicles/disguised
+	name = "Inconspicuous pair of testicles"
+
 //Vaginas
 /datum/sprite_accessory/vagina
 	icon = 'icons/obj/genitals/vagina_onmob.dmi'
@@ -109,6 +112,10 @@
 /datum/sprite_accessory/vagina/gaping
 	icon_state = "gaping"
 	name = "Gaping"
+
+/datum/sprite_accessory/vagina/inconspicuous
+	name = "Inconspicuous"
+	alt_aroused = FALSE
 
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts

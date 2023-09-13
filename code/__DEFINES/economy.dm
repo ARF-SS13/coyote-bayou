@@ -57,4 +57,4 @@
 #define PRICE_STIMPAK          50  // Normal craftable Stimpak
 #define PRICE_SUPER_STIM       120 // Super Stimpak
 #define PRICE_RESEARCH         200 // Research Documents
-#define PRICE_RESEARCH_PLUS    300 // More Expensive Research Documents
+#define PRICE_RESEARCH_PLUS    700 // More Expensive Research Documents

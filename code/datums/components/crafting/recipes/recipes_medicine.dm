@@ -3,7 +3,7 @@
 	result = /obj/item/reagent_containers/pill/redambrosia
 	reqs = list(/datum/reagent/medicine/gaia = 120,
 				/obj/item/reagent_containers/pill/bitterdrink = 2,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 10,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 5,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
@@ -15,8 +15,8 @@
 	result = /obj/item/reagent_containers/pill/blueambrosia
 	reqs = list(/datum/reagent/medicine/gaia = 120,
 				/obj/item/reagent_containers/pill/bitterdrink = 1,
-				/obj/item/reagent_containers/food/snacks/grown/aloe = 10,
-				/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 10,
+				/obj/item/reagent_containers/food/snacks/grown/aloe = 5,
+				/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 5,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
@@ -28,7 +28,8 @@
 	result = /obj/item/reagent_containers/pill/greenambrosia
 	reqs = list(/datum/reagent/medicine/gaia = 120,
 				/obj/item/reagent_containers/pill/bitterdrink = 1,
-				/obj/item/fishy/eel = 5,
+				/obj/item/reagent_containers/food/snacks/grown/herbs = 5,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 5,
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 10
@@ -100,7 +101,7 @@
 	result = /obj/item/storage/box/medicine/bitterdrink5
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
-				/obj/item/reagent_containers/food/drinks = 5)
+				/obj/item/stack/sheet/glass = 5)
 	tools = list(TOOL_ALCHEMY_TABLE)
 	time = 20
 	category = CAT_MEDICAL
@@ -313,7 +314,7 @@
 	name = "Extract gaia"
 	result = /obj/item/reagent_containers/glass/bottle/gaia
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 20,
-	/datum/reagent/water = 50)
+	/datum/reagent/water = 10)
 	time = 20
 	tools = list(TOOL_ALCHEMY_TABLE)
 	category = CAT_MEDICAL
@@ -378,7 +379,7 @@
 	category = CAT_MEDICAL
 
 /obj/item/storage/box/medicine/fiery_purgative5
-	name = "box of fiery purgative"
+	name = "satchel of fiery purgative"
 	desc = "A box full of fiery purgative."
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "leather_bag"
@@ -427,10 +428,10 @@
 	category = CAT_MEDICAL
 
 /obj/item/storage/box/medicine/antivenom5
-	name = "box of antivenom"
+	name = "satchel of antivenom"
 	desc = "A box full of antivenom flasks."
 	icon = 'icons/fallout/objects/storage.dmi'
-	icon_state = "medicinebox_simple"
+	icon_state = "leather_bag"
 	illustration = "overlay_bitter" // eventually will be changed to unique
 
 /obj/item/storage/box/medicine/antivenom5/PopulateContents()

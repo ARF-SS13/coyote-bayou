@@ -369,9 +369,9 @@
 // POWDER BOX
 
 /obj/item/storage/box/medicine/powder5
-	name = "box of five powders"
+	name = "satchel of five powders"
 	desc = "A box full of powders."
-	icon_state = "medicinebox_simple"
+	icon_state = "leather_bag"
 	illustration = "overlay_powder"
 
 /obj/item/storage/box/medicine/powder5/PopulateContents()
@@ -382,9 +382,9 @@
 // POULTICE BOX
 
 /obj/item/storage/box/medicine/poultice5
-	name = "box of five poultices"
+	name = "satchel of five poultices"
 	desc = "A box full of poultices."
-	icon_state = "medicinebox_simple"
+	icon_state = "leather_bag"
 	illustration = "overlay_poultice"
 
 /obj/item/storage/box/medicine/poultice5/PopulateContents()
@@ -395,10 +395,10 @@
 // BITTER DRINK BOX
 
 /obj/item/storage/box/medicine/bitterdrink5
-	name = "box of bitter drinks"
+	name = "satchel of bitter drinks"
 	desc = "A box full of bitter drinks."
 	icon = 'icons/fallout/objects/storage.dmi'
-	icon_state = "medicinebox_simple"
+	icon_state = "leather_bag"
 	illustration = "overlay_bitter"
 
 /obj/item/storage/box/medicine/bitterdrink5/PopulateContents()

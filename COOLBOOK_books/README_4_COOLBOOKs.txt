@@ -13,6 +13,7 @@ There *must* be an `index.json` in the folder, or the book will error out and no
 Inside the index file, there are a few fields that define the book: (Note: all are optional except the key)
 - `key`: The key of the book, as it will be referenced in the code. This must be unique, though it won't be visible to the player.
 - `title`: The title of the book, as it will appear on the index page and the book item. This will appear to the player.
+- `cover`: The sprite of the book. Treat this as 'icon state', as that is what it determines in your book.
 - `author`: The author of the book, as it will appear on the index page. This will appear to the player.
 - `description`: The description of the book, as it will appear on the book item. This will appear to the player.
 - `content`: The text of the index, as it will appear on the index page. This will appear to the player.

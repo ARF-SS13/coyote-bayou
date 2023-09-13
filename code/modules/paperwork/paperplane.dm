@@ -52,16 +52,6 @@
 	QDEL_NULL(internalPaper)
 	return ..()
 
-/obj/item/paperplane/suicide_act(mob/living/user)
-	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
-	user.Stun(200)
-	user.visible_message(span_suicide("[user] jams [src] in [user.p_their()] nose. It looks like [user.p_theyre()] trying to commit suicide!"))
-	user.adjust_blurriness(6)
-	if(eyes)
-		eyes.applyOrganDamage(rand(6,8))
-	sleep(10)
-	return (BRUTELOSS)
-
 /obj/item/paperplane/update_overlays()
 	. = ..()
 	var/list/stamped = internalPaper.stamped

@@ -63,6 +63,7 @@
 		msg += "[line]\n"
 
 	msg += "<b>Total Players: [length(GLOB.clients)]</b>"
+	msg += "You can set your OOC Status with the 'set-status' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!"
 	to_chat(src, msg)
 
 /client/proc/show_admin_info(client/C)

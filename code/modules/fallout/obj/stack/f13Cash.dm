@@ -89,7 +89,7 @@
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
 									span_notice("You flip [src]. It lands on [coinflip]."), \
 									span_italic("You hear the clattering of loose change."))
-		return TRUE//did the coin flip? useful for suicide_act
+		return TRUE//did the coin flip? Not really useful anymore!
 
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps

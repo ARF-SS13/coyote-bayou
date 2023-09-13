@@ -40,17 +40,6 @@
 	. = ..()
 	update_icon()
 
-/obj/item/storage/box/suicide_act(mob/living/carbon/user)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(myhead)
-		user.visible_message(span_suicide("[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!"))
-		myhead.dismember()
-		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
-		playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-		return BRUTELOSS
-	user.visible_message(span_suicide("[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 /obj/item/storage/box/update_overlays()
 	. = ..()
 	if(illustration)
@@ -693,10 +682,6 @@ obj/item/storage/box/stingbangs
 	icon_state = "hugbox"
 	illustration = "heart"
 	foldable = null
-
-/obj/item/storage/box/hug/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins eating the box like an idiot-goat. They're probably going to choke to death.."))
-	return (BRUTELOSS)
 
 /obj/item/storage/box/hug/attack_self(mob/user)
 	. = ..()

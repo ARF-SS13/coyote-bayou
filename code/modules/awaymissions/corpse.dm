@@ -31,7 +31,7 @@
 	var/show_flavour = TRUE
 	var/banType = "lavaland"
 	var/ghost_usable = TRUE
-	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/suicide/cryo
+	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/cryo
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user, latejoinercalling)

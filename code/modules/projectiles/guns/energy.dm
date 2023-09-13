@@ -284,27 +284,6 @@
 	return can_shoot() ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
 
-/obj/item/gun/energy/suicide_act(mob/living/user)
-	if (istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
-		sleep(25)
-		if(user.is_holding(src))
-			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
-			playsound(loc, fire_sound, 50, 1, -1)
-			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
-			var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-			cell.use(shot.e_cost * get_charge_cost_mult())
-			update_icon()
-			return(FIRELOSS)
-		else
-			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
-			return(OXYLOSS)
-	else
-		user.visible_message("<span class='suicide'>[user] is pretending to melt [user.p_their()] face off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
-		playsound(src, "gun_dry_fire", 30, 1)
-		return (OXYLOSS)
-
-
 /obj/item/gun/energy/vv_edit_var(var_name, var_value)
 	switch(var_name)
 		if(NAMEOF(src, selfcharge))
