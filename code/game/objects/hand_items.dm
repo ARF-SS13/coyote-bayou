@@ -337,6 +337,26 @@
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
+/obj/item/hand_item/arm_blade/mutation
+	name = "arm blade"
+	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "arm_blade"
+	item_state = "arm_blade"
+	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
+	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
+	w_class = WEIGHT_CLASS_HUGE
+	force = 40
+	throwforce = 0 //Just to be on the safe side
+	throw_range = 0
+	throw_speed = 0
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	sharpness = SHARP_EDGED
+	wound_bonus = 0
+	bare_wound_bonus = 20
+
 /obj/item/hand_item/shover
 	name = "shover"
 	desc = "Stay back!"
