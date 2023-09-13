@@ -387,6 +387,22 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/animsuit
+	name = "Red animated galaxy suit"
+	desc = "A cyberpunk themed suit, made from fine animated materials and made to tailor, it's a suit fitted for a choom that desires to look good while being the most flashy in the room."
+	icon_state = "galaxred"
+	item_state = "galaxred"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/animsuit/two
+	name = "Blue animated galaxy suit"
+	desc = "A cyberpunk themed suit, made from fine animated materials and made to tailor, it's a suit fitted for a choom that desires to look good while being the most flashy in the room."
+	icon_state = "galaxblue"
+	item_state = "galaxblue"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 
 /obj/item/clothing/under/f13/futuredresses
 	name = "Blue lined sci-fi themed dress"

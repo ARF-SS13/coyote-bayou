@@ -414,6 +414,15 @@
 	path = /obj/item/clothing/under/syndicate
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
+/datum/gear/uniform/galaxy
+	name = "Red galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/galaxyblue
+	name = "Blue galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 /datum/gear/uniform/roving
 	name = "roving trader outfit"
 	path = /obj/item/clothing/under/f13/roving

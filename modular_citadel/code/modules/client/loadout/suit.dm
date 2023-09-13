@@ -446,6 +446,78 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/cyberstuff
+	name = "Blue Cyber coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cybercoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/purplecoat
+	name = "Purple Cyber coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cybercoat/skull
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/redcoat
+	name = "Red Cyber coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/cybercoat/interdyne
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloak
+	name = "Black and red cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakqm
+	name = "Merchant cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/qm
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakmedical
+	name = "Medical cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cmo
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakengineer
+	name = "Engineering cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/ce
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakresearcher
+	name = "Researcher cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/rd
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakcaptain
+	name = "Regal Captain cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/captain
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakcleaner
+	name = "Bubbly Janitor cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cleaner
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakhealer
+	name = "Healer cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/healer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/cyberstuff/cloakminer
+	name = "Miner cloak"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/miner
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/unmcwinter
 	name = "Winterized UNMC armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcwinter
