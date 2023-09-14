@@ -1045,3 +1045,18 @@
 	icon_state = "goldfish"
 
 
+/obj/item/key/firebird
+	name = "\improper Firebird key"
+	desc = "A keyring with a small steel key, and a fancy blue and gold fob."
+	icon_state = "magic_keys"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+
+/obj/vehicle/ridden/firebird
+	name = "Firebird"
+	desc = "A Pontiac Firebird Trans Am with skulls and crossbones on the hood, dark blue paint, and gold trim. No magic required for this baby."
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "wizmobile"
+	key_type = /obj/item/key/firebird
+//	vehicle_move_delay = 1.5
+	layer = LYING_MOB_LAYER
+
