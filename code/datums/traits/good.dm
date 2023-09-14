@@ -104,6 +104,13 @@ GLOBAL_LIST_INIT(bonedancer_traditions_recipes, list(
 	/datum/crafting_recipe/tribalwar/bone/garb,
 	/datum/crafting_recipe/tribalwar/bone/helmet))
 
+GLOBAL_LIST_INIT(eighties_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/eighties/lightarmour,
+	/datum/crafting_recipe/tribalwar/eighties/armour,
+	/datum/crafting_recipe/tribalwar/eighties/heavyarmour,
+	/datum/crafting_recipe/tribalwar/eighties/garb,
+	/datum/crafting_recipe/tribalwar/eighties/femalegarb))
+
 GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	/datum/crafting_recipe/aer9_hotwired))
 
@@ -774,6 +781,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
+
+/datum/quirk/eightiestraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.eighties_traditions_recipes
+
+/datum/quirk/rustwalkerstraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	H.mind.learned_recipes -= GLOB.eighties_traditions_recipes
 
 /datum/quirk/sorrowstraditions
 	name = "Sorrows traditions"
