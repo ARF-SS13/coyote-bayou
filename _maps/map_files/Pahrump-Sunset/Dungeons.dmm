@@ -1758,13 +1758,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
-"aNb" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/vault)
 "aNf" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/protectron{
@@ -4946,11 +4939,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/enclavehelipad)
 "cmc" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/machinery/light{
+	dir = 4
 	},
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/mob/living/simple_animal/hostile/vault/security,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "cmd" = (
 /obj/structure/noticeboard{
@@ -12606,13 +12599,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
-"fuK" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
 "fuU" = (
 /obj/structure/flora/wild_plant/flower/blue_two,
 /turf/open/floor/grass,
@@ -20333,7 +20319,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/mob/living/simple_animal/hostile/enclave,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "iXW" = (
@@ -30513,11 +30498,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass,
 /area/f13/underground/cave/vault/fourfivefour)
-"nyx" = (
-/obj/structure/chair/f13chair1,
-/mob/living/simple_animal/hostile/vault/security,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
 "nyB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -32839,7 +32819,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "oBp" = (
-/mob/living/simple_animal/hostile/enclave/soldier,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/vault)
@@ -34187,7 +34166,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
 "pco" = (
-/mob/living/simple_animal/hostile/enclave,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 5
 	},
@@ -39829,11 +39807,13 @@
 	},
 /area/f13/building)
 "rta" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/item/radio/intercom{
+	frequency = 1361;
+	name = "Vault Intercom";
+	pixel_x = -30
 	},
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/mob/living/simple_animal/hostile/vault/security,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/vault)
 "rtt" = (
 /obj/structure/window/reinforced/spawner/west,
@@ -42209,10 +42189,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/rnd)
-"swh" = (
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
 "swi" = (
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -44743,10 +44719,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"tEA" = (
-/mob/living/simple_animal/hostile/vault/dweller,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/vault)
 "tED" = (
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operations)
@@ -46806,10 +46778,6 @@
 	icon_state = "showroomfloor"
 	},
 /area/f13/building)
-"uzG" = (
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/showroomfloor,
-/area/f13/vault)
 "uAc" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
@@ -53807,10 +53775,6 @@
 /obj/structure/glowshroom,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave/tunnelertemple/void)
-"xHf" = (
-/mob/living/simple_animal/hostile/enclave,
-/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
-/area/f13/vault)
 "xHm" = (
 /obj/item/clothing/head/ushanka,
 /obj/item/clothing/head/ushanka,
@@ -56994,7 +56958,7 @@ vYk
 lcN
 vYk
 lcN
-cNR
+rta
 lcN
 vYk
 lcN
@@ -57257,7 +57221,7 @@ lcN
 vYk
 lcN
 qbv
-opw
+cmc
 vYk
 uQS
 whv
@@ -58275,7 +58239,7 @@ apu
 uQS
 lcN
 vYk
-swh
+lcN
 uQS
 uQS
 uQS
@@ -59045,7 +59009,7 @@ dHw
 tDT
 uiJ
 lcN
-swh
+lcN
 vYk
 uQS
 uES
@@ -59297,7 +59261,7 @@ whv
 uQS
 trJ
 lcN
-nyx
+age
 ane
 tDT
 uiJ
@@ -59489,7 +59453,7 @@ mRs
 opw
 fmC
 xJQ
-xHf
+cgT
 lGO
 sCK
 how
@@ -59556,7 +59520,7 @@ aVS
 lcN
 lcN
 lcN
-cLv
+lcN
 uiJ
 lcN
 lcN
@@ -59568,7 +59532,7 @@ lcQ
 lcQ
 vYk
 lcN
-tEA
+vYk
 lcN
 vYk
 lcN
@@ -59817,7 +59781,7 @@ kuO
 lcN
 uQS
 vYk
-rWk
+lcN
 vYk
 lcQ
 lcQ
@@ -60259,7 +60223,7 @@ oAF
 lAD
 uQS
 nqb
-aNb
+azA
 aUc
 uQS
 lAD
@@ -61367,7 +61331,7 @@ ltw
 ltw
 btT
 ble
-ble
+btT
 ble
 ble
 ltw
@@ -62067,7 +62031,7 @@ uQS
 uQS
 uQS
 cXu
-sIe
+sCn
 sCn
 wLo
 sCn
@@ -62403,7 +62367,7 @@ ltw
 czm
 ble
 lyN
-ble
+btT
 ble
 ble
 ble
@@ -62708,7 +62672,7 @@ whv
 ltw
 ble
 ble
-ble
+btT
 ble
 ble
 ltw
@@ -63094,7 +63058,7 @@ uQS
 uQS
 lcN
 xJQ
-swh
+lcN
 lcN
 lcN
 fLd
@@ -63102,7 +63066,7 @@ uQS
 sCn
 bUv
 mAc
-rta
+ljr
 uQS
 rIB
 vWl
@@ -63212,7 +63176,7 @@ ble
 ble
 ble
 ble
-ble
+btT
 ble
 ble
 ble
@@ -63582,7 +63546,7 @@ sIX
 uQS
 leE
 urs
-uzG
+nGx
 nGx
 iyF
 wLo
@@ -64221,7 +64185,7 @@ ble
 ble
 ble
 lyN
-ble
+btT
 bhu
 ltw
 ltw
@@ -64618,7 +64582,7 @@ uQS
 cOU
 xJQ
 lcN
-swh
+lcN
 fCQ
 qio
 hUe
@@ -65900,7 +65864,7 @@ uke
 xnR
 oEZ
 uzf
-swh
+lcN
 xJQ
 lcN
 mMS
@@ -66930,7 +66894,7 @@ uAv
 uQS
 jNZ
 xJQ
-swh
+lcN
 lcN
 uQS
 uQS
@@ -67476,7 +67440,7 @@ ucW
 kmw
 hAL
 hAL
-cmc
+bks
 oBt
 uQS
 sCn
@@ -67978,7 +67942,7 @@ uQS
 gdh
 cgE
 tit
-fuK
+tit
 tit
 eQG
 uQS
@@ -67987,7 +67951,7 @@ sCn
 uQS
 fIx
 hAL
-cmc
+bks
 hAL
 hAL
 hAL
@@ -71052,7 +71016,7 @@ qbd
 fpA
 emn
 haf
-swh
+lcN
 xJQ
 lcN
 fCa
@@ -72837,7 +72801,7 @@ hrZ
 vaD
 uQS
 uQS
-sIe
+sCn
 sCn
 sCn
 sCn
@@ -73110,7 +73074,7 @@ sCn
 wLo
 lcN
 lcN
-swh
+lcN
 fCa
 kLS
 elf
