@@ -226,7 +226,7 @@
 		"taste"				= "taste",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE,
-		"body_width"		= RESIZE_DEFAULT_SIZE
+		"body_width"		= RESIZE_DEFAULT_WIDTH
 		))
 
 /proc/random_hair_style(gender)
