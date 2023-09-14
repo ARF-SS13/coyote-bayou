@@ -320,6 +320,7 @@
 
 //Eighties
 /datum/crafting_recipe/tribalwar/eighties
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/eighties/lightarmour
