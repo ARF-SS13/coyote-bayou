@@ -511,14 +511,14 @@
 	integer = FALSE
 
 /datum/config_entry/number/body_width_min
-	config_entry_value = RESIZE_DEFAULT_SIZE
+	config_entry_value = RESIZE_DEFAULT_WIDTH
 	min_val = 0.1 //to avoid issues with zeros and negative values.
-	max_val = RESIZE_DEFAULT_SIZE
+	max_val = RESIZE_DEFAULT_WIDTH
 	integer = FALSE
 
 /datum/config_entry/number/body_width_max
-	config_entry_value = RESIZE_DEFAULT_SIZE
-	min_val = RESIZE_DEFAULT_SIZE
+	config_entry_value = RESIZE_DEFAULT_WIDTH
+	min_val = RESIZE_DEFAULT_WIDTH
 	integer = FALSE
 
 //Pun-Pun movement slowdown given to characters with a body size smaller than this value,

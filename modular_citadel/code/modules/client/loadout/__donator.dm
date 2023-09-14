@@ -576,6 +576,7 @@
 	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
 
 // H
+
 // I
 
 /datum/gear/donator/kits/imbubbl101
@@ -722,9 +723,17 @@
 	new /obj/item/clothing/suit/coat/coyote/nurse_coat(src)
 	new /obj/item/clothing/head/f13/nursehat(src)
 	new /obj/item/clothing/under/rank/medical/doctor/nurse
+
 // K
 
+/datum/gear/donator/kits/Krerkruger
+	name = "Automag"
+	path = /obj/item/storage/box/large/custom_kit/Krerkruger
+	ckeywhitelist = list("Krerkruger")
 
+/obj/item/storage/box/large/custom_kit/Krerkruger/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
+	new /obj/item/ammo_box/m44(src)
 
 // L
 
