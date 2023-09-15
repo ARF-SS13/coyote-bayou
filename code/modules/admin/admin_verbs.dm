@@ -95,6 +95,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/refill_nearby_ammo,
 	/datum/admins/proc/toggle_reviving,
 	/datum/admins/proc/give_one_up,
+	/datum/admins/proc/change_view_range,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -909,6 +910,54 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSsecondwind.grant_one_up(keytorez)
 	log_admin("[key_name(usr)] has granted a 1UP to [keytorez].")
 	message_admins("[ADMIN_TPMONTY(usr)] has granted a 1UP to [keytorez].")
+
+/datum/admins/proc/change_view_range()
+	set category = "Admin.Game"
+	set name = "Change Global View Range"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with toggle_reviving() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with toggle_reviving() without admin perms.")
+		return
+
+	var/current_setting = GLOB.view_override || getScreenSize()
+	var/msg = "Hi! This will set ~everyone's~ view range to whatever you set. Enter a value in this format: WxH . Leave blank to reset it to default. Yes, everyone will know it was you."
+	var/result = input(usr, msg, "Change Global View Range", current_setting) as null|text
+	if(!result)
+		if(!GLOB.view_override)
+			to_chat(usr, span_notice("Okay, leaving the view ranges alone."))
+			return
+		var/choice_1 = "Yes, clear the view override."
+		var/choice_2 = "No, don't clear the view override."
+		var/second_offense = alert(usr, "Reset everyone's view range to default (7x7ish)?", "Reset View Range", choice_1, choice_2)
+		if(second_offense == choice_1)
+			GLOB.view_override = null
+			for(var/client/C in GLOB.clients)
+				C.view_size.setDefault(GLOB.view_override || getScreenSize(C.prefs.widescreenpref))
+			log_admin("[key_name(usr)] has reset the view range to default.")
+			message_admins("[ADMIN_TPMONTY(usr)] has reset the view range to default.")
+		else
+			to_chat(usr, "Okay, leaving the view ranges alone.")
+			return
+	var/list/precheck = splittext(result, "x")
+	var/val1 = text2num(precheck[1])
+	var/val2 = text2num(precheck[2])
+	if(!isnum(val1) || !isnum(val2))
+		to_chat(usr, span_boldannounce("That's not a valid screen dimension! Enter something like 7x7 or 18x20 or 50x100. dont to the last two, it'll probably crash everyone and make the round unplayable."))
+		return
+	var/choice_1 = "Yes, set the view override to [result]."
+	var/choice_2 = "No, don't set the view override."
+	var/second_result = alert(usr, "Set everyone's view range to [result]?", "Set View Range", choice_1, choice_2)
+	if(second_result == choice_1)
+		GLOB.view_override = result
+		for(var/client/C in GLOB.clients)
+			C.view_size.setDefault(GLOB.view_override || getScreenSize(C.prefs.widescreenpref))
+		log_admin("[key_name(usr)] has set the view range to [result].")
+		message_admins("[ADMIN_TPMONTY(usr)] has set the view range to [result].")
+	else
+		to_chat(usr, "Okay, leaving the view ranges alone.")
+
+
 
 
 
