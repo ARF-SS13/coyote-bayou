@@ -102,7 +102,7 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
