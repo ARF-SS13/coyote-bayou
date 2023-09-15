@@ -248,6 +248,8 @@
 		return
 	if(!M.IsVocal())
 		return
+	if(language == /datum/language/signlanguage)
+		return
 
 	if(use_command)
 		spans |= commandspan
