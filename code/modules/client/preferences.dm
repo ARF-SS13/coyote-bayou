@@ -222,6 +222,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
 	/// Format: list("/datum/quirk/aaa", "/datum/quirk/bbb", "/datum/quirk/ccc", etc)
 	var/list/char_quirks = list()
+	/// DONT USE THIS, ITS JUST FOR MIGRATION!!!!!!!
+	var/list/all_quirks = list()
 
 	//Quirk category currently selected
 	var/quirk_category = QUIRK_POSITIVE 
@@ -400,11 +402,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Quirk Setup</h2>"
+				dat += "<center>"
+				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
+					dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
 				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
-				dat += "Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
+				dat += "<h2>Configure Quirks</a></h2><br></center>"
 				dat += "</a>"
+				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column
@@ -2194,6 +2198,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		qdel(query_get_jobban)
 		return
 
+	if(href_list["preference"] == "quirk_migrate")
+		SSquirks.ConvertOldQuirklistToNewQuirklist(src, )
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
 	if(href_list["preference"] == "change_genital_whitelist")

@@ -25,6 +25,8 @@
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
 	var/mob_trait //if applicable, apply and remove this mob trait
 	var/mob/living/quirk_holder
+	var/datum/controller/subsystem/processing/quirks/livesfrombased // Just a dummy reference so that the GC will think this thing is being used, when really its actually totally being used
+	var/reference //If this is just a reference template used by the subsystem, so it'll stop randomly dying for no raisin
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
 	key = "[type]" // this is the key that will be used to identify the quirk in the quirk list
@@ -51,6 +53,8 @@
 		addtimer(CALLBACK(src, .proc/post_add), 30)
 
 /datum/quirk/Destroy()
+	if(reference)
+		return QDEL_HINT_LETMELIVE
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
@@ -75,11 +79,12 @@
 /datum/quirk/proc/get_conflicts()
 	var/returnlist = list() // so now we're gonna convert the list of paths to string names, like it was before, but better cus I did it
 	for(var/quirk in conflicts)
-		var/datum/quirk/qi = quirk
-		returnlist += initial(qi.key)
+		returnlist += "[quirk]"
 	return returnlist
 
 /datum/quirk/proc/setup_quirk_for_subsystem()
+	reference = TRUE // this is just a reference template, so it doesnt do anything
+	livesfrombased = SSquirks.hi() // dont ask
 	return // mainly so it doesnt process or do anything wierd, its just gonna chill in the subsystem and be a var template
 
 /datum/quirk/proc/transfer_mob(mob/living/to_mob)

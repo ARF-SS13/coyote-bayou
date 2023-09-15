@@ -51,10 +51,6 @@ export const QuirkMenu = (props, context) => {
     : SelectedCategory === AllQuirks[0]
       ? "Congratulations! You've been selected to open an issue on Github!"
       : "No quirks in this category!";
-  Byond.winset('preferences_window', {
-    'focus': false,
-    'is-maximized': false,
-  }); // stop. eating. my. menu. spent all day on it!
 
   return(
     <Window

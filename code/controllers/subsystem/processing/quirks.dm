@@ -24,10 +24,12 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 	/// Demographic shit
 	/// How many people took each quirk
-	/// Format: list("/datum/quirk/path" = list("Charname", "Charname2"), ...)
+	/// Format: list("ckey" = list(/datum/quirk_statistics), ...)
 	var/list/quirks_used = list()
 
 	var/debug_categories = TRUE // makes up a bunch of categories for us
+	var/debug_migration = TRUE // fucks with our savefile
+	var/debug_conflicts = TRUE
 
 	var/dp = FALSE
 	var/dp_prob = 1
@@ -90,6 +92,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	// ) // not // got em // fingerguns
 	..()
 	to_chat(world, span_boldannounce("Loaded [LAZYLEN(quirks)] quirks across [length(cached_all_categories)] categories!"))
+	UpdateNewbs()
 
 /datum/controller/subsystem/processing/quirks/fire(resumed = 0)
 	if (!resumed)
@@ -125,12 +128,22 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/quirk_list = sortList(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
 
 	for(var/V in quirk_list)
-		var/datum/quirk/T = new V() // They'll be fiiiiiine
+		var/datum/quirk/T = new V(src) // They'll be fiiiiiine
 		quirks[T.key] = T // the indexes are stringified type paths, so they'll ALWAYS BE UNIQUE =D
+		if(debug_conflicts)
+			var/list/conflictables = subtypesof(/datum/quirk) - V
+			for(var/i in 1 to 100)
+				var/conflict = pick(conflictables)
+				conflictables -= conflict
+				T.conflicts += conflict
 		// quirk_points[initial(T.name)] = initial(T.value)
 		// quirk_names_by_path[T] = initial(T.name)
 	/// Now, lets pre-make the tgui data tree thing, for hyperspeed caching
 	FormatifyQuirks()
+
+/datum/controller/subsystem/processing/quirks/proc/UpdateNewbs()
+	for(var/mob/dead/new_player/noob in GLOB.player_list)
+		noob.new_player_panel()
 
 /datum/controller/subsystem/processing/quirks/proc/FormatifyQuirks()
 	cached_all_categories = list()
@@ -154,15 +167,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		this_quirk[QUIRK_MECHANICS] = "[Q2.mechanics]"
 		this_quirk[QUIRK_CONFLICTS] = Q2.get_conflicts()
 		if(debug_categories)
-			this_quirk[QUIRK_CONFLICTS] = list()
-			var/list/q_left = quirks.Copy()
-			q_left -= Q2.key
-			for(var/i in 1 to 20)
-				if(LAZYLEN(q_left))
-					var/qkey2 = pick(q_left)
-					q_left -= qkey2
-					var/datum/quirk/Q3 = GetQuirk(qkey2)
-					this_quirk[QUIRK_CONFLICTS] += "[Q3.key]"
 			this_quirk[QUIRK_CATEGORY] = "[LAZYACCESS(debug_cats, debug_index)]"
 			all_categories |= "[LAZYACCESS(debug_cats, debug_index)]"
 			debug_index = WRAP(debug_index + 1, 1, length(debug_cats))
@@ -191,6 +195,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/ui_close(mob/user)
 	. = ..()
 	SaveUserPreferences(user)
+	INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
 
 /datum/controller/subsystem/processing/quirks/ui_static_data(mob/user)
 	var/list/data = list()
@@ -261,8 +266,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		if("ClearQuirks") // Nuke the quirks! (gotta nuke something)
 			. = TRUE
 			INVOKE_ASYNC(src, .proc/ConfirmClear, user)
-	if(.)
-		INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
 
 /// returns a list of ckey'd quirk names
 /datum/controller/subsystem/processing/quirks/proc/QuirkList2TGUI(mob/user)
@@ -332,8 +335,18 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/proc/GetQuirk(a_quirk)
 	if(!a_quirk)
 		return
-	if(istext(a_quirk))
-		return LAZYACCESS(quirks, a_quirk)
+	if(istext(a_quirk)) // okay okay this could be either a key, or a *name*
+		var/datum/quirk/Q = LAZYACCESS(quirks, a_quirk)
+		if(Q) // please please
+			return Q
+		else // lets get searchin
+			for(var/quirkkey in quirks)
+				var/datum/quirk/Q2 = LAZYACCESS(quirks, quirkkey)
+				if(!Q2)
+					stack_trace("GetQuirk: Quirk [quirkkey] isnt a quirk anymore! cool")
+				if(Q2.name == a_quirk)
+					return Q2
+			CRASH("Quirk ''''''key''''' [a_quirk] does not exist! frick you for making me serch through 200 something quirks.")
 	else if (ispath(a_quirk, /datum/quirk))
 		return LAZYACCESS(quirks, "[a_quirk]")
 	else if(istype(a_quirk, /datum/quirk))
@@ -378,6 +391,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!Q)
 		return // mind your Q's
 	RemoveDeadQuirks(P)
+	if(!removal)
+		if(QuirkConflict(P, Q))
+			return FALSE
 	var/balance = GetQuirkBalance(P)
 	var/goods = GetPositiveQuirkCount(P)
 	var/val = Q.value
@@ -472,7 +488,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		if(!Q2)
 			stack_trace("QuirkConflict: Quirk [qstring] on [P.parent.ckey]'s profile does not exist! cool")
 			continue
-		if(Q2.type in Q.conflicts)
+		if((Q2.type in Q.conflicts) || (Q.type in Q2.conflicts))
 			to_chat(P.parent, span_warning("You can not have [Q.name] and [Q2.name] at the same time! They conflict!"))
 			return TRUE
 
@@ -520,10 +536,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /// Checks if the player has their prefs window open, and updates it if so
 /datum/controller/subsystem/processing/quirks/proc/UpdateTheWretchedPrefMenu(mob/user)
-	set waitfor = FALSE // winexists sleeps, and we need to be side awake
+	set waitfor = FALSE // winexists sleeps, and we need to be wide awake
 	if(!user)
 		return
-	if(!winexists(user, "preferences_window"))
+	if(!winget(user, "preferences_window", "is-visible"))
 		return
 	var/datum/preferences/P = extract_prefs(user)
 	if(!P)
@@ -547,6 +563,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		P.char_quirks |= Q.key
 	if(save)
 		P.save_character()
+	return TRUE
 
 /// Removes a quirk from the player's prefs
 /datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromPrefs(Pany, Qany, save, verify)
@@ -621,16 +638,150 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(job?.blacklisted_quirks)
 		for(var/start in job.blacklisted_quirks)
 			my_quirks -= "[start]"
+	var/list/quirks_i_have = list()
 	for(var/V in my_quirks)
 		var/datum/quirk/Q = GetQuirk(V)
 		if(Q)
 			AddQuirkToMob(user, "[Q.key]", spawn_effects)
+			quirks_i_have[Q.key] = list(Q.name, Q.value)
 		else // dragon pussy
 			log_admin("Invalid quirk \"[V]\" in client [cli.ckey] preferences")
 			stack_trace("Invalid quirk \"[V]\" in client [cli.ckey] preferences")
 			RemoveQuirkFromPrefs(P, V)
 			badquirks++
+	RecordSnapshot(user, quirks_i_have)
 	if(badquirks)
 		to_chat(cli, span_warning("[badquirks] of your quirks were invalid, and have been removed! Be sure to check your quirks!"))
 		P.save_character()
+
+/datum/controller/subsystem/processing/quirks/proc/ConvertOldQuirklistToNewQuirklist(datum/preferences/P)
+	if(!P)
+		return
+	var/client/cli = P.parent
+	var/static/doit = "Convert My Quirks"
+	var/static/doitl8r = "Do it later"
+	var/static/discard = "Discard and start over"
+	var/proceed = alert(
+		cli.mob,
+		"You have quirks that use the old system! Would you like to convert them to the new system, do it later, or just discard the old ones and start fresh on some new quirks?",
+		"QuirkVerter 2k23: The Quirkening",
+		doit,
+		doitl8r,
+		discard)
+	if(proceed == discard)
+		to_chat(cli.mob, span_boldannounce("Okay! Your old quirks have been discarded! Be sure to add some new ones!"))
+		P.current_version |= PMC_QUIRK_OVERHAUL_2K23
+		return // We're not changing the data in `all_quirks` just in case we might need to convert it again in the future
+	if(proceed == doitl8r)
+		to_chat(cli.mob, span_boldannounce("Okay! Your old quirks have been saved in case you want to do it later!"))
+		return
+	var/list/old_quirks = P.all_quirks
+	var/list/failures = list()
+	to_chat(cli, span_phobia("WARNING! WARNING! YOUR QUIRKS ARE BEING CONVERTED FROM THE OLD FORMAT TO THE NEW ONE! PANIC! (dont actually this'll probably work fine)"))
+	if(!LAZYLEN(old_quirks))
+		to_chat(cli, span_greentext("You didn't have any quirks to begin with, so... all done!"))
+		P.current_version |= PMC_QUIRK_OVERHAUL_2K23
+		P.save_character()
+		return // all done! maybe
+	var/list/quirkthing = list()
+	for(var/quirkname in old_quirks)
+		var/datum/quirk/Q = GetQuirk(quirkname)
+		if(!Q)
+			failures += quirkname
+			continue
+		quirkthing += Q.type
+	quirkthing = sortList(quirkthing, /proc/cmp_quirk_asc)
+	quirkthing = reverseList(quirkthing) // yeah i dont wanna make another cmp
+	/// remove all this current quirks
+	P.char_quirks = list()
+	for(var/qwirk in quirkthing)
+		if(!AddQuirkToPrefs(P, qwirk, FALSE, TRUE))
+			var/datum/quirk/Q = GetQuirk(qwirk)
+			if(!Q)
+				stack_trace("[qwirk] is not a valid quirk!")
+			failures += qwirk
+	if(LAZYLEN(failures))
+		to_chat(P.parent, span_userdanger("Some quirks could not be converted, namely [english_list(failures)]. Be sure to check your quirks!"))
+	P.current_version |= PMC_QUIRK_OVERHAUL_2K23
+	P.save_character()
+	to_chat(cli, span_greentext("Your quirks have been converted! =3"))
+	to_chat(cli, span_greentext("Be sure to check your quirks, just to be sure!"))
+	// notably, we dont change the data in `all_quirks`
+	// just in case we might need to convert it again in the future
+
+/// dont ask
+/datum/controller/subsystem/processing/quirks/proc/hi()
+	return src
+
+/datum/controller/subsystem/processing/quirks/proc/RecordSnapshot(mob/living/player, list/quirks = list())
+	if(!player)
+		return
+	var/datum/quirk_statistics/QS = FindStatistics(player)
+	if(!QS) // heck
+		return
+	QS.snapshot(player, quirks)
+
+/datum/controller/subsystem/processing/quirks/proc/SaveStats2HardDrive()
+	var/my_directory = "[QUIRK_STATISTICS_DIRECTORY]/round_[GLOB.round_id]/"
+	// first, make the clump of lists
+	var/list/cocklist = list()
+	for(var/ckey in cocklist)
+		cocklist[ckey] = list()
+		var/list_o_stats = LAZYACCESS(quirks_used, ckey)
+		for(var/datum/quirk_statistics/QS in list_o_stats)
+			var/q_ckey = QS.ckey
+			var/q_name = QS.playername
+			var/list/quirks = QS.quirk_keys || list()
+			cocklist[ckey] += q_ckey
+			cocklist[ckey] += q_name
+			cocklist[ckey] += list(quirks)
+	// list clump obtained. time to mess with the files!
+	var/files_already_there = flist(my_directory)
+	message_admins("Deleting [LAZYLEN(files_already_there)] quirk files, in prep to save them!")
+	/// KILL EM ALL
+	for(var/file in files_already_there)
+		fdel(file)
+	for(var/ck in cocklist)
+		var/list/to_jsonify = cocklist[ck]
+		var/json_string = safe_json_encode(to_jsonify)
+		if(!json_string)
+			continue // shruggo
+		var/file = QUIRK_PLAYER2FILENAME(to_jsonify[1], to_jsonify[2])
+		text2file(json_string, file)
+	message_admins("Saved [LAZYLEN(cocklist)] quirks to [my_directory]. should match the last message! if not everything is fucked!")
+
+/datum/controller/subsystem/processing/quirks/proc/LoadStatsFromHardDrive()
+	return // I'll make this later
+
+/datum/controller/subsystem/processing/quirks/proc/FindStatistics(mob/living/player)
+	if(!player)
+		return // lame
+	var/list/my_chars = LAZYACCESS(quirks_used, player.ckey)
+	if(!my_chars) // welcome to the game!
+		return new /datum/quirk_statistics()
+	var/datum/quirk_statistics/QS = LAZYACCESS(my_chars, player.real_name)
+	if(!QS)
+		return new /datum/quirk_statistics()
+	return QS
+
+/datum/quirk_statistics
+	var/playername
+	var/ckey
+	var/list/quirk_keys = list()
+
+/datum/quirk_statistics/proc/snapshot(mob/living/player, list/quirks = list())
+	if(!player)
+		return
+	playername = player.real_name
+	ckey = player.ckey
+	quirk_keys = quirks.Copy()
+
+/mob/verb/configure_quirks()
+	set name = "Configure Quirks"
+	set category = "Preferences"
+	
+	if(!SSquirks.init_order)
+		to_chat(src, span_warning("Quirks are not initialized yet! Please wait a moment and try again."))
+		return
+	SSquirks.OpenWindow(src)
 

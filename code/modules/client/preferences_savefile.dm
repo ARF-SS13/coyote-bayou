@@ -692,6 +692,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	S["char_quirks"]			>> char_quirks // renamed so it doesnt destroy old saves in case this needs to be reverted
+	S["all_quirks"]				>> all_quirks // untouched, used to migrate quirks
 
 	//Records
 	S["security_records"]			>>			security_records
@@ -1057,9 +1058,28 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			job_preferences -= j
 
 	char_quirks = SANITIZE_LIST(char_quirks)
-	if(!SSquirks.CheckAndVerifyPrefQuirks(src, FALSE))
-		to_chat(src, span_warning("There was a problem with your quirks! The problem has been resolved though. Please check your quirks and make sure they're correct!"))
-		save_character()
+	if(SSquirks.debug_migration)
+		current_version -= PMC_QUIRK_OVERHAUL_2K23
+		var/list/debug_oldies = list(
+			"Jack Penis", // to test how it handles bullshit quirks
+			"/datum/quirk/furry", // to test how it handles key quirks
+			"Straight Shooter", // gonna load in a shitload of positive quirks, to see if it'll reject bad values
+			"Clawer - Razors",
+			"Improved Innate Healing",
+			"Minor Surgery",
+			"Fists of Steel",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough", // see if it handles multiple quirks of the same type
+			"Brain Tumor",
+			"Nearsighted - Trashed Vision",
+			"Pacifist",
+			"Phobia - Doctors",
+			"Monophobia",
+			"Mobility - Can not Run",
+		)
+		WRITE_FILE(S["all_quirks"], debug_oldies)
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 

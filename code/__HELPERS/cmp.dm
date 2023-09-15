@@ -95,6 +95,8 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	return sorttext(B.sample_object.name, A.sample_object.name)
 
 /proc/cmp_quirk_asc(datum/quirk/A, datum/quirk/B)
+	if(!ispath(A) || !ispath(B))
+		return TRUE // sure
 	var/a_sign = num2sign(initial(A.value) * -1)
 	var/b_sign = num2sign(initial(B.value) * -1)
 
