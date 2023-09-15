@@ -272,32 +272,32 @@
 	name = "reinforced surplus prosthetic left arm"
 	desc = "A skeletal, robotic limb. This one is reinforced to provide better protection, and is made of stronger parts."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
-	brute_reduction = 3
-	burn_reduction = 2
+	brute_reduction = 5
+	burn_reduction = 5
 	max_damage = 70
 
 /obj/item/bodypart/r_arm/robot/surplus_upgraded
 	name = "reinforced surplus prosthetic right arm"
 	desc = "A skeletal, robotic limb. This one is reinforced to provide better protection, and is made of stronger parts."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
-	brute_reduction = 3
-	burn_reduction = 2
+	brute_reduction = 5
+	burn_reduction = 5
 	max_damage = 70
 
 /obj/item/bodypart/l_leg/robot/surplus_upgraded
 	name = "reinforced surplus prosthetic left leg"
 	desc = "A skeletal, robotic limb. This one is reinforced to provide better protection, and is made of stronger parts."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
-	brute_reduction = 3
-	burn_reduction = 2
+	brute_reduction = 5
+	burn_reduction = 5
 	max_damage = 70
 
 /obj/item/bodypart/r_leg/robot/surplus_upgraded
 	name = "reinforced surplus prosthetic right leg"
 	desc = "A skeletal, robotic limb. This one is reinforced to provide better protection, and is made of stronger parts."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
-	brute_reduction = 3
-	burn_reduction = 2
+	brute_reduction = 5
+	burn_reduction = 5
 	max_damage = 70
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
