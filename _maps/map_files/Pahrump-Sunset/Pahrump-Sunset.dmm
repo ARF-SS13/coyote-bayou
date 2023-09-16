@@ -23887,6 +23887,10 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "cgx" = (
+/obj/machinery/status_display/supply{
+	pixel_y = 2;
+	layer = 6
+	},
 /turf/closed/wall/f13/wood/house{
 	opacity = 0
 	},
@@ -24015,18 +24019,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "chD" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -12;
-	pixel_y = 31
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 12;
-	pixel_y = 31
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -26409,8 +26401,16 @@
 	},
 /area/f13/building/abandoned)
 "cxo" = (
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/structure/table/wood,
+/obj/machinery/button/door{
+	id = "countershutters";
+	name = "counter shutters";
+	pixel_x = -2;
+	pixel_y = 31;
+	req_one_access_txt = null;
+	layer = 4
+	},
+/obj/item/folder/documents,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -34191,6 +34191,23 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
+"eot" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "countershutters";
+	name = "counter shutters";
+	req_one_access_txt = null;
+	state_open = 1;
+	color = "#8888FF"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "eoy" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -36609,10 +36626,7 @@
 	},
 /area/f13/wasteland)
 "eQZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/structure/table/wood,
 /obj/machinery/button/door{
 	id = "countershutters";
 	name = "counter shutters";
@@ -36621,6 +36635,7 @@
 	req_one_access_txt = null;
 	layer = 4
 	},
+/obj/item/folder/documents,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -38867,6 +38882,10 @@
 	dir = 8
 	},
 /obj/structure/flora/junglebush/large,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/water{
 	light_color = null;
 	color = "#FFBB77";
@@ -43653,6 +43672,18 @@
 	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland/city)
+"gxs" = (
+/obj/effect/sound_emitter/frogs,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "gxt" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -47864,6 +47895,10 @@
 /area/f13/building/coyote/nash/greenhouse)
 "huI" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -63949,6 +63984,10 @@
 /obj/machinery/mineral/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -64214,6 +64253,10 @@
 /area/f13/building/coyote/nash/museum/groundfloor)
 "lgQ" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/status_display/supply{
+	pixel_y = 2;
+	layer = 6
+	},
 /turf/closed/wall/f13/wood/house{
 	opacity = 0
 	},
@@ -68442,7 +68485,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "mco" = (
-/obj/structure/sign/gunshop,
+/obj/structure/sign/gunshop{
+	layer = 5;
+	pixel_y = 8
+	},
 /turf/closed/wall/mineral/brick,
 /area/f13/building/trader)
 "mcp" = (
@@ -74877,6 +74923,10 @@
 /obj/machinery/computer/cargo/request{
 	dir = 1
 	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -76336,6 +76386,16 @@
 	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland/city/nash/suburbs)
+"nPu" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "nPy" = (
 /obj/structure/chair/stool{
 	icon_state = "bench"
@@ -76813,6 +76873,14 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"nUX" = (
+/obj/structure/table/wood,
+/obj/machinery/cell_charger,
+/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/trader)
 "nVi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/drip,
@@ -77121,12 +77189,21 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "nZk" = (
-/obj/structure/table/wood,
-/obj/machinery/cell_charger,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
 	},
-/area/f13/building/trader)
+/obj/structure/sign/flag_texas{
+	desc = "No yellow roses here.";
+	icon_state = "texas_animated";
+	pixel_x = -15;
+	pixel_y = 5
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland)
 "nZu" = (
 /obj/effect/decal/marking,
 /obj/effect/turf_decal/weather/dirt{
@@ -80357,10 +80434,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/machinery/status_display/supply{
-	pixel_y = 32;
-	layer = 4
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -81649,6 +81722,10 @@
 /area/f13/wasteland/city/nash/starterroad)
 "oYn" = (
 /obj/machinery/computer/cargo/request,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -82451,8 +82528,12 @@
 /area/f13/building/abandoned)
 "pjh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 8
+/obj/machinery/door/poddoor/shutters{
+	id = "countershutters";
+	name = "counter shutters";
+	req_one_access_txt = null;
+	state_open = 1;
+	color = "#8888FF"
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -83387,8 +83468,10 @@
 /area/f13/building)
 "pue" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/sofa/left,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -83871,7 +83954,7 @@
 /obj/structure/barricade/wooden{
 	layer = 2.8
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/floor/grass,
 /area/f13/wasteland)
 "pyP" = (
 /obj/structure/closet,
@@ -87833,6 +87916,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/water{
 	light_color = null;
@@ -93413,6 +93500,10 @@
 "rJI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -93744,12 +93835,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "rOp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/machinery/status_display/supply{
-	pixel_y = -32;
-	layer = 4
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -93934,7 +94022,17 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
 "rRA" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "countershutters";
+	name = "counter shutters";
+	req_one_access_txt = null;
+	state_open = 1;
+	color = "#8888FF"
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -97958,16 +98056,7 @@
 	},
 /area/f13/wasteland)
 "sMo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters";
-	req_one_access_txt = null
-	},
-/obj/structure/barricade/bars{
-	layer = 3.5
-	},
+/obj/machinery/mineral/wasteland_vendor/traderspecial,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -108681,6 +108770,10 @@
 "vio" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/nest/frog,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/water{
 	light_color = null;
 	color = "#FFBB77";
@@ -112659,12 +112752,10 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
 "wfR" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
+/obj/machinery/light/small{
+	light_color = "#884444"
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/trader)
 "wfU" = (
 /obj/effect/decal/marking{
@@ -116384,6 +116475,22 @@
 	icon_state = "horizontalbottomborderbottom2left"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
+"wUt" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "wUv" = (
 /mob/living/simple_animal/hostile/molerat,
 /obj/effect/decal/cleanable/dirt,
@@ -116524,6 +116631,7 @@
 	color = "#a98c5d";
 	dir = 8
 	},
+/obj/item/fishingrod,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/underground/cave/coyote/antmound)
 "wWt" = (
@@ -118470,8 +118578,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "xug" = (
-/obj/structure/chair/sofa{
-	dir = 4
+/obj/structure/chair/sofa/right{
+	dir = 4;
+	icon_state = "sofaend_left"
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -123137,7 +123246,7 @@ mjw
 bkm
 oIX
 jxf
-fCt
+sAN
 cJo
 kyu
 nnO
@@ -123651,7 +123760,7 @@ cMS
 kgu
 kgu
 nxL
-jjH
+gxs
 obv
 eMI
 ayO
@@ -123907,7 +124016,7 @@ aHF
 wJZ
 kgu
 jxf
-dtW
+wUt
 bpP
 fCt
 clY
@@ -124164,7 +124273,7 @@ kgu
 vpP
 kgu
 jxf
-fCt
+sAN
 clx
 fCt
 sUE
@@ -124436,7 +124545,7 @@ obw
 wXv
 bSK
 lnC
-aOk
+cIY
 aOk
 ezS
 ezS
@@ -124694,7 +124803,7 @@ bGN
 ryl
 xyK
 aOk
-aOk
+cIY
 aOk
 ezS
 tNk
@@ -124950,10 +125059,10 @@ vtX
 lzC
 nut
 pgA
-aOk
+cIY
 bfX
 cIY
-etg
+bzk
 ezS
 ezS
 ezS
@@ -125208,7 +125317,7 @@ eFL
 opM
 vML
 uxq
-aOk
+cIY
 vhW
 etg
 ezS
@@ -125467,7 +125576,7 @@ xyK
 pyN
 nHY
 aGO
-etg
+bzk
 aOk
 ezS
 ezS
@@ -129305,7 +129414,7 @@ nFA
 esN
 jxf
 miY
-oeC
+ksL
 kgu
 kgu
 eTM
@@ -129508,7 +129617,7 @@ cPR
 cPR
 cPR
 cPR
-cPR
+nZk
 kUK
 cPR
 ehf
@@ -129562,7 +129671,7 @@ cPR
 skm
 skm
 ehf
-ehf
+skm
 skm
 skm
 mct
@@ -130801,7 +130910,7 @@ alk
 fHl
 bZR
 bZR
-bZR
+wfR
 fHl
 bKc
 mco
@@ -131052,15 +131161,15 @@ flt
 oxw
 inE
 pjh
-wfR
+mGx
 xug
 fsz
 nCz
 iFl
 iFl
 iFl
-mGx
-rRA
+iFl
+bek
 qiw
 cZJ
 sCQ
@@ -131307,16 +131416,16 @@ aOk
 vIX
 leQ
 mMr
-bek
-eWq
-pue
+nPu
+eot
+oXG
 iFl
 iFl
 iFl
 iFl
 iFl
 iFl
-iFl
+rOp
 huI
 oxw
 lfi
@@ -131565,7 +131674,7 @@ dtf
 nql
 wNy
 ley
-iFl
+rRA
 oXG
 hPP
 iFl
@@ -131573,7 +131682,7 @@ iFl
 iFl
 uvE
 iFl
-iFl
+rOp
 rJI
 oxw
 lfi
@@ -131822,7 +131931,7 @@ pxR
 eiJ
 pjk
 oYn
-iFl
+rOp
 eWq
 iFl
 iFl
@@ -131830,7 +131939,7 @@ iFl
 iFl
 eWq
 eWq
-eWq
+pue
 nxk
 oxw
 lfi
@@ -132087,7 +132196,7 @@ drL
 kfa
 kfa
 kko
-sMo
+kko
 dUj
 nSY
 lfi
@@ -132592,7 +132701,7 @@ hlS
 wdE
 eiJ
 dUj
-nTR
+cxo
 iFl
 oXG
 vLv
@@ -132601,7 +132710,7 @@ iFl
 iFl
 vLv
 lTV
-eWq
+iFl
 eQZ
 nSY
 iBP
@@ -132859,7 +132968,7 @@ lEC
 mHR
 wme
 iFl
-rOp
+rAw
 nSY
 xZb
 nXV
@@ -133115,8 +133224,8 @@ iFl
 ekN
 lgQ
 sHS
-eWq
-eJb
+iFl
+nUX
 nSY
 xZb
 nID
@@ -133623,7 +133732,7 @@ dUj
 unm
 eWq
 gTk
-eJb
+nTR
 iFl
 iFl
 iFl
@@ -133881,9 +133990,9 @@ cQa
 iFl
 bog
 sPU
-nZk
-rAw
-cxo
+iFl
+sMo
+iFl
 eJb
 cUu
 aTd
