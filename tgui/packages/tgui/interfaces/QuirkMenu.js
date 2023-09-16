@@ -322,6 +322,7 @@ const QuirkCategoryList = (props, context) => {
 /// than positive ones.
 const QuirkTab = (props, context) => {
   const { act, data } = useBackend(context);
+  const AllQuirks = data.AllQuirks || [];
   const AllCategories = data.AllCategories || [];
   const UserQuirkKeys = data.UserQuirkKeys || [];
   const CatName = props.CatName || "Oh no";
@@ -342,11 +343,18 @@ const QuirkTab = (props, context) => {
 
   const UserQuirkObjs = QKeyArray2ObjArray(UserQuirkKeys, context) || [];
   const UserQuirksInThisCat = UserQuirkObjs.filter(Quirk => Quirk.Qcategory === CatName) || [];
-  const TotalQuirkValueInThisCat = CatName === YourQuirks || CatName === AllCategories[0]
+  const TotalQuirkValueInThisCat = CatName === YourQuirks
     ? UserQuirkObjs.reduce((total, Quirk) => total + Quirk.Qvalue, 0)
-    : UserQuirksInThisCat.reduce((total, Quirk) => total + Quirk.Qvalue, 0);
+    : CatName === AllCategories[0]
+      ? "(" + AllQuirks.length + ")"
+      : UserQuirksInThisCat.reduce((total, Quirk) => total + Quirk.Qvalue, 0);
 
   const PlusOrMinus = PorM(TotalQuirkValueInThisCat) || '';
+  const Colourr = CatName === AllCategories[0] ||TotalQuirkValueInThisCat == 0
+    ? 'label'
+    : TotalQuirkValueInThisCat > 0
+      ? 'good'
+      : 'bad';
 
   return(
     <Button
@@ -374,7 +382,7 @@ const QuirkTab = (props, context) => {
           <Box
             pl="0.5rem"
             inline
-            color={TotalQuirkValueInThisCat == 0 ? 'label' : TotalQuirkValueInThisCat > 0 ? 'good' : 'bad'}
+            color={Colourr}
             textAlign={'right'}>
             {PlusOrMinus}{TotalQuirkValueInThisCat}
           </Box>
@@ -560,7 +568,7 @@ const QuirkButton = (props, context) => {
             }}
             textAlign="left"
             bold={true}
-            fontSize="18px"
+            fontSize="16px"
             mb="0.5rem"
             color={TitleColor}>
             <Flex direction="row">
@@ -588,14 +596,14 @@ const QuirkButton = (props, context) => {
       )}
         <Box
           textAlign="left"
-          fontSize="12px"
+          fontSize="11px"
           style={{
             'border-bottom': '1px solid rgba(255, 255, 255, 0.2)',
           }}
           dangerouslySetInnerHTML={{__html: QuirkDesc}} />
         <Box
           textAlign="left"
-          fontSize="10px"
+          fontSize="9px"
           color={MiniTextColor}
           dangerouslySetInnerHTML={{__html: QuirkMechanics}} />
         {!!QuirkConflictObjs && QuirkConflictObjs.length > 0 && (
@@ -686,6 +694,9 @@ const ConflictBox = (props) => {
 /// of a number. It takes a number, and returns a string.
 /// Very hardcore.
 const PorM = (Number) => {
+  if(isNaN(Number)) {
+    return '';
+  } else
   if(Number == 0) { // dragon pussy
     return '';
   } else if(Number > 0) {
