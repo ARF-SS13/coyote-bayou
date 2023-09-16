@@ -88,7 +88,7 @@
 	id = "mole_miner"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 2000, /datum/material/silver = 2000, /datum/material/diamond = 6000)
-	build_path = /obj/item/melee/powerfist/f13/moleminer
+	build_path = /obj/item/melee/unarmed/powerfist/moleminer
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 	

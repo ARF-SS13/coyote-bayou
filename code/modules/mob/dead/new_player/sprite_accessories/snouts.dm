@@ -711,3 +711,13 @@
 	name = "cow"
 	icon_state = "cow"
 	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/mushroom
+	name = "mushroom"
+	icon_state = "mush"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/snouts/mam_snouts/otter
+	name = "otter head"
+	icon_state = "otter"
+	matrixed_sections = MATRIX_ALL

@@ -37,26 +37,6 @@
 	s.set_up(5, 1, get_turf(src))
 	s.start()
 
-/obj/item/compressionkit/suicide_act(mob/living/carbon/M)
-	M.visible_message(span_suicide("[M] is sticking their head in [src] and turning it on! [M.p_theyre(TRUE)] going to compress their own skull!"))
-	var/obj/item/bodypart/head = M.get_bodypart("head")
-	if(!head)
-		return
-	var/turf/T = get_turf(M)
-	var/list/organs = M.getorganszone("head") + M.getorganszone("eyes") + M.getorganszone("mouth")
-	for(var/internal_organ in organs)
-		var/obj/item/organ/I = internal_organ
-		I.Remove()
-		I.forceMove(T)
-	head.drop_limb()
-	qdel(head)
-	new M.gib_type(T,1,M.get_static_viruses())
-	M.add_splatter_floor(T)
-	playsound(M, 'sound/weapons/flash.ogg', 50, 1)
-	playsound(M, 'sound/effects/splat.ogg', 50, 1)
-
-	return OXYLOSS
-
 /obj/item/compressionkit/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !target)

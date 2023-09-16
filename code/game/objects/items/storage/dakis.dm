@@ -49,4 +49,6 @@
 				playsound(src, 'sound/effects/shieldbash.ogg', 50, 1)
 		user.DelayNextAction(CLICK_CD_MELEE)
 
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dakimakura", /datum/mood_event/pet_pillow)
+
 ////////////////////////////

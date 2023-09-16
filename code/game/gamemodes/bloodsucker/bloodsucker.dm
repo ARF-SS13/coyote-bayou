@@ -3,11 +3,6 @@
 	AddComponent(/datum/component/butchering, 40, 105)
 	AddElement(/datum/element/sword_point)
 
-/obj/item/claymore/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(BRUTELOSS)
-
-
 /obj/item/claymore/highlander //ALL COMMENTS MADE REGARDING THIS SWORD MUST BE MADE IN ALL CAPS
 	desc = "<b><i>THERE CAN BE ONLY ONE, AND IT WILL BE YOU!!!</i></b>\nActivate it in your hand to point to the nearest victim."
 	flags_1 = CONDUCT_1

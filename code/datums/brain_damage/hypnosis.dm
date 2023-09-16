@@ -32,7 +32,6 @@
 	phrase = replacetext(lowertext(phrase), "harm", "snuggle")
 	phrase = replacetext(lowertext(phrase), "decapitate", "headpat")
 	phrase = replacetext(lowertext(phrase), "strangle", "meow at")
-	phrase = replacetext(lowertext(phrase), "suicide", "self-love")
 	phrase = replacetext(lowertext(phrase), "lynch", "kiss")
 	hypnotic_phrase = phrase
 

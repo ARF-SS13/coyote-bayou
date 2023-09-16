@@ -62,7 +62,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Wasteland Wizard", "Trained Grappler"),
 			list("Wasteland Wizard", "Fists of Iron"),
 			list("Wasteland Wizard", "Fists of Steel"),
-			list("Wasteland Wizard", "Mute")
+			list("Wasteland Wizard", "Mute"),
+			list("Fast Biter", "Big Biter", "Play Biter", "Spicy Biter", "Sabre Biter"),
+			list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
+			list("Tail Player", "Tail Smasher", "Tail Whipper", "Tail Stinger", "Tail Whipper", "Tail Thago"),
 		)
 	return ..()
 

@@ -572,6 +572,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"taste" = "something salty",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
+		"body_width" = RESIZE_DEFAULT_SIZE,
 		"color_scheme" = OLD_CHARACTER_COLORING,
 		"chat_color" = "whoopsie")
 
@@ -617,6 +618,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gender"]					>> gender
 	S["body_model"]				>> features["body_model"]
 	S["body_size"]				>> features["body_size"]
+	S["body_width"]				>> features["body_width"]
 	S["age"]					>> age
 	S["hair_color"]				>> hair_color
 	S["facial_hair_color"]		>> facial_hair_color
@@ -915,6 +917,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		size_max = CONFIG_GET(number/body_size_max)
 	features["body_size"]			= sanitize_num_clamp(features["body_size"], size_min, size_max, RESIZE_DEFAULT_SIZE, 0.01)
 
+	var/static/width_min
+	if(!width_min)
+		width_min = CONFIG_GET(number/body_width_min)
+	var/static/width_max
+	if(!width_max)
+		width_max = CONFIG_GET(number/body_width_max)
+	features["body_width"]			= sanitize_num_clamp(features["body_width"], width_min, width_max, RESIZE_DEFAULT_SIZE, 0.01)
+
 	var/static/list/B_sizes
 	if(!B_sizes)
 		var/list/L = CONFIG_GET(keyed_list/breasts_cups_prefs)
@@ -1094,6 +1104,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["gender"]					, gender)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
+	WRITE_FILE(S["body_width"]				, features["body_width"])
 	WRITE_FILE(S["age"]						, age)
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)

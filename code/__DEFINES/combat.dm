@@ -11,13 +11,11 @@
 #define STAMINA 	"stamina"
 #define BRAIN		"brain"
 
-//bitflag damage defines used for suicide_act -- also useful for bitflags, not just suicide!!!
+//bitflag damage defines. Used to be used for something else, but that use was removed cus it suckd
 #define BRUTELOSS 		(1<<0)
 #define FIRELOSS 		(1<<1)
 #define TOXLOSS 		(1<<2)
 #define OXYLOSS 		(1<<3)
-#define SHAME 			(1<<4)
-#define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
 #define RADIATIONLOSS	(1<<6)
 #define CLONELOSS		(1<<7)
 #define EMPLOSS			(1<<8)

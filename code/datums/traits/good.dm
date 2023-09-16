@@ -87,7 +87,29 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/blueambrosia,
 	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
-	/datum/crafting_recipe/tribal/bonebag))
+	/datum/crafting_recipe/tribal/bonebag,
+	/datum/crafting_recipe/warpaint))
+
+GLOBAL_LIST_INIT(rustwalkers_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/armour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/garb,
+	/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb))
+
+GLOBAL_LIST_INIT(bonedancer_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/bone/lightarmour,
+	/datum/crafting_recipe/tribalwar/bone/armour,
+	/datum/crafting_recipe/tribalwar/bone/heavyarmour,
+	/datum/crafting_recipe/tribalwar/bone/garb,
+	/datum/crafting_recipe/tribalwar/bone/helmet))
+
+GLOBAL_LIST_INIT(eighties_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/eighties/lightarmour,
+	/datum/crafting_recipe/tribalwar/eighties/armour,
+	/datum/crafting_recipe/tribalwar/eighties/heavyarmour,
+	/datum/crafting_recipe/tribalwar/eighties/garb,
+	/datum/crafting_recipe/tribalwar/eighties/femalegarb))
 
 GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	/datum/crafting_recipe/aer9_hotwired))
@@ -205,7 +227,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up. You can also climb some walls!"
-	value = 33
+	value = 32
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = span_notice("You feel lithe on your feet! (Alt click walls to climb them!)")
 	lose_text = span_danger("You feel clumsy again.")
@@ -344,7 +366,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Technophreak"
 	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before. Your time with understanding complex technology also \
 	allows you to craft more complex machine parts."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
@@ -437,7 +459,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/dna_whiz
 	name = "Dna Whiz"
 	desc = "You can sequence plant genomes with a snap of your fingers!"
-	value = 33
+	value = 32
 	mob_trait = TRAIT_DNAWHIZ
 	gain_text = span_notice("You know how plants work")
 	lose_text = span_danger("You forgot how plants work")
@@ -490,7 +512,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
-	value = 66
+	value = 65
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = span_notice("You feel like swinging for the fences!")
 	lose_text = span_danger("You feel like bunting.")
@@ -499,7 +521,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/littleleagues
 	name = "Melee - Little Leagues"
 	desc = "Swing for the outfield! You deal additional damage with melee weapons."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_LITTLE_LEAGUES
 	gain_text = span_notice("You feel like swinging for the outfield!")
 	lose_text = span_danger("You feel like skipping practice.")
@@ -508,7 +530,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_CHEMWHIZ
 	gain_text = span_notice("The mysteries of chemistry are revealed to you.")
 	lose_text = span_danger("You forget how the periodic table works.")
@@ -530,7 +552,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/pa_wear
 	name = "Power Armor Training"
 	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere or something."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_PA_WEAR
 	gain_text = span_notice("You realize how to use Power Armor.")
 	lose_text = span_danger("You forget how Power Armor works.")
@@ -539,7 +561,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
-	value = 77
+	value = 55
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = span_notice("Rain or shine, nothing slows you down.")
 	lose_text = span_danger("You walk with a less sure gait, the ground seeming less firm somehow.")
@@ -548,7 +570,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/soft_yards
 	name = "Mobility - Wasteland Wanderer"
 	desc = "You've spent some time in the wastes, and can move a bit better around them for it."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_SOFT_YARDS
 	gain_text = span_notice("Rain or shine only slow you down a little.")
 	lose_text = span_danger("You walk with a less sure gait, the ground seeming less firm somehow.")
@@ -557,7 +579,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/lifegiver
 	name = "Health - Tough"
 	desc = "You embody wellness! Instantly gain +10 maximum Health."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = span_notice("You feel more healthy than usual.")
 	lose_text = span_danger("You feel less healthy than usual.")
@@ -572,7 +594,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/lifegiverplus
 	name = "Health - Tougher"
 	desc = "You embody wellness to the MAX! Instantly gain +20 maximum Health."
-	value = 66
+	value = 65
 	mob_trait = TRAIT_LIFEGIVERPLUS
 	gain_text = span_notice("You feel much more healthy than usual.")
 	lose_text = span_danger("You feel much less healthy than usual.")
@@ -623,7 +645,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
 	desc = "You are a somewhat adequate medical practicioner, capable of performing minor surgery in a pinch."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
 	lose_text = span_danger("You forget how to perform even the simplest surgery.")
@@ -655,7 +677,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/improved_heal
 	name = "Improved Innate Healing"
 	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_IMPROVED_HEALING
 	gain_text = span_notice("You feel well hydrated.")
 	lose_text = span_danger("You feel rather dry.")
@@ -738,6 +760,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
 
+/datum/quirk/rustwalkerstraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_RUSTWALKERS_TRAD, "Rustwalker Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.rustwalkers_traditions_recipes
+
+/datum/quirk/rustwalkerstraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_RUSTWALKERS_TRAD, "Rustwalker Traditions")
+	H.mind.learned_recipes -= GLOB.rustwalkers_traditions_recipes
+
 /datum/quirk/eightiestraditions
 	name = "Eighties traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
@@ -746,6 +781,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
+
+/datum/quirk/eightiestraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.eighties_traditions_recipes
+
+/datum/quirk/rustwalkerstraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	H.mind.learned_recipes -= GLOB.eighties_traditions_recipes
 
 /datum/quirk/sorrowstraditions
 	name = "Sorrows traditions"
@@ -773,6 +821,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
+
+/datum/quirk/bonedancertraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BONEDANCER_TRAD, "Bone Dancer Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.bonedancer_traditions_recipes
+
+/datum/quirk/bonedancertraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_BONEDANCER_TRAD, "Bone Dancer Traditions")
+	H.mind.learned_recipes -= GLOB.bonedancer_traditions_recipes
 
 /datum/quirk/brickwall
 	name = "Brick wall"
@@ -833,7 +894,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_NOHUNGER
 	gain_text = span_notice("Your need for food has left you.")
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
@@ -853,7 +914,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
 	desc = "You're real good at just scooping people up."
-	value = 14
+	value = 6
 	mob_trait = TRAIT_QUICKER_CARRY
 	gain_text = span_notice("You feel like a MASTER fireman!")
 	lose_text = span_danger("You're ability to carry folk seems massively diminished.")
@@ -862,7 +923,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/quickcarry
 	name = "Quick Carry"
 	desc = "You're better than most at just scooping people up."
-	value = 18
+	value = 4
 	mob_trait = TRAIT_QUICK_CARRY
 	gain_text = span_notice("You feel like an ACCEPTABLE fireman!")
 	lose_text = span_danger("You're ability to carry folk seems a bit diminished.")
@@ -880,7 +941,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/grappler
 	name = "Trained Grappler"
 	desc = "You've got real skills when it comes to grabbing people by the bits!"
-	value = 33
+	value = 32
 	mob_trait = TRAIT_STRONG_GRABBER
 	gain_text = span_notice("You could wrassle a deathclaw!!")
 	lose_text = span_danger("You no longer feel like you should wrestle deathclaws.")
@@ -889,7 +950,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/mastermartialartist
 	name = "Master Martial Artist"
 	desc = "Sometimes you hit so hard you're pretty sure they stop being human!"
-	value = 33
+	value = 32
 	mob_trait = TRAIT_KI_VAMPIRE
 	gain_text = span_notice("They are already dead.")
 	lose_text = span_danger("Your fists no longer feel so powerful.")
@@ -898,11 +959,15 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/surestrike
 	name = "Sure Strike"
 	desc = "Your technique for punching has been perfected! Your punches always do MAX damage!"
-	value = 33
+	value = 32
 	mob_trait = TRAIT_PERFECT_ATTACKER
 	gain_text = span_notice("They are already dead.")
 
+/datum/quirk/silentstep
+	name = "Silent Step"
+	desc = "Your steps just make no noise, or maybe everyone elses buttcheeks are just that loud?"
 	mob_trait = TRAIT_SILENT_STEP
+	value = 32
 	gain_text = span_notice("Your footsteps fade away.")
 	lose_text = span_danger("You're pretty sure that's the sound of your asscheeks clapping, but it might be footsteps.")
 	locked =  FALSE
@@ -910,7 +975,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 66
+	value = 65
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
@@ -1072,10 +1137,113 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/artifact_identify
 	name = "Artifact Hunter"
 	desc = "You have a keen eye for identifying magical otherworldly trash! You can identify artifacts with a glance."
-	value = 33
+	value = 32
 	mob_trait = TRAIT_ARTIFACT_IDENTIFY
 	gain_text = span_notice("You feel perceptive!.")
 	lose_text = span_danger("You feel imperceptive.")
 	locked =  FALSE
 
 
+/datum/quirk/armblader
+	name = "Arm Blader"
+	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
+	value = 33
+	mob_trait = TRAIT_ARMBLADE
+
+/datum/quirk/tentaclearm
+	name = "Arm Tentacle"
+	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
+	value = 33
+	mob_trait = TRAIT_ARMTENT
+
+/datum/quirk/bigbiter
+	name = "Biter - Big"
+	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
+	value = 22
+	mob_trait = TRAIT_BIGBITE
+
+/datum/quirk/fastbiter
+	name = "Biter - Fast"
+	desc = "Your jaws are just UBELIEVABLY FAST.  Use *bite to bite like the WIND."
+	value = 22
+	mob_trait = TRAIT_FASTBITE
+
+/datum/quirk/playbiter
+	name = "Biter - Pretend"
+	desc = "Your biter is a little love nipper."
+	value = 0
+	mob_trait = TRAIT_PLAYBITE
+
+/datum/quirk/spicybiter
+	name = "Biter - Venomous"
+	desc = "One way or another your *bite can put things on their butts."
+	value = 22
+	mob_trait = TRAIT_SPICYBITE
+
+/datum/quirk/sabrebiter
+	name = "Biter - Sabre Toothed"
+	desc = "Your *bite strength is ENORMOUS, but it takes all your focus to use it."
+	value = 32
+	mob_trait = TRAIT_SABREBITE
+
+/datum/quirk/bigclawer
+	name = "Clawer - Big"
+	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
+	value = 22
+	mob_trait = TRAIT_BIGCLAW
+
+/datum/quirk/fastclawer
+	name = "Clawer - Fast"
+	desc = "Your claw swipes are nearly the speed of sound, your *claw attack his WAY faster."
+	value = 22
+	mob_trait = TRAIT_FASTCLAW
+
+/datum/quirk/playclaw
+	name = "Clawer - Pretend"
+	desc = "Your claws are for being silly, not dangerous."
+	value = 0
+	mob_trait = TRAIT_PLAYCLAW
+
+/datum/quirk/spicyclaw
+	name = "Clawer - Venomous"
+	desc = "Something about your claws cause weakness in those you rake, use *claw to stun mobs/players."
+	value = 22
+	mob_trait = TRAIT_SPICYCLAW
+
+/datum/quirk/razorclaw
+	name = "Clawer - Razors"
+	desc = "Your *claw attack really does rend and tear huge guts."
+	value = 32
+	mob_trait = TRAIT_RAZORCLAW
+
+//tail
+
+/datum/quirk/bigtail
+	name = "Tail - Big"
+	desc = "You got that big tail, good for big wumps. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILSMASH
+
+/datum/quirk/fasttail
+	name = "Tail - Whiplike"
+	desc = "You got that FAST tail, good for whipping about. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILWHIP
+
+/datum/quirk/playtail
+	name = "Tail - Playful"
+	desc = "Your tail is just a soft extension of the rest of you. use with *tailer"
+	value = 0
+	mob_trait = TRAIT_TAILPLAY
+
+/datum/quirk/spicytail
+	name = "Tail - Venomous"
+	desc = "One way or another your *tailer can put things on their butts."
+	value = 22
+	mob_trait = TRAIT_TAILSPICY
+
+/datum/quirk/thagotail
+	name = "Tail - Thagomizer"
+	desc = "A very dangerous *tailer, for beating the snot out of things."
+	value = 32
+	mob_trait = TRAIT_TAILTHAGO

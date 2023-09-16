@@ -167,9 +167,7 @@
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()
 
-	if(user.suiciding)
-		. += span_info("It's started turning slightly grey. They must not have been able to handle the stress of it all.")
-	else if(brainmob)
+	if(brainmob)
 		if(brainmob.get_ghost(FALSE, TRUE))
 			if(brain_death || brainmob.health <= HEALTH_THRESHOLD_DEAD)
 				. += span_info("It's lifeless and severely damaged, only the strongest of chems will save it.")
