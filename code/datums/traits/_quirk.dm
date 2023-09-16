@@ -9,7 +9,7 @@
 	var/desc = "This is a test quirk."
 	/// The actual specific(ish) mechanics of the quirk, shown in the quirk list
 	/// This is parsed by the game, so you can use $BAD, $NUT, $GOOD, and $MISC to color text
-	var/mechanics = "This does nothing $BAD(negative), $NUT(neutral), $GOOD(positive). Makes you $MISC(testy) though!"
+	var/mechanics = "This probably does something!"
 	var/value = 0
 	var/category = QUIRK_CAT_DEFAULT // misc
 	/// Format: list(/datum/quirk/quirk1, /datum/quirk/quirk2, etc.)
@@ -30,7 +30,7 @@
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
 	key = "[type]" // this is the key that will be used to identify the quirk in the quirk list
-	parse_mechanics()
+	// parse_mechanics()
 	for(var/q in conflicts)
 		if(!ispath(q, /datum/quirk))
 			stack_trace("Hey! [src] has a conflict with [q], which is not a quirk! please make sure its not a string, cus we dont do that anymore.")
@@ -65,16 +65,16 @@
 	SSquirks.quirk_objects -= src
 	return ..()
 
-/datum/quirk/proc/parse_mechanics()
-	var/static/regex/badtoken = regex(@"$BAD\(([^)]+)\)", "g")
-	mechanics = badtoken.Replace_char(mechanics, "[span_alert("$1")]")
-	var/static/regex/nuttoken = regex(@"$NUT\(([^)]+)\)", "g")
-	mechanics = nuttoken.Replace_char(mechanics, "[span_notice("$1")]")
-	var/static/regex/goodtoken = regex(@"$GOOD\(([^)]+)\)", "g")
-	mechanics = nuttoken.Replace_char(mechanics, "[span_notice("$1")]")
-	var/static/regex/misctoken = regex(@"$MISC\(([^)]+)\)", "g")
-	mechanics = misctoken.Replace_char(mechanics, "[span_monkeylead("$1")]")
-	mechanics = span_suppradio(mechanics)
+// /datum/quirk/proc/parse_mechanics() // if only this worked
+// 	var/static/regex/badtoken = regex(@"$BAD\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
+// 	mechanics = badtoken.Replace_char(mechanics, "[span_alert("$1")]")
+// 	var/static/regex/nuttoken = regex(@"$NUT\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
+// 	mechanics = nuttoken.Replace_char(mechanics, "[span_notice("$1")]")
+// 	var/static/regex/goodtoken = regex(@"$GOOD\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
+// 	mechanics = nuttoken.Replace_char(mechanics, "[span_notice("$1")]")
+// 	var/static/regex/misctoken = regex(@"$MISC\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
+// 	mechanics = misctoken.Replace_char(mechanics, "[span_monkeylead("$1")]")
+// 	mechanics = span_suppradio(mechanics)
 
 /datum/quirk/proc/get_conflicts()
 	var/returnlist = list() // so now we're gonna convert the list of paths to string names, like it was before, but better cus I did it

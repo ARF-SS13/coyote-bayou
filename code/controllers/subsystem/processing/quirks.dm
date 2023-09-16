@@ -26,10 +26,12 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	/// How many people took each quirk
 	/// Format: list("ckey" = list(/datum/quirk_statistics), ...)
 	var/list/quirks_used = list()
+	var/saveshot_cd = 0
+	var/saveshot_rate = 1 HOURS
 
 	var/debug_categories = TRUE // makes up a bunch of categories for us
-	var/debug_migration = TRUE // fucks with our savefile
-	var/debug_conflicts = TRUE
+	var/debug_migration = FALSE // fucks with our savefile
+	var/debug_conflicts = FALSE
 
 	var/dp = FALSE
 	var/dp_prob = 1
@@ -41,58 +43,10 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		stack_trace("Quirks subsystem initialized, but there were quirks here already! Did someone try to re-initialize the quirks subsystem? Dont lie, it's okay to admit it.")
 		return
 	SetupQuirks()
-	// quirk_blacklist = list( // hey look, referencing the name (which can change and not runtime if it does) instead of the path (which is static and will let you know when its broken), what a great idea
-	// 	list("Blind","Nearsighted"),
-	// 	list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
-	// 	list("Ageusia","Deviant Tastes"),
-	// 	list("Ananas Affinity","Ananas Aversion"),
-	// 	list("Alcohol Tolerance","Alcohol Intolerance"),
-	// 	list("Alcohol Intolerance","Drunken Resilience"),
-	// 	list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
-	// 	list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
-	// 	list("Fists of Steel","Fists of Iron","Fists of Noodle"),
-	// 	list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
-	// 	list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
-	// 	list("Cold Resistant", "Cold-Blooded"),
-	// 	list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
-	// 	list("Vegetarian","Does not Eat"),
-	// 	list("Cannibal","Does not Eat"),
-	// 	list("Deviant Tastes","Does not Eat"),
-	// 	list("Vegetarian","Cannibal"),
-	// 	list("Unintelligible Speech","Mute"),
-	// 	list("Quicker Carry","Quick Carry"),
-	// 	list("Master Martial Artist", "Fists of Noodle"),
-	// 	list("Master Martial Artist", "Sure Strike"),
-	// 	list("Heavy Sleeper","Can Not Sleep"),
-	// 	list("Dead Eye", "Straight Shooter", "Poor Aim"),
-	// 	list("Beast Friend - Rats", "Beast Master - Rats"),
-	// 	list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
-	// 	list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
-	// 	list("Pacifist", "Fists of Noodle"),
-	// 	list("Pacifist", "Melee - Gentle"),
-	// 	list("Pacifist", "Melee - Wimpy"),
-	// 	list("Pacifist", "Poor Aim"),
-	// 	list("Pacifist", "Fat-Fingered"),
-	// 	list("Speed Walker", "Mobility - Can not Run"),
-	// 	list("Zoomies", "Zoomies - Super"),
-	// 	list("Wasteland Wizard", "Melee - Big Leagues"),
-	// 	list("Wasteland Wizard", "Melee - Little Leagues"),
-	// 	list("Wasteland Wizard", "Bolt Worker"),
-	// 	list("Wasteland Wizard", "Bow Trained"),
-	// 	list("Wasteland Wizard", "Dead Eye"),
-	// 	list("Wasteland Wizard", "Straight Shooter"),
-	// 	list("Wasteland Wizard", "Sure Strike"),
-	// 	list("Wasteland Wizard", "Master Martial Artist"),
-	// 	list("Wasteland Wizard", "Trained Grappler"),
-	// 	list("Wasteland Wizard", "Fists of Iron"),
-	// 	list("Wasteland Wizard", "Fists of Steel"),
-	// 	list("Wasteland Wizard", "Mute"),
-	// 	list("Fast Biter", "Big Biter", "Play Biter", "Spicy Biter", "Sabre Biter"),
-	// 	list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
-	// ) // not // got em // fingerguns
 	..()
 	to_chat(world, span_boldannounce("Loaded [LAZYLEN(quirks)] quirks across [length(cached_all_categories)] categories!"))
 	UpdateNewbs()
+	saveshot_cd = world.time + saveshot_rate
 
 /datum/controller/subsystem/processing/quirks/fire(resumed = 0)
 	if (!resumed)
@@ -100,6 +54,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		check_dp()
 	//cache for sanic speed (lists are references anyways)
 	var/list/current_run = currentrun
+	// if(COOLDOWN_FINISHED(src, saveshot_cd))
+	// 	COOLDOWN_START(src, saveshot_cd, saveshot_rate)
+	// 	SaveStats2HardDrive() // doesnt work yet
 
 	while(current_run.len)
 		var/datum/thing = current_run[current_run.len]
@@ -195,7 +152,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/ui_close(mob/user)
 	. = ..()
 	SaveUserPreferences(user)
-	INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
+	//INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
 
 /datum/controller/subsystem/processing/quirks/ui_static_data(mob/user)
 	var/list/data = list()
@@ -214,6 +171,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	data["UserQuirkKeys"] = LAZYACCESS(quirks_and_goods, "UserQuirkKeys")
 	data["UserQuirkPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkPoints")
 	data["UserQuirkGoods"] = LAZYACCESS(quirks_and_goods, "UserQuirkGoods")
+	data["UserQuirksConflictingKeys"] = LAZYACCESS(quirks_and_goods, "UserQuirksConflictingKeys")
 	// data["UserQuirkProstheticPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkProstheticPoints")
 	data["UserCkey"] = user.ckey
 	data["UserName"] = user.client?.prefs.real_name
@@ -277,6 +235,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	out["UserQuirkKeys"] = list()
 	out["UserQuirkPoints"] = GetQuirkBalance(P)
 	out["UserQuirkGoods"] = GetPositiveQuirkCount(P)
+	/// A pre-assembled list quirks that we can't get, cus they conflict with what we have
+	/// much rather process it here than in the tgui, gets kiiiiiiinda laggy
+	out["UserQuirksConflictingKeys"] = list()
 	for(var/qpath in P.char_quirks) // list of type paths
 		var/datum/quirk/Q = GetQuirk(qpath)
 		if(!Q)
@@ -285,9 +246,12 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			continue
 		out["UserQuirkNames"] |= "[Q.name]"
 		out["UserQuirkKeys"] |= "[Q.key]"
-	// for(var/modification in P.modified_limbs)
-	// 	if(P.modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-	// 		return bal + 33 //max 33 point regardless of how many prosthetics
+		for(var/qpath_two in Q.conflicts)
+			var/datum/quirk/QCon = GetQuirk(qpath_two)
+			if(!QCon)
+				stack_trace("QuirkList2TGUI: Quirk [qpath_two] on [P.parent.ckey]'s profile does not exist! cool")
+				continue
+			out["UserQuirksConflictingKeys"] |= "[QCon.key]"
 	return out
 
 /// Returns the player's quirk balance
@@ -483,14 +447,18 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!istype(P) || !istype(Q))
 		return TRUE // mind your P's and Q's -- yes im gonna keep doing this
 	var/list/quirklist = P.char_quirks
+	var/list/cornflicts = list()
 	for(var/qstring in quirklist)
 		var/datum/quirk/Q2 = GetQuirk(qstring)
 		if(!Q2)
 			stack_trace("QuirkConflict: Quirk [qstring] on [P.parent.ckey]'s profile does not exist! cool")
 			continue
-		if((Q2.type in Q.conflicts) || (Q.type in Q2.conflicts))
-			to_chat(P.parent, span_warning("You can not have [Q.name] and [Q2.name] at the same time! They conflict!"))
-			return TRUE
+		if((Q.type in Q2.conflicts) || (Q2.type in Q.conflicts))
+			cornflicts += Q2
+	if(LAZYLEN(cornflicts))
+		to_chat(P.parent, span_warning("You can not take [Q.name], as [english_list(cornflicts)] prevent[LAZYLEN(cornflicts)==1?"s":""] it from being taken! They conflict!"))
+		return TRUE
+	return FALSE
 
 /// Removes any quirks from the player's prefs that no longer exist
 /datum/controller/subsystem/processing/quirks/proc/RemoveDeadQuirks(datum/preferences/P)
@@ -737,6 +705,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			cocklist[ckey] += list(quirks)
 	// list clump obtained. time to mess with the files!
 	var/files_already_there = flist(my_directory)
+	message_admins("Preparing to save quirk stats to [my_directory]!")
 	message_admins("Deleting [LAZYLEN(files_already_there)] quirk files, in prep to save them!")
 	/// KILL EM ALL
 	for(var/file in files_already_there)
@@ -784,4 +753,59 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		to_chat(src, span_warning("Quirks are not initialized yet! Please wait a moment and try again."))
 		return
 	SSquirks.OpenWindow(src)
+
+
+
+
+
+	/// saved as a warning to others
+	// quirk_blacklist = list( // hey look, referencing the name (which can change and not runtime if it does) instead of the path (which is static and will let you know when its broken), what a great idea
+	// 	list("Blind","Nearsighted"),
+	// 	list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
+	// 	list("Ageusia","Deviant Tastes"),
+	// 	list("Ananas Affinity","Ananas Aversion"),
+	// 	list("Alcohol Tolerance","Alcohol Intolerance"),
+	// 	list("Alcohol Intolerance","Drunken Resilience"),
+	// 	list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
+	// 	list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
+	// 	list("Fists of Steel","Fists of Iron","Fists of Noodle"),
+	// 	list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
+	// 	list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
+	// 	list("Cold Resistant", "Cold-Blooded"),
+	// 	list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
+	// 	list("Vegetarian","Does not Eat"),
+	// 	list("Cannibal","Does not Eat"),
+	// 	list("Deviant Tastes","Does not Eat"),
+	// 	list("Vegetarian","Cannibal"),
+	// 	list("Unintelligible Speech","Mute"),
+	// 	list("Quicker Carry","Quick Carry"),
+	// 	list("Master Martial Artist", "Fists of Noodle"),
+	// 	list("Master Martial Artist", "Sure Strike"),
+	// 	list("Heavy Sleeper","Can Not Sleep"),
+	// 	list("Dead Eye", "Straight Shooter", "Poor Aim"),
+	// 	list("Beast Friend - Rats", "Beast Master - Rats"),
+	// 	list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
+	// 	list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
+	// 	list("Pacifist", "Fists of Noodle"),
+	// 	list("Pacifist", "Melee - Gentle"),
+	// 	list("Pacifist", "Melee - Wimpy"),
+	// 	list("Pacifist", "Poor Aim"),
+	// 	list("Pacifist", "Fat-Fingered"),
+	// 	list("Speed Walker", "Mobility - Can not Run"),
+	// 	list("Zoomies", "Zoomies - Super"),
+	// 	list("Wasteland Wizard", "Melee - Big Leagues"),
+	// 	list("Wasteland Wizard", "Melee - Little Leagues"),
+	// 	list("Wasteland Wizard", "Bolt Worker"),
+	// 	list("Wasteland Wizard", "Bow Trained"),
+	// 	list("Wasteland Wizard", "Dead Eye"),
+	// 	list("Wasteland Wizard", "Straight Shooter"),
+	// 	list("Wasteland Wizard", "Sure Strike"),
+	// 	list("Wasteland Wizard", "Master Martial Artist"),
+	// 	list("Wasteland Wizard", "Trained Grappler"),
+	// 	list("Wasteland Wizard", "Fists of Iron"),
+	// 	list("Wasteland Wizard", "Fists of Steel"),
+	// 	list("Wasteland Wizard", "Mute"),
+	// 	list("Fast Biter", "Big Biter", "Play Biter", "Spicy Biter", "Sabre Biter"),
+	// 	list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
+	// ) // not // got em // fingerguns
 
