@@ -283,10 +283,16 @@
 	)
 
 /datum/export/item/powerarmor // note to self -- tier this later, kelprunner, 9/16/23
-	cost = 7500
-	unit_name = "power armor"
+	cost = 7000
+	unit_name = "power armor frame"
 	export_types = list(
 		/obj/item/clothing/suit/armor/power_armor,
+	)
+
+/datum/export/item/powerarmorhelmet
+	cost = 500
+	unit_name = "power armor helmet"
+	export_types = list(
 		/obj/item/clothing/head/helmet/f13/power_armor,
 	)
 
@@ -714,11 +720,12 @@
 	/obj/item/melee/smith/throwingknife,
 	)
 
-/datum/export/item/crates/nuboxes // kelp here, idfk if there's pre-existing crate data so new thing it is
-	cost = 200
-	unit_name = "recycled crates"
-	export_types = list(/obj/structure/closet/crate/,
-	)
+/datum/export/item/nucrate // Hopefully this one works
+	cost = 500
+	k_elasticity = 0
+	unit_name = "crate"
+	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 
