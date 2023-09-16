@@ -29,7 +29,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/saveshot_cd = 0
 	var/saveshot_rate = 1 HOURS
 
-	var/debug_categories = TRUE // makes up a bunch of categories for us
+	var/debug_categories = FALSE // makes up a bunch of categories for us
 	var/debug_migration = FALSE // fucks with our savefile
 	var/debug_conflicts = FALSE
 
