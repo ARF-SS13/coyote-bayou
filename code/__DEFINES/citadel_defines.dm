@@ -125,6 +125,7 @@
 #define DEF_BELLY_SHAPE	"Tummy"
 #define BELLY_SHAPE_TUMMY "Tummy" // cute lil round belly
 #define BELLY_SHAPE_OBESE "Obese" // blubbery fatass landwhale
+#define BELLY_SHAPE_UDDERS "Udders" // haha, udders
 #define BELLY_SIZE_DEF 1
 #define BELLY_SIZE_MIN 1
 #define BELLY_SIZE_MAX 11 // our bellies go up to 11~
