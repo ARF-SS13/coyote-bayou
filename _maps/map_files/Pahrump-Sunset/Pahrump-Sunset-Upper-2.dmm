@@ -136,7 +136,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
+/obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1347,12 +1347,15 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "jJ" = (
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/rare,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jL" = (
@@ -2328,7 +2331,9 @@
 	dir = 8
 	},
 /obj/structure/flora/tree/cherryblossom4{
-	light_color = null
+	light_color = null;
+	pixel_y = 14;
+	pixel_x = -11
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -3117,11 +3122,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "xp" = (
-/obj/structure/rug/big/rug_yellow{
-	pixel_y = -9
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common,
+/obj/structure/rug/carpet,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "xs" = (
 /turf/closed/indestructible/rock{
@@ -3390,7 +3393,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "yQ" = (
-/obj/structure/rug/carpet,
 /obj/structure/nightstand/small{
 	pixel_x = 2
 	},
@@ -3688,6 +3690,9 @@
 	pixel_x = -11;
 	pixel_y = 2;
 	on = 1
+	},
+/obj/structure/rug/big/rug_yellow{
+	pixel_y = -9
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -4534,6 +4539,11 @@
 /obj/structure/fluff/beach_umbrella/science,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"HI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "HM" = (
 /obj/structure/railing/corner{
 	color = null
@@ -14213,7 +14223,7 @@ DQ
 ec
 tK
 pT
-xp
+pT
 DQ
 RF
 hm
@@ -16443,8 +16453,8 @@ IG
 IY
 IY
 IY
-IY
-IY
+oz
+oz
 IY
 IY
 IY
@@ -16700,8 +16710,8 @@ Eq
 Eq
 RE
 zX
+HI
 uq
-zJ
 iN
 jJ
 nw
@@ -16957,11 +16967,11 @@ ko
 cX
 Eq
 Tc
+HI
 uq
 uq
+zB
 uq
-uq
-FU
 eY
 hm
 hm
@@ -17215,9 +17225,9 @@ Sz
 Eq
 mr
 uq
-uq
-uq
-uq
+zB
+FU
+FU
 Th
 eY
 hm
@@ -17294,7 +17304,7 @@ DQ
 Or
 DQ
 mC
-zB
+xp
 Ha
 DQ
 af
@@ -17471,11 +17481,11 @@ iK
 cX
 Eq
 zX
+zB
 uq
+zB
+zB
 uq
-uq
-uq
-Ce
 IY
 hm
 Wr
@@ -17728,10 +17738,10 @@ Eq
 Eq
 Mo
 Jd
+zB
 uq
-uq
-uq
-uq
+FU
+Th
 yk
 IY
 hm
@@ -17989,7 +17999,7 @@ uq
 uq
 uq
 uq
-uq
+zB
 IY
 hm
 Wr
@@ -18243,10 +18253,10 @@ Jd
 FU
 zJ
 uq
-uq
-uq
-uq
-uq
+zB
+Ce
+Th
+FU
 IY
 hm
 Wr
@@ -18498,12 +18508,12 @@ Mo
 sL
 Tc
 cw
-uq
-uq
-uq
-uq
-uq
-uq
+zB
+FU
+zB
+zB
+zB
+zB
 IY
 hm
 Wr
@@ -18756,9 +18766,9 @@ IY
 IY
 Ce
 uq
-uq
+Th
 cK
-uq
+zB
 lT
 mX
 IY

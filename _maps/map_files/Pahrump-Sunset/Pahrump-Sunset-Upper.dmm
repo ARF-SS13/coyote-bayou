@@ -6357,10 +6357,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "fmJ" = (
-/obj/structure/chair/f13chair2{
-	dir = 4
-	},
 /obj/structure/window,
+/obj/item/kirbyplants/random{
+	pixel_y = 15
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -10772,8 +10772,10 @@
 	},
 /area/f13/building/abandoned)
 "iHJ" = (
-/obj/structure/table,
 /obj/structure/window,
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -15875,7 +15877,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/kirbyplants/random,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -21735,6 +21736,7 @@
 	dir = 4;
 	pixel_x = 2
 	},
+/obj/structure/chair/f13chair2,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -22204,12 +22206,12 @@
 	},
 /area/f13/building/massfusion)
 "rSX" = (
-/obj/structure/chair/f13chair2,
 /obj/structure/window{
 	dir = 4;
 	pixel_x = 2
 	},
 /obj/structure/window,
+/obj/structure/table,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -25059,6 +25061,7 @@
 	dir = 4;
 	pixel_x = 2
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -39601,7 +39604,7 @@ slU
 bxP
 pOk
 eoY
-mNn
+slU
 bxP
 pOk
 eoY
@@ -39862,7 +39865,7 @@ mNn
 bxP
 jYw
 sTp
-mNn
+slU
 qIs
 afb
 mrM
@@ -40370,7 +40373,7 @@ bFI
 mNn
 slU
 jCP
-mNn
+slU
 mNn
 mNn
 mfA
@@ -40628,8 +40631,8 @@ slU
 slU
 mNn
 mNn
-mNn
-mNn
+slU
+slU
 slU
 slU
 fRC

@@ -1030,15 +1030,27 @@
 	key_third_person = "aflaps"
 	message = "flaps their wings ANGRILY!!"
 
+/datum/emote/aflap/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/flaparms
 	key = "flapa"
 	key_third_person = "flapas"
 	message = "flaps their arms."
 
+/datum/emote/flapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/aflaparms
 	key = "aflapa"
 	key_third_person = "aflapas"
 	message = "flaps their arms ANGRILY!!"
+
+/datum/emote/aflapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/wah
 	key = "wah"
@@ -1139,6 +1151,10 @@
 	key_third_person = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	message = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	sound = 'sound/f13effects/sunsetsounds/aie.ogg'
+
+/datum/emote/aie/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 0, 5, 0, 0, 0.8 SECONDS)
 
 
 /datum/emote/nightstalker
