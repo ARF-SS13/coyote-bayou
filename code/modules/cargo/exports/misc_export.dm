@@ -282,8 +282,8 @@
 		/obj/item/clothing/suit/armor/medium/odstlead,
 	)
 
-/datum/export/item/powerarmor
-	cost = 2500
+/datum/export/item/powerarmor // note to self -- tier this later, kelprunner, 9/16/23
+	cost = 7500
 	unit_name = "power armor"
 	export_types = list(
 		/obj/item/clothing/suit/armor/power_armor,
@@ -657,7 +657,7 @@
 )
 
 /datum/export/item/nightstalkerpelt
-	cost = 200 
+	cost = 200
 	unit_name = "nightstalker pelt"
 	export_types = list(/obj/item/clothing/head/f13/stalkerpelt,
 	)
@@ -712,6 +712,12 @@
 	/obj/item/melee/smith/twohand/spear/trident,
 	/obj/item/melee/smith/javelin,
 	/obj/item/melee/smith/throwingknife,
+	)
+
+/datum/export/item/crates/nuboxes // kelp here, idfk if there's pre-existing crate data so new thing it is
+	cost = 200
+	unit_name = "recycled crates"
+	export_types = list(/obj/structure/closet/crate/,
 	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */

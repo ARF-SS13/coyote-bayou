@@ -283,6 +283,10 @@
 	amount = 20
 	merge_type = /obj/item/stack/f13Cash/denarius
 
+/obj/item/stack/f13Cash/denarius/hundo
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/denarius
+
 
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
@@ -334,6 +338,10 @@
 	amount = 20
 	merge_type = /obj/item/stack/f13Cash/aureus
 
+/obj/item/stack/f13Cash/aureus/hundo
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/aureus
+
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
 
@@ -375,6 +383,14 @@
 
 /obj/item/stack/f13Cash/ncr/twohundo
 	amount = 200
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/onekay
+	amount = 1000
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/fivegees
+	amount = 5000
 	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()
