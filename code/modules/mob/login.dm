@@ -73,6 +73,6 @@
 		return
 	var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
 	if(do_stealth == "Yes")
-		stealth()
+		client.stealth()
 
 
