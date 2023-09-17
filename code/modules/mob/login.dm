@@ -65,7 +65,7 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 
-	if(client.holder)
+	if(holder && check_rights(R_STEALTH, 0))
 		INVOKE_ASYNC(client, .proc/wanna_stealthmin)
 
 /client/proc/wanna_stealthmin()
