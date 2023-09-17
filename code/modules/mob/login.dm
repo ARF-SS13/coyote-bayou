@@ -64,3 +64,15 @@
 
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
+
+	if(client.holder)
+		INVOKE_ASYNC(client, .proc/wanna_stealthmin)
+
+/client/proc/wanna_stealthmin()
+	if(!holder)
+		return
+	var/do_stealth = alert(mob, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+	if(do_stealth == "Yes")
+		stealth()
+
+
