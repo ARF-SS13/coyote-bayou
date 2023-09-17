@@ -26405,12 +26405,20 @@
 /obj/machinery/button/door{
 	id = "countershutters";
 	name = "counter shutters";
-	pixel_x = -2;
-	pixel_y = 31;
+	pixel_x = -7;
+	pixel_y = 9;
 	req_one_access_txt = null;
 	layer = 4
 	},
-/obj/item/folder/documents,
+/obj/item/folder/documents{
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	name = "scrapper lock";
+	id = "scrapperlockdown";
+	pixel_x = -7;
+	pixel_y = -3
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -34191,23 +34199,6 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city)
-"eot" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters";
-	req_one_access_txt = null;
-	state_open = 1;
-	color = "#8888FF"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
 "eoy" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -36630,12 +36621,20 @@
 /obj/machinery/button/door{
 	id = "countershutters";
 	name = "counter shutters";
-	pixel_x = -2;
-	pixel_y = -34;
+	pixel_x = -7;
+	pixel_y = -5;
 	req_one_access_txt = null;
 	layer = 4
 	},
-/obj/item/folder/documents,
+/obj/item/folder/documents{
+	pixel_x = 8
+	},
+/obj/machinery/button/door{
+	name = "scrapper lock";
+	id = "scrapperlockdown";
+	pixel_y = 8;
+	pixel_x = -7
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -47895,10 +47894,6 @@
 /area/f13/building/coyote/nash/greenhouse)
 "huI" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -59717,10 +59712,10 @@
 /area/f13/wasteland/city)
 "kfa" = (
 /obj/structure/table/wood,
-/obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/bars{
-	layer = 3.5
+/obj/structure/barricade/barswindow{
+	layer = 3.5;
+	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
@@ -60172,13 +60167,14 @@
 /area/f13/wasteland/city/nash/theloop)
 "kko" = (
 /obj/structure/table/wood,
+/obj/structure/barricade/barswindow{
+	layer = 3.5;
+	dir = 8
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
 	req_one_access_txt = null
-	},
-/obj/structure/barricade/bars{
-	layer = 3.5
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -63983,10 +63979,6 @@
 "ley" = (
 /obj/machinery/mineral/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -75366,6 +75358,9 @@
 /area/f13/wasteland)
 "nCz" = (
 /obj/machinery/mineral/wasteland_trader,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "scrapperlockdown"
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -76387,10 +76382,6 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "nPu" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /obj/machinery/mineral/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -82527,13 +82518,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "pjh" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/structure/barricade/bars{
+	layer = 3.5;
+	dir = 8
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
 	name = "counter shutters";
-	req_one_access_txt = null;
-	state_open = 1;
-	color = "#8888FF"
+	req_one_access_txt = null
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -93500,10 +93493,6 @@
 "rJI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/mineral/wasteland_vendor/pipboy,
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -94021,22 +94010,6 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
-"rRA" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters";
-	req_one_access_txt = null;
-	state_open = 1;
-	color = "#8888FF"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
 "rRD" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland/city/nash/theloop)
@@ -95073,7 +95046,8 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars{
-	layer = 3.5
+	layer = 3.5;
+	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "countershutters";
@@ -112752,10 +112726,13 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
 "wfR" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
-	light_color = "#884444"
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building/trader)
 "wfU" = (
 /obj/effect/decal/marking{
@@ -116575,21 +116552,6 @@
 /obj/item/candle/tribal_torch,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"wVW" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters";
-	req_one_access_txt = null
-	},
-/obj/structure/barricade/bars{
-	layer = 3.5
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
 "wWa" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 4;
@@ -130910,7 +130872,7 @@ alk
 fHl
 bZR
 bZR
-wfR
+bZR
 fHl
 bKc
 mco
@@ -131160,15 +131122,15 @@ eZj
 flt
 oxw
 inE
-pjh
-mGx
+wfR
+iFl
 xug
 fsz
 nCz
 iFl
 iFl
 iFl
-iFl
+mGx
 bek
 qiw
 cZJ
@@ -131417,7 +131379,7 @@ vIX
 leQ
 mMr
 nPu
-eot
+eWq
 oXG
 iFl
 iFl
@@ -131425,7 +131387,7 @@ iFl
 iFl
 iFl
 iFl
-rOp
+iFl
 huI
 oxw
 lfi
@@ -131674,7 +131636,7 @@ dtf
 nql
 wNy
 ley
-rRA
+iFl
 oXG
 hPP
 iFl
@@ -131682,7 +131644,7 @@ iFl
 iFl
 uvE
 iFl
-rOp
+iFl
 rJI
 oxw
 lfi
@@ -132190,13 +132152,13 @@ dUj
 dUj
 sdg
 kko
-wVW
+kfa
 sdg
 drL
-kfa
+sdg
 kfa
 kko
-kko
+pjh
 dUj
 nSY
 lfi
