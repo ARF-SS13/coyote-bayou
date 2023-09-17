@@ -167,11 +167,6 @@
 	attack_verb = list("slashed", "sliced", "cut", "clawed")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-/obj/item/cultivator/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
-
 // ------
 // RAKE
 // ------
@@ -218,11 +213,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 70, 100)
 
-/obj/item/hatchet/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
-	return (BRUTELOSS)
-
 ///////////////////
 // WICKER BASKET //
 ///////////////////
@@ -265,16 +255,6 @@
 /obj/item/scythe/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 90, 105)
-
-/obj/item/scythe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is beheading [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
-		if(BP)
-			BP.drop_limb()
-			playsound(src,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-	return (BRUTELOSS)
 
 /obj/item/scythe/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()

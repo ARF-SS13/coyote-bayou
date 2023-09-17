@@ -124,7 +124,11 @@
 	//Ready for this one?
 	setTo(radius)
 
+GLOBAL_VAR(view_override)
+
 /proc/getScreenSize(widescreen)
+	if(!isnull(GLOB.view_override) && istext(GLOB.view_override))
+		return GLOB.view_override
 	if(widescreen)
 		return CONFIG_GET(string/default_view)
 	return CONFIG_GET(string/default_view_square)

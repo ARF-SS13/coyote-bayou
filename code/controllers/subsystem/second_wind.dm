@@ -416,7 +416,7 @@ SUBSYSTEM_DEF(secondwind)
 	if(!isliving(master))
 		return SW_ERROR_NO_BODY
 	var/mob/dead/observer/myghost = master.get_ghost()
-	if((myghost && !myghost.can_reenter_corpse) || master.suiciding)
+	if((myghost && !myghost.can_reenter_corpse))
 		return SW_ERROR_CANNOT_REENTER
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY

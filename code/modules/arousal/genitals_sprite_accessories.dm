@@ -135,6 +135,10 @@
 	icon_state = "sextuple"
 	name = "Sextuple"
 
+/datum/sprite_accessory/breasts/udders
+	icon_state = "udders"
+	name = "Udders"
+
 //BUTT BE HERE
 /datum/sprite_accessory/butt
 	icon = 'icons/obj/genitals/butt_onmob.dmi'
@@ -161,3 +165,8 @@
 /datum/sprite_accessory/belly/obese
 	icon_state = "obese"
 	name = "Obese"
+
+/// udders
+/datum/sprite_accessory/belly/udders
+	icon_state = "udders"
+	name = "Udders"

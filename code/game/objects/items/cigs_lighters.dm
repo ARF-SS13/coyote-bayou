@@ -121,10 +121,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 30)
 	heat = 1000
 
-/obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer."))
-	return (TOXLOSS|OXYLOSS)
-
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
 	create_reagents(chem_volume, INJECTABLE | NO_REACT, NO_REAGENTS_VALUE) // so it doesn't react until you light it
@@ -548,15 +544,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		overlay_state = pick(overlay_list)
 	update_icon()
 
-/obj/item/lighter/suicide_act(mob/living/carbon/user)
-	if (lit)
-		user.visible_message(span_suicide("[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/items/welder.ogg', 50, 1)
-		return FIRELOSS
-	else
-		user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		return BRUTELOSS
-
 /obj/item/lighter/update_icon_state()
 	icon_state = "[initial(icon_state)][lit ? "-on" : ""]"
 
@@ -847,11 +834,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/vapetime = FALSE //this so it won't puff out clouds every tick
 	var/screw = FALSE // kinky
 	var/super = FALSE //for the fattest vapes dude.
-
-/obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!"))//it doesn't give you cancer, it is cancer
-	return (TOXLOSS|OXYLOSS)
-
 
 /obj/item/clothing/mask/vape/Initialize(mapload, param_color)
 	. = ..()

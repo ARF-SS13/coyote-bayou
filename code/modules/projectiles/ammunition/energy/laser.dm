@@ -310,7 +310,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/aer14/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/aer14/hitscan
-	e_cost = 133.33 //15 shots, i hate the decimal value too trust me
+	e_cost = 100 //20 shots
 
 /obj/item/ammo_casing/energy/laser/aer12
 	projectile_type = /obj/item/projectile/beam/laser/aer12

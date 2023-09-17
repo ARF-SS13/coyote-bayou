@@ -33,7 +33,9 @@
 	name = "Knee-High - Freedom"
 	icon_state = "assblastusa_knee"
 
-
+/datum/sprite_accessory/underwear/socks/socks_cow
+	name = "Socks - Cow"
+	icon_state = "socks_cow"
 
 /datum/sprite_accessory/underwear/socks/rainbow_knee
 	name = "Knee-high - Rainbow"

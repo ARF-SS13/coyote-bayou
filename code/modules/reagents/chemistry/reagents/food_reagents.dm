@@ -621,6 +621,7 @@
 /datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(HAS_TRAIT(M, TRAIT_WHITE_WOMAN))
 		M.visible_message("<b>[M]</b> [pick("licks [M.p_their()] lips", "licks [M.p_their()] nose", "licks the air")].")
+		M.emote("noselick")
 	return ..()
 
 /datum/reagent/consumable/cornoil
