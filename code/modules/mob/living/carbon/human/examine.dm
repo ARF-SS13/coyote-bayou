@@ -4,33 +4,33 @@
 /// Format: PERSONALITY_TRAIT(trait, emoji, traits that can see this trait -- can be multiple, put commas in between)
 /// like this: PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER, 🍆, TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER)
 GLOBAL_LIST_INIT(personality_quirks, list(
-	PERSONALITY_TRAIT(TRAIT_IN_HEAT,          EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER,     EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPGIRLKISSER,    EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPANYKISSER,     EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPQUICKY,        EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPLONGTERM,      EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPBOTTOM,        EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPTOP,           EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPSWITCH,        EMOJI GO HERE, TRAIT_HEAT_DETECT),
-	PERSONALITY_TRAIT(TRAIT_ERPFLIRTY,        EMOJI GO HERE, TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_IN_HEAT,          span_love("😘"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER,     span_love("🍆"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPGIRLKISSER,    span_love("🍑"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPANYKISSER,     span_love("💋"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPQUICKY,        span_love("⏰"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPLONGTERM,      span_love("📅"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPBOTTOM,        span_love("😔"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPTOP,           span_love("😎"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPSWITCH,        span_love("☯"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPFLIRTY,        span_love("🌹"), TRAIT_HEAT_DETECT),
 
-	PERSONALITY_TRAIT(TRAIT_RPLONGTERM,       EMOJI GO HERE, TRAIT_RPFOCUSED),
-	PERSONALITY_TRAIT(TRAIT_RPSHORTTERM,      EMOJI GO HERE, TRAIT_RPFOCUSED),
-	PERSONALITY_TRAIT(TRAIT_RPSERIOUS,        EMOJI GO HERE, TRAIT_RPFOCUSED),
-	PERSONALITY_TRAIT(TRAIT_RPLIGHT,          EMOJI GO HERE, TRAIT_RPFOCUSED),
-	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         EMOJI GO HERE, TRAIT_RPFOCUSED),
-	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, EMOJI GO HERE, TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPLONGTERM,       span_greenannounce("📅"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSHORTTERM,      span_greenannounce("⏰"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSERIOUS,        span_greenannounce("👑"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPLIGHT,          span_greenannounce("🤡"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         span_greenannounce("⛑"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, span_greenannounce("💀"), TRAIT_RPFOCUSED),
 
-	PERSONALITY_TRAIT(TRAIT_ADV_ER,           EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_SOLO,         EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_GUNNER,       EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_FIGHTER,      EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_TANK,         EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_BRUISER,      EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_ROGUE,        EMOJI GO HERE, TRAIT_ADV_SEEKER),
-	PERSONALITY_TRAIT(TRAIT_ADV_HEALER,       EMOJI GO HERE, TRAIT_ADV_SEEKER)))
+	PERSONALITY_TRAIT(TRAIT_ADV_ER,           span_binarysay("♞"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          span_binarysay("💑"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_SOLO,         span_binarysay("😑"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_GUNNER,       span_binarysay("🔫"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_FIGHTER,      span_binarysay("⚔️"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_TANK,         span_binarysay("🛡"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_BRUISER,      span_binarysay("🏏"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_ROGUE,        span_binarysay("🔓"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_HEALER,       span_binarysay("🏥"), TRAIT_ADV_SEEKER)))
 
 /// The description that'll be sent out
 /// Dont include the emoji
@@ -38,7 +38,32 @@ GLOBAL_LIST_INIT(personality_quirks, list(
 /// Use span defines like span_warning("words") please, they make it look nice
 /// Format: THE_TRAIT = "description"
 GLOBAL_LIST_INIT(personalitytrait2description, list(
-	TRAIT_ADV_ER = "words go here",
+	TRAIT_IN_HEAT = 				 		  span_love("They are looking for a good time, you should check their OOC Notes."),
+	TRAIT_ERPBOYKISSER = 			 		  span_love("They look like they prefer guys."),
+	TRAIT_ERPGIRLKISSER =			 		  span_love("They look like they prefer girls."),
+	TRAIT_ERPANYKISSER = 			 		  span_love("They look like they'd kiss boys OR girls."),
+	TRAIT_ERPQUICKY =						  span_love("They look like they're looking for flings, not long term partners."),
+	TRAIT_ERPLONGTERM = 			 		  span_love("They look like they're looking for long term sexual partners."),
+	TRAIT_ERPBOTTOM = 						  span_love("They look like a bottom, you'll probably need to be the one to approach."),
+	TRAIT_ERPTOP = 							  span_love("They look like a top, maybe if you wiggle right they'll approach you first."),
+	TRAIT_ERPSWITCH = 						  span_love("They look like a switch, see what works."),
+	TRAIT_ERPFLIRTY = 						  span_love("They look flirty, or like being flirty with them might be very effective.  Check out the *help command for *flirts."),
+	TRAIT_RPLONGTERM = 				 span_greenannounce("They are looking for RP that is long term focused. Perhaps contact them via LOOC to work that out together?"),
+	TRAIT_RPSHORTTERM = 			 span_greenannounce("They are looking for RP that is short term focused. This generally means only things in the current round."),
+	TRAIT_RPSERIOUS =				 span_greenannounce("They are looking for RP that is relatively serious, if you to want to take the setting seriously maybe you should chatter at them via LOOC?"),
+	TRAIT_RPLIGHT = 				 span_greenannounce("They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach."),
+	TRAIT_RPSCRUBS = 				 span_greenannounce("They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs."),
+	TRAIT_RPDAYSOFOURLIVES =		 span_greenannounce("They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera."),
+	TRAIT_ADV_ER = 					 	 span_binarysay("They look like the adventuring sort."),
+	TRAIT_ADV_LFG =					 	 span_binarysay("They look like they'd like to have someone adventure with them, maybe you should ask?"),
+	TRAIT_ADV_SOLO = 				 	 span_binarysay("They don't look like they'd want anyone to adventure with right now."),
+	TRAIT_ADV_GUNNER =				 	 span_binarysay("They look like they know their way around ranged combat."),
+	TRAIT_ADV_FIGHTER = 			 	 span_binarysay("A real fighter of all time, they look like they can use a blade"),
+	TRAIT_ADV_TANK =				 	 span_binarysay("A shield wielding wall of an adventurer. They look like they could hold back a tsunami."),
+	TRAIT_ADV_BRUISER =				 	 span_binarysay("A real bruiser of a waster, the way they hold a two handed weapon speaks volumes about melons being obliterated."),
+	TRAIT_ADV_ROGUE = 				 	 span_binarysay("This person looks insanely useful at things that might not be JUST killing monsters. Maybe see if they have a lockpick on hand?"),
+	TRAIT_ADV_HEALER = 				 	 span_binarysay("This person looks like they know how to keep your bits glued together and your blood inside you. How nice."),
+
 	// and so onh
 ))
 
@@ -630,7 +655,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 							[emoji]
 				</a>"}
 	if(!isnull(msg))
-		out = "<span class='info'>[user] [p_has()] some cool traits! Click the emojis to learn more!</span>\n"
+		out = "<span class='info'>They have some cool traits! Click the emojis to learn more!</span>\n"
 	out += msg
 	return msg
 
