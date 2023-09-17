@@ -49,10 +49,6 @@
 	throw_range = 3
 	attack_verb = list("stung")
 
-/obj/item/reagent_containers/food/snacks/grown/nettle/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is eating some of [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|TOXLOSS)
-
 /obj/item/reagent_containers/food/snacks/grown/nettle/pickup(mob/living/user)
 	..()
 	if(!iscarbon(user))

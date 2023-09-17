@@ -144,33 +144,6 @@
 /obj/item/grenade/plastic/proc/add_plastic_overlay(atom/source, list/overlay_list)
 	overlay_list += plastic_overlay
 
-/obj/item/grenade/plastic/proc/shout_syndicate_crap(mob/M)
-	if(!M)
-		return
-	var/message_say = "FOR NO RAISIN!"
-	if(M.mind)
-		var/datum/mind/UM = M
-		if(UM.has_antag_datum(/datum/antagonist/nukeop) || UM.has_antag_datum(/datum/antagonist/traitor))
-			message_say = "FOR THE SYNDICATE!"
-		else if(UM.has_antag_datum(/datum/antagonist/changeling))
-			message_say = "FOR THE HIVE!"
-		else if(UM.has_antag_datum(/datum/antagonist/cult))
-			message_say = "FOR NAR'SIE!"
-		else if(UM.has_antag_datum(/datum/antagonist/clockcult))
-			message_say = "FOR RATVAR!"
-		else if(UM.has_antag_datum(/datum/antagonist/rev))
-			message_say = "VIVA LA REVOLUTION!"
-	M.say(message_say, forced="C4 suicide")
-
-/obj/item/grenade/plastic/suicide_act(mob/user)
-	message_admins("[ADMIN_LOOKUPFLW(user)] suicided with [src] at [ADMIN_VERBOSEJMP(user)]")
-	log_game("[key_name(user)] suicided with [src] at [AREACOORD(user)]")
-	user.visible_message(span_suicide("[user] activates [src] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!"))
-	shout_syndicate_crap(user)
-	explosion(user,0,2,0) //Cheap explosion imitation because putting prime() here causes runtimes
-	user.gib(1, 1)
-	qdel(src)
-
 /obj/item/grenade/plastic/update_icon_state()
 	if(nadeassembly)
 		icon_state = "[item_state]1"
@@ -198,16 +171,6 @@
 	wires = null
 	target = null
 	return ..()
-
-/obj/item/grenade/plastic/c4/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] activates the [src.name] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!"))
-	shout_syndicate_crap(user)
-	target = user
-	message_admins("[ADMIN_LOOKUPFLW(user)] suicided with [name] at [ADMIN_VERBOSEJMP(src)]")
-	log_game("[key_name(user)] suicided with [name] at [AREACOORD(user)]")
-	sleep(10)
-	prime()
-	user.gib(1, 1)
 
 /obj/item/grenade/plastic/c4/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))

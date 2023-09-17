@@ -213,6 +213,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/card/midbounty = 150,
 		/obj/item/card/highbounty = 300,
 		/obj/item/card/kingbounty = 600,
+		// Artifacts: Someone who actually playes needs to test these prices -Kelprunner
+		/obj/item/artifact/common = 250,
+		/obj/item/artifact/uncommon = 500,
+		/obj/item/artifact/rare = 750,
 	)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
@@ -334,6 +338,11 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Medium Roller Bounty Ticket: 150¢<br>"
 	dat += "High Roller Bounty Ticket: 300¢<br>"
 	dat += "King's Bounty Ticket: 600¢<br>"
+	dat += "<br>"
+	dat += "<b>No use for an artifact? Trade it for hard coins!</b><br>"
+	dat += "Lesser Artifact: 250¢<br>"
+	dat += "Standard Artifact: 500¢<br>"
+	dat += "Greater Artifact: 750¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)

@@ -390,6 +390,13 @@
 		C.images += I
 	addtimer(CALLBACK(GLOBAL_PROC, /proc/remove_images_from_clients, I, show_to), duration, TIMER_CLIENT_TIME)
 
+/proc/flick_overlay_global(image/I, list/show_to, duration)
+	if(!show_to || !length(show_to) || !I)
+		return
+	for(var/client/add_to in show_to)
+		add_to.images += I
+	addtimer(CALLBACK(GLOBAL_PROC, /proc/remove_images_from_clients, I, show_to), duration, TIMER_CLIENT_TIME)
+
 /proc/flick_overlay_view(image/I, atom/target, duration) //wrapper for the above, flicks to everyone who can see the target atom
 	var/list/viewing = list()
 	for(var/m in viewers(target))

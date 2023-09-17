@@ -785,7 +785,7 @@
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
-	desc = "A bleeding-edge, pre-war laser rifle. Extremely powerful, but eats MFCs like nothing else."
+	desc = "A bleeding-edge, pre-war laser rifle. A little more powerful than the previous model AER."
 	icon_state = "aer14"
 	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)

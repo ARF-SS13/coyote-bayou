@@ -556,7 +556,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/trans
-	name  = "Transexual Pride Pin"
+	name  = "Transgender Pride Pin"
 	path = /obj/item/clothing/accessory/pride/trans
 	cost = 0
 
@@ -566,7 +566,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/enby
-	name  = "Nonbinery Pride Pin"
+	name  = "Nonbinary Pride Pin"
 	path = /obj/item/clothing/accessory/pride/enby
 	cost = 0
 

@@ -594,7 +594,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(drunkenness)
 		drunkenness *= 0.96
 		if(drunkenness >= 6)
-			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
+			//SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk) Holy shit lmao ahahahahahah
 			jitteriness = max(jitteriness - 3, 0)
 			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
 				adjustBruteLoss(-0.12, FALSE)

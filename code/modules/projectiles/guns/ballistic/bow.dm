@@ -197,7 +197,8 @@
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
 	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"
-	icon_state = "yumi"
+	//icon_state = "yumi"		//temporary fix
+	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT

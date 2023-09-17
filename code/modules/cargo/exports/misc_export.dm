@@ -252,7 +252,7 @@
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
 		/obj/item/melee/unarmed/deathclawgauntlet,
-		/obj/item/melee/powerfist/f13/goliath,
+		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
 		/obj/item/twohanded/spear/bonespear/deathclaw,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
@@ -282,11 +282,17 @@
 		/obj/item/clothing/suit/armor/medium/odstlead,
 	)
 
-/datum/export/item/powerarmor
-	cost = 2500
-	unit_name = "power armor"
+/datum/export/item/powerarmor // note to self -- tier this later, kelprunner, 9/16/23
+	cost = 7000
+	unit_name = "power armor frame"
 	export_types = list(
 		/obj/item/clothing/suit/armor/power_armor,
+	)
+
+/datum/export/item/powerarmorhelmet
+	cost = 500
+	unit_name = "power armor helmet"
+	export_types = list(
 		/obj/item/clothing/head/helmet/f13/power_armor,
 	)
 
@@ -657,7 +663,7 @@
 )
 
 /datum/export/item/nightstalkerpelt
-	cost = 200 
+	cost = 200
 	unit_name = "nightstalker pelt"
 	export_types = list(/obj/item/clothing/head/f13/stalkerpelt,
 	)
@@ -713,6 +719,13 @@
 	/obj/item/melee/smith/javelin,
 	/obj/item/melee/smith/throwingknife,
 	)
+
+/datum/export/item/nucrate // Hopefully this one works
+	cost = 500
+	k_elasticity = 0
+	unit_name = "crate"
+	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 

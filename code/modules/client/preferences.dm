@@ -191,6 +191,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
+		"body_width" = RESIZE_DEFAULT_WIDTH,
 		"color_scheme" = OLD_CHARACTER_COLORING,
 		"chat_color" = "whoopsie"
 		)
@@ -617,6 +618,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if (CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+			if (CONFIG_GET(number/body_width_min) != CONFIG_GET(number/body_width_max))
+				dat += "<b>Sprite Width:</b> <a href='?_src_=prefs;preference=body_width;task=input'>[features["body_width"]*100]%</a><br>"
 
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eye Type</h3>"
@@ -3317,6 +3320,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
 
+				if("body_width")
+					var/min = CONFIG_GET(number/body_width_min)
+					var/max = CONFIG_GET(number/body_width_max)
+					var/new_body_width = input(user, "Choose your desired sprite size: ([min*100]%-[max*100]%)\nWarning: This may make your character look distorted", "Character Preference", features["body_width"]*100) as num|null
+					if (new_body_width)
+						new_body_width = clamp(new_body_width * 0.01, min, max)
+						features["body_width"] = new_body_width
+
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
 					if(selected_custom_tongue)
@@ -3913,6 +3924,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		save_character()
 
 	var/old_size = character.dna.features["body_size"]
+	var/old_width = character.dna.features["body_width"]
 
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
@@ -3939,6 +3951,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.give_genitals(TRUE) //character.update_genitals() is already called on genital.update_appearance()
 
 	character.dna.update_body_size(old_size)
+	character.dna.update_body_width(old_width)
 
 	//speech stuff
 	if(custom_tongue != "default")

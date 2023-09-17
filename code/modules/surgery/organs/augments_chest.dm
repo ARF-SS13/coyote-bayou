@@ -77,7 +77,7 @@
 				to_chat(owner, span_notice("Your reviver implant shuts down and starts recharging. It will be ready again in [DisplayTimeText(revive_cost)]."))
 		return
 
-	if(!. || cooldown > world.time || owner.stat == CONSCIOUS || owner.stat == DEAD || owner.suiciding)
+	if(!. || cooldown > world.time || owner.stat == CONSCIOUS || owner.stat == DEAD)
 		return
 
 	revive_cost = 0
