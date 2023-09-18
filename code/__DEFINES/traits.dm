@@ -327,6 +327,7 @@
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
 #define TRAIT_BEASTMASTER_SMALLCRITTER "beastmaster-smallcritters"
+#define TRAIT_WILDSHAPE "wild shape"
 #define TRAIT_NO_CHOCOLATE "chocolate-intolerance"
 #define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
 #define TRAIT_AUTOBREW "autobrewery-syndrome"

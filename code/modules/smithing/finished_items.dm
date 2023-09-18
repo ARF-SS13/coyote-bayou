@@ -54,7 +54,7 @@
 	I.force_unwielded += 5
 	I.throwforce += 5
 	I.is_sharpened = TRUE
-	I.desc = "[initial(desc)] It has been sharpened to a fine edge."
+	I.desc = "[initial(I.desc)] It has been sharpened to a fine edge."
 	to_chat(user, span_notice("You sharpen the [I]!"))
 	qdel(src)
 	return ..()

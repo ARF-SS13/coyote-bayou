@@ -39,57 +39,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	COOLDOWN_DECLARE(dp_cd)
 
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
-	if(!quirks.len)
-		SetupQuirks()
-		quirk_blacklist = list(
-			list("Blind","Nearsighted"),
-			list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
-			list("Ageusia","Deviant Tastes"),
-			list("Ananas Affinity","Ananas Aversion"),
-			list("Alcohol Tolerance","Alcohol Intolerance"),
-			list("Alcohol Intolerance","Drunken Resilience"),
-			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
-			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
-			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
-			list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
-			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
-			list("Cold Resistant", "Cold-Blooded"),
-			list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
-			list("Vegetarian","Does not Eat"),
-			list("Cannibal","Does not Eat"),
-			list("Deviant Tastes","Does not Eat"),
-			list("Vegetarian","Cannibal"),
-			list("Unintelligible Speech","Mute"),
-			list("Quicker Carry","Quick Carry"),
-			list("Master Martial Artist", "Fists of Noodle"),
-			list("Master Martial Artist", "Sure Strike"),
-			list("Heavy Sleeper","Can Not Sleep"),
-			list("Dead Eye", "Straight Shooter", "Poor Aim"),
-			list("Beast Friend - Rats", "Beast Master - Rats"),
-			list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
-			list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
-			list("Pacifist", "Fists of Noodle"),
-			list("Pacifist", "Melee - Gentle"),
-			list("Pacifist", "Melee - Wimpy"),
-			list("Pacifist", "Poor Aim"),
-			list("Pacifist", "Fat-Fingered"),
-			list("Speed Walker", "Mobility - Can not Run"),
-			list("Zoomies", "Zoomies - Super"),
-			list("Wasteland Wizard", "Melee - Big Leagues"),
-			list("Wasteland Wizard", "Melee - Little Leagues"),
-			list("Wasteland Wizard", "Bolt Worker"),
-			list("Wasteland Wizard", "Bow Trained"),
-			list("Wasteland Wizard", "Dead Eye"),
-			list("Wasteland Wizard", "Straight Shooter"),
-			list("Wasteland Wizard", "Sure Strike"),
-			list("Wasteland Wizard", "Master Martial Artist"),
-			list("Wasteland Wizard", "Trained Grappler"),
-			list("Wasteland Wizard", "Fists of Iron"),
-			list("Wasteland Wizard", "Fists of Steel"),
-			list("Wasteland Wizard", "Mute"),
-			list("Fast Biter", "Big Biter", "Play Biter", "Spicy Biter", "Sabre Biter"),
-			list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
-		)
+	SetupQuirks()
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
@@ -106,10 +56,26 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 				var/conflict = pick(conflictables)
 				conflictables -= conflict
 				T.conflicts += conflict
-		// quirk_points[initial(T.name)] = initial(T.value)
-		// quirk_names_by_path[T] = initial(T.name)
+	saneitze_conflicts()
+	
 	/// Now, lets pre-make the tgui data tree thing, for hyperspeed caching
 	FormatifyQuirks()
+
+/// Keeping conflicts working right is hard, so lets just saneitize them
+/datum/controller/subsystem/processing/quirks/proc/saneitze_conflicts()
+	for(var/q in quirks)
+		var/datum/quirk/Q = quirks[q]
+		/// first, make sure the quirk isnt conflicting with itself
+		/// cus bad
+		Q.conflicts -= Q.type
+		/// Now, run through all my conflicts, and make sure they too conflict with me
+		for(var/q2 in Q.conflicts)
+			var/datum/quirk/Q2 = GetQuirk(q2)
+			if(!Q2)
+				stack_trace("saneitze_conflicts: Quirk [q2] on [Q.key] does not exist! cool")
+				continue
+			Q2.conflicts |= Q.type
+	/// and thats how you make a mouse pillow
 
 /datum/controller/subsystem/processing/quirks/proc/UpdateNewbs()
 	for(var/mob/dead/new_player/noob in GLOB.player_list)
@@ -227,7 +193,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			if(!P)
 				return
 			if(q_key in P.char_quirks)
-				RemoveQuirkFromPrefs(P, q_key, FALSE)
+				RemoveQuirkFromPrefs(P, q_key, FALSE, TRUE)
 			else
 				AddQuirkToPrefs(c_key, q_key, FALSE, TRUE)
 			. = TRUE
@@ -259,12 +225,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			continue
 		out["UserQuirkNames"] |= "[Q.name]"
 		out["UserQuirkKeys"] |= "[Q.key]"
-		for(var/qpath_two in Q.conflicts)
-			var/datum/quirk/QCon = GetQuirk(qpath_two)
-			if(!QCon)
-				stack_trace("QuirkList2TGUI: Quirk [qpath_two] on [P.parent.ckey]'s profile does not exist! cool")
-				continue
-			out["UserQuirksConflictingKeys"] |= "[QCon.key]"
+		out["UserQuirksConflictingKeys"] |= Q.get_conflicts()
 	return out
 
 /// Returns the player's quirk balance
@@ -376,7 +337,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/val = Q.value
 	if(removal)
 		val = -val
-	if(balance + Q.value > max_points)
+	if(balance + val > max_points)
 		return FALSE
 	if(Q.value > 0 && goods + 1 > max_good_quirks)
 		return FALSE
