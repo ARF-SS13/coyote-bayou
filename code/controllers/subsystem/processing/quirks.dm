@@ -233,7 +233,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		if(P.modified_limbs[modification][1] != LOADOUT_LIMB_PROSTHETIC)
 			continue
 		var/list/limbdat = list()
-		limbdat["Limb"] = main_body_parts2words[modification]
+		limbdat["Limb"] = GLOB.main_body_parts2words[modification]
 		limbdat["Manufacturer"] = P.modified_limbs[modification][2]
 		dickpoints = min(dickpoints + 11, 33)
 		out["UserProstheticObjs"] += list(limbdat)
@@ -258,7 +258,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		if(P.modified_limbs[modification][1] != LOADOUT_LIMB_PROSTHETIC)
 			continue
 		limbal = min(limbal + 11, 33)
-	return balance + limbal
+	return balance - limbal
 
 /// Returns the player's number of good quirks
 /datum/controller/subsystem/processing/quirks/proc/GetPositiveQuirkCount(datum/preferences/P)
@@ -319,7 +319,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!LAZYLEN(quirklist))
 		return TRUE // they have no quirks, so they're good
 	RemoveDeadQuirks(P)
-	var/balance = GetQuirkBalance(P)
+	var/balance = GetQuirkBalance(P, TRUE)
 	var/goods = GetPositiveQuirkCount(P)
 	if(balance > max_points || goods > max_good_quirks)
 		PruneQuirksUntilBalanced(P, balance)	
@@ -351,13 +351,15 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!removal)
 		if(QuirkConflict(P, Q))
 			return FALSE
-	var/balance = GetQuirkBalance(P)
+	var/balance = GetQuirkBalance(P, TRUE)
 	var/goods = GetPositiveQuirkCount(P)
 	var/val = Q.value
 	if(removal)
 		val = -val
 	if(balance + val > max_points)
 		return FALSE
+	if(removal)
+		return TRUE
 	if(Q.value > 0 && goods + 1 > max_good_quirks)
 		return FALSE
 	return TRUE
