@@ -67,9 +67,9 @@
 	color = "#8591ff"
 
 /obj/item/instrument/attack_self(mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
-		return TRUE
+	//if(!user.IsAdvancedToolUser())
+	//	to_chat(user, span_warning("You don't have the dexterity to do this!"))
+	//	return TRUE
 	interact(user)
 
 /obj/item/instrument/attackby(obj/item/W, mob/user, params)
