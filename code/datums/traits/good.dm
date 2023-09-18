@@ -1608,7 +1608,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You've developed through some means the ability to adopt a lesser form. What it is was decided by yourself or mere circumstance, but you can transform back and forth at will."
 	value = 15
 	category = "Mutant Quirks"
-	mechanics = "You gain the shapeshift spell and can cast it nearly at-will! This allows you to transform into an animal and back again. Though beware, once you select a form, that is your only form you can assume again."
+	mechanics = "You gain the shapeshift spell and can cast it nearly at will! This allows you to transform into an animal and back again. Once you select a shape, it cannot be changed."
 	conflicts = list(
 		
 	)
