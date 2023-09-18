@@ -583,7 +583,7 @@
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
 	if(!experimental)
-		if(mob_occupant.suiciding || mob_occupant.hellbound)
+		if(mob_occupant.hellbound)
 			scantemp = "<font class='bad'>Subject's brain is not responding to scanning stimuli.</font>"
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return

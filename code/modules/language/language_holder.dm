@@ -340,7 +340,7 @@ Key procs
 	..()
 	grant_all_languages()
 
-/datum/language_holder/signlanuage
+/datum/language_holder/signlanguage
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/signlanguage = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/signlanguage = list(LANGUAGE_ATOM))

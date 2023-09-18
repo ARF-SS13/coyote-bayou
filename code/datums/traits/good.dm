@@ -87,7 +87,29 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/blueambrosia,
 	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
-	/datum/crafting_recipe/tribal/bonebag))
+	/datum/crafting_recipe/tribal/bonebag,
+	/datum/crafting_recipe/warpaint))
+
+GLOBAL_LIST_INIT(rustwalkers_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/armour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour,
+	/datum/crafting_recipe/tribalwar/rustwalkers/garb,
+	/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb))
+
+GLOBAL_LIST_INIT(bonedancer_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/bone/lightarmour,
+	/datum/crafting_recipe/tribalwar/bone/armour,
+	/datum/crafting_recipe/tribalwar/bone/heavyarmour,
+	/datum/crafting_recipe/tribalwar/bone/garb,
+	/datum/crafting_recipe/tribalwar/bone/helmet))
+
+GLOBAL_LIST_INIT(eighties_traditions_recipes, list(
+	/datum/crafting_recipe/tribalwar/eighties/lightarmour,
+	/datum/crafting_recipe/tribalwar/eighties/armour,
+	/datum/crafting_recipe/tribalwar/eighties/heavyarmour,
+	/datum/crafting_recipe/tribalwar/eighties/garb,
+	/datum/crafting_recipe/tribalwar/eighties/femalegarb))
 
 GLOBAL_LIST_INIT(energyweapon_crafting, list(
 	/datum/crafting_recipe/aer9_hotwired))
@@ -1020,6 +1042,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
 
+/datum/quirk/rustwalkerstraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_RUSTWALKERS_TRAD, "Rustwalker Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.rustwalkers_traditions_recipes
+
+/datum/quirk/rustwalkerstraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_RUSTWALKERS_TRAD, "Rustwalker Traditions")
+	H.mind.learned_recipes -= GLOB.rustwalkers_traditions_recipes
+
 /datum/quirk/eightiestraditions
 	name = "Eighties traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
@@ -1038,6 +1073,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
+
+/datum/quirk/eightiestraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.eighties_traditions_recipes
+
+/datum/quirk/rustwalkerstraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_EIGHTIES_TRAD, "Eighties Traditions")
+	H.mind.learned_recipes -= GLOB.eighties_traditions_recipes
 
 /datum/quirk/sorrowstraditions
 	name = "Sorrows traditions"
@@ -1094,6 +1142,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE */
+
+/datum/quirk/bonedancertraditions/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BONEDANCER_TRAD, "Bone Dancer Traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.bonedancer_traditions_recipes
+
+/datum/quirk/bonedancertraditions/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_BONEDANCER_TRAD, "Bone Dancer Traditions")
+	H.mind.learned_recipes -= GLOB.bonedancer_traditions_recipes
 
 /datum/quirk/brickwall
 	name = "Brick wall"
@@ -1547,6 +1608,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel imperceptive.")
 	locked =  FALSE
 
+
+/datum/quirk/armblader
+	name = "Arm Blader"
+	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
+	value = 33
+	mob_trait = TRAIT_ARMBLADE
+
+/datum/quirk/tentaclearm
+	name = "Arm Tentacle"
+	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
+	value = 33
+	mob_trait = TRAIT_ARMTENT
+
 /datum/quirk/bigbiter
 	name = "Biter - Big"
 	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
@@ -1686,3 +1760,35 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/spicyclaw,
 	)
 	mob_trait = TRAIT_RAZORCLAW
+
+//tail
+
+/datum/quirk/bigtail
+	name = "Tail - Big"
+	desc = "You got that big tail, good for big wumps. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILSMASH
+
+/datum/quirk/fasttail
+	name = "Tail - Whiplike"
+	desc = "You got that FAST tail, good for whipping about. Use with *tailer"
+	value = 22
+	mob_trait = TRAIT_TAILWHIP
+
+/datum/quirk/playtail
+	name = "Tail - Playful"
+	desc = "Your tail is just a soft extension of the rest of you. use with *tailer"
+	value = 0
+	mob_trait = TRAIT_TAILPLAY
+
+/datum/quirk/spicytail
+	name = "Tail - Venomous"
+	desc = "One way or another your *tailer can put things on their butts."
+	value = 22
+	mob_trait = TRAIT_TAILSPICY
+
+/datum/quirk/thagotail
+	name = "Tail - Thagomizer"
+	desc = "A very dangerous *tailer, for beating the snot out of things."
+	value = 32
+	mob_trait = TRAIT_TAILTHAGO

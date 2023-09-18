@@ -39,45 +39,58 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	COOLDOWN_DECLARE(dp_cd)
 
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
-	if(LAZYLEN(quirks))
-		stack_trace("Quirks subsystem initialized, but there were quirks here already! Did someone try to re-initialize the quirks subsystem? Dont lie, it's okay to admit it.")
-		return
-	SetupQuirks()
-	..()
-	to_chat(world, span_boldannounce("Loaded [LAZYLEN(quirks)] quirks across [length(cached_all_categories)] categories!"))
-	UpdateNewbs()
-	saveshot_cd = world.time + saveshot_rate
-
-/datum/controller/subsystem/processing/quirks/fire(resumed = 0)
-	if (!resumed)
-		currentrun = processing.Copy()
-		check_dp()
-	//cache for sanic speed (lists are references anyways)
-	var/list/current_run = currentrun
-	// if(COOLDOWN_FINISHED(src, saveshot_cd))
-	// 	COOLDOWN_START(src, saveshot_cd, saveshot_rate)
-	// 	SaveStats2HardDrive() // doesnt work yet
-
-	while(current_run.len)
-		var/datum/thing = current_run[current_run.len]
-		current_run.len--
-		if(QDELETED(thing))
-			processing -= thing
-		else if(thing.process(wait) == PROCESS_KILL)
-			// fully stop so that a future START_PROCESSING will work
-			STOP_PROCESSING(src, thing)
-		if (MC_TICK_CHECK)
-			return
-
-/datum/controller/subsystem/processing/quirks/proc/check_dp()
-	if(!COOLDOWN_FINISHED(src, dp_cd))
-		return
-	COOLDOWN_START(src, dp_cd, dp_rate)
-	if(dp)
-		dp = FALSE
-		return
-	if(prob(dp_prob))
-		dp = TRUE // was promised
+	if(!quirks.len)
+		SetupQuirks()
+		quirk_blacklist = list(
+			list("Blind","Nearsighted"),
+			list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
+			list("Ageusia","Deviant Tastes"),
+			list("Ananas Affinity","Ananas Aversion"),
+			list("Alcohol Tolerance","Alcohol Intolerance"),
+			list("Alcohol Intolerance","Drunken Resilience"),
+			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
+			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
+			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
+			list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
+			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
+			list("Cold Resistant", "Cold-Blooded"),
+			list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
+			list("Vegetarian","Does not Eat"),
+			list("Cannibal","Does not Eat"),
+			list("Deviant Tastes","Does not Eat"),
+			list("Vegetarian","Cannibal"),
+			list("Unintelligible Speech","Mute"),
+			list("Quicker Carry","Quick Carry"),
+			list("Master Martial Artist", "Fists of Noodle"),
+			list("Master Martial Artist", "Sure Strike"),
+			list("Heavy Sleeper","Can Not Sleep"),
+			list("Dead Eye", "Straight Shooter", "Poor Aim"),
+			list("Beast Friend - Rats", "Beast Master - Rats"),
+			list("Beast Friend - Small Critters", "Beast Master - Small Critters"),
+			list("Speed Walker", "Mobility - Wasteland Slug", "Mobility - Wasteland Molasses", "Phobia - The Dark"),
+			list("Pacifist", "Fists of Noodle"),
+			list("Pacifist", "Melee - Gentle"),
+			list("Pacifist", "Melee - Wimpy"),
+			list("Pacifist", "Poor Aim"),
+			list("Pacifist", "Fat-Fingered"),
+			list("Speed Walker", "Mobility - Can not Run"),
+			list("Zoomies", "Zoomies - Super"),
+			list("Wasteland Wizard", "Melee - Big Leagues"),
+			list("Wasteland Wizard", "Melee - Little Leagues"),
+			list("Wasteland Wizard", "Bolt Worker"),
+			list("Wasteland Wizard", "Bow Trained"),
+			list("Wasteland Wizard", "Dead Eye"),
+			list("Wasteland Wizard", "Straight Shooter"),
+			list("Wasteland Wizard", "Sure Strike"),
+			list("Wasteland Wizard", "Master Martial Artist"),
+			list("Wasteland Wizard", "Trained Grappler"),
+			list("Wasteland Wizard", "Fists of Iron"),
+			list("Wasteland Wizard", "Fists of Steel"),
+			list("Wasteland Wizard", "Mute"),
+			list("Fast Biter", "Big Biter", "Play Biter", "Spicy Biter", "Sabre Biter"),
+			list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
+		)
+	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 	/// Will give us a list of all quirks, sorted by point value, then name

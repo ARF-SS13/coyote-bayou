@@ -41,7 +41,7 @@
 	mood_quirk = TRUE
 
 /datum/quirk/depression/on_process()
-	if(prob(0.15))
+	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "depression", /datum/mood_event/depression)
 
 /datum/quirk/pessimist
@@ -64,7 +64,7 @@
 	mood_quirk = TRUE
 
 /datum/quirk/pessimist/on_process()
-	if(prob(0.15))
+	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "pessimist", /datum/mood_event/pessimism)
 
 
@@ -250,6 +250,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes/add()
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
+/*
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
@@ -275,6 +276,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "nyctophobia")
 
+
 /datum/quirk/lightless
 	name = "Phobia - Bright Light"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
@@ -295,6 +297,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "brightlight")
+*/
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
@@ -981,7 +984,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.maxHealth -= 20
 	H.health -= 20
 
-
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
@@ -999,21 +1001,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
 	if(istype(mask))
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "masked_mook_incomplete")
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "masked_mook", /datum/mood_event/masked_mook)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "masked_mook")
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "masked_mook_incomplete", /datum/mood_event/masked_mook_incomplete)
 
-/datum/mood_event/masked_mook
-	description = span_nicegreen("I'm safe in my protective mask.")
-	mood_change = 3
-	timeout = 0
-
-/datum/mood_event/masked_mook_incomplete
-	description = span_warning("I'm forced to breathe the horrors of the wastes!")
-	mood_change = -3
-	timeout = 0
 
 /* /datum/quirk/masked_mook/on_spawn()
 	. = ..()
@@ -1021,6 +1014,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
 	H.equip_to_slot(gas, SLOT_WEAR_MASK)
 	H.regenerate_icons()*/
+
 
 /datum/quirk/paper_skin
 	name = "Paper Skin"

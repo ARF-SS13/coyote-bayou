@@ -137,8 +137,6 @@
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
-		if(suiciding)
-			. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
 		if(hellbound)
 			. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.")
 		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
@@ -412,16 +410,12 @@
 		if(src != user && HAS_TRAIT(L, TRAIT_EMPATH) && !appears_dead)
 			if (a_intent != INTENT_HELP)
 				msg += "[t_He] seem[p_s()] to be on guard.\n"
-			if (getOxyLoss() >= 10)
-				msg += "[t_He] seem[p_s()] winded.\n"
-			if (getToxLoss() >= 10)
-				msg += "[t_He] seem[p_s()] sickly.\n"
 			var/datum/component/mood/mood = GetComponent(/datum/component/mood)
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "[t_He] seem[p_s()] distressed.\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
 			if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
-				msg += "[t_He] seem[p_s()] to have had something nice happen to them recently.\n"
+				msg += "<span class='nicegreen'>[t_He] seem[p_s()] to have had something nice happen to [t_him] recently.</span>\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_He] appear[p_s()] to be staring off into space.\n"

@@ -1,6 +1,7 @@
 GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("table frame", /obj/structure/table_frame, 2, time = 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("metal bars", /obj/structure/barricade/bars, 4, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("metal bars", /obj/structure/barricade/bars, 8, time = 20, one_per_turf = 1, on_floor = 0), \
+	new/datum/stack_recipe("metal bars with window", /obj/structure/barricade/barswindow, 4, time = 10, one_per_turf = 1, on_floor = 0), \
 	new/datum/stack_recipe("barred door", /obj/structure/simple_door/metal/barred, 30, time = 40, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 1), \
@@ -35,10 +36,6 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	embedding = list()
 	novariants = TRUE
 	merge_type = /obj/item/stack/rods
-
-/obj/item/stack/rods/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to stuff \the [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!"))//it looks like theyre ur mum
-	return BRUTELOSS
 
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
 	. = ..()

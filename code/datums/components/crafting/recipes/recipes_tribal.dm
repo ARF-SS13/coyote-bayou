@@ -280,6 +280,7 @@
 
 //Rustwalkers
 /datum/crafting_recipe/tribalwar/rustwalkers
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/rustwalkers/lightarmour
@@ -319,6 +320,7 @@
 
 //Eighties
 /datum/crafting_recipe/tribalwar/eighties
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/eighties/lightarmour
@@ -431,6 +433,7 @@
 //Bone Dancers
 
 datum/crafting_recipe/tribalwar/bone
+	category = CAT_PRIMAL
 	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/bone/lightarmour

@@ -46,7 +46,7 @@
 	. = TRUE
 
 /datum/reagent/medicine/fake_stimpak
-	name = "Fake stimfluid"
+	name = "Imitation Stimfluid"
 	description = "A cocktail of random chemicals designed to mimic stimfluid."
 	reagent_state = LIQUID
 	color = "#eb0000"

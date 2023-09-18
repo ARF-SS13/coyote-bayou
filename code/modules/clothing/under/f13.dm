@@ -256,6 +256,186 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+
+//civillian like clothing
+
+/obj/item/clothing/under/f13/futuresuit
+	name = " White sci-fi suit"
+	desc = "A futuristic looking suit. It seems to have that 'geometric' look to it with sharp edges and steel buttons. Quite fancy and comfortable."
+	icon_state = "fsuit"
+	item_state = "fsuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/futuresuit/two
+	name = " Mixed sci-fi suit"
+	desc = "A futuristic looking suit. It seems to have that 'geometric' look to it with sharp edges and steel buttons. Quite fancy and comfortable."
+	icon_state = "fsuit2"
+	item_state = "fsuit2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/futuresuit/three
+	name = " Orange sci-fi suit"
+	desc = "A futuristic looking suit. It seems to have that 'geometric' look to it with sharp edges and steel buttons. Quite fancy and comfortable."
+	icon_state = "fsuit3"
+	item_state = "fsuit3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits
+	name = "Suit with a shirt"
+	desc = "A suit with a shirt over it. Add those style points to your wardrobe"
+	icon_state = "shirtsuit"
+	item_state = "shirtsuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits/burg
+	name = "Burgundy suit"
+	desc = "A stylish and cleanly pressed suit. Tailored to your comfort standards."
+	icon_state = "rsuit"
+	item_state = "rsuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits/two
+	name = "Black suit"
+	desc = "A stylish and cleanly pressed suit. Tailored to your comfort standards."
+	icon_state = "bsuit"
+	item_state = "bsuit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits/three
+	name = "White suit"
+	desc = "A stylish and cleanly pressed suit. Tailored to your comfort standards."
+	icon_state = "wtux"
+	item_state = "wtux"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits/four
+	name = "Green suit"
+	desc = "A stylish and cleanly pressed suit. Tailored to your comfort standards."
+	icon_state = "gtux"
+	item_state = "gtux"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civsuits/five
+	name = "Red suit"
+	desc = "A stylish and cleanly pressed suit. Tailored to your comfort standards."
+	icon_state = "rtux"
+	item_state = "rtux"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual
+	name = "Red Business casual"
+	desc = "A stylish set of business casual clothing. Look at you, playmaker."
+	icon_state = "redcasual"
+	item_state = "redcasual"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual/two
+	name = "Colorful vintage Business casual"
+	desc = "A stylish set of business casual clothing. Look at you, playmaker."
+	icon_state = "60vint"
+	item_state = "60vint"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual/three
+	name = "Salmon vintage Business casual"
+	desc = "A stylish set of business casual clothing. Look at you, playmaker."
+	icon_state = "salmonvint"
+	item_state = "salmonvint"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual/four
+	name = "Tropical vintage Business casual"
+	desc = "A stylish set of business casual clothing. Look at you, playmaker."
+	icon_state = "tropvint"
+	item_state = "tropvint"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual/five
+	name = "Teal vintage Business casual"
+	desc = "A stylish set of business casual clothing. Something about this specific set of casual clothing is familiar. Could just be you. Go out there and make some ill-gotten deals, playmaker."
+	icon_state = "gtavice"
+	item_state = "gtavice"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/civbuscasual/six
+	name = "Golden Business casual"
+	desc = "A stylish set of business casual clothing. Look at you, playmaker."
+	icon_state = "pullover"
+	item_state = "pullover"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/scifiofficer
+	name = "Full officer dress uniform"
+	desc = "A set of fully pressed and cleaned officer's fatigues. Is it the navy, is it the air force? Who knows."
+	icon_state = "fullofficer"
+	item_state = "fullofficer"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/customelody
+	name = "Melodys Outfit"
+	desc = "A set of black leggings, a white tshirt, and a flannel jacket with black fleece lining."
+	icon_state = "melodysoutfit"
+	item_state = "melodysoutfit"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/futuredresses
+	name = "Blue lined sci-fi themed dress"
+	desc = "A futurstic and geometric themed dress. Comfortable and fashionable"
+	icon_state = "fdress"
+	item_state = "fdress"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/futuredresses/two
+	name = "Red lined sci-fi themed dress"
+	desc = "A futurstic and geometric themed dress. Comfortable and fashionable"
+	icon_state = "fdress2"
+	item_state = "fdress2"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/futuredresses/three
+	name = "Sci-fi themed skirt"
+	desc = "A futurstic and geometric themed skirt. Comfortable and fashionable"
+	icon_state = "fskirt"
+	item_state = "fskirt"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+/obj/item/clothing/under/f13/animsuit
+	name = "Red animated galaxy suit"
+	desc = "A cyberpunk themed suit, made from fine animated materials and made to tailor, it's a suit fitted for a choom that desires to look good while being the most flashy in the room."
+	icon_state = "galaxred"
+	item_state = "galaxred"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/animsuit/two
+	name = "Blue animated galaxy suit"
+	desc = "A cyberpunk themed suit, made from fine animated materials and made to tailor, it's a suit fitted for a choom that desires to look good while being the most flashy in the room."
+	icon_state = "galaxblue"
+	item_state = "galaxblue"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //Vault
 
 /obj/item/clothing/under/f13/housewifedress50s

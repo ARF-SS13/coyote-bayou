@@ -568,11 +568,17 @@
 						SSticker.mode.make_antag_chance(humanc)
 
 	if(humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE, FALSE, job, FALSE)
+		SSquirks.AssignQuirks(
+			humanc,
+			humanc.client,
+			TRUE,
+			FALSE,
+			job,
+		)
 	if(humanc.client && humanc.ckey == "tk420634")
 		humanc.client.deadmin()
-
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+	SSevents.holiday_on_join(humanc)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.

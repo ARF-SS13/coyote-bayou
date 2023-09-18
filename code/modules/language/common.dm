@@ -278,6 +278,7 @@
 	speech_verb = "rrrfts"
 	ask_verb = "rurs"
 	exclaim_verb = "barks"
+	icon_state = "canine"
 	key = "V"
 	syllables = list("rur","ya","cen","rawr","bar","kuk","tek","qat","uk","wu","vuh","tah","tch","schz","auch", \
 	"ist","ein","entch","zwichs","tut","mir","wo","bis","es","vor","nic","gro","lll","enem","zandt","tzch","noch", \
@@ -292,6 +293,7 @@
 	speech_verb = "squeaks"
 	whisper_verb = "whispers"
 	exclaim_verb = "chitters"
+	icon_state = "acorn"
 	key = "S"
 	syllables = list("sque","sqah","boo","beh","nweh","boopa","nah","wah","een","sweh")
 
@@ -302,6 +304,7 @@
 	desc = "The dominant language of the Sergals It consists of aggressive low-pitched hissing and throaty growling."
 	speech_verb = "snarls"
 	key = "T"
+	icon_state = "cheese"
 	syllables = list ("grr", "gah", "woof", "arf", "arra", "rah", "wor", "sarg")
 
 //Mouse
@@ -313,6 +316,7 @@
 	speech_verb = "squeaks"
 	whisper_verb = "squiks"
 	exclaim_verb = "squeaks loudly"
+	icon_state = "mouse"
 	syllables = list ("squeek",
 "skweek",
 "sqeak",
@@ -394,6 +398,7 @@
 	desc = "A language primarily spoken by birds"
 	speech_verb = "chirps"
 	key = "G"
+	icon_state = "bird"
 	syllables = list ("cheep", "peep", "tweet")
 
 /datum/language/rabbit
@@ -401,6 +406,7 @@
 	desc = "A language primarily spoken by rabbits."
 	speech_verb = "squeaks"
 	key = "G"
+	icon_state = "carrot"
 	syllables = list ("scream",
 "screeem",
 "screem",
@@ -569,6 +575,7 @@
 	ask_verb = "chitters"
 	exclaim_verb = "rasps"
 	key = "X"
+	icon_state = "bug"
 	syllables = list("vaur","uyek","uyit","avek","sc'theth","k'ztak","teth","wre'ge","lii","dra'","zo'","ra'","kax'","zz","vh","ik","ak",
 	"uhk","zir","sc'orth","sc'er","thc'yek","th'zirk","th'esk","k'ayek","ka'mil","sc'","ik'yir","yol","kig","k'zit","zrk","krg","isk'yet","na'k",
 	"sc'azz","th'sc","nil","n'ahk","sc'yeth","aur'sk","iy'it","azzg","a'","i'","o'","u'","a","i","o","u","zz","kr","ak","nrk","tzzk","bz","xic'","k'lax'","histh")

@@ -116,10 +116,6 @@
 	else
 		to_chat(user, "The charge meter reads [round(src.percent() )]%.")
 
-/obj/item/stock_parts/cell/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
-
 /obj/item/stock_parts/cell/on_reagent_change(changetype)
 	..()
 	rigged = reagents?.has_reagent(/datum/reagent/toxin/plasma, 5) ? TRUE : FALSE //has_reagent returns the reagent datum

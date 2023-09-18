@@ -233,7 +233,7 @@
 	minimum_distance = 6
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a308/improvised
 	projectilesound = 'sound/f13weapons/bozar_fire.ogg'
 	loot = list(
 		/obj/item/stack/f13Cash/random/high,

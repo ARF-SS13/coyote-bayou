@@ -568,7 +568,7 @@
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 90
+	damage = 40
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -686,7 +686,7 @@
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/aer14/hitscan
-	damage = 32
+	damage = 42
 	wound_bonus = 20
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse

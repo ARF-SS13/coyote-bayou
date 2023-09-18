@@ -58,10 +58,6 @@
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 
-/obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!"))
-	return OXYLOSS
-
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
 		if(user.a_intent == INTENT_HELP)
@@ -399,3 +395,21 @@ obj/item/clothing/neck/neckerchief
 	desc = "A black synthleather collar with spikey studs."
 	icon_state = "spikecollar"
 	item_state = "spikecollar"
+
+/obj/item/clothing/neck/redcowbell
+	name = "Red cowbell collar"
+	desc = "This collar appears to have red band and a yellow bell. Moo!"
+	icon_state = "collar_cowbell"
+	item_state = "collar_cowbell"
+
+/obj/item/clothing/neck/whitecowbell
+	name = "white cowbell collar"
+	desc = "This collar appears to have white band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_white"
+	item_state = "collar_cowbell_white"
+
+/obj/item/clothing/neck/bluecowbell
+	name = "blue cowbell collar"
+	desc = "This collar appears to have blue band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_bluu"
+	item_state = "collar_cowbell_blue"

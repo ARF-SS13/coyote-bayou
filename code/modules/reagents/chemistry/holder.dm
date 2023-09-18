@@ -931,22 +931,23 @@
 	//add the reagent to the existing if it exists
 	for(var/A in cached_reagents)
 		var/datum/reagent/R = A
-		if (R.type == reagent) //IF MERGING
-			//Add amount and equalize purity
-			R.volume += round(amount, CHEMICAL_QUANTISATION_LEVEL)
-			R.purity = ((R.purity * R.volume) + (other_purity * amount)) /((R.volume + amount)) //This should add the purity to the product
+		if (R.type != reagent) //IF MERGING
+			continue // oops not merging
+		//Add amount and equalize purity
+		R.volume += round(amount, CHEMICAL_QUANTISATION_LEVEL)
+		R.purity = ((R.purity * R.volume) + (other_purity * amount)) /((R.volume + amount)) //This should add the purity to the product
 
-			update_total()
-			if(my_atom)
-				my_atom.on_reagent_change(ADD_REAGENT)
-			if(isliving(my_atom))
-				if(R.chemical_flags & REAGENT_ONMOBMERGE)//Forces on_mob_add proc when a chem is merged
-					R.on_mob_add(my_atom, amount)
-			R.on_merge(data, amount, my_atom, other_purity)
-			if(!no_react)
-				handle_reactions()
+		update_total()
+		if(my_atom)
+			my_atom.on_reagent_change(ADD_REAGENT)
+		if(isliving(my_atom))
+			if(R.chemical_flags & REAGENT_ONMOBMERGE)//Forces on_mob_add proc when a chem is merged
+				R.on_mob_add(my_atom, amount)
+		R.on_merge(data, amount, my_atom, other_purity)
+		if(!no_react)
+			handle_reactions()
 
-			return TRUE
+		return TRUE
 
 
 	//otherwise make a new one

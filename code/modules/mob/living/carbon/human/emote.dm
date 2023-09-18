@@ -151,6 +151,26 @@
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
 		return TRUE
 
+/datum/emote/living/carbon/human/tongue_flick
+	key = "flick"
+	key_third_person = "flicks their forked tongue out."
+	message = "flicks their forked tongue out."
+
+/datum/emote/living/carbon/human/tongue_flick/run_emote(mob/user)
+	. = ..()
+	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "facial_lizardlickfast_s_emote")
+	flick_overlay_global(emote_animation, GLOB.clients, 0.6 SECONDS)
+
+/datum/emote/living/carbon/human/nose_lick
+	key = "noselick"
+	key_third_person = "licks their chops."
+	message = "licks their chops."
+
+/datum/emote/living/carbon/human/nose_lick/run_emote(mob/user)
+	. = ..()
+	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "noselickpink")
+	flick_overlay_global(emote_animation, GLOB.clients, 0.9 SECONDS)
+
 /mob/living/carbon/human/proc/OpenWings()
 	if(!dna || !dna.species)
 		return
