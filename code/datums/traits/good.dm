@@ -415,8 +415,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Emotional Quirks"
 	mechanics = "You know, to the number, how much damage you've taken."
 	conflicts = list(
-		
-	) //dumb?
+	
+	) 
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
@@ -560,7 +560,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/bloodpressure
 	name = "Extra Blood"
 	desc = "You've a treated form of Polycythemia vera that increases the total blood volume inside of you as well as the rate of replenishment!"
-	value = 14 //I honeslty dunno if this is a good trait? I just means you use more of medbays blood and make janitors madder, but you also regen blood a lil faster.
+	value = 20 //I honeslty dunno if this is a good trait? I just means you use more of medbays blood and make janitors madder, but you also regen blood a lil faster.
 	category = "Health Quirks"
 	mechanics = "You blood ratio, and volume, are both higher than average. Meaning that you will survive blood loss wounds for longer, and more comfortably."
 	conflicts = list(
@@ -770,7 +770,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/soft_yards
 	name = "Mobility - Wasteland Wanderer"
 	desc = "You've spent some time in the wastes, and can move a bit better around them for it."
-	value = 33
+	value = 22
 	category = "Movement Quirks"
 	mechanics = "You are only slowed somewhat by going off roads or paths."
 	conflicts = list(
@@ -873,16 +873,44 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
 	desc = "You are a somewhat adequate medical practicioner, capable of performing minor surgery in a pinch."
-	value = 33
+	value = 11
 	category = "Medical Quirks"
 	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
-	conflicts = list( //dumb
-		
+	conflicts = list(/datum/quirk/surgerymid,
+					/datum/quirk/surgeryhigh,
 	)
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
 	lose_text = span_danger("You forget how to perform even the simplest surgery.")
 	locked = FALSE
+/datum/quirk/surgerymid
+	name = "Minor Surgery"
+	desc = "You are a competent medical practicioner, capable of performing a larger array of surgeries."
+	value = 33
+	category = "Medical Quirks"
+	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
+	conflicts = list(/datum/quirk/surgeryhigh,
+					/datum/quirk/surgerylow,
+	)
+	mob_trait = TRAIT_SURGERY_MID
+	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
+	lose_text = span_danger("You forget how to perform even the simplest surgery.")
+	locked = FALSE
+
+/datum/quirk/surgeryhigh
+	name = "Minor Surgery"
+	desc = "You are a well established surgeon. You can perform most, if not all, surgeries."
+	value = 66
+	category = "Medical Quirks"
+	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
+	conflicts = list(/datum/quirk/surgerylow,
+					/datum/quirk/surgerymid,
+	)
+	mob_trait = TRAIT_SURGERY_HIGH
+	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
+	lose_text = span_danger("You forget how to perform even the simplest surgery.")
+	locked = FALSE
+
 
 /datum/quirk/explosive_crafting
 	name = "Explosives Crafting"
@@ -1613,12 +1641,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Arm Blader"
 	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
 	value = 33
+	category = "Mutant Quirks"
 	mob_trait = TRAIT_ARMBLADE
 
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
 	value = 33
+	category = "Mutant Quirks"
 	mob_trait = TRAIT_ARMTENT
 
 /datum/quirk/bigbiter
@@ -1767,28 +1797,33 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Tail - Big"
 	desc = "You got that big tail, good for big wumps. Use with *tailer"
 	value = 22
+	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILSMASH
 
 /datum/quirk/fasttail
 	name = "Tail - Whiplike"
 	desc = "You got that FAST tail, good for whipping about. Use with *tailer"
 	value = 22
+	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILWHIP
 
 /datum/quirk/playtail
 	name = "Tail - Playful"
 	desc = "Your tail is just a soft extension of the rest of you. use with *tailer"
 	value = 0
+	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILPLAY
 
 /datum/quirk/spicytail
 	name = "Tail - Venomous"
 	desc = "One way or another your *tailer can put things on their butts."
 	value = 22
+	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILSPICY
 
 /datum/quirk/thagotail
 	name = "Tail - Thagomizer"
 	desc = "A very dangerous *tailer, for beating the snot out of things."
 	value = 32
+	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILTHAGO
