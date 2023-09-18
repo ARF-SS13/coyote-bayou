@@ -292,7 +292,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/glasses/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
 
-	if(lums >= 0.85)
+	if(lums >= 0.8)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
 		if(!istype(sunglasses, /obj/item/clothing/glasses/sunglasses))
 			if(quirk_holder.eye_blurry < 20)
