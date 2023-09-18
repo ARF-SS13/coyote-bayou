@@ -27,6 +27,20 @@
 	icon_state = "synthliz_tertunder"
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_comm
+	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Legacy Systems"
+	icon_state = "synthliz_commodore"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_communder
+	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Legacy Systems Under"
+	icon_state = "synthliz_commodoreunder"
+	matrixed_sections = MATRIX_ALL
+
 //Synth body markings
 /datum/sprite_accessory/mam_body_markings/synthliz/synthliz_pecs
 	icon = 'icons/mob/mam/citadel/synthliz_body_markings.dmi'
@@ -106,6 +120,19 @@
 	color_src = MATRIXED
 	name = "Synthetic Lizard - Sharp Light"
 	icon_state = "synth_sharplight"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/antenna/synthliz/synth_nub
+	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
+	color_src = MUTCOLORS
+	name = "Synthetic Lizard - Nub"
+	icon_state = "synth_nub"
+
+/datum/sprite_accessory/antenna/synthliz/synth_nublight
+	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Nub Light"
+	icon_state = "synth_nublight"
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/antenna/synthliz/synthliz_thick
