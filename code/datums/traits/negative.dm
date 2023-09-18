@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
 	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
-	value = -33
+	value = -32
 	category = "Health Quirks"
 	mechanics = "You're going to need to hit the clinic for mannitol pretty regularly, consider getting a big supply."
 	conflicts = list(
@@ -302,7 +302,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/nonviolent
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
-	value = -66
+	value = -65
 	category = "Lifepath Quirks"
 	mechanics = "You are mechanically stopped from hurting things, or throwing things that could."
 	conflicts = list(
@@ -317,7 +317,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
-	value = -33
+	value = -32
 	category = "Health Quirks"
 	mechanics = "Your legs just flat out don't work."
 	conflicts = list(
@@ -722,7 +722,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/doctorphobia
 	name = "Phobia - Doctors"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
-	value = -33
+	value = -32
 	category = "Phobia Quirks"
 	mechanics = "Healthcare really is way too expensive these days."
 	conflicts = list(
@@ -836,7 +836,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/blindness
 	name = "Blind"
 	desc = "You are completely blind, nothing can counteract this."
-	value = -33
+	value = -32
 	category = "Vision Quirks"
 	mechanics = "You can't see."
 	conflicts = list(
@@ -1140,7 +1140,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/clumsy
 	name = "Clumsy"
 	desc = "You're very clumsy, it's kind of a miracle you're alive at all really."
-	value = -33
+	value = -32
 	category = "Lifepath Quirks"
 	mechanics = "This is the clown quirk for those who know. You shoot yourself in the foot, drop live grenades, beat yourself with stun batons and quarterstaffs. It's pretty terrible!"
 	conflicts = list(
@@ -1212,7 +1212,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/cantrun
 	name = "Mobility - Can not Run"
 	desc = "For whatever reason you just can't muster up the go to run."
-	value = -33
+	value = -32
 	category = "Movement Quirks"
 	mechanics = "Yeah, pretty self explanitory."
 	conflicts = list(
