@@ -1915,7 +1915,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/package/lifeoftheparty
 	name = "Life of the Party"
 	desc = "You were just meant to be the center of attention, and you revel when all eyes are on you!"
-	value = 22
+	value = 35
 	category = "Quirk Packages"
 	mechanics = "Grants access to positive Quirks Musician and Friendly!"
 	conflicts = list(
@@ -1936,3 +1936,155 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MUSICIAN, "Musician")
 		REMOVE_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
+
+/datum/quirk/package/Bruiser
+	name = "Bruiser"
+	desc = "You're a big guy."
+	value = 150
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
+	conflicts = list(
+		/datum/quirk/bigleagues,
+		/datum/quirk/lifegiverplus
+		)
+	gain_text = span_notice("DAMN BRO YOU SWOLE!")
+	lose_text = span_notice("Maybe you could skip gym day...")
+
+/datum/quirk/package/lifeoftheparty/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
+	ADD_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
+
+
+/datum/quirk/package/lifeoftheparty/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
+		REMOVE_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
+
+/datum/quirk/package/Ranger
+	name = "Ranger"
+	desc = "Bow in hand, and rat in back pocket, the swamplands is your home."
+	value = 35
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Bow Trained & Beast Friends - Small Critters"
+	conflicts = list(
+		/datum/quirk/bowtrained,
+		/datum/quirk/critterfriend
+		)
+	gain_text = span_notice("These lands are your home.")
+	lose_text = span_notice("Where the heck am I????")
+
+/datum/quirk/package/ranger/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, "Bow Trained")
+	ADD_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, "Beast Friend - Small Critters")
+
+
+/datum/quirk/package/ranger/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_AUTO_DRAW, "Bow Trained")
+		REMOVE_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, "Beast Friend - Small Critters")
+
+/datum/quirk/package/hunter
+	name = "Big Game Hunter"
+	desc = "With your trusty Thirty Aught something another you know you can down any critter you plan on hunting."
+	value = 65
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
+	conflicts = list(
+		/datum/quirk/masterrifleman,
+		/datum/quirk/straightshooter
+		)
+	gain_text = span_notice("Aim just behind behind the front leg...")
+	lose_text = span_notice(".223 is probably overkill for deer...")
+
+/datum/quirk/package/hunter/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FAST_PUMP, "Bolt Worker")
+	ADD_TRAIT(H, TRAIT_NICE_SHOT, "Straight Shooter")
+
+
+/datum/quirk/package/hunter/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FAST_PUMP, "Bolt Worker")
+		REMOVE_TRAIT(H, TRAIT_NICE_SHOT, "Straight Shooter")
+
+/datum/quirk/package/reformedtribal
+	name = "Reformed Tribal Chemist"
+	desc = "You've left your tribe and decided that science is what you seek."
+	value = 55
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Primitive Tech & Chemwiz."
+	conflicts = list(
+		/datum/quirk/tribal_tech,
+		/datum/quirk/chemwhiz
+		)
+	gain_text = span_notice("The secrets of chemistry are all laid out before you...")
+	lose_text = span_notice("Sulphur?  I barely know her!")
+
+/datum/quirk/package/reformedtribal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+
+
+/datum/quirk/package/reformedtribal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
+		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+
+/datum/quirk/package/creatureofthewildsevi
+	name = "Creature of the Wilds - Eviscerator"
+	desc = "You are massively in tune with your wild side. Especially the part that slices and bites like crazy."
+	value = 53
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Fast Clawer & Fast Biter."
+	conflicts = list(
+		/datum/quirk/fastbiter,
+		/datum/quirk/fastclawer
+		)
+	gain_text = span_notice("bitebitebitebiteclawclawclawclaw!")
+	lose_text = span_notice("I could use a scone...")
+
+/datum/quirk/package/creatureofthewildsevi/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FASTCLAW, "Clawer - Fast")
+	ADD_TRAIT(H, TRAIT_FASTBITE, "Biter - Fast")
+
+
+/datum/quirk/package/creatureofthewildsevi/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FASTCLAW, "Clawer - Fast")
+		REMOVE_TRAIT(H, TRAIT_FASTBITE, "Biter - Fast")
+
+/datum/quirk/package/creatureofthewildsspicy
+	name = "Creature of the Wilds - Venomous"
+	desc = "You are massively in tune with your wild side. Especially the part that lets you poison things with your fangs and claws"
+	value = 53
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Spicy Claw & Spicy Biter."
+	conflicts = list(
+		/datum/quirk/spicybiter,
+		/datum/quirk/spicyclaw,
+		)
+	gain_text = span_notice("bitebitebitebiteclawclawclawclaw!")
+	lose_text = span_notice("He need some milk.")
+
+/datum/quirk/package/creatureofthewildsspicy/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
+	ADD_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
+
+
+/datum/quirk/package/creatureofthewildsspicy/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
+		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
+
+
