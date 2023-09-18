@@ -6354,8 +6354,8 @@
 /area/f13/building)
 "cya" = (
 /obj/structure/dresser,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "cyk" = (
@@ -8880,7 +8880,9 @@
 /area/f13/caves)
 "erR" = (
 /obj/structure/closet/cabinet/anchored,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "erT" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -14390,7 +14392,9 @@
 /area/f13/caves)
 "ied" = (
 /obj/structure/rack/shelf_metal,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "ief" = (
 /obj/structure/chair/comfy/plywood{
@@ -16228,7 +16232,9 @@
 "jlI" = (
 /obj/structure/table/wood/bar,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "jml" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -16443,8 +16449,8 @@
 "jtM" = (
 /obj/structure/chair/right,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "jtN" = (
@@ -16793,6 +16799,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"jHd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "jHm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/drinks/flask/vault13,
@@ -17763,8 +17775,8 @@
 "kqm" = (
 /obj/structure/chair/left,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "kqr" = (
@@ -21300,7 +21312,9 @@
 "mBh" = (
 /obj/structure/closet/fridge,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "mBz" = (
 /obj/structure/rack/shelf_metal,
@@ -22250,6 +22264,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/trainstation)
+"niP" = (
+/obj/machinery/light/small,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "niW" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/random,
@@ -27272,8 +27292,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "qtA" = (
@@ -28145,8 +28165,8 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "qVt" = (
@@ -29711,8 +29731,8 @@
 	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "rXj" = (
@@ -30005,6 +30025,18 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"shm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2;
+	layer = 4;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/building/sewers)
 "shs" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat,
@@ -30141,7 +30173,9 @@
 /obj/structure/table/wood/bar,
 /obj/machinery/microwave,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "smT" = (
 /obj/structure/campfire/barrel,
@@ -30462,8 +30496,8 @@
 "syj" = (
 /obj/structure/simple_door/repaired,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "syq" = (
@@ -30487,10 +30521,12 @@
 	},
 /area/f13/caves)
 "syV" = (
-/obj/structure/table/wood/bar,
+/obj/effect/overlay/junk/toilet{
+	dir = 8
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "sza" = (
@@ -33477,6 +33513,18 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/tunnel)
+"uuS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2;
+	layer = 4;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess2"
+	},
+/area/f13/building/sewers)
 "uuU" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo{
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
@@ -35698,7 +35746,9 @@
 	},
 /obj/item/blanket,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "vWd" = (
 /obj/effect/turf_decal/stripes/line,
@@ -35767,7 +35817,9 @@
 /area/f13/caves)
 "vYc" = (
 /obj/structure/table/wood/bar,
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building)
 "vYk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37725,6 +37777,11 @@
 /obj/item/paper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"xlI" = (
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "xlS" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -37989,7 +38046,6 @@
 	},
 /area/f13/caves)
 "xuA" = (
-/obj/structure/decoration/vent/rusty,
 /obj/machinery/shower{
 	pixel_y = 16
 	},
@@ -37998,10 +38054,9 @@
 	layer = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
+/obj/structure/decoration/vent,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/building)
 "xuH" = (
@@ -50429,7 +50484,7 @@ kpv
 eaB
 bOb
 sml
-uXq
+jHd
 iad
 xuA
 rXe
@@ -50683,13 +50738,13 @@ bPw
 xow
 iad
 aty
-aGu
+shm
 xWW
 jlI
-uXq
+jHd
 iad
 qVi
-wbF
+syV
 bOb
 bPE
 hUy
@@ -50943,7 +50998,7 @@ joe
 eaB
 bOb
 mBh
-bPw
+jHd
 bOb
 syj
 bOb
@@ -51199,10 +51254,10 @@ iad
 eaB
 eaB
 lOH
-nJn
-bPw
-nJn
-uXq
+xlI
+jHd
+xlI
+jHd
 cya
 bOb
 bPE
@@ -51457,9 +51512,9 @@ joe
 eaB
 bOb
 qtd
-bPw
-bPw
-uXq
+jHd
+jHd
+jHd
 ied
 bPE
 bPE
@@ -51711,13 +51766,13 @@ thz
 thz
 jGk
 eaB
-eaB
+uuS
 eDR
 jtM
-syV
-bPw
-ejg
-xow
+jlI
+jHd
+jHd
+niP
 bPE
 kpv
 uuH
@@ -51968,12 +52023,12 @@ oVA
 tNR
 uIR
 aGu
-eaB
+uuS
 eDR
 kqm
 jlI
-bPw
-bPw
+jHd
+jHd
 erR
 bPE
 ihO
@@ -52227,9 +52282,9 @@ jGk
 eaB
 aty
 bOb
-jLS
-bPw
-bPw
+xlI
+jHd
+jHd
 vWc
 vYc
 bPE
