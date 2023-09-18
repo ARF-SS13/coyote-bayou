@@ -917,9 +917,9 @@
 	name = "locksmith tools"
 
 /obj/item/storage/box/tools/locksmith/PopulateContents()
-	new /obj/item/door_key(src)
-	new /obj/item/door_key(src)
-	new /obj/item/lock(src)
+	new /obj/item/key(src)
+	new /obj/item/key(src)
+	new /obj/item/lock_construct(src)
 	new /obj/item/storage/keys_set(src)
 
 //New fish
