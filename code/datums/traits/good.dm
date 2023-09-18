@@ -876,8 +876,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 11
 	category = "Medical Quirks"
 	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
-	conflicts = list(/datum/quirk/surgerymid,
-					/datum/quirk/surgeryhigh,
+	conflicts = list(
+		/datum/quirk/surgerymid,
+		/datum/quirk/surgeryhigh
 	)
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
@@ -889,8 +890,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 33
 	category = "Medical Quirks"
 	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
-	conflicts = list(/datum/quirk/surgeryhigh,
-					/datum/quirk/surgerylow,
+	conflicts = list(
+		/datum/quirk/surgeryhigh,
+		/datum/quirk/surgerylow
 	)
 	mob_trait = TRAIT_SURGERY_MID
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
@@ -903,8 +905,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 66
 	category = "Medical Quirks"
 	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
-	conflicts = list(/datum/quirk/surgerylow,
-					/datum/quirk/surgerymid,
+	conflicts = list(
+		/datum/quirk/surgerylow,
+		/datum/quirk/surgerymid
 	)
 	mob_trait = TRAIT_SURGERY_HIGH
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
