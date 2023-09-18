@@ -330,7 +330,7 @@ GENETICS SCANNER
 						trauma_desc += B.scan_desc
 						trauma_text += trauma_desc
 					temp_message += " <span class='alert'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>"
-				if(C.roundstart_quirks.len)
+				if(C.mob_quirks.len)
 					temp_message += " <span class='info'>Subject has the following physiological traits: [C.get_trait_string()].</span>"
 
 				if(ishuman(C) && advanced)

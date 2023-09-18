@@ -47,7 +47,13 @@
 	var/list/output = list()
 	if(client?.prefs)
 		output += "<center><p>Welcome, <b>[client.prefs.be_random_name ? "random name player" : client.prefs.real_name]</b></p>"
-	output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
+		output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
+		if(SSquirks.initialized)
+			if(!(PMC_QUIRK_OVERHAUL_2K23 in client.prefs.current_version))
+				output += "<center><p>[span_alert("You have quirks from the old system that haven't been converted!")]</p>"
+				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
+			else
+				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 	/*
@@ -171,6 +177,15 @@
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
+		return 1
+
+	if(href_list["quirkconversion"])
+		SSquirks.ConvertOldQuirklistToNewQuirklist(client.prefs)
+		new_player_panel()
+		return 1
+
+	if(href_list["quirks"])
+		SSquirks.OpenWindow(src) // cant eat my cool menu if its not there to eat it!
 		return 1
 
 	if(href_list["ready"])

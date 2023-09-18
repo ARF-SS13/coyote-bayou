@@ -85,11 +85,12 @@
 		return 0
 	if(charge <= 0)
 		return 0
+	var/had_enuf = amount <= charge
 	var/used = min(charge,amount)
 	charge = (charge - used)
 	if(!istype(loc, /obj/machinery/power/apc))
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
-	return used
+	return used || had_enuf // made tablets not work
 
 // check power in a cell
 /obj/item/stock_parts/cell/proc/check_charge(amount)

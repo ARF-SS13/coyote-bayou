@@ -1218,7 +1218,7 @@
 
 			if("White Legs traditions")
 				traitname = "White Legs traditions"
-				granted_trait = TRAIT_WHITELEGS_TRAD
+				granted_trait = TRAIT_TRIBAL_TRAD
 				crafting_recipe_types = list(
 					/datum/crafting_recipe/tribalwar/whitelegs/lightarmour,
 					/datum/crafting_recipe/tribalwar/whitelegs/armour,

@@ -693,7 +693,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_preferences"]	>> job_preferences
 
 	//Quirks
-	S["all_quirks"]			>> all_quirks
+	S["char_quirks"]			>> char_quirks // renamed so it doesnt destroy old saves in case this needs to be reverted
+	S["all_quirks"]				>> all_quirks // untouched, used to migrate quirks
 
 	//Records
 	S["security_records"]			>>			security_records
@@ -1066,10 +1067,29 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences["[j]"] != JP_LOW && job_preferences["[j]"] != JP_MEDIUM && job_preferences["[j]"] != JP_HIGH)
 			job_preferences -= j
 
-	all_quirks = SANITIZE_LIST(all_quirks)
-
-	if(GetQuirkBalance() < 0)
-		reset_quirks()
+	char_quirks = SANITIZE_LIST(char_quirks)
+	if(SSquirks.debug_migration)
+		current_version -= PMC_QUIRK_OVERHAUL_2K23
+		var/list/debug_oldies = list(
+			"Jack Penis", // to test how it handles bullshit quirks
+			"/datum/quirk/furry", // to test how it handles key quirks
+			"Straight Shooter", // gonna load in a shitload of positive quirks, to see if it'll reject bad values
+			"Clawer - Razors",
+			"Improved Innate Healing",
+			"Minor Surgery",
+			"Fists of Steel",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough", // see if it handles multiple quirks of the same type
+			"Brain Tumor",
+			"Nearsighted - Trashed Vision",
+			"Pacifist",
+			"Phobia - Doctors",
+			"Monophobia",
+			"Mobility - Can not Run",
+		)
+		WRITE_FILE(S["all_quirks"], debug_oldies)
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
@@ -1084,10 +1104,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
-	if(GetQuirkBalance() < 0)
-		reset_quirks("balance")
-	if(GetPositiveQuirkCount() > MAX_QUIRKS)
-		reset_quirks("max")
+	SSquirks.CheckAndVerifyPrefQuirks(src, FALSE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)
@@ -1261,7 +1278,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
-	WRITE_FILE(S["all_quirks"]			, all_quirks)
+	WRITE_FILE(S["char_quirks"]			, char_quirks)
 
 	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
 	WRITE_FILE(S["scars1"]						, scars_list["1"])

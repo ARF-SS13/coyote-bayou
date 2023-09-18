@@ -316,6 +316,7 @@
 #define TRAIT_PAPER_SKIN "paper_skin"
 #define TRAIT_GLASS_BONES "glass_bones"
 #define TRAIT_STEEL_ASS "steel_ass"
+#define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
@@ -408,7 +409,7 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two" //crafts mid level guns
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three" //crafts weapon parts
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four" //currently unused
-#define TRAIT_WHITELEGS_TRAD	"whiteleg_traditions"
+#define TRAIT_TRIBAL_TRAD	"whiteleg_traditions"
 #define TRAIT_DEADHORSES_TRAD	"deadhorses_traditions"
 #define TRAIT_RUSTWALKERS_TRAD	"rustwalker_traditions"
 #define TRAIT_EIGHTIES_TRAD		"eighties_traditions"
@@ -526,3 +527,18 @@
 
 /// just a little helper to see if we're not a druggie
 #define NODRUGS(m) (HAS_TRAIT(m, TRAIT_NODRUGS))
+
+///quirk defines cus they are kinda like traits i guess
+#define QUIRK_KEY "Qkey"
+#define QUIRK_NAME "Qname"
+#define QUIRK_PATH "Qpath"
+#define QUIRK_VALUE "Qvalue"
+#define QUIRK_DESC "Qdesc"
+#define QUIRK_MECHANICS "Qmechanics"
+#define QUIRK_CONFLICTS "Qconflicts"
+#define QUIRK_CATEGORY "Qcategory"
+
+#define QUIRK_CAT_DEFAULT "Misc"
+
+#define QUIRK_STATISTICS_DIRECTORY "data/quirk_stats/round_"
+#define QUIRK_PLAYER2FILENAME(ckey, playername) "[ckey]_[playername]_is_cool.json" // my code my filenames
