@@ -257,7 +257,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up. You can also climb some walls!"
-	value = 33
+	value = 32
 	category = "Movement Quirks"
 	mechanics = "Allows you to alt click on certain walls to climb up them quickly. There must not be a roof in the way, of course. You can also climb over tables faster."
 	conflicts = list(
@@ -471,7 +471,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Technophreak"
 	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before. Your time with understanding complex technology also \
 	allows you to craft more complex machine parts."
-	value = 33
+	value = 32
 	category = "Tech Quirks"
 	mechanics = "You gain 1 to 3 extra scrap from cars and other scrapping resources, with a +1 on top of all scrap as well. As well as gaining access to a decent list of fancy recipes for crafting, like energy weapon cells."
 	conflicts = list(
@@ -596,7 +596,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/dna_whiz
 	name = "Dna Whiz"
 	desc = "You can sequence plant genomes with a snap of your fingers!"
-	value = 33
+	value = 32
 	category = "Tech Quirks"
 	mechanics = "You can use plant dna machines, for one reason or another."
 	conflicts = list(
@@ -695,7 +695,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
-	value = 66
+	value = 65
 	category = "Melee Combat"
 	mechanics = "You do an extra 10 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
@@ -712,7 +712,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/littleleagues
 	name = "Melee - Little Leagues"
 	desc = "Swing for the outfield! You deal additional damage with melee weapons."
-	value = 33
+	value = 32
 	category = "Melee Combat"
 	mechanics = "You do an extra 5 damage with all melee attacks."
 	conflicts = list(
@@ -729,7 +729,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
-	value = 33
+	value = 32
 	category = "Crafting Quirks"
 	mechanics = "You gain access to normal chemistry machines."
 	conflicts = list(
@@ -759,7 +759,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/pa_wear
 	name = "Power Armor Training"
 	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere or something."
-	value = 33
+	value = 32
 	category = "Lifepath Quirks"
 	mechanics = "You can wear power armor."
 	conflicts = list(
@@ -792,6 +792,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/soft_yards
 	name = "Mobility - Wasteland Wanderer"
 	desc = "You've spent some time in the wastes, and can move a bit better around them for it."
+
 	value = 22
 	category = "Movement Quirks"
 	mechanics = "You are only slowed somewhat by going off roads or paths."
@@ -809,7 +810,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/lifegiver
 	name = "Health - Tough"
 	desc = "You embody wellness! "
-	value = 33
+	value = 32
 	category = "Health Quirks"
 	mechanics = "You have +10 health. What this actually means is that you need to take ten more points of damage before you go into crit."
 	conflicts = list(
@@ -831,7 +832,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/lifegiverplus
 	name = "Health - Tougher"
 	desc = "You embody wellness to the MAX! Instantly gain +20 maximum Health."
-	value = 66
+	value = 65
 	category = "Health Quirks"
 	mechanics = "You have +20 health. What this actually means is you need to take twengy more points of damage before you go into crit."
 	conflicts = list(
@@ -968,7 +969,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/improved_heal
 	name = "Improved Innate Healing"
 	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. check the neutral traits for these abilities."
-	value = 33
+	value = 32
 	category = "Healer Quirks"
 	mechanics = "Your innate healing functions have 25 uses, instead of 5. They still regenerate at the same speed though."
 	conflicts = list(
@@ -1298,7 +1299,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/nohunger
 	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
-	value = 33
+	value = 32
 	category = "Food Quirks"
 	mechanics = "Your hunger never goes down, simple as that."
 	conflicts = list( //any of the eating quirks
@@ -1369,7 +1370,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/grappler
 	name = "Trained Grappler"
 	desc = "You've got real skills when it comes to grabbing people by the bits!"
-	value = 33
+	value = 32
 	category = "Hand to Hand Quirks"
 	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
 	conflicts = list()
@@ -1381,7 +1382,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/mastermartialartist
 	name = "Master Martial Artist"
 	desc = "Sometimes you hit so hard you're pretty sure they stop being human!"
-	value = 33
+	value = 32
 	category = "Hand to Hand Quirks"
 	mechanics = "Your punches, when you roll max damage, inflict clone damage instead ofnormal brute damage on people. Which is harder to heal and just generally somewhat devastating."
 	conflicts = list(
@@ -1396,7 +1397,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/surestrike
 	name = "Sure Strike"
 	desc = "Your technique for punching has been perfected! Your punches always do MAX damage!"
-	value = 33
+	value = 32
 	category = "Hand to Hand Quirks"
 	mechanics = "You ALWAYS punch for MAX damage."
 	conflicts = list(
@@ -1410,7 +1411,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Silent Step"
 	desc = "Your steps just make no noise, or maybe everyone elses buttcheeks are just that loud?"
 	mob_trait = TRAIT_SILENT_STEP
-	value = 33
+	value = 32
 	category = "Movement Quirks"
 	mechanics = "Your footsteps never make noise."
 	conflicts = list(
@@ -1424,7 +1425,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 66
+	value = 65
 	category = "Ranged Quirks"
 	mechanics = "Your accuracy never degrades from movement, firing, or anything else."
 	conflicts = list(
@@ -1679,7 +1680,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/artifact_identify
 	name = "Artifact Hunter"
 	desc = "You have a keen eye for identifying magical otherworldly trash! You can identify artifacts with a glance."
-	value = 33
+	value = 32
 	category = "Lifepath Quirks"
 	mechanics = "You have no wait time when it comes to identifying artifacts."
 	conflicts = list()
@@ -1692,14 +1693,20 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/armblader
 	name = "Arm Blader"
 	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
-	value = 33
-	category = "Mutant Quirks"
+
+	value = 32
+	category = "Armblade Quirks"
+	mechanics = "Your arm can turn into a horrible meat sword."
+	conflicts = list()
 	mob_trait = TRAIT_ARMBLADE
 
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 33
+	value = 32
+	category = "Armblade Quirks"
+	mechanics = "Your arm can turn into a horrible meat sword."
+	conflicts = list()
 	category = "Mutant Quirks"
 	mob_trait = TRAIT_ARMTENT
 
@@ -1762,7 +1769,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/sabrebiter
 	name = "Biter - Sabre Toothed"
 	desc = "Your *bite strength is ENORMOUS, but it takes all your focus to use it."
-	value = 33
+	value = 32
 	category = "Biter Quirks"
 	mechanics = "Your bite is the biggest bite, and the slowest."
 	conflicts = list(
@@ -1832,7 +1839,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/razorclaw
 	name = "Clawer - Razors"
 	desc = "Your *claw attack really does rend and tear huge guts."
-	value = 33
+	value = 32
 	category = "Clawer Quirks"
 	mechanics = "When using *claw your claws do CRAZY good damage (for claws, anyway), but a bit slower overall."
 	conflicts = list(

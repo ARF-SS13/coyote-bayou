@@ -402,6 +402,14 @@ const QuirkJizz = (props, context) => {
   const { act, data } = useBackend(context);
   const AllQuirks = data.AllQuirks || [];
   const AllCategories = data.AllCategories || [];
+  // format:
+  // [
+  //   {
+  //     'Limb' : string,
+  //     'Manufacturer' : string,
+  //   },
+  //   ...  ]
+  const UserProstheticObjs = data.UserProstheticObjs || [];
 
   const [
     CurrentPage,
@@ -434,19 +442,27 @@ const QuirkJizz = (props, context) => {
 
   return (
     <Box>
-      {ShowQuirks.length === 0 && (
+      {ShowQuirks.length === 0 && UserProstheticObjs.length === 0 && (
         <NoticeBox active>
           {WhyIsItEmpty}
         </NoticeBox>
-      ) || (
-        ShowQuirks.map(Quirk => (
-          <Box
-            key={Quirk.Qkey}
-            mr="0.5em"
-            mb="0.5em">
-            <QuirkButton QOBJ={Quirk} />
-          </Box>
-        )))}
+      )}
+      {SelectedCategory === YourQuirks && UserProstheticObjs.map(Prosthetic => (
+        <Box
+          key={Prosthetic}
+          mr="0.5em"
+          mb="0.5em">
+            <LimbButton LOBJ={Prosthetic} />
+        </Box>
+      ))}
+      {ShowQuirks.map(Quirk => (
+        <Box
+          key={Quirk.Qkey}
+          mr="0.5em"
+          mb="0.5em">
+          <QuirkButton QOBJ={Quirk} />
+        </Box>
+      ))}
     </Box>
   );
 };
@@ -473,7 +489,8 @@ const QuirkJizz = (props, context) => {
 const QuirkButton = (props, context) => {
   const { act, data } = useBackend(context);
   const UserQuirkKeys = data.UserQuirkKeys || [];
-  const UserQuirksConflictingKeys = data.UserQuirksConflictingKeys || [];
+  /// Who lives in a javascript under the sea?
+  //const UserQuirksConflictingKeys = data.UserQuirksConflictingKeys || [];
   const UserCkey = data.UserCkey || 'Guest';
   const UserName = data.UserName || 'Buddy';
 
@@ -495,14 +512,23 @@ const QuirkButton = (props, context) => {
   const QuirkDesc = QuirkObj.Qdesc || "This is a quirk! Not much is known about it!";
   const QuirkMechanics = QuirkObj.Qmechanics || "Supposedly does something!";
   const QuirkConflicts = QuirkObj.Qconflicts || [];
-  const ConflictingQuirkKeys = ArrayIntersection(UserQuirksConflictingKeys, QuirkConflicts);
-  const UserConflictObjs = QKeyArray2ObjArray(ConflictingQuirkKeys, context) || [];
-  const QuirkConflictObjs = QKeyArray2ObjArray(QuirkConflicts, context) || [];
+
+  const QuirkConflictsObjs = QKeyArray2ObjArray(QuirkConflicts, context) || [];
+
+  const UserQuirkObjs = QKeyArray2ObjArray(UserQuirkKeys, context) || [];
+  /// Now, search through all the user's quirk objects and find any that conflict with this one,
+  /// or if this one conflicts with any of them.
+  const UserQuirksConflictingObjs = UserQuirkObjs.filter(Quirk => {
+    return Quirk.Qconflicts.includes(QuirkKey) || QuirkConflicts.includes(Quirk.Qkey);
+  }) || [];
+  const ConflictDetected = UserQuirksConflictingObjs.length > 0 ? true : false;
 
   const UserHasQuirk = UserQuirkKeys.includes(QuirkKey);
   const CanRemoveIt = UserCanRemoveQuirk(QuirkObj, context);
   const CanAffordIt = UserCanAffordQuirk(QuirkObj, context);
   const CanGoodIt = UserCanGoodQuirk(QuirkObj, context);
+
+  const CanRemoveItText = CanRemoveIt ? "" : " (Would put you over your quirk point limit!)";
 
 
   // They can click it IF:
@@ -511,7 +537,7 @@ const QuirkButton = (props, context) => {
     !UserHasQuirk
     && CanAffordIt
     && CanGoodIt
-    && UserConflictObjs.length === 0
+    && !ConflictDetected
   ) || (
     UserHasQuirk
       && CanRemoveIt
@@ -520,9 +546,29 @@ const QuirkButton = (props, context) => {
   const CantAffordText = !CanClickIt && !CanAffordIt ? " (Too Expensive!)" : '';
   const TooManyGoodText = !CanClickIt && !CanGoodIt ? " (Too Many Good Quirks!)" : '';
 
-  const TitleColor = !CanClickIt && !UserHasQuirk ? "#221111" : 'white';
+  const TitleColor =
+  UserHasQuirk
+    ? CanClickIt
+      ? "white"
+      : "white"
+    : CanClickIt
+      ? "#FFFFFF"
+      : "#442222";
+
   const BGColor = UserHasQuirk ? "#448844" : CanClickIt ? "" : "#884444";
   const MiniTextColor = UserHasQuirk ? "white" : CanClickIt ? "white" : "#221111";
+  const QuirkCostColor =
+  !CanClickIt // refactor it, I know you want to
+    ? UserHasQuirk
+      ? QuirkValue > 0
+        ? "#223322"
+        : "#88AAAA"
+      : "#442222"
+    : QuirkValue == 0
+      ? MiniTextColor
+      : QuirkValue > 0
+        ? "#00FF00"
+        : "#FF0000";
 
   let SoundAct = "Generic";
   if (CanClickIt) {
@@ -531,12 +577,12 @@ const QuirkButton = (props, context) => {
     } else if (!UserHasQuirk) {
       SoundAct = "AddQuirk";
     }
+  } else if (ConflictDetected) {
+    SoundAct = "Conflicts";
   } else if (!CanAffordIt || !CanRemoveIt) {
     SoundAct = "CantAfford";
   } else if (!CanGoodIt) {
     SoundAct = "TooManyGood";
-  } else if (UserConflictObjs.length > 0) {
-    SoundAct = "Conflicts";
   }
 
   return (
@@ -558,7 +604,8 @@ const QuirkButton = (props, context) => {
           'DoSound': SoundAct,
         })}>
       <NoticeBox
-        // active={!CanClickIt}
+        success={UserHasQuirk}
+        active={!CanClickIt}
         width="100%">
 
         <Box
@@ -573,13 +620,7 @@ const QuirkButton = (props, context) => {
           <Flex direction="row">
             <Flex.Item basis="3em">
               <Box
-                color={
-                  QuirkValue === 0
-                    ? { MiniTextColor }
-                    : QuirkValue > 0
-                      ? 'good'
-                      : 'bad'
-                }>
+                color={QuirkCostColor}>
                 {PlusOrMinus}{QuirkValue}
               </Box>
             </Flex.Item>
@@ -589,9 +630,18 @@ const QuirkButton = (props, context) => {
               {TooManyGoodText}
             </Flex.Item>
           </Flex>
+        {}
         </Box>
-        {!!UserConflictObjs && UserConflictObjs.length > 0 && (
-          <ConflictBox UConObjs={UserConflictObjs} />
+        {UserHasQuirk && !CanRemoveIt && (
+          <Box
+            textAlign="center"
+            fontSize="14px"
+            color="black">
+              {CanRemoveItText}
+          </Box>
+        )}
+        {ConflictDetected && UserQuirksConflictingObjs.length > 0 && (
+          <ConflictBox UConObjs={UserQuirksConflictingObjs} />
         )}
         <Box
           textAlign="left"
@@ -602,12 +652,12 @@ const QuirkButton = (props, context) => {
           dangerouslySetInnerHTML={{ __html: QuirkDesc }} />
         <Box
           textAlign="left"
-          fontSize="9px"
+          fontSize="11px"
           color={MiniTextColor}
           dangerouslySetInnerHTML={{ __html: QuirkMechanics }} />
-        {!!QuirkConflictObjs && QuirkConflictObjs.length > 0 && (
+        {QuirkConflictsObjs.length > 0 && (
           <Box>
-            <ConflictReadout QConflict={QuirkConflictObjs} TextCol={MiniTextColor} />
+            <ConflictReadout QConflict={QuirkConflictsObjs} TextCol={MiniTextColor} />
           </Box>
         )}
       </NoticeBox>
@@ -615,6 +665,56 @@ const QuirkButton = (props, context) => {
   );
 };
 
+/// Basically the above but for prosthetics
+/// WIll be a cool steely gray aesthetic
+/// Simpler cus its just an indicator that hey, ur prostheting
+const LimbButton = (props, context) => {
+  const { act, data } = useBackend(context);
+  const LimbObj = props.LOBJ || {};
+
+  const Limb = LimbObj.Limb || "Bingus";
+  const Manufacturer = LimbObj.Manufacturer || "Bingus";
+
+  /// dark bluish gray
+  const BGColor = "#222244";
+  /// steely gray
+  const TitleColor = "#DDDDEE";
+  /// dark gray
+  const MiniTextColor = "#AAAAAA";
+
+  return (
+    <Box
+      px="1rem"
+      py="0.25rem"
+      mb="0.5rem"
+      mx="0.5rem"
+      width="100%"
+      textAlign="left"
+      backgroundColor={BGColor}
+      style={{
+        'background-image': 'linear-gradient(#222244, #444466, #444466, #222244)',
+      }}>
+      <Box
+        // style={{
+        //   'border-bottom': '1px solid rgba(255, 255, 255, 0.8)',
+        // }}
+        textAlign="left"
+        bold
+        fontSize="16px"
+        mb="0.5rem"
+        color={TitleColor}>
+        <Flex direction="row">
+          <Flex.Item basis="3em">
+            -11
+          </Flex.Item>
+          <Flex.Item grow={1} color={MiniTextColor}>
+            Your {Manufacturer} {Limb}
+          </Flex.Item>
+        </Flex>
+      </Box>
+    </Box>
+  );
+};
 
 // / A helper function for QuirkButton to make a box with a list of
 // / quirk objects that conflict with this quirk. It takes an array of
@@ -668,7 +768,7 @@ const ConflictBox = (props) => {
   }
   return (
     <Stack.Item>
-      <Box color="#880022">
+      <Box color="#880000">
         !!! You have quirks that prevent this one from being taken !!!<br />
         <b>Conflicts With:</b><br />
         {UConObjs.map(conflict => (
