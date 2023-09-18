@@ -309,6 +309,7 @@
 #define TRAIT_PAPER_SKIN "paper_skin"
 #define TRAIT_GLASS_BONES "glass_bones"
 #define TRAIT_STEEL_ASS "steel_ass"
+#define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
@@ -401,7 +402,7 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two" //crafts mid level guns
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three" //crafts weapon parts
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four" //currently unused
-#define TRAIT_WHITELEGS_TRAD	"whiteleg_traditions"
+#define TRAIT_TRIBAL_TRAD	"whiteleg_traditions"
 #define TRAIT_DEADHORSES_TRAD	"deadhorses_traditions"
 #define TRAIT_RUSTWALKERS_TRAD	"rustwalker_traditions"
 #define TRAIT_EIGHTIES_TRAD		"eighties_traditions"

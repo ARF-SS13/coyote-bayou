@@ -483,6 +483,10 @@
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 
+	if(HAS_TRAIT(src, TRAIT_JIGGLY_ASS))
+		. += ""
+		. += span_notice("[t_His] butt could use a firm smack.</span>")
+
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
 		. += trait_exam

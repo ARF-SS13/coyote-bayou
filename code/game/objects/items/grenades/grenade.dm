@@ -9,6 +9,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	throw_speed = 3
 	throw_range = 7
+	throwforce = 1
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
 	resistance_flags = FLAMMABLE
