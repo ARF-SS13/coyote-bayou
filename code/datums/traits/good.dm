@@ -1857,3 +1857,234 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	value = 32
 	category = "Tailer Quirks"
 	mob_trait = TRAIT_TAILTHAGO
+
+
+///QUIRK PACKAGES/// QUACKAGES IF YOU WILL
+//Read it all, you're a big peoples, I believe in you.
+
+//The Purpose of these quirks is to be ready made character design concepts, they will include positive and negative quirks packaged together to ease character creation.
+
+//If the Quackage is all positive quirks then you should add the point cost of all the quirks involved and add 20% on top, this will mean that taking it is more expensive
+//than to have taken the quirks individually, but it only takes up one good quirk slot.  The 20% number referenced above is really just a starting point, honestly
+//follow your fucking heart, you're probably smarter than I am. ~TK420634
+
+//If the quackage includes negative quirks, be sure to make it very clear in the mechanics variable that you have included that negative, do not jump negative quirks on players
+//without properly warning them of what exactly they're getting into. Be sure also to make the conflict list include all the quirks that the trait includes, positive and negative.
+//That way players don't waste precious character design points on taking quirks they already have in their quackage.
+
+//Be wary of overloading the donkey, there really should be a hard limit to what you're thematically tyring to glue together here. These are supposed to be plug and play
+//character archetypes, not entire builds that are ready made. Though, if you're willing to put in the forethought and really plan it out I can't say that there would be a problem
+//with maybe making a Class category that is analgous to the Class quirks in the rp category. It would, honestly, simplify character creation some.
+
+//What follows is the code for Former Tribal, commented out, to be used as a reference for creating Quackages that include both quirks and recipes.
+/*
+/datum/quirk/tribal
+	name = "Former Tribal"
+	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
+	value = 22
+	category = "Lifepath Quirks"
+	mechanics = "Grants access to a wide variety of recipes and allows you to use primitive chemmasters with which you can make complex potions/poisons."
+	conflicts = list(
+		/datum/quirk/technophreak,
+		/datum/quirk/tribal_tech,
+		)
+	gain_text = span_notice("You remember the old ways of your tribe..")
+	lose_text = span_notice("You've forgotten the ways of your ancestors..")
+
+/datum/quirk/tribal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_FORMER_TRIBAL, "ex_tribal_traditions")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.former_tribal_recipes
+
+/datum/quirk/tribal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+		H.mind.learned_recipes -= GLOB.former_tribal_recipes
+		*/
+
+//Use this to prototype building your Quackage, or of course reference the ones that will exist below this.
+
+//Quackages Start Here//
+
+/datum/quirk/package/lifeoftheparty
+	name = "Life of the Party"
+	desc = "You were just meant to be the center of attention, and you revel when all eyes are on you!"
+	value = 35
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Quirks Musician and Friendly!"
+	conflicts = list(
+		/datum/quirk/musician,
+		/datum/quirk/friendly,
+		)
+	gain_text = span_notice("You realize you are THE life of THE party that is life!")
+	lose_text = span_notice("Maybe you're really just a nobody...?")
+
+/datum/quirk/package/lifeoftheparty/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MUSICIAN, "Musician")
+	ADD_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
+
+
+/datum/quirk/tribal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MUSICIAN, "Musician")
+		REMOVE_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
+
+/datum/quirk/package/Bruiser
+	name = "Bruiser"
+	desc = "You're a big guy."
+	value = 150
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
+	conflicts = list(
+		/datum/quirk/bigleagues,
+		/datum/quirk/lifegiverplus
+		)
+	gain_text = span_notice("DAMN BRO YOU SWOLE!")
+	lose_text = span_notice("Maybe you could skip gym day...")
+
+/datum/quirk/package/lifeoftheparty/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
+	ADD_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
+
+
+/datum/quirk/package/lifeoftheparty/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
+		REMOVE_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
+
+/datum/quirk/package/Ranger
+	name = "Ranger"
+	desc = "Bow in hand, and rat in back pocket, the swamplands is your home."
+	value = 35
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Bow Trained & Beast Friends - Small Critters"
+	conflicts = list(
+		/datum/quirk/bowtrained,
+		/datum/quirk/critterfriend
+		)
+	gain_text = span_notice("These lands are your home.")
+	lose_text = span_notice("Where the heck am I????")
+
+/datum/quirk/package/ranger/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, "Bow Trained")
+	ADD_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, "Beast Friend - Small Critters")
+
+
+/datum/quirk/package/ranger/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_AUTO_DRAW, "Bow Trained")
+		REMOVE_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, "Beast Friend - Small Critters")
+
+/datum/quirk/package/hunter
+	name = "Big Game Hunter"
+	desc = "With your trusty Thirty Aught something another you know you can down any critter you plan on hunting."
+	value = 65
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Bolt Worker & Straight Shooter."
+	conflicts = list(
+		/datum/quirk/masterrifleman,
+		/datum/quirk/straightshooter
+		)
+	gain_text = span_notice("Aim just behind behind the front leg...")
+	lose_text = span_notice(".223 is probably overkill for deer...")
+
+/datum/quirk/package/hunter/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FAST_PUMP, "Bolt Worker")
+	ADD_TRAIT(H, TRAIT_NICE_SHOT, "Straight Shooter")
+
+
+/datum/quirk/package/hunter/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FAST_PUMP, "Bolt Worker")
+		REMOVE_TRAIT(H, TRAIT_NICE_SHOT, "Straight Shooter")
+
+/datum/quirk/package/reformedtribal
+	name = "Reformed Tribal Chemist"
+	desc = "You've left your tribe and decided that science is what you seek."
+	value = 55
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Primitive Tech & Chemwiz."
+	conflicts = list(
+		/datum/quirk/tribal_tech,
+		/datum/quirk/chemwhiz
+		)
+	gain_text = span_notice("The secrets of chemistry are all laid out before you...")
+	lose_text = span_notice("Sulphur?  I barely know her!")
+
+/datum/quirk/package/reformedtribal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+
+
+/datum/quirk/package/reformedtribal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
+		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+
+/datum/quirk/package/creatureofthewildsevi
+	name = "Creature of the Wilds - Eviscerator"
+	desc = "You are massively in tune with your wild side. Especially the part that slices and bites like crazy."
+	value = 53
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Fast Clawer & Fast Biter."
+	conflicts = list(
+		/datum/quirk/fastbiter,
+		/datum/quirk/fastclawer
+		)
+	gain_text = span_notice("bitebitebitebiteclawclawclawclaw!")
+	lose_text = span_notice("I could use a scone...")
+
+/datum/quirk/package/creatureofthewildsevi/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FASTCLAW, "Clawer - Fast")
+	ADD_TRAIT(H, TRAIT_FASTBITE, "Biter - Fast")
+
+
+/datum/quirk/package/creatureofthewildsevi/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FASTCLAW, "Clawer - Fast")
+		REMOVE_TRAIT(H, TRAIT_FASTBITE, "Biter - Fast")
+
+/datum/quirk/package/creatureofthewildsspicy
+	name = "Creature of the Wilds - Venomous"
+	desc = "You are massively in tune with your wild side. Especially the part that lets you poison things with your fangs and claws"
+	value = 53
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Spicy Claw & Spicy Biter."
+	conflicts = list(
+		/datum/quirk/spicybiter,
+		/datum/quirk/spicyclaw,
+		)
+	gain_text = span_notice("bitebitebitebiteclawclawclawclaw!")
+	lose_text = span_notice("He need some milk.")
+
+/datum/quirk/package/creatureofthewildsspicy/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
+	ADD_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
+
+
+/datum/quirk/package/creatureofthewildsspicy/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
+		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
+
+
