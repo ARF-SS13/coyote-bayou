@@ -10,7 +10,7 @@
 	sound = 'modular_coyote/sound/mobsounds/birdcall.ogg'
 	cooldown = 10 SECONDS
 
-/datum/emote/living/carbon/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
+/datum/emote/living/carbon/birdcall/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	. = TRUE
 	if(!..(user, status_check, intentional))
 		return FALSE
