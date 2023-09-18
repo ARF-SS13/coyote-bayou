@@ -611,20 +611,42 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 
 /datum/quirk/night_vision
-	name = "Night Vision"
+	name = "Dark Vision - Minor"
 	desc = "You can see slightly more clearly in full darkness than most people by one more whole tile."
-	value = 14
+	value = 22
 	category = "Vision Quirks"
-	mechanics = "You can see one more tile in the dark than normal without a light source."
+	mechanics = "You can see two more tiles in the dark than normal without a light source."
 	conflicts = list(
 		/datum/quirk/blindness,
+		/datum/quirk/night_vision_greater,
 	)
 	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("The shadows seem a little less dark.")
 	lose_text = span_danger("Everything seems a little darker.")
 
 
+
 /datum/quirk/night_vision/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.update_sight()
+
+/datum/quirk/night_vision_greater
+	name = "Dark Vision - Greater"
+	desc = "You can see slightly more clearly in full darkness than most people by one more whole tile."
+	value = 44
+	category = "Vision Quirks"
+	mechanics = "You can see four more tiles in the dark than normal without a light source."
+	conflicts = list(
+		/datum/quirk/blindness,
+		/datum/quirk/night_vision,
+	)
+	mob_trait = TRAIT_NIGHT_VISION_GREATER
+	gain_text = span_notice("The shadows seem a little less dark.")
+	lose_text = span_danger("Everything seems a little darker.")
+
+
+
+/datum/quirk/night_vision_greater/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.update_sight()
 
