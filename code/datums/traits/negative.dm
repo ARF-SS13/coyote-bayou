@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
 	value = -33
 	category = "Vision Quirks"
-	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Are you part molerat?"
+	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Sunglasses help a lot. Are you part molerat?"
 	conflicts = list(/datum/quirk/nyctophobia)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
@@ -293,10 +293,10 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/obj/item/clothing/glasses/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
 
 	if(lums >= 0.8)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
 		if(!istype(sunglasses, /obj/item/clothing/glasses/sunglasses))
 			if(quirk_holder.eye_blurry < 20)
 				quirk_holder.eye_blurry = 20
+			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "brightlight")
 
