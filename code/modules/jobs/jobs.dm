@@ -241,6 +241,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
+	"Radio Operator",
 ))
 
 GLOBAL_LIST_INIT(redwater_positions, list(
