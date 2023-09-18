@@ -257,8 +257,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	value = -22
 	category = "Phobia Quirks"
 	mechanics = "In the dark you toggle to walk."
-	conflicts = list(/datum/quirk/lightless,
-	)
+	conflicts = list(/datum/quirk/lightless)
 	medical_record_text = "Patient demonstrates a fear of the dark."
 
 /datum/quirk/nyctophobia/on_process()
@@ -282,8 +281,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	value = -33
 	category = "Vision Quirks"
 	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Are you part molerat?"
-	conflicts = list(/datum/quirk/nyctophobia,
-	)
+	conflicts = list(/datum/quirk/nyctophobia)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
 	medical_record_text = "Patient has acute phobia of light, and insists it is physically harmful."
@@ -367,8 +365,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	mechanics = "Your accuracy degrades like crazy when moving, firing, or doing much of anything."
 	conflicts = list(
 		/datum/quirk/deadeye,
-		/datum/quirk/straightshooter,
-		/datum/quirk/primitive
+		/datum/quirk/straightshooter
 	)
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
