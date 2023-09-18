@@ -827,6 +827,7 @@
 	new /obj/item/clothing/ears/headphones(src)
 	new /obj/item/clothing/neck/mantle/bos(src)
 	new /obj/item/clothing/neck/mantle/treasurer(src)
+	new /obj/item/card/id/dogtag(src)
 
 /datum/gear/donator/kits/merek22
 	name = "UNMC Kit"
@@ -838,6 +839,7 @@
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/clothing/suit/armor/medium/merek (src)
 	new /obj/item/clothing/head/helmet/merekcustom(src)
+	new /obj/item/warpaint_bowl(src)
 	
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
