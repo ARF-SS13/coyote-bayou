@@ -1,5 +1,4 @@
-/* eslint-disable max-len */
-/* eslint-disable react/jsx-max-depth */
+/* eslint-disable */
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Section, Stack, Fragment, Flex, Icon, Input, NoticeBox, Table } from '../components';
 import { Window } from '../layouts';
@@ -15,7 +14,7 @@ const QuirksPerPage = 10;
 // But we're geting ahead of ourselves! Let's start with the top-level
 // Window skeleton!
 // / AllQuirks format:
-// /  [
+///  [
 // /    {
 // /      'Qkey' : string,
 // /      'Qname' : string,
