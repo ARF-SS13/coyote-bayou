@@ -23,6 +23,7 @@
 
 // Comment this out if you are debugging problems that might be obscured by custom error handling in world/Error
 #ifdef DEBUG
+//#warn Debug is enabled! Sone day this will load a smaller map that doesnt take 30 minutes to hecking load. This shouldnt show up in the release version.
 #define USE_CUSTOM_ERROR_HANDLER
 #endif
 

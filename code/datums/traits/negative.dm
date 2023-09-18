@@ -3,7 +3,12 @@
 /datum/quirk/blooddeficiency
 	name = "Acute Blood Deficiency"
 	desc = "Your body can't produce enough blood to sustain itself."
-	value = -11
+	value = -20
+	category = "Health Quirks"
+	mechanics = "You are constantly losing blood, even if you're not wounded."
+	conflicts = list(
+		/datum/quirk/bloodpressure,
+	)
 	gain_text = span_danger("You feel your vigor slowly fading away.")
 	lose_text = span_notice("You feel vigorous again.")
 	antag_removal_text = "Your antagonistic nature has removed your blood deficiency."
@@ -21,6 +26,15 @@
 	desc = "You sometimes just hate life, and get a mood debuff for it."
 	mob_trait = TRAIT_DEPRESSION
 	value = -22
+	category = "Emotional Quirks"
+	mechanics = "Every tick you have a chance to get hit with a pretty big negative moodlet. Yeah. Depression kind of sucks, who'da'thunk'it?"
+	conflicts = list(
+		/datum/quirk/friendly,
+		/datum/quirk/jolly,
+		/datum/quirk/optimist,
+		/datum/quirk/pessimist,
+		/datum/quirk/apathetic,
+	)
 	gain_text = span_danger("You start feeling depressed.")
 	lose_text = span_notice("You no longer feel depressed.") //if only it were that easy!
 	medical_record_text = "Patient has a severe mood disorder, causing them to experience acute episodes of depression."
@@ -35,6 +49,15 @@
 	desc = "You sometimes just sort of hate life, and get a mood debuff for it."
 	mob_trait = TRAIT_PESSIMIST
 	value = -11
+	category = "Emotional Quirks"
+	mechanics = "Every tick you have a chance to be hit with a negative moodlet. Yeah. It sucks being a downer all the time."
+	conflicts = list(
+		/datum/quirk/friendly,
+		/datum/quirk/jolly,
+		/datum/quirk/optimist,
+		/datum/quirk/depression,
+		/datum/quirk/apathetic,
+)
 	gain_text = span_danger("You start feeling depressed.")
 	lose_text = span_notice("You no longer feel depressed.") //if only it were that easy!
 	medical_record_text = "Patient has a mood disorder, causing them to experience episodes of depression like symptoms."
@@ -49,6 +72,9 @@
 	name = "Family Heirloom"
 	desc = "You are the current owner of an heirloom, passed down for generations. You have to keep it safe!"
 	value = -11
+	category = "Emotional Quirks"
+	mechanics = "As it stands this will give you a random item from a list to keep track of, remind Fenny constantly that it should be broken down into multiple different items or like a labeller to make any one item your squishy."
+	conflicts = list(/datum/quirk/apathetic)
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates an unnatural attachment to a family heirloom."
 	var/obj/item/heirloom
@@ -144,6 +170,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Heavy Sleeper" //hard consider redesigning, since this is a flat update. ~TK
 	desc = "You sleep like a rock! Whenever you're put to sleep, you sleep for a little bit longer."
 	value = -11
+	category = "Functional Quirks"
+	mechanics = "If you use the sleep verb you sleep for longer, but don't heal any more than you would normally. If you use sleep-toggle it takes you longer to wake up."
+	conflicts = list(
+		/datum/quirk/nosleep,
+	)
 	mob_trait = TRAIT_HEAVY_SLEEPER
 	gain_text = span_danger("You feel sleepy.")
 	lose_text = span_notice("You feel awake again.")
@@ -152,7 +183,12 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
 	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
-	value = -32
+	value = -33
+	category = "Health Quirks"
+	mechanics = "You're going to need to hit the clinic for mannitol pretty regularly, consider getting a big supply."
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("You feel smooth.")
 	lose_text = span_notice("You feel wrinkled again.")
 	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
@@ -164,6 +200,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Nearsighted - Corrected"
 	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
 	value = -11
+	category = "Vision Quirks"
+	mechanics = "Your vision is blurry at a distance, but you have glasses you spawn with that can fix that."
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
@@ -181,6 +222,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Nearsighted - No Glasses"
 	desc = "You are nearsighted and without prescription glasses, you might could find a pair."
 	value = -22
+	category = "Vision Quirks"
+	mechanics = "Your vision is blurred, but you either never had or lost your glasses.  Good luck!"
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
@@ -191,7 +237,12 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes
 	name = "Nearsighted - Trashed Vision"
 	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
-	value = -32
+	value = -26
+	category = "Vision Quirks"
+	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("Things far away from you start looking VERY blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract sort of ridiculous levels of nearsightedness."
@@ -204,6 +255,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "In the dark you toggle to walk."
+	conflicts = list(
+		
+	)
 	medical_record_text = "Patient demonstrates a fear of the dark."
 
 /datum/quirk/nyctophobia/on_process()
@@ -225,6 +281,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Phobia - Bright Light"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "In the light you get a negative moodlet, are you part molerat?"
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
 	medical_record_text = "Patient has acute phobia of light, and insists it is physically harmful."
@@ -242,6 +303,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
 	value = -66
+	category = "Lifepath Quirks"
+	mechanics = "You are mechanically stopped from hurting things, or throwing things that could."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_PACIFISM
 	gain_text = span_danger("You feel repulsed by the thought of violence!")
 	lose_text = span_notice("You think you can defend yourself again.")
@@ -251,7 +317,15 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
-	value = -32
+	value = -33
+	category = "Health Quirks"
+	mechanics = "Your legs just flat out don't work."
+	conflicts = list(
+		/datum/quirk/soft_yards,
+		/datum/quirk/hard_yards,
+		/datum/quirk/slower,
+		/datum/quirk/slow,
+	)
 	mob_trait = TRAIT_PARA
 	human_only = TRUE
 	gain_text = null // Handled by trauma.
@@ -290,6 +364,13 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Poor Aim"
 	desc = "You're terrible with guns and can't line up a straight shot to save your life. Dual-wielding is right out."
 	value = -11
+	category = "Ranged Quirks"
+	mechanics = "Your accuracy degrades like crazy when moving, firing, or doing much of anything."
+	conflicts = list(
+		/datum/quirk/deadeye,
+		/datum/quirk/straightshooter,
+		/datum/quirk/primitive
+	)
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
 
@@ -298,6 +379,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Prosopagnosia"
 	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
 	value = -1
+	category = ""
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_PROSOPAGNOSIA
 	medical_record_text = "Patient suffers from prosopagnosia, and cannot recognize faces."
 
@@ -306,6 +392,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Reality Dissociation Syndrome"
 	desc = "You suffer from a severe disorder that causes very vivid hallucinations. Mindbreaker toxin can suppress its effects, and you are immune to mindbreaker's hallucinogenic properties. <b>This is not a license to grief.</b>"
 	value = -1
+	category = ""
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	//no mob trait because it's handled uniquely
 	gain_text = span_userdanger("...")
 	lose_text = span_notice("You feel in tune with the world again.")
@@ -332,6 +423,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Social Anxiety"
 	desc = "Talking to people is very difficult for you, and you often stutter or even lock up."
 	value = -22
+	category = "Emotional Quirks"
+	mechanics = "You stutter a lot, and make a bit of a mess of your sentences. Doesn't come with the bottom quirk for free."
+	conflicts = list(
+		/datum/quirk/apathetic,
+	)
 	gain_text = span_danger("You start worrying about what you're saying.")
 	lose_text = span_notice("You feel easier about talking again.") //if only it were that easy!
 	medical_record_text = "Patient is usually anxious in social encounters and prefers to avoid them."
@@ -406,6 +502,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You're scared of cats, dog."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_CATPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of catgirl paradise's creatures grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You wish to go to catgirl paradise some day.")
@@ -426,6 +527,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Rats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with rats."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You're scared of rats, cheesebag."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_RATPHOBIA
 	gain_text = span_danger("You begin to tremble as you could hear in your head, \"Rats, rats, we're the rats.\nWe prey at night, we stalk at night, we're the rats.\" it echoes in your mind hauntingly.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You're the giant rat now who makes all the rules.")
@@ -446,6 +552,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Spiders"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You're scared of spiders, check your shoes!"
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_SPIDERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of eight legged monsters grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -466,6 +577,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Lizards"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with lizards and reptiles."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You're scared of lizards. I...  Yeah, you're scared of lizards."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_LIZARDPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of those scalie smooth brains grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Now you can't help but giggle at the sounds of turtles moaning which had appeared in your head.")
@@ -485,6 +601,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Robots/Synths"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
 	value = -22 // I do this because there's many enemy mobs which fit in this category, which effects a lot of gameplay.
+	category = "Phobia Quirks"
+	mechanics = "You're scared of robots, time traveller."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_ROBOTPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of not understanding what x=x<<1 even means...Those robots are too scary to understand that, the fear grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You've learnt bitshifting!")
@@ -504,6 +625,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Birds"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_BIRDPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of winged dubious creatures grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bird up!")
@@ -523,6 +649,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Dogs"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with dogs."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You're scared of dogs, cat."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_DOGPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of loud bork borks, which grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. Bork bork!")
@@ -542,6 +673,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
 	value = -22
+	category = "Phobia Quirks"
+	mechanics = "You really hate it when shit gets spooky."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_BONERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of bones grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -562,6 +698,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Masked People"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "Chic chicy boom?  No thanks."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_MASKPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the unknown stranger grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -581,7 +722,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/doctorphobia
 	name = "Phobia - Doctors"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
-	value = -32
+	value = -33
+	category = "Phobia Quirks"
+	mechanics = "Healthcare really is way too expensive these days."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_DOCTORPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the doctors grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -601,7 +747,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -11
+	value = -1
+	category = "Phobia Quirks"
+	mechanics = "You're scared of cats, dog."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_CATPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the feline menace grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -622,6 +773,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Phobia - Eyes"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with eyes."
 	value = -11
+	category = "Phobia Quirks"
+	mechanics = "You really hope they don't have their eyes on you."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_EYEPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of your eyes being stabbed grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -643,6 +799,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
 	value = -22 //HALP MAINTS
+	category = "Language Quirks"
+	mechanics = "You can't talk, big surprise."
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("You find yourself unable to speak!")
 	lose_text = span_notice("You feel a growing strength in your vocal chords.")
 	medical_record_text = "Functionally mute, patient is unable to use their voice in any capacity."
@@ -662,6 +823,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Unstable"
 	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
 	value = -22
+	category = "Emotional Quirks"
+	mechanics = "This quirk stops you from recovering mood levels. Be very careful with it as it can tank your mood rapidly with negative traits like depressed."
+	conflicts = list(
+		/datum/quirk/apathetic,
+	)
 	mob_trait = TRAIT_UNSTABLE
 	gain_text = span_danger("There's a lot on your mind right now.")
 	lose_text = span_notice("Your mind finally feels calm.")
@@ -670,7 +836,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/blindness
 	name = "Blind"
 	desc = "You are completely blind, nothing can counteract this."
-	value = -32
+	value = -33
+	category = "Vision Quirks"
+	mechanics = "You can't see."
+	conflicts = list(
+		
+	)
 	gain_text = span_danger("You can't see anything.")
 	lose_text = span_notice("You miraculously gain back your vision.")
 	medical_record_text = "Patient has permanent blindness."
@@ -692,6 +863,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Deaf"
 	desc = "You are completely deaf, nothing can counteract this."
 	value = -22
+	category = "Vision Quirks" // earballs
+	mechanics = "You can't hear."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_DEAF
 	gain_text = span_danger("You can't hear anything.")
 	lose_text = span_notice("You miraculously gain back your hearing.")
@@ -702,6 +878,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Cold-blooded"
 	desc = "Your body doesn't create its own internal heat, requiring external heat regulation."
 	value = -1
+	category = ""
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	medical_record_text = "Patient is ectothermic."
 	mob_trait = TRAIT_COLDBLOODED
 	gain_text = span_notice("You feel cold-blooded.")
@@ -710,8 +891,13 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/monophobia
 	name = "Monophobia"
-	desc = "You will become increasingly stressed when not in company of others, triggering panic reactions ranging from sickness to heart attacks."
+	desc = "You will become increasingly stressed when not in company of others, triggering panic reactions ranging from sickness to the shakes."
 	value = -22 //Removed Heart attack, should be good now. :)
+	category = "Emotional Quirks"
+	mechanics = "You get negative moodlets for being alone, these can ramp up to be pretty awful. The good news is geckos and rats count as not being alone. The bad news is you're probably getting killed."
+	conflicts = list(
+		/datum/quirk/apathetic,
+	)
 	gain_text = span_danger("You feel really lonely...")
 	lose_text = span_notice("You feel like you could be safe on your own.")
 	medical_record_text = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."
@@ -731,6 +917,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Fat-Fingered"
 	desc = "Due to the shape of your hands, width of your fingers or just not having fingers at all, you're unable to fire guns without accommodation."
 	value = -22
+	category = "Ranged Quirks"
+	mechanics = "The good news is you can still use bows and slings. Not that anyone uses slings. :("
+	conflicts = list(
+		/datum/quirk/deadeye,
+		/datum/quirk/straightshooter,
+		/datum/quirk/poor_aim,
+		/datum/quirk/primitive,
+	)
 	mob_trait = TRAIT_CHUNKYFINGERS
 	gain_text = "<span class='notice'>Your fingers feel... thick.</span>"
 	lose_text = "<span class='notice'>Your fingers feel normal again.</span>"
@@ -739,6 +933,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Illiterate"
 	desc = "You can't read nor write, plain and simple."
 	value = 0
+	category = "Lifepath Quirks"
+	mechanics = "This is basicaly just a roleplaying quirk. It actually does basically nothing. If you find a skill book though, you can't read it. So congrats."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_ILLITERATE
 	gain_text = "<span class='notice'>The knowledge of how to read seems to escape from you.</span>"
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
@@ -747,6 +946,13 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Health - Flimsy"
 	desc = "Your body is a little more fragile then most, decreasing total health some."
 	value = -11
+	category = "Health Quirks"
+	mechanics = "You go into crit 10 points of damage sooner than average."
+	conflicts = list(
+		/datum/quirk/lifegiverplus,
+		/datum/quirk/lifegiver,
+		/datum/quirk/veryflimsy,
+	)
 	mob_trait = TRAIT_FLIMSY
 	medical_record_text = "Patient has low capacity for injury."
 	gain_text = "<span class='notice'>You feel like you could break with a single hit."
@@ -761,6 +967,13 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Health - Very Flimsy"
 	desc = "Your body is a lot more fragile then most, decreasing total health."
 	value = -22
+	category = "Health Quirks"
+	mechanics = "You go into crit 20 points sooner than average."
+	conflicts = list(
+		/datum/quirk/lifegiverplus,
+		/datum/quirk/lifegiver,
+		/datum/quirk/flimsy,
+	)
 	mob_trait = TRAIT_VERYFLIMSY
 	medical_record_text = "Patient has abnormally low capacity for injury."
 	gain_text = "<span class='notice'>You feel like you could break with a single hit."
@@ -777,6 +990,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
 	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
 	value = -11
+	category = "Emotional Quirks"
+	mechanics = "You need to keep a mask on your face or else you get a negative moodlet."
+	conflicts = list()
 	mood_quirk = TRUE
 	medical_record_text = "Patient feels more secure when wearing a mask."
 	var/mood_category = "masked_mook"
@@ -804,6 +1020,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Paper Skin"
 	desc = "Your flesh is weaker, resulting in receiving cuts more easily."
 	value = -22
+	category = "Health Quirks"
+	mechanics = "You take wounds much faster than normal."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_PAPER_SKIN
 	gain_text = "<span class='notice'>Your flesh feels weak!</span>"
 	lose_text = "<span class='notice'>Your flesh feels more durable!</span>"
@@ -814,6 +1035,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Glass Bones"
 	desc = "Your bones are far more brittle, and more vulnerable to breakage."
 	value = -22
+	category = ""
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_GLASS_BONES
 	gain_text = "<span class='notice'>Your bones feels weak!</span>"
 	lose_text = "<span class='notice'>Your bones feels more durable!</span>"
@@ -824,6 +1050,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Fists of Noodle"
 	desc = "Your punching is legendary. Legendarily bad at doing anything to anyone."
 	value = -11
+	category = "Hand to Hand Quirks"
+	mechanics = "Your punches do literally nothing."
+	conflicts = list(
+		/datum/quirk/nonviolent,
+		/datum/quirk/iron_fist,
+		/datum/quirk/steel_fist,
+		/datum/quirk/noodle_fist,
+		/datum/quirk/mastermartialartist,
+	)
 	mob_trait = TRAIT_NOODLEFIST
 	gain_text = span_notice("Your fists feel weak and worthless!")
 	lose_text = span_danger("Your fists strong again.")
@@ -838,6 +1073,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Melee - Gentle"
 	desc = "Something about your strikes in melee is just... below average. You deal slightly less damage with melee weapons."
 	value = -11
+	category = "Melee Quirks"
+	mechanics = "Your melee attacks do 5 less damage."
+	conflicts = list(
+		/datum/quirk/nonviolent,
+		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
+		/datum/quirk/wimpy,
+	)
 	mob_trait = TRAIT_GENTLE
 	gain_text = span_notice("You feel like you don't really like smacking stuff.")
 	lose_text = span_danger("You feel like slapping the mess out of a gecko.")
@@ -847,6 +1090,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Melee - Wimpy"
 	desc = "For some reason you're just really bad at hitting things agianst things. Your melee damage is much lower than average."
 	value = -22
+	category = "Melee Quirks"
+	mechanics = "Your melee attacks do 10 less damage."
+	conflicts = list(
+		/datum/quirk/nonviolent,
+		/datum/quirk/bigleagues,
+		/datum/quirk/littleleagues,
+		/datum/quirk/gentle,
+	)
 	mob_trait = TRAIT_WIMPY
 	gain_text = span_notice("You feel like smacking things is just a waste of time.")
 	lose_text = span_danger("You feel like slapping the mess out of a Deathclaw!")
@@ -856,6 +1107,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Mobility - Wasteland Slug"
 	desc = "You've spent some time in the wastes, you don't get around great."
 	value = -11
+	category = "Movement Quirks"
+	mechanics = "Slows you down a fair deal if you're going off roads and normal paths."
+	conflicts = list(
+		/datum/quirk/soft_yards,
+		/datum/quirk/hard_yards,
+		/datum/quirk/slower,
+		/datum/quirk/paraplegic,
+	)
 	mob_trait = TRAIT_SLUG
 	gain_text = span_notice("Rain or shine, you might get there eventually.")
 	lose_text = span_danger("Your gait feels a little more sure!")
@@ -865,6 +1124,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Mobility - Wasteland Molasses"
 	desc = "You don't get around well off road. Like. At all."
 	value = -22
+	category = "Movement Quirks"
+	mechanics = "Slows you down a lot if you go off roads and normal paths."
+	conflicts = list(
+		/datum/quirk/soft_yards,
+		/datum/quirk/hard_yards,
+		/datum/quirk/slow,
+		/datum/quirk/paraplegic,
+	)
 	mob_trait = TRAIT_SLOWAF
 	gain_text = span_notice("You feel like staying at home.")
 	lose_text = span_danger("Wow! You feel like you could run around the whole WORLD!")
@@ -873,7 +1140,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/clumsy
 	name = "Clumsy"
 	desc = "You're very clumsy, it's kind of a miracle you're alive at all really."
-	value = -32
+	value = -33
+	category = "Lifepath Quirks"
+	mechanics = "This is the clown quirk for those who know. You shoot yourself in the foot, drop live grenades, beat yourself with stun batons and quarterstaffs. It's pretty terrible!"
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_CLUMSY
 	gain_text = span_notice("You feel really... awkward?")
 	lose_text = span_danger("Your composure seems to return to you.")
@@ -882,7 +1154,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/dumb
 	name = "Dumb"
 	desc = "You're, well.  Just kind of stupid."
-	value = 0
+	value = -22
+	category = "Lifepath Quirks"
+	mechanics = "Dumb doesn't do much by itself, but it does lock you out of quite a few other quirks that require a character that needs some thinkmeat wrinkles."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_DUMB
 	gain_text = span_notice("You brain just about shuts off, and for the first time in your life you feel truly free.")
 	lose_text = span_danger("Your brain turns back on, and you remember that Taxes are a thing.")
@@ -892,6 +1169,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Primitive"
 	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
 	value = -22
+	category = "Lifepath Quirks"
+	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns and many machines."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_MONKEYLIKE
 	gain_text = span_notice("yOu reTurN tO MonKE")
 	lose_text = span_danger("I think, there for... I am?")
@@ -901,6 +1183,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Can Not Sleep"
 	desc = "For whatever reason you literally lack the ability to sleep."
 	value = -22
+	category = "Lifepath Quirks"
+	mechanics = "You can't sleep. Why is this serious?  We have sleep healing."
+	conflicts = list(
+		/datum/quirk/heavy_sleeper,
+	)
 	mob_trait = TRAIT_SLEEPIMMUNE
 	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
 	lose_text = span_danger("You could kind of go for a nap.")
@@ -911,6 +1198,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Unintelligible Speech"
 	desc = "You are so far beyond tongue tied."
 	value = -2
+	category = ""
+	mechanics = ""
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_UNINTELLIGIBLE_SPEECH
 	gain_text = span_notice("Your tongue just sort of stops working!")
 	lose_text = span_danger("You can find your words again.")
@@ -920,7 +1212,13 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/cantrun
 	name = "Mobility - Can not Run"
 	desc = "For whatever reason you just can't muster up the go to run."
-	value = -32
+	value = -33
+	category = "Movement Quirks"
+	mechanics = "Yeah, pretty self explanitory."
+	conflicts = list(
+		/datum/quirk/super_zoomies,
+		/datum/quirk/zoomies,
+	)
 	mob_trait = TRAIT_NORUNNING
 	gain_text = span_notice("Running just isnt' worth the effort!")
 	lose_text = span_danger("You really feel like running all of a sudden!")
@@ -930,6 +1228,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Luddite"
 	desc = "You forgo some technology, like autolathes and some other machinery."
 	value = -22
+	category = "Lifepath Quirks"
+	mechanics = "You can't use some machines like ammo benches. You can still use autolathes though."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_TECHNOPHOBE
 	gain_text = span_notice("All my homies hate machines.")
 	lose_text = span_danger("Maybe industrial society isn't so bad...")
@@ -939,6 +1242,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Clean Veins"
 	desc = "Your body reacts violently to street drugs. Medicines work... for the most part."
 	value = -22
+	category = "Health Quirks"
+	mechanics = "Drugs of many sorts, including tabacco products, make you violently ill."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_NODRUGS
 	gain_text = span_notice("You feel like a winner!")
 	lose_text = span_danger("You feel like a loser!")
@@ -949,6 +1257,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "You are confident enough in your skills that you don't need a second wind! Second wind will be disabled for you, \
 		and the only way you'll be able to live again is if someone finds and revives your body or a spirit takes mercy on you!"
 	value = -11
+	category = "Lifepath Quirks"
+	mechanics = "You lose access to the Second Wind function."
+	conflicts = list(
+		
+	)
 	mob_trait = TRAIT_NO_SECOND_WIND
 	gain_text = span_boldannounce("You have opted out of Second Wind! If you die, you will not be able to revive yourself! \
 		The spirits may be merciful, better hope they are in a good mood!")
