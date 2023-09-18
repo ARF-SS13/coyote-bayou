@@ -21,7 +21,7 @@
 	if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
 		to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
 		return FALSE
-	
+
 	return TRUE
 
 /datum/emote/living/carbon/birdcall/run_emote(mob/user)
@@ -29,28 +29,28 @@
 	if(!is_type_in_list(get_area(C), GLOB.outdoor_areas))
 		to_chat(user, span_warning("You must be outside to call for a bird."))
 		return FALSE
-	
+
 	var/obj/item/reagent_containers/food/snacks/grown/pinyon/nut
 
 	for(var/obj/item/reagent_containers/food/snacks/grown/pinyon/P in C.held_items)
 		nut = P
 		break
-	
+
 	if(!istype(nut))
 		to_chat(user, span_warning("You must have a pinyon nut to give to the bird you call."))
 		return FALSE
-	
+
 	var/obj/item/mail
 
 	for(var/obj/item/I in C.held_items)
 		if(I != nut)
 			mail = I
 			break
-	
+
 	if(!istype(mail))
 		to_chat(user, span_warning("You need an item to give to the bird you call!"))
 		return FALSE
-	
+
 	if(mail.w_class > WEIGHT_CLASS_TINY)
 		to_chat(user, span_warning("This item is too heavy to give to a bird!"))
 		return FALSE
@@ -102,7 +102,7 @@
 
 /obj/effect/mailbird/proc/queryCaller()
 	alpha = 0
-	
+
 	var/obj/item/reagent_containers/food/snacks/grown/pinyon/nut
 	var/mob/living/carbon/human/C = caller
 
@@ -114,7 +114,7 @@
 		if(I != nut)
 			mail = I
 			break
-	
+
 	if(!istype(nut) || !istype(mail) || mail.w_class > WEIGHT_CLASS_TINY)
 		playsound(src.loc, 'modular_coyote/sound/mobsounds/crowpeck.ogg', 50, TRUE)
 		C.visible_message(span_warning("[C] was pecked by the messenger crow!"), span_userdanger("The messenger crow pecked you and flew off!"))
@@ -126,7 +126,7 @@
 		mail = null
 		flyOff()
 		return
-	
+
 	to_chat(C, span_info("You feed \the [nut] to the crow, and offer \the [mail] to it."))
 
 	C.dropItemToGround(nut)
@@ -146,7 +146,7 @@
 	flyOff()
 
 /obj/effect/mailbird/proc/flyOff()
-	alpha = 255
+	alpha = 0
 	playsound(src.loc, 'modular_coyote/sound/mobsounds/crowleave.ogg', 50, FALSE)
 	if(!istype(mail))
 		qdel(src)
@@ -164,14 +164,14 @@
 		if(findtext(target.real_name, TargetName))
 			C = target
 			break
-	
+
 	var/success = FALSE
 	if(!istype(C))
 		following = caller
 	else
 		following = C
 		success = TRUE
-	
+
 	src.forceMove(get_turf(following))
 	component.changeTarget(following)
 	pixel_y = 60
@@ -204,7 +204,7 @@
 /datum/component/mailbird_movement/Initialize(atom/movable/newTarget)
 	if(!ismovable(newTarget))
 		return COMPONENT_INCOMPATIBLE
-	
+
 	target = newTarget
 	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/move_react)
 
