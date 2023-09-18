@@ -2571,26 +2571,29 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("modify_limbs")
 					var/limb_type = input(user, "Choose the limb to modify:", "Character Preference") as null|anything in LOADOUT_ALLOWED_LIMB_TARGETS
-					if(limb_type)
-						var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
-						if(modification_type)
-							if(modification_type == LOADOUT_LIMB_PROSTHETIC)
-								var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
-								if(prosthetic_type)
-									var/number_of_prosthetics = 0
-									for(var/modified_limb in modified_limbs)
-										if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
-											number_of_prosthetics += 1
-									if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
-										to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
-									else
-										//save the actual prosthetic data
-										modified_limbs[limb_type] = list(modification_type, prosthetic_type)
-							else
-								if(modification_type == LOADOUT_LIMB_NORMAL)
-									modified_limbs -= limb_type
-								else
-									modified_limbs[limb_type] = list(modification_type)
+					if(!limb_type)
+						return
+					var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
+					if(!modification_type)
+						return
+					if(modification_type == LOADOUT_LIMB_PROSTHETIC)
+						var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
+						if(!prosthetic_type)
+							return
+						var/number_of_prosthetics = 0
+						for(var/modified_limb in modified_limbs)
+							if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
+								number_of_prosthetics += 1
+						if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
+							to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
+						else
+							//save the actual prosthetic data
+							modified_limbs[limb_type] = list(modification_type, prosthetic_type)
+					else
+						if(modification_type == LOADOUT_LIMB_NORMAL)
+							modified_limbs -= limb_type
+						else
+							modified_limbs[limb_type] = list(modification_type)
 
 				if("underwear")
 					var/new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_list

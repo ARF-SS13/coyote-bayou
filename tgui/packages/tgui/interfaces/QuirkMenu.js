@@ -402,6 +402,14 @@ const QuirkJizz = (props, context) => {
   const { act, data } = useBackend(context);
   const AllQuirks = data.AllQuirks || [];
   const AllCategories = data.AllCategories || [];
+  // format:
+  // [
+  //   {
+  //     'Limb' : string,
+  //     'Manufacturer' : string,
+  //   },
+  //   ...  ]
+  const UserProstheticObjs = data.UserProstheticObjs || [];
 
   const [
     CurrentPage,
@@ -434,19 +442,27 @@ const QuirkJizz = (props, context) => {
 
   return (
     <Box>
-      {ShowQuirks.length === 0 && (
+      {ShowQuirks.length === 0 && UserProstheticObjs.length === 0 && (
         <NoticeBox active>
           {WhyIsItEmpty}
         </NoticeBox>
-      ) || (
-        ShowQuirks.map(Quirk => (
-          <Box
-            key={Quirk.Qkey}
-            mr="0.5em"
-            mb="0.5em">
-            <QuirkButton QOBJ={Quirk} />
-          </Box>
-        )))}
+      )}
+      {SelectedCategory === YourQuirks && UserProstheticObjs.map(Prosthetic => (
+        <Box
+          key={Prosthetic}
+          mr="0.5em"
+          mb="0.5em">
+            <LimbButton LOBJ={Prosthetic} />
+        </Box>
+      ))}
+      {ShowQuirks.map(Quirk => (
+        <Box
+          key={Quirk.Qkey}
+          mr="0.5em"
+          mb="0.5em">
+          <QuirkButton QOBJ={Quirk} />
+        </Box>
+      ))}
     </Box>
   );
 };
@@ -649,6 +665,56 @@ const QuirkButton = (props, context) => {
   );
 };
 
+/// Basically the above but for prosthetics
+/// WIll be a cool steely gray aesthetic
+/// Simpler cus its just an indicator that hey, ur prostheting
+const LimbButton = (props, context) => {
+  const { act, data } = useBackend(context);
+  const LimbObj = props.LOBJ || {};
+
+  const Limb = LimbObj.Limb || "Bingus";
+  const Manufacturer = LimbObj.Manufacturer || "Bingus";
+
+  /// dark bluish gray
+  const BGColor = "#222244";
+  /// steely gray
+  const TitleColor = "#DDDDEE";
+  /// dark gray
+  const MiniTextColor = "#AAAAAA";
+
+  return (
+    <Box
+      px="1rem"
+      py="0.25rem"
+      mb="0.5rem"
+      mx="0.5rem"
+      width="100%"
+      textAlign="left"
+      backgroundColor={BGColor}
+      style={{
+        'background-image': 'linear-gradient(#222244, #444466, #444466, #222244)',
+      }}>
+      <Box
+        // style={{
+        //   'border-bottom': '1px solid rgba(255, 255, 255, 0.8)',
+        // }}
+        textAlign="left"
+        bold
+        fontSize="16px"
+        mb="0.5rem"
+        color={TitleColor}>
+        <Flex direction="row">
+          <Flex.Item basis="3em">
+            -11
+          </Flex.Item>
+          <Flex.Item grow={1} color={MiniTextColor}>
+            Your {Manufacturer} {Limb}
+          </Flex.Item>
+        </Flex>
+      </Box>
+    </Box>
+  );
+};
 
 // / A helper function for QuirkButton to make a box with a list of
 // / quirk objects that conflict with this quirk. It takes an array of

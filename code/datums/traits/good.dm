@@ -334,7 +334,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Light Step"
 	desc = "You walk with a gentle step; stepping on sharp objects is quieter, less painful and you won't leave footprints behind you."
 	value = 14
-	category = "Movement Quirk"
+	category = "Movement Quirks"
 	mechanics = "You make less noise when stepping on glass. You still take damage without shoes though."
 	conflicts = list(
 		/datum/quirk/clumsy,

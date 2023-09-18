@@ -245,6 +245,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	BODY_ZONE_L_LEG,
 	BODY_ZONE_R_LEG
 ))
+GLOBAL_LIST_INIT(main_body_parts2words, list(
+	BODY_ZONE_HEAD = "head",
+	BODY_ZONE_CHEST = "chest",
+	BODY_ZONE_L_ARM = "left arm",
+	BODY_ZONE_R_ARM = "right arm",
+	BODY_ZONE_L_LEG = "left leg",
+	BODY_ZONE_R_LEG = "right leg",
+))
 
 #define BODY_ZONE_PRECISE_EYES		"eyes"
 #define BODY_ZONE_PRECISE_MOUTH		"mouth"
