@@ -753,7 +753,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
-	value = 77
+	value = 55
 	category = "Movement Quirks"
 	mechanics = "You aren't slowed at all by going off roads or paths."
 	conflicts = list(

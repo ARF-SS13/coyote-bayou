@@ -747,7 +747,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -1
+	value = -11
 	category = "Phobia Quirks"
 	mechanics = "You're scared of cats, dog."
 	conflicts = list(
