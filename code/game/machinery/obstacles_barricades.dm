@@ -368,8 +368,17 @@
 	icon_state = "bars"
 	obj_integrity = 400
 	max_integrity = 400
-	proj_pass_rate = 90
-	pass_flags = PASSGRILLE //Feed the prisoners, or not.
+	proj_pass_rate = 50
+	pass_flags_self = null
+
+/obj/structure/barricade/barswindow
+	name = "metal bars"
+	desc = "Old, corroded metal bars. The bars have a window for easily passing things through!" 
+	icon_state = "barswindow"
+	obj_integrity = 400
+	max_integrity = 400
+	proj_pass_rate = 80
+	pass_flags_self = LETPASSTHROW
 
 /*
 /obj/structure/barricade/sandbags
