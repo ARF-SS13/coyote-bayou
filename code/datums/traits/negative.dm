@@ -280,7 +280,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
 	value = -33
 	category = "Vision Quirks"
-	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Are you part molerat?"
+	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Sunglasses help a lot. Are you part molerat?"
 	conflicts = list(/datum/quirk/nyctophobia)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
