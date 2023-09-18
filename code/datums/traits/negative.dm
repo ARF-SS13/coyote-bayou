@@ -237,7 +237,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes
 	name = "Nearsighted - Trashed Vision"
 	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
-	value = -26
+	value = -33
 	category = "Vision Quirks"
 	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
 	conflicts = list(
@@ -250,16 +250,14 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes/add()
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
-/*
+
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
-	value = -11
+	value = -22
 	category = "Phobia Quirks"
 	mechanics = "In the dark you toggle to walk."
-	conflicts = list(
-		
-	)
+	conflicts = list(/datum/quirk/lightless)
 	medical_record_text = "Patient demonstrates a fear of the dark."
 
 /datum/quirk/nyctophobia/on_process()
@@ -278,14 +276,12 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 
 /datum/quirk/lightless
-	name = "Phobia - Bright Light"
+	name = "Light Sensitivity"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
-	value = -11
-	category = "Phobia Quirks"
-	mechanics = "In the light you get a negative moodlet, are you part molerat?"
-	conflicts = list(
-		
-	)
+	value = -33
+	category = "Vision Quirks"
+	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Are you part molerat?"
+	conflicts = list(/datum/quirk/nyctophobia)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
 	medical_record_text = "Patient has acute phobia of light, and insists it is physically harmful."
@@ -293,11 +289,16 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/lightless/on_process()
 	var/turf/T = get_turf(quirk_holder)
 	var/lums = T.get_lumcount()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/clothing/glasses/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
+
 	if(lums >= 0.8)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
+		if(!istype(sunglasses, /obj/item/clothing/glasses/sunglasses))
+			if(quirk_holder.eye_blurry < 20)
+				quirk_holder.eye_blurry = 20
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "brightlight")
-*/
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
@@ -368,8 +369,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	mechanics = "Your accuracy degrades like crazy when moving, firing, or doing much of anything."
 	conflicts = list(
 		/datum/quirk/deadeye,
-		/datum/quirk/straightshooter,
-		/datum/quirk/primitive
+		/datum/quirk/straightshooter
 	)
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
@@ -747,7 +747,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -1
+	value = -11
 	category = "Phobia Quirks"
 	mechanics = "You're scared of cats, dog."
 	conflicts = list(
@@ -920,10 +920,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Ranged Quirks"
 	mechanics = "The good news is you can still use bows and slings. Not that anyone uses slings. :("
 	conflicts = list(
-		/datum/quirk/deadeye,
-		/datum/quirk/straightshooter,
-		/datum/quirk/poor_aim,
-		/datum/quirk/primitive,
 	)
 	mob_trait = TRAIT_CHUNKYFINGERS
 	gain_text = "<span class='notice'>Your fingers feel... thick.</span>"
@@ -1056,7 +1052,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/nonviolent,
 		/datum/quirk/iron_fist,
 		/datum/quirk/steel_fist,
-		/datum/quirk/noodle_fist,
 		/datum/quirk/mastermartialartist,
 	)
 	mob_trait = TRAIT_NOODLEFIST
