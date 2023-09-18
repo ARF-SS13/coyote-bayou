@@ -1572,8 +1572,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return
 
-/datum/species/proc/bootysmack(turf/place, vol = 100, dist = 15)
-	playsound(target.loc, 'sound/weapons/slap.ogg', vol, FALSE, SOUND_RANGE(dist), frequency = 22000) // deep bassy ass
+/datum/species/proc/bootysmack(turf/place, vol = 50, dist = 15)
+	playsound(place, 'sound/weapons/slap.ogg', vol, FALSE, SOUND_DISTANCE(dist), frequency = 22000) // deep bassy ass
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	// CITADEL EDIT slap mouthy gits and booty
@@ -1623,37 +1623,38 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
 			if(!COOLDOWN_FINISHED(src, ass))
 				if(user == target)
-					to_chat(user, span_alert("Your ass is still jiggling about! Wouldn't be as satisfying to do it <i>just</i> yet~"))
+					to_chat(user, span_alert("Your ass is still jiggling about way too much to get a good smack!"))
 				else
-					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about! Wouldn't be as satisfying to do it <i>just</i> yet~"))
-				return
-			target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_SOLID)
-			if(user == target)
-				playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -3, frequency = 22000) // deep bassy ass
-				user.adjustStaminaLoss(25)
-				user.visible_message(
-					span_notice("[user] gives [user.p_their()] fat ass a smack!"),
-					span_notice("You give your big fat ass a smack! It sloshes and throws you off balance!"),
-				)
-				return
+					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
 			else
-				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
-				playsound(target.loc, 'sound/weapons/slap.ogg', 100, FALSE, 5, frequency = 22000) // deep bassy ass
-				var/vol = 100
-				var/dist = 15
-				var/time = 0.5 SECONDS
-				for(var/i in 1 to 3)
-					vol *= 0.75
-					dist = round(dist*0.75)
-					addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
-					time += 0.5 SECONDS
-				target.adjustStaminaLoss(25)
-				user.visible_message(
-					span_notice("\The [user] rears back and CLAPS their hand across \the [target]'s big fat ass!"),
-					span_greentext("That wonderful donk <i>demands</i> attention! You smack that plump, jiggly ass, your hand sinking in for a moment! It gives you a wobbly round of applause and knocks its owner off balance! So satifsying!~"),
-					target = target, 
-					target_message = span_notice("[user] smacks your big fat ass and sends it jiggling! It sloshes about and throws you off balance!"))
-			return FALSE
+				COOLDOWN_START(src, ass, 5 SECONDS)
+				target.Dizzy(5)
+				if(user == target)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					user.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("[user] gives [user.p_their()] ass a smack!"),
+						span_notice("You give your big fat ass a smack! It sloshes and throws you off balance!"),
+					)
+					return
+				else
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					// var/vol = 40
+					// var/dist = 15
+					// var/time = 0.5 SECONDS
+					// for(var/i in 1 to 3)
+					// 	vol *= 0.75
+					// 	dist = round(dist*0.75)
+					// 	addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
+					// 	time += 0.5 SECONDS
+					target.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("\The [user] slaps [target]'s ass!"),
+						span_greentext("That wonderful donk <i>demands</i> attention! You smack that plump, jiggly ass, your hand sinking in for a moment! It gives you a wobbly round of applause and knocks its owner off balance! So satifsying!~"),
+						target = target, 
+						target_message = span_notice("[user] smacks your big fat ass and sends it jiggling! It sloshes about and throws you off balance!"))
+				return FALSE
 		user.adjustStaminaLossBuffered(3)
 		target.adjust_arousal(20,maso = TRUE)
 		if (ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(10))

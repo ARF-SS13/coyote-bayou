@@ -7,7 +7,7 @@
 	category = "Health Quirks"
 	mechanics = "You are constantly losing blood, even if you're not wounded."
 	conflicts = list(
-		/datum/quirk/extrablood,
+		/datum/quirk/bloodpressure,
 	)
 	gain_text = span_danger("You feel your vigor slowly fading away.")
 	lose_text = span_notice("You feel vigorous again.")
@@ -420,7 +420,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Social Anxiety"
 	desc = "Talking to people is very difficult for you, and you often stutter or even lock up."
 	value = -22
-	category = "Emotional Quirk"
+	category = "Emotional Quirks"
 	mechanics = "You stutter a lot, and make a bit of a mess of your sentences. Doesn't come with the bottom quirk for free."
 	conflicts = list(
 		/datum/quirk/apathetic,
@@ -1056,10 +1056,10 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	name = "Fists of Noodle"
 	desc = "Your punching is legendary. Legendarily bad at doing anything to anyone."
 	value = -11
-	category = "Hand To Hand Quirks"
+	category = "Hand to Hand Quirks"
 	mechanics = "Your punches do literally nothing."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/iron_fist,
 		/datum/quirk/steel_fist,
 		/datum/quirk/noodle_fist,
@@ -1082,7 +1082,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Melee Quirks"
 	mechanics = "Your melee attacks do 5 less damage."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/bigleagues,
 		/datum/quirk/littleleagues,
 		/datum/quirk/wimpy,
@@ -1099,7 +1099,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Melee Quirks"
 	mechanics = "Your melee attacks do 10 less damage."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/bigleagues,
 		/datum/quirk/littleleagues,
 		/datum/quirk/gentle,

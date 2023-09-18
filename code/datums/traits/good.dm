@@ -641,7 +641,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Lifepath Quirks"
 	mechanics = "You get double the amount of usable materials when you butcher with a sharp object via harm intent."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 	)
 	mob_trait = TRAIT_TRAPPER
 	gain_text = span_notice("You learn the secrets of butchering!")
@@ -655,7 +655,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Melee Combat"
 	mechanics = "You do an extra 10 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/littleleagues,
 		/datum/quirk/gentle,
 		/datum/quirk/wimpy,
@@ -672,7 +672,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Melee Combat"
 	mechanics = "You do an extra 5 damage with all melee attacks."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/bigleagues,
 		/datum/quirk/gentle,
 		/datum/quirk/wimpy,
@@ -813,7 +813,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Hand to Hand Quirks"
 	mechanics = "Your punches do 6 to 12 damage."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/steel_fist,
 		/datum/quirk/noodle_fist,
 	)
@@ -834,7 +834,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Hand to Hand Quirks"
 	mechanics = "Your punches do 10 to 16 damage, yikes!"
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/iron_fist,
 		/datum/quirk/noodle_fist,
 	)
@@ -1271,7 +1271,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Hand to Hand Quirks"
 	mechanics = "Your punches, when you roll max damage, inflict clone damage instead ofnormal brute damage on people. Which is harder to heal and just generally somewhat devastating."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/noodle_fist,
 	)
 	mob_trait = TRAIT_KI_VAMPIRE
@@ -1286,7 +1286,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Hand to Hand Quirks"
 	mechanics = "You ALWAYS punch for MAX damage."
 	conflicts = list(
-		/datum/quirk/pacifist,
+		/datum/quirk/nonviolent,
 		/datum/quirk/mastermartialartist,
 	)
 	mob_trait = TRAIT_PERFECT_ATTACKER
@@ -1316,7 +1316,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/straightshooter,
-		/datum/quirk/pooraim,
+		/datum/quirk/poor_aim,
 	)
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
@@ -1332,7 +1332,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/deadeye,
-		/datum/quirk/pooraim,
+		/datum/quirk/poor_aim,
 	)
 	mob_trait = TRAIT_NICE_SHOT
 	gain_text = span_notice("Your aim is amazing, and you know it.")

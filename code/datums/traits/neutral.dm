@@ -271,12 +271,12 @@
 	gain_text = "<span class='notice'>Your ass rivals those of golems.</span>"
 	lose_text = "<span class='notice'>Your butt feels more squishy and slappable.</span>"
 
-/datum/quirk/fat_ass
+/datum/quirk/butter_ass
 	name = "Buns of Thunder"
 	desc = "That pants-stretching, seat-creaking, undie-devouring ass of yours is as satisfying to smack as it is difficult to keep balanced!"
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "Any time someone smacks your pillowy butt, its sloshing will make you fall over! But, it'll satisfy whoever smacked it!"
+	mechanics = "Any time someone smacks your pillowy butt, its jiggling will make moving hard for a few moments! But, it'll satisfy whoever smacked it!"
 	conflicts = list(
 		/datum/quirk/steel_ass,
 	)

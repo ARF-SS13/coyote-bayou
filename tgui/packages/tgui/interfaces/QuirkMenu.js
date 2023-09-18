@@ -522,7 +522,7 @@ const QuirkButton = (props, context) => {
 
   const TitleColor = !CanClickIt && !UserHasQuirk ? "#221111" : 'white' ;
   const BGColor = UserHasQuirk ? "#448844" : CanClickIt ? "" : "#884444";
-  const MiniTextColor = UserHasQuirk ? "white" : CanClickIt ? "label" : "#221111";
+  const MiniTextColor = UserHasQuirk ? "white" : CanClickIt ? "white" : "#221111";
 
   let SoundAct = "Generic"
   if(CanClickIt) {
@@ -624,7 +624,7 @@ const ConflictReadout = (props, context) => {
   const { act, data } = useBackend(context);
   const AllQuirks = data.AllQuirks || [];
   const ConflictObjects = props.QConflict || [];
-  const TextCol = props.TextCol || "label";
+  const TextCol = props.TextCol || "white";
   if(ConflictObjects.length === 0) {
     return(<Box />)
   }
@@ -633,9 +633,9 @@ const ConflictReadout = (props, context) => {
     <Flex direction="column">
       <Flex.Item shrink={0}>
         <Box
-          textAlign="center"
+          textAlign="left"
           fontSize="10px"
-          color="#884444">
+          color="#22FAFA">
           <b>Conflicts With:</b>
         </Box>
       </Flex.Item>
