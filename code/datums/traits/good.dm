@@ -885,11 +885,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how to perform even the simplest surgery.")
 	locked = FALSE
 /datum/quirk/surgerymid
-	name = "Minor Surgery"
+	name = "Advanced Surgery"
 	desc = "You are a competent medical practicioner, capable of performing a larger array of surgeries."
 	value = 33
 	category = "Medical Quirks"
-	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
+	mechanics = "You gain access to most surgeries, and advanced wound tending surgeries."
 	conflicts = list(
 		/datum/quirk/surgeryhigh,
 		/datum/quirk/surgerylow
@@ -900,11 +900,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	locked = FALSE
 
 /datum/quirk/surgeryhigh
-	name = "Minor Surgery"
+	name = "Expert Surgery"
 	desc = "You are a well established surgeon. You can perform most, if not all, surgeries."
 	value = 66
 	category = "Medical Quirks"
-	mechanics = "You gain access to most surgeries, only being limited on brain surgery essentially."
+	mechanics = "You gain access to most surgeries, particularly expert wound tending surgeries"
 	conflicts = list(
 		/datum/quirk/surgerylow,
 		/datum/quirk/surgerymid
@@ -1602,6 +1602,33 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
+
+/datum/quirk/wildshape
+	name = "Wild Shape"
+	desc = "You've developed through some means the ability to adopt a lesser form. What it is was decided by yourself or mere circumstance, but you can transform back and forth at will."
+	value = 15
+	category = "Mutant Quirks"
+	mechanics = "You gain the shapeshift spell and can cast it nearly at-will! This allows you to transform into an animal and back again. Though beware, once you select a form, that is your only form you can assume again."
+	conflicts = list(
+		
+	)
+	mob_trait = TRAIT_WILDSHAPE
+	gain_text = span_notice("You tapped to potentials of the critter horde!")
+	lose_text = span_danger("Small critters refuse to obey your commands now.")
+	locked = FALSE
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/wildshape
+
+
+/datum/quirk/wildshape/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	wildshape = new
+	H.AddSpell(wildshape)
+
+/datum/quirk/wildshape/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.RemoveSpell(wildshape)
+		QDEL_NULL(wildshape)
 
 /datum/quirk/zoomies
 	name = "Zoomies"
