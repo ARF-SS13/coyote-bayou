@@ -692,7 +692,7 @@
 	return language_holder
 
 /// Grants the supplied language and sets omnitongue true.
-/atom/movable/proc/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+/atom/movable/proc/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.grant_language(language, understood, spoken, source)
 
@@ -712,12 +712,12 @@
 	return LH.remove_all_languages(source, remove_omnitongue)
 
 /// Adds a language to the blocked language list. Use this over remove_language in cases where you will give languages back later.
-/atom/movable/proc/add_blocked_language(language, source = LANGUAGE_ATOM)
+/atom/movable/proc/add_blocked_language(language, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.add_blocked_language(language, source)
 
 /// Removes a language from the blocked language list.
-/atom/movable/proc/remove_blocked_language(language, source = LANGUAGE_ATOM)
+/atom/movable/proc/remove_blocked_language(language, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.remove_blocked_language(language, source)
 
