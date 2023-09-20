@@ -490,6 +490,10 @@
 	key = "blank"
 	message = "looks like they have no thoughts in their head."
 
+/datum/emote/living/carbon/snunch
+	key = "snunch"
+	message = "is lunching like a snake."
+
 //hahadorks
 
 /datum/emote/living/carbon/powerpose
