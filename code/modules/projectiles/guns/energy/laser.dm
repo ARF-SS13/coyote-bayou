@@ -834,6 +834,23 @@
 	)
 	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
 
+/obj/item/gun/energy/laser/stunrcw
+	name = "Disabler RCW"
+	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds. This one seems to be modified with special capacitors that make it non lethal!"
+	icon_state = "disablerrcw"
+	item_state = "rcw"
+	automatic = 1
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/stunrcw)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/slow
+	)
+	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
+
 //Alien Blaster
 /obj/item/gun/energy/laser/plasma/pistol/alien
 	name = "alien blaster"
