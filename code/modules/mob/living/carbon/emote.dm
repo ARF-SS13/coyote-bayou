@@ -492,7 +492,7 @@
 
 /datum/emote/living/carbon/snunch
 	key = "snunch"
-	message = "crunches on something like a snail."
+	message = "is lunching like a snake."
 
 //hahadorks
 
