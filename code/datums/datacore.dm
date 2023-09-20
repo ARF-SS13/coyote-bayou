@@ -102,6 +102,7 @@
 	var/list/flw = list()
 	var/list/tribe = list()
 	var/list/was = list()
+	var/list/hvn = list()
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -153,6 +154,9 @@
 			department = 1
 		if(rank in GLOB.wasteland_positions)
 			was[name] = rank
+			department = 1
+		if(rank in GLOB.heavensnight_positions)
+			hvn[name] = rank
 			department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
