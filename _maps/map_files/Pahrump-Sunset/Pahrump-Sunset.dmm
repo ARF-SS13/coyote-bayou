@@ -1877,22 +1877,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/building/abandoned)
-"ahq" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
-	},
-/area/f13/building)
 "aht" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt{
@@ -8462,23 +8446,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/abandoned)
-"aDN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
-	},
-/area/f13/building)
 "aDO" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
@@ -9128,26 +9095,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"aFE" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/effect/turf_decal/trimline/neutral{
-	color = "#000000";
-	icon_state = "trimline_fill"
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
-	},
-/area/f13/building)
 "aFF" = (
 /obj/structure/chair{
 	dir = 4
@@ -18865,8 +18812,7 @@
 	pixel_x = 14
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
+	color = "#555555"
 	},
 /area/f13/building)
 "bmO" = (
@@ -79980,8 +79926,7 @@
 	icon_state = "trimline_fill"
 	},
 /turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
+	color = "#555555"
 	},
 /area/f13/building)
 "oHk" = (
@@ -83485,27 +83430,6 @@
 /obj/structure/flora/grass/coyote/five,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pvt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/effect/turf_decal/trimline/neutral{
-	color = "#000000";
-	icon_state = "trimline_fill"
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
-	},
-/area/f13/building)
 "pvx" = (
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -112238,15 +112162,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city)
-"waU" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/closed/wall/f13/sunset/brick_small_light{
-	color = "#666666";
-	opacity = 0
-	},
-/area/f13/building)
 "wbi" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -125582,8 +125497,8 @@ bRy
 pgA
 trb
 oAW
-aDN
-ahq
+gEA
+oAW
 gEA
 gEA
 vVy
@@ -125837,7 +125752,7 @@ pmM
 opz
 cTr
 xyK
-aFE
+trb
 nms
 sSM
 nms
@@ -126094,7 +126009,7 @@ pmM
 opz
 lKl
 uHC
-aFE
+trb
 sIz
 gOb
 oyD
@@ -126865,7 +126780,7 @@ pmM
 baH
 bSK
 gBZ
-aFE
+trb
 hHX
 vpe
 vpe
@@ -127122,7 +127037,7 @@ pmM
 gjC
 wfA
 rYo
-pvt
+rEY
 hLs
 qgf
 rte
@@ -127893,13 +127808,13 @@ bzm
 vtX
 bSK
 rYo
-aFE
+trb
 bmM
 dKU
 bay
 npL
 sHK
-waU
+npL
 arE
 iml
 qfX
@@ -128411,7 +128326,7 @@ lye
 izs
 grM
 rkB
-waU
+npL
 slX
 qvn
 arE
@@ -128668,7 +128583,7 @@ bmM
 bmM
 kHj
 kCo
-waU
+npL
 npL
 npL
 wgF
@@ -129177,7 +129092,7 @@ mca
 lca
 opz
 bSK
-aFE
+trb
 afl
 tjk
 fRR
@@ -129692,8 +129607,8 @@ gpi
 lSY
 bSK
 trb
-ahq
-ahq
+oAW
+oAW
 sTh
 ppW
 qsK
@@ -130205,7 +130120,7 @@ njV
 oJu
 ocF
 bSK
-aFE
+trb
 uLl
 lJz
 xrn
@@ -130462,7 +130377,7 @@ rdC
 lSY
 rJd
 sxQ
-aFE
+trb
 mhp
 rZz
 sTV
@@ -131747,7 +131662,7 @@ hox
 njV
 opz
 bSK
-pvt
+rEY
 iAl
 fLx
 lnH
@@ -132518,7 +132433,7 @@ rdC
 tuC
 xGD
 bSK
-aFE
+trb
 hVE
 cBI
 jcR
@@ -132777,11 +132692,11 @@ nvU
 prZ
 oAW
 oAW
-ahq
-ahq
 oAW
 oAW
-ahq
+oAW
+oAW
+oAW
 wmE
 wmE
 wmE
