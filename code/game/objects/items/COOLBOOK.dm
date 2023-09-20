@@ -12,6 +12,14 @@
 	/// The page we're on
 	var/page = 1
 
+/obj/item/cool_book/hnguide
+	name = "Fancy Book"
+	desc = "This is an error. If you see this, inform a developer!"
+	icon = 'icons/obj/library.dmi'
+	icon_state = "book1"
+	book_key = "hnguide"
+	color = "#ff3388" 
+
 /obj/item/cool_book/druidguide
 	name = "Fancy Book"
 	desc = "This is an error. If you see this, inform a developer!"

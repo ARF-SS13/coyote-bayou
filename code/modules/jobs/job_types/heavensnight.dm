@@ -114,13 +114,14 @@
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
+		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,
 		)
 
 /datum/job/heavensnight/f13clubworker
 	title = "Club Worker"
 	flag = F13CLUBWORKER
-	department_head = list("Club Manager")
+	department_head = list("Club Worker")
 	head_announce = list("Security")
 	faction = FACTION_CLUB
 	social_faction = FACTION_CLUB
@@ -152,6 +153,7 @@
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
+		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,
 		)
 
