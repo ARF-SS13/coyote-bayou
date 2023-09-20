@@ -27,7 +27,7 @@
 		. += vassDesc
 
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDE) && (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 
 	if(skipface || get_visible_name() == "Unknown")
 		. += "You can't make out what species they are."
