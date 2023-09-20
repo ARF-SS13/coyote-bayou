@@ -805,3 +805,78 @@
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
+
+//Shapely Bra (cow)  mooooooo?
+
+/datum/sprite_accessory/underwear/top/shapelymoopetite
+	name = "Shapely Cow Bra - Petite"
+	icon_state = "shapelymoo_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoogirlish
+	name = "Shapely Cow Bra - Girlish"
+	icon_state = "shapelymoo_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoocurvy
+	name = "Shapely Cow Bra - Curvy"
+	icon_state = "shapelymoo_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoobusty
+	name = "Shapely Cow Bra - Busty"
+	icon_state = "shapelymoo_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoobackbreaker
+	name = "Shapely Cow Bra - Backbreakers"
+	icon_state = "shapelymoo_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Tube Top w/ Fish Net (ttfn)
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnpetite
+	name = "Shapely Tube Top w/ Netting - Petite"
+	icon_state = "shapelyttfn_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfngirlish
+	name = "Shapely Tube Top w/ Netting - Girlish"
+	icon_state = "shapelyttfn_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfncurvy
+	name = "Shapely Tube Top /w Netting - Curvy"
+	icon_state = "shapelyttfn_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnbusty
+	name = "Shapely Tube Top w/ Netting - Busty"
+	icon_state = "shapelyttfn_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnbackbreaker
+	name = "Shapely Tube Top w/  Netting - Backbreakers"
+	icon_state = "shapelyttfn_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
