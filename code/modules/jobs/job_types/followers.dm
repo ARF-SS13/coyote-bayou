@@ -277,6 +277,7 @@ Administrator
 	backpack_contents = list(
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/storage/wallet/stash/high = 1,
+		/obj/item/storage/belt/utility/full/engi = 1,
 		/obj/item/disk/xenobio_console_upgrade/monkey = 1,
 		/obj/item/disk/xenobio_console_upgrade/slimeadv = 1,
 		)
