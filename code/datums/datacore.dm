@@ -210,6 +210,11 @@
 		for(var/name in was)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[was[name]]</td></tr>"
 			even = !even
+	if(length(hvn))
+		dat += "<tr><th colspan=3>Heavens Night</th></tr>"
+		for(var/name in hvn)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[hvn[name]]</td></tr>"
+			even = !even
 	// misc guys
 	if(length(misc))
 		dat += "<tr><th colspan=3>Miscellaneous</th></tr>"
