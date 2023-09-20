@@ -1318,20 +1318,20 @@ Raider
 	title = "Radio Operator"
 	flag = F13RADIOOP
 	faction = FACTION_WASTELAND
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "fate"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13radioop
 
-	access = list()		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list()
+	access = list(ACCESS_TCOMSAT)
+	minimal_access = list(ACCESS_TCOMSAT)
 /datum/outfit/job/wasteland/f13radioop
 	name = "Radio Operator"
 	jobtype = /datum/job/wasteland/f13radioop
-	id = null
+	id =	/obj/item/card/id/silver
 	ears = null
 	belt = /obj/item/kit_spawner/waster
 	l_pocket = /obj/item/storage/wallet/stash/low
@@ -1344,7 +1344,6 @@ Raider
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
-		/obj/item/radio/headset,
 		/obj/item/clothing/mask/chameleon
 		)
 
