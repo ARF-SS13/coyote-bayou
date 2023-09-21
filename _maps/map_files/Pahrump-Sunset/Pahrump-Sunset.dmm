@@ -30216,42 +30216,14 @@
 	},
 /area/f13/wasteland)
 "dtx" = (
-/obj/structure/noticeboard{
-	desc = "A notice board, for the town of Nash.";
-	layer = 5.0;
-	name = "Notice Board - Nash";
-	persistence_replacement = "Notice Board - Nash- 1";
-	pixel_x = 4;
-	pixel_y = 35;
-	plane = -5
+/obj/machinery/water_purifier{
+	pixel_x = 8;
+	pixel_y = -2
 	},
-/obj/item/newspaper{
-	anchored = 1;
-	pixel_x = 15;
-	pixel_y = 46
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/obj/structure/sign/barsign{
-	layer = 5;
-	pixel_y = 69
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = -11;
-	pixel_y = 19
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = -11;
-	pixel_y = 40
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland)
+/area/f13/bar)
 "dtD" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{
@@ -34533,7 +34505,7 @@
 	name = "Notice Board - Nash";
 	persistence_replacement = "Notice Board - Nash- 2";
 	pixel_x = -3;
-	pixel_y = 35;
+	pixel_y = 30;
 	plane = -5
 	},
 /obj/structure/fence/wooden{
@@ -34541,14 +34513,14 @@
 	dir = 1;
 	layer = 3.1;
 	pixel_x = 11;
-	pixel_y = 19
+	pixel_y = 15
 	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
 	layer = 3.1;
 	pixel_x = 11;
-	pixel_y = 40
+	pixel_y = 35
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -38901,9 +38873,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ftP" = (
-/obj/machinery/chem_master/condimaster,
-/obj/structure/sink{
-	pixel_x = -12
+/obj/machinery/chem_master/condimaster{
+	pixel_y = -5
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -48904,6 +48875,10 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/food/condiment/peppermill,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/item/kitchen/knife{
+	pixel_x = -10;
+	pixel_y = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -56693,12 +56668,6 @@
 /obj/structure/table/wood/bar{
 	density = 0;
 	pixel_y = -10
-	},
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/kitchen/knife{
-	pixel_x = -10;
-	pixel_y = 8
 	},
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1;
@@ -91472,15 +91441,38 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "rmM" = (
-/obj/structure/closet/crate/bin{
+/obj/structure/noticeboard{
+	desc = "A notice board, for the town of Nash.";
+	layer = 5.0;
+	name = "Notice Board - Nash";
+	persistence_replacement = "Notice Board - Nash- 1";
+	pixel_x = 4;
+	pixel_y = 30;
+	plane = -5
+	},
+/obj/item/newspaper{
+	anchored = 1;
+	pixel_x = 15;
+	pixel_y = 40
+	},
+/obj/structure/fence/wooden{
 	density = 0;
-	pixel_x = 10;
-	pixel_y = 16
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 15
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 35
 	},
-/area/f13/bar)
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "rmT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -102146,6 +102138,15 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"tGt" = (
+/obj/structure/table/wood/bar,
+/obj/item/reagent_containers/glass/rag,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/storage/box/drinkingglasses,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "tGu" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -109016,11 +109017,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/ruins)
 "voG" = (
-/obj/structure/table/wood/bar,
-/obj/item/reagent_containers/glass/rag,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/sign/barsign,
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar)
 "voH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -127530,7 +127528,7 @@ mkb
 szs
 mkb
 ahA
-rBz
+tGt
 mkb
 bgo
 nFA
@@ -127787,7 +127785,7 @@ cnf
 szs
 mkb
 ahA
-voG
+rBz
 mkb
 jwq
 nFA
@@ -128047,8 +128045,8 @@ ahA
 rBz
 mkb
 ftP
-oLd
-kgu
+nFA
+rmM
 jxf
 ltv
 ksL
@@ -128304,8 +128302,8 @@ ahA
 rBz
 mkb
 mkb
-oLd
-kgu
+nFA
+esN
 jxf
 qWw
 ksL
@@ -128561,7 +128559,7 @@ ahA
 rBz
 mkb
 hpV
-nFA
+voG
 kgu
 jxf
 ltv
@@ -128816,10 +128814,10 @@ mkb
 mkb
 ahA
 rBz
-rmM
 mkb
-nFA
 dtx
+nFA
+kgu
 jxf
 eiJ
 ksL
@@ -129076,7 +129074,7 @@ nFA
 oLd
 geZ
 nFA
-esN
+kgu
 jxf
 miY
 ksL
