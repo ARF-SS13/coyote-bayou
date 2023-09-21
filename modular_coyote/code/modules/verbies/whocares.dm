@@ -105,7 +105,7 @@
 
 /mob/Login()
 	. = ..()
-	var/const/defaultStatusMessage = "Heehoo, default status message!"
+	var/const/defaultStatusMessage = span_green("Bored, say hi!")
 	if(client) // cursed way to get around disconnects and mob changes.
 		if(length(statusMessage))
 			client.statusMessage = statusMessage
