@@ -519,7 +519,7 @@
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/revolver/shotpistol(src)
 	new /obj/item/ammo_box/shotgun/buck(src)
-	new obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/storage/survivalkit/combat/empty(src)
 
 /datum/gear/donator/kits/fuzlet2
