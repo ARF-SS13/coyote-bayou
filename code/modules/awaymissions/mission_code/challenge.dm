@@ -28,7 +28,7 @@
 	idle_power_usage = 0
 	active_power_usage = 0
 
-	active = TRUE
+	active = FALSE // no more lag pls i beg
 	locked = TRUE
 	state = 2
 
