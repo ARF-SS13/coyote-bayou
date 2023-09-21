@@ -129,6 +129,7 @@
 			//owner.Stun(70)
 			owner.Jitter(8)
 			owner.eye_blurry = 20
+			owner.emote("cry")
 		if(2)
 			owner.emote("scream")
 			owner.Jitter(5)
