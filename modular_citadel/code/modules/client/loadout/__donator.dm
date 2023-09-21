@@ -817,7 +817,7 @@
 	path = /obj/item/storage/box/large/custom_kit/mathiel2
 	ckeywhitelist = list("mathiel")
 
-/obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
+/obj/item/storage/box/large/custom_kit/mathiel2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5(src)
 	new /obj/item/ammo_box/magazine/uzim9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/glock(src)
