@@ -514,9 +514,13 @@
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 	new /obj/item/stack/marker_beacon/thirty(src)
-	new /obj/item/screwdriver/nuke/nt(src)
-	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
-	new /obj/item/storage/survivalkit/combat(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby(src)
+	new /obj/item/ammo_box/magazine/m9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/revolver/shotpistol(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+	new obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/storage/survivalkit/combat/empty(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Scavfox Kit"
