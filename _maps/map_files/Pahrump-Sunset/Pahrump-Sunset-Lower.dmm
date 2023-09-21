@@ -6089,11 +6089,9 @@
 /turf/open/floor/wood_common,
 /area/f13/tunnel)
 "crX" = (
-/obj/machinery/computer/message_monitor{
-	dir = 4
-	},
-/obj/item/paper/monitorkey,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/storage/belt/utility/full/engi,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -35850,6 +35848,7 @@
 /obj/structure/table,
 /obj/item/storage/belt/utility/full/engi,
 /obj/machinery/light,
+/obj/item/paper/monitorkey,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
