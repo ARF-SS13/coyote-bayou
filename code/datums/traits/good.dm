@@ -1695,7 +1695,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
 
 	value = 32
-	category = "Armblade Quirks"
+	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat sword."
 	conflicts = list()
 	mob_trait = TRAIT_ARMBLADE
@@ -1704,10 +1704,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Arm Tentacle"
 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
 	value = 32
-	category = "Armblade Quirks"
+	category = "Mutant Quirks"
 	mechanics = "Your arm can turn into a horrible meat sword."
 	conflicts = list()
-	category = "Mutant Quirks"
 	mob_trait = TRAIT_ARMTENT
 
 /datum/quirk/bigbiter
@@ -1960,13 +1959,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	ADD_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
 
 
-/datum/quirk/tribal/remove()
+/datum/quirk/package/lifeoftheparty/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MUSICIAN, "Musician")
 		REMOVE_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
 
-/datum/quirk/package/Bruiser
+/datum/quirk/package/bruiser
 	name = "Bruiser"
 	desc = "You're a big guy."
 	value = 150
@@ -1979,13 +1978,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("DAMN BRO YOU SWOLE!")
 	lose_text = span_notice("Maybe you could skip gym day...")
 
-/datum/quirk/package/lifeoftheparty/add()
+/datum/quirk/package/bruiser/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
 	ADD_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
 
 
-/datum/quirk/package/lifeoftheparty/remove()
+/datum/quirk/package/bruiser/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
@@ -2040,6 +2039,29 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_FAST_PUMP, "Bolt Worker")
 		REMOVE_TRAIT(H, TRAIT_NICE_SHOT, "Straight Shooter")
+
+/datum/quirk/package/legendarywepsm
+	name = "Weaponsmith - Legendary"
+	desc = "You're just that good at making weapons. Maybe you should make a career out of this?"
+	value = 55
+	category = "Quirk Packages"
+	mechanics = "Grants access to Weaponsmith Basic and Masterwork."
+	conflicts = list(
+		/datum/quirk/gunsmith,
+		/datum/quirk/masterworksmith,
+	)
+
+/datum/quirk/package/legendarywepsm/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
+	ADD_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")
+
+
+/datum/quirk/package/legendarywepsm/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
+		REMOVE_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")
 
 /datum/quirk/package/reformedtribal
 	name = "Reformed Tribal Chemist"
