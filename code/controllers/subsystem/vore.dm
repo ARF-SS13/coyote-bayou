@@ -54,7 +54,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_mobtypes_that_should_vore()
 	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human)
-	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal/pet/catslug)
+	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal)	//It's ok we check if we have a client. Only player controlled mobs get vore.
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_items_that_can_be_vored()
 	for(var/itempath in VORABLE_TYPES)

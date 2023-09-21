@@ -1,4 +1,4 @@
-/* 
+/*
  * VORE COMPONENT FOR MOBS
  * Allows someone to be a predator
  * Not needed for prey!!!
@@ -34,6 +34,11 @@
 /datum/component/vore/Initialize()
 	if(!SSvore.should_have_vore(parent))
 		return COMPONENT_INCOMPATIBLE
+	var/mob/living/master
+	if(isliving(parent))
+		master = parent
+		if(!master.client)	//Don't generate vore component if there's no client.
+			return
 	RegisterSignal(parent, list(COMSIG_MOB_CLIENT_LOGIN), .proc/setup_vore)
 	RegisterSignal(parent, list(COMSIG_VORE_SAVE_PREFS), .proc/save_prefs)
 	RegisterSignal(parent, list(COMSIG_VORE_LOAD_PREFS), .proc/load_prefs)
@@ -60,10 +65,8 @@
 	RegisterSignal(parent, list(COMSIG_PARENT_EXAMINE), .proc/examine_bellies)
 	RegisterSignal(parent, list(COMSIG_MOB_DEATH), .proc/you_died) // casual
 	START_PROCESSING(SSvore, src)
-	if(isliving(parent))
-		var/mob/living/master = parent
-		if(master.client)
-			setup_vore()
+	if(master.client)
+		setup_vore()	//A bit redundant to double check if we still have a client. But just in case.
 
 /datum/component/vore/proc/setup_vore(force)
 	VORE_MASTER
@@ -149,7 +152,7 @@
 	if(!load_vore_prefs())
 		return FALSE
 	return TRUE
-	
+
 /datum/component/vore/proc/load_vore_prefs()
 	VORE_MASTER
 	// vore prefs are loaded with the client and up to date to the last save
@@ -503,7 +506,7 @@
 
 	//Timer and progress bar
 	if(!do_after(
-			master, 
+			master,
 			swallow_time,
 			FALSE,
 			movable_prey,
@@ -671,7 +674,7 @@
 	if(number_of_stuff == cached_belly_contents)
 		if(prob(80)) // how 2 fix atmos
 			return // We don't need to update slowdowns if the number of things in bellies hasn't changed.
-	cached_belly_contents = number_of_stuff	
+	cached_belly_contents = number_of_stuff
 	var/item_slow = 0
 	var/mob_slow = 0
 	for(var/obj/vore_belly/belly in vore_organs)
