@@ -183,9 +183,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
 	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
-	value = -32
+	value = -44 // Constant brain DoT. Can and will result in death if not managed.
 	category = "Health Quirks"
-	mechanics = "You're going to need to hit the clinic for mannitol pretty regularly, consider getting a big supply."
+	mechanics = "You're going to need to hit the clinic for mannitol pretty regularly, consider getting a big supply. This WILL kill you if you dont take care of it."
 	conflicts = list(
 		
 	)
@@ -237,7 +237,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes
 	name = "Nearsighted - Trashed Vision"
 	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
-	value = -33
+	value = -32
 	category = "Vision Quirks"
 	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
 	conflicts = list(
@@ -501,7 +501,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -11
+	value = -32 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of cats, dog."
 	conflicts = list(
@@ -526,7 +526,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/ratphobia
 	name = "Phobia - Rats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with rats."
-	value = -11
+	value = -44 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of rats, cheesebag."
 	conflicts = list(
@@ -551,7 +551,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/spiderphobia
 	name = "Phobia - Spiders"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
-	value = -11
+	value = -44 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of spiders, check your shoes!"
 	conflicts = list(
@@ -576,7 +576,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/lizardphobia
 	name = "Phobia - Lizards"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with lizards and reptiles."
-	value = -11
+	value = -32 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of lizards. I...  Yeah, you're scared of lizards."
 	conflicts = list(
@@ -600,7 +600,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/robotphobia
 	name = "Phobia - Robots/Synths"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
-	value = -22 // I do this because there's many enemy mobs which fit in this category, which effects a lot of gameplay.
+	value = -54 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of robots, time traveller."
 	conflicts = list(
@@ -624,7 +624,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/birdphobia
 	name = "Phobia - Birds"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
-	value = -11
+	value = -32 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = ""
 	conflicts = list(
@@ -648,7 +648,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/dogphobia
 	name = "Phobia - Dogs"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with dogs."
-	value = -11
+	value = -44 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. This one gets the lottery because apparently most of our players play canines.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of dogs, cat."
 	conflicts = list(
@@ -672,7 +672,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
-	value = -22
+	value = -32 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
 	category = "Phobia Quirks"
 	mechanics = "You really hate it when shit gets spooky."
 	conflicts = list(
@@ -697,7 +697,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/maskphobia
 	name = "Phobia - Masked People"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask."
-	value = -11
+	value = -66 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. Literally everyone wears some manner of mask. You'd be better off with pacifist.
 	category = "Phobia Quirks"
 	mechanics = "Chic chicy boom?  No thanks."
 	conflicts = list(
@@ -722,7 +722,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/doctorphobia
 	name = "Phobia - Doctors"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
-	value = -32
+	value = -54 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. This accounts for everything medical. Red crosses, medical clothes, medical tools, surgery, etc. If its expected in medical treatment, it will trigger this.
 	category = "Phobia Quirks"
 	mechanics = "Healthcare really is way too expensive these days."
 	conflicts = list(
@@ -744,21 +744,6 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/doctors, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/catphobia
-	name = "Phobia - Cats"
-	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -11
-	category = "Phobia Quirks"
-	mechanics = "You're scared of cats, dog."
-	conflicts = list(
-		
-	)
-	mob_trait = TRAIT_CATPHOBIA
-	gain_text = span_danger("You begin to tremble as an immeasurable fear of the feline menace grips your mind.")
-	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
-	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
-	locked = FALSE
-
 /datum/quirk/catphobia/post_add()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -772,7 +757,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/eyephobia
 	name = "Phobia - Eyes"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with eyes."
-	value = -11
+	value = -32
 	category = "Phobia Quirks"
 	mechanics = "You really hope they don't have their eyes on you."
 	conflicts = list(
@@ -822,7 +807,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/unstable
 	name = "Unstable"
 	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
-	value = -22
+	value = -33
 	category = "Emotional Quirks"
 	mechanics = "This quirk stops you from recovering mood levels. Be very careful with it as it can tank your mood rapidly with negative traits like depressed."
 	conflicts = list(
@@ -836,7 +821,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/blindness
 	name = "Blind"
 	desc = "You are completely blind, nothing can counteract this."
-	value = -32
+	value = -42 // Since trashed vision's a step below this, it makes sense to up it by ten.
 	category = "Vision Quirks"
 	mechanics = "You can't see."
 	conflicts = list(
@@ -1101,7 +1086,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/slow
 	name = "Mobility - Wasteland Slug"
 	desc = "You've spent some time in the wastes, you don't get around great."
-	value = -11
+	value = -22 // Increasing htese because the slowdown is for everything but grass, road, and manmade tiles.
 	category = "Movement Quirks"
 	mechanics = "Slows you down a fair deal if you're going off roads and normal paths."
 	conflicts = list(
@@ -1118,7 +1103,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/slower
 	name = "Mobility - Wasteland Molasses"
 	desc = "You don't get around well off road. Like. At all."
-	value = -22
+	value = -33 // Increasing htese because the slowdown is for everything but grass, road, and manmade tiles.
 	category = "Movement Quirks"
 	mechanics = "Slows you down a lot if you go off roads and normal paths."
 	conflicts = list(
@@ -1177,7 +1162,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/nosleep
 	name = "Can Not Sleep"
 	desc = "For whatever reason you literally lack the ability to sleep."
-	value = -22
+	value = -33 // Increased by ten after observing people with it dying far more often than normal. Might be a skill issue, we'll see how it feels.
 	category = "Lifepath Quirks"
 	mechanics = "You can't sleep. Why is this serious?  We have sleep healing."
 	conflicts = list(
@@ -1207,7 +1192,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/cantrun
 	name = "Mobility - Can not Run"
 	desc = "For whatever reason you just can't muster up the go to run."
-	value = -32
+	value = -44 // Upped because its perma walk. Just as bad as wasteland molasses, and they both get to stack. :>
 	category = "Movement Quirks"
 	mechanics = "Yeah, pretty self explanitory."
 	conflicts = list(
