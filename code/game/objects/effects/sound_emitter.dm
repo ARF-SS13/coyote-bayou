@@ -14,12 +14,13 @@
 
 /obj/effect/sound_emitter/Initialize()
 	. = ..()
-	if(!ispath(snd))
-		return
-	if(synchronize)
-		soundify()
-	else
-		unique_soundify()
+	return INITIALIZE_HINT_QDEL
+	//if(!ispath(snd))
+	//	return
+	//if(synchronize)
+	//	soundify()
+	//else
+	//	unique_soundify()
 
 /obj/effect/sound_emitter/Destroy()
 	SSweather.remove_sound_rock(src, snd)
