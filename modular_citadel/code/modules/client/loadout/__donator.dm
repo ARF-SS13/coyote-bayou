@@ -691,8 +691,8 @@
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_4/PopulateContents()
-	new /obj/item/storage/box/gun/revolver/revolver44(src)
-	new /obj/item/storage/box/gun/revolver/revolver44(src)
+	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
+	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
 
 /datum/gear/donator/kits/jaggachi_5
 	name = "Army Service Kit"
@@ -1360,9 +1360,9 @@
 	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark/PopulateContents()
-	new /obj/item/gun/energy/laser/pistol(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/book/granter/crafting_recipe/blueprint/aep7(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
