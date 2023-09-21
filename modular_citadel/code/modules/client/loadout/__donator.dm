@@ -514,13 +514,9 @@
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 	new /obj/item/stack/marker_beacon/thirty(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby(src)
-	new /obj/item/ammo_box/magazine/m9mm(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/gun/ballistic/revolver/shotpistol(src)
-	new /obj/item/ammo_box/shotgun/buck(src)
-	new /obj/item/melee/onehanded/knife/switchblade(src)
-	new /obj/item/storage/survivalkit/combat/empty(src)
+	new /obj/item/screwdriver/nuke/nt(src)
+	new /obj/item/gun_upgrade/trigger/raidertrigger(src)
+	new /obj/item/storage/survivalkit/combat(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Scavfox Kit"
@@ -691,8 +687,8 @@
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_4/PopulateContents()
-	new /obj/item/storage/box/gun/revolver/revolver44(src)
-	new /obj/item/storage/box/gun/revolver/revolver44(src)
+	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
+	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
 
 /datum/gear/donator/kits/jaggachi_5
 	name = "Army Service Kit"
@@ -821,7 +817,7 @@
 	path = /obj/item/storage/box/large/custom_kit/mathiel2
 	ckeywhitelist = list("mathiel")
 
-/obj/item/storage/box/large/custom_kit/mathiel2/PopulateContents()
+/obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5(src)
 	new /obj/item/ammo_box/magazine/uzim9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/glock(src)
@@ -1360,9 +1356,9 @@
 	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark/PopulateContents()
-	new /obj/item/gun/energy/laser/pistol(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/itembook/granter/crafting_recipe/aep7(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
