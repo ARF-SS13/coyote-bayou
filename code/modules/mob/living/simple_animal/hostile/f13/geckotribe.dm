@@ -2,9 +2,9 @@
 /mob/living/simple_animal/hostile/gecko/tribal
 	name = "gecko tribal"
 	desc = "A large mutated reptile that has learned the basics of tool usage."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_villager"
+	icon_living = "gekko_tribe_villager"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -113,9 +113,8 @@
 	name = "gecko tribal juvenile"
 	name = "gecko tribal juvenile"
 	desc = "A small mutated reptile with sharp teeth."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_villager"
+	icon_living = "gekko_tribe_villager"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -183,9 +182,8 @@
 /mob/living/simple_animal/hostile/gecko/tribal/warrior
 	name = "gecko warrior"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one has a bone spear."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_warrior"
+	icon_living = "gekko_tribe_warrior"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -294,9 +292,8 @@
 /mob/living/simple_animal/hostile/gecko/tribal/hunter
 	name = "gecko hunter"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one has a bone spear."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_bowman"
+	icon_living = "gekko_tribe_bowman"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -428,9 +425,8 @@
 /mob/living/simple_animal/hostile/gecko/tribal/shaman
 	name = "gecko shaman"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one has pouches of herbs"
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_shaman"
+	icon_living = "gekko_tribe_shaman"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -552,9 +548,8 @@
 /mob/living/simple_animal/hostile/gecko/tribal/head_shaman
 	name = "gecko head shaman"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one is dressed regally and wields a staff."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_shaman"
+	icon_living = "gekko_tribe_shaman"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -588,7 +583,6 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
-	pass_flags = MOVE_FORCE_OVERPOWERING
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -696,19 +690,18 @@
 
 /obj/item/projectile/geckosummon/on_hit(atom/target, blocked = FALSE)
 	..()
-	var/num_nearby = 0
-	for(var/mob/living/simple_animal/hostile/gecko/summon/G in range(7, src))
-		if(num_nearby++ >= 10) //should this be <= dan?
-			spawn_and_random_walk(/mob/living/simple_animal/hostile/gecko/summon, target, 3, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
-			break
+	//var/num_nearby = 0
+	//for(var/mob/living/simple_animal/hostile/gecko/summon/G in range(7, src))
+	//	if(num_nearby++ <= 10) //should this be <= dan?
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/gecko/summon, target, 3, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	//		break
 	return BULLET_ACT_HIT
 
 /mob/living/simple_animal/hostile/gecko/tribal/chieftain
 	name = "gecko chieftan"
 	desc = "A large mutated reptile that has learned the basics of tool usage. This one is dressed regally and looks fierce."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "gekko"
-	icon_living = "gekko"
+	icon_state = "gekko_tribe_leader"
+	icon_living = "gekko_tribe_leader"
 	icon_dead = "gekko_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -742,7 +735,6 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
-	pass_flags = MOVE_FORCE_OVERPOWERING
 	speak_emote = list(
 		"squeaks",
 		"cackles",
