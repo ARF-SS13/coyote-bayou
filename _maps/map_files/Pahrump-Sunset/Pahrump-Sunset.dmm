@@ -30220,33 +30220,24 @@
 	desc = "A notice board, for the town of Nash.";
 	layer = 5.0;
 	name = "Notice Board - Nash";
-	persistence_replacement = "Notice Board - Nash- 1";
-	pixel_x = 4;
-	pixel_y = 35;
+	persistence_replacement = "Notice Board - Nash- 2";
+	pixel_x = -3;
+	pixel_y = 30;
 	plane = -5
 	},
-/obj/item/newspaper{
-	anchored = 1;
-	pixel_x = 15;
-	pixel_y = 46
-	},
-/obj/structure/sign/barsign{
-	layer = 5;
-	pixel_y = 69
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = 11;
+	pixel_y = 15
 	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
 	layer = 3.1;
-	pixel_x = -11;
-	pixel_y = 19
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = -11;
-	pixel_y = 40
+	pixel_x = 11;
+	pixel_y = 28
 	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -34527,33 +34518,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "esN" = (
-/obj/structure/noticeboard{
-	desc = "A notice board, for the town of Nash.";
-	layer = 5.0;
-	name = "Notice Board - Nash";
-	persistence_replacement = "Notice Board - Nash- 2";
-	pixel_x = -3;
-	pixel_y = 35;
-	plane = -5
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = 11;
-	pixel_y = 19
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	layer = 3.1;
-	pixel_x = 11;
-	pixel_y = 40
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland)
+/obj/structure/sign/barsign,
+/turf/closed/wall/f13/coyote/oldwood,
+/area/f13/bar)
 "esS" = (
 /obj/structure/chair/left{
 	dir = 1
@@ -38901,9 +38868,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ftP" = (
-/obj/machinery/chem_master/condimaster,
-/obj/structure/sink{
-	pixel_x = -12
+/obj/machinery/chem_master/condimaster{
+	pixel_y = -5
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -48904,6 +48870,10 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/food/condiment/peppermill,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/item/kitchen/knife{
+	pixel_x = -10;
+	pixel_y = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -53926,6 +53896,15 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"iNa" = (
+/obj/structure/table/wood/bar,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/glass/rag,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "iNb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -56693,12 +56672,6 @@
 /obj/structure/table/wood/bar{
 	density = 0;
 	pixel_y = -10
-	},
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/storage/box/drinkingglasses,
-/obj/item/kitchen/knife{
-	pixel_x = -10;
-	pixel_y = 8
 	},
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 1;
@@ -91472,15 +91445,39 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "rmM" = (
-/obj/structure/closet/crate/bin{
+/obj/structure/noticeboard{
+	desc = "A notice board, for the town of Nash.";
+	layer = 5.0;
+	name = "Notice Board - Nash";
+	persistence_replacement = "Notice Board - Nash- 1";
+	pixel_x = 4;
+	pixel_y = 30;
+	plane = -5
+	},
+/obj/item/newspaper{
+	anchored = 1;
+	pixel_x = 15;
+	pixel_y = 41
+	},
+/obj/structure/fence/wooden{
 	density = 0;
-	pixel_x = 10;
-	pixel_y = 16
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 15
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	layer = 3.1;
+	pixel_x = -11;
+	pixel_y = 28
 	},
-/area/f13/bar)
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999";
+	dir = 4
+	},
+/area/f13/wasteland)
 "rmT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -95704,6 +95701,16 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/starterroad)
+"snK" = (
+/obj/machinery/water_purifier{
+	pixel_x = 8;
+	density = 0;
+	pixel_y = -3
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar)
 "snO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -109015,13 +109022,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/ruins)
-"voG" = (
-/obj/structure/table/wood/bar,
-/obj/item/reagent_containers/glass/rag,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar)
 "voH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/cctv{
@@ -127530,7 +127530,7 @@ mkb
 szs
 mkb
 ahA
-rBz
+iNa
 mkb
 bgo
 nFA
@@ -127787,7 +127787,7 @@ cnf
 szs
 mkb
 ahA
-voG
+rBz
 mkb
 jwq
 nFA
@@ -128047,8 +128047,8 @@ ahA
 rBz
 mkb
 ftP
-oLd
-kgu
+nFA
+rmM
 jxf
 ltv
 ksL
@@ -128304,8 +128304,8 @@ ahA
 rBz
 mkb
 mkb
-oLd
-kgu
+nFA
+dtx
 jxf
 qWw
 ksL
@@ -128561,7 +128561,7 @@ ahA
 rBz
 mkb
 hpV
-nFA
+esN
 kgu
 jxf
 ltv
@@ -128816,10 +128816,10 @@ mkb
 mkb
 ahA
 rBz
-rmM
 mkb
+snK
 nFA
-dtx
+kgu
 jxf
 eiJ
 ksL
@@ -129076,7 +129076,7 @@ nFA
 oLd
 geZ
 nFA
-esN
+kgu
 jxf
 miY
 ksL
