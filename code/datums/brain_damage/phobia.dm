@@ -146,7 +146,7 @@
 			owner.stuttering += 10
 		if(5)
 			to_chat(owner, span_warning("You faint out of shock!"))
-			owner.emote("faint")
+			owner.emote("collapse")
 			owner.Jitter(5)
 
 /datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
