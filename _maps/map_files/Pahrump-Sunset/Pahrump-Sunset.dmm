@@ -30218,7 +30218,8 @@
 "dtx" = (
 /obj/machinery/water_purifier{
 	pixel_x = 8;
-	pixel_y = -2
+	pixel_y = -2;
+	density = 0
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
