@@ -1360,7 +1360,7 @@
 	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark/PopulateContents()
-	new /obj/itembook/granter/crafting_recipe/aep7(src)
+	new /obj/item/book/granter/crafting_recipe/blueprint/aep7(src)
 	new /obj/item/stock_parts/cell/ammo/ecp(src)
 	new /obj/item/stock_parts/cell/ammo/ecp(src)
 	new /obj/item/stack/cable_coil/thirty(src)
