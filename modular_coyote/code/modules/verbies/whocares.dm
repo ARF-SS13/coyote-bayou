@@ -105,12 +105,16 @@
 
 /mob/Login()
 	. = ..()
+	var/const/defaultStatusMessage = "Heehoo, default status message!"
 	if(client) // cursed way to get around disconnects and mob changes.
 		if(length(statusMessage))
 			client.statusMessage = statusMessage
 		else
 			if(length(client.statusMessage))
 				statusMessage = client.statusMessage
+			else
+				client.statusMessage = defaultStatusMessage
+				statusMessage = defaultStatusMessage
 
 // Make the verb here.
 /mob/verb/SetStatusMsg()
