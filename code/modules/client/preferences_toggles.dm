@@ -210,6 +210,18 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_announcement_sound)()
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_sound_indicator)()
+	set name = "Hear/Silence Sound Indicator"
+	set category = "Preferences"
+	set desc = "Hear Sound Indicator"
+	usr.client.prefs.toggles ^= SOUND_SI
+	to_chat(usr, "You will now [(usr.client.prefs.toggles & SOUND_SI) ? "hear the sound indicator" : "no longer hear the sound indicator"].")
+	usr.client.prefs.save_preferences()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Sound Indicator", "[usr.client.prefs.toggles & SOUND_SI ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/Sound/toggle_sound_indicator/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_SI
+
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleprayersounds)()
 	set name = "Hear/Silence Prayer Sounds"
 	set category = "Preferences"

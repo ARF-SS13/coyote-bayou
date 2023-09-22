@@ -1,7 +1,6 @@
 //Speech verbs.
 // the _keybind verbs uses "as text" versus "as text|null" to force a popup when pressed by a keybind.
-var/message_length
-
+	var/message_length
 /mob/verb/say_typing_indicator()
 	set name = "say_indicator"
 	set hidden = TRUE
