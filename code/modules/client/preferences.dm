@@ -660,9 +660,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 
 			// Coyote ADD: Blurbleblurhs
-			dat += "<b>Sound Indicator:</b><BR>"
+			dat += "<h2>Sound Indicator Preferences</h2>"
+			dat += "<b>Sound Ind. Enable:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><BR>"
+			dat += "<b>Sound Ind. Tone:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><BR>"
+			dat += "<b>Sound Ind. Speed:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><BR>"
+			dat += "<b>Sound Ind. Pitch:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><BR>"
+			dat += "<b>Sound Ind. Variance:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><BR>"
+			dat += "<b>Sound Ind. Volume:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><BR>"
+			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
+
 			// Coyote ADD: End
 
 			if(HAIR in pref_species.species_traits)
@@ -3345,6 +3357,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
 					if(selected_custom_speech_verb)
 						custom_speech_verb = selected_custom_speech_verb
+
+				//if("soundindicatorpreview") //last famous words: I'll work on it later
+					//for(var/i in 1 to (32) +1)
+						//playsound(get_turf(src), get_typing_indicator_sound(), rand(15, 100), TRUE)
+						//addtimer(CALLBACK(src, .proc/endLaunch), 1 SECONDS)
 
 				if("bodysprite")
 					var/selected_body_sprite = input(user, "Choose your desired body sprite", "Character Preference") as null|anything in pref_species.allowed_limb_ids
