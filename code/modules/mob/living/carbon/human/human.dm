@@ -1228,7 +1228,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		var/result = input(usr, "Choose quirk to add/remove","Quirk Mod") as null|anything in options
 		if(result)
 			if(result == "Clear")
-				for(var/datum/quirk/q in roundstart_quirks)
+				for(var/datum/quirk/q in mob_quirks)
 					remove_quirk(q.type)
 			else
 				var/T = options[result]

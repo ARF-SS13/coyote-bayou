@@ -1709,6 +1709,27 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return null
 	return clint.mob
 
+/// Takes in a ckey, a mob, client, or even prefs, and finds the prefs, one way or another
+/proc/extract_prefs(something) // one way or another, im getting your prefs (to break)
+	if(isclient(something))
+		var/client/clint = something
+		return clint.prefs
+	if(istype(something, /datum/preferences)) // prefs? good, i'll take it
+		return something
+	if(ismob(something))
+		var/mob/mobby = something
+		if(!mobby.client)
+			return // probably disconnected
+		return mobby.client.prefs
+	if(istext(something))
+		if(!(something in GLOB.directory))
+			CRASH("extract_prefs() was given a ckey that wasn't in the directory. This is a bug, please report it.")
+		var/client/clont = LAZYACCESS(GLOB.directory, something)
+		if(!clont)
+			return // probably... disconnected? v0v
+		return clont.prefs
+	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+
 /// Makes a gaussian distribution, returning a positive integer
 /proc/GaussianReacharound(mean, stddev, min, max)
 	var/cool_input = gaussian(mean, stddev)

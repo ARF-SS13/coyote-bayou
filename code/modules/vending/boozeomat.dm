@@ -18,6 +18,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/absinthe = 4,
 					/obj/item/reagent_containers/food/drinks/bottle/grappa = 4,
 					/obj/item/reagent_containers/food/drinks/bottle/sake = 4,
+					/obj/item/reagent_containers/food/drinks/bottle/sake2 = 3,
 					/obj/item/reagent_containers/food/drinks/bottle/rotgut = 3,
 					/obj/item/reagent_containers/food/drinks/ale = 6,
 					/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 3,

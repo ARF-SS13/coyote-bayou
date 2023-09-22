@@ -13,7 +13,7 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty", "ecp", "bullet_shield")
+	design_ids = list("pin_loyalty", "ecp", "bullet_shield","disablerrcw")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 /*
 /datum/techweb_node/electric_weapons

@@ -844,3 +844,77 @@
 				/obj/item/reagent_containers/food/condiment/pack/bbqsauce = 10
 				)
 	subcategory = CAT_MISCELLANEOUS
+
+//Lunchboxes
+
+/datum/crafting_recipe/lunchbox
+	name = "Rainbow lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/hearts
+	name = "Hearts lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/hearts
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/cat
+	name = "Cat lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/cat
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/nano
+	name = "Blue lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/nano
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/uni
+	name = "University lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/uni
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/teal
+	name = "Teal lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/teal
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/diona
+	name = "Diona lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/diona
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/black
+	name = "Black lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/black
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS

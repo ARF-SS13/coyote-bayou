@@ -177,6 +177,18 @@
 		var/mob/living/L = user
 		L.SetSleeping(200)
 
+/datum/emote/living/faint
+	key = "collapse"
+	key_third_person = "collapse"
+	message = "collapses."
+	message_param = "collapses from %t."
+
+/datum/emote/living/faint/run_emote(mob/user, params)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/L = user
+		L.SetSleeping(20)
+
 
 /* Fortuna edit: flapping your wings disabled
 /datum/emote/living/flap

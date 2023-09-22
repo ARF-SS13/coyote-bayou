@@ -253,7 +253,8 @@ window "preferences_window"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-visible = false
-		saved-params = "pos;size;is-minimized;is-maximized"
+		focus = false
+		saved-params = "pos;size;is-maximized;focus"
 		statusbar = false
 		image = 'icons\\CharacterCreator.png'
 	elem "Powerbutton"

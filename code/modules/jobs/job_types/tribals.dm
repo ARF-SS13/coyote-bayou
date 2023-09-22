@@ -207,7 +207,7 @@ Tribal Shaman
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
 		/obj/item/clothing/under/f13/wayfarer/shamanblue=1,
-		
+
 	)
 */
 
@@ -276,8 +276,8 @@ Druid
 	flag = F13DRUID
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Chief"
 	enforces = "The ways of the Sulphur River  spirits."
