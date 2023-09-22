@@ -129,6 +129,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//the type of eyes this species has
 	var/eye_type = "normal"
 
+	COOLDOWN_DECLARE(ass) // dont ask
+
 ///////////
 // PROCS //
 ///////////
@@ -1281,21 +1283,25 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
+	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
+		H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
-	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
-		if(H.overeatduration < 100)
-			to_chat(H, span_notice("Your guts relax!"))
-			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
-	else
-		if(H.overeatduration >= 100)
-			to_chat(H, span_danger("You feel really full!"))
-			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
+	else 
+		if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
+			if(H.overeatduration < 100)
+				to_chat(H, span_notice("Your guts relax!"))
+				REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
+		else
+			if(H.overeatduration >= 100)
+				to_chat(H, span_danger("You feel really full!"))
+				ADD_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
@@ -1570,6 +1576,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return
 
+/datum/species/proc/bootysmack(turf/place, vol = 50, dist = 15)
+	playsound(place, 'sound/weapons/slap.ogg', vol, FALSE, SOUND_DISTANCE(dist), frequency = 22000) // deep bassy ass
+
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	// CITADEL EDIT slap mouthy gits and booty
 	var/aim_for_mouth = user.zone_selected == "mouth"
@@ -1607,14 +1616,49 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
 			return FALSE
 		user.do_attack_animation(target, ATTACK_EFFECT_ASS_SLAP)
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 		if(HAS_TRAIT(target, TRAIT_STEEL_ASS))
+			playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 			user.adjustStaminaLoss(50)
 			user.visible_message(\
 				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
 				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
 				"You hear a slap.")
 			return FALSE
+		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
+			if(!COOLDOWN_FINISHED(src, ass))
+				if(user == target)
+					to_chat(user, span_alert("Your ass is still jiggling about way too much to get a good smack!"))
+				else
+					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
+			else
+				COOLDOWN_START(src, ass, 5 SECONDS)
+				target.Dizzy(5)
+				if(user == target)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					user.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("[user] gives [user.p_their()] ass a smack!"),
+						span_notice("You give your big fat ass a smack! It sloshes and throws you off balance!"),
+					)
+					return
+				else
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					// var/vol = 40
+					// var/dist = 15
+					// var/time = 0.5 SECONDS
+					// for(var/i in 1 to 3)
+					// 	vol *= 0.75
+					// 	dist = round(dist*0.75)
+					// 	addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
+					// 	time += 0.5 SECONDS
+					target.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("\The [user] slaps [target]'s ass!"),
+						span_greentext("That wonderful donk <i>demands</i> attention! You smack that plump, jiggly ass, your hand sinking in for a moment! It gives you a wobbly round of applause and knocks its owner off balance! So satifsying!~"),
+						target = target, 
+						target_message = span_notice("[user] smacks your big fat ass and sends it jiggling! It sloshes about and throws you off balance!"))
+				return FALSE
 		user.adjustStaminaLossBuffered(3)
 		target.adjust_arousal(20,maso = TRUE)
 		if (ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(10))

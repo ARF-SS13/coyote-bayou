@@ -248,6 +248,7 @@
 	var/list/brotherhood = list()
 	var/list/wastelanders = list()
 	var/list/followers = list()
+	var/list/heavens_night = list()
 	var/list/misc = list()
 	for(var/datum/data/record/R in GLOB.data_core.general)
 		var/name = R.fields["name"]
@@ -265,6 +266,8 @@
 			brotherhood[name] = rank
 		else if(real_rank in GLOB.command_positions)
 			command[name] = rank
+		else if(real_rank in GLOB.heavensnight_positions)
+			heavens_night[name] = rank
 		else if(real_rank in GLOB.wasteland_positions)
 			wastelanders[name] = rank
 		else

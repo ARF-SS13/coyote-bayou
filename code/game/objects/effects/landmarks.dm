@@ -921,6 +921,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Town Doctor"
 	icon_state = "Medical Doctor"
 
+/obj/effect/landmark/start/f13/radiooperator
+	name = "Radio Operator"
+	icon_state = "Medical Doctor"
+
 /obj/effect/landmark/start/f13/followersguard
 	name = "Nash Paramedic"
 	icon_state = "Security Officer"

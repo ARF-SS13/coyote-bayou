@@ -47,7 +47,13 @@
 	var/list/output = list()
 	if(client?.prefs)
 		output += "<center><p>Welcome, <b>[client.prefs.be_random_name ? "random name player" : client.prefs.real_name]</b></p>"
-	output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
+		output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
+		if(SSquirks.initialized)
+			if(!(PMC_QUIRK_OVERHAUL_2K23 in client.prefs.current_version))
+				output += "<center><p>[span_alert("You have quirks from the old system that haven't been converted!")]</p>"
+				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
+			else
+				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 	/*
@@ -173,6 +179,15 @@
 		client.prefs.ShowChoices(src)
 		return 1
 
+	if(href_list["quirkconversion"])
+		SSquirks.ConvertOldQuirklistToNewQuirklist(client.prefs)
+		new_player_panel()
+		return 1
+
+	if(href_list["quirks"])
+		SSquirks.OpenWindow(src) // cant eat my cool menu if its not there to eat it!
+		return 1
+
 	if(href_list["ready"])
 		var/tready = text2num(href_list["ready"])
 		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
@@ -233,7 +248,7 @@
 			alert(src, "This character name is already in use. Choose another.")
 			return */
 
-		LateChoices()
+		PreLateChoices()
 
 	if(href_list["join_as_creature"])	
 		CreatureSpawn()
@@ -375,6 +390,11 @@
 		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
 		return FALSE
+
+	if(client.holder && check_rights(R_STEALTH, 0))
+		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+		if(do_stealth == "Yes")
+			client.stealth()
 
 	var/mob/dead/observer/observer = new()
 	spawning = TRUE
@@ -635,6 +655,13 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
+
+/mob/dead/new_player/proc/PreLateChoices()
+	if(client.holder && check_rights(R_STEALTH, 0))
+		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+		if(do_stealth == "Yes")
+			client.stealth()
+	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()
 	var/list/dat = list()

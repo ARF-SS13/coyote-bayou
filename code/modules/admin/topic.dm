@@ -864,6 +864,24 @@
 				counter = 0
 		dat += "</tr></table>"
 
+	//Heavens Night (pink)
+		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		dat += "<tr align='center' bgcolor='abfffd'><th colspan='[length(GLOB.heavensnight_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=heavensnightdept;jobban4=[REF(M)]'>Heavens Night Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.heavensnight_positions)
+			if(!jobPos)
+				continue
+			if(jobban_isbanned(M, jobPos))
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				counter++
+			else
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
+				counter = 0
+		dat += "</tr></table>"
+
 
 	//Non-Human (Green)
 		counter = 0
@@ -1077,6 +1095,11 @@
 					joblist += jobPos
 			if("followersdept")
 				for(var/jobPos in GLOB.followers_positions)
+					if(!jobPos)
+						continue
+					joblist += jobPos
+			if("heavensnightdept")
+				for(var/jobPos in GLOB.heavensnight_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
