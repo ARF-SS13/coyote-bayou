@@ -104,9 +104,9 @@
 	if(!getorganslot(ORGAN_SLOT_BREATHING_TUBE))
 		if(health <= HEALTH_THRESHOLD_FULLCRIT || (pulledby && pulledby.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_MAGIC_CHOKE) || (lungs && lungs.organ_flags & ORGAN_FAILING))
 			losebreath++  //You can't breath at all when in critical or when being choked, so you're going to miss a breath
-
 		else if(health <= crit_threshold)
 			losebreath += 0.25 //You're having trouble breathing in soft crit, so you'll miss a breath one in four times
+			if(!notifiedHint)	NotifySleepHealing()
 
 	//Suffocate
 	if(losebreath >= 1) //You've missed a breath, take oxy damage
