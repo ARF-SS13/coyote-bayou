@@ -1965,6 +1965,16 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_MUSICIAN, "Musician")
 		REMOVE_TRAIT(H, TRAIT_FRIENDLY, "Friendly")
 
+/datum/quirk/package/lifeoftheparty/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/choice_beacon/music/B = new(get_turf(H))
+	H.put_in_hands(B)
+	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+	var/obj/item/musicaltuner/musicaltuner = new(get_turf(H))
+	H.put_in_hands(musicaltuner)
+	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
+	H.regenerate_icons()
+
 /datum/quirk/package/bruiser
 	name = "Bruiser"
 	desc = "You're a big guy."
