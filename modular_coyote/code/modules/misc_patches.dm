@@ -35,7 +35,7 @@
 	if(notifiedHint)
 		return
 	
-	to_chat(src, span_userdanger("You're down, but not out! Rest up and get some sleep and you can fight back to your feet!"))
+	to_chat(src, span_yellowteamradio("You're down, but not out! Rest up and get some sleep and you can fight back to your feet!"))
 	to_chat(src, span_tinynoticeital("You can regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
 
 	notifiedHint = TRUE
