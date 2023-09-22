@@ -30,8 +30,7 @@
 /datum/keybinding/client/communication/say_with_indicator/down(client/user)
 	var/mob/M = user.mob
 	M.say_typing_indicator()
-	if((M.client.prefs.toggles & SOUND_SI))
-		M.play_sound_typing_indicator()
+	M.play_sound_typing_indicator()
 	return TRUE
 
 /datum/keybinding/client/communication/me_with_indicator
