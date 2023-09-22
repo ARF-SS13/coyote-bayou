@@ -1,25 +1,21 @@
 //Speech verbs.
 // the _keybind verbs uses "as text" versus "as text|null" to force a popup when pressed by a keybind.
-GLOBAL_VAR_INIT(message_length, 0)
-
 /mob/verb/say_typing_indicator()
 	set name = "say_indicator"
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
 	var/message = input(usr, EMOTE_HEADER_TEXT, "say") as text|null
-	if(findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
-		GLOB.message_length = 0
-	else
-		GLOB.message_length = length(message)
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()
 	if(!length(message))
 		return
+	if(!findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
+		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator(LAZYLEN(message)
 	return say_verb(message)
 
-/mob/verb/play_sound_typing_indicator()
-	play_AC_typing_indicator(GLOB.message_length)
+// /mob/verb/play_sound_typing_indicator()
+//	play_AC_typing_indicator(GLOB.message_length)
 
 /mob/verb/say_verb(message as text)
 	set name = "say"
@@ -30,6 +26,8 @@ GLOBAL_VAR_INIT(message_length, 0)
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	clear_typing_indicator()
+	if(!findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
+		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator(LAZYLEN(message)
 	say(message)
 
 /mob/verb/me_typing_indicator()
