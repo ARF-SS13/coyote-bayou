@@ -1785,7 +1785,7 @@ datum/emote/living/flirt/blank
 
 datum/emote/living/flirt/custom
 	key = "flirtcustom"
-	key_third_person = "is trying to <span class='love'>%t</span>"
+	key_third_person = "is trying to <span class='love'>be flirty!</span>"
 	message = "is trying to <span class='love'>%t</span>"
 	message_param = "is trying to <span class='love'>%t</span>"
 
