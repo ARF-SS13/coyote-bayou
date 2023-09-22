@@ -1,6 +1,7 @@
 //Speech verbs.
 // the _keybind verbs uses "as text" versus "as text|null" to force a popup when pressed by a keybind.
-var/global/message_length = 0
+GLOBAL_VAR_INIT(message_length, 0)
+
 /mob/verb/say_typing_indicator()
 	set name = "say_indicator"
 	set hidden = TRUE
@@ -8,9 +9,9 @@ var/global/message_length = 0
 	display_typing_indicator()
 	var/message = input(usr, EMOTE_HEADER_TEXT, "say") as text|null
 	if(findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
-		message_length = 0
+		GLOB.message_length = 0
 	else
-		message_length = length(message)
+		GLOB.message_length = length(message)
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()
 	if(!length(message))
@@ -18,7 +19,7 @@ var/global/message_length = 0
 	return say_verb(message)
 
 /mob/verb/play_sound_typing_indicator()
-	play_AC_typing_indicator(message_length)
+	play_AC_typing_indicator(GLOB.message_length)
 
 /mob/verb/say_verb(message as text)
 	set name = "say"
