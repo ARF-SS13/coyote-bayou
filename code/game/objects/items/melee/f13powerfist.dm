@@ -125,20 +125,20 @@
 		user.visible_message("[user] heats up the Metal of the [src].", \
 				span_notice("You heat up the [src] until the Fist glows!"), \
 				span_italic("You hear faint sounds of a welder working."))
-		new /obj/item/melee/powerfist/f13/satfistheated(drop_location())
+		new /obj/item/melee/powerfist/f13/satfisth(drop_location())
 		qdel(src)
 		return
 	return ..()
 
 // Saturnite fist	but hotter	Hits hard. Max damage 70.
-/obj/item/melee/powerfist/f13/satfist
+/obj/item/melee/powerfist/f13/satfisth
 	name = "Saturnite Power Fist"
 	desc = "A massive, experimental metal gauntlet crafted by some Genius in The Military that has more than likely died. The alloy it's made of appears to be light, yet stronger than most steels."
 	icon = 'icons/fallout/objects/melee/melee.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
-	icon_state = "satfistH"
-	item_state = "satfistH"
+	icon_state = "satfisth"
+	item_state = "satfisth"
 	force = 70 //Mythical tier power fist, literally able to kill god and cook him
 	throw_distance = 2
 
