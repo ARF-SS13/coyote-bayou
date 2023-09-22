@@ -11,7 +11,7 @@
 	if(!length(message))
 		return
 	if(!findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
-		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator(LAZYLEN(message)
+		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator, LAZYLEN(message))
 	return say_verb(message)
 
 // /mob/verb/play_sound_typing_indicator()
@@ -27,7 +27,7 @@
 		return
 	clear_typing_indicator()
 	if(!findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
-		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator(LAZYLEN(message)
+		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator, LAZYLEN(message))
 	say(message)
 
 /mob/verb/me_typing_indicator()
