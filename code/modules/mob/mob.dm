@@ -1,5 +1,6 @@
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	GLOB.mob_list -= src
+	GLOB.has_played_list -= src
 	GLOB.dead_mob_list -= src
 	GLOB.alive_mob_list -= src
 	GLOB.all_clockwork_mobs -= src

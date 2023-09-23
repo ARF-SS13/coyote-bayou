@@ -1,5 +1,6 @@
 /mob/Login()
 	GLOB.player_list |= src
+	GLOB.has_played_list |= src
 	lastKnownIP	= client.address
 	computer_id	= client.computer_id
 	log_access("Mob Login: [key_name(src)] was assigned to a [type]")

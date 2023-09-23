@@ -290,6 +290,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
 
+	S["lockouts"]	>> lockouts // my bans!
+
+
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -451,6 +454,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
+	WRITE_FILE(S["lockouts"], lockouts)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -812,6 +816,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
 	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
+
+	S["whoflags"]	>> whoflags // WHo!
 
 	/// Vore stuff!
 	S["master_vore_toggle"]					>> master_vore_toggle
@@ -1329,6 +1335,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
 	cit_character_pref_save(S)
 

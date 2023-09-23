@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
 /world/proc/AVerbsAdmin()
 	return list(
+	/datum/admins/proc/edit_who,				/*toggles the harm intent no-clickdrag thing*/
 	/client/proc/toggle_experimental_clickdrag_thing,				/*toggles the harm intent no-clickdrag thing*/
 	/client/proc/toggle_radpuddle_disco_vomit_nightmare,				/*makes radpuddles flash and show numbers. please dont use this*/
 	/client/proc/show_radpuddle_scores,				/*makes radpuddles flash and show numbers. please dont use this*/
@@ -957,7 +958,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	else
 		to_chat(usr, "Okay, leaving the view ranges alone.")
 
+/datum/admins/proc/edit_who()
+	set category = "Admin.Game"
+	set name = "Edit Who"
+	set desc = "Opens the Who panel to edit peoples' custom stuff."
 
-
-
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
+		return
+	SSwho.AdminPanel() // it'll grab the usr itself, in a cursed curse
 
