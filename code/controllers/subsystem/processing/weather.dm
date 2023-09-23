@@ -101,7 +101,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		CRASH("add_sound_rock called with invalid soundloop: [soundloop || "null"]")
 	var/datum/looping_sound/soop = LAZYACCESS(sound_rocks, soundloop)
 	if(!soop)
-		soop = new soundloop(null, null, null, TRUE)
+		soop = new soundloop()
 		sound_rocks[soop.type] = soop
 	soop.start(rock)
 	return soop

@@ -209,6 +209,7 @@
 	icon_state = "biter"
 	attack_verb = list("chomped", "gnawed", "bit", "crunched", "nommed")
 	hitsound = "sound/weapons/bite.ogg"
+	w_class = WEIGHT_CLASS_TINY
 	siemens_coefficient = 5 
 	force = 6
 	force_wielded = 10
@@ -278,6 +279,7 @@
 	icon_state = "clawer"
 	attack_verb = list("clawed", "swiped", "raked")
 	hitsound = "sound/weapons/bladeslice.ogg"
+	w_class = WEIGHT_CLASS_TINY
 	force = 5
 	force_wielded = 8
 	throwforce = 0
@@ -389,6 +391,7 @@
 	name = "tailwhack"
 	desc = "A tail. Good for whacking."
 	icon_state = "proboscis"
+	w_class = WEIGHT_CLASS_TINY
 	force = 5
 	force_wielded = 10
 	attack_speed = 4 

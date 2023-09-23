@@ -248,7 +248,7 @@
 			alert(src, "This character name is already in use. Choose another.")
 			return */
 
-		LateChoices()
+		PreLateChoices()
 
 	if(href_list["join_as_creature"])	
 		CreatureSpawn()
@@ -390,6 +390,11 @@
 		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
 		return FALSE
+
+	if(client.holder && check_rights(R_STEALTH, 0))
+		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+		if(do_stealth == "Yes")
+			client.stealth()
 
 	var/mob/dead/observer/observer = new()
 	spawning = TRUE
@@ -650,6 +655,13 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
+
+/mob/dead/new_player/proc/PreLateChoices()
+	if(client.holder && check_rights(R_STEALTH, 0))
+		var/do_stealth = alert(src, "You're an admin! Do you want to stealthmin?", "Stealthmin", "Yes", "No")
+		if(do_stealth == "Yes")
+			client.stealth()
+	LateChoices()
 
 /mob/dead/new_player/proc/LateChoices()
 	var/list/dat = list()

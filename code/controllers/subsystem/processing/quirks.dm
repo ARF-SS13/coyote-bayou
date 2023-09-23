@@ -151,6 +151,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	data["UserQuirkPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkPoints")
 	data["UserQuirkGoods"] = LAZYACCESS(quirks_and_goods, "UserQuirkGoods")
 	data["UserQuirksConflictingKeys"] = LAZYACCESS(quirks_and_goods, "UserQuirksConflictingKeys")
+	data["UserProstheticObjs"] = LAZYACCESS(quirks_and_goods, "UserProstheticObjs")
 	// data["UserQuirkProstheticPoints"] = LAZYACCESS(quirks_and_goods, "UserQuirkProstheticPoints")
 	data["UserCkey"] = user.ckey
 	data["UserName"] = user.client?.prefs.real_name
@@ -212,7 +213,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/out = list()
 	out["UserQuirkNames"] = list()
 	out["UserQuirkKeys"] = list()
-	out["UserQuirkPoints"] = GetQuirkBalance(P)
+	out["UserQuirkPoints"] = GetQuirkBalance(P, FALSE)
 	out["UserQuirkGoods"] = GetPositiveQuirkCount(P)
 	/// A pre-assembled list quirks that we can't get, cus they conflict with what we have
 	/// much rather process it here than in the tgui, gets kiiiiiiinda laggy
@@ -226,10 +227,21 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		out["UserQuirkNames"] |= "[Q.name]"
 		out["UserQuirkKeys"] |= "[Q.key]"
 		out["UserQuirksConflictingKeys"] |= Q.get_conflicts()
+	out["UserProstheticObjs"] = list()
+	var/dickpoints = 0
+	for(var/modification in P.modified_limbs)
+		if(P.modified_limbs[modification][1] != LOADOUT_LIMB_PROSTHETIC)
+			continue
+		var/list/limbdat = list()
+		limbdat["Limb"] = GLOB.main_body_parts2words[modification]
+		limbdat["Manufacturer"] = P.modified_limbs[modification][2]
+		dickpoints = min(dickpoints + 11, 33)
+		out["UserProstheticObjs"] += list(limbdat)
+	out["UserQuirkPoints"] -= dickpoints
 	return out
 
 /// Returns the player's quirk balance
-/datum/controller/subsystem/processing/quirks/proc/GetQuirkBalance(datum/preferences/P)
+/datum/controller/subsystem/processing/quirks/proc/GetQuirkBalance(datum/preferences/P, include_prosthetics = TRUE)
 	if(!P)
 		return 0
 	var/balance = 0
@@ -239,7 +251,14 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			stack_trace("GetQuirkBalance: Quirk [qstring] on [P.parent.ckey]'s profile does not exist! cool")
 			continue
 		balance += Q.value
-	return balance
+	if(!include_prosthetics)
+		return balance
+	var/limbal = 0
+	for(var/modification in P.modified_limbs)
+		if(P.modified_limbs[modification][1] != LOADOUT_LIMB_PROSTHETIC)
+			continue
+		limbal = min(limbal + 11, 33)
+	return balance - limbal
 
 /// Returns the player's number of good quirks
 /datum/controller/subsystem/processing/quirks/proc/GetPositiveQuirkCount(datum/preferences/P)
@@ -300,7 +319,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!LAZYLEN(quirklist))
 		return TRUE // they have no quirks, so they're good
 	RemoveDeadQuirks(P)
-	var/balance = GetQuirkBalance(P)
+	var/balance = GetQuirkBalance(P, TRUE)
 	var/goods = GetPositiveQuirkCount(P)
 	if(balance > max_points || goods > max_good_quirks)
 		PruneQuirksUntilBalanced(P, balance)	
@@ -332,13 +351,15 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!removal)
 		if(QuirkConflict(P, Q))
 			return FALSE
-	var/balance = GetQuirkBalance(P)
+	var/balance = GetQuirkBalance(P, TRUE)
 	var/goods = GetPositiveQuirkCount(P)
 	var/val = Q.value
 	if(removal)
 		val = -val
 	if(balance + val > max_points)
 		return FALSE
+	if(removal)
+		return TRUE
 	if(Q.value > 0 && goods + 1 > max_good_quirks)
 		return FALSE
 	return TRUE

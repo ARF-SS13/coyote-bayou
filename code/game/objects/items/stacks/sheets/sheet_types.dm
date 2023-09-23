@@ -737,7 +737,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	throwforce = 10
-	max_amount = 50
+	max_amount = 100
 	throw_speed = 1
 	throw_range = 3
 	turf_type = /turf/open/floor/clockwork
@@ -945,7 +945,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 /obj/item/stack/sheet/cotton
 	name = "raw cotton bundle"
 	desc = "A bundle of raw cotton ready to be spun on the loom."
-	max_amount = 50
+	max_amount = 100
 	singular_name = "raw cotton ball"
 	icon_state = "sheet-cotton"
 	resistance_flags = FLAMMABLE
@@ -1040,7 +1040,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throwforce = 1
 	throw_speed = 1
 	throw_range = 2
-	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
+	max_amount = 100 //reduced from 500, made stacks sprites irrelevant due to scaling.
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")

@@ -14,12 +14,13 @@
 
 /obj/effect/sound_emitter/Initialize()
 	. = ..()
-	if(!ispath(snd))
-		return
-	if(synchronize)
-		soundify()
-	else
-		unique_soundify()
+	return INITIALIZE_HINT_QDEL
+	//if(!ispath(snd))
+	//	return
+	//if(synchronize)
+	//	soundify()
+	//else
+	//	unique_soundify()
 
 /obj/effect/sound_emitter/Destroy()
 	SSweather.remove_sound_rock(src, snd)
@@ -35,7 +36,7 @@
 /obj/effect/sound_emitter/proc/unique_soundify()
 	if(!ispath(snd))
 		return
-	snd = new snd(list(src), null, null, TRUE) // lets be cheap
+	snd = new snd(list(src))
 	snd.start()
 
 /obj/effect/sound_emitter/proc/soundify(datum/looping_sound/override)
@@ -58,7 +59,7 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	snd = /datum/looping_sound/soundrock/frogs
-	synchronize = TRUE
+	synchronize = FALSE
 
 /obj/effect/sound_emitter/crows
 	name = "sound emitter (crows)"
@@ -66,7 +67,7 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	snd = /datum/looping_sound/ambient/critters/birds/crow/louder
-	synchronize = TRUE
+	synchronize = FALSE
 
 /obj/effect/sound_emitter/birds
 	name = "sound emitter (birds)"
@@ -74,7 +75,7 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	snd = /datum/looping_sound/ambient/critters/birds/louder
-	synchronize = TRUE
+	synchronize = FALSE
 
 
 /obj/effect/sound_emitter/creek

@@ -122,12 +122,14 @@
 		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!"))
 	else
 		to_chat(owner, span_userdanger("Something [message]!"))
-	var/reaction = rand(1,4)
+	var/reaction = rand(1,5)
 	switch(reaction)
 		if(1)
-			to_chat(owner, span_warning("You are paralyzed with fear!"))
-			owner.Stun(70)
+			to_chat(owner, span_warning("You break out in a fit of tears!"))
+			//owner.Stun(70)
 			owner.Jitter(8)
+			owner.eye_blurry = 20
+			owner.emote("cry")
 		if(2)
 			owner.emote("scream")
 			owner.Jitter(5)
@@ -143,6 +145,10 @@
 			owner.confused += 10
 			owner.Jitter(10)
 			owner.stuttering += 10
+		if(5)
+			to_chat(owner, span_warning("You faint out of shock!"))
+			owner.emote("collapse")
+			owner.Jitter(5)
 
 /datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))

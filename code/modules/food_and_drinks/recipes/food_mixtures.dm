@@ -24,7 +24,7 @@
 /datum/chemical_reaction/chocolate_bar
 	name = "Chocolate Bar"
 	id = "chocolate_bar"
-	required_reagents = list(/datum/reagent/consumable/soymilk = 2, /datum/reagent/consumable/coco = 2, /datum/reagent/consumable/sugar = 2)
+	required_reagents = list(/datum/reagent/consumable/milk = 2, /datum/reagent/consumable/coco = 2, /datum/reagent/consumable/sugar = 2)
 
 /datum/chemical_reaction/chocolate_bar/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)

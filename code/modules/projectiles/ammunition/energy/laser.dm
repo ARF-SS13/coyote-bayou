@@ -287,6 +287,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 100 //11 shots
 	fire_sound = 'sound/f13weapons/rcwfire.ogg'
 
+/obj/item/ammo_casing/energy/laser/stunrcw
+	projectile_type = /obj/item/projectile/beam/disabler
+	e_cost = 50 //24 shots
+	harmful = FALSE
+
 /obj/item/ammo_casing/energy/laser/rcw/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/rcw/hitscan
 	e_cost = 50 //it's actually 24 shots now, as it fires in a burst of 2

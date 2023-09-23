@@ -23,7 +23,7 @@
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
-	var/mob_trait //if applicable, apply and remove this mob trait
+	var/list/mob_trait //if applicable, apply and remove these mob traits
 	var/mob/living/quirk_holder
 	var/datum/controller/subsystem/processing/quirks/livesfrombased // Just a dummy reference so that the GC will think this thing is being used, when really its actually totally being used
 	var/reference //If this is just a reference template used by the subsystem, so it'll stop randomly dying for no raisin
@@ -45,7 +45,10 @@
 		to_chat(quirk_holder, gain_text)
 	quirk_holder.mob_quirks += src
 	if(mob_trait)
-		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		if(!islist(mob_trait))
+			mob_trait = list(mob_trait)
+		for(var/trait in mob_trait)
+			ADD_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
 	START_PROCESSING(SSquirks, src)
 	add()
 	if(spawn_effects)
@@ -61,7 +64,10 @@
 		to_chat(quirk_holder, lose_text)
 		quirk_holder.mob_quirks -= src
 		if(mob_trait)
-			REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+			if(!islist(mob_trait))
+				mob_trait = list(mob_trait)
+			for(var/trait in mob_trait)
+				REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
 	SSquirks.quirk_objects -= src
 	return ..()
 
@@ -91,8 +97,11 @@
 	quirk_holder.mob_quirks -= src
 	to_mob.mob_quirks += src
 	if(mob_trait)
-		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
-		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
+		if(!islist(mob_trait))
+			mob_trait = list(mob_trait)
+		for(var/trait in mob_trait)
+			REMOVE_TRAIT(quirk_holder, trait, ROUNDSTART_TRAIT)
+			ADD_TRAIT(to_mob, trait, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
 
@@ -106,7 +115,7 @@
 /datum/quirk/proc/clone_data() //return additional data that should be remembered by cloning
 /datum/quirk/proc/on_clone(data) //create the quirk from clone data
 /datum/quirk/proc/removed_cus_antag(mob/living/to_mob)
-	to_chat(to_mob, antag_removal_text || span_boldannounce("Your antagonistic overwrights your [src]!"))
+	to_chat(to_mob, antag_removal_text || span_boldannounce("You're atnagonistic overwrights you [src]!"))
 
 /datum/quirk/process()
 	if(QDELETED(quirk_holder))

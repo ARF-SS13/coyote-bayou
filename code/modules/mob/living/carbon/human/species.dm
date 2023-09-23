@@ -1283,21 +1283,25 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
+	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
+		H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
-	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
-		if(H.overeatduration < 100)
-			to_chat(H, span_notice("Your guts relax!"))
-			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
-	else
-		if(H.overeatduration >= 100)
-			to_chat(H, span_danger("You feel really full!"))
-			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
+	else 
+		if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
+			if(H.overeatduration < 100)
+				to_chat(H, span_notice("Your guts relax!"))
+				REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
+		else
+			if(H.overeatduration >= 100)
+				to_chat(H, span_danger("You feel really full!"))
+				ADD_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))

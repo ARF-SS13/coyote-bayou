@@ -5,7 +5,7 @@
 	full_w_class = WEIGHT_CLASS_NORMAL
 	force = 5
 	throwforce = 5
-	max_amount = 200
+	max_amount = 100
 	throw_speed = 1
 	throw_range = 3
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "smashed")

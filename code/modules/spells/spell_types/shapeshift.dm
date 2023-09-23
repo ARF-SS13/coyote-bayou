@@ -101,6 +101,8 @@
 	stored = caster
 	if(stored.mind)
 		stored.mind.transfer_to(shape)
+		shape.real_name = stored.real_name
+		shape.name = stored.real_name
 	stored.forceMove(src)
 	stored.mob_transforming = TRUE
 	if(source.convert_damage)

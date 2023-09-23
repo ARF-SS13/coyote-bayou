@@ -513,7 +513,7 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything
+// Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything //Replaced cool gimmick with faster attack speed
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -530,14 +530,14 @@
 	force_on = 55
 	throwforce = 15
 	throwforce_on = 30
-	attack_speed = CLICK_CD_MELEE * 1.25
+	attack_speed = CLICK_CD_MELEE
 	var/emp_radius = 1
 
-/obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!active)
-		return
-	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
+///obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
+//	. = ..()
+//	if(!active)
+//		return
+//	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
 
 //dan kelly is a nerd NO YOU ARE!!!
 
