@@ -29,6 +29,13 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	/datum/crafting_recipe/incendiaryrocket,
 	/datum/crafting_recipe/strongrocket))
 
+GLOBAL_LIST_INIT(minelaying_recipe, list(
+	/datum/crafting_recipe/explosive/shrapnelmine, 
+	/datum/crafting_recipe/explosive/explomine, 
+	/datum/crafting_recipe/explosive/stingmine, 
+	/datum/crafting_recipe/explosive/pulsemine, 
+	/datum/crafting_recipe/explosive/stunmine))
+
 GLOBAL_LIST_INIT(tier_three_parts, list(
 	/datum/crafting_recipe/pico_manip,
 	/datum/crafting_recipe/super_matter_bin,
@@ -959,6 +966,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
 	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
 	H.mind.learned_recipes |= GLOB.adv_explosive_recipes
+	H.mind.learned_recipes |= GLOB.minelaying_recipe
 
 /datum/quirk/explosive_crafting/remove()
 	var/mob/living/carbon/human/H = quirk_holder
