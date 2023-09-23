@@ -3143,6 +3143,8 @@
 	pixel_y = 34;
 	density = 0
 	},
+/obj/item/storage/box/citizenship_permits,
+/obj/item/radio/headset/headset_town,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5323,6 +5325,11 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/item/storage/box/citizenship_permits,
+/obj/structure/closet{
+	name = "Senior Doctor"
+	},
+/obj/item/radio/headset/headset_town,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic)
 "Nw" = (
@@ -15961,10 +15968,10 @@ zC
 Zt
 rS
 rS
+AN
+AN
+bj
 rS
-AN
-AN
-IV
 Zt
 zC
 rK
