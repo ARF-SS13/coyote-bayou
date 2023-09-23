@@ -448,7 +448,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/line1 = "<span class='[status_span]'>[status_dot]</span> [namerole] - '[ParsePoseColor(pose)]'"
 	var/line2 = "<span class='[status_span]'>\t</span> Currently in [span_notice(where)], at [span_notice(coordsout)]."
-	var/line3 = "<span class='[status_span]'>\t</span> They are <span class='[status_color]'>[status_word]</span> ([hp]/[maxhp] HP)."
+	var/line3 = "<span class='[status_span]'>\t</span> They are <span style='color:[status_color]'>[status_word]</span> ([hp]/[maxhp] HP)."
 	var/line4 = "<span class='[status_span]'>\t</span> They are \a [admin_rank]!"
 	var/line5 = "<span class='[status_span]'>\t</span> [admin_link]"
 	return "[line1]<br>[line2]<br>[line3]<br>[line4]<br>[line5]"
