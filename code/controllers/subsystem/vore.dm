@@ -2,7 +2,7 @@
 /// Register COMSIG_VORE_ATOM_DEVOURED to a proc on these to make them do stuff
 #define VORABLE_TYPES list(\
 	/obj/item/reagent_containers/food,\
-	/mob/living/simple_animal/pet/catslug,\
+	/mob/living/simple_animal,\
 	/obj/item/organ,\
 	/obj/item/clothing/head/mob_holder,\
 	/obj/item/trash,\
