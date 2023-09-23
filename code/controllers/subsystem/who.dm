@@ -165,7 +165,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(!WCS)
 		WCS = new(ckey)
 		customlist[ckey] = WCS
-		customlist = sortNames(customlist)
+		customlist = sort_list(customlist)
 	return WCS
 
 ////////////////////////////////////////////////////////
@@ -314,12 +314,16 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		lines += span_alertalien("STAFF:")
 		for(var/mob/M in admins)
 			lines += Mob2Who4AdmemesShort(M)
+			if(CHECK_TICK)
+				continue
 	else
 		lines += span_alertalien("ADMINS: [span_noticealien("PRESENT!")]")
 	if(admeme && LAZYLEN(mentors))
 		lines += span_alertalien("MENTORS:")
 		for(var/mob/M in mentors)
 			lines += Mob2Who4AdmemesShort(M)
+			if(CHECK_TICK)
+				continue
 	else
 		lines += span_alertalien("MENTORS: [span_noticealien("PRESENT!")]")
 		if(whoer in GLOB.mentors)
@@ -336,11 +340,13 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 				lines += Mob2Who4AdmemesShort(M)
 			else
 				lines += Mob2WhoLineShort(M)
+		if(CHECK_TICK)
+			continue
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
 	if(admeme)
 		lines += "<b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
 		lines += "<b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
-	lines += "You can set your OOC Status with the 'set-status' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!"
+	lines += span_notice("You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
 	var/datum/preferences/P = whoer.prefs
 	var/shown_on_who = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	lines += {"<a href=' ?_src_=[REF(src)];[whoer.ckey]=ToggleWhoVis;>[FOURSPACES]\[[shown_on_who ? "HIDE yourself from who?" : "SHOW yourself on who?"]\]
@@ -352,7 +358,13 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/name = GetName(M)
 	var/pose = GetPose(M, TRUE)
 	var/where = GetWhere(M)
-	return "[span_green("😃 [name]")] in [span_notice(where)] - [pose]"
+	var/msg = "[span_green("🐈 ")] [name]"
+	var/datum/preferences/P = extract_prefs(M.ckey)
+	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION))
+		msg += " in [span_notice(where)]"
+	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE))
+		msg += " - [pose]"
+	return msg
 
 /// it can br a heckload of info for out poor little charpane
 /datum/controller/subsystem/who/proc/Mob2Who4AdmemesShort(mob/M)
@@ -360,10 +372,18 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/pose = GetPose(M, TRUE)
 	var/where = GetWhere(M)
 	var/coords = atom2coords(M)
-	var/msg = "[span_green("🐈 [name]")] in [span_notice(where)]([span_purple(coords)]) - [pose]<br>▲ ([ADMIN_HALFMONTY(M)])"
+	var/msg = "[span_green("🐈 ")]"
 	var/theyreanadmin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
+	var/datum/preferences/P = extract_prefs(M.ckey)
 	if(theyreanadmin)
-		msg = "[span_brass("🐈 [name]")] in [span_notice(where)]([span_purple(coords)]) - [pose]<br>▲ ([ADMIN_HALFMONTY(M)])"
+		msg += " [span_brass(name)]"
+	else
+		msg += " [span_green(name)]"
+	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION))
+		msg += " in [span_notice(where)]([span_purple(coords)])"
+	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE))
+		msg += " - [pose]"
+	msg += "<br>▲ ([ADMIN_HALFMONTY(M)])<br>"
 	return msg
 
 /datum/controller/subsystem/who/proc/Mob2WhoLine(mob/M)
@@ -379,7 +399,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 /datum/controller/subsystem/who/proc/Mob2Who4Admemes(mob/looking_at)
 	var/mobname = GetName(looking_at)
 	var/ckey = "[looking_at.ckey]"
-	if(looking_at.client.holder.fakekey)
+	if(looking_at.client?.holder?.fakekey)
 		ckey += " (as [looking_at.client.holder.fakekey])"
 	var/role = GetRole(looking_at)
 	var/where = GetWhere(looking_at)
@@ -447,11 +467,11 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		namerole = "[span_brass("[mobname] ([ckey])")] the [span_brass("[role]")]"
 
 	var/line1 = "<span class='[status_span]'>[status_dot]</span> [namerole] - '[ParsePoseColor(pose)]'"
-	var/line2 = "<span class='[status_span]'>\t</span> Currently in [span_notice(where)], at [span_notice(coordsout)]."
-	var/line3 = "<span class='[status_span]'>\t</span> They are <span style='color:[status_color]'>[status_word]</span> ([hp]/[maxhp] HP)."
-	var/line4 = "<span class='[status_span]'>\t</span> They are \a [admin_rank]!"
-	var/line5 = "<span class='[status_span]'>\t</span> [admin_link]"
-	return "[line1]<br>[line2]<br>[line3]<br>[line4]<br>[line5]"
+	var/line2 = "<span class='[status_span]'>  </span> Currently in [span_notice(where)], at [span_notice(coordsout)]."
+	var/line3 = "<span class='[status_span]'>  </span> They are <span style='color:[status_color]'>[status_word]</span> ([hp]/[maxhp] HP)."
+	var/line4 = "<span class='[status_span]'>  </span> They are \a [admin_rank]!"
+	var/line5 = "<span class='[status_span]'>  </span> [admin_link]"
+	return "[line1]<br>[line2]<br>[line3]<br>[line4]<br>[line5]<br>"
 
 /datum/controller/subsystem/who/proc/Me(client/whoer)
 	var/list/dat = list()

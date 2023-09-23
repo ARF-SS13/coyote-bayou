@@ -114,7 +114,12 @@
 /// Changelog entries
 #define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
 #define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
+#define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
-#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE, PMC_QUIRK_OVERHAUL_2K23)
+#define PREFERENCES_MASTER_CHANGELOG list(\
+	PMC_OOC_NOTES_UPDATE, \
+	PMC_QUIRK_OVERHAUL_2K23,\
+	PMC_DAN_MESSED_UP_WHO_STUFF,\
+	)
