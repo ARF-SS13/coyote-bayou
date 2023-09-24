@@ -991,6 +991,7 @@ Raider
 	backpack_contents = list(
 		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
 		///obj/item/reagent_containers/hypospray/medipen/stimpak,
+		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
@@ -1341,6 +1342,7 @@ Raider
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
@@ -1375,6 +1377,8 @@ Raider
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/ashdowncit = 1
@@ -1609,7 +1613,8 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
 		/obj/item/storage/wallet/stash/mid,
-		/obj/item/nullrod = 1,)
+		/obj/item/nullrod = 1,
+		/obj/item/pda = 1)
 //end preacher
 
 /*/datum/outfit/job/wasteland/f13enforcer
@@ -2063,6 +2068,9 @@ datum/job/wasteland/f13dendoctor
 	box = /obj/item/storage/survivalkit/tribal
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
+		/obj/item/radio/headset,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/melee/onehanded/knife/bone = 1

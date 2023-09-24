@@ -813,6 +813,7 @@ Mayor
 	//	/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/pda = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
@@ -900,6 +901,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
 		///obj/item/melee/onehanded/knife/hunting = 1 //you already got a knife
 		)
@@ -1123,6 +1125,7 @@ Mayor
 		/obj/item/toy/crayon/white=1,
 		/obj/item/detective_scanner=1,
 		/obj/item/storage/box/gloves=1,
+		/obj/item/pda = 1,
 		/obj/item/storage/box/evidence=1)
 		///obj/item/ammo_box/a357=2)
 
@@ -1162,6 +1165,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/banker = 1)
 
 /datum/outfit/loadout/classy
@@ -1349,6 +1353,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
 /datum/outfit/loadout/energy_specialist
@@ -1451,6 +1456,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/pda = 1,
 		/obj/item/kit_spawner/follower/guard,
 		)
 
