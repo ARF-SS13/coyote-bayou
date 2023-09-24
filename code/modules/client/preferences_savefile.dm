@@ -197,7 +197,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(PMC_DAN_MESSED_UP_WHO_STUFF)
 				whoflags = DEFAULT_WHO_FLAGS
 				WRITE_FILE(S["whoflags"], whoflags)
-				// current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
+				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
