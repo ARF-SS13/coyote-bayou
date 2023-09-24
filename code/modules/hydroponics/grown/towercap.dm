@@ -189,8 +189,12 @@
 	end_sound = list(SOUND_LOOP_ENTRY('sound/machines/fire_crackle1.ogg', 1 SECONDS, 1))
 	volume = 100
 
-/obj/structure/bonfire/dense
+/obj/structure/bonfire/dense/Initialize()
+	. = ..()
 	density = TRUE
+	stones = TRUE
+	add_overlay("bonfire_stones")
+	return
 
 /obj/structure/bonfire/prelit/Initialize()
 	. = ..()
@@ -200,6 +204,20 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 	StartBurning()
+
+/obj/structure/bonfire/dense/prelit/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+	StartBurning()
+
+/obj/structure/bonfire/dense/prelit/grill/Initialize()
+	. = ..()
+	grill = TRUE
+	add_overlay("bonfire_grill")
 
 /obj/structure/bonfire/CanAllowThrough(atom/movable/mover, border_dir)
 	..()

@@ -1413,15 +1413,8 @@
 	},
 /area/f13/building/mall)
 "bgs" = (
-/obj/structure/bonfire/prelit{
-	pixel_y = 12
-	},
-/obj/item/stack/rods,
 /obj/structure/stone_tile/slab,
-/obj/structure/table/reinforced{
-	color = "#3c2c21";
-	max_integrity = 1000000
-	},
+/obj/structure/bonfire/dense/prelit/grill,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/tribal)
 "bgu" = (
@@ -2293,6 +2286,12 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"bSZ" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#9c9c9c"
+	},
+/area/f13/building/tribal)
 "bTh" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12835,12 +12834,12 @@
 	},
 /area/f13/building)
 "kpQ" = (
-/obj/structure/reagent_dispensers/compostbin,
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
 	pixel_x = -15
 	},
+/obj/structure/legion_extractor,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -16495,13 +16494,13 @@
 	dir = 1;
 	pixel_x = -15
 	},
-/obj/structure/legion_extractor,
 /obj/structure/spacevine{
 	color = "#225522";
 	pixel_y = 10;
 	pixel_x = 14;
 	layer = 2
 	},
+/obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -17938,20 +17937,12 @@
 	},
 /area/f13/building)
 "oAd" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21";
-	max_integrity = 1000000;
-	alpha = 0;
-	light_range = 3;
-	light_color = "#334477"
-	},
-/obj/structure/bonfire/prelit{
-	pixel_y = 5;
-	name = "the speakers blaze"
-	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 4
+	},
+/obj/structure/bonfire/dense/prelit{
+	name = "the speakers blaze"
 	},
 /turf/open/floor/grass{
 	color = "#444444"
@@ -19440,14 +19431,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "pSB" = (
-/obj/structure/fermenting_barrel{
-	name = "XANDER"
-	},
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 1;
 	pixel_x = -15
 	},
+/obj/structure/fermenting_barrel,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -19513,9 +19502,7 @@
 	dir = 1;
 	pixel_x = -15
 	},
-/obj/structure/fermenting_barrel{
-	name = "XANDER"
-	},
+/obj/structure/fermenting_barrel,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -20938,10 +20925,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "reL" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = -8;
-	pixel_y = 12
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
@@ -35532,7 +35517,7 @@ sqS
 kCD
 qFq
 tqT
-reL
+kCD
 sIR
 kCD
 kCD
@@ -35787,14 +35772,14 @@ oez
 oez
 pXV
 kCD
-dYg
+reL
 dYg
 eLX
 kCD
 vpi
 kCD
 pcM
-kCD
+bSZ
 jYv
 jFI
 ltE
@@ -37586,14 +37571,14 @@ mNn
 mNn
 mNn
 mNn
-dYg
+reL
 kCD
 pcM
 kCD
 kCD
 kCD
 kCD
-kCD
+bSZ
 jPp
 jFI
 qSl
