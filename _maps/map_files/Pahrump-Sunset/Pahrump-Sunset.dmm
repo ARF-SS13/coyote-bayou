@@ -15315,7 +15315,8 @@
 /obj/structure/sacredwell{
 	light_power = 20;
 	pixel_x = 16;
-	pixel_y = 23
+	pixel_y = 23;
+	density = 0
 	},
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -86796,15 +86797,8 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "qkI" = (
-/obj/structure/bonfire/prelit{
-	pixel_y = 12
-	},
-/obj/item/stack/rods,
 /obj/structure/stone_tile/slab,
-/obj/structure/table/reinforced{
-	color = "#3c2c21";
-	max_integrity = 1000000
-	},
+/obj/structure/bonfire/dense/prelit,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -115817,15 +115811,8 @@
 	},
 /area/f13/wasteland)
 "wPV" = (
-/obj/structure/bonfire/prelit{
-	pixel_y = 11
-	},
 /obj/structure/stone_tile/surrounding/burnt,
-/obj/item/stack/rods,
-/obj/structure/table/reinforced{
-	color = "#3c2c21";
-	max_integrity = 1000000
-	},
+/obj/structure/bonfire/dense/prelit,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
 	},
