@@ -1261,7 +1261,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/wasteland)
 "bgU" = (
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
 "bhD" = (
@@ -22849,8 +22851,10 @@
 	},
 /area/f13/wasteland)
 "uvD" = (
-/obj/structure/simple_door/metal/fence,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
 "uwj" = (

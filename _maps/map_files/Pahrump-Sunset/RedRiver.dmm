@@ -598,6 +598,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"anC" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "anU" = (
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
@@ -24104,6 +24108,18 @@
 	},
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
+"kDC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul{
+	name = "Jimothy the Bridge Ghoul";
+	color = "#33ff33"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "innershade"
+	},
+/area/f13/wasteland/city)
 "kDD" = (
 /obj/structure/railing/wood{
 	dir = 4;
@@ -36265,14 +36281,9 @@
 	},
 /area/f13/building/abandoned)
 "qbB" = (
-/mob/living/simple_animal/hostile/hellpig{
-	color = "#8b0000";
-	name = "Nago"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1"
-	},
-/area/f13/wasteland)
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "qbG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/ruins,
@@ -105550,7 +105561,7 @@ pBr
 qAo
 prS
 gpg
-hwk
+kDC
 oDL
 prS
 qAo
@@ -105586,7 +105597,7 @@ oMa
 utC
 lHJ
 wUE
-qbB
+qHL
 mmC
 vGR
 tiN
@@ -107078,8 +107089,8 @@ qES
 qES
 qES
 qES
-iKf
-iKf
+qES
+qES
 iKf
 hRF
 gPG
@@ -109392,7 +109403,7 @@ wWK
 wWK
 wWK
 wWK
-wWK
+tCq
 iRq
 gMW
 gMW
@@ -109904,7 +109915,7 @@ gRn
 wWK
 wWK
 wWK
-wWK
+qbB
 wWK
 gMW
 gMW
@@ -110160,7 +110171,7 @@ gRn
 gRn
 wWK
 wWK
-wWK
+eHB
 tCq
 wWK
 gMW
@@ -110420,10 +110431,10 @@ wWK
 wWK
 wWK
 wWK
-gMW
-gMW
-gMW
-gMW
+lqx
+lqx
+lqx
+lqx
 qES
 qES
 qES
@@ -110676,7 +110687,7 @@ gMW
 gMW
 wWK
 wWK
-wWK
+qbB
 wWK
 lqx
 lqx
@@ -111437,9 +111448,9 @@ gRn
 gRn
 gRn
 wWK
+qbB
 wWK
-wWK
-wWK
+tCq
 wWK
 gRn
 gMW
@@ -111964,7 +111975,7 @@ wWK
 wWK
 wWK
 ldV
-kOR
+hyb
 kOR
 aqi
 bbz
@@ -112215,7 +112226,7 @@ gRn
 gRn
 gMW
 wWK
-wWK
+qbB
 wWK
 wWK
 wWK
@@ -112733,7 +112744,7 @@ wWK
 wWK
 wWK
 wWK
-wWK
+tCq
 wWK
 kOR
 sKh
@@ -112986,7 +112997,7 @@ gRn
 gRn
 wWK
 wWK
-wWK
+tCq
 wWK
 iRq
 wWK
@@ -113247,7 +113258,7 @@ wWK
 wWK
 wWK
 wWK
-wWK
+eHB
 wWK
 wWK
 kOR
@@ -113498,7 +113509,7 @@ gRn
 gRn
 gRn
 gRn
-wWK
+qbB
 gRn
 gRn
 wWK
@@ -113512,7 +113523,7 @@ kOR
 kOR
 kOR
 nqd
-kOR
+hyb
 kOR
 wWK
 gMW
@@ -113767,7 +113778,7 @@ wWK
 wWK
 kOR
 kOR
-kOR
+sKh
 kOR
 kOR
 wWK
@@ -114024,7 +114035,7 @@ wWK
 wWK
 kOR
 kOR
-kOR
+sKh
 kOR
 kOR
 gMW
@@ -114276,7 +114287,7 @@ gRn
 gRn
 wWK
 wWK
-wWK
+tCq
 wWK
 wWK
 wWK
@@ -114533,7 +114544,7 @@ gRn
 gRn
 gRn
 wWK
-wWK
+tCq
 wWK
 wWK
 wWK
@@ -114797,7 +114808,7 @@ wWK
 wWK
 wWK
 wWK
-wWK
+qbB
 kOR
 kOR
 gMW
@@ -115047,16 +115058,16 @@ gMW
 gRn
 iXj
 wWK
+qbB
 wWK
 wWK
 wWK
-wWK
-wWK
+tCq
 gMW
 wWK
 wWK
 wWK
-kOR
+anC
 gMW
 gMW
 gMW
@@ -115817,7 +115828,7 @@ taA
 eFz
 gMW
 kOR
-kOR
+sKh
 mAF
 tNF
 gMW
@@ -116881,9 +116892,9 @@ wWK
 wWK
 gMW
 gMW
-gMW
-gMW
-iKf
+wWK
+wWK
+whc
 iKf
 iKf
 iKf
@@ -117108,7 +117119,7 @@ kOR
 gMW
 gMW
 gMW
-wWK
+qbB
 wWK
 gMW
 gMW
@@ -117138,7 +117149,7 @@ jFO
 wWK
 wWK
 gMW
-gMW
+wWK
 gMW
 gMW
 iKf
@@ -117360,7 +117371,7 @@ lFI
 gMW
 sjT
 xrh
-kOR
+sKh
 kOR
 gMW
 gMW
@@ -117394,8 +117405,8 @@ wWK
 wWK
 wWK
 wWK
-gMW
-gMW
+wWK
+wWK
 gMW
 gMW
 gMW
@@ -117616,9 +117627,9 @@ hHM
 yjb
 gMW
 kOR
-kOR
-kOR
-kOR
+anC
+sKh
+hyb
 gMW
 gMW
 gMW
@@ -117873,7 +117884,7 @@ lFI
 xYV
 gMW
 hyb
-kOR
+sKh
 kOR
 sKh
 gMW
