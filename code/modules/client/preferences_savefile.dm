@@ -346,8 +346,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	autostand			= sanitize_integer(autostand, 0, 1, initial(autostand))
 	cit_toggles			= sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
 	auto_ooc			= sanitize_integer(auto_ooc, 0, 1, initial(auto_ooc))
-	//whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
-	whoflags = initial(whoflags) // comment out before release
+	lockouts			= sanitize_integer(whoflags, 0, 16777215, 0) // uncomment before release
 	no_tetris_storage		= sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
@@ -897,6 +896,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
 	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
 	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	//whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
+	whoflags = initial(whoflags) // comment out before release
 
 	var/static/allow_custom_skintones
 	if(isnull(allow_custom_skintones))

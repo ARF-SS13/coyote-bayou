@@ -262,9 +262,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(!islist(regions[my_z]))
 		regions[my_z] = list()
 	var/area/A = get_area(I)
-	var/areaname = A ? A.name : "Nowhere"
-	if(!areaname || trim(areaname) == "")
-		areaname = "the great byond"
 	var/my_coords = atom2coords(I)
 	var/list/places = list()
 	for(var/datum/region/reggie in regions[my_z])
@@ -279,7 +276,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			regs = "Under the stars"
 		else
 			regs = "Indoors"
-	return "[A.name] ([regs])"
+	return "[A.name]([regs])"
 
 /datum/controller/subsystem/who/proc/AdminWho(client/whoer)
 	return span_alertalien("There are admins online!")
@@ -292,7 +289,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	var/list/lines = list()
 	///the first line, you!
-	lines += Me(whoer)
 	/// now, set up the lists of people to show
 	var/list/admins = list()
 	for(var/client/admn in GLOB.admins)
@@ -313,7 +309,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(admeme && LAZYLEN(admins))
 		lines += span_alertalien("STAFF:")
 		for(var/mob/M in admins)
-			lines += Mob2Who4AdmemesShort(M)
+			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
 	else
@@ -321,7 +317,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(admeme && LAZYLEN(mentors))
 		lines += span_alertalien("MENTORS:")
 		for(var/mob/M in mentors)
-			lines += Mob2Who4AdmemesShort(M)
+			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
 	else
@@ -330,16 +326,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			lines += " (And you're one of them! =3)"
 	lines += span_alertalien("PLAYERS:")
 	for(var/mob/M in players)
-		if(verbose)
-			if(admeme)
-				lines += Mob2Who4Admemes(M)
-			else
-				lines += Mob2WhoLine(M)
-		else
-			if(admeme)
-				lines += Mob2Who4AdmemesShort(M)
-			else
-				lines += Mob2WhoLineShort(M)
+		lines += WhoLine(M, admeme, verbose)
 		if(CHECK_TICK)
 			continue
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
@@ -347,131 +334,143 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		lines += "<b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
 		lines += "<b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
 	lines += span_notice("You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
-	var/datum/preferences/P = whoer.prefs
-	var/shown_on_who = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
-	lines += {"<a href=' ?_src_=[REF(src)];[whoer.ckey]=ToggleWhoVis;>[FOURSPACES]\[[shown_on_who ? "HIDE yourself from who?" : "SHOW yourself on who?"]\]
-		</a>"}
+	lines += "<hr>"
+	lines += Me(whoer)
 	to_chat(whoer, lines.Join("<br>"))
 
-/// it can br a heckload of info for out poor little charpane
-/datum/controller/subsystem/who/proc/Mob2WhoLineShort(mob/M)
-	var/name = GetName(M)
-	var/pose = GetPose(M, TRUE)
-	var/where = GetWhere(M)
-	var/msg = "[span_green("🐈 ")] [name]"
+/// Who's Line is it Anyway?
+/// Builds an HTML string for the who list
+/// Differentiates between admemes and players, and whether or not to be verbose
+/// cus 4 procs suuuuuuuuuuuuuuuuuck
+/datum/controller/subsystem/who/proc/WhoLine(mob/M, admeme, verbose)
 	var/datum/preferences/P = extract_prefs(M.ckey)
-	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION))
-		msg += " in [span_notice(where)]"
-	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE))
-		msg += " - [pose]"
-	return msg
-
-/// it can br a heckload of info for out poor little charpane
-/datum/controller/subsystem/who/proc/Mob2Who4AdmemesShort(mob/M)
 	var/name = GetName(M)
+	var/name_span = "green"
+	var/role = GetRole(M)
+	var/role_span = "notice"
+	var/role_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/pose = GetPose(M, TRUE)
+	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/where = GetWhere(M)
-	var/coords = atom2coords(M)
-	var/msg = "[span_green("🐈 ")]"
-	var/theyreanadmin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
-	var/datum/preferences/P = extract_prefs(M.ckey)
-	if(theyreanadmin)
-		msg += " [span_brass(name)]"
-	else
-		msg += " [span_green(name)]"
-	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION))
-		msg += " in [span_notice(where)]([span_purple(coords)])"
-	if(CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE))
-		msg += " - [pose]"
-	msg += "<br>▲ ([ADMIN_HALFMONTY(M)])<br>"
-	return msg
+	var/where_span = "purple"
+	var/where_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
+	var/M_is_admin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
+	var/list/throbber = Throb(M, admeme)
+	var/ckey = admeme ? " ([M.ckey])" : ""
+	var/list/out = list()
+	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
+	if(admeme && M_is_admin)
+		name_span = "brass"
+	/// the name slug, anonymization has been handled elsewhere
+	out += "<span class='[name_span]'> [name]</span>"
+	/// the ckey, if we're an admin
+	if(admeme)
+		out += ckey
+	/// the role slug
+	if(role_visible)
+		out += " the <span class='[role_span]'>[role]</span>"
+	var/second_line_visible = where_visible || pose_visible
+	if(second_line_visible)
+		out += "<br>"
+		var/dash = where_visible && pose_visible ? " - " : ""
+		var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
+		/// the where and pose slug
+		out += "[where_formatted][dash][pose]"
+	if(!admeme && !verbose) // players get off here
+		var/msgout = out.Join()
+		msgout += "<span style='font-size: 0.25em'><br></span>"
+		return msgout
+	/// Okay so i lied, verbose is an admin command that piles in a lot more info
+	/// we are an admeme from here forward
+	/// The status slug
+	out += "<br>"
+	out += "[throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
+	/// the admin slug
+	var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
+	out += "<br> They are \a [admin_rank]!"
+	out += "<br>\t[ADMIN_QUARTERMONTY(M)]"
+	/// adds in a tiny-font linebreak so it is easier on the eyes
+	out += "<span style='font-size: 0.25em'> <br></span>"
+	return out.Join()
 
-/datum/controller/subsystem/who/proc/Mob2WhoLine(mob/M)
-	var/mobname = GetName(M)
-	var/jobname = GetRole(M)
-	var/where = GetWhere(M)
-	var/pose =  GetPose(M, TRUE)
-	var/line1 = "[span_green("😃")] [span_noticealien(mobname)] the [span_alertalien(jobname)]</span>"
-	var/line2 = "\tIn [span_notice(where)]. '[pose]'"
-	return "[line1]<br>[line2]<br>"
-
-/// Stuff us cool admemes get to see about you =3
-/datum/controller/subsystem/who/proc/Mob2Who4Admemes(mob/looking_at)
-	var/mobname = GetName(looking_at)
-	var/ckey = "[looking_at.ckey]"
-	if(looking_at.client?.holder?.fakekey)
-		ckey += " (as [looking_at.client.holder.fakekey])"
-	var/role = GetRole(looking_at)
-	var/where = GetWhere(looking_at)
-	var/list/splitcoords = splittext(atom2coords(looking_at), ":")
-	var/coordsout = "[splitcoords[1]],[splitcoords[2]], in [GLOB.z2name[splitcoords[3]]]"
-	var/isadmin = check_rights_for(looking_at.client, admin_level_to_see_all)
-	var/admin_rank = isadmin ? span_love("[looking_at.client.holder.rank]") : span_brass("(Player)")
-	if(looking_at.client.holder && (looking_at.client.holder in GLOB.deadmins))
-		admin_rank += span_alertalien(" (Deadmined)")
-	var/admin_link = ADMIN_HALFMONTY(looking_at)
-	var/pose = GetPose(looking_at, TRUE)
-	var/status_color = "green" // color of the name
-	var/status_span = "green" // span of the throbber
-	var/status_word = "Alive" // the actual status word
-	var/status_dot = "🙂" // the throbber // I dont know whaat a throbber is
-	var/hp = "very"
-	var/maxhp = "dead"
-	if(isliving(looking_at))
-		var/mob/living/L = looking_at
-		hp = L.health
-		maxhp = L.maxHealth
-	if(isnewplayer(looking_at))
-		status_color = "#eaff00"
-		status_span = "clown"
-		status_word = "sitting in the Lobby."
-		status_dot = "🆗"
-	else
-		switch(looking_at.stat)
+/datum/controller/subsystem/who/proc/Throb(mob/M, admeme)
+	var/list/throb = list()
+	var/sitrep = "Alive"
+	if(admeme)
+		if(isliving(M))
+			var/mob/living/L = M
+			throb["hp"] = L.health
+			throb["maxhp"] = L.maxHealth
+		else
+			throb["hp"] = "???"
+			throb["maxhp"] = "???"
+	if(isnewplayer(M))
+		sitrep = "Lobby"
+	else if(admeme && isobserver(M))
+		var/mob/dead/observer/boo = M
+		if(boo.started_as_observer)
+			sitrep = "Observing"
+		else
+			sitrep = "Ghost"
+	else if(admeme)
+		switch(M.stat)
 			if(SOFT_CRIT)
-				status_color = "#FFA500"
-				status_span = "brass"
-				status_word = "in Softcrit!"
-				status_dot = "😱"
+				sitrep = "Softcrit"
 			if(UNCONSCIOUS)
-				if(hp < HEALTH_THRESHOLD_CRIT)
-					status_color = "#ff8800"
-					status_span = "hypnophrase" // ack ack ack
-					status_word = "in Hardcrit!"
-					status_dot = "😵"
+				if(throb["hp"] < HEALTH_THRESHOLD_CRIT)
+					sitrep = "Hardcrit"
 				else
-					status_color = "#aeaeff"
-					status_span = "alloy"
-					status_word = "taking a nap!"
-					status_dot = "💤"
+					sitrep = "Sleeping"
 			if(DEAD)
-				if(isobserver(looking_at))
-					var/mob/dead/observer/boo = looking_at
-					if(boo.started_as_observer)
-						status_color = "#ffffff"
-						status_span = "deadsay"
-						status_word = "observing."
-						status_dot = "👻"
-					else
-						status_color = "#ff0000"
-						status_span = "alert"
-						status_word = "DEAD, and a ghost!"
-						status_dot = "👻"
-				else
-					status_color = "#ff0000"
-					status_span = "phobia"
-					status_word = "DEAD!"
-					status_dot = "💀"
-	var/namerole = "[span_notice("[mobname] ([ckey])")] the [span_notice("[role]")]"
-	if(!isadmin)
-		namerole = "[span_brass("[mobname] ([ckey])")] the [span_brass("[role]")]"
-
-	var/line1 = "<span class='[status_span]'>[status_dot]</span> [namerole] - '[ParsePoseColor(pose)]'"
-	var/line2 = "<span class='[status_span]'>  </span> Currently in [span_notice(where)], at [span_notice(coordsout)]."
-	var/line3 = "<span class='[status_span]'>  </span> They are <span style='color:[status_color]'>[status_word]</span> ([hp]/[maxhp] HP)."
-	var/line4 = "<span class='[status_span]'>  </span> They are \a [admin_rank]!"
-	var/line5 = "<span class='[status_span]'>  </span> [admin_link]"
-	return "[line1]<br>[line2]<br>[line3]<br>[line4]<br>[line5]<br>"
+				sitrep = "Dead"
+	switch(sitrep)
+		if("Alive")
+			throb["span"] = "green"
+			throb["color"] = "green"
+			if(admeme)
+				throb["icon"] = "🙂"
+			else
+				throb["icon"] = "🐱"
+			throb["status"] = "Alive"
+		if("Lobby")
+			throb["span"] = "clown"
+			throb["color"] = "#eaff00"
+			if(admeme)
+				throb["icon"] = "🆗"
+			else
+				throb["icon"] = "🐈"
+			throb["status"] = "Lobby"
+		if("Observing")
+			throb["span"] = "deadsay"
+			throb["color"] = "#ffffff"
+			throb["icon"] = "👻"
+			throb["status"] = "Observing"
+		if("Ghost")
+			throb["span"] = "deadsay"
+			throb["color"] = "#ffffff"
+			throb["icon"] = "👻"
+			throb["status"] = "Ghost"
+		if("Softcrit")
+			throb["span"] = "brass"
+			throb["color"] = "#FFA500"
+			throb["icon"] = "☹️"
+			throb["status"] = "Softcrit"
+		if("Hardcrit")
+			throb["span"] = "hypnophrase"
+			throb["color"] = "#ff8800"
+			throb["icon"] = "😱"
+			throb["status"] = "Hardcrit"
+		if("Sleeping")
+			throb["span"] = "alloy"
+			throb["color"] = "#aeaeff"
+			throb["icon"] = "💤"
+			throb["status"] = "Sleeping"
+		if("Dead")
+			throb["span"] = "phobia"
+			throb["color"] = "#ff0000"
+			throb["icon"] = "💀"
+			throb["status"] = "Dead"
+	return throb
 
 /datum/controller/subsystem/who/proc/Me(client/whoer)
 	var/list/dat = list()
@@ -487,7 +486,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/datum/preferences/P = whoer.prefs
 	var/shows_name = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_NAME)
 	var/shows_job = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE)
-	var/shows_location = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION)
+	var/shows_location = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE)
 	var/shows_coords = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_COORDS)
 	var/shows_pose = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE)
 	var/shows_who = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
@@ -527,8 +526,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/mob/M = ckey2mob(ckey)
 	switch(href_list["[ckey]"])
 		if("ToggleLocationVis")
-			TOGGLE_BITFIELD(P.whoflags, WHO_SHOWS_REGION)
-			to_chat(P.parent, span_green("Your location is now [CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION) ? "VISIBLE" : "HIDDEN"] to others!"))
+			TOGGLE_BITFIELD(P.whoflags, WHO_SHOWS_WHERE)
+			to_chat(P.parent, span_green("Your location is now [CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) ? "VISIBLE" : "HIDDEN"] to others!"))
 		if("ToggleWhoVis")
 			TOGGLE_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 			to_chat(P.parent, span_green("You are now [CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME) ? "VISIBLE" : "HIDDEN"] to others!"))
@@ -554,118 +553,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			SetWhere(M)
 	save_queue[ckey] = 2
 
-/// Opens the qho tgui for the agmin
-/datum/controller/subsystem/who/proc/OpenWindow(mob/user)
-	to_chat(user, span_alert("Coming soon: This feature"))
-	// return ui_interact(user) // yeah it doesnt work
-/* 
-/// Opens the qho tgui for the agmin
-/datum/controller/subsystem/who/ui_interact(mob/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "WhoAdminPanel")
-		ui.open()
-
-/datum/controller/subsystem/who/ui_state(mob/user)
-	return GLOB.admin_state
-
-/datum/controller/subsystem/who/ui_data(mob/user)
-	var/list/data = list()
-	data["UserName"] = user.real_name
-	data["DP"] = SSquirks.dp
-	data["AllWhos"] = FormatifyCustoms()
-	return data
-
-/datum/controller/subsystem/who/proc/FormatifyCustoms()
-	var/list/bois = list()
-	for(var/key in customlist)
-		var/datum/who_custom_stuff/WCS = customlist[key]
-		var/mob/M = ckey2mob(key)
-		var/list/buddy = list()
-
-		buddy["WhoCkey"] = WCS.ckey
-
-		var/list/boiname = list()
-		boiname["RealVal"] = M?.real_name || "No Name"
-		boiname["CustVal"] = WCS.GetName(TRUE)
-		boiname["IsBanned"] = CHECK_BITFIELD(WCS.lockouts, WHO_LOCKOUT_NAME)
-		buddy["Name"] = list(boiname)
-
-		var/list/boirole = list()
-		boirole["RealVal"] = M?.mind?.assigned_role || "No Role"
-		boirole["CustVal"] = WCS.GetRole(TRUE)
-		boirole["IsBanned"] = CHECK_BITFIELD(WCS.lockouts, WHO_LOCKOUT_ROLE)
-		buddy["Role"] = list(boirole)
-
-		var/list/boiwhere = list()
-		boiwhere["RealVal"] = WhereAmI(M) || "Nowhere"
-		boiwhere["CustVal"] = WCS.GetWhere(TRUE)
-		boiwhere["IsBanned"] = CHECK_BITFIELD(WCS.lockouts, WHO_LOCKOUT_WHERE)
-		buddy["Where"] = list(boiwhere)
-
-		var/list/boipose = list()
-		boipose["RealVal"] = WCS.GetPose(TRUE) || "No Pose"
-		boipose["CustVal"] = WCS.GetPose(TRUE)
-		boipose["IsBanned"] = CHECK_BITFIELD(WCS.lockouts, WHO_LOCKOUT_POSE)
-		buddy["Pose"] = list(boipose)
-		bois += list(buddy)
-	return bois
-
-/datum/controller/subsystem/who/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
-	. = ..()
-	var/ckey = params["Who"]
-	var/datum/who_custom_stuff/WCS = GetCustomDatum(ckey)
-	if(!WCS)
-		return
-	if(action == "ToggleBan")
-		switch(params["What"])
-			if("Name")
-				TOGGLE_BITFIELD(WCS.lockouts, WHO_LOCKOUT_NAME)
-			if("Role")
-				TOGGLE_BITFIELD(WCS.lockouts, WHO_LOCKOUT_ROLE)
-			if("Where")
-				TOGGLE_BITFIELD(WCS.lockouts, WHO_LOCKOUT_WHERE)
-			if("Pose")
-				TOGGLE_BITFIELD(WCS.lockouts, WHO_LOCKOUT_POSE)
-	if(action == "SetValue")
-		switch(params["What"])
-			if("Name")
-				var/new_name = params["Value"]
-				if(new_name)
-					WCS.SetName(new_name || "")
-				else
-					action = "ClearValue"
-			if("Role")
-				var/new_role = params["Value"]
-				if(new_role)
-					WCS.SetRole(new_role || "")
-				else
-					action = "ClearValue"
-			if("Where")
-				var/new_where = params["Value"]
-				if(new_where)
-					WCS.SetWhere(new_where || "")
-				else
-					action = "ClearValue"
-			if("Pose")
-				var/new_pose = params["Value"]
-				if(new_pose)
-					WCS.SetPose(new_pose || "")
-				else
-					action = "ClearValue"
-	if(action == "ClearValue")
-		switch(params["What"])
-			if("Name")
-				WCS.SetName("CLEAR-RESET-DESTROY")
-			if("Role")
-				WCS.SetRole("CLEAR-RESET-DESTROY")
-			if("Where")
-				WCS.SetWhere("CLEAR-RESET-DESTROY")
-			if("Pose")
-				WCS.SetPose("CLEAR-RESET-DESTROY")
-	save_queue[ckey] = 2 // its a hack, but im the headdev so its okay
-	return TRUE
- */
 /obj/effect/hint/region_floodfill_ignore
 	name = "Makes the region flood fill thing not consider this as a wall, even if it is one."
 	desc = "Fenny, place these on interior doors and windows to make the region flood fill thing include the whole house or dungeon or whatever."
@@ -906,7 +793,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/datum/preferences/P = extract_prefs(ckey)
 	var/mob/M = GetMyMob()
 	if(IsAdmin())
-		return "[M.real_name][isnull(c_name) ? "" : " - [c_name]"]"
+		return "[M.real_name][isnull(c_name) ? "" : " as [c_name]"]"
 	var/name_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_NAME) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	if(!name_vis && !reveal_always)
 		return "Unknown"
@@ -927,13 +814,13 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/datum/preferences/P = extract_prefs(ckey)
 	var/mob/M = GetMyMob()
 	if(IsAdmin())
-		return "[M.mind.assigned_role][isnull(c_role) ? "" : " - [c_role]"]"
+		return "[M.mind.assigned_role][isnull(c_role) ? "" : " as [c_role]"]"
 	var/job_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	if(!job_vis && !reveal_always)
-		return "mysterious stranger"
+		return ""
 	if(!isnull(c_role))
-		return c_role
-	return TrueJob()
+		return "[c_role]"
+	return "[TrueJob()]"
 
 /datum/who_custom_stuff/proc/TrueJob()
 	var/mob/M = GetMyMob()
@@ -950,7 +837,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/mob/M = GetMyMob()
 	if(IsAdmin())
 		return "[SSwho.WhereAmI(M)][isnull(c_where) ? "" : " - [c_where]"]"
-	var/loc_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
+	var/loc_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	if(!loc_vis && !reveal_always)
 		return "parts unknown"
 	if(!isnull(c_where))
@@ -1043,11 +930,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		You can add a color to the OOC status! Just start the line with QQc and then a 6 character hexcode, \
 		like 'QQcFF00DD' or 'QQc123456'", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
 	c_pose = newpose
-	if(trim(newpose) != "" && !isnull(c_pose))
-		c_pose = "Just vibin', come say hi!"
-		DispenseInfo(defaultpose, c_pose, "OOC status")
-	else
-		DispenseInfo(defaultpose, SSwho.ParsePoseColor(newpose), "OOC status", TRUE)
+	DispenseInfo(defaultpose, SSwho.ParsePoseColor(newpose), "OOC status")
 
 /datum/who_custom_stuff/proc/ToggleNameVis()
 	var/mob/M = GetMyMob()
@@ -1064,8 +947,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 /datum/who_custom_stuff/proc/ToggleLocationVis()
 	var/mob/M = GetMyMob()
 	var/datum/preferences/P = extract_prefs(ckey)
-	TOGGLE_BITFIELD(P.whoflags, WHO_SHOWS_REGION)
-	to_chat(M, "Your location is now [CHECK_BITFIELD(P.whoflags, WHO_SHOWS_REGION) ? "VISIBLE" : "HIDDEN"] to others!")
+	TOGGLE_BITFIELD(P.whoflags, WHO_SHOWS_WHERE)
+	to_chat(M, "Your location is now [CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) ? "VISIBLE" : "HIDDEN"] to others!")
 
 /datum/who_custom_stuff/proc/TogglePoseVis()
 	var/mob/M = GetMyMob()

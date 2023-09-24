@@ -258,7 +258,7 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 
 /// aight so you get to sit here under all the nonexistant burps and farts and think about what you did
 #define WHO_SHOWS_ME (1<<0)
-#define WHO_SHOWS_REGION (1<<1)
+#define WHO_SHOWS_WHERE (1<<1)
 #define WHO_SHOWS_COORDS (1<<2)
 #define WHO_SHOWS_NAME (1<<3)
 #define WHO_SHOWS_ROLE (1<<4)
