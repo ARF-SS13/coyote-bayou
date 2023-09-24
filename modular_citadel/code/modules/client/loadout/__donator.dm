@@ -891,17 +891,17 @@
 	new /obj/item/clothing/suit/armor/medium/combat/swat(src)
 	new /obj/item/melee/onehanded/machete/spatha(src)
 
-/datum/gear/donator/kits/nirzak
-	name = "Vas Kit"
-	path = /obj/item/storage/box/large/custom_kit/nirzak
-	ckeywhitelist = list("nirzak")
+// /datum/gear/donator/kits/nirzak
+// 	name = "Vas Kit"
+// 	path = /obj/item/storage/box/large/custom_kit/nirzak
+// 	ckeywhitelist = list("nirzak")
 
-/obj/item/storage/box/large/custom_kit/nirzak/PopulateContents()
-	new /obj/item/clothing/suit/armor/harpercoat(src)
-	new /obj/item/stealthboy(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
-	new /obj/item/storage/belt/military(src)
-	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
+// /obj/item/storage/box/large/custom_kit/nirzak/PopulateContents()
+// 	new /obj/item/clothing/suit/armor/harpercoat(src)
+// 	new /obj/item/stealthboy(src)
+// 	new /obj/item/clothing/mask/gas/sechailer(src)
+// 	new /obj/item/storage/belt/military(src)
+// 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 
 // O
 
@@ -915,6 +915,7 @@
 	new /obj/item/gun/ballistic/automatic/z34rifle/custom(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/ammo_box/a308box(src)
+
 // P
 
 /obj/item/pet_carrier/eye
@@ -1019,6 +1020,7 @@
 	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
 
 // Q
+
 // R
 
 /datum/gear/donator/kits/radiantflash
