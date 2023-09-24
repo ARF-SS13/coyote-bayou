@@ -809,12 +809,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
-	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
-	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
-	S["typing_indicator_speed"]			>> features_speech["typing_indicator_speed"]
-	S["typing_indicator_pitch"]			>> features_speech["typing_indicator_pitch"]
-	S["typing_indicator_variance"]		>> features_speech["typing_indicator_variance"]
-	S["typing_indicator_volume"]		>> features_speech["typing_indicator_volume"]
+	S["typing_indicator_sound"]					>> features_speech["typing_indicator_sound"] // Typing sounds!
+	S["typing_indicator_sound_play"]			>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+	S["typing_indicator_speed"]					>> features_speech["typing_indicator_speed"]
+	S["typing_indicator_pitch"]					>> features_speech["typing_indicator_pitch"]
+	S["typing_indicator_variance"]				>> features_speech["typing_indicator_variance"]
+	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
+	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
 	/// Vore stuff!
@@ -1067,7 +1068,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "2-Average")
 	features_speech["typing_indicator_variance"]			= sanitize_inlist(features_speech["typing_indicator_variance"], GLOB.typing_indicator_variances, "2-Voice varies a little between words")
 	features_speech["typing_indicator_volume"]				= sanitize_inlist(features_speech["typing_indicator_volume"], GLOB.typing_indicator_volumes, "2-Average")
-
+	features_speech["typing_indicator_max_words_spoken"]	= sanitize_inlist(features_speech["typing_indicator_max_words_spoken"], GLOB.typing_indicator_max_words_spoken_list, "4 Words")
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs

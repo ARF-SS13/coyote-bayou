@@ -6,8 +6,6 @@
 #define PLAY_FINISHED			3
 #define PLAY_ANIMALCROSSING_TI	4	// Animal crossing like typing indicator
 
-#define MAX_ITERATIONS_TI		24	// maximum number of character allowed to be vocal, keep it around this number so... it doesn't become a pain for anyone else to listen to. Love -Gin
-
 GLOBAL_LIST_INIT(play_methods, list("No Sound",
 									"Play sound when you begin typing",
 //									"Loop sound while you type",
@@ -33,9 +31,19 @@ GLOBAL_LIST_INIT(typing_indicator_variances, list(
 									"1-Voice does not vary between words" = 0))
 
 GLOBAL_LIST_INIT(typing_indicator_volumes, list(
-									"3-Loud" = 20,
-									"2-Average" = 15,
-									"1-Quiet and polite" = 10))
+									"3-Loud" = 15,
+									"2-Average" = 10,
+									"1-Quiet and polite" = 5))
+
+GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
+									"8 Words" = 8,
+									"7 Words" = 7,
+									"6 Words" = 6,
+									"5 Words" = 5,
+									"4 Words" = 4,
+									"3 Words" = 3,
+									"2 Words" = 2,
+									"1 Word" = 1))
 
 GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		"Default"	= 'modular_coyote/sound/typing/default.ogg',
@@ -155,12 +163,18 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]]
 	return 2
 
+/mob/proc/get_typing_indicator_max_words_spoken()
+	if(client)
+		var/client/C = client
+		return GLOB.typing_indicator_max_words_spoken_list[C.prefs.features["typing_indicator_max_words_spoken"]]
+	return 4
+
 /mob/display_typing_indicator(timeout_override = TYPING_INDICATOR_TIMEOUT, state_override = generate_typing_indicator(), force = FALSE)
 	if(((!typing_indicator_enabled || (stat != CONSCIOUS)) && !force) || typing_indicator_current)
 		return
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_STARTING])
-		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
 
 // Disabling this unfortunately for now as I think this is causing too much perf hit on things.
 /*	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_TYPING])
@@ -179,23 +193,26 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return ..()
 	
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_FINISHED])
-		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
 
 	return ..()
 
-/mob/proc/play_AC_typing_indicator(message_length)		//Animal Crossing typing indicator macro
+/mob/proc/play_AC_typing_indicator(txt as text)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
 	if(stat != CONSCIOUS)
 		return
 
-	if(!message_length)			//If the message is empty, play nothing
+	if(!txt)			//If the message is empty, play nothing
 		return
 
-	if(message_length > MAX_ITERATIONS_TI)		//If the message length is made out of [NUMBER] characters or more, set it as maximum length (so it won't play for ever an annoying sound)
-		message_length = MAX_ITERATIONS_TI		
+	var/list/word_count = splittext(txt," ")
+	var/counter = word_count.len
+
+	if(counter > get_typing_indicator_max_words_spoken())		//If the message length is made out of [NUMBER] characters or more, set it as maximum length (so it won't play for ever an annoying sound)
+		counter = get_typing_indicator_max_words_spoken()		
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])		//we are checking if they actually have this preference turned on 
 		var/TI_frequency
-		for(var/i in 1 to (round(message_length/4 + 1)))		//Adding one in case the massage is a simple "hi!", so it will play at least one iteration
+		for(var/i in 1 to counter)
 			TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
 			playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
 			sleep(rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
@@ -278,6 +295,12 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 					new_input = input(user, "Choose your typing sound volume:", "Sound Indicator") as null|anything in GLOB.typing_indicator_volumes
 					if(new_input)
 						features_speech["typing_indicator_volume"] = new_input
+
+				if("typing_indicator_max_words_spoken")
+					var/new_input
+					new_input = input(user, "Choose your maximum number of audible words:", "Sound Indicator") as null|anything in GLOB.typing_indicator_max_words_spoken_list
+					if(new_input)
+						features_speech["typing_indicator_max_words_spoken"] = new_input
 	..()
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
