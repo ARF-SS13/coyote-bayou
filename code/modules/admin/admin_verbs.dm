@@ -98,6 +98,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/give_one_up,
 	/datum/admins/proc/change_view_range,
 	/datum/admins/proc/print_spans,
+	/datum/admins/proc/admin_who,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -971,7 +972,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSwho.AdminPanel() // it'll grab the usr itself, in a cursed curse
 
 /datum/admins/proc/admin_who()
-	set category = "OOC"
+	set category = "Admin"
 	set name = "WhoPlus"
 	set desc = "Opens the who tab, but moreso."
 

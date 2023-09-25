@@ -307,36 +307,43 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	players = sortNames(players)
 	lines += "<hr>"
 	if(admeme && LAZYLEN(admins))
-		lines += span_alertalien("STAFF:")
+		lines += span_alertalien("STAFF:<br>")
 		for(var/mob/M in admins)
 			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
 	else
-		lines += span_alertalien("ADMINS: [span_noticealien("PRESENT!")]")
+		lines += span_alertalien("ADMINS: [span_noticealien("PRESENT!")]<br>")
+	lines += "<br>"
+
 	if(admeme && LAZYLEN(mentors))
-		lines += span_alertalien("MENTORS:")
+		lines += span_alertalien("MENTORS:<br>")
 		for(var/mob/M in mentors)
 			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
 	else
-		lines += span_alertalien("MENTORS: [span_noticealien("PRESENT!")]")
+		lines += span_alertalien("<br>MENTORS: [span_noticealien("PRESENT!")]")
 		if(whoer in GLOB.mentors)
 			lines += " (And you're one of them! =3)"
-	lines += span_alertalien("PLAYERS:")
+	lines += "<br>"
+
+	lines += span_alertalien("<br>PLAYERS:<br>")
 	for(var/mob/M in players)
 		lines += WhoLine(M, admeme, verbose)
 		if(CHECK_TICK)
 			continue
+	lines += "<br>"
+
+	lines += "<hr>"
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
 	if(admeme)
-		lines += "<b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
-		lines += "<b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
-	lines += span_notice("You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
-	lines += "<hr>"
+		lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
+		lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
+	lines += span_notice("<br>You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
+	lines += "<br>"
 	lines += Me(whoer)
-	to_chat(whoer, lines.Join("<br>"))
+	to_chat(whoer, lines.Join())
 
 /// Who's Line is it Anyway?
 /// Builds an HTML string for the who list
@@ -358,6 +365,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/list/throbber = Throb(M, admeme)
 	var/ckey = admeme ? " ([M.ckey])" : ""
 	var/list/out = list()
+	out += "<br>"
 	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
 	if(admeme && M_is_admin)
 		name_span = "brass"
@@ -369,28 +377,28 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	/// the role slug
 	if(role_visible)
 		out += " the <span class='[role_span]'>[role]</span>"
-	var/second_line_visible = where_visible || pose_visible
-	if(second_line_visible)
-		out += "<br>"
-		var/dash = where_visible && pose_visible ? " - " : ""
-		var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
-		/// the where and pose slug
-		out += "[where_formatted][dash][pose]"
+	if(where_visible)
+		out += ", in <span class='[where_span]'>[where]</span>"
+	if(pose_visible)
+		out += " '[pose]'"
+	// var/second_line_visible = where_visible || pose_visible
+	// if(second_line_visible)
+	// 	out += "<br>[FOURSPACES]"
+	// 	var/dash = where_visible && pose_visible ? " - " : ""
+	// 	var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
+	// 	/// the where and pose slug
+	//	out += "[where_formatted][dash][pose]"
 	if(!admeme && !verbose) // players get off here
 		var/msgout = out.Join()
-		msgout += "<span style='font-size: 0.25em'><br></span>"
 		return msgout
 	/// Okay so i lied, verbose is an admin command that piles in a lot more info
 	/// we are an admeme from here forward
 	/// The status slug
-	out += "<br>"
+	var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
+	out += "<br>They are \a [admin_rank]!"
 	out += "[throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
 	/// the admin slug
-	var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
-	out += "<br> They are \a [admin_rank]!"
-	out += "<br>\t[ADMIN_QUARTERMONTY(M)]"
-	/// adds in a tiny-font linebreak so it is easier on the eyes
-	out += "<span style='font-size: 0.25em'> <br></span>"
+	out += "<br>[ADMIN_QUARTERMONTY(M)]"
 	return out.Join()
 
 /datum/controller/subsystem/who/proc/Throb(mob/M, admeme)
@@ -714,14 +722,14 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	SSwho.Who(src) // hoo
 
-/client/verb/who_verbose()
-	set name = "Who Plus"
-	set category = "OOC"
-	set desc = "See who's online, and get a lot of info about them!"
+// /client/verb/who_verbose()
+// 	set name = "Who Plus"
+// 	set category = "OOC"
+// 	set desc = "See who's online, and get a lot of info about them!"
 
-	SSwho.WhoPlus(src) // hoo
+// 	SSwho.WhoPlus(src) // hoo
 
-/client/verb/myself()
+/client/verb/you()
 	set name = "You" // you pressed "You", referring to me
 	set category = "OOC" // That is correct!
 	set desc = "See info about yourself in relation to 'Who'!"
