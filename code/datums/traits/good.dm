@@ -2098,6 +2098,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.chemwhiz_recipes
 
 
 /datum/quirk/package/reformedtribal/remove()
@@ -2105,6 +2108,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Primitive Tech")
 		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+	if(H)
+		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
 
 /datum/quirk/package/creatureofthewildsevi
 	name = "Creature of the Wilds - Eviscerator"
