@@ -368,6 +368,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/M_is_admin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
 	var/list/throbber = Throb(M, admeme)
 	var/list/out = list()
+	out += "<br>"
 	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
 	if(admeme && M_is_admin)
 		name_span = "brass"
