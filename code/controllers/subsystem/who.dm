@@ -312,9 +312,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
+		lines += "<br>"
 	else
 		lines += span_alertalien("ADMINS: [span_noticealien("PRESENT!")]<br>")
-	lines += "<br>"
 
 	if(admeme && LAZYLEN(mentors))
 		lines += span_alertalien("MENTORS:<br>")
@@ -322,19 +322,19 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			lines += WhoLine(M, admeme, FALSE)
 			if(CHECK_TICK)
 				continue
+		lines += "<br>"
 	else
 		lines += span_alertalien("<br>MENTORS: [span_noticealien("PRESENT!")]")
 		if(whoer in GLOB.mentors)
 			lines += " (And you're one of them! =3)"
-	lines += "<br>"
 
-	lines += span_alertalien("<br>PLAYERS:<br>")
+	lines += span_alertalien("<br>PLAYERS:")
 	for(var/mob/M in players)
 		lines += WhoLine(M, admeme, verbose)
 		if(CHECK_TICK)
 			continue
 	lines += "<br>"
-
+	lines += "<br>"
 	lines += "<hr>"
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
 	if(admeme)
