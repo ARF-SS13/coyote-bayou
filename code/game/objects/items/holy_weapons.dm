@@ -284,6 +284,7 @@
 	obj_flags = UNIQUE_RENAME
 	item_flags = ITEM_CAN_PARRY
 	wound_bonus = -10
+	weapon_special_component = /datum/component/weapon_special/single_turf
 	var/chaplain_spawnable = TRUE
 	//total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
