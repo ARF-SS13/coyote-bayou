@@ -717,10 +717,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(!client)
 		return
 	
-	var/input = stripped_input(usr,"This adds a short message on the end of your record in who. Useful for informing if you're in the mood to RP. (Char Limit: [MAX_STATUS_LEN])",max_length=MAX_STATUS_LEN)
-	if(length(input))
-		SSwho.SetPose(src, input)
-		to_chat(usr, "Your status message is now: [input]")
+	SSwho.SetPose(src)
 
 /client/verb/who()
 	set name = "Who"
