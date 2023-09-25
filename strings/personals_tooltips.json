@@ -2,6 +2,7 @@
 	"front_page": [
 		"%LABEL:Front Page",
 		"%KIND:Misc",
+		"%ENTRY:TOOLTIP",
 		"Thank you for choosing %THINGNAME, the coziest way to find new folk!",
 		"This is a database of everyone currently active in the Wastes of Texarkana (that's right here!).",
 		"Below, you'll find a handy, sortable list of people who are looking to meet other lovely folk (like you!).",
@@ -10,11 +11,14 @@
 		"If you don't want certain parts (or the whole thing) to be listed, you can hide them using the visibility checkboxes."
 	],
 	"readme": [
+		"%ENTRY:TOOLTIP",
 		"Thank you for choosing %THINGNAME, the coziest way to find new folk!",
 		"This is a database of everyone currently active in the Wastes of Texarkana (that's right here!).",
 		"Below, you'll find a handy, sortable list of people who are looking to meet other lovely folk (like you!).",
 		"You can customize your entry in this database using the controls just below. Anything changed will be saved and",
 		"posted to the database immediately.",
+		"This database works off of the idea that characters are three in one: Who they are in the field, streets, the sheets.",
+		"Or, in other words, their adventuring persona, their roleplay persona, and their ERP persona.",
 		"If you don't want certain parts (or the whole thing) to be listed, you can hide them using the visibility checkboxes.",
 		"While this window itself is technically OOC, you're allowed to interpret any information you find here ICly.",
 		"You'll typically find a hint on how someone'll want to be approached, or how you might know these sorts of things,",
@@ -22,19 +26,17 @@
 		"their entry in this 'dating app'! 'course, when in doubt, ask in LOOC!"
 	],
 	"name": ["%LABEL:Name", "%KIND:Player", "This is your name, silly!"],
-	"online": {
-		"ON": ["This person is online!", "Go say hi!~"],
-		"OFF": ["This person is offline!", "Maybe they'll be back later?"]
-	},
 	"species": [
 		"%LABEL:Species",
 		"%KIND:Player",
+		"%ENTRY:TOOLTIP",
 		"This is your custom species!",
 		"You can change this in your character preferences!"
 	],
 	"flavor_text": [
 		"%LABEL:Flavor Text",
 		"%KIND:Player",
+		"%ENTRY:BUTTON;READ_FLAVORTEXT",
 		"This is your flavor text!",
 		"You can change this in your character prefs!",
 		"Other options coming soon(tm)."
@@ -42,6 +44,7 @@
 	"ooc_text": [
 		"%LABEL:OOC Text",
 		"%KIND:Player",
+		"%ENTRY:BUTTON;READ_OOCTEXT",
 		"This is your OOC text!",
 		"You can change this in your character prefs!",
 		"Other options coming soon(tm)."
@@ -49,6 +52,7 @@
 	"adventure_notes": [
 		"%LABEL:Notes",
 		"%KIND:Adventure",
+		"%ENTRY:LONGMESSAGE",
 		"What sort of stuff should people know about you, relating to adventuring?",
 		"Maybe you're a seasoned veteran, or a fresh-faced rookie?",
 		"Maybe you like to plough through dungeons, or maybe you prefer to explore the wilderness?",
@@ -61,6 +65,7 @@
 	"adventure_i_am_a": [
 		"%LABEL:I am a...",
 		"%KIND:Adventure",
+		"%ENTRY:SHORTLINE",
 		"What sort of role do you fill in an adventuring party?",
 		"Are you the tank, the healer, the DPS?",
 		"Are you the leader, the strategist, the tactician?",
@@ -74,6 +79,7 @@
 	"adventure_looking_for": [
 		"%LABEL:Looking for...",
 		"%KIND:Adventure",
+		"%ENTRY:SHORTLINE",
 		"What sort of role/player are you looking for in an adventuring party?",
 		"Are you looking for a tank, a healer, a DPS?",
 		"Are you looking for a leader, a strategist, a tactician?",
@@ -87,6 +93,7 @@
 	"adventure_in_it_for": [
 		"%LABEL:In it for...",
 		"%KIND:Adventure",
+		"%ENTRY:SHORTLINE",
 		"What are you looking to get out of adventuring?",
 		"Are you in it to get rich?",
 		"Are you in it to save the world?",
@@ -103,6 +110,7 @@
 	"adventure_listing_kind": [
 		"%LABEL:Listing Kind",
 		"%KIND:Adventure",
+		"%ENTRY:SHORTLINE",
 		"How would you prefer others interpret this listing?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
@@ -115,18 +123,21 @@
 	"adventure_is_healer": [
 		"%LABEL:Healer?",
 		"%KIND:Adventure",
+		"%ENTRY:BOOLEAN",
 		"Are you a healer?",
 		"Everyone wants a healer in their party!"
 	],
 	"adventure_lfg": [
 		"%LABEL:LFG?",
 		"%KIND:Adventure",
+		"%ENTRY:BOOLEAN",
 		"Are you looking for a group?",
 		"Adventure is dangerous, and it's always safer to travel in groups!"
 	],
 	"adventure_pvp_pref": [
 		"%LABEL:PvP Prefs",
 		"%KIND:Adventure",
+		"%ENTRY:LONGMESSAGE",
 		"How do you feel about PvP?",
 		"Like it? Hate it? Don't care?",
 		"What would your ideal PvP situation be? 'Not at all' is a perfectly valid answer!",
@@ -141,6 +152,7 @@
 	"rp_notes": [
 		"%LABEL:Notes",
 		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
 		"What sort of stuff should people know about you, relating to roleplay / character interaction?",
 		"Things that would help others understand the sort of character you're playing, and how they should interact with you.",
 		"Things like your general roleplay style, or your character's personality.",
@@ -154,6 +166,7 @@
 	"rp_job": [
 		"%LABEL:Job",
 		"%KIND:RP",
+		"%ENTRY:SHORTLINE",
 		"This is your character's typical job!",
 		"It doesn't necessarily have to be their actual job, or even a real job!",
 		"Maybe they're a student, or a stay-at-home parent?",
@@ -166,6 +179,7 @@
 	"rp_i_am_a": [
 		"%LABEL:I am a...",
 		"%KIND:RP",
+		"%ENTRY:SHORTLINE",
 		"What sort of character are you playing? What can you say about who or what they are?",
 		"Maybe you're a witch, or a carpenter? Maybe you're a scientist, or a war veteran?",
 		"Maybe you're a shy bookworm, or a flirtatious tease?",
@@ -179,6 +193,7 @@
 	"rp_looking_for": [
 		"%LABEL:Looking for...",
 		"%KIND:RP",
+		"%ENTRY:SHORTLINE",
 		"What sort of character are you looking to meet? What can you say about who or what they are?",
 		"Maybe you're looking for a witch, or a carpenter? Maybe you're looking for a scientist, or a war veteran?",
 		"Maybe you're looking for a shy bookworm to discuss the latest issue of Scrontch / shove in a locker?",
@@ -192,7 +207,8 @@
 	"rp_listing_kind": [
 		"%LABEL:Listing Kind",
 		"%KIND:RP",
-		"How would you prefer others interpret this listing?",
+		"%ENTRY:SHORTLINE",
+		"How would you prefer others interpret this listing?, if at all?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
 		"Maybe this could be an entry on a dating site? Or a personal ad in a newspaper?",
@@ -206,6 +222,7 @@
 	"rp_approach_pref": [
 		"%LABEL:Approach Pref",
 		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
 		"How would you prefer others approach you for RP?",
 		"Walk right up and say hi? Whistle at you from across the street?",
 		"Come into your workplace and chat? Send you a message on a dating app (PDA)?",
@@ -216,9 +233,33 @@
 		"Anything's good, whole point here is to find the best ways for people to approach you (and vice versa)!",
 		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
 	],
+	"rp_likes" : [
+		"%LABEL:Likes",
+		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
+		"What sort of stuff do you like to do in an RP scene, or what sort of stuff do you like to see in an RP scene?",
+		"Maybe you like to sit in a pile of sofas and chat about who-knows-what while you eat pizza?",
+		"Maybe you like to go on adventures, and would love to meet someone to go on adventures with?",
+		"Maybe you like to fight monsters, and would love to meet someone to fight monsters with?",
+		"Maybe you like to fight other adventurers, and would love to meet someone to fight other adventurers with?",
+		"A lot of this is covered in the other sections, but this is a good place to put anything that doesn't fit anywhere else!",
+		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"		
+	],
+	"rp_dislikes" : [
+		"%LABEL:Dislikes",
+		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
+		"What sort of stuff do you not like to do in an RP scene, or what sort of stuff do you not like to see in an RP scene?",
+		"Maybe you don't like the mundanity of slice-of-life RP, and would prefer to go on adventures?",
+		"Maybe you aren't a fan of combat, and would prefer to sit in a pile of sofas and chat about who-knows-what while you eat pizza?",
+		"Maybe you just don't like sergals, and would prefer to meet literally anyone else?",
+		"A lot of this is covered in the other sections, but this is a good place to put anything that doesn't fit anywhere else!",
+		"NSFW content is allowed, just keep it tasteful and leave the juicy bits to the ERP section!"
+	],
 	"rp_length": [
 		"%LABEL:Length",
 		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
 		"How long do you prefer your overall RP to be, in terms of storyline length?",
 		"Are you looking for a one-off encounter, or a long-term relationship/story?",
 		"Maybe you want to keep running into someone? Maybe you just want a quick chat?",
@@ -230,6 +271,7 @@
 	"rp_preferences": [
 		"%LABEL:RP Prefs",
 		"%KIND:RP",
+		"%ENTRY:LONGMESSAGE",
 		"What sort of RP do you prefer, in terms of tone and content?",
 		"Maybe you want something light-hearted and fluffy?",
 		"Maybe you want something dark and gritty?",
@@ -245,28 +287,25 @@
 	"erp_sex": [
 		"%LABEL:Sex",
 		"%KIND:ERP",
-		"What best describes your character's sexuality?"
+		"%ENTRY:SHORTLINE",
+		"What best describes your character's biological sex(es), if any?"
 	],
 	"erp_gender": [
 		"%LABEL:Gender",
 		"%KIND:ERP",
-		"What best describes your character's gender?"
+		"%ENTRY:SHORTLINE",
+		"What best describes your character's gender(s), if any?"
 	],
-	"erp_notes": [
-		"%LABEL:Notes",
+	"erp_sexuality": [
+		"%LABEL:Sexuality",
 		"%KIND:ERP",
-		"What sort of stuff should people know about you, relating to ERP?",
-		"Things like kinks and fetishes, things you're comfortable with and things you're not.",
-		"What gets you (and/or your character) going, and what turns you (and/or your character) off?",
-		"What sort of stuff do you like to do in an ERP scene? What sort of stuff do you not like to do?",
-		"Do you like a general air of romance and sensuality? Do you like to get right down to business?",
-		"What would make for your ideal ERP scene? 'Not at all' is a perfectly valid answer!",
-		"If you're not comfortable with ERP, that's perfectly fine! Just leave this section blank, or write something like 'No ERP please'.",
-		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
+		"%ENTRY:SHORTLINE",
+		"What best describes you character's sexual orientation(s), if any?"
 	],
 	"erp_i_am_a": [
 		"%LABEL:I am a...",
 		"%KIND:ERP",
+		"%ENTRY:SHORTLINE",
 		"What sort of character are you playing, relating to ERP?",
 		"Are you a thick, curvy, voluptuous vixen? Are you a tall, dark, handsome hunk?",
 		"Are you a shy, submissive, blushing bottom? Are you a dominant, assertive, confident top?",
@@ -283,6 +322,7 @@
 	"erp_looking_for": [
 		"%LABEL:Looking for...",
 		"%KIND:ERP",
+		"%ENTRY:SHORTLINE",
 		"What sort of character are you looking to meet, relating to ERP?",
 		"Are you looking for a thick, curvy, voluptuous vixen to cook you dinner?",
 		"Are you looking for a tall, dark, handsome hunk to sweep you off your feet?",
@@ -298,9 +338,45 @@
 		"Anything goes, whole point is to give other folk an idea of what you're looking for!",
 		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
 	],
+	"erp_notes": [
+		"%LABEL:Notes",
+		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
+		"What sort of stuff should people know about you, relating to ERP?",
+		"Things like kinks and fetishes, things you're comfortable with and things you're not.",
+		"What gets you (and/or your character) going, and what turns you (and/or your character) off?",
+		"What sort of stuff do you like to do in an ERP scene? What sort of stuff do you not like to do?",
+		"Do you like a general air of romance and sensuality? Do you like to get right down to business?",
+		"What would make for your ideal ERP scene? 'Not at all' is a perfectly valid answer!",
+		"If you're not comfortable with ERP, that's perfectly fine! Just leave this section blank, or write something like 'No ERP please'.",
+		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
+	],
+	"erp_likes":[
+		"%LABEL:Likes",
+		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
+		"What do you like to do in an ERP scene? What are you into? What gets you going and makes for a memorable scene?",
+		"Maybe you like to be tied up and teased? Maybe you like to tie others up and tease them?",
+		"Maybe you like something tame and down to earth like a nice romantic dinner?",
+		"Maybe you like something wild and crazy like a drunken orgy?",
+		"Maybe you like to be fed until you can't even get out of bed? Maybe you like to feed others until they can't even get out of bed?",
+		"If you're not comfortable with ERP, that's perfectly fine! Just leave this section blank, or write something like 'No ERP please'.",
+		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
+	],
+	"erp_dislikes": [
+		"%LABEL:Dislikes",
+		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
+		"What do you not like to do in an ERP scene? What are you not into? What turns you off or otherwise ruins the mood?",
+		"These could be things you're not comfortable with, or things you just don't find fun.",
+		"Be sure to mention what is a hard no that would constitute a prefbreak, and what is just something you'd prefer not to do, but wouldn't be a dealbreaker.",
+		"If you're not comfortable with ERP, that's perfectly fine! Just leave this section blank, or write something like 'No ERP please'.",
+		"NSFW content is allowed (rules still apply!), feel free to be as juicy or as tame as you like! No judgement here at all! (unless you want it =3)"
+	],
 	"erp_listing_kind": [
 		"%LABEL:Listing Kind",
 		"%KIND:ERP",
+		"%ENTRY:SHORTLINE",
 		"How would you prefer others interpret this ERP listing?",
 		"Say someone wants to use the information in this listing to approach you.",
 		"How would you prefer them to do so?",
@@ -315,6 +391,7 @@
 	"erp_approach_pref": [
 		"%LABEL:Approach Pref",
 		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
 		"How would you prefer others approach you for ERP?",
 		"Walk right up and say hi? Whistle at you from across the street?",
 		"Come into your workplace and chat? Send you a message on a dating app (PDA)?",
@@ -328,6 +405,7 @@
 	"erp_length": [
 		"%LABEL:Relationship Length",
 		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
 		"How long do you prefer your overall ERP to be, in terms of storyline length?",
 		"Are you looking for a one-off encounter, or a long-term relationship/story?",
 		"Maybe you want to keep running into someone? Maybe you just want a quickie?",
@@ -339,6 +417,7 @@
 	"erp_post_length": [
 		"%LABEL:Post Length",
 		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
 		"How long of a post do you normally make in an ERP scene?",
 		"Do you like to keep it short and sweet? Do you like to write a whole novel about your character's every thought and feeling?",
 		"Maybe you like to keep it short and sweet, but you're willing to write a whole novel if your partner does? And or vice versa?",
@@ -347,20 +426,17 @@
 	"erp_position": [
 		"%LABEL:Position",
 		"%KIND:ERP",
+		"%ENTRY:SHORTLINE",
 		"What sort of position do you prefer to be in, in an ERP scene?",
 		"Are you a top? Are you a bottom? Are you a switch?",
 		"Are you a dom? Are you a sub? Are you also a switch?",
 		"Are you a power bottom? Are you a power top? Maybe a power switch?",
 		"Any preference is fine, just let others know what to expect!"
 	],
-	"erp_sexuality": [
-		"%LABEL:Sexuality",
-		"%KIND:ERP",
-		"What best describes you character's sexual orientation?"
-	],
 	"erp_vore": [
 		"%LABEL:Vore",
 		"%KIND:ERP",
+		"%ENTRY:LONGMESSAGE",
 		"What best describes your character's vore preferences?",
 		"Are you a pred? Are you a prey? Are you a switch?",
 		"Not into vore? That's fine too! Just leave this blank, or write something like 'No vore please'.",

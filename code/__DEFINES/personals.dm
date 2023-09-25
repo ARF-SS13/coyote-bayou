@@ -20,9 +20,12 @@
 #define PI_RP_LOOKING_FOR         "rp_looking_for"
 #define PI_RP_LISTING_KIND        "rp_listing_kind"
 #define PI_RP_APPROACH_PREF       "rp_approach_pref"
+#define PI_RP_LIKES               "rp_likes"
+#define PI_RP_DISLIKES            "rp_dislikes"
 #define PI_RP_LENGTH              "rp_length"
-#define PI_RP_PREFERENCES         "rp_preferences"
 #define PI_ERP_NOTES              "erp_notes"
+#define PI_ERP_LIKES              "erp_likes"
+#define PI_ERP_DISLIKES           "erp_dislikes"
 #define PI_ERP_I_AM_A             "erp_i_am_a"
 #define PI_ERP_LOOKING_FOR        "erp_looking_for"
 #define PI_ERP_LISTING_KIND       "erp_listing_kind"
@@ -33,7 +36,7 @@
 #define PI_ERP_SEX                "erp_sex"
 #define PI_ERP_GENDER             "erp_gender"
 #define PI_ERP_POSITION           "erp_position"
-#define PI_ERP_VORE               "erp_vore"
+#define PI_ERP_VORE               "erp_vore
 
 #define PI_KIND_MISC           "Misc"
 #define PI_KIND_PLAYER         "Player"

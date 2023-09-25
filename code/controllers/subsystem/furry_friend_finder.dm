@@ -90,11 +90,9 @@ SUBSYSTEM_DEF(personals)
 /datum/controller/subsystem/personals/proc/refresh_cache()
 	personals_cache = list()
 	for(var/guy in personals)
-		personals_cache[guy] = list()
 		var/datum/personal_info/PI = get_personal(guy, FALSE, FALSE)
-		for(var/entry in PI.vars)
-			personals_cache[guy][entry] = PI.vars[entry]
-		personals_cache[guy]["owner"] = guy
+		var/list/person = PI.get_data()
+		personals_cache += list(person)
 
 /datum/controller/subsystem/personals/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -148,10 +146,13 @@ SUBSYSTEM_DEF(personals)
 /datum/personal_info
 	var/ckey = "butt"
 	var/name = "John Wasteland"
+	var/id = "butt-JW-471983" // save file name, unique identifier for this character independent of their true name
+	var/published = FALSE
 	var/online = FALSE
 	var/species = "Human"
 	var/flavor_text = "You see some kind of person of indistinct make and model. They look like they've seen better days."
 	var/ooc_text = "Don't touch me, cus I'm probably asleep right now."
+	var/profile_pic = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
 	/// stuff saved by this thing below here
 	var/adventure_notes = "I am an all around badass looking for cats to herd."
 	var/adventure_i_am_a = "Wastemaster"
@@ -161,25 +162,28 @@ SUBSYSTEM_DEF(personals)
 	var/adventure_is_healer = FALSE
 	var/adventure_lfg = FALSE
 	var/adventure_pvp_pref = PVP_PREF_DEFAULT
-	var/rp_notes = "Please buy me a drink!"
-	var/rp_job = "Waster"
 	var/rp_i_am_a = "40 something catboy with a drinking problem"
 	var/rp_looking_for = "succor from a tall, dark and handsome cyborg with big guns."
+	var/rp_likes = RP_PREF_DEFAULT
+	var/rp_dislikes = RP_PREF_DEFAULT
+	var/rp_notes = "Please buy me a drink!"
+	var/rp_length = RP_LENGTH_DEFAULT
 	var/rp_listing_kind = RP_LISTING_KIND_DEFAULT
 	var/rp_approach_pref = APPROACH_PREF_DEFAULT
-	var/rp_length = RP_LENGTH_DEFAULT
-	var/rp_preferences = RP_PREF_DEFAULT
-	var/erp_notes = "I like holding hands and curling up by various tire fires."
+	var/erp_sex = PLURAL
+	var/erp_gender = PLURAL
+	var/erp_sexuality = ERP_SEXUALITY_DEFAULT
+	var/erp_position = ERP_POSITION_DEFAULT
 	var/erp_i_am_a = "hot single in your area"
 	var/erp_looking_for = "hot mother of cats"
+	var/erp_faves = "I love holding hands and curling up by various tire fires."
+	var/erp_likes = "I like holding hands and curling up by various tire fires."
+	var/erp_dislikes = "I dont like holding hands and curling up by various tire fires."
+	var/erp_notes = "I like holding hands and curling up by various tire fires."
 	var/erp_listing_kind = ERP_LISTING_KIND_DEFAULT
 	var/erp_approach_pref = ERP_APPROACH_PREF_DEFAULT
 	var/erp_length = ERP_LENGTH_DEFAULT
 	var/erp_post_length = ERP_POST_LENGTH_DEFAULT
-	var/erp_sexuality = ERP_SEXUALITY_DEFAULT
-	var/erp_sex = PLURAL
-	var/erp_gender = PLURAL
-	var/erp_position = ERP_POSITION_DEFAULT
 	var/erp_vore = ERP_VORE_DEFAULT
 	var/list/visibility = list(
 		PI_MASTER = TRUE,
@@ -219,9 +223,6 @@ SUBSYSTEM_DEF(personals)
 		PI_ERP_POSITION = TRUE,
 		PI_ERP_VORE = TRUE,
 	)
-	var/sortby = "name" // cus i dont know how to local state lol
-	var/sortdir = "asc" // cus i dont know how to local state lol
-	var/activetab = "Adventure" // okay i kinda do but i dont want to
 
 /datum/personal_info/proc/import_data(mob/living/L)
 	if(!istype(L))
@@ -317,6 +318,59 @@ SUBSYSTEM_DEF(personals)
 		CRASH("Invalid entry passed to update_entry!!!!!!!!!!!!!!!!!!!!")
 	vars[entry] = value
 	export_data()
+
+/datum/personal_info/proc/get_data()
+	var/list/vis = visibility.Copy()
+	var/list/out = list(
+		"ckey" =                   ckey,
+		"name" =                   name,
+		"published" =              published,
+		"online" =                 online,
+		"species" =                species,
+		"flavor_text" =            flavor_text,
+		"ooc_text" =               ooc_text,
+		"profile_pic" =            profile_pic,
+		"adventure_notes" =        adventure_notes,
+		"adventure_i_am_a" =       adventure_i_am_a,
+		"adventure_looking_for" =  adventure_looking_for,
+		"adventure_in_it_for" =    adventure_in_it_for,
+		"adventure_listing_kind" = adventure_listing_kind,
+		"adventure_is_healer" =    adventure_is_healer,
+		"adventure_lfg" =          adventure_lfg,
+		"adventure_pvp_pref" =     adventure_pvp_pref,
+		"rp_i_am_a" =              rp_i_am_a,
+		"rp_looking_for" =         rp_looking_for,
+		"rp_likes" =               rp_likes,
+		"rp_dislikes" =            rp_dislikes,
+		"rp_notes" =               rp_notes,
+		"rp_length" =              rp_length,
+		"rp_listing_kind" =        rp_listing_kind,
+		"rp_approach_pref" =       rp_approach_pref,
+		"erp_sex" =                erp_sex,
+		"erp_gender" =             erp_gender,
+		"erp_sexuality" =          erp_sexuality,
+		"erp_position" =           erp_position,
+		"erp_i_am_a" =             erp_i_am_a,
+		"erp_looking_for" =        erp_looking_for,
+		"erp_faves" =              erp_faves,
+		"erp_likes" =              erp_likes,
+		"erp_dislikes" =           erp_dislikes,
+		"erp_notes" =              erp_notes,
+		"erp_listing_kind" =       erp_listing_kind,
+		"erp_approach_pref" =      erp_approach_pref,
+		"erp_length" =             erp_length,
+		"erp_post_length" =        erp_post_length,
+		"erp_vore" =               erp_vore,
+	)
+	return list(
+		"owner" = ckey,
+		"visibility" = vis,
+		"personal" = out,
+	)
+
+
+
+
 
 /client/verb/open_personals()
 	set name = "View Personals"
