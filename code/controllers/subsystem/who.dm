@@ -282,11 +282,12 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	return span_alertalien("There are admins online!")
 
 /datum/controller/subsystem/who/proc/WhoPlus(client/whoer)
+	var/admeme = check_rights_for(whoer, admin_level_to_see_all) && !(whoer.holder in GLOB.deadmins) // so deadmins can see the normal stuff
+	if(!admeme)
+		to_chat(whoer, span_alert("Hey! Admin Who is for Admins only!"))
 	Who(whoer, TRUE)
 
-/datum/controller/subsystem/who/proc/Who(client/whoer, verbose)
-	var/admeme = check_rights_for(whoer, admin_level_to_see_all) && !(whoer.holder in GLOB.deadmins) // so deadmins can see the normal stuff
-
+/datum/controller/subsystem/who/proc/Who(client/whoer, admeme)
 	var/list/lines = list()
 	///the first line, you!
 	/// now, set up the lists of people to show
@@ -305,23 +306,26 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		admins = sortNames(admins)
 		mentors = sortNames(mentors)
 	players = sortNames(players)
+
 	lines += "<hr>"
 	if(admeme && LAZYLEN(admins))
-		lines += span_alertalien("STAFF:<br>")
+		lines += span_alertalien("<br>STAFF:")
 		for(var/mob/M in admins)
-			lines += WhoLine(M, admeme, FALSE)
+			lines += WhoLine(M, admeme)
 			if(CHECK_TICK)
 				continue
 		lines += "<br>"
+		lines += "<br>"
 	else
-		lines += span_alertalien("ADMINS: [span_noticealien("PRESENT!")]<br>")
+		lines += span_alertalien("<br>ADMINS: [span_noticealien("PRESENT!")]")
 
 	if(admeme && LAZYLEN(mentors))
-		lines += span_alertalien("MENTORS:<br>")
+		lines += span_alertalien("<br>MENTORS:")
 		for(var/mob/M in mentors)
-			lines += WhoLine(M, admeme, FALSE)
+			lines += WhoLine(M, admeme)
 			if(CHECK_TICK)
 				continue
+		lines += "<br>"
 		lines += "<br>"
 	else
 		lines += span_alertalien("<br>MENTORS: [span_noticealien("PRESENT!")]")
@@ -330,12 +334,12 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 	lines += span_alertalien("<br>PLAYERS:")
 	for(var/mob/M in players)
-		lines += WhoLine(M, admeme, verbose)
+		lines += WhoLine(M, admeme)
 		if(CHECK_TICK)
 			continue
 	lines += "<br>"
 	lines += "<br>"
-	lines += "<hr>"
+	lines += "<hr>" // BRR BRR HURR!!~<3
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
 	if(admeme)
 		lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
@@ -349,23 +353,21 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 /// Builds an HTML string for the who list
 /// Differentiates between admemes and players, and whether or not to be verbose
 /// cus 4 procs suuuuuuuuuuuuuuuuuck
-/datum/controller/subsystem/who/proc/WhoLine(mob/M, admeme, verbose)
+/datum/controller/subsystem/who/proc/WhoLine(mob/M, admeme)
 	var/datum/preferences/P = extract_prefs(M.ckey)
 	var/name = GetName(M)
 	var/name_span = "green"
 	var/role = GetRole(M)
 	var/role_span = "notice"
 	var/role_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
-	var/pose = GetPose(M, TRUE)
-	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/where = GetWhere(M)
 	var/where_span = "purple"
 	var/where_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
+	var/pose = GetPose(M, TRUE)
+	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/M_is_admin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
 	var/list/throbber = Throb(M, admeme)
-	var/ckey = admeme ? " ([M.ckey])" : ""
 	var/list/out = list()
-	out += "<br>"
 	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
 	if(admeme && M_is_admin)
 		name_span = "brass"
@@ -373,14 +375,21 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	out += "<span class='[name_span]'> [name]</span>"
 	/// the ckey, if we're an admin
 	if(admeme)
-		out += ckey
+		out += " ([M.ckey])"
+		if(M.client?.holder?.fakekey)
+			out += " (as [M.client.holder.fakekey])"
 	/// the role slug
-	if(role_visible)
-		out += " the <span class='[role_span]'>[role]</span>"
-	if(where_visible)
-		out += ", in <span class='[where_span]'>[where]</span>"
-	if(pose_visible)
-		out += " '[pose]'"
+	if(!admeme)
+		if(role_visible)
+			out += " the <span class='[role_span]'>[role]</span>"
+		if(where_visible)
+			out += ", in <span class='[where_span]'>[where]</span>"
+		if(pose_visible)
+			out += "<br>[FOURSPACES][pose]'"
+		var/msgout = out.Join()
+		return msgout
+	out += "[FOURSPACES] <span class='[role_span]'>[role]</span> - <span class='[where_span]'>[where]</span>"
+	out += "<br>[FOURSPACES]'[pose]'"
 	// var/second_line_visible = where_visible || pose_visible
 	// if(second_line_visible)
 	// 	out += "<br>[FOURSPACES]"
@@ -388,18 +397,16 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	// 	var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
 	// 	/// the where and pose slug
 	//	out += "[where_formatted][dash][pose]"
-	if(!admeme && !verbose) // players get off here
-		var/msgout = out.Join()
-		return msgout
 	/// Okay so i lied, verbose is an admin command that piles in a lot more info
 	/// we are an admeme from here forward
 	/// The status slug
 	var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
-	out += "<br>They are \a [admin_rank]!"
-	out += "[throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
+	out += "<br>[FOURSPACES]They are \a [admin_rank]! [throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
 	/// the admin slug
-	out += "<br>[ADMIN_QUARTERMONTY(M)]"
-	return out.Join()
+	out += "<br>[FOURSPACES][ADMIN_QUARTERMONTY(M)]"
+	var/spanifiy = out.Join()
+	spanifiy = "<table style='border: 2px outset #00ffff; padding: 0px; margin: 1px;'><tr><td>" + spanifiy + "</td></tr></table>"
+	return spanifiy
 
 /datum/controller/subsystem/who/proc/Throb(mob/M, admeme)
 	var/list/throb = list()
@@ -864,7 +871,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	return parse ? SSwho.ParsePoseColor(c_pose) : c_pose
 
 /datum/who_custom_stuff/proc/SetName(clear)
-	var/client/C = GetMyClient()
 	var/mob/M = GetMyMob()
 	if(LockedOut(WHO_LOCKOUT_NAME))
 		c_name = null
@@ -875,7 +881,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		c_name = null
 		DispenseInfo(defaultname, TrueName(), "name", TRUE)
 		return
-	var/newname = stripped_input(C, "Set the custom Who name! (Char Limit: [MAX_STATUS_LEN])", "Custom Name", "[defaultname]", max_length=MAX_STATUS_LEN)
+	var/newname = stripped_input(usr, "Set the custom Who name! (Char Limit: [MAX_STATUS_LEN])", "Custom Name", "[defaultname]", max_length=MAX_STATUS_LEN)
 	c_name = newname
 	if(trim(newname) != "" && !isnull(c_name))
 		DispenseInfo(defaultname, newname, "name")
@@ -883,7 +889,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		DispenseInfo(defaultname, newname, "name", TRUE)
 
 /datum/who_custom_stuff/proc/SetRole(clear)
-	var/client/C = GetMyClient()
 	var/mob/M = GetMyMob()
 	if(LockedOut(WHO_LOCKOUT_ROLE))
 		c_role = null
@@ -894,7 +899,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		c_role = null
 		DispenseInfo(defaultrole, TrueJob(), "role", TRUE)
 		return
-	var/newrole = stripped_input(C, "Set the custom Who role! (Char Limit: [MAX_STATUS_LEN])", "Custom Role", "[defaultrole]", max_length=MAX_STATUS_LEN)
+	var/newrole = stripped_input(usr, "Set the custom Who role! (Char Limit: [MAX_STATUS_LEN])", "Custom Role", "[defaultrole]", max_length=MAX_STATUS_LEN)
 	c_role = newrole
 	if(trim(newrole) != "" && !isnull(c_role))
 		DispenseInfo(defaultrole, newrole, "role")
@@ -902,7 +907,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		DispenseInfo(defaultrole, newrole, "role", TRUE)
 
 /datum/who_custom_stuff/proc/SetWhere(clear)
-	var/client/C = GetMyClient()
 	var/mob/M = GetMyMob()
 	if(LockedOut(WHO_LOCKOUT_WHERE))
 		c_where = null
@@ -913,7 +917,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		c_where = null
 		DispenseInfo(defaultwhere, SSwho.WhereAmI(M), "location", TRUE)
 		return
-	var/newwhere = stripped_input(C, "Set the custom Who location! (Char Limit: [MAX_STATUS_LEN])", "Custom Location", "[defaultwhere]", max_length=MAX_STATUS_LEN)
+	var/newwhere = stripped_input(usr, "Set the custom Who location! (Char Limit: [MAX_STATUS_LEN])", "Custom Location", "[defaultwhere]", max_length=MAX_STATUS_LEN)
 	c_where = newwhere
 	if(trim(newwhere) != "" && !isnull(c_where))
 		DispenseInfo(defaultwhere, newwhere, "location")
@@ -921,7 +925,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		DispenseInfo(defaultwhere, newwhere, "location", TRUE)
 
 /datum/who_custom_stuff/proc/SetPose(clear)
-	var/client/C = GetMyClient()
 	var/mob/M = GetMyMob()
 	if(LockedOut(WHO_LOCKOUT_POSE))
 		c_pose = null
@@ -934,7 +937,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		c_pose = null
 		DispenseInfo(defaultpose, "Just vibin', come say hi!", "OOC status", TRUE)
 		return
-	var/newpose = stripped_input(C, "Set the custom OOC status! (Char Limit: [MAX_STATUS_LEN])\n\
+	var/newpose = stripped_input(usr, "Set the custom OOC status! (Char Limit: [MAX_STATUS_LEN])\n\
 		You can add a color to the OOC status! Just start the line with QQc and then a 6 character hexcode, \
 		like 'QQcFF00DD' or 'QQc123456'", "Custom Pose", "[defaultpose]", max_length=MAX_STATUS_LEN)
 	c_pose = newpose

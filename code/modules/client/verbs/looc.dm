@@ -51,6 +51,8 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 	msg = emoji_parse(msg)
 
 	mob.log_talk(msg,LOG_OOC, tag="LOOC")
+	var/msg_near = msg
+	var/msg_far = span_rlooc(msg)
 
 	var/list/heard = get_hearers_in_view(7, get_top_level_mob(src.mob))
 	for(var/mob/M in heard)
@@ -62,24 +64,15 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 
 		if (isobserver(M))
 			continue //Also handled later.
+		//wherever you aaaare
 
-		if(GLOB.LOOC_COLOR)
-			to_chat(C, "<font color='[GLOB.LOOC_COLOR]'><b><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font>")
-		else
-			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+		to_chat(C, span_prefix("<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg_near]</span></span>"))
 
 	for(var/client/C in GLOB.admins)
-		var/prefix = "(R)LOOC"
-		var/proximity = FALSE // Not the best solution but it's a good 'nuff hack, cant be assed lmao.
-
 		if (C.mob in heard)
-			prefix = "LOOC"
-			proximity = TRUE // yeah this is kinda scuffed.
+			continue // yeah this is kinda scuffed.
 		
-		if(!proximity && C.prefs.chat_toggles & CHAT_REMOTE_LOOC)
+		if(!(C.prefs.chat_toggles & CHAT_REMOTE_LOOC))
 			continue
 
-		if(GLOB.LOOC_COLOR)
-			to_chat(C, "<font color='[GLOB.LOOC_COLOR]'><b>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font>")
-		else
-			to_chat(C, "<span class='looc'>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+		to_chat(C, span_prefix("<span class='looc'>[ADMIN_FLW(usr)] <span class='prefix'><span class='rlooc'>>R>: <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg_far]</span></span>"))

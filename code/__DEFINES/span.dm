@@ -84,6 +84,7 @@
 #define span_linkOff(str) ("<span class='linkOff'>" + str + "</span>")
 #define span_linkOn(str) ("<span class='linkOn'>" + str + "</span>")
 #define span_looc(str) ("<span class='looc'>" + str + "</span>")
+#define span_rlooc(str) ("<span class='brass'><b>" + str + "</b></span>")
 #define span_love(str) ("<span class='love'>" + str + "</span>")
 
 #define span_medal(str) ("<span class='medal'>" + str + "</span>")

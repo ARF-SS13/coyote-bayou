@@ -99,6 +99,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/change_view_range,
 	/datum/admins/proc/print_spans,
 	/datum/admins/proc/admin_who,
+	/datum/admins/proc/admin_who2,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -973,6 +974,18 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 /datum/admins/proc/admin_who()
 	set category = "Admin"
+	set name = "AdminWho"
+	set desc = "Opens the who tab, but moreso."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
+		return
+	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/// yay, copied so epople will ever see it!!
+/datum/admins/proc/admin_who2()
+	set category = "OOC"
 	set name = "WhoPlus"
 	set desc = "Opens the who tab, but moreso."
 
@@ -980,7 +993,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
 		return
-	SSwho.WhoPlus() // it'll grab the usr itself, in a cursed curse
+	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
 
 /datum/admins/proc/print_spans()
 	set category = "Debug"
