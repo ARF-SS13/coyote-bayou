@@ -59,11 +59,11 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		if(!M.client)
 			continue
 		var/client/C = M.client
-		if (C in GLOB.admins)
-			continue //they are handled after that
+		// if(C in GLOB.admins && (!C.mob in heard))
+		// 	continue //they are handled after that
 
-		if (isobserver(M))
-			continue //Also handled later.
+		// if (isobserver(M))
+		// 	continue //Also handled later.
 		//wherever you aaaare
 
 		to_chat(C, span_prefix("<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg_near]</span></span>"))
