@@ -38,7 +38,7 @@
 			parent.show_character_previews(image('icons/mob/ai.dmi', icon_state = resolve_ai_icon(preferred_ai_core_display), dir = SOUTH))
 			return
 		if(istype(previewJob,/datum/job/cyborg))
-			parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
+			parent.show_character_previews(image('icons/mob/borgs/robots.dmi', icon_state = "robot", dir = SOUTH))
 			return
 
 	// Set up the dummy for its photoshoot

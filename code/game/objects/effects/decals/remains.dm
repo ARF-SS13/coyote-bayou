@@ -61,7 +61,7 @@
 
 /obj/effect/decal/remains/robot
 	desc = "They look like the remains of something mechanical. They have a strange aura about them."
-	icon = 'icons/mob/robots.dmi'
+	icon = 'icons/mob/borgs/robots.dmi'
 	icon_state = "remainsrobot"
 	debris_result = list(/obj/item/stack/sheet/metal, /obj/item/stack/cable_coil, /obj/item/stack/rods)
 	drop_amount = 2

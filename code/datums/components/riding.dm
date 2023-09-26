@@ -336,9 +336,9 @@
 			M.setDir(AM.dir)
 			if(iscyborg(AM))
 				var/mob/living/silicon/robot/R = AM
-				if(istype(R.module))
-					M.pixel_x = R.module.ride_offset_x[dir2text(AM.dir)]
-					M.pixel_y = R.module.ride_offset_y[dir2text(AM.dir)]
+				if(R.my_skin)
+					M.pixel_x = R.my_skin.ride_offset_x[dir2text(AM.dir)]
+					M.pixel_y = R.my_skin.ride_offset_y[dir2text(AM.dir)]
 			else
 				..()
 

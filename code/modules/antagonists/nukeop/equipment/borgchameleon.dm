@@ -72,7 +72,7 @@
 		switch(borg_icon)
 			if("Default")
 				disguise = "engineer"
-				disguise_icon_override = 'icons/mob/robots.dmi'
+				disguise_icon_override = 'icons/mob/borgs/robots.dmi'
 			if("Default - Treads")
 				disguise = "engi-tread"
 				disguise_icon_override = 'modular_citadel/icons/mob/robots.dmi'
@@ -167,7 +167,7 @@
 	do_sparks(5, FALSE, user)
 	user.name = savedName
 	user.module.cyborg_base_icon = initial(user.module.cyborg_base_icon)
-	user.module.cyborg_icon_override = 'icons/mob/robots.dmi'
+	user.module.cyborg_icon_override = 'icons/mob/borgs/robots.dmi'
 	user.bubble_icon = "syndibot"
 	active = FALSE
 	user.update_icons()

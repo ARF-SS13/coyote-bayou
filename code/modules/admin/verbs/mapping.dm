@@ -301,7 +301,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 			if("AI")
 				final.Insert(icon('icons/mob/ai.dmi', "ai", SOUTH, 1), "AI")
 			if("Cyborg")
-				final.Insert(icon('icons/mob/robots.dmi', "robot", SOUTH, 1), "Cyborg")
+				final.Insert(icon('icons/mob/borgs/robots.dmi', "robot", SOUTH, 1), "Cyborg")
 			else
 				for(var/obj/item/I in D)
 					qdel(I)

@@ -115,3 +115,7 @@
 	var/cansprint = 1
 
 	var/orebox = null
+
+	var/datum/robot_skin/my_skin
+
+	var/fluff_state

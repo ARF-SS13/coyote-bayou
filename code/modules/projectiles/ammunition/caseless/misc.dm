@@ -28,7 +28,7 @@
 	name = "napalm"
 	desc = "a bunch of napalm fuel for a flamethrower. A bit useless now that it's been spilt on the ground."
 	caliber = CALIBER_FUEL
-	icon = 'icons/mob/robots.dmi'
+	icon = 'icons/mob/borgs/robots.dmi'
 	icon_state = "floor1"
 	projectile_type = /obj/item/projectile/incendiary/flamethrower
 	pellets = 3

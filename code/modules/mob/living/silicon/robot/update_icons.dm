@@ -1,10 +1,15 @@
 /// this is bad code
 /mob/living/silicon/robot/update_icons()
+	if(my_skin)
+		my_skin.update_me()
+		update_fire()
+		SEND_SIGNAL(src, COMSIG_ROBOT_UPDATE_ICONS)
+		return 
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
 
 	if(module.cyborg_base_icon == "robot")
-		icon = 'icons/mob/robots.dmi'
+		icon = 'icons/mob/borgs/robots.dmi'
 	if(stat != DEAD && !(IsUnconscious() ||IsStun() || IsKnockdown() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
 		if(!eye_lights)
 			eye_lights = new()

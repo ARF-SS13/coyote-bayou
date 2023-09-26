@@ -17,6 +17,8 @@
 	var/list/added_modules = list() //modules not inherient to the robot module, are kept when the module changes
 	var/list/storages = list()
 
+	var/list/allowed_skins = list()
+
 	var/cyborg_base_icon = "robot" //produces the icon for the borg and, if no special_light_key is set, the lights
 	var/special_light_key //if we want specific lights, use this instead of copying lights in the dmi
 
@@ -35,6 +37,8 @@
 	var/ride_allow_incapacitated = FALSE
 	var/allow_riding = TRUE
 	var/canDispose = FALSE // Whether the borg can stuff itself into disposal
+
+	var/datum/robot_skin/picked_skin
 
 	var/sleeper_overlay
 	var/icon/cyborg_icon_override
@@ -198,10 +202,39 @@
 	if(R.hud_used)
 		R.hud_used.update_robot_modules_display()
 
+/obj/item/robot_module/proc/pick_skin()
+	var/mob/living/silicon/robot/R = loc
+	var/list/selectable_skins = allowed_skins
+	if(!LAZYLEN(selectable_skins))
+		selectable_skins = subtypesof(/datum/robot_skin)
+	var/list/radial_choices = list()
+	for(var/skin in selectable_skins)
+		if(!ispath(skin, /datum/robot_skin))
+			continue
+		var/datum/robot_skin/RS = skin
+		var/mutable_appearance/img = new()
+		img.icon = initial(RS.base_icon)
+		img.icon_state = initial(RS.base_icon_state)
+		radial_choices[initial(RS.name)] = img
+	if(!LAZYLEN(radial_choices))
+		stack_trace("The robot module [name] has no skins!!!!!!!!!!!!!!!!!!!!!!!!!!")
+		return
+	if(LAZYLEN(radial_choices) == 1)
+		for(var/vyvvy in radial_choices)
+			return radial_choices[vyvvy]
+	var/choice = show_radial_menu(R, R, selectable_skins, radius = 40, require_near = TRUE, ultradense = (LAZYLEN(selectable_skins) > 7))
+	if(!choice || !ispath(choice, /datum/robot_skin))
+		return
+	picked_skin = choice
+
 /obj/item/robot_module/proc/transform_to(new_module_type)
 	var/mob/living/silicon/robot/R = loc
 	var/obj/item/robot_module/RM = new new_module_type(R)
-	if(!RM.be_transformed_to(src))
+	pick_skin()
+	if(!picked_skin)
+		qdel(RM)
+		return
+	if(!RM.be_transformed_to(src, RS))
 		qdel(RM)
 		return
 	R.module = RM
@@ -250,6 +283,7 @@
 	R.notify_ai(NEW_MODULE)
 	if(R.hud_used)
 		R.hud_used.update_robot_modules_display()
+	R.my_skin = new picked_skin(R)
 	SSblackbox.record_feedback("tally", "cyborg_modules", 1, R.module)
 
 /**
@@ -331,7 +365,7 @@
 	var/static/list/med_icons
 	if(!med_icons)
 		med_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical")
+		"Default" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "medical")
 		)
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -385,7 +419,7 @@
 	var/static/list/engi_icons
 	if(!engi_icons)
 		engi_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer")
+		"Default" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "engineer")
 		)
 		engi_icons = sortList(engi_icons)
 	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -424,7 +458,7 @@
 	var/static/list/sec_icons
 	if(!sec_icons)
 		sec_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "sec"),
+		"Default" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "sec"),
 		)
 		sec_icons = sortList(sec_icons)
 	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
@@ -473,7 +507,7 @@
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/peace_icons = sortList(list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "peace")
+		"Default" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "peace")
 		))
 	var/peace_borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(peace_borg_icon)
@@ -574,11 +608,11 @@
 	var/static/list/service_icons
 	if(!service_icons)
 		service_icons = list(
-		"(Service) Waitress" = image(icon = 'icons/mob/robots.dmi', icon_state = "service_f"),
-		"(Service) Butler" = image(icon = 'icons/mob/robots.dmi', icon_state = "service_m"),
-		"(Service) Bro" = image(icon = 'icons/mob/robots.dmi', icon_state = "brobot"),
-		"(Service) Can" = image(icon = 'icons/mob/robots.dmi', icon_state = "kent"),
-		"(Service) Tophat" = image(icon = 'icons/mob/robots.dmi', icon_state = "tophat"),
+		"(Service) Waitress" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "service_f"),
+		"(Service) Butler" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "service_m"),
+		"(Service) Bro" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "brobot"),
+		"(Service) Can" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "kent"),
+		"(Service) Tophat" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "tophat"),
 		)
 	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(service_robot_icon)
@@ -638,8 +672,8 @@
 	var/static/list/mining_icons
 	if(!mining_icons)
 		mining_icons = list(
-		"Lavaland" = image(icon = 'icons/mob/robots.dmi', icon_state = "miner"),
-		"Asteroid" = image(icon = 'icons/mob/robots.dmi', icon_state = "minerOLD")
+		"Lavaland" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "miner"),
+		"Asteroid" = image(icon = 'icons/mob/borgs/robots.dmi', icon_state = "minerOLD")
 		)
 	var/mining_borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(mining_borg_icon)

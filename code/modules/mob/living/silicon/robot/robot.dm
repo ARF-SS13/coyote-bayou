@@ -1,7 +1,7 @@
 /mob/living/silicon/robot
 	name = "Cyborg"
 	real_name = "Cyborg"
-	icon = 'icons/mob/robots.dmi'
+	icon = 'icons/mob/borgs/robots.dmi'
 	icon_state = "robot"
 	bubble_icon = "robot"
 
@@ -106,11 +106,19 @@
 	qdel(wires)
 	qdel(module)
 	qdel(eye_lights)
+	if(my_skin)
+		QDEL_NULL(my_skin)
 	wires = null
 	module = null
 	eye_lights = null
 	cell = null
 	return ..()
+
+/mob/living/silicon/robot/proc/install_skin(datum/robot_skin/newskin)
+	if(!istype(newskin, /datum/robot_skin))
+		return
+	my_skin = new newskin.type(src)
+	update_icon()
 
 /mob/living/silicon/robot/proc/pick_module()
 	if(module.type != /obj/item/robot_module)
