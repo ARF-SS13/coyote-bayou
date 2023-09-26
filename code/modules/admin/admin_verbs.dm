@@ -13,6 +13,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/toggleprayers,
 	/client/proc/toggleadminhelpsound,
 	/client/proc/debugstatpanel,
+	/client/proc/ignore_as_a_ghost,
 	/client/proc/RemoteLOOC, 			/*Fuck you I'm a PascaleCase enjoyer when it comes to functions. Fuck you nerds for using your shitty ass underscores like you know what the fuck you're reading why add an extra character and waste a couple milimeters of eye movement for me to read your entire proc name like jesus fucking christ bro. Just literally use PascalCase it looks so much neater, it's modern, industry professionals are taught to use it, C# coding standards state this, C++ coding standards, Unreal Engine developers do this, and so do Unity professionals. Like bruh please. Join me in the revolution to do PascalCase. */ // Welcome to byond~ src.grab_antlers_and_grind(deer_boi)
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
@@ -624,6 +625,32 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	GLOB.DYN_EX_SCALE = ex_scale
 	log_admin("[key_name(usr)] has modified Dynamic Explosion Scale: [ex_scale]")
 	message_admins("[key_name_admin(usr)] has  modified Dynamic Explosion Scale: [ex_scale]")
+
+/client/proc/ignore_as_a_ghost()
+	set category = "OOC"
+	set name = "Block user's emotes"
+	set desc = "Blocks hearing emotes, subtles, and subtlers from a specific ckey."
+
+	var/blockem = input(usr, "Who do you want to never hear from while as a ghost?", "Okay thats enough deadvision for one day") as null|anything in GLOB.directory
+	if(!blockem)
+		to_chat(usr, "Never mind!")
+		return
+	var/client/C = GLOB.directory[blockem]
+	var/mob/dork = C.mob
+	var/datum/preferences/P = extract_prefs(usr) // wow even I admit this is cursed
+	var/blocked = (blockem in P.aghost_squelches)
+	var/usure = alert(usr, "This'll [blocked?"un":""]block [dork]'s emotes while you're a ghost, is this the right person?", "Is it enough deadvision for one day?", "YES", "NO")
+	if(usure != "YES")
+		to_chat(usr, "Never mind!")
+		return
+	if(blocked)
+		P.aghost_squelches -= blockem
+		to_chat(usr, "You can now hear [dork]'s emotes while a ghost.")
+	else
+		P.aghost_squelches |= blockem
+		to_chat(usr, "You will no longer hear [dork]'s emotes while a ghost.")
+	P.save_preferences()
+	to_chat(usr, "Preferences saved.")
 
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"
