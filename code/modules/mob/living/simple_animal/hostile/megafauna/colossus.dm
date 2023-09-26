@@ -370,8 +370,7 @@ Difficulty: Very Hard
 
 /obj/machinery/anomalous_crystal/Initialize(mapload)
 	. = ..()
-	if(!activation_method)
-		activation_method = pick(possible_methods)
+	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/anomalous_crystal/examine(mob/user)
 	. = ..()
