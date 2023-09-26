@@ -354,7 +354,11 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 /// Differentiates between admemes and players, and whether or not to be verbose
 /// cus 4 procs suuuuuuuuuuuuuuuuuck
 /datum/controller/subsystem/who/proc/WhoLine(mob/M, admeme)
+	if(!M || !M.ckey)
+		return
 	var/datum/preferences/P = extract_prefs(M.ckey)
+	if(!P)
+		return
 	var/name = GetName(M)
 	var/name_span = "green"
 	var/role = GetRole(M)
@@ -375,7 +379,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	/// the name slug, anonymization has been handled elsewhere
 	out += "<span class='[name_span]'> [name]</span>"
 	/// the ckey, if we're an admin
-	if(admeme)
+	if(admeme || check_rights(admin_level_to_see_all))
 		out += " ([M.ckey])"
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
@@ -806,7 +810,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/datum/preferences/P = extract_prefs(ckey)
 	var/mob/M = GetMyMob()
 	if(IsAdmin())
-		return "[M.real_name][isnull(c_name) ? "" : " as [c_name]"]"
+		return "[TrueName()][isnull(c_name) ? "" : " as [c_name]"]"
 	var/name_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_NAME) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	if(!name_vis && !reveal_always)
 		return "Unknown"
@@ -827,7 +831,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/datum/preferences/P = extract_prefs(ckey)
 	var/mob/M = GetMyMob()
 	if(IsAdmin())
-		return "[M.mind.assigned_role][isnull(c_role) ? "" : " as [c_role]"]"
+		return "[TrueJob()][isnull(c_role) ? "" : " as [c_role]"]"
 	var/job_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
 	if(!job_vis && !reveal_always)
 		return ""
