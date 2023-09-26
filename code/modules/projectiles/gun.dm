@@ -556,6 +556,11 @@ ATTACHMENTS
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)
 		return
+	if(user.a_intent == INTENT_HELP) //you can't shoot with help intent, it needs to be one of the other 3 intents
+		to_chat(user, span_danger("You refrain from shooting your weapon!"))
+		to_chat(user, span_danger("..>Switch your intent from HELP to one of the other 3!")) //temporary line that can be removed in the far future, so people can understand why their guns aren't shooting.
+		shoot_with_empty_chamber(user)
+		return
 	var/time_till_draw = user.AmountWeaponDrawDelay()
 	if(time_till_draw)
 		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")

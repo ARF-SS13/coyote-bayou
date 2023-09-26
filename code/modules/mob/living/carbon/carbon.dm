@@ -178,6 +178,11 @@
 	var/atom/movable/thrown_thing
 	var/mob/living/throwable_mob
 
+	if(src.a_intent == INTENT_HELP && I.throwforce) //you can't throw dangerous items with help intent, it needs to be one of the other 3 intents
+		to_chat(src, span_danger("You refrain from throwing this dangerous item!"))
+		to_chat(src, span_danger("..>Switch your intent from HELP to one of the other 3!")) //temporary line that can be removed in the far future, so people can understand why they can't throw dangerous items.
+		return
+
 	if(istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/holder = I
 		if(holder.held_mob)
