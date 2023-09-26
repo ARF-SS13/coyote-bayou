@@ -419,7 +419,7 @@ Difficulty: Very Hard
 
 /obj/machinery/anomalous_crystal/ex_act()
 	ActivationReaction(null, ACTIVATE_BOMB)
-
+/* Disabled. Exceedingly dangerous on maps where one area can encompass the whole map
 /obj/machinery/anomalous_crystal/theme_warp //Warps the area you're in to look like a new one
 	observer_desc = "This crystal warps the area around it to a theme."
 	activation_method = ACTIVATE_TOUCH
@@ -491,6 +491,7 @@ Difficulty: Very Hard
 			else if(NewTerrainTables && istype(target, /obj/structure/table))
 				new NewTerrainTables(target.loc)
 				qdel(target)
+*/
 
 /obj/machinery/anomalous_crystal/emitter //Generates a projectile when interacted with
 	observer_desc = "This crystal generates a projectile when activated."
