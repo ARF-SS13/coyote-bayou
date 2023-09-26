@@ -2465,8 +2465,8 @@
 /obj/item/clothing/suit/armor/medium/merek
 	name = "salvaged UNMC armor"
 	desc = "A set of salvaged UNMC armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC armor. Personalized by the scavenger who found this."
-	icon_state = "odst1"
-	item_state = "odst1"
+	icon_state = "odstcqb"
+	item_state = "odstcqb"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	armor = ARMOR_VALUE_LIGHT

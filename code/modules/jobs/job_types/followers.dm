@@ -104,6 +104,7 @@ Administrator
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
+		/obj/item/pda = 1,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
@@ -183,6 +184,7 @@ Administrator
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		)
@@ -275,6 +277,7 @@ Administrator
 	glasses = /obj/item/clothing/glasses/science
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
@@ -361,6 +364,7 @@ Practitioner
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/pda = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -456,6 +460,7 @@ Follower Volunteer
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
+		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 	)
@@ -542,6 +547,7 @@ Follower Volunteer
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,

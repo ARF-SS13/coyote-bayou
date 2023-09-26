@@ -53,6 +53,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
 
+	var/list/aghost_squelches = list()
+
 	/// Custom Keybindings
 	var/list/key_bindings = list()
 	/// List with a key string associated to a list of keybindings. Unlike key_bindings, this one operates on raw key, allowing for binding a key that triggers regardless of if a modifier is depressed as long as the raw key is sent.
@@ -678,6 +680,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><BR>"
 			dat += "<b>Sound Ind. Volume:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><BR>"
+			dat += "<b>Sound Ind. Max Audible Words:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><BR>"
 			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
 
 			// Coyote ADD: End
@@ -3362,11 +3366,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
 					if(selected_custom_speech_verb)
 						custom_speech_verb = selected_custom_speech_verb
-
-				//if("soundindicatorpreview") //last famous words: I'll work on it later
-					//for(var/i in 1 to (32) +1)
-						//playsound(get_turf(src), get_typing_indicator_sound(), rand(15, 100), TRUE)
-						//addtimer(CALLBACK(src, .proc/endLaunch), 1 SECONDS)
 
 				if("bodysprite")
 					var/selected_body_sprite = input(user, "Choose your desired body sprite", "Character Preference") as null|anything in pref_species.allowed_limb_ids

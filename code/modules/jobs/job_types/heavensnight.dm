@@ -114,6 +114,7 @@
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
+		/obj/item/pda = 1,
 		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,
 		)
@@ -153,6 +154,7 @@
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
+		/obj/item/pda = 1,
 		/obj/item/cool_book/hnguide,
 		///obj/item/card/id/selfassign,
 		)

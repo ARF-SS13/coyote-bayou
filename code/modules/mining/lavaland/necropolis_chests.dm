@@ -1188,9 +1188,9 @@
 	name = "colossus chest"
 
 /obj/structure/closet/crate/necropolis/colossus/PopulateContents()
-	var/list/choices = subtypesof(/obj/machinery/anomalous_crystal)
-	var/random_crystal = pick(choices)
-	new random_crystal(src)
+	// var/list/choices = subtypesof(/obj/machinery/anomalous_crystal)
+	// var/random_crystal = pick(choices)
+	// new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
 	new /obj/item/clothing/glasses/godeye(src)
 

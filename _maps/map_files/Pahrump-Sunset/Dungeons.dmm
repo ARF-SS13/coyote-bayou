@@ -1595,10 +1595,6 @@
 	},
 /area/f13/brotherhood/offices2nd)
 "aLE" = (
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 8
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
 	dir = 4;
@@ -1606,9 +1602,7 @@
 	pixel_y = 5;
 	termtag = "Enclave Outpost, Armory"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "aLG" = (
 /obj/structure/table/survival_pod,
@@ -2380,17 +2374,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "bfc" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 29
-	},
 /obj/structure/chair/comfy/shuttle{
-	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
-	layer = 2.7;
-	name = "prewar lounge chair"
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "Cuckhole Hold Chair"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
 /area/f13/building)
 "bfh" = (
 /obj/structure/simple_door/bunker,
@@ -4144,9 +4134,10 @@
 	dir = 8;
 	name = "prewar lounge chair"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
 	},
+/turf/open/floor/engine,
 /area/f13/building)
 "bXR" = (
 /obj/structure/table/reinforced,
@@ -5116,15 +5107,15 @@
 /turf/closed/mineral/random/high_chance,
 /area/f13/underground/cave)
 "cwX" = (
-/obj/machinery/vending/wallmed{
+/obj/structure/closet/locker/medcabinet{
 	pixel_y = 30
 	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "cxh" = (
 /obj/effect/turf_decal/stripes/line{
@@ -5551,7 +5542,10 @@
 /area/f13/building)
 "cEb" = (
 /obj/structure/sign/warning/securearea,
-/turf/closed/indestructible/vaultdoor,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/vault)
 "cEg" = (
 /obj/item/paper_bin,
@@ -5965,7 +5959,10 @@
 	},
 /area/f13/brotherhood/rnd)
 "cLG" = (
-/turf/closed/wall,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/building)
 "cLK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6112,9 +6109,7 @@
 /obj/effect/landmark/vertibird_enter{
 	id = "verti1star"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "cOs" = (
 /obj/machinery/shower{
@@ -9042,9 +9037,8 @@
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
 "dZG" = (
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
 /area/f13/building)
 "dZX" = (
 /obj/structure/dresser,
@@ -9736,6 +9730,18 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building)
+"eoR" = (
+/obj/structure/closet/locker/medcabinet{
+	pixel_x = 25;
+	pixel_y = -5
+	},
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 1;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "eoV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/grille/broken,
@@ -9951,7 +9957,10 @@
 /obj/effect/turf_decal/vg_decals/numbers/one{
 	pixel_x = 5
 	},
-/turf/closed/wall,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/building)
 "esH" = (
 /obj/machinery/light/floor,
@@ -10293,13 +10302,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "eCi" = (
-/obj/machinery/door/airlock/security{
-	name = "Brig";
-	req_access_txt = "18"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "eCl" = (
 /obj/structure/cable{
@@ -23024,9 +23027,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
 	},
+/turf/open/floor/engine,
 /area/f13/building)
 "kEv" = (
 /obj/structure/table/wood,
@@ -30336,7 +30340,10 @@
 /obj/structure/decoration/warning{
 	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
 	},
-/turf/closed/indestructible/vaultdoor,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/enclave)
 "nWA" = (
 /obj/structure/sign/warning/radiation{
@@ -30810,9 +30817,7 @@
 	dir = 1;
 	name = "prewar lounge chair"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "oiZ" = (
 /obj/structure/barricade/sandbags,
@@ -30844,14 +30849,8 @@
 	},
 /area/f13/bunker)
 "ojT" = (
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 8
-	},
 /obj/machinery/computer/vertibird_console,
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "ojX" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -34787,6 +34786,13 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker/bighornbunker)
+"pSL" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 29
+	},
+/obj/structure/bed/pod,
+/turf/open/floor/engine,
+/area/f13/building)
 "pSO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -40232,9 +40238,7 @@
 	layer = 2.7;
 	name = "prewar lounge chair"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "sor" = (
 /obj/structure/table{
@@ -40516,17 +40520,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "svz" = (
-/obj/structure/chair/comfy/shuttle{
-	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
-	dir = 8;
-	name = "Cuckhole Hold Chair"
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_access_txt = "18"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "svA" = (
 /obj/structure/closet/crate/radiation,
@@ -40683,7 +40681,10 @@
 	},
 /area/f13/bunker)
 "syP" = (
-/turf/closed/indestructible/vaultdoor,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/enclave)
 "syS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -44028,7 +44029,10 @@
 /area/f13/building)
 "ubZ" = (
 /obj/structure/fans/tiny,
-/turf/closed/indestructible/vaultdoor,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/enclave)
 "ucf" = (
 /obj/effect/turf_decal/weather/snow/corner{
@@ -46171,7 +46175,10 @@
 /turf/open/floor/carpet,
 /area/f13/brotherhood/archives)
 "vaD" = (
-/turf/closed/indestructible/vaultdoor,
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
 /area/f13/vault)
 "vaM" = (
 /obj/effect/decal/waste{
@@ -47889,23 +47896,12 @@
 	},
 /area/f13/bunker)
 "vOm" = (
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 8
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/computer/terminal{
-	dir = 4;
-	pixel_x = 4;
-	pixel_y = 5;
-	termtag = "Enclave Outpost, Armory"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/engine,
 /area/f13/building)
 "vOp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -58440,21 +58436,21 @@ hrZ
 hrZ
 hrZ
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
 ghS
 ghS
 ghS
@@ -59216,11 +59212,11 @@ rck
 rck
 rck
 rck
-rck
-rck
-rck
-rck
-rck
+fTm
+ski
+ski
+ski
+hHs
 rck
 rck
 rck
@@ -59473,11 +59469,11 @@ rck
 rck
 rck
 rck
-fTm
-vOm
+cLG
+aLE
 ojT
 aLE
-hHs
+cLG
 rck
 rck
 rck
@@ -59733,7 +59729,7 @@ rck
 cLG
 bXQ
 dZG
-bXQ
+vOm
 cLG
 rck
 rck
@@ -59984,17 +59980,17 @@ hrZ
 whv
 rck
 rck
+rck
 cLG
 cLG
 cLG
 cLG
-cLG
-eCi
-cLG
+svz
 cLG
 cLG
 cLG
 cLG
+rck
 rck
 rck
 qxy
@@ -60241,17 +60237,17 @@ hrZ
 whv
 rck
 rck
-cLG
+rck
 cLG
 cLG
 cLG
 cwX
-dZG
+eCi
 oiU
 cLG
 cLG
 cLG
-cLG
+rck
 rck
 rck
 whv
@@ -60502,8 +60498,8 @@ rck
 rck
 rck
 cLG
-bfc
-dZG
+snE
+eCi
 cOo
 qWA
 rck
@@ -61017,7 +61013,7 @@ rck
 rck
 cLG
 kDV
-dZG
+eCi
 oiU
 cLG
 rck
@@ -61272,11 +61268,11 @@ rck
 rck
 rck
 rck
-wXM
 cLG
+pSL
 eCi
+eoR
 cLG
-gSj
 rck
 rck
 rck
@@ -61529,11 +61525,11 @@ rck
 rck
 rck
 rck
-rck
+wXM
 cLG
 svz
 cLG
-rck
+gSj
 rck
 rck
 rck
@@ -61787,9 +61783,9 @@ rck
 rck
 rck
 rck
-rck
 cLG
-rck
+bfc
+cLG
 rck
 rck
 rck
@@ -62045,7 +62041,7 @@ rck
 rck
 rck
 rck
-rck
+cLG
 rck
 rck
 rck
@@ -62552,21 +62548,21 @@ jaH
 hrZ
 hrZ
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
+rck
 whv
 whv
 whv

@@ -6,8 +6,6 @@
 #define PLAY_FINISHED			3
 #define PLAY_ANIMALCROSSING_TI	4	// Animal crossing like typing indicator
 
-#define MAX_ITERATIONS_TI		24	// maximum number of character allowed to be vocal, keep it around this number so... it doesn't become a pain for anyone else to listen to. Love -Gin
-
 GLOBAL_LIST_INIT(play_methods, list("No Sound",
 									"Play sound when you begin typing",
 //									"Loop sound while you type",
@@ -33,62 +31,74 @@ GLOBAL_LIST_INIT(typing_indicator_variances, list(
 									"1-Voice does not vary between words" = 0))
 
 GLOBAL_LIST_INIT(typing_indicator_volumes, list(
-									"3-Loud" = 20,
-									"2-Average" = 15,
-									"1-Quiet and polite" = 10))
+									"3-Loud" = 15,
+									"2-Average" = 10,
+									"1-Quiet and polite" = 5))
+
+GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
+									"8 Words" = 8,
+									"7 Words" = 7,
+									"6 Words" = 6,
+									"5 Words" = 5,
+									"4 Words" = 4,
+									"3 Words" = 3,
+									"2 Words" = 2,
+									"1 Word" = 1))
 
 GLOBAL_LIST_INIT(typing_indicator_sounds, list(
-		"Default"	= 'modular_coyote/sound/typing/default.ogg',
-		"FB Messenger"	= 'modular_coyote/sound/typing/facebookMessenger.ogg',
-		"Deep"	= 'modular_coyote/sound/typing/deepspeak.ogg',
-		"Soft"	= 'modular_coyote/sound/typing/softspeak.ogg',
-		"Light"	= 'modular_coyote/sound/typing/lightspeak.ogg',
-		"Jackal" = 'modular_coyote/sound/typing/arfs1sounds/anubis1.ogg',
-		"Bat Chitter" = 'modular_coyote/sound/typing/arfs1sounds/bat1.ogg',
-		"Bear" = 'modular_coyote/sound/typing/arfs1sounds/bear1.ogg',
-		"Beaver" = 'modular_coyote/sound/typing/arfs1sounds/beaver1.ogg',
-		"Jackal" = 'modular_coyote/sound/typing/arfs1sounds/anubis1.ogg',
-		"Horrible Bird Kyaa" = 'modular_coyote/sound/typing/arfs1sounds/bird1.ogg',
-		"Horrible Bird Call 2" = 'modular_coyote/sound/typing/arfs1sounds/bird2.ogg',
-		"Boar" = 'modular_coyote/sound/typing/arfs1sounds/boar1.ogg',
-		"Goat" = 'modular_coyote/sound/typing/arfs1sounds/capra1.ogg',
-		"Corgi (Cody)" = 'modular_coyote/sound/typing/arfs1sounds/corgi1.ogg',
-		"Corgi" = 'modular_coyote/sound/typing/arfs1sounds/corgi2.ogg',
-		"Cougar" = 'modular_coyote/sound/typing/arfs1sounds/cougar1.ogg',
-		"Cow" = 'modular_coyote/sound/typing/arfs1sounds/cow1.ogg',
-		"Coyote Howl" = 'modular_coyote/sound/typing/arfs1sounds/coyote1.ogg',
-		"Coyote" = 'modular_coyote/sound/typing/arfs1sounds/coyote2.ogg',
-		"Crocodile" = 'modular_coyote/sound/typing/arfs1sounds/croc1.ogg',
-		"Deer" = 'modular_coyote/sound/typing/arfs1sounds/deer1.ogg',
-		"Drider" = 'modular_coyote/sound/typing/arfs1sounds/drider1.ogg',
-		"Eevee" = 'modular_coyote/sound/typing/arfs1sounds/eevee1.ogg',
-		"Elephant" = 'modular_coyote/sound/typing/arfs1sounds/elephant1.ogg',
-		"Fennec Bark" = 'modular_coyote/sound/typing/arfs1sounds/fennec1.ogg',
-		"Fennec Squeak" = 'modular_coyote/sound/typing/arfs1sounds/fennec2.ogg',
-		"Fox Bark" = 'modular_coyote/sound/typing/arfs1sounds/fox1.ogg',
-		"Husky Bark-bark" = 'modular_coyote/sound/typing/arfs1sounds/husky1.ogg',
-		"Husky Howl" = 'modular_coyote/sound/typing/arfs1sounds/husky2.ogg',
-		"Hyena Laugh" = 'modular_coyote/sound/typing/arfs1sounds/hyena1.ogg',
-		"Lizard?" = 'modular_coyote/sound/typing/arfs1sounds/lizard1.ogg',
-		"Lynx Growl" = 'modular_coyote/sound/typing/arfs1sounds/lynx1.ogg',
-		"Orca" = 'modular_coyote/sound/typing/arfs1sounds/orca1.ogg',
-		"Panda" = 'modular_coyote/sound/typing/arfs1sounds/panda1.ogg',
-		"Pig Grunt" = 'modular_coyote/sound/typing/arfs1sounds/pig1.ogg',
-		"Porcupine" = 'modular_coyote/sound/typing/arfs1sounds/porcupine1.ogg',
-		"Possum Hiss" = 'modular_coyote/sound/typing/arfs1sounds/possum1.ogg',
-		"Miserable Bark" = 'modular_coyote/sound/typing/arfs1sounds/pug1.ogg',
-		"Rabbit Squeal" = 'modular_coyote/sound/typing/arfs1sounds/rabbit1.ogg',
-		"Raccoon Chitter" = 'modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg',
-		"Red Panda Chitter" = 'modular_coyote/sound/typing/arfs1sounds/redpanda1.ogg',
-		"Dial Up" = 'modular_coyote/sound/typing/arfs1sounds/robot1.ogg',
-		"Yappy Dog" = 'modular_coyote/sound/typing/arfs1sounds/shihtzu1.ogg',
-		"Cat Mrowl" = 'modular_coyote/sound/typing/arfs1sounds/siamese1.ogg',
-		"Cat Meow" = 'modular_coyote/sound/typing/catmeow.ogg',
-		"Cat Trill" = 'modular_coyote/sound/typing/cattrill.ogg',
-		"Skunk Chitter" = 'modular_coyote/sound/typing/arfs1sounds/skunk1.ogg',
-		"Big Cat Chuff" = 'modular_coyote/sound/typing/arfs1sounds/tiger1.ogg',
-		"Vulture" = 'modular_coyote/sound/typing/arfs1sounds/vulture1.ogg',
-		"Wolf Howl" = 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
+		"Default"				= 'modular_coyote/sound/typing/default.ogg',
+		"FB Messenger"			= 'modular_coyote/sound/typing/facebookMessenger.ogg',
+		"Deep"					= 'modular_coyote/sound/typing/deepspeak.ogg',
+		"Soft"					= 'modular_coyote/sound/typing/softspeak.ogg',
+		"beep"					= 'sound/machines/beep.ogg',
+		"buzz sigh"				= 'sound/machines/buzz-sigh.ogg',
+		"Light"					= 'modular_coyote/sound/typing/lightspeak.ogg',
+		"Jackal" 				= 'modular_coyote/sound/typing/arfs1sounds/anubis1.ogg',
+		"Bat Chitter" 			= 'modular_coyote/sound/typing/arfs1sounds/bat1.ogg',
+		"Bear" 					= 'modular_coyote/sound/typing/arfs1sounds/bear1.ogg',
+		"Beaver" 				= 'modular_coyote/sound/typing/arfs1sounds/beaver1.ogg',
+		"Jackal" 				= 'modular_coyote/sound/typing/arfs1sounds/anubis1.ogg',
+		"Horrible Bird Kyaa" 	= 'modular_coyote/sound/typing/arfs1sounds/bird1.ogg',
+		"Horrible Bird Call 2" 	= 'modular_coyote/sound/typing/arfs1sounds/bird2.ogg',
+		"Boar" 					= 'modular_coyote/sound/typing/arfs1sounds/boar1.ogg',
+		"Goat" 					= 'modular_coyote/sound/typing/arfs1sounds/capra1.ogg',
+		"Corgi (Cody)" 			= 'modular_coyote/sound/typing/arfs1sounds/corgi1.ogg',
+		"Corgi" 				= 'modular_coyote/sound/typing/arfs1sounds/corgi2.ogg',
+		"Cougar" 				= 'modular_coyote/sound/typing/arfs1sounds/cougar1.ogg',
+		"Cow" 					= 'modular_coyote/sound/typing/arfs1sounds/cow1.ogg',
+		"Coyote Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/coyote1.ogg',
+		"Coyote" 				= 'modular_coyote/sound/typing/arfs1sounds/coyote2.ogg',
+		"Crocodile" 			= 'modular_coyote/sound/typing/arfs1sounds/croc1.ogg',
+		"Deer" 					= 'modular_coyote/sound/typing/arfs1sounds/deer1.ogg',
+		"Drider" 				= 'modular_coyote/sound/typing/arfs1sounds/drider1.ogg',
+		"Eevee" 				= 'modular_coyote/sound/typing/arfs1sounds/eevee1.ogg',
+		"Elephant" 				= 'modular_coyote/sound/typing/arfs1sounds/elephant1.ogg',
+		"Fennec Bark" 			= 'modular_coyote/sound/typing/arfs1sounds/fennec1.ogg',
+		"Fennec Squeak" 		= 'modular_coyote/sound/typing/arfs1sounds/fennec2.ogg',
+		"Fox Bark" 				= 'modular_coyote/sound/typing/arfs1sounds/fox1.ogg',
+		"Husky Bark-bark" 		= 'modular_coyote/sound/typing/arfs1sounds/husky1.ogg',
+		"Husky Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/husky2.ogg',
+		"Hyena Laugh" 			= 'modular_coyote/sound/typing/arfs1sounds/hyena1.ogg',
+		"Lizard?" 				= 'modular_coyote/sound/typing/arfs1sounds/lizard1.ogg',
+		"Lynx Growl" 			= 'modular_coyote/sound/typing/arfs1sounds/lynx1.ogg',
+		"Orca" 					= 'modular_coyote/sound/typing/arfs1sounds/orca1.ogg',
+		"Panda" 				= 'modular_coyote/sound/typing/arfs1sounds/panda1.ogg',
+		"Pig Grunt" 			= 'modular_coyote/sound/typing/arfs1sounds/pig1.ogg',
+		"Porcupine" 			= 'modular_coyote/sound/typing/arfs1sounds/porcupine1.ogg',
+		"Possum Hiss" 			= 'modular_coyote/sound/typing/arfs1sounds/possum1.ogg',
+		"Miserable Bark" 		= 'modular_coyote/sound/typing/arfs1sounds/pug1.ogg',
+		"Rabbit Squeal" 		= 'modular_coyote/sound/typing/arfs1sounds/rabbit1.ogg',
+		"Raccoon Chitter" 		= 'modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg',
+		"Red Panda Chitter" 	= 'modular_coyote/sound/typing/arfs1sounds/redpanda1.ogg',
+		"Dial Up" 				= 'modular_coyote/sound/typing/arfs1sounds/robot1.ogg',
+		"Yappy Dog" 			= 'modular_coyote/sound/typing/arfs1sounds/shihtzu1.ogg',
+		"Cat Mrowl" 			= 'modular_coyote/sound/typing/arfs1sounds/siamese1.ogg',
+		"Cat Meow" 				= 'modular_coyote/sound/typing/catmeow.ogg',
+		"Cat Trill" 			= 'modular_coyote/sound/typing/cattrill.ogg',
+		"Skunk Chitter" 		= 'modular_coyote/sound/typing/arfs1sounds/skunk1.ogg',
+		"Big Cat Chuff" 		= 'modular_coyote/sound/typing/arfs1sounds/tiger1.ogg',
+		"Vulture" 				= 'modular_coyote/sound/typing/arfs1sounds/vulture1.ogg',
+		"Wolf Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
 				))
 
 //lmfao at lizard ~TK420634
@@ -155,12 +165,18 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return GLOB.typing_indicator_volumes[C.prefs.features["typing_indicator_volume"]]
 	return 2
 
+/mob/proc/get_typing_indicator_max_words_spoken()
+	if(client)
+		var/client/C = client
+		return GLOB.typing_indicator_max_words_spoken_list[C.prefs.features["typing_indicator_max_words_spoken"]]
+	return 4
+
 /mob/display_typing_indicator(timeout_override = TYPING_INDICATOR_TIMEOUT, state_override = generate_typing_indicator(), force = FALSE)
 	if(((!typing_indicator_enabled || (stat != CONSCIOUS)) && !force) || typing_indicator_current)
 		return
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_STARTING])
-		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
 
 // Disabling this unfortunately for now as I think this is causing too much perf hit on things.
 /*	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_TYPING])
@@ -179,23 +195,26 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return ..()
 	
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_FINISHED])
-		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE)
 
 	return ..()
 
-/mob/proc/play_AC_typing_indicator(message_length)		//Animal Crossing typing indicator macro
+/mob/proc/play_AC_typing_indicator(txt as text)		//Animal Crossing typing indicator macro. It takes a text, it butchers it and converts the words used in audible sounds.
 	if(stat != CONSCIOUS)
 		return
 
-	if(!message_length)			//If the message is empty, play nothing
+	if(!txt)			//If the message is empty, play nothing
 		return
 
-	if(message_length > MAX_ITERATIONS_TI)		//If the message length is made out of [NUMBER] characters or more, set it as maximum length (so it won't play for ever an annoying sound)
-		message_length = MAX_ITERATIONS_TI		
+	var/list/word_count = splittext(txt," ")
+	var/counter = word_count.len
+
+	if(counter > get_typing_indicator_max_words_spoken())		//If the message length is made out of [NUMBER] characters or more, set it as maximum length (so it won't play for ever an annoying sound)
+		counter = get_typing_indicator_max_words_spoken()		
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])		//we are checking if they actually have this preference turned on 
 		var/TI_frequency
-		for(var/i in 1 to (round(message_length/4 + 1)))		//Adding one in case the massage is a simple "hi!", so it will play at least one iteration
+		for(var/i in 1 to counter)
 			TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
 			playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
 			sleep(rand(get_typing_indicator_speed(), get_typing_indicator_speed() + 2))		// adding an extra +2 to add a little spice to the voice, hehe yea boiii
@@ -278,6 +297,12 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 					new_input = input(user, "Choose your typing sound volume:", "Sound Indicator") as null|anything in GLOB.typing_indicator_volumes
 					if(new_input)
 						features_speech["typing_indicator_volume"] = new_input
+
+				if("typing_indicator_max_words_spoken")
+					var/new_input
+					new_input = input(user, "Choose your maximum number of audible words:", "Sound Indicator") as null|anything in GLOB.typing_indicator_max_words_spoken_list
+					if(new_input)
+						features_speech["typing_indicator_max_words_spoken"] = new_input
 	..()
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)

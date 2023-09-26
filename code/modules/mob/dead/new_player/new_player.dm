@@ -68,19 +68,21 @@
 		output += "<p>Please be patient, the game is starting soon!</p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh=1'>(Refresh)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 	else
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
 	if(!IsGuestKey(src.key))
 		output += playerpolls()
 
 	output += "</center>"
 
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 350)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 400)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output.Join())
 	popup.open(FALSE)
@@ -213,6 +215,9 @@
 
 	if(href_list["refresh_chat"]) //fortuna addition. asset delivery pain
 		client.nuke_chat()
+	
+	if(href_list["fit_viewport_lobby"])
+		client.fit_viewport()
 
 	if(href_list["late_join"])
 		if(!SSticker || !SSticker.IsRoundInProgress())

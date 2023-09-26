@@ -293,6 +293,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["preferred_chaos"]	>> preferred_chaos
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
+	S["aghost_squelches"]		>> aghost_squelches
 
 	S["lockouts"]	>> lockouts // my bans!
 
@@ -350,6 +351,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	no_tetris_storage		= sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
+	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -460,6 +462,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
 	WRITE_FILE(S["lockouts"], lockouts)
+	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -818,12 +821,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
-	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
-	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
-	S["typing_indicator_speed"]			>> features_speech["typing_indicator_speed"]
-	S["typing_indicator_pitch"]			>> features_speech["typing_indicator_pitch"]
-	S["typing_indicator_variance"]		>> features_speech["typing_indicator_variance"]
-	S["typing_indicator_volume"]		>> features_speech["typing_indicator_volume"]
+	S["typing_indicator_sound"]					>> features_speech["typing_indicator_sound"] // Typing sounds!
+	S["typing_indicator_sound_play"]			>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+	S["typing_indicator_speed"]					>> features_speech["typing_indicator_speed"]
+	S["typing_indicator_pitch"]					>> features_speech["typing_indicator_pitch"]
+	S["typing_indicator_variance"]				>> features_speech["typing_indicator_variance"]
+	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
+	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
 	S["whoflags"]	>> whoflags // WHo!
@@ -1080,7 +1084,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "2-Average")
 	features_speech["typing_indicator_variance"]			= sanitize_inlist(features_speech["typing_indicator_variance"], GLOB.typing_indicator_variances, "2-Voice varies a little between words")
 	features_speech["typing_indicator_volume"]				= sanitize_inlist(features_speech["typing_indicator_volume"], GLOB.typing_indicator_volumes, "2-Average")
-
+	features_speech["typing_indicator_max_words_spoken"]	= sanitize_inlist(features_speech["typing_indicator_max_words_spoken"], GLOB.typing_indicator_max_words_spoken_list, "4 Words")
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs

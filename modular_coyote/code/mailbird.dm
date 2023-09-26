@@ -51,7 +51,7 @@
 		to_chat(user, span_warning("You need an item to give to the bird you call!"))
 		return FALSE
 
-	if(mail.w_class > WEIGHT_CLASS_TINY)
+	if(mail.w_class > WEIGHT_CLASS_SMALL)
 		to_chat(user, span_warning("This item is too heavy to give to a bird!"))
 		return FALSE
 
@@ -115,7 +115,7 @@
 			mail = I
 			break
 
-	if(!istype(nut) || !istype(mail) || mail.w_class > WEIGHT_CLASS_TINY)
+	if(!istype(nut) || !istype(mail) || mail.w_class > WEIGHT_CLASS_SMALL)
 		playsound(src.loc, 'modular_coyote/sound/mobsounds/crowpeck.ogg', 50, TRUE)
 		C.visible_message(span_warning("[C] was pecked by the messenger crow!"), span_userdanger("The messenger crow pecked you and flew off!"))
 		var/obj/item/bodypart/head = C.get_bodypart("head")
