@@ -503,7 +503,7 @@
  * Bubba, what have you done?
  * * * * * * * * * * */
 
- /obj/item/gun/ballistic/rifle/mosin/laserbubba
+/obj/item/gun/ballistic/rifle/mosin/laserbubba
  	name = "Modified Mosin-Nagant"
 	desc = "An ancient bolt-action rifle modified to accept, and fire, energy cells in semi-automatic style. The worksmanship is as impressive as it is vile."
 	icon_state = "mosin-energy"
