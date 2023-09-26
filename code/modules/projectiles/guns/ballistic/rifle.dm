@@ -492,6 +492,26 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+
+/* * * * * * * * * * *
+ * Laser Mosin Bolt-Action Rifle
+ * Moist Bolt-Action Laser
+ * Laser Musket Cell
+ * Can bayonet
+ * Rare
+ * Bubba, what have you done?
+ * * * * * * * * * * */
+
+ /obj/item/gun/ballistic/rifle/mosin/laserbubba
+ 	name = "Modified Mosin-Nagant"
+	desc = "An ancient bolt-action rifle modified to accept, and fire, energy cells in semi-automatic style. The worksmanship is as impressive as it is vile."
+	icon_state = "mosin-energy"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+
+
+
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
  * Quick Bolt-Action Rifle

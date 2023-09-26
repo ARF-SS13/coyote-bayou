@@ -296,6 +296,7 @@
 		/obj/item/gun/ballistic/automatic/rangemaster = 2,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand = 1,
+		/obj/item/gun/ballistic/rifle/mosin/laserbubba =1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 1,
 		/obj/item/gun/ballistic/automatic/service/r82 = 2, //is weakest 5.56 automatic
