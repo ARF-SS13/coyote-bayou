@@ -281,7 +281,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_EDGED
-	attack_verb = list("punched", "jabbed", "whacked")
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	force = 8
 	throwforce = 0
 	wound_bonus = 4
@@ -320,8 +320,8 @@
 		if(HAS_TRAIT(user, TRAIT_STEELFIST))
 			H.dna.species.punchdamagehigh = 16
 			H.dna.species.punchdamagelow = 10
-		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
-		H.dna.species.attack_verb = "punch"
+		H.dna.species.attack_sound = 'sound/weapons/slice.ogg'
+		H.dna.species.attack_verb = "clawed"
 
 /obj/item/hand_item/clawer/creature
 	force = 30
