@@ -465,6 +465,506 @@
 	base_icon = 'icons/mob/borgs/robots2.dmi'
 	base_icon_state = "rowtree-engineering"
 
+/// Cool droids
+/datum/robot_skin/droid_miner
+	name = "Delta Quotient Seismoid"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "droid-miner"
+
+	eye_state_off = "eyes-droid-miner"
+	eye_state_1 =   "eyes-droid-miner"
+	eye_state_2 =   "eyes-droid-miner"
+	eye_state_3 =   "eyes-droid-miner"
+	eye_state_4 =   "eyes-droid-miner"
+	eye_state_5 =   "eyes-droid-miner"
+
+/datum/robot_skin/droid_medical
+	name = "Beta Gamma Mepilex"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "droid-medical"
+
+	eye_state_off = "eyes-droid-medical"
+	eye_state_1 =   "eyes-droid-medical"
+	eye_state_2 =   "eyes-droid-medical"
+	eye_state_3 =   "eyes-droid-medical"
+	eye_state_4 =   "eyes-droid-medical"
+	eye_state_5 =   "eyes-droid-medical"
+
+/datum/robot_skin/droid_combat
+	name = "Omega Omega Targation"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "droid-combat"
+
+	eye_state_off = "eyes-droid-combat"
+	eye_state_1 =   "eyes-droid-combat"
+	eye_state_2 =   "eyes-droid-combat"
+	eye_state_3 =   "eyes-droid-combat"
+	eye_state_4 =   "eyes-droid-combat"
+	eye_state_5 =   "eyes-droid-combat"
+
+/datum/robot_skin/droid_combat_roll
+	name = "Rho Wyeta Bonewheel"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "droid-combat-roll"
+
+	eye_state_off = "eyes-droid-combat-roll"
+	eye_state_1 =   "eyes-droid-combat-roll"
+	eye_state_2 =   "eyes-droid-combat-roll"
+	eye_state_3 =   "eyes-droid-combat-roll"
+	eye_state_4 =   "eyes-droid-combat-roll"
+	eye_state_5 =   "eyes-droid-combat-roll"
+
+/datum/robot_skin/droid_science
+	name = "Eta Charlie Philonistry"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "droid-science"
+
+	eye_state_off = "eyes-droid-science"
+	eye_state_1 =   "eyes-droid-science"
+	eye_state_2 =   "eyes-droid-science"
+	eye_state_3 =   "eyes-droid-science"
+	eye_state_4 =   "eyes-droid-science"
+	eye_state_5 =   "eyes-droid-science"
+
+/// cool drones
+/datum/robot_skin/drone_standard
+	name = "Sally-V"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-standard"
+
+	eye_state_off = "eyes-drone-standard"
+	eye_state_1 =   "eyes-drone-standard"
+	eye_state_2 =   "eyes-drone-standard"
+	eye_state_3 =   "eyes-drone-standard"
+	eye_state_4 =   "eyes-drone-standard"
+	eye_state_5 =   "eyes-drone-standard"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_engineer
+	name = "Grunt-XVII"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-engineer"
+
+	eye_state_off = "eyes-drone-engineer"
+	eye_state_1 =   "eyes-drone-engineer"
+	eye_state_2 =   "eyes-drone-engineer"
+	eye_state_3 =   "eyes-drone-engineer"
+	eye_state_4 =   "eyes-drone-engineer"
+	eye_state_5 =   "eyes-drone-engineer"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_miner
+	name = "Roxanne-II"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-miner"
+
+	eye_state_off = "eyes-drone-miner"
+	eye_state_1 =   "eyes-drone-miner"
+	eye_state_2 =   "eyes-drone-miner"
+	eye_state_3 =   "eyes-drone-miner"
+	eye_state_4 =   "eyes-drone-miner"
+	eye_state_5 =   "eyes-drone-miner"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_janitor
+	name = "Mopdrew-DCXXI"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-janitor"
+
+	eye_state_off = "eyes-drone-janitor"
+	eye_state_1 =   "eyes-drone-janitor"
+	eye_state_2 =   "eyes-drone-janitor"
+	eye_state_3 =   "eyes-drone-janitor"
+	eye_state_4 =   "eyes-drone-janitor"
+	eye_state_5 =   "eyes-drone-janitor"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_medical
+	name = "Doc-IV"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-medical"
+
+	eye_state_off = "eyes-drone-medical"
+	eye_state_1 =   "eyes-drone-medical"
+	eye_state_2 =   "eyes-drone-medical"
+	eye_state_3 =   "eyes-drone-medical"
+	eye_state_4 =   "eyes-drone-medical"
+	eye_state_5 =   "eyes-drone-medical"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_surgery
+	name = "Doc-IIV"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-surgery"
+
+	eye_state_off = "eyes-drone-surgery"
+	eye_state_1 =   "eyes-drone-surgery"
+	eye_state_2 =   "eyes-drone-surgery"
+	eye_state_3 =   "eyes-drone-surgery"
+	eye_state_4 =   "eyes-drone-surgery"
+	eye_state_5 =   "eyes-drone-surgery"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_sec
+	name = "Beep-Boop-IXII"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-sec"
+
+	eye_state_off = "eyes-drone-sec"
+	eye_state_1 =   "eyes-drone-sec"
+	eye_state_2 =   "eyes-drone-sec"
+	eye_state_3 =   "eyes-drone-sec"
+	eye_state_4 =   "eyes-drone-sec"
+	eye_state_5 =   "eyes-drone-sec"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_service
+	name = "Bart-I"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-service"
+
+	eye_state_off = "eyes-drone-service"
+	eye_state_1 =   "eyes-drone-service"
+	eye_state_2 =   "eyes-drone-service"
+	eye_state_3 =   "eyes-drone-service"
+	eye_state_4 =   "eyes-drone-service"
+	eye_state_5 =   "eyes-drone-service"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_lost
+	name = "SynDg-zcX----0xFDED"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-lost"
+
+	eye_state_off = "eyes-drone-lost"
+	eye_state_1 =   "eyes-drone-lost"
+	eye_state_2 =   "eyes-drone-lost"
+	eye_state_3 =   "eyes-drone-lost"
+	eye_state_4 =   "eyes-drone-lost"
+	eye_state_5 =   "eyes-drone-lost"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_chemistry
+	name = "Crack-VX"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-chemistry"
+
+	eye_state_off = "eyes-drone-chemistry"
+	eye_state_1 =   "eyes-drone-chemistry"
+	eye_state_2 =   "eyes-drone-chemistry"
+	eye_state_3 =   "eyes-drone-chemistry"
+	eye_state_4 =   "eyes-drone-chemistry"
+	eye_state_5 =   "eyes-drone-chemistry"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_science
+	name = "Stampy-XXX"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-science"
+
+	eye_state_off = "eyes-drone-science"
+	eye_state_1 =   "eyes-drone-science"
+	eye_state_2 =   "eyes-drone-science"
+	eye_state_3 =   "eyes-drone-science"
+	eye_state_4 =   "eyes-drone-science"
+	eye_state_5 =   "eyes-drone-science"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_hydro
+	name = "Weed-CDXX"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-hydro"
+
+	eye_state_off = "eyes-drone-hydro"
+	eye_state_1 =   "eyes-drone-hydro"
+	eye_state_2 =   "eyes-drone-hydro"
+	eye_state_3 =   "eyes-drone-hydro"
+	eye_state_4 =   "eyes-drone-hydro"
+	eye_state_5 =   "eyes-drone-hydro"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/datum/robot_skin/drone_blu
+	name = "Blue-DD"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "drone-blu"
+
+	eye_state_off = "eyes-drone-blu"
+	eye_state_1 =   "eyes-drone-blu"
+	eye_state_2 =   "eyes-drone-blu"
+	eye_state_3 =   "eyes-drone-blu"
+	eye_state_4 =   "eyes-drone-blu"
+	eye_state_5 =   "eyes-drone-blu"
+
+	open_icon = 'icons/mob/borgs/robots2.dmi'
+	open_wires_state = "drone-opencover +w"
+	open_empty_state = "drone-opencover +c"
+	open_cell_state = "drone-opencover -c"
+
+/// Eyebots
+/datum/robot_skin/eyebot_engineering
+	name = "EG-204"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-engineering"
+
+	eye_state_off = "eyes-eyebot-engineering"
+	eye_state_1 =   "eyes-eyebot-engineering"
+	eye_state_2 =   "eyes-eyebot-engineering"
+	eye_state_3 =   "eyes-eyebot-engineering"
+	eye_state_4 =   "eyes-eyebot-engineering"
+	eye_state_5 =   "eyes-eyebot-engineering"
+
+/datum/robot_skin/eyebot_janitor
+	name = "JN-220"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-janitor"
+
+	eye_state_off = "eyes-eyebot-janitor"
+	eye_state_1 =   "eyes-eyebot-janitor"
+	eye_state_2 =   "eyes-eyebot-janitor"
+	eye_state_3 =   "eyes-eyebot-janitor"
+	eye_state_4 =   "eyes-eyebot-janitor"
+	eye_state_5 =   "eyes-eyebot-janitor"
+
+/datum/robot_skin/eyebot_medical
+	name = "MD-229"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-medical"
+
+	eye_state_off = "eyes-eyebot-medical"
+	eye_state_1 =   "eyes-eyebot-medical"
+	eye_state_2 =   "eyes-eyebot-medical"
+	eye_state_3 =   "eyes-eyebot-medical"
+	eye_state_4 =   "eyes-eyebot-medical"
+	eye_state_5 =   "eyes-eyebot-medical"
+
+/datum/robot_skin/eyebot_miner
+	name = "MN-249"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-miner"
+
+	eye_state_off = "eyes-eyebot-miner"
+	eye_state_1 =   "eyes-eyebot-miner"
+	eye_state_2 =   "eyes-eyebot-miner"
+	eye_state_3 =   "eyes-eyebot-miner"
+	eye_state_4 =   "eyes-eyebot-miner"
+	eye_state_5 =   "eyes-eyebot-miner"
+
+/datum/robot_skin/eyebot_science
+	name = "SC-248"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-science"
+
+	eye_state_off = "eyes-eyebot-science"
+	eye_state_1 =   "eyes-eyebot-science"
+	eye_state_2 =   "eyes-eyebot-science"
+	eye_state_3 =   "eyes-eyebot-science"
+	eye_state_4 =   "eyes-eyebot-science"
+	eye_state_5 =   "eyes-eyebot-science"
+
+/datum/robot_skin/eyebot_security
+	name = "BK-214"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-security"
+
+	eye_state_off = "eyes-eyebot-security"
+	eye_state_1 =   "eyes-eyebot-security"
+	eye_state_2 =   "eyes-eyebot-security"
+	eye_state_3 =   "eyes-eyebot-security"
+	eye_state_4 =   "eyes-eyebot-security"
+	eye_state_5 =   "eyes-eyebot-security"
+
+/datum/robot_skin/eyebot_standard
+	name = "SD-200"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "eyebot-standard"
+
+	eye_state_off = "eyes-eyebot-standard"
+	eye_state_1 =   "eyes-eyebot-standard"
+	eye_state_2 =   "eyes-eyebot-standard"
+	eye_state_3 =   "eyes-eyebot-standard"
+	eye_state_4 =   "eyes-eyebot-standard"
+	eye_state_5 =   "eyes-eyebot-standard"
+
+/// HUGEbots
+/datum/robot_skin/heavyMed
+	name = "MediTON"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyMed"
+
+	eye_state_off = "eyes-heavyMed"
+	eye_state_1 =   "eyes-heavyMed"
+	eye_state_2 =   "eyes-heavyMed"
+	eye_state_3 =   "eyes-heavyMed"
+	eye_state_4 =   "eyes-heavyMed"
+	eye_state_5 =   "eyes-heavyMed"
+
+/datum/robot_skin/heavyServ
+	name = "DrinkMAX"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyServ"
+
+	eye_state_off = "eyes-heavyServ"
+	eye_state_1 =   "eyes-heavyServ"
+	eye_state_2 =   "eyes-heavyServ"
+	eye_state_3 =   "eyes-heavyServ"
+	eye_state_4 =   "eyes-heavyServ"
+	eye_state_5 =   "eyes-heavyServ"
+
+/datum/robot_skin/heavySec
+	name = "CrushSMASH"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavySec"
+
+	eye_state_off = "eyes-heavySec"
+	eye_state_1 =   "eyes-heavySec"
+	eye_state_2 =   "eyes-heavySec"
+	eye_state_3 =   "eyes-heavySec"
+	eye_state_4 =   "eyes-heavySec"
+	eye_state_5 =   "eyes-heavySec"
+
+/datum/robot_skin/heavyEng
+	name = "PipeLAYER"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyEng"
+
+	eye_state_off = "eyes-heavyEng"
+	eye_state_1 =   "eyes-heavyEng"
+	eye_state_2 =   "eyes-heavyEng"
+	eye_state_3 =   "eyes-heavyEng"
+	eye_state_4 =   "eyes-heavyEng"
+	eye_state_5 =   "eyes-heavyEng"
+
+/datum/robot_skin/heavyMiner
+	name = "CrackROCKS"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyMiner"
+
+	eye_state_off = "eyes-heavyMiner"
+	eye_state_1 =   "eyes-heavyMiner"
+	eye_state_2 =   "eyes-heavyMiner"
+	eye_state_3 =   "eyes-heavyMiner"
+	eye_state_4 =   "eyes-heavyMiner"
+	eye_state_5 =   "eyes-heavyMiner"
+
+/datum/robot_skin/heavyRes
+	name = "BookWORM"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyRes"
+
+	eye_state_off = "eyes-heavyRes"
+	eye_state_1 =   "eyes-heavyRes"
+	eye_state_2 =   "eyes-heavyRes"
+	eye_state_3 =   "eyes-heavyRes"
+	eye_state_4 =   "eyes-heavyRes"
+	eye_state_5 =   "eyes-heavyRes"
+
+/datum/robot_skin/heavyStandard
+	name = "BigmcLARGEHUGE"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "heavyStandard"
+
+	eye_state_off = "eyes-heavyStandard"
+	eye_state_1 =   "eyes-heavyStandard"
+	eye_state_2 =   "eyes-heavyStandard"
+	eye_state_3 =   "eyes-heavyStandard"
+	eye_state_4 =   "eyes-heavyStandard"
+	eye_state_5 =   "eyes-heavyStandard"
+
+/datum/robot_skin/syndi-heavy
+	name = "Chuck"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "syndi-heavy"
+
+	eye_state_off = "eyes-syndi-heavy"
+	eye_state_1 =   "eyes-syndi-heavy"
+	eye_state_2 =   "eyes-syndi-heavy"
+	eye_state_3 =   "eyes-syndi-heavy"
+	eye_state_4 =   "eyes-syndi-heavy"
+	eye_state_5 =   "eyes-syndi-heavy"
+
+
+
 /// more ss13 borgs
 /datum/robot_skin/ss13_2_mopgearrex
 	name = "Janitor Jerry"
