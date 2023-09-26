@@ -379,7 +379,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	/// the name slug, anonymization has been handled elsewhere
 	out += "<span class='[name_span]'> [name]</span>"
 	/// the ckey, if we're an admin
-	if(admeme || check_rights(admin_level_to_see_all), FALSE)
+	if(admeme || check_rights(admin_level_to_see_all, FALSE))
 		out += " ([M.ckey])"
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
