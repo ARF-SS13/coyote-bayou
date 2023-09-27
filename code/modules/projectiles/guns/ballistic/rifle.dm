@@ -617,7 +617,7 @@
 	icon_state = "madsenm47FE"
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
-	damage_multiplier = GUN_EXTRA_DAMAGE_T0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
