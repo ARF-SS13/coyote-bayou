@@ -134,7 +134,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
 		/obj/item/reagent_containers/food/condiment/rice = 5,
-		/obj/item/reagent_containers/food/snacks/grown/tomamo = 1
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/spanish_rice
 	subcategory = CAT_MEAT
