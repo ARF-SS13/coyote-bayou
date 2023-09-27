@@ -215,6 +215,20 @@
 /obj/item/ammo_box/magazine/m473/small/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/machinegundrummag
+	name = "Custom OstStrauss magazine"
+	icon_state = "mg3"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = list(CALIBER_556)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 25
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/machinegundrummag/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m2mm
 	name = "2mm electromagnetic magazine"
 	icon_state = "2mm"

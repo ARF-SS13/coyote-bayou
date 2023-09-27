@@ -559,6 +559,7 @@
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
+		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
 	)
 
 ////////////////////////////

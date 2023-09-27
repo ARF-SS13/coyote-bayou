@@ -735,7 +735,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/ballisticvest/no9
+	name = "Baily tactical vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
+
+/datum/gear/suit/armor/ballisticvest/no10
+	name = "Medical ballistic vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/medvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/armor/ncrheavy
 	name = "heavy Texas militia armor"
