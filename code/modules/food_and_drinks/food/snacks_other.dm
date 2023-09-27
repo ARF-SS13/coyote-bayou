@@ -926,3 +926,53 @@
 	tastes = list("cheesecake" = 1, "chocolate" = 1, "honey" = 1)
 	foodtype = SUGAR | FRIED | DAIRY | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/classicchimichanga
+	name = "classic chimichanga"
+	desc = "A traditional chimichanga with meat, cheese, and beans. Is it Chimi? Or Chimichanga? Chimi? Chimichanga.."
+	icon_state = "classic_chimichanga"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "F0D830"
+	tastes = list("chimi" = 4, "meat" = 2, "cheese" = 2, "beans" = 1)
+	foodtype = MEAT | DAIRY | GRAIN | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/veggiechimichanga
+	name = "vegetarian chimichanga"
+	desc = "A traditional chimichanga with cheese and beans. Probably some sort of veggi. Idk, I don't eat these. Is it Chimi? Or Chimichanga? Chimi? Chimichanga.."
+	icon_state = "vegetarian_chimichanga"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "F0D830"
+	tastes = list("chimi" = 4, "veggies" = 2, "cheese" = 2, "beans" = 1)
+	foodtype = DAIRY | GRAIN | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/refriedbeans
+	name = "refried beans"
+	desc = "A dish of cooked and mashed beans. "
+	icon_state = "refried_beans"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "F0D830"
+	tastes = list("beans" = 1, "beans" = 2, "more beans" = 2)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/spanish_rice
+	name = "spanish rice"
+	desc = "A blend of onion, dried chiles, bell peppers, tomato and spices with white rice."
+	icon_state = "spanish_rice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "F0D830"
+	tastes = list("rice" = 1, "spain" = 2, "chili" = 2, "tomato" = 3)
+	foodtype = VEGETABLES | GRAIN
+
+/obj/item/reagent_containers/food/snacks/spanish_rice
+	name = "spanish rice"
+	desc = "A blend of onion, dried chiles, bell peppers, tomato and spices with white rice."
+	icon_state = "spanish_rice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "F0D830"
+	tastes = list("rice" = 1, "spain" = 2, "chili" = 2, "tomato" = 3)
+	foodtype = VEGETABLES | GRAIN
