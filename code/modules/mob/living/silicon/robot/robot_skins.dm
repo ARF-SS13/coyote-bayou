@@ -5,6 +5,8 @@
 	var/name
 	var/mob/living/silicon/owner
 
+	var/is_folder
+
 	var/base_icon
 	var/base_icon_state
 
@@ -963,7 +965,123 @@
 	eye_state_4 =   "eyes-syndi-heavy"
 	eye_state_5 =   "eyes-syndi-heavy"
 
+//Marina! (marinara)
+/datum/robot_skin/marinaMD
+	name = "Marina M.D."
 
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaMD"
+
+	eye_state_off = "eyes-marinaMD"
+	eye_state_1 =   "eyes-marinaMD"
+	eye_state_2 =   "eyes-marinaMD"
+	eye_state_3 =   "eyes-marinaMD"
+	eye_state_4 =   "eyes-marinaMD"
+	eye_state_5 =   "eyes-marinaMD"
+
+/datum/robot_skin/marinaSV
+	name = "Marina S.V."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaSV"
+
+	eye_state_off = "eyes-marinaSV"
+	eye_state_1 =   "eyes-marinaSV"
+	eye_state_2 =   "eyes-marinaSV"
+	eye_state_3 =   "eyes-marinaSV"
+	eye_state_4 =   "eyes-marinaSV"
+	eye_state_5 =   "eyes-marinaSV"
+
+/datum/robot_skin/marinaMN
+	name = "Marina M.N."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaMN"
+
+	eye_state_off = "eyes-marinaMN"
+	eye_state_1 =   "eyes-marinaMN"
+	eye_state_2 =   "eyes-marinaMN"
+	eye_state_3 =   "eyes-marinaMN"
+	eye_state_4 =   "eyes-marinaMN"
+	eye_state_5 =   "eyes-marinaMN"
+
+/datum/robot_skin/marinaSC
+	name = "Marina S.C."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaSC"
+
+	eye_state_off = "eyes-marinaSC"
+	eye_state_1 =   "eyes-marinaSC"
+	eye_state_2 =   "eyes-marinaSC"
+	eye_state_3 =   "eyes-marinaSC"
+	eye_state_4 =   "eyes-marinaSC"
+	eye_state_5 =   "eyes-marinaSC"
+
+/datum/robot_skin/marinaENG
+	name = "Marina E.N.G."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaENG"
+
+	eye_state_off = "eyes-marinaENG"
+	eye_state_1 =   "eyes-marinaENG"
+	eye_state_2 =   "eyes-marinaENG"
+	eye_state_3 =   "eyes-marinaENG"
+	eye_state_4 =   "eyes-marinaENG"
+	eye_state_5 =   "eyes-marinaENG"
+
+/datum/robot_skin/marinaJN
+	name = "Marinette"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaJN"
+
+	eye_state_off = "eyes-marinaJN"
+	eye_state_1 =   "eyes-marinaJN"
+	eye_state_2 =   "eyes-marinaJN"
+	eye_state_3 =   "eyes-marinaJN"
+	eye_state_4 =   "eyes-marinaJN"
+	eye_state_5 =   "eyes-marinaJN"
+
+/datum/robot_skin/marinaSD
+	name = "Marina S.D."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaSD"
+
+	eye_state_off = "eyes-marinaSD"
+	eye_state_1 =   "eyes-marinaSD"
+	eye_state_2 =   "eyes-marinaSD"
+	eye_state_3 =   "eyes-marinaSD"
+	eye_state_4 =   "eyes-marinaSD"
+	eye_state_5 =   "eyes-marinaSD"
+
+/datum/robot_skin/marinaSCI
+	name = "Marina S.C.I."
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaSCI"
+
+	eye_state_off = "eyes-marinaSCI"
+	eye_state_1 =   "eyes-marinaSCI"
+	eye_state_2 =   "eyes-marinaSCI"
+	eye_state_3 =   "eyes-marinaSCI"
+	eye_state_4 =   "eyes-marinaSCI"
+	eye_state_5 =   "eyes-marinaSCI"
+
+/datum/robot_skin/marinaCB_roll
+	name = "Doc Marina"
+
+	base_icon = 'icons/mob/borgs/robots2.dmi'
+	base_icon_state = "marinaCB-roll"
+
+	eye_state_off = "eyes-marinaCB-roll"
+	eye_state_1 =   "eyes-marinaCB-roll"
+	eye_state_2 =   "eyes-marinaCB-roll"
+	eye_state_3 =   "eyes-marinaCB-roll"
+	eye_state_4 =   "eyes-marinaCB-roll"
+	eye_state_5 =   "eyes-marinaCB-roll"
 
 /// more ss13 borgs
 /datum/robot_skin/ss13_2_mopgearrex
@@ -979,18 +1097,7 @@
 	eye_state_4 =   "mopgearrex_l"
 	eye_state_5 =   "mopgearrex_l"
 
-/datum/robot_skin/ss13_2_mopgearrex
-	name = "Janitor Jerry"
-
-	base_icon = 'icons/mob/borgs/robots.dmi'
-	base_icon_state = "mopgearrex"
-
-	eye_state_off = "mopgearrex_e"
-	eye_state_1 =   "mopgearrex_e"
-	eye_state_2 =   "mopgearrex_e"
-	eye_state_3 =   "mopgearrex_l"
-	eye_state_4 =   "mopgearrex_l"
-	eye_state_5 =   "mopgearrex_l"
+/// DOGBORGS woof woof
 
 
 
