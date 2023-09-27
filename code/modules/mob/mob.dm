@@ -1222,7 +1222,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	tilt_left()
 
 /mob/proc/tilt_left()
-	if(!canface() || is_tilted < -50)
+	if(!canface() || is_tilted < -360)
 		return FALSE
 	transform = transform.Turn(-1)
 	is_tilted--
@@ -1232,7 +1232,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	tilt_right()
 
 /mob/proc/tilt_right()
-	if(!canface() || is_tilted > 50)
+	if(!canface() || is_tilted > 360)
 		return FALSE
 	transform = transform.Turn(1)
 	is_tilted++
