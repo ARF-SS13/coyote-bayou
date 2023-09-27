@@ -769,12 +769,12 @@
 	item_state = "uniquedeag"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
-	init_recoil = LMG_RECOIL (2, 2)
+	init_recoil = HMG_RECOIL (8, 8)
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
-	/datum/firemode/automatic/rpm150
+	/datum/firemode/automatic/rpm300
 	)
 	can_suppress = FALSE
 	can_scope = FALSE
@@ -849,7 +849,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
