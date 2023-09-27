@@ -330,7 +330,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	RemoveActive()
 	state = AHELP_CLOSED
 	GLOB.ahelp_tickets.ListInsert(src)
-	to_chat(initiator, span_adminhelp("Ticket closed by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]."))
+	to_chat(initiator, span_adminhelp("Ticket closed by an administrator."))
 	AddInteraction("<font color='red'>Closed by [key_name].</font>")
 	if(!silent)
 		SSblackbox.record_feedback("tally", "ahelp_stats", 1, "closed")

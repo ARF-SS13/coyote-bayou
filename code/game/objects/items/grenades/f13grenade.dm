@@ -116,6 +116,7 @@
 	ex_heavy = 0
 	ex_light = 3
 	ex_flame = 0
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/storage/box/dynamite_box
 	name = "dynamite crate"

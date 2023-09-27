@@ -991,6 +991,7 @@ Raider
 	backpack_contents = list(
 		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
 		///obj/item/reagent_containers/hypospray/medipen/stimpak,
+		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/card/id/selfassign,
@@ -1314,6 +1315,48 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+/datum/job/wasteland/f13radioop
+	title = "Radio Operator"
+	flag = F13RADIOOP
+	faction = FACTION_WASTELAND
+	total_positions = 2
+	spawn_positions = 2
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	supervisors = "fate"
+	selection_color = "#dddddd"
+
+	outfit = /datum/outfit/job/wasteland/f13radioop
+
+	access = list(ACCESS_TCOMSAT)
+	minimal_access = list(ACCESS_TCOMSAT)
+/datum/outfit/job/wasteland/f13radioop
+	name = "Radio Operator"
+	jobtype = /datum/job/wasteland/f13radioop
+	id =	/obj/item/card/id/silver
+	ears = null
+	belt = /obj/item/kit_spawner/waster
+	l_pocket = /obj/item/storage/wallet/stash/low
+	r_pocket = /obj/item/flashlight/flare
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/kit_spawner/tools,
+		/obj/item/card/id/selfassign,
+		/obj/item/clothing/mask/chameleon
+		)
+
+/datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/settler, \
+		/obj/item/clothing/under/f13/brahminm, \
+		/obj/item/clothing/under/f13/lumberjack, \
+		/obj/item/clothing/under/f13/roving)
+
 
 /datum/job/wasteland/f13wastelander/ashdown
 	title = "Ashdown Citizen"
@@ -1334,6 +1377,8 @@ Raider
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/kit_spawner/tools,
 		/obj/item/cool_book/ashdowncit = 1
@@ -1568,7 +1613,8 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/fancy/candle_box,
 		/obj/item/storage/wallet/stash/mid,
-		/obj/item/nullrod = 1,)
+		/obj/item/nullrod = 1,
+		/obj/item/pda = 1)
 //end preacher
 
 /*/datum/outfit/job/wasteland/f13enforcer
@@ -2022,6 +2068,9 @@ datum/job/wasteland/f13dendoctor
 	box = /obj/item/storage/survivalkit/tribal
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
+		/obj/item/radio/headset,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/melee/onehanded/knife/bone = 1

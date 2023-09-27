@@ -131,3 +131,8 @@
 	caliber = list(CALIBER_MUSKET_PLASMA)
 	max_ammo = 2
 	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+	max_ammo = 8
+	multiload = 0
+

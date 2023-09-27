@@ -210,6 +210,18 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_announcement_sound)()
 	return C.prefs.toggles & SOUND_ANNOUNCEMENTS
 
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_sound_indicator)()
+	set name = "Hear/Silence Sound Indicator"
+	set category = "Preferences"
+	set desc = "Hear Sound Indicator"
+	usr.client.prefs.toggles ^= SOUND_SI
+	to_chat(usr, "You will now [(usr.client.prefs.toggles & SOUND_SI) ? "hear the sound indicator" : "no longer hear the sound indicator"].")
+	usr.client.prefs.save_preferences()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Sound Indicator", "[usr.client.prefs.toggles & SOUND_SI ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/Sound/toggle_sound_indicator/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_SI
+
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleprayersounds)()
 	set name = "Hear/Silence Prayer Sounds"
 	set category = "Preferences"
@@ -277,8 +289,13 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, toggle_gun_cursor)()
 	usr.client.prefs.save_preferences()
 	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & AIM_CURSOR_ON) ? "now" : "no longer"] see a sickass cursor when you have a gun out.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Gun Cursor", "[(usr.client.prefs.chat_toggles & CHAT_BANKCARD) ? "Enabled" : "Disabled"]"))
-/datum/verbs/menu/Settings/toggle_gun_cursor/Get_checked(client/C)
-	return C.prefs.cb_toggles & AIM_CURSOR_ON
+
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, fit_window)()
+	set name = "Boss Left"
+	set category = "Preferences"
+	set desc = "Fit Viewport"
+	usr.client.fit_viewport()
 
 GLOBAL_LIST_INIT(ghost_forms, list("ghost","ghostking","ghostian2","skeleghost","ghost_red","ghost_black", \
 							"ghost_blue","ghost_yellow","ghost_green","ghost_pink", \

@@ -146,6 +146,7 @@
 	new /obj/item/reagent_containers/glass/bottle/welding_fuel(src)
 	new /obj/item/stack/sheet/metal/fifty(src)
 	new /obj/item/stack/sheet/mineral/titanium/twentyfive(src)
+	new /obj/item/stack/sheet/bronze/thirty(src)
 
 /datum/loadout_box/smithing
 	entry_tag = "smithing tools"

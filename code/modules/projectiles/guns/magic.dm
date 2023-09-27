@@ -92,7 +92,7 @@
 	audible_message("[src] lets out a faint hum.")
 
 /obj/item/gun/magic/proc/charge_start_message()
-	audible_message("[src] begins setting out a soft hum.")
+	audible_message("[src] begins letting out a soft hum.")
 
 /obj/item/gun/magic/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	to_chat(user, span_warning("The [name] whizzles quietly."))

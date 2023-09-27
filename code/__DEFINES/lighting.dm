@@ -76,7 +76,8 @@
 #define LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE 128 //For lighting alpha, small amounts lead to big changes. even at 128 its hard to figure out what is dark and what is light, at 64 you almost can't even tell.
 #define LIGHTING_PLANE_ALPHA_INVISIBLE 0
 
-#define NIGHT_VISION_DARKSIGHT_RANGE 3
+#define NIGHT_VISION_DARKSIGHT_RANGE 4
+#define NIGHT_VISION_DARKSIGHT_RANGE_GREATER 6
 
 //lighting area defines
 #define DYNAMIC_LIGHTING_DISABLED 0 //dynamic lighting disabled (area stays at full brightness)

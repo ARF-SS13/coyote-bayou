@@ -106,7 +106,7 @@
 
 /// shoes
 /datum/component/storage/concrete/pockets/shoes
-	attack_hand_interact = FALSE
+	attack_hand_interact = TRUE
 	quickdraw = TRUE
 	silent = TRUE
 

@@ -177,6 +177,18 @@
 		var/mob/living/L = user
 		L.SetSleeping(200)
 
+/datum/emote/living/faint
+	key = "collapse"
+	key_third_person = "collapse"
+	message = "collapses."
+	message_param = "collapses from %t."
+
+/datum/emote/living/faint/run_emote(mob/user, params)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/L = user
+		L.SetSleeping(20)
+
 
 /* Fortuna edit: flapping your wings disabled
 /datum/emote/living/flap
@@ -1030,15 +1042,27 @@
 	key_third_person = "aflaps"
 	message = "flaps their wings ANGRILY!!"
 
+/datum/emote/aflap/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/flaparms
 	key = "flapa"
 	key_third_person = "flapas"
 	message = "flaps their arms."
 
+/datum/emote/flapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/aflaparms
 	key = "aflapa"
 	key_third_person = "aflapas"
 	message = "flaps their arms ANGRILY!!"
+
+/datum/emote/aflapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/wah
 	key = "wah"
@@ -1139,6 +1163,10 @@
 	key_third_person = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	message = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	sound = 'sound/f13effects/sunsetsounds/aie.ogg'
+
+/datum/emote/aie/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 0, 5, 0, 0, 0.8 SECONDS)
 
 
 /datum/emote/nightstalker
@@ -1757,7 +1785,7 @@ datum/emote/living/flirt/blank
 
 datum/emote/living/flirt/custom
 	key = "flirtcustom"
-	key_third_person = "is trying to <span class='love'>%t</span>"
+	key_third_person = "is trying to <span class='love'>be flirty!</span>"
 	message = "is trying to <span class='love'>%t</span>"
 	message_param = "is trying to <span class='love'>%t</span>"
 

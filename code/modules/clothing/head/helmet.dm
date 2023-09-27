@@ -151,7 +151,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/unitednation/medical
 	name = "U.N Medical Helmet"
-	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue with a red medical cross"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue with a green medical cross"
 	icon_state = "unmedical"
 	item_state = "unmedical"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -202,6 +202,16 @@
 	desc = "A British MK6 helmet. It was outphased by the MK7, but the MK6 saw extensive use by the British military, PMCs, and foreign countries. Reliable, hardy, and cool looking. Who dares wins."
 	icon_state = "mk6"
 	item_state = "mk6"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+
+/obj/item/clothing/head/kevlarhelmet/toxtestinghelmet
+	name = "VeturrHjalmur"
+	desc = "A custom Icelandic steel helmet adorned with a baby blue cross. This helmet is padded and really meant for looks than actual combative purposes. Made of the finest materials to grace the wasteland. Which is fine steel, padded interior, and adjustable ballistic silk straps."
+	icon_state = "germed"
+	item_state = "germed"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -408,7 +418,7 @@
 
 /obj/item/clothing/head/helmet/unmchelmet/medic
 	name = "Standard issue UNMC Medical Helmet"
-	desc = "A standard issued UNMC Helmet, this one seems to be resembling that of a medical personal's color scheme with a white paint and a red cross."
+	desc = "A standard issued UNMC Helmet, this one seems to be resembling that of a medical personal's color scheme with a white paint and a green cross."
 	icon_state = "unmcmh"
 	item_state = "unmcmh"
 	flags_inv = HIDEHAIR

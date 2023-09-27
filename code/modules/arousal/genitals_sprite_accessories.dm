@@ -165,3 +165,8 @@
 /datum/sprite_accessory/belly/obese
 	icon_state = "obese"
 	name = "Obese"
+
+/// udders
+/datum/sprite_accessory/belly/udders
+	icon_state = "udders"
+	name = "Udders"

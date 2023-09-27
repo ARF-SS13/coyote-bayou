@@ -335,3 +335,48 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	icon = GLOB.rubber_toolbox_icons[icon_state]
 	. = ..()
 	AddComponent(/datum/component/bouncy)
+
+
+//Lunchboxes
+
+/obj/item/storage/bag/plants/lunchbox
+	name = "rainbow lunchbox"
+	icon =  'modular_coyote/icons/objects/items.dmi'
+	icon_state = "lunchbox_rainbow"
+	desc = "A little lunchbox. This one is the colors of the rainbow!"
+	attack_verb = list("lunched")
+
+/obj/item/storage/bag/plants/lunchbox/hearts
+	name = "heart lunchbox"
+	icon_state = "lunchbox_lovelyhearts"
+	desc = "A little lunchbox. This one is pink with red hearts!"
+
+/obj/item/storage/bag/plants/lunchbox/cat
+	name = "cat lunchbox"
+	icon_state = "lunchbox_sciencecatshow"
+	desc = "A little lunchbox. This one is green with a cat!"
+
+/obj/item/storage/bag/plants/lunchbox/nano
+	name = "blue lunchbox"
+	icon_state = "lunchbox_nanotrasen"
+	desc = "A little lunchbox. This one is blue with a white N! Strange!"
+
+/obj/item/storage/bag/plants/lunchbox/uni
+	name = "university lunchbox"
+	icon_state = "lunchbox_marsuniversity"
+	desc = "A little lunchbox. This one is red with a white M! Strange!"
+
+/obj/item/storage/bag/plants/lunchbox/teal
+	name = "teal lunchbox"
+	icon_state = "lunchbox_teal"
+	desc = "A little lunchbox. This one is a teal one!"
+
+/obj/item/storage/bag/plants/lunchbox/diona
+	name = "diona lunchbox"
+	icon_state = "lunchbox_dionanymph"
+	desc = "A little lunchbox. This one has a diona on it!"
+
+/obj/item/storage/bag/plants/lunchbox/black
+	name = "black lunchbox"
+	icon_state = "lunchbox_syndie"
+	desc = "A little lunchbox. This one is black!"

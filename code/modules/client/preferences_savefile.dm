@@ -289,6 +289,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["preferred_chaos"]	>> preferred_chaos
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
+	S["aghost_squelches"]		>> aghost_squelches
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
@@ -342,6 +343,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	no_tetris_storage		= sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
+	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -451,6 +453,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
+	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -693,7 +696,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_preferences"]	>> job_preferences
 
 	//Quirks
-	S["all_quirks"]			>> all_quirks
+	S["char_quirks"]			>> char_quirks // renamed so it doesnt destroy old saves in case this needs to be reverted
+	S["all_quirks"]				>> all_quirks // untouched, used to migrate quirks
 
 	//Records
 	S["security_records"]			>>			security_records
@@ -808,8 +812,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
-	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"] // Typing sounds!
-	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+	S["typing_indicator_sound"]					>> features_speech["typing_indicator_sound"] // Typing sounds!
+	S["typing_indicator_sound_play"]			>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
+	S["typing_indicator_speed"]					>> features_speech["typing_indicator_speed"]
+	S["typing_indicator_pitch"]					>> features_speech["typing_indicator_pitch"]
+	S["typing_indicator_variance"]				>> features_speech["typing_indicator_variance"]
+	S["typing_indicator_volume"]				>> features_speech["typing_indicator_volume"]
+	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
 	/// Vore stuff!
@@ -1058,7 +1067,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, "Default")
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
-
+	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "2-Average")
+	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "2-Average")
+	features_speech["typing_indicator_variance"]			= sanitize_inlist(features_speech["typing_indicator_variance"], GLOB.typing_indicator_variances, "2-Voice varies a little between words")
+	features_speech["typing_indicator_volume"]				= sanitize_inlist(features_speech["typing_indicator_volume"], GLOB.typing_indicator_volumes, "2-Average")
+	features_speech["typing_indicator_max_words_spoken"]	= sanitize_inlist(features_speech["typing_indicator_max_words_spoken"], GLOB.typing_indicator_max_words_spoken_list, "4 Words")
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -1066,10 +1079,29 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences["[j]"] != JP_LOW && job_preferences["[j]"] != JP_MEDIUM && job_preferences["[j]"] != JP_HIGH)
 			job_preferences -= j
 
-	all_quirks = SANITIZE_LIST(all_quirks)
-
-	if(GetQuirkBalance() < 0)
-		reset_quirks()
+	char_quirks = SANITIZE_LIST(char_quirks)
+	if(SSquirks.debug_migration)
+		current_version -= PMC_QUIRK_OVERHAUL_2K23
+		var/list/debug_oldies = list(
+			"Jack Penis", // to test how it handles bullshit quirks
+			"/datum/quirk/furry", // to test how it handles key quirks
+			"Straight Shooter", // gonna load in a shitload of positive quirks, to see if it'll reject bad values
+			"Clawer - Razors",
+			"Improved Innate Healing",
+			"Minor Surgery",
+			"Fists of Steel",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough",
+			"Health - Tough", // see if it handles multiple quirks of the same type
+			"Brain Tumor",
+			"Nearsighted - Trashed Vision",
+			"Pacifist",
+			"Phobia - Doctors",
+			"Monophobia",
+			"Mobility - Can not Run",
+		)
+		WRITE_FILE(S["all_quirks"], debug_oldies)
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
@@ -1084,10 +1116,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
-	if(GetQuirkBalance() < 0)
-		reset_quirks("balance")
-	if(GetPositiveQuirkCount() > MAX_QUIRKS)
-		reset_quirks("max")
+	SSquirks.CheckAndVerifyPrefQuirks(src, FALSE)
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)
@@ -1261,7 +1290,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
 
 	//Quirks
-	WRITE_FILE(S["all_quirks"]			, all_quirks)
+	WRITE_FILE(S["char_quirks"]			, char_quirks)
 
 	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
 	WRITE_FILE(S["scars1"]						, scars_list["1"])

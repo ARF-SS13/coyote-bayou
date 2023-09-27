@@ -2,25 +2,27 @@
 	name = "Shapechange"
 	desc = "Take on the shape of another for a time to use their natural abilities. Once you've made your choice it cannot be changed."
 	clothes_req = NONE
-	charge_max = 200
+	charge_max = 10 SECONDS
 	cooldown_min = 50
 	range = -1
 	include_user = 1
-	invocation = "RAC'WA NO!"
-	invocation_type = "shout"
+	invocation = ""
+	invocation_type = "none"
 	action_icon_state = "shapeshift"
 
 	var/revert_on_death = TRUE
-	var/die_with_shapeshifted_form = TRUE
+	var/die_with_shapeshifted_form = FALSE
 	var/convert_damage = TRUE //If you want to convert the caster's health to the shift, and vice versa.
 	var/convert_damage_type = BRUTE //Since simplemobs don't have advanced damagetypes, what to convert damage back into.
 	var/shapeshift_type
-	var/list/possible_shapes = list(/mob/living/simple_animal/mouse,\
-		/mob/living/simple_animal/pet/dog/corgi,\
-		/mob/living/simple_animal/hostile/carp/ranged/chaos,\
-		/mob/living/simple_animal/bot/ed209,\
-		/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,\
-		/mob/living/simple_animal/hostile/construct/armored)
+	var/list/possible_shapes = list(/mob/living/simple_animal/mouse)
+
+/obj/effect/proc_holder/spell/targeted/shapeshift/Initialize()
+	var/list/poke = list()
+	for(var/pkmn in GLOB.creature_selectable)
+		poke += GLOB.creature_selectable[pkmn]
+	possible_shapes = poke
+	. = ..()
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/cast(list/targets,mob/user = usr)
 	if(src in user.mob_spell_list)
@@ -99,6 +101,8 @@
 	stored = caster
 	if(stored.mind)
 		stored.mind.transfer_to(shape)
+		shape.real_name = stored.real_name
+		shape.name = stored.real_name
 	stored.forceMove(src)
 	stored.mob_transforming = TRUE
 	if(source.convert_damage)
@@ -159,6 +163,7 @@
 		var/damapply = stored.maxHealth * damage_percent
 
 		stored.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND)
+	shape.unequip_everything()
 	qdel(shape)
 	qdel(src)
 

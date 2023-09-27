@@ -771,7 +771,7 @@
 					damaged_message += D
 				to_chat(src, span_info("Your [damaged_message] [damaged_plural ? "are" : "is"] hurt."))
 
-			if(roundstart_quirks.len)
+			if(mob_quirks.len)
 				to_send += span_notice("You have these quirks: [get_trait_string()].")
 
 			to_chat(src, to_send)
