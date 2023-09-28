@@ -79,6 +79,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
+	var/genital_whitelist = ""
+
 	var/uses_glasses_colour = 0
 
 	//character preferences
