@@ -348,7 +348,7 @@
 			else
 				return "[ckey] is already not on the whitelist."
 	
-	return "Formatting error - KEY: [input["key"]] | MODE: [input["mode"]] | CKEY: [input["ckey"]] | WhitelistResult: [whitelistResult]"
+	return "Formatting error - KEY: [input["keyword"]] | MODE: [input["mode"]] | CKEY: [input["ckey"]] | WhitelistResult: [whitelistResult]"
 
 #undef CHK_WHTLST
 #undef WHTLST
