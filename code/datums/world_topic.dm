@@ -342,7 +342,7 @@
 			else
 				return "[ckey] has already been whitelisted."
 		
-		if(WHTLST) // If the proc returns true, they have been removed, if not, they weren't on it originally.
+		if(UNWHTLST) // If the proc returns true, they have been removed, if not, they weren't on it originally.
 			if(BC_RemoveKey(ckey))
 				return "[ckey] has been removed."
 			else
