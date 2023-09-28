@@ -48,6 +48,16 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	cost = 0
 
+/datum/gear/suit/coat/grey
+	name ="Grey Coat"
+	path = /obj/item/clothing/suit/jacket/grey
+	cost = 0
+
+/datum/gear/suit/coat/overcoat
+	name ="Grey Overcoat"
+	path = /obj/item/clothing/suit/jacket/overcoat
+	cost = 0
+
 /datum/gear/suit/coat/black
 	name = "Thick Black Coat"
 	path = /obj/item/clothing/suit/civ13/coat/black
