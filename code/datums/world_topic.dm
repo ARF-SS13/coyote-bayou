@@ -314,11 +314,16 @@
 	return json_encode(data)
 
 // Border Control Wrapper for removing/adding whitelists - Gremling da smoothbrain
+// -----------------------------------------------------------
+//						THE FORMATTING
+// -----------------------------------------------------------
 // Keyword - "border"		// The method to call this wrapper
-// Mode Choice - "mode" // 0 - 1 - 2, 	0: Check whitelist
-						//				1: Whitelist,
-						//				2: Unwhitelist.
-// CKey - "ckey"		// The target user.
+// -----------------------------------------------------------
+// Mode Choice - "mode" 	// 0 - 1 - 2, 	0: Check whitelist
+							//				1: Whitelist,
+							//				2: Unwhitelist.
+// -----------------------------------------------------------
+// CKey - "ckey"			// The target user.
 
 #define CHK_WHTLST	0
 #define WHTLST		1
