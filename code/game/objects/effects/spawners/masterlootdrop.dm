@@ -550,6 +550,7 @@
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/deathclawgauntlet = 20,
 		/obj/item/melee/unarmed/powerfist/goliath = 20,
+		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
