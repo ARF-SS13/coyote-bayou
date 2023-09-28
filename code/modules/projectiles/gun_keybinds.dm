@@ -1,6 +1,6 @@
 //-->Gun safety toggle hotkey
 /datum/keybinding/living/gunsafety
-	hotkey_keys = list("Unbound")
+	hotkey_keys = list(",")
 	name = "gunsafety"
 	full_name = "Gun Safety Toggle"
 	category = CATEGORY_COMBAT
@@ -21,7 +21,7 @@
 
 //-->Gun scope toggle hotkey
 /datum/keybinding/living/gunscope
-	hotkey_keys = list("Unbound")
+	hotkey_keys = list(".")
 	name = "gunscope"
 	full_name = "Gun Scope Toggle"
 	category = CATEGORY_COMBAT
@@ -42,7 +42,7 @@
 
 //-->Gun switch firing mode hotkey
 /datum/keybinding/living/gunmode
-	hotkey_keys = list("Unbound")
+	hotkey_keys = list("/")
 	name = "gunmode"
 	full_name = "Gun Firing Mode"
 	category = CATEGORY_COMBAT

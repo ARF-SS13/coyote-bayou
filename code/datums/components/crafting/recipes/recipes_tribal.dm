@@ -54,7 +54,7 @@
 				/obj/item/weaponcrafting/string = 1
 				)
 	tools = list(TOOL_WORKBENCH)
-	
+
 /datum/crafting_recipe/tribalwar/recurvebow
 	name = "recurve bow"
 	result = /obj/item/gun/ballistic/bow/recurvebow
@@ -481,3 +481,62 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/clothing/glasses/f13/tribaleyepatch
 	time = 10
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 2)
+
+/*Kelp's magic stuff*/
+
+// Ritual dagger (tribal dagger + needed to make magic stuff)
+/datum/crafting_recipe/magic/ritualdagger
+	name = "Ritual Dagger"
+	result = /obj/item/melee/onehanded/knife/ritualdagger
+	time = 10
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/bone = 1)
+	tools = list(TOOL_WORKBENCH)
+
+// T0 Magic Missile Wand (spawn item)
+
+/datum/crafting_recipe/magic/bonewand
+	name = "Improvised Wand of Magic Missile"
+	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile
+	time = 10
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_RITUAL)
+
+// T1 Magic Missile Wand (generalist sidearm)
+/datum/crafting_recipe/magic/missilewand
+	name = "Normal Wand of Magic Missile"
+	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile/improved
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/sheet/mineral/gold =1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+
+// T1 Sparks Wand (anti-swarm sidearm)
+
+/datum/crafting_recipe/magic/lightningrod
+	name = "Wand of Sparks"
+	result = /obj/item/gun/magic/wand/kelpmagic/sparky
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/mineral/diamond =1,
+				/obj/item/stack/sheet/mineral/gold =1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// T1 Firebolt Wand (anti-elite sidarm)
+
+/datum/crafting_recipe/magic/fireboltwand
+	name = "Wand of Firebolt"
+	result = /obj/item/gun/magic/wand/kelpmagic/firebolt
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/tool_upgrade/productivity/red_paint =1,
+				/obj/item/stack/sheet/mineral/diamond =1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+

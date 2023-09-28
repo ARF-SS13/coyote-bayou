@@ -695,15 +695,14 @@
 	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
 
 /datum/gear/donator/kits/jaggachi_5
-	name = "Army Service Kit"
+	name = "Laser Service Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_5/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/combat/rusted(src)
 	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken(src)
-	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
-	new /obj/item/ammo_box/m44box(src)
+	new /obj/item/gun/ballistic/rifle/antique/gras/laserfusil(src)
 
 /datum/gear/donator/kits/jaggachi_6
 	name = "Soviet Service Kit"
@@ -1276,13 +1275,8 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/magazine/uzim9mm/(src)
-	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
-	new /obj/item/binoculars(src)
-	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn(src)
-	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/card/lowbounty(src)
+	new /obj/item/gun_upgrade/scope/killer(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
