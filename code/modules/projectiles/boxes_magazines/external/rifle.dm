@@ -221,7 +221,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	caliber = list(CALIBER_556)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 25
+	max_ammo = 35
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL

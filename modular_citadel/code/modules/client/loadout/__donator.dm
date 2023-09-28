@@ -1275,13 +1275,8 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/magazine/uzim9mm/(src)
-	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
-	new /obj/item/binoculars(src)
-	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn(src)
-	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/card/lowbounty(src)
+	new /obj/item/gun_upgrade/scope/killer(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"

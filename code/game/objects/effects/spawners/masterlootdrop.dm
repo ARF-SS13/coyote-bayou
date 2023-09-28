@@ -282,6 +282,7 @@
 		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
+		/obj/item/gun/ballistic/automatic/aksmol = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
