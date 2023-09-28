@@ -484,6 +484,9 @@ datum/crafting_recipe/tribalwar/bone
 
 /*Kelp's magic stuff*/
 
+/datum/crafting_recipe/magic
+	category = CAT_MAGIC	
+
 // Ritual dagger (tribal dagger + needed to make magic stuff)
 /datum/crafting_recipe/magic/ritualdagger
 	name = "Ritual Dagger"
