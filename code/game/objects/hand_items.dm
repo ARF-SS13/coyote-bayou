@@ -209,84 +209,14 @@
 	icon_state = "biter"
 	attack_verb = list("chomped", "gnawed", "bit", "crunched", "nommed")
 	hitsound = "sound/weapons/bite.ogg"
-	w_class = WEIGHT_CLASS_TINY
-	siemens_coefficient = 5 
-	force = 6
-	force_wielded = 10
-	throwforce = 0
-	wound_bonus = 5
-	sharpness = SHARP_EDGED
-	attack_speed = 4
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
-	weapon_special_component = /datum/component/weapon_special/single_turf
-
-/obj/item/hand_item/biter/creature
-	force = 25
-	force_wielded = 30
-
-/obj/item/hand_item/biter/big
-	name = "Big Biter"
-	desc = "Talk shit, get BIG bit."
-	color = "#884444"
-	force = 15
-	force_wielded = 18
-	attack_speed = 5
-
-/obj/item/hand_item/biter/sabre
-	name = "Sabre Toothed Biter"
-	desc = "Damn bitch, you eat with them teeth?"
-	color = "#FF4444"
-	force = 5
-	force_wielded = 27
-	attack_speed = 6
-
-/obj/item/hand_item/biter/fast
-	name = "Big Biter"
-	desc = "Talk shit, get SPEED bit."
-	color = "#448844"
-	force = 4
-	force_wielded = 7
-	attack_speed = 3
-
-/obj/item/hand_item/biter/play
-	name = "Play Biter"
-	desc = "Someone really should just muzzle you."
-	color = "#ff44ff"
-	force = 0
-	force_wielded = 0
-	attack_speed = 1
-
-/obj/item/hand_item/biter/spicy
-	name = "Spicy Biter"
-	desc = "Your sickly little nibbler, good for dropping fools."
-	color = "#44FF44"
-	force = 5
-	force_wielded = 10
-	attack_speed = 5
-
-
-/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
-
-
-/obj/item/hand_item/clawer
-	name = "Clawer"
-	desc = "Thems some claws."
-	icon = 'icons/obj/in_hands.dmi'
-	icon_state = "clawer"
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
-	sharpness = SHARP_EDGED
-	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
-	force = 8
+	force = 15
 	throwforce = 0
 	wound_bonus = 4
-	sharpness = SHARP_EDGED
-	attack_speed = 2
+	sharpness = SHARP_POINTY
+	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 	var/can_adjust_unarmed = TRUE
@@ -306,9 +236,104 @@
 			H.dna.species.punchdamagelow += force + 8
 			H.dna.species.attack_sound = hitsound
 			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
-				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
-			if(sharpness == SHARP_NONE)
-				H.dna.species.attack_verb = pick("punch","jab","whack")
+				H.dna.species.attack_verb = pick("chomped", "gnawed", "bit", "crunched", "nommed")
+	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
+			H.dna.species.punchdamagehigh = 10
+			H.dna.species.punchdamagelow = 1
+		if(HAS_TRAIT(user, TRAIT_IRONFIST))
+			H.dna.species.punchdamagehigh = 12
+			H.dna.species.punchdamagelow = 6
+		if(HAS_TRAIT(user, TRAIT_STEELFIST))
+			H.dna.species.punchdamagehigh = 16
+			H.dna.species.punchdamagelow = 10
+		H.dna.species.attack_sound = 'sound/weapons/bite.ogg'
+		H.dna.species.attack_verb = "bites"
+
+/obj/item/hand_item/biter/creature
+	force = 25
+	force_wielded = 30
+
+/obj/item/hand_item/biter/big
+	name = "Big Biter"
+	desc = "Talk shit, get BIG bit."
+	color = "#884444"
+	force = 25
+	attack_speed = CLICK_CD_MELEE * 0.8
+
+/obj/item/hand_item/biter/sabre
+	name = "Sabre Toothed Biter"
+	desc = "Damn bitch, you eat with them teeth?"
+	color = "#FF4444"
+	force = 30
+	attack_speed = CLICK_CD_MELEE * 0.7
+
+/obj/item/hand_item/biter/fast
+	name = "Big Biter"
+	desc = "Talk shit, get SPEED bit."
+	color = "#448844"
+	force = 18
+	attack_speed = CLICK_CD_MELEE * 0.5
+
+/obj/item/hand_item/biter/play
+	name = "Play Biter"
+	desc = "Someone really should just muzzle you."
+	color = "#ff44ff"
+	force = 0
+	force_wielded = 0
+	attack_speed = 1
+
+/obj/item/hand_item/biter/spicy
+	name = "Spicy Biter"
+	desc = "Your sickly little nibbler, good for dropping fools."
+	color = "#44FF44"
+	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = CLICK_CD_MELEE * 0.8
+
+
+/obj/item/hand_item/biter/spicy/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+
+
+/obj/item/hand_item/clawer
+	name = "Clawer"
+	desc = "Thems some claws."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "clawer"
+	slot_flags = INV_SLOTBIT_GLOVES
+	w_class = WEIGHT_CLASS_TINY
+	flags_1 = CONDUCT_1
+	sharpness = SHARP_EDGED
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	force = 15
+	throwforce = 0
+	wound_bonus = 4
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.7
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
+
+/obj/item/hand_item/clawer/equipped(mob/user, slot)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(unarmed_adjusted)
+		mob_overlay_icon = righthand_file
+	if(!unarmed_adjusted)
+		mob_overlay_icon = lefthand_file
+	if(ishuman(user) && slot == SLOT_GLOVES)
+		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh += force + 8 //Work around for turbo bad code here. Makes this correctly stack with your base damage. No longer makes ghouls the kings of melee.
+			H.dna.species.punchdamagelow += force + 8
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice","clawed")
 	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
 		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
@@ -321,7 +346,7 @@
 			H.dna.species.punchdamagehigh = 16
 			H.dna.species.punchdamagelow = 10
 		H.dna.species.attack_sound = 'sound/weapons/slice.ogg'
-		H.dna.species.attack_verb = "clawed"
+		H.dna.species.attack_verb = "slash"
 
 /obj/item/hand_item/clawer/creature
 	force = 30
@@ -330,22 +355,22 @@
 	name = "Big Clawer"
 	desc = "Thems some BIG ASS claws."
 	color = "#884444"
-	force = 9
-	attack_speed = 3
+	force = 25
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/razor
 	name = "Razor Sharp Clawers"
 	desc = "RIP AND TEAR."
 	color = "#FF4444"
-	force = 17
-	attack_speed = 4
+	force = 30
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/fast
 	name = "Fast Clawer"
 	desc = "Thems some FAST ASS claws."
 	color = "#448844"
-	force = 7
-	attack_speed = 1
+	force = 18
+	attack_speed = CLICK_CD_MELEE * 0.5
 
 /obj/item/hand_item/clawer/play
 	name = "Play Clawer"
@@ -358,8 +383,8 @@
 	name = "Spicy Clawer"
 	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
 	color = "#44FF44"
-	force = 11//7-11 haha get it bad gas station food lmao ~TK
-	attack_speed = 4
+	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -420,9 +445,8 @@
 	desc = "A tail. Good for whacking."
 	icon_state = "proboscis"
 	w_class = WEIGHT_CLASS_TINY
-	force = 5
-	force_wielded = 10
-	attack_speed = 4 
+	force = 15
+	attack_speed = CLICK_CD_MELEE * 0.7
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/hand_item/tail/ComponentInitialize()
@@ -434,27 +458,24 @@
 	desc = "A speedy tail that's very good at whackin' fast."
 	icon_state = "proboscis"
 	color = "#448844"
-	force = 3
-	force_wielded = 7
-	attack_speed = 2
+	force = 18
+	attack_speed = CLICK_CD_MELEE * 0.6
 
 /obj/item/hand_item/tail/big
 	name = "big tail"
 	desc = "A big tail that whacks hard."
 	icon_state = "proboscis"
 	color = "#884444"
-	force = 10
-	force_wielded = 20
-	attack_speed = 5
+	force = 25
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/tail/spicy
 	name = "spicy tail"
 	desc = "A tail with something that can inject venom on it."
 	icon_state = "proboscis"
 	color = "#44FF44"
-	force = 4
-	force_wielded = 8
-	attack_speed = 5
+	force = 15
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/tail/spicy/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -467,9 +488,8 @@
 	desc = "A god damn mighty tail that would kill an allosaurus.  Maybe."
 	icon_state = "proboscis"
 	color = "#FF4444"
-	force = 12
-	force_wielded = 24
-	attack_speed = 6
+	force = 30
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/beans
 	name = "beans"
