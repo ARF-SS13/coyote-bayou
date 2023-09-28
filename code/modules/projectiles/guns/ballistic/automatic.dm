@@ -2395,6 +2395,31 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+
+/obj/item/gun/ballistic/automatic/aksmol
+	name = "Ak74u"
+	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74utest"
+	icon_state = "ak74utest"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
 /* * * * * * * * * * *
  * Police Assault Rifle
  * Baseline 5mm autorifle
@@ -2943,13 +2968,14 @@
 	init_mag_type = /obj/item/ammo_box/magazine/machinegundrummag
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT * 0.6
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1.8, 1.8)
 	init_firemodes = list(
-		/datum/firemode/burst/four/slower
+		/datum/firemode/automatic/rpm40
 	)
+	autofire_shot_delay = 4
 	can_scope = FALSE
 	can_suppress = FALSE
 	can_bayonet = FALSE
