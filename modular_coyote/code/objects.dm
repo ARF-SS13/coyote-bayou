@@ -570,6 +570,211 @@
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "teshariplushie"
 
+//Sprites from Bubberstation
+
+/obj/item/toy/plush/ianplush
+	name = "ian plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "ianplush"
+
+/obj/item/toy/plush/lisaplush
+	name = "lisa plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "lisaplush"
+
+/obj/item/toy/plush/upaplush
+	name = "upa plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "upaplush"
+
+/obj/item/toy/plush/renaultplush
+	name = "renault plush"
+	desc = "Don't tell the Captain. Wait. What's a Captain?"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "renaultplush"
+
+/obj/item/toy/plush/rounyplush
+	name = "rouny plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "rounyplush"
+
+/obj/item/toy/plush/crossedplushie
+	name = "crossed plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "crossedplush"
+
+/obj/item/toy/plush/runtimeplushie
+	name = "runtime plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "runtimeplush"
+
+/obj/item/toy/plush/flushplushie
+	name = "flush plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "flushplush"
+
+/obj/item/toy/plush/moffplushie
+	name = "moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush"
+
+/obj/item/toy/plush/moffplushie/monarch
+	name = "monarch moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_monarch"
+
+/obj/item/toy/plush/moffplushie/luna
+	name = "luna moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_luna"
+
+/obj/item/toy/plush/moffplushie/atlas
+	name = "atlas moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_atlas"
+
+/obj/item/toy/plush/moffplushie/redish
+	name = "redish moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_redish"
+
+/obj/item/toy/plush/moffplushie/royal
+	name = "royal moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_royal"
+
+/obj/item/toy/plush/moffplushie/gothic
+	name = "gothic moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_gothic"
+
+/obj/item/toy/plush/moffplushie/lovers
+	name = "lovers moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_lovers"
+
+/obj/item/toy/plush/moffplushie/whitefly
+	name = "white fly moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_whitefly"
+
+/obj/item/toy/plush/moffplushie/punished
+	name = "punished moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_punished"
+
+/obj/item/toy/plush/moffplushie/firewatch
+	name = "firewatch moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_firewatch"
+
+/obj/item/toy/plush/moffplushie/deadhead
+	name = "deadhead moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_deadhead"
+
+/obj/item/toy/plush/moffplushie/poison
+	name = "poison moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_poison"
+
+/obj/item/toy/plush/moffplushie/ragged
+	name = "ragged moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_ragged"
+
+/obj/item/toy/plush/moffplushie/snow
+	name = "snow moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_snow"
+
+/obj/item/toy/plush/moffplushie/clockwork
+	name = "clockwork moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_clockwork"
+
+/obj/item/toy/plush/moffplushie/moonfly
+	name = "moonfly moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_moonfly"
+
+/obj/item/toy/plush/moffplushie/random
+	name = "random moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_random"
+
+/obj/item/toy/plush/moffplushie/rainbow
+	name = "rainbow moff plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "moffplush_rainbow"
+
+/obj/item/toy/plush/romanianplushie
+	name = "romanian plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "romanian"
+
+/obj/item/toy/plush/synthplushie
+	name = "synth plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plushie_synth"
+
+/obj/item/toy/plush/malplushie
+	name = "mal plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plushie_mal0"
+
+/obj/item/toy/plush/toasterplushie
+	name = "chaotic toaster plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "chaotic_toaster"
+
+/obj/item/toy/plush/nobl_plush
+	name = "skull dragon plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "nobl_plush"
+
+/obj/item/toy/plush/chirpplushie
+	name = "chirp plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "chirp_plush"
+
+/obj/item/toy/plush/bigdeerplushie
+	name = "big deer plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "bigdeer_plush"
 
 //Nests from virgo
 
