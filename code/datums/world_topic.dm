@@ -310,7 +310,7 @@
 
 	return json_encode(data)
 
-// Border Control Wrapper for removing/adding whitelists
+// Border Control Wrapper for removing/adding whitelists - Gremling da smoothbrain
 // Key - "border"		// The method to call this wrapper
 // Mode Choice - "mode" // 0 - 1 - 2, 	0: Check whitelist
 						//				1: Whitelist,
