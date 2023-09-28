@@ -316,3 +316,14 @@
 		return
 	else
 		..()
+
+/mob/living/simple_animal/pet/cat/pancake
+	name = "pancake"
+	desc = "Mrowl. A orange and white cat!"
+	icon_state = "pancake"
+	icon_living = "pancake"
+	icon_dead = "pancake_dead"
+	density = FALSE
+	pass_flags = PASSMOB
+	mob_size = MOB_SIZE_SMALL
+	gold_core_spawnable = FRIENDLY_SPAWN
