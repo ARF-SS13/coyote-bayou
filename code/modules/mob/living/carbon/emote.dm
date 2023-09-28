@@ -10,6 +10,18 @@
 	message = "blinks."
 	sound = 'sound/effects/blink.ogg'
 
+/datum/emote/living/carbon/hddspinup
+	key = "bootup"
+	key_third_person = "whirrs up their on board memory."
+	message = "whirrs up their on board memory."
+	sound = 'sound/effects/bootup.ogg'
+
+/datum/emote/living/carbon/beeper7
+	key = "beeper7"
+	key_third_person = "pings!"
+	message = "pings!"
+	sound = 'sound/effects/beeper7.ogg'
+
 /datum/emote/living/carbon/blink_r
 	key = "blink_r"
 	message = "blinks rapidly."
