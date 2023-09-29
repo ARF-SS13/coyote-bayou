@@ -203,6 +203,56 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/thegreatwaruniforms
+	name = "Old french uniform"
+	desc = "An outdated yet classy french uniform. It saw service in the great war. During this time, it was dubbed the 'sky uniform' on account of its baby blue appearance. Steel yourself and fix bayonets!"
+	icon_state = "frenchuniform"
+	item_state = "frenchuniform"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/thegreatwaruniforms/german
+	name = "Old East german uniform"
+	desc = "An old and outdated East German uniform. It resembles the uniform used by Imperial Germany during the Great War or 'The war to end all wars'. Dull, grey, it matches perfectly with the incoming artillery smoke. Adjust those buttons and prepare to charge."
+	icon_state = "imperialuniform"
+	item_state = "imperialuniform"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/thegreatwaruniforms/britishww1
+	name = "Old British uniform"
+	desc = "An old and outdated British uniform. This uniform was used during the Great War, also known as 'World War 1' which was a global conflict consisting of the Triple Entente and the Central Powers. Classy, pristine, and well tailored. Prepare your bayonets and charge with elegance."
+	icon_state = "britishuniform"
+	item_state = "britishuniform"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/thegreatwaruniforms/russianww1
+	name = "Old Russian uniform"
+	desc = "An old and outdated Imperial Russian uniform. This uniform was used in both the Great War and the October revolution by the White army, which was Imperial Russia. This uniform is quite comfortable and made of good material. Prepare the flag and steel your nerves. "
+	icon_state = "ww1russian"
+	item_state = "ww1russian"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
+	name = "Padded Soviet uniform"
+	desc = "A padded and well made Soviet uniform. The padding is included to allow extra warmth for the wearer. It saw use in the very cold soviet winters and pairs nicely and warmly with other warm-esq gear like coats, great coats, and furred jackets."
+	icon_state = "ww2sov"
+	item_state = "ww2sov"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform
+	name = "Cossack uniform"
+	desc = "A cossack uniform that resembles the uniforms and garnments used by Kuban Cossacks. Quite comfortable and oh so stylish. Now you can ride on a horse into battle with regal flair, onwards!"
+	icon_state = "kubanc"
+	item_state = "kubanc"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+
+
 //sci-fi or futuristic clothing
 
 /obj/item/clothing/under/f13/mechsuits

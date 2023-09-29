@@ -550,6 +550,23 @@
 	icon_state = "denison_smock"
 	item_state = "police_chief"
 
+
+/obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
+	name = "Dashing rainbow jacket"
+	desc = "A lovingly made jacket, adorn with rainbow colors and a thunderbolt symbol on the back of the jacket. If anything, this jacket makes you oh..I dunno..20% cooler?"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "rainbowdash"
+	item_state = "rainbowdash"
+
+/obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
+	name = "Padded Soviet jacket"
+	desc = "A padded and well made Soviet jacket. Useful for the winter, but doesn't offer much protection against bullets or really any form of punishment. Compliments any soldier belonging to the Motherland. A wise soldier once said 'As long as Mother Russia has enemies, I will answer her call...'."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "sovjacket"
+	item_state = "sovjacket"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -1305,6 +1322,30 @@
 	icon_state = "towntrench"
 	item_state = "hostrench"
 	body_parts_hidden = ARMS
+
+/obj/item/clothing/suit/armor/light/duster/greatcoatgrey
+	name = "Grey greatcoat"
+	desc = "A greyed out greatcoat. This coat also comes with a furred interior for the toughest of winters"
+	icon_state = "gerparka"
+	item_state = "gerparka"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+
+/obj/item/clothing/suit/armor/light/duster/vlongcoat
+	name = "Black winter greatcoat"
+	desc = "A black greatcoat that resembles the coats used by Kuban cossacks. A greatcoat, fitting for your cold weather needs."
+	icon_state = "bcossack"
+	item_state = "bcossack"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+
+/obj/item/clothing/suit/armor/light/duster/vlongcoat/blue
+	name = "Blue winter greatcoat"
+	desc = "A blue greatcoat that resembles the coats used by Don cossacks. A greatcoat, fitting for your cold weather needs."
+	icon_state = "blcossack"
+	item_state = "blcossack"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /obj/item/clothing/suit/armor/light/duster/town/leather
 	name = "leather trenchcoat"
