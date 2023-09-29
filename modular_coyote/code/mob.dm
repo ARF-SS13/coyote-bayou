@@ -499,3 +499,20 @@
 	health = 400
 	maxHealth = 400
 
+//Actual chooseable mouse colors
+
+/mob/living/simple_animal/pokemon/mousewhite
+	body_color = "white mouse"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_white"
+
+/mob/living/simple_animal/pokemon/mousegray
+	body_color = "gray mouse"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_gray"
+
+/mob/living/simple_animal/pokemon/mousebrown
+	body_color = "brown mouse"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_brown"
+
