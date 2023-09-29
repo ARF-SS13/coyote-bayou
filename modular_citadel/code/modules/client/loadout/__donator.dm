@@ -1534,6 +1534,7 @@
 /obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
+	new /obj/item/defibrillator/compact(src)
 
 /datum/gear/donator/kits/lucine3
 	name = "Gob-lyn Muderbox"
