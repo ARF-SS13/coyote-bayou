@@ -150,6 +150,7 @@
 	harm_intent_damage = 10
 	melee_damage_lower = 10
 	melee_damage_upper = 20
+	health = 300
 	maxHealth = 300
 
 /mob/living/simple_animal/pet/wolf/direwolf/Initialize()
