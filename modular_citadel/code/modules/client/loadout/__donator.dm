@@ -742,12 +742,21 @@
 
 /datum/gear/donator/kits/LilKuddles
 	name = "MelMels Belongings"
+	path = /obj/item/storage/box/large/custom_kit/kuddles1
+	ckeywhitelist = list("LilKuddles")
+
+/obj/item/storage/box/large/custom_kit/kuddles1/PopulateContents()
+	new /obj/item/clothing/under/f13/customelody(src)
+
+/datum/gear/donator/kits/LilKuddles2
+	name = "Sams Belongings"
 	path = /obj/item/storage/box/large/custom_kit/kuddles2
 	ckeywhitelist = list("LilKuddles")
 
-/obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
-	new /obj/item/clothing/under/f13/customelody(src)
-
+/obj/item/storage/box/large/custom_kit/kuddles1/PopulateContents()
+	new /obj/item/clothing/under/f13/olivecargo(src)
+	new /obj/item/clothing/suit/armor/light/kit/samsarmorvestkuddles(src)
+	new /obj/item/clothing/suit/armor/outfit/vest/bartender/samsvestkuddles(src)
 
 /datum/gear/donator/kits/lifelessghoul
 	name = "Ancient Memories"

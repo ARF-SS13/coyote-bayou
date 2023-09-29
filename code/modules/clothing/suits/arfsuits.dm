@@ -190,6 +190,15 @@
 	item_state = "lb_suit"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
+/obj/item/clothing/suit/armor/outfit/vest/bartender/samsvestkuddles
+	name = "Sams custom punkvest"
+	desc = "A distressed black denim vest, adorned with decorations such as paint stains and sewn on patches. The back says 'Search & Destroy' in red spray paint, and a pink patch on the chest says '2 horny 2 die'. There's various band patches on the front as well."
+	icon_state = "samsvestkuddles"
+	item_state = "samsvestkuddles"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
+
 /obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
 	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
@@ -1682,6 +1691,14 @@
 	desc = "Well-made metal plates covering your vital organs."
 	icon_state = "light_plates"
 	body_parts_hidden = CHEST
+
+/obj/item/clothing/suit/armor/light/kit/samsarmorvestkuddles
+	name = "Sams armored punkvest"
+	desc = "A vest over leather armor pieces that does a decent job of protecting the wearer, for what it is, and retains Sams signature look entirely while doing it."
+	icon_state = "samsarmorvestkuddles"
+	item_state = "samsarmorvestkuddles"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /* /obj/item/clothing/suit/armor/light/kit/Initialize()
 	. = ..()

@@ -395,6 +395,126 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/olivecargo
+	name = "Olive Cargo Pants"
+	desc = "A pair of long, baggy cargo pants in a muted green color. Very skatepunk of you."
+	icon_state = "olivecargo"
+	item_state = "olivecargo"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/brownpunkpants
+	name = "Punk Leather Pants"
+	desc = "Something about these pants just makes you want to rebel against the establishment."
+	icon_state = "brownpunkpants"
+	item_state = "brownpunkpants"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/rattycyberpunk
+	name = "odd cyberpunk skirt"
+	desc = "An overly vibrant pink fake leather jacket over a white tank top paired with a black skirt. This outfit sticks out like a sore thumb; you'd have to be quite a gonk to wear this, choom."
+	icon_state = "rattycyberpunk"
+	item_state = "rattycyberpunk"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/rattyskirtgreen
+	name = "ratty green skirt"
+	desc = "A practical cropped jacket over a comfortable tshirt, with a long course skirt. An outfit probably put together with scavenged pieces by a wasteland settler."
+	icon_state = "rattyskirtgreen"
+	item_state = "rattyskirtgreen"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/rattyskirtyellow
+	name = "ratty yellow skirt"
+	desc = "A practical cropped jacket over a comfortable tshirt, with a long course skirt. An outfit probably put together with scavenged pieces by a wasteland settler."
+	icon_state = "rattyskirtyellow"
+	item_state = "rattyskirtyellow"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/rattyskirtpink
+	name = "ratty pink skirt"
+	desc = "A practical cropped jacket over a comfortable tshirt, with a long course skirt. An outfit probably put together with scavenged pieces by a wasteland settler."
+	icon_state = "rattyskirtpink"
+	item_state = "rattyskirtpink"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/whiteflannel
+	name = "white flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "whiteflannel"
+	item_state = "whiteflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/redflannel
+	name = "red flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "redflannel"
+	item_state = "redflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/blueflannel
+	name = "blue flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "blueflannel"
+	item_state = "blueflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/tealflannel
+	name = "teal flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "tealflannel"
+	item_state = "tealflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/pinkflannel
+	name = "pink flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "pinkflannel"
+	item_state = "pinkflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/purpleflannel
+	name = "purple flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "purpleflannel"
+	item_state = "purpleflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/yellowflannel
+	name = "yellow flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "yellowflannel"
+	item_state = "yellowflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/orangeflannel
+	name = "orange flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "orangeflannel"
+	item_state = "orangeflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/greenflannel
+	name = "green flannel shirt"
+	desc = "A rugged flannel shirt paired with a sturdy pair of jeans for a simple, timeless outfit. Colorful too!"
+	icon_state = "greenflannel"
+	item_state = "greemflannel"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/futuredresses
 	name = "Blue lined sci-fi themed dress"
 	desc = "A futurstic and geometric themed dress. Comfortable and fashionable"
