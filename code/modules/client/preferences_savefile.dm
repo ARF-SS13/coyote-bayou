@@ -199,9 +199,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				WRITE_FILE(S["whoflags"], whoflags)
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
 			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
-				S["feature_genital_whitelist"] >> genital_whitelist
-				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
-				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+				//S["feature_genital_whitelist"] >> genital_whitelist
+				//WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				//current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
