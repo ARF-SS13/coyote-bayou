@@ -33,6 +33,21 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	cost = 0
 
+/datum/gear/suit/suit_gear_harness/light
+	name = "light harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	cost = 1
+
+/datum/gear/suit/suit_gear_harness/medium
+	name = "medium harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	cost = 1
+
+/datum/gear/suit/suit_gear_harness/heavy
+	name = "heavy harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	cost = 1
+
 /datum/gear/suit/labcoat
 	name = "Labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
