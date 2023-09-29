@@ -1709,15 +1709,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return null
 	return clint.mob
 
-/// Takes in a ckey, a mob, client, weakref, or even prefs, and finds the prefs, one way or another
+/// Takes in a ckey, a mob, client, or even prefs, and finds the prefs, one way or another
 /proc/extract_prefs(something) // one way or another, im getting your prefs (to break)
 	if(isclient(something))
 		var/client/clint = something
 		return clint.prefs
 	if(istype(something, /datum/preferences)) // prefs? good, i'll take it
 		return something
-	if(isweakref(something))
-		something = GET_WEAKREF(something)
 	if(ismob(something))
 		var/mob/mobby = something
 		if(!mobby.client)

@@ -718,6 +718,36 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/thegreatwargear
+	name = "Grey greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/greatcoatgrey
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/kubancossack
+	name = "Black winter greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/doncossack
+	name = "Blue winter greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat/blue
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh
+	name = "Dashing rainbow jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/paddedsovietjacket
+	name = "Padded Soviet jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/cyberstuff/cloakmedical
 	name = "Medical cloak"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cmo
