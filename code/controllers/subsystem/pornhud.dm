@@ -8,12 +8,14 @@ SUBSYSTEM_DEF(pornhud)
 	var/list/hoohaws = list()
 	var/image_cache_max = 1024
 	var/update_pending = FALSE
-	var/debug_clotheshud = TRUE
+	var/debug_force_everyone_to_update_when_it_does = TRUE
+	var/debug_clotheshud = TRUE // coming soon in 2096
 
 /datum/controller/subsystem/pornhud/fire(resumed)
 	if(update_pending)
-		for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
-			nadhaver.update_body(TRUE)
+		if(debug_force_everyone_to_update_when_it_does)
+			for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
+				nadhaver.update_body(TRUE)
 		update_everyone()
 		update_pending = FALSE
 
