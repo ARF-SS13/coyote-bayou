@@ -863,8 +863,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 /datum/who_custom_stuff/proc/GetPose(reveal_always, parse)
 	var/datum/preferences/P = extract_prefs(ckey)
-	if(isnull(c_pose) || trim(c_pose) == "")
-		c_pose = "Just vibin', come say hi!"
 	if(reveal_always)
 		return parse ? SSwho.ParsePoseColor(c_pose) : c_pose
 	var/pose_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
@@ -932,12 +930,12 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		c_pose = null
 		to_chat(M, span_alert("You've been locked out from changing your custom OOC status! :c"))
 		return
-	var/defaultpose = "Just vibin', come say hi!"
+	var/defaultpose = ""
 	if(!isnull(c_pose))
 		defaultpose = c_pose
 	if(clear)
 		c_pose = null
-		DispenseInfo(defaultpose, "Just vibin', come say hi!", "OOC status", TRUE)
+		DispenseInfo(defaultpose, "", "OOC status", TRUE)
 		return
 	var/newpose = stripped_input(usr, "Set the custom OOC status! (Char Limit: [MAX_STATUS_LEN])\n\
 		You can add a color to the OOC status! Just start the line with QQc and then a 6 character hexcode, \
