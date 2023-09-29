@@ -695,15 +695,14 @@
 	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
 
 /datum/gear/donator/kits/jaggachi_5
-	name = "Army Service Kit"
+	name = "Laser Service Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi_5
 	ckeywhitelist = list("jaggachi")
 
 /obj/item/storage/box/large/custom_kit/jaggachi_5/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/combat/rusted(src)
 	new /obj/item/clothing/head/helmet/f13/combat/rangerbroken(src)
-	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
-	new /obj/item/ammo_box/m44box(src)
+	new /obj/item/gun/ballistic/rifle/antique/gras/laserfusil(src)
 
 /datum/gear/donator/kits/jaggachi_6
 	name = "Soviet Service Kit"
@@ -1141,11 +1140,9 @@
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/customvolcanictox(src)
-	new /obj/item/gun/ballistic/rifle/repeater/customvolcanictox(src)
-	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom(src)
 	new /obj/item/ammo_box/c45(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/ammo_box/m473(src)
 
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
@@ -1157,6 +1154,7 @@
 	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom (src)
 
 /datum/gear/donator/kits/seermankhajiit003
 	name = "The Latos Agent"
@@ -1164,11 +1162,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/ammo_box/m473(src)
+	new /obj/item/gun/ballistic/automatic/fastlmg/custom(src)
+	new /obj/item/ammo_box/a556(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
-	new /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
+	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1276,13 +1275,8 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/c9mm(src)
-	new /obj/item/ammo_box/magazine/uzim9mm/(src)
-	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
-	new /obj/item/binoculars(src)
-	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/worn(src)
-	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/card/lowbounty(src)
+	new /obj/item/gun_upgrade/scope/killer(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
@@ -1540,6 +1534,7 @@
 /obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
+	new /obj/item/defibrillator/compact(src)
 
 /datum/gear/donator/kits/lucine3
 	name = "Gob-lyn Muderbox"

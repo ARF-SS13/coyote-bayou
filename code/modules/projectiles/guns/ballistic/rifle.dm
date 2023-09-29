@@ -492,6 +492,24 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+
+/* * * * * * * * * * *
+ * Laser Mosin Bolt-Action Rifle
+ * Moist Bolt-Action Laser
+ * Laser Musket Cell
+ * Can bayonet
+ * Rare
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/mosin/laserbubba
+	name = "Modified Mosin-Nagant"
+	desc = "An ancient bolt-action rifle modified to accept, and fire, energy cells in semi-automatic style. The worksmanship is as impressive as it is vile."
+	icon_state = "mosin-energy"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+
+
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
  * Quick Bolt-Action Rifle
@@ -592,6 +610,14 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
+
+/obj/item/gun/ballistic/rifle/antique/gras/laserfusil
+	name = "Fusil Energie"
+	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long? Someone tore out it's internals and built a laser musket into it."
+	icon_state = "madsenm47FE"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle

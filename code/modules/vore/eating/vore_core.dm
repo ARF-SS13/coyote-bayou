@@ -253,11 +253,15 @@
 
 /datum/component/vore/proc/can_be_eaten()
 	VORE_MASTER
-	if(!master.ckey && !master.mind && !master.client)
+	if(!master.ckey && !master.mind && !master.client) // never had a player associated
 		if(ishuman(master))
 			var/mob/living/carbon/human/H = master
 			if(H.last_mind) // If the mob was a player, don't let it be eaten
 				return FALSE
+		if(isanimal(master)) // simple animals that never had a player associated
+			var/mob/living/simple_animal/SA = master
+			if(SA.stat != DEAD)
+				return FALSE // no killing deathclaws with your belly, kill em first
 		return TRUE // If the mob never was a player, let it be eaten
 	if(!CHECK_PREFS(master, VOREPREF_BEING_PREY))
 		return FALSE

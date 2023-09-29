@@ -650,7 +650,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-	init_recoil = AUTORIFLE_RECOIL(1.7 , 1.7)
+	init_recoil = AUTORIFLE_RECOIL(1.2 , 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fast
@@ -2357,7 +2357,7 @@
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
-	can_bayonet = FALSE 
+	can_bayonet = FALSE
 	can_flashlight = FALSE
 	reskinnable_component = null
 
@@ -2384,7 +2384,32 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = AUTORIFLE_RECOIL(1.3, 1.3)
+	init_recoil = AUTORIFLE_RECOIL(1.1, 1.1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+
+/obj/item/gun/ballistic/automatic/aksmol
+	name = "Ak74u"
+	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74utest"
+	icon_state = "ak74utest"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto
@@ -2516,7 +2541,7 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list(
@@ -2541,16 +2566,16 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2.3, 2.3)
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
-		/datum/firemode/automatic/rpm150
+		/datum/firemode/automatic/rpm200
 	)
 	can_scope = TRUE
 	can_suppress = TRUE
-	can_flashlight = FALSE 
+	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 
@@ -2882,8 +2907,8 @@
 * - High recoil with slowdown
 * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/rpd
-	name = "Russian LMG"
-	desc = "A soviet made Russian LMG. Known as the RPD, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
+	name = "Russian RPK LMG"
+	desc = "A soviet made Russian LMG. Known as the RPK, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
 	icon_state = "rpd"
 	item_state = "rpd"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2894,7 +2919,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(2, 2)
 	init_firemodes = list(
@@ -2905,6 +2930,56 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+
+/obj/item/gun/ballistic/automatic/fastlmg
+	name = "OstStrauss LMG"
+	desc = "A OstStrauss LMG, this LMG is chambered in 5.56x45 NATO. The gun itself was created as the great great grandson of the distant past MG3, which was derived from the MG-42 which was derived from the MG-34. With a fast fire rate and a toggle between 'slow' and 'fast', it is a LMG perfect for squad cover. Albiet it eats ammo like no tomorrow."
+	item_state = "mg3"
+	icon_state = "mg3"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/lmg
+	init_mag_type = /obj/item/ammo_box/magazine/lmg
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.7
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.6, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300 ,
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+/obj/item/gun/ballistic/automatic/fastlmg/custom
+	name = "AusturrPardusdyr LMG"
+	desc = "A custom OstStrauss LMG, with the words 'To life, I cherish' enscribed on the reciever of the LMG. The LMG was heavily modified and while it hits less, it certainly is able to conserve ammo much better with its slow firing bursts. A LMG fit for a Latos Agent."
+	item_state = "mg3"
+	icon_state = "mg3"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/machinegundrummag
+	init_mag_type = /obj/item/ammo_box/magazine/machinegundrummag
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT * 0.6
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.8, 1.8)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm40
+	)
+	autofire_shot_delay = 4
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
  * Browning M1919 MMG
@@ -3011,7 +3086,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2.2
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	auto_eject = 1
 	en_bloc = 1
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
@@ -3050,7 +3125,7 @@
 	init_recoil = HMG_RECOIL (4 , 4)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto
 	)
 	zoom_factor = 1.5
 	can_suppress = FALSE

@@ -38,14 +38,14 @@
 					span_userdanger("[A] [atk_verb]s you!"), null, null, A)
 	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	if(prob(10))
-		crit_damage += (damage * 3.5)
+		crit_damage += (damage * 2)
 		playsound(get_turf(D), 'sound/weapons/bite.ogg', 50, TRUE, -1)
 		D.visible_message(span_warning("[D] staggers as they're slammed in the stomach"), span_userdanger("You are struck with incredible precision by [A]!"))
 		log_combat(A, D, "critcal hard punched (Berserker)")//log it here because a critical can swing for 40 force and it's important for the sake of how hard they hit
 	else
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 		log_combat(A, D, "hard punched punched (Berserker)")//so as to not double up on logging
-	D.apply_damage(damage * 2.5 + crit_damage, BRUTE, affecting, armor_block, wound_bonus = CANT_WOUND)
+	D.apply_damage(damage * 1.3 + crit_damage, BRUTE, affecting, armor_block, wound_bonus = CANT_WOUND)
 	return TRUE
 
 ///Shouldercheck: Harm Harm Harm combo, throws people seven tiles backwards
@@ -140,7 +140,6 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(H, TRAIT_NODRUGS, TRAIT_BERSERKER)
 	ADD_TRAIT(H, TRAIT_NOGUNS, TRAIT_BERSERKER)
 	//ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
 	//ADD_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
@@ -152,7 +151,6 @@
 
 /datum/martial_art/berserker/on_remove(mob/living/carbon/human/H)
 	. = ..()
-	REMOVE_TRAIT(H, TRAIT_NODRUGS, TRAIT_BERSERKER)
 	REMOVE_TRAIT(H, TRAIT_NOGUNS, TRAIT_BERSERKER)
 	//REMOVE_TRAIT(H, TRAIT_PIERCEIMMUNE, BERSERKER_TRAIT)
 	//REMOVE_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)

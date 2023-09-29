@@ -2,6 +2,7 @@
 	color = "#fcccb3"
 	w_class = WEIGHT_CLASS_SMALL
 	organ_flags = ORGAN_NO_DISMEMBERMENT|ORGAN_EDIBLE
+	var/pornhud_slot = PHUD_NONE
 	var/associated_has = CS_MISC // for cockstring stuff
 	var/shape
 	var/sensitivity = 1 // wow if this were ever used that'd be cool but it's not but i'm keeping it for my unshit code
@@ -61,6 +62,11 @@
 	var/list/exposed_genitals = list() //Keeping track of them so we don't have to iterate through every genitalia and see if exposed
 
 /obj/item/organ/genital/proc/is_exposed()
+	var/exposed = check_exposure()
+	SSpornhud.update_visibility(owner, pornhud_slot, exposed)
+	return exposed
+
+/obj/item/organ/genital/proc/check_exposure()
 	if(!owner || CHECK_BITFIELD(genital_flags,GENITAL_INTERNAL) || CHECK_BITFIELD(genital_visflags,GENITAL_ALWAYS_HIDDEN))
 		return FALSE
 	if(CHECK_BITFIELD(genital_visflags,GENITAL_ALWAYS_VISIBLE))
@@ -454,30 +460,31 @@
 	if (NOGENITALS in dna.species.species_traits)
 		return
 	if(dna.features["has_vag"])
-		give_genital(/obj/item/organ/genital/vagina)
+		give_genital(/obj/item/organ/genital/vagina, FALSE)
 	if(dna.features["has_womb"])
-		give_genital(/obj/item/organ/genital/womb)
+		give_genital(/obj/item/organ/genital/womb, FALSE)
 	if(dna.features["has_balls"])
-		give_genital(/obj/item/organ/genital/testicles)
+		give_genital(/obj/item/organ/genital/testicles, FALSE)
 	if(dna.features["has_breasts"])
-		give_genital(/obj/item/organ/genital/breasts)
+		give_genital(/obj/item/organ/genital/breasts, FALSE)
 	if(dna.features["has_butt"])
-		give_genital(/obj/item/organ/genital/butt)
+		give_genital(/obj/item/organ/genital/butt, FALSE)
 	if(dna.features["has_cock"])
-		give_genital(/obj/item/organ/genital/penis)
+		give_genital(/obj/item/organ/genital/penis, FALSE)
 	if(dna.features["has_belly"])
-		give_genital(/obj/item/organ/genital/belly)
+		give_genital(/obj/item/organ/genital/belly, FALSE)
+	update_body(TRUE)
 
-/mob/living/carbon/human/proc/give_genital(obj/item/organ/genital/G)
+/mob/living/carbon/human/proc/give_genital(obj/item/organ/genital/G, update = TRUE)
 	if(!dna || (NOGENITALS in dna.species.species_traits) || getorganslot(initial(G.slot)))
 		return FALSE
 	G = new G(null, FALSE)
-	G.get_features(src)
+	G.get_features(src, update)
 	G.Insert(src)
 	return G
 
 /// Called when the giblet is first stuffed into the mob
-/obj/item/organ/genital/proc/get_features(mob/living/carbon/human/H)
+/obj/item/organ/genital/proc/get_features(mob/living/carbon/human/H, update = TRUE)
 	return
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)
@@ -520,15 +527,15 @@
 
 /// Holds a list of relevant genital layers and positions
 GLOBAL_LIST_INIT(genital_layers, list(
-	"layers" = list(
-		GENITALS_BEHIND_LAYER,
-		GENITAL_UNDER_UNDERWEAR_FRONT_LAYER,
-		GENITAL_UNDER_UNDERWEAR_MID_LAYER,
-		GENITAL_OVER_UNDERWEAR_FRONT_LAYER,
-		GENITAL_OVER_UNDERWEAR_MID_LAYER,
-		GENITAL_OVER_CLOTHES_FRONT_LAYER,
-		GENITAL_OVER_CLOTHES_MID_LAYER,
-		),
+	// "layers" = list(
+	// 	GENITALS_BEHIND_LAYER,
+	// 	GENITAL_UNDER_UNDERWEAR_FRONT_LAYER,
+	// 	GENITAL_UNDER_UNDERWEAR_MID_LAYER,
+	// 	GENITAL_OVER_UNDERWEAR_FRONT_LAYER,
+	// 	GENITAL_OVER_UNDERWEAR_MID_LAYER,
+	// 	GENITAL_OVER_CLOTHES_FRONT_LAYER,
+	// 	GENITAL_OVER_CLOTHES_MID_LAYER,
+	// 	),
 	"positions" = list(
 		"BEHIND",
 		"MID",
@@ -546,15 +553,9 @@ GLOBAL_LIST_INIT(genital_layers, list(
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)
-	var/datum/atom_hud/data/human/genital/pornHUD = GLOB.huds[GENITAL_PORNHUD]
-	if(!islist(hud_list))
-		prepare_huds()
-	pornHUD.remove_from_hud(src, signal)
-	if(!LAZYLEN(internal_organs) || ((NOGENITALS in dna.species.species_traits) && !genital_override) || HAS_TRAIT(src, TRAIT_HUSK))
-		return
+	SSpornhud.flush_genitals(src)
 
 	//okay cool, compile a list of genitals that are visible
-
 	var/list/genitals_to_add[GENITAL_LAYER_INDEX_LENGTH]
 	var/has_nads = FALSE
 	var/list/nad_order = splittext(dna?.features["genital_order"], ":") // NOT reversed cus the reversal is only for UI shit
@@ -567,9 +568,8 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 	/// for the fuckin preview thing
 	var/list/genital_sprites = list() // format list("[layer_number]" = list(mutable_sprites))
-	/// for the actual PornHud
-	var/list/porn_hud_images = list() // format list("has_butt" = list("FRONT" = list(img, img, img))") // I FUCKIN LOVE HUGEASS LISTS
 	for(var/obj/item/organ/genital/nad in genitals_to_add)
+		var/list/nadpics = list()
 		// list of sprites for these genitals (usually one or two)
 		for(var/position in GLOB.genital_layers["positions"]) // "BEHIND", "MID", "FRONT"
 			var/layer_to_put_it = nad.get_layer_number(position)
@@ -619,25 +619,15 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			if(!genital_sprites["[layer_to_put_it]"])
 				genital_sprites["[layer_to_put_it]"] = list()
 
-			if(!porn_hud_images["[nad.associated_has]"])
-				porn_hud_images["[nad.associated_has]"] = list()
-
-			if(!porn_hud_images["[nad.associated_has]"]["[position]"])
-				porn_hud_images["[nad.associated_has]"]["[position]"] = list()
-
 			// cus byond doesnt like arbitrary indexes or something, idk im dum
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
-			porn_hud_images["[nad.associated_has]"]["[position]"] |= gross_image // i hate everything about this
+			nadpics += gross_image
+		SSpornhud.catalogue_part(src, nad.pornhud_slot, nadpics)
 
 	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
 		for(var/index in genital_sprites)
 			overlays_standing[text2num(index)] = genital_sprites[index]
 			apply_overlay(text2num(index))
-	
-	if(!LAZYLEN(porn_hud_images)) // the freshest!
-		return // nothing there? *shruggo*
-	hud_list[GENITAL_HUD] = porn_hud_images
-	pornHUD.add_to_hud(src, signal)
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()

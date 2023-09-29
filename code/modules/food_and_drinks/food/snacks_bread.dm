@@ -228,3 +228,27 @@
 /obj/item/reagent_containers/food/snacks/butterdog/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
+
+/obj/item/reagent_containers/food/snacks/croissant
+	name = "croissant"
+	desc = "Lightly buttered and soft, fluffy bread.."
+	icon = 'icons/obj/food/burgerbread.dmi'
+	icon_state = "croissant"
+	bitesize = 3
+	filling_color = "#FFA500"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("butter" = 1, "fluffy bread" = 1)
+	foodtype = GRAIN | BREAKFAST
+
+/obj/item/reagent_containers/food/snacks/frenchtoast
+	name = "french toast"
+	desc = "sweett and syrupy and covered in cinnamon sugar."
+	icon = 'icons/obj/food/burgerbread.dmi'
+	icon_state = "frenchtoast"
+	bitesize = 4
+	filling_color = "#FFA500"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("butter" = 1, "fluffy bread" = 1)
+	foodtype = GRAIN | BREAKFAST

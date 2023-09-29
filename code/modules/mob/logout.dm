@@ -8,11 +8,6 @@
 
 	..()
 
-	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
-	H.remove_hud_from(src)
-	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
-	tail_hud.remove_hud_from(src)
-
 	if(loc)
 		loc.on_log(FALSE)
 
