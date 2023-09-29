@@ -206,6 +206,105 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
 
+/obj/item/clothing/head/cossackgear
+	name = "Black bearskin hat"
+	desc = "A very warm and well made bearskin hat. The black fur is commonly seen across the world from Kuban cossacks to the Queen's guard. The hat is remarkable soft and very useful for the winter. Take out that sabre and charge forth!"
+	icon_state = "cossack"
+	item_state = "cossack"
+	name = "Base for kevlar helmets of various degrees"
+	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/white
+	name = "White bearskin hat"
+	desc = "A very warm and well made bearskin hat. The white fur is uncommonly seen across the world from cossacks to other groups across the world. The hat is remarkable soft and very useful for the winter. Take out that sabre and charge forth!"
+	icon_state = "wcossack"
+	item_state = "wcossack"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhacossack
+	name = "Black Papahka hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions."
+	icon_state = "papakha"
+	item_state = "papakha"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhawhitecossack
+	name = "White bearskin hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions. This one is white"
+	icon_state = "papakhaw"
+	item_state = "papakhaw"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhakubancossack
+	name = "White bearskin hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions. This one is based off the hats used by the Kuban Cossacks."
+	icon_state = "papakhakuban"
+	item_state = "papakhakuban"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+
+/obj/item/clothing/head/kevlarhelmet/steelgerman
+	name = "Biker helmet"
+	desc = "A biker's steel helmet. Good on style and kicking ass at the bar. 'What did you say about my mother?'-some biker probably."
+	icon_state = "1919german"
+	item_state = "1919german"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/steelww2soviet
+	name = "WW2 Soviet helmet"
+	desc = "A outdated yet functional soviet helmet from WW2. It is a plain, cut, simple, and simple-designed helmet that offers the same protection as any else steel helmet."
+	icon_state = "sovhelm"
+	item_state = "sovhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/pilotka
+	name = "Armored Pilotka hat"
+	desc = "A ballistic weaved pilotka hat. The hat originated during WW1 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and pre-war modern times."
+	icon_state = "pilotka"
+	item_state = "pilotka"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/armoredushanka
+	name = "Ballistic Soviet Union Ushanka"
+	desc = "A Ushanka made with ballistic weave and kevlar in mind. Now you can rock the motherland's style while having that head of yours be protected. Still comfortable if not a shy bit more comfortable than your usual ushanka."
+	icon_state = "newushanka"
+	item_state = "newushanka"
+	name = "Base for kevlar helmets of various degrees"
+	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/kevlarhelmet/steelfrench
+	name = "French Adrian helmet"
+	desc = "A French, albeit outdated, Adrian helmet. It was the first helmet used by the French military during the great war. In WW2, the helmet was used again but named the M26. Adjust that helmet and get back to the frontlines!"
+	icon_state = "adrian"
+	item_state = "adrian"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
 
 /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet
 	name = "VeturrHjalmur"

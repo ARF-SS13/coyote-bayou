@@ -747,6 +747,66 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/armoredcossack
+	name = "Armored black bearskin hat"
+	path = /obj/item/clothing/head/cossackgear
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredpilotka
+	name = "Armored pilotka hat"
+	path = /obj/item/clothing/head/kevlarhelmet/pilotka
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredsoviethelmet
+	name = "Old Soviet helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelww2soviet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/armoredcossackwhite
+	name = "Armored white bearskin hat"
+	path = /obj/item/clothing/head/cossackgear/white
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/bikersteelhelmet
+	name = "Biker helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/adrianfrench
+	name = "Adrian helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelfrench
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/steelushanka
+	name = "Armored Soviet Ushanka hat"
+	path = /obj/item/clothing/head/armoredushanka
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpapahat
+	name = "Armored papakha hat"
+	path = /obj/item/clothing/head/cossackgear/papakhacossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpaphatwinter
+	name = "Armored white papakha hat"
+	path = /obj/item/clothing/head/cossackgear/papakhawhitecossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpapahatkuban
+	name = "Armored Kuban papakha hat "
+	path = /obj/item/clothing/head/cossackgear/papakhakubancossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek
