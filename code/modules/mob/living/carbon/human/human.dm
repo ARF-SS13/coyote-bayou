@@ -48,8 +48,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
 	GLOB.human_list += src
-	// var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
-	// pornHud.add_to_hud(src)
+	var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
+	pornHud.add_to_hud(src)
 	update_body(TRUE)
 
 /mob/living/carbon/human/ComponentInitialize()
@@ -587,7 +587,22 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if("change_genital_whitelist")
 			if(!client?.prefs)
 				return
-			client.prefs.update_genital_whitelist()
+			var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+				usr, 
+				"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+				any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+				content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+				Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+				"Genital Whitelist",
+				client?.prefs?.features["genital_whitelist"])
+			if(new_genital_whitelist == "")
+				var/whoathere = alert(usr, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+				if(whoathere == "Yes")
+					client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+					client?.loadCockWhitelist()
+			else if(!isnull(new_genital_whitelist))
+				client?.prefs?.features["genital_whitelist"] = new_genital_whitelist
+				client?.loadCockWhitelist()
 			update_body(TRUE)
 			show_genital_hide_panel()
 		if("toggle_hide_genitals")
@@ -766,7 +781,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BELLY]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BELLY) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BELLY) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Butts:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -775,7 +790,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BUTT]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BUTT) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BUTT) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Breasts:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -784,7 +799,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BOOBS]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BOOBS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BOOBS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Vaginas:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -793,7 +808,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_VAG]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_VAG) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_VAG) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Penises:</div>" // everyone can has_cheezburger
 	dat += {"<a 
@@ -802,7 +817,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_PENIS]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_PENIS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_PENIS) ? "No" : "Yes"]
 			</a>"}
 	dat += "<div class='gen_setting_name'>See Balls:</div>" // GET UR FUCKIN BURGER
 	dat += {"<a 
@@ -811,7 +826,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					?src=[REF(src)];
 					action=toggle_hide_genitals;
 					genital_flag=[HIDE_BALLS]'>
-						[CHECK_BITFIELD(client.prefs.features["genital_hide"], HIDE_BALLS) ? "No" : "Yes"]
+						[client?.checkGonadDistaste(HIDE_BALLS) ? "No" : "Yes"]
 			</a>"}
 
 	dat += "<div class='gen_setting_name'>Visibility Whitelist:</div>" // BURGER TIME

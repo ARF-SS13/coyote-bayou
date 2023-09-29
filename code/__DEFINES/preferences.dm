@@ -114,7 +114,6 @@
 /// Changelog entries
 #define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
 #define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
-#define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
