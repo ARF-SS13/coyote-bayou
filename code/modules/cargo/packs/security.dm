@@ -59,7 +59,7 @@
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 1000
+	cost = 1500
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
 					/obj/effect/spawner/lootdrop/f13/common_armor,
@@ -70,7 +70,7 @@
 	name = "Armor - Advanced"
 	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
 	cost = 5000
-	num_contained = 3
+	num_contained = 1
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,

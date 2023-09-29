@@ -211,6 +211,52 @@
 	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	name = "light harness"
+	desc = "A set of straps that, somehow, function as light armor but do nothing else."
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 10
+	equip_delay_other = 10
+	max_integrity = 100
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	name = "medium harness"
+	desc = "A set of straps that, somehow, function as medium armor but do nothing else."
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	name = "heavy harness"
+	desc = "A set of straps that, somehow, function as heavy armor but do nothing else."
+	strip_delay = 50
+	equip_delay_other = 50
+	max_integrity = 300
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
@@ -2047,7 +2093,7 @@
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
-	
+
 /obj/item/clothing/suit/armor/light/kit/punk/scraparmor
 	name = "Beefy Scrap Armor"
 	desc = "This is a whole pile of trash, just sitting on your chest.  Maybe it'll even stop someone from beating you to death. No promises though."
@@ -2547,7 +2593,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2,ARMOR_MODIFIER_DOWN_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	
+
 /obj/item/clothing/suit/armor/medium/vest/zeroodst
 	name = "Custom fitted UNMC Trooper armor"
 	desc = "A set of modified UNMC Trooper armor. This one has red accents on it and seems to have been designed to withstand the harshness of the wastes. The name 'Corrigan' is stenciled on the chestplate."
@@ -2573,7 +2619,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
-		
+
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
 	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles! The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."
