@@ -1,3 +1,4 @@
+GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 /datum/component/spawner
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
@@ -37,6 +38,13 @@
 	var/am_special = FALSE
 	/// Is something covering us?
 	var/datum/weakref/covering_object
+	/// use the old spawner player-is-close check
+	var/old_spawner_check = FALSE
+	/// All our turfs that we're listening to
+	var/list/my_turfs = list() // its a list of coords
+	/// All our turfs that somehow got destroyed, and we need to reconnect with
+	var/list/disconnected = list() // its a list of coords
+	var/active = FALSE
 	COOLDOWN_DECLARE(spawner_cooldown)
 
 /datum/component/spawner/Initialize(
@@ -109,20 +117,83 @@
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
+	if(istype(parent, /mob))
+		old_spawner_check = TRUE
+	else
+		register_turfs()
 	if(!delay_start)
 		start_spawning()
 
 /datum/component/spawner/process()
+	if(range_check())
+		return
 	if(should_destroy_spawner())
 		qdel(parent)
 		return
-	if(!can_spawn_mob())
+	if(!old_spawner_check)
+		reconnect()
+
+/datum/component/spawner/proc/register_turfs()
+	var/atom/dad = parent
+	if(!dad.loc)
+		return
+	var/debug_color = GLOB.debug_spawner_turfs ? "#[randomColor()]" : null
+	for(var/turf/trip in range(range, dad.loc))
+		connect_to_turf(trip, debug_color)
+
+/datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
+	my_turfs |= atom2coords(trip)
+	if(SEND_SIGNAL(trip, COMSIG_PING))
+		return
+	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
+	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/reconnect)
+	RegisterSignal(trip, COMSIG_PING, .proc/still_there)
+	if(GLOB.debug_spawner_turfs && debug_color)
+		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
+
+/datum/component/spawner/proc/unregister_turfs()
+	for(var/coords in my_turfs)
+		var/turf/trip = coords2turf(coords)
+		if(!trip)
+			continue
+		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
+		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE, COMSIG_PING)
+	my_turfs = list()
+	disconnected = list()
+
+/datum/component/spawner/proc/reconnect()
+	if(!LAZYLEN(disconnected))
+		return
+	var/debug_color = GLOB.debug_spawner_turfs ? "#[randomColor()]" : null
+	for(var/coord in disconnected)
+		var/turf/trip = coords2turf(coord)
+		if(!trip)
+			continue
+		connect_to_turf(trip, debug_color)
+
+/// We're using the old-fshioned range-search-and-spawn method
+/datum/component/spawner/proc/range_check()
+	if(!old_spawner_check)
+		return
+	. = TRUE
+	if(!can_spawn())
+		return
+	if(!something_in_range())
+		return
+	spawn_mob()
+
+/// something entered one of our turfs, check if we should spawn something
+/datum/component/spawner/proc/turf_trip(datum/source, atom/movable/arrived)
+	if(!time_to_spawn())
+		return
+	if(!check_mob(arrived))
 		return
 	spawn_mob()
 
 /// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
 	START_PROCESSING(SSspawners, src)
+	active = TRUE
 
 /datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
 	stop_spawning()
@@ -131,6 +202,7 @@
 
 /datum/component/spawner/proc/stop_spawning(datum/source, force, hint)
 	STOP_PROCESSING(SSspawners, src)
+	active = FALSE
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
@@ -183,43 +255,45 @@
 	if(LAZYLEN(spawned_mobs) < max_mobs)
 		return TRUE
 
+/datum/component/spawner/proc/check_mob(mob/living/check)
+	if(!isliving(check))
+		return FALSE
+	if(!has_client(check))
+		return FALSE
+	return TRUE
+
 /// Basic checks to see if we can spawn something
-/datum/component/spawner/proc/can_spawn_mob()
+/datum/component/spawner/proc/can_spawn()
 	if(COOLDOWN_TIMELEFT(src, spawner_cooldown))
 		return FALSE
 	if(!check_spawned_mobs())
 		return FALSE
-	var/atom/P = parent
-	if(coverable_by_dense_things)
-		var/turf/our_turf = get_turf(P)
-		if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
-			qdel(P) // and I aint dealing with that shit
-			return
-		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
-		if(previous_heavy_thing)
-			if(get_turf(previous_heavy_thing) == our_turf)
-				return FALSE
-			else
-				covering_object = null // mustve wandered off
-		/// Accounts for anything dense, which includes mobs, mechs, lockers, etc
-		for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
-			if(maybe_heavy_thing.density == TRUE)
-				covering_object = WEAKREF(maybe_heavy_thing)
-				return FALSE
-	if(range)
-		var/is_close_enough = FALSE
-		for(var/mob/living as anything in SSmobs.clients_by_zlevel[P.z]) // client-containing mobs, NOT clients
-			if(get_dist(P, living) <= range)
-				is_close_enough = TRUE
-				break
-		if(!is_close_enough)
-			return FALSE
-	/* if(overpopulation_range)
-		var/mobs_in_range
-		for(var/mob/living/simple_animal/living_mob in range(overpopulation_range, get_turf(P)))
-			if(mobs_in_range++ >= max_mobs)
-				return FALSE */
+	if(something_covering_us())
+		return FALSE
 	return TRUE
+	var/atom/P = parent
+
+/datum/component/spawner/proc/something_in_range()
+	if(!range)
+		return
+	var/is_close_enough = FALSE
+	for(var/mob/living as anything in SSmobs.clients_by_zlevel[P.z]) // client-containing mobs, NOT clients
+		if(get_dist(P, living) <= range)
+			return TRUE
+	
+/// is something covering us?
+/datum/component/spawner/proc/something_covering_us()
+	var/atom/P = parent
+	if(!coverable_by_dense_things)
+		return FALSE
+	var/turf/our_turf = get_turf(P)
+	if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
+		qdel(P) // and I aint dealing with that shit
+		return
+	/// Accounts for anything dense, which includes mobs, mechs, lockers, etc
+	for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
+		if(maybe_heavy_thing.density)
+			return TRUE
 
 /// spawns a mob, then immediately tries to self-destruct
 /datum/component/spawner/proc/spawn_mob_special()
