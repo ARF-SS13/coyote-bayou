@@ -81,6 +81,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/uses_glasses_colour = 0
 
+	var/whoflags = DEFAULT_WHO_FLAGS
+	/// What who change things are they banned from?
+	/// here cus I dont know how bans work lol
+	var/lockouts = 0
+
 	//character preferences
 	var/real_name						//our character's name
 	var/be_random_name = 0				//whether we'll have a random name every round

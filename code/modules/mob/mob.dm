@@ -3,6 +3,7 @@ GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries whet
 
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	GLOB.mob_list -= src
+	GLOB.has_played_list -= src
 	GLOB.dead_mob_list -= src
 	GLOB.alive_mob_list -= src
 	GLOB.all_clockwork_mobs -= src

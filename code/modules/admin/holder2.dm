@@ -172,6 +172,9 @@ GLOBAL_PROTECT(href_token)
 
 //This proc checks whether subject has at least ONE of the rights specified in rights_required.
 /proc/check_rights_for(client/subject, rights_required)
+	if(ismob(subject))
+		var/mob/M = subject
+		subject = M.client
 	if(subject && subject.holder)
 		return subject.holder.check_for_rights(rights_required)
 	return 0
