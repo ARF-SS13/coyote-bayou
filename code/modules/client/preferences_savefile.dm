@@ -194,6 +194,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				ooc_notes += OOC_NOTE_TEMPLATE
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
+			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
+				S["feature_genital_whitelist"] >> genital_whitelist
+				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -272,6 +276,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["pda_style"]			>> pda_style
 	S["pda_color"]			>> pda_color
 	S["pda_skin"]			>> pda_skin
+	S["genital_whitelist"]  >> genital_whitelist
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
@@ -344,6 +349,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
 	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
+	genital_whitelist		= copytext(genital_whitelist, 1, MAX_MESSAGE_LEN)
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -454,6 +460,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
+	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
