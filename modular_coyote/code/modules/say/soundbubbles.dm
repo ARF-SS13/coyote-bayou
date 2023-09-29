@@ -13,37 +13,37 @@ GLOBAL_LIST_INIT(play_methods, list("No Sound",
 									"Play Animal Crossing-like sound after you type"))
 
 GLOBAL_LIST_INIT(typing_indicator_speeds, list(
-									"4-Faster" = 0,
-									"3-Fast" = 1,
-									"2-Average" = 2,
-									"1-Slow" = 3))
+									"Speed: Faster (4)" = 0,
+									"Speed: Fast (3)" = 1,
+									"Speed: Average (2)" = 2,
+									"Speed: Slow (1)" = 3))
 
 GLOBAL_LIST_INIT(typing_indicator_pitches, list(			//these are simply frequencies
-									"4-Annoyingly high" = 67000,
-									"3-High" = 55000,
-									"2-Average" = 43000,
-									"1-Deep" = 28000))
+									"Pitch: Annoyingly high (4)" = 67000,
+									"Pitch: High (3)" = 55000,
+									"Pitch: Average (2)" = 43000,
+									"Pitch: Deep (1)" = 28000))
 
 GLOBAL_LIST_INIT(typing_indicator_variances, list(
-									"4-Voice varies a lot between words" = 30000,
-									"3-Voice varies between words" = 18000,
-									"2-Voice varies a little between words" = 9000,
-									"1-Voice does not vary between words" = 0))
+									"Tone: Varies a lot (4)" = 30000,
+									"Tone: Varies normally (3)" = 18000,
+									"Tone: Varies a little (2)" = 9000,
+									"Tone: Does not vary (1)" = 0))
 
 GLOBAL_LIST_INIT(typing_indicator_volumes, list(
-									"3-Loud" = 15,
-									"2-Average" = 10,
-									"1-Quiet and polite" = 5))
+									"Volume: Loud (3)" = 15,
+									"Volume: Average (2)" = 10,
+									"Volume: Quiet and polite (1)" = 5))
 
 GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
-									"8 Words" = 8,
-									"7 Words" = 7,
-									"6 Words" = 6,
-									"5 Words" = 5,
-									"4 Words" = 4,
-									"3 Words" = 3,
-									"2 Words" = 2,
-									"1 Word" = 1))
+									"Max words spoken: 8" = 8,
+									"Max words spoken: 7" = 7,
+									"Max words spoken: 6" = 6,
+									"Max words spoken: 5" = 5,
+									"Max words spoken: 4" = 4,
+									"Max words spoken: 3" = 3,
+									"Max words spoken: 2" = 2,
+									"Max words spoken: 1" = 1))
 
 //lmfao at lizard ~TK420634
 
@@ -266,7 +266,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 
 				if("typing_indicator_max_words_spoken")
 					var/new_input
-					new_input = input(user, "Choose your maximum number of audible words:", "Sound Indicator") as null|anything in GLOB.typing_indicator_max_words_spoken_list
+					new_input = input(user, "Choose your maximum number of audible words: (Only animal crossing speech uses this)", "Sound Indicator") as null|anything in GLOB.typing_indicator_max_words_spoken_list
 					if(new_input)
 						features_speech["typing_indicator_max_words_spoken"] = new_input
 	..()
