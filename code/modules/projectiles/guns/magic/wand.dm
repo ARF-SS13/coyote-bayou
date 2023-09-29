@@ -272,7 +272,7 @@
 	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells, Magic Missile; it's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
-	max_charges = 30
+	max_charges = 25
 	recharge_rate = 10 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
@@ -297,8 +297,8 @@
 	icon_state = "lightningrod"
 	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
-	max_charges = 60
-	recharge_rate = 5 SECONDS
+	max_charges = 30
+	recharge_rate = 6 SECONDS
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/faster
@@ -341,7 +341,7 @@
 	icon_state = "fireboltwand"
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
-	max_charges = 15
+	max_charges = 10
 	recharge_rate = 20 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/firebolt

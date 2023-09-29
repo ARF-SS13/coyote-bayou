@@ -589,6 +589,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_CARBINE
+	w_class = WEIGHT_CLASS_NORMAL // Kelp here - the gun is extremely rare and even with the 50rnd magazine it's considered outclassed. This makes it a good, if unwieldy, secondary or holdout gun. Will let it cook and see if it needs removed.
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
@@ -633,7 +634,7 @@
 *- takes only uzi magazines
 * - high recoil
 * + comes supressed
-* * * * * * * * * * * */ 
+* * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/m22
 	name = "M22 Night Ops SMG"
@@ -1288,7 +1289,7 @@
 * Matilda Rifle
 * Lightweight low damage dealing rifle with a 20 mag only
 * - MUCH slower than a varmint
-* + Higher damage than a varmint 
+* + Higher damage than a varmint
 * - Unable to be modified with bayonets, flashlights or a scope
 * + common tier rifle
 * * * * * * * * * * */
@@ -2550,7 +2551,7 @@
 	)
 	can_scope = TRUE
 	can_suppress = FALSE
-	can_flashlight = FALSE 
+	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
