@@ -198,7 +198,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				whoflags = DEFAULT_WHO_FLAGS
 				WRITE_FILE(S["whoflags"], whoflags)
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
-			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
+			//if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
 				//S["feature_genital_whitelist"] >> genital_whitelist
 				//WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				//current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
