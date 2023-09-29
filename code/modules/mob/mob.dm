@@ -1,3 +1,6 @@
+GLOBAL_VAR_INIT(pixel_slide, 0)  //if 1, initiate pixel sliding
+GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries wheter or not the other mob is in help intent
+
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	GLOB.mob_list -= src
 	GLOB.dead_mob_list -= src
@@ -818,6 +821,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_x <= (16 + get_standard_pixel_x_offset()))
 		pixel_x++
 		is_shifted = TRUE
+	if((pixel_x > (16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, EAST), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, EAST)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_x = -16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/westshift()
 	set hidden = TRUE
@@ -826,6 +838,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_x >= -(16 + get_standard_pixel_x_offset()))
 		pixel_x--
 		is_shifted = TRUE
+	if((pixel_x < -(16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, WEST), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, WEST)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_x = 16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/northshift()
 	set hidden = TRUE
@@ -834,6 +855,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_y <= (16 + get_standard_pixel_y_offset()))
 		pixel_y++
 		is_shifted = TRUE
+	if((pixel_y > (16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, NORTH), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, NORTH)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_y = -16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/southshift()
 	set hidden = TRUE
@@ -842,6 +872,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_y >= -(16 + get_standard_pixel_y_offset()))
 		pixel_y--
 		is_shifted = TRUE
+	if((pixel_y < -(16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, SOUTH), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, SOUTH)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_y = 16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return FALSE
