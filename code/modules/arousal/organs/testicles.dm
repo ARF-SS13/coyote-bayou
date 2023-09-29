@@ -17,6 +17,7 @@
 	layer_index = TESTICLES_LAYER_INDEX
 	associated_has = CS_BALLS // for cockstring stuff
 	hide_flag = HIDE_BALLS // for hideflag stuff
+	pornhud_slot = PHUD_BALLS
 
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())

@@ -295,7 +295,7 @@
 	name = "wand of sparks"
 	desc = "Cut from diamond and inlaid with gold, this wand is certainly eye-catching. Electricity crawls along the focus, eager to be let loose in a shocking storm."
 	icon_state = "lightningrod"
-	fire_sound = 'sound/weapons/laser.ogg'
+	fire_sound = 'sound/weapons/Taser.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
 	max_charges = 60
 	recharge_rate = 5 SECONDS
