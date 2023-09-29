@@ -124,7 +124,7 @@
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.
 		return null
-	if(!check_rights_for(user?.client, R_ADMIN) || i_will_sanitize_dont_worry)
+	if(!check_rights(R_ADMIN, FALSE) || i_will_sanitize_dont_worry)
 		name = strip_html_simple(name, max_length) // I'd prefer not to stab myself with a url
 	if(length(name) > max_length)
 		to_chat(user, name)

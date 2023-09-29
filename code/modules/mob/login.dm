@@ -20,12 +20,7 @@
 	if(loc)
 		loc.on_log(TRUE)
 
-	client.loadCockWhitelist()
-
-	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
-	H.add_hud_to(src)
-	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
-	tail_hud.add_hud_to(src)
+	SSpornhud.update_single(src)
 
 	//readd this mob's HUDs (antag, med, etc)
 	reload_huds()

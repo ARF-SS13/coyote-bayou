@@ -1,15 +1,24 @@
 // A cute lil subsystem that draws pictures of peoples butts and wieners on your screen
 SUBSYSTEM_DEF(pornhud)
 	name = "PornHUD"
-	wait = 1 SECONDS
+	wait = 0.2 SECONDS
 
-// list of all bits
-/// format: list("Jimmy Shits" = /datum/genital_images)
-var/list/hoohaws = list()
+	// list of all bits
+	/// format: list("Jimmy Shits" = /datum/genital_images)
+	var/list/hoohaws = list()
+	var/image_cache_max = 1024
+	var/update_pending = FALSE
+	var/debug_clotheshud = TRUE
 
-/datum/controller/subsystem/pornhud/Initialize(start_timeofday)
-	initialize_skins()
-	. = ..()
+/datum/controller/subsystem/pornhud/fire(resumed)
+	if(update_pending)
+		for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
+			nadhaver.update_body(TRUE)
+		update_everyone()
+		update_pending = FALSE
+
+/datum/controller/subsystem/pornhud/proc/pend_update()
+	update_pending = TRUE
 
 /datum/controller/subsystem/pornhud/proc/catalogue_part(mob/living/dork, part, list/images = list())
 	if(!isliving(dork) || !part)
@@ -18,8 +27,20 @@ var/list/hoohaws = list()
 	GI.add_part(part, images)
 	return TRUE
 
+/datum/controller/subsystem/pornhud/proc/get_genital_datum(mob/living/carbon/human/dork)
+	if(!ishuman(dork))
+		return
+	if(!dork.pornhud_key)
+		generate_key(dork)
+	var/datum/genital_images/GI = LAZYACCESS(hoohaws, dork.pornhud_key)
+	if(!GI)
+		GI = new /datum/genital_images(dork)
+		hoohaws[dork.pornhud_key] = GI
+	return GI
+
 /// flush a player's genital images, and give them a fresh copy of everyone's
-/datum/controller/subsystem/pornhud/proc/update_single_pornhud(mob/living/dork)
+/// This is the *viewer*, so it'll pull everyone's images
+/datum/controller/subsystem/pornhud/proc/update_single(mob/living/dork)
 	if(!dork.client)
 		return
 	var/datum/preferences/P = extract_prefs(dork)
@@ -27,24 +48,60 @@ var/list/hoohaws = list()
 		return
 	for(var/mobname in hoohaws)
 		var/datum/genital_images/GI = hoohaws[mobname]
-		dork.client.images -= GI.old_image_cache
-		GI.old_image_cache = list()
-		var/hideflags = P.features["hide_genitals"]
-		if(GI.is_whitelisted())
-			hideflags = NONE
-		var/list/all_genital_images = GI.get_all_images(P)
-		dork.client.images += all_genital_images
-		GI.old_image_cache
+		GI.show_images_to(dork)
 
+/// Flushed everyone's genital images, and gives them a fresh copy of everyone's
+/datum/controller/subsystem/pornhud/proc/update_everyone(hard)
+	for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
+		update_single(nadhaver, hard)
 
+/datum/controller/subsystem/pornhud/proc/flush_genitals(mob/living/carbon/human/flusher)
+	if(!ishuman(flusher))
+		return
+	var/datum/genital_images/GI = get_genital_datum(flusher)
+	if(!GI)
+		return
+	GI.flush_genitals()
 
+/datum/controller/subsystem/pornhud/proc/flush_undies(mob/living/carbon/human/flusher)
+	if(!ishuman(flusher))
+		return
+	var/datum/genital_images/GI = get_genital_datum(flusher)
+	if(!GI)
+		return
+	GI.flush_genitals()
 
+/datum/controller/subsystem/pornhud/proc/update_visibility(mob/living/carbon/human/dork, part, on_off)
+	if(!ishuman(dork))
+		return
+	var/datum/genital_images/GI = get_genital_datum(dork)
+	if(!GI)
+		return
+	GI.update_visibility(part, on_off)
 
+/datum/controller/subsystem/pornhud/proc/generate_key(mob/living/carbon/human/newnadhaver)
+	if(!ishuman(newnadhaver))
+		return
+	if(newnadhaver.pornhud_key)
+		return
+	var/key = newnadhaver.ckey ? "[newnadhaver.ckey]-" : "stiff-"
+	key += "[LAZYLEN(hoohaws) + 1]-"
+	key += "[newnadhaver.real_name]-"
+	key += "[world.time]-bepis"
+	newnadhaver.pornhud_key = key
+	return key
 
+// scornhud
+/mob/living/carbon/human
+	var/pornhud_key
 
+/// Holds all the genital images of a single human mob
+/// This is the *owner*, so it'll only pull their own images
+/// also defines if they're visible or not
+/// get_all_images() will return a list of all images that should be visible
+/// It'll not send images that the viewer has set to be hidden
 /datum/genital_images
 	var/datum/weakref/owner
-	var/list/whitelist = list()
 
 	var/list/butt = list()
 	var/butt_visible
@@ -91,11 +148,22 @@ var/list/hoohaws = list()
 	/// pruned? why? not like we'd be using that ram for anything else
 	var/list/old_image_cache = list()
 
+/datum/genital_images/New(mob/living/carbon/human/newowner)
+	. = ..()
+	owner = WEAKREF(newowner)
+	var/datum/preferences/P = extract_prefs(newowner)
+	if(!P)
+		return
+
 /// is this player whitelisted?
 /// if so, they can see genitals even if they're hidden
 /datum/genital_images/proc/is_whitelisted(mob/someone)
 	if(!someone || !someone.client)
 		return FALSE
+	if(someone == GET_WEAKREF(owner))
+		return TRUE // surely you'd like to see your own genitals (or lack thereof)
+	var/datum/preferences/P = extract_prefs(someone)
+	var/list/whitelist = splittext(P.genital_whitelist, ",")
 	for(var/entry in whitelist)
 		entry = ckey(entry)
 		if(findtext(ckey(someone.real_name), entry))
@@ -107,54 +175,44 @@ var/list/hoohaws = list()
 		if(findtext(entry, ckey(someone.name)))
 			return TRUE
 	
-/datum/genital_images/proc/update_whitelist(whitestring) // the white string is cum
-	whitelist = splittext(whitestring, ",")
-	var/datum/preferences/P = extract_prefs(owner)
-	P.genital_whitelist = whitestring
-	P.save_preferences()
-	to_chat(P.parent, span_green("Your genital whitelist has been saved!"))
-
-/datum/genital_images/proc/edit_whitelist()
-	var/mob/myowner = GET_WEAKREF(owner)
+// Updates out owner's appearance
+/datum/genital_images/proc/update_owner_appearance(broadcast)
+	var/mob/living/carbon/human/myowner = GET_WEAKREF(owner)
 	if(!myowner)
 		return
-	var/datum/preferences/P = extract_prefs(myowner)
-	if(!P)
-		return
-	var/def = P.genital_whitelist
-	var/ultimatelifeform = input(
-		myowner,
-		"Enter a list of names (or parts of names) of folk you are comfortable with seeing their genitals. Separate names with commas, partial names match anyone whose name contains it.",
-		"Let's see some genitals!",
-		default = def
-	)
-	if(!ultimatelifeform)
-		to_chat(myowner, span_notice("Never mind!"))
-		return
-	update_whitelist(ultimatelifeform)
+	myowner.update_body(TRUE)
+	if(broadcast)
+		SSpornhud.pend_update()
 
 // add a part to the list
 /datum/genital_images/proc/add_part(part, list/images = list())
 	if(!islist(images))
 		images = list()
 	switch(part)
-		if("GENITAL_HUD_BUTT")
+		if(PHUD_BUTT)
 			butt = images
-		if("GENITAL_HUD_BREASTS")
+		if(PHUD_BOOB)
 			breasts = images
-		if("GENITAL_HUD_PEEN")
+		if(PHUD_PENIS)
 			peen = images
-		if("GENITAL_HUD_BALLS")
+		if(PHUD_BALLS)
 			balls = images
-		if("GENITAL_HUD_VAG")
+		if(PHUD_VAG)
 			vag = images
-		if("GENITAL_HUD_BELLY")
+		if(PHUD_BELLY)
 			belly = images
-		if("GENITAL_HUD_TAIL")
+		if(PHUD_TAIL)
 			tail = images
-		if("GENITAL_HUD_WINGS")
+		if(PHUD_WINGS)
 			wings = images
-	old_image_cache |= images
+		if(PHUD_SHIRT)
+			undershirt = images
+		if(PHUD_PANTS)
+			underpants = images
+		if(PHUD_SOCKS)
+			socks = images
+	cache_images(images)
+	SSpornhud.pend_update()
 
 /datum/genital_images/proc/add_shirt(image/pic)
 	undershirt = pic
@@ -170,52 +228,70 @@ var/list/hoohaws = list()
 
 /datum/genital_images/proc/update_visibility(part, on_off)
 	switch(part)
-		if("butt")
+		if(PHUD_BUTT)
 			butt_visible = on_off
-		if("breasts")
+		if(PHUD_BOOB)
 			breasts_visible = on_off
-		if("peen")
+		if(PHUD_PENIS)
 			peen_visible = on_off
-		if("balls")
+		if(PHUD_BALLS)
 			balls_visible = on_off
-		if("vag")
+		if(PHUD_VAG)
 			vag_visible = on_off
-		if("belly")
+		if(PHUD_BELLY)
 			belly_visible = on_off
-		if("tail")
+		if(PHUD_TAIL)
 			tail_visible = on_off
-		if("wings")
+		if(PHUD_WINGS)
 			wings_visible = on_off
-		if("shirt")
+		if(PHUD_SHIRT)
 			shirt_visible = on_off
-		if("pants")
+		if(PHUD_PANTS)
 			underpants_visible = on_off
-		if("socks")
+		if(PHUD_SOCKS)
 			socks_visible = on_off
 
-/datum/genital_images/proc/get_all_images(preflag)
+/datum/genital_images/proc/cache_images(list/imgs = list())
+	old_image_cache |= imgs
+	if(LAZYLEN(old_image_cache) >= SSpornhud.image_cache_max)
+		var/num_to_remove = LAZYLEN(old_image_cache) - SSpornhud.image_cache_max
+		if(num_to_remove > 1)
+			old_image_cache.Cut(1, num_to_remove)
+
+/datum/genital_images/proc/show_images_to(mob/seer)
+	if(!seer || !seer.client)
+		return // they cant see us!
+	seer.client.images -= old_image_cache
+	seer.client.images |= get_all_images(extract_prefs(seer))
+
+/datum/genital_images/proc/get_all_images(datum/preferences/P)
 	if(!P)
 		return list()
-	var/list/image_order = get_image_order()
+	var/mob/living/carbon/human/myowner = GET_WEAKREF(owner)
+	if(!ishuman(myowner))
+		return list()
+	var/list/cockstring = myowner.dna.decode_cockstring()
+	var/list/image_order = reverseList(cockstring)
+	var/preflag = is_whitelisted(P.parent.mob) ? NONE : P.features["genital_hide"]
 	var/list/all_images = list()
 	for(var/entry in image_order)
 		switch(entry)
-			if("butt")
+			if(CS_BUTT)
 				if(butt_visible && !CHECK_BITFIELD(preflag, HIDE_BUTT))
 					all_images += butt
-			if("breasts")
-				if(breasts_visible && !CHECK_BITFIELD(preflag, HIDE_BREASTS))
+			if(CS_BOOB)
+				if(breasts_visible && !CHECK_BITFIELD(preflag, HIDE_BOOBS))
 					all_images += breasts
-			if("peen")
-				if(peen_visible && !CHECK_BITFIELD(preflag, HIDE_PEEN))
+			if(CS_PENIS)
+				if(peen_visible && !CHECK_BITFIELD(preflag, HIDE_PENIS))
 					all_images += peen
-			if("balls")
+			if(CS_BALLS)
 				if(balls_visible && !CHECK_BITFIELD(preflag, HIDE_BALLS))
 					all_images += balls
-			if("vag")
+			if(CS_VAG)
 				if(vag_visible && !CHECK_BITFIELD(preflag, HIDE_VAG))
 					all_images += vag
-			if("belly")
+			if(CS_BELLY)
 				if(belly_visible && !CHECK_BITFIELD(preflag, HIDE_BELLY))
 					all_images += belly
 	if(undershirt && shirt_visible)
@@ -228,39 +304,26 @@ var/list/hoohaws = list()
 		all_images += tail
 	if(wings && wings_visible)
 		all_images += wings
-	var/mob/myowner = GET_WEAKREF(owner)
 	for(var/image/img in all_images)
 		img.loc = myowner // just to be sure they're stuck to the player like a fridge magnet
 	return all_images
 
+/datum/genital_images/proc/flush_genitals()
+	cache_images(get_all_images())
+	butt = list()
+	breasts = list()
+	peen = list()
+	balls = list()
+	vag = list()
+	belly = list()
+	return TRUE
 
+/datum/genital_images/proc/flush_undies()
+	cache_images(get_all_images())
+	undershirt = null
+	underpants = null
+	socks = null
+	return TRUE
 
-
-
-
-
-/datum/genital_images/proc/get_image_order()
-	var/list/key = list(
-		"[butt_priority]" = "butt",
-		"[breasts_priority]" = "breasts",
-		"[peen_priority]" = "peen",
-		"[balls_priority]" = "balls",
-		"[vag_priority]" = "vag",
-		"[belly_priority]" = "belly",
-	)
-	var/list/priorities = list(
-		butt_priority,
-		breasts_priority,
-		peen_priority,
-		balls_priority,
-		vag_priority,
-		belly_priority,
-		)
-	var/list/ascending = sort_list(priorities, /proc/cmp_numeric_asc)
-	var/list/out = list()
-	for(var/priority in ascending)
-		var/part = key[priority]
-		out += part
-	return out
 
 

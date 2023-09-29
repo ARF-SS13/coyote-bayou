@@ -22,6 +22,7 @@
 	var/list/vag_types = list("tentacle", "dentata", "hairy", "spade", "furred", "inconspicuous")
 	associated_has = CS_VAG // for cockstring stuff
 	hide_flag = HIDE_VAG // for hideflag stuff
+	pornhud_slot = PHUD_VAG
 
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()
