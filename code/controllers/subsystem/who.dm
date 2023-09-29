@@ -808,7 +808,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 /datum/who_custom_stuff/proc/GetName(reveal_always)
 	var/datum/preferences/P = extract_prefs(ckey)
-	var/mob/M = GetMyMob()
 	if(IsAdmin())
 		return "[TrueName()][isnull(c_name) ? "" : " as [c_name]"]"
 	var/name_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_NAME) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
@@ -829,7 +828,6 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 
 /datum/who_custom_stuff/proc/GetRole(reveal_always)
 	var/datum/preferences/P = extract_prefs(ckey)
-	var/mob/M = GetMyMob()
 	if(IsAdmin())
 		return "[TrueJob()][isnull(c_role) ? "" : " as [c_role]"]"
 	var/job_vis = CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ROLE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)
