@@ -119,12 +119,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
-	if(istype(parent, /mob))
-		old_spawner_check = TRUE
-	else
-		register_turfs()
-	if(old_spawner_check)
-		start_spawning()
+	register_turfs()
 
 /datum/component/spawner/proc/register_turfs()
 	var/atom/dad = parent
@@ -136,11 +131,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 
 /datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
 	my_turfs |= atom2coords(trip)
-	if(SEND_SIGNAL(trip, COMSIG_PING))
-		return
 	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
 	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/reconnect)
-	RegisterSignal(trip, COMSIG_PING, .proc/still_there)
 	if(GLOB.debug_spawner_turfs && debug_color)
 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
 
@@ -150,7 +142,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 		if(!trip)
 			continue
 		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
-		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE, COMSIG_PING)
+		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
 	my_turfs = list()
 	disconnected = list()
 
@@ -175,7 +167,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 		stop_spawning(null, FALSE)
 		return
 	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
-		try_to_spawn()
+		try_to_spawn(FALSE)
 	else
 		reconnect()
 
@@ -261,6 +253,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 	if(old_spawner_check && !something_in_range())
 		return FALSE
 	spawn_mob()
+	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 	if(should_destroy_spawner())
 		qdel(parent)
 		return
@@ -269,7 +262,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 	if(!range)
 		return TRUE
 	var/atom/P = parent
-	for(var/mob/living as anything in SSmobs.clients_by_zlevel[P.z]) // client-containing mobs, NOT clients
+	for(var/mob/living in GLOB.player_list) // client-containing mobs, NOT clients
 		if(get_dist(P, living) <= range)
 			return TRUE
 	
