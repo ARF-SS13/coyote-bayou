@@ -181,10 +181,13 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 
 /// something entered one of our turfs, check if we should spawn something
 /datum/component/spawner/proc/turf_trip(datum/source, atom/movable/arrived)
-	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
+	if(!am_specual && spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
 		COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
 		return
 	if(!check_mob(usr)) // could write a proc that searches everything for a mob, buuuuuuut........ dont wanna
+		return
+	if(am_special)
+		spawn_mob_special()
 		return
 	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
 	start_spawning()
