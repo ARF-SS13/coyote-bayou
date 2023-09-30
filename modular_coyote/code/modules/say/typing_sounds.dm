@@ -48,19 +48,19 @@ SUBSYSTEM_DEF(typinginit)
 	soundFile = 'modular_coyote/sound/typing/softspeak.ogg'
 
 /datum/typing_sound/beep
-	name = "beep"
+	name = "Beep"
 	soundFile = 'sound/machines/beep.ogg'
 
 /datum/typing_sound/win7
-	name = "win7 error"
+	name = "Win7 Error"
 	soundFile = 'sound/effects/beeper7.ogg'
 
 /datum/typing_sound/harddrive
-	name = "hard drive"
+	name = "Hard Drive"
 	soundFile = 'sound/effects/bootup.ogg'
 
 /datum/typing_sound/buzzsigh
-	name = "buzz sigh"
+	name = "Buzz Sigh"
 	soundFile = 'sound/machines/buzz-sigh.ogg'
 
 /datum/typing_sound/light
@@ -79,48 +79,170 @@ SUBSYSTEM_DEF(typinginit)
 	name = "Bear"
 	soundFile = 'modular_coyote/sound/typing/arfs1sounds/bear1.ogg'
 
+/datum/typing_sound/beaver
+	name = "Beaver"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/beaver1.ogg'
 
-GLOBAL_LIST_INIT(typing_indicator_sounds, list(
-		"Beaver" 				= 'modular_coyote/sound/typing/arfs1sounds/beaver1.ogg',
-		"Horrible Bird Kyaa" 	= 'modular_coyote/sound/typing/arfs1sounds/bird1.ogg',
-		"Horrible Bird Call 2" 	= 'modular_coyote/sound/typing/arfs1sounds/bird2.ogg',
-		"Boar" 					= 'modular_coyote/sound/typing/arfs1sounds/boar1.ogg',
-		"Goat" 					= 'modular_coyote/sound/typing/arfs1sounds/capra1.ogg',
-		"Corgi (Cody)" 			= 'modular_coyote/sound/typing/arfs1sounds/corgi1.ogg',
-		"Corgi" 				= 'modular_coyote/sound/typing/arfs1sounds/corgi2.ogg',
-		"Cougar" 				= 'modular_coyote/sound/typing/arfs1sounds/cougar1.ogg',
-		"Cow" 					= 'modular_coyote/sound/typing/arfs1sounds/cow1.ogg',
-		"Coyote Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/coyote1.ogg',
-		"Coyote" 				= 'modular_coyote/sound/typing/arfs1sounds/coyote2.ogg',
-		"Crocodile" 			= 'modular_coyote/sound/typing/arfs1sounds/croc1.ogg',
-		"Deer" 					= 'modular_coyote/sound/typing/arfs1sounds/deer1.ogg',
-		"Drider" 				= 'modular_coyote/sound/typing/arfs1sounds/drider1.ogg',
-		"Eevee" 				= 'modular_coyote/sound/typing/arfs1sounds/eevee1.ogg',
-		"Elephant" 				= 'modular_coyote/sound/typing/arfs1sounds/elephant1.ogg',
-		"Fennec Bark" 			= 'modular_coyote/sound/typing/arfs1sounds/fennec1.ogg',
-		"Fennec Squeak" 		= 'modular_coyote/sound/typing/arfs1sounds/fennec2.ogg',
-		"Fox Bark" 				= 'modular_coyote/sound/typing/arfs1sounds/fox1.ogg',
-		"Husky Bark-bark" 		= 'modular_coyote/sound/typing/arfs1sounds/husky1.ogg',
-		"Husky Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/husky2.ogg',
-		"Hyena Laugh" 			= 'modular_coyote/sound/typing/arfs1sounds/hyena1.ogg',
-		"Lizard?" 				= 'modular_coyote/sound/typing/arfs1sounds/lizard1.ogg',
-		"Lynx Growl" 			= 'modular_coyote/sound/typing/arfs1sounds/lynx1.ogg',
-		"Orca" 					= 'modular_coyote/sound/typing/arfs1sounds/orca1.ogg',
-		"Panda" 				= 'modular_coyote/sound/typing/arfs1sounds/panda1.ogg',
-		"Pig Grunt" 			= 'modular_coyote/sound/typing/arfs1sounds/pig1.ogg',
-		"Porcupine" 			= 'modular_coyote/sound/typing/arfs1sounds/porcupine1.ogg',
-		"Possum Hiss" 			= 'modular_coyote/sound/typing/arfs1sounds/possum1.ogg',
-		"Miserable Bark" 		= 'modular_coyote/sound/typing/arfs1sounds/pug1.ogg',
-		"Rabbit Squeal" 		= 'modular_coyote/sound/typing/arfs1sounds/rabbit1.ogg',
-		"Raccoon Chitter" 		= 'modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg',
-		"Red Panda Chitter" 	= 'modular_coyote/sound/typing/arfs1sounds/redpanda1.ogg',
-		"Dial Up" 				= 'modular_coyote/sound/typing/arfs1sounds/robot1.ogg',
-		"Yappy Dog" 			= 'modular_coyote/sound/typing/arfs1sounds/shihtzu1.ogg',
-		"Cat Mrowl" 			= 'modular_coyote/sound/typing/arfs1sounds/siamese1.ogg',
-		"Cat Meow" 				= 'modular_coyote/sound/typing/catmeow.ogg',
-		"Cat Trill" 			= 'modular_coyote/sound/typing/cattrill.ogg',
-		"Skunk Chitter" 		= 'modular_coyote/sound/typing/arfs1sounds/skunk1.ogg',
-		"Big Cat Chuff" 		= 'modular_coyote/sound/typing/arfs1sounds/tiger1.ogg',
-		"Vulture" 				= 'modular_coyote/sound/typing/arfs1sounds/vulture1.ogg',
-		"Wolf Howl" 			= 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
-				))
+/datum/typing_sound/horriblebirdkyaa
+	name = "Horrible Bird Kyaa"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/bird1.ogg'
+
+/datum/typing_sound/horriblebirdcall2
+	name = "Horrible Bird Call 2"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/bird2.ogg'
+
+/datum/typing_sound/boar
+	name = "Boar"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/boar1.ogg'
+
+/datum/typing_sound/goat
+	name = "Goat"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/capra1.ogg'
+
+/datum/typing_sound/corgicody
+	name = "Corgi (Cody)"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/corgi1.ogg'
+
+/datum/typing_sound/corgi
+	name = "Corgi"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/corgi2.ogg'
+
+/datum/typing_sound/cougar
+	name = "Cougar"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/cougar1.ogg'
+
+/datum/typing_sound/cow
+	name = "Cow"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/cow1.ogg'
+
+/datum/typing_sound/coyotehowl
+	name = "Coyote Howl"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/coyote1.ogg'
+
+/datum/typing_sound/coyote
+	name = "Coyote"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/coyote2.ogg'
+
+/datum/typing_sound/crocodile
+	name = "Crocodile"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/croc1.ogg'
+
+/datum/typing_sound/deer
+	name = "Deer"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/deer1.ogg'
+
+/datum/typing_sound/drider
+	name = "Drider"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/drider1.ogg'
+
+/datum/typing_sound/eevee
+	name = "Eevee"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/eevee1.ogg'
+
+/datum/typing_sound/elephant
+	name = "Elephant"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/elephant1.ogg'
+
+/datum/typing_sound/fennecbark
+	name = "Fennec Bark"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/fennec1.ogg'
+
+/datum/typing_sound/fennecsqueak
+	name = "Fennec Squeak"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/fennec2.ogg'
+
+/datum/typing_sound/foxbark
+	name = "Fox Bark"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/fox1.ogg'
+
+/datum/typing_sound/huskybarkbark
+	name = "Husky Bark-bark"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/husky1.ogg'
+
+/datum/typing_sound/huskyhowl
+	name = "Husky Howl"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/husky2.ogg'
+
+/datum/typing_sound/hyenalaugh
+	name = "Hyena Laugh"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/hyena1.ogg'
+
+/datum/typing_sound/lizard
+	name = "Lizard?"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/lizard1.ogg'
+
+/datum/typing_sound/lynxgrowl
+	name = "Lynx Growl"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/lynx1.ogg'
+
+/datum/typing_sound/orca
+	name = "Orca"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/orca1.ogg'
+
+/datum/typing_sound/panda
+	name = "Panda"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/panda1.ogg'
+
+/datum/typing_sound/piggrunt
+	name = "Pig Grunt"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/pig1.ogg'
+
+/datum/typing_sound/porcupine
+	name = "Porcupine"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/porcupine1.ogg'
+
+/datum/typing_sound/possumhiss
+	name = "Possum Hiss"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/possum1.ogg'
+
+/datum/typing_sound/miserablebark
+	name = "Miserable Bark"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/pug1.ogg'
+
+/datum/typing_sound/rabbitsqueal
+	name = "Rabbit Squeal"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/rabbit1.ogg'
+
+/datum/typing_sound/raccoonchitter
+	name = "Raccoon Chitter"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/raccoon1.ogg'
+
+/datum/typing_sound/redpandachitter
+	name = "Red Panda Chitter"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/redpanda1.ogg'
+
+/datum/typing_sound/dialup
+	name = "Dial Up"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/robot1.ogg'
+
+/datum/typing_sound/yappydog
+	name = "Yappy Dog"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/shihtzu1.ogg'
+
+/datum/typing_sound/catmrowl
+	name = "Cat Mrowl"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/siamese1.ogg'
+
+/datum/typing_sound/catmeow
+	name = "Cat Meow"
+	soundFile = 'modular_coyote/sound/typing/catmeow.ogg'
+
+/datum/typing_sound/cattrill
+	name = "Cat Trill"
+	soundFile = 'modular_coyote/sound/typing/cattrill.ogg'
+
+/datum/typing_sound/skunkchitter
+	name = "Skunk Chitter"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/skunk1.ogg'
+
+/datum/typing_sound/bigcatchuff
+	name = "Big Cat Chuff"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/tiger1.ogg'
+
+/datum/typing_sound/vulture
+	name = "Vulture"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/vulture1.ogg'
+
+/datum/typing_sound/wolfhowl
+	name = "Wolf Howl"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
