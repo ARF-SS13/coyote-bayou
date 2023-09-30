@@ -132,9 +132,15 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 /datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
 	my_turfs |= atom2coords(trip)
 	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
-	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/reconnect)
+	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
 	if(GLOB.debug_spawner_turfs && debug_color)
 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
+
+/datum/component/spawner/proc/turf_changed(turf/changed)
+	if(!isturf(changed))
+		return
+	disconnected |= atom2coords(changed)
+	start_spawning()
 
 /datum/component/spawner/proc/unregister_turfs()
 	for(var/coords in my_turfs)
@@ -167,7 +173,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 		stop_spawning(null, FALSE)
 		return
 	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
-		try_to_spawn(FALSE)
+		try_to_spawn()
 	else
 		reconnect()
 
