@@ -24,7 +24,6 @@
 		SA.quick_equip()
 	
 
-/*
 /datum/keybinding/human/quick_equipbelt
 	hotkey_keys = list("ShiftE")
 	name = "quick_equipbelt"
@@ -39,11 +38,22 @@
 /datum/keybinding/human/bag_equip
 	hotkey_keys = list("ShiftB")
 	name = "bag_equip"
-	full_name = "Bag equip"
+	full_name = "Quick bag equip"
 	description = "Put held thing in backpack or take out most recent thing from backpack"
 
 /datum/keybinding/human/bag_equip/down(client/user)
 	var/mob/living/carbon/human/H = user.mob
 	H.smart_equipbag()
 	return TRUE
-*/
+
+//-->We are now going to gunsling
+/datum/keybinding/human/holster_equip
+	hotkey_keys = list("ShiftR")
+	name = "holster_equip"
+	full_name = "Quick holster equip"
+	description = "Holster or unholster your gun or ammo clips."
+
+/datum/keybinding/human/holster_equip/down(client/user)
+	var/mob/living/carbon/human/H = user.mob
+	H.smart_equipholster()
+	return TRUE

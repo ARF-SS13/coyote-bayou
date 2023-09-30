@@ -742,7 +742,7 @@
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(

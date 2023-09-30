@@ -355,3 +355,57 @@
 		return
 	stored.attack_hand(src) // take out thing from belt
 	return
+
+/mob/living/carbon/human/proc/smart_equipholster() //put held thing in holster, take out weapons or ammo with a priority.
+	if(incapacitated())
+		return
+
+	var/obj/item/thing = get_active_held_item()
+	var/obj/item/equipped_neck = get_item_by_slot(SLOT_NECK)
+
+	if(!equipped_neck)
+		if(!thing)
+			to_chat(src, span_warning("You have no holster to take something out of!"))
+			return
+		if(equip_to_slot_if_possible(thing, INV_SLOTBIT_NECK))
+			update_inv_hands()
+		return
+	if(!SEND_SIGNAL(equipped_neck, COMSIG_CONTAINS_STORAGE)) //not a storage item
+		if(!thing)
+			equipped_neck.attack_hand(src)
+		else
+			to_chat(src, span_warning("You can't fit anything in your holster!"))
+		return
+	if(thing) //put thing in holster
+		if(!SEND_SIGNAL(equipped_neck, COMSIG_TRY_STORAGE_INSERT, thing, src))
+			to_chat(src, span_warning("This item is too big to fit the holster!"))
+		return
+	if(!equipped_neck.contents.len) //nothing to take out
+		to_chat(src, span_warning("You can't fit anything in your holster!"))
+		return
+	
+	var/obj/item/gun/firearm = null
+	var/obj/item/ammo_box/speed_loader
+	
+	for(var/obj/item/gun/F in equipped_neck.contents)  //First thing, we want to obviously prioritize the unholstering of the gun.
+		firearm = F
+		break
+	for(var/obj/item/ammo_box/S in equipped_neck.contents)  //We surely have to find at least the first speedloader, otherwise the following for doesn't know what to do
+		speed_loader = S
+		break
+	for(var/obj/item/ammo_box/S in equipped_neck.contents)  //Code didn't find a gun? Let's check if there are clips or speedloaders with ammo in it.
+		if(S.stored_ammo.len >= speed_loader.stored_ammo.len)
+			speed_loader = S
+	
+	var/obj/item/stored = equipped_neck.contents[equipped_neck.contents.len]
+	if(firearm && !firearm.on_found(src))  //return the firearm first
+		firearm.attack_hand(src)
+		return
+	else if(speed_loader && !speed_loader.on_found(src))  //if there's no firearm, return the fullest speedloader
+		speed_loader.attack_hand(src)
+		return
+	else if(stored && !stored.on_found(src))  //if none of the above is in the holster, return whatever was inside
+		stored.attack_hand(src)
+		return
+	else
+		return
