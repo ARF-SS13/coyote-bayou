@@ -483,9 +483,33 @@
 
 /mob/living/simple_animal/pokemon/nightstalker
 	name = "nightstalker"
-	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
+	desc = "A nightstalker!"
 	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
 	icon_state = "nightstalker"
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker-dead"
+
+/mob/living/simple_animal/pokemon/wendigo
+	name = "wendigo"
+	desc = "A mythological man-eating legendary creature, you probably aren't going to survive this.!"
+	icon = 'icons/mob/icemoon/64x64megafauna.dmi'
+	icon_state = "wendigo"
+	icon_living = "wendigo"
+	icon_dead = "wendigo_dead"
+	health = 400
+	maxHealth = 400
+
+//Actual chooseable mouse colors
+
+/mob/living/simple_animal/pokemon/mousewhite
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_white"
+
+/mob/living/simple_animal/pokemon/mousegray
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_gray"
+
+/mob/living/simple_animal/pokemon/mousebrown
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_brown"
 
