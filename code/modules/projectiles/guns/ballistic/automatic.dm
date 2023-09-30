@@ -589,6 +589,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_CARBINE
+	w_class = WEIGHT_CLASS_NORMAL // Kelp here - the gun is extremely rare and even with the 50rnd magazine it's considered outclassed. This makes it a good, if unwieldy, secondary or holdout gun. Will let it cook and see if it needs removed.
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
@@ -633,7 +634,7 @@
 *- takes only uzi magazines
 * - high recoil
 * + comes supressed
-* * * * * * * * * * * */ 
+* * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/m22
 	name = "M22 Night Ops SMG"
@@ -650,7 +651,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
-	init_recoil = AUTORIFLE_RECOIL(1.7 , 1.7)
+	init_recoil = AUTORIFLE_RECOIL(1.2 , 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/fast
@@ -1288,7 +1289,7 @@
 * Matilda Rifle
 * Lightweight low damage dealing rifle with a 20 mag only
 * - MUCH slower than a varmint
-* + Higher damage than a varmint 
+* + Higher damage than a varmint
 * - Unable to be modified with bayonets, flashlights or a scope
 * + common tier rifle
 * * * * * * * * * * */
@@ -2357,7 +2358,7 @@
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
-	can_bayonet = FALSE 
+	can_bayonet = FALSE
 	can_flashlight = FALSE
 	reskinnable_component = null
 
@@ -2384,7 +2385,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = AUTORIFLE_RECOIL(1.3, 1.3)
+	init_recoil = AUTORIFLE_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto
@@ -2394,6 +2395,56 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+
+/obj/item/gun/ballistic/automatic/aksmol
+	name = "Ak74u"
+	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74utest"
+	icon_state = "ak74utest"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
+/obj/item/gun/ballistic/automatic/aksmol/aldric
+	name = "Ak74u Custom"
+	desc = "A customized AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74utest"
+	icon_state = "ak74utest"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	autofire_shot_delay = 3
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2516,7 +2567,7 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list(
@@ -2525,14 +2576,67 @@
 	)
 	can_scope = TRUE
 	can_suppress = FALSE
-	can_flashlight = FALSE 
+	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+	autofire_shot_delay = 3
+
+
+/obj/item/gun/ballistic/automatic/fnfal/ak47/custom
+	name = "Engraved Zastava M70"
+	desc = "A custom AK platform weapon. This Zastava M70 is gold plated with faint traces of a black tigerstripe alongside the magazine and reciever. The wood furniture is made of the best and most pristine wood there is. Albeit it hits less and can not take a select few modifications. On the pistol grip is a red star in the middle."
+	icon_state = "goldak"
+	item_state = "goldak"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm40,
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = FALSE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+	autofire_shot_delay = 4
+
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
 	name = "G3M99"
-	desc = "A battle rifle chambered n 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308"
+	desc = "A battle rifle chambered in 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308"
 	icon_state = "g3"
-	item_state = "slr"
+	item_state = "g3"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308/ext
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
+	disallowed_mags = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/automatic/rpm200
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/tox
+	name = "Custom G3 Stjarnarriffill"
+	desc = "A custom and refined G3 battle rifle. With proper engravings, this G3 has a scene of a moth and feline under a crescent moon on the stock of the battle rifle. Still chambered in 7.62 NATO, it's owner's name, which is a 'Tox Mckit' is engraved onto the reciever's lower end."
+	icon_state = "g3"
+	item_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2543,15 +2647,16 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2.3, 2.3)
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow,
+		/datum/firemode/semi_auto/slower,
 		/datum/firemode/automatic/rpm150
 	)
 	can_scope = TRUE
 	can_suppress = TRUE
-	can_flashlight = FALSE 
+	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+	autofire_shot_delay = 3.8
 
 
 
@@ -2882,8 +2987,8 @@
 * - High recoil with slowdown
 * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/rpd
-	name = "Russian LMG"
-	desc = "A soviet made Russian LMG. Known as the RPD, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
+	name = "Russian RPK LMG"
+	desc = "A soviet made Russian LMG. Known as the RPK, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
 	icon_state = "rpd"
 	item_state = "rpd"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2894,7 +2999,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(2, 2)
 	init_firemodes = list(
@@ -2904,6 +3009,33 @@
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
+
+
+/obj/item/gun/ballistic/automatic/fastlmg
+	name = "OstStrauss LMG"
+	desc = "A OstStrauss LMG, this LMG is chambered in 5.56x45 NATO. The gun itself was created as the great great grandson of the distant past MG3, which was derived from the MG-42 which was derived from the MG-34. With a fast fire rate and a toggle between 'slow' and 'fast', it is a LMG perfect for squad cover. Albiet it eats ammo like no tomorrow."
+	item_state = "mg3"
+	icon_state = "mg3"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/lmg
+	init_mag_type = /obj/item/ammo_box/magazine/lmg
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.7
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.6, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300 ,
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
 
 
 /* * * * * * * * * * *
@@ -3011,7 +3143,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 2.2
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	auto_eject = 1
 	en_bloc = 1
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
@@ -3050,7 +3182,7 @@
 	init_recoil = HMG_RECOIL (4 , 4)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto
 	)
 	zoom_factor = 1.5
 	can_suppress = FALSE

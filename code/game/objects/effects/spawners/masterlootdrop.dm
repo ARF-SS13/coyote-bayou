@@ -248,6 +248,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
 		/obj/item/gun/ballistic/revolver/Lemat = 2,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
+		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -282,6 +283,7 @@
 		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
+		/obj/item/gun/ballistic/automatic/aksmol = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -551,6 +553,7 @@
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/deathclawgauntlet = 20,
 		/obj/item/melee/unarmed/powerfist/goliath = 20,
+		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
@@ -559,6 +562,7 @@
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
+		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
 	)
 
 ////////////////////////////

@@ -414,6 +414,31 @@
 	path = /obj/item/clothing/under/f13/animsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 
+/datum/gear/uniform/frenchuniform
+	name = "Outdated French uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/imperialeastuniform
+	name = "Outdated East German uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/german
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/britisholduniform
+	name = "Outdated British uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/britishww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianolduniform
+	name = "Outdated Russian uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianpaddedww2
+	name = "Padded Soviet uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/russiancossack
+	name = "Cossack uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 /datum/gear/uniform/galaxyblue
 	name = "Blue galaxy suit"
 	path = /obj/item/clothing/under/f13/animsuit/two

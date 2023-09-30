@@ -323,6 +323,7 @@
 	retreat_distance = 3
 	minimum_distance = 1
 	ranged = 1
+	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
 	extra_projectiles = 5
@@ -377,6 +378,7 @@
 	retreat_distance = 4
 	minimum_distance = 2
 	ranged = 1
+	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
 	extra_projectiles = 4

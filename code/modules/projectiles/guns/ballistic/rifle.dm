@@ -131,25 +131,6 @@
 	reskinnable_component = /datum/component/reskinnable/volcanic
 
 
-/obj/item/gun/ballistic/rifle/repeater/customvolcanictox
-	name = "Engraved Volcanic Pistol"
-	desc = "A engraved Volcanic pistol. This pistol has an ivory grip with gold plating. The lever itself was modified to allow it to be cocked by a single hand while. The gun's reciever is engraved with a baroque style portrait of a moth and feline."
-	icon_state = "customvolcanic"
-	item_state = "goldengun"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
-	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
-	can_suppress = FALSE
-	can_scope = TRUE
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
 
 /* * * * * * * * * * *
  * Coyote Repeater
@@ -611,6 +592,14 @@
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
 
+/obj/item/gun/ballistic/rifle/antique/gras/laserfusil
+	name = "Fusil Energie"
+	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long? Someone tore out it's internals and built a laser musket into it."
+	icon_state = "madsenm47FE"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
  * Fixed-mag semi-auto rifle
@@ -627,14 +616,16 @@
 		and barrel capable of using both 5mm and 5.56mm rifle ammunition with reasonable success. \
 		The magazine is welded to the frame, and the loading port angled <i>just enough</i> to make stripper clips not work. \
 		Apparently these 'features' to the design, being on every instance of this gun."
-	icon = 'modular_coyote/icons/objects/churroguns.dmi'
-	icon_state = "salvaged_eastern_rifle"
-	item_state = "marksman"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "salvak"
+	item_state = "salvak"
 	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

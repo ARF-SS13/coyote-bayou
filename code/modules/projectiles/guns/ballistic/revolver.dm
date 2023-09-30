@@ -579,7 +579,7 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/buntline
 	name = "Colt Buntline"
-	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .357 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
 	item_state = "coltcarbine"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -588,10 +588,10 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = SMG_RECOIL(2, 2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/fast
 	)
 	can_scope = TRUE
 	can_suppress = FALSE

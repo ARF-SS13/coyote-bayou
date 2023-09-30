@@ -84,7 +84,7 @@
 /// LISTlover 420
 /// Like remove_list_recursive, but returns just a list full of the elements
 /// ooh ooh maybe if I make more recursive listfuckers, I'll actually use one!
-/// cool huh? - its a lot less cool when it procs millions of times and bogs down the game, holy shit
+/// cool huh?
 /proc/flatten_list_recursive(list/deeplist)
 	if(!length(deeplist))
 		return

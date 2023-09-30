@@ -51,6 +51,8 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		"Deep"					= 'modular_coyote/sound/typing/deepspeak.ogg',
 		"Soft"					= 'modular_coyote/sound/typing/softspeak.ogg',
 		"beep"					= 'sound/machines/beep.ogg',
+		"win7 error"			= 'sound/effects/beeper7.ogg',
+		"hard drive"			= 'sound/effects/bootup.ogg',
 		"buzz sigh"				= 'sound/machines/buzz-sigh.ogg',
 		"Light"					= 'modular_coyote/sound/typing/lightspeak.ogg',
 		"Jackal" 				= 'modular_coyote/sound/typing/arfs1sounds/anubis1.ogg',

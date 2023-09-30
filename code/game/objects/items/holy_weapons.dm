@@ -8,7 +8,8 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	force = 30
+	force_unwielded = 38
+	force_wielded = 48
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -275,7 +276,8 @@
 	item_state = "nullrod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 30 // On par with a war club, note that this value determines almost every sub type without a direct force change.
+	force = 38
+	force_wielded = 48 // On par with a war club, note that this value determines almost every sub type without a direct force change.
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 20
@@ -383,7 +385,7 @@
 	name = "red holy staff"
 	desc = "It has a mysterious, protective aura."
 	w_class = WEIGHT_CLASS_HUGE
-	force = 5
+	force = 15
 	slot_flags = INV_SLOTBIT_BACK
 	block_chance = 50
 	var/shield_icon = "shield-red"
@@ -408,11 +410,10 @@
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
-	force = 28 // Equal to the Longblade
-	force_wielded = 50
-	force_unwielded = 28
+	force_wielded = 48
+	force_unwielded = 38
 	wound_bonus = 30
-	block_chance = 15
+	block_chance = 20
 	attack_speed = CLICK_CD_MELEE // The standard.
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -461,7 +462,6 @@
 	desc = "Capable of cutting clean through a holy claymore."
 	icon_state = "katana"
 	item_state = "katana"
-	force = 30 //Equal to the Scraptana
 	block_chance = 15
 	attack_speed = CLICK_CD_MELEE * 0.8
 	force_wielded = 40
@@ -476,7 +476,7 @@
 	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
-	force = rand(1, 40)
+	force = rand(1, 60)
 	..()
 
 /obj/item/nullrod/claymore/saber
@@ -505,6 +505,7 @@
 	sharpness = SHARP_EDGED
 	force_unwielded = 25
 	force_wielded = 40 // Equal to 2 handed axes
+	wound_bonus = 30
 	attack_speed = CLICK_CD_MELEE * 1.1 //8.8
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 
@@ -547,7 +548,7 @@
 	item_flags = ABSTRACT
 	w_class = WEIGHT_CLASS_HUGE
 	sharpness = SHARP_EDGED
-	wound_bonus = -20
+	wound_bonus = 20
 	bare_wound_bonus = 25
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
 
@@ -565,9 +566,8 @@
 	name = "monk's staff"
 	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass mutants.."
 	w_class = WEIGHT_CLASS_BULKY
-	force = 15
-	force_wielded = 35 // Slightly better than the null rod with much better block chance.
-	force_unwielded = 15
+	force_wielded = 30 // Slightly better than the null rod with much better block chance.
+	force_unwielded = 20
 	block_chance = 40
 	attack_speed = CLICK_CD_MELEE * 0.85 // Everybody was kung fu fighting!
 	slot_flags = INV_SLOTBIT_BACK
@@ -757,7 +757,7 @@
 	item_state = "carp_plushie"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	force = 15
+	force = 25
 	attack_verb = list("bitten", "eaten", "fin slapped")
 	hitsound = 'sound/weapons/bite.ogg'
 	chaplain_spawnable = FALSE

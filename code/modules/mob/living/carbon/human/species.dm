@@ -641,7 +641,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				standing += left_eye
 				standing += right_eye
 
-	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
 	var/list/standing_overdies = list()
 	//Underwear, Undershirts & Socks
@@ -809,7 +808,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-	//var/image/tail_hack // tailhud's a bazinga, innit
+	var/image/tail_hack // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -1021,6 +1020,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
+	H.tail_hud_update(tail_hack)
+
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.

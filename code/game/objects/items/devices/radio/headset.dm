@@ -416,7 +416,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_biker
 	name = "Hell's Nomads radio headset"
-	desc = "This is used by the Hell's Nomads.\nTo access the Hell's Nomads channel, use :b."
+	desc = "This is used by the Hell's Nomads.\nTo access the Hell's Nomads channel, use :b, to access the ashdown, use :d"
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_biker
