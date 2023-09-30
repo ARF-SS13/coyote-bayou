@@ -1,4 +1,4 @@
-GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
+GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 /datum/component/spawner
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
@@ -125,7 +125,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 	var/atom/dad = parent
 	if(!dad.loc)
 		return
-	var/debug_color = GLOB.debug_spawner_turfs ? "#[random_color()]" : null
+	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
 	for(var/turf/trip in range(range, dad.loc))
 		connect_to_turf(trip, debug_color)
 
@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 	my_turfs |= atom2coords(trip)
 	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
 	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
-	if(GLOB.debug_spawner_turfs && debug_color)
+	if(SSspawners.debug_spawner_turfs && debug_color)
 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
 
 /datum/component/spawner/proc/turf_changed(turf/changed)
@@ -155,7 +155,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, TRUE)
 /datum/component/spawner/proc/reconnect()
 	if(!LAZYLEN(disconnected))
 		return
-	var/debug_color = GLOB.debug_spawner_turfs ? "#[randomColor()]" : null
+	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
 	for(var/coord in disconnected)
 		var/turf/trip = coords2turf(coord)
 		if(!trip)
