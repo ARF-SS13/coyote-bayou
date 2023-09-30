@@ -1,26 +1,51 @@
 // A cute lil subsystem that draws pictures of peoples butts and wieners on your screen
 SUBSYSTEM_DEF(pornhud)
 	name = "PornHUD"
-	wait = 0.2 SECONDS
+	wait = 0.5 SECONDS
+	flags = SS_NO_INIT|SS_BACKGROUND
 
 	// list of all bits
 	/// format: list("Jimmy Shits" = /datum/genital_images)
 	var/list/hoohaws = list()
-	var/image_cache_max = 1024
-	var/update_pending = FALSE
-	var/debug_force_everyone_to_update_when_it_does = TRUE
+	/// players who need a full on update of everyone's genitals
+	var/list/needs_updating = list()
+	/// genical datums that need to be sent to all players
+	var/list/gunts_changed = list()
+	var/list/currentrun = list()
+	var/list/guntrun = list()
+	var/image_cache_max = 64
+	var/max_whitelist_search = 15
+	var/debug_force_update = TRUE
 	var/debug_clotheshud = TRUE // coming soon in 2096
 
 /datum/controller/subsystem/pornhud/fire(resumed)
-	if(update_pending)
-		if(debug_force_everyone_to_update_when_it_does)
-			for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
-				nadhaver.update_body(TRUE)
-		update_everyone()
-		update_pending = FALSE
+	if (!resumed)
+		guntrun = gunts_changed.Copy()
+		currentrun = needs_updating.Copy()
+		needs_updating = list()
+		gunts_changed = list()
+	//cache for sanic speed (lists are references anyways)
+	var/list/gunt_run = guntrun
+	var/list/current_run = currentrun
 
-/datum/controller/subsystem/pornhud/proc/pend_update()
-	update_pending = TRUE
+	while(current_run.len)
+		var/ckey = current_run[current_run.len]
+		current_run.len--
+		var/mob/living/carbon/human/dork = get_mob_by_ckey(ckey)
+		if(!dork)
+			continue
+		send_everything_to_viewer(dork, debug_force_update)
+		if (MC_TICK_CHECK)
+			return
+
+	while(gunt_run.len)
+		var/datum/genital_images/GI = gunt_run[gunt_run.len]
+		gunt_run.len--
+		if(!GI)
+			continue
+		send_genitals_to_everyone(GI)
+		if (MC_TICK_CHECK)
+			return
 
 /datum/controller/subsystem/pornhud/proc/catalogue_part(mob/living/dork, part, list/images = list())
 	if(!isliving(dork) || !part)
@@ -40,22 +65,32 @@ SUBSYSTEM_DEF(pornhud)
 		hoohaws[dork.pornhud_key] = GI
 	return GI
 
-/// flush a player's genital images, and give them a fresh copy of everyone's
-/// This is the *viewer*, so it'll pull everyone's images
-/datum/controller/subsystem/pornhud/proc/update_single(mob/living/dork)
+/// A player changed their view settings, so we need to give them a fresh
+/// copy of everyone's genitals
+/datum/controller/subsystem/pornhud/proc/request_every_genital(mob/living/dork)
 	if(!dork.client)
 		return
-	var/datum/preferences/P = extract_prefs(dork)
-	if(!P)
+	needs_updating |= dork.ckey
+
+/// A set of genitals changed, so we need to send everyone a fresh copy of these
+/datum/controller/subsystem/pornhud/proc/request_genital_broadcast(datum/genital_images/GI)
+	gunts_changed |= GI
+
+/// flush a player's genital images, and give them a fresh copy of everyone's
+/// This is the *viewer*, so it'll pull everyone's images
+/// Force is happen when the *viewer* changed their settings
+/datum/controller/subsystem/pornhud/proc/send_everything_to_viewer(mob/living/dork, force)
+	if(!dork.client)
 		return
 	for(var/mobname in hoohaws)
 		var/datum/genital_images/GI = hoohaws[mobname]
-		GI.show_images_to(dork)
+		GI.show_images_to(dork, force)
+		CHECK_TICK
 
-/// Flushed everyone's genital images, and gives them a fresh copy of everyone's
-/datum/controller/subsystem/pornhud/proc/update_everyone(hard)
-	for(var/mob/living/carbon/human/nadhaver in GLOB.human_list)
-		update_single(nadhaver, hard)
+/// A genital thing has updated, so we need to send it to everyone
+/datum/controller/subsystem/pornhud/proc/send_genitals_to_everyone(datum/genital_images/gunt)
+	for(var/mob/seer in GLOB.player_list)
+		gunt.show_images_to(seer, TRUE)
 
 /datum/controller/subsystem/pornhud/proc/flush_genitals(mob/living/carbon/human/flusher)
 	if(!ishuman(flusher))
@@ -105,29 +140,26 @@ SUBSYSTEM_DEF(pornhud)
 /datum/genital_images
 	var/datum/weakref/owner
 
+	/// ckeys with people we've already shown our genitals to
+	var/list/shown_to = list()
+
 	var/list/butt = list()
 	var/butt_visible
-	var/butt_priority = 7
 
 	var/list/breasts = list()
 	var/breasts_visible
-	var/breasts_priority = 9
 
 	var/list/peen = list()
 	var/peen_visible
-	var/peen_priority = 6
 
 	var/list/balls = list()
 	var/balls_visible
-	var/balls_priority = 5
 
 	var/list/vag = list()
 	var/vag_visible
-	var/vag_priority = 4
 
 	var/list/belly = list()
 	var/belly_visible
-	var/belly_priority = 8
 
 	var/list/tail = list() // nice and suggestive
 	var/tail_visible
@@ -144,6 +176,9 @@ SUBSYSTEM_DEF(pornhud)
 	var/image/socks
 	var/socks_visible
 
+	/// if this is true, the player has changed their appearance since the last time we updated
+	var/has_changed
+
 	var/undies_over_genitals = TRUE
 
 	/// massive, unwashed list of all images that were on the player at some point
@@ -153,9 +188,6 @@ SUBSYSTEM_DEF(pornhud)
 /datum/genital_images/New(mob/living/carbon/human/newowner)
 	. = ..()
 	owner = WEAKREF(newowner)
-	var/datum/preferences/P = extract_prefs(newowner)
-	if(!P)
-		return
 
 /// is this player whitelisted?
 /// if so, they can see genitals even if they're hidden
@@ -166,6 +198,7 @@ SUBSYSTEM_DEF(pornhud)
 		return TRUE // surely you'd like to see your own genitals (or lack thereof)
 	var/datum/preferences/P = extract_prefs(someone)
 	var/list/whitelist = splittext(P.genital_whitelist, ",")
+	var/index = 1
 	for(var/entry in whitelist)
 		entry = ckey(entry)
 		if(findtext(ckey(someone.real_name), entry))
@@ -176,16 +209,9 @@ SUBSYSTEM_DEF(pornhud)
 			return TRUE
 		if(findtext(entry, ckey(someone.name)))
 			return TRUE
+		if(index++ > SSpornhud.max_whitelist_search)
+			return FALSE
 	
-// Updates out owner's appearance
-/datum/genital_images/proc/update_owner_appearance(broadcast)
-	var/mob/living/carbon/human/myowner = GET_WEAKREF(owner)
-	if(!myowner)
-		return
-	myowner.update_body(TRUE)
-	if(broadcast)
-		SSpornhud.pend_update()
-
 // add a part to the list
 /datum/genital_images/proc/add_part(part, list/images = list())
 	if(!islist(images))
@@ -213,8 +239,8 @@ SUBSYSTEM_DEF(pornhud)
 			underpants = images
 		if(PHUD_SOCKS)
 			socks = images
+	set_changed()
 	cache_images(images)
-	SSpornhud.pend_update()
 
 /datum/genital_images/proc/add_shirt(image/pic)
 	undershirt = pic
@@ -252,6 +278,7 @@ SUBSYSTEM_DEF(pornhud)
 			underpants_visible = on_off
 		if(PHUD_SOCKS)
 			socks_visible = on_off
+	set_changed()
 
 /datum/genital_images/proc/cache_images(list/imgs = list())
 	old_image_cache |= imgs
@@ -260,22 +287,46 @@ SUBSYSTEM_DEF(pornhud)
 		if(num_to_remove > 1)
 			old_image_cache.Cut(1, num_to_remove)
 
-/datum/genital_images/proc/show_images_to(mob/seer)
+/datum/genital_images/proc/show_images_to(mob/seer, force)
 	if(!seer || !seer.client)
 		return // they cant see us!
+	if(shown_to[seer.ckey] && !force)
+		return // no need to update
+	shown_to[seer.ckey] = TRUE
+	remove_images(seer)
+	var/list/imgs = get_all_images(seer.client.prefs)
+	add_images(seer, imgs)
+
+/datum/genital_images/proc/remove_images(mob/seer)
+	if(!seer)
+		return
 	seer.client.images -= old_image_cache
-	seer.client.images |= get_all_images(extract_prefs(seer))
+
+/datum/genital_images/proc/add_images(mob/seer, list/imgs = list())
+	if(!seer)
+		return
+	seer.client.images |= imgs
 
 /datum/genital_images/proc/get_all_images(datum/preferences/P)
+	var/list/all_images = list()
 	if(!P)
-		return list()
+		all_images |= butt
+		all_images |= breasts
+		all_images |= peen
+		all_images |= balls
+		all_images |= vag
+		all_images |= belly
+		all_images |= tail
+		all_images |= wings
+		all_images |= undershirt
+		all_images |= underpants
+		all_images |= socks
+		return all_images
 	var/mob/living/carbon/human/myowner = GET_WEAKREF(owner)
 	if(!ishuman(myowner))
 		return list()
-	var/list/cockstring = myowner.dna.decode_cockstring()
-	var/list/image_order = reverseList(cockstring)
+	var/list/image_order = myowner.dna.decode_cockstring(FALSE)
 	var/preflag = is_whitelisted(P.parent.mob) ? NONE : P.features["genital_hide"]
-	var/list/all_images = list()
 	for(var/entry in image_order)
 		switch(entry)
 			if(CS_BUTT)
@@ -296,18 +347,18 @@ SUBSYSTEM_DEF(pornhud)
 			if(CS_BELLY)
 				if(belly_visible && !CHECK_BITFIELD(preflag, HIDE_BELLY))
 					all_images += belly
-	if(undershirt && shirt_visible)
-		all_images += undershirt
-	if(underpants && underpants_visible)
-		all_images += underpants
-	if(socks && socks_visible)
-		all_images += socks
+	// if(undershirt && shirt_visible)
+	// 	all_images += undershirt
+	// if(underpants && underpants_visible)
+	// 	all_images += underpants
+	// if(socks && socks_visible)
+	// 	all_images += socks
 	if(tail && tail_visible)
 		all_images += tail
-	if(wings && wings_visible)
-		all_images += wings
-	for(var/image/img in all_images)
-		img.loc = myowner // just to be sure they're stuck to the player like a fridge magnet
+	// if(wings && wings_visible)
+	// 	all_images += wings
+	// for(var/image/img in all_images)
+	// 	img.loc = myowner // just to be sure they're stuck to the player like a fridge magnet
 	return all_images
 
 /datum/genital_images/proc/flush_genitals()
@@ -318,6 +369,7 @@ SUBSYSTEM_DEF(pornhud)
 	balls = list()
 	vag = list()
 	belly = list()
+	set_changed()
 	return TRUE
 
 /datum/genital_images/proc/flush_undies()
@@ -327,5 +379,6 @@ SUBSYSTEM_DEF(pornhud)
 	socks = null
 	return TRUE
 
-
-
+/datum/genital_images/proc/set_changed()
+	shown_to.Cut()
+	SSpornhud.request_genital_broadcast(src)

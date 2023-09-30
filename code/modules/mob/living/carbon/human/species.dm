@@ -922,6 +922,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
+				accessory_overlay.loc = H
+				accessory_overlay.layer = H.layer + 3
 				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay) // oh baby gimme that tail~
 			standing += accessory_overlay
 

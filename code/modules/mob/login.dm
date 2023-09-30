@@ -20,7 +20,7 @@
 	if(loc)
 		loc.on_log(TRUE)
 
-	SSpornhud.update_single(src)
+	SSpornhud.request_every_genital(src)
 
 	//readd this mob's HUDs (antag, med, etc)
 	reload_huds()
