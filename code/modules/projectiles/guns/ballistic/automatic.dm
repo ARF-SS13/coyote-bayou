@@ -294,6 +294,56 @@
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
+
+
+/* * * * * * * * * * *
+ * 10mm Magnetic
+ * Baseline 10mm SMG (cosmetic only)
+ * 10mm
+ * Slower firing
+ * Heavier recoil
+ * One-handed
+ * No akimbo
+ * Snowflake rarity
+ * * * * * * * * * * */
+/obj/item/gun/ballistic/automatic/smg/smg10mm/magnetic
+	name = "Argonaut Ferromagnetic Pistol"
+	desc = "a damaged, juryrigged machine pistol prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "magmp"
+	item_state = "caplaser"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = SMG_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+	fire_sound = 'sound/weapons/magpistol.ogg'
+	can_scope = FALSE
+	casing_ejector = TRUE
+	weapon_special_component = null
+
+/obj/item/gun/ballistic/automatic/smg/smg10mm/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
+	BB.name = "ferromagnetic bullet"
+	BB.icon = 'icons/obj/projectiles.dmi'
+	BB.icon_state = "magjectile"
+	BB.pass_flags = PASSTABLE
+	BB.light_range = 5
+	BB.damage_type = BRUTE
+	BB.flag = "bullet"
+	BB.impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	BB.light_color = LIGHT_COLOR_RED
+	BB.is_reflectable = TRUE
+	BB.hitsound = 'sound/weapons/elecfire.ogg'
+	BB.hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+
+
 /* * * * * * * * * * *
  * Worn 10mm SMG
  * Poor Baseline 10mm SMG
