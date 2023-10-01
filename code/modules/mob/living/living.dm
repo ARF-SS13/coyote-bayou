@@ -151,6 +151,16 @@
 				pass_flags &= ~PASSMOB
 			return TRUE
 
+		//This condition checks if the other person is leaning against a wall or not. if positive the person leaning will be perceived with a density of "0"		
+		if((abs(L.pixel_x) >= 16) || (abs(L.pixel_y) >= 16))
+			var/origtargetloc = L.loc
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
+
 	//CIT CHANGES START HERE - makes it so resting stops you from moving through standing folks without a short delay
 		if(!CHECK_MOBILITY(src, MOBILITY_STAND) && CHECK_MOBILITY(L, MOBILITY_STAND))
 			var/origtargetloc = L.loc
