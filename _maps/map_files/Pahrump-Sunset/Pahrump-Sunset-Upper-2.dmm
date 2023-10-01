@@ -5772,6 +5772,15 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"PI" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "PL" = (
 /obj/structure/sign/departments/restroom{
 	pixel_x = 32
@@ -5930,6 +5939,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
+"Rl" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/wasteland)
 "Rm" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/validball_spawner,
@@ -8807,8 +8824,8 @@ hm
 hm
 hm
 hm
-hm
-hm
+rm
+rm
 JZ
 Zv
 BN
@@ -9064,8 +9081,8 @@ hm
 hm
 hm
 hm
-hm
-LV
+rm
+Rl
 qv
 iV
 Qh
@@ -9321,8 +9338,8 @@ hm
 hm
 hm
 hm
-hm
-NC
+rm
+PI
 rm
 rm
 rm
