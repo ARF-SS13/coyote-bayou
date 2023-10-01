@@ -248,6 +248,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
 		/obj/item/gun/ballistic/revolver/Lemat = 2,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
+		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns

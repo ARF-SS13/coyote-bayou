@@ -164,6 +164,7 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
+	new /obj/item/gun/ballistic/automatic/aksmol/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -1139,22 +1140,20 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/repeater/customvolcanictox(src)
 	new /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom(src)
 	new /obj/item/ammo_box/c45(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
 	ckeywhitelist = list("seermankhajiit00", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle(src)
 	new /obj/item/storage/box/hobo_tox(src)
+	new /obj/item/gun/ballistic/automatic/fnfal/ak47/custom(src)
 	new /obj/item/pet_carrier/paws(src)
-	new /obj/item/reagent_containers/food/snacks/peanut_butter(src)
-	new /obj/item/gun/ballistic/revolver/Lemat/custom (src)
+	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
 
 /datum/gear/donator/kits/seermankhajiit003
 	name = "The Latos Agent"
@@ -1162,8 +1161,8 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/fastlmg/custom(src)
-	new /obj/item/ammo_box/a556(src)
+	new /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/tox(src)
+	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)

@@ -1703,21 +1703,19 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return LAZYACCESS(first_last, 1)
 	return rname
 
-/proc/ckey2mob(ckey)
+/proc/ckey2mob(ckey) // I know its already a proc up in this document, mine's better
 	var/client/clint = LAZYACCESS(GLOB.directory, ckey)
 	if(!clint)
 		return null
 	return clint.mob
 
-/// Takes in a ckey, a mob, client, weakref, or even prefs, and finds the prefs, one way or another
+/// Takes in a ckey, a mob, client, or even prefs, and finds the prefs, one way or another
 /proc/extract_prefs(something) // one way or another, im getting your prefs (to break)
 	if(isclient(something))
 		var/client/clint = something
 		return clint.prefs
 	if(istype(something, /datum/preferences)) // prefs? good, i'll take it
 		return something
-	if(isweakref(something))
-		something = GET_WEAKREF(something)
 	if(ismob(something))
 		var/mob/mobby = something
 		if(!mobby.client)
@@ -1730,6 +1728,21 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(!clont)
 			return // probably... disconnected? v0v
 		return clont.prefs
+	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+
+/// Takes in a mob, client, or even prefs, and returns their ckey
+/proc/extract_ckey(something) // one way or another, im getting your ckey (to break)
+	if(istext(something))
+		return something
+	if(isclient(something))
+		var/client/clint = something
+		return clint.ckey
+	if(istype(something, /datum/preferences)) // prefs? good, i'll take it
+		var/datum/preferences/P = something
+		return P.parent.ckey
+	if(ismob(something))
+		var/mob/mobby = something
+		return mobby.ckey
 	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Makes a gaussian distribution, returning a positive integer

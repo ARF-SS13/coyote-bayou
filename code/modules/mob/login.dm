@@ -1,5 +1,6 @@
 /mob/Login()
 	GLOB.player_list |= src
+	GLOB.has_played_list |= src
 	lastKnownIP	= client.address
 	computer_id	= client.computer_id
 	log_access("Mob Login: [key_name(src)] was assigned to a [type]")
@@ -20,7 +21,12 @@
 	if(loc)
 		loc.on_log(TRUE)
 
-	SSpornhud.update_single(src)
+	client.loadCockWhitelist()
+
+	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
+	H.add_hud_to(src)
+	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
+	tail_hud.add_hud_to(src)
 
 	//readd this mob's HUDs (antag, med, etc)
 	reload_huds()

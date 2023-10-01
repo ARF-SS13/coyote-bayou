@@ -137,6 +137,13 @@
 	p_types = list(P_TYPE_ICE, P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
+/mob/living/simple_animal/pokemon/blastoise
+	name = "blastoise"
+	icon_state = "blastoise"
+	icon_living = "blastoise"
+	icon_dead = "blastoise_d"
+	p_types = list(P_TYPE_WATER)
+
 /mob/living/simple_animal/pokemon/braixen
 	name = "braixen"
 	icon_state = "braixen"
@@ -157,6 +164,15 @@
 	icon_state = "charmander"
 	icon_living = "charmander"
 	icon_dead = "charmander_d"
+	p_types = list(P_TYPE_FIRE)
+	mob_size = MOB_SIZE_SMALL
+	p_traits = list(P_TRAIT_RIDEABLE)
+
+/mob/living/simple_animal/pokemon/charizard
+	name = "charizard"
+	icon_state = "charizard"
+	icon_living = "charizard"
+	icon_dead = "charizard_d"
 	p_types = list(P_TYPE_FIRE)
 	mob_size = MOB_SIZE_SMALL
 	p_traits = list(P_TRAIT_RIDEABLE)

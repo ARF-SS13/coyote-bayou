@@ -4,7 +4,7 @@
 // Relevant Meme: https://youtu.be/8B8On0__AJs
 // Unrelated meme: https://youtu.be/2SBMcyZdP0k
 
-#define MAX_STATUS_LEN 86
+
 
 /client/who()
 	set name = "Who"
@@ -95,40 +95,3 @@
 	if(_adminStatus)
 		entry += " (<A HREF='?_src_=holder;[HrefToken()];adminmoreinfo=\ref[C.mob]'>?</A>)"
 	return entry
-
-
-/client
-	var/statusMessage = null // Bruh I did the prefix cause I'm that used to working in C++ STILL REEEE
-
-/mob
-	var/statusMessage = null // Shouldn't be explicitly written to, this is a backup copy of the client incase they disconnect
-
-/mob/Login()
-	. = ..()
-	var/const/defaultStatusMessage = span_green("Bored, say hi!")
-	if(client) // cursed way to get around disconnects and mob changes.
-		if(length(statusMessage))
-			client.statusMessage = statusMessage
-		else
-			if(length(client.statusMessage))
-				statusMessage = client.statusMessage
-			else
-				client.statusMessage = defaultStatusMessage
-				statusMessage = defaultStatusMessage
-
-// Make the verb here.
-/mob/verb/SetStatusMsg()
-	set name = "Set Status"
-	set category = "OOC"
-
-	if(!client)
-		return
-	
-	statusMessage = null // Resetting just in case <3
-	client.statusMessage = null
-
-	var/input = stripped_input(usr,"This adds a short message on the end of your record in who. Useful for informing if you're in the mood to RP. (Char Limit: [MAX_STATUS_LEN])",max_length=MAX_STATUS_LEN)
-	if(length(input))	
-		statusMessage = input
-		client.statusMessage = input
-		to_chat(usr, "Your status message is now: [input]")
