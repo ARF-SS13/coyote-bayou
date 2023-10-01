@@ -48,6 +48,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	/// When tripped, when do we stop trying to spawn things?
 	var/spawn_until = 0
 	COOLDOWN_DECLARE(spawner_cooldown)
+	var/covered = FALSE
 
 /datum/component/spawner/Initialize(
 		_mob_types,
@@ -108,8 +109,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
-	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/stop_spawning)
-	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/start_spawning)
+	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/coverme)
+	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/uncoverme)
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
 	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
 	if(istype(parent, /obj/structure/nest))
@@ -191,6 +192,16 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	start_spawning()
 
 /// Something told us to restart spawning
+/datum/component/spawner/proc/uncoverme()
+	covered = FALSE
+	start_spawning()
+
+/// Something told us to restart spawning
+/datum/component/spawner/proc/coverme()
+	covered = TRUE
+	stop_spawning()
+
+/// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
 	START_PROCESSING(SSspawners, src)
 
@@ -250,6 +261,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// Basic checks to see if we can spawn something
 /datum/component/spawner/proc/try_to_spawn()
+	if(covered)
+		return FALSE
 	if(COOLDOWN_TIMELEFT(src, spawner_cooldown))
 		return FALSE
 	if(!check_spawned_mobs())
