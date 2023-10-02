@@ -220,6 +220,7 @@
 	throwforce = 10 // Same.
 	fire_sound = 'sound/weapons/pulse2.ogg'
 	draw_time = GUN_DRAW_QUICK
+	is_kelpwand = TRUE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)

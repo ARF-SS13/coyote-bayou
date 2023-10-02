@@ -1492,6 +1492,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
 
+/datum/quirk/wandproficient
+	name = "Wand Proficient"
+	desc = "You know how to use magic wands!"
+	value = 0
+	category = "Ranged Quirks"
+	mechanics = "You can use magic wands."
+	// conflicts = list(
+	// )
+	mob_trait = TRAIT_WAND_PROFICIENT
+	gain_text = span_notice("You feel magic flowing through your veins!")
+	lose_text = span_danger("The magic within you fades away.")
+	locked = FALSE
+
 /datum/quirk/playdead
 	name = "Play Dead"
 	desc = "You're good at acting!"
