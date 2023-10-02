@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(pornhud)
 	var/list/gunts_changed = list()
 	var/list/currentrun = list()
 	var/list/guntrun = list()
-	var/image_cache_max = 64
+	var/image_cache_max = 512
 	var/max_whitelist_search = 15
 	var/debug_force_broadcast_update = TRUE
 	var/debug_force_request_update = TRUE
@@ -211,9 +211,12 @@ SUBSYSTEM_DEF(pornhud)
 			return FALSE
 	
 // add a part to the list
-/datum/genital_images/proc/add_part(part, list/images = list())
+/datum/genital_images/proc/add_part(part, list/images)
 	if(!islist(images))
-		images = list()
+		if(isnull(images))
+			images = list()
+		else
+			images = list(images)
 	var/list/images2change
 	switch(part)
 		if(PHUD_BUTT)
