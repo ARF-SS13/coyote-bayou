@@ -2370,10 +2370,14 @@
 	},
 /area/f13/wasteland)
 "bUy" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill"
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
 	},
-/obj/structure/spacevine,
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 1
+	},
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/nash)
 "bUU" = (
@@ -23994,7 +23998,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland/nash)
 "tpK" = (
 /turf/closed/wall/f13/store,
@@ -41279,10 +41283,10 @@ dbf
 qnC
 qnC
 qnC
-qnC
-qnC
-qnC
-bul
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -41536,10 +41540,10 @@ poH
 nEl
 nEl
 nEl
-wky
-qnC
-qnC
-bul
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -41793,10 +41797,10 @@ xiE
 rHR
 rHR
 fSd
-oeP
-qnC
-qnC
-bul
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -42050,10 +42054,10 @@ hHi
 rHR
 aHY
 fSd
-oeP
-qnC
-qnC
-bul
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -42307,10 +42311,10 @@ fSd
 ccL
 slU
 gYD
-oeP
-qnC
-qnC
-bul
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -42565,9 +42569,9 @@ vEu
 slU
 sEo
 hHi
-wky
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -42822,9 +42826,9 @@ fRC
 fRC
 ieu
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -43079,9 +43083,9 @@ fRC
 bfn
 pfJ
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -43336,9 +43340,9 @@ izv
 sLY
 ieu
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -43593,9 +43597,9 @@ hHi
 hHi
 xel
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -43850,9 +43854,9 @@ hHi
 qqx
 hHi
 hHi
-bUy
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -44107,9 +44111,9 @@ hHi
 hHi
 hHi
 hHi
-bUy
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -44364,9 +44368,9 @@ hHi
 hHi
 oqk
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -44621,9 +44625,9 @@ hHi
 hHi
 oqk
 hHi
-oeP
-qnC
-bul
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -44871,16 +44875,16 @@ hHi
 oeP
 qnC
 qnC
-amZ
-gtb
-gtb
-gtb
-pRA
-gtb
-gtb
-vSo
-qnC
-bul
+gWO
+hHi
+hHi
+hHi
+qqx
+hHi
+hHi
+hHi
+hHi
+ecJ
 ftt
 ftt
 ftt
@@ -45128,15 +45132,15 @@ rTu
 gCv
 ehs
 ehs
-ehs
-ehs
-ehs
-ehs
-ehs
-ehs
-ehs
-ehs
-ehs
+bUy
+rrx
+rrx
+rrx
+rrx
+rrx
+rrx
+rrx
+rrx
 tpu
 ftt
 ftt

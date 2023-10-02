@@ -12826,16 +12826,6 @@
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/abandoned)
-"aRz" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
-/obj/structure/towel_rack{
-	pixel_y = 27
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/building/abandoned)
 "aRA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -14237,9 +14227,9 @@
 	color = "#a98c5d";
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/wild_plant/flower/pink_three,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/closed/wall/f13/wood/house/clean{
+	color = "71797E"
+	},
 /area/f13/building/abandoned)
 "aWd" = (
 /obj/machinery/light/small{
@@ -19168,11 +19158,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"bpl" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/wild_plant/flower/blue_two,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/building/abandoned)
 "bpn" = (
 /obj/structure/chair/left{
 	dir = 4
@@ -20769,9 +20754,6 @@
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "byY" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -31359,51 +31341,96 @@
 	},
 /area/f13/wasteland/city)
 "dFw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/table/wood,
-/obj/item/clothing/under/swimsuit/red{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/red{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/red{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/red{
-	pixel_y = 8;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/striped{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/swimsuit/striped{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/swimsuit/striped{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/swimsuit/striped{
-	pixel_y = 7;
-	pixel_x = 8
-	},
-/obj/item/clothing/under/swimsuit/white,
-/obj/item/clothing/under/swimsuit/white,
-/obj/item/clothing/under/swimsuit/white,
-/obj/item/clothing/under/swimsuit/white,
-/obj/item/clothing/under/swimsuit/white,
 /obj/item/clothing/shoes/f13/swimfins,
 /obj/item/clothing/shoes/f13/swimfins,
 /obj/item/clothing/shoes/f13/swimfins,
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/swimsuit/blue{
+	pixel_y = 10;
+	pixel_x = 5
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/black{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/earth{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/red{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/striped{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/clothing/under/swimsuit/white,
+/obj/item/clothing/under/swimsuit/white,
+/obj/item/clothing/under/swimsuit/white,
+/obj/item/clothing/under/swimsuit/white,
+/obj/item/clothing/under/swimsuit/white,
+/obj/item/clothing/under/swimsuit/white,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/abandoned)
 "dFy" = (
@@ -36314,10 +36341,6 @@
 	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common,
-/area/f13/building/abandoned)
-"eMz" = (
-/obj/structure/flora/tree/cherryblossom3,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "eMB" = (
 /obj/structure/simple_door/room,
@@ -43744,22 +43767,6 @@
 /obj/structure/table,
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
-/area/f13/building/abandoned)
-"gym" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/obj/structure/mineral_door/paperframe{
-	color = "71797E"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/abandoned)
 "gyn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -54219,15 +54226,7 @@
 	},
 /area/f13/building/abandoned)
 "iOq" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 4
-	},
 /turf/closed/wall/f13/wood/house/clean{
 	color = "71797E"
 	},
@@ -56672,17 +56671,6 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"jtQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/turf/closed/wall/f13/wood/house/clean{
-	color = "71797E"
-	},
-/area/f13/building/abandoned)
 "jtV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -64245,10 +64233,6 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
-"lgi" = (
-/obj/structure/flora/wild_plant/flower/blue,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "lgk" = (
 /obj/structure/table/booth,
@@ -79312,11 +79296,6 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "owx" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 14
-	},
 /obj/structure/mineral_door/paperframe{
 	color = "71797E"
 	},
@@ -79343,6 +79322,16 @@
 /obj/item/toy/poolnoodle/blue,
 /obj/item/toy/poolnoodle/blue,
 /obj/item/toy/poolnoodle,
+/obj/item/clothing/under/shorts/green,
+/obj/item/clothing/under/shorts/green,
+/obj/item/clothing/under/shorts/brownbshorts,
+/obj/item/clothing/under/shorts/brownbshorts,
+/obj/item/clothing/under/shorts/blue,
+/obj/item/clothing/under/shorts/blue,
+/obj/item/clothing/under/shorts/purple,
+/obj/item/clothing/under/shorts/purple,
+/obj/item/clothing/under/shorts/red,
+/obj/item/clothing/under/shorts/red,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/abandoned)
 "owM" = (
@@ -83445,14 +83434,11 @@
 	},
 /area/f13/wasteland)
 "psC" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
+/obj/structure/curtain{
+	color = "#87A392";
+	layer = 5
 	},
-/turf/closed/wall/f13/wood/house/clean{
-	color = "71797E"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/abandoned)
 "psD" = (
 /obj/structure/flora/grass/wasteland{
@@ -88146,12 +88132,9 @@
 "qwS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
+/turf/closed/wall/f13/wood/house/clean{
+	color = "71797E"
 	},
-/obj/structure/flora/wild_plant/flower/orange,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "qwT" = (
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -100405,6 +100388,7 @@
 /obj/structure/flora/chomp/bush2{
 	color = "#338833"
 	},
+/obj/structure/flora/wild_plant/flower/orange,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "tiK" = (
@@ -102778,7 +102762,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "tIq" = (
-/obj/structure/flora/wild_plant/flower/purple,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/structure/flora/tree/cherryblossom3,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "tIr" = (
@@ -102990,95 +102978,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland/city)
-"tKM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/item/clothing/under/swimsuit/black{
-	pixel_y = 9;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/black{
-	pixel_y = 9;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/black{
-	pixel_y = 9;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/black{
-	pixel_y = 9;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/blue{
-	pixel_y = 10;
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/earth{
-	pixel_y = -2;
-	pixel_x = -7
-	},
-/obj/item/clothing/under/swimsuit/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/under/swimsuit/green{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/f13/swimfins,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/building/abandoned)
 "tKP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -105463,14 +105362,6 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland)
-"uoJ" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -14
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/building/abandoned)
 "uoU" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -133095,7 +132986,7 @@ gdr
 fVO
 sSP
 caB
-aNO
+tIq
 utd
 xiS
 ybq
@@ -133354,7 +133245,7 @@ xtt
 caB
 aNO
 bvH
-hft
+jhE
 hdO
 vRK
 lhz
@@ -133610,9 +133501,9 @@ rij
 lff
 caB
 aWc
-tIq
-tiB
-lgi
+tGS
+tGS
+tGS
 vRK
 bzq
 pTW
@@ -133867,9 +133758,9 @@ dJr
 dNK
 byY
 qwS
-bpl
-hft
-eMz
+blT
+blT
+tGS
 gAn
 lyB
 mfc
@@ -134380,9 +134271,9 @@ qqy
 oyC
 sQt
 ltt
-jtQ
-dFw
-tKM
+iOq
+blT
+blT
 tGS
 vRK
 rCW
@@ -134634,10 +134525,10 @@ fvw
 aWK
 bwy
 oyC
-aRz
 blT
 blT
-uoJ
+blT
+blT
 blT
 blT
 tGS
@@ -136174,7 +136065,7 @@ gos
 ivb
 bDN
 aWK
-gym
+owx
 blT
 blT
 blT
@@ -136695,7 +136586,7 @@ tGS
 tGS
 dCK
 blT
-blT
+dFw
 tGS
 gAn
 pKW
