@@ -379,7 +379,6 @@ SUBSYSTEM_DEF(pornhud)
 		if(!flat)
 			flat = image('icons/mob/hud.dmi', myowner, "")
 			flat.appearance_flags = RESET_COLOR|RESET_TRANSFORM
-			flat.transform = myowner.transform
 			imgsformatted["[I.layer]"] = flat
 		flat.overlays += I
 	cache_images(imgsformatted)
