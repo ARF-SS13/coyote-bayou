@@ -8133,12 +8133,7 @@
 /area/f13/building)
 "dOG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasementboss";
-	max_integrity = 1000000;
-	name = "shutters";
-	obj_integrity = 1000000
-	},
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9527,17 +9522,6 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/building/museum)
-"eJI" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasementboss";
-	max_integrity = 1000000;
-	name = "shutters";
-	obj_integrity = 1000000
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "eJK" = (
 /obj/structure/chair/bench,
 /obj/effect/decal/cleanable/dirt{
@@ -39437,12 +39421,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
 "xZu" = (
-/obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	max_integrity = 1000000;
-	name = "shutters";
-	obj_integrity = 1000000
-	},
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -93034,7 +93013,7 @@ xZu
 biC
 ciC
 eUw
-eJI
+xZu
 vBk
 saE
 lfB
