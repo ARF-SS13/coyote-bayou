@@ -1115,6 +1115,6 @@
 	category = "Lifepath Quirks"
 	mechanics = "Face coverings will not hide your identity from others, including flavor text and species"
 	conflicts = list()
-	mob_trait = TRAIT_NOHIDE
+	mob_trait = TRAIT_NOHIDEFACE
 	gain_text = span_notice("You feel seen!")
 	lose_text = span_notice("You feel hidden")
