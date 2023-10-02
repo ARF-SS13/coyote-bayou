@@ -106,3 +106,103 @@
 	item_state = "locker"
 	max_charges = 6
 	recharge_rate = 10 SECONDS
+
+/////////////////////////////////////
+//KELPRUNNER'S MAGIC WEAPONS
+//Staves define your playstyle
+//If this doesn't get too big, just define projectile/damage here for simplicity's sake?
+/////////////////////////////////////
+
+// *Note to delete later: Staff types should be Lightning (Hitscan sniper), Magic Missile (Shotgun), Healing (Upgr. over wand), Fire (RPG?), Acid Spray (SMG)
+
+/obj/item/gun/magic/staff/kelpmagic
+	name = "Kelp's Stave of Templating"
+	desc = "If you can see this, call a coder! Or panic."
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic
+	max_charges = 50
+	recharge_rate = 1 SECONDS
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY // Staves can be fired one-handed but should be held with two. Akimbo bad.
+	w_class = WEIGHT_CLASS_BULKY // Staves are ALWAYS Bulky. There are no exceptions.
+	force = 20 // It's a bigger stick.
+	force_unwielded = 20
+	force_wielded = 30 // It *is* a bigger stick...
+	throwforce = 20
+	fire_sound = 'sound/weapons/pulse2.ogg'
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	// NOTE: max_charges is the number of shots, recharge_rate is time to recharge a single charge.
+
+/* This segment is commented out because the original template is over in wand.dm; this is here just for ease of reference
+/obj/item/ammo_casing/magic/kelpmagic
+	projectile_type = /obj/item/projectile/magic/kelpmagic
+
+/obj/item/projectile/magic/kelpmagic
+	name = "template projectile"
+	icon_state = "arcane_barrage"
+	damage = 0
+	damage_type = BURN
+	nodamage = 0
+	flag = "magic"
+	hitsound = 'sound/weapons/sear.ogg'
+	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+	recoil = BULLET_RECOIL_LASER
+*/
+
+/****************/
+//Staff of Magic Missile//
+//Basic Mage's Staff - Shotgun adjacent (burst fire because I can't figure out true scattershot)/
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/magicmissile
+	name = "staff of magic missile"
+	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
+	icon_state = "staffmm"
+	max_charges = 30
+	recharge_rate = 10 SECONDS
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
+	force_wielded = 37 // Practical all around! May change later.
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("attacked", "slashed", "cut")
+	sharpness = SHARP_EDGED
+	init_firemodes = list(
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
+	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/advanced
+
+/obj/item/projectile/magic/kelpmagic/magicmissile/advanced
+	name = "greater magic missile"
+	icon_state = "arcane_barrage"
+	damage = 25 // same as the tribeam
+	damage_type = BURN
+	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+
+/****************/
+//Staff of Fireball//
+//The most dreaded spell, now on a stick - RPG adjacent/
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/fireball
+	name = "staff of fireball"
+	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff. For some reason, however, you feel like it might be better against walls and sapient targets than anything else."
+	icon_state = "firestaff"
+	max_charges = 1
+	recharge_rate = 2 MINUTES
+	fire_sound = 'sound/magic/fireball.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/fireball
+
+/****************/
+//Staff of Lightning//
+//Pure power and devastation - DMR or Sniper adjacent/
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/lightning
+	name = "staff of lightning"
+	desc = ""
+	icon_state = "staffmm"

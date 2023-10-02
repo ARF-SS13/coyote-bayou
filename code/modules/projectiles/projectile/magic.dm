@@ -464,7 +464,7 @@
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"
 	icon_state = "fireball"
-	damage = 29
+	damage = 75
 	damage_type = BRUTE
 	nodamage = 0
 

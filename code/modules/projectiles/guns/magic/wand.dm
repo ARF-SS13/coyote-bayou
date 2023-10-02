@@ -269,7 +269,7 @@
 
 /obj/item/gun/magic/wand/kelpmagic/magicmissile/improved
 	name = "wand of magic missile"
-	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells, Magic Missile; it's a simple spell for more practical practitioners."
+	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
 	icon_state = "magicmissile"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
 	max_charges = 25
