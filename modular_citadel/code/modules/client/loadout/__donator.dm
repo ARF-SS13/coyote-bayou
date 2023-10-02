@@ -1537,7 +1537,7 @@
 
 /datum/gear/donator/kits/rattles
 	name = "Box of Rattlers"
-	path = /obj/item/storage/box/large/custom_kit/kelprunner
+	path = /obj/item/storage/box/large/custom_kit/rattles
 	ckeywhitelist = list("sabals")
 
 /obj/item/storage/box/large/custom_kit/rattles/PopulateContents()
