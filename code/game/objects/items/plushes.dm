@@ -896,3 +896,14 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	if(!Kisser)
 		return
 	plushie_absorb(Kisser)
+
+// Bayou plushes I guess?
+
+/obj/item/toy/plush/rattler
+	name = "Rattles Jr."
+	desc = "It's your friendly neighborhood merchant, Rattles! It looks like he's been turned into a marketable plushie."
+	icon_state = "rattles"
+	item_state = "plushie_lizard"
+	attack_verb = list("hissed", "rattled")
+	squeak_override = list('sound/creatures/rattle.ogg' = 1)
+

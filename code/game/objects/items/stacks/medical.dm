@@ -455,11 +455,11 @@
 /obj/item/stack/medical/bruise_pack/lick/touch
 	name = "magic healing"
 	singular_name = "magic healing"
-	desc = "A mystical source of healing that draws from an unknown source of power to sooth mild wounds."
+	desc = "A mystical source of healing that draws from an unknown source of power to soothe mild wounds."
 	too_dry = "Your well of magical energy feels dry. A break will help. Drinking some water would help too."
 	third_person_verb = "touching"
 	action_verb = "touch"
-	action_verb_2 = "magically sooth"
+	action_verb_2 = "magically soothe"
 	end_sound = 'sound/effects/healingtouch.ogg'
 
 /obj/item/stack/medical/bruise_pack/lick/tend

@@ -706,7 +706,7 @@
 	desc = "By the Nine- Wait, wrong game. One way or another you can lay on hands."
 	value = 0
 	category = "Healer Quirks"
-	mechanics = "Your touch has a mild healing effect on burns and bruises. Use *touch to sooth the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+	mechanics = "Your touch has a mild healing effect on burns and bruises. Use *touch to soothe the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
 	conflicts = list()
 	mob_trait = TRAIT_HEAL_TOUCH
 	gain_text = span_notice("You feel a slight tingle in your hands.")
