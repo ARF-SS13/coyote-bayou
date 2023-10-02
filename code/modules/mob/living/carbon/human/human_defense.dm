@@ -348,16 +348,16 @@
 	take_overall_damage(brute_loss,burn_loss)
 
 	//attempt to dismember bodyparts
-	if(severity <= 2 || !bomb_armor)
-		var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
-		for(var/X in bodyparts)
-			var/obj/item/bodypart/BP = X
-			if(prob(15/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
-				BP.brute_dam = BP.max_damage
-				BP.dismember()
-				max_limb_loss--
-				if(!max_limb_loss)
-					break
+	// if(severity <= 2 || !bomb_armor)
+	// 	var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
+	// 	for(var/X in bodyparts)
+	// 		var/obj/item/bodypart/BP = X
+	// 		if(prob(15/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
+	// 			BP.brute_dam = BP.max_damage
+	// 			BP.dismember()
+	// 			max_limb_loss--
+	// 			if(!max_limb_loss)
+	// 				break
 
 
 /mob/living/carbon/human/blob_act(obj/structure/blob/B)
