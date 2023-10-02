@@ -1344,7 +1344,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))
 					target.visible_message("<span class='warning'>[target] can't hang onto [src]!</span>")
 					return
-				buckle_mob(target, TRUE, TRUE, FALSE, 1, 2, FALSE)
+				if(dna.features["taur"] != "None")  //if the mount is a taur, then everyone needs -1 hands to piggback ride.
+					buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)
+				else
+					buckle_mob(target, TRUE, TRUE, FALSE, 1, 2, FALSE)
 		else
 			visible_message("<span class='warning'>[target] fails to climb onto [src]!</span>")
 	else
