@@ -270,6 +270,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
 		var/name = avoid_assoc_duplicate_keys(M.name, namecounts)
+		if(findtext(ckey(name), M.ckey) || isnewplayer(M))
+			name = pick(GLOB.cow_names)
 
 		if(M.real_name && M.real_name != M.name)
 			name += " \[[M.real_name]\]"

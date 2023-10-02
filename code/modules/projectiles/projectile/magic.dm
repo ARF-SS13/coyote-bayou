@@ -598,3 +598,28 @@
 		M.adjustCloneLoss(-50)
 		M.adjustStaminaLoss(-0)
 		return
+
+/obj/item/projectile/magic/tenderwand
+	name = "mending bolt"
+	icon_state = "bruteheal"
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/tenderwand/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-10) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustBruteLoss(-5)
+		M.adjustFireLoss(-10)
+		M.adjustToxLoss(-20, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-10)
+		return
+

@@ -485,7 +485,7 @@ datum/crafting_recipe/tribalwar/bone
 /*Kelp's magic stuff*/
 
 /datum/crafting_recipe/magic
-	category = CAT_MAGIC	
+	category = CAT_MAGIC
 
 // Ritual dagger (tribal dagger + needed to make magic stuff)
 /datum/crafting_recipe/magic/ritualdagger
@@ -515,7 +515,7 @@ datum/crafting_recipe/tribalwar/bone
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 10,
 				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/stack/sheet/mineral/gold =1)
+				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 
@@ -527,8 +527,8 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/sheet/mineral/diamond =1,
-				/obj/item/stack/sheet/mineral/gold =1)
+				/obj/item/stack/sheet/mineral/diamond = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 // T1 Firebolt Wand (anti-elite sidarm)
@@ -539,7 +539,19 @@ datum/crafting_recipe/tribalwar/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/tool_upgrade/productivity/red_paint =1,
-				/obj/item/stack/sheet/mineral/diamond =1)
+				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/stack/sheet/mineral/diamond = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// T1 Mending Wand (basic omni heal, ~50 HP all categories every 5 minutes)
+
+/datum/crafting_recipe/magic/mendingwand
+	name = "Wand of Mending"
+	result = /obj/item/gun/magic/wand/kelpmagic/healwand
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
