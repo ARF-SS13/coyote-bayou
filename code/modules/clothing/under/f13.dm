@@ -177,6 +177,30 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/scavhunt
+	name = "Tattered scavenger outfit"
+	desc = "A torn and tattered wastelander's outfit. Dirtied, well worn, it's the perfect set of garnments for a scavenger in a metro tunnel system."
+	icon_state = "scavtorn"
+	item_state = "scavtorn"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/scavhunt/metro
+	name = "Tattered wastelander outfit"
+	desc = "A torn and tattered wastelander's outfit. Dirtied, well worn, it's the perfect set of garnments for a scavenger in a metro tunnel system."
+	icon_state = "scavwaste"
+	item_state = "scavwaste"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/ww2/japaneseuniforms
+	name = "Old Japanese uniform"
+	desc = "A cleanly pressed and brand new Japanese modeled uniform."
+	icon_state = "ww2jap"
+	item_state = "ww2jap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 //old fashioned uniforms
 
 /obj/item/clothing/under/f13/medievalgerman

@@ -435,6 +435,22 @@
 	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/scavengerstuff
+	name = "tattered scavenger outfit"
+	path = /obj/item/clothing/under/f13/scavhunt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/scavengerstuff/two
+	name = "tattered wastelander outfit"
+	path = /obj/item/clothing/under/f13/scavhunt/metro
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
 /datum/gear/uniform/russiancossack
 	name = "Cossack uniform"
 	path = /obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform

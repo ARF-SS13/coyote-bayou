@@ -184,6 +184,28 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
+
+/obj/item/gun/ballistic/automatic/c96auto
+	name = "Mauser M712"
+	desc = "A late model of the classic Mauser C96, featuring a removable box magazine and automatic fire select. takes 20 round stick magazines."
+	icon_state = "c96"
+	item_state = "p38"
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/fast
+	)
+
 /* * * * * * * * * * *
  * 14mm SMG
  * Heavy SMG

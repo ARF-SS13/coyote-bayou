@@ -381,7 +381,7 @@
 		"L1A1 rifle" = /obj/item/gun/ballistic/automatic/l1a1,
 		"Beretta M93R" = /obj/item/gun/ballistic/automatic/pistol/beretta/automatic,
 		"Skorpion 9mm" = /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion,
-		"Mauser M712" = /obj/item/gun/ballistic/automatic/pistol/type17/c96auto,
+		"Mauser M712" = /obj/item/gun/ballistic/automatic/c96auto,
 		"schmeisser classic" = /obj/item/gun/ballistic/automatic/pistol/schmeisser,
 		"mk.23 pistol" = /obj/item/gun/ballistic/automatic/pistol/mk23,
 		"trench shotgun" = /obj/item/gun/ballistic/shotgun/trench,

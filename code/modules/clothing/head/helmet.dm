@@ -211,8 +211,6 @@
 	desc = "A very warm and well made bearskin hat. The black fur is commonly seen across the world from Kuban cossacks to the Queen's guard. The hat is remarkable soft and very useful for the winter. Take out that sabre and charge forth!"
 	icon_state = "cossack"
 	item_state = "cossack"
-	name = "Base for kevlar helmets of various degrees"
-	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
 	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
 	armor = ARMOR_VALUE_LIGHT
 	dog_fashion = null
@@ -266,6 +264,14 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+/obj/item/clothing/head/kevlarhelmet/ww1steelgerman
+	name = "Outdated steel helmet"
+	desc = "An outdated steel helmet design. The design and documents long lost to time. Now and days it's used as a nifty biker helmet. Just this one needs some new paint."
+	icon_state = "oldgerm"
+	item_state = "oldgerm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
 /obj/item/clothing/head/kevlarhelmet/steelww2soviet
 	name = "WW2 Soviet helmet"
 	desc = "A outdated yet functional soviet helmet from WW2. It is a plain, cut, simple, and simple-designed helmet that offers the same protection as any else steel helmet."
@@ -276,9 +282,68 @@
 
 /obj/item/clothing/head/kevlarhelmet/pilotka
 	name = "Armored Pilotka hat"
-	desc = "A ballistic weaved pilotka hat. The hat originated during WW1 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and pre-war modern times."
+	desc = "A ballistic weaved pilotka hat. The hat originated during WW2 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and pre-war modern times."
 	icon_state = "pilotka"
 	item_state = "pilotka"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries
+	name = "Armored British Cap"
+	desc = "A ballistic weaved British WW1 cap. This cap was used before helmets were a thing in the Great war."
+	icon_state = "brittcap"
+	item_state = "brittcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries/german
+	name = "Armored East German Cap"
+	desc = "A ballistic weaved East German cap. This cap was modeled after the cap used by Imperial German soldiers in WW1, which was used before helmets were a thing in the Great war."
+	icon_state = "germcap"
+	item_state = "germcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries/french
+	name = "Armored French Cap"
+	desc = "A ballistic weaved French WW1 cap. This cap was used before helmets were a thing in the Great war."
+	icon_state = "frenchcap"
+	item_state = "frenchcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww2usa
+	name = "M1 battle helmet"
+	desc = "A M1 helmet. This helmet was extensively used by the U.S during WW2. It came with a bountiful set of options and customization features..like a painted cross! Or netting! Or even a nifty camo cover! This specific helmet has none of that. A clean cut made helmet, go out and make it well worn!"
+	icon_state = "m1helm"
+	item_state = "m1helm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww1russiancap
+	name = "Armored Imperial Russian cap"
+	desc = "A clean pressed and finely made Imperial Russian cap. This cap was used throughout the Great War by Imperial Russian officers and soldiers. Don the bayonets and get the trench whistle ready to blow, you're up!"
+	icon_state = "ww1rus"
+	item_state = "ww1rus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww237jap
+	name = "Old Japanese helmet"
+	desc = "A old styled Japanese helmet. This helmet was introduced during the old wars from Japan in the Pacific. Usually came with a flag. Pick a bush and wait patiently for the enemy to fall into your trap."
+	icon_state = "japhelm"
+	item_state = "japhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/rusadrian
+	name = "Russian Adrian helmet"
+	desc = "A Adrian helmet, but instead of it being French, it's Russian. Used by Russian during the Great War, these helmets were the go-to of the army. Donning a red star, it was more olive in appearance."
+	icon_state = "adrianir"
+	item_state = "adrianir"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -288,8 +353,6 @@
 	desc = "A Ushanka made with ballistic weave and kevlar in mind. Now you can rock the motherland's style while having that head of yours be protected. Still comfortable if not a shy bit more comfortable than your usual ushanka."
 	icon_state = "newushanka"
 	item_state = "newushanka"
-	name = "Base for kevlar helmets of various degrees"
-	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
 	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
 	armor = ARMOR_VALUE_LIGHT
 	dog_fashion = null
