@@ -21,6 +21,7 @@
 	var/diameter_ratio = COCK_DIAMETER_RATIO_DEF //0.25; check citadel_defines.dm
 	associated_has = CS_PENIS // for cockstring stuff
 	hide_flag = HIDE_PENIS // for hideflag stuff
+	pornhud_slot = PHUD_PENIS
 
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
