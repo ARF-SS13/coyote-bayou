@@ -222,7 +222,7 @@
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 
-/obj/item/hand_item/clawer/equipped(mob/user, slot)
+/obj/item/hand_item/biter/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	if(unarmed_adjusted)
@@ -345,7 +345,6 @@
 		if(HAS_TRAIT(user, TRAIT_STEELFIST))
 			H.dna.species.punchdamagehigh = 16
 			H.dna.species.punchdamagelow = 10
-      
 		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
 		H.dna.species.attack_verb = "punch"
 
