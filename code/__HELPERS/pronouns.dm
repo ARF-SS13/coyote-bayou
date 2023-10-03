@@ -223,14 +223,14 @@
 
 /mob/living/carbon/human/p_have(temp_gender)
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
 /mob/living/carbon/human/p_are(temp_gender)
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = (!HAS_TRAIT(src, TRAIT_NOHIDEFACE) && (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()

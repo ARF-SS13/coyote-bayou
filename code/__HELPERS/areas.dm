@@ -88,11 +88,15 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 
 /// Things that count as airtight for the purposes of blueprinting
 /// Cus some things block sight but arent airtight
-GLOBAL_LIST_INIT(room_sealers, typecacheof(
+GLOBAL_LIST_INIT(room_sealers, typecacheof(list(
 	/obj/structure/window,
 	/obj/machinery/door,
 	/obj/structure/simple_door,
-))
+	/obj/structure/fence,
+	/obj/structure/handrail,
+	/obj/structure/barricade,
+	/obj/structure/railing,
+)))
 
 // Gets an atmos isolated contained space
 // Tries to find a room within a given space, considering opaque/dense turfs and certain objects as walls

@@ -1535,6 +1535,20 @@
 	new /obj/item/storage/firstaid/emergency(src)
 	new /obj/item/defibrillator/compact(src)
 
+/datum/gear/donator/kits/rattles
+	name = "Box of Rattlers"
+	path = /obj/item/storage/box/large/custom_kit/rattles
+	ckeywhitelist = list("sabals")
+
+/obj/item/storage/box/large/custom_kit/rattles/PopulateContents()
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+	new /obj/item/toy/plush/rattler(src)
+
 /datum/gear/donator/kits/lucine3
 	name = "Gob-lyn Muderbox"
 	path = /obj/item/storage/box/large/custom_kit/lucine3

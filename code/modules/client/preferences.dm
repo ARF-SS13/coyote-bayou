@@ -79,9 +79,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
-	var/genital_whitelist = ""
-
 	var/uses_glasses_colour = 0
+
+	var/whoflags = DEFAULT_WHO_FLAGS
+	/// What who change things are they banned from?
+	/// here cus I dont know how bans work lol
+	var/lockouts = 0
 
 	//character preferences
 	var/real_name						//our character's name
@@ -667,17 +670,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Sound Indicator Preferences</h2>"
 			dat += "<b>Sound Ind. Enable:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><BR>"
-			dat += "<b>Sound Ind. Tone:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><BR>"
-			dat += "<b>Sound Ind. Speed:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><BR>"
-			dat += "<b>Sound Ind. Pitch:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><BR>"
-			dat += "<b>Sound Ind. Variance:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><BR>"
-			dat += "<b>Sound Ind. Volume:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><BR>"
-			dat += "<b>Sound Ind. Max Audible Words:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><BR>"
 			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
 
@@ -2182,26 +2179,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 // 			return bal + 33 //max 33 point regardless of how many prosthetics
 // 	return bal
 
-/datum/preferences/proc/update_genital_whitelist()
-	var/new_genital_whitelist = stripped_multiline_input_or_reflect(
-		parent, 
-		"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
-		any of the following, if their genitals are showing, you will be able to see them, regardless of your \
-		content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
-		Separate your entries with a comma!",
-		"Genital Whitelist",
-		genital_whitelist)
-	if(isnull(new_genital_whitelist))
-		to_chat(parent, "Never mind!!")
-		return
-	if(trim(new_genital_whitelist) == "" && trim(genital_whitelist) != "")
-		var/whoa = alert(usr, "Are you sure you want to clear your genital whitelist?", "Clear Genital Whitelist", "Yes", "No")
-		if(whoa == "No")
-			to_chat(parent, "Never mind!!")
-			return
-	genital_whitelist = new_genital_whitelist
-	to_chat(parent, span_notice("Updated your genital whitelist! It should kick in soon!"))
-	save_preferences()
+// /datum/preferences/proc/GetPositiveQuirkCount()
+// 	. = 0
+// 	for(var/q in char_quirks)
+// 		if(SSquirks.quirk_points[q] > 0)
+// 			.++
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2239,7 +2221,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
 	if(href_list["preference"] == "change_genital_whitelist")
-		update_genital_whitelist()
+		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+			user, 
+			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
+			"Genital Whitelist",
+			features["genital_whitelist"])
+		if(new_genital_whitelist == "")
+			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
+			if(whoathere == "Yes")
+				features["genital_whitelist"] = new_genital_whitelist
+		else if(!isnull(new_genital_whitelist))
+			features["genital_whitelist"] = new_genital_whitelist
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST

@@ -13,8 +13,8 @@
 	medhud.add_to_hud(src)
 	var/datum/atom_hud/data/client/clienthud = GLOB.huds[DATA_HUD_CLIENT]
 	clienthud.add_to_hud(src)
-	// var/datum/atom_hud/data/human/tail/tailhud = GLOB.huds[TAIL_HUD_DATUM]
-	// tailhud.add_to_hud(src)
+	var/datum/atom_hud/data/human/tail/tailhud = GLOB.huds[TAIL_HUD_DATUM]
+	tailhud.add_to_hud(src)
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
@@ -144,6 +144,16 @@
 				visible_message(span_notice("[src] is attempting to scoot closer to [L]."),
 					span_notice("You are now attempting to scoot closer to [L]."),
 					target = L, target_message = span_notice("[src] is attempting to scoot closer to you."))
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
+
+		//This condition checks if the other person is leaning against a wall or not. if positive the person leaning will be perceived with a density of "0"		
+		if((abs(L.pixel_x) >= 16) || (abs(L.pixel_y) >= 16))
+			var/origtargetloc = L.loc
 			var/src_passmob = (pass_flags & PASSMOB)
 			pass_flags |= PASSMOB
 			Move(origtargetloc)
@@ -1542,6 +1552,7 @@
 
 //Coyote Add
 /mob/living/proc/despawn()
+	SSwho.KillCustoms(ckey, "despawned")
 	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
 	for(var/i in contents)
 		var/atom/movable/content = i

@@ -255,3 +255,20 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 		"Burp 15" = 'modular_splurt/sound/voice/burps/belch15.ogg', */
 		"None" = null
 		))
+
+/// aight so you get to sit here under all the nonexistant burps and farts and think about what you did
+#define WHO_SHOWS_ME (1<<0)
+#define WHO_SHOWS_WHERE (1<<1)
+#define WHO_SHOWS_COORDS (1<<2)
+#define WHO_SHOWS_NAME (1<<3)
+#define WHO_SHOWS_ROLE (1<<4)
+#define WHO_SHOWS_POSE (1<<5)
+
+#define DEFAULT_WHO_FLAGS (WHO_SHOWS_ME | WHO_SHOWS_NAME | WHO_SHOWS_POSE | WHO_SHOWS_WHERE)
+
+#define WHO_LOCKOUT_NAME (1<<0)
+#define WHO_LOCKOUT_ROLE (1<<1)
+#define WHO_LOCKOUT_WHERE (1<<2)
+#define WHO_LOCKOUT_POSE (1<<3)
+
+#define MAX_STATUS_LEN 86

@@ -194,10 +194,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				ooc_notes += OOC_NOTE_TEMPLATE
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
-			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
-				S["feature_genital_whitelist"] >> genital_whitelist
-				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
-				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+			if(PMC_DAN_MESSED_UP_WHO_STUFF)
+				whoflags = DEFAULT_WHO_FLAGS
+				WRITE_FILE(S["whoflags"], whoflags)
+				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
+			//if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
+				//S["feature_genital_whitelist"] >> genital_whitelist
+				//WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				//current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -276,7 +280,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["pda_style"]			>> pda_style
 	S["pda_color"]			>> pda_color
 	S["pda_skin"]			>> pda_skin
-	S["genital_whitelist"]  >> genital_whitelist
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
@@ -295,6 +298,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
 	S["aghost_squelches"]		>> aghost_squelches
+
+	S["lockouts"]	>> lockouts // my bans!
+
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
@@ -345,11 +351,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	autostand			= sanitize_integer(autostand, 0, 1, initial(autostand))
 	cit_toggles			= sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
 	auto_ooc			= sanitize_integer(auto_ooc, 0, 1, initial(auto_ooc))
+	lockouts			= sanitize_integer(lockouts, 0, 16777215, 0) // uncomment before release
 	no_tetris_storage		= sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
 	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
-	genital_whitelist		= copytext(genital_whitelist, 1, MAX_MESSAGE_LEN)
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -459,8 +465,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
+	WRITE_FILE(S["lockouts"], lockouts)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
-	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -828,6 +834,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
+	S["whoflags"]	>> whoflags // WHo!
+
 	/// Vore stuff!
 	S["master_vore_toggle"]					>> master_vore_toggle
 	S["vore_smell"]							>> vore_smell
@@ -896,6 +904,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
 	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
 	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
+	//whoflags = initial(whoflags) // comment out before release
 
 	var/static/allow_custom_skintones
 	if(isnull(allow_custom_skintones))
@@ -1072,7 +1082,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
-	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, "Default")
+	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_sounds, "Default")
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
 	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "2-Average")
 	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "2-Average")
@@ -1348,6 +1358,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
 	cit_character_pref_save(S)
 
