@@ -1153,7 +1153,7 @@
 	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/gun/ballistic/automatic/fnfal/ak47/custom(src)
 	new /obj/item/pet_carrier/paws(src)
-	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/seermankhajiit003
 	name = "The Latos Agent"

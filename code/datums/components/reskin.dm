@@ -2039,6 +2039,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	chambered_state = "glock"
 	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	empty_state = "glock-e"
+
 /datum/reskin/gun/pistol/plock
 	skin = "Plock"
 	name = "Pink Glock Pistol"
@@ -2053,6 +2054,46 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	chambered_state = "plock"
 	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	empty_state = "plock-e"
+
+
+/datum/component/reskinnable/beretta9
+	use_original_skin = FALSE
+	skins = list(
+		"berettam9tan",
+		"berettam9",
+	)
+
+/datum/reskin/gun/pistol/berettam9tan
+	skin = "Tan M9"
+	name = "Tan M9 berretta"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is tan colored!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "tanm9"
+	item_state = "gun"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "tanm9"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "tanm9-e"
+
+
+/datum/reskin/gun/pistol/berettam9
+	skin = "Pristine M9"
+	name = "Pristine M9 berretta"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is steel and pristine looking!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "newm9"
+	item_state = "gun"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "newm9"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "newm9-e"
+
 
 //////////////////////////
 /// VOLCANIC PISTOL //////
@@ -2234,20 +2275,20 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "SCAR-L"
 	desc = "As an ancient modern rifle chambered in 5.56mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "unused556rifle"
-	item_state = "servicerifle"
+	icon_state = "scarl"
+	item_state = "scarl"
 	mob_overlay_icon = null
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	supported_sizes = list()
 	loaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	loaded_chambered_state = "unused556rifle"
+	loaded_chambered_state = "scarl"
 	loaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	loaded_empty_state = "unused556rifle"
+	loaded_empty_state = "scarl"
 	unloaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	unloaded_chambered_state = "unused556rifle-e"
+	unloaded_chambered_state = "scarl-e"
 	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	unloaded_empty_state = "unused556rifle-e"
+	unloaded_empty_state = "scarl-e"
 
 ////////////////////////////
 /// DEBUG SERVICE RIFLE ///

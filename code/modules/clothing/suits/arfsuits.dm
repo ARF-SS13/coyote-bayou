@@ -598,12 +598,53 @@
 
 
 /obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
-	name = "Dashing rainbow jacket"
-	desc = "A lovingly made jacket, adorn with rainbow colors and a thunderbolt symbol on the back of the jacket. If anything, this jacket makes you oh..I dunno..20% cooler?"
+	name = "Dashing rainbow Parka"
+	desc = "A lovingly made parka , adorn with rainbow colors and a thunderbolt symbol on the back of the parka. If anything, this parka makes you oh..I dunno..20% cooler?"
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "rainbowdash"
 	item_state = "rainbowdash"
+
+/obj/item/clothing/suit/armor/outfit/jacket/rarityjacket
+	name = "Pristine parka"
+	desc = "A lovingly made parka, adorn with white and purple coloring. The back of the parka has the symbol of three diamonds and some faint traces of glitter. Wearing this makes you feel like the fashionista of the wasteland while also looking but the most glamorous."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "rarecoat"
+	item_state = "rarecoat"
+
+/obj/item/clothing/suit/armor/outfit/jacket/flutterjacket
+	name = "Cuddly and soft parka"
+	desc = "A lovingly made parka, made with soft yellow, pink, and blue color palete in mind. This parka has a symbol of butterflies on the back and is very comfortable to wear. Wearing this is but the perfect occassion for someone who is shy but yet enduring. Go get em, tiger!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "shycoat"
+	item_state = "shycoat"
+
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trench
+	name = "Brown trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "britishtrench"
+	item_state = "britishtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
+	name = "Grey trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "germtrench"
+	item_state = "germtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trenchfrench
+	name = "Blue trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "frenchtrench"
+	item_state = "frenchtrench"
 
 /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
 	name = "Padded Soviet jacket"

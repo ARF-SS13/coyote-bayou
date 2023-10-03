@@ -266,7 +266,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine = 2,
 		/obj/item/gun/ballistic/automatic/armalite = 2,
 		/obj/item/gun/ballistic/automatic/l1a1 = 2,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 1,
+		/obj/item/gun/ballistic/automatic/c96auto = 1,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/gun/ballistic/shotgun/trench = 2,
