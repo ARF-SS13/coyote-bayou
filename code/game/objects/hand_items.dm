@@ -544,4 +544,32 @@
 // 	user.visible_message(span_alert("[user] was interrupted!"))
 // 	return LICK_CANCEL
 
+	/obj/item/hand_item/tackler
+	name = "gripper gloves"
+	desc = "Special gloves that manipulate the blood vessels in the wearer's hands, granting them the ability to launch headfirst into walls."
+	icon_state = "tackle"
+	item_state = "tackle"
+	//custom_premium_price = PRICE_EXPENSIVE
+	/// For storing our tackler datum so we can remove it after
+	var/datum/component/tackler
+	/// See: [/datum/component/tackler/var/stamina_cost]
+	var/tackle_stam_cost = 25
+	/// See: [/datum/component/tackler/var/base_knockdown]
+	var/base_knockdown = 1 SECONDS
+	/// See: [/datum/component/tackler/var/range]
+	var/tackle_range = 4
+	/// See: [/datum/component/tackler/var/min_distance]
+	var/min_distance = 0
+	/// See: [/datum/component/tackler/var/speed]
+	var/tackle_speed = 1
+	/// See: [/datum/component/tackler/var/skill_mod]
+	var/skill_mod = 1
+
+/obj/item/hand_item/tackler/equipped(mob/user, slot)
+	. = ..()
+	if(!ishuman(user))
+		return
+	if(slot == INV_SLOTBIT_GLOVES)
+		var/mob/living/carbon/human/H = user
+		tackler = H.AddComponent(/datum/component/tackler, stamina_cost=tackle_stam_cost, base_knockdown = base_knockdown, range = tackle_range, speed = tackle_speed, skill_mod = skill_mod, min_distance = min_distance)
 

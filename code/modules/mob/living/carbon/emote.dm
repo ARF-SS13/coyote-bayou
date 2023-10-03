@@ -283,6 +283,24 @@
 	else
 		qdel(claw)
 
+//Tackler//
+
+
+/datum/emote/living/carbon/tackle
+	key = "tackle"
+	key_third_person = "tackle"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/tackle/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to tackle!"))
+		return
+	var/obj/item/hand_item/tackler
+	if(user.put_in_active_hand(tackler))
+		to_chat(user, span_notice("You get ready to tackle!"))
+	else
+		qdel(tackler)
 
 //Shover//
 /datum/emote/living/carbon/shover
