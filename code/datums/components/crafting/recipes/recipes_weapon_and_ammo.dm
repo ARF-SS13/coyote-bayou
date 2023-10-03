@@ -1384,6 +1384,19 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/smg10mm/magnetic
+	name = "10mm Magnetic Pistol"
+	result = /obj/item/gun/ballistic/automatic/smg/smg10mm/magnetic
+	reqs = list(/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
+				/obj/item/stack/crafting/electronicparts = 1
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+
 //grease gun
 /datum/crafting_recipe/grease_gun
 	name = "m3a1 grease gun"
