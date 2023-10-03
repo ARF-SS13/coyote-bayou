@@ -586,6 +586,7 @@
 #define COMSIG_TRY_STORAGE_QUICK_EMPTY "storage_quick_empty"		//(loc) - returns bool - if loc is null it will dump at parent location.
 #define COMSIG_TRY_STORAGE_RETURN_INVENTORY "storage_return_inventory"	//(list/list_to_inject_results_into, recursively_search_inside_storages = TRUE)
 #define COMSIG_TRY_STORAGE_CAN_INSERT "storage_can_equip"			//(obj/item/insertion_candidate, mob/user, silent) - returns bool
+#define COMSIG_STORAGE_FLAGS "storage_flags"						//() - returns number
 
 // /datum/component/two_handed signals
 #define COMSIG_TWOHANDED_WIELD "twohanded_wield"						//from base of datum/component/two_handed/proc/wield(mob/living/carbon/user): (/mob/user)
@@ -614,6 +615,10 @@
 #define COMSIG_SPAWNER_ABSORB_MOB "spawner_unbirth" // (mob/living/absorbed_mob)
 #define COMSIG_SPAWNER_EXISTS "spawner_exists" // just returns if the spawner exists
 #define COMSIG_SPAWNER_SPAWN_NOW "spawner_now" // Spawns something now!
+
+/// GUN RELOAD SIGNALS!
+#define COMSIG_GUN_START_RELOAD "gun_start_reload" // (mob/user, )
+
 
 /// Blenderbrain signals
 /// Signals sent from the Persona Core to the host

@@ -35,6 +35,7 @@
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
 	var/randomize_ammo_count = TRUE //am evil~
+	var/kind = AMMO_BOX
 
 /obj/item/ammo_box/Initialize(mapload, ...)
 	. = ..()
@@ -377,6 +378,9 @@
 				icon_state = "[initial(icon_state)]-[stored_ammo.len]"
 
 //Behavior for magazines
+/obj/item/ammo_box/magazine
+	ammo_kind = AMMO_MAGAZINE
+
 /obj/item/ammo_box/magazine/proc/ammo_count()
 	return stored_ammo.len
 

@@ -88,6 +88,9 @@
 	var/limited_random_access_stack_position = 0					//If >0, can only access top <x> items
 	var/limited_random_access_stack_bottom_up = FALSE				//If TRUE, above becomes bottom <x> items
 
+	/// Extra flags for special kinds of storage, like is it a bandolier? maybe!
+	var/kind_flags = NONE
+
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -107,6 +110,8 @@
 	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM, .proc/signal_hide_attempt)
 	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL, .proc/close_all)
 	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .proc/signal_return_inv)
+
+	RegisterSignal(parent, COMSIG_STORAGE_FLAGS, .proc/signal_return_flags)
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/attackby)
 
@@ -573,6 +578,9 @@
 
 /datum/component/storage/proc/_insert_physical_item(obj/item/I, override = FALSE)
 	return FALSE
+
+/datum/component/storage/proc/signal_return_flags()
+	return kind_flags
 
 //This proc handles items being inserted. It does not perform any checks of whether an item can or can't be inserted. That's done by can_be_inserted()
 //The stop_warning parameter will stop the insertion message from being displayed. It is intended for cases where you are inserting multiple items at once,

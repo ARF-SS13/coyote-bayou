@@ -1406,3 +1406,14 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define FLINTLOCK_PISTOL_PREFIRE_STD 2
 #define FLINTLOCK_MINIMUSKET_PREFIRE_STD 1
 #define FLINTLOCK_MUSKET_PREFIRE_STD 1.5
+
+///ammo stuff
+#define AMMO_BOX 1
+#define AMMO_MAGAZINE 2
+#define AMMO_SPEEDLOADER 3
+#define AMMO_INTERNAL 4
+
+#define GR_LOAD_MAGAZINE (1<<0)
+#define GR_LOAD_SPEEDLOADER (1<<1)
+#define GR_LOAD_BOX (1<<2)
+#define GR_LOAD_LOOSE (1<<3)
