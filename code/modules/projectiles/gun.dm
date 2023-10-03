@@ -557,9 +557,7 @@ ATTACHMENTS
 
 	if(is_kelpwand)
 		if(iscarbon(user))
-			
 			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
-			//if(istype(src, /obj/item/gun/magic/wand/kelpmagic/magicmissile))
 				if(HAS_TRAIT(user, TRAIT_NOGUNS))
 					to_chat(user, span_danger("You don't know how to use magic wands!"))
 					return
