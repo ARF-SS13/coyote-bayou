@@ -85,6 +85,8 @@
 /datum/component/plumbing/proc/transfer_to(datum/component/plumbing/target, amount, reagent, datum/ductnet/net)
 	if(!reagents || !target || !target.reagents)
 		return FALSE
+	if(amount < 0) // You cannot transfer a negative amount. Increased lag has a bad habit of calling this with negative volumes
+		return FALSE
 	if(reagent)
 		reagents.trans_id_to(target.parent, reagent, amount)
 	else

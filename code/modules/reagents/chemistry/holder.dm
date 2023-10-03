@@ -193,16 +193,17 @@
 	var/part = amount / src.total_volume
 	var/trans_data = null
 	var/list/transferred = list()
-	for(var/reagent in cached_reagents)
-		var/datum/reagent/T = reagent
-		var/transfer_amount = T.volume * part
-		if(preserve_data)
-			trans_data = copy_data(T)
-			post_copy_data(T)
-		transferred += "[T] - [transfer_amount]"
+	if (part > 0 && amount > 0) //You cannot transfer a negative part or amount
+		for(var/reagent in cached_reagents)
+			var/datum/reagent/T = reagent
+			var/transfer_amount = T.volume * part
+			if(preserve_data)
+				trans_data = copy_data(T)
+				post_copy_data(T)
+			transferred += "[T] - [transfer_amount]"
 
-		R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, T.purity, pH, no_react = TRUE, ignore_pH = TRUE) //we only handle reaction after every reagent has been transfered.
-		remove_reagent(T.type, transfer_amount, ignore_pH = TRUE)
+			R.add_reagent(T.type, transfer_amount * multiplier, trans_data, chem_temp, T.purity, pH, no_react = TRUE, ignore_pH = TRUE) //we only handle reaction after every reagent has been transfered.
+			remove_reagent(T.type, transfer_amount, ignore_pH = TRUE)
 
 	if(log && amount > 0)
 		var/atom/us = my_atom
