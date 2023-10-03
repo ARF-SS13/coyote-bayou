@@ -616,9 +616,8 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-10) //HEALS
+		M.adjustBruteLoss(-15) //HEALS
 		M.adjustOxyLoss(-20)
-		M.adjustBruteLoss(-5)
 		M.adjustFireLoss(-10)
 		M.adjustToxLoss(-20, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)

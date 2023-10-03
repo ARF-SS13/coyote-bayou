@@ -222,7 +222,7 @@
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 
-/obj/item/hand_item/clawer/equipped(mob/user, slot)
+/obj/item/hand_item/biter/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
 	if(unarmed_adjusted)
@@ -345,8 +345,28 @@
 		if(HAS_TRAIT(user, TRAIT_STEELFIST))
 			H.dna.species.punchdamagehigh = 16
 			H.dna.species.punchdamagelow = 10
-		H.dna.species.attack_sound = 'sound/weapons/slice.ogg'
-		H.dna.species.attack_verb = "slash"
+		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+		H.dna.species.attack_verb = "punch"
+
+/obj/item/hand_item/clawer/examine(mob/user)
+	. = ..()
+	if(can_adjust_unarmed == TRUE)
+		if(unarmed_adjusted == TRUE)
+			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
+		else
+			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
+
+/obj/item/hand_item/clawer/AltClick(mob/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ishuman(user)))
+		return
+	if(can_adjust_unarmed == TRUE)
+		toggle_unarmed_adjust()
+
+/obj/item/hand_item/clawer/proc/toggle_unarmed_adjust()
+	unarmed_adjusted = !unarmed_adjusted
+	to_chat(usr, span_notice("[src] is ready to be worn on another hand."))
+
 
 /obj/item/hand_item/clawer/creature
 	force = 30
@@ -563,5 +583,3 @@
 // 		return LICK_CANCEL
 // 	user.visible_message(span_alert("[user] was interrupted!"))
 // 	return LICK_CANCEL
-
-

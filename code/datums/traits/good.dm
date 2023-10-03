@@ -279,6 +279,94 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel clumsy again.")
 	medical_record_text = "Patient scored highly on cardio tests."
 
+
+/datum/quirk/tackler
+	name = "Leaper"
+	desc = "You are able to leap short distances, and on occasion tackle others, albeit somewhat clumsly."
+	value = 14
+	category = "Movement Quirks"
+	mechanics = "You are able to jump short distances with throw enabled and an empty hand, hitting people will tackle them, leaning towards poor results for you"
+	conflicts = list(
+		/datum/quirk/clumsy,
+		/datum/quirk/overweight,
+		/datum/quirk/tacklerapex,
+		/datum/quirk/tackleradv
+	)
+	mob_trait = TRAIT_TACKLER
+	gain_text = span_notice("Your legs feel stronger.")
+	lose_text = span_danger("Your legs feel weaker.")
+	medical_record_text = "Patient's dexterity belies a good capacity for long distance jumping."
+
+/datum/quirk/tackler/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 30, \
+		base_knockdown = 1.75 SECONDS, \
+		range = 5, \
+		speed = 1, \
+		skill_mod = -1, \
+		min_distance = 0 \
+)
+
+
+
+/datum/quirk/tackleradv
+	name = "Advanced Leaper"
+	desc = "You are able to leap long distances with ease"
+	value = 22
+	category = "Movement Quirks"
+	mechanics = "You are able to jump long distances with throw enabled and an empty hand, though you can no longer tackle effectively"
+	conflicts = list(
+		/datum/quirk/clumsy,
+		/datum/quirk/overweight,
+		/datum/quirk/tacklerapex,
+		/datum/quirk/tackler
+	)
+	mob_trait = TRAIT_TACKLERADV
+	gain_text = span_notice("Your legs feel much stronger.")
+	lose_text = span_danger("Your legs feel weaker.")
+	medical_record_text = "Patient's dexterity belies a strong capacity for long distance jumping."
+
+/datum/quirk/tackleradv/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 25, \
+		base_knockdown = 0 SECONDS, \
+		range = 7, \
+		speed = 2, \
+		skill_mod = -2, \
+		min_distance = 0 \
+)
+
+
+/datum/quirk/tacklerapex
+	name = "Apex Leap"
+	desc = "You are able to leap medium distances with ease, as well as being able to tackle people down, most of the time"
+	value = 32
+	category = "Movement Quirks"
+	mechanics = "You are able to jump medium distances with throw enabled and an empty hand, and effectively tackle others"
+	conflicts = list(
+		/datum/quirk/clumsy,
+		/datum/quirk/overweight,
+		/datum/quirk/tackler,
+		/datum/quirk/tackleradv
+	)
+	mob_trait = TRAIT_TACKLERAPEX
+	gain_text = span_notice("Your legs feel much stronger.")
+	lose_text = span_danger("Your legs feel weaker.")
+	medical_record_text = "Patient's dexterity belies a strong capacity for long distance jumping."
+
+/datum/quirk/tacklerapex/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 35, \
+		base_knockdown = 1 SECONDS, \
+		range = 5, \
+		speed = 1, \
+		skill_mod = 3, \
+		min_distance = 0 \
+)
+
 /datum/quirk/friendly
 	name = "Friendly"
 	desc = "You give the best hugs. When you're in the right mood your squeezes can cheer up those around you. Unless they don't, but that's okay. :)"
@@ -1491,6 +1579,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	locked =  FALSE
+
+/datum/quirk/wandproficient
+	name = "Wand Proficient"
+	desc = "You know how to use magic wands!"
+	value = 0
+	category = "Ranged Quirks"
+	mechanics = "You can use magic wands, but the cost for such is to not being able to learn a martial art. The moment you'll learn one, you'll never be able to use wands!"
+	// conflicts = list(
+	// )
+	mob_trait = TRAIT_WAND_PROFICIENT
+	gain_text = span_notice("You feel magic flowing through your veins!")
+	lose_text = span_danger("The magic within you fades away.")
+	locked = FALSE
 
 /datum/quirk/playdead
 	name = "Play Dead"

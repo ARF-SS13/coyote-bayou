@@ -299,11 +299,15 @@
 #define TRAIT_FREESPRINT		"free_sprinting"
 #define TRAIT_XRAY_VISION       "xray_vision"
 #define TRAIT_THERMAL_VISION    "thermal_vision"
+#define TRAIT_TACKLER            "tackler"
+#define TRAIT_TACKLERADV           "Advanced Tackler"
+#define TRAIT_TACKLERAPEX           "Apex Tackler"
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 #define TRAIT_NO_INTERNALS		"no-internals"
 #define TRAIT_NO_ALCOHOL		"alcohol_intolerance"
 #define TRAIT_MUTATION_STASIS			"mutation_stasis" //Prevents processed genetics mutations from processing.
 #define TRAIT_FAST_PUMP				"fast_pump"
+#define TRAIT_WAND_PROFICIENT 	"wand_proficient"
 #define TRAIT_AUTO_DRAW				"auto_draw" //can use bows good
 #define TRAIT_PLAY_DEAD "play_dead" // gives 10u ghoul powder every *deathgasp
 #define TRAIT_NO_PROCESS_FOOD	"no-process-food" // You don't get benefits from nutriment, nor nutrition from reagent consumables
