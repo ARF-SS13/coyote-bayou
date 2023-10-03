@@ -554,7 +554,7 @@ datum/crafting_recipe/tribalwar/bone
 // T1 Firebolt Wand (anti-elite sidearm)
 /datum/crafting_recipe/magic/fireboltwand
 	name = "Wand of Firebolt"
-	result = /obj/item/gun/magic/staff/kelpmagic/fireball
+	result = /obj/item/gun/magic/wand/kelpmagic/firebolt
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 10,
