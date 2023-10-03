@@ -38,7 +38,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	return -1
 
 /datum/preferences/proc/update_save(savefile/S)
-	current_version = safe_json_decode(S["current_version"])
+	if(S["current_version"])
+		current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
 	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
 	if(LAZYLEN(needs_updating))
@@ -720,7 +721,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor2"]				>> features["mcolor2"]
 	S["feature_mcolor3"]				>> features["mcolor3"]
 	// note safe json decode will runtime the first time it migrates but this is fine and it solves itself don't worry about it if you see it error
-	features["mam_body_markings"] = safe_json_decode(S["feature_mam_body_markings"])
+	if (S["feature_mam_body_markings"])
+		features["mam_body_markings"] = safe_json_decode(S["feature_mam_body_markings"])
+	else
+		features["mam_body_markings"] = list()
 	S["feature_mam_tail"]				>> features["mam_tail"]
 	S["feature_mam_ears"]				>> features["mam_ears"]
 	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
@@ -853,8 +857,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["allow_being_prey"]					>> allow_being_prey
 	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
 	S["allow_being_sniffed"]				>> allow_being_sniffed
-	belly_prefs = safe_json_decode(S["belly_prefs"])
-	current_version = safe_json_decode(S["current_version"])
+	if (S["belly_prefs"])
+		belly_prefs = safe_json_decode(S["belly_prefs"])
+	else
+		belly_prefs = list()
+
+	if (S["current_version"])
+		current_version = safe_json_decode(S["current_version"])
+	else
+		belly_prefs = list()
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
