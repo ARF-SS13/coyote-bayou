@@ -298,14 +298,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient's dexterity belies a good capacity for long distance jumping."
 
 /datum/quirk/tackler/add()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.AddComponent(/datum/component/tackler, \
-        stamina_cost = 30, \
-        base_knockdown = 1.75 SECONDS, \
-        range = 5, \
-        speed = 1, \
-        skill_mod = -1, \
-        min_distance = 0 \
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 30, \
+		base_knockdown = 1.75 SECONDS, \
+		range = 5, \
+		speed = 1, \
+		skill_mod = -1, \
+		min_distance = 0 \
 )
 
 
@@ -328,14 +328,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient's dexterity belies a strong capacity for long distance jumping."
 
 /datum/quirk/tackleradv/add()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.AddComponent(/datum/component/tackler, \
-        stamina_cost = 25, \
-        base_knockdown = 0 SECONDS, \
-        range = 7, \
-        speed = 2, \
-        skill_mod = -2, \
-        min_distance = 0 \
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 25, \
+		base_knockdown = 0 SECONDS, \
+		range = 7, \
+		speed = 2, \
+		skill_mod = -2, \
+		min_distance = 0 \
 )
 
 
@@ -357,14 +357,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient's dexterity belies a strong capacity for long distance jumping."
 
 /datum/quirk/tacklerapex/add()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.AddComponent(/datum/component/tackler, \
-        stamina_cost = 35, \
-        base_knockdown = 1 SECONDS, \
-        range = 5, \
-        speed = 1, \
-        skill_mod = 3, \
-        min_distance = 0 \
+	var/mob/living/carbon/human/H = quirk_holder
+	H.AddComponent(/datum/component/tackler, \
+		stamina_cost = 35, \
+		base_knockdown = 1 SECONDS, \
+		range = 5, \
+		speed = 1, \
+		skill_mod = 3, \
+		min_distance = 0 \
 )
 
 /datum/quirk/friendly
