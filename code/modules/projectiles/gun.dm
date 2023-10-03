@@ -554,9 +554,20 @@ ATTACHMENTS
 	if(on_cooldown(user))
 		return
 	clear_cooldown_mods()
-	if(is_kelpwand && !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
-		to_chat(user, span_danger("You don't know how to use magic wands!"))
-		return
+
+	if(is_kelpwand)
+		if(iscarbon(user))
+			
+			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
+			//if(istype(src, /obj/item/gun/magic/wand/kelpmagic/magicmissile))
+				if(HAS_TRAIT(user, TRAIT_NOGUNS))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+			else
+				if(HAS_TRAIT(user, TRAIT_NOGUNS) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)

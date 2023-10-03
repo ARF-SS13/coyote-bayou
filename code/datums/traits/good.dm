@@ -1497,7 +1497,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You know how to use magic wands!"
 	value = 0
 	category = "Ranged Quirks"
-	mechanics = "You can use magic wands."
+	mechanics = "You can use magic wands, but the cost for such is to not being able to learn a martial art. The moment you'll learn one, you'll never be able to use wands!"
 	// conflicts = list(
 	// )
 	mob_trait = TRAIT_WAND_PROFICIENT
