@@ -239,11 +239,13 @@
 
 /obj/item/melee/onehanded/knife/ritualdagger
 	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
+	desc = "An ancient blade used to carry out spiritual and mystic rituals."
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
 	custom_materials = null
+	tool_behaviour = TOOL_RITUAL
+	toolspeed = 1
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -935,6 +937,18 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
+
+
+/obj/item/melee/unarmed/powerfist/refurbished
+	name = "HERAKLES power gauntlet "
+	desc = "A massive, experimental metal gauntlet restored with subpar components and suboptimal engineering skills, it's unlikely that it will hurt as much as a proper power fist, but it's still pretty hefty."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "goliath"
+	item_state = "goliath"
+	force = 26 //snowflake round start weapon that is meant to just be a reskinned brass knuckles
+	throw_distance = 0
 
 ///////////
 // TOOLS //

@@ -211,6 +211,52 @@
 	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	name = "light harness"
+	desc = "A set of straps that, somehow, function as light armor but do nothing else."
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 10
+	equip_delay_other = 10
+	max_integrity = 100
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	name = "medium harness"
+	desc = "A set of straps that, somehow, function as medium armor but do nothing else."
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	name = "heavy harness"
+	desc = "A set of straps that, somehow, function as heavy armor but do nothing else."
+	strip_delay = 50
+	equip_delay_other = 50
+	max_integrity = 300
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
@@ -549,6 +595,64 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "denison_smock"
 	item_state = "police_chief"
+
+
+/obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
+	name = "Dashing rainbow Parka"
+	desc = "A lovingly made parka , adorn with rainbow colors and a thunderbolt symbol on the back of the parka. If anything, this parka makes you oh..I dunno..20% cooler?"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "rainbowdash"
+	item_state = "rainbowdash"
+
+/obj/item/clothing/suit/armor/outfit/jacket/rarityjacket
+	name = "Pristine parka"
+	desc = "A lovingly made parka, adorn with white and purple coloring. The back of the parka has the symbol of three diamonds and some faint traces of glitter. Wearing this makes you feel like the fashionista of the wasteland while also looking but the most glamorous."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "rarecoat"
+	item_state = "rarecoat"
+
+/obj/item/clothing/suit/armor/outfit/jacket/flutterjacket
+	name = "Cuddly and soft parka"
+	desc = "A lovingly made parka, made with soft yellow, pink, and blue color palete in mind. This parka has a symbol of butterflies on the back and is very comfortable to wear. Wearing this is but the perfect occassion for someone who is shy but yet enduring. Go get em, tiger!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "shycoat"
+	item_state = "shycoat"
+
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trench
+	name = "Brown trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "britishtrench"
+	item_state = "britishtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
+	name = "Grey trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "germtrench"
+	item_state = "germtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/ww1trenchfrench
+	name = "Blue trench raider coat."
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "frenchtrench"
+	item_state = "frenchtrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
+	name = "Padded Soviet jacket"
+	desc = "A padded and well made Soviet jacket. Useful for the winter, but doesn't offer much protection against bullets or really any form of punishment. Compliments any soldier belonging to the Motherland. A wise soldier once said 'As long as Mother Russia has enemies, I will answer her call...'."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "sovjacket"
+	item_state = "sovjacket"
 
 // until togglesuits are made into normal suits, treat these as jackets
 
@@ -1306,6 +1410,30 @@
 	item_state = "hostrench"
 	body_parts_hidden = ARMS
 
+/obj/item/clothing/suit/armor/light/duster/greatcoatgrey
+	name = "Grey greatcoat"
+	desc = "A greyed out greatcoat. This coat also comes with a furred interior for the toughest of winters"
+	icon_state = "gerparka"
+	item_state = "gerparka"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+
+/obj/item/clothing/suit/armor/light/duster/vlongcoat
+	name = "Black winter greatcoat"
+	desc = "A black greatcoat that resembles the coats used by Kuban cossacks. A greatcoat, fitting for your cold weather needs."
+	icon_state = "bcossack"
+	item_state = "bcossack"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+
+/obj/item/clothing/suit/armor/light/duster/vlongcoat/blue
+	name = "Blue winter greatcoat"
+	desc = "A blue greatcoat that resembles the coats used by Don cossacks. A greatcoat, fitting for your cold weather needs."
+	icon_state = "blcossack"
+	item_state = "blcossack"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+
 /obj/item/clothing/suit/armor/light/duster/town/leather
 	name = "leather trenchcoat"
 	desc = "A snazzy black trenchcoat, fit for a dragon."
@@ -2006,7 +2134,7 @@
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
-	
+
 /obj/item/clothing/suit/armor/light/kit/punk/scraparmor
 	name = "Beefy Scrap Armor"
 	desc = "This is a whole pile of trash, just sitting on your chest.  Maybe it'll even stop someone from beating you to death. No promises though."
@@ -2331,6 +2459,22 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
+/obj/item/clothing/suit/armor/medium/ballisticvest/bvest
+	name = "Baily vest"
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "bailyvest"
+	item_state = "bailyvest"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/medvest
+	name = "Medical ballistic vest"
+	desc = "A medical themed basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	icon_state = "vestmed"
+	item_state = "vestmed"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 /* * * * * * * * * *
 * Old medieval armors
 * * * * * * * * * * */
@@ -2419,6 +2563,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -2431,6 +2576,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 ,)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -2458,6 +2604,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_MORE_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_SALVAGE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -2465,11 +2612,11 @@
 /obj/item/clothing/suit/armor/medium/merek
 	name = "salvaged UNMC armor"
 	desc = "A set of salvaged UNMC armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC armor. Personalized by the scavenger who found this."
-	icon_state = "odst1"
-	item_state = "odst1"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	icon_state = "odstcqb"
+	item_state = "odstcqb"
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -2483,10 +2630,11 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2,ARMOR_MODIFIER_DOWN_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	
+
 /obj/item/clothing/suit/armor/medium/vest/zeroodst
 	name = "Custom fitted UNMC Trooper armor"
 	desc = "A set of modified UNMC Trooper armor. This one has red accents on it and seems to have been designed to withstand the harshness of the wastes. The name 'Corrigan' is stenciled on the chestplate."
@@ -2495,6 +2643,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -2507,10 +2656,11 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
-		
+
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
 	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles! The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."

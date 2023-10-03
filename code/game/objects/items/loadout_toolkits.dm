@@ -60,6 +60,7 @@
 	new /obj/item/brahminbridle(src)
 	new /obj/item/brahminsaddle(src)
 	new /obj/item/brahminbrand(src)
+	new /obj/item/capturedevice(src)//hopefully this will make having a pet motorcycle a lot less annoying
 	new /obj/item/choice_beacon/pet/mountable(src)
 
 /datum/loadout_box/ranching
@@ -578,6 +579,7 @@
 
 /obj/item/storage/box/tools/beastmaster/PopulateContents()
 	new /obj/item/capturedevice(src)
+	new	/obj/item/capturedevice(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)

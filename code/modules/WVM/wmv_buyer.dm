@@ -112,6 +112,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/m1919 = 15,
 		/obj/item/gun/ballistic/automatic/m72 = 15,
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
+		// magic shit:tm:
+		/obj/item/gun/magic/ = 15,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(

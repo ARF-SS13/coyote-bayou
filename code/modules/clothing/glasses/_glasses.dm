@@ -219,6 +219,13 @@
 	item_state = "glasses"
 	vision_correction = 1 //corrects nearsightedness
 
+/obj/item/clothing/glasses/contact
+	name = "contact lenses"
+	desc = "Prescription contact lenses, a miracle of science."
+	icon_state = "contact_lenses"
+	item_state = "contact_lenses"
+	vision_correction = 1
+
 /obj/item/clothing/glasses/regular/jamjar
 	name = "jamjar glasses"
 	desc = "Also known as Virginity Protectors."

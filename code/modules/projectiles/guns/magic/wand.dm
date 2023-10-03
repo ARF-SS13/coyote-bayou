@@ -202,3 +202,172 @@
 	charges--
 	user.take_overall_damage(0,30)
 	to_chat(user, span_warning("You zap yourself. Why?"))
+
+/////////////////////////////////////
+//KELPRUNNER'S MAGIC WEAPONS
+//Wands are just pistols
+//If this doesn't get too big, just define projectile/damage here for simplicity's sake?
+/////////////////////////////////////
+
+/obj/item/gun/magic/wand/kelpmagic
+	name = "Kelp's Wand of Templating"
+	desc = "If you see this, call a coder! Or panic."
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic
+	weapon_class = WEAPON_CLASS_SMALL // Wands are ALWAYS either Small or Normal. They're not as strong as staves because of this; balance around people carrying 3 - 4 of these
+	weapon_weight = GUN_ONE_HAND_ONLY // despite being smol, magic requires focus just to fire. Also akimbo OP
+	w_class = WEIGHT_CLASS_SMALL
+	force = 10 // It's a stick
+	throwforce = 10 // Same.
+	fire_sound = 'sound/weapons/pulse2.ogg'
+	draw_time = GUN_DRAW_QUICK
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	// NOTE: max_charges is the number of shots, recharge_rate is time to recharge a single charge.
+
+/obj/item/ammo_casing/magic/kelpmagic
+	projectile_type = /obj/item/projectile/magic/kelpmagic
+
+/obj/item/projectile/magic/kelpmagic
+	name = "template projectile"
+	icon_state = "arcane_barrage"
+	damage = 0
+	damage_type = BURN
+	nodamage = 0
+	flag = "magic"
+	hitsound = 'sound/weapons/sear.ogg'
+	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+	recoil = BULLET_RECOIL_LASER
+
+/****************/
+//Improvised Wand//
+//Spawn tier weapon/
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/magicmissile // T0 spawn wand. Everything should be better than this!
+	name = "improvised wand of magic missile"
+	desc = "An extremely basic wand carved from bone, and topped with a roughly hewn crystal. Good for begginers, and handling vermin, but not much else."
+	icon_state = "missilewand"
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
+	max_charges = 15
+	recharge_rate = 20 SECONDS
+
+/obj/item/ammo_casing/magic/kelpmagic/magicmissile/weak
+	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/weak
+
+/obj/item/projectile/magic/kelpmagic/magicmissile/weak
+	name = "weak arcane bolt"
+	icon_state = "arcane_barrage"
+	damage = 15
+	damage_type = BURN
+	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+
+/****************/
+//Wand of Magic Missile//
+//Projectile wand, generalist//
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved
+	name = "wand of magic missile"
+	desc = "A golden rod sits securely in a handle of runed wood. Attuned to this wand is the most iconic of mage spells: Magic Missile. It's a simple spell for more practical practitioners."
+	icon_state = "magicmissile"
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
+	max_charges = 25
+	recharge_rate = 10 SECONDS
+
+/obj/item/ammo_casing/magic/kelpmagic/magicmissile/average
+	projectile_type = /obj/item/projectile/magic/kelpmagic/magicmissile/average
+
+/obj/item/projectile/magic/kelpmagic/magicmissile/average
+	name = "arcane bolt"
+	icon_state = "arcane_barrage"
+	damage = 20
+	damage_type = BURN
+	flag = "laser"
+
+
+/****************/
+//Wand of Sparks//
+//Beam wand, anti-swarm//
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/sparky
+	name = "wand of sparks"
+	desc = "Cut from diamond and inlaid with gold, this wand is certainly eye-catching. Electricity crawls along the focus, eager to be let loose in a shocking storm."
+	icon_state = "lightningrod"
+	fire_sound = 'sound/weapons/Taser.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks
+	max_charges = 30
+	recharge_rate = 6 SECONDS
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/sparks
+		projectile_type = /obj/item/projectile/magic/kelpmagic/sparks
+
+/obj/item/projectile/magic/kelpmagic/sparks
+	name = "spark"
+	damage = 10
+	damage_type = BURN
+	flag = "energy"
+	icon_state = "omnilaser"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	hitscan = TRUE
+	hitscan_light_intensity = 4
+	hitscan_light_range = 1
+	hitscan_light_color_override = LIGHT_COLOR_BLUE
+	muzzle_flash_intensity = 9
+	muzzle_flash_range = 4
+	muzzle_flash_color_override = LIGHT_COLOR_BLUE
+	impact_light_intensity = 8
+	impact_light_range = 3.75
+	impact_light_color_override = LIGHT_COLOR_BLUE
+
+
+/****************/
+//Wand of Firebolt//
+//Projectile wand, anti-elite//
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/firebolt
+	name = "wand of firebolt"
+	desc = "This wand is made of meticulously carved wood and diamond, topped with a stone that burns with an inner fire. The bolt it launches is perfect for scorching armored foes."
+	icon_state = "fireboltwand"
+	fire_sound = 'sound/magic/fireball.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
+	max_charges = 10
+	recharge_rate = 20 SECONDS
+
+/obj/item/ammo_casing/magic/kelpmagic/firebolt
+		projectile_type = /obj/item/projectile/magic/kelpmagic/firebolt
+
+/obj/item/projectile/magic/kelpmagic/firebolt
+	name = "fire bolt"
+	icon_state = "fireball"
+	damage = 45
+	damage_type = BURN
+	flag = "energy"
+
+/****************/
+//Wand of Mending//
+//Projectile wand, weak(?) healing//
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/healwand
+	name = "wand of mending"
+	desc = "With a silver core and a casing of gold, this wand visibly channels the energies of life itself. It can let loose bolts that heal all forms of damage, though it's less efficent than alchemy and cannot heal the wand's wielder."
+	icon_state = "mendwand"
+	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
+	max_charges = 5
+	recharge_rate = 60 SECONDS
+
+/obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
+		projectile_type = /obj/item/projectile/magic/tenderwand
+

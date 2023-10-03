@@ -110,7 +110,7 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
-/mob/living/simple_animal/hostile/Initialize()
+/mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 
 	if(!targets_from)
@@ -119,6 +119,8 @@
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
+	if(mapload && despawns_when_lonely)
+		unbirth_self(TRUE)
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null

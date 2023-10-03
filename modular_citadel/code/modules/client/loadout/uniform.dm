@@ -414,6 +414,47 @@
 	path = /obj/item/clothing/under/f13/animsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 
+/datum/gear/uniform/frenchuniform
+	name = "Outdated French uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/imperialeastuniform
+	name = "Outdated East German uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/german
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/britisholduniform
+	name = "Outdated British uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/britishww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianolduniform
+	name = "Outdated Russian uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianpaddedww2
+	name = "Padded Soviet uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/scavengerstuff
+	name = "tattered scavenger outfit"
+	path = /obj/item/clothing/under/f13/scavhunt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/scavengerstuff/two
+	name = "tattered wastelander outfit"
+	path = /obj/item/clothing/under/f13/scavhunt/metro
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
+/datum/gear/uniform/russiancossack
+	name = "Cossack uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 /datum/gear/uniform/galaxyblue
 	name = "Blue galaxy suit"
 	path = /obj/item/clothing/under/f13/animsuit/two
@@ -675,6 +716,26 @@
 	name = "grey turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/grey
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
+/datum/gear/uniform/sweater
+	name = "cream sweater"
+	path = /obj/item/clothing/under/sweater 
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+/datum/gear/uniform/sweater/black
+	name = "black sweater"
+	path = /obj/item/clothing/under/sweater/black 
+/datum/gear/uniform/sweater/blue
+	name = "blue sweater"
+	path = /obj/item/clothing/under/sweater/blue
+/datum/gear/uniform/sweater/purple
+	name = "purple sweater"
+	path = /obj/item/clothing/under/sweater/purple
+/datum/gear/uniform/sweater/green
+	name = "green sweater"
+	path = /obj/item/clothing/under/sweater/green
+/datum/gear/uniform/sweater/red
+	name = "red sweater"
+	path = /obj/item/clothing/under/sweater/red
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"

@@ -33,6 +33,21 @@
 	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	cost = 0
 
+/datum/gear/suit/suit_gear_harness/light
+	name = "light harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	cost = 1
+
+/datum/gear/suit/suit_gear_harness/medium
+	name = "medium harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	cost = 1
+
+/datum/gear/suit/suit_gear_harness/heavy
+	name = "heavy harness"
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	cost = 1
+
 /datum/gear/suit/labcoat
 	name = "Labcoat"
 	path = /obj/item/clothing/suit/toggle/labcoat
@@ -46,6 +61,16 @@
 /datum/gear/suit/brownvest
 	name = "brown vest"
 	path = /obj/item/clothing/suit/armor/outfit/vest/cowboy
+	cost = 0
+
+/datum/gear/suit/coat/grey
+	name ="Grey Coat"
+	path = /obj/item/clothing/suit/jacket/grey
+	cost = 0
+
+/datum/gear/suit/coat/overcoat
+	name ="Grey Overcoat"
+	path = /obj/item/clothing/suit/jacket/overcoat
 	cost = 0
 
 /datum/gear/suit/coat/black
@@ -693,6 +718,66 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/thegreatwargear
+	name = "Grey greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/greatcoatgrey
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/kubancossack
+	name = "Black winter greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/doncossack
+	name = "Blue winter greatcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/vlongcoat/blue
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/ww1britishcoat
+	name = "Brown trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/ww1germcoat
+	name = "Grey trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/ww1frenchcoat
+	name = "Blue trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchfrench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh
+	name = "Dashing rainbow parka"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh2
+	name = "Pristine parka"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/rarityjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh3
+	name = "Soft and cuddly parka"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/flutterjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/paddedsovietjacket
+	name = "Padded Soviet jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/cyberstuff/cloakmedical
 	name = "Medical cloak"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/themedcloaks/cmo
@@ -735,7 +820,18 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/ballisticvest/no9
+	name = "Baily tactical vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
+
+/datum/gear/suit/armor/ballisticvest/no10
+	name = "Medical ballistic vest"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/medvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/armor/ncrheavy
 	name = "heavy Texas militia armor"

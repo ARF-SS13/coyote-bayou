@@ -248,6 +248,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
 		/obj/item/gun/ballistic/revolver/Lemat = 2,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
+		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -265,7 +266,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine = 2,
 		/obj/item/gun/ballistic/automatic/armalite = 2,
 		/obj/item/gun/ballistic/automatic/l1a1 = 2,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 1,
+		/obj/item/gun/ballistic/automatic/c96auto = 1,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/gun/ballistic/shotgun/trench = 2,
@@ -282,6 +283,7 @@
 		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
+		/obj/item/gun/ballistic/automatic/aksmol = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -296,6 +298,7 @@
 		/obj/item/gun/ballistic/automatic/rangemaster = 2,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand = 1,
+		/obj/item/gun/ballistic/rifle/mosin/laserbubba =1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 1,
 		/obj/item/gun/ballistic/automatic/service/r82 = 2, //is weakest 5.56 automatic
@@ -550,6 +553,7 @@
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/deathclawgauntlet = 20,
 		/obj/item/melee/unarmed/powerfist/goliath = 20,
+		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
@@ -558,6 +562,7 @@
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
+		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
 	)
 
 ////////////////////////////

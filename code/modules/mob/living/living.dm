@@ -130,6 +130,37 @@
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return 1
 
+		if(GLOB.pixel_slide)
+			var/origtargetloc = L.loc
+			if(!pulledby)
+				if(M.a_intent != INTENT_HELP)
+					GLOB.pixel_slide_other_has_help_int = 0
+					return TRUE
+				else
+					GLOB.pixel_slide_other_has_help_int = 1
+				if(IS_STAMCRIT(src))
+					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
+					return TRUE
+				visible_message(span_notice("[src] is attempting to scoot closer to [L]."),
+					span_notice("You are now attempting to scoot closer to [L]."),
+					target = L, target_message = span_notice("[src] is attempting to scoot closer to you."))
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
+
+		//This condition checks if the other person is leaning against a wall or not. if positive the person leaning will be perceived with a density of "0"		
+		if((abs(L.pixel_x) >= 16) || (abs(L.pixel_y) >= 16))
+			var/origtargetloc = L.loc
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
+
 	//CIT CHANGES START HERE - makes it so resting stops you from moving through standing folks without a short delay
 		if(!CHECK_MOBILITY(src, MOBILITY_STAND) && CHECK_MOBILITY(L, MOBILITY_STAND))
 			var/origtargetloc = L.loc
@@ -1521,6 +1552,7 @@
 
 //Coyote Add
 /mob/living/proc/despawn()
+	SSwho.KillCustoms(ckey, "despawned")
 	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
 	for(var/i in contents)
 		var/atom/movable/content = i

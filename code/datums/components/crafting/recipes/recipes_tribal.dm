@@ -54,7 +54,7 @@
 				/obj/item/weaponcrafting/string = 1
 				)
 	tools = list(TOOL_WORKBENCH)
-	
+
 /datum/crafting_recipe/tribalwar/recurvebow
 	name = "recurve bow"
 	result = /obj/item/gun/ballistic/bow/recurvebow
@@ -481,3 +481,129 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/clothing/glasses/f13/tribaleyepatch
 	time = 10
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 2)
+
+/*Kelp's magic stuff*/
+
+/datum/crafting_recipe/magic
+	category = CAT_MAGIC
+
+// Ritual dagger (tribal dagger + needed to make magic stuff)
+/datum/crafting_recipe/magic/ritualdagger
+	name = "Ritual Dagger"
+	result = /obj/item/melee/onehanded/knife/ritualdagger
+	time = 10
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/bone = 1)
+	tools = list(TOOL_WORKBENCH)
+
+// T0 Magic Missile Wand (spawn item)
+/datum/crafting_recipe/magic/bonewand
+	name = "Improvised Wand of Magic Missile"
+	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile
+	time = 10
+	reqs = list(/obj/item/stack/sheet/bone = 2,
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_RITUAL)
+
+// T1 Magic Missile Wand (generalist sidearm)
+/datum/crafting_recipe/magic/missilewand
+	name = "Normal Wand of Magic Missile"
+	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile/improved
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/sheet/mineral/gold = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Magic Missile (Generalist staff, single shot/burst medium projectiles, okay-ish melee weapon)
+/datum/crafting_recipe/magic/missilestaff
+	name = "Staff of Magic Missile"
+	result = /obj/item/gun/magic/staff/kelpmagic/magicmissile
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/crafting/metalparts = 15,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/sheet/mineral/plasma = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+
+// T1 Sparks Wand (anti-swarm sidearm)
+/datum/crafting_recipe/magic/lightningrod
+	name = "Wand of Sparks"
+	result = /obj/item/gun/magic/wand/kelpmagic/sparky
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/mineral/diamond = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Lightning (DMR staff, hitscan projectile)
+/datum/crafting_recipe/magic/shockstaff
+	name = "Staff of Lightning"
+	result = /obj/item/gun/magic/staff/kelpmagic/lightning
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// T1 Firebolt Wand (anti-elite sidearm)
+/datum/crafting_recipe/magic/fireboltwand
+	name = "Wand of Firebolt"
+	result = /obj/item/gun/magic/wand/kelpmagic/firebolt
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/stack/sheet/mineral/diamond = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Fireball (RPG-like staff, 1 shot per 60sec, 75dmg vs players; ~169 vs mobs)
+/datum/crafting_recipe/magic/fireball
+	name = "Staff of Fireball"
+	result = /obj/item/gun/magic/staff/kelpmagic/fireball
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/crafting/metalparts = 20,
+				/obj/item/tool_upgrade/productivity/red_paint = 1,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Acid (SMG-like staff, rapid fire but low damage per shot, energy-type damage)
+/datum/crafting_recipe/magic/acidspray
+	name = "Staff of Acid Spray"
+	result = /obj/item/gun/magic/staff/kelpmagic/acidstaff
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/crafting/metalparts = 15,
+				/obj/item/stack/sheet/mineral/plasma = 2,
+				/obj/item/stack/sheet/mineral/diamond = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// T1 Mending Wand (basic omni heal, ~50 HP all categories every 5 minutes)
+/datum/crafting_recipe/magic/mendingwand
+	name = "Wand of Mending"
+	result = /obj/item/gun/magic/wand/kelpmagic/healwand
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+
+// Staff of Healing (Lots of omniheals, ~50 HP all categories every 5 minutes, 5x charges of the wand)
+/datum/crafting_recipe/magic/healstaff
+	name = "Staff of Healing"
+	result = /obj/item/gun/magic/staff/kelpmagic/healstaff
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/mineral/gold = 3,
+				/obj/item/stack/sheet/mineral/diamond = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+

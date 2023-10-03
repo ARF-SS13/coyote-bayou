@@ -4,6 +4,8 @@ PROCESSING_SUBSYSTEM_DEF(spawners)
 	flags = SS_BACKGROUND|SS_POST_FIRE_TIMING|SS_NO_INIT
 	wait = 1 SECONDS
 	priority = FIRE_PRIORITY_SPAWNERS
+	var/active_duration = 20 SECONDS
+	var/debug_spawner_turfs = FALSE
 
 /// YEah so this used to be something, but then I messed up and all the mobs just
 /// Went into their own spawners, and I liked that, so imma do that k

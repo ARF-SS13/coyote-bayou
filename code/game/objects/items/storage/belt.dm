@@ -360,6 +360,7 @@
 /// snackdolier
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
+	desc = "Snackrolling the Mojavelicious fillmost caramakel you satiswish for a nuclear whunger"
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
@@ -850,6 +851,6 @@
 
 /obj/item/storage/belt/military/french_webbing
 	name = "french webbing"
-	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
+	desc = "A versailles chest rig, this one seems to be used in long bread enviroments and such"
 	icon_state = "french_webbing"
 	item_state = "french_webbing"
