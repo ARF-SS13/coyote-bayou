@@ -60,9 +60,9 @@
 	new /obj/item/brahminbridle(src)
 	new /obj/item/brahminsaddle(src)
 	new /obj/item/brahminbrand(src)
-		/obj/item/capturedevice(src)//hopefully this will make having a pet motorcycle a lot less annoying
+	new /obj/item/capturedevice(src)//hopefully this will make having a pet motorcycle a lot less annoying
 	new /obj/item/choice_beacon/pet/mountable(src)
-        /object
+
 /datum/loadout_box/ranching
 	entry_tag = "riding tools"
 	entry_flags = LOADOUT_FLAG_TOOL_WASTER
@@ -579,7 +579,7 @@
 
 /obj/item/storage/box/tools/beastmaster/PopulateContents()
 	new /obj/item/capturedevice(src)
-		/obj/item/capturedevice(src)
+	new	/obj/item/capturedevice(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)
