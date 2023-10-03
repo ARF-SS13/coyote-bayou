@@ -476,7 +476,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/slow = 0
 	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
 		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
-		if(health_percent <= 50)//Start slowdown at half health
+		if(health_percent <= 50 && health_percent > 0)//Start slowdown at half health, stop slowdown when health is at or below zero to prevent divide by zero errors
 			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
