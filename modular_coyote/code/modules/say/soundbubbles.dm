@@ -181,6 +181,8 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_ANIMALCROSSING_TI])		//we are checking if they actually have this preference turned on 
 		var/TI_frequency
+		if (!isnum(counter))                                                            //something went wrong with the counter and it needs to be fixed. Quick, do SOMETHING!
+			counter = 4
 		for(var/i in 1 to counter)
 			TI_frequency = rand(get_typing_indicator_pitch() - get_typing_indicator_variance(),  get_typing_indicator_pitch() + get_typing_indicator_variance())
 			playsound(get_turf(src), get_typing_indicator_sound(), get_typing_indicator_volume(), FALSE, null, SOUND_FALLOFF_EXPONENT, TI_frequency)
