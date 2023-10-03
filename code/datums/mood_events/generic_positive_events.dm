@@ -145,7 +145,7 @@
 
 /datum/mood_event/hugbox
 	description = span_nicegreen("I hugged a box of hugs recently...")
-	mood_change = list(-2, -1, 0, 1, 2)
+	mood_change = 1
 	timeout = 5 MINUTES
 
 /datum/mood_event/plushpet
