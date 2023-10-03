@@ -807,6 +807,57 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
+
+/datum/gear/head/steelm1
+	name = "M1 Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/ww2usa
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/steeljap
+	name = "Old Japanese Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/ww237jap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/armoredimperialrussia
+	name = "Armored Imperial Russian cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1russiancap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredimperialgermancap
+	name = "Armored East German cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries/german
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+
+/datum/gear/head/armoredbritishcap
+	name = "Armored British cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+
+/datum/gear/head/armoredfrenchcap
+	name = "Armored French cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries/french
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/russianadrianhelmet
+	name = "Russian Adrian helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/rusadrian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ww1germanhelmet
+	name = "Outdated steel helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ww1steelgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek

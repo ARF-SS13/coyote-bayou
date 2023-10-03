@@ -496,8 +496,8 @@
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
-	health = 400
-	maxHealth = 400
+	health = 150
+	maxHealth = 150
 
 //Actual chooseable mouse colors
 

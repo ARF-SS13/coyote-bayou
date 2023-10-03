@@ -122,7 +122,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine,
 		/obj/item/gun/ballistic/automatic/armalite,
 		/obj/item/gun/ballistic/automatic/l1a1,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto,
+		/obj/item/gun/ballistic/automatic/c96auto,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
 		/obj/item/gun/ballistic/shotgun/trench,

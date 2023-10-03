@@ -4920,13 +4920,6 @@
 /area/f13/building/museum)
 "bRC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "factbasementcontrol";
-	max_integrity = 1000;
-	name = "shutters button";
-	obj_integrity = 1000;
-	pixel_x = 28
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
 	},
@@ -8133,7 +8126,11 @@
 /area/f13/building)
 "dOG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/poddoor/shutters/old{
+	id = "factorybasement2";
+	name = "shutters";
+	max_integrity = 1000000
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -19317,6 +19314,13 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"los" = (
+/obj/machinery/button/door{
+	id = "factorybasement2";
+	pixel_x = -5
+	},
+/turf/closed/indestructible/vaultdoor,
+/area/f13/building/massfusion)
 "loD" = (
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/generic,
@@ -39421,7 +39425,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
 "xZu" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/poddoor/shutters/old{
+	id = "factorybasement2";
+	name = "shutters";
+	max_integrity = 1000000
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -94810,7 +94818,7 @@ ueb
 ueb
 ueb
 ueb
-ueb
+los
 ueb
 ueb
 ueb

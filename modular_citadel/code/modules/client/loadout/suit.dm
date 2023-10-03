@@ -736,9 +736,39 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/ww1britishcoat
+	name = "Brown trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/ww1germcoat
+	name = "Grey trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchgerman
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/ww1frenchcoat
+	name = "Blue trench raider coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ww1trenchfrench
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/myponeh
-	name = "Dashing rainbow jacket"
+	name = "Dashing rainbow parka"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh2
+	name = "Pristine parka"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/rarityjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/myponeh3
+	name = "Soft and cuddly parka"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/flutterjacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
