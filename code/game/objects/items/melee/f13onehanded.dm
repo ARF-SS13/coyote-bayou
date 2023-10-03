@@ -938,6 +938,18 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
+
+/obj/item/melee/unarmed/powerfist/refurbished
+	name = "HERAKLES power gauntlet "
+	desc = "A massive, experimental metal gauntlet restored with subpar components and suboptimal engineering skills, it's unlikely that it will hurt as much as a proper power fist, but it's still pretty hefty."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "goliath"
+	item_state = "goliath"
+	force = 26 //snowflake round start weapon that is meant to just be a reskinned brass knuckles
+	throw_distance = 0
+
 ///////////
 // TOOLS //
 ///////////		-generally max 24 damage
