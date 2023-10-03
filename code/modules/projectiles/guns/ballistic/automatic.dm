@@ -307,7 +307,7 @@
  * Snowflake rarity
  * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/smg/smg10mm/magnetic
-	name = "Argonaut Ferromagnetic Pistol"
+	name = "Chiron Ferromagnetic Pistol"
 	desc = "a damaged, juryrigged machine pistol prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "magmp"

@@ -176,7 +176,7 @@
 	new /obj/item/gun/ballistic/rifle/magnetic(src)
 
 /datum/gear/donator/kits/rinpin2
-	name = "Lee's stash (SMG)"
+	name = "Lee's stash (SMG,Punch)"
 	path = /obj/item/storage/box/large/custom_kit/rinpin2
 	ckeywhitelist = list("Pootismaniac")
 
