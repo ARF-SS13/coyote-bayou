@@ -175,6 +175,8 @@ ATTACHMENTS
 	var/prefered_power
 	/// Does the gun use the bullet's sounds, instead of its own?
 	var/use_casing_sounds
+	/// Is one of Kelp's wands?
+	var/is_kelpwand = FALSE
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -552,6 +554,18 @@ ATTACHMENTS
 	if(on_cooldown(user))
 		return
 	clear_cooldown_mods()
+
+	if(is_kelpwand)
+		if(iscarbon(user))
+			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
+				if(HAS_TRAIT(user, TRAIT_NOGUNS))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+			else
+				if(HAS_TRAIT(user, TRAIT_NOGUNS) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)
