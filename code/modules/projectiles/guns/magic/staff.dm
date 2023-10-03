@@ -113,8 +113,6 @@
 //If this doesn't get too big, just define projectile/damage here for simplicity's sake?
 /////////////////////////////////////
 
-// *Note to delete later: Staff types should be Lightning (Hitscan sniper), Magic Missile (Shotgun), Healing (Upgr. over wand), Fire (RPG?), Acid Spray (SMG)
-
 /obj/item/gun/magic/staff/kelpmagic
 	name = "Kelp's Stave of Templating"
 	desc = "If you can see this, call a coder! Or panic."
@@ -160,8 +158,8 @@
 /obj/item/gun/magic/staff/kelpmagic/magicmissile
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
-	icon_state = "staffmm"
-	max_charges = 30
+	icon_state = "mmstaff"
+	max_charges = 24
 	recharge_rate = 10 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	force_wielded = 37 // Practical all around! May change later.
@@ -190,19 +188,76 @@
 
 /obj/item/gun/magic/staff/kelpmagic/fireball
 	name = "staff of fireball"
-	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff. For some reason, however, you feel like it might be better against walls and sapient targets than anything else."
+	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
 	icon_state = "firestaff"
 	max_charges = 1
-	recharge_rate = 2 MINUTES
+	recharge_rate = 60 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/fireball
+	ammo_type = /obj/item/ammo_casing/magic/fireball // 75 brute damage + a knockdown + always blinds a square around the impact point + bonus dmg vs mobs
 
 /****************/
 //Staff of Lightning//
-//Pure power and devastation - DMR or Sniper adjacent/
+//For I beheld Satan as he fell from heaven, like lightning! - DMR or Sniper adjacent/
 /***************/
 
 /obj/item/gun/magic/staff/kelpmagic/lightning
 	name = "staff of lightning"
-	desc = ""
-	icon_state = "staffmm"
+	desc = "The entire staff hums and crackles with power, and excess energy dances along its prongs. When unleashed, a single bolt of great power strikes out faster than the eye can see."
+	icon_state = "lightningstaff"
+	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
+	max_charges = 15
+	recharge_rate = 20 SECONDS
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
+		projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/thunder
+
+/obj/item/projectile/magic/kelpmagic/sparks/thunder
+	name = "lightning bolt"
+	damage = 60
+
+/****************/
+//Staff of Healing//
+//Because every bottom needs their tools - medibeam adjacent, now with skill requirements!/
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/healstaff
+	name = "staff of healing"
+	desc = "This golden staff is topped with a diamond that lets out a soothing hum. Due to its increased size, this staff is able to store power much more efficiently than its wand counterpart. It still can't heal its wielder, however."
+	icon_state = "medstaff"
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
+	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
+	recharge_rate = 60 SECONDS
+
+/****************/
+//Staff of Acid//
+//OH GOD, IT'S EVERYWHERE - SMG adjacent/
+/***************/
+
+/obj/item/gun/magic/staff/kelpmagic/acidstaff
+	name = "staff of acid"
+	desc = "Simply holding this staff fills you with a sense of unease. Ephemeral ooze gathers at the tip before dripping and falling to nothing. When unleashed, it looses a spray of vile acid to rapidly eat away at anything it touches."
+	icon_state = "acidstaff"
+	fire_sound = 'sound/f13npc/centaur/spit.ogg'
+	max_charges = 60 // This puts it in the same rough ballpark as the tesla autoshock, but projectile
+	recharge_rate = 6 SECONDS
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/acidspray
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150,
+		/datum/firemode/semi_auto/faster
+	)
+
+/obj/item/ammo_casing/magic/kelpmagic/acidspray
+	projectile_type = /obj/item/projectile/magic/kelpmagic/acidspray
+
+/obj/item/projectile/magic/kelpmagic/acidspray
+	name = "acid spray"
+	icon_state = "toxin"
+	damage = 12
+	damage_type = BURN
+	flag = "laser"
+

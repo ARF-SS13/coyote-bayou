@@ -467,12 +467,14 @@
 	damage = 75
 	damage_type = BRUTE
 	nodamage = 0
+	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 	//explosion values
 	var/exp_heavy = 0
-	var/exp_light = 0
+	var/exp_light = 1
 	var/exp_flash = 1
-	var/exp_fire = 0
+	var/exp_fire = 1
 
 /obj/item/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
