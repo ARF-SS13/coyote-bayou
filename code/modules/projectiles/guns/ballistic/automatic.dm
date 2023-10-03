@@ -311,7 +311,7 @@
 	desc = "a damaged, juryrigged machine pistol prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "magmp"
-	item_state = "caplaser"
+	item_state = "solarscorcher"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m10mm
@@ -327,6 +327,10 @@
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	can_scope = FALSE
 	casing_ejector = TRUE
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 24
+	flight_y_offset = 16
 	weapon_special_component = null
 
 /obj/item/gun/ballistic/automatic/smg/smg10mm/magnetic/post_modify_projectile(obj/item/projectile/BB) //thurr. I turned a regular bullet into a mag bullet.
