@@ -985,7 +985,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(stat == DEAD)
 		return
-	if (idlesound)
+	if (idlesound && !(islist(idlesound) && LAZYLEN(idlesound) == 0))
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
