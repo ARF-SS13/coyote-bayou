@@ -47,13 +47,13 @@
 	return TRUE
 
 //-->We are now going to gunsling
-/datum/keybinding/human/holster_equip
-	hotkey_keys = list("ShiftR")
-	name = "holster_equip"
-	full_name = "Quick holster equip"
-	description = "Holster or unholster your gun or ammo clips."
+// /datum/keybinding/human/holster_equip
+// 	hotkey_keys = list("ShiftR")
+// 	name = "holster_equip"
+// 	full_name = "Quick holster equip"
+// 	description = "Holster or unholster your gun or ammo clips."
 
-/datum/keybinding/human/holster_equip/down(client/user)
-	var/mob/living/carbon/human/H = user.mob
-	H.smart_equipholster()
-	return TRUE
+// /datum/keybinding/human/holster_equip/down(client/user)
+// 	var/mob/living/carbon/human/H = user.mob
+// 	H.smart_equipholster()
+// 	return TRUE

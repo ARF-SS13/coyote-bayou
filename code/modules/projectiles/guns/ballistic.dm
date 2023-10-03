@@ -1,4 +1,5 @@
 GLOBAL_LIST_EMPTY(gun_accepted_magazines)
+GLOBAL_VAR_INIT(smart_gunreload_previous_magazine, 0)
 
 /obj/item/gun/ballistic
 	desc = "Now comes in flavors like GUN. Uses 10mm ammo, for some reason."
@@ -132,6 +133,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		var/obj/item/ammo_box/oldmag
 		if(istype(magazine))
 			oldmag = magazine
+			GLOB.smart_gunreload_previous_magazine = oldmag
 			eject_magazine(user, en_bloc, !en_bloc, TRUE) //stop ejecting perfectly good shells!
 		if(user.transferItemToLoc(new_mag, src))
 			magazine = new_mag

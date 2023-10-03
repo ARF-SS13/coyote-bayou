@@ -454,8 +454,18 @@
 	set hidden = 1
 
 	var/obj/item/I = get_active_held_item()
-	if (I)
+	if(I)
 		I.equip_to_best_slot(src)
+	// else
+	// 	var/obj/item/storage = get_item_by_slot(SLOT_S_STORE)
+	// 	if(!storage.contents.len) //not a storage item
+	// 		if(get_active_held_item())
+	// 			storage.attack_hand(src)
+	// 	else if(!get_active_held_item())
+	// 		storage = get_item_by_slot(SLOT_BELT)
+	// 		if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE)) //not a storage item
+	// 			if(get_active_held_item())
+	// 				storage.attack_hand(src)
 
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
 /mob/proc/getBackSlot()

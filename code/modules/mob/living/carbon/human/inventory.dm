@@ -356,6 +356,7 @@
 	stored.attack_hand(src) // take out thing from belt
 	return
 
+/*
 /mob/living/carbon/human/proc/smart_equipholster() //put held thing in holster, take out weapons or ammo with a priority.
 	if(incapacitated())
 		return
@@ -409,3 +410,4 @@
 		return
 	else
 		return
+*/
