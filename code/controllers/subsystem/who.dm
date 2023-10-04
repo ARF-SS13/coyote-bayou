@@ -285,7 +285,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/admeme = check_rights_for(whoer, admin_level_to_see_all) && !(whoer.holder in GLOB.deadmins) // so deadmins can see the normal stuff
 	if(!admeme)
 		to_chat(whoer, span_alert("Hey! Admin Who is for Admins only!"))
-	Who(whoer, TRUE)
+	Who(whoer)
+	to_chat(whoer, span_alertalien("WhoPlus is broken cus its awful, so heres the normal who!"))
 
 /datum/controller/subsystem/who/proc/Who(client/whoer, admeme)
 	var/list/lines = list()
@@ -389,8 +390,8 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 			out += " the <span class='[role_span]'>[role]</span>"
 		if(where_visible)
 			out += ", in <span class='[where_span]'>[where]</span>"
-		if(pose_visible)
-			out += "<br>[FOURSPACES][pose]'"
+		if(pose_visible && pose && trim(pose) != "")
+			out += "'[pose]'"
 		var/msgout = out.Join()
 		return msgout
 	out += "[FOURSPACES] <span class='[role_span]'>[role]</span> - <span class='[where_span]'>[where]</span>"
