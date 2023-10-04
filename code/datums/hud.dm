@@ -31,8 +31,6 @@ GLOBAL_LIST_INIT(huds, list(
 	ANTAG_HUD_FUGITIVE = new/datum/atom_hud/antag(),
 	ANTAG_HUD_HERETIC = new/datum/atom_hud/antag/hidden(),
 	DATA_HUD_CLIENT = new/datum/atom_hud/data/client(),
-	GENITAL_PORNHUD = new/datum/atom_hud/data/human/genital(),
-	TAIL_HUD_DATUM = new/datum/atom_hud/data/human/tail(),
 	))
 
 /datum/atom_hud

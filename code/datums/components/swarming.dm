@@ -10,6 +10,7 @@
 
 	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/join_swarm)
 	RegisterSignal(parent, COMSIG_MOVABLE_UNCROSSED, .proc/leave_swarm)
+	RegisterSignal(parent, COMSIG_MOB_DEATH, .proc/leave_swarm)
 
 /datum/component/swarming/Destroy()
 	if(is_swarming)
