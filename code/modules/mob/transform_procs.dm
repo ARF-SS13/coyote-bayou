@@ -394,6 +394,7 @@
 		if(R.mmi.brainmob)
 			R.mmi.brainmob.real_name = real_name //the name of the brain inside the cyborg is the robotized human's name.
 			R.mmi.brainmob.name = real_name
+	R.fuzzy = fuzzy //SPLURT ADD - FUZZY
 
 	R.job = "Cyborg"
 	R.notify_ai(NEW_BORG)
