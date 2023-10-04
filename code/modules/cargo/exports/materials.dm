@@ -81,18 +81,18 @@
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 100
+	cost = 1000
 	material_id = /datum/material/adamantine
 	message = "cm3 of pre-war ingots"
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
 	/obj/item/ingot/adamantine)
 
-/* 
+/*
 /datum/export/material/prewar
 	cost = 15
 	material_id = /datum/material/prewar
 	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar) 
+	export_types = (/obj/item/stack/sheet/prewar)
 */
 
 /datum/export/material/mythril
@@ -121,28 +121,28 @@
 
 /datum/export/material/expalloy
 	cost = 100 // Limited, unless clinic goes out of their way, which takes time.
-	message = " "
+	message = ""
 	unit_name = "polymer alloy"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/mineral/abductor)
 
 /datum/export/material/bone
-	cost = 20
-	message = " "
+	cost = 40
+	message = ""
 	unit_name = "bone"
 	material_id = /datum/material/bone
 	export_types = list(/obj/item/stack/sheet/bone)
 
 /datum/export/material/sinew
-	cost = 10
-	message = " "
+	cost = 15
+	message = ""
 	unit_name = "pieces of sinew"
 	material_id = /datum/material/sinew
 	export_types = list(/obj/item/stack/sheet/sinew)
 
 /datum/export/material/chitin
 	cost = 100
-	message = " "
+	message = ""
 	unit_name = "pieces of chitin"
 	material_id = /datum/material/chitin
 	export_types = list(/obj/item/stack/sheet/animalhide/chitin)

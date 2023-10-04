@@ -27,7 +27,7 @@
 /datum/supply_pack/goody/valentine
 	name = "Valentine Card"
 	desc = "Make an impression on that special someone! Comes with one valentine card and a free candy heart!"
-	cost = 150
+	cost = 400
 	contains = list(/obj/item/valentine, /obj/item/reagent_containers/food/snacks/candyheart)
 
 /datum/supply_pack/goody/beeplush
@@ -53,17 +53,17 @@
 /datum/supply_pack/goody/grapementat
 	name = "Grape Mentats"
 	desc = "A tin of delicious grape flavored mental stimulants."
-	cost = 200 //export value is 200
+	cost = 400 //export value is 200
 	contains = list(/obj/item/storage/pill_bottle/chem_tin/mentats/grape)
 
 /datum/supply_pack/goody/orangementat
 	name = "Orange Mentats"
 	desc = "A tin of delicious orange flavored mental stimulants."
-	cost = 200
+	cost = 400
 	contains = list(/obj/item/storage/pill_bottle/chem_tin/mentats/orange)
 
 /datum/supply_pack/goody/berrymentat
 	name = "Berry Mentats"
 	desc = "A tin of delicious berry flavored mental stimulants."
-	cost = 200
+	cost = 400
 	contains = list(/obj/item/storage/pill_bottle/chem_tin/mentats/berry)

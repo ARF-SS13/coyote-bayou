@@ -30,10 +30,10 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	/datum/crafting_recipe/strongrocket))
 
 GLOBAL_LIST_INIT(minelaying_recipe, list(
-	/datum/crafting_recipe/explosive/shrapnelmine, 
-	/datum/crafting_recipe/explosive/explomine, 
-	/datum/crafting_recipe/explosive/stingmine, 
-	/datum/crafting_recipe/explosive/pulsemine, 
+	/datum/crafting_recipe/explosive/shrapnelmine,
+	/datum/crafting_recipe/explosive/explomine,
+	/datum/crafting_recipe/explosive/stingmine,
+	/datum/crafting_recipe/explosive/pulsemine,
 	/datum/crafting_recipe/explosive/stunmine))
 
 GLOBAL_LIST_INIT(tier_three_parts, list(
@@ -465,7 +465,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Artsy Quirks"
 	mechanics = "You spawn with an instrument & tuner. If you use a tuned instrument then you apply a healing chem to those that hear it. Over time this healing chem can build up in thei system to create an even bigger healing effect. It even stacks with other musicians!"
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_MUSICIAN
 	gain_text = span_notice("You know everything about musical instruments.")
@@ -490,7 +490,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_SWAMPWIZARD
 	gain_text = span_notice("You know everything about magic.")
@@ -510,8 +510,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Emotional Quirks"
 	mechanics = "You know, to the number, how much damage you've taken."
 	conflicts = list(
-	
-	) 
+
+	)
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
@@ -522,7 +522,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Movement Quirks"
 	mechanics = "With ctrl + shift + click you can hop into lockers, dumpsters, and trash cans. Good for if you hear footsteps and want to not be seen."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_SKITTISH
 	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
@@ -534,7 +534,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Functional Quirks"
 	mechanics = "Your prayers trigger the same noise for admins that a preachers prayers would, meaning they're more likely to pay attention to them. That doesn't mean it will be positive attention though."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_SPIRITUAL
 	gain_text = span_notice("You feel a little more faithful to the gods today.")
@@ -548,7 +548,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Artsy Quirks"
 	mechanics = "You get twice as many uses out of drawing supplies, like spray paint cans! Remember, we have a persistent painting system."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_TAGGER
 	gain_text = span_notice("You know how to tag walls efficiently.")
@@ -574,7 +574,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/dumb,
 		/datum/quirk/luddite,
 		/datum/quirk/primitive,
-		
+
 		)
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
@@ -607,7 +607,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Crafting Quirks"
 	mechanics = "You gain access to our weapon smithing system. A decent amount of recipes for things you can use, or sell!"
 	conflicts = list(
-		
+
 	)
 
 	mob_trait = TRAIT_WEAPONSMITH
@@ -681,7 +681,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Tech Quirks"
 	mechanics = "You gain access to tribal chemmasters to make potions and poisons."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_MACHINE_SPIRITS
 	gain_text = span_notice("You are now able to use primitive technology.")
@@ -1040,7 +1040,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Crafting Quirks"
 	mechanics = "You gain access to the recipes to make all sorts of explosives, including mines!"
 	conflicts = list( //dumb
-		
+
 	)
 	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You feel like you can make a bomb out of anything.")
@@ -1069,7 +1069,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Healer Quirks"
 	mechanics = "Your innate healing functions have 25 uses, instead of 5. They still regenerate at the same speed though."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_IMPROVED_HEALING
 	gain_text = span_notice("You feel well hydrated.")
@@ -1084,7 +1084,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_BANDAGE_TONGUE
 	gain_text = span_notice("Your mouth feels a bit gummy.")
@@ -1114,7 +1114,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You're on the no-fly list.'")
@@ -1153,7 +1153,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/obj/item/book/granter/trait/tribaltraditions/B = new(get_turf(H))
 	H.put_in_hands(B)
 
-/* 
+/*
 /datum/quirk/deadhorsestraditions
 	name = "Dead Horses traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
@@ -1313,7 +1313,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Movement Quirks"
 	mechanics = "You are treated as being in harm intent at all times when it comes to people moving through your space."
 	conflicts = list( //health flimsy maybe? Maybe not though?  idk
-		
+
 	)
 	mob_trait = TRAIT_PUSHIMMUNE
 	gain_text = span_notice("You feel stronger than a brick wall.")
@@ -1328,7 +1328,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_RESISTHEAT
 	gain_text = span_notice("It could be a little warmer in here.")
@@ -1342,7 +1342,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_RESISTCOLD
 	gain_text = span_notice("It could be a little colder in here.")
@@ -1357,7 +1357,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
@@ -1415,7 +1415,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = ""
 	mechanics = ""
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_PIERCEIMMUNE
 	gain_text = span_notice("Your skin feels way stronger.")
@@ -1581,13 +1581,16 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	locked =  FALSE
 
 /datum/quirk/wandproficient
-	name = "Wand Proficient"
-	desc = "You know how to use magic wands!"
+	name = "Magically Attuned"
+	desc = "You were either born with a natural inclination for magic or were taught its secrets."
 	value = 0
 	category = "Ranged Quirks"
-	mechanics = "You can use magic wands, but the cost for such is to not being able to learn a martial art. The moment you'll learn one, you'll never be able to use wands!"
-	// conflicts = list(
-	// )
+	mechanics = "You can use magical wands, staves, and other advanced magical items. However, magic has a cost -- your potential elsewhere is limited, and learning a martial art will sever your connection to magic."
+	conflicts = list(
+	/datum/quirk/deadeye,
+	/datum/quirk/mastermartialartist,
+	)
+
 	mob_trait = TRAIT_WAND_PROFICIENT
 	gain_text = span_notice("You feel magic flowing through your veins!")
 	lose_text = span_danger("The magic within you fades away.")
@@ -1742,7 +1745,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	category = "Mutant Quirks"
 	mechanics = "You gain the shapeshift spell and can cast it nearly at will! This allows you to transform into an animal and back again. Once you select a shape, it cannot be changed."
 	conflicts = list(
-		
+
 	)
 	mob_trait = TRAIT_WILDSHAPE
 	gain_text = span_notice("You tapped to potentials of the critter horde!")
