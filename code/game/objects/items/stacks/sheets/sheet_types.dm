@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("shelf parts", /obj/item/rack_parts), \
 	new/datum/stack_recipe("closet", /obj/structure/closet, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 30, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("trash bin", /obj/structure/closet/crate/bin, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("computer frame", /obj/structure/frame/computer, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("modular console", /obj/machinery/modular_computer/console/buildable/, 10, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
@@ -231,19 +231,19 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plasteel, 1, time = 10),
 	new /datum/stack_recipe_list("crates", list( \
-		new /datum/stack_recipe("gray crate", /obj/structure/closet/crate, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("trash cart", /obj/structure/closet/crate/trashcart, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("medical crate", /obj/structure/closet/crate/medical, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("freezer crate", /obj/structure/closet/crate/freezer, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("blood bag crate", /obj/structure/closet/crate/freezer/blood/fake, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("surplus limbs crate", /obj/structure/closet/crate/freezer/surplus_limbs/fake, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("radiation containment crate", /obj/structure/closet/crate/radiation, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("engineering crate", /obj/structure/closet/crate/engineering, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("eletrical crate", /obj/structure/closet/crate/engineering/electrical, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("RCD storage crate", /obj/structure/closet/crate/rcd/fake, 30, time = 50, one_per_turf = 1, on_floor = 1), \
-		new /datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 30, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("gray crate", /obj/structure/closet/crate, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("trash cart", /obj/structure/closet/crate/trashcart, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("medical crate", /obj/structure/closet/crate/medical, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("freezer crate", /obj/structure/closet/crate/freezer, 8, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("blood bag crate", /obj/structure/closet/crate/freezer/blood/fake, 8, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("surplus limbs crate", /obj/structure/closet/crate/freezer/surplus_limbs/fake, 8, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("radiation containment crate", /obj/structure/closet/crate/radiation, 8, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("engineering crate", /obj/structure/closet/crate/engineering, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("eletrical crate", /obj/structure/closet/crate/engineering/electrical, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("RCD storage crate", /obj/structure/closet/crate/rcd/fake, 5, time = 50, one_per_turf = 1, on_floor = 1), \
+		new /datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 5, time = 50, one_per_turf = 1, on_floor = 1), \
 	)), \
 	new /datum/stack_recipe_list("airlock assemblies", list( \
 		new/datum/stack_recipe("high security airlock assembly", /obj/structure/door_assembly/door_assembly_highsecurity, 4, time = 50, one_per_turf = 1, on_floor = 1), \
@@ -338,10 +338,10 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden fence gate", /obj/structure/simple_door/metal/fence/wooden, 20, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
-	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 25, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("easel", /obj/structure/easel, 4, time = 20, one_per_turf = TRUE, on_floor = TRUE),\
-	new/datum/stack_recipe("basket", /obj/structure/closet/crate/wicker, 25, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+	new/datum/stack_recipe("basket", /obj/structure/closet/crate/wicker, 15, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
@@ -1026,7 +1026,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 
 GLOBAL_LIST_INIT(hay_recipes, list ( \
 	new/datum/stack_recipe("rice hat", /obj/item/clothing/head/rice_hat, 4, time = 5, one_per_turf = FALSE, on_floor = FALSE), \
-	new/datum/stack_recipe("wicker basket", /obj/structure/closet/crate/wicker, 25, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wicker basket", /obj/structure/closet/crate/wicker, 15, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 
 

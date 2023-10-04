@@ -734,7 +734,7 @@
 	)
 
 /datum/export/item/nucrate // Hopefully this one works
-	cost = 200
+	cost = 10
 	k_elasticity = 0
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
