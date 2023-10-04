@@ -452,12 +452,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland)
-"aiX" = (
-/mob/living/carbon/human/species,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland/city)
 "aja" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -7637,7 +7631,6 @@
 /area/f13/building/abandoned)
 "dvA" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/mob/living/carbon/human/species,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -24641,11 +24634,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city)
-"kPi" = (
-/obj/structure/spider/stickyweb,
-/mob/living/carbon/human/species,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/city)
 "kPp" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/indestructible/ground/outside/dirt,
@@ -40234,7 +40222,9 @@
 /area/f13/wasteland)
 "rVZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/floor/plasteel{
 	icon_state = "asteroidfloor"
 	},
@@ -49607,12 +49597,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"wgw" = (
-/mob/living/carbon/human/species,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building/abandoned)
 "wgz" = (
 /obj/structure/bed/old,
 /obj/effect/spawner/lootdrop/bedsheet,
@@ -58784,7 +58768,7 @@ mvE
 ipV
 iPM
 prM
-wgw
+eQM
 pXJ
 qyn
 nUC
@@ -62377,7 +62361,7 @@ tpA
 jif
 xDc
 fmm
-aiX
+kiu
 mvE
 cjz
 dUR
@@ -63413,7 +63397,7 @@ dhm
 dNe
 dNe
 wIw
-kPi
+wIw
 wIw
 kkA
 ioX
