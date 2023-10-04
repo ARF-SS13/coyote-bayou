@@ -1561,3 +1561,10 @@
 	ghostize()
 	qdel(src)
 //End Coyote Add
+
+/mob/living/verb/switch_scaling()
+	set name = "Switch scaling mode"
+	set category = "IC"
+	set desc = "Switch sharp/fuzzy scaling for current mob."
+	appearance_flags ^= PIXEL_SCALE
+	fuzzy = !fuzzy

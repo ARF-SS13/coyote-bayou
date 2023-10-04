@@ -635,6 +635,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["body_model"]				>> features["body_model"]
 	S["body_size"]				>> features["body_size"]
 	S["body_width"]				>> features["body_width"]
+	
+	//Fuzzy scaling
+	S["feature_fuzzy"]          >> fuzzy
+	
 	S["age"]					>> age
 	S["hair_color"]				>> hair_color
 	S["facial_hair_color"]		>> facial_hair_color
@@ -951,6 +955,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		width_max = CONFIG_GET(number/body_width_max)
 	features["body_width"]			= sanitize_num_clamp(features["body_width"], width_min, width_max, RESIZE_DEFAULT_SIZE, 0.01)
 
+	fuzzy 							= sanitize_integer(fuzzy, 0, 1, initial(fuzzy))
+
 	var/static/list/B_sizes
 	if(!B_sizes)
 		var/list/L = CONFIG_GET(keyed_list/breasts_cups_prefs)
@@ -1119,6 +1125,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			"Mobility - Can not Run",
 		)
 		WRITE_FILE(S["all_quirks"], debug_oldies)
+	
+	WRITE_FILE(S["feature_fuzzy"], fuzzy)
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 

@@ -329,6 +329,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Versioning hack! Versioning hack! Versioning hack!
 	var/list/current_version = list()
 
+	var/fuzzy = FALSE //Fuzzy scaling
+
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -635,6 +637,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 			if (CONFIG_GET(number/body_width_min) != CONFIG_GET(number/body_width_max))
 				dat += "<b>Sprite Width:</b> <a href='?_src_=prefs;preference=body_width;task=input'>[features["body_width"]*100]%</a><br>"
+			dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eye Type</h3>"
@@ -3343,6 +3346,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
 
+				if("toggle_fuzzy")
+					fuzzy = !fuzzy
+
 				if("body_width")
 					var/min = CONFIG_GET(number/body_width_min)
 					var/max = CONFIG_GET(number/body_width_max)
@@ -3911,6 +3917,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.special_i = special_i
 	character.special_a = special_a
 	character.special_l = special_l
+	character.fuzzy = fuzzy
 
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
