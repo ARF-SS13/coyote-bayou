@@ -500,6 +500,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/steps = 1
 	if(current != target_turf)
 		current = get_step_towards(current, target_turf)
+		if (!current)
+			return 0 // How did you get from somewhere to nowhere????
 		while(current != target_turf)
 			if(steps > length)
 				return 0
