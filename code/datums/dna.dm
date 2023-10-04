@@ -747,10 +747,12 @@
 
 /// takes in whatever's at features["genital_order"] and spits out a list in order of what's present
 /// reverses it cus its more intuitive that way (for everyone but me)
-/datum/dna/proc/decode_cockstring()
+/datum/dna/proc/decode_cockstring(reverse = TRUE)
+	RETURN_TYPE(/list)
 	var/list/list_out = list()
 	list_out = splittext(features["genital_order"], ":")
-	list_out = reverseList(list_out)
+	if(reverse)
+		list_out = reverseList(list_out)
 	return list_out
 
 /// takes in a list of nads and outputs a cockstring, then saves it

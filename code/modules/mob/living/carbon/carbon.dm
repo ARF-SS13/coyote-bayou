@@ -327,9 +327,9 @@
 					dna.features["genital_visibility_flags"] = new_bit
 					for(var/obj/item/organ/genital/nad in internal_organs)
 						nad.update_genital_visibility(new_bit)
-				if(ishuman(src)) // lesigh
-					var/mob/living/carbon/human/dip = src
-					dip.update_body(TRUE)
+				// if(ishuman(src)) // lesigh
+				// 	var/mob/living/carbon/human/dip = src
+				// 	dip.update_body(TRUE)
 				show_genital_layering_panel()
 			if("change_genital_clothing_respect", "change_genital_underwear_respect", "change_genital_override") // they all do the same darn thing
 				var/obj/item/organ/genital/clotheme = locate(href_list["which"])
