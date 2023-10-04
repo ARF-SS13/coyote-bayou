@@ -67,6 +67,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa = 30,
 		/obj/item/clothing/suit/armor/power_armor = 75,
 		/obj/item/clothing/head/helmet/f13/power_armor = 75,
+		/obj/item/gun/ballistic/shotgun/toy = 5,
+		/obj/item/gun/ballistic/automatic/toy = 5,
+		/obj/item/toy = 5,
 		/obj/item/melee = 5,
 		/obj/item/melee/transforming = 5,
 		/obj/item/twohanded = 5,
@@ -213,12 +216,12 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/patron = 15,
 		/obj/item/card/lowbounty = 75,
 		/obj/item/card/midbounty = 150,
-		/obj/item/card/highbounty = 300,
-		/obj/item/card/kingbounty = 600,
+		/obj/item/card/highbounty = 250,
+		/obj/item/card/kingbounty = 500,
 		// Artifacts: Someone who actually playes needs to test these prices -Kelprunner
-		/obj/item/artifact/common = 250,
-		/obj/item/artifact/uncommon = 500,
-		/obj/item/artifact/rare = 750,
+		/obj/item/artifact/common = 150,
+		/obj/item/artifact/uncommon = 300,
+		/obj/item/artifact/rare = 500,
 	)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
@@ -338,13 +341,13 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 75¢<br>"
 	dat += "Medium Roller Bounty Ticket: 150¢<br>"
-	dat += "High Roller Bounty Ticket: 300¢<br>"
-	dat += "King's Bounty Ticket: 600¢<br>"
+	dat += "High Roller Bounty Ticket: 250¢<br>"
+	dat += "King's Bounty Ticket: 500¢<br>"
 	dat += "<br>"
 	dat += "<b>No use for an artifact? Trade it for hard coins!</b><br>"
-	dat += "Lesser Artifact: 250¢<br>"
-	dat += "Standard Artifact: 500¢<br>"
-	dat += "Greater Artifact: 750¢<br>"
+	dat += "Lesser Artifact: 150¢<br>"
+	dat += "Standard Artifact: 300¢<br>"
+	dat += "Greater Artifact: 500¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)

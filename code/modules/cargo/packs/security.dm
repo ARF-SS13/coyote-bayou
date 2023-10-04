@@ -69,7 +69,7 @@
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
 	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
-	cost = 5000
+	cost = 3000
 	num_contained = 1
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
@@ -487,6 +487,41 @@
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/wands // Wands
+	name = "Magic - Wands"
+	desc = "A crate containing three whole wands. Hand-crafted by the Witches of Winslow, according to the Dallas catalog."
+	cost = 3000
+	num_contained = 3
+	contains = list(
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved,
+		/obj/item/gun/magic/wand/kelpmagic/sparky,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_basic // T1 Staves
+	name = "Magic - Basic Staves"
+	desc = "A crate containing three basic staves."
+	cost = 5000
+	num_contained = 3
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/magicmissile,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff,
+		/obj/item/gun/magic/staff/kelpmagic/lightning
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_advanced // T2 Staves
+	name = "Magic - Advanced Staves"
+	desc = "A crate containing either a staff of fireball or a staff of healing."
+	cost = 5000
+	num_contained = 2
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/healstaff,
+		/obj/item/gun/magic/staff/kelpmagic/fireball
 		)
 	crate_name = "quality weapon crate"
 
