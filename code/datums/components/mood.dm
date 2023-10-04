@@ -33,11 +33,18 @@
 	RegisterSignal(parent, COMSIG_LIVING_REVIVE, .proc/on_revive)
 	RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, .proc/modify_hud)
 	RegisterSignal(parent, COMSIG_MOB_DEATH, .proc/stop_processing)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/clean_up)
 
 	if(owner.hud_used)
 		modify_hud()
 		var/datum/hud/hud = owner.hud_used
 		hud.show_hud(hud.hud_version)
+
+/datum/component/mood/proc/clean_up()
+	QDEL_LIST_ASSOC_VAL(mood_events)
+	QDEL_NULL(screen_obj)
+	QDEL_NULL(malus)
+	QDEL_NULL(bonus)
 
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSobj, src)
