@@ -40222,7 +40222,9 @@
 /area/f13/wasteland)
 "rVZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/simple_door/metal/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 2
+	},
 /turf/open/floor/plasteel{
 	icon_state = "asteroidfloor"
 	},

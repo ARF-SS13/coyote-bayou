@@ -221,6 +221,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	stop_spawning()
 	if(!am_special)
 		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
+	qdel(src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
 /datum/component/spawner/proc/on_attack_generic(datum/source, mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
@@ -245,6 +246,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(has_mobs_left())
 		return FALSE
 	if(ismob(parent))
+		qdel(src)
 		return FALSE // no more self-destructing ant queens
 	return TRUE
 
