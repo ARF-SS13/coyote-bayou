@@ -73,37 +73,37 @@
 /datum/supply_pack/medical/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/medical/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
 	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/storage/firstaid/fire)
 
 /datum/supply_pack/medical/firstaid_single
 	name = "First Aid Kit Single-Pack"
 	desc = "A single first-aid kit, fit for healing most types of bodily harm."
-	cost = 250
+	cost = 500
 	contains = list(/obj/item/storage/firstaid/regular)
 
 /datum/supply_pack/medical/firstaidoxygen_single
 	name = "Oxygen Deprivation Kit Single-Pack"
 	desc = "A single oxygen deprivation first-aid kit, marketed heavily to those with crippling fears of asphyxiation."
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/storage/firstaid/o2)
 
 /datum/supply_pack/medical/firstaidtoxins_single
 	name = "Toxin Treatment Kit Single-Pack"
 	desc = "A single first aid kit focused on healing damage dealt by heavy toxins."
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/storage/firstaid/toxin)
 
 /datum/supply_pack/medical/tacticalkit
 	name = "Tactical Treatment Kit Single-Pack"
 	desc = "A single first aid kit focused on getting people out of a bad situation."
-	cost = 7500
+	cost = 5000
 	contains = list(/obj/item/storage/firstaid/tactical)
 
 /datum/supply_pack/medical/potions
@@ -119,7 +119,7 @@
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
 	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
-	cost = 10000
+	cost = 7500
 	contains = list(/obj/item/storage/box/bodybags,
 					/obj/item/storage/box/bodybags,
 					/obj/item/defibrillator/loaded,
@@ -161,7 +161,7 @@
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip stand for intravenous delivery."
-	cost = 200
+	cost = 400
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
 /*
@@ -240,11 +240,11 @@
 ///////////////////////////// Medical Kits ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/*
+
 /datum/supply_pack/medical/sprays
 	name = "Medical Sprays"
 	desc = "Contains two cans of Styptic Spray, Silver Sulfadiazine Spray, Synthflesh Spray and Sterilizer Compound Spray."
-	cost = 2250
+	cost = 2000
 	contains = list(/obj/item/reagent_containers/medspray/styptic,
 					/obj/item/reagent_containers/medspray/styptic,
 					/obj/item/reagent_containers/medspray/silver_sulf,
@@ -258,13 +258,12 @@
 /datum/supply_pack/medical/advrad
 	name = "Radiation Treatment Crate Deluxe"
 	desc = "A crate for when radiation is out of hand... Contains two radaway pouches, one bottle of radx, as well as a radiation treatment deluxe pill bottle!"
-	cost = 3500
+	cost = 1200
 	contains = list(/obj/item/storage/pill_bottle/antirad_plus,
 					/obj/item/storage/pill_bottle/mutarad,
 					/obj/item/storage/firstaid/radbgone,
-					/obj/item/storage/firstaid/radbgone,
-					/obj/item/geiger_counter,
-					/obj/item/geiger_counter)
+					/obj/item/storage/firstaid/radbgone)
+
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
 
@@ -272,7 +271,7 @@
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
 	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
-	cost = 2000
+	cost = 1200
 	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
 					/obj/item/reagent_containers/hypospray/medipen/,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
@@ -283,7 +282,6 @@
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss)
 
 	crate_name = "medipen crate"
-*/
 
 /datum/supply_pack/medical/chems
 	name = "Mixed Chems"

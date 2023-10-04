@@ -79,6 +79,22 @@
 					/obj/effect/spawner/lootdrop/f13/rare_armor)
 	crate_name = "armor crate"
 
+/datum/supply_pack/security/nvgpack
+	name = "Utility - Night Vision"
+	desc = "A single set of Night Vision Goggles. Because you're just not tactical enough until you have a set of NODs on, even if it's the middle of the day."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/nvgpack_upgr
+	name = "Utility - Prescription Night Vision"
+	desc = "A set of NVGs, now adjusted for those with terrible vision! Wearing these doesn't make you less of a nerd, however."
+	cost = 12500
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night/prescription)
+	crate_name = "armor crate"
+
 /datum/supply_pack/security/ec
 	name = "Ammo - Energy Cell"
 	desc = "Three fully charged energy cells."
