@@ -9,7 +9,7 @@
 	name = "Insulated Gloves Single-Pack"
 	desc = "The backbone of modern society. Oddly useful for...combat engineers, of all people."
 	cost = 800
-	contains = list(/obj/item/clothing/gloves/color/yellow) 
+	contains = list(/obj/item/clothing/gloves/color/yellow)
 
 
 /datum/supply_pack/goody/toolbox // mostly just to water down coupon probability
@@ -39,7 +39,7 @@
 /datum/supply_pack/goody/beach_ball
 	name = "Beach Ball"
 	desc = "The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen"
-	cost = 200
+	cost = 500
 	contains = list(/obj/item/toy/beach_ball)
 
 /*

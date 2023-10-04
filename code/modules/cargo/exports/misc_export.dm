@@ -218,6 +218,7 @@
 		/obj/item/gun/energy/laser/wattz/recharger,
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
+		/obj/item/gun/magic/,
 		)
 
 /datum/export/item/uniquegun
@@ -261,6 +262,16 @@
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+	)
+
+/datum/export/item/melee
+	cost = 1000
+	unit_name = "melee weapon"
+	export_types = list(
+	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/coyote,
+	/obj/item/melee/onehanded,
+	/obj/item/twohanded,
 	)
 
 /datum/export/item/armorrare
@@ -602,6 +613,8 @@
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
+						/obj/item/gun/ballistic/shotgun/toy,
+						/obj/item/gun/ballistic/automatic/toy,
 	)
 
 
@@ -726,6 +739,24 @@
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
 	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
+
+/datum/export/item/lowartifact
+	cost = 5000
+	unit_name = "common artifact"
+	export_types = list(/obj/item/artifact/common,
+	)
+
+/datum/export/item/highartifact
+	cost = 15000
+	unit_name = "rare artifact"
+	export_types = list(/obj/item/artifact/rare,
+	)
+
+/datum/export/item/midartifact
+	cost = 10000
+	unit_name = "uncommon artifact"
+	export_types = list(/obj/item/artifact/uncommon,
+	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 
