@@ -59,11 +59,11 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Initialize()
 	. = ..()
-	lay_web = new
-	lay_web.Grant(src)
+	// lay_web = new
+	// lay_web.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Destroy()
-	QDEL_NULL(lay_web)
+	// QDEL_NULL(lay_web)
 	return ..()
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Topic(href, href_list)
@@ -122,17 +122,17 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/Initialize()
 	. = ..()
-	wrap = new
-	AddAbility(wrap)
-	lay_eggs = new
-	lay_eggs.Grant(src)
-	set_directive = new
-	set_directive.Grant(src)
+	// wrap = new
+	// AddAbility(wrap)
+	// lay_eggs = new
+	// lay_eggs.Grant(src)
+	// set_directive = new
+	// set_directive.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/Destroy()
-	RemoveAbility(wrap)
-	QDEL_NULL(lay_eggs)
-	QDEL_NULL(set_directive)
+	// RemoveAbility(wrap)
+	// QDEL_NULL(lay_eggs)
+	// QDEL_NULL(set_directive)
 	return ..()
 
 //hunters have the most poison and move the fastest, so they can find prey
@@ -208,11 +208,11 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife/Initialize()
 	. = ..()
-	letmetalkpls = new
-	letmetalkpls.Grant(src)
+	// letmetalkpls = new
+	// letmetalkpls.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife/Destroy()
-	QDEL_NULL(letmetalkpls)
+	// QDEL_NULL(letmetalkpls)
 	return ..()
 
 /mob/living/simple_animal/hostile/poison/giant_spider/ice //spiders dont usually like tempatures of 140 kelvin who knew
