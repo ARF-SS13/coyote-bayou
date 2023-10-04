@@ -155,6 +155,7 @@
 	desc = "A versatile belt, woven from sinew. Holds tools and tool-like things."
 	icon_state = "ebelt"
 	item_state = "ebelt"
+	component_type = /datum/component/storage/concrete/pockets/magpouch
 
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
 /obj/item/storage/belt/utility/gardener
