@@ -162,3 +162,5 @@
 	//---End
 
 	var/disconnect_time //how long have we been dc'd for
+
+	var/fuzzy = FALSE

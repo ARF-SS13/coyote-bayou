@@ -473,6 +473,11 @@
 	name = "Mohawk"
 	icon_state = "hair_d"
 
+/datum/sprite_accessory/hair/mohawkmessy  //hair-kizius sprite!!!!
+	name = "Mohawk Messy"
+	icon_state = "hair_messyhawk"
+	icon = 'icons/mob/hair2.dmi'
+
 /datum/sprite_accessory/hair/reversemohawk
 	name = "Mohawk Reverse"
 	icon_state = "hair_reversemohawk"
