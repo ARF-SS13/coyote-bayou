@@ -181,13 +181,13 @@
 	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
-	for (var/component in datum_components)
+	for (var/datum/component/component in datum_components)
 		if (component)
 			component.RemoveComponent()
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Destroy()
-	for (var/component in datum_components)
+	for (var/datum/component/component in datum_components)
 		if (component)
 			component.RemoveComponent()
 	. = ..()
