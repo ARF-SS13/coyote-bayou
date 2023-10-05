@@ -695,6 +695,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/datum/component/comp = GetComponent(/datum/component/spawner)
 	if(comp)
 		qdel(comp)
+	for(var/comp in datum_components)
+		var/datum/component/C = datum_components[comp]
+		if(C)
+			qdel(C)
 	movement_type &= ~FLYING
 	unstamcrit()
 
