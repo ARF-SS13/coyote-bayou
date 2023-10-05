@@ -278,6 +278,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 15
 	icon_state = "rechargerpistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
@@ -399,7 +400,9 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
 	can_charge = 0
-	selfcharge = 1 //selfcharging adds 100 a shot
+	can_remove = 0 // if it self recharges, no cell change for you
+	selfcharge = 1
+	selfchargerate = 15 // 15*2 seconds to refill the cell
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 	weapon_class = WEAPON_CLASS_SMALL
@@ -460,7 +463,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -474,7 +477,7 @@
 	name = "twin-shot RCW carbine"
 	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
 	icon_state = "export_cannon"
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot) // 1200 damage per cell vs Tesla Autoshock's 1196
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot)
 	init_firemodes = list(
 		/datum/firemode/burst/two/fastest
 	)
@@ -487,7 +490,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -625,6 +628,8 @@
 	zoom_factor = 1
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 15
+
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -785,7 +790,7 @@
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
-	desc = "A bleeding-edge, pre-war laser rifle. A little more powerful than the previous model AER."
+	desc = "A bleeding-edge, pre-war laser rifle. It manages to make its battery last longer than the previous model while retaining all the power."
 	icon_state = "aer14"
 	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
@@ -872,7 +877,7 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
