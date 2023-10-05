@@ -19048,13 +19048,6 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
-"lcV" = (
-/obj/machinery/light/small,
-/obj/structure/decoration/vent{
-	name = "Water Purifier"
-	},
-/turf/open/water,
-/area/f13/building/sewers)
 "ldb" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/closed/indestructible/f13vaultrusted,
@@ -24038,15 +24031,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"olG" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/decoration/vent{
-	name = "Water Purifier"
-	},
-/turf/open/water,
-/area/f13/building/sewers)
 "olJ" = (
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood_wide/wood_wide_dark,
@@ -55762,7 +55746,7 @@ oFU
 dDD
 dDD
 tkZ
-lcV
+nmK
 tvD
 uXj
 wrx
@@ -55770,7 +55754,7 @@ sbJ
 wrx
 uXj
 uXj
-olG
+foJ
 tkZ
 pOs
 tIx
@@ -57304,7 +57288,7 @@ pOs
 kyV
 dHk
 tkZ
-lcV
+nmK
 uXj
 uXj
 rdq
@@ -57312,7 +57296,7 @@ kwC
 wrx
 uXj
 uXj
-olG
+foJ
 tkZ
 pOs
 uuS
