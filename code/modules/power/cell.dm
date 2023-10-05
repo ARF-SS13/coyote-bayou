@@ -597,4 +597,3 @@
 	ratingdesc = FALSE
 	maxcharge = 50000
 	cancharge = 0
-	w_class =
