@@ -296,7 +296,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 
 /obj/item/hand_item/clawer
@@ -390,7 +390,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/hand_item/arm_blade/mutation
 	name = "arm blade"
@@ -481,7 +481,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/hand_item/tail/thago
 	name = "dangerous tail"
@@ -510,7 +510,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "brute"))
+	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))
