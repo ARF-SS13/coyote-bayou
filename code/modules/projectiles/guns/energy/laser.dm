@@ -10,6 +10,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	can_charge = 0 // Can put in a weapon recharger. Temporary? Being done in regards to energy ammo changes; can't charge unrechargeable swappable cells.
 	var/select = 1
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -397,8 +398,8 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
-	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder // Self charging, needs to be a cell you can't get. You can hotswap cells of guns with can_remove = 0
 	can_charge = 0
 	can_remove = 0 // If it self-charges, you can't remove it.
 	selfcharge = 1

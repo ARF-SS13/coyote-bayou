@@ -597,3 +597,19 @@
 	ratingdesc = FALSE
 	maxcharge = 50000
 	cancharge = 0
+
+// Recycled Cells - Robot loot and recycle craft; same power as normal cells, just one and done.
+/obj/item/stock_parts/cell/ammo/mfc/recycled
+	name = "worn out microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has seen too much use and can't be recharged."
+	cancharge = 0
+
+/obj/item/stock_parts/cell/ammo/ec/recycled
+	name = "worn out energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has seen too much use and can't be recharged."
+	cancharge = 0
+
+/obj/item/stock_parts/cell/ammo/ecp/recycled
+	name = "worn out electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has seen too much use and can't be recharged."
+	cancharge = 0

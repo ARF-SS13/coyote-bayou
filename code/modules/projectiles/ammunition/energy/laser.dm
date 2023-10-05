@@ -248,12 +248,12 @@ Avoid decimals when possible when it comes to e_cost!
 
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
-	e_cost = 1600 // basically infinite shots
+	e_cost = 1875 // same as the hitscan, though this is unused
 	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/solar/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/solar/hitscan
-	e_cost = 1600 // 16 shots, self charges. selfchargng adds 100 each time it fires off, so 2 ticks per laser recharge.
+	e_cost = 1875 // 16 shots, the gun self charges over 30 seconds
 
 /obj/item/ammo_casing/energy/laser/pistol/badlands
 	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands
