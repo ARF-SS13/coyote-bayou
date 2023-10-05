@@ -4898,6 +4898,8 @@
 /area/f13/brotherhood/operations)
 "cre" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker/creator,
+/turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/armory)
 "crf" = (
 /obj/structure/table,
@@ -7647,6 +7649,9 @@
 "dub" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril{
+	faction = list("mining","skeleton")
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/building)
@@ -18106,6 +18111,7 @@
 	},
 /area/f13/building)
 "imc" = (
+/mob/living/simple_animal/hostile/raider/junker/creator,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria{
 	icon_state = "tealwhdirty_chess2"
 	},
@@ -19292,6 +19298,7 @@
 /area/f13/underground/cave/tunnelertemple)
 "iRN" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker/creator,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "iRY" = (
@@ -26400,6 +26407,9 @@
 "mht" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril{
+	faction = list("mining","skeleton")
 	},
 /turf/open/floor/wood_worn/wood_worn_dark,
 /area/f13/building)
