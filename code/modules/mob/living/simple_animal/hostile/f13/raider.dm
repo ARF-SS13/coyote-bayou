@@ -567,15 +567,15 @@
 	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
-	for (var/datum/component/component in datum_components) //Realistically, we should get rid of all datums
-		if (component)
-			component.RemoveComponent()
+	var/datum/component/comp = GetComponent(/datum/component/spawner)
+	if(comp)
+		qdel(comp)
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Destroy()
-	for (var/datum/component/component in datum_components) //Realistically, we should get rid of all datums
-		if (component)
-			component.RemoveComponent()
+	var/datum/component/comp = GetComponent(/datum/component/spawner)
+	if(comp)
+		qdel(comp)
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Aggro()

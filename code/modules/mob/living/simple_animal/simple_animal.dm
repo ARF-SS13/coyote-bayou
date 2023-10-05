@@ -692,6 +692,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
 
 /mob/living/simple_animal/death(gibbed)
+	var/datum/component/comp = GetComponent(/datum/component/spawner)
+	if(comp)
+		qdel(comp)
 	movement_type &= ~FLYING
 	unstamcrit()
 
