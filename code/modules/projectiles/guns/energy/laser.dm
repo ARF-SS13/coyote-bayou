@@ -400,7 +400,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
 	can_charge = 0
-	can_remove = 0 // if it self recharges, no cell change for you
+	can_remove = 0 // If it self-charges, you can't remove it.
 	selfcharge = 1
 	selfchargerate = 15 // 15*2 seconds to refill the cell
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
