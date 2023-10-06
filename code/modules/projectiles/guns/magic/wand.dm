@@ -269,7 +269,7 @@
 /***************/
 
 /obj/item/gun/magic/wand/kelpmagic/basiczappies
-	name = "improvised wand of sparks"
+	name = "improvised rod of sparks"
 	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
 	icon_state = "improvshock"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
