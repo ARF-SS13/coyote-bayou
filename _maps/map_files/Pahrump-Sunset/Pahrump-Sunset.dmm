@@ -31668,12 +31668,10 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "dHT" = (
-/obj/structure/chair/office/dark{
-	dir = 1;
-	pixel_x = 17;
-	pixel_y = 11
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -39318,11 +39316,10 @@
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/theloop)
 "fwF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/candle/infinite{
-	pixel_x = 16;
-	pixel_y = 34
+/obj/machinery/libraryscanner{
+	pixel_y = 5
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -41274,21 +41271,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
-"fTa" = (
-/obj/machinery/libraryscanner{
-	density = 0;
-	pixel_x = 5;
-	pixel_y = 22
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 1;
-	pixel_y = 32
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "fTf" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt,
@@ -57603,25 +57585,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
-"jEH" = (
-/obj/item/trash/plate{
-	layer = 2.9;
-	pixel_x = 7;
-	pixel_y = 16
-	},
-/obj/item/candle/infinite{
-	pixel_x = 2;
-	pixel_y = 18
-	},
-/obj/item/trash/candle{
-	pixel_x = -7;
-	pixel_y = 15
-	},
-/obj/structure/bookcase,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "jEK" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/room,
@@ -65973,11 +65936,6 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "lBl" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-18";
-	pixel_x = -3;
-	pixel_y = 17
-	},
 /obj/structure/chair/sofa/left{
 	dir = 4;
 	icon_state = "sofacorner"
@@ -70130,18 +70088,6 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/ruins)
 "muu" = (
-/obj/item/trash/candle{
-	pixel_x = 3;
-	pixel_y = 19
-	},
-/obj/item/candle/infinite{
-	pixel_x = -19;
-	pixel_y = 19
-	},
-/obj/item/clothing/head/helmet/skull{
-	pixel_x = 7;
-	pixel_y = 16
-	},
 /obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -88960,11 +88906,6 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "qFJ" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22";
-	pixel_x = -14;
-	pixel_y = 19
-	},
 /obj/structure/chair/sofa/left{
 	icon_state = "sofacorner"
 	},
@@ -95705,10 +95646,6 @@
 	},
 /area/f13/wasteland/massfusion/entrance)
 "six" = (
-/obj/item/paper/crumpled{
-	pixel_x = -8;
-	pixel_y = 7
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-10";
 	layer = 2.9;
@@ -95922,29 +95859,8 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building/abandoned)
 "slF" = (
-/obj/structure/table/wood{
-	layer = 3;
-	pixel_x = -8;
-	pixel_y = 5
-	},
-/obj/item/candle/infinite{
-	layer = 3.1;
-	pixel_x = -13;
-	pixel_y = 13
-	},
-/obj/item/trash/candle{
-	pixel_x = 1;
-	pixel_y = 4
-	},
-/obj/item/trash/plate{
-	pixel_x = -10;
-	pixel_y = 9
-	},
-/obj/item/candle/infinite{
-	layer = 3.1;
-	pixel_x = -5;
-	pixel_y = 11
-	},
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -97343,37 +97259,8 @@
 	},
 /area/f13/building/coyote/nash/firestation)
 "sBN" = (
-/obj/structure/table/wood{
-	layer = 3;
-	pixel_x = 15;
-	pixel_y = 3
-	},
-/obj/machinery/computer/libraryconsole/bookmanagement{
-	layer = 3;
-	pixel_x = 16;
-	pixel_y = 7
-	},
-/obj/structure/table/wood{
-	layer = 3;
-	pixel_x = -7;
-	pixel_y = 3
-	},
-/obj/item/paper_bin{
-	pixel_y = 10
-	},
-/obj/item/pen/fountain{
-	pixel_x = -7;
-	pixel_y = 4
-	},
-/obj/item/candle/infinite{
-	pixel_x = 15;
-	pixel_y = 25
-	},
-/obj/item/trash/plate{
-	layer = 2.9;
-	pixel_x = 16;
-	pixel_y = 22
-	},
+/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/structure/table/wood,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -108373,18 +108260,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "vat" = (
-/obj/item/trash/candle{
-	pixel_x = 3;
-	pixel_y = 16
-	},
-/obj/item/candle/infinite{
-	pixel_x = -14;
-	pixel_y = 16
-	},
-/obj/structure/bookcase,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/library)
 "vaB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -110806,18 +110683,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "vEe" = (
-/obj/machinery/photocopier{
-	density = 0;
-	layer = 3;
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/structure/closet/crate/bin{
-	icon_state = "largebinopenfs";
-	layer = 3;
-	pixel_x = 17;
-	pixel_y = -4
-	},
+/obj/machinery/photocopier,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -115705,6 +115571,7 @@
 /obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -119754,25 +119621,6 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building/abandoned)
-"xFh" = (
-/obj/item/trash/candle{
-	pixel_x = -2;
-	pixel_y = 16
-	},
-/obj/item/candle/infinite{
-	pixel_x = 10;
-	pixel_y = 17
-	},
-/obj/item/trash/plate{
-	layer = 2.9;
-	pixel_x = 13;
-	pixel_y = 13
-	},
-/obj/structure/bookcase,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "xFk" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -127494,8 +127342,8 @@ xMT
 gGr
 xGG
 mac
-xMT
-gfx
+nmt
+nmt
 nmt
 nmt
 nmt
@@ -127751,9 +127599,9 @@ xMT
 eUQ
 lQu
 icw
-gfx
-gfx
-nmt
+vat
+gVe
+gVe
 lBl
 hJz
 duM
@@ -128008,9 +127856,9 @@ pRC
 pRC
 wJZ
 jFv
-gfx
 nmt
-nmt
+gVe
+gVe
 qFJ
 rol
 ftS
@@ -128266,8 +128114,8 @@ xEB
 mGs
 utf
 nmt
-nmt
-fTa
+fwF
+gVe
 gVe
 gVe
 slF
@@ -128524,10 +128372,10 @@ eKL
 him
 nmt
 wIW
-fwF
+pek
 gVe
 mkd
-xFh
+muu
 nmt
 wYm
 aWK
@@ -128784,7 +128632,7 @@ sBN
 dHT
 gVe
 gVe
-vat
+muu
 nmt
 wYm
 aWK
@@ -129036,12 +128884,12 @@ sAN
 sIe
 eKL
 him
-nmt
+vat
 vEe
 pek
 gVe
 gVe
-jEH
+muu
 nmt
 ucW
 aWK
