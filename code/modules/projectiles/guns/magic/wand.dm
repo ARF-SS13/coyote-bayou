@@ -264,6 +264,28 @@
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
 
 /****************/
+//Improvised Zapper//
+//Spawn tier weapon, hitscan/
+/***************/
+
+/obj/item/gun/magic/wand/kelpmagic/basiczappies
+	name = "improvised wand of sparks"
+	desc = "Someone's gone and tied a lump of gold to the end of a metal rod before wiring a battery up to it. Somehow, this allows the 'wand' to channel a lesser variant of the Sparks spell."
+	icon_state = "improvshock"
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
+	max_charges = 10
+	recharge_rate = 10 SECONDS
+
+/obj/item/ammo_casing/magic/kelpmagic/sparks/weak
+	projectile_type = /obj/item/projectile/magic/kelpmagic/sparks/weak
+	pellets = 3
+	variance = 100
+
+/obj/item/projectile/magic/kelpmagic/sparks/weak
+	supereffective_damage = null
+	supereffective_faction = null
+
+/****************/
 //Wand of Magic Missile//
 //Projectile wand, generalist//
 /***************/
@@ -310,7 +332,7 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
-	damage = 10
+	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"
@@ -329,6 +351,8 @@
 	impact_light_intensity = 8
 	impact_light_range = 3.75
 	impact_light_color_override = LIGHT_COLOR_BLUE
+	supereffective_damage = 10
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
 /****************/
@@ -342,7 +366,7 @@
 	icon_state = "fireboltwand"
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/firebolt
-	max_charges = 10
+	max_charges = 8
 	recharge_rate = 20 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/firebolt
