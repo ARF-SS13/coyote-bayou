@@ -108,6 +108,13 @@
 #define CHAOS_HIGH "High"
 #define CHAOS_MAX "Maximum"
 
+#define TBS_TOP "I am a top!"
+#define TBS_BOTTOM "I am a bottom!"
+#define TBS_SHOES "I am a switch!"
+#define TBS_NONE "I am none of these!"
+#define TBS_DEFAULT TBS_NONE
+#define TBS_LIST list(TBS_TOP, TBS_BOTTOM, TBS_SHOES, TBS_NONE)
+
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
 

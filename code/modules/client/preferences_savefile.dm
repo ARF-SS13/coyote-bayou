@@ -634,6 +634,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["name_is_always_random"]	>> be_random_name
 	S["body_is_always_random"]	>> be_random_body
 	S["gender"]					>> gender
+	S["tbs"]					>> tbs
 	S["body_model"]				>> features["body_model"]
 	S["body_size"]				>> features["body_size"]
 	S["body_width"]				>> features["body_width"]
@@ -1156,6 +1157,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["name_is_always_random"]	, be_random_name)
 	WRITE_FILE(S["body_is_always_random"]	, be_random_body)
 	WRITE_FILE(S["gender"]					, gender)
+	WRITE_FILE(S["tbs"]						, tbs)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
 	WRITE_FILE(S["body_width"]				, features["body_width"])
