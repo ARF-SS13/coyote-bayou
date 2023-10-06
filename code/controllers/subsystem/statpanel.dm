@@ -26,8 +26,10 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
-			"M: [LAZYLEN(cached_boykissers)], F: [LAZYLEN(cached_girlkissers)], NB: [LAZYLEN(cached_nonbinaries)]",
-			"T: [LAZYLEN(cached_tops)], B: [LAZYLEN(cached_bottoms)], S: [LAZYLEN(cached_switches)]",
+			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_nonbinaries)]",
+			"Tops: [LAZYLEN(cached_tops)]",
+			"Switches: [LAZYLEN(cached_switches)]",
+			"Bottoms: [LAZYLEN(cached_bottoms)]",
 		)
 
 		if(SSshuttle.emergency)
