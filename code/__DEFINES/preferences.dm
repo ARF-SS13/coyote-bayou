@@ -115,6 +115,12 @@
 #define TBS_DEFAULT TBS_NONE
 #define TBS_LIST list(TBS_TOP, TBS_BOTTOM, TBS_SHOES, TBS_NONE)
 
+#define KISS_BOYS "I am a boykisser!"
+#define KISS_GIRLS "I am a girlkisser!"
+#define KISS_NONE "I don't kiss!"
+#define KISS_DEFAULT KISS_NONE
+#define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_NONE)
+
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
 

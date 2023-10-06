@@ -8,8 +8,8 @@ SUBSYSTEM_DEF(statpanels)
 	var/encoded_global_data
 	var/mc_data_encoded
 	var/list/cached_images = list()
-	var/list/cached_males = list()
-	var/list/cached_females = list()
+	var/list/cached_boykissers = list()
+	var/list/cached_girlkissers = list()
 	var/list/cached_nonbinaries = list()
 	var/list/cached_tops = list()
 	var/list/cached_bottoms = list()
@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
-			"M: [LAZYLEN(cached_males)], F: [LAZYLEN(cached_females)], NB: [LAZYLEN(cached_nonbinaries)]",
+			"M: [LAZYLEN(cached_boykissers)], F: [LAZYLEN(cached_girlkissers)], NB: [LAZYLEN(cached_nonbinaries)]",
 			"T: [LAZYLEN(cached_tops)], B: [LAZYLEN(cached_bottoms)], S: [LAZYLEN(cached_switches)]",
 		)
 

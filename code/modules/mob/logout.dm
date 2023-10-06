@@ -6,9 +6,8 @@
 	GLOB.player_list -= src
 	logout_time = world.time
 
-	SSstatpanels.cached_males -= ckey
-	SSstatpanels.cached_females -= ckey
-	SSstatpanels.cached_nonbinaries -= ckey
+	SSstatpanels.cached_boykissers -= ckey
+	SSstatpanels.cached_girlkissers -= ckey
 	SSstatpanels.cached_tops -= ckey
 	SSstatpanels.cached_bottoms -= ckey
 	SSstatpanels.cached_switches -= ckey

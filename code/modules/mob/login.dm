@@ -61,13 +61,11 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 	
-	switch(client.prefs.gender)
-		if(MALE)
-			SSstatpanels.cached_males |= ckey
-		if(FEMALE)
-			SSstatpanels.cached_females |= ckey
-		else
-			SSstatpanels.cached_nonbinaries |= ckey
+	switch(client.prefs.kisser)
+		if(KISS_BOYS)
+			SSstatpanels.cached_boykissers |= ckey
+		if(KISS_GIRLS)
+			SSstatpanels.cached_girlkissers |= ckey
 	switch(client.prefs.tbs)
 		if(TBS_TOP)
 			SSstatpanels.cached_tops |= ckey

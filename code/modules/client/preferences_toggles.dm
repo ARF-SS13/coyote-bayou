@@ -418,6 +418,24 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	to_chat(src, "You can now proudly say '[span_boldnotice(new_tbs)]'.")
 	prefs.save_preferences()
 
+/client/verb/set_kiss()
+	set name = "Set Kisser"
+	set category = "Preferences"
+	set desc = "Set whether you kiss boys, girls, or none of the above!!"
+
+	var/new_kiss = input(src, "What sort of person do you like to kiss?", "Character Preference") as null|anything in KISS_LIST
+	if(new_kiss)
+		prefs.kisser = new_kiss
+	SSstatpanels.cached_boykissers -= ckey
+	SSstatpanels.cached_girlkissers -= ckey
+	switch(prefs.kisser)
+		if(KISS_BOYS)
+			SSstatpanels.cached_boykissers |= ckey
+		if(KISS_GIRLS)
+			SSstatpanels.cached_girlkissers |= ckey
+	to_chat(src, "You can now proudly say '[span_boldnotice(new_kiss)]'.")
+	prefs.save_preferences()
+
 
 /client/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"
