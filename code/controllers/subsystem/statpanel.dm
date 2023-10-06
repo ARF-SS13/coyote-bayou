@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/cached_images = list()
 	var/list/cached_boykissers = list()
 	var/list/cached_girlkissers = list()
-	var/list/cached_nonbinaries = list()
+	var/list/cached_anykissers = list()
 	var/list/cached_tops = list()
 	var/list/cached_bottoms = list()
 	var/list/cached_switches = list()
@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
-			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_nonbinaries)]",
+			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_anykissers)]",
 			"Tops: [LAZYLEN(cached_tops)]",
 			"Switches: [LAZYLEN(cached_switches)]",
 			"Bottoms: [LAZYLEN(cached_bottoms)]",

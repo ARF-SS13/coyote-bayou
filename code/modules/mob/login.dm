@@ -66,6 +66,8 @@
 			SSstatpanels.cached_boykissers |= ckey
 		if(KISS_GIRLS)
 			SSstatpanels.cached_girlkissers |= ckey
+		if(KISS_ANY)
+			SSstatpanels.cached_anykissers |= ckey
 	switch(client.prefs.tbs)
 		if(TBS_TOP)
 			SSstatpanels.cached_tops |= ckey
