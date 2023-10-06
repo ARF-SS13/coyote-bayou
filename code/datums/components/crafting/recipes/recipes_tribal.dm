@@ -501,9 +501,19 @@ datum/crafting_recipe/tribalwar/bone
 	name = "Improvised Wand of Magic Missile"
 	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile
 	time = 10
-	reqs = list(/obj/item/stack/sheet/bone = 2,
+	reqs = list(/obj/item/stack/sheet/bone = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_RITUAL)
+
+//  T0 Zapper Wand (spawn item)
+/datum/crafting_recipe/magic/zaprod
+	name = "Rod of Shocks"
+	result = /obj/item/gun/magic/wand/kelpmagic/basiczappies
+	time = 10
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_RITUAL)
 
 // T1 Magic Missile Wand (generalist sidearm)

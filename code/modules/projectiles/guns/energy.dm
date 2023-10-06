@@ -38,6 +38,7 @@
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 	var/charge_cost_multiplier = 1
+	var/selfchargerate = 0 // set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -108,7 +109,7 @@
 			var/mob/living/silicon/robot/R = owner
 			if(!R.cell?.use(100))
 				return
-		cell.give(100)
+		cell.give(cell.maxcharge / max(selfchargerate, 0.01))
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_icon()
