@@ -39317,9 +39317,12 @@
 /area/f13/wasteland/city/nash/theloop)
 "fwF" = (
 /obj/machinery/libraryscanner{
-	pixel_y = 5
+	pixel_y = 5;
+	pixel_x = 7
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood{
+	pixel_x = 2
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -108260,8 +108263,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "vat" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/closed/wall/f13/coyote/oldwood,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/building/library)
 "vaB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -110684,6 +110691,9 @@
 /area/f13/ruins)
 "vEe" = (
 /obj/machinery/photocopier,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -115565,8 +115575,7 @@
 "wIW" = (
 /obj/machinery/bookbinder{
 	layer = 3;
-	pixel_x = -1;
-	pixel_y = 2
+	pixel_x = 5
 	},
 /obj/structure/sign/painting/library{
 	pixel_y = 32
@@ -127599,8 +127608,8 @@ xMT
 eUQ
 lQu
 icw
+nmt
 vat
-gVe
 gVe
 lBl
 hJz
@@ -128884,7 +128893,7 @@ sAN
 sIe
 eKL
 him
-vat
+nmt
 vEe
 pek
 gVe
