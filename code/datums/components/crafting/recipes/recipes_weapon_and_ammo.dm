@@ -133,7 +133,7 @@
 
 /datum/crafting_recipe/ecrecharge
 	name = "Small Energy Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ec
+	result = /obj/item/stock_parts/cell/ammo/ec/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -167,7 +167,7 @@
 
 /datum/crafting_recipe/mfcrecharge
 	name = "Microfusion Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/mfc
+	result = /obj/item/stock_parts/cell/ammo/mfc/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -201,7 +201,7 @@
 
 /datum/crafting_recipe/ecprecharge
 	name = "Electron Charge Pack (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ecp
+	result = /obj/item/stock_parts/cell/ammo/ecp/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
