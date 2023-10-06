@@ -397,6 +397,46 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		mob.hud_used.show_hud()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost HUD", "[prefs.ghost_hud ? "Enabled" : "Disabled"]"))
 
+/client/verb/set_tbs()
+	set name = "Set Top/Bottom/Switch"
+	set category = "Preferences"
+	set desc = "Set whether you're a top, a bottom, or a switch!"
+
+	var/new_tbs = input(src, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+	if(new_tbs)
+		prefs.tbs = new_tbs
+	SSstatpanels.cached_tops -= ckey
+	SSstatpanels.cached_bottoms -= ckey
+	SSstatpanels.cached_switches -= ckey
+	switch(prefs.tbs)
+		if(TBS_TOP)
+			SSstatpanels.cached_tops |= ckey
+		if(TBS_BOTTOM)
+			SSstatpanels.cached_bottoms |= ckey
+		if(TBS_SHOES)
+			SSstatpanels.cached_switches |= ckey
+	to_chat(src, "You can now proudly say '[span_boldnotice(new_tbs)]'.")
+	prefs.save_preferences()
+
+/client/verb/set_kiss()
+	set name = "Set Kisser"
+	set category = "Preferences"
+	set desc = "Set whether you kiss boys, girls, or none of the above!!"
+
+	var/new_kiss = input(src, "What sort of person do you like to kiss?", "Character Preference") as null|anything in KISS_LIST
+	if(new_kiss)
+		prefs.kisser = new_kiss
+	SSstatpanels.cached_boykissers -= ckey
+	SSstatpanels.cached_girlkissers -= ckey
+	switch(prefs.kisser)
+		if(KISS_BOYS)
+			SSstatpanels.cached_boykissers |= ckey
+		if(KISS_GIRLS)
+			SSstatpanels.cached_girlkissers |= ckey
+	to_chat(src, "You can now proudly say '[span_boldnotice(new_kiss)]'.")
+	prefs.save_preferences()
+
+
 /client/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"
 	set desc = "Sets whether your ghost examines everything on click by default"
