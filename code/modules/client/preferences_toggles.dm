@@ -428,11 +428,14 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		prefs.kisser = new_kiss
 	SSstatpanels.cached_boykissers -= ckey
 	SSstatpanels.cached_girlkissers -= ckey
+	SSstatpanels.cached_anykissers -= ckey
 	switch(prefs.kisser)
 		if(KISS_BOYS)
 			SSstatpanels.cached_boykissers |= ckey
 		if(KISS_GIRLS)
 			SSstatpanels.cached_girlkissers |= ckey
+		if(KISS_ANY)
+			SSstatpanels.cached_anykissers |= ckey
 	to_chat(src, "You can now proudly say '[span_boldnotice(new_kiss)]'.")
 	prefs.save_preferences()
 

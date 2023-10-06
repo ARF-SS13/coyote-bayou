@@ -117,9 +117,10 @@
 
 #define KISS_BOYS "I am a boykisser!"
 #define KISS_GIRLS "I am a girlkisser!"
-#define KISS_NONE "I'll kiss anybody!"
+#define KISS_ANY "I'll kiss anybody!"
+#define KISS_NONE "I don't kiss!"
 #define KISS_DEFAULT KISS_NONE
-#define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_NONE)
+#define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_ANY,KISS_NONE)
 
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)

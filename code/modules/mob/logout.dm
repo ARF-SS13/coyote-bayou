@@ -8,6 +8,7 @@
 
 	SSstatpanels.cached_boykissers -= ckey
 	SSstatpanels.cached_girlkissers -= ckey
+	SSstatpanels.cached_anykissers -= ckey
 	SSstatpanels.cached_tops -= ckey
 	SSstatpanels.cached_bottoms -= ckey
 	SSstatpanels.cached_switches -= ckey
