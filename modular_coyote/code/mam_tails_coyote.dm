@@ -671,3 +671,15 @@
 	icon_state = "xeno"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/clubtail
+	name = "club tail"
+	icon_state = "clubtail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/spiketail
+	name = "spike tail"
+	icon_state = "spiketail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
