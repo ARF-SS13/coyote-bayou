@@ -110,6 +110,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/right_eye_color = "000000"
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
+	var/tbs = TBS_DEFAULT // turner broadcasting system
+	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
@@ -433,6 +435,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Top/Bottom/Switch:</b> <a href='?_src_=prefs;preference=tbs;task=input'>[tbs]</a><BR>"
+			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
 			//Middle Column
 			dat +="<td width='30%' valign='top'>"
@@ -2494,6 +2498,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(msg))
 						creature_ooc = msg
 
+				if("tbs")
+					var/new_tbs = input(user, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+					if(new_tbs)
+						tbs = new_tbs
+				if("kisser")
+					var/newkiss = input(user, "What sort of person do you like to kisser?", "Character Preference") as null|anything in KISS_LIST
+					if(newkiss)
+						kisser = newkiss
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)

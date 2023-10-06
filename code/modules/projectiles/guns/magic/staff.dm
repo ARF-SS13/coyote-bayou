@@ -132,6 +132,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+	is_kelpwand = TRUE
 	// NOTE: max_charges is the number of shots, recharge_rate is time to recharge a single charge.
 
 /* This segment is commented out because the original template is over in wand.dm; this is here just for ease of reference
