@@ -51,6 +51,9 @@ Administrator
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
+	loadout_options = list(
+	/datum/outfit/loadout/medbeam
+	)
 
 	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -109,6 +112,11 @@ Administrator
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1,
+	)
+
+/datum/outfit/loadout/medbeam
+	name =	"Medbeam Kit"
+	backpack_contents = list(
 		/obj/item/gun/medbeam = 1,
 	)
 
