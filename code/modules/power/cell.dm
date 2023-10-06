@@ -496,7 +496,7 @@
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one looks a little dubious though."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: give these bad icons
 	icon_state = "mfc-full"
-	maxcharge = 15000
+	maxcharge = 22500
 
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
@@ -538,7 +538,7 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one looks a little suspect though."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give these a new icon
 	icon_state = "ec-full"
-	maxcharge = 5000
+	maxcharge = 7500
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
@@ -586,7 +586,7 @@
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one looks slightly off, somehow."
 	icon = 'icons/fallout/objects/powercells.dmi' //TODO: Give a shitty icon
 	icon_state = "ecp-full"
-	maxcharge = 10000
+	maxcharge = 15000
 
 // Alien power cell
 /obj/item/stock_parts/cell/ammo/alien // T5?
