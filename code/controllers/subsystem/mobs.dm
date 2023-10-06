@@ -10,6 +10,8 @@ SUBSYSTEM_DEF(mobs)
 	var/static/list/cubemonkeys = list()
 	var/static/list/cheeserats = list()
 
+	var/there_is_no_escape = TRUE
+
 	var/debug_disable_mob_ceasefire = TRUE // this feature sucks
 
 /datum/controller/subsystem/mobs/stat_entry(msg)
