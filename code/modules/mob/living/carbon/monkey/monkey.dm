@@ -51,7 +51,9 @@
 
 /mob/living/carbon/monkey/Destroy()
 	SSmobs.cubemonkeys -= src
-	return ..()
+	..()
+	moveToNullspace() // suckit
+	return QDEL_HINT_LETMELIVE
 
 /mob/living/carbon/monkey/create_internal_organs()
 	internal_organs += new /obj/item/organ/appendix
