@@ -489,6 +489,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
 	maxcharge = 45000
+	color = "#0066FF"
 
 // Crafted Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc/bad
@@ -531,6 +532,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 15000
+	color = "#0066FF"
 
 // Crafted Energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec/bad
@@ -579,6 +581,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ecp-full"
 	maxcharge = 30000
+	color = "#0066FF"
 
 // Crafted Electron charge pack - bad rapid fire energy
 /obj/item/stock_parts/cell/ammo/ecp/bad
@@ -603,13 +606,16 @@
 	name = "worn out microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons. This one has seen too much use and can't be recharged."
 	cancharge = 0
+	color = "#993300"
 
 /obj/item/stock_parts/cell/ammo/ec/recycled
 	name = "worn out energy cell"
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons. This one has seen too much use and can't be recharged."
 	cancharge = 0
+	color = "#993300"
 
 /obj/item/stock_parts/cell/ammo/ecp/recycled
 	name = "worn out electron charge pack"
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has seen too much use and can't be recharged."
 	cancharge = 0
+	color = "#993300"
