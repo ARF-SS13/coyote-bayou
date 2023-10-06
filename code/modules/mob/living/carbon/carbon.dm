@@ -21,6 +21,8 @@
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
+	moveToNullspace() // suckit
+	return QDEL_HINT_LETMELIVE
 
 /mob/living/carbon/relaymove(mob/user, direction)
 	if(user in src.stomach_contents)
