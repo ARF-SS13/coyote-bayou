@@ -492,14 +492,16 @@ GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 	else  //Are we empty handed?
 		storage = get_item_by_slot(SLOT_S_STORE)
 		if(storage)  //Are we carrying something in this storage slot?
-			if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
-				storage.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-				return
+			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
+				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
+					storage.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+					return
 		storage = get_item_by_slot(SLOT_BELT)
 		if(storage)  //We basically repeat the same checks but for belts
-			if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
-				storage.attack_hand(src)
-				return
+			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
+				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+					storage.attack_hand(src)
+					return
 		storage = get_item_by_slot(SLOT_NECK)  //Are we wearing a holster? If yes, we want to prioritize the unholstering of the gun.
 		if(storage)  //Are we carrying something in this storage slot?
 			if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this a storage item?
