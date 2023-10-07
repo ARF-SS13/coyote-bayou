@@ -1593,3 +1593,11 @@
 	item_color = "tactiflannel"
 	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/under/frogsuit //jaeger smells ~TK
+	name = "frogsuit"
+	desc = "A suit designed for sneaking and dynamic entry. Has tacticool straps for keeping additional armor snug to the body."
+	icon_state = "rachel_frogsuit"
+	item_state = "rachel_frogsuit"
+	item_color = "rachel_frogsuit"
+	can_adjust = FALSE

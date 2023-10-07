@@ -3214,3 +3214,11 @@
 	cost = 0
 	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+// Coyote Bayou Customs 
+
+/datum/gear/uniform/frogsuit
+	name = "Frogsuit"
+	cost = 0
+	path = /obj/item/clothing/under/frogsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
