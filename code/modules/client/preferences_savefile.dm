@@ -198,10 +198,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				whoflags = DEFAULT_WHO_FLAGS
 				WRITE_FILE(S["whoflags"], whoflags)
 				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
-			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
-				S["feature_genital_whitelist"] >> genital_whitelist
-				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
-				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+			//if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
+				//S["feature_genital_whitelist"] >> genital_whitelist
+				//WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				//current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -298,7 +298,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
 	S["aghost_squelches"]		>> aghost_squelches
-	S["genital_whitelist"]		>> genital_whitelist
 
 	S["lockouts"]	>> lockouts // my bans!
 
@@ -317,7 +316,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Sanitize
 	ooccolor		= sanitize_ooccolor(sanitize_hexcolor(ooccolor, 6, 1, initial(ooccolor)))
 	lastchangelog	= sanitize_text(lastchangelog, initial(lastchangelog))
-	genital_whitelist	= sanitize_text(genital_whitelist, initial(genital_whitelist))
 	UI_style		= sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
 	hotkeys			= sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
 	chat_on_map		= sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
@@ -469,7 +467,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
 	WRITE_FILE(S["lockouts"], lockouts)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
-	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -577,6 +574,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
+		"genital_whitelist" = "Mr Bingus, fluntly, Doc Bungus",
 		"genital_hide" = NONE,
 
 
@@ -786,6 +784,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_has_womb"]				>> features["has_womb"]
 	//cockstring
 	S["feature_genital_order"]			>> features["genital_order"]
+	S["feature_genital_whitelist"]		>> features["genital_whitelist"]
 	S["feature_genital_hide"]			>> features["genital_hide"]
 	S["feature_genital_visibility_flags"] >> features["genital_visibility_flags"]
 	//taste
@@ -1024,6 +1023,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features["genital_order"]		= sanitize_text(features["genital_order"], DEF_COCKSTRING)
 	features["genital_hide"]		= sanitize_integer(features["genital_hide"], 0, 4096, 0)
+	features["genital_whitelist"]	= copytext(features["genital_whitelist"], 1, MAX_MESSAGE_LEN)
 	features["taste"]				= copytext(features["taste"], 1, MAX_TASTE_LEN)
 	features["flavor_text"]			= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["silicon_flavor_text"]	= copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
@@ -1244,6 +1244,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_belly_visibility_flags"], features["belly_visibility_flags"])
 	WRITE_FILE(S["feature_genital_order"], features["genital_order"])
 	WRITE_FILE(S["feature_genital_hide"], features["genital_hide"])
+	WRITE_FILE(S["feature_genital_whitelist"], features["genital_whitelist"])
 	WRITE_FILE(S["feature_genital_visibility_flags"], features["genital_visibility_flags"])
 
 	WRITE_FILE(S["feature_has_vag"], features["has_vag"])

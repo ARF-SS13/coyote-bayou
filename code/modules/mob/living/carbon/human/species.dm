@@ -641,7 +641,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				standing += left_eye
 				standing += right_eye
 
-	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
 	var/list/standing_overdies = list()
 	//Underwear, Undershirts & Socks
@@ -809,7 +808,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-	var/tailhacked // tailhud's a bazinga, innit
+	var/image/tail_hack // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -922,8 +921,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
-				tailhacked = TRUE
-				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay) // oh baby gimme that tail~
+				tail_hack = accessory_overlay
 			standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
@@ -1020,8 +1018,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
-	if(!tailhacked)
-		SSpornhud.catalogue_part(H, PHUD_TAIL, null) // hey gimme back my tail
+	H.tail_hud_update(tail_hack)
+
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.
