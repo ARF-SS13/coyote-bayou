@@ -2273,7 +2273,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/magazine/scar_l
 	skin = "SCAR-L"
 	name = "SCAR-L"
-	desc = "As an ancient modern rifle chambered in 5.56mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
+	desc = "As an ancient modern rifle chambered in 5mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "scarl"
 	item_state = "scarl"
