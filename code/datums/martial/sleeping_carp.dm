@@ -146,6 +146,7 @@
 	ADD_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODRUGS, SLEEPING_CARP_TRAIT)
+	ADD_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT)
 	H.physiology.stamina_mod *= 0.5 //You take less stamina damage overall, but you do not reduce the damage from stun batons
 	H.physiology.stun_mod *= 0.3 //for those rare stuns
 	//H.physiology.pressure_mod *= 0.3 //go hang out with carp
@@ -159,6 +160,7 @@
 	REMOVE_TRAIT(H, TRAIT_NOGUNS, SLEEPING_CARP_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NODRUGS, SLEEPING_CARP_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_MARTIAL_A, SLEEPING_CARP_TRAIT)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
 	H.physiology.pressure_mod = initial(H.physiology.pressure_mod) //no more carpies

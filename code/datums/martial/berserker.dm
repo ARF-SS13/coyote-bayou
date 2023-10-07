@@ -145,6 +145,7 @@
 	//ADD_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
 	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
 	ADD_TRAIT(H, TRAIT_BERSERKER, TRAIT_BERSERKER)
+	ADD_TRAIT(H, TRAIT_MARTIAL_A, TRAIT_BERSERKER)
 	H.physiology.stamina_mod *= 0.3 //more stamina
 	H.physiology.stun_mod *= 0.3 //better stun resistance
 
@@ -156,6 +157,7 @@
 	//REMOVE_TRAIT(H, TRAIT_NODISMEMBER, BERSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_BERSERKER, BERSERKER_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, TRAIT_BERSERKER)
+	REMOVE_TRAIT(H, TRAIT_MARTIAL_A, TRAIT_BERSERKER)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
 
