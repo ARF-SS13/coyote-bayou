@@ -11,27 +11,27 @@
 /datum/gear/neck/outlawscloak
 	name = "Outlaw's Cloak"
 	path = /obj/item/storage/belt/outlawscloak
-	cost = 3
+	cost = 2
 
 /datum/gear/neck/peacefulcoat
 	name = "Peacetakers Jacket"
 	path = /obj/item/storage/belt/peacefulcoat
-	cost = 3
+	cost = 2
 
 /datum/gear/neck/poachercoat
 	name = "Poachers Coat"
 	path = /obj/item/storage/belt/poachercoat
-	cost = 3
+	cost = 2
 
 /datum/gear/neck/poachervest
 	name = "Poachers Vest"
 	path = /obj/item/storage/belt/poachervest
-	cost = 3
+	cost = 2
 
 /datum/gear/neck/dantecoat
 	name = "Mercenary Trenchcoat"
 	path = /obj/item/storage/belt/dantecoat
-	cost = 3
+	cost = 2
 
 /datum/gear/neck/rangercape
 	name = "Ranger cape"
