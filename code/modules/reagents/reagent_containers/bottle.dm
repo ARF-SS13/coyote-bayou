@@ -522,3 +522,9 @@
 	var/bottle_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[bottle_name] bottle"
 	. = ..()
+
+/obj/item/reagent_containers/glass/bottle/synthjuice
+	name = "synthetic repair paste"
+	desc = "A small bottle full of synthetic repair gel. Not for organic consumption."
+	volume = 30
+	list_reagents = list(/datum/reagent/fuel/robo_repair_gel = 30)
