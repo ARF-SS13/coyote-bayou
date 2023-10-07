@@ -453,7 +453,7 @@ GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 
 //-->
 // Stupidly complicated smart equip/unequip, what is this supposed to do:
-// If the user is empty handed and triggers this function, then unolster an item with priority and with exceptions
+// If the user is empty handed and triggers this function, then unholster an item with priority and with exceptions
 // in the following order:
 // 1-Armor slot;
 // 2-Belt slot;
@@ -468,21 +468,21 @@ GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 /mob/verb/quick_equip()
 	set name = "quick-equip"
 	set hidden = 1
-	
+
+	var/obj/item/storage
 	var/obj/item/I = get_active_held_item()
-	var/obj/item/storage = get_item_by_slot(SLOT_S_STORE)
 	if(I)
 		if(I == GLOB.quick_equip_memory_item)  //did I unsheathe my item from a holster or my boots?
 			if(GLOB.quick_equip_memory_origin == "SLOT_NECK")  //was it previously coming from my holster?
-				storage = get_item_by_slot(SLOT_NECK)
 				GLOB.quick_equip_memory_item = null    //hard reset all variables
 				GLOB.quick_equip_memory_origin = null
+				storage = get_item_by_slot(SLOT_NECK)
 				SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src)  //store this exact item where it was coming from
 				return
 			else if(GLOB.quick_equip_memory_origin == "SLOT_SHOES")  //was it previously coming from my boots?
-				storage = get_item_by_slot(SLOT_SHOES)
 				GLOB.quick_equip_memory_item = null    //Hard reset all variables
 				GLOB.quick_equip_memory_origin = null
+				storage = get_item_by_slot(SLOT_SHOES)
 				SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src)  //store this exact item where it was coming from
 				return
 		GLOB.quick_equip_memory_item = null    //hard reset for both variables, we want to forget the location immediately.
@@ -490,6 +490,7 @@ GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 		I.equip_to_best_slot(src)
 		return
 	else  //Are we empty handed?
+		storage = get_item_by_slot(SLOT_S_STORE)
 		if(storage)  //Are we carrying something in this storage slot?
 			if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
 				storage.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
@@ -507,18 +508,20 @@ GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 					for(var/obj/item/gun/F in storage.contents)  //First thing, we want to obviously prioritize the unholstering of the gun.
 						firearm = F
 						break
-					firearm.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-					GLOB.quick_equip_memory_item = firearm
-					GLOB.quick_equip_memory_origin = "SLOT_NECK"
+					if(firearm && !firearm.on_found(src))
+						firearm.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+						GLOB.quick_equip_memory_item = firearm
+						GLOB.quick_equip_memory_origin = "SLOT_NECK"
 					return
 		storage = get_item_by_slot(SLOT_SHOES)  //Shoes are a little different, we don't want to return the item itself, but rather its contents.
 		if(storage)  //Are we carrying something in this storage slot?
 			if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this a storage item?
 				if(storage.contents.len)  //there's something to take out.
 					I = storage.contents[storage.contents.len]  //take the item out
-					I.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-					GLOB.quick_equip_memory_item = I
-					GLOB.quick_equip_memory_origin = "SLOT_SHOES"
+					if(I && !I.on_found(src))
+						I.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+						GLOB.quick_equip_memory_item = I
+						GLOB.quick_equip_memory_origin = "SLOT_SHOES"
 					return
 
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
