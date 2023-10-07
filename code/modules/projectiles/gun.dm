@@ -558,11 +558,11 @@ ATTACHMENTS
 	if(is_kelpwand)
 		if(iscarbon(user))
 			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
-				if(HAS_TRAIT(user, TRAIT_NOGUNS))
+				if(HAS_TRAIT(user, TRAIT_MARTIAL_A))
 					to_chat(user, span_danger("You don't know how to use magic wands!"))
 					return
 			else
-				if(HAS_TRAIT(user, TRAIT_NOGUNS) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
+				if(HAS_TRAIT(user, TRAIT_MARTIAL_A) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
 					to_chat(user, span_danger("You don't know how to use magic wands!"))
 					return
 
