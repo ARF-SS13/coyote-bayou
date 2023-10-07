@@ -20983,6 +20983,12 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "4211";
+	name = "gate button";
+	pixel_x = -25;
+	pixel_y = 22
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -22890,6 +22896,12 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/machinery/button/door{
+	id = "4210";
+	name = "gate button";
+	pixel_x = -5;
+	pixel_y = -22
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -51655,7 +51667,7 @@
 /area/f13/wasteland)
 "imR" = (
 /obj/machinery/button/door{
-	id = "nashgate";
+	id = "4210";
 	name = "gate button";
 	pixel_x = 9;
 	pixel_y = 22
@@ -56952,7 +56964,7 @@
 /area/f13/wasteland/city)
 "jxA" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = "nashgate2";
+	id = "4211";
 	name = "outpost gate2"
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -73102,7 +73114,7 @@
 /area/f13/wasteland)
 "ndA" = (
 /obj/machinery/button/door{
-	id = "nashgate";
+	id = "4210";
 	name = "gate button";
 	pixel_x = 25;
 	pixel_y = -23
@@ -73539,12 +73551,6 @@
 /obj/structure/table,
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "nashgate2";
-	name = "gate button";
-	pixel_x = 6;
-	pixel_y = 23
-	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "nix" = (
@@ -98326,7 +98332,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "sQe" = (
 /obj/machinery/button/door{
-	id = "nashgate2";
+	id = "4211";
 	name = "gate button";
 	pixel_x = 9;
 	pixel_y = 22
@@ -110244,18 +110250,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/structure/barricade/bars,
-/obj/machinery/button/door{
-	id = "nashgate";
-	name = "gate button";
-	pixel_x = 10;
-	pixel_y = -22
-	},
-/obj/machinery/button/door{
-	id = "nashgate";
-	name = "gate button";
-	pixel_x = 10;
-	pixel_y = -22
-	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "vAW" = (
@@ -110384,7 +110378,7 @@
 /area/f13/building/abandoned)
 "vCH" = (
 /obj/machinery/button/door{
-	id = "nashgate2";
+	id = "4211";
 	name = "gate button";
 	pixel_x = -8;
 	pixel_y = -25
@@ -112205,7 +112199,7 @@
 /area/f13/building)
 "vZl" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = "nashgate";
+	id = "4210";
 	name = "outpost gate2"
 	},
 /turf/open/indestructible/ground/outside/road{
