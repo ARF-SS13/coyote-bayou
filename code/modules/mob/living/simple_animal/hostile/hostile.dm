@@ -377,7 +377,7 @@
 			var/mob/living/L = the_target
 			if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
 				return FALSE
-			var/faction_check = !foes[L] && faction_check_mob(L)
+			var/faction_check = !(L in foes) && faction_check_mob(L)
 			if(robust_searching)
 				if(faction_check && !attack_same)
 					return FALSE

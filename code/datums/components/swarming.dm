@@ -33,7 +33,9 @@
 	other_swarm.swarm_members |= src
 
 /datum/component/swarming/proc/leave_swarm(datum/source, atom/movable/AM)
-	var/datum/component/swarming/other_swarm = AM.GetComponent(/datum/component/swarming)
+	var/datum/component/swarming/other_swarm
+	if (AM)
+		other_swarm = AM.GetComponent(/datum/component/swarming)
 	if(!other_swarm || !(other_swarm in swarm_members))
 		return
 	swarm_members -= other_swarm

@@ -37,9 +37,10 @@
 
 //Procs called while dead
 /mob/living/carbon/proc/handle_death()
-	for(var/datum/reagent/R in reagents.reagent_list)
-		if(R.chemical_flags & REAGENT_DEAD_PROCESS)
-			R.on_mob_dead(src)
+	if(reagents)
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.chemical_flags & REAGENT_DEAD_PROCESS)
+				R.on_mob_dead(src)
 
 ///////////////
 // BREATHING //
@@ -342,8 +343,9 @@
 		return
 
 	// No decay if formaldehyde/preservahyde in corpse or when the corpse is charred
-	if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || HAS_TRAIT(src, TRAIT_HUSK) || reagents.has_reagent(/datum/reagent/preservahyde, 1))
-		return
+	if(reagents	)
+		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || HAS_TRAIT(src, TRAIT_HUSK) || reagents.has_reagent(/datum/reagent/preservahyde, 1))
+			return
 
 	// Also no decay if corpse chilled or not organic/undead
 	if((bodytemperature <= T0C-10) || !(mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)))
@@ -386,8 +388,9 @@
 			if(O)
 				O.on_life()
 	else
-		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/preservahyde, 1)) // No organ decay if the body contains formaldehyde. Or preservahyde.
-			return
+		if(reagents)
+			if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/preservahyde, 1)) // No organ decay if the body contains formaldehyde. Or preservahyde.
+				return
 		for(var/V in internal_organs)
 			var/obj/item/organ/O = V
 			if(O)

@@ -112,6 +112,8 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
+	if(!istype(H))
+		return FALSE
 	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
 
 /datum/emote/living/carbon/human/wag/select_message_type(mob/user)
@@ -148,6 +150,8 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
+	if(!istype(H))
+		return FALSE
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
 		return TRUE
 
