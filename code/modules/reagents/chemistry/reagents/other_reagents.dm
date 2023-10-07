@@ -1433,12 +1433,12 @@
 	return TRUE
 
 /datum/reagent/fuel/robo_repair_gel
-	name = "Synthetic repair gel"
+	name = "synthetic repair gel"
 	description = "A synthetic gel that can be used to repair damage to synthetic bodies."
 	color = "#33ff00" // rgb: 102, 0, 0
 	flammable = FALSE
-	heal_amount = 1
-	heal_amount_crit = 4
+	heal_amount = -1.0
+	heal_amount_crit = -1.5
 
 /datum/reagent/abraxo_cleaner
 	name = "Abraxo cleaner"
