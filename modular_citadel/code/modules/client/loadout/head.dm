@@ -338,6 +338,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/khan_fullhelmet
+	name = "Horned full helmet"
+	path = /obj/item/clothing/head/helmet/f13/khan/fullhelm
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/antler
 	name = "antler skullcap"
 	path = /obj/item/clothing/head/helmet/f13/wayfarer/antler
