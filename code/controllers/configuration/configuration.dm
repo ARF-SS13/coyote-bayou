@@ -309,11 +309,6 @@ Example config:
 	filename = "[directory]/[filename]"
 	var/list/Lines = world.file2list(filename)
 
-	#ifdef UNIT_TESTS
-	LoadUnitTest()
-	return
-	#endif
-
 	var/datum/map_config/currentmap = null
 	for(var/t in Lines)
 		if(!t)
@@ -368,16 +363,6 @@ Example config:
 			else
 				log_config("Unknown command in map vote config: '[command]'")
 
-#define UNIT_TEST_MAP "pahrump-unit-test"
-
-/datum/controller/configuration/proc/LoadUnitTest()
-	var/datum/map_config/currentmap = null
-	currentmap = load_map_config("_maps/[UNIT_TEST_MAP].json")
-	defaultmap = currentmap
-	LAZYINITLIST(maplist)
-	maplist[currentmap.map_name] = currentmap
-
-#undef UNIT_TEST_MAP
 
 /datum/controller/configuration/proc/pick_mode(mode_name)
 	// I wish I didn't have to instance the game modes in order to look up
