@@ -470,8 +470,12 @@ GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 	set name = "quick-equip"
 	set hidden = 1
 
+	if(incapacitated())
+		return
+
 	var/obj/item/storage
 	var/obj/item/I = get_active_held_item()
+
 	if(I)
 		if(I == GLOB.quick_equip_memory_item)  //did I unsheathe my item from a holster or my boots?
 			if(GLOB.quick_equip_memory_origin == "SLOT_NECK")  //was it previously coming from my holster?
