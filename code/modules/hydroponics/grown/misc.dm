@@ -232,7 +232,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
 	user.visible_message(span_warning("[user] plucks the stem from [src]!"), span_userdanger("You pluck the stem from [src], which begins to hiss loudly!"))
-	message_admins("[ADMIN_LOOKUPFLW(user)] primed a cherry bomb  at [ADMIN_VERBOSEJMP(user)]")
+	message_admins("[ADMIN_LOOKUPFLW(user)] primed a cherry bomb at [ADMIN_VERBOSEJMP(user)]")
 	log_game("[key_name(user)] primed a cherry bomb at [AREACOORD(user)].")
 	prime()
 
