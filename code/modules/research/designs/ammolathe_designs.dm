@@ -715,6 +715,7 @@
 	build_path = /obj/item/ammo_box/magazine/rpd/empty
 	category = list("initial", "Advanced Magazines")
 
+
 /datum/design/ammolathe/tommygunm45
 	name = "empty drum magazine (.45)"
 	id = "tommygunm45"
