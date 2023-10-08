@@ -313,7 +313,7 @@
 	if(!iscarbon(user) || !isliving(hit))
 		return
 
-	var/roll = iscarbon(hit) ? rollTackle(hit) : 10// extra damage to simplemobs (For some reason it's less than it seems)
+	var/roll = iscarbon(hit) ? rollTackle(hit) : 10 // extra damage to simplemobs (For some reason it's less than it seems)
 	user.tackling = FALSE
 
 	var/tackle_damage = 10
