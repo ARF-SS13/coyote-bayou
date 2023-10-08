@@ -47,6 +47,7 @@
 /datum/keybinding/mob/swap_hands/down(client/user)
 	var/mob/M = user.mob
 	M.swap_hand()
+	SEND_SOUND(M, sound('sound/effects/switchhand.ogg'))
 	return TRUE
 
 /datum/keybinding/mob/activate_inhand
