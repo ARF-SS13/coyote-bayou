@@ -30,9 +30,13 @@
 	var/datum/thrownthing/tackle
 	/// Is it just a simple dive-kick?
 	var/simple_dunk
-
+	// is it just a STRONG simple dive-kick?
+	var/simple_dunkstrong
 /datum/component/tackler/simple
 	simple_dunk = TRUE
+
+/datum/component/tackler/simple_dunkstrong
+	simple_dunkstrong = TRUE
 
 /datum/component/tackler/Initialize(stamina_cost = 25, base_knockdown = 1 SECONDS, range = 4, speed = 1, skill_mod = 0, min_distance = min_distance)
 	if(!iscarbon(parent))
@@ -146,6 +150,10 @@
 
 	if(simple_dunk && isliving(hit))
 		simple_sack(user, hit)
+		return
+
+	if(simple_dunkstrong && isliving(hit))
+		simple_sackstrong(user, hit)
 		return
 
 	if(!iscarbon(hit))
@@ -296,6 +304,70 @@
 		return
 	var/atom/throw_target = get_ranged_target_turf(hit, get_dir(user, hit), rand(CEILING(damage_mod * 0.5, 1), CEILING(damage_mod, 1)), 2)
 	hit.safe_throw_at(throw_target, 10, 1, user, TRUE)
+
+	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, CEILING(damage_mod, 1))
+	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
+
+//crappy "strong" version of the simple dunk, meant for high tier quirks and raging boar.
+/datum/component/tackler/proc/simple_sackstrong(mob/living/carbon/user, mob/living/hit)
+	if(!iscarbon(user) || !isliving(hit))
+		return
+
+	var/roll = iscarbon(hit) ? rollTackle(hit) : 10 // extra damage to simplemobs (For some reason it's less than it seems)
+	user.tackling = FALSE
+
+	var/tackle_damage = 10
+	if(HAS_TRAIT(user, TRAIT_IRONFIST))
+		tackle_damage = 20
+	else if(HAS_TRAIT(user, TRAIT_STEELFIST))
+		tackle_damage = 30 //for whatever reason the original code for this has fucked up calculations, only the fist values apply//
+	var/damage_mod = 1
+
+	switch(roll)
+		if(-INFINITY to -5)
+			damage_mod *= 0.5
+		if(-4 to -2)
+			damage_mod *= 0.8
+		if(2 to 3)
+			damage_mod *= 1.5
+		if(4 to INFINITY)
+			damage_mod *= 2
+
+	if(tackle?.dist_travelled)
+		damage_mod *= (1.5 + (2*tackle.dist_travelled))
+
+	switch(damage_mod)
+		if(-INFINITY to 1)
+			user.visible_message(
+				span_warning("[user] rams into [hit] with a flying tackle!"), 
+				span_userdanger("You rams into [hit] with a flying tackle!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] rams into you!"))
+		if(1.1 to 3)
+			user.visible_message(
+				span_warning("[user] slams into [hit] with a deadly charge!"), 
+				span_userdanger("You slam into [hit] with a deadly charge!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] slams into you!"))
+		if(3.1 to INFINITY)
+			user.visible_message(
+				span_warning("[user] CRASHES into [hit] with an powerful dropkick!"), 
+				span_userdanger("You CRASH into [hit] with a powerful dropkick!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] CRASHES into you!"))
+	playsound(user, 'sound/effects/flesh_impact_1.ogg', 60, TRUE)
+	if(damage_mod >= 2)
+		hit.emote("scream")
+	user.emote("scream")
+	
+	var/armormult = clamp(hit.getarmor(BODY_ZONE_CHEST, "melee"), 0, 1)
+
+	hit.apply_damage(tackle_damage, STAMINA, BODY_ZONE_CHEST, armormult)
+	hit.apply_damage(tackle_damage, BRUTE, BODY_ZONE_CHEST, armormult)
+	if(hit.anchored)
+		return
+	var/atom/throw_target = get_ranged_target_turf(hit, get_dir(user, hit), rand(CEILING(damage_mod * 0.5, 1), CEILING(damage_mod, 3)), 2)
+	hit.throw_at(throw_target, 10, 1, user, TRUE)
 
 	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, CEILING(damage_mod, 1))
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
