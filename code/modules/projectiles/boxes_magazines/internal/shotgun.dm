@@ -102,6 +102,19 @@
 	max_ammo = 12
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/shot/long22
+	name = ".22LR Long internal tube magazine" //baby repeater
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 20
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/short22
+	name = ".22LR Short internal tube magazine" //spicy baby repeater
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 10
+	multiload = 1
 /obj/item/ammo_box/magazine/internal/shot/tube4570
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
