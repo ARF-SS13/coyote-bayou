@@ -3148,7 +3148,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/loincloth
-	name = "Grassy loincloth"loincloth
+	name = "Grassy loincloth"
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
 
 /datum/gear/uniform/purplegown
