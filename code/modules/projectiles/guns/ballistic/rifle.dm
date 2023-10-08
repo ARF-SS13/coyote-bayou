@@ -659,7 +659,7 @@
 
 
 /obj/item/gun/ballistic/rifle/magnetic
-	name = "Hephaestus Ferromagnetic Rifle"
+	name = "Hephestus Ferromagnetic Rifle"
 	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "magriflev"

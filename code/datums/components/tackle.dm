@@ -100,7 +100,7 @@
 		return
 
 	user.tackling = TRUE
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle, TRUE)
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
 	var/leap_word = iscatperson(user) ? "pounce" : "leap" ///If cat, "pounce" instead of "leap".

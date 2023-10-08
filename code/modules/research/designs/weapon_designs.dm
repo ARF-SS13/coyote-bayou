@@ -542,7 +542,7 @@
 	name = "Microfusion Cell"
 	id = "mfc"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 10000)
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -551,7 +551,7 @@
 	name = "Energy Cell"
 	id = "ec"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000)
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000, /datum/material/plasma = 10000)
 	build_path =/obj/item/stock_parts/cell/ammo/ec
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -560,7 +560,7 @@
 	name = "Electron Charge Pack"
 	id = "ecp"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000, /datum/material/plasma = 6000)
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

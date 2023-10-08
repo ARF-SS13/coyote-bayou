@@ -79,12 +79,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
-	var/uses_glasses_colour = 0
-
+	var/genital_whitelist = ""
 	var/whoflags = DEFAULT_WHO_FLAGS
-	/// What who change things are they banned from?
-	/// here cus I dont know how bans work lol
-	var/lockouts = 0
+	var/lockouts = NONE
+
+	var/uses_glasses_colour = 0
 
 	//character preferences
 	var/real_name						//our character's name
@@ -111,6 +110,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/right_eye_color = "000000"
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
+	var/tbs = TBS_DEFAULT // turner broadcasting system
+	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
@@ -434,6 +435,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Top/Bottom/Switch:</b> <a href='?_src_=prefs;preference=tbs;task=input'>[tbs]</a><BR>"
+			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
 			//Middle Column
 			dat +="<td width='30%' valign='top'>"
@@ -2182,11 +2185,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 // 			return bal + 33 //max 33 point regardless of how many prosthetics
 // 	return bal
 
-// /datum/preferences/proc/GetPositiveQuirkCount()
-// 	. = 0
-// 	for(var/q in char_quirks)
-// 		if(SSquirks.quirk_points[q] > 0)
-// 			.++
+/datum/preferences/proc/update_genital_whitelist()
+	var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+		parent, 
+		"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+		any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+		content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+		Separate your entries with a comma!",
+		"Genital Whitelist",
+		genital_whitelist)
+	if(isnull(new_genital_whitelist))
+		to_chat(parent, "Never mind!!")
+		return
+	if(trim(new_genital_whitelist) == "" && trim(genital_whitelist) != "")
+		var/whoa = alert(usr, "Are you sure you want to clear your genital whitelist?", "Clear Genital Whitelist", "Yes", "No")
+		if(whoa == "No")
+			to_chat(parent, "Never mind!!")
+			return
+	genital_whitelist = new_genital_whitelist
+	to_chat(parent, span_notice("Updated your genital whitelist! It should kick in soon!"))
+	save_preferences()
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2224,20 +2242,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
 	if(href_list["preference"] == "change_genital_whitelist")
-		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
-			user, 
-			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
-			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
-			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
-			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
-			"Genital Whitelist",
-			features["genital_whitelist"])
-		if(new_genital_whitelist == "")
-			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
-			if(whoathere == "Yes")
-				features["genital_whitelist"] = new_genital_whitelist
-		else if(!isnull(new_genital_whitelist))
-			features["genital_whitelist"] = new_genital_whitelist
+		update_genital_whitelist()
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
@@ -2493,6 +2498,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(msg))
 						creature_ooc = msg
 
+				if("tbs")
+					var/new_tbs = input(user, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+					if(new_tbs)
+						tbs = new_tbs
+				if("kisser")
+					var/newkiss = input(user, "What sort of person do you like to kisser?", "Character Preference") as null|anything in KISS_LIST
+					if(newkiss)
+						kisser = newkiss
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)

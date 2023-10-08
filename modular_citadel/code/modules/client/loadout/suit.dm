@@ -11,12 +11,12 @@
 /datum/gear/suit/greyrobes
 	name = "Grey robes"
 	path = /obj/item/clothing/suit/hooded/robes/grey
-	cost = 0
+	cost = 2
 
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
 	path = /obj/item/clothing/suit/hooded/robes
-	cost = 0
+	cost = 2
 
 /datum/gear/suit/hoodedmask
 	name = "patched heavy leather cloak"

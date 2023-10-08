@@ -13,8 +13,6 @@
 	medhud.add_to_hud(src)
 	var/datum/atom_hud/data/client/clienthud = GLOB.huds[DATA_HUD_CLIENT]
 	clienthud.add_to_hud(src)
-	var/datum/atom_hud/data/human/tail/tailhud = GLOB.huds[TAIL_HUD_DATUM]
-	tailhud.add_to_hud(src)
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
@@ -30,6 +28,16 @@
 	med_hud_set_status()
 
 /mob/living/Destroy()
+	for(var/s in ownedSoullinks)
+		var/datum/soullink/S = s
+		S.ownerDies(FALSE)
+		qdel(s) //If the owner is destroy()'d, the soullink is destroy()'d
+	ownedSoullinks = null
+	for(var/s in sharedSoullinks)
+		var/datum/soullink/S = s
+		S.sharerDies(FALSE)
+		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
+	sharedSoullinks = null
 	if(mind)
 		mind.RemoveAllSpells()
 	end_parry_sequence()

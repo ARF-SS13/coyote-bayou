@@ -126,6 +126,7 @@
 	force_unwielded = 20
 	force_wielded = 30 // It *is* a bigger stick...
 	throwforce = 20
+	is_kelpwand = TRUE
 	fire_sound = 'sound/weapons/pulse2.ogg'
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1, 1)
@@ -206,7 +207,7 @@
 	desc = "The entire staff hums and crackles with power, and excess energy dances along its prongs. When unleashed, a single bolt of great power strikes out faster than the eye can see."
 	icon_state = "lightningstaff"
 	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
-	max_charges = 15
+	max_charges = 12
 	recharge_rate = 20 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
 	init_firemodes = list(

@@ -273,3 +273,11 @@
 	build_path = /obj/item/reagent_containers/glass/bottle/vial/large
 	category = list("initial","Medical","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/synthjuice
+	name = "Synth Repair Gel"
+	id = "synthetic_repair_paste"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/gold = 500, /datum/material/silver = 500, /datum/material/glass = 500)
+	build_path = /obj/item/reagent_containers/glass/bottle/synthjuice
+	category = list("initial", "Medical")

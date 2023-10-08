@@ -634,7 +634,7 @@
 
 /datum/emote/living/twitch/run_emote(mob/user, params)
 	user.Jitter(20)
-	
+
 /datum/emote/living/twitch_s
 	key = "twitch_s"
 	message = "twitches."
@@ -1130,6 +1130,12 @@
 /datum/emote/living/bwoing/run_emote(mob/user, params)
 	. = ..()
 	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
+
+/datum/emote/living/bwoing/skip
+	key = "skip"
+	key_third_person = "skips!"
+	message = "skips."
+	sound = null
 
 /datum/emote/living/bounce
 	key = "bounce"

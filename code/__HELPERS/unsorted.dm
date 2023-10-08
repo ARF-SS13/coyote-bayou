@@ -501,6 +501,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/steps = 1
 	if(current != target_turf)
 		current = get_step_towards(current, target_turf)
+		if (!current)
+			return 0 // How did you get from somewhere to nowhere????
 		while(current != target_turf)
 			if(steps > length)
 				return 0
@@ -1632,13 +1634,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /// REcursively searches through the atom's loc, looking for a type path, aborting if it hits a turf
 /proc/recursive_loc_path_search(atom/haystack, pathtype, max_depth = 5)
+	if(!haystack)
+		return // There is no haystack, or needle for that matter
 	if(max_depth <= 0)
 		return // we've gone too deep
 	if(istype(haystack, pathtype))
 		return haystack
 	if(isturf(haystack))
 		return
-	if(haystack.loc)
+	if(haystack && haystack.loc)
 		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
 
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.

@@ -167,23 +167,13 @@
 	new /obj/item/gun/ballistic/automatic/aksmol/aldric(src)
 
 /datum/gear/donator/kits/rinpin
-	name = "Lee's stash (rifle)"
+	name = "Lee's stash"
 	path = /obj/item/storage/box/large/custom_kit/rinpin
 	ckeywhitelist = list("Pootismaniac")
 
 /obj/item/storage/box/large/custom_kit/rinpin/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
 	new /obj/item/gun/ballistic/rifle/magnetic(src)
-
-/datum/gear/donator/kits/rinpin2
-	name = "Lee's stash (SMG,Punch)"
-	path = /obj/item/storage/box/large/custom_kit/rinpin2
-	ckeywhitelist = list("Pootismaniac")
-
-/obj/item/storage/box/large/custom_kit/rinpin2/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
-	new /obj/item/book/granter/crafting_recipe/blueprint/smg10mm/magnetic(src)
-	new /obj/item/melee/unarmed/powerfist/refurbished(src)
 
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"

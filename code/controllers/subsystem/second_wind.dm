@@ -441,7 +441,7 @@ SUBSYSTEM_DEF(secondwind)
 		"Percentage" = 100,
 		"TargTime" = SSsecondwind.life_cooldown,
 	)
-	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		.["Percentage"] = 0
@@ -474,7 +474,7 @@ SUBSYSTEM_DEF(secondwind)
 		"DedPercentage" = 100,
 		"DedTargTime" = SSsecondwind.death_delay,
 	)
-	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["DedPBarColors"] = "bad"
 		.["DedTimeText"] = "Never!"
 		.["DedPercentage"] = 0

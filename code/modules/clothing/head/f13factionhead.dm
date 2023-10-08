@@ -936,7 +936,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	icon_state = "khan_fullhelmet"
 	item_state = "khan_fullhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_cover = HEADCOVERSEYES 
 	strip_delay = 20
 
 /* /obj/item/clothing/head/helmet/f13/khan/fullhelm/Initialize()
