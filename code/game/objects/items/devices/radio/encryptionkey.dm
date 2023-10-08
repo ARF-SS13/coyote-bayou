@@ -248,7 +248,7 @@
 	name = "Hell's Nomads radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the Hell's Nomads channel, use :b, to access Ashdown's channel, use :d"
 	icon_state = "cypherkey"
-	channels = list(RADIO_CHANNEL_BIKER = 1, RADIO_CHANNEL_ASHDOWN = 1 )
+	channels = list(RADIO_CHANNEL_ASHDOWN = 1, RADIO_CHANNEL_BIKER = 1 )
 
 /obj/item/encryptionkey/headset_responders
 	name = "Makeshift radio key"
