@@ -654,6 +654,80 @@
 	icon_state = "sovjacket"
 	item_state = "sovjacket"
 
+/obj/item/clothing/suit/armor/outfit/flagcapes
+	name = "base for the flag capes"
+	desc = "Base stuff for the flag capes, no peekie ;3"
+	icon_state = "poland"
+	item_state = "poland"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	body_parts_hidden = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/poland
+	name = "Armored Polish flag cape"
+	desc = "A cape made to resemble the flag of Poland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "poland"
+	item_state = "poland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/iceland
+	name = "Armored Icelandic flag cape"
+	desc = "A cape made to resemble the flag of Iceland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "iceland"
+	item_state = "iceland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/norway
+	name = "Armored Norwegian flag cape"
+	desc = "A cape made to resemble the flag of Norway"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "norway"
+	item_state = "norway"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/finland
+	name = "Armored Finnish flag cape"
+	desc = "A cape made to resemble the flag of Finland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "finland"
+	item_state = "finland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/germanynato
+	name = "Armored West German flag cape"
+	desc = "A cape made to resemble the flag of NATO West Germany"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "germany"
+	item_state = "germany"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/sweden
+	name = "Armored Swedish flag cape"
+	desc = "A cape made to resemble the flag of Sweden"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "sweden"
+	item_state = "sweden"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/denmark
+	name = "Armored Danish flag cape"
+	desc = "A cape made to resemble the flag of Denmark"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "denmark"
+	item_state = "denmark"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/france
+	name = "Armored French flag cape"
+	desc = "A cape made to resemble the flag of France."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "france"
+	item_state = "france"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat

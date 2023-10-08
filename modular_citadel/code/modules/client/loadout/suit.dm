@@ -676,6 +676,54 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/flagcapesclothing
+	name = "Armored Polish flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/poland
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/il
+	name = "Armored Icelandic flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/iceland
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/nor
+	name = "Armored Norwegian flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/norway
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/swed
+	name = "Armored Swedish flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/sweden
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/dmark
+	name = "Armored Danish flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/denmark
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/fin
+	name = "Armored Finnish flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/finland
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/ger
+	name = "Armored West German flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/germanynato
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/fr
+	name = "Armored French flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/france
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed
