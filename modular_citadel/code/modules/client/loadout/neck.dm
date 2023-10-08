@@ -409,6 +409,46 @@
 	path = /obj/item/clothing/neck/tie/aurora/dominia_cape_consular
 	cost = 0
 
+/datum/gear/neck/polcape
+	name = "Polish Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories
+	cost = 0
+
+/datum/gear/neck/icelandcape
+	name = "Icelandic Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no2
+	cost = 0
+
+/datum/gear/neck/finlandcape
+	name = "Finnish Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no3
+	cost = 0
+
+/datum/gear/neck/norwaycape
+	name = "Norwegian Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no4
+	cost = 0
+
+/datum/gear/neck/natogermanycape
+	name = "West German Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no5
+	cost = 0
+
+/datum/gear/neck/frcape
+	name = "French Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no6
+	cost = 0
+
+/datum/gear/neck/denmcape
+	name = "Danish Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no7
+	cost = 0
+
+/datum/gear/neck/swedcape
+	name = "Swedish Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no8
+	cost = 0
+
 /datum/gear/neck/domcapefull
 	name = "Dominia Cape, full"
 	path = /obj/item/clothing/neck/tie/aurora/dominian_doublecape
