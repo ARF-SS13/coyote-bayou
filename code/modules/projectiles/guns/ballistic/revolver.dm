@@ -128,6 +128,7 @@
 
 /obj/item/gun/ballistic/revolver/detective
 	name = ".22LR revolver"
+	
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
