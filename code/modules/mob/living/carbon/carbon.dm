@@ -20,6 +20,7 @@
 	hand_bodyparts = null		//Just references out bodyparts, don't need to delete twice.
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
+	QDEL_NULL(last_mind)
 	GLOB.carbon_list -= src
 
 /mob/living/carbon/relaymove(mob/user, direction)
