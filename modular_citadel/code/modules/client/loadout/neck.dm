@@ -449,6 +449,46 @@
 	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no8
 	cost = 0
 
+/datum/gear/neck/tsarcape
+	name = "Tsar Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no9
+	cost = 0
+
+/datum/gear/neck/irecape
+	name = "Irish Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no10
+	cost = 0
+
+/datum/gear/neck/brazcape
+	name = "Brazilian Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no11
+	cost = 0
+
+/datum/gear/neck/cancape
+	name = "Canadian Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no12
+	cost = 0
+
+/datum/gear/neck/ukcape
+	name = "British Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no13
+	cost = 0
+
+/datum/gear/neck/auscape
+	name = "Australian Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no14
+	cost = 0
+
+/datum/gear/neck/nzeacape
+	name = "New Zealand Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no15
+	cost = 0
+
+/datum/gear/neck/italiancape
+	name = "Italian Cape"
+	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no16
+	cost = 0
+
 /datum/gear/neck/domcapefull
 	name = "Dominia Cape, full"
 	path = /obj/item/clothing/neck/tie/aurora/dominian_doublecape

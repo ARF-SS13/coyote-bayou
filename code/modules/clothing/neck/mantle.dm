@@ -414,3 +414,68 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "swedena"
 	item_state = "swedena"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no9
+	name = "Imperial Tsar flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "imperialrusa"
+	item_state = "imperialrusa"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no10
+	name = "Irish flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "irelanda"
+	item_state = "irelanda"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no11
+	name = "Brazilian flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "brazila"
+	item_state = "brazila"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no12
+	name = "Canadian flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "canadaa"
+	item_state = "canadaa"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no13
+	name = "British flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "uka"
+	item_state = "uka"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no14
+	name = "Australian flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "australiaa"
+	item_state = "australiaa"
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no15
+	name = "New Zealander flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "newzealanda"
+	item_state = "newzealanda"
+
+
+/obj/item/clothing/neck/tie/flagcapesaccessories/no16
+	name = "Italian flag cape"
+	desc = "A flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "italya"
+	item_state = "italya"
