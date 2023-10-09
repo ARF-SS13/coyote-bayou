@@ -937,6 +937,17 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 
+//Sawed off baby repeater
+/datum/crafting_recipe/trainerator
+	name = ".22 Mares Leg"
+	result = /obj/item/gun/ballistic/rifle/repeater/trainerator
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trainer = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
