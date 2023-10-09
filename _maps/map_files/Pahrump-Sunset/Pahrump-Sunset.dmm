@@ -95919,6 +95919,12 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"smE" = (
+/obj/effect/landmark/start/f13/nashcurator,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "smI" = (
 /obj/machinery/vending/matvend,
 /turf/open/floor/wood_common{
@@ -123222,7 +123228,7 @@ dam
 ucw
 jZF
 fCX
-pvx
+smE
 bQv
 bQv
 bQv

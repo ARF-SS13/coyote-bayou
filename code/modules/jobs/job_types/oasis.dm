@@ -1211,6 +1211,73 @@ Mayor
 		)
 /*--------------------------------------------------------------*/
 
+//Nash Curator
+
+/datum/job/oasis/nashcurator
+	title = "Nash Librarian"
+	flag = NASHCURATOR
+	department_flag = DEP_OASIS
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Nash's laws"
+	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/nashcurator
+
+	/*
+	loadout_options = list(
+		/datum/outfit/loadout/provisioner,
+		/datum/outfit/loadout/groundskeeper,
+		/datum/outfit/loadout/artisan,
+		/datum/outfit/loadout/outdoorsman,
+		/datum/outfit/loadout/militia,
+		/datum/outfit/loadout/singer,
+		/datum/outfit/loadout/farmer,
+		/datum/outfit/loadout/prospector
+	)*/
+	access = list(ACCESS_BAR)
+	minimal_access = list(ACCESS_BAR)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+
+/datum/outfit/job/den/nashcurator
+	name = "Nash Librarian"
+	jobtype = /datum/job/oasis/nashcurator
+	belt = /obj/item/kit_spawner/townie
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/folder/white = 1,
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools,
+		)
+
+/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
+
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
 	title = "Texarkana Quartermaster"
