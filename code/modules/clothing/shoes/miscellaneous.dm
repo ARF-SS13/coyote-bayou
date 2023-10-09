@@ -260,7 +260,7 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
-
+/* Disablingn for now, until we can figure out the PA issue.
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"
 	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
@@ -298,7 +298,7 @@
 /obj/item/clothing/shoes/wheelys/Destroy()
 	QDEL_NULL(W)
 	. = ..()
-
+*/
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
 	desc = "A kaleidescope of light bursts from these shoes with every footfall. A scattering of color lights up the night."

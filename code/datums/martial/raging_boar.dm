@@ -108,8 +108,8 @@
 		return
 	//deftswitch.Grant(H)
 	//sidekick.Grant(H)
-	H.AddComponent(/datum/component/tackler/simple, \
-		stamina_cost = 5, \
+	H.AddComponent(/datum/component/tackler/simple_dunkstrong, \
+		stamina_cost = 10, \
 		base_knockdown = 0, \
 		range = 7, \
 		speed = 1, \

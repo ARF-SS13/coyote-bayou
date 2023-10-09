@@ -615,7 +615,7 @@
 		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
-		var/obj/item/storage/backpack/satchel/old/S = new(C)
+		var/obj/item/storage/backpack/duffelbag/S = new(C)
 		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
@@ -624,9 +624,13 @@
 		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
 		if(S)
+			new /obj/item/storage/wallet/stash/low(S)
 			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
 			new /obj/item/flashlight(S)//Give them a flashlight for seeing
 			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
+			new /obj/item/kit_spawner/townie(S)//And a weapon so they can play the game :tm:
+			new /obj/item/pda(S)//And a PDA since everyone else spawns with one, too
+			new /obj/item/card/id/selfassign(S)//And an ID card to swipe into the PDA
 		//Assign the mob's information based on the player's client preferences
 		switch(P.gender)
 			if("male")

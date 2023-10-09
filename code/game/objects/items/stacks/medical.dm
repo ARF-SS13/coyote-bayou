@@ -340,6 +340,9 @@
 	if(M.stat == DEAD)
 		to_chat(user, span_notice("[M] is dead. You can not help [M.p_them()]!"))
 		return
+	if(is_healing)
+		user.show_message(span_alert("You're already doing something with this!"))
+		return FALSE
 	if (heal_mobs <= 0)
 		to_chat(user, span_warning("[M] cannot be healed with [src]!"))
 		return FALSE
@@ -357,6 +360,17 @@
 		return FALSE
 	if(just_check)
 		return TRUE
+	is_healing = TRUE
+	user.visible_message(
+	span_warning("[user] begins applying \a [src] to [M]..."),
+	span_warning("You begin applying \a [src] to [user == M ? "yourself" : "[M]"]"))
+	if(start_sound)
+		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
+	if(!do_mob(user, M, get_delay_time(user, M, 1), progress = TRUE, allow_lying = TRUE))
+		to_chat(user, span_warning("You were interrupted!"))
+		is_healing = FALSE
+		return FALSE
+	is_healing = FALSE
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	if(needs_reservoir)

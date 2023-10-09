@@ -517,7 +517,7 @@
 	icon = 'icons/obj/in_hands.dmi'
 	icon_state = "bean"
 	color = "#ff88bb"
-	attack_verb = list("beans", "baps", "smushes")
+	attack_verb = list()
 	hitsound = "sound/effects/attackblob.ogg"
 	force = 0
 	force_wielded = 0

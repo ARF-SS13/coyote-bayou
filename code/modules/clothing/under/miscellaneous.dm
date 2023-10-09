@@ -1583,6 +1583,14 @@
 	item_color = "greek_dress"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/loincloth
+	name = "grassy loincloth"
+	desc = "Yep, that sure hardly covers anything."
+	icon_state = "loincloth"
+	item_state = "loincloth"
+	item_color = "loincloth"
+	can_adjust = FALSE
+
 // Bayou Stuff - started by Kelprunner
 
 /obj/item/clothing/under/tactiflannel
@@ -1594,7 +1602,7 @@
 	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
-/obj/item/clothing/under/frogsuit // nuh uh 
+/obj/item/clothing/under/frogsuit // nuh uh
 	name = "frogsuit"
 	desc = "A suit designed for sneaking and dynamic entry. Has tacticool straps for keeping additional armor snug to the body."
 	icon_state = "rachel_frogsuit"

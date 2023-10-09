@@ -11222,8 +11222,8 @@
 	},
 /area/f13/building/hospital)
 "aMz" = (
-/obj/machinery/iv_drip/telescopic,
-/obj/machinery/iv_drip/telescopic,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/building/hospital/clinic/nash)
 "aMA" = (
@@ -39329,12 +39329,9 @@
 /area/f13/wasteland/city/nash/theloop)
 "fwF" = (
 /obj/machinery/libraryscanner{
-	pixel_y = 5;
-	pixel_x = 7
+	pixel_x = 3
 	},
-/obj/structure/table/wood{
-	pixel_x = 2
-	},
+/obj/structure/table/wood,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -52108,11 +52105,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "irB" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/item/kirbyplants{
+	icon_state = "plant-10";
+	layer = 2.9
 	},
-/area/f13/building)
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "irN" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -95654,17 +95654,6 @@
 	icon_state = "outerpavementcorner - E"
 	},
 /area/f13/wasteland/massfusion/entrance)
-"six" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-10";
-	layer = 2.9;
-	pixel_x = 4;
-	pixel_y = 17
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "siA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/tree/jungle/small{
@@ -95930,6 +95919,12 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"smE" = (
+/obj/effect/landmark/start/f13/nashcurator,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "smI" = (
 /obj/machinery/vending/matvend,
 /turf/open/floor/wood_common{
@@ -97268,8 +97263,13 @@
 	},
 /area/f13/building/coyote/nash/firestation)
 "sBN" = (
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/libraryconsole/bookmanagement{
+	pixel_x = -3
+	},
 /obj/structure/table/wood,
+/obj/machinery/bookbinder{
+	pixel_x = -3
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -102800,6 +102800,13 @@
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"tKC" = (
+/obj/structure/closet/crate/bin{
+	pixel_y = 3;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "tKD" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -108269,12 +108276,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/abandoned)
 "vat" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building/library)
 "vaB" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -110685,9 +110691,6 @@
 /area/f13/ruins)
 "vEe" = (
 /obj/machinery/photocopier,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -115567,14 +115570,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city/nash/downtown)
 "wIW" = (
-/obj/machinery/bookbinder{
-	layer = 3;
-	pixel_x = 5
-	},
 /obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
 /obj/structure/table/wood,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#f5f5f5"
+	},
+/obj/machinery/computer/libraryconsole/bookmanagement,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -123224,7 +123228,7 @@ dam
 ucw
 jZF
 fCX
-pvx
+smE
 bQv
 bQv
 bQv
@@ -126870,7 +126874,7 @@ kSu
 cSk
 uvY
 tIt
-tPz
+tKC
 tPz
 tPz
 iAU
@@ -127603,7 +127607,7 @@ eUQ
 lQu
 icw
 nmt
-vat
+gVe
 gVe
 lBl
 hJz
@@ -128375,7 +128379,7 @@ eKL
 him
 nmt
 wIW
-pek
+dHT
 gVe
 mkd
 muu
@@ -128632,7 +128636,7 @@ tVF
 qOB
 nmt
 sBN
-dHT
+pek
 gVe
 gVe
 muu
@@ -129145,8 +129149,8 @@ wDf
 wDf
 aYl
 mBh
-nmt
-six
+irB
+gVe
 gVe
 aMI
 muu
@@ -129401,7 +129405,7 @@ uKN
 uKN
 uKN
 uKN
-wJZ
+vat
 nmt
 nmt
 vSN
@@ -131493,7 +131497,7 @@ iCZ
 aWK
 hxf
 mDu
-irB
+afS
 hxf
 dVF
 xUm
