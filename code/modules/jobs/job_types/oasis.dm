@@ -1224,18 +1224,6 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/nashcurator
-
-	/*
-	loadout_options = list(
-		/datum/outfit/loadout/provisioner,
-		/datum/outfit/loadout/groundskeeper,
-		/datum/outfit/loadout/artisan,
-		/datum/outfit/loadout/outdoorsman,
-		/datum/outfit/loadout/militia,
-		/datum/outfit/loadout/singer,
-		/datum/outfit/loadout/farmer,
-		/datum/outfit/loadout/prospector
-	)*/
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
@@ -1246,7 +1234,6 @@ Mayor
 			/datum/job/oasis
 		)
 	)
-
 
 /datum/outfit/job/den/nashcurator
 	name = "Nash Librarian"
@@ -1259,10 +1246,13 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/storage/wallet/stash/mid = 1,
 		/obj/item/folder/white = 1,
 		/obj/item/pda = 1,
+		/obj/item/pen/fountain/captain,
 		/obj/item/kit_spawner/tools,
+		/obj/item/export_scanner,
+		/obj/item/key/displaycase,
 		)
 
 /datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
