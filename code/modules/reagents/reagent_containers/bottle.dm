@@ -526,5 +526,5 @@
 /obj/item/reagent_containers/glass/bottle/synthjuice
 	name = "synthetic repair paste"
 	desc = "A small bottle full of synthetic repair gel. Not for organic consumption."
-	volume = 30
-	list_reagents = list(/datum/reagent/fuel/robo_repair_gel = 30)
+	volume = 120
+	list_reagents = list(/datum/reagent/fuel/robo_repair_gel = 120)

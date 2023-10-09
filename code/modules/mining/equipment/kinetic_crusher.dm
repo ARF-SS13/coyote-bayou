@@ -9,6 +9,8 @@
 	desc = "This weapon consists of an absurd number of disparate mining technologies that are, somehow, \
 			kludged together to create an incredibly effective weapon and mining tool. Good at obliterating rock, steel, and flesh alike."
 	force = 25 // clunky and heavy, not good for one hand
+	force_unwielded = 25
+	force_wielded = 40
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 	throwforce = 40
@@ -28,8 +30,10 @@
 	var/backstab_bonus = 30
 
 /obj/item/kinetic_crusher/cyborg //probably give this a unique sprite later
-	desc = "An integrated version of the standard kinetic crusher with a grinded down axe head to dissuade mis-use against crewmen. Deals damage equal to the standard crusher against creatures, however."
-	force = 10 //wouldn't want to give a borg a 20 brute melee weapon unemagged now would we
+	desc = "An integrated version of the standard kinetic crusher."
+	force = 40 // it's the wasteland and post-apoc in a dystopia. Robro gonna smash.
+	force_unwielded = null
+	force_wielded = null
 	detonation_damage = 90
 	wielded = 1
 
@@ -175,6 +179,7 @@
 	icon_state = "crusher-glaive"
 	item_state = "crusher0-glaive"
 	detonation_damage = 20
+	max_reach = 2
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
