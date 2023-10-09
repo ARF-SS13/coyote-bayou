@@ -1214,7 +1214,7 @@ Mayor
 //Nash Curator
 
 /datum/job/oasis/nashcurator
-	title = "Nash Curator"
+	title = "Nash Librarian"
 	flag = NASHCURATOR
 	department_flag = DEP_OASIS
 	total_positions = 1
@@ -1249,7 +1249,7 @@ Mayor
 
 
 /datum/outfit/job/den/nashcurator
-	name = "Nash Curator"
+	name = "Nash Librarian"
 	jobtype = /datum/job/oasis/nashcurator
 	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town

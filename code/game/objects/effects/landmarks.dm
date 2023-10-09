@@ -775,7 +775,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/nashcurator
-	name = "Nash Curator"
+	name = "Nash Librarian"
 	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/dendoc
