@@ -179,6 +179,7 @@
 	icon_state = "crusher-glaive"
 	item_state = "crusher0-glaive"
 	detonation_damage = 20
+	max_reach = 2
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
