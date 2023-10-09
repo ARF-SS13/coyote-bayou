@@ -155,8 +155,8 @@ Mayor
 	title = "Councilperson"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "your constituents, your greed, and realpolitik"
 	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place on the Parliamentary Council of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, and just maybe they'll vote you back in...or won't, you know, toss you into the moat."
 	enforces = "You serve as the de-facto leader of Nash with your co-Council, if another is awake."
