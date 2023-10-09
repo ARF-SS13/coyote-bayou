@@ -417,7 +417,7 @@ obj/item/clothing/neck/neckerchief
 
 /obj/item/clothing/neck/customfleur
 	name = "Fluer's necklace"
-	desc = "A simple but handmade necklace. The chain was of a soft, glistening gold, carefully linked together. On the end of the necklace was a small heart in the most pristine sliver. Gently glistening in the light. On the back, in-graved in small careful words was, 'Never lose sight of hope or love.' Along with an image of two tails carefully intertwining."
+	desc = "A simple but handmade necklace. The chain was of a soft, glistening silver, carefully linked together. On the end of the necklace was a small heart in the most pristine sliver. Gently glistening in the light. On the back, in-graved in small careful words was, 'Never lose sight of hope or love.' Along with an image of two tails carefully intertwining."
 	icon_state = "fleurnecklace"
 	item_state = "fleurnecklace"
 	icon = 'icons/fallout/clothing/mantles.dmi'

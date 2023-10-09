@@ -728,6 +728,70 @@
 	icon_state = "france"
 	item_state = "france"
 
+/obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
+	name = "Armored Tsarist flag cape"
+	desc = "A cape made to resemble the flag of the Tsar."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "imperialrus"
+	item_state = "imperialrus"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/ireland
+	name = "Armored Irish flag cape"
+	desc = "A cape made to resemble the flag of Ireland."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ireland"
+	item_state = "ireland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/brazil
+	name = "Armored Brazilian flag cape"
+	desc = "A cape made to resemble the flag of Brazil"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "brazil"
+	item_state = "brazil"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/italy
+	name = "Armored Italian flag cape"
+	desc = "A cape made to resemble the flag of Italy"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "italy"
+	item_state = "italy"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/canada
+	name = "Armored Canadian flag cape"
+	desc = "A cape made to resemble the flag of Canada."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "canada"
+	item_state = "canada"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/unitedkingdom
+	name = "Armored british flag cape"
+	desc = "A cape made to resemble the flag of the United Kingdom"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "uk"
+	item_state = "uk"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/australia
+	name = "Armored Australian flag cape"
+	desc = "A cape made to resemble the flag of Australia"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "australia"
+	item_state = "australia"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/newzealand
+	name = "Armored New Zealander flag cape"
+	desc = "A cape made to resemble the flag of New Zealand"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "newzealand"
+	item_state = "newzealand"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
