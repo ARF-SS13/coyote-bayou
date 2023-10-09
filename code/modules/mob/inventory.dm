@@ -1,6 +1,6 @@
 //This variable is needed in order to remember the origin of the storage of an item.
-GLOBAL_VAR_INIT(quick_equip_memory_item, 0)
-GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
+// GLOBAL_VAR_INIT(quick_equip_memory_item, 0)
+// GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
 GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 //These procs handle putting s tuff in your hands
 //as they handle all relevant stuff like adding it to the player's screen and updating their overlays.
@@ -476,24 +476,26 @@ GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 	var/obj/item/storage
 	var/obj/item/I = get_active_held_item()
 
-	if(I)
-		if(I == GLOB.quick_equip_memory_item)  //did I unsheathe my item from a holster or my boots?
-			if(GLOB.quick_equip_memory_origin == "SLOT_NECK")  //was it previously coming from my holster?
-				GLOB.quick_equip_memory_item = null    //hard reset all variables
-				GLOB.quick_equip_memory_origin = null
+	//obj/item/melee/onehanded
+
+	if(I)  //are we holding something in our hands?
+		storage = get_item_by_slot(SLOT_S_STORE)
+		if(storage)  //if it's empty, put the revolver there (if I'm carrying a pouch there for example)
+			if(istype(I, /obj/item/gun/ballistic/revolver) || istype(I, /obj/item/gun/ballistic/automatic/pistol))
 				storage = get_item_by_slot(SLOT_NECK)
-				SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src)  //store this exact item where it was coming from
-				return
-			else if(GLOB.quick_equip_memory_origin == "SLOT_SHOES")  //was it previously coming from my boots?
-				GLOB.quick_equip_memory_item = null    //Hard reset all variables
-				GLOB.quick_equip_memory_origin = null
-				storage = get_item_by_slot(SLOT_SHOES)
-				SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src)  //store this exact item where it was coming from
-				return
-		GLOB.quick_equip_memory_item = null    //hard reset for both variables, we want to forget the location immediately.
-		GLOB.quick_equip_memory_origin = null
+				if(storage)
+					if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+						if(SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src))
+							return
+
+		storage = get_item_by_slot(SLOT_SHOES)
+		if(istype(I, /obj/item/melee/onehanded/knife))
+			if(storage)
+				if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+					if(SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src))
+						return
 		I.equip_to_best_slot(src)
-		return
+
 	else  //Are we empty handed?
 		storage = get_item_by_slot(SLOT_S_STORE)
 		if(storage)  //Are we carrying something in this storage slot?
@@ -518,11 +520,9 @@ GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 					if(firearm && !firearm.on_found(src))
 						GLOB.quick_equip_cowboy_delay_negation = 1
 						firearm.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-						GLOB.quick_equip_memory_item = firearm
-						GLOB.quick_equip_memory_origin = "SLOT_NECK"
 						spawn(1)  //it's not needed, but let's wait for the system to actually process the firedelay.
 							GLOB.quick_equip_cowboy_delay_negation = 0
-					return
+						return
 		storage = get_item_by_slot(SLOT_SHOES)  //Shoes are a little different, we don't want to return the item itself, but rather its contents.
 		if(storage)  //Are we carrying something in this storage slot?
 			if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this a storage item?
@@ -530,8 +530,6 @@ GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 					I = storage.contents[storage.contents.len]  //take the item out
 					if(I && !I.on_found(src))
 						I.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-						GLOB.quick_equip_memory_item = I
-						GLOB.quick_equip_memory_origin = "SLOT_SHOES"
 					return
 
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
