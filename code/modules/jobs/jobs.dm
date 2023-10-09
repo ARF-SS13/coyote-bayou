@@ -168,6 +168,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Preacher",
 	"Vertibird Pilot",
+	"Nash Curator",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
