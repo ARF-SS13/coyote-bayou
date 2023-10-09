@@ -128,8 +128,8 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
 
-/datum/crafting_recipe/msreloader
-	name = "Makeshift Reloading Press"
+/datum/crafting_recipe/handsaw
+	name = "Hand Saw"
 	result = /obj/item/handsaw
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
