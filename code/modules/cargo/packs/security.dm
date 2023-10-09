@@ -69,7 +69,7 @@
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
 	desc = "One set of advanced armor, and rarely something better."
-	cost = 6000
+	cost = 5000
 	num_contained = 1
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
