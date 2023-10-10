@@ -150,7 +150,7 @@
 
 /obj/shapeshift_holder/proc/restore(death=FALSE)
 	restoring = TRUE
-	if(slink)
+	if(slink && !QDELETED(slink))
 		qdel(slink)
 	stored?.forceMove(get_turf(src))
 	stored?.mob_transforming = FALSE
@@ -164,9 +164,10 @@
 		var/damapply = stored.maxHealth * damage_percent
 		stored.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND)
 	shape?.unequip_everything()
-	if(shape)
+	if(shape && !QDELETED(shape))
 		qdel(shape)
-	qdel(src)
+	if(!QDELETED(src))
+		qdel(src)
 
 /datum/soullink/shapeshift
 	var/obj/shapeshift_holder/source
