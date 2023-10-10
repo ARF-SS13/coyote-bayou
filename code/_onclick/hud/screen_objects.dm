@@ -102,6 +102,9 @@
 
 	if(usr.attack_ui(slot_id))
 		usr.update_inv_hands()
+	//Remove the green object overlay since we never had a chance to use MouseExited(). Also removes the red one, but that's okay.
+	cut_overlay(object_overlay)
+	QDEL_NULL(object_overlay)
 	return TRUE
 
 /obj/screen/inventory/MouseEntered()
