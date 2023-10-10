@@ -329,7 +329,8 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/kitchen,
 	/obj/item/kinetic_crusher,
 	/obj/item/toy,
-	/obj/item/cult_bastard
+	/obj/item/cult_bastard,
+	/obj/item/shield
 	)))
 
 /// Things allowed in a toolbelt
