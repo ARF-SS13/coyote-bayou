@@ -17,8 +17,8 @@
 			return FALSE
 		U.TakeComponent(storage)
 		detached_pockets = storage
-	if(!U.attached_accessory_a && !U.attached_accessory_b && !U.attached_accessory_c)
-		U.attached_accessory_a = src
+	if(!U.attached_accessory && !U.attached_accessory_b && !U.attached_accessory_c)
+		U.attached_accessory = src
 	else if(!U.attached_accessory_b && !U.attached_accessory_c)
 		U.attached_accessory_b = src
 	else if(!U.attached_accessory_c)
@@ -61,14 +61,14 @@
 	layer = initial(layer)
 	plane = initial(plane)
 	U.cut_overlays()
-	if(U.attached_accessory_a && U.attached_accessory_b && U.attached_accessory_c)
+	if(U.attached_accessory && U.attached_accessory_b && U.attached_accessory_c)
 		U.attached_accessory_c = null
 		U.accessory_overlay_c = null
-	else if(U.attached_accessory_a && U.attached_accessory_b)
+	else if(U.attached_accessory && U.attached_accessory_b)
 		U.attached_accessory_b = null
 		U.accessory_overlay_b = null
-	else if(U.attached_accessory_a)
-		U.attached_accessory_a = null
+	else if(U.attached_accessory)
+		U.attached_accessory = null
 		U.accessory_overlay_a = null
 
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)

@@ -16,7 +16,7 @@
 	var/adjusted = NORMAL_STYLE
 	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
 	var/dummy_thick = FALSE // is able to hold accessories on its item
-	var/obj/item/clothing/accessory/attached_accessory_a
+	var/obj/item/clothing/accessory/attached_accessory
 	var/obj/item/clothing/accessory/attached_accessory_b
 	var/obj/item/clothing/accessory/attached_accessory_c
 	var/mutable_appearance/accessory_overlay_a
@@ -81,10 +81,10 @@
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 
-	if(attached_accessory_a && slot != SLOT_HANDS && ishuman(user))
+	if(attached_accessory && slot != SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		attached_accessory_a.on_uniform_equip(src, user)
-		if(attached_accessory_a.above_suit)
+		attached_accessory.on_uniform_equip(src, user)
+		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
 
 	if(attached_accessory_b && slot != SLOT_HANDS && ishuman(user))
@@ -100,11 +100,11 @@
 			H.update_inv_wear_suit()
 
 /obj/item/clothing/under/dropped(mob/user)
-	if(attached_accessory_a)
-		attached_accessory_a.on_uniform_dropped(src, user)
+	if(attached_accessory)
+		attached_accessory.on_uniform_dropped(src, user)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			if(attached_accessory_a.above_suit)
+			if(attached_accessory.above_suit)
 				H.update_inv_wear_suit()
 
 	if(attached_accessory_b)
@@ -128,7 +128,7 @@
 	
 	if(istype(I, /obj/item/clothing/accessory))
 		var/obj/item/clothing/accessory/A = I
-		if(attached_accessory_a && attached_accessory_b && attached_accessory_c)
+		if(attached_accessory && attached_accessory_b && attached_accessory_c)
 			if(user)
 				to_chat(user, span_warning("[src] already has too many accessories."))
 			return
@@ -148,21 +148,21 @@
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
 
-			if(attached_accessory_a && !attached_accessory_b && !attached_accessory_c)
-				accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_a.icon_state)
+			if(attached_accessory && !attached_accessory_b && !attached_accessory_c)
+				accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
 				if(A.mob_overlay_icon) // Sunset Wasteland changes: should make modularized accessories work on-mob.
-					accessory_overlay_a = mutable_appearance(A.mob_overlay_icon, attached_accessory_a.icon_state) // Ditto
-				accessory_overlay_a.alpha = attached_accessory_a.alpha
-				accessory_overlay_a.color = attached_accessory_a.color
+					accessory_overlay_a = mutable_appearance(A.mob_overlay_icon, attached_accessory.icon_state) // Ditto
+				accessory_overlay_a.alpha = attached_accessory.alpha
+				accessory_overlay_a.color = attached_accessory.color
 			
-			if(attached_accessory_a && attached_accessory_b && !attached_accessory_c)
+			if(attached_accessory && attached_accessory_b && !attached_accessory_c)
 				accessory_overlay_b = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_b.icon_state)
 				if(A.mob_overlay_icon)
 					accessory_overlay_b = mutable_appearance(A.mob_overlay_icon, attached_accessory_b.icon_state)
 				accessory_overlay_b.alpha = attached_accessory_b.alpha
 				accessory_overlay_b.color = attached_accessory_b.color
 
-			if(attached_accessory_a && attached_accessory_b && attached_accessory_c)
+			if(attached_accessory && attached_accessory_b && attached_accessory_c)
 				accessory_overlay_c = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_c.icon_state)
 				if(A.mob_overlay_icon)
 					accessory_overlay_c = mutable_appearance(A.mob_overlay_icon, attached_accessory_c.icon_state)
@@ -183,7 +183,7 @@
 	if(!can_use(user))
 		return
 
-	if(attached_accessory_a && attached_accessory_b && attached_accessory_c)
+	if(attached_accessory && attached_accessory_b && attached_accessory_c)
 		var/obj/item/clothing/accessory/A = attached_accessory_c
 		attached_accessory_c.detach(src, user)
 		if(user.put_in_hands(A))
@@ -196,7 +196,7 @@
 			H.update_inv_w_uniform()
 			H.update_inv_wear_suit()
 
-	else if(attached_accessory_a && attached_accessory_b)
+	else if(attached_accessory && attached_accessory_b)
 		var/obj/item/clothing/accessory/A = attached_accessory_b
 		attached_accessory_b.detach(src, user)
 		if(user.put_in_hands(A))
@@ -209,9 +209,9 @@
 			H.update_inv_w_uniform()
 			H.update_inv_wear_suit()
 
-	else if(attached_accessory_a)
-		var/obj/item/clothing/accessory/A = attached_accessory_a
-		attached_accessory_a.detach(src, user)
+	else if(attached_accessory)
+		var/obj/item/clothing/accessory/A = attached_accessory
+		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
 			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
@@ -242,8 +242,8 @@
 				. += "Its vital tracker appears to be enabled."
 			if(SENSOR_COORDS)
 				. += "Its vital tracker and tracking beacon appear to be enabled."
-	if(attached_accessory_a)
-		. += "\A [attached_accessory_a] is attached to it."
+	if(attached_accessory)
+		. += "\A [attached_accessory] is attached to it."
 	if(attached_accessory_b)
 		. += "\A [attached_accessory_b] is attached to it."
 	if(attached_accessory_c)
@@ -324,7 +324,7 @@
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	if(attached_accessory_a || attached_accessory_b || attached_accessory_c)
+	if(attached_accessory || attached_accessory_b || attached_accessory_c)
 		remove_accessory(user)
 	else
 		rolldown()
