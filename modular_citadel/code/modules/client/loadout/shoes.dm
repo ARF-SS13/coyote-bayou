@@ -9,6 +9,11 @@
 	path = /obj/item/clothing/shoes/laceup
 	cost = 0
 
+/datum/gear/shoes/ninja
+	name = "ninja shoes"
+	path = /obj/item/clothing/shoes/f13/ninja
+	cost = 0
+
 /datum/gear/shoes/workboots
 	name = "work boots"
 	path = /obj/item/clothing/shoes/workboots/mining

@@ -130,6 +130,31 @@
 	light_color = "#A020F0"
 	total_mass = null
 
+/obj/item/melee/transforming/plasmacutter/regular/energykatana
+	name = "Energy Katana"
+	desc = "A katana infused with strong energy."
+	icon_state = "katana"
+	icon_state_on = "energy_katana"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 25
+	force_on = 35
+	sharpness = SHARP_EDGED
+	throwforce = 5
+	throwforce_on = 15
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.85
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	light_color = "#20f043"
+	total_mass = null
+
 /obj/item/melee/transforming/plasmacutter/regular/adam
 	name = "plasma cutter adam"
 	desc = "A bright crimson plasma cutter. This Cutter boasts the design strenghths of all its lesser companions"

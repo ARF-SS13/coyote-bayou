@@ -1851,6 +1851,16 @@
 	siemens_coefficient = 0.9
 	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
 
+/obj/item/clothing/suit/armor/light/leather/ninja
+	name = "ninja suit"
+	desc = "A lightly armored, padded suit designed specifically for thoses with stealth in mind."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "s-ninja"
+	item_state = "s-ninja"
+	flags_inv = HIDEJUMPSUIT
+	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
+
 /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	name = "bouncer jacket"
 	icon_state = "leather_jacket_fighter"
