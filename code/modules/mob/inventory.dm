@@ -458,8 +458,7 @@
 // 4-Boot contents.
 
 // There's one more twist to this, for example, if the user had previously unsheathed a revolver from a shoulder holster,
-// we clearly want the revolver to be re-sheathed in the previous location, this is why there are these new variables:
-// quick_equip_memory_item and quick_equip_memory_origin, that keep track of this exact thing.
+// we clearly want the revolver to be re-sheathed in the previous location.
 // If anything is broken, or not working properly, contact me or fix it -leonzrygin
 //<--
 /mob/verb/quick_equip()
