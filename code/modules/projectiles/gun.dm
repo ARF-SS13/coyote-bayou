@@ -446,7 +446,7 @@ ATTACHMENTS
 	if (automatic == 0)
 		user.DelayNextAction(1)
 	if (automatic == 1)
-		user.DelayNextAction(autofire_shot_delay)
+		user.DelayNextAction(fire_delay)
 
 	//DUAL (or more!) WIELDING
 	var/loop_counter = 0
@@ -491,7 +491,7 @@ ATTACHMENTS
 		return 1
 		//return isnull(chambered?.click_cooldown_override)? get_fire_delay(user) : chambered.click_cooldown_override
 	if (automatic == 1)
-		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
+		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
 
 /obj/item/gun/GetEstimatedAttackSpeed(mob/user)
 	return get_clickcd()
