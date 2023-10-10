@@ -1594,10 +1594,35 @@
 	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
-/obj/item/clothing/under/frogsuit // nuh uh 
+/obj/item/clothing/under/frogsuit // okay but maybe a little
 	name = "frogsuit"
 	desc = "A suit designed for sneaking and dynamic entry. Has tacticool straps for keeping additional armor snug to the body."
-	icon_state = "rachel_frogsuit"
-	item_state = "rachel_frogsuit"
-	item_color = "rachel_frogsuit"
+	icon_state = "frogsuit"
+	item_state = "frogsuit"
+	item_color = "frogsuit"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/joysuit
+	name = "joyous suit"
+	desc = "A long compression jumpsuit made of space age materials featuring a solitary kneepad. There's a long zipper reaching from the neck the belly. It is zipped."
+	icon_state = "joysuit"
+	item_state = "joysuit"
+	item_color = "joysuit"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/loosejoysuit
+	name = "frogsuit"
+	desc = "A long compression jumpsuit made of space age materials featuring a solitary kneepad. There's a long zipper reaching from the neck the belly. It is unzipped, and reeks of grass lilies."
+	icon_state = "joysuitalt"
+	item_state = "joysuitalt"
+	item_color = "joysuitalt"
+	body_parts_covered = GROIN|ARMS // teehee it doesn't protect your chest
+	can_adjust = FALSE
+
+/obj/item/clothing/under/peacewalker
+	name = "snake piece"
+	desc = "A large ripstop coat with tactical straps. Makes you want to walk along the line of peace and war..."
+	icon_state = "sneakingboot"
+	item_state = "sneakingboot"
+	item_color = "sneakingboot"
 	can_adjust = FALSE

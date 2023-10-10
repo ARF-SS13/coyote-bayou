@@ -3222,3 +3222,21 @@
 	cost = 0
 	path = /obj/item/clothing/under/frogsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/joysuit
+	name = "Joy Suit"
+	cost = 0
+	path = /obj/item/clothing/under/joysuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/joysuitloose
+	name = "Loose Joy Suit"
+	cost = 0
+	path = /obj/item/clothing/under/loosejoysuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/frogsuit
+	name = "Snake Piece"
+	cost = 0
+	path = /obj/item/clothing/under/peacewalker
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

@@ -826,3 +826,12 @@
 	icon_state = "armyhelmetheavy"
 	item_state = "armyhelmetheavy"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T3)
+
+/obj/item/clothing/head/helmet/froghelmet // start of Jaeger's bullshit additions oh my god I am so tired I just want this done and to bury my face in elf thighs
+	name = "steel helmet"
+	desc = "A steel helmet, inspired by several pre-war designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon_state = "froghelm"
+	item_state = "froghelm"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2) // Weak to THE BASICS OF CQC oh and lasers since their universe ain't never heard of no laser blaster lmfao

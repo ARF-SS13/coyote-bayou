@@ -1212,6 +1212,11 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/m1_standard
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
+/datum/gear/head/froghelmet
+	name = "Frogsuit Helmet"
+	path = /obj/item/clothing/head/helmet/froghelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+
 /datum/gear/head/wizard/red
 	name = "red wizard hat"
 	path = /obj/item/clothing/head/wizard/red
