@@ -39086,9 +39086,9 @@
 /area/f13/wasteland/city/nash/theloop)
 "fwF" = (
 /obj/machinery/libraryscanner{
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 11
 	},
-/obj/structure/table/wood,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -65472,6 +65472,11 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "lBl" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-18";
+	pixel_x = -3;
+	pixel_y = 17
+	},
 /obj/structure/chair/sofa/left{
 	dir = 4;
 	icon_state = "sofacorner"
@@ -69596,6 +69601,19 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/ruins)
 "muu" = (
+/obj/item/trash/candle{
+	pixel_x = -2;
+	pixel_y = 16
+	},
+/obj/item/candle/infinite{
+	pixel_x = 10;
+	pixel_y = 17
+	},
+/obj/item/trash/plate{
+	layer = 2.9;
+	pixel_x = 13;
+	pixel_y = 13
+	},
 /obj/structure/bookcase,
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -74166,6 +74184,24 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"nuO" = (
+/obj/item/trash/candle{
+	pixel_x = 3;
+	pixel_y = 19
+	},
+/obj/item/candle/infinite{
+	pixel_x = -19;
+	pixel_y = 19
+	},
+/obj/item/clothing/head/helmet/skull{
+	pixel_x = 7;
+	pixel_y = 16
+	},
+/obj/structure/bookcase,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "nuT" = (
 /obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/plasteel/f13{
@@ -77037,6 +77073,20 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"ocV" = (
+/obj/item/trash/candle{
+	pixel_x = 3;
+	pixel_y = 16
+	},
+/obj/item/candle/infinite{
+	pixel_x = -14;
+	pixel_y = 16
+	},
+/obj/structure/bookcase,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "ocZ" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/water,
@@ -88250,7 +88300,13 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "qFJ" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22";
+	pixel_x = -14;
+	pixel_y = 19
+	},
 /obj/structure/chair/sofa/left{
+	dir = 2;
 	icon_state = "sofacorner"
 	},
 /turf/open/floor/wood_common{
@@ -95123,8 +95179,30 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building/abandoned)
 "slF" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/structure/table/wood{
+	layer = 3;
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/obj/item/candle/infinite{
+	layer = 3.1;
+	pixel_x = -13;
+	pixel_y = 13
+	},
+/obj/item/trash/candle{
+	pixel_x = 1;
+	pixel_y = 4
+	},
+/obj/item/trash/plate{
+	pixel_x = -10;
+	pixel_y = 9
+	},
+/obj/item/candle/infinite{
+	layer = 3.1;
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -109428,6 +109506,25 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/nash)
+"vyZ" = (
+/obj/item/trash/plate{
+	layer = 2.9;
+	pixel_x = 7;
+	pixel_y = 16
+	},
+/obj/item/candle/infinite{
+	pixel_x = 2;
+	pixel_y = 18
+	},
+/obj/item/trash/candle{
+	pixel_x = -7;
+	pixel_y = 15
+	},
+/obj/structure/bookcase,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "vzf" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt,
@@ -127684,7 +127781,7 @@ sBN
 pek
 gVe
 gVe
-muu
+ocV
 nmt
 wYm
 aWK
@@ -127941,7 +128038,7 @@ vEe
 pek
 gVe
 gVe
-muu
+vyZ
 nmt
 ucW
 aWK
@@ -128198,7 +128295,7 @@ irB
 gVe
 gVe
 aMI
-muu
+nuO
 nmt
 wYm
 aWK
