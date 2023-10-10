@@ -3226,3 +3226,27 @@
 	cost = 0
 	path = /obj/item/clothing/under/frogsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/qipaonosleeve
+	name = "black qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevewhite
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevered
+	name = "red qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevered
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeveteal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL

@@ -1609,3 +1609,35 @@
 	item_state = "rachel_frogsuit"
 	item_color = "rachel_frogsuit"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeve
+	name = "black qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_nosleeve"
+	item_state = "qipao_nosleeve"
+	item_color = "qipao_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_white_nosleeve"
+	item_state = "qipao_white_nosleeve"
+	item_color = "qipao_white_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevered
+	name = "red qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_red_nosleeve"
+	item_state = "qipao_red_nosleeve"
+	item_color = "qipao_red_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_teal_nosleeve"
+	item_state = "qipao_teal_nosleeve"
+	item_color = "qipao_teal_nosleeve"
+	can_adjust = FALSE
