@@ -16,7 +16,7 @@
 	///Flags for reagents, like INJECTABLE, TRANSPARENT bla bla everything thats in DEFINES/reagents.dm
 	var/reagent_flags = TRANSPARENT
 	///wheter we partake in rcd construction or not
-	var/rcd_constructable = TRUE
+	var/rcd_constructable = FALSE
 	///cost of the plumbing rcd construction
 	var/rcd_cost = 15
 	///delay of constructing it throught the plumbing rcd
