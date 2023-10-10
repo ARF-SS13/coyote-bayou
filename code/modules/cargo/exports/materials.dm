@@ -26,46 +26,47 @@
 	return round(amount/MINERAL_MATERIAL_AMOUNT)
 
 // Materials. Selling raw can lead to a big payout but takes a lot of work for miners to get a lot. Best to craft art/rnd gear
+// Mats are getting a spike in price due to low payout with T4 parts + new demand for crafting. Needs to be tweaked over time. -Kelp
 
 /datum/export/material/diamond
-	cost = 250
+	cost = 1000
 	material_id = /datum/material/diamond
 	message = "cm3 of diamonds"
 
 /datum/export/material/plasma
-	cost = 25 //way too common to be uber valuable
+	cost = 75 //way too common to be uber valuable
 	material_id = /datum/material/plasma
-	message = "cm3 of ultracite"
+	message = "cm3 of plasma"
 
 /datum/export/material/uranium
-	cost = 50
+	cost = 100
 	material_id = /datum/material/uranium
 	message = "cm3 of uranium"
 
 /datum/export/material/gold
-	cost = 60
+	cost = 300
 	material_id = /datum/material/gold
 	message = "cm3 of gold"
 
 /datum/export/material/silver
-	cost = 25
+	cost = 150
 	material_id = /datum/material/silver
 	message = "cm3 of silver"
 
 /datum/export/material/titanium
-	cost = 12 //titanium is everywhere on our server
+	cost = 75 // buffed because payouts from scrapping are WAY lower
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
 	export_types = list(/obj/item/stack/sheet/mineral/titanium)
 
 /datum/export/material/plastic
-	cost = 5
+	cost = 75
 	material_id = /datum/material/plastic
 	message = "cm3 of plastic"
 	export_types = list(/obj/item/stack/sheet/plastic)
 
 /datum/export/material/metal
-	cost = 3
+	cost = 10
 	message = "cm3 of metal"
 	material_id = /datum/material/iron
 	export_types = list(
@@ -74,14 +75,14 @@
 		/obj/item/stack/ore, /obj/item/coin)
 
 /datum/export/material/glass
-	cost = 3
+	cost = 10
 	message = "cm3 of glass"
 	material_id = /datum/material/glass
 	export_types = list(/obj/item/stack/sheet/glass, /obj/item/stack/ore,
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 1000
+	cost = 1500
 	material_id = /datum/material/adamantine
 	message = "cm3 of pre-war ingots"
 	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
@@ -96,12 +97,13 @@
 */
 
 /datum/export/material/mythril
-	cost = 1000
+	cost = 600
 	material_id = /datum/material/mythril
 	message = "cm3 of mythril"
+	export_types = list(/obj/item/ingot/mythril)
 
 /datum/export/material/bscrystal
-	cost = 150
+	cost = 500 // Beware of Mass Fusion
 	message = "cm3 of ultracite crystals"
 	material_id = /datum/material/bluespace
 	export_types = list(/obj/item/stack/sheet/bluespace_crystal)

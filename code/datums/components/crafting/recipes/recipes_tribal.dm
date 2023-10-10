@@ -528,7 +528,7 @@ datum/crafting_recipe/tribalwar/bone
 
 //  T0 Zapper Wand (spawn item)
 /datum/crafting_recipe/magic/zaprod
-	name = "Rod of Shocks"
+	name = "Improvised Rod of Shocks"
 	result = /obj/item/gun/magic/wand/kelpmagic/basiczappies
 	time = 10
 	reqs = list(/obj/item/stack/rods = 1,
