@@ -10,7 +10,8 @@
 			kludged together to create an incredibly effective weapon and mining tool. Good at obliterating rock, steel, and flesh alike."
 	force = 25 // clunky and heavy, not good for one hand
 	force_unwielded = 25
-	force_wielded = 40
+	force_wielded = 50 // frankly, this entire file is a mess and probably needs to be redone entirely but I do *not* have the skill for that. -Kelp
+	weapon_special_component = /datum/component/weapon_special // Because this isn't a child of melee weapons, it needs this to attack without direct clicks.
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 	throwforce = 40
