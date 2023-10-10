@@ -285,6 +285,7 @@
 	.["Nash"] = oasis
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
+	.["Round Time"] = ROUND_TIME
 	return json_encode(.)
 
 /datum/world_topic/jsonrevision
