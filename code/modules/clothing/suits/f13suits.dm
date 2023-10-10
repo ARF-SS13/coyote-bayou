@@ -30,10 +30,10 @@
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform
-			if(istype(U) && U.attached_accessory)
-				var/obj/item/clothing/accessory/A = U.attached_accessory
+			if(istype(U) && U.attached_accessory_a)
+				var/obj/item/clothing/accessory/A = U.attached_accessory_a
 				if(A.above_suit)
-					. += U.accessory_overlay
+					. += U.accessory_overlay_a
 
 /obj/item/clothing/suit/update_clothes_damaged_state()
 	..()

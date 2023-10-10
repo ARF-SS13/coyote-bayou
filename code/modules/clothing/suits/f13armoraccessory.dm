@@ -17,7 +17,7 @@
 			return FALSE
 		U.TakeComponent(storage)
 		detached_pockets = storage
-	U.attached_accessory = src
+	U.attached_accessory_a = src
 	forceMove(U)
 	layer = FLOAT_LAYER
 	plane = FLOAT_PLANE
@@ -56,8 +56,8 @@
 	layer = initial(layer)
 	plane = initial(plane)
 	U.cut_overlays()
-	U.attached_accessory = null
-	U.accessory_overlay = null
+	U.attached_accessory_a = null
+	U.accessory_overlay_a = null
 
 /obj/item/clothing/armoraccessory/proc/on_suit_equip(obj/item/clothing/suit/U, user)
 	return

@@ -98,14 +98,14 @@
 /obj/item/clothing/head/equipped(mob/user, slot)
 	..()
 
-	if(attached_accessory && slot != SLOT_HANDS && ishuman(user))
+	if(attached_accessory_a && slot != SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		attached_accessory.on_head_equip(src, user)
+		attached_accessory_a.on_head_equip(src, user)
 		H.update_inv_head()
 
 /obj/item/clothing/head/dropped(mob/user)
-	if(attached_accessory)
-		attached_accessory.on_head_dropped(src, user)
+	if(attached_accessory_a)
+		attached_accessory_a.on_head_dropped(src, user)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.update_inv_head()
@@ -116,7 +116,7 @@
 	. = FALSE
 	if(istype(I, /obj/item/clothing/armoraccessory))
 		var/obj/item/clothing/armoraccessory/A = I
-		if(attached_accessory)
+		if(attached_accessory_a)
 			if(user)
 				to_chat(user, span_warning("[src] already has an accessory."))
 			return
@@ -137,9 +137,9 @@
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
 
-			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
-			accessory_overlay.alpha = attached_accessory.alpha
-			accessory_overlay.color = attached_accessory.color
+			accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_a.icon_state)
+			accessory_overlay_a.alpha = attached_accessory_a.alpha
+			accessory_overlay_a.color = attached_accessory_a.color
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
@@ -154,9 +154,9 @@
 	if(!can_use(user))
 		return
 
-	if(attached_accessory)
-		var/obj/item/clothing/armoraccessory/A = attached_accessory
-		attached_accessory.detach(src, user)
+	if(attached_accessory_a)
+		var/obj/item/clothing/armoraccessory/A = attached_accessory_a
+		attached_accessory_a.detach(src, user)
 		if(user.put_in_hands(A))
 			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
@@ -169,12 +169,12 @@
 
 /obj/item/clothing/head/examine(mob/user)
 	. = ..()
-	if(attached_accessory)
-		. += "\A [attached_accessory] is attached to it."
+	if(attached_accessory_a)
+		. += "\A [attached_accessory_a] is attached to it."
 
 
 /obj/item/clothing/head/AltClick(mob/user)
 	. = ..()
-	if(attached_accessory)
+	if(attached_accessory_a)
 		remove_accessory(user)
 */

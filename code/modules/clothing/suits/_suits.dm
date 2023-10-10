@@ -13,8 +13,8 @@
 	limb_integrity = 0 // disabled for most exo-suits
 	mutantrace_variation = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
-	var/obj/item/clothing/armoraccessory/attached_accessory
-	var/mutable_appearance/accessory_overlay
+	var/obj/item/clothing/armoraccessory/attached_accessory_a
+	var/mutable_appearance/accessory_overlay_a
 	var/dummy_thick = FALSE // is able to hold accessories on its item
 
 /obj/item/clothing/suit/Initialize()
@@ -32,10 +32,10 @@
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform
-			if(istype(U) && U.attached_accessory)
-				var/obj/item/clothing/accessory/A = U.attached_accessory
+			if(istype(U) && U.attached_accessory_a)
+				var/obj/item/clothing/accessory/A = U.attached_accessory_a
 				if(A.above_suit)
-					. += U.accessory_overlay
+					. += U.accessory_overlay_a
 
 /obj/item/clothing/suit/update_clothes_damaged_state()
 	..()
@@ -52,18 +52,18 @@
 /obj/item/clothing/suit/equipped(mob/user, slot)
 	..()
 
-	if(attached_accessory && slot != SLOT_HANDS && ishuman(user))
+	if(attached_accessory_a && slot != SLOT_HANDS && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		attached_accessory.on_suit_equip(src, user)
-		if(attached_accessory.above_suit)
+		attached_accessory_a.on_suit_equip(src, user)
+		if(attached_accessory_a.above_suit)
 			H.update_inv_wear_suit()
 
 /obj/item/clothing/suit/dropped(mob/user)
-	if(attached_accessory)
-		attached_accessory.on_suit_dropped(src, user)
+	if(attached_accessory_a)
+		attached_accessory_a.on_suit_dropped(src, user)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
-			if(attached_accessory.above_suit)
+			if(attached_accessory_a.above_suit)
 				H.update_inv_wear_suit()
 
 	..()
@@ -72,7 +72,7 @@
 	. = FALSE
 	if(istype(I, /obj/item/clothing/armoraccessory))
 		var/obj/item/clothing/armoraccessory/A = I
-		if(attached_accessory)
+		if(attached_accessory_a)
 			if(user)
 				to_chat(user, span_warning("[src] already has an accessory."))
 			return
@@ -93,9 +93,9 @@
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
 
-			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
-			accessory_overlay.alpha = attached_accessory.alpha
-			accessory_overlay.color = attached_accessory.color
+			accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_a.icon_state)
+			accessory_overlay_a.alpha = attached_accessory_a.alpha
+			accessory_overlay_a.color = attached_accessory_a.color
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc
@@ -110,9 +110,9 @@
 	if(!can_use(user))
 		return
 
-	if(attached_accessory)
-		var/obj/item/clothing/armoraccessory/A = attached_accessory
-		attached_accessory.detach(src, user)
+	if(attached_accessory_a)
+		var/obj/item/clothing/armoraccessory/A = attached_accessory_a
+		attached_accessory_a.detach(src, user)
 		if(user.put_in_hands(A))
 			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
@@ -125,11 +125,11 @@
 
 /obj/item/clothing/suit/examine(mob/user)
 	. = ..()
-	if(attached_accessory)
-		. += "\A [attached_accessory] is attached to it."
+	if(attached_accessory_a)
+		. += "\A [attached_accessory_a] is attached to it."
 
 
 /obj/item/clothing/suit/AltClick(mob/user)
 	. = ..()
-	if(attached_accessory)
+	if(attached_accessory_a)
 		remove_accessory(user)

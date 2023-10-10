@@ -820,16 +820,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/layernum = text2num(layer)
 		for(var/bodypart in relevant_layers[layer])
 			var/datum/sprite_accessory/S = bodypart
-			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
+			var/mutable_appearance/accessory_overlay_a = mutable_appearance(S.icon, layer = -layernum)
 			bodypart = S.mutant_part_string || dna_feature_as_text_string[S]
 
 			if(S.gender_specific)
-				accessory_overlay.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
+				accessory_overlay_a.icon_state = "[g]_[bodypart]_[S.icon_state]_[layertext]"
 			else
-				accessory_overlay.icon_state = "m_[bodypart]_[S.icon_state]_[layertext]"
+				accessory_overlay_a.icon_state = "m_[bodypart]_[S.icon_state]_[layertext]"
 
 			if(S.center)
-				accessory_overlay = center_image(accessory_overlay, S.dimension_x, S.dimension_y)
+				accessory_overlay_a = center_image(accessory_overlay_a, S.dimension_x, S.dimension_y)
 
 			var/advanced_color_system = (H.dna.features["color_scheme"] == ADVANCED_CHARACTER_COLORING)
 
@@ -851,22 +851,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(!forced_colour)
 					switch(S.color_src)
 						if(SKINTONE)
-							accessory_overlay.color = SKINTONE2HEX(H.skin_tone)
+							accessory_overlay_a.color = SKINTONE2HEX(H.skin_tone)
 						if(MUTCOLORS)
 							if(fixed_mut_color)
-								accessory_overlay.color = "#[fixed_mut_color]"
+								accessory_overlay_a.color = "#[fixed_mut_color]"
 							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
+								accessory_overlay_a.color = "#[H.dna.features[primary_string]]"
 						if(MUTCOLORS2)
 							if(fixed_mut_color2)
-								accessory_overlay.color = "#[fixed_mut_color2]"
+								accessory_overlay_a.color = "#[fixed_mut_color2]"
 							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
+								accessory_overlay_a.color = "#[H.dna.features[primary_string]]"
 						if(MUTCOLORS3)
 							if(fixed_mut_color3)
-								accessory_overlay.color = "#[fixed_mut_color3]"
+								accessory_overlay_a.color = "#[fixed_mut_color3]"
 							else
-								accessory_overlay.color = "#[H.dna.features[primary_string]]"
+								accessory_overlay_a.color = "#[H.dna.features[primary_string]]"
 
 						if(MATRIXED)
 							var/list/accessory_colorlist = list()
@@ -885,28 +885,28 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 							accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
 							for(var/index in 1 to accessory_colorlist.len)
 								accessory_colorlist[index] /= 255
-							accessory_overlay.color = list(accessory_colorlist)
+							accessory_overlay_a.color = list(accessory_colorlist)
 
 						if(HAIR)
 							if(hair_color == "mutcolor")
-								accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+								accessory_overlay_a.color = "#[H.dna.features["mcolor"]]"
 							else
-								accessory_overlay.color = "#[H.hair_color]"
+								accessory_overlay_a.color = "#[H.hair_color]"
 						if(FACEHAIR)
-							accessory_overlay.color = "#[H.facial_hair_color]"
+							accessory_overlay_a.color = "#[H.facial_hair_color]"
 						if(EYECOLOR)
-							accessory_overlay.color = "#[H.left_eye_color]"
+							accessory_overlay_a.color = "#[H.left_eye_color]"
 						if(HORNCOLOR)
-							accessory_overlay.color = "#[H.dna.features["horns_color"]]"
+							accessory_overlay_a.color = "#[H.dna.features["horns_color"]]"
 						if(WINGCOLOR)
-							accessory_overlay.color = "#[H.dna.features["wings_color"]]"
+							accessory_overlay_a.color = "#[H.dna.features["wings_color"]]"
 				else
-					accessory_overlay.color = forced_colour
+					accessory_overlay_a.color = forced_colour
 			else
 				if(bodypart == "ears")
-					accessory_overlay.icon_state = "m_ears_none_[layertext]"
+					accessory_overlay_a.icon_state = "m_ears_none_[layertext]"
 				if(bodypart == "tail")
-					accessory_overlay.icon_state = "m_tail_husk_[layertext]"
+					accessory_overlay_a.icon_state = "m_tail_husk_[layertext]"
 				if(S.color_src == MATRIXED)
 					var/list/accessory_colorlist = list()
 					accessory_colorlist += husk ? ReadRGB("#a3a3a3") : ReadRGB("[H.dna.features[primary_string]]00")
@@ -915,16 +915,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					accessory_colorlist += husk ? list(0, 0, 0) : list(0, 0, 0, hair_alpha)
 					for(var/index in 1 to accessory_colorlist.len)
 						accessory_colorlist[index] /= 255
-					accessory_overlay.color = list(accessory_colorlist)
+					accessory_overlay_a.color = list(accessory_colorlist)
 
 			if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
-				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+				accessory_overlay_a.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1]
+				accessory_overlay_a.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
 				tailhacked = TRUE
-				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay) // oh baby gimme that tail~
-			standing += accessory_overlay
+				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay_a) // oh baby gimme that tail~
+			standing += accessory_overlay_a
 
 			if(S.extra) //apply the extra overlay, if there is one
 				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layernum)
