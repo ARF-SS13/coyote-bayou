@@ -15,8 +15,8 @@
 	response_harm_continuous = "bats"
 	response_harm_simple = "bat"
 	speak_emote = list("chrips")
-	maxHealth = 20
-	health = 20
+	maxHealth = 5
+	health = 5
 	harm_intent_damage = 5
 	friendly_verb_continuous = "nudges"
 	friendly_verb_simple = "nudge"
@@ -25,7 +25,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
-//	gold_core_spawnable = FRIENDLY_SPAWN
+	gold_core_spawnable = FRIENDLY_SPAWN
 	verb_say = "chirps"
 	verb_ask = "chirps inquisitively"
 	verb_exclaim = "chirps intensely"
