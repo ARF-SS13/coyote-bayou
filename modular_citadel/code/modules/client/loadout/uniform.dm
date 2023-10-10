@@ -263,7 +263,7 @@
 	name = "Flektarn camo uniform"
 	path = /obj/item/clothing/under/f13/modernbdu/flektarn
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-	
+
 /datum/gear/uniform/medievalgarnment
 	name = "Medieval German mercenary gear"
 	path = /obj/item/clothing/under/f13/medievalgerman
@@ -719,11 +719,11 @@
 
 /datum/gear/uniform/sweater
 	name = "cream sweater"
-	path = /obj/item/clothing/under/sweater 
+	path = /obj/item/clothing/under/sweater
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
 /datum/gear/uniform/sweater/black
 	name = "black sweater"
-	path = /obj/item/clothing/under/sweater/black 
+	path = /obj/item/clothing/under/sweater/black
 /datum/gear/uniform/sweater/blue
 	name = "blue sweater"
 	path = /obj/item/clothing/under/sweater/blue
@@ -3147,6 +3147,10 @@
 	path = /obj/item/clothing/under/dress/coyote/grassskirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+/datum/gear/uniform/loincloth
+	name = "Grassy loincloth"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
 /datum/gear/uniform/purplegown
 	name = "Purple Gown"
 	cost = 0
@@ -3215,10 +3219,34 @@
 	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-// Coyote Bayou Customs 
+// Coyote Bayou Customs
 
 /datum/gear/uniform/frogsuit
 	name = "Frogsuit"
 	cost = 0
 	path = /obj/item/clothing/under/frogsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/qipaonosleeve
+	name = "black qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevewhite
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevered
+	name = "red qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevered
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeveteal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL

@@ -220,7 +220,7 @@ Avoid decimals when possible when it comes to e_cost!
 
 /obj/item/ammo_casing/energy/laser/pistol/wattzs
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattzs
-	e_cost = 250 // 40 shots
+	e_cost = 333 // 30 shots
 	fire_sound = 'sound/f13weapons/WattzPistolFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/wattzs/hitscan

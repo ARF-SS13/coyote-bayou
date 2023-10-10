@@ -278,6 +278,6 @@
 	name = "Synth Repair Gel"
 	id = "synthetic_repair_paste"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/gold = 500, /datum/material/silver = 500, /datum/material/glass = 500)
+	materials = list(/datum/material/gold = 2000, /datum/material/silver = 1000, /datum/material/glass = 1000)
 	build_path = /obj/item/reagent_containers/glass/bottle/synthjuice
 	category = list("initial", "Medical")

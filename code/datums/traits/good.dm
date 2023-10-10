@@ -299,10 +299,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/tackler/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.AddComponent(/datum/component/tackler, \
+	H.AddComponent(/datum/component/tackler/simple, \
 		stamina_cost = 30, \
-		base_knockdown = 1.75 SECONDS, \
-		range = 5, \
+		base_knockdown = 0 SECONDS, \
+		range = 4, \
 		speed = 1, \
 		skill_mod = -1, \
 		min_distance = 0 \
@@ -329,8 +329,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/tackleradv/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.AddComponent(/datum/component/tackler, \
-		stamina_cost = 25, \
+	H.AddComponent(/datum/component/tackler/simple, \
+		stamina_cost = 20, \
 		base_knockdown = 0 SECONDS, \
 		range = 7, \
 		speed = 2, \
@@ -358,9 +358,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/tacklerapex/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.AddComponent(/datum/component/tackler, \
-		stamina_cost = 35, \
-		base_knockdown = 1 SECONDS, \
+	H.AddComponent(/datum/component/tackler/simple_dunkstrong, \
+		stamina_cost = 20, \
+		base_knockdown = 0 SECONDS, \
 		range = 5, \
 		speed = 1, \
 		skill_mod = 3, \

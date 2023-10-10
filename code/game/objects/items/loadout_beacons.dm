@@ -746,6 +746,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m556/rifle/small(src) //no extendeds for you till you find em
 	new /obj/item/ammo_box/a556(src)
 
+/obj/item/storage/box/gun/rifle/trainer
+	name = "training repeater case"
+
+/obj/item/storage/box/gun/rifle/trainer/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/trainer(src)
+	new /obj/item/ammo_box/m22(src)
+
 /// MELEE
 //gunmelee
 /obj/item/storage/box/gun/melee //hopefully a decent variety. someone with more expertise expand on this. maybe split between one and two handed
@@ -1702,6 +1709,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
+
+/datum/loadout_box/trainer
+	entry_tag = "Training Repeater"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/trainer
 
 /datum/loadout_box/trail
 	entry_tag = "Trail Carbine"

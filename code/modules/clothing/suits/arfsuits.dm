@@ -654,6 +654,144 @@
 	icon_state = "sovjacket"
 	item_state = "sovjacket"
 
+/obj/item/clothing/suit/armor/outfit/flagcapes
+	name = "base for the flag capes"
+	desc = "Base stuff for the flag capes, no peekie ;3"
+	icon_state = "poland"
+	item_state = "poland"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	body_parts_hidden = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/poland
+	name = "Armored Polish flag cape"
+	desc = "A cape made to resemble the flag of Poland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "poland"
+	item_state = "poland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/iceland
+	name = "Armored Icelandic flag cape"
+	desc = "A cape made to resemble the flag of Iceland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "iceland"
+	item_state = "iceland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/norway
+	name = "Armored Norwegian flag cape"
+	desc = "A cape made to resemble the flag of Norway"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "norway"
+	item_state = "norway"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/finland
+	name = "Armored Finnish flag cape"
+	desc = "A cape made to resemble the flag of Finland"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "finland"
+	item_state = "finland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/germanynato
+	name = "Armored West German flag cape"
+	desc = "A cape made to resemble the flag of NATO West Germany"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "germany"
+	item_state = "germany"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/sweden
+	name = "Armored Swedish flag cape"
+	desc = "A cape made to resemble the flag of Sweden"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "sweden"
+	item_state = "sweden"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/denmark
+	name = "Armored Danish flag cape"
+	desc = "A cape made to resemble the flag of Denmark"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "denmark"
+	item_state = "denmark"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/france
+	name = "Armored French flag cape"
+	desc = "A cape made to resemble the flag of France."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "france"
+	item_state = "france"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
+	name = "Armored Tsarist flag cape"
+	desc = "A cape made to resemble the flag of the Tsar."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "imperialrus"
+	item_state = "imperialrus"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/ireland
+	name = "Armored Irish flag cape"
+	desc = "A cape made to resemble the flag of Ireland."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ireland"
+	item_state = "ireland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/brazil
+	name = "Armored Brazilian flag cape"
+	desc = "A cape made to resemble the flag of Brazil"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "brazil"
+	item_state = "brazil"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/italy
+	name = "Armored Italian flag cape"
+	desc = "A cape made to resemble the flag of Italy"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "italy"
+	item_state = "italy"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/canada
+	name = "Armored Canadian flag cape"
+	desc = "A cape made to resemble the flag of Canada."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "canada"
+	item_state = "canada"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/unitedkingdom
+	name = "Armored british flag cape"
+	desc = "A cape made to resemble the flag of the United Kingdom"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "uk"
+	item_state = "uk"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/australia
+	name = "Armored Australian flag cape"
+	desc = "A cape made to resemble the flag of Australia"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "australia"
+	item_state = "australia"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/newzealand
+	name = "Armored New Zealander flag cape"
+	desc = "A cape made to resemble the flag of New Zealand"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "newzealand"
+	item_state = "newzealand"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -4461,6 +4599,7 @@
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/texasmed/mantle
@@ -4609,3 +4748,23 @@
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat_helmet"
+
+// Magic armors - bizarre stats, don't fit into normal categories? Probably will need tweaking down the line.
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+	name = "talisman of protection"
+	desc = "A talisman made of magically charged titanium and set with a gleaming fragment of gold. This will protect the wearer from all attacks equally, but the enchantment prevents the wearing of proper armor."
+	w_class = WEIGHT_CLASS_TINY
+	max_integrity = 500
+	icon_state = "protamulet"
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10, "damage_threshold" = 10)
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+	name = "talisman of cleansing"
+	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
+	icon_state = "hazardamulet"
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 75, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
+	armor_tier_desc = ARMOR_CLOTHING_DESC
