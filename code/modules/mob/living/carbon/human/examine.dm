@@ -42,6 +42,10 @@
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory && !(U.attached_accessory.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
 				accessory_msg += " with [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
+			if(U.attached_accessory_b && !(U.attached_accessory_b.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_b, user)] \a [U.attached_accessory_b]"
+			if(U.attached_accessory_c && !(U.attached_accessory_c.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_c, user)] \a [U.attached_accessory_c]"
 
 		. += "[t_He] [t_is] wearing [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head

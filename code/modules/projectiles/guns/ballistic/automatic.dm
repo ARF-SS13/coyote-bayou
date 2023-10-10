@@ -2388,7 +2388,6 @@
 /* * * * * * * * * * *
 * AK74
 * + fast firerate
-* - HEAVY damage nerf 556 damage than baseline 556 assault rifles, at 27 and could be lower
 * - 20 and 30 magazines only. No drums nor 10 mags
 * + Uncommon
 * * * * * * * * * * * */
@@ -2406,7 +2405,7 @@
 	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = AUTORIFLE_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -2421,7 +2420,7 @@
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "Ak74u"
-	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
+	desc = "A AK74u assault rifle. Rechambered in 5.45x39 NATO , this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, hits a shy bit harder, slower firerate, and allows much easier carry at the cost of higher recoil."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2431,10 +2430,10 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
 	)
 	can_flashlight = FALSE
@@ -2455,10 +2454,10 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTORIFLE_RECOIL(1.3, 1.3)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
+		/datum/firemode/automatic/rpm100,
 		/datum/firemode/semi_auto
 	)
 	can_flashlight = FALSE
@@ -2466,7 +2465,6 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	autofire_shot_delay = 3
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -2545,7 +2543,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list (
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/slow
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
@@ -2565,7 +2563,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(3, 3)
 	init_firemodes = list (
@@ -2591,7 +2589,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
+	init_recoil = AUTORIFLE_RECOIL(2.0, 2.0)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto/slow
@@ -2619,14 +2617,14 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.5, 2.5)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm40,
+		/datum/firemode/automatic/rpm75,
 		/datum/firemode/semi_auto/slow
 	)
 	can_scope = FALSE
 	can_suppress = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	autofire_shot_delay = 4
+
 
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
@@ -2644,7 +2642,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
+	init_recoil = AUTORIFLE_RECOIL(1.4, 1.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 		/datum/firemode/automatic/rpm200
@@ -2672,13 +2670,13 @@
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower,
-		/datum/firemode/automatic/rpm150
+		/datum/firemode/automatic/rpm100
 	)
 	can_scope = TRUE
 	can_suppress = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	autofire_shot_delay = 3.8
+
 
 
 
