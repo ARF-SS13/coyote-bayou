@@ -724,6 +724,54 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/flagcapesclothing/tsar
+	name = "Armored Tsaraist flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/irla
+	name = "Armored Irish flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/ireland
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/braz
+	name = "Armored Brazilian flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/brazil
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/ily
+	name = "Armored Italian flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/italy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/cn
+	name = "Armored Canadian flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/canada
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/uk
+	name = "Armored British flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/unitedkingdom
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/aus
+	name = "Armored Australian flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/australia
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/nz
+	name = "Armored New Zealander flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/flagcapes/newzealand
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed

@@ -496,6 +496,26 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/bone = 1)
 	tools = list(TOOL_WORKBENCH)
 
+// Amulet of Protection (Tier 1.5 armor, 10 DT/Wound prot)
+/datum/crafting_recipe/magic/armoramulet
+	name = "Amulet of Protection"
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+	time = 10
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/mineral/titanium = 1,
+				/obj/item/stack/sheet/mineral/gold = 1)
+	tools = list(TOOL_RITUAL)
+
+// Amulet of Hazard Protection (Tier 1? armor, 75 enviro prot + 50 plasma prot)
+/datum/crafting_recipe/magic/radamulet
+	name = "Amulet of Cleansing"
+	result = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+	time = 10
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/mineral/titanium = 1,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_RITUAL)
+
 // T0 Magic Missile Wand (spawn item)
 /datum/crafting_recipe/magic/bonewand
 	name = "Improvised Wand of Magic Missile"

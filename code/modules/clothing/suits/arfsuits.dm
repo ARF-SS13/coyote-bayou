@@ -728,6 +728,70 @@
 	icon_state = "france"
 	item_state = "france"
 
+/obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
+	name = "Armored Tsarist flag cape"
+	desc = "A cape made to resemble the flag of the Tsar."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "imperialrus"
+	item_state = "imperialrus"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/ireland
+	name = "Armored Irish flag cape"
+	desc = "A cape made to resemble the flag of Ireland."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ireland"
+	item_state = "ireland"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/brazil
+	name = "Armored Brazilian flag cape"
+	desc = "A cape made to resemble the flag of Brazil"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "brazil"
+	item_state = "brazil"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/italy
+	name = "Armored Italian flag cape"
+	desc = "A cape made to resemble the flag of Italy"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "italy"
+	item_state = "italy"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/canada
+	name = "Armored Canadian flag cape"
+	desc = "A cape made to resemble the flag of Canada."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "canada"
+	item_state = "canada"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/unitedkingdom
+	name = "Armored british flag cape"
+	desc = "A cape made to resemble the flag of the United Kingdom"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "uk"
+	item_state = "uk"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/australia
+	name = "Armored Australian flag cape"
+	desc = "A cape made to resemble the flag of Australia"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "australia"
+	item_state = "australia"
+
+/obj/item/clothing/suit/armor/outfit/flagcapes/newzealand
+	name = "Armored New Zealander flag cape"
+	desc = "A cape made to resemble the flag of New Zealand"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "newzealand"
+	item_state = "newzealand"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -4674,3 +4738,23 @@
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat_helmet"
+
+// Magic armors - bizarre stats, don't fit into normal categories? Probably will need tweaking down the line.
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor
+	name = "talisman of protection"
+	desc = "A talisman made of magically charged titanium and set with a gleaming fragment of gold. This will protect the wearer from all attacks equally, but the enchantment prevents the wearing of proper armor."
+	w_class = WEIGHT_CLASS_TINY
+	max_integrity = 500
+	icon_state = "protamulet"
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 10, "damage_threshold" = 10)
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/magicarmor/hazard
+	name = "talisman of cleansing"
+	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
+	icon_state = "hazardamulet"
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 75, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
+	armor_tier_desc = ARMOR_CLOTHING_DESC
