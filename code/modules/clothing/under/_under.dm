@@ -19,7 +19,7 @@
 	var/obj/item/clothing/accessory/attached_accessory
 	var/obj/item/clothing/accessory/attached_accessory_b
 	var/obj/item/clothing/accessory/attached_accessory_c
-	var/mutable_appearance/accessory_overlay_a
+	var/mutable_appearance/accessory_overlay
 	var/mutable_appearance/accessory_overlay_b
 	var/mutable_appearance/accessory_overlay_c
 
@@ -31,8 +31,8 @@
 		. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 	if(blood_DNA)
 		. += mutable_appearance('icons/effects/blood.dmi', "uniformblood", color = blood_DNA_to_color())
-	if(accessory_overlay_a)
-		. += accessory_overlay_a
+	if(accessory_overlay)
+		. += accessory_overlay
 	if(accessory_overlay_b)
 		. += accessory_overlay_b
 	if(accessory_overlay_c)
@@ -149,11 +149,11 @@
 				return TRUE
 
 			if(attached_accessory && !attached_accessory_b && !attached_accessory_c)
-				accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
+				accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
 				if(A.mob_overlay_icon) // Sunset Wasteland changes: should make modularized accessories work on-mob.
-					accessory_overlay_a = mutable_appearance(A.mob_overlay_icon, attached_accessory.icon_state) // Ditto
-				accessory_overlay_a.alpha = attached_accessory.alpha
-				accessory_overlay_a.color = attached_accessory.color
+					accessory_overlay = mutable_appearance(A.mob_overlay_icon, attached_accessory.icon_state) // Ditto
+				accessory_overlay.alpha = attached_accessory.alpha
+				accessory_overlay.color = attached_accessory.color
 			
 			if(attached_accessory && attached_accessory_b && !attached_accessory_c)
 				accessory_overlay_b = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory_b.icon_state)

@@ -14,7 +14,7 @@
 	mutantrace_variation = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	var/obj/item/clothing/armoraccessory/attached_accessory
-	var/mutable_appearance/accessory_overlay_a
+	var/mutable_appearance/accessory_overlay
 	var/dummy_thick = FALSE // is able to hold accessories on its item
 
 /obj/item/clothing/suit/Initialize()
@@ -35,7 +35,7 @@
 			if(istype(U) && U.attached_accessory)
 				var/obj/item/clothing/accessory/A = U.attached_accessory
 				if(A.above_suit)
-					. += U.accessory_overlay_a
+					. += U.accessory_overlay
 
 /obj/item/clothing/suit/update_clothes_damaged_state()
 	..()
@@ -93,9 +93,9 @@
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
 
-			accessory_overlay_a = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
-			accessory_overlay_a.alpha = attached_accessory.alpha
-			accessory_overlay_a.color = attached_accessory.color
+			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
+			accessory_overlay.alpha = attached_accessory.alpha
+			accessory_overlay.color = attached_accessory.color
 
 			if(ishuman(loc))
 				var/mob/living/carbon/human/H = loc

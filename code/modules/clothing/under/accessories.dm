@@ -69,7 +69,7 @@
 		U.accessory_overlay_b = null
 	else if(U.attached_accessory)
 		U.attached_accessory = null
-		U.accessory_overlay_a = null
+		U.accessory_overlay = null
 
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)
 	return
