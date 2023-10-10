@@ -1,7 +1,3 @@
-//This variable is needed in order to remember the origin of the storage of an item.
-// GLOBAL_VAR_INIT(quick_equip_memory_item, 0)
-// GLOBAL_VAR_INIT(quick_equip_memory_origin, 0)
-GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 //These procs handle putting s tuff in your hands
 //as they handle all relevant stuff like adding it to the player's screen and updating their overlays.
 
@@ -518,10 +514,8 @@ GLOBAL_VAR_INIT(quick_equip_cowboy_delay_negation, 0)
 						firearm = F
 						break
 					if(firearm && !firearm.on_found(src))
-						GLOB.quick_equip_cowboy_delay_negation = 1
+						firearm.allow_quickdraw = TRUE
 						firearm.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
-						spawn(1)  //it's not needed, but let's wait for the system to actually process the firedelay.
-							GLOB.quick_equip_cowboy_delay_negation = 0
 						return
 		storage = get_item_by_slot(SLOT_SHOES)  //Shoes are a little different, we don't want to return the item itself, but rather its contents.
 		if(storage)  //Are we carrying something in this storage slot?

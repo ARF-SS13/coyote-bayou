@@ -177,6 +177,8 @@ ATTACHMENTS
 	var/use_casing_sounds
 	/// Is one of Kelp's wands?
 	var/is_kelpwand = FALSE
+	/// Allow quickdraw (delay to draw the gun is 0s)
+	var/allow_quickdraw = FALSE
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -876,7 +878,8 @@ ATTACHMENTS
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
-	if(GLOB.quick_equip_cowboy_delay_negation)
+	if(allow_quickdraw)
+		allow_quickdraw = FALSE
 		time_till_gun_is_ready = 0
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
