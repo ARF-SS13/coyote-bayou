@@ -826,6 +826,12 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ninja
+	name = "Ninja Hood "
+	path = /obj/item/clothing/head/helmet/f13/ninja
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
 /datum/gear/head/armoredimperialrussia
 	name = "Armored Imperial Russian cap "
 	path = /obj/item/clothing/head/kevlarhelmet/ww1russiancap

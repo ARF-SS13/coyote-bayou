@@ -769,6 +769,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/celestia/PopulateContents()
 	new /obj/item/melee/transforming/plasmacutter/regular/celestia(src)
 
+/obj/item/storage/box/gun/melee/energykatana
+	name = "Energy Katana"
+	w_class = WEIGHT_CLASS_NORMAL
+	
+/obj/item/storage/box/gun/melee/energykatana/PopulateContents()
+	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
+
 /obj/item/storage/box/gun/melee/eve
 	name = "Plasma Cutter Eve"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -1336,6 +1343,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
+
+/obj/item/storage/box/gun/bow/handxbow
+	name = "hand crossbow case"
+
+/obj/item/storage/box/gun/bow/handxbow/PopulateContents()
+	new /obj/item/gun/ballistic/bow/handxbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
 /obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
@@ -1964,6 +1978,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/eve
 
+/datum/loadout_box/melee/energykatana
+	entry_tag = "Energy Katana"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/storage/box/gun/melee/energykatana
+
 /datum/loadout_box/melee/plasma
 	entry_tag = "Plasma Cutter"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2253,7 +2273,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
 
-
+/datum/loadout_box/handxbow
+	entry_tag = "Hand crossbow"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/handxbow
 
 /*
 /datum/loadout_box/crossbow

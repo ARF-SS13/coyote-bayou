@@ -205,6 +205,19 @@
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
 	)	
+
+	//weak pocket xbow meant to shoot special arrows rather than pure damage//
+/obj/item/gun/ballistic/bow/handxbow
+	name = "hand crossbow"
+	desc = "A compact, pocket sized crossbow, what it lacks in power makes up in concealment."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
+	weapon_class = WEAPON_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
 //dunno if you want to include more information for each bow, but this is the basics
 
 //tier 2 bows. craftable bows
