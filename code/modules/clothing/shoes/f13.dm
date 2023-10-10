@@ -33,6 +33,12 @@
 	item_state = "tan"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
+/obj/item/clothing/shoes/f13/ninja
+	name = "ninja shoes"
+	desc = "A pair of running shoes. Excellent for running and even better for smashing skulls."
+	icon_state = "s-ninja"
+	icon_state = "s-ninja"
+
 /obj/item/clothing/shoes/f13/brownie //Make a craft recipe, and delete this comment.
 	name = "brown shoes"
 	desc = "A pair of brown leather shoes made of wasteland animals hides."

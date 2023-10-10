@@ -140,16 +140,16 @@
 	break_chance = 100 //high power, costly
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/jagged
 	embedding = list(
-		embed_chance=50, 
-		fall_chance=60, 
-		jostle_chance=15, 
+		embed_chance= 60, 
+		fall_chance= 5, 
+		jostle_chance= 40, 
 		ignore_throwspeed_threshold=FALSE, 
-		pain_stam_pct=0.2, 
-		pain_mult=2, 
-		jostle_pain_mult=1, 
+		pain_stam_pct= 0.2, 
+		pain_mult= 2, 
+		jostle_pain_mult= 1, 
 		rip_time= 3 SECONDS, 
-		projectile_payload = /obj/item/shrapnel
-		) //iunno how, but this needs to not drop the arrow when removed. needs to disappear just like if it breaks. is copypasted from serrated arrow for now...
+		projectile_payload = /obj/item/projectile/bullet/reusable/arrow/jagged
+		) 
 
 /obj/item/projectile/bullet/reusable/arrow/field
 	name = "field arrow"
@@ -238,7 +238,6 @@
 		pain_mult = 0, 
 		jostle_pain_mult = 0, 
 		ignore_throwspeed_threshold = TRUE,
-		projectile_payload = /obj/item/shrapnel
 		)
 
 

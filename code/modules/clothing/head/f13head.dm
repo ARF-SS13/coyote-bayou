@@ -923,6 +923,15 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/head/helmet/f13/ninja
+	name = "ninja hood"
+	desc = "What may appear to be a simple black garment is in fact a lightly padded helmet. Standard issue ninja gear."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "s-ninja"
+	item_state = "s-ninja_mask"
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	armor = ARMOR_VALUE_LIGHT
+
 /obj/item/clothing/head/hat/polis
 	name = "police officer's hat"
 	desc = "A decent durathread police hat, it's sturdy but won't stop anything too strong."
