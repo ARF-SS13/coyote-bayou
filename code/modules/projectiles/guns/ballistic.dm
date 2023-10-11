@@ -54,18 +54,9 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	return SEND_SIGNAL(magazine, COMSIG_GUN_MAG_ADMIN_RELOAD) // get relayed, noob
 
 /obj/item/gun/ballistic/update_icon_state()
-	var/datum/reskin/gun/myskin = get_current_skin()
-	if(myskin)
-		if(sawn_off)
-			desc = myskin.sawn_desc
-			icon = myskin.sawn_icon
-			icon_state = myskin.sawn_icon_state
-		else
-			desc = myskin.desc
-			icon = myskin.icon
-			icon_state = myskin.icon_state
-	else
-		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
+	if(SEND_SIGNAL(src, COMSIG_ITEM_UPDATE_RESKIN))
+		return // all done!
+	icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
 /obj/item/gun/ballistic/proc/register_magazines()
 	if(LAZYACCESS(GLOB.gun_accepted_magazines, "[type]"))
@@ -319,37 +310,6 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		boolets += magazine.max_ammo
 	return boolets
 
-#define BRAINS_BLOWN_THROW_RANGE 3
-#define BRAINS_BLOWN_THROW_SPEED 1
-/obj/item/gun/ballistic/suicide_act(mob/living/user)
-	var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
-	if (B && chambered && chambered.BB && can_trigger_gun(user) && !chambered.BB.nodamage)
-		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
-		sleep(25)
-		if(user.is_holding(src))
-			var/turf/T = get_turf(user)
-			process_fire(user, user, FALSE, null, BODY_ZONE_HEAD)
-			user.visible_message(span_suicide("[user] blows [user.p_their()] brain[user.p_s()] out with [src]!"))
-			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
-			var/turf/target = get_ranged_target_turf(user, turn(user.dir, 180), BRAINS_BLOWN_THROW_RANGE)
-			B.Remove()
-			B.forceMove(T)
-			if(iscarbon(user))
-				var/mob/living/carbon/C = user
-				B.add_blood_DNA(C.dna, C.diseases)
-			var/datum/callback/gibspawner = CALLBACK(user, /mob/living/proc/spawn_gibs, FALSE, B)
-			B.throw_at(target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback=gibspawner)
-			return(BRUTELOSS)
-		else
-			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
-			return(OXYLOSS)
-	else
-		user.visible_message("<span class='suicide'>[user] is pretending to blow [user.p_their()] brain[user.p_s()] out with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
-		playsound(src, "gun_dry_fire", 30, 1)
-		return (OXYLOSS)
-#undef BRAINS_BLOWN_THROW_SPEED
-#undef BRAINS_BLOWN_THROW_RANGE
-
 /obj/item/gun/ballistic/proc/sawoff(mob/user)
 	if(sawn_off)
 		to_chat(user, span_warning("\The [src] is already shortened!"))
@@ -371,7 +331,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		w_class = WEIGHT_CLASS_NORMAL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
-		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
 		recoil_tag = SSrecoil.modify_gun_recoil(recoil_tag, list(2, 2))
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage

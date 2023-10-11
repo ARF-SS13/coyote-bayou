@@ -14,6 +14,7 @@
 #define TOOL_DRILL			"drill"
 #define TOOL_SCALPEL		"scalpel"
 #define TOOL_SAW			"saw"
+#define TOOL_RITUAL			"ritual dagger"
 //Glasswork Tools
 #define TOOL_BLOW			"blowing_rod"
 #define TOOL_GLASS_CUT		"glasskit"

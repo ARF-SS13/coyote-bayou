@@ -19,17 +19,6 @@
 	var/cooldown = 0
 	var/last_trigger = 0 //Last time it was successfully triggered.
 
-/obj/item/assembly/flash/suicide_act(mob/living/user)
-	if (crit_fail)
-		user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but its burnt out!"))
-		return SHAME
-	else if (user.eye_blind)
-		user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but [user.p_theyre()] blind!"))
-		return SHAME
-	user.visible_message(span_suicide("[user] raises \the [src] up to [user.p_their()] eyes and activates it! It looks like [user.p_theyre()] trying to commit suicide!"))
-	attack(user,user)
-	return FIRELOSS
-
 /obj/item/assembly/flash/update_icon(flash = FALSE)
 	cut_overlays()
 	attached_overlays = list()
@@ -267,7 +256,7 @@
 	item_state = "flashshield"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 10
 	throwforce = 5
 	throw_speed = 2

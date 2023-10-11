@@ -180,6 +180,286 @@
 	path = /obj/item/clothing/under/f13/dbdu
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/modernbdu
+	name = "Modern Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/chineseuniform
+	name = "Modern Chinese uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/chinese
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/cadpatuniform
+	name = "Modern Canadian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/cadpat
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/americanstormuniform
+	name = "American DCU uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanstorm
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/hueypilotuniform
+	name = "Pilot uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/hueyuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/multicamuniform
+	name = "Multicam uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americanmulticam
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/serbsuit
+	name = "Serbian Winter suit"
+	path = /obj/item/clothing/under/f13/modernbdu/serbwinter
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/universalnaval
+	name = "Universal Navy uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/navalcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/sovietcamo
+	name = "Soviet KLMK Suit"
+	path = /obj/item/clothing/under/f13/modernbdu/russianamoeba
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/nwucamoflauge
+	name = "NWU uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/americannwu
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/tropentarncamo
+	name = "TropenTarn uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ttcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/tropentarncamo
+	name = "TropenTarn uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ttcamo
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/ucpcamo
+	name = "UCP uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ucp
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/ocpcamo
+	name = "OCP uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/ocp
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/forestdigitalcamo
+	name = "Common Forest Digital Camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/commonforest
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/modernbdu/oldtigerstripe
+	name = "Tigerstripe camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/tigerstripe
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/modernbdu/modernflektarn
+	name = "Flektarn camo uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/flektarn
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/medievalgarnment
+	name = "Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/medievalgarnment2
+	name = "Royal Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/medievalgarnment3
+	name = "Distuinguished Medieval German mercenary gear"
+	path = /obj/item/clothing/under/f13/medievalgerman3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/mechanizeduniform
+	name = "Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/mechanizeduniform2
+	name = "Navy Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/mechanizeduniform3
+	name = "Sunburst Mech Pilot uniform"
+	path = /obj/item/clothing/under/f13/mechsuits3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/scipilot
+	name = "Bulky pilot flightsuit"
+	path = /obj/item/clothing/under/f13/scifipilot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/modernbdu/modernrussian
+	name = "EMR Russian uniform"
+	path = /obj/item/clothing/under/f13/modernbdu/russianemr
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/emergencyservices/medical/blue
+	name = "Blue medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs/blue
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/emergencyservices/medical/green
+	name = "Green medical scrubs"
+	path = /obj/item/clothing/under/f13/nursescrubs
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
+
+/datum/gear/uniform/futureeesuits
+	name = "white futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/futureeesuits/mifusuit
+	name = "Mixed futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/futureeesuits/orfusuit
+	name = "Orange futuristic suit"
+	path = /obj/item/clothing/under/f13/futuresuit/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits
+	name = "Burgundy suit"
+	path = /obj/item/clothing/under/f13/civsuits/burg
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/newblacksuit
+	name = "Black suit"
+	path = /obj/item/clothing/under/f13/civsuits/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/whimodsuit
+	name = "White suit"
+	path = /obj/item/clothing/under/f13/civsuits/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/greemodsuit
+	name = "Green suit"
+	path = /obj/item/clothing/under/f13/civsuits/four
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/remodsuit
+	name = "Red suit"
+	path = /obj/item/clothing/under/f13/civsuits/five
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliansuits/shirt
+	name = "Shirted suit"
+	path = /obj/item/clothing/under/f13/civsuits
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/civilliancasualwear
+	name = "Red business casual"
+	path = /obj/item/clothing/under/f13/civbuscasual
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagecol
+	name = "Colorful vintage casual wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagesalm
+	name = "Salmon vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintagetrop
+	name = "Tropical vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/four
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/civilliancasualwear/vintageblue
+	name = "Teal vintage wear"
+	path = /obj/item/clothing/under/f13/civbuscasual/five
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/futuristicdresses
+	name = "Blue lined futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/futuristicdresses/red
+	name = "Red lined futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/futuristicdresses/skirted
+	name = "Skirted futuristic dress"
+	path = /obj/item/clothing/under/f13/futuredresses/three
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/civilliancasualwear/gold
+	name = "Gold business casual"
+	path = /obj/item/clothing/under/f13/civbuscasual/six
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
+
+/datum/gear/uniform/futursticofficer
+	name = "Full dress uniform"
+	path = /obj/item/clothing/under/f13/scifiofficer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/galaxy
+	name = "Red galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
+/datum/gear/uniform/frenchuniform
+	name = "Outdated French uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/imperialeastuniform
+	name = "Outdated East German uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/german
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/britisholduniform
+	name = "Outdated British uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/britishww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianolduniform
+	name = "Outdated Russian uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianpaddedww2
+	name = "Padded Soviet uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/scavengerstuff
+	name = "tattered scavenger outfit"
+	path = /obj/item/clothing/under/f13/scavhunt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/scavengerstuff/two
+	name = "tattered wastelander outfit"
+	path = /obj/item/clothing/under/f13/scavhunt/metro
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
+/datum/gear/uniform/russiancossack
+	name = "Cossack uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+/datum/gear/uniform/galaxyblue
+	name = "Blue galaxy suit"
+	path = /obj/item/clothing/under/f13/animsuit/two
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
@@ -436,6 +716,26 @@
 	name = "grey turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/grey
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
+/datum/gear/uniform/sweater
+	name = "cream sweater"
+	path = /obj/item/clothing/under/sweater
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+/datum/gear/uniform/sweater/black
+	name = "black sweater"
+	path = /obj/item/clothing/under/sweater/black
+/datum/gear/uniform/sweater/blue
+	name = "blue sweater"
+	path = /obj/item/clothing/under/sweater/blue
+/datum/gear/uniform/sweater/purple
+	name = "purple sweater"
+	path = /obj/item/clothing/under/sweater/purple
+/datum/gear/uniform/sweater/green
+	name = "green sweater"
+	path = /obj/item/clothing/under/sweater/green
+/datum/gear/uniform/sweater/red
+	name = "red sweater"
+	path = /obj/item/clothing/under/sweater/red
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"
@@ -1413,25 +1713,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/dress2
-	name = "blue pheasent dress"
+	name = "blue peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress2
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dress3
-	name = "brown pheasent dress"
+	name = "brown peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dress3
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressg
-	name = "green pheasent dress"
+	name = "green peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressg
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
 /datum/gear/uniform/dressr
-	name = "red pheasent dress"
+	name = "red peasant dress"
 	cost = 0
 	path = /obj/item/clothing/under/civ/dressr
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
@@ -2656,6 +2956,41 @@
 	path = /obj/item/clothing/under/aurora/kimono
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 
+/datum/gear/uniform/civ13/haori
+	name = "Haori"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori2
+	name = "Haori - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haori3
+	name = "Haori - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haori3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai2
+	name = "Haori w/ jacket - grey"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/civ13/haorisamurai3
+	name = "Haori w/ jacket - red"
+	cost = 0
+	path = /obj/item/clothing/under/civ13/haorisamurai3
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+
+
+
+
+
 /datum/gear/uniform/aurora/konyang
 	name = "Magenta hanbok"
 	cost = 0
@@ -2812,6 +3147,10 @@
 	path = /obj/item/clothing/under/dress/coyote/grassskirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+/datum/gear/uniform/loincloth
+	name = "Grassy loincloth"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
 /datum/gear/uniform/purplegown
 	name = "Purple Gown"
 	cost = 0
@@ -2874,3 +3213,40 @@
 	path = /obj/item/clothing/under/costume/russian_officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/tealskirt
+	name = "teal suit skirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+// Coyote Bayou Customs
+
+/datum/gear/uniform/frogsuit
+	name = "Frogsuit"
+	cost = 0
+	path = /obj/item/clothing/under/frogsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/qipaonosleeve
+	name = "black qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevewhite
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevered
+	name = "red qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevered
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeveteal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL

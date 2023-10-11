@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = list(/datum/material/iron=10000, /datum/material/glass=2500)
 
@@ -15,10 +15,6 @@
 	var/frequency = FREQ_ELECTROPACK
 	var/on = TRUE
 	var/shock_cooldown = FALSE
-
-/obj/item/electropack/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
 
 /obj/item/electropack/Initialize()
 	. = ..()
@@ -142,21 +138,13 @@
 	icon_state = "slavecollar"
 	item_state = "slavecollar"
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_NECK //no more pocket shockers. Now done without lazyness
+	slot_flags = INV_SLOTBIT_NECK //no more pocket shockers. Now done without lazyness
 	w_class = WEIGHT_CLASS_SMALL
 	strip_delay = 60
 	equip_delay_other = 60
 	custom_materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
 	var/lock = FALSE
 	var/tagname = null
-
-/datum/design/electropack/shockcollar
-	name = "Slave collar"
-	id = "shockcollar"
-	build_type = AUTOLATHE
-	build_path = /obj/item/electropack/shockcollar
-	materials = list(/datum/material/iron = 5000, /datum/material/glass =2000)
-	category = list("hacked", "Misc")
 
 /obj/item/electropack/shockcollar/Initialize()
 	. = ..()
@@ -230,7 +218,7 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollarb"
 	item_state = "slavecollarb"
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
 	strip_delay = 60

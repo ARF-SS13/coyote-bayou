@@ -101,8 +101,6 @@
 	if(H)
 		H.set_cloned_appearance()
 
-		H.suiciding = FALSE
-
 	UnregisterSignal(src, COMSIG_NOTIFY_JOIN)
 	attempting = FALSE
 

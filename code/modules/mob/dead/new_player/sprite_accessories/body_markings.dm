@@ -738,3 +738,32 @@
 	name = "RaccAlt (Hyper)"
 	icon_state = "raccalt"
 	covered_limbs = list("Head" = MATRIX_ALL, "Chest" = MATRIX_RED_BLUE, "Right Arm" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_ALL, "Left Leg" = MATRIX_ALL)
+
+/datum/sprite_accessory/mam_body_markings/stegoplatechest
+	name = "Stego chestplate"
+	icon_state = "stegoplate_chest"
+	covered_limbs = list("Chest" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/backsailchest
+	name = "backsail"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "backsail_chest"
+	covered_limbs = list("Chest" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/dinohornhead
+	name = "dino head"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "dinohorn_head"
+	covered_limbs = list("Head" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/trikebeakhead
+	name = "trike beak"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "trikebeak_head"
+	covered_limbs = list("Head" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/trikehornhead
+	name = "trike horn"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "trikehorn_head"
+	covered_limbs = list("Head" = MATRIX_RED_GREEN)

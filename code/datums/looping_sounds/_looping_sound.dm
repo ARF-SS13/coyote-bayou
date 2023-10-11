@@ -51,9 +51,20 @@
 	output_atoms = null
 	return ..()
 
+/datum/looping_sound/proc/add_atom(atom/add_thing)
+	if(!istype(add_thing))
+		CRASH("looping sound [src] given [add_thing]. [add_thing] is not an atom!!!!!!!!!!!!!!!!!")
+	output_atoms |= add_thing
+	RegisterSignal(add_thing, COMSIG_PARENT_PREQDELETED, .proc/remove_atom)
+
+/datum/looping_sound/proc/remove_atom(atom/remove_thing)
+	UnregisterSignal(remove_thing, COMSIG_PARENT_PREQDELETED)
+	output_atoms -= remove_thing
+
 /datum/looping_sound/proc/start(atom/add_thing)
 	if(add_thing)
 		output_atoms |= add_thing
+		RegisterSignal(add_thing, COMSIG_PARENT_PREQDELETED, .proc/remove_atom)
 	if(timerid || init_timerid) // already running, will pick them up on the next go
 		return
 	on_start()
@@ -67,6 +78,7 @@
 	on_stop()
 	if(remove_thing)
 		output_atoms -= remove_thing
+		UnregisterSignal(remove_thing, COMSIG_PARENT_PREQDELETED)
 	if(LAZYLEN(output_atoms) && !kill)
 		return // If people're still listening, dont kill it yet
 	if(init_timerid)

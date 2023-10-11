@@ -12,7 +12,7 @@
 	icon_living = "securitron"
 	icon_dead = "securitron_dead"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
@@ -38,7 +38,7 @@
 
 	retreat_distance = 2
 	//how far they pull back
-	
+
 	minimum_distance = 5
 	// how close you can get before they try to pull back
 
@@ -128,7 +128,7 @@
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot_dead"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 150 
+	maxHealth = 150
 	health = 150
 	del_on_death = FALSE
 	melee_damage_lower = 24
@@ -167,7 +167,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/five,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/mfc/recycled
 		)
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -253,7 +253,7 @@
 	return ..()
 
 //Junkers
-/mob/living/simple_animal/hostile/securitron/sentrybot/suicide
+/mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct
 	name = "explosive sentry bot"
 	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick armor plating. Don't get too close to this one, it looks like it's rigged to blow!"
 	maxHealth = 160
@@ -262,7 +262,7 @@
 	retreat_distance = null
 	minimum_distance = 1
 
-/mob/living/simple_animal/hostile/securitron/sentrybot/suicide/AttackingTarget()
+/mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
 	if(ishuman(target))
 		addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
 		addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)

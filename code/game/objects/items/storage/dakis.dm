@@ -7,7 +7,7 @@
 	desc = "A large pillow depicting a girl in a compromising position. Featuring as many dimensions as you."
 	icon = 'icons/obj/daki.dmi'
 	icon_state = "daki_base"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	var/cooldowntime = 20
 	var/static/list/dakimakura_options = list("Callie","Casca","Chaika","Elisabeth","Foxy Grandpa","Haruko","Holo","Ian","Jolyne","Kurisu","Marie","Mugi","Nar'Sie","Patchouli","Plutia","Rei","Reisen","Naga","Squid","Squigly","Tomoko","Toriel","Umaru","Yaranaika","Yoko") //Kurisu is the ideal girl." - Me, Logos.
 
@@ -48,5 +48,7 @@
 				user.visible_message(span_danger("[user] punches the [name]!"))
 				playsound(src, 'sound/effects/shieldbash.ogg', 50, 1)
 		user.DelayNextAction(CLICK_CD_MELEE)
+
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dakimakura", /datum/mood_event/pet_pillow)
 
 ////////////////////////////

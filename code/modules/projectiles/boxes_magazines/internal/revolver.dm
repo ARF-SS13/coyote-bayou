@@ -23,6 +23,13 @@
 	caliber = list(CALIBER_357)
 	max_ammo = 6
 
+
+/obj/item/ammo_box/magazine/internal/cylinder/lemat
+	name = "Lemat cylnder"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 9
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	name = "6520 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -163,6 +170,11 @@
 	caliber = list(CALIBER_45LC)
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/judge
+	name = "Cylinder for a Judge"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 3
 /obj/item/ammo_box/magazine/internal/cylinder/rev308
 	name = ".308 Sporting Revolver Cylinder"
 	ammo_type = /obj/item/ammo_casing/a308

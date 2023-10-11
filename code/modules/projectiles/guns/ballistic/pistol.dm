@@ -148,7 +148,11 @@
 	name = "9mm Borchardt"
 	desc = "The first mass produced semiautomatic pistol, designed before doublestack magazines existed."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
-	icon_state = "borchardt"
+	icon_state = "c93"
+	item_state = "p38"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
@@ -158,7 +162,31 @@
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "9mm Luger"
 	desc = "A classy german 9mm pistol, which takes single stack magazines."
-	icon_state = "luger"
+	icon_state = "p08"
+	item_state = "p38"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
+//9mm coldwar-modern sidearms. Same as the browning hipower pistol
+/obj/item/gun/ballistic/automatic/pistol/ninemil/glock
+	name = "glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	icon_state = "glock"
+	item_state = "glock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	reskinnable_component = /datum/component/reskinnable/glock
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
+	name = "Pink glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	icon_state = "plock"
+	item_state = "plock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /* * * * * * * * * * *
  * Maria
@@ -205,6 +233,8 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+
+	reskinnable_component = /datum/component/reskinnable/beretta9
 
 //9mm carbine: pistol capacity, but two shot burst. needs suppressor set correctly
 /obj/item/gun/ballistic/automatic/pistol/beretta/carbine
@@ -268,16 +298,48 @@
 		/datum/firemode/burst/three/faster
 	)
 
+/* * * * * * * * *
+* VG77 Pistol
+* + Common burst pistol
+* - lower damage
+* + burst fire
+* - slowest burst fire rate but normal semi-automatic
+* - Unreskinnable due to lack of sprites
+* + Able to be dual wielded
+* * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/vg77
+	name = "MP77 Pistol"
+	desc = "A MP77 pistol from the H&K company. This pistol is based off the VP70, a pistol created by the same company. Made for much more cheaper markets, it's chambered in 9mm and comes with a three burst fire mode. Albeit it seems to be slow in such a ROF. Quite stylish however."
+	icon_state = "mp77"
+	item_state = "mp77"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = AUTOPISTOL_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast,
+		/datum/firemode/burst/three/slower,
+	)
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	can_scope = FALSE
+
 /* * * * * * * * * *
- * MEDIUM PISTOLS  *
- * * * * * * * * * */
+* MEDIUM PISTOLS
+* * * * * * * * * */
 
 /* * * * * * * * * * *
- * N99 Pistol Semi-Auto
- * Baseline Medium pistol
- * 10mm
- * Common
- * * * * * * * * * * */
+* N99 Pistol Semi-Auto
+* Baseline Medium pistol
+* 10mm
+* Common
+* * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
@@ -384,26 +446,18 @@
 		/datum/firemode/semi_auto/fast
 	)
 
-//automatic 9mm, compact and high performance
-/obj/item/gun/ballistic/automatic/pistol/type17/c96auto
-	name = "Mauser M712"
-	desc = "A late model of the classic Mauser C96, featuring a removable box magazine and automatic fire select. takes 20 round stick magazines."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "c96"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/fast
-	)
+
 
 // Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
-/obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox
+/obj/item/gun/ballistic/automatic/pistol/type17/tox
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
+	init_mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
+	mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Sig P220
@@ -417,7 +471,8 @@
 /obj/item/gun/ballistic/automatic/pistol/sig //wiggles
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
-	icon_state = "sig"
+	icon_state = "newsig"
+	item_state = "gun"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -432,6 +487,9 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/sig/trusty //wiggles x 2
 	name = "Trusty Sig P220"
@@ -716,11 +774,23 @@
 	item_state = "m3magnum"
 	zoom_factor = 1.1
 
-/obj/item/gun/ballistic/automatic/pistol/automag/Toxhalogun
-	name = "Custom M6G Magnum"
-	desc = "A custom gold plated M6G magnum. The magnum itself has a built in smart scope alongside black wooden furniture."
-	icon_state = "m6gold"
-	item_state = "m6gold"
+/obj/item/gun/ballistic/automatic/pistol/goldendeag
+	name = "Aureum Tactum"
+	desc = "The golden gun, er..well somewhat. Chambered in a lesser form of .44 magnum, the Aureum Tactum golden desert eagle is fully automatic. Albeit it requires a good grip for obvious reasons."
+	icon_state = "uniquedeag"
+	item_state = "uniquedeag"
+	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
+	mag_type = /obj/item/ammo_box/magazine/m44/automag
+	init_recoil = HMG_RECOIL (8, 8)
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm300
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /* * * * * * * * * * *
  * 14mm Semi-Auto
@@ -768,6 +838,38 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
+/* * * * * * * * * * * *
+* K8 Assault Pistol
+* Custom gun for Seerman
+* Based off the Hello Cutie Cyberpunk Red pistol
+* placeholder for much heavier caliber pistols
+* New sound file
+* Muh frontal mag
+* Muh 14mm
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
+	name = "Custom K8 Assault Pistol"
+	desc = "A custom K8 Assault pistol manufactured by the Sanroo Arms company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
+	icon_state = "toxcyberplaceholder"
+	item_state = "toxcybergun"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
  * Super Duper Heavy pistol

@@ -102,7 +102,7 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
@@ -116,6 +116,7 @@
 	can_ghost_into = TRUE
 	desc_short = "A flimsy creature that may or may not be a reanimated corpse."
 	pop_required_to_jump_into = SMALL_MOB_MIN_PLAYERS
+	ignore_other_mobs = TRUE // peaceful giants that HATE PEOPLE!!!!
 	
 	variation_list = list(
 		MOB_COLOR_VARIATION(150, 150, 150, 255, 255, 255),
@@ -422,7 +423,7 @@
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
-	name = "Ranged Ghoul Solder"
+	name = "Ranged Ghoul Soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
@@ -492,11 +493,11 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
 
-/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
+/*/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		try_to_ghoul_zombie_infect(H)
+		try_to_ghoul_zombie_infect(H)*/
 
 /mob/living/simple_animal/hostile/ghoul/zombie/reaver
 	name = "ravenous feral ghoul reaver"

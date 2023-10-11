@@ -39,18 +39,6 @@
 	grind_results = list(/datum/reagent/cellulose = 5)
 	merge_type = /obj/item/stack/packageWrap
 
-/obj/item/stack/packageWrap/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] begins wrapping [user.p_them()]self in \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(use(3))
-		var/obj/structure/bigDelivery/P = new /obj/structure/bigDelivery(get_turf(user.loc))
-		P.icon_state = "deliverypackage5"
-		user.forceMove(P)
-		P.add_fingerprint(user)
-		return OXYLOSS
-	else
-		to_chat(user, span_warning("You need more paper!"))
-		return SHAME
-
 /obj/item/proc/can_be_package_wrapped() //can the item be wrapped with package wrapper into a delivery package
 	return 1
 

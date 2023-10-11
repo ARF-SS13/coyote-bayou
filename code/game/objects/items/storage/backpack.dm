@@ -17,7 +17,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/debug_sack/smaller
@@ -30,7 +30,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/debug_sack
@@ -43,7 +43,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
+	slot_flags = INV_SLOTBIT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
 	component_type = /datum/component/storage/concrete/backpack
@@ -82,7 +82,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/backpack/spear_quiver
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
@@ -104,13 +104,13 @@
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 		user.put_in_hands(L)
 		to_chat(user, span_notice("You take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user, FALSE)
 		user.put_in_hands(W)
 		to_chat(user, span_notice("You take a bola out of the quiver."))
 	else
@@ -130,15 +130,6 @@
 	icon_state = "holdingduffel"
 	item_state = "holdingduffel"
 
-/obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide."))
-	user.dropItemToGround(src, TRUE)
-	user.Stun(100, ignore_canstun = TRUE)
-	sleep(20)
-	playsound(src, "rustle", 50, 1, -5)
-	qdel(user)
-	return
-
 /obj/item/storage/backpack/holding/singularity_act(current_size)
 	var/dist = max((current_size - 2),1)
 	explosion(src.loc,(dist),(dist*2),(dist*4))
@@ -152,10 +143,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/scav
-
-/obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit..."))
-	return (OXYLOSS)
 
 /obj/item/storage/backpack/cultpack
 	name = "trophy rack"
@@ -308,7 +295,7 @@
 	desc = "A grotesque satchel made of sinews and bones."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "goliath_saddle"
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
@@ -667,6 +654,14 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	icon_state = "satchel-trekker"
 	item_state = "satchel-trekker"
 
+/obj/item/storage/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	desc = "A standard issued lightweight UNMC backpack. Used in pre-war times, it know finds use by those who equip it. Quite streamline looking too."
+	icon_state = "marinepack"
+	item_state = "marinepack"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
+
 /obj/item/storage/backpack/satchel/old
 	name = "old satchel"
 	desc = "The leather is stiff and cracking, but the satchel still works."
@@ -700,3 +695,9 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "Lee-gion brand cape made from what looks like pinkish dark blue piece of cluth, with a golden bull cucking a sheep on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
 	item_state = "legioncapeb"
+
+/obj/item/storage/backpack/satchel/snailshell
+	name = "Snail shell"
+	desc = "A hard brown spiral of a shell that fits well on a back. You can somehow store items in it..huh! Snailtastic."
+	icon_state = "snailshell"
+	item_state = "snailshell"

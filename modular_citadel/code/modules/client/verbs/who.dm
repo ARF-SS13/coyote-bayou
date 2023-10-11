@@ -37,7 +37,7 @@
 		for(var/X in GLOB.admins)
 			var/client/C = X
 			if(C && C.holder && !C.holder.fakekey)
-				assembled += "\t <font color='#FF0000'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""] ([round(C.avgping, 1)]ms)"
+				assembled += "\t <font color='#FF0000'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""]"
 		Lines += sortList(assembled)
 	assembled.len = 0
 	if(length(GLOB.mentors))
@@ -45,7 +45,7 @@
 		for(var/X in GLOB.mentors)
 			var/client/C = X
 			if(C && (!C.holder || (C.holder && !C.holder.fakekey)))			//>using stuff this complex instead of just using if/else lmao
-				assembled += "\t <font color='#0033CC'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""] ([round(C.avgping, 1)]ms)"
+				assembled += "\t <font color='#0033CC'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""]"
 		Lines += sortList(assembled)
 	assembled.len = 0
 	Lines += "<b>Players:</b>"
@@ -56,13 +56,14 @@
 		var/key = C.key
 		if(C.holder && C.holder.fakekey)
 			key = C.holder.fakekey
-		assembled += "\t [key][admin_mode? "[show_admin_info(C)]":""] ([round(C.avgping, 1)]ms)"
+		assembled += "\t [key][admin_mode? "[show_admin_info(C)]":""]"
 	Lines += sortList(assembled)
 	
 	for(var/line in Lines)
 		msg += "[line]\n"
 
 	msg += "<b>Total Players: [length(GLOB.clients)]</b>"
+	msg += "You can set your OOC Status with the 'set-status' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!"
 	to_chat(src, msg)
 
 /client/proc/show_admin_info(client/C)

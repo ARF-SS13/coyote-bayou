@@ -179,10 +179,6 @@ RLD
 	var/delay_mod = 1
 	var/canRturf = FALSE //Variable for R walls to deconstruct them
 
-/obj/item/construction/rcd/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] sets the RCD to 'Wall' and points it down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide.."))
-	return (BRUTELOSS)
-
 /obj/item/construction/rcd/verb/toggle_window_type_verb()
 	set name = "RCD : Toggle Window Type"
 	set category = "Object"
@@ -857,7 +853,7 @@ RLD
 	upgrade = RCD_UPGRADE_SIMPLE_CIRCUITS
 
 /obj/item/construction/plumbing
-	name = "Plumbing Constructor"
+	name = "\improper Plumbing Constructor"
 	desc = "An expertly modified RCD outfitted to construct plumbing machinery. Reload with compressed matter cartridges."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "arcd"
@@ -874,6 +870,13 @@ RLD
 	var/list/name_to_type = list()
 	///
 	var/list/machinery_data = list("cost" = list(), "delay" = list())
+
+//Server lag fixer-upper 9000
+/obj/item/construction/plumbing
+	name = "\improper Broken Plumbing Constructor"
+	desc = "An expertly modified RCD outfitted to construct plumbing machinery. Reload with compressed matter cartridges. This one's matter storage seems broken so it won't work anymore."
+	matter = 0
+	max_matter = 0
 
 /obj/item/construction/plumbing/attack_self(mob/user)
 	..()

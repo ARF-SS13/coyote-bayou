@@ -9,8 +9,9 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	throw_speed = 3
 	throw_range = 7
+	throwforce = 1
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	resistance_flags = FLAMMABLE
 	max_integrity = 40
 	var/preprime_sound = 'sound/f13weapons/garand_ping.ogg'
@@ -36,18 +37,6 @@
 	/// the higher this number, the more projectiles are created as shrapnel
 	var/shrapnel_radius
 	var/shrapnel_initialized
-
-/obj/item/grenade/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(shrapnel_type && shrapnel_radius)
-		shrapnel_initialized = TRUE
-		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
-	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
-	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time)
-	preprime(user, det_time)
-	user.transferItemToLoc(src, user, TRUE)//>eat a grenade set to 5 seconds >rush captain
-	sleep(det_time)//so you dont die instantly
-	return BRUTELOSS
 
 /obj/item/grenade/ComponentInitialize()
 	. = ..()
@@ -98,10 +87,10 @@
 			preprime(user)
 
 /obj/item/grenade/proc/log_grenade(mob/user, turf/T)
-	var/message = "[ADMIN_LOOKUPFLW(user)]) has primed \a [src] for detonation at [ADMIN_VERBOSEJMP(T)]"
+	var/message = "[ADMIN_LOOKUPFLW(user)]) primed \a [src] at [ADMIN_VERBOSEJMP(T)]"
 	GLOB.bombers += message
 	message_admins(message)
-	log_game("[key_name(user)] has primed \a [src] for detonation at [AREACOORD(T)].")
+	log_game("[key_name(user)] primed \a [src] at [AREACOORD(T)].")
 
 // heh
 /obj/item/grenade/proc/vore_prime(datum/source, obj/vore_belly/belly, mob/living/vorer)

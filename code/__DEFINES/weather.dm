@@ -45,6 +45,29 @@
 	Z_LEVEL_REDWATER,\
 	Z_LEVEL_REDLICK,\
 	Z_LEVEL_GARLAND)
+#define ARTIFACT_Z_LEVELS list(\
+	Z_LEVEL_NASH_UNDERGROUND,\
+	Z_LEVEL_NASH_COMMON,\
+	Z_LEVEL_NASH_LVL2,\
+	Z_LEVEL_NASH_LVL3,\
+	Z_LEVEL_REDWATER,\
+	Z_LEVEL_REDLICK,\
+	Z_LEVEL_GARLAND)
+
+GLOBAL_LIST_INIT(z2name, list(
+	"[Z_LEVEL_CENTCOM]" = "CentCom",
+	"[Z_LEVEL_DUNGEON]" = "Dungeon",
+	"[Z_LEVEL_NASH_UNDERGROUND]" = "Nash Underground",
+	"[Z_LEVEL_NASH_COMMON]" = "Nash Common",
+	"[Z_LEVEL_NASH_LVL2]" = "Nash Lvl 2",
+	"[Z_LEVEL_NASH_LVL3]" = "Nash Lvl 3",
+	"[Z_LEVEL_REDWATER]" = "Redwater",
+	"[Z_LEVEL_REDLICK]" = "Redlick",
+	"[Z_LEVEL_GARLAND]" = "Garland",
+	"[Z_LEVEL_REDLICK_UPPER]" = "Redlick Upper",
+	"[Z_LEVEL_TRANSIT]" = "Transit",
+	"[Z_LEVEL_VR]" = "VR"
+))
 
 /* * * * * * * * * * * * *
  * THE Z LEVELS~

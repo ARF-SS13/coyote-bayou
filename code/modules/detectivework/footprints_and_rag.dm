@@ -22,10 +22,6 @@
 	var/action_speed = 3 SECONDS
 	var/damp_threshold = 0.5
 
-/obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (OXYLOSS)
-
 /obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user,proximity)
 	. = ..()
 	if(!proximity)
@@ -59,7 +55,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "towel"
 	item_state = "towel"
-	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_BELT | ITEM_SLOT_OCLOTHING
+	slot_flags = INV_SLOTBIT_HEAD | INV_SLOTBIT_BELT | INV_SLOTBIT_OCLOTHING
 	item_flags = NOBLUDGEON | NO_UNIFORM_REQUIRED //so it can be worn on the belt slot even with no uniform.
 	force = 1
 	w_class = WEIGHT_CLASS_NORMAL

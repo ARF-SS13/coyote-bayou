@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	item_state = "Pip-boy"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
@@ -104,14 +104,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/list/blocked_pdas
 
 	var/list/saved_frequencies = list("Common" = FREQ_COMMON)
-
-/obj/item/pda/suicide_act(mob/living/carbon/user)
-	var/deathMessage = msg_input(user)
-	if (!deathMessage)
-		deathMessage = "i ded"
-	user.visible_message(span_suicide("[user] is sending a message to the Grim Reaper! It looks like [user.p_theyre()] trying to commit suicide!"))
-	tnote += "<i><b>&rarr; To The Grim Reaper:</b></i><br>[deathMessage]<br>"//records a message in their PDA as being sent to the grim reaper
-	return BRUTELOSS
 
 /obj/item/pda/examine(mob/user)
 	. = ..()

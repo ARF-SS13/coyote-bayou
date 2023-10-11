@@ -20,10 +20,6 @@
 	song = null
 	return ..()
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/instrument/Initialize(mapload)
 	. = ..()
 	if(mapload)
@@ -213,7 +209,7 @@
 	item_state = "harmonica"
 	instrumentId = "harmonica"
 	instrumentExt = "mid"
-	slot_flags = ITEM_SLOT_MASK
+	slot_flags = INV_SLOTBIT_MASK
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	actions_types = list(/datum/action/item_action/instrument)

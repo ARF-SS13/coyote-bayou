@@ -60,6 +60,7 @@
 	new /obj/item/brahminbridle(src)
 	new /obj/item/brahminsaddle(src)
 	new /obj/item/brahminbrand(src)
+	new /obj/item/capturedevice(src)//hopefully this will make having a pet motorcycle a lot less annoying
 	new /obj/item/choice_beacon/pet/mountable(src)
 
 /datum/loadout_box/ranching
@@ -146,6 +147,7 @@
 	new /obj/item/reagent_containers/glass/bottle/welding_fuel(src)
 	new /obj/item/stack/sheet/metal/fifty(src)
 	new /obj/item/stack/sheet/mineral/titanium/twentyfive(src)
+	new /obj/item/stack/sheet/bronze/thirty(src)
 
 /datum/loadout_box/smithing
 	entry_tag = "smithing tools"
@@ -577,6 +579,7 @@
 
 /obj/item/storage/box/tools/beastmaster/PopulateContents()
 	new /obj/item/capturedevice(src)
+	new	/obj/item/capturedevice(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)
 	new /obj/item/lazarus_injector(src)

@@ -1195,9 +1195,9 @@
 		/datum/crafting_recipe/tribalwar/heavytribe,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
-		//datum/crafting_recipe/redpotion,
-		//datum/crafting_recipe/bluepotion,
-		//datum/crafting_recipe/greenpotion,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia,
 		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/trait/tribaltraditions
@@ -1218,7 +1218,7 @@
 
 			if("White Legs traditions")
 				traitname = "White Legs traditions"
-				granted_trait = TRAIT_WHITELEGS_TRAD
+				granted_trait = TRAIT_TRIBAL_TRAD
 				crafting_recipe_types = list(
 					/datum/crafting_recipe/tribalwar/whitelegs/lightarmour,
 					/datum/crafting_recipe/tribalwar/whitelegs/armour,
@@ -1300,9 +1300,9 @@
 					/datum/crafting_recipe/bitterdrink5,
 					/datum/crafting_recipe/healpoultice,
 					/datum/crafting_recipe/healpoultice5,
-					//datum/crafting_recipe/redpotion,
-					//datum/crafting_recipe/bluepotion,
-					//datum/crafting_recipe/greenpotion,
+					/datum/crafting_recipe/redambrosia,
+					/datum/crafting_recipe/blueambrosia,
+					/datum/crafting_recipe/greenambrosia,
 					/datum/crafting_recipe/food/pemmican,
 					/datum/crafting_recipe/tribal/bonebag
 					)
@@ -1355,7 +1355,11 @@
 		/datum/crafting_recipe/bitterdrink,
 		/datum/crafting_recipe/bitterdrink5,
 		/datum/crafting_recipe/healpoultice,
-		/datum/crafting_recipe/healpoultice5)
+		/datum/crafting_recipe/healpoultice5,
+		/datum/crafting_recipe/redambrosia,
+		/datum/crafting_recipe/blueambrosia,
+		/datum/crafting_recipe/greenambrosia
+)
 
 /obj/item/book/granter/crafting_recipe/poultice
 	name = "On the subject of healing poultice"
@@ -1366,7 +1370,7 @@
 		/datum/crafting_recipe/healpoultice5)
 
 /obj/item/book/granter/crafting_recipe/polis
-	name = "A scribbled, bloody journal"
+	name = "Vigilante's Journal"
 	desc = "An old journal, writted by someone with the will to do right but cut short..."
 	remarks = list("Durathread works much like oldworld kevlar.", "Leadership isn't always a bad thing.", "Layer the fibers correctly.", "Don't forget to look good while you're doing it.")
 	crafting_recipe_types = list(

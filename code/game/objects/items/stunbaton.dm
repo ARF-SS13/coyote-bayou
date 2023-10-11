@@ -8,7 +8,7 @@
 	item_state = "baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 30
 	throwforce = 21
 	w_class = WEIGHT_CLASS_NORMAL
@@ -33,10 +33,6 @@
 	if(iscyborg(loc))
 		var/mob/living/silicon/robot/R = loc
 		. = R.get_cell()
-
-/obj/item/melee/baton/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
 
 /obj/item/melee/baton/Initialize(mapload)
 	. = ..()
@@ -286,7 +282,7 @@
 	stamforce = 25
 	hitcost = 7000
 	throw_hit_chance = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	var/obj/item/assembly/igniter/sparkler
 
 /obj/item/melee/baton/cattleprod/Initialize()

@@ -1,3 +1,11 @@
+/* KELP NOTES
+10000 energy = small energy cell
+20000 energy = electron charge pack
+30000 energy = micro fusion cell
+40000 energy = ultracite cell
+50000 energy = alien cell
+*/
+
 /obj/item/projectile/beam
 	name = "laser"
 	icon_state = "laser"
@@ -568,7 +576,7 @@
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 90
+	damage = 40
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -641,12 +649,12 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser //Compact RCW
-	damage = 9 //Good for piercing armor, terrible damage
+	damage = 10 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser/twinshot // burst RCW
 	name = "intense twinbeam"
-	damage = 20 // Good for piercing armor, terrible damage
+	damage = 15 // Good for piercing armor, terrible damage
 	flag = "energy" // to bring it on par with the tesla autoshock
 	bare_wound_bonus = -20 // The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
@@ -686,7 +694,7 @@
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
 /obj/item/projectile/beam/laser/aer14/hitscan
-	damage = 32
+	damage = 42
 	wound_bonus = 20
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse

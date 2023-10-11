@@ -122,7 +122,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine,
 		/obj/item/gun/ballistic/automatic/armalite,
 		/obj/item/gun/ballistic/automatic/l1a1,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto,
+		/obj/item/gun/ballistic/automatic/c96auto,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
 		/obj/item/gun/ballistic/shotgun/trench,
@@ -218,6 +218,7 @@
 		/obj/item/gun/energy/laser/wattz/recharger,
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
+		/obj/item/gun/magic/,
 		)
 
 /datum/export/item/uniquegun
@@ -252,7 +253,7 @@
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
 		/obj/item/melee/unarmed/deathclawgauntlet,
-		/obj/item/melee/powerfist/f13/goliath,
+		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
 		/obj/item/twohanded/spear/bonespear/deathclaw,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
@@ -260,6 +261,79 @@
 		/obj/item/melee/transforming/plasmacutter/regular/adam,
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+	)
+
+/datum/export/item/melee
+	cost = 1000
+	unit_name = "melee weapon"
+	export_types = list(
+	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/coyote,
+	/obj/item/melee/onehanded,
+	/obj/item/twohanded,
+	)
+
+/datum/export/item/armorrare
+	cost = 1500
+	unit_name = "quality armor"
+	export_types = list(
+		/obj/item/clothing/suit/armor/heavy/salvaged_pa,
+		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa,
+		/obj/item/clothing/suit/armor/heavy/riot/combat,
+		/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
+		/obj/item/clothing/suit/armor/medium/combat/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/mk2,
+		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
+		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
+		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
+		/obj/item/clothing/suit/armor/heavy/riot/vault,
+		/obj/item/clothing/suit/armor/heavy/riot/marine,
+		/obj/item/clothing/suit/armor/medium/odst,
+		/obj/item/clothing/suit/armor/medium/odstlead,
+	)
+
+/datum/export/item/powerarmor // note to self -- tier this later, kelprunner, 9/16/23
+	cost = 7000
+	unit_name = "power armor frame"
+	export_types = list(
+		/obj/item/clothing/suit/armor/power_armor,
+	)
+
+/datum/export/item/powerarmorhelmet
+	cost = 500
+	unit_name = "power armor helmet"
+	export_types = list(
+		/obj/item/clothing/head/helmet/f13/power_armor,
+	)
+
+/datum/export/item/armoruncommon
+	cost = 1000
+	unit_name = "surplus armor"
+	export_types = list(
+		/obj/item/clothing/suit/armor/heavy/metal/reinforced,
+		/obj/item/clothing/head/helmet/f13/metalmask/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat,
+		/obj/item/clothing/head/helmet/f13/combat,
+		/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
+		/obj/item/clothing/head/helmet/alt,
+		/obj/item/clothing/suit/armor/heavy/metal/sulphite,
+		/obj/item/clothing/head/helmet/f13/sulphitehelm,
+		/obj/item/clothing/suit/armor/medium/vest/bulletproof/big,
+		/obj/item/clothing/head/helmet/riot/vaultsec,
+		/obj/item/clothing/suit/armor/medium/raider/slam,
+		/obj/item/clothing/suit/armor/medium/raider/rebel,
+		/obj/item/clothing/suit/armor/medium/raider/slam,
+		/obj/item/clothing/suit/armor/medium/raider/wastewar,
+		/obj/item/clothing/suit/armor/medium/combat/mk2/raider,
+		/obj/item/clothing/head/helmet/f13/raider/wastehound,
+		/obj/item/clothing/head/helmet/f13/raidermetal,
+		/obj/item/clothing/suit/armor/medium/combat/dark,
+		/obj/item/clothing/head/helmet/f13/combat/dark,
+		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris,
+		/obj/item/clothing/suit/armor/medium/odstcqb,
 	)
 
 /datum/export/item/energycell
@@ -276,6 +350,69 @@
 	cost = 400
 	unit_name = "electron charge pack"
 	export_types = list(/obj/item/stock_parts/cell/ammo/ecp)
+
+/datum/export/item/bountycard
+	cost = 0 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+	unit_name = "small roller bounty ticket"
+	export_types = list(/obj/item/card)
+
+/datum/export/item/bountycard/get_cost(atom/movable/AM)
+	return SEND_SIGNAL(AM, COMSIG_ATOM_GET_VALUE)
+
+
+
+// /datum/export/item/lowbounty
+// 	cost = 1500 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "small roller bounty ticket"
+// 	export_types = list(/obj/item/card/lowbounty)
+
+// /datum/export/item/midbounty
+// 	cost = 3000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "medium roller bounty ticket"
+// 	export_types = list(/obj/item/card/midbounty)
+
+// /datum/export/item/highbounty
+// 	cost = 6000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "high roller bounty ticket"
+// 	export_types = list(/obj/item/card/highbounty)
+
+// /datum/export/item/kingbounty
+// 	cost = 12000 // 50% more than the salvager, lets shop purchase them for a higher price than the scrapper and still make profit. Limited resource.
+// 	unit_name = "a king's  bounty ticket"
+// 	export_types = list(/obj/item/card/kingbounty)
+
+/datum/export/item/trashmeat // Bugs, nasty things. Gross.
+	cost = 100
+	unit_name = "low-quality meat products"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat,
+						/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat,
+						/obj/item/reagent_containers/food/snacks/rawantbrain,
+						/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat)
+
+/datum/export/item/commonmeat // Real meat. Yum. Stuff high in important minerals.
+	cost = 250
+	unit_name = "common meat products"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab,
+						/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+						/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk,
+						/obj/item/reagent_containers/food/snacks/meat/slab/molerat)
+
+/datum/export/item/raremeat // Delicacies.
+	cost = 450
+	unit_name = "high-quality meat products"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/wolf,
+						/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw)
+
+/datum/export/item/processedmeats
+	cost = 20 // Gotta be small so people cant cheese the meat with a food processor
+	unit_name = "meat portion"
+	export_types = list(/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+						/obj/item/reagent_containers/food/snacks/rawmeatball
+
+	)
 
 /datum/export/item/traitbookslow
 	cost = 800
@@ -472,13 +609,17 @@
 
 
 /datum/export/item/toyslow
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
+						/obj/item/gun/ballistic/shotgun/toy,
+						/obj/item/gun/ballistic/automatic/toy,
 	)
 
 
 /datum/export/item/toyshigh
+	k_elasticity = 1/100 // Toy lathe is scary
 	cost = 1000
 	unit_name = "advanced toy"
 	export_types = list(/obj/item/toy/prize,
@@ -486,29 +627,71 @@
 	)
 
 /datum/export/item/prewarsalvage
-	cost = 50 // 1600 credits or 160 caps for the shop per full bag. Avg 80 caps for customers per bag
+	cost = 62.5 // 2000 credits or 200 caps for the shop per full bag. Avg 80 caps for customers per bag
 	unit_name = "saleable scrap"
 	export_types = list(/obj/item/salvage/low,
 	)
 
 /datum/export/item/toolsalvage
-	cost = 2000 // Tools are nice, but often clutter places up. This should help.
+	cost = 2500 // Tools are nice, but often clutter places up. This should help.
 	unit_name = "tool salvage"
 	export_types = list(/obj/item/salvage/tool,
 	)
 
+/datum/export/item/advancedtools
+	cost = 500 // Tools are useful. Good tools are better. Makes selling to shop better than scrapping them.
+	unit_name = "quality tools"
+	export_types = list(/obj/item/weldingtool/advanced,
+					/obj/item/crowbar/hightech,
+					/obj/item/screwdriver/hightech,
+					/obj/item/wrench/hightech,
+					/obj/item/wirecutters/hightech,
+					/obj/item/multitool/advanced)
+
+/datum/export/item/ultratools
+	cost = 2750 // Super expensive so theyre worth something when sold. Difficult for clinic to reproduce these.
+	unit_name = "ultracite tools"
+	export_types = list(/obj/item/weldingtool/abductor,
+						/obj/item/wrench/abductor,
+						/obj/item/wirecutters/abductor,
+						/obj/item/screwdriver/abductor,
+						/obj/item/crowbar/abductor,
+						/obj/item/multitool/abductor)
+
 /datum/export/item/advancedsalvage
-	cost = 5000 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	cost = 2500 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
 	unit_name = "quality salvage"
 	export_types = list(/obj/item/salvage/high,
 	)
 
+/datum/export/item/advancedsalvageloot
+	cost = 800 // advanced salvage is VERY in demand in and outside the shop. Very valuable.
+	unit_name = "quality components"
+	export_types = list(/obj/item/advanced_crafting_components/receiver,
+				/obj/item/advanced_crafting_components/assembly,
+				/obj/item/advanced_crafting_components/alloys,
+				/obj/item/advanced_crafting_components/conductors,
+				/obj/item/advanced_crafting_components/lenses,
+				/obj/item/advanced_crafting_components/flux,
+)
+
+/datum/export/item/nightstalkerpelt
+	cost = 200
+	unit_name = "nightstalker pelt"
+	export_types = list(/obj/item/clothing/head/f13/stalkerpelt,
+	)
+
 /datum/export/item/armorgeneric
-	cost = 250 // just a test so the shop can actually move armor since nobody ever buys it //this existing means the armor crates have to be expensive
+	cost = 300 // just a test so the shop can actually move armor since nobody ever buys it //this existing means the armor crates have to be expensive
 	unit_name = "armor item"
 	export_types = list(/obj/item/clothing/suit/armor,
 	)
 
+/datum/export/item/stealthboy
+	cost = 1500
+	unit_name = "cloaking device"
+	export_types = list(/obj/item/stealthboy
+	)
 /datum/export/item/lowfish
 	cost = 150
 	unit_name = "common fish"
@@ -548,6 +731,31 @@
 	/obj/item/melee/smith/twohand/spear/trident,
 	/obj/item/melee/smith/javelin,
 	/obj/item/melee/smith/throwingknife,
+	)
+
+/datum/export/item/nucrate // Hopefully this one works
+	cost = 200
+	k_elasticity = 0
+	unit_name = "crate"
+	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
+
+/datum/export/item/lowartifact
+	cost = 5000
+	unit_name = "common artifact"
+	export_types = list(/obj/item/artifact/common,
+	)
+
+/datum/export/item/highartifact
+	cost = 15000
+	unit_name = "rare artifact"
+	export_types = list(/obj/item/artifact/rare,
+	)
+
+/datum/export/item/midartifact
+	cost = 10000
+	unit_name = "uncommon artifact"
+	export_types = list(/obj/item/artifact/uncommon,
 	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */

@@ -18,7 +18,7 @@
 	item_state = "pen"
 	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_EARS
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_EARS
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -32,10 +32,6 @@
 	embedding = list()
 	sharpness = SHARP_POINTY
 	var/naming = FALSE
-
-/obj/item/pen/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku..."))
-	return(BRUTELOSS)
 
 /obj/item/pen/blue
 	desc = "It's a normal blue ink pen."
@@ -220,14 +216,6 @@
 
 /obj/item/pen/edagger/get_sharpness()
 	return on * sharpness
-
-/obj/item/pen/edagger/suicide_act(mob/user)
-	. = BRUTELOSS
-	if(on)
-		user.visible_message(span_suicide("[user] forcefully rams the pen into their mouth!"))
-	else
-		user.visible_message(span_suicide("[user] is holding a pen up to their mouth! It looks like [user.p_theyre()] trying to commit suicide!"))
-		attack_self(user)
 
 /obj/item/pen/edagger/attack_self(mob/living/user)
 	if(on)

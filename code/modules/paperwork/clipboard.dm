@@ -11,12 +11,8 @@
 	throw_range = 7
 	var/obj/item/pen/haspen		//The stored pen.
 	var/obj/item/paper/toppaper	//The topmost piece of paper.
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	resistance_flags = FLAMMABLE
-
-/obj/item/clipboard/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins putting [user.p_their()] head into the clip of \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS//the clipboard's clip is very strong. industrial duty. can kill a man easily.
 
 /obj/item/clipboard/Initialize()
 	update_icon()

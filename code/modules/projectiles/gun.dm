@@ -79,7 +79,7 @@ ATTACHMENTS
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
 	var/firing = FALSE
-	/// Used in gun-in-mouth execution/suicide and similar, while TRUE nothing should work on this like firing or modification and so on and so forth.
+	/// Used when its busy
 	var/busy_action = FALSE
 	/// used for inaccuracy and wielding requirements/penalties
 	var/weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -175,6 +175,10 @@ ATTACHMENTS
 	var/prefered_power
 	/// Does the gun use the bullet's sounds, instead of its own?
 	var/use_casing_sounds
+	/// Is one of Kelp's wands?
+	var/is_kelpwand = FALSE
+	/// Allow quickdraw (delay to draw the gun is 0s)
+	var/allow_quickdraw = FALSE
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -415,11 +419,6 @@ ATTACHMENTS
 		shoot_with_empty_chamber(user)
 		return
 
-	if(flag)
-		if(user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-			handle_suicide(user, target, params)
-			return
-
 	//Exclude lasertag guns from the TRAIT_CLUMSY check.
 	if(clumsy_check)
 		if(istype(user))
@@ -449,7 +448,7 @@ ATTACHMENTS
 	if (automatic == 0)
 		user.DelayNextAction(1)
 	if (automatic == 1)
-		user.DelayNextAction(autofire_shot_delay)
+		user.DelayNextAction(fire_delay)
 
 	//DUAL (or more!) WIELDING
 	var/loop_counter = 0
@@ -494,7 +493,7 @@ ATTACHMENTS
 		return 1
 		//return isnull(chambered?.click_cooldown_override)? get_fire_delay(user) : chambered.click_cooldown_override
 	if (automatic == 1)
-		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
+		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
 
 /obj/item/gun/GetEstimatedAttackSpeed(mob/user)
 	return get_clickcd()
@@ -557,6 +556,18 @@ ATTACHMENTS
 	if(on_cooldown(user))
 		return
 	clear_cooldown_mods()
+
+	if(is_kelpwand)
+		if(iscarbon(user))
+			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
+				if(HAS_TRAIT(user, TRAIT_MARTIAL_A))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+			else
+				if(HAS_TRAIT(user, TRAIT_MARTIAL_A) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
+					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					return
+
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)
@@ -784,42 +795,6 @@ ATTACHMENTS
 	if(worn_out)
 		. += ("[initial(icon_state)]_worn")
 
-/obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
-	if(!ishuman(user) || !ishuman(target))
-		return
-
-	if(on_cooldown(user))
-		return
-
-	if(user == target)
-		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
-			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
-	else
-		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
-			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
-
-	busy_action = TRUE
-
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
-		if(user)
-			if(user == target)
-				user.visible_message(span_notice("[user] decided not to shoot."))
-			else if(target && target.Adjacent(user))
-				target.visible_message(span_notice("[user] has decided to spare [target]"), span_notice("[user] has decided to spare your life!"))
-		busy_action = FALSE
-		return
-
-	busy_action = FALSE
-
-	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[user] pulls the trigger!"))
-
-	playsound('sound/weapons/dink.ogg', 30, 1)
-
-	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
-
-	process_fire(target, user, TRUE, params, stam_cost = getstamcost(user))
-
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
 	if(pin)
 		qdel(pin)
@@ -903,6 +878,9 @@ ATTACHMENTS
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	if(allow_quickdraw)
+		allow_quickdraw = FALSE
+		time_till_gun_is_ready = 0
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
 		toggle_safety(user, ignore_held = TRUE)
@@ -911,7 +889,7 @@ ATTACHMENTS
 	spawn(time_till_gun_is_ready)
 		if(user.get_active_held_item() == src)
 			user.show_message(span_notice("\The [src] is ready to fire."))
-			playsound(user, 'sound/weapons/selector.ogg', 50, 1)
+			playsound(get_turf(user), "sound/weapons/lockedandloaded.ogg", 100, 1)
 
 /obj/item/gun/proc/play_equip_sound(src, volume=50)
 	if(src && equipsound && volume)
@@ -1767,7 +1745,7 @@ ATTACHING SLING
 	..()
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = INV_SLOTBIT_BACK
 			to_chat(user, span_notice("You tie the lengths of cable to the rifle, making a sling."))
 			slung = TRUE
 			update_icon()

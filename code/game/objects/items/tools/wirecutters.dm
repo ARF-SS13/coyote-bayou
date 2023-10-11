@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 16
 	force_unwielded = 16
 	force_wielded = 22
@@ -45,11 +45,6 @@
 		return
 	else
 		..()
-
-/obj/item/wirecutters/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is cutting at [user.p_their()] arteries with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, usesound, 50, 1, -1)
-	return (BRUTELOSS)
 
 /obj/item/wirecutters/brass
 	name = "brass wirecutters"
@@ -92,17 +87,6 @@
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
 	usesound = 'sound/items/jaws_cut.ogg'
 	toolspeed = 0.25
-
-/obj/item/wirecutters/power/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!"))
-	playsound(loc, 'sound/items/jaws_cut.ogg', 50, 1, -1)
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
-		if(BP)
-			BP.drop_limb()
-			playsound(loc,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-	return (BRUTELOSS)
 
 /obj/item/wirecutters/power/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)

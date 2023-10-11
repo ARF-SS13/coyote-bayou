@@ -35,6 +35,10 @@
 #define BANKER_MIN 2000
 #define BANKER_MAX 15000
 
+// The amount of money a ticket puncher can give.
+#define TICKET_MIN 50
+#define TICKET_MAX 200
+
 // Amounts of coins that, under which, it makes a noise
 #define DINGLE_LOW 5
 #define DINGLE_MED 15
@@ -85,7 +89,7 @@
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
 									span_notice("You flip [src]. It lands on [coinflip]."), \
 									span_italic("You hear the clattering of loose change."))
-		return TRUE//did the coin flip? useful for suicide_act
+		return TRUE//did the coin flip? Not really useful anymore!
 
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
@@ -253,6 +257,10 @@
 	min_qty = BANKER_MIN / CASH_CAP
 	max_qty = BANKER_MAX / CASH_CAP
 
+/obj/item/stack/f13Cash/random/bankerticket
+	min_qty = TICKET_MIN / CASH_CAP
+	max_qty = TICKET_MAX / CASH_CAP
+
 /obj/item/stack/f13Cash/denarius
 	name = "silver coin"
 	latin = 0
@@ -273,6 +281,10 @@
 
 /obj/item/stack/f13Cash/denarius/twenty
 	amount = 20
+	merge_type = /obj/item/stack/f13Cash/denarius
+
+/obj/item/stack/f13Cash/denarius/hundo
+	amount = 100
 	merge_type = /obj/item/stack/f13Cash/denarius
 
 
@@ -326,6 +338,10 @@
 	amount = 20
 	merge_type = /obj/item/stack/f13Cash/aureus
 
+/obj/item/stack/f13Cash/aureus/hundo
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/aureus
+
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
 
@@ -367,6 +383,14 @@
 
 /obj/item/stack/f13Cash/ncr/twohundo
 	amount = 200
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/onekay
+	amount = 1000
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/fivegees
+	amount = 5000
 	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()

@@ -345,6 +345,15 @@
 		desc += " Awoo."
 		icon_state = "sakebottle_i"
 
+/obj/item/reagent_containers/food/drinks/bottle/sake2
+	name = "Fluffy Tail Sake"
+	desc = "On the bottle is a picture of a kitsune with nine touchable tails."
+	icon_state = "sakebottle_k"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/sake2/empty
+	list_reagents = null
+
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
 	desc = "A bottle of pure Fernet Bronca, produced in Cordoba, Spain."

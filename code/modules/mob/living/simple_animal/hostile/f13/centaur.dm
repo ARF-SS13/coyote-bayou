@@ -123,7 +123,13 @@
 */
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()
-	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')
+	abom_sounds = list(
+		'sound/voice/abomination1.ogg',
+		'sound/voice/abomscream.ogg',
+		'sound/voice/abommoan.ogg',
+		'sound/voice/abomscream2.ogg',
+		'sound/voice/abomscream3.ogg'
+	)
 
 /mob/living/simple_animal/hostile/abomination/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null, just_chat)
 	..()

@@ -16,23 +16,43 @@
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
-
-	///Extra damage through the punch.
-	var/enhancement = 45 // makes it add 45 to the user punches , replace that number with whatever you want the punch damage to be
-
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
 
 /obj/item/melee/powerfist/f13/equipped(mob/user, slot)
 	. = ..()
-	if(slot == SLOT_GLOVES)
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			ADD_TRAIT(H, TRAIT_PUGILIST, GLOVE_TRAIT)
-			H.dna.species.punchdamagehigh += enhancement
-			H.dna.species.punchdamagelow += enhancement
+	var/mob/living/carbon/human/H = user
+	if(unarmed_adjusted)
+		mob_overlay_icon = righthand_file
+	if(!unarmed_adjusted)
+		mob_overlay_icon = lefthand_file
+	if(ishuman(user) && slot == SLOT_GLOVES)
+		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh += force + 8 //Work around for turbo bad code here. Makes this correctly stack with your base damage. No longer makes ghouls the kings of melee.
+			H.dna.species.punchdamagelow += force + 8
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
+			if(sharpness == SHARP_NONE)
+				H.dna.species.attack_verb = pick("punch","jab","whack")
+	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
+			H.dna.species.punchdamagehigh = 10
+			H.dna.species.punchdamagelow = 1
+		if(HAS_TRAIT(user, TRAIT_IRONFIST))
+			H.dna.species.punchdamagehigh = 12
+			H.dna.species.punchdamagelow = 6
+		if(HAS_TRAIT(user, TRAIT_STEELFIST))
+			H.dna.species.punchdamagehigh = 16
+			H.dna.species.punchdamagelow = 10
+		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+		H.dna.species.attack_verb = "punch"
 
 /obj/item/clothing/gloves/fingerless/pugilist/dropped(mob/user)
 
@@ -86,7 +106,43 @@
 	item_state = "goliath"
 	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
 	throw_distance = 3
-	enhancement = 50
+
+// Saturnite fist				Hits hard. Max damage 65.
+/obj/item/melee/powerfist/f13/satfist
+	name = "Saturnite Power Fist"
+	desc = "A massive, experimental metal gauntlet crafted by some Genius in The Military that has more than likely died. The alloy it's made of appears to be light, yet stronger than most steels."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "satfist"
+	item_state = "satfist"
+	force = 65 //Mythical tier power fist, literally able to kill god
+	throw_distance = 2
+
+// Heat it with a welder
+/obj/item/melee/powerfist/f13/satfist/welder_act(mob/living/user, obj/item/I)
+	if(I.use_tool(src, user, 20, volume=50, amount=15))
+		user.visible_message("[user] heats up the Metal of the [src].", \
+				span_notice("You heat up the [src] until the Fist glows!"), \
+				span_italic("You hear faint sounds of a welder working."))
+		new /obj/item/melee/powerfist/f13/satfisth(drop_location())
+		qdel(src)
+		return
+	return ..()
+
+// Saturnite fist	but hotter	Hits hard. Max damage 70.
+/obj/item/melee/powerfist/f13/satfisth
+	name = "Saturnite Power Fist"
+	desc = "A massive, experimental metal gauntlet crafted by some Genius in The Military that has more than likely died. The alloy it's made of appears to be light, yet stronger than most steels."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "satfisth"
+	item_state = "satfisth"
+	force = 70 //Mythical tier power fist, literally able to kill god and cook him
+	throw_distance = 2
+
+
 // Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
@@ -99,7 +155,6 @@
 	force = 38 //weaker but it should atleast 1 tap trash mobs
 	throwforce = 10
 	throw_range = 7
-	enhancement = 30 //mace tier
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	tool_behaviour = TOOL_MINING
@@ -107,7 +162,7 @@
 	toolspeed = 0.3 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 
@@ -125,7 +180,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
 	force = 10
 	wound_bonus = 25
 	block_chance = 15
@@ -167,7 +222,7 @@
 		item_state = off_item_state
 		w_class = WEIGHT_CLASS_NORMAL
 		force = force_off
-		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
 		attack_verb = list("poked", "scraped")
 	add_fingerprint(user)
 
@@ -183,6 +238,11 @@
 	off_item_state = "prewarrip_off"
 	force_on = 50
 
+/obj/item/melee/powered/ripper/dull
+	name = "worn ripper"
+	desc = "A Ripper vibroblade, cutting edges dulled from overuse. Still decent for cutting, though not as good as a well-maintained one."
+	force_on = 27 //it still gets the block. I think this makes sense.
+
 // Shishkebab backpack				The shishkebab weapon base unit
 /obj/item/shishkebabpack
 	name = "shishkebab backpack"
@@ -191,7 +251,7 @@
 	icon_state = "shishkebabpack"
 	item_state = "shishkebabpack"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 //	actions_types = list(/datum/action/item_action/toggle_shishkebab)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF

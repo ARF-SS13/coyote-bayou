@@ -204,6 +204,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	///If this is a player's ckey then this mob was spawned as a player's character
 	var/player_character = null
+	var/ignore_other_mobs = TRUE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
+	var/override_ignore_other_mobs = FALSE // If TRUE, it'll ignore the idnore other mobs flag, for mobs that are supposed to be hostile to everything
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -342,6 +344,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(can_ghost_into)
 		AddElement(/datum/element/ghost_role_eligibility, free_ghosting = FALSE, penalize_on_ghost = TRUE)
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION, .proc/infight_check)
+
+/mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
+	if(SSmobs.debug_disable_mob_ceasefire)
+		return
+	if(H.client || client || player_character || H.player_character)
+		return
+	if(override_ignore_other_mobs || H.override_ignore_other_mobs)
+		return
+	if(!istype(H))
+		return
+	return (H.ignore_other_mobs || ignore_other_mobs)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
@@ -462,7 +476,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/slow = 0
 	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
 		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
-		if(health_percent <= 50)//Start slowdown at half health
+		if(health_percent <= 50 && health_percent > 0)//Start slowdown at half health, stop slowdown when health is at or below zero to prevent divide by zero errors
 			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
@@ -969,9 +983,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/Life()
 	update_health_hud()
 	. = ..()
-	if(stat)
+	if(stat == DEAD)
 		return
-	if (idlesound)
+	if (idlesound && !(islist(idlesound) && LAZYLEN(idlesound) == 0))
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
@@ -1027,6 +1041,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	walk(src, 0)
 	set_resting(FALSE, FALSE, FALSE)
 	update_mobility()
+
+/mob/living/simple_animal/fully_heal(admin_revive = FALSE)
+	. = ..()
+	unstamcrit()
 
 /mob/living/simple_animal/proc/sever_link_to_nest()
 	if(nest)

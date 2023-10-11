@@ -15,10 +15,11 @@
 #define DISABLE_DEATHRATTLE		(1<<12)
 #define DISABLE_ARRIVALRATTLE	(1<<13)
 #define COMBOHUD_LIGHTING		(1<<14)
+#define SOUND_SI				(1<<15)
 // Gap in prefs between tg and fortune13 prefs.
 #define SPLIT_ADMIN_TABS (1<<23)
 
-#define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS)
+#define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS|SOUND_SI )
 
 //Chat toggles
 #define CHAT_OOC			(1<<0)
@@ -87,6 +88,7 @@
 #define EXP_TYPE_FOLLOWERS		"Nash Clinic"
 #define EXP_TYPE_OUTLAW			"Outlaw"
 #define EXP_TYPE_KHAN			"Great Khans"
+#define EXP_TYPE_CLUB			"Heavens Night"
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT 							(1<<0)
 #define DB_FLAG_AGE_CONFIRMATION_INCOMPLETE		(1<<1)
@@ -106,12 +108,33 @@
 #define CHAOS_HIGH "High"
 #define CHAOS_MAX "Maximum"
 
+#define TBS_TOP "I am a top!"
+#define TBS_BOTTOM "I am a bottom!"
+#define TBS_SHOES "I am a switch!"
+#define TBS_NONE "I am none of these!"
+#define TBS_DEFAULT TBS_NONE
+#define TBS_LIST list(TBS_TOP, TBS_BOTTOM, TBS_SHOES, TBS_NONE)
+
+#define KISS_BOYS "I am a boykisser!"
+#define KISS_GIRLS "I am a girlkisser!"
+#define KISS_ANY "I'll kiss anybody!"
+#define KISS_NONE "I don't kiss!"
+#define KISS_DEFAULT KISS_NONE
+#define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_ANY,KISS_NONE)
+
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
 
 /// Changelog entries
 #define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
+#define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
+#define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
+#define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
-#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE)
+#define PREFERENCES_MASTER_CHANGELOG list(\
+	PMC_OOC_NOTES_UPDATE, \
+	PMC_QUIRK_OVERHAUL_2K23,\
+	PMC_DAN_MESSED_UP_WHO_STUFF,\
+	)

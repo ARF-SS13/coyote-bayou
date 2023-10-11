@@ -11,7 +11,7 @@
 	item_state = "rockitlauncher_back"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/pneumatic_cannon/rockitlauncher/gun //The nozzle of the launcher
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.

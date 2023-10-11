@@ -179,7 +179,7 @@
 
 //Eve Caster
 /obj/item/gun/energy/laser/plasma/castereve
-	name ="Eve 3.0"
+	name ="Malediction"
 	icon = 'icons/fallout/objects/guns/longenergy.dmi'
 	item_state = "Aldric-Plasma-CasterEve"
 	icon_state = "Aldric-Plasma-CasterEve"

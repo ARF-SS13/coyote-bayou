@@ -16,7 +16,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
@@ -40,7 +40,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 55
 	throwforce = 10
 	block_chance = 20
@@ -99,6 +99,7 @@
 /obj/item/melee/onehanded/machete/gladius
 	name = "gladius"
 	desc = "A heavy cutting blade, with a fairly good tip too."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gladius"
 	item_state = "gladius"
 	force = 36
@@ -178,13 +179,6 @@
 	else
 		return ..()
 
-/obj/item/melee/onehanded/knife/suicide_act(mob/user)
-	user.visible_message(pick(span_suicide("[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.")))
-	return (BRUTELOSS)
-
-
 /obj/item/melee/onehanded/knife/hunting
 	name = "hunting knife"
 	icon_state = "knife_hunting"
@@ -245,11 +239,13 @@
 
 /obj/item/melee/onehanded/knife/ritualdagger
 	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
+	desc = "An ancient blade used to carry out spiritual and mystic rituals."
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
 	custom_materials = null
+	tool_behaviour = TOOL_RITUAL
+	toolspeed = 1
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -429,7 +425,7 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "classic_baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 18
 	w_class = WEIGHT_CLASS_NORMAL
 	wound_bonus = 15
@@ -585,7 +581,7 @@ obj/item/melee/onehanded/knife/switchblade
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -599,24 +595,6 @@ obj/item/melee/onehanded/knife/switchblade
 	weight_class_on = WEIGHT_CLASS_BULKY
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	bare_wound_bonus = 5
-
-/obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
-
-	user.visible_message(span_suicide("[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind."))
-	if(!on)
-		src.attack_self(user)
-	else
-		playsound(loc, on_sound, 50, 1)
-		add_fingerprint(user)
-	sleep(3)
-	if (H && !QDELETED(H))
-		if (B && !QDELETED(B))
-			H.internal_organs -= B
-			qdel(B)
-		H.spawn_gibs()
-		return (BRUTELOSS)
 
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
@@ -632,7 +610,7 @@ obj/item/melee/onehanded/knife/switchblade
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("hit", "poked")
@@ -701,7 +679,7 @@ obj/item/melee/onehanded/knife/switchblade
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	attack_speed = CLICK_CD_MELEE * 0.9
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
@@ -771,7 +749,6 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 26
-	custom_materials = list(/datum/material/iron = 2000)
 
 // Spiked knuckles	Keywords: Damage 28
 /obj/item/melee/unarmed/brass/spiked
@@ -858,7 +835,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
 	icon_state = "deathclaw_g"
 	item_state = "deathclaw_g"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 35
 	armour_penetration = 0 //HAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHA, ONE MY ASS LMFAO ~TK
@@ -872,7 +849,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. A weapon worthy of the Sulfurs."
 	icon_state = "yao_guai_g"
 	item_state = "deathclaw_g"
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 23
 	sharpness = SHARP_EDGED
@@ -905,7 +882,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	throwforce = 10
 	throw_range = 3
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	var/throw_distance = 1
 	attack_speed = CLICK_CD_MELEE
@@ -958,7 +935,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	toolspeed = 0.2 //This should make it dig really quick. Like a moleminer!
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	armor = ARMOR_VALUE_GENERIC_ITEM
 
 ///////////
@@ -1061,7 +1038,7 @@ CODE FOR BLEEDING STACK
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -1098,7 +1075,7 @@ CODE FOR BLEEDING STACK
 		to_chat(user, get_on_off_description())
 		icon_state = off_icon_state
 		item_state = null //no sprite for concealment even when in hand
-		slot_flags = ITEM_SLOT_BELT
+		slot_flags = INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("badgered", "beat")

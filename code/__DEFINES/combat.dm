@@ -11,13 +11,11 @@
 #define STAMINA 	"stamina"
 #define BRAIN		"brain"
 
-//bitflag damage defines used for suicide_act -- also useful for bitflags, not just suicide!!!
+//bitflag damage defines. Used to be used for something else, but that use was removed cus it suckd
 #define BRUTELOSS 		(1<<0)
 #define FIRELOSS 		(1<<1)
 #define TOXLOSS 		(1<<2)
 #define OXYLOSS 		(1<<3)
-#define SHAME 			(1<<4)
-#define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
 #define RADIATIONLOSS	(1<<6)
 #define CLONELOSS		(1<<7)
 #define EMPLOSS			(1<<8)
@@ -246,6 +244,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	BODY_ZONE_R_ARM,
 	BODY_ZONE_L_LEG,
 	BODY_ZONE_R_LEG
+))
+GLOBAL_LIST_INIT(main_body_parts2words, list(
+	BODY_ZONE_HEAD = "head",
+	BODY_ZONE_CHEST = "chest",
+	BODY_ZONE_L_ARM = "left arm",
+	BODY_ZONE_R_ARM = "right arm",
+	BODY_ZONE_L_LEG = "left leg",
+	BODY_ZONE_R_LEG = "right leg",
 ))
 
 #define BODY_ZONE_PRECISE_EYES		"eyes"
@@ -1353,35 +1359,35 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 //weapon class defines for standardized stats
 #define WEAPON_CLASS_TINY list(\
 "w_class" = WEIGHT_CLASS_TINY,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_LIGHT,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
 "draw_time" = GUN_DRAW_QUICK,\
 )
 #define WEAPON_CLASS_SMALL list(\
 "w_class" = WEIGHT_CLASS_SMALL,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_MEDIUM,\
 "force" = GUN_MELEE_FORCE_PISTOL_LIGHT,\
 "draw_time" = GUN_DRAW_NORMAL,\
 )
 #define WEAPON_CLASS_NORMAL list(\
 "w_class" = WEIGHT_CLASS_NORMAL,\
-"slot_flags" = ITEM_SLOT_BELT,\
+"slot_flags" = INV_SLOTBIT_BELT,\
 "slowdown" = GUN_SLOWDOWN_PISTOL_HEAVY,\
 "force" = GUN_MELEE_FORCE_PISTOL_HEAVY,\
 "draw_time" = GUN_DRAW_NORMAL,\
 )
 #define WEAPON_CLASS_CARBINE list(\
 "w_class" = WEIGHT_CLASS_BULKY,\
-"slot_flags" = ITEM_SLOT_BELT | ITEM_SLOT_BACK,\
+"slot_flags" = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_CARBINE,\
 "force" = GUN_MELEE_FORCE_RIFLE_LIGHT,\
 "draw_time" = GUN_DRAW_LONG,\
 )
 #define WEAPON_CLASS_RIFLE list(\
 "w_class" = WEIGHT_CLASS_BULKY,\
-"slot_flags" = ITEM_SLOT_BACK,\
+"slot_flags" = INV_SLOTBIT_BACK,\
 "slowdown" = GUN_SLOWDOWN_RIFLE_BOLT,\
 "force" = GUN_MELEE_FORCE_RIFLE_HEAVY,\
 "draw_time" = GUN_DRAW_LONG,\

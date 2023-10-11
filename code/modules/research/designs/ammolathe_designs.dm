@@ -588,6 +588,13 @@
 	build_path = /obj/item/ammo_box/magazine/boys/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/highcalmag
+	name = "empty compact AMR magazine (.50)"
+	id = "highcalmagazine"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/highcaliber/empty
+	category = list("initial", "Advanced Magazines")
+
 //Tier 3 Ammo
 /datum/design/ammolathe/c4570
 	name = ".45-70 FMJ ammo box"
@@ -701,6 +708,14 @@
 	build_path = /obj/item/ammo_box/magazine/m308/ext/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/rpdmag
+	name = "empty drum magazine (.308)"
+	id = "rpdmag"
+	materials = list(/datum/material/iron = 20000)
+	build_path = /obj/item/ammo_box/magazine/rpd/empty
+	category = list("initial", "Advanced Magazines")
+
+
 /datum/design/ammolathe/tommygunm45
 	name = "empty drum magazine (.45)"
 	id = "tommygunm45"
@@ -743,14 +758,35 @@
 	build_path = /obj/item/ammo_box/magazine/pps9mm/empty
 	category = list("initial", "Intermediate Magazines")
 
-//Tier 4 Ammo
-/datum/design/ammolathe/m2mm
-	name = "2mm Electromagnetic Magazine"
-	id = "2mm"
+/datum/design/ammolathe/m2mm_mag
+	name = "2mm Gauss Magazine (empty)"
+	id = "2mm_magazine"
 	materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
-	build_path = /obj/item/ammo_box/magazine/m2mm
+	build_path = /obj/item/ammo_box/magazine/m2mm/empty
+	category = list("initial", "Advanced Magazines")
+
+//Tier 4 Ammo
+//	/datum/design/ammolathe/m2mm
+//		name = "2mm Electromagnetic Magazine"
+//		id = "2mm"
+//		materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
+//		build_path = /obj/item/ammo_box/magazine/m2mm
+//		category = list("initial", "Advanced Ammo")
+//		autocalc_material_values = FALSE
+
+/datum/design/ammolathe/m2mm_rack
+	name = "2mm Gauss Clip"
+	id = "2mm_clip"
+	materials = list(/datum/material/iron = 12500, /datum/material/titanium = 7500)
+	build_path = /obj/item/ammo_box/gauss
 	category = list("initial", "Advanced Ammo")
-	autocalc_material_values = FALSE
+
+/datum/design/ammolathe/m2mm_rack_blender
+	name = "2mm Blender Clip"
+	id = "2mm_gauss_clip"
+	materials = list(/datum/material/iron = 12500, /datum/material/titanium = 7500)
+	build_path = /obj/item/ammo_box/gauss_blender
+	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/m473fmj
 	name = "4.73mm caseless ammo box"

@@ -87,20 +87,15 @@
 
 /obj/item/gun/magic/proc/charge_full_message()
 	audible_message("[src] lets out a satisfied hum and falls quiet.")
-	
+
 /obj/item/gun/magic/proc/charge_partial_message()
 	audible_message("[src] lets out a faint hum.")
 
 /obj/item/gun/magic/proc/charge_start_message()
-	audible_message("[src] begins setting out a soft hum.")
+	audible_message("[src] begins letting out a soft hum.")
 
 /obj/item/gun/magic/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	to_chat(user, span_warning("The [name] whizzles quietly."))
-
-/obj/item/gun/magic/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is twisting [src] above [user.p_their()] head, releasing a magical blast! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, fire_sound, 50, 1, -1)
-	return (FIRELOSS)
 
 /obj/item/gun/magic/vv_edit_var(var_name, var_value)
 	. = ..()

@@ -109,7 +109,7 @@
 		)
 
 /area/f13/building/tribal
-	name = "Tribal Building"
+	name = "Tribal Camp"
 	icon_state = "orange"
 	ambience_area = list(
 		/datum/looping_sound/ambient/general,
@@ -130,6 +130,29 @@
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
+		)
+
+/area/f13/building/tribal/caveofforever
+	name = "Tribal Cave of Forever"
+	icon_state = "orange"
+	has_gravity = 0
+	ambience_area = list(
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/building/sulphurtribe/caveofnothing,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/woodcreak
+	)
+
+/area/f13/building/tribal/atonement
+	name = "Tribal Building - Skull of Atonement"
+	icon_state = "orange"
+	ambience_area = list(
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/torch,
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/building/sulphurtribe/highwinds,
+		/datum/looping_sound/ambient/building/sulphurtribe/highwinds/gong,
 		)
 
 /area/f13/building/sewers

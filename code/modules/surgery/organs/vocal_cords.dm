@@ -1201,7 +1201,6 @@
 						objective = replacetext(lowertext(objective), "harm", "snuggle")
 						objective = replacetext(lowertext(objective), "decapitate", "headpat")
 						objective = replacetext(lowertext(objective), "strangle", "meow at")
-						objective = replacetext(lowertext(objective), "suicide", "self-love")
 						message_admins("[H] has been implanted by [user] with the objective [objective].")
 						log_reagent("FERMICHEM: [H] has been implanted by [user] with the objective [objective] via MKUltra.")
 						addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, span_notice("[(E.lewd?"Your [E.enthrallGender]":"[E.master]")] whispers you a new objective.")), 5)

@@ -93,7 +93,7 @@
 				to_chat(user, span_warning("[src] is at full capacity."))
 				break
 			else
-				if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
+				if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src, FALSE, S.loc))
 					if(stored_food[sanitize(S.name)])
 						stored_food[sanitize(S.name)]++
 					else

@@ -10,6 +10,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	can_charge = 0 // Can put in a weapon recharger. Temporary? Being done in regards to energy ammo changes; can't charge unrechargeable swappable cells.
 	var/select = 1
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -278,6 +279,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 15
 	icon_state = "rechargerpistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
@@ -396,10 +398,12 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
-	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder // Self charging, needs to be a cell you can't get. You can hotswap cells of guns with can_remove = 0
 	can_charge = 0
-	selfcharge = 1 //selfcharging adds 100 a shot
+	can_remove = 0 // If it self-charges, you can't remove it.
+	selfcharge = 1
+	selfchargerate = 15 // 15*2 seconds to refill the cell
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 	weapon_class = WEAPON_CLASS_SMALL
@@ -460,7 +464,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -474,7 +478,7 @@
 	name = "twin-shot RCW carbine"
 	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
 	icon_state = "export_cannon"
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot) // 1200 damage per cell vs Tesla Autoshock's 1196
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot)
 	init_firemodes = list(
 		/datum/firemode/burst/two/fastest
 	)
@@ -487,7 +491,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -625,6 +629,8 @@
 	zoom_factor = 1
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 15
+
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -785,7 +791,7 @@
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
-	desc = "A bleeding-edge, pre-war laser rifle. Extremely powerful, but eats MFCs like nothing else."
+	desc = "A bleeding-edge, pre-war laser rifle. It manages to make its battery last longer than the previous model while retaining all the power."
 	icon_state = "aer14"
 	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
@@ -834,6 +840,23 @@
 	)
 	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
 
+/obj/item/gun/energy/laser/stunrcw
+	name = "Disabler RCW"
+	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds. This one seems to be modified with special capacitors that make it non lethal!"
+	icon_state = "disablerrcw"
+	item_state = "rcw"
+	automatic = 1
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/stunrcw)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm300,
+		/datum/firemode/semi_auto/slow
+	)
+	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
+
 //Alien Blaster
 /obj/item/gun/energy/laser/plasma/pistol/alien
 	name = "alien blaster"
@@ -855,7 +878,7 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -875,7 +898,7 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_HUGE
 	var/obj/item/gun/energy/minigun/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.

@@ -7,7 +7,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	attack_speed = CLICK_CD_MELEE * 1.15 //9.2
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	max_integrity = 200
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
@@ -62,10 +62,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
-/obj/item/twohanded/legionaxe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
-
 /obj/item/twohanded/legionaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
@@ -105,10 +101,6 @@
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-
-/obj/item/twohanded/fireaxe/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
 
 /obj/item/twohanded/fireaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -226,15 +218,6 @@
 	. = ..()
 	if(explosive)
 		. += "spearbomb_overlay"
-
-/obj/item/twohanded/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(explosive) //Citadel Edit removes qdel and explosive.forcemove(AM)
-		user.say("[war_cry]", forced="spear warcry")
-		explosive.prime()
-		user.gib()
-		return BRUTELOSS
-	return BRUTELOSS
 
 /obj/item/twohanded/spear/examine(mob/user)
 	. = ..()
@@ -358,7 +341,7 @@
 	wound_bonus = 5
 	bare_wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT + SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT + SLOT_BACK
 	force = 20
 	force_unwielded = 25
 	force_wielded = 30
@@ -530,7 +513,7 @@
 	else if(istype(A, /turf/closed))
 		playsound(loc, hitsound, 70, TRUE)
 
-// Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything
+// Proton axe			Keywords: Damage 28/55 fire axe but with a twist, if this works. I've either given it a cool gimmick, or broken everything //Replaced cool gimmick with faster attack speed
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -541,20 +524,20 @@
 	icon_state_on = "protonaxe_on"
 	w_class = WEIGHT_CLASS_BULKY
 	w_class_on = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	slot_flags_on = null
 	force = 28
 	force_on = 55
 	throwforce = 15
 	throwforce_on = 30
-	attack_speed = CLICK_CD_MELEE * 1.25
+	attack_speed = CLICK_CD_MELEE
 	var/emp_radius = 1
 
-/obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!active)
-		return
-	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
+///obj/item/melee/transforming/energy/axe/protonaxe/afterattack(atom/A, mob/living/user, proximity)   //As it turns out, everything about this cool gimmick is broken.
+//	. = ..()
+//	if(!active)
+//		return
+//	empulse_using_range(A, emp_radius, log=0) //fox go a (A)
 
 //dan kelly is a nerd NO YOU ARE!!!
 
@@ -838,18 +821,6 @@
 		var/obj/machinery/door/D = A
 		D.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration, attacked_by = user)
 
-
-/obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)
-	if(on)
-		user.visible_message(span_suicide("[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
-		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-		if(myhead)
-			myhead.dismember()
-	else
-		user.visible_message(span_suicide("[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
-	return(BRUTELOSS)
 
 //autoaxe		Keywords: Damage 10/29, 2x attackspeed, Wound Bonus, structure bonus damage, 0.3 AP
 /obj/item/twohanded/steelsaw/autoaxe

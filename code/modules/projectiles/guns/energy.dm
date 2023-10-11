@@ -38,6 +38,7 @@
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 	var/charge_cost_multiplier = 1
+	var/selfchargerate = 0 // set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -108,7 +109,7 @@
 			var/mob/living/silicon/robot/R = owner
 			if(!R.cell?.use(100))
 				return
-		cell.give(100)
+		cell.give(cell.maxcharge / max(selfchargerate, 0.01))
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_icon()
@@ -283,27 +284,6 @@
 /obj/item/gun/energy/proc/get_charge_ratio()
 	return can_shoot() ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
-
-/obj/item/gun/energy/suicide_act(mob/living/user)
-	if (istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
-		sleep(25)
-		if(user.is_holding(src))
-			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
-			playsound(loc, fire_sound, 50, 1, -1)
-			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
-			var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-			cell.use(shot.e_cost * get_charge_cost_mult())
-			update_icon()
-			return(FIRELOSS)
-		else
-			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
-			return(OXYLOSS)
-	else
-		user.visible_message("<span class='suicide'>[user] is pretending to melt [user.p_their()] face off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
-		playsound(src, "gun_dry_fire", 30, 1)
-		return (OXYLOSS)
-
 
 /obj/item/gun/energy/vv_edit_var(var_name, var_value)
 	switch(var_name)

@@ -17,7 +17,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	rad_flags = RAD_NO_CONTAMINATE
 	custom_materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 
@@ -87,7 +87,7 @@
 		if(RAD_LEVEL_HIGH + 1 to RAD_LEVEL_VERY_HIGH)
 			. += span_danger("Ambient radiation levels highly above average.")
 		if(RAD_LEVEL_VERY_HIGH + 1 to RAD_LEVEL_CRITICAL)
-			. += span_suicide("Ambient radiation levels nearing critical level.")
+			. += span_ghostalert("Ambient radiation levels nearing critical level.")
 		if(RAD_LEVEL_CRITICAL + 1 to INFINITY)
 			. += span_boldannounce("Ambient radiation levels above critical level!")
 

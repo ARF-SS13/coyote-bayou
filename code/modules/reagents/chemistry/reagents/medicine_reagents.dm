@@ -23,9 +23,9 @@
 
 /datum/reagent/medicine/leporazine/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > BODYTEMP_NORMAL)
-		M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+		M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT * effect_mult, BODYTEMP_NORMAL)
 	else if(M.bodytemperature < (BODYTEMP_NORMAL + 1))
-		M.adjust_bodytemperature(40 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+		M.adjust_bodytemperature(40 * TEMPERATURE_DAMAGE_COEFFICIENT * effect_mult, 0, BODYTEMP_NORMAL)
 	..()
 
 /datum/reagent/medicine/adminordrazine //An OP chemical for admins
@@ -149,13 +149,13 @@
 
 /datum/reagent/medicine/synaptizine/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(M.drowsyness-5, 0)
-	M.AdjustAllImmobility(-20, 0)
-	M.AdjustUnconscious(-20, 0)
+	M.AdjustAllImmobility(-20 * effect_mult, 0)
+	M.AdjustUnconscious(-20 * effect_mult, 0)
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
 		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
 	M.hallucination = max(0, M.hallucination - 10)
 	if(prob(30))
-		M.adjustToxLoss(1, 0)
+		M.adjustToxLoss(1 * effect_mult, 0)
 		. = 1
 	..()
 
@@ -169,12 +169,12 @@
 /datum/reagent/medicine/synaphydramine/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(M.drowsyness-5, 0)
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
-		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
+		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5 * effect_mult)
 	if(holder.has_reagent(/datum/reagent/toxin/histamine))
-		holder.remove_reagent(/datum/reagent/toxin/histamine, 5)
+		holder.remove_reagent(/datum/reagent/toxin/histamine, 5 * effect_mult)
 	M.hallucination = max(0, M.hallucination - 10)
 	if(prob(30))
-		M.adjustToxLoss(1, 0)
+		M.adjustToxLoss(1 * effect_mult, 0)
 		. = 1
 	..()
 
@@ -200,7 +200,7 @@
 	synth_metabolism_use_human = TRUE
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
-	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
+	var/power = (-0.00003 * (M.bodytemperature ** 2) + 3) * effect_mult
 	if(M.bodytemperature < T0C)
 		M.adjustOxyLoss(-3 * power, 0)
 		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
@@ -227,7 +227,7 @@
 
 /datum/reagent/medicine/clonexadone/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature < T0C)
-		M.adjustCloneLoss(0.00006 * (M.bodytemperature ** 2) - 6, 0)
+		M.adjustCloneLoss(2 * effect_mult, 0)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 		. = 1
 	metabolization_rate = REAGENTS_METABOLISM * (0.000015 * (M.bodytemperature ** 2) + 0.75)
@@ -255,6 +255,7 @@
 				power = 5
 		if(M.on_fire)
 			power *= 2
+		power *= effect_mult
 
 		M.adjustOxyLoss(-2 * power, 0)
 		M.adjustBruteLoss(-power, 0, include_roboparts = TRUE)
@@ -287,9 +288,9 @@
 	. = 1
 
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M)
-	M.adjustToxLoss(1, 0)
-	M.Dizzy(5)
-	M.Jitter(5)
+	M.adjustToxLoss(1 * effect_mult, 0)
+	M.Dizzy(5 * effect_mult)
+	M.Jitter(5 * effect_mult)
 	..()
 	. = 1
 
@@ -336,11 +337,11 @@
 				M.emote("shiver")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 				return
-			M.adjustToxLoss(0.5*reac_volume)
+			M.adjustToxLoss(0.5*reac_volume * effect_mult)
 			if(show_message)
 				to_chat(M, span_warning("You don't feel so good..."))
 		else if(M.getFireLoss())
-			M.adjustFireLoss(-reac_volume)
+			M.adjustFireLoss(-reac_volume * effect_mult)
 			if(show_message)
 				to_chat(M, span_danger("You feel your burns healing! It stings like hell!"))
 			M.emote("scream")
@@ -407,11 +408,11 @@
 				M.emote("shiver")
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 				return
-			M.adjustToxLoss(0.5*reac_volume)
+			M.adjustToxLoss(0.5*reac_volume * effect_mult)
 			if(show_message)
 				to_chat(M, span_warning("You don't feel so good..."))
 		else if(M.getBruteLoss())
-			M.adjustBruteLoss(-reac_volume)
+			M.adjustBruteLoss(-reac_volume * effect_mult)
 			if(show_message)
 				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
 			M.emote("scream")
@@ -467,7 +468,7 @@
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
 		M.blood_volume = new_blood_level + extra_regen*/
-	if(prob(33))
+	if(prob(33 * effect_mult))
 		M.adjustBruteLoss(-0.25*REM, 0)
 		M.adjustFireLoss(-0.25*REM, 0)
 		. = TRUE
@@ -508,14 +509,14 @@
 /datum/reagent/medicine/mine_salve/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjust_nutrition(-5)
+			M.adjust_nutrition(-5 * effect_mult)
 			if(show_message)
 				to_chat(M, span_warning("Your stomach feels empty and cramps!"))
 		else
 			var/mob/living/carbon/C = M
 			for(var/s in C.surgeries)
 				var/datum/surgery/S = s
-				S.success_multiplier = max(0.1, S.success_multiplier)
+				S.success_multiplier = max(0.1 * effect_mult, S.success_multiplier)
 				// +10% success propability on each step, useful while operating in less-than-perfect conditions
 
 			if(show_message)
@@ -551,15 +552,15 @@
 		else if(method == INJECT)
 			return
 		else if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
-			M.adjustFireLoss(-1 * reac_volume, include_roboparts = isrobotic(M))
+			M.adjustBruteLoss(-1 * reac_volume * effect_mult, include_roboparts = isrobotic(M))
+			M.adjustFireLoss(-1 * reac_volume * effect_mult, include_roboparts = isrobotic(M))
 			for(var/i in C.all_wounds)
 				var/datum/wound/iter_wound = i
-				iter_wound.on_synthflesh(reac_volume)
+				iter_wound.on_synthflesh(reac_volume * effect_mult)
 			if(show_message)
 				to_chat(M, span_danger("You feel your burns and bruises healing! It stings like hell!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
-			var/vol = reac_volume + M.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh)
+			var/vol = (reac_volume * effect_mult) + M.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh)
 			//Has to be at less than THRESHOLD_UNHUSK burn damage and have 100 synthflesh before unhusking. Corpses dont metabolize.
 			if(HAS_TRAIT_FROM(M, TRAIT_HUSK, "burn") && M.getFireLoss() < THRESHOLD_UNHUSK && (vol > 100))
 				M.cure_husk("burn")
@@ -586,7 +587,7 @@
 	for(var/A in M.reagents.reagent_list)
 		var/datum/reagent/R = A
 		if(R != src)
-			M.reagents.remove_reagent(R.type,1)
+			M.reagents.remove_reagent(R.type,1 * effect_mult)
 	..()
 
 /datum/reagent/medicine/omnizine
@@ -639,7 +640,7 @@
 	for(var/A in M.reagents.reagent_list)
 		var/datum/reagent/R = A
 		if(R != src)
-			M.reagents.remove_reagent(R.type,2.5)
+			M.reagents.remove_reagent(R.type,2.5 * effect_mult)
 	if(M.health > 20)
 		M.adjustToxLoss(2.5*REM, 0)
 		. = 1
@@ -656,7 +657,7 @@
 
 /datum/reagent/medicine/potass_iodide/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 8)
+		M.radiation -= min(M.radiation, 8 * effect_mult)
 	..()
 
 /datum/reagent/medicine/prussian_blue
@@ -672,7 +673,7 @@
 
 /datum/reagent/medicine/prussian_blue/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 20)
+		M.radiation -= min(M.radiation, 20 * effect_mult)
 	..()
 
 /datum/reagent/medicine/pen_acid
@@ -690,12 +691,12 @@
 /datum/reagent/medicine/pen_acid/on_mob_life(mob/living/carbon/M)
 	//M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
 	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 8)
+		M.radiation -= min(M.radiation, 8 * effect_mult)
 	M.adjustToxLoss(-2*REM, 0, healtoxinlover)
 	for(var/A in M.reagents.reagent_list)
 		var/datum/reagent/R = A
 		if(R != src)
-			M.reagents.remove_reagent(R.type,2)
+			M.reagents.remove_reagent(R.type,2 * effect_mult)
 	..()
 	. = 1
 
@@ -744,7 +745,7 @@
 /datum/reagent/medicine/salbutamol/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
 	if(M.losebreath >= 4)
-		M.losebreath -= 2
+		M.losebreath -= 2 * effect_mult
 	..()
 	. = 1
 
@@ -759,7 +760,7 @@
 
 /datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
 	M.adjustOxyLoss(-12*REM, 0)
-	M.silent = max(M.silent, 5)
+	M.silent = max(M.silent, 5 * effect_mult)
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REM, 0)
 		M.adjustFireLoss(-0.5*REM, 0)
@@ -777,11 +778,11 @@
 	pH = 12
 
 /datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M)
-	M.AdjustAllImmobility(-20, FALSE)
-	M.AdjustUnconscious(-20, FALSE)
+	M.AdjustAllImmobility(-20 * effect_mult, FALSE)
+	M.AdjustUnconscious(-20 * effect_mult, FALSE)
 	M.adjustStaminaLoss(-4.5*REM, FALSE)
 	if(prob(50))
-		M.confused = max(M.confused, 1)
+		M.confused = max(M.confused, 1 * effect_mult)
 	..()
 	return TRUE
 
@@ -831,9 +832,9 @@
 
 /datum/reagent/medicine/diphenhydramine/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		M.drowsyness += 1
-	M.jitteriness -= 1
-	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3)
+		M.drowsyness += 1 * effect_mult
+	M.jitteriness -= 1 * effect_mult
+	M.reagents.remove_reagent(/datum/reagent/toxin/histamine,3 * effect_mult)
 	..()
 
 /datum/reagent/medicine/morphine
@@ -859,9 +860,9 @@
 		if(11)
 			to_chat(M, span_warning("You start to feel tired...") )
 		if(12 to 24)
-			M.drowsyness += 1
+			M.drowsyness += 1 * effect_mult
 		if(24 to INFINITY)
-			M.Sleeping(40, 0)
+			M.Sleeping(40 * effect_mult, 0)
 			. = 1
 	..()
 
@@ -918,18 +919,18 @@
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
-	eyes.applyOrganDamage(-2)
+	eyes.applyOrganDamage(-2 * effect_mult)
 	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
-		if(prob(20))
+		if(prob(20 * effect_mult))
 			to_chat(M, span_warning("Your vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
-			M.blur_eyes(35)
+			M.blur_eyes(35 * effect_mult)
 
 	else if(HAS_TRAIT_FROM(M, TRAIT_NEARSIGHT, EYE_DAMAGE))
 		to_chat(M, span_warning("The blackness in your peripheral vision fades."))
 		M.cure_nearsighted(EYE_DAMAGE)
-		M.blur_eyes(10)
+		M.blur_eyes(10 * effect_mult)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
 		M.set_blurriness(0)
@@ -953,9 +954,9 @@
 		M.adjustOxyLoss(-5*REM, 0)
 		. = 1
 	M.losebreath = 0
-	if(prob(20))
-		M.Dizzy(5)
-		M.Jitter(5)
+	if(prob(20 * effect_mult))
+		M.Dizzy(5 * effect_mult)
+		M.Jitter(5 * effect_mult)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M)
@@ -980,16 +981,16 @@
 		M.adjustBruteLoss(-0.5*REM, 0)
 		M.adjustFireLoss(-0.5*REM, 0)
 	if(M.oxyloss > 35)
-		M.setOxyLoss(35, 0)
+		M.setOxyLoss(35 * effect_mult, 0)
 	if(M.losebreath >= 4)
-		M.losebreath -= 2
+		M.losebreath -= 2 * effect_mult
 	if(M.losebreath < 0)
 		M.losebreath = 0
 	M.adjustStaminaLoss(-0.5*REM, 0)
 	. = 1
-	if(prob(20))
-		M.AdjustAllImmobility(-20, 0)
-		M.AdjustUnconscious(-20, 0)
+	if(prob(20 * effect_mult))
+		M.AdjustAllImmobility(-20 * effect_mult, 0)
+		M.AdjustUnconscious(-20 * effect_mult, 0)
 	..()
 
 /datum/reagent/medicine/epinephrine/overdose_process(mob/living/M)
@@ -1013,7 +1014,7 @@
 
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
-		if(M.suiciding || M.hellbound) //they are never coming back
+		if(M.hellbound) //they are never coming back
 			M.visible_message(span_warning("[M]'s body does not react..."))
 			return
 		if(M.getBruteLoss() >= 100 || M.getFireLoss() >= 100 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
@@ -1086,7 +1087,7 @@
 	var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B || (!(B.organ_flags & ORGAN_FAILING)))
 		return
-	B.applyOrganDamage(-20)
+	B.applyOrganDamage(-20 * effect_mult)
 	if(prob(80))
 		B.gain_trauma_type(BRAIN_TRAUMA_MILD)
 	else if(prob(50))
@@ -1097,7 +1098,7 @@
 
 /datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
-		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
+		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5 * effect_mult)
 	if(prob(15))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
@@ -1135,7 +1136,7 @@
 	M.adjustToxLoss(-0.2*REM, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.drunkenness = max(H.drunkenness - 10, 0)
+		H.drunkenness = max(H.drunkenness - (10 * effect_mult), 0)
 	..()
 	. = 1
 
@@ -1164,8 +1165,8 @@
 		M.adjustToxLoss(-1*REM, FALSE)
 		M.adjustBruteLoss(-1*REM, FALSE)
 		M.adjustFireLoss(-1*REM, FALSE)
-	M.AdjustAllImmobility(-60, FALSE)
-	M.AdjustUnconscious(-60, FALSE)
+	M.AdjustAllImmobility(-60 * effect_mult, FALSE)
+	M.AdjustUnconscious(-60 * effect_mult, FALSE)
 	M.adjustStaminaLoss(-20*REM, FALSE)
 	..()
 	. = 1
@@ -1188,9 +1189,9 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M)
-	if(M.AdjustSleeping(-20, FALSE))
+	if(M.AdjustSleeping(-20 * effect_mult, FALSE))
 		. = 1
-	M.reagents.remove_reagent(/datum/reagent/consumable/sugar, 3)
+	M.reagents.remove_reagent(/datum/reagent/consumable/sugar, 3 * effect_mult)
 	..()
 
 //Trek Chems, used primarily by medibots. Only heals a specific damage type, but is very efficient.
@@ -1261,7 +1262,7 @@
 /datum/reagent/medicine/antitoxin/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, FALSE)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,1)
+		M.reagents.remove_reagent(R.type,1 * effect_mult)
 	..()
 	. = 1
 
@@ -1284,7 +1285,7 @@
 
 /datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
 	if(M.losebreath >= 5)
-		M.losebreath -= 5
+		M.losebreath -= 5 * effect_mult
 	..()
 
 /datum/reagent/medicine/tricordrazine
@@ -1341,7 +1342,7 @@
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, FALSE, include_roboparts = TRUE) //A ton of healing - this is a 50 telecrystal investment.
 	M.adjustFireLoss(-5*REM, FALSE, include_roboparts = TRUE)
-	M.adjustOxyLoss(-15, FALSE)
+	M.adjustOxyLoss(-15 * effect_mult, FALSE)
 	M.adjustToxLoss(-5*REM, FALSE)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
 	M.adjustCloneLoss(-3*REM, FALSE)
@@ -1437,7 +1438,7 @@
 	. = 1
 
 /datum/reagent/medicine/earthsblood/overdose_process(mob/living/M)
-	M.hallucination = min(max(0, M.hallucination + 5), 60)
+	M.hallucination = min(max(0, M.hallucination + 5*REM), 60)
 	M.adjustToxLoss(8 * REM, FALSE, TRUE) //Hurts TOXINLOVERS
 	..()
 	. = 1
@@ -1453,12 +1454,12 @@
 
 /datum/reagent/medicine/haloperidol/on_mob_life(mob/living/carbon/M)
 	for(var/datum/reagent/drug/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type,5)
+		M.reagents.remove_reagent(R.type,5*REM)
 	M.drowsyness += 2
 	if(M.jitteriness >= 3)
-		M.jitteriness -= 3
+		M.jitteriness -= 3*REM
 	if (M.hallucination >= 5)
-		M.hallucination -= 5
+		M.hallucination -= 5*REM
 	if(prob(20))
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1*REM, 50)
 	M.adjustStaminaLoss(2.5*REM, 0)
@@ -1475,7 +1476,7 @@
 	value = REAGENT_VALUE_AMAZING
 
 /datum/reagent/medicine/lavaland_extract/on_mob_life(mob/living/carbon/M)
-	M.heal_bodypart_damage(5,5)
+	M.heal_bodypart_damage(5*REM,5*REM)
 	..()
 	return TRUE
 
@@ -1504,15 +1505,15 @@
 	..()
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/M as mob)
-	M.AdjustUnconscious(-20, 0)
-	M.AdjustAllImmobility(-20, 0)
-	M.AdjustSleeping(-20, 0)
-	M.adjustStaminaLoss(-30, 0)
+	M.AdjustUnconscious(-20*REM, 0)
+	M.AdjustAllImmobility(-20*REM, 0)
+	M.AdjustSleeping(-20*REM, 0)
+	M.adjustStaminaLoss(-30*REM, 0)
 	..()
 	return TRUE
 
 /datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/M as mob)
-	M.adjustToxLoss(5, 0) //let's make this mildly more toxic because of the stamina buff
+	M.adjustToxLoss(5*REM, 0) //let's make this mildly more toxic because of the stamina buff
 	..()
 	return TRUE
 
@@ -1533,7 +1534,7 @@
 	..()
 
 /datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(2, 0)
+	M.adjustToxLoss(2*REM, 0)
 	..()
 	return TRUE
 
@@ -1592,8 +1593,8 @@
 /datum/reagent/medicine/modafinil/on_mob_life(mob/living/carbon/M)
 	if(!overdosed) // We do not want any effects on OD
 		overdose_threshold = overdose_threshold + rand(-10,10)/10 // for extra fun
-		M.AdjustAllImmobility(-5, 0)
-		M.AdjustUnconscious(-5, 0)
+		M.AdjustAllImmobility(-5*REM, 0)
+		M.AdjustUnconscious(-5*REM, 0)
 		M.adjustStaminaLoss(-1*REM, 0)
 		M.Jitter(1)
 		metabolization_rate = 0.01 * REAGENTS_METABOLISM * rand(5,20) // randomizes metabolism between 0.02 and 0.08 per tick
@@ -1657,13 +1658,13 @@
 	..()
 
 /datum/reagent/medicine/psicodine/on_mob_life(mob/living/carbon/M)
-	M.jitteriness = max(0, M.jitteriness-6)
-	M.dizziness = max(0, M.dizziness-6)
-	M.confused = max(0, M.confused-6)
-	M.disgust = max(0, M.disgust-6)
+	M.jitteriness = max(0, M.jitteriness-6*REM)
+	M.dizziness = max(0, M.dizziness-6*REM)
+	M.confused = max(0, M.confused-6*REM)
+	M.disgust = max(0, M.disgust-6*REM)
 	var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 	if(mood.sanity <= SANITY_NEUTRAL) // only take effect if in negative sanity and then...
-		mood.setSanity(min(mood.sanity+5, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
+		mood.setSanity(min((mood.sanity+5)*REM, SANITY_NEUTRAL)) // set minimum to prevent unwanted spiking over neutral
 	..()
 	. = 1
 
@@ -1682,7 +1683,7 @@
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/medicine/silibinin/on_mob_life(mob/living/carbon/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2)//Add a chance to cure liver trauma once implemented.
+	M.adjustOrganLoss(ORGAN_SLOT_LIVER, -2*REM)//Add a chance to cure liver trauma once implemented.
 	..()
 	. = 1
 
@@ -1697,8 +1698,8 @@
 	value = REAGENT_VALUE_RARE
 
 /datum/reagent/medicine/polypyr/on_mob_life(mob/living/carbon/M) //I wanted a collection of small positive effects, this is as hard to obtain as coniine after all.
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25)
-	M.adjustBruteLoss(-0.35, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25*REM)
+	M.adjustBruteLoss(-0.35*REM, 0)
 	..()
 	. = 1
 
@@ -1711,7 +1712,7 @@
 			H.update_hair()
 
 /datum/reagent/medicine/polypyr/overdose_process(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5)
+	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5*REM)
 	..()
 	. = 1
 
@@ -1922,4 +1923,353 @@
 		if(10)
 			to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
+
+/datum/reagent/medicine/critmed
+	name = "UNIDENTIFIED SUBSTANCE ERROR: 0x000000"
+	description = "Unidentifiable substance - 0x000000"
+	reagent_state = LIQUID
+	color = "#000000"
+	metabolization_rate = 0.1 * REAGENTS_METABOLISM
+	overdose_threshold = 2000
+	pH = 7.45
+	value = REAGENT_VALUE_COMMON
+	synth_metabolism_use_human = TRUE
+	ghoulfriendly = TRUE
+	var/thresholded
+	var/health_threshold = 5
+	var/bruteheal = 0
+	var/burnheal = 0
+	var/toxheal = 0
+	var/oxyheal = 0
+	var/radheal = 0
+	var/blood_regen = 0
+
+/datum/reagent/medicine/critmed/on_mob_life(mob/living/carbon/M)
+	if(check_threshold(M))
+		thresholdify()
+	M.adjustBruteLoss(-bruteheal)
+	M.adjustFireLoss(-burnheal)
+	M.adjustToxLoss(-toxheal)
+	M.adjustOxyLoss(-oxyheal)
+	M.radiation = max(M.radiation - radheal, 0)
+	M.blood_volume = min(M.blood_volume + blood_regen, BLOOD_VOLUME_NORMAL)
+	. = 1
+	..()
+
+/datum/reagent/medicine/critmed/proc/check_threshold(mob/living/carbon/M)
+	if(M.health < health_threshold || thresholded)
+		return
+	return TRUE
+
+/datum/reagent/medicine/critmed/proc/thresholdify(mob/living/carbon/M)
+	thresholded = TRUE
+	metabolization_rate = 5 * REAGENTS_METABOLISM
+	bruteheal *= 0.1
+	burnheal *= 0.1
+	toxheal *= 0.1
+	oxyheal *= 0.1
+	radheal *= 0.1
+	blood_regen *= 0.1
+
+/datum/reagent/medicine/critmed/all_damage
+	name = "UNKNOWN SUBSTANCE ERROR: 0x99990D"
+	description = "Unidentifiable substance - 0x99990D"
+	color = "#99990D"
+	health_threshold = -70
+	bruteheal = 10
+	burnheal = 10
+	toxheal = 10
+	oxyheal = 10
+
+/datum/reagent/medicine/critmed/all_damage/toxin_lover
+	name = "UNKNOWN SUBSTANCE ERROR: 0x99990F"
+	description = "Unidentifiable substance - 0x99990F"
+	color = "#99990F"
+	toxheal = -10
+
+/datum/reagent/medicine/critmed/oxy
+	name = "UNKNOWN SUBSTANCE ERROR: 0x1212FF"
+	description = "Unidentifiable substance - 0x1212FF"
+	color = "#1212FF"
+	oxyheal = 10
+
+/datum/reagent/medicine/critmed/brute
+	name = "UNKNOWN SUBSTANCE ERROR: 0x037037"
+	description = "Unidentifiable substance - 0x037037"
+	color = "#037037"
+	bruteheal = 2
+
+/datum/reagent/medicine/critmed/burn
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFDED5E"
+	description = "Unidentifiable substance - 0xFDED5E"
+	color = "#FDED5E"
+	burnheal = 2
+
+/datum/reagent/medicine/critmed/toxin
+	name = "UNKNOWN SUBSTANCE ERROR: 0x121212"
+	description = "Unidentifiable substance - 0x121212"
+	color = "#121212"
+	toxheal = 2
+
+/datum/reagent/medicine/critmed/toxin_lover
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFAE123"
+	description = "Unidentifiable substance - 0xFAE123"
+	color = "#FAE123"
+	toxheal = -2
+
+/datum/reagent/medicine/critmed/radheal
+	name = "UNKNOWN SUBSTANCE ERROR: 0x00FF00"
+	description = "Unidentifiable substance - 0x00FF00"
+	color = "#00FF00"
+	radheal = 10
+
+/datum/reagent/medicine/critmed/blood
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0000"
+	description = "Unidentifiable substance - 0xFF0000"
+	color = "#FF0000"
+	var/blood_threshold = BLOOD_VOLUME_SYMPTOMS_DEBILITATING
+	blood_regen = 5
+	effective_blood_multiplier = 15
+	effective_blood_max = 1000
+
+/datum/reagent/medicine/critmed/blood/stabilizer
+	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0E00"
+	description = "Unidentifiable substance - 0xFF0E00"
+	color = "#FF0E00"
+	blood_threshold = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+	blood_regen = 5
+	bleed_mult = 0.05
+	effective_blood_multiplier = 15
+	effective_blood_max = 1000
+
+/datum/reagent/medicine/critmed/blood/check_threshold(mob/living/carbon/M)
+	if(M.get_blood(TRUE) > blood_threshold || thresholded)
+		return
+	return TRUE
+
+/datum/reagent/medicine/critmed/runfast
+	name = "UNKNOWN SUBSTANCE ERROR: 0xE62100"
+	description = "Unidentifiable substance - 0xE62100"
+	color = "#E62100"
+	health_threshold = 25
+
+/datum/reagent/medicine/critmed/runfast/on_mob_metabolize(mob/living/M)
+	. = ..()
+	M.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+
+/datum/reagent/medicine/critmed/runfast/on_mob_end_metabolize(mob/living/M)
+	. = ..()
+	M.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
+
+/// Slow-decaying healing 'med' as a result of listening to good music
+/// Has better effects if it builds up in your system cus of listening longer
+/datum/reagent/medicine/music
+	name = "Toe Tappinol"
+	description = "The liquid one squirts when they're feeling the beat. Typically a good thing."
+	color = "#E62100"
+	var/list/musics = list()
+	//metabolization_rate = 2 * REAGENTS_METABOLISM // long, lingering heals that ramp up as you listen longer
+	synth_metabolism_use_human = TRUE
+	ghoulfriendly = TRUE
+	bleed_mult = 1
+	var/tapCD
+	var/max_effect_at = 50 // how many units of music you need to listen to before you get the full effect
+
+/datum/reagent/medicine/music/on_new(list/data = list("songer" = "Toe Tappin Trichamonas", "kind" = "pathogenic poka"))
+	. = ..()
+	update_musics(data)
+
+/datum/reagent/medicine/music/on_merge(list/data = list("songer" = "Toe Tappin Trichamonas", "kind" = "pathogenic poka"), amount, mob/living/carbon/M, purity)
+	. = ..()
+	update_musics(data)
+
+/datum/reagent/medicine/music/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	if(!M.can_hear() && prob(5))
+		to_chat(M, span_alert("Boy you wish you could hear that. Probably sounds nice. Too bad you can't!"))
+		return
+	var/songpower = min(round(volume / max_effect_at, 0.25), 1)
+	prune_music()
+	if(!LAZYLEN(musics))
+		volume = 0 // turn down for what? (nothing)
+		return
+	var/songstax = max(song_stacks(M), 0.1)
+	songpower = clamp(songpower * songstax, 0, 5)
+	var/list/hurts = list()
+	if(M.getBruteLoss())
+		hurts += "brute"
+	if(M.getFireLoss())
+		hurts += "burn"
+	if(M.getToxLoss())
+		hurts += "tox"
+	if(M.oxyloss)
+		hurts += "oxy"
+	if(M.radiation)
+		hurts += "rad"
+	var/list/hurt_parts = M.get_wounded_bodyparts()
+	if(LAZYLEN(hurt_parts))
+		hurts += "wound"
+	if(!LAZYLEN(hurts))
+		tap_toes(M, songpower, FALSE)
+		return
+	var/winner = pick(hurts)
+	switch(winner)
+		if("brute")
+			M.adjustBruteLoss(-0.5 * songpower, TRUE)
+		if("burn")
+			M.adjustFireLoss(-0.5 * songpower, TRUE)
+		if("tox")
+			M.adjustToxLoss(-0.5 * songpower, TRUE, TRUE)
+		if("oxy")
+			M.adjustOxyLoss(-5 * songpower, TRUE)
+		if("rad")
+			M.radiation = max(M.radiation - 1 * songpower, 0)
+		if("wound")
+			bleed_mult = max(bleed_mult - (0.2 * songpower), 0)
+	tap_toes(M, songpower, TRUE)
+
+/datum/reagent/medicine/music/proc/tap_toes(mob/living/carbon/C, mult, healed)
+	if(!iscarbon(C))
+		return
+	if(prob(5))
+		make_a_sparkle(C)
+	if(!COOLDOWN_FINISHED(src, tapCD))
+		return
+	COOLDOWN_START(src, tapCD, 1 MINUTES)
+	var/stringload = musics2str()
+	var/makesufeel = ""
+	switch(mult)
+		if(-INFINITY to 0)
+			C.visible_message(
+				span_notice("[C] nods along to [stringload]."),
+				span_notice("You nod along to [stringload].[makesufeel]"),
+			)
+		if(0.01 to 0.25)
+			if(healed)
+				makesufeel = " It makes you feel a bit better."
+			C.visible_message(
+				span_notice("[C] nods along to [stringload]."),
+				span_notice("You nod along to [stringload].[makesufeel]"),
+			)
+		if(0.25 to 0.5)
+			if(healed)
+				makesufeel = " It makes you feel a little better."
+			C.visible_message(
+				span_notice("[C] bobs along to [stringload]."),
+				span_notice("You bob along to [stringload].[makesufeel]"),
+			)
+		if(0.5 to 0.75)
+			if(healed)
+				makesufeel = " It makes you feel somewhat better."
+			C.visible_message(
+				span_notice("[C] sways along to [stringload]."),
+				span_notice("You sway along to [stringload].[makesufeel]"),
+			)
+		if(0.75 to 1)
+			if(healed)
+				makesufeel = " It makes you feel better."
+			C.visible_message(
+				span_notice("[C] dances along to [stringload]."),
+				span_notice("You dance along to [stringload].[makesufeel]"),
+			)
+		if(1 to 2)
+			if(healed)
+				makesufeel = " It makes you feel more than a little bit better."
+			C.visible_message(
+				span_notice("[C] jams along to [stringload]."),
+				span_notice("You jam along to [stringload].[makesufeel]"),
+			)
+			if(prob(35))
+				C.emote("airguitar")
+		if(2 to INFINITY)
+			if(healed)
+				makesufeel = " It makes you feel a much better."
+			C.visible_message(
+				span_notice("[C] rocks out to [stringload]."),
+				span_notice("You rock out to [stringload].[makesufeel]"),
+			)
+			if(prob(35))
+				C.emote("airguitar")
+
+/datum/reagent/medicine/music/proc/musics2str()
+	if(!islist(musics))
+		return "Coderbus Carl's Runtime Rag"
+	if(LAZYLEN(musics) == 1)
+		for(var/m in musics)
+			return "[m]'s [LAZYACCESS(musics[m], "kind")]"
+	if(LAZYLEN(musics) == 2)
+		var/list/duetters = list()
+		var/list/mashup = list()
+		for(var/m in musics)
+			duetters += m
+			mashup += LAZYACCESS(musics[m], "kind")
+		var/d_string = "[LAZYACCESS(duetters, 1) || "Staggerin' D"] and [LAZYACCESS(duetters, 2) || "Simple Animal"]'s mashup of "
+		var/m_string = "[LAZYACCESS(mashup, 1) || "StyleBaby2000"] and [LAZYACCESS(mashup, 2) || "Pain Pain Rain Drain"]"
+		return d_string + m_string
+	if(LAZYLEN(musics) > 2)
+		var/rockstar = "Fancy Frank"
+		var/list/backups = list()
+		var/rockstar_song = "Fancy Frank's Disco Vomit Nightmare"
+		for(var/m in musics)
+			if(rockstar == "Fancy Frank")
+				rockstar = m
+				rockstar_song = LAZYACCESS(musics[m], "kind")
+			else
+				backups += m
+		return "[rockstar]'s [rockstar_song], featuring [english_list(backups)]"
+	
+/datum/reagent/medicine/music/proc/update_musics(list/dat)
+	if(!islist(musics))
+		musics = list()
+	if(!islist(dat))
+		return
+	var/songer = LAZYACCESS(dat, "songer")
+	var/kind = LAZYACCESS(dat, "kind")
+	var/when = world.time
+	if(!islist(musics[songer]))
+		musics[songer] = list()
+	musics[songer]["last_heard"] = when
+	musics[songer]["kind"] = kind
+
+/datum/reagent/medicine/music/proc/prune_music()
+	if(!islist(musics))
+		return
+	for(var/songer in musics)
+		if(LAZYACCESS(musics[songer], "last_heard") - world.time > 10 MINUTES)
+			musics -= songer
+
+/datum/reagent/medicine/music/proc/song_stacks(mob/living/carbon/M)
+	if(!islist(musics) || !iscarbon(M))
+		return 0.1
+	var/stacks = 0
+	for(var/songer in musics)
+		var/stacc = 0
+		var/timesinceheard = LAZYACCESS(musics[songer], "last_heard") - world.time
+		switch(timesinceheard)
+			if(-INFINITY to 30 SECONDS)
+				stacc = 1
+			if(30 SECONDS to 1 MINUTES)
+				stacc = 0.75
+			if(1 MINUTES to 2 MINUTES)
+				stacc = 0.5
+			if(2 MINUTES to 10 MINUTES)
+				stacc = 0.25
+			else
+				stacc = 0.05
+		if(M.real_name == songer)
+			stacc *= 0.35 // it doesnt work as well just listening to yourself
+	return stacks
+
+/datum/reagent/medicine/music/proc/make_a_sparkle(mob/living/carbon/C)
+	if(!C)
+		return
+	var/obj/effect/temp_visual/heal/still/H = new /obj/effect/temp_visual/heal/still(get_turf(C))
+	SSeffects.floaterize(H, NORTH, 1, 3 SECONDS)
+
+/obj/effect/temp_visual/heal/still
+	name = "healing glow"
+	icon_state = "heal"
+	duration = 3 SECONDS
+	color = "#c43294"
+
 

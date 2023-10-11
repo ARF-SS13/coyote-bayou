@@ -31,9 +31,22 @@
 
 /obj/machinery/plumbing/reaction_chamber/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "ChemReactionChamber", name)
-		ui.open()
+	if(istype(user, /mob/dead/observer))
+		if(!ui)
+			ui = new(user, src, "ChemReactionChamber", name)
+			ui.open()
+	else
+		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_dispenser/drinks))
+			to_chat(user, span_warning("The legion has no use for drugs! Better to destroy it."))
+			return
+		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_dispenser/drinks))
+			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
+			return
+		if(!ui)
+			ui = new(user, src, "ChemReactionChamber", name)
+			if(user.hallucinating())
+				ui.set_autoupdate(FALSE) //to not ruin the immersion by constantly changing the fake chemicals
+			ui.open()
 
 /obj/machinery/plumbing/reaction_chamber/ui_data(mob/user)
 	var/list/data = list()

@@ -31,6 +31,7 @@
 
 	sound_ao_type = /datum/looping_sound/rain_sounds
 	sound_ai_type = /datum/looping_sound/indoor_rain_sounds
+	var/list/mobs_washied_cd = list()
 
 /datum/weather/rain/eventarea
 	area_types = list(/area/f13/wasteland/event)
@@ -40,6 +41,11 @@
 	weather_duration_upper = 18000
 
 /datum/weather/rain/weather_act(mob/living/L)
+	if(prob(80))
+		return
+	if((L.real_name in mobs_washied_cd) && !COOLDOWN_FINISHED(src, mobs_washied_cd[L.real_name]))
+		return
+	COOLDOWN_START(src, mobs_washied_cd[L.real_name], 15 SECONDS)
 	give_mob_washies(L)
 	CHECK_TICK
 

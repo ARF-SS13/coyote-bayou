@@ -209,6 +209,11 @@
 	Move(target_turf, get_dir(src, target_turf), glide_size_override)
 	moving_from_pull = null
 
+//Called after a successful Move(). For Cameras.
+/atom/movable/proc/CamMoved(atom/old_loc, movement_dir, forced = FALSE, list/old_locs)
+	move_stacks++
+	Moved(old_loc, movement_dir, forced, old_locs)
+
 //Called after a successful Move(). By this point, we've already moved
 /atom/movable/proc/Moved(atom/old_loc, movement_dir, forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)
@@ -473,6 +478,7 @@
 		var/movement_dir = get_dir(src, destination)
 
 		moving_diagonally = 0
+		update_z(destination.z) // Forces it so EVERYTHING keeps updated with the correct z level!!!
 
 		loc = destination
 
@@ -484,7 +490,7 @@
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
 				destarea.Entered(src, old_area)
-
+		
 		. = TRUE
 
 	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)

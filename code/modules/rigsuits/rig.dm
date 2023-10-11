@@ -10,7 +10,7 @@
 	name = "hardsuit control module"
 	icon = 'icons/obj/rig_modules.dmi'
 	desc = "A back-mounted hardsuit deployment and control mechanism."
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	req_one_access = list()
 	req_access = list()
 	w_class = WEIGHT_CLASS_BULKY

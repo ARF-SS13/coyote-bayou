@@ -353,7 +353,7 @@
 	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000*/
-
+/*
 /datum/techweb_node/advplumbing
 	id = "advplumbing"
 	display_name = "Advanced Plumbing Technology"
@@ -361,6 +361,7 @@
 	prereq_ids = list("plumbing", "adv_engi")
 	design_ids = list("plumb_rcd", "autohydrotray")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+*/
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
@@ -435,7 +436,7 @@
 	description = "Basic fragile prosthetics for the impaired."
 	starting_node = TRUE
 	prereq_ids = list("biotech")
-	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg", "autosurgeon")
+	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg")
 
 ////////////////////////Tools////////////////////////
 /datum/techweb_node/basic_mining
@@ -499,7 +500,7 @@
 	description = "Our researchers have found new to weaponize just about everything now."
 	prereq_ids = list("engineering")
 	design_ids = list("pin_testing", "tele_shield", "mfc", "ec")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
 /datum/techweb_node/adv_weaponry
@@ -507,8 +508,8 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty", "ecp", "bullet_shield")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	design_ids = list("pin_loyalty", "ecp", "bullet_shield","disablerrcw")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
 /*

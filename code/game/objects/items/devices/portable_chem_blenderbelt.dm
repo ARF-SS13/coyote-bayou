@@ -10,7 +10,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "portablechemicalmixer_open"
 	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	flags_1 = CONDUCT_1 | HEAR_1
 	custom_price = 2000
 	custom_premium_price = 2000
@@ -360,7 +360,7 @@
 	if(!istype(thing))
 		return
 	var/turf/here = get_turf(src)
-	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here))
+	if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, thing, here, FALSE))
 		if(!silent)
 			BLENDER_GET_SUBJECT
 			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_STUCK_INSIDE, subject)

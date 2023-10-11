@@ -8,7 +8,7 @@
 	armor = ARMOR_VALUE_CLOTHES
 
 	body_parts_covered = FEET
-	slot_flags = ITEM_SLOT_FEET
+	slot_flags = INV_SLOTBIT_FEET
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
@@ -34,25 +34,6 @@
 /obj/item/clothing/shoes/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
-
-/obj/item/clothing/shoes/suicide_act(mob/living/carbon/user)
-	if(rand(2)>1)
-		user.visible_message(span_suicide("[user] begins tying \the [src] up waaay too tightly! It looks like [user.p_theyre()] trying to commit suicide!"))
-		var/obj/item/bodypart/l_leg = user.get_bodypart(BODY_ZONE_L_LEG)
-		var/obj/item/bodypart/r_leg = user.get_bodypart(BODY_ZONE_R_LEG)
-		if(l_leg)
-			l_leg.dismember()
-			playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-		if(r_leg)
-			r_leg.dismember()
-			playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-		return BRUTELOSS
-	else//didnt realize this suicide act existed (was in miscellaneous.dm) and didnt want to remove it, so made it a 50/50 chance. Why not!
-		user.visible_message(span_suicide("[user] is bashing [user.p_their()] own head in with [src]! Ain't that a kick in the head?"))
-		for(var/i = 0, i < 3, i++)
-			sleep(3)
-			playsound(user, 'sound/weapons/genhit2.ogg', 50, 1)
-		return(BRUTELOSS)
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()

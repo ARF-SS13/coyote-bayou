@@ -13,7 +13,7 @@
 	var/dodging = TRUE
 	var/approaching_target = FALSE //We should dodge now
 	var/in_melee = FALSE	//We should sidestep now
-	var/dodge_prob = 15
+	var/dodge_prob = 5
 	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
 
 	var/extra_projectiles = 0 //how many projectiles above 1?
@@ -71,7 +71,7 @@
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
 	var/minimum_distance = 1
 
-	var/decompose = TRUE //Does this mob decompose over time when dead?
+	var/decompose = FALSE //Does this mob decompose over time when dead?
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -110,7 +110,7 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
-/mob/living/simple_animal/hostile/Initialize()
+/mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 
 	if(!targets_from)
@@ -119,6 +119,8 @@
 	if(MOB_EMP_DAMAGE in emp_flags)
 		smoke = new /datum/effect_system/smoke_spread/bad
 		smoke.attach(src)
+	if(mapload && despawns_when_lonely)
+		unbirth_self(TRUE)
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
@@ -292,7 +294,7 @@
 
 /mob/living/simple_animal/hostile/proc/ListTargets()//Step 1, find out what we can see
 	if(!search_objects)
-		. = hearers(vision_range, targets_from) - src //Remove self, so we don't suicide
+		. = hearers(vision_range, targets_from) - src //Remove self
 
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden,/obj/item/electronic_assembly))
 
@@ -373,7 +375,9 @@
 	if(search_objects < 2)
 		if(isliving(the_target))
 			var/mob/living/L = the_target
-			var/faction_check = !foes[L] && faction_check_mob(L)
+			if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
+				return FALSE
+			var/faction_check = !(L in foes) && faction_check_mob(L)
 			if(robust_searching)
 				if(faction_check && !attack_same)
 					return FALSE

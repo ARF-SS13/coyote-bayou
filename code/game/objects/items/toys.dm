@@ -146,7 +146,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=10)
 	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
@@ -488,18 +488,13 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 5
 	throwforce = 5
 	total_mass = null
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-
-/obj/item/toy/katana/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
-	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1)
-	return(BRUTELOSS)
 
 /*
  * Snap pops
@@ -757,11 +752,6 @@
 	var/card_throw_range = 7
 	var/list/card_attack_verb = list("attacked")
 
-/obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!"))
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-	return BRUTELOSS
-
 /obj/item/toy/cards/proc/apply_card_vars(obj/item/toy/cards/newobj, obj/item/toy/cards/sourceobj) // Applies variables for supporting multiple types of card deck
 	if(!istype(sourceobj))
 		return
@@ -831,15 +821,15 @@
 	update_icon()
 
 /obj/item/toy/cards/deck/update_icon_state()
-	switch(cards.len)
-		if(original_size*0.5 to INFINITY)
-			icon_state = "deck_[deckstyle]_full"
-		if(original_size*0.25 to original_size*0.5)
-			icon_state = "deck_[deckstyle]_half"
-		if(1 to original_size*0.25)
-			icon_state = "deck_[deckstyle]_low"
-		else
-			icon_state = "deck_[deckstyle]_empty"
+	var/cardlen = cards.len
+	if(cardlen > original_size*0.5)
+		icon_state = "deck_[deckstyle]_full"
+	else if(cardlen > original_size*0.25)
+		icon_state = "deck_[deckstyle]_half"
+	else if(cardlen > 0)
+		icon_state = "deck_[deckstyle]_low"
+	else
+		icon_state = "deck_[deckstyle]_empty"
 
 /obj/item/toy/cards/deck/attack_self(mob/user)
 	if(cooldown < world.time - 50)
@@ -1229,7 +1219,7 @@
 	desc = "A stylish steampunk watch made out of thousands of tiny cogwheels."
 	icon = 'icons/obj/clockwork_objects.dmi'
 	icon_state = "clockwork_slab"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
 
@@ -1329,7 +1319,7 @@
 	toysay = "Suit sensors!"
 
 /obj/item/toy/figure/assistant
-	name = "Assistant action figure"
+	name = "Wastelander action figure"
 	icon_state = "assistant"
 	toysay = "Grey tide world wide!"
 
@@ -1341,7 +1331,7 @@
 /obj/item/toy/figure/bartender
 	name = "Bartender action figure"
 	icon_state = "bartender"
-	toysay = "Where is Pun Pun?"
+	toysay = "More whiskey!"
 
 /obj/item/toy/figure/borg
 	name = "Cyborg action figure"
@@ -1355,24 +1345,24 @@
 	toysay = "Blaze it!"
 
 /obj/item/toy/figure/captain
-	name = "Captain action figure"
+	name = "Overseer action figure"
 	icon_state = "captain"
-	toysay = "Any heads of staff?"
+	toysay = "Someone come get this Wastelander!"
 
 /obj/item/toy/figure/cargotech
 	name = "Cargo Technician action figure"
 	icon_state = "cargotech"
-	toysay = "For Cargonia!"
+	toysay = "Put him on the train."
 
 /obj/item/toy/figure/ce
 	name = "Chief Engineer action figure"
 	icon_state = "ce"
-	toysay = "Wire the solars!"
+	toysay = "Activate the Antimatter Reactor!"
 
 /obj/item/toy/figure/chaplain
 	name = "Chaplain action figure"
 	icon_state = "chaplain"
-	toysay = "Praise Space Jesus!"
+	toysay = "Praise Jesus!"
 
 /obj/item/toy/figure/chef
 	name = "Chef action figure"
@@ -1382,7 +1372,7 @@
 /obj/item/toy/figure/chemist
 	name = "Chemist action figure"
 	icon_state = "chemist"
-	toysay = "Get your pills!"
+	toysay = "Get your stims!"
 
 /obj/item/toy/figure/ian
 	name = "Ian action figure"
@@ -1392,7 +1382,7 @@
 /obj/item/toy/figure/detective
 	name = "Detective action figure"
 	icon_state = "detective"
-	toysay = "This airlock has grey jumpsuit and insulated glove fibers on it."
+	toysay = "I'm not investigating the 100th bomb this week."
 
 /obj/item/toy/figure/dsquad
 	name = "Death Squad Officer action figure"
@@ -1402,7 +1392,7 @@
 /obj/item/toy/figure/engineer
 	name = "Engineer action figure"
 	icon_state = "engineer"
-	toysay = "Oh god, the singularity is loose!"
+	toysay = "The photonic stabilizer is exploding!"
 
 /obj/item/toy/figure/geneticist
 	name = "Geneticist action figure"
@@ -1410,12 +1400,12 @@
 	toysay = "Smash!"
 
 /obj/item/toy/figure/hop
-	name = "Head of Personnel action figure"
+	name = "Council action figure"
 	icon_state = "hop"
-	toysay = "Giving out all access!"
+	toysay = "I am the Law!"
 
 /obj/item/toy/figure/hos
-	name = "Head of Security action figure"
+	name = "Sheriff action figure"
 	icon_state = "hos"
 	toysay = "Go ahead, make my day."
 
@@ -1432,7 +1422,7 @@
 /obj/item/toy/figure/lawyer
 	name = "Lawyer action figure"
 	icon_state = "lawyer"
-	toysay = "My client is a dirty traitor!"
+	toysay = "My client is a dirty raider!"
 
 /obj/item/toy/figure/curator
 	name = "Curator action figure"
@@ -1445,9 +1435,9 @@
 	toysay = "The patient is already dead!"
 
 /obj/item/toy/figure/miner
-	name = "Shaft Miner action figure"
+	name = "Miner action figure"
 	icon_state = "miner"
-	toysay = "COLOSSUS RIGHT OUTSIDE THE BASE!"
+	toysay = "There are so many ants!"
 
 /obj/item/toy/figure/ninja
 	name = "Ninja action figure"
@@ -1483,9 +1473,9 @@
 	toysay = "Get that fucking disk!"
 
 /obj/item/toy/figure/secofficer
-	name = "Security Officer action figure"
+	name = "Deputy action figure"
 	icon_state = "secofficer"
-	toysay = "I am the law!"
+	toysay = "Another bomb!"
 	toysound = 'sound/runtime/complionator/dredd.ogg'
 
 /obj/item/toy/figure/virologist
@@ -1496,7 +1486,7 @@
 /obj/item/toy/figure/warden
 	name = "Warden action figure"
 	icon_state = "warden"
-	toysay = "Seventeen minutes for coughing at an officer!"
+	toysay = "Execute them!"
 
 
 /obj/item/toy/dummy
@@ -1507,7 +1497,6 @@
 	item_state = "doll"
 	var/doll_name = "Dummy"
 
-//Add changing looks when i feel suicidal about making 20 inhands for these.
 /obj/item/toy/dummy/attack_self(mob/user)
 	var/new_name = stripped_input(usr,"What would you like to name the dummy?","Input a name",doll_name,MAX_NAME_LEN)
 	if(!new_name)
@@ -1556,7 +1545,3 @@
 					span_notice("Your hand is moving on its own! But you cannot allow yourself to get hooked to the game."))
 		add_fingerprint(user)
 
-/obj/item/toy/tragicthegarnering/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] reaches zero life points! It looks like [user.p_they()] [user.p_have()] are about to enter the graveyard!"))
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-	return BRUTELOSS

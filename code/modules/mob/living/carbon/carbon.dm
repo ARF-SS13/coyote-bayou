@@ -327,9 +327,9 @@
 					dna.features["genital_visibility_flags"] = new_bit
 					for(var/obj/item/organ/genital/nad in internal_organs)
 						nad.update_genital_visibility(new_bit)
-				if(ishuman(src)) // lesigh
-					var/mob/living/carbon/human/dip = src
-					dip.update_body(TRUE)
+				// if(ishuman(src)) // lesigh
+				// 	var/mob/living/carbon/human/dip = src
+				// 	dip.update_body(TRUE)
 				show_genital_layering_panel()
 			if("change_genital_clothing_respect", "change_genital_underwear_respect", "change_genital_override") // they all do the same darn thing
 				var/obj/item/organ/genital/clotheme = locate(href_list["which"])
@@ -865,6 +865,9 @@
 		if(HAS_TRAIT(src, TRAIT_NIGHT_VISION))
 			lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
 			see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE, see_in_dark)
+		if(HAS_TRAIT(src, TRAIT_NIGHT_VISION_GREATER))
+			lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+			see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE_GREATER, see_in_dark)
 
 	if(client.eye && client.eye != src)
 		var/atom/A = client.eye
@@ -1116,7 +1119,7 @@
 /mob/living/carbon/proc/can_revive(ignore_timelimit = FALSE, maximum_brute_dam = MAX_REVIVE_BRUTE_DAMAGE, maximum_fire_dam = MAX_REVIVE_FIRE_DAMAGE, ignore_heart = FALSE)
 	//var/tlimit = DEFIB_TIME_LIMIT * 10
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(src))
+	if(hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(src))
 		return
 	/* if(!ignore_timelimit && (world.time - timeofdeath) > tlimit)
 		return */
@@ -1125,7 +1128,7 @@
 	if(!ignore_heart && (!heart || (heart.organ_flags & ORGAN_FAILING)))
 		return
 	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
-	if(QDELETED(BR) || BR.brain_death || (BR.organ_flags & ORGAN_FAILING) || suiciding)
+	if(QDELETED(BR) || BR.brain_death || (BR.organ_flags & ORGAN_FAILING))
 		return
 	return TRUE
 

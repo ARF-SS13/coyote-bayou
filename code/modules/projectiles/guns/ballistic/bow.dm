@@ -193,6 +193,31 @@
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
 	)
+
+/obj/item/gun/ballistic/bow/shortbow/yumi
+	name = "yumi bow"
+	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"
+	//icon_state = "yumi"		//temporary fix
+	icon_state = "tribalbow"
+	item_state = "bow"
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)	
+
+	//weak pocket xbow meant to shoot special arrows rather than pure damage//
+/obj/item/gun/ballistic/bow/handxbow
+	name = "hand crossbow"
+	desc = "A compact, pocket sized crossbow, what it lacks in power makes up in concealment."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
+	weapon_class = WEAPON_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
 //dunno if you want to include more information for each bow, but this is the basics
 
 //tier 2 bows. craftable bows
@@ -282,7 +307,7 @@
 	icon_state = "goldbow"
 	item_state = "goldbow"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slow

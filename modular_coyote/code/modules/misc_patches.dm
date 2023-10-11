@@ -26,3 +26,16 @@
 		return FALSE
 
 	attack(licker, licker, licker.get_organ_target())
+
+
+/mob/living/carbon
+	var/notifiedHint = 0 // A 1 time var to make it so you get told you can heal when sleeping.
+	
+/mob/living/carbon/proc/NotifySleepHealing()
+	if(notifiedHint)
+		return
+	
+	to_chat(src, span_yellowteamradio("You're down, but not out! Rest up and get some sleep and you can fight back to your feet!"))
+	to_chat(src, span_tinynoticeital("You can regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
+
+	notifiedHint = TRUE

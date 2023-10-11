@@ -267,16 +267,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(B && B.loc == loc)
 		qdel(src)
 
-//user: The mob that is suiciding
-//damagetype: The type of damage the item will inflict on the user
-//BRUTELOSS = 1
-//FIRELOSS = 2
-//TOXLOSS = 4
-//OXYLOSS = 8
-//Output a creative message and then return the damagetype done
-/obj/item/proc/suicide_act(mob/user)
-	return
-
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
 	set category = "Object"
@@ -293,7 +283,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	var/pricetext = GetPriceEstimate()
+	
+	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item.[pricetext ? " [pricetext]":""]"
 
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
@@ -306,6 +298,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of cold-resistant materials."
 		if(resistance_flags & FIRE_PROOF)
 			. += "[src] is made of fire-retardant materials."
+
+	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
+		. += "<span class='notice'>You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.</span>"
 
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
@@ -347,6 +342,23 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		research_msg += "None"
 	research_msg += "."
 	. += research_msg.Join()
+
+/obj/item/Topic(href, href_list)
+	. = ..()
+
+	if(href_list["list_melee"])
+		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
+		if(force_unwielded > 0)
+			readout += "\nONE HANDED [force_unwielded]"
+			readout += "\nTWO HANDED [force_wielded]"
+		else
+			readout += "\nDAMAGE [force]"
+		readout += "\nTHROW DAMAGE [throwforce]"
+		readout += "\nATTACKS / SECOND [10 / attack_speed]"
+		readout += "\nBLOCK CHANCE [block_chance]"
+		readout += "</span>"
+
+		to_chat(usr, "[readout.Join()]")
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
@@ -419,7 +431,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 
 	//If the item is in a storage item, take it out. Unless it cant be removed. Then... dont
-	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, user.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+	if(CHECK_BITFIELD(SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src), NO_REMOVE_FROM_STORAGE))
 		to_chat(user,span_alert("[src] can't be taken out of [loc]!"))
 		return
 
@@ -542,7 +554,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(mob/user, slot)
 	SHOULD_CALL_PARENT(TRUE)
-	. = SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot)
+	. = SEND_SIGNAL(src, COMSIG_ITEM_EQUIPPED, user, slot, current_equipped_slot)
 	current_equipped_slot = slot
 	if(!(. & COMPONENT_NO_GRANT_ACTIONS))
 		for(var/X in actions)
@@ -771,7 +783,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!newLoc)
 		return FALSE
 	if(SEND_SIGNAL(loc, COMSIG_CONTAINS_STORAGE))
-		return SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, newLoc, TRUE)
+		return SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_TAKE, src, newLoc, FALSE)
 	return FALSE
 
 /obj/item/proc/get_belt_overlay() //Returns the icon used for overlaying the object on a belt
@@ -785,29 +797,29 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	var/mob/owner = loc
 	var/flags = slot_flags
-	if(flags & ITEM_SLOT_OCLOTHING)
+	if(flags & INV_SLOTBIT_OCLOTHING)
 		owner.update_inv_wear_suit()
-	if(flags & ITEM_SLOT_ICLOTHING)
+	if(flags & INV_SLOTBIT_ICLOTHING)
 		owner.update_inv_w_uniform()
-	if(flags & ITEM_SLOT_GLOVES)
+	if(flags & INV_SLOTBIT_GLOVES)
 		owner.update_inv_gloves()
-	if(flags & ITEM_SLOT_EYES)
+	if(flags & INV_SLOTBIT_EYES)
 		owner.update_inv_glasses()
-	if(flags & ITEM_SLOT_EARS)
+	if(flags & INV_SLOTBIT_EARS)
 		owner.update_inv_ears()
-	if(flags & ITEM_SLOT_MASK)
+	if(flags & INV_SLOTBIT_MASK)
 		owner.update_inv_wear_mask()
-	if(flags & ITEM_SLOT_HEAD)
+	if(flags & INV_SLOTBIT_HEAD)
 		owner.update_inv_head()
-	if(flags & ITEM_SLOT_FEET)
+	if(flags & INV_SLOTBIT_FEET)
 		owner.update_inv_shoes()
-	if(flags & ITEM_SLOT_ID)
+	if(flags & INV_SLOTBIT_ID)
 		owner.update_inv_wear_id()
-	if(flags & ITEM_SLOT_BELT)
+	if(flags & INV_SLOTBIT_BELT)
 		owner.update_inv_belt()
-	if(flags & ITEM_SLOT_BACK)
+	if(flags & INV_SLOTBIT_BACK)
 		owner.update_inv_back()
-	if(flags & ITEM_SLOT_NECK)
+	if(flags & INV_SLOTBIT_NECK)
 		owner.update_inv_neck()
 
 /obj/item/proc/get_temperature()
@@ -1222,4 +1234,4 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/refresh_upgrades()
 	return
-	
+

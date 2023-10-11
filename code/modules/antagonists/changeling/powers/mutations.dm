@@ -147,6 +147,20 @@
 	action_icon_state = "ling_armblade"
 	action_background_icon_state = "bg_ling"
 
+/obj/effect/proc_holder/changeling/weapon/arm_blade/mutation
+	name = "Mutated Arm Blade"
+	desc = "We reform one of our arms into a deadly blade."
+	helptext = "We may retract our armblade in the same manner as we form it. Cannot be used while in lesser form. This ability is loud, and might cause our blood to react violently to heat."
+	chemical_cost = 0
+	dna_cost = 0
+	loudness = 2
+	req_human = 0
+	weapon_type = /obj/item/melee/arm_blade
+	weapon_name_simple = "blade"
+	action_icon = 'icons/mob/actions/actions_changeling.dmi'
+	action_icon_state = "ling_armblade"
+	action_background_icon_state = "bg_ling"
+
 /obj/item/melee/arm_blade
 	name = "arm blade"
 	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
@@ -157,14 +171,14 @@
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	force = 25
+	force = 40
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
-	wound_bonus = -60
+	wound_bonus = 0
 	bare_wound_bonus = 20
 	var/can_drop = FALSE
 	var/fake = FALSE
@@ -246,7 +260,7 @@
 	item_state = "tentacle"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
-	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON
+	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
 	slot_flags = NONE
 	flags_1 = NONE
 	w_class = WEIGHT_CLASS_HUGE
@@ -258,10 +272,10 @@
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
+	var/can_drop = TRUE
 
 /obj/item/gun/magic/tentacle/Initialize(mapload, silent)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
 		if(!silent)
 			loc.visible_message(span_warning("[loc.name]\'s arm starts stretching inhumanly!"), span_warning("Our arm twists and mutates, transforming it into a tentacle."), span_italic("You hear organic matter ripping and tearing!"))
@@ -276,11 +290,6 @@
 	. = ..()
 	if(charges == 0)
 		qdel(src)
-
-/obj/item/gun/magic/tentacle/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] coils [src] tightly around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (OXYLOSS)
-
 
 /obj/item/ammo_casing/magic/tentacle
 	name = "tentacle"
@@ -303,7 +312,7 @@
 	name = "tentacle"
 	icon_state = "tentacle_end"
 	pass_flags = PASSTABLE
-	damage = 0
+	damage = 5
 	damage_type = BRUTE
 	range = 8
 	hitsound = 'sound/weapons/thudswoosh.ogg'

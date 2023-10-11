@@ -52,7 +52,7 @@
 
 /obj/item/projectile/energy/teslacannon/oasis
 	name = "shock beam"
-	damage = 12 //high damage but low ap
+	damage = 13 //high damage but low ap
 	flag = "energy"
 	wound_bonus = -5
 	bare_wound_bonus = 35

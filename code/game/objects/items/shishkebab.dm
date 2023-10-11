@@ -5,7 +5,7 @@
 	icon_state = "shishkebabpack"
 	item_state = "shishkebabpack"
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	actions_types = list(/datum/action/item_action/toggle_shishkebab)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF

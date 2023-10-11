@@ -21,6 +21,7 @@
 	fluid_transfer_factor = 0.5
 	associated_has = CS_BOOB // for cockstring stuff
 	hide_flag = HIDE_BOOBS // for hideflag stuff
+	pornhud_slot = PHUD_BOOB
 
 GLOBAL_LIST_INIT(breast_values, list(
 	"a" = 1,
@@ -75,6 +76,8 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 			desc = "You see two pairs of breast, one just under the other."
 		if("sextuple")
 			desc = "You see three sets of breasts, running from their chest to their belly."
+		if("udders")
+			desc = "You see a set of crotch milkers, they are udderly fantastic!"
 		else
 			desc = "You see some breasts, they seem to be quite exotic."
 	if(size == "huge")

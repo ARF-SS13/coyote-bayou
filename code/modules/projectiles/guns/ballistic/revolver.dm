@@ -484,6 +484,40 @@
 	)
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
+/* * * * * * * * * * * * * *
+* Lemat Revolver
+* -9mm chambering
+* + 9 shot cylinder
+* + Common revolver
+* + Slightly better damage than 9mm
+* * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/revolver/Lemat
+	name = "Grapeshot Revolver"
+	desc = "A 9 shot revolver from a time long forgotten. The revolver itself has been refitted to be 9mm. Unlike the original version, this one needs no wax caps or .36cal balls to be fitted into the cylinder. It also does not take a shotgun shell. But at least you have 9 shots to put a target down"
+	item_state = "lemat"
+	icon_state = "lemat"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+
+/obj/item/gun/ballistic/revolver/Lemat/custom
+	name = "Engraved LeMat Revolver"
+	desc = "An engraved golden LeMat revolver with an ivory grip handle. Engraved onto the barrel of the gun is the phrase 'Bound by love' in Icelandic. The ivory grip has the face of a moth on both sides."
+	item_state = "goldengun"
+	icon_state = "toxlemat"
+
 /* * * * * * * * * * *
  * Desert ranger revolver
  * Cool heavier revolver
@@ -532,6 +566,64 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+
+
+
+/* * * * * * * * * * * *
+* Colt Buntline revolver
+* - 6 shots only like any else revolver
+* + Revolver rifle configuration, allows use of scopes
+* + Carbine class
+* + .357 ammo
+* + Uncommon
+* * * * * * * * * * * * */
+/obj/item/gun/ballistic/revolver/buntline
+	name = "Colt Buntline"
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .357 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	icon_state = "coltcarbine"
+	item_state = "coltcarbine"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = SMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+/* * * * * * * * * * *
+* Judge revolver
+* + 3 shot shotgun revolver for balance
+* - less damage
+* - Two handed only
+* + Lightweight, compact, and rare uncommon
+* * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/taurjudge
+	name = "Taurus Judge"
+	desc = "A Taurus manfactured Judge. This model specifically takes 3 shotgun shells, useful for unloading hell upon the enemy. Do they feel lucky?"
+	icon_state = "judge"
+	item_state = "judge"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HMG_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
 
 /* * * * * * * * * * *
  * Hunting revolver
@@ -823,7 +915,7 @@
 	..()
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
-			slot_flags = ITEM_SLOT_BACK
+			slot_flags = INV_SLOTBIT_BACK
 			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()

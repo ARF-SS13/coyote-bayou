@@ -495,8 +495,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	for(var/datum/mind/M in owners)
 		if(considered_alive(M))
 			return FALSE
-		if(M.current?.suiciding) //killing yourself ISN'T glorious.
-			return FALSE
 	return TRUE
 
 /datum/objective/nuclear
@@ -891,7 +889,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 ////////////////////////////////
 
 /datum/objective/changeling_team_objective //Abstract type
-	martyr_compatible = 0	//Suicide is not teamwork!
 	explanation_text = "Changeling Friendship!"
 	var/min_lings = 3 //Minimum amount of lings for this team objective to be possible
 	var/escape_objective_compatible = FALSE

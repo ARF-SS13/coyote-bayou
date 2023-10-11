@@ -61,4 +61,4 @@
 
 // Used by child types if they have other power source than battery or recharger
 /obj/item/modular_computer/proc/check_power_override()
-	return FALSE
+	return TRUE // FALSE

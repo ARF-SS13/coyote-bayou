@@ -50,16 +50,23 @@
 /datum/supply_pack/engineering/experimentaltools
 	name = "Experimental Tools Crate"
 	desc = "High tech tools. Comes with an experimental welder, jaws of life, and hand drill!"
-	cost = 8000
-	contains = list(/obj/item/storage/belt/utility/full/engi,
-					/obj/item/storage/belt/utility/full/engi)
+	cost = 4000
+	contains = list(/obj/item/storage/belt/utility/full/engi)
 	crate_name = "experimental tools crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+
+/datum/supply_pack/engineering/advancedbench
+	name = "Advanced Workbench"
+	desc = "For all your crafting needs!"
+	cost = 20000
+	contains = list(/obj/machinery/workbench/advanced)
+	crate_name = "advanced workbench crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
 /datum/supply_pack/engineering/advancedtools
 	name = "Ultracite Tools Crate"
 	desc = "The best tools money can buy!"
-	cost = 15000
+	cost = 20000
 	contains = list(/obj/item/weldingtool/abductor,
 					/obj/item/wrench/abductor,
 					/obj/item/wirecutters/abductor,
@@ -74,7 +81,8 @@
 	desc = "Two boxes of tier four level parts!"
 	cost = 10000
 	contains = list(/obj/item/storage/box/stockparts/deluxe,
-					/obj/item/storage/box/stockparts/deluxe)
+					/obj/item/storage/box/stockparts/deluxe,
+					/obj/item/storage/part_replacer)
 	crate_name = "deluxe parts crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 /*
@@ -252,7 +260,7 @@
 					/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
 
-/datum/supply_pack/engine/solar // because people have been managing to break power with EMPs lately, and prep for fiat power getting axed
+/datum/supply_pack/engineering/solar // because people have been managing to break power with EMPs lately, and prep for fiat power getting axed
 	name = "Solar Panel Crate"
 	desc = "Go green with this DIY advanced solar array. Contains twenty one solar assemblies, a solar-control circuit board, and tracker. If you have any questions, please check out the enclosed instruction book."
 	cost = 2500

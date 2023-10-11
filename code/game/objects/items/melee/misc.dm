@@ -13,7 +13,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 14
 	throwforce = 10
 	wound_bonus = 15
@@ -23,10 +23,6 @@
 	hitsound = 'sound/weapons/chainhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
-
-/obj/item/melee/chainofcommand/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (OXYLOSS)
 
 /obj/item/melee/chainofcommand/fake
 	name = "kinky whip"
@@ -114,49 +110,6 @@
 
 /obj/item/melee/sabre/get_worn_belt_overlay(icon_file)
 	return mutable_appearance(icon_file, "-sabre")
-
-/obj/item/melee/sabre/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is trying to cut off all [user.p_their()] limbs with [src]! it looks like [user.p_theyre()] trying to commit suicide!"))
-	var/i = 0
-	ADD_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
-	if(iscarbon(user))
-		var/mob/living/carbon/Cuser = user
-		var/obj/item/bodypart/holding_bodypart = Cuser.get_holding_bodypart_of_item(src)
-		var/list/limbs_to_dismember
-		var/list/arms = list()
-		var/list/legs = list()
-		var/obj/item/bodypart/bodypart
-
-		for(bodypart in Cuser.bodyparts)
-			if(bodypart == holding_bodypart)
-				continue
-			if(bodypart.body_part & ARMS)
-				arms += bodypart
-			else if (bodypart.body_part & LEGS)
-				legs += bodypart
-
-		limbs_to_dismember = arms + legs
-		if(holding_bodypart)
-			limbs_to_dismember += holding_bodypart
-
-		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
-		for(bodypart in limbs_to_dismember)
-			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
-	return MANUAL_SUICIDE
-
-/obj/item/melee/sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)
-	if(!QDELETED(affecting) && affecting.dismemberable && affecting.owner == user && !QDELETED(user))
-		playsound(user, hitsound, 25, 1)
-		affecting.dismember(BRUTE)
-		user.adjustBruteLoss(20)
-
-/obj/item/melee/sabre/proc/manual_suicide(mob/living/user, originally_nodropped)
-	if(!QDELETED(user))
-		user.adjustBruteLoss(200)
-		user.death(FALSE)
-	REMOVE_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 
 /obj/item/melee/rapier
 	name = "plastitanium rapier"
@@ -258,7 +211,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = null
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 5
@@ -352,11 +305,6 @@
 	consume_everything(P)
 	return BULLET_ACT_HIT
 
-/obj/item/melee/supermatter_sword/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!"))
-	user.dropItemToGround(src, TRUE)
-	shard.Bumped(user)
-
 /obj/item/melee/supermatter_sword/proc/consume_everything(target)
 	if(isnull(target))
 		shard.Consume()
@@ -373,7 +321,7 @@
 	desc = "A telescopic roasting stick with a miniature shield generator designed to ensure entry into various high-tech shielded cooking ovens and firepits."
 	icon_state = "roastingstick_0"
 	item_state = "null"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
@@ -487,7 +435,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.
 	custom_materials = list(/datum/material/iron = 12000)  //Defaults to an Iron Mace.
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 14
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 8

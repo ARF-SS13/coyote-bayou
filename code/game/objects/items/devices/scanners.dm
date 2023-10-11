@@ -25,16 +25,12 @@ GENETICS SCANNER
 	icon = 'icons/obj/device.dmi'
 	icon_state = "t-ray0"
 	var/on = FALSE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	custom_materials = list(/datum/material/iron=150)
-
-/obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS
 
 /obj/item/t_scanner/attack_self(mob/user)
 
@@ -81,7 +77,7 @@ GENETICS SCANNER
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 3
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -90,10 +86,6 @@ GENETICS SCANNER
 	var/mode = 1
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
-
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
-	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
 	scanmode = (scanmode + 1) % 3
@@ -129,6 +121,58 @@ GENETICS SCANNER
 		woundscan(user, M, src)
 
 	add_fingerprint(user)
+
+//-->tribal health scanner, it does the same thing but it takes time to use it
+/obj/item/healthanalyzer/tribal
+	name = "general malaise book"
+	icon = 'icons/obj/device.dmi'
+	icon_state = "health_tribal"
+	item_state = "health_tribal"
+	desc = "A big compendium containing a complete guide on all illnesses and wounds."
+
+/obj/item/healthanalyzer/tribal/attack_self(mob/user)
+	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+	to_chat(user, span_notice("You rapidly skim through the pages, trying to find the section you need."))
+
+	if(do_after(user, 3 SECONDS, target = src))
+		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+		scanmode = (scanmode + 1) % 3
+		switch(scanmode)
+			if(SCANMODE_HEALTH)
+				to_chat(user, span_notice("You have found the physical health references."))
+			if(SCANMODE_CHEMICAL)
+				to_chat(user, span_notice("You have found the chemical contents references."))
+			if(SCANMODE_WOUND)
+				to_chat(user, span_notice("You have found the extra info on wounds."))
+
+/obj/item/healthanalyzer/tribal/attack(mob/living/M, mob/living/carbon/human/user)
+	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+	to_chat(user, span_notice("You begin to compare the malaise in front of you with the references on the book."))
+
+	if(do_after(user, 5 SECONDS, target = src))
+		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
+
+		// Clumsiness/brain damage check
+		if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
+			user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
+								span_notice("You stupidly try to analyze the floor's vitals!"))
+			to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
+						\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
+						\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
+						\n<span class='info'>Body temperature: ???</span>")
+			return
+
+		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
+							span_notice("You analyze [M]'s vitals."))
+
+		if(scanmode == SCANMODE_HEALTH)
+			healthscan(user, M, mode, advanced)
+		else if(scanmode == SCANMODE_CHEMICAL)
+			chemscan(user, M)
+		else
+			woundscan(user, M, src)
+
+		add_fingerprint(user)
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = 1, advanced = FALSE)
@@ -286,7 +330,7 @@ GENETICS SCANNER
 						trauma_desc += B.scan_desc
 						trauma_text += trauma_desc
 					temp_message += " <span class='alert'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>"
-				if(C.roundstart_quirks.len)
+				if(C.mob_quirks.len)
 					temp_message += " <span class='info'>Subject has the following physiological traits: [C.get_trait_string()].</span>"
 
 				if(ishuman(C) && advanced)
@@ -653,7 +697,7 @@ GENETICS SCANNER
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
@@ -667,10 +711,6 @@ GENETICS SCANNER
 /obj/item/analyzer/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click [src] to activate the barometer function.")
-
-/obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!"))
-	return BRUTELOSS
 
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
@@ -926,7 +966,7 @@ GENETICS SCANNER
 	desc = "A hand-held body scanner able to detect nanites and their programming."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 3
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
@@ -952,7 +992,7 @@ GENETICS SCANNER
 	desc = "A hand-held scanner for analyzing someones gene sequence on the fly. Hold near a DNA console to update the internal database."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 3
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3

@@ -452,6 +452,16 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
+/datum/crafting_recipe/contact
+	name = "contact lenses"
+	result = /obj/item/clothing/glasses/contact
+	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 2,
+				/obj/item/clothing/glasses/regular = 1)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WORKBENCH)
+	time = 20
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
 /*
 /datum/crafting_recipe/armwraps
 	name = "Armwraps"

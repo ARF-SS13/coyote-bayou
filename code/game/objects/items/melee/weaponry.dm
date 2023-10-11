@@ -5,7 +5,7 @@
 	name = "banhammer"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "toyhammer"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 0
 	force = 1
 	w_class = WEIGHT_CLASS_TINY
@@ -16,17 +16,19 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 
-/obj/item/banhammer/suicide_act(mob/user)
-		user.visible_message(span_suicide("[user] is hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to ban [user.p_them()]self from life."))
-		return (BRUTELOSS|FIRELOSS|TOXLOSS|OXYLOSS)
 /*
 oranges says: This is a meme relating to the english translation of the ss13 russian wiki page on lurkmore.
 mrdoombringer sez: and remember kids, if you try and PR a fix for this item's grammar, you are admitting that you are, indeed, a newfriend.
 for further reading, please see: https://github.com/tgstation/tgstation/pull/30173 and https://translate.google.com/translate?sl=auto&tl=en&js=y&prev=_t&hl=en&ie=UTF-8&u=%2F%2Flurkmore.to%2FSS13&edit-text=&act=url
 */
+
+/* 
+superlagg says: cool story, oranges
+*/
+
 /obj/item/banhammer/attack(mob/M, mob/user)
 	if(user.zone_selected == BODY_ZONE_HEAD)
-		M.visible_message(span_danger("[user] are stroking the head of [M] with a bangammer"), span_userdanger("[user] are stroking the head with a bangammer"), "you hear a bangammer stroking a head");
+		M.visible_message(span_danger("[user] strikes [M]'s head with [src]."), span_userdanger("[user] strikes your head with [src]."), "You hear a banhammer striking someone's head.");
 	else
 		M.visible_message(span_danger("[M] has been banned FOR NO REISIN by [user]"), span_userdanger("You have been banned FOR NO REISIN by [user]"), "you hear a banhammer banning someone")
 	playsound(loc, 'sound/effects/adminhelp.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
@@ -40,18 +42,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 2
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
-/obj/item/sord/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty."), \
-	span_suicide("You try to impale yourself with [src], but it's USELESS..."))
-	return SHAME
-
 
 /obj/item/katana
 	name = "katana"
@@ -61,7 +57,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 40
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
@@ -80,11 +76,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/katana/cursed/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
-
-/obj/item/katana/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
-	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1)
-	return(BRUTELOSS)
 
 /obj/item/katana/timestop
 	name = "temporal katana"
@@ -105,21 +96,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		flynn.emote("smirk")
 	new /obj/effect/timestop/magic(get_turf(owner), 1, 50, list(owner)) // null roddies counter
 
-/obj/item/katana/timestop/suicide_act(mob/living/user) // stolen from hierophant staff
-	new /obj/effect/timestop/magic(get_turf(user), 1, 50, list(user)) // free usage for dying
-	user.visible_message(span_suicide("[user] poses menacingly with the [src]! It looks like [user.p_theyre()] trying to teleport behind someone!"))
-	user.say("Heh.. Nothing personnel, kid..", forced = "temporal katana suicide")
-	sleep(20)
-	if(!user)
-		return
-	user.visible_message(span_hierophant_warning("[user] vanishes into a cloud of falling dust and burning embers, likely off to style on some poor sod in the distance!"))
-	playsound(user,'sound/magic/blink.ogg', 75, TRUE)
-	for(var/obj/item/I in user)
-		if(I != src)
-			user.dropItemToGround(I)
-	user.dropItemToGround(src) //Drop us last, so it goes on top of their stuff
-	qdel(user)
-
 /obj/item/melee/bokken // parrying stick
 	name = "bokken"
 	desc = "A Japanese training sword made of wood and shaped like a katana."
@@ -127,7 +103,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "bokken"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 7 //how much harm mode damage we do
 	var/stamina_damage_increment = 4 //how much extra damage do we do when in non-harm mode
@@ -329,13 +305,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("called", "rang")
 	hitsound = 'sound/weapons/ring.ogg'
 
-/obj/item/phone/suicide_act(mob/user)
-	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message(span_suicide("[user] begins to tie a noose with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!"))
-	else
-		user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(OXYLOSS)
-
 /obj/item/throwing_star
 	name = "throwing star"
 	desc = "A serrated metal disk. Useless against armor, but looks painful if chucked into someone's face."
@@ -415,10 +384,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	gender = PLURAL
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "ectoplasm"
-
-/obj/item/ectoplasm/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the astral plane!"))
-	return (OXYLOSS)
 
 /obj/item/statuebust
 	name = "bust"
@@ -671,7 +636,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	sharpness = SHARP_EDGED
 	attack_verb = list("cut", "sliced", "diced")
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/vibro_weapon/Initialize()
@@ -779,10 +744,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/pitchfork/demonic/ascended/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=100, force_wielded=500000) // Kills you DEAD
-
-/obj/item/pitchfork/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] impales [user.p_them()]self in [user.p_their()] abdomen with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS)
 
 /obj/item/pitchfork/demonic/pickup(mob/living/user)
 	. = ..()

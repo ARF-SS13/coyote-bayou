@@ -27,7 +27,7 @@
 		. += vassDesc
 
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
 	if(skipface || get_visible_name() == "Unknown")
 		. += "You can't make out what species they are."
@@ -42,6 +42,10 @@
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory && !(U.attached_accessory.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
 				accessory_msg += " with [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
+			if(U.attached_accessory_b && !(U.attached_accessory_b.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_b, user)] \a [U.attached_accessory_b]"
+			if(U.attached_accessory_c && !(U.attached_accessory_c.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_c, user)] \a [U.attached_accessory_c]"
 
 		. += "[t_He] [t_is] wearing [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head
@@ -137,18 +141,16 @@
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
-		if(suiciding)
-			. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
 		if(hellbound)
 			. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.")
 		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
 		if(key || !getorgan(/obj/item/organ/brain) || ghost?.can_reenter_corpse)
-			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
+			. += span_binarysay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
 		else
-			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...")
+			. += span_binarysay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...")
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += span_deadsay("It appears that [t_his] brain is missing...")
+		. += span_binarysay("It appears that [t_his] brain is missing...")
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
@@ -234,7 +236,7 @@
 	var/r_limbs_missing = 0
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+			msg += "<span class='binarysay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
 			continue
 		if(t == BODY_ZONE_L_ARM || t == BODY_ZONE_L_LEG)
 			l_limbs_missing++
@@ -340,7 +342,7 @@
 		if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
 		if(-INFINITY to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
-			msg += "<span class='deadsay'><b>[t_He] resemble[p_s()] a crushed, empty juice pouch.</b></span>\n"
+			msg += "<span class='binarysay'><b>[t_He] resemble[p_s()] a crushed, empty juice pouch.</b></span>\n"
 
 	if(bleedsuppress)
 		msg += "[t_He] [t_is] embued with a power that defies bleeding.\n" // only statues and highlander sword can cause this so whatever
@@ -355,7 +357,7 @@
 		//var/num_bleeds = LAZYLEN(bleeding_limbs)
 		var/list/bleed_text
 		if(appears_dead)
-			bleed_text = list("<span class='deadsay'><B>Blood is visible in [t_his] open ")
+			bleed_text = list("<span class='binarysay'><B>Blood is visible in [t_his] open ")
 		else
 			bleed_text = list("<B>[t_He] [t_is] bleeding from [t_his] ")
 		bleed_text += english_list(bleeding_limbs)
@@ -412,16 +414,12 @@
 		if(src != user && HAS_TRAIT(L, TRAIT_EMPATH) && !appears_dead)
 			if (a_intent != INTENT_HELP)
 				msg += "[t_He] seem[p_s()] to be on guard.\n"
-			if (getOxyLoss() >= 10)
-				msg += "[t_He] seem[p_s()] winded.\n"
-			if (getToxLoss() >= 10)
-				msg += "[t_He] seem[p_s()] sickly.\n"
 			var/datum/component/mood/mood = GetComponent(/datum/component/mood)
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "[t_He] seem[p_s()] distressed.\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
 			if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
-				msg += "[t_He] seem[p_s()] to have had something nice happen to them recently.\n"
+				msg += "<span class='nicegreen'>[t_He] seem[p_s()] to have had something nice happen to [t_him] recently.</span>\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_He] appear[p_s()] to be staring off into space.\n"
@@ -445,7 +443,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain) && !(living_flags & HIDE_OFFLINE_INDICATOR))
 			if(!key)
-				msg += span_deadsay("[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.")
+				msg += span_binarysay("[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.")
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 			else if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
@@ -483,17 +481,145 @@
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
 
+	if(HAS_TRAIT(src, TRAIT_JIGGLY_ASS))
+		. += ""
+		. += span_notice("[t_His] butt could use a firm smack.</span>")
+
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
 		. += trait_exam
 
+//erp focused quirks
 	if(HAS_TRAIT(src, TRAIT_IN_HEAT) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
 		. += ""
 		. += "<span class='love'>[t_He] [t_is] looking for a good time, you should check their OOC Notes.</span>"
 
+	if(HAS_TRAIT(src, TRAIT_ERPBOYKISSER) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>🍆 - They look like they prefer guys.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPGIRLKISSER) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>🍑 - They look like they prefer girls.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPANYKISSER) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>💋 - They look like they'd kiss boys OR girls.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPQUICKY) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>⏰ - They look like they're looking for flings, not long term partners.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPLONGTERM) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>📅 - They look like they're looking for long term sexual partners.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPBOTTOM) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>😔 - They look like a bottom, you'll probably need to be the one to approach.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPTOP) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>😎 - They look like a top, maybe if you wiggle right they'll approach you first.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPSWITCH) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>☯ - They look like a switch, see what works.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ERPFLIRTY) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>🌹 - They look flirty, or like being flirty with them might be very effective.  Check out the *help command for *flirts.</span>"
+
+//info quirks that don't need a seeking
+	if(HAS_TRAIT(src, TRAIT_SHY))
+		. += ""
+		. += "<span class='unconcious'>They are a bit shy (OOCly & probably ICly too), but is trying to make people know they want to be engaged with. Be a darling and maybe interact with them some if you have time?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_OOCAPP))
+		. += ""
+		. += "<span class='unconcious'>☎️ - L/OOC Approach Preffered</span>"
+
+	if(HAS_TRAIT(src, TRAIT_PVEFOC))
+		. += ""
+		. += "<span class='unconcious'>✌️ - This player prefers PVE Scenarios.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_PVPFOC))
+		. += ""
+		. += "<span class='unconcious'>🔥 - This player prefers PVP Scenarios.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_COMBATSWITCH))
+		. += ""
+		. += "<span class='unconcious'>🌎 - This player is happy to do PVP or PVE gameplay.</span>"
+
+
+
+//rp focused quirks
+	if(HAS_TRAIT(src, TRAIT_RPLONGTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>📅 - They are looking for RP that is long term focused. Perhaps contact them via LOOC to work that out together?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_RPSHORTTERM) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>⏰ - They are looking for RP that is short term focused. This generally means only things in the current round.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_RPSERIOUS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>👑 - They are looking for RP that is relatively serious, if you to want to take the setting seriously maybe you should chatter at them via LOOC?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_RPLIGHT) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>🤡 - They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_RPSCRUBS) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>⛑ -They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_RPDAYSOFOURLIVES) && (HAS_TRAIT(user, TRAIT_RPFOCUSED) || src == user))
+		. += ""
+		. += "<span class='greenannounce'>💀 - They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera.</span>"
+
 	if(HAS_TRAIT(src, TRAIT_SMOL))
 		. += ""
 		. += span_notice("[t_He] looks easy to scoop up.</span>")
+
+//Adventure focused quirks
+
+	if(HAS_TRAIT(src, TRAIT_ADV_ER) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>♞ - They look like the adventuring sort.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_LFG) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>💑 - They look like they'd like to have someone adventure with them, maybe you should ask?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_SOLO) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>😑 - They don't look like they'd want anyone to adventure with right now.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_GUNNER) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🔫 - They look like they know their way around ranged combat.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_FIGHTER) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🗡 - A real fighter of all time, they look like they can use a blade.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_TANK) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🛡 - A shield wielding wall of an adventurer. They look like they could hold back a tsunami.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_BRUISER) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🏏 - A real bruiser of a waster, the way they hold a two handed weapon speaks volumes about melons being obliterated.</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_ROGUE) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🔓 - This person looks insanely useful at things that might not be JUST killing monsters. Maybe see if they have a lockpick on hand?</span>"
+
+	if(HAS_TRAIT(src, TRAIT_ADV_HEALER	) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
+		. += ""
+		. += "<span class='binarysay'>🏥 - This person looks like they know how to keep your bits glued together and your blood inside you. How nice.</span>"
+
 
 	var/traitstring = get_trait_string()
 	if(ishuman(user))

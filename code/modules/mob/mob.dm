@@ -1,5 +1,9 @@
+GLOBAL_VAR_INIT(pixel_slide, 0)  //if 1, initiate pixel sliding
+GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries wheter or not the other mob is in help intent
+
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	GLOB.mob_list -= src
+	GLOB.has_played_list -= src
 	GLOB.dead_mob_list -= src
 	GLOB.alive_mob_list -= src
 	GLOB.all_clockwork_mobs -= src
@@ -162,7 +166,7 @@
 		hearers -= target
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = target_message
-		if(target.see_invisible<invisibility) //if src is invisible to us,
+		if(target.see_invisible<invisibility || target.is_blind()) //if src is invisible to us,
 			msg = blind_message
 		//the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
@@ -170,11 +174,11 @@
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
-			target.show_message(msg, MSG_VISUAL,blind_message, MSG_AUDIBLE)
+			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
+	//var/raw_msg = message
 	//if(visible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
@@ -184,17 +188,18 @@
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
+		var/blind = M.is_blind()
 		var/msg = message
-		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
+		if(M.see_invisible<invisibility || (T != loc && T != src) || blind)//if src is invisible to us or is inside something (and isn't a turf),
 			msg = blind_message
 
-		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
+			M.create_chat_message(src, raw_message = msg, runechat_flags = visible_message_flags)
 
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
-			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
 mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
@@ -231,18 +236,20 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	hearers -= ignored_mobs
 	if(self_message)
 		hearers -= src
-	var/raw_msg = message
+//	var/raw_msg = message
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
 		message = "<b>[src]</b> [message]"
+		deaf_message = "<b>[src]</b> [deaf_message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
+		var/msg = M.can_hear() ? message : deaf_message
+		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
+			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
-			M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+			M.show_message(msg, MSG_AUDIBLE, msg, MSG_VISUAL)
 
 /**
  * Show a message to all mobs in earshot of this one
@@ -815,6 +822,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_x <= (16 + get_standard_pixel_x_offset()))
 		pixel_x++
 		is_shifted = TRUE
+	if((pixel_x > (16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, EAST), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, EAST)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_x = -16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/westshift()
 	set hidden = TRUE
@@ -823,6 +839,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_x >= -(16 + get_standard_pixel_x_offset()))
 		pixel_x--
 		is_shifted = TRUE
+	if((pixel_x < -(16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, WEST), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, WEST)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_x = 16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/northshift()
 	set hidden = TRUE
@@ -831,6 +856,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_y <= (16 + get_standard_pixel_y_offset()))
 		pixel_y++
 		is_shifted = TRUE
+	if((pixel_y > (16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, NORTH), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, NORTH)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_y = -16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/living/southshift()
 	set hidden = TRUE
@@ -839,6 +873,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(pixel_y >= -(16 + get_standard_pixel_y_offset()))
 		pixel_y--
 		is_shifted = TRUE
+	if((pixel_y < -(16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, SOUTH), 1))
+		if(!GLOB.pixel_slide)
+			GLOB.pixel_slide = 1
+			step(src, SOUTH)
+			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
+				if(GLOB.pixel_slide_other_has_help_int)
+					pixel_y = 16
+			GLOB.pixel_slide = 0
+			is_shifted = TRUE
 
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return FALSE
@@ -1219,7 +1262,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	tilt_left()
 
 /mob/proc/tilt_left()
-	if(!canface() || is_tilted < -50)
+	if(!canface() || is_tilted < -360)
 		return FALSE
 	transform = transform.Turn(-1)
 	is_tilted--
@@ -1229,7 +1272,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	tilt_right()
 
 /mob/proc/tilt_right()
-	if(!canface() || is_tilted > 50)
+	if(!canface() || is_tilted > 360)
 		return FALSE
 	transform = transform.Turn(1)
 	is_tilted++

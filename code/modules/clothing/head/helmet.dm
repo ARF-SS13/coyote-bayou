@@ -108,6 +108,310 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+
+/obj/item/clothing/head/kevlarhelmet
+	name = "Base for kevlar helmets of various degrees"
+	desc = "Base for Kevlar helmets 2.0 electric boogaloo"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+
+/obj/item/clothing/head/kevlarhelmet/rus1
+	name = "Modern Russian helmet"
+	desc = "A modern Russian 6b47. Saw use pre-war by the Russian military. Mainly in use by slavic based wastelanders, it finds itself now in the bayou."
+	icon_state = "6b47rus"
+	item_state = "6b47rus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/rus2
+	name = "KGB Russian Helmet"
+	desc = "A STSh-81 Helmet. Instead of being made of titanium alloys, it's made of the normal materials one would find in a ballistic helmet. Somehow, it's found itself in the bayou. It's far from its original home."
+	icon_state = "kgbhelmet"
+	item_state = "kgbhelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/canadian
+	name = "Canadian Helmet"
+	desc = "A Canadian CG634 standard issue helmet. It saw use in the Canadian army. Now it ends up in this region. Far from the North it seems."
+	icon_state = "canadiancg634"
+	item_state = "canadiancg634"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/unitednation
+	name = "U.N Helmet"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue, perfect for sky camo and keeping peace."
+	icon_state = "unhelmet"
+	item_state = "unhelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/unitednation/medical
+	name = "U.N Medical Helmet"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue with a green medical cross"
+	icon_state = "unmedical"
+	item_state = "unmedical"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/newshelmet
+	name = "War Press helmet"
+	desc = "A war press helmet. This helmet saw use by pre-war War correspondents. Lets any shooters know you're just there to take a news and footage...if you have any cameras on you."
+	icon_state = "warpress"
+	item_state = "warpress"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/americandesert
+	name = "American desert helmet"
+	desc = "An desert themed PASGT American helmet. This saw heavy use in the Gulf War during pre-war times. This helmet's cover was repaired to pristine condition"
+	icon_state = "pasgtdesert"
+	item_state = "pasgtdesert"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/china1
+	name = "Modern Chinese helmet"
+	desc = "A QGF03 Chinese helmet. This helmet saw primary usage in the People's Liberation Army during pre-war times. The cover's been restored."
+	icon_state = "qgf03china"
+	item_state = "qgf03china"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/hueypilot
+	name = "Aircrew Helmet"
+	desc = "A aircrewmen helmet. This helmet is outfitted for pilot's and comes with a cool cosmetic microphone. As a pilot once said 'I love the smell of vertibird fuel in the evening'."
+	icon_state = "pilothelmet"
+	item_state = "pilothelmet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ghillie
+	name = "Ghillie helmet"
+	desc = "A steel helmet covered in the user's own macabre of leaves, grass, and flora patterns. Meant to disguise the wearer's head in grassy regions"
+	icon_state = "ghillie"
+	item_state = "ghillie"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ukhelmet
+	name = "MK6 Helmet"
+	desc = "A British MK6 helmet. It was outphased by the MK7, but the MK6 saw extensive use by the British military, PMCs, and foreign countries. Reliable, hardy, and cool looking. Who dares wins."
+	icon_state = "mk6"
+	item_state = "mk6"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/cossackgear
+	name = "Black bearskin hat"
+	desc = "A very warm and well made bearskin hat. The black fur is commonly seen across the world from Kuban cossacks to the Queen's guard. The hat is remarkable soft and very useful for the winter. Take out that sabre and charge forth!"
+	icon_state = "cossack"
+	item_state = "cossack"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/white
+	name = "White bearskin hat"
+	desc = "A very warm and well made bearskin hat. The white fur is uncommonly seen across the world from cossacks to other groups across the world. The hat is remarkable soft and very useful for the winter. Take out that sabre and charge forth!"
+	icon_state = "wcossack"
+	item_state = "wcossack"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhacossack
+	name = "Black Papahka hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions."
+	icon_state = "papakha"
+	item_state = "papakha"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhawhitecossack
+	name = "White bearskin hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions. This one is white"
+	icon_state = "papakhaw"
+	item_state = "papakhaw"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/cossackgear/papakhakubancossack
+	name = "White bearskin hat"
+	desc = "A very warm and well made papakha hat. Made of wool, this hat was used throughout the Caucasus regions. This one is based off the hats used by the Kuban Cossacks."
+	icon_state = "papakhakuban"
+	item_state = "papakhakuban"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+
+/obj/item/clothing/head/kevlarhelmet/steelgerman
+	name = "Biker helmet"
+	desc = "A biker's steel helmet. Good on style and kicking ass at the bar. 'What did you say about my mother?'-some biker probably."
+	icon_state = "1919german"
+	item_state = "1919german"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww1steelgerman
+	name = "Outdated steel helmet"
+	desc = "An outdated steel helmet design. The design and documents long lost to time. Now and days it's used as a nifty biker helmet. Just this one needs some new paint."
+	icon_state = "oldgerm"
+	item_state = "oldgerm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/steelww2soviet
+	name = "WW2 Soviet helmet"
+	desc = "A outdated yet functional soviet helmet from WW2. It is a plain, cut, simple, and simple-designed helmet that offers the same protection as any else steel helmet."
+	icon_state = "sovhelm"
+	item_state = "sovhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/pilotka
+	name = "Armored Pilotka hat"
+	desc = "A ballistic weaved pilotka hat. The hat originated during WW2 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and pre-war modern times."
+	icon_state = "pilotka"
+	item_state = "pilotka"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries
+	name = "Armored British Cap"
+	desc = "A ballistic weaved British WW1 cap. This cap was used before helmets were a thing in the Great war."
+	icon_state = "brittcap"
+	item_state = "brittcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries/german
+	name = "Armored East German Cap"
+	desc = "A ballistic weaved East German cap. This cap was modeled after the cap used by Imperial German soldiers in WW1, which was used before helmets were a thing in the Great war."
+	icon_state = "germcap"
+	item_state = "germcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww1capseries/french
+	name = "Armored French Cap"
+	desc = "A ballistic weaved French WW1 cap. This cap was used before helmets were a thing in the Great war."
+	icon_state = "frenchcap"
+	item_state = "frenchcap"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/ww2usa
+	name = "M1 battle helmet"
+	desc = "A M1 helmet. This helmet was extensively used by the U.S during WW2. It came with a bountiful set of options and customization features..like a painted cross! Or netting! Or even a nifty camo cover! This specific helmet has none of that. A clean cut made helmet, go out and make it well worn!"
+	icon_state = "m1helm"
+	item_state = "m1helm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww1russiancap
+	name = "Armored Imperial Russian cap"
+	desc = "A clean pressed and finely made Imperial Russian cap. This cap was used throughout the Great War by Imperial Russian officers and soldiers. Don the bayonets and get the trench whistle ready to blow, you're up!"
+	icon_state = "ww1rus"
+	item_state = "ww1rus"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/kevlarhelmet/ww237jap
+	name = "Old Japanese helmet"
+	desc = "A old styled Japanese helmet. This helmet was introduced during the old wars from Japan in the Pacific. Usually came with a flag. Pick a bush and wait patiently for the enemy to fall into your trap."
+	icon_state = "japhelm"
+	item_state = "japhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/rusadrian
+	name = "Russian Adrian helmet"
+	desc = "A Adrian helmet, but instead of it being French, it's Russian. Used by Russian during the Great War, these helmets were the go-to of the army. Donning a red star, it was more olive in appearance."
+	icon_state = "adrianir"
+	item_state = "adrianir"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
+/obj/item/clothing/head/armoredushanka
+	name = "Ballistic Soviet Union Ushanka"
+	desc = "A Ushanka made with ballistic weave and kevlar in mind. Now you can rock the motherland's style while having that head of yours be protected. Still comfortable if not a shy bit more comfortable than your usual ushanka."
+	icon_state = "newushanka"
+	item_state = "newushanka"
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/kevlarhelmet/steelfrench
+	name = "French Adrian helmet"
+	desc = "A French, albeit outdated, Adrian helmet. It was the first helmet used by the French military during the great war. In WW2, the helmet was used again but named the M26. Adjust that helmet and get back to the frontlines!"
+	icon_state = "adrian"
+	item_state = "adrian"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/toxtestinghelmet
+	name = "VeturrHjalmur"
+	desc = "A custom Icelandic steel helmet adorned with a baby blue cross. This helmet is padded and really meant for looks than actual combative purposes. Made of the finest materials to grace the wasteland. Which is fine steel, padded interior, and adjustable ballistic silk straps."
+	icon_state = "germed"
+	item_state = "germed"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+//medieval and old helmets
+
+/obj/item/clothing/head/medievalhelmets
+	name = "Base for old helmets"
+	desc = "Base for old helmets 2.0 electric boogaloo"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_DOWN_BULLET_T2)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+
+/obj/item/clothing/head/medievalhelmets/oldgerman
+	name = "German sallet helmet"
+	desc = "A German based sallet helmet. Renowned and one of many famous helmet designs during the medieval era. It was a very popular design before being outphased and killed off by the burgonet helmet."
+	icon_state = "gersallet"
+	item_state = "gersallet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/medievalhelmets/oldspain
+	name = "Spainard Morion helmet"
+	desc = "An extremely popular design from Spain, this is the Morion helmet. It was famously used by Spanish Conquisitidors and made popular in pre-war films and medieval like pre-war video games. Usually comes with a loving plume."
+	icon_state = "spanishhelm"
+	item_state = "spanishhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/merekcustom
+	name = "salvaged battle helmet"
+	desc = "A salvaged bullet resistant helmet. It's made of a much weaker material."
+	icon_state = "helmetalt"
+	item_state = "helmetalt"
+	armor = ARMOR_VALUE_LIGHT
+	can_flashlight = FALSE
+
+
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
 	desc = "Standard issue security helmet. Due to degradation the helmet's visor obstructs the users ability to see long distances."
@@ -264,6 +568,24 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+/obj/item/clothing/head/kevlarhelmet/toxinfil
+	name = "Gen 3 Leo MIRAGE Helmet"
+	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	icon_state = "custominfil"
+	item_state = "custominfil"
+
+/obj/item/clothing/head/helmet/unmchelmet/medic
+	name = "Standard issue UNMC Medical Helmet"
+	desc = "A standard issued UNMC Helmet, this one seems to be resembling that of a medical personal's color scheme with a white paint and a green cross."
+	icon_state = "unmcmh"
+	item_state = "unmcmh"
+	flags_inv = HIDEHAIR
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
 /obj/item/clothing/head/helmet/retrohazmathelmet
 	name = "Old Hazmat helmet"
 	desc = "A old style hazmat helmet. It's a bit well worn and the visor has a crack on it. But other than that, it seems to still work."

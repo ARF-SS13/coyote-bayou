@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 15
 	force_unwielded = 15
 	force_wielded = 20
@@ -25,10 +25,6 @@
 	reskinnable_component = /datum/component/reskinnable/screwdriver
 	wound_bonus = -10
 	bare_wound_bonus = 5
-
-/obj/item/screwdriver/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(BRUTELOSS)
 
 /obj/item/screwdriver/Initialize()
 	. = ..()
@@ -118,10 +114,6 @@
 	usesound = 'sound/items/drill_use.ogg'
 	toolspeed = 0.25
 	reskinnable_component = null
-
-/obj/item/screwdriver/power/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(BRUTELOSS)
 
 /obj/item/screwdriver/power/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)

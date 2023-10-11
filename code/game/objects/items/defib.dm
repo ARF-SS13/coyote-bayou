@@ -9,7 +9,7 @@
 	item_state = "defibunit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BACK
 	force = 5
 	throwforce = 6
 	w_class = WEIGHT_CLASS_BULKY
@@ -79,13 +79,13 @@
 
 /obj/item/defibrillator/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user)
-		if(slot_flags == ITEM_SLOT_BACK)
+		if(slot_flags == INV_SLOTBIT_BACK)
 			if(user.get_item_by_slot(SLOT_BACK) == src)
 				ui_action_click()
 			else
 				to_chat(user, span_warning("Put the defibrillator on your back first!"))
 
-		else if(slot_flags == ITEM_SLOT_BELT)
+		else if(slot_flags == INV_SLOTBIT_BELT)
 			if(user.get_item_by_slot(SLOT_BELT) == src)
 				ui_action_click()
 			else
@@ -180,7 +180,7 @@
 
 /obj/item/defibrillator/equipped(mob/user, slot)
 	..()
-	if((slot_flags == ITEM_SLOT_BACK && slot != SLOT_BACK) || (slot_flags == ITEM_SLOT_BELT && slot != SLOT_BELT))
+	if((slot_flags == INV_SLOTBIT_BACK && slot != SLOT_BACK) || (slot_flags == INV_SLOTBIT_BELT && slot != SLOT_BELT))
 		remove_paddles(user)
 		update_power()
 
@@ -256,7 +256,7 @@
 	icon_state = "defibcompact"
 	item_state = "defibcompact"
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/defibrillator/compact/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == user.getBeltSlot())
@@ -354,13 +354,6 @@
 	playsound(src, 'sound/machines/defib_ready.ogg', 50, 0)
 	cooldown = FALSE
 	update_icon()
-
-/obj/item/shockpaddles/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is putting the live paddles on [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(req_defib)
-		defib.deductcharge(revivecost)
-	playsound(src, 'sound/machines/defib_zap.ogg', 50, 1, -1)
-	return (OXYLOSS)
 
 /obj/item/shockpaddles/update_icon_state()
 	icon_state = "defibpaddles[wielded]"
@@ -571,7 +564,7 @@
 				shock_touching(30, H)
 				var/failed
 
-				if (H.suiciding || (HAS_TRAIT(H, TRAIT_NOCLONE)))
+				if ((HAS_TRAIT(H, TRAIT_NOCLONE)))
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's DNR is set. Patient cannot be revived without specialized assistance.")
 				else if (H.hellbound)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's soul has been cast into Hell. Patient cannot be revived without specialized assistance.")
@@ -592,8 +585,6 @@
 							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is too damaged. Repair the patient's brain.")
 						if(BR.brain_death)
 							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is destroyed. Patient cannot be revived without specialized assistance.")
-						if(H.suiciding || BR.brainmob?.suiciding)
-							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's DNR is set. Patient cannot be revived without specialized assistance.")
 					else
 						failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is missing. Replace the patient's brain.")
 

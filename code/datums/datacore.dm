@@ -102,6 +102,7 @@
 	var/list/flw = list()
 	var/list/tribe = list()
 	var/list/was = list()
+	var/list/hvn = list()
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -154,6 +155,9 @@
 		if(rank in GLOB.wasteland_positions)
 			was[name] = rank
 			department = 1
+		if(rank in GLOB.heavensnight_positions)
+			hvn[name] = rank
+			department = 1
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(length(command))
@@ -205,6 +209,11 @@
 		dat += "<tr><th colspan=3>Wasteland</th></tr>"
 		for(var/name in was)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[was[name]]</td></tr>"
+			even = !even
+	if(length(hvn))
+		dat += "<tr><th colspan=3>Heavens Night</th></tr>"
+		for(var/name in hvn)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[hvn[name]]</td></tr>"
 			even = !even
 	// misc guys
 	if(length(misc))

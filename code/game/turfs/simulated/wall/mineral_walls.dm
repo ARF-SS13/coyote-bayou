@@ -13,7 +13,7 @@
 	icon = 'icons/turf/walls/brick_wall.dmi'
 	icon_state = "brickwall"
 	hardness = 150
-	sheet_type = /obj/item/stack/rods
+	sheet_type = /obj/item/stack/sheet/mineral/brick
 	canSmoothWith = list(/turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick)
 
 /turf/closed/wall/mineral/gold

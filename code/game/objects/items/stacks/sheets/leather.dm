@@ -187,7 +187,7 @@ GLOBAL_LIST_INIT(leather_recipes, list (
 	new/datum/stack_recipe("medical pouch", /obj/item/storage/survivalkit/medical/empty, 5),
 	new/datum/stack_recipe("combat pouch", /obj/item/storage/survivalkit/combat, 5),
 	new/datum/stack_recipe("tribal medicine pouch", /obj/item/storage/survivalkit/medical/tribal/empty, 5),
-	new/datum/stack_recipe("extra large pouch", /obj/item/storage/survivalkit/triple, 15),
+	new/datum/stack_recipe("extra large pouch", /obj/item/storage/survivalkit/triple, 25),
 	new/datum/stack_recipe("sack", /obj/item/storage/bag/trash/sack, 15),
 ))
 

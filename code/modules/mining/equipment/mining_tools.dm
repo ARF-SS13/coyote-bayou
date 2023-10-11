@@ -4,7 +4,7 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "pickaxe"
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	force = 20
 	force_unwielded = 20
 	force_wielded = 60
@@ -34,13 +34,6 @@
 	else
 		to_chat(user, span_notice("Tool does not have a configureable dig range."))
 
-/obj/item/pickaxe/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(use_tool(user, user, 30, volume=50))
-		return BRUTELOSS
-	user.visible_message(span_suicide("[user] couldn't do it!"))
-	return SHAME
-
 /obj/item/pickaxe/mini
 	name = "compact pickaxe"
 	desc = "A smaller, compact version of the standard pickaxe."
@@ -49,7 +42,7 @@
 	force_unwielded = 15
 	force_wielded = 30
 	throwforce = 15
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=1000)
 
@@ -116,7 +109,7 @@
 	name = "mining drill"
 	icon_state = "handdrill"
 	item_state = "jackhammer"
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	force = 40
 	force_unwielded = 40
 	force_wielded = 45 // You're drilling people, not smashing them like a pick.
@@ -175,7 +168,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
 	force_unwielded = 15
@@ -194,13 +187,6 @@
 /obj/item/shovel/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 150, 40) //it's sharp, so it works, but barely.
-
-/obj/item/shovel/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] begins digging their own grave!  It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(use_tool(user, user, 30, volume=50))
-		return BRUTELOSS
-	user.visible_message(span_suicide("[user] couldn't do it!"))
-	return SHAME
 
 /obj/item/shovel/serrated
 	name = "serrated bone shovel"

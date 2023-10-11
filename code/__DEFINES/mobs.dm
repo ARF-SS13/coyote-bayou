@@ -447,10 +447,9 @@
 #define	ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases
 #define	REAGENTS_METABOLISM 0.4	//How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4)	// By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
+#define REM (REAGENTS_EFFECT_MULTIPLIER * effect_mult)
 
 // Roundstart trait system
-
-#define MAX_QUIRKS 6 //The maximum amount of quirks one character can have at roundstart
 
 #define MAX_REVIVE_FIRE_DAMAGE 180
 #define MAX_REVIVE_BRUTE_DAMAGE 180
@@ -620,3 +619,18 @@
 
 /// Max distance you can see tats
 #define TATTOO_VISIBILITY_RANGE 3
+
+#define SIMPLEMOB_IGNORE 1
+
+#define PHUD_NONE  "GENITAL_HUD_NONE"
+#define PHUD_BUTT  "GENITAL_HUD_BUTT"
+#define PHUD_BOOB  "GENITAL_HUD_BREASTS"
+#define PHUD_PENIS "GENITAL_HUD_PEEN"
+#define PHUD_BALLS "GENITAL_HUD_BALLS"
+#define PHUD_VAG   "GENITAL_HUD_VAG"
+#define PHUD_BELLY "GENITAL_HUD_BELLY"
+#define PHUD_TAIL  "GENITAL_HUD_TAIL"
+#define PHUD_WINGS "GENITAL_HUD_WINGS"
+#define PHUD_SHIRT "GENITAL_HUD_SHIRT"
+#define PHUD_PANTS "GENITAL_HUD_PANTS"
+#define PHUD_SOCKS "GENITAL_HUD_SOCKS"

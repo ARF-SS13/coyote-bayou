@@ -83,7 +83,7 @@
 	var/total_burn	= H.getFireLoss()
 	var/failed
 
-	if (H.suiciding || (HAS_TRAIT(H, TRAIT_NOCLONE)))
+	if (HAS_TRAIT(H, TRAIT_NOCLONE))
 		failed = span_warning("The heart is zapped by the [tool], but nothing happens. You feel like the spark of life has fully left [H].")
 	else if (H.hellbound)
 		failed = span_warning("The heart is zapped by the [tool], but nothing happens. You notice a small tatoo with the words \"Property of Satan\" branded just above the right ventricle.")
@@ -93,10 +93,7 @@
 		failed = span_warning("The [tool] zaps the heart, inducing several contractions before dying down, but there's no spark of life in [H]'s eyes. It may be worth it to try again, however.")
 	else
 		var/obj/item/organ/brain/BR = H.getorgan(/obj/item/organ/brain)
-		if(BR)
-			if(H.suiciding || BR.brainmob?.suiciding)
-				failed = span_warning("The heart is zapped by the [tool], but nothing happens. You feel like the spark of life has fully left [H].")
-		else
+		if(!BR)
 			failed = span_warning("The [tool] zaps the heart, restarting the heart, but without a brain the contractions quickly die out.")
 
 

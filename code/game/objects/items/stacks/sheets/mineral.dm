@@ -17,6 +17,7 @@ Mineral Sheets
 		- Snow
 		- Abductor
 		- Coal
+		- Brick
 */
 
 /*
@@ -119,6 +120,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	new/datum/stack_recipe("diamond door", /obj/structure/mineral_door/transparent/diamond, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("diamond tile", /obj/item/stack/tile/mineral/diamond, 1, 4, 20),  \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/diamond, 1, time = 10),
 	new/datum/stack_recipe("Captain Statue", /obj/structure/statue/diamond/captain, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("AI Hologram Statue", /obj/structure/statue/diamond/ai1, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("AI Core Statue", /obj/structure/statue/diamond/ai2, 5, one_per_turf = 1, on_floor = 1), \
@@ -158,6 +160,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	new/datum/stack_recipe("uranium tile", /obj/item/stack/tile/mineral/uranium, 1, 4, 20), \
 	new/datum/stack_recipe("Nuke Statue", /obj/structure/statue/uranium/nuke, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Engineer Statue", /obj/structure/statue/uranium/eng, 5, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/uranium, 1, time = 10),
 //	new/datum/stack_recipe("uranium ingot", /obj/item/ingot/uranium, 6, time = 100), \ please no
 	))
 
@@ -189,10 +192,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
 	custom_price = 45
-
-/obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS//dont you kids know that stuff is toxic?
 
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
@@ -243,6 +242,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("golden door", /obj/structure/mineral_door/gold, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/gold, 1, time = 10),
 	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("HoP Statue", /obj/structure/statue/gold/hop, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("CE Statue", /obj/structure/statue/gold/ce, 5, one_per_turf = 1, on_floor = 1), \
@@ -283,6 +283,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 GLOBAL_LIST_INIT(silver_recipes, list ( \
 	new/datum/stack_recipe("silver door", /obj/structure/mineral_door/silver, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("silver tile", /obj/item/stack/tile/mineral/silver, 1, 4, 20), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/silver, 1, time = 10),
 	new/datum/stack_recipe("Med Officer Statue", /obj/structure/statue/silver/md, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Janitor Statue", /obj/structure/statue/silver/janitor, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Sec Officer Statue", /obj/structure/statue/silver/sec, 5, one_per_turf = 1, on_floor = 1), \
@@ -326,6 +327,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 
 GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	new/datum/stack_recipe("titanium tile", /obj/item/stack/tile/mineral/titanium, 1, 4, 20), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/titanium, 1, time = 10),
 	new/datum/stack_recipe("titanic ingot", /obj/item/ingot/titanium, 6, time = 100), \
 	new/datum/stack_recipe("titanium arrowhead", /obj/item/stack/arrowhead/titanium, 2, 1, time = 2.5 SECONDS), \
 	new/datum/stack_recipe("bear trap", /obj/item/restraints/legcuffs/beartrap, 1, time = 50), \
@@ -370,6 +372,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plastitanium, 1, time = 10),
 	))
 
 /obj/item/stack/sheet/mineral/plastitanium/get_main_recipes()
@@ -383,6 +386,7 @@ GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
  */
 GLOBAL_LIST_INIT(adamantine_recipes, list(
 	new /datum/stack_recipe("incomplete servant golem shell", /obj/item/golem_shell/servant, req_amount=1, res_amount=1),
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/adamantine, 1, time = 10),
 	new/datum/stack_recipe("adamant ingot", /obj/item/ingot/adamantine, 6, time = 100), \
 	))
 
@@ -473,6 +477,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	new/datum/stack_recipe("polymer bar stool", /obj/item/chair/stool/bar/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("polymer stool", /obj/item/chair/stool/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("poylmer airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/adamantine, 1, time = 10),
 	null, \
 	new/datum/stack_recipe("polymer floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
 	)) //End Fortuna edit
@@ -513,3 +518,34 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/coal/ten
 	amount = 10
+
+/*
+ * Bricks
+ */
+/obj/item/stack/sheet/mineral/brick 
+	name = "bricks"
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "sheet-brick"
+	item_state = "sheet-brick"
+	singular_name = "brick"
+	sheettype = "brick"
+	merge_type = /obj/item/stack/sheet/mineral/brick 
+	walltype = /turf/closed/wall/mineral/brick
+
+
+/obj/item/stack/sheet/mineral/brick/ten
+	amount = 10
+
+/obj/item/stack/sheet/mineral/brick/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/brick/fifty
+	amount = 50
+
+GLOBAL_LIST_INIT(brick_recipes, list ( \
+	new/datum/stack_recipe("throwing brick", /obj/item/ammo_casing/caseless/brick, 2), \
+	))
+
+/obj/item/stack/sheet/mineral/brick/get_main_recipes()
+	. = ..()
+	. += GLOB.brick_recipes

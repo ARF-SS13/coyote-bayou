@@ -4,7 +4,7 @@
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/outside/active_mid1.ogg', 8 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/outside/active_mid1.ogg', 8 SECONDS, 1)
 		)
-	volume = 50
+	volume = 30
 
 /datum/looping_sound/active_inside_ashstorm
 	mid_sounds = list(
@@ -12,7 +12,7 @@
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/inside/active_mid2.ogg', 8 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/inside/active_mid3.ogg', 8 SECONDS, 1)
 		)
-	volume = 25
+	volume = 20
 
 /datum/looping_sound/weak_outside_ashstorm
 	mid_sounds = list(
@@ -20,7 +20,7 @@
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/outside/weak_mid2.ogg', 8 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/outside/weak_mid3.ogg', 8 SECONDS, 1)
 		)
-	volume = 25
+	volume = 15
 
 /datum/looping_sound/weak_inside_ashstorm
 	mid_sounds = list(
@@ -28,7 +28,7 @@
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/inside/weak_mid2.ogg', 8 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/weather/ashstorm/inside/weak_mid3.ogg', 8 SECONDS, 1)
 		)
-	volume = 15
+	volume = 12
 
 //credit: soundjay.com
 /datum/looping_sound/rain_sounds

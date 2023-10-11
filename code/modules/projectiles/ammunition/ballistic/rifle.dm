@@ -233,7 +233,8 @@
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_GAUSS_CASING + MATS_GAUSS_BULLET,
-		/datum/material/blackpowder = MATS_GAUSS_POWDER)
+		/datum/material/blackpowder = MATS_GAUSS_POWDER,
+		/datum/material/titanium = MATS_GAUSS_BULLET)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
 	sound_properties = CSP_GAUSS
 
@@ -242,3 +243,7 @@
 	desc = "A 2mm gauss projectile casing, \"Blender\" variant. Bounces off walls at hypersonic speeds."
 	projectile_type = /obj/item/projectile/bullet/c2mm/blender
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_MATCH
+	custom_materials = list(
+		/datum/material/iron = MATS_GAUSS_CASING + MATS_GAUSS_BULLET * 1.1,
+		/datum/material/blackpowder = MATS_GAUSS_POWDER,
+		/datum/material/titanium = MATS_GAUSS_BULLET * 1.1)

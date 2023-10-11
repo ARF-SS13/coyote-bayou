@@ -159,7 +159,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
 
-/obj/item/clothing/shoes/workboots/mining
+/obj/item/clothing/shoes/workboots/mining 		//HMMMM
 	name = "mining boots"
 	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."
 	icon_state = "explorer"
@@ -260,7 +260,7 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
-
+/* Disablingn for now, until we can figure out the PA issue.
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"
 	desc = "Time-crusted boots made from an ancient design. A single rubber cylinder is buried into the heel of an otherwise normal pair of footwear. Skate along as fast as your heart desires, friend." //Thanks Fel
@@ -298,7 +298,7 @@
 /obj/item/clothing/shoes/wheelys/Destroy()
 	QDEL_NULL(W)
 	. = ..()
-
+*/
 /obj/item/clothing/shoes/kindleKicks
 	name = "Kindle Kicks"
 	desc = "A kaleidescope of light bursts from these shoes with every footfall. A scattering of color lights up the night."
@@ -402,8 +402,17 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_MELEE_T1)
 	can_be_tied = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	equip_delay_self = 5
-	equip_delay_other = 5 
+	equip_delay_self = 1.5
+	equip_delay_other = 1.5
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/shoes/unmcb/winter
+	name = "Winterized UNMC Boots"
+	desc = "A set of UNMC boots, these are painted in white dye to resemble basic winter camoflauge"
+	icon_state = "unmcsnow"
+	item_state = "unmcsnow"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon = 'icons/fallout/clothing/shoes.dmi'
 
@@ -515,25 +524,30 @@
 /obj/item/clothing/shoes/clown
 	name = "Clown Shoes"
 	icon_state = "clown"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/brit
 	name = "Commonwealth Boots"
 	desc = "British style black ankle boots with a canvas gaiter around the ankle"
 	icon_state = "brit_boots"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/fifi
 	name = "Fifi"
 	icon_state = "fifi_socks"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/ww2brown
 	name = "Type three service shoe"
 	desc = "A post second world war design of the American standard boot, with Canvas leggings. Just modernized its specificly used for Jungle combat or in service in Hotter climates it was also lend leased to other nations in the Pacific. And is used by some wasters to this very day as a highly useful footwear garment."
 	icon_state = "ww2_brown"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/putt
 	name = "long puttees"
 	desc = "Long woolen leg wraps used sense the first world war"
 	icon_state = "putt"
+	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/shoes/cowboy/alt
 	name = "Cowboy Boots, alt"

@@ -7,7 +7,7 @@
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1 | HEAR_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
@@ -47,10 +47,6 @@
 	var/linked_faction = FALSE // Which faction the radio is linked to.
 	var/mob/living/carbon/linked_mob = null // Which mob the radio is checked out to.
 	//fortuna addition end. radio management.
-
-/obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
 	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
@@ -251,6 +247,8 @@
 	if(wires.is_cut(WIRE_TX))  // Permacell and otherwise tampered-with radios
 		return
 	if(!M.IsVocal())
+		return
+	if(language == /datum/language/signlanguage)
 		return
 
 	if(use_command)

@@ -129,6 +129,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//the type of eyes this species has
 	var/eye_type = "normal"
 
+	COOLDOWN_DECLARE(ass) // dont ask
+
 ///////////
 // PROCS //
 ///////////
@@ -639,6 +641,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				standing += left_eye
 				standing += right_eye
 
+	//SSpornhud.flush_undies(H) // coming soon
 	var/list/standing_undies = list()
 	var/list/standing_overdies = list()
 	//Underwear, Undershirts & Socks
@@ -806,7 +809,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"
 	var/husk = HAS_TRAIT(H, TRAIT_HUSK)
-	var/image/tail_hack // tailhud's a bazinga, innit
+	var/tailhacked // tailhud's a bazinga, innit
 
 	for(var/layer in relevant_layers)
 		var/list/standing = list()
@@ -919,7 +922,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
 
 			if(layertext == "FRONT" && mutant_string == "tail") // durty hack so asses dont eat tails
-				tail_hack = accessory_overlay
+				tailhacked = TRUE
+				SSpornhud.catalogue_part(H, PHUD_TAIL, accessory_overlay) // oh baby gimme that tail~
 			standing += accessory_overlay
 
 			if(S.extra) //apply the extra overlay, if there is one
@@ -1016,8 +1020,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.apply_overlay(BODY_ADJ_UPPER_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
 	H.apply_overlay(HORNS_LAYER)
-	H.tail_hud_update(tail_hack)
-
+	if(!tailhacked)
+		SSpornhud.catalogue_part(H, PHUD_TAIL, null) // hey gimme back my tail
 
 /*
  * Equip the outfit required for life. Replaces items currently worn.
@@ -1077,7 +1081,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_WEAR_MASK)
 			if(H.wear_mask)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_MASK))
+			if(!(I.slot_flags & INV_SLOTBIT_MASK))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1085,25 +1089,25 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_NECK)
 			if(H.wear_neck)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_NECK) )
+			if( !(I.slot_flags & INV_SLOTBIT_NECK) )
 				return FALSE
 			return TRUE
 		if(SLOT_BACK)
 			if(H.back)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_BACK) )
+			if( !(I.slot_flags & INV_SLOTBIT_BACK) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_WEAR_SUIT)
 			if(H.wear_suit)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_OCLOTHING) )
+			if( !(I.slot_flags & INV_SLOTBIT_OCLOTHING) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_GLOVES)
 			if(H.gloves)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_GLOVES) )
+			if( !(I.slot_flags & INV_SLOTBIT_GLOVES) )
 				return FALSE
 			if(num_arms < 2)
 				return FALSE
@@ -1111,7 +1115,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_SHOES)
 			if(H.shoes)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_FEET) )
+			if( !(I.slot_flags & INV_SLOTBIT_FEET) )
 				return FALSE
 			if(num_legs < 2)
 				return FALSE
@@ -1130,13 +1134,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(return_warning)
 						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_BELT))
+			if(!(I.slot_flags & INV_SLOTBIT_BELT))
 				return
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_GLASSES)
 			if(H.glasses)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_EYES))
+			if(!(I.slot_flags & INV_SLOTBIT_EYES))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1144,7 +1148,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_HEAD)
 			if(H.head)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_HEAD))
+			if(!(I.slot_flags & INV_SLOTBIT_HEAD))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1152,7 +1156,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_EARS)
 			if(H.ears)
 				return FALSE
-			if(!(I.slot_flags & ITEM_SLOT_EARS))
+			if(!(I.slot_flags & INV_SLOTBIT_EARS))
 				return FALSE
 			if(!H.get_bodypart(BODY_ZONE_HEAD))
 				return FALSE
@@ -1160,7 +1164,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SLOT_W_UNIFORM)
 			if(H.w_uniform)
 				return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ICLOTHING) )
+			if( !(I.slot_flags & INV_SLOTBIT_ICLOTHING) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_WEAR_ID)
@@ -1172,7 +1176,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(return_warning)
 						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
-			if( !(I.slot_flags & ITEM_SLOT_ID) )
+			if( !(I.slot_flags & INV_SLOTBIT_ID) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_L_STORE)
@@ -1187,9 +1191,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
-			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
+			if(I.slot_flags & INV_SLOTBIT_DENYPOCKET)
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_POCKET) )
+			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & INV_SLOTBIT_POCKET) )
 				return TRUE
 		if(SLOT_R_STORE)
 			if(HAS_TRAIT(I, TRAIT_NODROP))
@@ -1203,9 +1207,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(return_warning)
 					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
-			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
+			if(I.slot_flags & INV_SLOTBIT_DENYPOCKET)
 				return FALSE
-			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_POCKET) )
+			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & INV_SLOTBIT_POCKET) )
 				return TRUE
 			return FALSE
 		if(SLOT_S_STORE)
@@ -1281,21 +1285,25 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
+	if(HAS_TRAIT_FROM(H, TRAIT_FAT, ROUNDSTART_TRAIT)) // its a decent enough system!
+		H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
-	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
-		if(H.overeatduration < 100)
-			to_chat(H, span_notice("Your guts relax!"))
-			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
-	else
-		if(H.overeatduration >= 100)
-			to_chat(H, span_danger("You feel really full!"))
-			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
-			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
-			H.update_inv_w_uniform()
-			H.update_inv_wear_suit()
+	else 
+		if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
+			if(H.overeatduration < 100)
+				to_chat(H, span_notice("Your guts relax!"))
+				REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
+		else
+			if(H.overeatduration >= 100)
+				to_chat(H, span_danger("You feel really full!"))
+				ADD_TRAIT(H, TRAIT_FAT, OBESITY)
+				H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
 
 	// nutrition decrease and satiety
 	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
@@ -1513,7 +1521,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!damage || !affecting)//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 			playsound(target.loc, user.dna.species.miss_sound, 25, TRUE, -1)
 			target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!"), \
-							span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), null, COMBAT_MESSAGE_RANGE, null, \
+							span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), COMBAT_MESSAGE_RANGE, null, \
 							user, span_warning("Your [atk_verb] misses [target]!"))
 			log_combat(user, target, "attempted to punch")
 			return FALSE
@@ -1570,6 +1578,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/spec_unarmedattacked(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return
 
+/datum/species/proc/bootysmack(turf/place, vol = 50, dist = 15)
+	playsound(place, 'sound/weapons/slap.ogg', vol, FALSE, SOUND_DISTANCE(dist), frequency = 22000) // deep bassy ass
+
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	// CITADEL EDIT slap mouthy gits and booty
 	var/aim_for_mouth = user.zone_selected == "mouth"
@@ -1607,14 +1618,49 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
 			return FALSE
 		user.do_attack_animation(target, ATTACK_EFFECT_ASS_SLAP)
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 		if(HAS_TRAIT(target, TRAIT_STEEL_ASS))
+			playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 			user.adjustStaminaLoss(50)
 			user.visible_message(\
 				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
 				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
 				"You hear a slap.")
 			return FALSE
+		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
+			if(!COOLDOWN_FINISHED(src, ass))
+				if(user == target)
+					to_chat(user, span_alert("Your ass is still jiggling about way too much to get a good smack!"))
+				else
+					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
+			else
+				COOLDOWN_START(src, ass, 5 SECONDS)
+				target.Dizzy(5)
+				if(user == target)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					user.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("[user] gives [user.p_their()] ass a smack!"),
+						span_notice("You give your big fat ass a smack! It sloshes and throws you off balance!"),
+					)
+					return
+				else
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
+					// var/vol = 40
+					// var/dist = 15
+					// var/time = 0.5 SECONDS
+					// for(var/i in 1 to 3)
+					// 	vol *= 0.75
+					// 	dist = round(dist*0.75)
+					// 	addtimer(CALLBACK(src, .proc/bootysmack, get_turf(target), vol, dist), time)
+					// 	time += 0.5 SECONDS
+					target.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("\The [user] slaps [target]'s ass!"),
+						span_greentext("That wonderful donk <i>demands</i> attention! You smack that plump, jiggly ass, your hand sinking in for a moment! It gives you a wobbly round of applause and knocks its owner off balance! So satifsying!~"),
+						target = target, 
+						target_message = span_notice("[user] smacks your big fat ass and sends it jiggling! It sloshes about and throws you off balance!"))
+				return FALSE
 		user.adjustStaminaLossBuffered(3)
 		target.adjust_arousal(20,maso = TRUE)
 		if (ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(10))
@@ -2005,8 +2051,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!BP)
 			BP = H.bodyparts[1]
 
-	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
-		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	if(!forced && damage > 0 && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 0.1)
 
 	switch(damagetype)
 		if(BRUTE)

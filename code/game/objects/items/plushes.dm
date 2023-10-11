@@ -772,13 +772,27 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	desc = "An adorable stuffed plushie that resembles an avian."
 	attack_verb = list("peeped", "beeped", "poofed")
 	squeak_override = list('modular_citadel/sound/voice/peep.ogg' = 1)
-	can_random_spawn = FALSE
+	can_random_spawn = TRUE
+	icon_state = "bird"
+	item_state = "bird"
+
+/obj/item/toy/plush/bird/sylas
+	name = "bird plushie"
+	desc = "An adorable stuffed bird plushie that resembles a bluejay with crystalline patches on it."
+	attack_verb = list("peeped", "beeped", "poofed")
+	squeak_override = list('modular_citadel/sound/voice/peep.ogg' = 1)
+	can_random_spawn = TRUE
+	icon_state = "birdsylas"
+	item_state = "birdsylas"
 
 /obj/item/toy/plush/sergal
 	name = "sergal plushie"
 	desc = "An adorable stuffed plushie that resembles a sagaru."
 	squeak_override = list('modular_citadel/sound/voice/merp.ogg' = 1)
-	can_random_spawn = FALSE
+	can_random_spawn = TRUE
+	icon_state = "sergal"
+	item_state = "sergal"
+
 
 /obj/item/toy/plush/mammal/dog
 	desc = "An adorable stuffed toy that resembles a canine."
@@ -882,3 +896,14 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	if(!Kisser)
 		return
 	plushie_absorb(Kisser)
+
+// Bayou plushes I guess?
+
+/obj/item/toy/plush/rattler
+	name = "Rattles Jr."
+	desc = "It's your friendly neighborhood merchant, Rattles! It looks like he's been turned into a marketable plushie."
+	icon_state = "rattles"
+	item_state = "plushie_lizard"
+	attack_verb = list("hissed", "rattled")
+	squeak_override = list('sound/creatures/rattle.ogg' = 1)
+

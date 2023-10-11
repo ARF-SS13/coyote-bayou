@@ -111,3 +111,19 @@
 	mid_length = 2
 	volume = 20
 
+/datum/looping_sound/rockpile
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_01.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_02.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_03.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_04.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_05.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_06.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_07.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_08.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_09.ogg', 0.5 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/effects/rocks/rocks1_10.ogg', 0.5 SECONDS, 1),
+		)
+	mid_length = 2
+	volume = 35
+

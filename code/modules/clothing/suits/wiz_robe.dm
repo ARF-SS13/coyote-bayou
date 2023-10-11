@@ -14,7 +14,7 @@
 ///obj/item/clothing/head/wizard/ComponentInitialize()
 //	. = ..()
 //	if(magic_flags)
-//		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_HEAD)
+//		AddElement(/datum/element/spellcasting, magic_flags, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
@@ -89,7 +89,7 @@
 ///obj/item/clothing/suit/wizrobe/ComponentInitialize()
 //	. = ..()
 //	if(magic_flags)
-//		AddElement(/datum/element/spellcasting, magic_flags, ITEM_SLOT_OCLOTHING)
+//		AddElement(/datum/element/spellcasting, magic_flags, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"
@@ -316,7 +316,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, ITEM_SLOT_HEAD)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_HAT, INV_SLOTBIT_HEAD)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
 	name = "battlemage helmet"
@@ -330,7 +330,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, ITEM_SLOT_OCLOTHING)
+	AddElement(/datum/element/spellcasting, SPELL_WIZARD_ROBE, INV_SLOTBIT_OCLOTHING)
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard/attack_self(mob/user)
 	return

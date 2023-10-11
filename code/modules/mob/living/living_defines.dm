@@ -60,7 +60,7 @@
 	var/incorporeal_move = FALSE //FALSE is off, INCORPOREAL_MOVE_BASIC is normal, INCORPOREAL_MOVE_SHADOW is for ninjas
 								//and INCORPOREAL_MOVE_JAUNT is blocked by holy water/salt
 
-	var/list/roundstart_quirks = list()
+	var/list/mob_quirks = list()
 
 	var/list/surgeries = list()	//a list of surgery datums. generally empty, they're added when the player wants them.
 
@@ -162,3 +162,5 @@
 	//---End
 
 	var/disconnect_time //how long have we been dc'd for
+
+	var/fuzzy = FALSE

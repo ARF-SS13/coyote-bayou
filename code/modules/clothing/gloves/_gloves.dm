@@ -5,7 +5,7 @@
 	icon = 'icons/obj/clothing/gloves.dmi'
 	siemens_coefficient = 0.5
 	body_parts_covered = HANDS
-	slot_flags = ITEM_SLOT_GLOVES
+	slot_flags = INV_SLOTBIT_GLOVES
 	attack_verb = list("challenged")
 	var/transfer_prints = FALSE
 	var/transfer_blood = 0
@@ -21,10 +21,6 @@
 /obj/item/clothing/gloves/clean_blood(datum/source, strength)
 	. = ..()
 	transfer_blood = 0
-
-/obj/item/clothing/gloves/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("\the [src] are forcing [user]'s hands around [user.p_their()] neck! It looks like the gloves are possessed!"))
-	return OXYLOSS
 
 /obj/item/clothing/gloves/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()

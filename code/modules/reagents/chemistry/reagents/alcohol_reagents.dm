@@ -2406,7 +2406,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	var/alcohol_description
 	switch(boozepwr)
 		if(120 to INFINITY)
-			alcohol_description = "suicidally strong"
+			alcohol_description = "deadly"
 		if(90 to 120)
 			alcohol_description = "rather strong"
 		if(70 to 90)

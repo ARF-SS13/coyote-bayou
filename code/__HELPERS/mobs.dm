@@ -225,7 +225,8 @@
 		"meat_type"			= "Mammalian",
 		"taste"				= "taste",
 		"body_model"		= body_model,
-		"body_size"			= RESIZE_DEFAULT_SIZE
+		"body_size"			= RESIZE_DEFAULT_SIZE,
+		"body_width"		= RESIZE_DEFAULT_WIDTH
 		))
 
 /proc/random_hair_style(gender)
@@ -359,6 +360,11 @@ GLOBAL_LIST_EMPTY(species_list)
 		var/mob/living/carbon/human/H = A
 		if(H.dna && istype(H.dna.species, species_datum))
 			. = TRUE
+
+/proc/is_toxin_lover(mob/living/carbon/human/H)
+	if(!ishuman(H))
+		return FALSE
+	return (HAS_TRAIT(H, TRAIT_TOXINLOVER))
 
 /proc/spawn_atom_to_turf(spawn_type, target, amount, admin_spawn=FALSE, list/extra_args)
 	var/turf/T = get_turf(target)

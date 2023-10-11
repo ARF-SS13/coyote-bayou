@@ -1136,6 +1136,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		if (menuitem)
 			menuitem.Load_checked(src)
 
+/* 
 /client/proc/checkGonadDistaste(flag)
 	if(!flag || !prefs)
 		return
@@ -1223,3 +1224,4 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))
 	nicebutt.update_genitals(TRUE)
 	return TRUE
+ */

@@ -9,7 +9,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
@@ -42,13 +42,6 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 	return 1
-
-/obj/item/flashlight/suicide_act(mob/living/carbon/human/user)
-	if (user.eye_blind)
-		user.visible_message(span_suicide("[user]  is putting [src] close to [user.p_their()] eyes and turning it on ... but [user.p_theyre()] blind!"))
-		return SHAME
-	user.visible_message(span_suicide("[user] is putting [src] close to [user.p_their()] eyes and turning it on! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
 
 /obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
 	add_fingerprint(user)
@@ -168,7 +161,7 @@
 	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance. Comes with a handy necklace and bite-resistant coating for hands-free use. Try not to swallow it."
 	icon_state = "penlight"
 	item_state = ""
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK | ITEM_SLOT_MASK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	flags_1 = CONDUCT_1
 	light_range = 2
 	light_color = "#FFDDCC"
@@ -221,7 +214,7 @@
 	force = 25 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
 	light_range = 5 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
-	slot_flags = ITEM_SLOT_BELT // Big and heavy!
+	slot_flags = INV_SLOTBIT_BELT // Big and heavy!
 	hitsound = 'sound/weapons/genhit1.ogg'
 	custom_price = PRICE_ALMOST_CHEAP
 
@@ -238,7 +231,7 @@
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	light_on = TRUE
-	slot_flags = ITEM_SLOT_BELT // Big and heavy!
+	slot_flags = INV_SLOTBIT_BELT // Big and heavy!
 	on = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
@@ -279,7 +272,7 @@
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
-	slot_flags = ITEM_SLOT_BELT // its a little hot for your neck
+	slot_flags = INV_SLOTBIT_BELT // its a little hot for your neck
 	var/fuel = 0
 	var/on_damage = 9
 	var/produce_heat = 1500
@@ -394,7 +387,7 @@
 	desc = "While not the brightest, lanterns like these light up a large area. Good for exploration, or just making do when the lights go out. Might make do as a bludgeon if you were really desperate."
 	light_system = MOVABLE_LIGHT
 	w_class = WEIGHT_CLASS_NORMAL //I'm cruel, disrupting the meta
-	slot_flags = ITEM_SLOT_BELT // Big and heavy!
+	slot_flags = INV_SLOTBIT_BELT // Big and heavy!
 	light_range = 6	// luminosity when on
 	light_color = "#FFAA44"
 	custom_price = PRICE_CHEAP
@@ -413,7 +406,7 @@
 	icon_state = "slime"
 	item_state = "slime"
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	custom_materials = null
 	light_system = MOVABLE_LIGHT
 	light_range = 6 //luminosity when on
@@ -483,7 +476,7 @@
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	rad_flags = RAD_NO_CONTAMINATE
 	var/fuel = 0

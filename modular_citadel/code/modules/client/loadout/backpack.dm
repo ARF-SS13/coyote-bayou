@@ -40,6 +40,11 @@
 	path = /obj/item/storage/fancy/donut_box
 	cost = 2
 
+/datum/gear/backpack/locksmith
+	name = "locksmith box"
+	path = /obj/item/storage/box/tools/locksmith
+	cost = 2
+
 //// "Toys" -- toys going back to general subcategory till we have more of them
 
 /datum/gear/backpack/crayons
@@ -176,6 +181,11 @@
 	name = "trekker satchel"
 	path = /obj/item/storage/backpack/satchel/trekker
 
+/datum/gear/backpack/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	path = /obj/item/storage/backpack/trekker/marinepack
+	cost = 1
+
 /datum/gear/backpack/backpack/sec
 	name = "security backpack"
 	path = /obj/item/storage/backpack/security
@@ -191,6 +201,14 @@
 /datum/gear/hands/backpack/old
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
+
+/datum/gear/backpack/coinpouch
+	name = "coin pouch"
+	path = /obj/item/storage/wallet/stash/pouch
+
+/datum/gear/backpack/backpack/snailshell
+	name = "snail shell"
+	path = /obj/item/storage/backpack/satchel/snailshell
 
 /////////////////////
 //Coyote Additions//
@@ -538,7 +556,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/trans
-	name  = "Transexual Pride Pin"
+	name  = "Transgender Pride Pin"
 	path = /obj/item/clothing/accessory/pride/trans
 	cost = 0
 
@@ -548,7 +566,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/enby
-	name  = "Nonbinery Pride Pin"
+	name  = "Nonbinary Pride Pin"
 	path = /obj/item/clothing/accessory/pride/enby
 	cost = 0
 

@@ -116,9 +116,9 @@
 			force_modifier = (-force * 0.8) // You do 20% damage because of fear
 		else
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-				force_modifier += 8
+				force_modifier += 10
 			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-				force_modifier += 4
+				force_modifier += 5
 			if(HAS_TRAIT(user, TRAIT_GENTLE))
 				force_modifier += -5
 			if(HAS_TRAIT(user, TRAIT_WIMPY))

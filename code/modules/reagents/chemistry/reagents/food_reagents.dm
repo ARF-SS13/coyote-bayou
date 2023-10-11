@@ -511,7 +511,7 @@
 	color = "#660000" // rgb: 221, 202, 134
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
-	glass_name = "glass of chocolate"
+	glass_name = "cup of hot chocolate"
 	glass_desc = "Tasty."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
@@ -621,6 +621,7 @@
 /datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(HAS_TRAIT(M, TRAIT_WHITE_WOMAN))
 		M.visible_message("<b>[M]</b> [pick("licks [M.p_their()] lips", "licks [M.p_their()] nose", "licks the air")].")
+		M.emote("noselick")
 	return ..()
 
 /datum/reagent/consumable/cornoil

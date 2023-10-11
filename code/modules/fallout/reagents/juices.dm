@@ -8,7 +8,7 @@
 
 /datum/reagent/consumable/mutjuice/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(50))
-		M.heal_bodypart_damage(0,1, 0)
+		M.heal_bodypart_damage(0,1*REM, 0)
 		. = TRUE
 	..()
 

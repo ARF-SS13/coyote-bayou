@@ -42,6 +42,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/match/proc/matchignite()
 	if(!lit && !burnt)
+		playsound(src, 'sound/f13items/matchstick_lit.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		lit = TRUE
 		icon_state = "match_lit"
 		damtype = "fire"
@@ -56,6 +57,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/match/proc/matchburnout()
 	if(lit)
+		playsound(src, 'sound/f13items/matchstick_hit.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		lit = FALSE
 		burnt = TRUE
 		damtype = "brute"
@@ -119,10 +121,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 30)
 	heat = 1000
 
-/obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer."))
-	return (TOXLOSS|OXYLOSS)
-
 /obj/item/clothing/mask/cigarette/Initialize()
 	. = ..()
 	create_reagents(chem_volume, INJECTABLE | NO_REACT, NO_REAGENTS_VALUE) // so it doesn't react until you light it
@@ -138,6 +136,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/attackby(obj/item/W, mob/user, params)
 	if(!lit && smoketime > 0)
+		playsound(src, 'sound/f13items/cig_light.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 		var/lighting_text = W.ignition_effect(src, user)
 		if(lighting_text)
 			light(lighting_text)
@@ -159,6 +158,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
+
 		return
 	if(!(flags_1 & INITIALIZED_1))
 		icon_state = icon_on
@@ -518,7 +518,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	light_power = 0.6
@@ -543,15 +543,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!overlay_state)
 		overlay_state = pick(overlay_list)
 	update_icon()
-
-/obj/item/lighter/suicide_act(mob/living/carbon/user)
-	if (lit)
-		user.visible_message(span_suicide("[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!"))
-		playsound(src, 'sound/items/welder.ogg', 50, 1)
-		return FIRELOSS
-	else
-		user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()
 	icon_state = "[initial(icon_state)][lit ? "-on" : ""]"
@@ -585,6 +576,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(user.is_holding(src))
 		if(!lit)
 			set_lit(TRUE)
+			playsound(src, 'sound/f13items/zippo_on.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 			if(fancy)
 				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", span_notice("Without even breaking stride, you flip open and light [src] in one smooth movement."))
 			else
@@ -608,6 +600,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 		else
 			set_lit(FALSE)
+			playsound(src, 'sound/f13items/zippo_off.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))
 			if(fancy)
 				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", span_notice("You quietly shut off [src] without even looking at what you're doing. Wow."))
 			else
@@ -841,11 +834,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/vapetime = FALSE //this so it won't puff out clouds every tick
 	var/screw = FALSE // kinky
 	var/super = FALSE //for the fattest vapes dude.
-
-/obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!"))//it doesn't give you cancer, it is cancer
-	return (TOXLOSS|OXYLOSS)
-
 
 /obj/item/clothing/mask/vape/Initialize(mapload, param_color)
 	. = ..()

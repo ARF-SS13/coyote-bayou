@@ -23,12 +23,6 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/melee/transforming/plasmacutter/suicide_act(mob/user)
-	if(!active)
-		transform_weapon(user, TRUE)
-	user.visible_message(span_suicide("[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
-	return (BRUTELOSS|FIRELOSS)
-
 /obj/item/melee/transforming/plasmacutter/add_blood_DNA(list/blood_dna)
 	return FALSE
 
@@ -112,11 +106,6 @@
 	light_color = "#00FF00"
 	total_mass = null
 
-/obj/item/melee/transforming/plasmacutter/regular/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|FIRELOSS)
-
-
 /obj/item/melee/transforming/plasmacutter/regular/eve
 	name = "plasma cutter eve"
 	desc = "A violet colored plasma cutter. This one is designed with a lightweight, more elegant frame, for quicker strikes."
@@ -139,6 +128,31 @@
 	attack_verb_off = list("attacked", "burned", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#A020F0"
+	total_mass = null
+
+/obj/item/melee/transforming/plasmacutter/regular/energykatana
+	name = "Energy Katana"
+	desc = "A katana infused with strong energy."
+	icon_state = "katana"
+	icon_state_on = "energy_katana"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 25
+	force_on = 35
+	sharpness = SHARP_EDGED
+	throwforce = 5
+	throwforce_on = 15
+	block_chance = 15
+	attack_speed = CLICK_CD_MELEE * 0.85
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	throw_speed = 3
+	throw_range = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	w_class_on = WEIGHT_CLASS_HUGE
+	flags_1 = CONDUCT_1
+	attack_verb_off = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	light_color = "#20f043"
 	total_mass = null
 
 /obj/item/melee/transforming/plasmacutter/regular/adam
@@ -344,7 +358,7 @@
 	icon_state = "blade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	force = 30 //Normal attacks deal esword damage
+	force = 35 //Normal attacks deal esword damage
 	hitsound = 'sound/weapons/blade1.ogg'
 	active = 1
 	throwforce = 1 //Throwing or dropping the item deletes it.

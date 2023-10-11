@@ -21,17 +21,6 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/shuttle/supply)
-"f" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "QMLoad2"
-	},
-/obj/machinery/door/poddoor{
-	id = "QMLoaddoor2";
-	name = "supply dock loading door"
-	},
-/turf/open/floor/plating,
-/area/shuttle/supply)
 "g" = (
 /obj/machinery/button/door{
 	dir = 2;
@@ -54,17 +43,6 @@
 "i" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/floorgrime,
-/area/shuttle/supply)
-"j" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "QMLoad"
-	},
-/obj/machinery/door/poddoor{
-	id = "QMLoaddoor";
-	name = "supply dock loading door"
-	},
-/turf/open/floor/plating,
 /area/shuttle/supply)
 "k" = (
 /obj/docking_port/mobile/supply{
@@ -163,11 +141,11 @@ a
 a
 a
 a
-f
+d
 d
 a
 k
-j
+d
 a
 a
 a

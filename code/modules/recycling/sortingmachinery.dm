@@ -153,20 +153,11 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = INV_SLOTBIT_BELT
 
 /obj/item/destTagger/borg
 	name = "cyborg destination tagger"
 	desc = "Used to fool the disposal mail network into thinking that you're a harmless parcel. Does actually work as a regular destination tagger as well."
-
-/obj/item/destTagger/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] begins tagging [user.p_their()] final destination!  It looks like [user.p_theyre()] trying to commit suicide!"))
-	if (islizard(user))
-		to_chat(user, span_notice("*HELL*"))//lizard nerf
-	else
-		to_chat(user, span_notice("*HEAVEN*"))
-	playsound(src, 'sound/machines/twobeep.ogg', 100, 1)
-	return BRUTELOSS
 
 /obj/item/destTagger/proc/openwindow(mob/user)
 	var/dat = "<tt><center><h1><b>TagMaster 2.2</b></h1></center>"

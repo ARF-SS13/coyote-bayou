@@ -5,7 +5,7 @@
 	icon_state = "top_hat"
 	item_state = "that"
 	body_parts_covered = HEAD
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = INV_SLOTBIT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"
@@ -936,7 +936,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	icon_state = "khan_fullhelmet"
 	item_state = "khan_fullhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_cover = HEADCOVERSEYES 
 	strip_delay = 20
 
 /* /obj/item/clothing/head/helmet/f13/khan/fullhelm/Initialize()

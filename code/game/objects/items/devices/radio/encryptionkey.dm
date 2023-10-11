@@ -169,7 +169,7 @@
 	name = "Brotherhood radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the Brotherhood channel, use :q."
 	icon_state = "cypherkey"
-	channels = list(RADIO_CHANNEL_BOS = 1)
+	channels = list(RADIO_CHANNEL_ASHDOWN = 1)
 
 /obj/item/encryptionkey/headset_enclave
 	name = "Enclave radio encryption key"
@@ -246,15 +246,21 @@
 
 /obj/item/encryptionkey/headset_biker
 	name = "Hell's Nomads radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the Hell's Nomads channel, use :b."
+	desc = "An encryption key for a radio headset.  To access the Hell's Nomads channel, use :b, to access Ashdown's channel, use :d"
 	icon_state = "cypherkey"
-	channels = list(RADIO_CHANNEL_BIKER = 1)
+	channels = list(RADIO_CHANNEL_ASHDOWN = 1, RADIO_CHANNEL_BIKER = 1 )
 
 /obj/item/encryptionkey/headset_responders
 	name = "Makeshift radio key"
 	desc = "A jerry-rigged radio key; seems to be set to an encrypted frequency"
 	icon_state = "sec_cypherkey"
 	channels = list(RADIO_CHANNEL_RESPONDERS = 1)
+
+/obj/item/encryptionkey/headset_ashdown
+	name = "Ashdown radio key"
+	desc = "An encryption key for a radio headset.\nTo access the Ashdown channel, use :d as in ashDown."
+	icon_state = "cypherkey"
+	channels = list(RADIO_CHANNEL_ASHDOWN = 1)
 
 /obj/item/encryptionkey/ai //ported from NT, this goes 'inside' the AI.
 	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_SECURITY = 1, RADIO_CHANNEL_ENGINEERING = 1, RADIO_CHANNEL_SCIENCE = 1, RADIO_CHANNEL_MEDICAL = 1, RADIO_CHANNEL_SUPPLY = 1, RADIO_CHANNEL_SERVICE = 1, RADIO_CHANNEL_AI_PRIVATE = 1)

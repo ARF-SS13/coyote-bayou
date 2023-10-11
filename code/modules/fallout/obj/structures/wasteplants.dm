@@ -12,6 +12,7 @@
 /obj/structure/flora/grass/wasteland/attackby(obj/item/W, mob/user, params) //we dont use /weapon any more
 	if(W.sharpness && W.force > 0 && !(NODECONSTRUCT_1 in flags_1))
 		to_chat(user, "You begin to harvest [src]...")
+		playsound(src, 'sound/effects/grabgrass.ogg', 100, TRUE, -1) //touch it you coward
 		if(do_after(user, 100/W.force, target = user))
 			to_chat(user, span_notice("You've collected [src]"))
 			var/obj/item/stack/sheet/hay/H = user.get_inactive_held_item()

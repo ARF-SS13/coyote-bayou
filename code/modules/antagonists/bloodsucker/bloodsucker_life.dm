@@ -248,9 +248,6 @@
 	for(var/datum/action/bloodsucker/power in powers)
 		if(power.active && !power.can_use_in_torpor)
 			power.DeactivatePower()
-	if(owner.current.suiciding)
-		owner.current.suiciding = FALSE //Youll die but not for long.
-		to_chat(owner.current, span_warning("Your body keeps you going, even as you try to end yourself."))
 
 /datum/antagonist/bloodsucker/proc/Torpor_End()
 	owner.current.stat = SOFT_CRIT

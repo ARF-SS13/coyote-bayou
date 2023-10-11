@@ -177,6 +177,18 @@
 		var/mob/living/L = user
 		L.SetSleeping(200)
 
+/datum/emote/living/faint
+	key = "collapse"
+	key_third_person = "collapse"
+	message = "collapses."
+	message_param = "collapses from %t."
+
+/datum/emote/living/faint/run_emote(mob/user, params)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/L = user
+		L.SetSleeping(20)
+
 
 /* Fortuna edit: flapping your wings disabled
 /datum/emote/living/flap
@@ -214,6 +226,62 @@
 	message_param = "chuckles at %t."
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
+
+/datum/emote/living/fgasp
+	key = "fgasp"
+	key_third_person = "fgasps"
+	message = "gasps!"
+	message_param = "gasps at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/female_gasp.ogg'
+
+/datum/emote/living/fgiggle
+	key = "fgiggle"
+	key_third_person = "fgiggles"
+	message = "giggles."
+	message_param = "giggles at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalegiggle1.ogg'
+
+/datum/emote/living/flaugh
+	key = "flaugh"
+	key_third_person = "flaughs"
+	message = "laughs."
+	message_param = "laughs at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/voice/human/womanlaugh.ogg'
+
+/datum/emote/living/fsigh
+	key = "fsigh"
+	key_third_person = "fsighs"
+	message = "sighs."
+	message_param = "sighs at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalesigh1.ogg'
+
+/datum/emote/living/fsneeze
+	key = "fsneeze"
+	key_third_person = "fsneezes"
+	message = "sneezes."
+	message_param = "sneezes at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/female_sneeze.ogg'
+
+/datum/emote/living/fsnore
+	key = "fsnore"
+	key_third_person = "fsnores"
+	message = "snores."
+	message_param = "snores at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalesnore1.ogg'
+
+/datum/emote/living/fwhimper
+	key = "fwhimper"
+	key_third_person = "fwhimpers"
+	message = "whimpers."
+	message_param = "whimpers at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/femalewhimper1.ogg'
 
 /datum/emote/living/frown
 	key = "frown"
@@ -330,7 +398,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		//power armor laugh track.... spooky
-		if(istype(human_user.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/power_armor))
+		if(istype(human_user.get_item_by_slot(INV_SLOTBIT_OCLOTHING), /obj/item/clothing/suit/armor/power_armor))
 			return 'sound/voice/robolaugh.ogg'
 		return human_user.dna.species.get_laugh_sound(user)
 
@@ -566,7 +634,7 @@
 
 /datum/emote/living/twitch/run_emote(mob/user, params)
 	user.Jitter(20)
-	
+
 /datum/emote/living/twitch_s
 	key = "twitch_s"
 	message = "twitches."
@@ -837,6 +905,12 @@
 	message = "mrowls."
 	sound = 'sound/f13effects/sunsetsounds/mrowl.ogg'
 
+/datum/emote/meowrek
+	key = "meowrek"
+	key_third_person = "definitely sounds like a cat of all time."
+	message = "mrowls."
+	sound = 'sound/f13effects/sunsetsounds/meowrek.ogg'
+
 
 /datum/emote/nya //Kitten Must Die.ogg
 	key = "nya"
@@ -968,15 +1042,27 @@
 	key_third_person = "aflaps"
 	message = "flaps their wings ANGRILY!!"
 
+/datum/emote/aflap/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/flaparms
 	key = "flapa"
 	key_third_person = "flapas"
 	message = "flaps their arms."
 
+/datum/emote/flapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+
 /datum/emote/aflaparms
 	key = "aflapa"
 	key_third_person = "aflapas"
 	message = "flaps their arms ANGRILY!!"
+
+/datum/emote/aflapa/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/wah
 	key = "wah"
@@ -1003,6 +1089,12 @@
 	key_third_person = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
 	message = "opens their mouth slightly and makes a very pained noise as they take a deep breath through their nose."
 	sound = 'sound/effects/scrungy.ogg'
+
+/datum/emote/living/grungle
+	key = "grungle"
+	key_third_person = "sounds like a dog gargling soda water just as its about to have a laugh."
+	message = "sounds like a dog gargling soda water just as its about to have a laugh."
+	sound = 'sound/effects/gurgle.ogg'
 
 /datum/emote/living/augh
 	key = "augh"
@@ -1039,6 +1131,12 @@
 	. = ..()
 	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
 
+/datum/emote/living/bwoing/skip
+	key = "skip"
+	key_third_person = "skips!"
+	message = "skips."
+	sound = null
+
 /datum/emote/living/bounce
 	key = "bounce"
 	key_third_person = "bounces on their toes!"
@@ -1071,6 +1169,10 @@
 	key_third_person = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	message = "makes a high pitched sound as if someone has lit their ass on fire with a blowtorch!"
 	sound = 'sound/f13effects/sunsetsounds/aie.ogg'
+
+/datum/emote/aie/run_emote(mob/user, params)
+	. = ..()
+	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 0, 5, 0, 0, 0.8 SECONDS)
 
 
 /datum/emote/nightstalker
@@ -1689,7 +1791,7 @@ datum/emote/living/flirt/blank
 
 datum/emote/living/flirt/custom
 	key = "flirtcustom"
-	key_third_person = "is trying to <span class='love'>%t</span>"
+	key_third_person = "is trying to <span class='love'>be flirty!</span>"
 	message = "is trying to <span class='love'>%t</span>"
 	message_param = "is trying to <span class='love'>%t</span>"
 

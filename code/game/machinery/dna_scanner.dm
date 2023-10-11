@@ -102,7 +102,7 @@
 	var/mob/living/mob_occupant = get_mob_or_brainmob(occupant)
 	if(istype(mob_occupant))
 		if(locate_computer(/obj/machinery/computer/cloning))
-			if(!mob_occupant.suiciding && !(HAS_TRAIT(mob_occupant, TRAIT_NOCLONE)) && !mob_occupant.hellbound)
+			if(!(HAS_TRAIT(mob_occupant, TRAIT_NOCLONE)) && !mob_occupant.hellbound)
 				mob_occupant.notify_ghost_cloning("Your corpse has been placed into a cloning scanner. Re-enter your corpse if you want to be cloned!", source = src)
 
 

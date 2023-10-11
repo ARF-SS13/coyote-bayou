@@ -256,12 +256,22 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmchelmetwinter
+	name = "Winterized UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
 /datum/gear/head/unmchelmet
 	name = "Standard UNMC Helmet"	
 	path = /obj/item/clothing/head/helmet/unmchelmet
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/unmcmedichelmet
+	name = "Standard medical UNMC helmet"
+	path = /obj/item/clothing/head/helmet/unmchelmet/medic
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
 /datum/gear/head/unmcstealthhelmet
 	name = "American infiltrator helmet"
 	path = /obj/item/clothing/head/helmet/unmcstealthhelmet
@@ -325,6 +335,12 @@
 /datum/gear/head/khan_furtrimmed
 	name = "horned fur-trimmed helmet"
 	path = /obj/item/clothing/head/helmet/f13/khan/pelt
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/khan_fullhelmet
+	name = "Horned full helmet"
+	path = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
@@ -659,6 +675,201 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/samuraiwarriortwo
+	name = "Stylish Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiwarriortwo
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorthree
+	name = "Stylish Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorthree
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfour
+	name = "Stylish Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfour
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiwarriorfive
+	name = "Stylish Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiwarriorfive
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard1
+	name = "Simple Samurai Helmet - Reddish Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/samuraiguard2
+	name = "Simple Samurai Helmet - Blue"
+	path = /obj/item/clothing/head/coyote/samuraiguard2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard3
+	name = "Simple Samurai Helmet - Brown"
+	path = /obj/item/clothing/head/coyote/samuraiguard3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard4
+	name = "Simple Samurai Helmet - Black"
+	path = /obj/item/clothing/head/coyote/samuraiguard4
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/samuraiguard5
+	name = "Simple Samurai Helmet - White"
+	path = /obj/item/clothing/head/coyote/samuraiguard5
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/sallethelmet
+	name = "German Sallet helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/unberets
+	name = "United Nations beret"
+	path = /obj/item/clothing/head/f13/unberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/russianberet
+	name = "Russian VDV beret"
+	path = /obj/item/clothing/head/f13/rusvdvberet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 1
+
+/datum/gear/head/morionhelmet
+	name = "Spainard Morion helmet"
+	path = /obj/item/clothing/head/medievalhelmets/oldspain
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/armoredcossack
+	name = "Armored black bearskin hat"
+	path = /obj/item/clothing/head/cossackgear
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredpilotka
+	name = "Armored pilotka hat"
+	path = /obj/item/clothing/head/kevlarhelmet/pilotka
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredsoviethelmet
+	name = "Old Soviet helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelww2soviet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/armoredcossackwhite
+	name = "Armored white bearskin hat"
+	path = /obj/item/clothing/head/cossackgear/white
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/bikersteelhelmet
+	name = "Biker helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/adrianfrench
+	name = "Adrian helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/steelfrench
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/steelushanka
+	name = "Armored Soviet Ushanka hat"
+	path = /obj/item/clothing/head/armoredushanka
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpapahat
+	name = "Armored papakha hat"
+	path = /obj/item/clothing/head/cossackgear/papakhacossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpaphatwinter
+	name = "Armored white papakha hat"
+	path = /obj/item/clothing/head/cossackgear/papakhawhitecossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/steelpapahatkuban
+	name = "Armored Kuban papakha hat "
+	path = /obj/item/clothing/head/cossackgear/papakhakubancossack
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+
+/datum/gear/head/steelm1
+	name = "M1 Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/ww2usa
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/steeljap
+	name = "Old Japanese Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/ww237jap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ninja
+	name = "Ninja Hood "
+	path = /obj/item/clothing/head/helmet/f13/ninja
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+	
+/datum/gear/head/armoredimperialrussia
+	name = "Armored Imperial Russian cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1russiancap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/armoredimperialgermancap
+	name = "Armored East German cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries/german
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+
+/datum/gear/head/armoredbritishcap
+	name = "Armored British cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+
+/datum/gear/head/armoredfrenchcap
+	name = "Armored French cap "
+	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries/french
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/russianadrianhelmet
+	name = "Russian Adrian helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/rusadrian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ww1germanhelmet
+	name = "Outdated steel helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ww1steelgerman
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/greekhelmet
 	name = "Hoplite Helmet"
 	path = /obj/item/clothing/head/coyote/greek
@@ -672,10 +883,76 @@ datum/gear/head/steelpot_bandolier
 	cost = 2
 
 /datum/gear/head/crusaderhelmetweak
-    name = "Crusader Helmet"
-    path = /obj/item/clothing/head/coyote/crusaderhelmweak
-    subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
-    cost = 2
+	name = "Crusader Helmet"
+	path = /obj/item/clothing/head/coyote/crusaderhelmweak
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets
+	name = "Modern Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number2
+	name = "KGB Russian Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/rus2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number3
+	name = "Canadian Ballistic Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/canadian
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number4
+	name = "U.N Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number5
+	name = "U.N Helmet Medical"
+	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number6
+	name = "War Press Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/newshelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number7
+	name = "PASGT Desert Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/americandesert
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Modern Chinese Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/china1
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number8
+	name = "Aircrewman Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/hueypilot
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number9
+	name = "Ghillie Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ghillie
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ballistichelmets/number10
+	name = "MK6 Helmet"
+	path = /obj/item/clothing/head/kevlarhelmet/ukhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
 
 //Hat hats
 /datum/gear/head/yellowtricorne

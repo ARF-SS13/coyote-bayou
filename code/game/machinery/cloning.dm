@@ -124,8 +124,6 @@
 		if(!QDELETED(clonemind.current))
 			if(clonemind.current.stat != DEAD)	//mind is associated with a non-dead body
 				return FALSE
-			if(clonemind.current.suiciding) // Mind is associated with a body that is suiciding.
-				return FALSE
 			if(AmBloodsucker(clonemind.current)) //If the mind is a bloodsucker
 				return FALSE
 		if(clonemind.active)	//somebody is using that mind
@@ -135,8 +133,6 @@
 			// get_ghost() will fail if they're unable to reenter their body
 			var/mob/dead/observer/G = clonemind.get_ghost()
 			if(!G)
-				return FALSE
-			if(G.suiciding) // The ghost came from a body that is suiciding.
 				return FALSE
 		if(clonemind.damnation_type) //Can't clone the damned.
 			INVOKE_ASYNC(src, .proc/horrifyingsound)
@@ -204,7 +200,6 @@
 		H.set_cloned_appearance()
 		H.give_genitals(TRUE)
 
-		H.suiciding = FALSE
 	attempting = FALSE
 	return TRUE
 
@@ -233,7 +228,7 @@
 				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
 				if(D)
 					D.adjust_money(fair_market_price)
-		if(mob_occupant && (mob_occupant.stat == DEAD) || (mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.			connected_message("Clone Rejected: Deceased.")
+		if(mob_occupant && (mob_occupant.stat == DEAD) || mob_occupant.hellbound)  //Autoeject corpses and connected_message("Clone Rejected: Deceased.")
 			if(internal_radio)
 				SPEAK("The cloning has been \
 					aborted due to unrecoverable tissue failure.")

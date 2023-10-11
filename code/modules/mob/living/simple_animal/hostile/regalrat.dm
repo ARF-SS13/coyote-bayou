@@ -247,7 +247,7 @@
 
 /mob/living/simple_animal/hostile/rat/Initialize()
 	. = ..()
-	SSmobs.cheeserats += src
+	// SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/mob_holder, "mouse_gray")
 	if(!is_smol)
