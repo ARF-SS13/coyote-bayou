@@ -883,7 +883,7 @@ Fence
 			if(30 to 99)
 				pricetext = span_notice("This is worth a few silver coins.")
 			if(100 to 299)
-				pricetext = span_green("This is worth at few gold coins.")
+				pricetext = span_green("This is worth a few gold coins.")
 			if(300 to 999)
 				pricetext = span_green("This is worth a decent amount of gold coins.")
 			else
