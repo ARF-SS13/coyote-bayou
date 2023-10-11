@@ -185,7 +185,7 @@
 //shortbow. fits in bags, but otherwise minimum stats.
 /obj/item/gun/ballistic/bow/shortbow
 	name = "shortbow"
-	desc = "A lightweight bow, rather lacking in firepower"
+	desc = "A lightweight bow, rather lacking in firepower. Alt click to attach to a quiver on your belt slot."
 	icon_state = "bow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -196,7 +196,7 @@
 
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
-	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"
+	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this? Alt click to attach to a quiver on your belt slot."
 	//icon_state = "yumi"		//temporary fix
 	icon_state = "tribalbow"
 	item_state = "bow"
@@ -224,7 +224,7 @@
 //recurve bow. +fire rate, but bulky. fits on belts
 /obj/item/gun/ballistic/bow/recurvebow
 	name = "recurve bow"
-	desc = "A light bow designed for ease of draw."
+	desc = "A light bow designed for ease of draw. Alt click to attach to a quiver on your belt slot."
 	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -251,7 +251,7 @@
 //composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
 /obj/item/gun/ballistic/bow/compositebow
 	name = "Composite bow"
-	desc = "A finely crafted bow with an excellent draw."
+	desc = "A finely crafted bow with an excellent draw. Alt click to attach to a quiver on your belt slot."
 	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -263,7 +263,7 @@
 //longbow, damage+, speed+, back slot only
 /obj/item/gun/ballistic/bow/longbow
 	name = "longbow"
-	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
+	desc = "A tall, elegant bow, with a good balance of firepower and draw speed. Alt click to attach to a quiver on your belt slot."
 	icon_state = "ashenbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -290,7 +290,7 @@
 //modern compound bow. speed++, damage++. the ultimate bow
 /obj/item/gun/ballistic/bow/compoundbow
 	name = "prewar compound bow"
-	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
+	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
