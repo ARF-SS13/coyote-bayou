@@ -548,9 +548,8 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 
 /turf/open/indestructible/ground/inside/mountain/proc/plantShrooms()
 	if(prob(SHROOM_SPAWN_GROUND))
-		turfPlant = new /obj/structure/flora/wasteplant/wild_fungus(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		new /obj/structure/flora/wasteplant/wild_fungus(src)
+		return TRUE
 
 /turf/open/indestructible/ground/inside/mountain/New()
 	..()

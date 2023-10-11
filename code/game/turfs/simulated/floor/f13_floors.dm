@@ -97,9 +97,8 @@
 
 /turf/open/floor/plating/f13/inside/mountain/proc/plantShrooms()
 	if(prob(SHROOM_SPAWN))
-		turfPlant = new /obj/structure/flora/wasteplant/wild_fungus(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		new /obj/structure/flora/wasteplant/wild_fungus(src)
+		return TRUE
 
 /turf/open/floor/plasteel/f13/vault_floor
 	name = "vault floor"
