@@ -1,19 +1,19 @@
-/datum/hud/var/obj/screen/staminas/staminas
-/datum/hud/var/obj/screen/staminabuffer/staminabuffer
+/datum/hud/var/atom/movable/screen/staminas/staminas
+/datum/hud/var/atom/movable/screen/staminabuffer/staminabuffer
 
-/obj/screen/staminas
+/atom/movable/screen/staminas
 	icon = 'modular_citadel/icons/ui/screen_gen.dmi'
 	name = "stamina"
 	icon_state = "stamina0"
 	screen_loc = ui_stamina
 	mouse_opacity = 1
 
-/obj/screen/staminas/Click(location,control,params)
+/atom/movable/screen/staminas/Click(location,control,params)
 	if(isliving(usr))
 		var/mob/living/L = usr
 		to_chat(L, "<span class='notice'>You have <b>[L.getStaminaLoss()]</b> stamina loss.<br>Your stamina buffer can take <b>[L.stambuffer]</b> stamina loss, and recharges at no cost.<br>Your stamina buffer is <b>[(L.stambuffer*(100/L.stambuffer))-(L.bufferedstam*(100/L.stambuffer))]%</b> full.</span>")
 
-/obj/screen/staminas/update_icon_state()
+/atom/movable/screen/staminas/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob
 	if(!user)
 		return
@@ -25,7 +25,7 @@
 		icon_state = "stamina[clamp(FLOOR(user.getStaminaLoss() /20, 1), 0, 6)]"
 
 //stam buffer
-/obj/screen/staminabuffer
+/atom/movable/screen/staminabuffer
 	icon = 'modular_citadel/icons/ui/screen_gen.dmi'
 	name = "stamina buffer"
 	icon_state = "stambuffer0"
@@ -33,7 +33,7 @@
 	layer = ABOVE_HUD_LAYER + 0.1
 	mouse_opacity = 0
 
-/obj/screen/staminabuffer/update_icon_state()
+/atom/movable/screen/staminabuffer/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob
 	if(!user)
 		return
