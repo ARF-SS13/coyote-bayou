@@ -22,28 +22,6 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	var/uplink_type = /obj/item/uplink/nuclear
 
 /obj/item/nuclear_challenge/attack_self(mob/living/user)
-#define CHALLENGE_TELECRYSTALS 280
-#define PLAYER_SCALING 1.5
-#define CHALLENGE_TIME_LIMIT 3000
-#define CHALLENGE_PLAYERS_TARGET 50 //target players population. anything below is a malus to the challenge tc bonus.
-#define TELECRYSTALS_MALUS_SCALING 1 //the higher the value, the bigger the malus.
-#define CHALLENGE_SHUTTLE_DELAY 15000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
-
-
-/obj/item/nuclear_challenge
-	name = "Declaration of War (Challenge Mode)"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "gangtool-red"
-	item_state = "radio"
-	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
-	desc = "Use to send a declaration of hostilities to the target, delaying your shuttle departure for 20 minutes while they prepare for your assault.  \
-			Such a brazen move will attract the attention of powerful benefactors within the Syndicate, who will supply your team with a massive amount of bonus telecrystals.  \
-			Must be used within five minutes, or your benefactors will lose interest."
-	var/declaring_war = FALSE
-	var/uplink_type = /obj/item/uplink/nuclear
-
-/obj/item/nuclear_challenge/attack_self(mob/living/user)
 	if(!check_allowed(user))
 		return
 
