@@ -144,6 +144,11 @@
 	AddComponent(/datum/component/butchering, 50, 80)
 	//AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
+
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
 	if(contents.len)

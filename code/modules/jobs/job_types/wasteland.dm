@@ -1448,8 +1448,8 @@ Raider
 	/datum/outfit/loadout/cleanser		//Just some bombs.
 	)
 
-	access = list()		//we can expand on this and make alterations as people suggest different loadouts
-	minimal_access = list()
+	access = list(ACCESS_BAR)		//we can expand on this and make alterations as people suggest different loadouts <--I'm doing something about it now!
+	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,

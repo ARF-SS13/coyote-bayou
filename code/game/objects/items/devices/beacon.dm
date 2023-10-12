@@ -17,7 +17,7 @@
 		icon_state = "beacon-off"
 
 /obj/item/beacon/Destroy()
-	GLOB.teleportbeacons.Remove(src)
+	GLOB.teleportbeacons -= src
 	return ..()
 
 /obj/item/beacon/attack_self(mob/user)

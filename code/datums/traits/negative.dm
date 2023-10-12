@@ -203,7 +203,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurry at a distance, but you have glasses you spawn with that can fix that."
 	conflicts = list(
-		
+		/datum/quirk/noglasses,
+		/datum/quirk/badeyes,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -225,7 +227,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurred, but you either never had or lost your glasses.  Good luck!"
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/badeyes,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -241,7 +245,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/noglasses,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking VERY blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -825,7 +831,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Vision Quirks"
 	mechanics = "You can't see."
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/noglasses,
+		/datum/quirk/badeyes,
 	)
 	gain_text = span_danger("You can't see anything.")
 	lose_text = span_notice("You miraculously gain back your vision.")

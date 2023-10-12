@@ -1,3 +1,7 @@
+/mob/living/carbon/human
+	///This player has been standing still for very long and are probably roleplaying. They won't use up nutrition until they start moving again.
+	var/insanelycomfy = FALSE
+
 /mob/living/simple_animal/hostile/hellpig
 	name = "hellpig"
 	desc = "A mutated American boar, sporting razor sharp tucks and a nasty temper."
