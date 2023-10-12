@@ -29,8 +29,6 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 #define TELECRYSTALS_MALUS_SCALING 1 //the higher the value, the bigger the malus.
 #define CHALLENGE_SHUTTLE_DELAY 15000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
 
-GLOBAL_LIST_EMPTY(jam_on_wardec)
-GLOBAL_VAR_INIT(war_declared, FALSE)
 
 /obj/item/nuclear_challenge
 	name = "Declaration of War (Challenge Mode)"
