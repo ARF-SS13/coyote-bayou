@@ -44732,14 +44732,8 @@
 	},
 /area/f13/wasteland)
 "gMc" = (
-/obj/machinery/door/airlock/hatch{
-	req_one_access_txt = "61";
-	name = "Maintenance Access"
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/coyote/nash/massfus/sidebuilding)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/massfusion/entrance)
 "gMn" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain3"
@@ -45635,9 +45629,8 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "gWj" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerpavement - W"
+	icon_state = "outerpavement - NW"
 	},
 /area/f13/wasteland/massfusion/entrance)
 "gWk" = (
@@ -55730,6 +55723,11 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"jmr" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerpavement - N"
+	},
+/area/f13/wasteland/massfusion/entrance)
 "jmD" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -87899,6 +87897,16 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
+"qBy" = (
+/obj/machinery/door/unpowered/securedoor{
+	name = "Radio Station Lounge";
+	req_one_access_txt = "61";
+	desc = "Door with a built-in lock. Can't be padlocked. ((Does not lead to a dungeon. Ahelp to raid.))"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/coyote/nash/massfus/sidebuilding)
 "qBA" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain1"
@@ -101274,10 +101282,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerpavement - W"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/massfusion/entrance)
 "tAT" = (
 /obj/structure/curtain,
@@ -110881,7 +110886,7 @@
 	dir = 1;
 	light_color = "#e8eaff"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/massfusion/entrance)
 "vQe" = (
 /obj/structure/flora/grass/jungle,
@@ -172677,12 +172682,12 @@ gIh
 bdf
 biP
 hiB
-auX
 hiB
-auX
+hiB
+hiB
 hiB
 vPY
-gqt
+jmr
 eXO
 gqt
 gqt
@@ -172937,9 +172942,9 @@ hiB
 hAB
 hAB
 hAB
-auX
-gqt
-gqt
+hiB
+gMc
+jmr
 gqt
 gqt
 aaa
@@ -173190,16 +173195,16 @@ tvz
 aDW
 odj
 eiE
-auX
+hiB
 hAB
 xUS
 hAB
-hiB
-gqt
-gqt
+qBy
+gMc
+jmr
 gqt
 aaa
-aae
+aaa
 aae
 aae
 aae
@@ -173452,10 +173457,10 @@ hAB
 ams
 hAB
 hiB
+gMc
+jmr
+gqt
 aaa
-aaa
-aaa
-aae
 aae
 aae
 aae
@@ -173705,14 +173710,14 @@ aDW
 agi
 hiB
 hiB
-gMc
 hiB
 hiB
 hiB
 hiB
-aae
-aae
-aae
+hiB
+aaa
+aaa
+aaa
 aae
 aae
 aae
