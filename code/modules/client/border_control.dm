@@ -27,7 +27,7 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 		return 1
 	else if (borderControlMode == BORDER_CONTROL_LEARNING)
 		if(!BC_IsKeyWhitelisted(key))
-			log_and_message_admins("[key] has joined and was added to the border whitelist.")
+			message_admins("[key] has joined and was added to the border whitelist.")
 		BC_WhitelistKey(key)
 		return 1
 	else
@@ -58,7 +58,7 @@ proc/BC_IsKeyWhitelisted(var/key)
 	if(key)
 		var/confirm = alert("Add [key] to the border control whitelist?", , "Yes", "No")
 		if(confirm == "Yes")
-			log_and_message_admins("added [key] to the border whitelist.")
+			message_admins("added [key] to the border whitelist.")
 			BC_WhitelistKey(key)
 
 
@@ -98,7 +98,7 @@ proc/BC_WhitelistKey(var/key)
 	if(keyToRemove)
 		var/confirm = alert("Remove [keyToRemove] from the border control whitelist?", , "Yes", "No")
 		if(confirm == "Yes")
-			log_and_message_admins("removed [keyToRemove] from the border whitelist.")
+			message_admins("removed [keyToRemove] from the border whitelist.")
 			BC_RemoveKey(keyToRemove)
 
 	return
@@ -136,21 +136,21 @@ proc/BC_RemoveKey(var/key)
 		if("Disabled")
 			if(borderControlMode != BORDER_CONTROL_DISABLED)
 				borderControlMode = BORDER_CONTROL_DISABLED
-				log_and_message_admins("has disabled border control.")
+				message_admins("has disabled border control.")
 		if("Learning")
 			if(borderControlMode != BORDER_CONTROL_LEARNING)
 				borderControlMode = BORDER_CONTROL_LEARNING
-				log_and_message_admins("has set border control to learn new keys on connection!")
+				message_admins("has set border control to learn new keys on connection!")
 			var/confirm = alert("Learn currently connected keys?", , "Yes", "No")
 			if(confirm == "Yes")
 				for(var/client/C in GLOB.clients)
 					if (BC_WhitelistKey(C.key))
-						log_and_message_admins("[key_name(usr)] added [C.key] to the border whitelist by adding all current clients.")
+						message_admins("[key_name(usr)] added [C.key] to the border whitelist by adding all current clients.")
 
 		if("Enforced")
 			if(borderControlMode != BORDER_CONTROL_ENFORCED)
 				borderControlMode = BORDER_CONTROL_ENFORCED
-				log_and_message_admins("has enforced border controls. New keys can no longer join.")
+				message_admins("has enforced border controls. New keys can no longer join.")
 
 	CONFIG_SET(number/border_control, borderControlMode)
 

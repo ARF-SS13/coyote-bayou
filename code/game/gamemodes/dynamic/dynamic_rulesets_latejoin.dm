@@ -5,6 +5,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/latejoin/trim_candidates()
+/*
 	for(var/mob/P in candidates)
 		if(!P.client || !P.mind || !P.mind.assigned_role) // Are they connected?
 			candidates.Remove(P)
@@ -20,7 +21,7 @@
 		else
 			if(!(antag_flag in P.client.prefs.be_special) || jobban_isbanned(P.ckey, list(antag_flag, ROLE_SYNDICATE)))
 				candidates.Remove(P)
-
+*/
 /datum/dynamic_ruleset/latejoin/ready(forced = 0)
 	if (!forced)
 		var/job_check = 0
@@ -101,6 +102,7 @@
 	return (head_check >= required_heads_of_staff)
 
 /datum/dynamic_ruleset/latejoin/provocateur/execute()
+/*
 	var/mob/M = pick(candidates) // This should contain a single player, but in case.
 	if(check_eligible(M.mind)) // Didnt die/run off z-level/get implanted since leaving shuttle.
 		assigned += M.mind
@@ -155,3 +157,4 @@
 	cost = 10
 	requirements = list(101,101,101,10,10,10,10,10,10,10)
 	repeatable = TRUE
+*/

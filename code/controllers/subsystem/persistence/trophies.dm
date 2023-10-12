@@ -5,31 +5,9 @@
 	var/list/saved_trophies = list()
 
 /datum/controller/subsystem/persistence/LoadGamePersistence()
-	. = ..()
-	LoadTrophies()
-
+	return
 /datum/controller/subsystem/persistence/SaveGamePersistence()
-	. = ..()
-	CollectTrophies()
-
-/datum/controller/subsystem/persistence/proc/LoadTrophies()
-	if(fexists("data/npc_saves/TrophyItems.sav")) //legacy compatability to convert old format to new
-		var/savefile/S = new /savefile("data/npc_saves/TrophyItems.sav")
-		var/saved_json
-		S >> saved_json
-		if(!saved_json)
-			return
-		saved_trophies = json_decode(saved_json)
-		fdel("data/npc_saves/TrophyItems.sav")
-	else
-		var/json_file = file("data/npc_saves/TrophyItems.json")
-		if(!fexists(json_file))
-			return
-		var/list/json = json_decode(file2text(json_file))
-		if(!json)
-			return
-		saved_trophies = json["data"]
-	SetUpTrophies(saved_trophies.Copy())
+	return
 
 /datum/controller/subsystem/persistence/proc/SetUpTrophies(list/trophy_items)
 	for(var/A in GLOB.trophy_cases)

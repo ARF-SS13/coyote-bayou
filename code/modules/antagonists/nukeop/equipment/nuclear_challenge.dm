@@ -96,12 +96,11 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 			return FALSE
 	return TRUE
 
-/obj/item/nuclear_challenge/clownops
+/obj/item/nuclear_challenge/proc/clownops()
+/*
 	uplink_type = /obj/item/uplink/clownop
-
 	if(!check_allowed(user))
-		return
-
+		return FALSE
 	declaring_war = TRUE
 	var/are_you_sure = alert(user, "Consult your team carefully before you declare war on [station_name()]]. Are you sure you want to alert the enemy crew? You have [DisplayTimeText(world.time-SSticker.round_start_time - CHALLENGE_TIME_LIMIT)] to decide", "Declare war?", "Yes", "No")
 	declaring_war = FALSE
@@ -154,25 +153,7 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	SSblackbox.record_feedback("amount", "nuclear_challenge_mode", 1)
 
 	qdel(src)
-
-/obj/item/nuclear_challenge/proc/check_allowed(mob/living/user)
-	if(declaring_war)
-		to_chat(user, "You are already in the process of declaring war! Make your mind up.")
-		return FALSE
-
-	if(!user.onSyndieBase())
-		to_chat(user, "You have to be at your base to use this.")
-		return FALSE
-	if(world.time-SSticker.round_start_time > CHALLENGE_TIME_LIMIT)
-		to_chat(user, "It's too late to declare hostilities. Your benefactors are already busy with other schemes. You'll have to make do with what you have on hand.")
-		return FALSE
-	for(var/V in GLOB.syndicate_shuttle_boards)
-		var/obj/item/circuitboard/computer/syndicate_shuttle/board = V
-		if(board.moved)
-			to_chat(user, "The shuttle has already been moved! You have forfeit the right to declare war.")
-			return FALSE
-	return TRUE
-
+*/
 #undef CHALLENGE_TELECRYSTALS
 #undef CHALLENGE_TIME_LIMIT
 #undef CHALLENGE_PLAYERS_TARGET

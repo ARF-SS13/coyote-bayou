@@ -29,11 +29,6 @@
 	file_data["data"] = saved_modes
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
-	saved_chaos[3] = saved_chaos[2]
-	saved_chaos[2] = saved_chaos[1]
-	saved_chaos[1] = SSticker.mode.get_chaos()
-	average_threat = (SSactivity.get_average_threat() + average_threat) / 2
-	json_file = file("data/RecentChaos.json")
 	file_data = list()
 	file_data["data"] = saved_chaos + average_threat
 	fdel(json_file)

@@ -35,6 +35,7 @@
 	list_observers = trim_list(GLOB.current_observers_list)
 
 /datum/dynamic_ruleset/midround/proc/trim_list(list/L = list())
+/*
 	var/list/trimmed_list = L.Copy()
 	for(var/mob/M in trimmed_list)
 		if (!istype(M, required_type))
@@ -65,7 +66,7 @@
 				trimmed_list.Remove(M)
 				continue
 	return trimmed_list
-
+*/
 // You can then for example prompt dead players in execute() to join as strike teams or whatever
 // Or autotator someone
 
@@ -515,7 +516,7 @@
 //           SPACE DRAGON (GHOST)           //
 //                                          //
 //////////////////////////////////////////////
-
+/*
 /datum/dynamic_ruleset/midround/from_ghosts/space_dragon
 	name = "Space Dragon"
 	antag_datum = /datum/antagonist/space_dragon
@@ -553,7 +554,7 @@
 	log_game("DYNAMIC: [key_name(S)] was spawned as a Space Dragon by the midround ruleset.")
 	priority_announce("A large organic energy flux has been recorded near of [station_name()], please stand-by.", "Lifesign Alert")
 	return S
-
+*/
 //////////////////////////////////////////////
 //                                          //
 //           ABDUCTORS    (GHOST)           //

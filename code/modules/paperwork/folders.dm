@@ -10,17 +10,6 @@
 
 /obj/item/folder/Initialize()
 	. = ..()
-	LAZYADD(SSpersistence.folders, src)
-
-/obj/item/folder/Destroy()
-	LAZYREMOVE(SSpersistence.folders, src)
-	..()
-
-/obj/item/folder/proc/PersistenceLoad()
-	var/list/data = SSpersistence.GetFolders()
-	if(data)
-		if(data[persistenceID])
-			PopulatePaperFromList(data[persistenceID])
 
 /obj/item/folder/proc/PopulatePaperFromList(list/ids)
 	var/list/current_ids = StorePaperDataList()

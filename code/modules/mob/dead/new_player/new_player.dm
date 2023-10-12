@@ -606,7 +606,7 @@
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
 			return FALSE
-		log_and_message_admins("joined as \an [P.creature_species] and spawned at [spawn_selection].")
+		message_admins("joined as \an [P.creature_species] and spawned at [spawn_selection].")
 		spawning = 1
 		close_spawn_windows()
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
