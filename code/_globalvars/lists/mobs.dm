@@ -107,3 +107,18 @@ GLOBAL_LIST_INIT(blood_reagent_types, list(
 		/datum/reagent/blood,
 		/datum/reagent/blood/jellyblood
 		))
+
+/// All alive mobs with clients.
+GLOBAL_LIST_EMPTY(alive_player_list)
+
+/// All dead mobs with clients. Does not include observers.
+GLOBAL_LIST_EMPTY(dead_player_list)
+
+/// All alive antags with clients.
+GLOBAL_LIST_EMPTY(current_living_antags)
+
+/// All observers with clients that joined as observers.
+GLOBAL_LIST_EMPTY(current_observers_list)
+
+//Dynamic Port
+GLOBAL_LIST_EMPTY(new_player_list) //all /mob/dead/new_player, in theory all should have clients and those that don't are in the process of spawning and get deleted when done.

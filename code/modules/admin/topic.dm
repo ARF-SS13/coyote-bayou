@@ -46,33 +46,27 @@
 
 	else if(href_list["getplaytimewindow"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): getplaytimewindow without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): getplaytimewindow without admin perms.")
 			return
 		var/mob/M = locate(href_list["getplaytimewindow"]) in GLOB.mob_list
 		if(!M)
-			to_chat(usr, span_danger("ERROR: Mob not found."))
+			to_chat(usr, "<span class='danger'>ERROR: Mob not found.</span>")
 			return
 		cmd_show_exp_panel(M.client)
 
 	else if(href_list["toggleexempt"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): toggleexempt without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): toggleexempt without admin perms.")
 			return
 		var/client/C = locate(href_list["toggleexempt"]) in GLOB.clients
 		if(!C)
-			to_chat(usr, span_danger("ERROR: Client not found."))
+			to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>")
 			return
 		toggle_exempt_status(C)
 
 	else if(href_list["makeAntag"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): makeAntag without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): makeAntag without admin perms.")
 			return
 		if (!SSticker.mode)
-			to_chat(usr, span_danger("Not until the round starts!"))
+			to_chat(usr, "<span class='danger'>Not until the round starts!</span>")
 			return
 		switch(href_list["makeAntag"])
 			if("traitors")
@@ -263,9 +257,8 @@
 
 		for(var/mob/M in GLOB.player_list)
 			if(M.ckey == banckey)
-				playermob = M
-				break
-
+				if(!playermob || M.client) // prioritise mobs with a client to stop the 'oops the dead body with no client got forwarded'
+					playermob = M
 
 		banreason = "(MANUAL BAN) "+banreason
 
@@ -278,7 +271,7 @@
 			message_admins("Ban process: A mob matching [playermob.key] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob.")
 
 		if(!DB_ban_record(bantype, playermob, banduration, banreason, banjob, bankey, banip, bancid ))
-			to_chat(usr, span_danger("Failed to apply ban."))
+			to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 			return
 		create_message("note", bankey, null, banreason, null, null, 0, 0, null, 0, banseverity)
 
@@ -302,15 +295,11 @@
 
 	else if(href_list["gamemode_panel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): gamemode_panel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): gamemode_panel without admin perms.")
 			return
 		SSticker.mode.admin_panel()
 
 	else if(href_list["call_shuttle"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): call_shuttle without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): call_shuttle without admin perms.")
 			return
 
 
@@ -319,8 +308,8 @@
 				if(EMERGENCY_AT_LEAST_DOCKED)
 					return
 				SSshuttle.emergency.request()
-				log_admin("[key_name(usr)] called the Train.")
-				message_admins(span_adminnotice("[key_name_admin(usr)] called the Train to the train station."))
+				log_admin("[key_name(usr)] called the Emergency Shuttle.")
+				message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Emergency Shuttle to the station.</span>")
 
 			if("2")
 				if(EMERGENCY_AT_LEAST_DOCKED)
@@ -328,12 +317,12 @@
 				switch(SSshuttle.emergency.mode)
 					if(SHUTTLE_CALL)
 						SSshuttle.emergency.cancel()
-						log_admin("[key_name(usr)] sent the Train back.")
-						message_admins(span_adminnotice("[key_name_admin(usr)] sent the Train back."))
+						log_admin("[key_name(usr)] sent the Emergency Shuttle back.")
+						message_admins("<span class='adminnotice'>[key_name_admin(usr)] sent the Emergency Shuttle back.</span>")
 					else
 						SSshuttle.emergency.cancel()
-						log_admin("[key_name(usr)] called the Train.")
-						message_admins(span_adminnotice("[key_name_admin(usr)] called the Train to the train station."))
+						log_admin("[key_name(usr)] called the Emergency Shuttle.")
+						message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Emergency Shuttle to the station.</span>")
 
 
 		href_list["secrets"] = "check_antagonist"
@@ -342,26 +331,22 @@
 		if(!check_rights(R_SERVER))
 			return
 
-		var/timer = input("Enter new train duration (seconds):","Edit Train Timeleft", SSshuttle.emergency.timeLeft() ) as num|null
+		var/timer = input("Enter new shuttle duration (seconds):","Edit Shuttle Timeleft", SSshuttle.emergency.timeLeft() ) as num|null
 		if(!timer)
 			return
 		SSshuttle.emergency.setTimer(timer*10)
-		log_admin("[key_name(usr)] edited the Train's timeleft to [timer] seconds.")
-		minor_announce("The train will reach its destination in [round(SSshuttle.emergency.timeLeft(600))] minutes.")
-		message_admins(span_adminnotice("[key_name_admin(usr)] edited the Train's timeleft to [timer] seconds."))
+		log_admin("[key_name(usr)] edited the Emergency Shuttle's timeleft to [timer] seconds.")
+		minor_announce("The emergency shuttle will reach its destination in [round(SSshuttle.emergency.timeLeft(600))] minutes.")
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the Emergency Shuttle's timeleft to [timer] seconds.</span>")
 		href_list["secrets"] = "check_antagonist"
 	else if(href_list["trigger_centcom_recall"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): trigger_centcom_recall without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): trigger_centcom_recall without admin perms.")
 			return
 
 		usr.client.trigger_centcom_recall()
 
 	else if(href_list["toggle_continuous"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_continuous without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_continuous without admin perms.")
 			return
 		var/list/continuous = CONFIG_GET(keyed_list/continuous)
 		if(!continuous[SSticker.mode.config_tag])
@@ -369,13 +354,11 @@
 		else
 			continuous[SSticker.mode.config_tag] = FALSE
 
-		message_admins(span_adminnotice("[key_name_admin(usr)] toggled the round to [continuous[SSticker.mode.config_tag] ? "continue if all antagonists die" : "end with the antagonists"]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled the round to [continuous[SSticker.mode.config_tag] ? "continue if all antagonists die" : "end with the antagonists"].</span>")
 		check_antagonists()
 
 	else if(href_list["toggle_midround_antag"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_midround_antag without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_midround_antag without admin perms.")
 			return
 
 		var/list/midround_antag = CONFIG_GET(keyed_list/midround_antag)
@@ -384,26 +367,22 @@
 		else
 			midround_antag[SSticker.mode.config_tag] = FALSE
 
-		message_admins(span_adminnotice("[key_name_admin(usr)] toggled the round to [midround_antag[SSticker.mode.config_tag] ? "use" : "skip"] the midround antag system."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled the round to [midround_antag[SSticker.mode.config_tag] ? "use" : "skip"] the midround antag system.</span>")
 		check_antagonists()
 
 	else if(href_list["alter_midround_time_limit"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): alter_midround_time_limit without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): alter_midround_time_limit without admin perms.")
 			return
 
 		var/timer = input("Enter new maximum time",, CONFIG_GET(number/midround_antag_time_check)) as num|null
 		if(!timer)
 			return
 		CONFIG_SET(number/midround_antag_time_check, timer)
-		message_admins(span_adminnotice("[key_name_admin(usr)] edited the maximum midround antagonist time to [timer] minutes."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the maximum midround antagonist time to [timer] minutes.</span>")
 		check_antagonists()
 
 	else if(href_list["alter_midround_life_limit"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): alter_midround_life_limit without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): alter_midround_life_limit without admin perms.")
 			return
 
 		var/ratio = input("Enter new life ratio",, CONFIG_GET(number/midround_antag_life_check) * 100) as num
@@ -411,13 +390,11 @@
 			return
 		CONFIG_SET(number/midround_antag_life_check, ratio / 100)
 
-		message_admins(span_adminnotice("[key_name_admin(usr)] edited the midround antagonist living crew ratio to [ratio]% alive."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the midround antagonist living crew ratio to [ratio]% alive.</span>")
 		check_antagonists()
 
 	else if(href_list["toggle_noncontinuous_behavior"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_noncontinuous_behavior without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): toggle_noncontinuous_behavior without admin perms.")
 			return
 
 		if(!SSticker.mode.round_ends_with_antag_death)
@@ -425,7 +402,7 @@
 		else
 			SSticker.mode.round_ends_with_antag_death = 0
 
-		message_admins(span_adminnotice("[key_name_admin(usr)] edited the midround antagonist system to [SSticker.mode.round_ends_with_antag_death ? "end the round" : "continue as extended"] upon failure."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the midround antagonist system to [SSticker.mode.round_ends_with_antag_death ? "end the round" : "continue as extended"] upon failure.</span>")
 		check_antagonists()
 
 	else if(href_list["delay_round_end"])
@@ -448,20 +425,18 @@
 
 	else if(href_list["end_round"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): end_round without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): end_round without admin perms.")
 			return
 
-		message_admins(span_adminnotice("[key_name_admin(usr)] is considering ending the round."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] is considering ending the round.</span>")
 		if(alert(usr, "This will end the round, are you SURE you want to do this?", "Confirmation", "Yes", "No") == "Yes")
 			if(alert(usr, "Final Confirmation: End the round NOW?", "Confirmation", "Yes", "No") == "Yes")
-				message_admins(span_adminnotice("[key_name_admin(usr)] has ended the round."))
+				message_admins("<span class='adminnotice'>[key_name_admin(usr)] has ended the round.</span>")
 				SSticker.force_ending = 1 //Yeah there we go APC destroyed mission accomplished
 				return
 			else
-				message_admins(span_adminnotice("[key_name_admin(usr)] decided against ending the round."))
+				message_admins("<span class='adminnotice'>[key_name_admin(usr)] decided against ending the round.</span>")
 		else
-			message_admins(span_adminnotice("[key_name_admin(usr)] decided against ending the round."))
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] decided against ending the round.</span>")
 
 	else if(href_list["simplemake"])
 		if(!check_rights(R_SPAWN))
@@ -480,7 +455,7 @@
 				delmob = 1
 
 		log_admin("[key_name(usr)] has used rudimentary transformation on [key_name(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]")
-		message_admins(span_adminnotice("[key_name_admin(usr)] has used rudimentary transformation on [key_name_admin(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]"))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] has used rudimentary transformation on [key_name_admin(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]</span>")
 		switch(href_list["simplemake"])
 			if("observer")
 				M.change_mob_type( /mob/dead/observer , null, null, delmob )
@@ -532,16 +507,8 @@
 			if("constructwraith")
 				M.change_mob_type( /mob/living/simple_animal/hostile/construct/wraith , null, null, delmob )
 			if("shade")
-				M.change_mob_type( /mob/living/simple_animal/shade , null, null, delmob )
+				M.change_mob_type( /mob/living/simple_animal/hostile/construct/shade , null, null, delmob )
 
-	/////////////////////////////////////removes player profile pic
-	else if(href_list["removeProfilePic"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		if(alert(usr, "Are you sure you want to remove their profile picture?", "Confirmation", "Yes", "No") == "Yes")
-			var/mob/living/carbon/human/H = locate(href_list["removeProfilePic"])
-			H.RemoveProfilePic()
 
 	/////////////////////////////////////new ban stuff
 	else if(href_list["unbanf"])
@@ -585,7 +552,7 @@
 					mins = minutes - GLOB.CMinutes
 				mins = input(usr,"How long (in minutes)? (Default: 1440)","Ban time",mins ? mins : 1440) as num|null
 				if(mins <= 0)
-					to_chat(usr, span_danger("[mins] is not a valid duration."))
+					to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
 					return
 				minutes = GLOB.CMinutes + mins
 				duration = GetExp(minutes)
@@ -601,7 +568,7 @@
 
 		log_admin_private("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
-		message_admins(span_adminnotice("[key_name_admin(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]"))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]</span>")
 		GLOB.Banlist.cd = "/base/[banfolder]"
 		WRITE_FILE(GLOB.Banlist["reason"], reason)
 		WRITE_FILE(GLOB.Banlist["temp"], temp)
@@ -632,7 +599,7 @@
 					DB_ban_unban(M.ckey, BANTYPE_ANY_JOB, "appearance")
 					if(M.client)
 						jobban_buildcache(M.client)
-					message_admins(span_adminnotice("[key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban."))
+					message_admins("<span class='adminnotice'>[key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban.</span>")
 					to_chat(M, "<span class='boldannounce'><BIG>[usr.client.key] has removed your appearance ban.</BIG></span>")
 
 		else switch(alert("Appearance ban [M.key]?",,"Yes","No", "Cancel"))
@@ -644,22 +611,22 @@
 				if(!severity)
 					return
 				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, "appearance"))
-					to_chat(usr, span_danger("Failed to apply ban."))
+					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
 					jobban_buildcache(M.client)
 				ban_unban_log_save("[key_name(usr)] appearance banned [key_name(M)]. reason: [reason]")
 				log_admin_private("[key_name(usr)] appearance banned [key_name(M)]. \nReason: [reason]")
 				create_message("note", M.key, null, "Appearance banned - [reason]", null, null, 0, 0, null, 0, severity)
-				message_admins(span_adminnotice("[key_name_admin(usr)] appearance banned [key_name_admin(M)]."))
+				message_admins("<span class='adminnotice'>[key_name_admin(usr)] appearance banned [key_name_admin(M)].</span>")
 				to_chat(M, "<span class='boldannounce'><BIG>You have been appearance banned by [usr.client.key].</BIG></span>")
-				to_chat(M, span_boldannounce("The reason is: [reason]"))
-				to_chat(M, span_danger("Appearance ban can be lifted only upon request."))
+				to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
+				to_chat(M, "<span class='danger'>Appearance ban can be lifted only upon request.</span>")
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
+					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
 				else
-					to_chat(M, span_danger("No ban appeals URL has been set."))
+					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
 			if("No")
 				return
 
@@ -678,15 +645,15 @@
 		var/dat = "<head><title>Job-Ban Panel: [key_name(M)]</title></head>"
 
 	/***********************************WARNING!************************************
-					The jobban stuff looks mangled and disgusting
-							But it looks beautiful in-game
-										-Nodrak
+				      The jobban stuff looks mangled and disgusting
+						      But it looks beautiful in-game
+						                -Nodrak
 	************************************WARNING!***********************************/
 		var/counter = 0
 //Regular jobs
-	//Command (Deep Blue)
+	//Command (Blue)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='238dff'><th colspan='[length(GLOB.command_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=commanddept;jobban4=[REF(M)]' style='color: white;'>Command Positions</a></th></tr><tr align='center'>"
+		dat += "<tr align='center' bgcolor='ccccff'><th colspan='[length(GLOB.command_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=commanddept;jobban4=[REF(M)]'>Command Positions</a></th></tr><tr align='center'>"
 		for(var/jobPos in GLOB.command_positions)
 			if(!jobPos)
 				continue
@@ -702,186 +669,119 @@
 				counter = 0
 		dat += "</tr></table>"
 
-	//BoS (Steel Blue)
+	//Security (Red)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='8eb7e3'><th colspan='[length(GLOB.oasis_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=brotherhooddept;jobban4=[REF(M)]'>Brotherhood Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.brotherhood_positions)
+		dat += "<tr bgcolor='ffddf0'><th colspan='[length(GLOB.security_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=securitydept;jobban4=[REF(M)]'>Security Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.security_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get squiiiiished!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Oasis (Green)
+	//Engineering (Yellow)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='8ee3a4'><th colspan='[length(GLOB.oasis_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=oasisdept;jobban4=[REF(M)]'>Oasis Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.oasis_positions)
+		dat += "<tr bgcolor='fff5cc'><th colspan='[length(GLOB.engineering_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=engineeringdept;jobban4=[REF(M)]'>Engineering Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.engineering_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get squiiiiished!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Legion (Red)
+	//Medical (White)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='e3a28e'><th colspan='[length(GLOB.legion_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=legiondept;jobban4=[REF(M)]'>Legion Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.legion_positions)
+		dat += "<tr bgcolor='ffeef0'><th colspan='[length(GLOB.medical_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=medicaldept;jobban4=[REF(M)]'>Medical Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.medical_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get squiiiiished!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//NCR (Yellow)
+	//Science (Purple)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='e3e28e'><th colspan='[length(GLOB.ncr_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=ncrdept;jobban4=[REF(M)]'>NCR Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.ncr_positions)
+		dat += "<tr bgcolor='e79fff'><th colspan='[length(GLOB.science_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=sciencedept;jobban4=[REF(M)]'>Science Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.science_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get squiiiiished!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Vault (Teal)
+	//Supply (Brown)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='8ee3b4'><th colspan='[length(GLOB.vault_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=vaultdept;jobban4=[REF(M)]'>Vault Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.vault_positions)
+		dat += "<tr bgcolor='DDAA55'><th colspan='[length(GLOB.supply_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=supplydept;jobban4=[REF(M)]'>Supply Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.supply_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get COPYPASTE!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Wasteland (Grey)
+	//Civilian (Grey)
+		counter = 0
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='c9c9c9'><th colspan='[length(GLOB.wasteland_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=wastelanddept;jobban4=[REF(M)]'>Wasteland Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.wasteland_positions)
+		dat += "<tr bgcolor='dddddd'><th colspan='[length(GLOB.civilian_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=civiliandept;jobban4=[REF(M)]'>Civilian Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.civilian_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
+			if(counter >= 5) //So things dont get squiiiiished!
+				dat += "</tr><tr align='center'>"
 				counter = 0
 		dat += "</tr></table>"
-
-	//Enclave (Red)
-		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='ffa2a2'><th colspan='[length(GLOB.enclave_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=enclavedept;jobban4=[REF(M)]'>Enclave Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.enclave_positions)
-			if(!jobPos)
-				continue
-			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
-				counter++
-			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
-				counter = 0
-		dat += "</tr></table>"
-
-	//Tribal (Brown)
-		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='cbb888'><th colspan='[length(GLOB.tribal_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=tribaldept;jobban4=[REF(M)]'>Tribal Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.tribal_positions)
-			if(!jobPos)
-				continue
-			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
-				counter++
-			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
-				counter = 0
-		dat += "</tr></table>"
-
-	//Followers (Light Blue)
-		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='abfffd'><th colspan='[length(GLOB.followers_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=followersdept;jobban4=[REF(M)]'>Followers Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.followers_positions)
-			if(!jobPos)
-				continue
-			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
-				counter++
-			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
-				counter = 0
-		dat += "</tr></table>"
-
-	//Heavens Night (pink)
-		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='abfffd'><th colspan='[length(GLOB.heavensnight_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=heavensnightdept;jobban4=[REF(M)]'>Heavens Night Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.heavensnight_positions)
-			if(!jobPos)
-				continue
-			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
-				counter++
-			else
-				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
-				counter++
-
-			if(counter >= 6) //So things dont get squiiiiished!
-				dat += "</tr><tr>"
-				counter = 0
-		dat += "</tr></table>"
-
 
 	//Non-Human (Green)
 		counter = 0
@@ -970,6 +870,12 @@
 		else
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=changeling;jobban4=[REF(M)]'>Changeling</a></td>"
 
+		//Heretic
+		if(jobban_isbanned(M, ROLE_HERETIC) || isbanned_dept)
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=heretic;jobban4=[REF(M)]'><font color=red>Heretic</font></a></td>"
+		else
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=heretic;jobban4=[REF(M)]'>Heretic</a></td>"
+
 		//Nuke Operative
 		if(jobban_isbanned(M, ROLE_OPERATIVE) || isbanned_dept)
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=operative;jobban4=[REF(M)]'><font color=red>Nuke Operative</font></a></td>"
@@ -1013,6 +919,11 @@
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=alien;jobban4=[REF(M)]'><font color=red>Alien</font></a></td>"
 		else
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=alien;jobban4=[REF(M)]'>Alien</a></td>"
+		//Gang
+		if(jobban_isbanned(M, ROLE_GANG) || isbanned_dept)
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=gang;jobban4=[REF(M)]'><font color=red>Gang</font></a></td>"
+		else
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=gang;jobban4=[REF(M)]'>Gang</a></td>"
 		//Bloodsucker
 		if(jobban_isbanned(M, ROLE_BLOODSUCKER) || isbanned_dept)
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=bloodsucker;jobban4=[REF(M)]'><font color=red>Bloodsucker</font></a></td>"
@@ -1029,6 +940,12 @@
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_MIND_TRANSFER];jobban4=[REF(M)]'><font color=red>Mind Transfer Potion</font></a></td>"
 		else
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_MIND_TRANSFER];jobban4=[REF(M)]'>Mind Transfer Potion</a></td>"
+
+		//Respawns
+		if(jobban_isbanned(M, ROLE_RESPAWN))
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_RESPAWN];jobban4=[REF(M)]'><font color=red>Respawns</font></a></td>"
+		else
+			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_RESPAWN];jobban4=[REF(M)]'>Respawns</a></td>"
 
 		dat += "</tr></table>"
 		usr << browse(dat, "window=jobban2;size=800x450")
@@ -1053,53 +970,33 @@
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("brotherhooddept")
-				for(var/jobPos in GLOB.brotherhood_positions)
+			if("securitydept")
+				for(var/jobPos in GLOB.security_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("oasisdept")
-				for(var/jobPos in GLOB.oasis_positions)
+			if("engineeringdept")
+				for(var/jobPos in GLOB.engineering_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("legiondept")
-				for(var/jobPos in GLOB.legion_positions)
+			if("medicaldept")
+				for(var/jobPos in GLOB.medical_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("ncrdept")
-				for(var/jobPos in GLOB.ncr_positions)
+			if("sciencedept")
+				for(var/jobPos in GLOB.science_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("vaultdept")
-				for(var/jobPos in GLOB.vault_positions)
+			if("supplydept")
+				for(var/jobPos in GLOB.supply_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("wastelanddept")
-				for(var/jobPos in GLOB.wasteland_positions)
-					if(!jobPos)
-						continue
-					joblist += jobPos
-			if("enclavedept")
-				for(var/jobPos in GLOB.enclave_positions)
-					if(!jobPos)
-						continue
-					joblist += jobPos
-			if("tribaldept")
-				for(var/jobPos in GLOB.tribal_positions)
-					if(!jobPos)
-						continue
-					joblist += jobPos
-			if("followersdept")
-				for(var/jobPos in GLOB.followers_positions)
-					if(!jobPos)
-						continue
-					joblist += jobPos
-			if("heavensnightdept")
-				for(var/jobPos in GLOB.heavensnight_positions)
+			if("civiliandept")
+				for(var/jobPos in GLOB.civilian_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
@@ -1111,7 +1008,7 @@
 			if("ghostroles")
 				joblist += list(ROLE_PAI, ROLE_POSIBRAIN, ROLE_DRONE , ROLE_DEATHSQUAD, ROLE_LAVALAND, ROLE_SENTIENCE)
 			if("teamantags")
-				joblist += list(ROLE_OPERATIVE, ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ABDUCTOR, ROLE_ALIEN)
+				joblist += list(ROLE_OPERATIVE, ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ABDUCTOR, ROLE_ALIEN, ROLE_GANG)
 			if("convertantags")
 				joblist += list(ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ALIEN)
 			if("otherroles")
@@ -1132,7 +1029,7 @@
 				if("Yes")
 					var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 					if(mins <= 0)
-						to_chat(usr, span_danger("[mins] is not a valid duration."))
+						to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
 						return
 					var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 					if(!reason)
@@ -1143,7 +1040,7 @@
 					var/msg
 					for(var/job in notbannedlist)
 						if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
-							to_chat(usr, span_danger("Failed to apply ban."))
+							to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 							return
 						if(M.client)
 							jobban_buildcache(M.client)
@@ -1154,10 +1051,10 @@
 						else
 							msg += ", [job]"
 					create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-					message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes."))
+					message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes.</span>")
 					to_chat(M, "<span class='boldannounce'><BIG>You have been [(msg == ("ooc" || "appearance")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg].</BIG></span>")
-					to_chat(M, span_boldannounce("The reason is: [reason]"))
-					to_chat(M, span_danger("This jobban will be lifted in [mins] minutes."))
+					to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
+					to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
 					href_list["jobban2"] = 1 // lets it fall through and refresh
 					return 1
 				if("No")
@@ -1169,7 +1066,7 @@
 						var/msg
 						for(var/job in notbannedlist)
 							if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
-								to_chat(usr, span_danger("Failed to apply ban."))
+								to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 								return
 							if(M.client)
 								jobban_buildcache(M.client)
@@ -1180,10 +1077,10 @@
 							else
 								msg += ", [job]"
 						create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-						message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]."))
+						message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg].</span>")
 						to_chat(M, "<span class='boldannounce'><BIG>You have been [(msg == ("ooc" || "appearance")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg].</BIG></span>")
-						to_chat(M, span_boldannounce("The reason is: [reason]"))
-						to_chat(M, span_danger("Jobban can be lifted only upon request."))
+						to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
+						to_chat(M, "<span class='danger'>Jobban can be lifted only upon request.</span>")
 						href_list["jobban2"] = 1 // lets it fall through and refresh
 						return 1
 				if("Cancel")
@@ -1211,7 +1108,7 @@
 					else
 						continue
 			if(msg)
-				message_admins(span_adminnotice("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]."))
+				message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
 				to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")
 				href_list["jobban2"] = 1 // lets it fall through and refresh
 			return 1
@@ -1219,83 +1116,65 @@
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): boot2 without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): boot2 without admin perms.")
 			return
 		var/mob/M = locate(href_list["boot2"])
 		if(ismob(M))
 			if(!check_if_greater_rights_than(M.client))
-				to_chat(usr, span_danger("Error: They have more rights than you do."))
+				to_chat(usr, "<span class='danger'>Error: They have more rights than you do.</span>")
 				return
 			if(alert(usr, "Kick [key_name(M)]?", "Confirm", "Yes", "No") != "Yes")
 				return
 			if(!M)
-				to_chat(usr, span_danger("Error: [M] no longer exists!"))
+				to_chat(usr, "<span class='danger'>Error: [M] no longer exists!</span>")
 				return
 			if(!M.client)
-				to_chat(usr, span_danger("Error: [M] no longer has a client!"))
+				to_chat(usr, "<span class='danger'>Error: [M] no longer has a client!</span>")
 				return
-			to_chat(M, span_danger("You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."))
+			to_chat(M, "<span class='danger'>You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].</span>")
 			log_admin("[key_name(usr)] kicked [key_name(M)].")
-			message_admins(span_adminnotice("[key_name_admin(usr)] kicked [key_name_admin(M)]."))
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] kicked [key_name_admin(M)].</span>")
 			qdel(M.client)
 
 	else if(href_list["addmessage"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addmessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addmessage without admin perms.")
 			return
 		var/target_key = href_list["addmessage"]
 		create_message("message", target_key, secret = 0)
 
 	else if(href_list["addnote"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addnote without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addnote without admin perms.")
 			return
 		var/target_key = href_list["addnote"]
 		create_message("note", target_key)
 
 	else if(href_list["addwatch"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addwatch without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addwatch without admin perms.")
 			return
 		var/target_key = href_list["addwatch"]
 		create_message("watchlist entry", target_key, secret = 1)
 
 	else if(href_list["addmemo"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addmemo without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addmemo without admin perms.")
 			return
 		create_message("memo", secret = 0, browse = 1)
 
 	else if(href_list["addmessageempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addmessageempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addmessageempty without admin perms.")
 			return
 		create_message("message", secret = 0)
 
 	else if(href_list["addnoteempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addnoteempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addnoteempty without admin perms.")
 			return
 		create_message("note")
 
 	else if(href_list["addwatchempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): addwatchempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): addwatchempty without admin perms.")
 			return
 		create_message("watchlist entry", secret = 1)
 
 	else if(href_list["deletemessage"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): deletemessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): deletemessage without admin perms.")
 			return
 		var/safety = alert("Delete message/note?",,"Yes","No");
 		if (safety == "Yes")
@@ -1304,8 +1183,6 @@
 
 	else if(href_list["deletemessageempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): deletemessageempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): deletemessageempty without admin perms.")
 			return
 		var/safety = alert("Delete message/note?",,"Yes","No");
 		if (safety == "Yes")
@@ -1314,64 +1191,48 @@
 
 	else if(href_list["editmessage"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): editmessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): editmessage without admin perms.")
 			return
 		var/message_id = href_list["editmessage"]
 		edit_message(message_id)
 
 	else if(href_list["editmessageempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageempty without admin perms.")
 			return
 		var/message_id = href_list["editmessageempty"]
 		edit_message(message_id, browse = 1)
 
 	else if(href_list["editmessageexpiry"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageexpiry without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageexpiry without admin perms.")
 			return
 		var/message_id = href_list["editmessageexpiry"]
 		edit_message_expiry(message_id)
 
 	else if(href_list["editmessageexpiryempty"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageexpiryempty without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageexpiryempty without admin perms.")
 			return
 		var/message_id = href_list["editmessageexpiryempty"]
 		edit_message_expiry(message_id, browse = 1)
 
 	else if(href_list["editmessageseverity"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageseverity without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): editmessageseverity without admin perms.")
 			return
 		var/message_id = href_list["editmessageseverity"]
 		edit_message_severity(message_id)
 
 	else if(href_list["secretmessage"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): secretmessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): secretmessage without admin perms.")
 			return
 		var/message_id = href_list["secretmessage"]
 		toggle_message_secrecy(message_id)
 
 	else if(href_list["searchmessages"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/searchmessages(): nonalpha without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): nonalpha without admin perms.")
 			return
 		var/target = href_list["searchmessages"]
 		browse_messages(index = target)
 
 	else if(href_list["nonalpha"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): nonalpha without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): nonalpha without admin perms.")
 			return
 		var/target = href_list["nonalpha"]
 		target = text2num(target)
@@ -1379,37 +1240,27 @@
 
 	else if(href_list["showmessages"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmessages without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmessages without admin perms.")
 			return
 		var/target = href_list["showmessages"]
 		browse_messages(index = target)
 
 	else if(href_list["showmemo"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmemo without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmemo without admin perms.")
 			return
 		browse_messages("memo")
 
 	else if(href_list["showwatch"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showwatch without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showwatch without admin perms.")
 			return
 		browse_messages("watchlist entry")
 
 	else if(href_list["showwatchfilter"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showwatchfilter without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showwatchfilter without admin perms.")
 			return
 		browse_messages("watchlist entry", filter = 1)
 
 	else if(href_list["showmessageckey"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmessageckey without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showmessageckey without admin perms.")
 			return
 		var/target = href_list["showmessageckey"]
 		var/agegate = TRUE
@@ -1423,18 +1274,16 @@
 
 	else if(href_list["messageedits"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): messageedits without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): messageedits without admin perms.")
 			return
 		var/datum/db_query/query_get_message_edits = SSdbcore.NewQuery(
-			"SELECT edits FROM [format_table_name("messages")] WHERE id = :id",
-			list("id" = "[href_list["messageedits"]]")
+			"SELECT edits FROM [format_table_name("messages")] WHERE id = :message_id",
+			list("message_id" = href_list["messageedits"])
 		)
 		if(!query_get_message_edits.warn_execute())
 			qdel(query_get_message_edits)
 			return
 		if(query_get_message_edits.NextRow())
-			var/edit_log = unsanitizeSQL(query_get_message_edits.item[1])
+			var/edit_log = query_get_message_edits.item[1]
 			if(!QDELETED(usr))
 				var/datum/browser/browser = new(usr, "Note edits", "Note edits")
 				browser.set_content(jointext(edit_log, ""))
@@ -1456,25 +1305,25 @@
 			if("Yes")
 				var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 				if(mins <= 0)
-					to_chat(usr, span_danger("[mins] is not a valid duration."))
+					to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
 					return
 				var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 				if(!reason)
 					return
 				if(!DB_ban_record(BANTYPE_TEMP, M, mins, reason))
-					to_chat(usr, span_danger("Failed to apply ban."))
+					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[key_name(usr)] has banned [key_name(M)]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
-				to_chat(M, span_danger("This is a temporary ban, it will be removed in [mins] minutes. The round ID is [GLOB.round_id]."))
+				to_chat(M, "<span class='danger'>This is a temporary ban, it will be removed in [mins] minutes. The round ID is [GLOB.round_id].</span>")
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
+					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
 				else
-					to_chat(M, span_danger("No ban appeals URL has been set."))
+					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
 				log_admin_private("[key_name(usr)] has banned [key_name(M)].\nReason: [key_name(M)]\nThis will be removed in [mins] minutes.")
-				var/msg = span_adminnotice("[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis will be removed in [mins] minutes.")
+				var/msg = "<span class='adminnotice'>[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>"
 				message_admins(msg)
 				var/datum/admin_help/AH = M.client ? M.client.current_ticket : null
 				if(AH)
@@ -1492,18 +1341,18 @@
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
 				to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
-				to_chat(M, span_danger("This is a permanent ban. The round ID is [GLOB.round_id]."))
+				to_chat(M, "<span class='danger'>This is a permanent ban. The round ID is [GLOB.round_id].</span>")
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
+					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
 				else
-					to_chat(M, span_danger("No ban appeals URL has been set."))
+					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
 				if(!DB_ban_record(BANTYPE_PERMA, M, -1, reason))
-					to_chat(usr, span_danger("Failed to apply ban."))
+					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				ban_unban_log_save("[key_name(usr)] has permabanned [key_name(M)]. - Reason: [reason] - This is a permanent ban.")
 				log_admin_private("[key_name(usr)] has banned [key_name(M)].\nReason: [reason]\nThis is a permanent ban.")
-				var/msg = span_adminnotice("[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis is a permanent ban.")
+				var/msg = "<span class='adminnotice'>[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis is a permanent ban.</span>"
 				message_admins(msg)
 				var/datum/admin_help/AH = M.client ? M.client.current_ticket : null
 				if(AH)
@@ -1514,8 +1363,6 @@
 
 	else if(href_list["mute"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): mute without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): mute without admin perms.")
 			return
 		cmd_admin_mute(href_list["mute"], text2num(href_list["mute_type"]))
 
@@ -1527,18 +1374,14 @@
 
 	else if(href_list["f_dynamic_roundstart"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart without admin perms.")
 			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode.", null, null, null, null)
+		if(SSticker?.mode)
+			return tgui_alert(usr, "The game has already started.")
 		var/roundstart_rules = list()
 		for (var/rule in subtypesof(/datum/dynamic_ruleset/roundstart))
 			var/datum/dynamic_ruleset/roundstart/newrule = new rule()
 			roundstart_rules[newrule.name] = newrule
-		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in roundstart_rules
+		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in sortList(roundstart_rules)
 		if (added_rule)
 			GLOB.dynamic_forced_roundstart_ruleset += roundstart_rules[added_rule]
 			log_admin("[key_name(usr)] set [added_rule] to be a forced roundstart ruleset.")
@@ -1547,8 +1390,6 @@
 
 	else if(href_list["f_dynamic_roundstart_clear"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_clear without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_clear without admin perms.")
 			return
 		GLOB.dynamic_forced_roundstart_ruleset = list()
 		Game()
@@ -1557,8 +1398,6 @@
 
 	else if(href_list["f_dynamic_roundstart_remove"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_remove without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_remove without admin perms.")
 			return
 		var/datum/dynamic_ruleset/roundstart/rule = locate(href_list["f_dynamic_roundstart_remove"])
 		GLOB.dynamic_forced_roundstart_ruleset -= rule
@@ -1566,226 +1405,17 @@
 		log_admin("[key_name(usr)] removed [rule] from the forced roundstart rulesets.")
 		message_admins("[key_name(usr)] removed [rule] from the forced roundstart rulesets.", 1)
 
-	else if(href_list["f_dynamic_storyteller"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_storyteller without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_storyteller without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode.", null, null, null, null)
-		var/list/choices = list()
-		for(var/T in config.storyteller_cache)
-			var/datum/dynamic_storyteller/S = T
-			choices[initial(S.name)] = T
-		var/choice = choices[input("Select storyteller:", "Storyteller", "Classic") as null|anything in choices]
-		if(choice)
-			GLOB.dynamic_forced_storyteller = choice
-			log_admin("[key_name(usr)] forced the storyteller to [GLOB.dynamic_forced_storyteller].")
-			message_admins("[key_name(usr)] forced the storyteller to [GLOB.dynamic_forced_storyteller].")
-			Game()
-
-	else if(href_list["f_dynamic_storyteller_clear"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_storyteller_clear without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_storyteller_clear without admin perms.")
-			return
-		GLOB.dynamic_forced_storyteller = null
-		Game()
-		log_admin("[key_name(usr)] cleared the forced storyteller. The mode will pick one as normal.")
-		message_admins("[key_name(usr)] cleared the forced storyteller. The mode will pick one as normal.", 1)
-
-	else if(href_list["f_dynamic_latejoin"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_latejoin without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_latejoin without admin perms.")
-			return
-		if(!SSticker || !SSticker.mode)
-			return alert(usr, "The game must start first.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/latejoin_rules = list()
-		for (var/rule in subtypesof(/datum/dynamic_ruleset/latejoin))
-			var/datum/dynamic_ruleset/latejoin/newrule = new rule()
-			latejoin_rules[newrule.name] = newrule
-		var/added_rule = input(usr,"What ruleset do you want to force upon the next latejoiner? This will bypass threat level and population restrictions.", "Rigging Latejoin", null) as null|anything in latejoin_rules
-		if (added_rule)
-			var/datum/game_mode/dynamic/mode = SSticker.mode
-			mode.forced_latejoin_rule = latejoin_rules[added_rule]
-			log_admin("[key_name(usr)] set [added_rule] to proc on the next latejoin.")
-			message_admins("[key_name(usr)] set [added_rule] to proc on the next latejoin.", 1)
-			Game()
-
-	else if(href_list["f_dynamic_latejoin_clear"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_latejoin_clear without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_latejoin_clear without admin perms.")
-			return
-		if (SSticker && SSticker.mode && istype(SSticker.mode,/datum/game_mode/dynamic))
-			var/datum/game_mode/dynamic/mode = SSticker.mode
-			mode.forced_latejoin_rule = null
-			Game()
-			log_admin("[key_name(usr)] cleared the forced latejoin ruleset.")
-			message_admins("[key_name(usr)] cleared the forced latejoin ruleset.", 1)
-
-	else if(href_list["f_dynamic_midround"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_midround without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_midround without admin perms.")
-			return
-		if(!SSticker || !SSticker.mode)
-			return alert(usr, "The game must start first.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/midround_rules = list()
-		for (var/rule in subtypesof(/datum/dynamic_ruleset/midround))
-			var/datum/dynamic_ruleset/midround/newrule = new rule()
-			midround_rules[newrule.name] = rule
-		var/added_rule = input(usr,"What ruleset do you want to force right now? This will bypass threat level and population restrictions.", "Execute Ruleset", null) as null|anything in midround_rules
-		if (added_rule)
-			var/datum/game_mode/dynamic/mode = SSticker.mode
-			log_admin("[key_name(usr)] executed the [added_rule] ruleset.")
-			message_admins("[key_name(usr)] executed the [added_rule] ruleset.", 1)
-			mode.picking_specific_rule(midround_rules[added_rule],1)
-
 	else if (href_list["f_dynamic_options"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_options without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_options without admin perms.")
 			return
 
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
+		if(SSticker?.mode)
+			return tgui_alert(usr, "The game has already started.")
 
 		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_centre"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_centre without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_centre without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-
-		var/new_centre = input(usr,"Change the centre of the dynamic mode threat curve. A negative value will give a more peaceful round ; a positive value, a round with higher threat. Any number is allowed. This is adjusted by dynamic voting.", "Change curve centre", null) as num
-
-		log_admin("[key_name(usr)] changed the distribution curve center to [new_centre].")
-		message_admins("[key_name(usr)] changed the distribution curve center to [new_centre]", 1)
-		GLOB.dynamic_curve_centre = new_centre
-		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_width"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_width without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_width without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-
-		var/new_width = input(usr,"Change the width of the dynamic mode threat curve. A higher value will favour extreme rounds ; a lower value, a round closer to the average. Any Number between 0.5 and 4 are allowed.", "Change curve width", null) as num
-		if (new_width < 0.5 || new_width > 4)
-			return alert(usr, "Only values between 0.5 and +2.5 are allowed.", null, null, null, null)
-
-		log_admin("[key_name(usr)] changed the distribution curve width to [new_width].")
-		message_admins("[key_name(usr)] changed the distribution curve width to [new_width]", 1)
-		GLOB.dynamic_curve_width = new_width
-		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_latejoin_min"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_latejoin_min without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_latejoin_min without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/new_min = input(usr,"Change the minimum delay of latejoin injection in minutes.", "Change latejoin injection delay minimum", null) as num
-		if(new_min <= 0)
-			return alert(usr, "The minimum can't be zero or lower.", null, null, null, null)
-		if((new_min MINUTES) > GLOB.dynamic_latejoin_delay_max)
-			return alert(usr, "The minimum must be lower than the maximum.", null, null, null, null)
-
-		log_admin("[key_name(usr)] changed the latejoin injection minimum delay to [new_min] minutes.")
-		message_admins("[key_name(usr)] changed the latejoin injection minimum delay to [new_min] minutes", 1)
-		GLOB.dynamic_latejoin_delay_min = (new_min MINUTES)
-		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_latejoin_max"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_latejoin_max without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_latejoin_max without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/new_max = input(usr,"Change the maximum delay of latejoin injection in minutes.", "Change latejoin injection delay maximum", null) as num
-		if(new_max <= 0)
-			return alert(usr, "The maximum can't be zero or lower.", null, null, null, null)
-		if((new_max MINUTES) < GLOB.dynamic_latejoin_delay_min)
-			return alert(usr, "The maximum must be higher than the minimum.", null, null, null, null)
-
-		log_admin("[key_name(usr)] changed the latejoin injection maximum delay to [new_max] minutes.")
-		message_admins("[key_name(usr)] changed the latejoin injection maximum delay to [new_max] minutes", 1)
-		GLOB.dynamic_latejoin_delay_max = (new_max MINUTES)
-		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_midround_min"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_midround_min without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_midround_min without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/new_min = input(usr,"Change the minimum delay of midround injection in minutes.", "Change midround injection delay minimum", null) as num
-		if(new_min <= 0)
-			return alert(usr, "The minimum can't be zero or lower.", null, null, null, null)
-		if((new_min MINUTES) > GLOB.dynamic_midround_delay_max)
-			return alert(usr, "The minimum must be lower than the maximum.", null, null, null, null)
-
-		log_admin("[key_name(usr)] changed the midround injection minimum delay to [new_min] minutes.")
-		message_admins("[key_name(usr)] changed the midround injection minimum delay to [new_min] minutes", 1)
-		GLOB.dynamic_midround_delay_min = (new_min MINUTES)
-		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_roundstart_midround_max"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_midround_max without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_roundstart_midround_max without admin perms.")
-			return
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-		var/new_max = input(usr,"Change the maximum delay of midround injection in minutes.", "Change midround injection delay maximum", null) as num
-		if(new_max <= 0)
-			return alert(usr, "The maximum can't be zero or lower.", null, null, null, null)
-		if((new_max MINUTES) > GLOB.dynamic_midround_delay_max)
-			return alert(usr, "The maximum must be higher than the minimum.", null, null, null, null)
-
-		log_admin("[key_name(usr)] changed the midround injection maximum delay to [new_max] minutes.")
-		message_admins("[key_name(usr)] changed the midround injection maximum delay to [new_max] minutes", 1)
-		GLOB.dynamic_midround_delay_max = (new_max MINUTES)
-		dynamic_mode_options(usr)
-
 	else if(href_list["f_dynamic_force_extended"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_force_extended without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_force_extended without admin perms.")
 			return
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
 
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
 		log_admin("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
@@ -1794,82 +1424,31 @@
 
 	else if(href_list["f_dynamic_no_stacking"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_no_stacking without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_no_stacking without admin perms.")
 			return
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
 
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 		log_admin("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		message_admins("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		dynamic_mode_options(usr)
-
-	else if(href_list["f_dynamic_classic_secret"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_classic_secret without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_classic_secret without admin perms.")
-			return
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-
-		GLOB.dynamic_classic_secret = !GLOB.dynamic_classic_secret
-		log_admin("[key_name(usr)] set 'classic_secret' to [GLOB.dynamic_classic_secret].")
-		message_admins("[key_name(usr)] set 'classic_secret' to [GLOB.dynamic_classic_secret].")
-		dynamic_mode_options(usr)
-
 	else if(href_list["f_dynamic_stacking_limit"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_stacking_limit without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_stacking_limit without admin perms.")
 			return
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
 
 		GLOB.dynamic_stacking_limit = input(usr,"Change the threat limit at which round-endings rulesets will start to stack.", "Change stacking limit", null) as num
 		log_admin("[key_name(usr)] set 'stacking_limit' to [GLOB.dynamic_stacking_limit].")
 		message_admins("[key_name(usr)] set 'stacking_limit' to [GLOB.dynamic_stacking_limit].")
 		dynamic_mode_options(usr)
 
-	else if(href_list["f_dynamic_high_pop_limit"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_high_pop_limit without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_high_pop_limit without admin perms.")
-			return
-
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
-
-		var/new_value = input(usr, "Enter the high-pop override threshold for dynamic mode.", "High pop override") as num
-		if (new_value < 0)
-			return alert(usr, "Only positive values allowed!", null, null, null, null)
-		GLOB.dynamic_high_pop_limit = new_value
-
-		log_admin("[key_name(usr)] set 'high_pop_limit' to [GLOB.dynamic_high_pop_limit].")
-		message_admins("[key_name(usr)] set 'high_pop_limit' to [GLOB.dynamic_high_pop_limit].")
-		dynamic_mode_options(usr)
-
 	else if(href_list["f_dynamic_forced_threat"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_forced_threat without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): f_dynamic_forced_threat without admin perms.")
 			return
 
-		if(SSticker && SSticker.mode)
-			return alert(usr, "The game has already started.", null, null, null, null)
-
-		if(GLOB.master_mode != "dynamic")
-			return alert(usr, "The game mode has to be dynamic mode!", null, null, null, null)
+		if(SSticker?.mode)
+			return tgui_alert(usr, "The game has already started.")
 
 		var/new_value = input(usr, "Enter the forced threat level for dynamic mode.", "Forced threat level") as num
 		if (new_value > 100)
-			return alert(usr, "The value must be be under 100.", null, null, null, null)
+			return tgui_alert(usr, "The value must be be under 100.")
 		GLOB.dynamic_forced_threat_level = new_value
 
 		log_admin("[key_name(usr)] set 'forced_threat_level' to [GLOB.dynamic_forced_threat_level].")
@@ -1884,7 +1463,7 @@
 			return alert(usr, "The game has already started.", null, null, null, null)
 		GLOB.master_mode = href_list["c_mode2"]
 		log_admin("[key_name(usr)] set the mode as [GLOB.master_mode].")
-		message_admins(span_adminnotice("[key_name_admin(usr)] set the mode as [GLOB.master_mode]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] set the mode as [GLOB.master_mode].</span>")
 		to_chat(world, "<span class='adminnotice'><b>The mode is now: [GLOB.master_mode]</b></span>")
 		Game() // updates the main game menu
 		SSticker.save_mode(GLOB.master_mode)
@@ -1900,7 +1479,7 @@
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		GLOB.secret_force_mode = href_list["f_secret2"]
 		log_admin("[key_name(usr)] set the forced secret mode as [GLOB.secret_force_mode].")
-		message_admins(span_adminnotice("[key_name_admin(usr)] set the forced secret mode as [GLOB.secret_force_mode]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] set the forced secret mode as [GLOB.secret_force_mode].</span>")
 		Game() // updates the main game menu
 		HandleFSecret()
 
@@ -1914,7 +1493,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to monkeyize [key_name(H)].")
-		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to monkeyize [key_name_admin(H)]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to monkeyize [key_name_admin(H)].</span>")
 		H.monkeyize()
 
 	else if(href_list["humanone"])
@@ -1927,7 +1506,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to humanize [key_name(Mo)].")
-		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to humanize [key_name_admin(Mo)]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to humanize [key_name_admin(Mo)].</span>")
 		Mo.humanize()
 
 	else if(href_list["corgione"])
@@ -1940,7 +1519,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to corgize [key_name(H)].")
-		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to corgize [key_name_admin(H)]."))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to corgize [key_name_admin(H)].</span>")
 		H.corgize()
 
 
@@ -1958,12 +1537,10 @@
 		M.say(speech, forced = "admin speech")
 		speech = sanitize(speech) // Nah, we don't trust them
 		log_admin("[key_name(usr)] forced [key_name(M)] to say: [speech]")
-		message_admins(span_adminnotice("[key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]"))
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]</span>")
 
 	else if(href_list["makeeligible"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): makeeligible without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): makeeligible without admin perms.")
 			return
 		var/mob/M = locate(href_list["makeeligible"])
 		if(!ismob(M))
@@ -1973,8 +1550,6 @@
 
 	else if(href_list["sendtoprison"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendtoprison without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendtoprison without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["sendtoprison"])
@@ -1989,36 +1564,37 @@
 			return
 
 		M.forceMove(pick(GLOB.prisonwarp))
-		to_chat(M, span_adminnotice("You have been sent to Prison!"))
+		to_chat(M, "<span class='adminnotice'>You have been sent to Prison!</span>")
 
 		log_admin("[key_name(usr)] has sent [key_name(M)] to Prison!")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to Prison!")
 
 	else if(href_list["sendbacktolobby"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendbacktolobby without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendbacktolobby without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["sendbacktolobby"])
 
 		if(!isobserver(M))
-			to_chat(usr, span_notice("You can only send ghost players back to the Lobby."))
+			to_chat(usr, "<span class='notice'>You can only send ghost players back to the Lobby.</span>")
 			return
 
 		if(!M.client)
-			to_chat(usr, span_warning("[M] doesn't seem to have an active client."))
+			to_chat(usr, "<span class='warning'>[M] doesn't seem to have an active client.</span>")
 			return
 
 		if(alert(usr, "Send [key_name(M)] back to Lobby?", "Message", "Yes", "No") != "Yes")
 			return
 
-		log_admin("[key_name(usr)] has sent [key_name(M)] back to the Lobby.")
-		message_admins("[key_name(usr)] has sent [key_name(M)] back to the Lobby.")
+		log_admin("[key_name(usr)] has sent [key_name(M)] back to the Lobby, removing their respawn restrictions if they existed.")
+		message_admins("[key_name(usr)] has sent [key_name(M)] back to the Lobby, removing their respawn restrictions if they existed.")
 
 		var/mob/dead/new_player/NP = new()
 		NP.ckey = M.ckey
 		qdel(M)
+		if(GLOB.preferences_datums[NP.ckey])
+			var/datum/preferences/P = GLOB.preferences_datums[NP.ckey]
+			P.respawn_restrictions_active = FALSE
 
 	else if(href_list["tdome1"])
 		if(!check_rights(R_FUN))
@@ -2043,7 +1619,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome1))
 		spawn(50)
-			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
+			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 1)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 1)")
 
@@ -2070,7 +1646,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome2))
 		spawn(50)
-			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
+			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 2)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 2)")
 
@@ -2094,7 +1670,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeadmin))
 		spawn(50)
-			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
+			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Admin.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Admin.)")
 
@@ -2125,14 +1701,12 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeobserve))
 		spawn(50)
-			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
+			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Observer.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Observer.)")
 
 	else if(href_list["revive"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): revive without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): revive without admin perms.")
 			return
 
 		var/mob/living/L = locate(href_list["revive"])
@@ -2141,7 +1715,7 @@
 			return
 
 		L.revive(full_heal = 1, admin_revive = 1)
-		message_admins(span_danger("Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!"))
+		message_admins("<span class='danger'>Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!</span>")
 		log_admin("[key_name(usr)] healed / Revived [key_name(L)].")
 
 	else if(href_list["makeai"])
@@ -2153,7 +1727,7 @@
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.")
 			return
 
-		message_admins(span_danger("Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!"))
+		message_admins("<span class='danger'>Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!</span>")
 		log_admin("[key_name(usr)] AIized [key_name(H)].")
 		H.AIize()
 
@@ -2218,7 +1792,7 @@
 		show_player_panel(M)
 
 	else if(href_list["adminplayerobservefollow"])
-		if(!isobserver(usr) && !check_rights(R_SPAWN)) //fortuna edit. event manager change
+		if(!isobserver(usr) && !check_rights(R_ADMIN))
 			return
 
 		var/atom/movable/AM = locate(href_list["adminplayerobservefollow"])
@@ -2231,8 +1805,6 @@
 
 	else if(href_list["admingetmovable"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): admingetmovable without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): admingetmovable without admin perms.")
 			return
 
 		var/atom/movable/AM = locate(href_list["admingetmovable"])
@@ -2256,15 +1828,11 @@
 
 	else if(href_list["adminchecklaws"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): adminchecklaws without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): adminchecklaws without admin perms.")
 			return
 		output_ai_laws()
 
 	else if(href_list["admincheckdevilinfo"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): admincheckdevilinfo without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): admincheckdevilinfo without admin perms.")
 			return
 		var/mob/M = locate(href_list["admincheckdevilinfo"])
 		output_devil_info(M)
@@ -2328,8 +1896,6 @@
 
 	else if(href_list["addjobslot"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): addjobslot without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): addjobslot without admin perms.")
 			return
 
 		var/Add = href_list["addjobslot"]
@@ -2344,8 +1910,6 @@
 
 	else if(href_list["customjobslot"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): customjobslot without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): customjobslot without admin perms.")
 			return
 
 		var/Add = href_list["customjobslot"]
@@ -2364,8 +1928,6 @@
 
 	else if(href_list["removejobslot"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): removejobslot without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): removejobslot without admin perms.")
 			return
 
 		var/Remove = href_list["removejobslot"]
@@ -2379,8 +1941,6 @@
 
 	else if(href_list["unlimitjobslot"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): unlimitjobslot without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): unlimitjobslot without admin perms.")
 			return
 
 		var/Unlimit = href_list["unlimitjobslot"]
@@ -2394,8 +1954,6 @@
 
 	else if(href_list["limitjobslot"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): limitjobslot without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): limitjobslot without admin perms.")
 			return
 
 		var/Limit = href_list["limitjobslot"]
@@ -2455,8 +2013,6 @@
 
 	else if(href_list["CentComReply"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): CentComReply without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): CentComReply without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["CentComReply"])
@@ -2464,8 +2020,6 @@
 
 	else if(href_list["SyndicateReply"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): SyndicateReply without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): SyndicateReply without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["SyndicateReply"])
@@ -2473,8 +2027,6 @@
 
 	else if(href_list["HeadsetMessage"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): HeadsetMessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): HeadsetMessage without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["HeadsetMessage"])
@@ -2482,23 +2034,19 @@
 
 	else if(href_list["reject_custom_name"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): reject_custom_name without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): reject_custom_name without admin perms.")
 			return
 		var/obj/item/station_charter/charter = locate(href_list["reject_custom_name"])
 		if(istype(charter))
 			charter.reject_proposed(usr)
 	else if(href_list["jumpto"])
-		if(!isobserver(usr) && !check_rights(R_SPAWN)) //fortuna edit. event manager change
+		if(!isobserver(usr) && !check_rights(R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["jumpto"])
 		usr.client.jumptomob(M)
 
 	else if(href_list["getmob"])
-		if(!check_rights(R_SPAWN)) //fortuna edit. event manager change
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): getmob without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): getmob without admin perms.")
+		if(!check_rights(R_ADMIN))
 			return
 
 		if(alert(usr, "Confirm?", "Message", "Yes", "No") != "Yes")
@@ -2508,26 +2056,20 @@
 
 	else if(href_list["sendmob"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendmob without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sendmob without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["sendmob"])
 		usr.client.sendmob(M)
 
 	else if(href_list["narrateto"])
-		if(!check_rights(R_SPAWN)) //fortuna edit. event manager change
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): narrateto without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): narrateto without admin perms.")
+		if(!check_rights(R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["narrateto"])
 		usr.client.cmd_admin_direct_narrate(M)
 
 	else if(href_list["subtlemessage"])
-		if(!check_rights(R_SPAWN)) //fortuna edit. event manager change
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): subtlemessage without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): subtlemessage without admin perms.")
+		if(!check_rights(R_ADMIN))
 			return
 
 		var/mob/M = locate(href_list["subtlemessage"])
@@ -2535,8 +2077,6 @@
 
 	else if(href_list["individuallog"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): individuallog without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): individuallog without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["individuallog"]) in GLOB.mob_list
@@ -2547,8 +2087,6 @@
 		show_individual_logging_panel(M, href_list["log_src"], href_list["log_type"])
 	else if(href_list["languagemenu"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): languagemenu without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): languagemenu without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["languagemenu"]) in GLOB.mob_list
@@ -2560,8 +2098,6 @@
 
 	else if(href_list["traitor"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): traitor without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): traitor without admin perms.")
 			return
 
 		if(!SSticker.HasRoundStarted())
@@ -2581,8 +2117,6 @@
 
 	else if(href_list["borgpanel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): borgpanel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): borgpanel without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["borgpanel"])
@@ -2593,26 +2127,13 @@
 
 	else if(href_list["initmind"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): initmind without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): initmind without admin perms.")
 			return
 		var/mob/M = locate(href_list["initmind"])
 		if(!ismob(M) || M.mind)
 			to_chat(usr, "This can only be used on instances on mindless mobs")
 			return
 		M.mind_initialize()
-//fortuna addition start
-	else if(href_list["toggle_build"])
-		if(!check_rights(R_SPAWN))
-			return
-		usr.client.togglebuildmodeself()
 
-	else if(href_list["toggle_invis"])
-		if(!check_rights(R_SPAWN))
-			return
-		usr.client.invisimin()
-
-//fortuna addition end
 	else if(href_list["create_object"])
 		if(!check_rights(R_SPAWN))
 			return
@@ -2744,7 +2265,7 @@
 										R.activate_module(I)
 
 		if(pod)
-			new /obj/effect/abstract/DPtarget(target, pod)
+			new /obj/effect/pod_landingzone(target, pod)
 
 		if (number == 1)
 			log_admin("[key_name(usr)] created a [english_list(paths)]")
@@ -2760,37 +2281,26 @@
 					break
 		return
 
-	else if(href_list["secrets"])
-		Secrets_topic(href_list["secrets"],href_list)
-
 	else if(href_list["ac_view_wanted"])            //Admin newscaster Topic() stuff be here
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_view_wanted without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_view_wanted without admin perms.")
 			return
 		src.admincaster_screen = 18                 //The ac_ prefix before the hrefs stands for AdminCaster.
 		src.access_news_network()
 
 	else if(href_list["ac_set_channel_name"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_name without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_name without admin perms.")
 			return
 		src.admincaster_feed_channel.channel_name = stripped_input(usr, "Provide a Feed Channel Name.", "Network Channel Handler", "")
 		src.access_news_network()
 
 	else if(href_list["ac_set_channel_lock"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_lock without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_lock without admin perms.")
 			return
 		src.admincaster_feed_channel.locked = !src.admincaster_feed_channel.locked
 		src.access_news_network()
 
 	else if(href_list["ac_submit_new_channel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_new_channel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_new_channel without admin perms.")
 			return
 		var/check = 0
 		for(var/datum/news/feed_channel/FC in GLOB.news_network.network_channels)
@@ -2810,8 +2320,6 @@
 
 	else if(href_list["ac_set_channel_receiving"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_receiving without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_channel_receiving without admin perms.")
 			return
 		var/list/available_channels = list()
 		for(var/datum/news/feed_channel/F in GLOB.news_network.network_channels)
@@ -2821,16 +2329,12 @@
 
 	else if(href_list["ac_set_new_message"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_new_message without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_new_message without admin perms.")
 			return
 		src.admincaster_feed_message.body = adminscrub(stripped_input(usr, "Write your Feed story.", "Network Channel Handler", ""))
 		src.access_news_network()
 
 	else if(href_list["ac_submit_new_message"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_new_message without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_new_message without admin perms.")
 			return
 		if(src.admincaster_feed_message.returnBody(-1) =="" || src.admincaster_feed_message.returnBody(-1) =="\[REDACTED\]" || src.admincaster_feed_channel.channel_name == "" )
 			src.admincaster_screen = 6
@@ -2847,40 +2351,30 @@
 
 	else if(href_list["ac_create_channel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_create_channel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_create_channel without admin perms.")
 			return
 		src.admincaster_screen=2
 		src.access_news_network()
 
 	else if(href_list["ac_create_feed_story"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_create_feed_story without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_create_feed_story without admin perms.")
 			return
 		src.admincaster_screen=3
 		src.access_news_network()
 
 	else if(href_list["ac_menu_censor_story"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_censor_story without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_censor_story without admin perms.")
 			return
 		src.admincaster_screen=10
 		src.access_news_network()
 
 	else if(href_list["ac_menu_censor_channel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_censor_channel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_censor_channel without admin perms.")
 			return
 		src.admincaster_screen=11
 		src.access_news_network()
 
 	else if(href_list["ac_menu_wanted"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_wanted without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_menu_wanted without admin perms.")
 			return
 		var/already_wanted = 0
 		if(GLOB.news_network.wanted_issue.active)
@@ -2894,24 +2388,18 @@
 
 	else if(href_list["ac_set_wanted_name"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_wanted_name without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_wanted_name without admin perms.")
 			return
 		src.admincaster_wanted_message.criminal = adminscrub(stripped_input(usr, "Provide the name of the Wanted person.", "Network Security Handler", ""))
 		src.access_news_network()
 
 	else if(href_list["ac_set_wanted_desc"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_wanted_desc without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_wanted_desc without admin perms.")
 			return
 		src.admincaster_wanted_message.body = adminscrub(stripped_input(usr, "Provide the a description of the Wanted person and any other details you deem important.", "Network Security Handler", ""))
 		src.access_news_network()
 
 	else if(href_list["ac_submit_wanted"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_wanted without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_submit_wanted without admin perms.")
 			return
 		var/input_param = text2num(href_list["ac_submit_wanted"])
 		if(src.admincaster_wanted_message.criminal == "" || src.admincaster_wanted_message.body == "")
@@ -2930,8 +2418,6 @@
 
 	else if(href_list["ac_cancel_wanted"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_cancel_wanted without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_cancel_wanted without admin perms.")
 			return
 		var/choice = alert("Please confirm Wanted Issue removal.","Network Security Handler","Confirm","Cancel")
 		if(choice=="Confirm")
@@ -2941,8 +2427,6 @@
 
 	else if(href_list["ac_censor_channel_author"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_author without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_author without admin perms.")
 			return
 		var/datum/news/feed_channel/FC = locate(href_list["ac_censor_channel_author"])
 		FC.toggleCensorAuthor()
@@ -2950,8 +2434,6 @@
 
 	else if(href_list["ac_censor_channel_story_author"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_story_author without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_story_author without admin perms.")
 			return
 		var/datum/news/feed_message/MSG = locate(href_list["ac_censor_channel_story_author"])
 		MSG.toggleCensorAuthor()
@@ -2959,8 +2441,6 @@
 
 	else if(href_list["ac_censor_channel_story_body"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_story_body without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_censor_channel_story_body without admin perms.")
 			return
 		var/datum/news/feed_message/MSG = locate(href_list["ac_censor_channel_story_body"])
 		MSG.toggleCensorBody()
@@ -2968,8 +2448,6 @@
 
 	else if(href_list["ac_pick_d_notice"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_pick_d_notice without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_pick_d_notice without admin perms.")
 			return
 		var/datum/news/feed_channel/FC = locate(href_list["ac_pick_d_notice"])
 		src.admincaster_feed_channel = FC
@@ -2978,8 +2456,6 @@
 
 	else if(href_list["ac_toggle_d_notice"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_toggle_d_notice without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_toggle_d_notice without admin perms.")
 			return
 		var/datum/news/feed_channel/FC = locate(href_list["ac_toggle_d_notice"])
 		FC.toggleCensorDclass()
@@ -2987,16 +2463,12 @@
 
 	else if(href_list["ac_view"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_view without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_view without admin perms.")
 			return
 		src.admincaster_screen=1
 		src.access_news_network()
 
 	else if(href_list["ac_setScreen"]) //Brings us to the main menu and resets all fields~
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_setScreen without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_setScreen without admin perms.")
 			return
 		src.admincaster_screen = text2num(href_list["ac_setScreen"])
 		if (src.admincaster_screen == 0)
@@ -3010,8 +2482,6 @@
 
 	else if(href_list["ac_show_channel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_show_channel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_show_channel without admin perms.")
 			return
 		var/datum/news/feed_channel/FC = locate(href_list["ac_show_channel"])
 		src.admincaster_feed_channel = FC
@@ -3020,8 +2490,6 @@
 
 	else if(href_list["ac_pick_censor_channel"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_pick_censor_channel without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_pick_censor_channel without admin perms.")
 			return
 		var/datum/news/feed_channel/FC = locate(href_list["ac_pick_censor_channel"])
 		src.admincaster_feed_channel = FC
@@ -3030,23 +2498,17 @@
 
 	else if(href_list["ac_refresh"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_refresh without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_refresh without admin perms.")
 			return
 		src.access_news_network()
 
 	else if(href_list["ac_set_signature"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_signature without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_set_signature without admin perms.")
 			return
 		src.admin_signature = adminscrub(input(usr, "Provide your desired signature.", "Network Identity Handler", ""))
 		src.access_news_network()
 
 	else if(href_list["ac_del_comment"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_del_comment without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_del_comment without admin perms.")
 			return
 		var/datum/news/feed_comment/FC = locate(href_list["ac_del_comment"])
 		var/datum/news/feed_message/FM = locate(href_list["ac_del_comment_msg"])
@@ -3056,8 +2518,6 @@
 
 	else if(href_list["ac_lock_comment"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_lock_comment without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): ac_lock_comment without admin perms.")
 			return
 		var/datum/news/feed_message/FM = locate(href_list["ac_lock_comment"])
 		FM.locked ^= 1
@@ -3065,22 +2525,18 @@
 
 	else if(href_list["check_antagonist"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): check_antagonist without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): check_antagonist without admin perms.")
 			return
 		usr.client.check_antagonists()
 
 	else if(href_list["kick_all_from_lobby"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): kick_all_from_lobby without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): kick_all_from_lobby without admin perms.")
 			return
 		if(SSticker.IsRoundInProgress())
 			var/afkonly = text2num(href_list["afkonly"])
 			if(alert("Are you sure you want to kick all [afkonly ? "AFK" : ""] clients from the lobby??","Message","Yes","Cancel") != "Yes")
 				to_chat(usr, "Kick clients from lobby aborted")
 				return
-			var/list/listkicked = kick_clients_in_lobby(span_danger("You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."), afkonly)
+			var/list/listkicked = kick_clients_in_lobby("<span class='danger'>You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].</span>", afkonly)
 
 			var/strkicked = ""
 			for(var/name in listkicked)
@@ -3091,9 +2547,7 @@
 			to_chat(usr, "You may only use this when the game is running.")
 
 	else if(href_list["create_outfit"])
-		if(!check_rights(R_SPAWN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): create_outfit without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): create_outfit without admin perms.")
+		if(!check_rights(R_ADMIN))
 			return
 
 		var/datum/outfit/O = new /datum/outfit
@@ -3121,8 +2575,6 @@
 
 	else if(href_list["set_selfdestruct_code"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): set_selfdestruct_code without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): set_selfdestruct_code without admin perms.")
 			return
 		var/code = random_nukecode()
 		for(var/obj/machinery/nuclearbomb/selfdestruct/SD in GLOB.nuke_list)
@@ -3132,8 +2584,6 @@
 
 	else if(href_list["add_station_goal"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): add_station_goal without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): add_station_goal without admin perms.")
 			return
 		var/list/type_choices = typesof(/datum/station_goal)
 		var/picked = input("Choose goal type") in type_choices|null
@@ -3156,7 +2606,7 @@
 	else if(href_list["viewruntime"])
 		var/datum/error_viewer/error_viewer = locate(href_list["viewruntime"])
 		if(!istype(error_viewer))
-			to_chat(usr, span_warning("That runtime viewer no longer exists."))
+			to_chat(usr, "<span class='warning'>That runtime viewer no longer exists.</span>")
 			return
 
 		if(href_list["viewruntime_backto"])
@@ -3166,8 +2616,6 @@
 
 	else if(href_list["showrelatedacc"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showrelatedacc without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): showrelatedacc without admin perms.")
 			return
 		var/client/C = locate(href_list["client"]) in GLOB.clients
 		var/thing_to_check
@@ -3185,8 +2633,6 @@
 
 	else if(href_list["centcomlookup"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): centcomlookup without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): centcomlookup without admin perms.")
 			return
 
 		if(!CONFIG_GET(string/centcom_ban_db))
@@ -3217,8 +2663,19 @@
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
 				bans = json_decode(response["body"])
-				dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
+
+				//Ignore bans from non-whitelisted sources, if a whitelist exists
+				var/list/valid_sources
+				if(CONFIG_GET(string/centcom_source_whitelist))
+					valid_sources = splittext(CONFIG_GET(string/centcom_source_whitelist), ",")
+					dat += "<center><b>Bans detected for [ckey]</b></center>"
+				else
+					//Ban count is potentially inaccurate if they're using a whitelist
+					dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
+
 				for(var/list/ban in bans)
+					if(valid_sources && !(ban["sourceName"] in valid_sources))
+						continue
 					dat += "<b>Server: </b> [sanitize(ban["sourceName"])]<br>"
 					dat += "<b>RP Level: </b> [sanitize(ban["sourceRoleplayLevel"])]<br>"
 					dat += "<b>Type: </b> [sanitize(ban["type"])]<br>"
@@ -3241,8 +2698,6 @@
 
 	else if(href_list["modantagrep"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): modantagrep without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): modantagrep without admin perms.")
 			return
 
 		var/mob/M = locate(href_list["mob"]) in GLOB.mob_list
@@ -3252,8 +2707,6 @@
 
 	else if(href_list["slowquery"])
 		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): slowquery without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): slowquery without admin perms.")
 			return
 		var/answer = href_list["slowquery"]
 		if(answer == "yes")
@@ -3265,41 +2718,8 @@
 		else if(answer == "no")
 			log_query_debug("[usr.key] | Reported no server hang")
 
-	else if (href_list["interview"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): interview without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): interview without admin perms.")
-			return
-		var/datum/interview/I = locate(href_list["interview"])
-		if (I)
-			I.ui_interact(usr)
-
-	else if (href_list["interview_man"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): interview_man without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): interview_man without admin perms.")
-			return
-		GLOB.interviews.ui_interact(usr)
-
-	else if(href_list["sleep"])
-		if(!check_rights(R_ADMIN))
-			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sleep without admin perms.")
-			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): sleep without admin perms.")
-			return
-
-		var/mob/living/perp = locate(href_list["sleep"]) in GLOB.mob_living_list
-
-		if(QDELETED(perp) || !istype(perp))
-			to_chat(usr, span_warning("Target is no longer valid."))
-			return
-
-		usr.client.holder.toggle_sleep(perp)
-
-
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
-		message_admins("[ADMIN_TPMONTY(usr)] tried to use HandleCMode() without admin perms.")
-		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use HandleCMode() without admin perms.")
 		return
 
 	if(SSticker.HasRoundStarted())
@@ -3314,8 +2734,6 @@
 
 /datum/admins/proc/HandleFSecret()
 	if(!check_rights(R_ADMIN))
-		message_admins("[ADMIN_TPMONTY(usr)] tried to use HandleFSecret() without admin perms.")
-		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use HandleFSecret() without admin perms.")
 		return
 
 	if(SSticker.HasRoundStarted())
@@ -3339,7 +2757,7 @@
 	var/client/C = GLOB.directory[ckey]
 	if(C)
 		if(check_rights_for(C, R_ADMIN,0))
-			to_chat(usr, span_danger("The client chosen is an admin! Cannot mentorize."))
+			to_chat(usr, "<span class='danger'>The client chosen is an admin! Cannot mentorize.</span>")
 			return
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_get_mentor = SSdbcore.NewQuery(
@@ -3347,29 +2765,20 @@
 			list("ckey" = ckey)
 		)
 		if(!query_get_mentor.warn_execute())
-			qdel(query_get_mentor)
 			return
 		if(query_get_mentor.NextRow())
-			to_chat(usr, span_danger("[ckey] is already a mentor."))
-			qdel(query_get_mentor)
+			to_chat(usr, "<span class='danger'>[ckey] is already a mentor.</span>")
 			return
-		qdel(query_get_mentor)
-		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
+		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, '[ckey]')")
 		if(!query_add_mentor.warn_execute())
 			return
-		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // Just comments out the admin part, as it seems to not be functioning.
-		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-		// 	VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
-		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		// )
-		// if(!query_add_admin_log.warn_execute())
-		// 	qdel(query_add_admin_log)
-		// 	return
-		// qdel(query_add_admin_log)
+		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery("INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Added new mentor [ckey]');")
+		if(!query_add_admin_log.warn_execute())
+			return
 	else
-		to_chat(usr, span_danger("Failed to establish database connection. The changes will last only for the current round."))
+		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
 	new /datum/mentors(ckey)
-	to_chat(usr, span_adminnotice("New mentor added."))
+	to_chat(usr, "<span class='adminnotice'>New mentor added.</span>")
 
 /datum/admins/proc/removeMentor(ckey)
 	if(!usr.client)
@@ -3381,25 +2790,18 @@
 	var/client/C = GLOB.directory[ckey]
 	if(C)
 		if(check_rights_for(C, R_ADMIN,0))
-			to_chat(usr, span_danger("The client chosen is an admin, not a mentor! Cannot de-mentorize."))
+			to_chat(usr, "<span class='danger'>The client chosen is an admin, not a mentor! Cannot de-mentorize.</span>")
 			return
 		C.remove_mentor_verbs()
 		C.mentor_datum = null
 		GLOB.mentors -= C
 	if(SSdbcore.Connect())
-		var/datum/db_query/query_remove_mentor = SSdbcore.NewQuery(
-			"DELETE FROM [format_table_name("mentor")] WHERE ckey = :ckey",
-			list("ckey" = ckey)
-		)
+		var/datum/db_query/query_remove_mentor = SSdbcore.NewQuery("DELETE FROM [format_table_name("mentor")] WHERE ckey = '[ckey]'")
 		if(!query_remove_mentor.warn_execute())
-			return		
-		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // stops the adminip error for now ~ w~
-		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-		// 	VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
-		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		// )
-		// if(!query_add_admin_log.warn_execute())
-		// 	return
+			return
+		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery("INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Removed mentor [ckey]');")
+		if(!query_add_admin_log.warn_execute())
+			return
 	else
-		to_chat(usr, span_danger("Failed to establish database connection. The changes will last only for the current round."))
-	to_chat(usr, span_adminnotice("Mentor removed."))
+		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
+	to_chat(usr, "<span class='adminnotice'>Mentor removed.</span>")

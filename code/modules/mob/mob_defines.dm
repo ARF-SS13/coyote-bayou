@@ -200,3 +200,7 @@
 
 	/// How fast your previous step was
 	var/last_move_delay = 0
+
+
+/// A mock client, provided by tests and friends
+	var/datum/client_interface/mock_client

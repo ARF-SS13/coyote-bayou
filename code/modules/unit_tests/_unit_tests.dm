@@ -59,6 +59,7 @@
 #include "resist.dm"
 #include "spawn_mobs.dm"
 #include "subsystem_init.dm"
+#include "dynamic_ruleset_sanity.dm"
 #include "surgeries.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"

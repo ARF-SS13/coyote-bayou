@@ -1,11 +1,5 @@
 
 ////////////////////////////////
-/proc/log_and_message_admins(message as text, mob/user = usr)
-	var/finalMessage = user ? "[key_name(user)] [message]" : "EVENT [message]"
-	log_admin(finalMessage)
-	message_admins(finalMessage)
-	log_world(finalMessage)
-
 /proc/message_admins(msg)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
 	to_chat(GLOB.admins, msg, confidential = TRUE)
@@ -22,212 +16,197 @@
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
 
-	if(!check_rights(R_ADMIN))
-		message_admins("[ADMIN_TPMONTY(usr)] tried to use show_player_panel() without admin perms.")
-		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use show_player_panel() without admin perms.")
+	if(!check_rights())
 		return
 
 	log_admin("[key_name(usr)] checked the individual player panel for [key_name(M)][isobserver(usr)?"":" while in game"].")
 
-	if(QDELETED(M))
-		to_chat(usr, span_warning("You seem to be selecting a mob that doesn't exist anymore."), confidential = TRUE)
+	if(!M)
+		to_chat(usr, "<span class='warning'>You seem to be selecting a mob that doesn't exist anymore.</span>", confidential = TRUE)
 		return
 
-	var/ref = "[REF(usr.client.holder)];[HrefToken()]"
-	var/ref_mob = REF(M)
-
-	var/list/body = list("<b>[M.name]</b>")
+	var/body = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Options for [M.key]</title></head>"
+	body += "<body>Options panel for <b>[M]</b>"
 	if(M.client)
 		body += " played by <b>[M.client]</b> "
-		body += " <a href='?src=[ref];editrights=[(GLOB.admin_datums[M.client.ckey] || GLOB.deadmins[M.client.ckey]) ? "rank" : "add"];key=[M.key];close=1'>[M.client.holder ? M.client.holder.rank : "Player"]</a>"
+		body += "\[<A href='?_src_=holder;[HrefToken()];editrights=[(GLOB.admin_datums[M.client.ckey] || GLOB.deadmins[M.client.ckey]) ? "rank" : "add"];key=[M.key]'>[M.client.holder ? M.client.holder.rank : "Player"]</A>\]"
 		if(CONFIG_GET(flag/use_exp_tracking))
-			body += " <a href='?src=[ref];getplaytimewindow=[ref_mob]'>" + M.client.get_exp_living() + "</a> "
+			body += "\[<A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(M)]'>" + M.client.get_exp_living() + "</a>\]"
 
 	if(isnewplayer(M))
 		body += " <B>Hasn't Entered Game</B> "
 	else
-		body += " | <a href='?src=[ref];revive=[ref_mob]'>Heal</a> | <a href='?src=[ref];sleep=[ref_mob]'>Sleep</a>"
+		body += " \[<A href='?_src_=holder;[HrefToken()];revive=[REF(M)]'>Heal</A>\] "
 
 	if(M.client)
-		body += "<br><b>First Seen:</b> [M.client.player_join_date]"
-		body += "<br><b>Byond account registered on:</b> [M.client.account_join_date]"
+		body += "<br>\[<b>First Seen:</b> [M.client.player_join_date]\]\[<b>Byond account registered on:</b> [M.client.account_join_date]\]"
 		body += "<br><br><b>CentCom Galactic Ban DB: </b> "
 		if(CONFIG_GET(string/centcom_ban_db))
-			body += "<a href='?src=[ref];centcomlookup=[M.client.ckey]'>Search</a>"
+			body += "<a href='?_src_=holder;[HrefToken()];centcomlookup=[M.client.ckey]'>Search</a>"
 		else
 			body += "<i>Disabled</i>"
 		body += "<br><br><b>Show related accounts by:</b> "
-		body += " <a href='?src=[ref];showrelatedacc=cid;client=[REF(M.client)]'>CID</a> | "
-		body += "<a href='?src=[ref];showrelatedacc=ip;client=[REF(M.client)]'>IP</a>"
+		body += "\[ <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a> | "
+		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> \]"
 		var/rep = 0
 		rep += SSpersistence.antag_rep[M.ckey]
 		body += "<br><br>Antagonist reputation: [rep]"
-		body += "<br><a href='?src=[ref];modantagrep=add;mob=[ref_mob]'>increase</a> "
-		body += "<a href='?src=[ref];modantagrep=subtract;mob=[ref_mob]'>decrease</a> "
-		body += "<a href='?src=[ref];modantagrep=set;mob=[ref_mob]'>set</a> "
-		body += "<a href='?src=[ref];modantagrep=zero;mob=[ref_mob]'>zero</a>"
+		body += "<br><a href='?_src_=holder;[HrefToken()];modantagrep=add;mob=[REF(M)]'>\[increase\]</a> "
+		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=subtract;mob=[REF(M)]'>\[decrease\]</a> "
+		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=set;mob=[REF(M)]'>\[set\]</a> "
+		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=zero;mob=[REF(M)]'>\[zero\]</a>"
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
 			full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
-		body += "<br><b>Byond version:</b> [full_version]<br>"
+		body += "<br>\[<b>Byond version:</b> [full_version]\]<br>"
 
 
-	body += "<br><br> <a href='?_src_=vars;[HrefToken()];Vars=[ref_mob]'>VV</a> - "
+	body += "<br><br>\[ "
+	body += "<a href='?_src_=vars;[HrefToken()];Vars=[REF(M)]'>VV</a> - "
 	if(M.mind)
-		body += "<a href='?src=[ref];traitor=[ref_mob]'>TP</a> - "
-		// body += "<a href='?src=[ref];skill=[ref_mob]'>SKILLS</a> - "
+		body += "<a href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>TP</a> - "
+		// body += "<a href='?_src_=holder;[HrefToken()];skill=[REF(M)]'>SKILLS</a> - "
 	else
-		body += "<a href='?src=[ref];initmind=[ref_mob]'>Init Mind</a> - "
+		body += "<a href='?_src_=holder;[HrefToken()];initmind=[REF(M)]'>Init Mind</a> - "
 	if (iscyborg(M))
-		body += "<a href='?src=[ref];borgpanel=[ref_mob]'>BP</a> - "
+		body += "<a href='?_src_=holder;[HrefToken()];borgpanel=[REF(M)]'>BP</a> - "
 	body += "<a href='?priv_msg=[M.ckey]'>PM</a> - "
-	body += "<a href='?src=[ref];subtlemessage=[ref_mob]'>SM</a> - "
+	body += "<a href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>SM</a> - "
 	if (ishuman(M) && M.mind)
-		body += "<a href='?src=[ref];HeadsetMessage=[ref_mob]'>HM</a> - "
-	body += "<a href='?src=[ref];adminplayerobservefollow=[ref_mob]'>FLW</a> - "
+		body += "<a href='?_src_=holder;[HrefToken()];HeadsetMessage=[REF(M)]'>HM</a> - "
+	body += "<a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(M)]'>FLW</a> - "
 	//Default to client logs if available
 	var/source = LOGSRC_MOB
 	if(M.client)
 		source = LOGSRC_CLIENT
-	body += "<a href='?src=[ref];individuallog=[ref_mob];log_src=[source]'>LOGS</a>\] <br>"
+	body += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_src=[source]'>LOGS</a>\] <br>"
 
-	body += "<b>Mob type</b> = [M.type]<br>"
-	body += "<a href='?src=[ref];removeProfilePic=[ref_mob]'>Remove Profile Picture</a><br><br>" // Coyote change here! Added removing pfp to the player panel <3
+	body += "<b>Mob type</b> = [M.type]<br><br>"
 
-	body += "<a href='?src=[ref];boot2=[ref_mob]'>Kick</A> | "
-	body += "<a href='?src=[ref];newban=[ref_mob]'>Ban</A> | "
-	body += "<a href='?src=[ref];jobban2=[ref_mob]'>Jobban</A> | "
-	body += "<a href='?src=[ref];appearanceban=[ref_mob]'>Identity Ban</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];boot2=[REF(M)]'>Kick</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];newban=[REF(M)]'>Ban</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];jobban2=[REF(M)]'>Jobban</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];appearanceban=[REF(M)]'>Identity Ban</A> | "
+	var/rm = REF(M)
 	if(jobban_isbanned(M, "OOC"))
-		body+= "<a href='?src=[ref];jobban3=OOC;jobban4=[ref_mob]'><font color=red>OOCBan</font></A> | "
+		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=OOC;jobban4=[rm]'><font color=red>OOCBan</font></A> | "
 	else
-		body += "<a href='?src=[ref];jobban3=OOC;jobban4=[ref_mob]'>OOCBan</A> | "
+		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=OOC;jobban4=[rm]'>OOCBan</A> | "
 	if(QDELETED(M) || QDELETED(usr))
 		return
 	if(jobban_isbanned(M, "emote"))
-		body+= "<a href='?src=[ref];jobban3=emote;jobban4=[ref_mob]'><font color=red>EmoteBan</font></A> | "
+		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=emote;jobban4=[rm]'><font color=red>EmoteBan</font></A> | "
 	else
-		body+= "<a href='?src=[ref];jobban3=emote;jobban4=[ref_mob]'>Emoteban</A> | "
+		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=emote;jobban4=[rm]'>Emoteban</A> | "
 	if(QDELETED(M) || QDELETED(usr))
 		return
 
-	//body += "<A href='?_src_=holder;[HrefToken()];showmessageckey=[M.ckey]'>Notes | Messages | Watchlist</A> | "
-	body += "<a href='?src=[ref];showmessageckey=[M.ckey]'>Notes</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];showmessageckey=[M.ckey]'>Notes | Messages | Watchlist</A> | "
 	if(M.client)
-		body += "<a href='?src=[ref];sendtoprison=[ref_mob]'>Prison</A> | "
-		body += "<a href='?src=[ref];sendbacktolobby=[ref_mob]'>Send back to Lobby</A>"
+		body += "| <A href='?_src_=holder;[HrefToken()];sendtoprison=[REF(M)]'>Prison</A> | "
+		body += "\ <A href='?_src_=holder;[HrefToken()];sendbacktolobby=[REF(M)]'>Send back to Lobby</A> | "
 		var/muted = M.client.prefs.muted
-		body += {"<br><b>Mute: </b>
-			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC) ? "#ff5e5e" : "white"]'>IC</font></a> |
-			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC) ? "#ff5e5e" : "white"]'>OOC</font></a> |
-			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY) ? "#ff5e5e" : "white"]'>PRAY</font></a> |
-			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP) ? "#ff5e5e" : "white"]'>ADMINHELP</font></a> |
-			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT) ? "#ff5e5e" : "white"]'>DEADCHAT</font></a>
-			(<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL) ? "#ff5e5e" : "white"]'>ALL</font></a>)
-		"}
+		body += "<br><b>Mute: </b> "
+		body += "\[<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> | "
+		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC)?"red":"blue"]'>OOC</font></a> | "
+		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY)?"red":"blue"]'>PRAY</font></a> | "
+		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP)?"red":"blue"]'>ADMINHELP</font></a> | "
+		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\]"
+		body += "(<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL)?"red":"blue"]'>toggle all</font></a>)"
 
-	body += {"
-		<br><br>
-		<a href='?src=[ref];jumpto=[ref_mob]'>Jump to</A> | 
-		<a href='?src=[ref];getmob=[ref_mob]'>Get</A> | 
-		<a href='?src=[ref];sendmob=[ref_mob]'>Send To</A>
+	body += "<br><br>"
+	body += "<A href='?_src_=holder;[HrefToken()];jumpto=[REF(M)]'><b>Jump to</b></A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];getmob=[REF(M)]'>Get</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];sendmob=[REF(M)]'>Send To</A>"
 
-		<br><br>
-		<a href='?src=[ref];traitor=[ref_mob]'>Traitor panel</A> | 
-		<a href='?src=[ref];narrateto=[ref_mob]'>Narrate to</A> | 
-		<a href='?src=[ref];subtlemessage=[ref_mob]'>Subtle message</A> | 
-		<a href='?src=[ref];languagemenu=[ref_mob]'>Language Menu</A>
-		"}
+	body += "<br><br>"
+	body += "<A href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>Traitor panel</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];narrateto=[REF(M)]'>Narrate to</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>Subtle message</A> | "
+	// body += "<A href='?_src_=holder;[HrefToken()];playsoundto=[REF(M)]'>Play sound to</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];languagemenu=[REF(M)]'>Language Menu</A>"
 
 	if (M.client)
 		if(!isnewplayer(M))
-			body += "<br><br><b>Transformation:</b><br>"
-
-			var/list/transformation_options = list()
+			body += "<br><br>"
+			body += "<b>Transformation:</b>"
+			body += "<br>"
 
 			//Human
 			if(ishuman(M))
-				transformation_options += "<B>Human</B>"
+				body += "<B>Human</B> | "
 			else
-				transformation_options += "<a href='?src=[ref];humanone=[ref_mob]'>Humanize</A>"
+				body += "<A href='?_src_=holder;[HrefToken()];humanone=[REF(M)]'>Humanize</A> | "
 
 			//Monkey
 			if(ismonkey(M))
-				transformation_options += "<B>Monkeyized</B>"
+				body += "<B>Monkeyized</B> | "
 			else
-				transformation_options += "<a href='?src=[ref];monkeyone=[ref_mob]'>Monkeyize</A>"
+				body += "<A href='?_src_=holder;[HrefToken()];monkeyone=[REF(M)]'>Monkeyize</A> | "
 
 			//Corgi
 			if(iscorgi(M))
-				transformation_options += "<B>Corgized</B>"
+				body += "<B>Corgized</B> | "
 			else
-				transformation_options += "<a href='?src=[ref];corgione=[ref_mob]'>Corgize</A>"
+				body += "<A href='?_src_=holder;[HrefToken()];corgione=[REF(M)]'>Corgize</A> | "
 
 			//AI / Cyborg
 			if(isAI(M))
-				transformation_options += "<B>Is an AI</B>"
+				body += "<B>Is an AI</B> "
 			else if(ishuman(M))
-				transformation_options += {"
-					<a href='?src=[ref];makeai=[ref_mob]'>Make AI</A>
-					<a href='?src=[ref];makerobot=[ref_mob]'>Make Robot</A>
-					<a href='?src=[ref];makealien=[ref_mob]'>Make Alien</A>
-					<a href='?src=[ref];makeslime=[ref_mob]'>Make Slime</A>
-					<a href='?src=[ref];makeblob=[ref_mob]'>Make Blob</A>
-					"}
+				body += "<A href='?_src_=holder;[HrefToken()];makeai=[REF(M)]'>Make AI</A> | "
+				body += "<A href='?_src_=holder;[HrefToken()];makerobot=[REF(M)]'>Make Robot</A> | "
+				body += "<A href='?_src_=holder;[HrefToken()];makealien=[REF(M)]'>Make Alien</A> | "
+				body += "<A href='?_src_=holder;[HrefToken()];makeslime=[REF(M)]'>Make Slime</A> | "
+				body += "<A href='?_src_=holder;[HrefToken()];makeblob=[REF(M)]'>Make Blob</A> | "
 
 			//Simple Animals
 			if(isanimal(M))
-				transformation_options += "<a href='?src=[ref];makeanimal=[ref_mob]'>Re-Animalize</A>"
+				body += "<A href='?_src_=holder;[HrefToken()];makeanimal=[REF(M)]'>Re-Animalize</A> | "
 			else
-				transformation_options += "<a href='?src=[ref];makeanimal=[ref_mob]'>Animalize</A>"
-			
-			body += transformation_options.Join(" | ")
+				body += "<A href='?_src_=holder;[HrefToken()];makeanimal=[REF(M)]'>Animalize</A> | "
 
-			body += {"
-				<br><br><b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font>
-				<br> Special: <a href='?src=[ref];simplemake=observer;mob=[ref_mob]'>Observer</A> | 
-				<a href='?src=[ref];simplemake=robot;mob=[ref_mob]'>Cyborg</A>
-				<br> Humanoid: <a href='?src=[ref];simplemake=human;mob=[ref_mob]'>Human</A> | 
-				<a href='?src=[ref];simplemake=monkey;mob=[ref_mob]'>Monkey</A>
-				<br> Alien: <a href='?src=[ref];simplemake=drone;mob=[ref_mob]'>Drone</A>, 
-				<a href='?src=[ref];simplemake=hunter;mob=[ref_mob]'>Hunter</A> | 
-				<a href='?src=[ref];simplemake=sentinel;mob=[ref_mob]'>Sentinel</A> | 
-				<a href='?src=[ref];simplemake=praetorian;mob=[ref_mob]'>Praetorian</A> | 
-				<a href='?src=[ref];simplemake=queen;mob=[ref_mob]'>Queen</A> | 
-				<a href='?src=[ref];simplemake=larva;mob=[ref_mob]'>Larva</A>
-				<br> Slime: <a href='?src=[ref];simplemake=slime;mob=[ref_mob]'>Baby</A> | 
-				<a href='?src=[ref];simplemake=adultslime;mob=[ref_mob]'>Adult</A>
-				<br> Pet: <a href='?src=[ref];simplemake=cat;mob=[ref_mob]'>Cat</A> | 
-				<a href='?src=[ref];simplemake=runtime;mob=[ref_mob]'>Runtime</A> | 
-				<a href='?src=[ref];simplemake=corgi;mob=[ref_mob]'>Corgi</A> | 
-				<a href='?src=[ref];simplemake=ian;mob=[ref_mob]'>Ian</A> | 
-				<a href='?src=[ref];simplemake=crab;mob=[ref_mob]'>Crab</A> | 
-				<a href='?src=[ref];simplemake=coffee;mob=[ref_mob]'>Coffee</A>
-				<br> Construct: <a href='?src=[ref];simplemake=constructarmored;mob=[ref_mob]'>Juggernaut</A> | 
-				<a href='?src=[ref];simplemake=constructbuilder;mob=[ref_mob]'>Artificer</A> | 
-				<a href='?src=[ref];simplemake=constructwraith;mob=[ref_mob]'>Wraith</A> | 
-				<a href='?src=[ref];simplemake=shade;mob=[ref_mob]'>Shade</A>
-				"}
+			body += "<br><br>"
+			body += "<b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font><br>"
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=observer;mob=[REF(M)]'>Observer</A> | "
+			body += "\[ Alien: <A href='?_src_=holder;[HrefToken()];simplemake=drone;mob=[REF(M)]'>Drone</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=hunter;mob=[REF(M)]'>Hunter</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=sentinel;mob=[REF(M)]'>Sentinel</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=praetorian;mob=[REF(M)]'>Praetorian</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=queen;mob=[REF(M)]'>Queen</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=larva;mob=[REF(M)]'>Larva</A> \] "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=human;mob=[REF(M)]'>Human</A> "
+			body += "\[ slime: <A href='?_src_=holder;[HrefToken()];simplemake=slime;mob=[REF(M)]'>Baby</A>, "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=adultslime;mob=[REF(M)]'>Adult</A> \] "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=monkey;mob=[REF(M)]'>Monkey</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=robot;mob=[REF(M)]'>Cyborg</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=cat;mob=[REF(M)]'>Cat</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=runtime;mob=[REF(M)]'>Runtime</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=corgi;mob=[REF(M)]'>Corgi</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=ian;mob=[REF(M)]'>Ian</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=crab;mob=[REF(M)]'>Crab</A> | "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=coffee;mob=[REF(M)]'>Coffee</A> | "
+			body += "\[ Construct: <A href='?_src_=holder;[HrefToken()];simplemake=constructarmored;mob=[REF(M)]'>Juggernaut</A> , "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=constructbuilder;mob=[REF(M)]'>Artificer</A> , "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=constructwraith;mob=[REF(M)]'>Wraith</A> \] "
+			body += "<A href='?_src_=holder;[HrefToken()];simplemake=shade;mob=[REF(M)]'>Shade</A>"
+			body += "<br>"
 
-		body += {"
-			<br><br>
-			<b>Other actions:</b>
-			<br>
-			<a href='?src=[ref];forcespeech=[ref_mob]'>Forcesay</A> | 
-			<a href='?src=[ref];tdome1=[ref_mob]'>Thunderdome 1</A> | 
-			<a href='?src=[ref];tdome2=[ref_mob]'>Thunderdome 2</A> | 
-			<a href='?src=[ref];tdomeadmin=[ref_mob]'>Thunderdome Admin</A> | 
-			<a href='?src=[ref];tdomeobserve=[ref_mob]'>Thunderdome Observer</A> | 
-			<a href='?src=[ref];makementor=[M.ckey]'>Make mentor</A> | 
-			<a href='?src=[ref];removementor=[M.ckey]'>Remove mentor</A> | 
-			<a href='?src=[ref];makeeligible=[ref_mob]'>Allow reentering round</A>
-			"}
-	body += "<br></body></html>"
+		body += "<br><br>"
+		body += "<b>Other actions:</b>"
+		body += "<br>"
+		body += "<A href='?_src_=holder;[HrefToken()];forcespeech=[REF(M)]'>Forcesay</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];tdome1=[REF(M)]'>Thunderdome 1</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];tdome2=[REF(M)]'>Thunderdome 2</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];tdomeadmin=[REF(M)]'>Thunderdome Admin</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];tdomeobserve=[REF(M)]'>Thunderdome Observer</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];makementor=[M.ckey]'>Make mentor</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];removementor=[M.ckey]'>Remove mentor</A> | "
+		body += "<A href='?_src_=holder;[HrefToken()];makeeligible=[REF(M)]'>Allow reentering round</A>"
+	body += "<br>"
+	body += "</body></html>"
 
-	var/datum/browser/browser = new(usr, "adminplayeropts-[ref_mob]", "<div align='center'>Player Panel</div>", 700, 500)
-	browser.set_content(body.Join())
-	browser.open()
-
+	usr << browse(body, "window=adminplayeropts-[REF(M)];size=550x515")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Player Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -261,7 +240,7 @@
 			dat+="<HR><B>Feed Security functions:</B><BR>"
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_wanted=1'>[(wanted_already) ? ("Manage") : ("Publish")] \"Wanted\" Issue</A>"
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_story=1'>Censor Feed Stories</A>"
-			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with US Government D-Notice (disables and locks the channel).</A>"
+			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with Nanotrasen D-Notice (disables and locks the channel).</A>"
 			dat+="<BR><HR><A href='?src=[REF(src)];[HrefToken()];ac_set_signature=1'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admin_signature]</FONT></A>"
 		if(1)
 			dat+= "Station Feed Channels<HR>"
@@ -315,7 +294,7 @@
 		if(9)
 			dat+="<B>[admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[created by: <FONT COLOR='maroon'>[admincaster_feed_channel.returnAuthor(-1)]</FONT>\]</FONT><HR>"
 			if(src.admincaster_feed_channel.censored)
-				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a US Government D-Notice.<BR>"
+				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
 				if( !length(src.admincaster_feed_channel.messages) )
@@ -376,7 +355,7 @@
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[ created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.returnAuthor(-1)]</FONT> \]</FONT><BR>"
 			dat+="Channel messages listed below. If you deem them dangerous to the station, you can <A href='?src=[REF(src)];[HrefToken()];ac_toggle_d_notice=[REF(src.admincaster_feed_channel)]'>Bestow a D-Notice upon the channel</A>.<HR>"
 			if(src.admincaster_feed_channel.censored)
-				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a US Government D-Notice.<BR>"
+				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
 				if( !length(src.admincaster_feed_channel.messages) )
@@ -456,18 +435,7 @@
 				for(var/datum/dynamic_ruleset/roundstart/rule in GLOB.dynamic_forced_roundstart_ruleset)
 					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=\ref[rule]'>-> [rule.name] <-</A><br>"}
 				dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_clear=1'>(Clear Rulesets)</A><br>"
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_storyteller=1'>(Force Storyteller)</A><br>"
-			if (GLOB.dynamic_forced_storyteller)
-				var/datum/dynamic_storyteller/S = GLOB.dynamic_forced_storyteller
-				dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_storyteller_clear=1'>-> [initial(S.name)] <-</A><br>"
 			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_options=1'>(Dynamic mode options)</A><br>"
-		else if (SSticker.IsRoundInProgress())
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_latejoin=1'>(Force Next Latejoin Ruleset)</A><br>"
-			if (SSticker && SSticker.mode && istype(SSticker.mode,/datum/game_mode/dynamic))
-				var/datum/game_mode/dynamic/mode = SSticker.mode
-				if (mode.forced_latejoin_rule)
-					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_latejoin_clear=1'>-> [mode.forced_latejoin_rule.name] <-</A><br>"}
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_midround=1'>(Execute Midround Ruleset!)</A><br>"
 		dat += "<hr/>"
 	if(SSticker.IsRoundInProgress())
 		dat += "<a href='?src=[REF(src)];[HrefToken()];gamemode_panel=1'>(Game Mode Panel)</a><BR>"
@@ -557,7 +525,7 @@
 
 	var/message = input("Global message to send:", "Admin Announce", null, null)  as message
 	if(message)
-		if(!check_rights(R_SPAWN,0)) //fortuna edit
+		if(!check_rights(R_SERVER,0))
 			message = adminscrub(message,500)
 		to_chat(world, "<span class='adminnotice'><b>[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:</b></span>\n \t [message]", confidential = TRUE)
 		log_admin("Announce: [key_name(usr)] : [message]")
@@ -602,7 +570,7 @@
 	toggle_looc()
 	log_admin("[key_name(usr)] toggled LOOC.")
 	message_admins("[key_name_admin(usr)] toggled LOOC.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.looc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.ooc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
@@ -662,7 +630,7 @@
 	else
 		to_chat(world, "<B>New players may now enter the game.</B>", confidential = TRUE)
 	log_admin("[key_name(usr)] toggled new player game entering.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled new player game entering."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled new player game entering.</span>")
 	world.update_status()
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Entering", "[GLOB.enter_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -700,13 +668,13 @@
 	set category = "Server"
 	set desc="Respawn basically"
 	set name="Toggle Respawn"
-	var/new_nores = !CONFIG_GET(flag/norespawn)
-	CONFIG_SET(flag/norespawn, new_nores)
+	var/new_nores = CONFIG_GET(flag/respawns_enabled)
+	CONFIG_SET(flag/respawns_enabled, !new_nores)
 	if (!new_nores)
 		to_chat(world, "<B>You may now respawn.</B>", confidential = TRUE)
 	else
 		to_chat(world, "<B>You may no longer respawn :(</B>", confidential = TRUE)
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled respawn to [!new_nores ? "On" : "Off"]."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled respawn to [!new_nores ? "On" : "Off"].</span>")
 	log_admin("[key_name(usr)] toggled respawn to [!new_nores ? "On" : "Off"].")
 	world.update_status()
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Respawn", "[!new_nores ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -743,7 +711,7 @@
 	else
 		to_chat(world, "<B>Vote is now between extended and secret.</B>")
 	log_admin("[key_name(usr)] [prev_dynamic_voting ? "disabled" : "enabled"] dynamic voting.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled dynamic voting."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled dynamic voting.</span>")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Dynamic Voting", "[prev_dynamic_voting ? "Disabled" : "Enabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/unprison(mob/M in GLOB.mob_list)
@@ -756,69 +724,6 @@
 	else
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/datum/admins/proc/refill_nearby_ammo()
-	set category = "Debug"
-	set desc = "Refills Nearby Guns and Magazines. Even refills things in containers and inventories!"
-	set name = "Refill Nearby Ammo"
-
-	var/maxrange = max(input(usr, "How far away should we look for guns/mags?", "Refill Ammo", 1) as num|null, 1)
-	var/multi = alert(usr, "Fill all guns/mags within [maxrange] units, or just the closest one?", "Admin Fill Ammo", "All", "Closest")
-	if(multi == "All")
-		multi = TRUE
-	else
-		multi = FALSE
-
-	var/list/filled = refill_ammo(usr, multi, maxrange)
-	if(!LAZYLEN(filled))
-		to_chat(usr, "Couldn't find anything to refill!")
-		return
-	to_chat(usr, "Refilled [english_list(filled)].")
-	var/list/short_filled = filled.Copy(1,min(3,LAZYLEN(filled)))
-	if(LAZYLEN(filled) > 3)
-		short_filled += "[LAZYLEN(filled) - 3] more weapons.]"
-	var/turf/here = get_turf(usr)
-	if(LAZYLEN(filled) == 1)
-		message_admins("[key_name_admin(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
-		log_admin("[key_name(usr)] has refilled [LAZYACCESS(filled, 1)] at [ADMIN_COORDJMP(here)].")
-	else
-		message_admins("[key_name_admin(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
-		log_admin("[key_name(usr)] has refilled [LAZYLEN(filled)] weapons, including [english_list(short_filled)] at [ADMIN_COORDJMP(here)].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "afilled") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-/proc/refill_ammo(atom/origin, multi, range)
-	if(!isatom(origin))
-		return
-	var/list/origin_hands = list()
-	var/list/origin_contents = list()
-	var/list/all_in_range = list()
-	/// First check the origin for guns
-	if(isliving(origin))
-		var/mob/living/live_origin = origin
-		if(live_origin.get_active_held_item())
-			origin_hands += live_origin.get_active_held_item()
-		if(live_origin.get_inactive_held_item())
-			origin_contents += live_origin.get_inactive_held_item()
-	if(multi)
-		for(var/obj/item/contained in origin.contents)
-			origin_contents += contained
-			var/list/scrape = list()
-			SEND_SIGNAL(contained, COMSIG_TRY_STORAGE_RETURN_INVENTORY, scrape, TRUE) // Recursive search!
-			origin_contents |= scrape
-		/// now get *everything* in range. EVERYTHING!!!
-		var/list/turf_spiral = spiral_range_turfs(range, origin, TRUE)
-		for(var/turf/spiral_turf in turf_spiral)
-			all_in_range |= get_all_in_turf(spiral_turf, TRUE, 10) // EV ERY THING
-	var/list/load_these = origin_hands + origin_contents + all_in_range
-	if(!LAZYLEN(load_these))
-		return FALSE
-	. = list()
-	for(var/obj/item/load_this in load_these) // Will fill up held items first, then contents, then everything else
-		if(!SEND_SIGNAL(load_this, COMSIG_GUN_MAG_ADMIN_RELOAD))
-			continue
-		. |= load_this
-		if(!multi)
-			return
 
 ////////////////////////////////////////////////////////////////////////////////////////////////ADMIN HELPER PROCS
 
@@ -836,7 +741,6 @@
 	if(preparsed.len > 1)
 		amount = clamp(text2num(preparsed[2]),1, 50) //50 at a time!
 
-	to_chat(usr,"<span class='notice'><font size=1>Syntax: 'object : amount' \n example: wrench:50 will open a search for 'wrench', and then spawn 50 of your selection.</font></span>", confidential = TRUE)
 	var/chosen = pick_closest_path(path)
 	if(!chosen)
 		return
@@ -848,10 +752,8 @@
 		for(var/i in 1 to amount)
 			var/atom/A = new chosen(T)
 			A.flags_1 |= ADMIN_SPAWNED_1
-			SEND_SIGNAL(A,COMSIG_ATOM_POST_ADMIN_SPAWN)
 
 	log_admin("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
-	message_admins("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/podspawn_atom(object as text)
@@ -870,10 +772,11 @@
 	if(ispath(chosen, /turf))
 		T.ChangeTurf(chosen)
 	else
-		var/obj/structure/closet/supplypod/centcompod/pod = new()
+		var/area/pod_storage_area = locate(/area/centcom/supplypod/podStorage) in GLOB.sortedAreas
+		var/obj/structure/closet/supplypod/centcompod/pod = new(pick(get_area_turfs(pod_storage_area))) //Lets just have it in the pod bay for a moment instead of runtiming
 		var/atom/A = new chosen(pod)
 		A.flags_1 |= ADMIN_SPAWNED_1
-		new /obj/effect/abstract/DPtarget(T, pod)
+		new /obj/effect/pod_landingzone(T, pod)
 
 	log_admin("[key_name(usr)] pod-spawned [chosen] at [AREACOORD(usr)]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Podspawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -935,7 +838,7 @@
 	else
 		to_chat(world, "<B>Guests may now enter the game.</B>", confidential = TRUE)
 	log_admin("[key_name(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed.")
-	message_admins(span_adminnotice("[key_name_admin(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled guests game entering [!new_guest_ban ? "" : "dis"]allowed.</span>")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Guests", "[!new_guest_ban ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/output_ai_laws()
@@ -1027,27 +930,12 @@
 		<b>No stacking:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_no_stacking=1'> <b>[GLOB.dynamic_no_stacking ? "ON" : "OFF"]</b></a>.
 		<br/>Unless the threat goes above [GLOB.dynamic_stacking_limit], only one "round-ender" ruleset will be drafted. <br/>
 		<br/>
-		<b>Classic secret mode:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_classic_secret=1'> <b>[GLOB.dynamic_classic_secret ? "ON" : "OFF"]</b></a>.
-		<br/>Only one roundstart ruleset will be drafted. Only traitors and minor roles will latespawn. <br/>
-		<br/>
-		<br/>
 		<b>Forced threat level:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_forced_threat=1'><b>[GLOB.dynamic_forced_threat_level]</b></a>.
 		<br/>The value threat is set to if it is higher than -1.<br/>
 		<br/>
-		<b>High population limit:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_high_pop_limit=1'><b>[GLOB.dynamic_high_pop_limit]</b></a>.
-		<br/>The threshold at which "high population override" will be in effect. <br/>
 		<br/>
 		<b>Stacking threeshold:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_stacking_limit=1'><b>[GLOB.dynamic_stacking_limit]</b></a>.
 		<br/>The threshold at which "round-ender" rulesets will stack. A value higher than 100 ensure this never happens. <br/>
-		<h3>Advanced parameters</h3>
-		Curve centre: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_centre=1'>-> [GLOB.dynamic_curve_centre] <-</A><br>
-		Curve width: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_width=1'>-> [GLOB.dynamic_curve_width] <-</A><br>
-		Latejoin injection delay:<br>
-		Minimum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_min=1'>-> [GLOB.dynamic_latejoin_delay_min / 60 / 10] <-</A> Minutes<br>
-		Maximum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_max=1'>-> [GLOB.dynamic_latejoin_delay_max / 60 / 10] <-</A> Minutes<br>
-		Midround injection delay:<br>
-		Minimum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_min=1'>-> [GLOB.dynamic_midround_delay_min / 60 / 10] <-</A> Minutes<br>
-		Maximum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_max=1'>-> [GLOB.dynamic_midround_delay_max / 60 / 10] <-</A> Minutes<br>
 		"}
 
 	user << browse(dat, "window=dyn_mode_options;size=900x650")
@@ -1113,7 +1001,7 @@
 			if(tomob.mind == ghost.mind)
 				ghost.mind = null
 
-	message_admins(span_adminnotice("[key_name_admin(usr)] has put [frommob.key] in control of [tomob.name]."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has put [frommob.key] in control of [tomob.name].</span>")
 	log_admin("[key_name(usr)] stuffed [frommob.key] into [tomob.name].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Ghost Drag Control")
 
@@ -1141,15 +1029,13 @@
 	if(!M)
 		return
 	if(!check_rights(R_ADMIN))
-		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_man_up() without admin perms.")
-		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_man_up() without admin perms.")
 		return
 
 	to_chat(M, "<span class='warning bold reallybig'>Man up, and deal with it.</span><br><span class='warning big'>Move on.</span>")
 	M.playsound_local(M, 'sound/voice/manup.ogg', 50, FALSE, pressure_affected = FALSE)
 
 	log_admin("Man up: [key_name(usr)] told [key_name(M)] to man up")
-	var/message = span_adminnotice("[key_name_admin(usr)] told [key_name_admin(M)] to man up.")
+	var/message = "<span class='adminnotice'>[key_name_admin(usr)] told [key_name_admin(M)] to man up.</span>"
 	message_admins(message)
 	admin_ticket_log(M, message)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Man Up")
@@ -1159,8 +1045,6 @@
 	set name = "Man Up Global"
 
 	if(!check_rights(R_ADMIN))
-		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_man_up_global() without admin perms.")
-		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_man_up_global() without admin perms.")
 		return
 
 	to_chat(world, "<span class='warning bold reallybig'>Man up, and deal with it.</span><br><span class='warning big'>Move on.</span>")
@@ -1168,5 +1052,5 @@
 		M.playsound_local(M, 'sound/voice/manup.ogg', 50, FALSE, pressure_affected = FALSE)
 
 	log_admin("Man up global: [key_name(usr)] told everybody to man up")
-	message_admins(span_adminnotice("[key_name_admin(usr)] told everybody to man up."))
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] told everybody to man up.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Man Up Global")
