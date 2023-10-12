@@ -2265,4 +2265,80 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
+/datum/quirk/package/creatureofthenightgreater
+	name = " Creature of the Night - Greater"
+	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
+	value = 100
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Dark Vision - Greater & Mobility - Wasteland Trekker."
+	conflicts = list(
+		/datum/quirk/hard_yards,
+		/datum/quirk/night_vision_greater,
+		/datum/quirk/creatureofthenightlesser
+		)
+	gain_text = span_notice("Your night hunting instincts enhance!")
+	lose_text = span_notice("Your night hunting instincts fade away.")
+
+/datum/quirk/package/creatureofthenightgreater/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
+
+
+/datum/quirk/package/creatureofthenightgreater/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
+		REMOVE_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
+
+/datum/quirk/package/creatureofthenightlesser
+	name = "Creature of the Night - Lesser"
+	desc = "You are a creature of the night, your dark vision and movement agility are over the average."
+	value = 50
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Dark Vision - Minor & Mobility - Wasteland Wanderer."
+	conflicts = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/soft_yards,
+		/datum/quirk/creatureofthenightgreater
+		)
+	gain_text = span_notice("You feel more attuned in darker places.")
+	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
+
+/datum/quirk/package/creatureofthenightlesser/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
+	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+
+/datum/quirk/package/creatureofthenightlesser/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
+		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+/datum/quirk/package/generalmedicalpractitioner
+	name = "General Medical Practitioner"
+	desc = "You were a General Practiotioner at some point in your life, you probably had an office and a license to practice medicine, or... maybe this is what you kept saying to your patients..."
+	value = 50
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Chem Whiz & Minor Surgery."
+	conflicts = list(
+		/datum/quirk/chemwhiz,
+		/datum/quirk/surgerylow
+		)
+	gain_text = span_notice("Let's go practice medicine!")
+	lose_text = span_notice("I really think I need a true medical license...")
+
+/datum/quirk/package/generalmedicalpractitioner/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
+
+
+/datum/quirk/package/generalmedicalpractitioner/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+		REMOVE_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
 
