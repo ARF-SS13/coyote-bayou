@@ -107,13 +107,12 @@
 * My hands are stupid and I must game
 * 我的社會信用太低所以我不能離開家
 * Its In .22 I Don't Know What Else I Can Put Here
-* Ideally ends up as a loadout weapon
 * * * * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/rifle/repeater/trainer
 	name = "Training Repeater"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
-	icon_state = "cowboyrepeater" // Placeholder
-	item_state = "cowboyrepeater"
+	icon_state = "lever22" // Placeholder
+	item_state = "lever22"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -132,14 +131,13 @@
 * For when you need to be a badass on a budget
 * 我的太空站上有一個人不誠實地透露自己的真實身分和意圖
 * Its In .22 I Don't Know What Else I Can Put Here
-* Eventually add a crafting recipe to make this, probably a progress bar but it'd be cool if it could be done like rechambering the winchester
 * * * * * * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/repeater/trainerator
 	name = ".22 Mares Leg"
 	desc = "A lever action rifle chambered in .22LR. This one has been cut down crudely, and probably named something like The Filly Buster because you're not just the peak of comedy, you're the whole damn circus and the laugh track, too."
-	icon_state = "shotgunlever" // Placeholder
-	item_state = "shotgunlever"
+	icon_state = "lever22short" // Placeholder
+	item_state = "lever22short"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_NORMAL

@@ -325,7 +325,7 @@
 	stored.attack_hand(src) // take out thing from backpack
 	return
 
-/mob/living/carbon/human/proc/smart_equipbelt() // put held thing in belt or take most recent item out of belt
+/mob/living/carbon/human/proc/smart_equipbelt() // put held thing in belt or take most recent item out of belt //
 	if(incapacitated())
 		return
 	var/obj/item/thing = get_active_held_item()
