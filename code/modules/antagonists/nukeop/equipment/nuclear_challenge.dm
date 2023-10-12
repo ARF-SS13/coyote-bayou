@@ -21,7 +21,8 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 	var/declaring_war = FALSE
 	var/uplink_type = /obj/item/uplink/nuclear
 
-/obj/item/nuclear_challenge/attack_self(mob/living/user)#define CHALLENGE_TELECRYSTALS 280
+/obj/item/nuclear_challenge/attack_self(mob/living/user)
+#define CHALLENGE_TELECRYSTALS 280
 #define PLAYER_SCALING 1.5
 #define CHALLENGE_TIME_LIMIT 3000
 #define CHALLENGE_PLAYERS_TARGET 50 //target players population. anything below is a malus to the challenge tc bonus.
