@@ -118,8 +118,7 @@
 	for(var/i in affixes)
 		var/datum/fantasy_affix/affix = i
 		affix.remove(src)
-	for(var/i in appliedComponents)
-		qdel(i)
+	QDEL_LIST(appliedComponents)
 	for(var/i in appliedElements)
 		master._RemoveElement(i)
 
