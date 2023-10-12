@@ -172,6 +172,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	/// bumper object, the thing that starts actual teleport
 	var/obj/effect/gateway_portal_bumper/portal
 
+/obj/machinery/gateway/Destroy()
+	destination.target_gateway = null
+	GLOB.gateway_destinations -= destination
+	destination = null
+	return ..()
+
+
 /obj/machinery/gateway/Initialize()
 	generate_destination()
 	update_icon()
