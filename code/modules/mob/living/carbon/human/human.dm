@@ -64,6 +64,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
+	QDEL_LIST(bioware)
 	GLOB.human_list -= src
 	UnregisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS)
 	return ..()
