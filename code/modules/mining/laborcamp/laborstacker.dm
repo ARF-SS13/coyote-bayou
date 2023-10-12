@@ -104,7 +104,7 @@ GLOBAL_LIST(labor_sheet_values)
 /obj/machinery/mineral/labor_claim_console/proc/locate_stacking_machine()
 	stacking_machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir))
 	if(stacking_machine)
-		stacking_machine.CONSOLE = src
+		stacking_machine.console = src
 	else
 		qdel(src)
 
