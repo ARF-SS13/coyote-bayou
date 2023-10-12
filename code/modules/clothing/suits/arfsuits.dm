@@ -792,6 +792,38 @@
 	icon_state = "newzealand"
 	item_state = "newzealand"
 
+/obj/item/clothing/suit/armor/outfit/warriorcats
+	name = "Armored Thunderous flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "thunder"
+	item_state = "thunder"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/shadow
+	name = "Armored Shadowed flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "shadow"
+	item_state = "shadow"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/wind
+	name = "Armored Windy flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "wind"
+	item_state = "wind"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/river
+	name = "Armored Rivulet flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "river"
+	item_state = "river"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat

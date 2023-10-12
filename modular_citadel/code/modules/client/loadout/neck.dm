@@ -489,6 +489,26 @@
 	path = /obj/item/clothing/neck/tie/flagcapesaccessories/no16
 	cost = 0
 
+/datum/gear/neck/thundercape
+	name = "Thunderous Cape"
+	path = /obj/item/clothing/neck/tie/warriorcataccessories
+	cost = 0
+
+/datum/gear/neck/rivercape
+	name = "Rivulet Cape"
+	path = /obj/item/clothing/neck/tie/warriorcataccessories/rivers
+	cost = 0
+
+/datum/gear/neck/windcape
+	name = "Windy Cape"
+	path = /obj/item/clothing/neck/tie/warriorcataccessories/winds
+	cost = 0
+
+/datum/gear/neck/shadowcape
+	name = "Shadowed Cape"
+	path = /obj/item/clothing/neck/tie/warriorcataccessories/shadows
+	cost = 0
+
 /datum/gear/neck/domcapefull
 	name = "Dominia Cape, full"
 	path = /obj/item/clothing/neck/tie/aurora/dominian_doublecape

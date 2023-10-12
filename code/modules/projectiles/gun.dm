@@ -196,11 +196,11 @@ ATTACHMENTS
 	if(gun_light)
 		alight = new (src)
 	if(!restrict_safety)
-		var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/gun/safety
+		var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/gun/safety
 		action.owner = src
 		hud_actions += action
 
-	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
+	var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/weapon_info
 	action.owner = src
 	hud_actions += action
 	initialize_firemodes()
@@ -240,10 +240,10 @@ ATTACHMENTS
 	update_firemode_hud()
 
 /obj/item/gun/proc/update_firemode_hud() // this has never worked -- actually no it works just fine
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/fire_mode
+			action = new /atom/movable/screen/item_action/top_bar/gun/fire_mode
 			action.owner = src
 			hud_actions += action
 	else
@@ -251,10 +251,10 @@ ATTACHMENTS
 		hud_actions -= action
 
 /obj/item/gun/proc/initialize_scope()
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/scope) in hud_actions
 	if(zoom_factor > 0)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/scope
+			action = new /atom/movable/screen/item_action/top_bar/gun/scope
 			action.owner = src
 			hud_actions += action
 	else
