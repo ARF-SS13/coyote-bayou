@@ -27,6 +27,11 @@
 		/obj/item/his_grace))
 	var/datum/looping_sound/deep_fryer/fry_loop
 
+/obj/machinery/deepfryer/Destroy()
+	QDEL_NULL(fry_loop)
+	return ..()
+
+
 /obj/machinery/deepfryer/Initialize()
 	. = ..()
 	create_reagents(50, OPENCONTAINER)

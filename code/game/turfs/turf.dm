@@ -162,6 +162,8 @@
 	requires_activation = FALSE
 	..()
 
+	vis_contents.Cut()
+
 /turf/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.Move_Pulled(src)
 
