@@ -11,6 +11,8 @@
 	icon_state = "processor"
 	desc = "This machine is used to process large quantities of information."
 	density = TRUE
+	flags_1 = DEFAULT_RICOCHET_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 30
 	circuit = /obj/item/circuitboard/machine/telecomms/processor
