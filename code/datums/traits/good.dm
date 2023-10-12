@@ -2273,7 +2273,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive trait Dark Vision - Greater & Mobility - Wasteland Trekker."
 	conflicts = list(
 		/datum/quirk/hard_yards,
-		/datum/quirk/night_vision_greater
+		/datum/quirk/night_vision_greater,
+		/datum/quirk/package/creatureofthenightlesser
 		)
 	gain_text = span_notice("Your night hunting instincts enhance!")
 	lose_text = span_notice("Your night hunting instincts fade away.")
@@ -2298,7 +2299,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive trait Dark Vision - Minor & Mobility - Wasteland Wanderer."
 	conflicts = list(
 		/datum/quirk/night_vision,
-		/datum/quirk/soft_yards
+		/datum/quirk/soft_yards,
+		/datum/quirk/package/creatureofthenightgreater
 		)
 	gain_text = span_notice("You feel more attuned in darker places.")
 	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
