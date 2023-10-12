@@ -53,6 +53,11 @@
 		to_chat(user, span_notice("You close the maintenance hatch of [src]."))
 	return TRUE
 
+/obj/item/taperecorder/Destroy()
+	QDEL_NULL(mytape)
+	return ..()
+
+
 /obj/item/taperecorder/proc/eject(mob/user)
 	if(mytape)
 		to_chat(user, span_notice("You remove [mytape] from [src]."))

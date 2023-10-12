@@ -197,6 +197,7 @@
 	if(paicard)
 		ejectpai()
 	QDEL_NULL(Radio)
+	QDEL_NULL(access_card)
 	QDEL_NULL(bot_core)
 	return ..()
 
