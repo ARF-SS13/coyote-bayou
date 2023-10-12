@@ -142,6 +142,8 @@ SUBSYSTEM_DEF(atoms)
 					A.LateInitialize()
 			if(INITIALIZE_HINT_QDEL)
 				qdel(A)
+			if(INITIALIZE_HINT_QDEL_FORCE)
+				qdel(A, force = TRUE)
 				qdeleted = TRUE
 			else
 				BadInitializeCalls[the_type] |= BAD_INIT_NO_HINT
