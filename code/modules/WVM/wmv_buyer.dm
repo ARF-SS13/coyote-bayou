@@ -876,6 +876,8 @@ Fence
 		pricetext = span_red("You aren't sure how much this is worth.")
 	if(price > 0)
 		switch(price)
+			if(0.001 to 0.999)
+				pricetext = span_notice("A bunch of these would be worth selling.")
 			if(1 to 9)
 				pricetext = span_notice("This is worth a few copper coins.")
 			if(10 to 29)
