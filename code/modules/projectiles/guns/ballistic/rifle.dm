@@ -117,11 +117,11 @@
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-//	cock_delay = GUN_COCK_RIFLE_LIGHTNING // This actually just does nothing
+	cock_delay = GUN_COCK_RIFLE_BASE // Either this does nothing or it only affects bolt workers click to cock. 
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
@@ -145,7 +145,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
