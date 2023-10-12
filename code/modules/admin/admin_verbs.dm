@@ -11,7 +11,6 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/debug_variables,		/*allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify*/
 	/client/proc/dsay,					/*talk in deadchat using our ckey/fakekey*/
 	/client/proc/investigate_show,		/*various admintools for investigation. Such as a singulo grief-log*/
-	/client/proc/secrets,
 	/client/proc/toggle_hear_radio,		/*allows admins to hide all radio output*/
 	/client/proc/reload_admins,
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
@@ -81,19 +80,13 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	// /client/proc/colorasay,
 	// /client/proc/resetasaycolor,
 	/client/proc/toggleadminhelpsound,
-	/client/proc/respawn_character,
-	/client/proc/admin_cmd_respawn_return_to_lobby,		//CIT
-	/client/proc/admin_cmd_remove_ghost_respawn_timer,	//CIT
-	/client/proc/addbunkerbypass,		//CIT
-	/client/proc/revokebunkerbypass,	//CIT
-	/datum/admins/proc/open_borgopanel
+	/client/proc/respawn_character
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
 GLOBAL_LIST_INIT(admin_verbs_sounds, list(/client/proc/play_local_sound, /client/proc/play_sound, /client/proc/manual_play_web_sound, /client/proc/set_round_end_sound))
 GLOBAL_PROTECT(admin_verbs_sounds)
 GLOBAL_LIST_INIT(admin_verbs_fun, list(
-	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/drop_wave_explosion,
@@ -144,7 +137,6 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/client/proc/panicbunker,
 	// /client/proc/toggle_interviews,
 	/client/proc/toggle_hub,
-	/client/proc/toggle_cdn
 	)
 GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 GLOBAL_PROTECT(admin_verbs_debug)
@@ -201,8 +193,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/view_refs,
 	/datum/admins/proc/view_del_failures,
 #endif
-	// /client/proc/check_timer_sources,
-	/client/proc/toggle_cdn,
 	/client/proc/generate_wikichem_list //DO NOT PRESS UNLESS YOU WANT SUPERLAG
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
@@ -271,8 +261,6 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/proc/release,
 	/client/proc/reload_admins,
 	/client/proc/panicbunker,
-	/client/proc/addbunkerbypass,		//CIT
-	/client/proc/revokebunkerbypass,	//CIT
 	// /client/proc/toggle_interviews,
 	/client/proc/admin_change_sec_level,
 	/client/proc/toggle_nuke,
@@ -371,9 +359,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>", confidential = TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-
-
 
 /client/proc/admin_ghost()
 	set category = "Admin.Game"
@@ -554,7 +539,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion at [epicenter.loc].")
 	log_admin("[key_name(usr)] created an admin explosion at [epicenter.loc].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
+/*
 /client/proc/drop_wave_explosion()
 	set category = "Special Verbs"
 	set name = "Drop Wave Explosion"
@@ -599,7 +584,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] created an admin explosion at [target.loc].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Wave Explosion") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	wave_explosion(target, power, falloff, constant, null, fire, speed = speed, block_resistance = block_resistance)
-
+*/
 /client/proc/drop_dynex_bomb()
 	set category = "Admin.Fun"
 	set name = "Drop DynEx Bomb"

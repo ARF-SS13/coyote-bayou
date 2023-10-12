@@ -24,27 +24,9 @@
 			I.forceMove(src)
 			notices++
 	icon_state = "nboard0[notices]"
-	LAZYADD(SSpersistence.noticeBoards, src)
 
 /obj/structure/noticeboard/Destroy()
-	LAZYREMOVE(SSpersistence.noticeBoards, src)
 	..()
-
-/obj/structure/noticeboard/proc/PersistenceLoad()
-	var/list/data = SSpersistence.GetNoticeboardsPhotos()
-	if(data[persistenceID])
-		PopulatePhotosFromIDList(data[persistenceID])
-
-/obj/structure/noticeboard/proc/PopulatePhotosFromIDList(list/ids)
-	var/list/current_ids = GetPictureIDList()
-	for(var/i in ids)
-		if(i in current_ids)
-			continue
-		var/obj/item/photo/P = load_photo_from_disk(i)
-		if(P)
-			P.forceMove(src)
-			notices++
-	update_icon()
 
 /obj/structure/noticeboard/proc/PopulatePaperFromList(list/ids)
 	var/list/current_ids = StorePaperDataList()

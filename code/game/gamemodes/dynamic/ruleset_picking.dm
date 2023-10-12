@@ -66,6 +66,7 @@
 
 /// Mainly here to facilitate delayed rulesets. All midround/latejoin rulesets are executed with a timered callback to this proc.
 /datum/game_mode/dynamic/proc/execute_midround_latejoin_rule(sent_rule)
+/*
 	var/datum/dynamic_ruleset/rule = sent_rule
 	spend_midround_budget(rule.cost)
 	threat_log += "[worldtime2text()]: [rule.ruletype] [rule.name] spent [rule.cost]"
@@ -89,7 +90,7 @@
 	rule.clean_up()
 	stack_trace("The [rule.ruletype] rule \"[rule.name]\" failed to execute.")
 	return FALSE
-
+*/
 /// Fired when an admin cancels the current midround injection.
 /datum/game_mode/dynamic/proc/admin_cancel_midround(mob/user, timer_id)
 	if (midround_injection_timer_id != timer_id || !deltimer(midround_injection_timer_id))

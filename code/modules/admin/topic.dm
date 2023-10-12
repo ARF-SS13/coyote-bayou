@@ -506,8 +506,6 @@
 				M.change_mob_type( /mob/living/simple_animal/hostile/construct/builder , null, null, delmob )
 			if("constructwraith")
 				M.change_mob_type( /mob/living/simple_animal/hostile/construct/wraith , null, null, delmob )
-			if("shade")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/shade , null, null, delmob )
 
 
 	/////////////////////////////////////new ban stuff
@@ -919,11 +917,6 @@
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=alien;jobban4=[REF(M)]'><font color=red>Alien</font></a></td>"
 		else
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=alien;jobban4=[REF(M)]'>Alien</a></td>"
-		//Gang
-		if(jobban_isbanned(M, ROLE_GANG) || isbanned_dept)
-			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=gang;jobban4=[REF(M)]'><font color=red>Gang</font></a></td>"
-		else
-			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=gang;jobban4=[REF(M)]'>Gang</a></td>"
 		//Bloodsucker
 		if(jobban_isbanned(M, ROLE_BLOODSUCKER) || isbanned_dept)
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=bloodsucker;jobban4=[REF(M)]'><font color=red>Bloodsucker</font></a></td>"
@@ -940,13 +933,6 @@
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_MIND_TRANSFER];jobban4=[REF(M)]'><font color=red>Mind Transfer Potion</font></a></td>"
 		else
 			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_MIND_TRANSFER];jobban4=[REF(M)]'>Mind Transfer Potion</a></td>"
-
-		//Respawns
-		if(jobban_isbanned(M, ROLE_RESPAWN))
-			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_RESPAWN];jobban4=[REF(M)]'><font color=red>Respawns</font></a></td>"
-		else
-			dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[ROLE_RESPAWN];jobban4=[REF(M)]'>Respawns</a></td>"
-
 		dat += "</tr></table>"
 		usr << browse(dat, "window=jobban2;size=800x450")
 		return
@@ -1007,8 +993,6 @@
 					joblist += jobPos
 			if("ghostroles")
 				joblist += list(ROLE_PAI, ROLE_POSIBRAIN, ROLE_DRONE , ROLE_DEATHSQUAD, ROLE_LAVALAND, ROLE_SENTIENCE)
-			if("teamantags")
-				joblist += list(ROLE_OPERATIVE, ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ABDUCTOR, ROLE_ALIEN, ROLE_GANG)
 			if("convertantags")
 				joblist += list(ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ALIEN)
 			if("otherroles")
@@ -1593,14 +1577,9 @@
 		NP.ckey = M.ckey
 		qdel(M)
 		if(GLOB.preferences_datums[NP.ckey])
-			var/datum/preferences/P = GLOB.preferences_datums[NP.ckey]
-			P.respawn_restrictions_active = FALSE
 
 	else if(href_list["tdome1"])
 		if(!check_rights(R_FUN))
-			return
-
-		if(alert(usr, "Confirm?", "Message", "Yes", "No") != "Yes")
 			return
 
 		var/mob/M = locate(href_list["tdome1"])
@@ -2264,9 +2243,6 @@
 										R.module.add_module(I, TRUE, TRUE)
 										R.activate_module(I)
 
-		if(pod)
-			new /obj/effect/pod_landingzone(target, pod)
-
 		if (number == 1)
 			log_admin("[key_name(usr)] created a [english_list(paths)]")
 			for(var/path in paths)
@@ -2663,19 +2639,8 @@
 				dat += "<center><b>0 bans detected for [ckey]</b></center>"
 			else
 				bans = json_decode(response["body"])
-
-				//Ignore bans from non-whitelisted sources, if a whitelist exists
-				var/list/valid_sources
-				if(CONFIG_GET(string/centcom_source_whitelist))
-					valid_sources = splittext(CONFIG_GET(string/centcom_source_whitelist), ",")
-					dat += "<center><b>Bans detected for [ckey]</b></center>"
-				else
-					//Ban count is potentially inaccurate if they're using a whitelist
-					dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
-
+				dat += "<center><b>[bans.len] ban\s detected for [ckey]</b></center>"
 				for(var/list/ban in bans)
-					if(valid_sources && !(ban["sourceName"] in valid_sources))
-						continue
 					dat += "<b>Server: </b> [sanitize(ban["sourceName"])]<br>"
 					dat += "<b>RP Level: </b> [sanitize(ban["sourceRoleplayLevel"])]<br>"
 					dat += "<b>Type: </b> [sanitize(ban["type"])]<br>"

@@ -601,6 +601,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/midround/swarmers
+/*
 	name = "Swarmers"
 	antag_datum = /datum/antagonist/swarmer
 	antag_flag = "Swarmer"
@@ -615,6 +616,7 @@
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/swarmers/execute()
+
 	var/list/spawn_locs = list()
 	for(var/x in GLOB.xeno_spawn)
 		var/turf/spawn_turf = x
@@ -628,7 +630,7 @@
 	log_game("A Swarmer Beacon was spawned via Dynamic Mode.")
 	notify_ghosts("\A Swarmer Beacon has spawned!", source = new_beacon, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Swarmer Beacon Spawned")
 	return ..()
-
+*/
 //////////////////////////////////////////////
 //                                          //
 //            SPACE NINJA (GHOST)           //
@@ -756,14 +758,16 @@
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/pirates/acceptable(population=0, threat=0)
+/*
 	if (!SSmapping.empty_space)
 		return FALSE
 	return ..()
-
+*/
 /datum/dynamic_ruleset/midround/pirates/execute()
+/*
 	send_pirate_threat()
 	return ..()
-
+*/
 /// Probability the AI going malf will be accompanied by an ion storm announcement and some ion laws.
 #undef MALF_ION_PROB
 /// The probability to replace an existing law with an ion law instead of adding a new ion law.

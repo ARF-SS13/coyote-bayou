@@ -22,6 +22,7 @@
 		return
 
 /datum/traitor_class/human/forge_single_objective(datum/antagonist/traitor/T)
+/*
 	.=1
 	var/assassin_prob = 50
 	var/is_dynamic = FALSE
@@ -73,6 +74,6 @@
 			flavor_objective.owner = T.owner
 			flavor_objective.forge_objective()
 			T.add_objective(flavor_objective)
-
+*/
 /datum/traitor_class/human/greet(datum/antagonist/traitor/T)
 	to_chat(T.owner.current, "<B><font size=2 color=red>You are under contract with [employer]. They have given you your objectives.</font></B>")

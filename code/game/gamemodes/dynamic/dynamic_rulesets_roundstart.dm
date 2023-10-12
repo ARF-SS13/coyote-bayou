@@ -412,12 +412,14 @@
 	..()
 
 /datum/dynamic_ruleset/roundstart/revs/rule_process()
+/*
 	var/winner = revolution.process_victory(revs_win_threat_injection)
 	if (isnull(winner))
 		return
 
 	finished = winner
 	return RULESET_STOP_PROCESSING
+*/
 
 /// Checks for revhead loss conditions and other antag datums.
 /datum/dynamic_ruleset/roundstart/revs/proc/check_eligible(datum/mind/M)
@@ -425,10 +427,10 @@
 	if(!considered_afk(M) && considered_alive(M) && is_station_level(T.z) && !M.antag_datums?.len && !HAS_TRAIT(M, TRAIT_MINDSHIELD))
 		return TRUE
 	return FALSE
-
+/*
 /datum/dynamic_ruleset/roundstart/revs/round_result()
 	revolution.round_result(finished)
-
+*/
 //////////////////////////////////////////////
 //                                          //
 //               Clock Cult                 //
@@ -436,6 +438,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/roundstart/clockcult
+/*
 	name = "Clock Cult"
 	antag_flag = ROLE_SERVANT_OF_RATVAR
 	antag_datum = /datum/antagonist/clockcult
@@ -483,7 +486,7 @@
 	else
 		SSticker.mode_result = "loss - servants failed their objective (summon ratvar)"
 		SSticker.news_report = CULT_FAILURE
-
+*/
 // Admin only rulesets. The threat requirement is 101 so it is not possible to roll them.
 
 //////////////////////////////////////////////
@@ -517,7 +520,7 @@
 //               CLOWN OPS                  //
 //                                          //
 //////////////////////////////////////////////
-
+/*
 /datum/dynamic_ruleset/roundstart/nuclear/clown_ops
 	name = "Clown Ops"
 	antag_datum = /datum/antagonist/nukeop/clownop
@@ -535,7 +538,7 @@
 		for(var/datum/mind/V in assigned)
 			V.assigned_role = "Clown Operative"
 			V.special_role = "Clown Operative"
-
+*/
 
 //////////////////////////////////////////////
 //                                          //

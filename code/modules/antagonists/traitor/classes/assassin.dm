@@ -6,6 +6,7 @@
 	threat  = 2
 
 /datum/traitor_class/human/assassin/forge_single_objective(datum/antagonist/traitor/T)
+/*
 	.=1
 	var/permakill_prob = 20
 	var/is_dynamic = FALSE
@@ -35,3 +36,4 @@
 		kill_objective.owner = T.owner
 		kill_objective.find_target()
 		T.add_objective(kill_objective)
+*/
