@@ -1576,8 +1576,6 @@
 		var/mob/dead/new_player/NP = new()
 		NP.ckey = M.ckey
 		qdel(M)
-		if(GLOB.preferences_datums[NP.ckey])
-
 	else if(href_list["tdome1"])
 		if(!check_rights(R_FUN))
 			return
