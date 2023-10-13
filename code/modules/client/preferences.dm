@@ -1120,7 +1120,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								?_src_=prefs;
 								preference=bag;
 								task=input'>
-								Sackpack
+								[backbag]
 							</a>"}
 					dat += "<div class='undies_link'>-</div>"
 					dat += "</td>"
@@ -1131,7 +1131,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									href='
 										?_src_=prefs;
 										preference=persistent_scars'>
-											Enabled
+											[persistent_scars ? "Enabled" : "Disabled"]
 								</a>"}
 					dat += {"<a 
 									class='undies_link' 
