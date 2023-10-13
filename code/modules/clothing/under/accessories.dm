@@ -908,3 +908,11 @@
 	name = "Cowboy Vest"
 	desc = "A white vest with black splotches. Yeehaw."
 	icon_state = "vest_sheriff"
+
+/obj/item/clothing/accessory/heart
+	name = "frisky attitude"
+	desc = "You really do wear your heart on your sleeve, don't you?"
+	item_state = "heart"
+	icon_state = "heart"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM

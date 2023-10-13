@@ -67,7 +67,7 @@
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "pessimist", /datum/mood_event/pessimism)
 
-
+/*
 /datum/quirk/family_heirloom
 	name = "Family Heirloom"
 	desc = "You are the current owner of an heirloom, passed down for generations. You have to keep it safe!"
@@ -165,6 +165,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/family_heirloom/on_clone(data)
 	heirloom = data
+*/
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper" //hard consider redesigning, since this is a flat update. ~TK

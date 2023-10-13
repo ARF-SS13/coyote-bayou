@@ -61,7 +61,8 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		to_chat(quirk_holder, lose_text)
+		if(lose_text)
+			to_chat(quirk_holder, lose_text)
 		quirk_holder.mob_quirks -= src
 		if(mob_trait)
 			if(!islist(mob_trait))

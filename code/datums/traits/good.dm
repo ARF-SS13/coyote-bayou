@@ -219,7 +219,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/optimist,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
-		/datum/quirk/family_heirloom,
+		//datum/quirk/family_heirloom,
 		/datum/quirk/unstable,
 		/datum/quirk/empath,
 		)
@@ -2111,6 +2111,72 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
 		REMOVE_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
+
+/datum/quirk/package/parkour
+	name = "Rooftop Nomad"
+	desc = "You like parkour. Like, a lot a lot."
+	value = 70
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive quirks Freerunning and Advanced Leaper!"
+	conflicts = list(
+		/datum/quirk/freerunning,
+		/datum/quirk/tackleradv,
+		/datum/quirk/slower,
+		/datum/quirk/slow,
+		/datum/quirk/clumsy,
+		/datum/quirk/cantrun,
+		/datum/quirk/overweight,
+		/datum/quirk/tacklerapex,
+		/datum/quirk/tackler
+		)
+	gain_text = span_notice("Hardcore parkour!")
+	lose_text = span_notice("Parkour's just not in style anymore...")
+
+/datum/quirk/package/parkour/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FREERUNNING, "Freerunning")
+	ADD_TRAIT(H, TRAIT_TACKLERADV, "Advanced Leaper")
+
+
+/datum/quirk/package/parkour/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FREERUNNING, "Freerunning")
+		REMOVE_TRAIT(H, TRAIT_TACKLERADV, "Advanced Leaper")
+
+/datum/quirk/package/hvyhitter
+	name = "Heavy Hitter"
+	desc = "You're well practiced in hand to hand combat."
+	value = 80
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Sure Strike & Fists of Steel!"
+	conflicts = list(
+		/datum/quirk/steel_fist,
+		/datum/quirk/surestrike,
+		/datum/quirk/nonviolent,
+		/datum/quirk/iron_fist,
+		/datum/quirk/noodle_fist,
+		/datum/quirk/mastermartialartist
+		)
+	gain_text = span_notice("Your knuckles are calloused.")
+	lose_text = span_notice("Your hands feel soft again...")
+
+/datum/quirk/package/hvyhitter/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_PERFECT_ATTACKER, "Sure Strike")
+	ADD_TRAIT(H, TRAIT_STEELFIST, "Fists of Steel")
+
+
+/datum/quirk/package/hvyhitter/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_PERFECT_ATTACKER, "Sure Strike")
+		REMOVE_TRAIT(H, TRAIT_STEELFIST, "Fists of Steel")
+
+/datum/quirk/package/hvyhitter/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
+	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
 
 /datum/quirk/package/Ranger
 	name = "Ranger"

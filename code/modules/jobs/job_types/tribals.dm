@@ -170,6 +170,7 @@ Tribal Shaman
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
@@ -316,6 +317,7 @@ Druid
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
@@ -505,6 +507,7 @@ Hunter
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 
 

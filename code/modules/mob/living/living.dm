@@ -57,6 +57,7 @@
 	remove_from_all_data_huds()
 	GLOB.mob_living_list -= src
 	QDEL_LIST(diseases)
+	QDEL_LIST(mob_quirks)
 	return ..()
 
 /mob/living/onZImpact(turf/T, levels)
