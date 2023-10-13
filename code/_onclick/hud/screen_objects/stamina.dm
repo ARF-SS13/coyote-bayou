@@ -11,7 +11,7 @@
 /atom/movable/screen/staminas/Click(location,control,params)
 	if(isliving(usr))
 		var/mob/living/L = usr
-		to_chat(L, "<span class='notice'>You have <b>[L.getStaminaLoss()]</b> stamina loss.<br>Your stamina buffer can take <b>[L.stambuffer]</b> stamina loss, and recharges at no cost.<br>Your stamina buffer is <b>[(L.stambuffer*(100/L.stambuffer))-(L.bufferedstam*(100/L.stambuffer))]%</b> full.</span>")
+		to_chat(L, span_notice("You have <b>[L.getStaminaLoss()]</b> stamina loss.<br>Your stamina buffer can take <b>[L.stambuffer]</b> stamina loss, and recharges at no cost.<br>Your stamina buffer is <b>[(L.stambuffer*(100/L.stambuffer))-(L.bufferedstam*(100/L.stambuffer))]%</b> full."))
 
 /atom/movable/screen/staminas/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob

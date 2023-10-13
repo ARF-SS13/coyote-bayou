@@ -34,7 +34,7 @@
 /obj/machinery/teleport/hub/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Probability of malfunction decreased by <b>[(accuracy*25)-25]%</b>.</span>"
+		. += span_notice("The status display reads: Probability of malfunction decreased by <b>[(accuracy*25)-25]%</b>.")
 
 /obj/machinery/teleport/hub/proc/link_power_station()
 	if(power_station)
@@ -133,11 +133,11 @@
 /obj/machinery/teleport/station/examine(mob/user)
 	. = ..()
 	if(!panel_open)
-		. += "<span class='notice'>The panel is <i>screwed</i> in, obstructing the linking device and wiring panel.</span>"
+		. += span_notice("The panel is <i>screwed</i> in, obstructing the linking device and wiring panel.")
 	else
-		. += "<span class='notice'>The <i>linking</i> device is now able to be <i>scanned</i> with a multitool.<br>The <i>wiring</i> can be <i>connected<i> to a nearby console and hub with a pair of wirecutters.</span>"
+		. += span_notice("The <i>linking</i> device is now able to be <i>scanned</i> with a multitool.<br>The <i>wiring</i> can be <i>connected<i> to a nearby console and hub with a pair of wirecutters.")
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: This station can be linked to <b>[efficiency]</b> other station(s).</span>"
+		. += span_notice("The status display reads: This station can be linked to <b>[efficiency]</b> other station(s).")
 
 /obj/machinery/teleport/station/proc/link_console_and_hub()
 	for(var/direction in GLOB.cardinals)

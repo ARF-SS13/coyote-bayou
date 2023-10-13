@@ -49,7 +49,7 @@
 		if(health < maxHealth)
 			adjustHealth(-25)
 			Beam(M,icon_state="sendbeam",time=4)
-			M.visible_message("<span class='danger'>[M] heals \the <b>[src]</b>.</span>", \
+			M.visible_message(span_danger("[M] heals \the <b>[src]</b>."), \
 					   "<span class='cult'>You heal <b>[src]</b>, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 		else
 			to_chat(M, "<span class='cult'>You cannot heal <b>[src]</b>, as [p_theyre()] unharmed!</span>")

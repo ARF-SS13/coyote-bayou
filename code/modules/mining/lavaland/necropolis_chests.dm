@@ -717,7 +717,7 @@
 	if(iscarbon(M) && M.stat != DEAD)
 		if(!ishumanbasic(M) || reac_volume < 5) // implying xenohumans are holy
 			if(method == INGEST && show_message)
-				to_chat(M, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
+				to_chat(M, span_notice("<i>You feel nothing but a terrible aftertaste.</i>"))
 			return ..()
 
 		to_chat(M, span_userdanger("A terrible pain travels down your back as wings burst out!"))

@@ -396,7 +396,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(flavortext && flavortext != "")
 		var/msg = replacetext(flavortext, "\n", " ")
 		if(length(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return span_notice("[msg]")
 		else
 			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
 
@@ -422,14 +422,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			dat += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];oocnotes=1'>\[View\]</a>"
 		if(src.getBruteLoss())
 			if(src.getBruteLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks bruised.</span>"
+				dat += span_warning("[p_they(TRUE)] looks bruised.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely bruised and bloodied!</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely bruised and bloodied!</B>")
 		if(src.getFireLoss())
 			if(src.getFireLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks burned.</span>"
+				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely burned.</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
 		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)

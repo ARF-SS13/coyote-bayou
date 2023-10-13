@@ -168,7 +168,7 @@
 		if (!src_location.Adjacent(over_location)) // Regular users can only do short slides.
 			return
 		if (prob(10))
-			user.visible_message(span_warning("\The [user] tries to slide \the [src] down the table, but fails miserably."), "<span class='warning'>You <b>fail</b> to slide \the [src] down the table!</span>")
+			user.visible_message(span_warning("\The [user] tries to slide \the [src] down the table, but fails miserably."), span_warning("You <b>fail</b> to slide \the [src] down the table!"))
 			smash(over_location, user, FALSE)
 			return
 		user.visible_message(span_notice("\The [user] slides \the [src] down the table."), span_notice("You slide \the [src] down the table!"))

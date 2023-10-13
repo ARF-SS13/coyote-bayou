@@ -33,7 +33,7 @@
 
 /datum/element/mob_holder/proc/on_examine(mob/living/source, mob/user, list/examine_list)
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder))
-		examine_list += "<span class='notice'>Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>!</span>"
+		examine_list += span_notice("Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>!")
 
 /datum/element/mob_holder/proc/mob_try_pickup(mob/living/source, mob/user)
 	if(!user.Adjacent(source) || user.incapacitated())

@@ -94,7 +94,7 @@
 	. += ..()
 	if(output)
 		var/percent = round((output.reagents.total_volume / output.volume) * 100)
-		. += "<span class='notice'>[output] is [percent]% full.</span>"
+		. += span_notice("[output] is [percent]% full.")
 	else
 		. += span_notice("[src] has no reagent container installed.")
 

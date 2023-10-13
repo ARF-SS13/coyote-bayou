@@ -319,7 +319,7 @@ SUBSYSTEM_DEF(ticker)
 		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
+	to_chat(world, span_notice("<B>Welcome to [station_name()], enjoy your stay!</B>"))
 	SEND_SOUND(world, sound(begin_music))
 
 	current_state = GAME_STATE_PLAYING
@@ -473,7 +473,7 @@ SUBSYSTEM_DEF(ticker)
 		if(5) //every 5 ticks check if there is a slot available
 			if(living_player_count() < hpc)
 				if(next_in_line && next_in_line.client)
-					to_chat(next_in_line, "<span class='userdanger'>A slot has opened! You have approximately 20 seconds to join. <a href='?src=[REF(next_in_line)];late_join=override'>\>\>Join Game\<\<</a></span>")
+					to_chat(next_in_line, span_userdanger("A slot has opened! You have approximately 20 seconds to join. <a href='?src=[REF(next_in_line)];late_join=override'>\>\>Join Game\<\<</a>"))
 					SEND_SOUND(next_in_line, sound('sound/misc/notice1.ogg'))
 					next_in_line.LateChoices()
 					return
