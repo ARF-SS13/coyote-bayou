@@ -336,6 +336,9 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"shadekin",
 	"heterochromic-eyeshadow",
 	"heterochromic-eyebrow",
+	"heterochromic-raccoon",
+	"heterochromic-leftsplotch",
+	"heterochromic-rightsplotch"
 	))
 
 //list linking bodypart bitflags to their actual names
