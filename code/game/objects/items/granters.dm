@@ -1389,5 +1389,5 @@
 		/datum/crafting_recipe/tommygun,
 		/datum/crafting_recipe/m1911,
 		/datum/crafting_recipe/policebaton,
-		/datum/crafting_recipe/bowman,
-		/datum/crafting_recipe/radiokeyresponder)
+		/*/datum/crafting_recipe/bowman,
+		/datum/crafting_recipe/radiokeyresponder*/)

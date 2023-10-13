@@ -19,6 +19,12 @@ GLOBAL_LIST_EMPTY(objectives)
 	if(text)
 		explanation_text = text
 
+//Apparently objectives can be qdel'd. Learn a new thing every day
+/datum/objective/Destroy()
+	GLOB.objectives -= src
+	return ..()
+
+
 /datum/objective/Destroy(force, ...)
 	GLOB.objectives -= src
 	if(owner)
@@ -1085,11 +1091,13 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 				return TRUE
 	return FALSE
 
+/*
 /datum/objective/hoard/heirloom
 	name = "steal heirloom"
 
 /datum/objective/hoard/heirloom/find_target()
 	set_target(pick(GLOB.family_heirlooms))
+*/
 
 GLOBAL_LIST_EMPTY(traitor_contraband)
 

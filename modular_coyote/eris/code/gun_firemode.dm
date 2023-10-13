@@ -217,6 +217,12 @@
 	fire_type_default = GUN_FIREMODE_AUTO
 	shoot_delay_default = GUN_FIRE_RATE_40
 
+/datum/firemode/automatic/rpm100
+	name = "fully automatic"
+	desc = "Automatic - 100rpm"
+	fire_type_default = GUN_FIREMODE_AUTO
+	shoot_delay_default = GUN_FIRE_RATE_100
+
 /datum/firemode/burst
 	name = "Burstfire"
 	desc = "Shoot multiple shots per triggerpull."

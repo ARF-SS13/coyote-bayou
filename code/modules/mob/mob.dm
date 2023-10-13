@@ -22,6 +22,8 @@ GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries whet
 		qdel(cc)
 	client_colours = null
 	ghostize()
+	QDEL_LIST(actions)
+	QDEL_LIST(mob_spell_list)
 
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
@@ -1091,7 +1093,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 /mob/proc/sync_lighting_plane_alpha()
 	if(hud_used)
-		var/obj/screen/plane_master/lighting/L = hud_used.plane_masters["[LIGHTING_PLANE]"]
+		var/atom/movable/screen/plane_master/lighting/L = hud_used.plane_masters["[LIGHTING_PLANE]"]
 		if (L)
 			L.alpha = lighting_alpha
 

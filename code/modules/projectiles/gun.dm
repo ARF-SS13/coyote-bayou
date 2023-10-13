@@ -177,6 +177,8 @@ ATTACHMENTS
 	var/use_casing_sounds
 	/// Is one of Kelp's wands?
 	var/is_kelpwand = FALSE
+	/// Allow quickdraw (delay to draw the gun is 0s)
+	var/allow_quickdraw = FALSE
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -194,11 +196,11 @@ ATTACHMENTS
 	if(gun_light)
 		alight = new (src)
 	if(!restrict_safety)
-		var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/gun/safety
+		var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/gun/safety
 		action.owner = src
 		hud_actions += action
 
-	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
+	var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/weapon_info
 	action.owner = src
 	hud_actions += action
 	initialize_firemodes()
@@ -238,10 +240,10 @@ ATTACHMENTS
 	update_firemode_hud()
 
 /obj/item/gun/proc/update_firemode_hud() // this has never worked -- actually no it works just fine
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/fire_mode
+			action = new /atom/movable/screen/item_action/top_bar/gun/fire_mode
 			action.owner = src
 			hud_actions += action
 	else
@@ -249,10 +251,10 @@ ATTACHMENTS
 		hud_actions -= action
 
 /obj/item/gun/proc/initialize_scope()
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/scope) in hud_actions
 	if(zoom_factor > 0)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/scope
+			action = new /atom/movable/screen/item_action/top_bar/gun/scope
 			action.owner = src
 			hud_actions += action
 	else
@@ -446,7 +448,7 @@ ATTACHMENTS
 	if (automatic == 0)
 		user.DelayNextAction(1)
 	if (automatic == 1)
-		user.DelayNextAction(autofire_shot_delay)
+		user.DelayNextAction(fire_delay)
 
 	//DUAL (or more!) WIELDING
 	var/loop_counter = 0
@@ -491,7 +493,7 @@ ATTACHMENTS
 		return 1
 		//return isnull(chambered?.click_cooldown_override)? get_fire_delay(user) : chambered.click_cooldown_override
 	if (automatic == 1)
-		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
+		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
 
 /obj/item/gun/GetEstimatedAttackSpeed(mob/user)
 	return get_clickcd()
@@ -572,7 +574,7 @@ ATTACHMENTS
 		return
 	var/time_till_draw = user.AmountWeaponDrawDelay()
 	if(time_till_draw)
-		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
+		to_chat(user, span_notice("You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!"))
 		return
 	if(pre_fire(user, target, params, zone_override, stam_cost))
 		return TRUE // pre_fire will handle what comes next~ (like firing at your mouse cursor after a delay)
@@ -876,6 +878,9 @@ ATTACHMENTS
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	if(allow_quickdraw)
+		allow_quickdraw = FALSE
+		time_till_gun_is_ready = 0
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
 		toggle_safety(user, ignore_held = TRUE)

@@ -217,3 +217,9 @@
 	color_src = MUTCOLORS
 	extra = FALSE
 
+/datum/sprite_accessory/taur/bigcat
+	name = "Big Cat"
+	icon_state = "bigcat"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = TRUE

@@ -792,6 +792,38 @@
 	icon_state = "newzealand"
 	item_state = "newzealand"
 
+/obj/item/clothing/suit/armor/outfit/warriorcats
+	name = "Armored Thunderous flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "thunder"
+	item_state = "thunder"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/shadow
+	name = "Armored Shadowed flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "shadow"
+	item_state = "shadow"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/wind
+	name = "Armored Windy flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "wind"
+	item_state = "wind"
+
+/obj/item/clothing/suit/armor/outfit/warriorcats/river
+	name = "Armored Rivulet flag cape"
+	desc = "A cape made to resemble some tribal clan symbol"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "river"
+	item_state = "river"
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -1849,6 +1881,16 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 	cold_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 0.9
+	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
+
+/obj/item/clothing/suit/armor/light/leather/ninja
+	name = "ninja suit"
+	desc = "A lightly armored, padded suit designed specifically for thoses with stealth in mind."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "s-ninja"
+	item_state = "s-ninja"
+	flags_inv = HIDEJUMPSUIT
 	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
 
 /obj/item/clothing/suit/armor/light/leather/leather_jacket
@@ -4329,15 +4371,15 @@
 /obj/item/clothing/suit/armor/power_armor/proc/salvage_hint()
 	switch(salvage_step)
 		if(0)
-			return "<span class='notice'>The wiring cover is <i>screwed</i> in place.</span>"
+			return span_notice("The wiring cover is <i>screwed</i> in place.")
 		if(1)
-			return "<span class='notice'>The cover is <i>screwed</i> open and <i>wires</i> are visible.</span>"
+			return span_notice("The cover is <i>screwed</i> open and <i>wires</i> are visible.")
 		if(2)
-			return "<span class='warning'>The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.</span>"
+			return span_warning("The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.")
 		if(3)
-			return "<span class='warning'>The components have been <i>unanchored</i> servomotors inside the suit can be <i>sliced through</i>.</span>"
+			return span_warning("The components have been <i>unanchored</i> servomotors inside the suit can be <i>sliced through</i>.")
 		if(4)
-			return "<span class='warning'>The servomotors have been <i>sliced apart</i> from the frame and remaining components can be <i>pried away</i>.</span>"
+			return span_warning("The servomotors have been <i>sliced apart</i> from the frame and remaining components can be <i>pried away</i>.")
 
 /obj/item/clothing/suit/armor/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()

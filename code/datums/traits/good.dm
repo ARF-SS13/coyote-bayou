@@ -219,7 +219,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/optimist,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
-		/datum/quirk/family_heirloom,
+		//datum/quirk/family_heirloom,
 		/datum/quirk/unstable,
 		/datum/quirk/empath,
 		)
@@ -1118,7 +1118,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	)
 	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You're on the no-fly list.'")
-	lose_text = "<span class='danger'>You feel like you're allowed to fly on planes again.</span>"
+	lose_text = span_danger("You feel like you're allowed to fly on planes again.")
 	locked = TRUE
 
 /datum/quirk/advanced_explosive_crafting/add()
@@ -2112,6 +2112,72 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
 		REMOVE_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
 
+/datum/quirk/package/parkour
+	name = "Rooftop Nomad"
+	desc = "You like parkour. Like, a lot a lot."
+	value = 70
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive quirks Freerunning and Advanced Leaper!"
+	conflicts = list(
+		/datum/quirk/freerunning,
+		/datum/quirk/tackleradv,
+		/datum/quirk/slower,
+		/datum/quirk/slow,
+		/datum/quirk/clumsy,
+		/datum/quirk/cantrun,
+		/datum/quirk/overweight,
+		/datum/quirk/tacklerapex,
+		/datum/quirk/tackler
+		)
+	gain_text = span_notice("Hardcore parkour!")
+	lose_text = span_notice("Parkour's just not in style anymore...")
+
+/datum/quirk/package/parkour/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_FREERUNNING, "Freerunning")
+	ADD_TRAIT(H, TRAIT_TACKLERADV, "Advanced Leaper")
+
+
+/datum/quirk/package/parkour/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_FREERUNNING, "Freerunning")
+		REMOVE_TRAIT(H, TRAIT_TACKLERADV, "Advanced Leaper")
+
+/datum/quirk/package/hvyhitter
+	name = "Heavy Hitter"
+	desc = "You're well practiced in hand to hand combat."
+	value = 80
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive Sure Strike & Fists of Steel!"
+	conflicts = list(
+		/datum/quirk/steel_fist,
+		/datum/quirk/surestrike,
+		/datum/quirk/nonviolent,
+		/datum/quirk/iron_fist,
+		/datum/quirk/noodle_fist,
+		/datum/quirk/mastermartialartist
+		)
+	gain_text = span_notice("Your knuckles are calloused.")
+	lose_text = span_notice("Your hands feel soft again...")
+
+/datum/quirk/package/hvyhitter/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_PERFECT_ATTACKER, "Sure Strike")
+	ADD_TRAIT(H, TRAIT_STEELFIST, "Fists of Steel")
+
+
+/datum/quirk/package/hvyhitter/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_PERFECT_ATTACKER, "Sure Strike")
+		REMOVE_TRAIT(H, TRAIT_STEELFIST, "Fists of Steel")
+
+/datum/quirk/package/hvyhitter/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
+	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
+
 /datum/quirk/package/Ranger
 	name = "Ranger"
 	desc = "Bow in hand, and rat in back pocket, the swamplands is your home."
@@ -2265,4 +2331,80 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		REMOVE_TRAIT(H, TRAIT_SPICYCLAW, "Clawer - Venomous")
 		REMOVE_TRAIT(H, TRAIT_SPICYBITE, "Biter - Venomous")
 
+/datum/quirk/package/creatureofthenightgreater
+	name = " Creature of the Night - Greater"
+	desc = "You are the prime definition of creature of the night, your dark vision and movement agility are greatly improved."
+	value = 100
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Dark Vision - Greater & Mobility - Wasteland Trekker."
+	conflicts = list(
+		/datum/quirk/hard_yards,
+		/datum/quirk/night_vision_greater,
+		/datum/quirk/package/creatureofthenightlesser
+		)
+	gain_text = span_notice("Your night hunting instincts enhance!")
+	lose_text = span_notice("Your night hunting instincts fade away.")
+
+/datum/quirk/package/creatureofthenightgreater/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
+
+
+/datum/quirk/package/creatureofthenightgreater/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION_GREATER, "Dark Vision - Greater")
+		REMOVE_TRAIT(H, TRAIT_HARD_YARDS, "Mobility - Wasteland Trekker")
+
+/datum/quirk/package/creatureofthenightlesser
+	name = "Creature of the Night - Lesser"
+	desc = "You are a creature of the night, your dark vision and movement agility are over the average."
+	value = 50
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Dark Vision - Minor & Mobility - Wasteland Wanderer."
+	conflicts = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/soft_yards,
+		/datum/quirk/package/creatureofthenightgreater
+		)
+	gain_text = span_notice("You feel more attuned in darker places.")
+	lose_text = span_notice("Light and taking it slow aren't bad things afteral.")
+
+/datum/quirk/package/creatureofthenightlesser/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
+	ADD_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+
+/datum/quirk/package/creatureofthenightlesser/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_NIGHT_VISION, "Dark Vision - Minor")
+		REMOVE_TRAIT(H, TRAIT_SOFT_YARDS, "Mobility - Wasteland Wanderer")
+
+/datum/quirk/package/generalmedicalpractitioner
+	name = "General Medical Practitioner"
+	desc = "You were a General Practiotioner at some point in your life, you probably had an office and a license to practice medicine, or... maybe this is what you kept saying to your patients..."
+	value = 50
+	category = "Quirk Packages"
+	mechanics = "Grants access to positive trait Chem Whiz & Minor Surgery."
+	conflicts = list(
+		/datum/quirk/chemwhiz,
+		/datum/quirk/surgerylow
+		)
+	gain_text = span_notice("Let's go practice medicine!")
+	lose_text = span_notice("I really think I need a true medical license...")
+
+/datum/quirk/package/generalmedicalpractitioner/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
+
+
+/datum/quirk/package/generalmedicalpractitioner/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
+		REMOVE_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
 

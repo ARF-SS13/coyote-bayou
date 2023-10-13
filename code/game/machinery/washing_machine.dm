@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += "<span class='notice'><b>Alt-click</b> it to start a wash cycle.</span>"
+		. += span_notice("<b>Alt-click</b> it to start a wash cycle.")
 
 /obj/machinery/washing_machine/AltClick(mob/user)
 	. = ..()

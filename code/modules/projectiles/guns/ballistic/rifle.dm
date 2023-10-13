@@ -107,22 +107,29 @@
 * My hands are stupid and I must game
 * 我的社會信用太低所以我不能離開家
 * Its In .22 I Don't Know What Else I Can Put Here
-* Ideally ends up as a loadout weapon
 * * * * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/rifle/repeater/trainer
 	name = "Training Repeater"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
-	icon_state = "cowboyrepeater" // Placeholder
-	item_state = "cowboyrepeater"
+	icon_state = "lever22" // Placeholder
+	item_state = "lever22"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-//	cock_delay = GUN_COCK_RIFLE_LIGHTNING // This actually just does nothing
+	cock_delay = GUN_COCK_RIFLE_BASE // Either this does nothing or it only affects bolt workers click to cock. 
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_long" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 29
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
@@ -132,22 +139,29 @@
 * For when you need to be a badass on a budget
 * 我的太空站上有一個人不誠實地透露自己的真實身分和意圖
 * Its In .22 I Don't Know What Else I Can Put Here
-* Eventually add a crafting recipe to make this, probably a progress bar but it'd be cool if it could be done like rechambering the winchester
 * * * * * * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/repeater/trainerator
 	name = ".22 Mares Leg"
 	desc = "A lever action rifle chambered in .22LR. This one has been cut down crudely, and probably named something like The Filly Buster because you're not just the peak of comedy, you're the whole damn circus and the laugh track, too."
-	icon_state = "shotgunlever" // Placeholder
-	item_state = "shotgunlever"
+	icon_state = "lever22short" // Placeholder
+	item_state = "lever22short"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_short" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 21 // FIRST TRY BAYEEEEEEE
+	suppressor_y_offset = 23
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/fast
 	)
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 

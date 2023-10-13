@@ -662,6 +662,15 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 	new /obj/item/radio(src)
 
+/datum/gear/donator/kits/jademanique
+	name = "Ifanse's Trinkets"
+	path = /obj/item/storage/box/large/custom_kit/jademanique
+	ckeywhitelist = list("jademanique")
+
+/obj/item/storage/box/large/custom_kit/jademanique/PopulateContents()
+	new /obj/item/voodoo(src)
+	new /obj/item/clothing/mask/chameleon(src)
+
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi

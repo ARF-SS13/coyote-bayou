@@ -279,7 +279,7 @@
 	. += ..()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.</span>"
+		. += span_notice("The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.")
 
 /obj/machinery/autolathe/proc/main_win(mob/user)
 	var/dat = "<div class='statusDisplay'><h3>Autolathe Menu:</h3><br>"
@@ -617,22 +617,22 @@
 					return
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
 			simple = TRUE
 			qdel(O)
 			return
 		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
 			basic = TRUE
 			qdel(O)
 			return
 		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
 			intermediate = TRUE
 			qdel(O)
 			return
 		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
 			advanced = TRUE
 			qdel(O)
 			return

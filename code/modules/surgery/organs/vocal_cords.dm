@@ -733,7 +733,7 @@
 			else
 				E.enthrallTally += power_multiplier*1.25 //thinking about it, I don't know how this can proc
 			if(E.lewd)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='nicegreen'><i><b>[E.enthrallGender] is so nice to listen to.</b></i></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_nicegreen("<i><b>[E.enthrallGender] is so nice to listen to.</b></i>")), 5)
 			E.cooldown += 1
 
 	//REWARD mixable works
@@ -751,7 +751,7 @@
 					E.resistanceTally += power_multiplier
 					E.cooldown += 1
 			else
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='nicegreen'><b><i>I've been praised for doing a good job!</b></i></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_nicegreen("<b><i>I've been praised for doing a good job!</b></i>")), 5)
 			E.resistanceTally -= power_multiplier
 			E.enthrallTally += power_multiplier
 			var/descmessage = "<span class='love'><i>[(E.lewd?"I feel so happy! I'm a good pet who [E.enthrallGender] loves!":"I did a good job!")]</i></span>"
@@ -776,9 +776,9 @@
 					E.resistanceTally -= power_multiplier
 					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='love'>I've let [E.enthrallGender] down...!</b></span>"), 5)
 				else
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='warning'>I've let [E.enthrallGender] down...</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_warning("I've let [E.enthrallGender] down...</b>")), 5)
 			else
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='warning'>I've failed [E.master]...</b></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_warning("I've failed [E.master]...</b>")), 5)
 				E.resistanceTally += power_multiplier
 				E.enthrallTally += power_multiplier
 				E.cooldown += 1
@@ -988,9 +988,9 @@
 		for(var/mob/living/carbon/C in listeners)
 			var/datum/status_effect/chem/enthrall/E = C.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 4)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, "<span class='warning'>You're unable to forget about [(E.lewd?"the dominating presence of [E.enthrallGender]":"[E.master]")]!</b></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, span_warning("You're unable to forget about [(E.lewd?"the dominating presence of [E.enthrallGender]":"[E.master]")]!</b>")), 5)
 				continue
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, "<span class='warning'>You wake up, forgetting everything that just happened. You must've dozed off..? How embarassing!</b></span>"), 5)
+			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, C, span_warning("You wake up, forgetting everything that just happened. You must've dozed off..? How embarassing!</b>")), 5)
 			C.Sleeping(50)
 			switch(E.phase)
 				if(1 to 2)
@@ -1102,7 +1102,7 @@
 				var/speaktrigger = ""
 				C.emote("me", EMOTE_VISIBLE, "whispers something quietly.")
 				if (get_dist(user, C) > 1)//Requires user to be next to their pet.
-					to_chat(user, "<span class='warning'>You need to be next to your pet to hear them!</b></span>")
+					to_chat(user, span_warning("You need to be next to your pet to hear them!</b>"))
 					continue
 				for (var/trigger in E.customTriggers)
 					speaktrigger += "[trigger], "
@@ -1117,10 +1117,10 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, "<span class='warning'>You need to be next to your pet to give them a new trigger!</b></span>")
+					to_chat(user, span_warning("You need to be next to your pet to give them a new trigger!</b>"))
 					continue
 				if(!E.lewd)
-					to_chat(user, "<span class='warning'>[H] seems incapable of being implanted with triggers.</b></span>")
+					to_chat(user, span_warning("[H] seems incapable of being implanted with triggers.</b>"))
 					continue
 				else
 					user.emote("me", EMOTE_VISIBLE, "puts their hands upon [H.name]'s head and looks deep into their eyes, whispering something to them.")
@@ -1145,9 +1145,9 @@
 							addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, span_notice("[(E.lewd?"your [E.enthrallGender]":"[E.master]")] whispers you a new trigger.")), 5)
 							to_chat(user, "<span class='notice'><i>You sucessfully set the trigger word [trigger] in [H]</i></span>")
 						else
-							to_chat(user, "<span class='warning'>Your pet looks at you confused, it seems they don't understand that effect!</b></span>")
+							to_chat(user, span_warning("Your pet looks at you confused, it seems they don't understand that effect!</b>"))
 					else
-						to_chat(user, "<span class='warning'>Your pet looks at you with a vacant blase expression, you don't think you can program anything else into them</b></span>")
+						to_chat(user, span_warning("Your pet looks at you with a vacant blase expression, you don't think you can program anything else into them</b>"))
 					user.SetStun(0)
 					H.SetStun(0)
 
@@ -1158,10 +1158,10 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, "<span class='warning'>You need to be next to your pet to give them a new echophrase!</b></span>")
+					to_chat(user, span_warning("You need to be next to your pet to give them a new echophrase!</b>"))
 					continue
 				if(!E.lewd)
-					to_chat(user, "<span class='warning'>[H] seems incapable of being implanted with an echoing phrase.</b></span>")
+					to_chat(user, span_warning("[H] seems incapable of being implanted with an echoing phrase.</b>"))
 					continue
 				else
 					user.emote("me", EMOTE_VISIBLE, "puts their hands upon [H.name]'s head and looks deep into their eyes, whispering something to them.")
@@ -1184,7 +1184,7 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, "<span class='warning'>You need to be next to your pet to give them a new objective!</b></span>")
+					to_chat(user, span_warning("You need to be next to your pet to give them a new objective!</b>"))
 					continue
 				else
 					user.emote("me", EMOTE_VISIBLE, "puts their hands upon [H.name]'s head and looks deep into their eyes, whispering something to them.'")
@@ -1193,7 +1193,7 @@
 					if (E.mental_capacity >= 200)
 						var/datum/objective/brainwashing/objective = stripped_input(user, "Add an objective to give your pet.", MAX_MESSAGE_LEN)
 						if(!LAZYLEN(objective))
-							to_chat(user, "<span class='warning'>You can't give your pet an objective to do nothing!</b></span>")
+							to_chat(user, span_warning("You can't give your pet an objective to do nothing!</b>"))
 							continue
 						//Pets don't understand harm
 						objective = replacetext(lowertext(objective), "kill", "hug")
@@ -1208,7 +1208,7 @@
 						E.mental_capacity -= 200
 						to_chat(user, "<span class='notice'><i>You sucessfully give an objective to [H]</i></span>")
 					else
-						to_chat(user, "<span class='warning'>Your pet looks at you with a vacant blasé expression, you don't think you can program anything else into them</b></span>")
+						to_chat(user, span_warning("Your pet looks at you with a vacant blasé expression, you don't think you can program anything else into them</b>"))
 					user.SetStun(0)
 					H.SetStun(0)
 
@@ -1232,7 +1232,7 @@
 			if(E.phase > 1)
 				if(user.ckey == E.enthrallID && user.real_name == E.master.real_name)
 					E.master = user
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, "<span class='nicegreen'>[(E.lewd?"You hear the words of your [E.enthrallGender] again!! They're back!!":"You recognise the voice of [E.master].")]</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, span_nicegreen("[(E.lewd?"You hear the words of your [E.enthrallGender] again!! They're back!!":"You recognise the voice of [E.master].")]</b>")), 5)
 					to_chat(user, "<span class='notice'><i>[H] looks at you with sparkling eyes, recognising you!</i></span>")
 
 	//I dunno how to do state objectives without them revealing they're an antag

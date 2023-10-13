@@ -479,3 +479,37 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "italya"
 	item_state = "italya"
+
+/obj/item/clothing/neck/tie/warriorcataccessories
+	name = "Thunderous flag cape"
+	desc = "A tribal flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "thundera"
+	item_state = "thundera"
+
+
+/obj/item/clothing/neck/tie/warriorcataccessories/shadows
+	name = "Shdowed flag cape"
+	desc = "A tribal flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "shadowa"
+	item_state = "shadowa"
+
+/obj/item/clothing/neck/tie/warriorcataccessories/winds
+	name = "Windy flag cape"
+	desc = "A tribal flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "winda"
+	item_state = "winda"
+
+
+/obj/item/clothing/neck/tie/warriorcataccessories/rivers
+	name = "Rivulet flag cape"
+	desc = "A tribal flag cape!"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
+	icon_state = "rivera"
+	item_state = "rivera"

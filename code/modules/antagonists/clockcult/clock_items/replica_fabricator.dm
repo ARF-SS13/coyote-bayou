@@ -59,7 +59,7 @@
 	if(is_servant_of_ratvar(user))
 		if(uses_power)
 			if(!get_clockwork_power(POWER_WALL_TOTAL))
-				to_chat(user, "<span class='warning'>[src] requires <b>[DisplayPower(POWER_WALL_TOTAL)]</b> of power to produce brass sheets!</span>")
+				to_chat(user, span_warning("[src] requires <b>[DisplayPower(POWER_WALL_TOTAL)]</b> of power to produce brass sheets!"))
 				return
 			adjust_clockwork_power(-POWER_WALL_TOTAL)
 		playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
@@ -177,7 +177,7 @@
 			if(!silent)
 				var/atom/A = fabrication_values["new_obj_type"]
 				if(A)
-					to_chat(user, "<span class='warning'>You need <b>[DisplayPower(fabrication_values["power_cost"])]</b> power to fabricate \a [initial(A.name)] from [target]!</span>")
+					to_chat(user, span_warning("You need <b>[DisplayPower(fabrication_values["power_cost"])]</b> power to fabricate \a [initial(A.name)] from [target]!"))
 		return FALSE
 	return TRUE
 

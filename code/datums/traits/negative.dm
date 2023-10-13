@@ -67,7 +67,7 @@
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "pessimist", /datum/mood_event/pessimism)
 
-
+/*
 /datum/quirk/family_heirloom
 	name = "Family Heirloom"
 	desc = "You are the current owner of an heirloom, passed down for generations. You have to keep it safe!"
@@ -165,6 +165,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/family_heirloom/on_clone(data)
 	heirloom = data
+*/
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper" //hard consider redesigning, since this is a flat update. ~TK
@@ -203,7 +204,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurry at a distance, but you have glasses you spawn with that can fix that."
 	conflicts = list(
-		
+		/datum/quirk/noglasses,
+		/datum/quirk/badeyes,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -225,7 +228,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurred, but you either never had or lost your glasses.  Good luck!"
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/badeyes,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -241,7 +246,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/noglasses,
+		/datum/quirk/blindness,
 	)
 	gain_text = span_danger("Things far away from you start looking VERY blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
@@ -452,7 +459,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		H.stuttering = max(3, H.stuttering)
 		//Murder fucking this spammy ass message.  This crap is insane.~ TK
 	// else if(prob(min(3, nearby_people)) && !H.silent)
-	//	o_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
+	//	o_chat(H, span_danger("You retreat into yourself. You <i>really</i> don't feel up to talking."))
 	//	H.silent = max(10, H.silent)t
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, span_userdanger("You think of a dumb thing you said a long time ago and scream internally."))
@@ -825,7 +832,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Vision Quirks"
 	mechanics = "You can't see."
 	conflicts = list(
-		
+		/datum/quirk/nearsighted,
+		/datum/quirk/noglasses,
+		/datum/quirk/badeyes,
 	)
 	gain_text = span_danger("You can't see anything.")
 	lose_text = span_notice("You miraculously gain back your vision.")
@@ -907,8 +916,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 	)
 	mob_trait = TRAIT_CHUNKYFINGERS
-	gain_text = "<span class='notice'>Your fingers feel... thick.</span>"
-	lose_text = "<span class='notice'>Your fingers feel normal again.</span>"
+	gain_text = span_notice("Your fingers feel... thick.")
+	lose_text = span_notice("Your fingers feel normal again.")
 
 /datum/quirk/illiterate
 	name = "Illiterate"
@@ -920,7 +929,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_ILLITERATE
-	gain_text = "<span class='notice'>The knowledge of how to read seems to escape from you.</span>"
+	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
 
 /datum/quirk/flimsy
@@ -968,8 +977,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
-	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
+	gain_text = span_danger("You start feeling unwell without a mask on.")
+	lose_text = span_notice("You no longer have a need to wear a mask.")
 	value = -11
 	category = "Emotional Quirks"
 	mechanics = "You need to keep a mask on your face or else you get a negative moodlet."
@@ -1007,8 +1016,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_PAPER_SKIN
-	gain_text = "<span class='notice'>Your flesh feels weak!</span>"
-	lose_text = "<span class='notice'>Your flesh feels more durable!</span>"
+	gain_text = span_notice("Your flesh feels weak!")
+	lose_text = span_notice("Your flesh feels more durable!")
 	medical_record_text = "Patient suffers from weak flesh, resulting in them receiving cuts far more easily."
 
 /*
@@ -1022,8 +1031,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_GLASS_BONES
-	gain_text = "<span class='notice'>Your bones feels weak!</span>"
-	lose_text = "<span class='notice'>Your bones feels more durable!</span>"
+	gain_text = span_notice("Your bones feels weak!")
+	lose_text = span_notice("Your bones feels more durable!")
 	medical_record_text = "Patient suffers from brittle bones, resulting in them receiving breakages far more easily."
 */
 

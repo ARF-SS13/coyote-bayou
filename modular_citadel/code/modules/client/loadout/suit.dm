@@ -197,6 +197,12 @@
 	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
+a
+/datum/gear/suit/ninja
+	name = "Ninja Suit"
+	path = /obj/item/clothing/suit/armor/light/leather/ninja
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/overcoatleather
 	name = "Leather overcoat"
@@ -769,6 +775,31 @@
 /datum/gear/suit/armor/flagcapesclothing/nz
 	name = "Armored New Zealander flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/flagcapes/newzealand
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/tc
+	name = "Armored Thunderous flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/warriorcats
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+
+/datum/gear/suit/armor/flagcapesclothing/sc
+	name = "Armored Shadowed flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/warriorcats/shadow
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/wc
+	name = "Armored Windy flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/warriorcats/wind
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/flagcapesclothing/rc
+	name = "Armored Rivulet flag cape"
+	path = /obj/item/clothing/suit/armor/outfit/warriorcats/river
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 

@@ -29,6 +29,10 @@
 	var/next_activate = 0 //When we're next allowed to activate - for spam control
 	var/activate_cooldown = 3 SECONDS
 
+/obj/item/assembly/Destroy()
+	holder = null
+	return ..()
+
 /obj/item/assembly/get_part_rating()
 	return 1
 

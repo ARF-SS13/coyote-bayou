@@ -31,7 +31,7 @@
 /obj/machinery/dna_scannernew/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.</span>"
+		. += span_notice("The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.")
 		if(scan_level >= 3)
 			. += span_notice("Scanner has been upgraded to support autoprocessing.")
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
@@ -154,6 +154,18 @@
 	if(user.stat || (isliving(user) && (!(L.mobility_flags & MOBILITY_STAND) || !(L.mobility_flags & MOBILITY_UI))) || !Adjacent(user) || !user.Adjacent(target) || !iscarbon(target) || !user.IsAdvancedToolUser())
 		return
 	close_machine(target)
+
+//This is only called by the scanner. if you ever want to use this outside of that context you'll need to refactor things a bit
+/obj/machinery/dna_scannernew/proc/set_linked_console(new_console)
+	if(linked_console)
+		UnregisterSignal(linked_console, COMSIG_PARENT_QDELETING)
+	linked_console = new_console
+	if(linked_console)
+		RegisterSignal(linked_console, COMSIG_PARENT_QDELETING, .proc/react_to_console_del)
+
+/obj/machinery/dna_scannernew/proc/react_to_console_del(datum/source)
+	SIGNAL_HANDLER
+	set_linked_console(null)
 
 
 //Just for transferring between genetics machines.

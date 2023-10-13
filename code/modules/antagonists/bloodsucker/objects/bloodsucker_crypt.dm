@@ -277,34 +277,34 @@
 	if(convert_progress > 0)
 		to_chat(user, span_notice("You prepare to initiate [target] into your service."))
 		if(!do_torture(user,target))
-			to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
+			to_chat(user, span_danger("<i>The ritual has been interrupted!</i>"))
 		else
 			convert_progress -- // Ouch. Stop. Don't.
 			// All done!
 			if(convert_progress <= 0)
 				// FAIL: Can't be Vassal
 				if(!SSticker.mode.can_make_vassal(target, user, display_warning = FALSE) || HAS_TRAIT(target, TRAIT_MINDSHIELD)) // If I'm an unconvertable Antag ONLY
-					to_chat(user, "<span class='danger'>[target] doesn't respond to your persuasion. It doesn't appear they can be converted to follow you, they either have a mindshield or their external loyalties are too difficult for you to break.<i>\[ALT+click to release\]</span>")
+					to_chat(user, span_danger("[target] doesn't respond to your persuasion. It doesn't appear they can be converted to follow you, they either have a mindshield or their external loyalties are too difficult for you to break.<i>\[ALT+click to release\]"))
 					convert_progress ++ // Pop it back up some. Avoids wasting Blood on a lost cause.
 				// SUCCESS: All done!
 				else
 					if(RequireDisloyalty(target))
 						to_chat(user, "<span class='boldwarning'>[target] has external loyalties! [target.p_they(TRUE)] will require more <i>persuasion</i> to break [target.p_them()] to your will!</span>")
 					else
-						to_chat(user, "<span class='notice'>[target] looks ready for the <b>Dark Communion</b>.</span>")
+						to_chat(user, span_notice("[target] looks ready for the <b>Dark Communion</b>."))
 			// Still Need More Persuasion...
 			else
-				to_chat(user, "<span class='notice'>[target] could use [convert_progress == 1?"a little":"some"] more <i>persuasion</i>.</span>")
+				to_chat(user, span_notice("[target] could use [convert_progress == 1?"a little":"some"] more <i>persuasion</i>."))
 		useLock = FALSE
 		return
 	// Check: Mindshield & Antag
 	if(!disloyalty_confirm && RequireDisloyalty(target))
 		if(!do_disloyalty(user,target))
-			to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
+			to_chat(user, span_danger("<i>The ritual has been interrupted!</i>"))
 		else if (!disloyalty_confirm)
 			to_chat(user, span_danger("[target] refuses to give into your persuasion. Perhaps a little more?"))
 		else
-			to_chat(user, "<span class='notice'>[target] looks ready for the <b>Dark Communion</b>.</span>")
+			to_chat(user, span_notice("[target] looks ready for the <b>Dark Communion</b>."))
 		useLock = FALSE
 		return
 	// Check: Blood
@@ -318,14 +318,14 @@
 	user.visible_message(span_notice("[user] marks a bloody smear on [target]'s forehead and puts a wrist up to [target.p_their()] mouth!"), \
 					  span_notice("You paint a bloody marking across [target]'s forehead, place your wrist to [target.p_their()] mouth, and subject [target.p_them()] to the Dark Communion."))
 	if(!do_mob(user, src, 50))
-		to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
+		to_chat(user, span_danger("<i>The ritual has been interrupted!</i>"))
 		useLock = FALSE
 		return
 	// Convert to Vassal!
 	if(B && B.attempt_turn_vassal(target))
 		//remove_loyalties(target) // In case of Mindshield, or appropriate Antag (Traitor, Internal, etc)
 		//if (!target.buckled)
-		//	to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
+		//	to_chat(user, span_danger("<i>The ritual has been interrupted!</i>"))
 		//	useLock = FALSE
 		//	return
 		user.playsound_local(null, 'sound/effects/explosion_distant.ogg', 40, TRUE)
@@ -428,7 +428,7 @@
 	// Failsafe: You already said YES.
 	if(disloyalty_confirm)
 		return
-	to_chat(target, "<span class='notice'>You refuse to give in! You <i>will not</i> break!</span>")
+	to_chat(target, span_notice("You refuse to give in! You <i>will not</i> break!"))
 
 
 /obj/structure/bloodsucker/vassalrack/proc/remove_loyalties(mob/living/target)

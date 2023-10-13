@@ -52,13 +52,13 @@
 	var/display_numerical_stacking = FALSE			//stack things of the same type and show as a single object with a number.
 
 	/// "legacy"/default view mode's storage "boxes"
-	var/obj/screen/storage/boxes/ui_boxes
+	var/atom/movable/screen/storage/boxes/ui_boxes
 	/// New volumetric storage display mode's left side
-	var/obj/screen/storage/left/ui_left
+	var/atom/movable/screen/storage/left/ui_left
 	/// New volumetric storage display mode's center 'blocks'
-	var/obj/screen/storage/continuous/ui_continuous
+	var/atom/movable/screen/storage/continuous/ui_continuous
 	/// The close button, used in all modes. Frames right side in volumetric mode.
-	var/obj/screen/storage/close/ui_close
+	var/atom/movable/screen/storage/close/ui_close
 	/// Associative list of list(item = screen object) for volumetric storage item screen blocks
 	var/list/ui_item_blocks
 
@@ -350,7 +350,7 @@
 
 /datum/component/storage/proc/_remove_and_refresh(datum/source, atom/movable/thing)
 	if(LAZYACCESS(ui_item_blocks, thing))
-		var/obj/screen/storage/volumetric_box/center/C = ui_item_blocks[thing]
+		var/atom/movable/screen/storage/volumetric_box/center/C = ui_item_blocks[thing]
 		for(var/i in can_see_contents())		//runtimes result if mobs can access post deletion.
 			var/mob/M = i
 			M.client?.screen -= C.on_screen_objects()
@@ -450,15 +450,15 @@
 		if(over_object == M)
 			user_show_to_mob(M)
 		if(!M.incapacitated())
-			if(!istype(over_object, /obj/screen))
+			if(!istype(over_object, /atom/movable/screen))
 				dump_content_at(over_object, M)
 				return
 			if(A.loc != M)
 				return
 			playsound(A, "rustle", 50, 1, -5)
 			A.do_jiggle()
-			if(istype(over_object, /obj/screen/inventory/hand))
-				var/obj/screen/inventory/hand/H = over_object
+			if(istype(over_object, /atom/movable/screen/inventory/hand))
+				var/atom/movable/screen/inventory/hand/H = over_object
 				M.putItemFromInventoryInHandIfPossible(A, H.held_index)
 				return
 			A.add_fingerprint(M)
