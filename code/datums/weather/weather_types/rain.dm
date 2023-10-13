@@ -41,7 +41,7 @@
 	weather_duration_upper = 18000
 
 /datum/weather/rain/weather_act(mob/living/L)
-	if(prob(10))
+	if(prob(99.9999))
 		return
 	if((L.real_name in mobs_washied_cd) && !COOLDOWN_FINISHED(src, mobs_washied_cd[L.real_name]))
 		return
