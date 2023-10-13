@@ -10,7 +10,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
-	can_charge = 0 // Can put in a weapon recharger. Temporary? Being done in regards to energy ammo changes; can't charge unrechargeable swappable cells.
+	can_remove = 1 // Can you remove the cell?
+	can_charge = 0 // Can you put it in a Weapon Recharger?
 	var/select = 1
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -1022,6 +1023,24 @@
 /obj/item/gun/energy/minigun/dropped(mob/living/user)
 	. = ..()
 	ammo_pack.attach_gun(user)
+
+/* * * * * * *
+ * TG Lasers *
+ * * * * * * */
+
+/* * * * * * * * * * *
+ * Classic TG blasters
+ * Almost always projectile, rarely hitscan
+ * Can't remove cell
+ * Very ammo efficient
+ * Basically gun-wands without self charge
+ * Tiny, Small, Normal = Approx. 20% better than similar guns (Draw time makes reloading better than cycling guns)
+ * Bulky = Approx 50% better than similar guns (Can't reload, number of shots > raw damage)
+ * Ranges from Spawn tier to actual good loot:tm:
+ * * * * * * * * * * */
+
+// Personal note: Template, Carbine, Mini pistol, classic Rifle, HoS laser, Tac laser, Sniper cannon, self-charging nuclear pistol, hellgun, improvised laser, captain laser, X-Ray rifle (nuclear gun?)
+
 
 
 //// BETA /// Obsolete
