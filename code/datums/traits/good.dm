@@ -2115,7 +2115,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/package/parkour
 	name = "Rooftop Nomad"
 	desc = "You like parkour. Like, a lot a lot."
-	value = 150
+	value = 70
 	category = "Quirk Packages"
 	mechanics = "Grants access to positive quirks Freerunning and Advanced Leaper!"
 	conflicts = list(
@@ -2147,7 +2147,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/package/hvyhitter
 	name = "Heavy Hitter"
 	desc = "You're well practiced in hand to hand combat."
-	value = 88
+	value = 80
 	category = "Quirk Packages"
 	mechanics = "Grants access to positive Sure Strike & Fists of Steel!"
 	conflicts = list(
