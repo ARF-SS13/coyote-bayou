@@ -51,7 +51,7 @@
 	if(owner.mind)
 		var/mob/living/simple_animal/astral/G = new(get_turf(M.loc))
 		owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
-		to_chat(G, "<span class='warning'>[M]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b></span>")
+		to_chat(G, span_warning("[M]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
 		log_reagent("FERMICHEM: [M]'s possesser has been booted out into a astral ghost!")
 	originalmind.transfer_to(original)
 
@@ -60,7 +60,7 @@
 		if(owner.mind)
 			var/mob/living/simple_animal/astral/G = new(get_turf(owner))
 			owner.mind.transfer_to(G)//Just in case someone else is inside of you, it makes them a ghost and should hopefully bring them home at the end.
-			to_chat(G, "<span class='warning'>[owner]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b></span>")
+			to_chat(G, span_warning("[owner]'s conciousness snaps back to them as their astrogen runs out, kicking your projected mind out!'</b>"))
 			log_reagent("FERMICHEM: [owner]'s possesser has been booted out into a astral ghost!")
 		originalmind.transfer_to(original)
 	return ..()
@@ -187,9 +187,9 @@
 
 			else if (resistanceTally > 125)
 				phase = -1
-				to_chat(owner, "<span class='warning'><i>You break free of the influence in your mind, your thoughts suddenly turning lucid!</i></span>")
+				to_chat(owner, span_warning("<i>You break free of the influence in your mind, your thoughts suddenly turning lucid!</i>"))
 				if(DistApart < 10)
-					to_chat(master, "<span class='warning'>[(lewd?"Your pet":"Your thrall")] seems to have broken free of your enthrallment!</i></span>")
+					to_chat(master, span_warning("[(lewd?"Your pet":"Your thrall")] seems to have broken free of your enthrallment!</i>"))
 				SSblackbox.record_feedback("tally", "fermi_chem", 1, "Thralls broken free")
 				owner.remove_status_effect(src) //If resisted in phase 1, effect is removed.
 			if(prob(10))
@@ -322,9 +322,9 @@
 				var/message = "[(lewd?"Where are you [enthrallGender]??!":"I need to find [master]!")]"
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "EnthMissing3", /datum/mood_event/enthrallmissing3, message)
 				if(lewd)
-					to_chat(owner, "<span class='warning'><i>You need to find your [enthrallGender] at all costs, you can't hold yourself back anymore!</i></span>")
+					to_chat(owner, span_warning("<i>You need to find your [enthrallGender] at all costs, you can't hold yourself back anymore!</i>"))
 				else
-					to_chat(owner, "<span class='warning'><i>You need to find [master] at all costs, you can't hold yourself back anymore!</i></span>")
+					to_chat(owner, span_warning("<i>You need to find [master] at all costs, you can't hold yourself back anymore!</i>"))
 			if(91 to 100)//depression
 				if(prob(10))
 					M.gain_trauma_type(BRAIN_TRAUMA_MILD)
@@ -336,16 +336,16 @@
 				SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "EnthMissing3")
 				var/message = "[(lewd?"I'm all alone, It's so hard to continute without [enthrallGender]...":"I really need to find [master]!!!")]"
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "EnthMissing4", /datum/mood_event/enthrallmissing4, message)
-				to_chat(owner, "<span class='warning'><i>You can hardly find the strength to continue without [(lewd?"your [enthrallGender]":"[master]")].</i></span>")
+				to_chat(owner, span_warning("<i>You can hardly find the strength to continue without [(lewd?"your [enthrallGender]":"[master]")].</i>"))
 				M.gain_trauma_type(BRAIN_TRAUMA_SEVERE)
 			if(102 to 140) //depression 2, revengeance
 				if(prob(20))
 					owner.Stun(50)
 					owner.emote("cry")//does this exist?
 					if(lewd)
-						to_chat(owner, "<span class='warning'><i>You're unable to hold back your tears, suddenly sobbing as the desire to see your [enthrallGender] oncemore overwhelms you.</i></span>")
+						to_chat(owner, span_warning("<i>You're unable to hold back your tears, suddenly sobbing as the desire to see your [enthrallGender] oncemore overwhelms you.</i>"))
 					else
-						to_chat(owner, "<span class='warning'><i>You are overwheled with withdrawl from [master].</i></span>")
+						to_chat(owner, span_warning("<i>You are overwheled with withdrawl from [master].</i>"))
 					owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
 					owner.stuttering += 35
 					owner.jitteriness += 35
@@ -503,7 +503,7 @@
 				C.stuttering += 25
 				C.DefaultCombatKnockdown(60)
 				C.Stun(60)
-				to_chat(owner, "<span class='warning'><i>Your muscles seize up, then start spasming wildy!</i></span>")
+				to_chat(owner, span_warning("<i>Your muscles seize up, then start spasming wildy!</i>"))
 
 			//kneel (knockdown)
 			else if (lowertext(customTriggers[trigger]) == "kneel")//as close to kneeling as you can get, I suppose.
@@ -537,9 +537,9 @@
 		return
 	else if (phase == 4)
 		if(lewd)
-			to_chat(owner, "<span class='warning'><i>Your mind is too far gone to even entertain the thought of resisting. Unless you can fix the brain damage, you won't be able to break free of your [enthrallGender]'s control.</i></span>")
+			to_chat(owner, span_warning("<i>Your mind is too far gone to even entertain the thought of resisting. Unless you can fix the brain damage, you won't be able to break free of your [enthrallGender]'s control.</i>"))
 		else
-			to_chat(owner, "<span class='warning'><i>Your brain is too overwhelmed with from the high volume of chemicals in your system, rendering you unable to resist, unless you can fix the brain damage.</i></span>")
+			to_chat(owner, span_warning("<i>Your brain is too overwhelmed with from the high volume of chemicals in your system, rendering you unable to resist, unless you can fix the brain damage.</i>"))
 		return
 	else if (phase == 3 && withdrawal == FALSE)
 		if(lewd)
@@ -550,9 +550,9 @@
 	else if (status == "Antiresist")//If ordered to not resist; resisting while ordered to not makes it last longer, and increases the rate in which you are enthralled.
 		if (statusStrength > 0)
 			if(lewd)
-				to_chat(owner, "<span class='warning'><i>The order from your [enthrallGender] to give in is conflicting with your attempt to resist, drawing you deeper into trance! You'll have to wait a bit before attemping again, lest your attempts become frustrated again.</i></span>")
+				to_chat(owner, span_warning("<i>The order from your [enthrallGender] to give in is conflicting with your attempt to resist, drawing you deeper into trance! You'll have to wait a bit before attemping again, lest your attempts become frustrated again.</i>"))
 			else
-				to_chat(owner, "<span class='warning'><i>The order from your [master] to give in is conflicting with your attempt to resist. You'll have to wait a bit before attemping again, lest your attempts become frustrated again.</i></span>")
+				to_chat(owner, span_warning("<i>The order from your [master] to give in is conflicting with your attempt to resist. You'll have to wait a bit before attemping again, lest your attempts become frustrated again.</i>"))
 			statusStrength += 1
 			enthrallTally += 1
 			return

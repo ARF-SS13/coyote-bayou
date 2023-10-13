@@ -240,7 +240,7 @@
 /datum/mafia_role/chaplain/proc/commune(datum/mafia_controller/game)
 	var/datum/mafia_role/target = current_target
 	if(target)
-		to_chat(body,"<span class='warning'>You invoke spirit of [target.body.real_name] and learn their role was <b>[target.name]<b>.</span>")
+		to_chat(body,span_warning("You invoke spirit of [target.body.real_name] and learn their role was <b>[target.name]<b>."))
 		add_note("N[game.turn] - [target.body.real_name] - [target.name]")
 		current_target = null
 

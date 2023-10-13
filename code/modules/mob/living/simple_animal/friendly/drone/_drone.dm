@@ -76,7 +76,7 @@
 	"<span class='notify'>     - An example of what you CAN do as a drone would be to run a shop, upgrade machines, or build houses..</span>\n"+\
 	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
 	"<span class='userdanger'>Abuse of drones will lead to them being rendered pacifists! Don't ruin it for everyone!</span>\n"+\
-	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
+	span_warning("<u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u>")
 
 /mob/living/simple_animal/drone/Initialize()
 	. = ..()

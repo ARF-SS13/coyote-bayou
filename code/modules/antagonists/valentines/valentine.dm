@@ -28,7 +28,7 @@
 
 
 /datum/antagonist/valentine/greet()
-	to_chat(owner, "<span class='warning'><B>You're on a date with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B></span>")
+	to_chat(owner, span_warning("<B>You're on a date with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B>"))
 
 //Squashed up a bit
 /datum/antagonist/valentine/roundend_report()
@@ -46,7 +46,7 @@
 
 //Just so it's distinct, basically.
 /datum/antagonist/valentine/chem/greet()
-	to_chat(owner, "<span class='warning'><B>You're in love with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B></span>")
+	to_chat(owner, span_warning("<B>You're in love with [date.name]! Protect [date.p_them()] at all costs. This takes priority over all other loyalties.</B>"))
 
 /datum/antagonist/valentine/chem/roundend_report()
 	var/objectives_complete = TRUE
