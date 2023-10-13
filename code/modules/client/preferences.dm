@@ -3235,7 +3235,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("butt_size")
 					var/min_B = CONFIG_GET(number/butt_min_size_prefs)

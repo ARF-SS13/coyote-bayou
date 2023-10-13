@@ -80,11 +80,11 @@
 /obj/machinery/clonepod/examine(mob/user)
 	. = ..()
 	var/mob/living/mob_occupant = occupant
-	. += "<span class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool.</span>"
+	. += span_notice("The <i>linking</i> device can be <i>scanned<i> with a multitool.")
 	if(mess)
 		. += "It's filled with blood and viscera. You swear you can see it moving..."
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b>.</span>"
+		. += span_notice("The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b>.")
 		if(efficiency > 5)
 			to_chat(user, "<span class='notice'>Pod has been upgraded to support autoprocessing.<span>")
 	if(is_operational() && mob_occupant)
@@ -178,7 +178,7 @@
 
 	if(grab_ghost_when == CLONER_FRESH_CLONE)
 		H.grab_ghost()
-		to_chat(H, "<span class='notice'><b>Consciousness slowly creeps over you as your body regenerates.</b><br><i>So this is what cloning feels like?</i></span>")
+		to_chat(H, span_notice("<b>Consciousness slowly creeps over you as your body regenerates.</b><br><i>So this is what cloning feels like?</i>"))
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		H.ghostize(TRUE)	//Only does anything if they were still in their old body and not already a ghost
@@ -376,7 +376,7 @@
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		mob_occupant.grab_ghost()
-		to_chat(occupant, "<span class='notice'><b>There is a bright flash!</b><br><i>You feel like a new being.</i></span>")
+		to_chat(occupant, span_notice("<b>There is a bright flash!</b><br><i>You feel like a new being.</i>"))
 		mob_occupant.flash_act()
 
 	var/list/policies = CONFIG_GET(keyed_list/policyconfig)

@@ -8,7 +8,7 @@
 	telegraph_message = span_userdanger("Thunder rumbles far above. You hear droplets land around you, and audible fizzling can be heard as they make contact.. acid rain is coming.")
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
-	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"
+	weather_message = span_userdanger("<i>Acidic rain pours down around you! Get inside!</i>")
 	weather_overlay = "acid_rain"
 	weather_duration_lower = 2 MINUTES
 	weather_duration_upper = 4 MINUTES

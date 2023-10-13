@@ -733,7 +733,7 @@
 			else
 				E.enthrallTally += power_multiplier*1.25 //thinking about it, I don't know how this can proc
 			if(E.lewd)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='nicegreen'><i><b>[E.enthrallGender] is so nice to listen to.</b></i></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_nicegreen("<i><b>[E.enthrallGender] is so nice to listen to.</b></i>")), 5)
 			E.cooldown += 1
 
 	//REWARD mixable works
@@ -751,7 +751,7 @@
 					E.resistanceTally += power_multiplier
 					E.cooldown += 1
 			else
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='nicegreen'><b><i>I've been praised for doing a good job!</b></i></span>"), 5)
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, span_nicegreen("<b><i>I've been praised for doing a good job!</b></i>")), 5)
 			E.resistanceTally -= power_multiplier
 			E.enthrallTally += power_multiplier
 			var/descmessage = "<span class='love'><i>[(E.lewd?"I feel so happy! I'm a good pet who [E.enthrallGender] loves!":"I did a good job!")]</i></span>"
@@ -1232,7 +1232,7 @@
 			if(E.phase > 1)
 				if(user.ckey == E.enthrallID && user.real_name == E.master.real_name)
 					E.master = user
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, "<span class='nicegreen'>[(E.lewd?"You hear the words of your [E.enthrallGender] again!! They're back!!":"You recognise the voice of [E.master].")]</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, H, span_nicegreen("[(E.lewd?"You hear the words of your [E.enthrallGender] again!! They're back!!":"You recognise the voice of [E.master].")]</b>")), 5)
 					to_chat(user, "<span class='notice'><i>[H] looks at you with sparkling eyes, recognising you!</i></span>")
 
 	//I dunno how to do state objectives without them revealing they're an antag

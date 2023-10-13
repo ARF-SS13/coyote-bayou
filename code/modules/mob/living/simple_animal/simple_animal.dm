@@ -396,7 +396,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(flavortext && flavortext != "")
 		var/msg = replacetext(flavortext, "\n", " ")
 		if(length(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return span_notice("[msg]")
 		else
 			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
 

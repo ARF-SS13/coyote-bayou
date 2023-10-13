@@ -265,18 +265,18 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			if(!istype(head, /obj/item/clothing/head/helmet/space/hardsuit))
 				return
 			var/obj/item/clothing/head/helmet/space/hardsuit/hardsuit_head = head
-			visible_message("<span class='danger'>[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet.</span>", \
-								"<span class='userdanger'>[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet.</span>", \
-								target = usr, target_message = "<span class='danger'>You try to [hardsuit_head ? "retract" : "extend"] [src]'s helmet.</span>")
+			visible_message(span_danger("[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."), \
+								span_userdanger("[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."), \
+								target = usr, target_message = span_danger("You try to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
 			if(!do_mob(usr, src, hardsuit_head ? head.strip_delay : POCKET_STRIP_DELAY))
 				return
 			if(!istype(wear_suit, /obj/item/clothing/suit/space/hardsuit) || (hardsuit_head ? (!head || head != hardsuit_head) : head))
 				return
 			var/obj/item/clothing/suit/space/hardsuit/hardsuit = wear_suit //This should be an hardsuit given all our checks
 			if(hardsuit.ToggleHelmet(FALSE))
-				visible_message("<span class='danger'>[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet</span>", \
-										"<span class='userdanger'>[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet</span>", \
-										target = usr, target_message = "<span class='danger'>You [hardsuit_head ? "retract" : "extend"] [src]'s helmet.</span>")
+				visible_message(span_danger("[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet"), \
+										span_userdanger("[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet"), \
+										target = usr, target_message = span_danger("You [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
 			return
 		if(href_list["item"])
 			var/slot = text2num(href_list["item"])
@@ -299,9 +299,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			if(pocket_item && !(pocket_item.item_flags & ABSTRACT))
 				if(HAS_TRAIT(pocket_item, TRAIT_NODROP))
 					to_chat(usr, span_warning("You try to empty [src]'s [pocket_side] pocket, it seems to be stuck!"))
-				to_chat(usr, "<span class='notice'>You try to empty [src]'s [pocket_side] pocket.</span>")
+				to_chat(usr, span_notice("You try to empty [src]'s [pocket_side] pocket."))
 			else if(place_item && place_item.mob_can_equip(src, usr, pocket_id, 1) && !(place_item.item_flags & ABSTRACT))
-				to_chat(usr, "<span class='notice'>You try to place [place_item] into [src]'s [pocket_side] pocket.</span>")
+				to_chat(usr, span_notice("You try to place [place_item] into [src]'s [pocket_side] pocket."))
 				delay_denominator = 4
 			else
 				return
@@ -441,9 +441,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 									if(burndamage)
 										to_chat(usr, "<span class='[span]'>[BP] appears to have [status]</span>")
 							if(getOxyLoss())
-								to_chat(usr, "<span class='danger'>Patient has signs of suffocation, emergency treatment may be required!</span>")
+								to_chat(usr, span_danger("Patient has signs of suffocation, emergency treatment may be required!"))
 							if(getToxLoss() > 20)
-								to_chat(usr, "<span class='danger'>Gathered data is inconsistent with the analysis, possible cause: poisoning.</span>")
+								to_chat(usr, span_danger("Gathered data is inconsistent with the analysis, possible cause: poisoning."))
 
 				if(href_list["hud"] == "s")
 					if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(H.getorganslot(ORGAN_SLOT_HUD), /obj/item/organ/cyberimp/eyes/hud/security))
@@ -517,7 +517,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 													var/crime = GLOB.data_core.createCrimeEntry(t1, t2, allowed_access, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time))
 													GLOB.data_core.addMinorCrime(R.fields["id"], crime)
 													investigate_log("New Minor Crime: <strong>[t1]</strong>: [t2] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-													to_chat(usr, "<span class='notice'>Successfully added a minor crime.</span>")
+													to_chat(usr, span_notice("Successfully added a minor crime."))
 													return
 										if("Major Crime")
 											if(R)
@@ -533,7 +533,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 													var/crime = GLOB.data_core.createCrimeEntry(t1, t2, allowed_access, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time))
 													GLOB.data_core.addMajorCrime(R.fields["id"], crime)
 													investigate_log("New Major Crime: <strong>[t1]</strong>: [t2] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-													to_chat(usr, "<span class='notice'>Successfully added a major crime.</span>")
+													to_chat(usr, span_notice("Successfully added a major crime."))
 									return
 
 								if(href_list["view_comment"])
@@ -564,7 +564,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 											while(R.fields[text("com_[]", counter)])
 												counter++
 											R.fields["com_[counter]"] = "Made by [allowed_access] on [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] [time2text(world.realtime, "MMM DD")], [GLOB.year_integer]<BR>[t1]"
-											to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
+											to_chat(usr, span_notice("Successfully added comment."))
 											return
 							to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
 	switch(href_list["action"])
@@ -990,8 +990,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		return 0
 
 	if(C.cpr_time < world.time + 30)
-		visible_message("<span class='notice'>[src] is trying to perform CPR on [C.name]!</span>", \
-						"<span class='notice'>You try to perform CPR on [C.name]... Hold still!</span>")
+		visible_message(span_notice("[src] is trying to perform CPR on [C.name]!"), \
+						span_notice("You try to perform CPR on [C.name]... Hold still!"))
 		if(!do_mob(src, C))
 			to_chat(src, span_warning("You fail to perform CPR on [C]!"))
 			return 0
@@ -1002,7 +1002,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if(C.health > C.crit_threshold)
 			return
 
-		src.visible_message("[src] performs CPR on [C.name]!", "<span class='notice'>You perform CPR on [C.name].</span>")
+		src.visible_message("[src] performs CPR on [C.name]!", span_notice("You perform CPR on [C.name]."))
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
 		C.cpr_time = world.time
 		log_combat(src, C, "CPRed")
@@ -1179,7 +1179,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(blood && dna?.species && (NOBLOOD in dna.species.species_traits))
 		if(message)
 			visible_message(span_warning("[src] dry heaves!"), \
-							"<span class='userdanger'>You try to throw up, but there's nothing in your stomach!</span>")
+							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
 		if(stun)
 			DefaultCombatKnockdown(200)
 		return 1
@@ -1266,14 +1266,14 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if(success)
 			to_chat(usr, "Put [src] on purrbation.")
 			log_admin("[key_name(usr)] has put [key_name(src)] on purrbation.")
-			var/msg = "<span class='notice'>[key_name_admin(usr)] has put [key_name(src)] on purrbation.</span>"
+			var/msg = span_notice("[key_name_admin(usr)] has put [key_name(src)] on purrbation.")
 			message_admins(msg)
 			admin_ticket_log(src, msg)
 
 		else
 			to_chat(usr, "Removed [src] from purrbation.")
 			log_admin("[key_name(usr)] has removed [key_name(src)] from purrbation.")
-			var/msg = "<span class='notice'>[key_name_admin(usr)] has removed [key_name(src)] from purrbation.</span>"
+			var/msg = span_notice("[key_name_admin(usr)] has removed [key_name(src)] from purrbation.")
 			message_admins(msg)
 			admin_ticket_log(src, msg)
 
@@ -1307,9 +1307,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		carrydelay = 40
 		skills_space = "quickly"
 	if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE))
-		visible_message("<span class='notice'>[src] starts [skills_space] lifting [target] onto their back..</span>",
+		visible_message(span_notice("[src] starts [skills_space] lifting [target] onto their back.."),
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
-		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
+		span_notice("[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]"))
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
 		if(do_after(src, carrydelay, TRUE, target))
 			//Second check to make sure they're still valid to be carried
@@ -1320,13 +1320,13 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		visible_message("<span class='warning'>[src] fails to fireman carry [target]!")
 	else
 		if (ishuman(target))
-			to_chat(src, "<span class='notice'>You can't fireman carry [target] while they're standing!</span>")
+			to_chat(src, span_notice("You can't fireman carry [target] while they're standing!"))
 		else
-			to_chat(src, "<span class='notice'>You can't seem to fireman carry that kind of species.</span>")
+			to_chat(src, span_notice("You can't seem to fireman carry that kind of species."))
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
-		visible_message("<span class='notice'>[target] starts to climb onto [src]...</span>")
+		visible_message(span_notice("[target] starts to climb onto [src]..."))
 		if(do_after(target, 15, target = src, required_mobility_flags = MOBILITY_STAND))
 			if(can_piggyback(target))
 				if(target.incapacitated(FALSE, TRUE) || incapacitated(FALSE, TRUE))

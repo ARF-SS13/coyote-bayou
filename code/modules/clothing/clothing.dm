@@ -315,7 +315,7 @@
 		durability_list += list("ACID" = armor.acid)
 
 	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
 	if(salvage_tool_behavior && LAZYLEN(salvage_loot))
 		. += span_notice("It can be recycled for materials using [salvage_tool_behavior].")
 

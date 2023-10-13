@@ -459,7 +459,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		H.stuttering = max(3, H.stuttering)
 		//Murder fucking this spammy ass message.  This crap is insane.~ TK
 	// else if(prob(min(3, nearby_people)) && !H.silent)
-	//	o_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
+	//	o_chat(H, span_danger("You retreat into yourself. You <i>really</i> don't feel up to talking."))
 	//	H.silent = max(10, H.silent)t
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, span_userdanger("You think of a dumb thing you said a long time ago and scream internally."))
@@ -916,8 +916,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	conflicts = list(
 	)
 	mob_trait = TRAIT_CHUNKYFINGERS
-	gain_text = "<span class='notice'>Your fingers feel... thick.</span>"
-	lose_text = "<span class='notice'>Your fingers feel normal again.</span>"
+	gain_text = span_notice("Your fingers feel... thick.")
+	lose_text = span_notice("Your fingers feel normal again.")
 
 /datum/quirk/illiterate
 	name = "Illiterate"
@@ -929,7 +929,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_ILLITERATE
-	gain_text = "<span class='notice'>The knowledge of how to read seems to escape from you.</span>"
+	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
 
 /datum/quirk/flimsy
@@ -977,8 +977,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/masked_mook
 	name = "Masked Mook"
 	desc = "For some reason you don't feel... Right without wearing some kind of mask. You will need to find one."
-	gain_text = "<span class='danger'>You start feeling unwell without a mask on.</span>"
-	lose_text = "<span class='notice'>You no longer have a need to wear a mask.</span>"
+	gain_text = span_danger("You start feeling unwell without a mask on.")
+	lose_text = span_notice("You no longer have a need to wear a mask.")
 	value = -11
 	category = "Emotional Quirks"
 	mechanics = "You need to keep a mask on your face or else you get a negative moodlet."
@@ -1016,8 +1016,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_PAPER_SKIN
-	gain_text = "<span class='notice'>Your flesh feels weak!</span>"
-	lose_text = "<span class='notice'>Your flesh feels more durable!</span>"
+	gain_text = span_notice("Your flesh feels weak!")
+	lose_text = span_notice("Your flesh feels more durable!")
 	medical_record_text = "Patient suffers from weak flesh, resulting in them receiving cuts far more easily."
 
 /*
@@ -1031,8 +1031,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		
 	)
 	mob_trait = TRAIT_GLASS_BONES
-	gain_text = "<span class='notice'>Your bones feels weak!</span>"
-	lose_text = "<span class='notice'>Your bones feels more durable!</span>"
+	gain_text = span_notice("Your bones feels weak!")
+	lose_text = span_notice("Your bones feels more durable!")
 	medical_record_text = "Patient suffers from brittle bones, resulting in them receiving breakages far more easily."
 */
 

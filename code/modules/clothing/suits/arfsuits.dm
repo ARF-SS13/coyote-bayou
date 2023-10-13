@@ -4371,9 +4371,9 @@
 /obj/item/clothing/suit/armor/power_armor/proc/salvage_hint()
 	switch(salvage_step)
 		if(0)
-			return "<span class='notice'>The wiring cover is <i>screwed</i> in place.</span>"
+			return span_notice("The wiring cover is <i>screwed</i> in place.")
 		if(1)
-			return "<span class='notice'>The cover is <i>screwed</i> open and <i>wires</i> are visible.</span>"
+			return span_notice("The cover is <i>screwed</i> open and <i>wires</i> are visible.")
 		if(2)
 			return span_warning("The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.")
 		if(3)

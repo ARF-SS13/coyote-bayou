@@ -135,25 +135,25 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 			antiGenetics--
 			log_reagent("FERMICHEM: [M] ckey: [M.key] has become addicted to Astrogen")
 		if(220)
-			to_chat(M, "<span class='notice'>Your addiction is only getting worse as your body disappears. Maybe you should get some more, and fast?</b></span>")
+			to_chat(M, span_notice("Your addiction is only getting worse as your body disappears. Maybe you should get some more, and fast?</b>"))
 			M.alpha--
 			antiGenetics--
 		if(200)
-			to_chat(M, "<span class='notice'>You feel a substantial part of your soul flake off into the ethereal world, rendering yourself unclonable.</b></span>")
+			to_chat(M, span_notice("You feel a substantial part of your soul flake off into the ethereal world, rendering yourself unclonable.</b>"))
 			M.alpha--
 			antiGenetics--
 			ADD_TRAIT(M, TRAIT_NOCLONE, "astral") //So you can't scan yourself, then die, to metacomm. You can only use your memories if you come back as something else.
 			M.hellbound = TRUE
 		if(180)
-			to_chat(M, "<span class='notice'>You feel fear build up in yourself as more and more of your body and consciousness begins to fade.</b></span>")
+			to_chat(M, span_notice("You feel fear build up in yourself as more and more of your body and consciousness begins to fade.</b>"))
 			M.alpha--
 			antiGenetics--
 		if(120)
-			to_chat(M, "<span class='notice'>As you lose more and more of yourself, you start to think that maybe shedding your mortality isn't too bad.</b></span>")
+			to_chat(M, span_notice("As you lose more and more of yourself, you start to think that maybe shedding your mortality isn't too bad.</b>"))
 			M.alpha--
 			antiGenetics--
 		if(80)
-			to_chat(M, "<span class='notice'>You feel a thrill shoot through your body as what's left of your mind contemplates your forthcoming oblivion.</b></span>")
+			to_chat(M, span_notice("You feel a thrill shoot through your body as what's left of your mind contemplates your forthcoming oblivion.</b>"))
 			M.alpha--
 			antiGenetics--
 		if(45)

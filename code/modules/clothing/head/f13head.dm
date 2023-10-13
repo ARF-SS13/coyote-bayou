@@ -366,9 +366,9 @@
 /obj/item/clothing/head/helmet/f13/power_armor/proc/salvage_hint()
 	switch(salvage_step)
 		if(0)
-			return "<span class='notice'>The metal cover can be <i>screwed</i> open.</span>"
+			return span_notice("The metal cover can be <i>screwed</i> open.")
 		if(1)
-			return "<span class='notice'>The cover is <i>screwed</i> open with connection ports <i>bolted down</i>.</span>"
+			return span_notice("The cover is <i>screwed</i> open with connection ports <i>bolted down</i>.")
 		if(2)
 			return span_warning("The connections ports have been <i>unanchored</i> and only <i>wires</i> remain.")
 

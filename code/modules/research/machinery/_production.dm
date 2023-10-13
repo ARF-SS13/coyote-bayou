@@ -82,7 +82,7 @@
 	. = ..()
 	var/datum/component/remote_materials/materials = GetComponent(/datum/component/remote_materials)
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.local_size]</b> material units locally.<br>Material usage cost at <b>[print_cost_coeff*100]%</b>.</span>"
+		. += span_notice("The status display reads: Storing up to <b>[materials.local_size]</b> material units locally.<br>Material usage cost at <b>[print_cost_coeff*100]%</b>.")
 
 //we eject the materials upon deconstruction.
 /obj/machinery/rnd/production/on_deconstruction()

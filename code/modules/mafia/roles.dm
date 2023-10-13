@@ -114,7 +114,7 @@
 			team_desc = "Nobody"
 			team_span = "comradio"
 			the = FALSE
-	result += "<span class='notice'>The <span class='bold'>[name]</span> is aligned with [the ? "the " : ""]<span class='[team_span]'>[team_desc]</span></span>"
+	result += span_notice("The <span class='bold'>[name]</span> is aligned with [the ? "the " : ""]<span class='[team_span]'>[team_desc]</span>")
 	result += "<span class='bold notice'>\"[desc]\"</span>"
 	result += span_notice("[name] wins when they [win_condition]")
 	to_chat(clueless, result.Join("</br>"))

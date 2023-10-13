@@ -553,7 +553,7 @@
 			AnnounceArrival(humanc, rank)
 		AddEmploymentContract(humanc)
 		if(GLOB.highlander)
-			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
+			to_chat(humanc, span_userdanger("<i>THERE CAN BE ONLY ONE!!!</i>"))
 			humanc.make_scottish()
 
 		if(GLOB.summon_guns_triggered)
@@ -601,7 +601,7 @@
 	if(ckey && client && client.prefs.creature_species)
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
-			to_chat(src, "<span class='userdanger'>You must set your Creature OOC Notes and Flavor Text before joining as a creature.</span>")
+			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
 			return FALSE
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)

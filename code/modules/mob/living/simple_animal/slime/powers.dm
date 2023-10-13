@@ -79,7 +79,7 @@
 	if(docile)
 		if(silent)
 			return FALSE
-		to_chat(src, "<span class='notice'><i>I'm not hungry anymore...</i></span>")
+		to_chat(src, span_notice("<i>I'm not hungry anymore...</i>"))
 		return FALSE
 
 	if(stat)
@@ -119,7 +119,7 @@
 			"I do not feel nourished", "This subject is not food")]!</span>")
 		if(!silent)
 			visible_message(span_warning("[src] has let go of [buckled]!"), \
-							"<span class='notice'><i>I stopped feeding.</i></span>")
+							span_notice("<i>I stopped feeding.</i>"))
 		layer = initial(layer)
 		buckled.unbuckle_mob(src,force=TRUE)
 
