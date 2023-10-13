@@ -39,15 +39,16 @@
 	if(health > maxHealth*0.5)
 		rapid_melee = initial(rapid_melee)
 		return
-	if(!aggressive_message_said && target)
-		visible_message(span_danger("The [name] gets an enraged look at [target]!"))
+	var/atom/my_target = get_target()
+	if(!aggressive_message_said && my_target)
+		visible_message(span_danger("The [name] gets an enraged look at [my_target]!"))
 		aggressive_message_said = TRUE
 	rapid_melee = 2
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target)
+	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.025)
 	aggressive_message_said = FALSE

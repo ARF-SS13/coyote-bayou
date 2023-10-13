@@ -23,6 +23,14 @@
 	deathmessage = "vanishes into thin air! It was a fake!"
 	has_field_of_vision = FALSE //not meant to be played anyway.
 
+/mob/living/simple_animal/hostile/illusion/death(gibbed)
+	parent_mob = null
+	. = ..()
+
+/mob/living/simple_animal/hostile/illusion/Destroy()
+	parent_mob = null
+	. = ..()
+
 /mob/living/simple_animal/hostile/illusion/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
@@ -51,14 +59,16 @@
 
 /mob/living/simple_animal/hostile/illusion/AttackingTarget()
 	. = ..()
-	if(. && isliving(target) && prob(multiply_chance))
-		var/mob/living/L = target
-		if(L.stat == DEAD)
-			return
-		var/mob/living/simple_animal/hostile/illusion/M = new(loc)
-		M.faction = faction.Copy()
-		M.Copy_Parent(parent_mob, 80, health/2, melee_damage_upper, multiply_chance/2)
-		M.GiveTarget(L)
+	var/atom/my_target = get_target()
+	if(!. || !isliving(my_target) || !prob(multiply_chance))
+		return
+	var/mob/living/L = my_target
+	if(L.stat == DEAD)
+		return
+	var/mob/living/simple_animal/hostile/illusion/M = new(loc)
+	M.faction = faction.Copy()
+	M.Copy_Parent(parent_mob, 80, health/2, melee_damage_upper, multiply_chance/2)
+	M.GiveTarget(L)
 
 ///////Actual Types/////////
 

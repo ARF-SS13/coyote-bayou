@@ -280,8 +280,9 @@
 
 /mob/living/simple_animal/hostile/blob/blobbernaut/AttackingTarget()
 	. = ..()
-	if(. && isliving(target) && overmind)
-		overmind.blobstrain.blobbernaut_attack(target)
+	var/atom/my_target = get_target()
+	if(. && isliving(my_target) && overmind)
+		overmind.blobstrain.blobbernaut_attack(my_target)
 
 /mob/living/simple_animal/hostile/blob/blobbernaut/update_icons()
 	..()

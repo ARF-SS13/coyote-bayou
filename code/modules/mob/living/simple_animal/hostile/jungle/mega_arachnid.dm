@@ -29,8 +29,9 @@
 /mob/living/simple_animal/hostile/jungle/mega_arachnid/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target && ranged_cooldown > world.time && iscarbon(target))
-		var/mob/living/carbon/C = target
+	var/atom/my_target = get_target()
+	if(my_target && ranged_cooldown > world.time && iscarbon(my_target))
+		var/mob/living/carbon/C = my_target
 		if(!C.legcuffed && C.health < 50)
 			retreat_distance = 9
 			minimum_distance = 9

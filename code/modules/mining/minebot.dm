@@ -168,10 +168,11 @@
 	to_chat(src, span_info("You are set to attack mode. You can now attack from range."))
 
 /mob/living/simple_animal/hostile/mining_drone/AttackingTarget()
-	if(istype(target, /obj/item/stack/ore) && mode == MINEDRONE_COLLECT)
+	var/atom/my_target = get_target()
+	if(istype(my_target, /obj/item/stack/ore) && mode == MINEDRONE_COLLECT)
 		CollectOre()
 		return
-	if(isliving(target))
+	if(isliving(my_target))
 		SetOffenseBehavior()
 	return ..()
 

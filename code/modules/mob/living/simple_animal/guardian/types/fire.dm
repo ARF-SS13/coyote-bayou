@@ -22,8 +22,9 @@
 
 /mob/living/simple_animal/hostile/guardian/fire/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target) && target != summoner)
-		new /datum/hallucination/delusion(target,TRUE,"custom",200,0, icon_state,icon)
+	var/atom/my_target = get_target()
+	if(. && ishuman(my_target) && my_target != summoner)
+		new /datum/hallucination/delusion(my_target,TRUE,"custom",200,0, icon_state,icon)
 
 /mob/living/simple_animal/hostile/guardian/fire/on_entered(AM as mob|obj)
 	..()

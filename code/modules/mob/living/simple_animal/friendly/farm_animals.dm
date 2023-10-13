@@ -50,8 +50,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
-	qdel(udder)
-	udder = null
+	QDEL_NULL(udder)
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/BiologicalLife(seconds, times_fired)
@@ -109,13 +108,16 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(istype(H.dna.species, /datum/species/pod))
-			var/obj/item/bodypart/NB = pick(H.bodyparts)
-			H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
-									span_userdanger("[src] takes a big chomp out of your [NB]!"))
-			NB.dismember()
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	if(!istype(H.dna.species, /datum/species/pod))
+		return
+	var/obj/item/bodypart/NB = pick(H.bodyparts)
+	H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
+							span_userdanger("[src] takes a big chomp out of your [NB]!"))
+	NB.dismember()
 //cow
 /mob/living/simple_animal/cow
 	name = "cow"
@@ -186,8 +188,7 @@
 	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
-	qdel(udder)
-	udder = null
+	QDEL_NULL(udder)
 	return ..()
 
 /mob/living/simple_animal/cow/death(gibbed)
