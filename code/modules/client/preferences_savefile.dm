@@ -1407,4 +1407,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	var/savefile/S = new /savefile(path)
 	S.ImportText("/",file("[path].txt"))
 
+	splurt_character_pref_load(S)
+
+	splurt_character_pref_save(S)
+
+
+
 #endif
