@@ -1091,11 +1091,13 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 				return TRUE
 	return FALSE
 
+/*
 /datum/objective/hoard/heirloom
 	name = "steal heirloom"
 
 /datum/objective/hoard/heirloom/find_target()
 	set_target(pick(GLOB.family_heirlooms))
+*/
 
 GLOBAL_LIST_EMPTY(traitor_contraband)
 
