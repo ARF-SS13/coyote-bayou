@@ -219,7 +219,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/optimist,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
-		/datum/quirk/family_heirloom,
+		//datum/quirk/family_heirloom,
 		/datum/quirk/unstable,
 		/datum/quirk/empath,
 		)
