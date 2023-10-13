@@ -22,6 +22,8 @@ GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries whet
 		qdel(cc)
 	client_colours = null
 	ghostize()
+	QDEL_LIST(actions)
+	QDEL_LIST(mob_spell_list)
 
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
