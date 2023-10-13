@@ -1,5 +1,5 @@
 /obj/effect/turf_decal/siding
-	icon = 'modular_coyote/icons/turf/decals.dmi'
+	icon = 'modular_coyote/icons/turfs/decals.dmi'
 	icon_state = "siding_line"
 
 /obj/effect/turf_decal/siding/white
