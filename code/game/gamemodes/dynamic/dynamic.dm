@@ -367,9 +367,9 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 	initial_threat_level = threat_level
 	return TRUE
 
-var/peanutbutterjellytime = TRUE
 
 /datum/game_mode/dynamic/pre_setup()
+	var/peanutbutterjellytime = TRUE
 	for (var/rule in subtypesof(/datum/dynamic_ruleset))
 		var/datum/dynamic_ruleset/ruleset = new rule()
 		// Simple check if the ruleset should be added to the lists.
