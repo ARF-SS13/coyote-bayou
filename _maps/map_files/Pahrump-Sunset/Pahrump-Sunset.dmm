@@ -38550,6 +38550,16 @@
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
+"frA" = (
+/obj/machinery/door/window{
+	name = "Privacy Window"
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "twindowold"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "frC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -43577,6 +43587,17 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gzJ" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "twindowold";
+	opacity = 1
+	},
+/obj/machinery/door/window{
+	name = "Privacy Window"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "gzL" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
@@ -53202,14 +53223,16 @@
 	},
 /area/f13/wasteland/city)
 "iHM" = (
-/obj/structure/curtain{
-	color = "#c40e0e";
-	pixel_y = -33
+/obj/machinery/door/window{
+	name = "Privacy Window"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "twindowold";
+	opacity = 1
 	},
-/area/f13/wasteland/city/nash/starterroad)
+/turf/open/floor/wood_common,
+/area/f13/building)
 "iHN" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -68393,9 +68416,6 @@
 /area/f13/ruins)
 "mhp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/lock_construct,
-/obj/item/key,
-/obj/item/key,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "mhv" = (
@@ -86044,6 +86064,20 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"qhn" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/starterroad)
 "qhp" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -106188,10 +106222,14 @@
 	},
 /area/f13/ruins)
 "uLl" = (
-/obj/structure/window/reinforced,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "heart";
 	color = "#FF00FF"
+	},
+/obj/structure/window/reinforced,
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -127994,7 +128032,7 @@ bzq
 mnP
 mca
 pmM
-nex
+qhn
 bSK
 izs
 bmM
@@ -128253,7 +128291,7 @@ mca
 lSY
 rJd
 bSK
-fRR
+iHM
 mhp
 tQY
 sTh
@@ -128509,7 +128547,7 @@ qOY
 mca
 lca
 opz
-iHM
+bSK
 uLl
 afl
 tbx
@@ -129024,7 +129062,7 @@ bCb
 gpi
 lSY
 bSK
-fRR
+gzJ
 mhp
 bmM
 sTh
@@ -129280,7 +129318,7 @@ eod
 ffV
 uzr
 opz
-iHM
+bSK
 uLl
 afl
 tbx
@@ -129795,7 +129833,7 @@ rdC
 lSY
 rJd
 bSK
-fRR
+frA
 mhp
 bmM
 sTh
@@ -130051,7 +130089,7 @@ ozV
 rdC
 wJX
 rJd
-iHM
+bSK
 uLl
 afl
 tbx
