@@ -85,6 +85,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/uses_glasses_colour = 0
 
+	var/show_in_directory = TRUE
+	var/directory_tag = "Unset"
+	var/directory_erptag = "Unset"
+	var/directory_ad = "Hi"
+
 	//character preferences
 	var/real_name						//our character's name
 	var/be_random_name = 0				//whether we'll have a random name every round
