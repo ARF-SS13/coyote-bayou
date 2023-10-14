@@ -130,9 +130,9 @@
 		owner.bodyparts -= src
 		owner = null
 	if(current_gauze)
-		qdel(current_gauze)
+		QDEL_NULL(current_gauze)
 	if(current_suture)
-		qdel(current_suture)
+		QDEL_NULL(current_gauze)
 	if(LAZYLEN(tattoos))
 		QDEL_LIST(tattoos)
 	return ..()
