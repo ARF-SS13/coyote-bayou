@@ -780,6 +780,12 @@
 	damage = 40
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
+// Kelp's TG blaster projectiles, should almost all be projectiles and not hitscan
+
+/obj/item/projectile/beam/laser/tg
+	name = "blaster bolt"
+	damage = 30
+
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol

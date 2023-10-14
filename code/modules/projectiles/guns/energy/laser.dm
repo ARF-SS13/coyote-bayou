@@ -1042,7 +1042,22 @@
 
 // Personal note: Template, Carbine, Mini pistol, classic Rifle, HoS laser, Tac laser, Sniper cannon, self-charging nuclear pistol, hellgun, improvised laser, captain laser, X-Ray rifle (nuclear gun?)
 
-
+/obj/item/gun/energy/laser/tg
+	name = "TG Blaster Template"
+	desc = "You probably shouldn't be seeing this. Contact a coder!"
+	icon_state = "scraplaser"
+	item_state = "scraplaser"
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	ammo_x_offset = 1
+	shaded_charge = 1
+	can_remove = 0
+	can_charge = 1
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
