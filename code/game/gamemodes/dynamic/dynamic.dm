@@ -367,20 +367,23 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 	initial_threat_level = threat_level
 	return TRUE
 
+var/peanutbutterjellytime = TRUE
+
 /datum/game_mode/dynamic/pre_setup()
 	for (var/rule in subtypesof(/datum/dynamic_ruleset))
 		var/datum/dynamic_ruleset/ruleset = new rule()
 		// Simple check if the ruleset should be added to the lists.
-		if(ruleset.name == "")
-			continue
-		switch(ruleset.ruletype)
-			if("Roundstart")
-				roundstart_rules += ruleset
-			if ("Latejoin")
-				latejoin_rules += ruleset
-			if ("Midround")
-				if (ruleset.weight)
-					midround_rules += ruleset
+		if(peanutbutterjellytime == FALSE)
+			if(ruleset.name == "")
+				continue
+			switch(ruleset.ruletype)
+				if("Roundstart")
+					roundstart_rules += ruleset
+				if ("Latejoin")
+					latejoin_rules += ruleset
+				if ("Midround")
+					if (ruleset.weight)
+						midround_rules += ruleset
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(player.ready == PLAYER_READY_TO_PLAY && player.mind)
 			roundstart_pop_ready++
