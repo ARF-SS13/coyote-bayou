@@ -156,6 +156,9 @@
 	item_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_MASK
+	tool_behaviour = TOOL_SCREWDRIVER
+	toolspeed = 4
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
