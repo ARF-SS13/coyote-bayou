@@ -264,10 +264,36 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+// Haha johnathan you're fucking my sawed off shotgun
+// /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
+//	if(sawn_off)
+//		icon_state = "[initial(icon_state)]-sawn"
+//	else if(!magazine || !magazine.ammo_count(0))
+//		icon_state = "[initial(icon_state)]-e"
+//	else
+//		icon_state = "[initial(icon_state)]"
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
-	if(sawn_off)
-		icon_state = "[initial(icon_state)]-sawn"
-	else if(!magazine || !magazine.ammo_count(0))
+	if(!magazine || !magazine.ammo_count(0))
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/gun/ballistic/shotgun/hunting/sawn
+	name = "sawed-off hunting shotgun"
+	desc = "A traditional hunting shotgun with wood furniture and a two-plus-one-shell capacity. This one has probably been modified, in quotes, by someone with a name like Cletus."
+	icon_state = "pump-sawn"
+	item_state = "shotgun" // Is this how it figures out the in hand sprite to pair with player sprites? This doesn't match anything in guns_left/righthand.dmi...
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/shorty
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	
+// Makes the gun appear empty when it still has one in the chamber. No sir, I don't like it.
+/obj/item/gun/ballistic/shotgun/hunting/sawn/update_icon_state()
+	if(!magazine || !magazine.ammo_count(0))
 		icon_state = "[initial(icon_state)]-e"
 	else
 		icon_state = "[initial(icon_state)]"

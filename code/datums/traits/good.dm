@@ -1118,7 +1118,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	)
 	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You're on the no-fly list.'")
-	lose_text = "<span class='danger'>You feel like you're allowed to fly on planes again.</span>"
+	lose_text = span_danger("You feel like you're allowed to fly on planes again.")
 	locked = TRUE
 
 /datum/quirk/advanced_explosive_crafting/add()

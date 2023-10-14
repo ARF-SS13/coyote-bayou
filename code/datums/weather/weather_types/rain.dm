@@ -5,14 +5,14 @@
 
 	telegraph_duration = 15 SECONDS
 	telegraph_overlay = "rain_gathering"
-	telegraph_message = "<span class='notice'><font size=2>You hear a rainstorm gathering on the horizon.</font></span>"
+	telegraph_message = span_notice("<font size=2>You hear a rainstorm gathering on the horizon.</font>")
 	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
 //	weather_sound = 'sound/weather/rain/outdoors/rain-01.ogg' //credit: soundjay.com
 	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
 	end_duration = 5 SECONDS
-	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
+	end_message = span_notice("<font size=2>You start to hear the last of the rain as the sky begins to clear up.</font>")
 	end_overlay = "rain_gathering"
-	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
+	weather_message = span_notice("<i>You hear the crack of thunder as the rainstorm grows.</i>")
 	weather_overlay = "thunderstorm"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 25 MINUTES
@@ -41,7 +41,7 @@
 	weather_duration_upper = 18000
 
 /datum/weather/rain/weather_act(mob/living/L)
-	if(prob(80))
+	if(prob(99.9999))
 		return
 	if((L.real_name in mobs_washied_cd) && !COOLDOWN_FINISHED(src, mobs_washied_cd[L.real_name]))
 		return
@@ -93,17 +93,17 @@
 
 	telegraph_duration = 300
 	telegraph_overlay = "fog"
-	telegraph_message = "<span class='notice'><font size=2>You see the fog rolling in.</font></span>"
+	telegraph_message = span_notice("<font size=2>You see the fog rolling in.</font>")
 	telegraph_sound = 'sound/weather/fog.ogg' 
 	weather_sound = 'sound/weather/fog.ogg'
 
-	weather_message = "<span class='notice'><i>You can feel and see the moisture from the fog as it starts to roll in.</i></span>"
+	weather_message = span_notice("<i>You can feel and see the moisture from the fog as it starts to roll in.</i>")
 	weather_overlay = "fog"
 	weather_duration_lower = 2400
 	weather_duration_upper = 7200
 	end_sound = 'sound/weather/fog.ogg' 
 	end_duration = 250
-	end_message = "<span class='notice'><font size=2>The blanket of fog finally lifts up.</font></span>"
+	end_message = span_notice("<font size=2>The blanket of fog finally lifts up.</font>")
 	end_overlay = "fog"
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)

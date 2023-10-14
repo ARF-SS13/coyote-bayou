@@ -78,7 +78,7 @@
 		if(health >= maxHealth/2)
 			. += span_warning("[t_He] look[t_s] slightly dented.")
 		else
-			. += "<span class='warning'><b>[t_He] look[t_s] severely dented!</b></span>"
+			. += span_warning("<b>[t_He] look[t_s] severely dented!</b>")
 	. += "*---------*</span>"
 
 /mob/living/simple_animal/hostile/construct/attack_animal(mob/living/simple_animal/M)
@@ -90,7 +90,7 @@
 			adjustHealth(-5)
 			if(src != M)
 				Beam(M,icon_state="sendbeam",time=4)
-				M.visible_message("<span class='danger'>[M] repairs some of \the <b>[src]'s</b> dents.</span>", \
+				M.visible_message(span_danger("[M] repairs some of \the <b>[src]'s</b> dents."), \
 						   "<span class='cult'>You repair some of <b>[src]'s</b> dents, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 			else
 				M.visible_message(span_danger("[M] repairs some of [p_their()] own dents."), \

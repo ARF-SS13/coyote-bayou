@@ -24,7 +24,7 @@
 	. = ..()
 	if(isliving(target) && prob(5))
 		SEND_SIGNAL(target, COMSIG_VORE_EXPEL_ALL, TRUE, TRUE)
-		target.visible_message("<span class='danger'>[target] contracts strangely, spewing out contents on the floor!</span>", \
-				"<span class='userdanger'>You spew out everything inside you on the floor!</span>",
+		target.visible_message(span_danger("[target] contracts strangely, spewing out contents on the floor!"), \
+				span_userdanger("You spew out everything inside you on the floor!"),
 				pref_check = VOREPREF_VORE_MESSAGES)
 	return BULLET_ACT_HIT

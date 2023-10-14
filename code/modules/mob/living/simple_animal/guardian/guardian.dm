@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		to_chat(src, span_warning("Not a valid name, please try again."))
 		guardianrename()
 		return
-	to_chat(src, "<span class='notice'>Your new name <span class='name'>[new_name]</span> anchors itself in your mind.</span>")
+	to_chat(src, span_notice("Your new name <span class='name'>[new_name]</span> anchors itself in your mind."))
 	fully_replace_character_name(null, new_name)
 
 /mob/living/simple_animal/hostile/guardian/PhysicalLife() //Dies if the summoner dies
@@ -181,8 +181,8 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		if(summoner.stat == DEAD)
 			forceMove(summoner.loc)
 			to_chat(src, span_danger("Your summoner has died!"))
-			visible_message("<span class='danger'><B>\The [src] dies along with its user!</B></span>")
-			summoner.visible_message("<span class='danger'><B>[summoner]'s body is completely consumed by the strain of sustaining [src]!</B></span>")
+			visible_message(span_danger("<B>\The [src] dies along with its user!</B>"))
+			summoner.visible_message(span_danger("<B>[summoner]'s body is completely consumed by the strain of sustaining [src]!</B>"))
 			for(var/obj/item/W in summoner)
 				if(!summoner.dropItemToGround(W))
 					qdel(W)
@@ -191,7 +191,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 			qdel(src)
 	else
 		to_chat(src, span_danger("Your summoner has died!"))
-		visible_message("<span class='danger'><B>[src] dies along with its user!</B></span>")
+		visible_message(span_danger("<B>[src] dies along with its user!</B>"))
 		death(TRUE)
 		qdel(src)
 	snapback()
@@ -263,7 +263,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		summoner.adjustBruteLoss(amount)
 		if(amount > 0)
 			to_chat(summoner, "<span class='danger'><B>Your [name] is under attack! You take damage!</span></B>")
-			summoner.visible_message("<span class='danger'><B>Blood sprays from [summoner] as [src] takes damage!</B></span>")
+			summoner.visible_message(span_danger("<B>Blood sprays from [summoner] as [src] takes damage!</B>"))
 			if(summoner.stat == UNCONSCIOUS)
 				to_chat(summoner, "<span class='danger'><B>Your body can't take the strain of sustaining [src] in this condition, it begins to fall apart!</span></B>")
 				summoner.adjustCloneLoss(amount * 0.5) //dying hosts take 50% bonus damage as cloneloss

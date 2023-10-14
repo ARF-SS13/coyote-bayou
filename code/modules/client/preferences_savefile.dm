@@ -879,6 +879,18 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
+	//Character directory
+	S["show_in_directory"]		>> show_in_directory
+	S["directory_tag"]			>> directory_tag
+	S["directory_erptag"]			>> directory_erptag
+	S["directory_ad"]			>> directory_ad
+
+	//sanitize data
+	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
+	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+
 	//Sanitize
 
 	real_name	= reject_bad_name(real_name)
@@ -1387,6 +1399,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
+	//Character directory
+	WRITE_FILE(S["show_in_directory"], show_in_directory)
+	WRITE_FILE(S["directory_tag"], directory_tag)
+	WRITE_FILE(S["directory_erptag"], directory_erptag)
+	WRITE_FILE(S["directory_ad"], directory_ad)
+
 	cit_character_pref_save(S)
 
 	return 1
@@ -1406,5 +1424,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /client/verb/savefile_import(path as text)
 	var/savefile/S = new /savefile(path)
 	S.ImportText("/",file("[path].txt"))
+
+
+
 
 #endif

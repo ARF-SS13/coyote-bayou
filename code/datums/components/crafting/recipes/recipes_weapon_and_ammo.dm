@@ -1142,6 +1142,16 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/huntingshotgun/sawn
+	name = "Saw off Hunting Shotgun"
+	result = /obj/item/gun/ballistic/shotgun/hunting/sawn
+	reqs = list(/obj/item/gun/ballistic/shotgun/hunting = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
 	name = "Marksman Carbine"

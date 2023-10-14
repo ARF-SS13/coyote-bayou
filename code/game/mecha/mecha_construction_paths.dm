@@ -10,31 +10,31 @@
 	if(looky_helpy)
 		switch(steps[index]["key"])
 			if(TOOL_WRENCH)
-				examine_list += "<span class='notice'>The mech could be <b>wrenched</b> into place.</span>"
+				examine_list += span_notice("The mech could be <b>wrenched</b> into place.")
 			if(TOOL_SCREWDRIVER)
-				examine_list += "<span class='notice'>The mech could be <b>screwed</b> into place.</span>"
+				examine_list += span_notice("The mech could be <b>screwed</b> into place.")
 			if(TOOL_WIRECUTTER)
-				examine_list += "<span class='notice'>The mech wires could be <b>trimmed</b> into place.</span>"
+				examine_list += span_notice("The mech wires could be <b>trimmed</b> into place.")
 			if(/obj/item/stack/cable_coil)
-				examine_list += "<span class='notice'>The mech could use some <b>wiring</b>.</span>"
+				examine_list += span_notice("The mech could use some <b>wiring</b>.")
 			if(/obj/item/circuitboard)
-				examine_list += "<span class='notice'>The mech could use a type of<b>circuitboard</b>.</span>"
+				examine_list += span_notice("The mech could use a type of<b>circuitboard</b>.")
 			if(/obj/item/stock_parts/scanning_module)
-				examine_list += "<span class='notice'>The mech could use a <b>scanning stock part</b>.</span>"
+				examine_list += span_notice("The mech could use a <b>scanning stock part</b>.")
 			if(/obj/item/stock_parts/capacitor)
-				examine_list += "<span class='notice'>The mech could use a <b>power based stock part</b>.</span>"
+				examine_list += span_notice("The mech could use a <b>power based stock part</b>.")
 			if(/obj/item/stock_parts/cell)
-				examine_list += "<span class='notice'>The mech could use a <b>power source</b>.</span>"
+				examine_list += span_notice("The mech could use a <b>power source</b>.")
 			if(/obj/item/stack/sheet/metal)
-				examine_list += "<span class='notice'>The mech could use some <b>sheets of metal</b>.</span>"
+				examine_list += span_notice("The mech could use some <b>sheets of metal</b>.")
 			if(/obj/item/stack/sheet/plasteel)
-				examine_list += "<span class='notice'>The mech could use some <b>sheets of strong steel</b>.</span>"
+				examine_list += span_notice("The mech could use some <b>sheets of strong steel</b>.")
 			if(/obj/item/mecha_parts/part)
-				examine_list += "<span class='notice'>The mech could use a mech <b>part</b>.</span>"
+				examine_list += span_notice("The mech could use a mech <b>part</b>.")
 			if(/obj/item/stack/ore/bluespace_crystal)
-				examine_list += "<span class='notice'>The mech could use a <b>crystal</b> of sorts.</span>"
+				examine_list += span_notice("The mech could use a <b>crystal</b> of sorts.")
 			if(/obj/item/assembly/signaler/anomaly)
-				examine_list += "<span class='notice'>The mech could use a <b>anomaly</b> of sorts.</span>"
+				examine_list += span_notice("The mech could use a <b>anomaly</b> of sorts.")
 
 /datum/component/construction/mecha/spawn_result()
 	if(!result)

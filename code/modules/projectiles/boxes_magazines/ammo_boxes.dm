@@ -119,6 +119,7 @@
 
 /obj/item/ammo_box/m22/rubber
 	name = "ammo box (.22lr rubber)"
+	icon_state = "22rubber"
 	desc = "A box of .22 rubber rounds. For when you want to be useless."
 	ammo_type = /obj/item/ammo_casing/a22/rubber
 
@@ -127,6 +128,12 @@
 	icon_state = "22shockbox"
 	desc = "A box of .22 electroshock rounds."
 	ammo_type = /obj/item/ammo_casing/a22/shock
+
+/obj/item/ammo_box/m22/ratshot
+	name = "ammo box (.22lr ratshot)"
+	icon_state = "22ratshot"
+	desc = "A box of .22 ratshot rounds."
+	ammo_type = /obj/item/ammo_casing/a22/ratshot
 
 //9mm and .38
 /obj/item/ammo_box/c9mm

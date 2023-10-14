@@ -8,7 +8,7 @@
 	telegraph_sound = 'modular_sunset/sound/weather/radstorm2.ogg'
 
 
-	weather_message = "<span class='userdanger'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
+	weather_message = span_userdanger("<i>You feel waves of heat wash over you! Find shelter!</i>")
 	weather_overlay = "ash_storm"
 	weather_duration_lower = 1500
 	weather_duration_upper = 3000

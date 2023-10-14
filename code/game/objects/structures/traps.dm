@@ -101,7 +101,7 @@
 	icon_state = "trap-fire"
 
 /obj/structure/trap/fire/trap_effect(mob/living/L)
-	to_chat(L, "<span class='danger'><B>Spontaneous combustion!</B></span>")
+	to_chat(L, span_danger("<B>Spontaneous combustion!</B>"))
 	L.DefaultCombatKnockdown(20)
 
 /obj/structure/trap/fire/flare()
@@ -115,7 +115,7 @@
 	icon_state = "trap-frost"
 
 /obj/structure/trap/chill/trap_effect(mob/living/L)
-	to_chat(L, "<span class='danger'><B>You're frozen solid!</B></span>")
+	to_chat(L, span_danger("<B>You're frozen solid!</B>"))
 	L.DefaultCombatKnockdown(20)
 	L.adjust_bodytemperature(-300)
 	L.apply_status_effect(/datum/status_effect/freon)
@@ -128,7 +128,7 @@
 
 
 /obj/structure/trap/damage/trap_effect(mob/living/L)
-	to_chat(L, "<span class='danger'><B>The ground quakes beneath your feet!</B></span>")
+	to_chat(L, span_danger("<B>The ground quakes beneath your feet!</B>"))
 	L.DefaultCombatKnockdown(100)
 	L.adjustBruteLoss(35)
 
@@ -155,7 +155,7 @@
 	icon_state = "trap-cult"
 
 /obj/structure/trap/cult/trap_effect(mob/living/L)
-	to_chat(L, "<span class='danger'><B>With a crack, the hostile constructs come out of hiding, stunning you!</B></span>")
+	to_chat(L, span_danger("<B>With a crack, the hostile constructs come out of hiding, stunning you!</B>"))
 	L.electrocute_act(10, src, flags = SHOCK_NOGLOVES) // electrocute act does a message.
 	L.DefaultCombatKnockdown(20)
 	new /mob/living/simple_animal/hostile/construct/proteon/hostile(loc)
