@@ -15584,6 +15584,12 @@
 /obj/structure/curtain{
 	color = "#c40e0e"
 	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = 2
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -80422,6 +80428,21 @@
 	name = "the watering hole"
 	},
 /area/f13/caves)
+"oPr" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3
+	},
+/obj/structure/curtain{
+	color = "#c40e0e"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/abandoned)
 "oPA" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -102573,6 +102594,17 @@
 	icon_state = "horizontaltopbordertop1"
 	},
 /area/f13/wasteland/city/nash/suburbs)
+"tQY" = (
+/obj/effect/decal/marking,
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#555555"
+	},
+/area/f13/building)
 "tQZ" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -122270,7 +122302,7 @@ gfx
 niE
 dVF
 pKy
-bbB
+oPr
 bkm
 rul
 bkm
@@ -128223,7 +128255,7 @@ rJd
 bSK
 fRR
 mhp
-bmM
+tQY
 sTh
 qSm
 kJH

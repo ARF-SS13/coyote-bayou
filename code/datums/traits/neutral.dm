@@ -268,8 +268,8 @@
 		/datum/quirk/butter_ass,
 	)
 	mob_trait = TRAIT_STEEL_ASS
-	gain_text = "<span class='notice'>Your ass rivals those of golems.</span>"
-	lose_text = "<span class='notice'>Your butt feels more squishy and slappable.</span>"
+	gain_text = span_notice("Your ass rivals those of golems.")
+	lose_text = span_notice("Your butt feels more squishy and slappable.")
 
 /datum/quirk/butter_ass
 	name = "Buns of Thunder"
@@ -281,8 +281,8 @@
 		/datum/quirk/steel_ass,
 	)
 	mob_trait = TRAIT_JIGGLY_ASS
-	gain_text = "<span class='notice'>The ass is fat.</span>"
-	lose_text = "<span class='notice'>The ass was fat.</span>"
+	gain_text = span_notice("The ass is fat.")
+	lose_text = span_notice("The ass was fat.")
 
 /datum/quirk/headpat_hater
 	name = "Distant"
@@ -294,8 +294,8 @@
 	conflicts = list(
 		/datum/quirk/headpat_slut,
 	)
-	gain_text = "<span class='notice'>Others' touches begin to make your blood boil...</span>"
-	lose_text = "<span class='notice'>Having your head pet doesn't sound so bad right about now...</span>"
+	gain_text = span_notice("Others' touches begin to make your blood boil...")
+	lose_text = span_notice("Having your head pet doesn't sound so bad right about now...")
 	medical_record_text = "Patient cares little with or dislikes being touched."
 
 /datum/quirk/headpat_slut
@@ -308,8 +308,8 @@
 	conflicts = list(
 		/datum/quirk/headpat_hater,
 	)
-	gain_text = "<span class='notice'>You crave headpats immensely!</span>"
-	lose_text = "<span class='notice'>Your headpats addiction wanes.</span>"
+	gain_text = span_notice("You crave headpats immensely!")
+	lose_text = span_notice("Your headpats addiction wanes.")
 	medical_record_text = "Patient seems overly affectionate."
 
 /datum/quirk/overweight
@@ -324,7 +324,7 @@
 		/datum/quirk/light_step,
 		/datum/quirk/quick_step,
 	)
-	gain_text = "<span class='notice'>You feel blubbery!</span>"
+	gain_text = span_notice("You feel blubbery!")
 	//no lose_text cause why would there be?
 
 /datum/quirk/overweight/on_spawn()
@@ -341,8 +341,8 @@
 	conflicts = list(
 		/datum/quirk/horrifying_tastes,
 		)
-	gain_text = "<span class='notice'>You feel repulsion at the idea of eating meat.</span>"
-	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.  Might could even go for a cheeseburger.</span>"
+	gain_text = span_notice("You feel repulsion at the idea of eating meat.")
+	lose_text = span_notice("You feel like eating meat isn't that bad.  Might could even go for a cheeseburger.")
 	medical_record_text = "Patient reports a vegetarian diet."
 
 /datum/quirk/vegetarian/add()
@@ -368,8 +368,8 @@
 	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which personality is speaking."
 	conflicts = list()
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = "<span class='notice'>You hear two other voices inside of your head(s).</span>"
-	lose_text = "<span class='danger'>All of your minds become singular.</span>"
+	gain_text = span_notice("You hear two other voices inside of your head(s).")
+	lose_text = span_danger("All of your minds become singular.")
 	medical_record_text = "Patient has multiple heads and personalities affixed to their body."
 
 /datum/quirk/hydra/on_spawn()
@@ -398,16 +398,16 @@
 /datum/action/innate/hydrareset/Activate()
 	var/mob/living/carbon/human/hydra = owner
 	hydra.real_name = hydra.name_archive
-	hydra.visible_message("<span class='notice'>[hydra.name] pushes all three heads forwards; they seem to be talking as a collective.</span>", \
-							"<span class='notice'>You are now talking as [hydra.name_archive]!</span>", ignored_mobs=owner)
+	hydra.visible_message(span_notice("[hydra.name] pushes all three heads forwards; they seem to be talking as a collective."), \
+							span_notice("You are now talking as [hydra.name_archive]!"), ignored_mobs=owner)
 
 /datum/action/innate/hydra/Activate() //I hate this but its needed
 	var/mob/living/carbon/human/hydra = owner
 	var/list/names = splittext(hydra.name_archive,"-")
 	var/selhead = input("Who would you like to speak as?","Heads:") in names
 	hydra.real_name = selhead
-	hydra.visible_message("<span class='notice'>[hydra.name] pulls the rest of their heads back; and puts [selhead]'s forward.</span>", \
-							"<span class='notice'>You are now talking as [selhead]!</span>", ignored_mobs=owner)
+	hydra.visible_message(span_notice("[hydra.name] pulls the rest of their heads back; and puts [selhead]'s forward."), \
+							span_notice("You are now talking as [selhead]!"), ignored_mobs=owner)
 
 /datum/quirk/sheltered
 	name = "Sheltered"
@@ -417,8 +417,8 @@
 	mechanics = "You flat out don't know english, the most common langauge of the swampland.  Be wary, this will limit your roleplay potential to some degree if not used properly."
 	conflicts = list()
 	mob_trait = TRAIT_SHELTERED
-	gain_text = "<span class='danger'>The words of others begin to blur together...</span>"
-	lose_text = "<span class='notice'>You start putting together what people are saying!</span>"
+	gain_text = span_danger("The words of others begin to blur together...")
+	lose_text = span_notice("You start putting together what people are saying!")
 	medical_record_text = "Patient has shown an inability to use common speaking languages."
 
 /datum/quirk/sheltered/on_spawn()

@@ -84,7 +84,7 @@
 		controller.linked = WEAKREF(M.buffer)
 		id = null
 		controller.id = null
-		to_chat(user, "<span class='warning'>You've linked [src] to [M.buffer].</span>")
+		to_chat(user, span_warning("You've linked [src] to [M.buffer]."))
 
 /obj/item/assembly/control/ticket_machine
 	name = "ticket machine controller"

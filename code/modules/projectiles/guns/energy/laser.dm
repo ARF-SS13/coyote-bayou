@@ -624,9 +624,10 @@
 	icon_state = "wattz2ks"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2ks/hitscan)
-	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_scope = FALSE
 	zoom_factor = 1
+	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
 	selfchargerate = 15

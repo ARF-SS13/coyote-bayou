@@ -11,9 +11,9 @@
 	disliked_food = GROSS | RAW | LONGPORK
 	liked_food = JUNKFOOD | FRIED
 
-	tail_type = "tail_human"
-	wagging_type = "waggingtail_human"
-	species_type = "human"
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	species_type = "furry"
 
 /datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)

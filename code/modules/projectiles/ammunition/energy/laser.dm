@@ -360,7 +360,7 @@ Avoid decimals when possible when it comes to e_cost!
 
 /obj/item/ammo_casing/energy/wattz2ks/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2ks/hitscan
-	e_cost = 1600 // 25 shots
+	e_cost = 1200 // 25 shots
 	damage_threshold_penetration = 7 //You're a sniper laser, act like it.
 
 //musket

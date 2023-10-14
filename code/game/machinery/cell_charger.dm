@@ -34,7 +34,7 @@
 	if(charging)
 		. += "Current charge: [round(charging.percent(), 1)]%."
 	. += span_notice("The status display reads:")
-	. += "<span class='notice'>- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.</span>"
+	. += span_notice("- Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.")
 
 /obj/machinery/cell_charger/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell) && !panel_open)

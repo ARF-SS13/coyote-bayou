@@ -140,7 +140,7 @@
 	// Found one!
 	if(vamps.len)
 		scan_target = pickweight(vamps) //Point at a 'random' vamp, biasing heavily towards closer ones.
-		to_chat(owner, "<span class='warning'>You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b></span>")
+		to_chat(owner, span_warning("You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b>"))
 	// Will yield a "?"
 	else
 		to_chat(owner, span_notice("There are no monsters nearby."))
@@ -227,7 +227,7 @@
 	// Found one!
 	if(best_vamp)
 		var/distString = best_dist <= HUNTER_SCAN_MAX_DISTANCE / 2 ? "<b>somewhere closeby!</b>" : "somewhere in the distance."
-		//to_chat(owner, "<span class='warning'>You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b></span>")
+		//to_chat(owner, span_warning("You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b>"))
 		to_chat(owner, span_warning("You detect signs of monsters [distString]"))
 
 	// Will yield a "?"

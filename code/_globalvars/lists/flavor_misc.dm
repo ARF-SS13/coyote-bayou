@@ -307,10 +307,39 @@ GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))
 
 //body ids that have non-gendered bodyparts
-GLOBAL_LIST_INIT(nongendered_limb_types, list("fly", "zombie" ,"synth", "shadow", "cultgolem", "agent", "plasmaman", "clockgolem", "clothgolem", "smutant"))
+GLOBAL_LIST_INIT(nongendered_limb_types, list(
+	"fly",
+	"zombie"
+	,"synth",
+	"shadow",
+	"cultgolem",
+	"agent",
+	"plasmaman",
+	"clockgolem",
+	"clothgolem",
+	"smutant"
+	))
 
 //list of eye types, corresponding to a respective left and right icon state for the set of eyes
-GLOBAL_LIST_INIT(eye_types, list("normal", "anime", "wide", "derpy", "insect", "moth", "double", "double2", "double3", "cyclops", "shadekin"))
+GLOBAL_LIST_INIT(eye_types, list(
+	"normal",
+	"anime",
+	"wide",
+	"derpy",
+	"insect",
+	"moth",
+	"double",
+	"double2",
+	"double3",
+	"double4",
+	"cyclops",
+	"shadekin",
+	"heterochromic-eyeshadow",
+	"heterochromic-eyebrow",
+	"heterochromic-raccoon",
+	"heterochromic-leftsplotch",
+	"heterochromic-rightsplotch"
+	))
 
 //list linking bodypart bitflags to their actual names
 GLOBAL_LIST_INIT(bodypart_names, list(num2text(HEAD) = "Head", num2text(CHEST) = "Chest", num2text(LEG_LEFT) = "Left Leg", num2text(LEG_RIGHT) = "Right Leg", num2text(ARM_LEFT) = "Left Arm", num2text(ARM_RIGHT) = "Right Arm"))

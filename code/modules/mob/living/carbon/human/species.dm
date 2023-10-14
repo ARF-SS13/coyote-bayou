@@ -1631,8 +1631,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 			user.adjustStaminaLoss(50)
 			user.visible_message(\
-				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
-				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
+				span_danger("\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!"),\
+				span_danger("You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!"),\
 				"You hear a slap.")
 			return FALSE
 		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
