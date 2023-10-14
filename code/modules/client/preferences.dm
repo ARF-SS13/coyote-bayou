@@ -602,7 +602,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
 					var/mob/living/M = new creature_type(user)
 					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
-					qdel(M)
+					QDEL_NULL(M)
 			if(creature_image)
 				dat += "[icon2html(creature_image, user)]<br>"
 
