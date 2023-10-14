@@ -167,7 +167,7 @@
 /turf/open/floor/proc/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	if(T.turf_type == type)
 		return
-	if(user.a_intent = I_HURT)
+	if(user.a_intent = INTENT_HARM)
 		return
 	var/obj/item/crowbar/CB = user.is_holding_item_of_type(/obj/item/crowbar)
 	if(!CB)
