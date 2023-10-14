@@ -52,7 +52,7 @@ export const Autolathe = (props, context) => {
     material.mineral_amount > 0);
   return (
     <Window
-      width={600}
+      width={800}
       height={600}>
       <Window.Content scrollable>
         <Section title="Total Materials" style={BGGradientTopDownStyle}>
