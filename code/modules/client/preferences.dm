@@ -2239,7 +2239,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				text += ". The ban is for [duration] minutes and expires on [expiration_time] (server time)"
 			text += ".</span>"
 			to_chat(user, text)
-		qdel(query_get_jobban)
+		QDEL_NULL(query_get_jobban)
 		return
 
 	if(href_list["preference"] == "quirk_migrate")
@@ -2492,7 +2492,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						var/creature_type = GLOB.creature_selectable["[result]"]
 						var/mob/living/M = new creature_type(user)
 						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
-						qdel(M)
+						QDEL_NULL(M)
 
 				if("creature_flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(creature_flavor_text), MAX_FLAVOR_LEN, TRUE)
