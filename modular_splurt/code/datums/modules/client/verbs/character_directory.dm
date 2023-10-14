@@ -82,6 +82,8 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 		else if(isanimal(M))
 			var/mob/living/simple_animal/SA = M
 			species = initial(SA.name)
+		if(!species)
+			species = "Resident"
 		ooc_notes = C.prefs.features["ooc_notes"]
 		flavor_text = C.prefs.features["flavor_text"]
 
