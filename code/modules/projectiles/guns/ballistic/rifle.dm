@@ -120,6 +120,14 @@
 	cock_delay = GUN_COCK_RIFLE_BASE // Either this does nothing or it only affects bolt workers click to cock. 
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_long" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 29
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -144,6 +152,14 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
 	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_short" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 21 // FIRST TRY BAYEEEEEEE
+	suppressor_y_offset = 23
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)

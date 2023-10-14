@@ -20,6 +20,7 @@
 	hand_bodyparts = null		//Just references out bodyparts, don't need to delete twice.
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
+	last_mind = null
 	GLOB.carbon_list -= src
 	moveToNullspace() // suckit
 	return QDEL_HINT_LETMELIVE

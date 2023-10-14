@@ -198,6 +198,13 @@
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/ducky
+	name = "rubber ducky shoes"
+	path = /obj/item/clothing/shoes/ducky
+
+/datum/gear/shoes/slippers
+	name = "bunny slippers"
+	path = /obj/item/clothing/shoes/slippers
 
 /// Factions Shoes or well NCR boots.
 

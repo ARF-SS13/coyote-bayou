@@ -262,7 +262,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 /datum/gear/head/unmchelmet
-	name = "Standard UNMC Helmet"	
+	name = "Standard UNMC Helmet"
 	path = /obj/item/clothing/head/helmet/unmchelmet
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
@@ -710,19 +710,19 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/coyote/samuraiguard2
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
-	
+
 /datum/gear/head/samuraiguard3
 	name = "Simple Samurai Helmet - Brown"
 	path = /obj/item/clothing/head/coyote/samuraiguard3
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
-	
+
 /datum/gear/head/samuraiguard4
 	name = "Simple Samurai Helmet - Black"
 	path = /obj/item/clothing/head/coyote/samuraiguard4
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
-	
+
 /datum/gear/head/samuraiguard5
 	name = "Simple Samurai Helmet - White"
 	path = /obj/item/clothing/head/coyote/samuraiguard5
@@ -831,7 +831,7 @@ datum/gear/head/steelpot_bandolier
 	path = /obj/item/clothing/head/helmet/f13/ninja
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
-	
+
 /datum/gear/head/armoredimperialrussia
 	name = "Armored Imperial Russian cap "
 	path = /obj/item/clothing/head/kevlarhelmet/ww1russiancap
@@ -1299,5 +1299,49 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/aurora/tiara
 	name = "Tiara"
 	path = /obj/item/clothing/head/aurora/sayyidah_tiara
-	
+
+/datum/gear/head/witch/good
+	name = "good witch hat"
+	path = /obj/item/clothing/head/good_witch
+
+/datum/gear/head/witch/dark
+	name = "dark witch hat"
+	path = /obj/item/clothing/head/dark_witch
+
+/datum/gear/head/witch/classic
+	name = "classic witch hat"
+	path = /obj/item/clothing/head/classic_witch
+
+/datum/gear/head/witch/healer
+	name = "healer witch hat"
+	path = /obj/item/clothing/head/healer_witch
+
+/datum/gear/head/witch/cutie
+	name = "cutie witch hat"
+	path = /obj/item/clothing/head/cutie_witch
+
+/datum/gear/head/witch/shy
+	name = "shy witch hat"
+	path = /obj/item/clothing/head/shy_witch
+
+/datum/gear/head/witch/sexy
+	name = "sexy witch hat"
+	path = /obj/item/clothing/head/sexy_witch
+
+/datum/gear/head/witch/bunny
+	name = "bunny witch hat"
+	path = /obj/item/clothing/head/bunny_witch
+
+/datum/gear/head/witch/potions
+	name = "potions witch hat"
+	path = /obj/item/clothing/head/potions_witch
+
+/datum/gear/head/witch/syndie
+	name = "syndie witch hat"
+	path = /obj/item/clothing/head/syndie_witch
+
+/datum/gear/head/witch/nt
+	name = "blue witch hat"
+	path = /obj/item/clothing/head/nt_witch
+
 
