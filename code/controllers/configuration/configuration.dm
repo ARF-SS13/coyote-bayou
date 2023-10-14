@@ -41,7 +41,6 @@
 		CRASH("/datum/controller/configuration/Load() called more than once!")
 	InitEntries()
 	LoadModes()
-	storyteller_cache = typecacheof(/datum/dynamic_storyteller, TRUE)
 	if(fexists("[directory]/config.txt") && LoadEntries("config.txt") <= 1)
 		var/list/legacy_configs = list("game_options.txt", "dbconfig.txt", "comms.txt")
 		for(var/I in legacy_configs)
@@ -389,74 +388,6 @@ Example config:
 		if(ct && ct == mode_name)
 			return new T
 	return new /datum/game_mode/extended()
-
-/// For dynamic.
-/datum/controller/configuration/proc/pick_storyteller(storyteller_name)
-	for(var/T in storyteller_cache)
-		var/datum/dynamic_storyteller/S = T
-		var/name = initial(S.name)
-		if(name && name == storyteller_name)
-			return T
-	return /datum/dynamic_storyteller/classic
-
-/// Same with this
-/datum/controller/configuration/proc/get_runnable_storytellers()
-	var/list/datum/dynamic_storyteller/runnable_storytellers = new
-	var/list/probabilities = Get(/datum/config_entry/keyed_list/storyteller_weight)
-	var/list/repeated_mode_adjust = Get(/datum/config_entry/number_list/repeated_mode_adjust)
-	var/list/min_player_counts = Get(/datum/config_entry/keyed_list/storyteller_min_players)
-	for(var/T in storyteller_cache)
-		var/datum/dynamic_storyteller/S = T
-		var/config_tag = initial(S.config_tag)
-		var/probability = (config_tag in probabilities) ? probabilities[config_tag] : initial(S.weight)
-		var/min_players = (config_tag in min_player_counts) ? min_player_counts[config_tag] : initial(S.min_players)
-		if(probability <= 0)
-			continue
-		if(length(GLOB.player_list) < min_players)
-			continue
-		if(SSpersistence.saved_storytellers.len == repeated_mode_adjust.len)
-			var/name = initial(S.name)
-			var/recent_round = min(SSpersistence.saved_storytellers.Find(name),3)
-			var/adjustment = 0
-			while(recent_round)
-				adjustment += repeated_mode_adjust[recent_round]
-				recent_round = SSpersistence.saved_modes.Find(name,recent_round+1,0)
-			probability *= ((100-adjustment)/100)
-		runnable_storytellers[S] = probability
-	return runnable_storytellers
-
-/datum/controller/configuration/proc/get_runnable_modes()
-	var/list/datum/game_mode/runnable_modes = new
-	var/list/probabilities = Get(/datum/config_entry/keyed_list/probability)
-	var/list/min_pop = Get(/datum/config_entry/keyed_list/min_pop)
-	var/list/max_pop = Get(/datum/config_entry/keyed_list/max_pop)
-	var/list/repeated_mode_adjust = Get(/datum/config_entry/number_list/repeated_mode_adjust)
-	for(var/T in gamemode_cache)
-		var/datum/game_mode/M = new T()
-		if(!(M.config_tag in modes))
-			qdel(M)
-			continue
-		if(probabilities[M.config_tag]<=0)
-			qdel(M)
-			continue
-		if(CONFIG_GET(flag/modetier_voting) && !(M.config_tag in SSvote.stored_modetier_results))
-			qdel(M)
-			continue
-		if(min_pop[M.config_tag])
-			M.required_players = min_pop[M.config_tag]
-		if(max_pop[M.config_tag])
-			M.maximum_players = max_pop[M.config_tag]
-		if(M.can_start())
-			var/final_weight = probabilities[M.config_tag]
-			if(SSpersistence.saved_modes.len == 3 && repeated_mode_adjust.len == 3)
-				var/recent_round = min(SSpersistence.saved_modes.Find(M.config_tag),3)
-				var/adjustment = 0
-				while(recent_round)
-					adjustment += repeated_mode_adjust[recent_round]
-					recent_round = SSpersistence.saved_modes.Find(M.config_tag,recent_round+1,0)
-				final_weight *= ((100-adjustment)/100)
-			runnable_modes[M] = final_weight
-	return runnable_modes
 
 /datum/controller/configuration/proc/get_runnable_midround_modes(crew)
 	var/list/datum/game_mode/runnable_modes = new

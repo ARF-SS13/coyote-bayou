@@ -484,6 +484,8 @@ GLOBAL_LIST_EMPTY(species_list)
 	if(!HAS_TRAIT(L, TRAIT_PASSTABLE))
 		L.pass_flags &= ~PASSTABLE
 
+#define GET_CLIENT(mob) (##mob.client || ##mob.mock_client)
+
 /mob/proc/get_preferences()
 	if (client && client.prefs)
 		return client.prefs
