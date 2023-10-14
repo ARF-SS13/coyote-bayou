@@ -1082,7 +1082,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 	for(var/index in char_render_holders)
 		var/atom/movable/screen/S = char_render_holders[index]
 		screen -= S
-		qdel(S)
+		QDEL_NULL(S)
 	char_render_holders = null
 
 /client/proc/can_have_part(part_name)
