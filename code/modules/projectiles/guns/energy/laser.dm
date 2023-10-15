@@ -1025,6 +1025,27 @@
 	ammo_pack.attach_gun(user)
 
 
+/obj/item/gun/energy/laser/xcomufolaser
+	name = "\improper weathered strange laser rifle"
+	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
+	icon = 'modular_coyote/icons/objects/xcomlaser.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/xcomlaserLeft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/xcomlaserRight.dmi'
+	icon_state = "xcom_laser"
+	item_state = "xcom_laser"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/xcomufolaser)
+	cell_type = /obj/item/stock_parts/cell/ammo/xcomlaser
+	fire_delay = 1
+	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+		/datum/firemode/burst/three/fast
+	)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
+
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/lasertest)

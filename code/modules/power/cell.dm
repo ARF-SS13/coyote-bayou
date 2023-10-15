@@ -619,3 +619,12 @@
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons. This one has seen too much use and can't be recharged."
 	cancharge = 0
 	color = "#993300"
+
+/obj/item/stock_parts/cell/ammo/xcomlaser // Recharging, but only has 7 shots
+	name = "xcom infinite ammo"
+	desc = "How do you have this? It is meant to be built into the gun."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 7
+	chargerate = 1
+	self_recharge = 1
