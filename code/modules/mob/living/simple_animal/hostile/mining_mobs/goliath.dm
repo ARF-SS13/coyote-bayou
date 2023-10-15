@@ -142,8 +142,9 @@
 		if(prob(10))
 			new /obj/effect/temp_visual/goliath_tentacle(T, src)
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
-	fromtendril = TRUE
+//removed cuz they hard del like piss
+//mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+//	fromtendril = TRUE
 
 //tentacles
 /obj/effect/temp_visual/goliath_tentacle
