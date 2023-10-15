@@ -553,6 +553,7 @@
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
+	is_monophobia_pet = TRUE
 	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
 	speak_emote = list("clucks","croons")
 	emote_hear = list("clucks.")
@@ -689,6 +690,7 @@
 	icon_living = "brahmin"
 	icon_dead = "brahmin_dead"
 	icon_gib = "brahmin_gib"
+	is_monophobia_pet = TRUE
 	speak = list("moo?","moo","MOOOOOO")
 	speak_emote = list("moos","moos hauntingly")
 	emote_hear = list("brays.")
