@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/specialization(datum/mind/new_owner)
 	return src
 
- ///Called by the transfer_to() mind proc after the mind (mind.current and new_character.mind) has moved but before the player (key and client) is transfered.
+///Called by the transfer_to() mind proc after the mind (mind.current and new_character.mind) has moved but before the player (key and client) is transfered.
 /datum/antagonist/proc/on_body_transfer(mob/living/old_body, mob/living/new_body)
 	SHOULD_CALL_PARENT(TRUE)
 	remove_innate_effects(old_body)
@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/create_team(datum/team/team)
 	return
 
- ///Called by the add_antag_datum() mind proc after the instanced datum is added to the mind's antag_datums list.
+///Called by the add_antag_datum() mind proc after the instanced datum is added to the mind's antag_datums list.
 /datum/antagonist/proc/on_gain()
 	SHOULD_CALL_PARENT(TRUE)
 	set waitfor = FALSE
