@@ -69,7 +69,7 @@
 /obj/item/organ/heart/gland/proc/clear_mind_control()
 	if(!ownerCheck() || !active_mind_control)
 		return FALSE
-	to_chat(owner, "<span class='userdanger'>You feel the compulsion fade, and you <i>completely forget</i> about your previous orders.</span>")
+	to_chat(owner, span_userdanger("You feel the compulsion fade, and you <i>completely forget</i> about your previous orders."))
 	owner.clear_alert("mind_control")
 	active_mind_control = FALSE
 	return TRUE

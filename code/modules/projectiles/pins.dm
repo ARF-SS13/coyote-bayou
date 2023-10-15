@@ -212,11 +212,11 @@
 	. = ..()
 	var/lethal = only_lethals ? "only lethal " : ""
 	if(min_sec_level != max_sec_level)
-		. += "<span class='notice'>It's currently set to disallow [lethal]operation when the security level isn't between <b>[NUM2SECLEVEL(min_sec_level)]</b> and <b>[NUM2SECLEVEL(max_sec_level)]</b>.</span>"
+		. += span_notice("It's currently set to disallow [lethal]operation when the security level isn't between <b>[NUM2SECLEVEL(min_sec_level)]</b> and <b>[NUM2SECLEVEL(max_sec_level)]</b>.")
 	else
-		. += "<span class='notice'>It's currently set to disallow [lethal]operation when the security level isn't <b>[NUM2SECLEVEL(min_sec_level)]</b>.</span>"
+		. += span_notice("It's currently set to disallow [lethal]operation when the security level isn't <b>[NUM2SECLEVEL(min_sec_level)]</b>.")
 	if(can_toggle)
-		. += "<span class='notice'>You can use a <b>multitool</b> to modify its settings.</span>"
+		. += span_notice("You can use a <b>multitool</b> to modify its settings.")
 
 /obj/item/firing_pin/security_level/multitool_act(mob/living/user, obj/item/I)
 	. = TRUE

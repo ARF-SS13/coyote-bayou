@@ -3,6 +3,7 @@
 #define AUTOLATHE_SEARCH_MENU     3
 #define AUTOLATHE_STOP_INSERTING "KILL"
 #define AUTOLATHE_SKIP_INSERTING FALSE
+#define AUTOLATHE_INSERT_CONTAINER_TOO "YES"
 #define AUTOLATHE_INSERT_OK TRUE
 
 /obj/machinery/autolathe
@@ -62,50 +63,215 @@
 	var/base_print_speed = 10
 
 /obj/machinery/autolathe/Initialize()
-	var/list/mats = allowed_materials
-	if(!mats)
-		mats = SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID]
-	AddComponent(/datum/component/material_container, mats, _show_on_examine=TRUE, _after_insert=CALLBACK(src, .proc/AfterMaterialInsert))
 	. = ..()
 	wires = new /datum/wires/autolathe(src)
 	stored_research = new stored_research
 	matching_designs = list()
 
+/obj/machinery/autolathe/ComponentInitialize()
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
 	return ..()
 
-/obj/machinery/autolathe/ui_interact(mob/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		if(tooadvanced == TRUE)
-			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE)) //can be done to make better autolathes, L
-				to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
-				return FALSE
-			else
-				. = ..()
-		else
-			. = ..()
-
+/obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
 	if(!is_operational())
 		return
 
 	if(shocked && !(stat & NOPOWER))
 		shock(user,50)
 
-	var/dat
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Autolathe", capitalize(src.name))
+		ui.open()
 
-	switch(screen)
-		if(AUTOLATHE_MAIN_MENU)
-			dat = main_win(user)
-		if(AUTOLATHE_CATEGORY_MENU)
-			dat = category_win(user,selected_category)
-		if(AUTOLATHE_SEARCH_MENU)
-			dat = search_win(user)
+/obj/machinery/autolathe/ui_data(mob/user)
+	var/list/data = list()
+	data["materials"] = list()
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	data["materialtotal"] = materials.total_amount
+	data["materialsmax"] = materials.max_amount
+	data["categories"] = categories
+	data["designs"] = list()
+	data["active"] = busy
 
-	var/datum/browser/popup = new(user, name, name, 400, 500)
-	popup.set_content(dat)
-	popup.open()
+	for(var/mat_id in materials.materials)
+		var/datum/material/M = mat_id
+		var/mineral_count = materials.materials[mat_id]
+		var/list/material_data = list(
+			name = M.name,
+			mineral_amount = mineral_count,
+			matcolour = M.color,
+		)
+		data["materials"] += list(material_data)
+	if(selected_category != "None" && !length(matching_designs))
+		data["designs"] = handle_designs(stored_research.researched_designs, TRUE)
+	else
+		data["designs"] = handle_designs(matching_designs, FALSE)
+	return data
+
+/obj/machinery/autolathe/ui_data(mob/user)
+	var/list/data = list()
+	data["materials"] = list()
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	data["materialtotal"] = materials.total_amount
+	data["materialsmax"] = materials.max_amount
+	data["categories"] = categories
+	data["designs"] = list()
+	data["active"] = busy
+
+	for(var/mat_id in materials.materials)
+		var/datum/material/M = mat_id
+		var/mineral_count = materials.materials[mat_id]
+		var/list/material_data = list(
+			name = M.name,
+			mineral_amount = mineral_count,
+			matcolour = M.color,
+		)
+		data["materials"] += list(material_data)
+	if(selected_category != "None" && !length(matching_designs))
+		data["designs"] = handle_designs(stored_research.researched_designs, TRUE)
+	else
+		data["designs"] = handle_designs(matching_designs, FALSE)
+	return data
+
+/obj/machinery/autolathe/proc/handle_designs(list/designs, categorycheck)
+	var/list/output = list()
+	for(var/v in designs)
+		var/datum/design/D = categorycheck ? SSresearch.techweb_design_by_id(v) : v
+		if(categorycheck)
+			if(!(selected_category in D.category))
+				continue
+		var/unbuildable = FALSE // we can't build the design currently
+		var/m10 = FALSE // 10x mult
+		var/m25 = FALSE // 25x mult
+		var/m50 = FALSE // 50x mult
+		var/m5 = FALSE // 5x mult
+		var/sheets = FALSE // sheets or no?
+		if(disabled || !can_build(D))
+			unbuildable = TRUE
+		var/max_multiplier = unbuildable ? 0 : 1
+		if(ispath(D.build_path, /obj/item/stack))
+			sheets = TRUE
+			if(!unbuildable)
+				var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+				for(var/datum/material/mat in D.materials)
+					max_multiplier = min(D.maxstack, round(mats.get_material_amount(mat)/D.materials[mat]))
+				if (max_multiplier>10 && !disabled)
+					m10 = TRUE
+				if (max_multiplier>25 && !disabled)
+					m25 = TRUE
+		else
+			if(!unbuildable)
+				if(!disabled && can_build(D, 5))
+					m5 = TRUE
+				if(!disabled && can_build(D, 10))
+					m10 = TRUE
+				var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+				for(var/datum/material/mat in D.materials)
+					max_multiplier = min(50, round(mats.get_material_amount(mat)/(D.materials[mat] * prod_coeff)))
+
+		var/list/design = list(
+			name = D.name,
+			id = D.id,
+			ref = REF(src),
+			cost = get_design_cost(D, TRUE),
+			buildable = unbuildable,
+			mult5 = m5,
+			mult10 = m10,
+			mult25 = m25,
+			mult50 = m50,
+			sheet = sheets,
+			maxmult = max_multiplier,
+		)
+		output += list(design)
+	return output
+
+/obj/machinery/autolathe/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if(action == "menu")
+		selected_category = null
+		matching_designs.Cut()
+		. = TRUE
+
+	if(action == "category")
+		selected_category = params["selectedCategory"]
+		matching_designs.Cut()
+		. = TRUE
+
+	if(action == "search")
+		matching_designs.Cut()
+
+		for(var/v in stored_research.researched_designs)
+			var/datum/design/D = SSresearch.techweb_design_by_id(v)
+			if(findtext(D.name,params["to_search"]))
+				matching_designs.Add(D)
+		. = TRUE
+
+	if(action == "make")
+		if (!busy)
+			/////////////////
+			//href protection
+			being_built = stored_research.isDesignResearchedID(params["id"])
+			if(!being_built)
+				return
+
+			var/multiplier = text2num(params["multiplier"])
+			if(!multiplier)
+				to_chat(usr, span_alert("[src] only accepts a numerical multiplier!"))
+				return
+			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
+			multiplier = clamp(round(multiplier),1,50)
+
+			/////////////////
+
+			var/coeff = (is_stack ? 1 : prod_coeff) //stacks are unaffected by production coefficient
+			var/total_amount = 0
+
+			for(var/MAT in being_built.materials)
+				total_amount += being_built.materials[MAT]
+
+			var/power = max(2000, (total_amount)*multiplier/5) //Change this to use all materials
+
+			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+
+			var/list/materials_used = list()
+			var/list/custom_materials = list() //These will apply their material effect, This should usually only be one.
+
+			for(var/MAT in being_built.materials)
+				var/datum/material/used_material = MAT
+				var/amount_needed = being_built.materials[MAT] * coeff * multiplier
+				if(istext(used_material)) //This means its a category
+					var/list/list_to_show = list()
+					for(var/i in SSmaterials.materials_by_category[used_material])
+						if(materials.materials[i] > 0)
+							list_to_show += i
+
+					used_material = tgui_input_list(usr, "Choose [used_material]", "Custom Material", sortList(list_to_show, /proc/cmp_typepaths_asc))
+					if(isnull(used_material))
+						return //Didn't pick any material, so you can't build shit either.
+					custom_materials[used_material] += amount_needed
+
+				materials_used[used_material] = amount_needed
+
+			if(materials.has_materials(materials_used))
+				busy = TRUE
+				to_chat(usr, span_notice("You print [multiplier] item(s) from the [src]"))
+				use_power(power)
+				icon_state = "autolathe_n"
+				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
+				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
+				. = TRUE
+			else
+				to_chat(usr, span_alert("Not enough materials for this operation."))
+		else
+			to_chat(usr, span_alert("The autolathe is busy. Please wait for completion of previous operation."))
+
 
 /obj/machinery/autolathe/on_deconstruction()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
@@ -159,87 +325,6 @@
 		use_power(min(1000, amount_inserted / 100))
 	updateUsrDialog()
 
-/obj/machinery/autolathe/Topic(href, href_list)
-	if(..())
-		return
-	if (!busy)
-		if(href_list["menu"])
-			screen = text2num(href_list["menu"])
-			updateUsrDialog()
-
-		if(href_list["category"])
-			selected_category = href_list["category"]
-			updateUsrDialog()
-
-		if(href_list["make"])
-
-			/////////////////
-			//href protection
-			being_built = stored_research.isDesignResearchedID(href_list["make"])
-			if(!being_built)
-				return
-
-			var/multiplier = text2num(href_list["multiplier"])
-			if(!multiplier || !IS_FINITE(multiplier))
-				stack_trace("Invalid multiplier value in stack creation [multiplier], [usr] is likely attempting an exploit")
-				return
-			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
-
-			/////////////////
-
-			var/coeff = (is_stack ? 1 : prod_coeff) //stacks are unaffected by production coefficient
-			var/total_amount = 0
-
-			for(var/MAT in being_built.materials)
-				total_amount += being_built.materials[MAT]
-
-			var/power = max(2000, (total_amount)*multiplier/5) //Change this to use all materials
-
-			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-
-			var/list/materials_used = list()
-			var/list/custom_materials = list() //These will apply their material effect, This should usually only be one.
-
-			for(var/MAT in being_built.materials)
-				var/datum/material/used_material = MAT
-				var/amount_needed = being_built.materials[MAT] * coeff * multiplier
-				if(istext(used_material)) //This means its a category
-					var/list/list_to_show = list()
-					for(var/i in SSmaterials.materials_by_category[used_material])
-						if(materials.materials[i] > 0)
-							list_to_show += i
-
-					used_material = input("Choose [used_material]", "Custom Material") as null|anything in list_to_show
-					if(!used_material)
-						return //Didn't pick any material, so you can't build shit either.
-					custom_materials[used_material] += amount_needed
-
-				materials_used[used_material] = amount_needed
-
-			if(materials.has_materials(materials_used))
-				busy = TRUE
-				use_power(power)
-				icon_state = icon_state_busy
-				var/time = is_stack ? 10 : base_print_speed * coeff * multiplier
-				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack), time)
-			else
-				to_chat(usr, "<span class=\"alert\">Not enough materials for this operation.</span>")
-
-		if(href_list["search"])
-			matching_designs.Cut()
-
-			for(var/v in stored_research.researched_designs)
-				var/datum/design/D = SSresearch.techweb_design_by_id(v)
-				if(findtext(D.name,href_list["to_search"]))
-					matching_designs.Add(D)
-			updateUsrDialog()
-	else
-		to_chat(usr, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
-
-	updateUsrDialog()
-
-	return
-
 /obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/atom/A = drop_location()
@@ -251,140 +336,36 @@
 		N.update_icon()
 		N.autolathe_crafted(src)
 	else
-		for(var/i=1, i<=multiplier, i++)
+		for(var/i in 1 to multiplier)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
 
-			if(length(picked_materials))
+			if(LAZYLEN(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 
 	icon_state = icon_state_base
 	busy = FALSE
-	updateDialog()
 
 /obj/machinery/autolathe/RefreshParts()
-	var/T = 0
-	for(var/obj/item/stock_parts/matter_bin/MB in component_parts)
-		T += MB.rating*75000
+	var/mat_capacity = 0
+	for(var/obj/item/stock_parts/matter_bin/new_matter_bin in component_parts)
+		mat_capacity += new_matter_bin.rating*75000
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	materials.max_amount = T
-	var/manips = 0
-	var/total_manip_rating = 0
-	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		total_manip_rating += M.rating
-		manips++
-	prod_coeff = STANDARD_PART_LEVEL_LATHE_COEFFICIENT(total_manip_rating / (manips? manips : 1))
+	materials.max_amount = mat_capacity
+
+	var/efficiency=1.2
+	for(var/obj/item/stock_parts/manipulator/new_manipulator in component_parts)
+		efficiency -= new_manipulator.rating*0.2
+	prod_coeff = max(1,efficiency) // prod_coeff goes 1 -> 0,8 -> 0,6 -> 0,4 per level of manipulator efficiency
 
 /obj/machinery/autolathe/examine(mob/user)
 	. += ..()
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.</span>"
-
-/obj/machinery/autolathe/proc/main_win(mob/user)
-	var/dat = "<div class='statusDisplay'><h3>Autolathe Menu:</h3><br>"
-	dat += materials_printout()
-
-	dat += "<form name='search' action='?src=[REF(src)]'>\
-	<input type='hidden' name='src' value='[REF(src)]'>\
-	<input type='hidden' name='search' value='to_search'>\
-	<input type='hidden' name='menu' value='[AUTOLATHE_SEARCH_MENU]'>\
-	<input type='text' name='to_search'>\
-	<input type='submit' value='Search'>\
-	</form><hr>"
-
-	var/line_length = 1
-	dat += "<table style='width:100%' align='center'><tr>"
-
-	for(var/C in categories)
-		if(line_length > 2)
-			dat += "</tr><tr>"
-			line_length = 1
-
-		dat += "<td><A href='?src=[REF(src)];category=[C];menu=[AUTOLATHE_CATEGORY_MENU]'>[C]</A></td>"
-		line_length++
-
-	dat += "</tr></table></div>"
-	return dat
-
-/obj/machinery/autolathe/proc/category_win(mob/user,selected_category)
-	var/dat = "<A href='?src=[REF(src)];menu=[AUTOLATHE_MAIN_MENU]'>Return to main menu</A>"
-	dat += "<div class='statusDisplay'><h3>Browsing [selected_category]:</h3><br>"
-	dat += materials_printout()
-
-	for(var/v in stored_research.researched_designs)
-		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		if(!(selected_category in D.category))
-			continue
-
-		if(disabled || !can_build(D))
-			dat += span_linkOff("[D.name]")
-		else
-			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
-
-		if(ispath(D.build_path, /obj/item/stack))
-			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-			var/max_multiplier
-			for(var/datum/material/mat in D.materials)
-				max_multiplier = min(D.maxstack, round(materials.get_material_amount(mat)/D.materials[mat]))
-			if (max_multiplier>10 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=10'>x10</a>"
-			if (max_multiplier>25 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=25'>x25</a>"
-			if(max_multiplier > 0 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=[max_multiplier]'>x[max_multiplier]</a>"
-		else
-			if(!disabled && can_build(D, 5))
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=5'>x5</a>"
-			if(!disabled && can_build(D, 10))
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=10'>x10</a>"
-
-		dat += "[get_design_cost(D)]<br>"
-
-	dat += "</div>"
-	return dat
-
-/obj/machinery/autolathe/proc/search_win(mob/user)
-	var/dat = "<A href='?src=[REF(src)];menu=[AUTOLATHE_MAIN_MENU]'>Return to main menu</A>"
-	dat += "<div class='statusDisplay'><h3>Search results:</h3><br>"
-	dat += materials_printout()
-
-	for(var/v in matching_designs)
-		var/datum/design/D = v
-		if(disabled || !can_build(D))
-			dat += span_linkOff("[D.name]")
-		else
-			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
-
-		if(ispath(D.build_path, /obj/item/stack))
-			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-			var/max_multiplier
-			for(var/datum/material/mat in D.materials)
-				max_multiplier = min(D.maxstack, round(materials.get_material_amount(mat)/D.materials[mat]))
-			if (max_multiplier>10 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=10'>x10</a>"
-			if (max_multiplier>25 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=25'>x25</a>"
-			if(max_multiplier > 0 && !disabled)
-				dat += " <a href='?src=[REF(src)];make=[D.id];multiplier=[max_multiplier]'>x[max_multiplier]</a>"
-
-		dat += "[get_design_cost(D)]<br>"
-
-	dat += "</div>"
-	return dat
-
-/obj/machinery/autolathe/proc/materials_printout()
-	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	var/dat = "<b>Total amount:</b> [materials.total_amount] / [materials.max_amount] cm<sup>3</sup><br>"
-	for(var/mat_id in materials.materials)
-		var/datum/material/M = mat_id
-		var/mineral_amount = materials.materials[mat_id]
-		if(mineral_amount > 0)
-			dat += "<b>[M.name] amount:</b> [mineral_amount] cm<sup>3</sup><br>"
-	return dat
+		. += span_notice("The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.")
 
 /obj/machinery/autolathe/proc/can_build(datum/design/D, amount = 1)
-	if(D.make_reagents.len)
+	if(length(D.make_reagents))
 		return FALSE
 
 	var/coeff = (ispath(D.build_path, /obj/item/stack) ? 1 : prod_coeff)
@@ -398,7 +379,7 @@
 
 	return materials.has_materials(required_materials)
 
-/obj/machinery/autolathe/proc/get_design_cost(datum/design/D)
+/obj/machinery/autolathe/proc/get_design_cost(datum/design/D, commatize)
 	var/coeff = (ispath(D.build_path, /obj/item/stack) ? 1 : prod_coeff)
 	var/dat
 	for(var/i in D.materials)
@@ -407,6 +388,8 @@
 		else
 			var/datum/material/M = i
 			dat += "[D.materials[i] * coeff] [M.name] "
+		if(commatize)
+			dat += ", "
 	return dat
 
 /obj/machinery/autolathe/proc/reset(wire)
@@ -457,6 +440,13 @@
 	stored_research = /datum/techweb/specialized/autounlocking/autolathe/public
 	base_print_speed = 20
 
+/obj/machinery/autolathe/secure/Initialize()
+	. = ..()
+	// let's not leave the parent datum floating, right?
+	if(stored_research)
+		QDEL_NULL(stored_research)
+	stored_research = new /datum/techweb/specialized/autounlocking/autolathe/public
+
 /obj/machinery/autolathe/toy
 	name = "autoylathe"
 	desc = "It produces toys using plastic, metal and glass."
@@ -484,6 +474,14 @@
 /obj/machinery/autolathe/toy/hacked/Initialize()
 	. = ..()
 	adjust_hacked(TRUE)
+	// let's not leave the parent datum floating, right?
+	if(stored_research)
+		QDEL_NULL(stored_research)
+	stored_research = new /datum/techweb/specialized/autounlocking/autolathe/toy
+
+/obj/machinery/autolathe/ComponentInitialize()
+	var/list/extra_mats = list(/datum/material/plastic)
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID] + extra_mats, 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
 
 /obj/machinery/autolathe/constructionlathe
 	name = "Workshop"
@@ -504,71 +502,6 @@
 							"Misc",
 							"Dinnerware",
 							)
-
-/*
-/obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
-	..()
-	if(DRM && panel_open)
-		if(constage == 0)
-			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-				to_chat(user, span_notice("You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts."))
-				constage = 1
-				qdel(O)
-		if(constage == 1)
-			if(istype(O, /obj/item/stack/crafting/goodparts))
-				var/obj/item/stack/crafting/goodparts/S = O
-				if(S.get_amount() < 5)
-					to_chat(user, span_warning("You need at least 5 high-quality metal parts to upgrade [src]."))
-					return
-				S.use(5)
-				to_chat(user, span_notice("You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process."))
-				constage = 2
-		if(constage == 2)
-			if(istype(O, /obj/item/circuitboard/machine/autolathe/ammo/improvised))
-				to_chat(user, span_notice("You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again."))
-				constage = 3
-				DRM = 0
-				categories = list(
-							"Tools",
-							"Electronics",
-							"Construction",
-							"T-Comm",
-							"Security",
-							"Machinery",
-							"Medical",
-							"Misc",
-							"Dinnerware",
-							)
-				hacked = TRUE
-				name = "Workshop"
-				desc = "Contains an array of custom made and skilled tools for professional craftsmen."
-				qdel(O)
-	if(panel_open)
-		default_deconstruction_crowbar(O)
-		return TRUE
-	else
-		attack_hand(user)
-		return TRUE
-
-
-/obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
-	if("Security" in D.category)
-		if(DRM == 1)
-			return FALSE
-		else
-			. = ..()
-	else
-		. = ..()
-
-/obj/machinery/autolathe/ui_interact(mob/user)
-	if(isliving(user))
-		var/mob/living/L = user
-		if(L.has_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC))
-			to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
-			return FALSE
-		else
-			. = ..()
-*/
 
 /obj/machinery/autolathe/ammo
 	name = "reloading bench"
@@ -609,30 +542,37 @@
 			return
 		if(istype(O, /obj/item/ammo_box))
 			if(pre_insert_check(user, O))
-				if(!insert_bullets_from_box(user, O))
-					return
+				if(insert_bullets_from_box(user, O) == AUTOLATHE_INSERT_CONTAINER_TOO)
+					return ..()
+			return
 		if(istype(O, /obj/item/gun/ballistic))
-			if(pre_insert_check(user, O))
-				if(!insert_magazine_from_gun(user, O))
+			var/obj/item/gun/ballistic/gun_thing = O
+			if(!gun_thing.magazine)
+				if(!do_after(user, 2 SECONDS, target = src))
+					to_chat(user, span_notice("You stop dumping \the [gun_thing] into \the [src]."))
 					return
+				return ..()
+			if(pre_insert_check(user, O))
+				insert_magazine_from_gun(user, O)
+			return
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
 			simple = TRUE
 			qdel(O)
 			return
 		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
 			basic = TRUE
 			qdel(O)
 			return
 		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
 			intermediate = TRUE
 			qdel(O)
 			return
 		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
 			advanced = TRUE
 			qdel(O)
 			return
@@ -658,13 +598,13 @@
 	var/obj/item/stuff_holder = O
 	if(INTERACTING_WITH(user, src))
 		return FALSE
-	if(!length(stuff_holder.contents))
-		to_chat(user, span_warning("There's nothing in \the [stuff_holder] to load into \the [src]!"))
-		return FALSE
-	to_chat(user, span_notice("You start dumping \the [stuff_holder] into \the [src]."))
 	if(!do_after(user, 2 SECONDS, target = src))
 		to_chat(user, span_notice("You stop dumping \the [stuff_holder] into \the [src]."))
 		return FALSE
+	// if(!length(stuff_holder.contents))
+	// 	to_chat(user, span_warning("There's nothing in \the [stuff_holder] to load into \the [src]!"))
+	// 	return FALSE
+	to_chat(user, span_notice("You start dumping \the [stuff_holder] into \the [src]."))
 	return TRUE
 
 /obj/machinery/autolathe/ammo/proc/insert_bullets_from_box(mob/user, obj/item/ammo_box/ammobox)
@@ -684,10 +624,13 @@
 		ammobox.stored_ammo -= casing
 		qdel(casing)
 		count++
+		stoplag()
 	if(count > 0)
 		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
-	else
+	else if(ammobox.stored_ammo)
 		to_chat(user, span_warning("There aren't any casings in \the [ammobox] to recycle!"))
+	else
+		return AUTOLATHE_INSERT_CONTAINER_TOO
 	return TRUE
 
 /obj/machinery/autolathe/ammo/proc/insert_magazine_from_gun(mob/user, obj/item/gun/ballistic/gun_thing)
@@ -745,21 +688,11 @@
 		// I blame whoever wrote material containers.
 		qdel(casing)
 		count++
+		stoplag()
 	if(count > 0)
 		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
 	else
 		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
-
-/// no discounts for sticky fingers!
-/obj/machinery/autolathe/ammo/get_design_cost(datum/design/D)
-	var/dat
-	for(var/i in D.materials)
-		if(istext(i)) //Category handling
-			dat += "[D.materials[i]] [i]"
-		else
-			var/datum/material/M = i
-			dat += "[D.materials[i]] [M.name] "
-	return dat
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Handloaded Ammo" in D.category)

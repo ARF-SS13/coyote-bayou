@@ -164,6 +164,13 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	sound_properties = CSP_PISTOL_22
 
+/obj/item/ammo_casing/a22/ratshot
+	name = ".22lr ratshot casing"
+	desc = "A .22lr ratshot casing."
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_ratshot // My headcanon is its lead BBs
+	pellets = 4 // 4 for now, maybe 3 if its overboard
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+
 // BETA AMMO // Obsolete
 /obj/item/ammo_casing/testcasing
 	name = "casing"

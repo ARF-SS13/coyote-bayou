@@ -253,18 +253,18 @@
 	. = ..()
 	var/turf/open/floor/F = target
 	if(!proximity)
-		to_chat(user, "<span class='notice'>You need to get closer!</span>")
+		to_chat(user, span_notice("You need to get closer!"))
 		return
 	if(use_paint(user) && isValidSurface(F))
 		playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1)
 		F.AddElement(/datum/element/decal, 'icons/fallout/turfs/floors.dmi', stored_decal_total, CLEAN_STRONG, null, null, alpha)
 	else
-		to_chat(user, "<span class='notice'>The tile painter can only be used on freshly laid tiles!</span>")
+		to_chat(user, span_notice("The tile painter can only be used on freshly laid tiles!"))
 		return
 
 /obj/item/airlock_painter/tile/attack_self(mob/user)
 	if((ink) && (ink.charges >= 1))
-		to_chat(user, "<span class='notice'>[src] beeps to prevent you from removing the toner until out of charges.</span>")
+		to_chat(user, span_notice("[src] beeps to prevent you from removing the toner until out of charges."))
 		return
 	. = ..()
 

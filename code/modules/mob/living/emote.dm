@@ -1098,8 +1098,8 @@
 
 /datum/emote/living/augh
 	key = "augh"
-	key_third_person = "looks deeply troubled."
-	message = "looks deeply troubled."
+	key_third_person = "looks mildly inconvenienced."
+	message = "looks mildly inconvenienced."
 	sound = 'sound/f13effects/sunsetsounds/augh.ogg'
 
 /datum/emote/living/ree

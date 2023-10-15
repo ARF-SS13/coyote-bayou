@@ -13759,7 +13759,9 @@
 /area/f13/caves)
 "kWr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/rug/big/rug_yellow,
+/obj/structure/rug/big/rug_yellow{
+	layer = 2.8
+	},
 /turf/open/floor/carpet/blue,
 /area/f13/bar/heaven)
 "kWL" = (
