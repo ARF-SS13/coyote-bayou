@@ -862,7 +862,7 @@
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
 			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
 			available out here. This model is locked to semi-auto!  ++To change ammunition type, unload the weapon and press the \
-			 button on the top left corner of your screen."
+			button on the top left corner of your screen."
 	icon_state = "sidewinder"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
