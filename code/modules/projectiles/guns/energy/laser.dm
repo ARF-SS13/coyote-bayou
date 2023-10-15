@@ -1049,7 +1049,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "scraplaser"
-	item_state = "lasernew"
+	item_state = "laser-rifle9"
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	ammo_x_offset = 1
@@ -1076,7 +1076,31 @@
 /obj/item/gun/energy/laser/tg/scrap
 	name = "improvised laser"
 	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. At least it shoots?"
-	can_remove = 0
+
+
+/* * * * * *
+ * TG Rifle
+ * Projectile AER-9 but WAY more shots
+ * Gunlight
+ * Uncommon
+ * * * * * */
+
+ /obj/item/gun/energy/laser/tg/rifle
+	name = "laser rifle"
+	desc = "The Mark II Trident Gammaworks laser rifle was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the microfusion cell."
+	icon_state = "lasrifle"
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+
+ /* * * * * *
+ * TG Heavy Rifle
+ * Plasma Rifle but laser damage (upgrade from the TG Rifle)
+ * Gunlight
+ * Uncommon / Rare
+ * * * * * */
 
 /* * * * * *
  * TG Carbine
@@ -1089,7 +1113,6 @@
 	name = "laser carbine"
 	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
 	icon_state = "lascarbine"
-	can_remove = 0
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/carbine)
 	can_flashlight = 1
 	flight_x_offset = 15
@@ -1106,36 +1129,10 @@
 	name = "miniture laser pistol"
 	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
-	can_remove = 0
 	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	can_flashlight = 0
 	can_scope = FALSE
-
-/* * * * * *
- * TG Rifle
- * Projectile AER-9 but WAY more shots
- * Gunlight
- * Uncommon
- * * * * * */
-
- /obj/item/gun/energy/laser/tg/carbine/rifle
-	name = "laser rifle"
-	desc = "The Mark II Trident Gammaworks laser rifle was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the microfusion cell."
-	icon_state = "lasrifle"
-	can_remove = 0
-	w_class = WEIGHT_CLASS_BULKY
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
-	can_flashlight = 1
-	flight_x_offset = 15
-	flight_y_offset = 10
-
- /* * * * * *
- * TG Heavy Rifle
- * Plasma Rifle but laser damage (upgrade from the TG Rifle)
- * Gunlight
- * Uncommon / Rare
- * * * * * */
 
 /* * * * * *
  * TG Taclaser

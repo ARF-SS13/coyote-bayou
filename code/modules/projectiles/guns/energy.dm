@@ -341,7 +341,7 @@
 		if(sounds_and_words)
 			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
-	if(!can_remove)
+	if(can_remove == 0)
 		if(sounds_and_words)
 			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 		return
@@ -363,16 +363,18 @@
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
-	if(can_remove && istype(A, /obj/item/stock_parts/cell/ammo))
-	if(user.transferItemToLoc(AM, src))
-		cell = AM
-		to_chat(user, span_notice("You load a new cell into \the [src]."))
-		A.update_icon()
-		update_icon()
-		return 1
-	else
-		to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
-		return
+	if (istype(A, /obj/item/stock_parts/cell/ammo))
+		var/obj/item/stock_parts/cell/ammo/AM = A
+		if (!cell && istype(AM, cell_type))
+			if(user.transferItemToLoc(AM, src))
+				cell = AM
+				to_chat(user, span_notice("You load a new cell into \the [src]."))
+				A.update_icon()
+				update_icon()
+				return 1
+			else
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+				return
 		//else if (cell)
 			//to_chat(user, span_notice("There's already a cell in \the [src]."))
 
