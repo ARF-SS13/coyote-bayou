@@ -78,24 +78,26 @@
 	return -2
 
 /mob/living/simple_animal/hostile/raider/thief/AttackingTarget()
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(H.stat == SOFT_CRIT)
-			var/back_target = H.back
-			if(back_target)
-				H.dropItemToGround(back_target, TRUE)
-				src.transferItemToLoc(back_target, src, TRUE)
-			var/belt_target = H.belt
-			if(belt_target)
-				H.dropItemToGround(belt_target, TRUE)
-				src.transferItemToLoc(belt_target, src, TRUE)
-			var/shoe_target = H.shoes
-			if(shoe_target)
-				H.dropItemToGround(shoe_target, TRUE)
-				src.transferItemToLoc(shoe_target, src, TRUE)
-			retreat_distance = 50
-		else
-			. = ..()
+	var/atom/my_target = get_target()
+	if(!ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	if(H.stat < SOFT_CRIT)
+		return ..()
+	var/back_target = H.back
+	if(back_target)
+		H.dropItemToGround(back_target, TRUE)
+		src.transferItemToLoc(back_target, src, TRUE)
+	var/belt_target = H.belt
+	if(belt_target)
+		H.dropItemToGround(belt_target, TRUE)
+		src.transferItemToLoc(belt_target, src, TRUE)
+	var/shoe_target = H.shoes
+	if(shoe_target)
+		H.dropItemToGround(shoe_target, TRUE)
+		src.transferItemToLoc(shoe_target, src, TRUE)
+	retreat_distance = 50
+
 
 /mob/living/simple_animal/hostile/raider/thief/death(gibbed)
 	for(var/obj/I in contents)

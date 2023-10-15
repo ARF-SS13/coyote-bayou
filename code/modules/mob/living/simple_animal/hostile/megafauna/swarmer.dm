@@ -200,11 +200,12 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 
 
 /mob/living/simple_animal/hostile/swarmer/ai/resource/AttackingTarget()
-	if(target.swarmer_act(src))
-		add_type_to_wanted(target.type)
+	var/atom/my_target = get_target()
+	if(my_target.swarmer_act(src))
+		add_type_to_wanted(my_target.type)
 		return TRUE
 	else
-		add_type_to_ignore(target.type)
+		add_type_to_ignore(my_target.type)
 		return FALSE
 
 
@@ -267,12 +268,13 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 
 
 /mob/living/simple_animal/hostile/swarmer/ai/melee_combat/AttackingTarget()
-	if(isliving(target))
+	var/atom/my_target = get_target()
+	if(isliving(my_target))
 		if(prob(35))
 			StartAction(30)
-			DisperseTarget(target)
+			DisperseTarget(my_target)
 		else
-			var/mob/living/L = target
+			var/mob/living/L = my_target
 			L.attack_animal(src)
 			L.electrocute_act(10, src, flags = SHOCK_NOGLOVES)
 		return TRUE

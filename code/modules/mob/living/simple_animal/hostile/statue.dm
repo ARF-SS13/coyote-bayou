@@ -84,14 +84,17 @@
 /mob/living/simple_animal/hostile/statue/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(!client && target) // If we have a target and we're AI controlled
-		var/mob/watching = can_be_seen()
-		// If they're not our target
-		if(watching && watching != target)
-			// This one is closer.
-			if(get_dist(watching, src) > get_dist(target, src))
-				LoseTarget()
-				GiveTarget(watching)
+	var/atom/my_target = get_target()
+	if(client || !my_target) // If we have a my_target and we're AI controlled
+		return
+	var/mob/watching = can_be_seen()
+	// If they're not our my_target
+	if(!watching || watching == my_target)
+		return
+	// This one is closer.
+	if(get_dist(watching, src) > get_dist(my_target, src))
+		LoseTarget()
+		GiveTarget(watching)
 
 /mob/living/simple_animal/hostile/statue/AttackingTarget()
 	if(can_be_seen(get_turf(loc)))

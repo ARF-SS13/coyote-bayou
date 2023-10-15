@@ -5,7 +5,7 @@
 #define ATTACK_INTERMISSION_TIME 5
 
 //Fragile but highly aggressive wanderers that pose a large threat in numbers.
-//They'll attempt to leap at their target from afar using their hatchets.
+//They'll attempt to leap at their targette from afar using their hatchets.
 /mob/living/simple_animal/hostile/jungle/mook
 	name = "wanderer"
 	desc = "This unhealthy looking primitive is wielding a rudimentary hatchet, swinging it with wild abandon. One isn't much of a threat, but in numbers they can quickly overwhelm a superior opponent."
@@ -45,14 +45,15 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/jungle/mook/AttackingTarget()
-	if(isliving(target))
-		if(ranged_cooldown <= world.time && attack_state == MOOK_ATTACK_NEUTRAL)
-			var/mob/living/L = target
-			if(L.incapacitated())
-				WarmupAttack(forced_slash_combo = TRUE)
-				return
-			WarmupAttack()
-		return
+	var/atom/my_target = get_target()
+	if(!isliving(my_target))
+		return ..()
+	if(ranged_cooldown <= world.time && attack_state == MOOK_ATTACK_NEUTRAL)
+		var/mob/living/L = my_target
+		if(L.incapacitated())
+			WarmupAttack(forced_slash_combo = TRUE)
+			return
+		WarmupAttack()
 	return ..()
 
 /mob/living/simple_animal/hostile/jungle/mook/Goto()
@@ -66,11 +67,12 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/jungle/mook/proc/WarmupAttack(forced_slash_combo = FALSE)
-	if(attack_state == MOOK_ATTACK_NEUTRAL && target)
+	var/atom/my_target = get_target()
+	if(attack_state == MOOK_ATTACK_NEUTRAL && my_target)
 		attack_state = MOOK_ATTACK_WARMUP
 		walk(src,0)
 		update_icons()
-		if(prob(50) && get_dist(src,target) <= 3 || forced_slash_combo)
+		if(prob(50) && get_dist(src,my_target) <= 3 || forced_slash_combo)
 			addtimer(CALLBACK(src, .proc/SlashCombo), ATTACK_INTERMISSION_TIME)
 			return
 		addtimer(CALLBACK(src, .proc/LeapAttack), ATTACK_INTERMISSION_TIME + rand(0,3))
@@ -88,22 +90,26 @@
 		addtimer(CALLBACK(src, .proc/AttackRecovery), 9)
 
 /mob/living/simple_animal/hostile/jungle/mook/proc/SlashAttack()
-	if(target && !stat && attack_state == MOOK_ATTACK_ACTIVE)
-		melee_damage_lower = 15
-		melee_damage_upper = 15
-		var/mob_direction = get_dir(src,target)
-		if(get_dist(src,target) > 1)
-			step(src,mob_direction)
-		if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from) && isliving(target))
-			var/mob/living/L = target
-			L.attack_animal(src)
-			return
-		var/swing_turf = get_step(src,mob_direction)
-		new /obj/effect/temp_visual/kinetic_blast(swing_turf)
-		playsound(src, 'sound/weapons/slashmiss.ogg', 50, 1)
+	var/atom/my_target = get_target()
+	if(!my_target || stat || attack_state != MOOK_ATTACK_ACTIVE)
+		return
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	var/mob_direction = get_dir(src,my_target)
+	if(get_dist(src,my_target) > 1)
+		step(src,mob_direction)
+	var/atom/origin = get_origin()
+	if(origin && isturf(origin.loc) && my_target.Adjacent(origin) && isliving(my_target))
+		var/mob/living/L = my_target
+		L.attack_animal(src)
+		return
+	var/swing_turf = get_step(src,mob_direction)
+	new /obj/effect/temp_visual/kinetic_blast(swing_turf)
+	playsound(src, 'sound/weapons/slashmiss.ogg', 50, 1)
 
 /mob/living/simple_animal/hostile/jungle/mook/proc/LeapAttack()
-	if(target && !stat && attack_state == MOOK_ATTACK_WARMUP)
+	var/atom/my_target = get_target()
+	if(my_target && !stat && attack_state == MOOK_ATTACK_WARMUP)
 		attack_state = MOOK_ATTACK_ACTIVE
 		density = FALSE
 		melee_damage_lower = 30
@@ -112,40 +118,44 @@
 		new /obj/effect/temp_visual/mook_dust(get_turf(src))
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
 		playsound(src, 'sound/voice/mook_leap_yell.ogg', 100, 1)
-		var/target_turf = get_turf(target)
+		var/target_turf = get_turf(my_target)
 		throw_at(target_turf, 7, 1, src, FALSE, callback = CALLBACK(src, .proc/AttackRecovery))
 		return
 	attack_state = MOOK_ATTACK_RECOVERY
 	ResetNeutral()
 
 /mob/living/simple_animal/hostile/jungle/mook/proc/AttackRecovery()
-	if(attack_state == MOOK_ATTACK_ACTIVE && !stat)
-		attack_state = MOOK_ATTACK_RECOVERY
-		density = TRUE
-		face_atom(target)
-		if(!struck_target_leap)
-			update_icons()
-		struck_target_leap = FALSE
-		if(prob(40))
-			attack_state = MOOK_ATTACK_NEUTRAL
-			if(target)
-				if(isliving(target))
-					var/mob/living/L = target
-					if(L.incapacitated() && L.stat != DEAD)
-						addtimer(CALLBACK(src, .proc/WarmupAttack, TRUE), ATTACK_INTERMISSION_TIME)
-						return
-			addtimer(CALLBACK(src, .proc/WarmupAttack), ATTACK_INTERMISSION_TIME)
-			return
-		addtimer(CALLBACK(src, .proc/ResetNeutral), ATTACK_INTERMISSION_TIME)
+	var/atom/my_target = get_target()
+	if(attack_state != MOOK_ATTACK_ACTIVE || stat || !my_target)
+		return
+	attack_state = MOOK_ATTACK_RECOVERY
+	density = TRUE
+	face_atom(my_target)
+	if(!struck_target_leap)
+		update_icons()
+	struck_target_leap = FALSE
+	if(prob(40))
+		attack_state = MOOK_ATTACK_NEUTRAL
+		if(my_target)
+			if(isliving(my_target))
+				var/mob/living/L = my_target
+				if(L.incapacitated() && L.stat != DEAD)
+					addtimer(CALLBACK(src, .proc/WarmupAttack, TRUE), ATTACK_INTERMISSION_TIME)
+					return
+		addtimer(CALLBACK(src, .proc/WarmupAttack), ATTACK_INTERMISSION_TIME)
+		return
+	addtimer(CALLBACK(src, .proc/ResetNeutral), ATTACK_INTERMISSION_TIME)
 
 /mob/living/simple_animal/hostile/jungle/mook/proc/ResetNeutral()
-	if(attack_state == MOOK_ATTACK_RECOVERY)
-		attack_state = MOOK_ATTACK_NEUTRAL
-		ranged_cooldown = world.time + ranged_cooldown_time
+	if(attack_state != MOOK_ATTACK_RECOVERY)
+		return
+	attack_state = MOOK_ATTACK_NEUTRAL
+	ranged_cooldown = world.time + ranged_cooldown_time
+	update_icons()
+	var/atom/my_target = get_target()
+	if(my_target && !stat)
 		update_icons()
-		if(target && !stat)
-			update_icons()
-			Goto(target, move_to_delay, minimum_distance)
+		Goto(my_target, move_to_delay, minimum_distance)
 
 /mob/living/simple_animal/hostile/jungle/mook/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -185,8 +195,9 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/jungle/mook/OpenFire()
-	if(isliving(target))
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(isliving(my_target))
+		var/mob/living/L = my_target
 		if(L.incapacitated())
 			return
 	WarmupAttack()

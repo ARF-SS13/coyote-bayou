@@ -38,14 +38,14 @@
 	var/fire_range = 4
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/OpenFire()
-	var/turf/T = get_ranged_target_turf_direct(src, target, fire_range)
+	var/turf/T = get_ranged_target_turf_direct(src, get_target(), fire_range)
 	var/list/burn_turfs = getline(src, T) - get_turf(src)
 	dragon_fire_line(src, burn_turfs)
 
 /mob/living/simple_animal/hostile/asteroid/ice_whelp/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target)
+	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.025)
 

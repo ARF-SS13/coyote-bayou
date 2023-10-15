@@ -1142,7 +1142,7 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-/datum/crafting_recipe/huntingshotgun/sawn
+/datum/crafting_recipe/huntingsawedoff
 	name = "Saw off Hunting Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/hunting/sawn
 	reqs = list(/obj/item/gun/ballistic/shotgun/hunting = 1,
