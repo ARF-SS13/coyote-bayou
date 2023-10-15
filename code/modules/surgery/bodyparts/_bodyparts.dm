@@ -137,7 +137,7 @@
 	if(current_gauze)
 		QDEL_NULL(current_gauze)
 	if(current_suture)
-		QDEL_NULL(current_gauze)
+		QDEL_NULL(current_suture)
 	if(LAZYLEN(tattoos))
 		QDEL_LIST_ASSOC_VAL(tattoos)
 	if(length(tattoos))
