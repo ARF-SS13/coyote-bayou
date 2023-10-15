@@ -115,8 +115,9 @@
 	if(recovery_time >= world.time)
 		return
 	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(. && isliving(my_target))
+		var/mob/living/L = my_target
 		if(L.stat != DEAD)
 			if(!client && ranged && ranged_cooldown <= world.time)
 				OpenFire()

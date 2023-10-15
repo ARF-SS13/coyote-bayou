@@ -95,7 +95,7 @@
 		return
 	var/mob/living/target
 	if(!boss.client) //AI's target
-		target = boss.target
+		target = boss.get_target()
 	else //random mob
 		var/list/threats = boss.PossibleThreats()
 		if(threats.len)

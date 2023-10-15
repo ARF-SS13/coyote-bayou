@@ -354,9 +354,11 @@
 
 /mob/living/simple_animal/hostile/ghoul/glowing/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
 	maxHealth = 256
@@ -547,9 +549,11 @@
 
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/zombie/legendary
 	name = "legendary ravenous ghoul"

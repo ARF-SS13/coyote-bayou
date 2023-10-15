@@ -45,9 +45,11 @@
 	temperature = 50
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
-	if(..()) //we have a target
-		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
-			OpenFire(target)
+	if(!..()) //we have a target
+		return
+	var/atom/my_target = get_target()
+	if(isliving(my_target) && !my_target.Adjacent(get_origin()) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
+		OpenFire(my_target)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
 	switch(severity)

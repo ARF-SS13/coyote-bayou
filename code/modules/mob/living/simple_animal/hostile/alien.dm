@@ -180,16 +180,18 @@
 	AddElement(/datum/element/cleaning)
 
 /mob/living/simple_animal/hostile/alien/maid/AttackingTarget()
-	if(ismovable(target))
-		if(istype(target, /obj/effect/decal/cleanable))
-			visible_message("[src] cleans up \the [target].")
-			qdel(target)
-			return TRUE
-		var/atom/movable/M = target
-		SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
-		M.clean_blood()
-		visible_message("[src] polishes \the [target].")
+	var/atom/my_target = get_target()
+	if(!ismovable(my_target))
+		return
+	if(istype(my_target, /obj/effect/decal/cleanable))
+		visible_message("[src] cleans up \the [my_target].")
+		qdel(my_target)
 		return TRUE
+	var/atom/movable/M = my_target
+	SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+	M.clean_blood()
+	visible_message("[src] polishes \the [my_target].")
+	return TRUE
 
 /mob/living/simple_animal/pet/catslug/roxy //Yes I'm making her a catslug
 	name = "Roxy"
