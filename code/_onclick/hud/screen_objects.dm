@@ -33,8 +33,8 @@
 	var/del_on_map_removal = TRUE
 
 /atom/movable/screen/Destroy()
-	QDEL_NULL(master)
-	QDEL_NULL(hud)
+	master = null
+	hud = null
 	return ..()
 
 /atom/movable/screen/examine(mob/user)
