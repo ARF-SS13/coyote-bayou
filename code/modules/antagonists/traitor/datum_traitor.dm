@@ -41,7 +41,7 @@
 /datum/antagonist/traitor/process()
 	// traitor_kind.on_process(src)
 
-/proc/get_random_traitor_kind(var/list/blacklist = list())
+/proc/get_random_traitor_kind(list/blacklist = list())
 	var/list/weights = list()
 	for(var/C in GLOB.traitor_classes)
 		if(!(C in blacklist))
