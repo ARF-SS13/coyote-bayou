@@ -7646,15 +7646,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
-"dub" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril{
-	faction = list("mining","skeleton")
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/building)
 "duA" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/mountain,
@@ -26404,15 +26395,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
-"mht" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril{
-	faction = list("mining","skeleton")
-	},
-/turf/open/floor/wood_worn/wood_worn_dark,
-/area/f13/building)
 "mhA" = (
 /obj/structure/decoration/clock/old/active{
 	pixel_y = 32
@@ -114751,7 +114733,7 @@ toL
 riC
 lNK
 riC
-dub
+riC
 riC
 riC
 riC
@@ -116802,7 +116784,7 @@ iBB
 iBB
 iBB
 iBB
-mht
+iBB
 iBB
 iBB
 jSX
@@ -116813,7 +116795,7 @@ iBB
 pdE
 pdE
 pdE
-mht
+iBB
 iBB
 iBB
 iBB
@@ -117833,7 +117815,7 @@ ryA
 iBB
 iBB
 iBB
-mht
+iBB
 iBB
 rzd
 iBB
