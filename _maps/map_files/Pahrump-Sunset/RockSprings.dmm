@@ -268,10 +268,6 @@
 /area/f13/wasteland/redwater)
 "agi" = (
 /obj/structure/kitchenspike,
-/obj/item/bodypart/chest{
-	pixel_x = 2;
-	pixel_y = -10
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "agH" = (
@@ -9186,7 +9182,6 @@
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/kebab/human,
 /obj/item/reagent_containers/food/snacks/kebab/human,
-/obj/item/bodypart/r_arm,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -12587,7 +12582,6 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibmid1"
 	},
-/obj/item/bodypart/l_leg,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -18308,7 +18302,6 @@
 	},
 /area/f13/building)
 "gqQ" = (
-/obj/item/bodypart/r_leg,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -24849,7 +24842,6 @@
 /area/f13/building)
 "iBx" = (
 /obj/structure/closet/fridge,
-/obj/item/bodypart/head,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iBJ" = (
@@ -60546,7 +60538,6 @@
 "uZz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bodypart/l_arm,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -62304,7 +62295,6 @@
 	icon_state = "gibbearcore"
 	},
 /mob/living/simple_animal/hostile/rat,
-/obj/item/bodypart/r_arm,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},

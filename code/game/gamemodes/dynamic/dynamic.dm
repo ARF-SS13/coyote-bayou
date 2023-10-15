@@ -341,6 +341,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	log_game("DYNAMIC: Dynamic Mode initialized with a Threat Level of... [threat_level]! ([round_start_budget] round start budget)")
 	return TRUE
 
+
 /datum/game_mode/dynamic/proc/setup_shown_threat()
 	if (prob(FAKE_REPORT_CHANCE))
 		shown_threat = rand(1, 100)
@@ -378,6 +379,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 		if(player.ready == PLAYER_READY_TO_PLAY && player.mind && player.check_preferences())
+
 
 			roundstart_pop_ready++
 			candidates.Add(player)

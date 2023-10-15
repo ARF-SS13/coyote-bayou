@@ -1528,7 +1528,6 @@
 	},
 /obj/effect/decal/cleanable/blood/innards,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/bodypart/head,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aKf" = (
@@ -6990,11 +6989,6 @@
 /area/f13/wasteland)
 "dkS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bodypart/r_leg{
-	dir = 4;
-	pixel_x = -16;
-	pixel_y = -6
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
 	},
@@ -21057,11 +21051,6 @@
 	icon_state = "drip4"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/item/bodypart/l_arm{
-	dir = 1;
-	pixel_x = -17;
-	pixel_y = 11
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jwX" = (
@@ -43775,7 +43764,6 @@
 /area/f13/building/abandoned)
 "tQb" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/bodypart/l_arm/robot/surplus_upgraded,
 /obj/effect/spawner/lootdrop/ammo/shotgun,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
