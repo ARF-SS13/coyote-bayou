@@ -784,3 +784,8 @@
 	name  = "Cowboy Vest"
 	path = /obj/item/clothing/accessory/sheriffvest
 	cost = 0
+
+/datum/gear/backpack/carchoice
+	name = "Car choice"
+	path = /obj/item/choice_beacon/car
+	cost = 5
