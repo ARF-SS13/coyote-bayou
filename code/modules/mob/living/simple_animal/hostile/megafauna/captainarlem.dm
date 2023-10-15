@@ -103,7 +103,8 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 	charge()
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/proc/charge()
-	var/turf/T = get_turf(target)
+	var/atom/my_target = get_target()
+	var/turf/T = get_turf(my_target)
 	if(!T || T == loc)
 		return
 	new /obj/effect/temp_visual/dragon_swoop(T)
@@ -116,7 +117,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(target, move_to_delay, minimum_distance)
+	Goto(my_target, move_to_delay, minimum_distance)
 
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/Bump(atom/A)
@@ -149,8 +150,9 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 	var/obj/item/projectile/P = new /obj/item/projectile/f13plasma/plasmacaster/arlem(startloc)
 	P.preparePixelProjectile(marker, startloc)
 	P.firer = src
-	if(target)
-		P.original = target
+	var/atom/my_target = get_target()
+	if(my_target)
+		P.original = my_target
 	P.fire(set_angle)
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/proc/blast(set_angle)

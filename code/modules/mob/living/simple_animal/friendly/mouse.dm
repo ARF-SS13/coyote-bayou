@@ -4,6 +4,7 @@
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"
+	is_monophobia_pet = TRUE
 	speak = list("Squeak!","SQUEAK!","Squeak?")
 	speak_emote = list("squeaks")
 	emote_hear = list("squeaks.")
