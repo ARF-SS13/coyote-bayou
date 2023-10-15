@@ -5767,9 +5767,6 @@
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/coyote/nash/massfus/sidebuilding)
 "avc" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
@@ -22709,9 +22706,6 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "bUu" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/underground/cave/coyote/antmound)
@@ -25849,7 +25843,6 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/obj/item/bodypart/l_arm,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
 "ctI" = (
@@ -27876,9 +27869,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "cQo" = (
 /obj/structure/table/reinforced,
-/obj/item/bodypart/l_leg/robot,
 /obj/item/screwdriver,
-/obj/item/bodypart/r_arm/robot,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken,
 /obj/effect/spawner/lootdrop/f13/uncommon_parts,
@@ -27966,9 +27957,6 @@
 /area/f13/building)
 "cQR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bodypart/r_arm{
-	dir = 4
-	},
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
 "cQT" = (
@@ -41288,7 +41276,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/bodypart/head,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "fVn" = (
@@ -41689,9 +41676,6 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "gar" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "gaA" = (
@@ -49101,7 +49085,6 @@
 	},
 /area/f13/building/abandoned)
 "hOg" = (
-/obj/item/bodypart/chest,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/underground/cave/coyote/antmound)
 "hOq" = (
@@ -52751,7 +52734,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iCQ" = (
-/obj/item/bodypart/chest,
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
@@ -55764,7 +55746,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/bodypart/r_arm,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -64041,9 +64022,6 @@
 /area/f13/building/coyote/nash/school/groundfloor)
 "ljy" = (
 /obj/item/electropack/shockcollar,
-/obj/item/bodypart/head{
-	dir = 8
-	},
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
 	randomizer_kind = "low level mobs";
@@ -71370,7 +71348,6 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "mPZ" = (
-/obj/item/bodypart/l_arm/robot,
 /obj/structure/chair/office/dark,
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2"
@@ -71789,9 +71766,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ruins)
 "mVi" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/underground/cave/coyote/antmound)
 "mVv" = (
@@ -72547,7 +72521,6 @@
 	},
 /area/f13/wasteland/city)
 "ndm" = (
-/obj/item/bodypart/l_arm,
 /obj/item/melee/onehanded/knife/throwing,
 /obj/item/melee/onehanded/knife/throwing,
 /turf/open/indestructible/ground/outside/dirt,
@@ -74985,9 +74958,6 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "nDO" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
 "nDQ" = (
@@ -77871,9 +77841,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "onf" = (
-/obj/item/bodypart/r_arm{
-	dir = 4
-	},
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
@@ -78930,7 +78897,6 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/nash/suburbs)
 "oyQ" = (
-/obj/item/bodypart/chest,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
@@ -79979,7 +79945,6 @@
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
 "oLb" = (
-/obj/item/bodypart/l_arm,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/underground/cave/coyote/antmound)
 "oLd" = (
@@ -89158,7 +89123,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "qPR" = (
-/obj/item/bodypart/chest,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/caves)
 "qPS" = (
@@ -93960,7 +93924,6 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/obj/item/bodypart/chest,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "rXa" = (
@@ -97984,9 +97947,6 @@
 	},
 /area/f13/wasteland/city/nash/suburbs)
 "sRT" = (
-/obj/item/bodypart/l_leg{
-	dir = 8
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
 "sSb" = (
@@ -106300,7 +106260,6 @@
 /area/f13/building)
 "uMc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bodypart/chest,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
 "uMj" = (
@@ -108923,11 +108882,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/obj/item/bodypart/chest,
-/obj/item/bodypart/r_leg{
-	dir = 1;
-	pixel_y = 10
-	},
+
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
@@ -117392,7 +117347,6 @@
 /area/f13/wasteland)
 "xqC" = (
 /obj/structure/table/reinforced,
-/obj/item/bodypart/r_leg/robot,
 /obj/item/trash/f13/electronic/toaster,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
@@ -118141,7 +118095,6 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/blood/splatter,
-/obj/item/bodypart/r_leg,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "xyH" = (
