@@ -1250,3 +1250,12 @@
 	icon_state = "goldfish"
 
 
+/obj/item/hairbrush
+	name = "hairbrush"
+	desc = "A small, circular brush with an ergonomic grip for efficient brush application."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "brush"
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+
