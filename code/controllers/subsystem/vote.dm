@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(vote)
 				. += option
 	return .
 
-/datum/controller/subsystem/vote/proc/calculate_condorcet_votes(var/blackbox_text)
+/datum/controller/subsystem/vote/proc/calculate_condorcet_votes(blackbox_text)
 	if((mode == "gamemode" || mode == "dynamic" || mode == "roundtype"))
 		for(var/mob/dead/new_player/P in GLOB.player_list)
 			if(P.ready != PLAYER_READY_TO_PLAY && voted[P.ckey])
