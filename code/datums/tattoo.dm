@@ -14,7 +14,7 @@
 	/// Optional, access related to the tat
 	var/list/tat_access = list()
 	/// the owning limb
-	var/datum/weakref/owner_limb
+	var/obj/item/bodypart/owner_limb
 	/// Optional, extra desc stuff
 	var/extra_desc
 	/// Where on the body part is the tat?
@@ -39,7 +39,7 @@
 		extra_desc = cool_tat.extra_desc
 		fade_time = cool_tat.fade_time
 	if(istype(owner, /obj/item/bodypart))
-		owner_limb = WEAKREF(owner)
+		owner_limb = owner
 	if(put_here)
 		tat_location = put_here
 
@@ -48,19 +48,18 @@
 		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
 
 /datum/tattoo/Destroy(force, ...)
-	if(isweakref(owner_limb))
-		var/obj/item/bodypart/wiggle = owner_limb.resolve()
-		wiggle.tattoos[tat_location] -= src
-	. = ..()
+	if(owner_limb)
+		owner_limb.tattoos -= src
+		owner_limb = null
+	return ..()
 
 /// Is the tattoo visible?
 /datum/tattoo/proc/is_it_visible(mob/viewer)
 	if(!owner_limb)
 		return FALSE
-	var/obj/item/bodypart/meatchunk = owner_limb.resolve()
-	if(!meatchunk)
+	if(!ishuman(owner_limb.owner))
 		return FALSE
-	var/mob/living/carbon/human/tatted = meatchunk.owner
+	var/mob/living/carbon/human/tatted = owner_limb.owner
 	if(!tatted)
 		return TRUE // shrug, its visible
 	var/dist_between_em = get_dist(tatted, viewer)
@@ -73,7 +72,7 @@
 		return FALSE // the boobie fell off :c
 	if(privacy_invaded == TATTOO_NOT_PRIVATE && dist_between_em <= 1)
 		return TRUE // close up, and the tat isnt private? see it
-	if(LAZYLEN(tatted.clothingonpart(meatchunk)))
+	if(LAZYLEN(tatted.clothingonpart(owner_limb)))
 		return FALSE // uncovered? uncovered
 	return TRUE
 
@@ -91,8 +90,7 @@
 	if(!owner_limb)
 		return FALSE // shouldnt happen
 
-	var/obj/item/bodypart/clump = owner_limb?.resolve()
-	var/mob/living/carbon/human/grundlehaver = clump?.owner
+	var/mob/living/carbon/human/grundlehaver = owner_limb?.owner
 	if(!grundlehaver)
 		return TRUE // how the heck did you sever a chest? nice
 	var/obj/item/organ/genital/grundle
@@ -138,8 +136,10 @@
 /// takes in the tat's location, outputs words about their location
 /// person is the person the tat is allegedly on, cus we dont *really* keep track ourselves
 /datum/tattoo/proc/location2words()
-	var/obj/item/bodypart/ourlimb = owner_limb.resolve()
-	var/mob/living/carbon/human/person = ourlimb?.owner
+	var/mob/living/carbon/human/person = owner_limb?.owner
+	if(!person)
+		stack_trace("A tattoo named [src.name] has no person attached!")
+		return "somewhere."
 	switch(tat_location)
 		if(TATTOO_FUCKUP)
 			return "misapplied over [ishuman(person) ? "[person.p_their()]" : "the"] bepis. There's a bit more written there:[span_phobia("hey this tattoo didnt set the location right, tell superlagg their shit broke.")]."
