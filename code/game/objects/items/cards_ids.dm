@@ -241,6 +241,7 @@
 	if(my_store)
 		my_store.my_card = null
 		my_store = null
+	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_GOD)
 	return ..()
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
