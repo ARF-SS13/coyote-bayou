@@ -876,7 +876,7 @@
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
 			inherently poor accuracy. Only accepts small magazines. This model is locked to semi-auto! ++To change ammunition type,\
-			 unload the weapon and press the button on the top left corner of your screen."
+			unload the weapon and press the button on the top left corner of your screen."
 	icon_state = "sidewinder-magnum"
 	mag_type = /obj/item/ammo_box/magazine/m44
 	extra_mag_types = /obj/item/ammo_box/magazine/m44/automag
