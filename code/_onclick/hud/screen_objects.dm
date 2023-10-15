@@ -116,8 +116,9 @@
 	if(usr.attack_ui(slot_id))
 		usr.update_inv_hands()
 	//Remove the green object overlay since we never had a chance to use MouseExited(). Also removes the red one, but that's okay.
-	cut_overlay(object_overlay)
-	QDEL_NULL(object_overlay)
+	if(object_overlay)
+		cut_overlay(object_overlay)
+		QDEL_NULL(object_overlay)
 	return TRUE
 
 /atom/movable/screen/inventory/MouseEntered()
@@ -138,6 +139,12 @@
 			icon_state = icon_full
 		else
 			icon_state = icon_empty
+
+/atom/movable/screen/inventory/update_icon()
+	. = ..()
+	if(object_overlay)
+		cut_overlay(object_overlay)
+		QDEL_NULL(object_overlay)
 
 /atom/movable/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
@@ -161,7 +168,6 @@
 	cut_overlay(object_overlay)
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
-	update_icon(object_overlay)
 
 /atom/movable/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
