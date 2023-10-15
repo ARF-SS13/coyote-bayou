@@ -1040,24 +1040,137 @@
  * Ranges from Spawn tier to actual good loot:tm:
  * * * * * * * * * * */
 
-// Personal note: Template, Carbine, Mini pistol, classic Rifle, HoS laser, Tac laser, Sniper cannon, self-charging nuclear pistol, hellgun, improvised laser, captain laser, X-Ray rifle (nuclear gun?)
+// TODO: Hellgun, captain laser
 
 /obj/item/gun/energy/laser/tg
 	name = "TG Blaster Template"
 	desc = "You probably shouldn't be seeing this. Contact a coder!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "scraplaser"
-	item_state = "scraplaser"
+	item_state = "lasernew"
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	ammo_x_offset = 1
 	shaded_charge = 1
 	can_remove = 0
 	can_charge = 1
+	can_flashlight = 0
+	can_scope = TRUE
+	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+/* * * * * *
+ * Scrap laser
+ * Same as the Carbine but worse
+ * No gunlight
+ * Can craft super easy
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/scrap
+	name = "improvised laser"
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. At least it shoots?"
+	can_remove = 0
+
+/* * * * * *
+ * TG Carbine
+ * Projectile AER-9 but more shots
+ * Gunlight
+ * Spawn Tier; spawns with TG Pistol / Low end loot
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/carbine
+	name = "laser carbine"
+	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
+	icon_state = "lascarbine"
+	can_remove = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/carbine)
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+
+/* * * * * *
+ * TG Pistol
+ * Unreloadable Wattz 1k but more shots
+ * No gunlight
+ * Spawn Tier; spawns with TG carbine / Low end loot
+ * * * * * */
+
+ /obj/item/gun/energy/laser/tg/carbine/pistol
+	name = "miniture laser pistol"
+	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
+	icon_state = "laspistol"
+	can_remove = 0
+	w_class = WEIGHT_CLASS_SMALL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	can_flashlight = 0
+	can_scope = FALSE
+
+/* * * * * *
+ * TG Rifle
+ * Projectile AER-9 but WAY more shots
+ * Gunlight
+ * Uncommon
+ * * * * * */
+
+ /obj/item/gun/energy/laser/tg/carbine/rifle
+	name = "laser rifle"
+	desc = "The Mark II Trident Gammaworks laser rifle was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the microfusion cell."
+	icon_state = "lasrifle"
+	can_remove = 0
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+
+ /* * * * * *
+ * TG Heavy Rifle
+ * Plasma Rifle but laser damage (upgrade from the TG Rifle)
+ * Gunlight
+ * Uncommon / Rare
+ * * * * * */
+
+/* * * * * *
+ * TG Taclaser
+ * Blaster P90 but bulky
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/* * * * * *
+ * TG HOS Pistol
+ * Autocharging Handgun, worse than caplaser
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/* * * * * *
+ * TG Nuclear Pistol
+ * Dangerous self-charging rad-pistol
+ * No gunlight
+ * Rare
+ * * * * * */
+
+ /* * * * * *
+ * TG Nuclear Rifle (X-Ray rifle)
+ * Self-charging AER9 but with bonus radiation damage
+ * Gunlight
+ * Rare
+ * * * * * */
+
+ /* * * * * *
+ * TG Particle Rifle
+ * Five shots. More than enough to kill anything that moves.
+ * No gunlight
+ * Rare / Unique
+ * * * * * */
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting

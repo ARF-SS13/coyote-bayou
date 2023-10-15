@@ -785,7 +785,7 @@
 /obj/item/projectile/beam/laser/tg
 	name = "blaster bolt"
 	damage = 30
-
+	recoil = BULLET_RECOIL_HEAVY_LASER
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol

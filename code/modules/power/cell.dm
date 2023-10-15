@@ -557,7 +557,7 @@
 
 // TG Blaster Internal Cell
 /obj/item/stock_parts/cell/ammo/breeder/tg
-	name = "TG brand internal powercell"
+	name = "Type-G internal powercell"
 	desc = "An internal battery intended for use in TG-brand blasters. How in the world did you get ahold of this?"
 	maxcharge = 5000
 

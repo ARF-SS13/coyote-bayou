@@ -389,11 +389,19 @@ Avoid decimals when possible when it comes to e_cost!
 	fire_sound = 'sound/weapons/taser.ogg'
 	e_cost = 400 // 50 shots
 
-// Kelp's TG blaster casings, internal cell has 5000 power units
+// Kelp's TG blaster casings, internal cell has 5000 power units, CANNOT BE RELOADED IN THE FIELD KEEP THAT IN MIND.
 
 /obj/item/ammo_casing/energy/laser/tg
 	projectile_type = /obj/item/projectile/beam/laser/tg
 	e_cost = 250 // 20 shots
+
+/obj/item/ammo_casing/energy/laser/tg/carbine
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 200 // 25 shots
+
+/obj/item/ammo_casing/energy/laser/tg/rifle
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 125 // 40 shots
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest
