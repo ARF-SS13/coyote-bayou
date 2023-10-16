@@ -1253,7 +1253,7 @@
 			if(1 to INFINITY)
 				. += "[icon_state]_fail_0"
 
- /* * * * * *
+/* * * * * *
  * TG Nuclear Rifle (X-Ray rifle)
  * Self-charging AER9 but with bonus radiation damage
  * Gunlight
@@ -1280,7 +1280,7 @@
 		/datum/firemode/semi_auto
 	)
 
- /* * * * * *
+/* * * * * *
  * TG Particle Rifle
  * Five shots. More than enough to kill anything that moves.
  * No gunlight
