@@ -803,6 +803,48 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 
+/datum/gear/suit/armor/warhammerk
+	name = "Ancient West german greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/medicalkrieg
+	name = "Ancient Medical West german greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/officerkrieg
+	name = "Ancient West german Officer greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/officeramerican
+	name = "Ancient American officer greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/armors
+	name = "Armored Priestess ballistic suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/armors/imperials
+	name = "Armored American ballistic suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/officergenerics
+	name = "Armored American ballistic suit"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
 /datum/gear/suit/armor/ncrmedium
 	name = "Texas militia breastplate"
 	path = /obj/item/clothing/suit/armor/texasmed
