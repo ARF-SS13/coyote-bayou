@@ -283,6 +283,7 @@
 		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
+		/obj/item/gun/ballistic/automatic/wt550/worn = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -292,6 +293,7 @@
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 2,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 1,
+		/obj/item/gun/ballistic/automatic/wt550 = 2,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 2,
 		/obj/item/gun/ballistic/automatic/rangemaster = 2,
@@ -310,7 +312,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/automag = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
-		/obj/item/gun/ballistic/rifle/mag/boys = 3,
+		/obj/item/gun/ballistic/rifle/mag/boys = 2,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
 		/obj/item/gun/ballistic/shotgun/police = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
@@ -321,7 +323,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
 		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
-		/obj/item/gun/ballistic/automatic/aksmol = 2 ,
+		/obj/item/gun/ballistic/automatic/aksmol = 2,
 	)
 
 ///////////////////////////
@@ -529,7 +531,6 @@
 		/obj/item/gun/ballistic/automatic/m1garand/republicspride = 10,
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 10,
 		/obj/item/gun/ballistic/automatic/bozar = 10,
-		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
 		/obj/item/gun/ballistic/automatic/m1919 = 10,
