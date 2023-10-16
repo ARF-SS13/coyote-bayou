@@ -1130,6 +1130,10 @@
 	flight_x_offset = 20
 	flight_y_offset = 10
 	init_recoil = LASER_RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto/fast
+	)
 
 /* * * * * *
  * TG Heavy Rifle
@@ -1144,6 +1148,7 @@
 	icon_state = "lascannon"
 	weapon_weight = GUN_TWO_HAND_ONLY
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/heavy)
+	init_recoil = LASER_RIFLE_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -1193,13 +1198,14 @@
  * TG Nuclear Pistol
  * Dangerous self-charging rad-pistol
  * No gunlight
- * Rare
+ * Uncommon - bonus loot chance because it's dangerous to the user
  * * * * * */
 
 /obj/item/gun/energy/laser/tg/recharger/nuclear
 	name = "nuclear laser pistol"
 	desc = "Designed before the advent of the microfusion cell, this prototype handgun draws its power from a miniture nuclear powerplant in the foregrip. A faded label on the side warns the user to keep it away from electromagnetic pulses."
 	icon_state = "nucpistol"
+	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear)
 	selfchargerate = 15
 	var/fail_tick = 0
@@ -1244,22 +1250,56 @@
 		. += "[icon_state]_fail_0"
 	else
 		switch(fail_tick)
-			if(0 to INFINITY)
+			if(1 to INFINITY)
 				. += "[icon_state]_fail_0"
 
  /* * * * * *
  * TG Nuclear Rifle (X-Ray rifle)
  * Self-charging AER9 but with bonus radiation damage
  * Gunlight
- * Rare
+ * Rare - bonus loot chance because it's dangerous to the user
  * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle
+	name = "nuclear laser rifle"
+	desc = "This rifle has a miniture nuclear reactor housed in the foregrip which allows it to infinitely recharge its internal battery. Etched above the grip are the words, 'PROPERTY OF THE CENTER FOR DISEASE CONTROL' and beside that is a faded label that warns the user to keep this weapon away from electromagnetic pulses."
+	icon_state = "xraylas"
+	item_state = "shotguncity"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	can_scope = TRUE
+	selfcharge = 1
+	selfchargerate = 15
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto
+	)
 
  /* * * * * *
  * TG Particle Rifle
  * Five shots. More than enough to kill anything that moves.
  * No gunlight
- * Rare / Unique
+ * Unique
  * * * * * */
+
+/obj/item/gun/energy/laser/tg/particlecannon
+	name = "particle cannon"
+	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
+	icon_state = "lassniper"
+	item_state = "esniper"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	can_flashlight = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/particle)
+	init_recoil = LASER_RIFLE_RECOIL(2, 3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting

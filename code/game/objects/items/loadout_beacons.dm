@@ -772,7 +772,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/energykatana
 	name = "Energy Katana"
 	w_class = WEIGHT_CLASS_NORMAL
-	
+
 /obj/item/storage/box/gun/melee/energykatana/PopulateContents()
 	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
 
@@ -1432,6 +1432,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/wornaep7/PopulateContents()
 	new /obj/item/gun/energy/laser/pistol/worn(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/obj/item/storage/box/gun/energy/tglaser
+	name = "laser pistol and carbine case"
+
+/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/carbine(src)
+	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
 
 /obj/item/choice_beacon/box/gun //template for sprites
 	name = "weapon case"
