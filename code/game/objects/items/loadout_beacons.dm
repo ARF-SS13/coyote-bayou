@@ -1467,7 +1467,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /datum/loadout_box/energy
 	entry_tag = "Laser Pistol and Carbine"
-	entry_flags = LOADOUT_FLAG_PREMIUM
+	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy/tglaser
 
