@@ -77,15 +77,8 @@
 
 	face_atom(A)
 
-	var/obj/item/W = get_active_held_item()
-	var/obj/item/V = get_inactive_held_item()
-
-	if(W && V)
-		if(W.is_dual_wielded || V.is_dual_wielded) 
-
-		else
-			if(!CheckActionCooldown(immediate = TRUE))
-				return
+	if(!CheckActionCooldown(immediate = TRUE))
+		return
 
 	if(!modifiers["catcher"] && A.IsObscured())
 		return
@@ -108,6 +101,9 @@
 		throw_item(A)
 		return
 
+	var/obj/item/W = get_active_held_item()
+	var/obj/item/V = get_inactive_held_item()
+
 	if(W == A)
 		W.attack_self(src)
 		update_inv_hands()
@@ -119,12 +115,15 @@
 		if(W)
 			if(V)
 				if(W.is_dual_wielded || V.is_dual_wielded) 
-					if(W.CheckAttackCooldown(usr))
-						W.rightclick_melee_attack_chain(src, A, params)
-						//DelayNextAction(immediate = TRUE)
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.melee_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
 						return
 					else
-						V.rightclick_melee_attack_chain(src, A, params)
+						dual_wield_queue_swap = 0
+						V.melee_attack_chain(src, A, params)
+						DelayNextAction(V.attack_speed)
 						return
 
 			return W.melee_attack_chain(src, A, params)
@@ -143,12 +142,15 @@
 		if(W)
 			if(V)
 				if(W.is_dual_wielded || V.is_dual_wielded) 
-					if(W.CheckAttackCooldown(usr))
-						W.rightclick_melee_attack_chain(src, A, params)
-						//DelayNextAction(immediate = TRUE)
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.melee_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
 						return
 					else
-						V.rightclick_melee_attack_chain(src, A, params)
+						dual_wield_queue_swap = 0
+						V.melee_attack_chain(src, A, params)
+						DelayNextAction(V.attack_speed)
 						return
 
 			return W.melee_attack_chain(src, A, params)
@@ -163,12 +165,15 @@
 		if(W)
 			if(V)
 				if(W.is_dual_wielded || V.is_dual_wielded) 
-					if(W.CheckAttackCooldown(usr))
-						W.rightclick_melee_attack_chain(src, A, params)
-						//DelayNextAction(immediate = TRUE)
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.ranged_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
 						return
 					else
-						V.rightclick_melee_attack_chain(src, A, params)
+						dual_wield_queue_swap = 0
+						V.ranged_attack_chain(src, A, params)
+						DelayNextAction(V.attack_speed)
 						return
 
 			return W.ranged_attack_chain(src, A, params)

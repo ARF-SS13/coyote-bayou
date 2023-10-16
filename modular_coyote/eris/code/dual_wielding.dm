@@ -5,6 +5,8 @@
 //Maximum weight allowed for dual wielding.
 #define DUAL_WIELDING_MAX_WEIGHT_ALLOWED WEIGHT_CLASS_NORMAL
 
+#define DUAL_WIELDING_SPEED_DIVIDER 3
+
 /obj/item
 	var/is_dual_wielded = FALSE
 	var/sound_dualwield_start = 'sound/weapons/blade_unsheathing.ogg'
@@ -13,8 +15,11 @@
 	var/force_dual_wielded = 0 //If you have a specific force for it being dual wielded.
 	var/dual_wielded_mult = 1
 	var/memory_original_name
-	var/dual_wield_queue_swap = FALSE
+	var/dual_wield_memory_attack_speed  //dangerous variable, I know, but hey what's life without a little bit of spice?
+	var/dual_wield_switch_weapon = 0
 
+/mob
+	var/dual_wield_queue_swap = 0
 
 //Attempt to dual wield
 /proc/attempt_dual_wield(mob/user, obj/item/I, obj/item/J)
@@ -27,8 +32,13 @@
 	if((!I.is_dual_wielded && !J.is_dual_wielded) || !user)
 		return
 
+	user.dual_wield_queue_swap = 0
+
 	I.is_dual_wielded = FALSE
 	J.is_dual_wielded = FALSE
+
+	I.attack_speed = I.dual_wield_memory_attack_speed
+	J.attack_speed = J.dual_wield_memory_attack_speed
 
 	if(I.force_dual_unwielded)
 		I.force = I.force_dual_unwielded
@@ -71,6 +81,11 @@
 
 	I.is_dual_wielded = TRUE
 	J.is_dual_wielded = TRUE
+
+	I.dual_wield_memory_attack_speed = I.attack_speed
+	I.attack_speed = I.attack_speed/DUAL_WIELDING_SPEED_DIVIDER
+	J.dual_wield_memory_attack_speed = J.attack_speed
+	J.attack_speed = J.attack_speed/DUAL_WIELDING_SPEED_DIVIDER
 
 	if(I.force_dual_wielded)  //Let's assign other values, in case there are
 		I.force = I.force_dual_wielded
