@@ -540,12 +540,15 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	var/atom/my_target = get_target()
-	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
-	in_melee = TRUE
-	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
-		return FALSE
-	return my_target.attack_animal(src)
+	playsound(src.loc, 'sound/effects/flip.ogg', 100, TRUE, distant_range = 4)
+	spawn(1 SECONDS)
+		var/atom/my_target = get_target()
+		SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
+		in_melee = TRUE
+		if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
+			return FALSE
+	
+		return my_target.attack_animal(src)
 
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
