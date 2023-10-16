@@ -272,12 +272,12 @@ Works together with spawning an observer, noted above.
 
 /mob/proc/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE)
 	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, can_reenter_corpse, special, penalize)
-	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE_FINAL, can_reenter_corpse, special, penalize)
 	penalize = !(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING) && (penalize)
 	voluntary_ghosted = voluntary
 	if(!key || key[1] == "@" || (sig_flags & COMPONENT_BLOCK_GHOSTING))
 		return //mob has no key, is an aghost or some component hijacked.
 	stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
+	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE_FINAL, can_reenter_corpse, special, penalize)
 	var/mob/dead/observer/ghost = new(get_turf(src), src)	// Transfer safety to observer spawning proc.
 	SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 	ghost.can_reenter_corpse = can_reenter_corpse || (sig_flags & COMPONENT_FREE_GHOSTING)
