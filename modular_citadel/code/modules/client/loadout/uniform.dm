@@ -450,6 +450,26 @@
 	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/warhammeruniform
+	name = "Ancient West German uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/two
+	name = "Ancient West German Officer uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/three
+	name = "Ancient American uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/imperiumguard
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
 
 /datum/gear/uniform/russiancossack
 	name = "Cossack uniform"
