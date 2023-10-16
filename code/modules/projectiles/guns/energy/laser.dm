@@ -23,7 +23,7 @@
 	. = ..()
 	if(.)
 		return
-	if(istype(A, /obj/item/stock_parts/cell/ammo))
+	if(can_remove && istype(A, /obj/item/stock_parts/cell/ammo))
 		var/obj/item/stock_parts/cell/ammo/AM = A
 		if(istype(AM, cell_type))
 			var/obj/item/stock_parts/cell/ammo/oldcell = cell
