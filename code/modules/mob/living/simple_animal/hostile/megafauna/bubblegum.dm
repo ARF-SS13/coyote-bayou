@@ -137,7 +137,8 @@ Difficulty: Hard
 	charge()
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/charge()
-	var/turf/T = get_turf(target)
+	var/atom/my_target = get_target()
+	var/turf/T = get_turf(my_target)
 	if(!T || T == loc)
 		return
 	new /obj/effect/temp_visual/dragon_swoop(T)
@@ -150,7 +151,7 @@ Difficulty: Hard
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(target, move_to_delay, minimum_distance)
+	Goto(my_target, move_to_delay, minimum_distance)
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Bump(atom/A)
@@ -186,7 +187,7 @@ Difficulty: Hard
 		break
 	if(!can_jaunt)
 		return
-	for(var/obj/effect/decal/cleanable/blood/nearby in view(get_turf(target),2))
+	for(var/obj/effect/decal/cleanable/blood/nearby in view(get_turf(get_target()),2))
 		pools += nearby
 	if(pools.len)
 		shuffle_inplace(pools)

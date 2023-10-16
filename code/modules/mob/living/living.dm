@@ -139,14 +139,14 @@
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return 1
 
-		if(GLOB.pixel_slide)
+		if(pixel_slide_allow)
 			var/origtargetloc = L.loc
 			if(!pulledby)
 				if(M.a_intent != INTENT_HELP)
-					GLOB.pixel_slide_other_has_help_int = 0
+					pixel_slide_target_has_help_int = FALSE
 					return TRUE
 				else
-					GLOB.pixel_slide_other_has_help_int = 1
+					pixel_slide_target_has_help_int = TRUE
 				if(IS_STAMCRIT(src))
 					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
 					return TRUE

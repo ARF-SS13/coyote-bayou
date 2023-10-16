@@ -761,7 +761,7 @@
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
 			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
-			available out here."
+			available out here. ++To change ammunition type, unload the weapon and press the button on the top left corner of your screen."
 	icon_state = "sidewinder"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
@@ -861,7 +861,8 @@
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
 			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
-			available out here. This model is locked to semi-auto!"
+			available out here. This model is locked to semi-auto!  ++To change ammunition type, unload the weapon and press the \
+			button on the top left corner of your screen."
 	icon_state = "sidewinder"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -874,7 +875,8 @@
 			rotation-reactive metalmers to withstand higher pressures, now able to safely fire anything from .45ACP to 14mm with a \
 			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
 			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
-			inherently poor accuracy. Only accepts small magazines. This model is locked to semi-auto!"
+			inherently poor accuracy. Only accepts small magazines. This model is locked to semi-auto! ++To change ammunition type,\
+			unload the weapon and press the button on the top left corner of your screen."
 	icon_state = "sidewinder-magnum"
 	mag_type = /obj/item/ammo_box/magazine/m44
 	extra_mag_types = /obj/item/ammo_box/magazine/m44/automag

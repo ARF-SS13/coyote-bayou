@@ -59,7 +59,7 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/legion/GiveTarget(new_target)
 	. = ..()
-	if(target)
+	if(get_target())
 		wander = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/legion/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
