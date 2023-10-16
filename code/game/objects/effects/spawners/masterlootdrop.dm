@@ -564,6 +564,7 @@
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
+		/obj/item/gun/ballistic/automatic/compact14mmrifle = 1 ,
 	)
 
 ////////////////////////////
