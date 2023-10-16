@@ -77,8 +77,15 @@
 
 	face_atom(A)
 
-	if(!CheckActionCooldown(immediate = TRUE))
-		return
+	var/obj/item/W = get_active_held_item()
+	var/obj/item/V = get_inactive_held_item()
+
+	if(W && V)
+		if(W.is_dual_wielded || V.is_dual_wielded) 
+
+		else
+			if(!CheckActionCooldown(immediate = TRUE))
+				return
 
 	if(!modifiers["catcher"] && A.IsObscured())
 		return
@@ -101,8 +108,6 @@
 		throw_item(A)
 		return
 
-	var/obj/item/W = get_active_held_item()
-
 	if(W == A)
 		W.attack_self(src)
 		update_inv_hands()
@@ -112,6 +117,16 @@
 	//User itself, current loc, and user inventory
 	if(has_direct_access_to(A, FAR_DEPTH))
 		if(W)
+			if(V)
+				if(W.is_dual_wielded || V.is_dual_wielded) 
+					if(W.CheckAttackCooldown(usr))
+						W.rightclick_melee_attack_chain(src, A, params)
+						//DelayNextAction(immediate = TRUE)
+						return
+					else
+						V.rightclick_melee_attack_chain(src, A, params)
+						return
+
 			return W.melee_attack_chain(src, A, params)
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
@@ -126,6 +141,16 @@
 	//Standard reach turf to turf or reaching inside storage
 	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
+			if(V)
+				if(W.is_dual_wielded || V.is_dual_wielded) 
+					if(W.CheckAttackCooldown(usr))
+						W.rightclick_melee_attack_chain(src, A, params)
+						//DelayNextAction(immediate = TRUE)
+						return
+					else
+						V.rightclick_melee_attack_chain(src, A, params)
+						return
+
 			return W.melee_attack_chain(src, A, params)
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
@@ -136,6 +161,16 @@
 		if(!isturf(A) && !isturf(A.loc))
 			return
 		if(W)
+			if(V)
+				if(W.is_dual_wielded || V.is_dual_wielded) 
+					if(W.CheckAttackCooldown(usr))
+						W.rightclick_melee_attack_chain(src, A, params)
+						//DelayNextAction(immediate = TRUE)
+						return
+					else
+						V.rightclick_melee_attack_chain(src, A, params)
+						return
+
 			return W.ranged_attack_chain(src, A, params)
 		else
 			return RangedAttack(A,params)
