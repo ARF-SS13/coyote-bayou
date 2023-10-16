@@ -555,6 +555,11 @@
 	name = "S.I.D.A. breeder"
 	maxcharge = 16500
 
+// TG Blaster Internal Cell
+/obj/item/stock_parts/cell/ammo/breeder/tg
+	name = "Type-G internal powercell"
+	desc = "An internal battery intended for use in TG-brand blasters. How in the world did you get ahold of this?"
+	maxcharge = 5000
 
 
 // Electron charge pack - rapid fire energy
