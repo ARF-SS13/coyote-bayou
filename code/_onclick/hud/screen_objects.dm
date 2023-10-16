@@ -104,8 +104,13 @@
 	plane = HUD_PLANE
 
 /atom/movable/screen/inventory/proc/ClearGhosts()
-	cut_overlays()
-	QDEL_NULL(object_overlay)
+	//If we have it, get rid of it now the right way.
+	if(object_overlay)
+		cut_overlay(object_overlay)
+		QDEL_NULL(object_overlay)
+	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
+	if(overlays.len && type != /atom/movable/screen/inventory/hand)
+		cut_overlays()
 
 /atom/movable/screen/inventory/Click(location, control, params)
 	if(hud?.mymob && (hud.mymob != usr))
@@ -125,6 +130,7 @@
 
 /atom/movable/screen/inventory/MouseEntered()
 	..()
+	ClearGhosts()
 	add_overlays()
 
 /atom/movable/screen/inventory/MouseExited()
