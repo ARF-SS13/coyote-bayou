@@ -1433,13 +1433,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/energy/laser/pistol/worn(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
-/obj/item/storage/box/gun/energy/tglaser
-	name = "laser pistol and carbine case"
-
-/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
-	new /obj/item/gun/energy/laser/tg/carbine(src)
-	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
-
 /obj/item/choice_beacon/box/gun //template for sprites
 	name = "weapon case"
 	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
@@ -1464,12 +1457,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_PREMIUM
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy
-
-/datum/loadout_box/energy
-	entry_tag = "Laser Pistol and Carbine"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_ENERGY
-	spawn_thing = /obj/item/storage/box/gun/energy/tglaser
 
 /datum/loadout_box/plasma
 	entry_tag = "Plasma Pistol"
@@ -2550,3 +2537,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/magic/rodwands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+
+// Putting this down here because it refuses to work. Needs to be fixed later.
+
+/datum/loadout_box/energy/tglaser
+	entry_tag = "Laser Pistol and Carbine"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser
+
+/obj/item/storage/box/gun/energy/tglaser
+	name = "laser pistol and carbine case"
+
+/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/carbine(src)
+	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
