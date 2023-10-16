@@ -1085,7 +1085,7 @@
  * Uncommon
  * * * * * */
 
- /obj/item/gun/energy/laser/tg/rifle
+/obj/item/gun/energy/laser/tg/rifle
 	name = "laser rifle"
 	desc = "The Mark II Trident Gammaworks laser rifle was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the microfusion cell."
 	icon_state = "lasrifle"
@@ -1125,7 +1125,7 @@
  * Spawn Tier; spawns with TG carbine / Low end loot
  * * * * * */
 
- /obj/item/gun/energy/laser/tg/carbine/pistol
+/obj/item/gun/energy/laser/tg/carbine/pistol
 	name = "miniture laser pistol"
 	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
