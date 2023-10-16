@@ -1465,6 +1465,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/energy
 
+/datum/loadout_box/energy
+	entry_tag = "Laser Pistol and Carbine"
+	entry_flags = LOADOUT_FLAG_PREMIUM
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser
+
 /datum/loadout_box/plasma
 	entry_tag = "Plasma Pistol"
 	entry_flags = LOADOUT_FLAG_PREMIUM
