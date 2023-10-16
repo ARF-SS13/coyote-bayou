@@ -334,6 +334,17 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 //	/obj/item/tool_upgrade/productivity/red_paint = 2
 ))
 
+GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
+	GLOB.trash_chem +\
+	GLOB.trash_clothing +\
+	GLOB.trash_craft +\
+	GLOB.trash_gun +\
+	GLOB.trash_misc +\
+	GLOB.trash_mob +\
+	GLOB.trash_part +\
+	GLOB.trash_tool +\
+	GLOB.trash_attachment)
+
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/under/overalls,
 	/obj/item/clothing/head/flatcap,
