@@ -901,12 +901,62 @@
 	max_amount = 20
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 
-/obj/item/stack/medical/mesh/aloe/Initialize()
+/obj/item/stack/medical/mesh/aloe/update_icon_state()
 	. = ..()
-	if(amount == max_amount)	 //aloe starts open lol
-		is_open = TRUE
+	if(amount == max_amount)	 // plap plap plap plap use the right icon use the right icon use the right icon use the right icon
+		icon_state = "aloe_paste"
 		update_icon()
 
+/obj/item/stack/medical/mesh/horsecream
+	name = "horsenettle cream"
+	desc = "A healing \"paste\" made by mashing up horsenettle with a |rock| to \"soothe\" bruises."
+
+	icon_state = "horse_cream" // It isn't white by the way
+	self_delay = 20
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 10
+	amount = 20
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
+	merge_type = /obj/item/stack/medical/mesh/horsecream
+
+/obj/item/stack/medical/mesh/aloe/update_icon_state()
+	. = ..()
+	if(amount == max_amount)	 // I did not break it, I did not break it, oh hi Fenny!
+		icon_state = "horse_cream"
+		update_icon()
+
+// gonna try and get a little fancy here
+/obj/item/stack/medical/mesh/horsecream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_danger("You feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
+		M.emote("scream")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+	return
+
+/obj/item/stack/medical/mesh/horsecream/goodcream
+	name = "horsenettle remedy"
+	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Datura extract helps numb the pain."
+
+	icon_state = "horse_cream_good" // This is how veggie dino nuggets are made
+	heal_brute = 20 // Might be a bit much, but only time will tell.
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
+
+/obj/item/stack/medical/mesh/aloe/update_icon_state()
+	. = ..()
+	if(amount == max_amount)	 // I did not break it, I did not. Oh hi Fenny!
+		icon_state = "horse_cream_good"
+		update_icon()
+
+// gonna try and get a little quirky here
+/obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+		M.emote("augh")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
+	return
 
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)
