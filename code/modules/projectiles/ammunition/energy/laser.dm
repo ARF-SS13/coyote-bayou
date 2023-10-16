@@ -403,6 +403,22 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/tg
 	e_cost = 125 // 40 shots
 
+/obj/item/ammo_casing/energy/laser/tg/rifle/heavy
+	projectile_type = /obj/item/projectile/beam/laser/tg/heavy
+	e_cost = 208 // 24 shots
+
+/obj/item/ammo_casing/energy/laser/tg/rifle/auto
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 83 // 60 shots
+
+/obj/item/ammo_casing/energy/laser/tg/recharger
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 312 // 16 shots
+
+/obj/item/ammo_casing/energy/laser/tg/nuclear
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
+	e_cost = 312 // 16 shots
+
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest
 	projectile_type = /obj/item/projectile/beam/laser/pistol/lasertesting

@@ -787,6 +787,17 @@
 	damage = 30
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
+/obj/item/projectile/beam/laser/tg/heavy
+	name = "intense blaster bolt"
+	damage = 60
+	wound_bonus = 40 // nasty, but it's still a laser.
+	recoil = BULLET_RECOIL_PLASMA
+
+/obj/item/projectile/beam/laser/tg/nuclear
+	name = "nuclear laser bolt"
+	icon_state = "xray"
+	irradiate = 200
+
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol
 	damage = 25

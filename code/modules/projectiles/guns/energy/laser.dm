@@ -1049,7 +1049,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "scraplaser"
-	item_state = "laser-rifle9"
+	item_state = "shotguncity"
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	ammo_x_offset = 1
@@ -1075,32 +1075,7 @@
 
 /obj/item/gun/energy/laser/tg/scrap
 	name = "improvised laser"
-	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. At least it shoots?"
-
-
-/* * * * * *
- * TG Rifle
- * Projectile AER-9 but WAY more shots
- * Gunlight
- * Uncommon
- * * * * * */
-
-/obj/item/gun/energy/laser/tg/rifle
-	name = "laser rifle"
-	desc = "The Mark II Trident Gammaworks laser rifle was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the microfusion cell."
-	icon_state = "lasrifle"
-	w_class = WEIGHT_CLASS_BULKY
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
-	can_flashlight = 1
-	flight_x_offset = 20
-	flight_y_offset = 10
-
- /* * * * * *
- * TG Heavy Rifle
- * Plasma Rifle but laser damage (upgrade from the TG Rifle)
- * Gunlight
- * Uncommon / Rare
- * * * * * */
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
 
 /* * * * * *
  * TG Carbine
@@ -1117,6 +1092,7 @@
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 10
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
 /* * * * * *
  * TG Pistol
@@ -1129,24 +1105,89 @@
 	name = "miniture laser pistol"
 	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
+	item_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	can_flashlight = 0
 	can_scope = FALSE
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Rifle
+ * Projectile AER-9 but WAY more shots
+ * Gunlight
+ * Uncommon
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle
+	name = "laser rifle"
+	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
+	icon_state = "lasrifle"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	init_recoil = LASER_RIFLE_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Heavy Rifle
+ * Plasma Rifle but laser-typed damage (upgrade from the TG Rifle, sidegrade to the Taclaser)
+ * Gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle/heavy
+	name = "heavy laser rifle"
+	desc = "Originally designed as a man portable anti-tank weapon, nowadays this massive rifle is mostly used to fry Super Mutants and bandits in Power Armor."
+	icon_state = "lascannon"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/heavy)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 /* * * * * *
  * TG Taclaser
- * Blaster P90 but bulky
+ * Blaster P90 but bulky (upgrade from the TG rifle, sidegrade to the Heavy)
  * No gunlight
  * Rare
  * * * * * */
 
+/obj/item/gun/energy/laser/tg/rifle/auto
+	name = "tactical laser rifle"
+	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
+	icon_state = "taclaser"
+	item_state = "p90"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/auto)
+	can_flashlight = 0
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
 /* * * * * *
  * TG HOS Pistol
- * Autocharging Handgun, worse than caplaser
+ * Autocharging Handgun, worse than caplaser (safe, unlike the nuclear guns)
  * No gunlight
- * Rare
+ * Very Rare
  * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger
+	name = "experimental laser pistol"
+	desc = "An experimental and limited production model of laser pistol, this weapon is highly valued and sought after due to its ability to recharge its internal battery automatically."
+	icon_state = "protolas"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/recharger)
+	can_flashlight = 0
+	can_scope = FALSE
+	selfcharge = 1
+	selfchargerate = 20
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
 /* * * * * *
  * TG Nuclear Pistol
@@ -1154,6 +1195,57 @@
  * No gunlight
  * Rare
  * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear
+	name = "nuclear laser pistol"
+	desc = "Designed before the advent of the microfusion cell, this prototype handgun draws its power from a miniture nuclear powerplant in the foregrip. A faded label on the side warns the user to keep it away from electromagnetic pulses."
+	icon_state = "nucpistol"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear)
+	selfchargerate = 15
+	var/fail_tick = 0
+	var/fail_chance = 0
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/process()
+	if(fail_tick > 0)
+		fail_tick--
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	failcheck()
+	update_icon()
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/proc/failcheck()
+	if(prob(fail_chance))
+		switch(fail_tick)
+			if(0 to 200)
+				fail_tick += (2*(fail_chance))
+				radiation_pulse(src, 50)
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)		//thank you short circuiting. if you powergame and nest these guns deeply you get to suffer no-warning radiation death.
+				if(M)
+					to_chat(M, span_userdanger("Your [name] feels warmer."))
+			if(201 to INFINITY)
+				SSobj.processing.Remove(src)
+				radiation_pulse(src, 200)
+				crit_fail = TRUE
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)
+				if(M)
+					to_chat(M, span_userdanger("Your [name]'s reactor leaks radiation!"))
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	fail_chance = min(fail_chance + round(severity/6.6), 100)
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/update_overlays()
+	. = ..()
+	if(crit_fail)
+		. += "[icon_state]_fail_0"
+	else
+		switch(fail_tick)
+			if(0 to INFINITY)
+				. += "[icon_state]_fail_0"
 
  /* * * * * *
  * TG Nuclear Rifle (X-Ray rifle)
