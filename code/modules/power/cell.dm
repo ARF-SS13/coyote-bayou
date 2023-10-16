@@ -625,6 +625,8 @@
 	desc = "How do you have this? It is meant to be built into the gun."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 7
-	chargerate = 1
-	self_recharge = 1
+	maxcharge = 70
+
+/obj/item/stock_parts/cell/ammo/xcomlaser/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF)

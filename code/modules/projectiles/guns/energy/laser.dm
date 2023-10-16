@@ -1026,7 +1026,7 @@
 
 
 /obj/item/gun/energy/laser/xcomufolaser
-	name = "\improper weathered strange laser rifle"
+	name = "weathered strange laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
 	icon = 'modular_coyote/icons/objects/xcomlaser.dmi'
 	lefthand_file = 'modular_coyote/icons/objects/xcomlaserLeft.dmi'
@@ -1039,9 +1039,12 @@
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
+	can_remove = 0
+	selfcharge = 1
+	selfchargerate = 1
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-		/datum/firemode/burst/three/fast
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
 	)
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 

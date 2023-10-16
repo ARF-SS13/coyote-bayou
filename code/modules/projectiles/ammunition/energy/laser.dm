@@ -391,7 +391,7 @@ Avoid decimals when possible when it comes to e_cost!
 
 /obj/item/ammo_casing/energy/laser/xcomufolaser
 	projectile_type = /obj/item/projectile/beam/laser/xcom
-	e_cost = 1 // 7 shots
+	e_cost = 10 // 7 shots
 	fire_sound = 'modular_coyote/sound/items/xcom/LaserRifleFire.wav'
 
 // BETA // Obsolete
