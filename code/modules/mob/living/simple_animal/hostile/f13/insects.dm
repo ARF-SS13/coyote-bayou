@@ -48,8 +48,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	maxHealth = 90
-	health = 90
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 6
@@ -97,8 +97,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 80
-	health = 80
+	maxHealth = 65
+	health = 65
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 8
@@ -122,9 +122,11 @@
 
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/hellwater, 1)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/hellwater, 1)
 
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
@@ -262,9 +264,11 @@
 
 /mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 /mob/living/simple_animal/hostile/radscorpion/Initialize()
 	. = ..()
@@ -372,9 +376,11 @@
 
 /mob/living/simple_animal/hostile/cazador/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"

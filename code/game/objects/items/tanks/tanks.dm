@@ -151,27 +151,6 @@
 		playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
 	qdel(src)
 
-/obj/item/tank/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	user.visible_message(span_suicide("[user] is putting [src]'s valve to [user.p_their()] lips! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	if(!QDELETED(H) && air_contents && air_contents.return_pressure() >= 1000)
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-			if(prob(50))
-				step(W, pick(GLOB.alldirs))
-		ADD_TRAIT(H, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		H.gib_animation()
-		sleep(3)
-		H.adjustBruteLoss(1000) //to make the body super-bloody
-		H.spawn_gibs()
-		H.spill_organs()
-		H.spread_bodyparts()
-		return MANUAL_SUICIDE
-	else
-		to_chat(user, span_warning("There isn't enough pressure in [src] to commit suicide with..."))
-	return SHAME
-
 /obj/item/tank/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(istype(W, /obj/item/assembly_holder))

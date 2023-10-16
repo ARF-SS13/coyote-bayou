@@ -94,8 +94,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 		mind = body.mind	//we don't transfer the mind but we keep a reference to it.
 
-		suiciding = body.suiciding // Transfer whether they committed suicide.
-
 		if(ishuman(body))
 			var/mob/living/carbon/human/body_human = body
 			if(HAIR in body_human.dna.species.species_traits)
@@ -160,6 +158,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 /mob/dead/observer/Destroy()
 	GLOB.ghost_images_default -= ghostimage_default
 	QDEL_NULL(ghostimage_default)
+	if(data_huds_on)
+		remove_data_huds()
+
 
 	GLOB.ghost_images_simple -= ghostimage_simple
 	QDEL_NULL(ghostimage_simple)
@@ -272,7 +273,7 @@ Works together with spawning an observer, noted above.
 /mob/proc/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE)
 	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, can_reenter_corpse, special, penalize)
 	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE_FINAL, can_reenter_corpse, special, penalize)
-	penalize = !(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING) && (suiciding || penalize) // suicide squad.
+	penalize = !(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING) && (penalize)
 	voluntary_ghosted = voluntary
 	if(!key || key[1] == "@" || (sig_flags & COMPONENT_BLOCK_GHOSTING))
 		return //mob has no key, is an aghost or some component hijacked.
@@ -287,8 +288,8 @@ Works together with spawning an observer, noted above.
 	if(!QDELETED(ghost))
 		ghost.client.init_verbs()
 	if(penalize)
-		var/penalty = CONFIG_GET(number/suicide_reenter_round_timer) MINUTES
-		var/roundstart_quit_limit = CONFIG_GET(number/roundstart_suicide_time_limit) MINUTES
+		var/penalty = 3 MINUTES
+		var/roundstart_quit_limit = 3 MINUTES
 		if(world.time < roundstart_quit_limit) //add up the time difference to their antag rolling penalty if they quit before half a (ingame) hour even passed.
 			penalty += roundstart_quit_limit - world.time
 		if(penalty)
@@ -320,8 +321,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
 
-	var/penalty = CONFIG_GET(number/suicide_reenter_round_timer) MINUTES
-	var/roundstart_quit_limit = CONFIG_GET(number/roundstart_suicide_time_limit) MINUTES
+	var/penalty = 3 MINUTES
+	var/roundstart_quit_limit = 3 MINUTES
 	if(world.time < roundstart_quit_limit)
 		penalty += roundstart_quit_limit - world.time
 	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
@@ -353,7 +354,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/obj/machinery/cryopod/C = loc
 			C.despawn_occupant()
 		else
-			suicide_log(TRUE)
 			ghostize(FALSE, penalize = TRUE, voluntary = TRUE) //FALSE parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
 
 
@@ -367,8 +367,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(sig_flags & COMPONENT_BLOCK_GHOSTING)
 		return
 
-	var/penalty = CONFIG_GET(number/suicide_reenter_round_timer) MINUTES
-	var/roundstart_quit_limit = CONFIG_GET(number/roundstart_suicide_time_limit) MINUTES
+	var/penalty = 3 MINUTES
+	var/roundstart_quit_limit = 3 MINUTES
 	if(world.time < roundstart_quit_limit)
 		penalty += roundstart_quit_limit - world.time
 	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
@@ -458,7 +458,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(message)
 		to_chat(src, span_ghostalert("[message]"))
 		if(source)
-			var/obj/screen/alert/A = throw_alert("[REF(source)]_notify_cloning", /obj/screen/alert/notify_cloning)
+			var/atom/movable/screen/alert/A = throw_alert("[REF(source)]_notify_cloning", /atom/movable/screen/alert/notify_cloning)
 			if(A)
 				if(client && client.prefs && client.prefs.UI_style)
 					A.icon = ui_style2icon(client.prefs.UI_style)
@@ -918,8 +918,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		client.eye = mob_eye
 		if(mob_eye.hud_used)
 			client.screen = list()
-			LAZYINITLIST(mob_eye.observers)
-			mob_eye.observers |= src
+			LAZYOR(mob_eye.observers, src)
 			mob_eye.hud_used.show_hud(mob_eye.hud_used.hud_version, src)
 			observetarget = mob_eye
 			HandlePlanes()

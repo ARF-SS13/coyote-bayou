@@ -41,11 +41,6 @@
 	deathmessage = "lets out a contented sigh as [p_their()] form unwinds."
 	..()
 
-/mob/living/simple_animal/shade/canSuicide()
-	if(istype(loc, /obj/item/soulstone)) //do not suicide inside the soulstone
-		return 0
-	return ..()
-
 /mob/living/simple_animal/shade/attack_animal(mob/living/simple_animal/M)
 	if(isconstruct(M))
 		var/mob/living/simple_animal/hostile/construct/C = M
@@ -54,7 +49,7 @@
 		if(health < maxHealth)
 			adjustHealth(-25)
 			Beam(M,icon_state="sendbeam",time=4)
-			M.visible_message("<span class='danger'>[M] heals \the <b>[src]</b>.</span>", \
+			M.visible_message(span_danger("[M] heals \the <b>[src]</b>."), \
 					   "<span class='cult'>You heal <b>[src]</b>, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 		else
 			to_chat(M, "<span class='cult'>You cannot heal <b>[src]</b>, as [p_theyre()] unharmed!</span>")

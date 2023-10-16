@@ -81,15 +81,15 @@
 		if(M.buffer && !istype(M.buffer, /obj/machinery/ticket_machine))
 			return
 		var/obj/item/assembly/control/ticket_machine/controller = device
-		controller.linked = M.buffer
+		controller.linked = WEAKREF(M.buffer)
 		id = null
 		controller.id = null
-		to_chat(user, span_warning("You've linked [src] to [controller.linked]."))
+		to_chat(user, span_warning("You've linked [src] to [M.buffer]."))
 
 /obj/item/assembly/control/ticket_machine
 	name = "ticket machine controller"
 	desc = "A remote controller for the HoP's ticket machine."
-	var/obj/machinery/ticket_machine/linked //To whom are we linked?
+	var/datum/weakref/linked //To whom are we linked?
 
 /obj/item/assembly/control/ticket_machine/Initialize()
 	..()
@@ -101,7 +101,7 @@
 /obj/item/assembly/control/ticket_machine/proc/find_machine() //Locate the one to which we're linked
 	for(var/obj/machinery/ticket_machine/ticketsplease in GLOB.machines)
 		if(ticketsplease.id == id)
-			linked = ticketsplease
+			linked = WEAKREF(ticketsplease)
 	if(linked)
 		return TRUE
 	else
@@ -112,8 +112,11 @@
 		return
 	if(!linked)
 		return
+	var/obj/machinery/ticket_machine/machine = linked.resolve()
+	if(!machine)
+		return
 	cooldown = TRUE
-	linked.increment()
+	machine.increment()
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
 /obj/machinery/ticket_machine/update_icon()

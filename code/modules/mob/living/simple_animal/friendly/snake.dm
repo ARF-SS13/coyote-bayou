@@ -4,11 +4,12 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/AttackingTarget()
 	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
-		if(L.reagents && !poison_per_bite == 0)
-			L.reagents.add_reagent(poison_type, poison_per_bite)
-	return
+	var/atom/my_target = get_target()
+	if(!. || !isliving(my_target))
+		return
+	var/mob/living/L = my_target
+	if(L.reagents && !poison_per_bite == 0)
+		L.reagents.add_reagent(poison_type, poison_per_bite)
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake
 	name = "snake"
@@ -41,7 +42,7 @@
 
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/ListTargets(atom/the_target)
-	. = oview(vision_range, targets_from) //get list of things in vision range
+	. = oview(vision_range, get_origin()) //get list of things in vision range
 	var/list/living_mobs = list()
 	var/list/mice = list()
 	for (var/HM in .)
@@ -67,9 +68,10 @@
 	return  living_mobs & actual_enemies
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/AttackingTarget()
-	if(istype(target, /mob/living/simple_animal/mouse))
-		visible_message(span_notice("[name] consumes [target] in a single gulp!"), span_notice("You consume [target] in a single gulp!"))
-		QDEL_NULL(target)
-		adjustBruteLoss(-2)
-	else
+	var/atom/my_target = get_target()
+	if(!istype(my_target, /mob/living/simple_animal/mouse))
 		return ..()
+	visible_message(span_notice("[name] consumes [my_target] in a single gulp!"), span_notice("You consume [my_target] in a single gulp!"))
+	qdel(my_target)
+	unset_target()
+	adjustBruteLoss(-2)

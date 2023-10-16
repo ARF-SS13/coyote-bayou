@@ -989,7 +989,8 @@
 	if(hitscan)
 		finalize_hitscan_and_generate_tracers()
 	cleanup_beam_segments()
-	QDEL_NULL(trajectory)
+	if(trajectory)
+		QDEL_NULL(trajectory)
 	return ..()
 
 /obj/item/projectile/proc/cleanup_beam_segments()

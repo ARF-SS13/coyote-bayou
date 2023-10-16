@@ -248,6 +248,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
 		/obj/item/gun/ballistic/revolver/Lemat = 2,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
+		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -265,7 +266,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine = 2,
 		/obj/item/gun/ballistic/automatic/armalite = 2,
 		/obj/item/gun/ballistic/automatic/l1a1 = 2,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 1,
+		/obj/item/gun/ballistic/automatic/c96auto = 1,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		/obj/item/gun/ballistic/shotgun/trench = 2,
@@ -282,6 +283,7 @@
 		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
+		/obj/item/gun/ballistic/automatic/wt550/worn = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
@@ -291,11 +293,13 @@
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 2,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 1,
+		/obj/item/gun/ballistic/automatic/wt550 = 2,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 2,
 		/obj/item/gun/ballistic/automatic/rangemaster = 2,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand = 1,
+		/obj/item/gun/ballistic/rifle/mosin/laserbubba =1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 1,
 		/obj/item/gun/ballistic/automatic/service/r82 = 2, //is weakest 5.56 automatic
@@ -308,7 +312,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/automag = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
-		/obj/item/gun/ballistic/rifle/mag/boys = 3,
+		/obj/item/gun/ballistic/rifle/mag/boys = 2,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
 		/obj/item/gun/ballistic/shotgun/police = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
@@ -319,6 +323,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
 		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
+		/obj/item/gun/ballistic/automatic/aksmol = 2,
 	)
 
 ///////////////////////////
@@ -382,7 +387,7 @@
 /obj/effect/spawner/lootdrop/f13/rare_melee
 	name = "rare melee"
 	loot = list(
-		/obj/item/melee/powerfist/f13 = 10,
+		/obj/item/melee/unarmed/powerfist = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
 		/obj/item/melee/powered/ripper = 5,
 		/obj/item/twohanded/legionaxe = 10,
@@ -526,7 +531,6 @@
 		/obj/item/gun/ballistic/automatic/m1garand/republicspride = 10,
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 10,
 		/obj/item/gun/ballistic/automatic/bozar = 10,
-		/obj/item/gun/ballistic/automatic/wt550 = 5,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
 		/obj/item/gun/ballistic/automatic/m1919 = 10,
@@ -550,6 +554,7 @@
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/deathclawgauntlet = 20,
 		/obj/item/melee/unarmed/powerfist/goliath = 20,
+		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
@@ -558,6 +563,7 @@
 		/obj/item/gun/ballistic/fatman = 10,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
+		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
 	)
 
 ////////////////////////////

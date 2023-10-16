@@ -130,6 +130,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define CHARCOAL_FONT "Candara"
 
 #define RESIZE_DEFAULT_SIZE 1
+#define RESIZE_DEFAULT_WIDTH 1
 
 //transfer_ai() defines. Main proc in ai_core.dm
 #define AI_TRANS_TO_CARD	1 //Downloading AI to InteliCard.

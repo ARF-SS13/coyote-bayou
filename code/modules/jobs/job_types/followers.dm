@@ -42,8 +42,8 @@ Administrator
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
 	description = "You are a Senior Doctor. Your rank is given due to your experience in the field compared to regular doctors. Help deal with issues that arise that normal doctors aren't prepared for, and teach those willing to learn more in the clinic."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
@@ -51,8 +51,11 @@ Administrator
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
+	loadout_options = list(
+	/datum/outfit/loadout/medbeam
+	)
 
-	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 
@@ -86,6 +89,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name =	"Senior Doctor"
@@ -103,10 +107,17 @@ Administrator
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
+		/obj/item/pda = 1,
 		/obj/item/book/granter/trait/techno = 1,
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
-		/obj/item/hypospray/mkii/CMO = 1
+		/obj/item/hypospray/mkii/CMO = 1,
+	)
+
+/datum/outfit/loadout/medbeam
+	name =	"Medbeam Kit"
+	backpack_contents = list(
+		/obj/item/gun/medbeam = 1,
 	)
 
 //Professor
@@ -116,8 +127,8 @@ Administrator
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor and Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
@@ -131,8 +142,8 @@ Administrator
 	/datum/outfit/loadout/medical_specialist
 	)
 
-	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
-	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
 /datum/outfit/job/followers/f13Professor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -169,7 +180,9 @@ Administrator
 /datum/outfit/job/followers/f13Professor
 	name = "Town Scientist"
 	jobtype = /datum/job/followers/f13Professor
-	backpack = /obj/item/storage/backpack/explorer
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel/tox
+	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	uniform = /obj/item/clothing/under/f13/followers
 	suit= /obj/item/clothing/suit/toggle/labcoat/followers
 	belt = /obj/item/kit_spawner/follower/scientist
@@ -179,6 +192,7 @@ Administrator
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient=1,
 		/obj/item/storage/wallet/stash/mid = 1,
 		)
@@ -203,6 +217,81 @@ Administrator
 		/obj/item/gun/syringe/dart = 1,
 		/obj/item/reagent_containers/syringe/dart = 3,
 	)
+
+/*
+Administrator
+*/
+/datum/job/followers/f13leadprofessor
+	title = "Senior Scientist"
+	flag = F13LEADPROFESSOR
+	department_flag = FOLLOWERS
+	head_announce = list("Security")
+	faction = "Followers"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Mayor. Assuming they're around."
+	description = "You are a Senior Scientist. Your rank is given due to your experience in the field compared to regular scientists. Help deal with issues that arise that normal scientists aren't prepared for, and teach those willing to learn more in the facility."
+	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
+	selection_color = "#FF95FF"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/followers/f13leadprofessor
+
+	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+	minimal_access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
+
+
+/datum/outfit/job/followers/f13leadprofessor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/pico_manip)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_matter_bin)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/phasic_scanning)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/super_capacitor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ultra_micro_laser)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+
+/datum/outfit/job/followers/f13leadprofessor
+	name =	"Senior Scientist"
+	jobtype =	/datum/job/followers/f13leadprofessor
+	id =	/obj/item/card/id/silver
+	chemwhiz =	TRUE
+	uniform =	/obj/item/clothing/under/f13/followers
+	suit=	/obj/item/clothing/suit/toggle/labcoat/followers
+	shoes =	/obj/item/clothing/shoes/f13/brownie
+	belt = /obj/item/kit_spawner/follower/admin
+	backpack =	/obj/item/storage/backpack/science
+	satchel =	/obj/item/storage/backpack/satchel/tox
+	glasses = /obj/item/clothing/glasses/science
+	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/book/granter/trait/techno = 1,
+		/obj/item/storage/wallet/stash/high = 1,
+		/obj/item/storage/belt/utility/full/engi = 1,
+		/obj/item/disk/xenobio_console_upgrade/monkey = 1,
+		/obj/item/disk/xenobio_console_upgrade/slimeadv = 1,
+		)
 
 /*
 Practitioner
@@ -283,6 +372,7 @@ Practitioner
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
 		/obj/item/storage/survivalkit/medical/follower = 1,
+		/obj/item/pda = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -378,6 +468,7 @@ Follower Volunteer
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
+		/obj/item/pda = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/wallet/stash/mid = 1,
 	)
@@ -464,6 +555,7 @@ Follower Volunteer
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,

@@ -17,7 +17,7 @@
 	var/obj/item/bodypart/affecting = C.get_bodypart(BODY_ZONE_CHEST)
 	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50), wound_bonus=CANT_WOUND) //Damage the chest based on limb's existing damage
 	if(!silent)
-		C.visible_message("<span class='danger'><B>[C]'s [name] is violently dismembered!</B></span>")
+		C.visible_message(span_danger("<B>[C]'s [name] is violently dismembered!</B>"))
 	C.emote("scream")
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 	drop_limb()
@@ -80,7 +80,7 @@
 		organ_spilled = 1
 
 	if(organ_spilled)
-		C.visible_message("<span class='danger'><B>[C]'s internal organs spill out onto the floor!</B></span>")
+		C.visible_message(span_danger("<B>[C]'s internal organs spill out onto the floor!</B>"))
 
 //limb removal. The "special" argument is used for swapping a limb with a new one without the effects of losing a limb kicking in.
 /obj/item/bodypart/proc/drop_limb(special, dismembered)
@@ -233,7 +233,7 @@
 			C.handcuffed = null
 			C.update_handcuffed()
 		if(C.hud_used)
-			var/obj/screen/inventory/hand/R = C.hud_used.hand_slots["[held_index]"]
+			var/atom/movable/screen/inventory/hand/R = C.hud_used.hand_slots["[held_index]"]
 			if(R)
 				R.update_icon()
 		if(C.gloves)
@@ -251,7 +251,7 @@
 			C.handcuffed = null
 			C.update_handcuffed()
 		if(C.hud_used)
-			var/obj/screen/inventory/hand/L = C.hud_used.hand_slots["[held_index]"]
+			var/atom/movable/screen/inventory/hand/L = C.hud_used.hand_slots["[held_index]"]
 			if(L)
 				L.update_icon()
 		if(C.gloves)
@@ -336,7 +336,7 @@
 		if(C.dna.species.mutanthands && !is_pseudopart)
 			C.put_in_hand(new C.dna.species.mutanthands(), held_index)
 		if(C.hud_used)
-			var/obj/screen/inventory/hand/hand = C.hud_used.hand_slots["[held_index]"]
+			var/atom/movable/screen/inventory/hand/hand = C.hud_used.hand_slots["[held_index]"]
 			if(hand)
 				hand.update_icon()
 		C.update_inv_gloves()

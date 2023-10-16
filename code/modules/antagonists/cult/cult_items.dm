@@ -144,6 +144,11 @@
 	AddComponent(/datum/component/butchering, 50, 80)
 	//AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
+
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
 	if(contents.len)
@@ -1026,7 +1031,7 @@
 			H.faction = list("cult")
 			H.GiveTarget(owner)
 			H.move_to_delay = owner.movement_delay()
-			to_chat(owner, "<span class='danger'><b>[src] betrays you!</b></span>")
+			to_chat(owner, span_danger("<b>[src] betrays you!</b>"))
 		return BLOCK_NONE
 
 /obj/item/shield/mirror/proc/readd()

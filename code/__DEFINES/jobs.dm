@@ -13,6 +13,7 @@
 #define FACTION_FOLLOWERS "Followers"
 #define FACTION_KHAN "Great Khans"
 #define FACTION_BIKER "Hells Nomads"
+#define FACTION_CLUB "Heavens Night"
 
 #define ENGSEC			(1<<0)
 
@@ -134,6 +135,7 @@
 #define F13BANKER		(1<<12)	// IDK MAN BUT IT SEEMS IMPORTANT
 #define F13BARKEEP		(1<<13)
 #define F13PILOT		(1<<14)
+#define NASHCURATOR		(1<<15)
 
 #define VAULT			(1<<7)
 
@@ -161,6 +163,7 @@
 #define F13ADMINBOOS	(1<<8)
 #define F13CULTLEADER	(1<<8)
 #define F13TRIBAL		(1<<9)
+#define F13RADIOOP		(1<<10)
 
 #define ENCLAVE			(1<<10)
 
@@ -190,6 +193,7 @@
 #define F13FOLLOWERGUARD	(1<<2)
 #define F13FOLLOWERVOLUNTEER	(1<<3)
 #define F13PROFESSOR	(1<<4)
+#define F13LEADPROFESSOR (1<<5)
 
 #define KHAN		(1<<12)
 
@@ -199,6 +203,11 @@
 #define F13KHORCHIN (1<<3)
 #define F13KIPCHAK (1<<4)
 #define F13MANGUDAI (1<<5)
+
+#define HEAVENSNIGHT		(1<<13)
+
+#define F13MANAGER			(1<<0)
+#define F13CLUBWORKER		(1<<1)
 
 
 #define JOB_AVAILABLE 0

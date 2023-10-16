@@ -309,10 +309,10 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 						alert_mob_dupe_login = TRUE
 					if(matches)
 						if(C)
-							message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
+							message_admins(span_danger("<B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)]."))
 							log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)].")
 						else
-							message_admins("<span class='danger'><B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
+							message_admins(span_danger("<B>Notice: </B></span><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). "))
 							log_admin_private("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
 
 	if(GLOB.player_details[ckey])
@@ -341,7 +341,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			log_access("Failed login: [key] - blacklisted byond version")
 			to_chat(src, span_userdanger("Your version of byond is blacklisted."))
 			to_chat(src, span_danger("Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]]."))
-			to_chat(src, "<span class='danger'>Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions.</span>")
+			to_chat(src, span_danger("Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions."))
 			if(connecting_admin)
 				to_chat(src, "As an admin, you are being allowed to continue using this version, but please consider changing byond versions")
 			else
@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	var/ceb = CONFIG_GET(number/client_error_build)
 	var/cwv = CONFIG_GET(number/client_warn_version)
 	if (byond_version < cev || (byond_version == cev && byond_build < ceb))		//Out of date client.
-		to_chat(src, "<span class='danger'><b>Your version of BYOND is too old:</b></span>")
+		to_chat(src, span_danger("<b>Your version of BYOND is too old:</b>"))
 		var/error_message = CONFIG_GET(string/client_error_message)
 		if(error_message)
 			to_chat(src, error_message)
@@ -390,7 +390,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			msg += "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.<br>"
 			src << browse(msg, "window=warning_popup")
 		else
-			to_chat(src, "<span class='danger'><b>Your version of byond may be getting out of date:</b></span>")
+			to_chat(src, span_danger("<b>Your version of byond may be getting out of date:</b>"))
 			var/warn_message = CONFIG_GET(string/client_warn_message)
 			if(warn_message)
 				to_chat(src, warn_message)
@@ -1069,7 +1069,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 	var/pos = 0
 	for(var/D in GLOB.cardinals)
 		pos++
-		var/obj/screen/O = LAZYACCESS(char_render_holders, "[D]")
+		var/atom/movable/screen/O = LAZYACCESS(char_render_holders, "[D]")
 		if(!O)
 			O = new
 			LAZYSET(char_render_holders, "[D]", O)
@@ -1080,7 +1080,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 
 /client/proc/clear_character_previews()
 	for(var/index in char_render_holders)
-		var/obj/screen/S = char_render_holders[index]
+		var/atom/movable/screen/S = char_render_holders[index]
 		screen -= S
 		qdel(S)
 	char_render_holders = null
@@ -1136,6 +1136,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		if (menuitem)
 			menuitem.Load_checked(src)
 
+/* 
 /client/proc/checkGonadDistaste(flag)
 	if(!flag || !prefs)
 		return
@@ -1223,3 +1224,4 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 	to_chat(src, span_notice("Toggled seeing genitals on [nicebutt]."))
 	nicebutt.update_genitals(TRUE)
 	return TRUE
+ */

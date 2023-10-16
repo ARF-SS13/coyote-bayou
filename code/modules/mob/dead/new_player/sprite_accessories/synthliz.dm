@@ -27,6 +27,52 @@
 	icon_state = "synthliz_tertunder"
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_comm
+	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Legacy Systems"
+	icon_state = "synthliz_commodore"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_communder
+	icon = 'icons/mob/mam/citadel/synthliz_snouts.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Legacy Systems Under"
+	icon_state = "synthliz_commodoreunder"
+	matrixed_sections = MATRIX_ALL
+
+//-->Protogen Snouts
+//Spriter: Ekizius
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen
+	recommended_species = list("human", "mammal", "xeno", "insect", "slimeperson", "jelly", "podweak", "shadekin", "ghoul", "synthfurry", "synthliz", "lizard", "ipc")
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MUTCOLORS
+	name = "Protogen - Snout"
+	icon_state = "proto_basic"
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen/protogen_under
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen - Snout Under"
+	icon_state = "proto_under"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen/protogen_tert
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen - Snout Tertiary"
+	icon_state = "proto_tert"
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/snouts/mam_snouts/synthliz/protogen/protogen_tertunder
+	icon = 'icons/mob/mam/citadel/proto_snouts.dmi'
+	color_src = MATRIXED
+	name = "Protogen - Snout Tertiary Under"
+	icon_state = "proto_tertunder"
+	matrixed_sections = MATRIX_ALL
+//<--
+
 //Synth body markings
 /datum/sprite_accessory/mam_body_markings/synthliz/synthliz_pecs
 	icon = 'icons/mob/mam/citadel/synthliz_body_markings.dmi'
@@ -108,6 +154,19 @@
 	icon_state = "synth_sharplight"
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/antenna/synthliz/synth_nub
+	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
+	color_src = MUTCOLORS
+	name = "Synthetic Lizard - Nub"
+	icon_state = "synth_nub"
+
+/datum/sprite_accessory/antenna/synthliz/synth_nublight
+	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
+	color_src = MATRIXED
+	name = "Synthetic Lizard - Nub Light"
+	icon_state = "synth_nublight"
+	matrixed_sections = MATRIX_RED_BLUE
+
 /datum/sprite_accessory/antenna/synthliz/synthliz_thick
 	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
 	color_src = MUTCOLORS
@@ -120,6 +179,12 @@
 	name = "Synthetic Lizard - Thick Light"
 	icon_state = "synth_thicklight"
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/antenna/synthliz/eartenna
+	icon = 'icons/mob/mam/citadel/synthliz_antennas.dmi'
+	color_src = MUTCOLORS
+	name = "Protogen - Eartennas"
+	icon_state = "synth_eartenna"
 
 //Synth Taurs (Ported from Virgo)
 /datum/sprite_accessory/taur/synthliz

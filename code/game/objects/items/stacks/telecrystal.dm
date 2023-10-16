@@ -6,7 +6,7 @@
 	icon_state = "telecrystal"
 	grind_results = list(/datum/reagent/telecrystal = 20)
 	w_class = WEIGHT_CLASS_TINY
-	max_amount = 50
+	max_amount = 100
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/telecrystal
 

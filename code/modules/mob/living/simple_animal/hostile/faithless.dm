@@ -43,8 +43,10 @@
 
 /mob/living/simple_animal/hostile/faithless/AttackingTarget()
 	. = ..()
-	if(. && prob(12) && iscarbon(target))
-		var/mob/living/carbon/C = target
-		C.DefaultCombatKnockdown(60)
-		C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
-				span_userdanger("\The [src] knocks you down!"))
+	var/atom/my_target = get_target()
+	if(!. || !prob(14) || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/C = my_target
+	C.DefaultCombatKnockdown(60)
+	C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
+			span_userdanger("\The [src] knocks you down!"))

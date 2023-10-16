@@ -144,7 +144,7 @@
 			new /mob/living/simple_animal/mouse(source.loc)
 		if(SCAVENGING_SPAWN_MICE)
 			user.visible_message(span_notice("A small gang of mice emerges from [source]."), \
-				"<span class='notice'>You found something in [source]... no wait, that's just another- <b>no wait, that's a lot of damn mice.</b></span>")
+				span_notice("You found something in [source]... no wait, that's just another- <b>no wait, that's a lot of damn mice.</b>"))
 			for(var/i in 1 to rand(4, 6))
 				new /mob/living/simple_animal/mouse(source.loc)
 		if(SCAVENGING_SPAWN_TOM)

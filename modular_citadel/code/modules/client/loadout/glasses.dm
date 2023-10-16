@@ -44,6 +44,15 @@
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
 
+
+/datum/gear/glasses/eyepatchl
+	name = "White Eye Bandage - Left"
+	path = /obj/item/clothing/glasses/eyepatchl
+
+/datum/gear/glasses/eyepatchr
+	name = "White Eye Bandage - Right"
+	path = /obj/item/clothing/glasses/eyepatchr
+
 /datum/gear/glasses/hipster
 	name = "Hipster glasses"
 	path = /obj/item/clothing/glasses/regular/hipster
@@ -85,3 +94,8 @@
 /datum/gear/glasses/biker
 	name = "biker goggles"
 	path = /obj/item/clothing/glasses/f13/biker
+
+/datum/gear/glasses/contact
+	name = "contact lenses"
+	path = /obj/item/clothing/glasses/contact
+	cost = 3

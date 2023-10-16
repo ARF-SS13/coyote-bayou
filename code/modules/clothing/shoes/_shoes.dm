@@ -29,30 +29,11 @@
 	///How long it takes to lace/unlace these shoes
 	var/lace_time = 5 SECONDS
 	///any alerts we have active
-	var/obj/screen/alert/our_alert
+	var/atom/movable/screen/alert/our_alert
 
 /obj/item/clothing/shoes/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
-
-/obj/item/clothing/shoes/suicide_act(mob/living/carbon/user)
-	if(rand(2)>1)
-		user.visible_message(span_suicide("[user] begins tying \the [src] up waaay too tightly! It looks like [user.p_theyre()] trying to commit suicide!"))
-		var/obj/item/bodypart/l_leg = user.get_bodypart(BODY_ZONE_L_LEG)
-		var/obj/item/bodypart/r_leg = user.get_bodypart(BODY_ZONE_R_LEG)
-		if(l_leg)
-			l_leg.dismember()
-			playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-		if(r_leg)
-			r_leg.dismember()
-			playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
-		return BRUTELOSS
-	else//didnt realize this suicide act existed (was in miscellaneous.dm) and didnt want to remove it, so made it a 50/50 chance. Why not!
-		user.visible_message(span_suicide("[user] is bashing [user.p_their()] own head in with [src]! Ain't that a kick in the head?"))
-		for(var/i = 0, i < 3, i++)
-			sleep(3)
-			playsound(user, 'sound/weapons/genhit2.ogg', 50, 1)
-		return(BRUTELOSS)
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()
@@ -95,7 +76,7 @@
 		user.update_inv_shoes()
 		equipped_before_drop = TRUE
 	if(can_be_tied && tied == SHOES_UNTIED)
-		our_alert = user.throw_alert("shoealert", /obj/screen/alert/shoes/untied)
+		our_alert = user.throw_alert("shoealert", /atom/movable/screen/alert/shoes/untied)
 		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, .proc/check_trip, override=TRUE)
 
 /obj/item/clothing/shoes/proc/restore_offsets(mob/user)
@@ -152,7 +133,7 @@
 		UnregisterSignal(src, COMSIG_SHOES_STEP_ACTION)
 	else
 		if(tied == SHOES_UNTIED && our_guy && user == our_guy)
-			our_alert = our_guy.throw_alert("shoealert", /obj/screen/alert/shoes/untied) // if we're the ones unknotting our own laces, of course we know they're untied
+			our_alert = our_guy.throw_alert("shoealert", /atom/movable/screen/alert/shoes/untied) // if we're the ones unknotting our own laces, of course we know they're untied
 		RegisterSignal(src, COMSIG_SHOES_STEP_ACTION, .proc/check_trip, override=TRUE)
 
 /**
@@ -235,7 +216,7 @@
 		our_guy.Knockdown(10)
 		our_guy.visible_message(span_danger("[our_guy] trips on [our_guy.p_their()] knotted shoelaces and falls! What a klutz!"), span_userdanger("You trip on your knotted shoelaces and fall over!"))
 		SEND_SIGNAL(our_guy, COMSIG_ADD_MOOD_EVENT, "trip", /datum/mood_event/tripped) // well we realized they're knotted now!
-		our_alert = our_guy.throw_alert("shoealert", /obj/screen/alert/shoes/knotted)
+		our_alert = our_guy.throw_alert("shoealert", /atom/movable/screen/alert/shoes/knotted)
 
 	else if(tied ==  SHOES_UNTIED)
 		var/wiser = TRUE // did we stumble and realize our laces are undone?
@@ -265,7 +246,7 @@
 				wiser = FALSE
 		if(wiser)
 			SEND_SIGNAL(our_guy, COMSIG_ADD_MOOD_EVENT, "untied", /datum/mood_event/untied) // well we realized they're untied now!
-			our_alert = our_guy.throw_alert("shoealert", /obj/screen/alert/shoes/untied)
+			our_alert = our_guy.throw_alert("shoealert", /atom/movable/screen/alert/shoes/untied)
 
 
 /obj/item/clothing/shoes/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)

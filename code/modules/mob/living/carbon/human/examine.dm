@@ -27,7 +27,7 @@
 		. += vassDesc
 
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
 	if(skipface || get_visible_name() == "Unknown")
 		. += "You can't make out what species they are."
@@ -42,6 +42,10 @@
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory && !(U.attached_accessory.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
 				accessory_msg += " with [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
+			if(U.attached_accessory_b && !(U.attached_accessory_b.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_b, user)] \a [U.attached_accessory_b]"
+			if(U.attached_accessory_c && !(U.attached_accessory_c.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_c, user)] \a [U.attached_accessory_c]"
 
 		. += "[t_He] [t_is] wearing [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head
@@ -97,7 +101,7 @@
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
 		else if((left_eye_color == BLOODCULT_EYE || right_eye_color == BLOODCULT_EYE) && iscultist(src) && HAS_TRAIT(src, TRAIT_CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
+			. += span_warning("<B>[t_His] eyes are glowing an unnatural red!</B>")
 		else if(HAS_TRAIT(src, TRAIT_HIJACKER))
 			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
 			if (H && !H.stealthmode && H.toggled)
@@ -128,7 +132,7 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += span_warning("<B>[t_He] [t_is] convulsing violently!</B>")
 		if(200 to 300)
 			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
@@ -137,8 +141,6 @@
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
-		if(suiciding)
-			. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
 		if(hellbound)
 			. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.")
 		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
@@ -412,16 +414,12 @@
 		if(src != user && HAS_TRAIT(L, TRAIT_EMPATH) && !appears_dead)
 			if (a_intent != INTENT_HELP)
 				msg += "[t_He] seem[p_s()] to be on guard.\n"
-			if (getOxyLoss() >= 10)
-				msg += "[t_He] seem[p_s()] winded.\n"
-			if (getToxLoss() >= 10)
-				msg += "[t_He] seem[p_s()] sickly.\n"
 			var/datum/component/mood/mood = GetComponent(/datum/component/mood)
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "[t_He] seem[p_s()] distressed.\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
 			if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
-				msg += "[t_He] seem[p_s()] to have had something nice happen to them recently.\n"
+				msg += "<span class='nicegreen'>[t_He] seem[p_s()] to have had something nice happen to [t_him] recently.</span>\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_He] appear[p_s()] to be staring off into space.\n"
@@ -482,6 +480,10 @@
 
 	if (length(msg))
 		. += span_warning("[msg.Join("")]")
+
+	if(HAS_TRAIT(src, TRAIT_JIGGLY_ASS))
+		. += ""
+		. += span_notice("[t_His] butt could use a firm smack.</span>")
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))

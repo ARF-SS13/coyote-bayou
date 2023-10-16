@@ -89,10 +89,6 @@
 		if(!silent)
 			to_chat(user, span_warning("[t_He] appear[victim.p_s()] to be catatonic! Not even magic can affect [victim.p_their()] vacant mind."))
 		return FALSE
-	if(user.suiciding)
-		if(!silent)
-			to_chat(user, span_warning("You're killing yourself! You can't concentrate enough to do this!"))
-		return FALSE
 	if(istype(victim, /mob/living/simple_animal/hostile/guardian))
 		var/mob/living/simple_animal/hostile/guardian/stand = victim
 		if(stand.summoner)

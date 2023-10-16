@@ -151,11 +151,11 @@
 	H.faction |= ROLE_SYNDICATE
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms
-	name = "Syndicate Comms Agent"
-	job_description = "Off-station Syndicate Comms Agent"
-	short_desc = "You are a syndicate comms agent, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw US Government off your trail. Do not let the base fall into enemy hands!"
-	important_info = "DO NOT abandon the base."
+	name = "Radio Operator"
+	job_description = "Radio Station Radio Operator"
+	short_desc = "You're an aspiring radio station operator! Keep the frequencies alive, and have fun doing it. Or dont."
+	flavour_text = "Your motives are your own, but one thing is for sure: Your life is your radio station. You've been stuck down here for ages, plenty of food and drink, and the radio station's defense keep vagabonds out. Play music, host remote interviews, spread news- Or propaganda! Just remember: The security systems keeping you safe are keeping you prisoner, as well."
+	important_info = "Dont provoke the security systems of your radio station, and you'll be fine."
 	outfit = /datum/outfit/lavaland_syndicate/comms
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize()

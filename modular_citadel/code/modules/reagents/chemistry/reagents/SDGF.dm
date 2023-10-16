@@ -246,7 +246,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 		M.visible_message(span_warning("The growth factor froths upon [M]'s body, failing to do anything of note."))
 		return
 	if(M.stat == DEAD)
-		if(M.suiciding || (HAS_TRAIT(M, TRAIT_NOCLONE)) || M.hellbound)
+		if((HAS_TRAIT(M, TRAIT_NOCLONE)) || M.hellbound)
 			M.visible_message(span_warning("The growth factor inertly sticks to [M]'s body, failing to do anything of note."))
 			return
 		if(!M.mind)

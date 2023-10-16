@@ -18,7 +18,7 @@
 
 /obj/structure/chair/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
+	. += span_notice("It's held together by a couple of <b>bolts</b>.")
 	if(!has_buckled_mobs())
 		. += span_notice("Drag your sprite to sit in it.")
 
@@ -512,11 +512,6 @@
 	)
 	parry_failed_stagger_duration = 3.5 SECONDS
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 2.5)
-
-/obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(src,hitsound,50,1)
-	return BRUTELOSS
 
 /obj/item/chair/narsie_act()
 	var/obj/item/chair/wood/W = new/obj/item/chair/wood(get_turf(src))

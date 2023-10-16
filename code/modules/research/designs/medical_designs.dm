@@ -963,7 +963,7 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-
+/* Uncomment these and the Rapid Plumbing Device nerf in RCD.dm and _plumb_machinery.dm if plumbing ever gets fixed
 /datum/design/acclimator
 	name = "Plumbing Acclimator"
 	desc = "A heating and cooling device for pipes!"
@@ -1117,7 +1117,7 @@
 	build_path = /obj/item/construction/plumbing
 	category = list("Misc","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
+*/
 /datum/design/autosurgeon
 	name = "Autosurgeon"
 	desc = "An automatic surgeon used to install organs or implants automatically."

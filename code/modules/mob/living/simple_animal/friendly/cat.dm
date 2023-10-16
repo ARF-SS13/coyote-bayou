@@ -269,7 +269,7 @@
 	free cake to the station!</b>")
 	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Keeki.", "Name Change")
 	if(new_name)
-		to_chat(src, "<span class='notice'>Your name is now <b>\"new_name\"</b>!</span>")
+		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
 /mob/living/simple_animal/pet/cat/cak/BiologicalLife(seconds, times_fired)
@@ -316,3 +316,14 @@
 		return
 	else
 		..()
+
+/mob/living/simple_animal/pet/cat/pancake
+	name = "pancake"
+	desc = "Mrowl. A orange and white cat!"
+	icon_state = "pancake"
+	icon_living = "pancake"
+	icon_dead = "pancake_dead"
+	density = FALSE
+	pass_flags = PASSMOB
+	mob_size = MOB_SIZE_SMALL
+	gold_core_spawnable = FRIENDLY_SPAWN

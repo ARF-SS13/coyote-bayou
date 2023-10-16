@@ -43,53 +43,6 @@
 	else
 		return 1
 
-/obj/item/airlock_painter/suicide_act(mob/user)
-	var/obj/item/organ/lungs/L = user.getorganslot(ORGAN_SLOT_LUNGS)
-
-	if(can_use(user) && L)
-		user.visible_message(span_suicide("[user] is inhaling toner from [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-		use(user)
-
-		// Once you've inhaled the toner, you throw up your lungs
-		// and then die.
-
-		// Find out if there is an open turf in front of us,
-		// and if not, pick the turf we are standing on.
-		var/turf/T = get_step(get_turf(src), user.dir)
-		if(!isopenturf(T))
-			T = get_turf(src)
-
-		// they managed to lose their lungs between then and
-		// now. Good job.
-		if(!L)
-			return OXYLOSS
-
-		L.Remove()
-
-		// make some colorful reagent, and apply it to the lungs
-		L.create_reagents(10, NONE, NO_REAGENTS_VALUE)
-		L.reagents.add_reagent(/datum/reagent/colorful_reagent, 10)
-		L.reagents.reaction(L, TOUCH, 1)
-
-		// TODO maybe add some colorful vomit?
-
-		user.visible_message(span_suicide("[user] vomits out [user.p_their()] [L]!"))
-		playsound(user.loc, 'sound/effects/splat.ogg', 50, 1)
-
-		L.forceMove(T)
-
-		return (TOXLOSS|OXYLOSS)
-	else if(can_use(user) && !L)
-		user.visible_message(span_suicide("[user] is spraying toner on [user.p_them()]self from [src]! It looks like [user.p_theyre()] trying to commit suicide."))
-		user.reagents.add_reagent(/datum/reagent/colorful_reagent, 1)
-		user.reagents.reaction(user, TOUCH, 1)
-		return TOXLOSS
-
-	else
-		user.visible_message(span_suicide("[user] is trying to inhale toner from [src]! It might be a suicide attempt if [src] had any toner."))
-		return SHAME
-
-
 /obj/item/airlock_painter/examine(mob/user)
 	. = ..()
 	if(!ink)
@@ -300,18 +253,18 @@
 	. = ..()
 	var/turf/open/floor/F = target
 	if(!proximity)
-		to_chat(user, "<span class='notice'>You need to get closer!</span>")
+		to_chat(user, span_notice("You need to get closer!"))
 		return
 	if(use_paint(user) && isValidSurface(F))
 		playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1)
 		F.AddElement(/datum/element/decal, 'icons/fallout/turfs/floors.dmi', stored_decal_total, CLEAN_STRONG, null, null, alpha)
 	else
-		to_chat(user, "<span class='notice'>The tile painter can only be used on freshly laid tiles!</span>")
+		to_chat(user, span_notice("The tile painter can only be used on freshly laid tiles!"))
 		return
 
 /obj/item/airlock_painter/tile/attack_self(mob/user)
 	if((ink) && (ink.charges >= 1))
-		to_chat(user, "<span class='notice'>[src] beeps to prevent you from removing the toner until out of charges.</span>")
+		to_chat(user, span_notice("[src] beeps to prevent you from removing the toner until out of charges."))
 		return
 	. = ..()
 

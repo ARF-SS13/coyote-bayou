@@ -18,6 +18,7 @@
 #define LOADOUT_CAT_MELEE_TWO "Two Handed Melee"
 #define LOADOUT_CAT_PISTOL "Pistols"
 #define LOADOUT_CAT_REVOLVER "Revolvers"
+#define LOADOUT_CAT_MAGIC "Magic"
 #define LOADOUT_CAT_LONGGUN "Long Guns"
 #define LOADOUT_CAT_HOBO "Improvised Guns"
 #define LOADOUT_CAT_MUSKET "Blackpowder Guns"
@@ -32,8 +33,8 @@
 #define LOADOUT_CAT_SINISTER "Sinister Tools"
 #define LOADOUT_CAT_OTHER "Other Things"
 
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE_ONE, LOADOUT_CAT_MELEE_TWO, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_FLAG_TOOL_WASTER, LOADOUT_CAT_MUSKET)
-#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE_ONE, LOADOUT_CAT_MELEE_TWO, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_CAT_WORKER, LOADOUT_CAT_ADVENTURE, LOADOUT_CAT_MEDICAL, LOADOUT_CAT_SINISTER, LOADOUT_CAT_OTHER, LOADOUT_CAT_MUSKET)
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_CAT_MELEE_ONE, LOADOUT_CAT_MELEE_TWO, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_MAGIC, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_FLAG_TOOL_WASTER, LOADOUT_CAT_MUSKET)
+#define LOADOUT_ALL_ENTRIES list(LOADOUT_CAT_PREMIUM, LOADOUT_CAT_LAWMAN, LOADOUT_CAT_MELEE_ONE, LOADOUT_CAT_MELEE_TWO, LOADOUT_CAT_PISTOL, LOADOUT_CAT_REVOLVER, LOADOUT_CAT_MAGIC, LOADOUT_CAT_LONGGUN, LOADOUT_CAT_HOBO, LOADOUT_CAT_MISC, LOADOUT_CAT_BOW, LOADOUT_CAT_ENERGY, LOADOUT_CAT_NULLROD, LOADOUT_CAT_SHIELD, LOADOUT_CAT_WORKER, LOADOUT_CAT_ADVENTURE, LOADOUT_CAT_MEDICAL, LOADOUT_CAT_SINISTER, LOADOUT_CAT_OTHER, LOADOUT_CAT_MUSKET)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -745,6 +746,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m556/rifle/small(src) //no extendeds for you till you find em
 	new /obj/item/ammo_box/a556(src)
 
+/obj/item/storage/box/gun/rifle/trainer
+	name = "training repeater case"
+
+/obj/item/storage/box/gun/rifle/trainer/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/trainer(src)
+	new /obj/item/ammo_box/m22(src)
+
 /// MELEE
 //gunmelee
 /obj/item/storage/box/gun/melee //hopefully a decent variety. someone with more expertise expand on this. maybe split between one and two handed
@@ -760,6 +768,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/melee/celestia/PopulateContents()
 	new /obj/item/melee/transforming/plasmacutter/regular/celestia(src)
+
+/obj/item/storage/box/gun/melee/energykatana
+	name = "Energy Katana"
+	w_class = WEIGHT_CLASS_NORMAL
+	
+/obj/item/storage/box/gun/melee/energykatana/PopulateContents()
+	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
 
 /obj/item/storage/box/gun/melee/eve
 	name = "Plasma Cutter Eve"
@@ -1086,7 +1101,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Hermes Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/hermes	
+	spawn_thing = /obj/item/storage/box/gun/revolver/hermes
 
 /obj/item/storage/box/gun/revolver/hermes/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/hermes(src)
@@ -1328,6 +1343,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/storage/box/gun/bow/shortbow/PopulateContents()
 	new /obj/item/gun/ballistic/bow/shortbow(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
+
+/obj/item/storage/box/gun/bow/handxbow
+	name = "hand crossbow case"
+
+/obj/item/storage/box/gun/bow/handxbow/PopulateContents()
+	new /obj/item/gun/ballistic/bow/handxbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
 /obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
@@ -1688,6 +1710,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
 
+/datum/loadout_box/trainer
+	entry_tag = "Training Repeater"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/trainer
+
 /datum/loadout_box/trail
 	entry_tag = "Trail Carbine"
 	entry_flags = LOADOUT_FLAG_LAWMAN
@@ -1949,6 +1977,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/storage/box/gun/melee/eve
+
+/datum/loadout_box/melee/energykatana
+	entry_tag = "Energy Katana"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_MELEE_ONE
+	spawn_thing = /obj/item/storage/box/gun/melee/energykatana
 
 /datum/loadout_box/melee/plasma
 	entry_tag = "Plasma Cutter"
@@ -2239,7 +2273,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
 
-
+/datum/loadout_box/handxbow
+	entry_tag = "Hand crossbow"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_BOW
+	spawn_thing = /obj/item/storage/box/gun/bow/handxbow
 
 /*
 /datum/loadout_box/crossbow
@@ -2471,3 +2509,31 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MISC
 	spawn_thing = /obj/item/ammo_box/rock/improvised
+
+	// Kelp's magical stuff!
+
+/datum/loadout_box/bonewands
+	entry_tag = "Improvised Wands of Magic Missile"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/storage/box/magic/bonewands
+
+/obj/item/storage/box/magic/bonewands
+	name = "Wand storage case"
+
+/obj/item/storage/box/magic/bonewands/PopulateContents()
+	new /obj/item/gun/magic/wand/kelpmagic/magicmissile(src)
+	new /obj/item/gun/magic/wand/kelpmagic/magicmissile(src)
+
+/datum/loadout_box/shockwands
+	entry_tag = "Improvised Shockwands"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/storage/box/magic/rodwands
+
+/obj/item/storage/box/magic/rodwands
+	name = "Wand storage case"
+
+/obj/item/storage/box/magic/rodwands/PopulateContents()
+	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)

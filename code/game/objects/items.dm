@@ -267,16 +267,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(B && B.loc == loc)
 		qdel(src)
 
-//user: The mob that is suiciding
-//damagetype: The type of damage the item will inflict on the user
-//BRUTELOSS = 1
-//FIRELOSS = 2
-//TOXLOSS = 4
-//OXYLOSS = 8
-//Output a creative message and then return the damagetype done
-/obj/item/proc/suicide_act(mob/user)
-	return
-
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
 	set category = "Object"
@@ -293,7 +283,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	var/pricetext = GetPriceEstimate()
+	
+	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item.[pricetext ? " [pricetext]":""]"
 
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
@@ -308,7 +300,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of fire-retardant materials."
 
 	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
-		. += "<span class='notice'>You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.</span>"
+		. += span_notice("You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.")
 
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)

@@ -38,7 +38,7 @@
 
 	// In Disguise (Veil)?
 	//if (name_override != null)
-	//	returnString += span_suicide(" ([real_name] in disguise!) ")
+	//	returnString += span_ghostalert(" ([real_name] in disguise!) ")
 
 	//returnString += "\n"  Don't need spacers. Using . += "" in examine.dm does this on its own.
 	return returnIcon + returnString

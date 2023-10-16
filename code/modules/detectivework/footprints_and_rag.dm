@@ -22,10 +22,6 @@
 	var/action_speed = 3 SECONDS
 	var/damp_threshold = 0.5
 
-/obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (OXYLOSS)
-
 /obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user,proximity)
 	. = ..()
 	if(!proximity)

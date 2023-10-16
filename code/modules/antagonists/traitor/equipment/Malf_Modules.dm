@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 	uses += amt
 	if(uses)
 		if(!silent)
-			to_chat(owner, "<span class='notice'>[name] now has <b>[uses]</b> use[uses > 1 ? "s" : ""] remaining.</span>")
+			to_chat(owner, span_notice("[name] now has <b>[uses]</b> use[uses > 1 ? "s" : ""] remaining."))
 		desc = "[initial(desc)] It has [uses] use\s remaining."
 		UpdateButtonIcon()
 		return
@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 	uses += amt
 	if(uses)
 		if(!silent)
-			to_chat(owner, "<span class='notice'>[name] now has <b>[uses]</b> use[uses > 1 ? "s" : ""] remaining.</span>")
+			to_chat(owner, span_notice("[name] now has <b>[uses]</b> use[uses > 1 ? "s" : ""] remaining."))
 		desc = "[initial(desc)] It has [uses] use\s remaining."
 		UpdateButtonIcon()
 		return
@@ -497,7 +497,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 	Do not allow the mech to leave the station's vicinity or allow it to be destroyed."
 	cost = 30
 	upgrade = TRUE
-	unlock_text = "<span class='notice'>Virus package compiled. Select a target mech at any time. <b>You must remain on the station at all times. Loss of signal will result in total system lockout.</b></span>"
+	unlock_text = span_notice("Virus package compiled. Select a target mech at any time. <b>You must remain on the station at all times. Loss of signal will result in total system lockout.</b>")
 	unlock_sound = 'sound/mecha/nominal.ogg'
 
 /datum/AI_Module/large/mecha_domination/upgrade(mob/living/silicon/ai/AI)
@@ -819,7 +819,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 			C.view_range = initial(C.view_range)
 			fixed_cameras++
 			uses-- //Not adjust_uses() so it doesn't automatically delete or show a message
-	to_chat(owner, "<span class='notice'>Diagnostic complete! Cameras reactivated: <b>[fixed_cameras]</b>. Reactivations remaining: <b>[uses]</b>.</span>")
+	to_chat(owner, span_notice("Diagnostic complete! Cameras reactivated: <b>[fixed_cameras]</b>. Reactivations remaining: <b>[uses]</b>."))
 	owner.playsound_local(owner, 'sound/items/wirecutter.ogg', 50, 0)
 	adjust_uses(0, TRUE) //Checks the uses remaining
 

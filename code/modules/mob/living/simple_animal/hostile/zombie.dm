@@ -48,10 +48,16 @@
 	corpse.mob_species = /datum/species/zombie
 	corpse.mob_name = name
 
+/mob/living/simple_animal/hostile/zombie/Destroy()
+	if(corpse)
+		QDEL_NULL(corpse)
+	. = ..()
+
 /mob/living/simple_animal/hostile/zombie/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target) && prob(infection_chance))
-		try_to_zombie_infect(target)
+	var/atom/my_target = get_target()
+	if(. && ishuman(my_target) && prob(infection_chance))
+		try_to_zombie_infect(my_target)
 
 /mob/living/simple_animal/hostile/zombie/drop_loot()
 	. = ..()

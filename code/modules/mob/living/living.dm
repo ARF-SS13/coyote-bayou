@@ -13,8 +13,6 @@
 	medhud.add_to_hud(src)
 	var/datum/atom_hud/data/client/clienthud = GLOB.huds[DATA_HUD_CLIENT]
 	clienthud.add_to_hud(src)
-	var/datum/atom_hud/data/human/tail/tailhud = GLOB.huds[TAIL_HUD_DATUM]
-	tailhud.add_to_hud(src)
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
@@ -30,6 +28,16 @@
 	med_hud_set_status()
 
 /mob/living/Destroy()
+	for(var/s in ownedSoullinks)
+		var/datum/soullink/S = s
+		S.ownerDies(FALSE)
+		qdel(s) //If the owner is destroy()'d, the soullink is destroy()'d
+	ownedSoullinks = null
+	for(var/s in sharedSoullinks)
+		var/datum/soullink/S = s
+		S.sharerDies(FALSE)
+		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
+	sharedSoullinks = null
 	if(mind)
 		mind.RemoveAllSpells()
 	end_parry_sequence()
@@ -49,6 +57,7 @@
 	remove_from_all_data_huds()
 	GLOB.mob_living_list -= src
 	QDEL_LIST(diseases)
+	QDEL_LIST(mob_quirks)
 	return ..()
 
 /mob/living/onZImpact(turf/T, levels)
@@ -129,6 +138,37 @@
 					if(!(world.time % 5))
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return 1
+
+		if(pixel_slide_allow)
+			var/origtargetloc = L.loc
+			if(!pulledby)
+				if(M.a_intent != INTENT_HELP)
+					pixel_slide_target_has_help_int = FALSE
+					return TRUE
+				else
+					pixel_slide_target_has_help_int = TRUE
+				if(IS_STAMCRIT(src))
+					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
+					return TRUE
+				visible_message(span_notice("[src] is attempting to scoot closer to [L]."),
+					span_notice("You are now attempting to scoot closer to [L]."),
+					target = L, target_message = span_notice("[src] is attempting to scoot closer to you."))
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
+
+		//This condition checks if the other person is leaning against a wall or not. if positive the person leaning will be perceived with a density of "0"		
+		if((abs(L.pixel_x) >= 10) || (abs(L.pixel_y) >= 10))
+			var/origtargetloc = L.loc
+			var/src_passmob = (pass_flags & PASSMOB)
+			pass_flags |= PASSMOB
+			Move(origtargetloc)
+			if(!src_passmob)
+				pass_flags &= ~PASSMOB
+			return TRUE
 
 	//CIT CHANGES START HERE - makes it so resting stops you from moving through standing folks without a short delay
 		if(!CHECK_MOBILITY(src, MOBILITY_STAND) && CHECK_MOBILITY(L, MOBILITY_STAND))
@@ -515,6 +555,22 @@
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
+/mob/living/proc/toggle_mob_sleep()
+	set name = "Sleep Toggle"
+	set category = "IC"
+
+	if(IsSleeping())
+		if(alert(src, "Would you like to wake up soon? (You'll wake up after sleeping a little more, be patient and don't spam the button!)", "Wake Up", "Yes", "No") == "Yes")
+			if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
+				SetSleeping(800)	//puts you to sleep for 80 seconds, so it's not abusable.
+				to_chat(src, span_notice("You start to wake up groggily, this is going to take a minute."))
+			else
+				SetSleeping(400)
+				to_chat(src, span_notice("You start to wake up."))
+	else
+		if(alert(src, "Are you sure you want to sleep for a long time? (You can wake up by pressing this button again)", "Sleep", "Yes", "No") == "Yes")
+			SetSleeping(18000)	//puts you to sleep for 30 minutes, better than never waking up in case my code sucks badly.
+
 /mob/proc/get_contents()
 
 /*CIT CHANGE - comments out lay_down proc to be modified in modular_citadel
@@ -587,7 +643,6 @@
 	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
-		suiciding = 0
 		set_stat(UNCONSCIOUS) //the mob starts unconscious
 		if(!eye_blind)
 			blind_eyes(1)
@@ -860,11 +915,11 @@
 			clear_alert("gravity")
 		else
 			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
-				throw_alert("gravity", /obj/screen/alert/veryhighgravity)
+				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
-				throw_alert("gravity", /obj/screen/alert/highgravity)
+				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
 	else
-		throw_alert("gravity", /obj/screen/alert/weightless)
+		throw_alert("gravity", /atom/movable/screen/alert/weightless)
 	if(!override && !is_flying())
 		INVOKE_ASYNC(src, /atom/movable.proc/float, !has_gravity)
 
@@ -1193,7 +1248,7 @@
 		visible_message(span_warning("[src] catches fire!"), \
 						span_userdanger("You're set on fire!"))
 		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
-		throw_alert("fire", /obj/screen/alert/fire)
+		throw_alert("fire", /atom/movable/screen/alert/fire)
 		update_fire()
 		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED,src)
 		return TRUE
@@ -1506,6 +1561,7 @@
 
 //Coyote Add
 /mob/living/proc/despawn()
+	SSwho.KillCustoms(ckey, "despawned")
 	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
 	for(var/i in contents)
 		var/atom/movable/content = i
@@ -1514,3 +1570,10 @@
 	ghostize()
 	qdel(src)
 //End Coyote Add
+
+/mob/living/verb/switch_scaling()
+	set name = "Switch scaling mode"
+	set category = "IC"
+	set desc = "Switch sharp/fuzzy scaling for current mob."
+	appearance_flags ^= PIXEL_SCALE
+	fuzzy = !fuzzy

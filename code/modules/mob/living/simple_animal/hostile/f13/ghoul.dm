@@ -102,10 +102,10 @@
 
 	tastes = list("decay" = 1, "mud" = 1)
 	taunt_chance = 30
-	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
+	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
-	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
+	loot = list()
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 1
 	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
@@ -136,7 +136,7 @@
 		icon_living = rare_icon
 		icon_dead = "[rare_icon]_dead"
 	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+		loot = GLOB.trash_mob_loot
 
 
 /mob/living/simple_animal/hostile/ghoul/Aggro()
@@ -354,9 +354,11 @@
 
 /mob/living/simple_animal/hostile/ghoul/glowing/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
 	maxHealth = 256
@@ -423,7 +425,7 @@
 
 //Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
-	name = "Ranged Ghoul Solder"
+	name = "Ranged Ghoul Soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
@@ -547,9 +549,11 @@
 
 /mob/living/simple_animal/hostile/ghoul/zombie/glowing/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/zombie/legendary
 	name = "legendary ravenous ghoul"

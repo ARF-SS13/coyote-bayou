@@ -70,7 +70,7 @@
 		return FALSE
 	if(boss.atb.points < boss_cost)
 		return FALSE
-	if(!boss.client && needs_target && !boss.target)
+	if(!boss.client && needs_target && !boss.get_target())
 		return FALSE
 
 /datum/action/boss/Trigger()

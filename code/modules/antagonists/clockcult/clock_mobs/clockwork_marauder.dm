@@ -109,7 +109,7 @@
 		return
 	var/energy_projectile = istype(P, /obj/item/projectile/energy) || istype(P, /obj/item/projectile/beam)
 	visible_message(span_danger("[src] deflects [P] with [p_their()] shield!"), \
-	"<span class='danger'>You block [P] with your shield! <i>Blocks left:</i> <b>[shield_health - 1]</b></span>")
+	span_danger("You block [P] with your shield! <i>Blocks left:</i> <b>[shield_health - 1]</b>"))
 	if(energy_projectile)
 		playsound(src, 'sound/weapons/effects/searwall.ogg', 50, TRUE)
 	else

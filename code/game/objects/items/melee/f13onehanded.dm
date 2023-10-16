@@ -156,6 +156,9 @@
 	item_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_MASK
+	tool_behaviour = TOOL_SCREWDRIVER
+	toolspeed = 4
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
@@ -178,13 +181,6 @@
 		return eyestab(M,user)
 	else
 		return ..()
-
-/obj/item/melee/onehanded/knife/suicide_act(mob/user)
-	user.visible_message(pick(span_suicide("[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.")))
-	return (BRUTELOSS)
-
 
 /obj/item/melee/onehanded/knife/hunting
 	name = "hunting knife"
@@ -246,11 +242,13 @@
 
 /obj/item/melee/onehanded/knife/ritualdagger
 	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
+	desc = "An ancient blade used to carry out spiritual and mystic rituals."
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
 	custom_materials = null
+	tool_behaviour = TOOL_RITUAL
+	toolspeed = 1
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -601,24 +599,6 @@ obj/item/melee/onehanded/knife/switchblade
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	bare_wound_bonus = 5
 
-/obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
-
-	user.visible_message(span_suicide("[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind."))
-	if(!on)
-		src.attack_self(user)
-	else
-		playsound(loc, on_sound, 50, 1)
-		add_fingerprint(user)
-	sleep(3)
-	if (H && !QDELETED(H))
-		if (B && !QDELETED(B))
-			H.internal_organs -= B
-			qdel(B)
-		H.spawn_gibs()
-		return (BRUTELOSS)
-
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
 	var/list/desc = get_on_description()
@@ -772,7 +752,6 @@ obj/item/melee/onehanded/knife/switchblade
 	item_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 26
-	custom_materials = list(/datum/material/iron = 2000)
 
 // Spiked knuckles	Keywords: Damage 28
 /obj/item/melee/unarmed/brass/spiked

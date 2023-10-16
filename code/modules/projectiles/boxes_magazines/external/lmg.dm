@@ -64,7 +64,7 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
 
-/obj/item/ammo_box/rpd/empty
+/obj/item/ammo_box/magazine/rpd/empty
 	start_empty = 1
 
 

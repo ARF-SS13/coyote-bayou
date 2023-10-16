@@ -396,7 +396,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(flavortext && flavortext != "")
 		var/msg = replacetext(flavortext, "\n", " ")
 		if(length(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return span_notice("[msg]")
 		else
 			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
 
@@ -422,14 +422,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			dat += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];oocnotes=1'>\[View\]</a>"
 		if(src.getBruteLoss())
 			if(src.getBruteLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks bruised.</span>"
+				dat += span_warning("[p_they(TRUE)] looks bruised.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely bruised and bloodied!</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely bruised and bloodied!</B>")
 		if(src.getFireLoss())
 			if(src.getFireLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks burned.</span>"
+				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely burned.</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
 		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
@@ -476,7 +476,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/slow = 0
 	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
 		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
-		if(health_percent <= 50)//Start slowdown at half health
+		if(health_percent <= 50 && health_percent > 0)//Start slowdown at half health, stop slowdown when health is at or below zero to prevent divide by zero errors
 			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
@@ -897,7 +897,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/oindex = active_hand_index
 	active_hand_index = hand_index
 	if(hud_used)
-		var/obj/screen/inventory/hand/H
+		var/atom/movable/screen/inventory/hand/H
 		H = hud_used.hand_slots["[hand_index]"]
 		if(H)
 			H.update_icon()
@@ -947,6 +947,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	LoadComponent(/datum/component/riding)
 
 /mob/living/simple_animal/proc/toggle_ai(togglestatus)
+	if(QDELETED(src))
+		return
 	if(!can_have_ai && (togglestatus != AI_OFF))
 		return
 	if (AIStatus != togglestatus)
@@ -985,7 +987,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(stat == DEAD)
 		return
-	if (idlesound)
+	if (idlesound && !(islist(idlesound) && LAZYLEN(idlesound) == 0))
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
@@ -1306,7 +1308,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	throw_mode_off()
 	if(!target || !isturf(loc))
 		return
-	if(istype(target, /obj/screen))
+	if(istype(target, /atom/movable/screen))
 		return
 	if(IS_STAMCRIT(src))
 		to_chat(src, span_warning("You're too exhausted."))

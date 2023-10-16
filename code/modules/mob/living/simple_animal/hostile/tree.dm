@@ -58,12 +58,14 @@
 
 /mob/living/simple_animal/hostile/tree/AttackingTarget()
 	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/C = target
-		if(prob(15))
-			C.DefaultCombatKnockdown(60)
-			C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
-					span_userdanger("\The [src] knocks you down!"))
+	var/atom/my_target = get_target()
+	if(!iscarbon(my_target))
+		return
+	var/mob/living/carbon/C = my_target
+	if(prob(15))
+		C.DefaultCombatKnockdown(60)
+		C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
+				span_userdanger("\The [src] knocks you down!"))
 
 /mob/living/simple_animal/hostile/tree/festivus
 	name = "festivus pole"

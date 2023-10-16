@@ -73,7 +73,7 @@ ty ilu - bear
 	narrate = "The building creaks as you enter into it, causing the hairs on the back of your neck to stand. The smell of cordite, blood, and fear hang heavy in the air. This place is not safe. Be on your toes."
 
 /area/f13/building/coyote/nash/grocery
-	narrate = "The echo of a childs laughter rebounds in your ears. A trick of the mind, certainly. This building contains some of the last bits of the old world. Quiet and creaking it sits, half buried into the Fireant mound across from Nash. Perhaps, if you are lucky, this place hasn't been fully scoured."
+	narrate = "The steam rises from underground thermal vents, as you enter the location that was once a grocery store. It has been rebuilt into a club that you can see from the street."
 
 /area/f13/building/coyote/nash/grocery/southloop
 	narrate = "This was once a grocery store, now it's full of what remains the damned. Assuming you, or someone else, hasn't already slain them. The air stinks of unmoved air, dust, decay, and rotted food. Somehow this place seems to have stayed sealed until very recently. Which is even more odd, because the planks that were on the windows seemed to have been on the inside, not the outside."
@@ -82,6 +82,7 @@ ty ilu - bear
 	narrate = "The motes of dust burn your nose as your take your first breath of this diner. Well preserved as it may be, and perhaps it even has an owner, you can't help but know this building is older than old. A miracle it is retained in such good shape."
 
 /area/f13/building/coyote/nash/greenhouse
+	name = "Greenhouse near Nash"
 	narrate = "The smell of mold mixed with the stench of bloatfly puss burns your nose the first time you enter this place. Once, perhaps not all that long ago, someone was growing plants in here. Maybe someone is now, but if not then this ramshackle greenhouse is in poor repair."
 
 /area/f13/building/coyote/nash/museum/groundfloor
