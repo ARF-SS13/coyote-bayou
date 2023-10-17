@@ -389,6 +389,11 @@ Avoid decimals when possible when it comes to e_cost!
 	fire_sound = 'sound/weapons/taser.ogg'
 	e_cost = 400 // 50 shots
 
+/obj/item/ammo_casing/energy/laser/xcomufolaser
+	projectile_type = /obj/item/projectile/beam/laser/xcom
+	e_cost = 10 // 7 shots
+	fire_sound = 'modular_coyote/sound/items/xcom/LaserRifleFire.wav'
+
 // Kelp's TG blaster casings, internal cell has 5000 power units, CANNOT BE RELOADED IN THE FIELD KEEP THAT IN MIND.
 
 /obj/item/ammo_casing/energy/laser/tg
@@ -429,6 +434,7 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/tg/particle
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

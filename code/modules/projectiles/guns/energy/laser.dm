@@ -1301,6 +1301,30 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/obj/item/gun/energy/laser/xcomufolaser
+	name = "weathered strange laser rifle"
+	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X'. Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
+	icon = 'modular_coyote/icons/objects/xcomlaser.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/xcomlaserLeft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/xcomlaserRight.dmi'
+	icon_state = "xcom_laser"
+	item_state = "xcom_laser"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/xcomufolaser)
+	cell_type = /obj/item/stock_parts/cell/ammo/xcomlaser
+	fire_delay = 1
+	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	can_remove = 0
+	selfcharge = 1
+	selfchargerate = 5
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
+	)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
+
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/lasertest)

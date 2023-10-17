@@ -772,6 +772,21 @@
 	damage = 40
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
+
+/obj/item/projectile/beam/laser/xcom
+	name = "laser beam"
+	damage_low = 0
+	damage = 30
+	damage_high = 60
+	recoil = BULLET_RECOIL_HEAVY_LASER //I want the burst fire to have some level of RNG deviation
+	tracer_type = /obj/effect/projectile/tracer/laser/solar
+	muzzle_type = /obj/effect/projectile/muzzle/laser/solar
+	impact_type = /obj/effect/projectile/impact/laser/solar
+	hitscan = TRUE
+	hitsound = 'modular_coyote/sound/items/xcom/Laserhit.wav'
+	hitsound_wall = 'modular_coyote/sound/items/xcom/Laserhit.wav'
+	max_upgrades = 0
+
 // Kelp's TG blaster projectiles, should almost all be projectiles and not hitscan
 
 /obj/item/projectile/beam/laser/tg
@@ -806,6 +821,7 @@
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
+
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol
