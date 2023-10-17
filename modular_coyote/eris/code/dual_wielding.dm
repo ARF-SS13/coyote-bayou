@@ -5,28 +5,30 @@
 //Maximum weight allowed for dual wielding.
 #define DUAL_WIELDING_MAX_WEIGHT_ALLOWED WEIGHT_CLASS_NORMAL
 
-#define DUAL_WIELDING_SPEED_DIVIDER 3
+#define DUAL_WIELDING_FALLBACK_FORCE	0.66
+#define DUAL_WIELDING_AGILE_FORCE		0.75
+#define DUAL_WIELDING_ENCUMBERED_FORCE	0.50
+#define DUAL_WIELDING_SPEED_DIVIDER 	3
+
 
 /obj/item
 	var/is_dual_wielded = FALSE
 	var/sound_dualwield_start = 'sound/weapons/blade_unsheathing.ogg'
 	var/sound_dualwield_end = 'sound/weapons/blade_sheathing.ogg'
-	var/force_dual_unwielded = 0 //If you have a specific force for it being un-is_dual_wielded. If for whatever reason you don't want to use the original force of the weapon.
-	var/force_dual_wielded = 0 //If you have a specific force for it being dual wielded.
 	var/dual_wielded_mult = 0.66
 	var/memory_original_name
+	var/memory_original_force
 	var/dual_wield_memory_attack_speed  //dangerous variable, I know, but hey what's life without a little bit of spice?
-	var/dual_wield_switch_weapon = 0
 
 /mob
 	var/dual_wield_queue_swap = 0
 
 //Attempt to dual wield
-/proc/attempt_dual_wield(mob/user, obj/item/I, obj/item/J)
+/proc/attempt_dual_wield(mob/user, obj/item/I, obj/item/J, dual_wield_force_mult)
 	if(I.is_dual_wielded == TRUE || J.is_dual_wielded == TRUE)  //Trying to dualwield_end it
 		dualwield_end(user, I, J)
 	else  //Trying to dualwield it
-		dualwield_start(user, I, J)	
+		dualwield_start(user, I, J, dual_wield_force_mult)
 
 /proc/dualwield_end(mob/living/user, obj/item/I, obj/item/J)
 	if((!I.is_dual_wielded && !J.is_dual_wielded) || !user)
@@ -37,24 +39,12 @@
 	I.is_dual_wielded = FALSE
 	J.is_dual_wielded = FALSE
 
+	I.force = I.memory_original_force
+	J.force = J.memory_original_force
+
 	I.attack_speed = I.dual_wield_memory_attack_speed
 	J.attack_speed = J.dual_wield_memory_attack_speed
 
-	if(I.force_dual_unwielded)
-		I.force = I.force_dual_unwielded
-	if(J.force_dual_unwielded)
-		J.force = J.force_dual_unwielded
-
-	if(I.dual_wielded_mult)
-		I.force = (I.force / I.dual_wielded_mult)
-	else
-		I.force = (I.force / 1.15)
-
-	if(J.dual_wielded_mult)
-		J.force = (J.force / J.dual_wielded_mult)
-	else
-		J.force = (J.force / 1.15)
-	
 	if(findtext(I.name," (Dual Wielded)") || findtext(J.name," (Dual Wielded)"))
 		I.name = I.memory_original_name
 		J.name = J.memory_original_name
@@ -73,7 +63,7 @@
 		playsound(user.loc, I.sound_dualwield_end, 50, 1)
 	return
 
-/proc/dualwield_start(mob/living/user, obj/item/I, obj/item/J)
+/proc/dualwield_start(mob/living/user, obj/item/I, obj/item/J, dual_wield_force_mult)
 	if(I.is_dual_wielded || J.is_dual_wielded)
 		return
 	if(user.get_num_arms() < 2)
@@ -82,32 +72,29 @@
 	I.is_dual_wielded = TRUE
 	J.is_dual_wielded = TRUE
 
+	I.memory_original_force = I.force
+	J.memory_original_force = J.force
+
+	I.dual_wielded_mult = dual_wield_force_mult
+	J.dual_wielded_mult = dual_wield_force_mult
+
 	I.dual_wield_memory_attack_speed = I.attack_speed
-	I.attack_speed = I.attack_speed/DUAL_WIELDING_SPEED_DIVIDER
 	J.dual_wield_memory_attack_speed = J.attack_speed
-	J.attack_speed = J.attack_speed/DUAL_WIELDING_SPEED_DIVIDER
 
-	if(I.force_dual_wielded)  //Let's assign other values, in case there are
-		I.force = I.force_dual_wielded
-	if(J.force_dual_wielded)
-		J.force = J.force_dual_wielded
+	I.attack_speed = (I.attack_speed / DUAL_WIELDING_SPEED_DIVIDER)
+	J.attack_speed = (J.attack_speed / DUAL_WIELDING_SPEED_DIVIDER)
 
-	if(I.dual_wielded_mult)
-		I.force = (I.force * I.dual_wielded_mult)
-	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
-		I.force = (I.force * FALLBACK_FORCE) //Items that do 0 damage will still do 0 damage though.
-	
-	if(J.dual_wielded_mult)
-		J.force = (J.force * J.dual_wielded_mult)
-	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
-		J.force = (J.force * FALLBACK_FORCE) //Items that do 0 damage will still do 0 damage though.
+	I.force = (I.force * dual_wield_force_mult)
+	J.force = (J.force * dual_wield_force_mult)
 
 	I.memory_original_name = I.name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
 	J.memory_original_name = J.name
+
 	I.name = "[I.name] (Dual Wielded)"
 	J.name = "[J.name] (Dual Wielded)"
-	I.update_icon()//Legacy	
-	J.update_icon()//Legacy
+
+	I.update_icon()
+	J.update_icon()
 
 	if(user)
 		user.update_inv_hands()
