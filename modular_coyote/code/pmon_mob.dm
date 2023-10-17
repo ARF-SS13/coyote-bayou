@@ -769,3 +769,29 @@
 //ALPHABETICAL PLEASE//
 ///////////////////////
 
+/mob/living/simple_animal/pokemon/rattata
+	name = "rattata"
+	icon_state = "rattata"
+	icon_living = "rattata"
+	icon_dead = "rattata_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/pokemon/raticate
+	name = "raticate"
+	icon_state = "raticate"
+	icon_living = "raticate"
+	icon_dead = "raticate_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/pokemon/skuntank
+	name = "Skuntank"
+	icon_state = "skunktank"
+	icon_living = "skunktank"
+	icon_dead = "skunktank_d"
+	p_types = list(P_TYPE_POISON)
+
+
