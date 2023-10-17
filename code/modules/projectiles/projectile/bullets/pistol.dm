@@ -1133,7 +1133,6 @@
 /// Sharp fuckin rock
 /obj/item/projectile/bullet/ghoul_rock
 	name = "sharp rock"
-	list_damage = ("1" = 20, "2" = 20, "3" = 20, "4" = 20, "5" = 20)
 	damage = BULLET_DAMAGE_GHOUL_ROCK
 	stamina = BULLET_STAMINA_GHOUL_ROCK
 	spread = BULLET_SPREAD_SURPLUS

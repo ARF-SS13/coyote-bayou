@@ -21,7 +21,7 @@
 /obj/item/projectile/bullet/a556
 	name = "5.56 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_223 //36
-	damage_list = list("30" = 30, "36" = 30, "40" = 30, "41" = 2, "42" = 2, "43" = 2, "44" = 2, "45" = 1, "50" = .5, "55" = .5
+	damage_list = list("30" = 30, "36" = 30, "40" = 30, "41" = 2, "42" = 2, "43" = 2, "44" = 2, "45" = 1, "50" = 0.5, "55" = 0.5)
 	stamina = BULLET_STAMINA_RIFLE_223
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_223
@@ -64,7 +64,7 @@
 /obj/item/projectile/bullet/a556/improvised
 	name = "handloaded .223 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_223_HANDLOAD
-	damage_list = list("25" = 30, "32" = 30, "38" = 30, "35" = 2, "38" = 2, "40" = 2, "42" = 2, "44" = 1, "47" = .5, "55" = .5
+	damage_list = list("25" = 30, "32" = 30, "38" = 30, "35" = 2, "38" = 2, "40" = 2, "42" = 2, "44" = 1, "47" = 0.5, "55" = 0.5)
 	stamina = BULLET_STAMINA_RIFLE_223
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_223_HANDLOAD
@@ -1135,7 +1135,7 @@
 /obj/item/projectile/bullet/c2mm
 	name = "2mm gauss projectile"
 	damage = BULLET_DAMAGE_RIFLE_GAUSS //20
-	damage_list = list("1" = .5, "10" = 33, "20" = 33, "25" = 33, "999" = .5)
+	damage_list = list("1" = 0.5, "10" = 33, "20" = 33, "25" = 33, "999" = 0.5)
 	stamina = BULLET_STAMINA_RIFLE_GAUSS
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_GAUSS
