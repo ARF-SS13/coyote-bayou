@@ -25966,6 +25966,7 @@
 "pyb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel/f13/vault_floor/green/white/side{
 	dir = 6
 	},
@@ -38349,6 +38350,15 @@
 /obj/effect/spawner/lootdrop/f13/weapon/junk,
 /turf/open/floor/plating/tunnel,
 /area/f13/building/sewers)
+"xtE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/green/white,
+/area/f13/building)
 "xul" = (
 /obj/structure/wreck/trash/engine,
 /obj/effect/decal/cleanable/dirt,
@@ -41811,7 +41821,7 @@ bOb
 bOb
 pyb
 iEO
-rkV
+xtE
 jdc
 qlF
 pcG

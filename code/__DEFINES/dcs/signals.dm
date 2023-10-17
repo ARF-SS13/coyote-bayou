@@ -25,6 +25,10 @@
 #define COMSIG_GLOB_RADIATION_SHOW "!debug_show_rads"				//Makes turfs that are radioactive green and show a number
 
 
+#define COMSIG_GLOB_PRE_RANDOM_EVENT "!pre_random_event"
+	/// Do not allow this random event to continue.
+	#define CANCEL_PRE_RANDOM_EVENT (1<<0)
+
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"

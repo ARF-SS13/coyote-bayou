@@ -98,10 +98,6 @@
 
 /obj/item/gun/energy/process()
 	if(selfcharge && cell?.charge < cell.maxcharge)
-		charge_tick++
-		if(charge_tick < charge_delay)
-			return
-		charge_tick = 0
 		if(selfcharge == EGUN_SELFCHARGE_BORG)
 			var/atom/owner = loc
 			if(istype(owner, /obj/item/robot_module))
@@ -343,7 +339,7 @@
 		if(sounds_and_words)
 			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
-	if(can_charge == 0 && can_remove == 0)
+	if(can_remove == 0)
 		if(sounds_and_words)
 			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 		return
@@ -382,7 +378,7 @@
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
-	if(can_charge == 1)
+	if(can_remove == 1)
 		. += span_notice("Alt-click to eject the battery.")
 
 /obj/item/gun/energy/ui_data(mob/user)

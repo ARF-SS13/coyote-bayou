@@ -48,6 +48,10 @@
 			caliber += CALIBER_ANY // default to accepting any old caliber
 	update_icon()
 
+/obj/item/ammo_box/Destroy()
+	QDEL_LIST(stored_ammo)
+	return ..() 
+
 /obj/item/ammo_box/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN, .proc/admin_load)
