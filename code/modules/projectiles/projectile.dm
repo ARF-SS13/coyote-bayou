@@ -1061,8 +1061,8 @@
 /obj/item/projectile/proc/randomize_damage()
 	if(LAZYLEN(damage_list))
 		var/newdam = pickweight(damage_list)
-		if(isnum(newdam))
-			damage = newdam
+		if(istext(newdam) && isnum(text2num(newdam)))
+			damage = text2num(newdam)
 		if(damage == LAZYACCESS(damage_list, LAZYLEN(damage_list)))
 			playsound(src, crit_sound, 100, 1, 30)
 	else if(!isnull(damage_low) && !isnull(damage_high))
