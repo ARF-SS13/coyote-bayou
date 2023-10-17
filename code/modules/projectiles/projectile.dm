@@ -124,6 +124,13 @@
 	var/damage_low
 	/// Define them both! Also the damage list takes priority
 	var/damage_high
+	var/crit_sound = 'sound/weapons/dink.ogg'
+	var/dink_sound = 'sound/weapons/dink.ogg'
+
+	/// multipliers caused by the shooter
+	var/damage_mult = 1
+	/// dont touch this
+	var/finalmost_damage = 0
 
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
@@ -434,10 +441,10 @@
 				COOLDOWN_START(L, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
 				L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
 						span_userdanger("[L] is hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
-		if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
-			var/playdink = rand(1, 10)
-			if(playdink <= 3)
-				playsound(src, 'sound/weapons/dink.ogg', 30, 1)
+		// if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
+		// 	var/playdink = rand(1, 10)
+		// 	if(playdink <= 3)
+		// 		playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 		L.on_hit(src)
 
 	var/reagent_note
@@ -528,7 +535,8 @@
 
 /obj/item/projectile/proc/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)		//probably needs to be reworked entirely when pixel movement is done.
 	if(is_supereffective(target))
-		damage += (supereffective_damage * damage_mod)
+		damage += supereffective_damage
+	damage *= damage_mod
 	if(QDELETED(src) || !T || !target)		//We're done, nothing's left.
 		if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 			qdel(src)
@@ -1055,8 +1063,12 @@
 		var/newdam = pickweight(damage_list)
 		if(isnum(newdam))
 			damage = newdam
+		if(damage == LAZYACCESS(damage_list, LAZYLEN(damage_list)))
+			playsound(src, crit_sound, 100, 1, 30)
 	else if(!isnull(damage_low) && !isnull(damage_high))
 		damage = rand(damage_low, damage_high)
+		if(damage == damage_high)
+			playsound(src, crit_sound, 100, 1, 30)
 
 /////// MISC HELPERS ////////
 /// Is this atom reflectable with ""standardized"" reflection methods like you know eshields and deswords and similar
@@ -1089,6 +1101,22 @@
 /obj/item/projectile/bullet/F13/musketball
 	damage = 60
 
+
+/mob/living/simple_animal/hostile/rat/skitter/bullet_random_debug
+	name = "debug rat"
+	desc = "Its a rat!"
+	melee_damage_lower = 0.01
+	melee_damage_upper = 0.01
+	maxHealth = 5000
+	health = 5000
+	is_smol = FALSE
+	faction = list("neutral")
+
+	variation_list = list()
+
+/mob/living/simple_animal/hostile/rat/skitter/bullet_random_debug/bullet_act(obj/item/projectile/P)
+	. = ..()
+	say("I'm hit! That felt like it did [P.damage] damage to be exact!")
 
 
 #undef MOVES_HITSCAN
