@@ -864,7 +864,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!new_target)
 		return
 	target = WEAKREF(new_target)
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
 
 /mob/living/simple_animal/hostile/proc/queue_unbirth()
 	SSidlenpcpool.add_to_culling(src)
