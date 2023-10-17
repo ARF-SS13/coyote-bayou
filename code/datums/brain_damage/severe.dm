@@ -167,13 +167,17 @@
 	else
 		stress = max(stress - 4, 0)
 
+/mob
+	///Can this animal be classified as a pet?
+	var/is_monophobia_pet = FALSE
+
 /datum/brain_trauma/severe/monophobia/proc/check_alone()
 	if(HAS_TRAIT(owner, TRAIT_BLIND))
 		return TRUE
 	for(var/mob/M in oview(owner, 7))
 		if(!isliving(M)) //ghosts ain't people
 			continue
-		if((istype(M, /mob/living/simple_animal/pet)) || M.ckey)
+		if(M.is_monophobia_pet || M.ckey)
 			return FALSE
 	return TRUE
 

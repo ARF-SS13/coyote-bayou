@@ -103,6 +103,15 @@
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
+/atom/movable/screen/inventory/proc/ClearGhosts()
+	//If we have it, get rid of it now the right way.
+	if(object_overlay)
+		cut_overlay(object_overlay)
+		QDEL_NULL(object_overlay)
+	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
+	if(overlays.len && type != /atom/movable/screen/inventory/hand)
+		cut_overlays()
+
 /atom/movable/screen/inventory/Click(location, control, params)
 	if(hud?.mymob && (hud.mymob != usr))
 		return
@@ -116,19 +125,17 @@
 	if(usr.attack_ui(slot_id))
 		usr.update_inv_hands()
 	//Remove the green object overlay since we never had a chance to use MouseExited(). Also removes the red one, but that's okay.
-	if(object_overlay)
-		cut_overlay(object_overlay)
-		QDEL_NULL(object_overlay)
+	ClearGhosts()
 	return TRUE
 
 /atom/movable/screen/inventory/MouseEntered()
 	..()
+	ClearGhosts()
 	add_overlays()
 
 /atom/movable/screen/inventory/MouseExited()
 	..()
-	cut_overlay(object_overlay)
-	QDEL_NULL(object_overlay)
+	ClearGhosts()
 
 /atom/movable/screen/inventory/update_icon_state()
 	if(!icon_empty)
@@ -142,9 +149,6 @@
 
 /atom/movable/screen/inventory/update_icon()
 	. = ..()
-	if(object_overlay)
-		cut_overlay(object_overlay)
-		QDEL_NULL(object_overlay)
 
 /atom/movable/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
@@ -165,7 +169,7 @@
 	else
 		item_overlay.color = "#00ff00"
 
-	cut_overlay(object_overlay)
+	ClearGhosts()
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
 

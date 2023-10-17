@@ -613,3 +613,10 @@
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 */
+
+/datum/crafting_recipe/hay
+	name = "hay"
+	result = /obj/item/stack/sheet/hay
+	time = 10
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/wheat = 1)
+	category = CAT_PRIMAL

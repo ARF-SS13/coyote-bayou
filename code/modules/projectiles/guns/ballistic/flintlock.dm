@@ -51,7 +51,7 @@
 	data["accepted_magazines"] = "powder, and ball"
 	data["magazine_name"] = "Metal Tube"
 	data["magazine_calibers"] = "powder, and ball"
-	data["shots_remaining"] = !!chambered
+	data["shots_remaining"] = !!chambered || 0
 	data["shots_max"] = 1
 
 /obj/item/gun/flintlock/attack_self(mob/living/user)

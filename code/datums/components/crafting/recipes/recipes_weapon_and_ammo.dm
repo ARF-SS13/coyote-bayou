@@ -1526,6 +1526,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//scrap tg laser
+/datum/crafting_recipe/scraplaser
+	name = "improvised laser"
+	result = /obj/item/gun/energy/laser/tg/scrap
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
+
 //aer9
 /datum/crafting_recipe/AER9
 	name = "AER-9"

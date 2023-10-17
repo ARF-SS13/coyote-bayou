@@ -1,11 +1,3 @@
-/* KELP NOTES
-10000 energy = small energy cell
-20000 energy = electron charge pack
-30000 energy = micro fusion cell
-40000 energy = ultracite cell
-50000 energy = alien cell
-*/
-
 /obj/item/projectile/beam
 	name = "laser"
 	icon_state = "laser"
@@ -780,6 +772,7 @@
 	damage = 40
 	recoil = BULLET_RECOIL_HEAVY_LASER
 
+
 /obj/item/projectile/beam/laser/xcom
 	name = "laser beam"
 	damage_low = 0
@@ -793,6 +786,42 @@
 	hitsound = 'modular_coyote/sound/items/xcom/Laserhit.wav'
 	hitsound_wall = 'modular_coyote/sound/items/xcom/Laserhit.wav'
 	max_upgrades = 0
+
+// Kelp's TG blaster projectiles, should almost all be projectiles and not hitscan
+
+/obj/item/projectile/beam/laser/tg
+	name = "blaster bolt"
+	damage = 30
+	recoil = BULLET_RECOIL_HEAVY_LASER
+
+/obj/item/projectile/beam/laser/tg/heavy
+	name = "intense blaster bolt"
+	damage = 60
+	wound_bonus = 40 // nasty, but it's still a laser.
+	recoil = BULLET_RECOIL_PLASMA
+
+/obj/item/projectile/beam/laser/tg/nuclear
+	name = "nuclear laser bolt"
+	icon_state = "xray"
+	irradiate = 200
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
+	light_color = LIGHT_COLOR_GREEN
+	tracer_type = /obj/effect/projectile/tracer/xray
+	muzzle_type = /obj/effect/projectile/muzzle/xray
+	impact_type = /obj/effect/projectile/impact/xray
+
+/obj/item/projectile/beam/laser/tg/particle
+	name = "hyper-velocity particle beam"
+	icon_state = "emitter"
+	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload
+	wound_bonus = 60 // nasty, but it's still a laser
+	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/xray
+	muzzle_type = /obj/effect/projectile/muzzle/xray
+	impact_type = /obj/effect/projectile/impact/xray
+
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol
