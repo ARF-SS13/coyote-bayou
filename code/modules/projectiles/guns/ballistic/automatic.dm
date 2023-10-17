@@ -3244,7 +3244,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_SMALL
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = LMG_RECOIL (1.7 , 1.7)
