@@ -1041,7 +1041,7 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	can_remove = 0
 	selfcharge = 1
-	selfchargerate = 1
+	selfchargerate = 5
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 		/datum/firemode/burst/three/slower

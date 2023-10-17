@@ -96,10 +96,6 @@
 
 /obj/item/gun/energy/process()
 	if(selfcharge && cell?.charge < cell.maxcharge)
-		charge_tick++
-		if(charge_tick < charge_delay)
-			return
-		charge_tick = 0
 		if(selfcharge == EGUN_SELFCHARGE_BORG)
 			var/atom/owner = loc
 			if(istype(owner, /obj/item/robot_module))
