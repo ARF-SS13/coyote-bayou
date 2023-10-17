@@ -626,7 +626,7 @@
 	color = "#993300"
 
 /obj/item/stock_parts/cell/ammo/xcomlaser // Recharging, but only has 7 shots
-	name = "xcom infinite ammo"
+	name = "strange recharging cell"
 	desc = "How do you have this? It is meant to be built into the gun."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"

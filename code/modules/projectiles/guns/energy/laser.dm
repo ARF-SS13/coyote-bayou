@@ -1303,7 +1303,7 @@
 
 /obj/item/gun/energy/laser/xcomufolaser
 	name = "weathered strange laser rifle"
-	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X' Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
+	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X'. Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
 	icon = 'modular_coyote/icons/objects/xcomlaser.dmi'
 	lefthand_file = 'modular_coyote/icons/objects/xcomlaserLeft.dmi'
 	righthand_file = 'modular_coyote/icons/objects/xcomlaserRight.dmi'
