@@ -13,7 +13,7 @@
 	var/sound_dualwield_end = 'sound/weapons/blade_sheathing.ogg'
 	var/force_dual_unwielded = 0 //If you have a specific force for it being un-is_dual_wielded. If for whatever reason you don't want to use the original force of the weapon.
 	var/force_dual_wielded = 0 //If you have a specific force for it being dual wielded.
-	var/dual_wielded_mult = 1
+	var/dual_wielded_mult = 0.66
 	var/memory_original_name
 	var/dual_wield_memory_attack_speed  //dangerous variable, I know, but hey what's life without a little bit of spice?
 	var/dual_wield_switch_weapon = 0
@@ -92,13 +92,13 @@
 	if(J.force_dual_wielded)
 		J.force = J.force_dual_wielded
 
-	if(I.wielded_mult)
-		I.force = (I.force * I.wielded_mult)
+	if(I.dual_wielded_mult)
+		I.force = (I.force * I.dual_wielded_mult)
 	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
 		I.force = (I.force * FALLBACK_FORCE) //Items that do 0 damage will still do 0 damage though.
 	
-	if(J.wielded_mult)
-		J.force = (J.force * J.wielded_mult)
+	if(J.dual_wielded_mult)
+		J.force = (J.force * J.dual_wielded_mult)
 	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
 		J.force = (J.force * FALLBACK_FORCE) //Items that do 0 damage will still do 0 damage though.
 
