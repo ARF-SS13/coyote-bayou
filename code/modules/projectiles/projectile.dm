@@ -116,6 +116,15 @@
 
 	var/ignore_source_check = FALSE
 
+	/// If a projectile is supposed to have a random damage picked from a weighted list, use this
+	/// If not set, it'll use the normal damage
+	/// Format: list(3 = 2, 4 = 10, 100 = 0.1)
+	var/list/damage_list = list()
+	/// If a projectile is supposed to have a random damage from a rand proc, use this
+	var/damage_low
+	/// Define them both! Also the damage list takes priority
+	var/damage_high
+
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
@@ -715,6 +724,7 @@
 		pixel_increment_amount = SSprojectiles.global_pixel_increment_amount
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, pixel_increment_amount)
 	fired = TRUE
+	randomize_damage()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -1039,6 +1049,14 @@
 
 /obj/item/projectile/experience_pressure_difference()
 	return
+
+/obj/item/projectile/proc/randomize_damage()
+	if(LAZYLEN(damage_list))
+		var/newdam = pickweight(damage_list)
+		if(isnum(newdam))
+			damage = newdam
+	else if(!isnull(damage_low) && !isnull(damage_high))
+		damage = rand(damage_low, damage_high)
 
 /////// MISC HELPERS ////////
 /// Is this atom reflectable with ""standardized"" reflection methods like you know eshields and deswords and similar
