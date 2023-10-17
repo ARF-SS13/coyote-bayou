@@ -101,7 +101,10 @@ SUBSYSTEM_DEF(vote)
 	return .
 
 /datum/controller/subsystem/vote/proc/calculate_condorcet_votes(blackbox_text)
-	// https://en.wikipedia.org/wiki/Schulze_method#Implementation
+	if((mode == "gamemode" || mode == "dynamic" || mode == "roundtype"))
+		for(var/mob/dead/new_player/P in GLOB.player_list)
+			if(P.ready != PLAYER_READY_TO_PLAY && voted[P.ckey])
+				voted -= P.ckey
 	var/list/d[][] = new/list(choices.len,choices.len) // the basic vote matrix, how many times a beats b
 	for(var/ckey in voted)
 		var/list/this_vote = voted[ckey]
@@ -317,66 +320,33 @@ SUBSYSTEM_DEF(vote)
 
 /datum/controller/subsystem/vote/proc/result()
 	. = announce_result()
-	if(!.)
-		return
-	var/end_round = FALSE
-	switch(mode)
-		if("roundtype") //CIT CHANGE - adds the roundstart extended/secret vote
-			if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
-				return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-			GLOB.master_mode = .
-			SSticker.save_mode(.)
-			message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
-			log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
-			if(CONFIG_GET(flag/modetier_voting))
-				reset()
-				started_time = 0
-				initiate_vote("mode tiers","server", votesystem=SCORE_VOTING, forced=TRUE, vote_time = 30 MINUTES)
-				to_chat(world,"<b>The vote will end right as the round starts.</b>")
-				return .
-		if("restart")
-			if(. == "Restart Round")
-				end_round = TRUE
-		if("transfer")
-			if(. == "Call Train")
-				end_round = TRUE
-		if("gamemode")
-			if(GLOB.master_mode != .)
-				SSticker.save_mode(.)
-				if(SSticker.HasRoundStarted())
-					end_round = TRUE
-				else
-					GLOB.master_mode = .
-		if("mode tiers")
-			var/list/raw_score_numbers = list()
-			for(var/score_name in scores)
-				sorted_insert(raw_score_numbers,scores[score_name],/proc/cmp_numeric_asc)
-			stored_modetier_results = scores.Copy()
-			for(var/score_name in stored_modetier_results)
-				if(stored_modetier_results[score_name] <= raw_score_numbers[CONFIG_GET(number/dropped_modes)])
-					stored_modetier_results -= score_name
-			stored_modetier_results += "traitor"
-		if("dynamic")
-			if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
-				return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-			var/list/runnable_storytellers = config.get_runnable_storytellers()
-			var/datum/dynamic_storyteller/picked
-			for(var/T in runnable_storytellers)
-				var/datum/dynamic_storyteller/S = T
-				if(stored_gamemode_votes[initial(S.name)] == 1 && CHECK_BITFIELD(initial(S.flags), FORCE_IF_WON))
-					picked = S
-				runnable_storytellers[S] *= round(stored_gamemode_votes[initial(S.name)]*100000,1)
-			if(!picked)
-				picked = pickweight(runnable_storytellers, 0)
-			GLOB.dynamic_storyteller_type = picked
-		if("map")
-			var/datum/map_config/VM = config.maplist[.]
-			message_admins("The map has been voted for and will change to: [VM.map_name]")
-			log_admin("The map has been voted for and will change to: [VM.map_name]")
-			if(SSmapping.changemap(config.maplist[.]))
-				to_chat(world, span_boldannounce("The map vote has chosen [VM.map_name] for next round!"))
-	if(end_round)
-	/* Fortuna edit, shuttle will autocall after a successful transfer vote even when admins are online
+	var/restart = 0
+	if(.)
+		switch(mode)
+			if("roundtype") //CIT CHANGE - adds the roundstart extended/dynamic vote
+				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
+					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
+				GLOB.master_mode = "dynamic"
+				if(. == "extended")
+					GLOB.dynamic_forced_extended = TRUE
+				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
+				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
+			if("restart")
+				if(. == "Restart Round")
+					restart = 1
+			if("map")
+				var/datum/map_config/VM = config.maplist[.]
+				message_admins("The map has been voted for and will change to: [VM.map_name]")
+				log_admin("The map has been voted for and will change to: [VM.map_name]")
+				if(SSmapping.changemap(config.maplist[.]))
+					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
+			if("transfer") // austation begin -- Crew autotransfer vote
+				if(. == "Initiate Crew Transfer")
+					SSshuttle.autoEnd()
+					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+					if(C)
+						C.post_status("shuttle") // austation end
+	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
 			if(!C.is_afk() && check_rights_for(C, R_SERVER))
@@ -386,7 +356,6 @@ SUBSYSTEM_DEF(vote)
 			to_chat(world, "<span style='boldannounce'>Notice:Vote will not take effect automatically because there are active admins on.</span>")
 			message_admins("A [mode] vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may enforce it.")
 			return
-	*/
 		switch(mode)
 			if("restart")
 				SSticker.Reboot("Restart vote successful.", "restart vote")
@@ -488,24 +457,7 @@ SUBSYSTEM_DEF(vote)
 						continue
 					choices |= M
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
-				choices.Add("secret", "extended")
-			if("mode tiers")
-				var/list/modes_to_add = config.votable_modes
-				var/list/probabilities = CONFIG_GET(keyed_list/probability)
-				for(var/tag in modes_to_add)
-					if(probabilities[tag] <= 0)
-						modes_to_add -= tag
-				modes_to_add -= "traitor" // makes it so that traitor is always available
-				choices.Add(modes_to_add)
-			if("dynamic")
-				GLOB.master_mode = "dynamic"
-				var/list/probabilities = CONFIG_GET(keyed_list/storyteller_weight)
-				for(var/T in config.storyteller_cache)
-					var/datum/dynamic_storyteller/S = T
-					var/probability = ((initial(S.config_tag) in probabilities) ? probabilities[initial(S.config_tag)] : initial(S.weight))
-					if(probability > 0)
-						choices.Add(initial(S.name))
-						choice_descs.Add(initial(S.desc))
+				choices.Add("dynamic", "extended")
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)

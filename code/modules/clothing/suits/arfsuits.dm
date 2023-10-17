@@ -646,6 +646,47 @@
 	icon_state = "frenchtrench"
 	item_state = "frenchtrench"
 
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	name = "Ancient West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "krieg"
+	item_state = "krieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	name = "Ancient Medical West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "mkrieg"
+	item_state = "mkrieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	name = "Ancient West German Officer greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "Kriegissar"
+	item_state = "Kriegissar"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	name = "Ancient Officer's American greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "40kofficer"
+	item_state = "40kofficer"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	name = "Ancient Officer's greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ancientofficer"
+	item_state = "ancientofficer"
+
+
 /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
 	name = "Padded Soviet jacket"
 	desc = "A padded and well made Soviet jacket. Useful for the winter, but doesn't offer much protection against bullets or really any form of punishment. Compliments any soldier belonging to the Motherland. A wise soldier once said 'As long as Mother Russia has enemies, I will answer her call...'."
@@ -824,6 +865,14 @@
 	icon_state = "river"
 	item_state = "river"
 
+/obj/item/clothing/suit/armor/outfit/warriorcats/customshadow
+	name = "Custom Shadowclan greatcoat"
+	desc = "A gifted greatcoat. Red in appearance, this greatcoat is a very old design of a ancient clan-like tribal full of cats! It is comfortable to wear and on the chest is a pin of the Shadowclan symbol."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "kriegshadow"
+	item_state = "kriegshadow"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -2564,7 +2613,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
-
+	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/heavierballisticvest
 	name = "A heavier version of a bv"
@@ -2652,6 +2701,22 @@
 	desc = "A medical themed basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
 	icon_state = "vestmed"
 	item_state = "vestmed"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer
+	name = "Armored Priestess ballistic suit"
+	desc = "A French based suit of ballistic plating. It was an expiremental armor used by chaplin soldiers before the war. Their armor being of white, black, and gold. Adorned with whatever the user could find that suited their religious needs."
+	icon_state = "40ksister"
+	item_state = "40ksister"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperium
+	name = "Armored American ballistic armor"
+	desc = "An expiremental american plating system. It consisted of chest, back, thigh, and grieves. It wasn't the best, sure, but it looks stylish and was used by very few units before the war. It was replaced by the true and tested combat armor one sees today."
+	icon_state = "40kpublicarmor"
+	item_state = "40kpublicarmor"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 

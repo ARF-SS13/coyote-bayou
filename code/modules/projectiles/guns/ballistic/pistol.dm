@@ -64,6 +64,35 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+/* * * * * * * *
+* Derringers
+* Usually compact and easy to use.
+* * * * * * * * */
+/obj/item/gun/ballistic/automatic/pistol/derringercustom
+	name = "Custom engraved derringer"
+	desc = "A custom and engraved, albeit desert eagle sized, derringer. With 14mm in mind, four barrels, and modern mechanisms, it's a gun fit for the luxurious bunch. Enscribed on the top right barrel is the name 'Roses are forever'. It bears baroque like motifs around the barrels and reciever while also having a pearl ivory grip."
+	icon_state = "customderringer"
+	item_state = "customderringer"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.7,1.7)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	can_bayonet = FALSE
+
+
+
+
 /* * * * * * * * * * *
  * Browning Hi-Power
  * Baseline Light pistol
