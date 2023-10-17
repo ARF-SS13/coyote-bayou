@@ -54,6 +54,9 @@
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
+	
+	var/melee_windup_time = 0.3 SECONDS
+	var/melee_windup_sound = 'sound/effects/flip.ogg'
 
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
@@ -450,7 +453,7 @@
 /mob/living/simple_animal/hostile/proc/CheckAndAttack()
 	var/atom/origin = get_origin()
 	var/atom/my_target = get_target()
-	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())
+	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
 		AttackingTarget()
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our targette
@@ -540,15 +543,19 @@
 
 
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
-	playsound(src.loc, 'sound/effects/flip.ogg', 100, TRUE, distant_range = 4)
-	spawn(1 SECONDS)
-		var/atom/my_target = get_target()
-		SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
-		in_melee = TRUE
-		if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
-			return FALSE
-	
-		return my_target.attack_animal(src)
+	var/atom/my_target = get_target()
+	SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, my_target)
+	in_melee = TRUE
+	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
+		return FALSE
+	if(melee_windup_time)
+		if(melee_windup_sound)
+			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
+		spawn(melee_windup_time)													//Actually wait the time. The target can raise their shield or parry in this time.
+		if(!incapacitated(FALSE, TRUE, FALSE))										//If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+			return my_target.attack_animal(src)
+	else
+		return 	my_target.attack_animal(src)
 
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
