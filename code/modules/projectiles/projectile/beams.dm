@@ -654,6 +654,15 @@
 	damage = 9 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
 
+/obj/item/projectile/beam/laser/mpc
+	name = "iron slug"
+	icon_state = "magjectile"
+	damage = 10
+	flag = "bullet"
+	hitsound_wall = "ricochet"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	sharpness = SHARP_POINTY
+
 /obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
 	icon_state = "ion"

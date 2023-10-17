@@ -389,6 +389,11 @@ Avoid decimals when possible when it comes to e_cost!
 	fire_sound = 'sound/weapons/taser.ogg'
 	e_cost = 400 // 50 shots
 
+/obj/item/ammo_casing/energy/laser/mpc
+	projectile_type = /obj/item/projectile/beam/laser/mpc
+	e_cost = 333 // 60 shots. Ish.
+	fire_sound = 'sound/weapons/magpistol.ogg'
+
 /obj/item/ammo_casing/energy/laser/xcomufolaser
 	projectile_type = /obj/item/projectile/beam/laser/xcom
 	e_cost = 10 // 7 shots

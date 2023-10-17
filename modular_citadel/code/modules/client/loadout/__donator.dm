@@ -1043,6 +1043,14 @@
 	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
 	new /obj/item/card/id/dogtag/radiantflash(src)
 
+/datum/gear/donator/kits/rachei
+	name = "OURP I did it again"
+	path = /obj/item/storage/box/large/custom_kit/rachei
+	ckeywhitelist = list("RacheI")
+
+/obj/item/storage/box/large/custom_kit/rachei/PopulateContents()
+	new /obj/item/gun/energy/laser/magpistolcustom(src)
+
 /datum/gear/donator/kits/rainbyplays
 	name = "Trailsworth's Gear"
 	path = /obj/item/storage/box/large/custom_kit/rainbyplays
