@@ -714,13 +714,6 @@
 	p_types = list(P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/pokemon/skunktank
-	name = "skunktank"
-	icon_state = "skunktank"
-	icon_living = "snorlax"
-	icon_dead = "skunktank_d"
-	p_types = list(P_TYPE_POISON))
-
 /mob/living/simple_animal/pokemon/snorlax
 	name = "snorlax"
 	icon_state = "snorlax"
@@ -793,4 +786,11 @@
 	p_types = list(P_TYPE_NORM)
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/pokemon/skunktank
+	name = "skunktank"
+	icon_state = "skunktank"
+	icon_living = "snorlax"
+	icon_dead = "skunktank_d"
+	p_types = list(P_TYPE_POISON)
 
