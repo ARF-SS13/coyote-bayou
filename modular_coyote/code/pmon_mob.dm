@@ -787,10 +787,11 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_SMALL
 
-/mob/living/simple_animal/pokemon/skunktank
-	name = "skunktank"
+/mob/living/simple_animal/pokemon/skuntank
+	name = "Skuntank"
 	icon_state = "skunktank"
-	icon_living = "snorlax"
+	icon_living = "skunktank"
 	icon_dead = "skunktank_d"
 	p_types = list(P_TYPE_POISON)
+
 
