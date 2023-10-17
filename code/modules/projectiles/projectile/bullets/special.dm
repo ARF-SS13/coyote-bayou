@@ -44,7 +44,7 @@
 	name = "musket ball"
 	icon_state = "musket"
 	damage = BULLET_DAMAGE_FLINTLOCK_MATCH //87.5
-	damage_list = list(40 = 10, 60 = 10, 70 = 10, 87.5 = 60, 100 = 9, 200 = 1)
+	damage_list = list("40" = 10, "60" = 10, "70" = 10, "87.5" = 60, "100" = 9, "200" = 1)
 	stamina = BULLET_STAMINA_FLINTLOCK
 	spread = BULLET_SPREAD_FLINTLOCK
 	recoil = BULLET_RECOIL_FLINTLOCK
@@ -62,7 +62,7 @@
 /obj/item/projectile/flintlock/minie
 	name = "minie ball"
 	damage = BULLET_DAMAGE_FLINTLOCK //70
-	damage_list = list(40 = 10, 60 = 10, 70 = 70, 120= 9, 150 = 1)
+	damage_list = list("40" = 10, "60" = 10, "70" = 70, "120" = 9, "150" = 1)
 	stamina = BULLET_STAMINA_FLINTLOCK
 	spread = BULLET_SPREAD_SURPLUS // shockingly accurate
 	recoil = BULLET_RECOIL_FLINTLOCK
