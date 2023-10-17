@@ -1088,8 +1088,8 @@ ATTACHMENTS
 	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE) || 0
 	data["gun_armor_penetration"] = armour_penetration || 0
 	var/list/chambered_data = istype(chambered) ? chambered.get_statblock(TRUE) : ui_data_projectile(get_dud_projectile())
-	data["gun_chambered"] = chambered_data
-	data["gun_is_chambered"] = istype(chambered)
+	data["gun_chambered"] = chambered_data || list()
+	data["gun_is_chambered"] = istype(chambered) || FALSE
 	data["gun_chambered_loaded"] = chambered ? !!chambered.BB : 0
 	var/list/unmodded_recoil_data = SSrecoil.get_tgui_data(init_recoil)
 	var/list/modded_recoil_data = SSrecoil.get_tgui_data(recoil_tag)

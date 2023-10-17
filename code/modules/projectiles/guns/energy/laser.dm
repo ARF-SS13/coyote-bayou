@@ -10,7 +10,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
-	can_charge = 0 // Can put in a weapon recharger. Temporary? Being done in regards to energy ammo changes; can't charge unrechargeable swappable cells.
+	can_remove = 1 // Can you remove the cell?
+	can_charge = 0 // Can you put it in a Weapon Recharger?
 	var/select = 1
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -22,7 +23,7 @@
 	. = ..()
 	if(.)
 		return
-	if(istype(A, /obj/item/stock_parts/cell/ammo))
+	if(can_remove && istype(A, /obj/item/stock_parts/cell/ammo))
 		var/obj/item/stock_parts/cell/ammo/AM = A
 		if(istype(AM, cell_type))
 			var/obj/item/stock_parts/cell/ammo/oldcell = cell
@@ -1024,6 +1025,281 @@
 	. = ..()
 	ammo_pack.attach_gun(user)
 
+/* * * * * * *
+ * TG Lasers *
+ * * * * * * */
+
+/* * * * * * * * * * *
+ * Classic TG blasters
+ * Almost always projectile, rarely hitscan
+ * Can't remove cell
+ * Very ammo efficient
+ * Basically gun-wands without self charge
+ * Tiny, Small, Normal = Approx. 20% better than similar guns (Draw time makes reloading better than cycling guns)
+ * Bulky = Approx 50% better than similar guns (Can't reload, number of shots > raw damage)
+ * Ranges from Spawn tier to actual good loot:tm:
+ * * * * * * * * * * */
+
+// TODO: Hellgun, captain laser
+
+/obj/item/gun/energy/laser/tg
+	name = "TG Blaster Template"
+	desc = "You probably shouldn't be seeing this. Contact a coder!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "scraplaser"
+	item_state = "shotguncity"
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	ammo_x_offset = 1
+	shaded_charge = 1
+	can_remove = 0
+	can_charge = 1
+	can_flashlight = 0
+	can_scope = TRUE
+	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/* * * * * *
+ * Scrap laser
+ * Same as the Carbine but worse
+ * No gunlight
+ * Can craft super easy
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/scrap
+	name = "improvised laser"
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
+
+/* * * * * *
+ * TG Carbine
+ * Projectile AER-9 but more shots
+ * Gunlight
+ * Spawn Tier; spawns with TG Pistol / Low end loot
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/carbine
+	name = "laser carbine"
+	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
+	icon_state = "lascarbine"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/carbine)
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Pistol
+ * Unreloadable Wattz 1k but more shots
+ * No gunlight
+ * Spawn Tier; spawns with TG carbine / Low end loot
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/carbine/pistol
+	name = "miniture laser pistol"
+	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
+	icon_state = "laspistol"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	can_flashlight = 0
+	can_scope = FALSE
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Rifle
+ * Projectile AER-9 but WAY more shots
+ * Gunlight
+ * Uncommon
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle
+	name = "laser rifle"
+	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
+	icon_state = "lasrifle"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	init_recoil = LASER_RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto/fast
+	)
+
+/* * * * * *
+ * TG Heavy Rifle
+ * Plasma Rifle but laser-typed damage (upgrade from the TG Rifle, sidegrade to the Taclaser)
+ * Gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle/heavy
+	name = "heavy laser rifle"
+	desc = "Originally designed as a man portable anti-tank weapon, nowadays this massive rifle is mostly used to fry Super Mutants and bandits in Power Armor."
+	icon_state = "lascannon"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/heavy)
+	init_recoil = LASER_RIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/* * * * * *
+ * TG Taclaser
+ * Blaster P90 but bulky (upgrade from the TG rifle, sidegrade to the Heavy)
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle/auto
+	name = "tactical laser rifle"
+	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
+	icon_state = "taclaser"
+	item_state = "p90"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/auto)
+	can_flashlight = 0
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
+/* * * * * *
+ * TG HOS Pistol
+ * Autocharging Handgun, worse than caplaser (safe, unlike the nuclear guns)
+ * No gunlight
+ * Very Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger
+	name = "experimental laser pistol"
+	desc = "An experimental and limited production model of laser pistol, this weapon is highly valued and sought after due to its ability to recharge its internal battery automatically."
+	icon_state = "protolas"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/recharger)
+	can_flashlight = 0
+	can_scope = FALSE
+	selfcharge = 1
+	selfchargerate = 20
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
+/* * * * * *
+ * TG Nuclear Pistol
+ * Dangerous self-charging rad-pistol
+ * No gunlight
+ * Uncommon - bonus loot chance because it's dangerous to the user
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear
+	name = "nuclear laser pistol"
+	desc = "Designed before the advent of the microfusion cell, this prototype handgun draws its power from a miniture nuclear powerplant in the foregrip. A faded label on the side warns the user to keep it away from electromagnetic pulses."
+	icon_state = "nucpistol"
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear)
+	selfchargerate = 15
+	var/fail_tick = 0
+	var/fail_chance = 0
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/process()
+	if(fail_tick > 0)
+		fail_tick--
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	failcheck()
+	update_icon()
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/proc/failcheck()
+	if(prob(fail_chance))
+		switch(fail_tick)
+			if(0 to 200)
+				fail_tick += (2*(fail_chance))
+				radiation_pulse(src, 50)
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)		//thank you short circuiting. if you powergame and nest these guns deeply you get to suffer no-warning radiation death.
+				if(M)
+					to_chat(M, span_userdanger("Your [name] feels warmer."))
+			if(201 to INFINITY)
+				SSobj.processing.Remove(src)
+				radiation_pulse(src, 200)
+				crit_fail = TRUE
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)
+				if(M)
+					to_chat(M, span_userdanger("Your [name]'s reactor leaks radiation!"))
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	fail_chance = min(fail_chance + round(severity/6.6), 100)
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/update_overlays()
+	. = ..()
+	if(crit_fail)
+		. += "[icon_state]_fail_0"
+	else
+		switch(fail_tick)
+			if(1 to INFINITY)
+				. += "[icon_state]_fail_0"
+
+/* * * * * *
+ * TG Nuclear Rifle (X-Ray rifle)
+ * Self-charging AER9 but with bonus radiation damage
+ * Gunlight
+ * Rare - bonus loot chance because it's dangerous to the user
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle
+	name = "nuclear laser rifle"
+	desc = "This rifle has a miniture nuclear reactor housed in the foregrip which allows it to infinitely recharge its internal battery. Etched above the grip are the words, 'PROPERTY OF THE CENTER FOR DISEASE CONTROL' and beside that is a faded label that warns the user to keep this weapon away from electromagnetic pulses."
+	icon_state = "xraylas"
+	item_state = "shotguncity"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	can_scope = TRUE
+	selfcharge = 1
+	selfchargerate = 15
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto
+	)
+
+/* * * * * *
+ * TG Particle Rifle
+ * Five shots. More than enough to kill anything that moves.
+ * No gunlight
+ * Unique
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/particlecannon
+	name = "particle cannon"
+	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
+	icon_state = "lassniper"
+	item_state = "esniper"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	can_flashlight = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/particle)
+	init_recoil = LASER_RIFLE_RECOIL(2, 3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
