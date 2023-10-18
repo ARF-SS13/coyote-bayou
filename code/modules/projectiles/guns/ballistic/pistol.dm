@@ -890,7 +890,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
