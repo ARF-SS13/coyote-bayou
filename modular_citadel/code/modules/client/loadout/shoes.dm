@@ -24,6 +24,11 @@
 	path = /obj/item/clothing/shoes/winterboots
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/sneakboots
+	name = "infiltrator boots"
+	path = /obj/item/clothing/shoes/jackboots/sneakboots
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
 /datum/gear/shoes/sandals
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
