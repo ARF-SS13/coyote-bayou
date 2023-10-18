@@ -2045,8 +2045,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/blueambrosia,
 		/datum/crafting_recipe/greenambrosia,
 		/datum/crafting_recipe/food/pemmican,
-		/datum/crafting_recipe/tribal/bonebag,
-		/datum/crafting_recipe/horsecream_good
+		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)

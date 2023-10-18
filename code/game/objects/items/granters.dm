@@ -1198,8 +1198,7 @@
 		/datum/crafting_recipe/redambrosia,
 		/datum/crafting_recipe/blueambrosia,
 		/datum/crafting_recipe/greenambrosia,
-		/datum/crafting_recipe/warmace,
-		/datum/crafting_recipe/horsecream_good)
+		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/trait/tribaltraditions
 	name = "Tribal Traditions Booklet"
