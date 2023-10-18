@@ -24,6 +24,17 @@
 	animate(src, transform = M, time = halftime, easing = BOUNCE_EASING)
 	animate(transform = OM, time = halftime, easing = BOUNCE_EASING)
 
+/// Magnitude should be between 0 and 1 (or bad things will happen) and duration can be anything, but should probably use a windup time set on the mob itself (usually around 0.25 to 1 seconds).
+/atom/proc/do_windup(magnitude = 0.3, duration = 0.5 SECONDS)
+	var/matrix/m1 = matrix(transform)
+	var/matrix/m2 = matrix(transform)
+	var/matrix/om = matrix(transform)
+	m1.Scale(1-magnitude)
+	animate(src, transform = m1, time = duration*0.75, easing = BOUNCE_EASING)
+	m2.Scale(1+magnitude)
+	animate(transform = m2, time = duration*0.25, easing = BOUNCE_EASING)
+	animate(transform = om, time = duration*0.25, easing = BOUNCE_EASING)
+
 /atom/proc/do_directional_tilt(degrees = 5, full_duration = 0.5 SECONDS)
 	var/matrix/m1 = matrix(transform)
 	var/matrix/og = matrix(transform)
