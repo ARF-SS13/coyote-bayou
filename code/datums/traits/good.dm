@@ -95,7 +95,8 @@ GLOBAL_LIST_INIT(former_tribal_recipes, list(
 	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
 	/datum/crafting_recipe/tribal/bonebag,
-	/datum/crafting_recipe/warpaint))
+	/datum/crafting_recipe/warpaint,
+	/datum/crafting_recipe/horsecream_good))
 
 GLOBAL_LIST_INIT(rustwalkers_traditions_recipes, list(
 	/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour,
