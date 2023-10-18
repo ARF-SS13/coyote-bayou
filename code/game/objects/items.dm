@@ -351,8 +351,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(force_unwielded > 0)
 			readout += "\nONE HANDED [force_unwielded]"
 			readout += "\nTWO HANDED [force_wielded]"
+			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult]"
 		else
 			readout += "\nDAMAGE [force]"
+			readout += "\nDUAL WIELD [force*dual_wielded_mult]"
 		readout += "\nTHROW DAMAGE [throwforce]"
 		readout += "\nATTACKS / SECOND [10 / attack_speed]"
 		readout += "\nBLOCK CHANCE [block_chance]"
