@@ -557,6 +557,11 @@
 #define COMSIG_LIVING_COMBAT_DISABLED "combatmode_disabled"			//from base of datum/component/combat_mode/disable_combat_mode() (was_forced)
 #define COMSIG_COMBAT_MODE_CHECK "combatmode_check"					//called when checking the combat mode flags (enabled/disabled/forced)
 
+//PVP Mode
+#define COMSIG_TOGGLE_PVP_MODE "toggle_pvp_mode"				//safely toggles combat mode.
+#define COMSIG_DISABLE_PVP_MODE "disable_pvp_mode"			//safely disables combat mode.
+#define COMSIG_ENABLE_PVP_MODE "enable_pvp_mode"				//safely enables combat mode.
+
 //Nanites
 #define COMSIG_HAS_NANITES "has_nanites"						//() returns TRUE if nanites are found
 #define COMSIG_NANITE_IS_STEALTHY "nanite_is_stealthy"			//() returns TRUE if nanites have stealth
