@@ -922,7 +922,7 @@
 	novariants = TRUE
 	is_open = TRUE
 	heal_brute = 10
-	amount = 20
+	amount = 5
 	max_amount = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
 	merge_type = /obj/item/stack/medical/mesh/horsecream
@@ -956,7 +956,7 @@
 	novariants = TRUE
 	is_open = TRUE
 	heal_brute = 20 // Might be a bit much, but only time will tell.
-	amount = 20
+	amount = 5
 	max_amount = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
 
