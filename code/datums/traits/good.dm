@@ -2244,13 +2244,18 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
 	ADD_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")
-
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/package/legendarywepsm/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
 		REMOVE_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")
+	if(H)
+		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
 /datum/quirk/package/reformedtribal
 	name = "Reformed Tribal Chemist"
@@ -2401,11 +2406,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
-
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.chemwhiz_recipes
 
 /datum/quirk/package/generalmedicalpractitioner/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_CHEMWHIZ, "Chem Whiz")
 		REMOVE_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
-
+	if(H)
+		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
