@@ -28,7 +28,7 @@ GLOBAL_VAR_INIT(dynamic_classic_secret, FALSE)
 // How many roundstart players required for high population override to take effect.
 GLOBAL_VAR_INIT(dynamic_high_pop_limit, 55)
 // If enabled does not accept or execute any rulesets.
-GLOBAL_VAR_INIT(dynamic_forced_extended, FALSE)
+GLOBAL_VAR_INIT(dynamic_forced_extended, TRUE)
 // How high threat is required for HIGHLANDER_RULESETs stacking.
 // This is independent of dynamic_no_stacking.
 GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
