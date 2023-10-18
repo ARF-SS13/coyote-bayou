@@ -281,6 +281,7 @@
 /obj/item/gun/ballistic/shotgun/hunting/sawn
 	name = "sawed-off hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a two-plus-one-shell capacity. This one has probably been modified, in quotes, by someone with a name like Cletus."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi' // :pray: this fixes the missing empty sprite that suddenly appeared for some reason
 	icon_state = "pump-sawn"
 	item_state = "shotgun" // Is this how it figures out the in hand sprite to pair with player sprites? This doesn't match anything in guns_left/righthand.dmi...
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/shorty
