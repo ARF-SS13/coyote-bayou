@@ -112,7 +112,7 @@
 /// Removes object overlays on this inventory screen if they exist.
 /atom/movable/screen/inventory/proc/ClearGhosts()
 	//If we have it, get rid of it now the right way.
-	if(object_overlay)
+	if(object_overlay && overlays.len)
 		cut_overlay(object_overlay)
 	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
 	if(overlays.len && type != /atom/movable/screen/inventory/hand)
@@ -163,12 +163,12 @@
 
 /atom/movable/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
-
 	if(!user || !slot_id)
 		return
 
 	var/obj/item/holding = user.get_active_held_item()
 	if(!holding || user.get_item_by_slot(slot_id))
+		ClearGhosts()
 		return
 
 	if((holding.type != object_overlay_type) || !object_overlay)
