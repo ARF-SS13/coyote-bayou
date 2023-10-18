@@ -151,7 +151,7 @@
 /obj/shapeshift_holder/proc/restore(death=FALSE)
 	restoring = TRUE
 	if(slink && !QDELETED(slink))
-		qdel(slink)
+		QDEL_NULL(slink)
 	stored?.forceMove(get_turf(src))
 	stored?.mob_transforming = FALSE
 	if(shape?.mind)
@@ -165,7 +165,7 @@
 		stored.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND)
 	shape?.unequip_everything()
 	if(shape && !QDELETED(shape))
-		qdel(shape)
+		QDEL_NULL(shape)
 	if(!QDELETED(src))
 		qdel(src)
 
