@@ -55,8 +55,12 @@
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
 	
+	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
 	var/melee_windup_time = 0.3 SECONDS
+	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
 	var/melee_windup_sound = 'sound/effects/flip.ogg'
+	/// How much to shrink and grow this mob when it's doing a windup attack.
+	var/melee_windup_magnitude = 0.3
 
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
@@ -551,11 +555,13 @@
 	if(melee_windup_time)
 		if(melee_windup_sound)
 			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
-		INVOKE_ASYNC(src, /atom/.proc/do_squish, 0.7, 0.7, melee_windup_time)	//Bouncing bitches.
-		spawn(melee_windup_time)													//Actually wait the time. The target can raise their shield or parry in this time.
-		if(!incapacitated(FALSE, TRUE, FALSE) && Adjacent(my_target))										//If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
-			INVOKE_ASYNC(src, /atom/.proc/do_squish, 1.3, 1.3, melee_windup_time) // Bounced bitches.
-			return my_target.attack_animal(src)
+		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
+		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
+			my_target = get_target() //Switch targets if we did during our windup.
+			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+				return my_target.attack_animal(src)
+			else
+				return FALSE
 	else
 		return 	my_target.attack_animal(src)
 
