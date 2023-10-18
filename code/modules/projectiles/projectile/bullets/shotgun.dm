@@ -8,6 +8,7 @@
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET
+	damage_list = list("5" = 10, "7" = 20, "8" = 20, "9" = 20, "10" = 20, "12" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
@@ -26,6 +27,7 @@
 /obj/item/projectile/bullet/pellet/shotgun_ratshot
 	name = "ratshot pellet"
 	damage = BULLET_DAMAGE_RATSHOT_PELLET
+	damage_list = list("4" = 10, "5" = 20, "6" = 20, "7" = 20, "8" = 20, "9" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
@@ -110,6 +112,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG
+	damage_list = list("40" = 15, "50" = 15, "60" = 50, "70" = 10, "80" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_SLUG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_SLUG

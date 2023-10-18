@@ -4040,7 +4040,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
 				new_limb.replace_limb(character)
 			QDEL_NULL(old_part)
-			QDEL_NULL(modified_limbs)
 
 	SEND_SIGNAL(character, COMSIG_HUMAN_PREFS_COPIED_TO, src, icon_updates, roundstart_checks)
 

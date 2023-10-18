@@ -99,18 +99,28 @@
 	var/slot_id	// The indentifier for the slot. It has nothing to do with ID cards.
 	var/icon_empty // Icon when empty. For now used only by humans.
 	var/icon_full  // Icon when contains an item. For now used only by humans.
-	var/image/object_overlay
+	var/mutable_appearance/object_overlay
+	var/object_overlay_type
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
+/atom/movable/screen/inventory/Destroy()
+	QDEL_NULL(object_overlay)
+	cut_overlays()
+	. = ..()
+
+/// Removes object overlays on this inventory screen if they exist.
 /atom/movable/screen/inventory/proc/ClearGhosts()
 	//If we have it, get rid of it now the right way.
-	if(object_overlay)
+	if(object_overlay && overlays.len)
 		cut_overlay(object_overlay)
-		QDEL_NULL(object_overlay)
 	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
 	if(overlays.len && type != /atom/movable/screen/inventory/hand)
 		cut_overlays()
+
+/atom/movable/screen/inventory/hand/ClearGhosts()
+	//Hands don't have this problem
+	return
 
 /atom/movable/screen/inventory/Click(location, control, params)
 	if(hud?.mymob && (hud.mymob != usr))
@@ -127,18 +137,16 @@
 	//Remove the green object overlay since we never had a chance to use MouseExited(). Also removes the red one, but that's okay.
 	if(object_overlay)
 		cut_overlay(object_overlay)
-		QDEL_NULL(object_overlay)
 	return TRUE
 
 /atom/movable/screen/inventory/MouseEntered()
 	..()
-	ClearGhosts()
 	add_overlays()
 
 /atom/movable/screen/inventory/MouseExited()
 	..()
-	cut_overlay(object_overlay)
-	QDEL_NULL(object_overlay)
+	if(type != /atom/movable/screen/inventory/hand)
+		cut_overlays()
 
 /atom/movable/screen/inventory/update_icon_state()
 	if(!icon_empty)
@@ -150,39 +158,47 @@
 		else
 			icon_state = icon_empty
 
+/*
 /atom/movable/screen/inventory/update_icon()
 	. = ..()
 	if(object_overlay)
 		cut_overlay(object_overlay)
 		QDEL_NULL(object_overlay)
+*/
 
 /atom/movable/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
-
 	if(!user || !slot_id)
 		return
 
 	var/obj/item/holding = user.get_active_held_item()
-
 	if(!holding || user.get_item_by_slot(slot_id))
+		ClearGhosts()
 		return
 
-	var/image/item_overlay = image(holding)
-	item_overlay.alpha = 92
-
-	if(!user.can_equip(holding, slot_id, TRUE, TRUE, TRUE))
-		item_overlay.color = "#FF0000"
-	else
-		item_overlay.color = "#00ff00"
-
-	cut_overlay(object_overlay)
-	object_overlay = item_overlay
-	add_overlay(object_overlay)
+	if((holding.type != object_overlay_type) || !object_overlay)
+		//Our overlay doesn't match the item we're holding or we don't have an overlay cached at all, make a new one.
+		cut_overlay(object_overlay)
+		QDEL_NULL(object_overlay)
+		var/overlaycolor = "#00ff00"
+		if(!user.can_equip(holding, slot_id, TRUE, TRUE, TRUE))
+			overlaycolor = "#FF0000"
+		var/mutable_appearance/item_overlay = mutable_appearance(holding.icon, holding.icon_state, FLOAT_LAYER, FLOAT_PLANE, overlaycolor)
+		item_overlay.alpha = 92
+		add_overlay(item_overlay)
+		object_overlay = item_overlay
+		object_overlay_type = holding.type
+	if(holding.type == object_overlay_type && object_overlay)
+		//The overlay is PROBABLY the same as the one we have cached so just add that one. Will be inconsistent sometimes but who cares.
+		add_overlay(object_overlay)
 
 /atom/movable/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "blocked")
 	var/held_index = 0
+
+/atom/movable/screen/inventory/hand/add_overlays()
+	return
 
 /atom/movable/screen/inventory/hand/update_overlays()
 	. = ..()

@@ -174,7 +174,7 @@
 /obj/item/storage/box/large/custom_kit/rinpin/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
 	new /obj/item/gun/ballistic/rifle/magnetic(src)
-
+	new /obj/item/melee/unarmed/sappers/fightgloves(src)
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
 	path = /obj/item/storage/box/large/custom_kit/archyzt
@@ -1043,6 +1043,14 @@
 	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
 	new /obj/item/card/id/dogtag/radiantflash(src)
 
+/datum/gear/donator/kits/rachei
+	name = "OURP I did it again"
+	path = /obj/item/storage/box/large/custom_kit/rachei
+	ckeywhitelist = list("RacheI")
+
+/obj/item/storage/box/large/custom_kit/rachei/PopulateContents()
+	new /obj/item/gun/energy/laser/magpistolcustom(src)
+
 /datum/gear/donator/kits/rainbyplays
 	name = "Trailsworth's Gear"
 	path = /obj/item/storage/box/large/custom_kit/rainbyplays
@@ -1170,12 +1178,13 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/tox(src)
+	new /obj/item/gun/ballistic/automatic/w2000(src)
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/clothing/suit/armor/warhammertox(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
-	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"

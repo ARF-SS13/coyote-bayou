@@ -11,8 +11,18 @@
 
 /mob/living/proc/do_wield()//The proc we actually care about.
 	var/obj/item/I = get_active_held_item()
+	var/obj/item/J = get_inactive_held_item()
 	if(!I)
 		return
+	else if(I && J)  //Dual wielding starts here, see {dual_wielding.dm}
+		if(I.force != 0 || J.force != 0)  //at least one of these two item needs to be dangerous
+			if(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+				attempt_dual_wield(usr, I, J, DUAL_WIELDING_AGILE_FORCE)  //actually initiate dual wielding! 
+				return
+			if(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+				attempt_dual_wield(usr, I, J, DUAL_WIELDING_ENCUMBERED_FORCE)  //actually initiate dual wielding! but for wielding 2 swords we are doing less damage
+				return
+
 	I.attempt_wield(src)
 
 /obj/item/proc/unwield(mob/living/user)
