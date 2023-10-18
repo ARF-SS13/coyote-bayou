@@ -115,8 +115,12 @@
 	if(object_overlay && overlays.len)
 		cut_overlay(object_overlay)
 	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
-	if(overlays.len && type != /atom/movable/screen/inventory/hand)
+	if(overlays.len)
 		cut_overlays()
+
+/atom/movable/screen/inventory/hand/ClearGhosts()
+	//Hands don't have this problem
+	return
 
 /atom/movable/screen/inventory/Click(location, control, params)
 	if(hud?.mymob && (hud.mymob != usr))
