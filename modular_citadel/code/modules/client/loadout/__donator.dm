@@ -1043,6 +1043,14 @@
 	new /obj/item/clothing/suit/armor/light/kit/punk/labcoat(src)
 	new /obj/item/card/id/dogtag/radiantflash(src)
 
+/datum/gear/donator/kits/rachei
+	name = "OURP I did it again"
+	path = /obj/item/storage/box/large/custom_kit/rachei
+	ckeywhitelist = list("RacheI")
+
+/obj/item/storage/box/large/custom_kit/rachei/PopulateContents()
+	new /obj/item/gun/energy/laser/magpistolcustom(src)
+
 /datum/gear/donator/kits/rainbyplays
 	name = "Trailsworth's Gear"
 	path = /obj/item/storage/box/large/custom_kit/rainbyplays
@@ -1176,6 +1184,18 @@
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/clothing/suit/armor/medium/vest/SpartanTox(src)
+
+/datum/gear/donator/kits/seermankhajiit00new
+	name = "The Shadowtribe"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00new
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit00new/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/derringercustom(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/w2000(src)
+	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/clothing/suit/armor/outfit/warriorcats/customshadow(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"

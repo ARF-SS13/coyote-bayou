@@ -305,6 +305,23 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
 
+/obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets
+	name = "Armored Ancient West German cap"
+	desc = "A ballistic weaved West German cap. This cap is of a very ancient design it seems!"
+	icon_state = "comissar"
+	item_state = "comissar"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets/imperiumhelmet
+	name = "Ancient American ballistic helmet"
+	desc = "A ballistic helmet of an ancient American design. Very old design but might prove handy!"
+	icon_state = "guard"
+	item_state = "guard"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
+
 /obj/item/clothing/head/kevlarhelmet/ww1capseries/french
 	name = "Armored French Cap"
 	desc = "A ballistic weaved French WW1 cap. This cap was used before helmets were a thing in the Great war."

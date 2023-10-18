@@ -820,6 +820,18 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ancientusa
+	name = "Ancient ballistic American Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets/imperiumhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ancientwestgermany
+	name = "Armored Ancient West German cap "
+	path = /obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
 /datum/gear/head/steeljap
 	name = "Old Japanese Helmet "
 	path = /obj/item/clothing/head/kevlarhelmet/ww237jap

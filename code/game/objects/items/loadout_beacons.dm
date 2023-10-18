@@ -772,7 +772,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/melee/energykatana
 	name = "Energy Katana"
 	w_class = WEIGHT_CLASS_NORMAL
-	
+
 /obj/item/storage/box/gun/melee/energykatana/PopulateContents()
 	new	/obj/item/melee/transforming/plasmacutter/regular/energykatana(src)
 
@@ -2537,3 +2537,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/magic/rodwands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+
+// Putting this down here because it refuses to work. Needs to be fixed later.
+
+/datum/loadout_box/energy/tglaser
+	entry_tag = "Laser Pistol and Carbine"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser
+
+/obj/item/storage/box/gun/energy/tglaser
+	name = "laser pistol and carbine case"
+
+/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/carbine(src)
+	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)

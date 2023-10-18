@@ -79,9 +79,11 @@
 
 /mob/living/simple_animal/hostile/trog/tunneler/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone
@@ -126,9 +128,11 @@
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 3)
-		H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
-		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 3)
+	H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
+	H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
 

@@ -198,19 +198,20 @@
 	playstyle_string = "<b>You are a Wraith. Though relatively fragile, you are fast, deadly, can phase through walls, and your attacks will lower the cooldown on phasing.</b>"
 
 	var/attack_refund = 10 //1 second per attack
-	var/crit_refund = 50 //5 seconds when putting a target into critical
+	var/crit_refund = 50 //5 seconds when putting a targette into critical
 	var/kill_refund = 250 //full refund on kills
 
 /mob/living/simple_animal/hostile/construct/wraith/AttackingTarget() //refund jaunt cooldown when attacking living targets
 	var/prev_stat
-	if(isliving(target) && !iscultist(target))
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(isliving(my_target) && !iscultist(my_target))
+		var/mob/living/L = my_target
 		prev_stat = L.stat
 
 	. = ..()
 
 	if(. && isnum(prev_stat))
-		var/mob/living/L = target
+		var/mob/living/L = my_target
 		var/refund = 0
 		if(QDELETED(L) || (L.stat == DEAD && prev_stat != DEAD)) //they're dead, you killed them
 			refund += kill_refund
@@ -254,7 +255,6 @@
 							/obj/effect/proc_holder/spell/targeted/projectile/magic_missile/lesser)
 	runetype = /datum/action/innate/cult/create_rune/revive
 	playstyle_string = "<b>You are an Artificer. You are incredibly weak and fragile, but you are able to construct fortifications, \
-
 						use magic missile, repair allied constructs, shades, and yourself (by clicking on them), \
 						<i>and, most important of all,</i> create new constructs by producing soulstones to capture souls, \
 						and shells to place those soulstones into.</b>"
@@ -279,20 +279,22 @@
 
 /mob/living/simple_animal/hostile/construct/builder/MoveToTarget(list/possible_targets)
 	..()
-	if(isliving(target))
-		var/mob/living/L = target
-		if(isconstruct(L) && L.health >= L.maxHealth) //is this target an unhurt construct? stop trying to heal it
-			LoseTarget()
-			return 0
-		if(L.health <= melee_damage_lower+melee_damage_upper) //ey bucko you're hurt as fuck let's go hit you
-			retreat_distance = null
-			minimum_distance = 1
+	var/mob/living/L = get_target()
+	if(!isliving(L))
+		return
+	if(isconstruct(L) && L.health >= L.maxHealth) //is this targette an unhurt construct? stop trying to heal it
+		LoseTarget()
+		return 0
+	if(L.health <= melee_damage_lower+melee_damage_upper) //ey bucko you're hurt as fuck let's go hit you
+		retreat_distance = null
+		minimum_distance = 1
 
 /mob/living/simple_animal/hostile/construct/builder/Aggro()
 	..()
-	if(isconstruct(target)) //oh the target is a construct no need to flee
-		retreat_distance = null
-		minimum_distance = 1
+	if(!isconstruct(get_target())) //oh the targette is a construct no need to flee
+		return
+	retreat_distance = null
+	minimum_distance = 1
 
 /mob/living/simple_animal/hostile/construct/builder/LoseAggro()
 	..()
@@ -346,31 +348,32 @@
 			start_pulling(stored_pulling, supress_message = TRUE) //drag anything we're pulling through the wall with us by magic
 
 /mob/living/simple_animal/hostile/construct/harvester/AttackingTarget()
-	if(iscarbon(target))
-		var/mob/living/carbon/C = target
-		if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
-			return ..()		//ATTACK!
-		var/list/parts = list()
-		var/undismembermerable_limbs = 0
-		for(var/X in C.bodyparts)
-			var/obj/item/bodypart/BP = X
-			if(BP.body_part != HEAD && BP.body_part != CHEST)
-				if(BP.dismemberable)
-					parts += BP
-				else
-					undismembermerable_limbs++
-		if(!LAZYLEN(parts))
-			if(undismembermerable_limbs) //they have limbs we can't remove, and no parts we can, attack!
-				return ..()
-			C.DefaultCombatKnockdown(60)
-			visible_message(span_danger("[src] knocks [C] down!"))
-			to_chat(src, span_cultlarge("\"Bring [C.p_them()] to me.\""))
-			return FALSE
-		do_attack_animation(C)
-		var/obj/item/bodypart/BP = pick(parts)
-		BP.dismember()
+	var/atom/my_target = get_target()
+	if(!iscarbon(my_target))
+		return ..()
+	var/mob/living/carbon/C = my_target
+	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
+		return ..()		//ATTACK!
+	var/list/parts = list()
+	var/undismembermerable_limbs = 0
+	for(var/X in C.bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(BP.body_part != HEAD && BP.body_part != CHEST)
+			if(BP.dismemberable)
+				parts += BP
+			else
+				undismembermerable_limbs++
+	if(!LAZYLEN(parts))
+		if(undismembermerable_limbs) //they have limbs we can't remove, and no parts we can, attack!
+			return ..()
+		C.DefaultCombatKnockdown(60)
+		visible_message(span_danger("[src] knocks [C] down!"))
+		to_chat(src, span_cultlarge("\"Bring [C.p_them()] to me.\""))
 		return FALSE
-	. = ..()
+	do_attack_animation(C)
+	var/obj/item/bodypart/BP = pick(parts)
+	BP.dismember()
+	return FALSE
 
 /mob/living/simple_animal/hostile/construct/harvester/Initialize()
 	. = ..()

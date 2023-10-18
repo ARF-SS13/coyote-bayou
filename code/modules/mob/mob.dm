@@ -1,13 +1,8 @@
-GLOBAL_VAR_INIT(pixel_slide, 0)  //if 1, initiate pixel sliding
-GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries wheter or not the other mob is in help intent
-
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
-	GLOB.mob_list -= src
-	GLOB.has_played_list -= src
-	GLOB.dead_mob_list -= src
-	GLOB.alive_mob_list -= src
+	remove_from_mob_list()
+	remove_from_dead_mob_list()
+	remove_from_alive_mob_list()
 	GLOB.all_clockwork_mobs -= src
-	GLOB.mob_directory -= tag
 	focus = null
 	LAssailant = null
 	movespeed_modification = null
@@ -28,12 +23,11 @@ GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries whet
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
 /mob/Initialize()
-	GLOB.mob_list += src
-	GLOB.mob_directory[tag] = src
+	add_to_mob_list()
 	if(stat == DEAD)
-		GLOB.dead_mob_list += src
+		add_to_dead_mob_list()
 	else
-		GLOB.alive_mob_list += src
+		add_to_alive_mob_list()
 	set_focus(src)
 	prepare_huds()
 	for(var/v in GLOB.active_alternate_appearances)
@@ -817,6 +811,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_y--
 		is_shifted = TRUE
 
+//-->Pixel sliding on steroids
+/mob
+	var/pixel_slide_allow = FALSE //if 1, initiate pixel sliding into another tile occupied by another mob
+	var/pixel_slide_target_has_help_int = FALSE  //we are going to store here the pixel sliding's target variable, specifically if they are in help intent
+	var/pixel_slide_memory_x    //memory of previous x position before moving
+	var/pixel_slide_memory_y    //memory of previous y position before moving
+	var/pixel_slide_memory_dir  //memory of previous direction before moving
+
 /mob/living/eastshift()
 	set hidden = TRUE
 	if(!canface())
@@ -825,13 +827,17 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_x++
 		is_shifted = TRUE
 	if((pixel_x > (16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, EAST), 1))
-		if(!GLOB.pixel_slide)
-			GLOB.pixel_slide = 1
+		if(!pixel_slide_allow)
+			pixel_slide_allow = TRUE
+			pixel_slide_memory_x = pixel_x
+			pixel_slide_memory_y = pixel_y
+			pixel_slide_memory_dir = dir
 			step(src, EAST)
-			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
-				if(GLOB.pixel_slide_other_has_help_int)
-					pixel_x = -16
-			GLOB.pixel_slide = 0
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x - 32
+				pixel_y = pixel_slide_memory_y
+				dir = pixel_slide_memory_dir
+			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
 /mob/living/westshift()
@@ -842,13 +848,17 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_x--
 		is_shifted = TRUE
 	if((pixel_x < -(16 + get_standard_pixel_x_offset())) && !is_blocked_turf(get_step(src, WEST), 1))
-		if(!GLOB.pixel_slide)
-			GLOB.pixel_slide = 1
+		if(!pixel_slide_allow)
+			pixel_slide_allow = TRUE
+			pixel_slide_memory_x = pixel_x
+			pixel_slide_memory_y = pixel_y
+			pixel_slide_memory_dir = dir
 			step(src, WEST)
-			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
-				if(GLOB.pixel_slide_other_has_help_int)
-					pixel_x = 16
-			GLOB.pixel_slide = 0
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x + 32
+				pixel_y = pixel_slide_memory_y
+				dir = pixel_slide_memory_dir
+			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
 /mob/living/northshift()
@@ -859,13 +869,17 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_y++
 		is_shifted = TRUE
 	if((pixel_y > (16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, NORTH), 1))
-		if(!GLOB.pixel_slide)
-			GLOB.pixel_slide = 1
+		if(!pixel_slide_allow)
+			pixel_slide_allow = TRUE
+			pixel_slide_memory_x = pixel_x
+			pixel_slide_memory_y = pixel_y
+			pixel_slide_memory_dir = dir
 			step(src, NORTH)
-			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
-				if(GLOB.pixel_slide_other_has_help_int)
-					pixel_y = -16
-			GLOB.pixel_slide = 0
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x
+				pixel_y = pixel_slide_memory_y - 32
+				dir = pixel_slide_memory_dir
+			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
 /mob/living/southshift()
@@ -876,13 +890,17 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		pixel_y--
 		is_shifted = TRUE
 	if((pixel_y < -(16 + get_standard_pixel_y_offset())) && !is_blocked_turf(get_step(src, SOUTH), 1))
-		if(!GLOB.pixel_slide)
-			GLOB.pixel_slide = 1
+		if(!pixel_slide_allow)
+			pixel_slide_allow = TRUE
+			pixel_slide_memory_x = pixel_x
+			pixel_slide_memory_y = pixel_y
+			pixel_slide_memory_dir = dir
 			step(src, SOUTH)
-			spawn(1)  //this spawn is heavily needed to improve smoothness, remove carefully!
-				if(GLOB.pixel_slide_other_has_help_int)
-					pixel_y = 16
-			GLOB.pixel_slide = 0
+			if(pixel_slide_target_has_help_int)
+				pixel_x = pixel_slide_memory_x
+				pixel_y = pixel_slide_memory_y + 32
+				dir = pixel_slide_memory_dir
+			pixel_slide_allow = FALSE
 			is_shifted = TRUE
 
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check

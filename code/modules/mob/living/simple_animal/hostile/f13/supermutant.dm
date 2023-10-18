@@ -432,7 +432,7 @@
 		DestroySurroundings()
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/Charge()
-	var/turf/T = get_turf(target)
+	var/turf/T = get_turf(get_target())
 	if(!T || T == loc)
 		return
 	charging = TRUE
@@ -447,8 +447,10 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/charge_end(list/effects_to_destroy)
 	charging = FALSE
-	if(target)
-		Goto(target, move_to_delay, minimum_distance)
+	var/atom/my_target = get_target()
+	if(!my_target)
+		return
+	Goto(my_target, move_to_delay, minimum_distance)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/Bump(atom/A)
 	if(charging)

@@ -139,14 +139,14 @@
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return 1
 
-		if(GLOB.pixel_slide)
+		if(pixel_slide_allow)
 			var/origtargetloc = L.loc
 			if(!pulledby)
 				if(M.a_intent != INTENT_HELP)
-					GLOB.pixel_slide_other_has_help_int = 0
+					pixel_slide_target_has_help_int = FALSE
 					return TRUE
 				else
-					GLOB.pixel_slide_other_has_help_int = 1
+					pixel_slide_target_has_help_int = TRUE
 				if(IS_STAMCRIT(src))
 					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
 					return TRUE
@@ -640,10 +640,10 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive)
-	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
-		GLOB.dead_mob_list -= src
-		GLOB.alive_mob_list += src
-		set_stat(UNCONSCIOUS) //the mob starts unconscious
+	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
+		remove_from_dead_mob_list()
+		add_to_alive_mob_list()
+		stat = UNCONSCIOUS //the mob starts unconscious,
 		if(!eye_blind)
 			blind_eyes(1)
 		updatehealth() //then we check if the mob should wake up.
@@ -1382,11 +1382,11 @@
 				return FALSE
 		if(NAMEOF(src, stat))
 			if((stat == DEAD) && (var_value < DEAD))//Bringing the dead back to life
-				GLOB.dead_mob_list -= src
-				GLOB.alive_mob_list += src
+				remove_from_dead_mob_list()
+				add_to_alive_mob_list()
 			if((stat < DEAD) && (var_value == DEAD))//Kill he
-				GLOB.alive_mob_list -= src
-				GLOB.dead_mob_list += src
+				remove_from_alive_mob_list()
+				add_to_dead_mob_list()
 		if(NAMEOF(src, health)) //this doesn't work. gotta use procs instead.
 			return FALSE
 	. = ..()

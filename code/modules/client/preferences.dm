@@ -4019,7 +4019,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//delete any existing prosthetic limbs to make sure no remnant prosthetics are left over - But DO NOT delete those that are species-related
 		for(var/obj/item/bodypart/part in character.bodyparts)
 			if(part.status == BODYPART_ROBOTIC && !part.render_like_organic)
-				qdel(part)
+				QDEL_NULL(part)
 		character.regenerate_limbs() //regenerate limbs so now you only have normal limbs
 		for(var/modified_limb in modified_limbs)
 			var/modification = modified_limbs[modified_limb][1]
@@ -4039,7 +4039,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(prosthetic_type != "prosthetic") //lets just leave the old sprites as they are
 					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
 				new_limb.replace_limb(character)
-			qdel(old_part)
+			QDEL_NULL(old_part)
+			QDEL_NULL(modified_limbs)
 
 	SEND_SIGNAL(character, COMSIG_HUMAN_PREFS_COPIED_TO, src, icon_updates, roundstart_checks)
 

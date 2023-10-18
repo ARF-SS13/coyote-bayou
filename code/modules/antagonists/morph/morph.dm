@@ -193,15 +193,16 @@
 	if(morphed && !melee_damage_disguised)
 		to_chat(src, span_warning("You can not attack while disguised!"))
 		return
-	if(isliving(target)) //Eat Corpses to regen health
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(isliving(my_target)) //Eat Corpses to regen health
+		var/mob/living/L = my_target
 		if(L.stat == DEAD)
 			if(do_after(src, 30, target = L))
 				if(eat(L))
 					adjustHealth(-50)
 			return
-	else if(isitem(target)) //Eat items just to be annoying
-		var/obj/item/I = target
+	else if(isitem(my_target)) //Eat items just to be annoying
+		var/obj/item/I = my_target
 		if(!I.anchored)
 			if(do_after(src, 20, target = I))
 				eat(I)

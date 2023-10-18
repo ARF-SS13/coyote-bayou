@@ -122,9 +122,11 @@
 
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/hellwater, 1)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/hellwater, 1)
 
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
@@ -262,9 +264,11 @@
 
 /mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 /mob/living/simple_animal/hostile/radscorpion/Initialize()
 	. = ..()
@@ -372,9 +376,11 @@
 
 /mob/living/simple_animal/hostile/cazador/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"

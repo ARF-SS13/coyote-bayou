@@ -458,9 +458,11 @@
 
 /mob/living/simple_animal/hostile/gecko/legacy/alpha/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
 
 /mob/living/simple_animal/hostile/gecko/big
 	name = "big gecko"
@@ -671,9 +673,11 @@
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -742,9 +746,11 @@
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
 
 /datum/reagent/toxin/rattler_venom
 	name = "rattler venom"
