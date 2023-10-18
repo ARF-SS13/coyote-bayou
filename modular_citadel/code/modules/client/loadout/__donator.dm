@@ -174,7 +174,7 @@
 /obj/item/storage/box/large/custom_kit/rinpin/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/metalmask/custom(src)
 	new /obj/item/gun/ballistic/rifle/magnetic(src)
-
+	new /obj/item/melee/unarmed/sappers/fightgloves(src)
 /datum/gear/donator/kits/archyzt
 	name = "Follower's Traveler"
 	path = /obj/item/storage/box/large/custom_kit/archyzt

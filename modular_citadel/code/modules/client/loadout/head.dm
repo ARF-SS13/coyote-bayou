@@ -924,6 +924,18 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/infilrator
+	name = "Infiltrator Helmet"
+	path = /obj/item/clothing/head/helmet/infiltrator
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/contractor
+	name = "Contractor Helmet"
+	path = /obj/item/clothing/head/helmet/infiltrator/contractor
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/ballistichelmets/number5
 	name = "U.N Helmet Medical"
 	path = /obj/item/clothing/head/kevlarhelmet/unitednation/medical
