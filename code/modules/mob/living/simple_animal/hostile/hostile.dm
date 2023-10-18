@@ -551,8 +551,10 @@
 	if(melee_windup_time)
 		if(melee_windup_sound)
 			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
+		INVOKE_ASYNC(src, /atom/.proc/do_squish, 0.7, 0.7, melee_windup_time)	//Bouncing bitches.
 		spawn(melee_windup_time)													//Actually wait the time. The target can raise their shield or parry in this time.
-		if(!incapacitated(FALSE, TRUE, FALSE))										//If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+		if(!incapacitated(FALSE, TRUE, FALSE) && Adjacent(my_target))										//If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+			INVOKE_ASYNC(src, /atom/.proc/do_squish, 1.3, 1.3, melee_windup_time) // Bounced bitches.
 			return my_target.attack_animal(src)
 	else
 		return 	my_target.attack_animal(src)
