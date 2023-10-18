@@ -115,7 +115,7 @@
 	if(object_overlay && overlays.len)
 		cut_overlay(object_overlay)
 	//If we still have things in our overlays after cutting them, force get rid of all overlays. We only use overlays for the green ghosts anyways.
-	if(overlays.len)
+	if(overlays.len && type != /atom/movable/screen/inventory/hand)
 		cut_overlays()
 
 /atom/movable/screen/inventory/hand/ClearGhosts()
@@ -145,7 +145,8 @@
 
 /atom/movable/screen/inventory/MouseExited()
 	..()
-	cut_overlays()
+	if(type != /atom/movable/screen/inventory/hand)
+		cut_overlays()
 
 /atom/movable/screen/inventory/update_icon_state()
 	if(!icon_empty)
@@ -195,6 +196,9 @@
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "blocked")
 	var/held_index = 0
+
+/atom/movable/screen/inventory/hand/add_overlays()
+	return
 
 /atom/movable/screen/inventory/hand/update_overlays()
 	. = ..()
