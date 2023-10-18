@@ -54,7 +54,8 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/blueambrosia,
 	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
-	/datum/crafting_recipe/tribal/bonebag))
+	/datum/crafting_recipe/tribal/bonebag,
+	/obj/item/stack/medical/mesh/horsecream/goodcream))
 
 /datum/outfit/job/tribal/
 	name = "Tribal"
