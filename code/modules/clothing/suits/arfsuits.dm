@@ -4581,7 +4581,7 @@
 		return ..()
 	if(!deflecting)
 		return ..()
-	if(!can_deflect_while_blocking && (CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCKING) || CHECK_BITFIELD(owner.combat_flags, COMBAT_FLAG_ACTIVE_BLOCK_STARTING)))
+	if(!can_deflect_while_blocking)
 		return ..()
 	if(attack_type != ATTACK_TYPE_PROJECTILE)
 		return ..()

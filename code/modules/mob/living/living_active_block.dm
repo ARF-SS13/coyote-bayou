@@ -1,9 +1,9 @@
 // Active directional block system. Shared code is in [living_blocking_parrying.dm]
 /mob/living/proc/stop_active_blocking(was_forced = FALSE)
-	if(!(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING)))
+	if(!(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING))
 		return FALSE
 	var/obj/item/I = active_block_item
-	combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCKING | COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
+	combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCKING)
 	active_block_effect_end()
 	active_block_item = null
 	REMOVE_TRAIT(src, TRAIT_MOBILITY_NOUSE, ACTIVE_BLOCK_TRAIT)
@@ -14,7 +14,7 @@
 	return TRUE
 
 /mob/living/proc/active_block_start(obj/item/I)
-	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
+	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCKING))
 		return FALSE
 	if(!(I in held_items))
 		return FALSE
@@ -44,11 +44,11 @@
 /mob/living/proc/continue_starting_active_block()
 	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
 		return DO_AFTER_STOP
-	return (combat_flags & COMBAT_FLAG_ACTIVE_BLOCK_STARTING)? DO_AFTER_CONTINUE : DO_AFTER_STOP
+	return (combat_flags)? DO_AFTER_CONTINUE : DO_AFTER_STOP
 
 /mob/living/get_standard_pixel_x_offset()
 	. = ..()
-	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
+	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCKING))
 		if(dir & EAST)
 			. += 8
 		if(dir & WEST)
@@ -56,7 +56,7 @@
 
 /mob/living/get_standard_pixel_y_offset()
 	. = ..()
-	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
+	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCKING))
 		if(dir & NORTH)
 			. += 8
 		if(dir & SOUTH)
@@ -66,7 +66,7 @@
  * Proc called by keybindings to toggle active blocking.
  */
 /mob/living/proc/keybind_toggle_active_blocking()
-	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
+	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCKING))
 		return keybind_stop_active_blocking()
 	else
 		return keybind_start_active_blocking()
@@ -75,7 +75,7 @@
  * Proc called by keybindings to start active blocking.
  */
 /mob/living/proc/keybind_start_active_blocking()
-	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
+	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCKING))
 		return FALSE
 	if(!(combat_flags & COMBAT_FLAG_BLOCK_CAPABLE))
 		to_chat(src, span_warning("You're not something that can actively block."))
@@ -94,21 +94,13 @@
 	if(!I.can_active_block())
 		to_chat(src, span_warning("[I] is either not capable of being used to actively block, or is not currently in a state that can! (Try wielding it if it's twohanded, for example.)"))
 		return
-	// QOL: Attempt to toggle on combat mode if it isn't already
-	SEND_SIGNAL(src, COMSIG_ENABLE_COMBAT_MODE)
-	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		to_chat(src, span_warning("You must be in combat mode to actively block!"))
-		return FALSE
 	var/datum/block_parry_data/data = I.get_block_parry_data()
 	var/delay = data.block_start_delay
-	combat_flags |= COMBAT_FLAG_ACTIVE_BLOCK_STARTING
 	animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = delay, FALSE, SINE_EASING | EASE_IN)
 	if(!do_after_advanced(src, delay, src, DO_AFTER_REQUIRES_USER_ON_TURF|DO_AFTER_NO_COEFFICIENT, CALLBACK(src, .proc/continue_starting_active_block), MOBILITY_USE, null, null, I))
 		to_chat(src, span_warning("You fail to raise [I]."))
-		combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 		animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, FALSE, SINE_EASING | EASE_IN, ANIMATION_END_NOW)
 		return
-	combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 	active_block_start(I)
 
 /**
@@ -127,7 +119,6 @@
  * Proc called by keybindings to stop active blocking.
  */
 /mob/living/proc/keybind_stop_active_blocking()
-	combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)
 		stop_active_blocking(FALSE)
 	return TRUE
