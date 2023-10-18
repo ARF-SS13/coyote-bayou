@@ -905,8 +905,12 @@
 	. = ..()
 	if(amount == max_amount)	 //aloe starts open lol
 		is_open = TRUE
+		icon_state = "aloe_paste"
 		update_icon()
-
+	else
+		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
 
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)
