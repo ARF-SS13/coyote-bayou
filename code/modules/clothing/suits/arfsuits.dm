@@ -4792,6 +4792,18 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
+/obj/item/clothing/suit/armor/texasmed/infiltrator
+	name = "infiltrator combat vest"
+	desc = "An insidious combat vest designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
+	icon_state = "infiltrator"
+	item_state = "infiltrator"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	
+/obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
+	name = "contractor combat suit"
+	desc = "An suspicious looking combat suit designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
+	icon_state = "syndicate-contract"
+	item_state = "syndicate-contract"
 /obj/item/clothing/suit/armor/texasmed/mantle
 	name = "mantled Texas militia breastplate"
 	desc = "A medium set of armor used by the First Texas Militia. This one has some cloth thrown over the shoulder."

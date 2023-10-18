@@ -110,6 +110,12 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
 
+/obj/item/clothing/shoes/jackboots/sneakboots
+	name = "infiltrator sneakboots"
+	desc = "A pair of insidious boots with special noise muffling soles which very slightly drown out your footsteps. They would be absolutely perfect for stealth operations were it not for the the padding being worn out."
+	icon_state = "sneakboots"
+	item_state = "sneakboots"
+
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
 

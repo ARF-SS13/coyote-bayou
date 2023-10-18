@@ -579,6 +579,18 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/ncrlight/infiltrator
+	name = "infiltrator armor"
+	path = /obj/item/clothing/suit/armor/texasmed/infiltrator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrlight/infiltrator/contractor
+	name = "contractor armor"
+	path = /obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/unmcmarine
 	name = "Standard UNMC Armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcmarine
