@@ -362,9 +362,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		to_chat(usr, "[readout.Join()]")
 
+/obj/item
+	var/allow_ui_interact = TRUE  //used for cranklasergun
+
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
-	ui_interact(user)
+	if(allow_ui_interact)
+		ui_interact(user)
 
 /obj/item/ui_act(action, params)
 	add_fingerprint(usr)

@@ -31,8 +31,9 @@
 				cell = AM
 				if(oldcell)
 					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
-					oldcell.dropped()
-					oldcell.forceMove(get_turf(src.loc))
+					// oldcell.dropped()
+					// oldcell.forceMove(get_turf(src.loc))
+					oldcell.attack_hand(user)  //let's perform reload in a more intuitive way
 					oldcell.update_icon()
 				//else
 				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
