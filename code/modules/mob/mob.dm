@@ -19,7 +19,7 @@
 	QDEL_LIST(actions)
 	QDEL_LIST(mob_spell_list)
 	if(mind && mind.current == src) //Let's just be safe yeah? This will occasionally be cleared, but not always. Can't do it with ghostize without changing behavior
-
+		mind.current = null
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
 /mob/Initialize()
