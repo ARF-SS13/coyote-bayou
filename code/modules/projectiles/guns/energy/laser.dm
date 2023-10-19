@@ -502,38 +502,6 @@
 	)
 	init_recoil = LASER_SMG_RECOIL(2, 2)
 
-/obj/item/gun/energy/laser/auto/nayriin
-	name = "Lucy"
-	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
-	icon_state = "lasercw"
-	item_state = "rcw"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/faster
-	)
-
-/obj/item/gun/energy/laser/magpistolcustom
-	name = "OURP-HYBRID"
-	desc = "The OURP - or Orange Uanimous Response Pluck - is named such because a sliver of hypersonic iron entering someone's skull is widely considered to be a universal solution to any problem. So long as you use enough of them, anyway."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "mpc"
-	item_state = "p90"
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/mpc)
-	can_scope = FALSE
-	weapon_class = WEAPON_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/faster
-	)
-	init_recoil = LASER_SMG_RECOIL(2, 1)
-
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
@@ -1343,6 +1311,51 @@
 	)
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
+/* "donator" energy weapons */
+
+/obj/item/gun/energy/laser/pistol/phaser
+	name = "Type-2a phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the lethal firemode."
+	icon_state = "retro"
+	can_scope = FALSE
+
+/obj/item/gun/energy/laser/pistol/phaser/disable
+	name = "Type-2b phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the stun firemode."
+	icon_state = "retrodisabler"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/stun)
+
+/obj/item/gun/energy/laser/magpistolcustom
+	name = "OURP-HYBRID"
+	desc = "The OURP - or Orange Uanimous Response Pluck - is named such because a sliver of hypersonic iron entering someone's skull is widely considered to be a universal solution to any problem. So long as you use enough of them, anyway."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "mpc"
+	item_state = "p90"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/mpc)
+	can_scope = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+	init_recoil = LASER_SMG_RECOIL(2, 1)
+
+/obj/item/gun/energy/laser/auto/nayriin
+	name = "Lucy"
+	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
