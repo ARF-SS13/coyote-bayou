@@ -901,9 +901,14 @@
 	max_amount = 20
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 
-/obj/item/stack/medical/mesh/aloe/update_icon_state()
+/obj/item/stack/medical/mesh/aloe/Initialize()
 	. = ..()
-	if(amount == max_amount)	 // plap plap plap plap use the right icon use the right icon use the right icon use the right icon
+	if(amount == max_amount)	 // suffer now as I do, code diver
+		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
+	else
+		is_open = TRUE
 		icon_state = "aloe_paste"
 		update_icon()
 
@@ -917,14 +922,19 @@
 	novariants = TRUE
 	is_open = TRUE
 	heal_brute = 10
-	amount = 20
+	amount = 5
 	max_amount = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
 	merge_type = /obj/item/stack/medical/mesh/horsecream
 
-/obj/item/stack/medical/mesh/aloe/update_icon_state()
+/obj/item/stack/medical/mesh/horsecream/Initialize()
 	. = ..()
-	if(amount == max_amount)	 // I did not break it, I did not break it, oh hi Fenny!
+	if(amount == max_amount)	 // look upon my code and weep as I have
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+	else
+		is_open = TRUE
 		icon_state = "horse_cream"
 		update_icon()
 
@@ -941,14 +951,25 @@
 	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Datura extract helps numb the pain."
 
 	icon_state = "horse_cream_good" // This is how veggie dino nuggets are made
+	self_delay = 20
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
 	heal_brute = 20 // Might be a bit much, but only time will tell.
+	amount = 5
+	max_amount = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
 
-/obj/item/stack/medical/mesh/aloe/update_icon_state()
+/obj/item/stack/medical/mesh/horsecream/goodcream/Initialize()
 	. = ..()
-	if(amount == max_amount)	 // I did not break it, I did not. Oh hi Fenny!
+	if(amount == max_amount)	 // it took me like 2 weeks from start to finish to do all this and i was straight up not having a good time for the last day
 		icon_state = "horse_cream_good"
 		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream_good"
+		update_icon()
+
 
 // gonna try and get a little quirky here
 /obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
@@ -957,7 +978,6 @@
 		M.emote("augh")
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
 	return
-
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)
 // ------------------

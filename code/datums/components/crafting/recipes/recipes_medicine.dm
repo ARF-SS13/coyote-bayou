@@ -143,7 +143,7 @@
 	name = "Horsenettle Cream"
 	result = /obj/item/stack/medical/mesh/horsecream
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1)
-	tools = list(/obj/item/ammo_casing/caseless/rock)
+	tools = list(TOOL_WRENCH)
 	time = 5
 	category = CAT_MEDICAL
 
