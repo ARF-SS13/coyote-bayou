@@ -46,7 +46,16 @@
 #define GENITAL_CAN_RECOLOR      (1<<9)
 #define GENITAL_CAN_RESIZE       (1<<10)
 #define GENITAL_CAN_RESHAPE      (1<<11)
-#define GENITAL_CAN_HAVE         (1<<12)
+#define GENITAL_CAN_HAVE         (1<<12) //Sandstorm change
+#define HAS_EQUIPMENT			(1<<13) //nother sandstorm change
+#define GENITAL_CAN_STUFF       (1<<14) //Splurt edit, used for pregnancy
+#define GENITAL_CHASTENED		(1<<15) //SPLURT edit
+#define GENITAL_IMPOTENT		(1<<16) //SPLURT edit
+#define GENITAL_EDGINGONLY		(1<<17) //SPLURT edit
+#define GENITAL_DISAPPOINTING	(1<<18)	//SPLURT edit
+#define GENITAL_OVERSTIM		(1<<19) //SPLURT edit
+#define GENITAL_HYPERSENS		(1<<20) //SPLURT edit
+#define CAN_CUM_INTO 			(1<<21)
 
 //DEfault genital flags, for preferences
 #define DEF_BUTT_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
@@ -172,6 +181,12 @@
 //#define VOREALLOW_SEEING_BELLY_DESC		(1<<14)
 #define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
 #define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
+#define BUTT_ENLARGEMENT	(1<<17)
+#define BELLY_INFLATION		(1<<18)
+#define CHASTITY			(1<<19)
+#define STIMULATION			(1<<21)
+#define EDGING				(1<<22)
+#define CUM_ONTO			(1<<23)
 #define TOGGLES_CITADEL 0
 
 //icon states for the default eyes and for a state for no eye
