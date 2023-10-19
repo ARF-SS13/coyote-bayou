@@ -92,7 +92,7 @@
 	.["maxLust"] = self.get_lust_tolerance() * 3
 	if(target != self)
 		.["theirAttributes"] = target.list_interaction_attributes(self)
-		if(HAS_TRAIT(user, TRAIT_INHEAT))
+		if(HAS_TRAIT(user, TRAIT_IN_HEAT))
 			.["theirLust"] = target.get_lust()
 			.["theirMaxLust"] = target.get_lust_tolerance() * 3
 

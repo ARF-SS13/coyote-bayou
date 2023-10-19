@@ -104,7 +104,7 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 		if(!src.holder)	return
 		message_admins("[key_name_admin(usr)] manually reloaded mentors")
 
-
+/*
 /mob/living/carbon/proc/has_penis()
 	return getorganslot(ORGAN_SLOT_PENIS)
 
@@ -119,7 +119,7 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 
 /mob/living/carbon/proc/has_butt()
 	return getorganslot(ORGAN_SLOT_BUTT)
-
+*/
 
 /mob/living/carbon/proc/has_belly()
 	return getorganslot(ORGAN_SLOT_BELLY)

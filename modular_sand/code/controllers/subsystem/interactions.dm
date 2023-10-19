@@ -9,7 +9,7 @@ SUBSYSTEM_DEF(interactions)
 	VAR_PROTECTED/initialized_blacklist
 
 	/// Order of initialization. Higher numbers are initialized first, lower numbers later. Use or create defines such as [INIT_ORDER_DEFAULT] so we can see the order in one file.
-	var/init_order = INIT_ORDER_DEFAULT
+	init_order = INIT_ORDER_DEFAULT
 
 /datum/controller/subsystem/interactions/Initialize(timeofday)
 	prepare_interactions()
