@@ -103,6 +103,7 @@ Administrator
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	suit_store = /obj/item/gun/medbeam
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
@@ -112,12 +113,6 @@ Administrator
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1,
-	)
-
-/datum/outfit/loadout/medbeam
-	name =	"Medbeam Kit"
-	backpack_contents = list(
-		/obj/item/gun/medbeam = 1,
 	)
 
 //Professor
