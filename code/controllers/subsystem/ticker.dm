@@ -567,7 +567,7 @@ SUBSYSTEM_DEF(ticker)
 		if(STATION_DESTROYED_NUKE)
 			news_message = "We would like to reassure all employees that the reports of a Syndicate backed nuclear attack on [station_name()] are, in fact, a hoax. Have a secure day!"
 		if(STATION_EVACUATED)
-			news_message = "The inhabitants of [station_name()] breathe a sigh of the relief as the week comes to an end. "
+			news_message = "The inhabitants of [station_name()] breathe a sigh of the relief as the train arrives at its destination. "
 		if(BLOB_WIN)
 			news_message = "[station_name()] was overcome by an unknown biological outbreak, killing all crew on board. Don't let it happen to you! Remember, a clean work station is a safe work station."
 		if(BLOB_NUKE)
