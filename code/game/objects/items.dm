@@ -765,9 +765,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, messy_throw = TRUE)
-	thrownby = thrower
+	set_thrownby(thrower)
 	callback = CALLBACK(src, .proc/after_throw, callback, (spin && messy_throw)) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
+
+/obj/item/proc/set_thrownby(new_thrownby)
+	if(thrownby)
+		UnregisterSignal(thrownby, COMSIG_PARENT_QDELETING)
+	thrownby = new_thrownby
+	if(thrownby)
+		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING, .proc/thrownby_deleted)
+
+/obj/item/proc/thrownby_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_thrownby(null)
 
 /obj/item/proc/after_throw(datum/callback/callback, messy_throw)
 	if (callback) //call the original callback
