@@ -249,6 +249,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=close'>CLOSE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=resolve'>RSLVE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>HANDLE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>AFFIRMATIVE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>NEGATIVE</A>)"
 
 //private
 /datum/admin_help/proc/LinkedReplyName(ref_src)
@@ -730,3 +732,33 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			return founds
 
 	return msg
+
+//Quick affirmative to yes or no questions
+/datum/admin_help/proc/Approve(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+
+	if(initiator)
+		initiator.giveadminhelpverb()
+
+		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+
+		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp greenlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
+		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may try again.</font>")
+		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is yes.")
+
+//Quick negative to yes or no questions
+/datum/admin_help/proc/Negative(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+
+	if(initiator)
+		initiator.giveadminhelpverb()
+
+		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+
+		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp redlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
+		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may try again.</font>")
+		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is no.")
+
+
