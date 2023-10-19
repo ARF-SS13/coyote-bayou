@@ -903,11 +903,81 @@
 
 /obj/item/stack/medical/mesh/aloe/Initialize()
 	. = ..()
-	if(amount == max_amount)	 //aloe starts open lol
+	if(amount == max_amount)	 // suffer now as I do, code diver
 		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
+
+/obj/item/stack/medical/mesh/horsecream
+	name = "horsenettle cream"
+	desc = "A healing \"paste\" made by mashing up horsenettle with a |rock| to \"soothe\" bruises."
+
+	icon_state = "horse_cream" // It isn't white by the way
+	self_delay = 20
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 10
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
+	merge_type = /obj/item/stack/medical/mesh/horsecream
+
+/obj/item/stack/medical/mesh/horsecream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // look upon my code and weep as I have
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+
+// gonna try and get a little fancy here
+/obj/item/stack/medical/mesh/horsecream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_danger("You feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
+		M.emote("scream")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+	return
+
+/obj/item/stack/medical/mesh/horsecream/goodcream
+	name = "horsenettle remedy"
+	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Datura extract helps numb the pain."
+
+	icon_state = "horse_cream_good" // This is how veggie dino nuggets are made
+	self_delay = 20
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 20 // Might be a bit much, but only time will tell.
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
+
+/obj/item/stack/medical/mesh/horsecream/goodcream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // it took me like 2 weeks from start to finish to do all this and i was straight up not having a good time for the last day
+		icon_state = "horse_cream_good"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream_good"
 		update_icon()
 
 
+// gonna try and get a little quirky here
+/obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+		M.emote("augh")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
+	return
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)
 // ------------------
