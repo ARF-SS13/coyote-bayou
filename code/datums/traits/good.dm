@@ -2137,6 +2137,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_FREERUNNING, "Freerunning")
 	ADD_TRAIT(H, TRAIT_TACKLERADV, "Advanced Leaper")
+	H.AddComponent(/datum/component/tackler/simple, \
+		stamina_cost = 20, \
+		base_knockdown = 0 SECONDS, \
+		range = 7, \
+		speed = 2, \
+		skill_mod = -2, \
+		min_distance = 0 \
+)
 
 
 /datum/quirk/package/parkour/remove()

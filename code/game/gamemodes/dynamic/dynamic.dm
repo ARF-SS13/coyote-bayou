@@ -602,6 +602,9 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /datum/game_mode/dynamic/proc/midround_rule_draft()
 	set waitfor = FALSE
+	//CB edit - Disables midround antagonists
+	return
+/*
 	if (midround_injection_cooldown < world.time)
 		/*if (GLOB.dynamic_forced_extended)
 			return*/
@@ -640,7 +643,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			SSevents.reschedule()
 
 		random_event_hijacked = HIJACKED_NOTHING
-
+*/
 /// Gets the chance for latejoin injection, the dry_run argument is only used for forced injection.
 /datum/game_mode/dynamic/proc/get_injection_chance(dry_run = FALSE)
 	if(forced_injection)

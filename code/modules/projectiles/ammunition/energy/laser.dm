@@ -242,8 +242,8 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 1500 // 20 shots, 2rnd burst
 
 /obj/item/ammo_casing/energy/laser/AK470M
-	projectile_type = /obj/item/projectile/beam/laser/pistol/AK470M
-	e_cost = 300 // 30 shots roughly.
+	projectile_type = /obj/item/projectile/beam/laser/solar
+	e_cost = 990 // 33 shots roughly.
 	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/solar

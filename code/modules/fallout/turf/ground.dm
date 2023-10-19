@@ -477,6 +477,27 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
 
+/turf/open/indestructible/ground/outside/water/AltClick(mob/user)
+	. = ..()
+	if(isliving(user))
+		var/mob/living/L = user
+		L.DelayNextAction(CLICK_CD_MELEE)
+		if(!user.incapacitated() && Adjacent(user))
+			user.visible_message(span_notice("[L] starts washing in \the [src]."),
+								span_notice("You start washing in \the [src]."),
+								span_notice("You hear splashing water and scrubbing."))
+			playsound(user,"water_wade",100,TRUE)
+			if(do_after(user,5 SECONDS, TRUE, src, TRUE,allow_movement=FALSE,stay_close=TRUE))
+				give_mob_washies(L)
+				user.visible_message(span_notice("[L] finishes washing in \the [src]."),
+									span_notice("You finish washing in \the [src]."),
+									span_notice("The splashing and scrubbing stops."))
+				playsound(user,"water_wade",100,TRUE)
+
+/turf/open/indestructible/ground/outside/water/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-Click \the [src] to wash yourself off.")
+
 /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = "o2=22;n2=82;TEMP=285"
 	name = "snow"

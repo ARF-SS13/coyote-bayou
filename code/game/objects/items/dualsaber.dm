@@ -269,7 +269,7 @@
 
 /obj/item/dualsaber/hypereutactic/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=40, \
+	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=60, \
 					wieldsound='sound/weapons/nebon.ogg', unwieldsound='sound/weapons/nebhit.ogg')
 	AddElement(/datum/element/update_icon_updates_onmob)
 

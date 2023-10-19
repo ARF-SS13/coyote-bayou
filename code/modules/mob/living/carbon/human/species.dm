@@ -1470,6 +1470,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return 1
 
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style, attackchain_flags = NONE)
+	//-->Pacifism Lesser Trait, most important section of it
+	if(HAS_TRAIT(user, TRAIT_PACIFISM_LESSER) && target.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+		trait_pacifism_lesser_consequences(user)
+		return FALSE
+	//<--
+
 	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return FALSE

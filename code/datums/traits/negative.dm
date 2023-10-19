@@ -314,13 +314,28 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Lifepath Quirks"
 	mechanics = "You are mechanically stopped from hurting things, or throwing things that could."
 	conflicts = list(
-		
+		/datum/quirk/nonviolent_lesser
 	)
 	mob_trait = TRAIT_PACIFISM
 	gain_text = span_danger("You feel repulsed by the thought of violence!")
 	lose_text = span_notice("You think you can defend yourself again.")
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 	antag_removal_text = "Your antagonistic nature has caused you to renounce your pacifism."
+
+/datum/quirk/nonviolent_lesser
+	name = "Pacifist - Lesser"
+	desc = "You think that hurting sapient living beings is wrong, but defending yourself from fauna is your goddamn American right."
+	value = -35
+	category = "Lifepath Quirks"
+	mechanics = "You can hurt simplemobs, but in case you hurt a carbon you'll shake and temporarely be afraid of doing harm for little time."
+	conflicts = list(
+		/datum/quirk/nonviolent
+	)
+	mob_trait = TRAIT_PACIFISM_LESSER
+	gain_text = span_danger("Hurting sapient creatures is wrong!")
+	lose_text = span_notice("Actually... I think I like violence...")
+	medical_record_text = "Patient cannot bring themselves to cause physical harm to sapient creatures."
+	antag_removal_text = "Your antagonistic nature has caused you to renounce your pacifism and choose violence."
 
 /datum/quirk/paraplegic
 	name = "Paraplegic"
