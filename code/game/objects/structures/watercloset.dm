@@ -450,7 +450,7 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 	else
 		L.clean_blood()
 		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
-	
+	L.regenerate_icons()
 
 /obj/machinery/shower/proc/wash_mob(mob/living/L)
 	give_mob_washies(L)
