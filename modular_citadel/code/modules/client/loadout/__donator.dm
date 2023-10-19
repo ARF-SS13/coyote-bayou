@@ -1571,7 +1571,7 @@
 	path = /obj/item/storage/box/large/custom_kit/deltadav
 	ckeywhitelist = list("delta_dav")
 
-/obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
+/obj/item/storage/box/large/custom_kit/deltadav/PopulateContents()
 	new /obj/item/clothing/under/trek/medsci(src)
 	new /obj/item/gun/energy/laser/pistol/phaser(src)
 	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
