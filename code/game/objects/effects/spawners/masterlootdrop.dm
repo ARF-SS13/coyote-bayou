@@ -376,6 +376,7 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_melee //kinda slim rn
 	name = "uncommon melee"
 	loot = list(
+		/obj/item/melee/transforming/plasmacutter/sword/cx/broken = 1,
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		/obj/item/melee/unarmed/tigerclaw = 1,
 		/obj/item/melee/unarmed/lacerator = 1,
@@ -392,6 +393,7 @@
 		/obj/item/melee/powered/ripper = 5,
 		/obj/item/twohanded/legionaxe = 10,
 		/obj/item/twohanded/thermic_lance = 5,
+		/obj/item/melee/transforming/plasmacutter/sword = 5,
 		/obj/item/melee/transforming/energy/axe/protonaxe = 1,
 		/obj/item/twohanded/sledgehammer/supersledge = 10,
 		/obj/item/twohanded/sledgehammer/rockethammer = 5,
@@ -529,6 +531,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
 		/obj/item/gun/ballistic/automatic/recoilessrifle = 1,
 		/obj/item/gun/energy/laser/tg/recharger = 5,
+		/obj/item/melee/transforming/plasmacutter/sword/cx = 5, 
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -552,6 +555,7 @@
 		/obj/item/gun/energy/laser/scatter/laserbuss = 20,
 		/obj/item/gun/energy/laser/aer14 = 10,
 		/obj/item/gun/energy/laser/laer = 5,
+		/obj/item/gun/energy/laser/plasma/bouncy = 20,
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
 		/obj/item/minigunpack = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/adam = 5,
@@ -564,6 +568,7 @@
 		/obj/item/melee/unarmed/powerfist/goliath = 20,
 		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
+		/obj/item/dualsaber/hypereutactic = 10,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 5, //for the meme
