@@ -19,7 +19,7 @@
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
 	damage = BULLET_DAMAGE_PISTOL_22
-	damage_list = list("10" = 15, "12" = 25, "15" = 50, "20" = 20)
+	damage_list = list("10" = 5, "12" = 25, "15" = 50, "20" = 20)
 	stamina = BULLET_STAMINA_PISTOL_22
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_22
