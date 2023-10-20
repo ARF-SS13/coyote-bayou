@@ -1044,6 +1044,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_SPREAD_NORMAL 1
 #define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
+#define GUN_SPREAD_SUPERAWFUL (GUN_SPREAD_NORMAL * 4)
 
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
