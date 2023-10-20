@@ -159,7 +159,6 @@ GLOBAL_LIST_EMPTY(cached_storage_typecaches)
 	if(!islist(cant_hold_list))
 		cant_hold_list = list(cant_hold_list)
 
-	can_hold_description = generate_hold_desc(can_hold_list)
 	if (can_hold_list)
 		var/unique_key = can_hold_list.Join("-")
 		if(!GLOB.cached_storage_typecaches[unique_key])

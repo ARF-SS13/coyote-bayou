@@ -196,10 +196,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//	return 0 //It returns false when it runs the proc so they don't get jobs from the global list.
 	return 1 //It returns 1 to say they are a-okay to continue.
 
-/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
-
 //Will regenerate missing organs
-/datum/species/proc/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE)
+/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 	var/obj/item/organ/brain/brain = C.getorganslot(ORGAN_SLOT_BRAIN)
 	var/obj/item/organ/heart/heart = C.getorganslot(ORGAN_SLOT_HEART)
 	var/obj/item/organ/lungs/lungs = C.getorganslot(ORGAN_SLOT_LUNGS)
@@ -2399,3 +2397,24 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return pick(laugh_male)
 	else
 		return pick(laugh_female)
+
+////////////////////////////////////////
+//Character Preferences Screen caching//
+////////////////////////////////////////
+/datum/species/proc/get_types_to_preload()
+	var/list/to_store = list()
+	to_store += mutant_organs
+	/*
+	for(var/obj/item/organ/external/horny as anything in bodyparts)
+		to_store += horny //Haha get it?
+	*/
+	//Don't preload brains, cause reuse becomes a horrible headache
+	to_store += mutant_heart
+	to_store += mutantlungs
+	to_store += mutanteyes
+	to_store += mutantears
+	to_store += mutanttongue
+	to_store += mutantliver
+	to_store += mutantstomach
+	//We don't cache mutant hands because it's not constrained enough, too high a potential for failure
+	return to_store

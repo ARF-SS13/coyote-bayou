@@ -42,6 +42,8 @@
 /obj/item/organ/proc/enter_wardrobe()
 	STOP_PROCESSING(SSobj, src)
 
+/obj/item/organ/proc/exit_wardrobe()
+	START_PROCESSING(SSobj, src)
 
 /obj/item/organ/Destroy()
 	if(owner)

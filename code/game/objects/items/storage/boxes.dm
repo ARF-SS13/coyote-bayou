@@ -92,14 +92,23 @@
 		new /obj/item/disk/nanite_program(src)
 
 // Ordinary survival box
-/obj/item/storage/box/survival/PopulateContents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
+/obj/item/storage/box/survival
+	name = "survival box"
+	desc = "A box with the bare essentials of ensuring the survival of you and others."
+	icon_state = "internals"
+	illustration = "emergencytank"
+	var/mask_type = /obj/item/clothing/mask/breath
+	var/internal_type = /obj/item/tank/internals/emergency_oxygen
+	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 
+/obj/item/storage/box/survival/PopulateContents()
 	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
+		new mask_type(src)
+		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
+	if(!isnull(medipen_type))
+		new medipen_type(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.

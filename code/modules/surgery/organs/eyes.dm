@@ -447,7 +447,8 @@
 //Gotta reset the eye color, because that persists
 /obj/item/organ/eyes/enter_wardrobe()
 	. = ..()
-	eye_color = initial(eye_color)
+	left_eye_color = initial(left_eye_color)
+	right_eye_color = initial(right_eye_color)
 
 #undef BLURRY_VISION_ONE
 #undef BLURRY_VISION_TWO

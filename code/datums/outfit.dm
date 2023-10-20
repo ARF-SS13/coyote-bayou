@@ -71,31 +71,31 @@
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(suit)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(back)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(belt)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(gloves)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(shoes)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(head)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(mask)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(neck)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(ears)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(glasses)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), ITEM_SLOT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(id)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(id, H), ITEM_SLOT_ID, TRUE) //We don't provide ids (Fix this?)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(id, H), INV_SLOTBIT_ID, TRUE) //We don't provide ids (Fix this?)
 	if(suit_store)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(suit_store, H), ITEM_SLOT_SUITSTORE, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(suit_store, H), INV_SLOTBIT_SUITSTORE, TRUE)
 
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform
@@ -111,9 +111,9 @@
 
 	if(!visualsOnly) // Items in pockets or backpack don't show up on mob's icon.
 		if(l_pocket)
-			H.equip_to_slot_or_del(SSwardrobe.provide_type(l_pocket, H), ITEM_SLOT_LPOCKET, TRUE)
+			H.equip_to_slot_or_del(SSwardrobe.provide_type(l_pocket, H), INV_SLOTBIT_POCKET, TRUE)
 		if(r_pocket)
-			H.equip_to_slot_or_del(SSwardrobe.provide_type(l_pocket, H), ITEM_SLOT_LPOCKET, TRUE)
+			H.equip_to_slot_or_del(SSwardrobe.provide_type(r_pocket, H), INV_SLOTBIT_POCKET, TRUE)
 
 		if(box)
 			if(!backpack_contents)
@@ -133,7 +133,7 @@
 				if(!isnum(number))//Default to 1
 					number = 1
 				for(var/i in 1 to number)
-					H.equip_to_slot_or_del(SSwardrobe.provide_type(path, H), ITEM_SLOT_BACKPACK, TRUE)
+					H.equip_to_slot_or_del(SSwardrobe.provide_type(path, H), INV_SLOTBIT_BACKPACK, TRUE)
 
 		if(LAZYLEN(stuff_we_all_get))
 			for(var/path2 in stuff_we_all_get)
@@ -315,8 +315,6 @@
 	preload += box
 	for(var/implant_type in implants)
 		preload += implant_type
-	for(var/skillpath in skillchips)
-		preload += skillpath
 
 	return preload
 

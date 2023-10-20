@@ -1326,6 +1326,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 			continue
 		. += P
 
+/obj/item/pda/proc/get_types_to_preload()
+	var/list/preload = list()
+	preload += default_cartridge
+	return preload
 
 #undef PDA_SCANNER_NONE
 #undef PDA_SCANNER_MEDICAL
