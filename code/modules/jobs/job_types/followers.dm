@@ -15,10 +15,6 @@
 	belt = /obj/item/kit_spawner/follower
 	id =		null
 	ears =		/obj/item/radio/headset/headset_town/medical
-	uniform =	/datum/outfit/job/followers/f13followers
-
-/datum/outfit/job/followers/f13followers
-	name =		"Followers"
 	uniform =	/obj/item/clothing/under/f13/follower
 
 /datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
