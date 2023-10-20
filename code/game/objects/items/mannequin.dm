@@ -23,8 +23,6 @@
 	. = ..()
 	if(mapload)
 		addtimer(CALLBACK(src, .proc/set_looks), 30 SECONDS)
-	else
-		set_looks()
 	if(debug)
 		debugify()
 
