@@ -1152,6 +1152,35 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/rockworse
+	name = "9mm Rockwell Pistol"
+	result = /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockworse
+	reqs = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+/datum/crafting_recipe/gross
+	name = "Saw off Gras"
+	result = /obj/item/gun/ballistic/rifle/antique/gross
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/marty
+	name = "Saw off Martini Henry"
+	result = /obj/item/gun/ballistic/rifle/antique/gross/marty
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
 	name = "Marksman Carbine"
