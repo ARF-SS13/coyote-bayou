@@ -249,8 +249,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=close'>CLOSE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=resolve'>RSLVE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>HANDLE</A>)"
-	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>AFFIRMATIVE</A>)"
-	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>NEGATIVE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=approved'>AFFIRMATIVE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=denied'>NEGATIVE</A>)"
 
 //private
 /datum/admin_help/proc/LinkedReplyName(ref_src)
@@ -477,9 +477,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		if("reopen")
 			Reopen()
 		if("approved")
-			Resolve()
+			Approved()
 		if("denied")
-			Resolve()
+			Denied()
 
 //
 // TICKET STATCLICK
@@ -738,7 +738,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	return msg
 
 //Quick affirmative to yes or no questions
-/datum/admin_help/proc/Approve(key_name = key_name_admin(usr))
+/datum/admin_help/proc/Approved(key_name = key_name_admin(usr))
 	if(state != AHELP_ACTIVE)
 		return
 
@@ -756,10 +756,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	message_admins(msg)
 	log_admin_private(msg)
 	AddInteraction("Approved by [key_name].")
-	Close(silent = TRUE)
+	Close(silent = FALSE)
 
 //Quick negative to yes or no questions
-/datum/admin_help/proc/Negative(key_name = key_name_admin(usr))
+/datum/admin_help/proc/Denied(key_name = key_name_admin(usr))
 	if(state != AHELP_ACTIVE)
 		return
 
@@ -777,4 +777,4 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	message_admins(msg)
 	log_admin_private(msg)
 	AddInteraction("Denied by [key_name].")
-	Close(silent = TRUE)
+	Close(silent = FALSE)
