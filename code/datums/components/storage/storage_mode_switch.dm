@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(pickoutitem_onclick_methods, list(
 
 
 /obj/item/storage/verb/take_out_item_mode() 
-	set name = "Switch Pick Item Out Method"
+	set name = "Set How To Take Item Out"
 	set category = "Object"
 
 	var/new_input = input(usr, "Choose the way you'd like to pick an item out from this storage", "Storage Mode: [src]") as null|anything in GLOB.pickoutitem_onclick_methods
