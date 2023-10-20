@@ -1,7 +1,7 @@
 /datum/species/dwarf //not to be confused with the genetic manlets
 	name = "Dwarf"
 	id = "dwarf" //Also called Homo sapiens pumilionis
-
+	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
 	inherent_traits = list(TRAIT_DWARF)
 	limbs_id = "human"
