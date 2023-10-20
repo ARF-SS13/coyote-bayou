@@ -19,7 +19,7 @@
 	name = "fork"
 	desc = "Pointy."
 	icon_state = "fork"
-	force = 5
+	force = 14
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	throw_speed = 3
@@ -117,7 +117,7 @@
 	desc = "A small black pot!"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "small_pot"
-	force = 5
+	force = 15
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	throw_speed = 3
