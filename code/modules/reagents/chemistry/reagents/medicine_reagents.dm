@@ -86,7 +86,7 @@
 
 	for(var/organ in M.internal_organs)
 		var/obj/item/organ/O = organ
-		O.setOrganDamage(0)
+		O.set_organ_damage(0)
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
@@ -362,7 +362,7 @@
 	M.adjustFireLoss(2*REM, 0)
 	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
 	if(L)
-		L.applyOrganDamage(1)
+		L.apply_organ_damage(1)
 	..()
 	. = 1
 
@@ -440,7 +440,7 @@
 	M.adjustBruteLoss(2*REM, 0)
 	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
 	if(L)
-		L.applyOrganDamage(1)
+		L.apply_organ_damage(1)
 	..()
 	. = 1
 
@@ -919,7 +919,7 @@
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
-	eyes.applyOrganDamage(-2 * effect_mult)
+	eyes.apply_organ_damage(-2 * effect_mult)
 	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
 		if(prob(20 * effect_mult))
 			to_chat(M, span_warning("Your vision slowly returns..."))
@@ -1036,7 +1036,7 @@
 					for(var/organ in C.internal_organs)
 						var/obj/item/organ/O = organ
 						if(O.damage > O.maxHealth/2)
-							O.setOrganDamage(O.maxHealth/2) //so you don't instantly die from organ damage when being revived
+							O.set_organ_damage(O.maxHealth/2) //so you don't instantly die from organ damage when being revived
 
 				M.adjustOxyLoss(-20, 0)
 				M.adjustToxLoss(-20, 0)
@@ -1087,7 +1087,7 @@
 	var/obj/item/organ/brain/B = M.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B || (!(B.organ_flags & ORGAN_FAILING)))
 		return
-	B.applyOrganDamage(-20 * effect_mult)
+	B.apply_organ_damage(-20 * effect_mult)
 	if(prob(80))
 		B.gain_trauma_type(BRAIN_TRAUMA_MILD)
 	else if(prob(50))
@@ -1764,10 +1764,10 @@
 			to_chat(M, span_userdanger("You feel like your blood has stopped moving!"))
 		if(prob(50))
 			var/obj/item/organ/lungs/our_lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
-			our_lungs.applyOrganDamage(1)
+			our_lungs.apply_organ_damage(1)
 		else
 			var/obj/item/organ/heart/our_heart = M.getorganslot(ORGAN_SLOT_HEART)
-			our_heart.applyOrganDamage(1)
+			our_heart.apply_organ_damage(1)
 
 // can be synthesized on station rather than bought. made by grinding a banana peel, heating it up, then mixing the banana peel powder with salglu
 /datum/reagent/medicine/coagulant/weak

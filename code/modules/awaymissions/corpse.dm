@@ -181,12 +181,14 @@
 	var/skin_tone
 
 /obj/effect/mob_spawn/human/Initialize()
+	return null
+	/*
 	if(ispath(outfit))
 		outfit = new outfit()
 	if(!outfit)
 		outfit = new /datum/outfit
 	return ..()
-
+	*/
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
 	if(mob_species)
 		H.set_species(mob_species)

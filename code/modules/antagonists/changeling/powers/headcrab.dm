@@ -26,7 +26,7 @@
 		H.Stun(20)
 		H.blur_eyes(20)
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
-		eyes?.applyOrganDamage(5)
+		eyes?.apply_organ_damage(5)
 		H.confused += 3
 	for(var/mob/living/silicon/S in range(2,user))
 		to_chat(S, span_userdanger("Your sensors are disabled by a shower of blood!"))

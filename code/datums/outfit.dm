@@ -37,7 +37,6 @@
 ///Should we preload some of this job's items?
 	var/preload = FALSE
 
-
 	var/static/datum/asset/spritesheet/loadout/loadout_sheet
 
 ////////F13 Randomization Edit
@@ -73,25 +72,25 @@
 	if(uniform)
 		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(suit)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_OCLOTHING, TRUE)
 	if(back)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_BACK, TRUE)
 	if(belt)
 		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
 	if(gloves)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_BELT, TRUE)
 	if(shoes)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_FEET, TRUE)
 	if(head)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_HEAD, TRUE)
 	if(mask)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_MASK, TRUE)
 	if(neck)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_NECK, TRUE)
 	if(ears)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_EARS, TRUE)
 	if(glasses)
-		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_ICLOTHING, TRUE)
+		H.equip_to_slot_or_del(SSwardrobe.provide_type(uniform, H), INV_SLOTBIT_EYES, TRUE)
 	if(id)
 		H.equip_to_slot_or_del(SSwardrobe.provide_type(id, H), INV_SLOTBIT_ID, TRUE) //We don't provide ids (Fix this?)
 	if(suit_store)

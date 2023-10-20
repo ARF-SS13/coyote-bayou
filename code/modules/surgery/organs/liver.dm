@@ -46,7 +46,7 @@
 	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
 		to_chat(owner, span_warning("You feel a dull pain in your abdomen."))
 
-/obj/item/organ/liver/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/liver/apply_organ_damage(d,maxHealth)
 	. = ..()
 	if(!. || QDELETED(owner))
 		return
@@ -119,3 +119,6 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	damage += severity
+
+/obj/item/organ/liver/get_availability(datum/species/owner_species, mob/living/owner_mob)
+	return owner_species.mutantliver

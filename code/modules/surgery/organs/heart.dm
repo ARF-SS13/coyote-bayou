@@ -254,3 +254,6 @@ obj/item/organ/heart/cybernetic/upgraded/on_life()
 	name = "synth  heart"
 	desc = "An electronic pump that regulates hydraulic functions, the electronics have EMP shielding."
 	icon_state = "heart-c"
+
+/obj/item/organ/heart/get_availability(datum/species/owner_species, mob/living/owner_mob)
+	return owner_species.mutantheart

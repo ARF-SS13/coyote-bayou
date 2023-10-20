@@ -400,7 +400,7 @@
 			if(prob(20))
 				to_chat(H, span_warning("You feel [hot_message] in your [name]!"))
 
-/obj/item/organ/lungs/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/lungs/apply_organ_damage(d,maxHealth)
 	. = ..()
 	if(!.)
 		return
@@ -552,7 +552,10 @@
 /obj/item/organ/lungs/yamerol/on_life()
 	. = ..()
 	if(.)
-		applyOrganDamage(2) //Yamerol lungs are temporary
+		apply_organ_damage(2) //Yamerol lungs are temporary
+
+/obj/item/organ/lungs/get_availability(datum/species/owner_species, mob/living/owner_mob)
+	return owner_species.mutantlungs
 
 #undef PP
 #undef PP_MOLES

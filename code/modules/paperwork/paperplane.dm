@@ -103,7 +103,7 @@
 			return
 		visible_message(span_danger("\The [src] hits [H] in the eye[eyes ? "" : " socket"]!"))
 		H.adjust_blurriness(6)
-		eyes?.applyOrganDamage(rand(6,8))
+		eyes?.apply_organ_damage(rand(6,8))
 		H.DefaultCombatKnockdown(40)
 		H.emote("scream")
 

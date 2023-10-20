@@ -696,7 +696,7 @@
 		if(C.internal_organs)
 			for(var/organ in C.internal_organs)
 				var/obj/item/organ/O = organ
-				O.setOrganDamage(0)
+				O.set_organ_damage(0)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()

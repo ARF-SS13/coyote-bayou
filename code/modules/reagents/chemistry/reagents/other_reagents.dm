@@ -1286,7 +1286,7 @@
 	if(prob(20))
 		var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
 		if(L)
-			L.applyOrganDamage(2)
+			L.apply_organ_damage(2)
 	..()
 
 /datum/reagent/gold

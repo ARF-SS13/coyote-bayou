@@ -1208,7 +1208,7 @@
 	..()
 	var/obj/item/organ/liver/liber = L.getorganslot(ORGAN_SLOT_LIVER)
 	if(liber)
-		liber.applyOrganDamage(5)
+		liber.apply_organ_damage(5)
 		liber.filterToxins = FALSE
 	L.metabolism_efficiency -= metab_inibition
 
@@ -1216,7 +1216,7 @@
 	..()
 	var/obj/item/organ/liver/liber = L.getorganslot(ORGAN_SLOT_LIVER)
 	if(liber)
-		liber.applyOrganDamage(5)
+		liber.apply_organ_damage(5)
 		if(initial(liber.filterToxins))
 			liber.filterToxins = TRUE
 	L.metabolism_efficiency += metab_inibition

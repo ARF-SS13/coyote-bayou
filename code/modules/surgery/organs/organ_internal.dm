@@ -111,7 +111,7 @@
 	is_cold()
 	if(organ_flags & ORGAN_FROZEN)
 		return
-	applyOrganDamage(maxHealth * decay_factor)
+	apply_organ_damage(maxHealth * decay_factor)
 
 /obj/item/organ/proc/can_decay()
 	//if(CHECK_BITFIELD(organ_flags, ORGAN_NO_SPOIL | ORGAN_SYNTHETIC | ORGAN_FAILING))
@@ -168,7 +168,7 @@
 		///Damage decrements again by a percent of its maxhealth, up to a total of 4 extra times depending on the owner's satiety
 		healing_amount -= owner.satiety > 0 ? 4 * healing_factor * owner.satiety / MAX_SATIETY : 0
 		if(healing_amount)
-			applyOrganDamage(healing_amount) //to FERMI_TWEAK
+			apply_organ_damage(healing_amount) //to FERMI_TWEAK
 	return TRUE
 
 /obj/item/organ/examine(mob/user)
@@ -188,20 +188,30 @@
 /obj/item/organ/item_action_slot_check(slot,mob/user)
 	return //so we don't grant the organ's action to mobs who pick up the organ.
 
-///Adjusts an organ's damage by the amount "d", up to a maximum amount, which is by default max damage
-/obj/item/organ/proc/applyOrganDamage(d, maximum = maxHealth)	//use for damaging effects
-	if(!d || maximum < damage) //Micro-optimization.
-		return FALSE
-	damage = clamp(damage + d, 0, maximum)
-	var/mess = check_damage_thresholds()
+///Adjusts an organ's damage by the amount "damage_amount", up to a maximum amount, which is by default max damage
+/obj/item/organ/proc/apply_organ_damage(damage_amount, maximum = maxHealth, required_organ_flag = NONE) //use for damaging effects
+	if(!damage_amount) //Micro-optimization.
+		return
+	maximum = clamp(maximum, 0, maxHealth) // the logical max is, our max
+	if(maximum < damage)
+		return
+	if(required_organ_flag && !(organ_flags & required_organ_flag))
+		return
+	damage = clamp(damage + damage_amount, 0, maximum)
+	var/mess = check_damage_thresholds(owner)
 	prev_damage = damage
-	if(mess && owner)
-		to_chat(owner, mess)
-	return TRUE
 
-///SETS an organ's damage to the amount "d", and in doing so clears or sets the failing flag, good for when you have an effect that should fix an organ if broken
-/obj/item/organ/proc/setOrganDamage(d)	//use mostly for admin heals
-	applyOrganDamage(d - damage)
+	if(damage >= maxHealth)
+		organ_flags |= ORGAN_FAILING
+	else
+		organ_flags &= ~ORGAN_FAILING
+
+	if(mess && owner && owner.stat <= SOFT_CRIT)
+		to_chat(owner, mess)
+
+///SETS an organ's damage to the amount "damage_amount", and in doing so clears or sets the failing flag, good for when you have an effect that should fix an organ if broken
+/obj/item/organ/proc/set_organ_damage(damage_amount, required_organ_flag = NONE)	//use mostly for admin heals
+	return apply_organ_damage(damage_amount - damage, required_organ_flag)
 
 /** check_damage_thresholds
  * input: M (a mob, the owner of the organ we call the proc on)
@@ -263,7 +273,7 @@
 
 		for(var/obj/item/organ/O in internal_organs)
 			if(O.organ_flags & ORGAN_FAILING)
-				O.setOrganDamage(0)
+				O.set_organ_damage(0)
 				if(only_one)
 					return TRUE
 
@@ -368,3 +378,16 @@
 	var/newtype = pick(list)
 	new newtype(loc)
 	return INITIALIZE_HINT_QDEL
+
+/obj/item/organ/proc/get_availability(datum/species/owner_species, mob/living/owner_mob)
+	return TRUE
+
+/// Called before organs are replaced in regenerate_organs with new ones
+/obj/item/organ/proc/before_organ_replacement(obj/item/organ/replacement)
+	SHOULD_CALL_PARENT(TRUE)
+
+	SEND_SIGNAL(src, COMSIG_ORGAN_BEING_REPLACED, replacement)
+
+	// If we're being replace with an identical type we should take organ damage
+	if(replacement.type == type)
+		replacement.set_organ_damage(damage)

@@ -32,7 +32,7 @@
 	target.set_blindness(0)
 	target.cure_nearsighted(list(EYE_DAMAGE))
 	target.blur_eyes(35)	//this will fix itself slowly.
-	E.setOrganDamage(0)
+	E.set_organ_damage(0)
 	return TRUE
 
 /datum/surgery_step/fix_eyes/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

@@ -1143,7 +1143,7 @@
 		B.brain_death = FALSE
 	for(var/O in internal_organs)
 		var/obj/item/organ/organ = O
-		organ.setOrganDamage(0)
+		organ.set_organ_damage(0)
 	for(var/thing in diseases)
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)

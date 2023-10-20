@@ -45,7 +45,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		C.drunkenness = max((C.drunkenness + (sqrt(volume) * booze_power * ALCOHOL_RATE)), 0) //Volume, power, and server alcohol rate effect how quickly one gets drunk
 		var/obj/item/organ/liver/L = C.getorganslot(ORGAN_SLOT_LIVER)
 		if(L)
-			L.applyOrganDamage((max(sqrt(volume) * (boozepwr ** ALCOHOL_EXPONENT) * L.alcohol_tolerance, 0))/150)
+			L.apply_organ_damage((max(sqrt(volume) * (boozepwr ** ALCOHOL_EXPONENT) * L.alcohol_tolerance, 0))/150)
 	return ..()
 
 /datum/reagent/consumable/ethanol/reaction_obj(obj/O, reac_volume)
@@ -203,7 +203,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				M.adjustBruteLoss(15)
 		else
 			to_chat(M, span_userdanger("You scream in terror as you go blind!"))
-			eyes?.applyOrganDamage(eyes.maxHealth)
+			eyes?.apply_organ_damage(eyes.maxHealth)
 			M.emote("scream")
 
 	if(prob(3) && iscarbon(M))

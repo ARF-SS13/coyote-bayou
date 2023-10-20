@@ -71,7 +71,7 @@
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 50, 199) //MAD SCIENCE
 		for(var/obj/item/organ/O in target.internal_organs)//zap those buggers back to life!
 			if(O.organ_flags & ORGAN_FAILING)
-				O.applyOrganDamage(-5)
+				O.apply_organ_damage(-5)
 		var/list/policies = CONFIG_GET(keyed_list/policyconfig)
 		var/timelimit = CONFIG_GET(number/defib_cmd_time_limit)
 		var/late = timelimit && (tplus > timelimit)

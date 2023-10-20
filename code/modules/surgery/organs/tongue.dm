@@ -93,7 +93,7 @@
 	for(var/datum/accent/speech_modifier in accents)
 		speech_args = speech_modifier.modify_speech(speech_args, source, owner)
 
-/obj/item/organ/tongue/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/tongue/apply_organ_damage(d,maxHealth)
 	. = ..()
 	if(damage >= maxHealth)
 		to_chat(owner, span_userdanger("Your tongue is singed beyond recognition, and disintegrates!"))
@@ -236,7 +236,7 @@
 	initial_accents += pick(phomeme_types)
 	. = ..()
 
-/obj/item/organ/tongue/bone/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/tongue/bone/apply_organ_damage(d,maxHealth)
 	if(d < 0)
 		return
 	if(!owner)
@@ -402,3 +402,6 @@
 	icon_state = "tonguenormal"
 	say_mod = "says"
 	initial_accents = list(/datum/accent/slurry)
+
+/obj/item/organ/tongue/get_availability(datum/species/owner_species, mob/living/owner_mob)
+	return owner_species.mutanttongue

@@ -14,14 +14,14 @@
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 
 	//Just robo looking parts.
-	mutant_heart = /obj/item/organ/heart/gen2synth
+	mutantheart = /obj/item/organ/heart/gen2synth
 	mutantlungs = /obj/item/organ/lungs/gen2synth
 	mutantliver = /obj/item/organ/liver/gen2synth
 	mutantstomach = /obj/item/organ/stomach/gen2synth
 	mutanteyes = /obj/item/organ/eyes/gen2synth
 	mutantears = /obj/item/organ/ears/gen2synth
 	mutanttongue = /obj/item/organ/tongue/robot/gen2synth
-	mutant_brain = /obj/item/organ/brain/gen2synth
+	mutantbrain = /obj/item/organ/brain/gen2synth
 
 	//special cybernetic organ for getting power from apcs
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)

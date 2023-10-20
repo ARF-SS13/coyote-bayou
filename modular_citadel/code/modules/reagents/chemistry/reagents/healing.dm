@@ -16,7 +16,7 @@
 	var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 
 	if(T)
-		T.applyOrganDamage(-2)
+		T.apply_organ_damage(-2)
 	if(L)
 		C.adjustOrganLoss(ORGAN_SLOT_LUNGS, -5)
 		C.adjustOxyLoss(-2)
@@ -84,7 +84,7 @@
 	var/obj/item/organ/lungs/L = C.getorganslot(ORGAN_SLOT_LUNGS)
 
 	if(T)
-		T.applyOrganDamage(1)
+		T.apply_organ_damage(1)
 	if(L)
 		C.adjustOrganLoss(ORGAN_SLOT_LUNGS, 4)
 		C.adjustOxyLoss(3)
@@ -152,7 +152,7 @@
 			data["injected_vol"] = reac_volume
 			var/obj/item/organ/heart/H = C.getorganslot(ORGAN_SLOT_HEART)
 			if(H && data["grown_volume"] > 50 && H.organ_flags & ORGAN_FAILING)
-				H.applyOrganDamage(-20)
+				H.apply_organ_damage(-20)
 	..()
 
 /datum/reagent/synthtissue/on_mob_life(mob/living/carbon/C)

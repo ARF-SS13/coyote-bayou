@@ -52,7 +52,7 @@
 		to_chat(victim, span_heavy_brass("\"It looks like Nar'Sie's dogs really don't value their eyes.\""))
 		to_chat(victim, span_userdanger("Your eyes explode with horrific pain!"))
 		victim.emote("scream")
-		eyes?.applyOrganDamage(eyes.maxHealth)
+		eyes?.apply_organ_damage(eyes.maxHealth)
 		victim.adjust_blurriness(30)
 		victim.adjust_blindness(30)
 		return TRUE
@@ -146,10 +146,10 @@
 		if(GLOB.ratvar_awakens)
 			H.cure_nearsighted(list(EYE_DAMAGE))
 			H.cure_blind(list(EYE_DAMAGE))
-			eyes?.applyOrganDamage(-eye_damage_done)
+			eyes?.apply_organ_damage(-eye_damage_done)
 			eye_damage_done = 0
 		else if(prob(50) && eye_damage_done)
-			eyes?.applyOrganDamage(-1)
+			eyes?.apply_organ_damage(-1)
 			eye_damage_done = max(0, eye_damage_done - 1)
 		if(!eye_damage_done)
 			qdel(src)
@@ -158,7 +158,7 @@
 	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 	if(HAS_TRAIT(H, TRAIT_BLIND) || !eyes)
 		return
-	eyes.applyOrganDamage(0.5)
+	eyes.apply_organ_damage(0.5)
 	eye_damage_done += 0.5
 	if(eye_damage_done >= 20)
 		H.adjust_blurriness(2)
@@ -169,7 +169,7 @@
 	if(eye_damage_done >= blind_breakpoint)
 		if(!HAS_TRAIT(H, TRAIT_BLIND))
 			to_chat(H, span_nzcrentr_large("A piercing white light floods your vision. Suddenly, all goes dark!"))
-		eyes.applyOrganDamage(eyes.maxHealth)
+		eyes.apply_organ_damage(eyes.maxHealth)
 
 	if(prob(min(20, 5 + eye_damage_done)))
 		to_chat(H, "<span class='nzcrentr_small'><i>Your eyes continue to burn.</i></span>")

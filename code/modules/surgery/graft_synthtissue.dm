@@ -63,10 +63,10 @@
 
 /datum/surgery_step/graft_synthtissue/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] successfully grafts synthtissue to [chosen_organ].", span_notice("You succeed in grafting 10u of the synthflesh to the [chosen_organ]."))
-	chosen_organ.applyOrganDamage(-health_restored)
+	chosen_organ.apply_organ_damage(-health_restored)
 	return TRUE
 
 /datum/surgery_step/graft_synthtissue/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message(span_warning("[user] accidentally damages part of [chosen_organ]!"), span_warning("You damage [chosen_organ]! Apply more synthtissue if it's run out."))
-	chosen_organ.applyOrganDamage(10)
+	chosen_organ.apply_organ_damage(10)
 	return FALSE

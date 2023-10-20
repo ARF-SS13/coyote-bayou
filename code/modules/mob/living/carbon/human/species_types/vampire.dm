@@ -8,7 +8,7 @@
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "tail_human" = "None", "ears" = "None", "deco_wings" = "None")
 	exotic_bloodtype = "U"
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
-	mutant_heart = /obj/item/organ/heart/vampire
+	mutantheart = /obj/item/organ/heart/vampire
 	mutanttongue = /obj/item/organ/tongue/vampire
 	blacklisted = TRUE
 	limbs_id = "human"

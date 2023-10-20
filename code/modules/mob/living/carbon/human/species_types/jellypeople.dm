@@ -6,7 +6,7 @@
 	say_mod = "chirps"
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,WINGCOLOR,HAS_FLESH)
 	mutantlungs = /obj/item/organ/lungs/slime
-	mutant_heart = /obj/item/organ/heart/slime
+	mutantheart = /obj/item/organ/heart/slime
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "mam_tail" = "None", "mam_ears" = "None", "mam_snouts" = "None", "taur" = "None", "deco_wings" = "None", "legs" = "Plantigrade")
 	inherent_traits = list(TRAIT_TOXINLOVER)
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
@@ -24,7 +24,7 @@
 	heatmod = 0.5 // = 1/4x heat damage
 	burnmod = 0.5 // = 1/2x generic burn damage
 	species_language_holder = /datum/language_holder/jelly
-	mutant_brain = /obj/item/organ/brain/jelly
+	mutantbrain = /obj/item/organ/brain/jelly
 
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"

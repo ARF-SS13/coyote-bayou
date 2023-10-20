@@ -129,7 +129,7 @@
 			return
 
 		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
-		setOrganDamage((damage - (0.10 * maxHealth)*(N.volume/10)))	//heals a small amount, and by using "setorgandamage", we clear the failing variable if that was up
+		set_organ_damage((damage - (0.10 * maxHealth)*(N.volume/10)))	//heals a small amount, and by using "set_organ_damage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
 
 		if(cached_Bdamage <= HEALTH_THRESHOLD_DEAD) //Fixing dead brains yeilds a trauma
@@ -159,7 +159,7 @@
 			return
 
 		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
-		setOrganDamage((damage - (0.05 * maxHealth)*(M.volume/10)))	//heals a small amount, and by using "setorgandamage", we clear the failing variable if that was up
+		set_organ_damage((damage - (0.05 * maxHealth)*(M.volume/10)))	//heals a small amount, and by using "set_organ_damage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
 		return
 
@@ -224,7 +224,7 @@
 	else
 		..()
 
-/obj/item/organ/brain/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/brain/apply_organ_damage(d,maxHealth,)
 	. = ..()
 	if(!. || !owner)
 		return

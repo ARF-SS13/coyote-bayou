@@ -155,7 +155,7 @@
 	C.update_sight() 	// Added 9/2/19
 	for(var/O in C.internal_organs) //owner.current.adjust_eye_damage(-100)  // This was removed by TG
 		var/obj/item/organ/organ = O
-		organ.setOrganDamage(0)
+		organ.set_organ_damage(0)
 	owner.current.cure_husk()
 
 // I am thirsty for blud!

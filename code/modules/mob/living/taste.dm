@@ -47,7 +47,7 @@
 	if(!istype(from))
 		return
 	if ((from.pH > 12.5) || (from.pH < 1.5))
-		T.applyOrganDamage(5)
+		T.apply_organ_damage(5)
 		to_chat(src, span_warning("You taste chemical burns!"))
 	if(istype(T, /obj/item/organ/tongue/cybernetic))
 		to_chat(src, span_notice("Your tongue moves on it's own in response to the liquid."))

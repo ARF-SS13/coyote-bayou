@@ -138,7 +138,7 @@
 	if(O && !(status_flags & GODMODE))
 		if(!maximum)
 			maximum = O.maxHealth
-		O.applyOrganDamage(amount, maximum)
+		O.apply_organ_damage(amount, maximum)
 		O.onDamage(amount, maximum)
 
 /** setOrganLoss
@@ -150,7 +150,7 @@
 /mob/living/carbon/setOrganLoss(slot, amount)
 	var/obj/item/organ/O = getorganslot(slot)
 	if(O && !(status_flags & GODMODE))
-		O.setOrganDamage(amount)
+		O.set_organ_damage(amount)
 		O.onSetDamage(amount)
 
 /** getOrganLoss
@@ -169,7 +169,7 @@
 			continue
 		if(!maximum)
 			maximum = O.maxHealth
-		O.applyOrganDamage(amount, maximum)
+		O.apply_organ_damage(amount, maximum)
 		O.onDamage(amount, maximum)
 
 /mob/living/carbon/proc/getFailingOrgans()

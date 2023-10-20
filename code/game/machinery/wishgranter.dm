@@ -77,7 +77,7 @@
 					user.dna.add_mutation(BLINDMUT)
 					var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
 					if(eyes)
-						eyes.applyOrganDamage(eyes.maxHealth)
+						eyes.apply_organ_damage(eyes.maxHealth)
 					var/list/destinations = list()
 					for(var/obj/item/beacon/B in GLOB.teleportbeacons)
 						var/turf/T = get_turf(B)

@@ -53,7 +53,7 @@
 			target.gain_trauma_type(BRAIN_TRAUMA_SPECIAL, TRAUMA_RESILIENCE_SURGERY)
 	// you're cutting off a part of the brain.w
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
-	B.applyOrganDamage(50, 100)
+	B.apply_organ_damage(50, 100)
 	return TRUE
 
 /datum/surgery_step/lobotomize/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -62,7 +62,7 @@
 		display_results(user, target, span_warning("You remove the wrong part, causing more damage!"),
 			"[user] successfully lobotomizes [target]!",
 			"[user] completes the surgery on [target]'s brain.")
-		B.applyOrganDamage(80)
+		B.apply_organ_damage(80)
 		switch(rand(1,3))
 			if(1)
 				target.gain_trauma_type(BRAIN_TRAUMA_MILD, TRAUMA_RESILIENCE_LOBOTOMY)

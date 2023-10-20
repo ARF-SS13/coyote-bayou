@@ -86,7 +86,7 @@
 		C.update_sight()
 
 
-/obj/item/organ/eyes/applyOrganDamage(d, maximum = maxHealth)
+/obj/item/organ/eyes/apply_organ_damage(d,maxHealth)
 	. = ..()
 	if(!.)
 		return
