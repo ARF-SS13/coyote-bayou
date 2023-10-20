@@ -20,7 +20,7 @@
 				(I.w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED))
 				attempt_dual_wield(usr, I, J, DUAL_WIELDING_AGILE_FORCE)  //actually initiate dual wielding! 
 				return
-			else if(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			if(I.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED && J.w_class <= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
 				attempt_dual_wield(usr, I, J, DUAL_WIELDING_ENCUMBERED_FORCE)  //actually initiate dual wielding! but for wielding 2 swords we are doing less damage
 				return
 
