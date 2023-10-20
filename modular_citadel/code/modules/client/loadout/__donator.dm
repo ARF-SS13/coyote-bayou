@@ -426,15 +426,25 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/bedsheet/cult(src)
 
-/datum/gear/donator/kits/ckey
+/datum/gear/donator/kits/Delta_DavGrunt
     name = "Grunt-Cop Kit"
-    path = /obj/item/storage/box/large/custom_kit/Delta_Dav
-    ckeywhitelist = list("Delta_Dav")
+    path = /obj/item/storage/box/large/custom_kit/Delta_DavGrunt
+    ckeywhitelist = list("delta_dav")
 
-/obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
+/obj/item/storage/box/large/custom_kit/Delta_DavGrunt/PopulateContents()
     new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
     new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
     new /obj/item/clothing/accessory/armband/black(src)
+
+/datum/gear/donator/kits/Delta_DavTrek
+	name = "Voyager Equipment Kit"
+	path = /obj/item/storage/box/large/custom_kit/Delta_DavTrek
+	ckeywhitelist = list("delta_dav")
+
+/obj/item/storage/box/large/custom_kit/Delta_DavTrek/PopulateContents()
+	new /obj/item/clothing/under/trek/medsci/voy(src)
+	new /obj/item/gun/energy/laser/pistol/phaser(src)
+	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
 // E
 
@@ -1572,7 +1582,7 @@
 	ckeywhitelist = list("delta_dav")
 
 /obj/item/storage/box/large/custom_kit/deltadav/PopulateContents()
-	new /obj/item/clothing/under/trek/medsci(src)
+	new /obj/item/clothing/under/trek/medsci/voy(src)
 	new /obj/item/gun/energy/laser/pistol/phaser(src)
 	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
