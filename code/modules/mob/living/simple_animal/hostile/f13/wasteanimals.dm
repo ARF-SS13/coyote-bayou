@@ -15,7 +15,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -141,7 +141,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -307,7 +307,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -409,7 +409,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -478,7 +478,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 6,
 		/obj/item/stack/sheet/animalhide/gecko = 2)
-	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -625,7 +625,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -700,7 +700,7 @@
 	retreat_distance = 8
 	minimum_distance = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
@@ -840,7 +840,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -901,7 +901,7 @@
 	speak_chance = 0
 	turns_per_move = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
@@ -963,7 +963,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
 		/obj/item/feather = 3)
-	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"

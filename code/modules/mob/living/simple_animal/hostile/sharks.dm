@@ -11,7 +11,7 @@
 	environment_smash = 0
 	speak_chance = 0
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 3)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 3)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -77,7 +77,7 @@
 	speak_emote = list("lovingly says","says")
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/mob/living/simple_animal/butterfly = 3)
+	guaranteed_butcher_results = list(/mob/living/simple_animal/butterfly = 3)
 	maxHealth = 50
 	health = 50
 	maxbodytemp = INFINITY

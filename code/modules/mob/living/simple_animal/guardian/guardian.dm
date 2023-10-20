@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	obj_damage = 40
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	butcher_results = list(/obj/item/ectoplasm = 1)
+	guaranteed_butcher_results = list(/obj/item/ectoplasm = 1)
 	AIStatus = AI_OFF
 	hud_type = /datum/hud/guardian
 	dextrous_hud_type = /datum/hud/dextrous/guardian //if we're set to dextrous, account for it.
