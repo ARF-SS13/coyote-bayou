@@ -916,8 +916,8 @@
 	name = "horsenettle cream"
 	desc = "A healing \"paste\" made by mashing up horsenettle with a |rock| to \"soothe\" bruises."
 
-	icon_state = "horse_cream" // It isn't white by the way
-	self_delay = 20
+	icon_state = "horse_cream_good" // It isn't white by the way
+	self_delay = 50
 	other_delay = 10
 	novariants = TRUE
 	is_open = TRUE
@@ -948,10 +948,10 @@
 
 /obj/item/stack/medical/mesh/horsecream/goodcream
 	name = "horsenettle remedy"
-	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Datura extract helps numb the pain."
+	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Doesn't hurt as much as straight horsenettle."
 
-	icon_state = "horse_cream_good" // This is how veggie dino nuggets are made
-	self_delay = 20
+	icon_state = "horse_cream" // This is how veggie dino nuggets are made
+	self_delay = 50
 	other_delay = 10
 	novariants = TRUE
 	is_open = TRUE
@@ -972,12 +972,13 @@
 
 
 // gonna try and get a little quirky here
-/obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
-	if(M.getBruteLoss())
-		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
-		M.emote("augh")
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
-	return
+///obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
+//	if(M.getBruteLoss())
+//		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+//		M.emote("augh") // It was kinda getting a bit annoying, plus it makes you augh even if you're using it on someone else!
+//		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
+//	return
+
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)
 // ------------------
