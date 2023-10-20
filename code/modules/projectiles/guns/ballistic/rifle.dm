@@ -636,7 +636,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // will see if it's too much
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // will see if it's too much // It seems T5 was too much
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -653,6 +653,37 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
+
+/obj/item/gun/ballistic/rifle/antique/gross
+	name = "sawed off Gras"
+	desc = "A very old black powder cartridge gun of French lineage. Unfortunately, it evidently did not survive its journey here."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "gross"
+	item_state = "308-sawn"
+	mag_type = /obj/item/ammo_box/magazine/internal/gras
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // T1 or T0 just make it a downgrade to the sawed off hunting rifle
+	init_recoil = RIFLE_RECOIL(3, 2) // Say goodbye your to kneecaps chucklenuts
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO // There ain't no got dang sights
+	can_scope = TRUE
+	scope_state = "scope_mosin"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = FALSE
+	cock_sound = 'sound/f13weapons/grasbolt.ogg'
+	fire_sound = 'sound/f13weapons/gras.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/gun/ballistic/rifle/antique/gross/marty
+	name = "sawed off Martini Henry"
+	desc = "The shortened version of the shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "marty"
 
 /obj/item/gun/ballistic/rifle/antique/gras/laserfusil
 	name = "Fusil Energie"

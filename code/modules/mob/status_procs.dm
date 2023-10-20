@@ -121,9 +121,11 @@
 
 ///Adjust the body temperature of a mob, with min/max settings
 /mob/proc/adjust_bodytemperature(amount,min_temp=0,max_temp=INFINITY)
+	bodytemperature = initial(bodytemperature)
+	/*
 	if(bodytemperature >= min_temp && bodytemperature <= max_temp)
 		bodytemperature = clamp(bodytemperature + amount,min_temp,max_temp)
-
+	*/
 /////////////////////////////////// FIRE DELAY ////////////////////////////////////
 
 /mob/proc/IsWeaponDrawDelayed() //non-living mobs shouldn't be stunned

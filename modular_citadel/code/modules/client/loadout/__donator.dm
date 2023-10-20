@@ -1392,7 +1392,7 @@
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
-	new /obj/item/clothing/under/rank/security/officer/skirt(src)
+	new /obj/item/clothing/under/dress/skirt/polychromic/pleated(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -1565,6 +1565,16 @@
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
 	new /obj/item/defibrillator/compact(src)
+
+/datum/gear/donator/kits/deltadav
+	name = "Voyager Equipment Kit"
+	path = /obj/item/storage/box/large/custom_kit/deltadav
+	ckeywhitelist = list("delta_dav")
+
+/obj/item/storage/box/large/custom_kit/deltadav/PopulateContents()
+	new /obj/item/clothing/under/trek/medsci(src)
+	new /obj/item/gun/energy/laser/pistol/phaser(src)
+	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
 /datum/gear/donator/kits/rattles
 	name = "Box of Rattlers"
