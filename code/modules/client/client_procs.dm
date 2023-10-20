@@ -590,6 +590,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	)
 	if(!query_client_in_db.Execute())
 		qdel(query_client_in_db)
+		SSmouse_entered.hovers -= src
 		return
 
 	//If we aren't an admin, and the flag is set
