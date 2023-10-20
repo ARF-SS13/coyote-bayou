@@ -58,23 +58,70 @@
 	item_state = "utility_ce"
 
 /obj/item/storage/belt/utility/full/engi/PopulateContents()
-	new /obj/item/screwdriver/power(src)
-	new /obj/item/crowbar/power(src)
-	new /obj/item/weldingtool/experimental(src)//This can be changed if this is too much
-	new /obj/item/multitool(src)
-	new /obj/item/stack/cable_coil(src,30,pick("blue"))
-	new /obj/item/extinguisher/mini(src)
-	new /obj/item/analyzer/ranged(src)
+	SSwardrobe.provide_type(/obj/item/screwdriver/power, src)
+	SSwardrobe.provide_type(/obj/item/crowbar/power, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/experimental, src)//This can be changed if this is too much //It's been 5 years
+	SSwardrobe.provide_type(/obj/item/multitool, src)
+	SSwardrobe.provide_type(/obj/item/stack/cable_coil, src)
+	SSwardrobe.provide_type(/obj/item/extinguisher/mini, src)
+	SSwardrobe.provide_type(/obj/item/analyzer, src)
 	//much roomier now that we've managed to remove two tools
 
+/obj/item/storage/belt/utility/chief/full/get_types_to_preload()
+	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
+	to_preload += /obj/item/screwdriver/power
+	to_preload += /obj/item/crowbar/power
+	to_preload += /obj/item/weldingtool/experimental
+	to_preload += /obj/item/multitool
+	to_preload += /obj/item/stack/cable_coil
+	to_preload += /obj/item/extinguisher/mini
+	to_preload += /obj/item/analyzer
+	return to_preload
+
+
 /obj/item/storage/belt/utility/full/PopulateContents()
-	new /obj/item/screwdriver(src)
-	new /obj/item/wrench(src)
-	new /obj/item/weldingtool(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
-	new /obj/item/multitool(src)
-	new /obj/item/stack/cable_coil(src,30,pick("red"))
+SSwardrobe.provide_type(/obj/item/screwdriver, src)
+	SSwardrobe.provide_type(/obj/item/wrench, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool, src)
+	SSwardrobe.provide_type(/obj/item/crowbar, src)
+	SSwardrobe.provide_type(/obj/item/wirecutters, src)
+	SSwardrobe.provide_type(/obj/item/multitool, src)
+	SSwardrobe.provide_type(/obj/item/stack/cable_coil, src)
+
+/obj/item/storage/belt/utility/full/get_types_to_preload()
+	SSwardrobe.provide_type(/obj/item/screwdriver, src)
+	SSwardrobe.provide_type(/obj/item/wrench, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/largetank, src)
+	SSwardrobe.provide_type(/obj/item/crowbar, src)
+	SSwardrobe.provide_type(/obj/item/wirecutters, src)
+	SSwardrobe.provide_type(/obj/item/multitool, src)
+	SSwardrobe.provide_type(/obj/item/stack/cable_coil, src)
+
+/obj/item/storage/belt/utility/full/engi/get_types_to_preload()
+	SSwardrobe.provide_type(/obj/item/screwdriver, src)
+	SSwardrobe.provide_type(/obj/item/wrench, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool, src)
+	SSwardrobe.provide_type(/obj/item/crowbar, src)
+	SSwardrobe.provide_type(/obj/item/wirecutters, src)
+	SSwardrobe.provide_type(/obj/item/t_scanner, src)
+	SSwardrobe.provide_type(/obj/item/extinguisher/mini, src)
+
+/obj/item/storage/belt/utility/atmostech/get_types_to_preload()
+	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
+	to_preload += /obj/item/screwdriver
+	to_preload += /obj/item/wrench
+	to_preload += /obj/item/weldingtool
+	to_preload += /obj/item/crowbar
+	to_preload += /obj/item/wirecutters
+	to_preload += /obj/item/t_scanner
+	to_preload += /obj/item/extinguisher/mini
+	return to_preload
+
+/obj/item/storage/belt/utility/syndicate
+	preload = FALSE
+
+/obj/item/storage/belt/utility/full/powertools
+	preload = FALSE
 
 // Wasteland toolbelt
 /obj/item/storage/belt/utility/waster
@@ -88,6 +135,7 @@
 	new /obj/item/weldingtool/basic(src)
 	new /obj/item/wirecutters/basic(src)
 	new /obj/item/stack/cable_coil(src,30,pick("yellow","orange"))
+
 
 // Forgemaster toolbelt (made to make the old chainsaw 2h component bearable, phase out unless needed, wasteland toobelt should suffice)
 /obj/item/storage/belt/utility/waster/forgemaster

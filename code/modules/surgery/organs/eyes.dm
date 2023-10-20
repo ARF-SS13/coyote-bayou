@@ -6,6 +6,7 @@
 	name = BODY_ZONE_PRECISE_EYES
 	icon_state = "eyeballs"
 	desc = "I see you!"
+	visual = TRUE
 	zone = BODY_ZONE_PRECISE_EYES
 	slot = ORGAN_SLOT_EYES
 	gender = PLURAL
@@ -442,6 +443,11 @@
 	owner.flash_act(visual = 1)
 	if(severity >= 70)
 		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+
+//Gotta reset the eye color, because that persists
+/obj/item/organ/eyes/enter_wardrobe()
+	. = ..()
+	eye_color = initial(eye_color)
 
 #undef BLURRY_VISION_ONE
 #undef BLURRY_VISION_TWO

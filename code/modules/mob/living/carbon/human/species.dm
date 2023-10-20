@@ -131,6 +131,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	COOLDOWN_DECLARE(ass) // dont ask
 
+//Should we preload this species's organs?
+	var/preload = TRUE
+
+
 ///////////
 // PROCS //
 ///////////
@@ -191,6 +195,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//if(rank in GLOB.command_positions) Left as an example: The format qualifies for rank takes.
 	//	return 0 //It returns false when it runs the proc so they don't get jobs from the global list.
 	return 1 //It returns 1 to say they are a-okay to continue.
+
+/datum/species/proc/regenerate_organs(mob/living/carbon/C, datum/species/old_species, replace_current = TRUE, list/excluded_zones, visual_only = FALSE)
 
 //Will regenerate missing organs
 /datum/species/proc/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE)

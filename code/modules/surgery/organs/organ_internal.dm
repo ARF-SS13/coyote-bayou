@@ -25,6 +25,8 @@
 	var/now_fixed
 	var/high_threshold_cleared
 	var/low_threshold_cleared
+	///Do we effect the appearance of our mob. Used to save time in preference code
+	var/visual = TRUE
 
 	///When you take a bite you cant jam it in for surgery anymore.
 	var/useable = TRUE
@@ -35,6 +37,11 @@
 	if(organ_flags & ORGAN_EDIBLE)
 		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GROSS, null, 10, null, null, null, CALLBACK(src, .proc/OnEatFrom))
 	START_PROCESSING(SSobj, src)
+
+//See above
+/obj/item/organ/proc/enter_wardrobe()
+	STOP_PROCESSING(SSobj, src)
+
 
 /obj/item/organ/Destroy()
 	if(owner)

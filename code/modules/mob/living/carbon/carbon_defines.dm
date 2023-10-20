@@ -16,6 +16,9 @@
 
 	var/disgust = 0
 
+	/// Only load in visual organs
+	var/visual_only_organs = FALSE
+
 //inventory slots
 	var/obj/item/back = null
 	var/obj/item/clothing/mask/wear_mask = null

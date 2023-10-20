@@ -3,6 +3,7 @@
 /obj/item/organ/lungs
 	name = "lungs"
 	desc = "Looking at them makes you start manual breathing."
+	visuas = FALSE
 	icon_state = "lungs"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_LUNGS

@@ -9,6 +9,8 @@
 
 /obj/item/implant/uplink/Initialize(mapload, _owner)
 	. = ..()
+	if(!uplink_flag)
+		uplink_flag = src.uplink_flag
 	AddComponent(/datum/component/uplink, _owner, TRUE, FALSE, null, starting_tc)
 
 /obj/item/implanter/uplink

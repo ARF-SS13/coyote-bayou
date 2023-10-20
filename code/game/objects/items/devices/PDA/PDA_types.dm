@@ -90,14 +90,14 @@
 /obj/item/pda/heads/rd
 	name = "research director PDA"
 	default_cartridge = /obj/item/cartridge/rd
-	inserted_item = /obj/item/pen/fourcolor
+	insert_type = /obj/item/pen/fourcolor
 	icon_state = "pda-rd"
 	skindex = "Research Director PDA"
 
 /obj/item/pda/captain
 	name = "captain PDA"
 	default_cartridge = /obj/item/cartridge/captain
-	inserted_item = /obj/item/pen/fountain/captain
+	insert_type = /obj/item/pen/fountain/captain
 	icon_state = "pda-captain"
 	detonatable = FALSE
 	skindex = "Captain PDA"
@@ -105,7 +105,7 @@
 /obj/item/pda/lieutenant
 	name = "lieutenant PDA"
 	default_cartridge = /obj/item/cartridge/captain
-	inserted_item = /obj/item/pen/fountain/captain
+	insert_type = /obj/item/pen/fountain/captain
 	icon_state = "pda-lieutenant"
 	ttone = "bwoink"
 	detonatable = FALSE
@@ -122,7 +122,7 @@
 /obj/item/pda/quartermaster
 	name = "quartermaster PDA"
 	default_cartridge = /obj/item/cartridge/quartermaster
-	inserted_item = /obj/item/pen/fountain
+	insert_type = /obj/item/pen/fountain
 	icon_state = "pda-qm"
 	skindex = "Quartermaster PDA"
 
@@ -148,7 +148,7 @@
 /obj/item/pda/lawyer
 	name = "lawyer PDA"
 	default_cartridge = /obj/item/cartridge/lawyer
-	inserted_item = /obj/item/pen/fountain
+	insert_type = /obj/item/pen/fountain
 	icon_state = "pda-lawyer"
 	ttone = "objection"
 	skindex = "Lawyer PDA"
@@ -173,7 +173,7 @@
 	silent = TRUE //Quiet in the library!
 	// current_overlays = list("pda-r-library","blank","id_overlay","insert_overlay", "light_overlay", "pai_overlay")
 	// default_cartridge = /obj/item/cartridge/curator
-	// inserted_item = /obj/item/pen/fountain
+	// insert_type = /obj/item/pen/fountain
 	// overlays_offsets = list('icons/obj/pda.dmi' = list(-3,0))
 	// overlays_x_offset = -3
 	skindex = "Curator PDA"
@@ -201,7 +201,7 @@
 /obj/item/pda/bar
 	name = "bartender PDA"
 	icon_state = "pda-bartender"
-	inserted_item = /obj/item/pen/fountain
+	insert_type = /obj/item/pen/fountain
 	skindex = "Bartender PDA"
 
 /obj/item/pda/atmos
@@ -226,6 +226,6 @@
 	name = "refurbished Teach-Boy 2000"
 	desc = "A portable microcomputer by RobCo Industries. This model is a EDU-2 series educational device- or atleast that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
 	icon_state = "pda-teachboy-unfolded"
-	inserted_item = /obj/item/pen/charcoal
+	insert_type = /obj/item/pen/charcoal
 	skindex = "Teachboy PDA"
 
