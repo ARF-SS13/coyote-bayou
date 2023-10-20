@@ -8,7 +8,7 @@
 	health = 10
 	attack_verb_continuous = "nibbles" //their teeth are just for gripping food, not used for self defense nor even chewing
 	attack_verb_simple = "nibble"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"

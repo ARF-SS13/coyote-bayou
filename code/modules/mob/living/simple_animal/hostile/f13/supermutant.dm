@@ -117,7 +117,7 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "punches"
-//	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
+//	guaranteed_butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'

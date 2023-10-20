@@ -59,7 +59,7 @@ Difficulty: Medium
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/swoop_cooldown = 0
@@ -399,7 +399,7 @@ Difficulty: Medium
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	loot = list()
 	crusher_loot = list()
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
 	return

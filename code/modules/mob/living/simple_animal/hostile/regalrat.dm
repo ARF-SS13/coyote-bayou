@@ -11,7 +11,7 @@
 	health = 70
 	see_in_dark = 5
 	obj_damage = 10
-	butcher_results = list(/obj/item/clothing/head/crown = 1,)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/crown = 1,)
 	response_help_continuous = "glares at"
 	response_help_simple = "glare at"
 	response_disarm_continuous = "skoffs at"
@@ -186,7 +186,7 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
