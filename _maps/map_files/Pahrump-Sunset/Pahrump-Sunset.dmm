@@ -60676,6 +60676,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"ktq" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "ktr" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -68567,6 +68575,17 @@
 	icon_state = "verticalleftborderleft2bottom"
 	},
 /area/f13/wasteland/city)
+"mgl" = (
+/obj/item/paper_bin{
+	pixel_y = 7;
+	pixel_x = -5
+	},
+/obj/item/pen,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/library)
 "mgn" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -127122,7 +127141,7 @@ eUQ
 lQu
 icw
 nmt
-gVe
+mgl
 gVe
 lBl
 hJz
@@ -127379,7 +127398,7 @@ pRC
 wJZ
 jFv
 nmt
-gVe
+ktq
 gVe
 qFJ
 rol
