@@ -13,6 +13,7 @@
 	icon = 'icons/fallout/objects/kitchen.dmi'
 	lefthand_file = 'icons/fallout/onmob/tools/kitchen_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/kitchen_righthand.dmi'
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/kitchen/fork
 	name = "fork"
@@ -101,7 +102,7 @@
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."
 	icon_state = "rolling_pin"
-	force = 8
+	force = 16
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 7
@@ -109,6 +110,7 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = PRICE_ALMOST_CHEAP
+	
 
 /obj/item/melee/onehanded/club/fryingpan/pot
 	name = "Small Pot"
