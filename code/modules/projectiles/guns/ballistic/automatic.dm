@@ -2754,6 +2754,29 @@
 	can_suppress = TRUE
 	can_bayonet = FALSE
 
+/obj/item/gun/ballistic/automatic/g36custom
+	name = "Custom G36C Assault rifle"
+	desc = "A custom version of a G36C assault rifle. Chambered in 5.56 NATO, this customized G36C assault rifle is made from a more resistant and durable type of material. Sporting a black and white finish. Adorning the metal bits of the gun, including the exterior of the barrel, are engraved baroque motifs. The gun comes with a built in red dot sight manufactured into the carry handle. A reliable assault rifle that saw extensive use by West Germany. The charging handle can flip between left or right side. This one seems to be fitted to the right side for a more right-side handed charging handle."
+	icon_state = "g36"
+	item_state = "g36"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556
+	init_mag_type = /obj/item/ammo_box/magazine/m556
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
+	max_upgrades = 2
+	can_suppress = TRUE
+	can_bayonet = FALSE
+
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
  * Baseline 7.62 autorifle
