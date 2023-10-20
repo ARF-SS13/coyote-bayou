@@ -279,6 +279,14 @@
 				if(ticket)
 					ticket.Reject(tgs_tagged)
 					return "Ticket #[ticket.id] successfully rejected"
+			if("approved")
+				if(ticket)
+					ticket.Reject(tgs_tagged)
+					return "Ticket #[ticket.id] successfully rejected"
+			if("denied")
+				if(ticket)
+					ticket.Reject(tgs_tagged)
+					return "Ticket #[ticket.id] successfully rejected"
 			if("reopen")
 				if(ticket)
 					return "Error: [target] already has ticket #[ticket.id] open"

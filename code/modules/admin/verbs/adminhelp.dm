@@ -476,6 +476,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			HandleIssue()
 		if("reopen")
 			Reopen()
+		if("approved")
+			Resolve()
+		if("denied")
+			Resolve()
 
 //
 // TICKET STATCLICK
@@ -747,6 +751,13 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may try again.</font>")
 		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is yes.")
 
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "approved")
+	var/msg = "Ticket [TicketHref("#[id]")] approved by [key_name]"
+	message_admins(msg)
+	log_admin_private(msg)
+	AddInteraction("Approved by [key_name].")
+	Close(silent = TRUE)
+
 //Quick negative to yes or no questions
 /datum/admin_help/proc/Negative(key_name = key_name_admin(usr))
 	if(state != AHELP_ACTIVE)
@@ -761,4 +772,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may try again.</font>")
 		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is no.")
 
-
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "denied")
+	var/msg = "Ticket [TicketHref("#[id]")] request denied by [key_name]"
+	message_admins(msg)
+	log_admin_private(msg)
+	AddInteraction("Denied by [key_name].")
+	Close(silent = TRUE)
