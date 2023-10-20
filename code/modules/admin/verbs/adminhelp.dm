@@ -748,7 +748,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
 
 		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp greenlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
-		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may try again.</font>")
+		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")
 		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is yes.")
 
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "approved")
@@ -769,7 +769,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
 
 		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp redlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
-		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may try again.</font>")
+		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")
 		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is no.")
 
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "denied")
