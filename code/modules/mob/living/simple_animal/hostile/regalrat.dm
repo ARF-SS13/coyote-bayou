@@ -198,6 +198,8 @@
 	desc_short = "Squeak!"
 	pop_required_to_jump_into = 0	
 	var/is_smol = FALSE
+	/// If not cheesy, don't add to the cheeserats list
+	var/cheesy = FALSE
 
 	variation_list = list(
 		MOB_SPEED_LIST(1.5, 1.8, 2.0),
@@ -247,7 +249,8 @@
 
 /mob/living/simple_animal/hostile/rat/Initialize()
 	. = ..()
-	// SSmobs.cheeserats += src
+	if(cheesy)
+		SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/mob_holder, "mouse_gray")
 	if(!is_smol)
@@ -319,7 +322,8 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/rat/Destroy()
-	SSmobs.cheeserats -= src
+	if(cheesy)
+		SSmobs.cheeserats -= src
 	return ..()
 
 /mob/living/simple_animal/hostile/rat/examine(mob/user)
