@@ -245,7 +245,10 @@
 "White Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/white,
 "Purple Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/purple,
 "Red Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/red,
-"Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green
+"Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green,
+"thrumbo" = /mob/living/simple_animal/cow/brahmin/thrumbo,
+"tamed triceratops" = /mob/living/simple_animal/cow/brahmin/molerat/trike,
+"tamed yaoguai" = /mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai
 )
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon

@@ -1044,6 +1044,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_SPREAD_NORMAL 1
 #define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
+#define GUN_SPREAD_SUPERAWFUL (GUN_SPREAD_NORMAL * 4)
 
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
@@ -1073,7 +1074,8 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_LESS_DAMAGE_T3 0.75
 #define GUN_LESS_DAMAGE_T4 0.65
 #define GUN_LESS_DAMAGE_T5 0.50
-#define GUN_LESS_DAMAGE_T6 0.25
+#define GUN_LESS_DAMAGE_T6 0.35
+#define GUN_LESS_DAMAGE_T7 0.25
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
