@@ -118,7 +118,7 @@ SUBSYSTEM_DEF(mobs)
 	if(!isturf(get_turf(dropper)))
 		return
 	if(LAZYLEN(guaranteed_table))
-		drop_guaranteed
+		drop_guaranteed(dropper)
 		if(only_guaranteed)
 			return
 	if(LAZYLEN(rare_table) && prob(rare_chance))
@@ -149,7 +149,7 @@ SUBSYSTEM_DEF(mobs)
 		var/turf/droplocation = dropper.drop_location() || get_turf(dropper) //Where the shit gets plopped
 		if(!droplocation) //if no droppers?
 			return //then fuck off
-		thing_to_drop = new(drop_location) //re-delivery engaged
+		thing_to_drop = new(droplocation) //re-delivery engaged
 		afterdrop_common(dropper, thing_to_drop) // If no delivery can be made then these two can fuck off and get married somewhere/when else
 
 
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(mobs)
 	//Uncommon drops//
 	//////////////////
 /datum/mob_loot_table/proc/drop_uncommon(mob/living/dropper) //containers for dropped junk
-	var/num_drops = uncommon_drop_amount_is_random ? prob(1, uncommon_drop_amount) || uncommon_drop_amount
+	var/num_drops = uncommon_drop_amount_is_random ? prob(1, uncommon_drop_amount) : uncommon_drop_amount
 	for(var/i in 1 to num_drops)
 		var/atom/thing_to_drop //atom/obj/butt = weight
 		if(uncommon_is_weighted) //uncommon_is_weighted = true
@@ -167,14 +167,14 @@ SUBSYSTEM_DEF(mobs)
 		var/turf/droplocation = dropper.drop_location() || get_turf(dropper)  //Where the shit gets plopped
 		if(!droplocation)
 			return
-		thing_to_drop = new(drop_location)
+		thing_to_drop = new(droplocation)
 		afterdrop_uncommon(dropper, thing_to_drop)
 
 	//////////////
 	//Rare drops//
 	//////////////
 /datum/mob_loot_table/proc/drop_rare(mob/living/dropper) //containers for dropped junk
-	var/num_drops = rare_drop_amount_is_random ? prob(1, rare_drop_amount) || rare_drop_amount
+	var/num_drops = rare_drop_amount_is_random ? prob(1, rare_drop_amount) : rare_drop_amount
 	for(var/i in 1 to num_drops)
 		var/atom/thing_to_drop //atom/obj/butt = weight
 		if(rare_is_weighted) //rare_is_weighted = true
@@ -184,17 +184,17 @@ SUBSYSTEM_DEF(mobs)
 		var/turf/droplocation = dropper.drop_location() || get_turf(dropper)  //Where the shit gets plopped
 		if(!droplocation)
 			return
-		thing_to_drop = new(drop_location)
+		thing_to_drop = new(droplocation)
 		afterdrop_rare(dropper, thing_to_drop)
 
 /datum/mob_loot_table/proc/drop_guaranteed(mob/living/dropper) //containers for dropped junk
-	var/list/g_table = guaranteed_list.Copy()
-	while(LAYZYLEN(g_table))
+	var/list/g_table = guaranteed_table.Copy()
+	while(LAZYLEN(g_table))
 		var/atom/thing_to_drop = pickweight_n_reduce(g_table) //rare_is_weighted = false
 		var/turf/droplocation = dropper.drop_location() || get_turf(dropper)  //Where the shit gets plopped
 		if(!droplocation)
 			return
-		thing_to_drop = new(drop_location)
+		thing_to_drop = new(droplocation)
 		afterdrop_guaranteed(dropper, thing_to_drop)
 
 
@@ -241,7 +241,7 @@ SUBSYSTEM_DEF(mobs)
 		if(DINGLE_HIGH to INFINITY)
 			snd = 'sound/items/dropped/coin_high.ogg'
 	cash.safe_throw_at(thrat, 10, 1, dropper) //throw the money off the dropper
-	playsound(cash, snd, 50, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(pitch, 0, 0)) //funny sound magic
+	playsound(cash, snd, 50, vary = FALSE, frequency = SOUND_FREQ_NORMALIZED(cash.pitch, 0, 0)) //funny sound magic
 
 #undef DINGLE_LOW
 #undef DINGLE_MED

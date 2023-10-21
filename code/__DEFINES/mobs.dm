@@ -647,4 +647,4 @@
 #define CURRENT_DEAD_PLAYERS	"dead_players_list"
 #define CURRENT_OBSERVERS		"current_observers_list"
 
-#define LOOTTABLE_TRASH_HUMNOID "trash_man" // da trash man
+#define LOOTTABLE_TRASH_HUMANOID "trash_man" // da trash man
