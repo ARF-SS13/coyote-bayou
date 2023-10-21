@@ -41,6 +41,9 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
+	supereffective_damage = BULLET_DAMAGE_PISTOL_22_HANDLOAD
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /* rubber pellet
  * DAMAGE: 1
  * STAMIN: 11
