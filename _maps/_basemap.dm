@@ -4,14 +4,14 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "_maps/map_files/coyote-bayou/Dungeons.dmm"
-		#include "_maps/map_files/coyote-bayou/Texarkana_underground.dmm"
-		#include "_maps/map_files/coyote-bayou/Nash_and_Texarkana.dmm"
-		#include "_maps/map_files/coyote-bayou/Nash_and_Texarkana-Upper.dmm"
-		#include "_maps/map_files/coyote-bayou/Nash_and_Texarkana-Upper-2.dmm"
-		#include "_maps/map_files/coyote-bayou/Redwater.dmm"
-		#include "_maps/map_files/coyote-bayou/Redwater-Upper.dmm"
-		#include "_maps/map_files/coyote-bayou/Ashdown.dmm"
+		#include "map_files/coyote-bayou/Dungeons.dmm"
+		#include "map_files/coyote-bayou/Texarkana_underground.dmm"
+		#include "map_files/coyote-bayou/Nash_and_Texarkana.dmm"
+		#include "map_files/coyote-bayou/Nash_and_Texarkana-Upper.dmm"
+		#include "map_files/coyote-bayou/Nash_and_Texarkana-Upper-2.dmm"
+		#include "map_files/coyote-bayou/Redwater.dmm"
+		#include "map_files/coyote-bayou/Redwater-Upper.dmm"
+		#include "map_files/coyote-bayou/Ashdown.dmm"
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif
