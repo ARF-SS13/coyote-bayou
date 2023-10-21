@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(mobs)
 /datum/controller/subsystem/mobs/Initialize(timeofday)
 	init_loot_tables()
 	..()
-	to_chat(world, span_boldalert("Built [LAZYLEN(loot_tables)] loot tables! =3"))
+	to_chat(world, span_boldannounce("Built [LAZYLEN(loot_tables)] loot tables! =3"))
 
 /datum/controller/subsystem/mobs/proc/init_loot_tables()
 	if(LAZYLEN(loot_tables))
