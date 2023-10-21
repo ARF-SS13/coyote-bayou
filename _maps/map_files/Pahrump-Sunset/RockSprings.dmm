@@ -9474,17 +9474,10 @@
 	},
 /area/f13/building/tribal/cave)
 "dlP" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
-	},
-/mob/living/simple_animal/hostile/raider{
-	name = "Lil Johnny Runner Legs";
-	minimum_distance = 4
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/redwater)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bar)
 "dlU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/junk/jukebox,
@@ -18309,10 +18302,13 @@
 	},
 /area/f13/building)
 "gqQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bar)
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "gqR" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
@@ -20499,8 +20495,9 @@
 "heX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/molerat,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+	icon_state = "whiteyellowrustychess"
 	},
 /area/f13/building)
 "hfe" = (
@@ -59583,13 +59580,18 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "uIx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/molerat,
-/turf/open/floor/f13{
-	icon_state = "whiteyellowrustychess"
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
 	},
-/area/f13/building)
+/mob/living/simple_animal/hostile/raider{
+	name = "Lil Johnny Runner Legs";
+	minimum_distance = 12;
+	retreat_distance = 12
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/redwater)
 "uIy" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -60548,13 +60550,12 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland/town)
 "uZz" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/molerat,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/redwater)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building)
 "uZF" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -89610,7 +89611,7 @@ tss
 tss
 tss
 fHN
-uZz
+gqQ
 nsy
 nbV
 bVz
@@ -90118,7 +90119,7 @@ gcp
 cVG
 fiu
 jzd
-uIx
+heX
 jeV
 wFM
 lHO
@@ -95749,7 +95750,7 @@ kBz
 giw
 dSl
 sWm
-dlP
+uIx
 vLL
 itx
 itx
@@ -122502,7 +122503,7 @@ wXg
 dUT
 knh
 xBB
-gqQ
+dlP
 aAt
 fKo
 pKJ
@@ -122760,7 +122761,7 @@ dUT
 rHd
 rsL
 slc
-gqQ
+dlP
 rHd
 ftj
 fNt
@@ -123017,7 +123018,7 @@ mby
 hqL
 ngj
 oEF
-gqQ
+dlP
 gSG
 wkj
 ejD
@@ -132673,7 +132674,7 @@ tRd
 mBS
 sHq
 dwn
-heX
+uZz
 sHq
 uln
 sHq
@@ -133444,7 +133445,7 @@ tRd
 mBS
 sHq
 sPv
-heX
+uZz
 lWG
 sHq
 qrO
