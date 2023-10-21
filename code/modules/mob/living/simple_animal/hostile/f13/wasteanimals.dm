@@ -24,6 +24,7 @@
 	speed = 0
 	maxHealth = 35
 	health = 35
+	low_health_threshold = 0.5
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 4
@@ -125,6 +126,32 @@
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
+
+/mob/living/simple_animal/hostile/gecko/make_low_health()
+	speed *= 1.3
+	move_to_delay *= 0.5
+	melee_damage_lower *= 0.5
+	melee_damage_upper *= 0.7
+	see_in_dark += 8
+	sound_pitch += 25
+	alternate_attack_prob = 75
+	is_low_health = TRUE
+	vary = FALSE
+	retreat_distance = 12
+	minimum_distance = 10
+
+/// Override this with what should happen when going from low health to high health
+/mob/living/simple_animal/hostile/gecko/make_high_health()
+	speed = initial(speed)
+	move_to_delay = initial(move_to_delay)
+	melee_damage_lower = initial(melee_damage_lower)
+	melee_damage_upper = initial(melee_damage_upper)
+	see_in_dark = initial(see_in_dark)
+	alternate_attack_prob = initial(alternate_attack_prob)
+	is_low_health = FALSE
+	vary = TRUE
+	retreat_distance = initial(retreat_distance)
+	minimum_distance = initial(minimum_distance)
 
 //Fire Geckos//
 
