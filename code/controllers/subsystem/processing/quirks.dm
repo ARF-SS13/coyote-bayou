@@ -42,9 +42,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	SetupQuirks()
 	return ..()
 
-/// from this point forward, I'm gonna do all my procs in CamelCase
-/// why? Well.........
-
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 	/// Will give us a list of all quirks, sorted by point value, then name
 	/// Will solve a lot of sorting issues later, i swear
@@ -807,4 +804,3 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	// 	list("Fast Clawer", "Big Clawer", "Play Clawer", "Spicy Clawer","Razor Clawer"),
 	// ) // not // got em // fingerguns
 
-/// .......I felt like it =3
