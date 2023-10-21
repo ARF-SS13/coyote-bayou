@@ -26,13 +26,12 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
-	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
+	loot = LOOTTABLE_TRASH_HUMANOID
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 2
 	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
 	loot_amount_random = TRUE
 	/// slots in a list of trash loot
-	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 2
 	melee_queue_distance = 5
@@ -49,10 +48,7 @@
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
 
-/mob/living/simple_animal/hostile/raider/Initialize()
-	. = ..()
-	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
+
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"

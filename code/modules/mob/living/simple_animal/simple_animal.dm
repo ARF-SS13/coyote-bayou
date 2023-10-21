@@ -128,11 +128,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/sentience_type = SENTIENCE_ORGANIC
 
 	///list of things spawned at mob's loc when it dies.
-	var/list/loot = list()
-	///How do we handle the loot list? Should be either MOB_LOOT_ALL or a number. If its a number, use an associated weighted list for `loot`!
-	var/loot_drop_amount = MOB_LOOT_ALL
-	///Drop a random number, 1 through loot_drop_amount? only applicable if loot_drop_amount is a number
-	var/loot_amount_random = TRUE
+	var/loot
+	// ///How do we handle the loot list? Should be either MOB_LOOT_ALL or a number. If its a number, use an associated weighted list for `loot`!
+	// var/loot_drop_amount = MOB_LOOT_ALL
+	// ///Drop a random number, 1 through loot_drop_amount? only applicable if loot_drop_amount is a number
+	// var/loot_amount_random = TRUE
 	///causes mob to be deleted on death, useful for mobs that spawn lootable corpses.
 	var/del_on_death = FALSE
 	var/deathmessage = ""
@@ -706,7 +706,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 		GLOB.mob_spawners -= initial(name)
 
-	drop_loot()
+	// drop_loot()
+	SSmobs.drop_loot(src, loot)
 	if(dextrous)
 		drop_all_held_items()
 	if(!gibbed)
