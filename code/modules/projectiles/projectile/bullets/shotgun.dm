@@ -22,6 +22,9 @@
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
+	supereffective_damage = BULLET_DAMAGE_PISTOL_22
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 
 //ratshot pellet: 6 damage instead of 8, fewer pellets. would make many tiny damage pellets but performance
 /obj/item/projectile/bullet/pellet/shotgun_ratshot
@@ -40,6 +43,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	supereffective_damage = BULLET_DAMAGE_PISTOL_22_HANDLOAD
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* rubber pellet
  * DAMAGE: 1
@@ -66,6 +72,13 @@
 	sharpness = SHARP_NONE
 	embedding = null
 
+	//Each pellet does the same damage as handloaded buckshot to mobs, but rubbershot gets 2 more pellets.
+	//This does mean theres no reason to print handloaded buckshot unless you're hunting men.
+	//However, you can find handloaded buckshot in the trash, you can't find rubbershot.
+	//This means that you'll always be paying to use rubbershot, whereas handloaded buckshot is often a freebie.
+	supereffective_damage = BULLET_DAMAGE_PISTOL_22_HANDLOAD
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /* handload pellet
  * DAMAGE: 8
  * STAMIN: 1
@@ -87,6 +100,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	supereffective_damage = BULLET_DAMAGE_PISTOL_22_HANDLOAD
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -172,6 +188,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION
+
+	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* train
  * DAMAGE: 20
