@@ -29,7 +29,7 @@
 
 /obj/item/ammo_casing/energy/plasma/bouncy
 	projectile_type = /obj/item/projectile/energy/nuclear_particle/plasmabounce
-	e_cost = 1000
+	e_cost = 1500 // 20 shots
 
 /obj/item/ammo_casing/energy/plasmacarbine
 	projectile_type = /obj/item/projectile/plasmacarbine

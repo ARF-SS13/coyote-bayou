@@ -10,7 +10,7 @@
 	emote_see = list("dozes off.", "looks around sleepily.")
 	speak_chance = 1
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 3)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 3)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -47,5 +47,5 @@
 	icon_living = "cool_sloth"
 	icon_dead = "cool_sloth_dead"
 	gender = FEMALE
-	butcher_results = list(/obj/item/toy/spinningtoy = 1)
+	guaranteed_butcher_results = list(/obj/item/toy/spinningtoy = 1)
 	gold_core_spawnable = NO_SPAWN

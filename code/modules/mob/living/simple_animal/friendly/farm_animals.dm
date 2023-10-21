@@ -18,7 +18,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -136,7 +136,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -475,7 +475,7 @@
 /mob/living/simple_animal/cow/wisdom
 	name = "wisdom cow"
 	desc = "Known for its wisdom, shares it with all"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/wisdomcow = 1) //truly the best meat
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/wisdomcow = 1) //truly the best meat
 	gold_core_spawnable = FALSE
 	speak_chance = 10 //the cow is eager to share its wisdom! //but is wise enough to not lag  the server too bad
 	milk_reagent = /datum/reagent/medicine/liquid_wisdom
@@ -506,7 +506,7 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 2
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 1)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -561,7 +561,7 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	response_help_continuous  = "pets"
@@ -727,7 +727,7 @@
 		/obj/item/stack/sheet/animalhide/brahmin = 3,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -774,7 +774,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -818,7 +818,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -861,7 +861,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
 		/obj/item/stack/sheet/bone = 3
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 3,
 		/obj/item/stack/sheet/bone = 2
@@ -912,7 +912,7 @@
 		/obj/item/stack/sheet/metal/ten = 1,
 		/obj/structure/tires/two = 1
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/stack/sheet/metal/ten = 1,
 		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
 		/obj/structure/tires/two = 1
@@ -958,7 +958,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
@@ -1017,7 +1017,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1073,7 +1073,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1127,7 +1127,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1188,7 +1188,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 2,
 		/obj/item/stack/sheet/bone = 1
 		)
@@ -1252,7 +1252,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -1295,7 +1295,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
@@ -1503,7 +1503,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/radstag = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 
 	response_help_simple  = "pets"
@@ -1545,7 +1545,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 3)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
