@@ -9474,10 +9474,17 @@
 	},
 /area/f13/building/tribal/cave)
 "dlP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bar)
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
+	},
+/mob/living/simple_animal/hostile/raider{
+	name = "Lil Johnny Runner Legs";
+	minimum_distance = 4
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/redwater)
 "dlU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/junk/jukebox,
@@ -29033,6 +29040,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/molerat,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -35499,6 +35507,7 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "mma" = (
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -39584,7 +39593,6 @@
 	},
 /area/f13/wasteland/redwater)
 "nNT" = (
-/obj/structure/nest/molerat,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -59575,9 +59583,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "uIx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/molerat,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland/redwater)
+/turf/open/floor/f13{
+	icon_state = "whiteyellowrustychess"
+	},
+/area/f13/building)
 "uIy" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib3-old"
@@ -60536,12 +60548,13 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland/town)
 "uZz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/area/f13/building)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "uZF" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -65676,7 +65689,6 @@
 "wOC" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/redwater)
 "wOP" = (
@@ -88820,7 +88832,7 @@ bFR
 bFR
 bFR
 bFR
-bFR
+dWW
 bFR
 bFR
 bFR
@@ -89335,7 +89347,7 @@ fHN
 tss
 tss
 tss
-wFM
+kqN
 tss
 bFR
 bFR
@@ -89598,7 +89610,7 @@ tss
 tss
 tss
 fHN
-eWW
+uZz
 nsy
 nbV
 bVz
@@ -90106,7 +90118,7 @@ gcp
 cVG
 fiu
 jzd
-cVG
+uIx
 jeV
 wFM
 lHO
@@ -91387,12 +91399,12 @@ bFR
 xWj
 aeM
 qNA
-uIx
+hni
 qFd
 hni
 jqS
 qNA
-uIx
+hni
 iEL
 wFM
 wFM
@@ -95737,7 +95749,7 @@ kBz
 giw
 dSl
 sWm
-itx
+dlP
 vLL
 itx
 itx
@@ -122490,7 +122502,7 @@ wXg
 dUT
 knh
 xBB
-dlP
+gqQ
 aAt
 fKo
 pKJ
@@ -123005,7 +123017,7 @@ mby
 hqL
 ngj
 oEF
-dlP
+gqQ
 gSG
 wkj
 ejD
@@ -132661,7 +132673,7 @@ tRd
 mBS
 sHq
 dwn
-uZz
+heX
 sHq
 uln
 sHq
