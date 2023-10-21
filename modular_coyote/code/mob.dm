@@ -22,7 +22,7 @@
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
 	death_sound = list('sound/f13npc/hellpig/hellpigdead.ogg',)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/reagent_containers/food/snacks/meat/rawbacon = 8)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2,)
 	butcher_difficulty = 1
 
 /mob/living/simple_animal/hostile/hellpig/Initialize()
@@ -355,7 +355,7 @@
 	turns_per_move = 3
 	maxHealth = 100
 	health = 100
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -437,7 +437,7 @@
 	turns_per_move = 3
 	maxHealth = 100
 	health = 100
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -455,7 +455,7 @@
 	turns_per_move = 3
 	maxHealth = 100
 	health = 100
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
 
 /mob/living/simple_animal/uffalo/Initialize()
 	. = ..()

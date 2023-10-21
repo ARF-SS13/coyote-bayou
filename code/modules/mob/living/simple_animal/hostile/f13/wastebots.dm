@@ -475,7 +475,7 @@
 	response_disarm_simple = "pushes"
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
-	butcher_results = list(/obj/effect/gibspawner/robot = 1)
+	guaranteed_butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
 
 /mob/living/simple_animal/hostile/handy/assaultron

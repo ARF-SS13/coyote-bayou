@@ -11,7 +11,7 @@
 	health = 70
 	see_in_dark = 5
 	obj_damage = 10
-	butcher_results = list(/obj/item/clothing/head/crown = 1,)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/crown = 1,)
 	response_help_continuous = "glares at"
 	response_help_simple = "glare at"
 	response_disarm_continuous = "skoffs at"
@@ -186,7 +186,7 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	density = FALSE
 	ventcrawler = VENTCRAWLER_ALWAYS
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
@@ -198,6 +198,8 @@
 	desc_short = "Squeak!"
 	pop_required_to_jump_into = 0	
 	var/is_smol = FALSE
+	/// If not cheesy, don't add to the cheeserats list
+	var/cheesy = FALSE
 
 	variation_list = list(
 		MOB_SPEED_LIST(1.5, 1.8, 2.0),
@@ -247,7 +249,8 @@
 
 /mob/living/simple_animal/hostile/rat/Initialize()
 	. = ..()
-	// SSmobs.cheeserats += src
+	if(cheesy)
+		SSmobs.cheeserats += src
 	AddComponent(/datum/component/swarming)
 	AddElement(/datum/element/mob_holder, "mouse_gray")
 	if(!is_smol)
@@ -319,7 +322,8 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/rat/Destroy()
-	SSmobs.cheeserats -= src
+	if(cheesy)
+		SSmobs.cheeserats -= src
 	return ..()
 
 /mob/living/simple_animal/hostile/rat/examine(mob/user)

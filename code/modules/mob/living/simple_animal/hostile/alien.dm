@@ -21,7 +21,7 @@
 	response_disarm_simple = "shove"
 	response_harm_continuous = "hits"
 	response_harm_simple = "hit"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	speak_emote = list("hisses")
@@ -94,7 +94,7 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	move_to_delay = 4
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
 							/obj/item/stack/sheet/animalhide/xeno = 1)
 	projectiletype = /obj/item/projectile/neurotox
 	projectilesound = 'sound/weapons/pierce.ogg'
@@ -144,7 +144,7 @@
 	move_to_delay = 4
 	maxHealth = 400
 	health = 400
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
 							/obj/item/stack/sheet/animalhide/xeno = 2)
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN

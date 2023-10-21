@@ -359,8 +359,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 	sever_link_to_nest()
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)
