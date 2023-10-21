@@ -4,7 +4,7 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files/Pahrump-Sunset/Dungeons.dmm"
+		#include "map_files/coyote-bayou/Dungeons.dmm"
 		#include "map_files/coyote-bayou/Texarkana_underground.dmm"
 		#include "map_files/coyote-bayou/Nash_and_Texarkana.dmm"
 		#include "map_files/coyote-bayou/Nash_and_Texarkana-Upper.dmm"
