@@ -250,6 +250,9 @@
 
 /atom/movable/screen/parallax_layer/Initialize(mapload, view)
 	. = ..()
+	// Parallax layers are independant of hud, they care about client
+	// Not doing this will just create a bunch of hard deletes
+	hud = null
 	if (!view)
 		view = world.view
 	update_o(view)
