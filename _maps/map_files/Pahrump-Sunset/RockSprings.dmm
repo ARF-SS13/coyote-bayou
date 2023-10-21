@@ -18302,10 +18302,13 @@
 	},
 /area/f13/building)
 "gqQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bar)
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/redwater)
 "gqR" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
@@ -20492,8 +20495,9 @@
 "heX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/molerat,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+	icon_state = "whiteyellowrustychess"
 	},
 /area/f13/building)
 "hfe" = (
@@ -29033,6 +29037,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/molerat,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -35499,6 +35504,7 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "mma" = (
+/obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
@@ -39584,7 +39590,6 @@
 	},
 /area/f13/wasteland/redwater)
 "nNT" = (
-/obj/structure/nest/molerat,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -59575,8 +59580,17 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "uIx" = (
-/obj/structure/nest/molerat,
-/turf/open/indestructible/ground/outside/road,
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
+	},
+/mob/living/simple_animal/hostile/raider{
+	name = "Lil Johnny Runner Legs";
+	minimum_distance = 12;
+	retreat_distance = 12
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/wasteland/redwater)
 "uIy" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -65676,7 +65690,6 @@
 "wOC" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/redwater)
 "wOP" = (
@@ -88820,7 +88833,7 @@ bFR
 bFR
 bFR
 bFR
-bFR
+dWW
 bFR
 bFR
 bFR
@@ -89335,7 +89348,7 @@ fHN
 tss
 tss
 tss
-wFM
+kqN
 tss
 bFR
 bFR
@@ -89598,7 +89611,7 @@ tss
 tss
 tss
 fHN
-eWW
+gqQ
 nsy
 nbV
 bVz
@@ -90106,7 +90119,7 @@ gcp
 cVG
 fiu
 jzd
-cVG
+heX
 jeV
 wFM
 lHO
@@ -91387,12 +91400,12 @@ bFR
 xWj
 aeM
 qNA
-uIx
+hni
 qFd
 hni
 jqS
 qNA
-uIx
+hni
 iEL
 wFM
 wFM
@@ -95737,7 +95750,7 @@ kBz
 giw
 dSl
 sWm
-itx
+uIx
 vLL
 itx
 itx
@@ -122748,7 +122761,7 @@ dUT
 rHd
 rsL
 slc
-gqQ
+dlP
 rHd
 ftj
 fNt
@@ -133432,7 +133445,7 @@ tRd
 mBS
 sHq
 sPv
-heX
+uZz
 lWG
 sHq
 qrO
