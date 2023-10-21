@@ -96,7 +96,7 @@ SUBSYSTEM_DEF(mobs)
 	var/rare_is_weighted = TRUE
 	var/list/rare_table = list()
 
-/datum/mob_loot_table/new() //smelly table all the loot is stored in
+/datum/mob_loot_table/New() //smelly table all the loot is stored in
 	init_common()
 	init_uncommon()
 	init_rare()
@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(mobs)
 	//Common drops//
 	////////////////
 /datum/mob_loot_table/proc/drop_common(mob/living/dropper) //containers for dropped junk
-	var/num_drops = common_drop_amount_is_random ? prob(1, common_drop_amount) : common_drop_amount
+	var/num_drops = common_drop_amount_is_random ? rand(1, common_drop_amount) : common_drop_amount
 	for(var/i in 1 to num_drops)
 		var/atom/thing_to_drop //atom/obj/butt = weight
 		if(common_is_weighted) //common_is_weighted = true
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(mobs)
 	//Uncommon drops//
 	//////////////////
 /datum/mob_loot_table/proc/drop_uncommon(mob/living/dropper) //containers for dropped junk
-	var/num_drops = uncommon_drop_amount_is_random ? prob(1, uncommon_drop_amount) : uncommon_drop_amount
+	var/num_drops = uncommon_drop_amount_is_random ? rand(1, uncommon_drop_amount) : uncommon_drop_amount
 	for(var/i in 1 to num_drops)
 		var/atom/thing_to_drop //atom/obj/butt = weight
 		if(uncommon_is_weighted) //uncommon_is_weighted = true
@@ -174,7 +174,7 @@ SUBSYSTEM_DEF(mobs)
 	//Rare drops//
 	//////////////
 /datum/mob_loot_table/proc/drop_rare(mob/living/dropper) //containers for dropped junk
-	var/num_drops = rare_drop_amount_is_random ? prob(1, rare_drop_amount) : rare_drop_amount
+	var/num_drops = rare_drop_amount_is_random ? rand(1, rare_drop_amount) : rare_drop_amount
 	for(var/i in 1 to num_drops)
 		var/atom/thing_to_drop //atom/obj/butt = weight
 		if(rare_is_weighted) //rare_is_weighted = true
