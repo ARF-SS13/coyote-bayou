@@ -37,6 +37,9 @@
 
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
+	//Was this item rotated? if so, how much? (only working with Edit Vars verb for now)
+	var/is_tilted
+
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("anchored")
