@@ -394,6 +394,20 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+
+/obj/item/clothing/head/toxbattlehelmet
+	name = "Holy Void Priestess Hjalmur"
+	desc = "A custom X99 skull-carapace also knowna as a full plated helmet. The helmet is made to fit the smaller snouts of anthros, mainly feline or flat faced onces. The helmet bears icelandic runes on the interior while the exterior is engraved with Void sigils. The tag on the padded and comfortable inside reads 'Tox Mckit' "
+	icon_state = "sistertoxhelm"
+	item_state = "sistertoxhelm"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	armor_tokens = list( ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	speechspan = SPAN_ROBOT
+
 //medieval and old helmets
 
 /obj/item/clothing/head/medievalhelmets
