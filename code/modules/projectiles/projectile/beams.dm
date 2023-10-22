@@ -112,7 +112,7 @@
 	damage_list = list("20" = 30, "25" = 50, "30" = 20)
 	flag = "energy"
 	damage_type = "burn"
-	irradiate = 200 //incase friendly fire
+	irradiate = 400 // rad armor is easy to get; testing showed its old value to be basically useless
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF
 
@@ -414,10 +414,17 @@
 	damage = 40
 	irradiate = 200
 
-/obj/item/projectile/beam/laser/ultra_rifle //unused
-	name = "laser beam"
-	damage = 45
-	irradiate = 200
+/obj/item/projectile/beam/laser/ultra_rifle
+	name = "ultracite beam"
+	damage = 32
+	damage_list = list("28" = 30, "32" = 50, "37" = 20)
+	hitscan = TRUE
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
+	light_color = LIGHT_COLOR_GREEN
+	tracer_type = /obj/effect/projectile/tracer/xray
+	muzzle_type = /obj/effect/projectile/muzzle/xray
+	impact_type = /obj/effect/projectile/impact/xray
+	irradiate = 300
 
 /obj/item/projectile/beam/laser/gatling //Gatling Laser Projectile
 	name = "rapid-fire laser beam"
@@ -483,7 +490,7 @@
 	name = "laser beam"
 	damage = 20
 	damage_list = list( "18" = 30, "20" = 70)
-	
+
 	icon_state = "arcane_barrage"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
 	light_color = LIGHT_COLOR_PURPLE
@@ -870,7 +877,7 @@
 /obj/item/projectile/beam/laser/tg/nuclear
 	name = "nuclear laser bolt"
 	icon_state = "xray"
-	irradiate = 200
+	irradiate = 300
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 	tracer_type = /obj/effect/projectile/tracer/xray
