@@ -192,6 +192,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
+	/// obey the variation requests
+	var/vary = TRUE
 	/// has the mob been lazarused?
 	var/lazarused = FALSE
 	/// Who lazarused this mob?
