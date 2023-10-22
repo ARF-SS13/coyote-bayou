@@ -8,7 +8,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "vault_dweller"
 	icon_living = "vault_dweller"
-	icon_dead = "vault_dweller"
+	icon_dead = "vault_dweller_dead"
 	turns_per_move = 5
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	response_help_simple = "pokes"
@@ -31,7 +31,6 @@
 	faction = list("vault", "city")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak_chance = 1
 	despawns_when_lonely = FALSE
 	ignore_other_mobs = TRUE // we fight
@@ -57,34 +56,34 @@
 /mob/living/simple_animal/hostile/vault/dweller/dweller1
 	icon_state = "vault_dweller1"
 	icon_living = "vault_dweller1"
-	icon_dead = "vault_dweller1"
+	icon_dead = "vault_dweller1_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller2
 	icon_state = "vault_dweller2"
 	icon_living = "vault_dweller2"
-	icon_dead = "vault_dweller2"
+	icon_dead = "vault_dweller2_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller3
 	icon_state = "vault_dweller3"
 	icon_living = "vault_dweller3"
-	icon_dead = "vault_dweller3"
+	icon_dead = "vault_dweller3_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller4
 	icon_state = "vault_dweller4"
 	icon_living = "vault_dweller4"
-	icon_dead = "vault_dweller4"
+	icon_dead = "vault_dweller4_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller5
 	icon_state = "vault_dweller5"
 	icon_living = "vault_dweller5"
-	icon_dead = "vault_dweller5"
+	icon_dead = "vault_dweller5_dead"
 
 /mob/living/simple_animal/hostile/vault/security
 	name = "Vault Security"
 	desc = "Just a Vault Security"
 	icon_state = "vault_dweller_sec"
 	icon_living = "vault_dweller_sec"
-	icon_dead = "vault_dweller_sec"
+	icon_dead = "vault_dweller_sec_dead"
 	maxHealth = 160
 	health = 160
 	retreat_distance = 5
@@ -131,7 +130,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "enclave_specialist"
 	icon_living = "enclave_specialist"
-	del_on_death = TRUE
+	icon_dead = "enclave_specialist_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
@@ -185,6 +184,7 @@
 	desc = "An Enclave Scientist wearing an advanced radiation suit. While they may run from you, that does not exempt them from the evil they have committed."
 	icon_state = "enclave_scientist"
 	icon_living = "enclave_scientist"
+	icon_dead = "enclave_scientist_dead"
 	maxHealth = 120
 	health = 120
 	minimum_distance = 10
@@ -275,7 +275,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
-	icon_dead = "bs_knight"
+	icon_dead = "bs_knight_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	faction = list("BOS")
 	turns_per_move = 5
@@ -298,7 +298,6 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Semper Invicta!")
 	speak_emote = list("rushes")
 	speak_chance = 1
@@ -320,7 +319,7 @@
 	desc = "A Brotherhood Knight wielding a laser pistol and older issue Brotherhood combat armor."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
-	icon_dead = "bs_knight"
+	icon_dead = "bs_knight_dead"
 	retreat_distance = 5
 	minimum_distance = 5
 	loot = list()
@@ -344,7 +343,7 @@
 	desc = "A Paladin equipped with an AER9 and T-51b power armor. The Brotherhood has arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
-	icon_dead = "bs_paladin"
+	icon_dead = "bs_paladin_dead"
 	retreat_distance = 5
 	minimum_distance = 5
 	loot = list()
@@ -386,7 +385,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
-	icon_dead = "ncr_trooper"
+	icon_dead = "ncr_trooper_dead"
 	faction = list("NCR")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
@@ -409,7 +408,6 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Patrolling the Mojave almost makes you wish for a nuclear winter.", "When I got this assignment I was hoping there would be more gambling.", "It's been a long tour, all I can think about now is going back home.", "You know, if you were serving, you'd probably be halfway to general by now.", "You oughtta think about enlisting. We need you here.")
 	speak_emote = list("says")
 	speak_chance = 1
@@ -516,7 +514,6 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Ave, true to Caesar.", "True to Caesar.", "Ave, Amicus.", "The new slave girls are quite beautiful.", "Give me cause, Profligate.", "Degenerates like you belong on a cross.")
 	speak_emote = list("says")
 	speak_chance = 1
