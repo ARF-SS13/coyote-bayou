@@ -4,6 +4,7 @@
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "chinesesoldier"
 	icon_living = "chinesesoldier"
+	icon_dead = "chinesesoldier_dead"
 	icon_gib = "syndicate_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
@@ -26,7 +27,6 @@
 	faction = list("china")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = 1
 	tastes = list("people" = 1, "dust" = 2)
 
 /mob/living/simple_animal/hostile/chinese/Aggro()
@@ -40,6 +40,7 @@
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"
 	icon_living = "chinesepistol"
+	icon_dead = "chinesepistol_dead"
 	loot = list()
 	ranged = 1
 	maxHealth = 110
@@ -63,6 +64,7 @@
 	name = "chinese remnant assault soldier"
 	icon_state = "chineseassault"
 	icon_living = "chineseassault"
+	icon_dead = "chineseassault_dead"
 	maxHealth = 160
 	health = 160
 	extra_projectiles = 2
