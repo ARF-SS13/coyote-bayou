@@ -49,6 +49,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun,
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
+		/obj/item/gun/ballistic/rifle/mosin/mini,
 		)
 
 /datum/export/item/commongun

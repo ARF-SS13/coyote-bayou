@@ -536,6 +536,21 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/obj/item/gun/ballistic/rifle/mosin/mini
+	name = "Mini-mosin"
+	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/twentytwo
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
+/obj/item/gun/ballistic/rifle/mosin/mini/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
 
 /* * * * * * * * * * *
  * Laser Mosin Bolt-Action Rifle
