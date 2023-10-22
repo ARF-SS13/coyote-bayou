@@ -10,9 +10,6 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
-	if(!mob)
-		return
-
 	if(!(prefs.chat_toggles & CHAT_OOC))
 		to_chat(src, span_danger(" You have OOC muted."))
 		return
