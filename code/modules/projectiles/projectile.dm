@@ -124,7 +124,7 @@
 	var/damage_low
 	/// Define them both! Also the damage list takes priority
 	var/damage_high
-	var/crit_sound = 'sound/weapons/dink.ogg'
+	var/crit_sound = 'sound/weapons/crit.ogg'
 	var/dink_sound = 'sound/weapons/dink.ogg'
 
 	/// multipliers caused by the shooter
@@ -1072,7 +1072,10 @@
 		var/newdam = pickweight(damage_list)
 		if(istext(newdam) && isnum(text2num(newdam)))
 			damage = text2num(newdam)
-		if(damage == LAZYACCESS(damage_list, LAZYLEN(damage_list)))
+		var/critdam = LAZYACCESS(damage_list, LAZYLEN(damage_list))
+		if(istext(critdam) && isnum(text2num(newdam)))
+			critdam = text2num(critdam)
+		if(damage == critdam)
 			playsound(src, crit_sound, 100, 1, 30)
 	else if(!isnull(damage_low) && !isnull(damage_high))
 		damage = rand(damage_low, damage_high)
