@@ -726,10 +726,8 @@
 	icon_living = "fancyraptor"
 	icon_dead = "fancyraptor-wreck"
 
-
-
 //raptor mobs from virgo
-
+/* These straight up don't have sprites????
 /mob/living/simple_animal/advanced/purpleraptor
 	name = "purple raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
@@ -771,13 +769,11 @@
 	icon_state = "raptorwhite"
 	icon_living = "raptorwhite"
 	icon_dead = "raptorwhite_dead"
+*/
 
-/mob/living/simple_animal/pokemon/bat
+/mob/living/simple_animal/advanced/bat
 	name = "bat"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "bat"
 	icon_living = "bat"
 	icon_dead = "bat_dead"
-
-
-
