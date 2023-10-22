@@ -124,7 +124,7 @@
 	var/damage_low
 	/// Define them both! Also the damage list takes priority
 	var/damage_high
-	var/crit_sound = 'sound/weapons/dink.ogg'
+	var/crit_sound = 'sound/weapons/crit.ogg'
 	var/dink_sound = 'sound/weapons/dink.ogg'
 
 	/// multipliers caused by the shooter
