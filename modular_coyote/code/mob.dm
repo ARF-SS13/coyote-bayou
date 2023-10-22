@@ -727,45 +727,48 @@
 	icon_dead = "fancyraptor-wreck"
 
 //raptor mobs from virgo
-/* These straight up don't have sprites????
+
+/* All advanced mobs need to have dead and resting sprites equal to "[icon_living]_rest"
+// Fix these before uncommenting them.
+
 /mob/living/simple_animal/advanced/purpleraptor
 	name = "purple raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorpurple"
 	icon_living = "raptorpurple"
 	icon_dead = "raptorpurple_dead"
 
 /mob/living/simple_animal/advanced/greenraptor
 	name = "green raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorgreen"
 	icon_living = "raptorgreen"
 	icon_dead = "raptorgreen_dead"
 
 /mob/living/simple_animal/advanced/redraptor
 	name = "red raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorred"
 	icon_living = "raptorred"
 	icon_dead = "raptorred_dead"
 
 /mob/living/simple_animal/advanced/blueraptor
 	name = "blue raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorblue"
 	icon_living = "raptorblue"
 	icon_dead = "raptorblue_dead"
 
 /mob/living/simple_animal/advanced/blackraptor
 	name = "black raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorblack"
 	icon_living = "raptorblack"
 	icon_dead = "raptorblack_dead"
 
 /mob/living/simple_animal/advanced/whiteraptor
 	name = "white raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
+	icon = 'modular_coyote/icons/mob/raptor.dmi'
 	icon_state = "raptorwhite"
 	icon_living = "raptorwhite"
 	icon_dead = "raptorwhite_dead"
