@@ -3515,8 +3515,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "bHx" = (
-/obj/effect/decal/marking,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/renegade/grunt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bHL" = (
@@ -4113,14 +4113,6 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/building)
-"bWE" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "crab gang"
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/caves)
 "bWG" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt,
@@ -6988,9 +6980,10 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
 "dkS" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2right"
+/mob/living/simple_animal/hostile/renegade/grunt,
+/turf/open/indestructible/ground/outside/road{
+	dir = 8;
+	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland)
 "dlb" = (
@@ -18558,14 +18551,6 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland)
-"itU" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 3;
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "crab gang"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "ium" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/indestructible/ground/outside/desert,
@@ -28234,12 +28219,6 @@
 	dir = 9
 	},
 /area/f13/wasteland)
-"mMK" = (
-/mob/living/simple_animal/hostile/renegade/grunt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland)
 "mNd" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -30106,13 +30085,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - E"
-	},
-/area/f13/wasteland)
-"nFH" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/renegade/grunt,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
 "nFL" = (
@@ -44843,12 +44815,6 @@
 /mob/living/simple_animal/hostile/raider/cultist/ranged/radiation,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
-"und" = (
-/obj/effect/decal/marking,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "unG" = (
 /obj/structure/fence{
 	dir = 4;
@@ -51351,9 +51317,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "xuF" = (
-/mob/living/simple_animal/hostile/renegade/grunt,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/renegade/doc,
+/turf/open/floor/f13{
+	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
 "xvd" = (
@@ -65849,14 +65816,14 @@ tiN
 tiN
 gEj
 tiN
-bHx
-bHx
-bHx
-bHx
-und
-bHx
-und
-und
+tiN
+gEj
+tiN
+tiN
+tiN
+gEj
+tiN
+gEj
 tiN
 uCO
 gEj
@@ -66135,7 +66102,7 @@ iTh
 iKf
 iKf
 xKp
-nFH
+bxV
 hjg
 eTN
 kgF
@@ -66652,7 +66619,7 @@ sSV
 siv
 iwO
 yft
-mMK
+wWG
 iKf
 fed
 sfO
@@ -66906,7 +66873,7 @@ nNp
 fed
 gEj
 xKp
-nFH
+bxV
 iwO
 eTN
 wWG
@@ -70007,7 +69974,7 @@ oas
 fKR
 gEj
 aNe
-xuF
+iyC
 iyC
 gXJ
 fxa
@@ -70506,11 +70473,11 @@ iKf
 sSV
 siv
 pVV
-yft
+dAg
 wWG
 iKf
 iKf
-tiN
+bHx
 gEj
 iKf
 iKf
@@ -71532,7 +71499,7 @@ nPf
 iKf
 iKf
 fed
-eGE
+dkS
 xjw
 pVV
 efw
@@ -71550,7 +71517,7 @@ iKf
 uSf
 ekY
 ugj
-ugj
+xuF
 uyP
 qCb
 gWt
@@ -77162,7 +77129,7 @@ iKf
 iKf
 abf
 iKf
-aWl
+iKf
 iKf
 hCU
 xvC
@@ -78698,7 +78665,7 @@ gRn
 gRn
 gRn
 wWK
-itU
+wWK
 wWK
 wWK
 wWK
@@ -78958,7 +78925,7 @@ eae
 eae
 wWK
 kOR
-bWE
+kOR
 kOR
 wWK
 wWK
@@ -79221,7 +79188,7 @@ wWK
 kOR
 rJW
 wWK
-bWE
+kOR
 wWK
 gRn
 iKf
@@ -95852,7 +95819,7 @@ qsc
 vpT
 itB
 qGr
-dkS
+iFU
 shX
 nhN
 yft

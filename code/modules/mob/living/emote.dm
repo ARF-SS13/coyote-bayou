@@ -359,7 +359,6 @@
 /datum/emote/living/jump
 	key = "jump"
 	key_third_person = "jumps"
-	message = "jumps!"
 	restraint_check = TRUE
 
 /datum/emote/living/jump/run_emote(mob/user, params)

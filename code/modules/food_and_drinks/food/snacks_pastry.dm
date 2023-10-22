@@ -454,6 +454,18 @@
 	foodtype = GRAIN | SUGAR
 	dunkable = TRUE
 
+/obj/item/reagent_containers/food/snacks/cookie/oatraisin
+	name = "cookie"
+	desc = "COOKIE!!!"
+	icon_state = "COOKIE!!!"
+	bitesize = 1
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	filling_color = "#F0E68C"
+	tastes = list("oats and dried grapes" = 10)
+	foodtype = GROSS
+	dunkable = TRUE
+
 /obj/item/reagent_containers/food/snacks/donkpocket
 	name = "\improper hot-pocket"
 	desc = "The food of choice for the seasoned wastelander."

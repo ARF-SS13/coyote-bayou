@@ -97,7 +97,7 @@
 	if(id)
 		attach_id(id)
 		var/obj/structure/simple_door/D = locate(/obj/structure/simple_door) in loc
-		if(istype(D) && D.can_hold_padlock)
+		if(istype(D) && D.can_have_lock)
 			D.attach_padlock(src, TRUE)
 
 /obj/item/lock/attackby(obj/item/W, mob/user, params)

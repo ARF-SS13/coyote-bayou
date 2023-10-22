@@ -192,6 +192,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
+	/// obey the variation requests
+	var/vary = TRUE
 	/// has the mob been lazarused?
 	var/lazarused = FALSE
 	/// Who lazarused this mob?
@@ -359,8 +361,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 	sever_link_to_nest()
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)

@@ -772,3 +772,12 @@
 	icon_living = "raptorwhite"
 	icon_dead = "raptorwhite_dead"
 
+/mob/living/simple_animal/pokemon/bat
+	name = "bat"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+
+
+
