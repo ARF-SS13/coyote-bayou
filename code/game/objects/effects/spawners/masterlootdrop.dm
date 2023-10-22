@@ -205,6 +205,8 @@
 		/obj/item/gun/ballistic/automatic/autopipe = 1,
 		/obj/item/gun/ballistic/revolver/winchesterrebored = 5,
 		/obj/item/gun/ballistic/rifle/mosin/mini = 1,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile = 5,
+		/obj/item/gun/magic/wand/kelpmagic/basiczappies =5 ,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_guns
@@ -407,23 +409,30 @@
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz = 2,
-		/obj/item/gun/energy/laser/wattzs = 2,
-		/obj/item/gun/energy/laser/pistol = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/gun/energy/laser/auto = 1,
+		/obj/item/gun/energy/laser/wattz = 10,
+		/obj/item/gun/energy/laser/wattzs = 3,
+		/obj/item/gun/energy/laser/pistol = 10,
+		/obj/item/gun/energy/laser/complianceregulator = 3,
+		/obj/item/gun/energy/laser/auto = 5,
 		/obj/item/gun/energy/laser/tg/carbine/pistol = 2,
+		/obj/item/gun/energy/laser/tg/carbine = 2,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 5,
+		/obj/item/gun/magic/wand/kelpmagic/sparky = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
 	name = "uncommon energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz2k = 2,
-		/obj/item/gun/energy/laser/aer9 = 5,
-		/obj/item/gun/energy/laser/plasma/pistol = 1,
-		/obj/item/gun/energy/laser/tg/rifle = 1,
-		/obj/item/gun/energy/laser/tg/carbine = 2,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 1,
+		/obj/item/gun/energy/laser/wattz2k = 20,
+		/obj/item/gun/energy/laser/aer9 = 20,
+		/obj/item/gun/energy/laser/plasma/pistol = 10,
+		/obj/item/gun/energy/laser/tg/rifle = 24,
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,
+		/obj/item/gun/energy/laser/solar = 5,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt = 5,
+		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
+		/obj/item/gun/magic/staff/kelpmagic/magicmissile =5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_energy
@@ -436,10 +445,13 @@
 		/obj/item/gun/energy/laser/plasma = 5,
 		/obj/item/gun/energy/ionrifle = 5,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
-		/obj/item/gun/energy/laser/solar = 15,
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 5,
-		/obj/item/gun/energy/laser/tg/rifle/auto = 5,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 1,
+		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,
+		/obj/item/gun/energy/laser/tg/rifle/auto = 10,
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 5,
+		/obj/item/gun/energy/laser/ultra_rifle = 1,
+		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
+		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
+		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
 	)
 
 ////////////////////
@@ -484,10 +496,10 @@
 /obj/effect/spawner/lootdrop/f13/rare_cowboy
 	name = "rare cowboy"
 	loot = list(
-		/obj/item/gun/ballistic/revolver/m2405 = 1,
-		/obj/item/gun/ballistic/revolver/sequoia = 5,
-		/obj/item/gun/ballistic/rifle/repeater/brush = 10,
-		/obj/item/gun/ballistic/bow/compoundbow = 10,
+		/obj/item/gun/ballistic/revolver/m2405 = 5,
+		/obj/item/gun/ballistic/revolver/sequoia = 10,
+		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
+		/obj/item/gun/ballistic/bow/compoundbow = 3,
 		/obj/item/m2flamethrowertank = 1,
 	)
 
@@ -532,7 +544,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
 		/obj/item/gun/ballistic/automatic/recoilessrifle = 1,
 		/obj/item/gun/energy/laser/tg/recharger = 5,
-		/obj/item/melee/transforming/plasmacutter/sword/cx = 5, 
+		/obj/item/melee/transforming/plasmacutter/sword/cx = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
