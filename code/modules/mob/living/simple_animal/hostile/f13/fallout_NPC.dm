@@ -216,6 +216,7 @@
 	desc = "An Enclave Soldier wearing Advanced Power Armor and a plasma multi-caster. Play time's over, mutie."
 	icon_state = "enclave_armored"
 	icon_living = "enclave_armored"
+	icon_dead = "enclave_armored_dead"
 	maxHealth = 560
 	health = 650
 	melee_damage_lower = 20
@@ -427,7 +428,7 @@
 	desc = "A standard NCR Trooper wielding a service rifle and equipped with a patrol vest."
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
-	icon_dead = "ncr_trooper"
+	icon_dead = "ncr_trooper_dead"
 	retreat_distance = 5
 	minimum_distance = 5
 	loot = list()
@@ -452,7 +453,7 @@
 	desc = "A Ranger of the NCRA, wielding a big iron on his hip and equipped with a ranger patrol vest."
 	icon_state = "ncr_sergeant"
 	icon_living = "ncr_sergeant"
-	icon_dead = "ncr_sergeant"
+	icon_dead = "ncr_sergeant_dead"
 	retreat_distance = 5
 	minimum_distance = 5
 	loot = list()
@@ -491,7 +492,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
-	icon_dead = "legion_prime"
+	icon_dead = "legion_prime_dead"
 	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
@@ -532,7 +533,7 @@
 	desc = "A Prime Legionary, equipped with a hunting rifle."
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
-	icon_dead = "legion_prime"
+	icon_dead = "legion_prime_dead"
 	icon_gib = "legion_prime"
 	retreat_distance = 5
 	minimum_distance = 5
@@ -558,8 +559,8 @@
 	desc = "A Prime Decanus, equipped with a hunting rifle."
 	icon_state = "legion_decan"
 	icon_living = "legion_decan"
-	icon_dead = "legion_decan"
-	icon_gib = "legion_decan"
+	icon_dead = "legion_decan_dead"
+	icon_gib = "gib"
 	retreat_distance = 5
 	minimum_distance = 5
 	loot = list()
