@@ -92,17 +92,12 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	for(var/client/C in antaglisting)
 		if(!C || !istype(C))
 			continue
-		if(holder)
-			if(C.holder && check_rights_for(src, R_ADMIN))
-					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-				else
-					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
+		if(C.holder && check_rights_for(src, R_ADMIN))//If the listening client is a staff member with admin privs
+			if(GLOB.AOOC_COLOR)
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 			else
-				if(GLOB.AOOC_COLOR)
-					to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
-				else
-					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
-		else if(!(key in C.prefs.ignoring))
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+		else if(!(key in C.prefs.ignoring))//If the listening client is a player
 			if(GLOB.AOOC_COLOR)
 				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
 			else
