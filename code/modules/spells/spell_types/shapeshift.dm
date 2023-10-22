@@ -54,7 +54,9 @@
 		to_chat(caster, span_warning("You're already shapeshifted!"))
 		return
 
-	var/mob/living/shape = new shapeshift_type(caster.loc)
+	var/mob/living/shape = new shapeshift_type(get_turf(caster))
+	shape.maxHealth = caster.maxHealth
+	shape.health = caster.health
 	H = new(shape,src,caster)
 
 	clothes_req = NONE
