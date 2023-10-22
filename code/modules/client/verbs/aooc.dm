@@ -13,6 +13,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	if(!(prefs.chat_toggles & CHAT_OOC))
 		to_chat(src, span_danger(" You have OOC muted."))
 		return
+
 	if(mob && jobban_isbanned(mob, "OOC"))
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
@@ -54,7 +55,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			message_admins("[key_name_admin(src)] has attempted to advertise in AOOC: [msg]")
 			return
 
-	mob.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
+	mob?.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
 
 	var/keyname = "GetOOCName()"
 
