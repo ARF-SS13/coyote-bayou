@@ -30,7 +30,7 @@
 	else  //Trying to dualwield it
 		dualwield_start(user, I, J, dual_wield_force_mult)
 
-/proc/dualwield_end(mob/living/user, obj/item/I, obj/item/J)
+/proc/dualwield_end(mob/living/user, obj/item/I, obj/item/J, play_sound = TRUE)
 	if((!I.is_dual_wielded && !J.is_dual_wielded) || !user)
 		return
 
@@ -59,7 +59,7 @@
 		user.update_inv_hands()
 
 	user.visible_message(span_warning("[user] stops dual wielding."))
-	if(I.sound_dualwield_end)
+	if(I.sound_dualwield_end && play_sound)
 		playsound(user.loc, I.sound_dualwield_end, 50, 1)
 	return
 
@@ -110,26 +110,25 @@
 
 	if(I && J)
 		if(I.is_dual_wielded || J.is_dual_wielded)
-			dualwield_end(user,I ,J)
+			dualwield_end(user, I, J)
 	if(I)
 		I.is_dual_wielded = FALSE  //even though, these should be already false, let's be certain about it
 	if(J)
 		J.is_dual_wielded = FALSE
 
 /obj/item/equipped(mob/living/user)  //if we are equipping our dual wielded blades while dualwielding, we want to end dual wielding
-	..()
+	. = ..()
 	var/obj/item/I = src
 	var/obj/item/J = user.get_inactive_held_item()
 
 	if(I && J)
 		if(I.is_dual_wielded || J.is_dual_wielded)
-			dualwield_end(user,I ,J)
-	if(I)
-		I.is_dual_wielded = FALSE  //even though, these should be already false, let's be certain about it
-	if(J)
-		J.is_dual_wielded = FALSE
+			dualwield_end(user, I, J)
 
-// /mob/living/swap_hand()
-// 	. = ..()
-// 	to_chat(usr, span_warning("Leonzrygin, debug message n. 4"))
-
+/obj/item/pickup(mob/living/user)  //temporary fix for a huge issue, you see I love duct tape and wood glue.
+	..()
+	if(findtext(name," (Dual Wielded)"))
+		is_dual_wielded = FALSE
+		force = memory_original_force
+		attack_speed = dual_wield_memory_attack_speed
+		name = memory_original_name

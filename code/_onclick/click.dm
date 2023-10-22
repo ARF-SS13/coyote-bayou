@@ -114,7 +114,7 @@
 	if(has_direct_access_to(A, FAR_DEPTH))
 		if(W)
 			if(V)
-				if(W.is_dual_wielded || V.is_dual_wielded) 
+				if(W.is_dual_wielded && V.is_dual_wielded) 
 					if(!dual_wield_queue_swap)
 						dual_wield_queue_swap = 1
 						W.melee_attack_chain(src, A, params)
@@ -122,7 +122,9 @@
 						return
 					else
 						dual_wield_queue_swap = 0
+						swap_hand()
 						V.melee_attack_chain(src, A, params)
+						swap_hand()
 						DelayNextAction(V.attack_speed)
 						return
 
@@ -141,7 +143,7 @@
 	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
 			if(V)
-				if(W.is_dual_wielded || V.is_dual_wielded) 
+				if(W.is_dual_wielded && V.is_dual_wielded) 
 					if(!dual_wield_queue_swap)
 						dual_wield_queue_swap = 1
 						W.melee_attack_chain(src, A, params)
@@ -149,7 +151,9 @@
 						return
 					else
 						dual_wield_queue_swap = 0
+						swap_hand()
 						V.melee_attack_chain(src, A, params)
+						swap_hand()
 						DelayNextAction(V.attack_speed)
 						return
 
@@ -164,7 +168,7 @@
 			return
 		if(W)
 			if(V)
-				if(W.is_dual_wielded || V.is_dual_wielded) 
+				if(W.is_dual_wielded && V.is_dual_wielded) 
 					if(!dual_wield_queue_swap)
 						dual_wield_queue_swap = 1
 						W.ranged_attack_chain(src, A, params)
@@ -172,7 +176,9 @@
 						return
 					else
 						dual_wield_queue_swap = 0
+						swap_hand()
 						V.ranged_attack_chain(src, A, params)
+						swap_hand()
 						DelayNextAction(V.attack_speed)
 						return
 
