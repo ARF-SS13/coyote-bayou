@@ -16,7 +16,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	if(!(prefs.chat_toggles & CHAT_OOC))
 		to_chat(src, span_danger(" You have OOC muted."))
 		return
-	if(jobban_isbanned(mob, "OOC"))
+	if(mob && jobban_isbanned(mob, "OOC"))
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 
@@ -33,7 +33,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			return
-		if(HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
+		if(mob && HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
 			to_chat(src, span_danger("You cannot use AOOC right now."))
 			return
 
@@ -59,7 +59,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 
 	mob.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
 
-	var/keyname = GetOOCName()
+	var/keyname = "GetOOCName()"
 
 	if(!keyname)
 		return
