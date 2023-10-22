@@ -810,7 +810,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
-/obj/effect/landmark/start/f13/wastelander/ashdown
+/obj/effect/landmark/start/f13/ashdown
 	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
 
