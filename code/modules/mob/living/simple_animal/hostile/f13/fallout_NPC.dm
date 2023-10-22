@@ -25,7 +25,7 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/vault)
+	loot = list()
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("vault", "city")
@@ -89,7 +89,7 @@
 	health = 160
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/vault/security)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
@@ -191,7 +191,7 @@
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
-	loot = list(/obj/effect/mob_spawn/human/corpse/enclavescientist)
+	loot = list()
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	ranged_cooldown_time = 30
@@ -224,7 +224,7 @@
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12
-	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
+	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
 	projectiletype = /obj/item/projectile/plasmacarbine
@@ -293,7 +293,7 @@
 	attack_verb_simple = "pistol-whips"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
+	loot = list()
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
@@ -323,7 +323,7 @@
 	icon_dead = "bs_knight"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
@@ -347,7 +347,7 @@
 	icon_dead = "bs_paladin"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs/paladin)
+	loot = list()
 	maxHealth = 480
 	health = 480
 	healable = 1
@@ -404,7 +404,7 @@
 	attack_verb_simple = "áüåò"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
+	loot = list()
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
@@ -432,7 +432,7 @@
 	icon_dead = "ncr_trooper"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a556/simple
@@ -457,7 +457,7 @@
 	icon_dead = "ncr_sergeant"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/ranger)
+	loot = list()
 	maxHealth = 160
 	health = 160
 	healable = 1
@@ -511,7 +511,7 @@
 	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
+	loot = list()
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
@@ -539,7 +539,7 @@
 	icon_gib = "legion_prime"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
@@ -565,7 +565,7 @@
 	icon_gib = "legion_decan"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion/decan)
+	loot = list()
 	maxHealth = 180
 	health = 180
 	healable = 1
