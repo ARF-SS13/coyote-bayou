@@ -10,8 +10,8 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
-	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, span_danger(" You have OOC muted."))
+	if(!(prefs.chat_toggles & CHAT_AOOC))
+		to_chat(src, span_danger(" You have AnonOOC muted."))
 		return
 
 	if(mob && jobban_isbanned(mob, "OOC"))
@@ -54,34 +54,22 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			log_admin("[key_name(src)] has attempted to advertise in AOOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in AOOC: [msg]")
 			return
-
 	mob?.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
 
-	var/keyname = GetOOCName()
-
-	if(!keyname)
-		return
-
 	var/clientstosendto = list()
-
 	for(var/client/C in GLOB.clients)
-		if(C.prefs.chat_toggles & CHAT_OOC)
-			if(check_rights_for(C, R_ADMIN))
-				keyname = "[key]/[GetOOCName()]"
-			else
-				keyname = GetOOCName()
-		if(C.mob && (C.mob in GLOB.player_list))
+		if((C.prefs.chat_toggles & CHAT_AOOC))
 			clientstosendto |= C
 	
 	for(var/client/C in clientstosendto)
 		if(!C || !istype(C))
 			continue
-		if(C.holder && check_rights_for(src, R_ADMIN))//If the listening client is a staff member with admin privs
+		if(C.holder && check_rights_for(C, R_ADMIN))//If the listening client is a staff member with admin privs
 			if(GLOB.AOOC_COLOR)
-				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()][holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 			else
-				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-		else if(!(key in C.prefs.ignoring))//If the listening client is a player
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()][holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+		else if(!(key in C.prefs.ignoring))//If the listening client is a player and the sender's key isn't ignored
 			if(GLOB.AOOC_COLOR)
 				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
 			else
