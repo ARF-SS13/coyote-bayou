@@ -173,7 +173,7 @@
 	emote_see = list("charges around angrily.", "stands on its hind legs threateningly.")
 	melee_damage_lower = 3
 	melee_damage_upper = 5
-	obj_damage = 5
+	obj_damage = -10
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
@@ -225,7 +225,7 @@
 	emote_see = list("dances around in a circle.", "stands on its hind legs.")
 	melee_damage_lower = 2
 	melee_damage_upper = 3
-	obj_damage = 10
+	obj_damage = -10
 	speak_chance = 30
 	turns_per_move = 0
 	see_in_dark = 10

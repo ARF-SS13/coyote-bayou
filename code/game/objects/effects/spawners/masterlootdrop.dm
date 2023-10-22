@@ -204,6 +204,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 5,
 		/obj/item/gun/ballistic/automatic/autopipe = 1,
 		/obj/item/gun/ballistic/revolver/winchesterrebored = 5,
+		/obj/item/gun/ballistic/rifle/mosin/mini = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_guns
@@ -608,6 +609,7 @@
 		/obj/item/ammo_box/a308 = 5,
 		/obj/item/stock_parts/cell/ammo/ec = 10,
 		/obj/item/ammo_box/c22 = 5,
+		/obj/item/ammo_box/a22 = 1,
 		/obj/item/ammo_box/a357 = 5,
 		/obj/item/ammo_box/a357/ratshot = 1,
 		/obj/item/ammo_box/tube/a357 = 1,
@@ -1412,7 +1414,7 @@
 		/*/obj/item/grenade/homemade/firebomb = 100,*/
 		/obj/item/grenade/homemade/coffeepotbomb = 100,
 		/*/obj/item/reagent_containers/food/drinks/bottle/molotov= 100,*/
-		/obj/item/gun/ballistic/fatman = 1, //we do a lil trolling~
+		// /obj/item/gun/ballistic/fatman = 1, //we do a lil trolling~ --fatman got buffed, needs to be rare now
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_bombs
