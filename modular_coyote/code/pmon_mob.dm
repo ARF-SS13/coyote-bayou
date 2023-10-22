@@ -51,7 +51,7 @@
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
-	GLOB.pokemon_list += src
+	GLOB.advanced_mob_list += src
 
 ///Will recenter a mob's icon on their tile if it's wider than 32 pixels. Will do nothing if it's 32 or less. To use correctly, position the mob in the center of the icon_state in your dmi.
 /mob/proc/recenter_wide_sprite()
@@ -79,7 +79,7 @@
 	regenerate_icons()
 
 /mob/living/simple_animal/advanced/Destroy()
-	GLOB.pokemon_list -= src
+	GLOB.advanced_mob_list -= src
 	. = ..()
 
 ///////////////////////////////

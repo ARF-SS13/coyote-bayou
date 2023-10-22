@@ -1102,7 +1102,7 @@ proc/pick_closest_path(value, list/matches = get_fancy_list_of_atom_types())
 	CRASH(msg)
 
 /datum/proc/stack_trace(msg)
-	CRASH(msg)
+d	CRASH(msg)
 
 GLOBAL_REAL_VAR(list/stack_trace_storage)
 /proc/gib_stack_trace()
