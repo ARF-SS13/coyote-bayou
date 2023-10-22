@@ -95,11 +95,10 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 		if(!C || !istype(C))
 			continue
 		if(holder)
-			if(!holder.fakekey || C.holder)
-				if(check_rights_for(src, R_ADMIN))
-					to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+			if(C.holder && check_rights_for(src, R_ADMIN))
+					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 				else
-					to_chat(C, "<span class='adminobserverooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname][holder.fakekey ? "/Somebody" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
+					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
 			else
 				if(GLOB.AOOC_COLOR)
 					to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
@@ -107,9 +106,9 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 					to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
 		else if(!(key in C.prefs.ignoring))
 			if(GLOB.AOOC_COLOR)
-				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
 			else
-				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
 
 /client/proc/set_aooc(newColor as color)
 	set name = "Set AnonOOC Color"
