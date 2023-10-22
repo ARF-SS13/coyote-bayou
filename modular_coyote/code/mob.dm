@@ -461,7 +461,7 @@
 	. = ..()
 	recenter_wide_sprite()
 
-/mob/living/simple_animal/pokemon/tenderclawmale
+/mob/living/simple_animal/advanced/tenderclawmale
 	name = "male tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
@@ -469,7 +469,7 @@
 	icon_living = "newclaw"
 	icon_dead = "newclaw_d"
 
-/mob/living/simple_animal/pokemon/tenderclawfemale
+/mob/living/simple_animal/advanced/tenderclawfemale
 	name = "female tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
@@ -477,7 +477,7 @@
 	icon_living = "femclaw"
 	icon_dead = "femclaw_d"
 
-/mob/living/simple_animal/pokemon/tenderclawherm
+/mob/living/simple_animal/advanced/tenderclawherm
 	name = "herm tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
 	icon = 'modular_coyote/icons/mob/newclaws.dmi'
@@ -485,7 +485,7 @@
 	icon_living = "hermclaw"
 	icon_dead = "hermclaw_d"
 
-/mob/living/simple_animal/pokemon/nightstalker
+/mob/living/simple_animal/advanced/nightstalker
 	name = "nightstalker"
 	desc = "A nightstalker!"
 	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
@@ -493,7 +493,7 @@
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker-dead"
 
-/mob/living/simple_animal/pokemon/wendigo
+/mob/living/simple_animal/advanced/wendigo
 	name = "wendigo"
 	desc = "A mythological man-eating legendary creature, you probably aren't going to survive this.!"
 	icon = 'icons/mob/icemoon/64x64megafauna.dmi'
@@ -505,15 +505,15 @@
 
 //Actual chooseable mouse colors
 
-/mob/living/simple_animal/pokemon/mousewhite
+/mob/living/simple_animal/advanced/mousewhite
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_white"
 
-/mob/living/simple_animal/pokemon/mousegray
+/mob/living/simple_animal/advanced/mousegray
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_gray"
 
-/mob/living/simple_animal/pokemon/mousebrown
+/mob/living/simple_animal/advanced/mousebrown
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_brown"
 
@@ -521,140 +521,140 @@
 //The simple version of the dog borgs.
 
 
-/mob/living/simple_animal/pokemon/blade//Yes they are pokemon, shut.
+/mob/living/simple_animal/advanced/blade//Yes they are pokemon, shut.
 	name = "blade borg"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "blade"
 	icon_living = "blade"
 	icon_dead = "blade-wreck"
 
-/mob/living/simple_animal/pokemon/k9
+/mob/living/simple_animal/advanced/k9
 	name = "k9"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "k9"
 	icon_living = "k9"
 	icon_dead = "k9-wreck"
 
-/mob/living/simple_animal/pokemon/k9
+/mob/living/simple_animal/advanced/k9
 	name = "k9"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "k9"
 	icon_living = "k9"
 	icon_dead = "k9-wreck"
 
-/mob/living/simple_animal/pokemon/medihound
+/mob/living/simple_animal/advanced/medihound
 	name = "medihound"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "medihound"
 	icon_living = "medihound"
 	icon_dead = "medihound-wreck"
 
-/mob/living/simple_animal/pokemon/k69
+/mob/living/simple_animal/advanced/k69
 	name = "k69"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "k69"
 	icon_living = "k69"
 	icon_dead = "k69-wreck"
 
-/mob/living/simple_animal/pokemon/scrubpup
+/mob/living/simple_animal/advanced/scrubpup
 	name = "scrubpup"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "scrubpup"
 	icon_living = "scrubpup"
 	icon_dead = "scrubpup-wreck"
 
-/mob/living/simple_animal/pokemon/alinaeng
+/mob/living/simple_animal/advanced/alinaeng
 	name = "engineering hound"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "alina-eng"
 	icon_living = "alina-eng"
 	icon_dead = "alina-eng-wreck"
 
-/mob/living/simple_animal/pokemon/alinasec
+/mob/living/simple_animal/advanced/alinasec
 	name = "security hound"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "alina-sec"
 	icon_living = "alina-sec"
 	icon_dead = "alina-sec-wreck"
 
-/mob/living/simple_animal/pokemon/alinamed
+/mob/living/simple_animal/advanced/alinamed
 	name = "medical hound"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "alina-med"
 	icon_living = "alina-med"
 	icon_dead = "alina-med-wreck"
 
-/mob/living/simple_animal/pokemon/medihounddark
+/mob/living/simple_animal/advanced/medihounddark
 	name = "medical hound dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "medihounddark"
 	icon_living = "medihounddark"
 	icon_dead = "medihounddark-wreck"
 
-/mob/living/simple_animal/pokemon/pupdozer
+/mob/living/simple_animal/advanced/pupdozer
 	name = "pupdozer"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "pupdozer"
 	icon_living = "pupdozer"
 	icon_dead = "pupdozer-wreck"
 
-/mob/living/simple_animal/pokemon/k9dark
+/mob/living/simple_animal/advanced/k9dark
 	name = "k9 dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "k9dark"
 	icon_living = "k9dark"
 	icon_dead = "k9dark-wreck"
 
-/mob/living/simple_animal/pokemon/valemed
+/mob/living/simple_animal/advanced/valemed
 	name = "vale med"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valemed"
 	icon_living = "valemed"
 	icon_dead = "valemed-wreck"
 
-/mob/living/simple_animal/pokemon/valesci
+/mob/living/simple_animal/advanced/valesci
 	name = "vale sci"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valesci"
 	icon_living = "valesci"
 	icon_dead = "valesci-wreck"
 
-/mob/living/simple_animal/pokemon/valesesc
+/mob/living/simple_animal/advanced/valesesc
 	name = "Vale sec"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valesec"
 	icon_living = "valesec"
 	icon_dead = "valesec-wreck"
 
-/mob/living/simple_animal/pokemon/valeseng
+/mob/living/simple_animal/advanced/valeseng
 	name = "Vale eng"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valeeng"
 	icon_living = "valeeng"
 	icon_dead = "valeeng-wreck"
 
-/mob/living/simple_animal/pokemon/valemine
+/mob/living/simple_animal/advanced/valemine
 	name = "Vale mine"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valemine"
 	icon_living = "valemine"
 	icon_dead = "valemine-wreck"
 
-/mob/living/simple_animal/pokemon/k50
+/mob/living/simple_animal/advanced/k50
 	name = "k50"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "k50"
 	icon_living = "k50"
 	icon_dead = "k50-wreck"
 
-/mob/living/simple_animal/pokemon/valeserv
+/mob/living/simple_animal/advanced/valeserv
 	name = "vale serv"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valeserv"
 	icon_living = "valeserv"
 	icon_dead = "valeserv-wreck"
 
-/mob/living/simple_animal/pokemon/valeservdark
+/mob/living/simple_animal/advanced/valeservdark
 	name = "vale serv dark"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
 	icon_state = "valeservdark"
@@ -663,63 +663,63 @@
 
 
 //Raptor borgs from Virgo
-/mob/living/simple_animal/pokemon/secraptor
+/mob/living/simple_animal/advanced/secraptor
 	name = "security raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "secraptor"
 	icon_living = "secraptor"
 	icon_dead = "secraptor-wreck"
 
-/mob/living/simple_animal/pokemon/sciraptor
+/mob/living/simple_animal/advanced/sciraptor
 	name = "science raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "sciraptor"
 	icon_living = "sciraptor"
 	icon_dead = "sciraptor-wreck"
 
-/mob/living/simple_animal/pokemon/mediraptor
+/mob/living/simple_animal/advanced/mediraptor
 	name = "medical raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "medraptor"
 	icon_living = "medraptor"
 	icon_dead = "medraptor-wreck"
 
-/mob/living/simple_animal/pokemon/engiraptor
+/mob/living/simple_animal/advanced/engiraptor
 	name = "engineering raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "engiraptor"
 	icon_living = "engiraptor"
 	icon_dead = "engiraptor-wreck"
 
-/mob/living/simple_animal/pokemon/mineraptor
+/mob/living/simple_animal/advanced/mineraptor
 	name = "mining raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "mineraptor"
 	icon_living = "mineraptor"
 	icon_dead = "mineraptor-wreck"
 
-/mob/living/simple_animal/pokemon/traumaraptor
+/mob/living/simple_animal/advanced/traumaraptor
 	name = "trauma raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "traumaraptor"
 	icon_living = "traumaraptor"
 	icon_dead = "traumaraptor-wreck"
 
-/mob/living/simple_animal/pokemon/janiraptor
+/mob/living/simple_animal/advanced/janiraptor
 	name = "janitor raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "janiraptor"
 	icon_living = "janiraptor"
 	icon_dead = "janiraptor-wreck"
 
-/mob/living/simple_animal/pokemon/serviraptor
+/mob/living/simple_animal/advanced/serviraptor
 	name = "service raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "serviraptor"
 	icon_living = "serviraptor"
 	icon_dead = "serviraptor-wreck"
 
-/mob/living/simple_animal/pokemon/fancyraptor
+/mob/living/simple_animal/advanced/fancyraptor
 	name = "fancy raptor"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "fancyraptor"
@@ -730,42 +730,42 @@
 
 //raptor mobs from virgo
 
-/mob/living/simple_animal/pokemon/purpleraptor
+/mob/living/simple_animal/advanced/purpleraptor
 	name = "purple raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorpurple"
 	icon_living = "raptorpurple"
 	icon_dead = "raptorpurple_dead"
 
-/mob/living/simple_animal/pokemon/greenraptor
+/mob/living/simple_animal/advanced/greenraptor
 	name = "green raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorgreen"
 	icon_living = "raptorgreen"
 	icon_dead = "raptorgreen_dead"
 
-/mob/living/simple_animal/pokemon/redraptor
+/mob/living/simple_animal/advanced/redraptor
 	name = "red raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorred"
 	icon_living = "raptorred"
 	icon_dead = "raptorred_dead"
 
-/mob/living/simple_animal/pokemon/blueraptor
+/mob/living/simple_animal/advanced/blueraptor
 	name = "blue raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorblue"
 	icon_living = "raptorblue"
 	icon_dead = "raptorblue_dead"
 
-/mob/living/simple_animal/pokemon/blackraptor
+/mob/living/simple_animal/advanced/blackraptor
 	name = "black raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorblack"
 	icon_living = "raptorblack"
 	icon_dead = "raptorblack_dead"
 
-/mob/living/simple_animal/pokemon/whiteraptor
+/mob/living/simple_animal/advanced/whiteraptor
 	name = "white raptor - animal"
 	icon = 'modular_coyote/icons/mob/raptorborg.dmi'
 	icon_state = "raptorwhite"

@@ -1,4 +1,4 @@
-#define ispokemon(A)		istype(A, /mob/living/simple_animal/pokemon)
+#define isadvancedmob(A)		istype(A, /mob/living/simple_animal/advanced)
 
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
@@ -38,8 +38,8 @@ GLOBAL_LIST_EMPTY(pokemon_selectable)
 /proc/generate_selectable_pokemon(clear = FALSE)
 	if(clear)
 		GLOB.pokemon_selectable = list()
-	for(var/I in subtypesof(/mob/living/simple_animal/pokemon))
-		var/mob/living/simple_animal/pokemon/P = I
+	for(var/I in subtypesof(/mob/living/simple_animal/advanced))
+		var/mob/living/simple_animal/advanced/P = I
 		var/list/traits = initial(P.p_traits)
 		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
 			GLOB.pokemon_selectable[capitalize("[initial(P.name)]")] = P
@@ -101,8 +101,8 @@ GLOBAL_LIST_INIT(creature_whitelist, list(
 	/mob/living/simple_animal/armadillo,
 	/mob/living/simple_animal/pet/kiwi,
 	/mob/living/simple_animal/pet/sheep,
-	/mob/living/simple_animal/pokemon/tenderclawmale,
-	/mob/living/simple_animal/pokemon/tenderclawfemale,
-	/mob/living/simple_animal/pokemon/tenderclawherm,
-	/mob/living/simple_animal/pokemon/nightstalker
+	/mob/living/simple_animal/advanced/tenderclawmale,
+	/mob/living/simple_animal/advanced/tenderclawfemale,
+	/mob/living/simple_animal/advanced/tenderclawherm,
+	/mob/living/simple_animal/advanced/nightstalker
 	))
