@@ -959,7 +959,7 @@
 /obj/item/projectile/bullet/c4570
 	name = ".45-70 bullet"
 	damage = BULLET_DAMAGE_RIFLE_4570 //60
-	damage_list = list("20" = 25, "30" = 30, "60" = 40, "70" = 5, "80" = 5)
+	damage_list = list("40" = 20, "50" = 25, "60" = 40, "70" = 10, "80" = 10)
 	stamina = BULLET_STAMINA_RIFLE_4570
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_4570
