@@ -1740,9 +1740,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(moveto)
 
 /datum/quirk/wildshape
-	name = "Wild Shape"
+	name = "Wild Shape - Disabled for time being"
 	desc = "You've developed through some means the ability to adopt a lesser form. What it is was decided by yourself or mere circumstance, but you can transform back and forth at will."
-	value = 15
+	value = 9999
 	category = "Mutant Quirks"
 	mechanics = "You gain the shapeshift spell and can cast it nearly at will! This allows you to transform into an animal and back again. Once you select a shape, it cannot be changed."
 	conflicts = list(
