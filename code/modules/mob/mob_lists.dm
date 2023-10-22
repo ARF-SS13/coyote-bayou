@@ -37,7 +37,7 @@
 ///Adds the cliented mob reference to the list of all player-mobs, besides to either the of dead or alive player-mob lists, as appropriate. Called on Login().
 /mob/proc/add_to_player_list()
 	SHOULD_CALL_PARENT(TRUE)
-	GLOB.player_list |= src
+	BINARY_INSERT(src, GLOB.player_list, /mob, src, name, COMPARE_KEY)
 	if(!SSticker?.mode)
 		return
 	if(stat == DEAD)

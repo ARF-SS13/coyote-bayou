@@ -303,10 +303,12 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/list/players = list()
 	for(var/mob/plr in GLOB.player_list)
 		players += plr // these are also also mobs
+	/* player_list is already sorted alphabetically 
 	if(admeme) // only admins can see the actual names, so just sort em for them
 		admins = sortNames(admins)
 		mentors = sortNames(mentors)
 	players = sortNames(players)
+	*/
 
 	lines += "<hr>"
 	if(admeme && LAZYLEN(admins))
