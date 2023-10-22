@@ -7,7 +7,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(src, span_danger("Speech is currently admin-disabled."))
 		return
 
 	if(!(prefs.chat_toggles & CHAT_AOOC))
@@ -60,16 +60,16 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	for(var/client/C in GLOB.clients)
 		if((C.prefs.chat_toggles & CHAT_AOOC))
 			clientstosendto |= C
-	
+
 	for(var/client/C in clientstosendto)
 		if(!C || !istype(C))
 			continue
 		if(C.holder && check_rights_for(C, R_ADMIN))//If the listening client is a staff member with admin privs
 			if(GLOB.AOOC_COLOR)
-				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()][holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()]/[holder?.fakekey ? "/([holder.fakekey])" : "[key]"] [ADMIN_PP(src.mob)]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 			else
-				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()][holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-		else if(!(key in C.prefs.ignoring))//If the listening client is a player and the sender's key isn't ignored
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()]/[holder?.fakekey ? "/([holder.fakekey])" : "[key]"] [ADMIN_PP(src.mob)]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+		else
 			if(GLOB.AOOC_COLOR)
 				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
 			else
