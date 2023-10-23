@@ -1,6 +1,7 @@
 /obj/item/restraints
 	breakouttime = 600
 	var/demoralize_criminals = TRUE // checked on carbon/carbon.dm to decide wheter to apply the handcuffed negative moodlet or not.
+	var/del_on_remove = FALSE
 
 /obj/item/restraints/Destroy()
 	if(iscarbon(loc))
@@ -352,6 +353,19 @@
 		return//abort
 	ensnare(hit_atom)
 
+/obj/item/restraints/legcuffs/bola/fragile
+	name = "crude bola"
+	desc = "An unsturdy piece of cables and sinew that'll tangle up a target's legs. Once applied, they're easy to remove, but next to impossible to retrieve \
+		from the victim. They also have a habit of falling right the fuck apart if it hits anything more solid than a pair of legs."
+	breakouttime = 1.5 SECONDS
+	del_on_remove = TRUE
+
+/obj/item/restraints/legcuffs/bola/fragile/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(!iscarbon(hit_atom))
+		qdel(src)
+		return
+	..()
+
 /**
  * Attempts to legcuff someone with the bola
  *
@@ -369,6 +383,7 @@
 		to_chat(C, span_userdanger("\The [src] ensnares you!"))
 		C.Knockdown(knockdown)
 		playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
+		return TRUE
 
 /obj/item/restraints/legcuffs/bola/tactical//traitor variant
 	name = "reinforced bola"

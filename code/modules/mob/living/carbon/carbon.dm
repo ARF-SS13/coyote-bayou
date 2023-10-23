@@ -661,7 +661,17 @@
 		. = !((I == handcuffed) || (I == legcuffed))
 		qdel(I)
 		return
-
+	if(istype(I, /obj/item/restraints))
+		var/obj/item/restraints/R = I
+		if(R.del_on_remove)
+			if(handcuffed == R)
+				handcuffed = null
+			if(legcuffed == R)
+				legcuffed = null
+			qdel(R)
+			update_handcuffed()
+			update_inv_legcuffed()
+			return
 	else
 		if(I == handcuffed)
 			handcuffed.forceMove(drop_location())

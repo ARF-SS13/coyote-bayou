@@ -716,6 +716,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
 		..(gibbed)
+		// if(prob(del_on_death*100))
+		// 	gib()
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE

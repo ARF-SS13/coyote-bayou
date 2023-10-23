@@ -1017,7 +1017,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/proc/canUseStorage()
 	return FALSE
 
-/mob/proc/faction_check_mob(mob/target, exact_match)
+/mob/proc/faction_check_mob(mob/target, exact_match, list/override)
 	if(exact_match) //if we need an exact match, we need to do some bullfuckery.
 		var/list/faction_src = faction.Copy()
 		var/list/faction_target = target.faction.Copy()

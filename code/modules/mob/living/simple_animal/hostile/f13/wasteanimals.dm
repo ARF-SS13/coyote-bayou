@@ -127,6 +127,14 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
+
+/mob/living/simple_animal/hostile/gecko/summon //untameable
+	faction = list("gecko")
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	
+
 /mob/living/simple_animal/hostile/gecko/make_low_health()
 	speed *= 1.3
 	move_to_delay *= 0.5
@@ -152,6 +160,7 @@
 	vary = TRUE
 	retreat_distance = initial(retreat_distance)
 	minimum_distance = initial(minimum_distance)
+
 
 //Fire Geckos//
 

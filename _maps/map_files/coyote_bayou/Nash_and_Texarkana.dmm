@@ -47922,6 +47922,16 @@
 /obj/structure/flora/grass/coyote/five,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"hDm" = (
+/mob/living/simple_animal/hostile/gecko/tribal/hunter{
+	minimum_distance = 9;
+	retreat_distance = 20;
+	name = "gecko scout"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/nash/starterroad)
 "hDx" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -63894,6 +63904,11 @@
 /area/f13/building/coyote/nash/mall/groundfloor)
 "lkS" = (
 /obj/structure/spacevine,
+/mob/living/simple_animal/hostile/gecko/tribal/hunter{
+	minimum_distance = 9;
+	retreat_distance = 20;
+	name = "gecko scout"
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop0"
 	},
@@ -139873,7 +139888,7 @@ iGU
 rdC
 uau
 lkS
-bSK
+hDm
 xyK
 aOk
 tbK
