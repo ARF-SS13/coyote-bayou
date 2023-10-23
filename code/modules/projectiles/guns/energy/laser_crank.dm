@@ -8,7 +8,8 @@
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun)
-	var/crank_change_ammo_type = 0  //if this variable is different from 0 it shoots anothe beam can be a number higher than 1
+	var/list/crank_overcharge_mult = list()  //depending on how many overcharge stages the gun has, leave blank if you want no overcharge
+	var/list/crank_overcharge_fire_sounds = list()  //if your overcharged shots have different sounds put the actual paths here
 	var/cranking_time = 1 SECONDS
 	var/crank_stamina_cost = 10
 	var/list/crank_sound = list(
@@ -65,28 +66,46 @@
 ////////////////////////////////////////////////////////////////
 
 //-->Gun mechanics
+//Crank to recharge
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
 	//we have to check if the gun is a cranklasergun type, otherwise ignore it
-	if(istype(src, /obj/item/gun/energy/laser/cranklasergun))
-		var/obj/item/gun/energy/laser/cranklasergun/firearm = src
+	if(istype(src, /obj/item/gun/energy/laser/cranklasergun))  //does the gun belong to the cranklasergun type we seek?
+		var/obj/item/gun/energy/laser/cranklasergun/firearm = src  //let's assign it a name then
 		var/obj/item/stock_parts/cell/C = src.get_cell()
 
-		var/playsound_volume 	= 50
+		var/playsound_volume = 50
 		
 		if((C.charge < C.maxcharge) && (!recharge_queued))
-			recharge_queued = 1
+			recharge_queued = 1  //this variable makes it so we can't queue multiple recharges at once, only one at a time (variable gets reset in {/obj/item/gun/shoot_live_shot(mob/living/user)})
 			playsound(user.loc, pick(firearm.crank_sound), playsound_volume, TRUE)
 			if(do_after(user, firearm.cranking_time, target = src, allow_movement = TRUE))
 				recharge_queued = 0
-				C.charge += 1
 				user.apply_damage(firearm.crank_stamina_cost, STAMINA)  //have you ever ridden a bike with a dynamo?
+				C.charge += 1
 				update_icon()
+				
+				//if it's the overcharged variant, then execute this too
+				if(firearm.crank_overcharge_mult.len)
+					if(!C.charge)
+						firearm.damage_multiplier = firearm.crank_overcharge_mult[1]
+					else if(C.charge <= firearm.crank_overcharge_mult.len)
+						firearm.damage_multiplier = firearm.crank_overcharge_mult[C.charge]
+					else
+						firearm.damage_multiplier = firearm.crank_overcharge_mult[firearm.crank_overcharge_mult.len]
+
+				if(firearm.crank_overcharge_fire_sounds.len)
+					if(!C.charge)
+						firearm.fire_sound = firearm.crank_overcharge_fire_sounds[1]
+					else if(C.charge <= firearm.crank_overcharge_fire_sounds.len)
+						firearm.fire_sound = firearm.crank_overcharge_fire_sounds[C.charge]
+					else
+						firearm.fire_sound = firearm.crank_overcharge_fire_sounds[firearm.crank_overcharge_fire_sounds.len]
+
 			else
 				recharge_queued = 0
 
-
-
+//if I'm shooting, reset few variables in the way it makes sense
 /obj/item/gun/shoot_live_shot(mob/living/user)
 	. = ..()
 	//we have to check if the gun is a cranklasergun type, otherwise ignore it
@@ -94,92 +113,103 @@
 		var/obj/item/gun/energy/laser/cranklasergun/firearm = src
 		recharge_queued = 0
 		
-		if(firearm.crank_change_ammo_type)
+		if(firearm.crank_overcharge_mult.len)
 			var/obj/item/stock_parts/cell/C = src.get_cell()
 			C.charge = 0
 //<--
 
 ////////////////////////////////////////////////////////////////
 //Actual crankable guns start here
-//maybe don't name the first instance my_first_crank
 
-/obj/item/gun/energy/laser/cranklasergun/my_first_crank
+//-->Standard issue crankable laser gun template, this can't be overcharged and can shoot multiple times.
+/obj/item/gun/energy/laser/cranklasergun/classic
 	name = "My first crank template"
 	desc = "googoo zaza"
 	icon_state = "laer-e"
 	item_state = "laer-e"
 	cranking_time = 1.5 SECONDS
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/my_first_crank
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/my_first_crank)
+	crank_stamina_cost = 0 // put a number here if you want your cranking to tire people out
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/classic
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/classic)
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank_mb1.ogg',
 		'sound/effects/dynamo_crank/dynamo_crank_mb2.ogg',
 		'sound/effects/dynamo_crank/dynamo_crank_mb3.ogg',
 	)
 
-
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/my_first_crank  //basically a single shot charge
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/classic  //basically a single shot charge
 	maxcharge = 4
 
-
-/obj/item/ammo_casing/energy/cranklasergun/my_first_crank
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/my_first_crank
+/obj/item/ammo_casing/energy/cranklasergun/classic
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/classic
 	fire_sound = 'sound/weapons/pulse2.ogg'
 
-
-/obj/item/projectile/beam/laser/cranklasergun/my_first_crank
+/obj/item/projectile/beam/laser/cranklasergun/classic
 	damage = 25
 ////////////////////////////////////////////////////////////////
 
-
-/obj/item/gun/energy/laser/cranklasergun/lasermusket
-	name = "Laser musket"
-	desc = "thing"
+//-->Standard issue crankable laser gun that can be overcharged, this allows for a single shot only, but charging the gun makes the shot stronger
+/obj/item/gun/energy/laser/cranklasergun/overcharge
+	name = "Crankable laser musket template"
+	desc = "you shouldn't see this, please report it!"
 	icon_state = "laer-e"
 	item_state = "laer-e"
-	crank_change_ammo_type = 1
+	crank_overcharge_mult = list(1, 2, 3)
+	crank_overcharge_fire_sounds = list(
+		'sound/weapons/pulse3.ogg',
+		'sound/weapons/pulse2.ogg',
+		'sound/weapons/pulse.ogg',
+	)
 	cranking_time = 1.5 SECONDS
-	crank_stamina_cost = 15
+	crank_stamina_cost = 0  // put a number here if you want your cranking to tire people out
 	damage_multiplier = 3
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/lasermusket
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/lasermusket)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/overcharge)
 	fire_sound = 'sound/weapons/pulse.ogg'
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
 
-
-/obj/item/gun/energy/attack_self(mob/living/user)
-	. = ..()
-	if(istype(src, /obj/item/gun/energy/laser/cranklasergun/lasermusket))
-		var/obj/item/gun/energy/laser/cranklasergun/firearm = src
-		if(firearm.crank_change_ammo_type)
-			var/obj/item/stock_parts/cell/C = src.get_cell()
-			switch(C.charge)
-				if(0)
-					damage_multiplier = 1
-					fire_sound = 'sound/weapons/pulse3.ogg'
-				if(1)
-					damage_multiplier = 1
-					fire_sound = 'sound/weapons/pulse3.ogg'
-				if(2)
-					damage_multiplier = 2
-					fire_sound = 'sound/weapons/pulse2.ogg'
-				if(3)
-					damage_multiplier = 3
-					fire_sound = 'sound/weapons/pulse.ogg'
-
-
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/lasermusket
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge
 	maxcharge = 3
 
-
-/obj/item/ammo_casing/energy/cranklasergun/lasermusket
-	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/lasermusket
+/obj/item/ammo_casing/energy/cranklasergun/overcharge
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/overcharge
 	fire_sound = 'sound/weapons/pulse.ogg'
 
-
-/obj/item/projectile/beam/laser/cranklasergun/lasermusket
+/obj/item/projectile/beam/laser/cranklasergun/overcharge
 	damage = 30
 ////////////////////////////////////////////////////////////////
 
+//-->Revolver_man's laser musket
+/obj/item/gun/energy/laser/cranklasergun/overcharge/revolver_man
+	name = "Revolver Man's lazor"
+	desc = "Revolver Man has fucking lasors now???!!!"
+	icon_state = "laer-e"
+	item_state = "laer-e"
+	crank_overcharge_mult = list(1, 1.5, 2, 2.5, 3, 3.5)
+	crank_overcharge_fire_sounds = list(
+		'sound/weapons/pulse3.ogg',
+		'sound/weapons/pulse2.ogg',
+		'sound/weapons/pulse.ogg',
+	)
+	cranking_time = 0.8 SECONDS
+	crank_stamina_cost = 0 // put a number here if you want your cranking to tire people out
+	damage_multiplier = 3.5
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge/revolver_man
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/overcharge/revolver_man)
+	fire_sound = 'sound/weapons/pulse.ogg'
+	crank_sound = list(
+		'sound/effects/dynamo_crank/dynamo_crank.mp3',
+	)
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/overcharge/revolver_man
+	maxcharge = 6
+
+/obj/item/ammo_casing/energy/cranklasergun/overcharge/revolver_man
+	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/overcharge/revolver_man
+	fire_sound = 'sound/weapons/pulse.ogg'
+
+/obj/item/projectile/beam/laser/cranklasergun/overcharge/revolver_man
+	damage = 30
+////////////////////////////////////////////////////////////////
