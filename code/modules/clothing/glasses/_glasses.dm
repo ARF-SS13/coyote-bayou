@@ -16,10 +16,6 @@
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
 	var/throw_hit_chance = 35
 
-/obj/item/clothing/glasses/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
 	if(glass_colour_type && ishuman(user))
@@ -64,10 +60,6 @@
 	vision_flags = SEE_TURFS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
-
-/obj/item/clothing/glasses/meson/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is putting \the [src] to [user.p_their()] eyes and overloading the brightness! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
 
 /obj/item/clothing/glasses/meson/prescription
 	name = "prescription optical meson scanner"
@@ -137,14 +129,22 @@
 	flash_protect = 1
 	vision_correction = 1
 
-/obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is tightening \the [src]'s straps around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return OXYLOSS
-
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
 	desc = "Avast ye wasteys!"
 	icon_state = "eyepatch"
+	item_state = "eyepatch"
+
+/obj/item/clothing/glasses/eyepatchl
+	name = "white eyepatch left"
+	desc = "Avast ye wasteys!"
+	icon_state = "epwhitel"
+	item_state = "eyepatch"
+
+/obj/item/clothing/glasses/eyepatchr
+	name = "white eyepatch right"
+	desc = "Avast ye wasteys!"
+	icon_state = "epwhiter"
 	item_state = "eyepatch"
 
 /obj/item/clothing/glasses/eyepatch/goji
@@ -218,6 +218,13 @@
 	icon_state = "glasses"
 	item_state = "glasses"
 	vision_correction = 1 //corrects nearsightedness
+
+/obj/item/clothing/glasses/contact
+	name = "contact lenses"
+	desc = "Prescription contact lenses, a miracle of science."
+	icon_state = "contact_lenses"
+	item_state = "contact_lenses"
+	vision_correction = 1
 
 /obj/item/clothing/glasses/regular/jamjar
 	name = "jamjar glasses"

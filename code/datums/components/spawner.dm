@@ -1,3 +1,4 @@
+GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 /datum/component/spawner
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// List of 'special' mobs to spawn
@@ -33,9 +34,21 @@
 	var/coverable_by_dense_things = TRUE
 	/// Dont start spawning just yet
 	var/delay_start = FALSE
+	/// im special
+	var/am_special = FALSE
 	/// Is something covering us?
 	var/datum/weakref/covering_object
+	/// use the old spawner player-is-close check
+	var/old_spawner_check = FALSE
+	/// All our turfs that we're listening to
+	var/list/my_turfs = list() // its a list of coords
+	/// All our turfs that somehow got destroyed, and we need to reconnect with
+	var/list/disconnected = list() // its a list of coords
+	var/active = FALSE
+	/// When tripped, when do we stop trying to spawn things?
+	var/spawn_until = 0
 	COOLDOWN_DECLARE(spawner_cooldown)
+	var/covered = FALSE
 
 /datum/component/spawner/Initialize(
 		_mob_types,
@@ -91,32 +104,111 @@
 	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
+	var/coords = atom2coords(parent)
+	GLOB.nest_spawn_points -= coords // im here! honest
 
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/stop_spawning)
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/nest_destroyed)
 	RegisterSignal(parent, COMSIG_OBJ_ATTACK_GENERIC, .proc/on_attack_generic)
-	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/stop_spawning)
-	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/start_spawning)
+	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/coverme)
+	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/uncoverme)
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
 	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	if(istype(parent, /obj/structure/nest))
+		var/obj/structure/nest/nest = parent
+		if(nest.spawned_by_ckey)
+			am_special = TRUE
 	if(istype(parent, /obj/structure/nest/special))
+		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
-	if(!delay_start)
-		start_spawning()
+	register_turfs()
+
+/datum/component/spawner/proc/register_turfs()
+	var/atom/dad = parent
+	if(!dad.loc)
+		return
+	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
+	for(var/turf/trip in range(range, dad.loc))
+		connect_to_turf(trip, debug_color)
+
+/datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
+	my_turfs |= atom2coords(trip)
+	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
+	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
+	if(SSspawners.debug_spawner_turfs && debug_color)
+		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
+
+/datum/component/spawner/proc/turf_changed(turf/changed)
+	if(!isturf(changed))
+		return
+	disconnected |= atom2coords(changed)
+	start_spawning()
+
+/datum/component/spawner/proc/unregister_turfs()
+	for(var/coords in my_turfs)
+		var/turf/trip = coords2turf(coords)
+		if(!trip)
+			continue
+		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
+		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
+	my_turfs = list()
+	disconnected = list()
+
+/datum/component/spawner/proc/reconnect()
+	if(!LAZYLEN(disconnected))
+		return
+	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
+	for(var/coord in disconnected)
+		var/turf/trip = coords2turf(coord)
+		if(!trip)
+			continue
+		connect_to_turf(trip, debug_color)
+
+/datum/component/spawner/proc/still_there()
+	return TRUE // hi
 
 /datum/component/spawner/process()
-	if(should_destroy_spawner())
-		qdel(parent)
+	if(old_spawner_check)
+		try_to_spawn()
 		return
-	if(!can_spawn_mob())
+	if(COOLDOWN_FINISHED(src, spawn_until))
+		stop_spawning(null, FALSE)
 		return
-	spawn_mob()
+	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
+		try_to_spawn()
+	else
+		reconnect()
+
+/// something entered one of our turfs, check if we should spawn something
+/datum/component/spawner/proc/turf_trip(datum/source, atom/movable/arrived)
+	if(!am_special && spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
+		COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+		return
+	if(!check_mob(usr)) // could write a proc that searches everything for a mob, buuuuuuut........ dont wanna
+		return
+	if(am_special)
+		spawn_mob_special()
+		return
+	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+	start_spawning()
+
+/// Something told us to restart spawning
+/datum/component/spawner/proc/uncoverme()
+	covered = FALSE
+	start_spawning()
+
+/// Something told us to restart spawning
+/datum/component/spawner/proc/coverme()
+	covered = TRUE
+	stop_spawning()
 
 /// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
 	START_PROCESSING(SSspawners, src)
 
-/datum/component/spawner/proc/stop_spawning(datum/source, force, hint)
+/datum/component/spawner/proc/stop_spawning(datum/source, clear_spawned_mobs = TRUE)
 	STOP_PROCESSING(SSspawners, src)
+	if(!clear_spawned_mobs)
+		return
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
 		var/mob/living/simple_animal/removed_animal = mob_ref.resolve()
 		if(!removed_animal)
@@ -124,6 +216,12 @@
 		if(removed_animal.nest == src)
 			removed_animal.nest = null
 	spawned_mobs = null
+
+/datum/component/spawner/proc/nest_destroyed(datum/source, force, hint)
+	stop_spawning()
+	if(!am_special)
+		GLOB.nest_spawn_points |= atom2coords(parent) // we'll be back, eventually
+	qdel(src)
 
 // Stopping clientless simple mobs' from indiscriminately bashing their own spawners due DestroySurroundings() et similars.
 /datum/component/spawner/proc/on_attack_generic(datum/source, mob/user, damage_amount, damage_type, damage_flag, sound_effect, armor_penetration)
@@ -141,10 +239,6 @@
 			if(thingy.density == TRUE)
 				return TRUE
 
-/// Do we have any mobs left?
-/datum/component/spawner/proc/has_mobs_left()
-	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
-
 /// Should the spawner be destroyed?
 /datum/component/spawner/proc/should_destroy_spawner()
 	if(infinite)
@@ -152,8 +246,60 @@
 	if(has_mobs_left())
 		return FALSE
 	if(ismob(parent))
+		qdel(src)
 		return FALSE // no more self-destructing ant queens
 	return TRUE
+
+/// Do we have any mobs left?
+/datum/component/spawner/proc/has_mobs_left()
+	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
+
+/datum/component/spawner/proc/check_mob(mob/living/check)
+	if(!isliving(check))
+		return FALSE
+	if(!check.client)
+		return FALSE
+	return TRUE
+
+/// Basic checks to see if we can spawn something
+/datum/component/spawner/proc/try_to_spawn()
+	if(covered)
+		return FALSE
+	if(COOLDOWN_TIMELEFT(src, spawner_cooldown))
+		return FALSE
+	if(!check_spawned_mobs())
+		return FALSE
+	if(something_covering_us())
+		return FALSE
+	if(old_spawner_check && !something_in_range())
+		return FALSE
+	spawn_mob()
+	COOLDOWN_START(src, spawner_cooldown, spawn_time)
+	if(should_destroy_spawner())
+		qdel(parent)
+		return
+
+/datum/component/spawner/proc/something_in_range()
+	if(!range)
+		return TRUE
+	var/atom/P = parent
+	for(var/mob/living in GLOB.player_list) // client-containing mobs, NOT clients
+		if(get_dist(P, living) <= range)
+			return TRUE
+	
+/// is something covering us?
+/datum/component/spawner/proc/something_covering_us()
+	if(!coverable_by_dense_things)
+		return FALSE
+	var/atom/P = parent
+	var/turf/our_turf = get_turf(P)
+	if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
+		qdel(P) // and I aint dealing with that shit
+		return
+	/// Accounts for anything dense, which includes mobs, mechs, lockers, etc
+	for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
+		if(maybe_heavy_thing.density)
+			return TRUE
 
 /// Check the spawned mob list, prune dead mobs, return TRUE if it isnt full
 /datum/component/spawner/proc/check_spawned_mobs()
@@ -168,44 +314,6 @@
 			removed_animal.nest = null
 	if(LAZYLEN(spawned_mobs) < max_mobs)
 		return TRUE
-
-/// Basic checks to see if we can spawn something
-/datum/component/spawner/proc/can_spawn_mob()
-	if(COOLDOWN_TIMELEFT(src, spawner_cooldown))
-		return FALSE
-	if(!check_spawned_mobs())
-		return FALSE
-	var/atom/P = parent
-	if(coverable_by_dense_things)
-		var/turf/our_turf = get_turf(P)
-		if(!our_turf) // mobs keep spawning in nullspace for some bizarre reason
-			qdel(P) // and I aint dealing with that shit
-			return
-		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
-		if(previous_heavy_thing)
-			if(get_turf(previous_heavy_thing) == our_turf)
-				return FALSE
-			else
-				covering_object = null // mustve wandered off
-		/// Accounts for anything dense, which includes mobs, mechs, lockers, etc
-		for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
-			if(maybe_heavy_thing.density == TRUE)
-				covering_object = WEAKREF(maybe_heavy_thing)
-				return FALSE
-	if(range)
-		var/is_close_enough = FALSE
-		for(var/mob/living as anything in SSmobs.clients_by_zlevel[P.z]) // client-containing mobs, NOT clients
-			if(get_dist(P, living) <= range)
-				is_close_enough = TRUE
-				break
-		if(!is_close_enough)
-			return FALSE
-	/* if(overpopulation_range)
-		var/mobs_in_range
-		for(var/mob/living/simple_animal/living_mob in range(overpopulation_range, get_turf(P)))
-			if(mobs_in_range++ >= max_mobs)
-				return FALSE */
-	return TRUE
 
 /// spawns a mob, then immediately tries to self-destruct
 /datum/component/spawner/proc/spawn_mob_special()

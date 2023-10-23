@@ -103,7 +103,7 @@
 /datum/supply_pack/misc/coloredsheets
 	name = "Bedsheet Crate"
 	desc = "Give your night life a splash of color with this crate filled with bedsheets! Contains a total of nine different-colored sheets."
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/bedsheet/blue,
 					/obj/item/bedsheet/green,
 					/obj/item/bedsheet/orange,
@@ -326,11 +326,96 @@
 //////////////////////////// Misc + Decor ////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+/datum/supply_pack/misc/capsule
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Basic"
+	desc = "A basic C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule)
+
+/datum/supply_pack/misc/capsuleluxury
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Luxury"
+	desc = "A luxury C.A.M.P. capsule packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 600
+	contains = list(/obj/item/survivalcapsule/luxury)
+
+/datum/supply_pack/misc/capsuleluxuryelite
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Luxury Elite"
+	desc = "A luxury bar C.A.M.P. capsule packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 800
+	contains = list(/obj/item/survivalcapsule/luxuryelite)
+
+/datum/supply_pack/misc/capsulesuper
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Super Deluxe"
+	desc = "The best of the best, no luxury witheld super-deluxe C.A.M.P. packed and designed by the Texarkana Trade Union. Dispensers, machinery, sleeping quarters, vendors, it has it all.  Shake it and throw it!"
+	cost = 1000
+	contains = list(/obj/item/survivalcapsule/super_deluxe)
+
+/datum/supply_pack/misc/capsulepremium
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Premium"
+	desc = "An intermediatly priced, carpeted, C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 500
+	contains = list(/obj/item/survivalcapsule/premium)
+
+/datum/supply_pack/misc/capsulequad
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Spacious"
+	desc = "An expanded tent with four living quarters and a soda fountain C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/quad)
+
+/datum/supply_pack/misc/capsulemerchant
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Merchant"
+	desc = "A partially covered merchants stall.  This one has a sleeping quarters too. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/merchant)
+
+/datum/supply_pack/misc/capsuleparty
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Party"
+	desc = "A large, spacious tent with a booze dispenser and some food. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/party)
+
+/datum/supply_pack/misc/capsulekitchen
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Cook-N-Go"
+	desc = "A rapid, ready to deploy field mess kitchen. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/kitchen)
+
+/datum/supply_pack/misc/capsulefarm
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Farm-N-Go"
+	desc = "A ready to go, loaded farming plot with three brahmin, and a small living quarter. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/farm)
+
+/datum/supply_pack/misc/capsulefortune
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Occult"
+	desc = "A camp with three brahmin and all your supernatural needs. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/fortuneteller)
+
+/datum/supply_pack/misc/capsulesmith
+	goody = PACK_GOODY_PUBLIC
+	name = "C.A.M.P. Capsule - Blacksmithery"
+	desc = "An all-in-one smithery, with a workbench, lathe, and forge as its key components. C.A.M.P. packed and designed by the Texarkana Trade Union.  Shake it and throw it!"
+	cost = 400
+	contains = list(/obj/item/survivalcapsule/blacksmith)
+
+
 /datum/supply_pack/misc/carpet
 	goody = PACK_GOODY_PUBLIC
 	name = "Classic Carpet Single-Pack"
 	desc = "Plasteel floor tiles getting on your nerves? This 50 units stack of extra soft carpet will tie any room together."
-	cost = 200
+	cost = 400
 	contains = list(/obj/item/stack/tile/carpet/fifty)
 
 /datum/supply_pack/misc/carpet/black
@@ -344,7 +429,7 @@
 /datum/supply_pack/misc/carpet/premium
 	name = "Monochrome Carpet Single-Pack"
 	desc = "Exotic carpets for all your decorating needs. This 30 units stack of extra soft carpet will tie any room together."
-	cost = 250
+	cost = 400
 	contains = list(/obj/item/stack/tile/carpet/monochrome/thirty)
 
 /datum/supply_pack/misc/carpet/premium/blackred

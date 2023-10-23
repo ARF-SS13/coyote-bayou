@@ -202,3 +202,24 @@
 	taur_mode = STYLE_PAW_TAURIC
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/taur/moth
+	name = "Moth"
+	icon_state = "moth"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+
+/datum/sprite_accessory/taur/catslug
+	name = "catslug"
+	icon_state = "scug"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+
+/datum/sprite_accessory/taur/bigcat
+	name = "Big Cat"
+	icon_state = "bigcat"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = TRUE

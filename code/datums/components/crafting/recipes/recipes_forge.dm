@@ -15,6 +15,19 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/sharpener
+	name = "Whetstone"
+	result = /obj/item/melee/smith/sharpener
+	reqs = list(
+		/obj/item/ingot/titanium = 1,
+		/obj/item/stack/sheet/plasteel = 10,
+		/obj/item/stack/sheet/mineral/diamond = 1,
+		)
+	tools = list(TOOL_WORKBENCH)
+	time = 5 SECONDS
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 /datum/crafting_recipe/tableanvil
 	name = "Table Anvil"
 	result = /obj/structure/anvil/obtainable/table
@@ -74,7 +87,7 @@
 /datum/crafting_recipe/tools/forged/sledge
 	name = "Sledgehammer"
 	result = /obj/item/twohanded/sledgehammer/simple
-	time = 700
+	time = 100 //Changed from 700. Because otherwise whenever someone wants to forge they have to spend a minute and a bit standing around hogging a crafting table and are liable to get nudged by someone who lagged
 	reqs = list(
 		/obj/item/stack/sheet/metal = 15,
 		/obj/item/stack/sheet/mineral/wood = 5,

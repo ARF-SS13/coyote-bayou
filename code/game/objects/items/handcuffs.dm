@@ -3,10 +3,6 @@
 	var/demoralize_criminals = TRUE // checked on carbon/carbon.dm to decide wheter to apply the handcuffed negative moodlet or not.
 	var/del_on_remove = FALSE
 
-/obj/item/restraints/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return(OXYLOSS)
-
 /obj/item/restraints/Destroy()
 	if(iscarbon(loc))
 		var/mob/living/carbon/M = loc
@@ -261,11 +257,6 @@
 		COMSIG_ATOM_ENTERED = .proc/spring_trap,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-
-/obj/item/restraints/legcuffs/beartrap/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
-	return (BRUTELOSS)
 
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
 	..()

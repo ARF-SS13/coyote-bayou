@@ -19,6 +19,7 @@
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
 	damage = BULLET_DAMAGE_PISTOL_22
+	damage_list = list("10" = 5, "12" = 25, "15" = 50, "20" = 20)
 	stamina = BULLET_STAMINA_PISTOL_22
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_22
@@ -103,6 +104,7 @@
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM
+	damage_list = list("20" = 10, "23" = 10, "25" = 50, "26" = 15, "30" = 15)
 	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_9MM
@@ -125,6 +127,7 @@
 /obj/item/projectile/bullet/c9mm/improvised
 	name = "handloaded 9mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
+	damage_list = list("14" = 10, "17" = 10, "23" = 50, "25" = 10, "27" = 6, "30" = 15)
 	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_9MM_HANDLOAD
@@ -453,7 +456,8 @@
  */
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_10MM
+	damage = BULLET_DAMAGE_PISTOL_10MM //30
+	damage_list = list("20" = 8, "25" = 8, "30" = 55, "35" = 10, "40" = 19)
 	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM
@@ -475,6 +479,7 @@
 /obj/item/projectile/bullet/c10mm/improvised
 	name = "handloaded 10mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_10MM_HANDLOAD
+	damage_list = list("17" = 15, "20" = 10, "25" = 10, "28" = 50, "35" = 10, "40" = 20)
 	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM_HANDLOAD
@@ -585,7 +590,8 @@
  */
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_45ACP
+	damage = BULLET_DAMAGE_PISTOL_45ACP //36
+	damage_list = list("25" = 5, "30" = 10, "33" = 15, "36" = 50, "40" = 5, "45" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP
@@ -607,6 +613,7 @@
 /obj/item/projectile/bullet/c45/improvised
 	name = "handloaded .45 bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("20" = 5, "25" = 5, "28" = 15, "32" = 60, "36" = 5, "45" = 10)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
@@ -621,6 +628,7 @@
 /obj/item/projectile/bullet/c45/simple
 	name = ".45 FMJ bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("20" = 5, "25" = 5, "28" = 15, "32" = 60, "36" = 5, "45" = 10)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_HANDLOAD * 2
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
@@ -715,7 +723,8 @@
  */
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_38
+	damage = BULLET_DAMAGE_PISTOL_38 //36
+	damage_list = list("30" = 5, "32" = 5, "33" = 10, "34" = 10, "36" = 50, "44" = 20)
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38
@@ -737,6 +746,7 @@
 /obj/item/projectile/bullet/a357/improvised
 	name = "handloaded .357 bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_HANDLOAD
+	damage_list = list("28" = 5, "30" = 5, "31" = 10, "32" = 10, "34" = 50, "44" = 20)
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_HANDLOAD
@@ -862,7 +872,8 @@
  */
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_44
+	damage = BULLET_DAMAGE_PISTOL_44 //45
+	damage_list = list("30" = 5, "40" = 5, "42" = 10, "45" = 60, "50" = 5, "52" = 15)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44
@@ -884,6 +895,7 @@
 /obj/item/projectile/bullet/m44/improvised
 	name = "handloaded .44 bullet"
 	damage = BULLET_DAMAGE_PISTOL_44_HANDLOAD
+	damage_list = list("27" = 7, "37" = 8, "39" = 10, "42" = 60, "47" = 5, "48" = 10)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44_HANDLOAD
@@ -905,6 +917,7 @@
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 	damage = BULLET_DAMAGE_PISTOL_44_HANDLOAD
+	damage_list = list("27" = 10, "37" = 15, "39" = 60, "40" = 15)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44_HANDLOAD
@@ -968,7 +981,8 @@
  */
 /obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_14MM
+	damage = BULLET_DAMAGE_PISTOL_14MM //50, gott damn
+	damage_list = list("40" = 5, "45" = 5, "50" = 60, "58" = 15, "60" = 15)
 	stamina = BULLET_STAMINA_PISTOL_14MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_14MM
@@ -990,6 +1004,7 @@
 /obj/item/projectile/bullet/mm14/improvised
 	name = "handloaded 14mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_14MM_HANDLOAD
+	damage_list = list("30" = 5, "35" = 5, "45" = 60, "52" = 10, "58" = 10, "60" = 10)
 	stamina = BULLET_STAMINA_PISTOL_14MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_14MM_HANDLOAD
@@ -1065,6 +1080,7 @@
 /obj/item/projectile/bullet/a45lc
 	name = ".45 LC bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP
+	damage_list = list("20" = 5, "26" = 5, "29" = 15, "34" = 50, "37" = 5, "41" = 5, "52" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP
@@ -1093,6 +1109,7 @@
 /obj/item/projectile/bullet/a45lc/improvised
 	name = "handloaded .45 LC bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("17" = 5, "23" = 5, "25" = 15, "30" = 50, "33" = 5, "38" = 5, "50" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD

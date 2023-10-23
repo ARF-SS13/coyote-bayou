@@ -1269,7 +1269,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon_state = "pda-clear"
 /datum/reskin/pda/teachboy
 	skin = "Teachboy PDA"
-	desc = "A portable microcomputer by RobCo Industries. This model is a EDU-2 series educational device- or atleast that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
+	desc = "A portable microcomputer by RobCo Industries. This model is an EDU-2 series educational device - or at least that's what you can make from the rusty tin case with wires jammed into it- someone's repaired this thing."
 	icon_state = "pda-teachboy-unfolded"
 	disable_overlays = TRUE
 /datum/reskin/pda/curator
@@ -1449,6 +1449,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	. = TRUE
 	target.item_state = item_state
+	target.mob_overlay_icon = mob_overlay_icon
 	if(target.sawn_off)
 		target.desc = sawn_desc
 		target.icon = sawn_icon
@@ -1563,6 +1564,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Arisaka 30"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 30 of these in the second world war. And now you have one of them!"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "arisaka30"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1577,6 +1579,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Arisaka 35"
 	desc = "A bolt action rifle chambered in .30-06. Rumor has it, the Japanese only had 35 of these in the second world war. That's 5 more than the 30. And that's terrible."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "arisaka35"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1593,7 +1596,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "arisaka38"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off Arisaka 38"
@@ -1607,7 +1610,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "arisaka99"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off Arisaka 99"
@@ -1619,6 +1622,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Gewehr 71"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the most popular rifle in the world. That's why it's so hard to find, everyone already has one."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gewehr71"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1633,6 +1637,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Gewehr 98"
 	desc = "A bolt action rifle chambered in .30-06. Invented by John Gehwehr in 2171, this rifle went on to become the second most popular rifle in the world. That's why it's so hard to find, everyone already had a 71."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gewehr98"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1689,6 +1694,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Murata"
 	desc = "A bolt action rifle chambered in .30-06. A simple design used for brahmin ranching."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "murata"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1703,6 +1709,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Carcano"
 	desc = "A bolt action rifle chambered in .30-06. Chryslus Motors' first and only attempt at making a volcanic pistol. As you can see. there's a reason they stuck to making cars."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "carcano"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1733,7 +1740,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "kar98k"
 	item_state = "308"
-	mob_overlay_icon = null
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	sawn_name = "sawed off kar98k"
@@ -1881,6 +1888,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "Lee-Enfield rifle"
 	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "smle"
 	item_state = "smle"
 	mob_overlay_icon = null
@@ -1895,6 +1903,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	name = "SMLE"
 	desc = "A British rifle sometimes known as the SMLE. It seems to have been re-chambered in .308. Can be sawn off."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "smle"
 	item_state = "308"
 	mob_overlay_icon = null
@@ -1999,6 +2008,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	target.item_state = item_state
 	. = TRUE
+	target.mob_overlay_icon = mob_overlay_icon
 	var/chambered = !!target.chambered
 	if(chambered)
 		target.icon = chambered_icon
@@ -2017,8 +2027,8 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	)
 /datum/reskin/gun/pistol/glock
 	skin = "Glock"
-	name = "glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	name = "Glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "glock"
 	item_state = "glock"
@@ -2029,10 +2039,11 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	chambered_state = "glock"
 	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	empty_state = "glock-e"
+
 /datum/reskin/gun/pistol/plock
 	skin = "Plock"
-	name = "Pink glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	name = "Pink Glock Pistol"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "plock"
 	item_state = "plock"
@@ -2043,6 +2054,46 @@ GLOBAL_LIST_EMPTY(reskin_list)
 	chambered_state = "plock"
 	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	empty_state = "plock-e"
+
+
+/datum/component/reskinnable/beretta9
+	use_original_skin = FALSE
+	skins = list(
+		"berettam9tan",
+		"berettam9",
+	)
+
+/datum/reskin/gun/pistol/berettam9tan
+	skin = "Tan M9"
+	name = "Tan M9 berretta"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is tan colored!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "tanm9"
+	item_state = "gun"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "tanm9"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "tanm9-e"
+
+
+/datum/reskin/gun/pistol/berettam9
+	skin = "Pristine M9"
+	name = "Pristine M9 berretta"
+	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is steel and pristine looking!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "newm9"
+	item_state = "gun"
+	mob_overlay_icon = null
+	mutantrace_variation = null
+	expected_type = /obj/item/gun/ballistic
+	chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	chambered_state = "newm9"
+	empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	empty_state = "newm9-e"
+
 
 //////////////////////////
 /// VOLCANIC PISTOL //////
@@ -2118,6 +2169,7 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return
 	. = TRUE
 	target.item_state = item_state
+	target.mob_overlay_icon = mob_overlay_icon
 	var/obj/item/ammo_box/magazine/mag = target.magazine
 	var/loaded = istype(mag)
 	var/chambered = !!target.chambered
@@ -2221,22 +2273,22 @@ GLOBAL_LIST_EMPTY(reskin_list)
 /datum/reskin/gun/magazine/scar_l
 	skin = "SCAR-L"
 	name = "SCAR-L"
-	desc = "As an ancient modern rifle chambered in 5.56mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
+	desc = "As an ancient modern rifle chambered in 5mm, the Sierra Catgirl Army Rifle - (maLe) is a popular choice for those wanting to patrol the Northwestern Silvervine."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "unused556rifle"
-	item_state = "servicerifle"
+	icon_state = "scarl"
+	item_state = "scarl"
 	mob_overlay_icon = null
 	mutantrace_variation = null
 	expected_type = /obj/item/gun
 	supported_sizes = list()
 	loaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	loaded_chambered_state = "unused556rifle"
+	loaded_chambered_state = "scarl"
 	loaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	loaded_empty_state = "unused556rifle"
+	loaded_empty_state = "scarl"
 	unloaded_chambered_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	unloaded_chambered_state = "unused556rifle-e"
+	unloaded_chambered_state = "scarl-e"
 	unloaded_empty_icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	unloaded_empty_state = "unused556rifle-e"
+	unloaded_empty_state = "scarl-e"
 
 ////////////////////////////
 /// DEBUG SERVICE RIFLE ///

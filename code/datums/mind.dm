@@ -69,9 +69,11 @@
 	/// Our skill holder.
 	var/datum/skill_holder/skill_holder
 
-	///What character we spawned in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
-	var/mob/original_character
+///Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
+	var/datum/weakref/original_character
 
+	/// A lazy list of statuses to add next to this mind in the traitor panel
+	var/list/special_statuses
 
 /datum/mind/New(key)
 	skill_holder = new(src)
@@ -81,13 +83,9 @@
 
 /datum/mind/Destroy()
 	SSticker.minds -= src
-	if(islist(antag_datums))
-		for(var/i in antag_datums)
-			var/datum/antagonist/antag_datum = i
-			if(antag_datum.delete_on_mind_deletion)
-				qdel(i)
-		antag_datums = null
-	QDEL_NULL(skill_holder)
+	QDEL_LIST(antag_datums)
+	QDEL_NULL(language_holder)
+	current = null
 	return ..()
 
 /datum/mind/proc/get_language_holder()

@@ -53,6 +53,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
 
+	var/list/aghost_squelches = list()
+
 	/// Custom Keybindings
 	var/list/key_bindings = list()
 	/// List with a key string associated to a list of keybindings. Unlike key_bindings, this one operates on raw key, allowing for binding a key that triggers regardless of if a modifier is depressed as long as the raw key is sent.
@@ -77,7 +79,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
+	var/genital_whitelist = ""
+	var/whoflags = DEFAULT_WHO_FLAGS
+	var/lockouts = NONE
+
 	var/uses_glasses_colour = 0
+
+	var/show_in_directory = TRUE
+	var/directory_tag = "Unset"
+	var/directory_erptag = "Unset"
+	var/directory_ad = "Hi"
 
 	//character preferences
 	var/real_name						//our character's name
@@ -104,6 +115,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/right_eye_color = "000000"
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
+	var/tbs = TBS_DEFAULT // turner broadcasting system
+	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
@@ -191,6 +204,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"taste" = "something",
 		"body_model" = MALE,
 		"body_size" = RESIZE_DEFAULT_SIZE,
+		"body_width" = RESIZE_DEFAULT_WIDTH,
 		"color_scheme" = OLD_CHARACTER_COLORING,
 		"chat_color" = "whoopsie"
 		)
@@ -218,7 +232,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/image/creature_image = null
 	var/creature_profilepic = null
 
-	//Quirk list
+	/// Quirk list
+	/// okay lets compromise, we'll have type paths, but they're strings, happy?
+	/// Format: list("/datum/quirk/aaa", "/datum/quirk/bbb", "/datum/quirk/ccc", etc)
+	var/list/char_quirks = list()
+	/// DONT USE THIS, ITS JUST FOR MIGRATION!!!!!!!
 	var/list/all_quirks = list()
 
 	//Quirk category currently selected
@@ -317,6 +335,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Versioning hack! Versioning hack! Versioning hack!
 	var/list/current_version = list()
 
+	var/fuzzy = FALSE //Fuzzy scaling
+
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -398,9 +418,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Quirk Setup</h2>"
-				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
-				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+				dat += "<center>"
+				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
+					dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
+				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
+				dat += "<h2>Configure Quirks</a></h2><br></center>"
+				dat += "</a>"
+				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
 			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column
@@ -416,6 +440,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Top/Bottom/Switch:</b> <a href='?_src_=prefs;preference=tbs;task=input'>[tbs]</a><BR>"
+			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
 			//Middle Column
 			dat +="<td width='30%' valign='top'>"
@@ -617,6 +643,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if (CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
+			if (CONFIG_GET(number/body_width_min) != CONFIG_GET(number/body_width_max))
+				dat += "<b>Sprite Width:</b> <a href='?_src_=prefs;preference=body_width;task=input'>[features["body_width"]*100]%</a><br>"
+			dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eye Type</h3>"
@@ -649,9 +678,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 
 			// Coyote ADD: Blurbleblurhs
-			dat += "<b>Sound Indicator:</b><BR>"
+			dat += "<h2>Sound Indicator Preferences</h2>"
+			dat += "<b>Sound Ind. Enable:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><BR>"
+			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
+
 			// Coyote ADD: End
 
 			if(HAIR in pref_species.species_traits)
@@ -1088,7 +1125,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								?_src_=prefs;
 								preference=bag;
 								task=input'>
-								Sackpack
+								[backbag]
 							</a>"}
 					dat += "<div class='undies_link'>-</div>"
 					dat += "</td>"
@@ -1099,7 +1136,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									href='
 										?_src_=prefs;
 										preference=persistent_scars'>
-											Enabled
+											[persistent_scars ? "Enabled" : "Disabled"]
 								</a>"}
 					dat += {"<a 
 									class='undies_link' 
@@ -1501,7 +1538,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 	dat += "</center>"
 
-	winshow(user, "preferences_window", TRUE)
+	winset(user, "preferences_window", "is-visible=1;focus=0;")
 	var/datum/browser/popup = new(user, "preferences_browser", "<div align='center'>Character Setup</div>", 640, 770)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -2042,7 +2079,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(!SSquirks)
 		to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
 		return
+	SSquirks.OpenWindow(user)
 
+	/* RIP all taht shit
 	var/list/dat = list()
 	if(!SSquirks.quirks.len)
 		dat += "The quirk subsystem hasn't finished initializing, please hold..."
@@ -2054,7 +2093,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		Quirks are applied at roundstart and cannot normally be removed.</div>"
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
 		dat += "<hr>"
-		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+		dat += "<center><b>Current quirks:</b> [char_quirks.len ? char_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
 		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
@@ -2076,7 +2115,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
 			var/quirk_conflict = FALSE
-			for(var/_V in all_quirks)
+			for(var/_V in char_quirks)
 				if(_V == quirk_name)
 					has_quirk = TRUE
 			if(initial(T.mood_quirk) && CONFIG_GET(flag/disable_human_mood))
@@ -2084,7 +2123,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				quirk_conflict = TRUE
 			if(has_quirk)
 				if(quirk_conflict)
-					all_quirks -= quirk_name
+					char_quirks -= quirk_name
 					has_quirk = FALSE
 				else
 					quirk_cost *= -1 //invert it back, since we'd be regaining this amount
@@ -2110,15 +2149,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(0)
-	return
+	return */
 
 
 
 /datum/preferences/proc/SetSpecial(mob/user)
-//	if(!SSquirks)
-	//	to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
-//		return
-
 	var/list/dat = list()
 
 	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
@@ -2145,21 +2180,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.open(0)
 	return
 
-/datum/preferences/proc/GetQuirkBalance()
-	var/bal = 5
-	for(var/V in all_quirks)
-		var/datum/quirk/T = SSquirks.quirks[V]
-		bal -= initial(T.value)
-	for(var/modification in modified_limbs)
-		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-			return bal + 1 //max 1 point regardless of how many prosthetics
-	return bal
+// /datum/preferences/proc/GetQuirkBalance()
+// 	var/bal = 100
+// 	for(var/V in char_quirks)
+// 		var/datum/quirk/T = SSquirks.quirks[V]
+// 		bal -= initial(T.value)
+// 	for(var/modification in modified_limbs)
+// 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
+// 			return bal + 33 //max 33 point regardless of how many prosthetics
+// 	return bal
 
-/datum/preferences/proc/GetPositiveQuirkCount()
-	. = 0
-	for(var/q in all_quirks)
-		if(SSquirks.quirk_points[q] > 0)
-			.++
+/datum/preferences/proc/update_genital_whitelist()
+	var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+		parent, 
+		"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+		any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+		content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+		Separate your entries with a comma!",
+		"Genital Whitelist",
+		genital_whitelist)
+	if(isnull(new_genital_whitelist))
+		to_chat(parent, "Never mind!!")
+		return
+	if(trim(new_genital_whitelist) == "" && trim(genital_whitelist) != "")
+		var/whoa = alert(usr, "Are you sure you want to clear your genital whitelist?", "Clear Genital Whitelist", "Yes", "No")
+		if(whoa == "No")
+			to_chat(parent, "Never mind!!")
+			return
+	genital_whitelist = new_genital_whitelist
+	to_chat(parent, span_notice("Updated your genital whitelist! It should kick in soon!"))
+	save_preferences()
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2192,23 +2242,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		qdel(query_get_jobban)
 		return
 
+	if(href_list["preference"] == "quirk_migrate")
+		SSquirks.ConvertOldQuirklistToNewQuirklist(src, )
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
 	if(href_list["preference"] == "change_genital_whitelist")
-		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
-			user, 
-			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
-			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
-			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
-			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
-			"Genital Whitelist",
-			features["genital_whitelist"])
-		if(new_genital_whitelist == "")
-			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
-			if(whoathere == "Yes")
-				features["genital_whitelist"] = new_genital_whitelist
-		else if(!isnull(new_genital_whitelist))
-			features["genital_whitelist"] = new_genital_whitelist
+		update_genital_whitelist()
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
@@ -2249,49 +2288,46 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				SetChoices(user)
 		return 1
 
-	else if(href_list["preference"] == "trait")
-		switch(href_list["task"])
-			if("close")
-				user << browse(null, "window=mob_occupation")
-				ShowChoices(user)
-			if("update")
-				var/quirk = href_list["trait"]
-				if(!SSquirks.quirks[quirk])
-					return
-				for(var/V in SSquirks.quirk_blacklist) //V is a list
-					var/list/L = V
-					for(var/Q in all_quirks)
-						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
-							to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
-							return
-				var/value = SSquirks.quirk_points[quirk]
-				var/balance = GetQuirkBalance()
-				if(quirk in all_quirks)
-					if(balance + value < 0)
-						to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
-						return
-					all_quirks -= quirk
-				else
-					if(value != 0 && (GetPositiveQuirkCount() >= MAX_QUIRKS))
-						to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
-						return
-					if(balance - value < 0)
-						to_chat(user, span_warning("You don't have enough balance to gain this quirk!"))
-						return
-					all_quirks += quirk
-				SetQuirks(user)
-			if("reset")
-				all_quirks = list()
-				SetQuirks(user)
-			else
-				SetQuirks(user)
-		return TRUE
+	else if(href_list["preference"] == "quirkmenu")
+		SSquirks.OpenWindow(user)
+	// 		if("update")
+	// 			var/quirk = href_list["trait"]
+	// 			if(!SSquirks.quirks[quirk])
+	// 				return
+	// 			for(var/V in SSquirks.quirk_blacklist) //V is a list
+	// 				var/list/L = V
+	// 				for(var/Q in char_quirks)
+	// 					if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
+	// 						to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
+	// 						return
+	// 			var/value = SSquirks.quirk_points[quirk]
+	// 			var/balance = GetQuirkBalance()
+	// 			if(quirk in char_quirks)
+	// 				if(balance + value < 0)
+	// 					to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
+	// 					return
+	// 				char_quirks -= quirk
+	// 			else
+	// 				if(value != 0 && (GetPositiveQuirkCount() >= MAX_QUIRKS))
+	// 					to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
+	// 					return
+	// 				if(balance - value < 0)
+	// 					to_chat(user, span_warning("You don't have enough balance to gain this quirk!"))
+	// 					return
+	// 				char_quirks += quirk
+	// 			SetQuirks(user)
+	// 		if("reset")
+	// 			char_quirks = list()
+	// 			SetQuirks(user)
+	// 		else
+	// 			SetQuirks(user)
+	// 	return TRUE
 
-	else if(href_list["quirk_category"])
-		var/temp_quirk_category = href_list["quirk_category"]
-		if(temp_quirk_category == QUIRK_POSITIVE || temp_quirk_category == QUIRK_NEUTRAL || temp_quirk_category == QUIRK_NEGATIVE)
-			quirk_category = temp_quirk_category
-			SetQuirks(user)
+	// else if(href_list["quirk_category"])
+	// 	var/temp_quirk_category = href_list["quirk_category"]
+	// 	if(temp_quirk_category == QUIRK_POSITIVE || temp_quirk_category == QUIRK_NEUTRAL || temp_quirk_category == QUIRK_NEGATIVE)
+	// 		quirk_category = temp_quirk_category
+	// 		SetQuirks(user)
 
 	else if(href_list["preference"] == "special")
 		switch(href_list["task"])
@@ -2467,6 +2503,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(msg))
 						creature_ooc = msg
 
+				if("tbs")
+					var/new_tbs = input(user, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+					if(new_tbs)
+						tbs = new_tbs
+				if("kisser")
+					var/newkiss = input(user, "What sort of person do you like to kisser?", "Character Preference") as null|anything in KISS_LIST
+					if(newkiss)
+						kisser = newkiss
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)
@@ -2563,26 +2607,29 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("modify_limbs")
 					var/limb_type = input(user, "Choose the limb to modify:", "Character Preference") as null|anything in LOADOUT_ALLOWED_LIMB_TARGETS
-					if(limb_type)
-						var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
-						if(modification_type)
-							if(modification_type == LOADOUT_LIMB_PROSTHETIC)
-								var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
-								if(prosthetic_type)
-									var/number_of_prosthetics = 0
-									for(var/modified_limb in modified_limbs)
-										if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
-											number_of_prosthetics += 1
-									if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
-										to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
-									else
-										//save the actual prosthetic data
-										modified_limbs[limb_type] = list(modification_type, prosthetic_type)
-							else
-								if(modification_type == LOADOUT_LIMB_NORMAL)
-									modified_limbs -= limb_type
-								else
-									modified_limbs[limb_type] = list(modification_type)
+					if(!limb_type)
+						return
+					var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
+					if(!modification_type)
+						return
+					if(modification_type == LOADOUT_LIMB_PROSTHETIC)
+						var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
+						if(!prosthetic_type)
+							return
+						var/number_of_prosthetics = 0
+						for(var/modified_limb in modified_limbs)
+							if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
+								number_of_prosthetics += 1
+						if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
+							to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
+						else
+							//save the actual prosthetic data
+							modified_limbs[limb_type] = list(modification_type, prosthetic_type)
+					else
+						if(modification_type == LOADOUT_LIMB_NORMAL)
+							modified_limbs -= limb_type
+						else
+							modified_limbs[limb_type] = list(modification_type)
 
 				if("underwear")
 					var/new_underwear = input(user, "Choose your character's underwear:", "Character Preference")  as null|anything in GLOB.underwear_list
@@ -3193,7 +3240,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("butt_size")
 					var/min_B = CONFIG_GET(number/butt_min_size_prefs)
@@ -3316,6 +3363,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								return
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
+
+				if("toggle_fuzzy")
+					fuzzy = !fuzzy
+
+				if("body_width")
+					var/min = CONFIG_GET(number/body_width_min)
+					var/max = CONFIG_GET(number/body_width_max)
+					var/new_body_width = input(user, "Choose your desired sprite size: ([min*100]%-[max*100]%)\nWarning: This may make your character look distorted", "Character Preference", features["body_width"]*100) as num|null
+					if (new_body_width)
+						new_body_width = clamp(new_body_width * 0.01, min, max)
+						features["body_width"] = new_body_width
 
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
@@ -3736,11 +3794,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
-						var/obj/screen/plane_master/game_world/G = parent.mob.hud_used.plane_masters["[GAME_PLANE]"]
-						var/obj/screen/plane_master/objitem/OI = parent.mob.hud_used.plane_masters["[OBJITEM_PLANE]"]
-						var/obj/screen/plane_master/mob/M = parent.mob.hud_used.plane_masters["[MOB_PLANE]"]
-						var/obj/screen/plane_master/above_wall/A = parent.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"]
-						var/obj/screen/plane_master/wall/W = parent.mob.hud_used.plane_masters["[WALL_PLANE]"]
+						var/atom/movable/screen/plane_master/game_world/G = parent.mob.hud_used.plane_masters["[GAME_PLANE]"]
+						var/atom/movable/screen/plane_master/objitem/OI = parent.mob.hud_used.plane_masters["[OBJITEM_PLANE]"]
+						var/atom/movable/screen/plane_master/mob/M = parent.mob.hud_used.plane_masters["[MOB_PLANE]"]
+						var/atom/movable/screen/plane_master/above_wall/A = parent.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"]
+						var/atom/movable/screen/plane_master/wall/W = parent.mob.hud_used.plane_masters["[WALL_PLANE]"]
 						G.backdrop(parent.mob)
 						OI.backdrop(parent.mob)
 						M.backdrop(parent.mob)
@@ -3877,6 +3935,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.special_i = special_i
 	character.special_a = special_a
 	character.special_l = special_l
+	character.fuzzy = fuzzy
 
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
@@ -3913,6 +3972,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		save_character()
 
 	var/old_size = character.dna.features["body_size"]
+	var/old_width = character.dna.features["body_width"]
 
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
@@ -3939,6 +3999,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.give_genitals(TRUE) //character.update_genitals() is already called on genital.update_appearance()
 
 	character.dna.update_body_size(old_size)
+	character.dna.update_body_width(old_width)
 
 	//speech stuff
 	if(custom_tongue != "default")
@@ -3958,7 +4019,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//delete any existing prosthetic limbs to make sure no remnant prosthetics are left over - But DO NOT delete those that are species-related
 		for(var/obj/item/bodypart/part in character.bodyparts)
 			if(part.status == BODYPART_ROBOTIC && !part.render_like_organic)
-				qdel(part)
+				QDEL_NULL(part)
 		character.regenerate_limbs() //regenerate limbs so now you only have normal limbs
 		for(var/modified_limb in modified_limbs)
 			var/modification = modified_limbs[modified_limb][1]
@@ -3978,7 +4039,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(prosthetic_type != "prosthetic") //lets just leave the old sprites as they are
 					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
 				new_limb.replace_limb(character)
-			qdel(old_part)
+			QDEL_NULL(old_part)
 
 	SEND_SIGNAL(character, COMSIG_HUMAN_PREFS_COPIED_TO, src, icon_updates, roundstart_checks)
 
@@ -4093,17 +4154,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
 
-/datum/preferences/proc/reset_quirks(why)
-	all_quirks = list()
-	if(istype(parent))
-		switch(why)
-			if("balance")
-				to_chat(parent, span_userdanger("Your quirk balance was invalid! Your quirks have been reset, and you'll need to set up your quirks again."))
-			if("max")
-				to_chat(parent, span_userdanger("Your character had too many positive quirks, likely due to a bug! Your quirks have been reset, and you'll need to set up your quirks again."))
+/datum/preferences/proc/get_my_quirks()
+	if(!LAZYLEN(char_quirks))
+		return "None!"
+	var/list/quirk_dats = list()
+	for(var/quirk in char_quirks)
+		var/datum/quirk/Q = SSquirks.GetQuirk(quirk)
+		quirk_dats += Q
+	if(!LAZYLEN(quirk_dats))
+		return "None?"
+	var/list/dat = list()
+	var/quirks_per_row = 5
+	var/cells_left = 5
+	dat += "<table class='undies_table'>"
+	for(var/datum/quirk/Q in quirk_dats)
+		var/qname = Q.name
+		switch(Q.value)
+			if(-INFINITY to -1)
+				qname = "<font color='red'>[Q.name]</font>"
+			if(1 to INFINITY)
+				qname = "<font color='green'><b>[Q.name]</b></font>"
 			else
-				to_chat(parent, span_userdanger("Something went wrong! Your quirks have been reset, and you'll need to set up your quirks again."))
-
+				qname = "<font color='yellow'>[Q.name]</font>"
+		if(cells_left == quirks_per_row)
+			dat += "<tr>"
+		dat += "<td>[qname]</td>"
+		if(cells_left-- <= 0)
+			dat += "</tr>"
+			cells_left = quirks_per_row
+	dat += "</table>"
+	return dat.Join()
 
 #undef MAX_FREE_PER_CAT
 #undef HANDS_SLOT_AMT

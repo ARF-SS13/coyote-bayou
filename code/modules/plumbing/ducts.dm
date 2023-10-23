@@ -391,7 +391,7 @@ All the important duct code:
 	custom_materials = list(/datum/material/iron=500)
 	w_class = WEIGHT_CLASS_TINY
 	novariants = FALSE
-	max_amount = 50
+	max_amount = 100
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/ducts
 	///Color of our duct

@@ -29,10 +29,6 @@
 	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
-/obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 /obj/item/storage/firstaid/regular/PopulateContents()
 	if(empty)
 		return
@@ -82,10 +78,6 @@
 	item_state = "firstaid-ointment"
 	possible_icons = list("burn","burn2","burn3","burn4")
 
-/obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!"))
-	return FIRELOSS
-
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
@@ -103,10 +95,6 @@
 	item_state = "firstaid-toxin"
 	possible_icons = list("toxin","toxin2","toxin3","toxin4")
 
-/obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS
-
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
 		return
@@ -122,10 +110,6 @@
 	icon_state = "rad"
 	item_state = "firstaid-toxin"
 	possible_icons = list("rad","rad2","rad3")
-
-/obj/item/storage/firstaid/radbgone/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS
 
 /obj/item/storage/firstaid/radbgone/PopulateContents()
 	if(empty)
@@ -149,10 +133,6 @@
 	item_state = "firstaid-o2"
 	possible_icons = list("oxy", "oxy2", "oxy3", "oxy4")
 
-/obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return OXYLOSS
-
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
 		return
@@ -168,10 +148,6 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	possible_icons = list("brute", "brute2", "brute3", "brute4")
-
-/obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
@@ -204,7 +180,7 @@
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
 	new /obj/item/healthanalyzer/advanced(src)
-	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
+	new /obj/item/reagent_containers/pill/blueambrosia(src)
 
 /obj/item/storage/firstaid/tactical/nukeop
 	name = "improved combat medical kit"
@@ -297,10 +273,6 @@
 		to_chat(user, span_notice("There are no pills left in the bottle."))
 	return TRUE
 
-
-/obj/item/storage/pill_bottle/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (TOXLOSS)
 
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"

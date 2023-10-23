@@ -152,28 +152,6 @@
 		icon_state = "dualsaber0"
 	clean_blood()
 
-/obj/item/dualsaber/suicide_act(mob/living/carbon/user)
-	if(wielded)
-		user.visible_message(span_suicide("[user] begins spinning way too fast! It looks like [user.p_theyre()] trying to commit suicide!"))
-		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)//stole from chainsaw code
-		var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
-		B.organ_flags &= ~ORGAN_VITAL	//this cant possibly be a good idea
-		var/randdir
-		for(var/i in 1 to 24)//like a headless chicken!
-			if(user.is_holding(src))
-				randdir = pick(GLOB.alldirs)
-				user.Move(get_step(user, randdir),randdir)
-				user.emote("spin")
-				if (i == 3 && myhead)
-					myhead.drop_limb()
-				sleep(3)
-			else
-				user.visible_message(span_suicide("[user] panics and starts choking to death!"))
-				return OXYLOSS
-	else
-		user.visible_message(span_suicide("[user] begins beating [user.p_them()]self to death with \the [src]'s handle! It probably would've been cooler if [user.p_they()] turned it on first!"))
-	return BRUTELOSS
-
 /obj/item/dualsaber/attack(mob/target, mob/living/carbon/human/user)
 	if(user.has_dna() && user.dna.check_mutation(HULK))
 		to_chat(user, span_warning("You grip the blade too hard and accidentally drop it!"))
@@ -291,7 +269,7 @@
 
 /obj/item/dualsaber/hypereutactic/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=40, \
+	AddComponent(/datum/component/two_handed, force_unwielded=7, force_wielded=60, \
 					wieldsound='sound/weapons/nebon.ogg', unwieldsound='sound/weapons/nebhit.ogg')
 	AddElement(/datum/element/update_icon_updates_onmob)
 
@@ -352,7 +330,7 @@
 /obj/item/dualsaber/hypereutactic/chaplain
 	name = "divine lightblade"
 	desc = "A giant blade of bright and holy light, said to cut down the wicked with ease."
-	force = 5
+	force = 5 // Just a hilt in base mode.
 	block_parry_data = /datum/block_parry_data/chaplain
 	var/chaplain_spawnable = TRUE
 	can_reflect = FALSE
@@ -376,8 +354,10 @@
 	parry_failed_stagger_duration = 3 SECONDS
 	parry_failed_clickcd_duration = 2 SECONDS
 
+// Fifty seems like alot, given its high parry chance and the fact it works like a light, but it has the huge disadvantage for a null rod weapon by being locked and unchangeable after creation.
+// It also is hard locked in being 2 handed only, as its 1 hand deals only 5 damage.
 /obj/item/dualsaber/hypereutactic/chaplain/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=20, \
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=50, \
 					wieldsound='sound/weapons/nebon.ogg', unwieldsound='sound/weapons/nebhit.ogg')
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)

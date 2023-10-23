@@ -165,3 +165,13 @@
 	tastes = list("bun" = 3, "meat" = 2, "fried onion" = 1, "pickles" = 1)
 	foodtype = GRAIN | MEAT | VEGETABLES
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/peanutbutterbanana
+	name = "peanut butter and banana sandwich"
+	desc = "Maybe not for everyone but man does it smell great."
+	icon = 'icons/obj/food/burgerbread.dmi'
+	icon_state = "peanut_butter_banana_sandwich"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("toast" = 1, "bananas" = 1, "peanut butter" = 1)
+	foodtype = GRAIN | DAIRY

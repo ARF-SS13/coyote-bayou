@@ -17,22 +17,29 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Cardboard Sheets"
 	desc = "Create a bunch of boxes."
-	cost = 300 //thrice their export value
+	cost = 400 //thrice their export value
 	contains = list(/obj/item/stack/sheet/cardboard/fifty)
 
 /datum/supply_pack/materials/glass50
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Glass Sheets"
 	desc = "Let some nice light in with fifty glass sheets!"
-	cost = 300 //double their export value
+	cost = 400 //double their export value
 	contains = list(/obj/item/stack/sheet/glass/fifty)
 
 /datum/supply_pack/materials/metal50
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Metal Sheets"
 	desc = "Any construction project begins with a good stack of fifty metal sheets!"
-	cost = 300 //double their export value
+	cost = 400 //double their export value
 	contains = list(/obj/item/stack/sheet/metal/fifty)
+
+/datum/supply_pack/materials/brick50
+	goody = PACK_GOODY_PUBLIC
+	name = "50 Bricks"
+	desc = "Set a nice foundation with brick and mortar!"
+	cost = 400 //double their export value
+	contains = list(/obj/item/stack/sheet/mineral/brick/fifty)
 
 /datum/supply_pack/materials/plasteel20
 	goody = PACK_GOODY_PUBLIC
@@ -45,14 +52,14 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Plastic Sheets"
 	desc = "Build a limitless amount of toys with fifty plastic sheets!"
-	cost = 200 // double their export
+	cost = 400 // double their export
 	contains = list(/obj/item/stack/sheet/plastic/twenty)
 
 /datum/supply_pack/materials/sandstone30
 	goody = PACK_GOODY_PUBLIC
 	name = "30 Sandstone Blocks"
 	desc = "Neither sandy nor stoney, these thirty blocks will still get the job done."
-	cost = 150 // five times their export
+	cost = 400 // five times their export
 	contains = list(/obj/item/stack/sheet/mineral/sandstone/thirty)
 
 /datum/supply_pack/materials/wood50
@@ -64,13 +71,19 @@
 
 /datum/supply_pack/materials/prewaralloyingot
 	goody = PACK_GOODY_PUBLIC
-	name = "4 Pre-War Ingots"
+	name = "1 Ultrasteel Ingot"
 	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
-	cost = 2775
-	contains = list(/obj/item/ingot/adamantine,
-					/obj/item/ingot/adamantine,
-					/obj/item/ingot/adamantine
-					)
+	cost = 2000
+	contains = list(/obj/item/ingot/adamantine
+	)
+
+/datum/supply_pack/materials/rosesteelingot
+	goody = PACK_GOODY_PUBLIC
+	name = "1 Rose Steel Ingot"
+	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
+	cost = 1000
+	contains = list(/obj/item/ingot/mythril
+	)
 
 /datum/supply_pack/materials/deathclawhide
 	goody = PACK_GOODY_PUBLIC
@@ -179,6 +192,25 @@
 	contains = list(/obj/structure/reagent_dispensers/fueltank)
 	crate_name = "fuel tank crate"
 	crate_type = /obj/structure/closet/crate/large
+
+/datum/supply_pack/materials/housekit
+	name = "House Building Kit"
+	desc = "Contains 200 wooden planks, 200 bricks, 100 metal sheets and 100 glass sheets. Perfect for building a modest home!"
+	cost = 4500
+	contains = list(/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/mineral/brick/fifty,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/metal/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/mineral/wood/fifty,
+					/obj/item/stack/sheet/glass/fifty,
+					/obj/item/stack/sheet/glass/fifty)
+	crate_name = "house building kit"
+	crate_type = /obj/structure/closet/crate/secure/engineering
 
 /datum/supply_pack/materials/watertank
 	name = "Water Tank Crate"

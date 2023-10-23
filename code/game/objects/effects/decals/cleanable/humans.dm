@@ -9,6 +9,8 @@
 	color = BLOOD_COLOR_HUMAN //default so we don't have white splotches everywhere.
 	beauty = -100
 
+
+
 /obj/effect/decal/cleanable/blood/replace_decal(obj/effect/decal/cleanable/blood/C)
 	if (C.blood_DNA)
 		blood_DNA |= C.blood_DNA
@@ -175,6 +177,7 @@
 	icon_state = "cum1"
 	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
 	mergeable_decal = TRUE
+	
 	blood_state = null
 	bloodiness = null
 	//var/blood_DNA = list()

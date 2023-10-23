@@ -216,7 +216,7 @@
 	close_sound = "sound/f13machines/doorchainlink_close.ogg"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 	opening_time = 3
 	closing_time = 2
 	hard_open = 0	

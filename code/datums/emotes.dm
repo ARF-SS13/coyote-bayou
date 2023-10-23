@@ -106,6 +106,8 @@
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 			continue
+		if(client && client.ckey && (client.ckey in ghost.client.prefs.aghost_squelches)) // We cannot assume they have a client.
+			continue
 		if(admin_only && !check_rights_for(ghost.client, R_ADMIN))
 			continue
 		if(message_range)

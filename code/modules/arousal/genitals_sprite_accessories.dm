@@ -72,6 +72,9 @@
 	icon_state = "sheath"
 	name = "Sheath"
 
+/datum/sprite_accessory/testicles/disguised
+	name = "Inconspicuous pair of testicles"
+
 //Vaginas
 /datum/sprite_accessory/vagina
 	icon = 'icons/obj/genitals/vagina_onmob.dmi'
@@ -110,6 +113,10 @@
 	icon_state = "gaping"
 	name = "Gaping"
 
+/datum/sprite_accessory/vagina/inconspicuous
+	name = "Inconspicuous"
+	alt_aroused = FALSE
+
 //BREASTS BE HERE
 /datum/sprite_accessory/breasts
 	icon = 'icons/obj/genitals/breasts_onmob.dmi'
@@ -127,6 +134,10 @@
 /datum/sprite_accessory/breasts/sextuple
 	icon_state = "sextuple"
 	name = "Sextuple"
+
+/datum/sprite_accessory/breasts/udders
+	icon_state = "udders"
+	name = "Udders"
 
 //BUTT BE HERE
 /datum/sprite_accessory/butt
@@ -154,3 +165,8 @@
 /datum/sprite_accessory/belly/obese
 	icon_state = "obese"
 	name = "Obese"
+
+/// udders
+/datum/sprite_accessory/belly/udders
+	icon_state = "udders"
+	name = "Udders"

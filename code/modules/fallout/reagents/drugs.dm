@@ -13,20 +13,22 @@
 			to_chat(M, span_userdanger("Jet-- but doesn't that come from-- OH SHIT???!"))
 		else
 			to_chat(M, span_notice("You feel an incredible high! You just absolutely love life in this moment!"))
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 
 /datum/reagent/drug/jet/on_mob_delete(mob/living/carbon/human/M)
 	..()
 	if(isliving(M) && !NODRUGS(M))
 		to_chat(M, span_notice("You come down from your high. The wild ride is unfortunately over..."))
 		M.confused += 2
+	SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "jet euphoria")
 
 /datum/reagent/drug/jet/on_mob_life(mob/living/carbon/M)
 	if(dont_do_drugs(M))
 		. = TRUE
 		..()
 		return
-	M.adjustStaminaLoss(-20, 0)
-	M.set_drugginess(20)
+	M.adjustStaminaLoss(-20*REM, 0)
+	M.set_drugginess(20*REM)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(10))
 		step(M, pick(GLOB.cardinals))
 	if(prob(12))
@@ -39,7 +41,6 @@
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
 				if(FACTION_LEGION)
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	. = TRUE
 
@@ -120,7 +121,7 @@
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
-	M.Jitter(2)
+	M.Jitter(2*REM)
 	if(prob(5))
 		M.emote(pick("twitch", "shiver"))
 	if(M.mind)
@@ -131,7 +132,6 @@
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
 				if(FACTION_LEGION)
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	. = TRUE
 
@@ -203,19 +203,10 @@
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
 	if(prob(20))
 		to_chat(M, span_notice("[high_message]"))
-	M.AdjustStun(-25, 0)
-	M.AdjustKnockdown(-25, 0)
-	M.AdjustUnconscious(-25, 0)
-	M.Jitter(2)
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
+	M.AdjustStun(-25*REM, 0)
+	M.AdjustKnockdown(-25*REM, 0)
+	M.AdjustUnconscious(-25*REM, 0)
+	M.Jitter(2*REM)
 	..()
 	. = TRUE
 
@@ -327,17 +318,8 @@
 		. = TRUE
 		..()
 		return
-	M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
+	M.AdjustStun(-10*REM, 0)
+	M.AdjustKnockdown(-10*REM, 0)
 	..()
 	. = TRUE
 

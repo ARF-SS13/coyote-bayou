@@ -14,7 +14,7 @@
 	emote_see = list("scratches.", "looks around.")
 	speak_chance = 1
 	turns_per_move = 2
-	butcher_results = list()
+	guaranteed_butcher_results = list()
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "pushes aside"

@@ -634,6 +634,9 @@ RATCAP 64
 #Replaces standard extended/secret dichotomy with extended and calm/chaotic votes for dynamic.
 #DYNAMIC_VOTING
 
+## Uncomment to enable dynamic ruleset config file.
+DYNAMIC_CONFIG_ENABLED
+
 ## Choose which Engine to start the round with. Weight is after the comma. Setting the weight to 0 removes the engine from rotation.
 BOX_RANDOM_ENGINE Box SM,3
 BOX_RANDOM_ENGINE Box Tesla,3
@@ -687,6 +690,10 @@ BELLY_MAX_SIZE_PREFS 11
 ## Body size configs, the feature will be disabled if both min and max have the same value.
 BODY_SIZE_MIN 0.8
 BODY_SIZE_MAX 1.2
+
+## Body width configs, the feature will be disabled if both min and max have the same value.
+BODY_WIDTH_MIN 0.5
+BODY_WIDTH_MAX 2.0
 
 ## Pun-Pun movement slowdown given to characters with a body size smaller than this value,
 ## to compensate for their smaller hitbox.

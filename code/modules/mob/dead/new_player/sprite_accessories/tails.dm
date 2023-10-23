@@ -1047,3 +1047,10 @@ datum/sprite_accessory/tails/mam_tails/insect
 	name = "Wolf"
 	icon_state = "wolf"
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/pig
+	name = "Pig"
+	icon_state = "pig"
+	color_src = MATRIXED
+	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED

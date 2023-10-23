@@ -85,12 +85,6 @@
 	//This is to start fires. process() is only called if the welder is on.
 	open_flame()
 
-
-/obj/item/weldingtool/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] welds [user.p_their()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
-
-
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		flamethrower_screwdriver(I, user)

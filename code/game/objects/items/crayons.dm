@@ -73,12 +73,10 @@
 	var/precision_x = 0
 	var/precision_y = 0
 
+	var/marking_area_borders = FALSE
+
 /obj/item/toy/crayon/proc/isValidSurface(surface)
 	return istype(surface, /turf/open/floor)
-
-/obj/item/toy/crayon/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (BRUTELOSS|OXYLOSS)
 
 /obj/item/toy/crayon/Initialize()
 	. = ..()
@@ -234,6 +232,7 @@
 	.["y"] = precision_y
 	.["min_offset"] = -world.icon_size/2
 	.["max_offset"] = world.icon_size/2
+	.["border_marker"] = marking_area_borders
 
 
 /obj/item/toy/crayon/ui_act(action, list/params)
@@ -275,6 +274,8 @@
 			var/y = text2num(params["y"])
 			precision_y = y
 			. = TRUE
+		if("toggle_area_marker")
+			TOGGLE_VAR(marking_area_borders)
 	update_icon()
 
 /obj/item/toy/crayon/proc/select_colour(mob/user)
@@ -398,7 +399,7 @@
 	if(actually_paints)
 		switch(paint_mode)
 			if(PAINT_NORMAL)
-				var/obj/effect/decal/cleanable/crayon/C = new(target, paint_color, drawing, temp, graf_rot)
+				var/obj/effect/decal/cleanable/crayon/C = new(target, paint_color, drawing, temp, graf_rot, null, marking_area_borders)
 				C.add_hiddenprint(user)
 				if(precision_mode)
 					C.pixel_x = clamp(precision_x, -(world.icon_size/2), world.icon_size/2)
@@ -411,7 +412,7 @@
 				var/turf/left = locate(target.x-1,target.y,target.z)
 				var/turf/right = locate(target.x+1,target.y,target.z)
 				if(isValidSurface(left) && isValidSurface(right))
-					var/obj/effect/decal/cleanable/crayon/C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
+					var/obj/effect/decal/cleanable/crayon/C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON, marking_area_borders)
 					C.add_hiddenprint(user)
 					affected_turfs += left
 					affected_turfs += right
@@ -597,31 +598,6 @@
 
 /obj/item/toy/crayon/spraycan/isValidSurface(surface)
 	return (istype(surface, /turf/open/floor) || istype(surface, /turf/closed/wall))
-
-/obj/item/toy/crayon/spraycan/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	if(is_capped || !actually_paints)
-		user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!"))
-		user.say("MEDIOCRE!!", forced="spraycan suicide")
-		return SHAME
-	else
-		user.visible_message(span_suicide("[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!"))
-		user.say("WITNESS ME!!", forced="spraycan suicide")
-		if(pre_noise || post_noise)
-			playsound(loc, 'sound/effects/spray.ogg', 5, 1, 5)
-		if(can_change_colour)
-			paint_color = "#C0C0C0"
-		update_icon()
-		if(actually_paints)
-			H.lip_style = "spray_face"
-			H.lip_color = paint_color
-			H.update_body()
-		var/used = use_charges(user, 10, FALSE)
-		var/fraction = min(1, used / reagents.maximum_volume)
-		reagents.reaction(user, VAPOR, fraction * volume_multiplier)
-		reagents.trans_to(user, used, volume_multiplier)
-
-		return (OXYLOSS)
 
 /obj/item/toy/crayon/spraycan/Initialize()
 	. = ..()

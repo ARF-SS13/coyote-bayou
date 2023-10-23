@@ -142,13 +142,14 @@
 	desc = "Boom plus plus plus."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "nuclear"
-	damage = 200 //at this point, it's a mercy kill. you're at ground zero. the big number is more for looking big when examined, and mininukes have always had high direct damage
+	damage = 2000 //at this point, it's a mercy kill. you're at ground zero. the big number is more for looking big when examined, and mininukes have always had high direct damage
 	ricochets_max = 0 //nO
 
 /obj/item/projectile/bullet/mininuke/on_hit(atom/target, blocked=0)
 	..()
-	explosion(target, 5, 10, 20, 20, flame_range = 20) //burn baby burn. a lot of stuff is gonna be incenerated. remember though: salt doesn't burn.
-	radiation_pulse(target, 1500, 20, can_contaminate = FALSE) //spicy. 1500 is radiation grenade potency
+	explosion(target, 10, 20, 30, 50, adminlog = TRUE, ignorecap = TRUE, flame_range = 40) //burn baby burn. a lot of stuff is gonna be incenerated. remember though: salt doesn't burn.
+	explosion(target, 15, 25, 35, 0, adminlog = FALSE, ignorecap = TRUE, flame_range = 0, silent = TRUE)
+	radiation_pulse(target, 2000, 50, can_contaminate = FALSE) //spicy. 1500 is radiation grenade potency
 	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
 
@@ -157,7 +158,7 @@
 	desc = "Boom plus plus plus PLUS."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "nuclear"
-	damage = 200 //good luck at ground zero
+	damage = 2000 //good luck at ground zero
 	ricochets_max = 0 //nO
 
 /obj/item/projectile/bullet/meganuke/on_hit(atom/target, blocked=0)

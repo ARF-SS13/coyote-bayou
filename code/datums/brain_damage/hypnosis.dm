@@ -32,7 +32,6 @@
 	phrase = replacetext(lowertext(phrase), "harm", "snuggle")
 	phrase = replacetext(lowertext(phrase), "decapitate", "headpat")
 	phrase = replacetext(lowertext(phrase), "strangle", "meow at")
-	phrase = replacetext(lowertext(phrase), "suicide", "self-love")
 	phrase = replacetext(lowertext(phrase), "lynch", "kiss")
 	hypnotic_phrase = phrase
 
@@ -47,7 +46,7 @@
 												"These words keep echoing in your mind. You find yourself completely fascinated by them.")]</span>")
 	to_chat(owner, "<span class='boldwarning'>You've been hypnotized by this sentence. You must follow these words. If it isn't a clear order, you can freely interpret how to do so,\
 										as long as you act like the words are your highest priority.</span>")
-	var/obj/screen/alert/hypnosis/hypno_alert = owner.throw_alert("hypnosis", /obj/screen/alert/hypnosis)
+	var/atom/movable/screen/alert/hypnosis/hypno_alert = owner.throw_alert("hypnosis", /atom/movable/screen/alert/hypnosis)
 	hypno_alert.desc = "\"[hypnotic_phrase]\"... your mind seems to be fixated on this concept."
 	..()
 

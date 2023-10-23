@@ -12,6 +12,7 @@ export const Crayon = (props, context) => {
     y,
     min_offset,
     max_offset,
+    border_marker,
   } = data;
   return (
     <Window
@@ -105,6 +106,18 @@ export const Crayon = (props, context) => {
           <Button
             content="New Text"
             onClick={() => act('enter_text')} />
+        </Section>
+        <Section title="Construction Marker">
+          <LabeledList>
+            <LabeledList.Item
+              label="The room builder will consider these decals as walls">
+              <Button
+                icon={border_marker ? 'power-off' : 'times'}
+                content={border_marker ? 'On' : 'Off'}
+                selected={border_marker}
+                onClick={() => act('toggle_border_marker')} />
+            </LabeledList.Item>
+          </LabeledList>
         </Section>
       </Window.Content>
     </Window>

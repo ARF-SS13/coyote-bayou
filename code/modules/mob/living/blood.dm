@@ -363,7 +363,6 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	if(blood_id == /datum/reagent/blood || /datum/reagent/blood/jellyblood) //actual blood reagent
 		var/blood_data = list()
 		//set the blood data
-		blood_data["donor"] = src
 		blood_data["viruses"] = list()
 
 		for(var/thing in diseases)
@@ -387,15 +386,14 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		else if(last_mind)
 			blood_data["ckey"] = ckey(last_mind.key)
 
-		if(!suiciding)
-			blood_data["cloneable"] = 1
+		blood_data["cloneable"] = 1
 		blood_data["blood_type"] = dna.blood_type
 		blood_data["gender"] = gender
 		blood_data["real_name"] = real_name
 		blood_data["features"] = dna.features
 		blood_data["factions"] = faction
 		blood_data["quirks"] = list()
-		for(var/V in roundstart_quirks)
+		for(var/V in mob_quirks)
 			var/datum/quirk/T = V
 			blood_data["quirks"] += T.type
 		blood_data["changeling_loudness"] = 0

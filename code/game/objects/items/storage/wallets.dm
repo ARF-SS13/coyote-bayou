@@ -94,3 +94,11 @@
 
 /obj/item/storage/wallet/stash/high/PopulateContents()
 	new /obj/item/stack/f13Cash/random/high(src)
+
+//Money pouch from CIV13
+
+/obj/item/storage/wallet/stash/pouch
+	name = "coin pouch"
+	desc = "It can hold a few small and personal things. Easily tucked in various discrete places."
+	icon_state = "coinpouch"
+	no_refresh = TRUE

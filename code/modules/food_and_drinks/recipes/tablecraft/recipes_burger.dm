@@ -442,3 +442,26 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
 	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/sloppyjoe
+	name = "sloppyjoe"
+	reqs = list(
+			/datum/reagent/consumable/bbqsauce = 5,
+			/obj/item/reagent_containers/food/snacks/bun = 1,
+			/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
+			/obj/item/reagent_containers/food/snacks/grown/onion = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/sloppy
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/phillycheesesteak
+	name = "philly cheesesteak"
+	reqs = list(
+			/obj/item/reagent_containers/food/snacks/bun = 1,
+			/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
+			/obj/item/reagent_containers/food/snacks/grown/onion = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/philly_cheesesteak
+	subcategory = CAT_BURGER

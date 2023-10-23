@@ -128,7 +128,7 @@
 /obj/item/clothing/mask/frog/cursed/equipped(mob/user, slot)
 	var/mob/living/carbon/C = user
 	if(C.wear_mask == src && HAS_TRAIT_FROM(src, TRAIT_NODROP, CURSED_ITEM_TRAIT))
-		to_chat(user, "<span class='userdanger'><B>[src] was cursed! Ree!!</B></span>")
+		to_chat(user, span_userdanger("<B>[src] was cursed! Ree!!</B>"))
 	return ..()
 
 /obj/item/clothing/mask/cowmask

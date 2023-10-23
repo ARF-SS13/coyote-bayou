@@ -17,6 +17,7 @@ Mineral Sheets
 		- Snow
 		- Abductor
 		- Coal
+		- Brick
 */
 
 /*
@@ -191,10 +192,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
 	custom_price = 45
-
-/obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return TOXLOSS//dont you kids know that stuff is toxic?
 
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
@@ -448,6 +445,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	material_type = /datum/material/snow
 
 GLOBAL_LIST_INIT(snow_recipes, list ( \
+	new/datum/stack_recipe("Snow Barricade", /obj/structure/deployable_barricade/snow, 2, on_floor = 1), \
 	new/datum/stack_recipe("Snow Wall", /turf/closed/wall/mineral/snow, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Snowman", /obj/structure/statue/snow/snowman, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Snowball", /obj/item/toy/snowball, 1), \
@@ -521,3 +519,34 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/coal/ten
 	amount = 10
+
+/*
+ * Bricks
+ */
+/obj/item/stack/sheet/mineral/brick 
+	name = "bricks"
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "sheet-brick"
+	item_state = "sheet-brick"
+	singular_name = "brick"
+	sheettype = "brick"
+	merge_type = /obj/item/stack/sheet/mineral/brick 
+	walltype = /turf/closed/wall/mineral/brick
+
+
+/obj/item/stack/sheet/mineral/brick/ten
+	amount = 10
+
+/obj/item/stack/sheet/mineral/brick/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/brick/fifty
+	amount = 50
+
+GLOBAL_LIST_INIT(brick_recipes, list ( \
+	new/datum/stack_recipe("throwing brick", /obj/item/ammo_casing/caseless/brick, 2), \
+	))
+
+/obj/item/stack/sheet/mineral/brick/get_main_recipes()
+	. = ..()
+	. += GLOB.brick_recipes

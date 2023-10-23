@@ -2,7 +2,9 @@
 	name = "arrow"
 	desc = "a simple arrow."
 	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_METAL
+	damage = BULLET_DAMAGE_ARROW_METAL //40
+	damage_low = 30
+	damage_high = 50
 	stamina = BULLET_STAMINA_ARROW_METAL
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_METAL
@@ -20,6 +22,8 @@
 	desc = "a simple arrow with a metal head."
 	icon_state = "arrow"
 	damage = BULLET_DAMAGE_ARROW_METAL
+	damage_low = 30
+	damage_high = 50
 	stamina = BULLET_STAMINA_ARROW_METAL
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_METAL
@@ -37,6 +41,8 @@
 	desc = "an arrow made of bone and sinew."
 	icon_state = "arrow"
 	damage = BULLET_DAMAGE_ARROW_BONE
+	damage_low = 20
+	damage_high = 45
 	stamina = BULLET_STAMINA_ARROW_BONE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_BONE
@@ -54,6 +60,8 @@
 	desc = "a durable arrow with a sturdy titanium head."
 	icon_state = "arrow"
 	damage = BULLET_DAMAGE_ARROW_TITANIUM
+	damage_low = 40
+	damage_high = 60
 	stamina = BULLET_STAMINA_ARROW_TITANIUM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_TITANIUM
@@ -71,6 +79,8 @@
 	desc = "a primitive arrow with a head made of knapped flint."
 	icon_state = "arrow"
 	damage = BULLET_DAMAGE_ARROW_FLINT
+	damage_low = 35
+	damage_high = 75
 	stamina = BULLET_STAMINA_ARROW_FLINT
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_FLINT
@@ -80,13 +90,15 @@
 	
 	pixels_per_second = BULLET_SPEED_ARROW_FLINT
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 35
+	break_chance = 45
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/flint
 
 /obj/item/projectile/bullet/reusable/arrow/glass //glass arrows behave very similar to flint irl
 	name = "glass arrow"
 	desc = "a primitive arrow with a head made of knapped glass."
 	damage = BULLET_DAMAGE_ARROW_GLASS
+	damage_low = 40
+	damage_high = 65
 	stamina = BULLET_STAMINA_ARROW_GLASS
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_GLASS
@@ -124,6 +136,8 @@
 	name = "jagged arrow"
 	desc = "a mean looking arrow made to shed blood and infection. it tends to stay stuck in the target and snap off, so good luck recovering it."
 	damage = BULLET_DAMAGE_ARROW_BARBED
+	damage_low = 10
+	damage_high = 30
 	stamina = BULLET_STAMINA_ARROW_BARBED
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_BARBED
@@ -140,21 +154,23 @@
 	break_chance = 100 //high power, costly
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/jagged
 	embedding = list(
-		embed_chance=50, 
-		fall_chance=60, 
-		jostle_chance=15, 
+		embed_chance= 60, 
+		fall_chance= 5, 
+		jostle_chance= 40, 
 		ignore_throwspeed_threshold=FALSE, 
-		pain_stam_pct=0.2, 
-		pain_mult=2, 
-		jostle_pain_mult=1, 
+		pain_stam_pct= 0.2, 
+		pain_mult= 2, 
+		jostle_pain_mult= 1, 
 		rip_time= 3 SECONDS, 
-		projectile_payload = /obj/item/shrapnel
-		) //iunno how, but this needs to not drop the arrow when removed. needs to disappear just like if it breaks. is copypasted from serrated arrow for now...
+		projectile_payload = /obj/item/projectile/bullet/reusable/arrow/jagged
+		) 
 
 /obj/item/projectile/bullet/reusable/arrow/field
 	name = "field arrow"
 	desc = "a simple arrow with a small, sturdy head."
 	damage = BULLET_DAMAGE_ARROW_FIELD
+	damage_low = 15
+	damage_high = 45
 	stamina = BULLET_STAMINA_ARROW_FIELD
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_FIELD
@@ -191,6 +207,8 @@
 	name = "ion arrow"
 	desc = "an arrow containing an EMP warhead."
 	damage = BULLET_DAMAGE_ARROW_ION
+	damage_low = 5
+	damage_high = 15
 	stamina = BULLET_STAMINA_ARROW_ION
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_ION
@@ -214,6 +232,7 @@
 	name = "practice arrow"
 	desc = "a harmless arrow with a padded, fabric tip. for practice, not for annoying people with."
 	damage = BULLET_DAMAGE_ARROW_PRACTICE
+	damage_list = list("1" = 99.999, "92745" = 0.001) //haha poke your eye out kid ~TK
 	stamina = BULLET_STAMINA_ARROW_PRACTICE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_ARROW_PRACTICE
@@ -238,7 +257,6 @@
 		pain_mult = 0, 
 		jostle_pain_mult = 0, 
 		ignore_throwspeed_threshold = TRUE,
-		projectile_payload = /obj/item/shrapnel
 		)
 
 

@@ -139,6 +139,33 @@
 	self_delay = 0
  */
 
+// ---------------------------------
+// Ambrosia
+
+/obj/item/reagent_containers/pill/redambrosia // Heals 100 brute and 50 everything else, deals 20 stamloss
+	name = "Elixir Vitae"
+	desc = "A mysterious, sweet tasting and scented red fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this red ambrosia is unparalelled in its healing factor on the body."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_redambrosia"
+	list_reagents = list(/datum/reagent/red_ambrosia = 1) 
+	self_delay = 5 SECONDS
+
+/obj/item/reagent_containers/pill/blueambrosia // Heals brain damage and traumas
+	name = "Elixir Mentem"
+	desc = "A mysterious, sweet tasting and scented blue fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this blue ambrosia is unparalelled in its healing factor on the mind."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_blueambrosia"
+	list_reagents = list(/datum/reagent/blue_ambrosia = 1) 
+	self_delay = 5 SECONDS
+
+/obj/item/reagent_containers/pill/greenambrosia // Heals 100 damage to all internal organs
+	name = "Elixir Animae"
+	desc = "A mysterious, sweet tasting and scented green fluid flows within this bottle. Its held back by a cork stopper, which keeps it from spilling prematurely. Nicknamed 'the food of the gods', this green ambrosia is unparalelled in its healing factor on one's internals."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "pill_greenambrosia"
+	list_reagents = list(/datum/reagent/green_ambrosia = 1) 
+	self_delay = 5 SECONDS
+
 /obj/item/reagent_containers/pill/patch/random
 	name = "randomized patch"
 	desc = "A long forgotten prescription. who knows what it contains."

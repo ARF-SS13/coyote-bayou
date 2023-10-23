@@ -206,27 +206,6 @@
 		else
 			to_chat(human_user,span_danger("You pull your hand away from the hole as eldritch energy flails out, trying to latch onto existence itself!"))
 
-/obj/effect/broken_illusion/attack_tk(mob/user)
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/human_user = user
-	if(IS_HERETIC(human_user))
-		to_chat(human_user,span_boldwarning("You know better than to tempt forces out of your control."))
-	else
-		//a very elaborate way to suicide
-		to_chat(human_user,span_userdanger("Eldritch energy lashes out, piercing your fragile mind, tearing it to pieces!"))
-		human_user.ghostize()
-		var/obj/item/bodypart/head/head = locate() in human_user.bodyparts
-		if(head)
-			head.dismember()
-			qdel(head)
-		else
-			human_user.gib()
-
-		var/datum/effect_system/reagents_explosion/explosion = new()
-		explosion.set_up(1, get_turf(human_user), 1, 0)
-		explosion.start()
-
 /obj/effect/broken_illusion/examine(mob/user)
 	if(!IS_HERETIC(user) && ishuman(user))
 		var/mob/living/carbon/human/human_user = user

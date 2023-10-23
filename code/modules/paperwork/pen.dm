@@ -33,10 +33,6 @@
 	sharpness = SHARP_POINTY
 	var/naming = FALSE
 
-/obj/item/pen/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku..."))
-	return(BRUTELOSS)
-
 /obj/item/pen/blue
 	desc = "It's a normal blue ink pen."
 	icon_state = "pen_blue"
@@ -141,14 +137,14 @@
 		naming = TRUE
 		w_class = WEIGHT_CLASS_GIGANTIC
 		sharpness = SHARP_NONE
-		to_chat(usr, "<span class='notice'>You firmly grip the pen in preparation to rename something.</span>")
+		to_chat(usr, span_notice("You firmly grip the pen in preparation to rename something."))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 	if(naming)
 		naming = FALSE
 		w_class = WEIGHT_CLASS_TINY
 		sharpness = SHARP_POINTY
-		to_chat(usr, "<span class='notice'>You reset the grip on the pen</span>")
+		to_chat(usr, span_notice("You reset the grip on the pen"))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 
@@ -167,10 +163,10 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				if(oldname == input)
-					to_chat(user, "<span class='notice'>You changed \the [O.name] to... well... \the [O.name].</span>")
+					to_chat(user, span_notice("You changed \the [O.name] to... well... \the [O.name]."))
 				else
 					O.name = input
-					to_chat(user, "<span class='notice'>\The [oldname] has been successfully been renamed to \the [input].</span>")
+					to_chat(user, span_notice("\The [oldname] has been successfully been renamed to \the [input]."))
 					O.renamedByPlayer = TRUE
 
 			if(penchoice == "Change description")
@@ -178,7 +174,7 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				O.desc = input
-				to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
+				to_chat(user, span_notice("You have successfully changed \the [O.name]'s description."))
 	else
 		return
 /*
@@ -220,14 +216,6 @@
 
 /obj/item/pen/edagger/get_sharpness()
 	return on * sharpness
-
-/obj/item/pen/edagger/suicide_act(mob/user)
-	. = BRUTELOSS
-	if(on)
-		user.visible_message(span_suicide("[user] forcefully rams the pen into their mouth!"))
-	else
-		user.visible_message(span_suicide("[user] is holding a pen up to their mouth! It looks like [user.p_theyre()] trying to commit suicide!"))
-		attack_self(user)
 
 /obj/item/pen/edagger/attack_self(mob/living/user)
 	if(on)

@@ -1,6 +1,7 @@
 #define STAIR_TERMINATOR_AUTOMATIC 0
 #define STAIR_TERMINATOR_NO 1
 #define STAIR_TERMINATOR_YES 2
+#define STAIR_NOT_TEMPORARY 0
 
 // dir determines the direction of travel to go upwards (due to lack of sprites, currently only 1 and 2 make sense)
 // stairs require /turf/open/transparent/openspace as the tile above them to work
@@ -10,15 +11,21 @@
 	name = "stairs"
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stairs"
-	resistance_flags = INDESTRUCTIBLE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	anchored = TRUE
 	var/force_open_above = FALSE // replaces the turf above this stair obj with /turf/open/transparent/openspace
 	var/terminator_mode = STAIR_TERMINATOR_AUTOMATIC
 	var/turf/listeningTo
+	var/indestructible = TRUE
+	var/destroy_in = STAIR_NOT_TEMPORARY
+	var/icon_state_override
+	var/obj/item/spawn_on_break = /obj/item/ammo_casing/caseless/rock
 
 /// Two things will remain after the end of the world, furries and *stairs*
 
 /obj/structure/stairs/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
+	if(!indestructible)
+		return ..()
 	return FALSE
 
 /obj/structure/stairs/fire_act(exposed_temperature, exposed_volume)
@@ -40,6 +47,8 @@
 	return FALSE
 
 /obj/structure/stairs/ex_act(severity, target)
+	if(!indestructible)
+		return ..()
 	return FALSE
 
 /obj/structure/stairs/singularity_act()
@@ -70,7 +79,8 @@
 		COMSIG_ATOM_EXIT = .proc/on_exit,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-
+	if(destroy_in > STAIR_NOT_TEMPORARY)
+		QDEL_IN(src, destroy_in)
 	return ..()
 
 /obj/structure/stairs/Destroy()
@@ -109,6 +119,9 @@
 	return ..()
 
 /obj/structure/stairs/update_icon_state()
+	if(icon_state_override)
+		icon_state = icon_state_override
+		return
 	if(isTerminator())
 		icon_state = "stairs_t"
 	else
@@ -181,3 +194,66 @@
 		if(S.dir == dir)
 			return FALSE
 	return TRUE
+
+/obj/structure/stairs/rockpile
+	name = "pile of rocks"
+	icon_state = "rockpile"
+	resistance_flags = NONE
+	icon_state_override = "rockpile"
+	indestructible = FALSE
+	destroy_in = 15 MINUTES
+	icon_state_override = "rockpile"
+	spawn_on_break = /obj/item/ammo_casing/caseless/rock
+
+/obj/structure/stairs/rockpile/Destroy()
+	visible_message(span_danger("The flimsy [name] falls apart!"))
+	playsound(src, "sound/f13effects/rock_mined.ogg", 100, TRUE)
+	. = ..()
+
+/obj/structure/stairs/rockpile/attack_hand(mob/user, act_intent, attackchain_flags)
+	. = ..()
+	try_to_knock_it_down(user)
+
+/obj/structure/stairs/rockpile/proc/try_to_knock_it_down(mob/living/user)
+	if(!istype(user) || user.incapacitated())
+		return
+	visible_message(span_notice("[user] is trying to knock down the [name]!"))
+	if(!do_after(user, 5 SECONDS, TRUE, src, allow_movement = TRUE, public_progbar = TRUE))
+		visible_message(span_alert("...but the [name] refuse to move!"))
+		return
+	visible_message(span_danger("The [name] falls apart!"))
+	qdel(src)
+
+/obj/structure/stairs/rockpile/north
+	dir = NORTH
+
+/obj/structure/stairs/rockpile/south
+	dir = SOUTH
+
+/obj/structure/stairs/rockpile/east
+	dir = EAST
+
+/obj/structure/stairs/rockpile/west
+	dir = WEST
+
+/obj/structure/stairs/rockpile/brickpile
+	name = "pile of bricks"
+	icon_state = "brickpile"
+	resistance_flags = NONE
+	icon_state_override = "brickpile"
+	indestructible = FALSE
+	destroy_in = 15 MINUTES
+	icon_state_override = "brickpile"
+	spawn_on_break = /obj/item/ammo_casing/caseless/brick
+
+/obj/structure/stairs/rockpile/brickpile/north
+	dir = NORTH
+
+/obj/structure/stairs/rockpile/brickpile/south
+	dir = SOUTH
+
+/obj/structure/stairs/rockpile/brickpile/east
+	dir = EAST
+
+/obj/structure/stairs/rockpile/brickpile/west
+	dir = WEST
