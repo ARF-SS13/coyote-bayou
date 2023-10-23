@@ -1,5 +1,6 @@
 #define PERSONALITY_TRAIT(trait, emoji, visibleto...) trait = list(emoji, ##visibleto)
 #define THE_EMOJI 1
+//#define VISIBLE_TO 2
 
 /// Format: PERSONALITY_TRAIT(trait, emoji, traits that can see this trait -- can be multiple, put commas in between)
 /// like this: PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER, 🍆, TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER)
@@ -558,6 +559,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	if (!isnull(trait_exam))
 		. += trait_exam
 
+	/// Personality and RP Preferences quirk display
 	. += get_personality_traits(user)
 
 	var/traitstring = get_trait_string()
@@ -609,7 +611,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	else if(isobserver(user) && traitstring)
 		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
 
-	. += "\n[print_special()]\n"
+	. += "[print_special()]"//This already includes breaks and newlines, don't add any more
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
 
@@ -643,23 +645,18 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		var/list/vistraits = LAZYACCESS(GLOB.personality_quirks, triat)
 		var/emoji = LAZYACCESS(vistraits, THE_EMOJI)
 		if(!emoji)
-			emoji = "[triat]" // better put an emoji there!
+			emoji = " [triat] " // better put an emoji there!
 		vistraits -= THE_EMOJI
 		for(var/treit in vistraits)
 			if(!HAS_TRAIT(user, treit))
 				continue
 			/// The return of the cursed href link!!!
-			msg += {"<a 
-					href='
-						?src=[REF(user)];
-						read_personality_trait=[triat];
-						>
-							[emoji]
-				</a>"}
+			msg += {"<a href='?src=[REF(user)];read_personality_trait=[triat];>[emoji]</a>"}
 	if(!isnull(msg))
-		out = "<span class='info'>They have some cool traits! Click the emojis to learn more!</span>\n"
+		out = "[span_info("They have some cool traits! Click the emojis to learn more!")]\n"
 	out += msg
-	return msg
+	out +="\n"
+	return out
 
 /mob/living/Topic(href, href_list)
 	. = ..()
@@ -667,15 +664,16 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		to_chat(src, get_personality_flavor(href_list["read_personality_trait"]))
 
 /mob/living/proc/get_personality_flavor(trait)
-	var/list/traittest = LAZYACCESS(GLOB.personality_quirks, THE_EMOJI)
+	var/list/traittest = LAZYACCESS(GLOB.personality_quirks, trait)
 	var/emoji = LAZYACCESS(traittest, THE_EMOJI)
 	if(emoji)
-		emoji = "[emoji] "
+		emoji = "[emoji]"
 	var/flavor = LAZYACCESS(GLOB.personalitytrait2description, trait)
 	if(!flavor)
 		stack_trace("get_personality_flavor() called with invalid trait [trait]! Didnt have any flavor, yuck")
 		return
-	return "[emoji][flavor]"
+	var/alltogethernow = "[emoji] [flavor]"
+	return alltogethernow
 
 /* 
 //erp focused quirks
