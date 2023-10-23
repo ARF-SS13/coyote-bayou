@@ -161,8 +161,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/common_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/common_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/common_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/common_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/common_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/common_unique = 1,
 	)
 
@@ -171,8 +171,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 1,
 	)
 
@@ -181,8 +181,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/rare_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
 	)
 
@@ -418,6 +418,7 @@
 		/obj/item/gun/energy/laser/tg/carbine = 2,
 		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 5,
 		/obj/item/gun/magic/wand/kelpmagic/sparky = 5,
+		/obj/item/gun/energy/ionrifle/compact = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
@@ -433,6 +434,7 @@
 		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
 		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
 		/obj/item/gun/magic/staff/kelpmagic/magicmissile =5,
+		/obj/item/gun/energy/ionrifle/carbine = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_energy
@@ -453,6 +455,8 @@
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
 		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
+		/obj/item/gun/energy/laser/laer = 3,
+		/obj/item/gun/energy/laser/plasma/carbine = 5,
 	)
 
 ////////////////////
@@ -500,6 +504,8 @@
 		/obj/item/gun/ballistic/revolver/m2405 = 5,
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5, // ebow
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
 		/obj/item/gun/ballistic/bow/compoundbow = 3,
 		/obj/item/m2flamethrowertank = 1,
 	)
@@ -568,12 +574,11 @@
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
 		/obj/item/gun/energy/laser/scatter/laserbuss = 20,
 		/obj/item/gun/energy/laser/aer14 = 10,
-		/obj/item/gun/energy/laser/laer = 5,
 		/obj/item/gun/energy/laser/plasma/bouncy = 20,
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
+		/obj/item/gun/energy/laser/plasma/bouncy = 1, // basically the alien gun, but reloadable. Might make it literally an Alien cell gun later
 		/obj/item/minigunpack = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/adam = 5,
-		/obj/item/gun/energy/laser/plasma/carbine = 10,
 		/obj/item/gun/energy/laser/plasma/scatter = 5,
 		/obj/item/gun/energy/ionrifle/carbine = 10,
 		/obj/item/gun/energy/laser/tg/particlecannon = 10, // old tesla cannon was kind of... bad. In several ways.
@@ -587,7 +592,7 @@
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 5, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
-		/obj/item/gun/ballistic/fatman = 10,
+		/obj/item/gun/ballistic/fatman = 1,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,

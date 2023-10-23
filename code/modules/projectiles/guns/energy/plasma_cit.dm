@@ -83,6 +83,6 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	init_firemodes = list(
 	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm100
+	/datum/firemode/automatic/rpm200
 	)
-	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
+	init_recoil = LASER_AUTORIFLE_RECOIL(2, 2)

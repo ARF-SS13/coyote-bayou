@@ -443,20 +443,6 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
-//Freeblade Blaster
-/obj/item/gun/energy/laser/freeblade
-	name = "\improper Freeblade Blaster"
-	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	icon_state = "freeblade"
-	item_state = "freeblade"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
-	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
-
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto
@@ -628,26 +614,6 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-/obj/item/gun/energy/laser/LaserAK/worn
-	name = "Laser AK470M"
-	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
-	icon_state = "LaserAK"
-	item_state = null
-	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
-	ammo_x_offset = 4
-	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
-	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_firemodes = list(
-	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm100
-	)
-	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
-
 //AER9 Laser rifle
 /obj/item/gun/energy/laser/aer9
 	name = "\improper AER9 laser rifle"
@@ -674,23 +640,6 @@
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	can_scope = TRUE
-	init_firemodes = list(
-		/datum/firemode/burst/two/slow
-	)
-
-/obj/item/gun/energy/laser/aer9/focused/rynn
-	name = "\improper Hot-wired AER10 laser rifle"
-	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_state = "hotwiredlaser"
-	item_state = "hotwiredlaser"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	can_scope = TRUE
@@ -801,7 +750,7 @@
 //LAER Energy rifle
 /obj/item/gun/energy/laser/laer
 	name = "\improper LAER"
-	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
+	desc = "Derived from the AER-9, the Laser Assisted Electrical Rifle - or LAER - fires a uniquely unstable beam of directed energy to create an extremely unstable laser projection."
 	icon_state = "laer"
 	item_state = "laer"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer/hitscan)
@@ -862,6 +811,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
 //Gamma gun
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
@@ -1291,6 +1241,12 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/* * * * * *
+ * XCOM UFO Defense Lasrifle
+ * Self-charging RNG heavy gun
+ * Unique
+ * * * * * */
+
 /obj/item/gun/energy/laser/xcomufolaser
 	name = "weathered strange laser rifle"
 	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X'. Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
@@ -1314,7 +1270,7 @@
 	)
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
-/* "donator" energy weapons */
+/* "donator" energy weapons -- guns that go in ckey loadouts*/
 
 /obj/item/gun/energy/laser/pistol/phaser
 	name = "Type-2a phaser pistol"
@@ -1359,6 +1315,56 @@
 		/datum/firemode/automatic/rpm200,
 		/datum/firemode/semi_auto/faster
 	)
+
+/obj/item/gun/energy/laser/LaserAK/worn
+	name = "Laser AK470M"
+	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
+	icon_state = "LaserAK"
+	item_state = null
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+	/datum/firemode/semi_auto,
+	/datum/firemode/automatic/rpm100
+	)
+
+/obj/item/gun/energy/laser/aer9/focused/rynn
+	name = "\improper Hot-wired AER10 laser rifle"
+	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "hotwiredlaser"
+	item_state = "hotwiredlaser"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/burst/two/slow
+	)
+
+//Freeblade Blaster
+/obj/item/gun/energy/laser/freeblade
+	name = "\improper Freeblade Blaster"
+	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "freeblade"
+	item_state = "freeblade"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
