@@ -731,7 +731,7 @@
 	name = "advanced laser beam"
 	icon_state = "u_laser"
 	damage = 45
-	damage_list = list( "40" = 15, "45" = 40, "50" = 45)
+	damage_list = list( "32" = 30, "45" = 40, "50" = 15, "75" = 15)
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	recoil = BULLET_RECOIL_HEAVY_LASER
