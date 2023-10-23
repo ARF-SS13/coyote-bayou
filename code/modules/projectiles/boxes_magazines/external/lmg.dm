@@ -52,14 +52,31 @@
 /obj/item/ammo_box/magazine/lmg/empty
 	start_empty = 1
 
+
+/obj/item/ammo_box/magazine/rpd
+	name = "rpd drum magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "rpdm"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
+
+/obj/item/ammo_box/magazine/rpd/empty
+	start_empty = 1
+
+
+
 /obj/item/ammo_box/magazine/ratling
 	name = "Ratling box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
 	caliber = list(CALIBER_FLINTLOCK)
-	max_ammo = 200
-	w_class = WEIGHT_CLASS_GIGANTIC // It holds 200 my guy
+	max_ammo = 100
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
 
 /obj/item/ammo_box/magazine/ratling/empty

@@ -95,14 +95,16 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	return sorttext(B.sample_object.name, A.sample_object.name)
 
 /proc/cmp_quirk_asc(datum/quirk/A, datum/quirk/B)
+	if(!ispath(A) || !ispath(B))
+		return TRUE // sure
 	var/a_sign = num2sign(initial(A.value) * -1)
 	var/b_sign = num2sign(initial(B.value) * -1)
 
 	// Neutral traits go last
-	if(a_sign == 0)
-		a_sign = 2
-	if(b_sign == 0)
-		b_sign = 2
+	// if(a_sign == 0)
+	// 	a_sign = 2
+	// if(b_sign == 0)
+	// 	b_sign = 2 // neutral traits go wherever I feel like, and I feel like they should go in the middle
 
 	var/a_name = initial(A.name)
 	var/b_name = initial(B.name)

@@ -6,12 +6,26 @@
 	GLOB.player_list -= src
 	logout_time = world.time
 
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null
+
+	SSstatpanels.cached_boykissers -= ckey
+	SSstatpanels.cached_girlkissers -= ckey
+	SSstatpanels.cached_anykissers -= ckey
+	SSstatpanels.cached_tops -= ckey
+	SSstatpanels.cached_bottoms -= ckey
+	SSstatpanels.cached_switches -= ckey
+	remove_from_player_list()
+	clear_client_in_contents()
+
 	..()
 
-	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
-	H.remove_hud_from(src)
-	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
-	tail_hud.remove_hud_from(src)
+	// var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
+	// H.remove_hud_from(src)
+	// var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
+	// tail_hud.remove_hud_from(src)
 
 	if(loc)
 		loc.on_log(FALSE)

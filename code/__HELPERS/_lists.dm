@@ -399,6 +399,22 @@
 		if (total <= 0)
 			return item
 
+/proc/pickweightAllowZero(list/L) //The original pickweight proc will sometimes pick entries with zero weight.  I'm not sure if changing the original will break anything, so I left it be.
+	var/total = 0
+	var/item
+	for (item in L)
+		if (!L[item])
+			L[item] = 0
+		total += L[item]
+
+	total = rand(0, total)
+	for (item in L)
+		total -=L [item]
+		if (total <= 0 && L[item])
+			return item
+
+	return null
+
 //Picks a number of elements from a list based on weight.
 //This is highly optimised and good for things like grabbing 200 items from a list of 40,000
 //Much more efficient than many pickweight calls
@@ -898,5 +914,22 @@
 	for(var/i in low to high)
 		input += "[i]"
 	return WeightedCascadingPicker(input, weight_mult, reverse, TRUE)
+
+/// Takes a list and reverses the associations
+/// Like, list("a" = 1, "b" = 2) becomes list(1 = "a", 2 = "b")
+/proc/invert_ass_list(list/input)
+	if(!islist(input))
+		return list() // good luck finding this runtime! =3
+	var/list/out = list()
+	for(var/ass in input)
+		var/ssa = LAZYACCESS(input, ass)
+		if(isnull(ssa))
+			continue // fully asses lists, please
+		out[ssa] = ass
+	return out
+
+
+
+
 
 

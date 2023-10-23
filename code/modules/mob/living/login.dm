@@ -24,5 +24,5 @@
 		to_chat(src, span_notice("You can ventcrawl! Use alt+click on vents to quickly travel about the station."))
 
 	if(ranged_ability)
-		ranged_ability.add_ranged_ability(src, "<span class='notice'>You currently have <b>[ranged_ability]</b> active!</span>")
+		ranged_ability.add_ranged_ability(src, span_notice("You currently have <b>[ranged_ability]</b> active!"))
 	hud_client_check()

@@ -7,6 +7,7 @@
 		MUTCOLORS,
 		NOTRANSSTING,
 		EYECOLOR,
+		FACEHAIR,
 		LIPS,
 		HAIR,
 		ROBOTIC_LIMBS,
@@ -31,6 +32,7 @@
 		"mam_snouts" = "Synthetic Lizard - Snout",
 		"legs" = "Digitigrade",
 		"mam_body_markings" = "Synthetic Lizard - Plates",
+		"mam_ears" = "None",
 		"taur" = "None",
 		"horns" = "None", 
 		"deco_wings" = "None"

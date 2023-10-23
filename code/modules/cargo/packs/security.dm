@@ -29,6 +29,13 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3)
 	crate_name = "ammo crate" */
 
+/datum/supply_pack/security/powder50
+	name = "50 Gunpowder Clumps"
+	desc = "For when ammunition is in low supply."
+	cost = 2000
+	contains = list(/obj/item/stack/ore/blackpowder/fifty)
+	crate_name = "Gunpowder Restock"
+
 /datum/supply_pack/security/helmets
 	name = "Armor - Metal Helmets"
 	desc = "Contains three surplus, but solid, metal helmets. Keep that militia safe!"
@@ -52,7 +59,7 @@
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 1000
+	cost = 1500
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
 					/obj/effect/spawner/lootdrop/f13/common_armor,
@@ -61,16 +68,33 @@
 
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
-	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
+	desc = "One set of advanced armor, and rarely something better."
 	cost = 5000
-	num_contained = 3
-	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
+	num_contained = 1
+	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor,)
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/rare_armor)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/nvgpack
+	name = "Utility - Night Vision"
+	desc = "A single set of Night Vision Goggles. Because you're just not tactical enough until you have a set of NODs on, even if it's the middle of the day."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/nvgpack_upgr
+	name = "Utility - Prescription Night Vision"
+	desc = "A set of NVGs, now adjusted for those with terrible vision! Wearing these doesn't make you less of a nerd, however."
+	cost = 12500
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night/prescription)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/ec
@@ -386,7 +410,7 @@
 /datum/supply_pack/security/advmods
 	name = "Weapons - Advanced Gun Mods"
 	desc = "Contains four random advanced gun and energy weapon mods, best for causing pain!"
-	cost = 1500
+	cost = 1200
 	num_contained = 4
 	contains = list(/obj/item/tool_upgrade/refinement/vibcompensator,
 					/obj/item/tool_upgrade/productivity/motor,
@@ -395,17 +419,18 @@
 					/obj/item/gun_upgrade/mechanism/overdrive,
 					/obj/item/gun_upgrade/barrel/mag_accel,
 					/obj/item/gun_upgrade/barrel/blender,
-					/obj/item/gun_upgrade/scope/killer)
+					/obj/item/gun_upgrade/scope/killer,
+					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "advanced gun mods crate"
 
-/datum/supply_pack/security/aimod
+/* /datum/supply_pack/security/aimod // removed because ZAX was super nerfed
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."
 	cost = 8000
 	num_contained = 2
 	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
 					/obj/item/tool_upgrade/augment/ai_tool)
-	crate_name = "zax module crate"
+	crate_name = "zax module crate" */
 
 /* /datum/supply_pack/security/gaussbarrelmod //"chinese gauss barrels make me die inside" -Fuzzy, 2023
 	name = "Weapons - Chinese Gauss Barrel"
@@ -431,6 +456,13 @@
 	cost = 20000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
+
+/datum/supply_pack/security/minigun
+	name = "Weapons - Gatling Laser"
+	desc = "For when you REALLY need to cook a steak from twenty yards away."
+	cost = 50000
+	contains = list(/obj/item/minigunpack)
+	crate_name = "gatling laser crate"
 
 //disclaimer: I...don't actually know how the economy goes, so these costs are spitballs
 
@@ -473,6 +505,41 @@
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/wands // Wands
+	name = "Magic - Wands"
+	desc = "A crate containing three whole wands. Hand-crafted by the Witches of Winslow, according to the Dallas catalog."
+	cost = 3000
+	num_contained = 3
+	contains = list(
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved,
+		/obj/item/gun/magic/wand/kelpmagic/sparky,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_basic // T1 Staves
+	name = "Magic - Basic Staves"
+	desc = "A crate containing three basic staves."
+	cost = 5000
+	num_contained = 3
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/magicmissile,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff,
+		/obj/item/gun/magic/staff/kelpmagic/lightning
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_advanced // T2 Staves
+	name = "Magic - Advanced Staves"
+	desc = "A crate containing either a staff of fireball or a staff of healing."
+	cost = 5000
+	num_contained = 2
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/healstaff,
+		/obj/item/gun/magic/staff/kelpmagic/fireball
 		)
 	crate_name = "quality weapon crate"
 
@@ -527,6 +594,141 @@
 		/obj/item/choice_beacon/box/weapons_uncommon
 )
 	crate_name = "packed uncommon weapon crate"
+
+
+// Commented out temporarily. Could be a good change, could be a terrible idea
+
+/*/datum/supply_pack/security/incendiary44
+	name = "Ammunition - Incendiary .44"
+	desc = "A crate with 100 incendiary bullets chambered in .44"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+		/obj/item/ammo_box/m44box/incendiary,
+)
+
+/datum/supply_pack/security/incendiary50mg
+	name = "Ammunition - Incendiary .50MG"
+	desc = "A crate with 25 incendiary bullets chambered in .50MG"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+		/obj/item/ammo_box/a50MG/incendiary,
+)
+
+/datum/supply_pack/security/incendiary473
+	name = "Ammunition - Incendiary 4.73mm"
+	desc = "A crate with 250 incendiary bullets chambered in 4.73mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+		/obj/item/ammo_box/m473/incendiary,
+)
+
+/datum/supply_pack/security/incendiary45
+	name = "Ammunition - Incendiary .45"
+	desc = "A crate with 125 incendiary bullets chambered in .45"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+)
+
+/datum/supply_pack/security/incendiaryshotgun
+	name = "Ammunition - Incendiary Shells"
+	desc = "A crate with 60 dragon's breath shotgun shells"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+		/obj/item/ammo_box/shotgun/incendiary,
+)
+
+/datum/supply_pack/security/incendiary9mm
+	name = "Ammunition - Incendiary 9mm"
+	desc = "A crate with 225 incendiary bullets chambered in 9mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+		/obj/item/ammo_box/c9mm/incendiary,
+)
+
+/datum/supply_pack/security/incendiary357
+	name = "Ammunition - Incendiary .357"
+	desc = "A crate with 125 incendiary bullets chambered in .357"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+		/obj/item/ammo_box/c45/incendiary,
+)
+
+/datum/supply_pack/security/incendiary10mm
+	name = "Ammunition - Incendiary 10mm"
+	desc = "A crate with 150 incendiary bullets chambered in 10mm"
+	cost = 1500
+	contains = list(
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+		/obj/item/ammo_box/c10mm/fire,
+)
+
+/datum/supply_pack/security/esd5mm
+	name = "Ammunition - ESD 5mm"
+	desc = "A crate with 150 electrostatic discharger bullets chambered in 5mm"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+		/obj/item/ammo_box/m5mmbox/shock,
+)
+
+/datum/supply_pack/security/esd473mm
+	name = "Ammunition - ESD 4.73mm"
+	desc = "A crate with 250 electrostatic discharger bullets chambered in 4.73mm"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+		/obj/item/ammo_box/m473/shock,
+)
+
+/datum/supply_pack/security/esd22lr
+	name = "Ammunition - ESD .22lr"
+	desc = "A crate with 300 electrostatic discharger bullets chambered in .22lr"
+	cost = 3000
+	contains = list(
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+		/obj/item/ammo_box/m22/shock,
+)*/
 
 /*shop should go up to mid tier, and be affordable in doing so
 /datum/supply_pack/security/weapon_boss

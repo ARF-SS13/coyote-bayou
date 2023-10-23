@@ -139,6 +139,7 @@
 	var/armor_ratio = armor * 0.01
 	if(missing > 0)
 		final_percent += missing * armor_ratio
+	P.finalmost_damage = totaldamage * (final_percent * 0.01)
 	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /* 	if(!Proj)

@@ -411,7 +411,7 @@
 /obj/item/slime_extract/black/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
 		if(SLIME_ACTIVATE_MINOR)
-			to_chat(user, "<span class='userdanger'>You feel something <i>wrong</i> inside you...</span>")
+			to_chat(user, span_userdanger("You feel something <i>wrong</i> inside you..."))
 			user.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
 			return 100
 

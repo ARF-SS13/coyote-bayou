@@ -282,9 +282,12 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
-	if(!isliving(user) || user.incapacitated())
+	if(!isliving(user) || user.incapacitated() || !isliving(dropping))
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(in_use) // Someone's already going in.
+		return
+	if(SSmobs.there_is_no_escape)
+		to_chat(user, span_warning("This method of escape has been disabled. Sorry! You're allowed to ghost out and respawn though, just ahelp and tell an admin to ditch your body."))
 		return
 	var/mob/living/departing_mob = dropping
 	if(departing_mob != user && departing_mob.client)

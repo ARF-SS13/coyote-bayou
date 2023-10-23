@@ -1,7 +1,8 @@
 /obj/item/projectile/ion
 	name = "ion bolt"
 	icon_state = "ion"
-	damage = 28
+	damage = 32 // Same as the AER, but you get 5 to 8 less shots for the EMP effect
+	damage_list = list("28" = 30, "32" = 50, "37" = 20)
 	damage_type = BURN
 	flag = "energy"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion
@@ -15,3 +16,4 @@
 /obj/item/projectile/ion/weak
 	emp_radius = 1
 	damage = 20
+	damage_list = list("18" = 30, "20" = 50, "25" = 20)

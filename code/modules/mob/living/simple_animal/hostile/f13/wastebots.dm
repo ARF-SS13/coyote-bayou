@@ -129,7 +129,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/mfc/recycled
 		)
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
 
@@ -216,7 +216,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/ecp/recycled
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
@@ -268,7 +268,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/mfc/recycled
 		)
 	emote_taunt_sound = null
 	emote_taunt = list("levels its laser")
@@ -358,7 +358,7 @@
 		"Please assume the position.",
 		"Protect and serve.",
 		"Antisocial behavior detected.",
-		"Criminal behavior willbe punished.",
+		"Criminal behavior will be punished.",
 		"Please step into the open and identify yourself, law abiding citizens have nothing to fear."
 		)
 	emote_taunt_sound = list(
@@ -475,7 +475,7 @@
 	response_disarm_simple = "pushes"
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
-	butcher_results = list(/obj/effect/gibspawner/robot = 1)
+	guaranteed_butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
 
 /mob/living/simple_animal/hostile/handy/assaultron
@@ -499,7 +499,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/three,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/mfc/recycled
 		)
 
 	emote_taunt_sound = FALSE

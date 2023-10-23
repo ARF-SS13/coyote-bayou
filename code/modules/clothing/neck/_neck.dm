@@ -1,8 +1,9 @@
 /obj/item/clothing/neck
 	name = "necklace"
 	icon = 'icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/neck.dmi'
 	body_parts_covered = NECK
-	slot_flags = INV_SLOTBIT_NECK
+	slot_flags = INV_SLOTBIT_NECK|INV_SLOTBIT_MASK
 	strip_delay = 40
 	equip_delay_other = 40
 	var/mood_event_on_equip = /datum/mood_event/equipped_necklace/any
@@ -56,10 +57,6 @@
 	name = "stethoscope"
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
-
-/obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!"))
-	return OXYLOSS
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -290,7 +287,7 @@
 
 	if(price)
 		var/true_price = round(price*profit_scaling)
-		to_chat(user, "<span class='notice'>[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]</span>")
+		to_chat(user, span_notice("[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]"))
 		if(selling)
 			new /obj/item/holochip(get_turf(user),true_price)
 			for(var/i in ex.exported_atoms_ref)
@@ -398,3 +395,30 @@ obj/item/clothing/neck/neckerchief
 	desc = "A black synthleather collar with spikey studs."
 	icon_state = "spikecollar"
 	item_state = "spikecollar"
+
+/obj/item/clothing/neck/redcowbell
+	name = "Red cowbell collar"
+	desc = "This collar appears to have red band and a yellow bell. Moo!"
+	icon_state = "collar_cowbell"
+	item_state = "collar_cowbell"
+
+/obj/item/clothing/neck/whitecowbell
+	name = "white cowbell collar"
+	desc = "This collar appears to have white band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_white"
+	item_state = "collar_cowbell_white"
+
+/obj/item/clothing/neck/bluecowbell
+	name = "blue cowbell collar"
+	desc = "This collar appears to have blue band and a grey bell. Moo!"
+	icon_state = "collar_cowbell_bluu"
+	item_state = "collar_cowbell_blue"
+
+
+/obj/item/clothing/neck/customfleur
+	name = "Fluer's necklace"
+	desc = "A simple but handmade necklace. The chain was of a soft, glistening silver, carefully linked together. On the end of the necklace was a small heart in the most pristine sliver. Gently glistening in the light. On the back, in-graved in small careful words was, 'Never lose sight of hope or love.' Along with an image of two tails carefully intertwining."
+	icon_state = "fleurnecklace"
+	item_state = "fleurnecklace"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'

@@ -47,13 +47,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails/nightstalker
+/datum/sprite_accessory/tails_animated/mam_tails_animated/nightstalker
 	name = "nightstalker"
 	icon_state = "nightstalker"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+/*
 /datum/sprite_accessory/tails/human/nightstalker
 	name = "nightstalker"
 	icon_state = "nightstalker"
@@ -67,7 +67,7 @@
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+*/
 /datum/sprite_accessory/tails/mam_tails/skunkalt
 	name = "Skunk Alt"
 	icon_state = "skunkalt"
@@ -89,13 +89,13 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails/raccoon
+/datum/sprite_accessory/tails_animated/mam_tails_animated/raccoon
 	name = "raccoon"
 	icon_state = "raccoon"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+/*
 /datum/sprite_accessory/tails/human/raccoon
 	name = "raccoon"
 	icon_state = "raccoon"
@@ -109,7 +109,7 @@
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
-
+*/
 /datum/sprite_accessory/tails/mam_tails/pony
 	name = "pony"
 	icon_state = "pony"
@@ -647,3 +647,52 @@
 	icon_state = "corgi"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/turkey
+	name = "Turkey Tail"
+	icon_state = "turkey"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/slugcat
+	name = "cat slug tail"
+	icon_state = "slugcat"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/tent
+	name = "Ocotopuss"
+	icon_state = "tent"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/xeno
+	name = "Xeno"
+	icon_state = "xeno"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/clubtail
+	name = "club tail"
+	icon_state = "clubtail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/spiketail
+	name = "spike tail"
+	icon_state = "spiketail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/glaceon
+	name = "glaceon"
+	icon_state = "glaceon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/ninetailsalt
+	name = "ninetails, alt"
+	icon_state = "ninetails"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+

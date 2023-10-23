@@ -10,6 +10,22 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
+
+/obj/item/ammo_box/magazine/spaagrifle
+	name = "reloadable recoiless rifle magazine"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	icon_state = "spaagrocket"
+	caliber = list(CALIBER_50MG)
+	max_ammo = 1
+	custom_materials = list(/datum/material/iron = MATS_MISC)
+	w_class = WEIGHT_CLASS_HUGE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	multiple_sprites = 2
+
+
+/obj/item/ammo_box/magazine/spaagrifle/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/highcaliber
 	name = ".50 cal magazine"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

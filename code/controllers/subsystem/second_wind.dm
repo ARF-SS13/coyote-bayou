@@ -416,7 +416,7 @@ SUBSYSTEM_DEF(secondwind)
 	if(!isliving(master))
 		return SW_ERROR_NO_BODY
 	var/mob/dead/observer/myghost = master.get_ghost()
-	if((myghost && !myghost.can_reenter_corpse) || master.suiciding)
+	if((myghost && !myghost.can_reenter_corpse))
 		return SW_ERROR_CANNOT_REENTER
 	if(QDELETED(master))
 		return SW_ERROR_QDELLED_BODY
@@ -441,7 +441,7 @@ SUBSYSTEM_DEF(secondwind)
 		"Percentage" = 100,
 		"TargTime" = SSsecondwind.life_cooldown,
 	)
-	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		.["Percentage"] = 0
@@ -474,7 +474,7 @@ SUBSYSTEM_DEF(secondwind)
 		"DedPercentage" = 100,
 		"DedTargTime" = SSsecondwind.death_delay,
 	)
-	if(third_winded || HAS_TRAIT(master, TRAIT_NO_SECOND_WIND))
+	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["DedPBarColors"] = "bad"
 		.["DedTimeText"] = "Never!"
 		.["DedPercentage"] = 0

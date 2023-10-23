@@ -17,6 +17,7 @@
 	var/overlay_state = "woodenrod"
 	var/mutable_appearance/overlay
 	//var/wielded_mult = 1
+	var/is_sharpened = FALSE
 
 /obj/item/melee/smith/Initialize()
 	. = ..()
@@ -28,7 +29,35 @@
 	if(force < 0)
 		force = 0
 
+/obj/item/melee/smith/sharpener
+	name = "whetstone"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "sharpener"
+	desc = "A block that makes things sharp."
+	force = 5
 
+/obj/item/melee/smith/sharpener/attackby(obj/item/melee/smith/I, mob/user, params)
+	if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
+		to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+		return
+	if(I.is_sharpened == TRUE)
+		to_chat(user, span_warning("That weapon's already as sharp as it can get!"))
+		return
+	if(I.sharpness != 1)
+		to_chat(user, span_warning("You cant sharpen a blunt object!"))
+		return
+	if(!do_after(user, 10 SECONDS, TRUE, I))
+		to_chat(user, span_warning("You need to hold still to sharpen that!"))
+		return
+	I.force += 5
+	I.force_wielded += 5
+	I.force_unwielded += 5
+	I.throwforce += 5
+	I.is_sharpened = TRUE
+	I.desc = "[initial(I.desc)] It has been sharpened to a fine edge."
+	to_chat(user, span_notice("You sharpen the [I]!"))
+	qdel(src)
+	return ..()
 /obj/item/melee/smith/twohand
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
@@ -95,7 +124,7 @@
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "prospect_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 /obj/item/mining_scanner/prospector/Initialize()
 	..()
@@ -126,8 +155,8 @@
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
 	item_state = "pickaxe"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	sharpness = SHARP_POINTY
-	digrange = 2
+	sharpness = SHARP_EDGED
+	digrange = 1
 	toolspeed = 0.2
 
 /obj/item/pickaxe/smithed/Initialize()
@@ -205,6 +234,86 @@
 
 //////////////////////////
 //						//
+//	UNARMED WEAPONS		//
+//						//
+//////////////////////////
+
+/obj/item/melee/smith/unarmed
+	name = "glove weapon template"
+	desc = "should not be here"
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	w_class = WEIGHT_CLASS_SMALL
+	flags_1 = CONDUCT_1
+	sharpness = SHARP_NONE
+
+	throwforce = 10
+	throw_range = 5
+	attack_verb = list("punched", "jabbed", "whacked")
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
+
+/obj/item/melee/smith/unarmed/equipped(mob/user, slot)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(unarmed_adjusted)
+		mob_overlay_icon = righthand_file
+	if(!unarmed_adjusted)
+		mob_overlay_icon = lefthand_file
+	if(ishuman(user) && slot == SLOT_GLOVES)
+		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh += force + 8 
+			H.dna.species.punchdamagelow += force + 8
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
+			if(sharpness == SHARP_NONE)
+				H.dna.species.attack_verb = pick("punch","jab","whack")
+	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
+			H.dna.species.punchdamagehigh = 10
+			H.dna.species.punchdamagelow = 1
+		if(HAS_TRAIT(user, TRAIT_IRONFIST))
+			H.dna.species.punchdamagehigh = 12
+			H.dna.species.punchdamagelow = 6
+		if(HAS_TRAIT(user, TRAIT_STEELFIST))
+			H.dna.species.punchdamagehigh = 16
+			H.dna.species.punchdamagelow = 10
+		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+		H.dna.species.attack_verb = "punch"
+
+/obj/item/melee/smith/unarmed/knuckles
+	name = "scrap knuckles"
+	desc = "Hardened knuckle grip made out of metal. They protect your hand, and do more damage, in unarmed combat."
+	icon_state = "knuckles_smith"
+	item_state = "knuckles_smith"
+	overlay_state = "grip_knuckles"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	attack_verb = list("punched", "jabbed", "whacked")
+	force = 33
+
+/obj/item/melee/smith/unarmed/claws
+	name = "scrap claws"
+	desc = "Gloves with short claws built into the palms."
+	icon_state = "claws_smith"
+	item_state = "claws_smith"
+	overlay_state = "grip_claws"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
+	force = 28
+	force_unwielded = 28
+	force_wielded = 28
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+//////////////////////////
+//						//
 //  ONEHANDED WEAPONS	//
 //						//
 //////////////////////////
@@ -215,6 +324,8 @@
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	force = 47
+	force_unwielded = 47
+	force_wielded = 47
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
@@ -230,6 +341,9 @@
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 8
 
 /obj/item/melee/smith/sword/sabre
@@ -238,6 +352,9 @@
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
+
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -247,8 +364,10 @@
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	force = 24
+	force_unwielded = 24
+	force_wielded = 24
 	throwforce = 30
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	block_chance = 5
@@ -269,6 +388,8 @@
 	icon_state = "bowie_smith"
 	overlay_state = "hilt_bowie"
 	force = 31
+	force_unwielded = 31
+	force_wielded = 31
 	throwforce= 34
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -281,6 +402,8 @@
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
 	force = 38
+	force_unwielded = 38
+	force_wielded = 38
 	block_chance = 5
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
@@ -290,6 +413,8 @@
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
 	force = 42
+	force_unwielded = 42
+	force_wielded = 42
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 1.1
 
@@ -298,6 +423,8 @@
 	icon_state = "macheter_smith"
 	overlay_state = "hilt_macheter"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 	attack_speed = CLICK_CD_MELEE * 0.9
 
@@ -314,6 +441,8 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	sharpness = SHARP_EDGED
 	force = 27
+	force_unwielded = 27
+	force_wielded = 27
 	throwforce= 30
 	block_chance = 10
 	attack_speed = CLICK_CD_MELEE * 0.7
@@ -345,6 +474,8 @@
 	icon_state = "mace_smith"
 	overlay_state = "shaft_mace"
 	force = 35
+	force_unwielded = 35
+	force_wielded = 35
 	block_chance = 5
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
@@ -476,7 +607,7 @@
 	block_chance = 5
 	force_wielded = 50
 	force_unwielded = 25
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.9
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 
@@ -509,11 +640,13 @@
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 15
+	force_unwielded = 15
+	force_wielded = 15
 	throwforce = 45
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 // Smaller weaker javelin, easier to store/carry, less effective
 /obj/item/melee/smith/throwingknife
@@ -523,9 +656,11 @@
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
 	force = 10
+	force_unwielded = 10
+	force_wielded = 10
 	throwforce = 35
 	w_class = WEIGHT_CLASS_TINY
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 
 
 // TG stuff

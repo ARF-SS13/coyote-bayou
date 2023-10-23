@@ -368,8 +368,17 @@
 	icon_state = "bars"
 	obj_integrity = 400
 	max_integrity = 400
-	proj_pass_rate = 90
-	pass_flags = PASSGRILLE //Feed the prisoners, or not.
+	proj_pass_rate = 50
+	pass_flags_self = null
+
+/obj/structure/barricade/barswindow
+	name = "metal bars"
+	desc = "Old, corroded metal bars. The bars have a window for easily passing things through!" 
+	icon_state = "barswindow"
+	obj_integrity = 400
+	max_integrity = 400
+	proj_pass_rate = 80
+	pass_flags_self = LETPASSTHROW
 
 /*
 /obj/structure/barricade/sandbags
@@ -580,6 +589,12 @@
 	name = "pre-war electronic junk"
 	desc = "Broken, a useless relic of the past."
 	icon_state = "junk_tv"
+
+/obj/structure/junk/small/prewartv
+	desc = "This is a pre-war television made with modern technology."
+	icon = 'icons/fallout/objects/decorations.dmi'
+	icon_state = "television"
+	name = "pre-war television"
 	buildstacktype = /obj/item/stack/crafting/electronicparts
 	buildstackamount = 1
 

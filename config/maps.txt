@@ -14,11 +14,11 @@ Format:
 endmap
 
 map pahrump-everything
-	default
+	adminonly
 endmap
 
 map pahrump-only
-    adminonly
+    default
 endmap
 
 map pahrump-garland

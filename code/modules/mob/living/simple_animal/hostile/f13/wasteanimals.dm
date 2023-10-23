@@ -15,7 +15,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -24,6 +24,7 @@
 	speed = 0
 	maxHealth = 35
 	health = 35
+	low_health_threshold = 0.5
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 4
@@ -126,12 +127,40 @@
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
 
+
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
 	can_ghost_into = FALSE
 	guaranteed_butcher_results = list()
 	butcher_results = list()
 	
+
+/mob/living/simple_animal/hostile/gecko/make_low_health()
+	speed *= 1.3
+	move_to_delay *= 0.5
+	melee_damage_lower *= 0.5
+	melee_damage_upper *= 0.7
+	see_in_dark += 8
+	sound_pitch += 25
+	alternate_attack_prob = 75
+	is_low_health = TRUE
+	vary = FALSE
+	retreat_distance = 12
+	minimum_distance = 10
+
+/// Override this with what should happen when going from low health to high health
+/mob/living/simple_animal/hostile/gecko/make_high_health()
+	speed = initial(speed)
+	move_to_delay = initial(move_to_delay)
+	melee_damage_lower = initial(melee_damage_lower)
+	melee_damage_upper = initial(melee_damage_upper)
+	see_in_dark = initial(see_in_dark)
+	alternate_attack_prob = initial(alternate_attack_prob)
+	is_low_health = FALSE
+	vary = TRUE
+	retreat_distance = initial(retreat_distance)
+	minimum_distance = initial(minimum_distance)
+
 
 //Fire Geckos//
 
@@ -148,7 +177,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -308,11 +337,13 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	randpixel = 8
+	density = FALSE
 	sidestep_per_cycle = 2
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -414,7 +445,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 3,
 		/obj/item/stack/sheet/animalhide/gecko = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -463,9 +494,11 @@
 
 /mob/living/simple_animal/hostile/gecko/legacy/alpha/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
 
 /mob/living/simple_animal/hostile/gecko/big
 	name = "big gecko"
@@ -481,7 +514,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 6,
 		/obj/item/stack/sheet/animalhide/gecko = 2)
-	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -628,7 +661,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -676,9 +709,11 @@
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 5)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -701,7 +736,7 @@
 	retreat_distance = 8
 	minimum_distance = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
@@ -747,9 +782,11 @@
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin/rattler_venom, 2)
 
 /datum/reagent/toxin/rattler_venom
 	name = "rattler venom"
@@ -839,7 +876,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -900,7 +937,7 @@
 	speak_chance = 0
 	turns_per_move = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
@@ -962,7 +999,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
 		/obj/item/feather = 3)
-	butcher_results = list(/obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"

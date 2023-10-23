@@ -90,7 +90,7 @@
 	popup.open()
 
 /obj/vertibird/proc/flyGlobal()
-	to_chat(world, "<font size='3' color='orange'>The ever increasing roar of an aircraft tearing through the skies above enters your ears.</font>")
+	to_chat(world, "<font size='2' color='orange'>The ever increasing roar of an aircraft tearing through the skies above enters your ears.</font>")
 	var/sound/global_sound
 	global_sound = sound("sound/effects/flyby.ogg", repeat = 0, wait = 0, channel = 776)
 	global_sound.priority = 250

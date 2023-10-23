@@ -73,6 +73,11 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
+/datum/sprite_accessory/deco_wings/pterodactyl
+	name = "pterodactyl"
+	icon_state = "pterodactyl"
+	icon = 'icons/mob/mam/coyote/mam_wings.dmi'
+
 /* Need to work on fixing the sprite
 /datum/sprite_accessory/deco_wings/harpybig
 	name = "Big harpy armwings"

@@ -609,7 +609,8 @@
 		/datum/reagent/consumable/bungojuice,
 		/datum/reagent/consumable/aloejuice,
 		/datum/reagent/consumable/peachjuice,
-		/datum/reagent/consumable/blumpkinjuice
+		/datum/reagent/consumable/blumpkinjuice,
+		/datum/reagent/consumable/cherryjelly
 	)
 	upgrade_reagents2 = list(
 		/datum/reagent/consumable/vanilla,

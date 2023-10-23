@@ -21,6 +21,9 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/wind_direction = NORTH
 	/// wind direction stuff cooldown
 	COOLDOWN_DECLARE(wind_change_cooldown)
+	/// all the sound emitter datums available
+	/// Format: list("key" = /datum/looping_sound)
+	var/list/sound_rocks = list()
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..() //Active weather is handled by . = ..() processing subsystem base fire().
@@ -93,4 +96,21 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/list/possible_directions = list(NORTH, SOUTH, EAST, WEST)
 	wind_direction = pick(possible_directions)
 
+/datum/controller/subsystem/processing/weather/proc/add_sound_rock(atom/rock, soundloop)
+	if(!ispath(soundloop, /datum/looping_sound))
+		CRASH("add_sound_rock called with invalid soundloop: [soundloop || "null"]")
+	var/datum/looping_sound/soop = LAZYACCESS(sound_rocks, soundloop)
+	if(!soop)
+		soop = new soundloop()
+		sound_rocks[soop.type] = soop
+	soop.start(rock)
+	return soop
 
+/datum/controller/subsystem/processing/weather/proc/remove_sound_rock(atom/rock, soundloop)
+	if(!ispath(soundloop, /datum/looping_sound))
+		CRASH("remove_sound_rock called with invalid soundloop: [soundloop || "null"]")
+	var/datum/looping_sound/soop = LAZYACCESS(sound_rocks, soundloop)
+	if(!soop)
+		return
+	soop.remove_atom(rock)
+	return TRUE // the soundloops will stay in existence forever, even if they're empty!

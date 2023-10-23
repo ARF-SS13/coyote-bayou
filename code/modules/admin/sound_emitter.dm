@@ -11,7 +11,7 @@
 	desc = "Emits sounds, presumably."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield2"
-	invisibility = INVISIBILITY_OBSERVER
+	//invisibility = INVISIBILITY_OBSERVER
 	anchored = TRUE
 	density = FALSE
 	opacity = FALSE

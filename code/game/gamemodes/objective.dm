@@ -19,6 +19,12 @@ GLOBAL_LIST_EMPTY(objectives)
 	if(text)
 		explanation_text = text
 
+//Apparently objectives can be qdel'd. Learn a new thing every day
+/datum/objective/Destroy()
+	GLOB.objectives -= src
+	return ..()
+
+
 /datum/objective/Destroy(force, ...)
 	GLOB.objectives -= src
 	if(owner)
@@ -495,8 +501,6 @@ GLOBAL_LIST_EMPTY(objectives)
 	for(var/datum/mind/M in owners)
 		if(considered_alive(M))
 			return FALSE
-		if(M.current?.suiciding) //killing yourself ISN'T glorious.
-			return FALSE
 	return TRUE
 
 /datum/objective/nuclear
@@ -891,7 +895,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 ////////////////////////////////
 
 /datum/objective/changeling_team_objective //Abstract type
-	martyr_compatible = 0	//Suicide is not teamwork!
 	explanation_text = "Changeling Friendship!"
 	var/min_lings = 3 //Minimum amount of lings for this team objective to be possible
 	var/escape_objective_compatible = FALSE
@@ -1088,11 +1091,13 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 				return TRUE
 	return FALSE
 
+/*
 /datum/objective/hoard/heirloom
 	name = "steal heirloom"
 
 /datum/objective/hoard/heirloom/find_target()
 	set_target(pick(GLOB.family_heirlooms))
+*/
 
 GLOBAL_LIST_EMPTY(traitor_contraband)
 

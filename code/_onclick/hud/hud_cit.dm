@@ -1,2 +1,2 @@
 ///datum/hud
-	//var/obj/screen/arousal
+	//var/atom/movable/screen/arousal

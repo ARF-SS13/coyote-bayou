@@ -46,13 +46,15 @@
 			hc = " !!HC!!"
 
 	var/msg_tmp = msg
-	msg = "<span class='adminnotice'>[icon2html(cross, GLOB.admins)]<b><font color=[font_color]>[prayer_type][deity ? " (to [deity])" : ""]: </font>[ADMIN_FULLMONTY(src)][hc] [ADMIN_SC(src)]:</b> <span class='linkify'>[msg]</span></span>"
+	msg = "<span class='adminnotice'>[icon2html(cross, GLOB.admins)]<b><font color=[font_color]>[prayer_type][deity ? " (to [deity])" : ""]: </font>[ADMIN_FULLMONTY(src)][hc] [ADMIN_SC(src)] [ADMIN_SEC(src)]:</b> <span class='linkify'>[msg]</span></span>"
 
 	for(var/client/C in GLOB.admins)
 		if(C.prefs.chat_toggles & CHAT_PRAYER)
 			to_chat(C, msg)
 			if(C.prefs.toggles & SOUND_PRAYERS)
-				if(usr.job == "Chaplain")
+				if(HAS_TRAIT(usr, TRAIT_BLINDFAITH))
+					SEND_SOUND(C, sound('sound/effects/tribalprayer.ogg'))
+				if(HAS_TRAIT(usr, TRAIT_SPIRITUAL))
 					SEND_SOUND(C, sound('sound/effects/pray.ogg'))
 				else
 					SEND_SOUND(C, sound('sound/effects/ding.ogg'))

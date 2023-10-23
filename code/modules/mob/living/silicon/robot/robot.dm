@@ -80,9 +80,9 @@
 			mmi.forceMove(T)
 		if(mmi.brainmob)
 			if(mmi.brainmob.stat == DEAD)
-				mmi.brainmob.set_stat(CONSCIOUS)
-				GLOB.dead_mob_list -= mmi.brainmob
-				GLOB.alive_mob_list += mmi.brainmob
+				mmi.brainmob.stat = CONSCIOUS
+				mmi.brainmob.remove_from_dead_mob_list()
+				mmi.brainmob.add_to_alive_mob_list()
 			mind.transfer_to(mmi.brainmob)
 			mmi.update_icon()
 		else
@@ -103,12 +103,12 @@
 		if(T && istype(radio) && istype(radio.keyslot))
 			radio.keyslot.forceMove(T)
 			radio.keyslot = null
-	qdel(wires)
-	qdel(module)
-	qdel(eye_lights)
-	wires = null
-	module = null
-	eye_lights = null
+	QDEL_NULL(wires)
+	QDEL_NULL(eye_lights)
+	QDEL_NULL(inv1)
+	QDEL_NULL(inv2)
+	QDEL_NULL(inv3)
+	QDEL_NULL(spark_system)
 	cell = null
 	return ..()
 
@@ -579,7 +579,7 @@
 	if(wires.is_cut(WIRE_LOCKDOWN))
 		state = TRUE
 	if(state)
-		throw_alert("locked", /obj/screen/alert/locked)
+		throw_alert("locked", /atom/movable/screen/alert/locked)
 	else
 		clear_alert("locked")
 	locked_down = state
@@ -590,7 +590,7 @@
 	module.rebuild_modules()
 	update_icons()
 	if(emagged)
-		throw_alert("hacked", /obj/screen/alert/hacked)
+		throw_alert("hacked", /atom/movable/screen/alert/hacked)
 	else
 		clear_alert("hacked")
 

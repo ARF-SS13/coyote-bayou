@@ -1,4 +1,6 @@
+/// This list isn't used for anything lmfao
 GLOBAL_LIST_EMPTY(global_locks)
+
 /obj/item/lock_construct
 	name = "\improper lock"
 	icon = 'icons/obj/lock.dmi'
@@ -25,6 +27,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 			to_chat(user, span_notice("You fashion \the [I] to unlock \the [src]"))
 			K.lock_data = lock_data
 			K.desc = "A simple key for locks. It has [K.lock_data] engraved on it."
+			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 25, FALSE, -4)
 		else
 			to_chat(user, span_warning("\The [I] already unlocks something..."))
 		return
@@ -36,7 +39,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 		return
 	..()
 
-/obj/item/lock_construct/proc/check_key(obj/item/key/K, mob/user = null)
+/obj/item/lock_construct/proc/check_key(obj/item/key/K, mob/user = null,atom/movable/D)
 	if(K.lock_data == src.lock_data) //if the key matches us
 		if(locked)
 			user.visible_message(span_warning("[user] unlocks \the [src]."))
@@ -44,9 +47,13 @@ GLOBAL_LIST_EMPTY(global_locks)
 		else
 			user.visible_message(span_warning("[user] locks \the [src]."))
 			locked = TRUE
+		playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE)
+		if(D)
+			D.do_squish(0.9,0.9,0.25 SECONDS)
 	else
 		to_chat(user, span_warning("This is the wrong key!"))
 
+/// Always returns true. Very cool.
 /obj/item/lock_construct/proc/check_locked()
 	return locked
 
@@ -62,7 +69,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 		var/result = do_after(user, time_to_open, target = A)
 		prying = FALSE
 		if(result)
-			user.visible_message(span_notice("[src] breaks off [A] and falls to pieces."))
+			user.visible_message(span_notice("[src] breaks off [A] and falls to the ground."))
 			return TRUE
 	return FALSE
 
@@ -91,3 +98,61 @@ GLOBAL_LIST_EMPTY(global_locks)
 			S.lock_data = src.lock_data
 	else
 		return ..()
+
+//// Deadbolt / Barrel Bolt / Bolt Lock / Etc
+//// Basically just a keyless lock that can only be opened from one direction. Useful for mappers.
+
+/obj/item/lock_bolt
+	name = "bolt lock"
+	desc = "This simple lock doesn't need a key, but it can only be manipulated from one side of a door."
+	icon = 'icons/obj/lock.dmi'
+	icon_state = "deadbolt_mapping"
+	w_class = WEIGHT_CLASS_SMALL
+	dir = SOUTH
+	/// This variable will set itself, do not touch it in the map editor >:(
+	var/mapped = FALSE
+	var/prying = FALSE
+	var/locked = FALSE
+
+//Exclusively used for mapping rooms that should start locked.
+/obj/item/lock_bolt/prelocked
+	locked = TRUE
+
+/obj/item/lock_bolt/Initialize(mapload)
+	. = ..()
+	icon_state = "deadbolt"
+	GLOB.global_locks += src
+	if(mapload && isturf(loc))//Mapped on a turf. Ignores deadbolts inside of containers and what not.
+		mapped = TRUE
+		var/obj/structure/simple_door/SD = locate(/obj/structure/simple_door) in loc
+		if(SD && SD.can_have_lock)
+			name = "[SD.name] [name]" //Give this lock a unique name so it can be tracked easier
+			SD.attach_deadbolt(src, FALSE, null, mapped)
+
+/obj/item/lock_bolt/Destroy()
+	..()
+	GLOB.global_locks -= src
+
+/obj/item/lock_bolt/proc/pry_off(mob/living/user, atom/A)
+	if(!prying)
+		user.visible_message(span_notice("[user] starts prying [src] off [A]."), \
+							span_notice("You start prying [src] off [A]."))
+		var/time_to_open = 50
+		if(locked)
+			time_to_open = 500
+		playsound(src, 'sound/machines/airlock_alien_prying.ogg',100,1) //is it aliens or just the CE being a dick?
+		prying = TRUE
+		var/result = do_after(user, time_to_open, target = A)
+		prying = FALSE
+		if(result)
+			user.visible_message(span_notice("[src] breaks off [A] and falls to the ground."))
+			return TRUE
+	return FALSE
+
+/obj/item/lock_bolt/proc/ToggleLock(mob/user)
+	if(locked)
+		user.visible_message(span_warning("[user] unlocks \the [src]."))
+		locked = FALSE
+	else
+		user.visible_message(span_warning("[user] locks \the [src]."))
+		locked = TRUE

@@ -448,14 +448,94 @@
 	to_chat(M, span_warning("You are unable to equip that!"))
 	return FALSE
 
+//-->
+// Stupidly complicated smart equip/unequip, what is this supposed to do:
+// If the user is empty handed and triggers this function, then unholster an item with priority and with exceptions
+// in the following order:
+// 1-Back slot;
+// 2-Armor slot;
+// 3-Belt slot;
+// 4-Holster contents, return ONLY firearms, all other items will be ignored;
+// 5-Boot contents.
 
+// There's one more twist to this, for example, if the user had previously unsheathed a revolver from a shoulder holster,
+// we clearly want the revolver to be re-sheathed in the previous location.
+// If anything is broken, or not working properly, contact me or fix it -leonzrygin
+//<--
 /mob/verb/quick_equip()
 	set name = "quick-equip"
 	set hidden = 1
 
+	if(incapacitated())
+		return
+
+	var/obj/item/storage
 	var/obj/item/I = get_active_held_item()
-	if (I)
+
+	//obj/item/melee/onehanded
+
+	if(I)  //are we holding something in our hands?
+		storage = get_item_by_slot(SLOT_S_STORE)
+		if(storage)  //if it's empty, put the revolver there (if I'm carrying a pouch there for example)
+			if(istype(I, /obj/item/gun) && I.w_class <= WEIGHT_CLASS_NORMAL)
+				storage = get_item_by_slot(SLOT_NECK)
+				if(storage)
+					if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+						if(SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src))
+							return
+
+		storage = get_item_by_slot(SLOT_SHOES)
+		if(istype(I, /obj/item/melee) && I.w_class <= WEIGHT_CLASS_SMALL)
+			if(storage)
+				if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+					if(SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src))
+						return
+
 		I.equip_to_best_slot(src)
+
+	else  //Are we empty handed?
+		storage = get_item_by_slot(SLOT_BACK)
+		if(storage)  //Are we carrying something in this storage slot?
+			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
+				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
+					storage.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+					return
+
+		storage = get_item_by_slot(SLOT_S_STORE)
+		if(storage)  //Are we carrying something in this storage slot?
+			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
+				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
+					storage.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+					return
+
+		storage = get_item_by_slot(SLOT_BELT)
+		if(storage)  //We basically repeat the same checks but for belts
+			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
+				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
+					storage.attack_hand(src)
+					return
+
+		storage = get_item_by_slot(SLOT_NECK)  //Are we wearing a holster? If yes, we want to prioritize the unholstering of the gun.
+		if(storage)  //Are we carrying something in this storage slot?
+			if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this a storage item?
+				if(storage.contents.len)  //there's something to take out.
+					var/obj/item/gun/firearm
+					for(var/obj/item/gun/F in storage.contents)  //First thing, we want to obviously prioritize the unholstering of the gun.
+						firearm = F
+						break
+					if(firearm && !firearm.on_found(src))
+						firearm.allow_quickdraw = TRUE
+						firearm.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+						return
+
+		storage = get_item_by_slot(SLOT_SHOES)  //Shoes are a little different, we don't want to return the item itself, but rather its contents.
+		if(storage)  //Are we carrying something in this storage slot?
+			if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this a storage item?
+				if(storage.contents.len)  //there's something to take out.
+					I = storage.contents[storage.contents.len]  //take the item out
+					if(I && !I.on_found(src))
+						I.attack_hand(src)  //Slap my hands with the contents of this storage, which is allegedly only one item.
+					return
 
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
 /mob/proc/getBackSlot()

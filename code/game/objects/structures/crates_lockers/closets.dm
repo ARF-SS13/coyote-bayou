@@ -104,14 +104,14 @@
 /obj/structure/closet/examine(mob/user)
 	. = ..()
 	if(welded)
-		. += "<span class='notice'>It's <b>welded</b> shut.</span>"
+		. += span_notice("It's <b>welded</b> shut.")
 	if(anchored)
-		. += "<span class='notice'>It is <b>bolted</b> to the ground.</span>"
+		. += span_notice("It is <b>bolted</b> to the ground.")
 	if(opened)
-		. += "<span class='notice'>The parts are <b>welded</b> together.</span>"
+		. += span_notice("The parts are <b>welded</b> together.")
 	else if(secure && !opened)
 	else if(broken)
-		. += "<span class='notice'>The lock is <b>screwed</b> in.</span>"
+		. += span_notice("The lock is <b>screwed</b> in.")
 	else if(secure)
 		. += span_notice("Alt-click to [locked ? "unlock" : "lock"].")
 	if(isliving(user))
@@ -291,7 +291,7 @@
 		to_chat(user, span_notice("This locker already has a lock!"))
 		return
 	if(broken)
-		to_chat(user, "<span class='notice'><b>Unscrew</b> the broken lock first!</span>")
+		to_chat(user, span_notice("<b>Unscrew</b> the broken lock first!"))
 		return
 	if(!istype(E))
 		return
@@ -432,7 +432,7 @@
 	return
 
 /obj/structure/closet/MouseDrop_T(atom/movable/O, mob/living/user)
-	if(!istype(O) || O.anchored || istype(O, /obj/screen))
+	if(!istype(O) || O.anchored || istype(O, /atom/movable/screen))
 		return
 	if(!istype(user) || user.incapacitated() || user.lying)
 		return
@@ -578,7 +578,7 @@
 
 /obj/structure/closet/get_remote_view_fullscreens(mob/user)
 	if(user.stat == DEAD || !(user.sight & (SEEOBJS|SEEMOBS)))
-		user.overlay_fullscreen("remote_view", /obj/screen/fullscreen/impaired, 1)
+		user.overlay_fullscreen("remote_view", /atom/movable/screen/fullscreen/impaired, 1)
 
 /obj/structure/closet/emp_act(severity)
 	. = ..()

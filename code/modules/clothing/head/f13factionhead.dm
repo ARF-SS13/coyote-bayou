@@ -935,14 +935,34 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	desc = " A Khan helmet modified with steel horns and a full guard comprised of red sunglass lenses and a thick metal plate to conceal the lower face."
 	icon_state = "khan_fullhelmet"
 	item_state = "khan_fullhelmet"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_cover = HEADCOVERSEYES 
 	strip_delay = 20
 
 /* /obj/item/clothing/head/helmet/f13/khan/fullhelm/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
  */
+/obj/item/clothing/head/helmet/infiltrator
+	name = "infiltrator helmet"
+	desc = "An insidious armored combat helmet with a red and black color scheme."
+	icon_state = "infiltrator"
+	item_state = "infiltrator"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_cover = HEADCOVERSEYES
+	mutantrace_variation = STYLE_MUZZLE
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	
+/obj/item/clothing/head/helmet/infiltrator/contractor
+	name = "contractor helmet"
+	desc = "An insidious armored combat helmet with a orange and black color scheme."
+	icon_state = "syndicate-contract-helm"
+	item_state = "syndicate-contract-helm"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_cover = HEADCOVERSEYES
+	mutantrace_variation = STYLE_MUZZLE
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+//Wayfarer
 //Wayfarer
 /obj/item/clothing/head/helmet/f13/deathskull
 	name = "eerie helm"

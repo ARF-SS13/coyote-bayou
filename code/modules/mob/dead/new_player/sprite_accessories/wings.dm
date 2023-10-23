@@ -262,6 +262,10 @@
 	name = "Sepulchre"
 	icon_state = "sepulchre"
 
+/datum/sprite_accessory/deco_wings/sepulchrealt
+	name = "SepulchreAlt"
+	icon_state = "sepulchrealt"
+
 /datum/sprite_accessory/deco_wings/succubusblack
 	name = "Succubus - Black"
 	icon_state = "succubusblack"

@@ -39,10 +39,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	dog_fashion = null
 	var/bowman = FALSE
 
-/obj/item/radio/headset/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!"))
-	return TOXLOSS
-
 /obj/item/radio/headset/examine(mob/user)
 	. = ..()
 
@@ -80,7 +76,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/talk_into(mob/living/M, message, channel, list/spans,datum/language/language)
 	if (!listening)
 		return ITALICS | REDUCE_RANGE
-	return ..()
+
+	if (language != /datum/language/signlanguage)
+		return ..()
 
 /obj/item/radio/headset/can_receive(freq, level, AIuser)
 	if(ishuman(src.loc))
@@ -418,7 +416,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_biker
 	name = "Hell's Nomads radio headset"
-	desc = "This is used by the Hell's Nomads.\nTo access the Hell's Nomads channel, use :b."
+	desc = "This is used by the Hell's Nomads.\nTo access the Hell's Nomads channel, use :b, to access the ashdown, use :d"
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_biker

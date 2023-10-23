@@ -59,7 +59,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/unknown = L.get_visible_name() == "Unknown"
 		if(!unknown && iscarbon(target))
 			var/mob/living/carbon/C = L
-			unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE))
+			unknown = !HAS_TRAIT(C, TRAIT_NOHIDEFACE) && ((C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE)))
 		if(unknown)
 			if(!("...?" in examine_list)) //can't think of anything better in case of multiple flavor texts.
 				examine_list += "...?"
@@ -68,7 +68,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	if(!text)
 		return
 	if(examine_no_preview)
-		examine_list += "<span class='notice'><a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a></span>"
+		examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
 		return
 	var/msg = replacetext(text, "\n", " ")
 	if(length_char(msg) <= 40)

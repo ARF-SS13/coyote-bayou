@@ -159,6 +159,7 @@
 	for(var/atom/movable/movable as anything in moving_movs)
 		movable.currently_z_moving = currently_z_moving || CURRENTLY_Z_MOVING_GENERIC
 		movable.forceMove(target)
+		movable.update_z(target.z)
 		movable.set_currently_z_moving(FALSE, TRUE)
 	// This is run after ALL movables have been moved, so pulls don't get broken unless they are actually out of range.
 	if(z_move_flags & ZMOVE_CHECK_PULLS)
@@ -168,6 +169,10 @@
 			if(z_move_flags & ZMOVE_CHECK_PULLING)
 				moved_mov.check_pulling(TRUE)
 	return TRUE
+
+// Some leftover legacy code to help support the sound system working when mobs are moved between z levels.
+/atom/movable/proc/update_z(new_z)
+	return // Used for mob/living and mob/dead
 
 /// Returns a list of movables that should also be affected when src moves through zlevels, and src.
 /atom/movable/proc/get_z_move_affected(z_move_flags)
@@ -687,7 +692,7 @@
 	return language_holder
 
 /// Grants the supplied language and sets omnitongue true.
-/atom/movable/proc/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+/atom/movable/proc/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.grant_language(language, understood, spoken, source)
 
@@ -707,12 +712,12 @@
 	return LH.remove_all_languages(source, remove_omnitongue)
 
 /// Adds a language to the blocked language list. Use this over remove_language in cases where you will give languages back later.
-/atom/movable/proc/add_blocked_language(language, source = LANGUAGE_ATOM)
+/atom/movable/proc/add_blocked_language(language, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.add_blocked_language(language, source)
 
 /// Removes a language from the blocked language list.
-/atom/movable/proc/remove_blocked_language(language, source = LANGUAGE_ATOM)
+/atom/movable/proc/remove_blocked_language(language, source = LANGUAGE_MIND)
 	var/datum/language_holder/LH = get_language_holder()
 	return LH.remove_blocked_language(language, source)
 

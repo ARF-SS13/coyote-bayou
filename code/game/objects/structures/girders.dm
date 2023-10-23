@@ -17,14 +17,14 @@
 	. = ..()
 	switch(state)
 		if(GIRDER_REINF)
-			. += "<span class='notice'>The support struts are <b>screwed</b> in place.</span>"
+			. += span_notice("The support struts are <b>screwed</b> in place.")
 		if(GIRDER_REINF_STRUTS)
-			. += "<span class='notice'>The support struts are <i>unscrewed</i> and the inner <b>grille</b> is intact.</span>"
+			. += span_notice("The support struts are <i>unscrewed</i> and the inner <b>grille</b> is intact.")
 		if(GIRDER_NORMAL)
 			if(can_displace)
-				. += "<span class='notice'>The bolts are <b>wrenched</b> in place.</span>"
+				. += span_notice("The bolts are <b>wrenched</b> in place.")
 		if(GIRDER_DISPLACED)
-			. += "<span class='notice'>The bolts are <i>loosened</i>, but the <b>screws</b> are holding [src] together.</span>"
+			. += span_notice("The bolts are <i>loosened</i>, but the <b>screws</b> are holding [src] together.")
 		if(GIRDER_DISASSEMBLED)
 			. += span_notice("[src] is disassembled! You probably shouldn't be able to see this examine message.")
 
@@ -307,11 +307,10 @@
 		else
 			return 0
 
-/obj/structure/girder/CanAStarPass(ID, dir, caller)
+/obj/structure/girder/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
 	. = !density
-	if(ismovable(caller))
-		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & PASSGRILLE)
+	if(istype(caller))
+		. = . || (caller.pass_flags & PASSGRILLE)
 
 /obj/structure/girder/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

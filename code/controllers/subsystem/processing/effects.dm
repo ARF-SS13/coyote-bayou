@@ -24,3 +24,17 @@ PROCESSING_SUBSYSTEM_DEF(effects)
 		return
 	EF.do_effect(source, target, angle, length)
 
+/datum/controller/subsystem/processing/effects/proc/floaterize(atom/source, angle = EAST, distance = 2, duration = 0.5 SECONDS)
+	if(!source)
+		return
+	var/matrix/M2 = matrix(source.transform)
+	M2.Turn(dir2angle(angle))
+	M2.Translate(distance*32, rand(-distance, distance)*8)
+	animate(source, time = duration, transform = M2, alpha = 0, easing = LINEAR_EASING)
+	if(angle == EAST || angle == WEST)
+		animate(source, loop = -1, time = 0.5 SECONDS, pixel_y = -16, flags = ANIMATION_PARALLEL)
+		animate(loop = -1, time = 0.5 SECONDS, pixel_y = 16)
+	else
+		animate(source, loop = -1, time = 0.5 SECONDS, pixel_x = -16, flags = ANIMATION_PARALLEL)
+		animate(loop = -1, time = 0.5 SECONDS, pixel_x = 16)
+

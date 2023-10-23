@@ -11,7 +11,7 @@
 		return
 	ducts += D
 	D.duct = src
-///Remove a duct from our network and commit suicide, because this is probably easier than to check who that duct was connected to and what part of us was lost
+///Remove a duct from our network and commit die, because this is probably easier than to check who that duct was connected to and what part of us was lost
 /datum/ductnet/proc/remove_duct(obj/machinery/duct/ducting)
 	destroy_network(FALSE)
 	for(var/obj/machinery/duct/D in ducting.neighbours)
@@ -61,5 +61,5 @@
 	for(var/A in ducts)
 		var/obj/machinery/duct/D = A
 		D.duct = null
-	if(delete) //I don't want code to run with qdeleted objects because that can never be good, so keep this in-case the ductnet has some business left to attend to before commiting suicide
+	if(delete) //I don't want code to run with qdeleted objects because that can never be good, so keep this in-case the ductnet has some business left to attend to before commiting die
 		qdel(src)

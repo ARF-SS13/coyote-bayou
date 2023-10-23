@@ -18,7 +18,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -50,8 +50,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
-	qdel(udder)
-	udder = null
+	QDEL_NULL(udder)
 	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/BiologicalLife(seconds, times_fired)
@@ -109,13 +108,16 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(istype(H.dna.species, /datum/species/pod))
-			var/obj/item/bodypart/NB = pick(H.bodyparts)
-			H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
-									span_userdanger("[src] takes a big chomp out of your [NB]!"))
-			NB.dismember()
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	if(!istype(H.dna.species, /datum/species/pod))
+		return
+	var/obj/item/bodypart/NB = pick(H.bodyparts)
+	H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
+							span_userdanger("[src] takes a big chomp out of your [NB]!"))
+	NB.dismember()
 //cow
 /mob/living/simple_animal/cow
 	name = "cow"
@@ -134,7 +136,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -186,8 +188,7 @@
 	recenter_wide_sprite()
 
 /mob/living/simple_animal/cow/Destroy()
-	qdel(udder)
-	udder = null
+	QDEL_NULL(udder)
 	return ..()
 
 /mob/living/simple_animal/cow/death(gibbed)
@@ -474,7 +475,7 @@
 /mob/living/simple_animal/cow/wisdom
 	name = "wisdom cow"
 	desc = "Known for its wisdom, shares it with all"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/wisdomcow = 1) //truly the best meat
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/wisdomcow = 1) //truly the best meat
 	gold_core_spawnable = FALSE
 	speak_chance = 10 //the cow is eager to share its wisdom! //but is wise enough to not lag  the server too bad
 	milk_reagent = /datum/reagent/medicine/liquid_wisdom
@@ -505,7 +506,7 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 2
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 1)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -552,6 +553,7 @@
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
+	is_monophobia_pet = TRUE
 	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
 	speak_emote = list("clucks","croons")
 	emote_hear = list("clucks.")
@@ -559,7 +561,7 @@
 	density = FALSE
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	response_help_continuous  = "pets"
@@ -688,6 +690,7 @@
 	icon_living = "brahmin"
 	icon_dead = "brahmin_dead"
 	icon_gib = "brahmin_gib"
+	is_monophobia_pet = TRUE
 	speak = list("moo?","moo","MOOOOOO")
 	speak_emote = list("moos","moos hauntingly")
 	emote_hear = list("brays.")
@@ -708,7 +711,7 @@
 	waddle_side_time = 2
 	can_ghost_into = TRUE
 	attack_sound = 'sound/weapons/punch1.ogg'
-	idlesound = list( 
+	idlesound = list(
 		'sound/creatures/cow/cow1.ogg',
 		'sound/creatures/cow/cow2.ogg',
 		'sound/creatures/cow/cow3.ogg',
@@ -724,7 +727,7 @@
 		/obj/item/stack/sheet/animalhide/brahmin = 3,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -771,12 +774,55 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
 	butcher_difficulty = 1
 
+/mob/living/simple_animal/cow/brahmin/molerat/trike
+	name = "tamed triceratops"
+	desc = "That's a big something! With three horns this beast looks quite intimadating. Apart from the saddle somehow strapped to it's back."
+	icon = 'modular_coyote/icons/mob/dinosaurs68x45.dmi'
+	icon_state = "triceratops_cow_ridable"
+	icon_living = "triceratops_cow_ridable"
+	icon_dead = "triceratops_cow_dead"
+	speak = list("roars","bellows")
+	speak_emote = list("bellows")
+	emote_hear = list("roars.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "horns"
+	response_harm_simple = "horn"
+	attack_verb_continuous = "horns"
+	attack_verb_simple = "horn"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	can_ghost_into = TRUE
+	attack_sound = 'sound/weapons/punch1.ogg'
+	footstep_type = FOOTSTEP_MOB_HOOF
+	ride_offsets = list(
+		"1" = list(0, 15),
+		"2" = list(0, 15),
+		"4" = list(-2, 15),
+		"8" = list(-2, 22)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
 
 /mob/living/simple_animal/cow/brahmin/horse/honse //wuzzle
 	name = "honse"
@@ -815,7 +861,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
 		/obj/item/stack/sheet/bone = 3
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 3,
 		/obj/item/stack/sheet/bone = 2
@@ -866,7 +912,7 @@
 		/obj/item/stack/sheet/metal/ten = 1,
 		/obj/structure/tires/two = 1
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/stack/sheet/metal/ten = 1,
 		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
 		/obj/structure/tires/two = 1
@@ -912,7 +958,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
@@ -971,7 +1017,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1027,7 +1073,7 @@
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1071,17 +1117,17 @@
 		)
 //	milk_reagent = /datum/reagent/toxin
 	ride_offsets = list(
-		"1" = list(0, 9),
+		"1" = list(0, 15),
 		"2" = list(0, 13),
-		"4" = list(-2, 9),
-		"8" = list(-2, 9)
+		"4" = list(5, 20),
+		"8" = list(5, 20)
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
@@ -1142,7 +1188,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 2,
 		/obj/item/stack/sheet/bone = 1
 		)
@@ -1162,6 +1208,55 @@
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "trekkerpack"
 */
+
+//Thrumbo from Citadel RP
+
+/mob/living/simple_animal/cow/brahmin/thrumbo
+	name = "thrumbo"
+	desc = "An intimidatingly large white-furred creature with a single massive horn on its forehead"
+	icon = 'modular_coyote/icons/mob/thrumbo.dmi'
+	icon_state = "thrumbo_ride"
+	icon_living = "thrumbo_ride"
+	icon_dead = "thrumbo_dead"
+	speak = list("roars","bellows")
+	speak_emote = list("bellows")
+	emote_hear = list("roars.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
+	ride_move_delay = 1.8
+	health = 500
+	maxHealth = 500
+	turns_per_move = -1
+	see_in_dark = 6
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "horns"
+	response_harm_simple = "horn"
+	attack_verb_continuous = "horns"
+	attack_verb_simple = "horn"
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
+	can_ghost_into = FALSE
+	attack_sound = 'sound/weapons/punch1.ogg'
+	footstep_type = FOOTSTEP_MOB_HOOF
+	ride_offsets = list(
+		"1" = list(2, 22),
+		"2" = list(2, 22),
+		"4" = list(-4, 22),
+		"8" = list(-3, 22)
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/stack/sheet/bone = 2
+		)
+	butcher_difficulty = 1
 
 /mob/living/simple_animal/cow/brahmin/horse/choco
 	name = "yellow snipe"
@@ -1200,7 +1295,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	butcher_results = list(
+	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
@@ -1408,7 +1503,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/radstag = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 
 	response_help_simple  = "pets"
@@ -1450,7 +1545,7 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 3)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"

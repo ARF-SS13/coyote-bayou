@@ -32,7 +32,6 @@
 	move_resist = MOVE_FORCE_EXTREMELY_STRONG
 	blood_volume = 0
 	var/combatant_state = SEEDLING_STATE_NEUTRAL
-	var/obj/seedling_weakpoint/weak_point
 	var/mob/living/beam_debuff_target
 	var/solar_beam_identifier = 0
 
@@ -68,7 +67,7 @@
 	status_type = STATUS_EFFECT_MULTIPLE
 	alert_type = null
 	tick_interval = 1
-	var/obj/screen/seedling/seedling_screen_object
+	var/atom/movable/screen/seedling/seedling_screen_object
 	var/atom/target
 
 
@@ -80,15 +79,14 @@
 
 /datum/status_effect/seedling_beam_indicator/on_apply()
 	if(owner.client)
-		seedling_screen_object = new /obj/screen/seedling()
+		seedling_screen_object = new /atom/movable/screen/seedling()
 		owner.client.screen += seedling_screen_object
 	tick()
 	return ..()
 
 /datum/status_effect/seedling_beam_indicator/Destroy()
-	if(owner)
-		if(owner.client)
-			owner.client.screen -= seedling_screen_object
+	if(owner.client)
+		owner.client.screen -= seedling_screen_object
 	return ..()
 
 /datum/status_effect/seedling_beam_indicator/tick()
@@ -97,10 +95,14 @@
 	final.Turn(target_angle)
 	seedling_screen_object.transform = final
 
-/obj/screen/seedling
+/atom/movable/screen/seedling
 	icon = 'icons/mob/jungle/arachnid.dmi'
 	icon_state = "seedling_beam_indicator"
 	screen_loc = "CENTER:-16,CENTER:-16"
+
+/mob/living/simple_animal/hostile/jungle/seedling/Destroy()
+	beam_debuff_target = null
+	. = ..()
 
 /mob/living/simple_animal/hostile/jungle/seedling/Goto()
 	if(combatant_state != SEEDLING_STATE_NEUTRAL)
@@ -108,9 +110,10 @@
 	return ..()
 
 /mob/living/simple_animal/hostile/jungle/seedling/AttackingTarget()
-	if(isliving(target))
+	var/atom/my_target = get_target()
+	if(isliving(my_target))
 		if(ranged_cooldown <= world.time && combatant_state == SEEDLING_STATE_NEUTRAL)
-			OpenFire(target)
+			OpenFire(my_target)
 		return
 	return ..()
 
@@ -118,31 +121,34 @@
 	WarmupAttack()
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/WarmupAttack()
-	if(combatant_state == SEEDLING_STATE_NEUTRAL)
-		combatant_state = SEEDLING_STATE_WARMUP
-		walk(src,0)
-		update_icons()
-		var/target_dist = get_dist(src,target)
-		var/living_target_check = isliving(target)
-		if(living_target_check)
-			if(target_dist > 7)//Offscreen check
-				SolarBeamStartup(target)
-				return
-			if(get_dist(src,target) >= 4 && prob(40))
-				SolarBeamStartup(target)
-				return
-		addtimer(CALLBACK(src, .proc/Volley), 5)
+	var/atom/my_target = get_target()
+	if(combatant_state != SEEDLING_STATE_NEUTRAL)
+		return
+	combatant_state = SEEDLING_STATE_WARMUP
+	walk(src,0)
+	update_icons()
+	var/target_dist = get_dist(src,my_target)
+	var/living_target_check = isliving(my_target)
+	if(living_target_check)
+		if(target_dist > 7)//Offscreen check
+			SolarBeamStartup(my_target)
+			return
+		if(get_dist(src,my_target) >= 4 && prob(40))
+			SolarBeamStartup(my_target)
+			return
+	addtimer(CALLBACK(src, .proc/Volley), 5)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark
-	if(combatant_state == SEEDLING_STATE_WARMUP && target)
-		combatant_state = SEEDLING_STATE_ACTIVE
-		living_target.apply_status_effect(/datum/status_effect/seedling_beam_indicator, src)
-		beam_debuff_target = living_target
-		playsound(src,'sound/effects/seedling_chargeup.ogg', 100, 0)
-		if(get_dist(src,living_target) > 7)
-			playsound(living_target,'sound/effects/seedling_chargeup.ogg', 100, 0)
-		solar_beam_identifier = world.time
-		addtimer(CALLBACK(src, .proc/Beamu, living_target, solar_beam_identifier), 35)
+	if(combatant_state != SEEDLING_STATE_WARMUP || !get_target())
+		return
+	combatant_state = SEEDLING_STATE_ACTIVE
+	living_target.apply_status_effect(/datum/status_effect/seedling_beam_indicator, src)
+	beam_debuff_target = GET_WEAKREF(living_target)
+	playsound(src,'sound/effects/seedling_chargeup.ogg', 100, 0)
+	if(get_dist(src,living_target) > 7)
+		playsound(living_target,'sound/effects/seedling_chargeup.ogg', 100, 0)
+	solar_beam_identifier = world.time
+	addtimer(CALLBACK(src, .proc/Beamu, living_target, solar_beam_identifier), 35)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/Beamu(mob/living/living_target, beam_id = 0)
 	if(combatant_state == SEEDLING_STATE_ACTIVE && living_target && beam_id == solar_beam_identifier)
@@ -176,36 +182,42 @@
 		addtimer(CALLBACK(src, .proc/AttackRecovery), 14)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/InaccurateShot()
-	if(!QDELETED(target) && combatant_state == SEEDLING_STATE_ACTIVE && !stat)
-		if(get_dist(src,target) <= 3)//If they're close enough just aim straight at them so we don't miss at point blank ranges
-			Shoot(target)
-			return
-		var/turf/our_turf = get_turf(src)
-		var/obj/item/projectile/seedling/readied_shot = new /obj/item/projectile/seedling(our_turf)
-		readied_shot.preparePixelProjectile(target, src, null, rand(-10, 10))
-		readied_shot.fire()
-		playsound(src, projectilesound, 100, 1)
+	var/atom/my_target = get_target()
+	if(!my_target || QDELETED(my_target) || combatant_state != SEEDLING_STATE_ACTIVE || stat)
+		return
+	if(get_dist(src,my_target) <= 3)//If they're close enough just aim straight at them so we don't miss at point blank ranges
+		Shoot(my_target)
+		return
+	var/turf/our_turf = get_turf(src)
+	var/obj/item/projectile/seedling/readied_shot = new /obj/item/projectile/seedling(our_turf)
+	readied_shot.preparePixelProjectile(my_target, src, null, rand(-10, 10))
+	readied_shot.fire()
+	playsound(src, projectilesound, 100, 1)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/AttackRecovery()
-	if(combatant_state == SEEDLING_STATE_ACTIVE)
-		combatant_state = SEEDLING_STATE_RECOVERY
-		update_icons()
-		ranged_cooldown = world.time + ranged_cooldown_time
-		if(target)
-			face_atom(target)
-		addtimer(CALLBACK(src, .proc/ResetNeutral), 10)
+	var/atom/my_target = get_target()
+	if(combatant_state != SEEDLING_STATE_ACTIVE)
+		return
+	combatant_state = SEEDLING_STATE_RECOVERY
+	update_icons()
+	ranged_cooldown = world.time + ranged_cooldown_time
+	if(my_target)
+		face_atom(my_target)
+	addtimer(CALLBACK(src, .proc/ResetNeutral), 10)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/ResetNeutral()
 	combatant_state = SEEDLING_STATE_NEUTRAL
-	if(target && !stat)
+	var/atom/my_target = get_target()
+	if(my_target && !stat)
 		update_icons()
-		Goto(target, move_to_delay, minimum_distance)
+		Goto(my_target, move_to_delay, minimum_distance)
 
 /mob/living/simple_animal/hostile/jungle/seedling/adjustHealth()
 	. = ..()
-	if(combatant_state == SEEDLING_STATE_ACTIVE && beam_debuff_target)
-		beam_debuff_target.remove_status_effect(/datum/status_effect/seedling_beam_indicator)
-		beam_debuff_target = null
+	var/mob/living/beam_blasted = GET_WEAKREF(beam_debuff_target)
+	if(combatant_state == SEEDLING_STATE_ACTIVE && beam_blasted)
+		beam_blasted.remove_status_effect(/datum/status_effect/seedling_beam_indicator)
+		beam_blasted = null
 		solar_beam_identifier = 0
 		AttackRecovery()
 
@@ -223,7 +235,8 @@
 				icon_state = "seedling"
 
 /mob/living/simple_animal/hostile/jungle/seedling/GiveTarget()
-	if(target)
+	var/atom/my_target = get_target()
+	if(my_target)
 		if(combatant_state == SEEDLING_STATE_WARMUP || combatant_state == SEEDLING_STATE_ACTIVE)//So it doesn't 180 and blast you in the face while it's firing at someone else
 			return
 	return ..()

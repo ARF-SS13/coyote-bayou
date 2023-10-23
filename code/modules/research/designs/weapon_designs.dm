@@ -483,6 +483,16 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/disablerrcw
+	name = "Disabler RCW"
+	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds. This one seems to be modified with special capacitors that make it non lethal!"
+	id = "disablerrcw"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000, /datum/material/plastic = 4000, /datum/material/silver = 800, /datum/material/titanium = 600, /datum/material/plasma = 5000)
+	build_path = /obj/item/gun/energy/laser/stunrcw
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 //////////
 //MISC////
 //////////
@@ -532,7 +542,7 @@
 	name = "Microfusion Cell"
 	id = "mfc"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 10000)
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -541,7 +551,7 @@
 	name = "Energy Cell"
 	id = "ec"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000)
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000, /datum/material/plasma = 10000)
 	build_path =/obj/item/stock_parts/cell/ammo/ec
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -550,7 +560,7 @@
 	name = "Electron Charge Pack"
 	id = "ecp"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000, /datum/material/plasma = 6000)
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

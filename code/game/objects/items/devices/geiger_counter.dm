@@ -87,7 +87,7 @@
 		if(RAD_LEVEL_HIGH + 1 to RAD_LEVEL_VERY_HIGH)
 			. += span_danger("Ambient radiation levels highly above average.")
 		if(RAD_LEVEL_VERY_HIGH + 1 to RAD_LEVEL_CRITICAL)
-			. += span_suicide("Ambient radiation levels nearing critical level.")
+			. += span_ghostalert("Ambient radiation levels nearing critical level.")
 		if(RAD_LEVEL_CRITICAL + 1 to INFINITY)
 			. += span_boldannounce("Ambient radiation levels above critical level!")
 

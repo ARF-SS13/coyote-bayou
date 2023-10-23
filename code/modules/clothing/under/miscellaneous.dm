@@ -1583,6 +1583,14 @@
 	item_color = "greek_dress"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/loincloth
+	name = "grassy loincloth"
+	desc = "Yep, that sure hardly covers anything."
+	icon_state = "loincloth"
+	item_state = "loincloth"
+	item_color = "loincloth"
+	can_adjust = FALSE
+
 // Bayou Stuff - started by Kelprunner
 
 /obj/item/clothing/under/tactiflannel
@@ -1593,3 +1601,43 @@
 	item_color = "tactiflannel"
 	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/under/frogsuit // nuh uh
+	name = "frogsuit"
+	desc = "A suit designed for sneaking and dynamic entry. Has tacticool straps for keeping additional armor snug to the body."
+	icon_state = "rachel_frogsuit"
+	item_state = "rachel_frogsuit"
+	item_color = "rachel_frogsuit"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeve
+	name = "black qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_nosleeve"
+	item_state = "qipao_nosleeve"
+	item_color = "qipao_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_white_nosleeve"
+	item_state = "qipao_white_nosleeve"
+	item_color = "qipao_white_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevered
+	name = "red qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_red_nosleeve"
+	item_state = "qipao_red_nosleeve"
+	item_color = "qipao_red_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_teal_nosleeve"
+	item_state = "qipao_teal_nosleeve"
+	item_color = "qipao_teal_nosleeve"
+	can_adjust = FALSE

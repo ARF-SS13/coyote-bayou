@@ -129,12 +129,20 @@
 	if(owner)
 		owner.bodyparts -= src
 		owner = null
+	for(var/wound in wounds)
+		qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
+	if(length(wounds))
+		stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
+		wounds.Cut()
 	if(current_gauze)
-		qdel(current_gauze)
+		QDEL_NULL(current_gauze)
 	if(current_suture)
-		qdel(current_suture)
+		QDEL_NULL(current_suture)
 	if(LAZYLEN(tattoos))
-		QDEL_LIST(tattoos)
+		QDEL_LIST_ASSOC_VAL(tattoos)
+	if(length(tattoos))
+		stack_trace("[type] qdeleted with [length(tattoos)] uncleared tattoos")
+		tattoos.Cut()
 	return ..()
 
 /obj/item/bodypart/attack(mob/living/carbon/C, mob/user)

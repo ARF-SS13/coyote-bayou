@@ -13,12 +13,13 @@
 	icon = 'icons/fallout/objects/kitchen.dmi'
 	lefthand_file = 'icons/fallout/onmob/tools/kitchen_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/kitchen_righthand.dmi'
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/kitchen/fork
 	name = "fork"
 	desc = "Pointy."
 	icon_state = "fork"
-	force = 5
+	force = 14
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	throw_speed = 3
@@ -30,11 +31,6 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	sharpness = SHARP_POINTY
 	var/datum/reagent/forkload //used to eat omelette
-
-/obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!"))
-	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
-	return BRUTELOSS
 
 /obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!istype(M))
@@ -89,13 +85,6 @@
 	else
 		return ..()
 
-/obj/item/kitchen/knife/suicide_act(mob/user)
-	user.visible_message(pick(span_suicide("[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
-						span_suicide("[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.")))
-	return (BRUTELOSS)
-
-
 /obj/item/kitchen/knife/butcher
 	name = "butcher's cleaver"
 	icon_state = "knife_butcher"
@@ -113,7 +102,7 @@
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."
 	icon_state = "rolling_pin"
-	force = 8
+	force = 16
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 7
@@ -121,18 +110,14 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = PRICE_ALMOST_CHEAP
-
-/obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
+	
 
 /obj/item/melee/onehanded/club/fryingpan/pot
 	name = "Small Pot"
 	desc = "A small black pot!"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "small_pot"
-	force = 5
+	force = 15
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	throw_speed = 3

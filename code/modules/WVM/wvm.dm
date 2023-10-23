@@ -537,24 +537,24 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
 		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
 		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
 		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300),
-		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500)
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
 		new /datum/data/wasteland_equipment("Rad-X Bottle",					/obj/item/storage/pill_bottle/chem_tin/radx,						25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Healing Powder",				/obj/item/reagent_containers/pill/healingpowder,					30),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				40),
 		new /datum/data/wasteland_equipment("Survival Medipen",				/obj/item/reagent_containers/hypospray/medipen/survival,			60),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
 		new /datum/data/wasteland_equipment("Standard Medkit",				/obj/item/storage/firstaid/regular,									60),
 		new /datum/data/wasteland_equipment("Surgery for Wastelanders",		/obj/item/book/granter/trait/lowsurgery,							150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								300),
-		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				500)
+		new /datum/data/wasteland_equipment("D.C. Journal of Internal Medicine",		/obj/item/book/granter/trait/midsurgery,				750),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1500)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/khanchem
@@ -857,12 +857,17 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
+		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/denarius, 							6),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						55),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						110),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					220),
+		new /datum/data/wasteland_equipment("Silver Dollar x100", 		/obj/item/stack/f13Cash/denarius/hundo, 					1100),
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							110),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						550),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1100),
+		new /datum/data/wasteland_equipment("Golden Thaler x100", 		/obj/item/stack/f13Cash/aureus/hundo, 						11000),
 		/*new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120), // Disabled to prevent money duping through cargo
 		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
 		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
@@ -873,12 +878,17 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						22),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						44),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						110),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						550),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2750),
+		new /datum/data/wasteland_equipment("Silver Dollar x1", 		/obj/item/stack/f13Cash/denarius, 							6),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						55),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						110),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					220),
+		new /datum/data/wasteland_equipment("Silver Dollar x100", 		/obj/item/stack/f13Cash/denarius/hundo, 					1100),
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							110),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						550),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1100),
+		new /datum/data/wasteland_equipment("Golden Thaler x100", 		/obj/item/stack/f13Cash/aureus/hundo, 						11000),
 		/*new /datum/data/wasteland_equipment("Low Roller Bounty Ticket", 			/obj/item/card/lowbounty,						120),
 		new /datum/data/wasteland_equipment("Medium Roller Bounty Ticket", 			/obj/item/card/midbounty, 						240),
 		new /datum/data/wasteland_equipment("High Roller Bounty Ticket", 			/obj/item/card/highbounty, 						480),
@@ -894,25 +904,34 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
+		new /datum/data/wasteland_equipment("Silver Dollar x100", 		/obj/item/stack/f13Cash/denarius/hundo, 					1000),
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							100),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						500),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1000),
+		new /datum/data/wasteland_equipment("Golden Thaler x100", 		/obj/item/stack/f13Cash/aureus/hundo, 						10000),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		new /datum/data/wasteland_equipment("Silver Dollar x5", 		/obj/item/stack/f13Cash/denarius/five, 						50),
 		new /datum/data/wasteland_equipment("Silver Dollar x10", 		/obj/item/stack/f13Cash/denarius/ten, 						100),
 		new /datum/data/wasteland_equipment("Silver Dollar x20", 		/obj/item/stack/f13Cash/denarius/twenty, 					200),
+		new /datum/data/wasteland_equipment("Silver Dollar x100", 		/obj/item/stack/f13Cash/denarius/hundo, 					1000),
 		new /datum/data/wasteland_equipment("Golden Thaler x1", 		/obj/item/stack/f13Cash/aureus, 							100),
 		new /datum/data/wasteland_equipment("Golden Thaler x5", 		/obj/item/stack/f13Cash/aureus/five, 						500),
 		new /datum/data/wasteland_equipment("Golden Thaler x10", 		/obj/item/stack/f13Cash/aureus/ten, 						1000),
+		new /datum/data/wasteland_equipment("Golden Thaler x100", 		/obj/item/stack/f13Cash/aureus/hundo, 						10000),
 		)
+
 /obj/machinery/mineral/wasteland_vendor/traderspecial
 	name = "Union Vending Machine - Scrip Exchanger"
 	desc = "An automated machine that exchanges currency for union backed tender."
@@ -922,12 +941,16 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
 		new /datum/data/wasteland_equipment("Union Scrip x40", 			/obj/item/stack/f13Cash/ncr/fourty, 						20),
 		new /datum/data/wasteland_equipment("Union Scrip x80", 			/obj/item/stack/f13Cash/ncr/eighty, 						40),
 		new /datum/data/wasteland_equipment("Union Scrip x200", 		/obj/item/stack/f13Cash/ncr/twohundo, 						100),
+		new /datum/data/wasteland_equipment("Union Scrip x1000", 		/obj/item/stack/f13Cash/ncr/onekay, 						500),
+		new /datum/data/wasteland_equipment("Union Scrip x5000", 		/obj/item/stack/f13Cash/ncr/fivegees, 						2500),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
@@ -963,6 +986,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
 		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
 		)
@@ -976,6 +1000,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
 		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
 		)

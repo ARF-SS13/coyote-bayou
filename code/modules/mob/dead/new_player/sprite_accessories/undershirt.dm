@@ -127,6 +127,10 @@
 	name = "Shirt - Meat"
 	icon_state = "shirt_meat"
 
+/datum/sprite_accessory/underwear/top/cow
+	name = "Bra - Cow"
+	icon_state = "bra_cow"
+
 /datum/sprite_accessory/underwear/top/nano
 	name = "Shirt - Nanotrasen"
 	icon_state = "shirt_nano"
@@ -419,76 +423,76 @@
 
 
 /datum/sprite_accessory/underwear/top/greenscrubs
-	name = "Green Scrubs" 
+	name = "Green Scrubs"
 	icon_state = "scrubsgreen"
 
 /datum/sprite_accessory/underwear/top/purplescrubs
-	name = "Purple Scrubs" 
+	name = "Purple Scrubs"
 	icon_state = "scrubspurple"
 
 /datum/sprite_accessory/underwear/top/blacktango
-	name = "Tango Top" 
+	name = "Tango Top"
 	icon_state = "black_tango"
 
 /datum/sprite_accessory/underwear/top/plaidred
-	name = "Blouse, Red Tie, long sleeve" 
+	name = "Blouse, Red Tie, long sleeve"
 	icon_state = "plaid_red"
 
 
 /datum/sprite_accessory/underwear/top/plaidredshort
-	name = "Blouse, Red Tie, short sleeve" 
+	name = "Blouse, Red Tie, short sleeve"
 	icon_state = "plaid_red_d"
 
 /datum/sprite_accessory/underwear/top/plaidredtied
-	name = "Blouse - Tied, Red Tie, short sleeve" 
+	name = "Blouse - Tied, Red Tie, short sleeve"
 	icon_state = "plaid_red_tied"
 
 /datum/sprite_accessory/underwear/top/plaidblue
-	name = "Blouse, Blue Tie, long sleeve" 
+	name = "Blouse, Blue Tie, long sleeve"
 	icon_state = "plaid_blue"
 
 /datum/sprite_accessory/underwear/top/plaidblueshort
-	name = "Blouse, Blue Tie, short sleeve" 
+	name = "Blouse, Blue Tie, short sleeve"
 	icon_state = "plaid_blue_d"
 
 /datum/sprite_accessory/underwear/top/plaidbluetied
-	name = "Blouse - Tied, Blue Tie, short sleeve" 
+	name = "Blouse - Tied, Blue Tie, short sleeve"
 	icon_state = "plaid_blue_tied"
 
 /datum/sprite_accessory/underwear/top/plaidpurple
-	name = "Blouse, Purple Tie, long sleeve" 
+	name = "Blouse, Purple Tie, long sleeve"
 	icon_state = "plaid_purple"
 
 /datum/sprite_accessory/underwear/top/plaidblueshort
-	name = "Blouse, Purple Tie, short sleeve" 
+	name = "Blouse, Purple Tie, short sleeve"
 	icon_state = "plaid_purple_d"
 
 /datum/sprite_accessory/underwear/top/plaidbluetied
-	name = "Blouse - Tied, Blue Tie, short sleeve" 
+	name = "Blouse - Tied, Blue Tie, short sleeve"
 	icon_state = "plaid_blue_tied"
 
 /datum/sprite_accessory/underwear/top/plaidgreen
-	name = "Blouse, Green Tie, long sleeve" 
+	name = "Blouse, Green Tie, long sleeve"
 	icon_state = "plaid_green"
 
 /datum/sprite_accessory/underwear/top/plaidgreenshort
-	name = "Blouse, Green Tie, short sleeve" 
+	name = "Blouse, Green Tie, short sleeve"
 	icon_state = "plaid_green_d"
 
 /datum/sprite_accessory/underwear/top/plaidgreentied
-	name = "Blouse - Tied, Green Tie, short sleeve" 
+	name = "Blouse - Tied, Green Tie, short sleeve"
 	icon_state = "plaid_green_tied"
 
 /datum/sprite_accessory/underwear/top/blousefullnotie
-	name = "Blouse, No Tie, long sleeve" 
+	name = "Blouse, No Tie, long sleeve"
 	icon_state = "blouse_full_notie"
 
 /datum/sprite_accessory/underwear/top/blouseshortnotie
-	name = "Blouse, No Tie, short sleeve" 
+	name = "Blouse, No Tie, short sleeve"
 	icon_state = "blouse_short_notie"
 
 /datum/sprite_accessory/underwear/top/blousetiednotie
-	name = "Blouse, No Tie, tied up" 
+	name = "Blouse, No Tie, tied up"
 	icon_state = "blouse_tied_notie"
 
 /datum/sprite_accessory/underwear/top/bluepuffbra
@@ -764,7 +768,7 @@
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
-	
+
 	//Shapely Bra (bra)
 
 /datum/sprite_accessory/underwear/top/shapelybrapetite
@@ -801,3 +805,78 @@
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
+
+//Shapely Bra (cow)  mooooooo?
+
+/datum/sprite_accessory/underwear/top/shapelymoopetite
+	name = "Shapely Cow Bra - Petite"
+	icon_state = "shapelymoo_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoogirlish
+	name = "Shapely Cow Bra - Girlish"
+	icon_state = "shapelymoo_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoocurvy
+	name = "Shapely Cow Bra - Curvy"
+	icon_state = "shapelymoo_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoobusty
+	name = "Shapely Cow Bra - Busty"
+	icon_state = "shapelymoo_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoobackbreaker
+	name = "Shapely Cow Bra - Backbreakers"
+	icon_state = "shapelymoo_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+	//Shapely Tube Top w/ Fish Net (ttfn)
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnpetite
+	name = "Shapely Tube Top w/ Netting - Petite"
+	icon_state = "shapelyttfn_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfngirlish
+	name = "Shapely Tube Top w/ Netting - Girlish"
+	icon_state = "shapelyttfn_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfncurvy
+	name = "Shapely Tube Top /w Netting - Curvy"
+	icon_state = "shapelyttfn_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnbusty
+	name = "Shapely Tube Top w/ Netting - Busty"
+	icon_state = "shapelyttfn_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnbackbreaker
+	name = "Shapely Tube Top w/  Netting - Backbreakers"
+	icon_state = "shapelyttfn_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+

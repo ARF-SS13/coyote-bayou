@@ -552,6 +552,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 /obj/item/shield/coyote
 	name = "coyote shield template"
 	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
@@ -572,6 +573,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "red_buckler"
 	item_state = "red_buckler"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -587,6 +589,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "blue_buckler"
 	item_state = "blue_buckler"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -601,6 +604,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "steel_shield"
 	item_state = "steel_shield"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -616,6 +620,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "iron_shield"
 	item_state = "iron_shield"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -631,6 +636,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bronze_shield"
 	item_state = "bronze_shield"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -765,6 +771,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "pegasus_shield"
 	item_state = "pegasus_shield"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -779,6 +786,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "owl_shield"
 	item_state = "owl_shield"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -897,6 +905,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	desc = "An oblong shield with a red cross on it."
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "semioval_shield_templar2"
 	item_state = "semioval_shield_templar2"
 	armor = list("melee" = 35, "bullet" = 15, "laser" = 25, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)

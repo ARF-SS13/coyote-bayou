@@ -2,7 +2,7 @@
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
-	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
 	objectivesList = list(
 		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
@@ -50,11 +50,12 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/bitterdrink5,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
-	//datum/crafting_recipe/redpotion,
-	//datum/crafting_recipe/bluepotion,
-	//datum/crafting_recipe/greenpotion,
+	/datum/crafting_recipe/redambrosia,
+	/datum/crafting_recipe/blueambrosia,
+	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
-	/datum/crafting_recipe/tribal/bonebag))
+	/datum/crafting_recipe/tribal/bonebag,
+	/datum/crafting_recipe/horsecream_good))
 
 /datum/outfit/job/tribal/
 	name = "Tribal"
@@ -94,7 +95,7 @@ Tribal Chief
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Elders of the tribe."
 	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Abusing technology and using Pre-Collapse weapons."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
 	outfit = /datum/outfit/job/tribal/f13chief
@@ -127,8 +128,10 @@ Tribal Chief
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/lantern = 1,
-		/obj/item/kit_spawner/tribal = 1
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
+		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/chiefguide = 1
 	)
 
 /*
@@ -142,10 +145,10 @@ Tribal Shaman
 	total_positions = 2
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The Elders of the tribe and the chief."
+	supervisors = "The chief.  You are a peer to the druid."
 	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "The spiritual leader and cultural core of the Sulphur Bottom Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	description = "The spiritual leader and medical leader of the Sulphur Bottom Tribe. You aid villagers in their day to day lives but also have access to the spiritual realm via your scrying orb to render assistance on a wider scale."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -155,8 +158,7 @@ Tribal Shaman
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/invoker, //Red shaman
-		/datum/outfit/loadout/ascetic, //Blue shaman
+		/datum/outfit/loadout/seeker, //Seeker
 	)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/mentor = list(
@@ -169,8 +171,10 @@ Tribal Shaman
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
+	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 
 /datum/outfit/job/tribal/f13shaman
@@ -184,40 +188,40 @@ Tribal Shaman
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/smelling_salts/wayfarer=1,
-		/obj/item/warpaint_bowl=1,
-		/obj/item/reagent_containers/glass/mortar=1,
-		/obj/item/pestle=1,
-		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
+		/obj/item/cool_book/shamanguide = 1,
+		/obj/item/healthanalyzer/tribal = 1
 	)
 
-/datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
-/datum/outfit/loadout/invoker
-	name = "Invoker"
+
+/datum/outfit/loadout/seeker
+	name = "Shaman"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanred=1
-	)
+		/obj/item/clothing/under/f13/wayfarer/shamanred=1,
+		/obj/item/scrying = 1 //Please don't abuse this or I will hunt you down like an animal and gut you with one of those deer buttplugs they sell at walmart, ~Love TK
 
+	)
+/*
 /datum/outfit/loadout/ascetic
 	name = "Ascetic"
 	backpack_contents = list(
 		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
-		/obj/item/clothing/under/f13/wayfarer/shamanblue=1
+		/obj/item/clothing/under/f13/wayfarer/shamanblue=1,
+
 	)
+*/
 
 /*
-Tribal Head Hunter
+Tribal Hunt Master
 */
 /datum/job/tribal/f13Hhunter
-	title = "Head Hunter"
+	title = "Hunt Master"
 	flag = F13HHUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
@@ -226,8 +230,8 @@ Tribal Head Hunter
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -260,14 +264,15 @@ Tribal Head Hunter
 	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/kit_spawner/tribal = 1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /*
@@ -279,13 +284,13 @@ Druid
 	flag = F13DRUID
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The Chief and the Shaman."
+	supervisors = "The Chief"
 	enforces = "The ways of the Sulphur River  spirits."
-	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "You are a Druid in the tribe; you perform rituals, and bless pre-collapse relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	description = "You are a Druid in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -313,8 +318,10 @@ Druid
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
+	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
 
 
 /datum/outfit/job/tribal/f13druid
@@ -330,9 +337,13 @@ Druid
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/warpaint_bowl=1,
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/cool_book/druidguide=1,
+		/obj/item/healthanalyzer/tribal=1
 	)
 
 /*
@@ -347,7 +358,7 @@ Villager
 	total_positions = 10
 	spawn_positions = 10
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "Tribal Chief, Shaman and Headhunter"
+	supervisors = "everyone but the other villagers."
 	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
 	exp_requirements = 0
@@ -380,6 +391,13 @@ Villager
 		),
 	)
 
+/datum/outfit/job/tribal/f13villager/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, src)
+
+
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
@@ -392,7 +410,10 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/loadout/gatherer
@@ -426,6 +447,7 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
+		/obj/item/healthanalyzer/tribal = 1
 	)
 
 /datum/outfit/loadout/craftsman
@@ -449,10 +471,10 @@ Hunter
 	total_positions = 5
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The chief and Head Hunter."
+	supervisors = "The chief and Hunt Master.  Failing their appearance you fall back on the Shaman and Druid for task management."
 	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
+	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. While a protector you are also the arm of the tribe in the world, performing tasks from the Shamans and Druids."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -486,6 +508,7 @@ Hunter
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 
 
@@ -502,9 +525,12 @@ Hunter
 	backpack_contents = list(
 		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/loadout/ranged
@@ -539,7 +565,7 @@ Spirit-Pledged
 	spawn_positions = 3
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All other tribals."
-	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
+	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to joint he tribe, but its not a requirement."
 	selection_color = "#006666"
 
 	outfit = /datum/outfit/job/tribal/f13spiritpledged
@@ -563,6 +589,9 @@ Spirit-Pledged
 	uniform = /obj/item/clothing/under/f13/wayfarer
 	id = /obj/item/card/id/tribetattoo
 	belt = /obj/item/kit_spawner/tribal
+	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign)
 
 /*
 Guardian
@@ -577,7 +606,7 @@ Guardian
 	spawn_positions = 3
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All leadership, but the Chief is priority"
-	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. Do not leave the village unless circumstances allow it."
+	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -605,9 +634,12 @@ Guardian
 	//suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
+		/obj/item/pda = 1,
+		/obj/item/card/id/selfassign,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1
+		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/cool_book/warriorguide = 1
 	)

@@ -71,6 +71,9 @@
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
 	var/list/blacklisted_quirks		//list of quirk typepaths blacklisted.
 
+/// Should this job be allowed to be picked for the bureaucratic error event?
+	var/allow_bureaucratic_error = TRUE
+
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
 	//If a job complies with dresscodes, loadout items will not be equipped instead of the job's outfit, instead placing the items into the player's backpack.
@@ -161,11 +164,13 @@
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
-	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD, TRIBAL OR VAULT
+	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD, TRIBAL OR VAULT  //CB Edit: Eat a dick shitbags
+	/*
 	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions) || (title in GLOB.tribal_positions))
 		if(H.dna.species.id == "ghoul")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
+		*/
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)

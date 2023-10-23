@@ -16,10 +16,6 @@
 	var/on = TRUE
 	var/shock_cooldown = FALSE
 
-/obj/item/electropack/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return (FIRELOSS)
-
 /obj/item/electropack/Initialize()
 	. = ..()
 	set_frequency(frequency)
@@ -149,14 +145,6 @@
 	custom_materials = list(/datum/material/iron = 5000, /datum/material/glass = 2000)
 	var/lock = FALSE
 	var/tagname = null
-
-/datum/design/electropack/shockcollar
-	name = "Slave collar"
-	id = "shockcollar"
-	build_type = AUTOLATHE
-	build_path = /obj/item/electropack/shockcollar
-	materials = list(/datum/material/iron = 5000, /datum/material/glass =2000)
-	category = list("hacked", "Misc")
 
 /obj/item/electropack/shockcollar/Initialize()
 	. = ..()

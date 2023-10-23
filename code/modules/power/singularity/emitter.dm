@@ -71,7 +71,7 @@
 /obj/machinery/power/emitter/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Emitting one beam each <b>[fire_delay*0.1]</b> seconds.<br>Power consumption at <b>[active_power_usage]W</b>.</span>"
+		. += span_notice("The status display reads: Emitting one beam each <b>[fire_delay*0.1]</b> seconds.<br>Power consumption at <b>[active_power_usage]W</b>.")
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()
@@ -205,7 +205,7 @@
 		sparks.start()
 	P.firer = user ? user : src
 	P.fired_from = src
-	if(last_projectile_params)
+	if(last_projectile_params) // Note: this never never procs as only a /obj/item/turret_control updates the last_projectile params via calling afterattack.
 		P.p_x = last_projectile_params[2]
 		P.p_y = last_projectile_params[3]
 		P.fire(last_projectile_params[1])

@@ -104,7 +104,7 @@ GLOBAL_LIST(labor_sheet_values)
 /obj/machinery/mineral/labor_claim_console/proc/locate_stacking_machine()
 	stacking_machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir))
 	if(stacking_machine)
-		stacking_machine.CONSOLE = src
+		stacking_machine.console = src
 	else
 		qdel(src)
 
@@ -145,7 +145,7 @@ GLOBAL_LIST(labor_sheet_values)
 	if(istype(I, /obj/item/card/id))
 		if(istype(I, /obj/item/card/id/prisoner))
 			var/obj/item/card/id/prisoner/prisoner_id = I
-			to_chat(user, "<span class='notice'><B>ID: [prisoner_id.registered_name]</B></span>")
+			to_chat(user, span_notice("<B>ID: [prisoner_id.registered_name]</B>"))
 			to_chat(user, span_notice("Points Collected:[prisoner_id.points]"))
 			to_chat(user, span_notice("Point Quota: [prisoner_id.goal]"))
 			to_chat(user, span_notice("Collect points by bringing smelted minerals to the Labor Shuttle stacking machine. Reach your quota to earn your release."))

@@ -74,7 +74,17 @@
 
 //mob traits
 /// Forces the user to stay unconscious.
-#define TRAIT_KNOCKEDOUT "knockedout"
+#define TRAIT_ADV_SEEKER	"adventure_seeker"
+#define TRAIT_ADV_ER		"adventurer"
+#define TRAIT_ADV_LFG			"looking_for_group"
+#define TRAIT_ADV_SOLO			"solo"
+#define TRAIT_ADV_GUNNER		"gunner"
+#define TRAIT_ADV_FIGHTER		"fighter"
+#define TRAIT_ADV_TANK			"tank"
+#define TRAIT_ADV_BRUISER		"bruiser"
+#define TRAIT_ADV_ROGUE			"rogue"
+#define TRAIT_ADV_HEALER		"healer"
+#define TRAIT_KNOCKEDOUT		"knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
 #define TRAIT_EMOTEMUTE			"emotemute"
@@ -91,6 +101,7 @@
 #define TRAIT_DUMB				"dumb"
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM			"pacifism"
+#define TRAIT_PACIFISM_LESSER	"lesserpacifism"
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_IGNOREDAMAGESLOWDOWN "ignoredamageslowdown"
 #define TRAIT_DEATHCOMA			"deathcoma" //Causes death-like unconsciousness
@@ -121,6 +132,7 @@
 #define TRAIT_NODISMEMBER		"dismember_immunity"
 #define TRAIT_NOFIRE			"nonflammable"
 #define TRAIT_NOGUNS			"no_guns"
+#define TRAIT_MARTIAL_A			"no_guns"
 #define TRAIT_NOHUNGER			"no_hunger"
 #define TRAIT_EASYDISMEMBER		"easy_dismember"
 #define TRAIT_LIMBATTACHMENT 	"limb_attach"
@@ -138,7 +150,45 @@
 #define TRAIT_OPTIMIST			"optimist"
 #define TRAIT_IN_HEAT			"ERP Receptive"
 #define TRAIT_HEAT_DETECT		"ERP Seeking"
+#define TRAIT_ERPBOYKISSER		"ERP Seeking - Boykisser"
+#define TRAIT_ERPGIRLKISSER		"ERP Seeking - Girlkisser"
+#define TRAIT_ERPANYKISSER		"ERP Seeking - Anykisser"
+#define TRAIT_ERPQUICKY			"ERP Seeking - Quickie Focused"
+#define TRAIT_ERPLONGTERM		"ERP Seeking - Long Term Focused"
+#define TRAIT_ERPBOTTOM			"ERP Seeking - Bottom"
+#define TRAIT_ERPTOP			"ERP Seeking - Top"
+#define TRAIT_ERPSWITCH			"ERP Seeking - Switch"
+#define TRAIT_ERPFLIRTY			"ERP Seeking - Flirty"
+#define TRAIT_SHY				"Shy"
+#define TRAIT_PVEFOC			"PVE Focused"
+#define TRAIT_PVPFOC			"PVP Focused"
+#define TRAIT_COMBATSWITCH		"PVP/PVE Accepting"
+#define TRAIT_OOCAPP			"L/OOC Approach"
+#define TRAIT_RPFOCUSED			"RP Focused"
+#define TRAIT_RPLONGTERM		"RP Focused Long Term" //RP Focused on long term interactions
+#define TRAIT_RPSHORTTERM		"RP Focused Short Term" //RP Focused on short term interactions
+#define TRAIT_RPSERIOUS			"RP Focused - Serious RP" //RP Focused on more serious subjects
+#define TRAIT_RPLIGHT			"RP Focused - Lighter RP" //RP Focused on more light hearted subjects
+#define TRAIT_RPDAYSOFOURLIVES	"RP Focused - Dramatic RP" //RP Focused on more soap opera stle subjects
+#define TRAIT_RPSCRUBS			"RP Focused - Medical RP" //RP Focused on more medical subjects
 #define TRAIT_SMOL				"lil_fella"
+#define TRAIT_ARMBLADE			"Arm Blade"
+#define TRAIT_ARMTENT			"Tentacle Arm"
+#define TRAIT_TAILPLAY			"Tail Player"
+#define TRAIT_TAILWHIP			"Tail Whipper"
+#define TRAIT_TAILSMASH			"Tail Smasher"
+#define TRAIT_TAILSPICY			"Tail Stinger"
+#define TRAIT_TAILTHAGO			"Tail Thago"
+#define TRAIT_BIGBITE			"Big Biter"
+#define TRAIT_FASTBITE			"Fast Biter"
+#define TRAIT_PLAYBITE			"Play Biter"
+#define TRAIT_SPICYBITE			"Spicy Biter"
+#define TRAIT_SABREBITE			"Sabre Biter"
+#define TRAIT_BIGCLAW			"Big Clawer"
+#define TRAIT_FASTCLAW			"Fast Clawer"
+#define TRAIT_PLAYCLAW			"Play Clawer"
+#define TRAIT_SPICYCLAW			"Spicy Clawer"
+#define TRAIT_RAZORCLAW			"Razor Clawer"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
 #define TRAIT_NOSLIPALL			"noslip_all"
@@ -206,10 +256,12 @@
 #define TRAIT_AGEUSIA			"ageusia"
 #define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"
 #define TRAIT_NIGHT_VISION		"night_vision"
+#define TRAIT_NIGHT_VISION_GREATER		"night_vision_greater"
 #define TRAIT_LIGHT_STEP		"light_step"
 #define TRAIT_SILENT_STEP		"silent_step"
 #define TRAIT_SPEEDY_STEP		"speedy_step"
 #define TRAIT_SPIRITUAL			"spiritual"
+#define TRAIT_BLINDFAITH		"blindfaith"
 #define TRAIT_VORACIOUS			"voracious"
 #define TRAIT_SELF_AWARE		"self_aware"
 #define TRAIT_FREERUNNING		"freerunning"
@@ -249,11 +301,15 @@
 #define TRAIT_FREESPRINT		"free_sprinting"
 #define TRAIT_XRAY_VISION       "xray_vision"
 #define TRAIT_THERMAL_VISION    "thermal_vision"
+#define TRAIT_TACKLER            "tackler"
+#define TRAIT_TACKLERADV           "Advanced Tackler"
+#define TRAIT_TACKLERAPEX           "Apex Tackler"
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 #define TRAIT_NO_INTERNALS		"no-internals"
 #define TRAIT_NO_ALCOHOL		"alcohol_intolerance"
 #define TRAIT_MUTATION_STASIS			"mutation_stasis" //Prevents processed genetics mutations from processing.
 #define TRAIT_FAST_PUMP				"fast_pump"
+#define TRAIT_WAND_PROFICIENT 	"wand_proficient"
 #define TRAIT_AUTO_DRAW				"auto_draw" //can use bows good
 #define TRAIT_PLAY_DEAD "play_dead" // gives 10u ghoul powder every *deathgasp
 #define TRAIT_NO_PROCESS_FOOD	"no-process-food" // You don't get benefits from nutriment, nor nutrition from reagent consumables
@@ -267,15 +323,18 @@
 #define TRAIT_PAPER_SKIN "paper_skin"
 #define TRAIT_GLASS_BONES "glass_bones"
 #define TRAIT_STEEL_ASS "steel_ass"
+#define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
 #define TRAIT_HEADPAT_SLUT "headpat_sluuuuut"
 #define TRAIT_HYDRA_HEADS "hydra_heads"
 #define TRAIT_SHELTERED "sheltered"
 #define TRAIT_WEAPONSMITH "weaponsmith"
+#define TRAIT_MASTERWORKSMITH "masterworksmith" // same as weapon_crafting, but your smithed weapons do an additional 5 damage
 #define TRAIT_BEASTFRIEND_RAT "beastfriend-rats"
 #define TRAIT_BEASTFRIEND_SMALLCRITTER "beastfriend-smallcritters"
 #define TRAIT_BEASTMASTER_RAT "beastmaster-rats"
 #define TRAIT_BEASTMASTER_SMALLCRITTER "beastmaster-smallcritters"
+#define TRAIT_WILDSHAPE "wild shape"
 #define TRAIT_NO_CHOCOLATE "chocolate-intolerance"
 #define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
 #define TRAIT_AUTOBREW "autobrewery-syndrome"
@@ -283,6 +342,7 @@
 #define TRAIT_SUPER_ZOOMIES "super zoomies"
 #define TRAIT_ENDLESS_RUNNER "endless_runner"
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
+#define TRAIT_NOHIDEFACE "no hide face"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
@@ -310,6 +370,7 @@
 
 #define TRAIT_SMUTANT		"Super Mutant"	// This is a trait usually locked for admins due to how OP it is
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
+#define TRAIT_DNAWHIZ			"dnawhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_NODRUGS		"winners_cant_do_drugs" //drugs hurt you!
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
@@ -357,7 +418,7 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two" //crafts mid level guns
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three" //crafts weapon parts
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four" //currently unused
-#define TRAIT_WHITELEGS_TRAD	"whiteleg_traditions"
+#define TRAIT_TRIBAL_TRAD	"whiteleg_traditions"
 #define TRAIT_DEADHORSES_TRAD	"deadhorses_traditions"
 #define TRAIT_RUSTWALKERS_TRAD	"rustwalker_traditions"
 #define TRAIT_EIGHTIES_TRAD		"eighties_traditions"
@@ -435,7 +496,6 @@
 #define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
 #define HOT_POTATO_TRAIT "hot-potato"
-#define SABRE_SUICIDE_TRAIT "sabre-suicide"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
 #define EYE_OF_GOD_TRAIT "eye-of-god"
@@ -476,3 +536,18 @@
 
 /// just a little helper to see if we're not a druggie
 #define NODRUGS(m) (HAS_TRAIT(m, TRAIT_NODRUGS))
+
+///quirk defines cus they are kinda like traits i guess
+#define QUIRK_KEY "Qkey"
+#define QUIRK_NAME "Qname"
+#define QUIRK_PATH "Qpath"
+#define QUIRK_VALUE "Qvalue"
+#define QUIRK_DESC "Qdesc"
+#define QUIRK_MECHANICS "Qmechanics"
+#define QUIRK_CONFLICTS "Qconflicts"
+#define QUIRK_CATEGORY "Qcategory"
+
+#define QUIRK_CAT_DEFAULT "Misc"
+
+#define QUIRK_STATISTICS_DIRECTORY "data/quirk_stats/round_"
+#define QUIRK_PLAYER2FILENAME(ckey, playername) "[ckey]_[playername]_is_cool.json" // my code my filenames
