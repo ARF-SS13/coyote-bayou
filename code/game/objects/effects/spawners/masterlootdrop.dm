@@ -448,6 +448,7 @@
 		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,
 		/obj/item/gun/energy/laser/tg/rifle/auto = 10,
 		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 5,
+		/obj/item/gun/energy/laser/LaserAK = 1,
 		/obj/item/gun/energy/laser/ultra_rifle = 1,
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
 		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
