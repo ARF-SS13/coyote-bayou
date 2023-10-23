@@ -1,3 +1,4 @@
+/*
 /obj/item/choice_beacon/box/plushie/remove_bad_plushies(list/plushies)
 	var/list/returned_plushies = ..()
 	returned_plushies -= list(/obj/item/toy/plush/goatplushie,
@@ -162,3 +163,4 @@
 #undef GREEN_NINJA_SKIN
 #undef BLUE_NINJA_SKIN
 #undef RED_NINJA_SKIN
+*/

@@ -64,7 +64,12 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
 //Weird defines go here
 #define CUM_TARGET_EARS "ears"
 #define CUM_TARGET_EYES "eyes"
-//
+#define CUM_TARGET_NIPPLE "nipple"
+#define CUM_TARGET_URETHRA "urethra"
+#define CUM_TARGET_THIGHS "thighs"
+#define CUM_TARGET_BELLY "belly"
+#define CUM_TARGET_ARMPIT "armpit"
+
 #define GRINDING_FACE_WITH_ANUS "faceanus"
 #define GRINDING_FACE_WITH_FEET "facefeet"
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"

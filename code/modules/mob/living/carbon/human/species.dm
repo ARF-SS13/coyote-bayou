@@ -1078,7 +1078,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(H.get_empty_held_indexes())
 				return TRUE
 			return FALSE
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			if(H.wear_mask)
 				return FALSE
 			if(!(I.slot_flags & INV_SLOTBIT_MASK))

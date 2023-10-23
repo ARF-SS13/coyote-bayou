@@ -91,6 +91,18 @@
 /mob/living/proc/toggle_anus_always_accessible(accessibility)
 	anus_always_accessible = isnull(accessibility) ? !anus_always_accessible : accessibility
 
+/**
+  * Returns the fluid modifier if the genital has one.
+  *
+  * Arguments:
+  * * amount: Amount of fluid to be released.
+  * * genital: Genital to check for any fluid modifiers.
+*/
+/mob/living/proc/get_fluid_mod(obj/item/organ/genital/G)
+	if(CHECK_BITFIELD(G?.genital_flags, GENITAL_DISAPPOINTING))
+		return 0.5
+	return 1
+
 /mob/living/proc/has_genital(slot, visibility = REQUIRE_ANY)
 	var/mob/living/carbon/C = src
 	if(istype(C))
@@ -832,7 +844,7 @@
 	last_genital = genepool
 
 /mob/living/proc/get_shoes(singular = FALSE)
-	var/obj/A = get_item_by_slot(SLOT_FEET)
+	var/obj/A = get_item_by_slot(SLOT_SHOES)
 	if(A)
 		var/txt = A.name
 		if(findtext (A.name,"the"))
@@ -960,7 +972,7 @@ DEFINE_BITFIELD(slot_flags, list(
 	"SLOTBIT_DEX_STORAGE" = SLOT_DEX_STORAGE,
 	"SLOTBIT_EARS" = SLOT_EARS,
 	"SLOTBIT_GLASSES" = SLOT_GLASSES,
-	"SLOTBIT_FEET" = SLOT_FEET,
+	"SLOTBIT_FEET" = SLOT_SHOES,
 	"SLOTBIT_GLOVES" = SLOT_GLOVES,
 	"SLOTBIT_HANDCUFFED" = SLOT_HANDCUFFED,
 	"SLOTBIT_HANDS" = SLOT_HANDS,

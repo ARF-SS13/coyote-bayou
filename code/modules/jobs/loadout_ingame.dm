@@ -221,7 +221,7 @@
 		"[SLOT_GLOVES]"		= O.gloves,
 		"[SLOT_SHOES]"		= O.shoes,
 		"[SLOT_HEAD]"		= O.head,
-		"[SLOT_WEAR_MASK]"	= O.mask,
+		"[SLOT_MASK]"	= O.mask,
 		"[SLOT_NECK]"		= O.neck,
 		"[SLOT_EARS]"		= O.ears,
 		"[SLOT_GLASSES]"	= O.glasses,

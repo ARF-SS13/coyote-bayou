@@ -52,7 +52,7 @@
 	var/obj/item/clothing/head/mob_holder/micro/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	if(!holder)
 		return
-	user.equip_to_slot(holder, SLOT_FEET)
+	user.equip_to_slot(holder, SLOT_SHOES)
 	return
 
 /datum/element/mob_holder/micro/proc/mob_try_pickup_micro(mob/living/carbon/source, mob/living/carbon/user)
@@ -105,7 +105,7 @@
 	desc = "Another person, small enough to fit in your hand."
 	icon = null
 	icon_state = ""
-	slot_flags = SLOT_FEET | SLOT_HEAD | SLOT_ID | SLOT_BACK | SLOT_NECK
+	slot_flags = SLOT_SHOES | SLOT_HEAD | SLOT_ID | SLOT_BACK | SLOT_NECK
 	w_class = null //handled by their size
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)

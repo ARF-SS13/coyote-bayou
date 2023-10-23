@@ -22,7 +22,7 @@
 	. = ..()
 	. += span_notice("Alt-Click \the [name] to customize it.")
 
-/obj/item/fleshlight/update_appearance(updates)
+/obj/item/fleshlight/update_icon(updates)
 	. = ..()
 	cut_overlays()
 	sleeve = mutable_appearance(icon, style) // Inherits icon for if an admin wants to var edit it, thank me later.
@@ -41,12 +41,12 @@
 		var/new_style = tgui_input_list(usr, "Choose style", "Customize Fleshlight", list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS))
 		if(new_style)
 			style = new_style
-	update_appearance()
+	update_icon()
 	if(src && !user.incapacitated() && in_range(user,src))
 		var/new_color = input(user, "Choose color.", "Customize Fleshlight", sleevecolor) as color|null
 		if(new_color)
 			sleevecolor = new_color
-	update_appearance()
+	update_icon()
 	return TRUE
 
 /obj/item/fleshlight/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
@@ -111,7 +111,7 @@
 	else
 		. += span_notice("The device is paired, and awaiting input. ")
 
-/obj/item/portallight/update_appearance(updates)
+/obj/item/portallight/update_icon(updates)
 	. = ..()
 	updatesleeve()
 
@@ -121,7 +121,7 @@
 	var/user_lust_amt = NONE
 	var/target_lust_amt = NONE
 	var/target
-	var/mob/living/carbon/human/portal_target = ishuman(portalunderwear.loc) && (portalunderwear.current_equipped_slot & (SLOT_UNDERWEAR | SLOT_MASK)) ? portalunderwear.loc : null
+	var/mob/living/carbon/human/portal_target = ishuman(portalunderwear.loc) && (portalunderwear.current_equipped_slot & (/*SLOT_UNDERWEAR | */SLOT_MASK)) ? portalunderwear.loc : null
 
 	// This list is structured as [M's longname, M's shortname, wearer's longname, wearer's shortname]
 	var/penis_names = list()
@@ -541,7 +541,7 @@
 			useable = FALSE
 			return
 	if(H) //if the portal panties are on someone.
-		if(!(portalunderwear.current_equipped_slot & (SLOT_UNDERWEAR | SLOT_MASK)))
+		if(!(portalunderwear.current_equipped_slot & (/*SLOT_UNDERWEAR | */SLOT_MASK)))
 			useable = FALSE
 			return
 
@@ -625,7 +625,6 @@
 	var/targetting = CUM_TARGET_VAGINA
 	equip_delay_self = 2 SECONDS
 	equip_delay_other = 5 SECONDS
-	is_edible = 0
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attack_self(mob/user)
 	. = ..()
@@ -641,7 +640,7 @@
 		if(CUM_TARGET_MOUTH)
 			targetting = CUM_TARGET_VAGINA
 
-	slot_flags         = targetting == CUM_TARGET_MOUTH ? SLOT_MASK  : SLOT_UNDERWEAR
+	slot_flags         = targetting == CUM_TARGET_MOUTH ? SLOT_MASK  : SLOT_BELT
 	body_parts_covered = targetting == CUM_TARGET_MOUTH ? NONE            : GROIN
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
@@ -704,7 +703,7 @@
 /obj/item/clothing/underwear/briefs/panties/portalpanties/equipped(mob/user, slot)
 	. = ..()
 	switch(slot)
-		if(SLOT_UNDERWEAR, SLOT_MASK)
+		if(/*SLOT_UNDERWEAR, */SLOT_MASK)
 			if(!portallight)
 				audible_message("[icon2html(src, hearers(src))] *beep* *beep* *beep*")
 				playsound(src, 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)

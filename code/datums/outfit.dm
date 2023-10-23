@@ -82,7 +82,7 @@
 	if(head)
 		H.equip_to_slot_or_del(new head(H),SLOT_HEAD)
 	if(mask)
-		H.equip_to_slot_or_del(new mask(H),SLOT_WEAR_MASK)
+		H.equip_to_slot_or_del(new mask(H),SLOT_MASK)
 	if(neck)
 		H.equip_to_slot_or_del(new neck(H),SLOT_NECK)
 	if(ears)

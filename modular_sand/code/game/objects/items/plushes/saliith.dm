@@ -1,3 +1,5 @@
+
+/*don't care
 // Honestly, Saliith was just sad when he made this. Leave this file in the game to let people hug him.
 // i agree and support - one of the spriters
 
@@ -243,3 +245,4 @@
 
 /obj/item/pinpointer/plushie_saliith/scan_for_target()
 	set_target(GLOB.saliith_plushie, src)
+*/

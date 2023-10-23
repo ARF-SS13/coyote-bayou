@@ -419,7 +419,7 @@
 		if(SLOT_HEAD, SLOT_NECK, SLOT_NECK, SLOT_EARS)
 			return BODY_ZONE_HEAD
 
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			return BODY_ZONE_PRECISE_MOUTH
 
 		if(SLOT_GLASSES)
@@ -652,7 +652,7 @@
 	switch(slot)
 		if(SLOT_BACK)
 			return "Backpack"
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			return "Mask"
 		if(SLOT_HANDS)
 			return "Hands"

@@ -181,7 +181,7 @@
 			if(target.dropItemToGround(W))
 				target.visible_message(span_danger("[src] tears [W] off of [target]'s face!"), \
 									span_userdanger("[src] tears [W] off of [target]'s face!"))
-		target.equip_to_slot_if_possible(src, SLOT_WEAR_MASK, 0, 1, 1)
+		target.equip_to_slot_if_possible(src, SLOT_MASK, 0, 1, 1)
 	return TRUE // time for a smoke
 
 /obj/item/clothing/mask/facehugger/proc/Attach(mob/living/M)
@@ -268,7 +268,7 @@
 		return 1
 
 	var/mob/living/carbon/C = M
-	if(ishuman(C) && !(SLOT_WEAR_MASK in C.dna.species.no_equip))
+	if(ishuman(C) && !(SLOT_MASK in C.dna.species.no_equip))
 		var/mob/living/carbon/human/H = C
 		if(H.is_mouth_covered(head_only = 1))
 			return FALSE

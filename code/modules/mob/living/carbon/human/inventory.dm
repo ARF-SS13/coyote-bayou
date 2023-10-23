@@ -19,7 +19,7 @@
 	switch(slot_id)
 		if(SLOT_BACK)
 			return back
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			return wear_mask
 		if(SLOT_NECK)
 			return wear_neck

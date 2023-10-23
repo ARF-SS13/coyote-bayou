@@ -201,7 +201,7 @@
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
 	inv_box.screen_loc = ui_mask
-	inv_box.slot_id = SLOT_WEAR_MASK
+	inv_box.slot_id = SLOT_MASK
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
