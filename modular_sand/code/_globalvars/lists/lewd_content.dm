@@ -4,11 +4,11 @@
  * by the automatic system (has no skirt in path)
 */
 
-GLOBAL_LIST_INIT(skirt_peekable, list()))
+GLOBAL_LIST_EMPTY(skirt_peekable)
 
 /*
  * List of clothes you can't say a pair of.
  * Ex:
  * A pair of jockstrap?
 */
-GLOBAL_LIST_INIT(pairless_panties, list())
+GLOBAL_LIST_EMPTY(pairless_panties)
