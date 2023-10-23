@@ -996,3 +996,8 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "rockshell"
 	item_state = "rockshell"
+
+/obj/item/storage/backpack/invisipack // backpack with no mob sprite
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "invisipack"
+	item_state = "invisipack"

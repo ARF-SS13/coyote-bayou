@@ -1366,6 +1366,13 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
+//Kelp's nuclear rifle
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn
+	name = "prototype nuclear rifle"
+	desc = "A surviving prototype of the CDC's PANDORA-model nuclear laser rifle. The reactor in the foregrip seems dim, though still functional. It looks like there used to be a label above the grip, but it's long since been torn off."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn)
+	selfchargerate = 30
+
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/lasertest)

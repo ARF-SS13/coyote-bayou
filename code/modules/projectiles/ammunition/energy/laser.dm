@@ -439,6 +439,9 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
 	e_cost = 208 // 24 shots
 
+/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear/worn
+
 /obj/item/ammo_casing/energy/laser/tg/particle
 	projectile_type = /obj/item/projectile/beam/laser/tg/particle
 	e_cost = 1000 // 5 shots
