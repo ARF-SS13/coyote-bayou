@@ -250,7 +250,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleprayersounds)()
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 	set name = "Show/Hide OOC"
 	set category = "Preferences"
-	set desc = "Show OOC Chat"
+	set desc = "Toggles seeing Out Of Character chat"
 	usr.client.prefs.chat_toggles ^= CHAT_OOC
 	usr.client.prefs.save_preferences()
 	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_OOC) ? "now" : "no longer"] see messages on the OOC channel.")
@@ -267,8 +267,19 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 	//to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_LOOC) ? "now" : "no longer"] see messages on the LOOC channel.")
 	to_chat(usr, "Local OOC cannot be disabled. If someone is being obnoxious over LOOC, please ahelp.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[usr.client.prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]"))
-/datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
+/datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_anonooc)()
+	set name = "Show/Hide AnonOOC"
+	set category = "Preferences"
+	set desc = "Toggles seeing Anonymous Out Of Character chat"
+	usr.client.prefs.chat_toggles ^= CHAT_AOOC
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_AOOC) ? "now" : "no longer"] see messages on the AnonOOC channel.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing AnonOOC", "[usr.client.prefs.chat_toggles & CHAT_AOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/listen_aooc/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_AOOC
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"

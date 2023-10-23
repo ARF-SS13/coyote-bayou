@@ -967,6 +967,8 @@
 		to_chat(src,span_notice("You try to remove [who]'s [what.name]."))
 		what.add_fingerprint(src)
 	if(do_mob(src, who, round(what.strip_delay / strip_mod), ignorehelditem = TRUE))
+		if(what.is_dual_wielded)
+			dualwield_end(who, who.held_items[1], who.held_items[2], FALSE)
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where

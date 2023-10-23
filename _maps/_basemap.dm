@@ -4,15 +4,14 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-		#include "map_files/Pahrump-Sunset/Dungeons.dmm"
-		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Lower.dmm"
-		#include "map_files/Pahrump-Sunset/Pahrump-Sunset.dmm"
-		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Upper.dmm"
-		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Upper-2.dmm"
-		#include "map_files/Pahrump-Sunset/RockSprings.dmm"
-		#include "map_files/Pahrump-Sunset/RockSprings-Upper.dmm"
-		#include "map_files/Pahrump-Sunset/RedRiver.dmm"
-		#include "map_files/Pahrump-Sunset/Garland-City.dmm"
+		#include "map_files/coyote_bayou/Dungeons.dmm"
+		#include "map_files/coyote_bayou/Texarkana_underground.dmm"
+		#include "map_files/coyote_bayou/Nash_and_Texarkana.dmm"
+		#include "map_files/coyote_bayou/Nash_and_Texarkana-Upper.dmm"
+		#include "map_files/coyote_bayou/Nash_and_Texarkana-Upper-2.dmm"
+		#include "map_files/coyote_bayou/Redwater.dmm"
+		#include "map_files/coyote_bayou/Redwater-Upper.dmm"
+		#include "map_files/coyote_bayou/Ashdown.dmm"
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif
