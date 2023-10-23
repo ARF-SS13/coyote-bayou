@@ -151,6 +151,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			playsound(src, "gun_insert_empty_magazine", 70, 1)
 		new_mag.update_icon()
 		update_icon()
+		do_squish(0.75,0.75,0.25 SECONDS)
 		return TRUE
 	return FALSE
 
@@ -212,6 +213,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
 	update_firemode()
+	do_squish(0.75,0.75,0.25 SECONDS)
 	return 1
 
 /obj/item/gun/ballistic/proc/pump_unload(mob/M)
@@ -271,6 +273,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	magazine.update_icon()
 	magazine = null
 	update_icon()
+	do_squish(0.75,0.75,0.25 SECONDS)
 	return TRUE
 
 /// Pump if click with empty thing
