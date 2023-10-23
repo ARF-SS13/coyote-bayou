@@ -338,7 +338,7 @@ Raider
 	box = /obj/item/storage/survivalkit/tribal
 	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/trait/tribaltraditions = 1,
 		/obj/item/clothing/mask/cigarette/pipe = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		)
@@ -2088,7 +2088,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/trait/tribaltraditions =1,
 		)
 
 /datum/outfit/loadout/spearman
@@ -2100,7 +2100,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		///obj/item/twohanded/spear = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/trait/tribaltraditions =1,
 		)
 
 /datum/outfit/loadout/shaman
@@ -2116,8 +2116,8 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/book/granter/crafting_recipe/tribal = 1,
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/crafting_recipe/tribal = 1,
+//		/obj/item/book/granter/trait/tribaltraditions =1,
 	)
 
 /datum/outfit/loadout/lostvillager
@@ -2132,7 +2132,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/bag/plants = 1,
 		/obj/item/crowbar/smithedunitool = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 3,
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/trait/tribaltraditions =1,
 	)
 
 /datum/outfit/loadout/wayfarerranged
@@ -2145,7 +2145,7 @@ datum/job/wasteland/f13dendoctor
 		///obj/item/storage/bag/tribe_quiver/light = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/book/granter/trait/tribaltraditions =1,
+//		/obj/item/book/granter/trait/tribaltraditions = 1,
 		)
 
 /datum/outfit/loadout/whitelegsranged
@@ -2167,7 +2167,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/whitelegs = 1,
 		///obj/item/twohanded/fireaxe = 1,
 		///obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/whitelegs = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/whitelegs = 1
 	)
 
 //Dead Horses
@@ -2202,7 +2202,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/cultivator=1,
 		/obj/item/reagent_containers/glass/bucket/wood=1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1
 	)
 
 //Sorrows
@@ -2217,7 +2217,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		///obj/item/gun/ballistic/bow = 1,
 		///obj/item/storage/bag/tribe_quiver = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
 /datum/outfit/loadout/sorrowsshaman
@@ -2233,7 +2233,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/warpaint_bowl = 1,
 		/obj/item/toy/crayon/spraycan = 2,
 		/obj/item/book/granter/trait/tagger = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
 //Eighties
@@ -2273,7 +2273,7 @@ datum/job/wasteland/f13dendoctor
 		///obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/storage/belt/utility/full = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1
 	)
 
 //Wayfarers
@@ -2299,7 +2299,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/wayfarer = 1,
+//		/obj/item/book/granter/crafting_recipe/tribal/wayfarer = 1,
 	)
 
 //Rustwalkers
@@ -2338,7 +2338,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/circular_saw = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/storage/belt/utility/full = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/rustwalkers = 1
+//		/obj/item/book/granter/crafting_recipe/tribal/rustwalkers = 1
 
 	)
 //Bone Dancer
@@ -2347,7 +2347,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/bone = 1,
 		/obj/item/clothing/head/helmet/skull/bone = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/bone = 1,
+//		/obj/item/book/granter/crafting_recipe/tribal/bone = 1,
 		///obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
