@@ -455,7 +455,7 @@
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
 		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
-		/obj/item/gun/energy/laser/laer = 3
+		/obj/item/gun/energy/laser/laer = 3,
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
 	)
 
