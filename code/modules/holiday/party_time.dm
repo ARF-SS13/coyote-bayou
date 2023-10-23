@@ -8,13 +8,14 @@
 	var/list/weekdays = list()
 
 /datum/holiday/weekly/shouldCelebrate(dd, mm, yy, ww, ddd)
-	return (ddd in weekdays) // ez
+	var/adjustedDDD = time2text(world.realtime, "DDD", -6) //Fenny doesn't wanna use UTC, but instead Central Standard Time
+	return (adjustedDDD in weekdays) // ez
 
-/// A cool lil potluck for subby bottoms to come together and make friends to fuck them
+/// A cool lil potluck for subby bottoms to come together and make friends to frick them
 /datum/holiday/weekly/potluck
 	name = POTLUCK
 	weekdays = list(SUNDAY)
-	var/roundstart_time = 0
+	var/zero_hour = 0
 	var/all_done
 	var/warning_time = 1 MINUTES
 	var/warned
@@ -25,22 +26,29 @@
 
 /datum/holiday/weekly/potluck/celebrate()
 	. = ..()
+	world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the Coyote Bayou meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
 	START_PROCESSING(SSevents, src) // I love processing nonprocessing subsystems
 
 /datum/holiday/weekly/potluck/greet()
 	return "Something about today feels oddly festive! Might want to hang around town!"
+
+/datum/holiday/weekly/potluck/late_greet()
+	return "The air around you starts to feel oddly festive. Might want to hang around town!"
+
+/datum/holiday/weekly/potluck/on_join_game(mob/living/newbie)
+	to_chat(newbie, span_greenannounce("Looks like Nash (and Ashdown too!) is throwing a party in the bar! Might be a great way to meet some people and make some friends! Or at the very least get some free food!"))
 
 /datum/holiday/weekly/potluck/process()
 	if(all_done)
 		return // we're done here~
 	if(!SSticker.setup_done)
 		return
-	if(!roundstart_time)
-		roundstart_time = world.time
+	if(!zero_hour)
+		zero_hour = world.time
 	if(warned && sparkling && pillar_johned)
 		all_done = TRUE
 		return
-	var/tss = world.time - roundstart_time
+	var/tss = world.time - zero_hour
 	if(!warned && tss >= warning_time)
 		var/list/partyzones = list()
 		for(var/obj/effect/landmark/party/party in GLOB.party_landmarks)

@@ -9,6 +9,7 @@ import { Box } from './Box';
 
 export const NoticeBox = props => {
   const {
+    active,
     className,
     color,
     info,
@@ -19,7 +20,7 @@ export const NoticeBox = props => {
   } = props;
   return (
     <Box
-      className={classes([
+      className={active && classes([
         'NoticeBox',
         color && 'NoticeBox--color--' + color,
         info && 'NoticeBox--type--info',

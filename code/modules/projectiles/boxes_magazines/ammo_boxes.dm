@@ -119,6 +119,7 @@
 
 /obj/item/ammo_box/m22/rubber
 	name = "ammo box (.22lr rubber)"
+	icon_state = "22rubber"
 	desc = "A box of .22 rubber rounds. For when you want to be useless."
 	ammo_type = /obj/item/ammo_casing/a22/rubber
 
@@ -127,6 +128,12 @@
 	icon_state = "22shockbox"
 	desc = "A box of .22 electroshock rounds."
 	ammo_type = /obj/item/ammo_casing/a22/shock
+
+/obj/item/ammo_box/m22/ratshot
+	name = "ammo box (.22lr ratshot)"
+	icon_state = "22ratshot"
+	desc = "A box of .22 ratshot rounds."
+	ammo_type = /obj/item/ammo_casing/a22/ratshot
 
 //9mm and .38
 /obj/item/ammo_box/c9mm
@@ -1000,6 +1007,22 @@
 
 /obj/item/ammo_box/a308/doublestacked/empty
 	start_empty = 1
+
+/obj/item/ammo_box/a22
+	name = "stripper clip (.22LR)"
+	icon_state = "308"
+	caliber = list(CALIBER_22LR)
+	ammo_type = /obj/item/ammo_casing/a22
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
+
+/obj/item/ammo_box/a22/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
 
 //5.56x45mm
 /obj/item/ammo_box/a556/stripper

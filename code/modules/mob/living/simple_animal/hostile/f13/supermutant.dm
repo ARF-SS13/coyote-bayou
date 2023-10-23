@@ -103,21 +103,21 @@
 	name = "Brah-Min"
 	desc = "A large, docile supermutant. Adopted by Kebab-town as a sort of watch dog for their brahmin herd."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
-	icon_state = "hulk_brahmin_s"
-	icon_dead = "hulk_brahmin_s"
+	icon_state = "mutant_engineer"
+	icon_dead = "mutant_engineer"
 	maxHealth = 240
 	health = 240
 	speak_chance = 7 //30 //Oh my god he never shuts up.
 	move_resist = MOVE_FORCE_OVERPOWERING
 	mob_size = MOB_SIZE_LARGE
-	speak = list("Hey! These my brahmins!", "And I say, HEY-YEY-AAEYAAA-EYAEYAA! HEY-YEY-AAEYAAA-EYAEYAA! I SAID HEY, what's going on?", "What do you want from my brahmins?!", "Me gonna clean brahmin poop again now!", "I love brahmins, brahmins are good, just poop much!", "Do not speak to my brahmins ever again, you hear?!", "Bad raiders come to steal my brahmins - I crush with shovel!", "Do not come to my brahmins! Do not touch my brahmins! Do not look at my brahmins!", "I'm watching you, and my brahmins watch too!", "Brahmins say moo, and I'm saying - hey, get your ugly face out of my way!", "I... I remember, before the fire... THERE WERE NO BRAHMINS!", "No! No wind brahmin here! Wind brahmin lie!")
+	speak = list("Hey! These my brahmins!", "And I say, HEY-YEY-AAEYAAA-EYAEYAA! HEY-YEY-AAEYAAA-EYAEYAA! I SAID HEY, what's going on?", "What do you want from my brahmins?!", "Me gonna clean brahmin poop again now!", "I love brahmins, brahmins are good, just poop much!", "Do not speak to my brahmins ever again, you hear?!", "Bad raiders come to steal my brahmins - I crush with wrench!", "Do not come to my brahmins! Do not touch my brahmins! Do not look at my brahmins!", "I'm watching you, and my brahmins watch too!", "Brahmins say moo, and I'm saying - hey, get your ugly face out of my way!", "I... I remember, before the fire... THERE WERE NO BRAHMINS!", "No! No wind brahmin here! Wind brahmin lie!")
 	speak_emote = list("shouts", "yells")
 	emote_hear = list("yawns", "mumbles","sighs")
-	emote_see = list("raises his shovel", "shovels some dirt away", "waves his shovel above his head angrily")
+	emote_see = list("raises his wrench", "shovels some dirt away", "waves his wrench above his head angrily")
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "punches"
-//	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
+//	guaranteed_butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -432,7 +432,7 @@
 		DestroySurroundings()
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/Charge()
-	var/turf/T = get_turf(target)
+	var/turf/T = get_turf(get_target())
 	if(!T || T == loc)
 		return
 	charging = TRUE
@@ -447,8 +447,10 @@
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/proc/charge_end(list/effects_to_destroy)
 	charging = FALSE
-	if(target)
-		Goto(target, move_to_delay, minimum_distance)
+	var/atom/my_target = get_target()
+	if(!my_target)
+		return
+	Goto(my_target, move_to_delay, minimum_distance)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/Bump(atom/A)
 	if(charging)

@@ -67,6 +67,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa = 30,
 		/obj/item/clothing/suit/armor/power_armor = 75,
 		/obj/item/clothing/head/helmet/f13/power_armor = 75,
+		/obj/item/gun/ballistic/shotgun/toy = 5,
+		/obj/item/gun/ballistic/automatic/toy = 5,
+		/obj/item/toy = 5,
 		/obj/item/melee = 5,
 		/obj/item/melee/transforming = 5,
 		/obj/item/twohanded = 5,
@@ -112,6 +115,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/m1919 = 15,
 		/obj/item/gun/ballistic/automatic/m72 = 15,
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
+		// magic shit:tm:
+		/obj/item/gun/magic/ = 15,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
@@ -211,8 +216,12 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/export/bottle/patron = 15,
 		/obj/item/card/lowbounty = 75,
 		/obj/item/card/midbounty = 150,
-		/obj/item/card/highbounty = 300,
-		/obj/item/card/kingbounty = 600,
+		/obj/item/card/highbounty = 250,
+		/obj/item/card/kingbounty = 500,
+		// Artifacts: Someone who actually playes needs to test these prices -Kelprunner
+		/obj/item/artifact/common = 150,
+		/obj/item/artifact/uncommon = 300,
+		/obj/item/artifact/rare = 500,
 	)
 	var/list/quicklisted = list()
 	var/is_grinding = FALSE
@@ -332,8 +341,13 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 75¢<br>"
 	dat += "Medium Roller Bounty Ticket: 150¢<br>"
-	dat += "High Roller Bounty Ticket: 300¢<br>"
-	dat += "King's Bounty Ticket: 600¢<br>"
+	dat += "High Roller Bounty Ticket: 250¢<br>"
+	dat += "King's Bounty Ticket: 500¢<br>"
+	dat += "<br>"
+	dat += "<b>No use for an artifact? Trade it for hard coins!</b><br>"
+	dat += "Lesser Artifact: 150¢<br>"
+	dat += "Standard Artifact: 300¢<br>"
+	dat += "Greater Artifact: 500¢<br>"
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
@@ -852,3 +866,28 @@ Fence
 	popup.set_content(dat)
 	popup.open()
 	return
+
+/obj/item/proc/GetPriceEstimate()
+	var/price = 0
+	var/pricetext = ""
+	if(LAZYLEN(GLOB.wasteland_vendor_shop_list))
+		price = GLOB.wasteland_vendor_shop_list[WVM_SCRAPPER][src.type]
+	else
+		pricetext = span_red("You aren't sure how much this is worth.")
+	if(price > 0)
+		switch(price)
+			if(0.001 to 0.999)
+				pricetext = span_notice("A bunch of these would be worth selling.")
+			if(1 to 9)
+				pricetext = span_notice("This is worth a few copper coins.")
+			if(10 to 29)
+				pricetext = span_notice("This is worth a decent amount of copper coins.")
+			if(30 to 99)
+				pricetext = span_notice("This is worth a few silver coins.")
+			if(100 to 299)
+				pricetext = span_green("This is worth a few gold coins.")
+			if(300 to 999)
+				pricetext = span_green("This is worth a decent amount of gold coins.")
+			else
+				pricetext = span_green("This is worth a lot of coins!")
+	return pricetext

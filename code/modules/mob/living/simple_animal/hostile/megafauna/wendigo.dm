@@ -143,7 +143,8 @@ Difficulty: Hard
 /// Teleports to a location 4 turfs away from the enemy in view
 /mob/living/simple_animal/hostile/megafauna/wendigo/proc/teleport()
 	var/list/possible_ends = list()
-	for(var/turf/T in view(4, target.loc) - view(3, target.loc))
+	var/atom/my_target = get_target()
+	for(var/turf/T in view(4, my_target.loc) - view(3, my_target.loc))
 		if(isclosedturf(T))
 			continue
 		possible_ends |= T

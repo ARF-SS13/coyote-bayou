@@ -162,3 +162,20 @@
 	result = /obj/item/reagent_containers/food/snacks/butterbiscuit
 	subcategory = CAT_BREAD
 
+/datum/crafting_recipe/food/croissant
+	name = "croissant"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/croissant
+	subcategory = CAT_BREAD
+
+/datum/crafting_recipe/food/frenchtoast
+	name = "french toast"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/datum/reagent/consumable/sugar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/frenchtoast
+	subcategory = CAT_BREAD

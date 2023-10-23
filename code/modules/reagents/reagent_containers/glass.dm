@@ -201,7 +201,7 @@
 	volume = 40
 
 /obj/item/reagent_containers/glass/beaker/flask/spouty
-	name = "flask with spout"
+	name = "chemical flask"
 	desc = "A flask with a spout! It can hold up to 120 units. Unable to withstand reagents of an extreme pH."
 	custom_materials = list(/datum/material/glass = 2500)
 	icon_state = "flaskspouty"

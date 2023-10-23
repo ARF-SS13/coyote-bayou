@@ -45,9 +45,11 @@
 	temperature = 50
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
-	if(..()) //we have a target
-		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
-			OpenFire(target)
+	if(!..()) //we have a target
+		return
+	var/atom/my_target = get_target()
+	if(isliving(my_target) && !my_target.Adjacent(get_origin()) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
+		OpenFire(my_target)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
 	switch(severity)
@@ -81,7 +83,7 @@
 	robust_searching = 1
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing
 	loot = list()
-	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 	search_objects = 1
 	wanted_objects = list(/obj/item/pen/survival, /obj/item/stack/ore/diamond)
 	field_of_vision_type = FOV_270_DEGREES //Obviously, it's one eyeball.
@@ -145,7 +147,7 @@
 	maxHealth = 170
 	health = 170
 	projectiletype = /obj/item/projectile/temp/basilisk/icewing
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/bone = 1) //No sinew; the wings are too fragile to be usable
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing/ice_wing
 	crusher_drop_mod = 30
 

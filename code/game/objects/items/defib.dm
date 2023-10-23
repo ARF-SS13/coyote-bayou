@@ -99,8 +99,8 @@
 	. = ..()
 	if(!. && ismob(loc) && loc == usr)
 		var/mob/M = loc
-		if(!M.incapacitated() && istype(over_object, /obj/screen/inventory/hand))
-			var/obj/screen/inventory/hand/H = over_object
+		if(!M.incapacitated() && istype(over_object, /atom/movable/screen/inventory/hand))
+			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 
 /obj/item/defibrillator/attackby(obj/item/W, mob/user, params)
@@ -355,13 +355,6 @@
 	cooldown = FALSE
 	update_icon()
 
-/obj/item/shockpaddles/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is putting the live paddles on [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!"))
-	if(req_defib)
-		defib.deductcharge(revivecost)
-	playsound(src, 'sound/machines/defib_zap.ogg', 50, 1, -1)
-	return (OXYLOSS)
-
 /obj/item/shockpaddles/update_icon_state()
 	icon_state = "defibpaddles[wielded]"
 	item_state = "defibpaddles[wielded]"
@@ -571,7 +564,7 @@
 				shock_touching(30, H)
 				var/failed
 
-				if (H.suiciding || (HAS_TRAIT(H, TRAIT_NOCLONE)))
+				if ((HAS_TRAIT(H, TRAIT_NOCLONE)))
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's DNR is set. Patient cannot be revived without specialized assistance.")
 				else if (H.hellbound)
 					failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's soul has been cast into Hell. Patient cannot be revived without specialized assistance.")
@@ -592,8 +585,6 @@
 							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is too damaged. Repair the patient's brain.")
 						if(BR.brain_death)
 							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is destroyed. Patient cannot be revived without specialized assistance.")
-						if(H.suiciding || BR.brainmob?.suiciding)
-							failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Ephemereal conscience detected, seance protocols reveal this patient's DNR is set. Patient cannot be revived without specialized assistance.")
 					else
 						failed = span_warning("[req_defib ? "[defib]" : "[src]"] buzzes: Resuscitation failed - Patient's brain is missing. Replace the patient's brain.")
 

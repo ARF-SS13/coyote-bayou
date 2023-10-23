@@ -24,6 +24,7 @@
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	sentience_type = SENTIENCE_BOSS
 	robust_searching = TRUE
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
@@ -139,7 +140,7 @@
 		if(is_low_health && health > 0)
 			A.ex_act(EXPLODE_HEAVY)
 			playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
-		DestroySurroundings()
+			DestroySurroundings()
 	..()
 
 // Mother death claw
@@ -180,6 +181,7 @@
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	sentience_type = SENTIENCE_BOSS 
 	robust_searching = TRUE
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")

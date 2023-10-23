@@ -59,7 +59,7 @@ Difficulty: Medium
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/swoop_cooldown = 0
@@ -128,10 +128,11 @@ Difficulty: Medium
 		fire_walls()
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_rain()
-	if(!target)
+	var/atom/my_target = get_target()
+	if(!my_target)
 		return
-	target.visible_message(span_boldwarning("Fire rains from the sky!"))
-	for(var/turf/turf in range(9,get_turf(target)))
+	my_target.visible_message(span_boldwarning("Fire rains from the sky!"))
+	for(var/turf/turf in range(9,get_turf(my_target)))
 		if(prob(11))
 			new /obj/effect/temp_visual/target(turf)
 
@@ -171,7 +172,8 @@ Difficulty: Medium
 		return
 	if(manual_target)
 		GiveTarget(manual_target)
-	if(!target)
+	var/atom/my_target = get_target()
+	if(!my_target)
 		return
 	swoop_cooldown = world.time + 200
 	stop_automated_movement = TRUE
@@ -182,11 +184,11 @@ Difficulty: Medium
 
 	var/negative
 	var/initial_x = x
-	if(target.x < initial_x) //if the target's x is lower than ours, swoop to the left
+	if(my_target.x < initial_x) //if the my_target's x is lower than ours, swoop to the left
 		negative = TRUE
-	else if(target.x > initial_x)
+	else if(my_target.x > initial_x)
 		negative = FALSE
-	else if(target.x == initial_x) //if their x is the same, pick a direction
+	else if(my_target.x == initial_x) //if their x is the same, pick a direction
 		negative = prob(50)
 	var/obj/effect/temp_visual/dragon_flight/F = new /obj/effect/temp_visual/dragon_flight(loc, negative)
 
@@ -209,25 +211,25 @@ Difficulty: Medium
 	sleep(7)
 	var/list/flame_hit = list()
 	while(swoop_duration > 0)
-		if(!target && !FindTarget())
-			break //we lost our target while chasing it down and couldn't get a new one
+		if(!my_target && !FindTarget())
+			break //we lost our my_target while chasing it down and couldn't get a new one
 		if(swoop_duration < 7)
 			fire_rain = FALSE //stop raining fire near the end of the swoop
-		if(loc == get_turf(target))
+		if(loc == get_turf(my_target))
 			if(!fire_rain)
-				break //we're not spewing fire at our target, slam they
-			if(isliving(target))
-				var/mob/living/L = target
+				break //we're not spewing fire at our targette, slam they
+			if(isliving(my_target))
+				var/mob/living/L = my_target
 				if(L.stat == DEAD)
-					break //target is dead and we're on em, slam they
+					break //my_target is dead and we're on em, slam they
 		if(fire_rain)
 			new /obj/effect/temp_visual/target(loc, flame_hit)
-		forceMove(get_step(src, get_dir(src, target)))
-		if(loc == get_turf(target))
+		forceMove(get_step(src, get_dir(src, my_target)))
+		if(loc == get_turf(my_target))
 			if(!fire_rain)
 				break
-			if(isliving(target))
-				var/mob/living/L = target
+			if(isliving(my_target))
+				var/mob/living/L = my_target
 				if(L.stat == DEAD)
 					break
 		var/swoop_speed = 1.5
@@ -397,7 +399,7 @@ Difficulty: Medium
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	loot = list()
 	crusher_loot = list()
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
 	return

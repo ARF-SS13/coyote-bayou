@@ -774,6 +774,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Vertibird Pilot"
 	icon_state = "Scribe"
 
+/obj/effect/landmark/start/f13/nashcurator
+	name = "Nash Librarian"
+	icon_state = "Scribe"
+
 /obj/effect/landmark/start/f13/dendoc
 	name = "Doctor"
 
@@ -782,7 +786,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/shopkeeper
-	name = "Shopkeeper"
+	name = "Texarkana Trade Worker"
 	icon_state = "Shopkeeper"
 
 /obj/effect/landmark/start/f13/banker
@@ -806,7 +810,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
-/obj/effect/landmark/start/f13/wastelander/ashdown
+/obj/effect/landmark/start/f13/ashdown
 	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
 
@@ -913,8 +917,16 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Senior Doctor"
 	icon_state = "Chief Medical Officer"
 
+/obj/effect/landmark/start/f13/followersseniorscientist
+	name = "Senior Scientist"
+	icon_state = "Chief Medical Officer"
+
 /obj/effect/landmark/start/f13/followersdoctor
 	name = "Town Doctor"
+	icon_state = "Medical Doctor"
+
+/obj/effect/landmark/start/f13/radiooperator
+	name = "Radio Operator"
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard

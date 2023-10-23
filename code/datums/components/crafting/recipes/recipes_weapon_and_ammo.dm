@@ -133,7 +133,7 @@
 
 /datum/crafting_recipe/ecrecharge
 	name = "Small Energy Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ec
+	result = /obj/item/stock_parts/cell/ammo/ec/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -167,7 +167,7 @@
 
 /datum/crafting_recipe/mfcrecharge
 	name = "Microfusion Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/mfc
+	result = /obj/item/stock_parts/cell/ammo/mfc/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -201,7 +201,7 @@
 
 /datum/crafting_recipe/ecprecharge
 	name = "Electron Charge Pack (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ecp
+	result = /obj/item/stock_parts/cell/ammo/ecp/recycled
 	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -937,6 +937,17 @@
 	subcategory = CAT_WEAPON
 	always_available = TRUE
 
+//Sawed off baby repeater
+/datum/crafting_recipe/trainerator
+	name = ".22 Mares Leg"
+	result = /obj/item/gun/ballistic/rifle/repeater/trainerator
+	reqs = list(/obj/item/gun/ballistic/rifle/repeater/trainer = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
@@ -1130,6 +1141,45 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+
+/datum/crafting_recipe/huntingsawedoff
+	name = "Saw off Hunting Shotgun"
+	result = /obj/item/gun/ballistic/shotgun/hunting/sawn
+	reqs = list(/obj/item/gun/ballistic/shotgun/hunting = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/rockworse
+	name = "9mm Rockwell Pistol"
+	result = /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockworse
+	reqs = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+/datum/crafting_recipe/gross
+	name = "Saw off Gras"
+	result = /obj/item/gun/ballistic/rifle/antique/gross
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/marty
+	name = "Saw off Martini Henry"
+	result = /obj/item/gun/ballistic/rifle/antique/gross/marty
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
@@ -1504,6 +1554,20 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+
+//scrap tg laser
+/datum/crafting_recipe/scraplaser
+	name = "improvised laser"
+	result = /obj/item/gun/energy/laser/tg/scrap
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
 
 //aer9
 /datum/crafting_recipe/AER9

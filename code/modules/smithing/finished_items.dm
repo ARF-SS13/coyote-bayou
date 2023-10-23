@@ -54,7 +54,7 @@
 	I.force_unwielded += 5
 	I.throwforce += 5
 	I.is_sharpened = TRUE
-	I.desc = "[initial(desc)] It has been sharpened to a fine edge."
+	I.desc = "[initial(I.desc)] It has been sharpened to a fine edge."
 	to_chat(user, span_notice("You sharpen the [I]!"))
 	qdel(src)
 	return ..()
@@ -156,7 +156,7 @@
 	item_state = "pickaxe"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
-	digrange = 2
+	digrange = 1
 	toolspeed = 0.2
 
 /obj/item/pickaxe/smithed/Initialize()
@@ -231,6 +231,86 @@
 	add_overlay(overlay)
 
 
+
+//////////////////////////
+//						//
+//	UNARMED WEAPONS		//
+//						//
+//////////////////////////
+
+/obj/item/melee/smith/unarmed
+	name = "glove weapon template"
+	desc = "should not be here"
+	icon = 'code/modules/smithing/icons/blacksmith.dmi'
+	attack_speed = CLICK_CD_MELEE * 0.9
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	w_class = WEIGHT_CLASS_SMALL
+	flags_1 = CONDUCT_1
+	sharpness = SHARP_NONE
+
+	throwforce = 10
+	throw_range = 5
+	attack_verb = list("punched", "jabbed", "whacked")
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
+
+/obj/item/melee/smith/unarmed/equipped(mob/user, slot)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(unarmed_adjusted)
+		mob_overlay_icon = righthand_file
+	if(!unarmed_adjusted)
+		mob_overlay_icon = lefthand_file
+	if(ishuman(user) && slot == SLOT_GLOVES)
+		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh += force + 8 
+			H.dna.species.punchdamagelow += force + 8
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
+			if(sharpness == SHARP_NONE)
+				H.dna.species.attack_verb = pick("punch","jab","whack")
+	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON)) //removing your funny trait shouldn't make your fists infinitely stack damage.
+			H.dna.species.punchdamagehigh = 10
+			H.dna.species.punchdamagelow = 1
+		if(HAS_TRAIT(user, TRAIT_IRONFIST))
+			H.dna.species.punchdamagehigh = 12
+			H.dna.species.punchdamagelow = 6
+		if(HAS_TRAIT(user, TRAIT_STEELFIST))
+			H.dna.species.punchdamagehigh = 16
+			H.dna.species.punchdamagelow = 10
+		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+		H.dna.species.attack_verb = "punch"
+
+/obj/item/melee/smith/unarmed/knuckles
+	name = "scrap knuckles"
+	desc = "Hardened knuckle grip made out of metal. They protect your hand, and do more damage, in unarmed combat."
+	icon_state = "knuckles_smith"
+	item_state = "knuckles_smith"
+	overlay_state = "grip_knuckles"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	attack_verb = list("punched", "jabbed", "whacked")
+	force = 33
+
+/obj/item/melee/smith/unarmed/claws
+	name = "scrap claws"
+	desc = "Gloves with short claws built into the palms."
+	icon_state = "claws_smith"
+	item_state = "claws_smith"
+	overlay_state = "grip_claws"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
+	force = 28
+	force_unwielded = 28
+	force_wielded = 28
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 //////////////////////////
 //						//

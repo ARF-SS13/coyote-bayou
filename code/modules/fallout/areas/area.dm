@@ -109,7 +109,7 @@
 		)
 
 /area/f13/building/tribal
-	name = "Tribal Building"
+	name = "Tribal Camp"
 	icon_state = "orange"
 	ambience_area = list(
 		/datum/looping_sound/ambient/general,
@@ -133,7 +133,7 @@
 		)
 
 /area/f13/building/tribal/caveofforever
-	name = "Tribal cave of forever"
+	name = "Tribal Cave of Forever"
 	icon_state = "orange"
 	has_gravity = 0
 	ambience_area = list(

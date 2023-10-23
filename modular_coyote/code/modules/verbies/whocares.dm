@@ -4,7 +4,7 @@
 // Relevant Meme: https://youtu.be/8B8On0__AJs
 // Unrelated meme: https://youtu.be/2SBMcyZdP0k
 
-#define MAX_STATUS_LEN 86
+
 
 /client/who()
 	set name = "Who"
@@ -22,7 +22,7 @@
 		for(var/X in GLOB.admins)
 			var/client/C = X
 			if(C && C.holder && !C.holder.fakekey)
-				assembled += "\t <font color='#FF0000'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""] ([round(C.avgping, 1)]ms)"
+				assembled += "\t <font color='#FF0000'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""]"
 		Lines += sortList(assembled)
 	assembled.len = 0
 	if(length(GLOB.mentors))
@@ -30,7 +30,7 @@
 		for(var/X in GLOB.mentors)
 			var/client/C = X
 			if(C && (!C.holder || (C.holder && !C.holder.fakekey)))			//>using stuff this complex instead of just using if/else lmao
-				assembled += "\t <font color='#0033CC'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""] ([round(C.avgping, 1)]ms)"
+				assembled += "\t <font color='#0033CC'>[C.key]</font>[admin_mode? "[show_admin_info(C)]":""]"
 		Lines += sortList(assembled)
 	assembled.len = 0
 	Lines += "<b>Players:</b>"
@@ -51,13 +51,14 @@
 		
 
 
-		assembled += "\t [admin_mode? (C.key + " - "):""][charName][show_sum_info(C, admin_mode)] ([round(C.avgping, 1)]ms) [C.statusMessage? ("@ " + C.statusMessage) : ""]"
+		assembled += "\t [admin_mode? (C.key + " - "):""][charName][show_sum_info(C, admin_mode)] [C.statusMessage? ("@ " + C.statusMessage) : ""]"
 	Lines += sortList(assembled)
 	
 	for(var/line in Lines)
 		msg += "[line]\n"
 
-	msg += "<b>Total Players: [length(GLOB.clients)]</b>"
+	msg += "<b>Total Players: [length(GLOB.clients)]</b>\n" 
+	msg += "You can set your OOC Status with the 'set-status' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!"
 	to_chat(src, msg)
 
 /client/proc/show_sum_info(client/C, _adminStatus) // A parody to show_admin_info, except it shows some, but not all. <3 
@@ -94,36 +95,3 @@
 	if(_adminStatus)
 		entry += " (<A HREF='?_src_=holder;[HrefToken()];adminmoreinfo=\ref[C.mob]'>?</A>)"
 	return entry
-
-
-/client
-	var/statusMessage = null // Bruh I did the prefix cause I'm that used to working in C++ STILL REEEE
-
-/mob
-	var/statusMessage = null // Shouldn't be explicitly written to, this is a backup copy of the client incase they disconnect
-
-/mob/Login()
-	. = ..()
-	if(client) // cursed way to get around disconnects and mob changes.
-		if(length(statusMessage))
-			client.statusMessage = statusMessage
-		else
-			if(length(client.statusMessage))
-				statusMessage = client.statusMessage
-
-// Make the verb here.
-/mob/verb/SetStatusMsg()
-	set name = "Set Status"
-	set category = "OOC"
-
-	if(!client)
-		return
-	
-	statusMessage = null // Resetting just in case <3
-	client.statusMessage = null
-
-	var/input = stripped_input(usr,"This adds a short message on the end of your record in who. Useful for informing if you're in the mood to RP. (Char Limit: [MAX_STATUS_LEN])",max_length=MAX_STATUS_LEN)
-	if(length(input))	
-		statusMessage = input
-		client.statusMessage = input
-		to_chat(usr, "Your status message is now: [input]")

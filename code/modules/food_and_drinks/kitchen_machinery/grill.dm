@@ -11,6 +11,10 @@
 	var/grill_time = 0
 	var/datum/looping_sound/grill/grill_loop
 
+/obj/machinery/grill/Destroy()
+	QDEL_NULL(grill_loop)
+	return ..()
+
 /obj/machinery/grill/Initialize()
 	. = ..()
 	grill_loop = new(list(src), FALSE)

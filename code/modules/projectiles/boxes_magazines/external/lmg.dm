@@ -64,7 +64,7 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
 
-/obj/item/ammo_box/rpd/empty
+/obj/item/ammo_box/magazine/rpd/empty
 	start_empty = 1
 
 
@@ -75,8 +75,8 @@
 	icon_state = "ammobox"
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
 	caliber = list(CALIBER_FLINTLOCK)
-	max_ammo = 200
-	w_class = WEIGHT_CLASS_GIGANTIC // It holds 200 my guy
+	max_ammo = 100
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
 
 /obj/item/ammo_box/magazine/ratling/empty

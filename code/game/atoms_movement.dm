@@ -209,6 +209,11 @@
 	Move(target_turf, get_dir(src, target_turf), glide_size_override)
 	moving_from_pull = null
 
+//Called after a successful Move(). For Cameras.
+/atom/movable/proc/CamMoved(atom/old_loc, movement_dir, forced = FALSE, list/old_locs)
+	move_stacks++
+	Moved(old_loc, movement_dir, forced, old_locs)
+
 //Called after a successful Move(). By this point, we've already moved
 /atom/movable/proc/Moved(atom/old_loc, movement_dir, forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)

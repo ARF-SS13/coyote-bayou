@@ -717,7 +717,7 @@
 	if(iscarbon(M) && M.stat != DEAD)
 		if(!ishumanbasic(M) || reac_volume < 5) // implying xenohumans are holy
 			if(method == INGEST && show_message)
-				to_chat(M, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
+				to_chat(M, span_notice("<i>You feel nothing but a terrible aftertaste.</i>"))
 			return ..()
 
 		to_chat(M, span_userdanger("A terrible pain travels down your back as wings burst out!"))
@@ -758,7 +758,7 @@
 
 /obj/item/melee/transforming/cleaving_saw
 	name = "cleaving saw"
-	desc = "This saw is the tool of choice for the Head Hunter. Capable of switching its reach and attack speed on the fly, it's an incredibly useful weapon for slaying the denizens of the wastes. Animal or human, the saw doesn't judge."
+	desc = "This saw is the tool of choice for the Hunt Master. Capable of switching its reach and attack speed on the fly, it's an incredibly useful weapon for slaying the denizens of the wastes. Animal or human, the saw doesn't judge."
 	force = 40
 	force_on = 25 //force when active
 	throwforce = 20
@@ -794,12 +794,6 @@
 	. += "<span class='notice'>It is [active ? "open, and will cleave enemies in a wide arc":"closed, and can be used for rapid consecutive attacks that cause beastly enemies to bleed"].<br>\
 	Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.<br>\
 	Transforming it immediately after an attack causes the next attack to come out faster.</span>"
-
-/obj/item/melee/transforming/cleaving_saw/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is [active ? "closing [src] on [user.p_their()] neck" : "opening [src] into [user.p_their()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	transform_cooldown = 0
-	transform_weapon(user, TRUE)
-	return BRUTELOSS
 
 /obj/item/melee/transforming/cleaving_saw/transform_weapon(mob/living/user, supress_message_text)
 	if(transform_cooldown > world.time)
@@ -1194,9 +1188,9 @@
 	name = "colossus chest"
 
 /obj/structure/closet/crate/necropolis/colossus/PopulateContents()
-	var/list/choices = subtypesof(/obj/machinery/anomalous_crystal)
-	var/random_crystal = pick(choices)
-	new random_crystal(src)
+	// var/list/choices = subtypesof(/obj/machinery/anomalous_crystal)
+	// var/random_crystal = pick(choices)
+	// new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
 	new /obj/item/clothing/glasses/godeye(src)
 
@@ -1241,21 +1235,6 @@
 /obj/item/hierophant_club/examine(mob/user)
 	. = ..()
 	. += span_hierophant_warning("The[beacon ? " beacon is not currently":"re is a beacon"] attached.")
-
-/obj/item/hierophant_club/suicide_act(mob/living/user)
-	say("Xverwpsgexmrk...", forced = "hierophant club suicide")
-	user.visible_message(span_suicide("[user] holds [src] into the air! It looks like [user.p_theyre()] trying to commit suicide!"))
-	new/obj/effect/temp_visual/hierophant/telegraph(get_turf(user))
-	playsound(user,'sound/machines/airlockopen.ogg', 75, TRUE)
-	user.visible_message(span_hierophant_warning("[user] fades out, leaving [user.p_their()] belongings behind!"))
-	for(var/obj/item/I in user)
-		if(I != src)
-			user.dropItemToGround(I)
-	for(var/turf/T in RANGE_TURFS(1, user))
-		var/obj/effect/temp_visual/hierophant/blast/B = new(T, user, TRUE)
-		B.damage = 0
-	user.dropItemToGround(src) //Drop us last, so it goes on top of their stuff
-	qdel(user)
 
 /obj/item/hierophant_club/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()

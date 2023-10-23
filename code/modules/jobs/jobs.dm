@@ -168,6 +168,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Preacher",
 	"Vertibird Pilot",
+	"Nash Librarian",
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
@@ -241,6 +242,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
+	"Radio Operator",
 ))
 
 GLOBAL_LIST_INIT(redwater_positions, list(
@@ -306,7 +308,13 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Town Doctor",
 	"Town Paramedic",
 	"Nurse",
+	"Senior Scientist",
 	"Town Scientist",
+))
+//Heavens Night
+GLOBAL_LIST_INIT(heavensnight_positions, list(
+	"Club Manager",
+	"Club Worker",
 ))
 
 // job categories for rendering the late join menu
@@ -323,6 +331,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
+	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
 	// "Redwater" = list("jobs" = redwater_positions, "color" = "#f81717"),
 ))
@@ -338,7 +347,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 
-	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions),
+	EXP_TYPE_FALLOUT = list("titles" = brotherhood_positions | oasis_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | heavensnight_positions | enclave_positions),
 
 	EXP_TYPE_OUTLAW = list("titles" = list("Outlaw","Den Mob Boss","Den Mob Enforcer","Den Doctor",)),
 	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
@@ -349,6 +358,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_WASTELAND = list("titles" = wasteland_positions),
 	EXP_TYPE_KHAN = list("titles" = khan_positions),
 	EXP_TYPE_FOLLOWERS = list("titles" = followers_positions),
+	EXP_TYPE_CLUB = list("titles" = heavensnight_positions),
 	EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	EXP_TYPE_TRIBAL = list("titles" = tribal_positions),
 	EXP_TYPE_BIKER = list("titles" = biker_positions),

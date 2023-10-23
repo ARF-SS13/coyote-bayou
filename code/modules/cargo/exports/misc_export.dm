@@ -49,6 +49,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun,
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
+		/obj/item/gun/ballistic/rifle/mosin/mini,
 		)
 
 /datum/export/item/commongun
@@ -122,7 +123,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine,
 		/obj/item/gun/ballistic/automatic/armalite,
 		/obj/item/gun/ballistic/automatic/l1a1,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto,
+		/obj/item/gun/ballistic/automatic/c96auto,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
 		/obj/item/gun/ballistic/shotgun/trench,
@@ -218,6 +219,7 @@
 		/obj/item/gun/energy/laser/wattz/recharger,
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
+		/obj/item/gun/magic/,
 		)
 
 /datum/export/item/uniquegun
@@ -252,7 +254,7 @@
 		/obj/item/gun/energy/tesla/teslacannon,
 		/obj/item/melee/onehanded/dragonfire,
 		/obj/item/melee/unarmed/deathclawgauntlet,
-		/obj/item/melee/powerfist/f13/goliath,
+		/obj/item/melee/unarmed/powerfist/goliath,
 		/obj/item/melee/powered/ripper/prewar,
 		/obj/item/twohanded/spear/bonespear/deathclaw,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
@@ -263,35 +265,65 @@
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
 	)
 
+/datum/export/item/melee
+	cost = 1000
+	unit_name = "melee weapon"
+	export_types = list(
+	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/coyote,
+	/obj/item/melee/onehanded,
+	/obj/item/twohanded,
+	)
+
 /datum/export/item/armorrare
 	cost = 1500
 	unit_name = "quality armor"
 	export_types = list(
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
-		/obj/effect/spawner/bundle/f13/armor/riot,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
-		/obj/effect/spawner/bundle/f13/armor/hotrodpa,
-		/obj/effect/spawner/bundle/f13/armor/t45d,
+		/obj/item/clothing/suit/armor/heavy/salvaged_pa,
+		/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa,
+		/obj/item/clothing/suit/armor/heavy/riot/combat,
+		/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
+		/obj/item/clothing/suit/armor/medium/combat/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/mk2,
+		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
+		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
 		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
-		/obj/effect/spawner/bundle/f13/armor/t51b,
-		/obj/item/clothing/suit/armor/power_armor/t51b/pony,
 		/obj/item/clothing/suit/armor/medium/odst,
 		/obj/item/clothing/suit/armor/medium/odstlead,
+	)
+
+/datum/export/item/powerarmor // note to self -- tier this later, kelprunner, 9/16/23
+	cost = 7000
+	unit_name = "power armor frame"
+	export_types = list(
+		/obj/item/clothing/suit/armor/power_armor,
+	)
+
+/datum/export/item/powerarmorhelmet
+	cost = 500
+	unit_name = "power armor helmet"
+	export_types = list(
+		/obj/item/clothing/head/helmet/f13/power_armor,
 	)
 
 /datum/export/item/armoruncommon
 	cost = 1000
 	unit_name = "surplus armor"
 	export_types = list(
-		/obj/effect/spawner/bundle/f13/armor/metal/reinforced,
-		/obj/effect/spawner/bundle/f13/armor/swat,
-		/obj/effect/spawner/bundle/f13/armor/combat,
-		/obj/effect/spawner/bundle/f13/armor/bulletproof,
-		/obj/effect/spawner/bundle/f13/armor/sulphite,
-		/obj/effect/spawner/bundle/f13/armor/vault,
+		/obj/item/clothing/suit/armor/heavy/metal/reinforced,
+		/obj/item/clothing/head/helmet/f13/metalmask/mk2,
+		/obj/item/clothing/head/helmet/f13/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat/swat,
+		/obj/item/clothing/suit/armor/medium/combat,
+		/obj/item/clothing/head/helmet/f13/combat,
+		/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
+		/obj/item/clothing/head/helmet/alt,
+		/obj/item/clothing/suit/armor/heavy/metal/sulphite,
+		/obj/item/clothing/head/helmet/f13/sulphitehelm,
+		/obj/item/clothing/suit/armor/medium/vest/bulletproof/big,
+		/obj/item/clothing/head/helmet/riot/vaultsec,
 		/obj/item/clothing/suit/armor/medium/raider/slam,
 		/obj/item/clothing/suit/armor/medium/raider/rebel,
 		/obj/item/clothing/suit/armor/medium/raider/slam,
@@ -299,7 +331,8 @@
 		/obj/item/clothing/suit/armor/medium/combat/mk2/raider,
 		/obj/item/clothing/head/helmet/f13/raider/wastehound,
 		/obj/item/clothing/head/helmet/f13/raidermetal,
-		/obj/effect/spawner/bundle/f13/armor/combat/dark,
+		/obj/item/clothing/suit/armor/medium/combat/dark,
+		/obj/item/clothing/head/helmet/f13/combat/dark,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris,
 		/obj/item/clothing/suit/armor/medium/odstcqb,
 	)
@@ -581,6 +614,8 @@
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
+						/obj/item/gun/ballistic/shotgun/toy,
+						/obj/item/gun/ballistic/automatic/toy,
 	)
 
 
@@ -642,7 +677,7 @@
 )
 
 /datum/export/item/nightstalkerpelt
-	cost = 200 
+	cost = 200
 	unit_name = "nightstalker pelt"
 	export_types = list(/obj/item/clothing/head/f13/stalkerpelt,
 	)
@@ -697,6 +732,31 @@
 	/obj/item/melee/smith/twohand/spear/trident,
 	/obj/item/melee/smith/javelin,
 	/obj/item/melee/smith/throwingknife,
+	)
+
+/datum/export/item/nucrate // Hopefully this one works
+	cost = 200
+	k_elasticity = 0
+	unit_name = "crate"
+	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
+
+/datum/export/item/lowartifact
+	cost = 5000
+	unit_name = "common artifact"
+	export_types = list(/obj/item/artifact/common,
+	)
+
+/datum/export/item/highartifact
+	cost = 15000
+	unit_name = "rare artifact"
+	export_types = list(/obj/item/artifact/rare,
+	)
+
+/datum/export/item/midartifact
+	cost = 10000
+	unit_name = "uncommon artifact"
+	export_types = list(/obj/item/artifact/uncommon,
 	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */

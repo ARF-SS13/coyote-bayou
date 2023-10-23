@@ -510,7 +510,7 @@
 	R.fields["features"] = dna.features
 	R.fields["factions"] = mob_occupant.faction
 	R.fields["quirks"] = list()
-	for(var/V in mob_occupant.roundstart_quirks)
+	for(var/V in mob_occupant.mob_quirks)
 		var/datum/quirk/T = V
 		R.fields["quirks"][T.type] = T.clone_data()
 
@@ -583,7 +583,7 @@
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
 	if(!experimental)
-		if(mob_occupant.suiciding || mob_occupant.hellbound)
+		if(mob_occupant.hellbound)
 			scantemp = "<font class='bad'>Subject's brain is not responding to scanning stimuli.</font>"
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return

@@ -24,14 +24,15 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
 	result = /obj/item/pressure_plate
 	time = 5
 	reqs = list(/obj/item/stack/sheet/metal = 1,
-				  /obj/item/stack/tile/plasteel = 1,
-				  /obj/item/stack/cable_coil = 2,
-				  /obj/item/assembly/igniter = 1)
+				/obj/item/stack/tile/plasteel = 1,
+				/obj/item/stack/cable_coil = 2,
+				/obj/item/assembly/igniter = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -111,9 +112,9 @@
 	result = /obj/item/pressure_plate
 	time = 5
 	reqs = list(/obj/item/stack/sheet/metal = 1,
-				  /obj/item/stack/tile/plasteel = 1,
-				  /obj/item/stack/cable_coil = 2,
-				  /obj/item/assembly/igniter = 1)
+				/obj/item/stack/tile/plasteel = 1,
+				/obj/item/stack/cable_coil = 2,
+				/obj/item/assembly/igniter = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
@@ -157,6 +158,16 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/television
+	name = "Pre-War Television"
+	result = /obj/structure/junk/small/prewartv
+	reqs = list(/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/metal = 5)
+	time = 30
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/stove
 	name = "Cook stove"
 	result = /obj/machinery/microwave/stove
@@ -170,6 +181,7 @@
 	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 /datum/crafting_recipe/bellystove
 	name = "Pot belly stove"
 	result = /obj/structure/campfire/stove

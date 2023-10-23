@@ -1198,7 +1198,8 @@
 		/datum/crafting_recipe/redambrosia,
 		/datum/crafting_recipe/blueambrosia,
 		/datum/crafting_recipe/greenambrosia,
-		/datum/crafting_recipe/warmace)
+		/datum/crafting_recipe/warmace,
+		/datum/crafting_recipe/horsecream_good)
 
 /obj/item/book/granter/trait/tribaltraditions
 	name = "Tribal Traditions Booklet"
@@ -1218,7 +1219,7 @@
 
 			if("White Legs traditions")
 				traitname = "White Legs traditions"
-				granted_trait = TRAIT_WHITELEGS_TRAD
+				granted_trait = TRAIT_TRIBAL_TRAD
 				crafting_recipe_types = list(
 					/datum/crafting_recipe/tribalwar/whitelegs/lightarmour,
 					/datum/crafting_recipe/tribalwar/whitelegs/armour,
@@ -1389,5 +1390,5 @@
 		/datum/crafting_recipe/tommygun,
 		/datum/crafting_recipe/m1911,
 		/datum/crafting_recipe/policebaton,
-		/datum/crafting_recipe/bowman,
-		/datum/crafting_recipe/radiokeyresponder)
+		/*/datum/crafting_recipe/bowman,
+		/datum/crafting_recipe/radiokeyresponder*/)

@@ -3,6 +3,7 @@
 	desc = "A low-capacity, energy-based stun gun used by security teams to subdue targets at range."
 	icon_state = "taser"
 	item_state = null	//so the human update icon uses the icon_state instead.
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_NORMAL

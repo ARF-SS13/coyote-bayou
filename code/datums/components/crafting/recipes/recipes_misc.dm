@@ -721,3 +721,200 @@
 	time = 10
 	category = CAT_MISC
 	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/flare
+	name = "Flare"
+	result = /obj/item/flashlight/flare
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/datum/reagent/fuel = 5)
+	tools = list(TOOL_WRENCH)
+	time = 30
+	category = CAT_MISC
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/devils_toothpick
+	name = "The Devils Toothipick"
+	result = /obj/item/instrument/violin/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/violin = 1,
+				/obj/item/stack/sheet/animalhide/deathclaw = 1,
+				/obj/item/reagent_containers/food/snacks/grown/horsenettle =1
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/soultar
+	name = "The Keytar to the Soul"
+	result = /obj/item/instrument/piano_synth/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/piano_synth = 1,
+				/obj/item/scrying = 1,
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/soultar
+	name = "The Keytar to the Soul"
+	result = /obj/item/instrument/piano_synth/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/piano_synth = 1,
+				/obj/item/scrying = 1,
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/donkeyho
+	name = "Donkey Ho-Tay's Bane"
+	result = /obj/item/instrument/guitar/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/guitar = 1,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 15,
+				/datum/chemical_reaction/wastetequila = 1
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/mrboneswr
+	name = "Mr. Bones Wild Ride"
+	result = /obj/item/instrument/glockenspiel/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/glockenspiel = 1,
+				/obj/item/stack/sheet/bone = 100,
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/accordiondlove
+	name = "Accordion D'love"
+	result = /obj/item/instrument/accordion/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/accordion = 1,
+				/obj/item/reagent_containers/food/snacks/meatballspaghetti = 1,
+				/obj/item/toy/plush/mammal/wolf/blue = 2
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/dooter
+	name = "The Dooter"
+	result = /obj/item/instrument/trumpet/spectral
+	time = 300
+	reqs = list(
+				/obj/item/instrument/trumpet = 1,
+				/obj/item/stack/sheet/bone = 800,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/sweetlovin
+	name = "Sweet Lovin'"
+	result = /obj/item/instrument/saxophone/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/saxophone = 1,
+				/obj/item/clothing/mask/cigarette/cigar/havana = 10,
+				/obj/item/phone = 1
+				)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/rip/trom_bone
+	name = "Trom-Bone"
+	result = /obj/item/instrument/trombone/spectral
+	time = 300
+	reqs = list(
+				/obj/item/instrument/trumpet = 1,
+				/obj/item/stack/sheet/bone = 800,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+
+/datum/crafting_recipe/rip/fingerlicker
+	name = "Finger licker"
+	result = /obj/item/instrument/banjo/upgraded
+	time = 300
+	reqs = list(
+				/obj/item/instrument/banjo = 1,
+				/obj/item/reagent_containers/food/snacks/burger/chicken = 5,
+				/obj/item/reagent_containers/food/condiment/pack/bbqsauce = 10
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+//Lunchboxes
+
+/datum/crafting_recipe/lunchbox
+	name = "Rainbow lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/hearts
+	name = "Hearts lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/hearts
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/cat
+	name = "Cat lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/cat
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/nano
+	name = "Blue lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/nano
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/uni
+	name = "University lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/uni
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/teal
+	name = "Teal lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/teal
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/diona
+	name = "Diona lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/diona
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/lunchbox/black
+	name = "Black lunchbox"
+	result = /obj/item/storage/bag/plants/lunchbox/black
+	time = 100
+	reqs = list(
+				/obj/item/stack/sheet/metal = 2,
+				)
+	subcategory = CAT_MISCELLANEOUS

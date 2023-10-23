@@ -91,6 +91,16 @@
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
+
+	//-->Pacifism Lesser Trait, most important section of it
+	if(iscarbon(M))
+		if(iscarbon(user))  //is our firer a carbon that can have traits?
+			var/mob/living/carbon/C = M
+			if(HAS_TRAIT(user, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the user actually has the PACIFISM_LESSER trait? And is the target sapient?
+				trait_pacifism_lesser_consequences(user)
+				return FALSE
+	//<--
+
 	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
@@ -116,9 +126,9 @@
 			force_modifier = (-force * 0.8) // You do 20% damage because of fear
 		else
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-				force_modifier += 8
+				force_modifier += 10
 			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-				force_modifier += 4
+				force_modifier += 5
 			if(HAS_TRAIT(user, TRAIT_GENTLE))
 				force_modifier += -5
 			if(HAS_TRAIT(user, TRAIT_WIMPY))

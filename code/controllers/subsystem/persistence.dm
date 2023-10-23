@@ -498,8 +498,8 @@ SUBSYSTEM_DEF(persistence)
 	saved_storytellers.len = 3
 	saved_storytellers[3] = saved_storytellers[2]
 	saved_storytellers[2] = saved_storytellers[1]
-	saved_storytellers[1] = mode.storyteller.name
-	average_dynamic_threat = (mode.threat_average + average_dynamic_threat) / 2
+	//saved_storytellers[1] = mode.storyteller.name
+	//average_dynamic_threat = (mode.threat_average + average_dynamic_threat) / 2
 	var/json_file = file("data/RecentStorytellers.json")
 	var/list/file_data = list()
 	file_data["data"] = saved_storytellers + average_dynamic_threat
@@ -510,9 +510,9 @@ SUBSYSTEM_DEF(persistence)
 	saved_dynamic_rules[3] = saved_dynamic_rules[2]
 	saved_dynamic_rules[2] = saved_dynamic_rules[1]
 	saved_dynamic_rules[1] = list()
-	for(var/r in mode.executed_rules)
-		var/datum/dynamic_ruleset/rule = r
-		saved_dynamic_rules[1] += rule.config_tag
+	// for(var/r in mode.executed_rules)
+	// 	var/datum/dynamic_ruleset/rule = r
+	// 	saved_dynamic_rules[1] += rule.config_tag
 	var/json_file = file("data/RecentRulesets.json")
 	var/list/file_data = list()
 	file_data["data"] = saved_dynamic_rules

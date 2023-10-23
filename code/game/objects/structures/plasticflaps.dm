@@ -19,9 +19,9 @@
 /obj/structure/plasticflaps/examine(mob/user)
 	. = ..()
 	if(anchored)
-		. += "<span class='notice'>[src] are <b>screwed</b> to the floor.</span>"
+		. += span_notice("[src] are <b>screwed</b> to the floor.")
 	else
-		. += "<span class='notice'>[src] are no longer <i>screwed</i> to the floor, and the flaps can be <b>cut</b> apart.</span>"
+		. += span_notice("[src] are no longer <i>screwed</i> to the floor, and the flaps can be <b>cut</b> apart.")
 
 /obj/structure/plasticflaps/screwdriver_act(mob/living/user, obj/item/W)
 	if(..())
@@ -56,18 +56,15 @@
 		return FALSE
 	return TRUE
 
-/obj/structure/plasticflaps/CanAStarPass(ID, to_dir, caller)
+/obj/structure/plasticflaps/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
 	if(isliving(caller))
 		if(isbot(caller))
-			return 1
+			return TRUE
 
-		var/mob/living/M = caller
-		if(!M.ventcrawler && M.mob_size != MOB_SIZE_TINY)
-			return 0
-	var/atom/movable/M = caller
-	if(M && M.pulling)
-		return CanAStarPass(ID, to_dir, M.pulling)
-	return 1 //diseases, stings, etc can pass
+		// var/mob/living/living_caller = caller
+		// var/ventcrawler = HAS_TRAIT(living_caller, TRAIT_VENTCRAWLER_ALWAYS) || HAS_TRAIT(living_caller, TRAIT_VENTCRAWLER_NUDE)
+		// if(!ventcrawler && living_caller.mob_size != MOB_SIZE_TINY)
+
 
 /obj/structure/plasticflaps/CanAllowThrough(atom/movable/A, border_dir)
 	if(istype(A) && (A.pass_flags & PASSGLASS))

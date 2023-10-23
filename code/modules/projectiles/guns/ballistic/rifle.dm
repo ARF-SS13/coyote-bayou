@@ -102,6 +102,70 @@
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 /* * * * * * * * * * * * * * * *
+* .22LR Lever Action Rifle
+* 20 round capacity
+* My hands are stupid and I must game
+* 我的社會信用太低所以我不能離開家
+* Its In .22 I Don't Know What Else I Can Put Here
+* * * * * * * * * * * * * * * * * */
+/obj/item/gun/ballistic/rifle/repeater/trainer
+	name = "Training Repeater"
+	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
+	icon_state = "lever22" // Placeholder
+	item_state = "lever22"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	cock_delay = GUN_COCK_RIFLE_BASE // Either this does nothing or it only affects bolt workers click to cock. 
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
+	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_long" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 29
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+
+/* * * * * * * * * * * * * * * *
+* .22LR Mares Leg
+* 10 round capacity
+* For when you need to be a badass on a budget
+* 我的太空站上有一個人不誠實地透露自己的真實身分和意圖
+* Its In .22 I Don't Know What Else I Can Put Here
+* * * * * * * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/repeater/trainerator
+	name = ".22 Mares Leg"
+	desc = "A lever action rifle chambered in .22LR. This one has been cut down crudely, and probably named something like The Filly Buster because you're not just the peak of comedy, you're the whole damn circus and the laugh track, too."
+	icon_state = "lever22short" // Placeholder
+	item_state = "lever22short"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
+	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // It'd be rpetty stupid if it did less damage than the snubnose .22 revolver that is a tiny sized thing
+	init_recoil = CARBINE_RECOIL(1, 0.8)
+	can_scope = TRUE
+	scope_state = "scope_short" // Scope sprites currently don't work unfortunately, and fixing it is probably a low priority
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 21 // FIRST TRY BAYEEEEEEE
+	suppressor_y_offset = 23
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+
+/* * * * * * * * * * * * * * * *
 * Volcanic pistol
 * -6 round capacity
 * + Slightly better than the .45 ACP base damage
@@ -129,27 +193,6 @@
 		/datum/firemode/semi_auto/slow
 	)
 	reskinnable_component = /datum/component/reskinnable/volcanic
-
-
-/obj/item/gun/ballistic/rifle/repeater/customvolcanictox
-	name = "Engraved Volcanic Pistol"
-	desc = "A engraved Volcanic pistol. This pistol has an ivory grip with gold plating. The lever itself was modified to allow it to be cocked by a single hand while. The gun's reciever is engraved with a baroque style portrait of a moth and feline."
-	icon_state = "customvolcanic"
-	item_state = "goldengun"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/volcanic
-	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL (1.2 , 1.2)
-	can_suppress = FALSE
-	can_scope = TRUE
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
-	)
 
 /* * * * * * * * * * *
  * Coyote Repeater
@@ -492,6 +535,39 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+/obj/item/gun/ballistic/rifle/mosin/mini
+	name = "Mini-mosin"
+	desc = "A tiny replica of a classic russian rifle. the stock barely fits your shoulder!"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/twentytwo
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
+/obj/item/gun/ballistic/rifle/mosin/mini/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
+
+/* * * * * * * * * * *
+ * Laser Mosin Bolt-Action Rifle
+ * Moist Bolt-Action Laser
+ * Laser Musket Cell
+ * Can bayonet
+ * Rare
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/mosin/laserbubba
+	name = "Modified Mosin-Nagant"
+	desc = "An ancient bolt-action rifle modified to accept, and fire, energy cells in semi-automatic style. The worksmanship is as impressive as it is vile."
+	icon_state = "mosin-energy"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+
+
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
  * Quick Bolt-Action Rifle
@@ -575,7 +651,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // will see if it's too much
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // will see if it's too much // It seems T5 was too much
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -593,6 +669,45 @@
 	)
 	reskinnable_component = /datum/component/reskinnable/gras
 
+/obj/item/gun/ballistic/rifle/antique/gross
+	name = "sawed off Gras"
+	desc = "A very old black powder cartridge gun of French lineage. Unfortunately, it evidently did not survive its journey here."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "gross"
+	item_state = "308-sawn"
+	mag_type = /obj/item/ammo_box/magazine/internal/gras
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // T1 or T0 just make it a downgrade to the sawed off hunting rifle
+	init_recoil = RIFLE_RECOIL(3, 2) // Say goodbye your to kneecaps chucklenuts
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO // There ain't no got dang sights
+	can_scope = TRUE
+	scope_state = "scope_mosin"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = FALSE
+	cock_sound = 'sound/f13weapons/grasbolt.ogg'
+	fire_sound = 'sound/f13weapons/gras.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/gun/ballistic/rifle/antique/gross/marty
+	name = "sawed off Martini Henry"
+	desc = "The shortened version of the shortened version of Henry Martin's 'Kilometer Gun'. Considerably more portable."
+	icon = 'modular_coyote/icons/objects/rifles.dmi'
+	icon_state = "marty"
+
+/obj/item/gun/ballistic/rifle/antique/gras/laserfusil
+	name = "Fusil Energie"
+	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long? Someone tore out it's internals and built a laser musket into it."
+	icon_state = "madsenm47FE"
+	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 /* * * * * * * * * * *
  * Salvaged Eastern Rifle
  * Fixed-mag semi-auto rifle
@@ -609,14 +724,16 @@
 		and barrel capable of using both 5mm and 5.56mm rifle ammunition with reasonable success. \
 		The magazine is welded to the frame, and the loading port angled <i>just enough</i> to make stripper clips not work. \
 		Apparently these 'features' to the design, being on every instance of this gun."
-	icon = 'modular_coyote/icons/objects/churroguns.dmi'
-	icon_state = "salvaged_eastern_rifle"
-	item_state = "marksman"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "salvak"
+	item_state = "salvak"
 	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	init_recoil = RIFLE_RECOIL(1, 0.5)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow

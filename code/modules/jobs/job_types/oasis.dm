@@ -155,8 +155,8 @@ Mayor
 	title = "Councilperson"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "your constituents, your greed, and realpolitik"
 	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place on the Parliamentary Council of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, and just maybe they'll vote you back in...or won't, you know, toss you into the moat."
 	enforces = "You serve as the de-facto leader of Nash with your co-Council, if another is awake."
@@ -813,6 +813,7 @@ Mayor
 	//	/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/pda = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
@@ -900,6 +901,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools,
 		///obj/item/melee/onehanded/knife/hunting = 1 //you already got a knife
 		)
@@ -1123,6 +1125,7 @@ Mayor
 		/obj/item/toy/crayon/white=1,
 		/obj/item/detective_scanner=1,
 		/obj/item/storage/box/gloves=1,
+		/obj/item/pda = 1,
 		/obj/item/storage/box/evidence=1)
 		///obj/item/ammo_box/a357=2)
 
@@ -1162,6 +1165,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/banker = 1)
 
 /datum/outfit/loadout/classy
@@ -1206,6 +1210,63 @@ Mayor
 		///obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1
 		)
 /*--------------------------------------------------------------*/
+
+//Nash Curator
+
+/datum/job/oasis/nashcurator
+	title = "Nash Librarian"
+	flag = NASHCURATOR
+	department_flag = DEP_OASIS
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Nash's laws"
+	description = "You are a Curator for the library of Nash. Assist people with writing books, be a journalist, stock the shelves."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/job/den/nashcurator
+	access = list(ACCESS_BAR)
+	minimal_access = list(ACCESS_BAR)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis
+		)
+	)
+
+/datum/outfit/job/den/nashcurator
+	name = "Nash Librarian"
+	jobtype = /datum/job/oasis/nashcurator
+	belt = /obj/item/kit_spawner/townie
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/wallet/stash/mid = 1,
+		/obj/item/folder/white = 1,
+		/obj/item/pda = 1,
+		/obj/item/pen/fountain/captain,
+		/obj/item/kit_spawner/tools,
+		/obj/item/export_scanner,
+		/obj/item/key/displaycase,
+		)
+
+/datum/outfit/job/den/nashcurator/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
 
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
@@ -1349,6 +1410,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/pill_bottle/chem_tin/radx)
 
 /datum/outfit/loadout/energy_specialist
@@ -1451,6 +1513,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/pda = 1,
 		/obj/item/kit_spawner/follower/guard,
 		)
 

@@ -23,10 +23,6 @@
 	var/punched_state
 	var/list/files = list()
 
-/obj/item/card/suicide_act(mob/living/carbon/user)
-	user.visible_message(span_suicide("[user] begins to swipe [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
-	return BRUTELOSS
-
 /obj/item/card/ComponentInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
@@ -137,10 +133,10 @@
 
 /obj/item/card/emag/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It has <b>[uses ? uses : "no"]</b> charges left.</span>"
+	. += span_notice("It has <b>[uses ? uses : "no"]</b> charges left.")
 
 /obj/item/card/id/examine_more(mob/user)
-	var/list/msg = list("<span class='notice'><i>You examine [src] closer, and note the following...</i></span>")
+	var/list/msg = list(span_notice("<i>You examine [src] closer, and note the following...</i>"))
 
 	if(mining_points)
 		msg += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
@@ -245,6 +241,7 @@
 	if(my_store)
 		my_store.my_card = null
 		my_store = null
+	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_GOD)
 	return ..()
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
@@ -674,7 +671,7 @@
 /obj/item/card/id/prisoner/examine(mob/user)
 	. = ..()
 	if(sentence && world.time < sentence)
-		. += "<span class='notice'>You're currently serving a sentence for [crime]. <b>[DisplayTimeText(sentence - world.time)]</b> left.</span>"
+		. += span_notice("You're currently serving a sentence for [crime]. <b>[DisplayTimeText(sentence - world.time)]</b> left.")
 	else if(goal)
 		. += span_notice("You have accumulated [points] out of the [goal] points you need for freedom.")
 	else if(!sentence)

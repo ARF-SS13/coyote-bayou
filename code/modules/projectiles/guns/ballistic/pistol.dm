@@ -64,6 +64,35 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+/* * * * * * * *
+* Derringers
+* Usually compact and easy to use.
+* * * * * * * * */
+/obj/item/gun/ballistic/automatic/pistol/derringercustom
+	name = "Custom engraved derringer"
+	desc = "A custom and engraved, albeit desert eagle sized, derringer. With 14mm in mind, four barrels, and modern mechanisms, it's a gun fit for the luxurious bunch. Enscribed on the top right barrel is the name 'Roses are forever'. It bears baroque like motifs around the barrels and reciever while also having a pearl ivory grip."
+	icon_state = "customderringer"
+	item_state = "customderringer"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.7,1.7)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	can_bayonet = FALSE
+
+
+
+
 /* * * * * * * * * * *
  * Browning Hi-Power
  * Baseline Light pistol
@@ -148,7 +177,11 @@
 	name = "9mm Borchardt"
 	desc = "The first mass produced semiautomatic pistol, designed before doublestack magazines existed."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
-	icon_state = "borchardt"
+	icon_state = "c93"
+	item_state = "p38"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
@@ -158,7 +191,11 @@
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
 	name = "9mm Luger"
 	desc = "A classy german 9mm pistol, which takes single stack magazines."
-	icon_state = "luger"
+	icon_state = "p08"
+	item_state = "p38"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 //9mm coldwar-modern sidearms. Same as the browning hipower pistol
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
@@ -166,6 +203,9 @@
 	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
 	icon_state = "glock"
 	item_state = "glock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	reskinnable_component = /datum/component/reskinnable/glock
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
@@ -173,6 +213,9 @@
 	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
 	icon_state = "plock"
 	item_state = "plock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /* * * * * * * * * * *
  * Maria
@@ -219,6 +262,8 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
+
+	reskinnable_component = /datum/component/reskinnable/beretta9
 
 //9mm carbine: pistol capacity, but two shot burst. needs suppressor set correctly
 /obj/item/gun/ballistic/automatic/pistol/beretta/carbine
@@ -430,26 +475,18 @@
 		/datum/firemode/semi_auto/fast
 	)
 
-//automatic 9mm, compact and high performance
-/obj/item/gun/ballistic/automatic/pistol/type17/c96auto
-	name = "Mauser M712"
-	desc = "A late model of the classic Mauser C96, featuring a removable box magazine and automatic fire select. takes 20 round stick magazines."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "c96"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/fast
-	)
+
 
 // Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
-/obj/item/gun/ballistic/automatic/pistol/type17/c96auto/tox
+/obj/item/gun/ballistic/automatic/pistol/type17/tox
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
+	init_mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
+	mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Sig P220
@@ -463,7 +500,8 @@
 /obj/item/gun/ballistic/automatic/pistol/sig //wiggles
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
-	icon_state = "sig"
+	icon_state = "newsig"
+	item_state = "gun"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -478,6 +516,9 @@
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/sig/trusty //wiggles x 2
 	name = "Trusty Sig P220"
@@ -769,12 +810,12 @@
 	item_state = "uniquedeag"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
-	init_recoil = LMG_RECOIL (2, 2)
+	init_recoil = HMG_RECOIL (8, 8)
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
-	/datum/firemode/automatic/rpm150
+	/datum/firemode/automatic/rpm300
 	)
 	can_suppress = FALSE
 	can_scope = FALSE
@@ -849,7 +890,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower

@@ -34,7 +34,7 @@
 	desc = "This weapon makes a continual and quiet hum, even when the power cell is removed. Written on the side is 'Type III Pulse Projector,' whatever that means."
 	icon_state = "tesla"
 	item_state = "tesla"
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp // ECP has 20,000 charge, shot drain is 2000. This gives it 10 shots vs a rifle's 15.
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = HANDGUN_RECOIL(1.5, 1.5)

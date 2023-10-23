@@ -13,7 +13,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 	flags_1 |= INITIALIZED_1
 	tag = "mob_[next_mob_id++]"
-	GLOB.mob_list += src
+	add_to_mob_list()
 
 	prepare_huds()
 
@@ -83,7 +83,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	var/client/C = client
 	to_chat(C, span_notice("Sending you to [pick]."))
-	new /obj/screen/splash(C)
+	new /atom/movable/screen/splash(C)
 
 	mob_transforming = TRUE
 	sleep(29)	//let the animation play

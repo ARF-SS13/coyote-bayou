@@ -50,12 +50,6 @@
 	icon_state = "soapsyndie"
 	cleanspeed = 10 //much faster than mop so it is useful for traitors who want to clean crime scenes
 
-/obj/item/soap/suicide_act(mob/user)
-	user.say(";FFFFFFFFFFFFFFFFUUUUUUUDGE!!", forced="soap suicide")
-	user.visible_message(span_suicide("[user] lifts [src] to [user.p_their()] mouth and gnaws on it furiously, producing a thick froth! [user.p_they(TRUE)]'ll never get that BB gun now!"))
-	new /obj/effect/particle_effect/foam(loc)
-	return (TOXLOSS)
-
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !check_allowed_items(target))
@@ -118,11 +112,6 @@
 /obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, moodlet, /datum/mood_event/honk)
 	return ..()
-
-/obj/item/bikehorn/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] solemnly points the horn at [user.p_their()] temple! It looks like [user.p_theyre()] trying to commit suicide!"))
-	playsound(src, pickweight(honksounds), 50, 1)
-	return (BRUTELOSS)
 
 /obj/item/bikehorn/silver
 	name = "silver bike horn"

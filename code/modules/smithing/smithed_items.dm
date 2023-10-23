@@ -66,6 +66,8 @@
 
 /obj/item/ingot/titanium
 	custom_materials = list(/datum/material/titanium=12000)
+	name = "titanium ingot"
+	material_flags = MATERIAL_COLOR
 
 /obj/item/ingot/mythril
 	custom_materials = list(/datum/material/mythril=12000)
@@ -85,7 +87,6 @@
 
 /obj/item/ingot/bronze
 	custom_materials = list(/datum/material/bronze=12000)
-	name = "black bronze"
 
 /obj/item/ingot/ratvar
 	custom_materials = list(/datum/material/brass=12000)
@@ -304,7 +305,7 @@
 	var/obj/item/pickaxe/smithed/finalforreal = new /obj/item/pickaxe/smithed(src)
 	finalforreal.force += quality/2
 	finalforreal.toolspeed = 0.1
-	finalforreal.digrange = 4
+	finalforreal.digrange = 2
 	finalitem = finalforreal
 	..()
 
@@ -692,6 +693,38 @@
 
 /obj/item/smithing/bowieblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/dagger/bowie(src)
+	finalitem.force += 5
+	..()
+
+/obj/item/smithing/unarmed/knuckles
+	name = "duster lump"
+	icon_state = "knuckles_smith"
+	finishingitem = /obj/item/stack/sheet/leatherstrips
+	finalitem = /obj/item/melee/smith/unarmed/knuckles
+
+/obj/item/smithing/unarmed/knuckles/startfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/knuckles(src)
+//	finalitem.force += quality*1.5
+	..()
+
+/obj/item/smithing/unarmed/knuckles/startmasterworkfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/knuckles(src)
+	finalitem.force += 5
+	..()
+
+/obj/item/smithing/unarmed/claws
+	name = "sharp prongs"
+	icon_state = "claws_smith"
+	finishingitem = /obj/item/stack/sheet/leatherstrips
+	finalitem = /obj/item/melee/smith/unarmed/claws
+
+/obj/item/smithing/unarmed/claws/startfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/claws(src)
+//	finalitem.force += quality*1.5
+	..()
+
+/obj/item/smithing/unarmed/claws/startmasterworkfinish()
+	finalitem = new /obj/item/melee/smith/unarmed/claws(src)
 	finalitem.force += 5
 	..()
 

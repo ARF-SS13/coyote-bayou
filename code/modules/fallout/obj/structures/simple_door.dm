@@ -18,8 +18,11 @@
 	anchored = TRUE
 	layer = CLOSED_DOOR_LAYER
 	explosion_block = 0.5
-	var/can_hold_padlock = FALSE
+	var/can_have_lock = FALSE
 	var/obj/item/lock_construct/padlock
+	var/obj/item/lock_bolt/deadbolt
+	/// Set one that fits the type of door. Default is for a french-style door that opens from the middle.
+	var/deadbolt_overlay = "deadbolt"
 	var/door_type = "house"
 	var/base_opacity = TRUE
 	var/manual_opened = 0
@@ -48,11 +51,29 @@
 	if(padlock)
 		padlock.forceMove(get_turf(src))
 		padlock = null
+	if(deadbolt)
+		deadbolt.forceMove(get_turf(src))
+		deadbolt = null
 	//fortuna edit
 	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
 	//message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
+
+/obj/structure/simple_door/examine(mob/user)
+	. = ..()
+	if(deadbolt)
+		. += span_notice("Alt-Click [src] from \the [dir2text(deadbolt.dir)] to use the bolt lock.")
+
+/obj/structure/simple_door/AltClick(mob/user)
+	. = ..()
+	if(deadbolt && isliving(user) && Adjacent(user) && !user.incapacitated())
+		if(get_dir(src,user) != deadbolt.dir)
+			to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
+		else
+			deadbolt.ToggleLock(user)
+			do_squish(0.9,0.9,0.25 SECONDS)
+			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
@@ -72,8 +93,14 @@
 	. = ..()
 	apply_opacity_to_my_turfs(new_opacity)
 
+/obj/structure/simple_door/proc/HasLock()
+	if(padlock || deadbolt)
+		return TRUE
+	return FALSE
+
+//Padlocks
 /obj/structure/simple_door/proc/attach_padlock(obj/item/lock_construct/P, force = FALSE, mob/user)
-	if(!force && (!can_hold_padlock || !P ))
+	if(!force && (!can_have_lock || !P ))
 		return FALSE
 	if(padlock)
 		to_chat(user, "[src] already has \a [padlock] attached")
@@ -93,6 +120,35 @@
 	padlock = null
 	cut_overlay("[initial(icon_state)]_padlock")
 
+//Deadbolts
+/obj/structure/simple_door/proc/attach_deadbolt(obj/item/lock_bolt/L, force = FALSE, mob/user, mapload)
+	if(!force && (!can_have_lock || !L ))
+		return FALSE
+	if(deadbolt)
+		to_chat(user, "[src] already has \a [deadbolt] attached")
+		return FALSE
+	if(padlock?.locked)
+		to_chat(user, span_warning("Unlock \the [padlock] before installing a bolt lock."))//Prevents grief, mostly.
+		return FALSE
+	if(mapload)
+		L.forceMove(src)
+		deadbolt = L
+		if(density)
+			add_overlay(deadbolt_overlay)
+	else if(user.transferItemToLoc(L, src))
+		L.dir = get_dir(src,user)
+		user.visible_message(span_notice("[user] adds [L] to [src]."),span_notice("You add [L] to [src]. It can only be manipulated from \the [dir2text(L.dir)]"))
+		deadbolt = L
+		if(density)
+			add_overlay(deadbolt_overlay)
+/// Moves the deadbolt to the turf of the door, sets the door's deadbolt to null, and cuts the deadbolt overlay/
+/obj/structure/simple_door/proc/remove_deadbolt(force = FALSE)
+	if(!force && (!deadbolt))
+		return FALSE
+	deadbolt.forceMove(get_turf(src))
+	deadbolt = null
+	cut_overlay(deadbolt_overlay)
+
 //Very useful proc we have here, excellent work on that one
 /obj/structure/simple_door/bullet_act(obj/item/projectile/Proj)
 	..()
@@ -110,6 +166,8 @@
 	playsound(src.loc, open_sound, 30, 0, 0)
 	if(padlock)
 		cut_overlay("[initial(icon_state)]_padlock")
+	if(deadbolt)
+		cut_overlay(deadbolt_overlay)
 	if(animate)
 		moving = 1
 		flick("[door_type]opening", src)
@@ -131,6 +189,8 @@
 	set_opacity(base_opacity)
 	if(padlock)
 		add_overlay("[initial(icon_state)]_padlock")
+	if(deadbolt)
+		add_overlay(deadbolt_overlay)
 	density = 1
 	moving = 0
 	layer = CLOSED_DOOR_LAYER
@@ -142,19 +202,24 @@
 			remove_padlock()
 			padlock = null
 			src.desc = "[initial(desc)]"
+			cut_overlay("[initial(icon_state)]_padlock")
+	else if(deadbolt)
+		if(deadbolt.pry_off(user,src))
+			if(deadbolt.mapped)
+				message_admins("Mapped in deadbolt [ADMIN_JMP(deadbolt)] removed at [AREACOORD(src)] by [user.real_name][ADMIN_PP(user)].")
+			remove_deadbolt()
+			deadbolt = null
+			cut_overlay(deadbolt_overlay)
 	return
 
 /obj/structure/simple_door/proc/SwitchState(animate)
 	if(density)
-		if(padlock)
-			if(!padlock.locked)
-				Open(animate)
-			else
-				playsound(src.loc, pick('sound/f13items/door_knock1.wav', 'sound/f13items/door_knock2.wav', 'sound/f13items/door_knock3.wav', 'sound/f13items/door_knock4.wav'), 80, 0, 0)
-
-		else
+		var/padlocked = padlock?.locked
+		var/boltlocked = deadbolt?.locked
+		if(!padlocked && !boltlocked)
 			Open(animate)
-
+		else //One of the lock types on this door is locked
+			playsound(src.loc, pick('sound/f13items/door_knock1.wav', 'sound/f13items/door_knock2.wav', 'sound/f13items/door_knock3.wav', 'sound/f13items/door_knock4.wav'), 80, 0, 0)
 	else
 		var/turf/T = get_turf(src)
 		for(var/mob/living/L in T)
@@ -171,8 +236,8 @@
 			P.attackby(I, user, params)
 			return TRUE
 	if(istype(I, /obj/item/screwdriver))
-		if(padlock)
-			to_chat(user, span_warning("Remove padlock before door dissasembling."))
+		if(HasLock())
+			to_chat(user, span_warning("Remove all locks before door dissasembling."))
 			return 1
 		else
 			if(can_disasemble && do_after(user, 60, target = src))
@@ -182,43 +247,21 @@
 				playsound(loc, 'sound/items/Screwdriver.ogg', 25, -3)
 				qdel(src)
 				return 1
-/*	if(istype(I, /obj/item/storage/keys_set))
-		var/obj/item/storage/keys_set/S = I
-		if(padlock)
-			var/obj/item/key/K = S.get_key_with_id(padlock.id)
-			if(istype(K))
-				I = K
-		if(istype(user.get_inactive_held_item(), /obj/item/lock))
-			var/obj/item/lock/L = user.get_inactive_held_item()
-			var/obj/item/key/K = S.get_key_with_id(L.id)
-			if(istype(K))
-				I = K
-				*/
-				//I'll deal with that shit later -harcourt
-	if(istype(I, /obj/item/lock_construct) && can_hold_padlock)
+	if(istype(I, /obj/item/lock_construct) && can_have_lock)
 		if(attach_padlock(I,FALSE,user))
 			return TRUE//Don't open the door when we add a padlock
-		/*
-		if(padlock)
-			to_chat(user, "[src] already has \a [padlock] attached")
-			return
-		else
-			if(user.transferItemToLoc(I, src))
-				user.visible_message(span_notice("[user] adds [I] to [src]."), \
-								span_notice("You add [I] to [src]."))
-				if (istype(I, /obj/item/lock_construct))
-					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
-				padlock = I
-		*/
+		else return FALSE//Don't knock on the door if we fail to put the lock on.
+	if(istype(I, /obj/item/lock_bolt) && can_have_lock)
+		if(attach_deadbolt(I,FALSE,user,FALSE))
+			return TRUE//Don't open the door when we add a padlock
+		else return FALSE//Don't knock on the door if we fail to put the lock on.
 	if(istype(I, /obj/item/key))
 		if(!padlock)
 			to_chat(user, "[src] has no lock attached")
 			return
 		else
-			return padlock.check_key(I,user)
+			return padlock.check_key(I,user,src)
 	if(user.a_intent == INTENT_HARM)
-//		if(padlock)
-//			add_logs(user, src, "attacked", src)
 		return ..()
 	attack_hand(user)
 
@@ -287,7 +330,7 @@
 	icon_state = "house"
 	door_type = "house"
 	can_disasemble = TRUE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 // cleaned and repainted white
 /obj/structure/simple_door/house/clean
@@ -299,14 +342,14 @@
 	icon_state = "wood"
 	door_type = "wood"
 	can_disasemble = TRUE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 /obj/structure/simple_door/interior
 	icon_state = "interior"
 	door_type = "interior"
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 //Example wide doors with terrible sprites but you get the idea
 /obj/structure/simple_door/twowide_example
@@ -316,7 +359,7 @@
 	icon_state = "interior"
 	door_type = "interior"
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 	width = 2
 
 /obj/structure/simple_door/threewide_example
@@ -326,14 +369,14 @@
 	icon_state = "interior"
 	door_type = "interior"
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 	width = 3
 
 /obj/structure/simple_door/room
 	icon_state = "room"
 	door_type = "room"
 	can_disasemble = TRUE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/room/dirty
 	icon_state = "room_d"
@@ -345,7 +388,7 @@
 	desc = "Battered and hastily repaired."
 	icon_state = "room_repaired"
 	door_type = "room_repaired"
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 // ---------------------------------------------
@@ -357,7 +400,7 @@
 	door_type = "tentflap_leather"
 	base_opacity = TRUE
 	can_disasemble = FALSE
-	can_hold_padlock = FALSE
+	can_have_lock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
 	close_sound = 'sound/effects/footstep/hardbarefoot5.ogg'
 
@@ -367,7 +410,7 @@
 	door_type = "tentflap_cloth"
 	base_opacity = TRUE
 	can_disasemble = FALSE
-	can_hold_padlock = FALSE
+	can_have_lock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
 	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
 
@@ -380,7 +423,7 @@
 	material_type = /obj/item/stack/sheet/cloth
 	open_sound = "sound/effects/curtain.ogg"
 	close_sound = "sound/effects/curtain.ogg"
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 // --------------------------------------------------------------
@@ -402,7 +445,7 @@
 	icon_state = "iron"
 	door_type = "iron"
 	explosion_block = 5
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 	opening_time = 12
 	closing_time = 8
 
@@ -415,7 +458,7 @@
 	close_sound = "sound/f13machines/doorchainlink_close.ogg"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 	proj_pass_rate = 95
 	pass_flags = LETPASSTHROW
 
@@ -423,7 +466,7 @@
 	desc = "The glass is dirty, you can't see a thing behind it."
 	icon_state = "dirtyglass"
 	door_type = "dirtyglass"
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/brokenglass
 	name = "shattered glass door"
@@ -432,7 +475,7 @@
 	door_type = "brokenglass"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/glass
 	desc = "The glass is quite clean, someone took care of this door."
@@ -440,14 +483,14 @@
 	door_type = "glass"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 /obj/structure/simple_door/metal/dirtystore
 	desc = "A metal door with dirty glass, you can't see a thing behind it."
 	icon_state = "dirtystore"
 	door_type = "dirtystore"
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/metal/store
 	icon_state = "store"
@@ -455,7 +498,7 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/wood/alt/window
 	icon = 'icons/fallout/structures/doors.dmi'
@@ -464,7 +507,7 @@
 	opacity = TRUE
 	base_opacity = FALSE
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/wood/alt
 	icon = 'icons/fallout/structures/doors.dmi'
@@ -473,7 +516,7 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_disasemble = 1
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 // --------------------------------------
 //	BUNKER DOORS

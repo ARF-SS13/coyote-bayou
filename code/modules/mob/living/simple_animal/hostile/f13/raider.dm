@@ -78,24 +78,26 @@
 	return -2
 
 /mob/living/simple_animal/hostile/raider/thief/AttackingTarget()
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if(H.stat == SOFT_CRIT)
-			var/back_target = H.back
-			if(back_target)
-				H.dropItemToGround(back_target, TRUE)
-				src.transferItemToLoc(back_target, src, TRUE)
-			var/belt_target = H.belt
-			if(belt_target)
-				H.dropItemToGround(belt_target, TRUE)
-				src.transferItemToLoc(belt_target, src, TRUE)
-			var/shoe_target = H.shoes
-			if(shoe_target)
-				H.dropItemToGround(shoe_target, TRUE)
-				src.transferItemToLoc(shoe_target, src, TRUE)
-			retreat_distance = 50
-		else
-			. = ..()
+	var/atom/my_target = get_target()
+	if(!ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	if(H.stat < SOFT_CRIT)
+		return ..()
+	var/back_target = H.back
+	if(back_target)
+		H.dropItemToGround(back_target, TRUE)
+		src.transferItemToLoc(back_target, src, TRUE)
+	var/belt_target = H.belt
+	if(belt_target)
+		H.dropItemToGround(belt_target, TRUE)
+		src.transferItemToLoc(belt_target, src, TRUE)
+	var/shoe_target = H.shoes
+	if(shoe_target)
+		H.dropItemToGround(shoe_target, TRUE)
+		src.transferItemToLoc(shoe_target, src, TRUE)
+	retreat_distance = 50
+
 
 /mob/living/simple_animal/hostile/raider/thief/death(gibbed)
 	for(var/obj/I in contents)
@@ -612,7 +614,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cult_axeghoul"
 	icon_living = "cult_axeghoul"
-	icon_dead = "cult_dead"
+	icon_dead = "cult_axeghoul_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
@@ -647,7 +649,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist_pistol"
 	icon_living = "cultist_pistol"
-	icon_dead = "cultist_dead"
+	icon_dead = "cultist_pistol_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	faction = list("raider", "hostile")
@@ -684,7 +686,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist_shotgun"
 	icon_living = "cultist_shotgun"
-	icon_dead = "cultist_dead"
+	icon_dead = "cultist_shotgun_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
@@ -722,7 +724,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist2_smg"
 	icon_living = "cultist2_smg"
-	icon_dead = "cultist2_dead"
+	icon_dead = "cultist2_smg_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
@@ -760,7 +762,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist3_tesla"
 	icon_living = "cultist3_tesla"
-	icon_dead = "cultist3_dead"
+	icon_dead = "cultist3_tesla_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150

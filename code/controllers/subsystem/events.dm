@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(events)
 	var/frequency_upper = 6000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
 
 	var/list/holidays = list()			//List of all holidays occuring today or null if no holidays
+	var/list/potential_holidays = list()	//List of all holidays, ordered by path. Used for the admin prompt
 	var/wizardmode = FALSE
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)
@@ -113,6 +114,20 @@ SUBSYSTEM_DEF(events)
 		E.random = TRUE
 		E.runEvent(TRUE)
 
+//allows a client to trigger an holiday (YES YOU CAN PUT AN BEFORE HOLIDAY LOOK IT UP)
+//aka Badmin Central
+// > Not in modules/admin
+// REEEEEEEEE
+/client/proc/forceHoliday()
+	set name = "Trigger Holiday"
+	set category = "Admin.Events"
+
+	if(!holder ||!check_rights(R_FUN))
+		to_chat(src, span_alert("You're not allowed to have fun! :/"))
+		return
+
+	SSevents.holiday_picker(src.mob)
+
 //allows a client to trigger an event
 //aka Badmin Central
 // > Not in modules/admin
@@ -170,7 +185,7 @@ SUBSYSTEM_DEF(events)
 
 //sets up the holidays and holidays list
 /datum/controller/subsystem/events/proc/getHoliday()
-	// if(!CONFIG_GET(flag/allow_holidays)) // fuck configs
+	// if(!CONFIG_GET(flag/allow_holidays)) // frik configs
 	// 	return		// Holiday stuff was not enabled in the config!
 
 	var/YY = text2num(time2text(world.timeofday, "YY")) 	// get the current year
@@ -187,7 +202,8 @@ SUBSYSTEM_DEF(events)
 				holidays = list()
 			holidays[holiday.name] = holiday
 		else
-			qdel(holiday)
+			potential_holidays[holiday.name] = holiday.type
+			qdel(holiday) // xmas is gonna be a bit later this year
 
 //	if(holidays)
 //		holidays = shuffle(holidays)
@@ -204,3 +220,58 @@ SUBSYSTEM_DEF(events)
 /datum/controller/subsystem/events/proc/resetFrequency()
 	frequency_lower = initial(frequency_lower)
 	frequency_upper = initial(frequency_upper)
+
+/datum/controller/subsystem/events/proc/holiday_picker(mob/doer)
+	if(!doer || !doer.client || !doer.client.mob)
+		return
+	if(!potential_holidays)
+		to_chat(doer, span_phobia("There arent any other holidays to celebrate! :("))
+		return
+	if(!doer.client.holder || !check_rights(R_FUN))
+		to_chat(doer, span_phobia("You're not allowed to have fun! :/"))
+		return
+	var/list/show_list = list()
+	for(var/holiday in potential_holidays)
+		if(holiday in holidays)
+			continue
+		show_list += holiday
+	var/xmas = input(doer, "Holiday Picker", "Pick a holiday to force!") as null|anything in show_list
+	if(!xmas)
+		to_chat(doer, span_alert("Good point, life itself is something we celebrate each day, isn't it? :)"))
+		return
+	if(!(xmas in potential_holidays))
+		to_chat(doer, span_phobia("That's not a holiday I've ever heard of! >:("))
+		return
+	if(xmas in holidays)
+		to_chat(doer, span_greentext("Its already [xmas]! Go celebrate! :D"))
+		return
+	if(!holidayify(potential_holidays[xmas], doer))
+		to_chat(doer, span_phobia("Great job, you failed [xmas]! :3"))
+	else
+		to_chat(doer, span_greentext("You've made [xmas] come early! Merry [xmas]! :DDD"))
+
+/// Manually forces a holiday into reality.
+/datum/controller/subsystem/events/proc/holidayify(datum/holiday/xmas, mob/doer)
+	if(!ispath(xmas) || !doer)
+		return // xmas is cancelled :c
+	var/holiname = initial(xmas.name)
+	if(holidays[holiname])
+		return // its already xmas! :D
+	var/datum/holiday/merry = new xmas() // merry xmas
+	merry.celebrate()
+	if(SSticker.setup_done)
+		merry.late_start()
+	if(!holidays)
+		holidays = list()
+	holidays[holiname] = merry
+	message_admins("[doer.ckey] has made [holiname] come early this year! Merry [holiname]!")
+	log_game("[doer.ckey] has made [holiname] come early this year! Merry [holiname]!")
+	potential_holidays -= holiname
+	return TRUE
+
+/datum/controller/subsystem/events/proc/holiday_on_join(mob/living/joiner)
+	if(!holidays)
+		return
+	for(var/holiday in holidays)
+		var/datum/holiday/H = holidays[holiday]
+		H.on_join_game(joiner)

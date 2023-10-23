@@ -35,6 +35,7 @@
 	if(lines.len > 0)
 		dat += "<H3>Playback</H3>"
 		if(!playing)
+			dat += "Name: <A href='?src=[REF(src)];rename=1'>[name]</A>"
 			dat += "<A href='?src=[REF(src)];play=1'>Play</A> <SPAN CLASS='linkOn'>Stop</SPAN><BR><BR>"
 			dat += "Repeat Song: "
 			dat += repeat > 0 ? "<A href='?src=[REF(src)];repeat=-10'>-</A><A href='?src=[REF(src)];repeat=-1'>-</A>" : "<SPAN CLASS='linkOff'>-</SPAN><SPAN CLASS='linkOff'>-</SPAN>"
@@ -42,6 +43,7 @@
 			dat += repeat < max_repeats ? "<A href='?src=[REF(src)];repeat=1'>+</A><A href='?src=[REF(src)];repeat=10'>+</A>" : "<SPAN CLASS='linkOff'>+</SPAN><SPAN CLASS='linkOff'>+</SPAN>"
 			dat += "<BR>"
 		else
+			dat += "Name: <A href='?src=[REF(src)];rename=1'>[name]</A>"
 			dat += "<SPAN CLASS='linkOn'>Play</SPAN> <A href='?src=[REF(src)];stop=1'>Stop</A><BR>"
 			dat += "Repeats left: <B>[repeat]</B><BR>"
 	if(!editing)
@@ -122,7 +124,9 @@
 	if(href_list["newsong"])
 		lines = new()
 		tempo = sanitize_tempo(5) // default 120 BPM
-		name = ""
+
+	if(href_list["rename"])
+		name = stripped_input(usr, "Enter a name for this song", "Title your concerto", name, 40) || "Saucy Sonata"
 
 	else if(href_list["import"])
 		var/t = ""

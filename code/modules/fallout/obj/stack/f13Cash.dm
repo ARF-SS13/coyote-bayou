@@ -89,7 +89,7 @@
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
 									span_notice("You flip [src]. It lands on [coinflip]."), \
 									span_italic("You hear the clattering of loose change."))
-		return TRUE//did the coin flip? useful for suicide_act
+		return TRUE//did the coin flip? Not really useful anymore!
 
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
@@ -283,6 +283,10 @@
 	amount = 20
 	merge_type = /obj/item/stack/f13Cash/denarius
 
+/obj/item/stack/f13Cash/denarius/hundo
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/denarius
+
 
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
@@ -334,6 +338,10 @@
 	amount = 20
 	merge_type = /obj/item/stack/f13Cash/aureus
 
+/obj/item/stack/f13Cash/aureus/hundo
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/aureus
+
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
 
@@ -375,6 +383,14 @@
 
 /obj/item/stack/f13Cash/ncr/twohundo
 	amount = 200
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/onekay
+	amount = 1000
+	merge_type = /obj/item/stack/f13Cash/ncr
+
+/obj/item/stack/f13Cash/ncr/fivegees
+	amount = 5000
 	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()
