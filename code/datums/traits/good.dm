@@ -463,7 +463,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Musician"
 	desc = "You can tune instruments to play melodies that clear certain negative effects and soothe the soul and even get one of your choice for free!"
 	value = 14
-	category = "Artsy Quirks"
+	category = "Lifepath Quirks"
 	mechanics = "You spawn with an instrument & tuner. If you use a tuned instrument then you apply a healing chem to those that hear it. Over time this healing chem can build up in thei system to create an even bigger healing effect. It even stacks with other musicians!"
 	conflicts = list(
 
@@ -546,7 +546,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Tagger"
 	desc = "You're an experienced artist. Or, at least you know how to make every drop of paint count."
 	value = 0
-	category = "Artsy Quirks"
+	category = "Lifepath Quirks"
 	mechanics = "You get twice as many uses out of drawing supplies, like spray paint cans! Remember, we have a persistent painting system."
 	conflicts = list(
 
@@ -792,7 +792,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
 	value = 65
-	category = "Melee Combat"
+	category = "Melee Quirks"
 	mechanics = "You do an extra 10 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
 		/datum/quirk/nonviolent,
@@ -809,7 +809,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Melee - Little Leagues"
 	desc = "Swing for the outfield! You deal additional damage with melee weapons."
 	value = 32
-	category = "Melee Combat"
+	category = "Melee Quirks"
 	mechanics = "You do an extra 5 damage with all melee attacks."
 	conflicts = list(
 		/datum/quirk/nonviolent,
