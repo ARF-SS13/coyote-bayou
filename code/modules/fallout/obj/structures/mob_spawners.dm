@@ -307,9 +307,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_text = "crawls out from the"
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/gecko = 6,
+		/mob/living/simple_animal/hostile/gecko = 4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 2,
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
-		/mob/living/simple_animal/hostile/gecko/legacy = 6,
+		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
 		/mob/living/simple_animal/hostile/gecko/big = 2
 		)

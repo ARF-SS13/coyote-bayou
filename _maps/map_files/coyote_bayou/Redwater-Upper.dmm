@@ -89,6 +89,24 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/wasteland)
+"cJ" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1;
+	icon_state = "railing_corner";
+	pixel_y = 0
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	icon_state = "railing_corner";
+	pixel_x = 1
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "cZ" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/barricade/tentclothcorner{
@@ -98,6 +116,10 @@
 	dir = 10
 	},
 /turf/open/floor/wood_common,
+/area/f13/wasteland)
+"dn" = (
+/obj/structure/nest/gecko/tribal/guard,
+/turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "ds" = (
 /obj/structure/chair/wood{
@@ -149,9 +171,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "ei" = (
-/obj/structure/debris/v1{
-	pixel_x = -16
-	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "eq" = (
@@ -206,6 +225,13 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"fB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/mob/living/simple_animal/hostile/gecko/tribal/hunter,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
 "fJ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -332,6 +358,11 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
+/area/f13/wasteland)
+"kB" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "kQ" = (
 /obj/structure/closet/cabinet,
@@ -478,6 +509,10 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"oR" = (
+/mob/living/simple_animal/hostile/gecko/tribal/hunter,
+/turf/open/indestructible/ground/outside/dirt/harsh,
+/area/f13/wasteland)
 "ps" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
@@ -525,6 +560,9 @@
 "qo" = (
 /obj/structure/chair/wood{
 	dir = 8
+	},
+/mob/living/simple_animal/hostile/gecko/tribal/chieftain{
+	name = "Cracks-Skulls"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
@@ -578,6 +616,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "rH" = (
@@ -821,10 +860,11 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/caves)
 "ye" = (
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
+/turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "yf" = (
 /obj/structure/chair/wood,
@@ -855,11 +895,9 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "yH" = (
-/obj/structure/debris/v1{
-	pixel_x = -16
-	},
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/building/firetower)
+/area/f13/wasteland)
 "yI" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -915,6 +953,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"zR" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
 "Ac" = (
 /obj/structure/simple_door/room{
 	name = "Heaven's Night"
@@ -931,6 +976,10 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"Ao" = (
+/mob/living/simple_animal/hostile/gecko/tribal/hunter,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
 "Aq" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -1034,13 +1083,8 @@
 	},
 /area/f13/wasteland)
 "BM" = (
-/obj/structure/debris/v1{
-	pixel_x = -16
-	},
-/obj/structure/debris/v1{
-	pixel_x = -16
-	},
-/turf/open/indestructible/ground/outside/dirt/harsh,
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/carpet,
 /area/f13/building/firetower)
 "BU" = (
 /obj/structure/railing{
@@ -1098,6 +1142,9 @@
 	},
 /obj/structure/chair/wood{
 	dir = 8
+	},
+/mob/living/simple_animal/hostile/gecko/tribal/head_shaman{
+	name = "Fixes-Stiches"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
@@ -1164,11 +1211,16 @@
 	sunlight_state = 1
 	},
 /area/f13/building/firetower)
+"FL" = (
+/mob/living/simple_animal/hostile/gecko/tribal/warrior,
+/turf/open/floor/carpet,
+/area/f13/building/firetower)
 "FM" = (
 /obj/item/bedsheet{
 	icon_state = "sheetbrown"
 	},
 /obj/structure/bed/old,
+/obj/structure/nest/gecko/tribal,
 /turf/open/floor/carpet,
 /area/f13/building/firetower)
 "Ga" = (
@@ -1184,6 +1236,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"Gd" = (
+/mob/living/simple_animal/hostile/gecko/tribal/hunter,
+/turf/open/indestructible/ground/outside/dirt/harsh,
+/area/f13/caves)
 "Gw" = (
 /obj/structure/railing{
 	dir = 1
@@ -1436,6 +1492,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"Ok" = (
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
 "Om" = (
 /obj/structure/barricade/tentclothedge,
 /obj/structure/decoration/rag,
@@ -25413,7 +25473,7 @@ WW
 WW
 Ar
 SD
-Ti
+Ao
 Ti
 lZ
 WW
@@ -25668,8 +25728,8 @@ pE
 pE
 pE
 WW
-Ti
-Ar
+Ok
+zR
 Ar
 Ar
 gf
@@ -25926,9 +25986,9 @@ pE
 pE
 WW
 Zc
-Ar
+ye
 Ti
-Ti
+Ao
 cd
 WW
 pE
@@ -26177,13 +26237,13 @@ bk
 pE
 pE
 pE
-pE
-pE
+ei
+ei
 pE
 pE
 WW
 Ti
-Ar
+fB
 TI
 Ti
 ps
@@ -26433,10 +26493,10 @@ bk
 pE
 pE
 pE
-pE
-pE
-pE
-pE
+ei
+ei
+ei
+dn
 pE
 WW
 Ti
@@ -26690,11 +26750,11 @@ bk
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
+ei
+ei
+ei
+ei
+oR
 WW
 Ar
 Ar
@@ -26947,17 +27007,17 @@ bk
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-pE
-BM
+oR
+dn
+ei
+ei
+ei
+ud
 Ar
 Ar
 mp
 Zh
-Zh
+BM
 Zh
 WW
 pE
@@ -27204,17 +27264,17 @@ bk
 pE
 pE
 pE
-pE
-pE
-pE
-pE
-yH
+ei
+ei
+oR
+ei
+ud
 ud
 Ti
 Ar
 WW
 uI
-Zh
+BM
 FM
 WW
 pE
@@ -27463,7 +27523,7 @@ pE
 pE
 pE
 pE
-pE
+ei
 ei
 ud
 ud
@@ -27723,7 +27783,7 @@ WW
 WW
 ud
 ud
-ye
+Ti
 Ar
 Ti
 WW
@@ -27986,7 +28046,7 @@ Ar
 mp
 Zh
 Zh
-Zh
+BM
 WW
 pE
 pE
@@ -29013,7 +29073,7 @@ ro
 Ti
 mp
 Zh
-Zh
+BM
 Zh
 WW
 pE
@@ -29776,9 +29836,9 @@ Kg
 Sz
 WW
 pE
-pE
-pE
-pE
+kB
+kB
+yH
 WW
 Ti
 Ar
@@ -30033,15 +30093,15 @@ Ti
 Sz
 WW
 pE
-pE
-pE
-pE
+ei
+ei
+kB
 WW
 Ti
-Ar
+fB
 mp
 Zh
-Zh
+FL
 Zh
 WW
 pE
@@ -30290,9 +30350,9 @@ Ti
 Sz
 WW
 pE
-pE
-pE
-pE
+ei
+ei
+kB
 WW
 Zc
 Ar
@@ -30547,7 +30607,7 @@ Ti
 Sz
 WW
 pE
-pE
+ei
 pE
 pE
 WW
@@ -30804,7 +30864,7 @@ mp
 mp
 WW
 pE
-pE
+ei
 pE
 pE
 WW
@@ -31066,7 +31126,7 @@ pE
 pE
 WW
 Ti
-Ar
+ye
 SD
 Ti
 TF
@@ -31313,10 +31373,10 @@ bk
 bk
 bk
 bW
-Ar
+fB
 og
 JK
-Ar
+fB
 Vf
 Vf
 PJ
@@ -31574,7 +31634,7 @@ jv
 Mt
 Mt
 VO
-Oe
+Gd
 pP
 xK
 pE
@@ -32084,7 +32144,7 @@ bk
 bk
 bk
 bW
-Ti
+Ao
 Ar
 Ar
 Ar
@@ -32345,10 +32405,10 @@ SV
 SV
 SV
 SV
+cJ
+SV
+SV
 pL
-bk
-bk
-bk
 bk
 bk
 bk

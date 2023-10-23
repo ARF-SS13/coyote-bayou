@@ -11152,6 +11152,12 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
+"fRM" = (
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "fSz" = (
 /obj/structure/nest/radroach,
 /turf/open/floor/plating/tunnel,
@@ -11597,6 +11603,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"ghL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/gecko/tribal/guard,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "ghM" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/spider/stickyweb,
@@ -14204,6 +14217,13 @@
 	icon_state = "2-i"
 	},
 /area/f13/caves)
+"hWh" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/tunnel)
 "hWj" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/tunnel)
@@ -14802,6 +14822,10 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"iok" = (
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "iol" = (
 /turf/open/floor/f13{
 	icon_state = "purplefull"
@@ -15781,7 +15805,6 @@
 "iRN" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/building/museum)
 "iSm" = (
@@ -17127,6 +17150,13 @@
 /obj/item/paperplane/origami,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"jOI" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal/warrior,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "jPd" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib5-old"
@@ -17224,6 +17254,7 @@
 	light_color = "#e8eaff"
 	},
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/structure/nest/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "jRd" = (
@@ -17351,6 +17382,12 @@
 	dir = 4
 	},
 /turf/closed/wall/r_wall/f13/vault,
+/area/f13/tunnel)
+"jUK" = (
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/tunnel)
 "jUL" = (
 /obj/structure/sign/poster/contraband/robust_softdrinks,
@@ -18377,6 +18414,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"kKz" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "kKE" = (
 /turf/open/floor/plating/ashplanet/wateryrock,
 /area/f13/caves)
@@ -19383,7 +19427,6 @@
 /obj/structure/table,
 /obj/item/integrated_circuit_printer,
 /obj/machinery/light/broken,
-/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/building/museum)
 "lqS" = (
@@ -19549,6 +19592,7 @@
 /obj/structure/closet/locker,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "lwd" = (
@@ -23849,6 +23893,14 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/tunnel)
+"oii" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal/warrior,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "oiF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing/handrail/rusty{
@@ -24716,6 +24768,11 @@
 /obj/structure/simple_door/metal,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"oLe" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "oLq" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -25775,6 +25832,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress2"
 	},
+/obj/structure/nest/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "psI" = (
@@ -27559,6 +27617,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/tunnel)
+"qtH" = (
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/tunnel)
 "qtN" = (
 /obj/structure/dresser{
 	pixel_x = -3;
@@ -29080,6 +29144,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"rsc" = (
+/obj/structure/nest/gecko/tribal/guard,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "rsu" = (
 /obj/structure/decoration/vent/rusty,
 /obj/machinery/shower{
@@ -30457,6 +30527,14 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"smJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/gecko/tribal/juvenile,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "smT" = (
 /obj/structure/campfire/barrel,
 /turf/open/floor/f13{
@@ -36925,6 +37003,7 @@
 /obj/structure/closet,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/under/f13/vault,
+/obj/item/card/lowbounty,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/museum)
 "wwW" = (
@@ -38622,6 +38701,7 @@
 	icon_state = "mattress2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "xBv" = (
@@ -39041,6 +39121,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress2"
 	},
+/obj/structure/nest/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "xNp" = (
@@ -72169,7 +72250,7 @@ aaa
 haC
 svV
 bKb
-bPR
+ghL
 iCR
 bPR
 tuh
@@ -72426,10 +72507,10 @@ aaa
 haC
 jqF
 bPR
-bPR
+jOI
 ygo
 fHe
-bPR
+kKz
 bPR
 opI
 bPR
@@ -72682,7 +72763,7 @@ aae
 aaa
 haC
 dFD
-gck
+oii
 bKb
 aZx
 gck
@@ -72940,7 +73021,7 @@ aaa
 haC
 pdx
 qkR
-bPR
+jOI
 cjv
 wxP
 iCR
@@ -72953,8 +73034,8 @@ bsC
 bsC
 uDW
 uIC
-gck
-bKb
+smJ
+fRM
 rnh
 "}
 (130,1,1) = {"
@@ -73196,17 +73277,17 @@ aae
 aaa
 haC
 pdx
-bKb
+rsc
 bKb
 kGB
 ioY
 ioY
 ioY
+hWh
 ioY
-ioY
+jUK
 mIw
-mIw
-mIw
+qtH
 mIw
 mIw
 bPR
@@ -73713,7 +73794,7 @@ jRc
 mVE
 haC
 qxZ
-mby
+oLe
 mby
 mRk
 boM
@@ -73974,11 +74055,11 @@ qEc
 xNn
 mRk
 qEc
-mby
+oLe
 xBq
 haC
 jPY
-mVE
+iok
 psv
 haC
 uIC
