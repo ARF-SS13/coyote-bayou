@@ -1567,15 +1567,31 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider(src)
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider(src)
 
-/datum/gear/donator/kits/kelprunner
-	name = "Kelptastic Kit"
-	path = /obj/item/storage/box/large/custom_kit/kelprunner
+/datum/gear/donator/kits/kelprunner01
+	name = "Nuclear Rifle"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner01
 	ckeywhitelist = list("Kelprunner")
 
-/obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
+/obj/item/storage/box/large/custom_kit/kelprunner01/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn(src)
+
+/datum/gear/donator/kits/kelprunner02
+	name = "Cydonian Armor"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner02
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner02/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm(src)
+	new /obj/item/storage/backpack/invisipack(src)
+
+/datum/gear/donator/kits/kelprunner03
+	name = "Engikit"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner03
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner03/PopulateContents()
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
-	new /obj/item/defibrillator/compact(src)
 
 /datum/gear/donator/kits/deltadav
 	name = "Voyager Equipment Kit"

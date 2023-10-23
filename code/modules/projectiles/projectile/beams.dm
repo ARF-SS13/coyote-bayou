@@ -884,6 +884,10 @@
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
 
+/obj/item/projectile/beam/laser/tg/nuclear/worn
+	damage = 30
+	damage_list = list("25" = 25, "30" = 45, "35" = 25, "40" = 5)
+
 /obj/item/projectile/beam/laser/tg/particle
 	name = "hyper-velocity particle beam"
 	icon_state = "emitter"
