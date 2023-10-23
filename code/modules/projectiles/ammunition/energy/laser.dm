@@ -372,11 +372,6 @@ Avoid decimals when possible when it comes to e_cost!
 
 //autolasers
 
-/obj/item/ammo_casing/energy/laser/autolaser/defensorpdw
-	projectile_type = /obj/item/projectile/beam/laser/defensorpdw
-	e_cost = 500 // 40 shots. Ish.
-	fire_sound = 'sound/weapons/pulse3.ogg'
-
 /obj/item/ammo_casing/energy/laser/autolaser
 	projectile_type = /obj/item/projectile/beam/laser/rcw/hitscan/autolaser
 	e_cost = 333 // 60 shots. Ish.
