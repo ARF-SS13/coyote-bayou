@@ -457,6 +457,27 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
+//PDW-Defensor
+/obj/item/gun/energy/laser/defensorpdw
+	name = "Defensor"
+	desc = "A personal defense laser weapon."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "defensorpdw"
+	item_state = "defensorpdw"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/defensorpdw)
+	can_scope = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three/slower,
+		/datum/firemode/semi_auto/fastest
+	)
+	init_recoil = LASER_SMG_RECOIL(1, 1)
+
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto

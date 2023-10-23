@@ -640,6 +640,10 @@
 	impact_type = /obj/effect/projectile/impact/laser/emitter
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 
+/obj/item/projectile/beam/laser/defensorpdw //Defensor
+	damage = 15 //Good for piercing armor, terrible damage
+	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
+
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser //Compact RCW
 	damage = 10 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
