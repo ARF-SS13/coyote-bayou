@@ -792,7 +792,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
 	value = 65
-	category = "Melee Combat"
+	category = "Melee Quirks"
 	mechanics = "You do an extra 10 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
 		/datum/quirk/nonviolent,
@@ -809,7 +809,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	name = "Melee - Little Leagues"
 	desc = "Swing for the outfield! You deal additional damage with melee weapons."
 	value = 32
-	category = "Melee Combat"
+	category = "Melee Quirks"
 	mechanics = "You do an extra 5 damage with all melee attacks."
 	conflicts = list(
 		/datum/quirk/nonviolent,
