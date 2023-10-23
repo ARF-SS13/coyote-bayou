@@ -670,7 +670,7 @@
 	var/mob/living/L = usr
 	if(istype(L))
 		to_chat(L, span_notice("\The [src] begins glowing!"))
-		L.balloon_alert(L, "activated")
+		//L.balloon_alert(L, "activated")
 		ADD_TRAIT(L, TRAIT_ASHSTORM_IMMUNE, src)
 		ADD_TRAIT(L, TRAIT_LAVA_IMMUNE, src)
 		timer = addtimer(CALLBACK(src, .proc/reset_user, L), effectduration)
@@ -680,7 +680,7 @@
 	REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, src)
 	REMOVE_TRAIT(user, TRAIT_LAVA_IMMUNE, src)
 	to_chat(user, span_boldwarning("\The [src]'s glow dims."))
-	user.balloon_alert(user, "wore off")
+	//user.balloon_alert(user, "wore off")
 	QDEL_NULL(timer)
 
 //Nerfing those on the chest because too OP yada yada
@@ -1012,7 +1012,7 @@
 	var/numUses = 1
 
 /obj/item/clothing/neck/necklace/necklace_of_the_forsaken/item_action_slot_check(slot)
-	return (..() && (slot == ITEM_SLOT_NECK))
+	return (..() && (slot == SLOT_NECK))
 
 /obj/item/clothing/neck/necklace/necklace_of_the_forsaken/dropped(mob/user)
 	..()
@@ -1118,7 +1118,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = SLOT_BELT
 	custom_materials = list(/datum/material/diamond=10000, /datum/material/titanium=20000, /datum/material/plasma=20000)
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'

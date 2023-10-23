@@ -52,7 +52,7 @@
 	var/obj/item/clothing/head/mob_holder/micro/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	if(!holder)
 		return
-	user.equip_to_slot(holder, ITEM_SLOT_FEET)
+	user.equip_to_slot(holder, SLOT_FEET)
 	return
 
 /datum/element/mob_holder/micro/proc/mob_try_pickup_micro(mob/living/carbon/source, mob/living/carbon/user)
@@ -62,34 +62,34 @@
 		return FALSE
 	if(source == user)
 		to_chat(user, span_warning("You can't pick yourself up."))
-		source.balloon_alert(user, "cannot pick yourself!")
+		//source.balloon_alert(user, "cannot pick yourself!")
 		return FALSE
 	if(COMPARE_SIZES(user, source) < (1 / CONFIG_GET(number/max_pick_ratio)))
 		to_chat(user, span_warning("They're too big to pick up!"))
-		source.balloon_alert(user, "too big to pick up!")
+		//source.balloon_alert(user, "too big to pick up!")
 		return FALSE
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are full!"))
-		source.balloon_alert(user, "hands are full!")
+		//source.balloon_alert(user, "hands are full!")
 		return FALSE
 	if(source.buckled)
 		to_chat(user, span_warning("[source] is buckled to something!"))
-		source.balloon_alert(user, "buckled to something!")
+		//source.balloon_alert(user, "buckled to something!")
 		return FALSE
 	source.visible_message(span_warning("[user] starts picking up [source]."), \
 					span_userdanger("[user] starts picking you up!"))
-	source.balloon_alert(user, "picking up")
+	//source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
 	if(!do_after(user, time_required, source))
 		return FALSE
 
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are full!"))
-		source.balloon_alert(user, "hands full!")
+		//source.balloon_alert(user, "hands full!")
 		return FALSE
 	if(source.buckled)
 		to_chat(user, span_warning("[source] is buckled to something!"))
-		source.balloon_alert(user, "buckled!")
+		//source.balloon_alert(user, "buckled!")
 		return FALSE
 
 	source.visible_message(span_warning("[user] picks up [source]!"),
@@ -105,7 +105,7 @@
 	desc = "Another person, small enough to fit in your hand."
 	icon = null
 	icon_state = ""
-	slot_flags = ITEM_SLOT_FEET | ITEM_SLOT_HEAD | ITEM_SLOT_ID | ITEM_SLOT_BACK | ITEM_SLOT_NECK
+	slot_flags = SLOT_FEET | SLOT_HEAD | SLOT_ID | SLOT_BACK | SLOT_NECK
 	w_class = null //handled by their size
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)

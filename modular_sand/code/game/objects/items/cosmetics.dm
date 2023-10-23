@@ -5,7 +5,7 @@
 	var/location = user.zone_selected
 	if (H == user && !mirror)
 		to_chat(user, span_warning("You need a mirror to properly style your own hair!"))
-		balloon_alert(user, "need mirror!")
+		//balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
@@ -14,12 +14,12 @@
 		return
 	if(!get_location_accessible(H, location))
 		to_chat(user, span_warning("The headgear is in the way!"))
-		balloon_alert(user, "headgear in the way!")
+		//balloon_alert(user, "headgear in the way!")
 		return
 	user.visible_message(span_notice("[user] tries to change [H]'s hairstyle using [src]."), span_notice("You try to change [H]'s hairstyle using [src]."))
 	if(new_style && do_after(user, 6 SECONDS, H))
 		user.visible_message(span_notice("[user] successfully changes [H]'s hairstyle using [src]."), span_notice("You successfully change [H]'s hairstyle using [src]."))
-		H.balloon_alert(user, "changed hairstyle")
+		//H.balloon_alert(user, "changed hairstyle")
 		H.hair_style = new_style
 		H.update_hair()
 
@@ -27,7 +27,7 @@
 	var/location = user.zone_selected
 	if(H == user && !mirror)
 		to_chat(user, span_warning("You need a mirror to properly style your own facial hair!"))
-		balloon_alert(user, "need mirror!")
+		//balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
@@ -36,12 +36,12 @@
 		return
 	if(!get_location_accessible(H, location))
 		to_chat(user, span_warning("The mask is in the way!"))
-		balloon_alert(user, "mask in the way!")
+		//balloon_alert(user, "mask in the way!")
 		return
 	user.visible_message(span_notice("[user] tries to change [H]'s facial hair style using [src]."), span_notice("You try to change [H]'s facial hair style using [src]."))
 	if(new_style && do_after(user, 6 SECONDS, H))
 		user.visible_message(span_notice("[user] successfully changes [H]'s facial hair style using [src]."), span_notice("You successfully change [H]'s facial hair style using [src]."))
-		H.balloon_alert(user, "changed facial hair style")
+		//H.balloon_alert(user, "changed facial hair style")
 		H.facial_hair_style = new_style
 		H.update_hair()
 

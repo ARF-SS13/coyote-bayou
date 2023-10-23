@@ -121,7 +121,7 @@
 	var/user_lust_amt = NONE
 	var/target_lust_amt = NONE
 	var/target
-	var/mob/living/carbon/human/portal_target = ishuman(portalunderwear.loc) && (portalunderwear.current_equipped_slot & (ITEM_SLOT_UNDERWEAR | ITEM_SLOT_MASK)) ? portalunderwear.loc : null
+	var/mob/living/carbon/human/portal_target = ishuman(portalunderwear.loc) && (portalunderwear.current_equipped_slot & (SLOT_UNDERWEAR | SLOT_MASK)) ? portalunderwear.loc : null
 
 	// This list is structured as [M's longname, M's shortname, wearer's longname, wearer's shortname]
 	var/penis_names = list()
@@ -541,7 +541,7 @@
 			useable = FALSE
 			return
 	if(H) //if the portal panties are on someone.
-		if(!(portalunderwear.current_equipped_slot & (ITEM_SLOT_UNDERWEAR | ITEM_SLOT_MASK)))
+		if(!(portalunderwear.current_equipped_slot & (SLOT_UNDERWEAR | SLOT_MASK)))
 			useable = FALSE
 			return
 
@@ -641,7 +641,7 @@
 		if(CUM_TARGET_MOUTH)
 			targetting = CUM_TARGET_VAGINA
 
-	slot_flags         = targetting == CUM_TARGET_MOUTH ? ITEM_SLOT_MASK  : ITEM_SLOT_UNDERWEAR
+	slot_flags         = targetting == CUM_TARGET_MOUTH ? SLOT_MASK  : SLOT_UNDERWEAR
 	body_parts_covered = targetting == CUM_TARGET_MOUTH ? NONE            : GROIN
 	flags_cover        = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
 	visor_flags_cover  = targetting == CUM_TARGET_MOUTH ? MASKCOVERSMOUTH : NONE
@@ -704,7 +704,7 @@
 /obj/item/clothing/underwear/briefs/panties/portalpanties/equipped(mob/user, slot)
 	. = ..()
 	switch(slot)
-		if(ITEM_SLOT_UNDERWEAR, ITEM_SLOT_MASK)
+		if(SLOT_UNDERWEAR, SLOT_MASK)
 			if(!portallight)
 				audible_message("[icon2html(src, hearers(src))] *beep* *beep* *beep*")
 				playsound(src, 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)

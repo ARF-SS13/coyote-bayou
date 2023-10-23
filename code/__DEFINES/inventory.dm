@@ -94,7 +94,6 @@
 		if(SLOT_S_STORE)
 			. = INV_SLOTBIT_SUITSTORE
 
-
 //Bit flags for the flags_inv variable, which determine when a piece of clothing hides another. IE a helmet hiding glasses.
 #define HIDEGLOVES		(1<<0)
 #define HIDESUITSTORAGE	(1<<1)

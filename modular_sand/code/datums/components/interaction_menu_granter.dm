@@ -183,10 +183,10 @@
 		.["lewd_verb_sounds"] = 	!CHECK_BITFIELD(prefs.toggles, LEWD_VERB_SOUNDS)
 		.["arousable"] = 			prefs.arousable
 		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-		.["vore_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, VORE_EXAMINE)
-		.["eating_noises"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, EATING_NOISES)
-		.["digestion_noises"] =		!!CHECK_BITFIELD(prefs.cit_toggles, DIGESTION_NOISES)
-		.["trash_forcefeed"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, TRASH_FORCEFEED)
+		.["vore_examine"] = 		prefs.allow_vore_messages
+		.["eating_noises"] = 		prefs.allow_eating_sounds
+		.["digestion_noises"] =		prefs.allow_digestion_sounds
+		.["trash_forcefeed"] = 		prefs.allow_trash_messages
 		.["forced_fem"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
 		.["forced_masc"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_MASC)
 		.["hypno"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, HYPNO)
@@ -224,6 +224,7 @@
 				o.do_action(parent_mob, target)
 				return TRUE
 			return FALSE
+		/* todo: make this work : ^ )
 		if("genital")
 			var/mob/living/carbon/self = parent_mob
 			if("visibility" in params)
@@ -265,6 +266,7 @@
 				return TRUE
 			else
 				return FALSE
+			*/
 		if("char_pref")
 			var/datum/preferences/prefs = parent_mob.client.prefs
 			var/value = num_to_pref(params["value"])
@@ -325,9 +327,9 @@
 				if("trash_forcefeed")
 					prefs.allow_trash_messages = !prefs.allow_trash_messages
 				if("forced_fem")
-					prefs.feminization = !prefs.feminization
+					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_FEM)
 				if("forced_masc")
-					prefs.masculinization = !prefs.masculinization
+					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_MASC)
 				if("hypno")
 					TOGGLE_BITFIELD(prefs.cit_toggles, HYPNO)
 				if("bimbofication")

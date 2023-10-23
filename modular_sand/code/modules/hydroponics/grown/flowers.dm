@@ -25,7 +25,7 @@
 	icon = 'modular_sand/icons/obj/hydroponics/harvest.dmi'
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_righthand.dmi'
-	slot_flags = ITEM_SLOT_HEAD //|ITEM_SLOT_MASK // couldn't get this to work, revive another day
+	slot_flags = SLOT_HEAD //|SLOT_MASK // couldn't get this to work, revive another day
 
 // Carbon Rose
 /obj/item/seeds/carbon_rose
@@ -58,6 +58,6 @@
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/plants_righthand.dmi'
 	force = 0
 	throwforce = 0
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = SLOT_HEAD
 	throw_speed = 1
 	throw_range = 3

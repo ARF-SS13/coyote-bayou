@@ -107,7 +107,7 @@
 		user.visible_message(span_notice("[user] begins setting \the [src] to use \the [CARD]."), span_notice("[user] begins setting \the [src] to use \the [CARD]."))
 
 		// Display alert balloon
-		balloon_alert(user, "Configuring new account...")
+		//balloon_alert(user, "Configuring new account...")
 
 		// Perform interaction timer
 		if(!do_after(user, 5 SECONDS, src))
@@ -115,7 +115,7 @@
 			user.visible_message(span_warning("[user] fails to link \the [src] to a new account!"), span_warning("You fail to link \the [src] to a new account!"))
 
 			// Display alert balloon
-			balloon_alert(user, "Configuration failed!")
+			//balloon_alert(user, "Configuration failed!")
 
 			// Return with no further effects
 			return
@@ -146,7 +146,7 @@
 	user.visible_message(span_warning("[user] begins resetting \the [src]."), span_warning("You begin resetting \the [src]."))
 
 	// Display alert balloon
-	balloon_alert(user, "Resetting account...")
+	//balloon_alert(user, "Resetting account...")
 
 	// Perform interaction timer
 	if(!do_after(user, 5 SECONDS, src))
@@ -154,7 +154,7 @@
 		user.visible_message(span_warning("[user] fails to reset \the [src]."), span_warning("You fail to reset \the [src]."))
 
 		// Display alert balloon
-		balloon_alert(user, "Reset failed!")
+		//balloon_alert(user, "Reset failed!")
 
 		// Return with no further effects
 		return
@@ -243,15 +243,15 @@
 	. = ..()
 	if(!is_operational())
 		to_chat(user, span_warning("[src] has to be on to do this!"))
-		balloon_alert(user, "no power!")
+		//balloon_alert(user, "no power!")
 		return FALSE
 	if(mining)
 		set_mining(FALSE)
 		visible_message(span_warning("[src] slowly comes to a halt."),
 						span_warning("You turn off [src]."))
-		balloon_alert(user, "turned off")
+		//balloon_alert(user, "turned off")
 		return
-	balloon_alert(user, "turned on")
+	//balloon_alert(user, "turned on")
 	set_mining(TRUE)
 
 /obj/machinery/cryptominer/proc/set_mining(new_value)

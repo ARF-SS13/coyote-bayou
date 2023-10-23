@@ -1,5 +1,5 @@
 /datum/gear/accessories/ring
-	slot = ITEM_SLOT_ACCESSORY
+	slot = SLOT_ACCESSORY
 
 /datum/gear/accessories/ring/goldring
 	name = "A gold ring"

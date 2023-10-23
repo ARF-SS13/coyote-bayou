@@ -11,10 +11,10 @@
 
 /datum/element/skirt_peeking/proc/can_skirt_peek(mob/living/carbon/human/peeked, mob/peeker)
 	var/mob/living/living_peeker = peeker
-	var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(ITEM_SLOT_ICLOTHING)
+	var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(SLOT_ICLOTHING)
 
 	// Unfortunately, you can't see it
-	var/obj/item/clothing/suit/outer_clothing = peeked.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+	var/obj/item/clothing/suit/outer_clothing = peeked.get_item_by_slot(SLOT_OCLOTHING)
 	if(outer_clothing && CHECK_MULTIPLE_BITFIELDS(outer_clothing.body_parts_covered, CHEST | GROIN | LEGS | FEET))
 		return FALSE
 	//
@@ -48,9 +48,9 @@
 
 /datum/element/skirt_peeking/proc/on_closer_look(mob/living/carbon/human/peeked, mob/peeker, list/examine_content)
 	if(can_skirt_peek(peeked, peeker))
-		var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(ITEM_SLOT_ICLOTHING)
+		var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(SLOT_ICLOTHING)
 		var/string = "Peeking under [peeked]'s [worn_uniform.name], you can see "
-		var/obj/item/clothing/underwear/worn_underwear = peeked.get_item_by_slot(ITEM_SLOT_UNDERWEAR)
+		var/obj/item/clothing/underwear/worn_underwear = peeked.get_item_by_slot(SLOT_UNDERWEAR)
 		if(worn_underwear)
 			string += "a "
 			if(!is_type_in_typecache(worn_underwear.type, GLOB.pairless_panties)) //a pair of thong
@@ -113,10 +113,10 @@
 		return
 	if(!istype(peeked) || !istype(peeker))
 		return
-	var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(ITEM_SLOT_ICLOTHING)
+	var/obj/item/clothing/under/worn_uniform = peeked.get_item_by_slot(SLOT_ICLOTHING)
 	if(!istype(worn_uniform))
 		return
-	var/obj/item/clothing/glasses/eye_blocker = peeker.get_item_by_slot(ITEM_SLOT_EYES)
+	var/obj/item/clothing/glasses/eye_blocker = peeker.get_item_by_slot(SLOT_GLASSES)
 	if(!(!peeked.client && (peeked.stat == CONSCIOUS) && !HAS_TRAIT(peeked, TRAIT_BLIND) && !is_blind(peeked) && \
 		!peeker.is_eyes_covered(FALSE) && !(eye_blocker && eye_blocker.tint > 0) && \
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))

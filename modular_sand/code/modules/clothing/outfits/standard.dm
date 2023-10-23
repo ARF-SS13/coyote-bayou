@@ -70,7 +70,7 @@
 	back = /obj/item/storage/backpack/holding
 	box = /obj/item/storage/box/debugtools
 	suit_store = /obj/item/tank/internals/oxygen
-	internals_slot = ITEM_SLOT_SUITSTORE
+	internals_slot = SLOT_S_STORE
 	backpack_contents = list(
 		/obj/item/melee/transforming/energy/axe=1,\
 		/obj/item/storage/part_replacer/bluespace/tier4=1,\

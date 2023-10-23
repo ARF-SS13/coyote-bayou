@@ -17,8 +17,11 @@
 		H.playsound_local(turf_source, soundin, vol, vary, frequency, falloff)
 
 /mob/living
-	var/has_butt = FALSE //Apparently this is important for some reason
+	var/has_penis = FALSE
+	var/has_balls = FALSE
+	var/has_vagina = FALSE
 	var/has_anus = TRUE
+	var/has_butt = FALSE
 	var/anus_always_accessible = FALSE
 	var/has_breasts = FALSE
 	var/anus_exposed = FALSE
@@ -111,6 +114,9 @@
 	return has_genital(ORGAN_SLOT_PENIS, visibility)
 
 /mob/living/proc/has_strapon(visibility = REQUIRE_ANY)
+	if(get_strapon())
+		return TRUE
+	/* If someone wants to make visibility checks later be my guest
 	var/mob/living/carbon/C = src
 	if(istype(C))
 		var/obj/item/clothing/underwear/briefs/strapon/strapon = C.get_strapon()
@@ -125,12 +131,12 @@
 				else
 					return TRUE
 	return FALSE
+	*/
 
 /mob/living/proc/get_strapon()
 	for(var/obj/item/clothing/cloth in get_equipped_items())
 		if(istype(cloth, /obj/item/clothing/underwear/briefs/strapon))
 			return cloth
-
 	return null
 
 /mob/living/proc/can_penetrating_genital_cum()
@@ -200,8 +206,8 @@
 			handcount++
 		for(var/obj/item/bodypart/r_arm/R in C.bodyparts)
 			handcount++
-		if(C.get_item_by_slot(ITEM_SLOT_HANDS))
-			var/obj/item/clothing/gloves/G = C.get_item_by_slot(ITEM_SLOT_HANDS)
+		if(C.get_item_by_slot(SLOT_HANDS))
+			var/obj/item/clothing/gloves/G = C.get_item_by_slot(SLOT_HANDS)
 			covered = G.body_parts_covered
 		if(covered & HANDS)
 			iscovered = TRUE
@@ -266,12 +272,14 @@
 				if(REQUIRE_ANY)
 					return TRUE
 				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
+					//if(C.get_item_by_slot(SLOT_EARS_LEFT) || C.get_item_by_slot(SLOT_EARS_RIGHT))
+					if(C.get_item_by_slot(SLOT_EARS))
 						return FALSE
 					else
 						return TRUE
 				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EARS_LEFT || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT)))
+					//if(!C.get_item_by_slot(SLOT_EARS_LEFT || C.get_item_by_slot(SLOT_EARS_RIGHT)))
+					if(C.get_item_by_slot(SLOT_EARS))
 						return FALSE
 					else
 						return TRUE
@@ -288,12 +296,14 @@
 				if(REQUIRE_ANY)
 					return TRUE
 				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
+					//if(C.get_item_by_slot(SLOT_EARS_LEFT) || C.get_item_by_slot(SLOT_EARS_RIGHT))
+					if(C.get_item_by_slot(SLOT_EARS))
 						return FALSE
 					else
 						return TRUE
 				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || !C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
+					//if(!C.get_item_by_slot(SLOT_EARS_LEFT) || !C.get_item_by_slot(SLOT_EARS_RIGHT))
+					if(C.get_item_by_slot(SLOT_EARS))
 						return FALSE
 					else
 						return TRUE
@@ -310,12 +320,12 @@
 				if(REQUIRE_ANY)
 					return TRUE
 				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EYES))
+					if(C.get_item_by_slot(SLOT_GLASSES))
 						return FALSE
 					else
 						return TRUE
 				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EYES))
+					if(!C.get_item_by_slot(SLOT_GLASSES))
 						return FALSE
 					else
 						return TRUE
@@ -332,12 +342,12 @@
 				if(REQUIRE_ANY)
 					return TRUE
 				if(REQUIRE_EXPOSED)
-					if(get_item_by_slot(ITEM_SLOT_EYES))
+					if(get_item_by_slot(SLOT_GLASSES))
 						return FALSE
 					else
 						return TRUE
 				if(REQUIRE_UNEXPOSED)
-					if(!get_item_by_slot(ITEM_SLOT_EYES))
+					if(!get_item_by_slot(SLOT_GLASSES))
 						return FALSE
 					else
 						return TRUE
@@ -822,7 +832,7 @@
 	last_genital = genepool
 
 /mob/living/proc/get_shoes(singular = FALSE)
-	var/obj/A = get_item_by_slot(ITEM_SLOT_FEET)
+	var/obj/A = get_item_by_slot(SLOT_FEET)
 	if(A)
 		var/txt = A.name
 		if(findtext (A.name,"the"))
@@ -867,63 +877,63 @@
 		else
 			nope += M
 	return nope
-
+/*
 //ITEM INVENTORY SLOT BITMASKS
 /// Suit slot (armors, costumes, space suits, etc.)
-#define ITEM_SLOT_OCLOTHING (1<<0)
+#define SLOT_OCLOTHING (1<<0)
 /// Jumpsuit slot
-#define ITEM_SLOT_ICLOTHING (1<<1)
+#define SLOT_ICLOTHING (1<<1)
 /// Glove slot
-#define ITEM_SLOT_GLOVES (1<<2)
+#define SLOTBIT_GLOVES (1<<2)
 /// Glasses slot
-#define ITEM_SLOT_EYES (1<<3)
+#define SLOTBIT_GLASSES (1<<3)
 /// Ear slot (radios, earmuffs)
-#define ITEM_SLOT_EARS_LEFT (1<<4)
+#define SLOTBIT_EARS_LEFT (1<<4)
 /// Mask slot
-#define ITEM_SLOT_MASK (1<<5)
+#define SLOTBIT_MASK (1<<5)
 /// Head slot (helmets, hats, etc.)
-#define ITEM_SLOT_HEAD (1<<6)
+#define SLOTBIT_HEAD (1<<6)
 /// Shoe slot
-#define ITEM_SLOT_FEET (1<<7)
+#define SLOTBIT_FEET (1<<7)
 /// ID slot
-#define ITEM_SLOT_ID (1<<8)
+#define SLOTBIT_ID (1<<8)
 /// Belt slot
-#define ITEM_SLOT_BELT (1<<9)
+#define SLOTBIT_BELT (1<<9)
 /// Back slot
-#define ITEM_SLOT_BACK (1<<10)
+#define SLOTBIT_BACK (1<<10)
 /// Dextrous simplemob "hands" (used for Drones and Dextrous Guardians)
-#define ITEM_SLOT_DEX_STORAGE (1<<11)
+#define SLOTBIT_DEX_STORAGE (1<<11)
 /// Neck slot (ties, bedsheets, scarves)
-#define ITEM_SLOT_NECK (1<<12)
+#define SLOTBIT_NECK (1<<12)
 /// A character's hand slots
-#define ITEM_SLOT_HANDS (1<<13)
+#define SLOTBIT_HANDS (1<<13)
 /// Inside of a character's backpack
-#define ITEM_SLOT_BACKPACK (1<<14)
+#define SLOTBIT_BACKPACK (1<<14)
 /// Suit Storage slot
-#define ITEM_SLOT_SUITSTORE (1<<15)
+#define SLOTBIT_S_STORE (1<<15)
 /// Left Pocket slot
-#define ITEM_SLOT_LPOCKET (1<<16)
+#define SLOTBIT_L_STORE (1<<16)
 /// Right Pocket slot
-#define ITEM_SLOT_RPOCKET (1<<17)
+#define SLOTBIT_R_STORE (1<<17)
 // -- Sandstorm edit --
 /// Underwear slot
-#define ITEM_SLOT_UNDERWEAR (1<<18)
+#define SLOTBIT_UNDERWEAR (1<<18)
 /// Socks slot
-#define ITEM_SLOT_SOCKS (1<<19)
+#define SLOTBIT_SOCKS (1<<19)
 /// Shirt slot
-#define ITEM_SLOT_SHIRT (1<<20)
+#define SLOTBIT_SHIRT (1<<20)
 /// Right ear slot
-#define ITEM_SLOT_EARS_RIGHT (1<<21)
+#define SLOTBIT_EARS_RIGHT (1<<21)
 /// Wrist slot
-#define ITEM_SLOT_WRISTS (1<<22)
+#define SLOTBIT_WRISTS (1<<22)
 // -- End edit --
 /// Handcuff slot
-#define ITEM_SLOT_HANDCUFFED (1<<23)
+#define SLOTBIT_HANDCUFFED (1<<23)
 /// Legcuff slot (bolas, beartraps)
-#define ITEM_SLOT_LEGCUFFED (1<<24)
+#define SLOTBIT_LEGCUFFED (1<<24)
 /// To attach to a jumpsuit
-#define ITEM_SLOT_ACCESSORY (1<<25)
-
+#define SLOTBIT_ACCESSORY (1<<25)
+*/
 
 /// Specifies a bitfield for smarter debugging
 /datum/bitfield
@@ -941,26 +951,28 @@
 		bitfields[bitfield.variable] = bitfield.flags
 	return bitfields
 
+/*
 DEFINE_BITFIELD(slot_flags, list(
-	"ITEM_SLOT_ACCESSORY" = ITEM_SLOT_ACCESSORY,
-	"ITEM_SLOT_BACK" = ITEM_SLOT_BACK,
-	"ITEM_SLOT_BACKPACK" = ITEM_SLOT_BACKPACK,
-	"ITEM_SLOT_BELT" = ITEM_SLOT_BELT,
-	"ITEM_SLOT_DEX_STORAGE" = ITEM_SLOT_DEX_STORAGE,
-	"ITEM_SLOT_EARS" = ITEM_SLOT_EARS,
-	"ITEM_SLOT_EYES" = ITEM_SLOT_EYES,
-	"ITEM_SLOT_FEET" = ITEM_SLOT_FEET,
-	"ITEM_SLOT_GLOVES" = ITEM_SLOT_GLOVES,
-	"ITEM_SLOT_HANDCUFFED" = ITEM_SLOT_HANDCUFFED,
-	"ITEM_SLOT_HANDS" = ITEM_SLOT_HANDS,
-	"ITEM_SLOT_HEAD" = ITEM_SLOT_HEAD,
-	"ITEM_SLOT_ICLOTHING" = ITEM_SLOT_ICLOTHING,
-	"ITEM_SLOT_ID" = ITEM_SLOT_ID,
-	"ITEM_SLOT_LEGCUFFED" = ITEM_SLOT_LEGCUFFED,
-	"ITEM_SLOT_LPOCKET" = ITEM_SLOT_LPOCKET,
-	"ITEM_SLOT_MASK" = ITEM_SLOT_MASK,
-	"ITEM_SLOT_NECK" = ITEM_SLOT_NECK,
-	"ITEM_SLOT_OCLOTHING" = ITEM_SLOT_OCLOTHING,
-	"ITEM_SLOT_RPOCKET" = ITEM_SLOT_RPOCKET,
-	"ITEM_SLOT_SUITSTORE" = ITEM_SLOT_SUITSTORE,
+	"SLOTBIT_ACCESSORY" = SLOT_ACCESSORY,
+	"SLOTBIT_BACK" = SLOT_BACK,
+	"SLOTBIT_BACKPACK" = SLOT_BACKPACK,
+	"SLOTBIT_BELT" = SLOT_BELT,
+	"SLOTBIT_DEX_STORAGE" = SLOT_DEX_STORAGE,
+	"SLOTBIT_EARS" = SLOT_EARS,
+	"SLOTBIT_GLASSES" = SLOT_GLASSES,
+	"SLOTBIT_FEET" = SLOT_FEET,
+	"SLOTBIT_GLOVES" = SLOT_GLOVES,
+	"SLOTBIT_HANDCUFFED" = SLOT_HANDCUFFED,
+	"SLOTBIT_HANDS" = SLOT_HANDS,
+	"SLOTBIT_HEAD" = SLOT_HEAD,
+	"SLOTBIT_ICLOTHING" = SLOT_ICLOTHING,
+	"SLOTBIT_ID" = SLOT_ID,
+	"SLOTBIT_LEGCUFFED" = SLOT_LEGCUFFED,
+	"SLOTBIT_L_STORE" = SLOT_L_STORE,
+	"SLOTBIT_MASK" = SLOT_MASK,
+	"SLOTBIT_NECK" = SLOT_NECK,
+	"SLOTBIT_OCLOTHING" = SLOT_OCLOTHING,
+	"SLOTBIT_R_STORE" = SLOT_R_STORE,
+	"SLOTBIT_S_STORE" = SLOT_S_STORE,
 ))
+*/

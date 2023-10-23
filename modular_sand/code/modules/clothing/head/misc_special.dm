@@ -20,7 +20,7 @@
 
 /obj/item/clothing/head/goatpelt/king/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if (slot == ITEM_SLOT_HEAD)
+	if (slot == SLOT_HEAD)
 		user.faction |= "goat"
 
 /obj/item/clothing/head/goatpelt/king/dropped(mob/living/carbon/human/user)
@@ -42,7 +42,7 @@
 
 /obj/item/clothing/head/goatpope/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if (slot == ITEM_SLOT_HEAD)
+	if (slot == SLOT_HEAD)
 		user.faction |= "goat"
 
 /obj/item/clothing/head/goatpope/dropped(mob/living/carbon/human/user, slot)

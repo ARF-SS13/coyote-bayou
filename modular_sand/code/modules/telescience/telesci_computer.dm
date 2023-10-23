@@ -68,7 +68,7 @@
 		if(!user.dropItemToGround(user.get_active_held_item()))
 			return
 		user.visible_message("[user] inserts [CRYSTAL] into \the [src]'s crystal slot.", span_notice("You insert [CRYSTAL] into \the [src]'s crystal slot."))
-		balloon_alert(user, "inserted bluespace")
+		//balloon_alert(user, "inserted bluespace")
 		CRYSTAL.use(1)
 		crystals++
 		if(CRYSTAL.amount >= 1)	//please do not place a deleted item on the player's hand
@@ -80,13 +80,13 @@
 				return
 			inserted_gps = W
 			user.visible_message("[user] inserts [W] into \the [src]'s GPS device slot.", span_notice("You insert [W] into \the [src]'s GPS device slot."))
-			balloon_alert(user, "inserted GPS")
+			//balloon_alert(user, "inserted GPS")
 	else if(W.tool_behaviour == TOOL_MULTITOOL)
 		if(W.buffer && istype(W.buffer, /obj/machinery/telepad))
 			telepad = W.buffer
 			W.buffer = null
 			to_chat(user, "<span class='caution'>You upload the data from the [W.name]'s buffer.</span>")
-			balloon_alert(user, "uploaded buffer data")
+			//balloon_alert(user, "uploaded buffer data")
 	else
 		return ..()
 

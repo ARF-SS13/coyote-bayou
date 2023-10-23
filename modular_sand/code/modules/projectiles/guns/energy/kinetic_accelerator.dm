@@ -578,7 +578,7 @@
 
 /obj/item/gun/energy/kinetic_accelerator/premiumka/reskin_obj(mob/user)
 	. = ..()
-	if(ismob(loc) && current_equipped_slot == ITEM_SLOT_HANDS)
+	if(ismob(loc) && current_equipped_slot == SLOT_HANDS)
 		var/mob/update_hands = loc
 		update_hands.update_inv_hands()
 

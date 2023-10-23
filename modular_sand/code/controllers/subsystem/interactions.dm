@@ -95,4 +95,3 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
  * This puts this last on priority, very far from other subsystems,
  * if citadel ever manages to get this far, push it ever lower.
 */
-#define INIT_ORDER_INTERACTIONS		-150

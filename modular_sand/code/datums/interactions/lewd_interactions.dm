@@ -534,14 +534,15 @@
 		var/client/ucli = LM.client
 		if(cli.prefs.extremepref != "No")
 			if(!ucli || (ucli.prefs.extremepref != "No"))
-				if(!get_item_by_slot(ITEM_SLOT_EARS_LEFT) && !get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
+				//if(!get_item_by_slot(SLOT_EARS_LEFT) && !get_item_by_slot(SLOT_EARS_RIGHT))
+				if(get_item_by_slot(SLOT_EARS))
 					if(has_ears())
 						. += "...have unprotected ears."
 					else
 						. += "...have a hole where their ears should be."
 				else
 					. += "...have covered ears."
-				if(!get_item_by_slot(ITEM_SLOT_EYES))
+				if(!get_item_by_slot(SLOT_GLASSES))
 					if(has_eyes())
 						. += "...have exposed eyes."
 					else

@@ -9,7 +9,7 @@
 	user.visible_message("[user.name] attaches [src] to \the [a_floor].",
 		span_notice("You attach [src] to \the [a_floor]."),
 		"<span class='italics'>You hear clicking.</span>")
-	a_floor.balloon_alert(user, "attached to floor")
+	//a_floor.balloon_alert(user, "attached to floor")
 	var/obj/O = new /obj/structure/light_construct/floor(a_floor, 1, TRUE)
 	after_attach(O)
 

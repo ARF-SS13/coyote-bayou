@@ -43,7 +43,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if (slot == ITEM_SLOT_HEAD)
+	if (slot == SLOT_HEAD)
 		var/datum/atom_hud/DHUD = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 		DHUD.add_hud_to(user)
 
@@ -245,7 +245,7 @@
 				hardsuit_type = "2-armor"
 				if(amount == maxamount)
 					hardsuit_type = "3-armor"
-			icon_state = "commando[hardsuit_type][current_equipped_slot != ITEM_SLOT_OCLOTHING ? "-inhand" : ""]"
+			icon_state = "commando[hardsuit_type][current_equipped_slot != SLOT_OCLOTHING ? "-inhand" : ""]"
 			if(ishuman(loc))
 				var/mob/living/carbon/human/wearer = loc
 				if(istype(wearer) && (wearer.wear_suit == src))

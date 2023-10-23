@@ -4,7 +4,7 @@
 	icon_state = "socks"
 	under_type = /obj/item/clothing/underwear/socks
 	body_parts_covered = FEET
-	slot_flags = ITEM_SLOT_SOCKS
+	slot_flags = SLOT_SOCKS
 
 // please make sure they're sorted alphabetically and categorized, above is the only exception
 

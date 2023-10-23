@@ -12,7 +12,7 @@
 		used = TRUE
 		icon_state = "extra_arm_none"
 		M.visible_message(span_notice("[M] presses a button on [src], and you hear a disgusting noise."), span_notice("You feel a sharp sting as [src] plunges into your body."))
-		M.balloon_alert(M, "arm implanted")
+		//M.balloon_alert(M, "arm implanted")
 		to_chat(M, span_notice("You feel more dexterous."))
 		playsound(get_turf(M), 'sound/misc/splort.ogg', 50, 1)
 		desc += "Looks like it's been used up."

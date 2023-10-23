@@ -20,9 +20,9 @@
 	if(!milkers || !milktype)
 		return
 
-	//var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+	var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 
-	var/milktext = milk.name
+	var/milktext = milk?.name
 
 	lines = list(
 		"pushes [u_His] breasts against \the <b>[target]</b>'s mouth, squirting [u_His] warm [lowertext(milktext)] into [t_His] mouth",

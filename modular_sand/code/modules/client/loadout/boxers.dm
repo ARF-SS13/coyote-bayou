@@ -2,7 +2,7 @@
 	name = "Briefs"
 	category = LOADOUT_CATEGORY_GENERAL_UNDER
 	subcategory = LOADOUT_SUBCATEGORY_UNDERWEAR
-	slot = ITEM_SLOT_UNDERWEAR
+	slot = SLOT_UNDERWEAR
 	path = /obj/item/clothing/underwear/briefs
 	cost = 0
 
