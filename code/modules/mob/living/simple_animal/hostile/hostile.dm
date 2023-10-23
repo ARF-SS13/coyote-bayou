@@ -79,8 +79,8 @@
 	var/minimum_distance = 1
 
 	var/decompose = TRUE //Does this mob decompose over time when dead?
-	var/decomposition_time = 5 MINUTES
-	COOLDOWN_DECLARE(decomposition_schedule)
+	//var/decomposition_time = 5 MINUTES
+	//COOLDOWN_DECLARE(decomposition_schedule)
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -144,9 +144,12 @@
 
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
-		if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
+		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
-			dust(TRUE)
+			dust(TRUE)*/
+		if(prob(1))
+			visible_message(span_notice("\The dead body of the [src] decomposes!"))
+			gib(FALSE, FALSE, FALSE, TRUE)
 		return
 	queue_naptime()
 	check_health()
@@ -655,10 +658,12 @@
 			vary = FALSE, 
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
+		casing.factionize(faction)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
+		P.factionize(faction)
 		playsound(
 			src,
 			projectilesound,

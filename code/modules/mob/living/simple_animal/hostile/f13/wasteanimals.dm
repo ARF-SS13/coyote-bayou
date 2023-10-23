@@ -128,6 +128,10 @@
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
+	can_ghost_into = FALSE
+	guaranteed_butcher_results = list()
+	butcher_results = list()
+	
 
 //Fire Geckos//
 

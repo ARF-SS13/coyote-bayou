@@ -560,7 +560,8 @@
 		/obj/item/clothing/under/f13/wayfarer/shamanblue = 1,
 		/obj/effect/spawner/lootdrop/f13/trash_medicine = 8,
 		/obj/item/gun/ballistic/bow/compoundbow = 1,
-		/obj/item/toy/plush/lizardplushie/kobold = 1)
+		/obj/item/toy/plush/lizardplushie/kobold = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_unique = 1)
 	butcher_results = list(/obj/item/stack/sheet/bone = 3)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
@@ -569,8 +570,9 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 2000
+	health = 2000
+	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 4
@@ -583,6 +585,7 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	robust_searching = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -627,6 +630,7 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	ranged = TRUE
 	check_friendly_fire = TRUE
+	move_resist = MOVE_FORCE_OVERPOWERING
 	projectiletype = /obj/item/projectile/geckosummon
 	projectilesound = 'sound/magic/Staff_Healing.ogg'
 	idlesound = list(
@@ -650,10 +654,10 @@
 	desc_important = "Still in development! Report wierdness on the discord!"
 
 	variation_list = list(
-		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(1000),
+		MOB_HEALTH_LIST(2000),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(2, 3, 4, 5, 6),
@@ -668,13 +672,12 @@
 
 /obj/item/projectile/geckosummon
 	name = "gecko summoning"
-	icon = null //gonna try an invisible projectile, with just a glow of light
-	icon_state = null
+	icon_state = "spark"
 	range = 10
 	light_range = LIGHT_RANGE_FIRE
 	light_color = LIGHT_COLOR_FIRE
 	damage = 0
-	stamina = 0
+	stamina = 20
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
 
@@ -693,7 +696,7 @@
 	//var/num_nearby = 0
 	//for(var/mob/living/simple_animal/hostile/gecko/summon/G in range(7, src))
 	//	if(num_nearby++ <= 10) //should this be <= dan?
-	spawn_and_random_walk(/mob/living/simple_animal/hostile/gecko/summon, target, 3, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
+	spawn_and_random_walk(/mob/living/simple_animal/hostile/gecko/summon, target, 5, walk_chance = 100, max_walk = 10, admin_spawn = FALSE)
 	//		break
 	return BULLET_ACT_HIT
 
@@ -712,7 +715,8 @@
 		/obj/item/clothing/under/f13/tribe_chief = 1,
 		/obj/item/restraints/legcuffs/bola = 3,
 		/obj/item/twohanded/spearaxe = 1,
-		/obj/item/toy/plush/lizardplushie = 1)
+		/obj/item/toy/plush/lizardplushie = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,)
 	butcher_results = list(/obj/item/stack/sheet/bone = 3)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
@@ -723,18 +727,22 @@
 	speed = 0
 	maxHealth = 3000
 	health = 3000
+	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 30
-	melee_damage_upper = 40
+	melee_damage_upper = 50
+	reach = 2
+	sharpness = SHARP_EDGED
 	move_to_delay = 1.5
 	retreat_distance = 0
 	minimum_distance = 0
-	aggro_vision_range = 7
-	vision_range = 8
+	aggro_vision_range = 10
+	vision_range = 10
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 2
+	robust_searching = TRUE
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -779,8 +787,9 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	ranged = TRUE
 	check_friendly_fire = TRUE
-	throw_thing = /obj/item/restraints/legcuffs/bola/fragile
-	throw_thing_sound = 'sound/weapons/bolathrow.ogg'
+	move_resist = MOVE_FORCE_OVERPOWERING
+	projectiletype = /obj/item/projectile/bola/fragile
+	projectilesound = 'sound/weapons/bolathrow.ogg'
 	idlesound = list(
 		'sound/f13npc/gecko/geckocall1.ogg',
 		'sound/f13npc/gecko/geckocall2.ogg',
@@ -802,17 +811,53 @@
 	desc_important = "Still in development! Report wierdness on the discord!"
 
 	variation_list = list(
-		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
+		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
-		MOB_HEALTH_LIST(1000),
-		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
-		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
-		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 2, 3),
-		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(3000),
+		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 3, 3),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(65),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 1),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(30),
 	)
 
 /mob/living/simple_animal/hostile/gecko/tribal/chieftain/Initialize()
 	. = ..()
 	resize = 1.5
 	update_transform()
+
+/obj/item/projectile/bola
+	name = "flying cuffs"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "handcuff"
+	range = 50
+	stamina = 10
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_SHOTGUN_PELLET
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	
+	pixels_per_second = BULLET_SPEED_BASE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	/// volfemort has him bondage
+	var/obj/item/restraints/legcuffs/bola/bondage = /obj/item/restraints/legcuffs/bola
+
+/obj/item/projectile/bola/fragile
+	bondage = /obj/item/restraints/legcuffs/bola/fragile
+
+/obj/item/projectile/bola/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(!ishuman(target))
+		return BULLET_ACT_HIT
+	var/mob/living/carbon/human/hit = target
+	if(hit.legcuffed || hit.get_num_legs(FALSE) < 2)
+		return BULLET_ACT_HIT
+	var/obj/item/restraints/legcuffs/bola/gottem = new bondage(get_turf(hit))
+	gottem.ensnare(hit)
+	return BULLET_ACT_HIT

@@ -392,6 +392,7 @@
 		to_chat(C, span_userdanger("\The [src] ensnares you!"))
 		C.Knockdown(knockdown)
 		playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
+		return TRUE
 
 /obj/item/restraints/legcuffs/bola/tactical//traitor variant
 	name = "reinforced bola"
