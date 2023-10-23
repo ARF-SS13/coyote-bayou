@@ -130,6 +130,8 @@
 			genital_entry["name"] = "[capitalize(genital.name)]" //Prevents code from adding a prefix
 			genital_entry["key"] = REF(genital) //The key is the reference to the object
 			var/visibility = "Invalid"
+			visibility = "Always visible"
+			/*
 			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_THROUGH_CLOTHES))
 				visibility = "Always visible"
 			else if(CHECK_BITFIELD(genital.genital_flags, GENITAL_UNDIES_HIDDEN))
@@ -138,7 +140,7 @@
 				visibility = "Always hidden"
 			else
 				visibility = "Hidden by clothes"
-
+			*/
 			genital_entry["visibility"] = visibility
 			genital_entry["possible_choices"] = GLOB.genitals_visibility_toggles
 			genital_entry["can_arouse"] = (
@@ -182,7 +184,6 @@
 		.["arousable"] = 			prefs.arousable
 		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
 		.["vore_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, VORE_EXAMINE)
-		.["medihound_sleeper"] =	!!CHECK_BITFIELD(prefs.cit_toggles, MEDIHOUND_SLEEPER)
 		.["eating_noises"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, EATING_NOISES)
 		.["digestion_noises"] =		!!CHECK_BITFIELD(prefs.cit_toggles, DIGESTION_NOISES)
 		.["trash_forcefeed"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, TRASH_FORCEFEED)
@@ -316,19 +317,17 @@
 				if("genital_examine")
 					TOGGLE_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
 				if("vore_examine")
-					TOGGLE_BITFIELD(prefs.cit_toggles, VORE_EXAMINE)
-				if("medihound_sleeper")
-					TOGGLE_BITFIELD(prefs.cit_toggles, MEDIHOUND_SLEEPER)
+					TOGGLE_BITFIELD(prefs.cit_toggles, VOREALLOW_SEEING_BELLY_DESC)
 				if("eating_noises")
 					TOGGLE_BITFIELD(prefs.cit_toggles, EATING_NOISES)
 				if("digestion_noises")
-					TOGGLE_BITFIELD(prefs.cit_toggles, DIGESTION_NOISES)
+					prefs.allow_digestion_sounds = !prefs.allow_digestion_sounds
 				if("trash_forcefeed")
-					TOGGLE_BITFIELD(prefs.cit_toggles, TRASH_FORCEFEED)
+					prefs.allow_trash_messages = !prefs.allow_trash_messages
 				if("forced_fem")
-					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_FEM)
+					prefs.feminization = !prefs.feminization
 				if("forced_masc")
-					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_MASC)
+					prefs.masculinization = !prefs.masculinization
 				if("hypno")
 					TOGGLE_BITFIELD(prefs.cit_toggles, HYPNO)
 				if("bimbofication")

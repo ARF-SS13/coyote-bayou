@@ -17,6 +17,7 @@
 		H.playsound_local(turf_source, soundin, vol, vary, frequency, falloff)
 
 /mob/living
+	var/has_butt = FALSE //Apparently this is important for some reason
 	var/has_anus = TRUE
 	var/anus_always_accessible = FALSE
 	var/has_breasts = FALSE
@@ -939,7 +940,7 @@
 		var/datum/bitfield/bitfield = new _bitfield
 		bitfields[bitfield.variable] = bitfield.flags
 	return bitfields
-/*
+
 DEFINE_BITFIELD(slot_flags, list(
 	"ITEM_SLOT_ACCESSORY" = ITEM_SLOT_ACCESSORY,
 	"ITEM_SLOT_BACK" = ITEM_SLOT_BACK,
@@ -962,4 +963,4 @@ DEFINE_BITFIELD(slot_flags, list(
 	"ITEM_SLOT_OCLOTHING" = ITEM_SLOT_OCLOTHING,
 	"ITEM_SLOT_RPOCKET" = ITEM_SLOT_RPOCKET,
 	"ITEM_SLOT_SUITSTORE" = ITEM_SLOT_SUITSTORE,
-))*/
+))
