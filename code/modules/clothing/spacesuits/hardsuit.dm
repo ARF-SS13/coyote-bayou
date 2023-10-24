@@ -105,6 +105,7 @@ armor	//Baseline hardsuits
 	siemens_coefficient = 0
 //	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	clothing_flags = THICKMATERIAL
+	w_class = WEIGHT_CLASS_NORMAL
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
@@ -859,7 +860,7 @@ armor	//Baseline hardsuits
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight
 	icon_state = "knight_cydonia"
-	name = "cydonian armor"
+	name = "cydonian powersuit"
 	desc = "A suit of semi-powered armor produced by Cydonian Arms and Armor. It sports less armor than its contemporaries, but allows for improved mobility and recoloring of the inbuilt light strips."
 	item_state = "swat_suit"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -922,9 +923,9 @@ armor	//Baseline hardsuits
 /* Custom Hardsuits */
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm
-	name = "type IIIA hazard armor"
+	name = "type IIIA hazard powersuit"
 	desc = "This heavily modified Cydonian powersuit sports specialized components and titanium plating to protect against CBRN hazards \
-	along with laser and plasma projectiles. However, shock mitigation units and layers of kevlar had to be sacrificed to make it all fit.\
+	along with laser and plasma projectiles. However, shock absorbers and layers of kevlar had to be sacrificed to make it all fit. \
 	In addition, while it retains the standard model's mobility, the added bulk makes fine manipulation more difficult."
 	stiffness = HEAVY_STIFFNESS
 	armor_tokens = null
