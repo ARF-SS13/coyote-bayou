@@ -56,8 +56,8 @@
 	icon_living = "s_rabbit_white"
 	icon_dead = "s_rabbit_white_dead"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	unsuitable_atmos_damage = 0
 
 //Easter Baskets

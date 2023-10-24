@@ -10,8 +10,8 @@
 	faction = list(ROLE_BLOB)
 	bubble_icon = "blob"
 	speak_emote = null //so we use verb_yell/verb_say/etc
-	minbodytemp = 0
-	maxbodytemp = 360
+	//minbodytemp = 0
+	//maxbodytemp = 360
 	unique_name = 1
 	a_intent = INTENT_HARM
 	var/mob/camera/blob/overmind = null

@@ -35,8 +35,8 @@
 	faction = list("jungle")
 	robust_searching = TRUE
 	stat_attack = CONSCIOUS
-	minbodytemp = 270
-	maxbodytemp = 350
+	//minbodytemp = 270
+	//maxbodytemp = 350
 	unique_name = TRUE
 	var/list/gorilla_overlays[GORILLA_TOTAL_LAYERS]
 	var/oogas = 0
@@ -117,4 +117,4 @@
 	desc = "There is no need to be upset."
 	unique_name = FALSE
 	AIStatus = AI_OFF
-	
+

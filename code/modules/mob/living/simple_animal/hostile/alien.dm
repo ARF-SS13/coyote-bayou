@@ -33,7 +33,7 @@
 	faction = list(ROLE_ALIEN)
 	footstep_type = FOOTSTEP_MOB_CLAW
 	status_flags = CANPUSH
-	minbodytemp = 0
+	//minbodytemp = 0
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	unique_name = 1
@@ -154,12 +154,13 @@
 	damage = 30
 	icon_state = "toxin"
 
+/*
 /mob/living/simple_animal/hostile/alien/handle_temperature_damage()
-	if(bodytemperature < minbodytemp)
+	if(bodytemperature < //minbodytemp)
 		adjustBruteLoss(2)
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(20)
-
+*/
 
 /mob/living/simple_animal/hostile/alien/maid
 	name = "lusty xenomorph maid"

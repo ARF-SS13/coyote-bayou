@@ -13,8 +13,8 @@
 	wander = 0
 	healable = 0
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	maxbodytemp = INFINITY
-	minbodytemp = 0
+	//maxbodytemp = INFINITY
+	//minbodytemp = 0
 	blood_volume = 0
 	silicon_privileges = PRIVILEDGES_BOT
 	sentience_type = SENTIENCE_ARTIFICIAL

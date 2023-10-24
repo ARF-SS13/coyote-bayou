@@ -4,8 +4,8 @@
 	weather_immunities = list("acid")
 	obj_damage = 30
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	minbodytemp = 0
-	maxbodytemp = 450
+	//minbodytemp = 0
+	//maxbodytemp = 450
 	response_harm_continuous = "strikes"
 	response_harm_simple = "strike"
 	status_flags = NONE

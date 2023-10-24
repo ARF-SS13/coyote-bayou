@@ -616,8 +616,8 @@ Difficulty: Very Hard
 	faction = list("neutral")
 	del_on_death = TRUE
 	unsuitable_atmos_damage = 0
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	AIStatus = AI_OFF
