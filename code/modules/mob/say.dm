@@ -12,6 +12,8 @@
 		return
 	if(!findtext(message, "*"))		//this is used to abort the play_AC_typing_indicator() in case someone is using an emote.
 		INVOKE_ASYNC(src, .proc/play_AC_typing_indicator, message)
+	if(is_autowhisper)
+		return whisper_verb(message)
 	return say_verb(message)
 
 // /mob/verb/play_sound_typing_indicator()
