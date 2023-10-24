@@ -678,6 +678,17 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
+/obj/item/clothing/head/helmet/chinastealthhelm
+	name = "Chinese Stealth helmet"
+	desc = "A helmet belonging, albeit dysfunctional, to the Chinese stealth armor. Once belonging to a feared Chinese Crimson Dragoon."
+	icon_state = "chinastealthhelm"
+	item_state = "chinastealthhelm"
+	flags_inv = HIDEHAIR|HIDESNOUT
+	armor_list = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+
 /obj/item/clothing/head/helmet/unmcwinterhelmet
 	name = "Winter UNMC Helmet"
 	desc = "A standard issued UNMC Helmet.This version seems to have white paint all over it, a type of camoflauge. As an added bonus, it seems a bit more sturdy to laser based weaponary. The flashlight mount doesn't work and it has no visor. Despite that, it seems to be in good condition. Don't lose your head now, soldier."
