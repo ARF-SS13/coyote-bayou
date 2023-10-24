@@ -305,7 +305,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
-	chat_toggles |= CHAT_NEWBIE
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		var/bacpath = "[path].updatebac" //todo: if the savefile version is higher then the server, check the backup, and give the player a prompt to load the backup
