@@ -27,7 +27,7 @@
 	deathmessage = "lets out a faint squeak as the glint in its eyes disappears"
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	pressure_resistance = 200
 
 /mob/living/simple_animal/pet/plushie/ComponentInitialize()

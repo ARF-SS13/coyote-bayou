@@ -8,8 +8,8 @@
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
 	unsuitable_atmos_damage = 0
-	minbodytemp = TCMB
-	maxbodytemp = T0C + 40
+	//minbodytemp = TCMB
+	//maxbodytemp = T0C + 40
 	health = 200
 	maxHealth = 200
 	speed = 0

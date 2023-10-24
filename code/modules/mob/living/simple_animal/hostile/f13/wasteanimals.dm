@@ -77,16 +77,6 @@
 		"lunges",
 		"gecks"
 		)
-	atmos_requirements = list(
-		"min_oxy" = 5,
-		"max_oxy" = 0,
-		"min_tox" = 0,
-		"max_tox" = 1,
-		"min_co2" = 0,
-		"max_co2" = 5,
-		"min_n2" = 0,
-		"max_n2" = 0
-		)
 	faction = list("gecko", "critter-friend") // critter-friend is a flag for related beast friend/master quirk. Makes hostile mob passive for quirk holder.
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -229,16 +219,6 @@
 		"chomps",
 		"lunges",
 		"gecks"
-		)
-	atmos_requirements = list(
-		"min_oxy" = 5,
-		"max_oxy" = 0,
-		"min_tox" = 0,
-		"max_tox" = 1,
-		"min_co2" = 0,
-		"max_co2" = 5,
-		"min_n2" = 0,
-		"max_n2" = 0
 		)
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -391,16 +371,6 @@
 		"chomps",
 		"lunges",
 		"gecks"
-		)
-	atmos_requirements = list(
-		"min_oxy" = 5,
-		"max_oxy" = 0,
-		"min_tox" = 0,
-		"max_tox" = 1,
-		"min_co2" = 0,
-		"max_co2" = 5,
-		"min_n2" = 0,
-		"max_n2" = 0
 		)
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -659,7 +629,6 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
 	speak_emote = list("growls")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("nightstalkers")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -732,7 +701,6 @@
 	melee_damage_upper = 10
 	attack_verb_simple = "bites"
 	speak_emote = list("howls")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("nightstalkers", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -873,7 +841,7 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	
 	faction = list("hostile", "gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -942,7 +910,6 @@
 	attack_verb_simple = "goops"
 	attack_sound = 'sound/effects/attackblob.ogg'
 	speak_emote = list("glorbles")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("the tungsten cube") //at last, I am at peace ~TK
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM

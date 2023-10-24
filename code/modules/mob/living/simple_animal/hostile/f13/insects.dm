@@ -57,7 +57,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -106,7 +105,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -166,7 +164,6 @@
 	speak_emote = list("skitters")
 	retreat_distance = 5
 	minimum_distance = 7
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -248,7 +245,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("radscorpion")
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/scorpion_color = "radscorpion" //holder for icon set
@@ -365,7 +361,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("cazador")
 	movement_type = FLYING
 	a_intent = INTENT_HARM
@@ -487,7 +482,7 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+
 	faction = list("hostile", "gecko", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	pass_flags = PASSTABLE | PASSMOB
@@ -565,7 +560,6 @@
 	attack_verb_simple = "nips"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko", "critter-friend")
 	a_intent = INTENT_HARM
 	pass_flags = PASSTABLE | PASSMOB

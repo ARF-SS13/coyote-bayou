@@ -18,8 +18,8 @@
 	pass_flags = PASSTABLE
 	mob_size = MOB_SIZE_SMALL
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	minbodytemp = 200
-	maxbodytemp = 400
+	//minbodytemp = 200
+	//maxbodytemp = 400
 	unsuitable_atmos_damage = 1
 	animal_species = /mob/living/simple_animal/pet/cat
 	childtype = list(/mob/living/simple_animal/pet/cat/kitten)
@@ -66,8 +66,8 @@
 	icon_dead = "spacecat_dead"
 	held_icon = "spacecat"
 	unsuitable_atmos_damage = 0
-	minbodytemp = TCMB
-	maxbodytemp = T0C + 40
+	//minbodytemp = TCMB
+	//maxbodytemp = T0C + 40
 
 /mob/living/simple_animal/pet/cat/original
 	name = "Batsy"

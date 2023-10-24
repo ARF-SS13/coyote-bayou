@@ -262,7 +262,7 @@
 	AIStatus = AI_ON
 	stop_automated_movement = FALSE
 	wander = TRUE
-	maxbodytemp = INFINITY
+	//maxbodytemp = INFINITY
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS
