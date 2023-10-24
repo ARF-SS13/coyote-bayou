@@ -12,6 +12,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 	var/max_save_slots = 30
 
+	/// this is a unique identifier for the specific character of this slot of this preferences file
+	/// basically the per-character ckey. generated once when the character is created and never changes. hopefully!
+	var/uid // uberping identification device
+
 	//non-preference stuff
 	var/muted = 0
 	var/last_ip
@@ -4153,6 +4157,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/find_gear = has_loadout_gear(save_slot, gear_type)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
+
+/datum/preferences/proc/generate_uid()
+	var/cow = safepick(GLOB.cow_names) || (message_admins("UID GENERATION FAILED!!!!!!"))
+	var/adj = safepick(GLOB.adjectives)
+	var/ing = safepick(GLOB.ing_verbs)
+	var/verbb = safepick(GLOB.verbs)
+	var/shark = safepick(GLOB.megacarp_first_names)
+	var/net = safepick(GLOB.megacarp_last_names)
+	var/rand1 = rand(111, 999)
+	var/rand2 = rand(111, 999)
+	return ckey("[cow]_the_[ing]_[verbb]_[shark]_[net]_[rand1]_[rand2]")
 
 /datum/preferences/proc/get_my_quirks()
 	if(!LAZYLEN(char_quirks))

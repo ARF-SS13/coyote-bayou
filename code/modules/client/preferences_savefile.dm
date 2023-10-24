@@ -630,6 +630,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_index = rand(1,5) // WHY
 
 	//Character
+	S["uid"]					>> uid
+
 	S["real_name"]				>> real_name
 	S["custom_species"]			>> custom_species
 	S["name_is_always_random"]	>> be_random_name
@@ -891,8 +893,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 
+	if(isnull(uid))
+		uid = generate_uid()
+		WRITE_FILE(S["uid"], uid) // =3
+
 	//Sanitize
 
+	uid			= ckey(uid)
 	real_name	= reject_bad_name(real_name)
 	gender		= sanitize_gender(gender, TRUE, TRUE)
 	features["body_model"] = sanitize_gender(features["body_model"], FALSE, FALSE, gender == FEMALE ? FEMALE : MALE)
