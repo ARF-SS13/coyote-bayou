@@ -378,6 +378,45 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDEEARS
 
+/obj/item/clothing/head/evaspartan
+	name = "M-87 'EVA' assault helmet"
+	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. "
+	icon_state = "eva"
+	item_state = "eva"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT
+
+/obj/item/clothing/head/evaspartan2
+	name = "M-87 'EVA' assault helmet 'Icebreaker' "
+	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. This one has a winter-polarized coating."
+	icon_state = "eva2"
+	item_state = "eva2"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT
+
+/obj/item/clothing/head/evaspartan3
+	name = "M-87 'EVA' assault helmet 'Leo Patriot' "
+	desc = "An assault helmet produced by Leo Armaments. The helmet is specifically made for E.V.A enviroments. Aftermarket military designs can claim to have spun off as many sub-variants as the EVA M-87 design. However the enduring popularity of the design is a testament to its reliability, ergonomics, modularity, and militaristic craftsmanship by Leo Armaments. This one has a Leo Armaments paint scheme to it."
+	icon_state = "eva3"
+	item_state = "eva3"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT
+
 /obj/item/clothing/head/kevlarhelmet/steelfrench
 	name = "French Adrian helmet"
 	desc = "A French, albeit outdated, Adrian helmet. It was the first helmet used by the French military during the great war. In WW2, the helmet was used again but named the M26. Adjust that helmet and get back to the frontlines!"

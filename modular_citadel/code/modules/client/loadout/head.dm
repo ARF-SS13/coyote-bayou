@@ -870,6 +870,24 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 	cost = 2
 
+/datum/gear/head/spartanhelmets
+	name = "M-87 'EVA' assault helmet"
+	path = /obj/item/clothing/head/evaspartan
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetstwo
+	name = "M-87 'EVA' assault helmet 'Icebreaker'"
+	path = /obj/item/clothing/head/evaspartan2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetsthree
+	name = "M-87 'EVA' assault helmet 'Patriot'"
+	path = /obj/item/clothing/head/evaspartan3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/russianadrianhelmet
 	name = "Russian Adrian helmet "
 	path = /obj/item/clothing/head/kevlarhelmet/rusadrian

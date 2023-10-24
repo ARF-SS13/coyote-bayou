@@ -2814,6 +2814,48 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor
+	name = "Leo Armaments MARK XI armor"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit."
+	icon_state = "markvi"
+	item_state = "markvi"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor2
+	name = "Leo Armaments MARK XI armor 'Icebreaker'"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit. This one has the armor coated in a winter finish."
+	icon_state = "markvi2"
+	item_state = "markvi2"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
+	name = "Leo Armaments MARK XI armor 'Patriot'"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit. This one has the armor coated in a Leo Armaments colored finish."
+	icon_state = "markvi3"
+	item_state = "markvi3"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
 /* * * * * * * * * *
 * Old medieval armors
 * * * * * * * * * * */
