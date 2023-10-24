@@ -603,6 +603,12 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/chinastealth
+	name = "Chinese dysfunctional stealth armor"
+	path = /obj/item/clothing/suit/armor/medium/chinastealth
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/medievalarmors
 	name = "Unpainted knight armor"
 	path = /obj/item/clothing/suit/armor/medium/oldarmors/basicknightarmor
