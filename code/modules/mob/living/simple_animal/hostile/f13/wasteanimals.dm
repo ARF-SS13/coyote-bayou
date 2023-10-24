@@ -137,8 +137,6 @@
 	
 
 /mob/living/simple_animal/hostile/gecko/make_low_health()
-	speed *= 1.3
-	move_to_delay *= 0.5
 	melee_damage_lower *= 0.5
 	melee_damage_upper *= 0.7
 	see_in_dark += 8
@@ -151,8 +149,6 @@
 
 /// Override this with what should happen when going from low health to high health
 /mob/living/simple_animal/hostile/gecko/make_high_health()
-	speed = initial(speed)
-	move_to_delay = initial(move_to_delay)
 	melee_damage_lower = initial(melee_damage_lower)
 	melee_damage_upper = initial(melee_damage_upper)
 	see_in_dark = initial(see_in_dark)
