@@ -562,7 +562,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			else
 				emote("me", EMOTE_AUDIBLE, pick(emote_hear))
 
-
+/*
 /mob/living/simple_animal/proc/environment_is_safe(datum/gas_mixture/environment, check_temp = FALSE)
 	. = TRUE
 
@@ -621,6 +621,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
+*/
 
 /mob/living/simple_animal/gib()
 	if(butcher_results || guaranteed_butcher_results)
