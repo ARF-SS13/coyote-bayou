@@ -2,7 +2,7 @@ GLOBAL_VAR_INIT(NEWBIE_COLOR, null)//If this is null, use the CSS for NEWBIE. Ot
 GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 
 /client/verb/newbie(msg as text)
-	set name = "NEWBIE" 
+	set name = "HELP" 
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
@@ -20,10 +20,10 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 			to_chat(usr, span_danger("NEWBIE for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_NEWBIE)
-			to_chat(src, span_danger("You cannot use NEWBIE (muted)."))
+			to_chat(src, span_danger("You cannot use NEWBIE/HELP (muted)."))
 			return
 	if(jobban_isbanned(src.mob, "NEWBIE"))
-		to_chat(src, span_danger("You have been banned from NEWBIE."))
+		to_chat(src, span_danger("You have been banned from NEWBIE/HELP."))
 		return
 	if(QDELETED(src))
 		return
@@ -45,8 +45,8 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 			return
 		if(findtext(msg, "byond://"))
 			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
-			log_admin("[key_name(src)] has attempted to advertise in NEWBIE: [msg]")
-			message_admins("[key_name_admin(src)] has attempted to advertise in NEWBIE: [msg]")
+			log_admin("[key_name(src)] has attempted to advertise in NEWBIE/HELP: [msg]")
+			message_admins("[key_name_admin(src)] has attempted to advertise in NEWBIE/HELP: [msg]")
 			return
 
 	if(!(prefs.chat_toggles & CHAT_NEWBIE))
@@ -78,19 +78,19 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span class='adminnewbie'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>NEWBIE:</span> <EM>[holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+						to_chat(C, "<span class='adminnewbie'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>NEWBIE/HELP:</span> <EM>[holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 					else
-						to_chat(C, "<span class='adminobservernewbie'><span class='prefix'>NEWBIE:</span> <EM>[holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='adminobservernewbie'><span class='prefix'>NEWBIE/HELP:</span> <EM>[holder.fakekey ? "/([holder.fakekey])" : "[key]"]:</EM> <span class='message linkify'>[msg]</span></span>")
 				else
 					if(GLOB.NEWBIE_COLOR)
-						to_chat(C, "<font color='[GLOB.NEWBIE_COLOR]'><b><span class='prefix'>NEWBIE:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<font color='[GLOB.NEWBIE_COLOR]'><b><span class='prefix'>NEWBIE/HELP:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
-						to_chat(C, span_love("<span class='prefix'>NEWBIE:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>"))
+						to_chat(C, span_purple("<span class='prefix'>NEWBIE/HELP:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>"))
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.NEWBIE_COLOR)
-					to_chat(C, "<font color='[GLOB.NEWBIE_COLOR]'><b><span class='prefix'>NEWBIE:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+					to_chat(C, "<font color='[GLOB.NEWBIE_COLOR]'><b><span class='prefix'>NEWBIE/HELP:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
-					to_chat(C, span_love("<span class='prefix'>NEWBIE:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>"))
+					to_chat(C, span_purple("<span class='prefix'>NEWBIE/HELP:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>"))
 
 /proc/toggle_newbie(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling newbie
