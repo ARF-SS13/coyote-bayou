@@ -278,6 +278,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/chinastealthhelm
+	name = "Chinese stealth helmet"
+	path = /obj/item/clothing/head/helmet/chinastealthhelm
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
 /datum/gear/head/pot
 	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
