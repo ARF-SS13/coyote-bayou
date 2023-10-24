@@ -3841,6 +3841,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							erp_tab_page = text2num(href_list["newtab"])
 
 	chat_toggles |= CHAT_LOOC // the LOOC stays on during sex
+	chat_toggles |= CHAT_NEWBIE
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
 			loadout_data["SAVE_[loadout_slot]"] = list()

@@ -78,6 +78,11 @@
 	path = /obj/item/lighter
 	cost = 2
 
+/datum/gear/hands/bible
+	name = "Bible"
+	path = /obj/item/storage/book/bible
+	cost = 0
+
 /datum/gear/hands/beeplushie
 	name = "Bee Plushie"
 	path = /obj/item/toy/plush/beeplushie
