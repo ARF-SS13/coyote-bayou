@@ -2949,6 +2949,21 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
+/obj/item/clothing/suit/armor/medium/chinastealth
+	name = "Chinese dysfunctional stealth armor"
+	desc = "A suit of dysfunctional Chinese Stealth Armor, albeit repaired to look good enough, once belonging to a feared Crimson Dragoon. Offers little protection."
+	icon_state = "chinastealth"
+	item_state = "chinastealth"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	flags_inv = HIDEJUMPSUIT
+	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
+
 /obj/item/clothing/suit/armor/medium/unmcmedic
 	name = "UNMC standard medical armor"
 	desc = "A set of a medic's armor set from the UNMC before pre-war times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
