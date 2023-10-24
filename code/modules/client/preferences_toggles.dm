@@ -270,6 +270,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 /datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_newbie)()
+	set name = "Show/Hide Newbie"
+	set category = "Preferences"
+	set desc = "Toggles seeing Newbie chat"
+	usr.client.prefs.chat_toggles ^= CHAT_NEWBIE
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_NEWBIE) ? "now" : "no longer"] see messages on the NEWBIE channel.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing NEWBIE", "[usr.client.prefs.chat_toggles & CHAT_NEWBIE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/listen_newbie/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_NEWBIE
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_anonooc)()
 	set name = "Show/Hide AnonOOC"
 	set category = "Preferences"
