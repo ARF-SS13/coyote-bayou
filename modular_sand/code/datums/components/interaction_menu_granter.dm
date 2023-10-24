@@ -7,7 +7,10 @@
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
 	if(!menu)
-		to_chat(usr, span_warning("You must have done something really bad to not have an interaction component."))
+		usr.AddComponent(/datum/component/interaction_menu_granter)
+		menu = usr.GetComponent(/datum/component/interaction_menu_granter)
+	if(!menu)
+		to_chat(usr, span_warning("Shits broken!."))
 		return
 
 	if(!src)
@@ -45,8 +48,8 @@
 	UnregisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON)
 	. = ..()
 
-/// The one interacting is clicker, the interacted is clicked.
-/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
+/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)/// The one interacting is clicker, the interacted is clicked.
+
 	// COMSIG_MOB_CTRLSHIFTCLICKON accepts `atom`s, prevent it
 	if(!istype(clicked))
 		return FALSE
