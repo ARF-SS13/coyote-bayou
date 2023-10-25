@@ -47,7 +47,7 @@ Difficulty: Very Hard
 	score_type = COLOSSUS_SCORE
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/colossus/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/stack/sheet/bone = 30)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	death_sound = 'sound/magic/demon_dies.ogg'
 
@@ -616,8 +616,8 @@ Difficulty: Very Hard
 	faction = list("neutral")
 	del_on_death = TRUE
 	unsuitable_atmos_damage = 0
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	AIStatus = AI_OFF

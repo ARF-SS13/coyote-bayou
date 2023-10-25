@@ -649,6 +649,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a3006(src)
 	new /obj/item/ammo_box/a3006box(src)
 
+/obj/item/storage/box/gun/rifle/minimosin
+	name = "mini-mosin case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/rifle/minimosin/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/mosin/mini(src)
+	new /obj/item/ammo_box/a22(src)
+	new /obj/item/ammo_box/a22(src)
+	new /obj/item/ammo_box/a22(src)
+	new /obj/item/ammo_box/m22(src)
+
+
 /obj/item/storage/box/gun/rifle/caravan_shotgun
 	name = "caravan rifle case"
 
@@ -1637,6 +1649,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
+
+/datum/loadout_box/minimosin
+	entry_tag = "mini mosin"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/minimosin
 
 /datum/loadout_box/caravan_shotgun
 	entry_tag = "Caravan Rifle"

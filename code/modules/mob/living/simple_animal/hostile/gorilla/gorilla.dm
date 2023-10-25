@@ -13,7 +13,7 @@
 	maxHealth = 220
 	health = 220
 	loot = list(/obj/effect/gibspawner/generic)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gorilla = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gorilla = 4)
 	response_help_continuous = "prods"
 	response_help_simple = "prod"
 	response_disarm_continuous = "challenges"
@@ -35,8 +35,8 @@
 	faction = list("jungle")
 	robust_searching = TRUE
 	stat_attack = CONSCIOUS
-	minbodytemp = 270
-	maxbodytemp = 350
+	//minbodytemp = 270
+	//maxbodytemp = 350
 	unique_name = TRUE
 	var/list/gorilla_overlays[GORILLA_TOTAL_LAYERS]
 	var/oogas = 0
@@ -117,5 +117,4 @@
 	desc = "There is no need to be upset."
 	unique_name = FALSE
 	AIStatus = AI_OFF
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+

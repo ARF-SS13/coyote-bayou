@@ -28,7 +28,7 @@
 	emote_hear = list("chitters")
 	speak_chance = 5
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -108,7 +108,7 @@
 	icon_living = "nurse"
 	icon_dead = "nurse_dead"
 	gender = FEMALE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8, /obj/item/reagent_containers/food/snacks/spidereggs = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8, /obj/item/reagent_containers/food/snacks/spidereggs = 4)
 	maxHealth = 40
 	health = 40
 	melee_damage_lower = 5
@@ -219,8 +219,8 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/ice //spiders dont usually like tempatures of 140 kelvin who knew
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -228,8 +228,8 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/ice
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -237,8 +237,8 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -536,11 +536,13 @@
 		to_chat(M, "[link] [my_message]")
 	usr.log_talk(message, LOG_SAY, tag="spider command")
 
+/*
 /mob/living/simple_animal/hostile/poison/giant_spider/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)
 		adjustBruteLoss(20)
-	else if(bodytemperature > maxbodytemp)
+	else if(bodytemperature >/maxbodytemp)
 		adjustBruteLoss(20)
+*/
 
 #undef SPIDER_IDLE
 #undef SPINNING_WEB

@@ -18,12 +18,12 @@
 	pass_flags = PASSTABLE
 	mob_size = MOB_SIZE_SMALL
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	minbodytemp = 200
-	maxbodytemp = 400
+	//minbodytemp = 200
+	//maxbodytemp = 400
 	unsuitable_atmos_damage = 1
 	animal_species = /mob/living/simple_animal/pet/cat
 	childtype = list(/mob/living/simple_animal/pet/cat/kitten)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -66,8 +66,8 @@
 	icon_dead = "spacecat_dead"
 	held_icon = "spacecat"
 	unsuitable_atmos_damage = 0
-	minbodytemp = TCMB
-	maxbodytemp = T0C + 40
+	//minbodytemp = TCMB
+	//maxbodytemp = T0C + 40
 
 /mob/living/simple_animal/pet/cat/original
 	name = "Batsy"
@@ -249,7 +249,7 @@
 	maxHealth = 50
 	gender = FEMALE
 	harm_intent_damage = 8
-	butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/reagent_containers/food/snacks/cakeslice/birthday = 3,  \
+	guaranteed_butcher_results = list(/obj/item/organ/brain = 1, /obj/item/organ/heart = 1, /obj/item/reagent_containers/food/snacks/cakeslice/birthday = 3,  \
 	/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 	response_harm_continuous = "takes a bite out of"
 	response_harm_simple = "take a bite out of"

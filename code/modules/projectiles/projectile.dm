@@ -124,7 +124,7 @@
 	var/damage_low
 	/// Define them both! Also the damage list takes priority
 	var/damage_high
-	var/crit_sound = 'sound/weapons/dink.ogg'
+	var/crit_sound = 'sound/weapons/crit.ogg'
 	var/dink_sound = 'sound/weapons/dink.ogg'
 
 	/// multipliers caused by the shooter
@@ -184,6 +184,9 @@
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
 
+	/// Mobs that shoot a thing wont have it hit friendlies!
+	var/list/faction = list()
+
 /obj/item/projectile/Initialize()
 	. = ..()
 	permutated = list()
@@ -212,6 +215,11 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
 
+/obj/item/projectile/proc/factionize(list/faction) //if we want there to be effects when they reach the end of their range
+	if(!LAZYLEN(faction))
+		return
+	src.faction = faction.Copy()
+
 /obj/item/projectile/proc/create_statblock()
 	var/list/my_block = list()
 	my_block["projectile_name"] = name || "Unnamed Projectile"
@@ -227,7 +235,7 @@
 	my_block["projectile_wound_bonus"] = wound_bonus || 0
 	my_block["projectile_bare_wound_bonus"] = bare_wound_bonus || 0
 	if(!my_wretched_speed || prob(1))
-		my_wretched_speed = rand(1,300)
+		my_wretched_speed = rand(1,100)
 	switch(my_wretched_speed) // no guarantee any of these are accurate
 		if(1) // duotrimeters per second, the unit of measurement for 1/32th of a meter
 			my_block["projectile_speed"] = "[pixels_per_second * 1.8288]"
@@ -551,6 +559,10 @@
 			qdel(src)
 		return hit_something
 	permutated |= target		//Make sure we're never hitting it again. If we ever run into weirdness with piercing projectiles needing to hit something multiple times.. well.. that's a to-do.
+	if(LAZYLEN(faction) && faction_check(target))
+		return process_hit(T, select_target(T), qdel_self, TRUE)		//Hit whatever else we can since we're piercing through but we're still on the same tile.
+	if(is_supereffective(target))
+		damage += (supereffective_damage * damage_mod)
 	if(!prehit(target))
 		return process_hit(T, select_target(T), qdel_self, hit_something)		//Hit whatever else we can since that didn't work.
 	SEND_SIGNAL(target, COMSIG_PROJECTILE_PREHIT, args)
@@ -568,6 +580,13 @@
 	if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 		qdel(src)
 	return hit_something
+
+/obj/item/projectile/proc/faction_check(atom/target)
+	if(!isliving(target) || !LAZYLEN(faction))
+		return
+	var/mob/living/maybehit = target
+	return LAZYLEN(maybehit.faction & faction)
+
 
 /// Check if the projectile is Super Effective on the target!
 /obj/item/projectile/proc/is_supereffective(atom/target)
@@ -1072,7 +1091,10 @@
 		var/newdam = pickweight(damage_list)
 		if(istext(newdam) && isnum(text2num(newdam)))
 			damage = text2num(newdam)
-		if(damage == LAZYACCESS(damage_list, LAZYLEN(damage_list)))
+		var/critdam = LAZYACCESS(damage_list, LAZYLEN(damage_list))
+		if(istext(critdam) && isnum(text2num(newdam)))
+			critdam = text2num(critdam)
+		if(damage == critdam)
 			playsound(src, crit_sound, 100, 1, 30)
 	else if(!isnull(damage_low) && !isnull(damage_high))
 		damage = rand(damage_low, damage_high)

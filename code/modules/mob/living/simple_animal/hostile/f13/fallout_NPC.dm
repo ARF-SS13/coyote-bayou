@@ -8,7 +8,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "vault_dweller"
 	icon_living = "vault_dweller"
-	icon_dead = "vault_dweller"
+	icon_dead = "vault_dweller_dead"
 	turns_per_move = 5
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	response_help_simple = "pokes"
@@ -25,13 +25,11 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/vault)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	loot = list()
 	unsuitable_atmos_damage = 15
 	faction = list("vault", "city")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak_chance = 1
 	despawns_when_lonely = FALSE
 	ignore_other_mobs = TRUE // we fight
@@ -57,39 +55,39 @@
 /mob/living/simple_animal/hostile/vault/dweller/dweller1
 	icon_state = "vault_dweller1"
 	icon_living = "vault_dweller1"
-	icon_dead = "vault_dweller1"
+	icon_dead = "vault_dweller1_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller2
 	icon_state = "vault_dweller2"
 	icon_living = "vault_dweller2"
-	icon_dead = "vault_dweller2"
+	icon_dead = "vault_dweller2_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller3
 	icon_state = "vault_dweller3"
 	icon_living = "vault_dweller3"
-	icon_dead = "vault_dweller3"
+	icon_dead = "vault_dweller3_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller4
 	icon_state = "vault_dweller4"
 	icon_living = "vault_dweller4"
-	icon_dead = "vault_dweller4"
+	icon_dead = "vault_dweller4_dead"
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller5
 	icon_state = "vault_dweller5"
 	icon_living = "vault_dweller5"
-	icon_dead = "vault_dweller5"
+	icon_dead = "vault_dweller5_dead"
 
 /mob/living/simple_animal/hostile/vault/security
 	name = "Vault Security"
 	desc = "Just a Vault Security"
 	icon_state = "vault_dweller_sec"
 	icon_living = "vault_dweller_sec"
-	icon_dead = "vault_dweller_sec"
+	icon_dead = "vault_dweller_sec_dead"
 	maxHealth = 160
 	health = 160
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/vault/security)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
@@ -131,7 +129,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "enclave_specialist"
 	icon_living = "enclave_specialist"
-	del_on_death = TRUE
+	icon_dead = "enclave_specialist_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
@@ -159,7 +157,6 @@
 
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("enclave")
 	check_friendly_fire = 1
@@ -185,13 +182,14 @@
 	desc = "An Enclave Scientist wearing an advanced radiation suit. While they may run from you, that does not exempt them from the evil they have committed."
 	icon_state = "enclave_scientist"
 	icon_living = "enclave_scientist"
+	icon_dead = "enclave_scientist_dead"
 	maxHealth = 120
 	health = 120
 	minimum_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
-	loot = list(/obj/effect/mob_spawn/human/corpse/enclavescientist)
+	loot = list()
 	melee_damage_lower = 5
 	melee_damage_upper = 15
 	ranged_cooldown_time = 30
@@ -216,6 +214,7 @@
 	desc = "An Enclave Soldier wearing Advanced Power Armor and a plasma multi-caster. Play time's over, mutie."
 	icon_state = "enclave_armored"
 	icon_living = "enclave_armored"
+	icon_dead = "enclave_armored_dead"
 	maxHealth = 560
 	health = 650
 	melee_damage_lower = 20
@@ -224,7 +223,7 @@
 	retreat_distance = 3
 	minimum_distance = 5
 	ranged_cooldown_time = 12
-	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
+	loot = list()
 	healable = 1
 	attack_verb_simple = "power-fists"
 	projectiletype = /obj/item/projectile/plasmacarbine
@@ -275,7 +274,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
-	icon_dead = "bs_knight"
+	icon_dead = "bs_knight_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	faction = list("BOS")
 	turns_per_move = 5
@@ -293,12 +292,10 @@
 	attack_verb_simple = "pistol-whips"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	loot = list()
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Semper Invicta!")
 	speak_emote = list("rushes")
 	speak_chance = 1
@@ -320,10 +317,10 @@
 	desc = "A Brotherhood Knight wielding a laser pistol and older issue Brotherhood combat armor."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
-	icon_dead = "bs_knight"
+	icon_dead = "bs_knight_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
@@ -344,10 +341,10 @@
 	desc = "A Paladin equipped with an AER9 and T-51b power armor. The Brotherhood has arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
-	icon_dead = "bs_paladin"
+	icon_dead = "bs_paladin_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/bs/paladin)
+	loot = list()
 	maxHealth = 480
 	health = 480
 	healable = 1
@@ -386,7 +383,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
-	icon_dead = "ncr_trooper"
+	icon_dead = "ncr_trooper_dead"
 	faction = list("NCR")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
@@ -404,12 +401,10 @@
 	attack_verb_simple = "áüåò"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	loot = list()
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Patrolling the Mojave almost makes you wish for a nuclear winter.", "When I got this assignment I was hoping there would be more gambling.", "It's been a long tour, all I can think about now is going back home.", "You know, if you were serving, you'd probably be halfway to general by now.", "You oughtta think about enlisting. We need you here.")
 	speak_emote = list("says")
 	speak_chance = 1
@@ -429,10 +424,10 @@
 	desc = "A standard NCR Trooper wielding a service rifle and equipped with a patrol vest."
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
-	icon_dead = "ncr_trooper"
+	icon_dead = "ncr_trooper_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a556/simple
@@ -454,10 +449,10 @@
 	desc = "A Ranger of the NCRA, wielding a big iron on his hip and equipped with a ranger patrol vest."
 	icon_state = "ncr_sergeant"
 	icon_living = "ncr_sergeant"
-	icon_dead = "ncr_sergeant"
+	icon_dead = "ncr_sergeant_dead"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/ranger)
+	loot = list()
 	maxHealth = 160
 	health = 160
 	healable = 1
@@ -493,7 +488,7 @@
 	icon = 'icons/fallout/mobs/humans/fallout_npc.dmi'
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
-	icon_dead = "legion_prime"
+	icon_dead = "legion_prime_dead"
 	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
@@ -511,12 +506,10 @@
 	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	loot = list()
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = TRUE
 	speak = list("Ave, true to Caesar.", "True to Caesar.", "Ave, Amicus.", "The new slave girls are quite beautiful.", "Give me cause, Profligate.", "Degenerates like you belong on a cross.")
 	speak_emote = list("says")
 	speak_chance = 1
@@ -535,11 +528,11 @@
 	desc = "A Prime Legionary, equipped with a hunting rifle."
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
-	icon_dead = "legion_prime"
+	icon_dead = "legion_prime_dead"
 	icon_gib = "legion_prime"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
@@ -561,11 +554,11 @@
 	desc = "A Prime Decanus, equipped with a hunting rifle."
 	icon_state = "legion_decan"
 	icon_living = "legion_decan"
-	icon_dead = "legion_decan"
-	icon_gib = "legion_decan"
+	icon_dead = "legion_decan_dead"
+	icon_gib = "gib"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/legion/decan)
+	loot = list()
 	maxHealth = 180
 	health = 180
 	healable = 1
@@ -622,7 +615,6 @@
 	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
 	speak = list("For our kin!", "This will be a good hunt.", "The gods look upon me today.")

@@ -241,9 +241,13 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	e_cost = 1500 // 20 shots, 2rnd burst
 
+/obj/item/ammo_casing/energy/laser/lasgun/ultra
+	projectile_type = /obj/item/projectile/beam/laser/ultra_rifle
+	e_cost = 1000 // 40 shots
+
 /obj/item/ammo_casing/energy/laser/AK470M
-	projectile_type = /obj/item/projectile/beam/laser/solar
-	e_cost = 990 // 33 shots roughly.
+	projectile_type = /obj/item/projectile/beam/laser/pistol/AK470M
+	e_cost = 1000 // 30 shots
 	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/solar
@@ -434,6 +438,9 @@ Avoid decimals when possible when it comes to e_cost!
 /obj/item/ammo_casing/energy/laser/tg/nuclear/rifle
 	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
 	e_cost = 208 // 24 shots
+
+/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear/worn
 
 /obj/item/ammo_casing/energy/laser/tg/particle
 	projectile_type = /obj/item/projectile/beam/laser/tg/particle

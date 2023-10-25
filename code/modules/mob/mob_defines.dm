@@ -205,3 +205,9 @@
 
 /// A mock client, provided by tests and friends
 	var/datum/client_interface/mock_client
+
+	///Can this animal be classified as a pet?
+	var/is_monophobia_pet = FALSE
+
+	///is the mob set to always whisper?
+	var/is_autowhisper = FALSE

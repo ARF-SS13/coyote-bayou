@@ -426,15 +426,25 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/bedsheet/cult(src)
 
-/datum/gear/donator/kits/ckey
+/datum/gear/donator/kits/Delta_DavGrunt
     name = "Grunt-Cop Kit"
-    path = /obj/item/storage/box/large/custom_kit/Delta_Dav
-    ckeywhitelist = list("Delta_Dav")
+    path = /obj/item/storage/box/large/custom_kit/Delta_DavGrunt
+    ckeywhitelist = list("delta_dav")
 
-/obj/item/storage/box/large/custom_kit/Delta_Dav/PopulateContents()
+/obj/item/storage/box/large/custom_kit/Delta_DavGrunt/PopulateContents()
     new /obj/item/clothing/head/f13/ncr/steelpot_mp(src)
     new /obj/item/clothing/under/f13/ncr/ncr_dress(src)
     new /obj/item/clothing/accessory/armband/black(src)
+
+/datum/gear/donator/kits/Delta_DavTrek
+	name = "Voyager Equipment Kit"
+	path = /obj/item/storage/box/large/custom_kit/Delta_DavTrek
+	ckeywhitelist = list("delta_dav")
+
+/obj/item/storage/box/large/custom_kit/Delta_DavTrek/PopulateContents()
+	new /obj/item/clothing/under/trek/medsci/voy(src)
+	new /obj/item/gun/energy/laser/pistol/phaser(src)
+	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
 // E
 
@@ -1178,12 +1188,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/w2000(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/gun/ballistic/automatic/g36custom(src)
+	new /obj/item/ammo_box/a556(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/suit/armor/warhammertox(src)
-	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
+	new /obj/item/clothing/head/toxbattlehelmet(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
@@ -1197,6 +1207,7 @@
 	new /obj/item/gun/ballistic/automatic/w2000(src)
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/clothing/suit/armor/outfit/warriorcats/customshadow(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 
 /obj/item/pet_carrier/paws
 	name = "Paws' carrier"
@@ -1392,7 +1403,7 @@
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
-	new /obj/item/clothing/under/rank/security/officer/skirt(src)
+	new /obj/item/clothing/under/dress/skirt/polychromic/pleated(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -1556,15 +1567,41 @@
 	new /obj/item/clothing/suit/armor/light/duster/brahmin/saltspider(src)
 	new /obj/item/melee/onehanded/club/fryingpan/saltspider(src)
 
-/datum/gear/donator/kits/kelprunner
-	name = "Kelptastic Kit"
-	path = /obj/item/storage/box/large/custom_kit/kelprunner
+/datum/gear/donator/kits/kelprunner01
+	name = "Nuclear Rifle"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner01
 	ckeywhitelist = list("Kelprunner")
 
-/obj/item/storage/box/large/custom_kit/kelprunner/PopulateContents()
+/obj/item/storage/box/large/custom_kit/kelprunner01/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn(src)
+
+/datum/gear/donator/kits/kelprunner02
+	name = "Cydonian Armor"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner02
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner02/PopulateContents()
+	new /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm(src)
+	new /obj/item/storage/backpack/invisipack(src)
+
+/datum/gear/donator/kits/kelprunner03
+	name = "Engikit"
+	path = /obj/item/storage/box/large/custom_kit/kelprunner03
+	ckeywhitelist = list("Kelprunner")
+
+/obj/item/storage/box/large/custom_kit/kelprunner03/PopulateContents()
 	new /obj/item/storage/backpack/satchel/eng(src)
 	new /obj/item/storage/firstaid/emergency(src)
-	new /obj/item/defibrillator/compact(src)
+
+/datum/gear/donator/kits/deltadav
+	name = "Voyager Equipment Kit"
+	path = /obj/item/storage/box/large/custom_kit/deltadav
+	ckeywhitelist = list("delta_dav")
+
+/obj/item/storage/box/large/custom_kit/deltadav/PopulateContents()
+	new /obj/item/clothing/under/trek/medsci/voy(src)
+	new /obj/item/gun/energy/laser/pistol/phaser(src)
+	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
 /datum/gear/donator/kits/rattles
 	name = "Box of Rattlers"

@@ -260,6 +260,8 @@
 	name = "weak arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 15
+	damage_low = 10
+	damage_high = 30
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
 
@@ -305,6 +307,8 @@
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 20
+	damage_low = 10
+	damage_high = 30
 	damage_type = BURN
 	flag = "laser"
 
@@ -333,6 +337,8 @@
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
 	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
+	damage_low = 5
+	damage_high = 15
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"
@@ -376,6 +382,8 @@
 	name = "fire bolt"
 	icon_state = "fireball"
 	damage = 45
+	damage_low = 30
+	damage_high = 50
 	damage_type = BURN
 	flag = "energy"
 

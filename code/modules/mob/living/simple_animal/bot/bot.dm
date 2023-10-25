@@ -13,9 +13,8 @@
 	wander = 0
 	healable = 0
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	maxbodytemp = INFINITY
-	minbodytemp = 0
+	//maxbodytemp = INFINITY
+	//minbodytemp = 0
 	blood_volume = 0
 	silicon_privileges = PRIVILEDGES_BOT
 	sentience_type = SENTIENCE_ARTIFICIAL
@@ -550,7 +549,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/datum/job/captain/All = new/datum/job/captain
 	all_access.access = All.get_access()
 
-	set_path(get_path_to(src, waypoint, /turf/proc/Distance_cardinal, 0, 200, id=all_access))
+	set_path(get_path_to(src, waypoint, 200, id=all_access))
 	calling_ai = caller //Link the AI to the bot!
 	ai_waypoint = waypoint
 
@@ -729,6 +728,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 				access_card.access = user_access + prev_access //Adds the user's access, if any.
 			mode = BOT_SUMMON
 			speak("Responding.", radio_channel)
+
 			calc_summon_path()
 
 		if("ejectpai")
@@ -764,12 +764,12 @@ Pass a positive integer as an argument to override a bot's default speed.
 // given an optional turf to avoid
 /mob/living/simple_animal/bot/proc/calc_path(turf/avoid)
 	check_bot_access()
-	set_path(get_path_to(src, patrol_target, /turf/proc/Distance_cardinal, 0, 120, id=access_card, exclude=avoid))
+	set_path(get_path_to(src, patrol_target, 120, id=access_card, exclude=avoid))
 
 /mob/living/simple_animal/bot/proc/calc_summon_path(turf/avoid)
 	check_bot_access()
 	spawn()
-		set_path(get_path_to(src, summon_target, /turf/proc/Distance_cardinal, 0, 150, id=access_card, exclude=avoid))
+		set_path(get_path_to(src, summon_target, 150, id=access_card, exclude=avoid))
 		if(!path.len) //Cannot reach target. Give up and announce the issue.
 			speak("Summon command failed, destination unreachable.",radio_channel)
 			bot_reset()

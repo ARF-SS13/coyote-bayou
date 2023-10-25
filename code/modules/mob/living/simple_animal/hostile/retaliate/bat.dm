@@ -24,7 +24,7 @@
 	melee_damage_upper = 5
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	pass_flags = PASSTABLE
 	faction = list("hostile")
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -41,7 +41,7 @@
 
 	//Space bats need no air to fly in.
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 
 /mob/living/simple_animal/hostile/retaliate/bat/secbat
 	name = "Security Bat"

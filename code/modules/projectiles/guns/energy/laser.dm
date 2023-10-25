@@ -31,8 +31,9 @@
 				cell = AM
 				if(oldcell)
 					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
-					oldcell.dropped()
-					oldcell.forceMove(get_turf(src.loc))
+					// oldcell.dropped()
+					// oldcell.forceMove(get_turf(src.loc))
+					oldcell.attack_hand(user)  //let's perform reload in a more intuitive way
 					oldcell.update_icon()
 				//else
 				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
@@ -442,20 +443,6 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
-//Freeblade Blaster
-/obj/item/gun/energy/laser/freeblade
-	name = "\improper Freeblade Blaster"
-	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	icon_state = "freeblade"
-	item_state = "freeblade"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
-	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
-
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto
@@ -502,38 +489,6 @@
 	)
 	init_recoil = LASER_SMG_RECOIL(2, 2)
 
-/obj/item/gun/energy/laser/auto/nayriin
-	name = "Lucy"
-	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
-	icon_state = "lasercw"
-	item_state = "rcw"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/faster
-	)
-
-/obj/item/gun/energy/laser/magpistolcustom
-	name = "OURP-HYBRID"
-	desc = "The OURP - or Orange Uanimous Response Pluck - is named such because a sliver of hypersonic iron entering someone's skull is widely considered to be a universal solution to any problem. So long as you use enough of them, anyway."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "mpc"
-	item_state = "p90"
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/mpc)
-	can_scope = FALSE
-	weapon_class = WEAPON_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/faster
-	)
-	init_recoil = LASER_SMG_RECOIL(2, 1)
-
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
@@ -547,7 +502,7 @@
 	)
 	init_recoil = LASER_SMG_RECOIL(1, 1)
 
-//Ultracite Laser pistol
+//Ultracite Laser pistol - staying commented out because the gammagun shares its sprite.
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
 	desc = "An ultracite enhanced energy-based laser gun that fires concentrated beams of light."
@@ -659,25 +614,6 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-/obj/item/gun/energy/laser/LaserAK/worn
-	name = "Laser AK470M"
-	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
-	icon_state = "LaserAK"
-	item_state = null
-	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/mfc"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
-	ammo_x_offset = 4
-	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
-	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	init_firemodes = list(
-	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm300
-	)
-	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
-
 //AER9 Laser rifle
 /obj/item/gun/energy/laser/aer9
 	name = "\improper AER9 laser rifle"
@@ -711,30 +647,13 @@
 		/datum/firemode/burst/two/slow
 	)
 
-/obj/item/gun/energy/laser/aer9/focused/rynn
-	name = "\improper Hot-wired AER10 laser rifle"
-	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_state = "hotwiredlaser"
-	item_state = "hotwiredlaser"
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	can_scope = TRUE
-	init_firemodes = list(
-		/datum/firemode/burst/two/slow
-	)
-
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
 	name = "\improper Ultracite laser rifle"
-	desc = "A sturdy and advanced military grade pre-war service laser rifle, now enhanced with ultracite"
+	desc = "An incredibly rare variant of the AER-9 laser rifle that uses Ultracite microfusion cells."
 	icon_state = "ultra_rifle"
 	item_state = "laser-rifle9"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/ultra)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
 	can_scope = FALSE
 	zoom_factor = 1
@@ -831,7 +750,7 @@
 //LAER Energy rifle
 /obj/item/gun/energy/laser/laer
 	name = "\improper LAER"
-	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
+	desc = "Derived from the AER-9, the Laser Assisted Electrical Rifle - or LAER - fires a uniquely unstable beam of directed energy to create an extremely unstable laser projection."
 	icon_state = "laer"
 	item_state = "laer"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer/hitscan)
@@ -892,6 +811,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
 //Gamma gun
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
@@ -1122,10 +1042,11 @@
 
 /obj/item/gun/energy/laser/tg/carbine/pistol
 	name = "miniture laser pistol"
-	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains the carbine's power, its battery is less efficient due to the size."
+	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains most of the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
 	can_flashlight = 0
 	can_scope = FALSE
@@ -1320,6 +1241,12 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+/* * * * * *
+ * XCOM UFO Defense Lasrifle
+ * Self-charging RNG heavy gun
+ * Unique
+ * * * * * */
+
 /obj/item/gun/energy/laser/xcomufolaser
 	name = "weathered strange laser rifle"
 	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X'. Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
@@ -1343,6 +1270,108 @@
 	)
 	init_recoil = LASER_CARBINE_RECOIL(1, 1)
 
+/* "donator" energy weapons -- guns that go in ckey loadouts*/
+
+/obj/item/gun/energy/laser/pistol/phaser
+	name = "Type-2a phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the lethal firemode."
+	icon_state = "retro"
+	can_scope = FALSE
+
+/obj/item/gun/energy/laser/pistol/phaser/disable
+	name = "Type-2b phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the stun firemode."
+	icon_state = "retrodisabler"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/stun)
+
+/obj/item/gun/energy/laser/magpistolcustom
+	name = "OURP-HYBRID"
+	desc = "The OURP - or Orange Uanimous Response Pluck - is named such because a sliver of hypersonic iron entering someone's skull is widely considered to be a universal solution to any problem. So long as you use enough of them, anyway."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "mpc"
+	item_state = "p90"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/mpc)
+	can_scope = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+	init_recoil = LASER_SMG_RECOIL(2, 1)
+
+/obj/item/gun/energy/laser/auto/nayriin
+	name = "Lucy"
+	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+
+/obj/item/gun/energy/laser/LaserAK/worn
+	name = "Laser AK470M"
+	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
+	icon_state = "LaserAK"
+	item_state = null
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+	/datum/firemode/semi_auto,
+	/datum/firemode/automatic/rpm100
+	)
+
+/obj/item/gun/energy/laser/aer9/focused/rynn
+	name = "\improper Hot-wired AER10 laser rifle"
+	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "hotwiredlaser"
+	item_state = "hotwiredlaser"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/burst/two/slow
+	)
+
+//Freeblade Blaster
+/obj/item/gun/energy/laser/freeblade
+	name = "\improper Freeblade Blaster"
+	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "freeblade"
+	item_state = "freeblade"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
+//Kelp's nuclear rifle
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn
+	name = "prototype nuclear rifle"
+	desc = "A surviving prototype of the CDC's PANDORA-model nuclear laser rifle. The reactor in the foregrip seems dim, though still functional. It looks like there used to be a label above the grip, but it's long since been torn off."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn)
+	selfchargerate = 30
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting

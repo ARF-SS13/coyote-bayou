@@ -161,8 +161,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/common_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/common_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/common_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/common_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/common_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/common_unique = 1,
 	)
 
@@ -171,8 +171,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 1,
 	)
 
@@ -181,8 +181,8 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/rare_melee = 10,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 5,
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_energy = 7,
+		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 7,
 		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
 	)
 
@@ -204,6 +204,9 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 5,
 		/obj/item/gun/ballistic/automatic/autopipe = 1,
 		/obj/item/gun/ballistic/revolver/winchesterrebored = 5,
+		/obj/item/gun/ballistic/rifle/mosin/mini = 1,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile = 5,
+		/obj/item/gun/magic/wand/kelpmagic/basiczappies =5 ,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_guns
@@ -214,16 +217,11 @@
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 2,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 1,
-		/obj/item/gun/ballistic/automatic/m1carbine = 2,
-		/obj/item/gun/ballistic/automatic/delisle = 2,
 		/obj/item/gun/ballistic/automatic/sportcarbine = 2,
 		/obj/item/gun/ballistic/automatic/varmint = 2,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1,
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 4,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93 = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 1,
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 2,
@@ -233,20 +231,12 @@
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
-		/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/glock = 1,
-		/obj/item/gun/ballistic/rifle/hunting = 2,
-		/obj/item/gun/ballistic/rifle/antique/gras = 1,
-		/obj/item/gun/ballistic/rifle/mosin = 1,
-		/obj/item/gun/ballistic/rifle/enfield = 1,
-		/obj/item/gun/ballistic/shotgun/hunting = 2,
 		/obj/item/gun/ballistic/automatic/m1carbine/covcarbine = 2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ = 2,
 		/obj/item/gun/ballistic/automatic/matildar = 2,
 		/obj/item/gun/ballistic/shotgun/s163 = 1,
-		/obj/item/gun/ballistic/rifle/repeater/volcanic = 3,
-		/obj/item/gun/ballistic/revolver/Lemat = 2,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 2,
 		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 2,
 	)
@@ -256,7 +246,6 @@
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/american180 = 1,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 5,
-		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 1,
 		/obj/item/gun/ballistic/automatic/smg/mp5 = 1,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 5,
 		/obj/item/gun/ballistic/automatic/combat = 2,
@@ -266,10 +255,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine = 2,
 		/obj/item/gun/ballistic/automatic/armalite = 2,
 		/obj/item/gun/ballistic/automatic/l1a1 = 2,
-		/obj/item/gun/ballistic/automatic/c96auto = 1,
-		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/gun/ballistic/shotgun/trench = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 2,
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/rifle/hunting/obrez = 1,
@@ -280,50 +266,116 @@
 		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 		/obj/item/gun/ballistic/automatic/p47 = 1,
 		/obj/item/gun/ballistic/automatic/z34rifle = 1,
-		/obj/item/gun/ballistic/revolver/buntline = 1,
 		/obj/item/gun/ballistic/revolver/taurjudge = 1,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
 		/obj/item/gun/ballistic/automatic/wt550/worn = 1,
+		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/smg/greasegun = 2,
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
-		/obj/item/gun/ballistic/automatic/smg/tommygun = 2,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 1,
 		/obj/item/gun/ballistic/automatic/wt550 = 2,
-		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 2,
 		/obj/item/gun/ballistic/automatic/rangemaster = 2,
 		/obj/item/gun/ballistic/automatic/slr = 1,
-		/obj/item/gun/ballistic/automatic/m1garand = 1,
-		/obj/item/gun/ballistic/rifle/mosin/laserbubba =1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 1,
 		/obj/item/gun/ballistic/automatic/service/r82 = 2, //is weakest 5.56 automatic
 		/obj/item/gun/ballistic/automatic/assault_rifle = 2,
 		/obj/item/gun/ballistic/automatic/r93 = 1,
-		/obj/item/gun/ballistic/automatic/lewis = 1,
 		/obj/item/gun/ballistic/automatic/type93 = 2,
 		/obj/item/gun/ballistic/automatic/lsw = 1,
 		/obj/item/gun/ballistic/automatic/pistol/deagle = 2,
 		/obj/item/gun/ballistic/automatic/pistol/automag = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
-		/obj/item/gun/ballistic/rifle/mag/boys = 2,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
 		/obj/item/gun/ballistic/shotgun/police = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 2,
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
-		/obj/item/gun/ballistic/automatic/bar = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 1,
 		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 2,
+	)
+
+////////////////////
+///cowboy weapons///		ensures we gett plenty of stylish guns and bows
+////////////////////
+
+/obj/effect/spawner/lootdrop/f13/common_cowboy
+	name = "common classic guns" // basically WW2 and earlier
+	loot = list(
+		/obj/item/gun/ballistic/revolver/detective = 5,
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 15,
+		/obj/item/gun/ballistic/revolver/police = 5,
+		/obj/item/gun/ballistic/revolver/m29 = 5,
+		/obj/item/gun/ballistic/revolver/m29/alt = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 5,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/gun/ballistic/revolver/thatgun = 10,
+		/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
+		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
+		/obj/item/gun/ballistic/revolver/widowmaker = 10,
+		/obj/item/gun/ballistic/bow/lightxbow = 10,
+		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		/obj/item/gun/ballistic/revolver/buntline = 20,
+		/obj/item/gun/ballistic/rifle/hunting = 5,
+		/obj/item/gun/ballistic/rifle/antique/gras = 5,
+		/obj/item/gun/ballistic/rifle/mosin = 7,
+		/obj/item/gun/ballistic/rifle/enfield = 5,
+		/obj/item/gun/ballistic/shotgun/hunting = 7,
+		/obj/item/gun/ballistic/automatic/pistol/m1911 = 10,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 10,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93 = 7,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger = 10,
+		/obj/item/gun/ballistic/rifle/repeater/volcanic = 10,
+		/obj/item/gun/ballistic/revolver/Lemat = 10,
+	)
+
+/obj/effect/spawner/lootdrop/f13/uncommon_cowboy
+	name = "uncommon classic guns" // basically WW2 and earlier
+	loot = list(
+		/obj/item/gun/ballistic/revolver/police/webley = 5,
+		/obj/item/gun/ballistic/revolver/hunting = 10,
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
+		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
+		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
+		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
+		/obj/item/gun/ballistic/bow/longbow = 20,
+		/obj/item/gun/ballistic/bow/crossbow = 10,
+		/obj/item/gun/ballistic/bow/compositebow = 10,
+		/obj/item/gun/ballistic/automatic/m1garand = 15,
+		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 3,
+		/obj/item/gun/ballistic/automatic/c96auto = 7,
+		/obj/item/gun/ballistic/shotgun/trench = 7,
+	)
+
+/obj/effect/spawner/lootdrop/f13/rare_cowboy
+	name = "rare classic guns" // basically WW2 and earlier
+	loot = list(
+		/obj/item/gun/ballistic/revolver/m2405 = 5,
+		/obj/item/gun/ballistic/revolver/sequoia = 10,
+		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5, // ebow
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
+		/obj/item/gun/ballistic/bow/compoundbow = 3,
+		/obj/item/m2flamethrowertank = 1,
+		/obj/item/gun/ballistic/rifle/mag/boys = 1,
+		/obj/item/gun/ballistic/automatic/bar = 5,
+		/obj/item/gun/ballistic/automatic/smg/tommygun = 5,
+		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,
+		/obj/item/gun/ballistic/automatic/lewis = 1,
+		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
+		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 5, // for the meme
 	)
 
 ///////////////////////////
@@ -406,23 +458,32 @@
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz = 2,
-		/obj/item/gun/energy/laser/wattzs = 2,
-		/obj/item/gun/energy/laser/pistol = 1,
-		/obj/item/gun/energy/laser/complianceregulator = 1,
-		/obj/item/gun/energy/laser/auto = 1,
+		/obj/item/gun/energy/laser/wattz = 10,
+		/obj/item/gun/energy/laser/wattzs = 3,
+		/obj/item/gun/energy/laser/pistol = 10,
+		/obj/item/gun/energy/laser/complianceregulator = 3,
+		/obj/item/gun/energy/laser/auto = 5,
 		/obj/item/gun/energy/laser/tg/carbine/pistol = 2,
+		/obj/item/gun/energy/laser/tg/carbine = 2,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 5,
+		/obj/item/gun/magic/wand/kelpmagic/sparky = 5,
+		/obj/item/gun/energy/ionrifle/compact = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
 	name = "uncommon energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz2k = 2,
-		/obj/item/gun/energy/laser/aer9 = 5,
-		/obj/item/gun/energy/laser/plasma/pistol = 1,
-		/obj/item/gun/energy/laser/tg/rifle = 1,
-		/obj/item/gun/energy/laser/tg/carbine = 2,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 1,
+		/obj/item/gun/energy/laser/wattz2k = 20,
+		/obj/item/gun/energy/laser/aer9 = 20,
+		/obj/item/gun/energy/laser/plasma/pistol = 10,
+		/obj/item/gun/energy/laser/tg/rifle = 24,
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,
+		/obj/item/gun/energy/laser/solar = 5,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt = 5,
+		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
+		/obj/item/gun/magic/staff/kelpmagic/magicmissile =5,
+		/obj/item/gun/energy/ionrifle/carbine = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_energy
@@ -435,59 +496,16 @@
 		/obj/item/gun/energy/laser/plasma = 5,
 		/obj/item/gun/energy/ionrifle = 5,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
-		/obj/item/gun/energy/laser/solar = 15,
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 5,
-		/obj/item/gun/energy/laser/tg/rifle/auto = 5,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 1,
-	)
-
-////////////////////
-///cowboy weapons///		ensures we gett plenty of stylish guns and bows
-////////////////////
-
-/obj/effect/spawner/lootdrop/f13/common_cowboy
-	name = "common cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/detective = 5,
-		/obj/item/gun/ballistic/revolver/revolver45 = 1,
-		/obj/item/gun/ballistic/revolver/colt357 = 20,
-		/obj/item/gun/ballistic/revolver/police = 5,
-		/obj/item/gun/ballistic/revolver/m29 = 5,
-		/obj/item/gun/ballistic/revolver/m29/alt = 1,
-		/obj/item/gun/ballistic/revolver/m29/snub = 5,
-		/obj/item/gun/ballistic/revolver/revolver44 = 1,
-		/obj/item/gun/ballistic/revolver/thatgun = 10,
-		/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
-		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
-		/obj/item/gun/ballistic/revolver/widowmaker = 10,
-		/obj/item/gun/ballistic/bow/lightxbow = 10,
-		/obj/item/gun/ballistic/bow/recurvebow = 20,
-	)
-
-/obj/effect/spawner/lootdrop/f13/uncommon_cowboy
-	name = "uncommon cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/police/webley = 5,
-		/obj/item/gun/ballistic/revolver/hunting = 10,
-		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
-		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
-		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
-		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 10,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
-		/obj/item/gun/ballistic/bow/longbow = 20,
-		/obj/item/gun/ballistic/bow/crossbow = 10,
-		/obj/item/gun/ballistic/bow/compositebow = 10,
-	)
-
-/obj/effect/spawner/lootdrop/f13/rare_cowboy
-	name = "rare cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/m2405 = 1,
-		/obj/item/gun/ballistic/revolver/sequoia = 5,
-		/obj/item/gun/ballistic/rifle/repeater/brush = 10,
-		/obj/item/gun/ballistic/bow/compoundbow = 10,
-		/obj/item/m2flamethrowertank = 1,
+		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,
+		/obj/item/gun/energy/laser/tg/rifle/auto = 10,
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 5,
+		/obj/item/gun/energy/laser/LaserAK = 1,
+		/obj/item/gun/energy/laser/ultra_rifle = 1,
+		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
+		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
+		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
+		/obj/item/gun/energy/laser/laer = 3,
+		/obj/item/gun/energy/laser/plasma/carbine = 5,
 	)
 
 //////////////////////////
@@ -531,7 +549,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 2,
 		/obj/item/gun/ballistic/automatic/recoilessrifle = 1,
 		/obj/item/gun/energy/laser/tg/recharger = 5,
-		/obj/item/melee/transforming/plasmacutter/sword/cx = 5, 
+		/obj/item/melee/transforming/plasmacutter/sword/cx = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -554,12 +572,11 @@
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
 		/obj/item/gun/energy/laser/scatter/laserbuss = 20,
 		/obj/item/gun/energy/laser/aer14 = 10,
-		/obj/item/gun/energy/laser/laer = 5,
 		/obj/item/gun/energy/laser/plasma/bouncy = 20,
 		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
+		/obj/item/gun/energy/laser/plasma/bouncy = 1, // basically the alien gun, but reloadable. Might make it literally an Alien cell gun later
 		/obj/item/minigunpack = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/adam = 5,
-		/obj/item/gun/energy/laser/plasma/carbine = 10,
 		/obj/item/gun/energy/laser/plasma/scatter = 5,
 		/obj/item/gun/energy/ionrifle/carbine = 10,
 		/obj/item/gun/energy/laser/tg/particlecannon = 10, // old tesla cannon was kind of... bad. In several ways.
@@ -573,7 +590,7 @@
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 5, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
-		/obj/item/gun/ballistic/fatman = 10,
+		/obj/item/gun/ballistic/fatman = 1,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
@@ -608,6 +625,7 @@
 		/obj/item/ammo_box/a308 = 5,
 		/obj/item/stock_parts/cell/ammo/ec = 10,
 		/obj/item/ammo_box/c22 = 5,
+		/obj/item/ammo_box/a22 = 1,
 		/obj/item/ammo_box/a357 = 5,
 		/obj/item/ammo_box/a357/ratshot = 1,
 		/obj/item/ammo_box/tube/a357 = 1,
@@ -940,6 +958,7 @@
 		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
 		/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris = 1,
 		/obj/item/clothing/suit/armor/medium/odstcqb = 1,
+		/obj/item/clothing/suit/space/hardsuit/lavaknight = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_armor
@@ -1412,7 +1431,7 @@
 		/*/obj/item/grenade/homemade/firebomb = 100,*/
 		/obj/item/grenade/homemade/coffeepotbomb = 100,
 		/*/obj/item/reagent_containers/food/drinks/bottle/molotov= 100,*/
-		/obj/item/gun/ballistic/fatman = 1, //we do a lil trolling~
+		// /obj/item/gun/ballistic/fatman = 1, //we do a lil trolling~ --fatman got buffed, needs to be rare now
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_bombs

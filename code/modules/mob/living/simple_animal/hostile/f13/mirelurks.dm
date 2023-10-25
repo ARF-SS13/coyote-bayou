@@ -30,7 +30,10 @@
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
 
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2,
+		/obj/item/stack/sheet/sinew = 1
+		)
 	speak_emote = list("foams", "clacks", "chitters", "snips", "snaps")
 	emote_see = list("clack its claws", "foam at the mouth", "woobs", "extends its eyestalks")
 	attack_verb_simple = list ("pinches", "rends", "snips", "snaps", "snibbity-snaps", "clonks", "disects")
@@ -66,7 +69,10 @@
 	speed = 1
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4,
+		/obj/item/stack/sheet/sinew = 2
+		)
 	maxHealth = 160
 	health = 160
 	melee_damage_lower = 15
@@ -93,7 +99,7 @@
 	icon_living = "mirelurkbaby"
 	icon_dead = "mirelurkbaby_d"
 	icon_gib = "gib"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
 	speed = 1
 	maxHealth = 40
 	health = 40

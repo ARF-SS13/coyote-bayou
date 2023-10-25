@@ -6,6 +6,10 @@
 	max_ammo = 5
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/boltaction/twentytwo
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+
 /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	max_ammo = 1
 //	ammo_type = /obj/item/ammo_casing/a762/enchanted
