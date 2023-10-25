@@ -30,27 +30,27 @@ SUBSYSTEM_DEF(nightcycle)
 	wait = 10 SECONDS
 	// Control vars
 	var/current_time = DAYTIME
-	var/current_sun_color = "#FFFFFF"
+	var/current_sun_color = "#d3d3d3"
 	var/current_sun_power = 230
 
 	// Variables for badmining
-	var/sunrise_sun_color = "#ffd1b3"
+	var/sunrise_sun_color = "#b8967f"
 	var/sunrise_sun_power = 95
-	var/morning_sun_color = "#fba52b"
+	var/morning_sun_color = "#c27f22"
 	var/morning_sun_power = 145
-	var/latemorn_sun_color = "#fba52b"
+	var/latemorn_sun_color = "#bb7a1e"
 	var/latemorn_sun_power = 185
-	var/daytime_sun_color = "#faf7cb"
+	var/daytime_sun_color = "#bebc9a"
 	var/daytime_sun_power = 215
-	var/afternoon_sun_color = "#faf7cb"
+	var/afternoon_sun_color = "#b1ae8e"
 	var/afternoon_sun_power = 195
-	var/lateafternoon_sun_color = "#faf7cb"
+	var/lateafternoon_sun_color = "#b4b292"
 	var/lateafternoon_sun_power = 175
-	var/sunset_sun_color = "#f5b151"
+	var/sunset_sun_color = "#b3803a"
 	var/sunset_sun_power = 135
-	var/fullsunset_sun_color = "#f37588"
+	var/fullsunset_sun_color = "#b95967"
 	var/fullsunset_sun_power = 85
-	var/nighttime_sun_color = "#676b74"
+	var/nighttime_sun_color = "#343842"
 	var/nighttime_sun_power = 40
 
 	/// If defined with any number besides null it will determine how long each cycle lasts.

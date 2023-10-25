@@ -336,6 +336,14 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 
+	///////////////////////////
+	//coyote ambient lighting//
+	//		floors			 //
+	///////////////////////////
+	light_color = "#568294"
+	light_power = 3
+	light_range = 3
+
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //same thing here, dirt absorbs the liquid... :(
 

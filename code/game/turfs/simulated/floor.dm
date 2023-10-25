@@ -11,6 +11,14 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+	///////////////////////////
+	//coyote ambient lighting//
+	//		floors			 //
+	///////////////////////////
+	light_color = "#020202"
+	light_power = 1
+	light_range = 2
+
 	var/icon_regular_floor = "floor" //used to remember what icon the tile should have by default
 	var/icon_plating = "plating"
 	thermal_conductivity = 0.04
