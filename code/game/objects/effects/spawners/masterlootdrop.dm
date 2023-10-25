@@ -266,10 +266,11 @@
 		/obj/item/gun/ballistic/automatic/smg/m22 = 1,
 		/obj/item/gun/ballistic/automatic/p47 = 1,
 		/obj/item/gun/ballistic/automatic/z34rifle = 1,
-		/obj/item/gun/ballistic/revolver/taurjudge = 1,
+		/obj/item/gun/ballistic/revolver/taurjudge = 2,
 		/obj/item/gun/ballistic/automatic/ak556 = 1,
 		/obj/item/gun/ballistic/automatic/wt550/worn = 1,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 2,
+		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 3,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_guns
