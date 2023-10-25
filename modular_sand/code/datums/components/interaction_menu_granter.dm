@@ -48,7 +48,8 @@
 	UnregisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON)
 	. = ..()
 
-/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)/// The one interacting is clicker, the interacted is clicked.
+/// The one interacting is clicker, the interacted is clicked.
+/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
 
 	// COMSIG_MOB_CTRLSHIFTCLICKON accepts `atom`s, prevent it
 	if(!istype(clicked))
@@ -365,6 +366,7 @@
 				//
 				else
 					return FALSE
+			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
 			prefs.save_preferences()
 			return TRUE
 

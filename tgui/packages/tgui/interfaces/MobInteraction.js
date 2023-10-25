@@ -58,7 +58,6 @@ import { Window } from '../layouts';
 //   arousable: boolean,
 //   genital_examine: boolean,
 //   vore_examine: boolean,
-//   medihound_sleeper: boolean,
 //   eating_noises: boolean,
 //   digestion_noises: boolean,
 //   trash_forcefeed: boolean,
@@ -532,7 +531,6 @@ const ContentPreferencesTab = (props, context) => {
     arousable,
     genital_examine,
     vore_examine,
-    medihound_sleeper,
     eating_noises,
     digestion_noises,
     trash_forcefeed,
@@ -613,18 +611,6 @@ const ContentPreferencesTab = (props, context) => {
             selected={vore_examine}
             onClick={() => act('pref', {
               pref: 'vore_examine',
-            })}
-          />
-        </Table.Row>
-        <Table.Row>
-          <Button
-            fluid
-            mb={0.3}
-            content="Voracious Medihound sleepers"
-            icon={medihound_sleeper ? "toggle-on" : "toggle-off"}
-            selected={medihound_sleeper}
-            onClick={() => act('pref', {
-              pref: 'medihound_sleeper',
             })}
           />
         </Table.Row>

@@ -16,12 +16,11 @@
 #define DISABLE_ARRIVALRATTLE	(1<<13)
 #define COMBOHUD_LIGHTING		(1<<14)
 #define SOUND_SI				(1<<15)
-// Gap in prefs between tg and fortune13 prefs.
-#define SPLIT_ADMIN_TABS (1<<23)
+#define SPLIT_ADMIN_TABS 		(1<<16)
+#define VERB_CONSENT			(1<<17)
+#define LEWD_VERB_SOUNDS		(1<<18)
 
 #define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS|SOUND_SI )
-#define VERB_CONSENT			(1<<24) // Sandstorm - ERP Mechanic Addition
-#define LEWD_VERB_SOUNDS		(1<<25) // Sandstorm - ERP Mechanic Addition
 
 //Chat toggles
 #define CHAT_OOC			(1<<0)
