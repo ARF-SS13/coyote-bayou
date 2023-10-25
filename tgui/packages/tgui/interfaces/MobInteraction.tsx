@@ -620,18 +620,6 @@ const ContentPreferencesTab = (props, context) => {
           <Button
             fluid
             mb={0.3}
-            content="Voracious Medihound sleepers"
-            icon={medihound_sleeper ? "toggle-on" : "toggle-off"}
-            selected={medihound_sleeper}
-            onClick={() => act('pref', {
-              pref: 'medihound_sleeper',
-            })}
-          />
-        </Table.Row>
-        <Table.Row>
-          <Button
-            fluid
-            mb={0.3}
             content="Hear vore sounds"
             icon={eating_noises ? "volume-up" : "volume-mute"}
             selected={eating_noises}
