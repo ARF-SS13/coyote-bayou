@@ -1,7 +1,7 @@
 /datum/interaction/lewd/frotting
 	description = "Rub your %COCK% against theirs"
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
+	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 	write_log_user = "frotted"
 	write_log_target = "was frotted by"
@@ -23,8 +23,8 @@
 /datum/interaction/lewd/tribadism
 	description = "Grind your pussy against theirs."
 	interaction_sound = null
-	require_target_vagina = REQUIRE_EXPOSED
-	require_user_vagina = REQUIRE_EXPOSED
+	require_target_vagina = REQUIRE_ANY
+	require_user_vagina = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/tribadism/display_interaction(mob/living/user, mob/living/partner)

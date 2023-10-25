@@ -2,7 +2,7 @@
 	description = "Finger yourself."
 	interaction_sound = null
 	require_user_hands = TRUE
-	require_user_anus = REQUIRE_EXPOSED
+	require_user_anus = REQUIRE_ANY
 	user_is_target = TRUE
 	max_distance = 0
 	write_log_user = "fingered self"
@@ -22,7 +22,7 @@
 /datum/interaction/lewd/finger_self
 	description = "Finger your own pussy."
 	require_user_hands = TRUE
-	require_user_vagina = REQUIRE_EXPOSED
+	require_user_vagina = REQUIRE_ANY
 	interaction_sound = null
 	user_is_target = TRUE
 	max_distance = 0

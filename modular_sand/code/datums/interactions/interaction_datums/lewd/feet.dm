@@ -113,7 +113,7 @@
 	interaction_sound = null
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
-	require_target_penis = REQUIRE_EXPOSED
+	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner)
@@ -169,7 +169,7 @@
 
 /datum/interaction/lewd/footjob/vagina
 	description = "Rub their vagina with your foot."
-	require_target_vagina = REQUIRE_EXPOSED
+	require_target_vagina = REQUIRE_ANY
 	require_target_penis = null
 
 /datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner)

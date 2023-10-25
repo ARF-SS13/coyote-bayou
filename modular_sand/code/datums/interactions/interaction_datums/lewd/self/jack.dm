@@ -2,7 +2,7 @@
 	description = "Jerk yourself off."
 	interaction_sound = null
 	require_user_hands = TRUE
-	require_user_penis = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
 	user_is_target = TRUE
 	max_distance = 0
 	write_log_user = "jerked off"

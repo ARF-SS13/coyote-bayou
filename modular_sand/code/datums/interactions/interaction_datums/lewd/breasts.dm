@@ -1,6 +1,6 @@
 /datum/interaction/lewd/do_breastfeed
 	description = "Breastfeed them."
-	require_user_breasts = REQUIRE_EXPOSED
+	require_user_breasts = REQUIRE_ANY
 	require_target_mouth = TRUE
 	max_distance = 1
 	write_log_user = "breastfed"

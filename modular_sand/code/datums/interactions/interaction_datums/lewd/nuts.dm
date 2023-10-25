@@ -1,7 +1,7 @@
 /datum/interaction/lewd/nuts
 	description = "Nuts to face."
 	interaction_sound = null
-	require_user_balls = REQUIRE_EXPOSED
+	require_user_balls = REQUIRE_ANY
 	require_target_mouth = TRUE
 	max_distance = 1
 	write_log_user = "make-them-suck-their-nuts"
@@ -36,7 +36,7 @@
 	description = "Smack their nuts."
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
 	simple_message = "USER slaps TARGET's nuts!"
-	require_target_balls = REQUIRE_EXPOSED
+	require_target_balls = REQUIRE_ANY
 	needs_physical_contact = TRUE
 	max_distance = 1
 	write_log_user = "slapped-nuts"

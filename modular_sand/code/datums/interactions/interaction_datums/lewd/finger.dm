@@ -1,7 +1,7 @@
 /datum/interaction/lewd/finger
 	description = "Finger their pussy."
 	require_user_hands = TRUE
-	require_target_vagina = REQUIRE_EXPOSED
+	require_target_vagina = REQUIRE_ANY
 	interaction_sound = null
 	max_distance = 1
 
@@ -42,7 +42,7 @@
 	description = "Finger their ass."
 	interaction_sound = null
 	require_user_hands = TRUE
-	require_target_anus = REQUIRE_EXPOSED
+	require_target_anus = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/fingerass/display_interaction(mob/living/user, mob/living/partner)

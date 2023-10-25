@@ -78,7 +78,7 @@
 
 /datum/interaction/lewd/self_nipsuck
 	description = "Suck your own nips."
-	require_user_breasts = REQUIRE_EXPOSED
+	require_user_breasts = REQUIRE_ANY
 	require_user_mouth = TRUE
 	user_is_target = TRUE
 	interaction_sound = null

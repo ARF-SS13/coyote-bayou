@@ -1,8 +1,8 @@
 /datum/interaction/lewd/earfuck
 	description = "Fuck their ear."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_ears = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
+	require_target_ears = REQUIRE_ANY
 	max_distance = 1
 	write_log_user = "earfucked"
 	write_log_target = "had their ear fucked by"
@@ -11,7 +11,7 @@
 /datum/interaction/lewd/earfuck/earsocketfuck
 	description = "Fuck their earsocket."
 	require_target_ears = null
-	require_target_earsockets = REQUIRE_EXPOSED
+	require_target_earsockets = REQUIRE_ANY
 	write_log_user = "earsocket fucked"
 	write_log_target = "had their earsocket fucked by"
 

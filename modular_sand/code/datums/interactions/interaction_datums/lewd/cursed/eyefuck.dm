@@ -1,8 +1,8 @@
 /datum/interaction/lewd/eyefuck
 	description = "Fuck their eye."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_eyes = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
+	require_target_eyes = REQUIRE_ANY
 	max_distance = 1
 	write_log_user = "eyefucked"
 	write_log_target = "had their eye fucked by"
@@ -11,7 +11,7 @@
 /datum/interaction/lewd/eyefuck/eyesocketfuck
 	description = "Fuck their eyesocket."
 	require_target_eyes = null
-	require_target_eyesockets = REQUIRE_EXPOSED
+	require_target_eyesockets = REQUIRE_ANY
 	write_log_user = "eyesocketfucked"
 	write_log_target = "had their eyesocket fucked by"
 

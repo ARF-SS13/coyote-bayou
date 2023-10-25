@@ -1,7 +1,7 @@
 /datum/interaction/lewd/fuck
 	description = "Fuck their pussy."
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_vagina = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
+	require_target_vagina = REQUIRE_ANY
 	write_log_user = "fucked"
 	write_log_target = "was fucked by"
 	interaction_sound = null
@@ -32,7 +32,7 @@
 /datum/interaction/lewd/fuck/anal
 	description = "Fuck their ass."
 	require_target_vagina = null
-	require_target_anus = REQUIRE_EXPOSED
+	require_target_anus = REQUIRE_ANY
 
 /datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -64,8 +64,8 @@
 /datum/interaction/lewd/breastfuck
 	description = "Fuck their breasts."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_breasts = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
+	require_target_breasts = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/partner)
@@ -95,7 +95,7 @@
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
-	require_user_penis = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/footfuck/display_interaction(mob/living/user, mob/living/partner)
@@ -157,7 +157,7 @@
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
-	require_user_vagina = REQUIRE_EXPOSED
+	require_user_vagina = REQUIRE_ANY
 	require_user_penis = REQUIRE_NONE
 	max_distance = 1
 

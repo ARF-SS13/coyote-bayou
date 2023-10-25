@@ -1,7 +1,7 @@
 /datum/interaction/lewd/oral
 	description = "Go down on them."
 	require_user_mouth = TRUE
-	require_target_vagina = REQUIRE_EXPOSED
+	require_target_vagina = REQUIRE_ANY
 	write_log_user = "gave head to"
 	write_log_target = "was given head by"
 	interaction_sound = null
@@ -11,7 +11,7 @@
 /datum/interaction/lewd/oral/blowjob
 	description = "Suck them off."
 	require_target_vagina = null
-	require_target_penis = REQUIRE_EXPOSED
+	require_target_penis = REQUIRE_ANY
 	fucktarget = "penis"
 
 /datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner)

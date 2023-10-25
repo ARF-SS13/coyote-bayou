@@ -2,7 +2,7 @@
 	description = "Lick their ass."
 	interaction_sound = null
 	require_user_mouth = TRUE
-	require_target_anus = REQUIRE_EXPOSED
+	require_target_anus = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/rimjob/display_interaction(mob/living/user, mob/living/partner)

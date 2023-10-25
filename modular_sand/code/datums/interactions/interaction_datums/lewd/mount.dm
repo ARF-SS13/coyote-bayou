@@ -1,8 +1,8 @@
 /datum/interaction/lewd/mount
 	description = "Mount with your pussy."
 	interaction_sound = null
-	require_user_vagina = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
+	require_user_vagina = REQUIRE_ANY
+	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/mount/display_interaction(mob/living/user, mob/living/partner)
@@ -27,8 +27,8 @@
 /datum/interaction/lewd/mountass
 	description = "Mount with your ass."
 	interaction_sound = null
-	require_user_anus = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
+	require_user_anus = REQUIRE_ANY
+	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/mountass/display_interaction(mob/living/user, mob/living/partner)
@@ -54,7 +54,7 @@
 	description = "Ass to face."
 	interaction_sound = null
 	require_target_mouth = TRUE
-	require_user_anus = REQUIRE_EXPOSED
+	require_user_anus = REQUIRE_ANY
 	max_distance = 1
 
 /datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/partner)
@@ -80,7 +80,7 @@
 /datum/interaction/lewd/thighs
 	description = "Smother them using your %COCK%."
 	max_distance = 1
-	require_user_penis = REQUIRE_EXPOSED
+	require_user_penis = REQUIRE_ANY
 	require_target_mouth = TRUE
 	interaction_sound = null
 	write_log_user = "thigh-trapped (penis)"
@@ -90,7 +90,7 @@
 /datum/interaction/lewd/thighs/vagina
 	description = "Smother them using your vagina."
 	require_user_penis = REQUIRE_NONE
-	require_user_vagina = REQUIRE_EXPOSED
+	require_user_vagina = REQUIRE_ANY
 	write_log_user = "thigh-trapped (vagina)"
 	write_log_target = "was smothered (vagina) by"
 	fucktarget = "vagina"

@@ -2,7 +2,7 @@
 	description = "Jerk them off."
 	interaction_sound = null
 	require_user_hands = TRUE
-	require_target_penis = REQUIRE_EXPOSED
+	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
 	additional_details = list(
