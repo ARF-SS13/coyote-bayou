@@ -417,6 +417,8 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	supereffective_damage = 16
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	
 	var/piercing = FALSE // not sure what this does
 

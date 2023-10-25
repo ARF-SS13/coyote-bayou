@@ -899,6 +899,30 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+/obj/item/gun/ballistic/automatic/pistol/needlerpistol
+	name = "NP-149/40"
+	desc = "A NP-149/40 pistol. This unique and odd prototype of a pistol was manufactured by Latos Systems before the way. It uses a peculiar type of ammunition. The ammo itself, when inserted, somehow turns into a set of pink glowing needles. How does Latos Systems do it? Who knows!"
+	icon_state = "needlerpistol"
+	item_state = "needlerpistol"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	force_unwielded = 30
+	force = 30
+	force_wielded = 35
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
  * Super Duper Heavy pistol
