@@ -780,3 +780,10 @@
 	icon_state = "bat"
 	icon_living = "bat"
 	icon_dead = "bat_dead"
+
+/mob/living/simple_animal/advanced/cat
+	name = "Cat" 
+	icon = 'icons/mob/pets.dmi'
+	icon_state = "cat2"
+	icon_living = "cat2"
+	icon_dead = "cat2_dead"
