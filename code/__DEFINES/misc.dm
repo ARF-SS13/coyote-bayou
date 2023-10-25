@@ -497,7 +497,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 #define VARSET_TO_LIST(L, V) if(L) L[#V] = V
 #define VARSET_TO_LIST_IF(L, V, C...) if(L && (C)) L[#V] = V
 
-#define PREF_SAVELOAD_COOLDOWN 5
+#define PREF_SAVELOAD_COOLDOWN 3
 
 #define VOMIT_TOXIC 1
 #define VOMIT_PURPLE 2

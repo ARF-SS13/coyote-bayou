@@ -454,69 +454,6 @@ const CharacterPrefsTab = (props, context) => {
                 value: 0,
               })} />
           </LabeledList.Item>
-          <LabeledList.Item label="Unholy Preference">
-            <Button
-              icon={"check"}
-              color={unholy_pref === 1 ? "green" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'unholy_pref',
-                value: 1,
-              })} />
-            <Button
-              icon={"question"}
-              color={unholy_pref === 2 ? "yellow" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'unholy_pref',
-                value: 2,
-              })} />
-            <Button
-              icon={"times"}
-              color={unholy_pref === 0 ? "red" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'unholy_pref',
-                value: 0,
-              })} />
-          </LabeledList.Item>
-          <LabeledList.Item label="Extreme Preference">
-            <Button
-              icon={"check"}
-              color={extreme_pref === 1 ? "green" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'extreme_pref',
-                value: 1,
-              })} />
-            <Button
-              icon={"question"}
-              color={extreme_pref === 2 ? "yellow" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'extreme_pref',
-                value: 2,
-              })} />
-            <Button
-              icon={"times"}
-              color={extreme_pref === 0 ? "red" : "default"}
-              onClick={() => act('char_pref', {
-                char_pref: 'extreme_pref',
-                value: 0,
-              })} />
-          </LabeledList.Item>
-          {extreme_pref ? (
-            <LabeledList.Item label="Extreme Harm">
-              <Button
-                icon={"check"}
-                color={extreme_harm ? "green" : "default"}
-                onClick={() => act('char_pref', {
-                  char_pref: 'extreme_harm',
-                  value: 1,
-                })} />
-              <Button
-                icon={"times"}
-                color={extreme_harm ? "default" : "red"}
-                onClick={() => act('char_pref', {
-                  char_pref: 'extreme_harm',
-                  value: 0,
-                })} />
-            </LabeledList.Item>
           ) : (null)}
         </LabeledList>
       </Flex>

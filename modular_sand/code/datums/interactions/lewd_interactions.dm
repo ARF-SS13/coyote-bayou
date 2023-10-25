@@ -285,6 +285,7 @@
 			return TRUE
 		if(action_check)
 			return FALSE
+	
 	return FALSE
 
 /datum/interaction/lewd/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)

@@ -34,24 +34,22 @@
 		return COMPONENT_INCOMPATIBLE
 	. = ..()
 
-
-
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON, .proc/open_menu)
+	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	target = null
 	. = ..()
 
 /datum/component/interaction_menu_granter/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON)
+	UnregisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT)
 	. = ..()
 
 /// The one interacting is clicker, the interacted is clicked.
 /datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
 
-	// COMSIG_MOB_CTRLSHIFTCLICKON accepts `atom`s, prevent it
+	// COMSIG_CLICK_CTRL_SHIFT accepts `atom`s, prevent it
 	if(!istype(clicked))
 		return FALSE
 	// Don't cancel admin quick spawn
@@ -134,17 +132,14 @@
 			genital_entry["name"] = "[capitalize(genital.name)]" //Prevents code from adding a prefix
 			genital_entry["key"] = REF(genital) //The key is the reference to the object
 			var/visibility = "Invalid"
-			visibility = "Always visible"
-			/*
-			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_THROUGH_CLOTHES))
+			if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_ALWAYS))
 				visibility = "Always visible"
-			else if(CHECK_BITFIELD(genital.genital_flags, GENITAL_UNDIES_HIDDEN))
+			else if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_NO_UNDIES))
 				visibility = "Hidden by underwear"
-			else if(CHECK_BITFIELD(genital.genital_flags, GENITAL_HIDDEN))
+			else if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_NEVER))
 				visibility = "Always hidden"
 			else
 				visibility = "Hidden by clothes"
-			*/
 			genital_entry["visibility"] = visibility
 			genital_entry["possible_choices"] = GLOB.genitals_visibility_toggles
 			genital_entry["can_arouse"] = (
@@ -367,6 +362,7 @@
 				else
 					return FALSE
 			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
+			//Also add a save button.
 			prefs.save_preferences()
 			return TRUE
 

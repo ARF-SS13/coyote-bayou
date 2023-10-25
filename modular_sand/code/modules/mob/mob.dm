@@ -1,6 +1,5 @@
 // Configuration defines
-#define JOB_MINIMAL_ACCESS CONFIG_GET(flag/jobs_have_minimal_access)
-#define PROTOLOCK_DURING_LOWPOP CONFIG_GET(flag/protolock_during_lowpop)
+
 
 // Only Clients should have a panel for them, okay?
 /mob/Login()
@@ -10,7 +9,7 @@
 /mob/Logout()
 	qdel(GetComponent(/datum/component/interaction_menu_granter))
 	. = ..()
-
+/*
 /mob/Initialize(mapload)
 	. = ..()
 	register_context()
@@ -27,6 +26,9 @@
 
 /mob/proc/set_thirst(change)
 	thirst = max(0, change)
+
+#define JOB_MINIMAL_ACCESS CONFIG_GET(flag/jobs_have_minimal_access)
+#define PROTOLOCK_DURING_LOWPOP CONFIG_GET(flag/protolock_during_lowpop)
 
 /mob/proc/can_use_production(obj/machinery/machine_target)
 	// Check if access is required
@@ -140,3 +142,4 @@
 
 #undef JOB_MINIMAL_ACCESS
 #undef PROTOLOCK_DURING_LOWPOP
+*/
