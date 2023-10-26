@@ -894,6 +894,18 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/spartanhelmetfour
+	name = "M-87 'Odin' assault helmet 'Icebreaker'"
+	path = /obj/item/clothing/head/gungnirspartan2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetfive
+	name = "M-87 'Odin' assault helmet"
+	path = /obj/item/clothing/head/gungnirspartan
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/russianadrianhelmet
 	name = "Russian Adrian helmet "
 	path = /obj/item/clothing/head/kevlarhelmet/rusadrian

@@ -1262,6 +1262,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	can_remove = 0
+	max_upgrades = 0  //The gun is too unstable to mod
 	selfcharge = 1
 	selfchargerate = 5
 	init_firemodes = list(
@@ -1329,7 +1330,7 @@
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 	/datum/firemode/semi_auto,
 	/datum/firemode/automatic/rpm100

@@ -135,6 +135,22 @@
 	desc = "A box of .22 ratshot rounds."
 	ammo_type = /obj/item/ammo_casing/a22/ratshot
 
+
+//needle ammo
+
+/obj/item/ammo_box/needlercapsule
+	name = "Capsule full of needles"
+	icon_state = "needlecapsule"
+	desc = "A capsule filled to the brim with needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	multiple_sprites = 2
+	max_ammo = 72
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"

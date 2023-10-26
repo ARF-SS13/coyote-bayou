@@ -873,20 +873,20 @@ a
 	name = "Leo Armaments MARK XI armor"
 	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
+	cost = 3
 
 /datum/gear/suit/armor/spartanarmorstwo
 	name = "Leo Armaments MARK XI armor 'Icebreaker'"
 	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor2
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
+	cost = 3
 
 
 /datum/gear/suit/armor/spartanarmorsthree
 	name = "Leo Armaments MARK XI armor 'Patriot'"
 	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
-	cost = 2
+	cost = 3
 
 /datum/gear/suit/armor/warhammerk/bloodrose
 	name = "Armored Soviet priestess armor"
