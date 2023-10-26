@@ -77,7 +77,7 @@ GLOBAL_LIST_EMPTY(supplykits)
 	if(!user.mind)
 		return
 	var/list/data = list()
-	data["supply tokens"] = supplytokens
+	data["supplytokens"] = supplytokens
 	data["compactMode"] = compact_mode
 	return data
 

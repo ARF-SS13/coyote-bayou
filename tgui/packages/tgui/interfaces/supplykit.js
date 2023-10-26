@@ -7,7 +7,7 @@ import { Window } from '../layouts';
 
 const MAX_SEARCH_RESULTS = 25;
 
-export const Uplink = (props, context) => {
+export const Supplykit = (props, context) => {
   const { data } = useBackend(context);
   const { supplytokens } = data;
   return (
