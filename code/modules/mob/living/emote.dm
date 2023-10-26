@@ -1764,7 +1764,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		user.emote_for_ghost_sight(message_second)
 
 /datum/emote/help
-	key = "help"
+	key = "helpme"
 	key_third_person = "yells for help!"
 	message = "says, \"Help!\""
 
