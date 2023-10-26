@@ -1766,27 +1766,27 @@ GLOBAL_LIST_INIT(special_phrases, list(
 /datum/emote/help
 	key = "help"
 	key_third_person = "yells for help!"
-	message = "Help!"
+	message = "says, 'Help!'"
 
 /datum/emote/medic
 	key = "medic"
 	key_third_person = "yells for a medic!"
-	message = "Medic!"
+	message = "says, 'Medic!'"
 
 /datum/emote/healerhere
 	key = "healer"
 	key_third_person = "is clearly offering their services as a healer!"
-	message = "Healer for hire!"
+	message = "says, 'Healer for hire!'"
 
 /datum/emote/holdstill
 	key = "hold"
 	key_third_person = "is trying to get someone to hold still!"
-	message = "Hold up!"
+	message = "says, 'Hold up!'"
 
 /datum/emote/pullback
 	key = "pullback"
 	key_third_person = "is trying to get everyone to pull back!"
-	message = "Pull back!"
+	message = "says, 'Pull back!'"
 
 
 //Fenny Adds Flirtatious Fucking Emotes For Furries//
