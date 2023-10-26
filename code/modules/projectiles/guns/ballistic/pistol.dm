@@ -164,13 +164,31 @@
 //ruby pistol. single stack bootgun, otherwise unexceptional
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby
 	name = "Ruby"
-	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s"
+	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "ruby"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 	weapon_class = WEAPON_CLASS_TINY
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee
+	name = "RuBee"
+	desc = "A petite pocket pistol that has been modified to accept some rather unique ammunition."
+	init_mag_type = /obj/item/ammo_box/magazine/rubee
+	mag_type = /obj/item/ammo_box/magazine/rubee
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/mousegun
+	name = "mouse gun"
+	desc = "Did that gun just squeak?"
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "aps"
+	init_mag_type = /obj/item/ammo_box/magazine/mousegun
+	mag_type = /obj/item/ammo_box/magazine/mousegun
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 
 //C93 pistol. damage bonus but single stack magazine. not the best gun, but hey, it's old
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93
@@ -921,6 +939,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
 /////////////////////////////////obsolete

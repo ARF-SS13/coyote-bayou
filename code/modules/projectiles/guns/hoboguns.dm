@@ -189,6 +189,26 @@
 		GUN_MISFIRE_UNLOADS_GUN(2, 50)
 	)
 
+/obj/item/gun/ballistic/revolver/hobo/pepperbox/deal
+	name = "Deal with the Devil"
+	desc = "This terrifying abomination of a weapon is made of four heavy pipes strapped together, with a single trigger mechanism. Be very careful when firing it, or better yet, don't."
+	icon_state = "pepperbox"
+	item_state = "pepperbox"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	init_recoil = HANDGUN_RECOIL(2.4, 2.4)
+	init_firemodes = list(
+		/datum/firemode/burst/four/fastest/hobo
+	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 50, 100, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(2, 50)
+	)
+
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /* * * * * * * * * * *
@@ -351,7 +371,14 @@
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
 	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
-
+/obj/item/gun/ballistic/automatic/autopipe/special
+		name = "Redwater Special"
+		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of complete loss of control as soon as you pull the trigger."
+		color = "#FF0000"
+		damage_multiplier = GUN_EXTRA_DAMAGE_T5
+		init_firemodes = list(
+			/datum/firemode/burst/twenty/slower
+		)
 
 /////////////////////
 //PREMIUM HOBO GUNS//

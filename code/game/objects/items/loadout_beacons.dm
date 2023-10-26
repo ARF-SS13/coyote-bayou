@@ -1090,6 +1090,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m22(src)
 	new /obj/item/ammo_box/c22(src)
 
+/obj/item/storage/box/gun/revolver/derringer22
+	name = ".22LR Derringer case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/revolver/derringer22/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective/derringer(src)
+	new /obj/item/ammo_box/m22(src)
+	new /obj/item/ammo_box/c22(src)
+
 /obj/item/storage/box/gun/revolver/revolver45
 	name = ".45 ACP revolver case"
 
@@ -1097,6 +1106,21 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/revolver45(src)
 	new /obj/item/ammo_box/c45rev(src)
 	new /obj/item/ammo_box/c45(src)
+
+/obj/item/storage/box/gun/revolver/derringerLC
+	name = ".45 LC Derringer case"
+
+/obj/item/storage/box/gun/revolver/derringerLC/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/derringerLC(src)
+	new /obj/item/ammo_box/a45lcbox(src)
+
+/obj/item/storage/box/gun/revolver/derringer4570
+	name = ".45-70 Derringer case"
+
+/obj/item/storage/box/gun/revolver/derringer4570/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/derringer4570(src)
+	new /obj/item/ammo_box/c4570box(src)
+	new /obj/item/ammo_box/c4570/ratshot(src)
 
 /datum/loadout_box/medusa
 	entry_tag = "Medusa Revolver"
@@ -1860,11 +1884,30 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver
 
+/datum/loadout_box/derringer22
+	entry_tag = ".22LR Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringer22
+
+
 /datum/loadout_box/revolver45
 	entry_tag = ".45ACP Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver/revolver45
+
+/datum/loadout_box/derringerLC
+	entry_tag = ".45 LC Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringerLC
+
+/datum/loadout_box/derringer4570
+	entry_tag = ".45-70 Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringer4570
 
 /datum/loadout_box/colt357
 	entry_tag = ".357 Magnum Revolver"

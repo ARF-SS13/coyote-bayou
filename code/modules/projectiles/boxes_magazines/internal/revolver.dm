@@ -10,6 +10,10 @@
 	caliber = list(CALIBER_22LR)
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev22/four
+	name = ".22 derringer cylinder"
+	max_ammo = 4
+
 /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	name = "\improper Russian revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
@@ -41,6 +45,12 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	caliber = list(CALIBER_4570)
 	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev4570/two
+	name = "4570 derringer cylinder"
+	ammo_type = /obj/item/ammo_casing/c4570
+	caliber = list(CALIBER_4570)
+	max_ammo = 2
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	name = "4570 cylinder"
@@ -109,6 +119,11 @@
 	multiload = 0
 	can_change_caliber = TRUE
 
+/obj/item/ammo_box/magazine/internal/cylinder/improvised10mm/deal
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	can_change_caliber = FALSE
+
 /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm/Initialize()
 	. = ..()
 	name += " [pick(GLOB.hobo_gun_mag_fluff["prefix"])] [pick(GLOB.hobo_gun_mag_fluff["suffix"])][prob(20) ? pick(GLOB.hobo_gun_mag_fluff["prefix"]) : ""]"
@@ -163,6 +178,13 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 7
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/two
+	name = ".45 LC derringer cylinder"
+	name = ".45 LC revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/a45lc
+	caliber = list(CALIBER_45LC)
+	max_ammo = 2
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	name = ".45 LC revolver cylinder"

@@ -105,7 +105,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "smg22"
 	ammo_type = /obj/item/ammo_casing/bee
-	caliber = list(CALIBER_BEE)
+	caliber = list(CALIBER_BEE, CALIBER_22LR)
 	max_ammo = 180
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)

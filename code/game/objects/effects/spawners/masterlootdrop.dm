@@ -480,6 +480,9 @@
 		/obj/item/gun/ballistic/revolver/widowmaker = 10,
 		/obj/item/gun/ballistic/bow/lightxbow = 10,
 		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		/obj/item/gun/ballistic/revolver/detective/derringer = 1,
+		/obj/item/gun/ballistic/revolver/derringer4570 = 1,
+		/obj/item/gun/ballistic/revolver/derringerLC = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_cowboy
@@ -530,6 +533,10 @@
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/melee/onehanded/knife/trench = 1,
 		/obj/item/gun/energy/laser/retro = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/mousegun = 1,
+		/obj/item/gun/ballistic/automatic/autopipe/special = 1,
+		/obj/item/gun/ballistic/revolver/hobo/pepperbox/deal = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_unique
