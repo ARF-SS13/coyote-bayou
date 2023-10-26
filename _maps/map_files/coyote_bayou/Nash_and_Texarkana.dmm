@@ -22803,6 +22803,14 @@
 	color = "#779999"
 	},
 /area/f13/building/workshop/nash)
+"bXv" = (
+/obj/structure/table,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "bXx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
@@ -23360,14 +23368,7 @@
 	},
 /area/f13/building/workshop/nash)
 "cdS" = (
-/obj/structure/table,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/storage/box/medicine/stimpaks/stimpaks5,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "cee" = (
@@ -26641,7 +26642,11 @@
 	},
 /area/f13/caves)
 "cEn" = (
-/obj/item/trash/can,
+/obj/machinery/iv_drip/telescopic,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "cEo" = (
@@ -84533,8 +84538,7 @@
 	},
 /area/f13/building/abandoned)
 "pPP" = (
-/obj/structure/table,
-/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
@@ -118801,6 +118805,12 @@
 /mob/living/simple_animal/hostile/stalker,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"xNd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/iv_drip/telescopic,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "xNq" = (
 /obj/structure/barricade/tentleatheredge{
 	dir = 8
@@ -120445,6 +120455,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/nash)
+"ygQ" = (
+/obj/structure/table,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "ygT" = (
 /obj/structure/table/plasmaglass,
 /obj/effect/decal/cleanable/glitter/pink,
@@ -124151,12 +124167,12 @@ bQW
 bQW
 gfx
 gfx
-gfx
-gfx
-gfx
-gfx
-gfx
-gfx
+cGK
+cGK
+cGK
+cGK
+cGK
+cGK
 gfx
 gfx
 gfx
@@ -124408,11 +124424,11 @@ tfE
 gfx
 gfx
 gfx
-gfx
 cGK
-cGK
-cGK
-cGK
+bXv
+xNd
+cEn
+qdw
 cGK
 vIr
 gfx
@@ -124665,11 +124681,11 @@ tfE
 gfx
 gfx
 gfx
-gfx
 cGK
+ygQ
 pPP
 cdS
-qdw
+cdS
 cGK
 cGK
 cGK
@@ -124924,8 +124940,8 @@ cGK
 cGK
 cGK
 cGK
-bcq
-cEn
+cdS
+pPP
 qek
 aMz
 dzD
