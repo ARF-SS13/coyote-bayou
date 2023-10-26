@@ -139,11 +139,12 @@
 //needle ammo
 
 /obj/item/ammo_box/needlercapsule
-	name = "needler ammo capsule"
+	name = "Capsule full of needles"
 	icon_state = "needlecapsule"
 	desc = "A capsule filled to the brim with needles"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
 	caliber = list(CALIBER_NEEDLE)
+	multiple_sprites = 2
 	max_ammo = 72
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
