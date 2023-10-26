@@ -237,6 +237,8 @@
 	lefthand_file = 'icons/fallout/onmob/tools/medical_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/medical_righthand.dmi'
 	item_state = "defibunit"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_BELT
 	cell = /obj/item/stock_parts/cell/high
 
 /obj/item/defibrillator/primitive/Initialize()
