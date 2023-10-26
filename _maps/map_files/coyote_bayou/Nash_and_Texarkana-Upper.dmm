@@ -3756,8 +3756,8 @@
 /turf/open/floor/carpet,
 /area/f13/caves)
 "cXk" = (
-/obj/structure/mopbucket,
 /obj/item/mop,
+/obj/structure/janitorialcart,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "cXu" = (
@@ -3783,6 +3783,11 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
+"cZJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building/hospital/clinic/nash)
 "dab" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -16576,7 +16581,7 @@
 /area/f13/building)
 "mNr" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "mNF" = (
 /obj/structure/flora/grass/coyote/twentyfour,
@@ -27472,6 +27477,9 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"vtf" = (
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building/hospital/clinic/nash)
 "vtu" = (
 /obj/structure/decoration/rag,
 /obj/structure/simple_door/repaired,
@@ -33275,17 +33283,17 @@ cdM
 ufu
 qqU
 qnC
-psj
-psj
+vtf
+vtf
 smT
 smT
 smT
-psj
-psj
-psj
-psj
-psj
-psj
+vtf
+vtf
+vtf
+vtf
+vtf
+vtf
 gAg
 ftt
 ftt
@@ -33532,7 +33540,7 @@ cdM
 ufu
 qqU
 qnC
-psj
+vtf
 hpb
 iRG
 kiY
@@ -33542,7 +33550,7 @@ ipY
 veF
 veF
 vOP
-psj
+vtf
 gAg
 vvS
 ftt
@@ -33789,7 +33797,7 @@ cdM
 ufu
 qqU
 qnC
-psj
+vtf
 rKZ
 klm
 oub
@@ -33799,7 +33807,7 @@ ivG
 nzO
 isp
 vtO
-psj
+vtf
 gAg
 vvS
 ftt
@@ -34046,7 +34054,7 @@ cdM
 ufu
 qqU
 poH
-psj
+vtf
 rcN
 txg
 tTC
@@ -34054,9 +34062,9 @@ bQR
 bQR
 mNr
 mNr
-wzU
+cZJ
 mNr
-psj
+vtf
 gAg
 gjV
 ftt
@@ -34303,17 +34311,17 @@ nEl
 wky
 qnC
 gWO
-psj
+vtf
 bQR
 tTC
 xZD
 wIL
 wIL
-psj
+vtf
 voa
 blz
 jZh
-psj
+vtf
 gAg
 ftt
 qnC
@@ -34560,17 +34568,17 @@ hHi
 oeP
 ehs
 gWO
-psj
+vtf
 vdF
 mNr
-psj
-wzU
+vtf
+cZJ
 mNr
-psj
+vtf
 mLj
 xDy
 mLj
-psj
+vtf
 gAg
 ftt
 cKE
@@ -34817,7 +34825,7 @@ hHi
 oeP
 oxT
 gWO
-psj
+vtf
 oce
 dhn
 bMc
@@ -34827,7 +34835,7 @@ sKt
 dnE
 pZo
 mLj
-psj
+vtf
 hHi
 gDZ
 tpU
@@ -35074,7 +35082,7 @@ hHi
 oeP
 bZh
 gWO
-psj
+vtf
 oce
 bMc
 cxI
@@ -35084,7 +35092,7 @@ mXO
 sKt
 mXO
 tnO
-psj
+vtf
 hHi
 hHi
 eGR
@@ -35331,7 +35339,7 @@ hHi
 oeP
 qnC
 gWO
-psj
+vtf
 uWx
 bMc
 oce
@@ -35588,7 +35596,7 @@ kHS
 oeP
 qnC
 gWO
-psj
+vtf
 psj
 atR
 psj
@@ -35845,7 +35853,7 @@ qqx
 oeP
 qnC
 gWO
-psj
+vtf
 cXk
 xYx
 wzU
@@ -36102,7 +36110,7 @@ jVf
 oeP
 qnC
 gWO
-psj
+vtf
 pzS
 sqT
 bGp
@@ -36112,7 +36120,7 @@ clF
 boV
 sKt
 wrb
-psj
+vtf
 hHi
 hHi
 fNt
@@ -36359,7 +36367,7 @@ qqx
 oeP
 qnC
 gWO
-psj
+vtf
 qRp
 uwG
 psj
@@ -36369,7 +36377,7 @@ oKe
 wDI
 gZN
 gUh
-psj
+vtf
 hHi
 hHi
 fNt
@@ -36616,17 +36624,17 @@ jVf
 oeP
 qnC
 gWO
-psj
-psj
-psj
-psj
-psj
+vtf
+vtf
+vtf
+vtf
+vtf
 mNr
 waE
 bGp
 mNr
-psj
-psj
+vtf
+vtf
 hHi
 hHi
 wIz
@@ -36877,12 +36885,12 @@ hHi
 hHi
 hHi
 hHi
-psj
+vtf
 aOL
 voa
 rmk
 kWL
-psj
+vtf
 hHi
 hHi
 hHi
@@ -37134,12 +37142,12 @@ hHi
 hHi
 hHi
 hHi
-psj
+vtf
 jZh
 mLj
 fwX
 lNl
-psj
+vtf
 hHi
 hHi
 hHi
@@ -37391,12 +37399,12 @@ hHi
 hHi
 hHi
 hHi
-psj
+vtf
 aiH
 voa
 rmk
 pUq
-psj
+vtf
 hHi
 hHi
 hHi
@@ -37648,12 +37656,12 @@ hHi
 hHi
 hHi
 hHi
-psj
-psj
+vtf
+vtf
 uHi
 uHi
-psj
-psj
+vtf
+vtf
 hHi
 hHi
 hHi

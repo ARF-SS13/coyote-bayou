@@ -7044,7 +7044,7 @@
 /area/f13/wasteland)
 "azt" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "azu" = (
 /obj/structure/car/rubbish3,
@@ -22125,7 +22125,7 @@
 "bOQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "bPg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26830,8 +26830,7 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "cGK" = (
-/obj/effect/spawner/lootdrop/f13/trash,
-/turf/open/floor/f13/wood,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "cGL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27233,9 +27232,8 @@
 	dir = 4;
 	icon_state = "tube"
 	},
-/obj/item/wallframe/painting{
-	pixel_y = 29;
-	pixel_x = -1
+/obj/structure/sign/painting/library{
+	pixel_y = 35
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
@@ -62128,8 +62126,8 @@
 "kSu" = (
 /obj/structure/closet/crate/freezer/blood,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/wallframe/painting{
-	pixel_y = 31
+/obj/structure/sign/painting/library{
+	pixel_y = 35
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
@@ -105024,7 +105022,6 @@
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uBk" = (
 /obj/machinery/chem_dispenser,
-/obj/item/trash/f13/electronic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -107378,9 +107375,8 @@
 /area/f13/building/abandoned)
 "veo" = (
 /obj/structure/bed,
-/obj/item/wallframe/painting{
-	pixel_y = -1;
-	pixel_x = 30
+/obj/structure/sign/painting/library{
+	pixel_x = 28
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building/hospital/clinic/nash)
@@ -118805,11 +118801,6 @@
 /mob/living/simple_animal/hostile/stalker,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
-"xNd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/trash,
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/nash)
 "xNq" = (
 /obj/structure/barricade/tentleatheredge{
 	dir = 8
@@ -124418,11 +124409,11 @@ gfx
 gfx
 gfx
 gfx
-rfD
-rfD
-rfD
-rfD
-rfD
+cGK
+cGK
+cGK
+cGK
+cGK
 vIr
 gfx
 gfx
@@ -124675,13 +124666,13 @@ gfx
 gfx
 gfx
 gfx
-rfD
+cGK
 pPP
 cdS
 qdw
-rfD
-rfD
-rfD
+cGK
+cGK
+cGK
 gfx
 wYm
 ksL
@@ -124928,11 +124919,11 @@ jYR
 thC
 fse
 mmH
-rfD
-rfD
-rfD
-rfD
-rfD
+cGK
+cGK
+cGK
+cGK
+cGK
 bcq
 cEn
 qek
@@ -125185,7 +125176,7 @@ pzH
 hDX
 cxc
 qML
-rfD
+cGK
 hGn
 bhr
 crn
@@ -125195,7 +125186,7 @@ utB
 utB
 mwl
 cYw
-rfD
+cGK
 gfx
 wYm
 ksL
@@ -125442,7 +125433,7 @@ hDX
 hDX
 cxc
 tfE
-rfD
+cGK
 kTH
 aFs
 dyR
@@ -125452,7 +125443,7 @@ fLo
 tPz
 dmQ
 rQw
-rfD
+cGK
 gfx
 wYm
 lTP
@@ -125699,17 +125690,17 @@ uxN
 bhi
 cxc
 eaZ
-rfD
+cGK
 ugE
 gnt
 tIt
-rfD
-rfD
+cGK
+cGK
 tEP
 bOQ
 oGu
-rfD
-rfD
+cGK
+cGK
 gfx
 gfx
 cPq
@@ -125956,20 +125947,20 @@ bcy
 mDG
 cxc
 eaZ
-rfD
-rfD
-rfD
-rfD
-rfD
+cGK
+cGK
+cGK
+cGK
+cGK
 qAS
 rTj
 bdn
 gvn
-rfD
-rfD
+cGK
+cGK
 azt
-rfD
-rfD
+cGK
+cGK
 qAx
 nFA
 nFA
@@ -126213,7 +126204,7 @@ baM
 aYT
 ijI
 eaZ
-rfD
+cGK
 sCb
 rkv
 gFz
@@ -126226,7 +126217,7 @@ tKC
 pqC
 oUq
 jml
-rfD
+cGK
 rax
 rLT
 bfD
@@ -126470,7 +126461,7 @@ vPP
 vPP
 snZ
 bqX
-rfD
+cGK
 wFd
 vpC
 cjb
@@ -126483,7 +126474,7 @@ azt
 pTi
 wyK
 miR
-rfD
+cGK
 pll
 rLT
 mkb
@@ -126727,7 +126718,7 @@ psq
 bcO
 tBD
 kkp
-rfD
+cGK
 coF
 cjb
 cjb
@@ -126736,11 +126727,11 @@ iAU
 iAU
 rfD
 uMJ
-rfD
+cGK
 wGL
 cOL
 veo
-rfD
+cGK
 rax
 nFA
 mkb
@@ -126984,7 +126975,7 @@ eAP
 bcy
 tBD
 tfE
-rfD
+cGK
 uBk
 jJv
 cjb
@@ -126993,11 +126984,11 @@ bGz
 bGz
 lhP
 bGz
-rfD
-rfD
-rfD
-rfD
-rfD
+cGK
+cGK
+cGK
+cGK
+cGK
 wYm
 bsh
 vTG
@@ -127241,14 +127232,14 @@ psq
 bcO
 tBD
 ldT
-rfD
+cGK
 ggm
 vpC
 aYr
 uvY
 bGz
-cGK
-xNd
+bGz
+lhP
 vIJ
 ewG
 gfx
@@ -127498,7 +127489,7 @@ hDX
 bcf
 cxc
 boE
-rfD
+cGK
 mAv
 cjb
 jHA
@@ -127758,13 +127749,13 @@ boE
 rfD
 ewG
 ewG
-rfD
-rfD
+cGK
+cGK
 cLg
 bGz
 nTr
 xCW
-rfD
+cGK
 gfx
 gfx
 gfx
@@ -128016,12 +128007,12 @@ gfx
 gfx
 gfx
 gfx
-rfD
-rfD
+cGK
+cGK
 nZP
 nZP
-rfD
-rfD
+cGK
+cGK
 gfx
 gfx
 gfx
