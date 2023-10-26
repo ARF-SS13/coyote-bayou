@@ -2816,7 +2816,7 @@
 
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor
 	name = "Leo Armaments MARK XI armor"
-	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit."
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit."
 	icon_state = "markvi"
 	item_state = "markvi"
 	equip_delay_self = 5
@@ -2830,7 +2830,7 @@
 
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor2
 	name = "Leo Armaments MARK XI armor 'Icebreaker'"
-	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit. This one has the armor coated in a winter finish."
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit. This one has the armor coated in a winter finish."
 	icon_state = "markvi2"
 	item_state = "markvi2"
 	equip_delay_self = 5
@@ -2844,7 +2844,7 @@
 
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
 	name = "Leo Armaments MARK XI armor 'Patriot'"
-	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such the stomach region exposed, only protected by the bodysuit. This one has the armor coated in a Leo Armaments colored finish."
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit. This one has the armor coated in a Leo Armaments colored finish."
 	icon_state = "markvi3"
 	item_state = "markvi3"
 	equip_delay_self = 5
