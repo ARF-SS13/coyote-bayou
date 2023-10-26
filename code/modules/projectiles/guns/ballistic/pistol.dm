@@ -928,7 +928,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
 	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
 	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(

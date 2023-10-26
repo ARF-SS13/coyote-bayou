@@ -25,7 +25,8 @@
 /obj/item/ammo_casing/caseless/needle
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
-	icon_state = "needler-casing"
+	icon_state = "needlecasing"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	caliber = CALIBER_NEEDLE
 	projectile_type = /obj/item/projectile/bullet/needle
 	var/reagent_amount = 15
