@@ -138,6 +138,23 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/faster
 	)
+
+/obj/item/gun/ballistic/revolver/detective/derringer
+	name = ".22LR derringer"
+	desc = "A small four barrel derringer, designed to fire two barrels at a time."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "derringer"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22/four
+	init_firemodes = list(
+		/datum/firemode/burst/two/faster
+	)
+
+/obj/item/gun/ballistic/revolver/detective/derringer/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]_open"
+	else
+		icon_state = "[initial(icon_state)]"
+
 /*	obj_flags = UNIQUE_RENAME
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
@@ -650,6 +667,29 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+
+/obj/item/gun/ballistic/revolver/derringer4570
+	name = ".45-70 derringer"
+	desc = "An overcompensating little gun that offers a high degree of precision firepower in a tiny package, if you can handle the recoil"
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "derringerX"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/two
+	weapon_class = WEAPON_CLASS_TINY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2, 1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/obj/item/gun/ballistic/revolver/derringer4570/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]_open"
+	else
+		icon_state = "[initial(icon_state)]"
+
 /* * * * * * * * * * *
  * Degraded hunting revolver
  * Really heavy revolver
@@ -742,6 +782,28 @@
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+/obj/item/gun/ballistic/revolver/derringerLC
+	name = ".45 LC derringer"
+	desc = "A classy, pearl handled derringer firing .45LC in a compact package."
+	icon = 'modular_coyote/icons/objects/pistols.dmi'
+	icon_state = "remington_95_ivory"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/two
+	weapon_class = WEAPON_CLASS_TINY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+/obj/item/gun/ballistic/revolver/derringerLC/update_icon_state()
+	if(!magazine || !get_ammo(TRUE, FALSE) || !chambered?.BB)
+		icon_state = "[initial(icon_state)]_open"
+	else
+		icon_state = "[initial(icon_state)]"
 
 /* * * * * * * * * * *
  * .223 revolver

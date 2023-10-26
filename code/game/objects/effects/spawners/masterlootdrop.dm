@@ -510,6 +510,62 @@
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
 	)
 
+
+////////////////////
+///cowboy weapons///		ensures we gett plenty of stylish guns and bows
+////////////////////
+
+/obj/effect/spawner/lootdrop/f13/common_cowboy
+	name = "common cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/detective = 5,
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 20,
+		/obj/item/gun/ballistic/revolver/police = 5,
+		/obj/item/gun/ballistic/revolver/m29 = 5,
+		/obj/item/gun/ballistic/revolver/m29/alt = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 5,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/gun/ballistic/revolver/thatgun = 10,
+		/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
+		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
+		/obj/item/gun/ballistic/revolver/widowmaker = 10,
+		/obj/item/gun/ballistic/bow/lightxbow = 10,
+		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		/obj/item/gun/ballistic/revolver/detective/derringer = 1,
+		/obj/item/gun/ballistic/revolver/derringer4570 = 1,
+		/obj/item/gun/ballistic/revolver/derringerLC = 5,
+	)
+
+/obj/effect/spawner/lootdrop/f13/uncommon_cowboy
+	name = "uncommon cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/police/webley = 5,
+		/obj/item/gun/ballistic/revolver/hunting = 10,
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
+		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
+		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
+		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
+		/obj/item/gun/ballistic/bow/longbow = 20,
+		/obj/item/gun/ballistic/bow/crossbow = 10,
+		/obj/item/gun/ballistic/bow/compositebow = 10,
+	)
+
+/obj/effect/spawner/lootdrop/f13/rare_cowboy
+	name = "rare cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/m2405 = 5,
+		/obj/item/gun/ballistic/revolver/sequoia = 10,
+		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5, // ebow
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
+		/obj/item/gun/ballistic/bow/compoundbow = 3,
+		/obj/item/m2flamethrowertank = 1,
+	)
+
+
 //////////////////////////
 ///unique weapon spawns///
 //////////////////////////
@@ -530,6 +586,10 @@
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/melee/onehanded/knife/trench = 1,
 		/obj/item/gun/energy/laser/retro = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/mousegun = 1,
+		/obj/item/gun/ballistic/automatic/autopipe/special = 1,
+		/obj/item/gun/ballistic/revolver/hobo/pepperbox/deal = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_unique
