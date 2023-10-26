@@ -728,51 +728,47 @@
 
 //raptor mobs from virgo
 
-/* All advanced mobs need to have dead and resting sprites equal to "[icon_living]_rest"
-// Fix these before uncommenting them.
-
 /mob/living/simple_animal/advanced/purpleraptor
 	name = "purple raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorpurple"
 	icon_living = "raptorpurple"
 	icon_dead = "raptorpurple_dead"
 
 /mob/living/simple_animal/advanced/greenraptor
 	name = "green raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorgreen"
 	icon_living = "raptorgreen"
 	icon_dead = "raptorgreen_dead"
 
 /mob/living/simple_animal/advanced/redraptor
 	name = "red raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorred"
 	icon_living = "raptorred"
 	icon_dead = "raptorred_dead"
 
 /mob/living/simple_animal/advanced/blueraptor
 	name = "blue raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorblue"
 	icon_living = "raptorblue"
 	icon_dead = "raptorblue_dead"
 
 /mob/living/simple_animal/advanced/blackraptor
 	name = "black raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorblack"
 	icon_living = "raptorblack"
 	icon_dead = "raptorblack_dead"
 
 /mob/living/simple_animal/advanced/whiteraptor
 	name = "white raptor - animal"
-	icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon = 'modular_coyote/icons/mob/virgo_raptor.dmi'
 	icon_state = "raptorwhite"
 	icon_living = "raptorwhite"
 	icon_dead = "raptorwhite_dead"
-*/
 
 /mob/living/simple_animal/advanced/bat
 	name = "bat"
@@ -782,8 +778,72 @@
 	icon_dead = "bat_dead"
 
 /mob/living/simple_animal/advanced/cat
-	name = "Cat" 
+	name = "Cat"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat2"
 	icon_living = "cat2"
 	icon_dead = "cat2_dead"
+
+
+//More Virgo mobs
+//Big wolfs
+/mob/living/simple_animal/advanced/bigwolf
+	name = "big wolf - black"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "blackwolf"
+	icon_living = "blackwolf"
+	icon_dead = "blackwolf_dead"
+
+/mob/living/simple_animal/advanced/sifwolf
+	name = "big wolf - silver"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "sifwolf"
+	icon_living = "sifwolf"
+	icon_dead = "sifwolf_dead"
+
+/mob/living/simple_animal/advanced/whitewolf
+	name = "big wolf - white"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "whitewolf"
+	icon_living = "whitewolf"
+	icon_dead = "whitewolf_dead"
+
+//Leopardmanders
+
+/mob/living/simple_animal/advanced/leopardmander
+	name = "leopardmander -blue"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander_blue"
+	icon_living = "leopardmander_blue"
+	icon_dead = "leopardmander_blue_dead"
+
+/mob/living/simple_animal/advanced/leopardmander/Initialize()
+    .=..()
+    resize = 0.8
+    update_transform()
+
+/mob/living/simple_animal/advanced/leopardmanderwhite
+	name = "leopardmander - white"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander"
+	icon_living = "leopardmander"
+	icon_dead = "leopardmander_dead"
+
+/mob/living/simple_animal/advanced/leopardmanderwhite/Initialize()
+    .=..()
+    resize = 0.8
+    update_transform()
+
+/mob/living/simple_animal/advanced/leopardmanderexotic
+	name = "leopardmander - exotic"
+	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_state = "leopardmander_exotic"
+	icon_living = "leopardmander_exotic"
+	icon_dead = "leopardmander_exotic_dead"
+
+/mob/living/simple_animal/advanced/leopardmanderexotic/Initialize()
+    .=..()
+    resize = 0.8
+    update_transform()
+
+
