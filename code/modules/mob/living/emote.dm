@@ -1763,6 +1763,30 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			blind_message = message_second)
 		user.emote_for_ghost_sight(message_second)
 
+/datum/emote/help
+	key = "help"
+	key_third_person = "yells for help!"
+	message = "Help!"
+
+/datum/emote/medic
+	key = "medic"
+	key_third_person = "yells for a medic!"
+	message = "Medic!"
+
+/datum/emote/healerhere
+	key = "healer"
+	key_third_person = "is clearly offering their services as a healer!"
+	message = "Healer for hire!"
+
+/datum/emote/holdstill
+	key = "hold"
+	key_third_person = "is trying to get someone to hold still!"
+	message = "Hold up!"
+
+/datum/emote/pullback
+	key = "pullback"
+	key_third_person = "is trying to get everyone to pull back!"
+	message = "Pull back!"
 
 
 //Fenny Adds Flirtatious Fucking Emotes For Furries//
