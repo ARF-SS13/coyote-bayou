@@ -1323,6 +1323,81 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/flintlock/musket/jezail/culverin(src)
 	new /obj/item/ammo_box/flintlock(src)
 
+/obj/item/storage/box/gun/rifle/musket/flintlock/handcannon
+	name = "hand cannon case"
+
+/obj/item/storage/box/gun/matchlock/handcannon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+//matchlocks
+
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/handcannon
+	name = "handcannon case"
+
+/obj/item/storage/box/gun/matchlock/handcannon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+	name = "handgonne case"
+
+/obj/item/storage/box/gun/matchlock/handgonne/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon/handgonne(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+
+/obj/item/storage/box/gun/rifle/musket/flintlock/matchlockarquebus
+	name = "classy arquebus case"
+
+/obj/item/storage/box/gun/rifle/flintlock/matchlockarquebus/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/matchlockarquebus(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/matchlockarquebus/arquebus
+	name = "arquebus case"
+
+/obj/item/storage/box/gun/rifle/matchlock/matchlockarquebus/arquebus/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/matchlockarquebus/arquebus(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon
+	name = "matchlock musketoon case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/espi
+	name = "matchlock espingole case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/espi/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon/espingole(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine
+	name = "matchlock carbine case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon/carabine(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/cavalier
+	name = "matchlock cavalier sharpshooter case"
+
+/obj/item/storage/box/gun/carbine/matchlock/cavalier/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/cavalier(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/handbombard
+	name = "matchlock handbombard case"
+
+/obj/item/storage/box/gun/carbine/matchlock/handbombard/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handbombard(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+
 
 /obj/item/storage/box/gun/pistol/type17
 	name = "Type 17 case"
@@ -1806,6 +1881,73 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/jezail/culverin
+
+/datum/loadout_box/matchlock/handcannon
+	entry_tag = "Matchlock Hand Cannon"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handcannon
+
+/datum/loadout_box/matchlock/handgonne
+	entry_tag = "Matchlock Handgonne"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+
+/datum/loadout_box/matchlock/classyarquebus
+	entry_tag = "Matchlock Arquebus - Fancy"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/flintlock/matchlockarquebus
+
+/datum/loadout_box/matchlock/normalarquebus
+	entry_tag = "Matchlock Arquebus"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/matchlockarquebus/arquebus
+
+/datum/loadout_box/matchlock/musketoon
+	entry_tag = "Matchlock Musketoon"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon
+
+/datum/loadout_box/matchlock/musketoon/espi
+	entry_tag = "Matchlock espingole"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon/espi
+
+/datum/loadout_box/matchlock/musketoon/carbine
+	entry_tag = "Matchlock Carbine"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine
+
+
+/datum/loadout_box/matchlock/cavalier
+	entry_tag = "Matchlock Cavalier Sharpshooter"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/cavalier
+
+/datum/loadout_box/matchlock/handbombard
+	entry_tag = "Matchlock Hand Bombard"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/handbombard
+
+
+
+
+/datum/loadout_box/matchlock/
+	entry_tag = "Matchlock Handgonne"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+
+
+
 
 
 /datum/loadout_box/junglecarbine
