@@ -7864,9 +7864,12 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/underground/cave/coyote/antmound)
 "aBZ" = (
-/obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/barswindow{
+	layer = 3.5;
+	dir = 8
+	},
 /obj/machinery/door/poddoor/shutters{
 	id = "bankdeskshutters"
 	},
@@ -22803,14 +22806,6 @@
 	color = "#779999"
 	},
 /area/f13/building/workshop/nash)
-"bXv" = (
-/obj/structure/table,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/storage/box/medicine/stimpaks/stimpaks5,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/blue,
-/area/f13/building/hospital/clinic/nash)
 "bXx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
@@ -26642,11 +26637,8 @@
 	},
 /area/f13/caves)
 "cEn" = (
-/obj/machinery/iv_drip/telescopic,
+/obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "cEo" = (
@@ -26835,7 +26827,10 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "cGK" = (
-/turf/closed/wall/f13/coyote/darkwoodwall,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/iv_drip/telescopic,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "cGL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30262,6 +30257,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"dwg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/cardpuncher{
+	pixel_y = 3;
+	pixel_x = -28
+	},
+/turf/open/floor/wood_fancy/wood_fancy_light,
+/area/f13/building/bank)
 "dwl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -57267,6 +57270,14 @@
 	name = "tile"
 	},
 /area/f13/building/hospital/clinic/nash)
+"jJw" = (
+/obj/structure/table,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "jJC" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
@@ -72597,6 +72608,14 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"nfK" = (
+/obj/machinery/iv_drip/telescopic,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "nfR" = (
 /obj/structure/sink{
 	dir = 1;
@@ -84538,9 +84557,7 @@
 	},
 /area/f13/building/abandoned)
 "pPP" = (
-/obj/item/trash/can,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/blue,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "pPR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -118806,9 +118823,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "xNd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/iv_drip/telescopic,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "xNq" = (
@@ -120455,12 +120472,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/nash)
-"ygQ" = (
-/obj/structure/table,
-/obj/item/stock_parts/chem_cartridge/pristine,
-/obj/item/stock_parts/chem_cartridge/pristine,
-/turf/open/floor/carpet/blue,
-/area/f13/building/hospital/clinic/nash)
 "ygT" = (
 /obj/structure/table/plasmaglass,
 /obj/effect/decal/cleanable/glitter/pink,
@@ -124167,12 +124178,12 @@ bQW
 bQW
 gfx
 gfx
-cGK
-cGK
-cGK
-cGK
-cGK
-cGK
+pPP
+pPP
+pPP
+pPP
+pPP
+pPP
 gfx
 gfx
 gfx
@@ -124424,12 +124435,12 @@ tfE
 gfx
 gfx
 gfx
+pPP
+jJw
 cGK
-bXv
-xNd
-cEn
+nfK
 qdw
-cGK
+pPP
 vIr
 gfx
 gfx
@@ -124681,14 +124692,14 @@ tfE
 gfx
 gfx
 gfx
-cGK
-ygQ
 pPP
+xNd
+cEn
 cdS
 cdS
-cGK
-cGK
-cGK
+pPP
+pPP
+pPP
 gfx
 wYm
 ksL
@@ -124935,13 +124946,13 @@ jYR
 thC
 fse
 mmH
-cGK
-cGK
-cGK
-cGK
-cGK
-cdS
 pPP
+pPP
+pPP
+pPP
+pPP
+cdS
+cEn
 qek
 aMz
 dzD
@@ -125192,7 +125203,7 @@ pzH
 hDX
 cxc
 qML
-cGK
+pPP
 hGn
 bhr
 crn
@@ -125202,7 +125213,7 @@ utB
 utB
 mwl
 cYw
-cGK
+pPP
 gfx
 wYm
 ksL
@@ -125449,7 +125460,7 @@ hDX
 hDX
 cxc
 tfE
-cGK
+pPP
 kTH
 aFs
 dyR
@@ -125459,7 +125470,7 @@ fLo
 tPz
 dmQ
 rQw
-cGK
+pPP
 gfx
 wYm
 lTP
@@ -125706,17 +125717,17 @@ uxN
 bhi
 cxc
 eaZ
-cGK
+pPP
 ugE
 gnt
 tIt
-cGK
-cGK
+pPP
+pPP
 tEP
 bOQ
 oGu
-cGK
-cGK
+pPP
+pPP
 gfx
 gfx
 cPq
@@ -125963,20 +125974,20 @@ bcy
 mDG
 cxc
 eaZ
-cGK
-cGK
-cGK
-cGK
-cGK
+pPP
+pPP
+pPP
+pPP
+pPP
 qAS
 rTj
 bdn
 gvn
-cGK
-cGK
+pPP
+pPP
 azt
-cGK
-cGK
+pPP
+pPP
 qAx
 nFA
 nFA
@@ -126220,7 +126231,7 @@ baM
 aYT
 ijI
 eaZ
-cGK
+pPP
 sCb
 rkv
 gFz
@@ -126233,7 +126244,7 @@ tKC
 pqC
 oUq
 jml
-cGK
+pPP
 rax
 rLT
 bfD
@@ -126477,7 +126488,7 @@ vPP
 vPP
 snZ
 bqX
-cGK
+pPP
 wFd
 vpC
 cjb
@@ -126490,7 +126501,7 @@ azt
 pTi
 wyK
 miR
-cGK
+pPP
 pll
 rLT
 mkb
@@ -126734,7 +126745,7 @@ psq
 bcO
 tBD
 kkp
-cGK
+pPP
 coF
 cjb
 cjb
@@ -126743,11 +126754,11 @@ iAU
 iAU
 rfD
 uMJ
-cGK
+pPP
 wGL
 cOL
 veo
-cGK
+pPP
 rax
 nFA
 mkb
@@ -126991,7 +127002,7 @@ eAP
 bcy
 tBD
 tfE
-cGK
+pPP
 uBk
 jJv
 cjb
@@ -127000,11 +127011,11 @@ bGz
 bGz
 lhP
 bGz
-cGK
-cGK
-cGK
-cGK
-cGK
+pPP
+pPP
+pPP
+pPP
+pPP
 wYm
 bsh
 vTG
@@ -127248,7 +127259,7 @@ psq
 bcO
 tBD
 ldT
-cGK
+pPP
 ggm
 vpC
 aYr
@@ -127505,7 +127516,7 @@ hDX
 bcf
 cxc
 boE
-cGK
+pPP
 mAv
 cjb
 jHA
@@ -127765,13 +127776,13 @@ boE
 rfD
 ewG
 ewG
-cGK
-cGK
+pPP
+pPP
 cLg
 bGz
 nTr
 xCW
-cGK
+pPP
 gfx
 gfx
 gfx
@@ -128023,12 +128034,12 @@ gfx
 gfx
 gfx
 gfx
-cGK
-cGK
+pPP
+pPP
 nZP
 nZP
-cGK
-cGK
+pPP
+pPP
 gfx
 gfx
 gfx
@@ -130865,7 +130876,7 @@ xvQ
 nLW
 olh
 xgk
-eHM
+dwg
 wsA
 gqS
 lHH

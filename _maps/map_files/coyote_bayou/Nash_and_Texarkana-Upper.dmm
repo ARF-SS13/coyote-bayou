@@ -15711,12 +15711,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/mall)
-"meb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/coyote/darkwoodwall,
-/area/f13/building/hospital/clinic/nash)
 "men" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/f13{
@@ -20094,12 +20088,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
-"pJR" = (
-/obj/structure/sign/painting/library{
-	pixel_y = 35
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/hospital/clinic/nash)
 "pKI" = (
 /obj/structure/window,
 /turf/open/floor/f13{
@@ -21773,10 +21761,6 @@
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
 /obj/item/stack/f13Cash/random/denarius/high,
-/obj/machinery/cardpuncher{
-	pixel_y = 34;
-	density = 0
-	},
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
 	},
@@ -23847,6 +23831,12 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
+"sCL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building/hospital/clinic/nash)
 "sCM" = (
 /obj/structure/closet/cardboard,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -28234,6 +28224,12 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"wdS" = (
+/obj/structure/sign/painting/library{
+	pixel_y = 35
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/hospital/clinic/nash)
 "web" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
@@ -35090,7 +35086,7 @@ oeP
 bZh
 gWO
 psj
-pJR
+wdS
 bMc
 cxI
 leG
@@ -36120,7 +36116,7 @@ gWO
 psj
 pzS
 sqT
-meb
+sCL
 pbC
 sKt
 clF
