@@ -2586,6 +2586,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"sX" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "sY" = (
 /obj/structure/flora/tree/cherryblossom,
 /obj/effect/decal/cleanable/dirt,
@@ -4089,6 +4099,15 @@
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Dc" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = -3
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Df" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -6054,6 +6073,18 @@
 /obj/item/lock_bolt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Ri" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = -3
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "Rl" = (
 /obj/structure/railing/corner{
 	color = "#A47449"
@@ -12344,11 +12375,11 @@ Wr
 Wr
 Wr
 Wr
-hm
-hm
-hm
-hm
-xU
+EU
+EU
+EU
+EU
+sX
 nO
 Wr
 Wr
@@ -12601,11 +12632,11 @@ Wr
 Wr
 Wr
 Wr
-hm
-hm
-hm
-hm
-xU
+yK
+yK
+yK
+yK
+yK
 nO
 Wr
 Wr
@@ -12858,11 +12889,11 @@ Wr
 Wr
 Wr
 Wr
-hm
-hm
-hm
-hm
-xU
+Dc
+Dc
+Dc
+Dc
+Ri
 nO
 Wr
 Wr

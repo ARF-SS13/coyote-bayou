@@ -11123,17 +11123,6 @@
 	dir = 9
 	},
 /area/f13/building/hospital)
-"aMz" = (
-/obj/structure/table,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/storage/box/medicine/stimpaks/stimpaks5,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital/clinic/nash)
 "aMA" = (
 /obj/structure/rack,
 /obj/item/storage/backpack,
@@ -14471,13 +14460,6 @@
 	name = "dirty floor"
 	},
 /area/f13/building/abandoned)
-"aXn" = (
-/obj/structure/table/reinforced,
-/obj/structure/barricade/barswindow{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building/hospital/clinic/nash)
 "aXo" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/beekeeper_suit,
@@ -15981,11 +15963,8 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/city)
 "bdn" = (
-/obj/machinery/smartfridge/chemistry/preloaded,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "bdo" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -17277,6 +17256,12 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
+"bhr" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "bhu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin/trashbin,
@@ -23336,10 +23321,15 @@
 	},
 /area/f13/building/workshop/nash)
 "cdS" = (
+/obj/structure/table,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
 /obj/machinery/light{
+	dir = 8;
 	light_color = "#e8eaff"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "cee" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23928,12 +23918,6 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/building/abandoned)
 "cjb" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/dropper{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -24865,6 +24849,26 @@
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
+"coF" = (
+/obj/structure/table/glass,
+/obj/item/storage/box/beakers{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/item/storage/box/medsprays{
+	pixel_x = -3;
+	pixel_y = 13
+	},
+/obj/item/storage/box/pillbottles{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/storage/box/syringes,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital/clinic/nash)
 "coJ" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -27509,12 +27513,14 @@
 /turf/open/floor/f13,
 /area/f13/building/abandoned)
 "cPq" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 10
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital/clinic/nash)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "cPt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -27808,10 +27814,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building/abandoned)
-"cSk" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/carpet/blue,
-/area/f13/building/hospital/clinic/nash)
 "cSm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -28220,6 +28222,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"cYw" = (
+/obj/machinery/light{
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "cYB" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -30439,6 +30447,13 @@
 	icon_state = "outermaincornerinner - S"
 	},
 /area/f13/wasteland/city)
+"dzD" = (
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "dzE" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
@@ -40769,10 +40784,6 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/building/abandoned)
-"fTv" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/wood_common,
-/area/f13/building/hospital/clinic/nash)
 "fTw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerpavement - NE"
@@ -41858,14 +41869,12 @@
 	},
 /area/f13/building/abandoned)
 "ggm" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/nash)
+/area/f13/building/hospital/clinic/nash)
 "ggR" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -42223,11 +42232,11 @@
 	},
 /area/f13/building)
 "gnt" = (
-/obj/structure/chair/stool/bar,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 10
 	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "gnC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43880,6 +43889,13 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/coyote/nash/cornerdiner)
+"gFz" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital/clinic/nash)
 "gFA" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -48057,13 +48073,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
-"hFN" = (
-/obj/structure/stairs/north{
-	color = "#A47449";
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital/clinic/nash)
 "hFP" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -48102,8 +48111,7 @@
 /turf/closed/wall/mineral/concrete/blastproof,
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "hGn" = (
-/obj/structure/table,
-/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/machinery/computer/operating,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "hGo" = (
@@ -52238,12 +52246,11 @@
 	},
 /area/f13/ruins)
 "iAU" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Clinic";
-	req_access_txt = null;
-	req_one_access_txt = "124"
+/obj/structure/table/reinforced,
+/obj/structure/barricade/barswindow{
+	dir = 4
 	},
-/turf/open/floor/carpet/blue,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/hospital/clinic/nash)
 "iAW" = (
 /obj/structure/table/wood,
@@ -54044,13 +54051,6 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city)
-"iVj" = (
-/obj/machinery/chem_dispenser,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
-/area/f13/building/hospital/clinic/nash)
 "iVo" = (
 /obj/machinery/hydroponics/soil/pot,
 /obj/structure/flora/wasteplant/wild_pinyon{
@@ -57179,6 +57179,7 @@
 	},
 /area/f13/wasteland/city)
 "jJv" = (
+/obj/structure/chair/stool/bar,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -57382,12 +57383,37 @@
 	},
 /area/f13/building/coyote/nash/museum/groundfloor)
 "jMq" = (
-/obj/machinery/chem_heater,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = 31
 	},
-/area/f13/building/hospital/clinic/nash)
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 12;
+	pixel_y = 31
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak{
+	anchored = 1;
+	pixel_y = 46
+	},
+/obj/effect/turf_decal/arrows{
+	anchored = 1;
+	dir = 8;
+	layer = 5;
+	pixel_x = 8;
+	pixel_y = 36
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland/nash)
 "jMw" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt{
@@ -63983,9 +64009,6 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city/nash/theloop)
-"lmU" = (
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/hospital/clinic/nash)
 "lnf" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -64366,13 +64389,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/nash)
-"lsk" = (
-/obj/machinery/vending/medical,
-/obj/machinery/light{
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/nash)
 "lss" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
@@ -66737,15 +66753,17 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ruins)
 "lTP" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/area/f13/building/hospital/clinic/nash)
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/wasteland/nash)
 "lTR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -69783,6 +69801,13 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
+"mAv" = (
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital/clinic/nash)
 "mAy" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -75840,8 +75865,8 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "nTr" = (
-/obj/machinery/computer/operating,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/rug/mat/welcome,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "nTt" = (
 /obj/structure/flora/grass/wasteland{
@@ -76352,6 +76377,12 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city)
+"nZP" = (
+/obj/structure/simple_door/room{
+	name = "Clinic"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "nZQ" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2left"
@@ -79155,14 +79186,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/coyote/nash/massfus/sidebuilding)
 "oGu" = (
-/obj/machinery/chem_master,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
+/obj/structure/window/fulltile/house,
+/turf/open/floor/wood_common,
 /area/f13/building/hospital/clinic/nash)
 "oGx" = (
 /obj/structure/flora/grass/wasteland{
@@ -82225,8 +82250,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pqC" = (
-/obj/structure/bed,
-/turf/open/floor/carpet/red,
+/turf/open/floor/wood_common,
 /area/f13/building/hospital/clinic/nash)
 "pqI" = (
 /obj/structure/toilet{
@@ -84408,11 +84432,9 @@
 	},
 /area/f13/building/abandoned)
 "pPP" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
+/obj/structure/table,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "pPR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -85348,7 +85370,7 @@
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/reagent_containers/blood/radaway,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "qdy" = (
 /obj/effect/turf_decal/huge{
@@ -90026,6 +90048,9 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
+"rfD" = (
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/nash)
 "rfH" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -90297,7 +90322,11 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "riA" = (
-/obj/structure/window/fulltile/house,
+/obj/machinery/door/unpowered/securedoor{
+	name = "Clinic";
+	req_access_txt = null;
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "riD" = (
@@ -90426,7 +90455,14 @@
 	},
 /area/f13/wasteland/city)
 "rkv" = (
-/turf/open/floor/wood_common,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
 /area/f13/building/hospital/clinic/nash)
 "rkB" = (
 /obj/effect/decal/cleanable/dirt{
@@ -96091,20 +96127,10 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building/abandoned)
 "sCb" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/beakers{
-	pixel_x = 7;
-	pixel_y = 11
+/obj/machinery/chem_master,
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/item/storage/box/medsprays{
-	pixel_x = -3;
-	pixel_y = 13
-	},
-/obj/item/storage/box/pillbottles{
-	pixel_x = 10;
-	pixel_y = 7
-	},
-/obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -101371,6 +101397,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
+"tIt" = (
+/obj/machinery/vending/medical/becomingnook,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "tIE" = (
 /obj/machinery/power/terminal{
 	dir = 4;
@@ -101527,8 +101557,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "tKC" = (
-/obj/machinery/vending/medical/becomingnook,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/machinery/door/unpowered/securedoor{
+	name = "Clinic";
+	req_access_txt = null;
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/wood_common,
 /area/f13/building/hospital/clinic/nash)
 "tKD" = (
 /obj/structure/table/reinforced,
@@ -103335,6 +103369,11 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"ugE" = (
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "ugG" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/outside/road{
@@ -104399,10 +104438,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/theloop)
 "uvY" = (
-/obj/structure/simple_door/room{
-	name = "Clinic"
-	},
-/turf/open/floor/f13/wood,
+/obj/machinery/trading_machine/medical,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building/hospital/clinic/nash)
 "uwg" = (
 /obj/structure/flora/grass/wasteland{
@@ -104837,8 +104874,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uBk" = (
-/obj/machinery/trading_machine/medical,
-/turf/closed/wall/f13/wood/house,
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
 /area/f13/building/hospital/clinic/nash)
 "uBl" = (
 /obj/structure/table/wood/settler,
@@ -105833,7 +105873,7 @@
 	req_access_txt = null;
 	req_one_access_txt = "124"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "uML" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -107186,37 +107226,9 @@
 	},
 /area/f13/building/abandoned)
 "veo" = (
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = -12;
-	pixel_y = 31
-	},
-/obj/structure/fence/wooden{
-	density = 0;
-	dir = 1;
-	pixel_x = 12;
-	pixel_y = 31
-	},
-/obj/item/reagent_containers/hypospray/medipen/stimpak{
-	anchored = 1;
-	pixel_y = 46
-	},
-/obj/effect/turf_decal/arrows{
-	anchored = 1;
-	dir = 8;
-	layer = 5;
-	pixel_x = 8;
-	pixel_y = 36
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/nash)
+/obj/structure/bed,
+/turf/open/floor/carpet/red,
+/area/f13/building/hospital/clinic/nash)
 "veu" = (
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
@@ -109015,6 +109027,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"vAc" = (
+/obj/structure/window/fulltile/house,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "vAk" = (
 /obj/structure/table,
 /obj/item/ammo_box/shotgun/bean,
@@ -113720,9 +113736,16 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "wFd" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/table/glass,
+/obj/item/reagent_containers/dropper{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/machinery/reagentgrinder,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
 /area/f13/building/hospital/clinic/nash)
 "wFg" = (
 /turf/closed/wall/f13/supermart,
@@ -113858,12 +113881,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
 "wGL" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Clinic";
-	req_access_txt = null;
-	req_one_access_txt = "124"
-	},
-/turf/open/floor/f13/wood,
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/toy/plush/marblefox,
+/turf/open/floor/wood_common,
 /area/f13/building/hospital/clinic/nash)
 "wGQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -114531,11 +114551,6 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/east)
-"wNX" = (
-/obj/structure/table/wood/fancy/royalblack,
-/obj/item/toy/plush/marblefox,
-/turf/open/floor/wood_common,
-/area/f13/building/hospital/clinic/nash)
 "wOh" = (
 /obj/structure/fence,
 /obj/effect/decal/cleanable/dirt,
@@ -116147,12 +116162,6 @@
 	icon_state = "outermaincornerouter - W"
 	},
 /area/f13/building/abandoned)
-"xix" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital/clinic/nash)
 "xiA" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -117850,17 +117859,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xCW" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
+/obj/machinery/vending/medical,
+/obj/machinery/light{
+	light_color = "#e8eaff"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland/nash)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "xCZ" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -124253,11 +124257,11 @@ gfx
 gfx
 gfx
 gfx
-lmU
-lmU
-lmU
-lmU
-lmU
+rfD
+rfD
+rfD
+rfD
+rfD
 gfx
 gfx
 gfx
@@ -124510,13 +124514,13 @@ gfx
 gfx
 gfx
 gfx
-lmU
-hGn
-aMz
+rfD
+pPP
+cdS
 qdw
-lmU
-lmU
-lmU
+rfD
+rfD
+rfD
 gfx
 wYm
 ksL
@@ -124763,17 +124767,17 @@ jYR
 thC
 fse
 mmH
-lmU
-lmU
-lmU
-lmU
-lmU
-tPz
-tPz
-tPz
-hFN
-hFN
-lmU
+rfD
+rfD
+rfD
+rfD
+rfD
+bcq
+bcq
+bcq
+dzD
+dzD
+rfD
 gfx
 wYm
 ksL
@@ -125020,17 +125024,17 @@ pzH
 hDX
 cxc
 qML
-lmU
-nTr
-xix
+rfD
+hGn
+bhr
 tPz
 nZx
 tPz
 tPz
 tPz
 tPz
-cdS
-lmU
+cYw
+rfD
 gfx
 wYm
 ksL
@@ -125277,20 +125281,20 @@ hDX
 hDX
 cxc
 tfE
-lmU
+rfD
 kTH
 tPz
 tPz
-lmU
+rfD
 kSu
 tPz
 tPz
 tPz
 tPz
-lmU
+rfD
 gfx
 wYm
-xCW
+lTP
 jxf
 cnr
 hVW
@@ -125534,20 +125538,20 @@ uxN
 bhi
 cxc
 eaZ
-lmU
-wFd
+rfD
+ugE
+gnt
+tIt
+rfD
+rfD
+riA
+rfD
+oGu
+rfD
+rfD
+gfx
+gfx
 cPq
-tKC
-lmU
-lmU
-iAU
-lmU
-fTv
-lmU
-lmU
-gfx
-gfx
-ggm
 aWK
 tmp
 pdj
@@ -125791,20 +125795,20 @@ bcy
 mDG
 cxc
 eaZ
-lmU
-lmU
-lmU
-lmU
-lmU
+rfD
+rfD
+rfD
+rfD
+rfD
 qAS
 bcq
-cSk
+bdn
 gvn
-lmU
-lmU
-lmU
-lmU
-lmU
+rfD
+rfD
+rfD
+rfD
+rfD
 qAx
 nFA
 nFA
@@ -126048,20 +126052,20 @@ baM
 aYT
 ijI
 eaZ
-lmU
-oGu
-lTP
-pPP
-riA
-bcq
-bcq
-bcq
-bcq
-uMJ
+rfD
+sCb
 rkv
+gFz
+vAc
+bcq
+bcq
+bcq
+bcq
+tKC
+pqC
 oUq
 jml
-lmU
+rfD
 rax
 rLT
 bfD
@@ -126305,20 +126309,20 @@ vPP
 vPP
 snZ
 bqX
-lmU
+rfD
+wFd
 cjb
-jJv
-jJv
-iAU
+cjb
+riA
 bcq
 rYZ
 uFF
 bcq
-lmU
-rkv
+rfD
+pqC
 miR
 miR
-lmU
+rfD
 pll
 rLT
 mkb
@@ -126562,20 +126566,20 @@ psq
 bcO
 tBD
 kkp
-lmU
-sCb
-jJv
-jJv
-lmU
-aXn
-aXn
-lmU
+rfD
+coF
+cjb
+cjb
+rfD
+iAU
+iAU
+rfD
+uMJ
+rfD
 wGL
-lmU
-wNX
 cOL
-pqC
-lmU
+veo
+rfD
 rax
 nFA
 mkb
@@ -126819,20 +126823,20 @@ eAP
 bcy
 tBD
 tfE
-lmU
-iVj
-gnt
+rfD
+uBk
 jJv
-lmU
+cjb
+rfD
 bGz
 bGz
 bGz
 bGz
-lmU
-lmU
-lmU
-lmU
-lmU
+rfD
+rfD
+rfD
+rfD
+rfD
 wYm
 bsh
 vTG
@@ -127076,11 +127080,11 @@ psq
 bcO
 tBD
 ldT
-lmU
-jMq
-jJv
-jJv
-uBk
+rfD
+ggm
+cjb
+cjb
+uvY
 bGz
 bGz
 bGz
@@ -127333,9 +127337,9 @@ hDX
 bcf
 cxc
 boE
-lmU
-bdn
-jJv
+rfD
+mAv
+cjb
 jHA
 wTy
 bGz
@@ -127590,16 +127594,16 @@ tBD
 tBD
 bxH
 boE
-lmU
+rfD
 ewG
 ewG
-lmU
-lmU
+rfD
+rfD
 cLg
-bGz
-bGz
-lsk
-lmU
+nTr
+nTr
+xCW
+rfD
 gfx
 gfx
 gfx
@@ -127851,12 +127855,12 @@ gfx
 gfx
 gfx
 gfx
-lmU
-lmU
-uvY
-uvY
-lmU
-lmU
+rfD
+rfD
+nZP
+nZP
+rfD
+rfD
 gfx
 gfx
 gfx
@@ -128114,7 +128118,7 @@ xiO
 qYk
 cPR
 uvp
-veo
+jMq
 cPR
 ehf
 ehf

@@ -283,12 +283,8 @@
 	},
 /area/f13/building)
 "aiH" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/chair/comfy/teal,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "aju" = (
 /obj/machinery/light/small,
@@ -1041,11 +1037,8 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/mall)
 "aOL" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/machinery/iv_drip,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "aPM" = (
 /obj/structure/chair/booth,
@@ -1576,16 +1569,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "blz" = (
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 1
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = 0
 	},
-/obj/effect/turf_decal/trimline/neutral{
-	icon_state = "trimline_fill";
-	dir = 4
-	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland/nash)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "blZ" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -3730,8 +3719,9 @@
 /turf/open/floor/carpet,
 /area/f13/caves)
 "cXk" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
+/obj/structure/mopbucket,
+/obj/item/mop,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "cXu" = (
 /turf/open/floor/wood_wide{
@@ -4904,10 +4894,12 @@
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
 "dXl" = (
-/obj/structure/sign/departments/examroom{
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain{
+	color = "#845f58";
 	pixel_x = -32
 	},
-/turf/closed/wall/f13/wood/house,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "dXp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8240,8 +8232,12 @@
 	},
 /area/f13/building/hospital)
 "gDZ" = (
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/nash)
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland/nash)
 "gEk" = (
 /obj/structure/statue/bone/rib{
 	color = "#444466"
@@ -8669,6 +8665,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"gUh" = (
+/obj/machinery/light,
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "gUB" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
@@ -9030,9 +9032,16 @@
 	},
 /area/f13/building)
 "hhC" = (
-/obj/structure/chair/comfy/teal,
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/nash)
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 4
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland/nash)
 "hhG" = (
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -15014,11 +15023,10 @@
 	},
 /area/f13/building)
 "lFY" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
+/obj/structure/chair/folding{
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "lGa" = (
 /obj/effect/decal/waste{
@@ -15149,9 +15157,8 @@
 /turf/open/floor/wood_common,
 /area/f13/caves)
 "lNl" = (
-/obj/structure/chair/folding{
-	dir = 4
-	},
+/obj/structure/dresser,
+/obj/machinery/light,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "lNz" = (
@@ -15578,10 +15585,11 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "mcX" = (
-/obj/structure/toilet{
-	dir = 8
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = 0
 	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "mdq" = (
 /obj/machinery/light{
@@ -18028,7 +18036,7 @@
 	},
 /area/f13/building/hospital)
 "oce" = (
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/carpet/royalblack,
 /area/f13/building/hospital/clinic/nash)
 "ocx" = (
 /obj/machinery/light{
@@ -18813,7 +18821,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "oKe" = (
-/turf/open/floor/carpet/blue,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "oKr" = (
 /obj/machinery/vending/games,
@@ -19453,6 +19461,9 @@
 /obj/item/stack/rods,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/nash)
+"psj" = (
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/nash)
 "psk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19680,14 +19691,13 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "pzS" = (
-/obj/structure/decoration/vent{
-	name = "drain"
+/obj/structure/mirror{
+	dir = 8;
+	pixel_y = 32
 	},
-/obj/machinery/shower{
-	pixel_y = 17
+/obj/structure/sink{
+	pixel_y = 15
 	},
-/obj/structure/curtain,
-/obj/item/soap/deluxe,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "pzZ" = (
@@ -20110,7 +20120,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "pUq" = (
-/turf/closed/wall/f13/wood/house,
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/blue,
+/obj/structure/sign/painting/library{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "pVD" = (
 /obj/structure/junk/machinery,
@@ -20794,8 +20809,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qsC" = (
-/obj/machinery/dna_scannernew,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/obj/structure/window/fulltile/house,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "qsQ" = (
 /obj/structure/chair/sofa/corp/right{
@@ -21383,10 +21398,15 @@
 	},
 /area/f13/building)
 "qRp" = (
-/obj/machinery/light,
-/obj/structure/table,
-/obj/machinery/microwave,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/decoration/vent{
+	name = "drain"
+	},
+/obj/machinery/shower{
+	pixel_y = 17
+	},
+/obj/structure/curtain,
+/obj/item/soap/deluxe,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "qRD" = (
 /obj/structure/closet,
@@ -21928,11 +21948,7 @@
 	},
 /area/f13/building)
 "rmk" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = 0
-	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "rmt" = (
 /obj/structure/table/wood,
@@ -23321,9 +23337,7 @@
 	},
 /area/f13/building/massfusion)
 "smT" = (
-/obj/machinery/computer/scan_consolenew{
-	dir = 8
-	},
+/obj/structure/window/fulltile/house,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
 /area/f13/building/hospital/clinic/nash)
 "smZ" = (
@@ -23427,13 +23441,7 @@
 	},
 /area/f13/building/tribal)
 "sqT" = (
-/obj/structure/mirror{
-	dir = 8;
-	pixel_y = 32
-	},
-/obj/structure/sink{
-	pixel_y = 15
-	},
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "srf" = (
@@ -24618,8 +24626,8 @@
 /turf/closed/wall/f13/wood/house/clean,
 /area/f13/building)
 "tnO" = (
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "tog" = (
 /obj/structure/simple_door/house,
@@ -26243,8 +26251,10 @@
 /turf/open/floor/wood_common,
 /area/f13/wasteland/nash)
 "uwG" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "uwY" = (
 /obj/structure/table/wood,
@@ -26727,12 +26737,12 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "uWx" = (
-/obj/structure/bed/wooden,
-/obj/item/bedsheet/blue,
-/obj/structure/sign/painting/library{
-	pixel_y = -32
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
 	},
-/turf/open/floor/carpet/blue,
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/carpet/royalblack,
 /area/f13/building/hospital/clinic/nash)
 "uWP" = (
 /turf/closed/wall/f13/wood,
@@ -26926,9 +26936,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "veF" = (
-/obj/structure/dresser,
-/obj/machinery/light,
-/turf/open/floor/carpet/blue,
+/obj/effect/spawner/lootdrop/trash,
+/mob/living/carbon/monkey,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic/nash)
 "veV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27154,7 +27164,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "voa" = (
-/obj/machinery/iv_drip,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "voh" = (
@@ -27319,8 +27328,7 @@
 /turf/closed/mineral/random/high_chance,
 /area/f13/caves)
 "vtO" = (
-/obj/effect/spawner/lootdrop/trash,
-/mob/living/carbon/monkey,
+/obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic/nash)
 "vua" = (
@@ -27992,8 +28000,11 @@
 	},
 /area/f13/building/massfusion)
 "waE" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "wbR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -28371,10 +28382,7 @@
 	},
 /area/f13/building)
 "wrb" = (
-/obj/structure/simple_door/room,
-/obj/item/lock_bolt{
-	dir = 4
-	},
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "wrd" = (
@@ -28707,7 +28715,9 @@
 	},
 /area/f13/building/tribal)
 "wDI" = (
-/obj/structure/table,
+/obj/structure/sign/departments/examroom{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "wDO" = (
@@ -28772,12 +28782,9 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/bar/nash)
 "wIL" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland/nash)
+/obj/structure/table,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/area/f13/building/hospital/clinic/nash)
 "wJp" = (
 /obj/structure/spacevine,
 /turf/open/floor/wood_wide{
@@ -29024,9 +29031,11 @@
 	},
 /area/f13/wasteland)
 "wTK" = (
-/obj/structure/mopbucket,
-/obj/item/mop,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "wUC" = (
 /obj/machinery/door/airlock/security/glass{
@@ -33082,17 +33091,17 @@ cdM
 ufu
 qqU
 qnC
-pUq
-pUq
-waE
-waE
-waE
-pUq
-pUq
-pUq
-pUq
-pUq
-pUq
+psj
+psj
+smT
+smT
+smT
+psj
+psj
+psj
+psj
+psj
+psj
 gAg
 ftt
 ftt
@@ -33339,17 +33348,17 @@ cdM
 ufu
 qqU
 qnC
-pUq
+psj
 hpb
 kiY
 kiY
 nKx
 dxw
 ipY
-vtO
-vtO
+veF
+veF
 vOP
-pUq
+psj
 gAg
 vvS
 ftt
@@ -33596,7 +33605,7 @@ cdM
 ufu
 qqU
 qnC
-pUq
+psj
 rKZ
 klm
 bQR
@@ -33605,8 +33614,8 @@ bQR
 ivG
 isp
 isp
-cXk
-pUq
+vtO
+psj
 gAg
 vvS
 ftt
@@ -33853,17 +33862,17 @@ cdM
 ufu
 qqU
 poH
-pUq
+psj
 rcN
 bQR
 bQR
-klm
 bQR
-pUq
-pUq
-pUq
-pUq
-pUq
+bQR
+psj
+psj
+psj
+psj
+psj
 gAg
 gjV
 ftt
@@ -34110,17 +34119,17 @@ nEl
 wky
 qnC
 gWO
-pUq
+psj
 bQR
 bQR
 xZD
-smT
-qsC
-pUq
-gDZ
-rmk
+wIL
+wIL
+psj
+voa
+blz
 jZh
-pUq
+psj
 gAg
 ftt
 qnC
@@ -34367,17 +34376,17 @@ hHi
 oeP
 ehs
 gWO
-pUq
+psj
 vdF
-pUq
-pUq
-pUq
-pUq
-pUq
-gDZ
-gDZ
-gDZ
-pUq
+psj
+psj
+psj
+psj
+psj
+voa
+voa
+voa
+psj
 gAg
 ftt
 cKE
@@ -34624,19 +34633,19 @@ hHi
 oeP
 oxT
 gWO
-pUq
+psj
 oce
 oce
 oce
-aOL
-oce
-oce
+mcX
+oKe
+oKe
 dnE
 pZo
-gDZ
-pUq
+voa
+psj
 hHi
-wIL
+gDZ
 tpU
 uzE
 tHe
@@ -34881,17 +34890,17 @@ hHi
 oeP
 bZh
 gWO
-pUq
+psj
 oce
 oce
 oce
-oce
-oce
-oce
-oce
-oce
-uwG
-pUq
+oKe
+oKe
+oKe
+oKe
+oKe
+tnO
+psj
 hHi
 hHi
 eGR
@@ -35138,17 +35147,17 @@ hHi
 oeP
 qnC
 gWO
-pUq
-aiH
+psj
+uWx
 oce
 oce
-oce
-oce
-oce
-oce
-oce
-oce
-dXl
+oKe
+oKe
+oKe
+oKe
+oKe
+oKe
+qsC
 hHi
 hHi
 eGR
@@ -35395,17 +35404,17 @@ kHS
 oeP
 qnC
 gWO
-pUq
-pUq
-wrb
-pUq
+psj
+psj
+waE
+psj
 ylX
-oce
-lNl
-lNl
-oce
-oce
-pUq
+oKe
+lFY
+lFY
+oKe
+oKe
+dXl
 hHi
 hHi
 hmG
@@ -35652,17 +35661,17 @@ qqx
 oeP
 qnC
 gWO
-pUq
-wTK
+psj
+cXk
 xYx
-pUq
+psj
 aAW
-oce
+oKe
 oMf
 oMf
-oce
+oKe
 lem
-pUq
+dXl
 hHi
 hHi
 ruC
@@ -35909,17 +35918,17 @@ jVf
 oeP
 qnC
 gWO
-pUq
+psj
+pzS
 sqT
-tnO
-pUq
+psj
 pbC
-oce
+oKe
 clF
 clF
-oce
-wDI
-pUq
+oKe
+wrb
+psj
 hHi
 hHi
 fNt
@@ -36166,17 +36175,17 @@ qqx
 oeP
 qnC
 gWO
-pUq
-pzS
-mcX
-pUq
-lem
-lFY
-oce
-oce
-wDI
+psj
 qRp
-pUq
+uwG
+psj
+lem
+wTK
+oKe
+wDI
+wrb
+gUh
+psj
 hHi
 hHi
 fNt
@@ -36423,17 +36432,17 @@ jVf
 oeP
 qnC
 gWO
-pUq
-pUq
-pUq
-pUq
-pUq
-pUq
-wrb
-pUq
-pUq
-pUq
-pUq
+psj
+psj
+psj
+psj
+psj
+psj
+waE
+psj
+psj
+psj
+psj
 hHi
 hHi
 wIz
@@ -36684,12 +36693,12 @@ hHi
 hHi
 hHi
 hHi
-pUq
+psj
+aOL
 voa
-gDZ
-oKe
+rmk
 kWL
-pUq
+psj
 hHi
 hHi
 hHi
@@ -36941,12 +36950,12 @@ hHi
 hHi
 hHi
 hHi
-pUq
+psj
 jZh
-gDZ
-oKe
-veF
-pUq
+voa
+rmk
+lNl
+psj
 hHi
 hHi
 hHi
@@ -37198,12 +37207,12 @@ hHi
 hHi
 hHi
 hHi
+psj
+aiH
+voa
+rmk
 pUq
-hhC
-gDZ
-oKe
-uWx
-pUq
+psj
 hHi
 hHi
 hHi
@@ -37455,12 +37464,12 @@ hHi
 hHi
 hHi
 hHi
-pUq
-pUq
+psj
+psj
 uHi
 uHi
-pUq
-pUq
+psj
+psj
 hHi
 hHi
 hHi
@@ -38478,7 +38487,7 @@ qnC
 qnC
 qnC
 qnC
-blz
+hhC
 gtb
 gtb
 gtb
