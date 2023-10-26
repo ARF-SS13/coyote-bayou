@@ -85070,6 +85070,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"pZs" = (
+/obj/machinery/smartfridge/chemistry,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/nash)
 "pZA" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -113712,19 +113716,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/smartfridge/bottlerack,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/machinery/smartfridge/food,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -126827,7 +126819,7 @@ rfD
 uBk
 jJv
 cjb
-rfD
+pZs
 bGz
 bGz
 bGz
