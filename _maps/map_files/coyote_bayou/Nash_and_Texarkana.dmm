@@ -7042,6 +7042,10 @@
 	icon_state = "outerpavement - N"
 	},
 /area/f13/wasteland)
+"azt" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/nash)
 "azu" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/road{
@@ -8955,6 +8959,14 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"aFs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "aFt" = (
 /obj/item/ammo_casing/caseless{
 	dir = 10;
@@ -11123,6 +11135,15 @@
 	dir = 9
 	},
 /area/f13/building/hospital)
+"aMz" = (
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "aMA" = (
 /obj/structure/rack,
 /obj/item/storage/backpack,
@@ -14697,6 +14718,16 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
+"aYr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital/clinic/nash)
 "aYw" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -15964,6 +15995,9 @@
 /area/f13/wasteland/city)
 "bdn" = (
 /obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "bdo" = (
@@ -22088,6 +22122,11 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"bOQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/nash)
 "bPg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -25256,6 +25295,10 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/nash)
+"crn" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "cro" = (
 /obj/structure/table/wood,
 /obj/item/storage/backpack/satchel/leather,
@@ -26597,6 +26640,10 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/caves)
+"cEn" = (
+/obj/item/trash/can,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "cEo" = (
 /obj/structure/window/fulltile/house/broken,
 /obj/structure/spacevine,
@@ -26782,6 +26829,10 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland/city/nash/starterroad)
+"cGK" = (
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "cGL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -27182,6 +27233,10 @@
 	dir = 4;
 	icon_state = "tube"
 	},
+/obj/item/wallframe/painting{
+	pixel_y = 29;
+	pixel_x = -1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "cLj" = (
@@ -27450,6 +27505,8 @@
 	pixel_y = 3;
 	density = 0
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building/hospital/clinic/nash)
 "cOO" = (
@@ -28226,6 +28283,7 @@
 /obj/machinery/light{
 	light_color = "#e8eaff"
 	},
+/obj/effect/spawner/lootdrop/f13/trash,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "cYB" = (
@@ -29398,6 +29456,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/house,
 /area/f13/ruins)
+"dmQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "dmT" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom3"
@@ -30395,6 +30458,11 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"dyR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "dyW" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2right"
@@ -40129,6 +40197,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"fLo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "fLq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed,
@@ -42236,6 +42310,8 @@
 	dir = 4;
 	pixel_x = 10
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "gnC" = (
@@ -43891,6 +43967,7 @@
 /area/f13/building/coyote/nash/cornerdiner)
 "gFz" = (
 /obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -57180,6 +57257,8 @@
 /area/f13/wasteland/city)
 "jJv" = (
 /obj/structure/chair/stool/bar,
+/obj/effect/spawner/lootdrop/f13/trash,
+/obj/effect/decal/cleanable/vomit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -62048,6 +62127,10 @@
 /area/f13/building/abandoned)
 "kSu" = (
 /obj/structure/closet/crate/freezer/blood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/wallframe/painting{
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "kSy" = (
@@ -63525,6 +63608,10 @@
 	icon_state = "rubble"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
+"lhP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "lhQ" = (
 /obj/structure/fence{
 	dir = 4
@@ -69468,6 +69555,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"mwl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "mwm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -69975,6 +70069,10 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"mCG" = (
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "mCJ" = (
 /obj/structure/rack,
 /obj/item/clothing/head/beanie/red,
@@ -75865,7 +75963,10 @@
 	},
 /area/f13/wasteland/city/nash/downtown)
 "nTr" = (
-/obj/structure/rug/mat/welcome,
+/obj/structure/rug/mat/welcome{
+	dir = 8;
+	pixel_y = 14
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "nTt" = (
@@ -80483,6 +80584,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building/hospital/clinic/nash)
 "oUr" = (
@@ -84434,6 +84537,7 @@
 "pPP" = (
 /obj/structure/table,
 /obj/item/stock_parts/chem_cartridge/pristine,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "pPR" = (
@@ -84681,6 +84785,10 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"pTi" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common,
+/area/f13/building/hospital/clinic/nash)
 "pTl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepile,
@@ -85452,6 +85560,11 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"qek" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "qen" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermainbottom"
@@ -87454,6 +87567,7 @@
 	dir = 1;
 	light_color = "#e8eaff"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "qAT" = (
@@ -90463,6 +90577,7 @@
 	dir = 8;
 	pixel_x = -12
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -92888,6 +93003,10 @@
 "rQv" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
+"rQw" = (
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "rQx" = (
 /obj/machinery/shower{
 	dir = 8
@@ -93124,6 +93243,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
+"rTj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "rTn" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/f13/wood,
@@ -93650,6 +93774,7 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
+/obj/item/trash/waffles,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "rZr" = (
@@ -101150,6 +101275,17 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"tEP" = (
+/obj/machinery/door/unpowered/securedoor{
+	name = "Clinic";
+	req_access_txt = null;
+	req_one_access_txt = "124"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet/blue,
+/area/f13/building/hospital/clinic/nash)
 "tFd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/interior{
@@ -101566,6 +101702,7 @@
 	req_access_txt = null;
 	req_one_access_txt = "124"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital/clinic/nash)
 "tKD" = (
@@ -103376,6 +103513,9 @@
 "ugE" = (
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/storage/box/gloves,
+/obj/item/storage/box/masks,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "ugG" = (
@@ -104236,6 +104376,10 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"utB" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital/clinic/nash)
 "utI" = (
 /obj/structure/railing{
 	dir = 6;
@@ -104443,6 +104587,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "uvY" = (
 /obj/machinery/trading_machine/medical,
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building/hospital/clinic/nash)
 "uwg" = (
@@ -104879,6 +105024,7 @@
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uBk" = (
 /obj/machinery/chem_dispenser,
+/obj/item/trash/f13/electronic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -105234,6 +105380,7 @@
 	layer = 2.8;
 	density = 0
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "uFJ" = (
@@ -107231,6 +107378,10 @@
 /area/f13/building/abandoned)
 "veo" = (
 /obj/structure/bed,
+/obj/item/wallframe/painting{
+	pixel_y = -1;
+	pixel_x = 30
+	},
 /turf/open/floor/carpet/red,
 /area/f13/building/hospital/clinic/nash)
 "veu" = (
@@ -108165,6 +108316,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"vpC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building/hospital/clinic/nash)
 "vpD" = (
 /obj/structure/car/rubbish2{
 	icon_state = "car_rubish3"
@@ -113071,6 +113230,11 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/downtown)
+"wyK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/carpet/red,
+/area/f13/building/hospital/clinic/nash)
 "wyN" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermainbottom"
@@ -118641,6 +118805,11 @@
 /mob/living/simple_animal/hostile/stalker,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
+"xNd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/trash,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "xNq" = (
 /obj/structure/barricade/tentleatheredge{
 	dir = 8
@@ -124254,7 +124423,7 @@ rfD
 rfD
 rfD
 rfD
-gfx
+vIr
 gfx
 gfx
 wYm
@@ -124765,11 +124934,11 @@ rfD
 rfD
 rfD
 bcq
-bcq
-bcq
+cEn
+qek
+aMz
 dzD
-dzD
-rfD
+azt
 gfx
 wYm
 ksL
@@ -125019,12 +125188,12 @@ qML
 rfD
 hGn
 bhr
-tPz
+crn
 nZx
-tPz
-tPz
-tPz
-tPz
+utB
+utB
+utB
+mwl
 cYw
 rfD
 gfx
@@ -125275,14 +125444,14 @@ cxc
 tfE
 rfD
 kTH
-tPz
-tPz
-rfD
+aFs
+dyR
+bOQ
 kSu
+fLo
 tPz
-tPz
-tPz
-tPz
+dmQ
+rQw
 rfD
 gfx
 wYm
@@ -125536,8 +125705,8 @@ gnt
 tIt
 rfD
 rfD
-riA
-rfD
+tEP
+bOQ
 oGu
 rfD
 rfD
@@ -125793,12 +125962,12 @@ rfD
 rfD
 rfD
 qAS
-bcq
+rTj
 bdn
 gvn
 rfD
 rfD
-rfD
+azt
 rfD
 rfD
 qAx
@@ -126050,9 +126219,9 @@ rkv
 gFz
 vAc
 bcq
+qek
 bcq
-bcq
-bcq
+rTj
 tKC
 pqC
 oUq
@@ -126303,16 +126472,16 @@ snZ
 bqX
 rfD
 wFd
-cjb
+vpC
 cjb
 riA
 bcq
 rYZ
 uFF
 bcq
-rfD
-pqC
-miR
+azt
+pTi
+wyK
 miR
 rfD
 pll
@@ -126562,7 +126731,7 @@ rfD
 coF
 cjb
 cjb
-rfD
+azt
 iAU
 iAU
 rfD
@@ -126822,7 +126991,7 @@ cjb
 pZs
 bGz
 bGz
-bGz
+lhP
 bGz
 rfD
 rfD
@@ -127074,12 +127243,12 @@ tBD
 ldT
 rfD
 ggm
-cjb
-cjb
+vpC
+aYr
 uvY
 bGz
-bGz
-bGz
+cGK
+xNd
 vIJ
 ewG
 gfx
@@ -127335,7 +127504,7 @@ cjb
 jHA
 wTy
 bGz
-bGz
+mCG
 bGz
 vIJ
 ewG
@@ -127592,7 +127761,7 @@ ewG
 rfD
 rfD
 cLg
-nTr
+bGz
 nTr
 xCW
 rfD
