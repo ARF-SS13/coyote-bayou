@@ -349,12 +349,12 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(href_list["list_melee"])
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [force_unwielded]"
-			readout += "\nTWO HANDED [force_wielded]"
-			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult]"
+			readout += "\nONE HANDED [force_unwielded] | (DPS [round(force_unwielded * (10/attack_speed),0.1)])"
+			readout += "\nTWO HANDED [force_wielded] | (DPS [round(force_wielded * (10/attack_speed),0.1)])"
+			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult] | (DPS [round((force_unwielded*(10/(attack_speed/DUAL_WIELDING_SPEED_DIVIDER)),0.1))])"
 		else
-			readout += "\nDAMAGE [force]"
-			readout += "\nDUAL WIELD [force*dual_wielded_mult]"
+			readout += "\nDAMAGE [force] | (DPS [round(force * (10/attack_speed),0.1)])"
+			readout += "\nDUAL WIELD [force*dual_wielded_mult] | (DPS [round(force*(10/(attack_speed/DUAL_WIELDING_SPEED_DIVIDER)),0.1)])"
 		readout += "\nTHROW DAMAGE [throwforce]"
 		readout += "\nATTACKS / SECOND [10 / attack_speed]"
 		readout += "\nBLOCK CHANCE [block_chance]"
