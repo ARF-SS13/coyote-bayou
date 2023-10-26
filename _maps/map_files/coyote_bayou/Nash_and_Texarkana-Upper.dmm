@@ -3756,8 +3756,8 @@
 /turf/open/floor/carpet,
 /area/f13/caves)
 "cXk" = (
-/obj/structure/mopbucket,
 /obj/item/mop,
+/obj/structure/janitorialcart,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "cXu" = (
@@ -16576,7 +16576,7 @@
 /area/f13/building)
 "mNr" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "mNF" = (
 /obj/structure/flora/grass/coyote/twentyfour,
@@ -19592,7 +19592,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/nash)
 "psj" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "psk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26711,6 +26711,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/nash)
+"uNq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building/hospital/clinic/nash)
 "uNC" = (
 /obj/structure/simple_door/wood/alt,
 /turf/open/floor/f13/wood,
@@ -28792,7 +28798,7 @@
 "wzU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "wAt" = (
 /obj/machinery/light{
@@ -36105,7 +36111,7 @@ gWO
 psj
 pzS
 sqT
-bGp
+uNq
 pbC
 sKt
 clF

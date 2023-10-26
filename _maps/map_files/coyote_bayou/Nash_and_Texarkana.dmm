@@ -7044,7 +7044,7 @@
 /area/f13/wasteland)
 "azt" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "azu" = (
 /obj/structure/car/rubbish3,
@@ -22125,7 +22125,7 @@
 "bOQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "bPg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26830,7 +26830,7 @@
 	},
 /area/f13/wasteland/city/nash/starterroad)
 "cGK" = (
-/obj/effect/spawner/lootdrop/f13/trash,
+/obj/item/trash/f13/cram,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "cGL" = (
@@ -84538,6 +84538,8 @@
 /obj/structure/table,
 /obj/item/stock_parts/chem_cartridge/pristine,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
 "pPR" = (
@@ -90167,7 +90169,7 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building)
 "rfD" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "rfH" = (
 /obj/structure/flora/grass/wasteland{
@@ -105024,7 +105026,6 @@
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uBk" = (
 /obj/machinery/chem_dispenser,
-/obj/item/trash/f13/electronic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -109717,6 +109718,10 @@
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"vIn" = (
+/obj/item/trash/f13/porknbeans,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/nash)
 "vIo" = (
 /obj/structure/table,
 /obj/item/trash/f13/sugarbombs,
@@ -118806,8 +118811,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "xNd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/trash,
+/obj/structure/chair/f13chair1{
+	dir = 1
+	},
+/obj/item/trash/f13/crisps,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "xNq" = (
@@ -127246,10 +127253,10 @@ ggm
 vpC
 aYr
 uvY
-bGz
 cGK
+bGz
+lhP
 xNd
-vIJ
 ewG
 gfx
 gfx
@@ -127505,7 +127512,7 @@ jHA
 wTy
 bGz
 mCG
-bGz
+vIn
 vIJ
 ewG
 gfx
