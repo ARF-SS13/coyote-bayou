@@ -762,6 +762,9 @@
 /obj/machinery/vending/wardrobe/medi_wardrobe/free,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/painting/library{
+	pixel_y = 35
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "aBB" = (
@@ -3783,11 +3786,6 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/carpet/arcade,
 /area/f13/building/mall)
-"cZJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/coyote/darkwoodwall,
-/area/f13/building/hospital/clinic/nash)
 "dab" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -15713,6 +15711,12 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/mall)
+"meb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building/hospital/clinic/nash)
 "men" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/f13{
@@ -19597,7 +19601,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/nash)
 "psj" = (
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "psk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -20090,6 +20094,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
+"pJR" = (
+/obj/structure/sign/painting/library{
+	pixel_y = 35
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/hospital/clinic/nash)
 "pKI" = (
 /obj/structure/window,
 /turf/open/floor/f13{
@@ -20270,7 +20280,7 @@
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/blue,
 /obj/structure/sign/painting/library{
-	pixel_y = -32
+	pixel_y = -31
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building/hospital/clinic/nash)
@@ -27477,9 +27487,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
-"vtf" = (
-/turf/closed/wall/f13/coyote/darkwoodwall,
-/area/f13/building/hospital/clinic/nash)
 "vtu" = (
 /obj/structure/decoration/rag,
 /obj/structure/simple_door/repaired,
@@ -28800,7 +28807,7 @@
 "wzU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building/hospital/clinic/nash)
 "wAt" = (
 /obj/machinery/light{
@@ -33283,17 +33290,17 @@ cdM
 ufu
 qqU
 qnC
-vtf
-vtf
+psj
+psj
 smT
 smT
 smT
-vtf
-vtf
-vtf
-vtf
-vtf
-vtf
+psj
+psj
+psj
+psj
+psj
+psj
 gAg
 ftt
 ftt
@@ -33540,7 +33547,7 @@ cdM
 ufu
 qqU
 qnC
-vtf
+psj
 hpb
 iRG
 kiY
@@ -33550,7 +33557,7 @@ ipY
 veF
 veF
 vOP
-vtf
+psj
 gAg
 vvS
 ftt
@@ -33797,7 +33804,7 @@ cdM
 ufu
 qqU
 qnC
-vtf
+psj
 rKZ
 klm
 oub
@@ -33807,7 +33814,7 @@ ivG
 nzO
 isp
 vtO
-vtf
+psj
 gAg
 vvS
 ftt
@@ -34054,7 +34061,7 @@ cdM
 ufu
 qqU
 poH
-vtf
+psj
 rcN
 txg
 tTC
@@ -34062,9 +34069,9 @@ bQR
 bQR
 mNr
 mNr
-cZJ
+wzU
 mNr
-vtf
+psj
 gAg
 gjV
 ftt
@@ -34311,17 +34318,17 @@ nEl
 wky
 qnC
 gWO
-vtf
+psj
 bQR
 tTC
 xZD
 wIL
 wIL
-vtf
+psj
 voa
 blz
 jZh
-vtf
+psj
 gAg
 ftt
 qnC
@@ -34568,17 +34575,17 @@ hHi
 oeP
 ehs
 gWO
-vtf
+psj
 vdF
 mNr
-vtf
-cZJ
+psj
+wzU
 mNr
-vtf
+psj
 mLj
 xDy
 mLj
-vtf
+psj
 gAg
 ftt
 cKE
@@ -34825,7 +34832,7 @@ hHi
 oeP
 oxT
 gWO
-vtf
+psj
 oce
 dhn
 bMc
@@ -34835,7 +34842,7 @@ sKt
 dnE
 pZo
 mLj
-vtf
+psj
 hHi
 gDZ
 tpU
@@ -35082,8 +35089,8 @@ hHi
 oeP
 bZh
 gWO
-vtf
-oce
+psj
+pJR
 bMc
 cxI
 leG
@@ -35092,7 +35099,7 @@ mXO
 sKt
 mXO
 tnO
-vtf
+psj
 hHi
 hHi
 eGR
@@ -35339,7 +35346,7 @@ hHi
 oeP
 qnC
 gWO
-vtf
+psj
 uWx
 bMc
 oce
@@ -35596,7 +35603,7 @@ kHS
 oeP
 qnC
 gWO
-vtf
+psj
 psj
 atR
 psj
@@ -35853,7 +35860,7 @@ qqx
 oeP
 qnC
 gWO
-vtf
+psj
 cXk
 xYx
 wzU
@@ -36110,17 +36117,17 @@ jVf
 oeP
 qnC
 gWO
-vtf
+psj
 pzS
 sqT
-bGp
+meb
 pbC
 sKt
 clF
 boV
 sKt
 wrb
-vtf
+psj
 hHi
 hHi
 fNt
@@ -36367,7 +36374,7 @@ qqx
 oeP
 qnC
 gWO
-vtf
+psj
 qRp
 uwG
 psj
@@ -36377,7 +36384,7 @@ oKe
 wDI
 gZN
 gUh
-vtf
+psj
 hHi
 hHi
 fNt
@@ -36624,17 +36631,17 @@ jVf
 oeP
 qnC
 gWO
-vtf
-vtf
-vtf
-vtf
-vtf
+psj
+psj
+psj
+psj
+psj
 mNr
 waE
 bGp
 mNr
-vtf
-vtf
+psj
+psj
 hHi
 hHi
 wIz
@@ -36885,12 +36892,12 @@ hHi
 hHi
 hHi
 hHi
-vtf
+psj
 aOL
 voa
 rmk
 kWL
-vtf
+psj
 hHi
 hHi
 hHi
@@ -37142,12 +37149,12 @@ hHi
 hHi
 hHi
 hHi
-vtf
+psj
 jZh
 mLj
 fwX
 lNl
-vtf
+psj
 hHi
 hHi
 hHi
@@ -37399,12 +37406,12 @@ hHi
 hHi
 hHi
 hHi
-vtf
+psj
 aiH
 voa
 rmk
 pUq
-vtf
+psj
 hHi
 hHi
 hHi
@@ -37656,12 +37663,12 @@ hHi
 hHi
 hHi
 hHi
-vtf
-vtf
+psj
+psj
 uHi
 uHi
-vtf
-vtf
+psj
+psj
 hHi
 hHi
 hHi
