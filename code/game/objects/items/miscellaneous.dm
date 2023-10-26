@@ -377,7 +377,7 @@
 		"multicaliber carbine" = /obj/item/gun/ballistic/automatic/smg/sidewinder,
 		"combat carbine" = /obj/item/gun/ballistic/automatic/combat,
 		"service rifle" = /obj/item/gun/ballistic/automatic/service,
-		"combat carbine" = /obj/item/gun/ballistic/automatic/marksman,
+		"marksman carbine" = /obj/item/gun/ballistic/automatic/marksman,
 		"police rifle" = /obj/item/gun/ballistic/automatic/marksman/policerifle,
 		"assault carbine" = /obj/item/gun/ballistic/automatic/assault_carbine,
 		"armalite rifle" = /obj/item/gun/ballistic/automatic/armalite,
