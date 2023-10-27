@@ -40,7 +40,7 @@
 /datum/interaction/lewd/finger_self/display_interaction(mob/living/user)
 	var/t_His = user.p_their()
 	var/message
-	var/description
+	var/lust_amt
 
 	var/obj/item/reagent_containers/liquid_container
 
@@ -54,15 +54,17 @@
 
 //help intent should be gentle, downright even loving and probably the opener for situations
 		if(user.a_intent == INTENT_HELP)
+			lust_amt = LOW_LUST
 			message = pick(
 			"teases a finger around [t_His] labia!",
 			"rubs [t_His] pussy gently!",
 			"very lightly gives [t_His] own pussy a tap!",
-			"is gently rubbing [t_His] nether lips!"
+			"is gently rubbing [t_His] nether lips!",
 			)
 
 //disarm intent should be used for being particularly playful with the interaction
 		else if(user.a_intent == INTENT_DISARM)
+			lust_amt = SOME_LUST
 			message = pick(
 				"teasingly fingers [t_His] pussy!",
 				"explores [t_His] own love canal playfully!",
@@ -72,6 +74,7 @@
 
 //grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 		else if(user.a_intent == INTENT_GRAB)
+			lust_amt = SOME_MORE_LUST
 			message = pick(
 				"gives [t_His] pussy a playful slap!",
 				"fingers [t_His] honeypot thoroughly.",
@@ -81,12 +84,14 @@
 
 //harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 		else if(user.a_intent == INTENT_HARM)
-			var/message = pick(
+			lust_amt = NORMAL_LUST
+			message = pick(
 				"slaps [t_His] pussy lips hard!",
 				"is fingering [t_His] pussy like [t_His] depends on it!",
 				"groans as they fingerfuck their pussy messily!",
-				"fingers [t_His] pussy so hard she begins to shake!",
-				"is fingering [t_His] pussy like it owes her money!")
+				"fingers [t_His] pussy so hard them begins to shake!",
+				"is fingering [t_His] pussy like it owes them money!",
+				)
 
 	if(prob(5 + user.get_lust()))
 		user.visible_message(span_love("<b>\The [user]</b> [pick(
@@ -106,4 +111,4 @@
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA)
+	user.handle_post_sex(CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA)

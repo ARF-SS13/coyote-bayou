@@ -76,7 +76,11 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
 #define THIGH_SMOTHERING "thigh_smother"
 #define NUTS_TO_FACE "nut_face"
 
+#define CRAZY_LUST 20
+#define MORE_LUST 15
 #define NORMAL_LUST 10
+#define SOME_MORE_LUST 6
+#define SOME_LUST 3
 #define LOW_LUST 1
 
 #define REQUIRE_NONE 0
