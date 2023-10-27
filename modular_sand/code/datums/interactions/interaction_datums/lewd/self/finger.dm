@@ -165,6 +165,22 @@
 //COYOTE SELF VERBS   //
 ///////////////////////
 
+//So, you want to make a new ERP emote, in this case, to use on yourself?  Well aren't you in luck. The Rub Crotch emote directly below here is designed to make that process AS EASY AS POSSIBLE.
+//1. Copy the name brick, put your emotes name in it
+//2. Set the new path for /datum/interaction/lewd/self/WHATEVER_NAME_YOU_DESIRE
+//3. Set the description text inside the quotes as the comments ask.
+//4. Select the options you want for the vars below, but before you get to the 'Verbosity' brick.
+//5. Brainstorm what you want the different intents to be doing based off of how they're supposed to be used.
+//6. Write a single message = pick for each line, you'll want to add more but lets dial in the basic concept first.
+//7. Keep an eye on your writing, see if you could or should use anything in the Pronoun Storage system
+//8. Tie up your Wrap Up section, including sound.
+//9. Tie off your 'emote end line'
+//10. Cry a lot
+//11. ??????? 
+//12. Compile
+//13. Fix the issues you have from testing, or add more message lines!  Rinse and repeat from 10 until you're so dehydrated you blow away like salt in the wind.
+
+
 //////////////
 //Rub Crotch//
 //////////////
@@ -181,9 +197,13 @@
 	write_log_user = "fingered self" //The log for the interactiont to show admins if, for some insane reason, they need to look up what you have done to yourself/others. Probably not needed with OUR community, but I can see the logic behind wanting it. 
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 
+
+////////////
+//VEROSITY//
+////////////
 //Remember to change this VVVV
 /datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window.
-//pronoun storage
+									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
 
@@ -240,8 +260,9 @@
 				"shudders softly.",
 				)]"))
 
+					//Wrap up//
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
-	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version.
+	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////RUB CROTCH END/////////
 
