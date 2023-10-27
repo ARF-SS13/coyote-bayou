@@ -1,5 +1,5 @@
 /datum/interaction/lewd/jack
-	description = "Self/Penis - Jerk yourself off."
+	description = "Self/Crotch - Jerk your cock off."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_penis = REQUIRE_ANY
