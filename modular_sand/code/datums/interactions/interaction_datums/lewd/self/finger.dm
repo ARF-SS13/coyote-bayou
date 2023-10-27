@@ -227,24 +227,28 @@
 	var/t_their = user.p_their() //This is an example of creating a var that uses an existing pronoun, this is an inherited example, we should remove it and use the one above eventually.
 	var/message //This is the variable that holds the different messages that can play depending on which intent the player has used.
 
+//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP) //Is the player on help intent?
+	if(user.a_intent == INTENT_HELP) //Is the player on help intent?  //If your verb is insanely simple, you can remove this user.a_intent check and just do a single block of messages.
 		message = pick( //Then pick from these messages!
 		"lightly rubs [t_their] crotch.",
 		)
 
+//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
 		message = pick( //Then pick from these messages!
 			"puts a bit of pressure on [t_their] lap.",
 		)
 
+//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
 		message = pick( //Then pick from these messages!
 			"is really grinding at [t_their] lap!",
 		)
 
+//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
 		message = pick( //Then pick from these messages!
@@ -252,7 +256,7 @@
 			"mauls [t_their] crotch!", //This is how two or more should look, stack them vertically!
 			)
 
-
+//Aftershock Block//  
 	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
 		user.visible_message(span_love("<b>\The [user]</b> [pick( //The list that is used starts here.
 				"shivers in arousal.", //These print to everyone in view range.
