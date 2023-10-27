@@ -103,8 +103,8 @@
 	for(var/interaction_key in SSinteractions.interactions)
 		var/datum/interaction/I = SSinteractions.interactions[interaction_key]
 		if(I.evaluate_user(self, action_check = FALSE) && I.evaluate_target(self, target))
-			if(I.user_is_target && target != self)
-				continue
+			// if(I.user_is_target && target != self)
+			// 	continue
 			var/list/interaction = list()
 			interaction["key"] = I.type
 			var/description = replacetext(I.description, "%COCK%", self.has_penis() ? "cock" : "strapon")

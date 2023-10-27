@@ -59,19 +59,19 @@
 		var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
 		var/milktype = milkers?.fluid_id
 
-		if(milkers && milktype)
-			var/modifier
-			switch(milkers.size)
-				if(3 to 5)
-					modifier = 2
-				if(6 to 8)
-					modifier = 3
-				else
-					if(milkers.size_to_state() in GLOB.breast_values)
-						modifier = clamp(GLOB.breast_values[milkers.size_to_state()] - 5, 0, INFINITY)
-					else
-						modifier = 1
-			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
+		// if(milkers && milktype)
+		// 	var/modifier
+		// 	switch(milkers.size)
+		// 		if(3 to 5)
+		// 			modifier = 2
+		// 		if(6 to 8)
+		// 			modifier = 3
+		// 		else
+		// 			if(milkers.size_to_state() in GLOB.breast_values)
+		// 				modifier = clamp(GLOB.breast_values[milkers.size_to_state()] - 5, 0, INFINITY)
+		// 			else
+		// 				modifier = 1
+		liquid_container.reagents.add_reagent(milktype, rand(1,3))
 
 	user.visible_message(message = span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
