@@ -263,3 +263,253 @@
 	name = "Primitive Defib"
 	path = /obj/item/defibrillator/primitive
 	cost = 2
+
+/datum/gear/hands/backpack
+	name = "hiking backpack"
+	path = /obj/item/storage/backpack/old
+	subcategory = LOADOUT_SUBCATEGORY_HANDS_BACKPACKS
+
+/datum/gear/hands/backpack/duffel
+	name = "duffelbag"
+	path = /obj/item/storage/backpack/duffelbag
+
+/datum/gear/hands/backpack/explorer
+	name = "explorer backpack"
+	path = /obj/item/storage/backpack/explorer
+
+/datum/gear/hands/backpack/explorer/satchel
+	name = "explorer satchel"
+	path = /obj/item/storage/backpack/satchel/explorer
+
+/datum/gear/hands/backpack/trekker
+	name = "trekker backpack"
+	path = /obj/item/storage/backpack/trekker
+
+/datum/gear/hands/backpack/trekker/satchel
+	name = "trekker satchel"
+	path = /obj/item/storage/backpack/satchel/trekker
+
+/datum/gear/hands/backpack/trekker/marinepack
+	name = "UNMC Standard issue backpack"
+	path = /obj/item/storage/backpack/trekker/marinepack
+	cost = 1
+
+/datum/gear/hands/backpack/sec
+	name = "security backpack"
+	path = /obj/item/storage/backpack/security
+
+/datum/gear/hands/backpack/sec/satchel
+	name = "security satchel"
+	path = /obj/item/storage/backpack/satchel/sec
+
+/datum/gear/hands/backpack/trophy
+	name = "trophy rack"
+	path = /obj/item/storage/backpack/cultpack
+
+/datum/gear/hands/backpack/old
+	name = "old satchel"
+	path = /obj/item/storage/backpack/satchel/old
+
+/datum/gear/backpack/coinpouch
+	name = "coin pouch"
+	path = /obj/item/storage/wallet/stash/pouch
+
+/datum/gear/hands/backpack/snailshell
+	name = "snail shell"
+	path = /obj/item/storage/backpack/satchel/snailshell
+
+//Skyrat bags
+
+/datum/gear/hands/backpack/skyrat/ertodst
+	name = "black ert bag"
+	path = /obj/item/storage/backpack/skyrat/ertodst
+
+/datum/gear/hands/backpack/skyrat/robobackpack
+	name = "robotics backpack"
+	path = /obj/item/storage/backpack/skyrat/robobackpack
+
+/datum/gear/hands/backpack/skyrat/robosatchel
+	name = "robotics satchel"
+	path = /obj/item/storage/backpack/satchel/skyrat/robosatchel
+
+/datum/gear/hands/backpack/skyrat/roboduffel
+	name = "robotics duffel"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/roboduffel
+
+/datum/gear/hands/backpack/skyrat/robomessanger
+	name = "robotics messanger"
+	path = /obj/item/storage/backpack/skyrat/robomessanger
+
+/datum/gear/hands/backpack/skyrat/hopbackpack
+	name = "blue packpack"
+	path = /obj/item/storage/backpack/skyrat/hopbackpack
+
+/datum/gear/hands/backpack/skyrat/hopsatchel
+	name = "blue satchel"
+	path = /obj/item/storage/backpack/satchel/skyrat/hopsatchel
+
+/datum/gear/hands/backpack/skyrat/hopduffel
+	name = "blue duffel"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/hopduffel
+
+/datum/gear/hands/backpack/skyrat/hopmessanger
+	name = "blue messanger"
+	path = /obj/item/storage/backpack/skyrat/hopmessanger
+
+/datum/gear/hands/backpack/skyrat/securitybackpack
+	name = "security backpack"
+	path = /obj/item/storage/backpack/skyrat/securitybackpack
+
+/datum/gear/hands/backpack/skyrat/securitysatchel
+	name = "satchel satchel"
+	path = /obj/item/storage/backpack/satchel/skyrat/securitysatchel
+
+/datum/gear/hands/backpack/skyrat/securityduffel
+	name = "security duffel"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/securityduffel
+
+/datum/gear/hands/backpack/skyrat/securitymessanger
+	name = "security duffel"
+	path = /obj/item/storage/backpack/skyrat/securitymessenger
+
+/datum/gear/hands/backpack/skyrat/medicalbackpack
+	name = "medical backpack"
+	path = /obj/item/storage/backpack/skyrat/medicalbackpack
+
+/datum/gear/hands/backpack/skyrat/medicalsatchel
+	name = "medical satchel"
+	path = /obj/item/storage/backpack/satchel/skyrat/medicalsatchel
+
+/datum/gear/hands/backpack/skyrat/medicalduffel
+	name = "medical duffel"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/medicalduffel
+
+/datum/gear/hands/backpack/skyrat/medicalmessanger
+	name = "medical messenger"
+	path = /obj/item/storage/backpack/skyrat/medicalmessenger
+
+/datum/gear/hands/backpack/skyrat/blueshieldbackpack
+	name = "blueshield backpack"
+	path = /obj/item/storage/backpack/skyrat/blueshieldbackpack
+
+/datum/gear/hands/backpack/skyrat/blueshieldsatchel
+	name = "blueshield satchel"
+	path = /obj/item/storage/backpack/satchel/skyrat/blueshieldsatchel
+
+/datum/gear/hands/backpack/skyrat/blueshieldduffel
+	name = "blueshield duffel"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/blueshieldduffel
+
+/datum/gear/hands/backpack/skyrat/blueshieldmessanger
+	name = "blueshield messanger"
+	path = /obj/item/storage/backpack/skyrat/blueshieldmessanger
+
+/datum/gear/hands/backpack/skyrat/carrybackpackgreen
+	name = "bulky green bag"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackgreen
+
+/datum/gear/hands/backpack/skyrat/carrybackpackblack
+	name = "bulky black bag"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackblack
+
+/datum/gear/hands/backpack/skyrat/carrybackpackwhite
+	name = "bulky white bag"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackwhite
+
+/datum/gear/hands/backpack/skyrat/carrybackpackbrown
+	name = "bulky brown bag"
+	path = /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackbrown
+
+/datum/gear/hands/backpack/skyrat/messangerblack
+	name = "black messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangerblack
+
+/datum/gear/hands/backpack/skyrat/messangercaptain
+	name = "dark blue messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangercaptain
+
+/datum/gear/hands/backpack/skyrat/messangerscience
+	name = "purple accented messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangerscience
+
+/datum/gear/hands/backpack/skyrat/messangergenetics
+	name = "blue accented messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangergenetics
+
+/datum/gear/hands/backpack/skyrat/messangerengineering
+	name = "brown and orange messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangerengineering
+
+/datum/gear/hands/backpack/skyrat/messangerexplorer
+	name = "brown and blue messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangerexplorer
+
+/datum/gear/hands/backpack/skyrat/messangerblack
+	name = "black messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messangerblack
+
+/datum/gear/hands/backpack/skyrat/messangerhydroponics
+	name = "green and blue messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengerhydroponics
+
+/datum/gear/hands/backpack/skyrat/messangerclown
+	name = "green messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengerclown
+
+/datum/gear/hands/backpack/skyrat/messangermedical
+	name = "medical messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengermedical
+
+/datum/gear/hands/backpack/skyrat/messangerchemistry
+	name = "chemistry messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengerchemistry
+
+/datum/gear/hands/backpack/skyrat/messangervirology
+	name = "virology messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengervirology
+
+/datum/gear/hands/backpack/skyrat/messangercoroner
+	name = "coroner messanger bag"
+	path = /obj/item/storage/backpack/skyrat/messengercoroner
+
+//Shells. Take me to Snurch
+
+/datum/gear/hands/backpack/skyrat/coneshell
+	name = "cone shell bag"
+	path = /obj/item/storage/backpack/skyrat/coneshell
+
+/datum/gear/hands/backpack/skyrat/cinnamonshell
+	name = "cinnamon shell bag"
+	path = /obj/item/storage/backpack/skyrat/cinnamonshell
+
+/datum/gear/hands/backpack/skyrat/caramelshell
+	name = "caramel shell bag"
+	path = /obj/item/storage/backpack/skyrat/caramelshell
+
+/datum/gear/hands/backpack/skyrat/pyramidshellwhite
+	name = "pyramid shell bag"
+	path = /obj/item/storage/backpack/skyrat/pyramidshellwhite
+
+/datum/gear/hands/backpack/skyrat/spiralshellwhite
+	name = "spiral shell bag"
+	path = /obj/item/storage/backpack/skyrat/spiralshellwhite
+
+/datum/gear/hands/backpack/skyrat/rockshellwhite
+	name = "rock shell bag"
+	path = /obj/item/storage/backpack/skyrat/rockshellwhite
+
+/datum/gear/hands/backpack/skyrat/mechashell
+	name = "mecha shell bag"
+	path = /obj/item/storage/backpack/skyrat/mechashell
+
+/datum/gear/hands/backpack/skyrat/pyramidshell
+	name = "pyramid shell bag"
+	path = /obj/item/storage/backpack/skyrat/pyramidshell
+
+/datum/gear/hands/backpack/skyrat/spiralshell
+	name = "spiral shell bag"
+	path = /obj/item/storage/backpack/skyrat/spiralshell
+
+/datum/gear/hands/backpack/skyrat/rockshell
+	name = "rock shell bag"
+	path = /obj/item/storage/backpack/skyrat/rockshell
