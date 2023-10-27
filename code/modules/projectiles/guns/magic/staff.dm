@@ -179,6 +179,8 @@
 	name = "greater magic missile"
 	icon_state = "arcane_barrage"
 	damage = 25 // same as the tribeam
+	damage_low = 20
+	damage_high = 50
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
 
@@ -220,6 +222,8 @@
 /obj/item/projectile/magic/kelpmagic/sparks/thunder
 	name = "lightning bolt"
 	damage = 60
+	damage_low = 30
+	damage_high = 80
 
 /****************/
 //Staff of Healing//
@@ -259,6 +263,8 @@
 	name = "acid spray"
 	icon_state = "toxin"
 	damage = 12
+	damage_low = 5
+	damage_high = 20
 	damage_type = BURN
 	flag = "laser"
 

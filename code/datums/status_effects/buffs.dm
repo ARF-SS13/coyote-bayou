@@ -3,9 +3,9 @@
 /datum/status_effect/shadow_mend
 	id = "shadow_mend"
 	duration = 30
-	alert_type = /obj/screen/alert/status_effect/shadow_mend
+	alert_type = /atom/movable/screen/alert/status_effect/shadow_mend
 
-/obj/screen/alert/status_effect/shadow_mend
+/atom/movable/screen/alert/status_effect/shadow_mend
 	name = "Shadow Mend"
 	desc = "Shadowy energies wrap around your wounds, sealing them at a price. After healing, you will slowly lose health every three seconds for thirty seconds."
 	icon_state = "shadow_mend"
@@ -29,9 +29,9 @@
 	id = "void_price"
 	duration = 300
 	tick_interval = 30
-	alert_type = /obj/screen/alert/status_effect/void_price
+	alert_type = /atom/movable/screen/alert/status_effect/void_price
 
-/obj/screen/alert/status_effect/void_price
+/atom/movable/screen/alert/status_effect/void_price
 	name = "Void Price"
 	desc = "Black tendrils cinch tightly against you, digging wicked barbs into your flesh."
 	icon_state = "shadow_mend"
@@ -46,17 +46,17 @@
 	duration = 200
 	tick_interval = 0 //tick as fast as possible
 	status_type = STATUS_EFFECT_REPLACE
-	alert_type = /obj/screen/alert/status_effect/vanguard
+	alert_type = /atom/movable/screen/alert/status_effect/vanguard
 	var/my_bar
 	var/stamhealed = 0 //How much stamina did we regenerate?
 
-/obj/screen/alert/status_effect/vanguard
+/atom/movable/screen/alert/status_effect/vanguard
 	name = "Vanguard"
 	desc = "You're absorbing stuns aswell as quickly regenerating stamina, but be careful: 50% of stamina restored and 25% of stuns absorbed will affect you after this effect ends."
 	icon_state = "vanguard"
 	alerttooltipstyle = "clockcult"
 
-/obj/screen/alert/status_effect/vanguard/MouseEntered(location,control,params)
+/atom/movable/screen/alert/status_effect/vanguard/MouseEntered(location,control,params)
 	var/mob/living/L = usr
 	var/datum/status_effect/vanguard_shield/E = attached_effect
 	if(istype(L)) //this is probably more safety than actually needed
@@ -114,9 +114,9 @@
 /datum/status_effect/inathneqs_endowment
 	id = "inathneqs_endowment"
 	duration = 150
-	alert_type = /obj/screen/alert/status_effect/inathneqs_endowment
+	alert_type = /atom/movable/screen/alert/status_effect/inathneqs_endowment
 
-/obj/screen/alert/status_effect/inathneqs_endowment
+/atom/movable/screen/alert/status_effect/inathneqs_endowment
 	name = "Inath-neq's Endowment"
 	desc = "Adrenaline courses through you as the Resonant Cogwheel's energy shields you from all harm!"
 	icon_state = "inathneqs_endowment"
@@ -145,7 +145,7 @@
 /datum/status_effect/cyborg_power_regen
 	id = "power_regen"
 	duration = 100
-	alert_type = /obj/screen/alert/status_effect/power_regen
+	alert_type = /atom/movable/screen/alert/status_effect/power_regen
 	var/power_to_give = 0 //how much power is gained each tick
 
 /datum/status_effect/cyborg_power_regen/on_creation(mob/living/new_owner, new_power_per_tick)
@@ -153,7 +153,7 @@
 	if(. && isnum(new_power_per_tick))
 		power_to_give = new_power_per_tick
 
-/obj/screen/alert/status_effect/power_regen
+/atom/movable/screen/alert/status_effect/power_regen
 	name = "Power Regeneration"
 	desc = "You are quickly regenerating power!"
 	icon_state = "power_regen"
@@ -170,16 +170,16 @@
 	id = "his_grace"
 	duration = -1
 	tick_interval = 4
-	alert_type = /obj/screen/alert/status_effect/his_grace
+	alert_type = /atom/movable/screen/alert/status_effect/his_grace
 	var/bloodlust = 0
 
-/obj/screen/alert/status_effect/his_grace
+/atom/movable/screen/alert/status_effect/his_grace
 	name = "His Grace"
 	desc = "His Grace hungers, and you must feed Him."
 	icon_state = "his_grace"
 	alerttooltipstyle = "hisgrace"
 
-/obj/screen/alert/status_effect/his_grace/MouseEntered(location,control,params)
+/atom/movable/screen/alert/status_effect/his_grace/MouseEntered(location,control,params)
 	desc = initial(desc)
 	var/datum/status_effect/his_grace/HG = attached_effect
 	desc += "<br><font size=3><b>Current Bloodthirst: [HG.bloodlust]</b></font>\
@@ -221,7 +221,7 @@
 /datum/status_effect/wish_granters_gift //Fully revives after ten seconds.
 	id = "wish_granters_gift"
 	duration = 50
-	alert_type = /obj/screen/alert/status_effect/wish_granters_gift
+	alert_type = /atom/movable/screen/alert/status_effect/wish_granters_gift
 
 /datum/status_effect/wish_granters_gift/on_apply()
 	to_chat(owner, span_notice("Death is not your end! The Wish Granter's energy suffuses you, and you begin to rise..."))
@@ -232,7 +232,7 @@
 	owner.revive(full_heal = TRUE, admin_revive = TRUE)
 	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!"), span_notice("You have regenerated."))
 
-/obj/screen/alert/status_effect/wish_granters_gift
+/atom/movable/screen/alert/status_effect/wish_granters_gift
 	name = "Wish Granter's Immortality"
 	desc = "You are being resurrected!"
 	icon_state = "wish_granter"
@@ -270,7 +270,7 @@
 	id = "blooddrunk"
 	duration = 10
 	tick_interval = 0
-	alert_type = /obj/screen/alert/status_effect/blooddrunk
+	alert_type = /atom/movable/screen/alert/status_effect/blooddrunk
 	var/last_health = 0
 	var/last_bruteloss = 0
 	var/last_fireloss = 0
@@ -279,7 +279,7 @@
 	var/last_cloneloss = 0
 	var/last_staminaloss = 0
 
-/obj/screen/alert/status_effect/blooddrunk
+/atom/movable/screen/alert/status_effect/blooddrunk
 	name = "Blood-Drunk"
 	desc = "You are drunk on blood! Your pulse thunders in your ears! Nothing can harm you!" //not true, and the item description mentions its actual effect
 	icon_state = "blooddrunk"
@@ -426,7 +426,7 @@
 /datum/status_effect/fleshmend
 	id = "fleshmend"
 	duration = 100
-	alert_type = /obj/screen/alert/status_effect/fleshmend
+	alert_type = /atom/movable/screen/alert/status_effect/fleshmend
 
 /datum/status_effect/fleshmend/tick()
 	if(owner.on_fire)
@@ -442,7 +442,7 @@
 	var/mob/living/carbon/C = owner
 	QDEL_LIST(C.all_scars)
 
-/obj/screen/alert/status_effect/fleshmend
+/atom/movable/screen/alert/status_effect/fleshmend
 	name = "Fleshmend"
 	desc = "Our wounds are rapidly healing. <i>This effect is prevented if we are on fire.</i>"
 	icon_state = "fleshmend"
@@ -551,7 +551,7 @@
 				var/mob/living/simple_animal/SM = L
 				SM.adjustHealth(-3.5, forced = TRUE)
 
-/obj/screen/alert/status_effect/regenerative_core
+/atom/movable/screen/alert/status_effect/regenerative_core
 	name = "Reinforcing Tendrils"
 	desc = "You can move faster than your broken body could normally handle!"
 	icon_state = "regenerative_core"
@@ -561,7 +561,7 @@
 	id = "Regenerative Core"
 	duration = 1 MINUTES
 	status_type = STATUS_EFFECT_REPLACE
-	alert_type = /obj/screen/alert/status_effect/regenerative_core
+	alert_type = /atom/movable/screen/alert/status_effect/regenerative_core
 
 /datum/status_effect/regenerative_core/on_apply()
 	. = ..()
@@ -582,9 +582,9 @@
 	id = "Anatomic Panacea"
 	duration = 100
 	tick_interval = 10
-	alert_type = /obj/screen/alert/status_effect/panacea
+	alert_type = /atom/movable/screen/alert/status_effect/panacea
 
-/obj/screen/alert/status_effect/panacea
+/atom/movable/screen/alert/status_effect/panacea
 	name = "Panacea"
 	desc = "We purge the impurities from our body."
 	icon_state = "panacea"
@@ -640,14 +640,14 @@
 /datum/status_effect/ghoulheal //the actual healing is handled in ghoul.dm
 	id = "ghoulheal"
 	duration = -1
-	alert_type = /obj/screen/alert/status_effect/ghoulheal
+	alert_type = /atom/movable/screen/alert/status_effect/ghoulheal
 	examine_text = span_notice("They are regenerating slowly, wounds alight with a green glow.")
 
 /datum/status_effect/ghoulheal/tick()
 	if(owner.health != owner.maxHealth)
 		new /obj/effect/temp_visual/heal(get_turf(src), "#0f9600")
 
-/obj/screen/alert/status_effect/ghoulheal
+/atom/movable/screen/alert/status_effect/ghoulheal
 	name = "Radiation Healing"
 	desc = "You are regenerating from radiation. The more radiation you accumulate, the faster you will heal, and the slower you will move. Don't accumulate too much."
 	icon_state = "fleshmend"

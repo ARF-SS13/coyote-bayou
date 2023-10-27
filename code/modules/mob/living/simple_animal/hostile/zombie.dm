@@ -17,7 +17,7 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	spacewalk = FALSE
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -48,10 +48,16 @@
 	corpse.mob_species = /datum/species/zombie
 	corpse.mob_name = name
 
+/mob/living/simple_animal/hostile/zombie/Destroy()
+	if(corpse)
+		QDEL_NULL(corpse)
+	. = ..()
+
 /mob/living/simple_animal/hostile/zombie/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target) && prob(infection_chance))
-		try_to_zombie_infect(target)
+	var/atom/my_target = get_target()
+	if(. && ishuman(my_target) && prob(infection_chance))
+		try_to_zombie_infect(my_target)
 
 /mob/living/simple_animal/hostile/zombie/drop_loot()
 	. = ..()
@@ -78,7 +84,7 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	spacewalk = FALSE
 	status_flags = CANPUSH
 	del_on_death = 0

@@ -69,12 +69,12 @@
 	BB.suppressed = quiet
 	BB.damage_threshold_penetration = damage_threshold_penetration
 	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
-		BB.damage *= 0.2 // lol
+		BB.damage_mod *= 0.2 // lol
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from
 		G.post_modify_projectile(BB)
-		BB.damage *= G.damage_multiplier
+		//BB.damage *= G.damage_multiplier
 		BB.damage_mod = G.damage_multiplier
 		BB.armour_penetration *= G.penetration_multiplier
 		BB.pixels_per_second *= G.projectile_speed_multiplier
@@ -120,3 +120,8 @@
 	var/dx = abs(target.x - current.x)
 	var/dy = abs(target.y - current.y)
 	return locate(target.x + round(gaussian(0, distro) * (dy+2)/8, 1), target.y + round(gaussian(0, distro) * (dx+2)/8, 1), target.z)
+
+/obj/item/ammo_casing/proc/factionize(list/faction)
+	if(!BB || !LAZYLEN(faction))
+		return
+	BB.factionize(faction)

@@ -54,7 +54,8 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/blueambrosia,
 	/datum/crafting_recipe/greenambrosia,
 	/datum/crafting_recipe/food/pemmican,
-	/datum/crafting_recipe/tribal/bonebag))
+	/datum/crafting_recipe/tribal/bonebag,
+	/datum/crafting_recipe/horsecream_good))
 
 /datum/outfit/job/tribal/
 	name = "Tribal"
@@ -170,6 +171,7 @@ Tribal Shaman
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
@@ -216,10 +218,10 @@ Tribal Shaman
 */
 
 /*
-Tribal Head Hunter
+Tribal Hunt Master
 */
 /datum/job/tribal/f13Hhunter
-	title = "Head Hunter"
+	title = "Hunt Master"
 	flag = F13HHUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
@@ -229,7 +231,7 @@ Tribal Head Hunter
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
+	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
 	exp_requirements = 0
 
@@ -316,6 +318,7 @@ Druid
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_BLINDFAITH, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_DNAWHIZ, src)
@@ -468,7 +471,7 @@ Hunter
 	total_positions = 5
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The chief and Head Hunter.  Failing their appearance you fall back on the Shaman and Druid for task management."
+	supervisors = "The chief and Hunt Master.  Failing their appearance you fall back on the Shaman and Druid for task management."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. While a protector you are also the arm of the tribe in the world, performing tasks from the Shamans and Druids."
@@ -505,6 +508,7 @@ Hunter
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/wickerdoll)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 
 

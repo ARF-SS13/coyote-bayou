@@ -110,6 +110,12 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
 
+/obj/item/clothing/shoes/jackboots/sneakboots
+	name = "infiltrator sneakboots"
+	desc = "A pair of insidious boots with special noise muffling soles which very slightly drown out your footsteps. They would be absolutely perfect for stealth operations were it not for the the padding being worn out."
+	icon_state = "sneakboots"
+	item_state = "sneakboots"
+
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
 
@@ -408,6 +414,20 @@
 	icon = 'icons/fallout/clothing/shoes.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 
+
+/obj/item/clothing/shoes/customtoxboots
+	name = "Thigh High Exo-Jack boots"
+	desc = "A set of luxuriously made exo-jack thigh high boots. Extending to the thighs, these boots have both style and comfort in mind. They seem to be made of a light mateial on the exterior while the interior is padded and made with comfort in mind. For the choom who desires style and functionality."
+	icon_state = "toxboots"
+	item_state = "toxboots"
+	armor = ARMOR_VALUE_CLOTHES
+	can_be_tied = FALSE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	equip_delay_self = 0.5
+	equip_delay_other = 0.5
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	icon = 'icons/fallout/clothing/shoes.dmi'
+
 /obj/item/clothing/shoes/unmcb/winter
 	name = "Winterized UNMC Boots"
 	desc = "A set of UNMC boots, these are painted in white dye to resemble basic winter camoflauge"
@@ -559,3 +579,14 @@
 	desc = "A set of cowboy boots. Yeehaw!"
 	icon_state = "cowboy_ranger"
 
+/obj/item/clothing/shoes/slippers
+	name = "bunny slippers"
+	desc = "Fluffy!"
+	icon_state = "slippers"
+	item_state = "slippers"
+
+/obj/item/clothing/shoes/ducky
+	name = "rubber ducky shoes"
+	desc = "These shoes are made for quacking, and thats just what they'll do."
+	icon_state = "ducky"
+	item_state = "ducky"

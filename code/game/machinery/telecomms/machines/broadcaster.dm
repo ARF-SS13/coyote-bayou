@@ -14,6 +14,8 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 	desc = "A dish-shaped machine used to broadcast processed subspace signals."
 	density = TRUE
 	use_power = IDLE_POWER_USE
+	flags_1 = DEFAULT_RICOCHET_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	idle_power_usage = 25
 	circuit = /obj/item/circuitboard/machine/telecomms/broadcaster
 

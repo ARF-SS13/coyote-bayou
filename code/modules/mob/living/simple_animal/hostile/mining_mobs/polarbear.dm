@@ -25,7 +25,7 @@
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
@@ -39,15 +39,16 @@
 	if(health > maxHealth*0.5)
 		rapid_melee = initial(rapid_melee)
 		return
-	if(!aggressive_message_said && target)
-		visible_message(span_danger("The [name] gets an enraged look at [target]!"))
+	var/atom/my_target = get_target()
+	if(!aggressive_message_said && my_target)
+		visible_message(span_danger("The [name] gets an enraged look at [my_target]!"))
 		aggressive_message_said = TRUE
 	rapid_melee = 2
 
 /mob/living/simple_animal/hostile/asteroid/polarbear/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target)
+	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.025)
 	aggressive_message_said = FALSE

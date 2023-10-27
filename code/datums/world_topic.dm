@@ -124,7 +124,7 @@
 	for(var/mob/dead/observer/O in GLOB.player_list)
 		if(O.key == expected_key)
 			if(O.client?.address == addr)
-				new /obj/screen/splash(O.client, TRUE)
+				new /atom/movable/screen/splash(O.client, TRUE)
 			break
 
 /datum/world_topic/adminmsg
@@ -285,6 +285,7 @@
 	.["Nash"] = oasis
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
+	.["Round Time"] = ROUND_TIME
 	return json_encode(.)
 
 /datum/world_topic/jsonrevision

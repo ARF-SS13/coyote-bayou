@@ -13,7 +13,7 @@
 	maxHealth = 220
 	health = 220
 	loot = list(/obj/effect/gibspawner/generic)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gorilla = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gorilla = 4)
 	response_help_continuous = "prods"
 	response_help_simple = "prod"
 	response_disarm_continuous = "challenges"
@@ -35,8 +35,8 @@
 	faction = list("jungle")
 	robust_searching = TRUE
 	stat_attack = CONSCIOUS
-	minbodytemp = 270
-	maxbodytemp = 350
+	//minbodytemp = 270
+	//maxbodytemp = 350
 	unique_name = TRUE
 	var/list/gorilla_overlays[GORILLA_TOTAL_LAYERS]
 	var/oogas = 0
@@ -60,7 +60,8 @@
 /mob/living/simple_animal/hostile/gorilla/AttackingTarget()
 	if(client)
 		oogaooga()
-	var/list/parts = target_bodyparts(target)
+	var/atom/my_target = get_target()
+	var/list/parts = target_bodyparts(my_target)
 	if(parts)
 		if(!parts.len)
 			return FALSE
@@ -68,8 +69,8 @@
 		BP.dismember()
 		return ..()
 	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
+	if(. && isliving(my_target))
+		var/mob/living/L = my_target
 		if(prob(80))
 			var/atom/throw_target = get_edge_target_turf(L, dir)
 			L.throw_at(throw_target, rand(1,2), 7, src)
@@ -78,7 +79,7 @@
 			visible_message(span_danger("[src] knocks [L] down!"))
 
 /mob/living/simple_animal/hostile/gorilla/CanAttack(atom/the_target)
-	var/list/parts = target_bodyparts(target)
+	var/list/parts = target_bodyparts(get_target())
 	return ..() && !istype(the_target, /mob/living/carbon/monkey) && (!parts  || parts.len > 3)
 
 
@@ -116,5 +117,4 @@
 	desc = "There is no need to be upset."
 	unique_name = FALSE
 	AIStatus = AI_OFF
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+

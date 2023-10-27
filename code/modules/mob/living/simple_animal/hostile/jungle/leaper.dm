@@ -155,7 +155,7 @@
 		Hop(player_hop = TRUE)
 
 /mob/living/simple_animal/hostile/jungle/leaper/AttackingTarget()
-	if(isliving(target))
+	if(isliving(get_target()))
 		return
 	return ..()
 
@@ -163,14 +163,16 @@
 	if(hopping || projectile_ready)
 		return
 	. = ..()
-	if(target)
-		if(isliving(target))
-			var/mob/living/L = target
-			if(L.incapacitated())
-				BellyFlop()
-				return
-		if(!hopping)
-			Hop()
+	var/atom/my_target = get_target()
+	if(!my_target)
+		return
+	if(isliving(my_target))
+		var/mob/living/L = my_target
+		if(L.incapacitated())
+			BellyFlop()
+			return
+	if(!hopping)
+		Hop()
 
 /mob/living/simple_animal/hostile/jungle/leaper/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
@@ -183,31 +185,34 @@
 	..()
 
 /mob/living/simple_animal/hostile/jungle/leaper/OpenFire()
-	face_atom(target)
-	if(ranged_cooldown <= world.time)
-		if(ckey)
-			if(hopping)
-				return
-			if(isliving(target))
-				var/mob/living/L = target
-				if(L.incapacitated())
-					return //No stunlocking. Hop on them after you stun them, you donk.
-		if(AIStatus == AI_ON && !projectile_ready && !ckey)
+	var/atom/my_target = get_target()
+	face_atom(my_target)
+	if(!ranged_cooldown <= world.time)
+		return
+	if(ckey)
+		if(hopping)
 			return
-		. = ..(target)
-		projectile_ready = FALSE
-		update_icons()
+		if(isliving(my_target))
+			var/mob/living/L = my_target
+			if(L.incapacitated())
+				return //No stunlocking. Hop on them after you stun them, you donk.
+	if(AIStatus == AI_ON && !projectile_ready && !ckey)
+		return
+	. = ..(my_target)
+	projectile_ready = FALSE
+	update_icons()
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/Hop(player_hop = FALSE)
-	if(z != target.z)
+	var/atom/my_target = get_target()
+	if(!my_target || z != my_target.z)
 		return
 	hopping = TRUE
 	density = FALSE
 	pass_flags |= PASSMOB
 	mob_transforming = TRUE
-	var/turf/new_turf = locate((target.x + rand(-3,3)),(target.y + rand(-3,3)),target.z)
+	var/turf/new_turf = locate((my_target.x + rand(-3,3)),(my_target.y + rand(-3,3)),my_target.z)
 	if(player_hop)
-		new_turf = get_turf(target)
+		new_turf = get_turf(my_target)
 		hop_cooldown = world.time + PLAYER_HOP_DELAY
 	if(AIStatus == AI_ON && ranged_cooldown <= world.time)
 		projectile_ready = TRUE
@@ -220,12 +225,13 @@
 	pass_flags &= ~PASSMOB
 	hopping = FALSE
 	playsound(src.loc, 'sound/effects/meteorimpact.ogg', 100, 1)
-	if(target && AIStatus == AI_ON && projectile_ready && !ckey)
-		face_atom(target)
-		addtimer(CALLBACK(src, .proc/OpenFire, target), 5)
+	var/atom/my_target = get_target()
+	if(my_target && AIStatus == AI_ON && projectile_ready && !ckey)
+		face_atom(my_target)
+		addtimer(CALLBACK(src, .proc/OpenFire, my_target), 5)
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/BellyFlop()
-	var/turf/new_turf = get_turf(target)
+	var/turf/new_turf = get_turf(get_target())
 	hopping = TRUE
 	mob_transforming = TRUE
 	new /obj/effect/temp_visual/leaper_crush(new_turf)

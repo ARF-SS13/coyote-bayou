@@ -1249,4 +1249,56 @@
 	icon =  'modular_coyote/icons/objects/items.dmi'
 	icon_state = "goldfish"
 
+//Cars
+/obj/vehicle/sealed/car/sportcar
+	name = "sports car"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "sportscar"
+
+/obj/vehicle/sealed/car/jeep
+	name = "jeep"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "jeep"
+
+/obj/vehicle/sealed/car/jeep_mesa
+	name = "jeep mesa"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "jeep_mesa"
+
+/obj/vehicle/sealed/car/policecar
+	name = "policecar"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "policecar"
+
+/obj/vehicle/sealed/car/truck
+	name = "truck"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "truck"
+
+/obj/vehicle/sealed/car/ambulance
+	name = "ambulance"
+	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
+	icon_state = "ambulance"
+
+/obj/item/choice_beacon/car
+	name = "vehicle delivery beacon"
+	desc = "Summon your tool of car. Beep beep"
+	icon_state = "gangtool-red"
+
+/obj/item/choice_beacon/car/generate_display_names()
+	var/static/list/car
+	if(!car)
+		car = list()
+		var/list/templist = list(/obj/item/choice_beacon/car,
+							/obj/vehicle/sealed/car/ambulance,
+							/obj/vehicle/sealed/car/truck,
+							/obj/vehicle/sealed/car/policecar,
+							/obj/vehicle/sealed/car/jeep_mesa,
+							/obj/vehicle/sealed/car/jeep,
+							/obj/vehicle/sealed/car/sportcar
+							)
+		for(var/V in templist)
+			var/atom/A = V
+			car[initial(A.name)] = A
+	return car
 

@@ -249,6 +249,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=close'>CLOSE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=resolve'>RSLVE</A>)"
 	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=handleissue'>HANDLE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=approved'>AFFIRMATIVE</A>)"
+	. += " (<A HREF='?_src_=holder;[HrefToken(TRUE)];ahelp=[ref_src];ahelp_action=denied'>NEGATIVE</A>)"
 
 //private
 /datum/admin_help/proc/LinkedReplyName(ref_src)
@@ -474,6 +476,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			HandleIssue()
 		if("reopen")
 			Reopen()
+		if("approved")
+			Approved()
+		if("denied")
+			Denied()
 
 //
 // TICKET STATCLICK
@@ -730,3 +736,45 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			return founds
 
 	return msg
+
+//Quick affirmative to yes or no questions
+/datum/admin_help/proc/Approved(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+
+	if(initiator)
+		initiator.giveadminhelpverb()
+
+		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+
+		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp greenlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
+		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")
+		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is yes.")
+
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "approved")
+	var/msg = "Ticket [TicketHref("#[id]")] approved by [key_name]"
+	message_admins(msg)
+	log_admin_private(msg)
+	AddInteraction("Approved by [key_name].")
+	Close(silent = FALSE)
+
+//Quick negative to yes or no questions
+/datum/admin_help/proc/Denied(key_name = key_name_admin(usr))
+	if(state != AHELP_ACTIVE)
+		return
+
+	if(initiator)
+		initiator.giveadminhelpverb()
+
+		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+
+		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp redlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
+		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")
+		to_chat(initiator, "Whatever you were asking to do that was a yes or no question?  The answer is no.")
+
+	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "denied")
+	var/msg = "Ticket [TicketHref("#[id]")] request denied by [key_name]"
+	message_admins(msg)
+	log_admin_private(msg)
+	AddInteraction("Denied by [key_name].")
+	Close(silent = FALSE)

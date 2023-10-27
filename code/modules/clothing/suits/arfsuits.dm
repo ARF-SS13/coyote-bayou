@@ -646,6 +646,79 @@
 	icon_state = "frenchtrench"
 	item_state = "frenchtrench"
 
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	name = "Ancient West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "krieg"
+	item_state = "krieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	name = "Ancient Medical West german greatcoat"
+	desc = "A trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "mkrieg"
+	item_state = "mkrieg"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	name = "Ancient West German Officer greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "Kriegissar"
+	item_state = "Kriegissar"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	name = "Ancient Officer's American greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "40kofficer"
+	item_state = "40kofficer"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	name = "Ancient Officer's greatcoat"
+	desc = "A adorned trench coat that is quite comfortable to wear."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "ancientofficer"
+	item_state = "ancientofficer"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/techpriesting
+	name = "Cyber priest outfit."
+	desc = "A trench coat that's all cyber themed!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "cyberpriest"
+	item_state = "cyberpriest"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/cyberpriesting
+	name = "Cyber-pyscho priest outfit."
+	desc = "A trench coat that's all cyber themed! Comes with some helping hands."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "tecpriest"
+	item_state = "tecpriest"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/fanaticalpriest
+	name = "Town crier outfit."
+	desc = "A trench coat that screams 'listen to my words, hear me!'. Comes with some recipts wax stamped to it!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "acolytecoat"
+	item_state = "acolytecoat"
+
+/obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/urmandoutfit
+	name = "Ancient West German fanatic outfit."
+	desc = "A trench coat that once belonged to a fanatical person. Who or what did they worship? Who knows. All one knows is, it's a good piece of clothing for those wanting to showcase their more hear-ye side of life!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "fanatic"
+	item_state = "fanatic"
+
+
 /obj/item/clothing/suit/armor/outfit/jacket/sovietpadded
 	name = "Padded Soviet jacket"
 	desc = "A padded and well made Soviet jacket. Useful for the winter, but doesn't offer much protection against bullets or really any form of punishment. Compliments any soldier belonging to the Motherland. A wise soldier once said 'As long as Mother Russia has enemies, I will answer her call...'."
@@ -824,6 +897,14 @@
 	icon_state = "river"
 	item_state = "river"
 
+/obj/item/clothing/suit/armor/outfit/warriorcats/customshadow
+	name = "Custom Shadowclan greatcoat"
+	desc = "A gifted greatcoat. Red in appearance, this greatcoat is a very old design of a ancient clan-like tribal full of cats! It is comfortable to wear and on the chest is a pin of the Shadowclan symbol. It comes with elbow length gloves and a ballistic vest alongside an armored shoulder cape. Adorning the front of the plate are two pages that are taken from 'The warrior's code', Page 1 and page 3. It seems recently it was adorned with such attachments."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "kriegshadowfanatic"
+	item_state = "kriegshadowfanatic"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -2564,7 +2645,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
-
+	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/heavierballisticvest
 	name = "A heavier version of a bv"
@@ -2572,8 +2653,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_DOWN_ENERGY_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
-
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
+	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
 	name = "6b3 body armor"
@@ -2654,6 +2735,126 @@
 	item_state = "vestmed"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer
+	name = "Armored Priestess ballistic suit"
+	desc = "A French based suit of ballistic plating. It was an expiremental armor used by chaplin soldiers before the war. Their armor being of white, black, and gold. Adorned with whatever the user could find that suited their religious needs."
+	icon_state = "40ksister"
+	item_state = "40ksister"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/battlesister
+	name = "Armored Russian Priestess ballistic suit"
+	desc = "A Russian designed suit of ballistic plating. This one takes after the french counterpart! It was an expiremental armor used by chaplin soldiers before the war. Their armor being of red and gold. It is adorned with whatever the user could find that suited their religious needs."
+	icon_state = "brsister"
+	item_state = "brsister"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/battlesisterno2
+	name = "Armored Irish Priestess ballistic suit"
+	desc = "A French designed suit of ballistic plating. This one originates from Ireland it seems. It was an expiremental armor used by chaplin soldiers before the war. Their armor being of red and black. It is adorned with whatever the user could find that suited their religious needs."
+	icon_state = "mlsister"
+	item_state = "mlsister"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/chaos
+	name = "Armored Soviet priest robes"
+	desc = "A set of silk robes with a steel plate carrier, it was used by ancient Soviet priests who needed a bit of protection as they went about life."
+	icon_state = "chaos"
+	item_state = "chaos"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperiumspecial
+	name = "Armored Special Forces ballistic armor"
+	desc = "An expiremental american plating system. It consisted of chest, back, thigh, and grieves. It wasn't the best, sure, but it looks stylish and was used by very few units before the war. It was replaced by the true and tested combat armor one sees today. This one comes in a black color scheme"
+	icon_state = "cadian"
+	item_state = "cadian"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperiuminfected
+	name = "Infected ancient american ballistic armor"
+	desc = "An expiremental american plating system. It consisted of chest, back, thigh, and grieves. It wasn't the best, sure, but it looks stylish and was used by very few units before the war. It was replaced by the true and tested combat armor one sees today. This one seems to be infected and looks much more streamline.."
+	icon_state = "necron"
+	item_state = "necron"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/japanesearmor
+	name = "Armored C.J ballistic armor"
+	desc = "An expiremental Communist Japanese based armor. Used by The People's Republic of Japan or 'C.J' short for Communist Japan, this armor was adorned in a red and white armor. It's not as good as the original thing but can be nifty for style points."
+	icon_state = "tau"
+	item_state = "tau"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperium
+	name = "Armored American ballistic armor"
+	desc = "An expiremental american plating system. It consisted of chest, back, thigh, and grieves. It wasn't the best, sure, but it looks stylish and was used by very few units before the war. It was replaced by the true and tested combat armor one sees today."
+	icon_state = "40kpublicarmor"
+	item_state = "40kpublicarmor"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/warhammertox
+	name = "Void Priestess battle armor"
+	desc = "A custom set of Void Priestess X-99 battle armor. The armor is adorned with Void esq symbolism adorned with a golden Void based jewelry wrapped around the waist.The armor's void cross is adorned with a purple jewel. Inside, the armor has a quilted and luxuriously made interior complimenting it is also a soft padding for comfort!"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
+	vis_flags = GROIN
+	icon_state = "toxsister"
+	item_state = "toxsister"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor
+	name = "Leo Armaments MARK XI armor"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit."
+	icon_state = "markvi"
+	item_state = "markvi"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor2
+	name = "Leo Armaments MARK XI armor 'Icebreaker'"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit. This one has the armor coated in a winter finish."
+	icon_state = "markvi2"
+	item_state = "markvi2"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
+/obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
+	name = "Leo Armaments MARK XI armor 'Patriot'"
+	desc = "A unpowered and redone set of Mark XI assault armor which was created by Leo Armaments. The armor itself is outfitted with a comfortable and nifty ballistic weave nanocomposite bodysuit. While form fitting, this armor itself can be quite protective of the user's body. Albeit it leaves crucial spots such as the stomach region exposed, which is only protected by the bodysuit. This one has the armor coated in a Leo Armaments colored finish."
+	icon_state = "markvi3"
+	item_state = "markvi3"
+	equip_delay_self = 5
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 
 /* * * * * * * * * *
 * Old medieval armors
@@ -2747,6 +2948,21 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+
+/obj/item/clothing/suit/armor/medium/chinastealth
+	name = "Chinese dysfunctional stealth armor"
+	desc = "A suit of dysfunctional Chinese Stealth Armor, albeit repaired to look good enough, once belonging to a feared Crimson Dragoon. Offers little protection."
+	icon_state = "chinastealth"
+	item_state = "chinastealth"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	flags_inv = HIDEJUMPSUIT
+	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
 
 /obj/item/clothing/suit/armor/medium/unmcmedic
 	name = "UNMC standard medical armor"
@@ -2902,7 +3118,6 @@
 	item_state = "vest_bullet"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T2, ARMOR_MODIFIER_UP_DT_T2)
-
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/armor
 	name = "armored vest"
 	desc = "Large bulletproof vest with ballistic plates."
@@ -4371,15 +4586,15 @@
 /obj/item/clothing/suit/armor/power_armor/proc/salvage_hint()
 	switch(salvage_step)
 		if(0)
-			return "<span class='notice'>The wiring cover is <i>screwed</i> in place.</span>"
+			return span_notice("The wiring cover is <i>screwed</i> in place.")
 		if(1)
-			return "<span class='notice'>The cover is <i>screwed</i> open and <i>wires</i> are visible.</span>"
+			return span_notice("The cover is <i>screwed</i> open and <i>wires</i> are visible.")
 		if(2)
-			return "<span class='warning'>The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.</span>"
+			return span_warning("The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.")
 		if(3)
-			return "<span class='warning'>The components have been <i>unanchored</i> servomotors inside the suit can be <i>sliced through</i>.</span>"
+			return span_warning("The components have been <i>unanchored</i> servomotors inside the suit can be <i>sliced through</i>.")
 		if(4)
-			return "<span class='warning'>The servomotors have been <i>sliced apart</i> from the frame and remaining components can be <i>pried away</i>.</span>"
+			return span_warning("The servomotors have been <i>sliced apart</i> from the frame and remaining components can be <i>pried away</i>.")
 
 /obj/item/clothing/suit/armor/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
@@ -4634,6 +4849,18 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
+/obj/item/clothing/suit/armor/texasmed/infiltrator
+	name = "infiltrator combat vest"
+	desc = "An insidious combat vest designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
+	icon_state = "infiltrator"
+	item_state = "infiltrator"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
+	
+/obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
+	name = "contractor combat suit"
+	desc = "An suspicious looking combat suit designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
+	icon_state = "syndicate-contract"
+	item_state = "syndicate-contract"
 /obj/item/clothing/suit/armor/texasmed/mantle
 	name = "mantled Texas militia breastplate"
 	desc = "A medium set of armor used by the First Texas Militia. This one has some cloth thrown over the shoulder."

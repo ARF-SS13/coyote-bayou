@@ -572,3 +572,17 @@
 	key = "hairchew"
 	message = "chews on their bangs a little bit."
 
+/datum/emote/living/carbon/lewdintent
+	key = "lewdintent"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/lewdintent/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your active hand is full, you can't wear your sleeve on your shoulder! Don't ask why!"))
+		return
+	var/obj/item/clothing/accessory/heart/dtf = new(user)
+	if(user.put_in_active_hand(dtf))
+		to_chat(user, span_notice("You're ready to make it clear to others what it is you REALLY want!"))
+	else
+		qdel(dtf)

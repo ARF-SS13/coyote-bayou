@@ -90,10 +90,10 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 /atom/proc/IsAutoclickable()
 	. = 1
 
-/obj/screen/IsAutoclickable()
+/atom/movable/screen/IsAutoclickable()
 	. = 0
 
-/obj/screen/click_catcher/IsAutoclickable()
+/atom/movable/screen/click_catcher/IsAutoclickable()
 	. = 1
 
 /client/MouseMove(object,location,control,params)

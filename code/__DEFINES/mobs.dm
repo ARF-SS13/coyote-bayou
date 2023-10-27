@@ -491,6 +491,9 @@
 //living flag
 #define HIDE_OFFLINE_INDICATOR (1<<0)
 
+//Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
+#define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
+
 //Respawn timer
 #define RESPAWN_TIMER 1
 
@@ -634,3 +637,12 @@
 #define PHUD_SHIRT "GENITAL_HUD_SHIRT"
 #define PHUD_PANTS "GENITAL_HUD_PANTS"
 #define PHUD_SOCKS "GENITAL_HUD_SOCKS"
+//Gremlins
+#define NPC_TAMPER_ACT_FORGET 1 //Don't try to tamper with this again
+#define NPC_TAMPER_ACT_NOMSG  2 //Don't produce a visible message
+
+//Game mode list indexes
+#define CURRENT_LIVING_PLAYERS	"living_players_list"
+#define CURRENT_LIVING_ANTAGS	"living_antags_list"
+#define CURRENT_DEAD_PLAYERS	"dead_players_list"
+#define CURRENT_OBSERVERS		"current_observers_list"

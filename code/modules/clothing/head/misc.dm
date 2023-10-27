@@ -711,3 +711,71 @@
 	desc = "A helmet, amazing!"
 	icon_state = "m1_standard"
 	item_state = "m1_standard"
+
+//Wizard/Witch hats from Paradise
+
+/obj/item/clothing/head/good_witch
+	name = "good witch"
+	desc = "A yellow witch hat"
+	icon_state = "good_witch"
+	item_state = "good_witch"
+
+/obj/item/clothing/head/dark_witch
+	name = "dark witch"
+	desc = "A black witch hat"
+	icon_state = "dark_witch"
+	item_state = "dark_witch"
+
+/obj/item/clothing/head/classic_witch
+	name = "classic witch"
+	desc = "A classic witch hat"
+	icon_state = "classic_witch"
+	item_state = "classic_witch"
+
+/obj/item/clothing/head/healer_witch
+	name = "healer witch"
+	desc = "A light blue witch hat"
+	icon_state = "healer_witch"
+	item_state = "healer_witch"
+
+/obj/item/clothing/head/cutie_witch
+	name = "cute witch"
+	desc = "A cute witch hat"
+	icon_state = "cutie_witch"
+	item_state = "cutie_witch"
+
+/obj/item/clothing/head/shy_witch
+	name = "shy witch"
+	desc = "A cute witch hat"
+	icon_state = "shy_witch"
+	item_state = "shy_witch"
+
+/obj/item/clothing/head/sexy_witch
+	name = "sexy witch hat"
+	desc = "A witch hat"
+	icon_state = "sexy_witch"
+	item_state = "sexy_witch"
+
+/obj/item/clothing/head/bunny_witch
+	name = "bunny witch hat"
+	desc = "A witch hat"
+	icon_state = "bunny_witch"
+	item_state = "bunny_witch"
+
+/obj/item/clothing/head/potions_witch
+	name = "potions witch hat"
+	desc = "A witch hat"
+	icon_state = "potions_witch"
+	item_state = "potions_witch"
+
+/obj/item/clothing/head/syndie_witch
+	name = "syndie witch hat"
+	desc = "A witch hat"
+	icon_state = "syndie_witch"
+	item_state = "syndie_witch"
+
+/obj/item/clothing/head/nt_witch
+	name = "blue witch hat"
+	desc = "A witch hat"
+	icon_state = "nt_witch"
+	item_state = "nt_witch"

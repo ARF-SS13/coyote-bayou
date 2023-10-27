@@ -78,7 +78,7 @@
 	else
 		victim.forceMove(src)
 		victim.emote("scream")
-		src.visible_message("<span class='warning'><b>[src] drags [victim] into the pool of blood!</b></span>", null, span_notice("You hear a splash."))
+		src.visible_message(span_warning("<b>[src] drags [victim] into the pool of blood!</b>"), null, span_notice("You hear a splash."))
 		kidnapped = TRUE
 
 	if(kidnapped)
@@ -105,7 +105,7 @@
 		return FALSE
 
 	if(victim.reagents?.has_reagent(/datum/reagent/consumable/ethanol/devilskiss))
-		to_chat(src, "<span class='warning'><b>AAH! THEIR FLESH! IT BURNS!</b></span>")
+		to_chat(src, span_warning("<b>AAH! THEIR FLESH! IT BURNS!</b>"))
 		adjustBruteLoss(25) //I can't use adjustHealth() here because bloodcrawl affects /mob/living and adjustHealth() only affects simple mobs
 		var/found_bloodpool = FALSE
 		for(var/obj/effect/decal/cleanable/target in range(1,get_turf(victim)))
@@ -165,7 +165,7 @@
 		return
 	forceMove(B.loc)
 	reset_perspective(src)
-	src.visible_message("<span class='warning'><B>[src] rises out of the pool of blood!</B></span>")
+	src.visible_message(span_warning("<B>[src] rises out of the pool of blood!</B>"))
 	exit_blood_effect(B)
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src

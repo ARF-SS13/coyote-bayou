@@ -6,6 +6,10 @@
 	max_ammo = 5
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/boltaction/twentytwo
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+
 /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	max_ammo = 1
 //	ammo_type = /obj/item/ammo_casing/a762/enchanted
@@ -49,3 +53,15 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 10
 	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/needlerammo
+	name = "magazine filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 24
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE

@@ -30,7 +30,7 @@
 	status_flags = CANPUSH
 	search_objects = 1
 	wanted_objects = list(/obj/item/stack/ore/diamond, /obj/item/stack/ore/gold, /obj/item/stack/ore/silver,
-						  /obj/item/stack/ore/uranium, /obj/item/stack/ore/titanium)
+						/obj/item/stack/ore/uranium, /obj/item/stack/ore/titanium)
 
 	var/chase_time = 100
 	var/will_burrow = TRUE
@@ -44,20 +44,23 @@
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/GiveTarget(new_target)
 	add_target(new_target)
-	if(target != null)
-		if(istype(target, /obj/item/stack/ore) && loot.len < 10)
-			visible_message(span_notice("The [name] looks at [target.name] with hungry eyes."))
-		else if(isliving(target))
-			Aggro()
-			visible_message(span_danger("The [name] tries to flee from [target.name]!"))
-			retreat_distance = 10
-			minimum_distance = 10
-			if(will_burrow)
-				addtimer(CALLBACK(src, .proc/Burrow), chase_time)
+	var/atom/my_target = get_target()
+	if(my_target == null)
+		return
+	if(istype(my_target, /obj/item/stack/ore) && loot.len < 10)
+		visible_message(span_notice("The [name] looks at [my_target.name] with hungry eyes."))
+	else if(isliving(my_target))
+		Aggro()
+		visible_message(span_danger("The [name] tries to flee from [my_target.name]!"))
+		retreat_distance = 10
+		minimum_distance = 10
+		if(will_burrow)
+			addtimer(CALLBACK(src, .proc/Burrow), chase_time)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/AttackingTarget()
-	if(istype(target, /obj/item/stack/ore))
-		EatOre(target)
+	var/atom/my_target = get_target()
+	if(istype(my_target, /obj/item/stack/ore))
+		EatOre(my_target)
 		return
 	return ..()
 

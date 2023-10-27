@@ -294,7 +294,7 @@
 
 /turf/open/floor/wood_common/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a few <b>screws</b> and a <b>small crack</b> visible.</span>"
+	. += span_notice("There's a few <b>screws</b> and a <b>small crack</b> visible.")
 
 /turf/open/floor/wood_common/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -503,7 +503,7 @@
 
 /turf/open/floor/carpet/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>"
+	. += span_notice("There's a <b>small crack</b> on the edge of it.")
 
 /turf/open/floor/carpet/Initialize()
 	. = ..()

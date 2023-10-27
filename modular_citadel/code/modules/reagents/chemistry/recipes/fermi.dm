@@ -409,7 +409,7 @@ datum/chemical_reaction/fermi/eigenstate
 		new /obj/item/toy/plush/beeplushie(get_turf(my_atom))
 	else
 		new /obj/item/toy/plush/plushling(get_turf(my_atom))
-	my_atom.visible_message("<span class='warning'>The reaction suddenly zaps, creating a plushie!</b></span>")
+	my_atom.visible_message(span_warning("The reaction suddenly zaps, creating a plushie!</b>"))
 	my_atom.reagents.clear_reagents()
 
 /datum/chemical_reaction/fermi/basic_buffer/FermiFinish(datum/reagents/holder, atom/my_atom) //might need this

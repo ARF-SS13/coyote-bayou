@@ -5,6 +5,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/component_type = /datum/component/storage/concrete
 	var/in_use = FALSE
+	var/pickoutitem_onclick = 0  //keep this at 0 if you want a standard issue storage.
 
 /obj/item/storage/get_dumping_location(obj/item/storage/source,mob/user)
 	return src

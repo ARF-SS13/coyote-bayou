@@ -164,6 +164,26 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	sound_properties = CSP_PISTOL_22
 
+/obj/item/ammo_casing/mouse
+	name = ".22lr mouseshot casing"
+	desc = "A tiny mouse nestled inside a capsule."
+	caliber = CALIBER_MOUSE
+	projectile_type = /obj/item/projectile/bullet/mouse
+	material_class = BULLET_IS_LIGHT_PISTOL
+	casing_quality = BULLET_IS_HANDLOAD
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
+		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+	sound_properties = CSP_PISTOL_22
+
+/obj/item/ammo_casing/a22/ratshot
+	name = ".22lr ratshot casing"
+	desc = "A .22lr ratshot casing."
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_ratshot // My headcanon is its lead BBs
+	pellets = 4 // 4 for now, maybe 3 if its overboard
+	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
+
 // BETA AMMO // Obsolete
 /obj/item/ammo_casing/testcasing
 	name = "casing"

@@ -100,7 +100,7 @@
 	pierce_wound.blood_flow -= 0.5
 	if(pierce_wound.blood_flow > 0)
 		surgery.status = REALIGN_INNARDS
-		to_chat(user, "<span class='notice'><i>There still seems to be misaligned blood vessels to finish...<i></span>")
+		to_chat(user, span_notice("<i>There still seems to be misaligned blood vessels to finish...<i>"))
 	else
 		to_chat(user, span_green("You've repaired all the internal damage in [target]'s [parse_zone(target_zone)]!"))
 	return ..()

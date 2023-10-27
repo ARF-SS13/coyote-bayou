@@ -193,7 +193,7 @@
 	var/part = amount / src.total_volume
 	var/trans_data = null
 	var/list/transferred = list()
-	if (part > 0 && amount > 0) //You cannot transfer a negative part or amount
+	if (part > 0 && amount > 0) // You cannot transfer a negative part or amount
 		for(var/reagent in cached_reagents)
 			var/datum/reagent/T = reagent
 			var/transfer_amount = T.volume * part
@@ -236,12 +236,13 @@
 	amount = min(min(amount, total_volume), R.maximum_volume-R.total_volume)
 	var/part = amount / total_volume
 	var/trans_data = null
-	for(var/reagent in cached_reagents)
-		var/datum/reagent/T = reagent
-		var/copy_amount = T.volume * part
-		if(preserve_data)
-			trans_data = T.data
-		R.add_reagent(T.type, copy_amount * multiplier, trans_data)
+	if (part > 0 && amount > 0) // You cannot transfer a negative amount
+		for(var/reagent in cached_reagents)
+			var/datum/reagent/T = reagent
+			var/copy_amount = T.volume * part
+			if(preserve_data)
+				trans_data = T.data
+			R.add_reagent(T.type, copy_amount * multiplier, trans_data)
 
 	src.update_total()
 	R.update_total()

@@ -55,7 +55,7 @@
 	add_verb(new_member,/mob/living/proc/assume_tribe_leader)
 	to_chat(new_member, span_notice("You are now a member of the [name]! Everyone can recognize your tribe."))
 	if(welcome_text)
-		to_chat(new_member, "<span class='notice'>Welcome text: </span><span class='purple'>[welcome_text]</span>")
+		to_chat(new_member, span_notice("Welcome text: </span><span class='purple'>[welcome_text]"))
 
 /datum/gang/tribe/remove_member(mob/living/carbon/member)
 	members -= member

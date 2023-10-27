@@ -91,8 +91,8 @@
 /datum/martial_art/berserker/proc/wristWrench(mob/living/carbon/human/A, mob/living/carbon/human/D)
 		log_combat(A, D, "wrist wrenched (Berserker)")
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		D.visible_message("<span class='warning'>[A] grabs [D]'s wrist and wrenches it sideways!</span>", \
-						  "<span class='userdanger'>[A] grabs your wrist and violently wrenches it to the side!</span>")
+		D.visible_message(span_warning("[A] grabs [D]'s wrist and wrenches it sideways!"), \
+						  span_userdanger("[A] grabs your wrist and violently wrenches it to the side!"))
 		playsound(get_turf(A), 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		D.emote("scream")
 		D.dropItemToGround(D.get_active_held_item())

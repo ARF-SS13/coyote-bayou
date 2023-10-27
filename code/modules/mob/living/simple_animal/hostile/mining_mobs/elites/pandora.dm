@@ -68,31 +68,31 @@
 /datum/action/innate/elite_attack/aoe_squares
 	name = "AOE Blast"
 	button_icon_state = "aoe_squares"
-	chosen_message = span_boldwarning("Your attacks will spawn an AOE blast at your target location.")
+	chosen_message = span_boldwarning("Your attacks will spawn an AOE blast at your targette location.")
 	chosen_attack_num = AOE_SQUARES
 
 /mob/living/simple_animal/hostile/asteroid/elite/pandora/OpenFire()
 	if(client)
 		switch(chosen_attack)
 			if(SINGULAR_SHOT)
-				singular_shot(target)
+				singular_shot(get_target())
 			if(MAGIC_BOX)
-				magic_box(target)
+				magic_box(get_target())
 			if(PANDORA_TELEPORT)
-				pandora_teleport(target)
+				pandora_teleport(get_target())
 			if(AOE_SQUARES)
-				aoe_squares(target)
+				aoe_squares(get_target())
 		return
 	var/aiattack = rand(1,4)
 	switch(aiattack)
 		if(SINGULAR_SHOT)
-			singular_shot(target)
+			singular_shot(get_target())
 		if(MAGIC_BOX)
-			magic_box(target)
+			magic_box(get_target())
 		if(PANDORA_TELEPORT)
-			pandora_teleport(target)
+			pandora_teleport(get_target())
 		if(AOE_SQUARES)
-			aoe_squares(target)
+			aoe_squares(get_target())
 
 /mob/living/simple_animal/hostile/asteroid/elite/pandora/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))

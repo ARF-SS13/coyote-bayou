@@ -137,14 +137,14 @@
 		naming = TRUE
 		w_class = WEIGHT_CLASS_GIGANTIC
 		sharpness = SHARP_NONE
-		to_chat(usr, "<span class='notice'>You firmly grip the pen in preparation to rename something.</span>")
+		to_chat(usr, span_notice("You firmly grip the pen in preparation to rename something."))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 	if(naming)
 		naming = FALSE
 		w_class = WEIGHT_CLASS_TINY
 		sharpness = SHARP_POINTY
-		to_chat(usr, "<span class='notice'>You reset the grip on the pen</span>")
+		to_chat(usr, span_notice("You reset the grip on the pen"))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 
@@ -163,10 +163,10 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				if(oldname == input)
-					to_chat(user, "<span class='notice'>You changed \the [O.name] to... well... \the [O.name].</span>")
+					to_chat(user, span_notice("You changed \the [O.name] to... well... \the [O.name]."))
 				else
 					O.name = input
-					to_chat(user, "<span class='notice'>\The [oldname] has been successfully been renamed to \the [input].</span>")
+					to_chat(user, span_notice("\The [oldname] has been successfully been renamed to \the [input]."))
 					O.renamedByPlayer = TRUE
 
 			if(penchoice == "Change description")
@@ -174,7 +174,7 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				O.desc = input
-				to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
+				to_chat(user, span_notice("You have successfully changed \the [O.name]'s description."))
 	else
 		return
 /*

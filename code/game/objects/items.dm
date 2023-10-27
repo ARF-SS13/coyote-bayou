@@ -300,7 +300,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of fire-retardant materials."
 
 	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
-		. += "<span class='notice'>You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.</span>"
+		. += span_notice("You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.")
 
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
@@ -351,8 +351,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		if(force_unwielded > 0)
 			readout += "\nONE HANDED [force_unwielded]"
 			readout += "\nTWO HANDED [force_wielded]"
+			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult]"
 		else
 			readout += "\nDAMAGE [force]"
+			readout += "\nDUAL WIELD [force*dual_wielded_mult]"
 		readout += "\nTHROW DAMAGE [throwforce]"
 		readout += "\nATTACKS / SECOND [10 / attack_speed]"
 		readout += "\nBLOCK CHANCE [block_chance]"
@@ -360,9 +362,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		to_chat(usr, "[readout.Join()]")
 
+/obj/item
+	var/allow_ui_interact = TRUE  //used for cranklasergun
+
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
-	ui_interact(user)
+	if(allow_ui_interact)
+		ui_interact(user)
 
 /obj/item/ui_act(action, params)
 	add_fingerprint(usr)
@@ -763,9 +769,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, messy_throw = TRUE)
-	thrownby = thrower
+	set_thrownby(thrower)
 	callback = CALLBACK(src, .proc/after_throw, callback, (spin && messy_throw)) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
+
+/obj/item/proc/set_thrownby(new_thrownby)
+	if(thrownby)
+		UnregisterSignal(thrownby, COMSIG_PARENT_QDELETING)
+	thrownby = new_thrownby
+	if(thrownby)
+		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING, .proc/thrownby_deleted)
+
+/obj/item/proc/thrownby_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_thrownby(null)
 
 /obj/item/proc/after_throw(datum/callback/callback, messy_throw)
 	if (callback) //call the original callback

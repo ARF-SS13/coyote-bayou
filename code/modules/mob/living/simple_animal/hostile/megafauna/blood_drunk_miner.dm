@@ -7,7 +7,7 @@ BLOOD-DRUNK MINER
 Effectively a highly aggressive miner, the blood-drunk miner has very few attacks but compensates by being highly aggressive.
 
 The blood-drunk miner's attacks are as follows
-- If not in KA range, it will rapidly dash at its target
+- If not in KA range, it will rapidly dash at its targette
 - If in KA range, it will fire its kinetic accelerator
 - If in melee range, will rapidly attack, akin to an actual player
 - After any of these attacks, may transform its cleaving saw:
@@ -68,6 +68,8 @@ Difficulty: Medium
 	force_on = 10
 
 /obj/item/melee/transforming/cleaving_saw/miner/attack(mob/living/target, mob/living/carbon/human/user)
+	if(!target)
+		return
 	target.add_stun_absorption("miner", 10, INFINITY)
 	. = ..()
 	target.stun_absorption -= "miner"
@@ -106,25 +108,26 @@ Difficulty: Medium
 	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/AttackingTarget()
-	if(QDELETED(target))
+	var/atom/my_target = get_target()
+	if(QDELETED(my_target))
 		return
-	if(!CheckActionCooldown() || !Adjacent(target)) //some cheating
+	if(!CheckActionCooldown() || !Adjacent(my_target)) //some cheating
 		INVOKE_ASYNC(src, .proc/quick_attack_loop)
 		return
-	face_atom(target)
-	if(isliving(target))
-		var/mob/living/L = target
-		if(L.stat == DEAD)
-			visible_message(span_danger("[src] butchers [L]!"),
-			span_userdanger("You butcher [L], restoring your health!"))
-			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
-				if(guidance)
-					adjustHealth(-L.maxHealth)
-				else
-					adjustHealth(-(L.maxHealth * 0.5))
-			L.gib()
-			return TRUE
-	miner_saw.melee_attack_chain(src, target, null, ATTACK_IGNORE_CLICKDELAY)
+	face_atom(my_target)
+	// if(isliving(my_target))
+	// 	var/mob/living/L = my_target
+	// 	if(L.stat == DEAD)
+	// 		visible_message(span_danger("[src] butchers [L]!"),
+	// 		span_userdanger("You butcher [L], restoring your health!"))
+	// 		if(!is_station_level(z) || client) //NPC monsters won't heal while on station
+	// 			if(guidance)
+	// 				adjustHealth(-L.maxHealth)
+	// 			else
+	// 				adjustHealth(-(L.maxHealth * 0.5))
+	// 		L.gib()
+	// 		return TRUE
+	miner_saw.melee_attack_chain(src, my_target, null, ATTACK_IGNORE_CLICKDELAY)
 	FlushCurrentAction()
 	if(guidance)
 		adjustHealth(-2)
@@ -138,39 +141,44 @@ Difficulty: Medium
 	..()
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/GiveTarget(new_target)
-	var/targets_the_same = (new_target == target)
+	var/atom/my_target = get_target()
+	var/targets_the_same = (new_target == my_target)
 	. = ..()
-	if(. && target && !targets_the_same)
+	if(. && my_target && !targets_the_same)
 		wander = TRUE
 		transform_weapon()
 		INVOKE_ASYNC(src, .proc/quick_attack_loop)
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/OpenFire()
-	Goto(target, move_to_delay, minimum_distance)
-	if(get_dist(src, target) > MINER_DASH_RANGE && dash_cooldown <= world.time)
-		INVOKE_ASYNC(src, .proc/dash, target)
+	var/atom/my_target = get_target()
+	Goto(my_target, move_to_delay, minimum_distance)
+	if(get_dist(src, my_target) > MINER_DASH_RANGE && dash_cooldown <= world.time)
+		INVOKE_ASYNC(src, .proc/dash, my_target)
 	else
 		shoot_ka()
 	transform_weapon()
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/shoot_ka()
-	if(ranged_cooldown <= world.time && get_dist(src, target) <= MINER_DASH_RANGE && !Adjacent(target))
+	var/atom/my_target = get_target()
+	if(ranged_cooldown <= world.time && get_dist(src, my_target) <= MINER_DASH_RANGE && !Adjacent(my_target))
 		ranged_cooldown = world.time + ranged_cooldown_time
 		visible_message(span_danger("[src] fires the proto-kinetic accelerator!"))
-		face_atom(target)
+		face_atom(my_target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
-		Shoot(target)
+		Shoot(my_target)
 		DelayNextAction(CLICK_CD_RANGE, flush = TRUE)
 
 //I'm still of the belief that this entire proc needs to be wiped from existence.
 //  do not take my touching of it to be endorsement of it. ~mso
+// hi, lagg here, fuckin proc sucks, bye!
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/quick_attack_loop()
-	while(!QDELETED(target) && !CheckActionCooldown()) //this is done this way because next_move can change to be sooner while we sleep.
-		stoplag(1)
-	sleep((next_action - world.time) * 1.5) //but don't ask me what the fuck this is about
-	if(QDELETED(target))
-		return
-	if(dashing || !CheckActionCooldown() || !Adjacent(target))
+	var/atom/my_target = get_target()
+	// while(!QDELETED(my_target) && !CheckActionCooldown()) //this is done this way because next_move can change to be sooner while we sleep.
+	// 	stoplag(1)
+	// sleep((next_action - world.time) * 1.5) //but don't ask me what the fuck this is about
+	// if(QDELETED(my_target))
+	// 	return
+	if(dashing || !CheckActionCooldown() || !Adjacent(my_target))
 		if(dashing && next_action <= world.time)
 			SetNextAction(1, considered_action = FALSE, immediate = FALSE, flush = TRUE)
 		INVOKE_ASYNC(src, .proc/quick_attack_loop) //lets try that again.

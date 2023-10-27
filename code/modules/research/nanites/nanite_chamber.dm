@@ -11,7 +11,7 @@
 	idle_power_usage = 50
 	active_power_usage = 300
 
-	var/obj/machinery/computer/nanite_chamber_control/console
+
 	var/locked = FALSE
 	var/breakout_time = 1200
 	var/scan_level
@@ -32,7 +32,7 @@
 /obj/machinery/nanite_chamber/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Scanning module has been upgraded to level <b>[scan_level]</b>.</span>"
+		. += span_notice("The status display reads: Scanning module has been upgraded to level <b>[scan_level]</b>.")
 
 /obj/machinery/nanite_chamber/proc/set_busy(status, message, working_icon)
 	busy = status

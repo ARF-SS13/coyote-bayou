@@ -24,28 +24,22 @@
 /datum/traitor_class/human/forge_single_objective(datum/antagonist/traitor/T)
 	.=1
 	var/assassin_prob = 50
-	var/is_dynamic = FALSE
 	var/datum/game_mode/dynamic/mode
 	if(istype(SSticker.mode,/datum/game_mode/dynamic))
 		mode = SSticker.mode
-		is_dynamic = TRUE
 		assassin_prob = max(0,mode.threat_level-20)
 	if(prob(assassin_prob))
-		if(is_dynamic)
-			var/threat_spent = CONFIG_GET(number/dynamic_assassinate_cost)
-			mode.spend_threat(threat_spent)
-			mode.log_threat("[T.owner.name] added [threat_spent] on an assassination target.")
 		var/list/active_ais = active_ais()
 		if(active_ais.len && prob(100/GLOB.joined_player_list.len))
 			var/datum/objective/destroy/destroy_objective = new
 			destroy_objective.owner = T.owner
 			destroy_objective.find_target()
 			T.add_objective(destroy_objective)
-		else if(prob(30) || (is_dynamic && (mode.storyteller.flags & NO_ASSASSIN)))
-			var/datum/objective/maroon/maroon_objective = new
-			maroon_objective.owner = T.owner
-			maroon_objective.find_target()
-			T.add_objective(maroon_objective)
+		// else if(prob(30) || (is_dynamic && (mode.storyteller.flags & NO_ASSASSIN)))
+		// 	var/datum/objective/maroon/maroon_objective = new
+		// 	maroon_objective.owner = T.owner
+		// 	maroon_objective.find_target()
+		// 	T.add_objective(maroon_objective)
 		else if(prob(max(0,assassin_prob-20)))
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = T.owner

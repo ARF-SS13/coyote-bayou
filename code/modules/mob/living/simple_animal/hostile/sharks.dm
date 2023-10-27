@@ -11,7 +11,7 @@
 	environment_smash = 0
 	speak_chance = 0
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 3)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 3)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -30,8 +30,8 @@
 	gold_core_spawnable = 1
 	//Space shark aren't affected by cold.
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 
 	faction = list("shark")
 
@@ -77,10 +77,10 @@
 	speak_emote = list("lovingly says","says")
 	speak_chance = 2
 	turns_per_move = 3
-	butcher_results = list(/mob/living/simple_animal/butterfly = 3)
+	guaranteed_butcher_results = list(/mob/living/simple_animal/butterfly = 3)
 	maxHealth = 50
 	health = 50
-	maxbodytemp = INFINITY
+	//maxbodytemp = INFINITY
 
 	harm_intent_damage = 0
 	melee_damage_lower = 0

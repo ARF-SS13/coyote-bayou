@@ -117,7 +117,7 @@
 			msg = "<span class='smallnoticeital'><b>[msg]</b></span>"
 		if(WOUND_SEVERITY_LOSS)
 			msg = "[victim.p_their(TRUE)] [limb.name] [description]." // different format
-			msg = "<span class='notice'><i><b>[msg]</b></i></span>"
+			msg = span_notice("<i><b>[msg]</b></i>")
 	return "\t[msg]"
 
 /// Whether a scar can currently be seen by the viewer

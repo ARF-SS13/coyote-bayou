@@ -36,8 +36,6 @@
 	robust_searching = TRUE
 	attack_verb_simple = "saws"
 	faction = list("wastebot")
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
 	speak_emote = list("states")
 	gold_core_spawnable = HOSTILE_SPAWN
 	del_on_death = TRUE
@@ -475,7 +473,7 @@
 	response_disarm_simple = "pushes"
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
-	butcher_results = list(/obj/effect/gibspawner/robot = 1)
+	guaranteed_butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
 
 /mob/living/simple_animal/hostile/handy/assaultron

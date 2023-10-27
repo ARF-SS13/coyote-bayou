@@ -6,12 +6,19 @@
 	GLOB.player_list -= src
 	logout_time = world.time
 
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null
+
 	SSstatpanels.cached_boykissers -= ckey
 	SSstatpanels.cached_girlkissers -= ckey
 	SSstatpanels.cached_anykissers -= ckey
 	SSstatpanels.cached_tops -= ckey
 	SSstatpanels.cached_bottoms -= ckey
 	SSstatpanels.cached_switches -= ckey
+	remove_from_player_list()
+	clear_client_in_contents()
 
 	..()
 

@@ -52,7 +52,10 @@
 	if(teleport_distance <= 0)
 		return ..()
 	var/list/possible_ends = list()
-	for(var/turf/T in view(teleport_distance, target.loc) - view(teleport_distance - 1, target.loc))
+	var/atom/my_target = get_target()
+	if(!my_target)
+		return ..()
+	for(var/turf/T in view(teleport_distance, my_target.loc) - view(teleport_distance - 1, my_target.loc))
 		if(isclosedturf(T))
 			continue
 		possible_ends |= T
@@ -65,7 +68,8 @@
 /mob/living/simple_animal/hostile/asteroid/ice_demon/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target)
+	var/atom/my_target = get_target()
+	if(my_target)
 		return
 	adjustHealth(-maxHealth*0.025)
 

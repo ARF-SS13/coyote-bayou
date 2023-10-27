@@ -24,6 +24,11 @@
 	path = /obj/item/clothing/shoes/winterboots
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/sneakboots
+	name = "infiltrator boots"
+	path = /obj/item/clothing/shoes/jackboots/sneakboots
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
 /datum/gear/shoes/sandals
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
@@ -198,6 +203,13 @@
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/ducky
+	name = "rubber ducky shoes"
+	path = /obj/item/clothing/shoes/ducky
+
+/datum/gear/shoes/slippers
+	name = "bunny slippers"
+	path = /obj/item/clothing/shoes/slippers
 
 /// Factions Shoes or well NCR boots.
 

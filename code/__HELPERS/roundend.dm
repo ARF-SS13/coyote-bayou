@@ -211,7 +211,7 @@
 	var/list/publisher = list("Oasis Publishing","Brotherhood News","Mojave Publishing","FEV News")
 	//tell the nice people on discord what went on before the salt cannon happens.
 	// send2chat sending the new round ping off
-	send2chat(" <@&922230570791108628> ", CONFIG_GET(string/discord_channel_serverstatus))
+	//send2chat(" <@&922230570791108628> ", CONFIG_GET(string/discord_channel_serverstatus))
 	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for your [pick(publisher)] report!", FALSE)
 	//lonestar edit. i'm adding a timer here because i'm tired of the messages being sent out of order
 	addtimer(CALLBACK(src, .proc/send_roundinfo), 3 SECONDS)
@@ -301,6 +301,7 @@
 /datum/controller/subsystem/ticker/proc/survivor_report(popcount)
 	var/list/parts = list()
 	var/station_evacuated = EMERGENCY_ESCAPED_OR_ENDGAMED
+	var/datum/game_mode/dynamic/mode = SSticker.mode
 
 	if(GLOB.round_id)
 		var/statspage = CONFIG_GET(string/roundstatsurl)
@@ -334,21 +335,13 @@
 			else
 				parts += "[FOURSPACES]<i>Nobody died this shift!</i>"
 	if(istype(SSticker.mode, /datum/game_mode/dynamic))
-		var/datum/game_mode/dynamic/mode = SSticker.mode
-		mode.update_playercounts()
-		parts += "[FOURSPACES]Final threat level: [mode.threat_level]"
-		parts += "[FOURSPACES]Final threat: [mode.threat]"
-		parts += "[FOURSPACES]Average threat: [mode.threat_average]"
+		parts += "[FOURSPACES]Initial threat level: [mode.threat_level]"
+		parts += "[FOURSPACES]Initial roundstart threat: [mode.initial_round_start_budget]"
+		parts += "[FOURSPACES]Roundstart budget after antags: [mode.round_start_budget]"
+		parts += "[FOURSPACES]Midround budget at round end: [mode.mid_round_budget]"
 		parts += "[FOURSPACES]Executed rules:"
 		for(var/datum/dynamic_ruleset/rule in mode.executed_rules)
 			parts += "[FOURSPACES][FOURSPACES][rule.ruletype] - <b>[rule.name]</b>: -[rule.cost + rule.scaled_times * rule.scaling_cost] threat"
-		parts += "[FOURSPACES]Other threat changes:"
-		for(var/str in mode.threat_log)
-			parts += "[FOURSPACES][FOURSPACES][str]"
-		for(var/entry in mode.threat_tallies)
-			parts += "[FOURSPACES][FOURSPACES][entry] added [mode.threat_tallies[entry]]"
-		SSblackbox.record_feedback("tally","dynamic_threat",mode.threat_level,"Final threat level")
-		SSblackbox.record_feedback("tally","dynamic_threat",mode.threat,"Final Threat")
 	return parts.Join("<br>")
 
 /client/proc/roundend_report_file()

@@ -24,7 +24,6 @@
 	a_intent = INTENT_HARM
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -45,7 +44,6 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	attack_sound = 'sound/hallucinations/growl1.ogg'
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 0
 	faction = list("plants")
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
@@ -66,7 +64,6 @@
 	obj_damage = 150
 	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = -1, CLONE = 0, STAMINA = 0, OXY = 0)
 	unsuitable_atmos_damage = 5
 	faction = list("tunneler")
@@ -79,9 +76,11 @@
 
 /mob/living/simple_animal/hostile/trog/tunneler/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 5)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone
@@ -111,7 +110,6 @@
 	a_intent = INTENT_HARM
 	attack_verb_simple = "lunges at"
 	attack_sound = 'sound/hallucinations/veryfar_noise.ogg'
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -126,9 +124,11 @@
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 3)
-		H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
-		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(/datum/reagent/toxin, 3)
+	H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
+	H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
 

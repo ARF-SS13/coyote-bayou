@@ -29,7 +29,7 @@
 	taunt_chance = 30
 
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 
 	faction = list("mimic")
 	move_to_delay = 9
@@ -71,13 +71,15 @@
 
 /mob/living/simple_animal/hostile/mimic/crate/AttackingTarget()
 	. = ..()
-	if(.)
-		icon_state = initial(icon_state)
-		if(prob(15) && iscarbon(target))
-			var/mob/living/carbon/C = target
-			C.DefaultCombatKnockdown(40)
-			C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
-					span_userdanger("\The [src] knocks you down!"))
+	var/atom/my_target = get_target()
+	if(!.)
+		return
+	icon_state = initial(icon_state)
+	if(prob(15) && iscarbon(my_target))
+		var/mob/living/carbon/C = my_target
+		C.DefaultCombatKnockdown(40)
+		C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
+				span_userdanger("\The [src] knocks you down!"))
 
 /mob/living/simple_animal/hostile/mimic/crate/proc/trigger()
 	if(!attempt_open)
@@ -121,7 +123,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 /mob/living/simple_animal/hostile/mimic/copy/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(idledamage && !target && !ckey) //Objects eventually revert to normal if no one is around to terrorize
+	if(idledamage && !get_target() && !ckey) //Objects eventually revert to normal if no one is around to terrorize
 		adjustBruteLoss(1)
 	for(var/mob/living/M in contents) //a fix for animated statues from the flesh to stone spell
 		death()
@@ -184,8 +186,9 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 
 /mob/living/simple_animal/hostile/mimic/copy/AttackingTarget()
 	. = ..()
-	if(knockdown_people && . && prob(15) && iscarbon(target))
-		var/mob/living/carbon/C = target
+	var/atom/my_target = get_target()
+	if(knockdown_people && . && prob(15) && iscarbon(my_target))
+		var/mob/living/carbon/C = my_target
 		C.DefaultCombatKnockdown(40)
 		C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
 				span_userdanger("\The [src] knocks you down!"))
@@ -258,7 +261,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 				Pewgun.chambered.update_icon()
 				..()
 			else
-				visible_message("<span class='danger'>The <b>[src]</b> clears a jam!</span>")
+				visible_message(span_danger("The <b>[src]</b> clears a jam!"))
 			Pewgun.chambered.forceMove(loc) //rip revolver immersions, blame shotgun snowflake procs
 			Pewgun.chambered = null
 			if(Pewgun.magazine && Pewgun.magazine.stored_ammo.len)
@@ -268,7 +271,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		else if(Pewgun.magazine && Pewgun.magazine.stored_ammo.len) //only true for pumpguns i think
 			Pewgun.chambered = Pewgun.magazine.get_round(0)
 			Pewgun.chambered.forceMove(Pewgun)
-			visible_message("<span class='danger'>The <b>[src]</b> cocks itself!</span>")
+			visible_message(span_danger("The <b>[src]</b> cocks itself!"))
 	else
 		ranged = 0 //BANZAIIII
 		retreat_distance = 0

@@ -221,8 +221,8 @@
 		I = i
 		var/element_size = size_list[I]
 		if(!ui_item_blocks[I])
-			ui_item_blocks[I] = new /obj/screen/storage/volumetric_box/center(null, src, I)
-		var/obj/screen/storage/volumetric_box/center/B = ui_item_blocks[I]
+			ui_item_blocks[I] = new /atom/movable/screen/storage/volumetric_box/center(null, src, I)
+		var/atom/movable/screen/storage/volumetric_box/center/B = ui_item_blocks[I]
 		var/pixels_to_use
 		if(overrun)
 			pixels_to_use = MINIMUM_PIXELS_PER_ITEM

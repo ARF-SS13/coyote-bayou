@@ -154,6 +154,8 @@ GLOBAL_LIST_EMPTY(all_flags)
 	icon_state = "emptyflag"
 	item_state = "emptyflag"
 	var/removing
+	/// Number of sheets of leather to hang up a flag.
+	var/flagcost = 3
 
 /obj/item/flag/Initialize()
 	. = ..()
@@ -186,8 +188,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 	if(CHECK_BITFIELD(obj_flags, IN_USE))
 		to_chat(user, span_alert("Someone's already messing with this!"))
 		return
-	if(!changeup.tool_use_check(user, 1))
-		to_chat(user, span_alert("You don't have the required materials to make a flag. 10 sheets of leather should do the trick!"))
+	if(!changeup.tool_use_check(user, flagcost))//This already sends a message to the client who fails the check
 		return
 	if(!LAZYLEN(GLOB.all_flags))
 		init_flags()
@@ -201,10 +202,12 @@ GLOBAL_LIST_EMPTY(all_flags)
 		DISABLE_BITFIELD(obj_flags, IN_USE)
 		to_chat(user, span_alert("You were interrupted!"))
 		return
-	changeup.use(1)
+	if(!changeup.use(used=flagcost,transfer=FALSE,check=TRUE))
+		to_chat(user, span_alert("You don't have the required materials to make a flag. [flagcost] sheets of leather should do the trick!"))
+		return FALSE
 	DISABLE_BITFIELD(obj_flags, IN_USE)
 	re_flag(GLOB.all_flags[new_flag])
-	to_chat(user, span_notice("You put up a [new_flag]!"))
+	to_chat(user, span_notice("You tear down the old flag and put up a [new_flag]!"))
 
 /obj/item/flag/proc/re_flag(new_flag)
 	if(!ispath(new_flag, /obj/item/flag))
@@ -214,7 +217,6 @@ GLOBAL_LIST_EMPTY(all_flags)
 	desc = initial(F.desc)
 	icon_state = initial(F.icon_state)
 	item_state = initial(F.item_state)
-	new /obj/item/stack/sheet/leather(get_turf(src))
 	update_icon()
 
 /obj/item/flag/proc/unflag(mob/user, obj/item/sharpthing)

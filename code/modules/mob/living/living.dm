@@ -57,6 +57,7 @@
 	remove_from_all_data_huds()
 	GLOB.mob_living_list -= src
 	QDEL_LIST(diseases)
+	QDEL_LIST(mob_quirks)
 	return ..()
 
 /mob/living/onZImpact(turf/T, levels)
@@ -138,14 +139,14 @@
 						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
 					return 1
 
-		if(GLOB.pixel_slide)
+		if(pixel_slide_allow)
 			var/origtargetloc = L.loc
 			if(!pulledby)
 				if(M.a_intent != INTENT_HELP)
-					GLOB.pixel_slide_other_has_help_int = 0
+					pixel_slide_target_has_help_int = FALSE
 					return TRUE
 				else
-					GLOB.pixel_slide_other_has_help_int = 1
+					pixel_slide_target_has_help_int = TRUE
 				if(IS_STAMCRIT(src))
 					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
 					return TRUE
@@ -639,10 +640,10 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive)
-	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
-		GLOB.dead_mob_list -= src
-		GLOB.alive_mob_list += src
-		set_stat(UNCONSCIOUS) //the mob starts unconscious
+	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
+		remove_from_dead_mob_list()
+		add_to_alive_mob_list()
+		stat = UNCONSCIOUS //the mob starts unconscious,
 		if(!eye_blind)
 			blind_eyes(1)
 		updatehealth() //then we check if the mob should wake up.
@@ -914,11 +915,11 @@
 			clear_alert("gravity")
 		else
 			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
-				throw_alert("gravity", /obj/screen/alert/veryhighgravity)
+				throw_alert("gravity", /atom/movable/screen/alert/veryhighgravity)
 			else
-				throw_alert("gravity", /obj/screen/alert/highgravity)
+				throw_alert("gravity", /atom/movable/screen/alert/highgravity)
 	else
-		throw_alert("gravity", /obj/screen/alert/weightless)
+		throw_alert("gravity", /atom/movable/screen/alert/weightless)
 	if(!override && !is_flying())
 		INVOKE_ASYNC(src, /atom/movable.proc/float, !has_gravity)
 
@@ -966,6 +967,8 @@
 		to_chat(src,span_notice("You try to remove [who]'s [what.name]."))
 		what.add_fingerprint(src)
 	if(do_mob(src, who, round(what.strip_delay / strip_mod), ignorehelditem = TRUE))
+		if(what.is_dual_wielded)
+			dualwield_end(who, who.held_items[1], who.held_items[2], FALSE)
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
@@ -1247,7 +1250,7 @@
 		visible_message(span_warning("[src] catches fire!"), \
 						span_userdanger("You're set on fire!"))
 		new/obj/effect/dummy/lighting_obj/moblight/fire(src)
-		throw_alert("fire", /obj/screen/alert/fire)
+		throw_alert("fire", /atom/movable/screen/alert/fire)
 		update_fire()
 		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED,src)
 		return TRUE
@@ -1381,11 +1384,11 @@
 				return FALSE
 		if(NAMEOF(src, stat))
 			if((stat == DEAD) && (var_value < DEAD))//Bringing the dead back to life
-				GLOB.dead_mob_list -= src
-				GLOB.alive_mob_list += src
+				remove_from_dead_mob_list()
+				add_to_alive_mob_list()
 			if((stat < DEAD) && (var_value == DEAD))//Kill he
-				GLOB.alive_mob_list -= src
-				GLOB.dead_mob_list += src
+				remove_from_alive_mob_list()
+				add_to_dead_mob_list()
 		if(NAMEOF(src, health)) //this doesn't work. gotta use procs instead.
 			return FALSE
 	. = ..()

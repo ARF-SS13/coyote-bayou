@@ -77,7 +77,7 @@
 	if(client)
 		switch(chosen_attack)
 			if(TENTACLE_PATCH)
-				tentacle_patch(target)
+				tentacle_patch(get_target())
 			if(SPAWN_CHILDREN)
 				spawn_children()
 			if(RAGE)
@@ -88,7 +88,7 @@
 	var/aiattack = rand(1,4)
 	switch(aiattack)
 		if(TENTACLE_PATCH)
-			tentacle_patch(target)
+			tentacle_patch(get_target())
 		if(SPAWN_CHILDREN)
 			spawn_children()
 		if(RAGE)
@@ -177,7 +177,7 @@
 	move_to_delay = 5
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
-	butcher_results = list()
+	guaranteed_butcher_results = list()
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	deathmessage = "falls to the ground."
 	status_flags = CANPUSH
@@ -204,7 +204,7 @@
 /obj/effect/temp_visual/goliath_tentacle/broodmother/trip()
 	var/latched = FALSE
 	for(var/mob/living/L in loc)
-		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
+		if(istype(L, /mob/living/simple_animal/hostile/asteroid))
 			continue
 		visible_message(span_danger("[src] grabs hold of [L]!"))
 		L.Stun(10)
@@ -223,12 +223,12 @@
 /obj/effect/temp_visual/goliath_tentacle/broodmother/patch/proc/do_spiral()
 	var/tentacle_locs = spiral_range_turfs(1, get_turf(src))
 	for(var/T in tentacle_locs)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
+		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T)
 	var/list/directions = GLOB.cardinals.Copy()
 	for(var/i in directions)
 		var/turf/T = get_step(get_turf(src), i)
 		T = get_step(T, i)
-		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)
+		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T)
 
 // Broodmother's loot: Broodmother Tongue
 /obj/item/crusher_trophy/broodmother_tongue

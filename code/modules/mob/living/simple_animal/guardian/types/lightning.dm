@@ -21,17 +21,18 @@
 
 /mob/living/simple_animal/hostile/guardian/beam/AttackingTarget()
 	. = ..()
-	if(. && isliving(target) && target != src && target != summoner)
+	var/atom/my_target = get_target()
+	if(. && isliving(my_target) && my_target != src && my_target != summoner)
 		cleardeletedchains()
 		for(var/chain in enemychains)
 			var/datum/beam/B = chain
-			if(B.target == target)
+			if(B.target == my_target)
 				return //oh this guy already HAS a chain, let's not chain again
 		if(enemychains.len > 2)
 			var/datum/beam/C = pick(enemychains)
 			qdel(C)
 			enemychains -= C
-		enemychains += Beam(target, "lightning[rand(1,12)]", time=70, maxdistance=13, beam_type=/obj/effect/ebeam/chain)
+		enemychains += Beam(my_target, "lightning[rand(1,12)]", time=70, maxdistance=13, beam_type=/obj/effect/ebeam/chain)
 
 /mob/living/simple_animal/hostile/guardian/beam/Destroy()
 	removechains()

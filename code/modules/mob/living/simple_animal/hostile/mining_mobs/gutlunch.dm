@@ -91,11 +91,12 @@
 		..()
 
 /mob/living/simple_animal/hostile/asteroid/gutlunch/AttackingTarget()
-	if(is_type_in_typecache(target,wanted_objects)) //we eats
+	var/atom/my_target = get_target()
+	if(is_type_in_typecache(my_target,wanted_objects)) //we eats
 		udder.generateMilk()
 		regenerate_icons()
-		visible_message(span_notice("[src] slurps up [target]."))
-		qdel(target)
+		visible_message(span_notice("[src] slurps up [my_target]."))
+		qdel(my_target)
 	return ..()
 
 //Male gutlunch. They're smaller and more colorful!

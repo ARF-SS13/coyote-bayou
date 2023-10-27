@@ -12,11 +12,11 @@
 /datum/action/cooldown/pokemon_rest/Trigger()
 	if(!..())
 		return FALSE
-	if(ispokemon(owner))
-		var/mob/living/simple_animal/pokemon/O = owner
+	if(isadvancedmob(owner))
+		var/mob/living/simple_animal/advanced/O = owner
 		O.lay_down()
 		O.update_mobility()
 		return TRUE
 	else
-		to_chat(owner,"<span class='notice'>You shouldn't have this!</span>")
+		to_chat(owner,span_notice("You shouldn't have this!"))
 		return FALSE

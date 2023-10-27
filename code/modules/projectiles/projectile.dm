@@ -116,6 +116,22 @@
 
 	var/ignore_source_check = FALSE
 
+	/// If a projectile is supposed to have a random damage picked from a weighted list, use this
+	/// If not set, it'll use the normal damage
+	/// Format: list(3 = 2, 4 = 10, 100 = 0.1)
+	var/list/damage_list = list()
+	/// If a projectile is supposed to have a random damage from a rand proc, use this
+	var/damage_low
+	/// Define them both! Also the damage list takes priority
+	var/damage_high
+	var/crit_sound = 'sound/weapons/crit.ogg'
+	var/dink_sound = 'sound/weapons/dink.ogg'
+
+	/// multipliers caused by the shooter
+	var/damage_mult = 1
+	/// dont touch this
+	var/finalmost_damage = 0
+
 	var/damage = 10
 	var/damage_mod = 1 // Makes the gun's damage mod scale faction damage
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
@@ -168,6 +184,9 @@
 	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 	var/my_wretched_speed
 
+	/// Mobs that shoot a thing wont have it hit friendlies!
+	var/list/faction = list()
+
 /obj/item/projectile/Initialize()
 	. = ..()
 	permutated = list()
@@ -196,6 +215,11 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
 	qdel(src)
 
+/obj/item/projectile/proc/factionize(list/faction) //if we want there to be effects when they reach the end of their range
+	if(!LAZYLEN(faction))
+		return
+	src.faction = faction.Copy()
+
 /obj/item/projectile/proc/create_statblock()
 	var/list/my_block = list()
 	my_block["projectile_name"] = name || "Unnamed Projectile"
@@ -211,7 +235,7 @@
 	my_block["projectile_wound_bonus"] = wound_bonus || 0
 	my_block["projectile_bare_wound_bonus"] = bare_wound_bonus || 0
 	if(!my_wretched_speed || prob(1))
-		my_wretched_speed = rand(1,300)
+		my_wretched_speed = rand(1,100)
 	switch(my_wretched_speed) // no guarantee any of these are accurate
 		if(1) // duotrimeters per second, the unit of measurement for 1/32th of a meter
 			my_block["projectile_speed"] = "[pixels_per_second * 1.8288]"
@@ -342,6 +366,15 @@
 		return BODY_ZONE_CHEST
 
 /obj/item/projectile/proc/prehit(atom/target)
+	//-->Pacifism Lesser Trait, most important section of it
+	if(iscarbon(target))
+		if(iscarbon(firer))  //is our firer a carbon that can have traits?
+			var/mob/living/carbon/C = target
+			if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+				trait_pacifism_lesser_consequences(firer, TRUE)
+				visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
+				return FALSE
+	//<--
 	return TRUE
 
 /obj/item/projectile/proc/on_hit(atom/target, blocked = FALSE)
@@ -425,10 +458,10 @@
 				COOLDOWN_START(L, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
 				L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
 						span_userdanger("[L] is hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
-		if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
-			var/playdink = rand(1, 10)
-			if(playdink <= 3)
-				playsound(src, 'sound/weapons/dink.ogg', 30, 1)
+		// if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
+		// 	var/playdink = rand(1, 10)
+		// 	if(playdink <= 3)
+		// 		playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 		L.on_hit(src)
 
 	var/reagent_note
@@ -519,12 +552,17 @@
 
 /obj/item/projectile/proc/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)		//probably needs to be reworked entirely when pixel movement is done.
 	if(is_supereffective(target))
-		damage += (supereffective_damage * damage_mod)
+		damage += supereffective_damage
+	damage *= damage_mod
 	if(QDELETED(src) || !T || !target)		//We're done, nothing's left.
 		if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 			qdel(src)
 		return hit_something
 	permutated |= target		//Make sure we're never hitting it again. If we ever run into weirdness with piercing projectiles needing to hit something multiple times.. well.. that's a to-do.
+	if(LAZYLEN(faction) && faction_check(target))
+		return process_hit(T, select_target(T), qdel_self, TRUE)		//Hit whatever else we can since we're piercing through but we're still on the same tile.
+	if(is_supereffective(target))
+		damage += (supereffective_damage * damage_mod)
 	if(!prehit(target))
 		return process_hit(T, select_target(T), qdel_self, hit_something)		//Hit whatever else we can since that didn't work.
 	SEND_SIGNAL(target, COMSIG_PROJECTILE_PREHIT, args)
@@ -542,6 +580,13 @@
 	if((qdel_self == FORCE_QDEL) || ((qdel_self == QDEL_SELF) && !temporary_unstoppable_movement && !CHECK_BITFIELD(movement_type, UNSTOPPABLE)))
 		qdel(src)
 	return hit_something
+
+/obj/item/projectile/proc/faction_check(atom/target)
+	if(!isliving(target) || !LAZYLEN(faction))
+		return
+	var/mob/living/maybehit = target
+	return LAZYLEN(maybehit.faction & faction)
+
 
 /// Check if the projectile is Super Effective on the target!
 /obj/item/projectile/proc/is_supereffective(atom/target)
@@ -715,6 +760,7 @@
 		pixel_increment_amount = SSprojectiles.global_pixel_increment_amount
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, pixel_increment_amount)
 	fired = TRUE
+	randomize_damage()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -989,7 +1035,8 @@
 	if(hitscan)
 		finalize_hitscan_and_generate_tracers()
 	cleanup_beam_segments()
-	QDEL_NULL(trajectory)
+	if(trajectory)
+		QDEL_NULL(trajectory)
 	return ..()
 
 /obj/item/projectile/proc/cleanup_beam_segments()
@@ -1039,6 +1086,21 @@
 /obj/item/projectile/experience_pressure_difference()
 	return
 
+/obj/item/projectile/proc/randomize_damage()
+	if(LAZYLEN(damage_list))
+		var/newdam = pickweight(damage_list)
+		if(istext(newdam) && isnum(text2num(newdam)))
+			damage = text2num(newdam)
+		var/critdam = LAZYACCESS(damage_list, LAZYLEN(damage_list))
+		if(istext(critdam) && isnum(text2num(newdam)))
+			critdam = text2num(critdam)
+		if(damage == critdam)
+			playsound(src, crit_sound, 100, 1, 30)
+	else if(!isnull(damage_low) && !isnull(damage_high))
+		damage = rand(damage_low, damage_high)
+		if(damage == damage_high)
+			playsound(src, crit_sound, 100, 1, 30)
+
 /////// MISC HELPERS ////////
 /// Is this atom reflectable with ""standardized"" reflection methods like you know eshields and deswords and similar
 /proc/is_energy_reflectable_projectile(atom/A)
@@ -1070,6 +1132,22 @@
 /obj/item/projectile/bullet/F13/musketball
 	damage = 60
 
+
+/mob/living/simple_animal/hostile/rat/skitter/bullet_random_debug
+	name = "debug rat"
+	desc = "Its a rat!"
+	melee_damage_lower = 0.01
+	melee_damage_upper = 0.01
+	maxHealth = 5000
+	health = 5000
+	is_smol = FALSE
+	faction = list("neutral")
+
+	variation_list = list()
+
+/mob/living/simple_animal/hostile/rat/skitter/bullet_random_debug/bullet_act(obj/item/projectile/P)
+	. = ..()
+	say("I'm hit! That felt like it did [P.damage] damage to be exact!")
 
 
 #undef MOVES_HITSCAN

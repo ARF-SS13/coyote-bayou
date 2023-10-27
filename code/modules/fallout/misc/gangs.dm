@@ -172,7 +172,7 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 	add_verb(new_member,/mob/living/proc/assumeleader)
 	to_chat(new_member, span_notice("You are now a member of the [name]! Everyone can recognize your gang membership now."))
 	if(welcome_text)
-		to_chat(new_member, "<span class='notice'>Welcome text: </span><span class='purple'>[welcome_text]</span>")
+		to_chat(new_member, span_notice("Welcome text: </span><span class='purple'>[welcome_text]"))
 
 /datum/gang/proc/remove_member(mob/living/carbon/member)
 	members -= member

@@ -683,3 +683,16 @@
 	icon_state = "spiketail"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/glaceon
+	name = "glaceon"
+	icon_state = "glaceon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/ninetailsalt
+	name = "ninetails, alt"
+	icon_state = "ninetails"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+

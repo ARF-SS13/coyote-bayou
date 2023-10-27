@@ -78,7 +78,7 @@
 			if(P.original != parent)
 				return
 	var/atom/current_parent = parent
-	if(isturf(current_parent.loc))
+	if(isturf(current_parent?.loc))
 		if(do_play_squeak())
 			SEND_SIGNAL(AM, COMSIG_CROSS_SQUEAKED)
 

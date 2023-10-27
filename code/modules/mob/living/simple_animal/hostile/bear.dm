@@ -15,7 +15,7 @@
 	taunt_chance = 25
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -41,8 +41,8 @@
 
 	//Space bears aren't affected by cold.
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 
 	faction = list("russian")
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -70,7 +70,7 @@
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
 	faction = list("russian")
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 18
 	melee_damage_upper = 20
 	wound_bonus = 0
@@ -122,7 +122,7 @@ mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Seve
 	response_harm_simple = "take a bite out of"
 	attacked_sound = 'sound/items/eatfood.ogg'
 	deathmessage = "loses its false life and collapses!"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 6, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/item/organ/brain = 1, /obj/item/organ/heart = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 6, /obj/item/reagent_containers/food/snacks/meat/slab = 3, /obj/item/organ/brain = 1, /obj/item/organ/heart = 1)
 	attack_sound = 'sound/weapons/slap.ogg'
 	attack_verb_continuous = "slaps"
 	attack_verb_simple = "slap"
@@ -150,16 +150,19 @@ mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Seve
 	free butter to the station!</b>")
 	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Terrygold.", "Name Change")
 	if(new_name)
-		to_chat(src, "<span class='notice'>Your name is now <b>\"new_name\"</b>!</span>")
+		to_chat(src, span_notice("Your name is now <b>\"new_name\"</b>!"))
 		name = new_name
 
 mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some attacks by the butter bear slip those who dare cross its path.
-	if(isliving(target))
-		var/mob/living/L = target
-		if((L.mobility_flags & MOBILITY_STAND))
-			L.Knockdown(20)
-			playsound(loc, 'sound/misc/slip.ogg', 15)
-			L.visible_message(span_danger("[L] slips on butter!"))
+	var/atom/my_target = get_target()
+	if(!isliving(my_target))
+		return
+	var/mob/living/L = my_target
+	if(!(L.mobility_flags & MOBILITY_STAND))
+		return
+	L.Knockdown(20)
+	playsound(loc, 'sound/misc/slip.ogg', 15)
+	L.visible_message(span_danger("[L] slips on butter!"))
 
 /mob/living/simple_animal/hostile/bear/yaoguai
 	name = "yao guai"

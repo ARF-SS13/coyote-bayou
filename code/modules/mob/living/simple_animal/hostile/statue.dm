@@ -29,7 +29,7 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 
 	faction = list("statue")
 	move_to_delay = 0 // Very fast
@@ -84,14 +84,17 @@
 /mob/living/simple_animal/hostile/statue/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(!client && target) // If we have a target and we're AI controlled
-		var/mob/watching = can_be_seen()
-		// If they're not our target
-		if(watching && watching != target)
-			// This one is closer.
-			if(get_dist(watching, src) > get_dist(target, src))
-				LoseTarget()
-				GiveTarget(watching)
+	var/atom/my_target = get_target()
+	if(client || !my_target) // If we have a my_target and we're AI controlled
+		return
+	var/mob/watching = can_be_seen()
+	// If they're not our my_target
+	if(!watching || watching == my_target)
+		return
+	// This one is closer.
+	if(get_dist(watching, src) > get_dist(my_target, src))
+		LoseTarget()
+		GiveTarget(watching)
 
 /mob/living/simple_animal/hostile/statue/AttackingTarget()
 	if(can_be_seen(get_turf(loc)))

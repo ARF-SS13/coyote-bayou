@@ -26,6 +26,10 @@
 /obj/item/ammo_box/magazine/internal/shot/lethal
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
+/obj/item/ammo_box/magazine/internal/shot/shorty
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 2
+
 /obj/item/ammo_box/magazine/internal/shot/com
 	name = "combat shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -93,6 +97,14 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 5
+	multiload = 0
+
+
+/obj/item/ammo_box/magazine/internal/shot/derringer
+	name = "14mm internal magazine"
+	ammo_type = /obj/item/ammo_casing/p14mm
+	caliber = list(CALIBER_14MM)
+	max_ammo = 4
 	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/shot/tube357

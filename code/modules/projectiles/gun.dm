@@ -179,6 +179,8 @@ ATTACHMENTS
 	var/is_kelpwand = FALSE
 	/// Allow quickdraw (delay to draw the gun is 0s)
 	var/allow_quickdraw = FALSE
+	/// This variable is used by crankable laser guns {/obj/item/gun/energy/laser/cranklasergun}
+	var/recharge_queued = 1
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -196,11 +198,11 @@ ATTACHMENTS
 	if(gun_light)
 		alight = new (src)
 	if(!restrict_safety)
-		var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/gun/safety
+		var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/gun/safety
 		action.owner = src
 		hud_actions += action
 
-	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
+	var/atom/movable/screen/item_action/action = new /atom/movable/screen/item_action/top_bar/weapon_info
 	action.owner = src
 	hud_actions += action
 	initialize_firemodes()
@@ -240,10 +242,10 @@ ATTACHMENTS
 	update_firemode_hud()
 
 /obj/item/gun/proc/update_firemode_hud() // this has never worked -- actually no it works just fine
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/fire_mode
+			action = new /atom/movable/screen/item_action/top_bar/gun/fire_mode
 			action.owner = src
 			hud_actions += action
 	else
@@ -251,10 +253,10 @@ ATTACHMENTS
 		hud_actions -= action
 
 /obj/item/gun/proc/initialize_scope()
-	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	var/atom/movable/screen/item_action/action = locate(/atom/movable/screen/item_action/top_bar/gun/scope) in hud_actions
 	if(zoom_factor > 0)
 		if(!action)
-			action = new /obj/screen/item_action/top_bar/gun/scope
+			action = new /atom/movable/screen/item_action/top_bar/gun/scope
 			action.owner = src
 			hud_actions += action
 	else
@@ -574,7 +576,7 @@ ATTACHMENTS
 		return
 	var/time_till_draw = user.AmountWeaponDrawDelay()
 	if(time_till_draw)
-		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
+		to_chat(user, span_notice("You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!"))
 		return
 	if(pre_fire(user, target, params, zone_override, stam_cost))
 		return TRUE // pre_fire will handle what comes next~ (like firing at your mouse cursor after a delay)
@@ -1088,8 +1090,8 @@ ATTACHMENTS
 	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE) || 0
 	data["gun_armor_penetration"] = armour_penetration || 0
 	var/list/chambered_data = istype(chambered) ? chambered.get_statblock(TRUE) : ui_data_projectile(get_dud_projectile())
-	data["gun_chambered"] = chambered_data
-	data["gun_is_chambered"] = istype(chambered)
+	data["gun_chambered"] = chambered_data || list()
+	data["gun_is_chambered"] = istype(chambered) || FALSE
 	data["gun_chambered_loaded"] = chambered ? !!chambered.BB : 0
 	var/list/unmodded_recoil_data = SSrecoil.get_tgui_data(init_recoil)
 	var/list/modded_recoil_data = SSrecoil.get_tgui_data(recoil_tag)

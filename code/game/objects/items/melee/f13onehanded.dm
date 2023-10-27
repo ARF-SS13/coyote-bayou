@@ -156,6 +156,9 @@
 	item_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_MASK
+	tool_behaviour = TOOL_SCREWDRIVER
+	toolspeed = 4
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
@@ -774,6 +777,15 @@ obj/item/melee/onehanded/knife/switchblade
 	if(!istype(M))
 		return
 	M.apply_damage(20, STAMINA, "head", M.run_armor_check("head", "melee"))
+
+// Snowflake sappers	Keywords: Damage 27
+/obj/item/melee/unarmed/sappers/fightgloves
+	name = "MMA gloves"
+	desc = "Padded gloves which are ideal for beating the crap out of opponents while keeping your own hands protected."
+	icon_state = "fightglovesblack"
+	item_state = "fightglovesblack"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 27
 
 // Tiger claws		Keywords: Damage 33, Pointy
 /obj/item/melee/unarmed/tigerclaw
