@@ -467,8 +467,6 @@
 		/obj/item/gun/energy/laser/auto = 5,
 		/obj/item/gun/energy/laser/tg/carbine/pistol = 2,
 		/obj/item/gun/energy/laser/tg/carbine = 2,
-		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 5,
-		/obj/item/gun/magic/wand/kelpmagic/sparky = 5,
 		/obj/item/gun/energy/ionrifle/compact = 5,
 	)
 
@@ -481,10 +479,6 @@
 		/obj/item/gun/energy/laser/tg/rifle = 24,
 		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,
 		/obj/item/gun/energy/laser/solar = 5,
-		/obj/item/gun/magic/wand/kelpmagic/firebolt = 5,
-		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
-		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
-		/obj/item/gun/magic/staff/kelpmagic/magicmissile =5,
 		/obj/item/gun/energy/ionrifle/carbine = 10,
 	)
 
@@ -503,9 +497,6 @@
 		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 5,
 		/obj/item/gun/energy/laser/LaserAK = 1,
 		/obj/item/gun/energy/laser/ultra_rifle = 1,
-		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
-		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
-		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
 		/obj/item/gun/energy/laser/laer = 3,
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
 	)
