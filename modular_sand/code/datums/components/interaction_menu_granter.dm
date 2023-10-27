@@ -218,6 +218,11 @@
 	var/mob/living/parent_mob = parent
 	switch(action)
 		if("interact")
+			if(!isliving(parent_mob))
+				return
+			if(!parent_mob.CheckAttackCooldown(usr, parent_mob))
+				return // sex is combat, didnt ya know?
+			parent_mob.DelayNextAction(0.8 SECONDS) // mainly cus spamming the buttons will lock up your client with sex messages
 			var/datum/interaction/o = SSinteractions.interactions[params["interaction"]]
 			if(o)
 				o.do_action(parent_mob, target)
