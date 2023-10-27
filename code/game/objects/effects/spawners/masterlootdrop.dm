@@ -600,7 +600,7 @@
 		/obj/item/gun/ballistic/rifle/hunting/paciencia = 5,
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 5,
-		/obj/item/rare_weps = 5,
+		/obj/item/sord = 5,
 		/obj/item/gun/ballistic/automatic/g11 = 5,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 5,
 		/obj/item/gun/ballistic/automatic/service/alr = 5,
@@ -650,7 +650,7 @@
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/dualsaber/hypereutactic = 10,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
-		///obj/item/sord = 5, as funny as it was, this destroyed your soul to be rolled in the goddamn unique table, it's already on the others
+		///obj/item/sord = 5, as funny as it was, this destroyed your soul to be rolled in the unique table, it's already on the others
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 1,
 		/obj/item/book/granter/martial/bass = 10,
