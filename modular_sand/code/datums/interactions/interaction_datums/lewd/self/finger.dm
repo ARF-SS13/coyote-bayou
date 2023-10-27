@@ -184,7 +184,7 @@
 
 
 //////////////
-//Rub Crotch//
+//Rub Crotch// 
 //////////////
 //Crotch rub will be our prototype emote, I will comment the shit out of it to make things make the most sense to a newbie.
 //Remember to change this VVVV
@@ -234,7 +234,7 @@
 		"lightly rubs [t_their] crotch.",
 		)
 
-//Message block B
+		//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
 		message = pick( //Then pick from these messages!
@@ -248,7 +248,7 @@
 			"is really grinding at [t_their] lap!",
 		)
 
-//Message block D
+		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
 		message = pick( //Then pick from these messages!
