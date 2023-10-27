@@ -1,5 +1,5 @@
 /datum/interaction/lewd/oral
-	description = "Go down on them."
+	description = "Partner/Crotch - Oral Sex"
 	require_user_mouth = TRUE
 	require_target_vagina = REQUIRE_ANY
 	write_log_user = "gave head to"

@@ -1,5 +1,5 @@
 /datum/interaction/cuddle
-	description = "Cuddle with them."
+	description = "Partner/Body - Cuddle with them."
 	simple_message = "USER cuddles TARGET."
 	simple_style = "lewd"
 	needs_physical_contact = TRUE

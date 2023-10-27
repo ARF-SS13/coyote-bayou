@@ -1,5 +1,5 @@
 /datum/interaction/lewd/nuts
-	description = "Nuts to face."
+	description = "Patner/Head - Nuts to face."
 	interaction_sound = null
 	require_user_balls = REQUIRE_ANY
 	require_target_mouth = TRUE

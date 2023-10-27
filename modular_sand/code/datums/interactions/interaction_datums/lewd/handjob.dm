@@ -1,5 +1,5 @@
 /datum/interaction/lewd/handjob
-	description = "Jerk them off."
+	description = "Partner/Crunch - Jerk them off."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_target_penis = REQUIRE_ANY

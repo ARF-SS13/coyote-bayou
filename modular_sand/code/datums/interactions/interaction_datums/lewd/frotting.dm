@@ -1,5 +1,5 @@
 /datum/interaction/lewd/frotting
-	description = "Rub your %COCK% against theirs"
+	description = "Partner/Crotch - Frotting"
 	require_user_penis = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
@@ -21,7 +21,7 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, user, ORGAN_SLOT_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/tribadism
-	description = "Grind your pussy against theirs."
+	description = "Partner/Crotch -Grind pussies together."
 	interaction_sound = null
 	require_target_vagina = REQUIRE_ANY
 	require_user_vagina = REQUIRE_ANY

@@ -1,5 +1,5 @@
 /datum/interaction/lewd/fuck
-	description = "Fuck their pussy."
+	description = "Partner/Crotch - Fuck their pussy."
 	require_user_penis = REQUIRE_ANY
 	require_target_vagina = REQUIRE_ANY
 	write_log_user = "fucked"
@@ -30,7 +30,7 @@
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, user, ORGAN_SLOT_VAGINA) //SPLURT edit
 
 /datum/interaction/lewd/fuck/anal
-	description = "Fuck their ass."
+	description = "Partner/Crotch - Fuck their ass."
 	require_target_vagina = null
 	require_target_anus = REQUIRE_ANY
 
@@ -62,7 +62,7 @@
 	partner.handle_post_sex(NORMAL_LUST, null, user, "anus") //SPLURT edit
 
 /datum/interaction/lewd/breastfuck
-	description = "Fuck their breasts."
+	description = "Partner/Body - Fuck their breasts."
 	interaction_sound = null
 	require_user_penis = REQUIRE_ANY
 	require_target_breasts = REQUIRE_ANY
@@ -91,7 +91,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/footfuck
-	description = "Rub your %COCK% on their foot."
+	description = "Partner/Leg - Rub your %COCK% on their foot."
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
@@ -153,7 +153,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, CUM_TARGET_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/footfuck/vag
-	description = "Rub your vagina on their foot."
+	description = "Partner/Crotch - Rub your vagina on their foot."
 	interaction_sound = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY

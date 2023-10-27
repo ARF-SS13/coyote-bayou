@@ -1,5 +1,5 @@
 /datum/interaction/lewd/rimjob
-	description = "Lick their ass."
+	description = "Partner/Crotch - Lick their ass."
 	interaction_sound = null
 	require_user_mouth = TRUE
 	require_target_anus = REQUIRE_ANY

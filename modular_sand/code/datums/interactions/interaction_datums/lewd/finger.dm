@@ -1,5 +1,5 @@
 /datum/interaction/lewd/finger
-	description = "Finger their pussy."
+	description = "Partner/Crotch - Finger their pussy."
 	require_user_hands = TRUE
 	require_target_vagina = REQUIRE_ANY
 	interaction_sound = null
@@ -39,7 +39,7 @@
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA) //SPLURT edit
 
 /datum/interaction/lewd/fingerass
-	description = "Finger their ass."
+	description = "Partner/Crotch - Finger their ass."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_target_anus = REQUIRE_ANY

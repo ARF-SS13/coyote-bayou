@@ -1,5 +1,5 @@
 /datum/interaction/lewd/do_breastfeed
-	description = "Breastfeed them."
+	description = "Partner/Body - Breastfeed them."
 	require_user_breasts = REQUIRE_ANY
 	require_target_mouth = TRUE
 	max_distance = 1
@@ -48,7 +48,7 @@
 	target.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
 /datum/interaction/lewd/titgrope
-	description = "Grope their breasts."
+	description = "Partner/Body - Grope their breasts."
 	require_user_hands = TRUE
 	require_target_breasts = REQUIRE_ANY
 	write_log_user = "groped"

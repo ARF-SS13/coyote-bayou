@@ -1,5 +1,5 @@
 /datum/interaction/lewd/facefuck
-	description = "Fuck their mouth using your %COCK%."
+	description = "Partner/Head - Facefuck them."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_penis = REQUIRE_ANY
@@ -7,7 +7,7 @@
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/facefuck/vag
-	description = "Fuck their mouth using your vagina."
+	description = "Partner/Head - Facegrind with pussy"
 	require_user_penis = null
 	require_user_vagina = REQUIRE_ANY
 	fucktarget = "vagina"
@@ -112,7 +112,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
 
 /datum/interaction/lewd/throatfuck
-	description = "Fuck their throat. | Does oxy damage."
+	description = "Partner/Head - Fuck their throat." //Should go back and 'simulate' this doing oxy damage
 	interaction_sound = null
 	require_user_penis = REQUIRE_ANY
 	require_target_mouth = TRUE

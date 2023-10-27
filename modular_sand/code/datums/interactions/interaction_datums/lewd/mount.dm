@@ -1,5 +1,5 @@
 /datum/interaction/lewd/mount
-	description = "Mount with your pussy."
+	description = "Partner/Crotch - Mount with pussy."
 	interaction_sound = null
 	require_user_vagina = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
@@ -25,7 +25,7 @@
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
 
 /datum/interaction/lewd/mountass
-	description = "Mount with your ass."
+	description = "Partner/Crotch - Mount with butt."
 	interaction_sound = null
 	require_user_anus = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
@@ -51,7 +51,7 @@
 	user.handle_post_sex(NORMAL_LUST, null, partner, "anus")
 
 /datum/interaction/lewd/mountface
-	description = "Ass to face."
+	description = "Partner/Face - Ass to face."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_anus = REQUIRE_ANY
@@ -78,7 +78,7 @@
 	user.handle_post_sex(LOW_LUST, null, partner)
 
 /datum/interaction/lewd/thighs
-	description = "Smother them using your %COCK%."
+	description = "Partner/Head - Smother with %COCK%."
 	max_distance = 1
 	require_user_penis = REQUIRE_ANY
 	require_target_mouth = TRUE
@@ -88,7 +88,7 @@
 	var/fucktarget = "penis"
 
 /datum/interaction/lewd/thighs/vagina
-	description = "Smother them using your vagina."
+	description = "Partner/Head - Smother them with vagina."
 	require_user_penis = REQUIRE_NONE
 	require_user_vagina = REQUIRE_ANY
 	write_log_user = "thigh-trapped (vagina)"

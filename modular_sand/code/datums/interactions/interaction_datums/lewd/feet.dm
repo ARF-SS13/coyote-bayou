@@ -1,5 +1,5 @@
 /datum/interaction/lewd/grindface
-	description = "Feet grind their face."
+	description = "Partner/Head - Feet grind their face."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -54,7 +54,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/grindmouth
-	description = "Feet grind their mouth."
+	description = "Partner/Head - Feet grind their mouth."
 	interaction_sound = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
@@ -109,7 +109,7 @@
 	partner.handle_post_sex(LOW_LUST, null, user)
 
 /datum/interaction/lewd/footjob
-	description = "Jerk them off with your foot."
+	description = "Partner/Crotch - Jerk them with a foot."
 	interaction_sound = null
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
@@ -140,7 +140,7 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user, ORGAN_SLOT_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/footjob/double
-	description = "Jerk them off with both of your feet."
+	description = "Partner/Crotch - Jerk them with both feet."
 	require_user_num_feet = 2
 
 /datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner)
@@ -168,7 +168,7 @@
 		partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user, ORGAN_SLOT_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/footjob/vagina
-	description = "Rub their vagina with your foot."
+	description = "Partner/Crotch - Rub vagina with your foot."
 	require_target_vagina = REQUIRE_ANY
 	require_target_penis = null
 
