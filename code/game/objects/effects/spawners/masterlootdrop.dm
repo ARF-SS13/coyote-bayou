@@ -600,7 +600,7 @@
 		/obj/item/gun/ballistic/rifle/hunting/paciencia = 5,
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 5,
-		/obj/item/sord = 5,
+		/obj/item/rare_weps = 5,
 		/obj/item/gun/ballistic/automatic/g11 = 5,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 5,
 		/obj/item/gun/ballistic/automatic/service/alr = 5,
@@ -612,6 +612,7 @@
 		/obj/item/gun/ballistic/automatic/recoilessrifle = 1,
 		/obj/item/gun/energy/laser/tg/recharger = 5,
 		/obj/item/melee/transforming/plasmacutter/sword/cx = 5,
+		/obj/item/twohanded/spear/bonespear/deathclaw = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
@@ -648,15 +649,14 @@
 		/obj/item/melee/powerfist/f13/satfist = 10,
 		/obj/item/melee/powered/ripper/prewar = 20,
 		/obj/item/dualsaber/hypereutactic = 10,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
-		/obj/item/sord = 5, //for the meme
+		///obj/item/sord = 5, as funny as it was, this destroyed your soul to be rolled in the goddamn unique table, it's already on the others
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
 		/obj/item/gun/ballistic/fatman = 1,
 		/obj/item/book/granter/martial/bass = 10,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 10,
 		/obj/item/gun/ballistic/automatic/fastlmg = 2 ,
-		/obj/item/gun/ballistic/automatic/compact14mmrifle = 1 ,
+		/obj/item/gun/ballistic/automatic/compact14mmrifle = 1,
 	)
 
 ////////////////////////////
