@@ -1,5 +1,5 @@
 /datum/interaction/lewd/fingerass_self
-	description = "Finger yourself."
+	description = "Finger your own butthole."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_anus = REQUIRE_ANY
@@ -39,6 +39,8 @@
 
 /datum/interaction/lewd/finger_self/display_interaction(mob/living/user)
 	var/t_His = user.p_their()
+	var/message
+	var/description
 
 	var/obj/item/reagent_containers/liquid_container
 
@@ -50,11 +52,52 @@
 		if(istype(cached_item, /obj/item/reagent_containers))
 			liquid_container = cached_item
 
-	var/message = pick(
-		"fingers [t_His] pussy deep",
-		"fingers [t_His] pussy",
-		"plays with [t_His] pussy",
-		"fingers [t_His] own pussy hard")
+//help intent should be gentle, downright even loving and probably the opener for situations
+		if(user.a_intent == INTENT_HELP)
+			message = pick(
+			"teases a finger around [t_His] labia!",
+			"rubs [t_His] pussy gently!",
+			"very lightly gives [t_His] own pussy a tap!",
+			"is gently rubbing [t_His] nether lips!"
+			)
+
+//disarm intent should be used for being particularly playful with the interaction
+		else if(user.a_intent == INTENT_DISARM)
+			message = pick(
+				"teasingly fingers [t_His] pussy!",
+				"explores [t_His] own love canal playfully!",
+				"spreads [t_His] pussy lips, clearly enjoying themselves!",
+				"rubs a circle around [t_His] labia, teasing themselves!",
+			)
+
+//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+		else if(user.a_intent == INTENT_GRAB)
+			message = pick(
+				"gives [t_His] pussy a playful slap!",
+				"fingers [t_His] honeypot thoroughly.",
+				"is really getting up in [t_His] own pussy!",
+				"is soaking [t_His] fingers in their own juices as they play with themselves!",
+			)
+
+//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+		else if(user.a_intent == INTENT_HARM)
+			var/message = pick(
+				"slaps [t_His] pussy lips hard!",
+				"is fingering [t_His] pussy like [t_His] depends on it!",
+				"groans as they fingerfuck their pussy messily!",
+				"fingers [t_His] pussy so hard she begins to shake!",
+				"is fingering [t_His] pussy like it owes her money!")
+
+	if(prob(5 + user.get_lust()))
+		user.visible_message(span_love("<b>\The [user]</b> [pick(
+				"shivers in arousal.",
+				"moans quietly.",
+				"breathes out a soft moan.",
+				"gasps.",
+				"shudders softly.",
+				"trembles as [t_His] hands run across bare skin.")]"))
+
+
 	if(!user.is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_VAGINA)))
 		user.set_is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_VAGINA))
 
