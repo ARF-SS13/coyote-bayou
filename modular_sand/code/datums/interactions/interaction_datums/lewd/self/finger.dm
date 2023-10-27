@@ -12,43 +12,43 @@
 	var/t_His = user.p_their()
 	var/message
 
-//help intent should be gentle, downright even loving and probably the opener for situations
-		if(user.a_intent == INTENT_HELP)
-			message = pick(
-			"teases a finger around [t_His] pucker!",
-			"rubs [t_His] starfish gently!",
-			"very lightly gives [t_His] own butthole a tap!",
-			"is gently rubbing [t_His] pucker!", //someone who is more excited about anal sex, please rewrite this for me. <3	~TK
+	//help intent should be gentle, downright even loving and probably the opener for situations
+	if(user.a_intent == INTENT_HELP)
+		message = pick(
+		"teases a finger around [t_His] pucker!",
+		"rubs [t_His] starfish gently!",
+		"very lightly gives [t_His] own butthole a tap!",
+		"is gently rubbing [t_His] pucker!", //someone who is more excited about anal sex, please rewrite this for me. <3	~TK
+		)
+
+	//disarm intent should be used for being particularly playful with the interaction
+	else if(user.a_intent == INTENT_DISARM)
+		message = pick(
+			"teasingly fingers [t_His] backdoor!",
+			"explores [t_His] own backdoor entrance playfully!",
+			"spreads [t_His] cheeks, clearly enjoying themselves!",
+			"rubs a circle around [t_His] sphincter, teasing themselves!",
+		)
+
+	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+	else if(user.a_intent == INTENT_GRAB)
+
+		message = pick(
+			"gives [t_His] butthole a playful slap!",
+			"fingers [t_His] backdoor thoroughly.",
+			"is really getting up in [t_His] own ass!",
+			"is absolutely using [t_His] fingers to knock on the back door!",
+		)
+
+	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+	else if(user.a_intent == INTENT_HARM)
+		message = pick(
+			"slaps [t_His] asshole hard!",
+			"is fingering [t_His] butthole like [t_His] life depends on it!",
+			"groans as they fingerfuck their own ass!",
+			"fingers [t_His] booty so hard them begins to shake!",
+			"is fingering [t_His] butt like it owes them money!",
 			)
-
-//disarm intent should be used for being particularly playful with the interaction
-		else if(user.a_intent == INTENT_DISARM)
-			message = pick(
-				"teasingly fingers [t_His] backdoor!",
-				"explores [t_His] own backdoor entrance playfully!",
-				"spreads [t_His] cheeks, clearly enjoying themselves!",
-				"rubs a circle around [t_His] sphincter, teasing themselves!",
-			)
-
-//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-		else if(user.a_intent == INTENT_GRAB)
-
-			message = pick(
-				"gives [t_His] butthole a playful slap!",
-				"fingers [t_His] backdoor thoroughly.",
-				"is really getting up in [t_His] own ass!",
-				"is absolutely using [t_His] fingers to knock on the back door!",
-			)
-
-//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
-		else if(user.a_intent == INTENT_HARM)
-			message = pick(
-				"slaps [t_His] asshole hard!",
-				"is fingering [t_His] butthole like [t_His] life depends on it!",
-				"groans as they fingerfuck their own ass!",
-				"fingers [t_His] booty so hard them begins to shake!",
-				"is fingering [t_His] butt like it owes them money!",
-				)
 
 
 	if(prob(5 + user.get_lust()))
@@ -60,8 +60,9 @@
 				"shudders softly.",
 				"trembles as [t_His] hands run across bare skin.")]"))
 
+	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, "anus") //SPLURT edit
+	user.handle_post_sex(lust_amt[user.a_intent], CUM_TARGET_HAND, user, "anus") //SPLURT edit
 
 /datum/interaction/lewd/finger_self
 	description = "Self/Vaginal - Finger your own pussy."

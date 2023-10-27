@@ -34,28 +34,28 @@
 //help intent should be gentle, downright even loving and probably the opener for situations
 		if(user.a_intent == INTENT_HELP)
 			message = pick(
-			"shakes [t_His] cock playfully!",
-			"rubs [t_His] shaft gently!",
-			"carefully grasps [t_His] own cock!",
-			"is gently stroking [t_His] shaft!",
+			"shakes [t_His] [genital_name] playfully!",
+			"rubs [t_His] [genital_name] gently!",
+			"carefully grasps [t_His] own [genital_name]!",
+			"is gently stroking [t_His] [genital_name]!",
 			)
 
 //disarm intent should be used for being particularly playful with the interaction
 		else if(user.a_intent == INTENT_DISARM)
 			message = pick(
-				"shakes [t_His] cock like a lure!",
+				"shakes [t_His] [genital_name] like a lure!",
 				"fucks [t_His] own hand slowly!",
-				"lifts [t_His] shaft up and gives it a shake!",
-				"rubs a finger down [t_His] own cock!",
+				"lifts [t_His] [genital_name] up and gives it a shake!",
+				"rubs a finger down [t_His] own [genital_name]!",
 			)
 
 //grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 		else if(user.a_intent == INTENT_GRAB)
 			message = pick(
-				"is really cranking [t_His] cock!",
-				"works [t_His] cock over!",
-				"is really getting into playing [t_His] own cock!",
-				"is dribbling a bit from [t_His] cock as [t_His] plays with himself!",
+				"is really cranking [t_His] [genital_name]!",
+				"works [t_His] [genital_name] over!",
+				"is really getting into playing [t_His] own [genital_name]!",
+				"is dribbling a bit from [t_His] [genital_name] as [t_His] plays with himself!",
 			)
 
 //harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
@@ -64,7 +64,7 @@
 				"is beating [t_His] meat!",
 				"is really jerking [t_His] gerhkin!",
 				"groans as they fuck their hand hard!",
-				"cuts off a groan as [t_His] cock twitches from their own self-affection!",
+				"cuts off a groan as [t_His] [genital_name] twitches from their own self-affection!",
 				)
 
 	if(liquid_container)
