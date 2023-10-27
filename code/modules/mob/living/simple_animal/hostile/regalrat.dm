@@ -374,3 +374,11 @@
 				visible_message(span_warning("[src] chews through the [C]. It looks unharmed!"))
 				playsound(src, 'sound/effects/sparks2.ogg', 100, TRUE)
 				C.deconstruct()
+
+/mob/living/simple_animal/hostile/rat/skitter/curious/frenly
+	faction = list("neutral")
+
+
+/mob/living/simple_animal/hostile/rat/skitter/curious/frenly/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/death), 50 SECONDS)

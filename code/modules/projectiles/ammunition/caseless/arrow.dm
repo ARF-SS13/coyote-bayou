@@ -34,7 +34,7 @@
 /obj/item/ammo_casing/caseless/arrow/titanium
 	name = "titanium arrow"
 	desc = "a durable arrow with a sturdy titanium head."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/titanium
 	icon_state = "titaniumarrow"
 	custom_materials = list(/datum/material/titanium = MINERAL_MATERIAL_AMOUNT*2)
 

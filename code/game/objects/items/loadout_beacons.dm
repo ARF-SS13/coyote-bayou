@@ -1090,6 +1090,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m22(src)
 	new /obj/item/ammo_box/c22(src)
 
+/obj/item/storage/box/gun/revolver/derringer22
+	name = ".22LR Derringer case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/revolver/derringer22/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective/derringer(src)
+	new /obj/item/ammo_box/m22(src)
+	new /obj/item/ammo_box/c22(src)
+
 /obj/item/storage/box/gun/revolver/revolver45
 	name = ".45 ACP revolver case"
 
@@ -1097,6 +1106,21 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/revolver/revolver45(src)
 	new /obj/item/ammo_box/c45rev(src)
 	new /obj/item/ammo_box/c45(src)
+
+/obj/item/storage/box/gun/revolver/derringerLC
+	name = ".45 LC Derringer case"
+
+/obj/item/storage/box/gun/revolver/derringerLC/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/derringerLC(src)
+	new /obj/item/ammo_box/a45lcbox(src)
+
+/obj/item/storage/box/gun/revolver/derringer4570
+	name = ".45-70 Derringer case"
+
+/obj/item/storage/box/gun/revolver/derringer4570/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/derringer4570(src)
+	new /obj/item/ammo_box/c4570box(src)
+	new /obj/item/ammo_box/c4570/ratshot(src)
 
 /datum/loadout_box/medusa
 	entry_tag = "Medusa Revolver"
@@ -1298,6 +1322,81 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/rifle/jezail/culverin/PopulateContents()
 	new /obj/item/gun/flintlock/musket/jezail/culverin(src)
 	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/flintlock/handcannon
+	name = "hand cannon case"
+
+/obj/item/storage/box/gun/matchlock/handcannon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+//matchlocks
+
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/handcannon
+	name = "handcannon case"
+
+/obj/item/storage/box/gun/matchlock/handcannon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+	name = "handgonne case"
+
+/obj/item/storage/box/gun/matchlock/handgonne/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handcannon/handgonne(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+
+/obj/item/storage/box/gun/rifle/musket/flintlock/matchlockarquebus
+	name = "classy arquebus case"
+
+/obj/item/storage/box/gun/rifle/flintlock/matchlockarquebus/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/matchlockarquebus(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/rifle/musket/matchlock/matchlockarquebus/arquebus
+	name = "arquebus case"
+
+/obj/item/storage/box/gun/rifle/matchlock/matchlockarquebus/arquebus/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/matchlockarquebus/arquebus(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon
+	name = "matchlock musketoon case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/espi
+	name = "matchlock espingole case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/espi/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon/espingole(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine
+	name = "matchlock carbine case"
+
+/obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/musketoon/carabine(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/cavalier
+	name = "matchlock cavalier sharpshooter case"
+
+/obj/item/storage/box/gun/carbine/matchlock/cavalier/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/cavalier(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/obj/item/storage/box/gun/carbine/matchlock/handbombard
+	name = "matchlock handbombard case"
+
+/obj/item/storage/box/gun/carbine/matchlock/handbombard/PopulateContents()
+	new /obj/item/gun/flintlock/matchlock/handbombard(src)
+	new /obj/item/ammo_box/flintlock(src)
+
 
 
 /obj/item/storage/box/gun/pistol/type17
@@ -1783,6 +1882,73 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MUSKET
 	spawn_thing = /obj/item/storage/box/gun/rifle/jezail/culverin
 
+/datum/loadout_box/matchlock/handcannon
+	entry_tag = "Matchlock Hand Cannon"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handcannon
+
+/datum/loadout_box/matchlock/handgonne
+	entry_tag = "Matchlock Handgonne"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+
+/datum/loadout_box/matchlock/classyarquebus
+	entry_tag = "Matchlock Arquebus - Fancy"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/flintlock/matchlockarquebus
+
+/datum/loadout_box/matchlock/normalarquebus
+	entry_tag = "Matchlock Arquebus"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/matchlockarquebus/arquebus
+
+/datum/loadout_box/matchlock/musketoon
+	entry_tag = "Matchlock Musketoon"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon
+
+/datum/loadout_box/matchlock/musketoon/espi
+	entry_tag = "Matchlock espingole"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon/espi
+
+/datum/loadout_box/matchlock/musketoon/carbine
+	entry_tag = "Matchlock Carbine"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/musketoon/carbine
+
+
+/datum/loadout_box/matchlock/cavalier
+	entry_tag = "Matchlock Cavalier Sharpshooter"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/cavalier
+
+/datum/loadout_box/matchlock/handbombard
+	entry_tag = "Matchlock Hand Bombard"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/carbine/matchlock/handbombard
+
+
+
+
+/datum/loadout_box/matchlock/
+	entry_tag = "Matchlock Handgonne"
+	entry_flags = LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MUSKET
+	spawn_thing = /obj/item/storage/box/gun/rifle/musket/matchlock/handgonne
+
+
+
+
 
 /datum/loadout_box/junglecarbine
 	entry_tag = "Jungle Carbine"
@@ -1860,11 +2026,30 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver
 
+/datum/loadout_box/derringer22
+	entry_tag = ".22LR Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringer22
+
+
 /datum/loadout_box/revolver45
 	entry_tag = ".45ACP Revolver"
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_REVOLVER
 	spawn_thing = /obj/item/storage/box/gun/revolver/revolver45
+
+/datum/loadout_box/derringerLC
+	entry_tag = ".45 LC Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringerLC
+
+/datum/loadout_box/derringer4570
+	entry_tag = ".45-70 Derringer"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/derringer4570
 
 /datum/loadout_box/colt357
 	entry_tag = ".357 Magnum Revolver"
