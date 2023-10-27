@@ -19,7 +19,6 @@
 /datum/interaction/lewd/jack/display_interaction(mob/living/user)
 	var/message
 	var/t_His = user.p_their()
-	var/t_Him = user.p_them()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	var/obj/item/reagent_containers/liquid_container
