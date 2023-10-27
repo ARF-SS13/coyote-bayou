@@ -1,5 +1,5 @@
 /datum/interaction/lewd/jack
-	description = "Jerk yourself off."
+	description = "Self/Penis - Jerk yourself off."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_penis = REQUIRE_ANY
@@ -32,16 +32,42 @@
 		if(istype(cached_item, /obj/item/reagent_containers))
 			liquid_container = cached_item
 
-	if(user.is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_PENIS)))
-		message = "[pick("jerks [t_Him]self off",
-			"works [t_His] shaft",
-			"strokes [t_His] [genital_name]",
-			"wanks [t_His] [genital_name] hard")]"
-	else
-		message = "[pick("wraps [t_His] hand around [t_His] [genital_name]",
-			"starts to stroke [t_His] [genital_name]",
-			"starts playing with [t_His] [genital_name]")]"
-		user.set_is_fucking(user, CUM_TARGET_HAND, user.getorganslot(ORGAN_SLOT_PENIS))
+//help intent should be gentle, downright even loving and probably the opener for situations
+		if(user.a_intent == INTENT_HELP)
+			message = pick(
+			"shakes [t_His] cock playfully!",
+			"rubs [t_His] shaft gently!",
+			"carefully grasps [t_His] own cock!",
+			"is gently stroking [t_His] shaft!",
+			)
+
+//disarm intent should be used for being particularly playful with the interaction
+		else if(user.a_intent == INTENT_DISARM)
+			message = pick(
+				"shakes [t_His] cock like a lure!",
+				"fucks [t_His] own hand slowly!",
+				"lifts [t_His] shaft up and gives it a shake!",
+				"rubs a finger down [t_His] own cock!",
+			)
+
+//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+		else if(user.a_intent == INTENT_GRAB)
+			message = pick(
+				"is really cranking [t_His] cock!",
+				"works [t_His] cock over!",
+				"is really getting into playing [t_His] own cock!",
+				"is dribbling a bit from [t_His] cock as [t_His] plays with himself!",
+			)
+
+//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+		else if(user.a_intent == INTENT_HARM)
+			message = pick(
+				"is beating [t_His] meat!",
+				"is really jerking [t_His] gerhkin!",
+				"groans as they fuck their hand hard!",
+				"cuts off a groan as [t_His] cock twitches from their own self-affection!",
+				)
+
 	if(liquid_container)
 		message += " over \the [liquid_container]"
 

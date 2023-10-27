@@ -1,5 +1,5 @@
 /datum/interaction/lewd/fingerass_self
-	description = "Finger your own butthole."
+	description = "Self/Anal - Finger your own butthole."
 	interaction_sound = null
 	require_user_hands = TRUE
 	require_user_anus = REQUIRE_ANY
@@ -20,7 +20,7 @@
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, "anus") //SPLURT edit
 
 /datum/interaction/lewd/finger_self
-	description = "Finger your own pussy."
+	description = "Self/Vaginal - Finger your own pussy."
 	require_user_hands = TRUE
 	require_user_vagina = REQUIRE_ANY
 	interaction_sound = null
