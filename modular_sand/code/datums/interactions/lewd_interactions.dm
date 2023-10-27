@@ -68,6 +68,13 @@
 	var/user_refractory_cost
 	var/target_refractory_cost
 
+	var/list/lust_amt = list(
+							INTENT_HELP = LOW_LUST, 
+							INTENT_DISARM = SOME_LUST,
+							INTENT_GRAB = SOME_MORE_LUST,
+							INTENT_HARM = NORMAL_LUST
+							)
+
 /datum/interaction/lewd/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
 	. = ..()
 	if(!.)
