@@ -184,7 +184,7 @@
 //Remember to change this VVVV
 /datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window.
 //pronoun storage
-//You can comment these back into use if you need to use them. This is the full list.
+//You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
 	
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
