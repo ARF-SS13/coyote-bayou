@@ -43,7 +43,6 @@ GLOBAL_LIST_EMPTY(loadout_whitelist_ids)
 		else if(I.geargroupID in GLOB.loadout_whitelist_ids)
 			I.ckeywhitelist = GLOB.loadout_whitelist_ids["[I.geargroupID]"]
 
-
 /datum/gear
 	var/name
 	var/category = LOADOUT_CATEGORY_NONE

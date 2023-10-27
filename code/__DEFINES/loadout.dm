@@ -40,6 +40,7 @@
 
 //hands
 #define LOADOUT_CATEGORY_HANDS 				"Hands"
+#define LOADOUT_SUBCATEGORY_HANDS_BACKPACKS "Backpacks"
 
 //uniform
 #define LOADOUT_CATEGORY_UNIFORM 			"Uniform" //there's so many types of uniform it's best to have lots of categories
