@@ -1,3 +1,7 @@
+// WANNA CUM?
+#define NOTMERP_AUTOCLIMAX "lol_this_wishes_it_were_merp"
+#define NOTMERP_LEWD_SOUNDS "squish_plsorkioefer"
+
 // Overhauled vore system
 #define DM_HOLD "Hold"
 #define DM_DIGEST "Digest"

@@ -127,9 +127,9 @@
 		var/datum/material/M = mat_id
 		var/mineral_count = materials.materials[mat_id]
 		var/list/material_data = list(
-			name = M.name,
-			mineral_amount = mineral_count,
-			matcolour = M.color,
+			name = M.name || "Stuff",
+			mineral_amount = mineral_count || 2,
+			matcolour = M.color || "#FF00FF",
 		)
 		data["materials"] += list(material_data)
 	if(selected_category != "None" && !length(matching_designs))

@@ -24,7 +24,11 @@
 
 /// The menu itself, only var is target which is the mob you are interacting with
 /datum/component/interaction_menu_granter
-	var/mob/living/target
+	var/datum/weakref/weaktarget
+	// var/mob/living/target
+	/// weakrefs to mobs we are doing cool things with
+	var/list/splurting_with = list()
+	var/list/blacklisted = list()
 
 /datum/component/interaction_menu_granter/Initialize(...)
 	if(!ismob(parent))
@@ -32,19 +36,124 @@
 	var/mob/parent_mob = parent
 	if(!parent_mob.client)
 		return COMPONENT_INCOMPATIBLE
+	splurting_with |= WEAKREF(parent)
 	. = ..()
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
+	RegisterSignal(parent, COMSIG_SPLURT_REQUEST, .proc/splurt_request)
+	RegisterSignal(parent, COMSIG_SPLURT_REPLY, .proc/handle_splurt_reply)
+	RegisterSignal(parent, COMSIG_SPLURT_IS_SPLURTING, .proc/are_we_fucking)
+	RegisterSignal(parent, COMSIG_SPLURT_CLEAR_FROM_BLACKLIST, .proc/remove_from_blacklist)
+	RegisterSignal(parent, COMSIG_SPLURT_IS_BLACKLISTED, .proc/are_they_blacklisted)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
-	target = null
+	weaktarget = null
+	splurting_with.Cut()
 	. = ..()
 
 /datum/component/interaction_menu_granter/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT)
+	UnregisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT, COMSIG_SPLURT_REQUEST))
 	. = ..()
+
+/// are they blacklisted?
+/datum/component/interaction_menu_granter/proc/are_they_blacklisted(datum/me, mob/living/they)
+	SIGNAL_HANDLER
+	if(!istype(they) || !they.ckey)
+		return TRUE // 
+	return they.ckey in blacklisted
+
+/// We used a merper on them, so we'll remove them from our blacklist if they're there
+/// mainly so I dont have to make a new whatever to whatever it
+/datum/component/interaction_menu_granter/proc/remove_from_blacklist(datum/me, mob/living/them)
+	SIGNAL_HANDLER
+	if(!istype(them) || !them.ckey)
+		return
+	blacklisted -= them.ckey
+
+/// Clicker wants to ask us if we want to do cool things together 
+/// We are clicked, clicker wants to be added to our cool list
+/// why is clicked an arg here? well its simple, really
+/datum/component/interaction_menu_granter/proc/splurt_request(datum/source, mob/living/clicker, mob/living/clicked)
+	SIGNAL_HANDLER
+	if(!istype(clicker))
+		return FALSE
+	var/datum/weakref/them = WEAKREF(clicker)
+	if(them in splurting_with)
+		to_chat(clicker, span_green("They already want it!"))
+		to_chat(parent, span_green("[clicker] appreciates the consent you've given them! <3"))
+		return
+	if(SEND_SIGNAL(clicked, COMSIG_SPLURT_IS_BLACKLISTED, parent))
+		to_chat(parent, span_boldannounce("[clicker] would prefer not to."))
+		return
+	INVOKE_ASYNC(src, .proc/splurt_consent, clicker)
+
+#define SPLURT_YES "Yes"
+#define SPLURT_NO "No"
+#define SPLURT_HELL_NO "No, and call an admin!"
+#define SPLURT_REPLY_YES 1
+#define SPLURT_REPLY_NO 2
+#define SPLURT_REPLY_HELLNO 3
+
+/datum/component/interaction_menu_granter/proc/splurt_consent(mob/living/clicker)
+	if(!istype(clicker))
+		return
+	var/what_do = alert(
+		parent,
+		"Hey! [clicker] wants to engage in mechanical erotic roleplay adventures with you! Is this alright?",
+		"Somebody likes you!",
+		SPLURT_YES,
+		SPLURT_NO,
+		SPLURT_HELL_NO
+		)
+	switch(what_do)
+		if(SPLURT_YES)
+			splurting_with |= WEAKREF(clicker)
+			to_chat(clicker, span_love("[parent] gave the green light! You and they can do mechanical ERP!"))
+			to_chat(parent, span_love("You gave [clicker] the green light! You and they can do mechanical ERP!"))
+			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, clicker, src, SPLURT_YES)
+		if(SPLURT_NO)
+			to_chat(clicker, span_userdanger("[parent] declines your offer to mechanically ERP with you!"))
+			to_chat(parent, span_userdanger("You decline [clicker]'s offer to mechanically ERP with them."))
+			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, clicker, src, SPLURT_NO)
+		if(SPLURT_HELL_NO)
+			message_admins(span_boldannounce("HEY! [clicker] wanted to mechanically ERP with [parent], and [parent] said no, and is calling for an admin!"))
+			to_chat(clicker, span_userdanger("[parent] declines your offer to mechanically ERP with you!"))
+			to_chat(parent, span_userdanger("You decline [clicker]'s offer to mechanically ERP with them, and called for an admin! One will be with you shortly!"))
+			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, clicker, src, SPLURT_NO)
+			blacklisted |= clicker.ckey // they aint splurting with you on any character!
+			for(var/client/C in GLOB.admins)
+				SEND_SOUND(C, sound('sound/effects/meow1.ogg')) // Someow's in troubmeow!
+
+
+/// the person we clicked on has replied! 
+/datum/component/interaction_menu_granter/proc/handle_splurt_reply(datum/source, mob/living/us, mob/living/them, reply)
+	SIGNAL_HANDLER
+	if(!istype(them))
+		return
+	switch(reply)
+		if(SPLURT_REPLY_YES)
+			splurting_with |= WEAKREF(them)
+		if(SPLURT_REPLY_NO)
+			return
+		if(SPLURT_REPLY_HELLNO)
+			return // cool
+
+/// The one interacting is clicker, the interacted is clicked.
+/// 'us' is required for compiling
+/datum/component/interaction_menu_granter/proc/are_we_fucking(datum/source, mob/living/requester, mob/living/us)
+	if(!istype(requester))
+		return FALSE
+	if(requester.ckey in blacklisted)
+		to_chat(requester, span_userdanger("[parent] would prefer you didn't."))
+		return FALSE
+	var/datum/weakref/them = WEAKREF(requester)
+	if(!(them in splurting_with))
+		to_chat(requester, span_alert("[parent] would prefer you asked first! Type *erpplz and then hit them with what the emote gives you to do so!"))
+		return FALSE
+	return TRUE
+
 
 /// The one interacting is clicker, the interacted is clicked.
 /datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
@@ -55,7 +164,7 @@
 	// Don't cancel admin quick spawn
 	if(isobserver(clicked) && check_rights_for(clicker.client, R_SPAWN))
 		return FALSE
-	target = clicked
+	weaktarget = WEAKREF(clicked)
 	ui_interact(clicker)
 	return COMSIG_MOB_CANCEL_CLICKON
 
@@ -68,6 +177,10 @@
 	return GLOB.never_state
 
 /datum/component/interaction_menu_granter/ui_interact(mob/user, datum/tgui/ui)
+	if(!user.CheckActionCooldown(0.8 SECONDS))
+		return // sex is combat, didnt ya know?
+	user.DelayNextAction(0.8 SECONDS) // mainly cus spamming the buttons will lock up your client with sex messages
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MobInteraction", "Interactions")
@@ -86,6 +199,9 @@
 	. = ..()
 	//Getting player
 	var/mob/living/self = parent
+	var/mob/living/target = GET_WEAKREF(weaktarget)
+	if(!target)
+		return
 	//Getting info
 	.["isTargetSelf"] = target == self
 	.["interactingWith"] = target != self ? "Interacting with \the [target]..." : "Interacting with yourself..."
@@ -220,11 +336,11 @@
 		if("interact")
 			if(!isliving(parent_mob))
 				return
-			if(!parent_mob.CheckAttackCooldown(usr, parent_mob))
-				return // sex is combat, didnt ya know?
-			parent_mob.DelayNextAction(0.8 SECONDS) // mainly cus spamming the buttons will lock up your client with sex messages
 			var/datum/interaction/o = SSinteractions.interactions[params["interaction"]]
 			if(o)
+				var/mob/living/target = GET_WEAKREF(weaktarget)
+				if(!target)
+					return
 				o.do_action(parent_mob, target)
 				return TRUE
 			return FALSE
@@ -374,3 +490,9 @@
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD
 #undef INTERACTION_EXTREME
+#undef SPLURT_YES
+#undef SPLURT_NO
+#undef SPLURT_HELL_NO
+#undef SPLURT_REPLY_YES
+#undef SPLURT_REPLY_NO
+#undef SPLURT_REPLY_HELLNO

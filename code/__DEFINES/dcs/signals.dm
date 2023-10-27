@@ -725,7 +725,13 @@
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened
-#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" // (datum/source, obj/item/thetrash)
+#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" //
+
+#define COMSIG_SPLURT_REQUEST "splurt_request" //
+#define COMSIG_SPLURT_REPLY "splurt_reply" //
+#define COMSIG_SPLURT_IS_SPLURTING "splurt_do" //
+#define COMSIG_SPLURT_CLEAR_FROM_BLACKLIST "COMSIG_SPLURT_CLEAR_FROM_BLACKLIST" //
+#define COMSIG_SPLURT_IS_BLACKLISTED "COMSIG_SPLURT_IS_BLACKLISTED" //
 
 
 

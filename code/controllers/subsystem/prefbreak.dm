@@ -185,5 +185,30 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 		return FALSE
 	return consumer.allow_trash_messages
 
+/// wanna cum?
+/datum/prefcheck/splurt
+	index = "splurtstuff"
+
+/datum/prefcheck/splurt/allowed(datum/preferences/consumer)
+	return TRUE //consumer.splurt_master_toggle // kinda vital here // todo, add this
+
+/// autoclimax
+/datum/prefcheck/splurt/autoclimax
+	index = NOTMERP_AUTOCLIMAX
+
+/datum/prefcheck/splurt/autoclimax/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+
+/// hear lewd-related stuff
+/datum/prefcheck/splurt/lewd_sounds
+	index = NOTMERP_LEWD_SOUNDS
+
+/datum/prefcheck/splurt/lewd_sounds/allowed(datum/preferences/consumer)
+	if(!..())
+		return FALSE
+	return CHECK_BITFIELD(consumer.toggles, LEWD_VERB_SOUNDS) // kinda vital here
+
+
 
 

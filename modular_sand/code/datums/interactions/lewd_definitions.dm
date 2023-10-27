@@ -34,6 +34,8 @@
 	var/lastlusttime = 0
 	var/lust = 0
 	var/multiorgasms = 1
+	/// if set, the next sex-type action will make u cum
+	var/ready_to_cum = FALSE // ARE YOU READY?
 	COOLDOWN_DECLARE(refractory_period)
 	COOLDOWN_DECLARE(last_interaction_time)
 	var/datum/interaction/lewd/last_lewd_datum	//Recording our last lewd datum allows us to do stuff like custom cum messages.
@@ -428,6 +430,7 @@
 	lastmoan = moan
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
+	ready_to_cum = FALSE
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
 		return FALSE
 	if(SEND_SIGNAL(src, COMSIG_MOB_PRE_CAME, target_orifice, partner))
@@ -862,18 +865,18 @@
 	if(stat != CONSCIOUS)
 		return FALSE
 
+	moan()
 	if(amount)
 		add_lust(amount)
-	var/lust = get_lust()
-	var/lust_tolerance = get_lust_tolerance()
-	if(lust >= lust_tolerance)
-		if(prob(10))
-			to_chat(src, "<b>You struggle to not orgasm!</b>")
-			moan()
-			return FALSE
-		if(lust >= (lust_tolerance * 3))
-			if(cum(partner, orifice))
-				return TRUE
+	if(ready_to_cum && cum(partner, orifice))
+		return TRUE
+	// var/lust = get_lust()
+	// var/lust_tolerance = get_lust_tolerance()
+	// if(lust >= lust_tolerance)
+	// 	if(prob(10))
+	// 		// to_chat(src, "<b>You struggle to not orgasm!</b>")
+	// 		return FALSE
+	// 	if(lust >= (lust_tolerance * 3) && CHECK_PREFS(src, NOTMERP_AUTOCLIMAX))
 	return FALSE
 
 /mob/living/proc/get_unconsenting(extreme = FALSE, list/ignored_mobs)
@@ -889,6 +892,72 @@
 		else
 			nope += M
 	return nope
+
+/datum/emote/living/prime_cum
+	key = "ready"
+
+/datum/emote/living/prime_cum/run_emote(mob/living/user, params)
+	. = ..()
+	if(user.ready_to_cum == TRUE)
+		to_chat(user, span_green("You're already on a hair trigger!"))
+		return
+	user.ready_to_cum = TRUE
+	user.visible_message(span_love("[user] siezes up, ready to cum!"), pref_check = NOTMERP_LEWD_SOUNDS)
+	user.emote("gasp")
+
+/datum/emote/living/unprime_cum
+	key = "unready"
+
+/datum/emote/living/unprime_cum/run_emote(mob/living/user, params)
+	if(user.ready_to_cum == FALSE)
+		to_chat(user, span_green("You're already not going to do it!"))
+		return
+	user.ready_to_cum = FALSE
+	user.visible_message(span_love("[user] relaxes[prob(1)?" and doesn't do it":""]!"), pref_check = NOTMERP_LEWD_SOUNDS)
+	user.emote("sigh")
+
+///VORER//
+/datum/emote/living/splurter
+	key = "erpplz"
+	key_third_person = "erpplzed"
+	restraint_check = TRUE
+	no_message = TRUE
+
+/datum/emote/living/splurter/run_emote(mob/user)
+	if(!..())
+		return
+	var/obj/item/hand_item/splurter/nummers = new(user)
+	if(user.put_in_hands(nummers)) // NOTE: put_in_hand is MUCH different from put_in_hands - NOTE THE S
+		to_chat(user, span_notice("You get ready to do sex to someone!"))
+	else
+		qdel(nummers)
+
+/// splurt ITEM
+/obj/item/hand_item/splurter
+	name = "Mechanical Erotic Role Play initiator"
+	desc = "Disclaimer: The Mechanical Erotic Role Play initiator is legally distinct from MERP(tm) and its authorized dommy subsidimommies."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "vorer"
+	attack_verb = list("merped")
+	hitsound = "sound/weapons/bite.ogg"
+	siemens_coefficient = 5 
+	force = 0
+	force_wielded = 0
+	throwforce = 0
+	wound_bonus = -100
+	sharpness = SHARP_NONE
+	attack_speed = 4
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+
+/obj/item/hand_item/splurter/examine(mob/user)
+	. = ..()
+	. += span_notice("HOW TO USE:")
+	. += "Hit someone with this thing to ask them to mechanically erotically roleplay with you. You'll need to do this if you want to do that with them!"
+
+/obj/item/hand_item/splurter/attack(mob/living/L, mob/living/carbon/user)
+	SEND_SIGNAL(user, COMSIG_SPLURT_CLEAR_FROM_BLACKLIST, L)
+	SEND_SIGNAL(L, COMSIG_SPLURT_REQUEST, user, L)
+
 /*
 //ITEM INVENTORY SLOT BITMASKS
 /// Suit slot (armors, costumes, space suits, etc.)
