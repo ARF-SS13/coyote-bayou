@@ -10,7 +10,7 @@
 
 /datum/interaction/lewd/fingerass_self/display_interaction(mob/living/user)
 	var/t_His = user.p_their()
-	var/t_Him = user.p_them()
+	var/message
 
 //help intent should be gentle, downright even loving and probably the opener for situations
 		if(user.a_intent == INTENT_HELP)
