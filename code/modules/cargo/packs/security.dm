@@ -501,7 +501,6 @@
 	cost = 5000
 	num_contained = 3
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
