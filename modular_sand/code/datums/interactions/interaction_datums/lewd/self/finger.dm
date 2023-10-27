@@ -166,6 +166,8 @@
 ///////////////////////
 
 //So, you want to make a new ERP emote, in this case, to use on yourself?  Well aren't you in luck. The Rub Crotch emote directly below here is designed to make that process AS EASY AS POSSIBLE.
+//You CAN do this.  If you could download the code, and get github desktop running then this is FULLY within YOUR ability.  Just READ the comments.  Take your time, and know that we love you, and want to see your verb pr as soon as possible!
+
 //1. Copy the name brick, put your emotes name in it
 //2. Set the new path for /datum/interaction/lewd/self/WHATEVER_NAME_YOU_DESIRE
 //3. Set the description text inside the quotes as the comments ask.
