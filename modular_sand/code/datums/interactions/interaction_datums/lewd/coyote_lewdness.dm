@@ -83,9 +83,9 @@ Happy MERPING!  ~TK<3
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-////////////////////
+////////////////////Doesn't give yet
 //Lick the Tip 0A1//
-///////////////////
+////////////////////
 //Giving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/lick_the_tip
@@ -152,9 +152,9 @@ Happy MERPING!  ~TK<3
 	partner.handle_post_sex(lust_amt[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
 ///////LICK THE TIP END/////////
 
+////////////////////Isn't taking pleasure
+//Tip To Lip 0A2////
 ////////////////////
-//Tip To Lip 0A2//
-///////////////////
 //Recieving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/tip_to_lip
@@ -223,9 +223,9 @@ Happy MERPING!  ~TK<3
 ///////TIP TO LIP END/////////
 
 
-////////////////////
+////////////////////// Not building arousal
 //Eager Reciever 0A3//
-///////////////////
+//////////////////////
 //Recieving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/eager_reciever
@@ -287,7 +287,7 @@ Happy MERPING!  ~TK<3
 			"is rapidly losing control because of what <b>[partner]'s</b> doing to them!", //An example of pronoun storage usage inside those brackets.
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 					'modular_sand/sound/interactions/bang1.ogg',
 					'modular_sand/sound/interactions/bang2.ogg',
