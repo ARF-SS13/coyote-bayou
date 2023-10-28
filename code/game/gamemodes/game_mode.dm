@@ -89,7 +89,7 @@
 	//finalize_monster_hunters() Disabled for now
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/display_roundstart_logout_report), ROUNDSTART_LOGOUT_REPORT_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC_REF(display_roundstart_logout_report)), ROUNDSTART_LOGOUT_REPORT_TIME)
 
 	if(prob(20)) //CIT CHANGE - adds a 20% chance for the security level to be the opposite of what it normally is
 		flipseclevel = TRUE

@@ -460,7 +460,7 @@
 
 		if(prob(1))
 			emote("me", EMOTE_VISIBLE, pick("dances around.","chases its tail!"))
-			INVOKE_ASYNC(GLOBAL_PROC, .proc/dance_rotate, src, null, TRUE)
+			INVOKE_ASYNC(GLOBAL_PROC_REF(dance_rotate), src, null, TRUE)
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/narsie_act()
 	playsound(src, 'sound/magic/demon_dies.ogg', 75, TRUE)
