@@ -36,7 +36,7 @@
 	var/mob/parent_mob = parent
 	if(!parent_mob.client)
 		return COMPONENT_INCOMPATIBLE
-	splurting_with |= WEAKREF(parent)
+	splurting_with |= parent_mob.ckey
 	. = ..()
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
@@ -102,7 +102,7 @@
 		)
 	switch(what_do)
 		if(SPLURT_YES)
-			splurting_with |= WEAKREF(clicker)
+			splurting_with |= clicker.ckey
 			to_chat(parent, span_love("You gave [clicker] the green light! You and they can do mechanical ERP!"))
 			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, src, SPLURT_YES)
 			clicker.log_message("[parent] gave [clicker] consent for lewd stuff")
@@ -150,7 +150,7 @@
 	switch(reply)
 		if(SPLURT_REPLY_YES)
 			to_chat(parent, span_love("[them] gave the green light! You and they can do mechanical ERP!"))
-			splurting_with |= WEAKREF(them)
+			splurting_with |= them.ckey
 		if(SPLURT_REPLY_NO)
 			to_chat(parent, span_userdanger("[them] declines your offer to mechanically ERP with you!"))
 			return
@@ -164,7 +164,7 @@
 	if(!istype(requester))
 		return FALSE
 	var/datum/weakref/them = WEAKREF(requester)
-	if(!(them in splurting_with))
+	if(!(them.ckey in splurting_with))
 		return FALSE
 	if(send_signal && !SEND_SIGNAL(requester, COMSIG_SPLURT_IS_SPLURTING, parent, FALSE))
 		return FALSE

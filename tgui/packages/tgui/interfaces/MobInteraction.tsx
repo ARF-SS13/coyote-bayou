@@ -199,7 +199,7 @@ const InteractionsTab = (props, context) => {
   ] = useLocalState(context, 'searchText', '');
   const interactions = sortInteractions(data.interactions, searchText) || [];
   let tabcolor = "default"
-  switch (interaction.type) {
+  switch (interactions.type) {
     case 0:
       tabcolor = "default";
       break;
