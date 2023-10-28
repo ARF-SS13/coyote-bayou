@@ -9,7 +9,7 @@
 	var/fucktarget = "vagina"
 
 /datum/interaction/lewd/oral/blowjob
-	description = "Suck them off."
+	description = "Partner/Crotch - Suck them off."
 	require_target_vagina = null
 	require_target_penis = REQUIRE_ANY
 	fucktarget = "penis"

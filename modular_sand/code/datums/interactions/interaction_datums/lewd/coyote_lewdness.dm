@@ -160,7 +160,7 @@ Happy MERPING!  ~TK<3
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	partner.handle_post_sex(lust_amt[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
+	partner.handle_post_sex(lust_increase[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
 ///////LICK THE TIP END/////////
 
 ////////////////////Isn't taking pleasure
