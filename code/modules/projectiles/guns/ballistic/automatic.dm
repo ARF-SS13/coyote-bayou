@@ -3074,6 +3074,7 @@
 * - Rare LMG
 * - High recoil with slowdown
 * * * * * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/rpd
 	name = "Russian RPK LMG"
 	desc = "A soviet made Russian LMG. Known as the RPK, ths LMG was champered in 7.62 Soviet. Now rechambered to .308 with a 40 drum mag, it has quite the kick for recoil and a bit heavy."
@@ -3098,10 +3099,19 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+/* * * * * * * * * * *
+* Oststrauß
+* 5.56 German LMG
+* - 60rnd Box only
+* - Fast and Faster RoF
+* - Harder Hitting
+* - Unique
+* - High recoil with slowdown
+* * * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/fastlmg
-	name = "OstStrauss LMG"
-	desc = "A OstStrauss LMG, this LMG is chambered in 5.56x45 NATO. The gun itself was created as the great great grandson of the distant past MG3, which was derived from the MG-42 which was derived from the MG-34. With a fast fire rate and a toggle between 'slow' and 'fast', it is a LMG perfect for squad cover. Albiet it eats ammo like no tomorrow."
+	name = "Oststrauß"
+	desc = "Chambered in 5.56x45 NATO, the Oststrauß is the great great grandson of the MG3, which itself was derived from the MG-42. Very little has changed between each model, showing the design to be one fit for centuries of warfare."
 	item_state = "mg3"
 	icon_state = "mg3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'

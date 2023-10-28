@@ -891,10 +891,10 @@
 /obj/item/projectile/beam/laser/tg/particle
 	name = "hyper-velocity particle beam"
 	icon_state = "emitter"
-	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload
-	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "420634" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
+	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload in the field
+	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "1000" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
 	wound_bonus = 60 // nasty, but it's still a laser
-	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload
+	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload in the field
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
