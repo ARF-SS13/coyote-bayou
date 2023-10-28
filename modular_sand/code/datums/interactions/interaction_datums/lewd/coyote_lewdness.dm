@@ -91,7 +91,7 @@ Happy MERPING!  ~TK<3
 // (user.restrained()  Checks if the user is restrained.
 // [pick("word-a", "word-b)]  We can use this to create more dynamic language in messages
 
-////////////////////Doesn't give yet
+////////////////////
 //Lick the Tip 0A1//
 ////////////////////
 //Giving Verb Prototype
@@ -229,7 +229,6 @@ Happy MERPING!  ~TK<3
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	partner.handle_post_sex(0[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////TIP TO LIP END/////////
 
