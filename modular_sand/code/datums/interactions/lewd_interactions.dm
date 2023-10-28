@@ -501,7 +501,7 @@
 					to_chat(user, span_warning("For some reason, you don't want to do this to [target]."))
 				return FALSE
 
-	if(!SEND_SIGNAL(target, COMSIG_SPLURT_IS_SPLURTING, user, target))
+	if(!SEND_SIGNAL(target, COMSIG_SPLURT_IS_SPLURTING, user, TRUE))
 		return FALSE
 	
 	// if(require_ooc_consent) // ^-- that is consent!

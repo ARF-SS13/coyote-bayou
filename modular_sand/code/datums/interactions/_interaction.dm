@@ -48,21 +48,21 @@
 	if(SSinteractions.is_blacklisted(user))
 		return FALSE
 
-	if(require_user_mouth)
-		if(!user.has_mouth() && !issilicon(user)) //Again, silicons do not have the required parts normally.
-			if(!silent)
-				to_chat(user, span_warning("You don't have a mouth."))
-			return FALSE
+	// if(require_user_mouth)
+	// 	if(!user.has_mouth() && !issilicon(user)) //Again, silicons do not have the required parts normally.
+	// 		if(!silent)
+	// 			to_chat(user, span_warning("You don't have a mouth."))
+	// 		return FALSE
 
-		if(!user.mouth_is_free() && !issilicon(user)) //Borgs cannot wear mouthgear, bypassing the check.
-			if(!silent)
-				to_chat(user, span_warning("Your mouth is covered."))
-			return FALSE
+	// 	if(!user.mouth_is_free() && !issilicon(user)) //Borgs cannot wear mouthgear, bypassing the check.
+	// 		if(!silent)
+	// 			to_chat(user, span_warning("Your mouth is covered."))
+	// 		return FALSE
 
-	if(require_user_hands && !user.has_hands() && !issilicon(user)) //Edited to allow silicons to interact.
-		if(!silent)
-			to_chat(user, span_warning("You don't have hands."))
-		return FALSE
+	// if(require_user_hands && !user.has_hands() && !issilicon(user)) //Edited to allow silicons to interact.
+	// 	if(!silent)
+	// 		to_chat(user, span_warning("You don't have hands."))
+	// 	return FALSE
 
 	if(COOLDOWN_FINISHED(user, last_interaction_time))
 		return TRUE
@@ -77,27 +77,27 @@
 	if(SSinteractions.is_blacklisted(target))
 		return FALSE
 
-	if(!user_is_target)
-		if(user == target)
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>You can't do that to yourself.</span>")
-			return FALSE
+	// if(!user_is_target)
+	// 	if(user == target)
+	// 		if(!silent)
+	// 			to_chat(user, "<span class = 'warning'>You can't do that to yourself.</span>")
+	// 		return FALSE
 
-	if(require_target_mouth)
-		if(!target.has_mouth())
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>They don't have a mouth.</span>")
-			return FALSE
+	// if(require_target_mouth)
+	// 	if(!target.has_mouth())
+	// 		if(!silent)
+	// 			to_chat(user, "<span class = 'warning'>They don't have a mouth.</span>")
+	// 		return FALSE
 
-		if(!target.mouth_is_free() && !issilicon(target))
-			if(!silent)
-				to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
-			return FALSE
+	// 	if(!target.mouth_is_free() && !issilicon(target))
+	// 		if(!silent)
+	// 			to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
+	// 		return FALSE
 
-	if(require_target_hands && !target.has_hands() && !issilicon(target))
-		if(!silent)
-			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
-		return FALSE
+	// if(require_target_hands && !target.has_hands() && !issilicon(target))
+	// 	if(!silent)
+	// 		to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
+	// 	return FALSE
 
 	return TRUE
 

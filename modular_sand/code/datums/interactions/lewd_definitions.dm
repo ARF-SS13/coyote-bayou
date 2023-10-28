@@ -955,8 +955,7 @@
 	. += "Hit someone with this thing to ask them to mechanically erotically roleplay with you. You'll need to do this if you want to do that with them!"
 
 /obj/item/hand_item/splurter/attack(mob/living/L, mob/living/carbon/user)
-	SEND_SIGNAL(user, COMSIG_SPLURT_CLEAR_FROM_BLACKLIST, L)
-	SEND_SIGNAL(L, COMSIG_SPLURT_REQUEST, user, L)
+	SEND_SIGNAL(L, COMSIG_SPLURT_REQUEST, user)
 
 /*
 //ITEM INVENTORY SLOT BITMASKS

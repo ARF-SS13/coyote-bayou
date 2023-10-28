@@ -46,7 +46,7 @@
 			"slaps [t_His] asshole hard!",
 			"is fingering [t_His] butthole like [t_His] life depends on it!",
 			"groans as they fingerfuck their own ass!",
-			"fingers [t_His] booty so hard them begins to shake!",
+			"fingers [t_His] booty so hard they begin to shake!",
 			"is fingering [t_His] butt like it owes them money!",
 			)
 

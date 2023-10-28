@@ -198,6 +198,23 @@ const InteractionsTab = (props, context) => {
     setSearchText,
   ] = useLocalState(context, 'searchText', '');
   const interactions = sortInteractions(data.interactions, searchText) || [];
+  let tabcolor = "default"
+  switch (interaction.type) {
+    case 0:
+      tabcolor = "default";
+      break;
+    case 1:
+      tabcolor = "pink";
+      break;
+    case 2:
+      tabcolor = "red";
+      break;
+    case 3:
+      tabcolor = "yellow";
+      break;
+    default:
+      tabcolor = "default";
+  }
   return (
     <Section overflow="auto" position="absolute" right="6px" left="6px" bottom={(364 - innerHeight) + "px"} top="58px">
       <Table>
@@ -208,7 +225,7 @@ const InteractionsTab = (props, context) => {
                 <Button
                   key={interaction.key}
                   content={interaction.desc}
-                  color={interaction.type === 2 ? "red" : interaction.type ? "pink" : "default"}
+                  color={tabcolor}
                   fluid
                   mb={0.3}
                   onClick={() => act('interact', {

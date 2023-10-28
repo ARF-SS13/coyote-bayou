@@ -58,3 +58,17 @@
 	simple_message = "USER holds TARGET's hand."
 	needs_physical_contact = TRUE
 	max_distance = 25
+
+/datum/interaction/consent
+	description = "Request consent for lewd stuff."
+	require_user_hands = TRUE
+	simple_message = "USER waves to TARGET."
+	needs_physical_contact = FALSE
+	max_distance = 25
+
+/datum/interaction/consent/do_action(mob/living/user, mob/living/target)
+	if(SEND_SIGNAL(target, COMSIG_SPLURT_IS_SPLURTING, user) || SEND_SIGNAL(user, COMSIG_SPLURT_IS_SPLURTING, target))
+		SEND_SIGNAL(user, COMSIG_SPLURT_REVOKE, target)
+		return
+	SEND_SIGNAL(target, COMSIG_SPLURT_REQUEST, user)
+
