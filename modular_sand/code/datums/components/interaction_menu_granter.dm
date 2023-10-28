@@ -164,7 +164,7 @@
 	if(!istype(requester))
 		return FALSE
 	var/datum/weakref/them = WEAKREF(requester)
-	if(!(them.ckey in splurting_with))
+	if(!(requester.ckey in splurting_with))
 		return FALSE
 	if(send_signal && !SEND_SIGNAL(requester, COMSIG_SPLURT_IS_SPLURTING, parent, FALSE))
 		return FALSE
