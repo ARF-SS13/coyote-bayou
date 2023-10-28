@@ -69,23 +69,11 @@
 #define GRASS_SPONTANEOUS 		  2
 #define GRASS_WEIGHT			  4
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
+	/obj/structure/flora/grass/wasteland = 1,
+	))
+
+GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 10,
-	/obj/structure/flora/wasteplant/wild_horsenettle = 5,
-	/obj/structure/flora/wasteplant/fever_blossom = 3,
-	/obj/structure/flora/wasteplant/wild_broc = 7,
-	/obj/structure/flora/wasteplant/wild_mesquite = 4,
-	/obj/structure/flora/wasteplant/wild_feracactus = 5,
-	/obj/structure/flora/wasteplant/wild_punga = 5,
-	/obj/structure/flora/wasteplant/wild_coyote = 5,
-	/obj/structure/flora/wasteplant/wild_tato = 5,
-	/obj/structure/flora/wasteplant/wild_yucca = 5,
-	/obj/structure/flora/wasteplant/wild_mutfruit = 5,
-	/obj/structure/flora/wasteplant/wild_prickly = 5,
-	/obj/structure/flora/wasteplant/wild_datura = 5,
-	/obj/structure/flora/wasteplant/wild_buffalogourd = 5,
-	/obj/structure/flora/wasteplant/wild_pinyon = 3,
-	/obj/structure/flora/wasteplant/wild_xander = 5,
-	/obj/structure/flora/wasteplant/wild_agave = 5,
 	/obj/structure/flora/tree_stump = 1,
 	/obj/structure/flora/tree_log = 1,
 	/obj/structure/flora/tree_timber = 1,
@@ -127,23 +115,19 @@ GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/coyote/twentyeight = 1,
 	/obj/structure/flora/grass/coyote/twentynine = 1,
 	/obj/structure/flora/grass/coyote/thirty = 1,
-	/obj/structure/flora/tree/wasteland = 2,
-	/obj/structure/flora/tree/pink_tree = 3,
-	/obj/structure/flora/tree/oak_one = 3,
-	/obj/structure/flora/tree/oak_two = 3,
-	/obj/structure/flora/tree/oak_three = 3,
-	/obj/structure/flora/tree/oak_four = 3,
-	/obj/structure/flora/tree/oak_five = 3,
-	/obj/structure/flora/wild_plant/thistle = 10,
-	/obj/structure/flora/wild_plant/petunia = 10,
-	/obj/structure/flora/wild_plant/petunia/purple = 10,
-	/obj/structure/flora/wild_plant/petunia/purplewhite = 10,
-	/obj/structure/flora/wild_plant/petunia/redwhite =  10,
-	/obj/structure/flora/wild_plant/petunia/bluewhite = 10
-	))
-
-GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
-	/obj/structure/flora/grass/wasteland = 1
+	/obj/structure/flora/tree/wasteland = 4,
+	/obj/structure/flora/tree/pink_tree = 1,
+	/obj/structure/flora/tree/oak_one = 2,
+	/obj/structure/flora/tree/oak_two = 2,
+	/obj/structure/flora/tree/oak_three = 2,
+	/obj/structure/flora/tree/oak_four = 2,
+	/obj/structure/flora/tree/oak_five = 2,
+	/obj/structure/flora/wild_plant/thistle = 5,
+	/obj/structure/flora/wild_plant/petunia = 5,
+	/obj/structure/flora/wild_plant/petunia/purple = 5,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 5,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  5,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 5
 	))
 
 /turf/open/indestructible/ground/outside/dirthole
