@@ -360,3 +360,9 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/teppi
+	name = "Teppi Ears"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "teppi"
+	matrixed_sections = MATRIX_RED_GREEN

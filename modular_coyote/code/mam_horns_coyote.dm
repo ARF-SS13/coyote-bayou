@@ -132,3 +132,22 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/horns/teppi
+	name = "Teppi horns"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "teppi"
+
+
+/datum/sprite_accessory/horns/antlerswide
+	name = "wide antlers"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "antlerswide"
+
+
+/datum/sprite_accessory/horns/jackalope
+	name = "jackalope horns"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "jackalope"
+
+
