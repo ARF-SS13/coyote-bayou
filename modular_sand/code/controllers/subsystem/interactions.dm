@@ -130,9 +130,9 @@ SUBSYSTEM_DEF(interactions)
 	else
 		consents[keyname] = ASKED_ASKER
 	if(target)
-		to_chat(target, span_greentext("You have given [target] consent to do lewd things with you!"))
+		to_chat(target, span_greentext("You have given [requesting] consent to do lewd things with you!"))
 	if(requesting)
-		to_chat(requesting, span_greentext("[requesting] has given you consent to do lewd things with them!"))
+		to_chat(requesting, span_greentext("[target] has given you consent to do lewd things with them!"))
 
 /// consenting! target declined consent
 /datum/controller/subsystem/interactions/proc/decline_consent(mob/decliner, mob/denied, ahelp)

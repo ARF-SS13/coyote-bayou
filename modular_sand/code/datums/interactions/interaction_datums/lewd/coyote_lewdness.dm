@@ -98,11 +98,9 @@ Happy MERPING!  ~TK<3
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/lick_the_tip
 	description = "Partner/Crotch - Lick the Tip"
+	require_user_hands = TRUE
 	interaction_sound = null
 	max_distance = 1
-	write_log_user = "licked the tip" //The log for the interactiont to show admins if, for some insane reason, they need to look up what you have done to yourself/others. Probably not needed with OUR community, but I can see the logic behind wanting it. 
-	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
-
 
 ////////////
 //VERBOSITY//
@@ -127,7 +125,7 @@ Happy MERPING!  ~TK<3
 	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
 	//It does require a bit of forethought, but there you have it.
 	var/message
-	var/lust_increase = LOW_LUST
+
 	//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
@@ -138,7 +136,6 @@ Happy MERPING!  ~TK<3
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
-		lust_increase = 10
 		message = "[pick(
 			"swirls [t_their] tongue around <b>[partner]'s</b> cockhead.",
 			)]"
@@ -158,9 +155,13 @@ Happy MERPING!  ~TK<3
 			"is suckling on <b>[partner]'s</b> cockhead like [t_their] life depends on it!",
 			)]"
 
+
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	partner.handle_post_sex(lust_increase[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
+	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
+	partner.handle_post_sex(lust_amt, CUM_TARGET_HAND) 
+
+
+
 ///////LICK THE TIP END/////////
 
 ////////////////////Isn't taking pleasure
