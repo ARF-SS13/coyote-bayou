@@ -42,10 +42,6 @@
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
-	RegisterSignal(parent, COMSIG_SPLURT_REVOKE, .proc/splurt_revoke)
-	RegisterSignal(parent, COMSIG_SPLURT_REQUEST, .proc/splurt_request)
-	RegisterSignal(parent, COMSIG_SPLURT_REPLY, .proc/handle_splurt_reply)
-	RegisterSignal(parent, COMSIG_SPLURT_IS_SPLURTING, .proc/are_we_fucking)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
@@ -55,120 +51,6 @@
 /datum/component/interaction_menu_granter/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT, COMSIG_SPLURT_REQUEST))
 	. = ..()
-
-/// Clicker wants to ask us if we want to do cool things together 
-/// We are clicked, clicker wants to be added to our cool list
-/// why is clicked an arg here? well its simple, really
-/datum/component/interaction_menu_granter/proc/splurt_request(mob/living/us, mob/living/them)
-	SIGNAL_HANDLER
-	if(!istype(them))
-		return FALSE
-	if(SEND_SIGNAL(them, COMSIG_SPLURT_IS_SPLURTING, parent, FALSE))
-		to_chat(them, span_green("They already want it!"))
-		to_chat(parent, span_green("[them] appreciates the consent you've given them! <3"))
-		return
-	INVOKE_ASYNC(src, .proc/splurt_consent, them)
-
-/// Clicker wants to ask us if we want to do cool things together 
-/// We are clicked, clicker wants to be added to our cool list
-/// why is clicked an arg here? well its simple, really
-/datum/component/interaction_menu_granter/proc/splurt_revoke(mob/living/clicked, mob/living/clicker)
-	SIGNAL_HANDLER
-	if(!istype(clicker))
-		return FALSE
-	if(!SEND_SIGNAL(clicker, COMSIG_SPLURT_IS_SPLURTING, parent, FALSE))
-		to_chat(parent, span_green("You aren't doing anything interesting with [clicker]!"))
-		return
-	INVOKE_ASYNC(src, .proc/splurt_unconsent, clicker)
-
-#define SPLURT_YES "Yes"
-#define SPLURT_NO "No"
-#define SPLURT_HELL_NO "No, and call an admin!"
-#define SPLURT_YES_HELL_NO "Yes, and call an admin!"
-#define SPLURT_REPLY_YES 1
-#define SPLURT_REPLY_NO 2
-#define SPLURT_REPLY_HELLNO 3
-
-/datum/component/interaction_menu_granter/proc/splurt_consent(mob/living/clicker)
-	if(!istype(clicker))
-		return
-	var/what_do = alert(
-		parent,
-		"Hey! [clicker] wants to engage in mechanical erotic roleplay adventures with you! Is this alright?",
-		"Somebody likes you!",
-		SPLURT_YES,
-		SPLURT_NO,
-		SPLURT_HELL_NO
-		)
-	switch(what_do)
-		if(SPLURT_YES)
-			splurting_with |= clicker.ckey
-			to_chat(parent, span_love("You gave [clicker] the green light! You and they can do mechanical ERP!"))
-			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, src, SPLURT_YES)
-			clicker.log_message("[parent] gave [clicker] consent for lewd stuff")
-		if(SPLURT_NO)
-			to_chat(parent, span_userdanger("You decline [clicker]'s offer to mechanically ERP with them."))
-			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, src, SPLURT_NO)
-		if(SPLURT_HELL_NO)
-			message_admins(span_boldannounce("HEY! [clicker] wanted to mechanically ERP with [parent], and [parent] said no, and is calling for an admin!"))
-			to_chat(parent, span_userdanger("You decline [clicker]'s offer to mechanically ERP with them, and called for an admin! One will be with you shortly!"))
-			SEND_SIGNAL(clicker, COMSIG_SPLURT_REPLY, src, SPLURT_NO)
-			for(var/client/C in GLOB.admins)
-				SEND_SOUND(C, sound('sound/effects/meow1.ogg')) // Someow's in troubmeow!
-
-/datum/component/interaction_menu_granter/proc/splurt_unconsent(mob/living/them)
-	if(!istype(them))
-		return
-	var/what_do = alert(
-		parent,
-		"Revoke permission for [them] to do lewd things to you?",
-		"No means no",
-		SPLURT_NO,
-		SPLURT_YES,
-		SPLURT_YES_HELL_NO // v0v
-		)
-	switch(what_do)
-		if(SPLURT_NO)
-			to_chat(parent, span_notice("Never mind!"))
-			return
-		if(SPLURT_YES)
-			to_chat(parent, span_userdanger("You have revoked [them]'s permission to mechanically ERP with you!!!"))
-			to_chat(them, span_userdanger("[parent] has revoked their permission for you to mechanically ERP with them!!!"))
-		if(SPLURT_HELL_NO)
-			message_admins(span_userdanger("HEY! [parent] has revoked permission for [parent] to mechanically ERP with them, and is calling for an admin for help!"))
-			to_chat(parent, span_userdanger("You have revoked [them]'s permission to mechanically ERP with you, and called an admin for help!!!"))
-			to_chat(them, span_userdanger("[parent] has revoked their permission for you to mechanically ERP with them!!!"))
-			SEND_SIGNAL(them, COMSIG_SPLURT_REPLY, src, SPLURT_NO)
-			for(var/client/C in GLOB.admins)
-				SEND_SOUND(C, sound('sound/effects/meow1.ogg')) // Someow's in troubmeow!
-
-/// the person we clicked on has replied! 
-/datum/component/interaction_menu_granter/proc/handle_splurt_reply(mob/living/us, mob/living/them, reply)
-	SIGNAL_HANDLER
-	if(!istype(them))
-		return
-	switch(reply)
-		if(SPLURT_REPLY_YES)
-			to_chat(parent, span_love("[them] gave the green light! You and they can do mechanical ERP!"))
-			splurting_with |= them.ckey
-		if(SPLURT_REPLY_NO)
-			to_chat(parent, span_userdanger("[them] declines your offer to mechanically ERP with you!"))
-			return
-		if(SPLURT_REPLY_HELLNO)
-			to_chat(parent, span_userdanger("[them] declines your offer to mechanically ERP with you!"))
-			return // cool
-
-/// The one interacting is clicker, the interacted is clicked.
-/// 'us' is required for compiling
-/datum/component/interaction_menu_granter/proc/are_we_fucking(datum/source, mob/living/requester, send_signal = TRUE)
-	if(!istype(requester))
-		return FALSE
-	var/datum/weakref/them = WEAKREF(requester)
-	if(!(requester.ckey in splurting_with))
-		return FALSE
-	if(send_signal && !SEND_SIGNAL(requester, COMSIG_SPLURT_IS_SPLURTING, parent, FALSE))
-		return FALSE
-	return TRUE
 
 /// The one interacting is clicker, the interacted is clicked.
 /datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
@@ -507,9 +389,3 @@
 #undef INTERACTION_LEWD
 #undef INTERACTION_EXTREME
 #undef INTERACTION_CONSENT
-#undef SPLURT_YES
-#undef SPLURT_NO
-#undef SPLURT_HELL_NO
-#undef SPLURT_REPLY_YES
-#undef SPLURT_REPLY_NO
-#undef SPLURT_REPLY_HELLNO

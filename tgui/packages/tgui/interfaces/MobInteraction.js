@@ -268,7 +268,7 @@ const InteractionsTab = (props, context) => {
  * Interaction sorter! also search box
  */
 export const sortInteractions = (interactions, searchText = '') => {
-  const testSearch = createSearch<InteractionData>(searchText,
+  const testSearch = createSearch(searchText,
     interaction => interaction.desc);
   return flow([
     // Optional search term
@@ -283,7 +283,7 @@ export const sortInteractions = (interactions, searchText = '') => {
  * Genital sorter!
  */
 export const sortGenitals = (genitals, searchText = '') => {
-  const testSearch = createSearch<GenitalData>(searchText,
+  const testSearch = createSearch(searchText,
     genital => genital.name);
   return flow([
     // Optional search term
@@ -471,7 +471,6 @@ const CharacterPrefsTab = (props, context) => {
                 value: 0,
               })} />
           </LabeledList.Item>
-          ) : (null)}
         </LabeledList>
       </Flex>
     </Section>

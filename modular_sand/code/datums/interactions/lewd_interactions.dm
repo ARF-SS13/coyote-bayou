@@ -501,7 +501,9 @@
 					to_chat(user, span_warning("For some reason, you don't want to do this to [target]."))
 				return FALSE
 
-	if(!SEND_SIGNAL(target, COMSIG_SPLURT_IS_SPLURTING, user, TRUE))
+	if(!SSinteractions.check_consent(user, target))
+		if(!silent)
+			to_chat(user, span_warning("You need their consent to do that! You need to type [span_green("*consent")] and then hit them with what the emote gives you!"))
 		return FALSE
 	
 	// if(require_ooc_consent) // ^-- that is consent!

@@ -918,8 +918,8 @@
 
 ///VORER//
 /datum/emote/living/splurter
-	key = "erpplz"
-	key_third_person = "erpplzed"
+	key = "consent"
+	key_third_person = "consented"
 	restraint_check = TRUE
 	no_message = TRUE
 
@@ -955,7 +955,7 @@
 	. += "Hit someone with this thing to ask them to mechanically erotically roleplay with you. You'll need to do this if you want to do that with them!"
 
 /obj/item/hand_item/splurter/attack(mob/living/L, mob/living/carbon/user)
-	SEND_SIGNAL(L, COMSIG_SPLURT_REQUEST, user)
+	SSinteractions.add_or_remove_consent(user, L, TRUE)
 
 /*
 //ITEM INVENTORY SLOT BITMASKS
