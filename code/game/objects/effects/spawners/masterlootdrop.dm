@@ -339,6 +339,8 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger = 10,
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 10,
 		/obj/item/gun/ballistic/revolver/Lemat = 10,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 5,
+		/obj/item/gun/magic/wand/kelpmagic/sparky = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_cowboy
@@ -359,6 +361,10 @@
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 3,
 		/obj/item/gun/ballistic/automatic/c96auto = 7,
 		/obj/item/gun/ballistic/shotgun/trench = 7,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt = 5,
+		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
+		/obj/item/gun/magic/staff/kelpmagic/magicmissile = 5,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_cowboy
@@ -378,6 +384,9 @@
 		/obj/item/gun/ballistic/automatic/lewis = 1,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 5, // for the meme
+		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
+		/obj/item/gun/magic/staff/kelpmagic/lightning = 3,
+		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
 	)
 
 ///////////////////////////
