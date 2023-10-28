@@ -45,7 +45,8 @@ SUBSYSTEM_DEF(recoil)
 	// var/recoil_equation_fuck_it_just_gauss_it = 1
 	// var/list/recoil_equation = list()
 	// var/recoil_index = 1
-	var/recoil_equation_gauss_mean_mult = 0 // recoil of 20 has a mean of 0 degree offset
+	/// forewarning: statistics are hard
+	var/recoil_equation_gauss_mean_mult = 0.5 // recoil of 20 has a mean of 10 degree total offset
 	var/recoil_equation_gauss_std_mult = 0.5 // recoil of 20 has a 68% chance to be within +-10 deg offset, 95% chance to be between +-20
 
 	/// Item recoil datums (cus I am tired of them just floating around in the 'nowhere')
@@ -74,12 +75,12 @@ SUBSYSTEM_DEF(recoil)
 	var/recoil_movement_increase_multiplier = 1
 	var/recoil_shoot_increase_multiplier = 1
 
-	var/recoil_movement_heaviness_mult = 0.5
-	var/recoil_movement_heaviness_scoot_bonus_mult = 3
+	var/recoil_movement_heaviness_mult = 1
+	var/recoil_movement_heaviness_scoot_bonus_mult = 1
 	var/recoil_movement_slowest_speed = 3
 	var/recoil_movement_speed_mult = 1
 
-	var/recoil_offset_low_spread_threshold = 8
+	var/recoil_offset_low_spread_threshold = 3
 	var/recoil_offset_premult = 80
 	var/recoil_offset_postmult = 0.01
 
@@ -183,7 +184,7 @@ SUBSYSTEM_DEF(recoil)
 // 		recoil_equation[offset] = fuckhuge_list_of_numbers
 // 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
 
-/datum/controller/subsystem/recoil/proc/get_output_offset(spread, obj/item/gun/shoot)
+/datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
 	spread = clamp(spread, 0, recoil_max_spread)
 	if(spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
@@ -433,7 +434,7 @@ SUBSYSTEM_DEF(recoil)
 	COOLDOWN_START(src, last_shoot_time, SSrecoil.recoil_post_shoot_fast_decay_delay)
 	var/recoil_before = shoot_recoil
 	shots_did_this_tick++
-	var/mult = get_shoot_recoil_mods(shooter, my_gun)
+	var/mult = get_shoot_recoil_mult(shooter, my_gun)
 	var/modify_by_this_much = round(recoil_buildup * mult * SSrecoil.recoil_shoot_increase_multiplier, 0.1)
 	shoot_recoil = clamp(shoot_recoil + modify_by_this_much, 0, SSrecoil.recoil_max_shoot)
 	update_mob(shooter)
@@ -441,9 +442,22 @@ SUBSYSTEM_DEF(recoil)
 		to_chat(shooter, "Added shoot [recoil_buildup] * [mult] * [SSrecoil.recoil_shoot_increase_multiplier] = [modify_by_this_much]. Recoil: [recoil_before] -> [shoot_recoil]")
 	return TRUE
 
-/datum/mob_recoil/proc/get_shoot_recoil_mods(mob/living/shooter, obj/item/gun/my_gun)
+/datum/mob_recoil/proc/get_shoot_recoil_mult(mob/living/shooter, obj/item/gun/my_gun)
 	var/mult = 1
-	//mult *= get_spray_factor()
+	if(!isliving(shooter))
+		return mult
+	if(HAS_TRAIT(shooter,TRAIT_PANICKED_ATTACKER))
+		return 100 // lol
+	if(HAS_TRAIT(shooter, SPREAD_CONTROL))
+		mult *= 0.5 // Spread control! used by power armor
+	else if(HAS_TRAIT(shooter,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+		mult *= 0.75 // Nice shot!
+	if(HAS_TRAIT(shooter,TRAIT_NEARSIGHT)) //Yes.
+		mult *= 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
+	if(HAS_TRAIT(shooter,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+		mult *= 3//This is cripplingly bad. Trust me.
+	if(HAS_TRAIT(shooter,TRAIT_FEV)) //You really shouldn't try this at home.
+		mult *= 5 //YOU AINT HITTING SHIT BROTHA. REALLY.
 	return mult
 
 /datum/mob_recoil/proc/get_scoot_factor()
@@ -495,11 +509,7 @@ SUBSYSTEM_DEF(recoil)
 /datum/mob_recoil/proc/get_shoot_recoil(mob/living/shooter)
 	if(!isliving(shooter))
 		return 0
-	if(HAS_TRAIT(shooter, TRAIT_INSANE_AIM))
-		return 0
 	var/recout = min(shoot_recoil, SSrecoil.recoil_max_shoot)
-	if(HAS_TRAIT(shooter, SPREAD_CONTROL))
-		return recout * 0.5
 	return recout
 
 /datum/mob_recoil/proc/get_movement_recoil(mob/living/shooter, hide_it)
@@ -676,9 +686,11 @@ SUBSYSTEM_DEF(recoil)
 		return 0 // wielding it with both hands keeps it steady! unless its an SMG
 	var/heaviness = G.slowdown
 	if(scoot_factor > 0) // negative scoot factor means its improving your aim
-		heaviness *= SSrecoil.recoil_movement_heaviness_mult
+		heaviness *= scoot_factor * SSrecoil.recoil_movement_heaviness_mult
+		if(HAS_TRAIT(walker, TRAIT_NICE_SHOT))
+			heaviness *= 0.1 // Nice shot! more like steady aim
 	else if(scoot_factor < 0)
-		heaviness *= SSrecoil.recoil_movement_heaviness_scoot_bonus_mult
+		heaviness *= scoot_factor * SSrecoil.recoil_movement_heaviness_scoot_bonus_mult
 	return heaviness
 
 /datum/mob_recoil/proc/get_movement_stiffness_recoil(mob/living/walker)

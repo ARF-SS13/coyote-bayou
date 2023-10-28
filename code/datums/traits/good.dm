@@ -1567,7 +1567,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/straightshooter,
 		/datum/quirk/poor_aim,
 	)
-	mob_trait = TRAIT_INSANE_AIM
+	mob_trait = TRAIT_CRIT_SHOT
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use a lot more work...")
 	medical_record_text = "Patient flicked a fly out of the air using a toothpick."
