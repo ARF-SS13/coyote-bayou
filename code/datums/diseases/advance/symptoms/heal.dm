@@ -278,7 +278,7 @@
 
 /datum/symptom/heal/coma/proc/coma(mob/living/M)
 	if(deathgasp)
-		INVOKE_ASYNC(M, /mob/living.proc/emote, "deathgasp")
+		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living,emote), "deathgasp")
 	M.fakedeath("regenerative_coma", TRUE)
 	M.update_stat()
 	M.update_mobility()

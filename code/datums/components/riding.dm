@@ -207,7 +207,7 @@
 		to_chat(user, span_notice("You'll need the keys in one of your hands to [drive_verb] [AM]."))
 
 /datum/component/riding/proc/Unbuckle(atom/movable/M)
-	addtimer(CALLBACK(parent, /atom/movable/.proc/unbuckle_mob, M), 0, TIMER_UNIQUE)
+	addtimer(CALLBACK(parent, TYPE_PROC_REF(/atom/movable/,unbuckle_mob), M), 0, TIMER_UNIQUE)
 
 /datum/component/riding/proc/Process_Spacemove(direction)
 	var/atom/movable/AM = parent

@@ -568,7 +568,7 @@
 	if(melee_windup_time)
 		if(melee_windup_sound)
 			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
-		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/,do_windup), melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
 		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
 			my_target = get_target() //Switch targets if we did during our windup.
 			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.

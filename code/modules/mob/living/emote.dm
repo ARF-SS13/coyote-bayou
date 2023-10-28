@@ -49,7 +49,7 @@
 
 /datum/emote/living/chuckle/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/chuckle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -80,7 +80,7 @@
 /datum/emote/living/cough/run_emote(mob/user, params)
 	. = ..()
 //	var/matrix/tf = matrix(user.transform)
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -1, 1, -1, 1 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 2, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
 	. = ..()
@@ -209,7 +209,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human/atom/.proc/OpenWings : /mob/living/carbon/human/atom/.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, TYPE_PROC_REF(open ? /mob/living/carbon/human/atom/.proc/OpenWings : /mob/living/carbon/human/atom/,CloseWings)), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -322,7 +322,7 @@
 
 /datum/emote/living/giggle/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 0.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 1, -1, 1, -1, 0.5 SECONDS)
 
 /datum/emote/living/giggle/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -363,7 +363,7 @@
 
 /datum/emote/living/jump/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/living/kiss
 	key = "kiss"
@@ -390,7 +390,7 @@
 
 /datum/emote/living/audible/laugh/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
@@ -436,7 +436,7 @@
 
 /datum/emote/living/nod/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_directional_tilt, 5, 0.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_directional_tilt), 5, 0.5 SECONDS)
 
 /datum/emote/living/point
 	key = "point"
@@ -488,7 +488,7 @@
 
 /datum/emote/living/shake/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.2 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 1, -1, 1, -1, 1.2 SECONDS)
 
 /datum/emote/living/shiver
 	key = "shiver"
@@ -499,7 +499,7 @@
 
 /datum/emote/living/shiver/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 1, -1, 1, -1, 1 SECONDS)
 
 /datum/emote/living/sigh
 	key = "sigh"
@@ -542,7 +542,7 @@
 
 /datum/emote/living/shake/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 1.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 2, -2, 2, -2, 1.5 SECONDS)
 
 /datum/emote/living/sneeze/get_sound(mob/living/M)
 	if(ishuman(M))
@@ -1043,7 +1043,7 @@
 
 /datum/emote/aflap/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/flaparms
 	key = "flapa"
@@ -1052,7 +1052,7 @@
 
 /datum/emote/flapa/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/aflaparms
 	key = "aflapa"
@@ -1061,7 +1061,7 @@
 
 /datum/emote/aflapa/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, -1, 5, -4, 0, 0.8 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), -1, 5, -4, 0, 0.8 SECONDS)
 
 /datum/emote/wah
 	key = "wah"
@@ -1128,7 +1128,7 @@
 
 /datum/emote/living/bwoing/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 2, -2, 2, -2, 0.6 SECONDS)
 
 /datum/emote/living/bwoing/skip
 	key = "skip"
@@ -1143,7 +1143,7 @@
 
 /datum/emote/living/bounce/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, 0, 2, 0, 1.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 2, 0, 2, 0, 1.5 SECONDS)
 
 /datum/emote/plap
 	key = "plap"
@@ -1171,7 +1171,7 @@
 
 /datum/emote/aie/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 0, 5, 0, 0, 0.8 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 0, 5, 0, 0, 0.8 SECONDS)
 
 
 /datum/emote/nightstalker
@@ -1273,7 +1273,7 @@
 
 /datum/emote/rattle/run_emote(mob/user, params)
 	. = ..()
-	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 1, -1, 1, -1, 1.5 SECONDS)
+	INVOKE_ASYNC(user, TYPE_PROC_REF(/atom/,do_double_bounce), 1, -1, 1, -1, 1.5 SECONDS)
 
 
 /datum/emote/snakehiss

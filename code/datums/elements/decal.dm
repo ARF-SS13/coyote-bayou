@@ -53,7 +53,7 @@
 	else if(!QDELETED(target) && num_decals_per_atom[target] == 1)
 		RegisterSignal(target, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE,PROC_REF(late_update_icon))
 	if(isitem(target))
-		addtimer(CALLBACK(target, /obj/item/.proc/update_slot_icon), 0, TIMER_UNIQUE)
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/obj/item/,update_slot_icon)), 0, TIMER_UNIQUE)
 
 /datum/element/decal/proc/late_update_icon(atom/source)
 	source.update_icon()

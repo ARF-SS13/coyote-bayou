@@ -131,7 +131,7 @@
 				continue
 			V.recharging = TRUE //To prevent exploiting multiple visors to bypass the cooldown
 			V.update_status()
-			addtimer(CALLBACK(V, /obj/item/clothing/glasses/judicial_visor.proc/recharge_visor, ranged_ability_user), (GLOB.ratvar_awakens ? visor.recharge_cooldown*0.1 : visor.recharge_cooldown) * 2)
+			addtimer(CALLBACK(V, TYPE_PROC_REF(/obj/item/clothing/glasses/judicial_visor,recharge_visor), ranged_ability_user), (GLOB.ratvar_awakens ? visor.recharge_cooldown*0.1 : visor.recharge_cooldown) * 2)
 		clockwork_say(ranged_ability_user, text2ratvar("Kneel, heathens!"))
 		ranged_ability_user.visible_message(span_warning("[ranged_ability_user]'s judicial visor fires a stream of energy at [target], creating a strange mark!"), span_heavy_brass("You direct [visor]'s power to [target]. You must wait for some time before doing this again."))
 		var/turf/targetturf = get_turf(target)
@@ -139,7 +139,7 @@
 		log_combat(ranged_ability_user, targetturf, "created a judicial marker")
 		ranged_ability_user.update_action_buttons_icon()
 		ranged_ability_user.update_inv_glasses()
-		addtimer(CALLBACK(visor, /obj/item/clothing/glasses/judicial_visor.proc/recharge_visor, ranged_ability_user), GLOB.ratvar_awakens ? visor.recharge_cooldown*0.1 : visor.recharge_cooldown)//Cooldown is reduced by 10x if Ratvar is up
+		addtimer(CALLBACK(visor, TYPE_PROC_REF(/obj/item/clothing/glasses/judicial_visor,recharge_visor), ranged_ability_user), GLOB.ratvar_awakens ? visor.recharge_cooldown*0.1 : visor.recharge_cooldown)//Cooldown is reduced by 10x if Ratvar is up
 		remove_ranged_ability()
 
 		return TRUE

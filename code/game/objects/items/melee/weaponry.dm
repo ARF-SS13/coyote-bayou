@@ -400,7 +400,7 @@ superlagg says: cool story, oranges
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddElement(/datum/element/art, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 1000)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum,_AddElement), list(/datum/element/beauty, 1000)), 0)
 
 /obj/item/tailclub
 	name = "tail club"

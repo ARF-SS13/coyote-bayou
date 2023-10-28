@@ -33,7 +33,7 @@
 
 /obj/item/clothing/shoes/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
+	RegisterSignal(src, TYPE_PROC_REF(COMSIG_COMPONENT_CLEAN_ACT, /atom,clean_blood))
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()

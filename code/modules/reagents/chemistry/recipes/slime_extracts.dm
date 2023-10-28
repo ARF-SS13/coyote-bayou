@@ -655,7 +655,7 @@
 		S.visible_message(span_danger("Infused with plasma, the core begins to expand uncontrollably!"))
 		S.icon_state = "[S.base_state]_active"
 		S.active = TRUE
-		addtimer(CALLBACK(S, /obj/item/grenade.proc/prime), rand(15,60))
+		addtimer(CALLBACK(S, TYPE_PROC_REF(/obj/item/grenade,prime)), rand(15,60))
 		qdel(holder.my_atom) //deleto
 	..()
 
@@ -671,7 +671,7 @@
 	S.visible_message(span_danger("Infused with slime jelly, the core begins to expand uncontrollably!"))
 	S.icon_state = "[S.base_state]_active"
 	S.active = TRUE
-	addtimer(CALLBACK(S, /obj/item/grenade.proc/prime), rand(15,60))
+	addtimer(CALLBACK(S, TYPE_PROC_REF(/obj/item/grenade,prime)), rand(15,60))
 	qdel(holder.my_atom) //deleto
 	..()
 

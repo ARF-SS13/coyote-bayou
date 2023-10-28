@@ -670,7 +670,7 @@
 
 /obj/item/storage/blender_belt/attack_hand(mob/user)
 	if(grind_or_dispense == BLENDER_BELTMODE_DISPENSER && ismob(loc))
-		INVOKE_ASYNC(src, /datum.proc/ui_interact, user)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/datum,ui_interact), user)
 	else
 		. = ..()
 

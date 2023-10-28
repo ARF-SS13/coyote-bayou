@@ -148,7 +148,7 @@ GLOBAL_LIST_EMPTY(party_landmarks)
 		return FALSE
 	for(var/mob/living/seer in range(10, src))
 		seer.overlay_fullscreen("flash", type, 2)
-		addtimer(CALLBACK(seer, /mob/living.proc/clear_fullscreen, "flash", 25), 2.5 SECONDS)
+		addtimer(CALLBACK(seer, TYPE_PROC_REF(/mob/living,clear_fullscreen), "flash", 25), 2.5 SECONDS)
 	for(var/turf/blocker in block(locate(x + template.width*0.5,y + template.height*0.5,z),locate(x - template.width*0.5,y - template.height*0.5,z)))
 		for(var/atom/movable/AM in blocker)
 			if(!AM.anchored)

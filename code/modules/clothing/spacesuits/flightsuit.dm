@@ -425,7 +425,7 @@
 	crashing = FALSE
 
 /obj/item/flightpack/proc/door_pass(obj/structure/mineral_door/door)
-	INVOKE_ASYNC(door, /obj/structure/mineral_door.proc/Open)
+	INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/structure/mineral_door,Open))
 	var/turf/T = get_turf(door)
 	wearer.forceMove(T)
 	wearer.visible_message(span_boldnotice("[wearer] rolls to [wearer.p_their()] sides and slips past [door]!"))
@@ -445,7 +445,7 @@
 		if((!A.allowed(wearer)) && !A.emergency)
 			nopass = TRUE
 	if(!nopass)
-		INVOKE_ASYNC(A, /obj/machinery/door.proc/open)
+		INVOKE_ASYNC(A, TYPE_PROC_REF(/obj/machinery/door,open))
 		wearer.visible_message(span_warning("[wearer] rolls sideways and slips past [A]"))
 		var/turf/target = get_turf(A)
 		if(istype(A, /obj/machinery/door/window) && (get_turf(wearer) == get_turf(A)))

@@ -94,7 +94,7 @@
 		handle_diginvis() //AI becomes unable to see mob
 
 	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating
-		INVOKE_ASYNC(src, /atom/movable.proc/float, TRUE)
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable,float), TRUE)
 
 	if(!loc)
 		return FALSE

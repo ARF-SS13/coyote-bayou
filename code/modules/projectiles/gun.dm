@@ -463,7 +463,7 @@ ATTACHMENTS
 			else if(G.can_trigger_gun(user))
 				loop_counter++
 				var/stam_cost = G.getstamcost(user)
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, stam_cost), loop_counter)
+				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun,process_fire), target, user, TRUE, params, null, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
 

@@ -46,7 +46,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(CONFIG_GET(flag/disable_stambuffer))
 		enable_intentional_sprint_mode()
 
-	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, /atom.proc/clean_blood)
+	RegisterSignal(src, TYPE_PROC_REF(COMSIG_COMPONENT_CLEAN_ACT, /atom,clean_blood))
 	GLOB.human_list += src
 	// var/datum/atom_hud/data/human/genital/pornHud = GLOB.huds[GENITAL_PORNHUD]
 	// pornHud.add_to_hud(src)
@@ -234,7 +234,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	..()
 	var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
-		INVOKE_ASYNC(MB, /mob/living/simple_animal/bot/mulebot/.proc/RunOver, src)
+		INVOKE_ASYNC(MB, TYPE_PROC_REF(/mob/living/simple_animal/bot/mulebot/,RunOver), src)
 
 	spreadFire(AM)
 

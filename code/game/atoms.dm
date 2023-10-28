@@ -714,7 +714,7 @@
 	var/list/things = src_object.contents()
 	var/my_bar = SSprogress_bars.add_bar(src, list(), things.len, FALSE, FALSE)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, my_bar)))
+	while (do_after(user, TYPE_PROC_REF(10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage,handle_mass_item_insertion), things, src_object, user, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 	to_chat(user, span_notice("You dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can."))

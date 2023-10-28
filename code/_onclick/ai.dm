@@ -75,7 +75,7 @@
 
 	if(aicamera.in_camera_mode)
 		aicamera.camera_mode_off()
-		INVOKE_ASYNC(aicamera, /obj/item/camera.proc/captureimage, pixel_turf, usr)
+		INVOKE_ASYNC(aicamera, TYPE_PROC_REF(/obj/item/camera,captureimage), pixel_turf, usr)
 		return
 	if(waypoint_mode)
 		waypoint_mode = FALSE

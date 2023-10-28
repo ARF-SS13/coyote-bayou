@@ -1196,7 +1196,7 @@
 			CRASH("Blenderbrain [src] tried to process an invalid impulse: [impulse]")
 		var/datum/blenderbrain_impulse/thimpulse = impulse
 		var/do_next = thimpulse.immediate_next
-		INVOKE_ASYNC(thimpulse, /datum/blenderbrain_impulse.proc/run_it)
+		INVOKE_ASYNC(thimpulse, TYPE_PROC_REF(/datum/blenderbrain_impulse,run_it))
 		if(do_next)
 			continue
 		break

@@ -100,7 +100,7 @@
 
 /obj/item/clothing/mask/facehugger/proc/on_entered(atom/target)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, /atom/.proc/HasProximity, target)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/,HasProximity), target)
 	return
 
 /obj/item/clothing/mask/facehugger/on_found(mob/finder)
