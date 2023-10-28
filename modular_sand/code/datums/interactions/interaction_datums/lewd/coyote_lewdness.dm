@@ -155,10 +155,9 @@ Happy MERPING!  ~TK<3
 			"is suckling on <b>[partner]'s</b> cockhead like [t_their] life depends on it!",
 			)]"
 
-
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	partner.handle_post_sex(lust_amt, CUM_TARGET_HAND) 
+	partner.handle_post_sex(lust_amt[user.a_intent]) 
 
 
 
