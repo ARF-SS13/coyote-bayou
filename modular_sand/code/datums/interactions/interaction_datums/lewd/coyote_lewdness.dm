@@ -163,7 +163,7 @@ Happy MERPING!  ~TK<3
 
 ///////LICK THE TIP END/////////
 
-////////////////////Isn't taking pleasure
+////////////////////
 //Tip To Lip 0A2////
 ////////////////////
 //Recieving Verb Prototype
@@ -176,9 +176,9 @@ Happy MERPING!  ~TK<3
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 
 
-////////////
+/////////////
 //VERBOSITY//
-////////////
+/////////////
 //Remember to change this                   VVVV
 /datum/interaction/lewd/partner/giving/tip_to_lip/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
@@ -303,6 +303,6 @@ Happy MERPING!  ~TK<3
 					'modular_sand/sound/interactions/bang2.ogg',
 					'modular_sand/sound/interactions/bang3.ogg'), 
 					70, 1, -1)
-	partner.handle_post_sex(0[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
+	partner.handle_post_sex(lust_amt[user.a_intent]) //For determining that the USERS intent is how much LUST the RECEIVER is getting.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////TIP TO LIP END/////////
