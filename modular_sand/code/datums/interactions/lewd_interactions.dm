@@ -1,7 +1,7 @@
 // If I could have gotten away with using a tilde in the type path, I would have.
 /datum/interaction/lewd
 	// Description can take in %COCK% as a wildcard to get replaced with a cock/strapon accordingly.
-	description = "Slap their ass."
+	description = "Partner/Crotch - Slap their ass."
 	simple_message = "USER slaps TARGET right on the ass!"
 	simple_style = "danger"
 	interaction_sound = 'sound/weapons/slap.ogg'

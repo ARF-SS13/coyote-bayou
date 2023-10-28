@@ -1,5 +1,5 @@
 /datum/interaction/lewd/titgrope_self
-	description = "Grope your own breasts."
+	description = "Self/Body - Grope your own breasts."
 	require_user_hands = TRUE
 	require_user_breasts = REQUIRE_ANY
 	user_is_target = TRUE
@@ -77,7 +77,7 @@
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
 
 /datum/interaction/lewd/self_nipsuck
-	description = "Suck your own nips."
+	description = "Self/Body - Suck your own nips."
 	require_user_breasts = REQUIRE_ANY
 	require_user_mouth = TRUE
 	user_is_target = TRUE

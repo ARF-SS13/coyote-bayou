@@ -124,7 +124,7 @@
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, CUM_TARGET_PENIS) //SPLURT edit
 
 /datum/interaction/lewd/footfuck/double
-	description = "Rub your %COCK% between their feet."
+	description = "Partner/Legs - Rub your %COCK% between their feet."
 	require_target_num_feet = 2
 
 /datum/interaction/lewd/footfuck/double/display_interaction(mob/living/user, mob/living/partner)

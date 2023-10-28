@@ -33,7 +33,7 @@
 	user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 
 /datum/interaction/lewd/nut_smack
-	description = "Smack their nuts."
+	description = "Partner/Crotch - Smack their nuts."
 	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
 	simple_message = "USER slaps TARGET's nuts!"
 	require_target_balls = REQUIRE_ANY
