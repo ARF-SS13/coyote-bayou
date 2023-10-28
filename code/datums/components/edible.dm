@@ -156,7 +156,7 @@ Behavior that's still missing from this component that original food items had t
 					eater.visible_message(
 						span_notice("[eater] unwillingly [eatverb]s \the [parent]."), 
 						span_notice("You unwillingly [eatverb] \the [parent]."))
-			if((600 * (1 + eater.overeatduration / 1000)) to INFINITY)
+			if(650 to INFINITY)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] gluttonously [eatverb]s \the [parent], cramming it down [eater.p_their()] throat!"), 
