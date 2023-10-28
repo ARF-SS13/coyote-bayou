@@ -918,3 +918,16 @@
 				/obj/item/stack/sheet/metal = 2,
 				)
 	subcategory = CAT_MISCELLANEOUS
+
+//Abraxo recipe after several requests
+
+/datum/crafting_recipe/abraxo
+	name = "Abraxo"
+	result = /obj/item/crafting/abraxo
+	time = 20
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/pungafruit = 5,
+		/obj/item/soap = 1,
+		/datum/material/sand  = 1,
+		)
+	subcategory = CAT_MISCELLANEOUS
