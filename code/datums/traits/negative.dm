@@ -456,8 +456,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/dumb_thing = TRUE
 
 /datum/quirk/social_anxiety/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, .proc/eye_contact)
-	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
+	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT,PROC_REF(eye_contact))
+	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE,PROC_REF(looks_at_floor))
 
 /datum/quirk/social_anxiety/remove()
 	if(!quirk_holder)

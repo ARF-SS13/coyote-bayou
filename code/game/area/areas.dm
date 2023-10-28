@@ -282,7 +282,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				A.power_light = FALSE
 				A.power_equip = FALSE
 				A.power_environ = FALSE
-			INVOKE_ASYNC(A, .proc/power_change)
+			INVOKE_ASYNC(A,PROC_REF(power_change))
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(ambience_area)
 	remove_from_weather_list()
@@ -544,7 +544,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			A.power_light = power_light
 			A.power_equip = power_equip
 			A.power_environ = power_environ
-			INVOKE_ASYNC(A, .proc/power_change)
+			INVOKE_ASYNC(A,PROC_REF(power_change))
 	update_icon()
 
 /area/proc/usage(chan)
@@ -624,14 +624,14 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			var/sounds_to_play = pick(ambientsounds)
 			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 			var/sound/S = sound(sounds_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
-			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src,PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
 			COOLDOWN_START(L.client, area_sound_effect_cooldown, sounds_to_play[SL_FILE_LENGTH] + sound_delay)
 
 		if(LAZYLEN(ambientmusic) && !COOLDOWN_TIMELEFT(L.client, area_music_cooldown) && prob(35)) //fortuna add. re-implements ambient music
 			var/music_to_play = pick(ambientmusic)
 			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 			var/sound/S = sound(music_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
-			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
+			addtimer(CALLBACK(src,PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
 			COOLDOWN_START(L.client, area_music_cooldown, music_to_play[SL_FILE_LENGTH] + sound_delay)
 
 /area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)

@@ -211,7 +211,7 @@
 /mob/living/proc/gravity_animate()
 	if(!get_filter("gravity"))
 		add_filter("gravity",1, GRAVITY_MOTION_BLUR)
-	INVOKE_ASYNC(src, .proc/gravity_pulse_animation)
+	INVOKE_ASYNC(src,PROC_REF(gravity_pulse_animation))
 
 /mob/living/proc/gravity_pulse_animation()
 	animate(get_filter("gravity"), y = 1, time = 10)

@@ -60,7 +60,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	AddElement(/datum/element/flavor_text/carbon, _name = "Flavor Text", _save_key = "flavor_text")
 	AddElement(/datum/element/flavor_text, "", "Set Pose/Leave OOC Message", "This should be used only for things pertaining to the current round!")
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _always_show = TRUE, _save_key = "ooc_notes", _examine_no_preview = TRUE)
-	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS, .proc/signal_update_genitals)
+	RegisterSignal(src, COMSIG_HUMAN_UPDATE_GENITALS,PROC_REF(signal_update_genitals))
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
@@ -1059,7 +1059,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			electrocution_skeleton_anim = mutable_appearance(icon, "electrocuted_base")
 			electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
 		add_overlay(electrocution_skeleton_anim)
-		addtimer(CALLBACK(src, .proc/end_electrocution_animation, electrocution_skeleton_anim), anim_duration)
+		addtimer(CALLBACK(src,PROC_REF(end_electrocution_animation), electrocution_skeleton_anim), anim_duration)
 
 	else //or just do a generic animation
 		flick_overlay_view(image(icon,src,"electrocuted_generic",ABOVE_MOB_LAYER), src, anim_duration)

@@ -52,7 +52,7 @@
 
 /obj/item/clothing/glasses/judicial_visor/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/check_on_mob, user), 1) //dropped is called before the item is out of the slot, so we need to check slightly later
+	addtimer(CALLBACK(src,PROC_REF(check_on_mob), user), 1) //dropped is called before the item is out of the slot, so we need to check slightly later
 
 /obj/item/clothing/glasses/judicial_visor/proc/check_on_mob(mob/user)
 	if(user && src != user.get_item_by_slot(SLOT_GLASSES)) //if we happen to check and we AREN'T in the slot, we need to remove our shit from whoever we got dropped from
@@ -161,7 +161,7 @@
 	. = ..()
 	set_light(1.4, 2, "#FE9C11")
 	user = caster
-	INVOKE_ASYNC(src, .proc/judicialblast)
+	INVOKE_ASYNC(src,PROC_REF(judicialblast))
 
 /obj/effect/clockwork/judicial_marker/singularity_act()
 	return

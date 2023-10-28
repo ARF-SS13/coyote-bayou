@@ -79,7 +79,7 @@
 		return
 	if(waypoint_mode)
 		waypoint_mode = FALSE
-		INVOKE_ASYNC(src, .proc/set_waypoint, A)
+		INVOKE_ASYNC(src,PROC_REF(set_waypoint), A)
 		return
 
 	A.attack_ai(src)

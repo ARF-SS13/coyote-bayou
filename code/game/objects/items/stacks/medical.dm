@@ -90,7 +90,7 @@
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/try_heal, M, user)
+	INVOKE_ASYNC(src,PROC_REF(try_heal), M, user)
 
 /obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, just_check = FALSE)
 	if(heal(M, user, just_check))

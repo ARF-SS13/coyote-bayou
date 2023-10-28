@@ -441,7 +441,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		if(istype(thingy, /obj/item/button))
 			continue
 		if(appraise_item(thingy, TRUE))
-			INVOKE_ASYNC(src, .proc/sell_loop_start)
+			INVOKE_ASYNC(src,PROC_REF(sell_loop_start))
 			return TRUE
 	say("There's nothing to sell!")
 
@@ -470,7 +470,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	my_bar = SSprogress_bars.add_bar(src, list(), time2sell, TRUE, TRUE)
 	soundloop.start()
 	lock_belt()
-	sales_timer = addtimer(CALLBACK(src, .proc/sell_loop_end, thing2sell), time2sell, TIMER_STOPPABLE)
+	sales_timer = addtimer(CALLBACK(src,PROC_REF(sell_loop_end), thing2sell), time2sell, TIMER_STOPPABLE)
 
 /obj/machinery/mineral/wasteland_trader/proc/sell_loop_end(obj/item/I)
 	if(!I)

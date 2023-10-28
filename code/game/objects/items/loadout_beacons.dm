@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 /obj/item/kit_spawner/attack_self(mob/user)
 	if(can_use_kit(user))
-		INVOKE_ASYNC(src, .proc/use_the_kit, user)
+		INVOKE_ASYNC(src,PROC_REF(use_the_kit), user)
 	else
 		playsound(src, 'sound/machines/synth_no.ogg', 40, 1)
 
@@ -376,7 +376,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		stop_using_the_kit(user)
 		return
 	//user.show_message("[final_key] selected!")
-	INVOKE_ASYNC(src, .proc/spawn_the_thing, user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
+	INVOKE_ASYNC(src,PROC_REF(spawn_the_thing), user, GLOB.loadout_boxes[type][second_key][final_key], first_key)
 
 /obj/item/kit_spawner/proc/check_choice(choice_to_check)
 	if(!choice_to_check)

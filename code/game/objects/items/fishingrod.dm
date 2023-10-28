@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 		return
 	if(current_user)
 		UnregisterSignal(current_user, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/falsify_inuse)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(falsify_inuse))
 	current_user = user
 
 /obj/item/fishingrod/dropped(mob/user)
@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
 	inuse = TRUE
 	var/random_fishtime = rand(min_fishtime, max_fishtime)
-	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
+	addtimer(CALLBACK(src,PROC_REF(play_readysound)), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
 	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
 	inuse = TRUE
 	var/random_fishtime = rand(min_fishtime, max_fishtime)
-	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
+	addtimer(CALLBACK(src,PROC_REF(play_readysound)), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
 	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))

@@ -617,7 +617,7 @@
 
 /obj/machinery/smartfridge/bottlerack/gardentool/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src,PROC_REF(can_be_rotated)))
 
 // Preloaded simple farming rack for mapping
 /obj/machinery/smartfridge/bottlerack/gardentool/primitive

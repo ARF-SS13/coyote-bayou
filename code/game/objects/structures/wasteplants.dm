@@ -21,7 +21,7 @@
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
 		timer = initial(timer) + rand(-100,100) //add some variability
-		addtimer(CALLBACK(src, .proc/regrow),timer) //Set up the timer properly
+		addtimer(CALLBACK(src,PROC_REF(regrow),timer)) //Set up the timer properly
 	update_icon()
 
 /obj/structure/flora/wasteplant/proc/regrow()

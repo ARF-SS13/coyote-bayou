@@ -56,7 +56,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/update_preferences(current_version, savefile/S)
 	if(current_version < 37)	//If you remove this, remove force_reset_keybindings() too.
 		force_reset_keybindings_direct(TRUE)
-		addtimer(CALLBACK(src, .proc/force_reset_keybindings), 30)	//No mob available when this is run, timer allows user choice.
+		addtimer(CALLBACK(src,PROC_REF(force_reset_keybindings)), 30)	//No mob available when this is run, timer allows user choice.
 
 
 /datum/preferences/proc/update_character(current_version, savefile/S)

@@ -68,7 +68,7 @@
 			var/mob/M = AM
 			to_chat(M, span_notice("[icon2html(src, M)] Squeak!"))
 	if(istype(AM, /obj/item/reagent_containers/food/snacks/royalcheese))
-		INVOKE_ASYNC(src, .proc/evolve)
+		INVOKE_ASYNC(src,PROC_REF(evolve))
 		qdel(AM)
 
 /mob/living/simple_animal/mouse/handle_automated_action()

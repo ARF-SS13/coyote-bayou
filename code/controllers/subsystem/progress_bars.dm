@@ -165,7 +165,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	display_loc = WEAKREF(location)
 	generate_bar_id()
 	register_visibility(can_see)
-	RegisterSignal(location, COMSIG_PARENT_QDELETING, .proc/master_deleted)
+	RegisterSignal(location, COMSIG_PARENT_QDELETING,PROC_REF(master_deleted))
 
 /datum/progressbar/proc/register_visibility(list/can_see)
 	if(!LAZYLEN(can_see) || SSprogress_bars.debug_make_visible_to_everyone) // heh
@@ -267,7 +267,7 @@ PROCESSING_SUBSYSTEM_DEF(progress_bars)
 	// var/turf/right_here = get_turf(master)
 	// display_loc = WEAKREF(right_here)
 	// bar.loc = right_here
-	INVOKE_ASYNC(src, .proc/stop)
+	INVOKE_ASYNC(src,PROC_REF(stop))
 
 /// Generates a unique ID for the progress bar.
 /// I mean the time of day is unique enough, but I like big dumb numbers

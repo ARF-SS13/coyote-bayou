@@ -25,7 +25,7 @@
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, .proc/tabulate_value)
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE,PROC_REF(tabulate_value))
 
 /obj/item/card/proc/tabulate_value()
 	return 0

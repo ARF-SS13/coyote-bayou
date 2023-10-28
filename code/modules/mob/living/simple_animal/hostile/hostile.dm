@@ -228,7 +228,7 @@
 	if(go2bed)
 		if(lonely_timer_id)
 			return
-		lonely_timer_id = addtimer(CALLBACK(src, .proc/queue_unbirth), 30 SECONDS, TIMER_STOPPABLE)
+		lonely_timer_id = addtimer(CALLBACK(src,PROC_REF(queue_unbirth)), 30 SECONDS, TIMER_STOPPABLE)
 	else
 		if(!lonely_timer_id)
 			return
@@ -456,7 +456,7 @@
 //What we do after closing in
 /mob/living/simple_animal/hostile/proc/MeleeAction(patience = TRUE)
 	if(rapid_melee > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/CheckAndAttack)
+		var/datum/callback/cb = CALLBACK(src,PROC_REF(CheckAndAttack))
 		var/delay = SSnpcpool.wait / rapid_melee
 		for(var/i in 1 to rapid_melee)
 			addtimer(cb, (i - 1)*delay)
@@ -588,7 +588,7 @@
 	vision_range = aggro_vision_range
 	var/atom/my_target = get_target()
 	if(my_target && LAZYLEN(emote_taunt) && prob(taunt_chance))
-		INVOKE_ASYNC(src, .proc/emote, "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [my_target].")
+		INVOKE_ASYNC(src,PROC_REF(emote), "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [my_target].")
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
@@ -641,13 +641,13 @@
 		return
 	visible_message(span_danger("<b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!"))
 	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
+		var/datum/callback/cb = CALLBACK(src,PROC_REF(Shoot), A)
 		for(var/i in 1 to rapid)
 			addtimer(cb, (i - 1)*rapid_fire_delay)
 	else
 		Shoot(A)
 		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
+			addtimer(CALLBACK(src,PROC_REF(Shoot), A), i * auto_fire_delay)
 	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
@@ -840,7 +840,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	
 	if(lose_patience_timeout)
 		LosePatience()
-		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
+		lose_patience_timer_id = addtimer(CALLBACK(src,PROC_REF(LoseTarget)), lose_patience_timeout, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/LosePatience()
@@ -854,7 +854,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	
 	search_objects = 0
 	deltimer(search_objects_timer_id)
-	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
+	search_objects_timer_id = addtimer(CALLBACK(src,PROC_REF(RegainSearchObjects)), search_objects_regain_time, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/RegainSearchObjects(value)
@@ -909,7 +909,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!new_target)
 		return
 	target = WEAKREF(new_target)
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING,PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/queue_unbirth()
 	SSidlenpcpool.add_to_culling(src)
@@ -976,7 +976,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	visible_message(span_green("[src] shudders as the EMP overloads its servos!"))
 	LoseTarget()
 	toggle_ai(AI_OFF)
-	addtimer(CALLBACK(src, .proc/un_emp_stun), min(intensity, 3 SECONDS))
+	addtimer(CALLBACK(src,PROC_REF(un_emp_stun)), min(intensity, 3 SECONDS))
 
 /mob/living/simple_animal/hostile/proc/un_emp_stun()
 	active_emp_flags -= MOB_EMP_STUN
@@ -993,7 +993,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	visible_message(span_green("[src] lets out a burst of static and whips its gun around wildly!"))
 	var/list/old_faction = faction
 	faction = null
-	addtimer(CALLBACK(src, .proc/un_emp_berserk, old_faction), intensity SECONDS * 0.5)
+	addtimer(CALLBACK(src,PROC_REF(un_emp_berserk), old_faction), intensity SECONDS * 0.5)
 
 /mob/living/simple_animal/hostile/proc/un_emp_berserk(list/unberserk)
 	active_emp_flags -= MOB_EMP_BERSERK

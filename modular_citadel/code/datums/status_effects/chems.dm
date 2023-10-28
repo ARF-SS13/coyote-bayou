@@ -128,8 +128,8 @@
 	master = get_mob_by_key(enthrallID)
 	//if(M.ckey == enthrallID)
 	//	owner.remove_status_effect(src)//At the moment, a user can enthrall themselves, toggle this back in if that should be removed.
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, .proc/owner_resist) //Do resistance calc if resist is pressed#
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/owner_hear)
+	RegisterSignal(owner, COMSIG_LIVING_RESIST,PROC_REF(owner_resist)) //Do resistance calc if resist is pressed#
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR,PROC_REF(owner_hear))
 	mental_capacity = 500 - M.getOrganLoss(ORGAN_SLOT_BRAIN)//It's their brain!
 	lewd = (owner.client?.prefs.cit_toggles & HYPNO) && (master.client?.prefs.cit_toggles & HYPNO)
 	var/message = "[(lewd ? "I am a good pet for [enthrallGender]." : "[master] is a really inspirational person!")]"

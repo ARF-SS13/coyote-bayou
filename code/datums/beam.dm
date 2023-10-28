@@ -66,13 +66,13 @@
 	if(timing_id)
 		deltimer(timing_id)
 	if(!finished)
-		timing_id = addtimer(CALLBACK(src, .proc/recalculate), time, TIMER_STOPPABLE)
+		timing_id = addtimer(CALLBACK(src,PROC_REF(recalculate)), time, TIMER_STOPPABLE)
 
 /datum/beam/proc/after_calculate()
 	if((sleep_time == null) || finished)	//Does not automatically recalculate.
 		return
 	if(isnull(timing_id))
-		timing_id = addtimer(CALLBACK(src, .proc/recalculate), sleep_time, TIMER_STOPPABLE)
+		timing_id = addtimer(CALLBACK(src,PROC_REF(recalculate)), sleep_time, TIMER_STOPPABLE)
 
 /datum/beam/proc/End(destroy_self = TRUE)
 	finished = TRUE

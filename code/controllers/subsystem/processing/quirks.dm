@@ -131,7 +131,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/ui_close(mob/user)
 	. = ..()
 	SaveUserPreferences(user)
-	//INVOKE_ASYNC(src, .proc/UpdateTheWretchedPrefMenu, user)
+	//INVOKE_ASYNC(src,PROC_REF(UpdateTheWretchedPrefMenu), user)
 
 /datum/controller/subsystem/processing/quirks/ui_static_data(mob/user)
 	var/list/data = list()
@@ -203,7 +203,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			. = TRUE
 		if("ClearQuirks") // Nuke the quirks! (gotta nuke something)
 			. = TRUE
-			INVOKE_ASYNC(src, .proc/ConfirmClear, user)
+			INVOKE_ASYNC(src,PROC_REF(ConfirmClear), user)
 
 /// returns a list of ckey'd quirk names
 /datum/controller/subsystem/processing/quirks/proc/QuirkList2TGUI(mob/user)

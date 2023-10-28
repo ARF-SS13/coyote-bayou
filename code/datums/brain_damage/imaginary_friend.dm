@@ -24,7 +24,7 @@
 		qdel(src)
 		return
 	if(!friend.client && friend_initialized)
-		addtimer(CALLBACK(src, .proc/reroll_friend), 600)
+		addtimer(CALLBACK(src,PROC_REF(reroll_friend)), 600)
 
 /datum/brain_trauma/special/imaginary_friend/on_death()
 	..()
@@ -93,7 +93,7 @@
 	trauma = _trauma
 	owner = trauma.owner
 
-	INVOKE_ASYNC(src, .proc/setup_friend)
+	INVOKE_ASYNC(src,PROC_REF(setup_friend))
 
 	join = new
 	join.Grant(src)

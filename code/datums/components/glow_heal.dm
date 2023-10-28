@@ -33,7 +33,7 @@
 		glow_color = color_glow
 	healing_types = type_healing
 	START_PROCESSING(SSobj, src)
-	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE, .proc/restart_process)
+	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE,PROC_REF(restart_process))
 
 /datum/component/glow_heal/proc/restart_process()
 	START_PROCESSING(SSobj, src)

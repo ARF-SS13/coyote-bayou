@@ -92,7 +92,7 @@ effective or pretty fucking useless.
 		addtimer(VARSET_CALLBACK(src, used, FALSE), cooldown)
 		addtimer(VARSET_CALLBACK(src, icon_state, "health"), cooldown)
 		to_chat(user, span_warning("Successfully irradiated [M]."))
-		addtimer(CALLBACK(src, .proc/radiation_aftereffect, M), (wavelength+(intensity*4))*5)
+		addtimer(CALLBACK(src,PROC_REF(radiation_aftereffect), M), (wavelength+(intensity*4))*5)
 	else
 		to_chat(user, span_warning("The radioactive microlaser is still recharging."))
 

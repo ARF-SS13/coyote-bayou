@@ -323,14 +323,14 @@
 	active = TRUE
 	set_light_color(rgb(rand(0,255),rand(0,255),rand(0,255)))
 	set_light_on(TRUE)
-	addtimer(CALLBACK(src, .proc/lightUp), 5)
+	addtimer(CALLBACK(src,PROC_REF(lightUp)), 5)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0,255),rand(0,255),rand(0,255)))
 		set_light_on(TRUE)
 		lightCycle += 1
-		addtimer(CALLBACK(src, .proc/lightUp), 5)
+		addtimer(CALLBACK(src,PROC_REF(lightUp)), 5)
 	else
 		set_light_on(FALSE)
 		lightCycle = 0

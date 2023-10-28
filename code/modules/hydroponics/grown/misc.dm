@@ -352,7 +352,7 @@
 			fusedactive = TRUE
 			defused = FALSE
 			playsound(src, 'sound/effects/fuse.ogg', 100, 0)
-			addtimer(CALLBACK(src, .proc/prime), 5 SECONDS)
+			addtimer(CALLBACK(src,PROC_REF(prime)), 5 SECONDS)
 			icon_state = "coconut_grenade_active"
 			desc = "RUN!"
 			if(!seed.get_gene(/datum/plant_gene/trait/glow))

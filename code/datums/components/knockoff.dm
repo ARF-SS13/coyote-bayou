@@ -38,7 +38,7 @@
 	if(slots_knockoffable && !(slot in slots_knockoffable))
 		UnregisterSignal(H, COMSIG_HUMAN_DISARM_HIT)
 		return
-	RegisterSignal(H, COMSIG_HUMAN_DISARM_HIT, .proc/Knockoff, TRUE)
+	RegisterSignal(H, COMSIG_HUMAN_DISARM_HIT,PROC_REF(Knockoff), TRUE)
 
 /datum/component/knockoff/proc/OnDropped(datum/source, mob/living/M)
 	UnregisterSignal(M, COMSIG_HUMAN_DISARM_HIT)

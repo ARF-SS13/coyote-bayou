@@ -87,7 +87,7 @@
 	log_reagent("SPRAY: [key_name(usr)] fired [src] ([REF(src)]) [COORD(T)] at [A] ([REF(A)]) [COORD(A)] (chempuff: [D.reagents.log_list()])")
 	var/wait_step = max(round(2+ spray_delay * INVERSE(range)), 2)
 	last_spray = world.time
-	INVOKE_ASYNC(src, .proc/do_spray, A, wait_step, D, range, puff_reagent_left)
+	INVOKE_ASYNC(src,PROC_REF(do_spray), A, wait_step, D, range, puff_reagent_left)
 	return TRUE
 
 /obj/item/reagent_containers/spray/proc/do_spray(atom/A, wait_step, obj/effect/decal/chempuff/D, range, puff_reagent_left)
