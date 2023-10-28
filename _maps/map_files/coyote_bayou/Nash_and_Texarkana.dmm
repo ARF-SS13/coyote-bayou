@@ -623,7 +623,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
-/obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#999999"
 	},
@@ -44243,7 +44242,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/coyote/nash/museum/groundfloor)
 "gDC" = (
-/obj/structure/closet/crate/trashcart,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
@@ -53132,7 +53130,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "iCi" = (
-/obj/structure/closet/crate/trashcart,
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 9
@@ -58384,6 +58381,14 @@
 	pixel_x = 2;
 	pixel_y = -4
 	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building/tribal)
 "jNU" = (
@@ -58485,6 +58490,9 @@
 /obj/structure/sink/deep_water{
 	pixel_x = 2;
 	pixel_y = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building/tribal)
@@ -64668,11 +64676,24 @@
 	},
 /area/f13/building/abandoned)
 "liI" = (
-/obj/effect/landmark/start/bartender,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = -4
 	},
-/area/f13/building)
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "liK" = (
 /obj/structure/closet/crate/freezer/blood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -68456,6 +68477,21 @@
 	color = "#775555"
 	},
 /area/f13/building)
+"man" = (
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = -4
+	},
+/obj/structure/sink/deep_water{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building/tribal)
 "map" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -72407,14 +72443,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/ruins)
 "mSq" = (
-/obj/structure/closet/crate/trashcart,
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/tunnel)
+/turf/closed/indestructible/rock,
+/area/f13/wasteland/nash)
 "mSr" = (
 /obj/structure/barricade/wooden,
 /turf/closed/wall/f13/wood,
@@ -77964,6 +77994,14 @@
 	pixel_x = 2;
 	pixel_y = 6
 	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 6
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building/tribal)
 "odv" = (
@@ -78685,6 +78723,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
+"omg" = (
+/obj/effect/landmark/start/bartender,
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#999999"
+	},
+/area/f13/tunnel)
 "omh" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -105970,6 +106014,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/landmark/start/f13/followersscientist,
 /turf/open/indestructible/ground/outside/gravel{
 	dir = 1
 	},
@@ -108136,6 +108181,12 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland/city/nash/downtown)
+"uRf" = (
+/obj/effect/landmark/start/f13/followersscientist,
+/turf/open/indestructible/ground/outside/gravel{
+	dir = 1
+	},
+/area/f13/tunnel)
 "uRk" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -109359,12 +109410,9 @@
 	},
 /area/f13/wasteland/city)
 "vgV" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/obj/structure/closet/crate/trashcart,
+/obj/effect/landmark/start/f13/followersseniorscientist,
 /turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
+	dir = 1
 	},
 /area/f13/tunnel)
 "vha" = (
@@ -123381,7 +123429,7 @@ hiV
 hiV
 hiV
 hiV
-gfx
+mSq
 gfx
 gfx
 xMT
@@ -123634,10 +123682,10 @@ amC
 pMP
 pMP
 dDs
+omg
+omg
 pvx
-pvx
-pvx
-mSq
+cfG
 gfx
 dlr
 xMT
@@ -123892,7 +123940,7 @@ bQv
 wFm
 uPd
 urA
-hAX
+uRf
 pvx
 gDC
 xMT
@@ -124143,7 +124191,7 @@ qvZ
 dMx
 nXB
 hPj
-hAX
+vgV
 tqo
 wyi
 tkT
@@ -124400,14 +124448,14 @@ gnT
 hda
 tMz
 hPj
-hAX
+vgV
 lup
 epL
 tkT
 lTn
-hAX
-hAX
-vgV
+pvx
+pvx
+cfG
 eaZ
 cmp
 uJN
@@ -124662,8 +124710,8 @@ epL
 epL
 tkT
 pvx
-hAX
-hAX
+pvx
+pvx
 acC
 yhD
 wJZ
@@ -124919,8 +124967,8 @@ hPj
 hAX
 pvx
 pvx
-ubt
-hPj
+pvx
+dNl
 dNl
 sxp
 vpP
@@ -125168,15 +125216,15 @@ sUI
 sUI
 hfm
 lGI
-eZw
+pvx
 hAX
 ptC
 bqK
 hPj
 hAX
-pvx
+eZw
 sWj
-sWj
+dNl
 cHF
 wWz
 xrZ
@@ -125425,8 +125473,8 @@ sUI
 tqb
 sIT
 gRT
-sWj
-sWj
+dNl
+dNl
 pRT
 kwQ
 hPj
@@ -126014,8 +126062,8 @@ rAF
 kgM
 ksL
 dAq
-liI
-liI
+dLj
+dLj
 fvw
 sAN
 vTr
@@ -126529,7 +126577,7 @@ kgM
 ksL
 dLj
 dLj
-kbu
+dLj
 bVH
 nqv
 wYh
@@ -130040,8 +130088,8 @@ vQI
 bcI
 bcI
 hbc
-odu
-odu
+liI
+man
 odu
 xNy
 cdE
