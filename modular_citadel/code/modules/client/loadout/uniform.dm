@@ -3270,3 +3270,27 @@
 	cost = 0
 	path = /obj/item/clothing/under/qipaonosleeveteal
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/jute
+	name = "jute dress"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/jute
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/stripedskirt
+	name = "red striped skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/striped_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/redskirt
+	name = "red skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/red_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blackskirt
+	name = "black skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/black_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
