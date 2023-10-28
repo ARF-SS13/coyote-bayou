@@ -94,7 +94,7 @@
 			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
 			user.visible_message(span_love("<b>\The [user]</b> milks <b>[target]</b>'s breasts into \the [liquid_container]."), ignored_mobs = user.get_unconsenting())
-			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
+			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 30, 1, -1)
 	else
 		if(user.a_intent == INTENT_HARM)
 			user.visible_message(

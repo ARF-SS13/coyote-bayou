@@ -82,6 +82,14 @@ Happy MERPING!  ~TK<3
 //	Mutual Verbs increase both partners arousal at the same time.										//
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Concept Repository
+//This section exists to store some examples of things that we can use to make other verbs with. These have been hand picked out of splurts actual verbs to help the concept 
+//of design for more advanced users. If you are just attempting to make your first emote then perhaps you should avoid using these, as they do complicate the design process.
+
+//(target.a_intent == INTENT_HELP/DISARM/GRAB/HARM)  This is used to check what the intent of the TARGET is. This is for things such as restraint roleplay, but perhaps has other uses.
+// (target.restrained()  Checks if the target is restrained.
+// (user.restrained()  Checks if the user is restrained.
+// [pick("word-a", "word-b)]  We can use this to create more dynamic language in messages
 
 ////////////////////Doesn't give yet
 //Lick the Tip 0A1//
@@ -119,6 +127,7 @@ Happy MERPING!  ~TK<3
 	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
 	//It does require a bit of forethought, but there you have it.
 	var/message
+	var/lust_increase = LOW_LUST
 	//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
@@ -129,6 +138,7 @@ Happy MERPING!  ~TK<3
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
+		lust_increase = 10
 		message = "[pick(
 			"swirls [t_their] tongue around <b>[partner]'s</b> cockhead.",
 			)]"
@@ -143,6 +153,7 @@ Happy MERPING!  ~TK<3
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
+		
 		message = "[pick(
 			"is suckling on <b>[partner]'s</b> cockhead like [t_their] life depends on it!",
 			)]"
