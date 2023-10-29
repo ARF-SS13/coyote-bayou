@@ -11634,17 +11634,6 @@
 /obj/item/storage/backpack,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
-"aNO" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	dir = 8;
-	icon_state = "post_wood"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/city/nash/theloop)
 "aNP" = (
 /obj/structure/chair/comfy,
 /obj/machinery/light/small/broken{
@@ -22480,9 +22469,6 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/nash)
 "bQX" = (
-/obj/structure/fence/corner/wooden{
-	pixel_y = 2
-	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "bRg" = (
@@ -30142,9 +30128,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	dir = 4
-	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/nash/theloop)
 "dpR" = (
@@ -49300,9 +49283,6 @@
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_y = 28;
 	pixel_x = 12
-	},
-/obj/structure/fence/corner/wooden{
-	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/nash/theloop)
@@ -69668,9 +69648,6 @@
 "mbq" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
-	},
-/obj/structure/fence/wooden{
-	dir = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/nash/theloop)
@@ -102873,10 +102850,6 @@
 "tnT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
-/obj/structure/fence/wooden{
-	dir = 8;
-	icon_state = "post_wood"
-	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland/city/nash/theloop)
 "tnU" = (
@@ -145839,7 +145812,7 @@ oih
 dqI
 gar
 jjf
-aNO
+dpN
 rWW
 oih
 kRL
