@@ -3357,7 +3357,7 @@
 	path = /obj/item/clothing/under/trek/command/voy
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-	/datum/gear/uniform/trek/engsec/voy
+/datum/gear/uniform/trek/engsec/voy
 	name = "voy operations uniform"
 	cost = 0
 	path = /obj/item/clothing/under/trek/engsec/voy
