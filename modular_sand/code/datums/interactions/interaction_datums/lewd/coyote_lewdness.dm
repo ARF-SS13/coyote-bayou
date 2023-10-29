@@ -9,7 +9,7 @@ Happy MERPING!  ~TK<3
 //Prototypes 0A (Version 3)
 	- Lick the Tip 0B1   First number is the group its in, 0 is prototype. A is iteration. 1 is the order of creation in the group.
 	- Tip To Lip 0B2
-	- Eager Reciever 0A3
+	- Eager Reciever 0B3
 
 //Head-1A (Version 4)
 	- French Kiss 1A1
@@ -312,8 +312,8 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
+	// var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
 	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
@@ -327,43 +327,51 @@ Happy MERPING!  ~TK<3
 	//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( \
-			"is \
-			[pick("wiggling", "squirming", "writhing", "twisting", "wriggling", "shimmying", "fidgeting", "jiggling", "swaying", "undulating")] \
-			from the \
-			[pick("attention being given", "affection being directed", "care being taken", "closeness being heaped on them")] \
-			by \
-			<b>[partner]'s</b> \
-			[pick("actions", "deeds", "activities", "exploits", "undertakings", "feats", "performance")]")]"
+		message = "[pick(
+			"seems to like what <b>[partner]'s</b> doing to [t_them]", 
+			"is eager to recieve what <b>[partner]'s</b> doing to [t_them]",
+			"is seemingly down for whatever <b>[partner]'s</b> doing",
+			"eagerly takes what <b>[partner]'s</b> is serving up",
+			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick( \
-			"is \
-			[pick("playfully squirming", "merrily wriggling", "gleefully fidgeting", "mischievously wiggling", "cheerfully writhing", "jovially twisting", "joyfully squiggling", "playfully undulating", "lightheartedly squiggling", "merrily fidgeting")] \
-			from the \
-			[pick("attention being given", "affection being directed", "care being taken", "closeness being heaped on them")] \
-			by \
-			<b>[partner]'s</b> \
-			[pick("actions", "deeds", "activities", "exploits", "undertakings", "feats", "performance")]")]"
-	
+		message = "[pick(
+			"definitely likes what <b>[partner]'s</b> doing to [t_them]", 
+			"is very eager to take what <b>[partner]'s</b> putting down on [t_them]",
+			"is totally down for whatever <b>[partner]'s</b> doing",
+			"eagerly takes what <b>[partner]'s</b> is serving up",
+			)]"
+
+
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"is eager about whatever <b>[partner]'s</b> doing to them")]"
+			"<b>REALLY</b> likes what <b>[partner]'s</b> doing to [t_them]", 
+			"is <b>DOWN BAD</b> to take what <b>[partner]'s</b> putting down on [t_them]",
+			"is <b>absolutely losing it</b> for whatever <b>[partner]'s</b> doing",
+			"is taking what <b>[partner]</b> is serving up like a <b>CHAMPION</b>",
+			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
-		message = "[pick("is rapidly losing control because of what <b>[partner]'s</b> doing to them!")]
+		message = "[pick(
+			"<b>IS LOSING IT</b> from what <b>[partner]'s</b> doing to [t_them]", 
+			"is <b>NOT GONNA LAST LONG</b> taking it like that from <b>[partner]</b>",
+			"is <b>barely even mentally there</b> for whatever <b>[partner]'s</b> doing",
+			"is <b>gonna checkout</b> quick from <b>[partner]</b> actions at this rate",
+			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+
+	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 					'modular_sand/sound/interactions/bang1.ogg',
 					'modular_sand/sound/interactions/bang2.ogg',
-					'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
+					'modular_sand/sound/interactions/bang3.ogg'), 
+					70, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //For determining that the USERS intent is how much LUST the RECEIVER is getting. You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////EAGER RECIEVER END/////////
