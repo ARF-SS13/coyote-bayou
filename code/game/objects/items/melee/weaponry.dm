@@ -31,7 +31,7 @@ superlagg says: cool story, oranges
 		M.visible_message(span_danger("[user] strikes [M]'s head with [src]."), span_userdanger("[user] strikes your head with [src]."), "You hear a banhammer striking someone's head.");
 	else
 		M.visible_message(span_danger("[M] has been banned FOR NO REISIN by [user]"), span_userdanger("You have been banned FOR NO REISIN by [user]"), "you hear a banhammer banning someone")
-	playsound(loc, 'sound/effects/adminhelp.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
+	playsound(loc, 'sound/effects/adminnotification.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
 	if(user.a_intent != INTENT_HELP)
 		return ..(M, user)
 

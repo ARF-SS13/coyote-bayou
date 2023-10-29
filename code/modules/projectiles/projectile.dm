@@ -187,6 +187,10 @@
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
+	var/bonus_crit_rolls = 1
+
+	var/is_crit_above = 9999
+
 /obj/item/projectile/Initialize()
 	. = ..()
 	permutated = list()
@@ -462,6 +466,9 @@
 		// 	var/playdink = rand(1, 10)
 		// 	if(playdink <= 3)
 		// 		playsound(src, 'sound/weapons/dink.ogg', 30, 1)
+		if(damage > is_crit_above)
+			playsound(src, crit_sound, 100, 1)
+
 		L.on_hit(src)
 
 	var/reagent_note
@@ -1088,18 +1095,64 @@
 
 /obj/item/projectile/proc/randomize_damage()
 	if(LAZYLEN(damage_list))
-		var/newdam = pickweight(damage_list)
-		if(istext(newdam) && isnum(text2num(newdam)))
-			damage = text2num(newdam)
-		var/critdam = LAZYACCESS(damage_list, LAZYLEN(damage_list))
-		if(istext(critdam) && isnum(text2num(newdam)))
-			critdam = text2num(critdam)
-		if(damage == critdam)
-			playsound(src, crit_sound, 100, 1, 30)
+		prep_list_crits()
+		pick_damage_from_list()
 	else if(!isnull(damage_low) && !isnull(damage_high))
-		damage = rand(damage_low, damage_high)
-		if(damage == damage_high)
+		prep_rand_crits()
+		pick_damage_from_rand()
+
+/obj/item/projectile/proc/prep_rand_crits()
+	if(!isnum(damage_low) || !isnum(damage_high))
+		return
+	var/total_range = damage_high - damage_low
+	if(total_range < 1)
+		return // fine, dont crit, see if I care
+	is_crit_above = damage_high - (total_range * 0.05)
+
+/obj/item/projectile/proc/pick_damage_from_rand()
+	if(!isnum(damage_low) || !isnum(damage_high))
+		return
+	var/dam_out = 0
+	var/num_rolls = 1
+	if(isatom(firer))
+		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
+			num_rolls += bonus_crit_rolls
+	for(var/i in 1 to num_rolls)
+		var/newdam = rand(damage_low, damage_high)
+		if(newdam > dam_out)
+			dam_out = newdam
+	
+
+/obj/item/projectile/proc/prep_list_crits()
+	var/highest = 0
+	var/second_highest = 0
+	for(var/damnum in damage_list)
+		var/numb = text2num(damnum)
+		if(numb > highest)
+			second_highest = highest
+			highest = numb
+		else if(numb > second_highest)
+			second_highest = numb
+	if(highest - second_highest > 100) // some dork keeps making the crit damage be, like, 40000000000000000000000000, and thats the crit
+		highest = second_highest
+	is_crit_above = highest
+
+/obj/item/projectile/proc/pick_damage_from_list()
+	var/damage_out = 0
+	var/num_rolls = 1
+	if(isatom(firer))
+		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
+			num_rolls += bonus_crit_rolls
+	for(var/i in 1 to num_rolls)
+		var/newdam = text2num(pickweight(damage_list))
+		if(!isnum(newdam))
+			continue
+		if(newdam > damage_out)
+			damage_out = newdam
+		if(damage >= is_crit_above)
 			playsound(src, crit_sound, 100, 1, 30)
+	damage = damage_out
+
 
 /////// MISC HELPERS ////////
 /// Is this atom reflectable with ""standardized"" reflection methods like you know eshields and deswords and similar
