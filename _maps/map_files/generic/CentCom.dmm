@@ -2049,9 +2049,6 @@
 /obj/effect/landmark/start/new_player,
 /turf/open/floor/plating,
 /area/start)
-"gu" = (
-/turf/closed/indestructible/splashscreen,
-/area/start)
 "gV" = (
 /turf/closed/indestructible/fakedoor{
 	name = "CentCom Warehouse"
@@ -2794,14 +2791,6 @@
 "jW" = (
 /turf/open/floor/plasteel/stairs/right,
 /area/centcom/evac)
-"jX" = (
-/obj/effect/landmark/thunderdome/two,
-/turf/open/floor/plasteel,
-/area/tdome/arena)
-"jY" = (
-/obj/effect/landmark/thunderdome/one,
-/turf/open/floor/plasteel,
-/area/tdome/arena)
 "jZ" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -5270,9 +5259,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
-"sE" = (
-/turf/open/floor/plating/f13/inside/mountain,
-/area/f13/tcoms)
 "sF" = (
 /obj/structure/cable/white{
 	icon_state = "1-4"
@@ -8081,10 +8067,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/tdome/arena)
-"Jb" = (
-/obj/effect/landmark/thunderdome/one,
-/turf/open/floor/plasteel/neutral,
-/area/tdome/arena)
 "Jc" = (
 /obj/effect/landmark/thunderdome/one,
 /obj/effect/turf_decal/stripes/line{
@@ -8099,9 +8081,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Jg" = (
-/obj/effect/landmark/thunderdome/two,
-/turf/open/floor/plasteel/neutral,
-/area/tdome/arena)
+/turf/closed/indestructible/splashscreen,
+/area/f13/underground/mountain)
 "Jh" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 4
@@ -8131,9 +8112,6 @@
 "Jl" = (
 /obj/effect/landmark/thunderdome/one,
 /turf/open/floor/plasteel/neutral,
-/area/tdome/arena)
-"Jq" = (
-/turf/open/floor/circuit/green,
 /area/tdome/arena)
 "Js" = (
 /turf/open/floor/plasteel/red/corner{
@@ -32809,9 +32787,9 @@ jz
 jw
 jR
 Ep
-jX
+VD
 IV
-Jg
+IV
 IV
 IV
 Jv
@@ -35639,7 +35617,7 @@ It
 IH
 IH
 kb
-Jq
+Ji
 IH
 IH
 It
@@ -38208,8 +38186,8 @@ qV
 Ep
 VE
 Ja
-Jb
-Jb
+Jl
+Jl
 Ja
 Jy
 JD
@@ -38463,11 +38441,11 @@ jA
 jG
 jS
 Ep
-jY
-Jb
+VE
 Jl
-Jb
-Jb
+Jl
+Jl
+Jl
 Jy
 JD
 Wy
@@ -38722,8 +38700,8 @@ Cc
 Ep
 VE
 Ja
-Jb
-Jb
+Jl
+Jl
 Ja
 Jy
 JD
@@ -52971,7 +52949,7 @@ aa
 aa
 aa
 aa
-aa
+Jg
 aa
 aa
 aa
@@ -53742,7 +53720,7 @@ fX
 fX
 fX
 fX
-gu
+fX
 aa
 aa
 aa
@@ -54791,12 +54769,12 @@ RM
 RM
 RM
 RM
-sE
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
+GB
 RM
 RL
 aa
@@ -55045,15 +55023,15 @@ aa
 aa
 RL
 RM
-sE
-sE
+GB
+GB
 RM
-sE
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
+GB
 RM
 RL
 aa
@@ -55305,12 +55283,12 @@ RM
 sG
 Ga
 RM
-sE
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
+GB
 RM
 RL
 aa
@@ -55562,11 +55540,11 @@ RM
 yq
 Gt
 Hk
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
 Hy
 RM
 RL
@@ -55816,15 +55794,15 @@ RL
 aa
 RL
 RM
-sE
+GB
 GA
 RM
-sE
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
+GB
 RM
 RL
 aa
@@ -56073,15 +56051,15 @@ RL
 aa
 RL
 RM
-sE
+GB
 GB
 RM
-sE
-sE
-sE
-sE
-sE
-sE
+GB
+GB
+GB
+GB
+GB
+GB
 RM
 RL
 aa
@@ -56336,9 +56314,9 @@ RM
 Sp
 Hl
 SI
-sE
-sE
-sE
+GB
+GB
+GB
 RM
 RL
 aa
