@@ -101,7 +101,7 @@
 /obj/item/clothing/under/trek/command/orv
 	desc = "An uniform worn by command officers since 2420s."
 	icon_state = "orv_com"
-
+/* // No sprites, can't find them anywhere.
 /obj/item/clothing/under/trek/engsec/orv
 	desc = "An uniform worn by operations officers since 2420s."
 	icon_state = "orv_ops"
@@ -109,7 +109,7 @@
 /obj/item/clothing/under/trek/medsci/orv
 	desc = "An uniform worn by medsci officers since 2420s."
 	icon_state = "orv_medsci"
-
+*/
 //Orvilike Extra (Ditto, but expands it for Civilian department with SS13 colors and gives specified command uniform)
 //honestly no idea why i added specified comm. uniforms but w/e
 /obj/item/clothing/under/trek/command/orv/captain
