@@ -162,7 +162,7 @@ Enjoy!												*/
 					//Wrap up// Step 8 is these next few lines!
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
+	user.handle_post_sex(lust_amt[user.a_intent]/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////RUB CROTCH END///////// Step 9
 
 
