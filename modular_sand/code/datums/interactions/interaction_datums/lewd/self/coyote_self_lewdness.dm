@@ -104,9 +104,22 @@ Enjoy!												*/
 //Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
-		message = pick( //Then pick from these messages!
-			"is really grinding at [t_their] lap!",
-		)
+		 message = pick( //Then pick from these messages!
+				"[pick("is definitely", "certainly")] \
+				[pick("rubbing", "brushing")] \
+				[t_their] \
+				[pick("crotch.", "lap.")])\
+				,\
+				"[pick("rubs", "brushes")] \
+				[t_their] \
+				[pick("crotch", "lap")] \
+				[pick("a bit briskly.", "a bit energetically.")]
+				")
+
+// So this code above here, in block C is an example of using the Pick System prototype to rewrite multiple different takes of the message.
+// It follows all the same rules mentioned on line 76, but then at line 112 here it wraps up the first pick message, and defines a second one on the prime pick.
+// This means it can roll two differnt sentences, of which there are LOTS of different versions!
+// Share and enjoy!
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
