@@ -639,7 +639,7 @@ datum/crafting_recipe/tribalwar/bone
 
 // Perfected Staff of Healing (Literally just the medbeam but Bulky and needs magic)
 /datum/crafting_recipe/magic/healstaff/perfected
-	name = "Staff of Healing"
+	name = "Perfected Staff of Healing"
 	result = /obj/item/gun/medbeam/magic
 	time = 30
 	reqs = list(/obj/item/stack/crafting/metalparts = 20,
