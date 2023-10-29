@@ -68,8 +68,32 @@
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP) //Is the player on help intent?  //If your verb is insanely simple, you can remove this user.a_intent check and just do a single block of messages.
 		message = pick( //Then pick from these messages!
-		"lightly rubs [t_their] crotch.",
+		"[pick("lightly", "gently")] \
+		 [pick("rubs", "brushes")] \
+		 [t_their] \
+		 [pick("crotch.", "lap.")])
 		)
+
+//Pick System Prototype				 
+/*  This system that you see above here is very complex at first glance, but lets take a moment to break it down.  
+On line 70 you have the message = pick( call.  This is the call the code will do to figure out what it should put in chat.
+On line 71 we've placed the start of the first original message pick options. It's where the " starts at. 
+On line 71 we have the SECOND word of the thing that will be said. The first is always your characters name, or unknown.
+On line 71 we then have another pick call in brackets.  This pick call then picks between the words lightly and gently.
+On the end of line 71 we have a space, then a code line break. The code will read this as there not being an actual break there, it helps keep this legible.
+On line 72 we have the next word in the sentence we're building, in this case rubs or brushes.  Then that line break again. Same line break.
+On line 73 we have the pronoun call for their. It will be His/Her/Their depending on the character using the verb. Same line break.
+On line 74 we have the final word of the sentence, which is why a period is included in the pick calls. No line break here, then we close the original pick from line 70.
+
+What this does is build MULTIPLE possible sentences
+"Little Joey Toblerone [lightly] [brushes] his [crotch.]" - Remove the brackets of course
+Lightly, brushes, and crotch could all just as equally as gently, rubs, or crotch could have been.
+This allows for massively randomized text building!
+Enjoy!												*/
+//In the nightmare scenario of this post getting moved please feel free to use this Gyazo link for the original layout
+//https://gyazo.com/f9c8a8e639a49927976600db54bcbdee
+
+
 
 		//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
