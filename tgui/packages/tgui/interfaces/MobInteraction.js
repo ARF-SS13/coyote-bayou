@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { filter, map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { clamp } from 'common/math';
@@ -81,11 +82,11 @@ import { Window } from '../layouts';
 // }
 
 const tabcolor = [
-"default",
-"pink",
-"red",
-"yellow",
-]
+  "default",
+  "pink",
+  "red",
+  "yellow",
+];
 
 export const MobInteraction = (props, context) => {
   const { act, data } = useBackend(context);
