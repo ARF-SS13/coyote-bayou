@@ -594,6 +594,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	/// recoil is read before a burst, so all subsequent shots in a burst will have the same recoil
+	/// This is the mob shooting's aggregate recoil
 	var/sprd = SSrecoil.get_offset(user) /// its still *added* with each shot, so the next burst will be higher
 	for(var/i in 1 to burst_size)
 		misfire_act(user)

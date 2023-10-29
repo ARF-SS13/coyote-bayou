@@ -45,7 +45,8 @@ SUBSYSTEM_DEF(recoil)
 	// var/recoil_equation_fuck_it_just_gauss_it = 1
 	// var/list/recoil_equation = list()
 	// var/recoil_index = 1
-	var/recoil_equation_gauss_mean_mult = 0 // recoil of 20 has a mean of 0 degree offset
+	/// forewarning: statistics are hard
+	var/recoil_equation_gauss_mean_mult = 0.5 // recoil of 20 has a mean of 10 degree total offset
 	var/recoil_equation_gauss_std_mult = 0.5 // recoil of 20 has a 68% chance to be within +-10 deg offset, 95% chance to be between +-20
 
 	/// Item recoil datums (cus I am tired of them just floating around in the 'nowhere')
@@ -67,23 +68,25 @@ SUBSYSTEM_DEF(recoil)
 	var/use_shoot_recoil = TRUE
 
 	var/recoil_min_movement = -40
-	var/recoil_max_movement = 5
+	var/recoil_max_movement = 15
 	var/recoil_max_shoot = 40
 	var/recoil_max_spread = MAX_ACCURACY_OFFSET
 
 	var/recoil_movement_increase_multiplier = 1
 	var/recoil_shoot_increase_multiplier = 1
 
-	var/recoil_movement_heaviness_mult = 0.5
-	var/recoil_movement_heaviness_scoot_bonus_mult = 3
+	var/recoil_movement_heaviness_mult = 1
+	var/recoil_movement_heaviness_scoot_bonus_mult = 1
 	var/recoil_movement_slowest_speed = 3
 	var/recoil_movement_speed_mult = 1
 
-	var/recoil_offset_low_spread_threshold = 8
+	var/recoil_offset_low_spread_threshold = 3
 	var/recoil_offset_premult = 80
 	var/recoil_offset_postmult = 0.01
 
 	var/recoil_wielded_reward = 0.5
+
+	var/turbofuck_threshold = 10
 
 	/// GLobal multiplier to converting recoil into spread
 	var/recoil_to_spread_mult = 1
@@ -151,49 +154,17 @@ SUBSYSTEM_DEF(recoil)
 	LAZYSET(gun_recoils, gun_recoil.index, gun_recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
 
-// /datum/controller/subsystem/recoil/proc/generate_recoil_equation()
-// 	recoil_equation = list()
-// 	if(recoil_equation_fuck_it_just_gauss_it)
-// 		possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
-// 		return
-// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
-// 		var/list/fucksmall_list_of_numbers = list()
-// 		for(var/i in 1 to offset)
-// 			var/random_ass_angle = (offset + 1) - i
-// 			random_ass_angle -= recoil_equation_subtract
-// 			random_ass_angle *= recoil_equation_multiply
-// 			random_ass_angle = random_ass_angle ** recoil_equation_exponent
-// 			fucksmall_list_of_numbers += random_ass_angle
-// 			fucksmall_list_of_numbers += -random_ass_angle
-// 		recoil_equation += fucksmall_list_of_numbers
-
-// /// Generates a fuckton of numbers through gaussian distribution, truncates the result to, oh, a decimal, and arranges them in a list
-// /// Then, stuffs them into a list to be used as a weighted probability bullshit. Numbers above the list will be clamped to the list of the list
-// /datum/controller/subsystem/recoil/proc/possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
-// 	var/time_now = world.time
-// 	message_admins("Running an expensive gaussian distribution proc, like, a million times.")
-// 	recoil_equation = list()
-// 	recoil_equation.len = MAX_ACCURACY_OFFSET
-// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
-// 		var/list/fuckhuge_list_of_numbers = list()
-// 		for(var/i in 1 to (2000)) // lol
-// 			var/randum_number = gaussian(offset * recoil_equation_gauss_mean_mult, offset * recoil_equation_gauss_std_mult)
-// 			fuckhuge_list_of_numbers += randum_number
-// 			fuckhuge_list_of_numbers += -randum_number
-// 		recoil_equation[offset] = fuckhuge_list_of_numbers
-// 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
-
-/datum/controller/subsystem/recoil/proc/get_output_offset(spread, obj/item/gun/shoot)
+/datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
 	spread = clamp(spread, 0, recoil_max_spread)
 	if(spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
+	var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
 	var/turbofuck_unwielded_spread = FALSE
 	var/turboreward_wielded_spread = FALSE
-	if(spread > 15 && istype(shoot))
-		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
-		if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0.5)
+	if(spread > turbofuck_threshold && istype(shoot))
+		if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
 			turbofuck_unwielded_spread = TRUE // hodl it right
 			mean = spread
 			std = spread //fuck you wield it
@@ -201,12 +172,19 @@ SUBSYSTEM_DEF(recoil)
 			turboreward_wielded_spread = TRUE
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std)
-	if(turbofuck_unwielded_spread)
+	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
 		my_angle += rand(1,15) * SIGN(my_angle)
-	if(turboreward_wielded_spread)
+	if(turboreward_wielded_spread) // give em a boost for wielding it
 		my_angle *= recoil_wielded_reward
 		my_angle -= (rand(1,my_angle) * SIGN(my_angle))
-	return round(my_angle, 0.1)
+	if(istype(shotter))
+		if(HAS_TRAIT(shotter,TRAIT_NEARSIGHT)) //Yes.
+			my_angle *= 2 //You're much less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
+		if(HAS_TRAIT(shotter,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+			my_angle *= 3//This is cripplingly bad. Trust me.
+		if(HAS_TRAIT(shotter,TRAIT_FEV)) //You really shouldn't try this at home.
+			my_angle *= 5 //YOU AINT HITTING SHIT BROTHA. REALLY.
+	return round(clamp(my_angle, 0, recoil_max_spread), 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////
 /datum/controller/subsystem/recoil/proc/kickback(mob/living/user, atom/my_weapon, recoil_tag = RECOIL_TAG_DEFAULT, recoil_in = 1)
@@ -243,11 +221,11 @@ SUBSYSTEM_DEF(recoil)
 	var/datum/mob_recoil/my_recoil = get_mob_recoil(user)
 	return my_recoil?.get_offset(rounded, rounded, allow_negatives)
 
-/datum/controller/subsystem/recoil/proc/movement_recoil(mob/living/user)
+/datum/controller/subsystem/recoil/proc/incur_movement_recoil(mob/living/user)
 	var/datum/mob_recoil/my_recoil = get_mob_recoil(user)
 	if(!my_recoil)
 		return
-	my_recoil.movement_recoil(user)
+	my_recoil.add_movement_recoil(user)
 
 ////////////// GUN RECOIL DATUM STUFF //////////////
 /datum/controller/subsystem/recoil/proc/give_recoil_tag(list/recoil_args = RECOIL_LIST_DEFAULT)
@@ -433,7 +411,7 @@ SUBSYSTEM_DEF(recoil)
 	COOLDOWN_START(src, last_shoot_time, SSrecoil.recoil_post_shoot_fast_decay_delay)
 	var/recoil_before = shoot_recoil
 	shots_did_this_tick++
-	var/mult = get_shoot_recoil_mods(shooter, my_gun)
+	var/mult = get_shoot_recoil_mult(shooter, my_gun)
 	var/modify_by_this_much = round(recoil_buildup * mult * SSrecoil.recoil_shoot_increase_multiplier, 0.1)
 	shoot_recoil = clamp(shoot_recoil + modify_by_this_much, 0, SSrecoil.recoil_max_shoot)
 	update_mob(shooter)
@@ -441,9 +419,14 @@ SUBSYSTEM_DEF(recoil)
 		to_chat(shooter, "Added shoot [recoil_buildup] * [mult] * [SSrecoil.recoil_shoot_increase_multiplier] = [modify_by_this_much]. Recoil: [recoil_before] -> [shoot_recoil]")
 	return TRUE
 
-/datum/mob_recoil/proc/get_shoot_recoil_mods(mob/living/shooter, obj/item/gun/my_gun)
+/datum/mob_recoil/proc/get_shoot_recoil_mult(mob/living/shooter, obj/item/gun/my_gun)
 	var/mult = 1
-	//mult *= get_spray_factor()
+	if(!isliving(shooter))
+		return mult
+	if(HAS_TRAIT(shooter,TRAIT_PANICKED_ATTACKER))
+		return 100 // lol
+	if(HAS_TRAIT(shooter, SPREAD_CONTROL))
+		mult *= 0.75 // Spread control! used by power armor
 	return mult
 
 /datum/mob_recoil/proc/get_scoot_factor()
@@ -456,13 +439,13 @@ SUBSYSTEM_DEF(recoil)
 	var/obj/item/gun/scootgun = scooter.get_active_held_item()
 	if(!istype(scootgun))
 		return SCOOT_FACTOR(1)
-	if(!scootgun.wielded) // Gotta wield it!
-		return SCOOT_FACTOR(1)
 	var/datum/gun_recoil/recoilgun = SSrecoil.get_gun_recoil_datum(scootgun.recoil_tag)
 	if(!recoilgun)
 		return SCOOT_FACTOR(1)
 	/// okay we've confirmed they have been moving and have a gun that has a recoil datum, lets get the scoot factor
 	var/scoot_factor = recoilgun.get_scoot() // that was easy
+	if(!scootgun.wielded && !HAS_TRAIT(scooter, TRAIT_NICE_SHOT)) // Gotta wield it! Unless you're a pro
+		scoot_factor = abs(scoot_factor) // wield it!
 	return scoot_factor
 
 /datum/mob_recoil/proc/get_spray_factor()
@@ -495,11 +478,7 @@ SUBSYSTEM_DEF(recoil)
 /datum/mob_recoil/proc/get_shoot_recoil(mob/living/shooter)
 	if(!isliving(shooter))
 		return 0
-	if(HAS_TRAIT(shooter, TRAIT_INSANE_AIM))
-		return 0
 	var/recout = min(shoot_recoil, SSrecoil.recoil_max_shoot)
-	if(HAS_TRAIT(shooter, SPREAD_CONTROL))
-		return recout * 0.5
 	return recout
 
 /datum/mob_recoil/proc/get_movement_recoil(mob/living/shooter, hide_it)
@@ -573,6 +552,7 @@ SUBSYSTEM_DEF(recoil)
 	movement_recoil = clamp(movement_out, SSrecoil.recoil_min_movement, SSrecoil.recoil_max_movement)
 	if(debug_mode && shooter)
 		to_chat(shooter, "Reduced movement recoil from [movement_recoil_before] to [movement_recoil]. Was not moving: [done_moving]")
+	return movement_recoil > 0
 
 /datum/mob_recoil/proc/reduce_shoot_recoil(base_reduction, mob/living/shooter)
 	if(!SSrecoil.use_shoot_recoil)
@@ -588,6 +568,7 @@ SUBSYSTEM_DEF(recoil)
 	shoot_recoil = clamp(shoot_recoil, 0, SSrecoil.recoil_max_shoot)
 	if(debug_mode && shooter)
 		to_chat(shooter, "Reduced shoot recoil from [shoot_recoil_before] to [shoot_recoil]. Was not shooting: [done_shooting].")
+	return shoot_recoil > 0
 
 /datum/mob_recoil/proc/update_mob(mob/living/updateme)
 	if(isliving(updateme))
@@ -606,6 +587,8 @@ SUBSYSTEM_DEF(recoil)
 /datum/mob_recoil/proc/is_on_the_move(tick_scooch = TRUE)
 	/// first check if we moved before the cooldown finished
 	var/mob/living/walker = GET_WEAKREF(user)
+	if(HAS_TRAIT(walker, TRAIT_NICE_SHOT))
+		return TRUE // scooches actually work against SMGs when you're a pro
 	var/stood_still = COOLDOWN_FINISHED(src, last_movement_time)
 	COOLDOWN_START(src, last_movement_time, SSrecoil.recoil_scooch_time)
 	if(scooches_left > 0)
@@ -622,7 +605,7 @@ SUBSYSTEM_DEF(recoil)
 		return FALSE
 	return TRUE
 
-/datum/mob_recoil/proc/movement_recoil(mob/living/walker)
+/datum/mob_recoil/proc/add_movement_recoil(mob/living/walker)
 	if(!SSrecoil.use_movement_recoil)
 		movement_recoil = 0
 		return
@@ -676,9 +659,11 @@ SUBSYSTEM_DEF(recoil)
 		return 0 // wielding it with both hands keeps it steady! unless its an SMG
 	var/heaviness = G.slowdown
 	if(scoot_factor > 0) // negative scoot factor means its improving your aim
-		heaviness *= SSrecoil.recoil_movement_heaviness_mult
+		if(HAS_TRAIT(walker, TRAIT_NICE_SHOT))
+			return 0 // Nice shot! more like steady aim
+		heaviness *= scoot_factor * SSrecoil.recoil_movement_heaviness_mult
 	else if(scoot_factor < 0)
-		heaviness *= SSrecoil.recoil_movement_heaviness_scoot_bonus_mult
+		heaviness *= scoot_factor * SSrecoil.recoil_movement_heaviness_scoot_bonus_mult
 	return heaviness
 
 /datum/mob_recoil/proc/get_movement_stiffness_recoil(mob/living/walker)
@@ -851,3 +836,44 @@ SUBSYSTEM_DEF(recoil)
 
 #undef RECOIL_MOVED
 #undef RECOIL_SHOT
+
+
+
+
+
+
+
+
+// /datum/controller/subsystem/recoil/proc/generate_recoil_equation()
+// 	recoil_equation = list()
+// 	if(recoil_equation_fuck_it_just_gauss_it)
+// 		possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+// 		return
+// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+// 		var/list/fucksmall_list_of_numbers = list()
+// 		for(var/i in 1 to offset)
+// 			var/random_ass_angle = (offset + 1) - i
+// 			random_ass_angle -= recoil_equation_subtract
+// 			random_ass_angle *= recoil_equation_multiply
+// 			random_ass_angle = random_ass_angle ** recoil_equation_exponent
+// 			fucksmall_list_of_numbers += random_ass_angle
+// 			fucksmall_list_of_numbers += -random_ass_angle
+// 		recoil_equation += fucksmall_list_of_numbers
+
+// /// Generates a fuckton of numbers through gaussian distribution, truncates the result to, oh, a decimal, and arranges them in a list
+// /// Then, stuffs them into a list to be used as a weighted probability bullshit. Numbers above the list will be clamped to the list of the list
+// /datum/controller/subsystem/recoil/proc/possibly_the_worst_implementation_of_gaussian_distribution_known_to_furries()
+// 	var/time_now = world.time
+// 	message_admins("Running an expensive gaussian distribution proc, like, a million times.")
+// 	recoil_equation = list()
+// 	recoil_equation.len = MAX_ACCURACY_OFFSET
+// 	for(var/offset in 1 to MAX_ACCURACY_OFFSET)
+// 		var/list/fuckhuge_list_of_numbers = list()
+// 		for(var/i in 1 to (2000)) // lol
+// 			var/randum_number = gaussian(offset * recoil_equation_gauss_mean_mult, offset * recoil_equation_gauss_std_mult)
+// 			fuckhuge_list_of_numbers += randum_number
+// 			fuckhuge_list_of_numbers += -randum_number
+// 		recoil_equation[offset] = fuckhuge_list_of_numbers
+// 	message_admins("That fucking proc took [(world.time - time_now)*0.1] seconds.") // wow it only took 0.3 seconds, I am legit impresed byond
+
+
