@@ -1415,6 +1415,9 @@
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
 	new /obj/item/clothing/under/dress/skirt/polychromic/pleated(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/pen/edagger(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
