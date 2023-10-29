@@ -7,8 +7,8 @@ While github absolutely will track this PR, it helps whoever comes behind you to
 Happy MERPING!  ~TK<3
 
 //Prototypes 0A (Version 3)
-	- Lick the Tip 0A1
-	- Tip To Lip 0A2
+	- Lick the Tip 0B1   First number is the group its in, 0 is prototype. A is iteration. 1 is the order of creation in the group.
+	- Tip To Lip 0B2
 	- Eager Reciever 0A3
 
 //Head-1A (Version 4)
@@ -235,29 +235,52 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"lightly presses [t_their] cockhead to <b>[partner]'s</b> lips.", //An example of pronoun storage usage inside those brackets.
-			)]"
+			"[pick("gently pushes", "softly applies", "tenderly exerts", "delicately presses", "lightly presses", "subtly teases", "carefully nudges", "lightly laps with", "lightly depresses", "tactfully licks", "soothingly mlems", "cautiously tastes with", "affectionately teases")] \
+			[t_their] \
+			cockhead to \
+			<b>[partner]'s</b> \
+			[pick("lips", "kisser", "mouth", "kissing zone", "smoocher")]")]
+
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"teases the tip of [t_their] cockhead around and in <b>[partner]'s</b> lips.",
-			)]"
+			"[pick("teases the", "playfully taunts the", "teasingly flirts with the", "provocatively tempts the", "coquettishly allures the", "mischievously tantalizes the", "seductively entices the", "flirtatiously beguiles the", "enticingly provokes the", "charmingly lures the")] \
+			[pick("tip of", "end of", "point of", "top of", "apex of", "summit of", "vertex of", "peak of", "pinnacle of", "zenith of")] \
+			[t_their] \
+			cockhead \
+			[pick("around", "about", "approximately", "roughly", "circling around", "in the vicinity of", "near", "close to")] \
+			and \
+			[pick("in", "inside", "within", "within the confines of", "inside of", "amidst")] \
+			<b>[partner]'s</b> \
+			[pick("soft and wet", "gentle and moist", "tender and damp", "smooth and soaked", "juicy and soft", "delicate and dewy", "silky and saturated", "supple and moist")] \
+			[pick("lips", "kisser", "mouth", "kissing zone", "smoocher")]")]
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"pushes <b>[partner]'s</b> lips apart with [t_their] cockhead!",
-			)]"
+			"[pick("firmly pushes", "strongly presses", "forcibly thrusts", "steadily shoves", "powerfully propels", "assertively drives", "solidly propels", "resolutely thrusts", "vigorously moves", "determinedly applies force")] \
+			<b>[partner]'s</b> \
+			lips apart with \
+			[t_their] \
+			cockhead: \
+			[pick("using their mouth as a playtoy", "playfully employing their lips and tongue to pleasure themselves", "making a game of their oral actions", "using their oral cavity as a source of pleasure", "treating their mouth as a fun toy", "playfully toying with their lips and tongue", "utilizing their mouth for their own sexual pleasures")]")]
+
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"is making <b>[partner]</b> suckle on [t_their] cock by force!",
-			)]"
+			"is \
+			[pick("forcing", "compelling", "coercing", "pressuring", "driving", "pushing", "obliging", "mandating", "requiring", "imposing")] \
+			<b>[partner]</b> \
+			[pick("suckle on", "nurse on", "savor on", "lick on", "mlem on", "drool on", "taking")] \
+			[t_their] \
+			cock \
+			by force: \
+			[pick("using their mouth as a playtoy", "playfully employing their lips and tongue to pleasure themselves", "making a game of their oral actions", "using their oral cavity as a source of pleasure", "treating their mouth as a fun toy", "playfully toying with their lips and tongue", "utilizing their mouth for their own sexual pleasures")]")]
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume. 
