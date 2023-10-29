@@ -1,7 +1,7 @@
 //Just some alt-uniforms themed around Star Trek - Pls don't sue, Mr Roddenberry ;_;
 
 
-/obj/item/clothing/under/trek
+/obj/item/clothing/under/trek // This one has no sprite. Do not use.
 	name = "Section 31 Uniform"
 	desc = "Oooh... right."
 	item_state = ""
