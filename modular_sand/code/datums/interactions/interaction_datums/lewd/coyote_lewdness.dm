@@ -120,6 +120,15 @@ Happy MERPING!  ~TK<3
 	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
 	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
 	
+		//To uncomment these vars just remove the first / on the far left!
+	//var/p_they = partner.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
+	/var/p_their = partner.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	/var/p_them = partner.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
+	//var/p_have = partner.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
+	//var/p_are = partner.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
+	//var/p_were = partner.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
+	//var/p_do = partner.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
+
 	//A big example of this combined together follows.
 	// "[t_they] [t_have] [t_their] work cut out for [t_them]."
 	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
@@ -138,30 +147,48 @@ Happy MERPING!  ~TK<3
 			<b>[partner]'s</b> \
 			cockhead \
 			[pick(": moistening it", ": dampening it", ": wetting it", ": saturating it", ": soaking it", ": hydrating it", ": making it wet", ": adding moisture", ": drenching it", ": getting it wet")] \
-			[pick("as [t_they] drag [t_thier] tongue across it", "as [t_they] lap at it", "as [t_they] mlems it", "as [t_they] suckles on it", "as [t_they] teases it", "as [t_they] play with it \
-			[pick("playfully", "merrily", "cheerfully", "lightheartedly", "joyfully", "happily", "jovially", "lewdly", "mischievously", "deviously")]"))]
+			[pick("as [t_they] drag [t_thier] tongue across it", "as [t_they] lap at it", "as [t_they] mlems it", "as [t_they] suckles on it", "as [t_they] teases it", "as [t_they] play with it")] \
+			[pick("playfully", "merrily", "cheerfully", "lightheartedly", "joyfully", "happily", "jovially", "lewdly", "mischievously", "deviously")]")]
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"swirls [t_their] tongue around <b>[partner]'s</b> cockhead.",
-			)]"
+			"[pick("swirls", "dragss", "twirls", "spirals", "mlems")] \
+			[t_their] \
+			[pick("tongue", "licker", "flavor finder", "yapper", "talker", "speech maker", "chatterbox", "mouth", "kisser",)] \
+			[pick("around", "about", "circling", "all around")] \
+			<b>[partner]'s</b> \
+			cockhead" \
+			[pick(": moistening it", ": dampening it", ": wetting it", ": saturating it", ": soaking it", ": hydrating it", ": making it wet", ": adding moisture", ": drenching it", ": getting it wet")] \
+			[pick("as [t_they] drag [t_thier] tongue across it", "as [t_they] lap at it", "as [t_they] mlems it", "as [t_they] suckles on it", "as [t_they] teases it", "as [t_they] play with it")] \
+			[pick("lewdly", "suggestively", "provocatively", "immodestly", "inappropriately", "obscenely", "indecently", "risquély", "enticingly", "salaciously")]")]
+			
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"takes <b>[partner]'s</b> into their mouth, swirling [t_their] tongue as they work to please them!",
-			)]"
+			"[pick("takes", "grabs", "snatches", "steals", "buries", "appropriates", "procures", "gains", "gets")] \
+			<b>[partner]'s</b> \
+			cockhead" \
+			[pick("into [t_their] mouth", "against [t_their] tongue", "inside [t_their] mouth and lets [t_their] tongue", "within [t_their] lips", "in [t_their] maw", "inside [t_their] gob") \
+			 [pick("swirling", "whirling", "twisting", "spiraling", "whirlpooling", "twirling", "circling", "spinning", "churning")] \
+			 [t_their] \
+			[pick("tongue", "licker", "flavor finder", "mouth", "kisser",)] \
+			as they work to \
+			[pick("please [p_them]", "satisfy [p_them]", "gratify [p_them]", "delight [p_them]", "fulfill [p_their] desires", "bring [p_them] pleasure", "make [p_them] happy", "meet [p_them] needs", "give [p_them] satisfaction", "appease [p_them]", "get [p_them] off", "make [p_them] cum", "make [p_them] climax")]")
+
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
-		
 		message = "[pick(
-			"is suckling on <b>[partner]'s</b> cockhead like [t_their] life depends on it!",
-			)]"
+			"is \
+			[pick("suckling on", "nursing on", "slurping on", "drawing everything [t_they] from", "sipping from", "tenderly nursing on", "gently suckling on", "savoring while suckling on")] \
+			<b>[partner]'s</b> \
+			cockhead \
+			like [t_their] life depends on it!)")
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
