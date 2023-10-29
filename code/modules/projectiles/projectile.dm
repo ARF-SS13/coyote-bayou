@@ -187,7 +187,7 @@
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
-	var/bonus_crit_rolls = 2
+	var/bonus_crit_rolls = 1
 
 	var/is_crit_above = 9999
 
