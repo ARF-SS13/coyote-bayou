@@ -112,7 +112,7 @@ Happy MERPING!  ~TK<3
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
 
 			//To uncomment these vars just remove the first / on the far left!
-	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
+	var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
 	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
@@ -129,9 +129,17 @@ Happy MERPING!  ~TK<3
 	//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"lightly presses [t_their] tongue to <b>[partner]'s</b> cockhead.", //An example of pronoun storage usage inside those brackets.
-			)]"
+		message = "[pick(
+			"[pick("gently pushes", "softly applies", "tenderly exerts", "delicately presses", "lightly presses", "subtly teases", "carefully nudges", "lightly laps with", "lightly depresses", "tactfully licks", "soothingly mlems", "cautiously tastes with", "affectionately teases")] \
+			[t_their] \
+			[pick("gentle", "warm", "tender", "soft", "wet", "delicate", "smooth", "velvet", "caressing", "silken")] \
+			[pick("tongue", "licker", "flavor finder", "yapper", "talker", "speech maker", "chatterbox", "mouth", "kisser",)] \
+			[pick("against", "onto", "upon", "up against", "in contact with", "up to")] \
+			<b>[partner]'s</b> \
+			cockhead \
+			[pick(": moistening it", ": dampening it", ": wetting it", ": saturating it", ": soaking it", ": hydrating it", ": making it wet", ": adding moisture", ": drenching it", ": getting it wet")] \
+			[pick("as [t_they] drag [t_thier] tongue across it", "as [t_they] lap at it", "as [t_they] mlems it", "as [t_they] suckles on it", "as [t_they] teases it", "as [t_they] play with it \
+			[pick("playfully", "merrily", "cheerfully", "lightheartedly", "joyfully", "happily", "jovially", "lewdly", "mischievously", "deviously")]"))]
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
