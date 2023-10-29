@@ -162,3 +162,4 @@
 	desc = "Something about it feels off..."
 	icon_state = "trek_Q"
 	item_state = "r_suit"
+
