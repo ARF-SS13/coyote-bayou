@@ -115,10 +115,18 @@ Enjoy!												*/
 //Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
-			message = pick( //Then pick from these messages!
-			"rubs [t_their] lap openly!",
-			"rubs [t_their] crotch!", //This is how two or more should look, stack them vertically!
-			)
+		message = pick( //Then pick from these messages!
+				"[pick("massages", "caresses", "strokes", "pats", "grazes", "rubs", "fondles", "gently touches", "lightly brushes", "tenderly feels", "smoothly glides a hand across", "affectionately handles")] \
+				[t_their] \
+				[pick("thigh", "upper thighs", "upper leg", "crotch", "leg area", "lap space", "cushioned lap")] \
+				[pick("openly", "boldly", "publicly", "freely", "frankly", "without reservation", "outwardly", "without hesitation", "unreservedly")]")
+
+// Message block C here is an example of using ChatGPT 3.5 from Jan 2022. 
+// We've asked it to build [pick("word a", "word b")] blocks, without a limit to the number of synonyms it uses.
+// Then you, the actually intelligent human, can go in and sanity check the verbage. Remove words that make no sense in the chain, and adjust as needed.
+// Welcome to variety using AI coding concepts! Less thinking and effort on your part, focus on the FUN parts of design!
+// Share and enjoy!
+
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
@@ -127,6 +135,17 @@ Enjoy!												*/
 			"rubs [t_their] lap aggressively!",
 			"mauls [t_their] crotch!", //This is how two or more should look, stack them vertically!
 			)
+
+//Finally we have a much more basic version. I've left Block D as it is to show that sometimes good enough is what you need. Iteration takes time, and most importantly.  Effort.
+//You may not have time on first creation of the verb to figure out all the perfect wording, or find the code way you want to do. It may be too difficult at that exact moment.
+//It is better to have SOMETHING than nothing. If you're here and reading this, if you have taken the time to read all the comments that I've made and learned how to do this fully-
+//- then I think its fair to say you are a driven creative who wants to see your hammer blows on the steel. You want to create, and shape something. Well, just like the blacksmith-
+//- you have to learn how to make the basics, see them in action, and build up your skills from there..
+
+//Put simply, there is no shame in doing something the easy way. Create, you creative creature. Get that dopamine you seek from building something up and know that I'm riding along with you.
+//Because what I do here helps build us (the lewd furry community) a better toolset for being naughty and fun with each other. There's little more that we could ask for out of this otherwise-
+//- accursed fucking game.  It was never built for us. This code wasn't even originally built for us. We will bend it to what we want though.
+//One pull request at a god damn time.  ~TK420634, with love.
 
 //Aftershock Block//  
 	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
@@ -137,6 +156,8 @@ Enjoy!												*/
 				"gasps.",
 				"shudders softly.",
 				)]"))
+
+//Feel free to use the block code concepts above to expand on these as well!
 
 					//Wrap up//
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
