@@ -104,22 +104,19 @@ Enjoy!												*/
 //Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
-		 message = pick( //Then pick from these messages!
-				"[pick("is definitely", "certainly")] \
-				[pick("rubbing", "brushing")] \
-				[t_their] \
-				[pick("crotch.", "lap.")])\
-				,\
-				"[pick("rubs", "brushes")] \
-				[t_their] \
-				[pick("crotch", "lap")] \
-				[pick("a bit briskly.", "a bit energetically.")]
-				")
+		var/adverb1 = pick("is definitely", "certainly")
+		var/action1 = pick("rubbing", "brushing")
+		var/place1 = pick("crotch.", "lap.")
+		var/msg1 = "[adverb1] [action1] [t_their] [place1]"
+		var/action2 = pick("rubs", "brushes")
+		var/place2 = pick("crotch", "lap")
+		var/brisk = pick("a bit briskly.", "a bit energetically.")
+		var/msg2 = "[action2] [t_their] [place2] [brisk]"
+		message = pick(msg1, msg2)
 
-// So this code above here, in block C is an example of using the Pick System prototype to rewrite multiple different takes of the message.
-// It follows all the same rules mentioned on line 76, but then at line 112 here it wraps up the first pick message, and defines a second one on the prime pick.
-// This means it can roll two differnt sentences, of which there are LOTS of different versions!
-// Share and enjoy!
+// The system above is an example of using on the spot variables that you (yes, you, baby coder.  You can just make them, they don't need any other code elsewhere)
+// You make your var/whatevers, then glue them together into a msg var. Then, once you have all your message variations created you plug them into tyour message = Pick() system. 
+// This works much the same way as the sytem in Block A, but instead of writing it out long form it just uses variables!
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
