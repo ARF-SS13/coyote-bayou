@@ -290,6 +290,8 @@
 #define TRAIT_FEV				"FEV_MUT" //OH BOY
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
+#define TRAIT_SHOCKINGGRASP		"shocking_grasp"
+#define TRAIT_BOOMING			"booming_blade"
 #define TRAIT_IRONFIST			"iron_fist"
 #define TRAIT_STEELFIST			"steel_fist"
 #define TRAIT_NOODLEFIST			"noodle_fist"
