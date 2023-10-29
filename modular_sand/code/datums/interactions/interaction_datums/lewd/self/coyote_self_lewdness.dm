@@ -19,13 +19,13 @@
 //12. Compile
 //13. Fix the issues you have from testing, or add more message lines!  Rinse and repeat from 10 until you're so dehydrated you blow away like salt in the wind.
 
-
+//Use ctrl+f to search for the words step 1 thru 9. You can jump directly to where those steps are in the code with that. Realize that 10-13 are actions you'll be taking, not code you're writing.
 //////////////
-//Rub Crotch// 
+//Rub Crotch// Step 1
 //////////////
 //Crotch rub will be our prototype emote, I will comment the shit out of it to make things make the most sense to a newbie.
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_crotch //lewd makes it pink, the name is just what the code calls it.
+/datum/interaction/lewd/self/rub_crotch //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
 	description = "Self/Crotch - Rub Crotch." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
 	// Self/Partner for the left hand side.
 	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
@@ -38,10 +38,10 @@
 
 
 ////////////
-//VERBOSITY//
+//VERBOSITY// step 4
 ////////////
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window. Step 2
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -60,13 +60,13 @@
 	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
 	//It does require a bit of forethought, but there you have it.
 
-
+	//For the next line what you should actually do is go up to line 51 and uncomment out the var there. This way you can toggle on the vars you actually need for the datum.
 	var/t_their = user.p_their() //This is an example of creating a var that uses an existing pronoun, this is an inherited example, we should remove it and use the one above eventually.
 	var/message //This is the variable that holds the different messages that can play depending on which intent the player has used.
 
 //Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP) //Is the player on help intent?  //If your verb is insanely simple, you can remove this user.a_intent check and just do a single block of messages.
+	if(user.a_intent == INTENT_HELP) //Is the player on help intent?  //If your verb is insanely simple, you can remove this user.a_intent check and just do a single block of messages. Step 5
 		message = pick( //Then pick from these messages!
 		"[pick("lightly", "gently")] \
 		 [pick("rubs", "brushes")] \
@@ -132,7 +132,7 @@ Enjoy!												*/
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
 		message = pick( //Then pick from these messages!
-			"rubs [t_their] lap aggressively!",
+			"rubs [t_their] lap aggressively!", //Step 6, bare minimum. Read the comments around the other blocks to better understand how you can do this more creatively! Also technically step 7!
 			"mauls [t_their] crotch!", //This is how two or more should look, stack them vertically!
 			)
 
@@ -147,7 +147,7 @@ Enjoy!												*/
 //- accursed fucking game.  It was never built for us. This code wasn't even originally built for us. We will bend it to what we want though.
 //One pull request at a god damn time.  ~TK420634, with love.
 
-//Aftershock Block//  
+//Aftershock Block// 
 	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
 		user.visible_message(span_love("<b>\The [user]</b> [pick( //The list that is used starts here.
 				"shivers in arousal.", //These print to everyone in view range.
@@ -159,11 +159,11 @@ Enjoy!												*/
 
 //Feel free to use the block code concepts above to expand on these as well!
 
-					//Wrap up//
+					//Wrap up// Step 8 is these next few lines!
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
-///////RUB CROTCH END/////////
+///////RUB CROTCH END///////// Step 9
 
 
 
