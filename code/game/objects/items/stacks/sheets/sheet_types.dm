@@ -38,10 +38,11 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("field arrowhead", /obj/item/stack/arrowhead/field, 1, 1, time = 1 SECONDS), \
 	null, \
 	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
-	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
-	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
 	new/datum/stack_recipe("key", /obj/item/key, 1), \
 	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
+	new/datum/stack_recipe("bolt lock", /obj/item/lock_bolt, 1), \
+	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
+	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
 	null, \
 	new/datum/stack_recipe("seed extractor", /obj/structure/legion_extractor, 6, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \

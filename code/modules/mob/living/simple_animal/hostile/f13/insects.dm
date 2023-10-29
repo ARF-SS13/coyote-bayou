@@ -36,7 +36,7 @@
 	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/effect/spawner/lootdrop/f13/deadantloot = 1)
-	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -57,7 +57,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
@@ -88,7 +87,7 @@
 	waddle_up_time = 1
 	waddle_side_time = 1
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 2)
-	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -106,7 +105,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -141,7 +139,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
-	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
 	response_help_simple = "pets"
@@ -166,7 +164,6 @@
 	speak_emote = list("skitters")
 	retreat_distance = 5
 	minimum_distance = 7
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -239,7 +236,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -248,7 +245,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("radscorpion")
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/scorpion_color = "radscorpion" //holder for icon set
@@ -343,7 +339,7 @@
 	rapid_melee = 2
 
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -365,7 +361,6 @@
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("cazador")
 	movement_type = FLYING
 	a_intent = INTENT_HARM
@@ -405,7 +400,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1, /obj/item/stack/sheet/sinew = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 
 /mob/living/simple_animal/hostile/cazador/young/Initialize()
@@ -477,7 +472,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, /obj/item/stack/sheet/sinew = 1)
-	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -487,7 +482,7 @@
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+
 	faction = list("hostile", "gecko", "critter-friend")
 	gold_core_spawnable = HOSTILE_SPAWN
 	pass_flags = PASSTABLE | PASSMOB
@@ -557,7 +552,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2, /obj/item/stack/sheet/sinew = 1)
-	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -565,7 +560,6 @@
 	attack_verb_simple = "nips"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko", "critter-friend")
 	a_intent = INTENT_HARM
 	pass_flags = PASSTABLE | PASSMOB

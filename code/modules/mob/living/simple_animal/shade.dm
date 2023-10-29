@@ -24,8 +24,8 @@
 	melee_damage_upper = 12
 	attack_verb_continuous = "metaphysically strikes"
 	attack_verb_simple = "metaphysically strike"
-	minbodytemp = 0
-	maxbodytemp = INFINITY
+	//minbodytemp = 0
+	//maxbodytemp = INFINITY
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	stop_automated_movement = 1
 	faction = list("cult")

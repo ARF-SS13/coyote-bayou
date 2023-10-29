@@ -640,10 +640,10 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
 	if(full_heal)
 		fully_heal(admin_revive)
-	if((stat == DEAD && can_be_revived()) || force_revive) //in some cases you can't revive (e.g. no brain)
-		GLOB.dead_mob_list -= src
-		GLOB.alive_mob_list += src
-		set_stat(UNCONSCIOUS) //the mob starts unconscious
+	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
+		remove_from_dead_mob_list()
+		add_to_alive_mob_list()
+		stat = UNCONSCIOUS //the mob starts unconscious,
 		if(!eye_blind)
 			blind_eyes(1)
 		updatehealth() //then we check if the mob should wake up.
@@ -967,6 +967,8 @@
 		to_chat(src,span_notice("You try to remove [who]'s [what.name]."))
 		what.add_fingerprint(src)
 	if(do_mob(src, who, round(what.strip_delay / strip_mod), ignorehelditem = TRUE))
+		if(what.is_dual_wielded)
+			dualwield_end(who, who.held_items[1], who.held_items[2], FALSE)
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
@@ -1382,11 +1384,11 @@
 				return FALSE
 		if(NAMEOF(src, stat))
 			if((stat == DEAD) && (var_value < DEAD))//Bringing the dead back to life
-				GLOB.dead_mob_list -= src
-				GLOB.alive_mob_list += src
+				remove_from_dead_mob_list()
+				add_to_alive_mob_list()
 			if((stat < DEAD) && (var_value == DEAD))//Kill he
-				GLOB.alive_mob_list -= src
-				GLOB.dead_mob_list += src
+				remove_from_alive_mob_list()
+				add_to_dead_mob_list()
 		if(NAMEOF(src, health)) //this doesn't work. gotta use procs instead.
 			return FALSE
 	. = ..()

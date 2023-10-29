@@ -17,7 +17,7 @@
 	pass_flags = PASSTABLE
 	ventcrawler = VENTCRAWLER_ALWAYS
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	maxHealth = 150
 	health = 150
 	healable = 0
@@ -31,7 +31,7 @@
 	attack_verb_continuous = "glomps"
 	attack_verb_simple = "glomp"
 	attack_sound = 'sound/effects/blobattack.ogg'
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
 
 	var/morphed = FALSE
 	var/melee_damage_disguised = 0

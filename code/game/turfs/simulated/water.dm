@@ -17,14 +17,18 @@
 	heavyfootstep = FOOTSTEP_WATER
 
 	//fortuna edit
-	depth = 1 // Higher numbers indicates deeper water.
-
+	/// Higher numbers indicates deeper water.
+	depth = 1
 
 // Fortuna edit. Below is Largely ported from citadels HRP branch
 
 /turf/open/water/Initialize()
 	. = ..()
 	update_icon()
+
+/turf/open/water/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-Click \the [src] to wash yourself off.")
 
 /turf/open/water/update_icon()
 	. = ..()
@@ -49,6 +53,23 @@
 		if(!istype(newloc, /turf/open/water))
 			to_chat(L, span_warning("You climb out of \the [src]."))
 	..()
+
+/turf/open/water/AltClick(mob/user)
+	. = ..()
+	if(isliving(user))
+		var/mob/living/L = user
+		L.DelayNextAction(CLICK_CD_RANGE)
+		if(!user.incapacitated() && Adjacent(user))
+			user.visible_message(span_notice("[L] starts washing in \the [src]."),
+								span_notice("You start washing in \the [src]."),
+								span_notice("You hear splashing water and scrubbing."))
+			playsound(user,"water_wade",100,TRUE)
+			if(do_after(user,5 SECONDS, TRUE, src, TRUE,allow_movement=FALSE,stay_close=TRUE))
+				give_mob_washies(L)
+				user.visible_message(span_notice("[L] finishes washing in \the [src]."),
+									span_notice("You finish washing in \the [src]."),
+									span_notice("The splashing and scrubbing stops."))
+				playsound(user,"water_wade",100,TRUE)
 
 /mob/living/proc/check_submerged()
 	if(buckled)

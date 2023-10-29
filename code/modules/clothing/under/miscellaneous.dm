@@ -1641,3 +1641,35 @@
 	item_state = "qipao_teal_nosleeve"
 	item_color = "qipao_teal_nosleeve"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/jute
+	name = "jute dress"
+	desc = "A brown adjustable dress."
+	icon_state = "jute"
+	item_state = "jute"
+	item_color = "jute"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/striped_skirt
+	name = "striped skirt dress"
+	desc = "A red and striped adjustable dress."
+	icon_state = "striped_skirt"
+	item_state = "striped_skirt"
+	item_color = "striped_skirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/red_skirt
+	name = "red skirt dress"
+	desc = "A red adjustable dress."
+	icon_state = "red_skirt"
+	item_state = "red_skirt"
+	item_color = "red_skirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/black_skirt
+	name = "black skirt dress"
+	desc = "A black adjustable dress."
+	icon_state = "black_skirt"
+	item_state = "black_skirt"
+	item_color = "black_skirt"
+	can_adjust = TRUE

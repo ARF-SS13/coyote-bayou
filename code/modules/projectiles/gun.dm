@@ -179,6 +179,8 @@ ATTACHMENTS
 	var/is_kelpwand = FALSE
 	/// Allow quickdraw (delay to draw the gun is 0s)
 	var/allow_quickdraw = FALSE
+	/// This variable is used by crankable laser guns {/obj/item/gun/energy/laser/cranklasergun}
+	var/recharge_queued = 1
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 

@@ -157,7 +157,7 @@
 	close_sound = "sound/machines/door_close.ogg"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 //Yellow rail

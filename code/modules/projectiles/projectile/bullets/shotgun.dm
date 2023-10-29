@@ -8,6 +8,7 @@
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET
+	damage_list = list("5" = 10, "7" = 20, "8" = 20, "9" = 20, "10" = 20, "12" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
@@ -20,12 +21,16 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+//	supereffective_damage = 2
+//	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 
 //ratshot pellet: 6 damage instead of 8, fewer pellets. would make many tiny damage pellets but performance
 /obj/item/projectile/bullet/pellet/shotgun_ratshot
 	name = "ratshot pellet"
 	damage = BULLET_DAMAGE_RATSHOT_PELLET
+	damage_list = list("4" = 10, "5" = 20, "6" = 20, "7" = 20, "8" = 20, "9" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
@@ -38,6 +43,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	supereffective_damage = 2
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* rubber pellet
  * DAMAGE: 1
@@ -64,6 +72,13 @@
 	sharpness = SHARP_NONE
 	embedding = null
 
+	//Each pellet does the same damage as handloaded buckshot to mobs, but rubbershot gets 2 more pellets.
+	//This does mean theres no reason to print handloaded buckshot unless you're hunting men.
+	//However, you can find handloaded buckshot in the trash, you can't find rubbershot.
+	//This means that you'll always be paying to use rubbershot, whereas handloaded buckshot is often a freebie.
+	supereffective_damage = 2
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /* handload pellet
  * DAMAGE: 8
  * STAMIN: 1
@@ -85,6 +100,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
+
+	supereffective_damage = 2
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -110,6 +128,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG
+	damage_list = list("40" = 15, "50" = 15, "60" = 50, "70" = 10, "80" = 10)
 	stamina = BULLET_STAMINA_SHOTGUN_SLUG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_SLUG
@@ -169,6 +188,9 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION
+
+	supereffective_damage = BULLET_DAMAGE_PISTOL_9MM
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* train
  * DAMAGE: 20

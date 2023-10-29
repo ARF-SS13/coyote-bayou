@@ -477,7 +477,7 @@
 	if(I)  //are we holding something in our hands?
 		storage = get_item_by_slot(SLOT_S_STORE)
 		if(storage)  //if it's empty, put the revolver there (if I'm carrying a pouch there for example)
-			if(istype(I, /obj/item/gun/ballistic/revolver) || istype(I, /obj/item/gun/ballistic/automatic/pistol))
+			if(istype(I, /obj/item/gun) && I.w_class <= WEIGHT_CLASS_NORMAL)
 				storage = get_item_by_slot(SLOT_NECK)
 				if(storage)
 					if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
@@ -485,7 +485,7 @@
 							return
 
 		storage = get_item_by_slot(SLOT_SHOES)
-		if(istype(I, /obj/item/melee/onehanded/knife))
+		if(istype(I, /obj/item/melee) && I.w_class <= WEIGHT_CLASS_SMALL)
 			if(storage)
 				if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))
 					if(SEND_SIGNAL(storage, COMSIG_TRY_STORAGE_INSERT, I, src))

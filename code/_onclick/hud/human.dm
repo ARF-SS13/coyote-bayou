@@ -346,6 +346,26 @@
 	healthdoll.hud = src
 	infodisplay += healthdoll
 
+	autowhisper = new /atom/movable/screen/autowhisper()
+	autowhisper.hud = src
+	infodisplay += autowhisper
+
+	pose = new /atom/movable/screen/pose()
+	pose.hud = src
+	infodisplay += pose
+
+	up = new /atom/movable/screen/up()
+	up.hud = src
+	infodisplay += up
+
+	down = new /atom/movable/screen/down()
+	down.hud = src
+	infodisplay += down
+
+	sleep_hud_button = new /atom/movable/screen/sleep_hud_button()
+	sleep_hud_button.hud = src
+	infodisplay += sleep_hud_button
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src

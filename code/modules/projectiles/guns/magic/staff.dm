@@ -179,6 +179,8 @@
 	name = "greater magic missile"
 	icon_state = "arcane_barrage"
 	damage = 25 // same as the tribeam
+	damage_low = 20
+	damage_high = 50
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
 
@@ -220,6 +222,8 @@
 /obj/item/projectile/magic/kelpmagic/sparks/thunder
 	name = "lightning bolt"
 	damage = 60
+	damage_low = 30
+	damage_high = 80
 
 /****************/
 //Staff of Healing//
@@ -233,6 +237,27 @@
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
 	recharge_rate = 60 SECONDS
+
+/****************/
+//Upgraded Staff of Healing//
+//Literally just a bulky medbeam/
+/***************/
+
+/obj/item/gun/medbeam/magic
+	name = "perfected staff of healing"
+	desc = "Through mastery of arcane alchemy, this staff has been brought to the peak of its power... And yet it still can't heal the wielder. Don't cross the streams!"
+	icon = 'icons/obj/guns/magic.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	icon_state = "medstaff"
+	item_state = "staff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
+	is_kelpwand = TRUE
+	pin = /obj/item/firing_pin/magic
 
 /****************/
 //Staff of Acid//
@@ -259,6 +284,8 @@
 	name = "acid spray"
 	icon_state = "toxin"
 	damage = 12
+	damage_low = 5
+	damage_high = 20
 	damage_type = BURN
 	flag = "laser"
 

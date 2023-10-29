@@ -1,10 +1,8 @@
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
-	GLOB.mob_list -= src
-	GLOB.has_played_list -= src
-	GLOB.dead_mob_list -= src
-	GLOB.alive_mob_list -= src
+	remove_from_mob_list()
+	remove_from_dead_mob_list()
+	remove_from_alive_mob_list()
 	GLOB.all_clockwork_mobs -= src
-	GLOB.mob_directory -= tag
 	focus = null
 	LAssailant = null
 	movespeed_modification = null
@@ -15,22 +13,21 @@
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
 	qdel(hud_used)
-	for(var/cc in client_colours)
-		qdel(cc)
-	client_colours = null
+	QDEL_LIST(client_colours)
+	clear_client_in_contents()
 	ghostize()
 	QDEL_LIST(actions)
 	QDEL_LIST(mob_spell_list)
-
+	if(mind && mind.current == src) //Let's just be safe yeah? This will occasionally be cleared, but not always. Can't do it with ghostize without changing behavior
+		mind.current = null
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
 /mob/Initialize()
-	GLOB.mob_list += src
-	GLOB.mob_directory[tag] = src
+	add_to_mob_list()
 	if(stat == DEAD)
-		GLOB.dead_mob_list += src
+		add_to_dead_mob_list()
 	else
-		GLOB.alive_mob_list += src
+		add_to_alive_mob_list()
 	set_focus(src)
 	prepare_huds()
 	for(var/v in GLOB.active_alternate_appearances)
@@ -1020,7 +1017,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/proc/canUseStorage()
 	return FALSE
 
-/mob/proc/faction_check_mob(mob/target, exact_match)
+/mob/proc/faction_check_mob(mob/target, exact_match, list/override)
 	if(exact_match) //if we need an exact match, we need to do some bullfuckery.
 		var/list/faction_src = faction.Copy()
 		var/list/faction_target = target.faction.Copy()
@@ -1300,3 +1297,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	transform = transform.Turn(1)
 	is_tilted++
 
+/mob/proc/clear_client_in_contents()
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null

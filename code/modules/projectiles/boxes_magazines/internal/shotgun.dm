@@ -99,6 +99,14 @@
 	max_ammo = 5
 	multiload = 0
 
+
+/obj/item/ammo_box/magazine/internal/shot/derringer
+	name = "14mm internal magazine"
+	ammo_type = /obj/item/ammo_casing/p14mm
+	caliber = list(CALIBER_14MM)
+	max_ammo = 4
+	multiload = 0
+
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357

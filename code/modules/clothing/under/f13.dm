@@ -193,6 +193,30 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/warhammeruniforms
+	name = "Ancient West German uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform."
+	icon_state = "40krieg"
+	item_state = "40krieg"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
+	name = "Ancient West German Officer uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
+	icon_state = "40kkriegofficer"
+	item_state = "40kkriegofficer"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/warhammeruniforms/imperiumguard
+	name = "Ancient American uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled American uniform."
+	icon_state = "40kguard"
+	item_state = "40kguard"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/ww2/japaneseuniforms
 	name = "Old Japanese uniform"
 	desc = "A cleanly pressed and brand new Japanese modeled uniform."

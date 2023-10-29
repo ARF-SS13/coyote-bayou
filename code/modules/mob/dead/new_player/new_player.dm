@@ -19,9 +19,9 @@
 
 
 /mob/dead/new_player/Initialize(mapload)
-	if(client && SSticker.state == GAME_STATE_STARTUP)
-		var/atom/movable/screen/splash/S = new(null, client, TRUE, TRUE)
-		S.Fade(TRUE)
+	// if(client && SSticker.state == GAME_STATE_STARTUP)
+	// 	var/atom/movable/screen/splash/S = new(null, client, TRUE, TRUE)
+	// 	S.Fade(TRUE)
 
 	if(length(GLOB.newplayer_start))
 		forceMove(pick(GLOB.newplayer_start))
@@ -32,7 +32,11 @@
 
 	. = ..()
 
+	GLOB.new_player_list += src
+
 /mob/dead/new_player/Destroy()
+	GLOB.new_player_list -= src
+
 	return ..()
 
 /mob/dead/new_player/prepare_huds()
@@ -842,4 +846,5 @@
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)
+
 

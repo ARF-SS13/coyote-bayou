@@ -579,6 +579,18 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/armor/ncrlight/infiltrator
+	name = "infiltrator armor"
+	path = /obj/item/clothing/suit/armor/texasmed/infiltrator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/ncrlight/infiltrator/contractor
+	name = "contractor armor"
+	path = /obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/armor/unmcmarine
 	name = "Standard UNMC Armor"
 	path = /obj/item/clothing/suit/armor/medium/unmcmarine
@@ -588,6 +600,12 @@ a
 /datum/gear/suit/armor/unmcinfiltrator
 	name = "American dysfunctional stealth suit"
 	path = /obj/item/clothing/suit/armor/medium/unmcinfiltrator
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/chinastealth
+	name = "Chinese dysfunctional stealth armor"
+	path = /obj/item/clothing/suit/armor/medium/chinastealth
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -800,6 +818,127 @@ a
 /datum/gear/suit/armor/flagcapesclothing/rc
 	name = "Armored Rivulet flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/warriorcats/river
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk
+	name = "Ancient West german greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/medicalkrieg
+	name = "Ancient Medical West german greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/medical
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/officerkrieg
+	name = "Ancient West german Officer greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/officer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/officeramerican
+	name = "Ancient American officer greatcoat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/americanofficer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/armors
+	name = "Armored Priestess ballistic suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/armors/imperials
+	name = "Armored American ballistic suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/officergenerics
+	name = "Armored generic officer coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/genericofficer
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/tauoutfit
+	name = "Armored C.J armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/japanesearmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/spartanarmors
+	name = "Leo Armaments MARK XI armor"
+	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/armor/spartanarmorstwo
+	name = "Leo Armaments MARK XI armor 'Icebreaker'"
+	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+
+/datum/gear/suit/armor/spartanarmorsthree
+	name = "Leo Armaments MARK XI armor 'Patriot'"
+	path = /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 3
+
+/datum/gear/suit/armor/warhammerk/bloodrose
+	name = "Armored Soviet priestess armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/battlesister
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/irishbattlepriest
+	name = "Armored Irish priestess armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/battlesisterno2
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/necromatic
+	name = "Infected ancient American armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperiuminfected
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/miradlady
+	name = "Armored Soviet priest armor"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/chaos
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/cadian
+	name = "Armored Special forces ballistic suit"
+	path = /obj/item/clothing/suit/armor/medium/ballisticvest/warhammer/imperiumspecial
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/armor/warhammerk/cyberpunks
+	name = "Cyber-priest robes"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/techpriesting
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/cyberpsychosis
+	name = "Cyber-psycho robes"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/cyberpriesting
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/townsnowflake
+	name = "Town crier coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/fanaticalpriest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	cost = 1
+
+/datum/gear/suit/armor/warhammerk/kriegfanatical
+	name = "Fanatical ancient West german coat"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/warhammersuits/urmandoutfit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
 

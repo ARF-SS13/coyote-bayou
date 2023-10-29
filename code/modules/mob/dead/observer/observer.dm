@@ -125,7 +125,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	animate(src, pixel_y = 2, time = 10, loop = -1)
 
-	GLOB.dead_mob_list += src
+	add_to_dead_mob_list()
 
 	for(var/v in GLOB.active_alternate_appearances)
 		if(!v)
@@ -161,7 +161,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(data_huds_on)
 		remove_data_huds()
 
-
 	GLOB.ghost_images_simple -= ghostimage_simple
 	QDEL_NULL(ghostimage_simple)
 
@@ -169,6 +168,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	QDEL_NULL(orbit_menu)
 	QDEL_NULL(spawners_menu)
+
 	return ..()
 
 /mob/dead/CanAllowThrough(atom/movable/mover, border_dir)

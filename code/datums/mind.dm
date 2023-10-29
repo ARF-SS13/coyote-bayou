@@ -72,6 +72,8 @@
 ///Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
 	var/datum/weakref/original_character
 
+	/// A lazy list of statuses to add next to this mind in the traitor panel
+	var/list/special_statuses
 
 /datum/mind/New(key)
 	skill_holder = new(src)

@@ -32,6 +32,16 @@
 	var/drawing_from_quiver = FALSE
 	/// The quiver the bow is drawing from
 	var/datum/weakref/our_quiver
+	var/list/slotlist = list(
+		SLOT_BACK,
+		SLOT_BELT,
+		SLOT_NECK,
+		SLOT_WEAR_SUIT,
+		SLOT_L_STORE,
+		SLOT_R_STORE,
+		SLOT_S_STORE,
+		SLOT_GENERIC_DEXTROUS_STORAGE
+	)
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
@@ -50,7 +60,7 @@
 		if(istype(my_quiver))
 			. += "Currently drawing from [my_quiver]."
 			. += "Alt-click the bow to stop drawing from this quiver."
-			. += "Smack a quiver against this bow to start drawing arrows from that quiver."
+			. += "Smack a quiver against this bow, or smack this against a quiver, to start drawing arrows from that quiver."
 			return
 		. += "No quiver found to draw from. Wear a quiver on your belt, or smack a quiver on this bow, to draw from that quiver."
 		. += "Alt-click the bow to stop drawing from this quiver."
@@ -128,8 +138,12 @@
 		if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
 			return getted_quiver
 	/// Otherwise, draw from whatever's on the belt
-	getted_quiver = user.get_item_by_slot(SLOT_BELT)
-	if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+	for(var/slut in slotlist)
+		getted_quiver = user.get_item_by_slot(slut)
+		if(!istype(getted_quiver, /obj/item/storage/bag/tribe_quiver))
+			continue
+		if((getted_quiver.loc != user && !just_get_it))
+			continue
 		if(link_quiver_to_bow(user, getted_quiver))
 			return getted_quiver
 

@@ -1470,6 +1470,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return 1
 
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style, attackchain_flags = NONE)
+	//-->Pacifism Lesser Trait, most important section of it
+	if(HAS_TRAIT(user, TRAIT_PACIFISM_LESSER) && target.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+		trait_pacifism_lesser_consequences(user)
+		return FALSE
+	//<--
+
 	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return FALSE
@@ -2135,6 +2141,28 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return TRUE
 
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
+	if(H.on_fire || H.fire_stacks)
+		var/burn_damage
+		var/firemodifier = H.fire_stacks / 50
+		if(H.on_fire)
+			burn_damage = max(log(2-firemodifier,(BODYTEMP_HEAT_DAMAGE_LIMIT+100))-5,0)
+		else
+			firemodifier = min(firemodifier, 0)
+			burn_damage = max(log(2-firemodifier,(BODYTEMP_HEAT_DAMAGE_LIMIT+100))-5,0) // this can go below 5 at log 2.5
+		if(burn_damage)
+			switch(burn_damage)
+				if(0 to 2)
+					H.throw_alert("temp", /atom/movable/screen/alert/hot, 1)
+				if(2 to 4)
+					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
+				else
+					H.throw_alert("temp", /atom/movable/screen/alert/hot, 3)
+		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
+		if(H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
+			H.emote("scream")
+		H.apply_damage(burn_damage, BURN)
+
+/*
 	if(!environment)
 		return
 	if(istype(H.loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
@@ -2186,26 +2214,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 
-		var/burn_damage
-		var/firemodifier = H.fire_stacks / 50
-		if (H.on_fire)
-			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0)
-		else
-			firemodifier = min(firemodifier, 0)
-			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5
-		if (burn_damage)
-			switch(burn_damage)
-				if(0 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 1)
-				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 2)
-				else
-					H.throw_alert("temp", /atom/movable/screen/alert/hot, 3)
-		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			H.emote("scream")
-		H.apply_damage(burn_damage, BURN)
-
 	else if(H.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
@@ -2249,6 +2257,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			else
 				H.adjustBruteLoss(LOW_PRESSURE_DAMAGE * H.physiology.pressure_mod)
 				H.throw_alert("pressure", /atom/movable/screen/alert/lowpressure, 2)
+*/
 
 //////////
 // FIRE //

@@ -61,6 +61,12 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/healthdoll
 	var/atom/movable/screen/internals
 
+	var/atom/movable/screen/autowhisper
+	var/atom/movable/screen/pose
+	var/atom/movable/screen/up
+	var/atom/movable/screen/down
+	var/atom/movable/screen/sleep_hud_button
+
 	// subtypes can override this to force a specific UI style
 	var/ui_style
 
@@ -110,6 +116,11 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	blobpwrdisplay = null
 	alien_plasma_display = null
 	alien_queen_finder = null
+	autowhisper = null
+	pose = null
+	up = null
+	down = null
+	sleep_hud_button = null
 
 	QDEL_LIST_ASSOC_VAL(plane_masters)
 	QDEL_LIST(screenoverlays)

@@ -29,8 +29,8 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	movement_type = FLYING // Immunity to chasms and landmines, etc.
 	attack_sound = 'sound/weapons/punch1.ogg'
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = INFINITY
+	//minbodytemp = 0
+	//maxbodytemp = INFINITY
 	attack_verb_continuous = "punches"
 	attack_verb_simple = "punch"
 	maxHealth = INFINITY //The spirit itself is invincible
@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	obj_damage = 40
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	butcher_results = list(/obj/item/ectoplasm = 1)
+	guaranteed_butcher_results = list(/obj/item/ectoplasm = 1)
 	AIStatus = AI_OFF
 	hud_type = /datum/hud/guardian
 	dextrous_hud_type = /datum/hud/dextrous/guardian //if we're set to dextrous, account for it.

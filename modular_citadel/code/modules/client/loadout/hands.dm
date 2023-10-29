@@ -78,6 +78,11 @@
 	path = /obj/item/lighter
 	cost = 2
 
+/datum/gear/hands/bible
+	name = "Bible"
+	path = /obj/item/storage/book/bible
+	cost = 0
+
 /datum/gear/hands/beeplushie
 	name = "Bee Plushie"
 	path = /obj/item/toy/plush/beeplushie
@@ -234,12 +239,10 @@
 	path = /obj/item/shield/coyote/chimalli
 	cost = 2
 
-
 /datum/gear/hands/shield/owlshield
 	name = "Owl Shield"
 	path = /obj/item/shield/coyote/owlshield
 	cost = 2
-
 
 /datum/gear/hands/shield/pegasusshield
 	name = "Pegasus Shield"
@@ -254,4 +257,9 @@
 /datum/gear/hands/shield/crusader
 	name = "Iron Crusader Shield"
 	path = /obj/item/shield/coyote/crusader
+	cost = 2
+
+/datum/gear/hands/defib/carbattery
+	name = "Primitive Defib"
+	path = /obj/item/defibrillator/primitive
 	cost = 2

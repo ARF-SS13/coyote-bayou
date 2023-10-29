@@ -307,12 +307,53 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	spawn_text = "crawls out from the"
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/gecko = 6,
+		/mob/living/simple_animal/hostile/gecko = 4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 2,
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
-		/mob/living/simple_animal/hostile/gecko/legacy = 6,
+		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
 		/mob/living/simple_animal/hostile/gecko/big = 2
 		)
+
+/obj/structure/nest/gecko/tribal
+	name = "gecko tribal campsite"
+	icon = 'icons/fallout/objects/furniture/heating.dmi'
+	icon_state = "campfire"
+	desc = "A surprisingly well put together campsite for sleepy geckos."
+	spawn_text = "emerges from the"
+	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko/tribal = 8,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile = 4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 3,
+		/mob/living/simple_animal/hostile/gecko/tribal/shaman = 1
+	)
+
+/obj/structure/nest/gecko/tribal/hunting
+	name = "gecko hunting campsite"
+	icon = 'icons/fallout/objects/furniture/heating.dmi'
+	icon_state = "campfire"
+	desc = "A surprisingly well put together campsite for sleepy geckos in the field."
+	spawn_text = "emerges from the"
+	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 6,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 12
+	)
+
+/obj/structure/nest/gecko/tribal/guard
+	name = "gecko guard campsite"
+	icon = 'icons/fallout/objects/furniture/heating.dmi'
+	icon_state = "campfire"
+	desc = "A surprisingly well put together campsite for sleepy geckos protecting their home."
+	spawn_text = "emerges from the"
+	spawnsound = 'sound/f13npc/gecko/geckocall5.ogg'
+	mob_types = list(
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 12,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 6
+	)
 
 /obj/structure/nest/gelcube
 	name = "slimy tunnel"

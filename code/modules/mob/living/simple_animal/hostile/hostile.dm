@@ -21,6 +21,13 @@
 	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	/// Makes the mob throw a thing
+	var/obj/item/throw_thing
+	var/throw_thing_speed = 1
+	var/throw_thing_sound = 'sound/weapons/punchmiss.ogg'
+	/// Time between throwing things
+	var/throw_delay = 10 SECONDS
+	COOLDOWN_DECLARE(throw_cooldown)
 	/// Play a sound after they shoot?
 	var/sound_after_shooting
 	/// How long after shooting should it play?
@@ -54,6 +61,13 @@
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
+	
+	/// Mobs will wind up their attacks for this long before checking if they're in range to hit you again.
+	var/melee_windup_time = 0.3 SECONDS
+	/// This plays when the mob's attack windup starts. It requires melee_windup_time to be set.
+	var/melee_windup_sound = 'sound/effects/flip.ogg'
+	/// How much to shrink and grow this mob when it's doing a windup attack.
+	var/melee_windup_magnitude = 0.3
 
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
@@ -71,7 +85,9 @@
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
 	var/minimum_distance = 1
 
-	var/decompose = FALSE //Does this mob decompose over time when dead?
+	var/decompose = TRUE //Does this mob decompose over time when dead?
+	//var/decomposition_time = 5 MINUTES
+	//COOLDOWN_DECLARE(decomposition_schedule)
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -136,10 +152,12 @@
 
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
-		if(decompose)
-			if(prob(1)) // 1% chance every cycle to decompose
-				visible_message(span_notice("\The dead body of the [src] decomposes!"))
-				gib(FALSE, FALSE, FALSE, TRUE)
+		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
+			visible_message(span_notice("\The dead body of the [src] decomposes!"))
+			dust(TRUE)*/
+		if(prob(1))
+			visible_message(span_notice("\The dead body of the [src] decomposes!"))
+			gib(FALSE, FALSE, FALSE, TRUE)
 		return
 	queue_naptime()
 	check_health()
@@ -450,7 +468,7 @@
 /mob/living/simple_animal/hostile/proc/CheckAndAttack()
 	var/atom/origin = get_origin()
 	var/atom/my_target = get_target()
-	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())
+	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
 		AttackingTarget()
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our targette
@@ -529,6 +547,8 @@
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	if(!ckey && !stat && search_objects < 3 && . > 0)//Not unconscious, and we don't ignore mobs
+		if(peaceful == TRUE)
+			peaceful = FALSE
 		if(search_objects)//Turn off item searching and ignore whatever item we were looking at, we're more concerned with fight or flight
 			LoseTarget()
 			LoseSearchObjects()
@@ -545,7 +565,18 @@
 	in_melee = TRUE
 	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
 		return FALSE
-	return my_target.attack_animal(src)
+	if(melee_windup_time)
+		if(melee_windup_sound)
+			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
+		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
+		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
+			my_target = get_target() //Switch targets if we did during our windup.
+			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+				return my_target.attack_animal(src)
+			else
+				return FALSE
+	else
+		return 	my_target.attack_animal(src)
 
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
@@ -617,6 +648,7 @@
 		Shoot(A)
 		for(var/i in 1 to extra_projectiles)
 			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
+	ThrowSomething(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(sound_after_shooting)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
@@ -626,6 +658,17 @@
 	if(casingtype)
 		if(LAZYLEN(variation_list[MOB_CASING]) >= 2) // Gotta have multiple different casings to cycle through
 			casingtype = vary_from_list(variation_list[MOB_CASING], TRUE)
+
+/mob/living/simple_animal/hostile/proc/ThrowSomething(atom/targeted_atom)
+	if(!istype(throw_thing) || !istype(targeted_atom))
+		return
+	if(!COOLDOWN_FINISHED(src, throw_cooldown))
+		return
+	COOLDOWN_START(src, throw_cooldown, throw_delay)
+	var/obj/item/tosser = new throw_thing(get_turf(src))
+	tosser.throw_at(targeted_atom, 25, throw_thing_speed, src, TRUE, TRUE)
+	playsound(src, throw_thing_sound, 100, TRUE)
+	visible_message(span_alert("[src] throws [tosser] at [targeted_atom]!"))
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
 	var/atom/origin = get_origin()
@@ -646,10 +689,12 @@
 			vary = FALSE, 
 			frequency = SOUND_FREQ_NORMALIZED(sound_pitch, vary_pitches[1], vary_pitches[2])
 			)
+		casing.factionize(faction)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
+		P.factionize(faction)
 		playsound(
 			src,
 			projectilesound,
@@ -864,7 +909,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	if(!new_target)
 		return
 	target = WEAKREF(new_target)
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
 
 /mob/living/simple_animal/hostile/proc/queue_unbirth()
 	SSidlenpcpool.add_to_culling(src)

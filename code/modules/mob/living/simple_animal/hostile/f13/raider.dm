@@ -614,7 +614,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cult_axeghoul"
 	icon_living = "cult_axeghoul"
-	icon_dead = "cult_dead"
+	icon_dead = "cult_axeghoul_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
@@ -649,7 +649,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist_pistol"
 	icon_living = "cultist_pistol"
-	icon_dead = "cultist_dead"
+	icon_dead = "cultist_pistol_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	faction = list("raider", "hostile")
@@ -686,7 +686,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist_shotgun"
 	icon_living = "cultist_shotgun"
-	icon_dead = "cultist_dead"
+	icon_dead = "cultist_shotgun_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
@@ -724,7 +724,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist2_smg"
 	icon_living = "cultist2_smg"
-	icon_dead = "cultist2_dead"
+	icon_dead = "cultist2_smg_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
@@ -762,7 +762,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist3_tesla"
 	icon_living = "cultist3_tesla"
-	icon_dead = "cultist3_dead"
+	icon_dead = "cultist3_tesla_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150

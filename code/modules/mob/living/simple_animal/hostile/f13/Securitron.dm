@@ -59,7 +59,6 @@
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	a_intent = "harm"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	emote_taunt = list("readies its arm gun")

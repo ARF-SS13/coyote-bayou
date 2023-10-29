@@ -450,6 +450,26 @@
 	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
+/datum/gear/uniform/warhammeruniform
+	name = "Ancient West German uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/two
+	name = "Ancient West German Officer uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/three
+	name = "Ancient American uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/imperiumguard
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
 
 /datum/gear/uniform/russiancossack
 	name = "Cossack uniform"
@@ -3250,3 +3270,27 @@
 	cost = 0
 	path = /obj/item/clothing/under/qipaonosleeveteal
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/jute
+	name = "jute dress"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/jute
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/stripedskirt
+	name = "red striped skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/striped_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/redskirt
+	name = "red skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/red_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blackskirt
+	name = "black skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/black_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
