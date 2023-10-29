@@ -97,13 +97,6 @@ Enjoy!												*/
 		//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
-		message = pick( //Then pick from these messages!
-			"puts a bit of pressure on [t_their] lap.",
-		)
-
-//Message block C
-	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
 		var/adverb1 = pick("is definitely", "certainly")
 		var/action1 = pick("rubbing", "brushing")
 		var/place1 = pick("crotch.", "lap.")
@@ -117,6 +110,15 @@ Enjoy!												*/
 // The system above is an example of using on the spot variables that you (yes, you, baby coder.  You can just make them, they don't need any other code elsewhere)
 // You make your var/whatevers, then glue them together into a msg var. Then, once you have all your message variations created you plug them into tyour message = Pick() system. 
 // This works much the same way as the sytem in Block A, but instead of writing it out long form it just uses variables!
+
+
+//Message block C
+	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
+			message = pick( //Then pick from these messages!
+			"rubs [t_their] lap openly!",
+			"rubs [t_their] crotch!", //This is how two or more should look, stack them vertically!
+			)
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder

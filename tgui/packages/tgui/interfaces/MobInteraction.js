@@ -80,6 +80,13 @@ import { Window } from '../layouts';
 //   cum_onto_pref: boolean,
 // }
 
+const tabcolor = [
+"default",
+"pink",
+"red",
+"yellow",
+]
+
 export const MobInteraction = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -191,6 +198,8 @@ export const MobInteraction = (props, context) => {
   );
 };
 
+
+
 const InteractionsTab = (props, context) => {
   const { act, data } = useBackend(context);
   const [
@@ -198,23 +207,6 @@ const InteractionsTab = (props, context) => {
     setSearchText,
   ] = useLocalState(context, 'searchText', '');
   const interactions = sortInteractions(data.interactions, searchText) || [];
-  let tabcolor = "default"
-  switch (interactions.type) {
-    case 0:
-      tabcolor = "default";
-      break;
-    case 1:
-      tabcolor = "pink";
-      break;
-    case 2:
-      tabcolor = "red";
-      break;
-    case 3:
-      tabcolor = "yellow";
-      break;
-    default:
-      tabcolor = "default";
-  }
   return (
     <Section overflow="auto" position="absolute" right="6px" left="6px" bottom={(364 - innerHeight) + "px"} top="58px">
       <Table>
@@ -225,7 +217,7 @@ const InteractionsTab = (props, context) => {
                 <Button
                   key={interaction.key}
                   content={interaction.desc}
-                  color={tabcolor}
+                  color={tabcolor[interaction.type]}
                   fluid
                   mb={0.3}
                   onClick={() => act('interact', {
