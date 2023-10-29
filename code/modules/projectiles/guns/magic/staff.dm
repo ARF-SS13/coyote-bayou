@@ -239,6 +239,27 @@
 	recharge_rate = 60 SECONDS
 
 /****************/
+//Upgraded Staff of Healing//
+//Literally just a bulky medbeam/
+/***************/
+
+/obj/item/gun/medbeam/magic
+	name = "perfected staff of healing"
+	desc = "Through mastery of arcane alchemy, this staff has been brought to the peak of its power... And yet it still can't heal the wielder. Don't cross the streams!"
+	icon = 'icons/obj/guns/magic.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	icon_state = "medstaff"
+	item_state = "staff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
+	is_kelpwand = TRUE
+	pin = /obj/item/firing_pin/magic
+
+/****************/
 //Staff of Acid//
 //OH GOD, IT'S EVERYWHERE - SMG adjacent/
 /***************/

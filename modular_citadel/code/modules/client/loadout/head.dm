@@ -906,6 +906,25 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/odsthelmet
+	name = "M-87 UNMC DropTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+
+/datum/gear/head/odsthelmet2
+	name = "M-87 Luchtmobiele Brigade assault helmet"
+	path = /obj/item/clothing/head/droptrooper/ice
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/odsthelmet3
+	name = "M-87 HellTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper/special
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/russianadrianhelmet
 	name = "Russian Adrian helmet "
 	path = /obj/item/clothing/head/kevlarhelmet/rusadrian

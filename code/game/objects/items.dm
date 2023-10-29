@@ -222,6 +222,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!special_transform && transform != initial(transform))
 		special_transform = transform
 
+	/// CB Dual Wielding
+	if(force != 0)
+		if(w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_AGILE_FORCE
+		else if(w_class >= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_ENCUMBERED_FORCE
+
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
 	if(ismob(loc))
@@ -347,16 +354,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(href_list["list_melee"])
+		var/InitialF = initial(force)
+		var/InitialFW = initial(force_wielded)
+		var/InitialFUW = initial(force_unwielded)
+		var/InitialAS = initial(attack_speed)
+		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [force_unwielded]"
-			readout += "\nTWO HANDED [force_wielded]"
-			readout += "\nDUAL WIELD [force_unwielded*dual_wielded_mult]"
+			readout += "\nONE HANDED [InitialFUW] | (DPS [round(InitialFUW * (10/InitialAS), 0.1)])"
+			readout += "\nTWO HANDED [InitialFW] | (DPS [round(InitialFW * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialFUW * dual_wielded_mult] | (DPS [round((InitialFUW * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		else
-			readout += "\nDAMAGE [force]"
-			readout += "\nDUAL WIELD [force*dual_wielded_mult]"
+			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		readout += "\nTHROW DAMAGE [throwforce]"
-		readout += "\nATTACKS / SECOND [10 / attack_speed]"
+		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"
 

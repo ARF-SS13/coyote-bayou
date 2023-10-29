@@ -549,3 +549,13 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 #define SHOES_KNOTTED 2
 
 #define WANTED_FILE "wanted_message.json"
+
+
+
+//Maximum weight allowed for dual wielding.
+#define DUAL_WIELDING_MAX_WEIGHT_ALLOWED WEIGHT_CLASS_NORMAL
+
+#define DUAL_WIELDING_FALLBACK_FORCE	0.66
+#define DUAL_WIELDING_AGILE_FORCE		0.75
+#define DUAL_WIELDING_ENCUMBERED_FORCE	0.50
+#define DUAL_WIELDING_SPEED_DIVIDER 	3
