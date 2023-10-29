@@ -71,8 +71,7 @@
 		"[pick("lightly", "gently")] \
 		 [pick("rubs", "brushes")] \
 		 [t_their] \
-		 [pick("crotch.", "lap.")])
-		)
+		 [pick("crotch.", "lap.")]")
 
 //Pick System Prototype				 
 /*  This system that you see above here is very complex at first glance, but lets take a moment to break it down.  

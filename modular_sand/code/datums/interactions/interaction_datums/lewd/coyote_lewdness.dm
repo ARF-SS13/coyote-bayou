@@ -351,14 +351,14 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently teases [p_their] tongue into <b>[partner]'s</b> mouth.", //An example of pronoun storage usage inside those brackets.
+			"gently teases [t_their] tongue into <b>[partner]'s</b> mouth.", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully teases [p_their] tongue around inside <b>[partner]'s</b> mouth.", //An example of pronoun storage usage inside those brackets.
+			"playfully teases [t_their] tongue around inside <b>[partner]'s</b> mouth.", //An example of pronoun storage usage inside those brackets.
 			)]"
 	
 	//Message block C
@@ -377,9 +377,8 @@ Happy MERPING!  ~TK<3
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/effects/kiss.ogg'
-					50, 1, -1)
-	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
+					'sound/effects/kiss.ogg', 50, 1, -1))
+	partner.handle_post_sex(lust_amt[user.a_intent]/2)
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////FRENCH KISS END/////////
 
@@ -406,7 +405,7 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -499,7 +498,7 @@ Happy MERPING!  ~TK<3
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully uses [p_their] teeth to bite on <b>[partner]'s</b> lower lip.", //An example of pronoun storage usage inside those brackets.
+			"playfully uses [t_their] teeth to bite on <b>[partner]'s</b> lower lip.", //An example of pronoun storage usage inside those brackets.
 			)]"
 	
 	//Message block C
@@ -518,8 +517,7 @@ Happy MERPING!  ~TK<3
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/weapons/bite.ogg'
-					50, 1, -1)
+					'sound/weapons/bite.ogg', 50, 1, -1))
 	partner.handle_post_sex(lust_amt[user.a_intent]/0.8) 
 	user.handle_post_sex(lust_amt[user.a_intent]/1.5) //These are divided by two to half the amount of lust given
 ///////LIP BITE END/////////
@@ -562,34 +560,33 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently nuzzles [p_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
+			"gently nuzzles [t_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully nuzzles [p_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
+			"playfully nuzzles [t_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"possessibely nuzzles [p_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
+			"possessibely nuzzles [t_their] face against <b>[partner]'s</b> face.", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"aggressively nuzzles [p_their] face against <b>[partner]'s</b> face!", //An example of pronoun storage usage inside those brackets.
+			"aggressively nuzzles [t_their] face against <b>[partner]'s</b> face!", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/effects/kiss.ogg'
-					50, 1, -1)
+					'sound/effects/kiss.ogg', 50, 1, -1))
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////FACE NUZZLE END/////////
@@ -626,7 +623,7 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -711,21 +708,21 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently wraps [p_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
+			"gently wraps [t_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"wraps [p_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
+			"wraps [t_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"tightly [p_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
+			"tightly [t_their] fingers around <b>[partner]'s</b> throat.", //An example of pronoun storage usage inside those brackets.
 			)]"
 
 		//Message block D
@@ -737,8 +734,7 @@ Happy MERPING!  ~TK<3
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/effects/kiss.ogg'
-					50, 1, -1)
+					'sound/effects/kiss.ogg', 50, 1, -1))
 	partner.handle_post_sex(lust_amt[user.a_intent]) 
 	user.handle_post_sex(lust_amt[user.a_intent]) //These are divided by two to half the amount of lust given
 ///////THROAT GRAB END/////////
@@ -765,7 +761,7 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -914,7 +910,7 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -1051,7 +1047,7 @@ Happy MERPING!  ~TK<3
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -1203,28 +1199,28 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"lightly wraps [p_their] legs around <b>[partner]'s</b> waist.", 
+			"lightly wraps [t_their] legs around <b>[partner]'s</b> waist.", 
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully wraps [p_their] legs around <b>[partner]'s</b> waist.", 
+			"playfully wraps [t_their] legs around <b>[partner]'s</b> waist.", 
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"really wraps [p_their] legs around <b>[partner]'s</b> waist.", 
+			"really wraps [t_their] legs around <b>[partner]'s</b> waist.", 
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"tightly wraps [p_their] legs around <b>[partner]'s</b> waist.", 
+			"tightly wraps [t_their] legs around <b>[partner]'s</b> waist.", 
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
@@ -1274,28 +1270,28 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently whacks <b>[partner]'s</b> with [p_their] tail.",
+			"gently whacks <b>[partner]'s</b> with [t_their] tail.",
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully whacks <b>[partner]'s</b> with [p_their] tail.",
+			"playfully whacks <b>[partner]'s</b> with [t_their] tail.",
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"really whacks <b>[partner]'s</b> with [p_their] tail.",
+			"really whacks <b>[partner]'s</b> with [t_their] tail.",
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"aggressively whacks <b>[partner]'s</b> with [p_their] tail.",
+			"aggressively whacks <b>[partner]'s</b> with [t_their] tail.",
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
@@ -2049,28 +2045,28 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently grabs <b>[partner]'s</b> pussy, shaking it lightly with [t_thier] own finger inside.",
+			"gently grabs <b>[partner]'s</b> pussy, shaking it lightly with [t_their] own finger inside.",
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully grabs <b>[partner]'s</b> pussy, shaking it playfully with [t_thier] own finger inside.",
+			"playfully grabs <b>[partner]'s</b> pussy, shaking it playfully with [t_their] own finger inside.",
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"possessively grabs <b>[partner]'s</b> pussy, shaking it possessively with [t_thier] own finger inside.",
+			"possessively grabs <b>[partner]'s</b> pussy, shaking it possessively with [t_their] own finger inside.",
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"aggressively grabs <b>[partner]'s</b> pussy, shaking it aggressively with [t_thier] own finger inside.",
+			"aggressively grabs <b>[partner]'s</b> pussy, shaking it aggressively with [t_their] own finger inside.",
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
@@ -2184,28 +2180,28 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"teases <b>[partner]'s cockhead with [t_thier] lower lips.",
+			"teases <b>[partner]'s cockhead with [t_their] lower lips.",
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"rubs <b>[partner]'s cockhead with [t_thier] lower lips.",
+			"rubs <b>[partner]'s cockhead with [t_their] lower lips.",
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"lets <b>[partner]'s cockhead barely slide into [t_thier] lower lips.",
+			"lets <b>[partner]'s cockhead barely slide into [t_their] lower lips.",
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"lets <b>[partner]'s cockhead stir just inside [t_thier] lower lips.",
+			"lets <b>[partner]'s cockhead stir just inside [t_their] lower lips.",
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
@@ -2255,28 +2251,28 @@ Happy MERPING!  ~TK<3
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
 		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently spanks <b>[partner]'s</b> butt, shaking it lightly with [t_thier] blows.",
+			"gently spanks <b>[partner]'s</b> butt, shaking it lightly with [t_their] blows.",
 			)]"
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
 		message = "[pick(
-			"playfully spanks <b>[partner]'s</b> butt, shaking it lightly with [t_thier] blows.",
+			"playfully spanks <b>[partner]'s</b> butt, shaking it lightly with [t_their] blows.",
 			)]"
 	
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
 		message = "[pick(
-			"aggressively spanks <b>[partner]'s</b> butt, shaking it lightly with [t_thier] blows.",
+			"aggressively spanks <b>[partner]'s</b> butt, shaking it lightly with [t_their] blows.",
 			)]"
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
 		message = "[pick(
-			"violently spanks <b>[partner]'s</b> butt, shaking it lightly with [t_thier] blows.",
+			"violently spanks <b>[partner]'s</b> butt, shaking it lightly with [t_their] blows.",
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
