@@ -896,6 +896,7 @@
 * Muh 14mm
 * * * * * * * * * * * * */
 
+//Custom pistol for a player, see above.
 /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
 	name = "Custom K8 Assault Pistol"
 	desc = "A custom K8 Assault pistol manufactured by the Sanroo Arms company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
@@ -916,6 +917,29 @@
 	can_scope = FALSE
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/ticon
+	name = "Latos Systems P-36 Assault Pistol"
+	desc = "A heavy caliber pistol manufactured by Latos Systems. Chambered in 12.7mm or 14mm in pistol caliber, this heavy hitting pistol packs a wallop but requires two hands to even remotely handle the insane recoil. Comes with a built in Smart-Tek mini-dot sight. The gun itself has the ability to take in a custom ammo counter should one choose."
+	icon_state = "ticon"
+	item_state = "ticon"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
+
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol
 	name = "NP-149/40"
