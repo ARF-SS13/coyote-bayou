@@ -548,7 +548,7 @@ datum/crafting_recipe/tribalwar/bone
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 // Staff of Magic Missile (Generalist staff, single shot/burst medium projectiles, okay-ish melee weapon)
-/datum/crafting_recipe/magic/missilestaff
+/*/datum/crafting_recipe/magic/missilestaff // BUGGED. HAS INFINITE AMMO AND NEEDS URGENT FIXING BY SOMEONE SMARTER THAN ME (KELP)
 	name = "Staff of Magic Missile"
 	result = /obj/item/gun/magic/staff/kelpmagic/magicmissile
 	time = 30
@@ -556,7 +556,7 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/crafting/metalparts = 5,
 				/obj/item/stack/crafting/goodparts = 3,
 				/obj/item/stack/sheet/mineral/plasma = 2)
-	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
+	tools = list(TOOL_WORKBENCH, TOOL_RITUAL) */
 
 
 // T1 Sparks Wand (anti-swarm sidearm)
