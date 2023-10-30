@@ -217,7 +217,7 @@ Happy MERPING!  ~TK<3
 		message = "[pick(
 			"is \
 			[pick("forcing", "compelling", "coercing", "pressuring", "driving", "pushing", "obliging", "mandating", "requiring", "imposing")] \
-			<b>[partner]</b> \
+			<b>[partner]</b> to \
 			[pick("suckle on", "nurse on", "savor on", "lick on", "mlem on", "drool on", "taking")] \
 			[t_their] \
 			cock \

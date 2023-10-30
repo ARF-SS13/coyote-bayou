@@ -1,3 +1,18 @@
+//datum storage lmao
+/datum/interaction/lewd/partner
+	description = ""
+
+/datum/interaction/lewd/partner/giving
+	description = ""
+
+
+/datum/interaction/lewd/partner/recieving
+	description = ""
+
+/datum/interaction/lewd/partner/mutual/
+		description = ""
+
+
 
 //Arms-4A  (Version 4)
 //	- Shoulder rub 4B1 - giving - no intensity

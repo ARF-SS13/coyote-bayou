@@ -4,6 +4,7 @@
 //	- Pull Tail 9A2 - giving - medium intensity
 //	- Bite Tail 9A3 - giving - low intensity
 
+
 ////////////////////
 //Brush Tail 9A1///
 ////////////////////
@@ -14,11 +15,12 @@
 	interaction_sound = null
 	max_distance = 1
 
+
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/brush_tail/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/tail/giving/brush_tail/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
