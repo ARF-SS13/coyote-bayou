@@ -14,7 +14,6 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/recieving/sniff_crotch
 	description = "Partner/Crotch - Sniff their crotch."
-	interaction_sound = null
 	max_distance = 1
 
 
@@ -22,7 +21,7 @@
 //VERBOSITY//
 /////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/recieving/sniff_crotch/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/recieving/sniff_crotch/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -69,7 +68,7 @@
 			"aggressively sniffs at <b>[partner]'s</b> crotch.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent]*0.5) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner) You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////CROTCH SNIFF END/////////
@@ -82,14 +81,12 @@
 /datum/interaction/lewd/partner/giving/grab_balls
 	description = "Partner/Crotch - Grab their balls."
 	require_user_hands = TRUE
-	interaction_sound = null
-	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/grab_balls/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/grab_balls/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -137,7 +134,7 @@
 			"aggresively grabs <b>[partner]</b> by the balls.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.7) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////BALL GRAB END/////////
@@ -149,14 +146,12 @@
 /datum/interaction/lewd/partner/giving/shake_pussy
 	description = "Partner/Crotch - Grab their balls."
 	require_user_hands = TRUE
-	interaction_sound = null
 	max_distance = 1
-
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/shake_pussy/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/shake_pussy/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -204,7 +199,7 @@
 			"aggressively grabs <b>[partner]'s</b> pussy, shaking it aggressively with [t_their] own finger inside.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SHAKE PUSSY END/////////
@@ -219,11 +214,10 @@
 	interaction_sound = null
 	max_distance = 1
 
-////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -270,10 +264,7 @@
 			"stirs [t_their] cockhead just inside <b>[partner]'s</b> lower lips.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2)
 	user.handle_post_sex(lust_amt[user.a_intent]*0.8)
 ///////COCKTEASE PUSSY END/////////
@@ -289,10 +280,9 @@
 	max_distance = 1
 
 ////////////
-//VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -339,7 +329,7 @@
 			"lets <b>[partner]'s cockhead stir just inside [t_their] lower lips.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
@@ -362,7 +352,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/spank_ass/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/spank_ass/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -421,7 +411,7 @@
 			"violently spanks <b>[partner]'s</b> butt, shaking it lightly with [t_their] blows.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SPANK ASS END/////////

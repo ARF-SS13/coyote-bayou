@@ -17,14 +17,13 @@
 /datum/interaction/lewd/partner/giving/nipple_twist
 	description = "Partner/Neck - Twist their nipple."
 	require_user_hands = TRUE
-	interaction_sound = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/neck_twist/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/neck_twist/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -83,8 +82,7 @@
 			"aggressively twists <b>[partner]'s</b> nipple!",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE TWIST END/////////
 
@@ -97,14 +95,12 @@
 /datum/interaction/lewd/partner/giving/nipple_bite
 	description = "Partner/Neck - Bite their nipple."
 	require_user_hands = TRUE
-	interaction_sound = null
-	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/nipple_bite/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/nipple_bite/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -152,8 +148,7 @@
 			"aggressively bites <b>[partner]'s</b> nipple!",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE BITE END/////////
 
@@ -165,14 +160,12 @@
 /datum/interaction/lewd/partner/giving/nipple_lick
 	description = "Partner/Neck - Lick their nipple."
 	require_user_hands = TRUE
-	interaction_sound = null
 	max_distance = 1
-
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/nipple_lick/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/nipple_lick/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -220,8 +213,7 @@
 			"aggressively licks <b>[partner]'s</b> nipple!",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE LICK END/////////
 
@@ -234,14 +226,13 @@
 /datum/interaction/lewd/partner/giving/nipple_pull
 	description = "Partner/Neck - Pull their nipple."
 	require_user_hands = TRUE
-	interaction_sound = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/nipple_pull/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/nipple_pull/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -289,8 +280,7 @@
 			"aggressively pulls <b>[partner]'s</b> nipple!",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE PULL END/////////
 
@@ -301,14 +291,13 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/leg_wrap
 	description = "Partner/Body - Wrap your legs around them."
-	interaction_sound = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/leg_wrap/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/leg_wrap/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -355,8 +344,7 @@
 			"tightly wraps [t_their] legs around <b>[partner]'s</b> waist.", 
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////LEG WRAP END/////////
@@ -369,17 +357,16 @@
 /datum/interaction/lewd/partner/giving/tail_bap
 	description = "Partner/Body - Bap them with your tail."
 	require_user_hands = TRUE
-	interaction_sound = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/tail_bap/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/tail_bap/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
-//You can comment these back in to use if you need to use them. This is the full list.
-//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
+	//You can comment these back in to use if you need to use them. This is the full list.
+	//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
@@ -424,7 +411,6 @@
 			"aggressively whacks <b>[partner]'s</b> with [t_their] tail.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////TAIL BAP END/////////

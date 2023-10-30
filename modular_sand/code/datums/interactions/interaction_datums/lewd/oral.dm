@@ -14,7 +14,7 @@
 	require_target_penis = REQUIRE_ANY
 	fucktarget = "penis"
 
-/datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/lust_increase = NORMAL_LUST
@@ -123,6 +123,6 @@
 									'modular_sand/sound/interactions/bj9.ogg',
 									'modular_sand/sound/interactions/bj10.ogg',
 									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(fucktarget != "penis" || partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_PENIS) //SPLURT edit

@@ -41,7 +41,7 @@
 //VERBOSITY// step 4
 ////////////   This system below is to create proper pronoun code within your verbs langauge. You don't gotta use it at all, but its fancy and nice!  Read the examples for what they do to get an understanding of its purpose!
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window. Step 2
+/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window. Step 2
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -160,7 +160,7 @@ Enjoy!												*/
 //Feel free to use the block code concepts above to expand on these as well!
 
 					//Wrap up// Step 8 is these next few lines!
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
 ///////RUB CROTCH END///////// Step 9
@@ -187,7 +187,7 @@ Enjoy!												*/
 //VERBOSITY//
 ////////////
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_behind/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/self/rub_behind/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -251,7 +251,7 @@ Enjoy!												*/
 				)]"))
 
 					//Wrap up//
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	//playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////RUB BUTT END/////////

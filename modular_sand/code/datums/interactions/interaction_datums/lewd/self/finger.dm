@@ -8,7 +8,7 @@
 	write_log_user = "fingered self"
 	write_log_target = null
 
-/datum/interaction/lewd/fingerass_self/display_interaction(mob/living/user)
+/datum/interaction/lewd/fingerass_self/display_interaction(mob/living/user, mob/living/target, show_message)
 	var/t_His = user.p_their()
 	var/message
 
@@ -60,7 +60,7 @@
 				"shudders softly.",
 				"trembles as [t_His] hands run across bare skin.")]"))
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent], CUM_TARGET_HAND, user, "anus") //SPLURT edit
 
@@ -82,7 +82,7 @@
 			)
 	)
 
-/datum/interaction/lewd/finger_self/display_interaction(mob/living/user)
+/datum/interaction/lewd/finger_self/display_interaction(mob/living/user, mob/living/target, show_message)
 	var/t_His = user.p_their()
 	var/message
 	lust_amt = list(
@@ -155,7 +155,7 @@
 	if(liquid_container)
 		message += " over \the [liquid_container]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent],CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA)
 
