@@ -269,43 +269,42 @@ Happy MERPING!  ~TK<3
 	//Message block A
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick(
+		message = pick(
 			"seems to like what <b>[partner]'s</b> doing to [t_them]", 
 			"is eager to recieve what <b>[partner]'s</b> doing to [t_them]",
 			"is seemingly down for whatever <b>[partner]'s</b> doing",
 			"eagerly takes what <b>[partner]'s</b> is serving up",
-			)]"
+			)
 
 			//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick(
+		message = pick(
 			"definitely likes what <b>[partner]'s</b> doing to [t_them]", 
 			"is very eager to take what <b>[partner]'s</b> putting down on [t_them]",
 			"is totally down for whatever <b>[partner]'s</b> doing",
 			"eagerly takes what <b>[partner]'s</b> is serving up",
-			)]"
-
+			)
 
 	//Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB)
-		message = "[pick(
+		message = pick(
 			"<b>REALLY</b> likes what <b>[partner]'s</b> doing to [t_them]", 
 			"is <b>DOWN BAD</b> to take what <b>[partner]'s</b> putting down on [t_them]",
 			"is <b>absolutely losing it</b> for whatever <b>[partner]'s</b> doing",
 			"is taking what <b>[partner]</b> is serving up like a <b>CHAMPION</b>",
-			)]"
+			)
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	if(user.a_intent == INTENT_HARM)
-		message = "[pick(
+		message = pick(
 			"<b>IS LOSING IT</b> from what <b>[partner]'s</b> doing to [t_them]", 
 			"is <b>NOT GONNA LAST LONG</b> taking it like that from <b>[partner]</b>",
 			"is <b>barely even mentally there</b> for whatever <b>[partner]'s</b> doing",
 			"is <b>gonna checkout</b> quick from <b>[partner]</b> actions at this rate",
-			)]"
+			)
 
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	

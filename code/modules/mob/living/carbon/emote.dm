@@ -48,7 +48,7 @@
 /datum/emote/living/carbon/gnarl
 	key = "gnarl"
 	key_third_person = "gnarls"
-	message = "gnarls and shows thier teeth..."
+	message = "gnarls and shows their teeth..."
 	sound = 'sound/alien/voice/gnarl1.ogg'
 
 /datum/emote/living/carbon/moan
