@@ -5,13 +5,13 @@ GLOBAL_LIST_INIT(obj_vars_allowed_to_modify, list(
 	"Layer" 		= 3))
 
 
-/mob/verb/objs_edit_vars(atom/A as obj in view(1))
+/mob/living/verb/objs_edit_vars(atom/A as obj in view(1))
 	set name = "Edit Vars (Shift, Rotate, Layer)."
 	set category = "Object"
 
 	//Blacklist of stuff that isn't allowed to be modified, such as trees
 	if(	istype(A, /obj/structure/flora) || \
-		istype(A, /obj/machinery/door/poddoor/shutters))
+		istype(A, /obj/machinery/door/poddoor))
 
 		to_chat(src, span_danger("You can't move that!"))
 		return
