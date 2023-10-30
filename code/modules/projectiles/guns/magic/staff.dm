@@ -160,7 +160,7 @@
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
 	icon_state = "mmstaff"
-	max_charges = 24
+	max_charges = 24 // CURRENTLY BUGGED. THIS ITEM CAN GO NEGATIVE CHARGES AND SHOOT INFINITELY. NEEDS BUGFIXING BY SOMEONE SMARTER THAN ME (KELP)
 	recharge_rate = 10 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	force_wielded = 37 // Practical all around! May change later.
@@ -221,6 +221,7 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks/thunder
 	name = "lightning bolt"
+	flag = "laser" // plasma OP
 	damage = 60
 	damage_low = 30
 	damage_high = 80

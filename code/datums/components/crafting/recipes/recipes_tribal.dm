@@ -547,18 +547,6 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
-// Staff of Magic Missile (Generalist staff, single shot/burst medium projectiles, okay-ish melee weapon)
-/datum/crafting_recipe/magic/missilestaff
-	name = "Staff of Magic Missile"
-	result = /obj/item/gun/magic/staff/kelpmagic/magicmissile
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/crafting/goodparts = 3,
-				/obj/item/stack/sheet/mineral/plasma = 2)
-	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
-
-
 // T1 Sparks Wand (anti-swarm sidearm)
 /datum/crafting_recipe/magic/lightningrod
 	name = "Wand of Sparks"

@@ -475,7 +475,6 @@
 		/obj/item/gun/magic/wand/kelpmagic/firebolt = 5,
 		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
 		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 5,
-		/obj/item/gun/magic/staff/kelpmagic/magicmissile =5,
 		/obj/item/gun/energy/ionrifle/carbine = 10,
 	)
 
