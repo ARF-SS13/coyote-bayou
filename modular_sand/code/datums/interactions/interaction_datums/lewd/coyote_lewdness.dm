@@ -373,6 +373,7 @@ Happy MERPING!  ~TK<3
 					'modular_sand/sound/interactions/bang3.ogg'), 
 					70, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //For determining that the USERS intent is how much LUST the RECEIVER is getting. You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////EAGER RECIEVER END/////////
 
@@ -588,8 +589,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/weapons/bite.ogg', 50, 1, -1))
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/0.8) 
 	user.handle_post_sex(lust_amt[user.a_intent]/1.5) //These are divided by two to half the amount of lust given
 ///////LIP BITE END/////////
@@ -657,8 +657,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/effects/kiss.ogg', 50, 1, -1))
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////FACE NUZZLE END/////////
@@ -805,8 +804,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-					'sound/effects/kiss.ogg', 50, 1, -1))
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]) 
 	user.handle_post_sex(lust_amt[user.a_intent]) //These are divided by two to half the amount of lust given
 ///////THROAT GRAB END/////////
@@ -875,7 +873,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NECK TOUCH END/////////
 
@@ -942,9 +940,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////THROAT GRAB END/////////
@@ -1024,7 +1020,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE TWIST END/////////
 
@@ -1093,7 +1089,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE BITE END/////////
 
@@ -1161,7 +1157,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE LICK END/////////
 
@@ -1230,7 +1226,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////NIPPLE PULL END/////////
 
@@ -1296,9 +1292,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) 
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
 ///////LEG WRAP END/////////
@@ -1367,7 +1361,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////TAIL BAP END/////////
 
@@ -1442,7 +1436,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SHOULDER RUB END/////////
 
@@ -1509,9 +1503,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0)
 	user.handle_post_sex(lust_amt[user.a_intent]*0)
 ///////FINGER PLAY END/////////
@@ -1580,7 +1572,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////WRIST GRAB END/////////
 
@@ -1649,7 +1641,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////FINGER SUCK END/////////
 
@@ -1725,7 +1717,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////TOUCH BELLY END/////////
 
@@ -1794,7 +1786,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////RUB BELLY END/////////
 
@@ -1862,7 +1854,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////CARESS BELLY END/////////
 
@@ -1930,7 +1922,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////LICK BELLYBUTTON END/////////
 
@@ -2007,7 +1999,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume. 
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent]*0.5) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner) You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////CROTCH SNIFF END/////////
 
@@ -2075,7 +2067,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.7) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////BALL GRAB END/////////
 
@@ -2142,7 +2134,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SHAKE PUSSY END/////////
 
@@ -2208,7 +2200,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2)
@@ -2277,7 +2269,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2)
@@ -2348,7 +2340,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SPANK ASS END/////////
 
@@ -2424,7 +2416,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume. 
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent]*0.5) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner) You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////FUCK THIGH END/////////
 
@@ -2491,7 +2483,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////LICK THIGH END/////////
 
@@ -2558,7 +2550,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////GRAB THIGH END/////////
 
@@ -2624,9 +2616,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*1.2)
 	user.handle_post_sex(lust_amt[user.a_intent]*0.8)
 ///////BITE THIGH END/////////
@@ -2693,7 +2683,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0)
@@ -2771,7 +2761,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////CARESS LEG END/////////
 
@@ -2838,7 +2828,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.3)
@@ -2909,7 +2899,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SQUEEZE LEG END/////////
 
@@ -2975,7 +2965,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	//playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent])
@@ -3052,7 +3042,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////BRUSH TAIL END/////////
 
@@ -3119,7 +3109,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////PULL TAIL END/////////
 
@@ -3186,7 +3176,7 @@ Happy MERPING!  ~TK<3
 			)]"
 
 	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	//playlewdinteractionsound(get_turf(user), 'sound/weapons/bite.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////BITE TAIL END/////////
 
