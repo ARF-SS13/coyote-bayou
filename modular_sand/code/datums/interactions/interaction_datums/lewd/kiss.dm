@@ -14,8 +14,8 @@
 	if(partner.get_lust() < 5)
 		partner.set_lust(5)
 
-/datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/partner, show_message)
 	if(user.get_lust() >= 3)
-		user.visible_message(span_love("\The <b>[user]</b> gives an intense, lingering kiss to \the <b>[partner]</b>."))
+		if(show_message) user.visible_message(span_love("\The <b>[user]</b> gives an intense, lingering kiss to \the <b>[partner]</b>."))
 	else
-		user.visible_message(span_love("\The <b>[user]</b> kisses \the <b>[partner]</b> deeply."))
+		if(show_message) user.visible_message(span_love("\The <b>[user]</b> kisses \the <b>[partner]</b> deeply."))

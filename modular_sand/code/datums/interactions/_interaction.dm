@@ -10,6 +10,10 @@
 - Makes all the code good because yes as well - SandPoot
 **/
 
+#define LEWD_VERB_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_SOUND_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_MESSAGE_COOLDOWN 4 SECONDS
+
 /mob/proc/list_interaction_attributes()
 	return list()
 
@@ -29,6 +33,7 @@
 	var/write_log_target
 
 	var/interaction_sound
+	var/int_sound_vol = 50
 
 	var/max_distance = 1
 	var/require_ooc_consent = FALSE
@@ -64,7 +69,7 @@
 	// 		to_chat(user, span_warning("You don't have hands."))
 	// 	return FALSE
 
-	if(COOLDOWN_FINISHED(user, last_interaction_time))
+	if(COOLDOWN_FINISHED(user, interaction_cooldown))
 		return TRUE
 
 	if(action_check)
@@ -122,20 +127,25 @@
 		user.log_message("[write_log_user] [target]", LOG_ATTACK)
 	if(write_log_target)
 		target.log_message("[write_log_target] [user]", LOG_VICTIM, log_globally = FALSE)
-
-	display_interaction(user, target)
+	var/showmessage = FALSE
+	//If you swapped interactions
+	if(user.last_lewd_datum != src || COOLDOWN_FINISHED(user, interaction_message_cooldown))
+		showmessage = TRUE
+		COOLDOWN_START(user, interaction_message_cooldown, LEWD_VERB_MESSAGE_COOLDOWN)
+	display_interaction(user, target, showmessage)
 	post_interaction(user, target)
 
 /// Display the message
-/datum/interaction/proc/display_interaction(mob/living/user, mob/living/target)
-	if(simple_message)
+/datum/interaction/proc/display_interaction(mob/living/user, mob/living/target, show_message)
+	if(simple_message && show_message)
 		var/use_message = replacetext(simple_message, "USER", "\the [user]")
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
 /// After the interaction, the base only plays the sound and only if it has one
 /datum/interaction/proc/post_interaction(mob/living/user, mob/living/target)
-	COOLDOWN_START(user, last_interaction_time, 0.6 SECONDS)
-	if(interaction_sound)
-		playsound(get_turf(user), interaction_sound, 50, 1, -1)
+	COOLDOWN_START(user, interaction_cooldown, LEWD_VERB_COOLDOWN)
+	if(interaction_sound && COOLDOWN_FINISHED(user, interaction_sound_cooldown))
+		COOLDOWN_START(user, interaction_sound_cooldown, LEWD_VERB_SOUND_COOLDOWN)
+		playlewdinteractionsound(get_turf(user), interaction_sound, int_sound_vol, 1, -1)
 	return

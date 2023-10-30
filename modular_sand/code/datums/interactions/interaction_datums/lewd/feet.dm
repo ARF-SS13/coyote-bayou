@@ -6,7 +6,7 @@
 	require_user_feet = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/grindface/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/grindface/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -61,7 +61,7 @@
 	require_user_feet = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -116,7 +116,7 @@
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/shoes = user.get_shoes(TRUE)
@@ -143,7 +143,7 @@
 	description = "Partner/Crotch - Jerk them with both feet."
 	require_user_num_feet = 2
 
-/datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/shoes = user.get_shoes()
@@ -172,7 +172,7 @@
 	require_target_vagina = REQUIRE_ANY
 	require_target_penis = null
 
-/datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()

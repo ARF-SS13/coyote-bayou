@@ -48,7 +48,7 @@ Happy MERPING!  ~TK<3
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/lick_the_tip/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/lick_the_tip/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -132,7 +132,7 @@ Happy MERPING!  ~TK<3
 			cockhead \
 			like [t_their] life depends on it!)")]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////LICK THE TIP END/////////
@@ -154,7 +154,7 @@ Happy MERPING!  ~TK<3
 //VERBOSITY//
 /////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/recieving/tip_to_lip/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/recieving/tip_to_lip/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -224,7 +224,7 @@ Happy MERPING!  ~TK<3
 			by force: \
 			[pick("using their mouth as a playtoy", "playfully employing their lips and tongue to pleasure themselves", "making a game of their oral actions", "using their oral cavity as a source of pleasure", "treating their mouth as a fun toy", "playfully toying with their lips and tongue", "utilizing their mouth for their own sexual pleasures")]")]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/effects/lick.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume. 
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner) You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////TIP TO LIP END/////////
@@ -247,7 +247,7 @@ Happy MERPING!  ~TK<3
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/eager_reciever/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/eager_reciever/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -307,14 +307,14 @@ Happy MERPING!  ~TK<3
 			)
 
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 					'modular_sand/sound/interactions/bang1.ogg',
 					'modular_sand/sound/interactions/bang2.ogg',
 					'modular_sand/sound/interactions/bang3.ogg'), 
 					70, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]/2) //For determining that the USERS intent is how much LUST the RECEIVER is getting. You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
+	
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////EAGER RECIEVER END/////////
 

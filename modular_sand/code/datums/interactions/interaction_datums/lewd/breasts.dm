@@ -64,7 +64,7 @@
 			)
 	)
 
-/datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target, show_message)
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -93,7 +93,7 @@
 						modifier = 1
 			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
-			user.visible_message(span_love("<b>\The [user]</b> milks <b>[target]</b>'s breasts into \the [liquid_container]."), ignored_mobs = user.get_unconsenting())
+			if(show_message) user.visible_message(span_love("<b>\The [user]</b> milks <b>[target]</b>'s breasts into \the [liquid_container]."), ignored_mobs = user.get_unconsenting())
 			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 30, 1, -1)
 	else
 		if(user.a_intent == INTENT_HARM)

@@ -12,7 +12,7 @@
 	require_user_vagina = REQUIRE_ANY
 	fucktarget = "vagina"
 
-/datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE
@@ -105,7 +105,7 @@
 
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(retaliation_message)
 		user.visible_message("<font color=red><b>\The <b>[partner]</b></b> [retaliation_message]</span>", ignored_mobs = user.get_unconsenting())
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
@@ -118,7 +118,7 @@
 	require_target_mouth = TRUE
 	max_distance = 1
 
-/datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE

@@ -20,7 +20,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/caress_leg/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/caress_leg/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -68,7 +68,7 @@
 			"needily caresses one of <b>[partner]'s</b> legs.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////CARESS LEG END/////////
@@ -88,7 +88,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/footsie/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/footsie/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -135,7 +135,7 @@
 			"aggressively rubs [t_their] foot one of <b>[partner]'s</b> feet.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)
@@ -158,7 +158,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/squeeze_leg/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/squeeze_leg/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -206,7 +206,7 @@
 			"needily sqeuezes one of <b>[partner]'s</b> legs.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
 ///////SQUEEZE LEG END/////////
@@ -225,7 +225,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/spread_legs/display_interaction(mob/living/user, mob/living/partner) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/spread_legs/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -281,7 +281,7 @@
 			"aggressively spreads <b>[partner]'s</b> legs, gaining access to their lap.",
 			)]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
 	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
 	//				'sound/effects/kiss.ogg'
 	//				50, 1, -1)

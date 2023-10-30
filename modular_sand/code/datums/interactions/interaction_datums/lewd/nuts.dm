@@ -7,7 +7,7 @@
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
-/datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -29,7 +29,7 @@
 						'modular_sand/sound/interactions/nuts2.ogg',
 						'modular_sand/sound/interactions/nuts3.ogg',
 						'modular_sand/sound/interactions/nuts4.ogg'), 70, 1, -1)*/ //These files don't even exist but nobody noticed because double-quotes were used instead of single.
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 
 /datum/interaction/lewd/nut_smack

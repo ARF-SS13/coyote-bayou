@@ -37,7 +37,11 @@
 	/// if set, the next sex-type action will make u cum
 	var/ready_to_cum = FALSE // ARE YOU READY?
 	COOLDOWN_DECLARE(refractory_period)
-	COOLDOWN_DECLARE(last_interaction_time)
+	COOLDOWN_DECLARE(interaction_cooldown)
+	/// Sounds can only play so often
+	COOLDOWN_DECLARE(interaction_sound_cooldown)
+	/// You can still do an interaction but if it's a duplicate one within this time there's no message
+	COOLDOWN_DECLARE(interaction_message_cooldown)
 	var/datum/interaction/lewd/last_lewd_datum	//Recording our last lewd datum allows us to do stuff like custom cum messages.
 												//Yes i feel like an idiot writing this.
 	var/cleartimer //Timer for clearing the "last_lewd_datum". This prevents some oddities.
