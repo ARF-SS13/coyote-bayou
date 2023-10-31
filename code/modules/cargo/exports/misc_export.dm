@@ -106,7 +106,6 @@
 		/obj/item/gun/ballistic/revolver/widowmaker,
 		/obj/item/gun/ballistic/bow/lightxbow,
 		/obj/item/gun/ballistic/bow/recurvebow,
-		/obj/item/gun/energy/laser/tg/carbine/pistol,
 		/obj/item/gun/energy/laser/tg/carbine,
 
 		)
