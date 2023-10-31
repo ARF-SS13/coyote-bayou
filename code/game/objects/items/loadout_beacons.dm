@@ -726,6 +726,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src) //why can't 10mm magazines be normal? make sure these aren't extended or broken
 	new /obj/item/ammo_box/c10mm(src)
 
+/obj/item/storage/box/gun/pistol/covpistole
+	name = "EG-2A7 Pistol case"
+
+/obj/item/storage/box/gun/pistol/covpistole/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/covpistol(src)
+
 /obj/item/storage/box/gun/rifle/delisle
 	name = "De Lisle carbine case"
 
@@ -2243,6 +2249,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/shottybotty
+
+/datum/loadout_box/covpistols
+	entry_tag = "EG-2A7 Plasma Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/pistol/covpistole
 
 /datum/loadout_box/volcanicsgobrr
 	entry_tag = "Volcanic Pistol"

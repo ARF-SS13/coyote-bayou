@@ -435,6 +435,12 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 312 // 16 shots
 	fire_sound = 'sound/weapons/laser3.ogg'
 
+/obj/item/ammo_casing/energy/laser/tg/covenantbrr
+	projectile_type = /obj/item/projectile/beam/laser/beam
+	e_cost = 3000 // 10 shots
+	fire_sound = 'sound/f13weapons/beamrifle.ogg'
+
+
 /obj/item/ammo_casing/energy/laser/tg/nuclear/rifle
 	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
 	e_cost = 208 // 24 shots

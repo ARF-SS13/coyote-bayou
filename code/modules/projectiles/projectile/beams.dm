@@ -823,6 +823,43 @@
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 	hitscan = TRUE
 
+/obj/item/projectile/beam/laser/beam //Covenant version of a watzz2k hitscan proj. Hits like a semi-truck
+	name = " sniper laser bolt"
+	damage = 80
+	damage_list = list( "70" = 25, "80" = 40, "85" = 25)
+	wound_bonus = 10
+	bare_wound_bonus = 20
+	tracer_type = /obj/effect/projectile/tracer/covbeamlaser
+	muzzle_type = /obj/effect/projectile/muzzle/disabler
+	impact_type = /obj/effect/projectile/impact/disabler
+	hitscan = TRUE
+	muzzle_flash_intensity = 6
+	muzzle_flash_range = 2
+	muzzle_flash_color_override = LIGHT_COLOR_CYAN
+	impact_light_intensity = 7
+	impact_light_range = 2.5
+	impact_light_color_override = LIGHT_COLOR_CYAN
+	light_color = LIGHT_COLOR_CYAN
+
+/obj/item/projectile/f13plasma/pistol/covenant
+	name = "plasma energy bolt"
+	icon_state = "plasmapistol"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
+	damage = 20
+	damage_list = list( "18" = 25, "20" = 40, "25" = 25)
+	wound_bonus = 8
+	bare_wound_bonus = 18
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(10)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_GREEN
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 12
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
 	damage = 35
