@@ -55,7 +55,7 @@
 	if(check_streak(A,D))
 		return TRUE
 	. = TRUE
-	var/damage = (damage_roll(A,D) + 15)
+	var/damage = (damage_roll(A,D) + 5)
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] sends [D] reeling with an atomic pork hammer!"), \
 				span_userdanger("You're sent reeling by [A]'s atomic pork hammer!"), span_hear("You hear a whump!"), COMBAT_MESSAGE_RANGE, A)

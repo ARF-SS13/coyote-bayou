@@ -2120,19 +2120,19 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You no longer know how to cast shocking grasp!.")
 	
 	
-/datum/quirk/booming
-	name = "Booming Blade"
-	desc = "You know how to cast the booming blade cantrip"
-	value = 44
-	category = "Cantrips"
-	mechanics = "When using the *booming emote, you summon a magic sword able to tag foes for extra damage on the next hit."
-	conflicts = list(
-		/datum/quirk/littleleagues,
-		/datum/quirk/bigleagues
-	)
-	mob_trait = TRAIT_BOOMING
-	gain_text = span_notice("You know how to cast booming blade!")
-	lose_text = span_danger("You no longer know how to cast booming blade!.")
+//datum/quirk/booming
+	//name = "Booming Blade"
+	//desc = "You know how to cast the booming blade cantrip"
+	//value = 44
+	//category = "Cantrips"
+	//mechanics = "When using the *booming emote, you summon a magic sword able to tag foes for extra damage on the next hit."
+	//conflicts = list(
+		//datum/quirk/littleleagues,
+		//datum/quirk/bigleagues
+	//)
+	//mob_trait = TRAIT_BOOMING
+	//gain_text = span_notice("You know how to cast booming blade!")
+	//lose_text = span_danger("You no longer know how to cast booming blade!.")
 
 
 ///QUIRK PACKAGES/// QUACKAGES IF YOU WILL
