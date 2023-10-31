@@ -124,6 +124,11 @@
 	if(H.dna.species.is_wagging_tail())
 		. = null
 
+/datum/emote/living/carbon/human/wag/lash
+	key = "lashtail"
+	key_third_person = "lashes"
+	message = "lashes their tail."
+
 /datum/emote/living/carbon/human/wing
 	key = "wing"
 	key_third_person = "wings"
