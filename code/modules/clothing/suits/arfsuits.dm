@@ -2856,6 +2856,19 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 
+/obj/item/clothing/suit/armor/medium/toxspartanarmors
+	name = "Leo Armaments MARK XI armor 'Patriot'"
+	desc = "A set of royal themed Mark XI assault armor.This armo was made to fit more curvy and hourglass shaped feminine bodies. The armor is the same as any other, however it seems to have the name 'Tox' scratched onto the right plate of the armor. The interior of the armor is made for comfort, foregoing protection for comfort fitting and enjoyment. The bodysuit is more skimpier and skin-tighter than usual, hugging the body as the user moves about."
+	icon_state = "markvi2"
+	item_state = "markvi2"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
 /* * * * * * * * * *
 * Old medieval armors
 * * * * * * * * * * */

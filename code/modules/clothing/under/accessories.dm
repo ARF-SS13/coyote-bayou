@@ -916,3 +916,5 @@
 	icon_state = "heart"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+
