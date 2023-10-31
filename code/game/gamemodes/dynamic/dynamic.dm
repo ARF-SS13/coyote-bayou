@@ -332,13 +332,8 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	log_game("DYNAMIC: Dynamic mode parameters for the round:")
 	log_game("DYNAMIC: Centre is [threat_curve_centre], Width is [threat_curve_width], Forced extended is [GLOB.dynamic_forced_extended ? "Enabled" : "Disabled"], No stacking is [GLOB.dynamic_no_stacking ? "Enabled" : "Disabled"].")
 	log_game("DYNAMIC: Stacking limit is [GLOB.dynamic_stacking_limit].")
-	if(GLOB.dynamic_forced_threat_level >= 0)
+	if(GLOB.dynamic_forced_threat_level != 0.1)
 		threat_level = round(GLOB.dynamic_forced_threat_level, 0.1)
-	else
-		generate_threat()
-	generate_budgets()
-	set_cooldowns()
-	log_game("DYNAMIC: Dynamic Mode initialized with a Threat Level of... [threat_level]! ([round_start_budget] round start budget)")
 	return TRUE
 
 
