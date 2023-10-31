@@ -236,7 +236,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
-	return ..()
+	..()
+	moveToNullspace()
+	return QDEL_HINT_LETMELIVE
 
 /obj/item/ComponentInitialize()
 	. = ..()
