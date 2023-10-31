@@ -486,15 +486,6 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/beam/laser/pistol/AK470M //AK470M
-	name = "laser beam"
-	damage = 20
-	damage_list = list( "18" = 30, "20" = 70)
-
-	icon_state = "arcane_barrage"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
-	light_color = LIGHT_COLOR_PURPLE
-
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
@@ -901,6 +892,23 @@
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
 
+/obj/item/projectile/beam/laser/tg/kalash47
+	name = "heavy laser bolt"
+	damage = 40
+	damage_list = list("30" = 25, "40" = 25, "42" = 25, "45" = 25)
+	hitscan = FALSE
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
+
+/obj/item/projectile/beam/laser/tg/kalash74
+	name = "light laser bolt"
+	damage = 20
+	damage_list = list("16" = 25, "20" = 25, "22" = 25, "25" = 25)
+	recoil = BULLET_RECOIL_LASER
+	hitscan = FALSE
+	icon_state = "arcane_barrage"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol

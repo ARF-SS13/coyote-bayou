@@ -245,11 +245,6 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/ultra_rifle
 	e_cost = 1000 // 40 shots
 
-/obj/item/ammo_casing/energy/laser/AK470M
-	projectile_type = /obj/item/projectile/beam/laser/pistol/AK470M
-	e_cost = 1000 // 30 shots
-	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
-
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
 	e_cost = 1875 // same as the hitscan, though this is unused
@@ -447,6 +442,15 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
+/obj/item/ammo_casing/energy/laser/kalash47 // high power, slow fire and charge
+	projectile_type = /obj/item/projectile/beam/laser/tg/kalash47
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+/obj/item/ammo_casing/energy/laser/kalash74 // low power, fast fire and charge
+projectile_type = /obj/item/projectile/beam/laser/tg/kalash74
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

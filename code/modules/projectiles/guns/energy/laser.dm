@@ -1317,24 +1317,29 @@
 		/datum/firemode/semi_auto/faster
 	)
 
-/obj/item/gun/energy/laser/LaserAK/worn
-	name = "Laser AK470M"
-	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
+/obj/item/gun/energy/laser/LaserAK/worn // generic laser AK
+	name = "AK740"
+	desc = "The AK740 was an attempt to modernize the AK470's design. While it is easier to control during automatic fire and recharges approximately 30% faster, most feel the loss of stopping power was not worth it."
 	icon_state = "LaserAK"
 	item_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/kalash74)
 	ammo_x_offset = 4
+	selfchargerate = 30
 	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_firemodes = list(
 	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm100
+	/datum/firemode/automatic/rpm200
 	)
+
+/obj/item/gun/energy/laser/LaserAK/jaggi // unique laser AK for someone specifically
+	name = "AK470M"
+	desc = "An AK470 that's been rebuilt using spare parts and scrap."
+	damage_multiplier = GUN_LESS_DAMAGE_T1 // it's this or an even *longer* recharge time
 
 /obj/item/gun/energy/laser/aer9/focused/rynn
 	name = "\improper Hot-wired AER10 laser rifle"
