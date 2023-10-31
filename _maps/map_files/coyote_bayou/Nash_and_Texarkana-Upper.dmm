@@ -2152,6 +2152,9 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"bJl" = (
+/turf/closed/wall/f13/wood/house,
+/area/f13/wasteland)
 "bJo" = (
 /mob/living/simple_animal/hostile/fireant,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2720,6 +2723,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"cjl" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood/house,
+/area/f13/wasteland)
 "cjA" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -4115,6 +4122,32 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"dqG" = (
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -2;
+	pixel_x = -2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -7
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 3
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -12;
+	pixel_x = 2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 9;
+	pixel_x = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "dre" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/rare,
@@ -5513,6 +5546,17 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building/mall)
+"ewW" = (
+/mob/living/simple_animal/hostile/radroach{
+	health = 60;
+	name = "strong radroach";
+	color = "#ff0000";
+	damage_threshold_penetration_mob = 2;
+	melee_damage_lower = 5;
+	melee_damage_upper = 7
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "ext" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 10
@@ -7024,6 +7068,11 @@
 	},
 /turf/open/floor/carpet/arcade,
 /area/f13/bar/nash)
+"fHH" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "fHN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -8462,6 +8511,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"gOA" = (
+/mob/living/simple_animal/hostile/radroach{
+	health = 120;
+	name = "Raddy Roach";
+	color = "#ff0000";
+	damage_threshold_penetration_mob = 3;
+	melee_damage_lower = 8;
+	melee_damage_upper = 10
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "gOF" = (
 /obj/structure/chair/office/dark,
 /turf/open/floor/f13/wood{
@@ -8583,6 +8643,33 @@
 /turf/open/floor/grass{
 	color = "#444444"
 	},
+/area/f13/wasteland)
+"gRI" = (
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -7;
+	pixel_x = 1
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 3;
+	pixel_x = -4
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = -12;
+	pixel_x = 2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_y = 9;
+	pixel_x = -2
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "gRV" = (
 /obj/structure/sign/departments/medbay{
@@ -16194,6 +16281,10 @@
 	sunlight_state = 1
 	},
 /area/f13/building/hospital)
+"mBG" = (
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "mBR" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/ammo_box/shotgun/slug,
@@ -20889,6 +20980,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
+"qsV" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "qtx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -24015,6 +24110,18 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/ruins)
+"sPw" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/mob/living/simple_animal/hostile/radroach{
+	health = 60;
+	name = "strong radroach";
+	color = "#ff0000";
+	damage_threshold_penetration_mob = 2;
+	melee_damage_lower = 5;
+	melee_damage_upper = 7
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "sPE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -46395,16 +46502,16 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+bJl
+bJl
+bJl
+bJl
+bJl
+bJl
+bJl
+bJl
+bJl
+bJl
 vje
 vje
 gJP
@@ -46648,20 +46755,20 @@ oez
 oez
 oez
 oez
+fHH
+oez
+oez
+oez
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+ewW
+qsV
+qsV
+oez
 hqx
+oez
 dtb
-dtb
-dtb
-dtb
+sPw
+bJl
 vje
 vje
 gJP
@@ -46905,20 +47012,20 @@ oez
 oez
 oez
 oez
+qsV
+oez
+oez
+oez
+dtb
+qsV
+qsV
+oez
+oez
+dtb
+oez
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-hqx
-dtb
-dtb
+bJl
 vje
 vje
 gJP
@@ -47162,20 +47269,20 @@ oez
 oez
 oez
 oez
+qsV
+oez
+oez
+oez
 dtb
+oez
+oez
+oez
+oez
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+qsV
+bJl
 vje
 vje
 gJP
@@ -47419,20 +47526,20 @@ oez
 oez
 oez
 oez
+qsV
+qsV
 dtb
+ewW
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-hqx
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+tRd
+oez
+oez
+oez
+bJl
 vje
 vje
 gJP
@@ -47676,20 +47783,20 @@ oez
 oez
 oez
 oez
+qsV
+dtb
+mBG
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+tRd
+oez
+oez
+oez
+bJl
 nQC
 vje
 gJP
@@ -47933,20 +48040,20 @@ oez
 oez
 oez
 oez
+gOA
 dtb
 dtb
 dtb
+qsV
+oez
+oez
+qsV
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+bJl
 nQC
 gJP
 gJP
@@ -48190,20 +48297,20 @@ oez
 oez
 oez
 oez
+qsV
 dtb
 dtb
 dtb
+ewW
+dqG
+gRI
+qsV
+qsV
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+qsV
+bJl
 vje
 gJP
 gJP
@@ -48452,15 +48559,15 @@ oez
 oez
 oez
 dtb
+oez
+oez
+qsV
 dtb
+ewW
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+qsV
+qsV
+bJl
 vje
 gJP
 gJP
@@ -48708,16 +48815,16 @@ oez
 oez
 oez
 oez
+qsV
+oez
+oez
+oez
+oez
 dtb
 dtb
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+ewW
+bJl
 vje
 gJP
 gJP
@@ -48965,16 +49072,16 @@ oez
 oez
 oez
 oez
+qsV
+qsV
+oez
+oez
+oez
+oez
 dtb
+mBG
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+bJl
 vje
 vje
 gJP
@@ -49222,16 +49329,16 @@ oez
 oez
 oez
 oez
+oez
+bJl
+bJl
+bJl
+bJl
+bJl
+ewW
 dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
-dtb
+qsV
+bJl
 vje
 vje
 nQC
@@ -49484,11 +49591,11 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-hqx
-dtb
-dtb
+bJl
+bJl
+cjl
+bJl
+bJl
 oez
 vje
 vje
