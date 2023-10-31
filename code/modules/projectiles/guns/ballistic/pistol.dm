@@ -217,8 +217,8 @@
 
 //9mm coldwar-modern sidearms. Same as the browning hipower pistol
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
-	name = "glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	name = "Glock 19"
+	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter "
 	icon_state = "glock"
 	item_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -228,7 +228,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
 	name = "Pink glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig. This one hasnt seen much mud or sand, but it has fallen victim to a rather unusual colour choice. Is pink really 'tacticool?'"
 	icon_state = "plock"
 	item_state = "plock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
