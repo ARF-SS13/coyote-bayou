@@ -64,7 +64,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/laser/LaserAK
-	name = "AK470"
+	name = "Laser AK470"
 	desc = "An experimental Avtomat Kalashnikova rifle that uses a microfusion breeder cell. Death solves all problems -- No man, no problem."
 	can_remove = 0
 	can_charge = 0
@@ -80,8 +80,8 @@
 	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = LASER_AUTORIFLE_RECOIL(2, 1)
 	init_firemodes = list(
 	/datum/firemode/semi_auto,
 	/datum/firemode/automatic/rpm100
 	)
-	init_recoil = LASER_AUTORIFLE_RECOIL(2, 1)

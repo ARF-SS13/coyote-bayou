@@ -442,6 +442,8 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
+// Laser AK stuff
+
 /obj/item/ammo_casing/energy/laser/kalash47 // high power, slow fire and charge
 	projectile_type = /obj/item/projectile/beam/laser/tg/kalash47
 	e_cost = 1000 // 30 shots
