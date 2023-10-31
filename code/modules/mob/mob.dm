@@ -1322,7 +1322,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"
 
 /mob/verb/check_out(atom/A as mob in view())
-	set name = "Flirt"
+	set name = "Flirt with"
 	set category = "IC"
 	
 	var/list/choices = list(
@@ -1384,27 +1384,27 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("Coo at them.")
 			to_chat(A, span_notice("[src] sounds like they're <span class='cooing at you?'>advance.</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Pinch them.")
 			to_chat(A, span_notice("[src] is reaching to <span class='love'>pinch you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Caress them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>caress you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Brush against them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>brush closely up against you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope them generically.")
 			to_chat(A, span_notice("[src] is seemingly trying to <span class='love'>grope you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope their bottom.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your ass?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
-		SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope their side.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>grope your side playfully?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
