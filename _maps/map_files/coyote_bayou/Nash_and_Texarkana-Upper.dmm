@@ -3053,7 +3053,6 @@
 	},
 /area/f13/wasteland)
 "cvg" = (
-/obj/structure/fermenting_barrel,
 /obj/structure/fence/wooden{
 	pixel_x = -14
 	},
@@ -10353,6 +10352,12 @@
 	color = "#444444"
 	},
 /area/f13/wasteland)
+"ieY" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building)
 "ifa" = (
 /obj/structure/table,
 /obj/item/storage/box/drinkingglasses,
@@ -11077,7 +11082,6 @@
 /area/f13/wasteland)
 "iHf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fermenting_barrel,
 /obj/structure/fence/wooden{
 	pixel_x = -14
 	},
@@ -20242,7 +20246,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
-/obj/structure/fermenting_barrel,
 /obj/structure/fence/wooden{
 	pixel_x = -14
 	},
@@ -38316,7 +38319,7 @@ xTy
 xTy
 xTy
 pcM
-dYg
+kCD
 pjG
 bYj
 bYj
@@ -38559,7 +38562,7 @@ oez
 oez
 oez
 oIp
-xbW
+mNn
 mNn
 mNn
 mNn
@@ -38820,8 +38823,8 @@ mNn
 mNn
 mNn
 mNn
-mNn
-mNn
+ieY
+ieY
 reL
 kCD
 pcM
@@ -39077,8 +39080,8 @@ mNn
 tPg
 eJT
 mNn
-mNn
-mNn
+ieY
+ieY
 wDF
 kCD
 kCD
@@ -46388,10 +46391,10 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
 dtb
 dtb
 dtb
@@ -46644,7 +46647,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -46901,7 +46904,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -47158,7 +47161,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -47415,7 +47418,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -47672,7 +47675,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -47929,7 +47932,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -48186,7 +48189,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 dtb
@@ -48443,11 +48446,11 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
 dtb
 dtb
 dtb
@@ -48700,11 +48703,11 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
+oez
 dtb
 dtb
 dtb
@@ -48958,10 +48961,10 @@ oez
 oez
 oez
 oez
-dtb
-dtb
-dtb
-dtb
+oez
+oez
+oez
+oez
 dtb
 dtb
 dtb
@@ -49219,10 +49222,10 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
+dtb
+dtb
+dtb
+dtb
 dtb
 dtb
 dtb
@@ -49480,7 +49483,7 @@ oez
 oez
 oez
 oez
-dtb
+oez
 dtb
 dtb
 hqx
