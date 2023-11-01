@@ -4,6 +4,7 @@
 	product_ads = "Escape to a fantasy world!;Fuel your gambling addiction!;Ruin your friendships!;Roll for initiative!;Elves and dwarves!;Paranoid computers!;Totally not satanic!;Fun times forever!"
 	icon_state = "games"
 	products = list(/obj/item/tattoo_gun = 5,
+					/obj/item/tattoo_remover = 5,
 					/obj/item/tattoo_holder/blank = 20,
 					/obj/item/tattoo_holder/blank/temporary = 20,
 					/obj/item/toy/cards/deck = 5,
