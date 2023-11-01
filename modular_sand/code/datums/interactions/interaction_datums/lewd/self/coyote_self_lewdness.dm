@@ -333,4 +333,4 @@ datum/interaction/lewd/self/lewd_squirm //lewd makes it pink, the name is just w
 					//Wrap up// Step 8 is these next few lines!
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	user.handle_post_sex(lust_amt[user.a_intent]*0.4/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
-///////RUB CROTCH END///////// Step 9
+///////SQUIRM LEWDLY END///////// Step 9
