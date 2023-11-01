@@ -42,6 +42,8 @@
 	COOLDOWN_DECLARE(interaction_sound_cooldown)
 	/// You can still do an interaction but if it's a duplicate one within this time there's no message
 	COOLDOWN_DECLARE(interaction_message_cooldown)
+	/// Believe it or not these are annoying
+	COOLDOWN_DECLARE(interaction_moan_cooldown)
 	var/datum/interaction/lewd/last_lewd_datum	//Recording our last lewd datum allows us to do stuff like custom cum messages.
 												//Yes i feel like an idiot writing this.
 	var/cleartimer //Timer for clearing the "last_lewd_datum". This prevents some oddities.
@@ -422,16 +424,18 @@
 	return TRUE
 
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 65)))
+	if(!(prob(get_lust() / get_lust_tolerance() * 50)))
 		return
-	var/moan = rand(1, 7)
-	if(moan == lastmoan)
-		moan--
-	if(!is_muzzled())
-		visible_message(message = span_love("<B>\The [src]</B> [pick("moans", "moans in pleasure")]."), ignored_mobs = get_unconsenting())
-	if(is_muzzled())//immursion
-		audible_message(span_love("<B>[src]</B> [pick("mimes a pleasured moan","moans in silence")]."))
-	lastmoan = moan
+	if(COOLDOWN_FINISHED(src, interaction_moan_cooldown))
+		COOLDOWN_START(src, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)
+		var/moan = rand(1, 7)
+		if(moan == lastmoan)
+			moan--
+		if(!is_muzzled())
+			visible_message(message = span_love("<B>\The [src]</B> [pick("moans", "moans in pleasure")]."), ignored_mobs = get_unconsenting())
+		else
+			audible_message(span_love("<B>[src]</B> [pick("mimes a pleasured moan","moans in silence")]."), ignored_mobs = get_unconsenting())
+		lastmoan = moan
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	ready_to_cum = FALSE

@@ -13,6 +13,7 @@
 #define LEWD_VERB_COOLDOWN 0.25 SECONDS
 #define LEWD_VERB_SOUND_COOLDOWN 0.25 SECONDS
 #define LEWD_VERB_MESSAGE_COOLDOWN 4 SECONDS
+#define LEWD_VERB_MOAN_COOLDOWN 5 SECONDS
 
 /mob/proc/list_interaction_attributes()
 	return list()
