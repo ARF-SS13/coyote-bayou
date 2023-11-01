@@ -628,7 +628,8 @@ SUBSYSTEM_DEF(persistence)
 			return
 
 		// save permanent tattoos
-		ending_human.client.prefs.permanent_tattoos = ending_human.format_tattoos()
+		if(ending_human.client)
+			ending_human.client.prefs.permanent_tattoos = ending_human.format_tattoos()
 
 		ending_human.client.prefs.save_character()
 

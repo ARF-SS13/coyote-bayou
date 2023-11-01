@@ -472,7 +472,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 
-	//permanent tats
+	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 	return 1
 
@@ -1164,6 +1164,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_load(S)
 
+	// permanent tattoos
 	permanent_tattoos = sanitize_text(permanent_tattoos)
 
 	return 1
@@ -1416,7 +1417,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_save(S)
 
-	//tats
+	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
 	return 1
