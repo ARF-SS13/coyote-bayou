@@ -25,6 +25,8 @@
 	var/fadedness = TATTOO_NOT_FADED
 	/// how long does the temporary tattoo last between fade cycles? total life will be around 3-4 times this. if null, its permanent
 	var/fade_time
+	/// is this tattoo permanent?
+	var/is_permanent = FALSE
 	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
 	var/default_bodypart = BODY_ZONE_CHEST
 	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
@@ -464,14 +466,18 @@
 				loaded_tat.extra_desc = newextra
 				user.show_message(span_notice("You add \"[newextra]\" to the tattoo."))
 		if(TATTOO_FADE_TIME)
-			var/permanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
+			var/pickpermanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
+
 			loaded_tat.fade_time = null
-			if(permanent == "No")
-				var/numdeciseconds = stripped_input(user, "How many seconds should it last?", "Pick a number!", loaded_tat.fade_time)
-				if(isnum(numdeciseconds))
-					loaded_tat.fade_time = numdeciseconds SECONDS
-				else
-					loaded_tat.fade_time = 10 MINUTES
+			if(pickpermanent == "Yes")
+				is_permanent = TRUE
+				return
+
+			var/numdeciseconds = stripped_input(user, "How many seconds should it last? ", "Pick a number!", loaded_tat.fade_time)
+			if(isnum(numdeciseconds))
+				loaded_tat.fade_time = numdeciseconds SECONDS
+			else
+				loaded_tat.fade_time = null
 
 
 
@@ -754,6 +760,7 @@
 
 /obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
 	. = ..()
+	//find tattoos
 	var/bodyzone = check_zone(user.zone_selected)
 	var/obj/item/bodypart/part = victim.bodyparts[bodyzone]
 	var/tats = list()
@@ -761,9 +768,12 @@
 		if(!isnull(part.tattoos[tatspot]))
 			var/datum/tattoo/tat = part.tattoos[tatspot]
 			tats[tatspot] = tat.name
+	//pick one to remove
 	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
+	//attempt to remove it
 	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
 	if(do_after(user,30,target = victim))
+		//removal successful
 		part.remove_tattoo(part.tattoos[choice],choice)
 		if(victim.client?.prefs)
 			victim.client.prefs.permanent_tattoos = victim.format_tattoos()

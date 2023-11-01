@@ -187,7 +187,7 @@
 	for(var/obj/item/bodypart/i in bodyparts)
 		for(var/tatspot in i.tattoos)
 			var/datum/tattoo/tat = i.tattoos[tatspot]
-			if(tat.fade_time == null)
+			if(tat.is_permanent == TRUE)
 				tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
 	return tats
 
@@ -207,6 +207,7 @@
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
 	tat.fade_time = null
+	tat.is_permanent = TRUE
 
 	part.add_tattoo(tat)
 	return tat
