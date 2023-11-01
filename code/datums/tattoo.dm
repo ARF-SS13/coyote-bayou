@@ -44,8 +44,12 @@
 		tat_location = put_here
 
 /datum/tattoo/proc/on_apply(mob/user)
-	if(fade_time)
+	if(fade_time >= 0)
 		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
+	if(!isnull(user))
+	if(user?.client?.prefs)
+		var/datum/preferences/data = user.client.prefs
+		data.add_permanent_tattoo(src)
 
 /datum/tattoo/Destroy(force, ...)
 	if(owner_limb)
@@ -123,7 +127,7 @@
 	msg_out += "\tIt features [desc]"
 	if(extra_desc)
 		msg_out += "\t[extra_desc]"
-	if(fade_time)
+	if(fade_time > 0)
 		switch(fadedness)
 			if(TATTOO_NOT_FADED)
 				msg_out += "Looks good and fresh!"
@@ -131,6 +135,8 @@
 				msg_out += "Looks a little faded."
 			if(TATTOO_VERY_FADED)
 				msg_out += "Looks about to rub off!"
+	if(fade_time < 0)
+		msg_out += "Looks permanent."
 	return jointext(msg_out, "<br>")
 
 /// takes in the tat's location, outputs words about their location
@@ -206,12 +212,13 @@
 /datum/tattoo/blank
 	name = "tattoo"
 	desc = "some generic tattoo-shaped tattoo. Nothing fancy, just a little ink."
+	fade_time = -1
 
 /// Generic temp tattoo for overwriting with other stuff
 /datum/tattoo/blank/temporary
 	name = "temporary tattoo"
 	desc = "some generic temporary tattoo-shaped tattoo. Nothing fancy, just a little ink."
-	fade_time = 30 SECONDS
+	fade_time = 10 MINUTES
 
 /datum/tattoo/biker
 	name = "Hell's Nomads insignia"
@@ -221,6 +228,7 @@
 	tat_access = list(ACCESS_BIKER)
 	default_bodypart = BODY_ZONE_R_ARM
 	default_spot = TATTOO_BIKER_RIGHT_SHOULDER
+	fade_time = -1
 
 /// A tattoo *thing*
 /obj/item/tattoo_holder
@@ -428,6 +436,8 @@
 		customization += TATTOO_DESC
 	if(CHECK_BITFIELD(customizableness, TATTOO_CUSTOMIZE_EXTRA))
 		customization += TATTOO_EXTRA
+	if(CHECK_BITFIELD(customizableness, TATTOO_CUSTOMIZE_FADE_TIME))
+		customization += TATTOO_FADE_TIME
 
 	if(!LAZYLEN(customization))
 		user.show_message(span_alert("[src] cannot be customized!"))
@@ -457,6 +467,17 @@
 			if(newextra)
 				loaded_tat.extra_desc = newextra
 				user.show_message(span_notice("You add \"[newextra]\" to the tattoo."))
+		if(TATTOO_FADE_TIME)
+			var/permanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
+			loaded_tat.fade_time = -1
+			if(permanent == "No")
+				var/numdeciseconds = stripped_input(user, "How many seconds should it last?", "Pick a number!", loaded_tat.fade_time)
+				if(isnum(numdeciseconds))
+					loaded_tat.fade_time = numdeciseconds SECONDS
+				else
+					loaded_tat.fade_time = 10 MINUTES
+
+
 
 /obj/item/tattoo_holder/biker
 	name = "Hell's Nomads insignia template"
@@ -662,6 +683,7 @@
 	if(!flash.use_charge())
 		eject_flash(TRUE)
 	user.visible_message(span_notice("[user] finishes up [user.p_their()] masterpiece on [victim]'s [lowertext(tat_loc)]!"))
+	//TODO: PERMANENT TATS
 	playsound(get_turf(src), 'sound/machines/ding.ogg', 50, 1)
 
 /obj/item/tattoo_gun/proc/make_noises_and_pain(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
@@ -725,9 +747,13 @@
 			user.visible_message(span_notice("[user] zips a quick mark into [victim]'s [lowertext(tat_loc)]."))
 	if(prob(scream_prob))
 		victim.emote("scream")
-	owie.receive_damage(brute = owie.brute_dam < 30 ? brute_d : 0, stamina = stamina_d, wound_bonus = bleed_d, sharpness = SHARP_EDGED, damage_coverings = FALSE)
+	// owie.receive_damage(brute = owie.brute_dam < 30 ? brute_d : 0, stamina = stamina_d, wound_bonus = bleed_d, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 	if(engraving)
 		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
+
+/obj/item/tattoo_remover
+	name = "Tattoo Remover"
+	desc = "Useful for removing now-unwanted tattoos."
 
 /obj/item/storage/backpack/debug_tattoo
 	name = "Bag of Gunstuff 4 tattoos"
@@ -751,6 +777,7 @@
 /obj/item/storage/box/tattoo_kit/PopulateContents()
 	. = ..()
 	new /obj/item/tattoo_gun(src)
+	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)

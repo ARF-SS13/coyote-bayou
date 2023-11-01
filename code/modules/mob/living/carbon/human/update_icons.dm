@@ -77,6 +77,14 @@ There are several things that need to be remembered:
 	..()
 	if(update_genitals)
 		update_genitals()
+	
+	//permanent tats
+	if(client?.prefs)
+		for(var/datum/tattoo/tat in client.prefs.permanent_tattoos)
+			var/obj/item/bodypart/part = get_bodypart(GLOB.tattoo_locations[tat.tat_location][key])
+			part.add_tattoo(tat, tat.tat_location)
+			
+
 
 /mob/living/carbon/human/update_fire()
 	..((fire_stacks > 3) ? "Standing" : "Generic_mob_burning")

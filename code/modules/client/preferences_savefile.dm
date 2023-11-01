@@ -471,6 +471,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["lockouts"], lockouts)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+
+	//permanent tats
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -885,6 +888,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["directory_erptag"]			>> directory_erptag
 	S["directory_ad"]			>> directory_ad
 
+	//Permanent Tattoos
+	S["permanent_tattoos"]		>> permanent_tattoos
+
+
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
@@ -1157,6 +1164,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_load(S)
 
+	permanent_tattoos = SANITIZE_LIST(permanent_tattoos)
+	for(var/datum/tattoo/tat in permanent_tattoos)
+		tat.fade_time = -1
+		tat.name = sanitize_text(tat.name, "An incomprehensible mess.")
+		tat.desc = sanitize_text(tat.desc, "It's impossible to tell what it was supposed to be.")
+		tat.tat_location = sanitize_inlist(tat.tat_location, GLOB.tattoo_locations, TATTOO_CHEST)
+
 	return 1
 
 /datum/preferences/proc/save_character()
@@ -1407,7 +1421,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_save(S)
 
+	//tats
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
+
 	return 1
+
+/datum/preferences/proc/add_permanent_tattoo(datum/tattoo/tat)
+	permanent_tattoos += tat
+	save_preferences()
 
 
 #undef SAVEFILE_VERSION_MAX
