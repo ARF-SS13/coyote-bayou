@@ -766,6 +766,10 @@
 		if(!isnull(part.tattoos[tatspot]))
 			var/datum/tattoo/tat = part.tattoos[tatspot]
 			tats[tatspot] = tat.name
+	if(!tats.len)
+		to_chat(user, span_alert("They don't have any tattoos there!"))
+		to_chat(victim, span_alert("[user.name] fails to remove a tattoo from your [part.name]!"))
+
 	//pick one to remove
 	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
 	//attempt to remove it
@@ -779,6 +783,9 @@
 		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
 		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
 		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
+	else
+		to_chat(user, span_alert("You fail to remove a tattoo from [victim.name]'s [part.name]!"))
+		to_chat(victim, span_alert("[user.name] fails to remove a tattoo from your [part.name]!"))
 
 
 /obj/item/storage/backpack/debug_tattoo
