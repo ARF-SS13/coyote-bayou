@@ -197,8 +197,7 @@
 	if(LAZYLEN(tat_dat) != 4)
 		return
 
-	var/bodyzone = get_part_from_tat_zone(tat_dat[4])
-	var/obj/item/bodypart/part = bodyparts[bodyzone]
+	var/obj/item/bodypart/part = get_part_from_tat_zone(tat_dat[4])
 	if(isnull(part))
 		return
 
