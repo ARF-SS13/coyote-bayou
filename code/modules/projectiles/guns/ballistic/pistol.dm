@@ -172,6 +172,19 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 	weapon_class = WEAPON_CLASS_TINY
 
+/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov
+	name = "9mm Makarov pistol"
+	desc = "A easy to conceal Makarov pistol chambered in 9mm. Compact, easy to use, and stylish. This gun likes her enemies shaken, not stirred."
+	icon_state = "makarov"
+	item_state = "glock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+	weapon_class = WEAPON_CLASS_TINY
+
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee
 	name = "RuBee"
 	desc = "A petite pocket pistol that has been modified to accept some rather unique ammunition."

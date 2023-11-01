@@ -860,6 +860,63 @@
 	supereffective_damage = 12
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
+/obj/item/projectile/f13plasma/pistol/covenant/bane
+	name = "plasma energy bolt"
+	icon_state = "plasmapistol"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	damage = 35
+	damage_list = list( "30" = 25, "35" = 40, "38" = 25)
+	wound_bonus = 12
+	bare_wound_bonus = 23
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(15)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_BLUEGREEN
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 20
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/projectile/f13plasma/repeater/covenant
+	name = "plasma energy bolt"
+	icon_state = "prshot"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	damage = 15
+	damage_list = list( "10" = 25, "15" = 40, "20" = 25)
+	wound_bonus = 6
+	bare_wound_bonus = 16
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(12)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_BLUE
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 11
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/projectile/f13plasma/repeater/onibane
+	name = "plasma energy bolt"
+	icon_state = "onishot"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	damage = 25
+	damage_list = list( "23" = 25, "25" = 40, "28" = 25)
+	wound_bonus = 10
+	bare_wound_bonus = 20
+	hitscan = FALSE
+	is_reflectable = FALSE
+	recoil = BULLET_RECOIL_PLASMA
+	pixels_per_second = TILES_TO_PIXELS(17)
+	light_color = LIGHT_COLOR_RED
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 18
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
 	damage = 35

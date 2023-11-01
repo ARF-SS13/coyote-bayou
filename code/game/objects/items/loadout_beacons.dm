@@ -1243,6 +1243,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/c9mm(src)
 
+/obj/item/storage/box/gun/pistol/maky
+	name = "9mm Makarov pistol case"
+
+/obj/item/storage/box/gun/pistol/maky/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+
 /obj/item/storage/box/gun/rifle/covcarbinesgobrr
 	name = "T25 rifle case"
 
@@ -1647,6 +1655,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/compact_rcw/PopulateContents()
 	new /obj/item/gun/energy/laser/auto(src)
 	new /obj/item/stock_parts/cell/ammo/ecp(src)
+
+/obj/item/storage/box/gun/energy/ccovrifle
+	name = "PR-M1A2 rifle case"
+
+/obj/item/storage/box/gun/energy/ccovrifle/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/plasmacov(src)
 
 /obj/item/storage/box/gun/energy/wattz1000
 	name = "wattz 1000 case"
@@ -2255,6 +2269,18 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_ENERGY
 	spawn_thing = /obj/item/storage/box/gun/pistol/covpistole
+
+/datum/loadout_box/makrov
+	entry_tag = "9mm Makarov Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/maky
+
+/datum/loadout_box/covrifles
+	entry_tag = "PR-M1A2 Plasma Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/ccovrifle
 
 /datum/loadout_box/volcanicsgobrr
 	entry_tag = "Volcanic Pistol"

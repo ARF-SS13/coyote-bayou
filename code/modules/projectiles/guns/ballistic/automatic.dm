@@ -689,7 +689,7 @@
 	disallowed_mags = list (/obj/item/ammo_box/magazine/m9mm/doublestack,/obj/item/ammo_box/magazine/m9mm/doublestack/empty , /obj/item/ammo_box/magazine/uzim9mm/rockwell )
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_recoil = AUTORIFLE_RECOIL(1.2 , 1.2)
 	init_firemodes = list(
@@ -3140,6 +3140,28 @@
 	can_flashlight = FALSE
 
 
+/obj/item/gun/ballistic/automatic/concussive
+	name = "Latos Systems Cromwell-55 shotgun rifle"
+	desc = "A 40mm buckshot Cromwell-55 shotgun rifle manufactured by Latos Systems. The rifle itself is quite a chunky one but the rifle itself seems to be quite alien in appearance, a prototype rifle if anything."
+	item_state = "crifle"
+	icon_state = "crifle"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/grenadeshotgun
+	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadeshotgun
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SHOTGUN_RECOIL (1.3 , 1.3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
  * Browning M1919 MMG

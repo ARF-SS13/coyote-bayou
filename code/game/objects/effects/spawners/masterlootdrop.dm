@@ -295,6 +295,7 @@
 		/obj/item/gun/ballistic/automatic/unmcamr = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 2,
+		/obj/item/gun/ballistic/automatic/concussive = 3,
 	)
 
 ////////////////////
@@ -499,6 +500,8 @@
 		/obj/item/gun/energy/laser/laer = 3,
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
 		/obj/item/gun/energy/laser/covbeam = 2,
+		/obj/item/gun/energy/laser/plasma/plasmacov/demon = 2 ,
+		/obj/item/gun/energy/laser/plasma/covpistol/Drekavacpistol = 2 ,
 	)
 
 
