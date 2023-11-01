@@ -500,11 +500,9 @@
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
-	health = 150
-	maxHealth = 150
 
 //Actual chooseable mouse colors
-
+/* These are not set up correctly >:(
 /mob/living/simple_animal/advanced/mousewhite
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_white"
@@ -516,7 +514,7 @@
 /mob/living/simple_animal/advanced/mousebrown
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_brown"
-
+*/
 
 //The simple version of the dog borgs.
 
