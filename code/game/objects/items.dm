@@ -354,10 +354,16 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(href_list["list_melee"])
-		var/InitialF = initial(force)
-		var/InitialFW = initial(force_wielded)
-		var/InitialFUW = initial(force_unwielded)
+		var/DamMult = 1
+		if(material_flags & MATERIAL_AFFECT_STATISTICS && istype(custom_materials[1], /datum/material))
+			var/datum/material/MyMat = custom_materials[1]
+			if(MyMat.strength_modifier)
+				DamMult = MyMat.strength_modifier
+		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
+		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
+		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
 		var/InitialAS = initial(attack_speed)
+
 		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
@@ -367,7 +373,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		else
 			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
 			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
-		readout += "\nTHROW DAMAGE [throwforce]"
+		readout += "\nTHROW DAMAGE [(throwforce + throwforce_bonus) * DamMult]"
 		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"

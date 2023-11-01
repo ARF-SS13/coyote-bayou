@@ -20,7 +20,7 @@
 	var/awakened = FALSE
 	var/bloodthirst = HIS_GRACE_SATIATED
 	var/prev_bloodthirst = HIS_GRACE_SATIATED
-	var/force_bonus = 0
+	var/his_grace_force_bonus = 0
 	var/ascended = FALSE
 	var/victims_needed = 10 //Citadel change from 25 to 10
 	var/ascend_bonus = 15
@@ -131,7 +131,7 @@
 	desc = "A bloodthirsty artifact created by a profane rite."
 	gender = MALE
 	adjust_bloodthirst(1)
-	force_bonus = HIS_GRACE_FORCE_BONUS * LAZYLEN(contents)
+	his_grace_force_bonus = HIS_GRACE_FORCE_BONUS * LAZYLEN(contents)
 	playsound(user, 'sound/effects/pope_entry.ogg', 100)
 	icon_state = "his_grace_awakened"
 	move_gracefully()
@@ -168,7 +168,7 @@
 	animate(src, transform=matrix())
 	gender = initial(gender)
 	force = initial(force)
-	force_bonus = initial(force_bonus)
+	his_grace_force_bonus = initial(his_grace_force_bonus)
 	awakened = FALSE
 	bloodthirst = 0
 
@@ -181,7 +181,7 @@
 	playsound(meal, 'sound/misc/desceration-02.ogg', 75, 1)
 	playsound(src, 'sound/items/eatfood.ogg', 100, 1)
 	meal.forceMove(src)
-	force_bonus += HIS_GRACE_FORCE_BONUS
+	his_grace_force_bonus += HIS_GRACE_FORCE_BONUS
 	prev_bloodthirst = bloodthirst
 	if(prev_bloodthirst < HIS_GRACE_CONSUME_OWNER)
 		bloodthirst = max(LAZYLEN(contents), 1) //Never fully sated, and His hunger will only grow.
@@ -213,21 +213,21 @@
 			ADD_TRAIT(src, TRAIT_NODROP, HIS_GRACE_TRAIT)
 			if(HIS_GRACE_STARVING > prev_bloodthirst)
 				master.visible_message(span_boldwarning("[src] is starving!"), "<span class='his_grace big'>[src]'s bloodlust overcomes you. [src] must be fed, or you will become His meal.\
-				[force_bonus < 15 ? " And still, His power grows.":""]</span>")
-				force_bonus = max(force_bonus, 15)
+				[his_grace_force_bonus < 15 ? " And still, His power grows.":""]</span>")
+				his_grace_force_bonus = max(his_grace_force_bonus, 15)
 		if(HIS_GRACE_FAMISHED to HIS_GRACE_STARVING)
 			ADD_TRAIT(src, TRAIT_NODROP, HIS_GRACE_TRAIT)
 			if(HIS_GRACE_FAMISHED > prev_bloodthirst)
 				master.visible_message(span_warning("[src] is very hungry!"), "<span class='his_grace big'>Spines sink into your hand. [src] must feed immediately.\
-				[force_bonus < 10 ? " His power grows.":""]</span>")
-				force_bonus = max(force_bonus, 10)
+				[his_grace_force_bonus < 10 ? " His power grows.":""]</span>")
+				his_grace_force_bonus = max(his_grace_force_bonus, 10)
 			if(prev_bloodthirst >= HIS_GRACE_STARVING)
 				master.visible_message(span_warning("[src] is now only very hungry!"), "<span class='his_grace big'>Your bloodlust recedes.</span>")
 		if(HIS_GRACE_HUNGRY to HIS_GRACE_FAMISHED)
 			if(HIS_GRACE_HUNGRY > prev_bloodthirst)
 				master.visible_message(span_warning("[src] is getting hungry."), "<span class='his_grace big'>You feel [src]'s hunger within you.\
-				[force_bonus < 5 ? " His power grows.":""]</span>")
-				force_bonus = max(force_bonus, 5)
+				[his_grace_force_bonus < 5 ? " His power grows.":""]</span>")
+				his_grace_force_bonus = max(his_grace_force_bonus, 5)
 			if(prev_bloodthirst >= HIS_GRACE_FAMISHED)
 				master.visible_message(span_warning("[src] is now only somewhat hungry."), span_his_grace("[src]'s hunger recedes a little..."))
 		if(HIS_GRACE_PECKISH to HIS_GRACE_HUNGRY)
@@ -238,13 +238,13 @@
 		if(HIS_GRACE_SATIATED to HIS_GRACE_PECKISH)
 			if(prev_bloodthirst >= HIS_GRACE_PECKISH)
 				master.visible_message(span_warning("[src] is satiated."), "<span class='his_grace big'>[src]'s hunger recedes...</span>")
-	force = initial(force) + force_bonus
+	force = initial(force) + his_grace_force_bonus
 
 /obj/item/his_grace/proc/ascend()
 	if(ascended)
 		return
 	var/mob/living/carbon/human/master = loc
-	force_bonus += ascend_bonus
+	his_grace_force_bonus += ascend_bonus
 	desc = "A legendary toolbox and a distant artifact from The Age of Three Powers. On its three latches engraved are the words \"The Sun\", \"The Moon\", and \"The Stars\". The entire toolbox has the words \"The World\" engraved into its sides."
 	icon_state = "his_grace_ascended"
 	item_state = "toolbox_gold"
