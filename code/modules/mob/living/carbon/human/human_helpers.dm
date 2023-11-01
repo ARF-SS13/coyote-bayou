@@ -185,7 +185,8 @@
 /mob/living/carbon/human/proc/format_tattoos()
 	var/tats = ""
 	for(var/obj/item/bodypart/i in bodyparts)
-		for(var/datum/tattoo/tat in i.tattoos)
+		for(var/tatspot in i.tattoos)
+			var/datum/tattoo/tat = i.tattoos[tatspot]
 			if(tat.fade_time == null)
 				tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
 	return tats
@@ -195,14 +196,18 @@
 	var/list/tat_dat = splittext(tattoo_string, "|")
 	if(LAZYLEN(tat_dat) != 4)
 		return
+		
 	var/obj/item/bodypart/part = get_part_from_tat_zone(tat_dat[4])
 	if(isnull(part))
 		return
+
 	var/datum/tattoo/tat = new(part, /datum/tattoo/blank, tat_dat[4])
 	tat.name = tat_dat[1]
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
 	tat.fade_time = null
+
+	part.add_tattoo(tat)
 	return tat
 
 ///turn one long, formatted string into all tattoos that should be on a character
