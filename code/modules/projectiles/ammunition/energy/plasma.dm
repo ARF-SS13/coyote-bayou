@@ -95,6 +95,21 @@
 	e_cost = 2727 // 11 shots
 	fire_sound = 'sound/f13weapons/haloplasma.ogg'
 
+/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol/screech
+	projectile_type = /obj/item/projectile/f13plasma/pistol/covenant/bane
+	e_cost = 1450
+	fire_sound = 'sound/f13weapons/haloplasma.ogg'
+
+/obj/item/ammo_casing/energy/plasma/pistol/covenantrifle
+	projectile_type = /obj/item/projectile/f13plasma/repeater/covenant
+	e_cost = 1200
+	fire_sound = 'sound/f13weapons/prrifle.ogg'
+
+/obj/item/ammo_casing/energy/plasma/pistol/onirifle
+	projectile_type = /obj/item/projectile/f13plasma/repeater/onibane
+	e_cost = 700
+	fire_sound = 'sound/f13weapons/prrifle.ogg'
+
 /obj/item/ammo_casing/energy/plasma/pistol/caster
 	projectile_type = /obj/item/projectile/f13plasma/pistol
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
