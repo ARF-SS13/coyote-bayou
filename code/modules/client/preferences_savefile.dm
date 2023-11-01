@@ -889,10 +889,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["directory_ad"]			>> directory_ad
 
 	//Permanent Tattoos
-	if(S["permanent_tattoos"])
-		permanent_tattoos = S["permanent_tattoos"]
-	else
-		permanent_tattoos = ""
+	S["permanent_tattoos"]		>> permanent_tattoos
 
 
 	//sanitize data

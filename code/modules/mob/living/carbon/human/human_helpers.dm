@@ -192,10 +192,18 @@
 	var/list/tat_dat = splittext(tattoo_string, "|")
 	if(LAZYLEN(tat_dat) != 4)
 		return
-	var/obj/item/bodypart/part = get_bodypart(GLOB.tattoo_locations[tat_dat[4]][key])
+	var/obj/item/bodypart/part = get_part_from_tat_zone(tat_dat[4])
+	if(isnull(part))
+		return
 	var/datum/tattoo/tat = new(part, /datum/tattoo/blank, tat_dat[4])
 	tat.name = tat_dat[1]
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
 	tat.fade_time = -1
 	return tat
+
+/mob/living/carbon/human/proc/get_part_from_tat_zone(tat_zone)
+	for(var/key in GLOB.tattoo_locations)
+		if(tat_zone in GLOB.tattoo_locations[key])
+			return key
+	return null
