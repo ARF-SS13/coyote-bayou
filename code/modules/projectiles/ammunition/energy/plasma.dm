@@ -90,6 +90,11 @@
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 2500 //should be 5 shots of a stream of 5.
 
+/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol
+	projectile_type = /obj/item/projectile/f13plasma/pistol/covenant
+	e_cost = 2727 // 11 shots
+	fire_sound = 'sound/f13weapons/haloplasma.ogg'
+
 /obj/item/ammo_casing/energy/plasma/pistol/caster
 	projectile_type = /obj/item/projectile/f13plasma/pistol
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
