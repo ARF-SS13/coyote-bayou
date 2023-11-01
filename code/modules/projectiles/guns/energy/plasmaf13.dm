@@ -217,6 +217,28 @@
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
+
+// plasma covenant pistol, starter weapon. Fairly weak, one haded only but small. Has added bane damage to make up for low damage.
+/obj/item/gun/energy/laser/plasma/covpistol
+	name = "Latos Systems EG-2A7 pistol"
+	desc = "A EG-2A7 prototype pistol manufactured by Latos Systems. It doesn't hurt hard against armor, but on unarmored or exposed bits, it can be quite painful to be hit by!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "energyhalo"
+	item_state = "energyhalo"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'

@@ -549,6 +549,27 @@
 ////////////////
 
 
+/obj/item/gun/energy/laser/covbeam
+	name = "Latos Systems S-5 energy rifle"
+	desc = "A S-5 prototype energy rifle. This rifle is clunky and the scope itself makes no sense in terms of crosshairs, using a odd looking ecplipse reticle."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "beamrifle"
+	item_state = "beamrifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/covenantbrr)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = TRUE
+	zoom_factor = 1.1
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
 //Wattz 2000 Laser rifle
 /obj/item/gun/energy/laser/wattz2k
 	name = "wattz 2000"
