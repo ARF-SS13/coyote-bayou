@@ -329,7 +329,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		lines += "<br>"
 		lines += "<br>"
 	else
-		lines += span_alertalien("<br>MENTORS: [span_noticealien("PRESENT!")]")
+		lines += span_alertalien("<br>MENTORS: [span_noticealien("USE THE 'HELP' CHAT COMMAND!!")]")
 		if(whoer in GLOB.mentors)
 			lines += " (And you're one of them! =3)"
 
@@ -378,10 +378,10 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(admeme && M_is_admin)
 		name_span = "brass"
 	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [name]</span>"
+	out += "<span class='[name_span]'> [M.ckey] as</span>"
 	/// the ckey, if we're an admin
 	if(admeme || check_rights(admin_level_to_see_all, FALSE))
-		out += " ([M.ckey])"
+		out += " ([name])"
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
 	/// the role slug
