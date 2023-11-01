@@ -470,7 +470,7 @@
 
 			loaded_tat.fade_time = null
 			if(pickpermanent == "Yes")
-				is_permanent = TRUE
+				loaded_tat.is_permanent = TRUE
 				return
 
 			var/numdeciseconds = stripped_input(user, "How many seconds should it last? ", "Pick a number!", loaded_tat.fade_time)
