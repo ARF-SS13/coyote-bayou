@@ -753,6 +753,7 @@
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
 
+	// load permanent tattoos
 	if(client.prefs.permanent_tattoos)
 		H.load_all_tattoos(client.prefs.permanent_tattoos)
 
