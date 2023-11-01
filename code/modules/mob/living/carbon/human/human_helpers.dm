@@ -182,9 +182,10 @@
 
 /mob/living/carbon/human/proc/format_tattoos()
 	var/list/tats = ""
-	for(var/i in bodyparts)
+	for(var/obj/item/bodypart/i in bodyparts)
 		for(var/datum/tattoo/tat in i.tattoos)
 			tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
+	return tats
 
 /mob/living/carbon/human/proc/load_tattoo(tattoo_string)
 	var/list/tat_dat = splittext(tattoo_string, "|")
