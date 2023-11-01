@@ -751,6 +751,19 @@
 	name = "Tattoo Remover"
 	desc = "Useful for removing now-unwanted tattoos."
 
+/obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
+	. = ..()
+	var/bodyzone = check_zone(user.zone_selected)
+	var/obj/item/bodypart/part = victim.bodyparts[bodyzone]
+	var/tats = list()
+	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
+		if(!isnull(part.tattoos[tatspot]))
+			tats[tatspot] = part.tattoos[tatspot].name
+
+	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in places_to_put_it
+	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
+
+
 /obj/item/storage/backpack/debug_tattoo
 	name = "Bag of Gunstuff 4 tattoos"
 	desc = "Cool shit for testing tattoos!"
