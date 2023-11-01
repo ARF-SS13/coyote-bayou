@@ -890,9 +890,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Permanent Tattoos
 	if(S["permanent_tattoos"])
-		permanent_tattoos = safe_json_decode(S["permanent_tattoos"])
+		permanent_tattoos = S["permanent_tattoos"]
 	else
-		permanent_tattoos = list()
+		permanent_tattoos = ""
 
 
 	//sanitize data
@@ -1167,12 +1167,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_load(S)
 
-	permanent_tattoos = SANITIZE_LIST(permanent_tattoos)
-	for(var/datum/tattoo/tat in permanent_tattoos)
-		tat.fade_time = -1
-		tat.name = sanitize_text(tat.name, "An incomprehensible mess.")
-		tat.desc = sanitize_text(tat.desc, "It's impossible to tell what it was supposed to be.")
-		tat.tat_location = sanitize_inlist(tat.tat_location, GLOB.tattoo_locations, TATTOO_CHEST)
+	permanent_tattoos = sanitize_text(permanent_tattoos)
 
 	return 1
 

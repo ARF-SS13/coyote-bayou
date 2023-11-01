@@ -754,9 +754,9 @@
 		mind.original_character = H
 
 	if(client.prefs.permanent_tattoos)
-		for(var/datum/tattoo/tat in client.prefs.permanent_tattoos)
-			var/obj/item/bodypart/part = H.get_bodypart(GLOB.tattoo_locations[tat.tat_location][key])
-			part.add_tattoo(tat, tat.tat_location)
+		for(var/tat_dat in splittext(client.prefs.permanent_tattoos, ";"))
+			H.load_tattoo(tat_dat)
+
 
 	H.name = real_name
 	client.init_verbs()

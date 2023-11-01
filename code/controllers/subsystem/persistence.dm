@@ -628,14 +628,7 @@ SUBSYSTEM_DEF(persistence)
 			return
 
 		// save permanent tattoos
-		var/list/datum/tattoo/tatlist = list()
-		for(var/obj/item/bodypart/part in ending_human.bodyparts)
-			for(var/datum/tattoo/tat in part.tattoos)
-				if(tat.fade_time < 0)
-					tatlist[tat.tat_location] = tat
-		if(tatlist.len)
-			ending_human.client.prefs.permanent_tattoos = tatlist
-
+		ending_human.client.prefs.permanent_tattoos = ending_human.format_tattoos()
 
 		ending_human.client.prefs.save_character()
 

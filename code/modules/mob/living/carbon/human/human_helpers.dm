@@ -178,3 +178,22 @@
 
 /mob/living/carbon/human/get_biological_state()
 	return dna.species.get_biological_state()
+
+
+/mob/living/carbon/human/proc/format_tattoos()
+	var/list/tats = ""
+	for(var/i in bodyparts)
+		for(var/datum/tattoo/tat in i.tattoos)
+			tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
+
+/mob/living/carbon/human/proc/load_tattoo(tattoo_string)
+	var/list/tat_dat = splittext(tattoo_string, "|")
+	if(LAZYLEN(tat_dat) != 4)
+		return
+	var/obj/item/bodypart/part = get_bodypart(GLOB.tattoo_locations[tat_dat[4]][key])
+	var/datum/tattoo/tat = new(part, /datum/tattoo/blank, tat_dat[4])
+	tat.name = tat_dat[1]
+	tat.desc = tat_dat[2]
+	tat.extra_desc = tat_dat[3]
+	tat.fade_time = -1
+	return tat

@@ -329,7 +329,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/custom_pixel_x = 0
 	var/custom_pixel_y = 0
 
-	var/permanent_tattoos = list()
+	var/permanent_tattoos = ""
 
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
