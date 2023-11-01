@@ -1432,10 +1432,7 @@
 	if(!ink)
 		return
 	tattoos[location] = ink
-	if(owner)
-		ink.on_apply(owner)
-	else
-		ink.on_apply()
+	ink.on_apply()
 	return TRUE
 
 /// Removes a tattoo to this bodypart. accepts a location, path, type, or anything in between, cus why tf not
