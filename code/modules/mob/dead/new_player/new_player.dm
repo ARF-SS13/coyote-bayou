@@ -754,8 +754,7 @@
 		mind.original_character = H
 
 	if(client.prefs.permanent_tattoos)
-		for(var/tat_dat in splittext(client.prefs.permanent_tattoos, ";"))
-			H.load_tattoo(tat_dat)
+		H.load_all_tattoos(client.prefs.permanent_tattoos)
 
 
 	H.name = real_name

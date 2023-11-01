@@ -202,6 +202,11 @@
 	tat.fade_time = -1
 	return tat
 
+/mob/living/carbon/human/proc/load_all_tattoos(full_tattoo_string)
+	var/list/strings = splittext(full_tattoo_string, ";")
+	for(var/i in strings)
+		load_tattoo(i)
+
 /mob/living/carbon/human/proc/get_part_from_tat_zone(tat_zone)
 	for(var/key in GLOB.tattoo_locations)
 		if(tat_zone in GLOB.tattoo_locations[key])
