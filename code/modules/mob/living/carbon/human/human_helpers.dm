@@ -196,12 +196,13 @@
 	var/list/tat_dat = splittext(tattoo_string, "|")
 	if(LAZYLEN(tat_dat) != 4)
 		return
-		
-	var/obj/item/bodypart/part = get_part_from_tat_zone(tat_dat[4])
+
+	var/bodyzone = get_part_from_tat_zone(tat_dat[4])
+	var/obj/item/bodypart/part = bodyparts[bodyzone]
 	if(isnull(part))
 		return
 
-	var/datum/tattoo/tat = new(part, /datum/tattoo/blank, tat_dat[4])
+	var/datum/tattoo/blank/tat = new()
 	tat.name = tat_dat[1]
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
