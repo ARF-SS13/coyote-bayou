@@ -369,48 +369,48 @@ datum/interaction/lewd/self/dirtytalksoft //lewd makes it pink, the name is just
 	//help intent should be gentle, downright even loving and probably the opener for situations
 	if(user.a_intent == INTENT_HELP)
 		message = pick(
-			"sucks air in as they curse softly, /"Shit-/"",
-			"gasps for air, letting out a, /"Oh fuck-/"",
-			"moans quietly through clenched teeth, /"Yes-/"",
-			"softly whispers, /"More-/"",
-			"quietly pleads, /"Fuck yes-/"",
-			"begs quietly, /"Don't stop-/"",
+			"sucks air in as they curse softly, \"Shit-\"",
+			"gasps for air, letting out a, \"Oh fuck-\"",
+			"moans quietly through clenched teeth, \"Yes-\"",
+			"softly whispers, \"More-\"",
+			"quietly pleads, \"Fuck yes-\"",
+			"begs quietly, \"Don't stop-\"",
 			)
 
 		//Message block B
 	//disarm intent should be used for being particularly playful with the interaction
 	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
 		var/adverb1 = pick( //Then pick from these messages!
-			"eagerly gasps, /"Shit-/"",
-			"teasingly growls, /"Oh fuck-/"",
-			"moans, /"Yes-/"",
-			"brokenly manages to say, /"More-/"",
-			"pleads, /"Fuck yes-/"",
-			"begs, /"Don't stop-/"",
+			"eagerly gasps, \"Shit-\"",
+			"teasingly growls, \"Oh fuck-\"",
+			"moans, \"Yes-\"",
+			"brokenly manages to say, \"More-\"",
+			"pleads, \"Fuck yes-\"",
+			"begs, \"Don't stop-\"",
 			)
 
 //Message block C
 	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
 	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
 		message = pick( //Then pick from these messages!
-			"gasps hard, sucking air before cursing, /"Shit-/"",
-			"growls, /"Oh fuck-/"",
-			"lets out a barely controlled moan, /"Yes-/"",
-			"just about can't even talk as they say, /"More-/"",
-			"is shaking as they exclaim, /"Fuck yes-/"",
-			"can't stop from saying, /"Don't stop-/"",
+			"gasps hard, sucking air before cursing, \"Shit-\"",
+			"growls, \"Oh fuck-\"",
+			"lets out a barely controlled moan, \"Yes-\"",
+			"just about can't even talk as they say, \"More-\"",
+			"is shaking as they exclaim, \"Fuck yes-\"",
+			"can't stop from saying, \"Don't stop-\"",
 			)
 
 		//Message block D
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
 		message = pick( //Then pick from these messages!
-			"stops themselves short of yelling, /"Shit-/"",
-			"doesn't quite bite off the curse as [t_they] moan, /"Oh fuck-/"",
-			"lets out a full body moan of pleasure, /"Yes-/"",
-			"can't keep their breath as they plead, /"More-/"",
-			"legs shake as they reflexively respond, /"Fuck yes-/"",
-			"pleads as if they are nearly broken, /"Don't stop-/"",
+			"stops themselves short of yelling, \"Shit-\"",
+			"doesn't quite bite off the curse as [t_they] moan, \"Oh fuck-\"",
+			"lets out a full body moan of pleasure, \"Yes-\"",
+			"can't keep their breath as they plead, \"More-\"",
+			"legs shake as they reflexively respond, \"Fuck yes-\"",
+			"pleads as if they are nearly broken, \"Don't stop-\"",
 			)
 
 //Aftershock Block// 
