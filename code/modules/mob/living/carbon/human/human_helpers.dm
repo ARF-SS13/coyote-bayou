@@ -215,5 +215,5 @@
 /mob/living/carbon/human/proc/get_part_from_tat_zone(tat_zone)
 	for(var/key in GLOB.tattoo_locations)
 		if(tat_zone in GLOB.tattoo_locations[key])
-			return bodypart[key]
+			return bodyparts[key]
 	return null
