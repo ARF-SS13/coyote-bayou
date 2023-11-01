@@ -282,6 +282,7 @@
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 4,
 		/obj/item/gun/ballistic/automatic/assault_rifle = 4,
 		/obj/item/gun/ballistic/automatic/r93 = 4,
+	    /obj/item/gun/ballistic/automatic/concussive = 4,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 4,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
@@ -293,6 +294,7 @@
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 1,
 		// /obj/item/gun/ballistic/automatic/wt550 = 2, // Commenting out until the sprite is fixed.
+
 	)
 
 ////////////////////
