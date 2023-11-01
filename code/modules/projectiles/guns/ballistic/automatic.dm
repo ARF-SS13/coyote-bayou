@@ -2404,30 +2404,7 @@
 	can_flashlight = FALSE
 	reskinnable_component = null
 
-/obj/item/gun/ballistic/automatic/assault_carbine/m5a1custom
-	name = "M5A1 'The Silence' rifle"
-	desc = "A customized M5A1 assault rifle. Manufactured by Leo Armaments, this rifle seems to be customized. It is chambered in 5.56x45 NATO, comes with a built in ammo counter, and comes in a bullpup configuration. The assault rifle comes with a HUD-Link or aptly named HUDL that allows the user to procure a scope like reticule from any HUDL capable helmet. It seems to be engraved with baroque motiffs and on the cheek rest is the scene of a smiling moth. A name is engraved onto the top section of the rifle which is aptly enscribed as 'Tox Mckit'."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "m5a1"
-	item_state = "m5a1"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm75,
-		/datum/firemode/semi_auto
-	)
-	can_scope = FALSE
-	can_suppress = TRUE
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-	reskinnable_component = null
+
 
 
 /* * * * * * * * * * *
@@ -3306,6 +3283,33 @@
 		/datum/firemode/semi_auto/fast
 	)
 	zoom_factor = 1.2
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+/obj/item/gun/ballistic/automatic/needlerrifle/tox
+	name = " Custom NR-43 Turán"
+	desc = "A custom Latos Systems manufactured NR-43 needle rifle. The rifle is engraved with baroque motifs, At the scope's mid-section are two scenes. On the left side is the scene of a moth smiling and on the right side is a scene of a feline frowning. The top of the scope is engraved with the name 'Tox Mckit'. A fitting rifle for the ranged marksmen."
+	icon_state = "needles"
+	item_state = "needles"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = CARBINE_RECOIL (1 , 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	zoom_factor = 1
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE

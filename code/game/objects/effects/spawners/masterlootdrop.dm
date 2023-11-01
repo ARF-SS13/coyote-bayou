@@ -498,6 +498,7 @@
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 3,
 		/obj/item/gun/energy/laser/laer = 3,
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
+		/obj/item/gun/energy/laser/covbeam = 2,
 	)
 
 
