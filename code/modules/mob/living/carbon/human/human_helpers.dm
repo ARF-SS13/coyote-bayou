@@ -205,6 +205,7 @@
 	tat.name = tat_dat[1]
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
+	tat.tat_location = tat_dat[4]
 	tat.fade_time = null
 	tat.is_permanent = TRUE
 
