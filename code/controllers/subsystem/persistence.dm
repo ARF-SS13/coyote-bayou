@@ -255,8 +255,8 @@ SUBSYSTEM_DEF(persistence)
 	SaveRandomizedRecipes()
 	SavePanicBunker()
 	SavePaintings()
-	SaveScars()
 	SaveTattoos()
+	SaveScars()
 	SaveNoticeboards()
 	SaveFolders()
 
@@ -637,7 +637,8 @@ SUBSYSTEM_DEF(persistence)
 				for(var/datum/tattoo/tat in part.tattoos)
 					if(tat.fade_time < 0)
 						ending_human.client.prefs.permanent_tattoos += tat
-			ending_human.client.prefs.save_character()
+			///SaveScars runs directly afterwards and handles the saving.
+			//ending_human.client.prefs.save_character()
 
 
 /datum/controller/subsystem/persistence/proc/GetFolders()

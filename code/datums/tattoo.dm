@@ -761,6 +761,8 @@
 	. = ..()
 	new /obj/item/tattoo_gun(src)
 	new /obj/item/tattoo_gun(src)
+	new /obj/item/tattoo_remover(src)
+	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank/temporary(src)
