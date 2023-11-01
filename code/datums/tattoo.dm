@@ -476,8 +476,6 @@
 			var/numdeciseconds = stripped_input(user, "How many seconds should it last? ", "Pick a number!", loaded_tat.fade_time)
 			if(isnum(numdeciseconds))
 				loaded_tat.fade_time = numdeciseconds SECONDS
-			else
-				loaded_tat.fade_time = null
 
 
 
