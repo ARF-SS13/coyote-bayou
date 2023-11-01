@@ -424,7 +424,7 @@
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	weapon_class = WEAPON_CLASS_NORMAL //high class, one of the few smol smgs
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 
 //tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
@@ -2061,7 +2061,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1, 1)
 	init_firemodes = list(
