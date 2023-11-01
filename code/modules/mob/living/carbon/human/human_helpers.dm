@@ -181,10 +181,11 @@
 
 
 /mob/living/carbon/human/proc/format_tattoos()
-	var/list/tats = ""
+	var/tats = ""
 	for(var/obj/item/bodypart/i in bodyparts)
 		for(var/datum/tattoo/tat in i.tattoos)
-			tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
+			if(tat.fade_time < 0)
+				tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
 	return tats
 
 /mob/living/carbon/human/proc/load_tattoo(tattoo_string)
