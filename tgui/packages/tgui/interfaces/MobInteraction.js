@@ -477,11 +477,6 @@ const ContentPreferencesTab = (props, context) => {
     lewd_verb_sounds,
     arousable,
     genital_examine,
-    vore_examine,
-    medihound_sleeper,
-    eating_noises,
-    digestion_noises,
-    trash_forcefeed,
     forced_fem,
     forced_masc,
     hypno,
@@ -498,6 +493,12 @@ const ContentPreferencesTab = (props, context) => {
     stimulation_pref,
     edging_pref,
     cum_onto_pref,
+    vore_toggle,
+    vore_examine,
+    medihound_sleeper,
+    eating_noises,
+    digestion_noises,
+    trash_forcefeed,
   } = data;
   return (
     <Section overflow="auto" position="absolute" right="6px" left="6px" bottom={(364 - innerHeight) + "px"} top="58px">
@@ -550,6 +551,19 @@ const ContentPreferencesTab = (props, context) => {
             })}
           />
         </Table.Row>
+        <Table.Row>
+          <Button
+            fluid
+            mb={0.3}
+            content="Vore master toggle"
+            icon={vore_toggle ? "toggle-on" : "toggle-off"}
+            selected={vore_toggle}
+            onClick={() => act('pref', {
+              pref: 'vore_toggle',
+            })}
+          />
+        </Table.Row>
+
         <Table.Row>
           <Button
             fluid

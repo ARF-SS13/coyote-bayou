@@ -193,13 +193,9 @@
 
 	//Getting preferences
 		.["verb_consent"] = 		!!CHECK_BITFIELD(prefs.toggles, VERB_CONSENT)
-		.["lewd_verb_sounds"] = 	!CHECK_BITFIELD(prefs.toggles, LEWD_VERB_SOUNDS)
+		.["lewd_verb_sounds"] = 	!CHECK_BITFIELD(prefs.toggles, NO_LEWD_VERB_SOUNDS)
 		.["arousable"] = 			prefs.arousable
 		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-		.["vore_examine"] = 		prefs.allow_vore_messages
-		.["eating_noises"] = 		prefs.allow_eating_sounds
-		.["digestion_noises"] =		prefs.allow_digestion_sounds
-		.["trash_forcefeed"] = 		prefs.allow_trash_messages
 		.["forced_fem"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
 		.["forced_masc"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_MASC)
 		.["hypno"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, HYPNO)
@@ -216,6 +212,12 @@
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
 		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+		//Vore preferences
+		.["vore_toggle"] = 			prefs.master_vore_toggle
+		.["vore_examine"] = 		prefs.allow_vore_messages
+		.["eating_noises"] = 		prefs.allow_eating_sounds
+		.["digestion_noises"] =		prefs.allow_digestion_sounds
+		.["trash_forcefeed"] = 		prefs.allow_trash_messages
 
 /proc/num_to_pref(num)
 	switch(num)
@@ -331,19 +333,11 @@
 				if("verb_consent")
 					TOGGLE_BITFIELD(prefs.toggles, VERB_CONSENT)
 				if("lewd_verb_sounds")
-					TOGGLE_BITFIELD(prefs.toggles, LEWD_VERB_SOUNDS)
+					TOGGLE_BITFIELD(prefs.toggles, NO_LEWD_VERB_SOUNDS)
 				if("arousable")
 					prefs.arousable = !prefs.arousable
 				if("genital_examine")
 					TOGGLE_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-				if("vore_examine")
-					TOGGLE_BITFIELD(prefs.cit_toggles, VOREALLOW_SEEING_BELLY_DESC)
-				if("eating_noises")
-					TOGGLE_BITFIELD(prefs.cit_toggles, EATING_NOISES)
-				if("digestion_noises")
-					prefs.allow_digestion_sounds = !prefs.allow_digestion_sounds
-				if("trash_forcefeed")
-					prefs.allow_trash_messages = !prefs.allow_trash_messages
 				if("forced_fem")
 					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_FEM)
 				if("forced_masc")
@@ -368,7 +362,6 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
 				if("no_auto_wag")
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
-				// SPLURT edit
 				if("chastity_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CHASTITY)
 				if("stimulation_pref")
@@ -377,7 +370,16 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
 				if("cum_onto_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
-				//
+				if("vore_toggle")
+					prefs.master_vore_toggle = !prefs.master_vore_toggle
+				if("vore_examine")
+					TOGGLE_BITFIELD(prefs.cit_toggles, VOREALLOW_SEEING_BELLY_DESC)
+				if("eating_noises")
+					TOGGLE_BITFIELD(prefs.cit_toggles, EATING_NOISES)
+				if("digestion_noises")
+					prefs.allow_digestion_sounds = !prefs.allow_digestion_sounds
+				if("trash_forcefeed")
+					prefs.allow_trash_messages = !prefs.allow_trash_messages
 				else
 					return FALSE
 			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
