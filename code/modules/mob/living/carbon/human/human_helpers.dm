@@ -209,7 +209,7 @@
 	tat.fade_time = null
 	tat.is_permanent = TRUE
 
-	part.add_tattoo(tat)
+	part.add_tattoo(tat, tat.tat_location)
 	return tat
 
 ///turn one long, formatted string into all tattoos that should be on a character
