@@ -750,6 +750,7 @@
 /obj/item/tattoo_remover
 	name = "Tattoo Remover"
 	desc = "Useful for removing now-unwanted tattoos."
+	icon = 'icons/obj/tattoo_gun.dmi'
 
 /obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
 	. = ..()
@@ -758,10 +759,18 @@
 	var/tats = list()
 	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
 		if(!isnull(part.tattoos[tatspot]))
-			tats[tatspot] = part.tattoos[tatspot].name
-
-	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in places_to_put_it
+			var/datum/tattoo/tat = part.tattoos[tatspot]
+			tats[tatspot] = tat.name
+	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
 	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
+	if(do_after(user,30,target = victim))
+		part.remove_tattoo(part.tattoos[choice],choice)
+		if(victim.client?.prefs)
+			victim.client.prefs.permanent_tattoos = victim.format_tattoos()
+			victim.client.prefs.save_character()
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
+		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
+		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
 
 
 /obj/item/storage/backpack/debug_tattoo
