@@ -255,8 +255,7 @@ SUBSYSTEM_DEF(persistence)
 	SaveRandomizedRecipes()
 	SavePanicBunker()
 	SavePaintings()
-	SaveTattoos()
-	SaveScars()
+	SaveScarsAndTattoos()
 	SaveNoticeboards()
 	SaveFolders()
 
@@ -608,7 +607,7 @@ SUBSYSTEM_DEF(persistence)
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(paintings))
 
-/datum/controller/subsystem/persistence/proc/SaveScars()
+/datum/controller/subsystem/persistence/proc/SaveScarsAndTattoos()
 	for(var/i in GLOB.joined_player_list)
 		var/mob/living/carbon/human/ending_human = get_mob_by_ckey(i)
 		if(!istype(ending_human) || !ending_human.mind || !ending_human.client || !ending_human.client.prefs || !ending_human.client.prefs.persistent_scars)
@@ -627,18 +626,18 @@ SUBSYSTEM_DEF(persistence)
 			ending_human.client.prefs.scars_list["[ending_human.client.prefs.scars_index]"] = ending_human.format_scars()
 		if(!ending_human.client)
 			return
-		ending_human.client.prefs.save_character()
 
-/datum/controller/subsystem/persistence/proc/SaveTattoos()
-	for(var/i in GLOB.joined_player_list)
-		var/mob/living/carbon/human/ending_human = get_mob_by_ckey(i)
-		if(ending_human.client)
-			for(var/obj/item/bodypart/part in ending_human.bodyparts)
-				for(var/datum/tattoo/tat in part.tattoos)
-					if(tat.fade_time < 0)
-						ending_human.client.prefs.permanent_tattoos += tat
-			///SaveScars runs directly afterwards and handles the saving.
-			//ending_human.client.prefs.save_character()
+		// save permanent tattoos
+		var/list/datum/tattoo/tatlist = list()
+		for(var/obj/item/bodypart/part in ending_human.bodyparts)
+			for(var/datum/tattoo/tat in part.tattoos)
+				if(tat.fade_time < 0)
+					tatlist[tat.tat_location] = tat
+		if(tatlist.len)
+			ending_human.client.prefs.permanent_tattoos = tatlist
+
+
+		ending_human.client.prefs.save_character()
 
 
 /datum/controller/subsystem/persistence/proc/GetFolders()

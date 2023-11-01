@@ -875,7 +875,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if (S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
 	else
-		belly_prefs = list()
+		current_version = list()
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -889,7 +889,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["directory_ad"]			>> directory_ad
 
 	//Permanent Tattoos
-	S["permanent_tattoos"]		>> permanent_tattoos
+	if(S["permanent_tattoos"])
+		permanent_tattoos = safe_json_decode(S["permanent_tattoos"])
+	else
+		permanent_tattoos = list()
 
 
 	//sanitize data
