@@ -256,6 +256,7 @@ SUBSYSTEM_DEF(persistence)
 	SavePanicBunker()
 	SavePaintings()
 	SaveScars()
+	SaveTattoos()
 	SaveNoticeboards()
 	SaveFolders()
 
@@ -627,6 +628,17 @@ SUBSYSTEM_DEF(persistence)
 		if(!ending_human.client)
 			return
 		ending_human.client.prefs.save_character()
+
+/datum/controller/subsystem/persistence/proc/SaveTattoos()
+	for(var/i in GLOB.joined_player_list)
+		var/mob/living/carbon/human/ending_human = get_mob_by_ckey(i)
+		if(ending_human.client)
+			for(var/obj/item/bodypart/part in ending_human.bodyparts)
+				for(var/datum/tattoo/tat in part.tattoos)
+					if(tat.fade_time < 0)
+						ending_human.client.prefs.permanent_tattoos += tat
+			ending_human.client.prefs.save_character()
+
 
 /datum/controller/subsystem/persistence/proc/GetFolders()
 	var/folder_path = file("data/folders.json")

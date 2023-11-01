@@ -44,12 +44,10 @@
 		tat_location = put_here
 
 /datum/tattoo/proc/on_apply(mob/user)
-	if(fade_time >= 0)
+	if(fade_time > 0)
 		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
-	if(!isnull(user))
-	if(user?.client?.prefs)
-		var/datum/preferences/data = user.client.prefs
-		data.add_permanent_tattoo(src)
+	if(fade_time == 0)
+		Destroy()
 
 /datum/tattoo/Destroy(force, ...)
 	if(owner_limb)

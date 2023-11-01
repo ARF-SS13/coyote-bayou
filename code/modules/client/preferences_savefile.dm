@@ -1426,11 +1426,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return 1
 
-/datum/preferences/proc/add_permanent_tattoo(datum/tattoo/tat)
-	permanent_tattoos += tat
-	save_preferences()
-
-
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN
 

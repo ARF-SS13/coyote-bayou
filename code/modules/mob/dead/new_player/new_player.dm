@@ -753,6 +753,10 @@
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
 
+	if(client.prefs.permanent_tattoos)
+		for(var/datum/tattoo/tat in client.prefs.permanent_tattoos)
+			H.get_bodypart(GLOB.tattoo_locations[tat.tat_location][key]).add_tattoo(tat, tat.tat_location)
+
 	H.name = real_name
 	client.init_verbs()
 	. = H
