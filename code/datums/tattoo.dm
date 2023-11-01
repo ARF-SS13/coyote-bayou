@@ -683,7 +683,6 @@
 	if(!flash.use_charge())
 		eject_flash(TRUE)
 	user.visible_message(span_notice("[user] finishes up [user.p_their()] masterpiece on [victim]'s [lowertext(tat_loc)]!"))
-	//TODO: PERMANENT TATS
 	playsound(get_turf(src), 'sound/machines/ding.ogg', 50, 1)
 
 /obj/item/tattoo_gun/proc/make_noises_and_pain(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
