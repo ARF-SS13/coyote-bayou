@@ -186,7 +186,7 @@
 	var/tats = ""
 	for(var/obj/item/bodypart/i in bodyparts)
 		for(var/datum/tattoo/tat in i.tattoos)
-			if(tat.fade_time < 0)
+			if(tat.fade_time == null)
 				tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
 	return tats
 
@@ -202,7 +202,7 @@
 	tat.name = tat_dat[1]
 	tat.desc = tat_dat[2]
 	tat.extra_desc = tat_dat[3]
-	tat.fade_time = -1
+	tat.fade_time = null
 	return tat
 
 ///turn one long, formatted string into all tattoos that should be on a character

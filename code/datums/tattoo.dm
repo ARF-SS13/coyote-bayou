@@ -44,10 +44,8 @@
 		tat_location = put_here
 
 /datum/tattoo/proc/on_apply(mob/user)
-	if(fade_time > 0)
+	if(fade_time)
 		addtimer(CALLBACK(src, .proc/fade_tattoo), fade_time)
-	if(fade_time == 0)
-		Destroy()
 
 /datum/tattoo/Destroy(force, ...)
 	if(owner_limb)
@@ -125,7 +123,7 @@
 	msg_out += "\tIt features [desc]"
 	if(extra_desc)
 		msg_out += "\t[extra_desc]"
-	if(fade_time > 0)
+	if(fade_time)
 		switch(fadedness)
 			if(TATTOO_NOT_FADED)
 				msg_out += "Looks good and fresh!"
@@ -133,7 +131,7 @@
 				msg_out += "Looks a little faded."
 			if(TATTOO_VERY_FADED)
 				msg_out += "Looks about to rub off!"
-	if(fade_time < 0)
+	if(isnull(fade_time))
 		msg_out += "Looks permanent."
 	return jointext(msg_out, "<br>")
 
@@ -210,7 +208,7 @@
 /datum/tattoo/blank
 	name = "tattoo"
 	desc = "some generic tattoo-shaped tattoo. Nothing fancy, just a little ink."
-	fade_time = -1
+	fade_time = null
 
 /// Generic temp tattoo for overwriting with other stuff
 /datum/tattoo/blank/temporary
@@ -226,7 +224,7 @@
 	tat_access = list(ACCESS_BIKER)
 	default_bodypart = BODY_ZONE_R_ARM
 	default_spot = TATTOO_BIKER_RIGHT_SHOULDER
-	fade_time = -1
+	fade_time = null
 
 /// A tattoo *thing*
 /obj/item/tattoo_holder
@@ -467,7 +465,7 @@
 				user.show_message(span_notice("You add \"[newextra]\" to the tattoo."))
 		if(TATTOO_FADE_TIME)
 			var/permanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
-			loaded_tat.fade_time = -1
+			loaded_tat.fade_time = null
 			if(permanent == "No")
 				var/numdeciseconds = stripped_input(user, "How many seconds should it last?", "Pick a number!", loaded_tat.fade_time)
 				if(isnum(numdeciseconds))
