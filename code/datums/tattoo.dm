@@ -760,7 +760,7 @@
 	. = ..()
 	//find tattoos
 	var/bodyzone = check_zone(user.zone_selected)
-	var/obj/item/bodypart/part = victim.bodyparts[bodyzone]
+	var/obj/item/bodypart/part = victim.get_bodypart(bodyzone)
 	var/tats = list()
 	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
 		if(!isnull(part.tattoos[tatspot]))
