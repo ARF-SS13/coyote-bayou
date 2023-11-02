@@ -754,9 +754,12 @@
 	name = "Tattoo Remover"
 	desc = "Useful for removing now-unwanted tattoos."
 	icon = 'icons/obj/tattoo_gun.dmi'
+	icon_state = "tattoo_gun"
 
 /obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
 	. = ..()
+	if(isnull(victim) || !istype(victim, /mob/living/carbon/human))
+		return
 	//find tattoos
 	var/bodyzone = check_zone(user.zone_selected)
 	var/obj/item/bodypart/part = victim.get_bodypart(bodyzone)
