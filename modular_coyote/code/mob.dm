@@ -500,11 +500,9 @@
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
-	health = 150
-	maxHealth = 150
 
 //Actual chooseable mouse colors
-
+/* These are not set up correctly >:(
 /mob/living/simple_animal/advanced/mousewhite
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_white"
@@ -516,7 +514,7 @@
 /mob/living/simple_animal/advanced/mousebrown
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_brown"
-
+*/
 
 //The simple version of the dog borgs.
 
@@ -845,5 +843,86 @@
     .=..()
     resize = 0.8
     update_transform()
+
+
+/mob/living/simple_animal/advanced/gecko
+	name = "gecko"
+	desc = "A large mutated reptile with sharp teeth."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_villager
+	name = "gecko villager"
+	desc = "A large mutated reptile that has learned the basics of tool usage."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_villager"
+	icon_living = "gekko_tribe_villager"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_leader
+	name = "gecko leader"
+	desc = "A large mutated reptile that has learned the basics of checks and balances."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_leader"
+	icon_living = "gekko_tribe_leader"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_shaman
+	name = "gecko shaman"
+	desc = "A large mutated reptile that has learned the basics of magic."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_shaman"
+	icon_living = "gekko_tribe_shaman"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/molerat
+	name = "molerat"
+	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "molerat"
+	icon_living = "molerat"
+	icon_dead = "molerat_dead"
+
+/mob/living/simple_animal/advanced/dog
+	name = "dog"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "dog_feral"
+	icon_living = "dog_feral"
+	icon_dead = "dog_feral_dead"
+
+/mob/living/simple_animal/advanced/rottweiler
+	name = "rottweiler"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "rottweiler"
+	icon_living = "rottweiler"
+	icon_dead = "rottweiler_dead"
+
+/mob/living/simple_animal/advanced/labretriever
+	name = "labrador retriever"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "tippen"
+	icon_living = "tippen"
+	icon_dead = "tippen_dead"
+
+/mob/living/simple_animal/advanced/shepherd
+	name = "shepherd"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "shepherd"
+	icon_living = "shepherd"
+	icon_dead = "shepherd_dead"
+
+/mob/living/simple_animal/advanced/wolf
+	name = "wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "wolf"
+	icon_living = "wolf"
+	icon_dead = "wolf_dead"
 
 
