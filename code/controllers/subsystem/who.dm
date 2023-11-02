@@ -271,7 +271,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(!LAZYLEN(regs))
 		var/turf/ceilingcat = get_step_multiz(get_turf(I), UP)
 		if(A.outdoors)
-			regs = "Outside"
+			regs = "Outdoors"
 		else if(istype(ceilingcat, /turf/open/transparent/openspace))
 			regs = "Under the stars"
 		else
@@ -306,7 +306,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	if(admeme) // only admins can see the actual names, so just sort em for them
 		admins = sortNames(admins)
 		mentors = sortNames(mentors)
-	players = sortNames(players)
+		players = sortCkeys(players)
+	else
+		players = sortNames(players)
 
 	lines += "<hr>"
 	if(admeme && LAZYLEN(admins))
@@ -377,13 +379,13 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
 	if(admeme && M_is_admin)
 		name_span = "brass"
-	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [M.ckey] as</span>"
 	/// the ckey, if we're an admin
 	if(admeme || check_rights(admin_level_to_see_all, FALSE))
-		out += " ([name])"
+		out += span_notice(" ([M.ckey])")
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
+	/// the name slug, anonymization has been handled elsewhere
+	out += "<span class='[name_span]'> [name] as</span>"
 	/// the role slug
 	if(!admeme)
 		if(role_visible)

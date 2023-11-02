@@ -590,6 +590,9 @@
 /proc/sortNames(list/L, order=1)
 	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
 
+//uses sortList() but uses the mob's ckey specifically!
+/proc/sortCkeys(list/L, order=1)
+	return sortTim(L, order >= 0 ? /proc/cmp_ckey_mob_asc : /proc/cmp_ckey_mob_dsc)
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)
