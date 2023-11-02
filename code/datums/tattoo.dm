@@ -493,7 +493,7 @@
 /obj/item/tattoo_gun
 	name = "tattoo gun"
 	desc = "Some kind of artistic torture device designed to stab colors into someone's flesh. The needles are long \
-			enough to make your work visible, no matter how furry your victim is. Might want to keep some bandages handy."
+			enough to make your work visible, no matter how furry your victim is. Might want to keep some bandages handy. Use with no template loaded to remove tattoos."
 	icon = 'icons/obj/tattoo_gun.dmi'
 	icon_state = "tattoo_gun"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -581,9 +581,6 @@
 	if(!ismob(user))
 		user.show_message(span_phobia("You don't exist!"))
 		return
-	if(!istype(flash))
-		user.show_message(span_alert("You don't have a tattoo template loaded!"))
-		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They're too far away!"))
 		return // we'll have tattoo rifles, some day...
@@ -601,6 +598,9 @@
 	if(!istype(chunk))
 		user.show_message(span_alert("[victim] doesn't have one of those!"))
 		return // we dont decorate phantom limbs in THIS parlor
+	if(!istype(flash))
+		try_remove_tattoo(victim, user, put_it_there, chunk)
+		return
 	var/list/places_to_put_it = list()
 	for(var/key in GLOB.tattoo_locations[put_it_there])
 		if(GLOB.tattoo_locations[put_it_there][key] == TRUE)
@@ -750,19 +750,13 @@
 	if(engraving)
 		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
 
-/obj/item/tattoo_remover
-	name = "Tattoo Remover"
-	desc = "Useful for removing now-unwanted tattoos."
-	icon = 'icons/obj/tattoo_gun.dmi'
-	icon_state = "tattoo_gun"
-
-/obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
+/obj/item/tattoo_gun/proc/try_remove_tattoo(mob/living/carbon/human/victim, mob/living/user, bodyzone, /obj/item/bodypart/part)
 	. = ..()
-	if(isnull(victim) || !istype(victim, /mob/living/carbon/human))
+	if(!istype(victim) || !istype(user))
+		return
+	if(isnull(bodyzone) || !istype(part))
 		return
 	//find tattoos
-	var/bodyzone = check_zone(user.zone_selected)
-	var/obj/item/bodypart/part = victim.get_bodypart(bodyzone)
 	var/list/tats = list()
 	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
 		if(!isnull(part.tattoos[tatspot]))
@@ -798,8 +792,6 @@
 	. = ..()
 	new /obj/item/tattoo_gun(src)
 	new /obj/item/tattoo_gun(src)
-	new /obj/item/tattoo_remover(src)
-	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank/temporary(src)
@@ -814,7 +806,6 @@
 /obj/item/storage/box/tattoo_kit/PopulateContents()
 	. = ..()
 	new /obj/item/tattoo_gun(src)
-	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
