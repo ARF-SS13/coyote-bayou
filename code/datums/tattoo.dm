@@ -493,7 +493,7 @@
 /obj/item/tattoo_gun
 	name = "tattoo gun"
 	desc = "Some kind of artistic torture device designed to stab colors into someone's flesh. The needles are long \
-			enough to make your work visible, no matter how furry your victim is. Might want to keep some bandages handy. Use with no template loaded to remove tattoos."
+			enough to make your work visible, no matter how furry your victim is. Might want to keep some bandages handy."
 	icon = 'icons/obj/tattoo_gun.dmi'
 	icon_state = "tattoo_gun"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -536,7 +536,7 @@
 /obj/item/tattoo_gun/examine(mob/user)
 	. = ..()
 	if(!flash)
-		. += span_notice("The template slot is empty, load one in!")
+		. += span_notice("The template slot is empty. Use on someone to remove their tattoos.")
 		return
 	. += span_notice("It is loaded with \a [flash].")
 
@@ -750,8 +750,7 @@
 	if(engraving)
 		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
 
-/obj/item/tattoo_gun/proc/try_remove_tattoo(mob/living/carbon/human/victim, mob/living/user, bodyzone, /obj/item/bodypart/part)
-	. = ..()
+/obj/item/tattoo_gun/proc/try_remove_tattoo(mob/living/carbon/human/victim, mob/living/user, bodyzone, obj/item/bodypart/part)
 	if(!istype(victim) || !istype(user))
 		return
 	if(isnull(bodyzone) || !istype(part))
@@ -770,13 +769,17 @@
 	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
 	//attempt to remove it
 	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
-	if(do_after(user,30,target = victim))
+	if(do_after(user,50,target = victim))
 		//removal successful
 		part.remove_tattoo(part.tattoos[choice],choice)
 		if(victim.client?.prefs)
 			victim.client.prefs.permanent_tattoos = victim.format_tattoos()
 			victim.client.prefs.save_character()
 		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
+		if(prob(scream_prob))
+			victim.emote("scream")
+		var/removaldam = rand(1,20)
+		part.receive_damage(brute = owie.brute_dam < 30 ? removaldam : 0, stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
 		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
 	else
