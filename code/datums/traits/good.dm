@@ -1815,11 +1815,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(wildshape)
 
 /datum/quirk/zoomies
-	name = "Zoomies (Under Maintenance)"
+	name = "Zoomies"
 	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Justt don't run into things."
-	value = 999
+	value = 14
 	category = "Movement Quirks"
-	mechanics = "Your stamina goes down slower when sprinting. Just don't run into anything or it will hurt more than normal."
+	mechanics = "You use 25% less stamina while sprinting! Just don't run into anything or it will hurt more than normal."
 	conflicts = list(
 		/datum/quirk/cantrun,
 		/datum/quirk/super_zoomies,
@@ -1830,11 +1830,11 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient is incredibly giddy, full of zoomies."
 
 /datum/quirk/super_zoomies
-	name = "Super Zoomies (Under Maintenance)"
+	name = "Zoomies - Super"
 	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just... REALLY don't run into things. Seriously."
-	value = 999
+	value = 28
 	category = "Movement Quirks"
-	mechanics = "Your stamina barely goes down when sprinting. Seriously, though, be careful running into things, it could break your back."
+	mechanics = "You use 50% less stamina while sprinting! Seriously, though, be careful running into things, it could break your back."
 	conflicts = list(
 		/datum/quirk/cantrun,
 		/datum/quirk/zoomies,
