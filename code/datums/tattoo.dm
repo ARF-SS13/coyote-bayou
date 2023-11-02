@@ -25,6 +25,8 @@
 	var/fadedness = TATTOO_NOT_FADED
 	/// how long does the temporary tattoo last between fade cycles? total life will be around 3-4 times this. if null, its permanent
 	var/fade_time
+	/// is this tattoo permanent?
+	var/is_permanent = FALSE
 	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
 	var/default_bodypart = BODY_ZONE_CHEST
 	/// just to make job-related tattoo jobs easier, only checked if its a tat that's part of a loadout or job outfit!
@@ -131,6 +133,8 @@
 				msg_out += "Looks a little faded."
 			if(TATTOO_VERY_FADED)
 				msg_out += "Looks about to rub off!"
+	if(isnull(fade_time))
+		msg_out += "Looks permanent."
 	return jointext(msg_out, "<br>")
 
 /// takes in the tat's location, outputs words about their location
@@ -206,12 +210,13 @@
 /datum/tattoo/blank
 	name = "tattoo"
 	desc = "some generic tattoo-shaped tattoo. Nothing fancy, just a little ink."
+	fade_time = null
 
 /// Generic temp tattoo for overwriting with other stuff
 /datum/tattoo/blank/temporary
 	name = "temporary tattoo"
 	desc = "some generic temporary tattoo-shaped tattoo. Nothing fancy, just a little ink."
-	fade_time = 30 SECONDS
+	fade_time = 10 MINUTES
 
 /datum/tattoo/biker
 	name = "Hell's Nomads insignia"
@@ -221,6 +226,7 @@
 	tat_access = list(ACCESS_BIKER)
 	default_bodypart = BODY_ZONE_R_ARM
 	default_spot = TATTOO_BIKER_RIGHT_SHOULDER
+	fade_time = null
 
 /// A tattoo *thing*
 /obj/item/tattoo_holder
@@ -428,6 +434,8 @@
 		customization += TATTOO_DESC
 	if(CHECK_BITFIELD(customizableness, TATTOO_CUSTOMIZE_EXTRA))
 		customization += TATTOO_EXTRA
+	if(CHECK_BITFIELD(customizableness, TATTOO_CUSTOMIZE_FADE_TIME))
+		customization += TATTOO_FADE_TIME
 
 	if(!LAZYLEN(customization))
 		user.show_message(span_alert("[src] cannot be customized!"))
@@ -457,6 +465,19 @@
 			if(newextra)
 				loaded_tat.extra_desc = newextra
 				user.show_message(span_notice("You add \"[newextra]\" to the tattoo."))
+		if(TATTOO_FADE_TIME)
+			var/pickpermanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
+
+			loaded_tat.fade_time = null
+			if(pickpermanent == "Yes")
+				loaded_tat.is_permanent = TRUE
+				return
+
+			var/numdeciseconds = stripped_input(user, "How many seconds should it last? ", "Pick a number!", loaded_tat.fade_time)
+			if(isnum(numdeciseconds))
+				loaded_tat.fade_time = numdeciseconds SECONDS
+
+
 
 /obj/item/tattoo_holder/biker
 	name = "Hell's Nomads insignia template"
@@ -729,6 +750,43 @@
 	if(engraving)
 		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
 
+/obj/item/tattoo_remover
+	name = "Tattoo Remover"
+	desc = "Useful for removing now-unwanted tattoos."
+	icon = 'icons/obj/tattoo_gun.dmi'
+
+/obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
+	. = ..()
+	//find tattoos
+	var/bodyzone = check_zone(user.zone_selected)
+	var/obj/item/bodypart/part = victim.get_bodypart(bodyzone)
+	var/list/tats = list()
+	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
+		if(!isnull(part.tattoos[tatspot]))
+			var/datum/tattoo/tat = part.tattoos[tatspot]
+			tats[tatspot] = tat.name
+	if(!tats.len)
+		to_chat(user, span_alert("They don't have any tattoos there!"))
+		to_chat(victim, span_alert("[user.name] fails to remove a tattoo from your [part.name]!"))
+
+	//pick one to remove
+	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
+	//attempt to remove it
+	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
+	if(do_after(user,30,target = victim))
+		//removal successful
+		part.remove_tattoo(part.tattoos[choice],choice)
+		if(victim.client?.prefs)
+			victim.client.prefs.permanent_tattoos = victim.format_tattoos()
+			victim.client.prefs.save_character()
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
+		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
+		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
+	else
+		to_chat(user, span_alert("You fail to remove a tattoo from [victim.name]'s [part.name]!"))
+		to_chat(victim, span_alert("[user.name] fails to remove a tattoo from your [part.name]!"))
+
+
 /obj/item/storage/backpack/debug_tattoo
 	name = "Bag of Gunstuff 4 tattoos"
 	desc = "Cool shit for testing tattoos!"
@@ -737,6 +795,8 @@
 	. = ..()
 	new /obj/item/tattoo_gun(src)
 	new /obj/item/tattoo_gun(src)
+	new /obj/item/tattoo_remover(src)
+	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank/temporary(src)
@@ -751,6 +811,7 @@
 /obj/item/storage/box/tattoo_kit/PopulateContents()
 	. = ..()
 	new /obj/item/tattoo_gun(src)
+	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)

@@ -744,6 +744,11 @@
 
 		client.prefs.scars_list["[cur_scar_index]"] = valid_scars
 		client.prefs.save_character()
+		
+	// load permanent tattoos
+	if(client.prefs.permanent_tattoos)
+		H.load_all_tattoos(client.prefs.permanent_tattoos)
+
 	client.prefs.copy_to(H, initial_spawn = TRUE)
 	H.dna.update_dna_identity()
 	if(mind)
@@ -752,6 +757,7 @@
 		mind.active = 0					//we wish to transfer the key manually
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
+
 
 	H.name = real_name
 	client.init_verbs()

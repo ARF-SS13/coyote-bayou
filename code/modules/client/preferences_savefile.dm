@@ -471,6 +471,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["lockouts"], lockouts)
 	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
 	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+
+	//permanent tattoos
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -872,7 +875,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if (S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
 	else
-		belly_prefs = list()
+		current_version = list()
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -884,6 +887,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["directory_tag"]			>> directory_tag
 	S["directory_erptag"]			>> directory_erptag
 	S["directory_ad"]			>> directory_ad
+
+	//Permanent Tattoos
+	S["permanent_tattoos"]		>> permanent_tattoos
+
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
@@ -1157,6 +1164,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_load(S)
 
+	// permanent tattoos
+	permanent_tattoos = sanitize_text(permanent_tattoos)
+
 	return 1
 
 /datum/preferences/proc/save_character()
@@ -1407,8 +1417,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	cit_character_pref_save(S)
 
-	return 1
+	//permanent tattoos
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
+	return 1
 
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN

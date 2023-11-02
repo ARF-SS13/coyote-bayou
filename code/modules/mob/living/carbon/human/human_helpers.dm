@@ -178,3 +178,49 @@
 
 /mob/living/carbon/human/get_biological_state()
 	return dna.species.get_biological_state()
+
+/// permanent tattoo procs
+
+/// turn all tattoos into one long, formatted string
+/mob/living/carbon/human/proc/format_tattoos()
+	var/tats = ""
+	for(var/obj/item/bodypart/i in bodyparts)
+		for(var/tatspot in i.tattoos)
+			var/datum/tattoo/tat = i.tattoos[tatspot]
+			if(tat.is_permanent == TRUE)
+				tats += "[tat.name]|[tat.desc]|[tat.extra_desc]|[tat.tat_location];"
+	return tats
+
+/// turn part of a formatted string into one tattoo
+/mob/living/carbon/human/proc/load_tattoo(tattoo_string)
+	var/list/tat_dat = splittext(tattoo_string, "|")
+	if(LAZYLEN(tat_dat) != 4)
+		return
+
+	var/obj/item/bodypart/part = get_part_from_tat_zone(tat_dat[4])
+	if(isnull(part))
+		return
+
+	var/datum/tattoo/blank/tat = new()
+	tat.name = tat_dat[1]
+	tat.desc = tat_dat[2]
+	tat.extra_desc = tat_dat[3]
+	tat.tat_location = tat_dat[4]
+	tat.fade_time = null
+	tat.is_permanent = TRUE
+
+	part.add_tattoo(tat, tat.tat_location)
+	return tat
+
+///turn one long, formatted string into all tattoos that should be on a character
+/mob/living/carbon/human/proc/load_all_tattoos(full_tattoo_string)
+	var/list/strings = splittext(full_tattoo_string, ";")
+	for(var/i in strings)
+		load_tattoo(i)
+
+///convert a tattoo location into a bodypart
+/mob/living/carbon/human/proc/get_part_from_tat_zone(tat_zone)
+	for(var/key in GLOB.tattoo_locations)
+		if(tat_zone in GLOB.tattoo_locations[key])
+			return get_bodypart(key)
+	return null
