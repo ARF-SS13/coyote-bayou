@@ -1,0 +1,10 @@
+//PLAPPLAPPLAPAPLAPAPLAPLAPLAPALPAP
+
+PROCESSING_SUBSYSTEM_DEF(autoplap)
+	name = "AutoPlap9000"
+	wait = 0.2 SECONDS // 5 times a second
+	stat_tag = "OWO"
+	flags = SS_BACKGROUND|SS_KEEP_TIMING
+
+
+

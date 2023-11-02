@@ -1,3 +1,5 @@
+#define SPLURT_MAX_AUTOPLAPPERS 3
+
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
 	set name = "Interact With"
@@ -29,6 +31,8 @@
 	// var/mob/living/target
 	/// weakrefs to mobs we are doing cool things with
 	var/list/splurting_with = list()
+	/// our active automatic plappers
+	var/list/autoplappers = list()
 
 /datum/component/interaction_menu_granter/Initialize(...)
 	if(!ismob(parent))
@@ -36,7 +40,6 @@
 	var/mob/parent_mob = parent
 	if(!parent_mob.client)
 		return COMPONENT_INCOMPATIBLE
-	splurting_with |= parent_mob.ckey
 	. = ..()
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
@@ -45,7 +48,7 @@
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
-	splurting_with.Cut()
+	QDEL_LIST(autoplappers)
 	. = ..()
 
 /datum/component/interaction_menu_granter/UnregisterFromParent()
@@ -239,7 +242,7 @@
 				var/mob/living/target = GET_WEAKREF(weaktarget)
 				if(!target)
 					return
-				o.do_action(parent_mob, target)
+				o.run_action(parent_mob, target)
 				return TRUE
 			return FALSE
 		/* todo: make this work : ^ )
@@ -368,24 +371,34 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
 				if("no_auto_wag")
 					TOGGLE_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
-				// SPLURT edit
-				if("chastity_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, CHASTITY)
-				if("stimulation_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, STIMULATION)
-				if("edging_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
-				if("cum_onto_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
-				//
-				else
 					return FALSE
 			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
 			//Also add a save button.
 			prefs.save_preferences()
 			return TRUE
 
+//////// AUTOPLAPPER STUFF
+/datum/component/interaction_menu_granter/proc/new_autoplap(key, mob/living/partner, interval)
+	if(!isliving(partner) || !key)
+		to_chat(parent, span_alert("That didnt work!!!"))
+		return
+	if(LAZYLEN(autoplappers) >= SPLURT_MAX_AUTOPLAPPERS)
+		to_chat(parent, span_alert("You have too many autointeractions to add another one!"))
+		return
+	var/datum/interaction/I = LAZYACCESS(SSinteractions.interactions, key)
+	if(!I)
+		to_chat(parent, span_alert("That didnt work!!!"))
+		return
+	if(!I.can_autoplap)
+		to_chat(parent, span_alert("That one really shouldnt be automated!"))
+		return
+	var/mob/living/me = parent
+	var/mob/living/them = partner
+
+
+
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD
 #undef INTERACTION_EXTREME
 #undef INTERACTION_CONSENT
+#undef SPLURT_MAX_AUTOPLAPPERS

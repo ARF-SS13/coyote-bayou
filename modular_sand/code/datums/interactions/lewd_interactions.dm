@@ -9,6 +9,8 @@
 	require_ooc_consent = TRUE
 	max_distance = 1
 
+	is_lewd = TRUE
+
 	write_log_user = "ass-slapped"
 	write_log_target = "was ass-slapped by"
 
