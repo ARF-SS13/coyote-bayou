@@ -125,17 +125,14 @@
 	var/reaction = rand(1,5)
 	switch(reaction)
 		if(1)
-			to_chat(owner, span_warning("You break out in a fit of tears!"))
-			//owner.Stun(70)
-			owner.Jitter(8)
-			owner.eye_blurry = 20
-			owner.emote("cry")
+// big mood hit, like -4 mood. Duration should be however long spooky thing is in view + 20 seconds or something. /datum/mood_event/equipped_necklace/cursed_necklace but stronger
+
+
+
 		if(2)
-			owner.emote("scream")
-			owner.Jitter(5)
-			owner.say("AAAAH!!", forced = "phobia")
-			if(reason)
-				owner.pointed(reason)
+// you feel faint! lowers max HP? lowers stamina?
+
+
 		if(3)
 			to_chat(owner, span_warning("You shut your eyes in terror!"))
 			owner.Jitter(5)
@@ -146,9 +143,8 @@
 			owner.Jitter(10)
 			owner.stuttering += 10
 		if(5)
-			to_chat(owner, span_warning("You faint out of shock!"))
-			owner.emote("collapse")
-			owner.Jitter(5)
+// number 5 needs a replacement, not sure what
+
 
 /datum/brain_trauma/mild/phobia/proc/RealityCheck() // Checks if you're not your own fears.
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
