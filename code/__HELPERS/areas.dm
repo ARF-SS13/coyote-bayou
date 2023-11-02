@@ -93,6 +93,7 @@ GLOBAL_LIST_INIT(room_sealers, typecacheof(list(
 	/obj/machinery/door,
 	/obj/structure/simple_door,
 	/obj/structure/mineral_door,
+	/obj/structure/vaultdoor,
 	/obj/structure/fence,
 	/obj/structure/handrail,
 	/obj/structure/barricade,
