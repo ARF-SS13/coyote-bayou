@@ -1558,10 +1558,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/deadeye
 	name = "Dead Eye"
-	desc = "You hit the shots you aim. No ifs, ands, or buts."
+	desc = "When you hit your target, you frequently hit your target's vital points more often than not."
 	value = 65
 	category = "Ranged Quirks"
-	mechanics = "Your accuracy never degrades from movement, firing, or anything else."
+	mechanics = "You have advantage on all random ranged damage rolls. (roll twice and take the highest)"
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/straightshooter,
@@ -1815,9 +1815,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(wildshape)
 
 /datum/quirk/zoomies
-	name = "Zoomies"
+	name = "Zoomies (Under Maintenance)"
 	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Justt don't run into things."
-	value = 14
+	value = 999
 	category = "Movement Quirks"
 	mechanics = "Your stamina goes down slower when sprinting. Just don't run into anything or it will hurt more than normal."
 	conflicts = list(
@@ -1830,9 +1830,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	medical_record_text = "Patient is incredibly giddy, full of zoomies."
 
 /datum/quirk/super_zoomies
-	name = "Zoomies - Super"
+	name = "Super Zoomies (Under Maintenance)"
 	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just... REALLY don't run into things. Seriously."
-	value = 28
+	value = 999
 	category = "Movement Quirks"
 	mechanics = "Your stamina barely goes down when sprinting. Seriously, though, be careful running into things, it could break your back."
 	conflicts = list(
