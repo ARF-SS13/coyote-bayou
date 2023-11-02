@@ -925,4 +925,35 @@
 	icon_living = "wolf"
 	icon_dead = "wolf_dead"
 
+/mob/living/simple_animal/advanced/direwolf
+	name = "white dire wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "direwolf"
+	icon_living = "direwolf"
+	icon_dead = "direwolf_dead"
+
+/mob/living/simple_animal/advanced/hyotie
+	name = "hyotie"
+	desc = "Some kind of mix of otie and hyena."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "andrews"
+	icon_living = "andrews"
+	icon_dead = "andrews_dead"
+
+/mob/living/simple_animal/advanced/direwolf/black
+	name = "black direwolf"
+	desc = "Some kind of big black dog."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "rykka"
+	icon_living = "rykka"
+	icon_dead = "rykka_dead"
+
+/mob/living/simple_animal/advanced/yaoguai
+	name = "tamed Yaoguai"
+	desc = "Some kind of big black dog."
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
+	icon_state = "yaoguai"
+	icon_living = "yaoguai"
+	icon_dead = "yaoguai_dead"
 
