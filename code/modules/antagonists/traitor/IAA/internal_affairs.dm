@@ -49,7 +49,7 @@
 
 /atom/movable/screen/alert/status_effect/agent_pinpointer
 	name = "Internal Affairs Integrated Pinpointer"
-	desc = "Even stealthier than a normal implant."
+	desc = "Even stealtheir than a normal implant."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "pinon"
 

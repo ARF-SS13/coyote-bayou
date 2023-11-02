@@ -41,7 +41,7 @@
 //VERBOSITY// step 4
 ////////////   This system below is to create proper pronoun code within your verbs langauge. You don't gotta use it at all, but its fancy and nice!  Read the examples for what they do to get an understanding of its purpose!
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window. Step 2
+/datum/interaction/lewd/self/rub_crotch/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window. Step 2
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -160,7 +160,7 @@ Enjoy!												*/
 //Feel free to use the block code concepts above to expand on these as well!
 
 					//Wrap up// Step 8 is these next few lines!
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
 ///////RUB CROTCH END///////// Step 9
@@ -187,14 +187,14 @@ Enjoy!												*/
 //VERBOSITY//
 ////////////
 //Remember to change this VVVV
-/datum/interaction/lewd/self/rub_behind/display_interaction(mob/living/user) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/self/rub_behind/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
 
 			//To uncomment these vars just remove the first / on the far left!
 	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	//var/t_thier = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
 	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
 	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
 	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
@@ -251,7 +251,261 @@ Enjoy!												*/
 				)]"))
 
 					//Wrap up//
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
 	//playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1) //This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
 	user.handle_post_sex(lust_amt[user.a_intent]) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here, but we still need this information!), orifice, mob/living/partner)
 ///////RUB BUTT END/////////
+
+
+/////////////////
+//Squirm Lewdly//
+////////////////
+datum/interaction/lewd/self/lewd_squirm //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+	description = "Self/Crotch - Squirm lewdly." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
+	// Self/Partner for the left hand side.
+	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
+	interaction_sound = null //Does this emote have a sound attached?  This defaults to the parent at lewd_interactions.dm line 7 and can be replaced to make this action always make a sound!
+	require_user_hands = TRUE //True or false, you have to have hands to do whatever this action is.
+	user_is_target = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
+	max_distance = 0 //The max distance you can use this verb on others, starts on the tiles AROUND the player, so thusly it includes the players own tile.
+
+
+/////////////
+//VERBOSITY//
+////////////
+/datum/interaction/lewd/self/lewd_squirm/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window. Step 2
+
+			//To uncomment these vars just remove both of the /'s' on the far left before var!
+	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
+	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
+	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
+	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
+	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
+	
+	
+	var/message //This is the variable that holds the different messages that can play depending on which intent the player has used.
+
+//Message block A
+	//help intent should be gentle, downright even loving and probably the opener for situations
+	if(user.a_intent == INTENT_HELP)
+		message = pick(
+			"very lightly squirms",
+			"squirms every so slightly",
+			)
+
+		//Message block B
+	//disarm intent should be used for being particularly playful with the interaction
+	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
+		var/adverb1 = pick( //Then pick from these messages!
+			"squirms a bit",
+			"is being a little squirmy",
+			)
+
+//Message block C
+	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
+		message = pick( //Then pick from these messages!
+			"is really squirming",
+			"is squirming a lot",
+			)
+
+		//Message block D
+	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
+		message = pick( //Then pick from these messages!
+			"squirms like crazy",
+			"can't seem to stop themselves from squirming",
+			)
+
+//Aftershock Block// 
+	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
+		user.visible_message(span_love("<b>\The [user]</b> [pick( //The list that is used starts here.
+				"shivers in arousal.", //These print to everyone in view range.
+				"moans quietly.",
+				"breathes out a soft moan.",
+				"gasps.",
+				"shudders softly.",
+				)]"))
+
+
+					//Wrap up// Step 8 is these next few lines!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	user.handle_post_sex(lust_amt[user.a_intent]*0.4/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
+///////SQUIRM LEWDLY END///////// Step 9
+
+////////////////////
+//Dirty Talk - Soft//
+////////////////////
+datum/interaction/lewd/self/dirtytalksoft //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+	description = "Self/Crotch - Talk dirty (tame)." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
+	// Self/Partner for the left hand side.
+	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
+	interaction_sound = null //Does this emote have a sound attached?  This defaults to the parent at lewd_interactions.dm line 7 and can be replaced to make this action always make a sound!
+	require_user_hands = TRUE //True or false, you have to have hands to do whatever this action is.
+	user_is_target = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
+	max_distance = 0 //The max distance you can use this verb on others, starts on the tiles AROUND the player, so thusly it includes the players own tile.
+
+
+/////////////
+//VERBOSITY//
+////////////
+/datum/interaction/lewd/self/dirtytalksoft/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window. Step 2
+
+			//To uncomment these vars just remove both of the /'s' on the far left before var!
+	var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
+	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
+	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
+	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
+	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
+	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
+	
+	
+	var/message //This is the variable that holds the different messages that can play depending on which intent the player has used.
+
+//Message block A
+	//help intent should be gentle, downright even loving and probably the opener for situations
+	if(user.a_intent == INTENT_HELP)
+		message = pick(
+			"sucks air in as they curse softly, \"Shit-\"",
+			"gasps for air, letting out a, \"Oh fuck-\"",
+			"moans quietly through clenched teeth, \"Yes-\"",
+			"softly whispers, \"More-\"",
+			"quietly pleads, \"Fuck yes-\"",
+			"begs quietly, \"Don't stop-\"",
+			)
+
+		//Message block B
+	//disarm intent should be used for being particularly playful with the interaction
+	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
+		var/adverb1 = pick( //Then pick from these messages!
+			"eagerly gasps, \"Shit-\"",
+			"teasingly growls, \"Oh fuck-\"",
+			"moans, \"Yes-\"",
+			"brokenly manages to say, \"More-\"",
+			"pleads, \"Fuck yes-\"",
+			"begs, \"Don't stop-\"",
+			)
+
+//Message block C
+	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
+		message = pick( //Then pick from these messages!
+			"gasps hard, sucking air before cursing, \"Shit-\"",
+			"growls, \"Oh fuck-\"",
+			"lets out a barely controlled moan, \"Yes-\"",
+			"just about can't even talk as they say, \"More-\"",
+			"is shaking as they exclaim, \"Fuck yes-\"",
+			"can't stop from saying, \"Don't stop-\"",
+			)
+
+		//Message block D
+	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
+		message = pick( //Then pick from these messages!
+			"stops themselves short of yelling, \"Shit-\"",
+			"doesn't quite bite off the curse as [t_they] moan, \"Oh fuck-\"",
+			"lets out a full body moan of pleasure, \"Yes-\"",
+			"can't keep their breath as they plead, \"More-\"",
+			"legs shake as they reflexively respond, \"Fuck yes-\"",
+			"pleads as if they are nearly broken, \"Don't stop-\"",
+			)
+
+//Aftershock Block// 
+	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
+		user.visible_message(span_love("<b>\The [user]</b> [pick( //The list that is used starts here.
+				"shivers in arousal.", //These print to everyone in view range.
+				"moans quietly.",
+				"breathes out a soft moan.",
+				"gasps.",
+				"shudders softly.",
+				)]"))
+
+
+					//Wrap up// Step 8 is these next few lines!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	user.handle_post_sex(lust_amt[user.a_intent]*0.4/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
+///////DIRTY TALK - SOFT END///////// Step 9
+
+
+/////////////////
+//Rub Clit//
+////////////////
+datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what the code calls it. Step 2 on this line.  Step 3 is just below it.
+	description = "Self/Crotch - Rub your clitoris." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
+	// Self/Partner for the left hand side.
+	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
+	interaction_sound = null //Does this emote have a sound attached?  This defaults to the parent at lewd_interactions.dm line 7 and can be replaced to make this action always make a sound!
+	require_user_hands = TRUE //True or false, you have to have hands to do whatever this action is.
+	user_is_target = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
+	max_distance = 0 //The max distance you can use this verb on others, starts on the tiles AROUND the player, so thusly it includes the players own tile.
+
+
+/////////////
+//VERBOSITY//
+////////////
+/datum/interaction/lewd/self/rub_clit/display_interaction(mob/living/user, mob/living/target, show_message) //The main interaction system, this populates the information in the tgui window. Step 2
+
+			//To uncomment these vars just remove both of the /'s' on the far left before var!
+	var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
+	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
+	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
+	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
+	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
+	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
+	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
+	
+	
+	var/message //This is the variable that holds the different messages that can play depending on which intent the player has used.
+
+//Message block A
+	//help intent should be gentle, downright even loving and probably the opener for situations
+	if(user.a_intent == INTENT_HELP)
+		message = pick(
+			"is gently rubbing [t_their] clit",
+			"rubs [t_their] clit softly in small circles",
+			"presses two fingers to [t_their] clit rubs gently",
+			"softly rubs "
+			)
+
+		//Message block B
+	//disarm intent should be used for being particularly playful with the interaction
+	else if(user.a_intent == INTENT_DISARM) //Is the player on disarm intent?
+		var/adverb1 = pick( //Then pick from these messages!
+			"squirms a bit",
+			"is being a little squirmy",
+			)
+
+//Message block C
+	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
+	else if(user.a_intent == INTENT_GRAB) //Is the player in grab intent?
+		message = pick( //Then pick from these messages!
+			"is really squirming",
+			"is squirming a lot",
+			)
+
+		//Message block D
+	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
+	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
+		message = pick( //Then pick from these messages!
+			"squirms like crazy",
+			"can't seem to stop themselves from squirming",
+			)
+
+//Aftershock Block// 
+	if(prob(5 + user.get_lust())) //This is things that happen in chat naturally to show that arousal is being built up.
+		user.visible_message(span_love("<b>\The [user]</b> [pick( //The list that is used starts here.
+				"shivers in arousal.", //These print to everyone in view range.
+				"moans quietly.",
+				"breathes out a soft moan.",
+				"gasps.",
+				"shudders softly.",
+				)]"))
+
+
+					//Wrap up// Step 8 is these next few lines!
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting()) //I'm not sure what this does fully, but it should make the message visible, and decides if its fucking pink or not!
+	user.handle_post_sex(lust_amt[user.a_intent]*0.6/* You can apply math here if you like, like *1.5 to get 50% more lust.  I suggest using multiplication to avoid divide by zero chances! All you have to do is replace this comment with *X.Y!*/) //So, this is included for information purposes.  It determines a lot of different things. (amount of arousal built up (no longer defined here directly, but we still need this information!), orifice, mob/living/partner)
+///////SQUIRM LEWDLY END///////// Step 9

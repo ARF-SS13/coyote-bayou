@@ -77,6 +77,9 @@
 							INTENT_HARM = NORMAL_LUST
 							)
 
+	interaction_sound 	= 'sound/f13effects/sunsetsounds/blush.ogg'
+	int_sound_vol 		= 50
+
 /datum/interaction/lewd/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
 	. = ..()
 	if(!.)

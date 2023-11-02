@@ -916,7 +916,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"linemelee" = "ADD",
 		"linebullet" = "ADD",
 		"linelaser" = "ADD",
-		"energy" = "MULT",
+		"energy" = "ADD",
 		"bomb" = "MULT",
 		"bio" = "MULT",
 		"rad" = "MULT",

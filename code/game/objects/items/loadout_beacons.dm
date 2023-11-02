@@ -1221,6 +1221,118 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c9mm(src)
 
 
+/obj/item/storage/box/gun/pistol/glock
+	name = "Glock pistol case"
+
+/obj/item/storage/box/gun/pistol/glock/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/glock(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+
+/obj/item/storage/box/gun/pistol/m3pistolcivillian
+	name = "M3 Civilian Magnum case"
+
+/obj/item/storage/box/gun/pistol/m3pistolcivillian/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+
+/obj/item/storage/box/gun/rifle/covcarbinesgobrr
+	name = "T25 rifle case"
+
+/obj/item/storage/box/gun/rifle/covcarbinesgobrr/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine/covcarbine(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/ammo_box/c10mm(src)
+
+/obj/item/storage/box/gun/pistol/m3socom
+	name = "M3 Socom pistol case"
+
+/obj/item/storage/box/gun/pistol/m3socom/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom (src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/c45(src)
+
+/obj/item/storage/box/gun/pistol/m3pistol
+	name = "M3 Magnum case"
+
+/obj/item/storage/box/gun/pistol/m3pistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/automag/m6(src)
+	new /obj/item/ammo_box/magazine/m44/automag(src)
+	new /obj/item/ammo_box/m44box(src)
+
+/obj/item/storage/box/gun/pistol/fourtyfourpistol
+	name = "Desert Eagle case"
+
+/obj/item/storage/box/gun/pistol/fourtyfourpistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/deagle(src)
+	new /obj/item/ammo_box/magazine/m44/automag(src)
+	new /obj/item/ammo_box/m44box(src)
+
+/obj/item/storage/box/gun/pistol/automagcasing
+	name = "Automag .44 case"
+
+/obj/item/storage/box/gun/pistol/automagcasing/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/automag(src)
+	new /obj/item/ammo_box/magazine/m44/automag(src)
+	new /obj/item/ammo_box/m44box(src)
+
+
+
+/obj/item/storage/box/gun/pistol/taurpistol
+	name = "Judge pistol case"
+
+/obj/item/storage/box/gun/pistol/taurpistol/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/taurjudge(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+
+/obj/item/storage/box/gun/rifle/shottybotty
+	name = "S163 Shotgun case"
+
+/obj/item/storage/box/gun/rifle/shottybotty/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/s163(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+
+
+/obj/item/storage/box/gun/rifle/foomas
+	name = "Famas Rifle case"
+
+/obj/item/storage/box/gun/rifle/foomas/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/famas(src)
+	new /obj/item/ammo_box/a556(src)
+
+/obj/item/storage/box/gun/rifle/svdgobrr
+	name = "Z34 Rifle case"
+
+/obj/item/storage/box/gun/rifle/svdgobrr/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/z34rifle(src)
+	new /obj/item/ammo_box/a308box(src)
+
+/obj/item/storage/box/gun/pistol/volcanics
+	name = "Volcanic pistol case"
+
+/obj/item/storage/box/gun/pistol/volcanics/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/volcanic(src)
+	new /obj/item/ammo_box/c45(src)
+
+
+/obj/item/storage/box/gun/pistol/cyberpunks
+	name = "P-36 pistol case"
+
+/obj/item/storage/box/gun/pistol/cyberpunks/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ticon(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/ammo_box/magazine/m14mmcustom(src)
+	new /obj/item/ammo_box/magazine/m14mmcustom(src)
+
+
+/obj/item/storage/box/gun/pistol/nineshotrevolver
+	name = "LeMat revolver case"
+
+/obj/item/storage/box/gun/pistol/nineshotrevolver/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat(src)
+	new /obj/item/ammo_box/c9mm(src)
+
 
 /obj/item/storage/box/gun/pistol/auto9mm
 	name = "9mm Autopistol case"
@@ -2112,6 +2224,95 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_PISTOL
 	spawn_thing = /obj/item/storage/box/gun/pistol/auto9mm
+
+/datum/loadout_box/shotgunrevolver
+	entry_tag = "judge shotgun revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/pistol/taurpistol
+
+
+/datum/loadout_box/covenantcarbie
+	entry_tag = "T25 carbine"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/covcarbinesgobrr
+
+/datum/loadout_box/shottygunny
+	entry_tag = "S163 Shotgun"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/shottybotty
+
+/datum/loadout_box/volcanicsgobrr
+	entry_tag = "Volcanic Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/volcanics
+
+/datum/loadout_box/lematsgobrr
+	entry_tag = "LeMat revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/pistol/nineshotrevolver
+
+/datum/loadout_box/frenchassault
+	entry_tag = "Famas rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/foomas
+
+/datum/loadout_box/sovietsniper
+	entry_tag = "Z34 battle rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/svdgobrr
+
+/datum/loadout_box/automagbrr
+	entry_tag = ".44 Automag"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/automagcasing
+
+
+/datum/loadout_box/deaglebeagle
+	entry_tag = ".44 Desert Eagle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/fourtyfourpistol
+
+
+/datum/loadout_box/halospecial
+	entry_tag = "M3 SOCOM"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/m3socom
+
+
+
+/datum/loadout_box/ninemilglock
+	entry_tag = "9mm glock"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/glock
+
+/datum/loadout_box/halonormal
+	entry_tag = "M3 Magnum"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/m3pistol
+
+/datum/loadout_box/haloninemil
+	entry_tag = "M3 Civilian"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/m3pistolcivillian
+
+/datum/loadout_box/militech
+	entry_tag = "P-47 Assault Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/cyberpunks
 
 /datum/loadout_box/borchardt
 	entry_tag = "9mm Borchardt"

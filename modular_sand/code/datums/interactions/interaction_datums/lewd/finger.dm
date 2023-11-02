@@ -13,7 +13,7 @@
 			)
 	)
 
-/datum/interaction/lewd/finger/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/finger/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -34,7 +34,7 @@
 	if(liquid_container)
 		message += " over \the [liquid_container]"
 
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA) //SPLURT edit
 
@@ -45,9 +45,10 @@
 	require_target_anus = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/fingerass/display_interaction(mob/living/user, mob/living/partner)
-	user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("fingers \the <b>[partner]</b>.",
-		"fingers \the <b>[partner]</b>'s asshole.",
-		"fingers \the <b>[partner]</b> hard.")]</span>", ignored_mobs = user.get_unconsenting())
+/datum/interaction/lewd/fingerass/display_interaction(mob/living/user, mob/living/partner, show_message)
+	if(show_message)
+		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("fingers \the <b>[partner]</b>.",
+			"fingers \the <b>[partner]</b>'s asshole.",
+			"fingers \the <b>[partner]</b> hard.")]</span>", ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, user, "anus") //SPLURT edit

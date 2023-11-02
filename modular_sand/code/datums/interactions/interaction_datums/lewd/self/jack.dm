@@ -16,7 +16,7 @@
 			)
 	)
 
-/datum/interaction/lewd/jack/display_interaction(mob/living/user)
+/datum/interaction/lewd/jack/display_interaction(mob/living/user, mob/living/target, show_message)
 	var/message
 	var/t_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -73,6 +73,6 @@
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
-	user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(lust_amt[user.a_intent], CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_PENIS) //SPLURT edit

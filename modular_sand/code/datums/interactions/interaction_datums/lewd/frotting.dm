@@ -7,14 +7,14 @@
 	write_log_target = "was frotted by"
 	interaction_sound = null
 
-/datum/interaction/lewd/frotting/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/frotting/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/t_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
 
 	message = "rubs [t_His] [genital_name] against [partner]'s."
 	user.set_is_fucking(partner, CUM_TARGET_PENIS, user.getorganslot(ORGAN_SLOT_PENIS))
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_PENIS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
 	if(partner.can_penetrating_genital_cum())
@@ -27,7 +27,7 @@
 	require_user_vagina = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/tribadism/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/tribadism/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -43,6 +43,6 @@
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/squelch1.ogg',
 						'modular_sand/sound/interactions/squelch2.ogg',
 						'modular_sand/sound/interactions/squelch3.ogg'), 70, 1, -1)
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, user, ORGAN_SLOT_VAGINA) //SPLURT edit
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, partner, ORGAN_SLOT_VAGINA) //SPLURT edit

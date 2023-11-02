@@ -5,8 +5,8 @@
 	require_target_anus = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/rimjob/display_interaction(mob/living/user, mob/living/partner)
-	user.visible_message(span_love("<b>\The [user]</b> licks \the <b>[partner]</b>'s asshole."), ignored_mobs = user.get_unconsenting())
+/datum/interaction/lewd/rimjob/display_interaction(mob/living/user, mob/living/partner, show_message)
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> licks \the <b>[partner]</b>'s asshole."), ignored_mobs = user.get_unconsenting())
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, user, "anus") //SPLURT edit
 
@@ -18,7 +18,7 @@
 	require_target_num_feet = 1
 	max_distance = 1
 
-/datum/interaction/lewd/lickfeet/display_interaction(mob/living/user, mob/living/partner)
+/datum/interaction/lewd/lickfeet/display_interaction(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/shoes = partner.get_shoes()
@@ -29,5 +29,5 @@
 		message = "licks \the <b>[partner]</b>'s [partner.has_feet() == 1 ? "foot" : "feet"]."
 
 	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
-	user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
+	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(LOW_LUST, null, user)

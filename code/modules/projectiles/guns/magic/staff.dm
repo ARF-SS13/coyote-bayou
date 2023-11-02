@@ -91,11 +91,32 @@
 	max_charges = 4
 
 
+
 /obj/item/gun/magic/staff/spellblade/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	// Do not block projectiles.
 	if(attack_type & ATTACK_TYPE_PROJECTILE)
 		return BLOCK_NONE
 	return ..()
+
+//obj/item/gun/magic/staff/spellblade/weak
+	//name = "spellblade"
+	//desc = "A weapon summoned by the will of the user, it's capable of shooting magic arrows to soften up foes in close range"
+	//fire_sound = 'sound/magic/fireball.ogg'
+	//ammo_type = /obj/item/projectile/spellcard/sword
+	//icon_state = "spellblade"
+	//item_state = "spellblade"
+	//lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	//righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	//hitsound = 'sound/weapons/rapierhit.ogg'
+	//force_unwielded = 25
+	//force_wielded = 40 
+	//block_parry_data = /datum/block_parry_data/bokken
+	//item_flags = ITEM_CAN_PARRY
+	//weapon_special_component = /datum/component/weapon_special/single_turf
+	//item_flags = DROPDEL
+	//sharpness = SHARP_EDGED
+	//max_charges = 1
+	//damage = 30
 
 /obj/item/gun/magic/staff/locker
 	name = "staff of the locker"
@@ -160,7 +181,7 @@
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
 	icon_state = "mmstaff"
-	max_charges = 24
+	max_charges = 24 // CURRENTLY BUGGED. THIS ITEM CAN GO NEGATIVE CHARGES AND SHOOT INFINITELY. NEEDS BUGFIXING BY SOMEONE SMARTER THAN ME (KELP)
 	recharge_rate = 10 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	force_wielded = 37 // Practical all around! May change later.
@@ -221,6 +242,7 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks/thunder
 	name = "lightning bolt"
+	flag = "laser" // plasma OP
 	damage = 60
 	damage_low = 30
 	damage_high = 80
