@@ -147,10 +147,7 @@
 		var/combined_height = approx_lines
 		for(var/msg in owned_by.seen_messages[message_loc])
 			var/datum/chatmessage/m = msg
-			if(HAS_TRAIT(src, TRAIT_ERPBOTTOM))
-				animate(m.message, pixel_y = m.message.pixel_y*-1.5 + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
-			else
-				animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
+			animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
 			combined_height += m.approx_lines
 			var/sched_remaining = m.scheduled_destruction - world.time
 			if (sched_remaining > CHAT_MESSAGE_SPAWN_TIME)
