@@ -486,7 +486,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define RUBBERY_RECOIL_PISTOL_10MM (BULLET_RECOIL_PISTOL_10MM * RUBBERY_RECOIL_MULT)
 #define RUBBERY_WOUND_PISTOL_10MM (BULLET_WOUND_PISTOL_10MM * 2)
 
-#define BULLET_DAMAGE_PISTOL_NEEDLE 10
+#define BULLET_DAMAGE_PISTOL_NEEDLE 16
 #define BULLET_DAMAGE_PISTOL_NEEDLE_HANDLOAD (BULLET_DAMAGE_PISTOL_NEEDLE * BULLET_HANDLOAD_MULT_DAMAGE)
 #define BULLET_DAMAGE_PISTOL_NEEDLE_MATCH (BULLET_DAMAGE_PISTOL_NEEDLE * BULLET_MATCH_MULT_DAMAGE)
 #define BULLET_STAMINA_PISTOL_NEEDLE (BULLET_DAMAGE_PISTOL_NEEDLE * 0.5)
@@ -1044,6 +1044,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_SPREAD_NORMAL 1
 #define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
+#define GUN_SPREAD_SUPERAWFUL (GUN_SPREAD_NORMAL * 4)
 
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
@@ -1066,6 +1067,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_EXTRA_DAMAGE_T3 1.25
 #define GUN_EXTRA_DAMAGE_T4 1.35
 #define GUN_EXTRA_DAMAGE_T5 1.50
+#define GUN_EXTRA_DAMAGE_T6 1.75 // :^) ~Fenny
 
 /// Also multiplies the gun's projectile damage, but so it does less damage
 #define GUN_LESS_DAMAGE_T1 0.90
@@ -1073,7 +1075,8 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_LESS_DAMAGE_T3 0.75
 #define GUN_LESS_DAMAGE_T4 0.65
 #define GUN_LESS_DAMAGE_T5 0.50
-#define GUN_LESS_DAMAGE_T6 0.25
+#define GUN_LESS_DAMAGE_T6 0.35
+#define GUN_LESS_DAMAGE_T7 0.25
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
@@ -1191,17 +1194,17 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 /// Converts rounds per minute to deciseconds per shot
 #define RPM_TO_FIRE_DELAY(rpm) ((60 / rpm) * 10)
 
-#define GUN_FIRE_RATE_40 RPM_TO_FIRE_DELAY(40) // 40 RPM = 15 deciseconds per shot
-#define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(75) // 75 RPM = 8 deciseconds per shot
-#define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(100) // 100 RPM = 6 deciseconds per shot
-#define GUN_FIRE_RATE_150 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
-#define GUN_FIRE_RATE_200 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
-#define GUN_FIRE_RATE_300 RPM_TO_FIRE_DELAY(300) // 300 RPM = 2 deciseconds per shot
-#define GUN_FIRE_RATE_400 RPM_TO_FIRE_DELAY(400) // 400 RPM = 1.5 deciseconds per shot
-#define GUN_FIRE_RATE_600 RPM_TO_FIRE_DELAY(600) // 600 RPM = 1 decisecond per shot
-#define GUN_FIRE_RATE_800 RPM_TO_FIRE_DELAY(800) // 800 RPM = 0.75 deciseconds per shot
-#define GUN_FIRE_RATE_1000 RPM_TO_FIRE_DELAY(1000) // 1000 RPM = 0.6 deciseconds per shot
-#define GUN_FIRE_RATE_1200 RPM_TO_FIRE_DELAY(1200) // 1200 RPM = 0.5 deciseconds per shot
+#define GUN_FIRE_RATE_40 RPM_TO_FIRE_DELAY(80) // 80 RPM = 7.5 deciseconds per shot | Fenny said to double them all! - Jaeger
+#define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
+#define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
+#define GUN_FIRE_RATE_150 RPM_TO_FIRE_DELAY(300) // 300 RPM = 2 deciseconds per shot
+#define GUN_FIRE_RATE_200 RPM_TO_FIRE_DELAY(400) // 400 RPM = 1.5 deciseconds per shot
+#define GUN_FIRE_RATE_300 RPM_TO_FIRE_DELAY(600) // 600 RPM = 1 deciseconds per shot
+#define GUN_FIRE_RATE_400 RPM_TO_FIRE_DELAY(800) // 800 RPM = 0.75 deciseconds per shot
+#define GUN_FIRE_RATE_600 RPM_TO_FIRE_DELAY(1200) // 1200 RPM = 0.5 decisecond per shot
+#define GUN_FIRE_RATE_800 RPM_TO_FIRE_DELAY(1600) // 1600 RPM = 0.375 deciseconds per shot
+#define GUN_FIRE_RATE_1000 RPM_TO_FIRE_DELAY(2000) // 2000 RPM = 0.3 deciseconds per shot
+#define GUN_FIRE_RATE_1200 RPM_TO_FIRE_DELAY(2400) // 2400 RPM = 0.25 deciseconds per shot
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
@@ -1394,15 +1397,32 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 )
 
 /// Musket defines
-#define FLINTLOCK_PISTOL_RELOAD_TIME 0.5 SECONDS
-#define FLINTLOCK_MINIMUSKET_RELOAD_TIME 0.8 SECONDS
+#define FLINTLOCK_PISTOL_RELOAD_TIME 0.1 SECONDS
+#define FLINTLOCK_MINIMUSKET_RELOAD_TIME 0.2 SECONDS
 #define FLINTLOCK_MUSKET_RELOAD_TIME 1 SECONDS
 
-#define FLINTLOCK_PISTOL_PREFIRE_TIME 0.5 SECONDS
-#define FLINTLOCK_MINIMUSKET_PREFIRE_TIME 0.5 SECONDS
-#define FLINTLOCK_MUSKET_PREFIRE_TIME 1 SECONDS
+#define FLINTLOCK_PISTOL_PREFIRE_TIME 0.1 SECONDS
+#define FLINTLOCK_MINIMUSKET_PREFIRE_TIME 0.2 SECONDS
+#define FLINTLOCK_MUSKET_PREFIRE_TIME 0.2 SECONDS
 
 /// Multipliers, if flintlock has a prefire time of 0.5 seconds, and the multiplier is 2, then the prefire time standard deviation is 1 second
-#define FLINTLOCK_PISTOL_PREFIRE_STD 2
-#define FLINTLOCK_MINIMUSKET_PREFIRE_STD 1
-#define FLINTLOCK_MUSKET_PREFIRE_STD 1.5
+#define FLINTLOCK_PISTOL_PREFIRE_STD 0.1 SECONDS
+#define FLINTLOCK_MINIMUSKET_PREFIRE_STD 0.2 SECONDS
+#define FLINTLOCK_MUSKET_PREFIRE_STD 0.2 SECONDS
+
+/// Matchlock defines
+#define MATCHLOCK_PISTOL_RELOAD_TIME 0.5 SECONDS
+#define MATCHLOCK_MINIMUSKET_RELOAD_TIME 2 SECONDS
+#define MATCHLOCK_MUSKET_RELOAD_TIME 2 SECONDS
+#define MATCHLOCK_BOMBARD_RELOAD_TIME 3 SECONDS
+
+#define MATCHLOCK_PISTOL_PREFIRE_TIME 0.5 SECONDS
+#define MATCHLOCK_MINIMUSKET_PREFIRE_TIME 0.7 SECONDS
+#define MATCHLOCK_MUSKET_PREFIRE_TIME 1 SECONDS
+#define MATCHLOCK_BOMBARD_PREFIRE_TIME 2 SECONDS
+
+/// Multipliers, if matchlock has a prefire time of 0.5 seconds, and the multiplier is 2, then the prefire time standard deviation is 1 second
+#define MATCHLOCK_PISTOL_PREFIRE_STD 0.3 SECONDS
+#define MATCHLOCK_MINIMUSKET_PREFIRE_STD 0.4 SECONDS
+#define MATCHLOCK_MUSKET_PREFIRE_STD 0.5 SECONDS
+#define MATCHLOCK_BOMBARD_PREFIRE_STD 0.8 SECONDS

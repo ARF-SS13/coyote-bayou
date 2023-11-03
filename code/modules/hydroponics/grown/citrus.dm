@@ -172,7 +172,7 @@
 	var/message = "[ADMIN_LOOKUPFLW(user)] primed a combustible lemon for detonation at [ADMIN_VERBOSEJMP(user)]"
 	GLOB.bombers += message
 	message_admins(message)
-	log_game("[key_name(user)] primed a combustible lemon for detonation at [AREACOORD(user)].")
+	log_game("[key_name(user)] primed a lemon at [AREACOORD(user)].")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.throw_mode_on()

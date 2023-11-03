@@ -6,6 +6,7 @@
 	product_slogans = "Apply your brZZT- Giddeyup, yall!;Apply your brilliant deductiZZT-are better than one!;Apply your brilliant deductive methoZZT-your two-headed friends!;Apply your brilliant deductive methods in style! ...ZZT-ahmin, today!"
 	vend_reply = "Thank you for using the DetDroZZT-le Supply!"
 	products = list(/obj/item/tattoo_gun = 5,
+		/obj/item/tattoo_remover = 5,
 		/obj/item/tattoo_holder/blank = 20,
 		/obj/item/tattoo_holder/blank/temporary = 20,
 		///obj/item/brahminbags = 10,

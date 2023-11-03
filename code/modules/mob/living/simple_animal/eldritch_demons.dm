@@ -22,8 +22,8 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = INFINITY
+	//minbodytemp = 0
+	//maxbodytemp = INFINITY
 	healable = 0
 	movement_type = GROUND
 	pressure_resistance = 100
@@ -249,39 +249,39 @@
 
 
 /mob/living/simple_animal/hostile/eldritch/armsy/AttackingTarget()
-	if(istype(target,/obj/item/bodypart/r_arm) || istype(target,/obj/item/bodypart/l_arm))
-		qdel(target)
+	var/atom/my_target = get_target()
+	if(istype(my_target,/obj/item/bodypart/r_arm) || istype(my_target,/obj/item/bodypart/l_arm))
+		qdel(my_target)
 		heal()
 		return
-	if(target == back || target == front)
+	if(my_target == back || my_target == front)
 		return
 	if(back)
-		back.GiveTarget(target)
+		back.GiveTarget(my_target)
 		back.AttackingTarget()
-	if(!Adjacent(target))
+	if(!Adjacent(my_target))
 		return
-	do_attack_animation(target)
+	do_attack_animation(my_target)
 	//have fun
-	//if(istype(target,/turf/closed/wall))
-		//var/turf/closed/wall = target
+	//if(istype(my_target,/turf/closed/wall))
+		//var/turf/closed/wall = my_target
 		//wall.ScrapeAway()
 
 
-	if(iscarbon(target))
-		var/mob/living/carbon/C = target
-		if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
-			return
-		var/list/parts = list()
-		for(var/X in C.bodyparts)
-			var/obj/item/bodypart/bodypart = X
-			if(bodypart.body_part != HEAD && bodypart.body_part != CHEST)
-				if(bodypart.dismemberable)
-					parts += bodypart
-		if(length(parts) && prob(10))
-			var/obj/item/bodypart/bodypart = pick(parts)
-			bodypart.dismember()
-
-	return ..()
+	if(!iscarbon(my_target))
+		return ..()
+	var/mob/living/carbon/C = my_target
+	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
+		return
+	var/list/parts = list()
+	for(var/X in C.bodyparts)
+		var/obj/item/bodypart/bodypart = X
+		if(bodypart.body_part != HEAD && bodypart.body_part != CHEST)
+			if(bodypart.dismemberable)
+				parts += bodypart
+	if(length(parts) && prob(10))
+		var/obj/item/bodypart/bodypart = pick(parts)
+		bodypart.dismember()
 
 /mob/living/simple_animal/hostile/eldritch/armsy/prime
 	name = "Lord of the Night"

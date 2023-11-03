@@ -209,10 +209,24 @@
 /obj/item/ammo_box/magazine/m473/small
 	name = "4.7mm carbine magazine"
 	icon_state = "473small"
-	max_ammo = 20
+	max_ammo = 40 // Less than the P90 despite same damage
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m473/small/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/machinegundrummag
+	name = "Custom OstStrauss magazine"
+	icon_state = "mg3"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = list(CALIBER_556)
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 35
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/machinegundrummag/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m2mm

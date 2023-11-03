@@ -30,9 +30,13 @@
 	var/datum/thrownthing/tackle
 	/// Is it just a simple dive-kick?
 	var/simple_dunk
-
+	// is it just a STRONG simple dive-kick?
+	var/simple_dunkstrong
 /datum/component/tackler/simple
 	simple_dunk = TRUE
+
+/datum/component/tackler/simple_dunkstrong
+	simple_dunkstrong = TRUE
 
 /datum/component/tackler/Initialize(stamina_cost = 25, base_knockdown = 1 SECONDS, range = 4, speed = 1, skill_mod = 0, min_distance = min_distance)
 	if(!iscarbon(parent))
@@ -100,7 +104,7 @@
 		return
 
 	user.tackling = TRUE
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle, TRUE)
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
 	var/leap_word = iscatperson(user) ? "pounce" : "leap" ///If cat, "pounce" instead of "leap".
@@ -146,6 +150,10 @@
 
 	if(simple_dunk && isliving(hit))
 		simple_sack(user, hit)
+		return
+
+	if(simple_dunkstrong && isliving(hit))
+		simple_sackstrong(user, hit)
 		return
 
 	if(!iscarbon(hit))
@@ -300,6 +308,70 @@
 	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, CEILING(damage_mod, 1))
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
 
+//crappy "strong" version of the simple dunk, meant for high tier quirks and raging boar.
+/datum/component/tackler/proc/simple_sackstrong(mob/living/carbon/user, mob/living/hit)
+	if(!iscarbon(user) || !isliving(hit))
+		return
+
+	var/roll = iscarbon(hit) ? rollTackle(hit) : 10 // extra damage to simplemobs (For some reason it's less than it seems)
+	user.tackling = FALSE
+
+	var/tackle_damage = 10
+	if(HAS_TRAIT(user, TRAIT_IRONFIST))
+		tackle_damage = 20
+	else if(HAS_TRAIT(user, TRAIT_STEELFIST))
+		tackle_damage = 30 //for whatever reason the original code for this has fucked up calculations, only the fist values apply//
+	var/damage_mod = 1
+
+	switch(roll)
+		if(-INFINITY to -5)
+			damage_mod *= 0.5
+		if(-4 to -2)
+			damage_mod *= 0.8
+		if(2 to 3)
+			damage_mod *= 1.5
+		if(4 to INFINITY)
+			damage_mod *= 2
+
+	if(tackle?.dist_travelled)
+		damage_mod *= (1.5 + (2*tackle.dist_travelled))
+
+	switch(damage_mod)
+		if(-INFINITY to 1)
+			user.visible_message(
+				span_warning("[user] rams into [hit] with a flying tackle!"), 
+				span_userdanger("You rams into [hit] with a flying tackle!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] rams into you!"))
+		if(1.1 to 3)
+			user.visible_message(
+				span_warning("[user] slams into [hit] with a deadly charge!"), 
+				span_userdanger("You slam into [hit] with a deadly charge!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] slams into you!"))
+		if(3.1 to INFINITY)
+			user.visible_message(
+				span_warning("[user] CRASHES into [hit] with an powerful dropkick!"), 
+				span_userdanger("You CRASH into [hit] with a powerful dropkick!"), 
+				ignored_mobs = list(hit))
+			to_chat(hit, span_userdanger("[user] CRASHES into you!"))
+	playsound(user, 'sound/effects/flesh_impact_1.ogg', 60, TRUE)
+	if(damage_mod >= 2)
+		hit.emote("scream")
+	user.emote("scream")
+	
+	var/armormult = clamp(hit.getarmor(BODY_ZONE_CHEST, "melee"), 0, 1)
+
+	hit.apply_damage(tackle_damage, STAMINA, BODY_ZONE_CHEST, armormult)
+	hit.apply_damage(tackle_damage, BRUTE, BODY_ZONE_CHEST, armormult)
+	if(hit.anchored)
+		return
+	var/atom/throw_target = get_ranged_target_turf(hit, get_dir(user, hit), rand(CEILING(damage_mod * 0.5, 1), CEILING(damage_mod, 3)), 2)
+	hit.throw_at(throw_target, 10, 1, user, TRUE)
+
+	SEND_SIGNAL(user, COMSIG_CARBON_TACKLED, CEILING(damage_mod, 1))
+	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
+
 /**
  * rollTackle()
  *
@@ -432,16 +504,19 @@
 
 	switch(oopsie)
 		if(99 to INFINITY)
-			// can you imagine standing around minding your own business when all of the sudden some guy fucking launches himself into a wall at full speed and irreparably paralyzes himself?
-			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle, severing [user.p_their()] spinal column with a sickening crack! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle, severing your spinal column with a sickening crack! Holy shit!"))
+			// Used to cripple you with severe brain trauma, while fun in the code, very unfun in-game if you got unlucky and there were no doctors
+			// Now it's just a worse variation than the second worse one. Be careful around trees
+			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle! Holy shit!"))
 			user.adjustStaminaLoss(30)
-			user.adjustBruteLoss(30)
+			user.adjustBruteLoss(80)
+			user.Unconscious(100)
+			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
+			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			user.emote("scream")
-			user.gain_trauma(/datum/brain_trauma/severe/paralysis/spinesnapped) // oopsie indeed!
 			shake_camera(user, 7, 7)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 4.5)
 
 		if(94 to 98)
@@ -452,7 +527,7 @@
 			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			shake_camera(user, 6, 6)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 3.5)
 
 		if(84 to 93)
@@ -465,7 +540,7 @@
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			user.DefaultCombatKnockdown(40)
 			shake_camera(user, 5, 5)
-			user.overlay_fullscreen("flash", /obj/screen/fullscreen/flash)
+			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
 			user.clear_fullscreen("flash", 2.5)
 
 		if(64 to 83)

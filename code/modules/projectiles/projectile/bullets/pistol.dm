@@ -19,6 +19,7 @@
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
 	damage = BULLET_DAMAGE_PISTOL_22
+	damage_list = list("10" = 5, "12" = 25, "15" = 50, "20" = 20)
 	stamina = BULLET_STAMINA_PISTOL_22
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_22
@@ -26,7 +27,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_22
 	bare_wound_bonus = BULLET_WOUND_PISTOL_22_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -47,10 +48,10 @@
 	wound_bonus = RUBBERY_WOUND_PISTOL_22
 	bare_wound_bonus = BULLET_WOUND_PISTOL_22_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	
+
 	sharpness = SHARP_NONE
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
@@ -71,7 +72,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_22 * BULLET_WOUND_SHOCK
 	bare_wound_bonus = BULLET_WOUND_PISTOL_22_NAKED_MULT * BULLET_NAKED_WOUND_SHOCK
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -103,6 +104,7 @@
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM
+	damage_list = list("20" = 10, "23" = 10, "25" = 50, "26" = 15, "30" = 15)
 	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_9MM
@@ -110,7 +112,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_9MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -125,6 +127,7 @@
 /obj/item/projectile/bullet/c9mm/improvised
 	name = "handloaded 9mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
+	damage_list = list("14" = 10, "17" = 10, "23" = 50, "25" = 10, "27" = 6, "30" = 15)
 	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_9MM_HANDLOAD
@@ -132,7 +135,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_9MM_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -153,7 +156,7 @@
 	wound_bonus = RUBBERY_WOUND_PISTOL_9MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	sharpness = SHARP_NONE
@@ -177,7 +180,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_9MM * BULLET_WOUND_ACID
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT * BULLET_NAKED_WOUND_ACID
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -215,7 +218,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_9MM * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -257,7 +260,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_9MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_9MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_9MM * 0.5
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -293,7 +296,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -307,7 +310,7 @@
 	wound_bonus = RUBBERY_WOUND_PISTOL_38
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -324,7 +327,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -338,7 +341,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38 * BULLET_WOUND_ACID
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT * BULLET_NAKED_WOUND_ACID
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -368,7 +371,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38 * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -402,7 +405,7 @@
  */
 /obj/item/projectile/bullet/needle
 	name = "needle"
-	icon_state = "cbbolt"
+	icon_state = "needle"
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE
 	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS
@@ -411,10 +414,12 @@
 	wound_bonus = BULLET_WOUND_PISTOL_NEEDLE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	
+	supereffective_damage = 11
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 	var/piercing = FALSE // not sure what this does
 
 /obj/item/projectile/bullet/needle/improvised
@@ -428,7 +433,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -453,7 +458,8 @@
  */
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_10MM
+	damage = BULLET_DAMAGE_PISTOL_10MM //30
+	damage_list = list("20" = 8, "25" = 8, "30" = 55, "35" = 10, "40" = 19)
 	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM
@@ -461,7 +467,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_10MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_10MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -475,6 +481,7 @@
 /obj/item/projectile/bullet/c10mm/improvised
 	name = "handloaded 10mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_10MM_HANDLOAD
+	damage_list = list("17" = 15, "20" = 10, "25" = 10, "28" = 50, "35" = 10, "40" = 20)
 	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM_HANDLOAD
@@ -482,7 +489,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_10MM_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_10MM_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -503,7 +510,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_10MM_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_10MM_HANDLOAD * 0.5
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -524,10 +531,10 @@
 	wound_bonus = RUBBERY_WOUND_PISTOL_10MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_10MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	
+
 	sharpness = SHARP_NONE
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
@@ -548,7 +555,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_10MM * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_10MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -585,7 +592,8 @@
  */
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_45ACP
+	damage = BULLET_DAMAGE_PISTOL_45ACP //36
+	damage_list = list("25" = 5, "30" = 10, "33" = 15, "36" = 50, "40" = 5, "45" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP
@@ -593,7 +601,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -607,6 +615,7 @@
 /obj/item/projectile/bullet/c45/improvised
 	name = "handloaded .45 bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("20" = 5, "25" = 5, "28" = 15, "32" = 60, "36" = 5, "45" = 10)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
@@ -614,13 +623,14 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c45/simple
 	name = ".45 FMJ bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("20" = 5, "25" = 5, "28" = 15, "32" = 60, "36" = 5, "45" = 10)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_HANDLOAD * 2
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
@@ -628,7 +638,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP_HANDLOAD * 0.65
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -652,7 +662,7 @@
 	wound_bonus = RUBBERY_WOUND_PISTOL_45ACP
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -676,7 +686,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -715,7 +725,8 @@
  */
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_38
+	damage = BULLET_DAMAGE_PISTOL_38 //36
+	damage_list = list("30" = 5, "32" = 5, "33" = 10, "34" = 10, "36" = 50, "44" = 20)
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38
@@ -723,7 +734,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -737,6 +748,7 @@
 /obj/item/projectile/bullet/a357/improvised
 	name = "handloaded .357 bullet"
 	damage = BULLET_DAMAGE_PISTOL_38_HANDLOAD
+	damage_list = list("28" = 5, "30" = 5, "31" = 10, "32" = 10, "34" = 50, "44" = 20)
 	stamina = BULLET_STAMINA_PISTOL_38
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_38_HANDLOAD
@@ -744,7 +756,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -765,7 +777,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -792,7 +804,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38_MATCH * BULLET_WOUND_ACID
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT * BULLET_NAKED_WOUND_ACID
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -828,7 +840,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_38_MATCH * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_38_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_38_MATCH
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -862,7 +874,8 @@
  */
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_44
+	damage = BULLET_DAMAGE_PISTOL_44 //45
+	damage_list = list("25" = 5, "35" = 5, "42" = 10, "37" = 60, "45" = 5, "47" = 15)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44
@@ -870,7 +883,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_44
 	bare_wound_bonus = BULLET_WOUND_PISTOL_44_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_44
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -884,6 +897,7 @@
 /obj/item/projectile/bullet/m44/improvised
 	name = "handloaded .44 bullet"
 	damage = BULLET_DAMAGE_PISTOL_44_HANDLOAD
+	damage_list = list("27" = 7, "37" = 8, "39" = 10, "42" = 60, "47" = 5, "48" = 10)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44_HANDLOAD
@@ -891,7 +905,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_44_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_44_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_44_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -905,6 +919,7 @@
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 	damage = BULLET_DAMAGE_PISTOL_44_HANDLOAD
+	damage_list = list("27" = 10, "37" = 15, "39" = 60, "40" = 15)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44_HANDLOAD
@@ -912,7 +927,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_44_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_44_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_44_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -934,7 +949,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_44 * BULLET_WOUND_FIRE
 	bare_wound_bonus = BULLET_WOUND_PISTOL_44_NAKED_MULT * BULLET_NAKED_WOUND_FIRE
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_44
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -968,7 +983,8 @@
  */
 /obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
-	damage = BULLET_DAMAGE_PISTOL_14MM
+	damage = BULLET_DAMAGE_PISTOL_14MM //50, gott damn
+	damage_list = list("40" = 5, "45" = 5, "50" = 60, "58" = 15, "60" = 15)
 	stamina = BULLET_STAMINA_PISTOL_14MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_14MM
@@ -976,7 +992,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_14MM
 	bare_wound_bonus = BULLET_WOUND_PISTOL_14MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_14MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -990,6 +1006,7 @@
 /obj/item/projectile/bullet/mm14/improvised
 	name = "handloaded 14mm bullet"
 	damage = BULLET_DAMAGE_PISTOL_14MM_HANDLOAD
+	damage_list = list("30" = 5, "35" = 5, "45" = 60, "52" = 10, "58" = 10, "60" = 10)
 	stamina = BULLET_STAMINA_PISTOL_14MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_14MM_HANDLOAD
@@ -997,7 +1014,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_14MM_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_14MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_14MM_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1018,7 +1035,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_14MM * BULLET_WOUND_POISON
 	bare_wound_bonus = BULLET_WOUND_PISTOL_14MM_NAKED_MULT * BULLET_NAKED_WOUND_POISON
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_14MM
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	var/smoke_radius = 1
@@ -1065,6 +1082,7 @@
 /obj/item/projectile/bullet/a45lc
 	name = ".45 LC bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP
+	damage_list = list("20" = 5, "26" = 5, "29" = 15, "34" = 50, "37" = 5, "41" = 5, "52" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP
@@ -1072,7 +1090,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1093,6 +1111,7 @@
 /obj/item/projectile/bullet/a45lc/improvised
 	name = "handloaded .45 LC bullet"
 	damage = BULLET_DAMAGE_PISTOL_45ACP_HANDLOAD
+	damage_list = list("17" = 5, "23" = 5, "25" = 15, "30" = 50, "33" = 5, "38" = 5, "50" = 15)
 	stamina = BULLET_STAMINA_PISTOL_45ACP
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_45ACP_HANDLOAD
@@ -1100,7 +1119,7 @@
 	wound_bonus = BULLET_WOUND_PISTOL_45ACP_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_PISTOL_45ACP_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_45ACP_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -1123,7 +1142,7 @@
 	wound_bonus = BULLET_WOUND_GHOUL_ROCK
 	bare_wound_bonus = BULLET_WOUND_GHOUL_ROCK_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
+
 	pixels_per_second = BULLET_SPEED_GHOUL_ROCK
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 

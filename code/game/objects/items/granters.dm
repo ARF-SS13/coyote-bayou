@@ -1198,7 +1198,8 @@
 		/datum/crafting_recipe/redambrosia,
 		/datum/crafting_recipe/blueambrosia,
 		/datum/crafting_recipe/greenambrosia,
-		/datum/crafting_recipe/warmace)
+		/datum/crafting_recipe/warmace,
+		/datum/crafting_recipe/horsecream_good)
 
 /obj/item/book/granter/trait/tribaltraditions
 	name = "Tribal Traditions Booklet"
@@ -1389,5 +1390,5 @@
 		/datum/crafting_recipe/tommygun,
 		/datum/crafting_recipe/m1911,
 		/datum/crafting_recipe/policebaton,
-		/datum/crafting_recipe/bowman,
-		/datum/crafting_recipe/radiokeyresponder)
+		/*/datum/crafting_recipe/bowman,
+		/datum/crafting_recipe/radiokeyresponder*/)

@@ -464,15 +464,17 @@
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"
 	icon_state = "fireball"
-	damage = 29
+	damage = 75
 	damage_type = BRUTE
 	nodamage = 0
+	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 	//explosion values
 	var/exp_heavy = 0
-	var/exp_light = 0
+	var/exp_light = 1
 	var/exp_flash = 1
-	var/exp_fire = 0
+	var/exp_fire = 1
 
 /obj/item/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
@@ -598,3 +600,27 @@
 		M.adjustCloneLoss(-50)
 		M.adjustStaminaLoss(-0)
 		return
+
+/obj/item/projectile/magic/tenderwand
+	name = "mending bolt"
+	icon_state = "bruteheal"
+	damage = 0
+	nodamage  = TRUE
+
+/obj/item/projectile/magic/tenderwand/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/mob/living/carbon/M = target
+	if(ismob(target))
+		if(M.anti_magic_check())
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
+			return BULLET_ACT_BLOCK
+	if(iscarbon(target))
+		M.visible_message(span_warning("[src] mends [target]!"))
+		M.adjustBruteLoss(-15) //HEALS
+		M.adjustOxyLoss(-20)
+		M.adjustFireLoss(-10)
+		M.adjustToxLoss(-20, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-5)
+		M.adjustStaminaLoss(-10)
+		return
+

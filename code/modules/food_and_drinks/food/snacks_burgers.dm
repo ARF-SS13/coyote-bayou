@@ -369,3 +369,18 @@
 	if(prob(33))
 		icon_state = "cheeseburgeralt"
 
+/obj/item/reagent_containers/food/snacks/burger/sloppy
+	name = "sloppy joe"
+	desc = "Ground meat mixed with onions and barbeque sauce, sloppily plopped onto a burger bun. Delicious, but guaranteed to get your hands dirty."
+	icon_state = "sloppy_moe"
+	bonus_reagents = list(/datum/reagent/consumable/bbqsauce = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("bun" = 2, "juicy  meat" = 4, "BBQ sauce" = 3, "onions" = 2)
+	foodtype = GRAIN | MEAT
+
+/obj/item/reagent_containers/food/snacks/burger/philly_cheesesteak
+	name = "philly cheesesteak"
+	desc = "Tender bites of sirloin, sautéed peppers and onions, and melted provolone on a toasted bun."
+	icon_state = "philly_cheesesteak"
+	bonus_reagents = list(/datum/reagent/consumable/bbqsauce = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("bun" = 2, "juicy  meat" = 4, "peppers" = 3, "onions" = 2, "cheese" = 2)
+	foodtype = GRAIN | MEAT

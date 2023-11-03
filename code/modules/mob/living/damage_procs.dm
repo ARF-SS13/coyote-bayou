@@ -104,7 +104,7 @@
 		if(EFFECT_UNCONSCIOUS)
 			Unconscious(effect * hit_percent)
 		if(EFFECT_IRRADIATE)
-			radiation += max(effect * hit_percent, 0)
+			radiation = clamp(radiation += max(effect * hit_percent, 0),0,RAD_MOB_EXTREME*1.5)
 		if(EFFECT_SLUR)
 			slurring = max(slurring,(effect * hit_percent))
 		if(EFFECT_STUTTER)

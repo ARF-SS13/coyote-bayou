@@ -48,6 +48,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	masturbation_verb = "massage"
 	associated_has = CS_BUTT // for cockstring stuff
 	hide_flag = HIDE_BUTT // for hideflag stuff
+	pornhud_slot = PHUD_BUTT
 
 /obj/item/organ/genital/butt/modify_size(modifier, min = BUTT_SIZE_MIN, max = BUTT_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)

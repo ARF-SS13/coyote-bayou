@@ -399,6 +399,22 @@
 		if (total <= 0)
 			return item
 
+/proc/pickweightAllowZero(list/L) //The original pickweight proc will sometimes pick entries with zero weight.  I'm not sure if changing the original will break anything, so I left it be.
+	var/total = 0
+	var/item
+	for (item in L)
+		if (!L[item])
+			L[item] = 0
+		total += L[item]
+
+	total = rand(0, total)
+	for (item in L)
+		total -=L [item]
+		if (total <= 0 && L[item])
+			return item
+
+	return null
+
 //Picks a number of elements from a list based on weight.
 //This is highly optimised and good for things like grabbing 200 items from a list of 40,000
 //Much more efficient than many pickweight calls
@@ -574,6 +590,9 @@
 /proc/sortNames(list/L, order=1)
 	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
 
+//uses sortList() but uses the mob's ckey specifically!
+/proc/sortCkeys(list/L, order=1)
+	return sortTim(L, order >= 0 ? /proc/cmp_ckey_mob_asc : /proc/cmp_ckey_mob_dsc)
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)

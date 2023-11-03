@@ -69,81 +69,75 @@
 #define GRASS_SPONTANEOUS 		  2
 #define GRASS_WEIGHT			  4
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
-	/obj/structure/flora/grass/wasteland = 10,
-	/obj/structure/flora/wasteplant/wild_horsenettle = 5,
-	/obj/structure/flora/wasteplant/fever_blossom = 3,
-	/obj/structure/flora/wasteplant/wild_broc = 7,
-	/obj/structure/flora/wasteplant/wild_mesquite = 4,
-	/obj/structure/flora/wasteplant/wild_feracactus = 5,
-	/obj/structure/flora/wasteplant/wild_punga = 5,
-	/obj/structure/flora/wasteplant/wild_coyote = 5,
-	/obj/structure/flora/wasteplant/wild_tato = 5,
-	/obj/structure/flora/wasteplant/wild_yucca = 5,
-	/obj/structure/flora/wasteplant/wild_mutfruit = 5,
-	/obj/structure/flora/wasteplant/wild_prickly = 5,
-	/obj/structure/flora/wasteplant/wild_datura = 5,
-	/obj/structure/flora/wasteplant/wild_buffalogourd = 5,
-	/obj/structure/flora/wasteplant/wild_pinyon = 3,
-	/obj/structure/flora/wasteplant/wild_xander = 5,
-	/obj/structure/flora/wasteplant/wild_agave = 5,
-	/obj/structure/flora/tree_stump = 1,
-	/obj/structure/flora/tree_log = 1,
-	/obj/structure/flora/tree_timber = 1,
-	/obj/structure/flora/timber = 1,
-	/obj/structure/flora/tree_stump = 1,
+	/obj/structure/flora/grass/wasteland = 1,
+	))
+
+GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
+	/obj/structure/flora/grass/wasteland = 2,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
 	/obj/structure/flora/brushwoodalt = 1,
+	/obj/structure/flora/tree/med_pine = 2,
+	/obj/structure/flora/tree/med_pine_dead = 2,
+	/obj/structure/flora/grass/coyote/one = 2,
+	/obj/structure/flora/grass/coyote/two = 2,
+	/obj/structure/flora/grass/coyote/three = 2,
+	/obj/structure/flora/grass/coyote/four = 2,
+	/obj/structure/flora/grass/coyote/five = 2,
+	/obj/structure/flora/grass/coyote/six = 2,
+	/obj/structure/flora/grass/coyote/seven = 2,
+	/obj/structure/flora/grass/coyote/eight = 2,
+	/obj/structure/flora/grass/coyote/nine = 2,
+	/obj/structure/flora/grass/coyote/ten = 2,
+	/obj/structure/flora/grass/coyote/eleven = 2,
+	/obj/structure/flora/grass/coyote/twelve = 2,
+	/obj/structure/flora/grass/coyote/thirteen = 2,
+	/obj/structure/flora/grass/coyote/fourteen = 2,
+	/obj/structure/flora/grass/coyote/fiveteen = 2,
+	/obj/structure/flora/grass/coyote/sixteen = 2,
+	/obj/structure/flora/grass/coyote/seventeen = 2,
+	/obj/structure/flora/grass/coyote/eighteen = 2,
+	/obj/structure/flora/grass/coyote/nineteen = 2,
+	/obj/structure/flora/grass/coyote/twenty = 2,
+	/obj/structure/flora/grass/coyote/twentyone = 2,
+	/obj/structure/flora/grass/coyote/twentytwo = 2,
+	/obj/structure/flora/grass/coyote/twentythree = 2,
+	/obj/structure/flora/grass/coyote/twentyfour = 2,
+	/obj/structure/flora/grass/coyote/twentyfive = 2,
+	/obj/structure/flora/grass/coyote/twentysix = 2,
+	/obj/structure/flora/grass/coyote/twentyseven = 2,
+	/obj/structure/flora/grass/coyote/twentyeight = 2,
+	/obj/structure/flora/grass/coyote/twentynine = 2,
+	/obj/structure/flora/grass/coyote/thirty = 2,
+	/obj/structure/flora/wild_plant/thistle = 1,
+	/obj/structure/flora/wild_plant/petunia = 1,
+	/obj/structure/flora/wild_plant/petunia/purple = 1,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 1,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  1,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 1,
+	/obj/structure/flora/ausbushes/ppflowers = 1,
+	/obj/structure/flora/ausbushes/ywflowers = 1,
+	/obj/structure/flora/ausbushes/brflowers = 1,
+	/obj/structure/flora/ausbushes/stalkybush = 1,
+	/obj/structure/flora/ausbushes/sunnybush = 1,
+	/obj/structure/flora/ausbushes/palebush = 1,
+	/obj/structure/flora/ausbushes/pointybush = 1,
+	/obj/structure/flora/ausbushes/leafybush = 1,
+	/obj/structure/flora/ausbushes/fernybush = 1,
 	/obj/structure/flora/tree/med_pine = 1,
 	/obj/structure/flora/tree/med_pine_dead = 1,
-	/obj/structure/flora/grass/coyote/one = 1,
-	/obj/structure/flora/grass/coyote/two = 1,
-	/obj/structure/flora/grass/coyote/three = 1,
-	/obj/structure/flora/grass/coyote/four = 1,
-	/obj/structure/flora/grass/coyote/five = 1,
-	/obj/structure/flora/grass/coyote/six = 1,
-	/obj/structure/flora/grass/coyote/seven = 1,
-	/obj/structure/flora/grass/coyote/eight = 1,
-	/obj/structure/flora/grass/coyote/nine = 1,
-	/obj/structure/flora/grass/coyote/ten = 1,
-	/obj/structure/flora/grass/coyote/eleven = 1,
-	/obj/structure/flora/grass/coyote/twelve = 1,
-	/obj/structure/flora/grass/coyote/thirteen = 1,
-	/obj/structure/flora/grass/coyote/fourteen = 1,
-	/obj/structure/flora/grass/coyote/fiveteen = 1,
-	/obj/structure/flora/grass/coyote/sixteen = 1,
-	/obj/structure/flora/grass/coyote/seventeen = 1,
-	/obj/structure/flora/grass/coyote/eighteen = 1,
-	/obj/structure/flora/grass/coyote/nineteen = 1,
-	/obj/structure/flora/grass/coyote/twenty = 1,
-	/obj/structure/flora/grass/coyote/twentyone = 1,
-	/obj/structure/flora/grass/coyote/twentytwo = 1,
-	/obj/structure/flora/grass/coyote/twentythree = 1,
-	/obj/structure/flora/grass/coyote/twentyfour = 1,
-	/obj/structure/flora/grass/coyote/twentyfive = 1,
-	/obj/structure/flora/grass/coyote/twentysix = 1,
-	/obj/structure/flora/grass/coyote/twentyseven = 1,
-	/obj/structure/flora/grass/coyote/twentyeight = 1,
-	/obj/structure/flora/grass/coyote/twentynine = 1,
-	/obj/structure/flora/grass/coyote/thirty = 1,
-	/obj/structure/flora/tree/wasteland = 2,
-	/obj/structure/flora/tree/pink_tree = 3,
-	/obj/structure/flora/tree/oak_one = 3,
-	/obj/structure/flora/tree/oak_two = 3,
-	/obj/structure/flora/tree/oak_three = 3,
-	/obj/structure/flora/tree/oak_four = 3,
-	/obj/structure/flora/tree/oak_five = 3,
-	/obj/structure/flora/wild_plant/thistle = 10,
-	/obj/structure/flora/wild_plant/petunia = 10,
-	/obj/structure/flora/wild_plant/petunia/purple = 10,
-	/obj/structure/flora/wild_plant/petunia/purplewhite = 10,
-	/obj/structure/flora/wild_plant/petunia/redwhite =  10,
-	/obj/structure/flora/wild_plant/petunia/bluewhite = 10
-	))
-
-GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
-	/obj/structure/flora/grass/wasteland = 1
+	/obj/structure/flora/tree_stump = 1,
+	/obj/structure/flora/tree/african_acacia_dead = 1,
+	/obj/structure/flora/tree/tall = 1,
+	/obj/structure/flora/tree/oak_one = 1,
+	/obj/structure/flora/tree/oak_two = 1,
+	/obj/structure/flora/tree/oak_three = 1,
+	/obj/structure/flora/tree/oak_four = 1,
+	/obj/structure/flora/tree/oak_five = 1,
+	/obj/structure/flora/burnedtree1 = 1,
+	/obj/structure/flora/burnedtree2 = 1,
+	/obj/structure/flora/burnedtree5 = 1
 	))
 
 /turf/open/indestructible/ground/outside/dirthole
@@ -157,7 +151,7 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	name = "river"
 	icon_state = "riverwateruhh"
 	desc = "A river."
-	slowdown = 3
+	slowdown = 5
 	flags_1 = ADJACENCIES_OVERLAY
 
 
@@ -477,6 +471,27 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
 
+/turf/open/indestructible/ground/outside/water/AltClick(mob/user)
+	. = ..()
+	if(isliving(user))
+		var/mob/living/L = user
+		L.DelayNextAction(CLICK_CD_MELEE)
+		if(!user.incapacitated() && Adjacent(user))
+			user.visible_message(span_notice("[L] starts washing in \the [src]."),
+								span_notice("You start washing in \the [src]."),
+								span_notice("You hear splashing water and scrubbing."))
+			playsound(user,"water_wade",100,TRUE)
+			if(do_after(user,5 SECONDS, TRUE, src, TRUE,allow_movement=FALSE,stay_close=TRUE))
+				give_mob_washies(L)
+				user.visible_message(span_notice("[L] finishes washing in \the [src]."),
+									span_notice("You finish washing in \the [src]."),
+									span_notice("The splashing and scrubbing stops."))
+				playsound(user,"water_wade",100,TRUE)
+
+/turf/open/indestructible/ground/outside/water/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-Click \the [src] to wash yourself off.")
+
 /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = "o2=22;n2=82;TEMP=285"
 	name = "snow"
@@ -548,9 +563,8 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 
 /turf/open/indestructible/ground/inside/mountain/proc/plantShrooms()
 	if(prob(SHROOM_SPAWN_GROUND))
-		turfPlant = new /obj/structure/flora/wasteplant/wild_fungus(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		new /obj/structure/flora/wasteplant/wild_fungus(src)
+		return TRUE
 
 /turf/open/indestructible/ground/inside/mountain/New()
 	..()

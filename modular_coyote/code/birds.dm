@@ -25,7 +25,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG
-	gold_core_spawnable = FRIENDLY_SPAWN
+//	gold_core_spawnable = FRIENDLY_SPAWN
 	verb_say = "chirps"
 	verb_ask = "chirps inquisitively"
 	verb_exclaim = "chirps intensely"

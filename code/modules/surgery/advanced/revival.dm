@@ -65,7 +65,7 @@
 	target.updatehealth()
 	var/tplus = world.time - target.timeofdeath
 	if(target.revive())
-		user.visible_message("...[target] wakes up, alive and aware!", "<span class='notice'><b>IT'S ALIVE!</b></span>")
+		user.visible_message("...[target] wakes up, alive and aware!", span_notice("<b>IT'S ALIVE!</b>"))
 		target.visible_message("...[target] wakes up, alive and aware!")
 		target.emote("gasp")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 50, 199) //MAD SCIENCE

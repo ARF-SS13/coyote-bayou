@@ -700,12 +700,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/tajaran
 	name = "tajaran"
 	icon_state = "tajaran"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/tajaranshort
 	name = "tajaran short"
 	icon_state = "tajaranshort"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/cow
 	name = "cow"

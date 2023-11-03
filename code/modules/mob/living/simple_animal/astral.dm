@@ -30,8 +30,8 @@
 	var/posses_safe = FALSE
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 0
-	minbodytemp = 0
-	maxbodytemp = 100000
+	//minbodytemp = 0
+	//maxbodytemp = 100000
 	blood_volume = 0
 
 /mob/living/simple_animal/astral/death()
@@ -54,7 +54,7 @@
 				if(H.reagents.has_reagent(/datum/reagent/fermi/astral) && !H.mind)
 					var/datum/reagent/fermi/astral/As = locate(/datum/reagent/fermi/astral) in H.reagents.reagent_list
 					if(As.originalmind == src.mind && As.current_cycle < 10 && H.stat != DEAD) //So you can return to your body.
-						to_chat(src, "<span class='warning'><b><i>The intensity of the astrogen in your body is too much allow you to return to yourself yet!</b></i></span>")
+						to_chat(src, span_warning("<b><i>The intensity of the astrogen in your body is too much allow you to return to yourself yet!</b></i>"))
 						return
 					to_chat(src, "<b><i>You astrally possess [H]!</b></i>")
 					log_reagent("FERMICHEM: [src] has astrally possessed [A]!")

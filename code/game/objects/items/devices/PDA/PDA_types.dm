@@ -28,13 +28,13 @@
 
 /obj/item/pda/security
 	name = "security PDA"
-	default_cartridge = /obj/item/cartridge/security
+	//default_cartridge = /obj/item/cartridge/security
 	icon_state = "pda-security"
 	skindex = "Security PDA"
 
 /obj/item/pda/detective
 	name = "detective PDA"
-	default_cartridge = /obj/item/cartridge/detective
+	//default_cartridge = /obj/item/cartridge/detective
 	icon_state = "pda-detective"
 	skindex = "Detective PDA"
 
@@ -71,7 +71,7 @@
 
 /obj/item/pda/heads/hos
 	name = "head of security PDA"
-	default_cartridge = /obj/item/cartridge/hos
+	//default_cartridge = /obj/item/cartridge/hos
 	icon_state = "pda-hos"
 	skindex = "Head of Security PDA"
 

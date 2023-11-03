@@ -14,7 +14,7 @@
 	faction = list("neutral")
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	move_to_delay = 10
 	health = 125
 	maxHealth = 125
@@ -86,7 +86,7 @@
 		. += "<b>[stored_gun.get_remaining_mod_capacity()]%</b> mod capacity remaining."
 		for(var/A in stored_gun.get_modkits())
 			var/obj/item/borg/upgrade/modkit/M = A
-			. += "<span class='notice'>There is \a [M] installed, using <b>[M.cost]%</b> capacity.</span>"
+			. += span_notice("There is \a [M] installed, using <b>[M.cost]%</b> capacity.")
 
 /mob/living/simple_animal/hostile/mining_drone/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -168,10 +168,11 @@
 	to_chat(src, span_info("You are set to attack mode. You can now attack from range."))
 
 /mob/living/simple_animal/hostile/mining_drone/AttackingTarget()
-	if(istype(target, /obj/item/stack/ore) && mode == MINEDRONE_COLLECT)
+	var/atom/my_target = get_target()
+	if(istype(my_target, /obj/item/stack/ore) && mode == MINEDRONE_COLLECT)
 		CollectOre()
 		return
-	if(isliving(target))
+	if(isliving(my_target))
 		SetOffenseBehavior()
 	return ..()
 

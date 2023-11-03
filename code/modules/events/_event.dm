@@ -1,3 +1,5 @@
+#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME 10
+
 //this datum is used by the events controller to dictate how it selects events
 /datum/round_event_control
 	var/name						//The human-readable name of the event
@@ -35,6 +37,9 @@
 
 	var/triggering	//admin cancellation
 
+	/// Whether or not dynamic should hijack this event
+	var/dynamic_should_hijack = FALSE
+
 /datum/round_event_control/New()
 	if(ignore_config || wizardevent)
 		return
@@ -63,6 +68,11 @@
 		return FALSE
 	if(holidayID && (!SSevents.holidays || !SSevents.holidays[holidayID]))
 		return FALSE
+
+	var/datum/game_mode/dynamic/dynamic = SSticker.mode
+	if (istype(dynamic) && dynamic_should_hijack && dynamic.random_event_hijacked != HIJACKED_NOTHING)
+		return FALSE
+
 	return TRUE
 
 /datum/round_event_control/wizard/canSpawnEvent(players_amt, gamemode)
@@ -75,14 +85,18 @@
 /datum/round_event_control/proc/canSpawnLoopingEvent()
 	return !active
 
+
 /datum/round_event_control/proc/preRunEvent()
 	if(!ispath(typepath, /datum/round_event))
 		return EVENT_CANT_RUN
 
+	if (SEND_GLOBAL_SIGNAL(COMSIG_GLOB_PRE_RANDOM_EVENT, src) & CANCEL_PRE_RANDOM_EVENT)
+		return EVENT_INTERRUPTED
+
 	triggering = TRUE
 	if (alert_observers)
-		message_admins("Random Event triggering in 30 seconds: [name] (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>)")
-		sleep(300)
+		message_admins("Random Event triggering in [RANDOM_EVENT_ADMIN_INTERVENTION_TIME] seconds: [name] (<a href='?src=[REF(src)];cancel=1'>CANCEL</a>)")
+		sleep(RANDOM_EVENT_ADMIN_INTERVENTION_TIME SECONDS)
 		var/gamemode = SSticker.mode.config_tag
 		var/players_amt = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
 		if(!canSpawnEvent(players_amt, gamemode))

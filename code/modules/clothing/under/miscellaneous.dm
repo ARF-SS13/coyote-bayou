@@ -1583,6 +1583,14 @@
 	item_color = "greek_dress"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/loincloth
+	name = "grassy loincloth"
+	desc = "Yep, that sure hardly covers anything."
+	icon_state = "loincloth"
+	item_state = "loincloth"
+	item_color = "loincloth"
+	can_adjust = FALSE
+
 // Bayou Stuff - started by Kelprunner
 
 /obj/item/clothing/under/tactiflannel
@@ -1593,3 +1601,75 @@
 	item_color = "tactiflannel"
 	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/under/frogsuit // nuh uh
+	name = "frogsuit"
+	desc = "A suit designed for sneaking and dynamic entry. Has tacticool straps for keeping additional armor snug to the body."
+	icon_state = "rachel_frogsuit"
+	item_state = "rachel_frogsuit"
+	item_color = "rachel_frogsuit"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeve
+	name = "black qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_nosleeve"
+	item_state = "qipao_nosleeve"
+	item_color = "qipao_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_white_nosleeve"
+	item_state = "qipao_white_nosleeve"
+	item_color = "qipao_white_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleevered
+	name = "red qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_red_nosleeve"
+	item_state = "qipao_red_nosleeve"
+	item_color = "qipao_red_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	desc = "A fancy outfit with no sleeves"
+	icon_state = "qipao_teal_nosleeve"
+	item_state = "qipao_teal_nosleeve"
+	item_color = "qipao_teal_nosleeve"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/dress/coyote/jute
+	name = "jute dress"
+	desc = "A brown adjustable dress."
+	icon_state = "jute"
+	item_state = "jute"
+	item_color = "jute"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/striped_skirt
+	name = "striped skirt dress"
+	desc = "A red and striped adjustable dress."
+	icon_state = "striped_skirt"
+	item_state = "striped_skirt"
+	item_color = "striped_skirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/red_skirt
+	name = "red skirt dress"
+	desc = "A red adjustable dress."
+	icon_state = "red_skirt"
+	item_state = "red_skirt"
+	item_color = "red_skirt"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/dress/coyote/black_skirt
+	name = "black skirt dress"
+	desc = "A black adjustable dress."
+	icon_state = "black_skirt"
+	item_state = "black_skirt"
+	item_color = "black_skirt"
+	can_adjust = TRUE

@@ -49,9 +49,9 @@
 		track.namecounts[name] = 1
 
 		if(ishuman(L))
-			track.humans[name] = L
+			track.humans[name] = WEAKREF(L)
 		else
-			track.others[name] = L
+			track.others[name] = WEAKREF(L)
 
 	var/list/targets = sortList(track.humans) + sortList(track.others)
 

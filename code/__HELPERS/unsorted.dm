@@ -263,13 +263,16 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/list/mobs = sortmobs()
 	var/list/namecounts = list()
 	var/list/pois = list()
+	var/admeme = check_rights(R_ADMIN, FALSE)
 	for(var/mob/M in mobs)
 		if(skip_mindless && (!M.mind && !M.ckey))
 			if(!isbot(M) && !iscameramob(M) && !ismegafauna(M))
 				continue
-		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
+		if(!admeme && M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
 		var/name = avoid_assoc_duplicate_keys(M.name, namecounts)
+		if(!admeme && (isdead(M) && (lowertext(M.real_name) == M.ckey || lowertext(M.name) == M.ckey)))
+			name = pick(GLOB.cow_names + GLOB.carp_names + GLOB.megacarp_last_names)
 
 		if(M.real_name && M.real_name != M.name)
 			name += " \[[M.real_name]\]"
@@ -498,6 +501,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/steps = 1
 	if(current != target_turf)
 		current = get_step_towards(current, target_turf)
+		if (!current)
+			return 0 // How did you get from somewhere to nowhere????
 		while(current != target_turf)
 			if(steps > length)
 				return 0
@@ -1629,13 +1634,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /// REcursively searches through the atom's loc, looking for a type path, aborting if it hits a turf
 /proc/recursive_loc_path_search(atom/haystack, pathtype, max_depth = 5)
+	if(!haystack)
+		return // There is no haystack, or needle for that matter
 	if(max_depth <= 0)
 		return // we've gone too deep
 	if(istype(haystack, pathtype))
 		return haystack
 	if(isturf(haystack))
 		return
-	if(haystack.loc)
+	if(haystack && haystack.loc)
 		return recursive_loc_path_search(haystack.loc, pathtype, max_depth - 1)
 
 /// Recursively searches through everything in a turf for atoms. Will recursively search through all those atoms for atoms, and so on.
@@ -1703,7 +1710,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return LAZYACCESS(first_last, 1)
 	return rname
 
-/proc/ckey2mob(ckey)
+/proc/ckey2mob(ckey) // I know its already a proc up in this document, mine's better
 	var/client/clint = LAZYACCESS(GLOB.directory, ckey)
 	if(!clint)
 		return null
@@ -1728,6 +1735,21 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(!clont)
 			return // probably... disconnected? v0v
 		return clont.prefs
+	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+
+/// Takes in a mob, client, or even prefs, and returns their ckey
+/proc/extract_ckey(something) // one way or another, im getting your ckey (to break)
+	if(istext(something))
+		return something
+	if(isclient(something))
+		var/client/clint = something
+		return clint.ckey
+	if(istype(something, /datum/preferences)) // prefs? good, i'll take it
+		var/datum/preferences/P = something
+		return P.parent.ckey
+	if(ismob(something))
+		var/mob/mobby = something
+		return mobby.ckey
 	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Makes a gaussian distribution, returning a positive integer

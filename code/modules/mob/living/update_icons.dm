@@ -5,6 +5,8 @@
 	var/changed = 0
 
 	appearance_flags |= PIXEL_SCALE
+	if(fuzzy)
+		appearance_flags &= ~PIXEL_SCALE
 
 	if(lying != lying_prev && rotate_on_lying)
 		changed++

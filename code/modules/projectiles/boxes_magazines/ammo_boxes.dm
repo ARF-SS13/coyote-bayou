@@ -119,6 +119,7 @@
 
 /obj/item/ammo_box/m22/rubber
 	name = "ammo box (.22lr rubber)"
+	icon_state = "22rubber"
 	desc = "A box of .22 rubber rounds. For when you want to be useless."
 	ammo_type = /obj/item/ammo_casing/a22/rubber
 
@@ -127,6 +128,28 @@
 	icon_state = "22shockbox"
 	desc = "A box of .22 electroshock rounds."
 	ammo_type = /obj/item/ammo_casing/a22/shock
+
+/obj/item/ammo_box/m22/ratshot
+	name = "ammo box (.22lr ratshot)"
+	icon_state = "22ratshot"
+	desc = "A box of .22 ratshot rounds."
+	ammo_type = /obj/item/ammo_casing/a22/ratshot
+
+
+//needle ammo
+
+/obj/item/ammo_box/needlercapsule
+	name = "Capsule full of needles"
+	icon_state = "needlecapsule"
+	desc = "A capsule filled to the brim with needles"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	multiple_sprites = 2
+	max_ammo = 72
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 
 //9mm and .38
 /obj/item/ammo_box/c9mm
@@ -265,7 +288,7 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_44)
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 20
+	max_ammo = 21
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
@@ -1000,6 +1023,22 @@
 
 /obj/item/ammo_box/a308/doublestacked/empty
 	start_empty = 1
+
+/obj/item/ammo_box/a22
+	name = "stripper clip (.22LR)"
+	icon_state = "308"
+	caliber = list(CALIBER_22LR)
+	ammo_type = /obj/item/ammo_casing/a22
+	max_ammo = 5
+	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	randomize_ammo_count = TRUE
+
+/obj/item/ammo_box/a22/Initialize()
+	.=..()
+	transform *= 0.6
+	special_transform = transform
 
 //5.56x45mm
 /obj/item/ammo_box/a556/stripper

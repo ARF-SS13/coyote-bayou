@@ -100,3 +100,41 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/cubannachos
 	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/chimi
+	name ="Classic Chimichanga"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
+		/obj/item/reagent_containers/food/snacks/tortilla = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/classicchimichanga
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/vegggiechimi
+	name ="vegetiable Chimichanga"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
+		/obj/item/reagent_containers/food/snacks/tortilla = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/veggiechimichanga
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/refriedbeans
+	name ="refried beans"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/soybeans = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/refriedbeans
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/spanishrice
+	name ="spanish rice"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
+		/obj/item/reagent_containers/food/condiment/rice = 5,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/spanish_rice
+	subcategory = CAT_MEAT

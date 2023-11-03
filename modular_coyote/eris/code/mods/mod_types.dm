@@ -132,7 +132,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL_1H = 1.5,
 		GUN_UPGRADE_RECOIL_2H = 1.5,
-		GUN_UPGRADE_DAMAGE_MULT = 1.15,
+		//GUN_UPGRADE_DAMAGE_MULT = 1.15,
 		GUN_UPGRADE_PEN_MULT = 1.2,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
 		GUN_UPGRADE_MUZZLEFLASH = 1.5,
@@ -179,9 +179,9 @@
 	)*/
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.10,
-		GUN_UPGRADE_RECOIL_1H = 1.5,
-		GUN_UPGRADE_RECOIL_2H = 1.5,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.25,
+		GUN_UPGRADE_RECOIL_1H = 2.0,
+		GUN_UPGRADE_RECOIL_2H = 1.25,
+//		GUN_UPGRADE_FIRE_DELAY_MULT = 1.25,
 	/*	GUN_UPGRADE_CHARGECOST = 1.25	*/
 	)
 	I.prefix = "boosted"
@@ -207,6 +207,8 @@
 	)
 	I.gun_loc_tag = GUN_UNDERBARREL
 	I.prefix = "laser-guided"
+
+
 
 //Fits onto generally small tools that require precision, especially surgical tools
 //Doesn't work onlarger things like crowbars and drills

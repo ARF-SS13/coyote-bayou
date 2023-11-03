@@ -53,6 +53,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
 
+	var/list/aghost_squelches = list()
+
 	/// Custom Keybindings
 	var/list/key_bindings = list()
 	/// List with a key string associated to a list of keybindings. Unlike key_bindings, this one operates on raw key, allowing for binding a key that triggers regardless of if a modifier is depressed as long as the raw key is sent.
@@ -77,7 +79,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_color = "#808000"
 	var/pda_skin = PDA_SKIN_CLASSIC
 
+	var/genital_whitelist = ""
+	var/whoflags = DEFAULT_WHO_FLAGS
+	var/lockouts = NONE
+
 	var/uses_glasses_colour = 0
+
+	var/show_in_directory = TRUE
+	var/directory_tag = "Unset"
+	var/directory_erptag = "Unset"
+	var/directory_ad = "Hi"
 
 	//character preferences
 	var/real_name						//our character's name
@@ -104,6 +115,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/right_eye_color = "000000"
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
+	var/tbs = TBS_DEFAULT // turner broadcasting system
+	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
@@ -316,11 +329,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/custom_pixel_x = 0
 	var/custom_pixel_y = 0
 
+	var/permanent_tattoos = ""
+
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
 
 	/// Versioning hack! Versioning hack! Versioning hack!
 	var/list/current_version = list()
+
+	var/fuzzy = FALSE //Fuzzy scaling
 
 
 /datum/preferences/New(client/C)
@@ -425,6 +442,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 			dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Top/Bottom/Switch:</b> <a href='?_src_=prefs;preference=tbs;task=input'>[tbs]</a><BR>"
+			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
 			//Middle Column
 			dat +="<td width='30%' valign='top'>"
@@ -576,19 +595,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[creature_ooc]<br>"
 			else
 				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(!creature_image && creature_species)
-				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+			if(creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))
 					generate_selectable_creatures()
-				if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+				if(!(creature_species in GLOB.creature_selectable))
 					creature_species = initial(creature_species)
-				var/creature_type = GLOB.creature_selectable["[creature_species]"]
-				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
-					var/mob/living/M = new creature_type(user)
-					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
-					qdel(M)
-			if(creature_image)
-				dat += "[icon2html(creature_image, user)]<br>"
-
+				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
 			dat += "<h3>Pixel Offsets</h3>"
 			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
 			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"
@@ -628,6 +640,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 			if (CONFIG_GET(number/body_width_min) != CONFIG_GET(number/body_width_max))
 				dat += "<b>Sprite Width:</b> <a href='?_src_=prefs;preference=body_width;task=input'>[features["body_width"]*100]%</a><br>"
+			dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 
 			if(!(NOEYES in pref_species.species_traits))
 				dat += "<h3>Eye Type</h3>"
@@ -663,17 +676,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Sound Indicator Preferences</h2>"
 			dat += "<b>Sound Ind. Enable:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><BR>"
-			dat += "<b>Sound Ind. Tone:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><BR>"
-			dat += "<b>Sound Ind. Speed:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_speed;task=input'>[features_speech["typing_indicator_speed"]]</a><BR>"
-			dat += "<b>Sound Ind. Pitch:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_pitch;task=input'>[features_speech["typing_indicator_pitch"]]</a><BR>"
-			dat += "<b>Sound Ind. Variance:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_variance;task=input'>[features_speech["typing_indicator_variance"]]</a><BR>"
-			dat += "<b>Sound Ind. Volume:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_volume;task=input'>[features_speech["typing_indicator_volume"]]</a><BR>"
-			dat += "<b>Sound Ind. Max Audible Words:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_max_words_spoken;task=input'>[features_speech["typing_indicator_max_words_spoken"]]</a><BR>"
 			//dat += "<BR><a href='?_src_=prefs;preference=soundindicatorpreview'>Preview Sound Indicator</a><BR>"
 
@@ -1113,7 +1120,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								?_src_=prefs;
 								preference=bag;
 								task=input'>
-								Sackpack
+								[backbag]
 							</a>"}
 					dat += "<div class='undies_link'>-</div>"
 					dat += "</td>"
@@ -1124,7 +1131,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									href='
 										?_src_=prefs;
 										preference=persistent_scars'>
-											Enabled
+											[persistent_scars ? "Enabled" : "Disabled"]
 								</a>"}
 					dat += {"<a 
 									class='undies_link' 
@@ -2178,11 +2185,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 // 			return bal + 33 //max 33 point regardless of how many prosthetics
 // 	return bal
 
-// /datum/preferences/proc/GetPositiveQuirkCount()
-// 	. = 0
-// 	for(var/q in char_quirks)
-// 		if(SSquirks.quirk_points[q] > 0)
-// 			.++
+/datum/preferences/proc/update_genital_whitelist()
+	var/new_genital_whitelist = stripped_multiline_input_or_reflect(
+		parent, 
+		"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
+		any of the following, if their genitals are showing, you will be able to see them, regardless of your \
+		content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
+		Separate your entries with a comma!",
+		"Genital Whitelist",
+		genital_whitelist)
+	if(isnull(new_genital_whitelist))
+		to_chat(parent, "Never mind!!")
+		return
+	if(trim(new_genital_whitelist) == "" && trim(genital_whitelist) != "")
+		var/whoa = alert(usr, "Are you sure you want to clear your genital whitelist?", "Clear Genital Whitelist", "Yes", "No")
+		if(whoa == "No")
+			to_chat(parent, "Never mind!!")
+			return
+	genital_whitelist = new_genital_whitelist
+	to_chat(parent, span_notice("Updated your genital whitelist! It should kick in soon!"))
+	save_preferences()
 
 /datum/preferences/Topic(href, href_list, hsrc)			//yeah, gotta do this I guess..
 	. = ..()
@@ -2220,20 +2242,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(href_list["preference"] == "change_genital_order")
 		shift_genital_order(href_list["which"], (href_list["direction"]=="up"))
 	if(href_list["preference"] == "change_genital_whitelist")
-		var/new_genital_whitelist = stripped_multiline_input_or_reflect(
-			user, 
-			"Which people are you okay with seeing their genitals when exposed? If a humanlike mob has a name containing \
-			any of the following, if their genitals are showing, you will be able to see them, regardless of your \
-			content settings. Partial names are accepted, case is not important, please no punctuation (except ','). \
-			Keep in mind this matches their 'real' name, so 'unknown' likely won't do much. Separate your entries with a comma!",
-			"Genital Whitelist",
-			features["genital_whitelist"])
-		if(new_genital_whitelist == "")
-			var/whoathere = alert(user, "This will clear your genital whitelist, you sure?", "Just checkin'", "Yes", "No")
-			if(whoathere == "Yes")
-				features["genital_whitelist"] = new_genital_whitelist
-		else if(!isnull(new_genital_whitelist))
-			features["genital_whitelist"] = new_genital_whitelist
+		update_genital_whitelist()
 	if(href_list["preference"] == "change_genital_clothing")
 		var/list/genital_overrides = GENITAL_CLOTHING_FLAG_LIST
 		var/new_visibility = input(user, "When your genitals are visible, how should they appear in relation to your clothes/underwear?", "Character Preference", href_list["nadflag"]) as null|anything in GENITAL_CLOTHING_FLAG_LIST
@@ -2489,6 +2498,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(!isnull(msg))
 						creature_ooc = msg
 
+				if("tbs")
+					var/new_tbs = input(user, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+					if(new_tbs)
+						tbs = new_tbs
+				if("kisser")
+					var/newkiss = input(user, "What sort of person do you like to kisser?", "Character Preference") as null|anything in KISS_LIST
+					if(newkiss)
+						kisser = newkiss
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)
@@ -3218,7 +3235,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("butt_size")
 					var/min_B = CONFIG_GET(number/butt_min_size_prefs)
@@ -3341,6 +3358,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								return
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
+
+				if("toggle_fuzzy")
+					fuzzy = !fuzzy
 
 				if("body_width")
 					var/min = CONFIG_GET(number/body_width_min)
@@ -3769,11 +3789,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
-						var/obj/screen/plane_master/game_world/G = parent.mob.hud_used.plane_masters["[GAME_PLANE]"]
-						var/obj/screen/plane_master/objitem/OI = parent.mob.hud_used.plane_masters["[OBJITEM_PLANE]"]
-						var/obj/screen/plane_master/mob/M = parent.mob.hud_used.plane_masters["[MOB_PLANE]"]
-						var/obj/screen/plane_master/above_wall/A = parent.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"]
-						var/obj/screen/plane_master/wall/W = parent.mob.hud_used.plane_masters["[WALL_PLANE]"]
+						var/atom/movable/screen/plane_master/game_world/G = parent.mob.hud_used.plane_masters["[GAME_PLANE]"]
+						var/atom/movable/screen/plane_master/objitem/OI = parent.mob.hud_used.plane_masters["[OBJITEM_PLANE]"]
+						var/atom/movable/screen/plane_master/mob/M = parent.mob.hud_used.plane_masters["[MOB_PLANE]"]
+						var/atom/movable/screen/plane_master/above_wall/A = parent.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"]
+						var/atom/movable/screen/plane_master/wall/W = parent.mob.hud_used.plane_masters["[WALL_PLANE]"]
 						G.backdrop(parent.mob)
 						OI.backdrop(parent.mob)
 						M.backdrop(parent.mob)
@@ -3910,6 +3930,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.special_i = special_i
 	character.special_a = special_a
 	character.special_l = special_l
+	character.fuzzy = fuzzy
 
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
@@ -3993,7 +4014,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//delete any existing prosthetic limbs to make sure no remnant prosthetics are left over - But DO NOT delete those that are species-related
 		for(var/obj/item/bodypart/part in character.bodyparts)
 			if(part.status == BODYPART_ROBOTIC && !part.render_like_organic)
-				qdel(part)
+				QDEL_NULL(part)
 		character.regenerate_limbs() //regenerate limbs so now you only have normal limbs
 		for(var/modified_limb in modified_limbs)
 			var/modification = modified_limbs[modified_limb][1]
@@ -4013,7 +4034,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(prosthetic_type != "prosthetic") //lets just leave the old sprites as they are
 					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
 				new_limb.replace_limb(character)
-			qdel(old_part)
+			QDEL_NULL(old_part)
 
 	SEND_SIGNAL(character, COMSIG_HUMAN_PREFS_COPIED_TO, src, icon_updates, roundstart_checks)
 

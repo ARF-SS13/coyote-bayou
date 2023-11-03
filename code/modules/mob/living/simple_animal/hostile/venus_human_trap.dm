@@ -107,12 +107,23 @@
 		return
 	pull_vines()
 
+/mob/living/simple_animal/hostile/venus_human_trap/death(gibbed)
+	QDEL_LIST(vines)
+	. = ..()
+
+/mob/living/simple_animal/hostile/venus_human_trap/Destroy()
+	QDEL_LIST(vines)
+	. = ..()
+
+
 /mob/living/simple_animal/hostile/venus_human_trap/AttackingTarget()
 	. = ..()
-	if(isliving(target))
-		var/mob/living/L = target
-		if(L.stat != DEAD)
-			adjustHealth(-maxHealth * 0.1)
+	var/atom/my_target = get_target()
+	if(!isliving(my_target))
+		return
+	var/mob/living/L = my_target
+	if(L.stat != DEAD)
+		adjustHealth(-maxHealth * 0.1)
 
 /mob/living/simple_animal/hostile/venus_human_trap/OpenFire(atom/the_target)
 	for(var/datum/beam/B in vines)
@@ -122,7 +133,7 @@
 			return
 	if(get_dist(src,the_target) > vine_grab_distance || vines.len == max_vines)
 		return
-	for(var/turf/T in getline(src,target))
+	for(var/turf/T in getline(src, get_target()))
 		if (T.density)
 			return
 		for(var/obj/O in T)

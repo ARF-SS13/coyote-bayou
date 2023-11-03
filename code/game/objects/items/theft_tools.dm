@@ -285,7 +285,7 @@
 		qdel(AM)
 	if (user)
 		user.visible_message(span_danger("As [user] touches [AM] with \a [src], silence fills the room..."),\
-			"<span class='userdanger'>You touch [AM] with [src], and everything suddenly goes silent.</span>\n<span class='notice'>[AM] and [sliver] flash into dust, and soon as you can register this, you do as well.</span>",\
+			span_userdanger("You touch [AM] with [src], and everything suddenly goes silent.</span>\n<span class='notice'>[AM] and [sliver] flash into dust, and soon as you can register this, you do as well."),\
 			span_italic("Everything suddenly goes silent."))
 		user.dust()
 	radiation_pulse(src, 500, 2)

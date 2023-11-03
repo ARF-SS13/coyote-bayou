@@ -231,6 +231,7 @@
 	product_slogans = "Do I look like your girlfriend?;I don't look like a ghost, do I?;Feel how warm I am?;It doesn't matter who I am.;Come and get me.;"
 	vend_reply = "Hurry back!"
 	products = list(/obj/item/tattoo_gun = 5,
+					/obj/item/tattoo_remover = 5,
 					/obj/item/tattoo_holder/blank = 20,
 					/obj/item/tattoo_holder/blank/temporary = 20,
 					/obj/item/clothing/under/f13/fprostitute = 5,

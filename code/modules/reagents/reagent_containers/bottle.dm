@@ -446,6 +446,7 @@
 	list_reagents = list(/datum/reagent/blackpowder = 60)
 
 // FEV
+/*
 /obj/item/reagent_containers/glass/bottle/FEV_solution
 	name = "FEV bottle"
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
@@ -458,7 +459,7 @@
 /obj/item/reagent_containers/glass/bottle/FEV_solution/curling
 	name = "Curling-13 bottle"
 	list_reagents = list(/datum/reagent/toxin/FEV_solution/curling = 30)
-
+*/
 //Curling 13 vaccine
 /obj/item/reagent_containers/glass/bottle/curling_vaccine
 	name = "Curling 13 vaccine bottle"
@@ -522,3 +523,9 @@
 	var/bottle_name = pick("candy", "fun", "discarded", "forgotten", "old", "ancient", "random", "unknown", "strange", "abandoned", "hobo", "trash", "forsaken", "alluring", "peculiar", "anomalous", "unfamiliar", "odd", "funny", "tasty", "neglected", "mysterious", "strange")
 	name = "[bottle_name] bottle"
 	. = ..()
+
+/obj/item/reagent_containers/glass/bottle/synthjuice
+	name = "synthetic repair paste"
+	desc = "A small bottle full of synthetic repair gel. Not for organic consumption."
+	volume = 120
+	list_reagents = list(/datum/reagent/fuel/robo_repair_gel = 120)

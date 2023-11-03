@@ -9,6 +9,9 @@
 	desc = "This weapon consists of an absurd number of disparate mining technologies that are, somehow, \
 			kludged together to create an incredibly effective weapon and mining tool. Good at obliterating rock, steel, and flesh alike."
 	force = 25 // clunky and heavy, not good for one hand
+	force_unwielded = 25
+	force_wielded = 50 // frankly, this entire file is a mess and probably needs to be redone entirely but I do *not* have the skill for that. -Kelp
+	weapon_special_component = /datum/component/weapon_special // Because this isn't a child of melee weapons, it needs this to attack without direct clicks.
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 	throwforce = 40
@@ -28,8 +31,10 @@
 	var/backstab_bonus = 30
 
 /obj/item/kinetic_crusher/cyborg //probably give this a unique sprite later
-	desc = "An integrated version of the standard kinetic crusher with a grinded down axe head to dissuade mis-use against crewmen. Deals damage equal to the standard crusher against creatures, however."
-	force = 10 //wouldn't want to give a borg a 20 brute melee weapon unemagged now would we
+	desc = "An integrated version of the standard kinetic crusher."
+	force = 40 // it's the wasteland and post-apoc in a dystopia. Robro gonna smash.
+	force_unwielded = null
+	force_wielded = null
 	detonation_damage = 90
 	wielded = 1
 
@@ -57,8 +62,8 @@
 
 /obj/item/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += span_notice("Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.")
+	. += span_notice("Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
 		. += span_notice("It has \a [T] attached, which causes [T.effect_desc()].")
@@ -175,6 +180,7 @@
 	icon_state = "crusher-glaive"
 	item_state = "crusher0-glaive"
 	detonation_damage = 20
+	max_reach = 2
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
@@ -222,7 +228,7 @@
 /obj/item/kinetic_crusher/glaive/update_icon_state()
 	item_state = "crusher[wielded]-glaive" // this is not icon_state and not supported by 2hcomponent
 
-//destablizing force
+
 /obj/item/projectile/destabilizer
 	name = "destabilizing force"
 	icon_state = "pulse1"
@@ -253,6 +259,7 @@
 		new /obj/effect/temp_visual/kinetic_blast(M)
 		M.gets_drilled(firer)
 	..()
+
 
 //trophies
 /obj/item/crusher_trophy

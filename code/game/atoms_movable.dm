@@ -43,6 +43,7 @@
 	var/atom/movable/pulling
 	var/grab_state = 0
 	var/throwforce = 0
+	var/throwforce_bonus = 0
 	var/datum/component/orbiter/orbiting
 	var/can_be_z_moved = TRUE
 	///If we were without gravity and another animation happened, the bouncing will stop, and we need to restart it in next life().

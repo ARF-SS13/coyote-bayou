@@ -353,7 +353,7 @@
 	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000*/
-
+/*
 /datum/techweb_node/advplumbing
 	id = "advplumbing"
 	display_name = "Advanced Plumbing Technology"
@@ -361,6 +361,7 @@
 	prereq_ids = list("plumbing", "adv_engi")
 	design_ids = list("plumb_rcd", "autohydrotray")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+*/
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"

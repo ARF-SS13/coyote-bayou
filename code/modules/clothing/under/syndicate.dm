@@ -5,6 +5,7 @@
 	item_state = "bl_suit"
 	has_sensor = NO_SENSORS
 	alt_covers_chest = TRUE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/syndicate/skirt
 	name = "tactical skirtleneck"

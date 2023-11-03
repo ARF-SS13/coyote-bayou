@@ -109,13 +109,13 @@
 
 
 /datum/status_effect/agent_pinpointer/hunter_edition
-	alert_type = /obj/screen/alert/status_effect/agent_pinpointer/hunter_edition
+	alert_type = /atom/movable/screen/alert/status_effect/agent_pinpointer/hunter_edition
 	minimum_range = HUNTER_SCAN_MIN_DISTANCE
 	tick_interval = HUNTER_SCAN_PING_TIME
 	duration = 160 // Lasts 10s
 	range_fuzz_factor = 5//PINPOINTER_EXTRA_RANDOM_RANGE
 
-/obj/screen/alert/status_effect/agent_pinpointer/hunter_edition
+/atom/movable/screen/alert/status_effect/agent_pinpointer/hunter_edition
 	name = "Monster Tracking"
 	desc = "You always know where the hellspawn are."
 
@@ -140,7 +140,7 @@
 	// Found one!
 	if(vamps.len)
 		scan_target = pickweight(vamps) //Point at a 'random' vamp, biasing heavily towards closer ones.
-		to_chat(owner, "<span class='warning'>You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b></span>")
+		to_chat(owner, span_warning("You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b>"))
 	// Will yield a "?"
 	else
 		to_chat(owner, span_notice("There are no monsters nearby."))
@@ -227,7 +227,7 @@
 	// Found one!
 	if(best_vamp)
 		var/distString = best_dist <= HUNTER_SCAN_MAX_DISTANCE / 2 ? "<b>somewhere closeby!</b>" : "somewhere in the distance."
-		//to_chat(owner, "<span class='warning'>You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b></span>")
+		//to_chat(owner, span_warning("You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b>"))
 		to_chat(owner, span_warning("You detect signs of monsters [distString]"))
 
 	// Will yield a "?"

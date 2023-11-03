@@ -223,7 +223,7 @@
 		to_chat(owner, span_danger("Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor."))
 		sleep(30) //To avoid spam
 		if(poweron_masquerade)
-			to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
+			to_chat(owner, span_warning("Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power."))
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
 		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))

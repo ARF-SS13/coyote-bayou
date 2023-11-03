@@ -222,6 +222,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!special_transform && transform != initial(transform))
 		special_transform = transform
 
+	/// CB Dual Wielding
+	if(force != 0)
+		if(w_class < DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_AGILE_FORCE
+		else if(w_class >= DUAL_WIELDING_MAX_WEIGHT_ALLOWED)
+			dual_wielded_mult = DUAL_WIELDING_ENCUMBERED_FORCE
+
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
 	if(ismob(loc))
@@ -229,7 +236,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		m.temporarilyRemoveItemFromInventory(src, TRUE)
 	for(var/X in actions)
 		qdel(X)
-	return ..()
+	..()
+	moveToNullspace()
+	return QDEL_HINT_LETMELIVE
 
 /obj/item/ComponentInitialize()
 	. = ..()
@@ -283,7 +292,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/examine(mob/user) //This might be spammy. Remove?
 	. = ..()
 
-	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item."
+	var/pricetext = GetPriceEstimate()
+	
+	. += "[gender == PLURAL ? "They are" : "It is"] a [weightclass2text(w_class)] item.[pricetext ? " [pricetext]":""]"
 
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[src] seems extremely robust! It'll probably withstand anything that could happen to it!"
@@ -298,7 +309,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of fire-retardant materials."
 
 	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
-		. += "<span class='notice'>You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.</span>"
+		. += span_notice("You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.")
 
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
@@ -345,22 +356,39 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	. = ..()
 
 	if(href_list["list_melee"])
+		var/DamMult = 1
+		if(material_flags & MATERIAL_AFFECT_STATISTICS && istype(custom_materials[1], /datum/material))
+			var/datum/material/MyMat = custom_materials[1]
+			if(MyMat.strength_modifier)
+				DamMult = MyMat.strength_modifier
+		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
+		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
+		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
+		var/InitialAS = initial(attack_speed)
+
+		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [force_unwielded]"
-			readout += "\nTWO HANDED [force_wielded]"
+			readout += "\nONE HANDED [InitialFUW] | (DPS [round(InitialFUW * (10/InitialAS), 0.1)])"
+			readout += "\nTWO HANDED [InitialFW] | (DPS [round(InitialFW * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialFUW * dual_wielded_mult] | (DPS [round((InitialFUW * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		else
-			readout += "\nDAMAGE [force]"
-		readout += "\nTHROW DAMAGE [throwforce]"
-		readout += "\nATTACKS / SECOND [10 / attack_speed]"
+			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
+			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+		readout += "\nTHROW DAMAGE [(throwforce + throwforce_bonus) * DamMult]"
+		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"
 
 		to_chat(usr, "[readout.Join()]")
 
+/obj/item
+	var/allow_ui_interact = TRUE  //used for cranklasergun
+
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
-	ui_interact(user)
+	if(allow_ui_interact)
+		ui_interact(user)
 
 /obj/item/ui_act(action, params)
 	add_fingerprint(usr)
@@ -761,9 +789,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, messy_throw = TRUE)
-	thrownby = thrower
+	set_thrownby(thrower)
 	callback = CALLBACK(src, .proc/after_throw, callback, (spin && messy_throw)) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
+
+/obj/item/proc/set_thrownby(new_thrownby)
+	if(thrownby)
+		UnregisterSignal(thrownby, COMSIG_PARENT_QDELETING)
+	thrownby = new_thrownby
+	if(thrownby)
+		RegisterSignal(thrownby, COMSIG_PARENT_QDELETING, .proc/thrownby_deleted)
+
+/obj/item/proc/thrownby_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_thrownby(null)
 
 /obj/item/proc/after_throw(datum/callback/callback, messy_throw)
 	if (callback) //call the original callback

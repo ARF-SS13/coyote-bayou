@@ -263,7 +263,7 @@
 	name = "Flektarn camo uniform"
 	path = /obj/item/clothing/under/f13/modernbdu/flektarn
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-	
+
 /datum/gear/uniform/medievalgarnment
 	name = "Medieval German mercenary gear"
 	path = /obj/item/clothing/under/f13/medievalgerman
@@ -414,6 +414,67 @@
 	path = /obj/item/clothing/under/f13/animsuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 
+/datum/gear/uniform/frenchuniform
+	name = "Outdated French uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/imperialeastuniform
+	name = "Outdated East German uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/german
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/britisholduniform
+	name = "Outdated British uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/britishww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianolduniform
+	name = "Outdated Russian uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+/datum/gear/uniform/russianpaddedww2
+	name = "Padded Soviet uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/russianww2
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/scavengerstuff
+	name = "tattered scavenger outfit"
+	path = /obj/item/clothing/under/f13/scavhunt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/scavengerstuff/two
+	name = "tattered wastelander outfit"
+	path = /obj/item/clothing/under/f13/scavhunt/metro
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform
+	name = "Ancient West German uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/two
+	name = "Ancient West German Officer uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/warhammeruniform/three
+	name = "Ancient American uniform"
+	path = /obj/item/clothing/under/f13/warhammeruniforms/imperiumguard
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/japanenseuniformww2
+	name = "Old Japanese uniform"
+	path = /obj/item/clothing/under/f13/ww2/japaneseuniforms
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+
+/datum/gear/uniform/russiancossack
+	name = "Cossack uniform"
+	path = /obj/item/clothing/under/f13/thegreatwaruniforms/kubancossackuniform
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
 /datum/gear/uniform/galaxyblue
 	name = "Blue galaxy suit"
 	path = /obj/item/clothing/under/f13/animsuit/two
@@ -675,6 +736,26 @@
 	name = "grey turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/grey
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
+/datum/gear/uniform/sweater
+	name = "cream sweater"
+	path = /obj/item/clothing/under/sweater
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+/datum/gear/uniform/sweater/black
+	name = "black sweater"
+	path = /obj/item/clothing/under/sweater/black
+/datum/gear/uniform/sweater/blue
+	name = "blue sweater"
+	path = /obj/item/clothing/under/sweater/blue
+/datum/gear/uniform/sweater/purple
+	name = "purple sweater"
+	path = /obj/item/clothing/under/sweater/purple
+/datum/gear/uniform/sweater/green
+	name = "green sweater"
+	path = /obj/item/clothing/under/sweater/green
+/datum/gear/uniform/sweater/red
+	name = "red sweater"
+	path = /obj/item/clothing/under/sweater/red
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"
@@ -3086,6 +3167,10 @@
 	path = /obj/item/clothing/under/dress/coyote/grassskirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
+/datum/gear/uniform/loincloth
+	name = "Grassy loincloth"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
 /datum/gear/uniform/purplegown
 	name = "Purple Gown"
 	cost = 0
@@ -3152,4 +3237,206 @@
 	name = "teal suit skirt"
 	cost = 0
 	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+// Coyote Bayou Customs
+
+/datum/gear/uniform/frogsuit
+	name = "Frogsuit"
+	cost = 0
+	path = /obj/item/clothing/under/frogsuit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/qipaonosleeve
+	name = "black qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeve
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevewhite
+	name = "white qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevewhite
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleevered
+	name = "red qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleevered
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/qipaonosleeveteal
+	name = "teal qipao no sleeve"
+	cost = 0
+	path = /obj/item/clothing/under/qipaonosleeveteal
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRADITIONAL
+
+/datum/gear/uniform/jute
+	name = "jute dress"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/jute
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/stripedskirt
+	name = "red striped skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/striped_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/redskirt
+	name = "red skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/red_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/blackskirt
+	name = "black skirt"
+	cost = 0
+	path = /obj/item/clothing/under/dress/coyote/black_skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+//Star trek
+
+/datum/gear/uniform/trek/command
+	name = "command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec
+	name = "operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/medsci
+	name = "medsci uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/next
+	name = "command uniform, alt"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/next
+	name = "operations uniform, alt"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/ent
+	name = "ent command"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/medsci/next
+	name = "Med science uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/ent
+	name = "ent operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/medsci/ent
+	name = "ent medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/voy
+	name = "voy command"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsec/voy
+	name = "voy operations uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/medsci/voy
+	name = "voy medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/command/ds9
+	name = "commanding uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/engsecds9
+	name = "engineering section unifrom"
+	cost = 0
+	path = /obj/item/clothing/under/trek/engsec/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/medsci/ds9
+	name = "medical section unifrom"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/captain
+	name = "orville captain uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/captain
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/engsec
+	name = "orville operations command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/engsec
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/medsci
+	name = "orville medsci command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv
+	name = "adjutant uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/orv
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/orv/service
+	name = "service uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/orv/service
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil
+	name = "federation utility uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil/trainee
+	name = "federation trainee utility uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil/trainee
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/fedutil/service
+	name = "federation service uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/fedutil/service
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/trek/Q
+	name = "french marshall's uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/Q
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS

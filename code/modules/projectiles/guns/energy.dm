@@ -38,6 +38,7 @@
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 	var/charge_cost_multiplier = 1
+	var/selfchargerate = 0 // set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -80,6 +81,8 @@
 
 /obj/item/gun/energy/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(cell)
+	QDEL_LIST(ammo_type)
 	return ..()
 
 /obj/item/gun/energy/handle_atom_del(atom/A)
@@ -95,10 +98,6 @@
 
 /obj/item/gun/energy/process()
 	if(selfcharge && cell?.charge < cell.maxcharge)
-		charge_tick++
-		if(charge_tick < charge_delay)
-			return
-		charge_tick = 0
 		if(selfcharge == EGUN_SELFCHARGE_BORG)
 			var/atom/owner = loc
 			if(istype(owner, /obj/item/robot_module))
@@ -108,7 +107,7 @@
 			var/mob/living/silicon/robot/R = owner
 			if(!R.cell?.use(100))
 				return
-		cell.give(100)
+		cell.give(cell.maxcharge / max(selfchargerate, 0.01))
 		if(!chambered) //if empty chamber we try to charge a new shot
 			recharge_newshot(TRUE)
 		update_icon()
@@ -340,7 +339,7 @@
 		if(sounds_and_words)
 			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
-	if(can_charge == 0 && can_remove == 0)
+	if(can_remove == 0)
 		if(sounds_and_words)
 			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 		return
@@ -362,7 +361,7 @@
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
-	if (istype(A, /obj/item/stock_parts/cell/ammo))
+	if(can_remove && istype(A, /obj/item/stock_parts/cell/ammo))
 		var/obj/item/stock_parts/cell/ammo/AM = A
 		if (!cell && istype(AM, cell_type))
 			if(user.transferItemToLoc(AM, src))
@@ -379,7 +378,7 @@
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
-	if(can_charge == 1)
+	if(can_remove == 1)
 		. += span_notice("Alt-click to eject the battery.")
 
 /obj/item/gun/energy/ui_data(mob/user)
@@ -387,14 +386,14 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	var/c_mult = get_charge_cost_mult()
 	data["has_magazine"] = !!cell
-	data["charge_cost"] = shot.e_cost * c_mult
+	data["charge_cost"] = shot?.e_cost * c_mult || 0
 	data["accepted_magazines"] = "This weapon accepts \a [cell_type]."
 	data["magazine_name"] = cell ? cell.name : "Unknown" // Its a magazine you silly goose
 	if(cell)
 		data["magazine_calibers"] = "Energy"
 		data["cell_charge"] = cell.percent()
-		data["shots_remaining"] = round(cell.charge / max(shot.e_cost * c_mult, 0.01))
-		data["shots_max"] = round(cell.maxcharge / max(shot.e_cost * c_mult, 0.01))
+		data["shots_remaining"] = round(cell.charge / max(shot?.e_cost * c_mult, 0.01))
+		data["shots_max"] = round(cell.maxcharge / max(shot?.e_cost * c_mult, 0.01))
 	return data
 
 /obj/item/gun/energy/get_dud_projectile()

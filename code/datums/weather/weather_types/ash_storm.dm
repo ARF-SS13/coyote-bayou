@@ -7,7 +7,7 @@
 	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
 
-	weather_message = "<span class='userdanger'><i>Smoldering clouds of scorching ash billow down around you! Get inside!</i></span>"
+	weather_message = span_userdanger("<i>Smoldering clouds of scorching ash billow down around you! Get inside!</i>")
 	weather_duration_lower = 600
 	weather_duration_upper = 1200
 	weather_overlay = "ash_storm"
@@ -110,7 +110,7 @@
 	telegraph_duration = 3000
 	telegraph_overlay = "light_ash"
 
-	weather_message = "<span class='userdanger'><i>The red cloud is here, and it is incredibly dangerous to be in! Get inside!</i></span>"
+	weather_message = span_userdanger("<i>The red cloud is here, and it is incredibly dangerous to be in! Get inside!</i>")
 	weather_duration_lower = 108000 //Three hours. Lasts the whole round, basically
 	weather_duration_upper = 108000
 	weather_overlay = "ash_storm"

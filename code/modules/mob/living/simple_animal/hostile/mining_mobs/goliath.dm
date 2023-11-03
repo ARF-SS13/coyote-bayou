@@ -62,11 +62,12 @@
 	..(gibbed)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
-	var/tturf = get_turf(target)
+	var/atom/my_target = get_target()
+	var/tturf = get_turf(my_target)
 	if(!isturf(tturf))
 		return
-	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
-		visible_message(span_warning("[src] digs its tentacles under [target]!"))
+	if(get_dist(src, my_target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
+		visible_message(span_warning("[src] digs its tentacles under [my_target]!"))
 		new /obj/effect/temp_visual/goliath_tentacle/original(tturf, src)
 		ranged_cooldown = world.time + ranged_cooldown_time
 		icon_state = icon_aggro
@@ -95,7 +96,7 @@
 	throw_message = "does nothing to the tough hide of the"
 	pre_attack_icon = "goliath2"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	loot = list()
 	stat_attack = CONSCIOUS
@@ -121,33 +122,29 @@
 	pre_attack_icon = "Goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide) //A throwback to the asteroid days
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2)
 	guaranteed_butcher_results = list()
 	crusher_drop_mod = 30
 	wander = FALSE
-	var/list/cached_tentacle_turfs
-	var/turf/last_location
 	var/tentacle_recheck_cooldown = 100
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(isturf(loc))
-		if(!LAZYLEN(cached_tentacle_turfs) || loc != last_location || tentacle_recheck_cooldown <= world.time)
-			LAZYCLEARLIST(cached_tentacle_turfs)
-			last_location = loc
-			tentacle_recheck_cooldown = world.time + initial(tentacle_recheck_cooldown)
-			for(var/turf/open/T in orange(4, loc))
-				LAZYADD(cached_tentacle_turfs, T)
-		for(var/t in cached_tentacle_turfs)
-			if(isopenturf(t))
-				if(prob(10))
-					new /obj/effect/temp_visual/goliath_tentacle(t, src)
-			else
-				cached_tentacle_turfs -= t
+	if(!isturf(loc))
+		return
+	if(!(tentacle_recheck_cooldown <= world.time))
+		return
+	tentacle_recheck_cooldown = world.time + initial(tentacle_recheck_cooldown)
+	for(var/turf/open/T in orange(4, loc))
+		if(!isopenturf(T))
+			continue
+		if(prob(10))
+			new /obj/effect/temp_visual/goliath_tentacle(T, src)
 
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
-	fromtendril = TRUE
+//removed cuz they hard del like piss
+//mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+//	fromtendril = TRUE
 
 //tentacles
 /obj/effect/temp_visual/goliath_tentacle
@@ -155,29 +152,26 @@
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "Goliath_tentacle_spawn"
 	layer = BELOW_MOB_LAYER
-	var/mob/living/spawner
 
-/obj/effect/temp_visual/goliath_tentacle/Initialize(mapload, mob/living/new_spawner)
+/obj/effect/temp_visual/goliath_tentacle/Initialize(mapload)
 	. = ..()
 	for(var/obj/effect/temp_visual/goliath_tentacle/T in loc)
 		if(T != src)
 			return INITIALIZE_HINT_QDEL
-	if(!QDELETED(new_spawner))
-		spawner = new_spawner
 	if(ismineralturf(loc))
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled()
 	deltimer(timerid)
 	timerid = addtimer(CALLBACK(src, .proc/tripanim), 7, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/original/Initialize(mapload, new_spawner)
+/obj/effect/temp_visual/goliath_tentacle/original/Initialize(mapload)
 	. = ..()
 	var/list/directions = GLOB.cardinals.Copy()
 	for(var/i in 1 to 3)
 		var/spawndir = pick_n_take(directions)
 		var/turf/T = get_step(src, spawndir)
 		if(T)
-			new /obj/effect/temp_visual/goliath_tentacle(T, spawner)
+			new /obj/effect/temp_visual/goliath_tentacle(T)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/tripanim()
 	icon_state = "Goliath_tentacle_wiggle"
@@ -187,8 +181,6 @@
 /obj/effect/temp_visual/goliath_tentacle/proc/trip()
 	var/latched = FALSE
 	for(var/mob/living/L in loc)
-		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
-			continue
 		visible_message(span_danger("[src] grabs hold of [L]!"))
 		var/mob/living/carbon/C = L
 		var/obj/item/clothing/S = C.get_item_by_slot(SLOT_WEAR_SUIT)

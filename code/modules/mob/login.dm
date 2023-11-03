@@ -1,5 +1,5 @@
 /mob/Login()
-	GLOB.player_list |= src
+	add_to_player_list()
 	lastKnownIP	= client.address
 	computer_id	= client.computer_id
 	log_access("Mob Login: [key_name(src)] was assigned to a [type]")
@@ -20,12 +20,7 @@
 	if(loc)
 		loc.on_log(TRUE)
 
-	client.loadCockWhitelist()
-
-	var/datum/atom_hud/H = GLOB.huds[GENITAL_PORNHUD]
-	H.add_hud_to(src)
-	var/datum/atom_hud/tail_hud = GLOB.huds[TAIL_HUD_DATUM]
-	tail_hud.add_hud_to(src)
+	SSpornhud.request_every_genital(src)
 
 	//readd this mob's HUDs (antag, med, etc)
 	reload_huds()
@@ -64,4 +59,19 @@
 
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
+	
+	switch(client.prefs.kisser)
+		if(KISS_BOYS)
+			SSstatpanels.cached_boykissers |= ckey
+		if(KISS_GIRLS)
+			SSstatpanels.cached_girlkissers |= ckey
+		if(KISS_ANY)
+			SSstatpanels.cached_anykissers |= ckey
+	switch(client.prefs.tbs)
+		if(TBS_TOP)
+			SSstatpanels.cached_tops |= ckey
+		if(TBS_BOTTOM)
+			SSstatpanels.cached_bottoms |= ckey
+		if(TBS_SHOES)
+			SSstatpanels.cached_switches |= ckey
 

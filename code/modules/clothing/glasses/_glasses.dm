@@ -166,12 +166,12 @@
 		user.visible_message("<span class='warning'>Circuitry from the eyepatch links itself to your brain as you put on the eyepatch.")
 		if(HAS_TRAIT(user, TRAIT_POOR_AIM))
 			user.visible_message("<span class='warning'>You hear a fizzing noise from the circuit. That can't be good.")
-		ADD_TRAIT(user, TRAIT_INSANE_AIM, "SYNDICATE_EYEPATCH_AIM")
+		ADD_TRAIT(user, TRAIT_CRIT_SHOT, "SYNDICATE_EYEPATCH_AIM")
 		ADD_TRAIT(src, TRAIT_NODROP, "SYNDICATE_EYEPATCH_NODROP")
 
 /obj/item/clothing/glasses/eyepatch/syndicate/dropped(mob/living/carbon/human/user)
 	. = ..()
-	REMOVE_TRAIT(user, TRAIT_INSANE_AIM, "SYNDICATE_EYEPATCH_AIM")
+	REMOVE_TRAIT(user, TRAIT_CRIT_SHOT, "SYNDICATE_EYEPATCH_AIM")
 	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.applyOrganDamage(30)
@@ -218,6 +218,13 @@
 	icon_state = "glasses"
 	item_state = "glasses"
 	vision_correction = 1 //corrects nearsightedness
+
+/obj/item/clothing/glasses/contact
+	name = "contact lenses"
+	desc = "Prescription contact lenses, a miracle of science."
+	icon_state = "contact_lenses"
+	item_state = "contact_lenses"
+	vision_correction = 1
 
 /obj/item/clothing/glasses/regular/jamjar
 	name = "jamjar glasses"

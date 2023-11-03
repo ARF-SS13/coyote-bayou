@@ -37,12 +37,13 @@
 
 //Prevents elites from attacking members of their faction (can't hurt themselves either) and lets them mine rock with an attack despite not being able to smash walls.
 /mob/living/simple_animal/hostile/asteroid/elite/AttackingTarget()
-	if(istype(target, /mob/living/simple_animal/hostile))
-		var/mob/living/simple_animal/hostile/M = target
+	var/atom/my_target = get_target()
+	if(istype(my_target, /mob/living/simple_animal/hostile))
+		var/mob/living/simple_animal/hostile/M = my_target
 		if(faction_check_mob(M))
 			return FALSE
-	if(istype(target, /obj/structure/elite_tumor))
-		var/obj/structure/elite_tumor/T = target
+	if(istype(my_target, /obj/structure/elite_tumor))
+		var/obj/structure/elite_tumor/T = my_target
 		if(T.mychild == src && T.activity == TUMOR_PASSIVE)
 			var/elite_remove = alert("Re-enter the tumor?", "Despawn yourself?", "Yes", "No")
 			if(elite_remove == "No" || !src || QDELETED(src))
@@ -53,8 +54,8 @@
 			qdel(src)
 			return FALSE
 	. = ..()
-	if(ismineralturf(target))
-		var/turf/closed/mineral/M = target
+	if(ismineralturf(my_target))
+		var/turf/closed/mineral/M = my_target
 		M.gets_drilled()
 
 //Elites can't talk (normally)!
@@ -113,7 +114,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 				severity = 7
 		hud_used.healths.icon_state = "elite_health[severity]"
 		if(severity > 0)
-			overlay_fullscreen("brute", /obj/screen/fullscreen/brute, severity)
+			overlay_fullscreen("brute", /atom/movable/screen/fullscreen/brute, severity)
 		else
 			clear_fullscreen("brute")
 

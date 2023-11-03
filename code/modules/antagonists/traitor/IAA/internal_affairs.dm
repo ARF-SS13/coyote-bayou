@@ -42,12 +42,12 @@
 	id = "agent_pinpointer"
 	duration = -1
 	tick_interval = PINPOINTER_PING_TIME
-	alert_type = /obj/screen/alert/status_effect/agent_pinpointer
+	alert_type = /atom/movable/screen/alert/status_effect/agent_pinpointer
 	var/minimum_range = PINPOINTER_MINIMUM_RANGE
 	var/range_fuzz_factor = PINPOINTER_EXTRA_RANDOM_RANGE
 	var/mob/scan_target = null
 
-/obj/screen/alert/status_effect/agent_pinpointer
+/atom/movable/screen/alert/status_effect/agent_pinpointer
 	name = "Internal Affairs Integrated Pinpointer"
 	desc = "Even stealthier than a normal implant."
 	icon = 'icons/obj/device.dmi'
@@ -193,7 +193,7 @@
 						if(syndicate)
 							fail_msg += span_userdanger(" You no longer have permission to die. ")
 						else
-							fail_msg += "<span class='userdanger'> The truth could still slip out!</font><B><font size=5 color=red> Cease any terrorist actions as soon as possible, unneeded property damage or loss of employee life will lead to great shame.</span>"
+							fail_msg += span_userdanger(" The truth could still slip out!</font><B><font size=5 color=red> Cease any terrorist actions as soon as possible, unneeded property damage or loss of employee life will lead to great shame.")
 						reinstate_escape_objective(owner)
 						last_man_standing = FALSE
 					to_chat(owner.current, fail_msg)

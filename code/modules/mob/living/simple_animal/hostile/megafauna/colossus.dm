@@ -5,7 +5,7 @@ COLOSSUS
 The colossus spawns randomly wherever a lavaland creature is able to spawn. It is powerful, ancient, and extremely deadly.
 The colossus has a degree of sentience, proving this in speech during its attacks.
 
-It acts as a melee creature, chasing down and attacking its target while also using different attacks to augment its power that increase as it takes damage.
+It acts as a melee creature, chasing down and attacking its targette while also using different attacks to augment its power that increase as it takes damage.
 
 The colossus' true danger lies in its ranged capabilities. It fires immensely damaging death bolts that penetrate all armor in a variety of ways:
 1. The colossus fires death bolts in alternating patterns: the cardinal directions and the diagonal directions.
@@ -47,7 +47,7 @@ Difficulty: Very Hard
 	score_type = COLOSSUS_SCORE
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/colossus/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/colossus)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/stack/sheet/bone = 30)
 	deathmessage = "disintegrates, leaving a glowing core in its wake."
 	death_sound = 'sound/magic/demon_dies.ogg'
 
@@ -61,7 +61,7 @@ Difficulty: Very Hard
 	anger_modifier = clamp(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 120
 
-	if(enrage(target))
+	if(enrage(get_target()))
 		if(move_to_delay == initial(move_to_delay))
 			visible_message("<span class='colossus'>\"<b>You can't dodge.</b>\"</span>")
 		ranged_cooldown = world.time + 30
@@ -168,8 +168,9 @@ Difficulty: Very Hard
 	var/obj/item/projectile/P = new /obj/item/projectile/colossus(startloc)
 	P.preparePixelProjectile(marker, startloc)
 	P.firer = src
-	if(target)
-		P.original = target
+	var/atom/my_target = get_target()
+	if(my_target)
+		P.original = my_target
 	P.fire(set_angle)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/random_shots()
@@ -180,7 +181,7 @@ Difficulty: Very Hard
 			shoot_projectile(T)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/blast(set_angle)
-	var/turf/target_turf = get_turf(target)
+	var/turf/target_turf = get_turf(get_target())
 	playsound(src, 'sound/magic/clockwork/invoke_general.ogg', 200, 1, 2)
 	newtonian_move(get_dir(target_turf, src))
 	var/angle_to_target = Get_Angle(src, target_turf)
@@ -615,8 +616,8 @@ Difficulty: Very Hard
 	faction = list("neutral")
 	del_on_death = TRUE
 	unsuitable_atmos_damage = 0
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	AIStatus = AI_OFF
@@ -632,11 +633,12 @@ Difficulty: Very Hard
 
 /mob/living/simple_animal/hostile/lightgeist/AttackingTarget()
 	. = ..()
-	if(isliving(target) && target != src)
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(isliving(my_target) && my_target != src)
+		var/mob/living/L = my_target
 		if(L.stat != DEAD)
 			L.heal_overall_damage(heal_power, heal_power)
-			new /obj/effect/temp_visual/heal(get_turf(target), "#80F5FF")
+			new /obj/effect/temp_visual/heal(get_turf(my_target), "#80F5FF")
 
 /mob/living/simple_animal/hostile/lightgeist/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE)
 	. = ..()

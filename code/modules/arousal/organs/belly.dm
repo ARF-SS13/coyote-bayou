@@ -300,6 +300,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	var/shape_kind = "tummy"
 	associated_has = CS_BELLY // for cockstring stuff
 	hide_flag = HIDE_BELLY // for hideflag stuff
+	pornhud_slot = PHUD_BELLY
 
 /obj/item/organ/genital/belly/modify_size(modifier, min = BELLY_SIZE_MIN, max = BELLY_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)

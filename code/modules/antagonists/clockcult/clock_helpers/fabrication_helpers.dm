@@ -88,7 +88,7 @@
 	var/amount_temp = get_amount()
 	var/no_delete = FALSE
 	if(amount_temp < 2)
-		to_chat(user, "<span class='warning'>You need at least <b>2</b> floor tiles to convert into power.</span>")
+		to_chat(user, span_warning("You need at least <b>2</b> floor tiles to convert into power."))
 		return TRUE
 	if(ISODD(amount_temp))
 		amount_temp--

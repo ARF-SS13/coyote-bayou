@@ -340,6 +340,9 @@
 	if(M.stat == DEAD)
 		to_chat(user, span_notice("[M] is dead. You can not help [M.p_them()]!"))
 		return
+	if(is_healing)
+		user.show_message(span_alert("You're already doing something with this!"))
+		return FALSE
 	if (heal_mobs <= 0)
 		to_chat(user, span_warning("[M] cannot be healed with [src]!"))
 		return FALSE
@@ -357,6 +360,17 @@
 		return FALSE
 	if(just_check)
 		return TRUE
+	is_healing = TRUE
+	user.visible_message(
+	span_warning("[user] begins applying \a [src] to [M]..."),
+	span_warning("You begin applying \a [src] to [user == M ? "yourself" : "[M]"]"))
+	if(start_sound)
+		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
+	if(!do_mob(user, M, get_delay_time(user, M, 1), progress = TRUE, allow_lying = TRUE))
+		to_chat(user, span_warning("You were interrupted!"))
+		is_healing = FALSE
+		return FALSE
+	is_healing = FALSE
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	if(needs_reservoir)
@@ -455,11 +469,11 @@
 /obj/item/stack/medical/bruise_pack/lick/touch
 	name = "magic healing"
 	singular_name = "magic healing"
-	desc = "A mystical source of healing that draws from an unknown source of power to sooth mild wounds."
+	desc = "A mystical source of healing that draws from an unknown source of power to soothe mild wounds."
 	too_dry = "Your well of magical energy feels dry. A break will help. Drinking some water would help too."
 	third_person_verb = "touching"
 	action_verb = "touch"
-	action_verb_2 = "magically sooth"
+	action_verb_2 = "magically soothe"
 	end_sound = 'sound/effects/healingtouch.ogg'
 
 /obj/item/stack/medical/bruise_pack/lick/tend
@@ -889,10 +903,81 @@
 
 /obj/item/stack/medical/mesh/aloe/Initialize()
 	. = ..()
-	if(amount == max_amount)	 //aloe starts open lol
+	if(amount == max_amount)	 // suffer now as I do, code diver
 		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "aloe_paste"
 		update_icon()
 
+/obj/item/stack/medical/mesh/horsecream
+	name = "horsenettle cream"
+	desc = "A healing \"paste\" made by mashing up horsenettle with a |rock| to \"soothe\" bruises."
+
+	icon_state = "horse_cream_good" // It isn't white by the way
+	self_delay = 50
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 10
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
+	merge_type = /obj/item/stack/medical/mesh/horsecream
+
+/obj/item/stack/medical/mesh/horsecream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // look upon my code and weep as I have
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+
+// gonna try and get a little fancy here
+/obj/item/stack/medical/mesh/horsecream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_danger("You feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
+		M.emote("scream")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+	return
+
+/obj/item/stack/medical/mesh/horsecream/goodcream
+	name = "horsenettle remedy"
+	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Doesn't hurt as much as straight horsenettle."
+
+	icon_state = "horse_cream" // This is how veggie dino nuggets are made
+	self_delay = 50
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 20 // Might be a bit much, but only time will tell.
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
+
+/obj/item/stack/medical/mesh/horsecream/goodcream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // it took me like 2 weeks from start to finish to do all this and i was straight up not having a good time for the last day
+		icon_state = "horse_cream_good"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream_good"
+		update_icon()
+
+
+// gonna try and get a little quirky here
+///obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
+//	if(M.getBruteLoss())
+//		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+//		M.emote("augh") // It was kinda getting a bit annoying, plus it makes you augh even if you're using it on someone else!
+//		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
+//	return
 
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)

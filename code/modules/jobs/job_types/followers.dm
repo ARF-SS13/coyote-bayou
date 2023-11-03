@@ -52,6 +52,7 @@ Administrator
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
+
 	access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 
@@ -100,6 +101,7 @@ Administrator
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	suit_store = /obj/item/gun/medbeam
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/storage/survivalkit/medical/follower = 1,
@@ -109,7 +111,6 @@ Administrator
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/wallet/stash/high = 1,
 		/obj/item/hypospray/mkii/CMO = 1,
-		/obj/item/gun/medbeam = 1,
 	)
 
 //Professor

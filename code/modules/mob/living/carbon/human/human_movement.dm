@@ -67,7 +67,7 @@
 			for(var/obj/item/I in held_items)
 				accident(I)
 			DefaultCombatKnockdown(80)
-	SSrecoil.movement_recoil(src)
+	SSrecoil.incur_movement_recoil(src)
 	if(shoes)
 		if(!lying && !buckled)
 			if(loc == NewLoc)

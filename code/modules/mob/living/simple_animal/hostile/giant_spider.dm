@@ -10,10 +10,11 @@
 
 /mob/living/simple_animal/hostile/poison/AttackingTarget()
 	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
-		if(L.reagents)
-			L.reagents.add_reagent(poison_type, poison_per_bite)
+	var/atom/my_target = get_target()
+	if(!. || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/H = my_target
+	H.reagents.add_reagent(poison_type, poison_per_bite)
 
 //basic spider mob, these generally guard nests
 /mob/living/simple_animal/hostile/poison/giant_spider
@@ -27,7 +28,7 @@
 	emote_hear = list("chitters")
 	speak_chance = 5
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -59,11 +60,11 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Initialize()
 	. = ..()
-	lay_web = new
-	lay_web.Grant(src)
+	// lay_web = new
+	// lay_web.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Destroy()
-	QDEL_NULL(lay_web)
+	// QDEL_NULL(lay_web)
 	return ..()
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Topic(href, href_list)
@@ -107,7 +108,7 @@
 	icon_living = "nurse"
 	icon_dead = "nurse_dead"
 	gender = FEMALE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8, /obj/item/reagent_containers/food/snacks/spidereggs = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8, /obj/item/reagent_containers/food/snacks/spidereggs = 4)
 	maxHealth = 40
 	health = 40
 	melee_damage_lower = 5
@@ -122,17 +123,17 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/Initialize()
 	. = ..()
-	wrap = new
-	AddAbility(wrap)
-	lay_eggs = new
-	lay_eggs.Grant(src)
-	set_directive = new
-	set_directive.Grant(src)
+	// wrap = new
+	// AddAbility(wrap)
+	// lay_eggs = new
+	// lay_eggs.Grant(src)
+	// set_directive = new
+	// set_directive.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/Destroy()
-	RemoveAbility(wrap)
-	QDEL_NULL(lay_eggs)
-	QDEL_NULL(set_directive)
+	// RemoveAbility(wrap)
+	// QDEL_NULL(lay_eggs)
+	// QDEL_NULL(set_directive)
 	return ..()
 
 //hunters have the most poison and move the fastest, so they can find prey
@@ -208,18 +209,18 @@
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife/Initialize()
 	. = ..()
-	letmetalkpls = new
-	letmetalkpls.Grant(src)
+	// letmetalkpls = new
+	// letmetalkpls.Grant(src)
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife/Destroy()
-	QDEL_NULL(letmetalkpls)
+	// QDEL_NULL(letmetalkpls)
 	return ..()
 
 /mob/living/simple_animal/hostile/poison/giant_spider/ice //spiders dont usually like tempatures of 140 kelvin who knew
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -227,8 +228,8 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/ice
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -236,8 +237,8 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice
 	name = "giant ice radspider"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	poison_type = /datum/reagent/consumable/frostoil
 	color = rgb(114,228,250)
 	gold_core_spawnable = NO_SPAWN
@@ -256,57 +257,59 @@
 		return 1
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/GiveUp(C)
-	spawn(100)
-		if(busy == MOVING_TO_TARGET)
-			if(cocoon_target == C && get_dist(src,cocoon_target) > 1)
-				cocoon_target = null
-			busy = FALSE
-			stop_automated_movement = 0
+	return
+	// spawn(100)
+	// 	if(busy == MOVING_TO_TARGET)
+	// 		if(cocoon_target == C && get_dist(src,cocoon_target) > 1)
+	// 			cocoon_target = null
+	// 		busy = FALSE
+	// 		stop_automated_movement = 0
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/handle_automated_action()
-	if(..())
-		var/list/can_see = view(src, 10)
-		if(!busy && prob(30))	//30% chance to stop wandering and do something
-			//first, check for potential food nearby to cocoon
-			for(var/mob/living/C in can_see)
-				if(C.stat && !istype(C, /mob/living/simple_animal/hostile/poison/giant_spider) && !C.anchored)
-					cocoon_target = C
-					busy = MOVING_TO_TARGET
-					Goto(C, move_to_delay)
-					//give up if we can't reach them after 10 seconds
-					GiveUp(C)
-					return
+	return ..()
+	// if(..())
+	// 	var/list/can_see = view(src, 10)
+	// 	if(!busy && prob(30))	//30% chance to stop wandering and do something
+	// 		//first, check for potential food nearby to cocoon
+	// 		for(var/mob/living/C in can_see)
+	// 			if(C.stat && !istype(C, /mob/living/simple_animal/hostile/poison/giant_spider) && !C.anchored)
+	// 				cocoon_target = C
+	// 				busy = MOVING_TO_TARGET
+	// 				Goto(C, move_to_delay)
+	// 				//give up if we can't reach them after 10 seconds
+	// 				GiveUp(C)
+	// 				return
 
-			//second, spin a sticky spiderweb on this tile
-			var/obj/structure/spider/stickyweb/W = locate() in get_turf(src)
-			if(!W)
-				lay_web.Activate()
-			else
-				//third, lay an egg cluster there
-				if(fed)
-					lay_eggs.Activate()
-				else
-					//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
-					for(var/obj/O in can_see)
+	// 		//second, spin a sticky spiderweb on this tile
+	// 		var/obj/structure/spider/stickyweb/W = locate() in get_turf(src)
+	// 		if(!W)
+	// 			lay_web.Activate()
+	// 		else
+	// 			//third, lay an egg cluster there
+	// 			if(fed)
+	// 				lay_eggs.Activate()
+	// 			else
+	// 				//fourthly, cocoon any nearby items so those pesky pinkskins can't use them
+	// 				for(var/obj/O in can_see)
 
-						if(O.anchored)
-							continue
+	// 					if(O.anchored)
+	// 						continue
 
-						if(isitem(O) || isstructure(O) || ismachinery(O))
-							cocoon_target = O
-							busy = MOVING_TO_TARGET
-							stop_automated_movement = 1
-							Goto(O, move_to_delay)
-							//give up if we can't reach them after 10 seconds
-							GiveUp(O)
+	// 					if(isitem(O) || isstructure(O) || ismachinery(O))
+	// 						cocoon_target = O
+	// 						busy = MOVING_TO_TARGET
+	// 						stop_automated_movement = 1
+	// 						Goto(O, move_to_delay)
+	// 						//give up if we can't reach them after 10 seconds
+	// 						GiveUp(O)
 
-		else if(busy == MOVING_TO_TARGET && cocoon_target)
-			if(get_dist(src, cocoon_target) <= 1)
-				cocoon()
+	// 	else if(busy == MOVING_TO_TARGET && cocoon_target)
+	// 		if(get_dist(src, cocoon_target) <= 1)
+	// 			cocoon()
 
-	else
-		busy = SPIDER_IDLE
-		stop_automated_movement = FALSE
+	// else
+	// 	busy = SPIDER_IDLE
+	// 	stop_automated_movement = FALSE
 
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/proc/cocoon()
 	if(stat != DEAD && cocoon_target && !cocoon_target.anchored)
@@ -332,7 +335,7 @@
 				if(isliving(cocoon_target))
 					var/mob/living/L = cocoon_target
 					if(L.blood_volume && (L.stat != DEAD || !consumed_mobs[L.tag])) //if they're not dead, you can consume them anyway
-						consumed_mobs[L.tag] = TRUE
+						// consumed_mobs[L.tag] = TRUE
 						fed++
 						lay_eggs.UpdateButtonIcon(TRUE)
 						visible_message(span_danger("[src] sticks a proboscis into [L] and sucks a viscous substance out."),span_notice("You suck the nutriment out of [L], feeding you enough to lay a cluster of eggs."))
@@ -414,7 +417,7 @@
 		message = span_notice("You no longer prepare to wrap something in a cocoon.")
 		remove_ranged_ability(message)
 	else
-		message = "<span class='notice'>You prepare to wrap something in a cocoon. <B>Left-click your target to start wrapping!</B></span>"
+		message = span_notice("You prepare to wrap something in a cocoon. <B>Left-click your target to start wrapping!</B>")
 		add_ranged_ability(user, message, TRUE)
 		return 1
 
@@ -533,11 +536,13 @@
 		to_chat(M, "[link] [my_message]")
 	usr.log_talk(message, LOG_SAY, tag="spider command")
 
+/*
 /mob/living/simple_animal/hostile/poison/giant_spider/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)
 		adjustBruteLoss(20)
-	else if(bodytemperature > maxbodytemp)
+	else if(bodytemperature >/maxbodytemp)
 		adjustBruteLoss(20)
+*/
 
 #undef SPIDER_IDLE
 #undef SPINNING_WEB

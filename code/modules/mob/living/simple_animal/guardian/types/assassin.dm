@@ -9,11 +9,11 @@
 	tech_fluff_string = span_holoparasite("Boot sequence complete. Assassin modules loaded. Holoparasite swarm online.")
 	carp_fluff_string = span_holoparasite("CARP CARP CARP! Caught one! It's an assassin carp! Just when you thought it was safe to go back to the water... which is unhelpful, because we're in space.")
 
-	toggle_button_type = /obj/screen/guardian/ToggleMode/Assassin
+	toggle_button_type = /atom/movable/screen/guardian/ToggleMode/Assassin
 	var/toggle = FALSE
 	var/stealthcooldown = 100
-	var/obj/screen/alert/canstealthalert
-	var/obj/screen/alert/instealthalert
+	var/atom/movable/screen/alert/canstealthalert
+	var/atom/movable/screen/alert/instealthalert
 
 /mob/living/simple_animal/hostile/guardian/assassin/Initialize()
 	. = ..()
@@ -33,9 +33,11 @@
 
 /mob/living/simple_animal/hostile/guardian/assassin/AttackingTarget()
 	. = ..()
-	if(.)
-		if(toggle && (isliving(target) || istype(target, /obj/structure/window) || istype(target, /obj/structure/grille)))
-			ToggleMode(1)
+	if(!.)
+		return
+	var/atom/my_target = get_target()
+	if(toggle && (isliving(my_target) || istype(my_target, /obj/structure/window) || istype(my_target, /obj/structure/grille)))
+		ToggleMode(1)
 
 /mob/living/simple_animal/hostile/guardian/assassin/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -82,12 +84,12 @@
 	if(stealthcooldown <= world.time)
 		if(toggle)
 			if(!instealthalert)
-				instealthalert = throw_alert("instealth", /obj/screen/alert/instealth)
+				instealthalert = throw_alert("instealth", /atom/movable/screen/alert/instealth)
 				clear_alert("canstealth")
 				canstealthalert = null
 		else
 			if(!canstealthalert)
-				canstealthalert = throw_alert("canstealth", /obj/screen/alert/canstealth)
+				canstealthalert = throw_alert("canstealth", /atom/movable/screen/alert/canstealth)
 				clear_alert("instealth")
 				instealthalert = null
 	else

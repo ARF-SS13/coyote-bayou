@@ -17,7 +17,12 @@
 			return FALSE
 		U.TakeComponent(storage)
 		detached_pockets = storage
-	U.attached_accessory = src
+	if(!U.attached_accessory && !U.attached_accessory_b && !U.attached_accessory_c)
+		U.attached_accessory = src
+	else if(!U.attached_accessory_b && !U.attached_accessory_c)
+		U.attached_accessory_b = src
+	else if(!U.attached_accessory_c)
+		U.attached_accessory_c = src
 	forceMove(U)
 	layer = FLOAT_LAYER
 	plane = FLOAT_PLANE
@@ -56,8 +61,15 @@
 	layer = initial(layer)
 	plane = initial(plane)
 	U.cut_overlays()
-	U.attached_accessory = null
-	U.accessory_overlay = null
+	if(U.attached_accessory && U.attached_accessory_b && U.attached_accessory_c)
+		U.attached_accessory_c = null
+		U.accessory_overlay_c = null
+	else if(U.attached_accessory && U.attached_accessory_b)
+		U.attached_accessory_b = null
+		U.accessory_overlay_b = null
+	else if(U.attached_accessory)
+		U.attached_accessory = null
+		U.accessory_overlay = null
 
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)
 	return
@@ -278,7 +290,7 @@
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "Medical Personnel armband"
+	name = "\improper Medical Personnel armband"
 	desc = "An armband worn by medical personnel. This one is white."
 	icon_state = "medband"
 
@@ -392,105 +404,105 @@
 //BOSRanks
 
 /obj/item/clothing/accessory/bos/initiateK
-	name = "Knight-Aspirant pin"
+	name = "\improper Knight-Aspirant pin"
 	desc = "A silver pin with blue cloth, worn by Initiates aspiring to be Knights."
 	icon_state = "initiateK"
 	item_color = "initiateK"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/initiateS
-	name = "Scribe-Aspirant pin"
+	name = "\improper Scribe-Aspirant pin"
 	desc = "A silver pin with red cloth, worn by Initiates aspiring to be Scribes."
 	icon_state = "initiateS"
 	item_color = "initiateS"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/knight
-	name = "Knight pins"
+	name = "\improper Knight pins"
 	desc = "A silver pin with one device and blue coloring, worn by fully fledged Knights of the Brotherhood."
 	icon_state = "knight"
 	item_color = "knight"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/scribe
-	name = "Scribe pins"
+	name = "\improper Scribe pins"
 	desc = "A silver pin with one device and red coloring, worn by fully fledged Scribes of the Brotherhood."
 	icon_state = "scribe"
 	item_color = "scribe"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorpaladin
-	name = "Junior Paladin pins"
+	name = "\improper Junior Paladin pins"
 	desc = "A silver pin with one device, and purple coloring. Worn by the Paladin-in-Training of the Brotherhood."
 	icon_state = "juniorpaladin"
 	item_color = "juniorpaladin"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/knightcaptain
-	name = "Head Knight pins"
+	name = "\improper Head Knight pins"
 	desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on blue-cloth. Worn by the Head Knight."
 	icon_state = "knight-captain"
 	item_color = "knight-captain"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorscribe
-	name = "Senior Scribe pins"
+	name = "\improper Senior Scribe pins"
 	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of red cloth; worn by the high-ranking Senior Scribe."
 	icon_state = "seniorscribe"
 	item_color = "seniorscribe"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/paladin
-	name = "Paladin pins"
+	name = "\improper Paladin pins"
 	desc = "A silver pin with one device, a silver sword centered on the purple coloring, and notches denoting the rank of the Paladin."
 	icon_state = "paladin"
 	item_color = "paladin"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorpaladin
-	name = "Senior Paladin pins"
+	name = "\improper Senior Paladin pins"
 	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Paladin."
 	icon_state = "seniorpaladin"
 	item_color = "seniorpaladin"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorknight
-	name = "Senior Knight pins"
+	name = "\improper Senior Knight pins"
 	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Knight."
 	icon_state = "seniorknight"
 	item_color = "seniorknight"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorknight
-	name = "Junior Knight pins"
+	name = "\improper Junior Knight pins"
 	desc = "A silver pin with one device, and blue coloring. Worn by the Knight-in-Training of the Brotherhood."
 	icon_state = "juniorknight"
 	item_color = "juniorknight"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/juniorscribe
-	name = "Junior Scribe pins"
+	name = "\improper Junior Scribe pins"
 	desc = "A silver pin with one device, and red coloring. Worn by the Scribe-in-Training of the Brotherhood."
 	icon_state = "juniorscribe"
 	item_color = "juniorscribe"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/headscribe
-	name = "Head Scribe pins"
+	name = "\improper Head Scribe pins"
 	desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on red-cloth. Worn by the Head Scribe."
 	icon_state = "headscribe"
 	item_color = "headscribe"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/sentinel
-	name = "Head Paladin pins"
+	name = "\improper Head Paladin pins"
 	desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on purple-cloth. Worn by the Head Paladin."
 	icon_state = "sentinel"
 	item_color = "sentinel"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/elder
-	name = "Elder pins"
+	name = "\improper Elder pins"
 	desc = "A gold-plated, silver lined pin with one device and two outstretched wings on the side; a golden sword centered on green-cloth. It bears notches with gems on the top half, and denotes the rank of Elder."
 	icon_state = "elder"
 	item_color = "elder"
@@ -527,7 +539,7 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/armband/med/ncr
-	name = "Medical Personnel armband"
+	name = "\improper Medical Personnel armband"
 	desc = "An armband worn by NCR medical personnel. This one is white."
 
 /obj/item/clothing/accessory/ncr/FSGT
@@ -591,7 +603,7 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/armband/black
-	name = "MP's armband"
+	name = "\improper MP's armband"
 	desc = "An armband issued to NCR Military Police, signifying their alignment with NCROSI rather than the typical chain of command."
 	icon_state = "blackband"
 	item_color = "blackband"
@@ -676,7 +688,7 @@
 
 //donator
 /obj/item/clothing/accessory/cia_badge
-	name = "CIA Badge"
+	name = "\improper CIA Badge"
 	desc = "A strange pre-war badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
@@ -684,98 +696,98 @@
 
 //Skirts
 /obj/item/clothing/accessory/pinkishskirt
-	name = "Pinkish Skirt - Accessory"
+	name = "\improper Pinkish Skirt - Accessory"
 	desc = "A pinkish Skirt that can be worn over underwear or clothing. Or nothing, I guess. Usually has a black top, but this is just the skirt!"
 	item_state = "pinkskirt"
 	icon_state = "pinkskirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/brownskirt
-	name = "Brown Skirt - Accessory"
+	name = "\improper Brown Skirt - Accessory"
 	desc = "A brown Skirt that can be worn over underwear or clothing. Or nothing, I guess."
 	item_state = "pinkskirt"
 	icon_state = "pinkskirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/priestess
-	name = "Reddish Skirt w/ Belt - Accessory"
+	name = "\improper Reddish Skirt w/ Belt - Accessory"
 	desc = "A reddish Skirt that can be worn over underwear or clothing. Or nothing, I guess."
 	item_state = "priestess"
 	icon_state = "priestess"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/greenfrillyskirt
-	name = "Green and Purple Frilly Skirt - Accessory"
+	name = "\improper Green and Purple Frilly Skirt - Accessory"
 	desc = "There's something funny about this skirt."
 	item_state = "greenfrilly"
 	icon_state = "greenfrilly"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/checkerskirt
-	name = "Black and White Checker Skirt - Accessory"
+	name = "\improper Black and White Checker Skirt - Accessory"
 	desc = "Is there something you should keep quiet about?"
 	item_state = "checker"
 	icon_state = "checker"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/maidskirt
-	name = "Maid Skirt - Accessory"
+	name = "\improper Maid Skirt - Accessory"
 	desc = "You feel like cleaning something by just holding this."
 	item_state = "maid"
 	icon_state = "maid"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidredlongskirt
-	name = "Plaid Red Skirt, Long - Accessory"
+	name = "\improper Plaid Red Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
 	item_state = "plaid_red"
 	icon_state = "plaid_red"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidredshortskirt
-	name = "Plaid Red Skirt, Short - Accessory"
+	name = "\improper Plaid Red Skirt, Short - Accessory"
 	desc = "Pole not included."
 	item_state = "plaid_red_short"
 	icon_state = "plaid_red_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidbluelongskirt
-	name = "Plaid Blue Skirt, Long - Accessory"
+	name = "\improper Plaid Blue Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
 	item_state = "plaid_blue"
 	icon_state = "plaid_blue"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidblueshortskirt
-	name = "Plaid Blue Skirt, Short - Accessory"
+	name = "\improper Plaid Blue Skirt, Short - Accessory"
 	desc = "Pole not included."
 	item_state = "plaid_blue_short"
 	icon_state = "plaid_blue_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidpurplelongskirt
-	name = "Plaid Purple Skirt, Long - Accessory"
+	name = "\improper Plaid Purple Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
 	item_state = "plaid_purple"
 	icon_state = "plaid_purple"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidpurpleshortskirt
-	name = "Plaid Purple Skirt, Short - Accessory"
+	name = "\improper Plaid Purple Skirt, Short - Accessory"
 	desc = "Pole not included."
 	item_state = "plaid_purple_short"
 	icon_state = "plaid_purple_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidgreenlongskirt
-	name = "Plaid Green Skirt, Long - Accessory"
+	name = "\improper Plaid Green Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
 	item_state = "plaid_green"
 	icon_state = "plaid_green"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidgreenshortskirt
-	name = "Plaid Green Skirt, Short - Accessory"
+	name = "\improper Plaid Green Skirt, Short - Accessory"
 	desc = "Pole not included."
 	item_state = "plaid_green_short"
 	icon_state = "plaid_green_short"
@@ -789,35 +801,35 @@
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/cmoskirt
-	name = "Soft Blue and White Skirt"
+	name = "\improper Soft Blue and White Skirt"
 	desc = "Something about this skirt feels healthy."
 	item_state = "cmo_skirt"
 	icon_state = "cmo_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/hopskirt
-	name = "Navy Blue Skirt"
+	name = "\improper Navy Blue Skirt"
 	desc = "A nice blue skirt, nothing about it seems to stand out."
 	item_state = "hop_skirt"
 	icon_state = "hop_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/draculass
-	name = "Goth Skirt w/ Stockings"
+	name = "\improper Goth Skirt w/ Stockings"
 	desc = "You probably are a bloodsucker, or at least you tell people you are."
 	item_state = "draculass"
 	icon_state = "draculass"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/prisonerskirt
-	name = "Orange Skirt w/ Belt"
+	name = "\improper Orange Skirt with Belt"
 	desc = "This skirt is so freeing!"
 	item_state = "prisoner_skirt"
 	icon_state = "prisoner_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/ncrfjacketcrop
-	name = "Cropped Denim Jacket"
+	name = "\improper Cropped Denim Jacket"
 	desc = "Yeah, you go hard."
 	item_state = "ncrcfjacketcrop"
 	icon_state = "ncrcfjacketcrop"
@@ -853,46 +865,56 @@
 	icon_state = "pride"
 
 /obj/item/clothing/accessory/pride/bi
-	name = "Bisexual Pride"
+	name = "\improper Bisexual Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_bi"
 
 /obj/item/clothing/accessory/pride/trans
-	name = "Transgender Pride"
+	name = "\improper Transgender Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_trans"
 
 /obj/item/clothing/accessory/pride/ace
-	name = "Asexual Pride"
+	name = "\improper Asexual Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_ace"
 
 /obj/item/clothing/accessory/pride/enby
-	name = "Nonbinary Pride"
+	name = "\improper Nonbinary Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_enby"
 
 /obj/item/clothing/accessory/pride/pan
-	name = "Pansexual Pride"
+	name = "\improper Pansexual Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_pan"
 
 /obj/item/clothing/accessory/pride/lesbian
-	name = "Lesbian Pride"
+	name = "\improper Lesbian Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_lesbian"
 
 /obj/item/clothing/accessory/pride/intersex
-	name = "Intersex Pride"
+	name = "\improper Intersex Pride Pin"
 	desc = "A bright pin to wear with pride whereever you go!"
 	icon_state = "pride_intersex"
 
 /obj/item/clothing/accessory/deafpin
-	name = "Deaf Pin"
+	name = "\improper Deaf Pin"
 	desc = "A bright pin to showcase the wearer having hearing loss."
 	icon_state = "deaf_pin"
 
 /obj/item/clothing/accessory/sheriffvest
-	name = "Cowboy Vest"
+	name = "\improper Cowboy Vest"
 	desc = "A white vest with black splotches. Yeehaw."
 	icon_state = "vest_sheriff"
+
+/obj/item/clothing/accessory/heart
+	name = "frisky attitude"
+	desc = "You really do wear your heart on your sleeve, don't you?"
+	item_state = "heart"
+	icon_state = "heart"
+	minimize_when_attached = FALSE
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	armor = list("bio" = 0, "rad" = 0, "acid" = 0)
+

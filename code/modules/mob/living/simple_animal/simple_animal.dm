@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/healable = 1
 
 	///Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
-	var/list/atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
+	var/list/atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
@@ -192,6 +192,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
+	/// obey the variation requests
+	var/vary = TRUE
 	/// has the mob been lazarused?
 	var/lazarused = FALSE
 	/// Who lazarused this mob?
@@ -359,8 +361,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 	sever_link_to_nest()
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)
@@ -396,7 +397,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(flavortext && flavortext != "")
 		var/msg = replacetext(flavortext, "\n", " ")
 		if(length(msg) <= 40)
-			return "<span class='notice'>[msg]</span>"
+			return span_notice("[msg]")
 		else
 			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
 
@@ -422,14 +423,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			dat += "<span class = 'deptradio'>OOC Notes:</span> <a href='?src=\ref[src];oocnotes=1'>\[View\]</a>"
 		if(src.getBruteLoss())
 			if(src.getBruteLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks bruised.</span>"
+				dat += span_warning("[p_they(TRUE)] looks bruised.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely bruised and bloodied!</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely bruised and bloodied!</B>")
 		if(src.getFireLoss())
 			if(src.getFireLoss() < (maxHealth/2))
-				dat += "<span class='warning'>[p_they(TRUE)] looks burned.</span>"
+				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
-				dat += "<span class='warning'><B>[p_they(TRUE)] looks severely burned.</B></span>"
+				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
 		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
@@ -476,7 +477,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/slow = 0
 	if(client && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))//Player controlled animal
 		var/health_percent = ((health/maxHealth)*100)//1-100 scale for health
-		if(health_percent <= 50)//Start slowdown at half health
+		if(health_percent <= 50 && health_percent > 0)//Start slowdown at half health, stop slowdown when health is at or below zero to prevent divide by zero errors
 			slow += ((50/health_percent)/2)//0.5 slowdown at 1/2 health, 1 slowdown at 1/4 health, etc
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, slow)
 
@@ -561,7 +562,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			else
 				emote("me", EMOTE_AUDIBLE, pick(emote_hear))
 
-
+/*
 /mob/living/simple_animal/proc/environment_is_safe(datum/gas_mixture/environment, check_temp = FALSE)
 	. = TRUE
 
@@ -620,12 +621,18 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
+*/
 
 /mob/living/simple_animal/gib()
-	if(butcher_results)
+	if(butcher_results || guaranteed_butcher_results)
+		var/list/butcher = list()
+		if(butcher_results)
+			butcher += butcher_results
+		if(guaranteed_butcher_results)
+			butcher += guaranteed_butcher_results
 		var/atom/Tsec = drop_location()
-		for(var/path in butcher_results)
-			for(var/i in 1 to butcher_results[path])
+		for(var/path in butcher)
+			for(var/i in 1 to butcher[path])
 				new path(Tsec)
 	..()
 
@@ -710,6 +717,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
 		..(gibbed)
+		// if(prob(del_on_death*100))
+		// 	gib()
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
@@ -897,7 +906,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/oindex = active_hand_index
 	active_hand_index = hand_index
 	if(hud_used)
-		var/obj/screen/inventory/hand/H
+		var/atom/movable/screen/inventory/hand/H
 		H = hud_used.hand_slots["[hand_index]"]
 		if(H)
 			H.update_icon()
@@ -947,6 +956,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	LoadComponent(/datum/component/riding)
 
 /mob/living/simple_animal/proc/toggle_ai(togglestatus)
+	if(QDELETED(src))
+		return
 	if(!can_have_ai && (togglestatus != AI_OFF))
 		return
 	if (AIStatus != togglestatus)
@@ -985,7 +996,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(stat == DEAD)
 		return
-	if (idlesound)
+	if (idlesound && !(islist(idlesound) && LAZYLEN(idlesound) == 0))
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
@@ -1306,7 +1317,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	throw_mode_off()
 	if(!target || !isturf(loc))
 		return
-	if(istype(target, /obj/screen))
+	if(istype(target, /atom/movable/screen))
 		return
 	if(IS_STAMCRIT(src))
 		to_chat(src, span_warning("You're too exhausted."))

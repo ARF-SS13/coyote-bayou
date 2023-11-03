@@ -10,7 +10,7 @@
 /datum/martial_art/raging_boar/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(findtext(streak,WHIRLWIND_COMBO))
 		streak = ""
-		whirlwind(A,D)
+		whirlwind(A,D) 
 		return TRUE
 	return FALSE
 
@@ -33,7 +33,7 @@
 	add_to_streak("D", D, TRUE)
 	if(check_streak(A,D))
 		return TRUE
-	var/damage = damage_roll(A,D) * 0.4
+	var/damage = damage_roll(A,D) * 0.8
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] shoves [D]!"), \
 				span_userdanger("You're shoved by [A]!"), span_hear("You hear a whump!"), COMBAT_MESSAGE_RANGE, A)
@@ -55,7 +55,7 @@
 	if(check_streak(A,D))
 		return TRUE
 	. = TRUE
-	var/damage = damage_roll(A,D)
+	var/damage = (damage_roll(A,D) + 5)
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] sends [D] reeling with an atomic pork hammer!"), \
 				span_userdanger("You're sent reeling by [A]'s atomic pork hammer!"), span_hear("You hear a whump!"), COMBAT_MESSAGE_RANGE, A)
@@ -108,17 +108,19 @@
 		return
 	//deftswitch.Grant(H)
 	//sidekick.Grant(H)
-	H.AddComponent(/datum/component/tackler/simple, \
+	H.AddComponent(/datum/component/tackler/simple_dunkstrong, \
 		stamina_cost = 10, \
 		base_knockdown = 0, \
-		range = 6, \
+		range = 7, \
 		speed = 1, \
 		skill_mod = 0, \
 		min_distance = 1\
 	)
 	ADD_TRAIT(H, TRAIT_NOGUNS, RAGING_BOAR_TRAIT)
 	ADD_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RAGING_BOAR_TRAIT)
-	ADD_TRAIT(H, TRAIT_NODRUGS, RAGING_BOAR_TRAIT)
+	ADD_TRAIT(H, TRAIT_MARTIAL_A, RAGING_BOAR_TRAIT)
+	H.physiology.stamina_mod *= 0.5 //more stamina
+	H.physiology.stun_mod *= 0.5 //better stun resistance
 
 /datum/martial_art/raging_boar/on_remove(mob/living/carbon/human/H)
 	. = ..()
@@ -128,4 +130,4 @@
 
 	REMOVE_TRAIT(H, TRAIT_NOGUNS, RAGING_BOAR_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_AUTO_CATCH_ITEM, RAGING_BOAR_TRAIT)
-	REMOVE_TRAIT(H, TRAIT_NODRUGS, RAGING_BOAR_TRAIT)
+	REMOVE_TRAIT(H, TRAIT_MARTIAL_A, RAGING_BOAR_TRAIT)

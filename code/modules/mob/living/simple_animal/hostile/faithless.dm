@@ -34,7 +34,7 @@
 	speak_emote = list("growls")
 
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 
 	faction = list("faithless")
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -43,8 +43,10 @@
 
 /mob/living/simple_animal/hostile/faithless/AttackingTarget()
 	. = ..()
-	if(. && prob(12) && iscarbon(target))
-		var/mob/living/carbon/C = target
-		C.DefaultCombatKnockdown(60)
-		C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
-				span_userdanger("\The [src] knocks you down!"))
+	var/atom/my_target = get_target()
+	if(!. || !prob(14) || !ishuman(my_target))
+		return
+	var/mob/living/carbon/human/C = my_target
+	C.DefaultCombatKnockdown(60)
+	C.visible_message(span_danger("\The [src] knocks down \the [C]!"), \
+			span_userdanger("\The [src] knocks you down!"))

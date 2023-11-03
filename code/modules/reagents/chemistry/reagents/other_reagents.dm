@@ -938,7 +938,7 @@
 	..()
 	if (!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You grit your teeth in pain as your body rapidly mutates!</b></span>")
+	to_chat(H, span_warning("<b>You grit your teeth in pain as your body rapidly mutates!</b>"))
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
@@ -1433,12 +1433,12 @@
 	return TRUE
 
 /datum/reagent/fuel/robo_repair_gel
-	name = "Synthetic repair gel"
+	name = "synthetic repair gel"
 	description = "A synthetic gel that can be used to repair damage to synthetic bodies."
 	color = "#33ff00" // rgb: 102, 0, 0
 	flammable = FALSE
-	heal_amount = 1
-	heal_amount_crit = 4
+	heal_amount = -1.0
+	heal_amount_crit = -1.5
 
 /datum/reagent/abraxo_cleaner
 	name = "Abraxo cleaner"
@@ -2922,7 +2922,7 @@
 		if(volume >= 15) //To prevent monkey breast farms
 			var/turf/T = get_turf(M)
 			var/obj/item/organ/genital/breasts/B = new /obj/item/organ/genital/breasts(T)
-			M.visible_message("<span class='warning'>A pair of breasts suddenly fly out of [M]!</b></span>")
+			M.visible_message(span_warning("A pair of breasts suddenly fly out of [M]!</b>"))
 			var/T2 = get_random_station_turf()
 			M.adjustBruteLoss(25)
 			M.DefaultCombatKnockdown(50)
@@ -2956,7 +2956,7 @@
 		B.size = "flat"
 		B.cached_size = 0
 		B.prev_size = 0
-		to_chat(H, "<span class='warning'>Your chest feels warm, tingling with newfound sensitivity.</b></span>")
+		to_chat(H, span_warning("Your chest feels warm, tingling with newfound sensitivity.</b>"))
 		H.reagents.remove_reagent(type, 5)
 		B.Insert(H)
 
@@ -3021,7 +3021,7 @@
 		if(volume >= 15) //to prevent monkey penis farms
 			var/turf/T = get_turf(M)
 			var/obj/item/organ/genital/penis/P = new /obj/item/organ/genital/penis(T)
-			M.visible_message("<span class='warning'>A penis suddenly flies out of [M]!</b></span>")
+			M.visible_message(span_warning("A penis suddenly flies out of [M]!</b>"))
 			var/T2 = get_random_station_turf()
 			M.adjustBruteLoss(25)
 			M.DefaultCombatKnockdown(50)
@@ -3045,7 +3045,7 @@
 
 		P = new
 		P.length = 1
-		to_chat(H, "<span class='warning'>Your groin feels warm, as you feel a newly forming bulge down below.</b></span>")
+		to_chat(H, span_warning("Your groin feels warm, as you feel a newly forming bulge down below.</b>"))
 		P.prev_length = 1
 		H.reagents.remove_reagent(type, 5)
 		P.Insert(H)
@@ -3116,7 +3116,7 @@
 		if(volume >= 15) //to prevent monkey butt farms
 			var/turf/T = get_turf(M)
 			var/obj/item/organ/genital/butt/B = new /obj/item/organ/genital/butt(T)
-			M.visible_message("<span class='warning'>An ass suddenly flies out of [M]!</b></span>")
+			M.visible_message(span_warning("An ass suddenly flies out of [M]!</b>"))
 			var/T2 = get_random_station_turf()
 			M.adjustBruteLoss(25)
 			M.DefaultCombatKnockdown(50)
@@ -3200,7 +3200,7 @@
 		if(volume >= 15) //to prevent monkey butt farms
 			var/turf/T = get_turf(M)
 			var/obj/item/organ/genital/belly/B = new /obj/item/organ/genital/belly(T)
-			M.visible_message("<span class='warning'>A belly suddenly flies out of [M]!</b></span>")
+			M.visible_message(span_warning("A belly suddenly flies out of [M]!</b>"))
 			var/T2 = get_random_station_turf()
 			M.adjustBruteLoss(25)
 			M.DefaultCombatKnockdown(50)

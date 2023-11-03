@@ -112,6 +112,8 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
+	if(!istype(H))
+		return FALSE
 	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
 
 /datum/emote/living/carbon/human/wag/select_message_type(mob/user)
@@ -121,6 +123,11 @@
 		return
 	if(H.dna.species.is_wagging_tail())
 		. = null
+
+/datum/emote/living/carbon/human/wag/lash
+	key = "lashtail"
+	key_third_person = "lashes"
+	message = "lashes their tail."
 
 /datum/emote/living/carbon/human/wing
 	key = "wing"
@@ -148,6 +155,8 @@
 	if(!..())
 		return FALSE
 	var/mob/living/carbon/human/H = user
+	if(!istype(H))
+		return FALSE
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
 		return TRUE
 
@@ -158,7 +167,7 @@
 
 /datum/emote/living/carbon/human/tongue_flick/run_emote(mob/user)
 	. = ..()
-	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "facial_lizardlickfast_s_emote")
+	var/image/emote_animation = image('icons/mob/animated_emotes.dmi', user, "lizard_flick")
 	flick_overlay_global(emote_animation, GLOB.clients, 0.6 SECONDS)
 
 /datum/emote/living/carbon/human/nose_lick
@@ -168,7 +177,7 @@
 
 /datum/emote/living/carbon/human/nose_lick/run_emote(mob/user)
 	. = ..()
-	var/image/emote_animation = image('icons/mob/hair2.dmi', user, "noselickpink")
+	var/image/emote_animation = image('icons/mob/animated_emotes.dmi', user, "noselick")
 	flick_overlay_global(emote_animation, GLOB.clients, 0.9 SECONDS)
 
 /mob/living/carbon/human/proc/OpenWings()

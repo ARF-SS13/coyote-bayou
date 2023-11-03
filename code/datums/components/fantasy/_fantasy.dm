@@ -104,7 +104,7 @@
 
 	if(canFail && prob((quality - 9)*10))
 		var/turf/place = get_turf(parent)
-		place.visible_message("<span class='danger'>[parent] <span class='blue'>violently glows blue</span> for a while, then evaporates.</span>")
+		place.visible_message(span_danger("[parent] <span class='blue'>violently glows blue</span> for a while, then evaporates."))
 		master.burn()
 		return
 	else if(announce)
@@ -118,8 +118,7 @@
 	for(var/i in affixes)
 		var/datum/fantasy_affix/affix = i
 		affix.remove(src)
-	for(var/i in appliedComponents)
-		qdel(i)
+	QDEL_LIST(appliedComponents)
 	for(var/i in appliedElements)
 		master._RemoveElement(i)
 

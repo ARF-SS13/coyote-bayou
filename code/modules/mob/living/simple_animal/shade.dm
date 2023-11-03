@@ -24,8 +24,8 @@
 	melee_damage_upper = 12
 	attack_verb_continuous = "metaphysically strikes"
 	attack_verb_simple = "metaphysically strike"
-	minbodytemp = 0
-	maxbodytemp = INFINITY
+	//minbodytemp = 0
+	//maxbodytemp = INFINITY
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	stop_automated_movement = 1
 	faction = list("cult")
@@ -49,7 +49,7 @@
 		if(health < maxHealth)
 			adjustHealth(-25)
 			Beam(M,icon_state="sendbeam",time=4)
-			M.visible_message("<span class='danger'>[M] heals \the <b>[src]</b>.</span>", \
+			M.visible_message(span_danger("[M] heals \the <b>[src]</b>."), \
 					   "<span class='cult'>You heal <b>[src]</b>, leaving <b>[src]</b> at <b>[health]/[maxHealth]</b> health.</span>")
 		else
 			to_chat(M, "<span class='cult'>You cannot heal <b>[src]</b>, as [p_theyre()] unharmed!</span>")

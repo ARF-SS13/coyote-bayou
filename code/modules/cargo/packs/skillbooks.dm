@@ -63,13 +63,13 @@
 
 /datum/supply_pack/skillbooks/trapper
 	name = "Guide to Minelaying"
-	desc = ""
+	desc = "Because you really want someone to have a bad day. At some point. Eventually."
 	cost = 10000
 	contains = list(/obj/item/book/granter/trait/trekking)
 
 /datum/supply_pack/skillbooks/polis
 	name = "Vigilante's Journal"
-	desc = "An old journal, writted by someone with the will to do right but cut short..."
+	desc = "An old journal, written by someone with the will to do right but whose life was cut short..."
 	cost = 5000
 	contains = list(/obj/item/book/granter/crafting_recipe/polis)
 

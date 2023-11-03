@@ -1,3 +1,5 @@
+#define SHAPESHIFT_CAST_TIME	2 SECONDS
+
 /obj/effect/proc_holder/spell/targeted/shapeshift
 	name = "Shapechange"
 	desc = "Take on the shape of another for a time to use their natural abilities. Once you've made your choice it cannot be changed."
@@ -18,10 +20,8 @@
 	var/list/possible_shapes = list(/mob/living/simple_animal/mouse)
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/Initialize()
-	var/list/poke = list()
-	for(var/pkmn in GLOB.creature_selectable)
-		poke += GLOB.creature_selectable[pkmn]
-	possible_shapes = poke
+	if(!LAZYLEN(GLOB.creature_selectable))
+		generate_selectable_creatures()
 	. = ..()
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/cast(list/targets,mob/user = usr)
@@ -32,24 +32,21 @@
 		user.buckled.unbuckle_mob(src,force=TRUE)
 	for(var/mob/living/M in targets)
 		if(!shapeshift_type)
-			var/list/animal_list = list()
-			for(var/path in possible_shapes)
-				var/mob/living/simple_animal/A = path
-				animal_list[initial(A.name)] = path
-			var/new_shapeshift_type = input(M, "Choose Your Animal Form!", "It's Morphing Time!", null) as null|anything in animal_list
-			if(shapeshift_type)
+			var/new_shapeshift_type = input(M, "Choose Your Animal Form!", "It's Morphing Time!", null) as null|anything in GLOB.creature_selectable
+			if(shapeshift_type || !new_shapeshift_type) //Menu stacking check
 				return
-			shapeshift_type = new_shapeshift_type
-			if(!shapeshift_type) //If you aren't gonna decide I am!
-				shapeshift_type = pick(animal_list)
-			shapeshift_type = animal_list[shapeshift_type]
-
+			shapeshift_type = GLOB.creature_selectable[new_shapeshift_type]
 		var/obj/shapeshift_holder/S = locate() in M
 		if(S)
-			Restore(M)
+			if(do_after_advanced(user, SHAPESHIFT_CAST_TIME, M, DO_AFTER_DISALLOW_MOVING_ABSOLUTE_USER))
+				Restore(M)
+			else
+				to_chat(user,span_warning("Your concentration fails!"))
 		else
-			Shapeshift(M)
-
+			if(do_after_advanced(user, SHAPESHIFT_CAST_TIME, M, DO_AFTER_DISALLOW_MOVING_ABSOLUTE_USER))
+				Shapeshift(M)
+			else
+				to_chat(user,span_warning("Your concentration fails!"))
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
@@ -57,7 +54,9 @@
 		to_chat(caster, span_warning("You're already shapeshifted!"))
 		return
 
-	var/mob/living/shape = new shapeshift_type(caster.loc)
+	var/mob/living/shape = new shapeshift_type(get_turf(caster))
+	shape.maxHealth = caster.maxHealth
+	shape.health = caster.health
 	H = new(shape,src,caster)
 
 	clothes_req = NONE
@@ -150,22 +149,24 @@
 
 /obj/shapeshift_holder/proc/restore(death=FALSE)
 	restoring = TRUE
-	qdel(slink)
-	stored.forceMove(get_turf(src))
-	stored.mob_transforming = FALSE
-	if(shape.mind)
+	if(slink && !QDELETED(slink))
+		QDEL_NULL(slink)
+	stored?.forceMove(get_turf(src))
+	stored?.mob_transforming = FALSE
+	if(shape?.mind)
 		shape.mind.transfer_to(stored)
 	if(death)
-		stored.death()
-	else if(source.convert_damage)
-		stored.revive(full_heal = TRUE)
+		stored?.death()
+	else if(stored && shape && source?.convert_damage)
+		stored?.revive(full_heal = TRUE)
 		var/damage_percent = (shape.maxHealth - shape.health)/shape.maxHealth;
 		var/damapply = stored.maxHealth * damage_percent
-
 		stored.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND)
-	shape.unequip_everything()
-	qdel(shape)
-	qdel(src)
+	shape?.unequip_everything()
+	if(shape && !QDELETED(shape))
+		QDEL_NULL(shape)
+	if(!QDELETED(src))
+		qdel(src)
 
 /datum/soullink/shapeshift
 	var/obj/shapeshift_holder/source

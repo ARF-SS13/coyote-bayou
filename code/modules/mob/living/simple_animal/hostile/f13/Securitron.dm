@@ -12,7 +12,7 @@
 	icon_living = "securitron"
 	icon_dead = "securitron_dead"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 100 
+	maxHealth = 100
 	health = 100
 	stamcrit_threshold = SIMPLEMOB_NO_STAMCRIT
 	emp_flags = list(
@@ -38,7 +38,7 @@
 
 	retreat_distance = 2
 	//how far they pull back
-	
+
 	minimum_distance = 5
 	// how close you can get before they try to pull back
 
@@ -59,7 +59,6 @@
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	a_intent = "harm"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	emote_taunt = list("readies its arm gun")
@@ -103,7 +102,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/securitron/proc/do_death_beep()
-	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
+	playsound(src, 'sound/machines/triple_beep.ogg', 75, FALSE)
 	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
@@ -128,7 +127,7 @@
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot_dead"
 	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
-	maxHealth = 150 
+	maxHealth = 150
 	health = 150
 	del_on_death = FALSE
 	melee_damage_lower = 24
@@ -167,7 +166,7 @@
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/five,
-		/obj/item/stock_parts/cell/ammo/mfc
+		/obj/item/stock_parts/cell/ammo/mfc/recycled
 		)
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -263,6 +262,5 @@
 	minimum_distance = 1
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/self_destruct/AttackingTarget()
-	if(ishuman(target))
-		addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
-		addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)
+	addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
+	addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)

@@ -359,7 +359,6 @@
 /datum/emote/living/jump
 	key = "jump"
 	key_third_person = "jumps"
-	message = "jumps!"
 	restraint_check = TRUE
 
 /datum/emote/living/jump/run_emote(mob/user, params)
@@ -634,7 +633,7 @@
 
 /datum/emote/living/twitch/run_emote(mob/user, params)
 	user.Jitter(20)
-	
+
 /datum/emote/living/twitch_s
 	key = "twitch_s"
 	message = "twitches."
@@ -1098,8 +1097,8 @@
 
 /datum/emote/living/augh
 	key = "augh"
-	key_third_person = "looks deeply troubled."
-	message = "looks deeply troubled."
+	key_third_person = "looks mildly inconvenienced."
+	message = "looks mildly inconvenienced."
 	sound = 'sound/f13effects/sunsetsounds/augh.ogg'
 
 /datum/emote/living/ree
@@ -1130,6 +1129,12 @@
 /datum/emote/living/bwoing/run_emote(mob/user, params)
 	. = ..()
 	INVOKE_ASYNC(user, /atom/.proc/do_double_bounce, 2, -2, 2, -2, 0.6 SECONDS)
+
+/datum/emote/living/bwoing/skip
+	key = "skip"
+	key_third_person = "skips!"
+	message = "skips."
+	sound = null
 
 /datum/emote/living/bounce
 	key = "bounce"
@@ -1758,6 +1763,30 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			blind_message = message_second)
 		user.emote_for_ghost_sight(message_second)
 
+/datum/emote/help
+	key = "helpme"
+	key_third_person = "yells for help!"
+	message = "says, \"Help!\""
+
+/datum/emote/medic
+	key = "medic"
+	key_third_person = "yells for a medic!"
+	message = "says, \"Medic!\""
+
+/datum/emote/healerhere
+	key = "healer"
+	key_third_person = "is clearly offering their services as a healer!"
+	message = "says, \"Healer for hire!\""
+
+/datum/emote/holdstill
+	key = "hold"
+	key_third_person = "is trying to get someone to hold still!"
+	message = "says, \"Hold up!\""
+
+/datum/emote/pullback
+	key = "pullback"
+	key_third_person = "is trying to get everyone to pull back!"
+	message = "says, \"Pull back!\""
 
 
 //Fenny Adds Flirtatious Fucking Emotes For Furries//

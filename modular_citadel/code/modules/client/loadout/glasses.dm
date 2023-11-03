@@ -94,3 +94,8 @@
 /datum/gear/glasses/biker
 	name = "biker goggles"
 	path = /obj/item/clothing/glasses/f13/biker
+
+/datum/gear/glasses/contact
+	name = "contact lenses"
+	path = /obj/item/clothing/glasses/contact
+	cost = 3

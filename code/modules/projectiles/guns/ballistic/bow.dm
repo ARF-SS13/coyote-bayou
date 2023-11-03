@@ -32,6 +32,16 @@
 	var/drawing_from_quiver = FALSE
 	/// The quiver the bow is drawing from
 	var/datum/weakref/our_quiver
+	var/list/slotlist = list(
+		SLOT_BACK,
+		SLOT_BELT,
+		SLOT_NECK,
+		SLOT_WEAR_SUIT,
+		SLOT_L_STORE,
+		SLOT_R_STORE,
+		SLOT_S_STORE,
+		SLOT_GENERIC_DEXTROUS_STORAGE
+	)
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
@@ -50,7 +60,7 @@
 		if(istype(my_quiver))
 			. += "Currently drawing from [my_quiver]."
 			. += "Alt-click the bow to stop drawing from this quiver."
-			. += "Smack a quiver against this bow to start drawing arrows from that quiver."
+			. += "Smack a quiver against this bow, or smack this against a quiver, to start drawing arrows from that quiver."
 			return
 		. += "No quiver found to draw from. Wear a quiver on your belt, or smack a quiver on this bow, to draw from that quiver."
 		. += "Alt-click the bow to stop drawing from this quiver."
@@ -128,8 +138,12 @@
 		if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
 			return getted_quiver
 	/// Otherwise, draw from whatever's on the belt
-	getted_quiver = user.get_item_by_slot(SLOT_BELT)
-	if(istype(getted_quiver, /obj/item/storage/bag/tribe_quiver) && (getted_quiver.loc == user || just_get_it))
+	for(var/slut in slotlist)
+		getted_quiver = user.get_item_by_slot(slut)
+		if(!istype(getted_quiver, /obj/item/storage/bag/tribe_quiver))
+			continue
+		if((getted_quiver.loc != user && !just_get_it))
+			continue
 		if(link_quiver_to_bow(user, getted_quiver))
 			return getted_quiver
 
@@ -185,7 +199,7 @@
 //shortbow. fits in bags, but otherwise minimum stats.
 /obj/item/gun/ballistic/bow/shortbow
 	name = "shortbow"
-	desc = "A lightweight bow, rather lacking in firepower"
+	desc = "A lightweight bow, rather lacking in firepower. Alt click to attach to a quiver on your belt slot."
 	icon_state = "bow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -196,7 +210,7 @@
 
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
-	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"
+	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this? Alt click to attach to a quiver on your belt slot."
 	//icon_state = "yumi"		//temporary fix
 	icon_state = "tribalbow"
 	item_state = "bow"
@@ -205,13 +219,26 @@
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
 	)	
+
+	//weak pocket xbow meant to shoot special arrows rather than pure damage//
+/obj/item/gun/ballistic/bow/handxbow
+	name = "hand crossbow"
+	desc = "A compact, pocket sized crossbow, what it lacks in power makes up in concealment."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	trigger_guard = TRIGGER_GUARD_NONE
+	weapon_class = WEAPON_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slow
+	)
 //dunno if you want to include more information for each bow, but this is the basics
 
 //tier 2 bows. craftable bows
 //recurve bow. +fire rate, but bulky. fits on belts
 /obj/item/gun/ballistic/bow/recurvebow
 	name = "recurve bow"
-	desc = "A light bow designed for ease of draw."
+	desc = "A light bow designed for ease of draw. Alt click to attach to a quiver on your belt slot."
 	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -238,7 +265,7 @@
 //composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
 /obj/item/gun/ballistic/bow/compositebow
 	name = "Composite bow"
-	desc = "A finely crafted bow with an excellent draw."
+	desc = "A finely crafted bow with an excellent draw. Alt click to attach to a quiver on your belt slot."
 	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -250,7 +277,7 @@
 //longbow, damage+, speed+, back slot only
 /obj/item/gun/ballistic/bow/longbow
 	name = "longbow"
-	desc = "A tall, elegant bow, with a good balance of firepower and draw speed."
+	desc = "A tall, elegant bow, with a good balance of firepower and draw speed. Alt click to attach to a quiver on your belt slot."
 	icon_state = "ashenbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -277,7 +304,7 @@
 //modern compound bow. speed++, damage++. the ultimate bow
 /obj/item/gun/ballistic/bow/compoundbow
 	name = "prewar compound bow"
-	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide."
+	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE

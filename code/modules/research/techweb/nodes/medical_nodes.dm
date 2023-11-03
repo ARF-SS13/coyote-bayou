@@ -26,7 +26,7 @@
 	prereq_ids = list("adv_biotech", "exp_surgery", "adv_engi", "adv_power")
 	design_ids = list("defib_decay", "defib_shock", "defib_heal", "defib_speed")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-*/
+
 /datum/techweb_node/plumbing
 	id = "plumbing"
 	display_name = "Reagent Plumbing Technology"
@@ -43,7 +43,7 @@
 	prereq_ids = list("plumbing", "adv_engi")
 	design_ids = list("plumb_rcd", "autohydrotray")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-
+*/
 //////////////////////Cybernetics/////////////////////
 
 /datum/techweb_node/surplus_limbs

@@ -26,6 +26,10 @@
 /obj/item/ammo_box/magazine/internal/shot/lethal
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
+/obj/item/ammo_box/magazine/internal/shot/shorty
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 2
+
 /obj/item/ammo_box/magazine/internal/shot/com
 	name = "combat shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
@@ -95,6 +99,14 @@
 	max_ammo = 5
 	multiload = 0
 
+
+/obj/item/ammo_box/magazine/internal/shot/derringer
+	name = "14mm internal magazine"
+	ammo_type = /obj/item/ammo_casing/p14mm
+	caliber = list(CALIBER_14MM)
+	max_ammo = 4
+	multiload = 0
+
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
@@ -102,6 +114,19 @@
 	max_ammo = 12
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/shot/long22
+	name = ".22LR Long internal tube magazine" //baby repeater
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 20
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/short22
+	name = ".22LR Short internal tube magazine" //spicy baby repeater
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 10
+	multiload = 1
 /obj/item/ammo_box/magazine/internal/shot/tube4570
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
@@ -131,3 +156,8 @@
 	caliber = list(CALIBER_MUSKET_PLASMA)
 	max_ammo = 2
 	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/lasmusket/mosin
+	max_ammo = 8
+	multiload = 0
+

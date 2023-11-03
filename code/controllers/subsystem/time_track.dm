@@ -16,6 +16,14 @@ SUBSYSTEM_DEF(time_track)
 	var/last_tick_byond_time = 0
 	var/last_tick_tickcount = 0
 
+	/// Displays a lie to the players about the current time dilation.
+	/// Uncomment if players are complaining about lag and they're right
+	// var/debug_just_flat_out_lie_to_the_players = FALSE
+	// var/debug_the_outright_dirty_lie_we_are_telling = 5
+	// var/debug_the_outright_dirty_lie_we_are_telling_fast = 0
+	// var/debug_the_outright_dirty_lie_we_are_telling_average = 0
+	// var/debug_the_outright_dirty_lie_we_are_telling_slow = 0
+
 /datum/controller/subsystem/time_track/Initialize(start_timeofday)
 	. = ..()
 	GLOB.perf_log = "[GLOB.log_directory]/perf-[GLOB.round_id ? GLOB.round_id : "NULL"]-[SSmapping.config?.map_name].csv"
@@ -48,6 +56,8 @@ SUBSYSTEM_DEF(time_track)
 	)
 
 /datum/controller/subsystem/time_track/fire()
+	// if(debug_just_flat_out_lie_to_the_players)
+	// 	fabricate_lie()
 
 	var/current_realtime = REALTIMEOFDAY
 	var/current_byondtime = world.time
@@ -98,3 +108,19 @@ SUBSYSTEM_DEF(time_track)
 			length(SSair.high_pressure_delta)
 		)
 	)
+
+/datum/controller/subsystem/time_track/proc/get_anger()
+	// if(debug_just_flat_out_lie_to_the_players)
+	// 	return "[debug_the_outright_dirty_lie_we_are_telling]% AVG:([debug_the_outright_dirty_lie_we_are_telling_fast]%, [debug_the_outright_dirty_lie_we_are_telling_average]%, [debug_the_outright_dirty_lie_we_are_telling_slow]%)"
+	return "[round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
+
+// /datum/controller/subsystem/time_track/proc/fabricate_lie()
+// 	if(prob(5))
+// 		debug_the_outright_dirty_lie_we_are_telling += rand(-2,2)
+// 	debug_the_outright_dirty_lie_we_are_telling = clamp(debug_the_outright_dirty_lie_we_are_telling, 3, 10)
+
+// 	debug_the_outright_dirty_lie_we_are_telling_fast = round(MC_AVERAGE_FAST(debug_the_outright_dirty_lie_we_are_telling_fast, debug_the_outright_dirty_lie_we_are_telling), 1)
+// 	debug_the_outright_dirty_lie_we_are_telling_average = round(MC_AVERAGE(debug_the_outright_dirty_lie_we_are_telling_average, debug_the_outright_dirty_lie_we_are_telling), 1)
+// 	debug_the_outright_dirty_lie_we_are_telling_slow = round(MC_AVERAGE_SLOW(debug_the_outright_dirty_lie_we_are_telling_slow, debug_the_outright_dirty_lie_we_are_telling), 1)
+
+

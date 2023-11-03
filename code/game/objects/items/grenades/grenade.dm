@@ -56,7 +56,7 @@
 			preprime(user, 5, FALSE)
 			return TRUE
 	else if(clumsy_check == GRENADE_NONCLUMSY_FUMBLE && !(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
-		to_chat(user, "<span class='warning'>You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\"</span>")
+		to_chat(user, span_warning("You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\""))
 		preprime(user, 5, FALSE)
 		return TRUE
 
@@ -87,10 +87,10 @@
 			preprime(user)
 
 /obj/item/grenade/proc/log_grenade(mob/user, turf/T)
-	var/message = "[ADMIN_LOOKUPFLW(user)]) has primed \a [src] for detonation at [ADMIN_VERBOSEJMP(T)]"
+	var/message = "[ADMIN_LOOKUPFLW(user)]) primed \a [src] at [ADMIN_VERBOSEJMP(T)]"
 	GLOB.bombers += message
 	message_admins(message)
-	log_game("[key_name(user)] has primed \a [src] for detonation at [AREACOORD(T)].")
+	log_game("[key_name(user)] primed \a [src] at [AREACOORD(T)].")
 
 // heh
 /obj/item/grenade/proc/vore_prime(datum/source, obj/vore_belly/belly, mob/living/vorer)

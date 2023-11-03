@@ -107,6 +107,42 @@
 	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
 	throw_distance = 3
 
+// Saturnite fist				Hits hard. Max damage 65.
+/obj/item/melee/powerfist/f13/satfist
+	name = "Saturnite Power Fist"
+	desc = "A massive, experimental metal gauntlet crafted by some Genius in The Military that has more than likely died. The alloy it's made of appears to be light, yet stronger than most steels."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "satfist"
+	item_state = "satfist"
+	force = 65 //Mythical tier power fist, literally able to kill god
+	throw_distance = 2
+
+// Heat it with a welder
+/obj/item/melee/powerfist/f13/satfist/welder_act(mob/living/user, obj/item/I)
+	if(I.use_tool(src, user, 20, volume=50, amount=15))
+		user.visible_message("[user] heats up the Metal of the [src].", \
+				span_notice("You heat up the [src] until the Fist glows!"), \
+				span_italic("You hear faint sounds of a welder working."))
+		new /obj/item/melee/powerfist/f13/satfisth(drop_location())
+		qdel(src)
+		return
+	return ..()
+
+// Saturnite fist	but hotter	Hits hard. Max damage 70.
+/obj/item/melee/powerfist/f13/satfisth
+	name = "Saturnite Power Fist"
+	desc = "A massive, experimental metal gauntlet crafted by some Genius in The Military that has more than likely died. The alloy it's made of appears to be light, yet stronger than most steels."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "satfisth"
+	item_state = "satfisth"
+	force = 70 //Mythical tier power fist, literally able to kill god and cook him
+	throw_distance = 2
+
+
 // Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
@@ -284,8 +320,8 @@
 
 /obj/item/shishkebabpack/MouseDrop(obj/over_object)
 	var/mob/M = loc
-	if(istype(M) && istype(over_object, /obj/screen/inventory/hand))
-		var/obj/screen/inventory/hand/H = over_object
+	if(istype(M) && istype(over_object, /atom/movable/screen/inventory/hand))
+		var/atom/movable/screen/inventory/hand/H = over_object
 		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 	return ..()
 

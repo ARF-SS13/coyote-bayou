@@ -87,7 +87,7 @@
 
 /obj/item/gun/magic/proc/charge_full_message()
 	audible_message("[src] lets out a satisfied hum and falls quiet.")
-	
+
 /obj/item/gun/magic/proc/charge_partial_message()
 	audible_message("[src] lets out a faint hum.")
 

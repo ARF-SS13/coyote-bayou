@@ -1,3 +1,73 @@
+#define PERSONALITY_TRAIT(trait, emoji, visibleto...) trait = list(emoji, ##visibleto)
+#define THE_EMOJI 1
+//#define VISIBLE_TO 2
+
+/// Format: PERSONALITY_TRAIT(trait, emoji, traits that can see this trait -- can be multiple, put commas in between)
+/// like this: PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER, 🍆, TRAIT_HEAT_DETECT, TRAIT_RPFOCUSED, TRAIT_ADV_SEEKER)
+GLOBAL_LIST_INIT(personality_quirks, list(
+	PERSONALITY_TRAIT(TRAIT_IN_HEAT,          span_love("😘"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPBOYKISSER,     span_love("🍆"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPGIRLKISSER,    span_love("🍑"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPANYKISSER,     span_love("💋"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPQUICKY,        span_love("⏰"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPLONGTERM,      span_love("📅"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPBOTTOM,        span_love("😔"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPTOP,           span_love("😎"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPSWITCH,        span_love("☯"), TRAIT_HEAT_DETECT),
+	PERSONALITY_TRAIT(TRAIT_ERPFLIRTY,        span_love("🌹"), TRAIT_HEAT_DETECT),
+
+	PERSONALITY_TRAIT(TRAIT_RPLONGTERM,       span_greenannounce("📅"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSHORTTERM,      span_greenannounce("⏰"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSERIOUS,        span_greenannounce("👑"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPLIGHT,          span_greenannounce("🤡"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPSCRUBS,         span_greenannounce("⛑"), TRAIT_RPFOCUSED),
+	PERSONALITY_TRAIT(TRAIT_RPDAYSOFOURLIVES, span_greenannounce("💀"), TRAIT_RPFOCUSED),
+
+	PERSONALITY_TRAIT(TRAIT_ADV_ER,           span_binarysay("♞"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_LFG,          span_binarysay("💑"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_SOLO,         span_binarysay("😑"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_GUNNER,       span_binarysay("🔫"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_FIGHTER,      span_binarysay("⚔️"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_TANK,         span_binarysay("🛡"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_BRUISER,      span_binarysay("🏏"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_ROGUE,        span_binarysay("🔓"), TRAIT_ADV_SEEKER),
+	PERSONALITY_TRAIT(TRAIT_ADV_HEALER,       span_binarysay("🏥"), TRAIT_ADV_SEEKER)))
+
+/// The description that'll be sent out
+/// Dont include the emoji
+/// Do include the spans
+/// Use span defines like span_warning("words") please, they make it look nice
+/// Format: THE_TRAIT = "description"
+GLOBAL_LIST_INIT(personalitytrait2description, list(
+	TRAIT_IN_HEAT = 				 		  span_love("They are looking for a good time, you should check their OOC Notes."),
+	TRAIT_ERPBOYKISSER = 			 		  span_love("They look like they prefer guys."),
+	TRAIT_ERPGIRLKISSER =			 		  span_love("They look like they prefer girls."),
+	TRAIT_ERPANYKISSER = 			 		  span_love("They look like they'd kiss boys OR girls."),
+	TRAIT_ERPQUICKY =						  span_love("They look like they're looking for flings, not long term partners."),
+	TRAIT_ERPLONGTERM = 			 		  span_love("They look like they're looking for long term sexual partners."),
+	TRAIT_ERPBOTTOM = 						  span_love("They look like a bottom, you'll probably need to be the one to approach."),
+	TRAIT_ERPTOP = 							  span_love("They look like a top, maybe if you wiggle right they'll approach you first."),
+	TRAIT_ERPSWITCH = 						  span_love("They look like a switch, see what works."),
+	TRAIT_ERPFLIRTY = 						  span_love("They look flirty, or like being flirty with them might be very effective.  Check out the *help command for *flirts."),
+	TRAIT_RPLONGTERM = 				 span_greenannounce("They are looking for RP that is long term focused. Perhaps contact them via LOOC to work that out together?"),
+	TRAIT_RPSHORTTERM = 			 span_greenannounce("They are looking for RP that is short term focused. This generally means only things in the current round."),
+	TRAIT_RPSERIOUS =				 span_greenannounce("They are looking for RP that is relatively serious, if you to want to take the setting seriously maybe you should chatter at them via LOOC?"),
+	TRAIT_RPLIGHT = 				 span_greenannounce("They are looking for RP that is relatively light, if you're looking for a silly distraction RP maybe you should approach."),
+	TRAIT_RPSCRUBS = 				 span_greenannounce("They are looking for RP that is medically inclined. Think House, ER, or maybe even Scrubs."),
+	TRAIT_RPDAYSOFOURLIVES =		 span_greenannounce("They are looking for RP that is dramatic, maybe even a bit over the top. Think soap opera."),
+	TRAIT_ADV_ER = 					 	 span_binarysay("They look like the adventuring sort."),
+	TRAIT_ADV_LFG =					 	 span_binarysay("They look like they'd like to have someone adventure with them, maybe you should ask?"),
+	TRAIT_ADV_SOLO = 				 	 span_binarysay("They don't look like they'd want anyone to adventure with right now."),
+	TRAIT_ADV_GUNNER =				 	 span_binarysay("They look like they know their way around ranged combat."),
+	TRAIT_ADV_FIGHTER = 			 	 span_binarysay("A real fighter of all time, they look like they can use a blade"),
+	TRAIT_ADV_TANK =				 	 span_binarysay("A shield wielding wall of an adventurer. They look like they could hold back a tsunami."),
+	TRAIT_ADV_BRUISER =				 	 span_binarysay("A real bruiser of a waster, the way they hold a two handed weapon speaks volumes about melons being obliterated."),
+	TRAIT_ADV_ROGUE = 				 	 span_binarysay("This person looks insanely useful at things that might not be JUST killing monsters. Maybe see if they have a lockpick on hand?"),
+	TRAIT_ADV_HEALER = 				 	 span_binarysay("This person looks like they know how to keep your bits glued together and your blood inside you. How nice."),
+
+	// and so onh
+))
+
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
 	var/t_He = p_they(TRUE)
@@ -27,7 +97,7 @@
 		. += vassDesc
 
 	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
 	if(skipface || get_visible_name() == "Unknown")
 		. += "You can't make out what species they are."
@@ -42,6 +112,10 @@
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory && !(U.attached_accessory.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
 				accessory_msg += " with [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
+			if(U.attached_accessory_b && !(U.attached_accessory_b.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_b, user)] \a [U.attached_accessory_b]"
+			if(U.attached_accessory_c && !(U.attached_accessory_c.flags_inv & HIDEACCESSORY) && !(U.flags_inv & HIDEACCESSORY))
+				accessory_msg += ", [icon2html(U.attached_accessory_c, user)] \a [U.attached_accessory_c]"
 
 		. += "[t_He] [t_is] wearing [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head
@@ -97,7 +171,7 @@
 		if(glasses)
 			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
 		else if((left_eye_color == BLOODCULT_EYE || right_eye_color == BLOODCULT_EYE) && iscultist(src) && HAS_TRAIT(src, TRAIT_CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
+			. += span_warning("<B>[t_His] eyes are glowing an unnatural red!</B>")
 		else if(HAS_TRAIT(src, TRAIT_HIJACKER))
 			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
 			if (H && !H.stealthmode && H.toggled)
@@ -128,7 +202,7 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += span_warning("<B>[t_He] [t_is] convulsing violently!</B>")
 		if(200 to 300)
 			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
@@ -320,7 +394,7 @@
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
 			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
 		else
-			msg += "[t_He] [t_is] quite chubby.\n"
+			msg += "[t_He] looks stuffed to the gills!\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 			msg += "[t_He] look[p_s()] a bit grossed out.\n"
@@ -485,6 +559,123 @@
 	if (!isnull(trait_exam))
 		. += trait_exam
 
+	/// Personality and RP Preferences quirk display
+	. += get_personality_traits(user)
+
+	var/traitstring = get_trait_string()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
+		if(istype(H.glasses, /obj/item/clothing/glasses/hud) || CIH)
+			var/perpname = get_face_name(get_id_name(""))
+			if(perpname)
+				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
+				if(R)
+					. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
+					var/cyberimp_detect
+					for(var/obj/item/organ/cyberimp/CI in internal_organs)
+						if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
+							cyberimp_detect += "[name] is modified with a [CI.name]."
+					if(cyberimp_detect)
+						. += "Detected cybernetic modifications:"
+						. += cyberimp_detect
+					if(R)
+						var/health_r = R.fields["p_stat"]
+						. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
+						health_r = R.fields["m_stat"]
+						. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
+					R = find_record("name", perpname, GLOB.data_core.medical)
+					if(R)
+						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a>"
+					if(traitstring)
+						msg += "<span class='info'>Detected physiological traits:<br></span>"
+						msg += "<span class='info'>[traitstring]</span><br>"
+
+
+
+				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
+					if(!user.stat && user != src)
+					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
+						var/criminal = "None"
+
+						R = find_record("name", perpname, GLOB.data_core.security)
+						if(R)
+							criminal = R.fields["criminal"]
+
+						. += jointext(list("<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>",
+							"<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
+							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
+							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+	else if(isobserver(user) && traitstring)
+		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
+
+	. += "[print_special()]"//This already includes breaks and newlines, don't add any more
+
+	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
+
+	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
+		. += span_danger("<B>This player has been slept by staff.</B>\n")
+
+	. += "*---------*</span>"
+
+/mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
+	var/list/dat = list()
+	if(!pronoun_replacement)
+		pronoun_replacement = p_they(TRUE)
+	for(var/V in status_effects)
+		var/datum/status_effect/E = V
+		if(E.examine_text)
+			var/new_text = replacetext(E.examine_text, "SUBJECTPRONOUN", pronoun_replacement)
+			new_text = replacetext(new_text, "[pronoun_replacement] is", "[pronoun_replacement] [p_are()]") //To make sure something become "They are" or "She is", not "They are" and "She are"
+			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
+	if(dat.len)
+		dat.Join()
+		return
+
+/mob/living/proc/get_personality_traits(mob/user)
+	if(!user)
+		return
+	var/msg
+	var/out = ""
+	for(var/triat in GLOB.personality_quirks)
+		if(!HAS_TRAIT(src, triat))
+			continue
+		var/list/vistraits = LAZYACCESS(GLOB.personality_quirks, triat)
+		var/emoji = LAZYACCESS(vistraits, THE_EMOJI)
+		if(!emoji)
+			emoji = " [triat] " // better put an emoji there!
+		vistraits -= THE_EMOJI
+		for(var/treit in vistraits)
+			if(!HAS_TRAIT(user, treit))
+				continue
+			/// The return of the cursed href link!!!
+			msg += {"<a href='?src=[REF(user)];read_personality_trait=[triat];>[emoji]</a>"}
+	if(!isnull(msg))
+		out = "[span_info("They have some cool traits! Click the emojis to learn more!")]\n"
+	out += msg
+	out +="\n"
+	return out
+
+/mob/living/Topic(href, href_list)
+	. = ..()
+	if(href_list["read_personality_trait"])
+		to_chat(src, get_personality_flavor(href_list["read_personality_trait"]))
+
+/mob/living/proc/get_personality_flavor(trait)
+	var/list/traittest = LAZYACCESS(GLOB.personality_quirks, trait)
+	var/emoji = LAZYACCESS(traittest, THE_EMOJI)
+	if(emoji)
+		emoji = "[emoji]"
+	var/flavor = LAZYACCESS(GLOB.personalitytrait2description, trait)
+	if(!flavor)
+		stack_trace("get_personality_flavor() called with invalid trait [trait]! Didnt have any flavor, yuck")
+		return
+	var/alltogethernow = "[emoji] [flavor]"
+	return alltogethernow
+
+/* 
 //erp focused quirks
 	if(HAS_TRAIT(src, TRAIT_IN_HEAT) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
 		. += ""
@@ -615,76 +806,7 @@
 	if(HAS_TRAIT(src, TRAIT_ADV_HEALER	) && (HAS_TRAIT(user, TRAIT_ADV_SEEKER) || src == user))
 		. += ""
 		. += "<span class='binarysay'>🏥 - This person looks like they know how to keep your bits glued together and your blood inside you. How nice.</span>"
+ */
 
 
-	var/traitstring = get_trait_string()
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		var/obj/item/organ/cyberimp/eyes/hud/CIH = H.getorgan(/obj/item/organ/cyberimp/eyes/hud)
-		if(istype(H.glasses, /obj/item/clothing/glasses/hud) || CIH)
-			var/perpname = get_face_name(get_id_name(""))
-			if(perpname)
-				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
-				if(R)
-					. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
-				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
-					var/cyberimp_detect
-					for(var/obj/item/organ/cyberimp/CI in internal_organs)
-						if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-							cyberimp_detect += "[name] is modified with a [CI.name]."
-					if(cyberimp_detect)
-						. += "Detected cybernetic modifications:"
-						. += cyberimp_detect
-					if(R)
-						var/health_r = R.fields["p_stat"]
-						. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
-						health_r = R.fields["m_stat"]
-						. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
-					R = find_record("name", perpname, GLOB.data_core.medical)
-					if(R)
-						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a>"
-					if(traitstring)
-						msg += "<span class='info'>Detected physiological traits:<br></span>"
-						msg += "<span class='info'>[traitstring]</span><br>"
-
-
-
-				if(istype(H.glasses, /obj/item/clothing/glasses/hud/security) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/security))
-					if(!user.stat && user != src)
-					//|| !user.canmove || user.restrained()) Fluff: Sechuds have eye-tracking technology and sets 'arrest' to people that the wearer looks and blinks at.
-						var/criminal = "None"
-
-						R = find_record("name", perpname, GLOB.data_core.security)
-						if(R)
-							criminal = R.fields["criminal"]
-
-						. += jointext(list("<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>",
-							"<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-							"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
-							"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
-							"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
-	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
-
-	. += "\n[print_special()]\n"
-
-	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
-
-	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
-		. += span_danger("<B>This player has been slept by staff.</B>\n")
-
-	. += "*---------*</span>"
-
-/mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
-	var/list/dat = list()
-	if(!pronoun_replacement)
-		pronoun_replacement = p_they(TRUE)
-	for(var/V in status_effects)
-		var/datum/status_effect/E = V
-		if(E.examine_text)
-			var/new_text = replacetext(E.examine_text, "SUBJECTPRONOUN", pronoun_replacement)
-			new_text = replacetext(new_text, "[pronoun_replacement] is", "[pronoun_replacement] [p_are()]") //To make sure something become "They are" or "She is", not "They are" and "She are"
-			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
-	if(dat.len)
-		dat.Join()
-		return
+		

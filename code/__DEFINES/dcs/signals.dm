@@ -25,6 +25,10 @@
 #define COMSIG_GLOB_RADIATION_SHOW "!debug_show_rads"				//Makes turfs that are radioactive green and show a number
 
 
+#define COMSIG_GLOB_PRE_RANDOM_EVENT "!pre_random_event"
+	/// Do not allow this random event to continue.
+	#define CANCEL_PRE_RANDOM_EVENT (1<<0)
+
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"
@@ -135,6 +139,9 @@
 
 ///When a gun/mag thing is told to admin reload, signal
 #define COMSIG_GUN_MAG_ADMIN_RELOAD "gun_mag_admin_reload"
+
+///simple thing to just see if the thing is still listening to us
+#define COMSIG_PING "ping"
 
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"		//from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"		//called when teleporting into a protected turf: (channel, turf/origin, turf/destination)

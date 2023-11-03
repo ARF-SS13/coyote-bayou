@@ -329,7 +329,9 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/kitchen,
 	/obj/item/kinetic_crusher,
 	/obj/item/toy,
-	/obj/item/cult_bastard
+	/obj/item/cult_bastard,
+	/obj/item/shield,
+	/obj/item/storage/backpack/satchel
 	)))
 
 /// Things allowed in a toolbelt
@@ -573,6 +575,8 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/police,
 	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby,
+	/obj/item/gun/ballistic/revolver/derringerLC,
+	/obj/item/gun/ballistic/revolver/derringer4570,
 	)))
 
 GLOBAL_LIST_INIT(plushbelt_allowed, typecacheof(list(

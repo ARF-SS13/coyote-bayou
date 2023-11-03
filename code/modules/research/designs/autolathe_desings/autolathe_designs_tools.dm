@@ -166,6 +166,7 @@
 	materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 	build_path = /obj/item/geiger_counter
 	category = list("initial", "Tools")
+
 /datum/design/cleaner
 	name = "Abraxo cleaner"
 	id = "cleaner"

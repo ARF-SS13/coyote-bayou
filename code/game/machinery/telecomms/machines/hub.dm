@@ -15,6 +15,8 @@
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 80
+	flags_1 = DEFAULT_RICOCHET_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	long_range_link = TRUE
 	netspeed = 40
 	circuit = /obj/item/circuitboard/machine/telecomms/hub

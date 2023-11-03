@@ -4,6 +4,7 @@
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "chinesesoldier"
 	icon_living = "chinesesoldier"
+	icon_dead = "chinesesoldier_dead"
 	icon_gib = "syndicate_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
@@ -20,13 +21,12 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant, /obj/item/melee/onehanded/knife/survival)
+	loot = list()
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("china")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = 1
 	tastes = list("people" = 1, "dust" = 2)
 
 /mob/living/simple_animal/hostile/chinese/Aggro()
@@ -40,7 +40,8 @@
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"
 	icon_living = "chinesepistol"
-	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/pistol, /obj/item/gun/ballistic/automatic/pistol/type17)
+	icon_dead = "chinesepistol_dead"
+	loot = list()
 	ranged = 1
 	maxHealth = 110
 	health = 110
@@ -63,10 +64,11 @@
 	name = "chinese remnant assault soldier"
 	icon_state = "chineseassault"
 	icon_living = "chineseassault"
+	icon_dead = "chineseassault_dead"
 	maxHealth = 160
 	health = 160
 	extra_projectiles = 2
-	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/assault, /obj/item/gun/ballistic/automatic/type93, /obj/item/ammo_box/magazine/m556/rifle/assault)
+	loot = list()
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	projectile_sound_properties = list(

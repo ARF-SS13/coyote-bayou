@@ -701,3 +701,303 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A hard brown spiral of a shell that fits well on a back. You can somehow store items in it..huh! Snailtastic."
 	icon_state = "snailshell"
 	item_state = "snailshell"
+
+//Backpacks from Skyrat
+/obj/item/storage/backpack/skyrat/ertodst
+	name = "black ert bag"
+	desc = "A black bag, snazzy"
+	icon_state = "ert_odst"
+	item_state = "ert_odst"
+
+/obj/item/storage/backpack/skyrat/robobackpack
+	name = "robotics backpack"
+	desc = "A black bag with red and white accents"
+	icon_state = "backpack_robo"
+	item_state = "backpack_robo"
+
+/obj/item/storage/backpack/satchel/skyrat/robosatchel
+	name = "robotics satchel"
+	desc = "A black bag with red and white accents"
+	icon_state = "satchel_robo"
+	item_state = "satchel_robo"
+
+/obj/item/storage/backpack/duffelbag/skyrat/roboduffel
+	name = "robotics duffle"
+	desc = "A black bag with red and white accents"
+	icon_state = "duffel_robo"
+	item_state = "duffel_robo"
+
+/obj/item/storage/backpack/skyrat/robomessanger
+	name = "robotics messanger"
+	desc = "A black bag with red and white accents"
+	icon_state = "messenger_robo"
+	item_state = "messenger_robo"
+
+/obj/item/storage/backpack/skyrat/hopbackpack
+	name = "blue backpack"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "backpack_hop"
+	item_state = "backpack_hop"
+
+/obj/item/storage/backpack/satchel/skyrat/hopsatchel
+	name = "blue satchel"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "satchel_hop"
+	item_state = "satchel_hop"
+
+/obj/item/storage/backpack/duffelbag/skyrat/hopduffel
+	name = "blue duffel"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "duffel_hop"
+	item_state = "duffel_hop"
+
+/obj/item/storage/backpack/skyrat/hopmessanger
+	name = "blue messenger"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "messenger_hop"
+	item_state = "messenger_hop"
+
+/obj/item/storage/backpack/skyrat/securitybackpack
+	name = "security backpack"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "backpack_security_black"
+	item_state = "backpack_security_black"
+
+/obj/item/storage/backpack/satchel/skyrat/securitysatchel
+	name = "security satchel"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "satchel_security_black"
+	item_state = "satchel_security_black"
+
+/obj/item/storage/backpack/duffelbag/skyrat/securityduffel
+	name = "security duffel"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "duffel_security_black"
+	item_state = "duffel_security_black"
+
+/obj/item/storage/backpack/skyrat/securitymessenger
+	name = "security messenger"
+	desc = "A navy blue bag with white accents and a red strap."
+	icon_state = "messenger_security_black"
+	item_state = "messenger_security_black"
+
+/obj/item/storage/backpack/skyrat/medicalbackpack
+	name = "medical backpack"
+	desc = "A white bag with navy accents and a light blue strap"
+	icon_state = "backpack_security_white"
+	item_state = "backpack_security_white"
+
+/obj/item/storage/backpack/satchel/skyrat/medicalsatchel
+	name = "medical satchel"
+	desc = "A white bag with navy accents and a light blue strap"
+	icon_state = "satchel_security_white"
+	item_state = "satchel_security_white"
+
+/obj/item/storage/backpack/duffelbag/skyrat/medicalduffel
+	name = "medical duffel"
+	desc = "A white bag with navy accents and a light blue strap"
+	icon_state = "duffel_security_white"
+	item_state = "duffel_security_white"
+
+/obj/item/storage/backpack/skyrat/medicalmessenger
+	name = "medical messenger"
+	desc = "A white bag with navy accents and a light blue strap"
+	icon_state = "messenger_security_white"
+	item_state = "messenger_security_white"
+
+/obj/item/storage/backpack/skyrat/blueshieldbackpack
+	name = "blueshield backpack"
+	desc = "A black bag with dark blue accents"
+	icon_state = "backpack_blueshield"
+	item_state = "backpack_blueshield"
+
+/obj/item/storage/backpack/satchel/skyrat/blueshieldsatchel
+	name = "blueshield satchel"
+	desc = "A black bag with dark blue accents"
+	icon_state = "satchel_blueshield"
+	item_state = "satchel_blueshield"
+
+/obj/item/storage/backpack/duffelbag/skyrat/blueshieldduffel
+	name = "blueshield duffel"
+	desc = "A black bag with dark blue accents"
+	icon_state = "duffel_blueshield"
+	item_state = "duffel_blueshield"
+
+/obj/item/storage/backpack/skyrat/blueshieldmessanger
+	name = "blueshield messanger"
+	desc = "A black bag with dark blue accents"
+	icon_state = "messsanger_blueshield"
+	item_state = "messanger_blueshield"
+
+/obj/item/storage/backpack/duffelbag/skyrat/carrybackpackgreen
+	name = "bulky green bag"
+	desc = "A big and bulky bag"
+	icon_state = "russian_green_backpack"
+	item_state = "russian_green_backpack"
+
+/obj/item/storage/backpack/duffelbag/skyrat/carrybackpackblack
+	name = "bulky black bag"
+	desc = "A big and buklky bag"
+	icon_state = "russian_black_backpack"
+	item_state = "russian_black_backpack"
+
+/obj/item/storage/backpack/duffelbag/skyrat/carrybackpackwhite
+	name = "bulky white bag"
+	desc = "A big and buklky bag"
+	icon_state = "russian_white_backpack"
+	item_state = "russian_white_backpack"
+
+/obj/item/storage/backpack/duffelbag/skyrat/carrybackpackbrown
+	name = "bulky brown bag"
+	desc = "A big and buklky bag"
+	icon_state = "russian_brown_backpack"
+	item_state = "russian_brown_backpack"
+
+/obj/item/storage/backpack/skyrat/messangerblack
+	name = "black messanger bag"
+	desc = "A black messanger bag"
+	icon_state = "messenger"
+	item_state = "messenger"
+
+/obj/item/storage/backpack/skyrat/messangercaptain
+	name = "dark blue messanger bag"
+	desc = "A dark blue messanger bag"
+	icon_state = "messenger_captain"
+	item_state = "messenger_captain"
+
+/obj/item/storage/backpack/skyrat/messangerscience
+	name = "purple accented messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_science"
+	item_state = "messenger_science"
+
+/obj/item/storage/backpack/skyrat/messangergenetics
+	name = "blue accented messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_genetics"
+	item_state = "messenger_genetics"
+
+/obj/item/storage/backpack/skyrat/messangerengineering
+	name = "brown and orange messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_engineering"
+	item_state = "messenger_engineering"
+
+/obj/item/storage/backpack/skyrat/messangerexplorer
+	name = "brown and blue messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_explorer"
+	item_state = "messenger_explorer"
+
+/obj/item/storage/backpack/skyrat/messengerhydroponics
+	name = "green and blue messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_hydroponics"
+	item_state = "messenger_hydroponics"
+
+/obj/item/storage/backpack/skyrat/messengerclown
+	name = "green messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_clown"
+	item_state = "messenger_clown"
+
+/obj/item/storage/backpack/skyrat/messengermedical
+	name = "medical messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_medical"
+	item_state = "messenger_medical"
+
+/obj/item/storage/backpack/skyrat/messengerchemistry
+	name = "chemistry messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_chemistry"
+	item_state = "messenger_chemistry"
+
+/obj/item/storage/backpack/skyrat/messengervirology
+	name = "virology messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_virology"
+	item_state = "messenger_virology"
+
+/obj/item/storage/backpack/skyrat/messengercoroner
+	name = "coroner messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_coroner"
+	item_state = "messenger_coroner"
+
+/obj/item/storage/backpack/skyrat/messengercoroner
+	name = "coroner messanger bag"
+	desc = "A messanger bag"
+	icon_state = "messenger_coroner"
+	item_state = "messenger_coroner"
+
+/obj/item/storage/backpack/skyrat/coneshell
+	name = "coneshell bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "coneshell"
+	item_state = "coneshell"
+
+/obj/item/storage/backpack/skyrat/cinnamonshell
+	name = "cinnamonshell bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "cinnamonshell"
+	item_state = "cinnamonshell"
+
+/obj/item/storage/backpack/skyrat/caramelshell
+	name = "caramel shell bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "caramelshell"
+	item_state = "caramelshell"
+
+/obj/item/storage/backpack/skyrat/pyramidshellwhite
+	name = "pyramidshell white snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "pyramidshellwhite"
+	item_state = "pyramidshellwhite"
+
+/obj/item/storage/backpack/skyrat/spiralshellwhite
+	name = "spiralshell white snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "spiralshellwhite"
+	item_state = "spiralshellwhite"
+
+/obj/item/storage/backpack/skyrat/rockshellwhite
+	name = "rockshell white snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "rockshellwhite"
+	item_state = "rockshellwhite"
+
+/obj/item/storage/backpack/skyrat/mechashell
+	name = "mechashell snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "mechashell"
+	item_state = "mechashell"
+
+/obj/item/storage/backpack/skyrat/mechashell
+	name = "mechashell snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "mechashell"
+	item_state = "mechashell"
+
+/obj/item/storage/backpack/skyrat/pyramidshell
+	name = "pyramidshell snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "pyramidshell"
+	item_state = "pyramidshell"
+
+/obj/item/storage/backpack/skyrat/spiralshell
+	name = "spiralshell snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "spiralshell"
+	item_state = "spiralshell"
+
+/obj/item/storage/backpack/skyrat/rockshell
+	name = "rockshell snail bag"
+	desc = "A snail shell that somehow can store things! Don't question it."
+	icon_state = "rockshell"
+	item_state = "rockshell"
+
+/obj/item/storage/backpack/invisipack // backpack with no mob sprite
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "invisipack"
+	item_state = "invisipack"

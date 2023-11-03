@@ -89,6 +89,7 @@
 #define CAT_PRIMAL	"Primal"
 //#define CAT_TRIBAL "Tribal"
 #define CAT_CLOTHING	"Clothing"
+#define CAT_MAGIC	"Magic"
 #define CAT_FOOD	"Foods"
 #define CAT_WASTEFOOD	"Food Wasteland"
 #define CAT_BREAD	"Food Bread"

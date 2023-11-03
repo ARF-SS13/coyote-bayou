@@ -2,7 +2,7 @@
 /// Register COMSIG_VORE_ATOM_DEVOURED to a proc on these to make them do stuff
 #define VORABLE_TYPES list(\
 	/obj/item/reagent_containers/food,\
-	/mob/living/simple_animal/pet/catslug,\
+	/mob/living/simple_animal,\
 	/obj/item/organ,\
 	/obj/item/clothing/head/mob_holder,\
 	/obj/item/trash,\
@@ -54,7 +54,7 @@ PROCESSING_SUBSYSTEM_DEF(vore)
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_mobtypes_that_should_vore()
 	approved_vore_mobtypes |= typecacheof(/mob/living/carbon/human)
-	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal/pet/catslug)
+	approved_vore_mobtypes |= typecacheof(/mob/living/simple_animal)
 
 /datum/controller/subsystem/processing/vore/proc/build_list_of_items_that_can_be_vored()
 	for(var/itempath in VORABLE_TYPES)

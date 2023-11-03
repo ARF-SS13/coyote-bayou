@@ -9,6 +9,8 @@ armor	//Baseline hardsuits
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 	light_on = FALSE
+	clothing_flags = THICKMATERIAL | BLOCK_GAS_SMOKE_EFFECT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	var/basestate = "hardsuit"
 	var/on = FALSE
 	var/obj/item/clothing/suit/space/hardsuit/suit
@@ -28,6 +30,10 @@ armor	//Baseline hardsuits
 
 /obj/item/clothing/head/helmet/space/hardsuit/Destroy()
 	. = ..()
+	if(!QDELETED(suit))
+		qdel(suit)
+	suit = null
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/helmet/space/hardsuit/attack_self(mob/user)
@@ -97,6 +103,13 @@ armor	//Baseline hardsuits
 	item_state = "eng_hardsuit"
 	max_integrity = 300
 	siemens_coefficient = 0
+//	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	clothing_flags = THICKMATERIAL
+	w_class = WEIGHT_CLASS_NORMAL
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
 	var/obj/item/clothing/head/helmet/space/hardsuit/helmet
 	actions_types = list(/datum/action/item_action/toggle_helmet)
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
@@ -847,13 +860,15 @@ armor	//Baseline hardsuits
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight
 	icon_state = "knight_cydonia"
-	name = "cydonian armor"
-	desc = "A suit designed with both form and function in mind, it protects the user against physical trauma and hazardous conditions while also having polychromic light strips."
+	name = "cydonian powersuit"
+	desc = "A suit of semi-powered armor produced by Cydonian Arms and Armor. It sports less armor than its contemporaries, but allows for improved mobility and recoloring of the inbuilt light strips."
 	item_state = "swat_suit"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T2) // combat armor but bad melee; use that speed dummy
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
-	armor = list(melee = 50, bullet = 10, laser = 10, energy = 10, bomb = 50, bio = 100, rad = 50, fire = 100, acid = 100, "wound" = 30)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/lavaknight
+	pocket_storage_component_path = null // alt click function makes suit storage not great
+	helmettype = null ///obj/item/clothing/head/helmet/space/hardsuit/lavaknight // helmet bugged af and idk how to fix
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	light_range = 1
 	light_color = "#35FFF0"
@@ -904,3 +919,25 @@ armor	//Baseline hardsuits
 /obj/item/clothing/suit/space/hardsuit/lavaknight/examine(mob/user)
 	. = ..()
 	. += span_notice("Alt-click to recolor it.")
+
+/* Custom Hardsuits */
+
+/obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm
+	name = "type IIIA hazard powersuit"
+	desc = "This heavily modified Cydonian powersuit sports specialized components and titanium plating to protect against CBRN hazards \
+	along with laser and plasma projectiles. However, shock absorbers and layers of kevlar had to be sacrificed to make it all fit. \
+	In addition, while it retains the standard model's mobility, the added bulk makes fine manipulation more difficult."
+	stiffness = HEAVY_STIFFNESS
+	armor_tokens = null
+	armor = list(\
+		"melee" = 15, \
+		"bullet" = 25, \
+		"laser" = 50, \
+		"energy" = 25, \
+		"bomb" = 15, \
+		"bio" = 100, \
+		"rad" = 75, \
+		"fire" = 40, \
+		"acid" = 75, \
+		"wound" = 10, \
+		"damage_threshold" = 5)

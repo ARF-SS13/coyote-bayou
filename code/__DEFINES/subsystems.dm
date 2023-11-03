@@ -56,6 +56,9 @@
 #define INITIALIZE_HINT_LATELOAD 1  //Call LateInitialize
 #define INITIALIZE_HINT_QDEL 2  //Call qdel on the atom
 
+///Call qdel with a force of TRUE after initialization
+#define INITIALIZE_HINT_QDEL_FORCE 3
+
 //type and all subtypes should always call Initialize in New()
 #define INITIALIZE_IMMEDIATE(X) ##X/New(loc, ...){\
 	..();\
@@ -96,6 +99,7 @@
 #define INIT_ORDER_ATOMS			30
 #define INIT_ORDER_ITEMSPAWNERS		29
 #define INIT_ORDER_VALIDBALL		28
+#define INIT_ORDER_WHO				27
 #define INIT_ORDER_LANGUAGE			25
 #define INIT_ORDER_PLANTS			21
 #define INIT_ORDER_MACHINES			20
@@ -158,6 +162,7 @@
 #define FIRE_PRIORITY_ATMOS_ADJACENCY	300
 #define FIRE_PRIORITY_STATPANEL		390
 #define FIRE_PRIORITY_CHAT			400
+#define FIRE_PRIORITY_MOUSE_ENTERED	450
 #define FIRE_PRIORITY_OVERLAYS		500
 #define FIRE_PRIORITY_CALLBACKS		600
 #define FIRE_PRIORITY_TIMER			700

@@ -159,17 +159,18 @@ Difficulty: Extremely Hard
 
 /// Shoots out homing frost orbs that explode into ice blast projectiles after a couple seconds
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/proc/frost_orbs(added_delay = 10, shoot_times = 8)
+	var/atom/my_target = get_target()
 	for(var/i in 1 to shoot_times)
 		var/turf/startloc = get_turf(src)
-		var/turf/endloc = get_turf(target)
+		var/turf/endloc = get_turf(my_target)
 		if(!endloc)
 			break
 		var/obj/item/projectile/frost_orb/P = new(startloc)
 		P.preparePixelProjectile(endloc, startloc)
 		P.firer = src
-		if(target)
-			P.original = target
-		P.set_homing_target(target)
+		if(my_target)
+			P.original = my_target
+		P.set_homing_target(my_target)
 		P.fire(rand(0, 360))
 		addtimer(CALLBACK(P, /obj/item/projectile/frost_orb/proc/orb_explosion, projectile_speed_multiplier), 20) // make the orbs home in after a second
 		SLEEP_CHECK_DEATH(added_delay)
@@ -194,36 +195,38 @@ Difficulty: Extremely Hard
 
 /// Shoots out snowballs with a random spread
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/proc/snowball_machine_gun(shots = 60, spread = 45)
+	var/atom/my_target = get_target()
 	for(var/i in 1 to shots)
 		var/turf/startloc = get_turf(src)
-		var/turf/endloc = get_turf(target)
+		var/turf/endloc = get_turf(my_target)
 		if(!endloc)
 			break
 		var/obj/item/projectile/P = new /obj/item/projectile/snowball(startloc)
 		P.pixels_per_second *= projectile_speed_multiplier
 		P.preparePixelProjectile(endloc, startloc, null, rand(-spread, spread))
 		P.firer = src
-		if(target)
-			P.original = target
+		if(my_target)
+			P.original = my_target
 		P.fire()
 		SLEEP_CHECK_DEATH(1)
 	SetRecoveryTime(15, 15)
 
 /// Shoots out ice blasts in a shotgun like pattern
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/proc/ice_shotgun(shots = 5, list/patterns = list(list(-40, -20, 0, 20, 40), list(-30, -10, 10, 30)))
+	var/atom/my_target = get_target()
 	for(var/i in 1 to shots)
 		var/list/pattern = patterns[i % length(patterns) + 1] // alternating patterns
 		for(var/spread in pattern)
 			var/turf/startloc = get_turf(src)
-			var/turf/endloc = get_turf(target)
+			var/turf/endloc = get_turf(my_target)
 			if(!endloc)
 				break
 			var/obj/item/projectile/P = new /obj/item/projectile/ice_blast(startloc)
 			P.pixels_per_second *= projectile_speed_multiplier
 			P.preparePixelProjectile(endloc, startloc, null, spread)
 			P.firer = src
-			if(target)
-				P.original = target
+			if(my_target)
+				P.original = my_target
 			P.fire()
 		SLEEP_CHECK_DEATH(8)
 	SetRecoveryTime(15, 20)
@@ -281,7 +284,7 @@ Difficulty: Extremely Hard
 	to_chat(user, span_notice("You feel a bit safer... but a demonic presence lurks in the back of your head..."))
 	RegisterSignal(user, COMSIG_MOB_DEATH, .proc/resurrect)
 
-/// Resurrects the target when they die by cloning them into a new duplicate body and transferring their mind to the clone on a safe station turf
+/// Resurrects the targette when they die by cloning them into a new duplicate body and transferring their mind to the clone on a safe station turf
 /obj/item/resurrection_crystal/proc/resurrect(mob/living/carbon/user, gibbed)
 	user.visible_message(span_notice("You see [user]'s soul dragged out of their body!"), span_notice("You feel your soul dragged away to a fresh body!"))
 	var/typepath = user.type
@@ -330,11 +333,11 @@ Difficulty: Extremely Hard
 	id = "ice_block_talisman"
 	duration = 25
 	status_type = STATUS_EFFECT_REFRESH
-	alert_type = /obj/screen/alert/status_effect/ice_block_talisman
+	alert_type = /atom/movable/screen/alert/status_effect/ice_block_talisman
 	/// Stored icon overlay for the hit mob, removed when effect is removed
 	var/icon/cube
 
-/obj/screen/alert/status_effect/ice_block_talisman
+/atom/movable/screen/alert/status_effect/ice_block_talisman
 	name = "Frozen Solid"
 	desc = "You're frozen inside an ice cube, and cannot move!"
 	icon_state = "frozen"

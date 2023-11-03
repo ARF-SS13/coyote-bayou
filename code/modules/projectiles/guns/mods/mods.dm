@@ -87,9 +87,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.25,
-		GUN_UPGRADE_RECOIL_1H = 1.6,
-		GUN_UPGRADE_RECOIL_2H = 1.6,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 1.6
+		GUN_UPGRADE_RECOIL_1H = 2.5,
+		GUN_UPGRADE_RECOIL_2H = 2.0,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
 		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -448,7 +448,7 @@
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
 
-// Double damage at the cost of more recoil and a tripled energy consumption
+// Increased damage, but massively slows the ROF and causes recoil.
 /obj/item/gun_upgrade/mechanism/battery_shunt
 	name = "Poseidon Quantum Injection Electro-shunt"
 	desc = "This experimental battery shunt is a cutting edge tool attachment which bypasses battery protection circuits to deliver the maximum amount of power in the shortest amount of time. You can still notice REPCONN branding on it..."
@@ -458,27 +458,27 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL_1H = 2,
-	GUN_UPGRADE_RECOIL_2H = 2,
+		GUN_UPGRADE_RECOIL_1H = 2.5,
+		GUN_UPGRADE_RECOIL_2H = 2.0,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 1.5,
-	GUN_UPGRADE_DAMAGE_MULT = 1.30)
+	GUN_UPGRADE_DAMAGE_MULT = 1.25)
 	//GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
-// Massively lowers cell charge usage at the cost of lower damage
+// Same slot as the heatsink, better but at a cost
 /obj/item/gun_upgrade/mechanism/overdrive
 	name = "REPCONN overdrive chip"
-	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of lowering the power output of a weapon tremendously."
+	desc = "This experimental chip supercharges the weapon's rate of fire at the cost of massively increasing the weapon's kickback and slightly destabilizing the beam."
 	icon_state = "overdrive"
 
 /obj/item/gun_upgrade/mechanism/overdrive/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL_1H = 0.8,
-	GUN_UPGRADE_RECOIL_2H = 0.8,
-	GUN_UPGRADE_DAMAGE_MULT = 0.5,
+	GUN_UPGRADE_RECOIL_1H = 1.5,
+	GUN_UPGRADE_RECOIL_2H = 1.2,
+	GUN_UPGRADE_DAMAGE_MULT = 0.8,
 	GUN_UPGRADE_FIRE_DELAY_MULT = 0.6)
 	//GUN_UPGRADE_CHARGECOST = 0.65)
 	//GUN_UPGRADE_FULLAUTO = TRUE)

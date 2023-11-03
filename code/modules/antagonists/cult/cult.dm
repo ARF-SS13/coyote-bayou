@@ -122,7 +122,7 @@
 	communion.Grant(current)
 	if(ishuman(current))
 		magic.Grant(current)
-	current.throw_alert("bloodsense", /obj/screen/alert/bloodsense)
+	current.throw_alert("bloodsense", /atom/movable/screen/alert/bloodsense)
 	if(cult_team?.cult_risen)
 		cult_team.rise(current)
 		if(cult_team.cult_ascendent)
@@ -366,7 +366,7 @@
 	if(replacement)
 		for(var/datum/mind/H in members)
 			if(H.current)
-				to_chat(H.current, "<span class='danger'>Nar'Sie</span> murmurs, <span class='cultlarge'>[sac_objective.target] is beyond your reach. Sacrifice [new_target] instead...</span></span>")
+				to_chat(H.current, span_danger("Nar'Sie</span> murmurs, <span class='cultlarge'>[sac_objective.target] is beyond your reach. Sacrifice [new_target] instead...</span>"))
 	sac_objective.target = new_target
 	sac_objective.target_current = new_target.current
 	sac_objective.update_explanation_text()

@@ -19,9 +19,9 @@
 
 
 /mob/dead/new_player/Initialize(mapload)
-	if(client && SSticker.state == GAME_STATE_STARTUP)
-		var/obj/screen/splash/S = new(null, client, TRUE, TRUE)
-		S.Fade(TRUE)
+	// if(client && SSticker.state == GAME_STATE_STARTUP)
+	// 	var/atom/movable/screen/splash/S = new(null, client, TRUE, TRUE)
+	// 	S.Fade(TRUE)
 
 	if(length(GLOB.newplayer_start))
 		forceMove(pick(GLOB.newplayer_start))
@@ -32,7 +32,11 @@
 
 	. = ..()
 
+	GLOB.new_player_list += src
+
 /mob/dead/new_player/Destroy()
+	GLOB.new_player_list -= src
+
 	return ..()
 
 /mob/dead/new_player/prepare_huds()
@@ -531,7 +535,7 @@
 	if(job && !job.override_latejoin_spawn(character))
 		SSjob.SendToLateJoin(character)
 		if(!arrivals_docked)
-			var/obj/screen/splash/Spl = new(character.client, TRUE)
+			var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 			Spl.Fade(TRUE)
 			character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
@@ -553,7 +557,7 @@
 			AnnounceArrival(humanc, rank)
 		AddEmploymentContract(humanc)
 		if(GLOB.highlander)
-			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
+			to_chat(humanc, span_userdanger("<i>THERE CAN BE ONLY ONE!!!</i>"))
 			humanc.make_scottish()
 
 		if(GLOB.summon_guns_triggered)
@@ -601,7 +605,7 @@
 	if(ckey && client && client.prefs.creature_species)
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
-			to_chat(src, "<span class='userdanger'>You must set your Creature OOC Notes and Flavor Text before joining as a creature.</span>")
+			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
 			return FALSE
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
@@ -615,7 +619,7 @@
 		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
-		var/obj/item/storage/backpack/satchel/old/S = new(C)
+		var/obj/item/storage/backpack/duffelbag/S = new(C)
 		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
@@ -624,9 +628,13 @@
 		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
 		if(S)
+			new /obj/item/storage/wallet/stash/low(S)
 			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
 			new /obj/item/flashlight(S)//Give them a flashlight for seeing
 			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
+			new /obj/item/kit_spawner/townie(S)//And a weapon so they can play the game :tm:
+			new /obj/item/pda(S)//And a PDA since everyone else spawns with one, too
+			new /obj/item/card/id/selfassign(S)//And an ID card to swipe into the PDA
 		//Assign the mob's information based on the player's client preferences
 		switch(P.gender)
 			if("male")
@@ -736,6 +744,11 @@
 
 		client.prefs.scars_list["[cur_scar_index]"] = valid_scars
 		client.prefs.save_character()
+		
+	// load permanent tattoos
+	if(client.prefs.permanent_tattoos)
+		H.load_all_tattoos(client.prefs.permanent_tattoos)
+
 	client.prefs.copy_to(H, initial_spawn = TRUE)
 	H.dna.update_dna_identity()
 	if(mind)
@@ -744,6 +757,7 @@
 		mind.active = 0					//we wish to transfer the key manually
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
+
 
 	H.name = real_name
 	client.init_verbs()
@@ -838,4 +852,5 @@
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)
+
 

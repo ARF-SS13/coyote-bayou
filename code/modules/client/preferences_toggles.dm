@@ -250,7 +250,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleprayersounds)()
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 	set name = "Show/Hide OOC"
 	set category = "Preferences"
-	set desc = "Show OOC Chat"
+	set desc = "Toggles seeing Out Of Character chat"
 	usr.client.prefs.chat_toggles ^= CHAT_OOC
 	usr.client.prefs.save_preferences()
 	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_OOC) ? "now" : "no longer"] see messages on the OOC channel.")
@@ -267,8 +267,30 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 	//to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_LOOC) ? "now" : "no longer"] see messages on the LOOC channel.")
 	to_chat(usr, "Local OOC cannot be disabled. If someone is being obnoxious over LOOC, please ahelp.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[usr.client.prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]"))
-/datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
+/datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_newbie)()
+	set name = "Show/Hide Newbie"
+	set category = "Preferences"
+	set desc = "Toggles seeing Newbie chat"
+	usr.client.prefs.chat_toggles ^= CHAT_NEWBIE
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_NEWBIE) ? "now" : "no longer"] see messages on the NEWBIE channel.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing NEWBIE", "[usr.client.prefs.chat_toggles & CHAT_NEWBIE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/listen_newbie/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_NEWBIE
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_anonooc)()
+	set name = "Show/Hide AnonOOC"
+	set category = "Preferences"
+	set desc = "Toggles seeing Anonymous Out Of Character chat"
+	usr.client.prefs.chat_toggles ^= CHAT_AOOC
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_AOOC) ? "now" : "no longer"] see messages on the AnonOOC channel.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing AnonOOC", "[usr.client.prefs.chat_toggles & CHAT_AOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/listen_aooc/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_AOOC
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
@@ -284,13 +306,18 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, toggle_gun_cursor)()
 	set name = "Show Gun Cursor"
 	set category = "Preferences"
-	set desc = "Show the gun cursor when you have one our"
+	set desc = "Show the gun cursor when you have one out"
 	usr.client.prefs.cb_toggles ^= AIM_CURSOR_ON
 	usr.client.prefs.save_preferences()
 	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & AIM_CURSOR_ON) ? "now" : "no longer"] see a sickass cursor when you have a gun out.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Gun Cursor", "[(usr.client.prefs.chat_toggles & CHAT_BANKCARD) ? "Enabled" : "Disabled"]"))
-/datum/verbs/menu/Settings/toggle_gun_cursor/Get_checked(client/C)
-	return C.prefs.cb_toggles & AIM_CURSOR_ON
+
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, fit_window)()
+	set name = "Boss Left"
+	set category = "Preferences"
+	set desc = "Fit Viewport"
+	usr.client.fit_viewport()
 
 GLOBAL_LIST_INIT(ghost_forms, list("ghost","ghostking","ghostian2","skeleghost","ghost_red","ghost_black", \
 							"ghost_blue","ghost_yellow","ghost_green","ghost_pink", \
@@ -391,6 +418,49 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	if(isobserver(mob))
 		mob.hud_used.show_hud()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost HUD", "[prefs.ghost_hud ? "Enabled" : "Disabled"]"))
+
+/client/verb/set_tbs()
+	set name = "Set Top/Bottom/Switch"
+	set category = "Preferences"
+	set desc = "Set whether you're a top, a bottom, or a switch!"
+
+	var/new_tbs = input(src, "Are you a top, bottom, or switch? (or none of the above)", "Character Preference") as null|anything in TBS_LIST
+	if(new_tbs)
+		prefs.tbs = new_tbs
+	SSstatpanels.cached_tops -= ckey
+	SSstatpanels.cached_bottoms -= ckey
+	SSstatpanels.cached_switches -= ckey
+	switch(prefs.tbs)
+		if(TBS_TOP)
+			SSstatpanels.cached_tops |= ckey
+		if(TBS_BOTTOM)
+			SSstatpanels.cached_bottoms |= ckey
+		if(TBS_SHOES)
+			SSstatpanels.cached_switches |= ckey
+	to_chat(src, "You can now proudly say '[span_boldnotice(new_tbs)]'.")
+	prefs.save_preferences()
+
+/client/verb/set_kiss()
+	set name = "Set Kisser"
+	set category = "Preferences"
+	set desc = "Set whether you kiss boys, girls, or none of the above!!"
+
+	var/new_kiss = input(src, "What sort of person do you like to kiss?", "Character Preference") as null|anything in KISS_LIST
+	if(new_kiss)
+		prefs.kisser = new_kiss
+	SSstatpanels.cached_boykissers -= ckey
+	SSstatpanels.cached_girlkissers -= ckey
+	SSstatpanels.cached_anykissers -= ckey
+	switch(prefs.kisser)
+		if(KISS_BOYS)
+			SSstatpanels.cached_boykissers |= ckey
+		if(KISS_GIRLS)
+			SSstatpanels.cached_girlkissers |= ckey
+		if(KISS_ANY)
+			SSstatpanels.cached_anykissers |= ckey
+	to_chat(src, "You can now proudly say '[span_boldnotice(new_kiss)]'.")
+	prefs.save_preferences()
+
 
 /client/verb/toggle_inquisition() // warning: unexpected inquisition
 	set name = "Toggle Inquisitiveness"

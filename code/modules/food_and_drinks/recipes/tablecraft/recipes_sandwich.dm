@@ -81,7 +81,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/meatballsub
 	subcategory = CAT_PIE
-	
+
 /datum/crafting_recipe/food/hotdog
 	name = "Hot dog"
 	reqs = list(
@@ -90,4 +90,14 @@
 		/obj/item/reagent_containers/food/snacks/sausage = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/hotdog
+	subcategory = CAT_PIE
+
+/datum/crafting_recipe/peanutbutterbanana_sandwich
+	name = "Peanut butter sandwich"
+	reqs = list(
+		/datum/reagent/consumable/peanut_butter = 5,
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
+		/obj/item/reagent_containers/food/snacks/grown/banana = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/peanutbutterbanana
 	subcategory = CAT_PIE

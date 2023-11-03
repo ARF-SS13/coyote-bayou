@@ -255,7 +255,7 @@ SUBSYSTEM_DEF(persistence)
 	SaveRandomizedRecipes()
 	SavePanicBunker()
 	SavePaintings()
-	SaveScars()
+	SaveScarsAndTattoos()
 	SaveNoticeboards()
 	SaveFolders()
 
@@ -498,8 +498,8 @@ SUBSYSTEM_DEF(persistence)
 	saved_storytellers.len = 3
 	saved_storytellers[3] = saved_storytellers[2]
 	saved_storytellers[2] = saved_storytellers[1]
-	saved_storytellers[1] = mode.storyteller.name
-	average_dynamic_threat = (mode.threat_average + average_dynamic_threat) / 2
+	//saved_storytellers[1] = mode.storyteller.name
+	//average_dynamic_threat = (mode.threat_average + average_dynamic_threat) / 2
 	var/json_file = file("data/RecentStorytellers.json")
 	var/list/file_data = list()
 	file_data["data"] = saved_storytellers + average_dynamic_threat
@@ -510,9 +510,9 @@ SUBSYSTEM_DEF(persistence)
 	saved_dynamic_rules[3] = saved_dynamic_rules[2]
 	saved_dynamic_rules[2] = saved_dynamic_rules[1]
 	saved_dynamic_rules[1] = list()
-	for(var/r in mode.executed_rules)
-		var/datum/dynamic_ruleset/rule = r
-		saved_dynamic_rules[1] += rule.config_tag
+	// for(var/r in mode.executed_rules)
+	// 	var/datum/dynamic_ruleset/rule = r
+	// 	saved_dynamic_rules[1] += rule.config_tag
 	var/json_file = file("data/RecentRulesets.json")
 	var/list/file_data = list()
 	file_data["data"] = saved_dynamic_rules
@@ -607,26 +607,29 @@ SUBSYSTEM_DEF(persistence)
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(paintings))
 
-/datum/controller/subsystem/persistence/proc/SaveScars()
+/datum/controller/subsystem/persistence/proc/SaveScarsAndTattoos()
 	for(var/i in GLOB.joined_player_list)
 		var/mob/living/carbon/human/ending_human = get_mob_by_ckey(i)
-		if(!istype(ending_human) || !ending_human.mind || !ending_human.client || !ending_human.client.prefs || !ending_human.client.prefs.persistent_scars)
+		if(!istype(ending_human) || !ending_human.mind || !ending_human.client || !ending_human.client.prefs)
 			continue
 
-		var/mob/living/carbon/human/original_human = ending_human.mind.original_character
-		if(!original_human || original_human.stat == DEAD || !original_human.all_scars || !(original_human == ending_human))
-			if(ending_human.client) // i was told if i don't check this every step of the way byond might decide a client ceases to exist mid proc so here we go
-				ending_human.client.prefs.scars_list["[ending_human.client.prefs.scars_index]"] = ""
-		else
-			for(var/k in ending_human.all_wounds)
-				var/datum/wound/iter_wound = k
-				iter_wound.remove_wound() // so we can get the scars for open wounds
-			if(!ending_human.client)
-				return
-			ending_human.client.prefs.scars_list["[ending_human.client.prefs.scars_index]"] = ending_human.format_scars()
-		if(!ending_human.client)
-			return
+		if(ending_human.client.prefs.persistent_scars)
+			var/mob/living/carbon/human/original_human = ending_human.mind.original_character
+			if(!original_human || original_human.stat == DEAD || !original_human.all_scars || !(original_human == ending_human))
+				if(ending_human.client) // i was told if i don't check this every step of the way byond might decide a client ceases to exist mid proc so here we go
+					ending_human.client.prefs.scars_list["[ending_human.client.prefs.scars_index]"] = ""
+			else
+				for(var/k in ending_human.all_wounds)
+					var/datum/wound/iter_wound = k
+					iter_wound.remove_wound() // so we can get the scars for open wounds
+				if(!ending_human.client)
+					return
+				ending_human.client.prefs.scars_list["[ending_human.client.prefs.scars_index]"] = ending_human.format_scars()
+
+		// save permanent tattoos
+		ending_human.client.prefs.permanent_tattoos = ending_human.format_tattoos()
 		ending_human.client.prefs.save_character()
+
 
 /datum/controller/subsystem/persistence/proc/GetFolders()
 	var/folder_path = file("data/folders.json")

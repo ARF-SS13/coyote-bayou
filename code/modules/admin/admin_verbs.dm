@@ -13,12 +13,14 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/toggleprayers,
 	/client/proc/toggleadminhelpsound,
 	/client/proc/debugstatpanel,
+	/client/proc/ignore_as_a_ghost,
 	/client/proc/RemoteLOOC, 			/*Fuck you I'm a PascaleCase enjoyer when it comes to functions. Fuck you nerds for using your shitty ass underscores like you know what the fuck you're reading why add an extra character and waste a couple milimeters of eye movement for me to read your entire proc name like jesus fucking christ bro. Just literally use PascalCase it looks so much neater, it's modern, industry professionals are taught to use it, C# coding standards state this, C++ coding standards, Unreal Engine developers do this, and so do Unity professionals. Like bruh please. Join me in the revolution to do PascalCase. */ // Welcome to byond~ src.grab_antlers_and_grind(deer_boi)
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
 /world/proc/AVerbsAdmin()
 	return list(
+	/datum/admins/proc/edit_who,				/*toggles the harm intent no-clickdrag thing*/
 	/client/proc/toggle_experimental_clickdrag_thing,				/*toggles the harm intent no-clickdrag thing*/
 	/client/proc/toggle_radpuddle_disco_vomit_nightmare,				/*makes radpuddles flash and show numbers. please dont use this*/
 	/client/proc/show_radpuddle_scores,				/*makes radpuddles flash and show numbers. please dont use this*/
@@ -96,6 +98,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggle_reviving,
 	/datum/admins/proc/give_one_up,
 	/datum/admins/proc/change_view_range,
+	/datum/admins/proc/print_spans,
+	/datum/admins/proc/admin_who,
+	/datum/admins/proc/admin_who2,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -141,8 +146,7 @@ GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
 	/datum/admins/proc/toggleaban,
 	/client/proc/everyone_random,
 	/datum/admins/proc/toggleAI,
-	/datum/admins/proc/toggleMulticam,
-	/datum/admins/proc/toggledynamicvote,
+	/datum/admins/proc/toggleMulticam,		//CIT
 	/client/proc/cmd_admin_delete,		/*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
 	/client/proc/toggle_random_events,
@@ -190,6 +194,16 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
+	// /client/proc/atmos_control,
+	// /client/proc/reload_cards,
+	// /client/proc/validate_cards,
+	// /client/proc/test_cardpack_distribution,
+	// /client/proc/print_cards,
+	#ifdef TESTING
+	// /client/proc/check_missing_sprites,
+	// /client/proc/export_dynamic_json,
+	/client/proc/run_dynamic_simulations,
+	#endif
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 #ifdef REFERENCE_TRACKING
@@ -625,6 +639,32 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] has modified Dynamic Explosion Scale: [ex_scale]")
 	message_admins("[key_name_admin(usr)] has  modified Dynamic Explosion Scale: [ex_scale]")
 
+/client/proc/ignore_as_a_ghost()
+	set category = "OOC"
+	set name = "Block user's emotes"
+	set desc = "Blocks hearing emotes, subtles, and subtlers from a specific ckey."
+
+	var/blockem = input(usr, "Who do you want to never hear from while as a ghost?", "Okay thats enough deadvision for one day") as null|anything in GLOB.directory
+	if(!blockem)
+		to_chat(usr, "Never mind!")
+		return
+	var/client/C = GLOB.directory[blockem]
+	var/mob/dork = C.mob
+	var/datum/preferences/P = extract_prefs(usr) // wow even I admit this is cursed
+	var/blocked = (blockem in P.aghost_squelches)
+	var/usure = alert(usr, "This'll [blocked?"un":""]block [dork]'s emotes while you're a ghost, is this the right person?", "Is it enough deadvision for one day?", "YES", "NO")
+	if(usure != "YES")
+		to_chat(usr, "Never mind!")
+		return
+	if(blocked)
+		P.aghost_squelches -= blockem
+		to_chat(usr, "You can now hear [dork]'s emotes while a ghost.")
+	else
+		P.aghost_squelches |= blockem
+		to_chat(usr, "You will no longer hear [dork]'s emotes while a ghost.")
+	P.save_preferences()
+	to_chat(usr, "Preferences saved.")
+
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"
 	set name = "Give Spell"
@@ -957,7 +997,198 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	else
 		to_chat(usr, "Okay, leaving the view ranges alone.")
 
+/datum/admins/proc/edit_who()
+	set category = "Admin.Game"
+	set name = "Edit Who"
+	set desc = "Opens the Who panel to edit peoples' custom stuff."
 
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
+		return
+	SSwho.AdminPanel() // it'll grab the usr itself, in a cursed curse
 
+/datum/admins/proc/admin_who()
+	set category = "Admin"
+	set name = "AdminWho"
+	set desc = "Opens the who tab, but moreso."
 
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
+		return
+	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/// yay, copied so epople will ever see it!!
+/datum/admins/proc/admin_who2()
+	set category = "OOC"
+	set name = "WhoPlus"
+	set desc = "Opens the who tab, but moreso."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_who() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
+		return
+	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/datum/admins/proc/print_spans()
+	set category = "Debug"
+	set name = "Print Spans"
+	set desc = "Floods your chat with bullshit."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with print_spans() without admin perms. even though it just floods their chat with bullshit")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with print_spans() without admin perms.")
+		return
+
+	to_chat(usr,
+	"\
+	[span_abductor("span_abductor")]\n\
+	[span_admin("span_admin")]\n\
+	[span_adminhelp("span_adminhelp")]\n\
+	[span_adminnotice("span_adminnotice")]\n\
+	[span_adminobserverooc("span_adminobserverooc")]\n\
+	[span_adminooc("span_adminooc")]\n\
+	[span_adminsay("span_adminsay")]\n\
+	[span_aiprivradio("span_aiprivradio")]\n\
+	[span_alert("span_alert")]\n\
+	[span_alertalien("span_alertalien")]\n\
+	[span_alertsyndie("span_alertsyndie")]\n\
+	[span_alertwarning("span_alertwarning")]\n\
+	[span_alien("span_alien")]\n\
+	[span_alloy("span_alloy")]\n\
+	[span_announce("span_announce")]\n\
+	[span_average("span_average")]\n\
+	[span_bad("span_bad")]\n\
+	[span_big("span_big")]\n\
+	[span_big_brass("span_big_brass")]\n\
+	[span_bigicon("span_bigicon")]\n\
+	[span_binarysay("span_binarysay")]\n\
+	[span_blinker("span_blinker")]\n\
+	[span_blue("span_blue")]\n\
+	[span_blueteamradio("span_blueteamradio")]\n\
+	[span_bold("span_bold")]\n\
+	[span_boldannounce("span_boldannounce")]\n\
+	[span_bolddanger("span_bolddanger")]\n\
+	[span_boldnotice("span_boldnotice")]\n\
+	[span_boldwarning("span_boldwarning")]\n\
+	[span_brass("span_brass")]\n\
+	[span_caution("span_caution")]\n\
+	[span_centcomradio("span_centcomradio")]\n\
+	[span_changeling("span_changeling")]\n\
+	[span_clown("span_clown")]\n\
+	[span_colossus("span_colossus")]\n\
+	[span_command_headset("span_command_headset")]\n\
+	[span_comradio("span_comradio")]\n\
+	[span_cult("span_cult")]\n\
+	[span_cultbold("span_cultbold")]\n\
+	[span_cultboldtalic("span_cultboldtalic")]\n\
+	[span_cultitalic("span_cultitalic")]\n\
+	[span_cultlarge("span_cultlarge")]\n\
+	[span_danger("span_danger")]\n\
+	[span_deadsay("span_deadsay")]\n\
+	[span_deconversion_message("span_deconversion_message")]\n\
+	[span_disarm("span_disarm")]\n\
+	[span_drone("span_drone")]\n\
+	[span_engradio("span_engradio")]\n\
+	[span_extremelybig("span_extremelybig")]\n\
+	[span_ghostalert("span_ghostalert")]\n\
+	[span_good("span_good")]\n\
+	[span_green("span_green")]\n\
+	[span_greenannounce("span_greenannounce")]\n\
+	[span_greenteamradio("span_greenteamradio")]\n\
+	[span_greentext("span_greentext")]\n\
+	[span_header("span_header")]\n\
+	[span_hear("span_hear")]\n\
+	[span_heavy_brass("span_heavy_brass")]\n\
+	[span_hidden("span_hidden")]\n\
+	[span_hierophant("span_hierophant")]\n\
+	[span_hierophant_warning("span_hierophant_warning")]\n\
+	[span_highlight("span_highlight")]\n\
+	[span_his_grace("span_his_grace")]\n\
+	[span_holoparasite("span_holoparasite")]\n\
+	[span_hypnophrase("span_hypnophrase")]\n\
+	[span_icon("span_icon")]\n\
+	[span_inathneq("span_inathneq")]\n\
+	[span_inathneq_large("span_inathneq_large")]\n\
+	[span_inathneq_small("span_inathneq_small")]\n\
+	[span_info("span_info")]\n\
+	[span_infoplain("span_infoplain")]\n\
+	[span_interface("span_interface")]\n\
+	[span_italic("span_italic")]\n\
+	[span_large_brass("span_large_brass")]\n\
+	[span_linkOff("span_linkOff")]\n\
+	[span_linkOn("span_linkOn")]\n\
+	[span_looc("span_looc")]\n\
+	[span_love("span_love")]\n\
+	[span_medal("span_medal")]\n\
+	[span_medradio("span_medradio")]\n\
+	[span_memo("span_memo")]\n\
+	[span_memoedit("span_memoedit")]\n\
+	[span_mind_control("span_mind_control")]\n\
+	[span_minorannounce("span_minorannounce")]\n\
+	[span_monkey("span_monkey")]\n\
+	[span_monkeyhive("span_monkeyhive")]\n\
+	[span_monkeylead("span_monkeylead")]\n\
+	[span_name("span_name")]\n\
+	[span_narsie("span_narsie")]\n\
+	[span_narsiesmall("span_narsiesmall")]\n\
+	[span_neovgre("span_neovgre")]\n\
+	[span_neovgre_large("span_neovgre_large")]\n\
+	[span_neovgre_small("span_neovgre_small")]\n\
+	[span_nezbere("span_nezbere")]\n\
+	[span_nicegreen("span_nicegreen")]\n\
+	[span_notice("span_notice")]\n\
+	[span_noticealien("span_noticealien")]\n\
+	[span_nzcrentr("span_nzcrentr")]\n\
+	[span_nzcrentr_large("span_nzcrentr_large")]\n\
+	[span_nzcrentr_small("span_nzcrentr_small")]\n\
+	[span_ooc("span_ooc")]\n\
+	[span_papyrus("span_papyrus")]\n\
+	[span_phobia("span_phobia")]\n\
+	[span_prefix("span_prefix")]\n\
+	[span_purple("span_purple")]\n\
+	[span_radio("span_radio")]\n\
+	[span_reallybig("span_reallybig")]\n\
+	[span_red("span_red")]\n\
+	[span_redteamradio("span_redteamradio")]\n\
+	[span_redtext("span_redtext")]\n\
+	[span_resonate("span_resonate")]\n\
+	[span_revenbignotice("span_revenbignotice")]\n\
+	[span_revenboldnotice("span_revenboldnotice")]\n\
+	[span_revendanger("span_revendanger")]\n\
+	[span_revenminor("span_revenminor")]\n\
+	[span_revennotice("span_revennotice")]\n\
+	[span_revenwarning("span_revenwarning")]\n\
+	[span_robot("span_robot")]\n\
+	[span_rose("span_rose")]\n\
+	[span_sans("span_sans")]\n\
+	[span_sciradio("span_sciradio")]\n\
+	[span_secradio("span_secradio")]\n\
+	[span_servradio("span_servradio")]\n\
+	[span_sevtug("span_sevtug")]\n\
+	[span_sevtug_small("span_sevtug_small")]\n\
+	[span_singing("span_singing")]\n\
+	[span_slime("span_slime")]\n\
+	[span_small("span_small")]\n\
+	[span_smalldanger("span_smalldanger")]\n\
+	[span_smallnotice("span_smallnotice")]\n\
+	[span_smallnoticeital("span_smallnoticeital")]\n\
+	[span_spider("span_spider")]\n\
+	[span_subtle("span_subtle")]\n\
+	[span_subtler("span_subtler")]\n\
+	[span_suppradio("span_suppradio")]\n\
+	[span_swarmer("span_swarmer")]\n\
+	[span_syndradio("span_syndradio")]\n\
+	[span_tape_recorder("span_tape_recorder")]\n\
+	[span_tinynotice("span_tinynotice")]\n\
+	[span_tinynoticeital("span_tinynoticeital")]\n\
+	[span_umbra("span_umbra")]\n\
+	[span_unconscious("span_unconscious")]\n\
+	[span_userdanger("span_userdanger")]\n\
+	[span_userlove("span_userlove")]\n\
+	[span_warning("span_warning")]\n\
+	[span_yell("span_yell")]\n\
+	[span_yellowteamradio("span_yellowteamradio")]\n\
+	")
 

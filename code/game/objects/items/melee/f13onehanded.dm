@@ -156,6 +156,9 @@
 	item_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_MASK
+	tool_behaviour = TOOL_SCREWDRIVER
+	toolspeed = 4
 	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
@@ -239,11 +242,13 @@
 
 /obj/item/melee/onehanded/knife/ritualdagger
 	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
+	desc = "An ancient blade used to carry out spiritual and mystic rituals."
 	icon_state = "knife_ritual"
 	item_state = "knife_ritual"
 	force = 25
 	custom_materials = null
+	tool_behaviour = TOOL_RITUAL
+	toolspeed = 1
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -772,6 +777,15 @@ obj/item/melee/onehanded/knife/switchblade
 	if(!istype(M))
 		return
 	M.apply_damage(20, STAMINA, "head", M.run_armor_check("head", "melee"))
+
+// Snowflake sappers	Keywords: Damage 27
+/obj/item/melee/unarmed/sappers/fightgloves
+	name = "MMA gloves"
+	desc = "Padded gloves which are ideal for beating the crap out of opponents while keeping your own hands protected."
+	icon_state = "fightglovesblack"
+	item_state = "fightglovesblack"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 27
 
 // Tiger claws		Keywords: Damage 33, Pointy
 /obj/item/melee/unarmed/tigerclaw

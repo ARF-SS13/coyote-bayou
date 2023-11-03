@@ -1,7 +1,7 @@
-/obj/screen/mov_intent
+/atom/movable/screen/mov_intent
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 
-/obj/screen/sprintbutton
+/atom/movable/screen/sprintbutton
 	name = "toggle sprint"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "act_sprint"
@@ -9,13 +9,13 @@
 	var/mutable_appearance/flashy
 
 
-/obj/screen/sprintbutton/Click()
+/atom/movable/screen/sprintbutton/Click()
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.default_toggle_sprint()
 
 
-/obj/screen/sprintbutton/update_icon_state()
+/atom/movable/screen/sprintbutton/update_icon_state()
 	var/mob/living/user = hud?.mymob
 	if(!istype(user))
 		return
@@ -26,7 +26,7 @@
 	else
 		icon_state = "act_sprint"
 
-/obj/screen/sprintbutton/update_overlays()
+/atom/movable/screen/sprintbutton/update_overlays()
 	. = ..()
 	var/mob/living/carbon/user = hud?.mymob
 	if(!istype(user) || !user.client)
@@ -40,19 +40,19 @@
 		. += flashy
 
 //Sprint buffer onscreen code.
-/datum/hud/var/obj/screen/sprint_buffer/sprint_buffer
+/datum/hud/var/atom/movable/screen/sprint_buffer/sprint_buffer
 
-/obj/screen/sprint_buffer
+/atom/movable/screen/sprint_buffer
 	name = "sprint buffer"
 	icon = 'icons/fallout/UI/sprintbar.dmi'
 	icon_state = "prog_bar_100"
 
-/obj/screen/sprint_buffer/Click()
+/atom/movable/screen/sprint_buffer/Click()
 	if(isliving(usr))
 		var/mob/living/L = usr
 		to_chat(L, "<span class='boldnotice'>Your sprint buffer's maximum capacity is [L.sprint_buffer_max]. It is currently at [L.sprint_buffer], regenerating at [L.sprint_buffer_regen_ds * 10] per second.</span>")
 
-/obj/screen/sprint_buffer/proc/update_to_mob(mob/living/L)
+/atom/movable/screen/sprint_buffer/proc/update_to_mob(mob/living/L)
 	var/amount = 0
 	if(L.sprint_buffer_max > 0)
 		amount = round(clamp((L.sprint_buffer / L.sprint_buffer_max) * 100, 0, 100), 5)

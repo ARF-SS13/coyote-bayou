@@ -73,7 +73,7 @@ Featuring:
 		return 0
 	LoseTarget() //Target was our mecha, so null it out
 	M.aimob_enter_mech(src)
-	targets_from = M
+	set_origin(M)
 	allow_movement_on_non_turfs = TRUE //duh
 	var/do_ranged = 0
 	for(var/equip in mecha.equipment)
@@ -99,7 +99,7 @@ Featuring:
 
 	mecha.aimob_exit_mech(src)
 	allow_movement_on_non_turfs = FALSE
-	targets_from = src
+	set_origin(src)
 
 	//Find a new mecha
 	wanted_objects = typecacheof(/obj/mecha/combat, TRUE)
@@ -172,21 +172,22 @@ Featuring:
 
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/AttackingTarget()
+	var/atom/my_target = get_target()
 	if(mecha)
 		var/list/possible_weapons = get_mecha_equip_by_flag(MELEE)
 		if(possible_weapons.len)
 			var/obj/item/mecha_parts/mecha_equipment/ME = pick(possible_weapons)
-			mecha_face_target(target)
-			if(ME.action(target))
+			mecha_face_target(my_target)
+			if(ME.action(my_target))
 				ME.start_cooldown()
 				return
 
 		if(mecha.melee_can_hit)
-			mecha_face_target(target)
-			target.mech_melee_attack(mecha)
+			mecha_face_target(my_target)
+			my_target.mech_melee_attack(mecha)
 	else
-		if(ismecha(target))
-			var/obj/mecha/M = target
+		if(ismecha(my_target))
+			var/obj/mecha/M = my_target
 			if(is_valid_mecha(M))
 				enter_mecha(M)
 				return
@@ -195,7 +196,7 @@ Featuring:
 					LoseTarget()
 					return
 
-		return target.attack_animal(src)
+		return my_target.attack_animal(src)
 
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/handle_automated_action()

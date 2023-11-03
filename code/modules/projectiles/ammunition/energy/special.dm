@@ -2,13 +2,13 @@
 	projectile_type = /obj/item/projectile/ion
 	select_name = "ion"
 	fire_sound = 'sound/f13weapons/pulsegunfire.ogg'
-	e_cost = 100 //think this was the default
+	e_cost = 2000 // 15 shots
 
 /obj/item/ammo_casing/energy/ion/carbine
 	projectile_type = /obj/item/projectile/ion
 	select_name = "ion"
 	fire_sound = 'sound/f13weapons/pulsegunfire.ogg'
-	e_cost = 200 //smaller gun, less efficient
+	e_cost = 2500 // 12 shots
 
 /obj/item/ammo_casing/energy/ion/hos
 	projectile_type = /obj/item/projectile/ion/weak

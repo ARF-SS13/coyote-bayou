@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(monster_wave)
 	successful_firing++
 	addtimer(CALLBACK(src, .proc/spawn_monsterwave), 10 SECONDS)
 	for(var/M in GLOB.player_list)
-		to_chat(M, "<span class='notice'>You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font></span>")
+		to_chat(M, span_notice("You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font>"))
 
 /datum/controller/subsystem/monster_wave/proc/spawn_monsterwave()
 	var/pick_unfortune = pick("Ghoul", /*"Deathclaw",*/ "Radscorpion", "Fireant", "Molerat", "Mirelurk", "Gecko", "Cazador", "Wolf")

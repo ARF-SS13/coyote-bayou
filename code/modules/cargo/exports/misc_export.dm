@@ -49,6 +49,8 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun,
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
+		/obj/item/gun/ballistic/rifle/mosin/mini,
+		/obj/item/gun/energy/laser/tg/scrap,
 		)
 
 /datum/export/item/commongun
@@ -122,7 +124,7 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine,
 		/obj/item/gun/ballistic/automatic/armalite,
 		/obj/item/gun/ballistic/automatic/l1a1,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto,
+		/obj/item/gun/ballistic/automatic/c96auto,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
 		/obj/item/gun/ballistic/shotgun/trench,
@@ -157,6 +159,8 @@
 		/obj/item/gun/energy/laser/retro,
 		/obj/item/gun/ballistic/revolver/grenadelauncher,
 		/obj/item/gun/ballistic/shotgun/grenade,
+		/obj/item/gun/energy/laser/tg/carbine,
+		/obj/item/gun/energy/laser/tg/rifle,
 		)
 
 /datum/export/item/raregun
@@ -218,6 +222,10 @@
 		/obj/item/gun/energy/laser/wattz/recharger,
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
+		/obj/item/gun/magic/,
+		/obj/item/gun/energy/laser/tg/rifle/heavy,
+		/obj/item/gun/energy/laser/tg/rifle/auto,
+		/obj/item/gun/energy/laser/tg/recharger,
 		)
 
 /datum/export/item/uniquegun
@@ -261,6 +269,19 @@
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+		/obj/item/gun/energy/laser/tg/particlecannon,
+		/obj/item/gun/energy/laser/xcomufolaser,
+		/obj/item/gun/energy/laser/LaserAK,
+	)
+
+/datum/export/item/melee
+	cost = 1000
+	unit_name = "melee weapon"
+	export_types = list(
+	/obj/item/melee/powerfist/f13,
+	/obj/item/melee/coyote,
+	/obj/item/melee/onehanded,
+	/obj/item/twohanded,
 	)
 
 /datum/export/item/armorrare
@@ -602,6 +623,8 @@
 	cost = 500
 	unit_name = "basic toy"
 	export_types = list(/obj/item/toy,
+						/obj/item/gun/ballistic/shotgun/toy,
+						/obj/item/gun/ballistic/automatic/toy,
 	)
 
 
@@ -721,11 +744,29 @@
 	)
 
 /datum/export/item/nucrate // Hopefully this one works
-	cost = 500
+	cost = 200
 	k_elasticity = 0
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate, /obj/structure/closet/crate/footlocker)
 	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
+
+/datum/export/item/lowartifact
+	cost = 5000
+	unit_name = "common artifact"
+	export_types = list(/obj/item/artifact/common,
+	)
+
+/datum/export/item/highartifact
+	cost = 15000
+	unit_name = "rare artifact"
+	export_types = list(/obj/item/artifact/rare,
+	)
+
+/datum/export/item/midartifact
+	cost = 10000
+	unit_name = "uncommon artifact"
+	export_types = list(/obj/item/artifact/uncommon,
+	)
 
 /* k_elasticity 0 - the price degredation thing, in case we need it. Might need to be applied to toys in the future. */
 

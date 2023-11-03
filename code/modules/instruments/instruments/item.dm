@@ -434,7 +434,8 @@
 							/obj/item/instrument/saxophone,
 							/obj/item/instrument/trombone,
 							/obj/item/instrument/recorder,
-							/obj/item/instrument/harmonica
+							/obj/item/instrument/harmonica,
+							/obj/item/instrument/musicalmoth
 							)
 		for(var/V in templist)
 			var/atom/A = V
@@ -450,3 +451,13 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 0
 	hitsound = 'sound/voice/moth/mothchitter.ogg'
+
+/obj/item/instrument/shamisen
+	name = "Shamisen"
+	desc = "A japanese shamisen."
+	icon_state = "shamisen"
+	allowed_instrument_ids = "shamisen"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	hitsound = 'sound/weapons/stringsmash.ogg'
+

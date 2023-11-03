@@ -50,9 +50,8 @@
 /datum/supply_pack/engineering/experimentaltools
 	name = "Experimental Tools Crate"
 	desc = "High tech tools. Comes with an experimental welder, jaws of life, and hand drill!"
-	cost = 8000
-	contains = list(/obj/item/storage/belt/utility/full/engi,
-					/obj/item/storage/belt/utility/full/engi)
+	cost = 4000
+	contains = list(/obj/item/storage/belt/utility/full/engi)
 	crate_name = "experimental tools crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
@@ -82,7 +81,8 @@
 	desc = "Two boxes of tier four level parts!"
 	cost = 10000
 	contains = list(/obj/item/storage/box/stockparts/deluxe,
-					/obj/item/storage/box/stockparts/deluxe)
+					/obj/item/storage/box/stockparts/deluxe,
+					/obj/item/storage/part_replacer)
 	crate_name = "deluxe parts crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 /*
@@ -260,7 +260,7 @@
 					/obj/item/storage/box/metalfoam)
 	crate_name = "metal foam grenade crate"
 
-/datum/supply_pack/engine/solar // because people have been managing to break power with EMPs lately, and prep for fiat power getting axed
+/datum/supply_pack/engineering/solar // because people have been managing to break power with EMPs lately, and prep for fiat power getting axed
 	name = "Solar Panel Crate"
 	desc = "Go green with this DIY advanced solar array. Contains twenty one solar assemblies, a solar-control circuit board, and tracker. If you have any questions, please check out the enclosed instruction book."
 	cost = 2500

@@ -38,7 +38,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	return -1
 
 /datum/preferences/proc/update_save(savefile/S)
-	current_version = safe_json_decode(S["current_version"])
+	if(S["current_version"])
+		current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
 	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
 	if(LAZYLEN(needs_updating))
@@ -194,6 +195,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				ooc_notes += OOC_NOTE_TEMPLATE
 				WRITE_FILE(S["feature_ooc_notes"], ooc_notes)
 				current_version |= PMC_OOC_NOTES_UPDATE
+			if(PMC_DAN_MESSED_UP_WHO_STUFF)
+				whoflags = DEFAULT_WHO_FLAGS
+				WRITE_FILE(S["whoflags"], whoflags)
+				current_version |= PMC_DAN_MESSED_UP_WHO_STUFF // uncomment before release
+			if(PMC_PORNHUD_WHITELIST_RELOCATION) // i moved the thing out of features
+				S["feature_genital_whitelist"] >> genital_whitelist
+				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -289,6 +298,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["preferred_chaos"]	>> preferred_chaos
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
+	S["aghost_squelches"]		>> aghost_squelches
+	S["genital_whitelist"]		>> genital_whitelist
+
+	S["lockouts"]	>> lockouts // my bans!
+
 
 	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
@@ -304,6 +318,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Sanitize
 	ooccolor		= sanitize_ooccolor(sanitize_hexcolor(ooccolor, 6, 1, initial(ooccolor)))
 	lastchangelog	= sanitize_text(lastchangelog, initial(lastchangelog))
+	genital_whitelist	= sanitize_text(genital_whitelist, initial(genital_whitelist))
 	UI_style		= sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
 	hotkeys			= sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
 	chat_on_map		= sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
@@ -339,9 +354,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	autostand			= sanitize_integer(autostand, 0, 1, initial(autostand))
 	cit_toggles			= sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
 	auto_ooc			= sanitize_integer(auto_ooc, 0, 1, initial(auto_ooc))
+	lockouts			= sanitize_integer(lockouts, 0, 16777215, 0) // uncomment before release
 	no_tetris_storage		= sanitize_integer(no_tetris_storage, 0, 1, initial(no_tetris_storage))
 	key_bindings 			= sanitize_islist(key_bindings, list())
 	modless_key_bindings 	= sanitize_islist(modless_key_bindings, list())
+	aghost_squelches 		= sanitize_islist(aghost_squelches, list())
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -451,6 +468,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
 	WRITE_FILE(S["auto_ooc"], auto_ooc)
 	WRITE_FILE(S["no_tetris_storage"], no_tetris_storage)
+	WRITE_FILE(S["lockouts"], lockouts)
+	WRITE_FILE(S["aghost_squelches"], aghost_squelches)
+	WRITE_FILE(S["genital_whitelist"], genital_whitelist)
+
+	//permanent tattoos
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -558,7 +581,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"belly_visibility_flags" = GEN_VIS_FLAG_DEFAULT,
 		"genital_visibility_flags" = GEN_VIS_OVERALL_FLAG_DEFAULT,
 		"genital_order" = DEF_COCKSTRING,
-		"genital_whitelist" = "Mr Bingus, fluntly, Doc Bungus",
 		"genital_hide" = NONE,
 
 
@@ -616,9 +638,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["name_is_always_random"]	>> be_random_name
 	S["body_is_always_random"]	>> be_random_body
 	S["gender"]					>> gender
+	S["tbs"]					>> tbs
+	S["kisser"]					>> kisser
 	S["body_model"]				>> features["body_model"]
 	S["body_size"]				>> features["body_size"]
 	S["body_width"]				>> features["body_width"]
+	
+	//Fuzzy scaling
+	S["feature_fuzzy"]          >> fuzzy
+	
 	S["age"]					>> age
 	S["hair_color"]				>> hair_color
 	S["facial_hair_color"]		>> facial_hair_color
@@ -704,7 +732,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor2"]				>> features["mcolor2"]
 	S["feature_mcolor3"]				>> features["mcolor3"]
 	// note safe json decode will runtime the first time it migrates but this is fine and it solves itself don't worry about it if you see it error
-	features["mam_body_markings"] = safe_json_decode(S["feature_mam_body_markings"])
+	if (S["feature_mam_body_markings"])
+		features["mam_body_markings"] = safe_json_decode(S["feature_mam_body_markings"])
+	else
+		features["mam_body_markings"] = list()
 	S["feature_mam_tail"]				>> features["mam_tail"]
 	S["feature_mam_ears"]				>> features["mam_ears"]
 	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
@@ -762,7 +793,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_has_womb"]				>> features["has_womb"]
 	//cockstring
 	S["feature_genital_order"]			>> features["genital_order"]
-	S["feature_genital_whitelist"]		>> features["genital_whitelist"]
 	S["feature_genital_hide"]			>> features["genital_hide"]
 	S["feature_genital_visibility_flags"] >> features["genital_visibility_flags"]
 	//taste
@@ -818,6 +848,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["typing_indicator_max_words_spoken"]		>> features_speech["typing_indicator_max_words_spoken"]
 	S["underwear_overhands"]	>> underwear_overhands // Underwear over hands!
 
+	S["whoflags"]	>> whoflags // WHo!
+
 	/// Vore stuff!
 	S["master_vore_toggle"]					>> master_vore_toggle
 	S["vore_smell"]							>> vore_smell
@@ -835,13 +867,36 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["allow_being_prey"]					>> allow_being_prey
 	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
 	S["allow_being_sniffed"]				>> allow_being_sniffed
-	belly_prefs = safe_json_decode(S["belly_prefs"])
-	current_version = safe_json_decode(S["current_version"])
+	if (S["belly_prefs"])
+		belly_prefs = safe_json_decode(S["belly_prefs"])
+	else
+		belly_prefs = list()
+
+	if (S["current_version"])
+		current_version = safe_json_decode(S["current_version"])
+	else
+		current_version = list()
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
+
+	//Character directory
+	S["show_in_directory"]		>> show_in_directory
+	S["directory_tag"]			>> directory_tag
+	S["directory_erptag"]			>> directory_erptag
+	S["directory_ad"]			>> directory_ad
+
+	//Permanent Tattoos
+	S["permanent_tattoos"]		>> permanent_tattoos
+
+
+	//sanitize data
+	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
+	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
+	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
+	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 
 	//Sanitize
 
@@ -886,6 +941,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
 	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
 	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
+	//whoflags = initial(whoflags) // comment out before release
 
 	var/static/allow_custom_skintones
 	if(isnull(allow_custom_skintones))
@@ -930,6 +987,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!width_max)
 		width_max = CONFIG_GET(number/body_width_max)
 	features["body_width"]			= sanitize_num_clamp(features["body_width"], width_min, width_max, RESIZE_DEFAULT_SIZE, 0.01)
+
+	fuzzy 							= sanitize_integer(fuzzy, 0, 1, initial(fuzzy))
 
 	var/static/list/B_sizes
 	if(!B_sizes)
@@ -995,7 +1054,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features["genital_order"]		= sanitize_text(features["genital_order"], DEF_COCKSTRING)
 	features["genital_hide"]		= sanitize_integer(features["genital_hide"], 0, 4096, 0)
-	features["genital_whitelist"]	= copytext(features["genital_whitelist"], 1, MAX_MESSAGE_LEN)
 	features["taste"]				= copytext(features["taste"], 1, MAX_TASTE_LEN)
 	features["flavor_text"]			= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["silicon_flavor_text"]	= copytext(features["silicon_flavor_text"], 1, MAX_FLAVOR_LEN)
@@ -1062,13 +1120,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
-	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, "Default")
+	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_sounds, "Default")//
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
-	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "2-Average")
-	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "2-Average")
-	features_speech["typing_indicator_variance"]			= sanitize_inlist(features_speech["typing_indicator_variance"], GLOB.typing_indicator_variances, "2-Voice varies a little between words")
-	features_speech["typing_indicator_volume"]				= sanitize_inlist(features_speech["typing_indicator_volume"], GLOB.typing_indicator_volumes, "2-Average")
-	features_speech["typing_indicator_max_words_spoken"]	= sanitize_inlist(features_speech["typing_indicator_max_words_spoken"], GLOB.typing_indicator_max_words_spoken_list, "4 Words")
+	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "Speed: Average (2)")
+	features_speech["typing_indicator_pitch"]				= sanitize_inlist(features_speech["typing_indicator_pitch"], GLOB.typing_indicator_pitches, "Pitch: Average (2)")
+	features_speech["typing_indicator_variance"]			= sanitize_inlist(features_speech["typing_indicator_variance"], GLOB.typing_indicator_variances, "Tone: Varies a little (2)")
+	features_speech["typing_indicator_volume"]				= sanitize_inlist(features_speech["typing_indicator_volume"], GLOB.typing_indicator_volumes, "Volume: Average (2)")
+	features_speech["typing_indicator_max_words_spoken"]	= sanitize_inlist(features_speech["typing_indicator_max_words_spoken"], GLOB.typing_indicator_max_words_spoken_list, "Max words spoken: 4")
 
 	joblessrole	= sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
@@ -1099,10 +1157,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			"Mobility - Can not Run",
 		)
 		WRITE_FILE(S["all_quirks"], debug_oldies)
+	
+	WRITE_FILE(S["feature_fuzzy"], fuzzy)
 
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
 	cit_character_pref_load(S)
+
+	// permanent tattoos
+	permanent_tattoos = sanitize_text(permanent_tattoos)
 
 	return 1
 
@@ -1128,6 +1191,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["name_is_always_random"]	, be_random_name)
 	WRITE_FILE(S["body_is_always_random"]	, be_random_body)
 	WRITE_FILE(S["gender"]					, gender)
+	WRITE_FILE(S["tbs"]						, tbs)
+	WRITE_FILE(S["kisser"]					, kisser)
 	WRITE_FILE(S["body_model"]				, features["body_model"])
 	WRITE_FILE(S["body_size"]				, features["body_size"])
 	WRITE_FILE(S["body_width"]				, features["body_width"])
@@ -1212,7 +1277,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_belly_visibility_flags"], features["belly_visibility_flags"])
 	WRITE_FILE(S["feature_genital_order"], features["genital_order"])
 	WRITE_FILE(S["feature_genital_hide"], features["genital_hide"])
-	WRITE_FILE(S["feature_genital_whitelist"], features["genital_whitelist"])
 	WRITE_FILE(S["feature_genital_visibility_flags"], features["genital_visibility_flags"])
 
 	WRITE_FILE(S["feature_has_vag"], features["has_vag"])
@@ -1316,6 +1380,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
 	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
+	WRITE_FILE(S["typing_indicator_speed"]				, features_speech["typing_indicator_speed"])
+	WRITE_FILE(S["typing_indicator_pitch"]				, features_speech["typing_indicator_pitch"])
+	WRITE_FILE(S["typing_indicator_variance"]			, features_speech["typing_indicator_variance"])
+	WRITE_FILE(S["typing_indicator_volume"]				, features_speech["typing_indicator_volume"])
+	WRITE_FILE(S["typing_indicator_max_words_spoken"]	, features_speech["typing_indicator_max_words_spoken"])
 
 	/// Save the vore!
 	WRITE_FILE(S["vore_smell"]						, vore_smell)
@@ -1338,11 +1407,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
 
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
+	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
+
+	//Character directory
+	WRITE_FILE(S["show_in_directory"], show_in_directory)
+	WRITE_FILE(S["directory_tag"], directory_tag)
+	WRITE_FILE(S["directory_erptag"], directory_erptag)
+	WRITE_FILE(S["directory_ad"], directory_ad)
 
 	cit_character_pref_save(S)
 
-	return 1
+	//permanent tattoos
+	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
+	return 1
 
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN
@@ -1358,5 +1436,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /client/verb/savefile_import(path as text)
 	var/savefile/S = new /savefile(path)
 	S.ImportText("/",file("[path].txt"))
+
+
+
 
 #endif

@@ -337,9 +337,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			else
 				message_admins("[ADMIN_LOOKUPFLW(attacher)] has triggered a [name] to detonate at [ADMIN_VERBOSEJMP(bombturf)].")
 		if(triggered_by == 1)
-			log_game("An explosion has primed a [name] for detonation at [AREACOORD(bombturf)]")
+			log_game("An explosion primed a [name] at [AREACOORD(bombturf)]")
 		else if(triggered_by == 2)
-			log_game("A signal has primed a [name] for detonation at [AREACOORD(bombturf)]. Igniter attacher: [key_name(attacher)].")
+			log_game("A signal has primed a [name] at [AREACOORD(bombturf)]. Igniter attacher: [key_name(attacher)].")
 		else
 			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!"), span_danger("You strike \the [src], causing a chain reaction."))
 			log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(bombturf)]")

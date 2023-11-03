@@ -4,6 +4,7 @@
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"
+	is_monophobia_pet = TRUE
 	speak = list("Squeak!","SQUEAK!","Squeak?")
 	speak_emote = list("squeaks")
 	emote_hear = list("squeaks.")
@@ -14,7 +15,7 @@
 	see_in_dark = 6
 	maxHealth = 5
 	health = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"

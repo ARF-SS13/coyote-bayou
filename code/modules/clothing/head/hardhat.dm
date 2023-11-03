@@ -54,12 +54,13 @@
 	hat_type = "red"
 	dog_fashion = null
 	name = "firefighter helmet"
+	desc = "Once worn by the brave few willing to throw themselves into the fire - quite literally - to save others, this helmet lies dusty and forgotten. Fairly protective and sporting an in-build headlamp, it provides utility and protection in equal measure."
 	clothing_flags = STOPSPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENERGY_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BOMB_T1)
 
 /obj/item/clothing/head/hardhat/red/upgraded
 	name = "workplace-ready firefighter helmet"

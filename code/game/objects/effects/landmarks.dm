@@ -774,6 +774,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Vertibird Pilot"
 	icon_state = "Scribe"
 
+/obj/effect/landmark/start/f13/nashcurator
+	name = "Nash Librarian"
+	icon_state = "Scribe"
+
 /obj/effect/landmark/start/f13/dendoc
 	name = "Doctor"
 
@@ -806,7 +810,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Wastelander"
 	icon_state = "Wastelander"
 
-/obj/effect/landmark/start/f13/wastelander/ashdown
+/obj/effect/landmark/start/f13/ashdown
 	name = "Ashdown Citizen"
 	icon_state = "Wastelander"
 

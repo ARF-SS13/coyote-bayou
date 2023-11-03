@@ -151,7 +151,7 @@
 						newlight = new /obj/machinery/light/small/built(loc)
 				newlight.setDir(dir)
 				transfer_fingerprints_to(newlight)
-				if(cell)
+				if(!QDELETED(cell))
 					newlight.cell = cell
 					cell.forceMove(newlight)
 					cell = null

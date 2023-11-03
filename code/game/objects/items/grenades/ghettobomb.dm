@@ -140,10 +140,10 @@
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)
 		active = TRUE
-		var/message = "[ADMIN_LOOKUP(user)] has primed a [name] for detonation at [ADMIN_VERBOSEJMP(user)]."
+		var/message = "[ADMIN_LOOKUP(user)] primed [name] at [ADMIN_VERBOSEJMP(user)]."
 		GLOB.bombers += message
 		message_admins(message)
-		log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(user)].")
+		log_game("[key_name(user)] primed [name] at [AREACOORD(user)].")
 
 		to_chat(user, span_info("You light [src] on fire."))
 		icon_state = initial(icon_state) + "_active"

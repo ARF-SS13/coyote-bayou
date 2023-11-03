@@ -35,8 +35,10 @@
 #define CHAT_LOOC			(1<<10)
 #define CHAT_BANKCARD		(1<<11)
 #define CHAT_REMOTE_LOOC	(1<<12)
+#define CHAT_AOOC			(1<<13)
+#define CHAT_NEWBIE			(1<<14)
 
-#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_LOOC|CHAT_BANKCARD|CHAT_REMOTE_LOOC)
+#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_LOOC|CHAT_BANKCARD|CHAT_REMOTE_LOOC|CHAT_AOOC|CHAT_NEWBIE)
 
 #define PARALLAX_INSANE -1 //for show offs
 #define PARALLAX_HIGH    0 //default.
@@ -108,13 +110,33 @@
 #define CHAOS_HIGH "High"
 #define CHAOS_MAX "Maximum"
 
+#define TBS_TOP "I am a top!"
+#define TBS_BOTTOM "I am a bottom!"
+#define TBS_SHOES "I am a switch!"
+#define TBS_NONE "I am none of these!"
+#define TBS_DEFAULT TBS_NONE
+#define TBS_LIST list(TBS_TOP, TBS_BOTTOM, TBS_SHOES, TBS_NONE)
+
+#define KISS_BOYS "I am a boykisser!"
+#define KISS_GIRLS "I am a girlkisser!"
+#define KISS_ANY "I'll kiss anybody!"
+#define KISS_NONE "I don't kiss!"
+#define KISS_DEFAULT KISS_NONE
+#define KISS_LIST list(KISS_BOYS,KISS_GIRLS,KISS_ANY,KISS_NONE)
+
 //CB Toggles
 #define AIM_CURSOR_ON (1<<0)
 
 /// Changelog entries
 #define PMC_OOC_NOTES_UPDATE "update_ur_ooc" // Player Master Changelog
 #define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
+#define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
+#define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
-#define PREFERENCES_MASTER_CHANGELOG list(PMC_OOC_NOTES_UPDATE, PMC_QUIRK_OVERHAUL_2K23)
+#define PREFERENCES_MASTER_CHANGELOG list(\
+	PMC_OOC_NOTES_UPDATE, \
+	PMC_QUIRK_OVERHAUL_2K23,\
+	PMC_DAN_MESSED_UP_WHO_STUFF,\
+	)

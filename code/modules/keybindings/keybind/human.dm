@@ -22,9 +22,7 @@
 	else if(isanimal(user.mob))
 		var/mob/living/simple_animal/SA = user.mob
 		SA.quick_equip()
-	
 
-/*
 /datum/keybinding/human/quick_equipbelt
 	hotkey_keys = list("ShiftE")
 	name = "quick_equipbelt"
@@ -39,11 +37,10 @@
 /datum/keybinding/human/bag_equip
 	hotkey_keys = list("ShiftB")
 	name = "bag_equip"
-	full_name = "Bag equip"
+	full_name = "Quick equip bag"
 	description = "Put held thing in backpack or take out most recent thing from backpack"
 
 /datum/keybinding/human/bag_equip/down(client/user)
 	var/mob/living/carbon/human/H = user.mob
 	H.smart_equipbag()
 	return TRUE
-*/

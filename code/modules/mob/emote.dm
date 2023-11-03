@@ -1,4 +1,4 @@
-//The code execution of the emote datum is located at code/datums/emotes.dm
+e//The code execution of the emote datum is located at code/datums/emotes.dm
 /mob/proc/emote(act, m_type = null, message = null, intentional = FALSE, only_overhead, forced)
 	var/input_text = lowertext(act)
 	var/param = message

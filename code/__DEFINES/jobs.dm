@@ -135,6 +135,7 @@
 #define F13BANKER		(1<<12)	// IDK MAN BUT IT SEEMS IMPORTANT
 #define F13BARKEEP		(1<<13)
 #define F13PILOT		(1<<14)
+#define NASHCURATOR		(1<<15)
 
 #define VAULT			(1<<7)
 

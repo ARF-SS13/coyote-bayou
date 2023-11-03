@@ -128,7 +128,7 @@
 /obj/item/clothing/mask/frog/cursed/equipped(mob/user, slot)
 	var/mob/living/carbon/C = user
 	if(C.wear_mask == src && HAS_TRAIT_FROM(src, TRAIT_NODROP, CURSED_ITEM_TRAIT))
-		to_chat(user, "<span class='userdanger'><B>[src] was cursed! Ree!!</B></span>")
+		to_chat(user, span_userdanger("<B>[src] was cursed! Ree!!</B>"))
 	return ..()
 
 /obj/item/clothing/mask/cowmask
@@ -493,3 +493,15 @@
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/kitsune
+	name = "kitsune mask"
+	desc = "A mask made of plastic and paint."
+	icon_state = "whitekitsunemask"
+	item_state = "whitekitsunemask"
+
+/obj/item/clothing/mask/kitsune/black
+	name = "kitsune mask - black"
+	desc = "A mask made of plastic and paint."
+	icon_state = "blackkitsunemask"
+	item_state = "blackkitsunemask"

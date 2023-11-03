@@ -39,7 +39,7 @@
 		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new brood_type(src.loc)
 
 		A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
-		A.GiveTarget(target)
+		A.GiveTarget(get_target())
 		A.friends = friends
 		A.faction = faction.Copy()
 		ranged_cooldown = world.time + ranged_cooldown_time
@@ -149,19 +149,34 @@
 	brood_type = /mob/living/simple_animal/hostile/poison/bees/toxin
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
+	squirt_mob()
+	..(gibbed)
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/Destroy()
+	squirt_mob()
+	. = ..()
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/proc/skull_vore(mob/living/prefbreak)
+	if(!prefbreak)
+		return
+	stored_mob = prefbreak
+	prefbreak.forceMove(src)
+	RegisterSignal(prefbreak, COMSIG_PARENT_QDELETING, .proc/squirt_mob)
+
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/proc/squirt_mob()
 	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
 			stored_mob.forceMove(get_turf(src))
 			stored_mob = null
+			UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 		else if(fromtendril)
 			new /obj/effect/mob_spawn/human/corpse/charredskeleton(T)
 		else if(dwarf_mob)
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested/dwarf(T)
 		else
 			new /obj/effect/mob_spawn/human/corpse/damaged/legioninfested(T)
-	..(gibbed)
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
@@ -213,8 +228,7 @@
 	visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 	H.death()
 	H.adjustBruteLoss(1000)
-	L.stored_mob = H
-	H.forceMove(L)
+	L.skull_vore(H)
 	qdel(src)
 
 //Advanced Legion is slightly tougher to kill and can raise corpses (revive other legions)
@@ -248,7 +262,7 @@
 	AIStatus = AI_ON
 	stop_automated_movement = FALSE
 	wander = TRUE
-	maxbodytemp = INFINITY
+	//maxbodytemp = INFINITY
 	layer = MOB_LAYER
 	del_on_death = TRUE
 	sentience_type = SENTIENCE_BOSS

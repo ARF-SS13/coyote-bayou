@@ -140,7 +140,7 @@
 
 	var/registered_z
 
-	var/list/alerts = list() // contains /obj/screen/alert only // On /mob so clientless mobs will throw alerts properly
+	var/list/alerts = list() // contains /atom/movable/screen/alert only // On /mob so clientless mobs will throw alerts properly
 	var/list/screens = list()
 	var/list/client_colours = list()
 	var/hud_type = /datum/hud
@@ -161,8 +161,8 @@
 	///Whether the mob is updating glide size when movespeed updates or not
 	var/updating_glide_size = TRUE
 
-	///Override for sound_environments. If this is set the user will always hear a specific type of reverb (Instead of the area defined reverb)
-	var/sound_environment_override = SOUND_ENVIRONMENT_NONE
+	// ///Override for sound_environments. If this is set the user will always hear a specific type of reverb (Instead of the area defined reverb)
+	// var/sound_environment_override = SOUND_ENVIRONMENT_NONE
 
 	///////TYPING INDICATORS///////
 	/// Set to true if we want to show typing indicators.
@@ -200,3 +200,14 @@
 
 	/// How fast your previous step was
 	var/last_move_delay = 0
+	///Override for sound_environments. If this is set the user will always hear a specific type of reverb (Instead of the area defined reverb)
+	var/sound_environment_override = SOUND_ENVIRONMENT_NONE
+
+/// A mock client, provided by tests and friends
+	var/datum/client_interface/mock_client
+
+	///Can this animal be classified as a pet?
+	var/is_monophobia_pet = FALSE
+
+	///is the mob set to always whisper?
+	var/is_autowhisper = FALSE

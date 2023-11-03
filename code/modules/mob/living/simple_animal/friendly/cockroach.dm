@@ -9,8 +9,8 @@
 	turns_per_move = 5
 	loot = list(/obj/effect/decal/cleanable/insectguts)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 270
-	maxbodytemp = INFINITY
+	//minbodytemp = 270
+	//maxbodytemp = INFINITY
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	mob_biotypes = MOB_ORGANIC|MOB_BUG

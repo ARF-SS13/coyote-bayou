@@ -14,6 +14,7 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 //This is for procs to replace all the goddamn 'in world's that are chilling around the code
 
 GLOBAL_LIST_EMPTY(player_list)				//all mobs **with clients attached**.
+GLOBAL_LIST_EMPTY(has_played_list)				//all mobs **who ever had clients**.
 GLOBAL_LIST_EMPTY(mob_list)					//all mobs, including clientless
 GLOBAL_LIST_EMPTY(mob_directory)			//mob_id -> mob
 GLOBAL_LIST_EMPTY(alive_mob_list)			//all alive mobs, including clientless. Excludes /mob/dead/new_player
@@ -42,6 +43,15 @@ GLOBAL_LIST_EMPTY(latejoin_ai_cores)
 GLOBAL_LIST_EMPTY(mob_config_movespeed_type_lookup)
 
 GLOBAL_LIST_EMPTY(latejoiners) //CIT CHANGE - All latejoining people, for traitor-target purposes.
+
+/// All alive antags with clients.
+GLOBAL_LIST_EMPTY(current_living_antags)
+
+/// All observers with clients that joined as observers.
+GLOBAL_LIST_EMPTY(current_observers_list)
+
+//Dynamic Port
+GLOBAL_LIST_EMPTY(new_player_list) //all /mob/dead/new_player, in theory all should have clients and those that don't are in the process of spawning and get deleted when done.
 
 /proc/update_config_movespeed_type_lookup(update_mobs = TRUE)
 	// NOTE: This is entirely based on the fact that byond typesof/subtypesof gets longer/deeper paths before shallower ones.

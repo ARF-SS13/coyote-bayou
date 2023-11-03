@@ -29,7 +29,7 @@
 /datum/surgery_step/incise/nobleed //silly friendly!
 
 /datum/surgery_step/incise/nobleed/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)]..."),
 		"[user] begins to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)].",
 		"[user] begins to <i>carefully</i> make an incision in [target]'s [parse_zone(target_zone)].")
 

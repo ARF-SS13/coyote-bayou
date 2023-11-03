@@ -29,8 +29,8 @@
 
 /obj/machinery/atmospherics/components/binary/pump/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>You can hold <b>Ctrl</b> and click on it to toggle it on and off.</span>"
-	. += "<span class='notice'>You can hold <b>Alt</b> and click on it to maximize its pressure.</span>"
+	. += span_notice("You can hold <b>Ctrl</b> and click on it to toggle it on and off.")
+	. += span_notice("You can hold <b>Alt</b> and click on it to maximize its pressure.")
 
 /obj/machinery/atmospherics/components/binary/pump/CtrlClick(mob/user)
 	var/area/A = get_area(src)

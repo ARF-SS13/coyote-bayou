@@ -146,14 +146,6 @@
 	var/lock = FALSE
 	var/tagname = null
 
-/datum/design/electropack/shockcollar
-	name = "Slave collar"
-	id = "shockcollar"
-	build_type = AUTOLATHE
-	build_path = /obj/item/electropack/shockcollar
-	materials = list(/datum/material/iron = 5000, /datum/material/glass =2000)
-	category = list("hacked", "Misc")
-
 /obj/item/electropack/shockcollar/Initialize()
 	. = ..()
 	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))

@@ -10,6 +10,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	can_remove = 1 // Can you remove the cell?
+	can_charge = 0 // Can you put it in a Weapon Recharger?
 	var/select = 1
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -21,7 +23,7 @@
 	. = ..()
 	if(.)
 		return
-	if(istype(A, /obj/item/stock_parts/cell/ammo))
+	if(can_remove && istype(A, /obj/item/stock_parts/cell/ammo))
 		var/obj/item/stock_parts/cell/ammo/AM = A
 		if(istype(AM, cell_type))
 			var/obj/item/stock_parts/cell/ammo/oldcell = cell
@@ -29,8 +31,9 @@
 				cell = AM
 				if(oldcell)
 					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
-					oldcell.dropped()
-					oldcell.forceMove(get_turf(src.loc))
+					// oldcell.dropped()
+					// oldcell.forceMove(get_turf(src.loc))
+					oldcell.attack_hand(user)  //let's perform reload in a more intuitive way
 					oldcell.update_icon()
 				//else
 				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
@@ -278,6 +281,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 20
 	icon_state = "rechargerpistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
@@ -396,10 +400,12 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
-	cell_type = /obj/item/stock_parts/cell/ammo/ultracite //16 shots, self-charges
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder // Self charging, needs to be a cell you can't get. You can hotswap cells of guns with can_remove = 0
 	can_charge = 0
-	selfcharge = 1 //selfcharging adds 100 a shot
+	can_remove = 0 // If it self-charges, you can't remove it.
+	selfcharge = 1
+	selfchargerate = 20 // X*2 seconds to refill the cell
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 	weapon_class = WEAPON_CLASS_SMALL
@@ -437,20 +443,6 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
-//Freeblade Blaster
-/obj/item/gun/energy/laser/freeblade
-	name = "\improper Freeblade Blaster"
-	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	icon_state = "freeblade"
-	item_state = "freeblade"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
-	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
-
 //Compact RCW
 
 /obj/item/gun/energy/laser/auto
@@ -460,7 +452,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -474,7 +466,7 @@
 	name = "twin-shot RCW carbine"
 	desc = "Made by Lone Star Armories, this variant of the compact RCW ironically fires two star-shaped laser blasts in quick succession."
 	icon_state = "export_cannon"
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot) // 1200 damage per cell vs Tesla Autoshock's 1196
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/twinshot)
 	init_firemodes = list(
 		/datum/firemode/burst/two/fastest
 	)
@@ -487,7 +479,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn) //5dmg, 0.4 AP, good for fast firings.
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
 	can_scope = FALSE
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -496,19 +488,6 @@
 		/datum/firemode/semi_auto/faster
 	)
 	init_recoil = LASER_SMG_RECOIL(2, 2)
-
-/obj/item/gun/energy/laser/auto/nayriin
-	name = "Lucy"
-	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
-	icon_state = "lasercw"
-	item_state = "rcw"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
-	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto/faster
-	)
 
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
@@ -523,7 +502,7 @@
 	)
 	init_recoil = LASER_SMG_RECOIL(1, 1)
 
-//Ultracite Laser pistol
+//Ultracite Laser pistol - staying commented out because the gammagun shares its sprite.
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
 	desc = "An ultracite enhanced energy-based laser gun that fires concentrated beams of light."
@@ -569,6 +548,27 @@
 //LASER RIFLES//
 ////////////////
 
+
+/obj/item/gun/energy/laser/covbeam
+	name = "Latos Systems S-5 energy rifle"
+	desc = "A S-5 prototype energy rifle. This rifle is clunky and the scope itself makes no sense in terms of crosshairs, using a odd looking ecplipse reticle."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "beamrifle"
+	item_state = "beamrifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/covenantbrr)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = TRUE
+	zoom_factor = 1.1
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 //Wattz 2000 Laser rifle
 /obj/item/gun/energy/laser/wattz2k
@@ -620,36 +620,20 @@
 	icon_state = "wattz2ks"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2ks/hitscan)
-	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_scope = FALSE
 	zoom_factor = 1
+	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
+	selfchargerate = 20
+
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
-
-/obj/item/gun/energy/laser/LaserAK/worn
-	name = "Laser AK470M"
-	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
-	icon_state = "LaserAK"
-	item_state = null
-	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/mfc"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/AK470M)
-	ammo_x_offset = 4
-	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
-	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	init_firemodes = list(
-	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm300
-	)
-	init_recoil = LASER_AUTORIFLE_RECOIL(1, 1)
 
 //AER9 Laser rifle
 /obj/item/gun/energy/laser/aer9
@@ -684,30 +668,13 @@
 		/datum/firemode/burst/two/slow
 	)
 
-/obj/item/gun/energy/laser/aer9/focused/rynn
-	name = "\improper Hot-wired AER10 laser rifle"
-	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
-	icon = 'icons/fallout/objects/guns/energy.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	icon_state = "hotwiredlaser"
-	item_state = "hotwiredlaser"
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	can_scope = TRUE
-	init_firemodes = list(
-		/datum/firemode/burst/two/slow
-	)
-
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
 	name = "\improper Ultracite laser rifle"
-	desc = "A sturdy and advanced military grade pre-war service laser rifle, now enhanced with ultracite"
+	desc = "An incredibly rare variant of the AER-9 laser rifle that uses Ultracite microfusion cells."
 	icon_state = "ultra_rifle"
 	item_state = "laser-rifle9"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/ultra)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
 	can_scope = FALSE
 	zoom_factor = 1
@@ -785,7 +752,7 @@
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
-	desc = "A bleeding-edge, pre-war laser rifle. A little more powerful than the previous model AER."
+	desc = "A bleeding-edge, pre-war laser rifle. It manages to make its battery last longer than the previous model while retaining all the power."
 	icon_state = "aer14"
 	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
@@ -804,7 +771,7 @@
 //LAER Energy rifle
 /obj/item/gun/energy/laser/laer
 	name = "\improper LAER"
-	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
+	desc = "Derived from the AER-9, the Laser Assisted Electrical Rifle - or LAER - fires a uniquely unstable beam of directed energy to create an extremely unstable laser projection."
 	icon_state = "laer"
 	item_state = "laer"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer/hitscan)
@@ -865,6 +832,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
 //Gamma gun
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
@@ -872,7 +840,7 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -945,8 +913,8 @@
 
 		if(!M.incapacitated())
 
-			if(istype(over_object, /obj/screen/inventory/hand))
-				var/obj/screen/inventory/hand/H = over_object
+			if(istype(over_object, /atom/movable/screen/inventory/hand))
+				var/atom/movable/screen/inventory/hand/H = over_object
 				M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 
 
@@ -1017,6 +985,419 @@
 	. = ..()
 	ammo_pack.attach_gun(user)
 
+/* * * * * * *
+ * TG Lasers *
+ * * * * * * */
+
+/* * * * * * * * * * *
+ * Classic TG blasters
+ * Almost always projectile, rarely hitscan
+ * Can't remove cell
+ * Very ammo efficient
+ * Basically gun-wands without self charge
+ * Tiny, Small, Normal = Approx. 20% better than similar guns (Draw time makes reloading better than cycling guns)
+ * Bulky = Approx 50% better than similar guns (Can't reload, number of shots > raw damage)
+ * Ranges from Spawn tier to actual good loot:tm:
+ * * * * * * * * * * */
+
+// TODO: Hellgun, captain laser
+
+/obj/item/gun/energy/laser/tg
+	name = "TG Blaster Template"
+	desc = "You probably shouldn't be seeing this. Contact a coder!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "scraplaser"
+	item_state = "shotguncity"
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder/tg
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	ammo_x_offset = 1
+	shaded_charge = 1
+	can_remove = 0
+	can_charge = 1
+	can_flashlight = 0
+	can_scope = TRUE
+	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/* * * * * *
+ * Scrap laser
+ * Same as the Carbine but worse
+ * No gunlight
+ * Can craft super easy
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/scrap
+	name = "improvised laser"
+	desc = "Hanging out of a gutted weapon's frame are a series of wires and capacitors. This improvised carbine hums ominously as you examine it. It... Probably won't explode when you pull the trigger, at least?"
+
+/* * * * * *
+ * TG Carbine
+ * Projectile AER-9 but more shots
+ * Gunlight
+ * Spawn Tier; spawns with TG Pistol / Low end loot
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/carbine
+	name = "laser carbine"
+	desc = "A somewhat compact laser carbine that's capable of being put in larger holsters. Manufactured by Trident Gammaworks, this model of rifle was marketed before the collapse for hunting and sport shooting."
+	icon_state = "lascarbine"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/carbine)
+	can_flashlight = 1
+	flight_x_offset = 15
+	flight_y_offset = 10
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Pistol
+ * Unreloadable Wattz 1k but more shots
+ * No gunlight
+ * Spawn Tier; spawns with TG carbine / Low end loot
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/carbine/pistol
+	name = "miniture laser pistol"
+	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains most of the carbine's power, its battery is less efficient due to the size."
+	icon_state = "laspistol"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg)
+	can_flashlight = 0
+	can_scope = FALSE
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
+/* * * * * *
+ * TG Rifle
+ * Projectile AER-9 but WAY more shots
+ * Gunlight
+ * Uncommon
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle
+	name = "laser rifle"
+	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
+	icon_state = "lasrifle"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	init_recoil = LASER_RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto/fast
+	)
+
+/* * * * * *
+ * TG Heavy Rifle
+ * Plasma Rifle but laser-typed damage (upgrade from the TG Rifle, sidegrade to the Taclaser)
+ * Gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle/heavy
+	name = "heavy laser rifle"
+	desc = "Originally designed as a man portable anti-tank weapon, nowadays this massive rifle is mostly used to fry Super Mutants and bandits in Power Armor."
+	icon_state = "lascannon"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/heavy)
+	init_recoil = LASER_RIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/* * * * * *
+ * TG Taclaser
+ * Blaster P90 but bulky (upgrade from the TG rifle, sidegrade to the Heavy)
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/rifle/auto
+	name = "tactical laser rifle"
+	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
+	icon_state = "taclaser"
+	item_state = "p90"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle/auto)
+	can_flashlight = 0
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three/fast,
+		/datum/firemode/semi_auto/fast
+	)
+
+/* * * * * *
+ * TG HOS Pistol
+ * Autocharging Handgun, worse than caplaser (safe, unlike the nuclear guns)
+ * No gunlight
+ * Very Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger
+	name = "experimental laser pistol"
+	desc = "An experimental and limited production model of laser pistol, this weapon is highly valued and sought after due to its ability to recharge its internal battery automatically."
+	icon_state = "protolas"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_SMALL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/recharger)
+	can_flashlight = 0
+	can_scope = FALSE
+	selfcharge = 1
+	selfchargerate = 25
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
+/* * * * * *
+ * TG Nuclear Pistol
+ * Dangerous self-charging rad-pistol
+ * No gunlight
+ * Uncommon - bonus loot chance because it's dangerous to the user
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear
+	name = "nuclear laser pistol"
+	desc = "Designed before the advent of the microfusion cell, this prototype handgun draws its power from a miniture nuclear powerplant in the foregrip. A faded label on the side warns the user to keep it away from electromagnetic pulses."
+	icon_state = "nucpistol"
+	w_class = WEIGHT_CLASS_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear)
+	selfchargerate = 20
+	var/fail_tick = 0
+	var/fail_chance = 0
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/process()
+	if(fail_tick > 0)
+		fail_tick--
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	failcheck()
+	update_icon()
+	..()
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/proc/failcheck()
+	if(prob(fail_chance))
+		switch(fail_tick)
+			if(0 to 200)
+				fail_tick += (2*(fail_chance))
+				radiation_pulse(src, 50)
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)		//thank you short circuiting. if you powergame and nest these guns deeply you get to suffer no-warning radiation death.
+				if(M)
+					to_chat(M, span_userdanger("Your [name] feels warmer."))
+			if(201 to INFINITY)
+				SSobj.processing.Remove(src)
+				radiation_pulse(src, 200)
+				crit_fail = TRUE
+				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)
+				if(M)
+					to_chat(M, span_userdanger("Your [name]'s reactor leaks radiation!"))
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	fail_chance = min(fail_chance + round(severity/6.6), 100)
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/update_overlays()
+	. = ..()
+	if(crit_fail)
+		. += "[icon_state]_fail_0"
+	else
+		switch(fail_tick)
+			if(1 to INFINITY)
+				. += "[icon_state]_fail_0"
+
+/* * * * * *
+ * TG Nuclear Rifle (X-Ray rifle)
+ * Self-charging AER9 but with bonus radiation damage
+ * Gunlight
+ * Rare - bonus loot chance because it's dangerous to the user
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle
+	name = "nuclear laser rifle"
+	desc = "This rifle has a miniture nuclear reactor housed in the foregrip which allows it to infinitely recharge its internal battery. Etched above the grip are the words, 'PROPERTY OF THE CENTER FOR DISEASE CONTROL' and beside that is a faded label that warns the user to keep this weapon away from electromagnetic pulses."
+	icon_state = "xraylas"
+	item_state = "shotguncity"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle)
+	can_flashlight = 1
+	flight_x_offset = 20
+	flight_y_offset = 10
+	can_scope = TRUE
+	selfcharge = 1
+	selfchargerate = 25
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/burst/two,
+		/datum/firemode/semi_auto
+	)
+
+/* * * * * *
+ * TG Particle Rifle
+ * Five shots. More than enough to kill anything that moves.
+ * No gunlight
+ * Unique
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/particlecannon
+	name = "particle cannon"
+	desc = "The Trident Gammaworks 'Yamato' particle cannon was designed to be mounted on light armor for use against hard targets, ranging from vehicles to buildings. And some madman has disconnected this one and modified it to be portable. Without an engine to supply its immense power requirements, the capacitors can only handle five shots before needing to recharge -- but sometimes, that's all you need."
+	icon_state = "lassniper"
+	item_state = "esniper"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	can_flashlight = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/particle)
+	init_recoil = LASER_RIFLE_RECOIL(2, 3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+
+/* * * * * *
+ * XCOM UFO Defense Lasrifle
+ * Self-charging RNG heavy gun
+ * Unique
+ * * * * * */
+
+/obj/item/gun/energy/laser/xcomufolaser
+	name = "weathered strange laser rifle"
+	desc = "This laser rifle has a silverish blue with red highlights design. On the side of the weapon is a faded yellow 'X'. Seems to have been well perserved. There does not appear to be any recharger port nor any place to replace a cell, but the weapon will never fully run out of charge. The internals rattle occasionally."
+	icon = 'modular_coyote/icons/objects/xcomlaser.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/xcomlaserLeft.dmi'
+	righthand_file = 'modular_coyote/icons/objects/xcomlaserRight.dmi'
+	icon_state = "xcom_laser"
+	item_state = "xcom_laser"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/xcomufolaser)
+	cell_type = /obj/item/stock_parts/cell/ammo/xcomlaser
+	fire_delay = 1
+	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	can_remove = 0
+	max_upgrades = 0  //The gun is too unstable to mod
+	selfcharge = 1
+	selfchargerate = 5
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
+	)
+	init_recoil = LASER_CARBINE_RECOIL(1, 1)
+
+/* "donator" energy weapons -- guns that go in ckey loadouts*/
+
+//Star Trek themed AEP
+/obj/item/gun/energy/laser/pistol/phaser
+	name = "Type-2a phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the lethal firemode."
+	icon_state = "retro"
+	can_scope = FALSE
+
+//Star Trek themed Compliance Regulator
+/obj/item/gun/energy/laser/pistol/phaser/disable
+	name = "Type-2b phaser pistol"
+	desc = "A descendant of the EM weapons and phase-pistols of the 22nd century, the type 2 phaser was introduced before the mid-23rd century and was standard issue aboard Starfleet vessels by the 2260s. This one has been locked into the stun firemode."
+	icon_state = "retrodisabler"
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/stun)
+
+//Unique Compact RCW
+/obj/item/gun/energy/laser/magpistolcustom
+	name = "OURP-HYBRID"
+	desc = "The OURP - or Orange Uanimous Response Pluck - is named such because a sliver of hypersonic iron entering someone's skull is widely considered to be a universal solution to any problem. So long as you use enough of them, anyway."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "mpc"
+	item_state = "p90"
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/mpc)
+	can_scope = FALSE
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+	init_recoil = LASER_SMG_RECOIL(2, 1)
+
+//Unique Compact RCW
+/obj/item/gun/energy/laser/auto/nayriin
+	name = "Lucy"
+	desc = "This RCW stands out from most others in the wastes, clearly having had loving hands maintaining it over the course of years. Despite this maintenance, the weapon looks worse for wear featuring a warped, heat stressed barrel. It's polished wooden stock has a Vault-Tec logo in the center of it, with Vault 60 written above it, both being gold inlays. The name Lucy is written in the same gold inlay at the bottom, with the name Cyl carefully carved next to it."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/autolaser/worn)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/faster
+	)
+
+//Rynn's burst AER
+/obj/item/gun/energy/laser/aer9/focused/rynn
+	name = "\improper Hot-wired AER10 laser rifle"
+	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "hotwiredlaser"
+	item_state = "hotwiredlaser"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	can_scope = TRUE
+	init_firemodes = list(
+		/datum/firemode/burst/two/slow
+	)
+
+//Freeblade Blaster
+/obj/item/gun/energy/laser/freeblade
+	name = "\improper Freeblade Blaster"
+	desc = "A special tri-shot pistol. Does decent damage, and is specialty customized for a certain someone."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "freeblade"
+	item_state = "freeblade"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/freeblade)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
+//Generic Laser AK, also loot
+/obj/item/gun/energy/laser/LaserAK/worn
+	name = "Kalashnikov 740"
+	desc = "An attempt by the Soviet Union to update the AK470's design for the modern era. While it's easier to control and recharges quicker, most users lament the loss in firepower."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashlight)
+	selfchargerate = 25
+	init_firemodes = list(
+	/datum/firemode/semi_auto,
+	/datum/firemode/automatic/rpm200
+	)
+
+//Jaggachi's Unique AK470M
+/obj/item/gun/energy/laser/LaserAK/jaggi
+	name = "Laser AK470M"
+	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+
+//Generic nuclear rifle
+/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn
+	name = "prototype nuclear rifle"
+	desc = "A surviving prototype of the CDC's PANDORA-model nuclear laser rifle. The reactor in the foregrip seems dim, though still functional. It looks like there used to be a label above the grip, but it's long since been torn off."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn)
+	selfchargerate = 30
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 //// BETA /// Obsolete
 /obj/item/gun/energy/laser/lasertesting

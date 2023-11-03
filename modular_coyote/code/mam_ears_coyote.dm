@@ -346,3 +346,23 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	icon_state = "vap"
 	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/ears/mam_ears/fam
+	name = "Fan ears"
+	icon_state = "fan"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/trike
+	name = "trike ears"
+	icon_state = "trike"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/mam_ears/teppi
+	name = "Teppi Ears"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "teppi"
+	matrixed_sections = MATRIX_RED_GREEN

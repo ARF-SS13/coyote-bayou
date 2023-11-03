@@ -8,6 +8,12 @@ SUBSYSTEM_DEF(statpanels)
 	var/encoded_global_data
 	var/mc_data_encoded
 	var/list/cached_images = list()
+	var/list/cached_boykissers = list()
+	var/list/cached_girlkissers = list()
+	var/list/cached_anykissers = list()
+	var/list/cached_tops = list()
+	var/list/cached_bottoms = list()
+	var/list/cached_switches = list()
 
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
@@ -19,7 +25,11 @@ SUBSYSTEM_DEF(statpanels)
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [ROUND_TIME]",
 			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
-			"Server Anger Level: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
+			"Server Anger Level: [SStime_track.get_anger()]",
+			"😘♂: [LAZYLEN(cached_boykissers)], 😘♀: [LAZYLEN(cached_girlkissers)], 😘⚤: [LAZYLEN(cached_anykissers)]",
+			"Tops: [LAZYLEN(cached_tops)]",
+			"Switches: [LAZYLEN(cached_switches)]",
+			"Bottoms: [LAZYLEN(cached_bottoms)]",
 		)
 
 		if(SSshuttle.emergency)
@@ -38,7 +48,10 @@ SUBSYSTEM_DEF(statpanels)
 		if(target.stat_tab == "Status")
 			var/ping_str = url_encode("Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)")
 			var/other_str = url_encode(json_encode(target.mob.get_status_tab_items()))
-			target << output("[encoded_global_data];[ping_str];[other_str]", "statbrowser:update")
+			var/adminstuff = ""
+			// if(SStime_track.debug_just_flat_out_lie_to_the_players && check_rights_for(target, R_ADMIN))
+			// 	adminstuff = url_encode("The Real TiDi: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
+			target << output("[encoded_global_data];[ping_str];[other_str][adminstuff]", "statbrowser:update")
 		if(!target.holder)
 			target << output("", "statbrowser:remove_admin_tabs")
 		else

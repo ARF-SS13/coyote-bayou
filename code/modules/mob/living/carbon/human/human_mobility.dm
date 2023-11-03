@@ -38,7 +38,7 @@
 			visible_message(span_notice("[standupwarning]"), usernotice, vision_distance = 5)
 		if(HAS_TRAIT(src, TRAIT_ENDLESS_RUNNER))
 			totaldelay = 0.1 SECONDS // =3
-		if(do_after(src, totaldelay, target = src, required_mobility_flags = MOBILITY_RESIST))
+		if(do_after(src, totaldelay, FALSE, src, required_mobility_flags = MOBILITY_RESIST, allow_movement = TRUE, stay_close = FALSE))
 			set_resting(FALSE, TRUE)
 
 			combat_flags &= ~COMBAT_FLAG_RESISTING_REST

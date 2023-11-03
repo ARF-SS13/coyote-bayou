@@ -9,6 +9,11 @@
 	path = /obj/item/clothing/shoes/laceup
 	cost = 0
 
+/datum/gear/shoes/ninja
+	name = "ninja shoes"
+	path = /obj/item/clothing/shoes/f13/ninja
+	cost = 0
+
 /datum/gear/shoes/workboots
 	name = "work boots"
 	path = /obj/item/clothing/shoes/workboots/mining
@@ -17,6 +22,11 @@
 /datum/gear/shoes/winterboots
 	name = "winter boots"
 	path = /obj/item/clothing/shoes/winterboots
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
+
+/datum/gear/shoes/sneakboots
+	name = "infiltrator boots"
+	path = /obj/item/clothing/shoes/jackboots/sneakboots
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
 /datum/gear/shoes/sandals
@@ -193,6 +203,13 @@
 	cost = 2
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/ducky
+	name = "rubber ducky shoes"
+	path = /obj/item/clothing/shoes/ducky
+
+/datum/gear/shoes/slippers
+	name = "bunny slippers"
+	path = /obj/item/clothing/shoes/slippers
 
 /// Factions Shoes or well NCR boots.
 

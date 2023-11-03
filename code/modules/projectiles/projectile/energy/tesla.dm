@@ -35,6 +35,7 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	damage = 55
+	damage_list = list("54" = 30, "55" = 50, "56" = 20)
 	wound_bonus = 30
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
@@ -52,7 +53,8 @@
 
 /obj/item/projectile/energy/teslacannon/oasis
 	name = "shock beam"
-	damage = 12 //high damage but low ap
+	damage = 13 //high damage, fast fire speed
+	damage_list = list("12" = 30, "13" = 50, "15" = 20)
 	flag = "energy"
 	wound_bonus = -5
 	bare_wound_bonus = 35

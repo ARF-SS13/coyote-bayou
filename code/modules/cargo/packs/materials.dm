@@ -17,28 +17,28 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Cardboard Sheets"
 	desc = "Create a bunch of boxes."
-	cost = 300 //thrice their export value
+	cost = 400 //thrice their export value
 	contains = list(/obj/item/stack/sheet/cardboard/fifty)
 
 /datum/supply_pack/materials/glass50
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Glass Sheets"
 	desc = "Let some nice light in with fifty glass sheets!"
-	cost = 300 //double their export value
+	cost = 400 //double their export value
 	contains = list(/obj/item/stack/sheet/glass/fifty)
 
 /datum/supply_pack/materials/metal50
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Metal Sheets"
 	desc = "Any construction project begins with a good stack of fifty metal sheets!"
-	cost = 300 //double their export value
+	cost = 400 //double their export value
 	contains = list(/obj/item/stack/sheet/metal/fifty)
 
 /datum/supply_pack/materials/brick50
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Bricks"
 	desc = "Set a nice foundation with brick and mortar!"
-	cost = 300 //double their export value
+	cost = 400 //double their export value
 	contains = list(/obj/item/stack/sheet/mineral/brick/fifty)
 
 /datum/supply_pack/materials/plasteel20
@@ -52,14 +52,14 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "50 Plastic Sheets"
 	desc = "Build a limitless amount of toys with fifty plastic sheets!"
-	cost = 200 // double their export
+	cost = 400 // double their export
 	contains = list(/obj/item/stack/sheet/plastic/twenty)
 
 /datum/supply_pack/materials/sandstone30
 	goody = PACK_GOODY_PUBLIC
 	name = "30 Sandstone Blocks"
 	desc = "Neither sandy nor stoney, these thirty blocks will still get the job done."
-	cost = 150 // five times their export
+	cost = 400 // five times their export
 	contains = list(/obj/item/stack/sheet/mineral/sandstone/thirty)
 
 /datum/supply_pack/materials/wood50
@@ -73,7 +73,7 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "1 Ultrasteel Ingot"
 	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
-	cost = 1500
+	cost = 2000
 	contains = list(/obj/item/ingot/adamantine
 	)
 
@@ -81,7 +81,7 @@
 	goody = PACK_GOODY_PUBLIC
 	name = "1 Rose Steel Ingot"
 	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
-	cost = 750
+	cost = 1000
 	contains = list(/obj/item/ingot/mythril
 	)
 

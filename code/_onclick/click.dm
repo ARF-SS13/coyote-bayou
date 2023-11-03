@@ -102,6 +102,7 @@
 		return
 
 	var/obj/item/W = get_active_held_item()
+	var/obj/item/V = get_inactive_held_item()
 
 	if(W == A)
 		W.attack_self(src)
@@ -112,6 +113,21 @@
 	//User itself, current loc, and user inventory
 	if(has_direct_access_to(A, FAR_DEPTH))
 		if(W)
+			if(V)
+				if(W.is_dual_wielded && V.is_dual_wielded) 
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.melee_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
+						return
+					else
+						dual_wield_queue_swap = 0
+						swap_hand()
+						V.melee_attack_chain(src, A, params)
+						swap_hand()
+						DelayNextAction(V.attack_speed)
+						return
+
 			return W.melee_attack_chain(src, A, params)
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
@@ -126,6 +142,21 @@
 	//Standard reach turf to turf or reaching inside storage
 	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
+			if(V)
+				if(W.is_dual_wielded && V.is_dual_wielded) 
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.melee_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
+						return
+					else
+						dual_wield_queue_swap = 0
+						swap_hand()
+						V.melee_attack_chain(src, A, params)
+						swap_hand()
+						DelayNextAction(V.attack_speed)
+						return
+
 			return W.melee_attack_chain(src, A, params)
 		else
 			. = UnarmedAttack(A, TRUE, a_intent)
@@ -136,6 +167,21 @@
 		if(!isturf(A) && !isturf(A.loc))
 			return
 		if(W)
+			if(V)
+				if(W.is_dual_wielded && V.is_dual_wielded) 
+					if(!dual_wield_queue_swap)
+						dual_wield_queue_swap = 1
+						W.ranged_attack_chain(src, A, params)
+						DelayNextAction(W.attack_speed)
+						return
+					else
+						dual_wield_queue_swap = 0
+						swap_hand()
+						V.ranged_attack_chain(src, A, params)
+						swap_hand()
+						DelayNextAction(V.attack_speed)
+						return
+
 			return W.ranged_attack_chain(src, A, params)
 		else
 			return RangedAttack(A,params)
@@ -377,14 +423,14 @@
 			setDir(WEST, ismousemovement)
 
 //debug
-/obj/screen/proc/scale_to(x1,y1)
+/atom/movable/screen/proc/scale_to(x1,y1)
 	if(!y1)
 		y1 = x1
 	var/matrix/M = new
 	M.Scale(x1,y1)
 	transform = M
 
-/obj/screen/click_catcher
+/atom/movable/screen/click_catcher
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "catcher"
 	plane = CLICKCATCHER_PLANE
@@ -394,7 +440,7 @@
 #define MAX_SAFE_BYOND_ICON_SCALE_TILES (MAX_SAFE_BYOND_ICON_SCALE_PX / world.icon_size)
 #define MAX_SAFE_BYOND_ICON_SCALE_PX (33 * 32)			//Not using world.icon_size on purpose.
 
-/obj/screen/click_catcher/proc/UpdateGreed(view_size_x = 15, view_size_y = 15)
+/atom/movable/screen/click_catcher/proc/UpdateGreed(view_size_x = 15, view_size_y = 15)
 	var/icon/newicon = icon('icons/mob/screen_gen.dmi', "catcher")
 	var/ox = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_x)
 	var/oy = min(MAX_SAFE_BYOND_ICON_SCALE_TILES, view_size_y)
@@ -409,7 +455,7 @@
 	M.Scale(px/sx, py/sy)
 	transform = M
 
-/obj/screen/click_catcher/Click(location, control, params)
+/atom/movable/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"] && iscarbon(usr))
 		var/mob/living/carbon/C = usr

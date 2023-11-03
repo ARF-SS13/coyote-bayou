@@ -85,6 +85,8 @@ All foods are distributed among various categories. Use common sense.
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/living/eater)
 	if(!eater)
 		return
+	if(!loc)
+		return
 	if(!reagents.total_volume)
 		var/mob/living/location = loc
 		var/obj/item/trash_item = generate_trash(location)

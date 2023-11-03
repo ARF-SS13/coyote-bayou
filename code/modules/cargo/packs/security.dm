@@ -59,7 +59,7 @@
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 1000
+	cost = 1500
 	num_contained = 3
 	contains = list(/obj/effect/spawner/lootdrop/f13/common_armor,
 					/obj/effect/spawner/lootdrop/f13/common_armor,
@@ -68,15 +68,33 @@
 
 /datum/supply_pack/security/armorplus
 	name = "Armor - Advanced"
-	desc = "Three sets of specialized armor, express requisition for those in need. Stocks tend to fluctuate."
+	desc = "One set of advanced armor, and rarely something better."
 	cost = 5000
-	num_contained = 3
+	num_contained = 1
 	contains = list(/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor,
-					/obj/effect/spawner/lootdrop/f13/rare_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
+					/obj/effect/spawner/lootdrop/f13/uncommon_armor,
 					/obj/effect/spawner/lootdrop/f13/rare_armor)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/nvgpack
+	name = "Utility - Night Vision"
+	desc = "A single set of Night Vision Goggles. Because you're just not tactical enough until you have a set of NODs on, even if it's the middle of the day."
+	cost = 10000
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/nvgpack_upgr
+	name = "Utility - Prescription Night Vision"
+	desc = "A set of NVGs, now adjusted for those with terrible vision! Wearing these doesn't make you less of a nerd, however."
+	cost = 12500
+	num_contained = 1
+	contains = list(/obj/item/clothing/glasses/night/prescription)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/ec
@@ -392,7 +410,7 @@
 /datum/supply_pack/security/advmods
 	name = "Weapons - Advanced Gun Mods"
 	desc = "Contains four random advanced gun and energy weapon mods, best for causing pain!"
-	cost = 1500
+	cost = 1200
 	num_contained = 4
 	contains = list(/obj/item/tool_upgrade/refinement/vibcompensator,
 					/obj/item/tool_upgrade/productivity/motor,
@@ -401,17 +419,18 @@
 					/obj/item/gun_upgrade/mechanism/overdrive,
 					/obj/item/gun_upgrade/barrel/mag_accel,
 					/obj/item/gun_upgrade/barrel/blender,
-					/obj/item/gun_upgrade/scope/killer)
+					/obj/item/gun_upgrade/scope/killer,
+					/obj/item/tool_upgrade/augment/ai_tool)
 	crate_name = "advanced gun mods crate"
 
-/datum/supply_pack/security/aimod
+/* /datum/supply_pack/security/aimod // removed because ZAX was super nerfed
 	name = "Weapons - Zax Module"
 	desc = "Contains two highly advanced energy gun modifications."
 	cost = 8000
 	num_contained = 2
 	contains = list(/obj/item/tool_upgrade/augment/ai_tool,
 					/obj/item/tool_upgrade/augment/ai_tool)
-	crate_name = "zax module crate"
+	crate_name = "zax module crate" */
 
 /* /datum/supply_pack/security/gaussbarrelmod //"chinese gauss barrels make me die inside" -Fuzzy, 2023
 	name = "Weapons - Chinese Gauss Barrel"
@@ -486,6 +505,40 @@
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/wands // Wands
+	name = "Magic - Wands"
+	desc = "A crate containing three whole wands. Hand-crafted by the Witches of Winslow, according to the Dallas catalog."
+	cost = 3000
+	num_contained = 3
+	contains = list(
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved,
+		/obj/item/gun/magic/wand/kelpmagic/sparky,
+		/obj/item/gun/magic/wand/kelpmagic/firebolt
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_basic // T1 Staves
+	name = "Magic - Basic Staves"
+	desc = "A crate containing two basic staves."
+	cost = 3500
+	num_contained = 2
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff,
+		/obj/item/gun/magic/staff/kelpmagic/lightning
+		)
+	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/staves_advanced // T2 Staves
+	name = "Magic - Advanced Staves"
+	desc = "A crate containing either a staff of fireball or a staff of healing."
+	cost = 5000
+	num_contained = 2
+	contains = list(
+		/obj/item/gun/magic/staff/kelpmagic/healstaff,
+		/obj/item/gun/magic/staff/kelpmagic/fireball
 		)
 	crate_name = "quality weapon crate"
 

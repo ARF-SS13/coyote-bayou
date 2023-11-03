@@ -124,7 +124,7 @@
 	for(var/mob/dead/observer/O in GLOB.player_list)
 		if(O.key == expected_key)
 			if(O.client?.address == addr)
-				new /obj/screen/splash(O.client, TRUE)
+				new /atom/movable/screen/splash(O.client, TRUE)
 			break
 
 /datum/world_topic/adminmsg
@@ -285,10 +285,12 @@
 	.["Nash"] = oasis
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
+	.["Round Time"] = ROUND_TIME
 	return json_encode(.)
 
 /datum/world_topic/jsonrevision
 	keyword = "jsonrevision"
+	require_comms_key = TRUE
 
 /datum/world_topic/jsonrevision/Run(list/input, addr)
 	var/datum/getrev/revdata = GLOB.revdata
@@ -311,3 +313,49 @@
 			))
 
 	return json_encode(data)
+
+// Border Control Wrapper for removing/adding whitelists - Gremling da smoothbrain
+// -----------------------------------------------------------
+//						THE FORMATTING
+// -----------------------------------------------------------
+// Keyword - "border"		// The method to call this wrapper
+// -----------------------------------------------------------
+// Mode Choice - "mode" 	// 0 - 1 - 2, 	0: Check whitelist
+							//				1: Whitelist,
+							//				2: Unwhitelist.
+// -----------------------------------------------------------
+// CKey - "ckey"			// The target user.
+
+#define CHK_WHTLST	0
+#define WHTLST		1
+#define UNWHTLST	2
+
+/datum/world_topic/bordercontrol
+	keyword = "border"
+	require_comms_key = TRUE
+
+/datum/world_topic/bordercontrol/Run(list/input, addr)
+	var/ckey = input["ckey"]
+	var/modeInput = text2num(input["mode"])
+	var/whitelistResult = BC_IsKeyWhitelisted(ckey)
+	switch(modeInput)
+		if(CHK_WHTLST)
+			return "[ckey] is [whitelistResult ? "" : "**NOT** "]whitelisted"
+		
+		if(WHTLST) // If the proc returns true, they have been whitelisted, if not, they have already been whitelisted.
+			if(BC_WhitelistKey(ckey))
+				return "[ckey] has been whitelisted."
+			else
+				return "[ckey] has already been whitelisted."
+		
+		if(UNWHTLST) // If the proc returns true, they have been removed, if not, they weren't on it originally.
+			if(BC_RemoveKey(ckey))
+				return "[ckey] has been removed."
+			else
+				return "[ckey] is already not on the whitelist."
+	
+	return "Formatting error - KEY: [input["keyword"]] | MODE: [input["mode"]] | CKEY: [input["ckey"]] | WhitelistResult: [whitelistResult]"
+
+#undef CHK_WHTLST
+#undef WHTLST
+#undef UNWHTLST

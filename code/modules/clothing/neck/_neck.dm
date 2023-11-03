@@ -287,7 +287,7 @@
 
 	if(price)
 		var/true_price = round(price*profit_scaling)
-		to_chat(user, "<span class='notice'>[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]</span>")
+		to_chat(user, span_notice("[selling ? "Sold" : "Getting the price of"] [I], value: <b>[true_price]</b> credits[I.contents.len ? " (exportable contents included)" : ""].[profit_scaling < 1 && selling ? "<b>[round(price-true_price)]</b> credit\s taken as processing fee\s." : ""]"))
 		if(selling)
 			new /obj/item/holochip(get_turf(user),true_price)
 			for(var/i in ex.exported_atoms_ref)
@@ -413,3 +413,12 @@ obj/item/clothing/neck/neckerchief
 	desc = "This collar appears to have blue band and a grey bell. Moo!"
 	icon_state = "collar_cowbell_bluu"
 	item_state = "collar_cowbell_blue"
+
+
+/obj/item/clothing/neck/customfleur
+	name = "Fluer's necklace"
+	desc = "A simple but handmade necklace. The chain was of a soft, glistening silver, carefully linked together. On the end of the necklace was a small heart in the most pristine sliver. Gently glistening in the light. On the back, in-graved in small careful words was, 'Never lose sight of hope or love.' Along with an image of two tails carefully intertwining."
+	icon_state = "fleurnecklace"
+	item_state = "fleurnecklace"
+	icon = 'icons/fallout/clothing/mantles.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
