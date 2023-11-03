@@ -223,3 +223,15 @@
 	taur_mode = STYLE_PAW_TAURIC
 	color_src = MUTCOLORS
 	extra = TRUE
+
+/datum/sprite_accessory/taur/teppi
+	name = "Teppi"
+	icon = 'icons/mob/mam/coyote/taurs128x64_vr.dmi'
+	icon_state = "teppi"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+	dimension_x = -32
+	dimension_y= 11
+
+

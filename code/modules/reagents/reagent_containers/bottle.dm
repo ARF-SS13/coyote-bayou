@@ -446,6 +446,7 @@
 	list_reagents = list(/datum/reagent/blackpowder = 60)
 
 // FEV
+/*
 /obj/item/reagent_containers/glass/bottle/FEV_solution
 	name = "FEV bottle"
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
@@ -458,7 +459,7 @@
 /obj/item/reagent_containers/glass/bottle/FEV_solution/curling
 	name = "Curling-13 bottle"
 	list_reagents = list(/datum/reagent/toxin/FEV_solution/curling = 30)
-
+*/
 //Curling 13 vaccine
 /obj/item/reagent_containers/glass/bottle/curling_vaccine
 	name = "Curling 13 vaccine bottle"
