@@ -849,7 +849,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "gJ" = (
-/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/chicken,
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
@@ -2978,6 +2977,9 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/structure/table,
 /obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -4892,6 +4894,11 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
+"IO" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "IP" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -6186,10 +6193,6 @@
 	},
 /obj/structure/flora/junglebush/b,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/ashdown)
-"RS" = (
-/mob/living/simple_animal/chicken,
-/turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "RV" = (
 /obj/structure/fence/wooden{
@@ -68375,7 +68378,7 @@ pR
 iX
 eq
 Yf
-RS
+gJ
 Tu
 jC
 lg
@@ -68633,7 +68636,7 @@ wx
 Ds
 Ql
 Mk
-gJ
+IO
 De
 RH
 vn
