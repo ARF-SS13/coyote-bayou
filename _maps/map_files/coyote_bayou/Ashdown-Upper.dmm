@@ -2367,10 +2367,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"se" = (
-/mob/living/simple_animal/chicken,
-/turf/open/floor/grass,
-/area/f13/wasteland/ashdown)
 "sn" = (
 /obj/structure/flora/branch_broken,
 /obj/effect/decal/cleanable/generic,
@@ -2982,7 +2978,6 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/structure/table,
 /obj/structure/destructible/tribal_torch/wall/lit,
-/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -6191,6 +6186,10 @@
 	},
 /obj/structure/flora/junglebush/b,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/ashdown)
+"RS" = (
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "RV" = (
 /obj/structure/fence/wooden{
@@ -68376,7 +68375,7 @@ pR
 iX
 eq
 Yf
-se
+RS
 Tu
 jC
 lg
