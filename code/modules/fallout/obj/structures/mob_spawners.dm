@@ -491,6 +491,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/retaliate/frog/red = 2
 	)
 
+/*
 /obj/structure/nest/crows
 	name = "crowsnest"
 	icon = 'icons/fallout/mobs/nests.dmi'
@@ -506,5 +507,5 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	/mob/living/simple_animal/bird/crow,
 	/mob/living/simple_animal/bird/commonblackbird
 	)
-
+*/
 
