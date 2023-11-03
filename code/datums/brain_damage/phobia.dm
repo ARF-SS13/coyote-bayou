@@ -44,7 +44,7 @@
 	if(is_blind(owner))
 		return
 	if(world.time > next_check && world.time > next_scare)
-		next_check = world.time + 50
+		next_check = world.time + 3 SECONDS
 		var/list/seen_atoms = owner.fov_view(7)
 		var/mirror_seen = 0
 
@@ -122,6 +122,7 @@
 		to_chat(owner, span_userdanger("Hearing \"[trigger_word]\" [message]!"))
 	else
 		to_chat(owner, span_userdanger("Something [message]!"))
+	owner.emote("scream")
 
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "phobia", /datum/mood_event/phobia) //Always apply the phobia mood debuff
 	if(prob(50))//Half the time apply some mostly harmless effects
