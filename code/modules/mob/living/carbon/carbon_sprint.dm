@@ -20,14 +20,15 @@
 		disable_intentional_sprint_mode()
 		return // if you're not holding it, you stop sprinting when you run out
 	*/
-	if(HAS_TRAIT(usr, TRAIT_ENDLESS_RUNNER))
-		return // you don't stop sprinting if you have this trait
-	else if(HAS_TRAIT(usr, TRAIT_ZOOMIES))
-		adjustStaminaLoss((tiles * sprint_stamina_cost) * ZOOMIES_STAM_MULT)
-	else if(HAS_TRAIT(usr, TRAIT_SUPER_ZOOMIES))
-		adjustStaminaLoss((tiles * sprint_stamina_cost) * SUPER_ZOOMIES_STAM_MULT)
-	else
-		adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.
+	if(tiles > sprint_buffer)//Drain from stamina only when our sprint buffer can't supply all of the needed tiles
+		if(HAS_TRAIT(usr, TRAIT_ENDLESS_RUNNER))
+			return // you don't stop sprinting if you have this trait
+		else if(HAS_TRAIT(usr, TRAIT_ZOOMIES))
+			adjustStaminaLoss((tiles * sprint_stamina_cost) * ZOOMIES_STAM_MULT)
+		else if(HAS_TRAIT(usr, TRAIT_SUPER_ZOOMIES))
+			adjustStaminaLoss((tiles * sprint_stamina_cost) * SUPER_ZOOMIES_STAM_MULT)
+		else
+			adjustStaminaLoss(tiles * sprint_stamina_cost)		//use stamina to cover deficit.
 
 /mob/living/carbon/proc/doSprintBufferRegen(updating = TRUE)
 	var/diff = world.time - sprint_buffer_regen_last
