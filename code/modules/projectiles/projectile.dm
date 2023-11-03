@@ -899,7 +899,7 @@
 			if(!hitscanning)
 				pixel_x = trajectory.return_px()
 				pixel_y = trajectory.return_py()
-		else if(T != loc && !isnull(loc))
+		else if(T != loc)
 			var/safety = CEILING(pixel_increment_amount / world.icon_size, 1) * 5 + 1
 			while(T != loc)
 				if(!--safety)
