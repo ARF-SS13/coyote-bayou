@@ -19,8 +19,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 #define PDA_OVERLAY_PAI			6
 
 /obj/item/pda
-	name = "\improper Pip-Boy 3000"
-	desc = "The RobCo Pip-Boy (Personal Information Processor) is an electronic device. Functionality is determined by a preprogrammed ROM cartridge."
+	name = "\improper DataPal"
+	desc = "The Coyote-Co DataPal is an electronic device. Functionality is determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "Pip-boy"
@@ -30,14 +30,14 @@ GLOBAL_LIST_EMPTY(PDAs)
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	tastes = list("old metal" = 1, "rust" = 1)
-	
+
 	//Main variables
 	var/owner = null // String name of owner
 	var/default_cartridge = 0 // Access level defined by cartridge
 	var/obj/item/cartridge/cartridge = null //current cartridge
 	var/mode = 0 //Controls what menu the PDA will display. 0 is hub; the rest are either built in or based on cartridge.
 	/// The PDA's current skin
-	var/skindex = "PipBoy 3000"
+	var/skindex = "Datapal"
 	/// The skins
 	reskinnable_component = /datum/component/reskinnable/pda
 	// var/list/overlays_icons = list('icons/obj/pda.dmi' = list("pda-r", "screen_default", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
@@ -476,7 +476,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<a href='?src=[REF(src)];rfreq=2'>+</a>"
 				dat += "<a href='?src=[REF(src)];rfreq=10'>+</a>"
 				dat += " | <a href='?src=[REF(src)];rsavefreq=[radio.frequency]'>Save Frequency</a><br><br>"
-				
+
 				if(saved_frequencies)
 					dat += "<b>Saved Frequencies</b>"
 					dat += "<ul>"
@@ -512,7 +512,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK, FALSE) && !href_list["close"])
 		add_fingerprint(U)
 		U.set_machine(src)
-		
+
 		if(href_list["choice"])
 
 			switch(href_list["choice"])
@@ -794,7 +794,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			loaded_frequency = sanitize_frequency(text2num(loaded_frequency))
 			radio.set_frequency(loaded_frequency)
 			Boop()
-		
+
 		if (href_list["rrenfreq"])
 			var/renamed_frequency = href_list["rrenfreq"]
 			renamed_frequency = text2num(renamed_frequency)
