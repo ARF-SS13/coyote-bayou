@@ -990,6 +990,14 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		"sounds/f13weapons/",
 		"sounds/creatures/",
 		"sounds/voice/",
+		"sounds/ambience",
+		"sounds/f13",
+		"sounds/f13ambience",
+		"sounds/effects",
+		"sounds/f13items",
+		"sounds/f13music",
+		"sounds/weapons",
+		"sounds/block_parry",
 	)
 	for(var/folder in fucking_sound_folders)
 		GLOB.every_fucking_sound_file |= pathwalk(folder)
