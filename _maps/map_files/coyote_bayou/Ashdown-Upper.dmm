@@ -235,13 +235,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"bR" = (
-/obj/structure/curtain{
-	color = "#5c131b";
-	pixel_x = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "bV" = (
 /obj/structure/table,
 /obj/item/kitchen/knife/butcher,
@@ -358,10 +351,11 @@
 	},
 /area/f13/building/abandoned)
 "cT" = (
-/obj/structure/railing{
-	dir = 10
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = -32
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "da" = (
 /obj/structure/flora/tallgrass8,
@@ -392,6 +386,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"do" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2;
+	icon_state = "railing_corner"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "dp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -445,9 +447,8 @@
 /turf/closed/wall/f13/wood,
 /area/f13/building)
 "dN" = (
-/obj/machinery/chem_master{
+/obj/machinery/chem_heater{
 	pixel_y = 10;
-	layer = 4;
 	pixel_x = -3
 	},
 /turf/open/floor/f13{
@@ -509,14 +510,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building/workshop/ashdown)
-"dZ" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 2;
-	icon_state = "railing_corner"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "ea" = (
 /obj/structure/flora/grass/coyote/twentyone,
 /turf/open/indestructible/ground/outside/dirt,
@@ -602,6 +595,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"eI" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "eM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet{
@@ -1100,12 +1099,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ii" = (
-/obj/machinery/smartfridge/bottlerack/drug_storage{
-	pixel_y = 5
+/obj/machinery/vending/medical/nash{
+	pixel_y = 3
 	},
-/turf/open/floor/f13{
-	icon_state = "bluechess2"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "ij" = (
 /obj/structure/chair/middle,
@@ -1216,15 +1213,6 @@
 	color = "#777777"
 	},
 /area/f13/caves)
-"jg" = (
-/obj/machinery/chem_heater{
-	pixel_y = 10;
-	pixel_x = -3
-	},
-/turf/open/floor/f13{
-	icon_state = "bluechess2"
-	},
-/area/f13/building/hospital/clinic/ashdown)
 "jh" = (
 /obj/machinery/workbench/forge,
 /turf/open/floor/f13/wood,
@@ -1684,6 +1672,13 @@
 	color = "#777777"
 	},
 /area/f13/wasteland/ashdown)
+"mA" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 6
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "mB" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood,
@@ -1720,11 +1715,6 @@
 "mH" = (
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"mK" = (
-/obj/structure/bed/wooden,
-/obj/structure/curtain,
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "mR" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1805,20 +1795,7 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building/workshop/ashdown)
-"nu" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"nA" = (
-/obj/structure/flora/tree/oak_five,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"nG" = (
-/obj/structure/decoration/rag,
-/obj/structure/barricade/wooden,
-/turf/closed/wall/f13/wood,
-/area/f13/building)
-"nI" = (
+"nr" = (
 /obj/structure/table{
 	pixel_x = -9
 	},
@@ -1830,6 +1807,25 @@
 	icon_state = "bluechess2"
 	},
 /area/f13/building/hospital/clinic/ashdown)
+"nu" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"nA" = (
+/obj/structure/flora/tree/oak_five,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"nB" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
+"nG" = (
+/obj/structure/decoration/rag,
+/obj/structure/barricade/wooden,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "nK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -1889,18 +1885,6 @@
 	color = "#779999"
 	},
 /area/f13/building)
-"oi" = (
-/obj/structure/rack/shelf_wood,
-/obj/item/storage/box/syringes,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/f13{
-	icon_state = "bluechess2"
-	},
-/area/f13/building/hospital/clinic/ashdown)
 "ou" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
@@ -2088,14 +2072,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "pC" = (
-/obj/structure/curtain{
-	color = "#5c131b";
-	pixel_x = 32
-	},
 /turf/open/floor/f13{
-	icon_state = "bluechess2"
+	icon_state = "floordirty"
 	},
-/area/f13/building/hospital/clinic/ashdown)
+/area/f13/building)
 "pR" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/bottle/rum/empty,
@@ -2277,10 +2257,8 @@
 	color = "#777777"
 	},
 /area/f13/wasteland/ashdown)
-"rw" = (
-/obj/machinery/chem_dispenser{
-	pixel_y = 10
-	},
+"ry" = (
+/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "bluechess2"
 	},
@@ -2419,6 +2397,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"sp" = (
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_x = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "ss" = (
 /obj/structure/closet/crate/large{
 	pixel_y = 8;
@@ -3067,10 +3052,13 @@
 	},
 /area/f13/building)
 "wr" = (
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindow"
 	},
-/area/f13/building)
+/obj/structure/barricade/bars,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "ws" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -3132,7 +3120,6 @@
 	},
 /area/f13/building/workshop/ashdown)
 "wU" = (
-/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "bluechess2"
 	},
@@ -3260,8 +3247,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "xz" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
 /turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
+/area/f13/wasteland/ashdown)
 "xG" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -3339,10 +3329,10 @@
 	},
 /area/f13/building)
 "yc" = (
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
+/obj/structure/bed/wooden,
+/obj/structure/curtain,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "yf" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
@@ -3390,10 +3380,11 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/ashdown)
 "yu" = (
-/turf/open/floor/f13{
-	icon_state = "floordirty"
+/obj/structure/railing{
+	color = "#A47449"
 	},
-/area/f13/building)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "yw" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/dirt,
@@ -3427,12 +3418,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "yN" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 6
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
+/area/f13/building)
 "yR" = (
 /obj/structure/railing{
 	dir = 8
@@ -3636,10 +3625,14 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "zS" = (
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/smartfridge/bottlerack/drug_storage{
+	pixel_y = 5
 	},
-/turf/open/floor/f13/wood,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/obj/item/stock_parts/chem_cartridge/pristine,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
 /area/f13/building/hospital/clinic/ashdown)
 "zW" = (
 /obj/structure/window/fulltile/wood,
@@ -3679,6 +3672,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
+"As" = (
+/obj/structure/barricade/bars,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindowvertical"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "Au" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -3828,9 +3829,10 @@
 	},
 /area/f13/building)
 "Br" = (
-/turf/open/floor/f13{
-	icon_state = "bluechess2"
+/obj/structure/simple_door/room{
+	name = "Clinic"
 	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "Bs" = (
 /obj/structure/closet/fridge,
@@ -3940,15 +3942,10 @@
 	},
 /area/f13/building/workshop/ashdown)
 "Cp" = (
-/obj/vehicle/ridden/wheelchair{
-	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches.";
-	name = "hawtrod bitch magnet";
-	dir = 1
-	},
 /turf/open/floor/f13{
-	icon_state = "bluechess2"
+	icon_state = "darkdirty"
 	},
-/area/f13/building/hospital/clinic/ashdown)
+/area/f13/building)
 "Cq" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -4521,14 +4518,7 @@
 	},
 /area/f13/building/abandoned)
 "Gf" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "ruinswindowvertical"
-	},
-/obj/structure/barricade/bars,
-/turf/open/floor/f13{
-	icon_state = "bluechess2"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "Gg" = (
 /obj/structure/flora/tree/oak_two{
@@ -4590,14 +4580,6 @@
 "Gz" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
-"GB" = (
-/obj/structure/barricade/bars,
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "ruinswindowvertical"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "GD" = (
 /obj/structure/flora/jungle5,
 /turf/open/indestructible/ground/outside/dirt,
@@ -4637,12 +4619,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"Hb" = (
-/obj/structure/simple_door/room{
-	name = "Clinic"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/building/hospital/clinic/ashdown)
 "Hc" = (
 /obj/effect/landmark/start/f13/biker_boss,
 /turf/open/indestructible/cobble{
@@ -4835,10 +4811,14 @@
 	},
 /area/f13/wasteland/ashdown)
 "Iu" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindowvertical"
 	},
-/turf/open/floor/f13/wood,
+/obj/structure/barricade/bars,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
 /area/f13/building/hospital/clinic/ashdown)
 "Iv" = (
 /obj/structure/decoration/vent/rusty,
@@ -5035,11 +5015,10 @@
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "Jz" = (
-/obj/structure/railing{
-	color = "#A47449"
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland/ashdown)
+/area/f13/building)
 "JA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -5390,6 +5369,16 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"LP" = (
+/obj/machinery/chem_master{
+	pixel_y = 10;
+	layer = 4;
+	pixel_x = -3
+	},
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "LV" = (
 /obj/structure/decoration/rag,
 /obj/structure/simple_door/tentflap_cloth{
@@ -5627,10 +5616,13 @@
 	},
 /area/f13/building/abandoned)
 "NX" = (
-/obj/structure/simple_door/room{
-	name = "Clinic"
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_x = 32
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
 /area/f13/building/hospital/clinic/ashdown)
 "NZ" = (
 /obj/structure/table,
@@ -5792,13 +5784,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building/abandoned)
-"Pd" = (
-/obj/structure/curtain{
-	color = "#5c131b";
-	pixel_y = -32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "Pg" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -6095,14 +6080,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building)
-"Rl" = (
-/obj/structure/window/fulltile/house{
-	dir = 2;
-	icon_state = "ruinswindow"
-	},
-/obj/structure/barricade/bars,
-/turf/open/floor/f13/wood,
-/area/f13/building/hospital/clinic/ashdown)
 "Rn" = (
 /obj/structure/flora/grass/coyote/six,
 /turf/open/indestructible/ground/outside/dirt,
@@ -6347,10 +6324,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "SC" = (
-/turf/open/floor/f13{
-	icon_state = "darkdirty"
+/obj/vehicle/ridden/wheelchair{
+	desc = "A wheelchair, that seems to be wheels, it seems to be moveable by person on the wheelchair and it picks up bitches.";
+	name = "hawtrod bitch magnet";
+	dir = 1
 	},
-/area/f13/building)
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "SD" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/generic,
@@ -6438,9 +6420,9 @@
 /area/f13/wasteland/ashdown)
 "Tl" = (
 /obj/structure/railing{
-	color = "#A47449"
+	dir = 10
 	},
-/turf/open/floor/f13/wood,
+/turf/open/transparent/openspace,
 /area/f13/building/hospital/clinic/ashdown)
 "Tm" = (
 /obj/structure/flora/chomp/bush1{
@@ -6477,6 +6459,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
+"Tw" = (
+/obj/machinery/chem_dispenser{
+	pixel_y = 10
+	},
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "Ty" = (
 /obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
@@ -6730,6 +6720,15 @@
 	icon_state = "purplechess"
 	},
 /area/f13/building/abandoned)
+"UT" = (
+/obj/machinery/smartfridge/bottlerack/drug_storage{
+	pixel_y = 5
+	},
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "UU" = (
 /obj/structure/campfire/stove{
 	pixel_y = 9;
@@ -6812,6 +6811,12 @@
 /obj/structure/flora/grass/coyote/twentysix,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"VC" = (
+/obj/structure/simple_door/room{
+	name = "Clinic"
+	},
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/ashdown)
 "VD" = (
 /obj/item/storage/fancy/rollingpapers{
 	pixel_y = 9
@@ -6832,6 +6837,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"VG" = (
+/obj/structure/janitorialcart,
+/obj/item/mop,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "VH" = (
 /obj/structure/bed/mattress{
 	pixel_y = 4
@@ -6974,6 +6984,18 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"Wt" = (
+/obj/structure/rack/shelf_wood,
+/obj/item/storage/box/syringes,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "Wu" = (
 /obj/structure/flora/junglebush/b,
 /obj/effect/decal/cleanable/dirt,
@@ -7125,6 +7147,14 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
+"XL" = (
+/obj/machinery/smartfridge/bottlerack/drug_storage{
+	pixel_y = 5
+	},
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "XM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -54980,12 +55010,12 @@ Hw
 Hw
 Hw
 Hw
-mH
-mH
-mH
-mH
-mH
-mH
+Hw
+Hw
+Hw
+Hw
+Hw
+Hw
 Hw
 Hw
 Hw
@@ -55237,12 +55267,12 @@ Hw
 Hw
 Hw
 Hw
-mH
-mH
-mH
-mH
-mH
-mH
+Hw
+Hw
+Hw
+Hw
+Hw
+Hw
 Hw
 Hw
 Hw
@@ -55494,12 +55524,12 @@ Hw
 Hw
 Hw
 Hw
-vU
-vU
-vU
-vU
-vU
-vU
+Hw
+Hw
+Hw
+Hw
+Hw
+Hw
 Hw
 Hw
 Hw
@@ -55748,7 +55778,7 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
 vU
 vU
@@ -56005,17 +56035,17 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
-rw
+Tw
+wU
+wU
 Br
-Br
-NX
-xz
-xz
-xz
-xz
-xz
+Gf
+Gf
+Gf
+Gf
+Gf
 vU
 Hw
 Hw
@@ -56261,18 +56291,18 @@ Hw
 Hw
 Hw
 Hw
-xz
-xz
+Gf
+Gf
 vU
-dN
-Br
-Br
+LP
+wU
+wU
 vU
-xz
-xz
-zS
-cT
-xz
+ii
+Gf
+eI
+Tl
+VG
 vU
 Hw
 Hw
@@ -56518,15 +56548,15 @@ Hw
 Hw
 Hw
 Hw
-xz
-xz
+Gf
+Gf
 vU
-jg
-Br
-Br
+dN
+wU
+wU
 vU
 vU
-Hb
+VC
 vU
 vU
 vU
@@ -56775,19 +56805,19 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
 vU
-nI
-Br
+nr
 wU
+ry
 vU
-mK
-xz
-mK
+yc
+Gf
+yc
 vU
-xz
-Tl
+Gf
+yu
 Hw
 Hw
 Hw
@@ -57032,19 +57062,19 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
-ii
-Br
-Br
-Cp
+XL
+wU
+wU
+SC
 vU
-xz
-xz
-xz
-NX
-xz
-Tl
+Gf
+Gf
+Gf
+Br
+Gf
+yu
 Hw
 Hw
 Hw
@@ -57289,19 +57319,19 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
-ii
-Br
-Br
-Cp
+zS
+wU
+wU
+SC
 vU
-Iu
-xz
-Pd
-Rl
-xz
-Tl
+nB
+Gf
+cT
+wr
+Gf
+yu
 Hw
 Hw
 Hw
@@ -57546,19 +57576,19 @@ Hw
 Hw
 Hw
 Hw
-xz
+Gf
 vU
-ii
-pC
-pC
-oi
+UT
+NX
+NX
+Wt
 vU
-mK
-bR
-mK
+yc
+sp
+yc
 vU
-Iu
-Tl
+nB
+yu
 Hw
 Hw
 Hw
@@ -57803,19 +57833,19 @@ Hw
 Hw
 Hw
 Hw
-xz
-vU
-vU
-Gf
 Gf
 vU
 vU
+Iu
+Iu
 vU
-GB
 vU
 vU
-dZ
-yN
+As
+vU
+vU
+do
+mA
 Hw
 Hw
 Hw
@@ -58071,7 +58101,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -58328,7 +58358,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -58585,7 +58615,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -58842,7 +58872,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -59099,7 +59129,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -59356,7 +59386,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -59613,7 +59643,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -59870,7 +59900,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -60127,7 +60157,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -60384,7 +60414,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 Hw
 Hw
 Hw
@@ -60641,7 +60671,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 qm
 uU
 uU
@@ -60898,7 +60928,7 @@ Hw
 Hw
 Hw
 EF
-Jz
+xz
 mR
 jT
 jT
@@ -66552,10 +66582,10 @@ py
 ke
 hZ
 cm
-wr
+yN
 EW
-wr
-wr
+yN
+yN
 Sc
 dK
 iX
@@ -66809,11 +66839,11 @@ py
 tO
 wx
 ZL
-yc
+Jz
 fY
-yc
-yu
-yc
+Jz
+pC
+Jz
 wo
 Wy
 hf
@@ -67069,9 +67099,9 @@ Ah
 Iv
 TA
 AS
-wr
-SC
-SC
+yN
+Cp
+Cp
 xo
 hf
 dV
@@ -67325,10 +67355,10 @@ fV
 dK
 Cb
 xX
-yu
-yc
-wr
-yc
+pC
+Jz
+yN
+Jz
 Xm
 py
 Eg
@@ -67581,10 +67611,10 @@ py
 UX
 dI
 FW
-yu
-yu
-SC
-wr
+pC
+pC
+Cp
+yN
 BW
 aW
 Ym
@@ -67838,10 +67868,10 @@ py
 Ia
 SL
 lv
-yu
-yu
-wr
-yu
+pC
+pC
+yN
+pC
 Pz
 Gz
 Ym
@@ -68095,10 +68125,10 @@ py
 py
 py
 Xm
-yu
-yu
-SC
-yu
+pC
+pC
+Cp
+pC
 Rk
 vc
 hf
@@ -68352,10 +68382,10 @@ py
 Iz
 zE
 Gy
-SC
+Cp
 WM
 Vh
-yu
+pC
 YZ
 qa
 py
