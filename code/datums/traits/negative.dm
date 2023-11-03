@@ -183,19 +183,33 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
-	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
-	value = -44 // Constant brain DoT. Can and will result in death if not managed.
+	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
+	value = -15 // Constant brain DoT until 75 brain damage. Brains have 200 health
 	category = "Health Quirks"
-	mechanics = "You're going to need to hit the clinic for mannitol pretty regularly, consider getting a big supply. This WILL kill you if you dont take care of it."
+	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time. \
+				While not lethal in the scope of a single round, you will want to frequently take mannitol or \
+				you will suffer frequent, debilitating debuffs."
 	conflicts = list(
 
 	)
 	gain_text = span_danger("You feel smooth.")
 	lose_text = span_notice("You feel wrinkled again.")
 	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
+	COOLDOWN_DECLARE(annoying_message)
 
 /datum/quirk/brainproblems/on_process()
-	quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
+	//Deal fast brain damage at the start and ramp it down over time so it takes a long time to reach the cap.
+	var/bdam = quirk_holder.getOrganLoss(ORGAN_SLOT_BRAIN)
+	switch(bdam)
+		if(0 to 25)
+			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.3)
+		if(25 to 50)
+			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25)
+		if(50 to 75)
+			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
+	if((bdam > 25) && COOLDOWN_FINISHED(src, annoying_message))
+		COOLDOWN_START(src, annoying_message, 3 MINUTES)
+		to_chat(quirk_holder, span_danger("I really need some mannitol!"))
 
 /datum/quirk/nearsighted //t. errorage
 	name = "Nearsighted - Corrected"
@@ -261,9 +275,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
-	value = -22
+	value = -7 //Flashlight batteries don't exist lmfao.
 	category = "Phobia Quirks"
-	mechanics = "In the dark you toggle to walk."
+	mechanics = "You must walk carefully through dark areas and will feel a sense of panic when you do. Don't turn the lights out."
 	conflicts = list(/datum/quirk/lightless)
 	medical_record_text = "Patient demonstrates a fear of the dark."
 
@@ -278,16 +292,13 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 			to_chat(quirk_holder, span_warning("Easy, easy, take it slow... you're in the dark..."))
 			quirk_holder.toggle_move_intent()
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "nyctophobia", /datum/mood_event/nyctophobia)
-	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "nyctophobia")
-
 
 /datum/quirk/lightless
 	name = "Light Sensitivity"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
-	value = -33
+	value = -7 //Just don't unequip your sunglasses. It's literally free points.
 	category = "Vision Quirks"
-	mechanics = "In the light you get a negative moodlet and your eyes go blurry. Sunglasses help a lot. Are you part molerat?"
+	mechanics = "While in bright light without sunglasses, you get a negative moodlet and your eyes go blurry. Are you part molerat?"
 	conflicts = list(/datum/quirk/nyctophobia)
 	gain_text = span_danger("The safety of light feels off...")
 	lose_text = span_notice("Enlightening.")
@@ -297,15 +308,13 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/turf/T = get_turf(quirk_holder)
 	var/lums = T.get_lumcount()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/glasses/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
+	var/obj/item/clothing/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
 
 	if(lums >= 0.8)
-		if(!istype(sunglasses, /obj/item/clothing/glasses/sunglasses))
+		if(!istype(sunglasses, /obj/item/clothing) || sunglasses?.tint < 1)
 			if(quirk_holder.eye_blurry < 20)
 				quirk_holder.eye_blurry = 20
 			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
-	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "brightlight")
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
