@@ -723,7 +723,7 @@
 /datum/sprite_accessory/tails/mam_tails/longstalker
 	name = "Nightstalker (Large)"
 	icon_state = "longstalker"
-	color_src = MUTCOLORS
+	matrixed_sections = MATRIX_RED_GREEN
 	icon = 'icons/mob/mam/coyote/64_mam_tails.dmi'
 	dimension_x = 64
 	center = TRUE
