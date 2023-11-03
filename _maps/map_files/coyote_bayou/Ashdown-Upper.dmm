@@ -850,10 +850,9 @@
 /area/f13/wasteland/ashdown)
 "gJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/autolathe,
-/turf/open/floor/f13/wood,
-/area/f13/building/workshop/ashdown)
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "gL" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -2368,6 +2367,10 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"se" = (
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "sn" = (
 /obj/structure/flora/branch_broken,
 /obj/effect/decal/cleanable/generic,
@@ -2979,6 +2982,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/structure/table,
 /obj/structure/destructible/tribal_torch/wall/lit,
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -4317,9 +4321,11 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "Ff" = (
-/mob/living/simple_animal/chicken,
-/turf/open/floor/grass,
-/area/f13/wasteland/ashdown)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/autolathe,
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/ashdown)
 "Fh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6347,11 +6353,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"SF" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/chicken,
-/turf/open/floor/grass,
-/area/f13/wasteland/ashdown)
 "SG" = (
 /obj/structure/flora/small_bush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -63752,7 +63753,7 @@ tJ
 lP
 wS
 Cy
-gJ
+Ff
 Vl
 aH
 eM
@@ -68375,7 +68376,7 @@ pR
 iX
 eq
 Yf
-Ff
+se
 Tu
 jC
 lg
@@ -68633,7 +68634,7 @@ wx
 Ds
 Ql
 Mk
-SF
+gJ
 De
 RH
 vn
