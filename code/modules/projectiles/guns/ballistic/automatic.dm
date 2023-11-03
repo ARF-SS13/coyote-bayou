@@ -424,7 +424,7 @@
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	weapon_class = WEAPON_CLASS_NORMAL //high class, one of the few smol smgs
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 
 //tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
@@ -629,8 +629,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_CARBINE
-	w_class = WEIGHT_CLASS_BULKY // Kelp here - the gun is extremely rare and even with the 50rnd magazine it's considered outclassed. This makes it a good, if unwieldy, secondary or holdout gun. Will let it cook and see if it needs removed.
-	weapon_weight = GUN_ONE_HAND_AKIMBO
+	w_class = WEIGHT_CLASS_NORMAL // Kelp again, it's Normal once more but no more akimbo. Please actually edit relevant comments when you tweak pls.
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
