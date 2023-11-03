@@ -849,21 +849,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "gJ" = (
-/mob/living/simple_animal/hostile/wolf/alpha{
-	desc = "The Rottweiler is a robust dog breed of great strength descended from the mastiffs.This one smells of beans and sunflowers.";
-	faction = list("neutral");
-	health = 200;
-	icon_dead = "rottweiler_dead";
-	icon_living = "rottweiler";
-	icon_state = "rottweiler";
-	name = "Sunflower"
-	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/cobble{
-	light_color = null;
-	color = "#777777"
-	},
-/area/f13/wasteland/ashdown)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/autolathe,
+/turf/open/floor/f13/wood,
+/area/f13/building/workshop/ashdown)
 "gL" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -1562,9 +1552,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "lP" = (
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 32
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet{
 	anchored = 1;
@@ -1574,10 +1561,6 @@
 /obj/item/clothing/suit/armor/light/kit/shoulder,
 /obj/item/clothing/suit/armor/light/kit/punk,
 /obj/item/clothing/suit/armor/light/kit,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/item/clothing/suit/armor/light/leather/leather_jacket,
 /obj/item/clothing/suit/armor/light/duster/breastplate/khan,
 /obj/item/clothing/suit/armor/light/duster/breastplate/khan,
@@ -1586,6 +1569,8 @@
 	pixel_x = 1;
 	pixel_y = 32
 	},
+/obj/effect/spawner/lootdrop/f13/common_armor,
+/obj/effect/spawner/lootdrop/f13/common_armor,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "lQ" = (
@@ -3100,11 +3085,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "wF" = (
-/obj/machinery/autolathe,
 /obj/machinery/light/small{
 	dir = 1;
 	light_color = "red"
 	},
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "wN" = (
@@ -4332,9 +4317,9 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "Ff" = (
-/obj/machinery/autolathe/ammo/unlocked_basic,
-/turf/open/floor/f13/wood,
-/area/f13/building/workshop/ashdown)
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "Fh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5759,6 +5744,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
 "OG" = (
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_x = 32
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -6359,6 +6347,11 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"SF" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/chicken,
+/turf/open/floor/grass,
+/area/f13/wasteland/ashdown)
 "SG" = (
 /obj/structure/flora/small_bush,
 /turf/open/indestructible/ground/outside/dirt,
@@ -6469,6 +6462,15 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/wolf/alpha{
+	desc = "The Rottweiler is a robust dog breed of great strength descended from the mastiffs.This one smells of beans and sunflowers.";
+	faction = list("neutral");
+	health = 200;
+	icon_dead = "rottweiler_dead";
+	icon_living = "rottweiler";
+	icon_state = "rottweiler";
+	name = "Sunflower"
+	},
 /turf/open/floor/grass,
 /area/f13/wasteland/ashdown)
 "Ty" = (
@@ -6804,9 +6806,9 @@
 	},
 /area/f13/building)
 "Vl" = (
-/obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/autolathe/ammo/unlocked_basic,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Vp" = (
@@ -63236,7 +63238,7 @@ uv
 VX
 Ti
 lk
-Ff
+vt
 vJ
 Vc
 rf
@@ -63749,8 +63751,8 @@ Yf
 tJ
 lP
 wS
-vt
-Vl
+Cy
+gJ
 Vl
 aH
 eM
@@ -64004,7 +64006,7 @@ IA
 tc
 AN
 Yi
-Cy
+vt
 dY
 nU
 Qv
@@ -68373,7 +68375,7 @@ pR
 iX
 eq
 Yf
-zJ
+Ff
 Tu
 jC
 lg
@@ -68631,7 +68633,7 @@ wx
 Ds
 Ql
 Mk
-QB
+SF
 De
 RH
 vn
@@ -70687,7 +70689,7 @@ HZ
 py
 py
 py
-gJ
+Ym
 py
 nn
 iQ
