@@ -1,11 +1,11 @@
-#define CHAT_MESSAGE_SPAWN_TIME		0.2 SECONDS
-#define CHAT_MESSAGE_LIFESPAN		5 SECONDS
-#define CHAT_MESSAGE_EOL_FADE		0.7 SECONDS
-#define CHAT_MESSAGE_EXP_DECAY		0.7 // Messages decay at pow(factor, idx in stack)
-#define CHAT_MESSAGE_HEIGHT_DECAY	0.9 // Increase message decay based on the height of the message
+#define CHAT_MESSAGE_SPAWN_TIME		0.5 SECONDS
+#define CHAT_MESSAGE_LIFESPAN		12 SECONDS
+#define CHAT_MESSAGE_EOL_FADE		5.0 SECONDS
+#define CHAT_MESSAGE_EXP_DECAY		0.5 // Messages decay at pow(factor, idx in stack)
+#define CHAT_MESSAGE_HEIGHT_DECAY	0.4 // Increase message decay based on the height of the message
 #define CHAT_MESSAGE_APPROX_LHEIGHT	11 // Approximate height in pixels of an 'average' line, used for height decay
-#define CHAT_MESSAGE_WIDTH			96 // pixels
-#define CHAT_MESSAGE_MAX_LENGTH		110 // characters
+#define CHAT_MESSAGE_WIDTH			100 // pixels
+#define CHAT_MESSAGE_MAX_LENGTH		200 // characters
 #define WXH_TO_HEIGHT(x)			text2num(copytext((x), findtextEx((x), "x") + 1)) // thanks lummox
 
 /**
@@ -147,7 +147,10 @@
 		var/combined_height = approx_lines
 		for(var/msg in owned_by.seen_messages[message_loc])
 			var/datum/chatmessage/m = msg
-			animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
+			if(HAS_TRAIT(src, TRAIT_ERPBOTTOM))
+				animate(m.message, pixel_y = m.message.pixel_y*-1.5 + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
+			else
+				animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
 			combined_height += m.approx_lines
 			var/sched_remaining = m.scheduled_destruction - world.time
 			if (sched_remaining > CHAT_MESSAGE_SPAWN_TIME)
@@ -161,6 +164,7 @@
 	message.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	message.alpha = 0
 	message.pixel_y = owner.bound_height * 0.95
+
 	message.maptext_width = CHAT_MESSAGE_WIDTH
 	message.maptext_height = mheight
 	message.maptext_x = (CHAT_MESSAGE_WIDTH - owner.bound_width) * -0.5
