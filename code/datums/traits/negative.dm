@@ -186,8 +186,9 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
 	value = -15 // Constant brain DoT until 75 brain damage. Brains have 200 health
 	category = "Health Quirks"
-	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time.\
-				While not lethal in the scope of a single round, you will want to frequently take mannitol or you won't be having a fun time."
+	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time. \
+				While not lethal in the scope of a single round, you will want to frequently take mannitol or \
+				you will suffer frequent, debilitating debuffs."
 	conflicts = list(
 
 	)
