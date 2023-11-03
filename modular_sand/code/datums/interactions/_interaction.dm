@@ -136,7 +136,7 @@
 			return
 	if(!consented(user, target))
 		if(!discrete)
-			to_chat(user, span_warning("They do not consent to this."))
+			to_chat(user, span_warning("They haven't consented to this yet! Try taking them out to dinner first."))
 		return
 	if(get_dist(user, target) > max_distance)
 		if(!discrete)

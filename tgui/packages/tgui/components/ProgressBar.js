@@ -17,6 +17,7 @@ export const ProgressBar = props => {
     color,
     ranges = {},
     children,
+    fromRight,
     ...rest
   } = props;
   const scaledValue = scale(value, minValue, maxValue);
@@ -37,6 +38,8 @@ export const ProgressBar = props => {
         className="ProgressBar__fill ProgressBar__fill--animated"
         style={{
           width: clamp01(scaledValue) * 100 + '%',
+          right: fromRight ? 0 : null,
+          left: fromRight ? null : 0,
         }} />
       <div className="ProgressBar__content">
         {hasContent

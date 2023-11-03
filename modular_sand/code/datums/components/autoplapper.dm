@@ -45,16 +45,9 @@
 		to_chat(plapper, span_alert("You really shouldn't automate that!"))
 		qdel(src)
 		return // gotta have a valid interaction
-	if(!I.evaluate_user(plapper, silent = TRUE, action_check = FALSE) || !I.evaluate_target(plapper, plappee, silent = TRUE))
-		to_chat(plapper, span_alert("You can't plap with that! Something went wrong!"))
+	if(!I.can_do_interaction(plapper, plappee))
 		qdel(src)
 		return
-	if(I.is_lewd) // we need a better way to detect lewd interactions
-		lewd_plap = TRUE
-		if(!SSinteractions.check_consent(plapper, plappee))
-			to_chat(plapper, span_alert("They haven't consented yet! Maybe take em out to dinner first."))
-			qdel(src)
-			return
 	src.plapper = plapper.ckey
 	src.plappee = plappee.ckey
 	src.plap_key = plap_key
@@ -113,6 +106,41 @@
 	plapping_active = FALSE
 	STOP_PROCESSING(SSautoplap, src)
 
+/datum/autoplapper/proc/toggle_plapping()
+	if(plapping_active)
+		stop_plapping()
+	else
+		start_plapping()
+
+/datum/autoplapper/proc/change_interval(interval)
+	if(interval <= 0)
+		to_chat(parent, span_alert("That's too short![prob(1)?" u-u":""]"))
+		return // we cant plap backwards
+	if(interval > PLAP_GIVE_UP_TIME)
+		to_chat(parent, span_alert("That's too long![prob(1)?" OwO,,":""]"))
+		return // too long!
+	plap_interval = interval
+	var/mob/living/plappermob = ckey2mob(plapper)
+	to_chat(plappermob, span_green("Autointeraction interval changed to [DisplayTimeText(plap_interval)]!"))
+	COOLDOWN_START(src, last_plap, plap_interval)
+
+/datum/autoplapper/proc/save_plap_to_prefs()
+	var/mob/living/me = ckey2mob(plapper)
+	if(!me)
+		return // they no
+	var/datum/preferences/P = extract_prefs(me)
+	if(!P)
+		return // they nont
+	if(LAZYLEN(P.autoplappers) >= 20)
+		to_chat(me, span_alert("You have too many autointeraction saved!"))
+		return // too many!
+	var/list/plapdata = list()
+	plapdata["plap_key"] = plap_key
+	plapdata["plap_interval"] = plap_interval
+	P.autoplappers[apid] = list(plapdata)
+	P.save_preferences()
+	to_chat(me, span_green("Saved!"))
+
 /// We're plapping! Let's do it!
 /datum/autoplapper/process() // jk, gotta do the looping logic thing
 	if(!COOLDOWN_FINISHED(src, last_plap))
@@ -130,12 +158,9 @@
 		return // well heck they died
 	if(get_dist(plappermob, plappeemob) > 2)
 		return // too far away
-	if(!consented())
-		return // they dont want to plap
-	if(plappermob.incapacitated(FALSE, FALSE, TRUE))
-		return // they're in no shape to plap! not really concerned about their partner, they'll be fiiiiiiiiine
 	var/datum/interaction/I = LAZYACCESS(SSinteractions.interactions, plap_key)
-	if(!I.can_do_interaction(plappermob, plappeemob, silent = FALSE))
+	if(!I.can_do_interaction(plappermob, plappeemob, discrete = FALSE))
+		stop_plapping()
 		return // something went wrong, we cant plap
 	I.run_action(plappermob, plappeemob, TRUE) // plap!
 	COOLDOWN_START(src, last_plap, plap_interval)

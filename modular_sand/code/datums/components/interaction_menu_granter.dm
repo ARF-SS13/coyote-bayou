@@ -137,6 +137,7 @@
 		interaction["additionalDetails"] = I.additional_details
 		sent_interactions += list(interaction)
 	.["interactions"] = sent_interactions
+	.["autoplappers"] = package_autoplappers()
 /* 
 	//Get their genitals
 	var/list/genitals = list()
@@ -389,6 +390,28 @@
 			//Also add a save button.
 			prefs.save_preferences()
 			return TRUE
+		if("autoplapper")
+			if(params["action"] == "add")
+				new_autoplap(params["plapname"], GET_WEAKREF(weaktarget), params["interval"])
+			if(params["action"] == "remove")
+				remove_autoplap(params["apid"])
+			if(params["action"] == "toggle")
+				var/datum/autoplapper/AP = autoplappers[params["apid"]]
+				if(!AP)
+					return FALSE
+				AP.toggle_plapping()
+			if(params["action"] == "change_interval")
+				var/datum/autoplapper/AP = autoplappers[params["apid"]]
+				if(!AP)
+					return FALSE
+				AP.change_interval(params["interval"])
+			if(params["action"] == "save_plap_to_prefs")
+				var/datum/autoplapper/AP = autoplappers[params["apid"]]
+				if(!AP)
+					return FALSE
+				AP.save_plap_to_prefs()
+			return TRUE
+
 
 //////// AUTOPLAPPER STUFF
 /datum/component/interaction_menu_granter/proc/new_autoplap(key, mob/living/partner, interval)
@@ -405,8 +428,37 @@
 	if(!I.can_autoplap)
 		to_chat(parent, span_alert("That one really shouldnt be automated!"))
 		return
+	if(!I.can_do_interaction(parent, partner))
+		return
 	var/mob/living/me = parent
 	var/mob/living/them = partner
+	var/datum/autoplapper/AP = new(me, them, I, interval)
+	autoplappers[AP.apid] = AP
+	if(!interval) // it'll 
+		I.run_action(me, them) // plap to get things started
+
+/datum/component/interaction_menu_granter/proc/remove_autoplap(apid)
+	var/datum/autoplapper/AP = autoplappers[apid]
+	if(!AP)
+		return
+	AP.stop_plapping()
+	to_chat(parent, span_success("Removed auto-action for [AP.plap_key]!"))
+	qdel(AP)
+	autoplappers -= AP
+
+/datum/component/interaction_menu_granter/proc/package_autoplappers()
+	var/list/ret = list()
+	for(var/autoplapper/AP in autoplappers)
+		var/list/entry = list()
+		entry["apid"] = AP.apid || "!!!"
+		entry["plapname"] = AP.plap_key || "???"
+		var/mob/living/L = ckey2mob(AP.plappee)
+		entry["partner"] = L?.name || "Your Mom"
+		entry["interval"] = AP.interval || 0
+		entry["plapping"] = AP.plapping || FALSE
+		entry["plapcount"] = AP.plapcount || 0
+		ret += list(entry)
+	return ret
 
 
 
