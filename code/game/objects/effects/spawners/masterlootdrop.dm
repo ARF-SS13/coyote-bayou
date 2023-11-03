@@ -240,7 +240,7 @@
 	loot = list(
 		/obj/item/gun/ballistic/automatic/matildar = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 10,
-		/obj/item/gun/ballistic/automatic/smg/mp5 = 10,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
 		/obj/item/gun/ballistic/automatic/ak556 = 10,
 		/obj/item/gun/ballistic/automatic/service = 10,
@@ -264,7 +264,7 @@
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
-		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1,  // Commenting out until the sprite is fixed. 
+		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1,  // Commenting out until the sprite is fixed.
 		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
 	)
 
@@ -274,7 +274,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 10,
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 10,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 10,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,
+		/obj/item/gun/ballistic/automatic/smg/mp5 = 10,
 		/obj/item/gun/ballistic/automatic/type93 = 10,
 		/obj/item/gun/ballistic/automatic/lsw = 10,
 		/obj/item/gun/ballistic/automatic/unmcamr = 10,
@@ -566,7 +566,7 @@
 	name = "common unique"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 10,
-		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 10,	
+		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 10,
 		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 10,
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
 		/obj/item/gun/energy/laser/LaserAK = 4,
