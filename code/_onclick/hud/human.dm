@@ -366,6 +366,14 @@
 	sleep_hud_button.hud = src
 	infodisplay += sleep_hud_button
 
+	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
+	aooc_hud_button.hud = src
+	infodisplay += aooc_hud_button
+
+	newbie_hud_button = new /atom/movable/screen/newbie_hud_button()
+	newbie_hud_button.hud = src
+	infodisplay += newbie_hud_button
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src
