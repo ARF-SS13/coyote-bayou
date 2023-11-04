@@ -2926,13 +2926,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Sling"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 
 /datum/loadout_box/slingstaff
 	entry_tag = "Slingstaff"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 
 /datum/loadout_box/riotweathered
 	entry_tag = "Weathered Riot Shield"
