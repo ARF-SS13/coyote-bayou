@@ -1368,7 +1368,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Avoid looking at them.",
 	"Openly look at their assets.",
 	"Fail to pickpocket.",
-	"Raise an eyebrow at them."
+	"Raise an eyebrow at them.",
+	"Loom over them."
 	)
 
 	var/choice = input(FLIRT_HEADER_TEXT) as null|anything in choices
@@ -1584,6 +1585,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			to_chat(A, span_notice("[src] just <span class='love'>rose an eyebrow at you, clearly they're curious.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
 			to_chat(user, "You can't help but quirk a brow at [src], maybe they'll notice your curiosity.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Loom over them.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>loom over you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to loom over [src], maybe they'll care about it.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
 			return
 
 
