@@ -1919,6 +1919,32 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
 
+//-->Taur saddles
+/datum/gear/suit/taursaddle
+	name = "Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 0
+
+/datum/gear/suit/taursaddle_light
+	name = "Light Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/light
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_medium
+	name = "Medium Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/medium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_heavy
+	name = "Heavy Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/heavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+//<--End of taur saddles
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
