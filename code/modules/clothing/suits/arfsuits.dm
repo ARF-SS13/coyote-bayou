@@ -2032,6 +2032,87 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
+//-->Taur armored saddles
+//the main gimmick about taur saddles is that obviously only taurs can equip it
+//wearing a taur saddle allows for the rider to have both of his hands free
+//-->can the carbon equip this? Afterall they are equippable only if they have a lower half.
+/obj/item/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
+	. = ..()
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		if((istype(src, /obj/item/clothing/suit/armor/taursaddle/)) && (C.dna.features["taur"] == "None"))
+			to_chat(usr, span_danger("You're missing an extra pair of legs or a lower half to wear this! (not a taur)"))
+			return FALSE
+//<--
+
+//The actual saddles
+/obj/item/clothing/suit/armor/taursaddle
+	name = "taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle"
+	item_state = "taursaddle"
+	mutantrace_variation = STYLE_ALL_TAURIC
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/light
+	name = "light armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_light"
+	item_state = "taursaddle_light"
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 10
+	equip_delay_other = 10
+	max_integrity = 100
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/medium
+	name = "medium armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_medium"
+	item_state = "taursaddle_medium"
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/heavy
+	name = "heavy armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_heavy"
+	item_state = "taursaddle_heavy"
+	strip_delay = 50
+	equip_delay_other = 50
+	max_integrity = 300
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
+
+//<--End of Taur Saddles
+
 ////////////////
 // ARMOR KITS //
 ////////////////
