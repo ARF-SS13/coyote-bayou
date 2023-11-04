@@ -86966,7 +86966,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/cardpuncher{
 	pixel_y = 3;
-	pixel_x = -28
+	pixel_x = -28;
+	density = 0
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
