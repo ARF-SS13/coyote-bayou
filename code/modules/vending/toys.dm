@@ -7,7 +7,6 @@
 	vend_reply = "Come back for more!"
 	circuit = /obj/item/circuitboard/machine/vending/donksofttoyvendor
 	products = list(/obj/item/tattoo_gun = 5,
-		/obj/item/tattoo_remover = 5,
 		/obj/item/tattoo_holder/blank = 20,
 		/obj/item/tattoo_holder/blank/temporary = 20,
 		/obj/item/gun/ballistic/automatic/toy/unrestricted = 10,
@@ -70,7 +69,6 @@
 	icon_state = "kink"
 	vend_reply = "Have fun!"
 	products = list(/obj/item/tattoo_gun = 5,
-		/obj/item/tattoo_remover = 5,
 		/obj/item/tattoo_holder/blank = 20,
 		/obj/item/tattoo_holder/blank/temporary = 20,
 		/obj/item/storage/pill_bottle/breast_enlarger = 5,

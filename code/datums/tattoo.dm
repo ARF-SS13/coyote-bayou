@@ -536,7 +536,7 @@
 /obj/item/tattoo_gun/examine(mob/user)
 	. = ..()
 	if(!flash)
-		. += span_notice("The template slot is empty, load one in!")
+		. += span_notice("The template slot is empty. Use on someone to remove their tattoos.")
 		return
 	. += span_notice("It is loaded with \a [flash].")
 
@@ -581,9 +581,6 @@
 	if(!ismob(user))
 		user.show_message(span_phobia("You don't exist!"))
 		return
-	if(!istype(flash))
-		user.show_message(span_alert("You don't have a tattoo template loaded!"))
-		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They're too far away!"))
 		return // we'll have tattoo rifles, some day...
@@ -601,6 +598,9 @@
 	if(!istype(chunk))
 		user.show_message(span_alert("[victim] doesn't have one of those!"))
 		return // we dont decorate phantom limbs in THIS parlor
+	if(!istype(flash))
+		try_remove_tattoo(victim, user, put_it_there, chunk)
+		return
 	var/list/places_to_put_it = list()
 	for(var/key in GLOB.tattoo_locations[put_it_there])
 		if(GLOB.tattoo_locations[put_it_there][key] == TRUE)
@@ -750,16 +750,12 @@
 	if(engraving)
 		addtimer(CALLBACK(src, .proc/make_noises_and_pain, victim, user, tat_loc, part), next_time)
 
-/obj/item/tattoo_remover
-	name = "Tattoo Remover"
-	desc = "Useful for removing now-unwanted tattoos."
-	icon = 'icons/obj/tattoo_gun.dmi'
-
-/obj/item/tattoo_remover/pre_attack(mob/living/carbon/human/victim, mob/living/user, params)
-	. = ..()
+/obj/item/tattoo_gun/proc/try_remove_tattoo(mob/living/carbon/human/victim, mob/living/user, bodyzone, obj/item/bodypart/part)
+	if(!istype(victim) || !istype(user))
+		return
+	if(isnull(bodyzone) || !istype(part))
+		return
 	//find tattoos
-	var/bodyzone = check_zone(user.zone_selected)
-	var/obj/item/bodypart/part = victim.get_bodypart(bodyzone)
 	var/list/tats = list()
 	for(var/tatspot in GLOB.tattoo_locations[bodyzone])
 		if(!isnull(part.tattoos[tatspot]))
@@ -773,13 +769,17 @@
 	var/choice = input(user, "Which tattoo do you want to remove?", "Pick a tattoo!") as null|anything in tats
 	//attempt to remove it
 	playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
-	if(do_after(user,30,target = victim))
+	if(do_after(user,50,target = victim))
 		//removal successful
 		part.remove_tattoo(part.tattoos[choice],choice)
 		if(victim.client?.prefs)
 			victim.client.prefs.permanent_tattoos = victim.format_tattoos()
 			victim.client.prefs.save_character()
 		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
+		if(prob(60))
+			victim.emote("scream")
+		var/removaldam = rand(1,20)
+		part.receive_damage(brute = part.brute_dam < 30 ? removaldam : 0, stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
 		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
 	else
@@ -795,8 +795,6 @@
 	. = ..()
 	new /obj/item/tattoo_gun(src)
 	new /obj/item/tattoo_gun(src)
-	new /obj/item/tattoo_remover(src)
-	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank/temporary(src)
@@ -811,7 +809,6 @@
 /obj/item/storage/box/tattoo_kit/PopulateContents()
 	. = ..()
 	new /obj/item/tattoo_gun(src)
-	new /obj/item/tattoo_remover(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
 	new /obj/item/tattoo_holder/blank(src)
