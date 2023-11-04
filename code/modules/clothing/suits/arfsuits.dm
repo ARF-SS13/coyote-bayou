@@ -2050,7 +2050,6 @@
 	name = "taur saddle"
 	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
 	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/taur_saddles.dmi'
 	icon_state = "taursaddle"
 	item_state = "taursaddle"
 	mutantrace_variation = STYLE_ALL_TAURIC
@@ -2061,7 +2060,6 @@
 	name = "light armored taur saddle"
 	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
 	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/taur_saddles.dmi'
 	icon_state = "taursaddle_light"
 	item_state = "taursaddle_light"
 	cold_protection = CHEST|GROIN
@@ -2082,7 +2080,6 @@
 	name = "medium armored taur saddle"
 	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
 	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/taur_saddles.dmi'
 	icon_state = "taursaddle_medium"
 	item_state = "taursaddle_medium"
 	cold_protection = CHEST|GROIN
@@ -2103,7 +2100,6 @@
 	name = "heavy armored taur saddle"
 	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
 	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/taur_saddles.dmi'
 	icon_state = "taursaddle_heavy"
 	item_state = "taursaddle_heavy"
 	strip_delay = 50
