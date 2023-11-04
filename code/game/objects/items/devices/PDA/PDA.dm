@@ -75,7 +75,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
 	var/ttone = "beep" //The ringtone!
-	var/note = "Congratulations, your has chosen the RobCo Pip-Boy 3000 Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
+	var/note = "Congratulations, your has chosen the CoyoteCo DataPal Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
 	var/detonatable = TRUE // Can the PDA be blown up?
@@ -187,7 +187,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	equipped = TRUE
 
 /obj/item/pda/proc/update_label()
-	name = "Pip-Boy 3000-[owner] ([ownjob])" //Name generalisation
+	name = "DataPal-[owner] ([ownjob])" //Name generalisation
 
 /obj/item/pda/GetAccess()
 	if(id)
@@ -400,7 +400,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<HR><font face=\"[PEN_FONT]\">[(!notehtml ? note : notehtml)]</font>"
 
 			if (2)
-				dat += "<h4>[PDAIMG(mail)] RobCo Messenger V3.9.6</h4>"
+				dat += "<h4>[PDAIMG(mail)] CoyoteCo Messenger V3.9.6</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Ringer'>[PDAIMG(bell)]Ringer: [silent == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Messenger'>[PDAIMG(mail)]Send / Receive: [toff == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Ringtone'>[PDAIMG(bell)]Set Ringtone</a> | "
@@ -409,7 +409,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(cartridge)
 					dat += cartridge.message_header()
 
-				dat += "<h4>[PDAIMG(menu)] Detected Pip-Boys</h4>"
+				dat += "<h4>[PDAIMG(menu)] Detected DataPal's</h4>"
 
 				dat += "<ul>"
 				var/count = 0
