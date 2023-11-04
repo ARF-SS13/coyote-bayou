@@ -1350,7 +1350,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Kiss them lightly on the cheek.",
 	"Try to steal a deep kiss.",
 	"Try to steal a light kiss.",
-	"Smile at them subtly",
+	"Smile at them subtly.",
 	"Smile at them provocatively",
 	"Play with your hair",
 	"Bite your own lower lip.",
@@ -1381,214 +1381,214 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			return 0
 		if("1. Flirt Accept")
 			to_chat(A, span_notice("[src] is greenlighting your <span class='love'>advance.</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You greenlight [src]'s attention, however you do that is up to you.  Maybe make an emote for it?")
+			to_chat(user, "You greenlight their attention, however you do that is up to you.  Maybe make an emote for it?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("2. Flirt Reject")
 			to_chat(A, span_notice("[src] is <span class='danger'>redlighting</span> your advance. Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You redlight [src]'s attention, howevery ou that is up to you but they know for sure now that no is no. Maybe make an emote for it?")
+			to_chat(user, "You redlight their attention, howevery ou that is up to you but they know for sure now that no is no. Maybe make an emote for it?")
 			SEND_SOUND(A, 'sound/effects/boowomp.ogg')
 
 		if("3. Play Hard to get")
 			to_chat(A, span_notice("[src] is <span class='danger'>playing hard to get towards</span> your advance. Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You play hard to get with [src], hopefully they will chase!")
+			to_chat(user, "You play hard to get with them, hopefully they will chase!")
 			SEND_SOUND(A, 'sound/effects/boowomp.ogg')
 
 		if("Check them out.",)
 			to_chat(A, span_notice("[src] is maybe trying to <span class='love'>check you out?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You really check out [src], maybe you should make a small emote for it to?")
+			to_chat(user, "You really check them out, maybe you should make a small emote for it to?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Blush at them.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>blushing at you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You can't help it but [src] is making you blush, hopefully they noticed and maybe you should make a short emote?")
+			to_chat(user, "You can't help it but they are making you blush, hopefully they noticed and maybe you should make a short emote?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Sniff them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>sniff you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You can't help it, [src] smells so good that you try to sniff them.")
+			to_chat(user, "You can't help it, they smell so good that you try to sniff them.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Coo at them.")
 			to_chat(A, span_notice("[src] sounds like they're <span class='cooing at you?'>advance.</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You make soft noises at [src], trying to dote on them with words. Maybe make an emote for it?")
+			to_chat(user, "You make soft noises at them, trying to dote on them with words. Maybe make an emote for it?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Pinch them.")
 			to_chat(A, span_notice("[src] is reaching to <span class='love'>pinch you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to pinch [src], maybe they'll notice you trying to be frisky!")
+			to_chat(user, "You try to pinch them, maybe they'll notice you trying to be frisky!")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Caress them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>caress you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to caress [src], if they let you maybe you should clarify where in a small emote?")
+			to_chat(user, "You try to caress them, if they let you maybe you should clarify where in a small emote?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Brush against them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>brush closely up against you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to brush up against [src], hopefully they'll let you. Maybe clarify in what way?")
+			to_chat(user, "You try to brush up against them, hopefully they'll let you. Maybe clarify in what way?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope them generically.")
 			to_chat(A, span_notice("[src] is seemingly trying to <span class='love'>grope you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
-			to_chat(user, "You attempt to be handsy and grope [src], if they let you maybe clarify where?")
+			to_chat(user, "You attempt to be handsy and grope them, if they let you maybe clarify where?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope their bottom.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your ass?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
-			to_chat(user, "You try to play grabass with [src], if they let you. ")
+			to_chat(user, "You try to play grabass with them, if they let you. ")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Grope their side.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>grope your side playfully?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?")) 
-			to_chat(user, "You try to grab [src]'s side brisky.")
+			to_chat(user, "You try to grab thier side brisky.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Kissy face at them.")
 			to_chat(A, span_notice("[src] is making a <span class='love'>kissy face at you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You make a goofy kissy face at [src], maybe they'll take the bait?")
+			to_chat(user, "You make a goofy kissy face at them, maybe they'll take the bait?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Offer a kiss to them.")
 			to_chat(A, span_notice("[src] is pursing their lips, <span class='love'>maybe they want you to kiss them?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You offer [src] a kiss, maybe they'll take the bait?")
+			to_chat(user, "You offer them a kiss, maybe they'll take the bait?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Wink at them.")
 			to_chat(A, span_notice("[src] is <span class='love'>winking at you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You wink at [src], hopefully they noticed your forwardness.")
+			to_chat(user, "You wink at them, hopefully they noticed your forwardness.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Waggle fingers at them.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>waggling their fingers at you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You waggle a finger at [src] teasingly.")
+			to_chat(user, "You waggle a finger at them teasingly.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Lean on them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>lean on you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to lean on [src], maybe make an emote if they let you?")
+			to_chat(user, "You try to lean on them, maybe make an emote if they let you?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Snuggle into them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>snuggle up against you?</span> Remember to honor their OOC preferences and maybe give them a response?"))
-			to_chat(user, "You try to snuggle up against [src].")
+			to_chat(user, "You try to snuggle up against them.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Kiss them lightly on the cheek.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>lightly kiss your cheek?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to kiss [src] lightly on the cheek.")
+			to_chat(user, "You try to kiss them lightly on the cheek.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Try to steal a deep kiss.")
 			to_chat(A, span_notice("[src] is trying to steel <span class='love'>a deep kiss?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to go in for a deep kiss on [src]!")
+			to_chat(user, "You try to go in for a deep kiss on them!")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Try to steal a light kiss.")
 			to_chat(A, span_notice("[src] is trying <span class='love'>to steal a light kiss?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try to steal a light kiss from [src].")
+			to_chat(user, "You try to steal a light kiss from them.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Smile at them subtly.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>smiling at you subtly?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> but <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You smile at [src] subtly. Hopefully they noticed.")
+			to_chat(user, "You smile at them subtly. Hopefully they noticed.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Smile at them provocatively.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>giving you a rakish smile?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You smile at [src] provocatively, hopefully they noticed.")
+			to_chat(user, "You smile at them provocatively, hopefully they noticed.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Play with your hair.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>playing with their hair as they watch you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "Something about [src] makes you feel the need to play with your hair, maybe they'll notice the effect they have on you.")
+			to_chat(user, "Something about that person makes you feel the need to play with your hair, maybe they'll notice the effect they have on you.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Bite your own lower lip.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>biting their lower lip while watching you?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You can't help it but [src] made you bite your lower lip, maybe they'll notice the effect they have on you.")
+			to_chat(user, "You can't help it but they made you bite your lower lip, maybe they'll notice the effect they have on you.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Give them the side-eye.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>watching you intently but trying to hide it?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You look at [src] sideways, smiling a bit as you do so. Maybe they'll notice your attention.")
+			to_chat(user, "You look at them sideways, smiling a bit as you do so. Maybe they'll notice your attention.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Push your backside into them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>press their backside to you?</span> Remember to honor their OOC preference sbut <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You try press your rump against [src], hopefully they want it.")
+			to_chat(user, "You try press your rump against them, hopefully they want it.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Touch them on 'accident.'")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>touch you and make it look like an accident to get your attention?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to touch [src] and make it look like an accident. Hopefully they realize it wasn't one.")
+			to_chat(user, "You try to touch them and make it look like an accident. Hopefully they realize it wasn't one.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 //Coyote second pass flirts
 
 		if("Softly bite their ear.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>nibble your ear!</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to playfully nibble [src]'s ear. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to playfully nibble thier ear. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Nuzzle their neck.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>nuzzle into your neck!</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to nuzzle into [src]'s neck. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to nuzzle into thier neck. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Bite their neck.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>bite your neck!</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to bite [src]'s neck. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to bite their neck. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Hold hands with them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>hold your hand</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to hold [src]'s hand. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to hold their hand. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Fondle their chest/breasts.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>fondle your chest, or breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to fondle [src]'s chest or breasts. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to fondle their chest or breasts. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Touch their crotch.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>lay a hand on your lap.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to lay a hand on [src]'s crotch. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to lay a hand on their crotch. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Heavy pet them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>rub your lap.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to rub [src]'s crotch. If they let you, maybe go into more detail?")
+			to_chat(user, "You try to rub their crotch. If they let you, maybe go into more detail?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Stare at them.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>staring at you openly and with clear interest.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You can't help but stare at [src], maybe they'll notice.")
+			to_chat(user, "You can't help but stare at them, maybe they'll notice.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Avoid looking at them.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>trying a little too hard not to look at you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You desperately try to not look at [src], hopefully they won't notice \<Lie.\>.")
+			to_chat(user, "You desperately try to not look at them, hopefully they won't notice \<Lie.\>.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Openly look at their assets.")
 			to_chat(A, span_notice("[src] is maybe <span class='love'>staring a bit too hard at whatever assets you have on display</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try but can't pull your eyes away from [src]'s visible assets', hopefully they won't notice \<Lie.\>.")
+			to_chat(user, "You try but can't pull your eyes away from their visible assets', hopefully they won't notice \<Lie.\>.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Fail to pickpocket.")
 			to_chat(A, span_notice("[src] is trying to put a hand in one of your pockets <span class='love'>but is going to grab you somewhere instead!</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to steal something from [src] but you're about to cop a feel, hopefully they won't notice!")
+			to_chat(user, "You try to steal something from them but you're about to cop a feel, hopefully they won't notice!")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Raise an eyebrow at them.")
 			to_chat(A, span_notice("[src] just <span class='love'>rose an eyebrow at you, clearly they're curious.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You can't help but quirk a brow at [src], maybe they'll notice your curiosity.")
+			to_chat(user, "You can't help but quirk a brow at them, maybe they'll notice your curiosity.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Loom over them.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>loom over you.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You try to loom over [src], maybe they'll care about it.")
+			to_chat(user, "You try to loom over them, maybe they'll care about it.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return
