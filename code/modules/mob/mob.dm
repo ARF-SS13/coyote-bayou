@@ -1350,7 +1350,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Kiss them lightly on the cheek.",
 	"Try to steal a deep kiss.",
 	"Try to steal a light kiss.",
-	"Smile at them subtly",
+	"Smile at them subtly.",
 	"Smile at them provocatively",
 	"Play with your hair",
 	"Bite your own lower lip.",
