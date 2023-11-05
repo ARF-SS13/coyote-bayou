@@ -280,7 +280,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
-	/datum/gear/head/stripedbandithelm
+/datum/gear/head/stripedbandithelm
 	name = "striped bandit helmet"
 	path = /obj/item/clothing/head/helmet/borderlandshelm/banditstripe
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
@@ -292,7 +292,7 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
-	/datum/gear/head/promerchelm
+/datum/gear/head/promerchelm
 	name = "professional merc helmet"
 	path = /obj/item/clothing/head/helmet/borderlandshelm/promerc
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
