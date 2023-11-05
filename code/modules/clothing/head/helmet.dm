@@ -782,8 +782,8 @@
 	desc = "A hockey mask with an upside down, golden 'V' painted on the front."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	icon_state = "banditmask"
-	item_state = "banditmask"
+	icon_state = "psychomask"
+	item_state = "psychomask"
 	flags_inv = HIDESNOUT
 	armor_list = ARMOR_VALUE_LIGHT
 
