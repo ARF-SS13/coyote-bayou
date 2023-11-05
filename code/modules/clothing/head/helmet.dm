@@ -792,7 +792,7 @@
 	desc = "If you're seeing this, something has gone horribly wrong."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDEMASK|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE|HIDESNOUT
+	flags_inv = HIDEMASK | HIDEEYES | HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
 	armor_list = ARMOR_VALUE_MEDIUM
 
 /obj/item/clothing/head/helmet/borderlandshelm/bandit
