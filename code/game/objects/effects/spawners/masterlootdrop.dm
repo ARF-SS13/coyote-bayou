@@ -221,8 +221,8 @@
 		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 4,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 3,  // Pretty much the same gun but I felt like its fair keeping them here
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 3,   // <-  ^ ^ ^     <-    ^ ^ ^     <-      ^ ^ ^       <-        ^ ^ ^
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 3, // Pretty much the same gun but I felt like its fair keeping them here
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 3, // <- ^
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 2,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 2,
@@ -233,6 +233,7 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 1,
 		/obj/item/gun/ballistic/automatic/pistol/automag = 1,
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 1,
+		/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol = 4,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
@@ -264,7 +265,8 @@
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
-		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1,  // Commenting out until the sprite is fixed.
+		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 10,
+		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1, // Commenting out until the sprite is fixed.
 		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
 	)
 
@@ -278,7 +280,9 @@
 		/obj/item/gun/ballistic/automatic/type93 = 10,
 		/obj/item/gun/ballistic/automatic/lsw = 10,
 		/obj/item/gun/ballistic/automatic/unmcamr = 10,
-		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1 = 10,
+		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,
+		/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle = 10,
+		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 9,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 4,
 		/obj/item/gun/ballistic/automatic/assault_rifle = 4,
 		/obj/item/gun/ballistic/automatic/r93 = 4,
