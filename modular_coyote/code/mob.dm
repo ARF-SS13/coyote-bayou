@@ -500,11 +500,9 @@
 	icon_state = "wendigo"
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
-	health = 150
-	maxHealth = 150
 
 //Actual chooseable mouse colors
-
+/* These are not set up correctly >:(
 /mob/living/simple_animal/advanced/mousewhite
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_white"
@@ -516,7 +514,7 @@
 /mob/living/simple_animal/advanced/mousebrown
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "mouse_brown"
-
+*/
 
 //The simple version of the dog borgs.
 
@@ -846,4 +844,116 @@
     resize = 0.8
     update_transform()
 
+
+/mob/living/simple_animal/advanced/gecko
+	name = "gecko"
+	desc = "A large mutated reptile with sharp teeth."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "gekko"
+	icon_living = "gekko"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_villager
+	name = "gecko villager"
+	desc = "A large mutated reptile that has learned the basics of tool usage."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_villager"
+	icon_living = "gekko_tribe_villager"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_leader
+	name = "gecko leader"
+	desc = "A large mutated reptile that has learned the basics of checks and balances."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_leader"
+	icon_living = "gekko_tribe_leader"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/gecko_shaman
+	name = "gecko shaman"
+	desc = "A large mutated reptile that has learned the basics of magic."
+	icon = 'icons/fallout/mobs/animals/gecktribe.dmi'
+	icon_state = "gekko_tribe_shaman"
+	icon_living = "gekko_tribe_shaman"
+	icon_dead = "gekko_dead"
+
+/mob/living/simple_animal/advanced/molerat
+	name = "molerat"
+	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
+	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
+	icon_state = "molerat"
+	icon_living = "molerat"
+	icon_dead = "molerat_dead"
+
+/mob/living/simple_animal/advanced/dog
+	name = "dog"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "dog_feral"
+	icon_living = "dog_feral"
+	icon_dead = "dog_feral_dead"
+
+/mob/living/simple_animal/advanced/rottweiler
+	name = "rottweiler"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "rottweiler"
+	icon_living = "rottweiler"
+	icon_dead = "rottweiler_dead"
+
+/mob/living/simple_animal/advanced/labretriever
+	name = "labrador retriever"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "tippen"
+	icon_living = "tippen"
+	icon_dead = "tippen_dead"
+
+/mob/living/simple_animal/advanced/shepherd
+	name = "shepherd"
+	desc = "Some kind of dog."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "shepherd"
+	icon_living = "shepherd"
+	icon_dead = "shepherd_dead"
+
+/mob/living/simple_animal/advanced/wolf
+	name = "wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "wolf"
+	icon_living = "wolf"
+	icon_dead = "wolf_dead"
+
+/mob/living/simple_animal/advanced/direwolf
+	name = "white dire wolf"
+	desc = "Some kind of wild dog thing."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "direwolf"
+	icon_living = "direwolf"
+	icon_dead = "direwolf_dead"
+
+/mob/living/simple_animal/advanced/hyotie
+	name = "hyotie"
+	desc = "Some kind of mix of otie and hyena."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "andrews"
+	icon_living = "andrews"
+	icon_dead = "andrews_dead"
+
+/mob/living/simple_animal/advanced/direwolf/black
+	name = "black direwolf"
+	desc = "Some kind of big black dog."
+	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_state = "rykka"
+	icon_living = "rykka"
+	icon_dead = "rykka_dead"
+
+/mob/living/simple_animal/advanced/yaoguai
+	name = "tamed Yaoguai"
+	desc = "Some kind of big black dog."
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
+	icon_state = "yaoguai"
+	icon_living = "yaoguai"
+	icon_dead = "yaoguai_dead"
 

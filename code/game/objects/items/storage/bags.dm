@@ -496,7 +496,7 @@ obj/item/storage/bag/chemistry/tribal
 
 /obj/item/storage/bag/tribe_quiver //tribal quiver as opposed to nontribal quiver? 
 	name = "belt quiver"
-	desc = "A simple leather quiver designed for holding arrows."
+	desc = "A simple leather quiver designed for holding arrows. \n\n Smack a bow with it to have that bow automatically load arrows from the quiver!"
 	icon = 'icons/obj/clothing/belts.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
@@ -504,6 +504,13 @@ obj/item/storage/bag/chemistry/tribal
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/bag/quiver
+
+/obj/item/storage/bag/tribe_quiver/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/gun/ballistic/bow))
+		var/obj/item/gun/ballistic/bow/boe = W
+		if(boe.link_quiver_to_bow(user, src))
+			return
+	. = ..()
 
 /obj/item/storage/bag/tribe_quiver/full/PopulateContents()
 	for(var/i in 1 to 12)
@@ -516,7 +523,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "quiver"
 	item_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_SMALL
-	component_type = /datum/component/storage/concrete/bag/light_quiver
+	component_type = /datum/component/storage/concrete/bag/quiver/light_quiver
 
 /obj/item/storage/bag/tribe_quiver/light/full/PopulateContents()
 	for(var/i in 1 to 12)
@@ -528,7 +535,7 @@ obj/item/storage/bag/chemistry/tribal
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
 	item_state = "tribal_quiver"
-	component_type = /datum/component/storage/concrete/bag/heavy_quiver
+	component_type = /datum/component/storage/concrete/bag/quiver/heavy_quiver
 
 /obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()
 	for(var/i in 1 to 12)

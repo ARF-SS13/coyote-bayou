@@ -864,7 +864,7 @@ armor	//Baseline hardsuits
 	desc = "A suit of semi-powered armor produced by Cydonian Arms and Armor. It sports less armor than its contemporaries, but allows for improved mobility and recoloring of the inbuilt light strips."
 	item_state = "swat_suit"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T2) // combat armor but bad melee; use that speed dummy
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENERGY_T1, ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T2) // combat armor but bad melee; use that speed dummy
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	pocket_storage_component_path = null // alt click function makes suit storage not great

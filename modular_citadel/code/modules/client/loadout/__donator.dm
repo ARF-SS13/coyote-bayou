@@ -734,7 +734,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
 	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
 	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
-	new /obj/item/gun/energy/laser/LaserAK/worn(src)
+	new /obj/item/gun/energy/laser/LaserAK/jaggi(src)
 
 
 /datum/gear/donator/kits/jaggachi_7
@@ -1162,15 +1162,16 @@
 	new /obj/item/melee/onehanded/machete/spatha(src)
 
 /datum/gear/donator/kits/seermankhajiit00
-	name = "The Absolute"
+	name = "The Latos MK XI"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket/custom(src)
-	new /obj/item/ammo_box/c45(src)
+	new /obj/item/clothing/suit/armor/warhammertox(src)
+	new /obj/item/clothing/head/toxbattlehelmet(src)
+	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
-	new /obj/item/gun/ballistic/revolver/Lemat/custom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
@@ -1183,17 +1184,28 @@
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/seermankhajiit003
-	name = "The Latos Agent"
+	name = "The Latos Agent OG"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit003
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
+	new /obj/item/ammo_box/needlercapsule(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/automatic/needlerrifle/tox(src)
+	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
+
+/datum/gear/donator/kits/seermankhajiit004
+	name = "The Latos Agent G36 version"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/g36custom(src)
 	new /obj/item/ammo_box/a556(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
-	new /obj/item/clothing/suit/armor/warhammertox(src)
-	new /obj/item/clothing/head/toxbattlehelmet(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
@@ -1404,6 +1416,9 @@
 	new /obj/item/gun/energy/laser/auto/nayriin(src)
 	new /obj/item/weldingtool/largetank/cylphie(src)
 	new /obj/item/clothing/under/dress/skirt/polychromic/pleated(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/pen/edagger(src)
+	new /obj/item/pen/edagger(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"

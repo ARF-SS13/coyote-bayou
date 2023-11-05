@@ -30,6 +30,10 @@
 	name = "plasma impact"
 	icon_state = "impact_plasmacutter"
 
+/obj/effect/projectile/impact/plasmapistole
+	name = "Plasma impact"
+	icon_state = "impact_bfg"
+	icon = 'icons/obj/projectiles_impact.dmi'
 /obj/effect/projectile/impact/stun
 	name = "stun impact"
 	icon_state = "impact_stun"

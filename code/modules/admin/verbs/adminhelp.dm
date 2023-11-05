@@ -277,7 +277,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
 		if(X.prefs.toggles & SOUND_ADMINHELP)
-			SEND_SOUND(X, sound('sound/effects/adminhelp.ogg'))
+			SEND_SOUND(X, sound('sound/effects/adminnotification.ogg'))
 		window_flash(X, ignorepref = TRUE)
 		to_chat(X, admin_msg)
 
@@ -332,8 +332,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	RemoveActive()
 	state = AHELP_CLOSED
 	GLOB.ahelp_tickets.ListInsert(src)
-	to_chat(initiator, span_adminhelp("Ticket closed by an administrator."))
-	AddInteraction("<font color='red'>Closed by [key_name].</font>")
+	to_chat(initiator, span_adminhelp("Ticket closed by an administrator!"))
+	AddInteraction("<font color='blue'>Closed by an administrator, thank you for being patient with us!</font>")
 	if(!silent)
 		SSblackbox.record_feedback("tally", "ahelp_stats", 1, "closed")
 		var/msg = "Ticket [TicketHref("#[id]")] closed by [key_name]."
@@ -366,11 +366,11 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(initiator)
 		initiator.giveadminhelpverb()
 
-		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+		SEND_SOUND(initiator, sound('sound/effects/adminnotification.ogg'))
 
-		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp Rejected by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
-		to_chat(initiator, "<font color='red'><b>Your admin help was rejected.</b> The adminhelp verb has been returned to you so that you may try again.</font>")
-		to_chat(initiator, "Please try to be calm, clear, and descriptive in admin helps, do not assume the admin has seen any related events, and clearly state the names of anybody you are reporting.")
+		to_chat(initiator, "<font color='blue' size='8'><b>- AdminHelp flagged for 'lack of context or information' by an administrator! -</b></font>")
+		to_chat(initiator, "<font color='blue'><b>Your admin help request is lacking in information, please take a moment to make another ahelp and be more verbose on what you're trying to ask. :)</font>")
+		to_chat(initiator, "Please try to be calm, clear, and descriptive in admin helps, do not assume the admin has seen any related events, and clearly state the names of anybody you are reporting. Also, for the love of god do not escalate the situation, administration needs time to handle any issue, thank you!")
 
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "rejected")
 	var/msg = "Ticket [TicketHref("#[id]")] rejected by [key_name]"
@@ -384,8 +384,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(state != AHELP_ACTIVE)
 		return
 
-	var/msg = "<font color='red' size='4'><b>- AdminHelp marked as IC issue by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font><br>"
-	msg += "<font color='red'>Your ahelp is unable to be answered properly due to events occurring in the round. Your question probably has an IC answer, which means you should deal with it IC!</font>"
+	var/msg = "<font color='red' size='8'><b>- AdminHelp marked as an active issue by an administrator! They will look into it ASAP. -</b></font><br>"
+	msg += "<font color='green'>Your AHELP is being investigated by an administrator. For now please treat this issue as though it is an IN CHARACTER happening. Please do not linger on it, let staff do their job so that the situation can be resolved.  Thank you!</font>"
 	if(initiator)
 		to_chat(initiator, msg)
 
@@ -513,6 +513,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 // Used for methods where input via arg doesn't work
 /client/proc/get_adminhelp()
+	message_admins("X-----A user is making an ahelp shortly, hold onto your butts.-----X")
+	for(var/client/X in GLOB.admins)
+		if(X.prefs.toggles & SOUND_ADMINHELP)
+			SEND_SOUND(X, sound('sound/effects/adminnotification.ogg'))
 	var/msg = input(src, "Please describe your problem concisely and an admin will help as soon as they're able.", "Adminhelp contents") as text
 	adminhelp(msg)
 
@@ -745,7 +749,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(initiator)
 		initiator.giveadminhelpverb()
 
-		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+		SEND_SOUND(initiator, sound('sound/effects/adminnotification.ogg'))
 
 		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp greenlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
 		to_chat(initiator, "<font color='green'><b>Administration says YES.</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")
@@ -766,7 +770,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(initiator)
 		initiator.giveadminhelpverb()
 
-		SEND_SOUND(initiator, sound('sound/effects/adminhelp.ogg'))
+		SEND_SOUND(initiator, sound('sound/effects/adminnotification.ogg'))
 
 		to_chat(initiator, "<font color='red' size='4'><b>- AdminHelp redlighted by [usr?.client?.holder?.fakekey? usr.client.holder.fakekey : "an administrator"]! -</b></font>")
 		to_chat(initiator, "<font color='red'><b>Administration says NO</b> The adminhelp verb has been returned to you so that you may ahelp again if need be.</font>")

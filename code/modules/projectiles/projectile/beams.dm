@@ -486,15 +486,6 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/beam/laser/pistol/AK470M //AK470M
-	name = "laser beam"
-	damage = 20
-	damage_list = list( "18" = 30, "20" = 70)
-
-	icon_state = "arcane_barrage"
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
-	light_color = LIGHT_COLOR_PURPLE
-
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
@@ -823,6 +814,100 @@
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 	hitscan = TRUE
 
+/obj/item/projectile/beam/laser/beam //Covenant version of a watzz2k hitscan proj. Hits like a semi-truck
+	name = " sniper laser bolt"
+	damage = 80
+	damage_list = list( "70" = 25, "80" = 40, "85" = 25)
+	wound_bonus = 10
+	bare_wound_bonus = 20
+	tracer_type = /obj/effect/projectile/tracer/covbeamlaser
+	muzzle_type = /obj/effect/projectile/muzzle/disabler
+	impact_type = /obj/effect/projectile/impact/disabler
+	hitscan = TRUE
+	muzzle_flash_intensity = 6
+	muzzle_flash_range = 2
+	muzzle_flash_color_override = LIGHT_COLOR_CYAN
+	impact_light_intensity = 7
+	impact_light_range = 2.5
+	impact_light_color_override = LIGHT_COLOR_CYAN
+	light_color = LIGHT_COLOR_CYAN
+
+/obj/item/projectile/f13plasma/pistol/covenant
+	name = "plasma energy bolt"
+	icon_state = "plasmapistol"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
+	damage = 20
+	damage_list = list( "18" = 25, "20" = 40, "25" = 25)
+	wound_bonus = 8
+	bare_wound_bonus = 18
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(10)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_GREEN
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 12
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/projectile/f13plasma/pistol/covenant/bane
+	name = "plasma energy bolt"
+	icon_state = "plasmapistol"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	damage = 35
+	damage_list = list( "30" = 25, "35" = 40, "38" = 25)
+	wound_bonus = 12
+	bare_wound_bonus = 23
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(15)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_BLUEGREEN
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 20
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/projectile/f13plasma/repeater/covenant
+	name = "plasma energy bolt"
+	icon_state = "prshot"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	damage = 15
+	damage_list = list( "10" = 25, "15" = 40, "20" = 25)
+	wound_bonus = 6
+	bare_wound_bonus = 16
+	hitscan = FALSE
+	is_reflectable = FALSE
+	pixels_per_second = TILES_TO_PIXELS(12)
+	recoil = BULLET_RECOIL_PLASMA
+	light_color = LIGHT_COLOR_BLUE
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 11
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
+/obj/item/projectile/f13plasma/repeater/onibane
+	name = "plasma energy bolt"
+	icon_state = "onishot"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
+	damage = 25
+	damage_list = list( "23" = 25, "25" = 40, "28" = 25)
+	wound_bonus = 10
+	bare_wound_bonus = 20
+	hitscan = FALSE
+	is_reflectable = FALSE
+	recoil = BULLET_RECOIL_PLASMA
+	pixels_per_second = TILES_TO_PIXELS(17)
+	light_color = LIGHT_COLOR_RED
+	damage_type = BURN
+	flag = "energy"
+	supereffective_damage = 18
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+
 /obj/item/projectile/beam/laser/wattz2ks
 	name = "laser bolt"
 	damage = 35
@@ -857,10 +942,8 @@
 	hitscan = TRUE
 	hitsound = 'modular_coyote/sound/items/xcom/Laserhit.wav'
 	hitsound_wall = 'modular_coyote/sound/items/xcom/Laserhit.wav'
-	max_upgrades = 0
 
 // Kelp's TG blaster projectiles, should almost all be projectiles and not hitscan
-
 /obj/item/projectile/beam/laser/tg
 	name = "blaster bolt"
 	damage = 30
@@ -891,16 +974,32 @@
 /obj/item/projectile/beam/laser/tg/particle
 	name = "hyper-velocity particle beam"
 	icon_state = "emitter"
-	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload
-	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "420634" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
+	damage = 100 // With no -HP traits, any light armor saves you and EVERYONE is armored; you get 5 shots and can't reload in the field
+	damage_list = list("90" = 25, "100" = 25, "115" = 25, "130" = 24, "1000" = 1) //fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you fuck you ~TK
 	wound_bonus = 60 // nasty, but it's still a laser
-	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload
+	supereffective_damage = 150 // Unlike .50 BMG guns, you can't reload in the field
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/xray
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
 
+//Laser AK projectiles
+/obj/item/projectile/beam/laser/tg/kalashheavy
+	name = "heavy laser bolt"
+	damage = 40
+	damage_list = list("35" = 20, "40" = 60, "45" = 20)
+	icon_state = "arcane_barrage"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
+
+/obj/item/projectile/beam/laser/tg/kalashlight
+	name = "light laser bolt"
+	damage = 20
+	damage_list = list( "18" = 20, "20" = 60, "25" = 20)
+	icon_state = "arcane_barrage"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
+	light_color = LIGHT_COLOR_PURPLE
 
 // BETA // Obsolete
 /obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol

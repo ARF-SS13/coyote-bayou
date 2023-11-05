@@ -20,7 +20,7 @@
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
-		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_INSANE_AIM) ? 0.5 : 1), zone_override, params, angle_out)
+		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_CRIT_SHOT) ? 0.5 : 1), zone_override, params, angle_out)
 
 	if(istype(user))
 		user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
@@ -28,7 +28,7 @@
 	update_icon()
 	return 1
 
-/obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0)
+/obj/item/ammo_casing/proc/calc_spread(mob/living/user, spread = 0, distro = 0, variance = 0, atom/fired_from)
 	. = 0
 	if(!randomspread) // usually true
 		return
@@ -38,23 +38,7 @@
 	gun_bullet_spread += BB?.spread || 0 // bullet's inherent inaccuracy
 	gun_bullet_spread += distro || 0 // gun's inaccuracy
 	gun_bullet_spread += variance || 0 // cartridge's inaccuracy
-	var/player_spread = spread // spread is the player's recoil
-	if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
-		player_spread = 100 // lol
-	else if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
-		player_spread = 0 // nice shot
-	else
-		if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
-			player_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
-		if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
-			player_spread *= 2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties! - jk they do
-		if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-			player_spread *= 2//This is cripplingly bad. Trust me.
-		else if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
-			player_spread *= 0.5 // Nice shot!
-	// . = max(gun_bullet_spread, player_spread) // Either the gun+casing+bullet's inaccuracy, or your own shitty accuracy
-	. = gun_bullet_spread + player_spread // Note that this *can* be brought below zero
-	. = SSrecoil.get_output_offset(.)
+	. = SSrecoil.get_output_offset(gun_bullet_spread, user, fired_from)
 
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
 	if (!BB)
@@ -81,7 +65,7 @@
 		if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
 			BB.zone_accuracy_type = G.get_zone_accuracy_type()
 		//SEND_SIGNAL(src, COMSIG_GUN_SHOT, BB, G) // time to modify it more uwu
-		/* if(HAS_TRAIT(user, TRAIT_INSANE_AIM)) // imma spend 12 points to shoot myself in the face
+		/* if(HAS_TRAIT(user, TRAIT_CRIT_SHOT)) // imma spend 12 points to shoot myself in the face
 			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!
 			BB.ricochet_chance = max(BB.ricochet_chance, 100) //it wont decay so we can leave it at 100 for always bouncing
 			BB.ricochet_auto_aim_range = max(BB.ricochet_auto_aim_range, 3)

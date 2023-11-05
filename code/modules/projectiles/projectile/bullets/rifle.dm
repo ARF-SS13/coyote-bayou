@@ -39,7 +39,7 @@
  * RECOIL: 1
  * WOUNDS: 6.5
  * WNAKED: 3.75
- 
+
 /obj/item/projectile/bullet/a556/sport
 	name = "surplus .223 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_223
@@ -187,7 +187,7 @@
 /obj/item/projectile/bullet/a473
 	name = "4.73 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_473 //30
-	damage_list = list("25" = 25, "30" = 35, "35" = 30, "40" = 5, "41" = 1, "42" = 1, "43" = 1, "44" = 1, "45" = 1,) 
+	damage_list = list("25" = 25, "30" = 35, "35" = 30, "40" = 5, "41" = 1, "42" = 1, "43" = 1, "44" = 1, "45" = 1,)
 	stamina = BULLET_STAMINA_RIFLE_473
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_473
@@ -550,7 +550,7 @@
 /obj/item/projectile/bullet/a308
 	name = ".308 bullet"
 	damage = BULLET_DAMAGE_RIFLE_308 //45
-	damage_list = list("25" = 40, "30" = 45, "48" = 30, "50" = 5, "52" = 3, "55"= 2)
+	damage_list = list("30" = 20, "40" = 50, "48" = 30, "50" = 5, "52" = 3, "55"= 2)
 	stamina = BULLET_STAMINA_RIFLE_308
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_308

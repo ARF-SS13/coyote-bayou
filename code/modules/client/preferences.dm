@@ -329,6 +329,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/custom_pixel_x = 0
 	var/custom_pixel_y = 0
 
+	var/permanent_tattoos = ""
+
 	/// Associative list: matchmaking_prefs[/datum/matchmaking_pref subtype] -> number of desired matches
 	var/list/matchmaking_prefs = list()
 
@@ -593,19 +595,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[creature_ooc]<br>"
 			else
 				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(!creature_image && creature_species)
-				if(!LAZYLEN(GLOB.creature_selectable))//Pokemon selection list is empty, so generate it.
+			if(creature_species)
+				if(!LAZYLEN(GLOB.creature_selectable))
 					generate_selectable_creatures()
-				if(!(creature_species in GLOB.creature_selectable))//Previously selected species which isn't supported anymore.
+				if(!(creature_species in GLOB.creature_selectable))
 					creature_species = initial(creature_species)
-				var/creature_type = GLOB.creature_selectable["[creature_species]"]
-				if(!isnull(creature_type) && isliving(creature_type))//If we couldn't find a type to spawn, avoid a runtime and don't try to make a null
-					var/mob/living/M = new creature_type(user)
-					creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
-					qdel(M)
-			if(creature_image)
-				dat += "[icon2html(creature_image, user)]<br>"
-
+				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
 			dat += "<h3>Pixel Offsets</h3>"
 			var/px = custom_pixel_x > 0 ? "+[custom_pixel_x]" : "[custom_pixel_x]"
 			var/py = custom_pixel_y > 0 ? "+[custom_pixel_y]" : "[custom_pixel_y]"

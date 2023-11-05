@@ -542,22 +542,10 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/gun/magic/wand/kelpmagic/magicmissile/improved
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
-
-// Staff of Magic Missile (Generalist staff, single shot/burst medium projectiles, okay-ish melee weapon)
-/datum/crafting_recipe/magic/missilestaff
-	name = "Staff of Magic Missile"
-	result = /obj/item/gun/magic/staff/kelpmagic/magicmissile
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 15,
-				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/stack/sheet/mineral/plasma = 2)
-	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
-
 
 // T1 Sparks Wand (anti-swarm sidearm)
 /datum/crafting_recipe/magic/lightningrod
@@ -576,8 +564,8 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/gun/magic/staff/kelpmagic/lightning
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 10,
-				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 3,
 				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
@@ -587,7 +575,7 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/gun/magic/wand/kelpmagic/firebolt
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
-				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/metalparts = 5,
 				/obj/item/tool_upgrade/productivity/red_paint = 1,
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
@@ -598,7 +586,7 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/gun/magic/staff/kelpmagic/fireball
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 20,
+				/obj/item/stack/crafting/metalparts = 10,
 				/obj/item/tool_upgrade/productivity/red_paint = 1,
 				/obj/item/stack/sheet/mineral/diamond = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
@@ -609,9 +597,9 @@ datum/crafting_recipe/tribalwar/bone
 	result = /obj/item/gun/magic/staff/kelpmagic/acidstaff
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 15,
+				/obj/item/stack/crafting/metalparts = 5,
 				/obj/item/stack/sheet/mineral/plasma = 2,
-				/obj/item/stack/sheet/mineral/diamond = 2)
+				/obj/item/stack/sheet/mineral/uranium = 2)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
 // T1 Mending Wand (basic omni heal, ~50 HP all categories every 5 minutes)
@@ -637,3 +625,13 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/mineral/diamond = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
+// Perfected Staff of Healing (Literally just the medbeam but Bulky and needs magic)
+/datum/crafting_recipe/magic/healstaff/perfected
+	name = "Perfected Staff of Healing"
+	result = /obj/item/gun/medbeam/magic
+	time = 30
+	reqs = list(/obj/item/stack/crafting/metalparts = 20,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/stack/sheet/bluespace_crystal = 5,
+				/obj/item/gun/magic/staff/kelpmagic/healstaff = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_ALCHEMY_TABLE, TOOL_RITUAL)

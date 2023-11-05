@@ -53,11 +53,14 @@
 	I.force_wielded += 5
 	I.force_unwielded += 5
 	I.throwforce += 5
+	I.throwforce_bonus += 5
+	I.force_bonus += 5
 	I.is_sharpened = TRUE
 	I.desc = "[initial(I.desc)] It has been sharpened to a fine edge."
 	to_chat(user, span_notice("You sharpen the [I]!"))
 	qdel(src)
 	return ..()
+
 /obj/item/melee/smith/twohand
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'

@@ -42,3 +42,8 @@
 /datum/gear/gloves/midnight
 	name = "Midnight gloves"
 	path = /obj/item/clothing/gloves/evening/black
+
+/datum/gear/gloves/evening
+	name = "Eveniing gloves"
+	path = /obj/item/clothing/gloves/evening
+

@@ -19,3 +19,16 @@
 /obj/item/projectile/energy/bolt/large
 	damage = 60
 	damage_list = list( "50" = 20, "60" = 64, "75" = 15, "90" = 1)
+
+/obj/item/projectile/energy/bolt/rock
+	damage = 30
+	damage_list = list( "25" = 20, "30" = 64, "35" = 15, "45" = 1)
+	damage_type = BRUTE
+	flag = "bullet"
+	sharpness = SHARP_POINTY
+	eyeblur = 0
+	slur = 0
+	stamina = 40
+	name = "rock"
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"

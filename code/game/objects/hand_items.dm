@@ -532,6 +532,42 @@
 		return
 	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
+
+
+/////////////
+//Cantrips//
+///////////
+
+
+/obj/item/hand_item/cantrip
+	name = "Cantrip"
+	desc = "it's magic yo."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "clawer"
+	w_class = WEIGHT_CLASS_TINY
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	force = 15
+	throwforce = 0
+	wound_bonus = 4
+	attack_speed = CLICK_CD_MELEE * 0.7
+	item_flags = DROPDEL | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+
+/obj/item/hand_item/cantrip/godhand
+	icon_state = "disintegrate"
+	item_state = "disintegrate"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	name = "Shocking Grasp"
+	desc = "A basic cantrip that allows the caster to inflict nasty shocks on touch"
+	item_flags = ABSTRACT | DROPDEL
+	force = 30
+	hitsound = 'sound/weapons/sear.ogg'
+	damtype = BURN
+	attack_verb = list("seared", "zapped", "fried", "shocked")
+
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))
 // 		return FALSE

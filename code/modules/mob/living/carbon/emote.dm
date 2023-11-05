@@ -295,6 +295,51 @@
 	else
 		qdel(claw)
 
+//shocking grasp//
+/datum/emote/living/carbon/shocking
+	key = "shocking"
+	key_third_person = "casts shocking grasp!"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/shocking/run_emote(mob/user)
+	. = ..()
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to cast!"))
+		return
+	var/which_cantrip_to_spawn
+	if(HAS_TRAIT(user, TRAIT_SHOCKINGGRASP))
+		which_cantrip_to_spawn = /obj/item/hand_item/cantrip/godhand
+	else 
+		to_chat(user, span_notice("You don't know how to cast this spell!"))
+	var/obj/item/hand_item/cantrip/godhand/cantrip = new which_cantrip_to_spawn(user) 
+	if(user.put_in_active_hand(cantrip))
+		to_chat(user, span_notice("You are ready to zap"))
+	else
+		qdel(cantrip)
+
+//booming blade//
+
+//datum/emote/living/carbon/booming
+	//key = "booming"
+	//key_third_person = "casts booming blade!"
+	//restraint_check = TRUE
+
+///datum/emote/living/carbon/booming/run_emote(mob/user)
+	//. = ..()
+	//if(user.get_active_held_item())
+		//to_chat(user, span_warning("Your hands are too full to cast!"))
+		//return
+	//var/which_cantrip_to_spawn
+	//if(HAS_TRAIT(user, TRAIT_BOOMING))
+		//which_cantrip_to_spawn = /obj/item/gun/magic/staff/spellblade/weak
+	//else 
+		//to_chat(user, span_notice("You don't know how to cast this spell!"))
+	//var/obj/item/gun/magic/staff/spellblade/weak/cantrip = new which_cantrip_to_spawn(user) 
+	//if(user.put_in_active_hand(cantrip))
+		//to_chat(user, span_notice("You are ready to smite your foes"))
+	//else
+		//qdel(cantrip)
+
 //Tackler//
 
 

@@ -2025,12 +2025,118 @@
 
 /obj/item/clothing/suit/armor/light/leather/rig
 	name = "chest gear harness"
-	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt with enough room for four small items."
+	desc = "A handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt with enough room for four small items."
 	icon_state = "r_gear_rig"
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_DT_T1)
+
+/obj/item/clothing/suit/armor/light/leather/scrap
+	name = "slim scrap armor"
+	desc = "A series of leather straps criss-crossing the body paired with stragetically placed leather and scrap plates. It looks like it'd provide okay protection against lighter strikes."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	icon_state = "slimscrap"
+	item_state = "slimscrap"
+
+/obj/item/clothing/suit/armor/light/leather/scrapalt
+	name = "scrap armor"
+	desc = "A series of leather straps criss-crossing the body paired with liberally placed leather and scrap plates. It looks like it'd stop small bullets and bludgeons, at least."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+	icon_state = "scrap"
+	item_state = "scrap"
+
+/obj/item/clothing/suit/armor/light/leather/scrapheavy // not actually heavy armor
+	name = "heavy scrap armor"
+	desc = "A liberal amount of scrap and leather tied together to cover the body. Not actually all that heavy; lasers will burn right through it, but it otherwise offers decent all-around protection."
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+	icon_state = "scrapheavy"
+	item_state = "scrapheavy"
+
+//-->Taur armored saddles
+//the main gimmick about taur saddles is that obviously only taurs can equip it
+//wearing a taur saddle allows for the rider to have both of his hands free
+//-->can the carbon equip this? Afterall they are equippable only if they have a lower half.
+/obj/item/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
+	. = ..()
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		if((istype(src, /obj/item/clothing/suit/armor/taursaddle/)) && (C.dna.features["taur"] == "None"))
+			to_chat(usr, span_danger("You're missing an extra pair of legs or a lower half to wear this! (not a taur)"))
+			return FALSE
+//<--
+
+//The actual saddles
+/obj/item/clothing/suit/armor/taursaddle
+	name = "taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle"
+	item_state = "taursaddle"
+	mutantrace_variation = STYLE_ALL_TAURIC
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/light
+	name = "light armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_light"
+	item_state = "taursaddle_light"
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 10
+	equip_delay_other = 10
+	max_integrity = 100
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/medium
+	name = "medium armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_medium"
+	item_state = "taursaddle_medium"
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+////////////////////////////////////////////////////////////////
+
+/obj/item/clothing/suit/armor/taursaddle/heavy
+	name = "heavy armored taur saddle"
+	desc = "A simple leather saddle made out of leather to allow a much more comfortable ride and probably some better dexterity for the knight!"
+	icon = 'icons/fallout/clothing/taursaddles_inhand.dmi'
+	icon_state = "taursaddle_heavy"
+	item_state = "taursaddle_heavy"
+	strip_delay = 50
+	equip_delay_other = 50
+	max_integrity = 300
+	pocket_storage_component_path = null
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
+
+//<--End of Taur Saddles
 
 ////////////////
 // ARMOR KITS //
@@ -2852,6 +2958,19 @@
 	armor = ARMOR_VALUE_MEDIUM
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
+/obj/item/clothing/suit/armor/medium/toxspartanarmors
+	name = "Leo Armaments MARK XI armor 'Patriot'"
+	desc = "A set of royal themed Mark XI assault armor.This armo was made to fit more curvy and hourglass shaped feminine bodies. The armor is the same as any other, however it seems to have the name 'Tox' scratched onto the right plate of the armor. The interior of the armor is made for comfort, foregoing protection for comfort fitting and enjoyment. The bodysuit is more skimpier and skin-tighter than usual, hugging the body as the user moves about."
+	icon_state = "markvi2"
+	item_state = "markvi2"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
@@ -4855,7 +4974,7 @@
 	icon_state = "infiltrator"
 	item_state = "infiltrator"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
-	
+
 /obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
 	name = "contractor combat suit"
 	desc = "An suspicious looking combat suit designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."

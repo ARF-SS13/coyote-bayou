@@ -10,3 +10,6 @@
 /obj/item/ammo_casing/energy/bolt/large
 	projectile_type = /obj/item/projectile/energy/bolt/large
 	select_name = "heavy bolt"
+
+/obj/item/ammo_casing/energy/bolt/sling
+	projectile_type = /obj/item/projectile/energy/bolt/rock

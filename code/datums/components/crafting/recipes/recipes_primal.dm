@@ -316,7 +316,7 @@
 
 /datum/crafting_recipe/tribalwar/sling
 	name = "Sling"
-	result = /obj/item/gun/ballistic/revolver/sling
+	result = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 	time = 30
 	reqs = list(/obj/item/weaponcrafting/string = 1,
 					/obj/item/stack/sheet/cloth = 1)
@@ -324,7 +324,7 @@
 
 /datum/crafting_recipe/tribalwar/slingstaff
 	name = "Sling Staff"
-	result = /obj/item/gun/ballistic/revolver/sling/staff
+	result = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 	time = 60
 	reqs = list(/obj/item/weaponcrafting/string = 2,
 				/obj/item/stack/sheet/leather = 2,

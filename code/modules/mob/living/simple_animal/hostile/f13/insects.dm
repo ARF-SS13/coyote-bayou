@@ -570,7 +570,7 @@
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
-		MOB_HEALTH_LIST(5, 10, 1),
+		MOB_HEALTH_LIST(10, 30, 1),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 		MOB_MINIMUM_DISTANCE_LIST(0, 1, 1),
@@ -587,3 +587,16 @@
 	call_backup = /obj/effect/proc_holder/mob_common/summon_backup/small_critter
 	send_mobs = /obj/effect/proc_holder/mob_common/direct_mobs/small_critter
 	. = ..()
+//Variants for Radroachers
+
+/mob/living/simple_animal/hostile/radroach/raddyroach
+	maxHealth = 140
+	health = 140
+	melee_damage_lower = 8
+	melee_damage_upper = 12
+
+/mob/living/simple_animal/hostile/radroach/strongradroach
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 6
+	melee_damage_upper = 8
