@@ -1385,6 +1385,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Grab their arm.",
 	"Pull their hair.",
 	"Grab their belt.",
+	"Whine needily.",
+	"Tongue in cheek.",
+	"Mouth an object.",
+	"Play with your nipples openly.",
+	"Play with your nipples sneakily.",
+	"Draw attention to your breasts.",
+	"Fold your arms under your breasts.",
+	"Squish your breasts together.",
 	)
 
 	var/choice = input(FLIRT_HEADER_TEXT) as null|anything in choices
