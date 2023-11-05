@@ -1417,7 +1417,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("Check them out.",)
 			to_chat(A, span_notice("[src] is maybe trying to <span class='love'>check you out?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You really check [A] out, maybe you should make a small emote for it to?")
+			to_chat(user, "You really check [A] out, maybe you should make a small emote for it too?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Blush at them.")
