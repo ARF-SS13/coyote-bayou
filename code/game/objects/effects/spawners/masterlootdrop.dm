@@ -33,19 +33,19 @@
 	icon_state = "x5"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/common_weps = 1,
-		/obj/effect/spawner/lootdrop/f13/common_mags = 2,
-		/obj/effect/spawner/lootdrop/f13/common_ammo = 2,
-		/obj/effect/spawner/lootdrop/f13/common_medicine = 2,
-		/obj/effect/spawner/lootdrop/f13/common_drugs = 2,
-		/obj/effect/spawner/lootdrop/f13/common_armor = 2,
-		/obj/effect/spawner/lootdrop/f13/common_toys = 2,
-		/obj/effect/spawner/lootdrop/f13/common_mats = 2,
-		/obj/effect/spawner/lootdrop/f13/common_mods = 2,
-		/obj/effect/spawner/lootdrop/f13/common_parts = 2,
-		/obj/effect/spawner/lootdrop/f13/common_tools = 2,
-		/obj/effect/spawner/lootdrop/f13/common_money = 2,
-		/obj/effect/spawner/lootdrop/f13/common_bombs = 2,
-		/obj/effect/spawner/lootdrop/f13/common_food = 2,
+		/obj/effect/spawner/lootdrop/f13/common_mags = 1,
+		/obj/effect/spawner/lootdrop/f13/common_ammo = 1,
+		/obj/effect/spawner/lootdrop/f13/common_medicine = 1,
+		/obj/effect/spawner/lootdrop/f13/common_drugs = 1,
+		/obj/effect/spawner/lootdrop/f13/common_armor = 1,
+		/obj/effect/spawner/lootdrop/f13/common_toys = 1,
+		/obj/effect/spawner/lootdrop/f13/common_mats = 1,
+		/obj/effect/spawner/lootdrop/f13/common_mods = 1,
+		/obj/effect/spawner/lootdrop/f13/common_parts = 1,
+		/obj/effect/spawner/lootdrop/f13/common_tools = 1,
+		/obj/effect/spawner/lootdrop/f13/common_money = 1,
+		/obj/effect/spawner/lootdrop/f13/common_bombs = 1,
+		/obj/effect/spawner/lootdrop/f13/common_food = 1,
 	)
 	downtier_chance = 50 // 50% chance to downtier to trash
 	downtier_list = list(
@@ -57,26 +57,26 @@
 	icon_state = "x6"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_weps = 1,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mags = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_medicine = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_drugs = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_toys = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mats = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_parts = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_tools = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_money = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_bombs = 2,
-		/obj/effect/spawner/lootdrop/f13/uncommon_food = 2,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mags = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_medicine = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_drugs = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_toys = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mats = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_mods = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_parts = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_tools = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_money = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_bombs = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_food = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_artifacts = 0.5,
 	)
 	uptier_chance = 1 // 1% chance to uptier to a restricted rare
 	uptier_list = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon_upgrade = 1,
 	)
-	downtier_chance = 33 // 33% chance to downtier to common
+	downtier_chance = 10 // 10% chance to downtier to common // I would absolute remove this if allowed to, it's kind of bullshit - Wizard
 	downtier_list = list(
 		/obj/effect/spawner/lootdrop/f13/common = 1,
 	)
@@ -99,7 +99,7 @@
 		/obj/effect/spawner/lootdrop/f13/rare_secondary = 5,
 		/obj/effect/spawner/lootdrop/f13/rare_tertiary = 5,
 	)
-	downtier_chance = 15 // 15% chance to downtier to uncommon (and no lower)
+	downtier_chance = 10 // 10% chance to downtier to uncommon (and no lower) // I would absolute remove this if allowed to, it's kind of bullshit - Wizard
 	downtier_list = list(
 		/obj/effect/spawner/lootdrop/f13/uncommon = 1,
 	)
@@ -112,7 +112,7 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_weps = 3,
 		/obj/effect/spawner/lootdrop/f13/rare_armor = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_mods = 3,
+		/obj/effect/spawner/lootdrop/f13/rare_mods = 2,
 	)
 
 /// Generally decent stuff, but not as good as the rare primary loot. Shouldnt affect tiering if given in uncommon loot rarely.
@@ -122,13 +122,13 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_mags = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_ammo = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_medicine = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_drugs = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_mats = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_parts = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_tools = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_money = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_bombs = 2,
+		/obj/effect/spawner/lootdrop/f13/rare_medicine = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_drugs = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_mats = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_parts = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_tools = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_bombs = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 0.5
 	)
 
@@ -138,10 +138,10 @@
 	icon_state = "x7"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_medicine = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_drugs = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_toys = 3,
-		/obj/effect/spawner/lootdrop/f13/rare_parts = 3,
-		/obj/effect/spawner/lootdrop/f13/rare_money = 2,
+		/obj/effect/spawner/lootdrop/f13/rare_drugs = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_toys = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_parts = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_money = 1,
 		/obj/effect/spawner/lootdrop/f13/rare_food = 1,
 	)
 
@@ -162,27 +162,27 @@
 		/obj/effect/spawner/lootdrop/f13/common_guns = 15, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/common_melee = 10,
 		/obj/effect/spawner/lootdrop/f13/common_cowboy = 10,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 6,
+		/obj/effect/spawner/lootdrop/f13/common_energy = 8,
 		/obj/effect/spawner/lootdrop/f13/common_unique = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_weps
 	name = "uncommon weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 12, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 12,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 4,
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 4,
+		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 15, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 7,
+		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 7,
 		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_weps
 	name = "rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_melee = 15, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 15,
-		/obj/effect/spawner/lootdrop/f13/rare_guns = 8,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 2,
+		/obj/effect/spawner/lootdrop/f13/rare_guns = 14, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 10, 
+		/obj/effect/spawner/lootdrop/f13/rare_energy = 7,
 		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
 	)
 
@@ -341,6 +341,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
 		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 10,
 		/obj/item/gun/ballistic/shotgun/trench = 10,
+		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,
 		/obj/item/gun/ballistic/revolver/colt357/auto = 4,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40 = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 4,
@@ -351,6 +352,11 @@
 		/obj/item/m2flamethrowertank = 1,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 1,
 		// /obj/item/gun/ballistic/bow/compositebow = 1,  // I do not know the difference between this and the recurve.
+		/obj/item/gun/magic/wand/kelpmagic/firebolt = 1,
+		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
+		// /obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 1, // Needs fixing
+		/obj/item/gun/magic/wand/kelpmagic/sparky = 1,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_cowboy
@@ -361,15 +367,17 @@
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 10,
 		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 10, // for the meme
-		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,
 		/obj/item/gun/energy/kinetic_accelerator/crossbow = 4, // ebow
 		/obj/item/gun/ballistic/bow/compoundbow = 4,
 		/obj/item/gun/ballistic/rifle/mag/boys = 4,
 		/obj/item/gun/ballistic/automatic/bar = 4,
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 4,
-		/obj/item/gun/ballistic/automatic/lewis = 1,
-		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
+		/obj/item/gun/ballistic/automatic/lewis = 2,
+		/obj/item/gun/ballistic/automatic/smg/ppsh = 2,
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1,  // big ebow
+		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
+		/obj/item/gun/magic/staff/kelpmagic/lightning = 1,
+		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
 	)
 
 ///////////////////////////
@@ -427,16 +435,16 @@
 		/obj/item/melee/unarmed/lacerator = 4,
 		/obj/item/melee/unarmed/maceglove = 4,
 		/obj/item/melee/unarmed/punchdagger = 4,
-		/obj/item/twohanded/baseball/louisville = 1,
+		/obj/item/twohanded/baseball/louisville = 2,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_melee
 	name = "rare melee"
 	loot = list(
-		/obj/item/gun/ballistic/revolver/ballisticfist = 10,
 		/obj/item/melee/powered/ripper = 10,
 		/obj/item/twohanded/legionaxe = 10,
-		/obj/item/melee/transforming/energy/axe/protonaxe = 10,
+		/obj/item/gun/ballistic/revolver/ballisticfist = 8,
+		/obj/item/melee/transforming/energy/axe/protonaxe = 8,
 		/obj/item/melee/unarmed/powerfist = 4,
 		/obj/item/twohanded/sledgehammer/supersledge = 4,
 		/obj/item/twohanded/sledgehammer/rockethammer = 4,
@@ -470,11 +478,6 @@
 		/obj/item/gun/energy/ionrifle/carbine = 10,
 		/obj/item/gun/energy/laser/tg/rifle = 4,
 		/obj/item/gun/energy/laser/solar = 4,
-		/obj/item/gun/magic/wand/kelpmagic/firebolt = 1,
-		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
-		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 1,
-		/obj/item/gun/magic/wand/kelpmagic/sparky = 1,
-		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 1,
 		/obj/item/gun/energy/laser/tg/recharger/nuclear = 1,
 	)
 
@@ -497,9 +500,6 @@
 		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 1,
 		/obj/item/gun/energy/laser/LaserAK/worn = 1,
 		/obj/item/gun/energy/laser/ultra_rifle = 1,
-		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
-		/obj/item/gun/magic/staff/kelpmagic/lightning = 1,
-		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
 	)
 
 
