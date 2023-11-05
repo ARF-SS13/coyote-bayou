@@ -20564,6 +20564,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
+"pYN" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill";
+	dir = 6
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland/nash)
 "pYQ" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -24488,6 +24496,13 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"sWL" = (
+/obj/effect/turf_decal/trimline/neutral{
+	icon_state = "trimline_fill"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_wide,
+/area/f13/wasteland/nash)
 "sWX" = (
 /obj/structure/decoration/clock/old/active,
 /turf/closed/wall/f13/store,
@@ -36501,9 +36516,9 @@ ubl
 ubl
 gcS
 uzE
-xFm
-gtb
-vSo
+hHi
+qqx
+oeP
 qnC
 qnC
 qnC
@@ -36758,9 +36773,9 @@ gxv
 koZ
 gxv
 fNt
-oeP
-qnC
-qnC
+hHi
+hHi
+sWL
 qnC
 qnC
 qnC
@@ -37015,9 +37030,9 @@ srv
 fNt
 fNt
 wIz
+hHi
+hHi
 oeP
-qnC
-qnC
 qnC
 qnC
 qnC
@@ -37272,9 +37287,9 @@ oqk
 hHi
 hHi
 qqx
+hHi
+hHi
 oeP
-qnC
-qnC
 qnC
 qnC
 qnC
@@ -37529,9 +37544,9 @@ qlL
 qqx
 hHi
 hHi
-oeP
-qnC
-qnC
+hHi
+qqx
+sWL
 qnC
 qnC
 qnC
@@ -37786,9 +37801,9 @@ hHi
 oqk
 oqk
 hHi
+hHi
+qqx
 oeP
-qnC
-qnC
 qnC
 qnC
 qnC
@@ -38043,9 +38058,9 @@ qlL
 hHi
 hHi
 hHi
+hHi
+hHi
 oeP
-qnC
-qnC
 qnC
 qnC
 qnC
@@ -38300,9 +38315,9 @@ pRA
 pRA
 gtb
 gtb
-vSo
-qnC
-qnC
+gtb
+gtb
+pYN
 qnC
 qnC
 qnC
