@@ -259,6 +259,24 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/scraparmor
+	name = "slim scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrap
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapalt
+	name = "scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapalt
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapmedium
+	name = "heavy scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapheavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk

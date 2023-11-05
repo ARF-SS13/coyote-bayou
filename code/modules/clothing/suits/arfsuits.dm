@@ -2025,12 +2025,37 @@
 
 /obj/item/clothing/suit/armor/light/leather/rig
 	name = "chest gear harness"
-	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt with enough room for four small items."
+	desc = "A handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt with enough room for four small items."
 	icon_state = "r_gear_rig"
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_DT_T1)
+
+/obj/item/clothing/suit/armor/light/leather/scrap
+	name = "slim scrap armor"
+	desc = "A series of leather straps criss-crossing the body paired with stragetically placed leather and scrap plates. It looks like it'd provide okay protection against lighter strikes."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	icon_state = "slimscrap"
+	item_state = "slimscrap"
+
+/obj/item/clothing/suit/armor/light/leather/scrapalt
+	name = "scrap armor"
+	desc = "A series of leather straps criss-crossing the body paired with liberally placed leather and scrap plates. It looks like it'd stop small bullets and bludgeons, at least."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+	icon_state = "scrap"
+	item_state = "scrap"
+
+/obj/item/clothing/suit/armor/light/leather/scrapheavy // not actually heavy armor
+	name = "heavy scrap armor"
+	desc = "A liberal amount of scrap and leather tied together to cover the body. Not actually all that heavy; lasers will burn right through it, but it otherwise offers decent all-around protection."
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+	icon_state = "scrapheavy"
+	item_state = "scrapheavy"
 
 //-->Taur armored saddles
 //the main gimmick about taur saddles is that obviously only taurs can equip it
@@ -4949,7 +4974,7 @@
 	icon_state = "infiltrator"
 	item_state = "infiltrator"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
-	
+
 /obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
 	name = "contractor combat suit"
 	desc = "An suspicious looking combat suit designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
