@@ -150,6 +150,21 @@
 	path = /obj/item/clothing/under/f13/bodyguard
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
+/datum/gear/uniform/marauder
+	name = "marauder outfit"
+	path = /obj/item/clothing/under/f13/borderlands/marauder
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/bloodshot
+	name = "bloodshot outfit"
+	path = /obj/item/clothing/under/f13/borderlands/bloodshot
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/psycho
+	name = "psycho outfit"
+	path = /obj/item/clothing/under/f13/borderlands/psycho
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
 /datum/gear/uniform/cowboy
 	name = "cowboy outfit, brown"
 	path = /obj/item/clothing/under/f13/cowboyb
