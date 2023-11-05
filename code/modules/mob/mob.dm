@@ -1384,7 +1384,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Look like you need their help.",
 	"Grab their arm.",
 	"Pull their hair.",
-	"Grab their belt."
+	"Grab their belt.",
+	"Whine needily.",
+	"Tongue in cheek.",
+	"Mouth an object.",
+	"Play with your nipples openly.",
+	"Play with your nipples sneakily.",
+	"Draw attention to your breasts.",
+	"Fold your arms under your breasts.",
+	"Squish your breasts together.",
 	)
 
 	var/choice = input(FLIRT_HEADER_TEXT) as null|anything in choices
@@ -1409,7 +1417,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("Check them out.",)
 			to_chat(A, span_notice("[src] is maybe trying to <span class='love'>check you out?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
-			to_chat(user, "You really check [A] out, maybe you should make a small emote for it to?")
+			to_chat(user, "You really check [A] out, maybe you should make a small emote for it too?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Blush at them.")
@@ -1681,7 +1689,47 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			to_chat(user, "You try to pull [A]\'s to you by the belt or pants, hopefully they pay attention.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
+//Coyote pass 4
 
+		if("Squish your breasts together.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention with their cleavage.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention to you by making your cleavage super obvious, hopefully they pay attention.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Fold your arms under your breasts.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by framing their cleavage with an arm under it.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention to you by making your cleavage super obvious, hopefully they pay attention.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Draw attention to your breasts.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by doing something with their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention to you breasts super obvious.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Play with your nipples sneakily.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by playing with their nipples sneakily.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention by playing with your own nipples sneakily.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Play with your nipples openly.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by playing with their nipples openly.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention by playing with your own nipples openly.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Mouth an object.")
+			to_chat(A, span_notice("[src] is trying to <span class='love'>grab your attention by mouthing an object.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention by mouthing an object, maybe you should clarify what that object is?")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Tongue in cheek.")
+			to_chat(A, span_notice("[src] is trying to make you notice when they <span class='love'>press their tongue into their cheek coyly.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention by pretending to perform oral.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Whine needily.")
+			to_chat(A, span_notice("[src] is trying to make you notice when they <span class='love'>whine needily at them.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "You try to pull [A]\'s attention by whining like a bitch in heat.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 			return
 
 
