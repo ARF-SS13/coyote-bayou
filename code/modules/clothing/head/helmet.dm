@@ -774,6 +774,7 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	icon_state = "banditmask"
 	item_state = "banditmask"
+	flags_inv = HIDESNOUT
 	armor_list = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/blpsycho
@@ -783,6 +784,7 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	icon_state = "banditmask"
 	item_state = "banditmask"
+	flags_inv = HIDESNOUT
 	armor_list = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/borderlandshelm
