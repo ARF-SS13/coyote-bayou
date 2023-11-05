@@ -17069,15 +17069,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/abandoned)
 "bgo" = (
-/obj/structure/table/wood/bar{
-	pixel_y = -10
-	},
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 4;
 	pixel_y = 0;
 	pixel_x = -20
 	},
 /obj/item/reagent_containers/glass/rag,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -30411,15 +30409,13 @@
 	},
 /area/f13/wasteland)
 "dtx" = (
-/obj/structure/table/wood/bar{
-	pixel_y = -10
-	},
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 4;
 	pixel_y = 0;
 	pixel_x = -20
 	},
 /obj/item/reagent_containers/food/drinks/shaker,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -48538,26 +48534,30 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/nash)
 "hwD" = (
-/obj/structure/table/wood/bar{
-	pixel_y = -10
-	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -8;
+	pixel_y = 17;
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 7
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 8
+	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_x = 8;
-	pixel_y = -8
+	pixel_y = 2
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = -8
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 15
+	},
+/obj/structure/table/wood/bar{
+	pixel_y = 0
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -90283,15 +90283,12 @@
 /turf/open/floor/carpet,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "qCf" = (
-/obj/structure/table/wood/bar{
-	density = 0;
-	pixel_y = -10
-	},
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = -16
 	},
 /obj/item/storage/box/drinkingglasses,
+/obj/structure/table/wood/bar,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -93471,9 +93468,6 @@
 /obj/machinery/chem_master/condimaster{
 	pixel_y = -8;
 	density = 0
-	},
-/obj/structure/table/wood/bar{
-	pixel_y = -10
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -102035,7 +102029,6 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "tgI" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/landmark/party{
 	region = "Nash's bar"
@@ -116868,6 +116861,12 @@
 	pixel_y = 31
 	},
 /obj/structure/table/plasmaglass,
+/obj/structure/fence/pole_b{
+	pixel_y = 7
+	},
+/obj/structure/fence/pole_t{
+	pixel_y = 36
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/bar/heaven)
 "wxF" = (
@@ -130217,7 +130216,7 @@ tqM
 szs
 lgk
 xzi
-szs
+tgI
 lgk
 lbQ
 mkb
@@ -130474,7 +130473,7 @@ mkb
 mkb
 voG
 hNz
-tgI
+ftP
 voG
 esN
 mkb
@@ -132024,9 +132023,9 @@ nFA
 oLd
 oLd
 oLd
+oLd
 nFA
 uDD
-nFA
 ksL
 txF
 txF
