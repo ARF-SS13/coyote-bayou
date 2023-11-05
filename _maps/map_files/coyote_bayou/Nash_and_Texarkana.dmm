@@ -108132,11 +108132,10 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/obj/machinery/vending/kink{
-	pixel_y = 7;
-	pixel_x = -1
-	},
 /obj/effect/decal/cleanable/glitter/pink,
+/obj/structure/chair/stool/retro/backed{
+	dir = 1
+	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
 "uyp" = (
@@ -117645,6 +117644,19 @@
 "wFg" = (
 /turf/closed/wall/f13/supermart,
 /area/f13/caves)
+"wFi" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/obj/machinery/vending/kink{
+	pixel_y = -1;
+	pixel_x = -1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar/heaven)
 "wFj" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing{
@@ -121788,8 +121800,8 @@
 	layer = 4;
 	pixel_y = -2
 	},
-/obj/item/twohanded/required/kirbyplants/random,
 /obj/effect/decal/cleanable/glitter/pink,
+/obj/structure/chair/stool/retro/backed,
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
 "xBk" = (
@@ -134361,7 +134373,7 @@ bay
 bbG
 lfd
 cjB
-jqu
+pMK
 lTy
 pMK
 mWY
@@ -134623,7 +134635,7 @@ hbN
 pwM
 pwM
 vhc
-lTy
+wFi
 jqu
 wmE
 fSc
