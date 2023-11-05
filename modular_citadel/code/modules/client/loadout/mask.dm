@@ -71,6 +71,11 @@
 	name= "gas mask"
 	path = /obj/item/clothing/mask/gas
 
+/datum/gear/mask/gasmask
+	name = "voice changing mask"
+	path = /obj/item/clothing/mask/chameleon
+	cost = 1
+
 /// Bandanas ///
 
 /datum/gear/mask/bandana/
