@@ -1184,9 +1184,9 @@
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/smytheguy
-	name = "ARG Research group kit"
+	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
-	ckeywhitelist = list("smytheguy")
+	ckeywhitelist = list("Smytheguy")
 
 /obj/item/storage/box/large/custom_kit/smytheguy/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
