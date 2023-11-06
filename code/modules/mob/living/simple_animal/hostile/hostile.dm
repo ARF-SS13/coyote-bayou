@@ -730,12 +730,29 @@
 		return ..()
 
 /mob/living/simple_animal/hostile/proc/dodge(moving_to,move_direction)
-	//Assuming we move towards the targette we want to swerve toward them to get closer
-	var/cdir = turn(move_direction,45)
-	var/ccdir = turn(move_direction,-45)
+	// Assuming we move towards the target, we want to swerve toward them to get closer
+	var/cdir = turn(move_direction,90)
+	var/ccdir = turn(move_direction,-90)
 	dodging = FALSE
-	. = Move(get_step(loc,pick(cdir,ccdir)))
-	if(!.)//Can't dodge there so we just carry on
+	var/next_step_dir = pick(cdir,ccdir)
+	// Check if the direction is diagonal
+	if(next_step_dir % 2 != 0) // Diagonal directions are odd numbers in BYOND
+		return Move(moving_to,move_direction)
+	var/turf/next_step = get_step(loc,next_step_dir)
+	// Check if the next step is occupied by another mob or a wall
+	if(is_blocked_turf(next_step) || CanSmashTurfs(next_step)) {
+		. = Move(next_step)
+		if(.) {
+			visible_message("<span class='notice'>[src] dodges!</span>")
+			playsound(loc, 'sound/effects/rustle3.ogg', 50, 1, -1)
+		} else {
+			// Apply stamina damage if the mob tried to dodge into a wall
+			adjustStaminaLoss(10)
+			visible_message("<span class='notice'>[src] tries to dodge but hits a wall!</span>")
+			playsound(loc, 'sound/effects/hit_punch.ogg', 50, 1, -1) // Play a punch sound
+		}
+	}
+	if(!.) // Can't dodge there so we just carry on
 		. =  Move(moving_to,move_direction)
 	dodging = TRUE
 
