@@ -197,7 +197,7 @@
 	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-a
+
 /datum/gear/suit/ninja
 	name = "Ninja Suit"
 	path = /obj/item/clothing/suit/armor/light/leather/ninja
