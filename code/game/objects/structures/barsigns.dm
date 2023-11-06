@@ -291,6 +291,16 @@
 	icon = "thehive"
 	desc = "Comb in for some sweet drinks! Not known for serving any sappy drink."
 
+/datum/barsign/mothroach
+	name = "Moth Roach"
+	icon = "mothroach"
+	desc = "Adorable Cuteness!"
+
+/datum/barsign/thesun
+	name = "The Sun"
+	icon = "sun"
+	desc = "This diner is sure to shine bright!"
+
 /datum/barsign/hiddensigns
 	hidden = TRUE
 
