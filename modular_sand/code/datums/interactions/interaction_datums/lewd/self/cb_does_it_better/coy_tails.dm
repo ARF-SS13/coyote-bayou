@@ -147,7 +147,7 @@
 ////////////////////
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/givingbites_tail
-	description = "Partner/Tail -bites their tail."
+	description = "Partner/Tail - Bite their tail."
 	require_user_hands = TRUE
 	interaction_sound = null
 	max_distance = 1
