@@ -1337,7 +1337,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/automatic/pistol/ticon(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
-	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
