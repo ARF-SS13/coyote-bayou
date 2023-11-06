@@ -75,3 +75,12 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
 
+/obj/item/ammo_box/magazine/internal/gewehrinternal
+	name = "magazine filled with 5mm."
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 15
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
