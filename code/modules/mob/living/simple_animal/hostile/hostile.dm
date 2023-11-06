@@ -369,6 +369,31 @@
 /mob/living/simple_animal/hostile/proc/Found(atom/A)//This is here as a potential override to pick a specific targette if available
 	return
 
+/mob/living/simple_animal/hostile/CanAttack(atom/the_target)//Can we actually attack a possible targette?
+	if(!the_target || the_target.type == /atom/movable/lighting_object || isturf(the_target)) // bail out on invalids
+		return FALSE
+
+	if(ismob(the_target)) //Target is in godmode, ignore it.
+		var/mob/M = the_target
+		if(M.status_flags & GODMODE)
+			return FALSE
+
+	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
+		return FALSE
+	if(search_objects < 2)
+		if(isliving(the_target))
+			var/mob/living/L = the_target
+			var/atom/origin = get_origin()
+			var/target_dist = get_dist(origin, L)
+			if(target_dist <= 20) // Check if the target is within 20 tiles
+				if(SEND_SIGNAL(L, COMSIG_HOSTILE_CHECK_FACTION, src) == SIMPLEMOB_IGNORE)
+					return FALSE
+				var/faction_check = !(L in foes) && faction_check_mob(L)
+				if(robust_searching)
+					if(faction_check && !attack_same)
+						return FALSE
+	return TRUE
+
 /mob/living/simple_animal/hostile/proc/PickTarget(list/Targets)//Step 3, pick amongst the possible, attackable targets
 	var/atom/my_target = get_target()
 	if(my_target != null)//If we already have a targette, but are told to pick again, calculate the lowest distance between all possible, and pick from the lowest distance targets
