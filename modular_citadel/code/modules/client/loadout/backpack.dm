@@ -676,7 +676,7 @@
 	name = "Faded ID card"
 	path = /obj/item/card/id/rusted/fadedvaultid
 	cost = 0
-
+/* Since everyone starts with one
 /datum/gear/backpack/pipboy
 	name = "Pipboy"
 	path = /obj/item/pda
@@ -691,7 +691,7 @@
 	name = "headset"
 	path = /obj/item/radio/headset
 	cost = 1
-
+*/
 /datum/gear/backpack/twocolorcollar
 	name = "Two Color Lockable Leather Collar"
 	path = /obj/item/clothing/neck/petcollar/choker

@@ -153,7 +153,8 @@
 	var/stambuffer = 20
 	var/stambufferregentime
 
-	//Sprint buffer---
+	//Sprint buffer
+	/// This is overwritten by SPRINT_BUFFER_MAX in game_options.txt 
 	var/sprint_buffer = 43					//Tiles
 	var/sprint_buffer_max = 43
 	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond

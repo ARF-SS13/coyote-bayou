@@ -65,3 +65,13 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/grenadeshotgun
+	name = "magazine filled with 40mm mike-mikes ouch ouchs"
+	ammo_type = /obj/item/ammo_casing/a40mm/buck
+	caliber = list(CALIBER_40MM)
+	max_ammo = 8
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+

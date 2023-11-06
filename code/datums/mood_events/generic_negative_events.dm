@@ -111,10 +111,17 @@
 /datum/mood_event/nyctophobia
 	description = span_warning("It sure is dark around here...")
 	mood_change = -5
+	timeout = 30 SECONDS
 
 /datum/mood_event/brightlight
 	description = span_warning("The light feels unbearable...")
 	mood_change = -5
+	timeout = 30 SECONDS
+
+/datum/mood_event/phobia
+	description = span_warning("That really terrified me!")
+	mood_change = -5
+	timeout = 30 SECONDS
 
 /datum/mood_event/family_heirloom_missing
 	description = span_warning("I'm missing my family heirloom...")

@@ -208,6 +208,8 @@
 	I.gun_loc_tag = GUN_UNDERBARREL
 	I.prefix = "laser-guided"
 
+
+
 //Fits onto generally small tools that require precision, especially surgical tools
 //Doesn't work onlarger things like crowbars and drills
 /obj/item/tool_upgrade/refinement/stabilized_grip

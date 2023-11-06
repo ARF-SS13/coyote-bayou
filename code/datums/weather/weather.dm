@@ -15,6 +15,8 @@
 
 	/// The message displayed in chat to foreshadow the weather's beginning
 	var/telegraph_message = span_warning("The wind begins to pick up.")
+	/// The message displayed in chat to foreshadow the weather's beginning. If this is set, overrides telegraph_message
+	var/list/telegraph_message_list = list()
 
 	/// In deciseconds, how long from the beginning of the telegraph until the weather begins
 	var/telegraph_duration = 300
@@ -24,6 +26,8 @@
 	var/telegraph_overlay
 	/// Displayed in chat once the weather begins in earnest
 	var/weather_message = span_userdanger("The wind begins to blow ferociously!")
+	/// Displayed in chat once the weather begins in earnest. If this is set, overrides weather_message
+	var/list/weather_message_list = list()
 	///In deciseconds, how long the weather lasts once it begins
 	var/weather_duration = 1200
 	///See above - this is the lowest possible duration
@@ -39,6 +43,8 @@
 
 	/// Displayed once the weather is over
 	var/end_message = span_danger("The wind relents its assault.")
+	///  Displayed once the weather is over. If this is set, overrides end_message
+	var/end_message_list = list()
 	/// In deciseconds, how long the "wind-down" graphic will appear before vanishing entirely
 	var/end_duration = 300
 	/// Sound that plays while weather is ending
@@ -141,7 +147,10 @@
 	weather_duration = rand(weather_duration_lower, weather_duration_upper)
 	START_PROCESSING(SSweather, src) //The reason this doesn't start and stop at main stage is because processing list is also used to see active running weathers (for example, you wouldn't want two ash storms starting at once.)
 	update_areas()
-	alert_players(telegraph_message, telegraph_sound)
+	if(LAZYLEN(telegraph_message_list))
+		alert_players(pick(telegraph_message_list), telegraph_sound)
+	else
+		alert_players(telegraph_message, telegraph_sound)
 	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
 
 /**
@@ -156,7 +165,10 @@
 		return
 	stage = MAIN_STAGE
 	update_areas()
-	alert_players(weather_message, weather_sound)
+	if(LAZYLEN(weather_message_list))
+		alert_players(pick(weather_message_list), weather_sound)	
+	else
+		alert_players(weather_message, weather_sound)
 	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
 	sound_ao?.start()
 	sound_ai?.start()
@@ -175,7 +187,10 @@
 		return
 	stage = WIND_DOWN_STAGE
 	update_areas()
-	alert_players(end_message, end_sound)
+	if(LAZYLEN(end_message_list))
+		alert_players(pick(end_message_list), end_sound)
+	else
+		alert_players(end_message, end_sound)
 	addtimer(CALLBACK(src, .proc/end), end_duration)
 
 /datum/weather/proc/alert_players(message, sound_play)

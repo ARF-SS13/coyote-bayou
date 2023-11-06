@@ -341,7 +341,9 @@
 #define TRAIT_WHITE_WOMAN "peanutbutter-difficulties"
 #define TRAIT_AUTOBREW "autobrewery-syndrome"
 #define TRAIT_ZOOMIES "zoomies"
+#define ZOOMIES_STAM_MULT 0.75
 #define TRAIT_SUPER_ZOOMIES "super zoomies"
+#define SUPER_ZOOMIES_STAM_MULT 0.5
 #define TRAIT_ENDLESS_RUNNER "endless_runner"
 #define TRAIT_PANICKED_ATTACKER "panicked_attacker"
 #define TRAIT_NOHIDEFACE "no hide face"

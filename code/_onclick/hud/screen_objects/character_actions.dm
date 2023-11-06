@@ -67,3 +67,23 @@
 	if(isliving(usr))
 		var/mob/living/L = usr
 		L.toggle_mob_sleep()
+
+/atom/movable/screen/aooc_hud_button
+	name = "AOOC"
+	icon_state = "aooc"
+	screen_loc = ui_character_actions
+
+/atom/movable/screen/aooc_hud_button/Click(location,control,params)
+	if(usr.client)
+		var/msg = input(usr, "AOOC Message", "AOOC", null)
+		usr.client.aooc(msg)
+
+/atom/movable/screen/newbie_hud_button
+	name = "Help/Newbie"
+	icon_state = "newbie"
+	screen_loc = ui_character_actions
+
+/atom/movable/screen/newbie_hud_button/Click(location,control,params)
+	if(usr.client)
+		var/msg = input(usr, "Help/Newbie Message", "Help/Newbie", null)
+		usr.client.newbie(msg)

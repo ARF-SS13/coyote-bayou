@@ -59,7 +59,10 @@ SUBSYSTEM_DEF(traumas)
 
 	phobia_mobs = list(
 		"spiders"  = typecacheof(list(
-			/mob/living/simple_animal/hostile/poison/giant_spider)
+			/mob/living/simple_animal/hostile/poison/giant_spider,
+			/mob/living/simple_animal/hostile/mirelurk,
+			/mob/living/simple_animal/hostile/radscorpion,
+			/mob/living/simple_animal/hostile/bloatfly)
 			),
 
 		"security" = typecacheof(list(
@@ -68,7 +71,11 @@ SUBSYSTEM_DEF(traumas)
 			),
 
 		"lizards"  = typecacheof(list(
-			/mob/living/simple_animal/hostile/lizard)
+			/mob/living/simple_animal/hostile/lizard,
+			/mob/living/simple_animal/hostile/gecko,
+			/mob/living/simple_animal/hostile/stalker,
+			/mob/living/simple_animal/hostile/stalkeryoung
+			)
 			),
 
 		"skeletons" = typecacheof(list(
@@ -76,7 +83,9 @@ SUBSYSTEM_DEF(traumas)
 			),
 
 		"snakes"   = typecacheof(list(
-			/mob/living/simple_animal/hostile/retaliate/poison/snake)
+			/mob/living/simple_animal/hostile/retaliate/poison/snake,
+			/mob/living/simple_animal/hostile/stalker,
+			/mob/living/simple_animal/hostile/stalkeryoung)
 			),
 
 		"robots"   = typecacheof(list(
@@ -117,14 +126,17 @@ SUBSYSTEM_DEF(traumas)
 			/mob/living/simple_animal/parrot,
 			/mob/living/simple_animal/chick,
 			/mob/living/simple_animal/chicken,
-			/mob/living/simple_animal/pet/penguin,)
+			/mob/living/simple_animal/pet/penguin,
+			/mob/living/simple_animal/bird)
 			),
 		
 		"dogs" = typecacheof(list(
 			/mob/living/simple_animal/pet/dog,
 			/mob/living/simple_animal/hostile/stickman/dog,
 			/mob/living/simple_animal/pet/wolf,
-			/mob/living/simple_animal/hostile/wolf)
+			/mob/living/simple_animal/hostile/wolf,
+			/mob/living/simple_animal/hostile/stalker,
+			/mob/living/simple_animal/hostile/stalkeryoung)
 			),
 
 		"anime" = typecacheof(list(

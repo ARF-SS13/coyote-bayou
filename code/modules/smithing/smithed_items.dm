@@ -1,3 +1,18 @@
+/// Adds force to an item and updates the force_bonus variable
+/obj/item/proc/AddForce(forcetoadd, doforce = TRUE, dowielded = TRUE, dounwielded = TRUE, dothrowforce = FALSE)
+	if(!forcetoadd || !isnum(forcetoadd))
+		return
+	if(doforce)
+		force += forcetoadd
+		force_bonus += forcetoadd
+	if(dowielded)
+		force_wielded += forcetoadd
+	if(dounwielded)
+		force_unwielded += forcetoadd
+	if(dothrowforce)
+		throwforce += forcetoadd
+		throwforce_bonus += forcetoadd
+
 /obj/item/smithing
 	name = "base class /obj/item/smithing"
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
@@ -252,7 +267,7 @@
 
 /obj/item/smithing/hammerhead/startmasterworkfinish()
 	var/obj/item/melee/smith/hammer/finalforreal = new /obj/item/melee/smith/hammer(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalitem = finalforreal
 	..()
 
@@ -272,7 +287,7 @@
 
 /obj/item/smithing/shovelhead/startmasterworkfinish()
 	finalitem = new /obj/item/shovel/smithed(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	finalitem.toolspeed = 0.1
 	..()
 
@@ -353,7 +368,7 @@
 
 /obj/item/smithing/crowbar/startmasterworkfinish()
 	var/obj/item/crowbar/smithed/finalforreal = new /obj/item/crowbar/smithed(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalforreal.toolspeed = 0.1
 	finalitem = finalforreal
 	..()
@@ -374,7 +389,7 @@
 
 /obj/item/smithing/unitool/startmasterworkfinish()
 	var/obj/item/crowbar/smithedunitool/finalforreal = new /obj/item/crowbar/smithedunitool(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalitem = finalforreal
 	..()
 
@@ -404,7 +419,7 @@
 /obj/item/smithing/knifeblade/startmasterworkfinish()
 	var/obj/item/smithing/knifeblade/finalforreal = new /obj/item/smithing/knifeblade(src)
 	finalitem = new /obj/item/kitchen/knife(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalitem = finalforreal
 	finalitem.icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	finalitem.icon_state = "knife_smith"
@@ -501,7 +516,7 @@
 /obj/item/smithing/ballandchain/startmasterworkfinish()
 	var/obj/item/smithing/ballandchain/finalforreal = new /obj/item/clothing/shoes/ballandchain(src)
 	finalitem = new /obj/item/clothing/shoes/ballandchain(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalitem.slowdown += 5
 	finalitem = finalforreal
 	finalitem.icon = 'code/modules/smithing/icons/blacksmith.dmi'
@@ -530,7 +545,7 @@
 
 /obj/item/smithing/swordblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/sword(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/sabreblade
@@ -547,7 +562,7 @@
 
 /obj/item/smithing/sabreblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/sword/sabre(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/spathablade
@@ -563,7 +578,7 @@
 
 /obj/item/smithing/spathablade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/sword/spatha(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/daggerblade
@@ -580,7 +595,7 @@
 
 /obj/item/smithing/daggerblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/dagger(src)
-	finalitem.force += 5 
+	finalitem.AddForce(5) 
 	..()
 
 /obj/item/smithing/macheteblade
@@ -596,7 +611,7 @@
 
 /obj/item/smithing/macheteblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/machete(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/gladiusblade
@@ -612,7 +627,7 @@
 
 /obj/item/smithing/gladiusblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/machete/gladius(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/macheterblade
@@ -628,7 +643,7 @@
 
 /obj/item/smithing/macheterblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/machete/reforged(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/macehead
@@ -645,7 +660,7 @@
 
 /obj/item/smithing/macehead/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/mace(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/wakiblade
@@ -661,7 +676,7 @@
 
 /obj/item/smithing/wakiblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/wakizashi(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/sawblade
@@ -677,7 +692,7 @@
 
 /obj/item/smithing/sawblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/saw(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/bowieblade
@@ -693,7 +708,7 @@
 
 /obj/item/smithing/bowieblade/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/dagger/bowie(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/unarmed/knuckles
@@ -709,7 +724,7 @@
 
 /obj/item/smithing/unarmed/knuckles/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/unarmed/knuckles(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 /obj/item/smithing/unarmed/claws
@@ -725,7 +740,7 @@
 
 /obj/item/smithing/unarmed/claws/startmasterworkfinish()
 	finalitem = new /obj/item/melee/smith/unarmed/claws(src)
-	finalitem.force += 5
+	finalitem.AddForce(5)
 	..()
 
 ////////////
@@ -769,7 +784,7 @@
 
 /obj/item/smithing/lancehead/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
@@ -790,7 +805,7 @@
 
 /obj/item/smithing/tridenthead/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/spear/trident/finalforreal = new /obj/item/melee/smith/twohand/spear/trident(src)
-	finalforreal.force += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
@@ -811,9 +826,7 @@
 
 /obj/item/smithing/axehead/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -832,9 +845,7 @@
 
 /obj/item/smithing/warhonedhead/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -854,9 +865,7 @@
 
 /obj/item/smithing/scrapblade/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/axe/scrapblade/finalforreal = new /obj/item/melee/smith/twohand/axe/scrapblade(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -877,9 +886,7 @@
 
 /obj/item/smithing/katanablade/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/katana/finalforreal = new /obj/item/melee/smith/twohand/katana(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -898,9 +905,7 @@
 
 /obj/item/smithing/crusherhead/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/axe/crusher/finalforreal = new /obj/item/melee/smith/twohand/axe/crusher(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -920,9 +925,7 @@
 
 /obj/item/smithing/longswordblade/startmasterworkfinish()
 	var/obj/item/melee/smith/twohand/longsword/finalforreal = new /obj/item/melee/smith/twohand/longsword(src)
-	finalforreal.force += 5
-	finalforreal.force_wielded += 5
-	finalforreal.force_unwielded += 5
+	finalforreal.AddForce(5)
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
@@ -943,8 +946,7 @@
 
 /obj/item/smithing/javelinhead/startmasterworkfinish()
 	var/obj/item/melee/smith/javelin/finalforreal = new /obj/item/melee/smith/javelin(src)
-	finalforreal.force += 5
-	finalforreal.throwforce += 5
+	finalforreal.AddForce(5,dothrowforce=TRUE)
 	finalitem = finalforreal
 	..()
 
@@ -965,9 +967,6 @@
 
 /obj/item/smithing/throwingknife/startmasterworkfinish()
 	var/obj/item/melee/smith/throwingknife/finalforreal = new /obj/item/melee/smith/throwingknife(src)
-	finalforreal.force += 5
-	finalforreal.throwforce += 5
+	finalforreal.AddForce(5,dothrowforce=TRUE)
 	finalitem = finalforreal
 	..()
-
-

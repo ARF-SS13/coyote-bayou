@@ -1558,10 +1558,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/deadeye
 	name = "Dead Eye"
-	desc = "You hit the shots you aim. No ifs, ands, or buts."
+	desc = "When you hit your target, you frequently hit your target's vital points more often than not."
 	value = 65
 	category = "Ranged Quirks"
-	mechanics = "Your accuracy never degrades from movement, firing, or anything else."
+	mechanics = "You have advantage on all random ranged damage rolls. (roll twice and take the highest)"
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/straightshooter,
@@ -1819,7 +1819,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Justt don't run into things."
 	value = 14
 	category = "Movement Quirks"
-	mechanics = "Your stamina goes down slower when sprinting. Just don't run into anything or it will hurt more than normal."
+	mechanics = "You use 25% less stamina while sprinting! Just don't run into anything or it will hurt more than normal."
 	conflicts = list(
 		/datum/quirk/cantrun,
 		/datum/quirk/super_zoomies,
@@ -1834,7 +1834,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "Frenetic energy, densified leg-muscles, or cyber-organs, you can sprint way longer than most folk. Just... REALLY don't run into things. Seriously."
 	value = 28
 	category = "Movement Quirks"
-	mechanics = "Your stamina barely goes down when sprinting. Seriously, though, be careful running into things, it could break your back."
+	mechanics = "You use 50% less stamina while sprinting! Seriously, though, be careful running into things, it could break your back."
 	conflicts = list(
 		/datum/quirk/cantrun,
 		/datum/quirk/zoomies,

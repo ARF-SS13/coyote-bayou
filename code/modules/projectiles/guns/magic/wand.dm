@@ -233,9 +233,9 @@
 	name = "template projectile"
 	icon_state = "arcane_barrage"
 	damage = 0
-	damage_type = BURN
 	nodamage = 0
-	flag = "magic"
+	damage_type = BURN // Determines the health damage type; BRUTE, BURN, OXY, TOX.
+	flag = "magic"  // "magic" ignores all armor, "laser" checks laser, "bullet" is bullet, "energy" is plasma
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	recoil = BULLET_RECOIL_LASER
@@ -263,7 +263,7 @@
 	damage_low = 10
 	damage_high = 30
 	damage_type = BURN
-	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+	flag = "laser"
 
 /****************/
 //Improvised Zapper//

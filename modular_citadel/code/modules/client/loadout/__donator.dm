@@ -734,7 +734,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
 	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
 	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
-	new /obj/item/gun/energy/laser/LaserAK/worn(src)
+	new /obj/item/gun/energy/laser/LaserAK/jaggi(src)
 
 
 /datum/gear/donator/kits/jaggachi_7
@@ -1167,8 +1167,8 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
-	new /obj/item/clothing/suit/armor/warhammertox(src)
-	new /obj/item/clothing/head/toxbattlehelmet(src)
+	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
@@ -1183,16 +1183,39 @@
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
+/datum/gear/donator/kits/smytheguy
+	name = "ARG Research group kit"
+	path = /obj/item/storage/box/large/custom_kit/smytheguy
+	ckeywhitelist = list("smytheguy")
+
+/obj/item/storage/box/large/custom_kit/smytheguy/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
+	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
+	new /obj/item/clothing/head/droptrooper/arghelmet(src)
+	new /obj/item/clothing/head/droptrooper/arghelmet/two(src)
+
+//Tox note: Despite the other not being in the S location, it helps me for sake of memory and ease of access. Thanks for reading oo woo.
+/datum/gear/donator/kits/rhody
+	name = "ARG Research group kit"
+	path = /obj/item/storage/box/large/custom_kit/rhody
+	ckeywhitelist = list("rhody")
+
+/obj/item/storage/box/large/custom_kit/rhody/PopulateContents()
+	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
+	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
+	new /obj/item/clothing/head/droptrooper/arghelmet(src)
+	new /obj/item/clothing/head/droptrooper/arghelmet/two(src)
+
 /datum/gear/donator/kits/seermankhajiit003
 	name = "The Latos Agent OG"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit003
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/ammo_box/a556(src)
+	new /obj/item/ammo_box/needlercapsule(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1custom (src)
+	new /obj/item/gun/ballistic/automatic/needlerrifle/tox(src)
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 

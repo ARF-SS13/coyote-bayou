@@ -1333,7 +1333,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 					target.visible_message(span_warning("[target] can't hang onto [src]!"))
 					return
 				if(dna.features["taur"] != "None")  //if the mount is a taur, then everyone needs -1 hands to piggback ride.
-					buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)
+					if(istype(get_item_by_slot(SLOT_WEAR_SUIT), /obj/item/clothing/suit/armor/taursaddle))  //if the mount is wearing a saddle, then there's no need to use hands at all
+						buckle_mob(target, TRUE, TRUE, FALSE, 0, 0, FALSE)
+					else
+						buckle_mob(target, TRUE, TRUE, FALSE, 0, 1, FALSE)
 				else
 					buckle_mob(target, TRUE, TRUE, FALSE, 1, 2, FALSE)
 		else

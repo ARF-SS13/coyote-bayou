@@ -629,8 +629,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_CARBINE
-	w_class = WEIGHT_CLASS_BULKY // Kelp here - the gun is extremely rare and even with the 50rnd magazine it's considered outclassed. This makes it a good, if unwieldy, secondary or holdout gun. Will let it cook and see if it needs removed.
-	weapon_weight = GUN_ONE_HAND_AKIMBO
+	w_class = WEIGHT_CLASS_NORMAL // Kelp again, it's Normal once more but no more akimbo. Please actually edit relevant comments when you tweak pls.
+	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -689,7 +689,7 @@
 	disallowed_mags = list (/obj/item/ammo_box/magazine/m9mm/doublestack,/obj/item/ammo_box/magazine/m9mm/doublestack/empty , /obj/item/ammo_box/magazine/uzim9mm/rockwell )
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 	init_recoil = AUTORIFLE_RECOIL(1.2 , 1.2)
 	init_firemodes = list(
@@ -2061,7 +2061,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1, 1)
 	init_firemodes = list(
@@ -2379,7 +2379,7 @@
 /// M5A1 Assault rifle////
 /////////////////////////
 
-/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1
+/obj/item/gun/ballistic/automatic/assault_carbine/m5a1
 	name = "M5A1 rifle"
 	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It takes only extended magazines of 5.56 but makes up for such a odd ordeal with an increased fire rate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2387,48 +2387,90 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "m5a1"
 	item_state = "m5a1"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/semi_auto
-	)
-	can_scope = FALSE
-	can_suppress = FALSE
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-	reskinnable_component = null
-
-/obj/item/gun/ballistic/automatic/assault_carbine/m5a1custom
-	name = "M5A1 'The Silence' rifle"
-	desc = "A customized M5A1 assault rifle. Manufactured by Leo Armaments, this rifle seems to be customized. It is chambered in 5.56x45 NATO, comes with a built in ammo counter, and comes in a bullpup configuration. The assault rifle comes with a HUD-Link or aptly named HUDL that allows the user to procure a scope like reticule from any HUDL capable helmet. It seems to be engraved with baroque motiffs and on the cheek rest is the scene of a smiling moth. A name is engraved onto the top section of the rifle which is aptly enscribed as 'Tox Mckit'."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "m5a1"
-	item_state = "m5a1"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm75,
+		/datum/firemode/automatic/rpm100,
 		/datum/firemode/semi_auto
 	)
-	can_scope = FALSE
+	can_scope = TRUE
 	can_suppress = TRUE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 	reskinnable_component = null
 
+
+
+/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle
+	name = "Scar-L rifle"
+	desc = "A Scar-L assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by FN Herstal in the early 2100s. Versitile, functional, and good. It comes witha a slow ROF and a lovely stock, albeit this one seems fixed sadly. Why change a design that works? As FN says!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "scarl"
+	item_state = "scarl"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm
+	name = "AUG A10 rifle"
+	desc = "A AUG A10 assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Steyr in the 2100s. This rifle saw extensive usage by the pre-war Austrian forces. Comes with a built in scope."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "aug"
+	item_state = "aug"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto
+	)
+	zoom_factor = 0.8
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
+	name = "PSG-5 rifle"
+	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "psg1"
+	item_state = "psg1"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.4)
+	init_firemodes = list(/datum/firemode/semi_auto/slow)
+	zoom_factor = 1.3
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
 * AK74
@@ -3163,6 +3205,28 @@
 	can_flashlight = FALSE
 
 
+/obj/item/gun/ballistic/automatic/concussive
+	name = "Latos Systems Cromwell-55 shotgun rifle"
+	desc = "A 40mm buckshot Cromwell-55 shotgun rifle manufactured by Latos Systems. The rifle itself is quite a chunky one but the rifle itself seems to be quite alien in appearance, a prototype rifle if anything."
+	item_state = "crifle"
+	icon_state = "crifle"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/grenadeshotgun
+	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadeshotgun
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SHOTGUN_RECOIL (1.3 , 1.3)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
  * Browning M1919 MMG
@@ -3306,6 +3370,33 @@
 		/datum/firemode/semi_auto/fast
 	)
 	zoom_factor = 1.2
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+/obj/item/gun/ballistic/automatic/needlerrifle/tox
+	name = " Custom NR-43 Turán"
+	desc = "A custom Latos Systems manufactured NR-43 needle rifle. The rifle is engraved with baroque motifs, At the scope's mid-section are two scenes. On the left side is the scene of a moth smiling and on the right side is a scene of a feline frowning. The top of the scope is engraved with the name 'Tox Mckit'. A fitting rifle for the ranged marksmen."
+	icon_state = "needles"
+	item_state = "needles"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = CARBINE_RECOIL (1 , 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	zoom_factor = 1
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE

@@ -493,3 +493,15 @@
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/kitsune
+	name = "kitsune mask"
+	desc = "A mask made of plastic and paint."
+	icon_state = "whitekitsunemask"
+	item_state = "whitekitsunemask"
+
+/obj/item/clothing/mask/kitsune/black
+	name = "kitsune mask - black"
+	desc = "A mask made of plastic and paint."
+	icon_state = "blackkitsunemask"
+	item_state = "blackkitsunemask"

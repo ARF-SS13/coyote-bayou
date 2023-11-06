@@ -1285,6 +1285,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/building)
+"aEq" = (
+/obj/machinery/computer/operating,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "aEI" = (
 /obj/structure/table,
 /obj/machinery/button/door{
@@ -2153,11 +2162,6 @@
 "bbm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalrightborderleft0"
 	},
@@ -2635,16 +2639,6 @@
 	color = " A6635D"
 	},
 /area/f13/caves)
-"bnj" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland)
 "bnr" = (
 /obj/machinery/vending/nukacolavend,
 /obj/effect/decal/cleanable/dirt,
@@ -3011,17 +3005,6 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland)
-"buL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland)
 "buP" = (
 /obj/effect/landmark/poster_spawner/prewar,
 /turf/closed/wall/f13/store,
@@ -3326,6 +3309,23 @@
 /obj/machinery/workbench,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/building/abandoned)
+"bBZ" = (
+/obj/machinery/smartfridge/bottlerack/drug_storage,
+/obj/item/reagent_containers/pill/patch/jet,
+/obj/item/reagent_containers/pill/patch/jet,
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape,
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape,
+/obj/item/storage/pill_bottle/chem_tin/mentats/grape,
+/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/storage/pill_bottle/chem_tin/radx,
+/obj/item/storage/pill_bottle/chem_tin/radx,
+/obj/item/storage/pill_bottle/chem_tin/radx,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "bCl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/tallgrass7{
@@ -4061,32 +4061,10 @@
 	icon_state = "tealwhrustychess"
 	},
 /area/f13/building/abandoned)
-"bUz" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland)
 "bUK" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/building/abandoned)
-"bUS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
-/area/f13/wasteland/city)
 "bUZ" = (
 /obj/structure/railing/wood{
 	dir = 4;
@@ -4318,17 +4296,6 @@
 	},
 /turf/open/indestructible/ground/outside/savannah/cornersnew{
 	dir = 4
-	},
-/area/f13/wasteland)
-"bZN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
 "bZU" = (
@@ -5493,17 +5460,6 @@
 	color = "#a1a1a1"
 	},
 /area/f13/building/abandoned)
-"cAr" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/gravel,
-/area/f13/wasteland)
 "cBb" = (
 /obj/structure/chair/booth,
 /obj/effect/decal/cleanable/dirt,
@@ -6911,15 +6867,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/abandoned)
-"dgS" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "dhm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -7008,17 +6955,6 @@
 	icon_state = "verticaloutermain2bottom"
 	},
 /area/f13/wasteland/city)
-"djX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland)
 "djY" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6";
@@ -7438,6 +7374,26 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building/abandoned)
+"dtb" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = 31
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak{
+	anchored = 1;
+	pixel_y = 46
+	},
+/obj/effect/turf_decal/arrows{
+	anchored = 1;
+	dir = 8;
+	layer = 5;
+	pixel_x = 8;
+	pixel_y = 36
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dtl" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
@@ -7546,6 +7502,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"dui" = (
+/obj/machinery/light,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "duw" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -7605,6 +7565,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/bar/ashdown)
+"dvS" = (
+/obj/machinery/vending/cola/red,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "dvT" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt,
@@ -7646,14 +7610,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/abandoned)
 "dxm" = (
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "bush3"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/ashdown)
 "dxE" = (
 /obj/structure/rack,
 /obj/item/storage/pill_bottle/charcoal,
@@ -7804,11 +7762,11 @@
 	},
 /area/f13/wasteland)
 "dBr" = (
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
+/obj/structure/curtain,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
 	},
-/area/f13/wasteland/city)
+/area/f13/building/hospital/clinic/ashdown)
 "dBw" = (
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -8227,6 +8185,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
 /area/f13/city)
+"dIU" = (
+/obj/machinery/vending/medical/becomingnook,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "dJj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8732,6 +8694,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"dRR" = (
+/obj/structure/toilet{
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic/ashdown)
 "dRS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -9113,18 +9081,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/caves)
-"ebv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "ebw" = (
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
@@ -9528,15 +9484,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
 /area/f13/city)
-"elZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "emg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -9642,6 +9589,14 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/wasteland)
+"enM" = (
+/obj/structure/barricade/bars,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindow"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "enW" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/road{
@@ -9949,18 +9904,6 @@
 /obj/structure/debris/v3,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah,
-/area/f13/wasteland)
-"ewe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "innershade"
-	},
 /area/f13/wasteland)
 "ewn" = (
 /obj/structure/barricade/wooden/strong,
@@ -10685,6 +10628,13 @@
 /obj/structure/flora/wasteplant/wild_xander,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"eMZ" = (
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_x = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "eNe" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -11345,6 +11295,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/city)
+"fcQ" = (
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "fcS" = (
 /obj/item/storage/secure/safe{
 	pixel_x = 32;
@@ -11501,16 +11457,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/building/abandoned)
-"fgv" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/wasteland)
 "fgw" = (
 /obj/structure/flora/small_bush,
 /obj/structure/flora/small_bush,
@@ -12689,16 +12635,6 @@
 	icon_state = "outerborder - N"
 	},
 /area/f13/wasteland/city)
-"fGN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fGW" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -13034,14 +12970,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/abandoned)
-"fOY" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fPa" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/outside/graveldirt{
@@ -13953,16 +13881,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"giU" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/wasteland)
 "gjf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -14259,17 +14177,6 @@
 	color = "#d9b51c"
 	},
 /turf/open/indestructible/ground/outside/savannah/topleft,
-/area/f13/wasteland)
-"got" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
 /area/f13/wasteland)
 "goC" = (
 /obj/structure/table,
@@ -14856,6 +14763,13 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
+"gCg" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_y = 10
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "gCh" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13{
@@ -15005,16 +14919,6 @@
 /obj/structure/barricade/wooden,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
-"gFx" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city)
 "gFy" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -15314,16 +15218,6 @@
 	color = "#999999"
 	},
 /area/f13/building)
-"gNp" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "horizontaloutermain2right"
-	},
-/area/f13/wasteland)
 "gNx" = (
 /obj/machinery/door/airlock/vault,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -15840,6 +15734,13 @@
 /obj/structure/flora/grass/coyote/one,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
+"gXM" = (
+/obj/structure/noticeboard{
+	layer = 4;
+	pixel_y = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gYk" = (
 /obj/structure/chair/booth{
@@ -16786,15 +16687,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"hzE" = (
-/obj/structure/flora/grass/jungle,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "hzO" = (
 /obj/structure/table/wood/fancy,
 /obj/item/candle/infinite,
@@ -17292,6 +17184,11 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"hMC" = (
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "hMS" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/graveldirt,
@@ -17769,6 +17666,18 @@
 /obj/structure/debris/v2,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"hWx" = (
+/obj/structure/closet/crate/freezer/blood,
+/obj/item/reagent_containers/blood/radaway,
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "hWX" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -17822,6 +17731,18 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/wasteland/city)
+"hYL" = (
+/obj/structure/curtain,
+/obj/machinery/shower{
+	dir = 1;
+	pixel_y = -3
+	},
+/obj/structure/decoration/vent{
+	name = "drain";
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic/ashdown)
 "hYM" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/dirt,
@@ -18748,11 +18669,6 @@
 	icon_state = "rust_light_no_wheels";
 	pixel_y = 12
 	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright0"
 	},
@@ -18796,16 +18712,6 @@
 	color = " A6635D"
 	},
 /area/f13/wasteland)
-"iuR" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/city)
 "ivl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19555,6 +19461,10 @@
 	dir = 1
 	},
 /area/f13/building/abandoned)
+"iJP" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "iJY" = (
 /obj/structure/chair/bench,
 /obj/effect/decal/cleanable/dirt,
@@ -20208,6 +20118,11 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building)
+"jap" = (
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "jbi" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/marking{
@@ -20440,15 +20355,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"jfD" = (
-/obj/structure/flora/tallgrass7,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/savannah,
-/area/f13/wasteland)
 "jfH" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -21025,21 +20931,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"jsw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = 3
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/wasteland)
 "jsC" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /obj/effect/decal/cleanable/oil,
@@ -21775,16 +21666,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"jGZ" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "innershade"
-	},
-/area/f13/wasteland/city)
 "jHg" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/indestructible/ground/outside/road,
@@ -21987,11 +21868,6 @@
 "jLp" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -23034,16 +22910,42 @@
 /obj/item/instrument/piano_synth,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"kjg" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
+"kjn" = (
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
 	},
-/area/f13/wasteland)
+/area/f13/building/hospital/clinic/ashdown)
 "kjq" = (
 /obj/structure/destructible/tribal_torch/lit{
 	pixel_x = 3
@@ -24433,6 +24335,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"kQk" = (
+/obj/structure/chair/sofa/left,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "kQn" = (
 /obj/item/clothing/shoes/f13/swimfins,
 /obj/structure/table,
@@ -24831,6 +24737,17 @@
 /obj/structure/timeddoor/twohours,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
+"kZB" = (
+/obj/structure/chair/wood{
+	dir = 8;
+	pixel_y = -3
+	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_x = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "kZI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone/rugged,
@@ -25343,6 +25260,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"ljJ" = (
+/obj/structure/barricade/barswindow{
+	dir = 4
+	},
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "lky" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -26193,16 +26117,6 @@
 	icon_state = "dark"
 	},
 /area/f13/building)
-"lGz" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/floor/plating/f13/outside/road{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/city)
 "lGK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -26265,17 +26179,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/ruins)
-"lJn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland/city)
 "lJX" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
@@ -26296,11 +26199,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /obj/structure/girder,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
 /turf/open/indestructible/ground/outside/water/running{
 	color = " A6635D"
 	},
@@ -26505,16 +26403,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah,
-/area/f13/wasteland)
-"lOs" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
 /area/f13/wasteland)
 "lOC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27599,16 +27487,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"mqj" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland)
 "mqq" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -27941,6 +27819,18 @@
 	icon_state = "bluecorner"
 	},
 /area/f13/building/abandoned)
+"myf" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/fence/wooden{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/indestructible/ground/outside/water/running{
+	color = " A6635D"
+	},
+/area/f13/wasteland)
 "myq" = (
 /obj/structure/decoration/shock{
 	pixel_x = -32
@@ -28190,6 +28080,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"mDO" = (
+/obj/structure/curtain{
+	color = "#5c131b";
+	pixel_y = -32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "mDZ" = (
 /obj/structure/flora/tree_log,
 /turf/open/indestructible/ground/outside/desert,
@@ -28792,15 +28689,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"mSY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "mTj" = (
 /obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
@@ -30308,6 +30196,13 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"nDX" = (
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "nDZ" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -30420,18 +30315,6 @@
 /obj/structure/flora/tree/wasteland,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
-"nGj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "bush3"
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "nGx" = (
 /obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/gravel,
@@ -30978,21 +30861,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/city)
-"nUp" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 9
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	pixel_x = -18;
-	pixel_y = 14
-	},
-/obj/effect/landmark/party{
-	region = "Nash's bar"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/bar/ashdown)
 "nUt" = (
 /obj/structure/flora/small_bush,
 /turf/open/indestructible/ground/outside/savannah,
@@ -31491,20 +31359,6 @@
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"ogs" = (
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -3
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
-/area/f13/wasteland)
 "ogx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -31727,6 +31581,14 @@
 	icon_state = "housewood2"
 	},
 /area/f13/bar/ashdown)
+"okR" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "olc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light,
@@ -32055,6 +31917,14 @@
 	icon_state = "catwalk"
 	},
 /area/f13/building)
+"osy" = (
+/obj/structure/simple_door/room{
+	name = "Clinic"
+	},
+/turf/open/floor/f13{
+	icon_state = "blue"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "osB" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/road{
@@ -32759,6 +32629,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"oJI" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "oJQ" = (
 /obj/structure/flora/grass/coyote/eight,
 /turf/open/indestructible/ground/outside/dirt,
@@ -32942,6 +32818,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"oNL" = (
+/obj/machinery/vending/medical,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "oNN" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/desert,
@@ -33324,16 +33207,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"oWa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "oWi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/randomized{
@@ -33385,6 +33258,10 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
+"oXi" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "oXt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -33510,16 +33387,6 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
-"oZO" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1"
-	},
-/area/f13/wasteland)
 "oZR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/retro/backed,
@@ -33799,6 +33666,18 @@
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel,
+/area/f13/wasteland)
+"pfM" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/fence/wooden{
+	pixel_x = -8;
+	pixel_y = 8
+	},
+/turf/open/indestructible/ground/outside/water/running{
+	color = " A6635D"
+	},
 /area/f13/wasteland)
 "pfV" = (
 /obj/structure/toilet,
@@ -34821,13 +34700,8 @@
 /area/f13/building)
 "pBr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/spacevine,
-/obj/structure/spacevine,
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "innershade"
-	},
-/area/f13/wasteland/city)
+/turf/closed/wall/f13/wood/house,
+/area/f13/building/hospital/clinic/ashdown)
 "pBw" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/barricade/bars,
@@ -35447,15 +35321,6 @@
 /obj/machinery/light/broken,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"pPy" = (
-/obj/structure/flora/small_bush,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "pPX" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/dirt,
@@ -35880,17 +35745,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland)
-"qaB" = (
-/obj/structure/spacevine,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland)
 "qaG" = (
@@ -37224,6 +37078,12 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"qJP" = (
+/obj/structure/table/optable,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "qKb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v1{
@@ -37849,6 +37709,9 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
+"rbv" = (
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic/ashdown)
 "rca" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -38282,6 +38145,10 @@
 /obj/structure/flora/grass/coyote/four,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"rnd" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building/hospital/clinic/ashdown)
 "rnw" = (
 /obj/machinery/door/unpowered/securedoor,
 /obj/structure/barricade/wooden/crude,
@@ -38711,6 +38578,15 @@
 /obj/structure/chair/f13chair2,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"rwe" = (
+/obj/structure/stairs/north{
+	color = "#A47449"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "rwf" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -38797,17 +38673,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
 	},
-/area/f13/wasteland)
-"rxB" = (
-/obj/structure/flora/tallgrass7{
-	color = "#FF5555"
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rxC" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -39060,14 +38925,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"rCM" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/savannah,
-/area/f13/wasteland)
 "rCS" = (
 /obj/structure/flora/tallgrass7,
 /obj/effect/decal/cleanable/dirt,
@@ -39215,14 +39072,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"rHh" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
 "rHx" = (
 /obj/structure/lamp_post/quadra,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -39837,16 +39686,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/graveldirt{
 	dir = 8
-	},
-/area/f13/wasteland)
-"rXA" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland)
 "rXC" = (
@@ -40633,14 +40472,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"snj" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland/city)
 "snv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -43766,17 +43597,6 @@
 	icon_state = "cafeteria"
 	},
 /area/f13/building)
-"tHq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "tHE" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/indestructible/ground/outside/savannah/leftcenter,
@@ -44529,6 +44349,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"tXk" = (
+/obj/structure/simple_door/room{
+	name = "Clinic"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "tXl" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
@@ -44640,12 +44466,8 @@
 	},
 /area/f13/wasteland)
 "ual" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/wasteland/city)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "uay" = (
 /obj/structure/table/optable,
 /turf/open/floor/f13{
@@ -45524,15 +45346,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "uuG" = (
-/obj/structure/nest/mirelurk,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/structure/barricade/bars,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindowvertical"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "uuM" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -45942,14 +45762,6 @@
 "uEC" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
-"uET" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "uFL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -46397,17 +46209,6 @@
 	dir = 1;
 	icon_state = "graveldirtedge"
 	},
-/area/f13/wasteland)
-"uQb" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 2
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "uQg" = (
 /obj/structure/table/reinforced,
@@ -47019,6 +46820,15 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city)
+"vcL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/bars,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "ruinswindowvertical"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "vcQ" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
@@ -47192,16 +47002,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"viK" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerbordercorner - N"
-	},
-/area/f13/wasteland)
 "viM" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -48040,6 +47840,10 @@
 	name = "dirty floor"
 	},
 /area/f13/building)
+"vFi" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic/ashdown)
 "vFm" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -48577,6 +48381,12 @@
 	icon_state = "verylittleshadowleft"
 	},
 /area/f13/wasteland)
+"vUN" = (
+/obj/machinery/computer/operating,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "vUQ" = (
 /obj/machinery/light{
 	pixel_x = -16
@@ -49909,18 +49719,6 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/abandoned)
-"wAD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "wAL" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/graveldirt,
@@ -50354,15 +50152,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"wMf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "wMs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -50422,16 +50211,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/abandoned)
-"wMY" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "wNa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -51516,6 +51295,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"xnr" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital/clinic/ashdown)
 "xnv" = (
 /turf/open/water,
 /area/f13/caves)
@@ -51839,17 +51624,6 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"xvE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city)
 "xvV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -53347,16 +53121,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/building)
-"ydA" = (
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain3"
-	},
-/area/f13/wasteland)
 "ydE" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -53402,17 +53166,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"yeH" = (
-/obj/structure/flora/tree/jungle/small{
-	color = "#d9b51c"
-	},
-/obj/structure/nest/crows{
-	icon_state = "x";
-	invisibility = 101;
-	icon = 'icons/mob/landmarks.dmi'
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "yeI" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain1"
@@ -53653,6 +53406,15 @@
 	icon_state = "dark"
 	},
 /area/f13/building)
+"yjL" = (
+/obj/structure/sink{
+	pixel_y = 20
+	},
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/building/hospital/clinic/ashdown)
 "yjX" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -55731,7 +55493,7 @@ ebw
 ebw
 iwL
 quO
-uET
+nBc
 quO
 nBc
 mUa
@@ -56527,7 +56289,7 @@ gTy
 tPP
 kRp
 vGR
-fgv
+dRB
 iKf
 iKf
 tiN
@@ -57211,7 +56973,7 @@ ioX
 ioX
 rAO
 oWm
-iuR
+mXC
 mXC
 uGR
 ioX
@@ -57633,7 +57395,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -58029,7 +57791,7 @@ euo
 iRX
 wWG
 nBc
-uET
+nBc
 nBc
 nBc
 quO
@@ -59080,7 +58842,7 @@ vsM
 jFA
 vsM
 nNp
-wMf
+fVd
 nNp
 vsM
 jFA
@@ -59471,7 +59233,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -60965,7 +60727,7 @@ duP
 obl
 mpq
 sdS
-fOY
+iKf
 iKf
 iKf
 tiN
@@ -61027,7 +60789,7 @@ iwK
 iKf
 iip
 tiN
-fOY
+iKf
 tfn
 iKf
 tfn
@@ -61284,7 +61046,7 @@ iKf
 iwO
 iip
 vaj
-elZ
+tiN
 tfn
 iKf
 iKf
@@ -61471,7 +61233,7 @@ gMW
 gMW
 nBc
 rAI
-uET
+nBc
 nms
 oFm
 yft
@@ -61692,7 +61454,7 @@ lCW
 wGA
 vVC
 nBc
-uET
+nBc
 nBc
 nBc
 gMW
@@ -61917,7 +61679,7 @@ uhY
 gej
 bbZ
 cRr
-wMY
+yft
 iip
 yfV
 yft
@@ -62597,7 +62359,7 @@ aVZ
 vSR
 wTE
 dgh
-lJn
+wuc
 ahd
 btL
 aCQ
@@ -62668,7 +62430,7 @@ nNp
 roR
 ukR
 tWx
-bUz
+kRp
 aMZ
 kgF
 kgF
@@ -63543,7 +63305,7 @@ aMY
 uyN
 lPH
 yft
-bnj
+pnb
 pnb
 oFm
 yft
@@ -63735,7 +63497,7 @@ slT
 slT
 slT
 slT
-viK
+ime
 shX
 oFm
 yft
@@ -64341,7 +64103,7 @@ dcp
 hZK
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 lmY
@@ -64998,7 +64760,7 @@ shX
 oFm
 oMR
 azO
-qaB
+sTi
 hmH
 vlY
 yft
@@ -65657,7 +65419,7 @@ jXZ
 tfn
 iKf
 iip
-fOY
+iKf
 iKf
 eaC
 fSr
@@ -65865,7 +65627,7 @@ vsM
 tiN
 tiN
 xKp
-bZN
+bxV
 hjg
 eTN
 wWG
@@ -66351,7 +66113,7 @@ tiN
 gEj
 tiN
 tiN
-fGN
+gEj
 tiN
 tiN
 tiN
@@ -66798,7 +66560,7 @@ syY
 kRp
 vNf
 mpq
-got
+shX
 oFm
 eSq
 fki
@@ -68110,7 +67872,7 @@ oFm
 yft
 pVV
 eRV
-gNp
+rGl
 quO
 cdc
 cdc
@@ -69045,7 +68807,7 @@ mAj
 loy
 qad
 mgd
-lGz
+vpC
 maU
 fmm
 qxv
@@ -69465,7 +69227,7 @@ iKf
 fed
 siv
 aFM
-ydA
+bJy
 wWG
 iKf
 iKf
@@ -69767,7 +69529,7 @@ tfn
 iKf
 iKf
 iKf
-fOY
+iKf
 nTJ
 iip
 iKf
@@ -70053,7 +69815,7 @@ dXu
 wuc
 wuc
 fbQ
-bUS
+dPo
 qlm
 nxz
 dPo
@@ -70649,7 +70411,7 @@ nBc
 nuc
 nBc
 nBc
-wMf
+fVd
 nBc
 fVd
 nBc
@@ -70716,8 +70478,8 @@ iKf
 iKf
 iKf
 iKf
-fOY
-fOY
+iKf
+iKf
 iKf
 iKf
 iKf
@@ -71974,7 +71736,7 @@ pnb
 pnb
 pnb
 rMX
-bnj
+pnb
 wpn
 ufQ
 pUU
@@ -72197,7 +71959,7 @@ azO
 wWG
 sSV
 oFm
-tHq
+pVV
 duP
 mPq
 gUg
@@ -72209,7 +71971,7 @@ kgF
 kgF
 mYU
 iyJ
-rXA
+mYU
 kgF
 jdL
 gUv
@@ -73841,7 +73603,7 @@ iKf
 tiN
 tiN
 iKf
-fOY
+iKf
 iKf
 iKf
 tfn
@@ -74903,7 +74665,7 @@ jdL
 kgF
 jdL
 jdL
-djX
+jdL
 kgF
 kgF
 kgF
@@ -74926,7 +74688,7 @@ mXC
 mXC
 mXC
 eps
-iuR
+mXC
 mXC
 mXC
 mXC
@@ -75091,7 +74853,7 @@ dme
 oUn
 oUn
 oUn
-lOs
+oUn
 dme
 dme
 oUn
@@ -75128,7 +74890,7 @@ lHJ
 pVV
 yft
 oUn
-lOs
+oUn
 oUn
 oUn
 oUn
@@ -75255,7 +75017,7 @@ hhb
 szB
 fCL
 bcr
-ogs
+hEb
 fjc
 cJM
 aCF
@@ -75587,7 +75349,7 @@ lZf
 yft
 yft
 rJZ
-oZO
+qHL
 iip
 iip
 yft
@@ -75747,7 +75509,7 @@ wuc
 tey
 xKe
 qES
-oWa
+eQD
 kFz
 gZz
 tpQ
@@ -75761,7 +75523,7 @@ fjc
 rLB
 tHL
 lPz
-ewe
+ceW
 crN
 pFT
 ceW
@@ -75774,7 +75536,7 @@ hOZ
 bcr
 jvD
 mmF
-rHh
+qES
 mHP
 mHP
 qES
@@ -76023,7 +75785,7 @@ bar
 msc
 eFO
 eFO
-jsw
+eFO
 eFO
 hLu
 iuI
@@ -76177,7 +75939,7 @@ pnb
 rMX
 rMX
 rMX
-bnj
+pnb
 pnb
 pnb
 pnb
@@ -76203,7 +75965,7 @@ fhy
 fhy
 hZR
 hZR
-gFx
+hZR
 hZR
 qDQ
 kVr
@@ -76230,7 +75992,7 @@ hZR
 hZR
 jzT
 mJQ
-gFx
+hZR
 hZR
 hZR
 hZR
@@ -76249,7 +76011,7 @@ nIi
 rPh
 hZR
 mfN
-xvE
+mJQ
 hZR
 hZR
 hZR
@@ -76399,7 +76161,7 @@ yft
 kRp
 uKC
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -76562,7 +76324,7 @@ jdL
 jdL
 kgF
 nbk
-kjg
+kgF
 kgF
 kgF
 roR
@@ -79134,7 +78896,7 @@ qaP
 ebw
 exR
 iKf
-fOY
+iKf
 roR
 nhN
 qHL
@@ -80544,7 +80306,7 @@ iKf
 iKf
 iKf
 mGg
-cAr
+tMu
 cNU
 qZY
 tiN
@@ -81458,7 +81220,7 @@ duP
 yft
 rgJ
 kRp
-buL
+vGR
 fVd
 oOr
 kFX
@@ -82737,7 +82499,7 @@ roR
 nhN
 yft
 yft
-wMY
+yft
 iIr
 iip
 yft
@@ -86713,7 +86475,7 @@ iKf
 tiN
 mGg
 tMu
-uQb
+cNU
 qZY
 iKf
 whc
@@ -88140,7 +87902,7 @@ yft
 qHL
 qHL
 kRp
-mqj
+wWG
 nBc
 tfn
 iKf
@@ -88386,7 +88148,7 @@ pkG
 exR
 iKf
 iKf
-fOY
+iKf
 roR
 bxV
 yft
@@ -89039,7 +88801,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -91454,7 +91216,7 @@ gMW
 iKf
 whc
 iKf
-fOY
+iKf
 iKf
 tiN
 iKf
@@ -91837,7 +91599,7 @@ iKf
 iKf
 sdS
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -93085,7 +92847,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -93137,7 +92899,7 @@ eQa
 iKf
 iKf
 mGg
-cAr
+tMu
 cNU
 qZY
 iKf
@@ -94565,7 +94327,7 @@ aGc
 qHL
 qHL
 kRp
-mqj
+wWG
 iKf
 iKf
 iKf
@@ -95422,7 +95184,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -95738,7 +95500,7 @@ iKf
 tiN
 iKf
 iKf
-fOY
+iKf
 iKf
 qES
 qES
@@ -95823,7 +95585,7 @@ tiN
 oft
 hQQ
 tiN
-nGj
+kBe
 tiN
 yeO
 tiN
@@ -95890,7 +95652,7 @@ gMW
 gMW
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -96014,7 +95776,7 @@ yaf
 iKf
 iKf
 iKf
-elZ
+tiN
 tiN
 tiN
 iKf
@@ -97033,7 +96795,7 @@ iKf
 qES
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -97382,7 +97144,7 @@ jUS
 jUS
 jUS
 qZY
-giU
+roR
 oFm
 yft
 qHL
@@ -98270,7 +98032,7 @@ iKf
 tiN
 iKf
 iKf
-rxB
+aCW
 aCW
 iKf
 iKf
@@ -98302,7 +98064,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 aCW
@@ -99087,7 +98849,7 @@ xaz
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 xVi
 iKf
@@ -99520,7 +99282,7 @@ ieU
 iKf
 iKf
 iKf
-hzE
+sdS
 iKf
 iKf
 iKf
@@ -99606,7 +99368,7 @@ iKf
 iKf
 iKf
 iKf
-rHh
+qES
 lmY
 iKf
 iKf
@@ -100163,7 +99925,7 @@ iKf
 iKf
 gEj
 pLt
-fOY
+iKf
 iKf
 iKf
 mGg
@@ -100335,7 +100097,7 @@ iKf
 nYZ
 tMu
 cNU
-wAD
+fJi
 iKf
 iKf
 iKf
@@ -100646,7 +100408,7 @@ iKf
 qES
 iKf
 aCW
-fOY
+iKf
 tiN
 iKf
 iKf
@@ -100879,7 +100641,7 @@ eQa
 eQa
 eQa
 iKf
-rxB
+aCW
 tfn
 iKf
 tfn
@@ -100909,7 +100671,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -100928,13 +100690,13 @@ iKf
 iKf
 aCW
 iKf
-tiN
+sgM
 iKf
 iKf
 xOq
 sBx
 tiN
-tiN
+tDc
 iKf
 iKf
 mGg
@@ -101187,10 +100949,10 @@ iKf
 iKf
 iKf
 iKf
-eGH
-bTj
-nAR
-gEj
+dxm
+dxm
+dxm
+dxm
 iKf
 iKf
 aCW
@@ -101247,7 +101009,7 @@ iip
 fki
 gUg
 kRp
-buL
+vGR
 iKf
 iKf
 whc
@@ -101444,16 +101206,16 @@ iKf
 iKf
 iKf
 iKf
-whc
-bTj
+dxm
+yjL
+hYL
+dxm
 iKf
-sBx
-smZ
 iKf
 aCW
 mGg
-xNu
-euo
+flw
+oxk
 euo
 euo
 eSK
@@ -101701,24 +101463,24 @@ whc
 iKf
 iKf
 iKf
+dxm
+dRR
+rbv
+dxm
 iKf
-lmY
-iKf
-sBx
-tiN
 iKf
 aCW
 mGg
 flw
-oxk
 euo
+oxk
 euo
 euo
 aRj
 xYJ
 lrs
 lrs
-lrs
+njU
 eLD
 flw
 euo
@@ -101954,25 +101716,25 @@ aCW
 iKf
 iKf
 iKf
-tiN
-iKf
-whc
-iKf
+pBr
 dxm
-iKf
-lmY
-sBx
-tiN
-iKf
-aCW
-mGg
+dxm
+dxm
+dxm
+dxm
+vFi
+dxm
+pBr
+dxm
+dxm
+dxm
 flw
-oxk
+euo
 oxk
 euo
 euo
 eSK
-uuG
+qIa
 iJw
 lrs
 lrs
@@ -102211,18 +101973,18 @@ iKf
 aCW
 tiN
 tiN
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-gEj
-pLt
-iKf
-iKf
-mGg
+dxm
+hWx
+kjn
+jap
+osy
+oJI
+ual
+ual
+tXk
+oJI
+mDO
+enM
 flw
 euo
 oxk
@@ -102369,7 +102131,7 @@ iKf
 iKf
 iKf
 eEk
-fOY
+iKf
 iKf
 tiN
 iKf
@@ -102433,7 +102195,7 @@ whc
 iKf
 iKf
 sdS
-fOY
+iKf
 iKf
 iKf
 tfn
@@ -102444,7 +102206,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 yaf
 iKf
@@ -102467,19 +102229,19 @@ iKf
 tfn
 iKf
 tiN
-pkw
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-lmY
-pyi
-ddh
-iKf
-iKf
-mGg
+dxm
+dxm
+dBr
+dBr
+hMC
+dxm
+bBZ
+ual
+fcQ
+pBr
+rwe
+ual
+dxm
 flw
 euo
 oxk
@@ -102724,19 +102486,19 @@ sdS
 iKf
 iKf
 aCW
-pkw
-tiN
-lZN
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-aCW
-iKf
-mGg
+dxm
+aEq
+hMC
+nDX
+hMC
+dxm
+dxm
+tXk
+ljJ
+dxm
+dxm
+dxm
+dxm
 flw
 euo
 oxk
@@ -102981,20 +102743,20 @@ sdS
 iKf
 iKf
 iKf
-iKf
-pkw
-pkw
-iKf
-iKf
-iKf
-iKf
-iKf
-aCW
-aCW
-aCW
-iKf
-mGg
-flw
+dxm
+qJP
+hMC
+hMC
+hMC
+dxm
+iJP
+ual
+ual
+gCg
+dvS
+dxm
+rnd
+pfM
 euo
 oxk
 euo
@@ -103238,19 +103000,19 @@ iKf
 tfn
 iKf
 aCW
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-yaf
-iKf
-iKf
-iKf
-iKf
-iKf
-mGg
+dxm
+dBr
+dBr
+dBr
+hMC
+dxm
+kQk
+ual
+ual
+ual
+ual
+dxm
+rnd
 flw
 euo
 oxk
@@ -103495,19 +103257,19 @@ iKf
 wis
 iKf
 iKf
-tiN
-iKf
-iKf
-iKf
-qaz
-tiN
-iKf
-iKf
-whc
-iKf
-iKf
-iKf
-mGg
+pBr
+qJP
+hMC
+hMC
+hMC
+pBr
+oNL
+ual
+ual
+ual
+dui
+dxm
+rnd
 flw
 euo
 oxk
@@ -103752,19 +103514,19 @@ pkw
 iKf
 xnU
 qES
-qES
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-iKf
-sgM
-iKf
-afz
-iKf
-mGg
+dxm
+vUN
+hMC
+nDX
+okR
+dxm
+dIU
+eMZ
+oXi
+kZB
+xnr
+dxm
+rnd
 flw
 euo
 oxk
@@ -104009,26 +103771,26 @@ pkw
 pkw
 iKf
 tiN
-qES
-qES
-iKf
-iKf
-iKf
-iKf
-iKf
-sgM
-iKf
-iKf
-iKf
-iKf
-mGg
-flw
+dxm
+dxm
+dxm
+dxm
+dxm
+dxm
+dxm
+vcL
+tXk
+uuG
+dxm
+dxm
+rnd
+myf
 euo
 euo
-oxk
 euo
 euo
-oxk
+euo
+euo
 euo
 euo
 euo
@@ -104272,9 +104034,9 @@ tiN
 tiN
 iKf
 iKf
-afz
-whc
-iKf
+gXM
+dtb
+qES
 iKf
 iKf
 iKf
@@ -104528,13 +104290,13 @@ iKf
 aCW
 tiN
 tiN
-fOY
 iKf
-afz
-iKf
+qES
+yky
+qES
 auS
 cuX
-cuX
+auS
 wFj
 wFj
 wFj
@@ -104567,7 +104329,7 @@ eqr
 auS
 iKf
 iKf
-fOY
+iKf
 iKf
 tiN
 iKf
@@ -104585,7 +104347,7 @@ yft
 yft
 yfV
 yft
-wMY
+yft
 yft
 oMR
 wWG
@@ -104740,7 +104502,7 @@ eQa
 eQa
 tfn
 eQa
-jfD
+jNg
 iKf
 tiN
 iKf
@@ -104785,7 +104547,7 @@ iKf
 cxo
 iKf
 iKf
-tiN
+yky
 iKf
 iKf
 qES
@@ -104803,7 +104565,7 @@ gdc
 kLM
 qlm
 qlm
-dBr
+qlm
 vTw
 vTw
 qlm
@@ -104949,7 +104711,7 @@ iKf
 iKf
 iKf
 tiN
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -105021,7 +104783,7 @@ iKf
 iKf
 iKf
 iKf
-pPy
+pkw
 iKf
 iKf
 iKf
@@ -105053,14 +104815,14 @@ prS
 tey
 prS
 iGg
-snj
+iGg
 kLM
 axk
 xfU
 pub
 nOA
 qAo
-pBr
+wMs
 qAo
 prS
 gpg
@@ -105072,7 +104834,7 @@ qAo
 lnn
 axk
 wMs
-jGZ
+tey
 prS
 prS
 iGg
@@ -105092,7 +104854,7 @@ peS
 iKf
 pAw
 lmY
-got
+shX
 bxV
 yft
 yft
@@ -105246,7 +105008,7 @@ tiN
 tiN
 tiN
 tiN
-rCM
+eQa
 iKf
 iKf
 iKf
@@ -105574,7 +105336,7 @@ bcS
 xJI
 bZb
 xJI
-ual
+bZb
 xJI
 xXu
 xXu
@@ -105819,7 +105581,7 @@ qES
 qES
 auS
 rLs
-cuX
+auS
 wFj
 wFj
 mNo
@@ -106342,14 +106104,6 @@ lWs
 sWE
 euo
 euo
-oxk
-euo
-euo
-euo
-euo
-oxk
-oxk
-oxk
 euo
 euo
 euo
@@ -106357,8 +106111,16 @@ euo
 euo
 euo
 euo
-oxk
-oxk
+euo
+euo
+euo
+euo
+euo
+euo
+euo
+euo
+euo
+euo
 eSK
 qZY
 iKf
@@ -106765,7 +106527,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 pkw
@@ -106847,7 +106609,7 @@ iKf
 tiN
 iKf
 qES
-qES
+nNE
 qES
 qES
 qES
@@ -106976,7 +106738,7 @@ iKf
 iKf
 iKf
 afz
-fOY
+iKf
 iKf
 iKf
 agJ
@@ -107672,7 +107434,7 @@ duP
 yft
 yft
 kRp
-mqj
+wWG
 iKf
 iKf
 pkw
@@ -108102,7 +107864,7 @@ tiN
 gEj
 sBx
 whc
-mSY
+yky
 qES
 qES
 eVJ
@@ -108339,7 +108101,7 @@ iKf
 whc
 iKf
 iKf
-yeH
+whc
 iKf
 iKf
 iKf
@@ -108584,7 +108346,7 @@ iKf
 iKf
 pkw
 pkw
-fOY
+iKf
 iKf
 iKf
 tfn
@@ -108625,7 +108387,7 @@ qES
 qES
 qES
 yky
-rHh
+qES
 qES
 iKf
 qES
@@ -110159,7 +109921,7 @@ iKf
 iKf
 whc
 iKf
-fOY
+iKf
 whc
 qES
 qES
@@ -111360,7 +111122,7 @@ dqd
 dVL
 mGH
 dqd
-dgS
+dqd
 dqd
 dqd
 dqd
@@ -111855,7 +111617,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -111966,7 +111728,7 @@ eSK
 aLl
 eJW
 eJW
-jZJ
+eJW
 eJW
 gAb
 eJW
@@ -112041,7 +111803,7 @@ yft
 lHJ
 yft
 kRp
-mqj
+wWG
 tiN
 tiN
 jZL
@@ -112186,7 +111948,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -112230,8 +111992,8 @@ eJW
 gAb
 eJW
 eJW
-nUp
-eJW
+vtp
+jZJ
 eJW
 nsO
 btP
@@ -112443,7 +112205,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 mot
 iKf
@@ -114194,7 +113956,7 @@ iKf
 iKf
 iKf
 iKf
-fOY
+iKf
 iKf
 iKf
 iKf
@@ -114347,7 +114109,7 @@ iKf
 shX
 hES
 dNQ
-ebv
+lHJ
 pVV
 pVV
 yft
@@ -115131,7 +114893,7 @@ dlq
 pnb
 pnb
 rMX
-bnj
+pnb
 pnb
 rMX
 rMX

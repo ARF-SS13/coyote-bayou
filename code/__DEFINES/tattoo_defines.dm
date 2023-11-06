@@ -7,14 +7,18 @@
 #define TATTOO_CUSTOMIZE_DESC (1<<1)
 /// Can customize tattoo extras
 #define TATTOO_CUSTOMIZE_EXTRA (1<<3)
+/// Can customize tattoo time to fade
+#define TATTOO_CUSTOMIZE_FADE_TIME (1<<4)
 /// Can customize tattoo all of it
-#define TATTOO_CUSTOMIZE_ALL TATTOO_CUSTOMIZE_NAME | TATTOO_CUSTOMIZE_DESC | TATTOO_CUSTOMIZE_EXTRA
+#define TATTOO_CUSTOMIZE_ALL TATTOO_CUSTOMIZE_NAME | TATTOO_CUSTOMIZE_DESC | TATTOO_CUSTOMIZE_EXTRA | TATTOO_CUSTOMIZE_FADE_TIME
 /// Customize the name
 #define TATTOO_NAME "Name"
 /// Customize the desc
 #define TATTOO_DESC "Desc"
 /// Customize the extra
 #define TATTOO_EXTRA "Extra Details"
+/// Customize time for tattoo to fade
+#define TATTOO_FADE_TIME "Fade Time"
 
 #define TATTOO_NOT_FADED 1
 #define TATTOO_KINDA_FADED 2

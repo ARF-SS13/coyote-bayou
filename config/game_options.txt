@@ -38,7 +38,7 @@ WALK_DELAY 2.8
 ## This is subtracted from the run speed to get the final sprint speed.
 SPRINT_SPEED_INCREASE 0.65
 ## Size of sprint buffer, in tiles.
-SPRINT_BUFFER_MAX 13
+SPRINT_BUFFER_MAX 30
 ## Number of sprint buffer tiles regained per second.
 SPRINT_BUFFER_REGEN_PER_DS 0.08
 ## Cost in stamina per tile sprinted.

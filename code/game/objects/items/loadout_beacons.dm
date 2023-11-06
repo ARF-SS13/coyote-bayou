@@ -726,6 +726,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src) //why can't 10mm magazines be normal? make sure these aren't extended or broken
 	new /obj/item/ammo_box/c10mm(src)
 
+/obj/item/storage/box/gun/pistol/covpistole
+	name = "EG-2A7 Pistol case"
+
+/obj/item/storage/box/gun/pistol/covpistole/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/covpistol(src)
+
 /obj/item/storage/box/gun/rifle/delisle
 	name = "De Lisle carbine case"
 
@@ -1237,6 +1243,14 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/c9mm(src)
 
+/obj/item/storage/box/gun/pistol/maky
+	name = "9mm Makarov pistol case"
+
+/obj/item/storage/box/gun/pistol/maky/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/c9mm(src)
+
 /obj/item/storage/box/gun/rifle/covcarbinesgobrr
 	name = "T25 rifle case"
 
@@ -1322,7 +1336,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/cyberpunks/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/ticon(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
 
@@ -1641,6 +1654,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/compact_rcw/PopulateContents()
 	new /obj/item/gun/energy/laser/auto(src)
 	new /obj/item/stock_parts/cell/ammo/ecp(src)
+
+/obj/item/storage/box/gun/energy/ccovrifle
+	name = "PR-M1A2 rifle case"
+
+/obj/item/storage/box/gun/energy/ccovrifle/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/plasmacov(src)
 
 /obj/item/storage/box/gun/energy/wattz1000
 	name = "wattz 1000 case"
@@ -2243,6 +2262,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/shottybotty
+
+/datum/loadout_box/covpistols
+	entry_tag = "EG-2A7 Plasma Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/pistol/covpistole
+
+/datum/loadout_box/makrov
+	entry_tag = "9mm Makarov Pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/maky
+
+/datum/loadout_box/covrifles
+	entry_tag = "PR-M1A2 Plasma Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/ccovrifle
 
 /datum/loadout_box/volcanicsgobrr
 	entry_tag = "Volcanic Pistol"
@@ -2888,13 +2925,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Sling"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 
 /datum/loadout_box/slingstaff
 	entry_tag = "Slingstaff"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 
 /datum/loadout_box/riotweathered
 	entry_tag = "Weathered Riot Shield"
