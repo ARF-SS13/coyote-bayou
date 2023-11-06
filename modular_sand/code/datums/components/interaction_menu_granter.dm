@@ -33,6 +33,9 @@
 	var/list/splurting_with = list()
 	/// our active automatic plappers
 	var/list/autoplappers = list()
+	var/autoplapper_autostart = TRUE
+	var/mean_time_to_cum = 5 MINUTES // how long it takes to cum when doing an autoplap
+	var/lewdmode = FALSE // show the lewd stuff?
 
 /datum/component/interaction_menu_granter/Initialize(...)
 	if(!ismob(parent))
@@ -45,6 +48,8 @@
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
+	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, .proc/kill_autoplapper)
+	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER, .proc/confirm_autoplap)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
@@ -52,12 +57,11 @@
 	. = ..()
 
 /datum/component/interaction_menu_granter/UnregisterFromParent()
-	UnregisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT, COMSIG_SPLURT_REQUEST))
+	UnregisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT, COMSIG_SPLURT_REQUEST, COMSIG_SPLURT_ADD_AUTOPLAPPER))
 	. = ..()
 
 /// The one interacting is clicker, the interacted is clicked.
 /datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
-
 	// COMSIG_CLICK_CTRL_SHIFT accepts `atom`s, prevent it
 	if(!istype(clicked))
 		return FALSE
@@ -95,6 +99,43 @@
 		else
 			return 0
 
+/datum/component/interaction_menu_granter/ui_static_data(mob/user)
+	. = ..()
+	var/mob/living/self = parent
+	var/mob/living/target = GET_WEAKREF(weaktarget)
+	if(!target)
+		return
+	var/list/data = list()
+	//Getting interactions
+	var/list/sent_interactions = list()
+	for(var/interaction_key in SSinteractions.interactions)
+		var/datum/interaction/I = SSinteractions.interactions[interaction_key]
+		if(!I)
+			continue
+		if(!I.can_do_interaction(self, target, TRUE, TRUE))
+			continue
+		// if(!I.evaluate_user(self, silent = TRUE, action_check = FALSE) || !I.evaluate_target(self, target, silent = TRUE))
+		// 	continue
+		// if(I.user_is_target && target != self)
+		// 	continue  dan
+		sent_interactions += list(I.format_for_tgui(self, target))
+	var/list/faves = self.client?.prefs.faved_interactions || list()
+	data["Faves"] = faves || list()
+	data["AllCategories"] = SSinteractions.all_categories || list()
+	data["AllInteractions"] = sent_interactions || list()
+	data["AutoPlapObjs"] = package_autoplappers() || list()
+	data["Recording"] = get_recording_autoplappers() || list()
+	data["AutoPlapAutoStart"] = autoplapper_autostart || FALSE
+	data["MyGenitals"] = self.format_genitals_for_tgui() || list()
+	data["MyOrientations"] = format_orientation(self) || list()
+	if(target != self)
+		data["TheirOrientations"] = format_orientation(target) || list()
+		data["TheirGenitals"] = target.format_genitals_for_tgui() || list()
+	else
+		data["TheirOrientations"] = .["MyOrientations"]
+		data["TheirGenitals"] = .["MyGenitals"]
+	return data
+
 /datum/component/interaction_menu_granter/ui_data(mob/user)
 	. = ..()
 	//Getting player
@@ -103,88 +144,28 @@
 	if(!target)
 		return
 	//Getting info
-	.["isTargetSelf"] = target == self
-	.["interactingWith"] = target != self ? "Interacting with \the [target]..." : "Interacting with yourself..."
-	.["selfAttributes"] = self.list_interaction_attributes(self)
-	.["lust"] = self.get_lust()
-	.["maxLust"] = self.get_lust_tolerance() * 3
-	if(target != self)
-		.["theirAttributes"] = target.list_interaction_attributes(self)
+	.["LewdMode"] = lewdmode || FALSE
+	.["ItsJustMe"] = target == self
+	.["WeConsent"] = target == self ? TRUE : SSinteractions.check_consent(self, target)
+	.["MyName"] = self.real_name || "Nobody"
+	.["TheirName"] = target.real_name || "Nobody"
+	.["selfAttributes"] = self.list_interaction_attributes(self) || list()
+	.["CanCum"] = self.ready_to_cum || FALSE // I AM NOT READY!!!!!!!!!!!!!
+	.["MTTC"] = mean_time_to_cum || 2 MINUTES // I will last 2 minutes, no more, no lest
+	.["MyLust"] = self.get_lust() || 0
+	.["MyMaxLust"] = self.get_lust_tolerance() * 3 || 0
+	if(target != self && target.client)
+		.["TheirCKEY"] = target.ckey || "Nobody"
+		.["TheirName"] = target.ckey || "Nobody"
+		.["theirAttributes"] = target.list_interaction_attributes(self) || list()
 		if(HAS_TRAIT(user, TRAIT_IN_HEAT))
-			.["theirLust"] = target.get_lust()
-			.["theirMaxLust"] = target.get_lust_tolerance() * 3
-
-	//Getting interactions
-	var/list/sent_interactions = list()
-	for(var/interaction_key in SSinteractions.interactions)
-		var/datum/interaction/I = SSinteractions.interactions[interaction_key]
-		if(!I.evaluate_user(self, silent = TRUE, action_check = FALSE) || !I.evaluate_target(self, target, silent = TRUE))
-			continue
-		if(I.user_is_target && target != self)
-			continue
-		var/list/interaction = list()
-		interaction["key"] = I.type
-		var/description = replacetext(I.description, "%COCK%", self.has_penis() ? "cock" : "strapon")
-		interaction["desc"] = description
-		if(istype(I, /datum/interaction/lewd))
-			var/datum/interaction/lewd/O = I
-			if(O.extreme)
-				interaction["type"] = INTERACTION_EXTREME
-			else
-				interaction["type"] = INTERACTION_LEWD
+			.["TheirLust"] = target.get_lust() || 0
+			.["TheirMaxLust"] = target.get_lust_tolerance() * 3 || 0
 		else
-			interaction["type"] = INTERACTION_NORMAL
-		interaction["additionalDetails"] = I.additional_details
-		sent_interactions += list(interaction)
-	.["interactions"] = sent_interactions
-	.["autoplappers"] = package_autoplappers()
-/* 
-	//Get their genitals
-	var/list/genitals = list()
-	var/mob/living/carbon/get_genitals = self
-	if(istype(get_genitals))
-		for(var/obj/item/organ/genital/genital in get_genitals.internal_organs)	//Only get the genitals
-			if(CHECK_BITFIELD(genital.genital_flags, GENITAL_INTERNAL))			//Not those though
-				continue
-			var/list/genital_entry = list()
-			genital_entry["name"] = "[capitalize(genital.name)]" //Prevents code from adding a prefix
-			genital_entry["key"] = REF(genital) //The key is the reference to the object
-			var/visibility = "Invalid"
-			if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_ALWAYS))
-				visibility = "Always visible"
-			else if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_NO_UNDIES))
-				visibility = "Hidden by underwear"
-			else if(CHECK_BITFIELD(genital.genital_visflags , GEN_VISIBLE_NEVER))
-				visibility = "Always hidden"
-			else
-				visibility = "Hidden by clothes"
-			genital_entry["visibility"] = visibility
-			genital_entry["possible_choices"] = GLOB.genitals_visibility_toggles
-			genital_entry["can_arouse"] = (
-				!!CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_AROUSE) \
-				&& !(HAS_TRAIT(get_genitals, TRAIT_PERMABONER) \
-				|| HAS_TRAIT(get_genitals, TRAIT_NEVERBONER)))
-			genital_entry["arousal_state"] = genital.aroused_state
-			genital_entry["always_accessible"] = genital.always_accessible
-			genitals += list(genital_entry)
-		if(!get_genitals.getorganslot(ORGAN_SLOT_ANUS)) //SPLURT Edit
-			var/simulated_ass = list()
-			simulated_ass["name"] = "Anus"
-			simulated_ass["key"] = "anus"
-			var/visibility = "Invalid"
-			switch(get_genitals.anus_exposed)
-				if(1)
-					visibility = "Always visible"
-				if(0)
-					visibility = "Hidden by underwear"
-				else
-					visibility = "Always hidden"
-			simulated_ass["visibility"] = visibility
-			simulated_ass["possible_choices"] = GLOB.genitals_visibility_toggles - GEN_VISIBLE_NO_CLOTHES
-			simulated_ass["always_accessible"] = get_genitals.anus_always_accessible
-			genitals += list(simulated_ass)
-	.["genitals"] = genitals
-*/
+			.["TheirLust"] = round(target.get_lust(), 25) || 0
+			.["TheirMaxLust"] = round(target.get_lust_tolerance() * 3, 25) || 0
+
+
 	var/datum/preferences/prefs = self?.client.prefs
 	if(prefs)
 	//Getting char prefs
@@ -238,59 +219,91 @@
 	var/mob/living/parent_mob = parent
 	switch(action)
 		if("interact")
-			if(!isliving(parent_mob))
-				return
-			var/datum/interaction/o = SSinteractions.interactions[params["interaction"]]
-			if(o)
-				var/mob/living/target = GET_WEAKREF(weaktarget)
-				if(!target)
-					return
-				o.run_action(parent_mob, target)
-				return TRUE
-			return FALSE
-		/* todo: make this work : ^ )
-		if("genital")
-			var/mob/living/carbon/self = parent_mob
-			if("visibility" in params)
-				if(params["genital"] == "anus")
-					self.anus_toggle_visibility(params["visibility"])
-					return TRUE
-				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
-				if(genital && (genital in self.internal_organs))
-					genital.toggle_visibility(params["visibility"])
-					return TRUE
-			if("set_arousal" in params)
-				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
-				if(!genital || (genital \
-					&& (!CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_AROUSE) \
-					|| HAS_TRAIT(self, TRAIT_PERMABONER) \
-					|| HAS_TRAIT(self, TRAIT_NEVERBONER))))
-					return FALSE
-				var/original_state = genital.aroused_state
-				genital.set_aroused_state(params["set_arousal"])// i'm not making it just `!aroused_state` because
-				if(original_state != genital.aroused_state)		// someone just might port skyrat's new genitals
-					to_chat(self, span_userlove("[genital.aroused_state ? genital.arousal_verb : genital.unarousal_verb]."))
-					. = TRUE
-				else
-					to_chat(self, span_userlove("You can't make that genital [genital.aroused_state ? "unaroused" : "aroused"]!"))
-					. = FALSE
-				genital.update_appearance()
-				if(ishuman(self))
-					var/mob/living/carbon/human/human = self
-					human.update_genitals()
-				return
-			if("set_accessibility" in params)
-				if(!self.getorganslot(ORGAN_SLOT_ANUS) && params["genital"] == "anus")
-					self.toggle_anus_always_accessible()
-					return TRUE
-				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
-				if(!genital)
-					return FALSE
-				genital.toggle_accessibility()
-				return TRUE
+			perform_action(parent_mob, params["interaction"], params["extra"])
+			return TRUE
+		if("Favorite")
+			var/datum/preferences/prefs = parent_mob.client.prefs
+			if(params["interaction"] in prefs.faved_interactions)
+				prefs.faved_interactions -= params["interaction"]
 			else
+				prefs.faved_interactions += params["interaction"]
+			prefs.save_preferences()
+			return TRUE
+		if("DeleteAutoPlapper")
+			var/datum/autoplapper/AP = autoplappers[params["APID"]]
+			if(!AP)
 				return FALSE
-			*/
+			remove_autoplap(AP.apid)
+			return TRUE
+		if("StartRecording")
+			if(is_recording())
+				perform_action(parent_mob, params["interaction"], params["extra"]) // try to finish it off
+				return FALSE
+			new_autoplap(params["interaction"], GET_WEAKREF(weaktarget), null)
+			return TRUE
+		if("StopRecording")
+			var/datum/autoplapper/AP = autoplappers[params["APID"]]
+			if(!AP.plap_listening)
+				return TRUE
+			to_chat(parent_mob, span_green("Aborted recording [AP.plap_key]!"))
+			autoplappers -= AP.apid
+			qdel(AP)
+			return TRUE
+		if("SetAutoPlapperInterval")
+			var/datum/autoplapper/AP = autoplappers[params["APID"]]
+			if(!AP)
+				return FALSE
+			AP.plap_interval = params["Interval"]
+			return TRUE
+		if("ToggleAutoPlapper")
+			var/datum/autoplapper/AP = autoplappers[params["APID"]]
+			if(!AP)
+				return FALSE
+			AP.toggle_plapping()
+			return TRUE
+		if("ConsentAct")
+			SSinteractions.add_or_remove_consent(parent_mob, GET_WEAKREF(weaktarget))
+			return TRUE
+		// if("MTTC")
+		// 	update_mean_time_to_cum(params["value"])
+		// 	return TRUE
+		if("Cum")
+			parent_mob.cum()
+			return TRUE
+		if("ToggleAutoCum")
+			TOGGLE_VAR(parent_mob.ready_to_cum)
+			if(parent_mob.ready_to_cum)
+				to_chat(parent_mob, span_green("You will automatically cum when your arousal reaches 100%!"))
+			else
+				to_chat(parent_mob, span_green("You will no longer automatically cum when your arousal reaches 100%!"))
+			return TRUE
+		if("ToggleAutoStart")
+			TOGGLE_VAR(autoplapper_autostart)
+			return TRUE
+		if("StopAllAutoPlappers")
+			for(var/ap in autoplappers)
+				var/datum/autoplapper/AP = autoplappers[ap]
+				if(!AP)
+					continue
+				AP.stop_plapping()
+			to_chat(parent_mob, span_green("Stopped all autoplappers!"))
+			return TRUE
+		if("StartAllAutoPlappers")
+			for(var/ap in autoplappers)
+				var/datum/autoplapper/AP = autoplappers[ap]
+				if(!AP)
+					continue
+				AP.start_plapping()
+			to_chat(parent_mob, span_green("Started all autoplappers!"))
+			return TRUE
+		if("ToggleLewdMode")
+			TOGGLE_VAR(lewdmode)
+			if(lewdmode)
+				to_chat(parent_mob, span_green("Lewd mode enabled!"))
+			else
+				to_chat(parent_mob, span_green("Lewd mode disabled!"))
+			return TRUE
+
 		if("char_pref")
 			var/datum/preferences/prefs = parent_mob.client.prefs
 			var/value = num_to_pref(params["value"])
@@ -390,28 +403,15 @@
 			//Also add a save button.
 			prefs.save_preferences()
 			return TRUE
-		if("autoplapper")
-			if(params["action"] == "add")
-				new_autoplap(params["plapname"], GET_WEAKREF(weaktarget), params["interval"])
-			if(params["action"] == "remove")
-				remove_autoplap(params["apid"])
-			if(params["action"] == "toggle")
-				var/datum/autoplapper/AP = autoplappers[params["apid"]]
-				if(!AP)
-					return FALSE
-				AP.toggle_plapping()
-			if(params["action"] == "change_interval")
-				var/datum/autoplapper/AP = autoplappers[params["apid"]]
-				if(!AP)
-					return FALSE
-				AP.change_interval(params["interval"])
-			if(params["action"] == "save_plap_to_prefs")
-				var/datum/autoplapper/AP = autoplappers[params["apid"]]
-				if(!AP)
-					return FALSE
-				AP.save_plap_to_prefs()
-			return TRUE
 
+/datum/component/interaction_menu_granter/proc/perform_action(mob/living/target, interaction_key, extras)
+	if(!target || !interaction_key || !isliving(parent))
+		return FALSE
+	var/mob/living/parent_mob = parent
+	var/datum/interaction/o = SSinteractions.interactions[interaction_key]
+	if(!o)
+		return FALSE
+	o.run_action(parent_mob, target, extra = extras)
 
 //////// AUTOPLAPPER STUFF
 /datum/component/interaction_menu_granter/proc/new_autoplap(key, mob/living/partner, interval)
@@ -432,38 +432,135 @@
 		return
 	var/mob/living/me = parent
 	var/mob/living/them = partner
-	var/datum/autoplapper/AP = new(me, them, I, interval)
-	autoplappers[AP.apid] = AP
+	new /datum/autoplapper(me, them, I, interval) // it'll mail us when its good and ready
 	if(!interval) // it'll 
 		I.run_action(me, them) // plap to get things started
+
+
+/datum/component/interaction_menu_granter/proc/confirm_autoplap(datum/source, datum/autoplapper/AP)
+	if(!istype(AP))
+		return
+	autoplappers[AP.apid] = AP
 
 /datum/component/interaction_menu_granter/proc/remove_autoplap(apid)
 	var/datum/autoplapper/AP = autoplappers[apid]
 	if(!AP)
 		return
 	AP.stop_plapping()
-	to_chat(parent, span_success("Removed auto-action for [AP.plap_key]!"))
+	to_chat(parent, span_green("Removed auto-action for [AP.plap_key]!"))
+	autoplappers -= AP.apid
 	qdel(AP)
-	autoplappers -= AP
 
 /datum/component/interaction_menu_granter/proc/package_autoplappers()
 	var/list/ret = list()
-	for(var/autoplapper/AP in autoplappers)
-		var/list/entry = list()
-		entry["apid"] = AP.apid || "!!!"
-		entry["plapname"] = AP.plap_key || "???"
-		var/mob/living/L = ckey2mob(AP.plappee)
-		entry["partner"] = L?.name || "Your Mom"
-		entry["interval"] = AP.interval || 0
-		entry["plapping"] = AP.plapping || FALSE
-		entry["plapcount"] = AP.plapcount || 0
-		ret += list(entry)
+	for(var/plapining in autoplappers)
+		var/datum/autoplapper/AP = autoplappers[plapining]
+		if(!AP)
+			continue
+		ret += list(AP.format_for_tgui())
 	return ret
 
+/datum/component/interaction_menu_granter/proc/is_recording()
+	return LAZYLEN(get_recording_autoplappers())
 
+/datum/component/interaction_menu_granter/proc/get_recording_autoplappers()
+	var/list/ret = list()
+	for(var/plapining in autoplappers)
+		var/datum/autoplapper/AP = autoplappers[plapining]
+		if(!AP)
+			continue
+		if(AP.plap_listening)
+			ret += list(AP.format_for_tgui())
+	return ret
+
+/datum/component/interaction_menu_granter/proc/kill_autoplapper(datum/source, datum/autoplapper/AP)
+	if(!AP)
+		return
+	autoplappers -= AP.apid
+
+/datum/component/interaction_menu_granter/proc/format_orientation(mob/living/whose)
+	if(!isliving(whose) || !whose.client)
+		return list()
+	var/list/ret = list()
+	var/list/beep = list()
+	switch(whose.client?.prefs.kisser)
+		if(KISS_BOYS)
+			beep["OriName"] = "Boykisser"
+			beep["OriDesc"] = "I like boys!"
+			beep["OriEmoji"] = "👨‍🌾"
+		if(KISS_GIRLS)
+			beep["OriName"] = "Girlkisser"
+			beep["OriDesc"] = "I like girls!"
+			beep["OriEmoji"] = "👩‍💼"
+		if(KISS_ANY)
+			beep["OriName"] = "Anykisser"
+			beep["OriDesc"] = "I like everyone!"
+			beep["OriEmoji"] = "👩‍❤️‍👨"
+	if(LAZYLEN(beep))
+		ret += list(beep)
+	beep = list()
+	switch(whose.client?.prefs.tbs)
+		if(TBS_TOP)
+			beep["OriName"] = "Top"
+			beep["OriDesc"] = "I like to be on top!"
+			beep["OriEmoji"] = "👆"
+		if(TBS_BOTTOM)
+			beep["OriName"] = "Bottom"
+			beep["OriDesc"] = "I like to be on bottom!"
+			beep["OriEmoji"] = "👇"
+		if(TBS_SHOES)
+			beep["OriName"] = "Switch"
+			beep["OriDesc"] = "I like to switch!"
+			beep["OriEmoji"] = "👍"
+	if(LAZYLEN(beep))
+		ret += list(beep)
+	return ret
 
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD
 #undef INTERACTION_EXTREME
 #undef INTERACTION_CONSENT
 #undef SPLURT_MAX_AUTOPLAPPERS
+		/* todo: make this work : ^ )
+		if("genital")
+			var/mob/living/carbon/self = parent_mob
+			if("visibility" in params)
+				if(params["genital"] == "anus")
+					self.anus_toggle_visibility(params["visibility"])
+					return TRUE
+				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
+				if(genital && (genital in self.internal_organs))
+					genital.toggle_visibility(params["visibility"])
+					return TRUE
+			if("set_arousal" in params)
+				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
+				if(!genital || (genital \
+					&& (!CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_AROUSE) \
+					|| HAS_TRAIT(self, TRAIT_PERMABONER) \
+					|| HAS_TRAIT(self, TRAIT_NEVERBONER))))
+					return FALSE
+				var/original_state = genital.aroused_state
+				genital.set_aroused_state(params["set_arousal"])// i'm not making it just `!aroused_state` because
+				if(original_state != genital.aroused_state)		// someone just might port skyrat's new genitals
+					to_chat(self, span_userlove("[genital.aroused_state ? genital.arousal_verb : genital.unarousal_verb]."))
+					. = TRUE
+				else
+					to_chat(self, span_userlove("You can't make that genital [genital.aroused_state ? "unaroused" : "aroused"]!"))
+					. = FALSE
+				genital.update_appearance()
+				if(ishuman(self))
+					var/mob/living/carbon/human/human = self
+					human.update_genitals()
+				return
+			if("set_accessibility" in params)
+				if(!self.getorganslot(ORGAN_SLOT_ANUS) && params["genital"] == "anus")
+					self.toggle_anus_always_accessible()
+					return TRUE
+				var/obj/item/organ/genital/genital = locate(params["genital"], self.internal_organs)
+				if(!genital)
+					return FALSE
+				genital.toggle_accessibility()
+				return TRUE
+			else
+				return FALSE
+			*/

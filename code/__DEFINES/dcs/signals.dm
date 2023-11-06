@@ -735,6 +735,8 @@
 #define COMSIG_SPLURT_REVOKE "COMSIG_SPLURT_REVOKE" //
 #define COMSIG_SPLURT_INTERACTION_PITCHED "COMSIG_SPLURT_INTERACTION_PITCHED" // (datum/source, mob/living/interactor, mob/living/interactor, datum/interaction/interaction)
 #define COMSIG_SPLURT_INTERACTION_CAUGHT "COMSIG_SPLURT_INTERACTION_CAUGHT" // (datum/source, mob/living/interactee, mob/living/interactee, datum/interaction/interaction)
+#define COMSIG_SPLURT_REMOVE_AUTOPLAPPER "COMSIG_SPLURT_REMOVE_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
 
 
 

@@ -8,6 +8,7 @@
 	needs_physical_contact = TRUE
 	require_ooc_consent = TRUE
 	max_distance = 1
+	categories = list("All Interactions", "SEXFUCK")
 
 	is_lewd = TRUE
 
@@ -56,7 +57,6 @@
 
 	//"just fucking kill me" variables
 	//also the same logic as before
-	var/extreme = FALSE //Boolean. Used to hide extreme shit from those who do not want it.
 	var/require_target_ears
 	var/require_target_earsockets
 	var/require_target_eyes

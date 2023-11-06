@@ -43,15 +43,18 @@
 	var/require_target_mouth
 	var/require_target_hands
 	var/needs_physical_contact
+	var/list/categories = list("All Interactions", "Bingus")
 
 	var/can_autoplap = TRUE
 
 	var/is_lewd = FALSE
+	var/extreme = FALSE //Boolean. Used to hide extreme shit from those who do not want it.
 
 	var/user_is_target = FALSE //Boolean. Pretty self explanatory.
 
 	/// Refuses to accept more than one entry for some reason, fix sometime
-	var/list/additional_details
+	var/list/additional_details = list()
+	var/list/cache_stuff = list()
 
 /// Checks if user can do an interaction, action_check is for whether you're actually doing it or not (useful for the menu and not removing the buttons)
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
@@ -74,13 +77,11 @@
 	// 		to_chat(user, span_warning("You don't have hands."))
 	// 	return FALSE
 
-	if(COOLDOWN_FINISHED(user, interaction_cooldown))
-		return TRUE
-
 	if(action_check)
-		return FALSE
-	else
 		return TRUE
+	if(!COOLDOWN_FINISHED(user, interaction_cooldown))
+		return FALSE
+	return TRUE
 
 /// Same as evaluate_user, but for target
 /datum/interaction/proc/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)
@@ -112,27 +113,27 @@
 	return TRUE
 
 /// Actually doing the action, has a few checks to see if it's valid, usually overwritten to be make things actually happen and what-not
-/datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE)
+/datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	if(!user || !target)
 		return
-	if(!can_do_interaction(user, target, discrete))
+	if(!can_do_interaction(user, target, discrete, extra))
 		return
-	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src)
-	do_action(user, target, discrete)
-	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src)
-	log_it(user, target)
-	display_interaction(user, target, discrete)
+	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
+	do_action(user, target, discrete, extra)
+	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src, extra)
+	log_it(user, target, extra)
+	display_interaction(user, target, discrete, extra)
 	post_interaction(user, target)
 
 /// Actually doing the action, has a few checks to see if it's valid, usually overwritten to be make things actually happen and what-not
 /datum/interaction/proc/do_action(mob/living/user, mob/living/target, discrete = FALSE)
 	return // This is a stub, it's meant to be overwritten
 
-/datum/interaction/proc/can_do_interaction(mob/living/user, mob/living/target, discrete = FALSE)
+/datum/interaction/proc/can_do_interaction(mob/living/user, mob/living/target, discrete = FALSE, override_for_tgui)
 	if(!user_is_target)
 		if(user == target) //tactical href fix
 			if(!discrete)
-				to_chat(user, span_warning("You cannot target yourself."))
+				to_chat(user, span_warning("You cannot target yourself with that!"))
 			return
 	if(!consented(user, target))
 		if(!discrete)
@@ -146,11 +147,11 @@
 		if(!discrete)
 			to_chat(user, span_warning("You cannot get to them."))
 		return
-	if(!evaluate_user(user, silent = discrete))
+	if(!evaluate_user(user, silent = discrete, action_check = override_for_tgui))
 		return
 	if(!evaluate_target(user, target, silent = discrete))
 		return
-	if(user.is_incapacitated())
+	if(!override_for_tgui && user.incapacitated())
 		if(!discrete)
 			to_chat(user, span_warning("You are in no shape to do that!"))
 		return
@@ -169,14 +170,14 @@
 		return TRUE
 	if(!is_lewd)
 		return TRUE
-	return SSinteractions.consented(user, target)
+	return SSinteractions.check_consent(user, target)
 
 /// Display the message
 /datum/interaction/proc/display_interaction(mob/living/user, mob/living/target, show_message)
-	var/showmessage = FALSE
+	// var/showmessage = FALSE
 	//If you swapped interactions
 	if(user.last_lewd_datum != src || COOLDOWN_FINISHED(user, interaction_message_cooldown))
-		showmessage = TRUE
+		// showmessage = TRUE
 		COOLDOWN_START(user, interaction_message_cooldown, LEWD_VERB_MESSAGE_COOLDOWN)
 	if(simple_message && show_message)
 		var/use_message = replacetext(simple_message, "USER", "\the [user]")
@@ -190,3 +191,29 @@
 		COOLDOWN_START(user, interaction_sound_cooldown, LEWD_VERB_SOUND_COOLDOWN)
 		playlewdinteractionsound(get_turf(user), interaction_sound, int_sound_vol, 1, -1)
 	return
+
+/datum/interaction/proc/get_description(mob/living/user, mob/living/target)
+	var/descr = description
+	if(user)
+		descr = replacetext(description, "%COCK%", user.has_penis() ? "cock" : "strapon")
+	return descr
+
+/datum/interaction/proc/get_additional_stuff()
+	if(islist(additional_details))
+		return "[additional_details.Join("\n")]" || "=3"
+	return "[additional_details]" || "=3"
+
+
+/datum/interaction/proc/format_for_tgui(mob/living/user, mob/living/target)
+	if(LAZYLEN(cache_stuff))
+		return cache_stuff
+	var/list/interaction = list()
+	interaction["InteractionKey"] = "[type]" || "/datum/urmom"
+	interaction["InteractionName"] = get_description(user, target) || "buttificate"
+	interaction["InteractionLewd"] = is_lewd
+	interaction["InteractionCanAuto"] = can_autoplap
+	interaction["InteractionExtreme"] = extreme
+	interaction["InteractionAdditional"] = get_additional_stuff() || "=3"
+	interaction["InteractionCategories"] = categories
+	cache_stuff = interaction
+	return cache_stuff

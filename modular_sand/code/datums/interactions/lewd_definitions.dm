@@ -54,10 +54,107 @@
 	last_genital = null
 	last_lewd_datum = null
 
-/mob/living/Initialize(mapload)
-	. = ..()
-	sexual_potency = rand(10,25)
-	lust_tolerance = rand(75,200)
+// /mob/living/Initialize(mapload)
+// 	. = ..()
+// 	sexual_potency = 15
+// 	lust_tolerance = 200
+
+/// Turns our groinuses into a list of groinuses for TGUI
+/mob/living/proc/format_genitals_for_tgui()
+	if(!client)
+		return list()
+	if(!client.prefs)
+		return list() // non-carbons dont have internal organs, but! they do have stuff stored in their prefs
+	var/datum/preferences/P = client.prefs
+	var/list/features = P.features
+	var/list/out = list()
+	if(LAZYACCESS(features, "has_cock")) // bawk bawk
+		var/list/peen = list()
+		peen["BitKind"] = "Penis"
+		peen["BitName"] = "\A [lowertext(LAZYACCESS(features, "cock_shape"))] penis."
+		peen["BitSize"] = "It is [LAZYACCESS(features, "cock_size")] inches long!"
+		peen["BitColor"] = "#[LAZYACCESS(features, "cock_color")]"
+		peen["BitAroused"] = FALSE
+		peen["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		peen["BitEmoji"] = "🍆" // very long~~~~~~~~~~~~~~~~
+		out += list(peen)
+	if(LAZYACCESS(features, "has_balls")) // bawk bawk
+		var/list/ball = list()
+		ball["BitKind"] = "Nads"
+		ball["BitName"] = "\A [lowertext(LAZYACCESS(features, "balls_shape"))]."
+		ball["BitSize"] = "It is [LAZYACCESS(features, "balls_size")] decigrundles in mass!"
+		ball["BitColor"] = "#[LAZYACCESS(features, "balls_color")]"
+		ball["BitAroused"] = FALSE
+		ball["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		ball["BitEmoji"] = "🎱"
+		out += list(ball)
+	if(LAZYACCESS(features, "has_breasts")) // bawk bawk
+		var/list/boob = list()
+		boob["BitKind"] = "Boobs"
+		var/boobname = lowertext(LAZYACCESS(features, "breasts_shape"))
+		if(boobname == "udders")
+			boob["BitName"] = "Some udders."
+		else
+			boob["BitName"] = "\A [boobname] of boobs."
+		boob["BitSize"] = "They are \a [LAZYACCESS(features, "breasts_size")] cup!"
+		boob["BitColor"] = "#[LAZYACCESS(features, "breasts_color")]"
+		boob["BitAroused"] = FALSE
+		boob["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		boob["BitEmoji"] = "🍈"
+		out += list(boob)
+	if(LAZYACCESS(features, "has_butt")) // bawk bawk
+		var/list/butt = list()
+		butt["BitKind"] = "Butt"
+		butt["BitName"] = "A butt."
+		butt["BitSize"] = "It is a category-[LAZYACCESS(features, "butt_size")]!"
+		butt["BitColor"] = "#[LAZYACCESS(features, "butt_color")]"
+		butt["BitAroused"] = FALSE
+		butt["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		butt["BitEmoji"] = "🍑"
+		out += list(butt)
+	if(LAZYACCESS(features, "has_belly")) // bawk bawk
+		var/list/belly = list()
+		belly["BitKind"] = "Belly"
+		var/bellykind = lowertext(LAZYACCESS(features, "belly_shape"))
+		if(bellykind == "obese")
+			belly["BitName"] = "An obese belly."
+		else
+			belly["BitName"] = "A cute tummy."
+		belly["BitSize"] = "It is [LAZYACCESS(features, "belly_size")]-XL!"
+		belly["BitColor"] = "#[LAZYACCESS(features, "belly_color")]"
+		belly["BitAroused"] = FALSE
+		belly["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		belly["BitEmoji"] = "🍔"
+		out += list(belly)
+	if(LAZYACCESS(features, "has_vag")) // bawk bawk
+		var/list/vadge = list()
+		vadge["BitKind"] = "Pussy"
+		vadge["BitName"] = "\A [lowertext(LAZYACCESS(features, "vag_shape"))] vagin[prob(1)?"e":"a"]."
+		vadge["BitSize"] = "It is [lowertext(LAZYACCESS(features, "vag_shape"))] vagin[prob(1)?"e":"a"] sized!!"
+		vadge["BitColor"] = "#[LAZYACCESS(features, "vag_color")]"
+		vadge["BitAroused"] = FALSE
+		vadge["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		vadge["BitEmoji"] = "🥠"
+		out += list(vadge)
+	if(LAZYACCESS(features, "has_womb")) // bawk bawk
+		var/list/womb = list()
+		womb["BitKind"] = "Uterus"
+		womb["BitName"] = "A womb."
+		womb["BitSize"] = "It has a grade-C breedability quotient!"
+		womb["BitColor"] = "#FF00FF"
+		womb["BitAroused"] = FALSE
+		womb["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
+		womb["BitEmoji"] = "🥚"
+		out += list(womb)
+	return out
+
+/// Turns our groinuses into a list of groinuses for TGUI
+/mob/living/carbon/format_genitals_for_tgui()
+	if(!LAZYLEN(internal_organs))
+		return list()
+	var/list/out = list()
+	for(var/obj/item/organ/genital/G in internal_organs)
+		out += list(G.format_for_tgui())
 
 /mob/living/proc/get_lust_tolerance()
 	. = lust_tolerance

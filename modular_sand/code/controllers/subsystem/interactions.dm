@@ -5,7 +5,8 @@ SUBSYSTEM_DEF(interactions)
 	name = "Interactions"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_INTERACTIONS
-	var/list/interactions
+	var/list/interactions = list()
+	var/list/all_categories = list()
 	/// format: list("ckey1!ckey2" = ASKER_ASKED, "ckey2!ckey1" = ASKED_ASKER)
 	var/list/consents = list()
 	var/list/deliberating_consent = list()
@@ -29,6 +30,7 @@ SUBSYSTEM_DEF(interactions)
 	for(var/itype in subtypesof(/datum/interaction))
 		var/datum/interaction/I = new itype()
 		interactions["[itype]"] = I
+		all_categories |= I.categories
 
 /// Blacklisting!
 /datum/controller/subsystem/interactions/proc/prepare_blacklisted_mobs()

@@ -110,6 +110,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/lust_tolerance = 100
 	var/sexual_potency = 15
 	var/unholypref = "No" //Goin 2 hell fo dis one
+	// cum
+	var/list/faved_interactions = list() // list of stringed type paths
+	var/list/saved_plappers = list() // to do: this
 	//Sandstorm CHANGES END
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type

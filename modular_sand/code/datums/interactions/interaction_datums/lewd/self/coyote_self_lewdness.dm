@@ -467,7 +467,7 @@ datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what
 			"is gently rubbing [t_their] clit",
 			"rubs [t_their] clit softly in small circles",
 			"presses two fingers to [t_their] clit rubs gently",
-			"softly rubs [t_their] clit"
+			"softly rubs [t_their] clit",
 			)
 
 		//Message block B
@@ -551,7 +551,7 @@ datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just wha
 			"is rubbing [t_their] cock",
 			"rubs [t_their] cock excitedly",
 			"is cranking [t_their] meat",
-			"is fucking [t_their] fist"
+			"is fucking [t_their] fist",
 			)
 
 		//Message block B
@@ -561,7 +561,7 @@ datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just wha
 			"is really beating [t_their] cock",
 			"is trying to speedrun jerking off",
 			"cranks [t_their] rod hard",
-			"is fucking [t_their] fist like it owes them money"
+			"is fucking [t_their] fist like it owes them money",
 			)
 
 //Message block C
@@ -635,7 +635,7 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 			"is rubbing [t_their] nipples in small circles",
 			"rubs [t_their] nipples softly",
 			"gently pulls[t_their] own nipples",
-			"gently pinches [t_their] own nipples"
+			"gently pinches [t_their] own nipples",
 			)
 
 		//Message block B
@@ -662,8 +662,8 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
 	else if(user.a_intent == INTENT_HARM) //Is the player in harm intent?
 		message = pick( //Then pick from these messages!
-			"is playing so rough with [t_their] nipples they have to be just as much in pain as they are enjoying it"
-			"twists and pulls [t_their] nipples aggressively, clearly enjoying the pain"
+			"is playing so rough with [t_their] nipples they have to be just as much in pain as they are enjoying it",
+			"twists and pulls [t_their] nipples aggressively, clearly enjoying the pain",
 			)
 
 //Aftershock Block// 
