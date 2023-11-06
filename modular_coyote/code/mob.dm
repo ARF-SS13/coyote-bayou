@@ -957,3 +957,21 @@
 	icon_living = "yaoguai"
 	icon_dead = "yaoguai_dead"
 
+/mob/living/simple_animal/pet/mothroach
+	name = "mothroach"
+	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
+	var/held_icon = "mothroach"
+
+/mob/living/simple_animal/pet/pony
+	name = "pony"
+	desc = "A cute fluffy pony"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "pony"
+	icon_living = "pony"
+	icon_dead = "pony_dead"
+
+
