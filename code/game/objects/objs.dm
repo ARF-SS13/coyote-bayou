@@ -42,6 +42,9 @@
 	//Was this item rotated? if so, how much? (only working with Edit Vars verb for now)
 	var/is_tilted
 
+	//very important var. does nothing except display vital information
+	var/fenny = "stinky"
+
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("anchored")
