@@ -727,7 +727,7 @@
 /obj/item/projectile/bullet/a50MG
 	name = ".50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG //75
-	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 15)
+	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 5)
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_50MG
