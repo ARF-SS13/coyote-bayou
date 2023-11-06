@@ -28,11 +28,11 @@
 			A.item = I.item
 
 			LAZYSET(filtered_supplykit_items[A.category], A.name, A)
-/* debug time - fuzzy
+
 	for(var/category in filtered_supplykit_items)
 		if(!filtered_supplykit_items[category]) //empty categories with no associated supplykit item. Remove.
 			filtered_supplykit_items -= category
-*/
+
 	return filtered_supplykit_items
 
 
@@ -92,8 +92,8 @@
 	surplus = 0
 	cant_discount = TRUE
 
-/datum/supplykit_item/weapons
-	category = "Weapons"
+/datum/supplykit_item/longarms
+	category = "longarms"
 
 /datum/supplykit_item/ammo
 	category = "Ammunition"

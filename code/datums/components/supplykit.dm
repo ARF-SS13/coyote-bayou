@@ -50,18 +50,18 @@ GLOBAL_LIST_EMPTY(supplykits)
 
 /datum/component/supplykit/proc/interact(datum/source, mob/user)
 	active = TRUE
-	if(user)
-		//make sure discounts are not rerolled
-		var/old_discounts = supplykit_items["Discounted Gear"]
-		supplykit_items = get_supplykit_items(FALSE, allow_restricted, filters)
-		if(old_discounts)
-			supplykit_items["Discounted Gear"] = old_discounts
-		ui_interact(user)
+	// if(user)
+	// 	//make sure discounts are not rerolled
+	// 	var/old_discounts = supplykit_items["Discounted Gear"]
+	// 	supplykit_items = get_supplykit_items(FALSE, allow_restricted, filters)
+	// 	if(old_discounts)
+	// 		supplykit_items["Discounted Gear"] = old_discounts
+	ui_interact(user)
 	// an unlocked uplink blocks also opening the PDA or headset menu
 	return COMPONENT_NO_INTERACT
 
 /datum/component/supplykit/ui_state(mob/user)
-	return GLOB.inventory_state
+	return GLOB.always_state
 
 /datum/component/supplykit/ui_interact(mob/user, datum/tgui/ui)
 	active = TRUE
@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(supplykits)
 		ui = new(user, src, "Supplykit", name)
 		// This UI is only ever opened by one person,
 		// and never is updated outside of user input.
-		ui.set_autoupdate(FALSE)
+		// ui.set_autoupdate(FALSE)
 		ui.open()
 
 /datum/component/supplykit/ui_data(mob/user)

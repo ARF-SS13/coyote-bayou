@@ -14,7 +14,7 @@ export const Supplykit = (props, context) => {
     <Window
       width={620}
       height={580}
-      theme="syndicate"
+      theme="cardtable"
       resizable>
       <Window.Content scrollable>
         <GenericSupplykit
