@@ -266,6 +266,7 @@
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 10,
+		/obj/item/gun/ballistic/automatic/gewehr41civ = 4,
 		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1, // Commenting out until the sprite is fixed.
 		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
 	)
@@ -297,6 +298,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 1,
+		/obj/item/gun/ballistic/automatic/gewehr43 = 4,
 		// /obj/item/gun/ballistic/automatic/wt550 = 2, // Commenting out until the sprite is fixed.
 
 	)
