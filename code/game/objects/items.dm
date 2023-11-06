@@ -189,7 +189,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/reskinnable_component
 
 	/// New variable for backstab multiplier
-	var/backstab_multiplier = 1.0 
+	var/backstab_multiplier = 1.15 
 
 /obj/item/Initialize()
 
