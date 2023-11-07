@@ -23,11 +23,8 @@
  * Sets a mob's blindness to an amount if it was not above it already, similar to how status effects work
  */
 /mob/proc/blind_eyes(amount)
-	var/old_blind = eye_blind
 	eye_blind = max((!eye_blind && stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : eye_blind , amount)
-	var/new_blind = eye_blind
-	if(old_blind != new_blind)
-		update_blindness()
+	update_blindness()
 
 /**
  * Adjust a mobs blindness by an amount
@@ -35,18 +32,14 @@
  * Will apply the blind alerts if needed
  */
 /mob/proc/adjust_blindness(amount)
-	var/old_eye_blind = eye_blind
 	eye_blind = max((stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : 0, eye_blind + amount)
-	if(!old_eye_blind || !eye_blind)
-		update_blindness()
+	update_blindness()
 /**
  * Force set the blindness of a mob to some level
  */
 /mob/proc/set_blindness(amount)
-	var/old_eye_blind = eye_blind
 	eye_blind = max(amount, (stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : 0)
-	if(!old_eye_blind || !eye_blind)
-		update_blindness()
+	update_blindness()
 
 /// proc that adds and removes blindness overlays when necessary
 /mob/proc/update_blindness()

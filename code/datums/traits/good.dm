@@ -191,6 +191,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		)
 	gain_text = span_notice("You remember the old ways of your tribe.")
 	lose_text = span_notice("You've forgotten the ways of your ancestors...")
+	human_only = FALSE
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -472,16 +473,20 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You know everything about musical instruments.")
 	lose_text = span_danger("You forget how musical instruments work.")
 	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
+	human_only = FALSE
 
 /datum/quirk/musician/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	var/obj/item/choice_beacon/music/B = new(get_turf(H))
 	H.put_in_hands(B)
 	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
 	var/obj/item/musicaltuner/musicaltuner = new(get_turf(H))
 	H.put_in_hands(musicaltuner)
 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
-	H.regenerate_icons()
+	if(ishuman(quirk_holder))
+		H.regenerate_icons()
+	else
+		H.update_icons()
 
 /* //placeholder test concluded
 /datum/quirk/wizard
@@ -545,6 +550,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel a little more faithful to the gods today.")
 	lose_text = span_danger("You feel less faithful in the gods.")
 	medical_record_text = "Patient reports a belief in a higher power."
+	human_only = FALSE
 
 /datum/quirk/tagger
 	name = "Tagger"
@@ -585,6 +591,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
 	medical_record_text = "Patient appears to really enjoy dismantling old junk."
+	human_only = FALSE
 
 /datum/quirk/technophreak/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -620,6 +627,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem to have forgotten how to craft makeshift weapons...")
 	medical_record_text = "Patient appears to enjoy tinkering with custom guns."
+	human_only = FALSE
 
 /datum/quirk/gunsmith/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -647,6 +655,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
 	lose_text = span_danger("You seem less adept at crafting masterworks.")
 	medical_record_text = "Patient appears to be a well renowned gunsmith."
+	human_only = FALSE
 
 /datum/quirk/voracious
 	name = "Bottomless Stomach"
@@ -696,6 +705,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You are no longer able to use primitive technology.")
 	medical_record_text = "Patient appears to have a knack for bushcraft."
 	locked = TRUE
+	human_only = FALSE
 
 /datum/quirk/dna_whiz
 	name = "Dna Whiz"
@@ -728,12 +738,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The shadows seem a little less dark.")
 	lose_text = span_danger("Everything seems a little darker.")
 	medical_record_text = "Patient claims they can see in the dark."
-
-
+	human_only = FALSE
 
 /datum/quirk/night_vision/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.update_sight()
+	quirk_holder.update_sight()
+
+/datum/quirk/night_vision/remove()
+	quirk_holder.update_sight()
 
 /datum/quirk/night_vision_greater
 	name = "Dark Vision - Greater"
@@ -749,12 +760,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("The shadows seem a a lot less dark.")
 	lose_text = span_danger("Everything seems a lot darker.")
 	medical_record_text = "Patient claims that they have night vision."
-
-
+	human_only = FALSE
 
 /datum/quirk/night_vision_greater/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.update_sight()
+	quirk_holder.update_sight()
+
+/datum/quirk/night_vision_greater/remove()
+	quirk_holder.update_sight()
 
 /datum/quirk/nukalover
 	name = "Cola Fiend"
@@ -798,6 +810,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how to slaughter animals.")
 	medical_record_text = "Patient often describes how they clean and skin animals."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
@@ -816,6 +829,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel like bunting.")
 	medical_record_text = "Patient appears to have incredible upper body strength."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/littleleagues
 	name = "Melee - Little Leagues"
@@ -834,6 +848,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel like skipping practice.")
 	medical_record_text = "Patient appears to have above average upper body strength."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
@@ -852,6 +867,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how water boils.")
 	medical_record_text = "Patient appears to use pharmaceutical labels for OTC drugs."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/chemwhiz/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -936,6 +952,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel flimsy once more.")
 	medical_record_text = "Patient has higher capacity for injury."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -958,6 +975,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel noodly once more.")
 	medical_record_text = "Patient has shown a significantly higher capacity for injury."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/lifegiverplus/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1023,6 +1041,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how to perform even the simplest of surgery.")
 	medical_record_text = "Patient exudes some knowlegde on operation sanitation procedures."
 	locked = FALSE
+	human_only = FALSE
+
 /datum/quirk/surgerymid
 	name = "Advanced Surgery"
 	desc = "You are a competent medical practicioner, capable of performing a larger array of surgeries."
@@ -1038,6 +1058,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how to perform even the simplest of surgery.")
 	medical_record_text = "Patient is claimed to be an competent surgeon."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/surgeryhigh
 	name = "Expert Surgery"
@@ -1054,7 +1075,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You forget how to perform even the simplest of surgery.")
 	medical_record_text = "Patient is a renown surgeon."
 	locked = FALSE
-
+	human_only = FALSE
 
 /datum/quirk/explosive_crafting
 	name = "Explosives Crafting"
@@ -1070,6 +1091,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel okay with the advancement of technology.")
 	medical_record_text = "Patient claims to enjoy making pipe bombs."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/explosive_crafting/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1100,6 +1122,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel rather dry.")
 	medical_record_text = "Patient exudes a rather invigorating aura. Further study is required."
 	locked = FALSE
+	human_only = FALSE
 
 /*
 /datum/quirk/lick_bandage
@@ -1346,6 +1369,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("Your feel like you could get thrown down again.")
 	medical_record_text = "Patient appears to exude a personal space bubble."
 	locked =  FALSE
+	human_only = FALSE
 
 /* Removed due to lack of atmos lol ~TK
 /datum/quirk/heatresist
@@ -1495,6 +1519,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("What's a two by four again?")
 	medical_record_text = "Patient made comments on the building's floorplan."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/grappler
 	name = "Trained Grappler"
@@ -1508,6 +1533,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You no longer feel like you should wrestle deathclaws...")
 	medical_record_text = "Patient is apparently very good at gripping things."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/mastermartialartist
 	name = "Master Martial Artist"
@@ -1572,6 +1598,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("Your aim could use a lot more work...")
 	medical_record_text = "Patient flicked a fly out of the air using a toothpick."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/straightshooter
 	name = "Straight Shooter"
@@ -1589,6 +1616,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("Your aim could use a little more work...")
 	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/bowtrained
 	name = "Bow Trained"
@@ -1605,6 +1633,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("Guns were always better...")
 	medical_record_text = "Patient shows aptitude for utilizing strings on sticks."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/masterrifleman
 	name = "Bolt Worker"
@@ -1621,6 +1650,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
 	medical_record_text = "Patient appears to really enjoy cranking bolts."
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/wandproficient
 	name = "Magically Attuned"
@@ -1638,6 +1668,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("The magic within you fades away.")
 	medical_record_text = "Patient exudes an unknown pattern on the monitor. Further analysis required."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/playdead
 	name = "Play Dead"
@@ -1666,13 +1697,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("God of rats curses your name...") // Perhaps make killing related mobs lose the quirk?
 	medical_record_text = "Patient talks about rats a lot."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/ratfriend/add()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	H.faction |= list("rat-friend")
 
 /datum/quirk/ratfriend/remove()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	if(H)
 		H.faction -= list("rat-friend")
 
@@ -1736,13 +1768,14 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel as if some of the critters in the wasteland grow hostile towards you...")
 	medical_record_text = "Patient seems to possess a calm aura."
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/critterfriend/add()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	H.faction |= list("critter-friend")
 
 /datum/quirk/critterfriend/remove()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	if(H)
 		H.faction -= list("critter-friend")
 
@@ -1856,7 +1889,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You feel as if you lost the knack for identifying ancient objects.")
 	medical_record_text = "Patient claims to know about alien, or some form of ancient technology."
 	locked =  FALSE
-
+	human_only = FALSE
 
 /datum/quirk/armblader
 	name = "Arm Blader"
@@ -1870,6 +1903,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel as your arm is heavier...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a knife, somehow."
+	human_only = FALSE
 
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
@@ -1899,6 +1933,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your bite strength feels like that of a gator!")
 	lose_text = span_danger("Your mouth feels incredibly sore.")
 	medical_record_text = "Patient appears to chew through bone like nothing."
+	human_only = FALSE
 
 /datum/quirk/fastbiter
 	name = "Biter - Fast"
@@ -1916,6 +1951,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your mouth feels capable of nibbling a LOT!")
 	lose_text = span_danger("Your mouth feels all gunked up.")
 	medical_record_text = "Patient bites. A lot."
+	human_only = FALSE
 
 /datum/quirk/playbiter
 	name = "Biter - Pretend"
@@ -1933,6 +1969,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your feel your bite strength leave your jaw...")
 	lose_text = span_danger("Your bite strength returns!")
 	medical_record_text = "Patient has bit me before. It did not hurt."
+	human_only = FALSE
 
 /datum/quirk/spicybiter
 	name = "Biter - Venomous"
@@ -1950,6 +1987,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel your teeth secrete a viscous fluid.")
 	lose_text = span_danger("You no longer secrete venom.")
 	medical_record_text = "Patient has caused numbing in my arm. We really need a better way to test bites."
+	human_only = FALSE
 
 /datum/quirk/sabrebiter
 	name = "Biter - Sabre Toothed"
@@ -1967,6 +2005,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your teeth suddenly becomes incredibly large and heavy!")
 	lose_text = span_danger("Your teeth suddenly shrink and become light once more!")
 	medical_record_text = "Patient has incredibly large teeth."
+	human_only = FALSE
 
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
@@ -1984,6 +2023,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You claws harden, they feel capable of through metal!")
 	lose_text = span_danger("Your claws soften.")
 	medical_record_text = "Patient is capable of shredding through a locker."
+	human_only = FALSE
 
 /datum/quirk/fastclawer
 	name = "Clawer - Fast"
@@ -2001,6 +2041,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your claws feel very aerodynamic!")
 	lose_text = span_danger("You suddenly feel clumsy swinging your claws around...")
 	medical_record_text = "Patient claims to scratch at things. A lot."
+	human_only = FALSE
 
 /datum/quirk/playclaw
 	name = "Clawer - Pretend"
@@ -2018,6 +2059,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your claws feel almost like rubber!")
 	lose_text = span_danger("Your claws suddenly return to normal.")
 	medical_record_text = "Patient claims to be weak at scratching."
+	human_only = FALSE
 
 /datum/quirk/spicyclaw
 	name = "Clawer - Venomous"
@@ -2035,6 +2077,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You feel a viscous fluid secrete from your claws!")
 	lose_text = span_danger("You no longer feel venom drip from your claws.")
 	medical_record_text = "Patient has momentarily numbed me after a bad handshake."
+	human_only = FALSE
 
 /datum/quirk/razorclaw
 	name = "Clawer - Razors"
@@ -2052,6 +2095,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("RIP AND TEAR, your claws are now much stronger!")
 	lose_text = span_danger("You no longer feel like ripping anything up.")
 	medical_record_text = "Patient appears to enjoy clawing everything up."
+	human_only = FALSE
 
 //tail
 
@@ -2064,6 +2108,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your tail is suddenly much larger.")
 	lose_text = span_danger("Your tail is suddenly smaller.")
 	medical_record_text = "Patient has a large tail."
+	human_only = FALSE
 
 /datum/quirk/fasttail
 	name = "Tail - Whiplike"
@@ -2074,6 +2119,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your tail is now much lighter!")
 	lose_text = span_danger("Your tail feels heavy.")
 	medical_record_text = "Patient has a heavy tail."
+	human_only = FALSE
 
 /datum/quirk/playtail
 	name = "Tail - Playful"
@@ -2084,6 +2130,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your tail feels very soft and plush.")
 	lose_text = span_danger("Your tail feels rough and raggedy.")
 	medical_record_text = "Patient has a very soft tail."
+	human_only = FALSE
 
 /datum/quirk/spicytail
 	name = "Tail - Venomous"
@@ -2094,6 +2141,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your tail secretes a viscous fluid.")
 	lose_text = span_danger("Your tail no longer produces venom.")
 	medical_record_text = "Patient appears to have a paralytic tail."
+	human_only = FALSE
 
 /datum/quirk/thagotail
 	name = "Tail - Thagomizer"
@@ -2104,6 +2152,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your tail feels like a bludgeon!")
 	lose_text = span_danger("Your tail suddenly feels weak.")
 	medical_record_text = "Patient tripped me over with their tail this morning. Please be aware of it."
+	human_only = FALSE
+
 //Cantrips//
 /datum/quirk/shocking
 	name = "Shocking Grasp"
@@ -2118,8 +2168,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mob_trait = TRAIT_SHOCKINGGRASP
 	gain_text = span_notice("You know how to cast shocking grasp!")
 	lose_text = span_danger("You no longer know how to cast shocking grasp!.")
-	
-	
+	human_only = FALSE
+
 //datum/quirk/booming
 	//name = "Booming Blade"
 	//desc = "You know how to cast the booming blade cantrip"
@@ -2235,9 +2285,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		)
 	gain_text = span_notice("DAMN BRO YOU SWOLE!")
 	lose_text = span_notice("Maybe you could skip gym day...")
+	human_only = FALSE
 
 /datum/quirk/package/bruiser/add()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
 	ADD_TRAIT(H, TRAIT_LIFEGIVERPLUS, "Health - Tougher")
 
@@ -2334,6 +2385,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		)
 	gain_text = span_notice("These lands are your home.")
 	lose_text = span_notice("Where the heck am I????")
+	human_only = FALSE
 
 /datum/quirk/package/ranger/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -2359,6 +2411,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		)
 	gain_text = span_notice("Aim just behind behind the front leg...")
 	lose_text = span_notice(".223 is probably overkill for deer...")
+	human_only = FALSE
 
 /datum/quirk/package/hunter/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -2382,9 +2435,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/gunsmith,
 		/datum/quirk/masterworksmith,
 	)
+	human_only = FALSE
 
 /datum/quirk/package/legendarywepsm/add()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
 	ADD_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")
 	if(!H.mind.learned_recipes)
@@ -2393,7 +2447,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
 /datum/quirk/package/legendarywepsm/remove()
-	var/mob/living/carbon/human/H = quirk_holder
+	var/mob/living/H = quirk_holder
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_MASTERWORKSMITH, "Weaponsmith - Masterwork")
 		REMOVE_TRAIT(H, TRAIT_WEAPONSMITH, "Weaponsmith - Basic")

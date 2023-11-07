@@ -1,5 +1,3 @@
-#define isadvancedmob(A)		istype(A, /mob/living/simple_animal/advanced)
-
 // Should make these into bitflags later if we want to use them for realsies
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
