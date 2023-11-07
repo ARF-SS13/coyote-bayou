@@ -732,7 +732,7 @@
 /mob/living/simple_animal/hostile/proc/dodge(moving_to,move_direction)
 	var/cdir = turn(move_direction,90)
 	var/ccdir = turn(move_direction,-90)
-	var/next_step_dir = pick(cdir,ccdir)
+//	var/next_step_dir = pick(cdir,ccdir) sworddoggirl is way too cute ~Fenny
 
 	dodging = FALSE
 	. = Move(get_step(loc,pick(cdir,ccdir)))
