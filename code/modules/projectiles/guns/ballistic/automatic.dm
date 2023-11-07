@@ -166,17 +166,17 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/vss
-	name = "VSS"
-	desc = "An integrally suppressed compact chambered in the rare 9x39. Where did you even GET this?!"
+	name = "AS-VAL Supressed rifle"
+	desc = "An integrally suppressed compact chambered in the rare 9x39. Used by the Spetnaz and other Russian special forces, this 9mm assault carbine is quite the gun. Rack that charging handle and remember, no gecko."
 	icon_state = "vss"
 	item_state = "vss"
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	mag_type = /obj/item/ammo_box/magazine/vss
 	init_mag_type = /obj/item/ammo_box/magazine/vss
 	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	init_recoil = AUTOCARBINE_RECOIL(1.2, 1.3)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
 		/datum/firemode/semi_auto/faster
@@ -694,7 +694,7 @@
 	init_recoil = AUTORIFLE_RECOIL(1.2 , 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300,
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/fastest
 	)
 	silenced = TRUE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
@@ -1349,12 +1349,10 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(/datum/firemode/semi_auto/slow ,
-	/datum/firemode/burst/two/slower
-	)
+	init_firemodes = list(/datum/firemode/semi_auto/slow)
 	can_scope = TRUE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
@@ -2296,7 +2294,7 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(/datum/firemode/burst/three/slow ,
@@ -2321,7 +2319,7 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
 	init_firemodes = list(
@@ -2459,9 +2457,9 @@
 /// M5A1 Assault rifle////
 /////////////////////////
 
-/obj/item/gun/ballistic/automatic/assault_carbine/m5a1
+/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 //faster by a small amount , 5mm AR.
 	name = "M5A1 rifle"
-	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It takes only extended magazines of 5.56 but makes up for such a odd ordeal with an increased fire rate."
+	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It's made in a bullpup configuration and takes a rifle version of 5mm but makes up for such a odd ordeal with an increased fire rate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2472,9 +2470,9 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_recoil = AUTOCARBINE_RECOIL(1.7, 1.3)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm100,
+		/datum/firemode/automatic/rpm150,
 		/datum/firemode/semi_auto
 	)
 	can_scope = TRUE
@@ -2534,7 +2532,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
-	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
+	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2572,7 +2570,6 @@
 	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = AUTORIFLE_RECOIL(1.1, 1.1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -2597,7 +2594,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -2689,7 +2686,7 @@
 /* * * * * * * * * * * *
 * Zastava Rifle
 * + takes all 308 magazines
-* + uncommon
+* + spawn tier.
 * - slowest firerate
 * + built in scope
 * - unable to be heavily modified like any else rifle
@@ -2742,7 +2739,7 @@
 	can_flashlight = FALSE
 	zoom_factor = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-/obj/item/gun/ballistic/automatic/fnfal/ak47
+/obj/item/gun/ballistic/automatic/fnfal/ak47 //slow ROF, hits like a truck. Slow counterpart to the G3
 	name = "Retro AK-47"
 	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture. Comes with a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines"
 	icon_state = "trueak"
@@ -2755,18 +2752,17 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2.0, 2.0)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150,
+		/datum/firemode/automatic/rpm75,
 		/datum/firemode/semi_auto/slow
 	)
 	can_scope = TRUE
 	can_suppress = FALSE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	autofire_shot_delay = 3
 
 
 /obj/item/gun/ballistic/automatic/fnfal/ak47/custom
@@ -2795,7 +2791,7 @@
 
 
 
-/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
+/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle // Less damage dealing than the AK47 but has a high ROF and good recoil.
 	name = "G3M99"
 	desc = "A battle rifle chambered in 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308"
 	icon_state = "g3"
@@ -2808,11 +2804,11 @@
 	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(1.4, 1.4)
+	init_recoil = AUTORIFLE_RECOIL(1.3, 1.2)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow,
+		/datum/firemode/semi_auto ,
 		/datum/firemode/automatic/rpm200
 	)
 	can_scope = TRUE
@@ -3237,11 +3233,11 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(2, 2)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm150
+		/datum/firemode/automatic/rpm100
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
@@ -3271,12 +3267,12 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.7
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1.6, 1.6)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm300 ,
-		/datum/firemode/automatic/rpm150
+		/datum/firemode/automatic/rpm75
 	)
 	can_scope = FALSE
 	can_suppress = FALSE
@@ -3399,7 +3395,7 @@
 * - Long draw time, heavy recoil, heavy slow down, two handed only and only able to be placed on the back
 * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/recoilessrifle
+/obj/item/gun/ballistic/automatic/recoilessrifle // remove from lootpool in another lootpool. Needs rethinking and probably needs removal.
 	name = "Xototl Recoiless Rifle"
 	desc = "A AT92RR or 'recoiless rifle'. Packing one hell of a punch, this weapon seems to have Aztec like motifs on the grips. This weapon seems extremely bulky and quite heavy to use. But what it makes up for slowness, it makes up for damage."
 	icon_state = "spaag"
@@ -3473,7 +3469,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	init_recoil = HMG_RECOIL (4 , 4)
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -3485,6 +3481,10 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+
+// Bolter Assault rifle.
+// Has insane recoil but makes up for extreme damage
+// low ROF but the damage makes up for it witha T2. Unique tier, might be too stronk
 /obj/item/gun/ballistic/automatic/compact14mmrifle
 	name = "T55E1 Assault Rifle"
 	desc = "A T55E1 assault compact assault rifle. Chambered in 12.7mm, ok recoil, compactness, a slow firerate, this rifle was developed by an American arms division before the third war began. It was meant to replace the AR-15 but proved too bulky, low modificationa ability, high costs in ammo,and bad ergonomics."
@@ -3497,8 +3497,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = LMG_RECOIL (1.7 , 1.7)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = LMG_RECOIL (1.9 , 2)
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm100

@@ -506,7 +506,7 @@
 * -9mm chambering
 * + 9 shot cylinder
 * + Common revolver
-* + Slightly better damage than 9mm
+* + 9mm but is on par with most revolvers. Hopefully
 * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/Lemat
 	name = "Grapeshot Revolver"
@@ -516,7 +516,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = HANDGUN_RECOIL (1 , 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = FALSE
@@ -526,7 +526,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto
 	)
 
 /obj/item/gun/ballistic/revolver/Lemat/custom
@@ -605,7 +605,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = SMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -618,8 +618,8 @@
 * Judge revolver
 * + 3 shot shotgun revolver for balance
 * - less damage
-* - Two handed only
-* + Lightweight, compact, and rare uncommon
+* + akimbo as well
+* + Lightweight, compact, and a spawnable weapon, may need further adjustments.
 * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/taurjudge
@@ -632,8 +632,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
 	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	init_recoil = HMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
