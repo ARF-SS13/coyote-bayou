@@ -118,7 +118,7 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
-	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol.
+	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
 /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
 	name = "M3 Civillian Pistol"
 	desc = "This pistol is the civillian or police version of the M3 Magnum, uses common and abundant 9mm"
@@ -128,7 +128,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -718,10 +718,11 @@ obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol
 ////////////////////////////////////
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom
-	name = "M3 SOCOM"
+	name = "M3 Special Operations."
 	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
 	icon_state = "M6SOCOM"
 	item_state = "M6SOCOM"
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
 	name = "Santa Muerte"
@@ -848,12 +849,13 @@ obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol
 * .44 automag copycats. same as the original one with or without added flavor * 
 * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/pistol/automag/m6
+/obj/item/gun/ballistic/automatic/pistol/automag/m6 //weaker .44, spawn tier.
 	name = "M3 Magnum"
 	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
 	icon_state = "m3magnum"
 	item_state = "m3magnum"
 	zoom_factor = 1.1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 /obj/item/gun/ballistic/automatic/pistol/goldendeag
 	name = "Aureum Tactum"
@@ -865,7 +867,7 @@ obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol
 	init_recoil = HMG_RECOIL (8, 8)
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm300
 	)

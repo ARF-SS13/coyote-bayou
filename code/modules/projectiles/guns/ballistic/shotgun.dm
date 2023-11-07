@@ -407,12 +407,12 @@
 /obj/item/gun/ballistic/shotgun/s163
 	name = "S163 Minotaur shotgun"
 	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 6+1 magazine tube capacity alongside a built in small ammo counter"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/mino
 	icon_state = "s163"
 	item_state = "s163"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	can_scope = FALSE
