@@ -9727,7 +9727,8 @@
 /area/f13/caves)
 "eDM" = (
 /obj/machinery/computer/camera_advanced{
-	dir = 4
+	dir = 4;
+	networks = list("nash")
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom{
