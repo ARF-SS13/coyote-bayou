@@ -84,3 +84,12 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
 
+/obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	name = "magazine filled with mauser ammo(308)."
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 10
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+

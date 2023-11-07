@@ -1712,6 +1712,29 @@
 	can_bayonet = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
+/obj/item/gun/ballistic/automatic/gewehr41civ/tox
+	name = "Custom G41 rifle"
+	desc = "A customized G41 rifle. While it can not hold a suppressor, it's still just as sturdy as before. The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	icon_state = "g41"
+	item_state = "g41"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = CARBINE_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
 // Worn Marksman Carbine
 
 /obj/item/gun/ballistic/automatic/marksman/worn

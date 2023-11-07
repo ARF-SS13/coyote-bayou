@@ -164,7 +164,6 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
-	new /obj/item/gun/ballistic/automatic/aksmol/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -1169,9 +1168,10 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /mob/living/simple_animal/pet/mothroach/tox(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/ammo_box/m473(src)
-	new /obj/item/gun/ballistic/automatic/g11/tox(src)
+	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
+	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
@@ -1240,8 +1240,8 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00new/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/derringercustom(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/w2000(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/suit/armor/outfit/warriorcats/customshadow(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 
