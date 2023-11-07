@@ -165,3 +165,6 @@
 	var/disconnect_time //how long have we been dc'd for
 
 	var/fuzzy = FALSE
+
+	//reservoir for healing quirks
+	var/heal_reservoir = 0

@@ -343,3 +343,5 @@ GLOBAL_LIST_INIT(simplemobs_robots, typecacheof(list(
 #define issimplehumanlike(A) (A.type in GLOB.simplemobs_humanlike)
 
 #define issimplerobot(A) (A.type in GLOB.simplemobs_robots)
+
+#define isadvancedmob(A) istype(A, /mob/living/simple_animal/advanced)
