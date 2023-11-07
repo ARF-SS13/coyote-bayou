@@ -107,6 +107,7 @@
 #define ui_internal 			"EAST-1:28,		CENTER+2:19"//CIT CHANGE - moves internal icon up a little bit to accommodate for the stamina meter
 #define ui_mood 				"EAST-1:28,		CENTER-2:10"
 #define ui_character_actions	"EAST-1:28,		CENTER-3:10"
+#define ui_bayou				"EAST-1:28,		CENTER-4:10"
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"

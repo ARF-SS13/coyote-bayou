@@ -55,9 +55,6 @@
 	var/mob/L = usr
 	L.down()
 
-
-
-
 /atom/movable/screen/sleep_hud_button
 	name = "sleep toggle"
 	icon_state = "sleep"
@@ -87,3 +84,13 @@
 	if(usr.client)
 		var/msg = input(usr, "Help/Newbie Message", "Help/Newbie", null)
 		usr.client.newbie(msg)
+
+/atom/movable/screen/chardir_hud_button
+	name = "Character Directory"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "chardir"
+	screen_loc = ui_bayou
+
+/atom/movable/screen/chardir_hud_button/Click(location,control,params)
+	if(usr.client)
+		usr.client.show_character_directory()
