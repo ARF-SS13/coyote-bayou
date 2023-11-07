@@ -18,6 +18,8 @@ SUBSYSTEM_DEF(interactions)
 	/// Order of initialization. Higher numbers are initialized first, lower numbers later. Use or create defines such as [INIT_ORDER_DEFAULT] so we can see the order in one file.
 	init_order = INIT_ORDER_DEFAULT
 
+	var/list/interactions_tgui = list()
+
 /datum/controller/subsystem/interactions/Initialize(timeofday)
 	prepare_interactions()
 	prepare_blacklisted_mobs()
@@ -31,6 +33,7 @@ SUBSYSTEM_DEF(interactions)
 		var/datum/interaction/I = new itype()
 		interactions["[itype]"] = I
 		all_categories |= I.categories
+		interactions_tgui += list(I.format_for_tgui())
 
 /// Blacklisting!
 /datum/controller/subsystem/interactions/proc/prepare_blacklisted_mobs()

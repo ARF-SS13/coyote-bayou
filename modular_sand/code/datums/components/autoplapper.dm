@@ -20,6 +20,8 @@
 	var/plap_interval
 	/// Last time we plapped
 	var/last_plap = 0
+	/// The time this thing started existence, for finalization purposes
+	var/plap_startpoint = 0
 	/// Are we currently plapping?
 	var/plapping_active = FALSE
 	/// lets self destruct if we're ignored too long
@@ -54,12 +56,11 @@
 	if(I.is_lewd)
 		lewd_plap = TRUE
 	plap_name = I.description
+	src.plap_key = "[I.type]"
 	src.plapper = plapper.ckey
 	src.plappee = plappee.ckey
 	var/mob/living/pLapper = ckey2mob(src.plapper)
-	src.plap_key = "[I.type]"
-	src.plap_name = I.description
-	last_plap = world.time
+	plap_startpoint = world.time
 	apid = generate_unique_id()
 	if(plap_interval)
 		finalize_plap(plap_interval, FALSE) // false makes it not immediately start plapping
@@ -83,7 +84,7 @@
 		return // no plapping dead people, that's just rude
 	if("[interaction.type]" != "[plap_key]")
 		return
-	finalize_plap(world.time, TRUE) // true makes it immediately start plapping
+	finalize_plap(world.time - plap_startpoint, TRUE) // true makes it immediately start plapping
 
 /// We got a plap, and an interval! Let's get this party started!
 /datum/autoplapper/proc/finalize_plap(interval, startnow)
@@ -116,7 +117,7 @@
 	if(!can_plap())
 		to_chat(plappermob, span_alert("You can't do that right now!"))
 		return // we cant plap
-	to_chat(plappermob, span_green("Autointeraction started! You will [plap_name] [plappeemob] every [DisplayTimeText(plap_interval)]! You can turn it off in the interactions menu, or by getting more than 2 tiles away from your partner."))
+	to_chat(plappermob, span_green("Autointeraction started! You will '[plap_name]' [plappeemob] every [DisplayTimeText(plap_interval)]! You can turn it off in the interactions menu, or by getting more than 2 tiles away from your partner."))
 	COOLDOWN_START(src, last_plap, plap_interval)
 	plapping_active = TRUE
 	START_PROCESSING(SSautoplap, src)
@@ -184,10 +185,9 @@
 	if(get_dist(plappermob, plappeemob) > 2)
 		return // too far away
 	var/datum/interaction/I = LAZYACCESS(SSinteractions.interactions, plap_key)
-	if(!I.can_do_interaction(plappermob, plappeemob, discrete = FALSE))
+	if(!I.run_action(plappermob, plappeemob, FALSE)) // plap!
 		stop_plapping()
 		return // something went wrong, we cant plap
-	I.run_action(plappermob, plappeemob, TRUE) // plap!
 	COOLDOWN_START(src, last_plap, plap_interval)
 	plap_count++
 	return TRUE

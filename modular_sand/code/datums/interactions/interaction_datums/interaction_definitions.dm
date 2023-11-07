@@ -59,6 +59,14 @@
 	needs_physical_contact = TRUE
 	max_distance = 25
 
+/datum/interaction/hifivemyself
+	description = "Give yourself a high-five!."
+	require_user_hands = TRUE
+	simple_message = "USER gives themself a high-five."
+	needs_physical_contact = TRUE
+	user_is_target = TRUE
+	max_distance = 25
+
 /datum/interaction/consent
 	description = "Request consent for lewd stuff."
 	require_user_hands = TRUE

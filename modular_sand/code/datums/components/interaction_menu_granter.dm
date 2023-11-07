@@ -1,4 +1,5 @@
 #define SPLURT_MAX_AUTOPLAPPERS 3
+#define SPLURT_ANTISPAM if(!click_refractory()) return FALSE
 
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
@@ -35,7 +36,10 @@
 	var/list/autoplappers = list()
 	var/autoplapper_autostart = TRUE
 	var/mean_time_to_cum = 5 MINUTES // how long it takes to cum when doing an autoplap
-	var/lewdmode = FALSE // show the lewd stuff?
+	var/SeeLewd = FALSE // show the lewd stuff?
+	var/SeeExtreme = FALSE // show the REALLY lewd stuff?
+	var/savetimer = 0
+	COOLDOWN_DECLARE(click_refractory)
 
 /datum/component/interaction_menu_granter/Initialize(...)
 	if(!ismob(parent))
@@ -81,10 +85,6 @@
 	return GLOB.never_state
 
 /datum/component/interaction_menu_granter/ui_interact(mob/user, datum/tgui/ui)
-	if(!user.CheckActionCooldown(0.8 SECONDS))
-		return // sex is combat, didnt ya know?
-	user.DelayNextAction(0.8 SECONDS) // mainly cus spamming the buttons will lock up your client with sex messages
-
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MobInteraction", "Interactions")
@@ -107,33 +107,16 @@
 		return
 	var/list/data = list()
 	//Getting interactions
-	var/list/sent_interactions = list()
-	for(var/interaction_key in SSinteractions.interactions)
-		var/datum/interaction/I = SSinteractions.interactions[interaction_key]
-		if(!I)
-			continue
-		if(!I.can_do_interaction(self, target, TRUE, TRUE))
-			continue
-		// if(!I.evaluate_user(self, silent = TRUE, action_check = FALSE) || !I.evaluate_target(self, target, silent = TRUE))
-		// 	continue
-		// if(I.user_is_target && target != self)
-		// 	continue  dan
-		sent_interactions += list(I.format_for_tgui(self, target))
-	var/list/faves = self.client?.prefs.faved_interactions || list()
-	data["Faves"] = faves || list()
 	data["AllCategories"] = SSinteractions.all_categories || list()
-	data["AllInteractions"] = sent_interactions || list()
-	data["AutoPlapObjs"] = package_autoplappers() || list()
-	data["Recording"] = get_recording_autoplappers() || list()
-	data["AutoPlapAutoStart"] = autoplapper_autostart || FALSE
+	data["AllInteractions"] = SSinteractions.interactions_tgui || list()
 	data["MyGenitals"] = self.format_genitals_for_tgui() || list()
 	data["MyOrientations"] = format_orientation(self) || list()
 	if(target != self)
 		data["TheirOrientations"] = format_orientation(target) || list()
 		data["TheirGenitals"] = target.format_genitals_for_tgui() || list()
 	else
-		data["TheirOrientations"] = .["MyOrientations"]
-		data["TheirGenitals"] = .["MyGenitals"]
+		data["TheirOrientations"] = data["MyOrientations"]
+		data["TheirGenitals"] = data["MyGenitals"]
 	return data
 
 /datum/component/interaction_menu_granter/ui_data(mob/user)
@@ -144,26 +127,31 @@
 	if(!target)
 		return
 	//Getting info
-	.["LewdMode"] = lewdmode || FALSE
+	.["SeeLewd"] = SeeLewd || FALSE
+	.["SeeExtreme"] = SeeExtreme || FALSE
 	.["ItsJustMe"] = target == self
 	.["WeConsent"] = target == self ? TRUE : SSinteractions.check_consent(self, target)
-	.["MyName"] = self.real_name || "Nobody"
-	.["TheirName"] = target.real_name || "Nobody"
-	.["selfAttributes"] = self.list_interaction_attributes(self) || list()
+	.["MyName"] = self.name || "Nobody"
+	.["TheirName"] = target.name || "Nobody"
+	var/list/faves = self.client?.prefs.faved_interactions || list()
+	.["Faves"] = faves || list()
+	.["AutoPlapObjs"] = package_autoplappers() || list()
+	.["Recording"] = get_recording_autoplappers() || list()
+	.["AutoPlapAutoStart"] = autoplapper_autostart || FALSE
+	// .["selfAttributes"] = self.list_interaction_attributes(self) || list()
 	.["CanCum"] = self.ready_to_cum || FALSE // I AM NOT READY!!!!!!!!!!!!!
 	.["MTTC"] = mean_time_to_cum || 2 MINUTES // I will last 2 minutes, no more, no lest
 	.["MyLust"] = self.get_lust() || 0
-	.["MyMaxLust"] = self.get_lust_tolerance() * 3 || 0
+	.["MyMaxLust"] = self.get_lust_tolerance() || 0
 	if(target != self && target.client)
-		.["TheirCKEY"] = target.ckey || "Nobody"
-		.["TheirName"] = target.ckey || "Nobody"
-		.["theirAttributes"] = target.list_interaction_attributes(self) || list()
+		// .["TheirCKEY"] = target.ckey || "Nobody"
+		// .["theirAttributes"] = target.list_interaction_attributes(self) || list()
 		if(HAS_TRAIT(user, TRAIT_IN_HEAT))
 			.["TheirLust"] = target.get_lust() || 0
-			.["TheirMaxLust"] = target.get_lust_tolerance() * 3 || 0
+			.["TheirMaxLust"] = target.get_lust_tolerance() || 0
 		else
 			.["TheirLust"] = round(target.get_lust(), 25) || 0
-			.["TheirMaxLust"] = round(target.get_lust_tolerance() * 3, 25) || 0
+			.["TheirMaxLust"] = round(target.get_lust_tolerance(), 25) || 0
 
 
 	var/datum/preferences/prefs = self?.client.prefs
@@ -217,8 +205,10 @@
 	if(..())
 		return
 	var/mob/living/parent_mob = parent
+
 	switch(action)
 		if("interact")
+			SPLURT_ANTISPAM
 			perform_action(parent_mob, params["interaction"], params["extra"])
 			return TRUE
 		if("Favorite")
@@ -227,7 +217,7 @@
 				prefs.faved_interactions -= params["interaction"]
 			else
 				prefs.faved_interactions += params["interaction"]
-			prefs.save_preferences()
+			queue_save()
 			return TRUE
 		if("DeleteAutoPlapper")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
@@ -236,6 +226,7 @@
 			remove_autoplap(AP.apid)
 			return TRUE
 		if("StartRecording")
+			SPLURT_ANTISPAM
 			if(is_recording())
 				perform_action(parent_mob, params["interaction"], params["extra"]) // try to finish it off
 				return FALSE
@@ -262,12 +253,14 @@
 			AP.toggle_plapping()
 			return TRUE
 		if("ConsentAct")
+			SPLURT_ANTISPAM
 			SSinteractions.add_or_remove_consent(parent_mob, GET_WEAKREF(weaktarget))
 			return TRUE
 		// if("MTTC")
 		// 	update_mean_time_to_cum(params["value"])
 		// 	return TRUE
 		if("Cum")
+			SPLURT_ANTISPAM
 			parent_mob.cum()
 			return TRUE
 		if("ToggleAutoCum")
@@ -281,6 +274,7 @@
 			TOGGLE_VAR(autoplapper_autostart)
 			return TRUE
 		if("StopAllAutoPlappers")
+			SPLURT_ANTISPAM
 			for(var/ap in autoplappers)
 				var/datum/autoplapper/AP = autoplappers[ap]
 				if(!AP)
@@ -289,6 +283,7 @@
 			to_chat(parent_mob, span_green("Stopped all autoplappers!"))
 			return TRUE
 		if("StartAllAutoPlappers")
+			SPLURT_ANTISPAM
 			for(var/ap in autoplappers)
 				var/datum/autoplapper/AP = autoplappers[ap]
 				if(!AP)
@@ -296,12 +291,19 @@
 				AP.start_plapping()
 			to_chat(parent_mob, span_green("Started all autoplappers!"))
 			return TRUE
-		if("ToggleLewdMode")
-			TOGGLE_VAR(lewdmode)
-			if(lewdmode)
-				to_chat(parent_mob, span_green("Lewd mode enabled!"))
+		if("ToggleSeeLewd")
+			TOGGLE_VAR(SeeLewd)
+			if(SeeLewd)
+				to_chat(parent_mob, span_green("Lewd stuff enabled!"))
 			else
-				to_chat(parent_mob, span_green("Lewd mode disabled!"))
+				to_chat(parent_mob, span_green("Lewd stuff disabled!"))
+			return TRUE
+		if("ToggleSeeExtreme")
+			TOGGLE_VAR(SeeExtreme)
+			if(SeeExtreme)
+				to_chat(parent_mob, span_green("Extreme stuff enabled!"))
+			else
+				to_chat(parent_mob, span_green("Extreme stuff disabled!"))
 			return TRUE
 
 		if("char_pref")
@@ -342,7 +344,7 @@
 						prefs.extremeharm = value
 				else
 					return FALSE
-			prefs.save_character()
+			queue_save()
 			return TRUE
 		if("pref")
 			var/datum/preferences/prefs = parent_mob.client.prefs
@@ -401,7 +403,7 @@
 					return FALSE
 			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
 			//Also add a save button.
-			prefs.save_preferences()
+			queue_save()
 			return TRUE
 
 /datum/component/interaction_menu_granter/proc/perform_action(mob/living/target, interaction_key, extras)
@@ -432,9 +434,9 @@
 		return
 	var/mob/living/me = parent
 	var/mob/living/them = partner
-	new /datum/autoplapper(me, them, I, interval) // it'll mail us when its good and ready
 	if(!interval) // it'll 
 		I.run_action(me, them) // plap to get things started
+	new /datum/autoplapper(me, them, I, interval) // it'll mail us when its good and ready
 
 
 /datum/component/interaction_menu_granter/proc/confirm_autoplap(datum/source, datum/autoplapper/AP)
@@ -477,6 +479,30 @@
 	if(!AP)
 		return
 	autoplappers -= AP.apid
+
+/datum/component/interaction_menu_granter/proc/queue_save()
+	if(savetimer)
+		deltimer(savetimer)
+	savetimer = addtimer(CALLBACK(src, .proc/save_prefs), 4 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
+
+/datum/component/interaction_menu_granter/proc/save_prefs()
+	var/mob/living/self = parent
+	var/datum/preferences/P = self.client?.prefs
+	if(!P)
+		return
+	P.save_character()
+	to_chat(parent, span_green("Saved preferences!"))
+	savetimer = null
+
+/datum/component/interaction_menu_granter/proc/click_refractory() // sex is combat, didnt ya know?
+	if(!COOLDOWN_FINISHED(src, click_refractory))
+		return FALSE // mainly cus spamming the buttons will lock up your client with sex messages
+	COOLDOWN_START(src, click_refractory, 0.8 SECONDS)
+	return TRUE
+	// if(is_interaction_command(action, params))
+	// 	if(!parent_mob.CheckActionCooldown(0.8 SECONDS))
+	// 		return
+	// 	parent_mob.DelayNextAction(0.8 SECONDS)
 
 /datum/component/interaction_menu_granter/proc/format_orientation(mob/living/whose)
 	if(!isliving(whose) || !whose.client)

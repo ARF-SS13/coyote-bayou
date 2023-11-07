@@ -27,9 +27,9 @@ const tabcolor = [
 export const MobInteraction = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    LewdMode,
+    SeeLewd,
   } = data;
-  const WindoHight = LewdMode ? 700 : 400;
+  const WindoHight = SeeLewd ? 625 : 400;
 
   return (
     <Window
@@ -38,7 +38,7 @@ export const MobInteraction = (props, context) => {
       resizable>
       <Window.Content>
         <Stack fill vertical>
-          {!!LewdMode && (
+          {!!SeeLewd && (
             <Stack.Item shrink={1}>
               <TopPanel /> {/* The lewd stuff */}
             </Stack.Item>
@@ -558,7 +558,8 @@ const PlapsPerPage = 10;
 const BottomPanel = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    UserName,
+    MyName,
+    SeeLewd,
   } = data;
   const AllInteractions = data.AllInteractions || [];
   const AllCategories = data.AllCategories || [];
@@ -570,13 +571,13 @@ const BottomPanel = (props, context) => {
     SearchTerm,
     setSearchTerm,
   ] = useLocalState(context, 'SearchTerm', '');
-  const Cat2Use = SearchTerm ? AllInteractions[0] : SelectedCategory;
-  const FilteredAllInteractions = GetInteractionsInCategory(Cat2Use, context);
+  const FilteredAllInteractions = GetInteractionsInCategory(context);
   const WhyIsItEmpty = SearchTerm
     ? "No interactions found!"
     : SelectedCategory === AllInteractions[0]
       ? "Congratulations! You've been selected to open an issue on Github!"
       : "No interactions in this category!";
+  const Tilda = SeeLewd ? "~" : "!";
 
   return (
     <Box
@@ -586,7 +587,7 @@ const BottomPanel = (props, context) => {
         <Stack.Item>
           <Section
             width="100%"
-            title={"Welcome, " + UserName + "!"}
+            title={"Welcome, " + MyName + Tilda}
             buttons={(
               <InteractionSearchBar />
             )} />
@@ -617,12 +618,11 @@ const BottomPanel = (props, context) => {
 
 // The search bar at the top of the window.
 // Its a search bar! You can look up anything, so long as its the name
-// of an interaction. or dragon pussy. I've promised it across like 3 PRs now,
+// of an interaction. or dragon pussy. I've promised it across like 4 PRs now,
 // Ive gotta deliver at some point.
 const InteractionSearchBar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    AllInteractions,
     DP,
   } = data;
   const [
@@ -744,6 +744,7 @@ const InteractionTab = (props, context) => {
 // it will show all the quirks in AllInteractions.
 const InteractionJizz = (props, context) => {
   const { act, data } = useBackend(context);
+  const DP = data.DP || false;
   const AllCategories = data.AllCategories || [];
 
   const [
@@ -761,17 +762,15 @@ const InteractionJizz = (props, context) => {
     setSelectedCategory,
   ] = useLocalState(context, 'SelectedCategory', FavePlaps);
 
-  const FilteredAllInteractions = GetInteractionsInCategory(SelectedCategory, context);
+  const FilteredAllInteractions = GetInteractionsInCategory(context);
 
 
   const ShowRange = [CurrentPage * PlapsPerPage - PlapsPerPage, CurrentPage * PlapsPerPage];
   const ShowInteractions = FilteredAllInteractions.slice(ShowRange[0], ShowRange[1]);
 
-  const WhyIsItEmpty = SearchTerm
-    ? "No interactions found!"
-    : SelectedCategory === AllCategories[0]
-      ? "Congratulations! You've been selected to open an issue on Github! Use the keyword 'Dragon Pussy' for 15% off your tech support!"
-      : "No interactions in this category!";
+  const WhyIsItEmpty = DP ? "You've been visited by the gunderful dragon pussy! \
+    This only happens once every 4000 years! Yell DRAGON PUSSY in OOC in 30 seconds \
+    or you'll never have dragon pussy again!" : "No interactions in this category!";
 
   return (
     <Box>
@@ -875,7 +874,7 @@ const FavoriteButton = (props, context) => {
   const IsFave = props.IsFave || false;
 
   const ButtText = IsFave ? "Remove from Favorites" : "Add to Favorites";
-  const ButtColor = IsFave ? "green" : "default";
+  const ButtColor = IsFave ? "pink" : "default";
   const ButtIcon = IsFave ? "heart" : "heart-o";
 
   return (
@@ -903,18 +902,10 @@ const AutoPlapRecordButton = (props, context) => {
   const RecordingObjs = data.Recording || {};
   const IsThisRecording = RecordingObjs.includes(IOBJ.InteractionKey);
 
-  if (RecordingObjs.length && !IsThisRecording) {
-    return (
-      <Button
-        icon="ban"
-        color="red"
-        disabled={true}
-        tooltip="Something else is recording!!!" />
-    );
-  }
   if (IsThisRecording) {
     return (
       <Button
+        textAlign="center"
         icon="times"
         color="red"
         tooltip="Cancel Recording"
@@ -924,9 +915,18 @@ const AutoPlapRecordButton = (props, context) => {
           })} />
     );
   }
+  if (RecordingObjs.length) {
+    return (
+      <Button
+        icon="ban"
+        color="red"
+        disabled={true}
+        tooltip="Something else is recording!!!" />
+    );
+  }
   return (
     <Button
-      color="green"
+      textAlign="center"
       tooltip="Record AutoPLAP"
       onClick={() =>
         act('StartRecording', {
@@ -937,14 +937,19 @@ const AutoPlapRecordButton = (props, context) => {
   );
 };
 
-// A helper function for QuirkList to get an array of quirk objects
+// A helper function for InteractionList to get an array of interaction objects
 // that are in a given category. It takes a category name, and an array
-// of quirk objects, and returns an array of quirk objects.
-const GetInteractionsInCategory = (props, context) => {
+// of interaction objects, and returns an array of interaction objects.
+// bit more than just a helper, it works so hard~
+const GetInteractionsInCategory = (context) => {
   const { data } = useBackend(context);
   const AllInteractions = data.AllInteractions || [];
   const AllCategories = data.AllCategories || [];
-  const CategoryName = props || AllCategories[0] || '';
+  const ItsJustMe = data.ItsJustMe || false;
+  const WeConsent = data.WeConsent || ItsJustMe || false; // i consent to myself
+  const HideLewd = !data.SeeLewd || !WeConsent || false;
+  const HideExtreme = !data.SeeExtreme || !data.SeeLewd || false;
+  const Faves = data.Faves || [];
   const [
     SearchTerm,
     setSearchTerm,
@@ -953,44 +958,71 @@ const GetInteractionsInCategory = (props, context) => {
     SelectedCategory,
     setSelectedCategory,
   ] = useLocalState(context, 'SelectedCategory', FavePlaps);
+  const CategoryName = SearchTerm ? AllInteractions[0] : SelectedCategory;
 
-  /// If the category is favorites, we need to filter the list of all quirks
+  let FilteredInteractions = AllInteractions;
+
+  /// prefiltering, return self-interactions if its just me, otherwise
+  /// return interactions that are not just for me
+  if (ItsJustMe) {
+    FilteredInteractions = FilteredInteractions.filter(Interaction => {
+      return Interaction.InteractionSelf;
+    });
+  } else {
+    FilteredInteractions = FilteredInteractions.filter(Interaction => {
+      return !Interaction.InteractionSelf;
+    }
+    );
+  } // fun fact i dont know how expensive these are lol
+  /// prefiltering, remove all lewd and extreme things if it isnt enabled
+  if (HideLewd) {
+    FilteredInteractions = FilteredInteractions.filter(Interaction => {
+      return !Interaction.InteractionLewd && !Interaction.InteractionExtreme;
+    });
+  }
+  if (HideExtreme) {
+    FilteredInteractions = FilteredInteractions.filter(Interaction => {
+      return !Interaction.InteractionExtreme;
+    });
+  }
+
+  /// If the category is favorites, we need to filter the list of all interactions
   /// to only include the ones that are in the user's favorites list.
   if (SelectedCategory === FavePlaps) {
-    if(data.Faves.length === 0) {
+    if(Faves.length === 0) {
       return [];
     }
-    return AllInteractions.filter(Interaction => {
-      return data.Faves.includes(Interaction.InteractionKey);
+    return FilteredInteractions.filter(Interaction => {
+      return Faves.includes(Interaction.InteractionKey);
     }) || [];
   }
 
   if (SearchTerm.length > 0) {
-    return AllInteractions.filter(Interactions => {
+    return FilteredInteractions.filter(Interactions => {
       return Interactions.InteractionName.toLowerCase().includes(SearchTerm.toLowerCase()) || [];
     });
   }
 
   if (!CategoryName || CategoryName === AllCategories[0]) {
-    return AllInteractions; // return em all
+    return FilteredInteractions; // return em all
   }
-  /// Otherwise, we need to filter the list of all quirks to only include
+  /// Otherwise, we need to filter the list of all interactions to only include
   /// the ones that are in the selected category.
-  return AllInteractions.filter(Interaction => {
+  return FilteredInteractions.filter(Interaction => {
     return Interaction.InteractionCategories.includes(CategoryName);
   }) || [];
 };
 
 
 // Gormless Kong
-// A helper function to make a page bar for the quirk list, so we dont have to
+// A helper function to make a page bar for the interaction list, so we dont have to
 // render 200 darn buttons at once. It pulls the current page from the
-// local state, and the number of pages from the length of the quirks list.
+// local state, and the number of pages from the length of the interactions list.
 // Nah we dont have to truncate the page list, we can just make it a
 // big fat box
 const InteractionPage = (props, context) => {
   const { act, data } = useBackend(context);
-  const LewdMode = data.LewdMode || false;
+  const SeeLewd = data.SeeLewd || false;
   const AllInteractions = data.AllInteractions || [];
   const AllCategories = data.AllCategories || [];
   const [
@@ -998,18 +1030,7 @@ const InteractionPage = (props, context) => {
     setCurrentPage,
   ] = useLocalState(context, 'CurrentPage', 1);
 
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
-
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
-
-  const Cat2Use = SearchTerm ? AllInteractions[0] : SelectedCategory;
-  const FilteredAllInteractions = GetInteractionsInCategory(Cat2Use, context);
+  const FilteredAllInteractions = GetInteractionsInCategory(context);
   const ShowPageButtons = FilteredAllInteractions.length > PlapsPerPage;
 
   const TotalPageNum = Math.ceil(FilteredAllInteractions.length / PlapsPerPage);
@@ -1039,12 +1060,12 @@ const InteractionPage = (props, context) => {
       <Icon name="chevron-right" />
     </Button>
   );
-  const LewdText = LewdMode ? "Hide Lewd Stuff" : "Show Lewd Stuff";
+  const LewdText = SeeLewd ? "Hide Lewd Stuff" : "Show Lewd Stuff";
   const LewdButton = (
     <Button
       inline
       onClick={() =>
-      { act('ToggleLewdMode'); }}>
+      { act('ToggleSeeLewd'); }}>
       {LewdText}
     </Button>
   );

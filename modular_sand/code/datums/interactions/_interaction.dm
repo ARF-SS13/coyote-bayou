@@ -124,6 +124,7 @@
 	log_it(user, target, extra)
 	display_interaction(user, target, discrete, extra)
 	post_interaction(user, target)
+	return TRUE
 
 /// Actually doing the action, has a few checks to see if it's valid, usually overwritten to be make things actually happen and what-not
 /datum/interaction/proc/do_action(mob/living/user, mob/living/target, discrete = FALSE)
@@ -174,12 +175,12 @@
 
 /// Display the message
 /datum/interaction/proc/display_interaction(mob/living/user, mob/living/target, show_message)
-	// var/showmessage = FALSE
+	var/showmessage = FALSE
 	//If you swapped interactions
 	if(user.last_lewd_datum != src || COOLDOWN_FINISHED(user, interaction_message_cooldown))
-		// showmessage = TRUE
+		showmessage = TRUE
 		COOLDOWN_START(user, interaction_message_cooldown, LEWD_VERB_MESSAGE_COOLDOWN)
-	if(simple_message && show_message)
+	if(simple_message && showmessage)
 		var/use_message = replacetext(simple_message, "USER", "\the [user]")
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
@@ -209,11 +210,12 @@
 		return cache_stuff
 	var/list/interaction = list()
 	interaction["InteractionKey"] = "[type]" || "/datum/urmom"
-	interaction["InteractionName"] = get_description(user, target) || "buttificate"
+	interaction["InteractionName"] = get_description(user, target) || "hey the description is busted"
 	interaction["InteractionLewd"] = is_lewd
+	interaction["InteractionSelf"] = user_is_target
 	interaction["InteractionCanAuto"] = can_autoplap
 	interaction["InteractionExtreme"] = extreme
-	interaction["InteractionAdditional"] = get_additional_stuff() || "=3"
+	interaction["InteractionAdditional"] = get_additional_stuff() || "Click me for a prize!"
 	interaction["InteractionCategories"] = categories
 	cache_stuff = interaction
 	return cache_stuff
