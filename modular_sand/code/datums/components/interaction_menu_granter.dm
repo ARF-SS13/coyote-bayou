@@ -209,7 +209,7 @@
 	switch(action)
 		if("interact")
 			SPLURT_ANTISPAM
-			perform_action(parent_mob, params["interaction"], params["extra"])
+			perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"])
 			return TRUE
 		if("Favorite")
 			var/datum/preferences/prefs = parent_mob.client.prefs
@@ -228,7 +228,7 @@
 		if("StartRecording")
 			SPLURT_ANTISPAM
 			if(is_recording())
-				perform_action(parent_mob, params["interaction"], params["extra"]) // try to finish it off
+				perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"]) // try to finish it off
 				return FALSE
 			new_autoplap(params["interaction"], GET_WEAKREF(weaktarget), null)
 			return TRUE
@@ -244,7 +244,7 @@
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP)
 				return FALSE
-			AP.plap_interval = params["Interval"]
+			AP.plap_interval = text2num(params["Interval"])
 			return TRUE
 		if("ToggleAutoPlapper")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]

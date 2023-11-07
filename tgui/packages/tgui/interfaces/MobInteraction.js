@@ -4,9 +4,10 @@ import { flow } from 'common/fp';
 import { clamp } from 'common/math';
 import { createSearch } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import { Button, Flex, Fragment, LabeledList, Icon, Input, Section, Table, NoticeBox, Stack, ProgressBar, Box } from '../components';
+import { Button, Flex, Fragment, NumberInput, Icon, Input, Section, Table, NoticeBox, Stack, ProgressBar, Box } from '../components';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
+import { round, toFixed } from '../../common/math';
 
 
 const tabcolor = [
@@ -202,6 +203,13 @@ const Lust = (props, context) => {
   const AutocumText = CanCum ? "Autocum: ON" : "Autocum: OFF";
   const AutocumColor = CanCum ? "green" : "default";
 
+  const CelWidth = ItsJustMe ? "100%" : "50%";
+
+  const TheirFixedLust = toFixed(TheirLust, 1);
+  const TheirFixedMaxLust = toFixed(TheirMaxLust, 1);
+  const MyFixedLust = toFixed(MyLust, 1);
+  const MyFixedMaxLust = toFixed(MyMaxLust, 1);
+
   return(
     <Section>
       {/* <Flex direction="row"> todo: makr it work
@@ -257,62 +265,43 @@ const Lust = (props, context) => {
         </Flex.Item>
       </Flex>
       <hr />*/}
-      <Table>
-        <Table.Row>
-          <Table.Cell>
-            {MyName}
-          </Table.Cell>
-          {!!ItsJustMe ? (
-            <Table.Cell>
-              {MyName} {/* Nobody's here but you and your hand~ */}
-            </Table.Cell>
-          ) : (
-            <Table.Cell>
-              {TheirName}
-            </Table.Cell>
+      <Flex direction="row" wrap="wrap">
+        {/* the name row */}
+        <Flex.Item basis={CelWidth} textAlign="center">
+          {MyName}
+        </Flex.Item>
+          {!!!ItsJustMe && (
+            <Flex.Item basis={CelWidth} textAlign="center">
+              {TheirName} {/* Nobody's here but you and your hand~ */}
+            </Flex.Item>
           )}
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
+          {/* the lust counter row */}
+          <Flex.Item basis={CelWidth} textAlign="center">
             <ProgressBar
-              value={MyLust}
+              value={MyFixedLust}
               color={LustBGColor}
               minValue={0}
-              maxValue={MyMaxLust} >
-              <Box inline color={LustFGColor}>
-                {MyLust}
+              maxValue={MyFixedMaxLust} >
+              <Box inline color={LustFGColor} textAlign="center">
+                {MyFixedLust} / {MyFixedMaxLust}
               </Box>
             </ProgressBar>
-          </Table.Cell>
-          {!!ItsJustMe ? (
-            <Table.Cell>
+          </Flex.Item>
+          {!!!ItsJustMe && (
+            <Flex.Item basis={CelWidth} textAlign="center">
               <ProgressBar
-                value={MyLust}
+                value={TheirFixedLust}
                 color={LustBGColor}
                 minValue={0}
-                maxValue={MyMaxLust} >
-                <Box inline color={LustFGColor}>
-                  {MyLust}
+                maxValue={TheirFixedMaxLust} >
+                <Box inline color={LustFGColor} textAlign="center">
+                  {TheirFixedLust}
                 </Box>
               </ProgressBar>
-            </Table.Cell>
-          ) : (
-            <Table.Cell>
-              <ProgressBar
-                value={TheirLust}
-                color={LustBGColor}
-                minValue={0}
-                maxValue={TheirMaxLust} >
-                <Box inline color={LustFGColor}>
-                  {TheirLust}
-                </Box>
-              </ProgressBar>
-            </Table.Cell>
+            </Flex.Item>
           )}
-        </Table.Row>
-      </Table>
-      <Stack fill>
-        <Stack.Item grow={1}>
+        {/* the cum button row */}
+        <Flex.Item basis="100%">
           <Button
             fluid
             mb={0.3}
@@ -320,8 +309,8 @@ const Lust = (props, context) => {
             content={AutocumText}
             bold={CanCum}
             onClick={() => act('ToggleAutoCum')} />
-        </Stack.Item>
-        <Stack.Item grow={1}>
+        </Flex.Item>
+        <Flex.Item basis="100%">
           <Button
             fluid
             mb={0.3}
@@ -330,8 +319,8 @@ const Lust = (props, context) => {
             content={CumButtonText}
             bold={CanCum}
             onClick={() => act('Cum')} />
-        </Stack.Item>
-      </Stack>
+        </Flex.Item>
+      </Flex>
     </Section>
   );
 };
@@ -407,10 +396,8 @@ const AutoPlapControl = (props, context) => {
     APApid, // The unique ID that the parent uses to identify this one
     APPlapKey, // The key of the interaction that this autoPLAPper is using
     APPlapName, // The name of the interaction that this autoPLAPper is using
-    APPlapper, // The ckey of the person is doing the PLAPping
-    APPartner, // The ckey of the person being PLAPped
-    APPlapperName, // The name of the person is doing the PLAPping
-    APPartnerName, // The name of the person being PLAPped
+    APPlapper, // The name of the person is doing the PLAPping
+    APPartner, // The name of the person being PLAPped
     APInterval, // The interval of the PLAPping, in deciseconds
     APPlapping, // Whether or not the PLAPping is active
     APPlapcount, // How many times the PLAPping has happened
@@ -418,18 +405,18 @@ const AutoPlapControl = (props, context) => {
   } = AutoPlapObj;
 
   const APPlappingIcon = APPlapping ? "pause" : "play";
-  const APPlapColor = APPlapping ? "green" : "default";
+  const APPlapColor = APPlapping ? "" : "green";
   const APRecordingIcon = APRecording ? "ban" : "circle";
   const APRecordingColor = APRecording ? "red" : "red"; // red and also red
 
-  const MyPartner = APPlapper === APPartner ? "Yourself" : APPartnerName;
+  const MyPartner = APPlapper === APPartner ? "Yourself" : APPartner;
 
   return(
     <Section
       title={APPlapName}
       buttons={(
         <Fragment>
-          {APRecording && (
+          {!!APRecording && (
             <Button
               icon={APRecordingIcon}
               color={APRecordingColor}
@@ -437,6 +424,12 @@ const AutoPlapControl = (props, context) => {
                 APID: APApid,
               })} />
           )}
+          <Button
+            icon={APPlappingIcon}
+            color={APPlapColor}
+            onClick={() => act('ToggleAutoPlapper', {
+              APID: APApid,
+            })} />
           <Button
             icon="trash"
             onClick={() => act('DeleteAutoPlapper', {
@@ -446,35 +439,25 @@ const AutoPlapControl = (props, context) => {
       )}>
       <Stack fill vertical>
         <Stack.Item>
-          <Flex direction="column">
-            <Flex.Item grow={1}>
-              <Input
-                value={APInterval}
-                onInput={(e, value) => act('SetAutoPlapperInterval', {
-                  APID: APApid,
-                  Interval: clamp(value, 0, 300), // 30 seconds
-                })} />
-            </Flex.Item>
-            <Flex.Item>
-              <Button
-                fluid
-                icon={APPlappingIcon}
-                color={APPlapColor}
-                onClick={() => act('ToggleAutoPlapper', {
-                  APID: APApid,
-                })} />
-            </Flex.Item>
-          </Flex>
+          <NumberInput
+            animated={true}
+            unit="sec/PLAP"
+            width="4.5em"
+            minValue={2}
+            maxValue={50}
+            value={APInterval}
+            step={2}
+            stepPixelSize={3}
+            format={value => {
+              return toFixed((value * 0.1), 1);
+            }}
+            onDrag={(e, value) => act('SetAutoPlapperInterval', {
+              APID: APApid,
+              Interval: value, // 30 seconds
+            })} />
         </Stack.Item>
         <Stack.Item>
-          <LabeledList>
-            <LabeledList.Item label="Interacting with:">
-              {MyPartner}
-            </LabeledList.Item>
-            <LabeledList.Item label="You've done this:">
-              {APPlapcount} times!
-            </LabeledList.Item>
-          </LabeledList>
+          {APPlapper} <Icon name="arrow-right" /> {MyPartner},  {APPlapcount} times!
         </Stack.Item>
       </Stack>
     </Section>
@@ -843,6 +826,7 @@ const InteractionButton = (props, context) => {
             disabled={!WeConsent}
             textAlign="left"
             tooltip={IAdditional}
+            tooltipPosition="top"
             backgroundColor={BGColor}
             onClick={() =>
               act('interact', {
@@ -879,15 +863,15 @@ const FavoriteButton = (props, context) => {
 
   return (
     <Button
-      color={ButtColor}
+      icon={ButtIcon}
+      iconColor={ButtColor}
+      tooltipPosition="top"
       tooltip={ButtText}
       width="fit-content"
       onClick={() =>
         act('Favorite', {
           interaction: IOBJ.InteractionKey,
-        })} >
-      <Icon name={ButtIcon} color={ButtColor} />
-    </Button>
+        })} />
   );
 };
 
@@ -900,7 +884,11 @@ const AutoPlapRecordButton = (props, context) => {
   const IOBJ = props.Iobj || {};
   // if something is being recorded, anything, this will be the key of it
   const RecordingObjs = data.Recording || {};
-  const IsThisRecording = RecordingObjs.includes(IOBJ.InteractionKey);
+  /// Searches through RecordingObjs and checks if APPlapKey matches
+  /// the interaction key of the interaction we're looking at
+  const IsThisRecording = RecordingObjs.some(RecordingObj => {
+    return RecordingObj.APPlapKey === IOBJ.InteractionKey;
+  });
 
   if (IsThisRecording) {
     return (
@@ -909,9 +897,10 @@ const AutoPlapRecordButton = (props, context) => {
         icon="times"
         color="red"
         tooltip="Cancel Recording"
+        tooltipPosition="top"
         onClick={() =>
           act('StopRecording', {
-            interaction: IOBJ.InteractionKey,
+            APID: IsThisRecording.APApid,
           })} />
     );
   }
@@ -926,14 +915,15 @@ const AutoPlapRecordButton = (props, context) => {
   }
   return (
     <Button
+      icon="circle"
+      iconColor="red"
       textAlign="center"
       tooltip="Record AutoPLAP"
+      tooltipPosition="top"
       onClick={() =>
         act('StartRecording', {
           interaction: IOBJ.InteractionKey,
-        })} >
-      <Icon name="circle" color="red" />
-    </Button>
+        })} />
   );
 };
 
