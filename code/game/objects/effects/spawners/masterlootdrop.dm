@@ -247,6 +247,7 @@
 		/obj/item/gun/ballistic/automatic/service = 10,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 10,
 		/obj/item/gun/ballistic/automatic/service/r82 = 10, //is weakest 5.56 automatic
+		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 10,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 4,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 4,
 		/obj/item/gun/ballistic/automatic/combat = 4,
@@ -265,8 +266,6 @@
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 1,
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
-		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 10,
-		/obj/item/gun/ballistic/automatic/gewehr41civ = 4,
 		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1, // Commenting out until the sprite is fixed.
 		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
 	)
@@ -283,11 +282,11 @@
 		/obj/item/gun/ballistic/automatic/unmcamr = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle = 10,
-		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 9,
+		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 4,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 4,
 		/obj/item/gun/ballistic/automatic/assault_rifle = 4,
 		/obj/item/gun/ballistic/automatic/r93 = 4,
-	    /obj/item/gun/ballistic/automatic/concussive = 4,
+		/obj/item/gun/ballistic/automatic/concussive = 4,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 4,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
@@ -298,7 +297,6 @@
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 1,
-		/obj/item/gun/ballistic/automatic/gewehr43 = 4,
 		// /obj/item/gun/ballistic/automatic/wt550 = 2, // Commenting out until the sprite is fixed.
 
 	)
@@ -350,6 +348,7 @@
 		/obj/item/gun/ballistic/revolver/colt357/auto = 4,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40 = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 4,
+		/obj/item/gun/ballistic/automatic/gewehr43 = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/gun/ballistic/bow/longbow = 4,
 		/obj/item/gun/ballistic/bow/crossbow = 4,
@@ -366,18 +365,18 @@
 		/obj/item/gun/ballistic/automatic/c96auto = 10,
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 10,
-		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 10, // for the meme
 		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,
 		/obj/item/gun/energy/kinetic_accelerator/crossbow = 4, // ebow
+		/obj/item/gun/ballistic/automatic/gewehr41civ = 4,
 		/obj/item/gun/ballistic/bow/compoundbow = 4,
 		/obj/item/gun/ballistic/rifle/mag/boys = 4,
 		/obj/item/gun/ballistic/automatic/bar = 4,
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 4,
+		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 4, // for the meme
 		/obj/item/gun/ballistic/automatic/lewis = 1,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1,  // big ebow
 	)
-
 ///////////////////////////
 ///melee weapon spawners///
 ///////////////////////////
