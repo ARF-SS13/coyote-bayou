@@ -484,6 +484,32 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDESNOUT | HIDEHAIR
 
+/obj/item/clothing/head/droptrooper/arghelmet
+	name = "ARG ATLAS Helmet"
+	desc = "ATLAS, meaning Armor - Tactical Lead Assault Suite, is an extensively modified and reinforced rendition of the M-87 'Thor' helmet. This helmet includes a primitive target-acquisition program designed to help the user both deal with threats to themselves and their ward, simple user biometrics, omni-directional internal speakers for more situational awareness, ballistic reinforcements to the visor, extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."
+	icon_state = "argmkvi"
+	item_state = "argmkvi"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+	
+/obj/item/clothing/head/droptrooper/arghelmet/two
+	name = "ARG ARES Helmet"
+	desc = "ARES, meaning Armor - Research Enhancement Suite, is an extensively modified and computerized rendition of the M-87 'Odin' assault helmet. An additional camera has been added to the faceplate to give the user better depth perception, as well as the ability to broadcast video feed through encrypted channels. The heads-up display within the helmet now includes simple user biometrics and an analysis mode, giving real-time updates concerning objects and creatures in view of the cameras. It has extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."
+	icon_state = "arggungnir"
+	item_state = "arggungnir"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2 ,ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_DOWN_LASER_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+
 /obj/item/clothing/head/kevlarhelmet/steelfrench
 	name = "French Adrian helmet"
 	desc = "A French, albeit outdated, Adrian helmet. It was the first helmet used by the French military during the great war. In WW2, the helmet was used again but named the M26. Adjust that helmet and get back to the frontlines!"
@@ -792,7 +818,7 @@
 	desc = "If you're seeing this, something has gone horribly wrong."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDEHAIR|HIDESNOUT
+	flags_inv = HIDEMASK | HIDEEYES | HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
 	armor_list = ARMOR_VALUE_MEDIUM
 
 /obj/item/clothing/head/helmet/borderlandshelm/bandit

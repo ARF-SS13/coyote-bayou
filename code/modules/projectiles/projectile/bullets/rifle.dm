@@ -727,7 +727,7 @@
 /obj/item/projectile/bullet/a50MG
 	name = ".50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG //75
-	damage_list = list("50" = 40, "75" = 45, "80" = 5, "90" = 5, "100" = 5)
+	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 5)
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_50MG
@@ -738,6 +738,10 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+// Bane, handloads don't get it because you went cheap. Loser.
+	supereffective_damage = 95 // SPECIFICALLY 95 because 60 (min damage) + 95 (bane damage) = 155 (total min+bane damage) - 35% (combat armor value) = 100.75 
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* .50MG surplus
  * DAMAGE: 75
@@ -1152,7 +1156,7 @@
 	tracer_type = /obj/effect/projectile/tracer/laser/blue
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
-	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH // hmm
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	/// Reduces damage by this much when it hits a thing
 	var/per_wall_mult = 0.8

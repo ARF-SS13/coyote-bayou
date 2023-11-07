@@ -1655,6 +1655,86 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 
+
+
+// * * * * *
+// * G43 rifle *
+// + Heavy hitter for .308 with a buff of T1-T2, will adjust accordingly.
+// + 10 round capacity, ok firerate.
+// + can use as a crutch, this is a joke.
+/* * * * * * * * * * * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/gewehr43
+	name = "2100 G10 Rifle"
+	desc = "A 2100s renditon of the G43 rifle, which was produced in the 1940s. Sturdy, reliable, it was quite the rifle back in the day. Now it seeks new purpose in the cold and decrypt wastelands of Texarka. Features a detatchable 10 round magazine, the bigger brother to its civilian counterpart."
+	icon_state = "g43"
+	item_state = "g43"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m308/ext , /obj/item/ammo_box/magazine/m308/ext/empty )
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = CARBINE_RECOIL(1.5, 1.6)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+// Civilian version of the G43, uses 5mm and has a 15 round capacity, faster firerate.
+/obj/item/gun/ballistic/automatic/gewehr41civ
+	name = "5mm Civilian G10 Rifle"
+	desc = "A 2150 made rifle, this version is a more modern rendition of a Gewehr 41. A fixed magazine with a internal capacity of 15 rounds. It fires faster than its bigger brother but hits far less. Reliable and sturdy, it was a popular hunting rifle by East Germans for weaker game like turkey. Chambered in 5mm."
+	icon_state = "g41"
+	item_state = "g41"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal
+	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = CARBINE_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+/obj/item/gun/ballistic/automatic/gewehr41civ/tox
+	name = "Custom G41 rifle"
+	desc = "A customized G41 rifle. While it can not hold a suppressor, it's still just as sturdy as before. The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	icon_state = "g41"
+	item_state = "g41"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	init_recoil = CARBINE_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
 // Worn Marksman Carbine
 
 /obj/item/gun/ballistic/automatic/marksman/worn
@@ -2379,7 +2459,7 @@
 /// M5A1 Assault rifle////
 /////////////////////////
 
-/obj/item/gun/ballistic/automatic/assault_carbine/policerifle/m5a1
+/obj/item/gun/ballistic/automatic/assault_carbine/m5a1
 	name = "M5A1 rifle"
 	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It takes only extended magazines of 5.56 but makes up for such a odd ordeal with an increased fire rate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2387,25 +2467,90 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "m5a1"
 	item_state = "m5a1"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
-	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small, /obj/item/ammo_box/magazine/m556/rifle/, /obj/item/ammo_box/magazine/m556 )
-	weapon_class = WEAPON_CLASS_RIFLE
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	init_recoil = AUTORIFLE_RECOIL(1.7, 1.7)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm100,
 		/datum/firemode/semi_auto
 	)
-	can_scope = FALSE
-	can_suppress = FALSE
+	can_scope = TRUE
+	can_suppress = TRUE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 	reskinnable_component = null
 
 
 
+/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle
+	name = "Scar-L rifle"
+	desc = "A Scar-L assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by FN Herstal in the early 2100s. Versitile, functional, and good. It comes witha a slow ROF and a lovely stock, albeit this one seems fixed sadly. Why change a design that works? As FN says!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "scarl"
+	item_state = "scarl"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm
+	name = "AUG A10 rifle"
+	desc = "A AUG A10 assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Steyr in the 2100s. This rifle saw extensive usage by the pre-war Austrian forces. Comes with a built in scope."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "aug"
+	item_state = "aug"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto
+	)
+	zoom_factor = 0.8
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+
+/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
+	name = "PSG-5 rifle"
+	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "psg1"
+	item_state = "psg1"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.4)
+	init_firemodes = list(/datum/firemode/semi_auto/slow)
+	zoom_factor = 1.3
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 /* * * * * * * * * * *
 * AK74
@@ -2752,7 +2897,7 @@
 
 
 // Custom sniper rifle, loadout only, plans to change. ETA is TBA
-/obj/item/gun/ballistic/automatic/w2000
+/obj/item/gun/ballistic/automatic/w2000 //Custom weapon, will be a loot gun eventually
 	name = "Custom Wa-2000 sniper rifle"
 	desc = "A custom version of a Wa-2000 rifle. This unique looking rifle has changed its wooden furniture for more pristine and cleaner looking wood. The metals are engraved with baroque motifs and on butt of the rifle is a small scene of a moth taking flight. It is chambered in 7.62 NATO but can be chambered in .300 magnum or 7.5mm. Etched on the grip portion of the butt is the name 'Tox Mckit'."
 	icon_state = "w2000"
@@ -2832,7 +2977,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
 
-// Custom rifle, loadout only.
+// Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
 /obj/item/gun/ballistic/automatic/g36custom
 	name = "Custom G36C Assault rifle"
 	desc = "A custom version of a G36C assault rifle. Chambered in 5.56 NATO, this customized G36C assault rifle is made from a more resistant and durable type of material. Sporting a black and white finish. Adorning the metal bits of the gun, including the exterior of the barrel, are engraved baroque motifs. The gun comes with a built in red dot sight manufactured into the carry handle. A reliable assault rifle that saw extensive use by West Germany. The charging handle can flip between left or right side. This one seems to be fitted to the right side for a more right-side handed charging handle."
@@ -2871,7 +3016,6 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow ,
@@ -3310,34 +3454,6 @@
 	can_flashlight = FALSE
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/needler.ogg'
-
-/obj/item/gun/ballistic/automatic/needlerrifle/tox
-	name = " Custom NR-43 Turán"
-	desc = "A custom Latos Systems manufactured NR-43 needle rifle. The rifle is engraved with baroque motifs, At the scope's mid-section are two scenes. On the left side is the scene of a moth smiling and on the right side is a scene of a feline frowning. The top of the scope is engraved with the name 'Tox Mckit'. A fitting rifle for the ranged marksmen."
-	icon_state = "needles"
-	item_state = "needles"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
-	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	cock_delay = GUN_COCK_RIFLE_BASE
-	draw_time = GUN_DRAW_NORMAL
-	init_recoil = CARBINE_RECOIL (1 , 1)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	zoom_factor = 1
-	can_suppress = FALSE
-	can_bayonet = FALSE
-	can_flashlight = FALSE
-	can_scope = TRUE
-	fire_sound = 'sound/f13weapons/needler.ogg'
-
 
 /* * * * * * * * * *
 * TG78 Anti Material Rifle.
