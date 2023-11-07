@@ -241,7 +241,6 @@
 	loot = list(
 		/obj/item/gun/ballistic/automatic/matildar = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 10,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
 		/obj/item/gun/ballistic/automatic/ak556 = 10,
 		/obj/item/gun/ballistic/automatic/service = 10,
@@ -276,13 +275,14 @@
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 10,
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 10,
 		/obj/item/gun/ballistic/automatic/smg/p90 = 10,
-		/obj/item/gun/ballistic/automatic/smg/mp5 = 10,
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10, // bonus damage means rarer
 		/obj/item/gun/ballistic/automatic/type93 = 10,
 		/obj/item/gun/ballistic/automatic/lsw = 10,
 		/obj/item/gun/ballistic/automatic/unmcamr = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 4,
+		/obj/item/gun/ballistic/automatic/smg/mp5 = 4, // MP5SD, what the fuck are these item paths?
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 4,
 		/obj/item/gun/ballistic/automatic/assault_rifle = 4,
 		/obj/item/gun/ballistic/automatic/r93 = 4,
