@@ -973,7 +973,6 @@
 	icon_state = "mothroach"
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
-	var/held_icon = "mothroach"
 
 /mob/living/simple_animal/pet/pony
 	name = "pony"
