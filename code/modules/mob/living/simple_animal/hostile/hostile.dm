@@ -730,13 +730,20 @@
 		return ..()
 
 /mob/living/simple_animal/hostile/proc/dodge(moving_to,move_direction)
-	//Assuming we move towards the targette we want to swerve toward them to get closer
-	var/cdir = turn(move_direction,45)
-	var/ccdir = turn(move_direction,-45)
+	var/cdir = turn(move_direction,90)
+	var/ccdir = turn(move_direction,-90)
+	var/next_step_dir = pick(cdir,ccdir)
+
 	dodging = FALSE
 	. = Move(get_step(loc,pick(cdir,ccdir)))
-	if(!.)//Can't dodge there so we just carry on
-		. =  Move(moving_to,move_direction)
+	if(!.) //Can't dodge there!
+		visible_message("<span class='notice'>[src] dodges!</span>")
+		playsound(loc, 'sound/effects/rustle3.ogg', 50, 1, -1)
+	else
+		// Apply stamina damage if the mob tried to dodge into a wall
+		adjustStaminaLoss(10)
+		visible_message("<span class='notice'>[src] tries to dodge but hits a wall!</span>")
+		playsound(loc, 'sound/effects/hit_punch.ogg', 50, 1, -1) // Play a punch sound
 	dodging = TRUE
 
 /mob/living/simple_animal/hostile/proc/DestroyObjectsInDirection(direction)
