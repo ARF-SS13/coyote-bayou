@@ -966,6 +966,14 @@
 	icon_dead = "mothroach_dead"
 	var/held_icon = "mothroach"
 
+/mob/living/simple_animal/pet/mothroach/tox
+	name = "Fluffy"
+	desc = "A adorably fluffy mothroach. This moth roach seems to have a collar on its neck, the tag reading 'Fluffy Mckit. If found, return to Tox Mckit'. What a fluffy fella!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
+
 /mob/living/simple_animal/pet/pony
 	name = "pony"
 	desc = "A cute fluffy pony"
