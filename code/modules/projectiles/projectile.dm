@@ -191,6 +191,9 @@
 
 	var/is_crit_above = 9999
 
+	/// Datum holder for normal damage distribution math. If this isn't set, it will use the old damage system as a fallback.
+	var/datum/normal_damage_projectile/norm_dam
+
 /obj/item/projectile/Initialize()
 	. = ..()
 	permutated = list()

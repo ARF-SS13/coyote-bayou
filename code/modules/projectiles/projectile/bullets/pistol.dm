@@ -702,6 +702,25 @@
 			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
 			M.IgniteMob()
 
+/datum/normal_damage_projectile/c45_tier0
+	mean = 30
+	mean_nudge = -6
+
+/datum/normal_damage_projectile/c45_tier1
+	mean = 30
+	mean_nudge = -3
+
+/datum/normal_damage_projectile/c45_tier2
+	mean = 30
+
+/datum/normal_damage_projectile/c45_tier3
+	mean = 30
+	mean_nudge = 3
+
+/datum/normal_damage_projectile/c45_tier4
+	mean = 30
+	mean_nudge = 6
+
 /////////////////
 // .357 MAGNUM //
 /////////////////
