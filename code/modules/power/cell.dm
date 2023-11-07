@@ -544,7 +544,7 @@
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
-	name = "microfusion breeder"
+	name = "internal microfusion cell"
 	desc = "A miniature microfusion reactor connected to capacitor banks. This is not a removable part, you messed up."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
