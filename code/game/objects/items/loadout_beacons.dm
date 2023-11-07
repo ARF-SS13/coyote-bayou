@@ -1260,7 +1260,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c10mm(src)
 
 /obj/item/storage/box/gun/pistol/m3socom
-	name = "M3 Socom pistol case"
+	name = "M3 Special pistol case"
 
 /obj/item/storage/box/gun/pistol/m3socom/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom (src)
