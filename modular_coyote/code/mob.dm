@@ -949,6 +949,30 @@
 	icon_living = "rykka"
 	icon_dead = "rykka_dead"
 
+/mob/living/simple_animal/advanced/hellhound
+	name = "hellound"
+	desc = "It's a fire doggo from hell."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhound"
+	icon_living = "hellhound"
+	icon_dead = "hellhound_dead"
+
+/mob/living/simple_animal/advanced/hellhound/greater
+	name = "greater hellound"
+	desc = "It's a fire doggo from hell."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhoundgreater"
+	icon_living = "hellhoundgreater"
+	icon_dead = "hellhound_dead"
+
+/mob/living/simple_animal/advanced/rabbit
+	name = "bunny"
+	desc = "Hoppity hop, easter is on it's way."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "bunny"
+	icon_living = "bunny"
+	icon_dead = "bunny_dead"
+
 /mob/living/simple_animal/advanced/yaoguai
 	name = "tamed Yaoguai"
 	desc = "Some kind of big black dog."
