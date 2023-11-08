@@ -40,9 +40,7 @@
 	else
 		message = "presses [u_His] pussy into \the <b>[partner]</b>'s own."
 		partner.set_is_fucking(user, CUM_TARGET_VAGINA, partner.getorganslot(ORGAN_SLOT_VAGINA))
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/squelch1.ogg',
-						'modular_sand/sound/interactions/squelch2.ogg',
-						'modular_sand/sound/interactions/squelch3.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, user, ORGAN_SLOT_VAGINA) //SPLURT edit
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, partner, ORGAN_SLOT_VAGINA) //SPLURT edit

@@ -61,7 +61,7 @@
 				"trembles as [t_His] hands run across bare skin.")]"))
 
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 20, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent], CUM_TARGET_HAND, user, "anus") //SPLURT edit
 
 /datum/interaction/lewd/finger_self
@@ -156,7 +156,7 @@
 		message += " over \the [liquid_container]"
 
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/champ_fingering.ogg', 20, 1, -1)
 	user.handle_post_sex(lust_amt[user.a_intent],CUM_TARGET_HAND, liquid_container ? liquid_container : user, ORGAN_SLOT_VAGINA)
 
 

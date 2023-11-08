@@ -74,7 +74,7 @@
 		liquid_container.reagents.add_reagent(milktype, rand(1,3))
 
 	user.visible_message(message = span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 40, 1, -1)
 
 /datum/interaction/lewd/self_nipsuck
 	description = "Self/Body - Suck your own nips."
@@ -109,8 +109,7 @@
 
 	message = span_love("\The <b>[user]</b> [pick(lines)]")
 	user.visible_message(message, ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 
 	switch(milkers.size)
 		if("c", "d", "e")

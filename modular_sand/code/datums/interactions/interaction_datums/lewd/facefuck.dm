@@ -103,8 +103,7 @@
 					genital = partner.getorganslot(ORGAN_SLOT_PENIS)
 		user.set_is_fucking(partner, CUM_TARGET_MOUTH, genital)
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(retaliation_message)
 		user.visible_message("<font color=red><b>\The <b>[partner]</b></b> [retaliation_message]</span>", ignored_mobs = user.get_unconsenting())
@@ -156,8 +155,7 @@
 			genital = check
 		user.set_is_fucking(partner, CUM_TARGET_THROAT, genital)
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	user.visible_message(message = span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(retaliation_message)
 		user.visible_message(message = "<font color=red><b>\The <b>[partner]</b></b> [retaliation_message]</span>", ignored_mobs = user.get_unconsenting())

@@ -122,7 +122,7 @@
 									'modular_sand/sound/interactions/bj8.ogg',
 									'modular_sand/sound/interactions/bj9.ogg',
 									'modular_sand/sound/interactions/bj10.ogg',
-									'modular_sand/sound/interactions/bj11.ogg'), 50, 1, -1)
+									'modular_sand/sound/interactions/bj11.ogg'), 30, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(fucktarget != "penis" || partner.can_penetrating_genital_cum())
 		partner.handle_post_sex(lust_increase, CUM_TARGET_MOUTH, user, ORGAN_SLOT_PENIS) //SPLURT edit

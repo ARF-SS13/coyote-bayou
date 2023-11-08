@@ -22,8 +22,7 @@
 		message = "slides [u_His] [genital_name] into \the <b>[partner]</b>'s pussy."
 		user.set_is_fucking(partner, CUM_TARGET_VAGINA, user.getorganslot(ORGAN_SLOT_PENIS))
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/champ1.ogg',
-						'modular_sand/sound/interactions/champ2.ogg'), 50, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, partner, ORGAN_SLOT_PENIS) //SPLURT edit
@@ -53,9 +52,7 @@
 			"shoves [u_His] [genital_name] deep inside of \the <b>[partner]</b>'s ass, making [t_His] rear jiggle.")]"
 		user.set_is_fucking(partner, CUM_TARGET_ANUS, user.getorganslot(ORGAN_SLOT_PENIS))
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',
-						'modular_sand/sound/interactions/bang2.ogg',
-						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
@@ -83,9 +80,7 @@
 		user.set_is_fucking(partner, CUM_TARGET_BREASTS, user.getorganslot(ORGAN_SLOT_PENIS))
 
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/bang1.ogg',
-						'modular_sand/sound/interactions/bang2.ogg',
-						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, partner, ORGAN_SLOT_PENIS) //SPLURT edit
@@ -115,10 +110,7 @@
 			"starts grinding [u_His] [genital_name] against \the <b>[partner]</b>'s [shoes ? shoes : pick("foot", "sole")].")]"
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_PENIS))
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
-						'modular_sand/sound/interactions/foot_dry3.ogg',
-						'modular_sand/sound/interactions/foot_wet1.ogg',
-						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, CUM_TARGET_PENIS) //SPLURT edit
@@ -144,10 +136,7 @@
 			"starts grinding [u_His] [genital_name] between \the <b>[partner]</b>'s [shoes ? shoes : pick("feet", "soles")].")]"
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_PENIS))
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
-						'modular_sand/sound/interactions/foot_dry3.ogg',
-						'modular_sand/sound/interactions/foot_wet1.ogg',
-						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	if(user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, CUM_TARGET_PENIS) //SPLURT edit
@@ -178,9 +167,6 @@
 			"starts grinding [u_His] pussy against \the <b>[partner]</b>'s [shoes ? shoes : pick("foot", "sole")].")]"
 		user.set_is_fucking(partner, CUM_TARGET_FEET, user.getorganslot(ORGAN_SLOT_VAGINA))
 
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/foot_dry1.ogg',
-						'modular_sand/sound/interactions/foot_dry3.ogg',
-						'modular_sand/sound/interactions/foot_wet1.ogg',
-						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, ORGAN_SLOT_VAGINA) //SPLURT edit

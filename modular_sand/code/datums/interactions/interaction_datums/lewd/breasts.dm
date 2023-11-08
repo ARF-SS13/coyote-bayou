@@ -32,8 +32,7 @@
 
 	message = span_love("\The <b>[user]</b> [pick(lines)]")
 	user.visible_message(message, ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
+	playlewdinteractionsound(get_turf(user), pick('sound/f13effects/sunsetsounds/blush.ogg'), 40, 1, -1)
 
 	switch(milkers.size)
 		if("c", "d", "e")
@@ -94,7 +93,7 @@
 			liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
 
 			if(show_message) user.visible_message(span_love("<b>\The [user]</b> milks <b>[target]</b>'s breasts into \the [liquid_container]."), ignored_mobs = user.get_unconsenting())
-			playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 30, 1, -1)
+			playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 30, 1, -1)
 	else
 		if(user.a_intent == INTENT_HARM)
 			user.visible_message(
