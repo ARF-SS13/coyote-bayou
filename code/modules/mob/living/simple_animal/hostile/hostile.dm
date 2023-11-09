@@ -68,6 +68,8 @@
 	var/melee_windup_sound = 'sound/effects/flip.ogg'
 	/// How much to shrink and grow this mob when it's doing a windup attack.
 	var/melee_windup_magnitude = 0.3
+	/// TRUE while a mob is winding up a melee attack, otherwise FALSE.
+	var/winding_up_melee = FALSE
 
 	var/melee_attack_cooldown = 2 SECONDS
 	COOLDOWN_DECLARE(melee_cooldown)
@@ -155,7 +157,7 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(prob(1))
+		if(prob(1) && world.time-timeofdeath > 3 MINUTES)//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			gib(FALSE, FALSE, FALSE, TRUE)
 		return
@@ -486,6 +488,8 @@
 		if(my_target.z != T.z)
 			LoseTarget()
 			return 0
+		if(winding_up_melee)
+			return 0
 		var/target_distance = get_dist(origin,my_target)
 		if(ranged) //We ranged? Shoot at em
 			if(!my_target.Adjacent(origin) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
@@ -493,7 +497,7 @@
 		if(!Process_Spacemove()) //Drifting
 			walk(src,0)
 			return 1
-		if(retreat_distance != null) //If we have a retreat distance, check if we need to run from our targette
+		if(retreat_distance != null && !winding_up_melee) //If we have a retreat distance and aren't winding up an attack, check if we need to run from our targette
 			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If targette's closer than our retreat distance, run
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 				walk_away(src,my_target,retreat_distance,move_to_delay)
@@ -502,21 +506,21 @@
 		else
 			Goto(my_target,move_to_delay,minimum_distance)
 		/// roll to randomize this thing... if its an option
-		if(variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
+		if(!winding_up_melee && variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
 			retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 		if(my_target)
 			if(COOLDOWN_TIMELEFT(src, melee_cooldown))
 				return TRUE
 			COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
-			if(origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
+			if(!winding_up_melee && origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
 				MeleeAction()
 			else
-				if(rapid_melee > 1 && target_distance <= melee_queue_distance)
+				if(!winding_up_melee && rapid_melee > 1 && target_distance <= melee_queue_distance)
 					MeleeAction(FALSE)
 				in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
 			return 1
 		return 0
-	if(environment_smash)
+	if(environment_smash && !winding_up_melee)
 		if(my_target.loc != null && get_dist(origin, my_target.loc) <= vision_range) //We can't see our targette, but he's in our vision range still
 			if(ranged_ignores_vision && ranged_cooldown <= world.time) //we can't see our targette... but we can fire at them!
 				OpenFire(my_target)
@@ -540,7 +544,10 @@
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 		walk_to(src, my_target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
-		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+		if(winding_up_melee)//Stay in melee range for the whole attack
+			minimum_distance = 1
+		else
+			minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
 		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
 
@@ -566,15 +573,31 @@
 	if(prob(alternate_attack_prob) && AlternateAttackingTarget(my_target))
 		return FALSE
 	if(melee_windup_time)
+		var/m_rd = retreat_distance
+		var/m_md = minimum_distance
+		winding_up_melee = TRUE //Don't increase our retreating distance while winding up
+		retreat_distance = null //Stop retreating
+		minimum_distance = 1 //Stop moving away
 		if(melee_windup_sound)
 			playsound(src.loc, melee_windup_sound, 150, TRUE, distant_range = 4)	//Play the windup sound effect to warn that an attack is coming.
 		INVOKE_ASYNC(src, /atom/.proc/do_windup, melee_windup_magnitude, melee_windup_time)	//Bouncing bitches.
 		if(do_after(user=src,delay=melee_windup_time,needhand=FALSE,progress=FALSE,required_mobility_flags=null,allow_movement=TRUE,stay_close=FALSE,public_progbar=FALSE))
 			my_target = get_target() //Switch targets if we did during our windup.
 			if(my_target && Adjacent(my_target)) //If we waited, check if we died or something before finishing the attack windup. If so, don't attack.
+				retreat_distance = m_rd
+				minimum_distance = m_md
+				winding_up_melee = FALSE
 				return my_target.attack_animal(src)
 			else
+				retreat_distance = m_rd
+				minimum_distance = m_md
+				winding_up_melee = FALSE
 				return FALSE
+		else
+			retreat_distance = m_rd
+			minimum_distance = m_md
+			winding_up_melee = FALSE
+			return FALSE
 	else
 		return 	my_target.attack_animal(src)
 
@@ -724,7 +747,7 @@
 
 
 /mob/living/simple_animal/hostile/Move(atom/newloc, dir , step_x , step_y)
-	if(dodging && approaching_target && prob(dodge_prob) && moving_diagonally == 0 && isturf(loc) && isturf(newloc))
+	if(!winding_up_melee && dodging && approaching_target && prob(dodge_prob) && moving_diagonally == 0 && isturf(loc) && isturf(newloc))
 		return dodge(newloc,dir)
 	else
 		return ..()
