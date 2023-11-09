@@ -1328,14 +1328,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
+	set category = "IC"
+
 	if(!isliving(src)) 
 		to_chat(src, span_hypnophrase("Touch grass, you ghostly fucker. Spawn in to swap spit with them."))
 		return
 	if(!A.client)
 		to_chat(src, span_hypnophrase("You're having a white woman moment."))
 		return
-	set category = "IC"
-	
+
 	var/list/choices = list(
 	"1. Flirt/Physical Touch Accept",
 	"2. Flirt/Physical Reject",
