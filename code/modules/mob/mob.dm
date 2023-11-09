@@ -1326,8 +1326,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	- On the off chance that you DO find out someone is using your advance to stir pointless OOC drama please ahelp and let us know, don't assume we're aware. \n\
 	"
 
-/mob/verb/check_out(atom/A as mob in view())
+/mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
+	if(!isliving(src)) 
+		to_chat(src, span_hypnophrase("Touch grass, you ghostly fucker. Spawn in to swap spit with them."))
+		return
+	if(!A.client)
+		to_chat(src, span_hypnophrase("You're having a white woman moment."))
+		return
 	set category = "IC"
 	
 	var/list/choices = list(
