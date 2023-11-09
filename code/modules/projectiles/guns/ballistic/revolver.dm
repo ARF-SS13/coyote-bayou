@@ -596,13 +596,13 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/buntline
 	name = "Colt Buntline"
-	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .357 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
 	item_state = "coltcarbine"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -616,10 +616,7 @@
 
 /* * * * * * * * * * *
 * Judge revolver
-* + 3 shot shotgun revolver for balance
-* - less damage
-* + akimbo as well
-* + Lightweight, compact, and a spawnable weapon, may need further adjustments.
+* + 3 shot shotgun revolver
 * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/taurjudge

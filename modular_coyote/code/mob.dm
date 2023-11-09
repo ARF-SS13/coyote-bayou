@@ -997,6 +997,33 @@
 	icon_state = "mothroach"
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
+	speak = list("Squee","Squeak-squeak-squeak","squeak","Chitters","Momf")
+	speak_emote = list("chitters", "squeaks")
+	emote_hear = list("chitters.", "squeaks")
+	emote_see = list("tilts its head", "flutters its wings" , "does a little dance")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "punts"
+	response_harm_simple = "punt"
+	maxHealth = 200
+	health = 200
+	mob_armor = ARMOR_VALUE_LIGHT
+	healable = 1
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+	harm_intent_damage = 2
+	melee_damage_lower = 2
+	melee_damage_upper = 5
+	dextrous = TRUE
+	dextrous_hud_type = /datum/hud/dextrous/drone
+	held_items = list(null, null)
+	healable = 1
 
 /mob/living/simple_animal/pet/pony
 	name = "pony"

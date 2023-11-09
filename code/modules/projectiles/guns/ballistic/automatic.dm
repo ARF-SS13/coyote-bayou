@@ -202,7 +202,7 @@
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm200 ,
 		/datum/firemode/semi_auto/fast
 	)
 
@@ -1330,29 +1330,27 @@
 /* * * * * * * * * * * *
 * Matilda Rifle
 * Lightweight low damage dealing rifle with a 20 mag only
-* - MUCH slower than a varmint
-* + Higher damage than a varmint
+* - 308 capacity mags
 * - Unable to be modified with bayonets, flashlights or a scope
-* + common tier rifle
 * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/matildar
 	name = "A11 'Matilda' Rifle"
-	desc = "A Latos Systems high powered caliber 5.56 battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in a high powered version of 5.56 NATO"
+	desc = "A Latos Systems A11 Matilda battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in .308"
 	icon_state = "matilda"
 	item_state = "matilda"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty,/obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(/datum/firemode/semi_auto/slow)
+	init_firemodes = list(/datum/firemode/semi_auto ,
+	/datum/firemode/burst/two/fast
+	)
 	can_scope = TRUE
 	can_bayonet = FALSE
 	can_flashlight = FALSE
@@ -1541,15 +1539,11 @@
 
 /* * * * * * * * * * * * * * * *
 * Famas G80{generation}
-* -weakened 5.56
-* + two round burst fire
-*- weak 5.56mm assault rifle to be found
-* - Takes 20 mags only
-* - Muh bullpup
+* Whole generation of them. Upgrades in tier for their loot spawns. Worn spawn famas, Famas G1, P47, M41
 * * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/famas
-	name = "fusil d'assaut G80"
-	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN. Produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
+	name = " Worn fusil assaut G80"
+	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN.Very worn down it seems but it was produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
 	icon_state = "famas"
 	item_state = "famas"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1557,15 +1551,36 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/small,/obj/item/ammo_box/magazine/m556/rifle/assault/empty )
+	disallowed_mags = list (/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault , /obj/item/ammo_box/magazine/m556/rifle/assault/empty )
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.8, 1.8)
+	init_recoil = RIFLE_RECOIL(1.3, 1.3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower,
-		/datum/firemode/burst/three/slower
+		/datum/firemode/semi_auto/fast
+	)
+	can_bayonet = FALSE
+	can_scope = FALSE
+	can_suppress = TRUE
+
+/obj/item/gun/ballistic/automatic/famas/pristine
+	name = "Fusil D'assaut F1"
+	desc = "A Famas, restored to a brand new state. Used heavily by french forces and the GIGN before the war."
+	icon_state = "famas"
+	item_state = "famas"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5, 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/burst/three
 	)
 	can_bayonet = FALSE
 	can_scope = FALSE
@@ -1684,6 +1699,28 @@
 	can_scope = TRUE
 	can_suppress = TRUE
 	can_bayonet = FALSE
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
+/obj/item/gun/ballistic/automatic/ww1selfloader // tier above the G43 rifle. Powerful yet slow.
+	name = " Selbstlader 1906 Rifle"
+	desc = "A Selbstlader 1906 self-loading rifle. This rifle was patened back in the Great War. It now seeks service in the hands of the user. It seems the wood is a bit worn down but the caliber packs one hell of a punch."
+	icon_state = "lugerrifle"
+	item_state = "lugerrifle"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/selfloaderinternal
+	init_mag_type = /obj/item/ammo_box/magazine/internal/selfloaderinternal
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1.6, 1.7)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 // Civilian version of the G43, uses 5mm and has a 15 round capacity, faster firerate.
@@ -2260,10 +2297,10 @@
 	disallowed_mags = list (/obj/item/ammo_box/magazine/m308/ext, /obj/item/ammo_box/magazine/m308/ext/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(2, 1.5)
-	init_firemodes = list(/datum/firemode/burst/three/fastest
+	init_firemodes = list(/datum/firemode/burst/three/fast
 	)
 	can_suppress = FALSE
 	can_scope = FALSE
@@ -2283,27 +2320,26 @@
 
 /obj/item/gun/ballistic/automatic/p47
 	name = "P47 Battle rifle"
-	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in 5.45mm. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
+	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in .308 UNMC NATO rounds.. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
 	icon_state = "p47"
 	item_state = "p47"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m556/rifle/extended, /obj/item/ammo_box/magazine/m556/rifle/extended/empty, /obj/item/ammo_box/magazine/m556/rifle/assault ,/obj/item/ammo_box/magazine/m556/rifle/assault/empty)
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(1.5, 1.5)
-	init_firemodes = list(/datum/firemode/burst/three/slow ,
+	init_recoil = AUTORIFLE_RECOIL(1.6, 1.4)
+	init_firemodes = list(/datum/firemode/burst/three/slower ,
 	/datum/firemode/semi_auto/slow
 	)
 	can_suppress = TRUE
-	can_scope = FALSE
+	can_scope = TRUE
 	can_flashlight = FALSE
-	zoom_factor = 1
+	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/p47merek
@@ -2530,6 +2566,13 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric
+	name = "AUG P-Skulljack"
+	desc = "A AUG A10 assault rifle. Comes with a built in scope. It seems to be custom owned by someone."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
@@ -2553,34 +2596,53 @@
 /* * * * * * * * * * *
 * AK74
 * + fast firerate
-* - 20 and 30 magazines only. No drums nor 10 mags
-* + Uncommon
+* - 5mm
 * * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/ak556
-	name = "Ak74"
-	desc = "A AK74 assault rifle. Rechambered in 5.56x45 NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
+/obj/item/gun/ballistic/automatic/ak556 // faster 5mm rifle, base damage.
+	name = "Ak-74 assault rifle"
+	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "ak74"
 	icon_state = "ak74"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	disallowed_mags = list( /obj/item/ammo_box/magazine/m556/rifle/small , /obj/item/ammo_box/magazine/m556/rifle/extended/hobo , /obj/item/ammo_box/magazine/m556/rifle/small/empty , /obj/item/ammo_box/magazine/m556 , /obj/item/ammo_box/magazine/m556/rifle/extended ,/obj/item/ammo_box/magazine/m556/rifle/extended/empty )
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	init_recoil = AUTORIFLE_RECOIL(1.1, 1.1)
+	init_recoil = AUTORIFLE_RECOIL(1.4, 1.6)
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm200 ,
 		/datum/firemode/semi_auto
-	)
+		)
 	can_flashlight = FALSE
 	can_bayonet = FALSE
-	can_scope = TRUE
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+//Saiga 12 shotgun
+/obj/item/gun/ballistic/automatic/saiga12k
+	name = "Saiga-12 Assault shotgun"
+	desc = "A 12g Saiga-12 shotgun. Manufactured in Russia, this shotgun is as reliable as they get. 8 shot capacity, decent firerate. It's good for hunting stags!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "saiga"
+	icon_state = "saiga"
+	mag_type = /obj/item/ammo_box/magazine/saiga
+	init_mag_type = /obj/item/ammo_box/magazine/saiga
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = AUTORIFLE_RECOIL(2, 1.8)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75 ,
+		/datum/firemode/semi_auto/slow
+	)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_scope = FALSE
+	can_suppress = TRUE
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "Ak74u"
@@ -2951,7 +3013,7 @@
  * Fancy 4.73mm autorifle
  * 4.73mm caseless
  * Fast firing!
- * Uncommon
+ * Uncommon unique
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/g11
@@ -2964,11 +3026,11 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	init_recoil = SMG_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/burst/three/fastest,
-		/datum/firemode/semi_auto
+		/datum/firemode/semi_auto/fast
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -3012,6 +3074,7 @@
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m473/small, /obj/item/ammo_box/magazine/m473/small/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow ,
@@ -3455,6 +3518,7 @@
 * TG78 Anti Material Rifle.
 * Uses .50 cal
 * Semi-automatic
+* Buffed damage, will mess up someone's day.
 * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/unmcamr

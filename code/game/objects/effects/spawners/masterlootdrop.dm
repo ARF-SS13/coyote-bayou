@@ -237,10 +237,8 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
 	name = "uncommon guns"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/matildar = 10,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 10,
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
-		/obj/item/gun/ballistic/automatic/ak556 = 10,
 		/obj/item/gun/ballistic/automatic/service = 10,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 10,
 		/obj/item/gun/ballistic/automatic/service/r82 = 10, //is weakest 5.56 automatic
@@ -253,7 +251,6 @@
 		/obj/item/gun/ballistic/automatic/smg/m22 = 4,
 		/obj/item/gun/ballistic/automatic/l1a1 = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 4,
-		/obj/item/gun/ballistic/automatic/p47 = 4,
 		/obj/item/gun/ballistic/automatic/needlerrifle = 4,
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 4,
 		/obj/item/gun/ballistic/automatic/marksman = 4,
@@ -264,6 +261,11 @@
 		/obj/item/gun/ballistic/automatic/slr = 1,
 		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 10,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 1,
+		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,
+		/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle = 10,
+		/obj/item/gun/ballistic/automatic/famas/pristine = 10,
+		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 4,
+		/obj/item/gun/ballistic/automatic/saiga12k = 4,
 		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1, // Commenting out until the sprite is fixed.
 		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
 	)
@@ -277,10 +279,8 @@
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10, // bonus damage means rarer
 		/obj/item/gun/ballistic/automatic/type93 = 10,
 		/obj/item/gun/ballistic/automatic/lsw = 10,
-		/obj/item/gun/ballistic/automatic/unmcamr = 10,
-		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,
-		/obj/item/gun/ballistic/automatic/assault_carbine/scarrifle = 10,
-		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 4,
+		/obj/item/gun/ballistic/automatic/unmcamr = 1,
+		/obj/item/gun/ballistic/automatic/p47 = 4, //Moved up to rare gun lootpool.
 		/obj/item/gun/ballistic/automatic/smg/mp5 = 4, // MP5SD, what the fuck are these item paths?
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 4,
 		/obj/item/gun/ballistic/automatic/assault_rifle = 4,
@@ -289,10 +289,12 @@
 		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 4,
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
+		/obj/item/gun/ballistic/automatic/matildar = 4,
 		/obj/item/gun/ballistic/shotgun/police = 1,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 1,
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
+		/obj/item/gun/ballistic/automatic/ak556 = 4,
 		/obj/item/gun/ballistic/automatic/fnfal = 1,
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 1,
@@ -379,6 +381,7 @@
 		/obj/item/gun/ballistic/rifle/mosin/laserbubba = 4, // for the meme
 		/obj/item/gun/ballistic/automatic/lewis = 1,
 		/obj/item/gun/ballistic/automatic/smg/ppsh = 1,
+		/obj/item/gun/ballistic/automatic/ww1selfloader = 4,
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
 	)
 ///////////////////////////
