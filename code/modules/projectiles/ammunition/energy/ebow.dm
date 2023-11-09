@@ -13,3 +13,6 @@
 
 /obj/item/ammo_casing/energy/bolt/sling
 	projectile_type = /obj/item/projectile/energy/bolt/rock
+
+/obj/item/ammo_casing/energy/bolt/smooch
+	projectile_type = /obj/item/projectile/energy/bolt/smooch

@@ -147,43 +147,43 @@
 
 ////////////////////////////
 ///master weapon spawners///	these ensure fair distribution of different weapon types
-////////////////////////////
+////////////////////////////	If you *can,* try and make the values add up to 100. That makes it an easily readable percent. If not, just follow the list's trends.
 
 /obj/effect/spawner/lootdrop/f13/trash_weps
 	name = "trash weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/trash_guns = 1,
-		/obj/effect/spawner/lootdrop/f13/trash_melee = 1,
+		/obj/effect/spawner/lootdrop/f13/trash_guns = 50,
+		/obj/effect/spawner/lootdrop/f13/trash_melee = 50,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_weps
 	name = "common weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/common_guns = 15, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/common_melee = 10,
+		/obj/effect/spawner/lootdrop/f13/common_guns = 30, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/common_melee = 30,
 		/obj/effect/spawner/lootdrop/f13/common_cowboy = 10,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 6,
-		/obj/effect/spawner/lootdrop/f13/common_unique = 1,
+		/obj/effect/spawner/lootdrop/f13/common_energy = 20,
+		/obj/effect/spawner/lootdrop/f13/common_unique = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_weps
 	name = "uncommon weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 12, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 12,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 4,
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 4,
-		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 20, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 35,
+		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 5, // here as a test; rare classic guns aren't really endgame tier outside of like 1 or 2
+		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 20,
+		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_weps
 	name = "rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_melee = 15, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 15,
-		/obj/effect/spawner/lootdrop/f13/rare_guns = 8,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 2,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_guns = 35, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 35,
+		/obj/effect/spawner/lootdrop/f13/rare_energy = 20,
+		/obj/effect/spawner/lootdrop/f13/rare_unique = 10,
 	)
 
 ///////////////////////////////
@@ -514,62 +514,6 @@
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
 	)
 
-
-////////////////////
-///cowboy weapons///		ensures we gett plenty of stylish guns and bows
-////////////////////
-/*
-/obj/effect/spawner/lootdrop/f13/common_cowboy
-	name = "common cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/detective = 5,
-		/obj/item/gun/ballistic/revolver/revolver45 = 1,
-		/obj/item/gun/ballistic/revolver/colt357 = 20,
-		/obj/item/gun/ballistic/revolver/police = 5,
-		/obj/item/gun/ballistic/revolver/m29 = 5,
-		/obj/item/gun/ballistic/revolver/m29/alt = 1,
-		/obj/item/gun/ballistic/revolver/m29/snub = 5,
-		/obj/item/gun/ballistic/revolver/revolver44 = 1,
-		/obj/item/gun/ballistic/revolver/thatgun = 10,
-		/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
-		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
-		/obj/item/gun/ballistic/revolver/widowmaker = 10,
-		/obj/item/gun/ballistic/bow/lightxbow = 10,
-		/obj/item/gun/ballistic/bow/recurvebow = 20,
-		/obj/item/gun/ballistic/revolver/detective/derringer = 1,
-		/obj/item/gun/ballistic/revolver/derringer4570 = 1,
-		/obj/item/gun/ballistic/revolver/derringerLC = 5,
-	)
-
-/obj/effect/spawner/lootdrop/f13/uncommon_cowboy
-	name = "uncommon cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/police/webley = 5,
-		/obj/item/gun/ballistic/revolver/hunting = 10,
-		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
-		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
-		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
-		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 10,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
-		/obj/item/gun/ballistic/bow/longbow = 20,
-		/obj/item/gun/ballistic/bow/crossbow = 10,
-		/obj/item/gun/ballistic/bow/compositebow = 10,
-	)
-
-/obj/effect/spawner/lootdrop/f13/rare_cowboy
-	name = "rare cowboy"
-	loot = list(
-		/obj/item/gun/ballistic/revolver/m2405 = 5,
-		/obj/item/gun/ballistic/revolver/sequoia = 10,
-		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5, // ebow
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
-		/obj/item/gun/ballistic/bow/compoundbow = 3,
-		/obj/item/m2flamethrowertank = 1,
-	)
-
-*/
 //////////////////////////
 ///unique weapon spawns///
 //////////////////////////
