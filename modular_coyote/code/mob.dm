@@ -792,6 +792,11 @@
 	icon_living = "blackwolf"
 	icon_dead = "blackwolf_dead"
 
+/mob/living/simple_animal/advanced/bigwolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
 /mob/living/simple_animal/advanced/sifwolf
 	name = "big wolf - silver"
 	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
@@ -799,12 +804,22 @@
 	icon_living = "sifwolf"
 	icon_dead = "sifwolf_dead"
 
+/mob/living/simple_animal/advanced/sifwolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
+
 /mob/living/simple_animal/advanced/whitewolf
 	name = "big wolf - white"
 	icon = 'modular_coyote/icons/mob/vore128x64.dmi'
 	icon_state = "whitewolf"
 	icon_living = "whitewolf"
 	icon_dead = "whitewolf_dead"
+
+/mob/living/simple_animal/advanced/whitewolf/Initialize()
+    .=..()
+    resize = 0.5
+    update_transform()
 
 //Leopardmanders
 
@@ -817,7 +832,7 @@
 
 /mob/living/simple_animal/advanced/leopardmander/Initialize()
     .=..()
-    resize = 0.8
+    resize = 0.5
     update_transform()
 
 /mob/living/simple_animal/advanced/leopardmanderwhite
@@ -829,7 +844,7 @@
 
 /mob/living/simple_animal/advanced/leopardmanderwhite/Initialize()
     .=..()
-    resize = 0.8
+    resize = 0.5
     update_transform()
 
 /mob/living/simple_animal/advanced/leopardmanderexotic
@@ -841,7 +856,7 @@
 
 /mob/living/simple_animal/advanced/leopardmanderexotic/Initialize()
     .=..()
-    resize = 0.8
+    resize = 0.5
     update_transform()
 
 
@@ -980,6 +995,52 @@
 	icon_state = "yaoguai"
 	icon_living = "yaoguai"
 	icon_dead = "yaoguai_dead"
+
+//By request, xenomorphs
+/mob/living/simple_animal/advanced/xeno
+	name = "Xenomoprh Drone"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "aliend"
+	icon_living = "aliend"
+	icon_dead = "aliend_dead"
+
+/mob/living/simple_animal/advanced/xenos
+	name = "Xenomoprh Sentry"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "alienq"
+	icon_living = "alienq"
+	icon_dead = "alienq_dead"
+
+/mob/living/simple_animal/advanced/xenoh
+	name = "Xenomoprh Hunter"
+	desc = "Don't tell Riply..."
+	icon = 'modular_coyote/icons/mob/aliens.dmi'
+	icon_state = "alienh"
+	icon_living = "alienh"
+	icon_dead = "alienh_dead"
+
+/mob/living/simple_animal/advanced/xenop
+	name = "Xenomoprh Protector"
+	desc = "Don't tell Riply..."
+	icon = 'icons/mob/alienqueen.dmi'
+	icon_state = "alienp"
+	icon_living = "alienp"
+	icon_dead = "alienp_dead"
+
+/mob/living/simple_animal/advanced/xenoq
+	name = "Xenomoprh Queen"
+	desc = "Don't tell Riply..."
+	icon = 'icons/mob/alienqueen.dmi'
+	icon_state = "alienq"
+	icon_living = "alienq"
+	icon_dead = "alienq_dead"
+
+/mob/living/simple_animal/advanced/xenoq/Initialize()
+    .=..()
+    resize = 0.7
+    update_transform()
 
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
