@@ -2960,7 +2960,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/bonewands
 
 /obj/item/storage/box/magic/bonewands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/bonewands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/magicmissile(src)
@@ -2973,11 +2973,23 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/rodwands
 
 /obj/item/storage/box/magic/rodwands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/rodwands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+
+/datum/loadout_box/healstaff
+	entry_tag = "Staff of Lesser Healing"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/storage/box/magic/healstaff
+
+/obj/item/storage/box/magic/healstaff
+	name = "staff storage case"
+
+/obj/item/storage/box/magic/healstaff/PopulateContents()
+	new /obj/item/gun/magic/staff/healing/triheal(src)
 
 // Putting this down here because it refuses to work. Needs to be fixed later.
 
