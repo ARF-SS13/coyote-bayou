@@ -1198,6 +1198,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_FIRE_RATE_75 RPM_TO_FIRE_DELAY(150) // 150 RPM = 4 deciseconds per shot
 #define GUN_FIRE_RATE_100 RPM_TO_FIRE_DELAY(200) // 200 RPM = 3 deciseconds per shot
 #define GUN_FIRE_RATE_150 RPM_TO_FIRE_DELAY(300) // 300 RPM = 2 deciseconds per shot
+#define GUN_FIRE_RATE_250 RPM_TO_FIRE_DELAY(350) // 350 RPM = 2,5 deciseconds probably ---> Tox RPM, adjust if needed.
 #define GUN_FIRE_RATE_200 RPM_TO_FIRE_DELAY(400) // 400 RPM = 1.5 deciseconds per shot
 #define GUN_FIRE_RATE_300 RPM_TO_FIRE_DELAY(600) // 600 RPM = 1 deciseconds per shot
 #define GUN_FIRE_RATE_400 RPM_TO_FIRE_DELAY(800) // 800 RPM = 0.75 deciseconds per shot
@@ -1226,6 +1227,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_AUTOFIRE_DELAY_FAST GUN_FIRE_RATE_400
 #define GUN_AUTOFIRE_DELAY_NORMAL GUN_FIRE_RATE_300
 #define GUN_AUTOFIRE_DELAY_SLOW GUN_FIRE_RATE_200
+#define GUN_AUTOFIRE_DELAY_SLOWish GUN_FIRE_RATE_250
 #define GUN_AUTOFIRE_DELAY_SLOWER GUN_FIRE_RATE_150
 
 /// Gun burstfire delay Base

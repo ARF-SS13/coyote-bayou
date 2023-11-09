@@ -164,6 +164,7 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -1168,7 +1169,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
-	new /mob/living/simple_animal/pet/mothroach/tox(src)
+	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
 	new /obj/item/ammo_box/a308box(src)
@@ -1253,6 +1254,15 @@
 	. = ..()
 	var/mob/living/simple_animal/pet/fox/paws/pet_paws = new(src)
 	add_occupant(pet_paws)
+
+/obj/item/pet_carrier/fluffy
+	name = "Fluffy's carrier"
+	desc = "Hey look who it is!"
+
+/obj/item/pet_carrier/fluffy/Initialize()
+	. = ..()
+	var/mob/living/simple_animal/pet/mothroach/tox/pet_fluffy = new(src)
+	add_occupant(pet_fluffy)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
