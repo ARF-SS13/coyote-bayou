@@ -46456,6 +46456,10 @@
 	pixel_x = 14;
 	pixel_y = 32
 	},
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 2
+	},
 /turf/closed/wall/f13/sunset/brick_small_light{
 	color = "#555555"
 	},
@@ -66438,6 +66442,13 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/building/abandoned)
+"lpw" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "antmoundA"
+	},
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "lpx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -87880,6 +87891,20 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"pTe" = (
+/obj/effect/turf_decal/trimline/neutral{
+	color = "#000000";
+	dir = 1;
+	icon_state = "trimline_fill"
+	},
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#555555"
+	},
+/area/f13/building)
 "pTi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -99100,6 +99125,13 @@
 "stq" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"stw" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/grass,
+/area/f13/wasteland)
 "stA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/wood{
@@ -135267,7 +135299,7 @@ wvR
 oab
 bQW
 rrW
-vRK
+pTe
 ffy
 fWe
 mVX
@@ -137078,7 +137110,7 @@ aOk
 cIY
 aOk
 bun
-ezS
+vVy
 ezS
 ezS
 ezS
@@ -137335,7 +137367,7 @@ hrz
 aOk
 aOk
 xbz
-ezS
+vVy
 ezS
 ezS
 ezS
@@ -137591,7 +137623,7 @@ xyK
 vXx
 hHy
 aOk
-bfX
+lpw
 vVy
 vVy
 vVy
@@ -137848,8 +137880,8 @@ xyK
 tgO
 wBq
 cIY
-aOk
-ezS
+stw
+vVy
 ezS
 ezS
 ezS
