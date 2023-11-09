@@ -1037,10 +1037,20 @@
 	icon_living = "alienq"
 	icon_dead = "alienq_dead"
 
+
 /mob/living/simple_animal/advanced/xenoq/Initialize()
     .=..()
     resize = 0.7
     update_transform()
+
+/mob/living/simple_animal/advanced/bat
+	name = "bat"
+	desc = "Try not to go batty"
+	icon = 'modular_coyote/icons/mob/bat.dmi'
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+
 
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
