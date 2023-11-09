@@ -90,7 +90,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
 
 // Cargo-related stuff.
-#define MANIFEST_ERROR_CHANCE		5
+#define MANIFEST_ERROR_CHANCE		0
 #define MANIFEST_ERROR_NAME			1
 #define MANIFEST_ERROR_CONTENTS		2
 #define MANIFEST_ERROR_ITEM			4
