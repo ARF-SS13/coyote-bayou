@@ -438,6 +438,7 @@
 	close_sound = "sound/f13machines/doorstore_close.ogg"
 	explosion_block = 1.5
 	material_count = 5
+	can_have_lock = TRUE
 
 /obj/structure/simple_door/metal/iron
 	name = "iron door"
