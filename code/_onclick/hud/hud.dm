@@ -68,6 +68,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/sleep_hud_button
 	var/atom/movable/screen/aooc_hud_button
 	var/atom/movable/screen/newbie_hud_button
+	var/atom/movable/screen/chardir_hud_button
 
 	// subtypes can override this to force a specific UI style
 	var/ui_style

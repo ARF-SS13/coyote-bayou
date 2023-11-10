@@ -205,13 +205,13 @@
 	key_third_person = "bites"
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/bite/run_emote(mob/user)
+/datum/emote/living/carbon/bite/run_emote(mob/living/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
 		return
 	var/which_biter_to_spawn
-	if(ishuman(user))
+	if(LAZYLEN(user.mob_quirks))//Check if we need to do all these expensive checks
 		if(HAS_TRAIT(user, TRAIT_BIGBITE))
 			which_biter_to_spawn = /obj/item/hand_item/biter/big
 		else if(HAS_TRAIT(user, TRAIT_FASTBITE))
@@ -223,9 +223,11 @@
 		else if(HAS_TRAIT(user, TRAIT_SABREBITE))
 			which_biter_to_spawn = /obj/item/hand_item/biter/sabre
 		else 
-			which_biter_to_spawn = /obj/item/hand_item/biter 
-	else
+			which_biter_to_spawn = /obj/item/hand_item/biter
+	else if(isanimal(user) && !isadvancedmob(user))
 		which_biter_to_spawn = /obj/item/hand_item/biter/creature
+	else//Fallback
+		which_biter_to_spawn = /obj/item/hand_item/biter
 	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
 	if(user.put_in_active_hand(bite)) 
 		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
@@ -238,24 +240,28 @@
 	key_third_person = "tails"
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/tailer/run_emote(mob/user)
+/datum/emote/living/carbon/tailer/run_emote(mob/living/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your brains too busy to use your tail right now, maybe empty up your hands a bit?"))
 		return
 	var/which_tail_to_spawn
-	if(HAS_TRAIT(user, TRAIT_TAILWHIP))
-		which_tail_to_spawn = /obj/item/hand_item/tail/fast
-	else if(HAS_TRAIT(user, TRAIT_TAILSMASH))
-		which_tail_to_spawn = /obj/item/hand_item/tail/big
-	else if(HAS_TRAIT(user, TRAIT_TAILSPICY))
-		which_tail_to_spawn = /obj/item/hand_item/tail/spicy
-	else if(HAS_TRAIT(user, TRAIT_TAILTHAGO))
-		which_tail_to_spawn = /obj/item/hand_item/tail/thago
-	else if(HAS_TRAIT(user, TRAIT_TAILPLAY))
-		which_tail_to_spawn = /obj/item/hand_item/playfultail
-	else 
+	if(LAZYLEN(user.mob_quirks))//Check if we need to do all these expensive checks
+		if(HAS_TRAIT(user, TRAIT_TAILWHIP))
+			which_tail_to_spawn = /obj/item/hand_item/tail/fast
+		else if(HAS_TRAIT(user, TRAIT_TAILSMASH))
+			which_tail_to_spawn = /obj/item/hand_item/tail/big
+		else if(HAS_TRAIT(user, TRAIT_TAILSPICY))
+			which_tail_to_spawn = /obj/item/hand_item/tail/spicy
+		else if(HAS_TRAIT(user, TRAIT_TAILTHAGO))
+			which_tail_to_spawn = /obj/item/hand_item/tail/thago
+		else if(HAS_TRAIT(user, TRAIT_TAILPLAY))
+			which_tail_to_spawn = /obj/item/hand_item/playfultail
+		else 
+			which_tail_to_spawn = /obj/item/hand_item/tail
+	else
 		which_tail_to_spawn = /obj/item/hand_item/tail
+
 	var/obj/item/hand_item/tail = new which_tail_to_spawn(user)
 	if(user.put_in_active_hand(tail)) 
 		to_chat(user, span_notice("You swing your tail around, ready for action!"))
@@ -268,13 +274,13 @@
 	key_third_person = "claws" 
 	restraint_check = TRUE 
 
-/datum/emote/living/carbon/claw/run_emote(mob/user)
+/datum/emote/living/carbon/claw/run_emote(mob/living/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to use your claws!"))
 		return
 	var/which_clawer_to_spawn
-	if(ishuman(user))
+	if(LAZYLEN(user.mob_quirks))//Check if we need to do all these expensive checks
 		if(HAS_TRAIT(user, TRAIT_BIGCLAW))
 			which_clawer_to_spawn = /obj/item/hand_item/clawer/big
 		else if(HAS_TRAIT(user, TRAIT_FASTCLAW))
@@ -287,9 +293,11 @@
 			which_clawer_to_spawn = /obj/item/hand_item/clawer/razor
 		else 
 			which_clawer_to_spawn =  /obj/item/hand_item/clawer 
-	else
+	else if(isanimal(user) && !isadvancedmob(user))
 		which_clawer_to_spawn =  /obj/item/hand_item/clawer/creature
-	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user) 
+	else//fallback
+		which_clawer_to_spawn =  /obj/item/hand_item/clawer
+	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user)
 	if(user.put_in_active_hand(claw))
 		to_chat(user, span_notice("You get your claws ready to slice!"))
 	else
@@ -301,7 +309,7 @@
 	key_third_person = "casts shocking grasp!"
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/shocking/run_emote(mob/user)
+/datum/emote/living/carbon/shocking/run_emote(mob/living/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to cast!"))

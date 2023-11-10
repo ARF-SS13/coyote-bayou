@@ -1,15 +1,14 @@
 //Pokemon!
 
 /mob/living/simple_animal/advanced
-	name = "eevee"
-	desc = "It has the ability to alter the composition of its body to suit its surrounding environment."
+	name = "creature"
+	desc = "That's a creature all right."
 	icon = 'modular_coyote/icons/mob/pokemon64.dmi'
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
 	unsuitable_atmos_damage = 0
-	//minbodytemp = TCMB
-	//maxbodytemp = T0C + 40
+	mob_armor = ARMOR_VALUE_MEDIUM
 	health = 200
 	maxHealth = 200
 	speed = 0
@@ -29,7 +28,7 @@
 	turns_per_move = 5
 	pass_flags = PASSTABLE //Impossible to climb tables so just pass over them for now
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
-	//Sprites are already rotated for lying down while resting.
+	// Sprites are already rotated for lying down while resting.
 	rotate_on_lying = FALSE
 	//Can use hands
 	dextrous = TRUE
@@ -51,7 +50,12 @@
 	var/datum/action/cooldown/pokemon_rest/R = new(src)
 	R.Grant(src)
 	regenerate_icons()
+	add_verb(src, /mob/living/proc/mob_sleep)
 	GLOB.advanced_mob_list += src
+
+/mob/living/simple_animal/advanced/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/sleeping_regeneration)
 
 ///Will recenter a mob's icon on their tile if it's wider than 32 pixels. Will do nothing if it's 32 or less. To use correctly, position the mob in the center of the icon_state in your dmi.
 /mob/proc/recenter_wide_sprite()
@@ -62,9 +66,6 @@
 		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
 		return TRUE
 	return FALSE
-
-/mob/living/simple_animal/advanced/Life()
-	. = ..()
 
 /mob/living/simple_animal/advanced/regenerate_icons()
 	if(stat == DEAD)
@@ -143,8 +144,6 @@
 	icon_living = "arcanine"
 	icon_dead = "arcanine_d"
 	p_types = list(P_TYPE_FIRE)
-
-
 
 /mob/living/simple_animal/advanced/blastoise
 	name = "blastoise"
@@ -705,6 +704,24 @@
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
 
+/mob/living/simple_animal/advanced/raticate
+	name = "raticate"
+	icon_state = "raticate"
+	icon_living = "raticate"
+	icon_dead = "raticate_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+	mob_size = MOB_SIZE_SMALL
+
+/mob/living/simple_animal/advanced/rattata
+	name = "rattata"
+	icon_state = "rattata"
+	icon_living = "rattata"
+	icon_dead = "rattata_d"
+	p_types = list(P_TYPE_NORM)
+	p_traits = list(P_TRAIT_RIDEABLE)
+	mob_size = MOB_SIZE_SMALL
+
 /mob/living/simple_animal/advanced/rayquaza
 	name = "Rayquaza"
 	icon_state = "rayquaza"
@@ -713,6 +730,13 @@
 	icon = 'modular_coyote/icons/mob/pokemon96.dmi'
 	p_types = list(P_TYPE_FLY)
 	mob_size = MOB_SIZE_LARGE
+
+/mob/living/simple_animal/advanced/skuntank
+	name = "Skuntank"
+	icon_state = "skunktank"
+	icon_living = "skunktank"
+	icon_dead = "skunktank_d"
+	p_types = list(P_TYPE_POISON)
 
 /mob/living/simple_animal/advanced/snorlax
 	name = "snorlax"
@@ -765,33 +789,8 @@
 //	p_additional_moves = list(/mob/living/proc/hide, /mob/living/simple_animal/advanced/proc/move_imposter)
 	mob_size = MOB_SIZE_SMALL
 
-///////////////////////
-//ALPHABETICAL PLEASE//
-///////////////////////
-
-/mob/living/simple_animal/advanced/rattata
-	name = "rattata"
-	icon_state = "rattata"
-	icon_living = "rattata"
-	icon_dead = "rattata_d"
-	p_types = list(P_TYPE_NORM)
-	p_traits = list(P_TRAIT_RIDEABLE)
-	mob_size = MOB_SIZE_SMALL
-
-/mob/living/simple_animal/advanced/raticate
-	name = "raticate"
-	icon_state = "raticate"
-	icon_living = "raticate"
-	icon_dead = "raticate_d"
-	p_types = list(P_TYPE_NORM)
-	p_traits = list(P_TRAIT_RIDEABLE)
-	mob_size = MOB_SIZE_SMALL
-
-/mob/living/simple_animal/advanced/skuntank
-	name = "Skuntank"
-	icon_state = "skunktank"
-	icon_living = "skunktank"
-	icon_dead = "skunktank_d"
-	p_types = list(P_TYPE_POISON)
-
-
+/////////////////////////////////////////////
+//			ALPHABETICAL PLEASE			   //
+//DON'T JUST ADD TO THE BOTTOM OF THIS FILE//
+//				  OR ELSE				   //
+/////////////////////////////////////////////

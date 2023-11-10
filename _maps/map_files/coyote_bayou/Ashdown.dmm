@@ -30861,21 +30861,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/city)
-"nUp" = (
-/obj/structure/fence/wooden{
-	dir = 1;
-	pixel_y = 9
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4;
-	pixel_x = -18;
-	pixel_y = 14
-	},
-/obj/effect/landmark/party{
-	region = "Nash's bar"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/bar/ashdown)
 "nUt" = (
 /obj/structure/flora/small_bush,
 /turf/open/indestructible/ground/outside/savannah,
@@ -41367,6 +41352,8 @@
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/item/storage/box/condimentbottles,
+/obj/item/reagent_containers/food/condiment/peppermill,
+/obj/item/reagent_containers/food/condiment/saltshaker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bar/ashdown)
 "sIa" = (
@@ -109957,7 +109944,7 @@ gRn
 gRn
 gRn
 gRn
-gRn
+wWK
 gRn
 gRn
 gRn
@@ -110213,7 +110200,7 @@ gMW
 gRn
 gRn
 gRn
-gRn
+wWK
 wWK
 wWK
 gRn
@@ -110984,7 +110971,7 @@ btP
 btP
 btP
 btP
-eHB
+btP
 wWK
 eHB
 tCq
@@ -111239,12 +111226,12 @@ eJW
 vtp
 eJW
 eJW
+eJW
 gFv
 btP
 wWK
 wWK
 wWK
-gRn
 gRn
 wWK
 wWK
@@ -111497,10 +111484,10 @@ eJW
 iXF
 rVB
 xwj
+eJW
 btP
-iRq
+eHB
 wWK
-gRn
 gRn
 gRn
 gRn
@@ -111743,7 +111730,7 @@ eSK
 aLl
 eJW
 eJW
-jZJ
+eJW
 eJW
 gAb
 eJW
@@ -111754,10 +111741,10 @@ gAb
 iTj
 rVB
 gfO
+eJW
 btP
-gRn
-gRn
-gRn
+iRq
+wWK
 gRn
 gRn
 gRn
@@ -112007,12 +111994,12 @@ eJW
 gAb
 eJW
 eJW
-nUp
+vtp
+jZJ
 eJW
 eJW
 nsO
 btP
-gRn
 gRn
 gRn
 gRn
@@ -112268,8 +112255,8 @@ eJW
 iXF
 cXM
 xwj
+eJW
 btP
-gRn
 gRn
 gRn
 gRn
@@ -112525,8 +112512,8 @@ eJW
 iTj
 cXM
 gfO
+eJW
 btP
-gRn
 gRn
 gRn
 gRn
@@ -112781,9 +112768,9 @@ gAb
 eJW
 eJW
 eJW
+eJW
 gFv
 btP
-gRn
 gRn
 gRn
 gRn
@@ -113038,9 +113025,9 @@ eJW
 eJW
 eJW
 eJW
+eJW
 iZc
 btP
-gRn
 gRn
 gRn
 gRn

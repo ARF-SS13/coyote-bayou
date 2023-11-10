@@ -239,6 +239,19 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
+/obj/item/ammo_box/magazine/m5mmcustom
+	name = "handgun magazine for 5mm"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "5mmmag"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m5mmcustom/empty
+	start_empty = 1
 
 /obj/item/ammo_box/magazine/m14mmcustom
 	name = "handgun magazine for 14mm"

@@ -503,3 +503,237 @@
 		M.adjustFireLoss(-0.05)
 	..()
 	. = 1
+
+/datum/reagent/consumable/tea/berrytea
+	name = "Mixed Berry Tea"
+	description = "Hot tea with a sweet, fruity taste!"
+	color = "#2E0206"
+	nutriment_factor = 10
+	taste_description = "tart, fruiy tea"
+	glass_icon_state = "berrytea"
+	glass_name = "cup of mixed berry tea"
+	glass_desc = "Hot tea with a sweet, fruity taste!"
+
+/datum/reagent/drink/tea/pomegranate_icetea
+	name = "Pomegranate Iced Tea"
+	description = "A refreshing, fruity tea. No fruit was harmed in the making of this drink."
+	color = "#7C334C"
+	taste_description = "sweet pomegranate"
+
+	glass_icon_state = "pomegranatetea"
+	glass_name = "glass of pomegranate iced tea"
+	glass_desc = "A refreshing, fruity tea. No fruit was harmed in the making of this drink."
+
+/datum/reagent/drink/tea/portsvilleminttea
+	name = "Portsville Mint Tea"
+	description = "A popular iced pick-me-up originating from a city in Eos, on Biesel."
+	color = "#b6f442"
+	taste_description = "cool minty tea"
+
+	glass_icon_state = "portsvilleminttea"
+	glass_name = "glass of Portsville Mint Tea"
+	glass_desc = "A popular iced pick-me-up originating from a city in Eos, on Biesel."
+
+/datum/reagent/drink/tea/potatea
+	name = "Potatea"
+	description = "Why would you ever drink this?"
+	color = "#2B2710"
+	taste_description = "starchy regret"
+
+	glass_icon_state = "bigteacup"
+	glass_name = "cup of potatea"
+	glass_desc = "Why would you ever drink this?"
+
+/datum/reagent/drink/tea/securitea
+	name = "Securitea"
+	description = "The safest drink around."
+	color = "#030B36"
+	taste_description = "freshly polished boots"
+
+	glass_icon_state = "securitea"
+	glass_name = "cup of securitea"
+	glass_desc = "Help, maint!!"
+
+/datum/reagent/drink/tea/sleepytime_tea
+	name = "Sleepytime Tea"
+	description = "The perfect drink to enjoy before falling asleep in your favorite chair."
+	color = "#101000"
+	taste_description = "liquid relaxation"
+
+	glass_icon_state = "sleepytea"
+	glass_name = "cup of sleepytime tea"
+	glass_desc = "The perfect drink to enjoy before falling asleep in your favorite chair."
+
+/datum/reagent/drink/tea/hakhma_tea
+	name = "Spiced Hakhma Tea"
+	description = "A tea often brewed by Offworlders and Scarabs during important meals."
+	color = "#8F6742"
+	taste_description = "creamy, cinnamon-spiced alien milk"
+
+	glass_icon_state = "hakhmatea"
+	glass_name = "cup of spiced hakhma tea"
+	glass_desc = "A tea often brewed by Offworlders and Scarabs during important meals."
+
+
+/datum/reagent/drink/tea/thewake //dyn properties
+	name = "The Wake"
+	description = "The tea-based alternative to a Sromshine."
+	color = "#00E0E0"
+	taste_description = "orange juice mixed with minty toothpaste"
+
+	glass_icon_state = "thewake"
+	glass_name = "cup of The Wake"
+	glass_desc = "Most young skrell get a kick out of letting humans try this."
+
+
+/datum/reagent/drink/tea/tomatea
+	name = "Tomatea"
+	description = "Basically tomato soup in a mug."
+	color = "#9F3400"
+	taste_description = "sad tomato soup"
+
+	glass_icon_state = "bigteacup"
+	glass_name = "cup of tomatea"
+	glass_desc = "Basically tomato soup in a mug."
+
+/datum/reagent/drink/tea/tropical_icetea
+	name = "Tropical Iced Tea"
+	description = "For maximum enjoyment, drink while at the beach on a warm summer day."
+	color = "#CC0066"
+	taste_description = "sweet beachside fruit"
+
+	glass_icon_state = "junglejuice"
+	glass_name = "glass of tropical iced tea"
+	glass_desc = "For maximum enjoyment, drink while at the beach on a warm summer day."
+
+/datum/reagent/drink/tea/cocatea
+	name = "Mate de Coca"
+	description = "An herbal tea made of coca leaves, this tea originated in South America in the Andean countries, and is still consumed there and in Mictlan to this day."
+	color = "#adff2f"
+	taste_description = "mildly bitter, but sweet"
+
+	glass_icon_state = "bigteacup"
+	glass_name = "cup of mate de coca"
+	glass_desc = "An herbal tea made of coca leaves, this tea originated in South America in the Andean countries, and is still consumed there and in Mictlan to this day."
+
+/datum/reagent/drink/tea/halfandhalf
+	name = "Half and Half"
+	description = "Tea and lemonade; not to be confused with the dairy creamer."
+	color = "#997207"
+	taste_description = "refreshing tea mixed with crisp lemonade"
+
+	glass_icon_state = "halfandhalf"
+	glass_name = "glass of half and half"
+	glass_desc = "Tea and lemonade; not to be confused with the dairy creamer."
+
+/datum/reagent/drink/tea/heretic_tea
+	name = "Heretics' Tea"
+	description = "A non-alcoholic take on a bloody brew."
+	color = "#820000"
+	taste_description = "fizzy, heretically sweet iron"
+
+	glass_icon_state = "heretictea"
+	glass_name = "glass of Heretics' Tea"
+	glass_desc = "A non-alcoholic take on a bloody brew."
+
+/datum/reagent/drink/tea/kira_tea
+	name = "Kira Tea"
+	description = "A sweet take on a fizzy favorite."
+	color = "#B98546"
+	taste_description = "fizzy citrus tea"
+
+	glass_icon_state = "kiratea"
+	glass_name = "glass of kira tea"
+	glass_desc = "A sweet take on a fizzy favorite."
+
+/datum/reagent/drink/tea/librarian_special
+	name = "Librarian Special"
+	description = "Shhhhhh!"
+	color = "#101000"
+	taste_description = "peace and quiet"
+
+	glass_icon_state = "bureacratea"
+	glass_name = "cup of Librarian Special"
+	glass_desc = "Shhhhhh!"
+
+/datum/reagent/drink/tea/mars_tea
+	name = "Martian Tea"
+	description = "A foul-smelling brew that you probably don't want to try."
+	color = "#101000"
+	taste_description = "bitter tea, pungent black pepper and just a hint of shaky politics"
+
+	glass_icon_state = "bigteacup"
+	glass_name = "cup of martian tea"
+	glass_desc = "A foul-smelling brew that you probably don't want to try."
+
+/datum/reagent/drink/tea/mendell_tea
+	name = "Mendell Afternoon Tea"
+	description = "A simple, minty tea."
+	color = "#EFB300"
+	taste_description = "minty tea with a hint of lemon"
+
+	glass_icon_state = "mendelltea"
+	glass_name = "cup of Mendell Afternoon Tea"
+	glass_desc = "A simple, minty tea. A Biesel favorite."
+
+/datum/reagent/drink/tea/chaitea
+	name = "Chai Tea"
+	description = "A tea spiced with cinnamon and cloves."
+	color = "#DBAD81"
+	taste_description = "creamy cinnamon and spice"
+
+	glass_icon_state = "chaitea"
+	glass_name = "cup of chai tea"
+	glass_desc = "A tea spiced with cinnamon and cloves."
+
+/datum/reagent/drink/tea/coco_chaitea
+	name = "Chocolate Chai"
+	description = "A surprisingly pleasant mix of chocolate and spice."
+	color = "#664300"
+	taste_description = "creamy spiced cocoa"
+
+	glass_icon_state = "coco_chaitea"
+	glass_name = "cup of chocolate chai tea"
+	glass_desc = "A surprisingly pleasant mix of chocolate and spice."
+
+/datum/reagent/drink/tea/chaitealatte
+	name = "Chai Latte"
+	description = "A frothy spiced tea."
+	color = "#DBAD81"
+	taste_description = "spiced milk foam"
+
+	glass_icon_state = "chailatte"
+	glass_name = "cup of chai latte"
+	glass_desc = "For when you need the energy to yell at the barista for making your drink wrong."
+
+
+/datum/reagent/drink/tea/coco_chailatte
+	name = "Chocolate Chai Latte"
+	description = "Sweet, liquid chocolate. Have a cup of this and maybe you'll calm down."
+	color = "#664300"
+	taste_description = "spiced milk chocolate"
+
+	glass_icon_state = "coco_chailatte"
+	glass_name = "cup of chocolate chai latte"
+	glass_desc = "Sweet, liquid chocolate. Have a cup of this and maybe you'll calm down."
+
+/datum/reagent/drink/tea/cofftea
+	name = "Cofftea"
+	description = "The only neutral ground in the tea versus coffee debate."
+	color = "#292303"
+	taste_description = "lightly tart coffee"
+
+	glass_icon_state = "cofftea"
+	glass_name = "cup of cofftea"
+	glass_desc = "The only neutral ground in the tea versus coffee debate."
+
+
+/datum/reagent/alcohol/trizkizki_tea
+	name = "Trizkizki Tea"
+	description = "A popular drink from Ouerea that smells of crisp sea air."
+	color = "#876185"
+	taste_description = "light, sweet wine, with a hint of sea breeze"
+
+	glass_icon_state = "trizkizkitea"
+	glass_name = "cup of Trizkizki tea"
+	glass_desc = "A popular drink from Ouerea that smells of crisp sea air"
