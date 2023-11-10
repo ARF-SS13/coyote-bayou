@@ -4,7 +4,7 @@
 	require_target_vagina = REQUIRE_ANY
 	write_log_user = "gave head to"
 	write_log_target = "was given head by"
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 	var/fucktarget = "vagina"
 
@@ -14,7 +14,7 @@
 	require_target_penis = REQUIRE_ANY
 	fucktarget = "penis"
 
-/datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/oral/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/lust_increase = NORMAL_LUST

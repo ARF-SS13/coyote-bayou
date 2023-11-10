@@ -4,10 +4,10 @@
 	require_target_vagina = REQUIRE_ANY
 	write_log_user = "fucked"
 	write_log_target = "was fucked by"
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
-/datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/fuck/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -34,7 +34,7 @@
 	require_target_vagina = null
 	require_target_anus = REQUIRE_ANY
 
-/datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/fuck/anal/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/t_His = partner.p_their()
@@ -63,12 +63,12 @@
 
 /datum/interaction/lewd/breastfuck
 	description = "Partner/Body - Fuck their breasts."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_penis = REQUIRE_ANY
 	require_target_breasts = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/breastfuck/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -92,13 +92,13 @@
 
 /datum/interaction/lewd/footfuck
 	description = "Partner/Leg - Rub your %COCK% on their foot."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
 	require_user_penis = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/footfuck/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footfuck/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -127,7 +127,7 @@
 	description = "Partner/Legs - Rub your %COCK% between their feet."
 	require_target_num_feet = 2
 
-/datum/interaction/lewd/footfuck/double/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footfuck/double/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -154,14 +154,14 @@
 
 /datum/interaction/lewd/footfuck/vag
 	description = "Partner/Crotch - Rub your vagina on their foot."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_num_feet = 1
 	require_target_feet = REQUIRE_ANY
 	require_user_vagina = REQUIRE_ANY
 	require_user_penis = REQUIRE_NONE
 	max_distance = 1
 
-/datum/interaction/lewd/footfuck/vag/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footfuck/vag/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()

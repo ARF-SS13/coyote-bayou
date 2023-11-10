@@ -2,7 +2,7 @@
 	description = "Partner/Crotch - Finger their pussy."
 	require_user_hands = TRUE
 	require_target_vagina = REQUIRE_ANY
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 	additional_details = list(
@@ -13,7 +13,7 @@
 			)
 	)
 
-/datum/interaction/lewd/finger/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/finger/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -40,12 +40,12 @@
 
 /datum/interaction/lewd/fingerass
 	description = "Partner/Crotch - Finger their ass."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_hands = TRUE
 	require_target_anus = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/fingerass/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/fingerass/interaction_message(mob/living/user, mob/living/partner, show_message)
 	if(show_message)
 		user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("fingers \the <b>[partner]</b>.",
 			"fingers \the <b>[partner]</b>'s asshole.",

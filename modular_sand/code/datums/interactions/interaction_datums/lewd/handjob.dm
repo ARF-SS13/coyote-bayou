@@ -1,6 +1,6 @@
 /datum/interaction/lewd/handjob
 	description = "Partner/Crotch - Jerk them off."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_hands = TRUE
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
@@ -13,7 +13,7 @@
 			)
 	)
 
-/datum/interaction/lewd/handjob/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/handjob/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = partner.get_penetrating_genital_name()

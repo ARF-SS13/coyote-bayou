@@ -2,18 +2,28 @@
 /datum/interaction/lewd
 	// Description can take in %COCK% as a wildcard to get replaced with a cock/strapon accordingly.
 	description = "Partner/Crotch - Slap their ass."
-	simple_message = "USER slaps TARGET right on the ass!"
-	simple_style = "danger"
-	interaction_sound = 'sound/weapons/slap.ogg'
+	help_messages = "USER slaps TARGET right on the ass!"
+	simple_span = "danger"
+	simple_sounds = 'sound/weapons/slap.ogg'
 	needs_physical_contact = TRUE
 	require_ooc_consent = TRUE
 	max_distance = 1
 	categories = list("All Interactions", "SEXFUCK")
 
 	is_lewd = TRUE
+	public = FALSE
 
 	write_log_user = "ass-slapped"
 	write_log_target = "was ass-slapped by"
+
+	var/list/moans = list(
+		"XU_NAME shivers in arousal.",
+		"XU_NAME moans quietly.",
+		"XU_NAME breathes out a soft moan.",
+		"XU_NAME gasps.",
+		"XU_NAME shudders softly.",
+		"XU_NAME trembles as XU_THEIR hands run across bare skin."
+	)
 
 	var/user_not_tired = FALSE
 	var/target_not_tired = FALSE
@@ -70,14 +80,19 @@
 	var/user_refractory_cost
 	var/target_refractory_cost
 
+	/// Lust to give, based on intent
 	var/list/lust_amt = list(
 							INTENT_HELP = LOW_LUST, 
 							INTENT_DISARM = SOME_LUST,
 							INTENT_GRAB = SOME_MORE_LUST,
 							INTENT_HARM = NORMAL_LUST
 							)
+	/// Multiplier to lust
+	var/lust_mult = 1
+	/// round added lust to this
+	var/lust_round = 0.25
 
-	interaction_sound 	= 'sound/f13effects/sunsetsounds/blush.ogg'
+	simple_sounds 	= 'sound/f13effects/sunsetsounds/blush.ogg'
 	int_sound_vol 		= 50
 
 /datum/interaction/lewd/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
@@ -508,13 +523,51 @@
 
 	if(!SSinteractions.check_consent(user, target))
 		if(!silent)
-			to_chat(user, span_warning("You need their consent to do that! You need to type [span_green("*consent")] and then hit them with what the emote gives you!"))
+			to_chat(user, span_warning("You need their consent to do that! Click the consent button!"))
 		return FALSE
 	
 	// if(require_ooc_consent) // ^-- that is consent!
 	// 	if((!target.ckey) || (target.client && target.client.prefs.toggles & VERB_CONSENT))
 	// 		return TRUE
 
+	return TRUE
+
+/// make ur mob moan like the bottom it is
+/datum/interaction/lewd/moan(mob/living/user, mob/living/target, show_message, list/extra = list())
+	if(!user?.client || !target?.client)
+		return
+	var/list/moanerz = list(user)
+	if(user != target)
+		moanerz += target
+	for(var/mob/living/mouns in moanerz) // moans (u mone too)
+		var/chance2moan = ((mouns.get_lust() / mouns.get_lust_tolerance()) * 5)
+		if(prob(chance2moan))
+			var/moan = pick(moans)
+			var/mob/the_other_guy = mouns == user ? target : user
+			moan = format_message(mouns, the_other_guy, moan)
+			if(public) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
+				mouns.visible_message(moan)
+				return TRUE
+			to_chat(mouns, moan)
+			if(is_self_action)
+				return TRUE
+			var/list/ppl = SSinteractions.get_consent_chain(mouns, TRUE) // send message to EVERYONE in the group!!!
+			for(var/mob/squish in ppl - mouns)
+				if(!squish.client)
+					continue
+				if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
+					continue
+				to_chat(squish, moan)	
+	return TRUE
+
+/// adjusts ur lust
+/datum/interaction/lewd/adjust_lust(mob/living/user, mob/living/target, show_message, list/extra = list())
+	if(!user?.client || !target?.client)
+		return
+	var/lustmnt = ceil(LAZYACCESS(user, lust_amt[user.a_intent]) * lust_mult, lust_round)
+	user.handle_post_sex(lustmnt)
+	if(user != target)
+		target.handle_post_sex(lustmnt)
 	return TRUE
 
 /datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)

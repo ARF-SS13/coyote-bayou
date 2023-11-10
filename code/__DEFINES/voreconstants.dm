@@ -276,3 +276,21 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define WHO_LOCKOUT_POSE (1<<3)
 
 #define MAX_STATUS_LEN 86
+
+/////////////////////////
+// Interaction Categories
+#define ICAT_LEWD "Lewd"
+#define ICAT_SELF "Solo"
+#define ICAT_CROTCH "Crotch"
+#define ICAT_BUTT "Butt"
+#define ICAT_BELLY "Belly"
+#define ICAT_CHEST "Chest"
+#define ICAT_MOUTH "Mouth"
+#define ICAT_HANDS "Hands"
+#define ICAT_FEET "Feet"
+#define ICAT_TAIL "Tail"
+#define ICAT_OTHER "Other"
+#define ICAT_VAGINA "Vagina"
+#define ICAT_PENIS "Penis"
+#define ICAT_BREASTS "Breasts"
+/// Also here cus they know what they did

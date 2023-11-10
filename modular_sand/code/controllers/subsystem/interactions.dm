@@ -10,15 +10,15 @@ SUBSYSTEM_DEF(interactions)
 	/// format: list("ckey1!ckey2" = ASKER_ASKED, "ckey2!ckey1" = ASKED_ASKER)
 	var/list/consents = list()
 	var/list/deliberating_consent = list()
+	var/list/splorch_cd = 0.8 SECONDS
+	var/list/squorch_cooldowns = list()
+	var/list/interactions_tgui = list()
+
 	VAR_PROTECTED/list/blacklisted_mobs = list(
 		/mob/dead,
 	)
 	VAR_PROTECTED/initialized_blacklist
 
-	/// Order of initialization. Higher numbers are initialized first, lower numbers later. Use or create defines such as [INIT_ORDER_DEFAULT] so we can see the order in one file.
-	init_order = INIT_ORDER_DEFAULT
-
-	var/list/interactions_tgui = list()
 
 /datum/controller/subsystem/interactions/Initialize(timeofday)
 	prepare_interactions()
@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(interactions)
 /datum/controller/subsystem/interactions/proc/who_asked_who(keyname)
 	var/who_asked_who = LAZYACCESS(consents, keyname)
 	var/list/whowho = splittext(keyname, "!")
-	if(!LAZYLEN(whowho) == 2)
+	if(LAZYLEN(whowho) != 2)
 		return "Ronnie Runtimes"
 	if(who_asked_who == ASKER_ASKED)
 		return whowho[1]
@@ -128,7 +128,7 @@ SUBSYSTEM_DEF(interactions)
 		return FALSE
 	var/keyname = keyify(requesting, target)
 	var/list/whowho = splittext(keyname, "!")
-	if(!LAZYLEN(whowho) == 2)
+	if(LAZYLEN(whowho) != 2)
 		return FALSE
 	if(LAZYACCESS(whowho, 1) == requesting.ckey)
 		consents[keyname] = ASKER_ASKED
@@ -222,6 +222,63 @@ SUBSYSTEM_DEF(interactions)
 		return TRUE
 	if(is_type_in_typecache(creature, blacklisted_mobs))
 		return TRUE
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * A cooldown for squorching, so you can't just spam it.
+ * Only applies if the squorch has a sound associated with it, otherwise you get to see every lovely message
+ */
+/datum/controller/subsystem/interactions/proc/can_squorch(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
+	if(!istype(squisher) || !squisher.ckey || !istype(splut))
+		return FALSE
+	if(!splut.has_sound())
+		return TRUE // You really need to know 
+	if(!LAZYACCESS(splorch_cooldowns, squisher.ckey))
+		set_cooldown_for_squorch(squisher)
+		return TRUE // SQUISHERS ARE REALLY COOL
+	if(world.time > LAZYACCESS(splorch_cooldowns, squisher.ckey))
+		if(do_cooldown)
+			set_cooldown_for_squorch(squisher)
+		return TRUE // SQUISHERS ARE SO MUCH FUN
+	return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
+	
+/datum/controller/subsystem/interactions/proc/set_cooldown_for_squorch(mob/living/squisher)
+	if(!istype(squisher) || !squisher.ckey)
+		return FALSE
+	LAZYSET(splorch_cooldowns, squisher.ckey, world.time + splorch_cd)
+	return TRUE
+
+/// gets everyone who creature consents to, and everyone who they consent to, and so on
+/// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F
+/// would return A, B, C, D, E, F
+/datum/controller/subsystem/interactions/proc/get_consent_chain(mob/living/creature, mobs_pls = TRUE)
+	if(!istype(creature) || !creature.ckey)
+		return FALSE
+	var/list/keys_to_check = list(creature.ckey)
+	var/list/consent_chain = list() // also is the keys we checked, so we dont check em again
+	/// runs through the the master consent list
+	while(LAZYLEN(keys_to_check))
+		var/key_to_check = keys_to_check[1]
+		keys_to_check -= key_to_check
+		if(key_to_check in consent_chain) // constant pain
+			continue
+		consent_chain |= key_to_check
+		/// runs through the master consent list again
+		for(var/keyname in consents)
+			var/list/whowho = splittext(keyname, "!")
+			if(LAZYLEN(whowho) = 2)
+				continue
+			if(!(whowho[2] in consent_chain))
+				keys_to_check |= whowho[2]
+			if(!(whowho[1] in consent_chain))
+				keys_to_check |= whowho[1]
+	if(!mobs_pls)
+		return consent_chain
+	var/list/mob_consent_chain = list()
+	for(var/key in consent_chain)
+		var/mob/consent_mob = ckey2mob(key)
+		if(consent_mob)
+			mob_consent_chain |= consent_mob
+	return mob_consent_chain
 
 // Splurt defines, because I'm a lazy shitbag. ~TK
 

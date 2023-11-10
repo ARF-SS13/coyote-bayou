@@ -1,11 +1,11 @@
 /datum/interaction/lewd/mount
 	description = "Partner/Crotch - Mount with pussy."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_vagina = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/mount/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/mount/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = partner.get_penetrating_genital_name()
@@ -26,12 +26,12 @@
 
 /datum/interaction/lewd/mountass
 	description = "Partner/Crotch - Mount with butt."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_anus = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/mountass/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/mountass/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/genital_name = partner.get_penetrating_genital_name()
@@ -52,12 +52,12 @@
 
 /datum/interaction/lewd/mountface
 	description = "Partner/Face - Ass to face."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_mouth = TRUE
 	require_user_anus = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/mountface/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -82,7 +82,7 @@
 	max_distance = 1
 	require_user_penis = REQUIRE_ANY
 	require_target_mouth = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	write_log_user = "thigh-trapped (penis)"
 	write_log_target = "was smothered (penis) by"
 	var/fucktarget = "penis"
@@ -95,7 +95,7 @@
 	write_log_target = "was smothered (vagina) by"
 	fucktarget = "vagina"
 
-/datum/interaction/lewd/thighs/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/thighs/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/lust_increase = 1

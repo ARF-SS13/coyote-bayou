@@ -4,10 +4,10 @@
 	require_user_mouth = TRUE
 	write_log_user = "sucked nipples"
 	write_log_target = "had their nipples sucked by"
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
-/datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/lewd/nipsuck/interaction_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if((user.a_intent == INTENT_HELP) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(
 				pick(span_love("\The <b>[user]</b> gently sucks on \the <b>[target]</b>'s [pick("nipple", "nipples")]."),

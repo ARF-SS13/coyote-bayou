@@ -2,11 +2,31 @@
 	description = "Self/Body - Grope your own breasts."
 	require_user_hands = TRUE
 	require_user_breasts = REQUIRE_ANY
-	user_is_target = TRUE
-	interaction_sound = null
+	is_self_action = TRUE
 	max_distance = 0
 	write_log_user = "groped own breasts"
 	write_log_target = null
+
+	help_messages = list(
+		"X_USER gently gropes XU_THEIR breast",
+		"X_USER softly squeezes XU_THEIR breasts",
+		"X_USER grips XU_THEIR breasts",
+		"X_USER runs a few fingers over XU_THEIR breast",
+		"X_USER delicately teases XU_THEIR nipple",
+		"X_USER traces a touch across XU_THEIR breast"
+	)
+	// disarm_messages = list("X_USER is really rubbing at XU_THEIR own rear end.") // leaving thease out mean that
+	// grab_messages = list("X_USER is rubbing XU_THEIR backside pretty aggressively!") // all but harm will do the help words!!!
+	harm_messages = list(
+		"X_USER aggressively gropes XU_THEIR breast",
+		"X_USER grabs XU_THEIR breasts",
+		"X_USER tightly squeezes XU_THEIR breasts",
+		"X_USER slaps at XU_THEIR breasts",
+		"X_USER gropes XU_THEIR breasts roughly"
+	)
+
+	simple_sounds = list('sound/weapons/thudswoosh.ogg') // frumf, frumf
+	lust_mult = 1.0 // this ONE trick will make you cum in 5 seconds! doctors hate it!
 
 	additional_details = list(
 		list(
@@ -16,10 +36,7 @@
 			)
 	)
 
-/datum/interaction/lewd/titgrope_self/display_interaction(mob/living/user)
-	var/message
-	var/t_His = user.p_their()
-
+/datum/interaction/lewd/titgrope_self/do_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -30,31 +47,8 @@
 		if(istype(cached_item, /obj/item/reagent_containers))
 			liquid_container = cached_item
 
-	if(user.a_intent == INTENT_HARM)
-		message = pick("aggressively gropes [t_His] breast",
-					"grabs [t_His] breasts",
-					"tightly squeezes [t_His] breasts",
-					"slaps at [t_His] breasts",
-					"gropes [t_His] breasts roughly")
-	else
-		message = pick("gently gropes [t_His] breast",
-					"softly squeezes [t_His] breasts",
-					"grips [t_His] breasts",
-					"runs a few fingers over [t_His] breast",
-					"delicately teases [t_His] nipple",
-					"traces a touch across [t_His] breast")
-
-	if(prob(5 + user.get_lust()))
-		user.visible_message(span_love("<b>\The [user]</b> [pick(
-				"shivers in arousal.",
-				"moans quietly.",
-				"breathes out a soft moan.",
-				"gasps.",
-				"shudders softly.",
-				"trembles as [t_His] hands run across bare skin.")]"))
 
 	if(liquid_container)
-		message += " over \the [liquid_container]"
 
 		var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
 		var/milktype = milkers?.fluid_id
@@ -73,26 +67,26 @@
 		// 				modifier = 1
 		liquid_container.reagents.add_reagent(milktype, rand(1,3))
 
-	user.visible_message(message = span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)
 
 /datum/interaction/lewd/self_nipsuck
 	description = "Self/Body - Suck your own nips."
 	require_user_breasts = REQUIRE_ANY
 	require_user_mouth = TRUE
-	user_is_target = TRUE
-	interaction_sound = null
+	is_self_action = TRUE
+	simple_sounds = null
 	max_distance = 0
 	write_log_user = "sucked their own nips"
 	write_log_target = null
+	simple_messages = list(
+		"XU_NAME brings XU_THEIR own milk tanks to XU_THEIR mouth and sucks deeply into them",
+		"XU_NAME takes a big sip of XU_THEIR own fresh milk",
+		"XU_NAME fills XU_THEIR own mouth with a big gulp of XU_THEIR warm milk"
+	)
 
-/datum/interaction/lewd/self_nipsuck/display_interaction(mob/living/user, mob/living/target)
-	var/message
-	var/u_His = user.p_their()
+/datum/interaction/lewd/self_nipsuck/interaction_message(mob/living/user, mob/living/target)
 	var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milktype = milkers?.fluid_id
 	var/modifier
-	var/list/lines
 
 	if(!milkers || !milktype)
 		return
@@ -100,17 +94,6 @@
 	var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 
 	var/milktext = milk.name
-
-	lines = list(
-		"brings [u_His] own milk tanks to [u_His] mouth and sucks deeply into them",
-		"takes a big sip of [u_His] own fresh [lowertext(milktext)]",
-		"fills [u_His] own mouth with a big gulp of [u_His] warm [lowertext(milktext)]"
-	)
-
-	message = span_love("\The <b>[user]</b> [pick(lines)]")
-	user.visible_message(message, ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
-						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 
 	switch(milkers.size)
 		if("c", "d", "e")

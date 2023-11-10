@@ -4,7 +4,7 @@
 	require_target_mouth = TRUE
 	write_log_user = "kissed"
 	write_log_target = "was kissed by"
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 /datum/interaction/lewd/kiss/post_interaction(mob/living/user, mob/living/partner)
@@ -14,7 +14,7 @@
 	if(partner.get_lust() < 5)
 		partner.set_lust(5)
 
-/datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/kiss/interaction_message(mob/living/user, mob/living/partner, show_message)
 	if(user.get_lust() >= 3)
 		if(show_message) user.visible_message(span_love("\The <b>[user]</b> gives an intense, lingering kiss to \the <b>[partner]</b>."))
 	else

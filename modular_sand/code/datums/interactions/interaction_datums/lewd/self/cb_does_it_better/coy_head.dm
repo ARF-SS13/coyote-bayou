@@ -12,7 +12,7 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/french_kiss
 	description = "Partner/Head - French Kiss."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 	write_log_user = "is french kissing someone." //The log for the interactiont to show admins if, for some insane reason, they need to look up what you have done to yourself/others. Probably not needed with OUR community, but I can see the logic behind wanting it. 
 	write_log_target = "is being french kissed."
@@ -22,7 +22,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/french_kiss/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/french_kiss/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -81,7 +81,7 @@
 			)]"
 
 	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the interaction_sound var?  Probably just an improved version. That 50 is volume.
+	playlewdinteractionsound(get_turf(user), pick(//This line lets you pick what sound plays when you use the action, I'm really unsure why it exists along with the simple_sounds var?  Probably just an improved version. That 50 is volume.
 					'sound/effects/kiss.ogg', 50, 1, -1))
 	partner.handle_post_sex(lust_amt[user.a_intent]/2)
 	user.handle_post_sex(lust_amt[user.a_intent]/2) //These are divided by two to half the amount of lust given
@@ -96,14 +96,14 @@
 /datum/interaction/lewd/partner/giving/ear_bite
 	description = "Partner/Head - Bite their ear."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/ear_bite/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/ear_bite/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -164,7 +164,7 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/lip_bite
 	description = "Partner/Head - Bite their lower lip."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 
@@ -173,7 +173,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/lip_bite/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/lip_bite/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -234,14 +234,14 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/face_nuzzle
 	description = "Partner/Head - Face Nuzzle."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/face_nuzzle/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/face_nuzzle/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.

@@ -15,14 +15,14 @@
 /datum/interaction/lewd/partner/giving/neck_bite
 	description = "Partner/Neck - Bite their Neck."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/neck_bite/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/neck_bite/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -84,14 +84,14 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/throat_grab
 	description = "Partner/Neck - Grab their throat."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/throat_grab/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/throat_grab/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -152,14 +152,14 @@
 /datum/interaction/lewd/partner/giving/neck_touch
 	description = "Partner/Neck - Touch their Neck."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/neck_touch/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/neck_touch/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -220,14 +220,14 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/neck_sniff
 	description = "Partner/Neck - Sniff their neck."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/neck_sniff/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/neck_sniff/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.

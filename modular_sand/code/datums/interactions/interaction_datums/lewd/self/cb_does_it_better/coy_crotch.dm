@@ -21,7 +21,7 @@
 //VERBOSITY//
 /////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/recieving/sniff_crotch/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/recieving/sniff_crotch/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -86,7 +86,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/grab_balls/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/grab_balls/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -151,7 +151,7 @@
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/shake_pussy/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/shake_pussy/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -211,13 +211,13 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/tease_kitty
 	description = "Partner/Crotch - Tease their pussy with your cock."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/tease_kitty/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -276,13 +276,13 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/tease_eggplant
 	description = "Partner/Crotch - Tease their cock with your pussy."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/tease_kitty/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/tease_kitty/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -345,14 +345,14 @@
 /datum/interaction/lewd/partner/giving/spank_ass
 	description = "Partner/Crotch - Spank their behind."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/spank_ass/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/spank_ass/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.

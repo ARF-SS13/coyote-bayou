@@ -6,15 +6,23 @@
 //I'm sorry, lewd should not have mob procs such as life() and such in it. //NO SHIT IT SHOULDNT I REMOVED THEM
 
 /proc/playlewdinteractionsound(turf/turf_source, soundin, vol as num, vary, extrarange as num, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, envwet = -10000, envdry = 0, manual_x, manual_y, list/ignored_mobs)
-	var/list/hearing_mobs
-	for(var/mob/H in get_hearers_in_view(4, turf_source))
-		if(!H.client || (H.client.prefs.toggles & NO_LEWD_VERB_SOUNDS))
-			continue
-		LAZYADD(hearing_mobs, H)
-	if(ignored_mobs?.len)
-		LAZYREMOVE(hearing_mobs, ignored_mobs)
-	for(var/mob/H in hearing_mobs)
-		H.playsound_local(turf_source, soundin, vol, vary, frequency, falloff)
+	playsound(
+		turf_source,
+		soundin,
+		vol,
+		vary,
+		extrarange,
+		soundpref_index = NOTMERP_LEWD_SOUNDS
+	)
+	// var/list/hearing_mobs
+	// for(var/mob/H in get_hearers_in_view(4, turf_source))
+	// 	if(!H.client || (H.client.prefs.toggles & HEAR_LEWD_VERB_SOUNDS))
+	// 		continue
+	// 	LAZYADD(hearing_mobs, H)
+	// if(ignored_mobs?.len)
+	// 	LAZYREMOVE(hearing_mobs, ignored_mobs)
+	// for(var/mob/H in hearing_mobs)
+	// 	H.playsound_local(turf_source, soundin, vol, vary, frequency, falloff)
 
 /mob/living
 	var/has_penis = FALSE
@@ -39,7 +47,7 @@
 	COOLDOWN_DECLARE(refractory_period)
 	COOLDOWN_DECLARE(interaction_cooldown)
 	/// Sounds can only play so often
-	COOLDOWN_DECLARE(interaction_sound_cooldown)
+	COOLDOWN_DECLARE(simple_sounds_cooldown)
 	/// You can still do an interaction but if it's a duplicate one within this time there's no message
 	COOLDOWN_DECLARE(interaction_message_cooldown)
 	/// Believe it or not these are annoying
@@ -520,8 +528,9 @@
 	// If didn't stop before, then we're barefoot
 	return TRUE
 
+// this proc sucks
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 50)))
+	if(!(prob(get_lust() / get_lust_tolerance() * 10)))
 		return
 	if(COOLDOWN_FINISHED(src, interaction_moan_cooldown))
 		COOLDOWN_START(src, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)

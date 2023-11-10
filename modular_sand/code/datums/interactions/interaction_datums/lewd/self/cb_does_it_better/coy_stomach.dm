@@ -13,14 +13,14 @@
 /datum/interaction/lewd/partner/giving/touch_belly
 	description = "Partner/Stomach - Touch their belly."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/touch_belly/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/touch_belly/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -82,14 +82,14 @@
 /datum/interaction/lewd/partner/giving/rub_belly
 	description = "Partner/Stomach - Rub their belly."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/rub_belly/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/rub_belly/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -150,14 +150,14 @@
 /datum/interaction/lewd/partner/giving/caress_belly
 	description = "Partner/Stomach - Lovingly caress their belly."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/caress_belly/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/caress_belly/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -218,14 +218,14 @@
 /datum/interaction/lewd/partner/giving/lick_bellybutton
 	description = "Partner/Stomach - Lick their bellybutton."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/lick_bellybutton/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/lick_bellybutton/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.

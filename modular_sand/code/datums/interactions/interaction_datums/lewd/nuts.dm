@@ -1,13 +1,13 @@
 /datum/interaction/lewd/nuts
 	description = "Partner/Head - Nuts to face."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_balls = REQUIRE_ANY
 	require_target_mouth = TRUE
 	max_distance = 1
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
-/datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/nuts/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -34,8 +34,8 @@
 
 /datum/interaction/lewd/nut_smack
 	description = "Partner/Crotch - Smack their nuts."
-	interaction_sound = 'modular_sand/sound/interactions/slap.ogg'
-	simple_message = "USER slaps TARGET's nuts!"
+	simple_sounds = 'modular_sand/sound/interactions/slap.ogg'
+	help_messages = "USER slaps TARGET's nuts!"
 	require_target_balls = REQUIRE_ANY
 	needs_physical_contact = TRUE
 	max_distance = 1

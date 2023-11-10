@@ -1,6 +1,6 @@
 /datum/interaction/lewd/facefuck
 	description = "Partner/Head - Facefuck them."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_mouth = TRUE
 	require_user_penis = REQUIRE_ANY
 	max_distance = 1
@@ -12,7 +12,7 @@
 	require_user_vagina = REQUIRE_ANY
 	fucktarget = "vagina"
 
-/datum/interaction/lewd/facefuck/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/facefuck/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE
@@ -113,12 +113,12 @@
 
 /datum/interaction/lewd/throatfuck
 	description = "Partner/Head - Fuck their throat." //Should go back and 'simulate' this doing oxy damage
-	interaction_sound = null
+	simple_sounds = null
 	require_user_penis = REQUIRE_ANY
 	require_target_mouth = TRUE
 	max_distance = 1
 
-/datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/throatfuck/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/obj/item/organ/genital/genital = null
 	var/retaliation_message = FALSE

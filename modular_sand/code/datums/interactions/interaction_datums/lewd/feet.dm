@@ -1,12 +1,12 @@
 /datum/interaction/lewd/grindface
 	description = "Partner/Head - Feet grind their face."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/grindface/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/grindface/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -55,13 +55,13 @@
 
 /datum/interaction/lewd/grindmouth
 	description = "Partner/Head - Feet grind their mouth."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_mouth = TRUE
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/grindmouth/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()
@@ -110,13 +110,13 @@
 
 /datum/interaction/lewd/footjob
 	description = "Partner/Crotch - Jerk them with a foot."
-	interaction_sound = null
+	simple_sounds = null
 	require_user_num_feet = 1
 	require_user_feet = REQUIRE_ANY
 	require_target_penis = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footjob/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/shoes = user.get_shoes(TRUE)
@@ -143,7 +143,7 @@
 	description = "Partner/Crotch - Jerk them with both feet."
 	require_user_num_feet = 2
 
-/datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footjob/double/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/u_His = user.p_their()
 	var/shoes = user.get_shoes()
@@ -172,7 +172,7 @@
 	require_target_vagina = REQUIRE_ANY
 	require_target_penis = null
 
-/datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/footjob/vagina/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()

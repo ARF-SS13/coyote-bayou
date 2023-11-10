@@ -14,7 +14,7 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/recieving/fuck_thighs
 	description = "Partner/Thighs - Fuck their thighs."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 
@@ -22,7 +22,7 @@
 //VERBOSITY//
 /////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/recieving/sniff_crotch/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/recieving/sniff_crotch/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -81,14 +81,14 @@
 /datum/interaction/lewd/partner/giving/lick_thigh
 	description = "Partner/Thigh - Lick their thighs."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/lick_thigh/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/lick_thigh/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -148,14 +148,14 @@
 /datum/interaction/lewd/partner/giving/grab_thigh
 	description = "Partner/Thigh - Grab their thighs."
 	require_user_hands = TRUE
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/grab_thigh/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/giving/grab_thigh/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -215,14 +215,14 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/bite_thigh
 	description = "Partner/Thigh - Bite their thigh."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/bite_thigh/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/bite_thigh/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
@@ -282,14 +282,14 @@
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/mutual/rest_thigh
 	description = "Partner/Thigh - Rest your head on their thigh."
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 ////////////
 //VERBOSITY//
 ////////////
 //Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/rest_thigh/display_interaction(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
+/datum/interaction/lewd/partner/mutual/rest_thigh/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
 									//Pronoun storage//
 //You can comment these back in to use if you need to use them. This is the full list.
 //Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.

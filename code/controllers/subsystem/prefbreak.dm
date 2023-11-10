@@ -207,7 +207,7 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 /datum/prefcheck/splurt/lewd_sounds/allowed(datum/preferences/consumer)
 	if(!..())
 		return FALSE
-	return CHECK_BITFIELD(consumer.toggles, NO_LEWD_VERB_SOUNDS) // kinda vital here
+	return CHECK_BITFIELD(consumer.toggles, HEAR_LEWD_VERB_SOUNDS) // kinda vital here
 
 
 

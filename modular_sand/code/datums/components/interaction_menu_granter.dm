@@ -166,7 +166,7 @@
 
 	//Getting preferences
 		.["verb_consent"] = 		!!CHECK_BITFIELD(prefs.toggles, VERB_CONSENT)
-		.["lewd_verb_sounds"] = 	!CHECK_BITFIELD(prefs.toggles, NO_LEWD_VERB_SOUNDS)
+		.["lewd_verb_sounds"] = 	!!CHECK_BITFIELD(prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
 		.["arousable"] = 			prefs.arousable
 		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
 		.["forced_fem"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
@@ -352,7 +352,7 @@
 				if("verb_consent")
 					TOGGLE_BITFIELD(prefs.toggles, VERB_CONSENT)
 				if("lewd_verb_sounds")
-					TOGGLE_BITFIELD(prefs.toggles, NO_LEWD_VERB_SOUNDS)
+					TOGGLE_BITFIELD(prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
 				if("arousable")
 					prefs.arousable = !prefs.arousable
 				if("genital_examine")

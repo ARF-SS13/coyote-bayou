@@ -5,9 +5,9 @@
 	max_distance = 1
 	write_log_user = "frotted"
 	write_log_target = "was frotted by"
-	interaction_sound = null
+	simple_sounds = null
 
-/datum/interaction/lewd/frotting/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/frotting/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 	var/t_His = user.p_their()
 	var/genital_name = user.get_penetrating_genital_name()
@@ -22,12 +22,12 @@
 
 /datum/interaction/lewd/tribadism
 	description = "Partner/Crotch -Grind pussies together."
-	interaction_sound = null
+	simple_sounds = null
 	require_target_vagina = REQUIRE_ANY
 	require_user_vagina = REQUIRE_ANY
 	max_distance = 1
 
-/datum/interaction/lewd/tribadism/display_interaction(mob/living/user, mob/living/partner, show_message)
+/datum/interaction/lewd/tribadism/interaction_message(mob/living/user, mob/living/partner, show_message)
 	var/message
 
 	var/u_His = user.p_their()

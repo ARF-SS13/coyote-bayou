@@ -5,9 +5,9 @@
 	max_distance = 1
 	write_log_user = "breastfed"
 	write_log_target = "was breastfed by"
-	interaction_sound = null
+	simple_sounds = null
 
-/datum/interaction/lewd/do_breastfeed/display_interaction(mob/living/user, mob/living/target)
+/datum/interaction/lewd/do_breastfeed/interaction_message(mob/living/user, mob/living/target)
 	var/message
 	var/u_His = user.p_their()
 	var/u_He = user.p_they()
@@ -53,7 +53,7 @@
 	require_target_breasts = REQUIRE_ANY
 	write_log_user = "groped"
 	write_log_target = "was groped by"
-	interaction_sound = null
+	simple_sounds = null
 	max_distance = 1
 
 	additional_details = list(
@@ -64,7 +64,7 @@
 			)
 	)
 
-/datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target, show_message)
+/datum/interaction/lewd/titgrope/interaction_message(mob/living/carbon/human/user, mob/living/carbon/human/target, show_message)
 	var/obj/item/reagent_containers/liquid_container
 
 	var/obj/item/cached_item = user.get_active_held_item()
