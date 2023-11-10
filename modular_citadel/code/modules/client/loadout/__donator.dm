@@ -148,7 +148,7 @@
 
 /obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/sturdy(src)
-	new /obj/item/gun/ballistic/bow/recurvebow(src)
+	new /obj/item/gun/ballistic/bow/modern(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
@@ -215,7 +215,7 @@
 
 /obj/item/storage/box/large/custom_kit/bladeburstninja/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/silver(src)
-	new /obj/item/gun/ballistic/bow/recurvebow(src)
+	new /obj/item/gun/ballistic/bow/modern(src)
 	new /obj/item/clothing/head/helmet/f13/metalmask(src)
 	new /obj/item/clothing/suit/armor/light/leather/leathermk2(src)
 	new /obj/item/clothing/accessory/talisman(src)

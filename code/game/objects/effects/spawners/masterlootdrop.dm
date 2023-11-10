@@ -312,8 +312,7 @@
 		/obj/item/gun/ballistic/rifle/hunting = 10,
 		/obj/item/gun/ballistic/rifle/antique/gras = 10,
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 10,
-		/obj/item/gun/ballistic/bow/recurvebow = 4,
-		/obj/item/gun/ballistic/bow/lightxbow = 4,
+		/obj/item/gun/ballistic/bow/modern = 4,
 		/obj/item/gun/ballistic/revolver/widowmaker = 4,
 		/obj/item/gun/ballistic/revolver/revolver45 = 4,
 		/obj/item/gun/ballistic/revolver/colt357 = 4,
@@ -346,11 +345,9 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/gun/ballistic/bow/longbow = 4,
-		/obj/item/gun/ballistic/bow/crossbow = 4,
 		/obj/item/gun/ballistic/automatic/m1garand = 4,
 		/obj/item/m2flamethrowertank = 1,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 1,
-		// /obj/item/gun/ballistic/bow/compositebow = 1,  // I do not know the difference between this and the recurve.
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_cowboy
@@ -542,7 +539,6 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
 		/obj/item/gun/ballistic/bow/longbow = 20,
 		/obj/item/gun/ballistic/bow/crossbow = 10,
-		/obj/item/gun/ballistic/bow/compositebow = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_cowboy

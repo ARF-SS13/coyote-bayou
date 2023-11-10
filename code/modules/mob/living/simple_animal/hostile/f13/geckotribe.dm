@@ -417,7 +417,7 @@
 	bare_wound_bonus = BULLET_WOUND_PISTOL_22_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_ARROW_FIELD
+	pixels_per_second = BULLET_SPEED_ARROW
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 

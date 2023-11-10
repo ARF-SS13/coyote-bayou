@@ -471,7 +471,7 @@ Hunter
 	total_positions = 5
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The chief and Hunt Master.  Failing their appearance you fall back on the Shaman and Druid for task management."
+	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Shaman and Druid for task management."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. While a protector you are also the arm of the tribe in the world, performing tasks from the Shamans and Druids."
@@ -536,8 +536,8 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		///obj/item/gun/ballistic/bow/sturdy = 1,
-		///obj/item/storage/bag/tribe_quiver/light = 1,
+		/obj/item/gun/ballistic/bow/composite = 1,
+		/obj/item/storage/bag/tribe_quiver/light/full/flint = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
@@ -565,7 +565,7 @@ Spirit-Pledged
 	spawn_positions = 3
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All other tribals."
-	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to joint he tribe, but its not a requirement."
+	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
 	selection_color = "#006666"
 
 	outfit = /datum/outfit/job/tribal/f13spiritpledged
