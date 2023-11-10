@@ -1,6 +1,7 @@
 // WANNA CUM?
 #define NOTMERP_AUTOCLIMAX "lol_this_wishes_it_were_merp"
 #define NOTMERP_LEWD_SOUNDS "squish_plsorkioefer"
+#define NOTMERP_LEWD_WORDS "youthingthething"
 
 // Overhauled vore system
 #define DM_HOLD "Hold"

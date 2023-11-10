@@ -94,7 +94,6 @@
 	if(!milkers || !milktype)
 		return
 
-	var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 
 	// var/milktext = milk.name
 

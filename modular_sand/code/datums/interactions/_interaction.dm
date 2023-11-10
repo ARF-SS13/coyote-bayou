@@ -246,7 +246,7 @@
 
 /// Display the message
 /datum/interaction/proc/interaction_message(mob/living/user, mob/living/target, show_message, list/extra = list())
-	if(!show_message)
+	if(!SSinteractions.can_squorch_message(user, src))
 		return
 	var/message = get_message(user, target, extra)
 	var/span = get_span(user, target, extra)
@@ -261,8 +261,8 @@
 	for(var/mob/squish in ppl - user)
 		if(!squish.client)
 			continue
-		if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
-			continue
+		// if(is_lewd && !CHECK_PREFS(squish, HEAR_LEWD_VERB_WORDS))
+		// 	continue
 		to_chat(squish, message)
 	return TRUE
 	
@@ -315,8 +315,8 @@
 			for(var/mob/squish in ppl)
 				if(!squish.client)
 					continue
-				if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
-					continue
+				// if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
+				// 	continue
 				squish.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, -1)
 		else
 			user.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, -1)

@@ -166,17 +166,17 @@
 
 /mob/living/proc/get_lust_max()
 	. = lust_tolerance
-	if(has_dna())
-		var/mob/living/carbon/user = src
-		if(user.dna.features["lust_tolerance"])
-			. = user.dna.features["lust_tolerance"]
+	// if(has_dna())
+	// 	var/mob/living/carbon/user = src
+	// 	if(user.dna.features["lust_tolerance"])
+	// 		. = user.dna.features["lust_tolerance"]
 
 /mob/living/proc/get_sexual_potency()
 	. = sexual_potency
-	if(has_dna())
-		var/mob/living/carbon/user = src
-		if(user.dna.features["sexual_potency"])
-			. = user.dna.features["sexual_potency"]
+	// if(has_dna())
+	// 	var/mob/living/carbon/user = src
+	// 	if(user.dna.features["sexual_potency"])
+	// 		. = user.dna.features["sexual_potency"]
 
 /mob/living/proc/add_lust(add)
 	var/cur = get_lust() //GetLust handles per-time lust loss
@@ -933,7 +933,7 @@
 				H.mob_fill_container(last_genital, partner, 0)
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
-	set_lust(0)
+	// set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
 

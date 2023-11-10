@@ -230,7 +230,7 @@ SUBSYSTEM_DEF(interactions)
  * A cooldown for squorching, so you can't just spam it.
  * Only applies if the squorch has a sound associated with it, otherwise you get to see every lovely message
  */
-/datum/controller/subsystem/interactions/proc/can_squorch(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
+/datum/controller/subsystem/interactions/proc/can_squorch_message(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
 	if(!istype(squisher) || !squisher.ckey || !istype(splut))
 		return FALSE
 	if(!LAZYLEN(splut.help_sounds))
