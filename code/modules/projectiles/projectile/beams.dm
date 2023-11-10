@@ -17,6 +17,12 @@
 	wound_bonus = -20
 	bare_wound_bonus = 10
 	recoil = BULLET_RECOIL_LASER
+	sharpness = SHARP_POINTY // Temporary fix for the Wound system. Makes lasers/plasma bleed you out per hit.
+
+/obj/item/projectile/f13plasma
+	name = "plasma template"
+	icon_state = "laser"
+	sharpness = SHARP_POINTY // Temporary fix for the Wound system. Makes lasers/plasma bleed you out per hit.
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
