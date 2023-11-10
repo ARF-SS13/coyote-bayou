@@ -530,18 +530,19 @@
 
 // this proc sucks
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_max() * 10)))
-		return
-	if(COOLDOWN_FINISHED(src, interaction_moan_cooldown))
-		COOLDOWN_START(src, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)
-		var/moan = rand(1, 7)
-		if(moan == lastmoan)
-			moan--
-		if(!is_muzzled())
-			visible_message(message = span_love("<B>\The [src]</B> [pick("moans", "moans in pleasure")]."), ignored_mobs = get_unconsenting())
-		else
-			audible_message(span_love("<B>[src]</B> [pick("mimes a pleasured moan","moans in silence")]."), ignored_mobs = get_unconsenting())
-		lastmoan = moan
+	return TRUE // handled by the interactions
+	// if(!(prob(get_lust() / get_lust_max() * 10)))
+	// 	return
+	// if(COOLDOWN_FINISHED(src, interaction_moan_cooldown))
+	// 	COOLDOWN_START(src, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)
+	// 	var/moan = rand(1, 7)
+	// 	if(moan == lastmoan)
+	// 		moan--
+	// 	if(!is_muzzled())
+	// 		visible_message(message = span_love("<B>\The [src]</B> [pick("moans", "moans in pleasure")]."), ignored_mobs = get_unconsenting())
+	// 	else
+	// 		audible_message(span_love("<B>[src]</B> [pick("mimes a pleasured moan","moans in silence")]."), ignored_mobs = get_unconsenting())
+	// 	lastmoan = moan
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	ready_to_cum = FALSE

@@ -306,9 +306,9 @@
 		return
 	if(is_visible_to_all)
 		if(is_lewd)
-			playlewdinteractionsound(get_turf(user), simple_sounds, int_sound_vol, 1, -1)
+			playlewdinteractionsound(get_turf(user), simple_sounds, int_sound_vol, 1)
 		else
-			playsound(user, sound2play, int_sound_vol, 1, -1)
+			playsound(user, sound2play, int_sound_vol, 1)
 	else
 		if(is_lewd)
 			var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
@@ -317,10 +317,10 @@
 					continue
 				// if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
 				// 	continue
-				squish.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, -1)
+				squish.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
 		else
-			user.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, -1)
-			target.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, -1)
+			user.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
+			target.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
 	return TRUE
 
 /datum/interaction/proc/get_description(mob/living/user, mob/living/target)
