@@ -259,6 +259,24 @@ a
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/scraparmor
+	name = "slim scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrap
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapalt
+	name = "scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapalt
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/scrapmedium
+	name = "heavy scrap armor"
+	path = /obj/item/clothing/suit/armor/light/leather/scrapheavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk
@@ -1918,6 +1936,32 @@ a
 	path = /obj/item/clothing/suit/armor/outfit/overalls/farmer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 1
+
+//-->Taur saddles
+/datum/gear/suit/taursaddle
+	name = "Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 0
+
+/datum/gear/suit/taursaddle_light
+	name = "Light Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/light
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_medium
+	name = "Medium Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/medium
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+
+/datum/gear/suit/taursaddle_heavy
+	name = "Heavy Armored Taur Saddle"
+	path = /obj/item/clothing/suit/armor/taursaddle/heavy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_TAUR
+	cost = 2
+//<--End of taur saddles
 
 // BEGIN_INTERNALS
 // END_INTERNALS

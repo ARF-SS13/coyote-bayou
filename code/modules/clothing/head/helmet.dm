@@ -701,7 +701,7 @@
 	item_state = "unmch"
 	flags_inv = HIDEHAIR
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -711,7 +711,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	icon_state = "custominfil"
 	item_state = "custominfil"
 
@@ -730,7 +730,7 @@
 	item_state = "rhazhelm"
 	flags_inv = HIDEHAIR
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 ,ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_ENV_T4) 
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -741,7 +741,7 @@
 	item_state = "usainfilhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -752,7 +752,7 @@
 	item_state = "chinastealthhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_DOWN_MELEE_T2 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
@@ -763,9 +763,67 @@
 	item_state = "unmcwh"
 	flags_inv = HIDEHAIR
 	armor_list = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1 , ARMOR_MODIFIER_DOWN_DT_T1 , ARMOR_MODIFIER_DOWN_MELEE_T1 ,  ARMOR_MODIFIER_UP_BOMB_T1) 
+	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
+
+/obj/item/clothing/head/helmet/blbandit
+	name = "bandit mask"
+	desc = "A modified hockey mask sporting an in-built set of goggles."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "banditmask"
+	item_state = "banditmask"
+	flags_inv = HIDESNOUT
+	armor_list = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/head/helmet/blpsycho
+	name = "psycho mask"
+	desc = "A hockey mask with an upside down, golden 'V' painted on the front."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "banditmask"
+	item_state = "banditmask"
+	flags_inv = HIDESNOUT
+	armor_list = ARMOR_VALUE_LIGHT
+
+/obj/item/clothing/head/helmet/borderlandshelm
+	name = "borderlands helmet template"
+	desc = "If you're seeing this, something has gone horribly wrong."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDEHAIR|HIDESNOUT
+	armor_list = ARMOR_VALUE_MEDIUM
+
+/obj/item/clothing/head/helmet/borderlandshelm/bandit
+	name = "bandit helmet"
+	desc = "A standard helmet that entirely covers the wearer's head. This one comes in a deep red and navy blue."
+	icon_state = "bandithelm"
+	item_state = "bandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/banditv
+	name = "looter bandit helmet"
+	desc = "A red and blue helmet sporting an upside down, silver 'V' on the front."
+	icon_state = "vbandithelm"
+	item_state = "vbandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/banditstripe
+	name = "striped bandit helmet"
+	desc = "A red and blue helmet with a silver stripe running down the center."
+	icon_state = "stripebandithelm"
+	item_state = "stripebandithelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/merc
+	name = "mercenary helmet"
+	desc = "A professional-looking helmet that completely covers the head."
+	icon_state = "merchelm"
+	item_state = "merchelm"
+
+/obj/item/clothing/head/helmet/borderlandshelm/promerc
+	name = "professional mercenary helmet"
+	desc = "A tactical-looking, matte black helmet -- complete with red visors!"
+	icon_state = "promerchelm"
+	item_state = "promerchelm"
 
 /obj/item/clothing/head/helmet/bluetaghelm
 	name = "blue laser tag helmet"

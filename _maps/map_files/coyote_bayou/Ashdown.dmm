@@ -38594,14 +38594,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "rwe" = (
+/obj/structure/stairs/north{
+	color = "#A47449"
+	},
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/plasteel/stairs{
-	barefootstep = "woodbarefoot";
-	color = "#A47449";
-	footstep = "wood"
-	},
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/ashdown)
 "rwf" = (
 /obj/structure/flora/grass/wasteland{

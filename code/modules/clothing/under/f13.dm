@@ -2419,3 +2419,31 @@
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+
+// Rin's commisioned uniforms
+
+/obj/item/clothing/under/f13/borderlands
+	name = "borderlands template"
+	desc = "Something has gone terribly wrong if you're seeing this. Call a coder!"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform.dmi'
+	can_adjust = FALSE
+	mutantrace_variation = NONE
+
+/obj/item/clothing/under/f13/borderlands/marauder
+	name = "marauder outfit"
+	desc = "A snappy navy blue shirt paired with blood red pants. Stylish, yet comfortable, wear perfect for any thug."
+	icon_state = "marauder"
+	item_state = "marauder"
+
+/obj/item/clothing/under/f13/borderlands/bloodshot
+	name = "bloodshot outfit"
+	desc = "A light blue shirt paired with tank khaki pants makes for an intimidating outfit. Well, no, it doesn't. At least it looks nice?"
+	icon_state = "bloodshot"
+	item_state = "bloodshot"
+
+/obj/item/clothing/under/f13/borderlands/psycho
+	name = "psycho outfit"
+	desc = "It's just a pair of bright orange pants. What kind of maniac would run around just wearing these?"
+	icon_state = "psycho"
+	item_state = "psycho"
