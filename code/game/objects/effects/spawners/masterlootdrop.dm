@@ -317,8 +317,7 @@
 		/obj/item/gun/ballistic/rifle/hunting = 10,
 		/obj/item/gun/ballistic/rifle/antique/gras = 10,
 		/obj/item/gun/ballistic/rifle/repeater/volcanic = 10,
-		/obj/item/gun/ballistic/bow/recurvebow = 4,
-		/obj/item/gun/ballistic/bow/lightxbow = 4,
+		/obj/item/gun/ballistic/bow/modern = 4,
 		/obj/item/gun/ballistic/revolver/widowmaker = 4,
 		/obj/item/gun/ballistic/revolver/revolver45 = 4,
 		/obj/item/gun/ballistic/revolver/colt357 = 4,
@@ -354,14 +353,12 @@
 		/obj/item/gun/ballistic/automatic/gewehr43 = 4,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/gun/ballistic/bow/longbow = 4,
-		/obj/item/gun/ballistic/bow/crossbow = 4,
 		/obj/item/gun/ballistic/automatic/m1garand = 4,
 		/obj/item/m2flamethrowertank = 1,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 1,
 		/obj/item/gun/ballistic/automatic/gewehr41civ = 4,
 		/obj/item/gun/ballistic/automatic/gewehr43 = 4,
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 4,
-		// /obj/item/gun/ballistic/bow/compositebow = 1, // I do not know the difference between this and the recurve.
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_cowboy
@@ -514,6 +511,61 @@
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
 	)
 
+
+////////////////////
+///cowboy weapons///		ensures we gett plenty of stylish guns and bows
+////////////////////
+/*
+/obj/effect/spawner/lootdrop/f13/common_cowboy
+	name = "common cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/detective = 5,
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 20,
+		/obj/item/gun/ballistic/revolver/police = 5,
+		/obj/item/gun/ballistic/revolver/m29 = 5,
+		/obj/item/gun/ballistic/revolver/m29/alt = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 5,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/gun/ballistic/revolver/thatgun = 10,
+		/obj/item/gun/ballistic/rifle/repeater/cowboy = 20,
+		/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
+		/obj/item/gun/ballistic/revolver/widowmaker = 10,
+		/obj/item/gun/ballistic/bow/lightxbow = 10,
+		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		/obj/item/gun/ballistic/revolver/detective/derringer = 1,
+		/obj/item/gun/ballistic/revolver/derringer4570 = 1,
+		/obj/item/gun/ballistic/revolver/derringerLC = 5,
+	)
+
+/obj/effect/spawner/lootdrop/f13/uncommon_cowboy
+	name = "uncommon cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/police/webley = 5,
+		/obj/item/gun/ballistic/revolver/hunting = 10,
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 5,
+		/obj/item/gun/ballistic/revolver/colt357/auto = 5,
+		/obj/item/gun/ballistic/rifle/repeater/trail = 20,
+		/obj/item/gun/ballistic/rifle/repeater/ranger = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 10,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,
+		/obj/item/gun/ballistic/bow/longbow = 20,
+		/obj/item/gun/ballistic/bow/crossbow = 10,
+	)
+
+/obj/effect/spawner/lootdrop/f13/rare_cowboy
+	name = "rare cowboy"
+	loot = list(
+		/obj/item/gun/ballistic/revolver/m2405 = 5,
+		/obj/item/gun/ballistic/revolver/sequoia = 10,
+		/obj/item/gun/ballistic/rifle/repeater/brush = 20,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5, // ebow
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 1, // big ebow
+		/obj/item/gun/ballistic/bow/compoundbow = 3,
+		/obj/item/m2flamethrowertank = 1,
+	)
+
+*/
 //////////////////////////
 ///unique weapon spawns///
 //////////////////////////

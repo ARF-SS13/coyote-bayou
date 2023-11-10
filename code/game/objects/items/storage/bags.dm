@@ -529,6 +529,10 @@ obj/item/storage/bag/chemistry/tribal
 	for(var/i in 1 to 12)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
 
+/obj/item/storage/bag/tribe_quiver/light/full/flint/PopulateContents()
+	for(var/i in 1 to 12)
+		new /obj/item/ammo_casing/caseless/arrow/flint(src)//Little more applicable for tribals.
+
 /obj/item/storage/bag/tribe_quiver/heavy
 	name = "back quiver"
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."

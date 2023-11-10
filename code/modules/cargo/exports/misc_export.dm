@@ -104,8 +104,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/cowboy,
 		/obj/item/gun/ballistic/revolver/caravan_shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
-		/obj/item/gun/ballistic/bow/lightxbow,
-		/obj/item/gun/ballistic/bow/recurvebow,
+		/obj/item/gun/ballistic/bow/modern,
 		)
 
 /datum/export/item/uncommongun
@@ -143,8 +142,6 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
 		/obj/item/gun/ballistic/bow/longbow,
-		/obj/item/gun/ballistic/bow/crossbow,
-		/obj/item/gun/ballistic/bow/compositebow,
 		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22,
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
