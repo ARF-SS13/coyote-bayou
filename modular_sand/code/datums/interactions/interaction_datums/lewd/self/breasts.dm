@@ -8,25 +8,26 @@
 	write_log_target = null
 
 	help_messages = list(
-		"X_USER gently gropes XU_THEIR breast",
-		"X_USER softly squeezes XU_THEIR breasts",
-		"X_USER grips XU_THEIR breasts",
-		"X_USER runs a few fingers over XU_THEIR breast",
-		"X_USER delicately teases XU_THEIR nipple",
-		"X_USER traces a touch across XU_THEIR breast"
+		"XU_NAME gently gropes XU_THEIR breast",
+		"XU_NAME softly squeezes XU_THEIR breasts",
+		"XU_NAME grips XU_THEIR breasts",
+		"XU_NAME runs a few fingers over XU_THEIR breast",
+		"XU_NAME delicately teases XU_THEIR nipple",
+		"XU_NAME traces a touch across XU_THEIR breast"
 	)
-	// disarm_messages = list("X_USER is really rubbing at XU_THEIR own rear end.") // leaving thease out mean that
-	// grab_messages = list("X_USER is rubbing XU_THEIR backside pretty aggressively!") // all but harm will do the help words!!!
+	// disarm_messages = list("XU_NAME is really rubbing at XU_THEIR own rear end.") // leaving thease out mean that
+	// grab_messages = list("XU_NAME is rubbing XU_THEIR backside pretty aggressively!") // all but harm will do the help words!!!
 	harm_messages = list(
-		"X_USER aggressively gropes XU_THEIR breast",
-		"X_USER grabs XU_THEIR breasts",
-		"X_USER tightly squeezes XU_THEIR breasts",
-		"X_USER slaps at XU_THEIR breasts",
-		"X_USER gropes XU_THEIR breasts roughly"
+		"XU_NAME aggressively gropes XU_THEIR breast",
+		"XU_NAME grabs XU_THEIR breasts",
+		"XU_NAME tightly squeezes XU_THEIR breasts",
+		"XU_NAME slaps at XU_THEIR breasts",
+		"XU_NAME gropes XU_THEIR breasts roughly"
 	)
 
 	simple_sounds = list('sound/weapons/thudswoosh.ogg') // frumf, frumf
-	lust_mult = 1.0 // this ONE trick will make you cum in 5 seconds! doctors hate it!
+	user_lust_mult = 1.0 // this ONE trick will make you cum in 5 seconds! doctors hate it!
+	lust_go_to = LUST_USER | LUST_TARGET
 
 	additional_details = list(
 		list(
@@ -82,6 +83,8 @@
 		"XU_NAME takes a big sip of XU_THEIR own fresh milk",
 		"XU_NAME fills XU_THEIR own mouth with a big gulp of XU_THEIR warm milk"
 	)
+	user_lust_mult = 1
+	lust_go_to = LUST_USER | LUST_TARGET
 
 /datum/interaction/lewd/self_nipsuck/interaction_message(mob/living/user, mob/living/target)
 	var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
@@ -93,7 +96,7 @@
 
 	var/datum/reagent/milk = find_reagent_object_from_type(milktype)
 
-	var/milktext = milk.name
+	// var/milktext = milk.name
 
 	switch(milkers.size)
 		if("c", "d", "e")

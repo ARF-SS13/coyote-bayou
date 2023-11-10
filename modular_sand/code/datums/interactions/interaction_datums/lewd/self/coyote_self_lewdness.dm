@@ -67,7 +67,7 @@
 		cushioned lap} \
 		{openly, \
 		boldly, \
-		publicly, \
+		is_visible_to_allly, \
 		freely, \
 		frankly, \
 		without reservation, \
@@ -104,12 +104,12 @@
 	simple_sounds = list()
 	simple_span = null
 
-	/// Step 5 (actually 4) - Publicity!
-	/// If Public is set to TRUE, it'll broadcast the message and sound to everyone in view range
-	/// If Public is set to FALSE, it'll only broadcast the message and sound to everyone in your consent chain!
+	/// Step 5 (actually 4) - is_visible_to_allity!
+	/// If is_visible_to_all is set to TRUE, it'll broadcast the message and sound to everyone in view range
+	/// If is_visible_to_all is set to FALSE, it'll only broadcast the message and sound to everyone in your consent chain!
 	/// whats a consent chain? its a list of people who have consented to your ERP, and everyone they consented, and everyone they consented, etc
 	/// if A consents to B, and B consents to C, and B consents to D, then the interaction will be sent to A, B, C, and D. cool huh?
-	public = FALSE // Lewd interactions should not be public, though they'll be suppressed for anyone with the prefs set to be off
+	is_visible_to_all = FALSE // Lewd interactions should not be is_visible_to_all, though they'll be suppressed for anyone with the prefs set to be off
 
 	require_user_hands = TRUE //True or false, you have to have hands to do whatever this action is.
 	is_self_action = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
@@ -153,13 +153,13 @@ Enjoy!												*/
 	write_log_user = "rubbed their backside." //The log for the interactiont to show admins if, for some insane reason, they need to look up what you have done to yourself/others. Probably not needed with OUR community, but I can see the logic behind wanting it. 
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 
-	help_messages = list("X_USER lightly rubs XU_THEIR backside.")
-	disarm_messages = list("X_USER is really rubbing at XU_THEIR own rear end.")
-	grab_messages = list("X_USER is rubbing XU_THEIR backside pretty aggressively!")
-	harm_messages = list("X_USER rubs XU_THEIR butt aggressively!", "X_USER mauls XU_THEIR own butt with attention!")
+	help_messages = list("XU_NAME lightly rubs XU_THEIR backside.")
+	disarm_messages = list("XU_NAME is really rubbing at XU_THEIR own rear end.")
+	grab_messages = list("XU_NAME is rubbing XU_THEIR backside pretty aggressively!")
+	harm_messages = list("XU_NAME rubs XU_THEIR butt aggressively!", "XU_NAME mauls XU_THEIR own butt with attention!")
 
 	simple_sounds = list('sound/weapons/thudswoosh.ogg') // frumf, frumf
-	lust_mult = 0.4
+	user_lust_mult = 0.4
 
 
 /////////////////
@@ -172,10 +172,10 @@ datum/interaction/lewd/self/lewd_squirm
 	is_self_action = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
 	max_distance = 0 //The max distance you can use this verb on others, starts on the tiles AROUND the player, so thusly it includes the players own tile.
 
-	help_messages = list("X_USER very lightly squirms.", "X_USER squirms ever so slightly.")
-	disarm_messages = list("X_USER is being a little squirmy.", "X_USER squirms a bit.")
-	grab_messages = list("X_USER is squirming a lot!", "X_USER is really squirming!")
-	harm_messages = list("X_USER is squirming like crazy!", "X_USER can't seem to stop themselves from squirming!")
+	help_messages = list("XU_NAME very lightly squirms.", "XU_NAME squirms ever so slightly.")
+	disarm_messages = list("XU_NAME is being a little squirmy.", "XU_NAME squirms a bit.")
+	grab_messages = list("XU_NAME is squirming a lot!", "XU_NAME is really squirming!")
+	harm_messages = list("XU_NAME is squirming like crazy!", "XU_NAME can't seem to stop themselves from squirming!")
 
 	simple_sounds = list(
 		'sound/effects/rustle1.ogg',
@@ -184,7 +184,7 @@ datum/interaction/lewd/self/lewd_squirm
 		'sound/effects/rustle4.ogg',
 		'sound/effects/rustle5.ogg',
 	) // frumf, frumf
-	lust_mult = 0.4
+	user_lust_mult = 0.4
 
 ////////////////////
 //Dirty Talk - Soft//
@@ -228,7 +228,7 @@ datum/interaction/lewd/self/dirtytalksoft
 		"XU_NAME legs shake as they reflexively respond, \"Fuck yes-\"",
 		"XU_NAME pleads as if they are nearly broken, \"Don't stop-\"",
 	)
-	lust_mult = 0.4
+	user_lust_mult = 0.4
 
 
 
@@ -265,7 +265,7 @@ datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what
 		"XU_NAME is rubbing XU_THEIR lovebud aggressively",
 	)
 	simple_sounds = list('sound/weapons/thudswoosh.ogg') // yes it the use bag sound, eat me
-	lust_mult = 0.6
+	user_lust_mult = 0.6
 
 
 /////////////////
@@ -307,7 +307,7 @@ datum/interaction/lewd/self/jerk_hard //lewd makes it pink, the name is just wha
 		'sound/effects/rustle4.ogg',
 		'sound/effects/rustle5.ogg',
 	) // frumf, frumf
-	lust_mult = 1.2
+	user_lust_mult = 1.2
 
 //////////////////////////
 //Play with own nips/////
@@ -349,6 +349,6 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 		'sound/effects/rustle4.ogg',
 		'sound/effects/rustle5.ogg',
 	) // frumf, frumf
-	lust_mult = 1.2
+	user_lust_mult = 1.2
 
 

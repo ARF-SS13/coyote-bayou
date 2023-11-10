@@ -164,7 +164,7 @@
 	for(var/obj/item/organ/genital/G in internal_organs)
 		out += list(G.format_for_tgui())
 
-/mob/living/proc/get_lust_tolerance()
+/mob/living/proc/get_lust_max()
 	. = lust_tolerance
 	if(has_dna())
 		var/mob/living/carbon/user = src
@@ -530,7 +530,7 @@
 
 // this proc sucks
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 10)))
+	if(!(prob(get_lust() / get_lust_max() * 10)))
 		return
 	if(COOLDOWN_FINISHED(src, interaction_moan_cooldown))
 		COOLDOWN_START(src, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)
@@ -545,10 +545,12 @@
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
 	ready_to_cum = FALSE
+	// var/cumpower = floor(get_lust() / get_lust_max()) // todo, rolling clummoxes
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
 		return FALSE
 	if(SEND_SIGNAL(src, COMSIG_MOB_PRE_CAME, target_orifice, partner))
 		return FALSE
+	lust = max(0, lust - get_lust_max()) // subtract one(1) clummox
 	var/message
 	var/u_His = p_their()
 	var/u_He = p_they()
@@ -715,7 +717,7 @@
 								message = "squirts on \the <b>[partner]</b>'s earsocket."
 							cumin = TRUE
 						if(CUM_TARGET_EYES)
-							if(partner.has_eyes())
+							if(partner.has_eyes()) // i can see my house from here!
 								message = "squirts on \the <b>[partner]</b>'s eyeball."
 							else
 								message = "squirts on \the <b>[partner]</b>'s eyesocket."
@@ -982,16 +984,27 @@
 	moan()
 	if(amount)
 		add_lust(amount)
-	if(ready_to_cum && cum(partner, orifice))
-		return TRUE
-	// var/lust = get_lust()
-	// var/lust_tolerance = get_lust_tolerance()
-	// if(lust >= lust_tolerance)
-	// 	if(prob(10))
-	// 		// to_chat(src, "<b>You struggle to not orgasm!</b>")
-	// 		return FALSE
-	// 	if(lust >= (lust_tolerance * 3) && CHECK_PREFS(src, NOTMERP_AUTOCLIMAX))
-	return FALSE
+	return try2cum(partner, orifice)
+	// if(ready_to_cum && cum())
+	// 	return TRUE
+	// // var/lust = get_lust()
+	// // var/lust_tolerance = get_lust_max()
+	// // if(lust >= lust_tolerance)
+	// // 	if(prob(10))
+	// // 		// to_chat(src, "<b>You struggle to not orgasm!</b>")
+	// // 		return FALSE
+	// // 	if(lust >= (lust_tolerance * 3) && CHECK_PREFS(src, NOTMERP_AUTOCLIMAX))
+	// return FALSE
+
+/mob/living/proc/try2cum(mob/living/partner, oriface, force_it)
+	if(force_it)
+		return cum(partner, oriface)
+	if(!ready_to_cum)
+		return FALSE
+	var/my_lust = get_lust()
+	var/my_max = get_lust_max()
+	if(my_lust >= my_max)
+		return cum(partner, oriface) // CUM!
 
 /mob/living/proc/get_unconsenting(extreme = FALSE, list/ignored_mobs)
 	var/list/nope = list()

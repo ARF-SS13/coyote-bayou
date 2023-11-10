@@ -38,7 +38,8 @@
 		'modular_sand/sound/interactions/bang2.ogg',
 		'modular_sand/sound/interactions/bang3.ogg'
 	) // frumf, frumf
-	lust_mult = 1
+	user_lust_mult = 1
+	lust_go_to = LUST_USER | LUST_TARGET
 
 	additional_details = list(
 		list(
@@ -48,13 +49,13 @@
 			)
 	)
 
-/datum/interaction/lewd/jack/interaction_message(mob/living/user, mob/living/target, show_message)
-	var/obj/item/reagent_containers/liquid_container
+// /datum/interaction/lewd/jack/interaction_message(mob/living/user, mob/living/target, show_message)
+// 	var/obj/item/reagent_containers/liquid_container
 
-	var/obj/item/cached_item = user.get_active_held_item()
-	if(istype(cached_item, /obj/item/reagent_containers))
-		liquid_container = cached_item
-	else
-		cached_item = user.pulling
-		if(istype(cached_item, /obj/item/reagent_containers))
-			liquid_container = cached_item
+// 	var/obj/item/cached_item = user.get_active_held_item()
+// 	if(istype(cached_item, /obj/item/reagent_containers))
+// 		liquid_container = cached_item
+// 	else
+// 		cached_item = user.pulling
+// 		if(istype(cached_item, /obj/item/reagent_containers))
+// 			liquid_container = cached_item

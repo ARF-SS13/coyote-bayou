@@ -10,10 +10,6 @@
 - Makes all the code good because yes as well - SandPoot
 **/
 
-#define LEWD_VERB_COOLDOWN 0.25 SECONDS
-#define LEWD_VERB_SOUND_COOLDOWN 0.25 SECONDS
-#define LEWD_VERB_MESSAGE_COOLDOWN 4 SECONDS
-#define LEWD_VERB_MOAN_COOLDOWN 5 SECONDS
 
 /mob/proc/list_interaction_attributes()
 	return list()
@@ -59,12 +55,12 @@
 	var/list/simple_sounds = list()
 	var/simple_span = list()
 
-	/// Step 5 (actually 4) - Publicity!
-	/// If Public is set to TRUE, it'll broadcast the message and sound to everyone in view range
-	/// If Public is set to FALSE, it'll only broadcast the message and sound to everyone in your consent chain!
+	/// Step 5 (actually 4) - is_visible_to_allity!
+	/// If is_visible_to_all is set to TRUE, it'll broadcast the message and sound to everyone in view range
+	/// If is_visible_to_all is set to FALSE, it'll only broadcast the message and sound to everyone in your consent chain!
 	/// whats a consent chain? its a list of people who have consented to your ERP, and everyone they consented, and everyone they consented, etc
 	/// if A consents to B, and B consents to C, and B consents to D, then the interaction will be sent to A, B, C, and D. cool huh?
-	var/public = TRUE // Lewd interactions should not be public, though they'll be suppressed for anyone with the prefs set to be off
+	var/is_visible_to_all = TRUE // Lewd interactions should not be is_visible_to_all, though they'll be suppressed for anyone with the prefs set to be off
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * ANATOMY OF AN INTERACTION, LEWD OR OTHERWISE
@@ -97,7 +93,6 @@
 	/// Bitfield for which bodyparts are required, if we're filtering that
 	var/target_required_parts = NONE // to be actually used later =3
 
-	var/simple_sounds
 	var/int_sound_vol = 50
 
 	var/max_distance = 1
@@ -189,7 +184,7 @@
 /datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	if(!user || !target)
 		return
-	if(!can_do_interaction(user, target, discrete, extra, override_for_tgui))
+	if(!can_do_interaction(user, target, discrete, extra))
 		return
 	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
 	do_action(user, target, discrete, extra)
@@ -251,12 +246,12 @@
 
 /// Display the message
 /datum/interaction/proc/interaction_message(mob/living/user, mob/living/target, show_message, list/extra = list())
-	if(!showmessage)
+	if(!show_message)
 		return
 	var/message = get_message(user, target, extra)
 	var/span = get_span(user, target, extra)
-	message = "<span class='[simple_span]'>[message]</span>"
-	if(public) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
+	message = "<span class='[span]'>[message]</span>"
+	if(is_visible_to_all) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
 		user.visible_message(message)
 		return TRUE
 	to_chat(user, message)
@@ -309,13 +304,13 @@
 				sound2play = pick(help_sounds)
 	if(!sound2play)
 		return
-	if(public)
-		if(lewd)
+	if(is_visible_to_all)
+		if(is_lewd)
 			playlewdinteractionsound(get_turf(user), simple_sounds, int_sound_vol, 1, -1)
 		else
 			playsound(user, sound2play, int_sound_vol, 1, -1)
 	else
-		if(lewd)
+		if(is_lewd)
 			var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
 			for(var/mob/squish in ppl)
 				if(!squish.client)
@@ -339,9 +334,10 @@
 		return "[additional_details.Join("\n")]" || "Clickme!"
 	return "[additional_details]" || "Clickme!"
 
-/datum/interaction/get_message(mob/living/user, mob/living/target, list/extra = list())
+/datum/interaction/proc/get_message(mob/living/user, mob/living/target, list/extra = list())
 	if(!user || !target)
 		return "Jimmy Shits opens a bug report."
+	var/list/messagelist = list()
 	switch(user.a_intent)
 		if(INTENT_HELP)
 			messagelist = help_messages
@@ -362,15 +358,16 @@
 				messagelist = help_messages
 	if(!LAZYLEN(messagelist))
 		stack_trace("Hey, you forgot to set any messages for [type] - [description]! It needs to be something!!!")
-		message_list = list("%USER does something, also %TARGET is there.","%USER should open a bug report, also %TARGET is there.")
+		messagelist = list("%USER does something, also %TARGET is there.","%USER should open a bug report, also %TARGET is there.")
 	var/msg = pick(messagelist)
 	if(!msg)
 		return "%USER opens a bug report."
 	return format_message(user, target, msg, extra)
 
-/datum/interaction/get_span(mob/living/user, mob/living/target)
+/datum/interaction/proc/get_span(mob/living/user, mob/living/target)
 	if(!user || !target)
 		return "hypnophrase"
+	var/span
 	switch(user.a_intent)
 		if(INTENT_HELP)
 			span = help_span
@@ -427,7 +424,7 @@
 	if(!user || !target)
 		return "Jimmy Shits opens a bug report."
 	if(!message)
-		return "%USER opens a bug report about a null message in [decription]."
+		return "%USER opens a bug report about a null message in [description]."
 	// uncomment if performance tanks when people bump uglies
 	// var/cachekey = "[user.ckey]-[target.ckey]-[copytext(message(0, 10))]"
 	// if(LAZYACCESS(formatted_cache, cachekey))

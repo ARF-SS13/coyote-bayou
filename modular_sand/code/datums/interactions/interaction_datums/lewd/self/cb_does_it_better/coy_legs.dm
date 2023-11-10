@@ -9,284 +9,112 @@
 ////////////////////
 //caress Leg 8A1///
 ////////////////////
-//Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/caress_leg
-	description = "Partner/Legs - Lovingly caress their leg."
+	description = "Partner/Head - Caress their leg."
 	require_user_hands = TRUE
-	simple_sounds = null
-	max_distance = 1
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently caresses one of XT_NAME's legs.",
+	)
+	disarm_messages = list(
+		"XU_NAME softly caresses one of XT_NAME's legs.",
+	)
+	grab_messages = list(
+		"XU_NAME firmly caresses one of XT_NAME's legs.",
+	)
+	harm_messages = list(
+		"XU_NAME needily caresses one of XT_NAME's legs.",
+	)
 
-////////////
-//VERBOSITY//
-////////////
-//Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/caress_leg/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
-									//Pronoun storage//
-//You can comment these back in to use if you need to use them. This is the full list.
-//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
-
-			//To uncomment these vars just remove the first / on the far left!
-	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
-	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
-	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
-	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
-	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
-	
-	//A big example of this combined together follows.
-	// "[t_they] [t_have] [t_their] work cut out for [t_them]."
-	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
-	//It does require a bit of forethought, but there you have it.
-	var/message
-
-	//Message block A
-	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently caresses one of <b>[partner]'s</b> legs.",
-			)]"
-
-			//Message block B
-	//disarm intent should be used for being particularly playful with the interaction
-	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick(
-			"softly caresses one of <b>[partner]'s</b> legs.",
-			)]"
-	
-	//Message block C
-	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-	else if(user.a_intent == INTENT_GRAB)
-		message = "[pick(
-			"firmly caresses one of <b>[partner]'s</b> legs.",
-			)]"
-
-		//Message block D
-	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
-	if(user.a_intent == INTENT_HARM)
-		message = "[pick(
-			"needily caresses one of <b>[partner]'s</b> legs.",
-			)]"
-
-	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
-	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+	) // frumf, frumf
+	target_lust_mult = 0.5
+	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 ///////CARESS LEG END/////////
 
 
 /////////////////////////
 // Footsie 8A2////////
 ///////////////////////
+/datum/interaction/lewd/partner/giving/play_footsie
+	description = "Partner/Head - Play footsie with them."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently rubs XU_THEIR foot one of XT_NAME's feet.",
+	)
+	disarm_messages = list(
+		"XU_NAME playfully rubs XU_THEIR foot one of XT_NAME's feet.",
+	)
+	grab_messages = list(
+		"XU_NAME possessively rubs XU_THEIR foot one of XT_NAME's feet.",
+	)
+	harm_messages = list(
+		"XU_NAME aggressively rubs XU_THEIR foot one of XT_NAME's feet.",
+	)
 
-//Remember to change this                 VVVV
-/datum/interaction/lewd/partner/mutual/footsie
-	description = "Partner/Legs - Play Footsie With."
-	simple_sounds = null
-	max_distance = 2
-
-////////////
-//VERBOSITY//
-////////////
-//Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/footsie/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
-									//Pronoun storage//
-//You can comment these back in to use if you need to use them. This is the full list.
-//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
-
-			//To uncomment these vars just remove the first / on the far left!
-	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
-	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
-	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
-	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
-	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
-	
-	//A big example of this combined together follows.
-	// "[t_they] [t_have] [t_their] work cut out for [t_them]."
-	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
-	//It does require a bit of forethought, but there you have it.
-	var/message
-	//Message block A
-	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently rubs [t_their] foot one of <b>[partner]'s</b> feet.",
-			)]"
-
-			//Message block B
-	//disarm intent should be used for being particularly playful with the interaction
-	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick(
-			"playfully rubs [t_their] foot one of <b>[partner]'s</b> feet.",
-			)]"
-	
-	//Message block C
-	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-	else if(user.a_intent == INTENT_GRAB)
-		message = "[pick(
-			"possessively rubs [t_their] foot one of <b>[partner]'s</b> feet.",
-			)]"
-
-		//Message block D
-	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
-	if(user.a_intent == INTENT_HARM)
-		message = "[pick(
-			"aggressively rubs [t_their] foot one of <b>[partner]'s</b> feet.",
-			)]"
-
-	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
-	partner.handle_post_sex(lust_amt[user.a_intent]*0.3)
-	user.handle_post_sex(lust_amt[user.a_intent]*0.3)
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg', 
+	) // frumf, frumf
+	target_lust_mult = 0.3
+	user_lust_mult = 0.3
+	lust_go_to = LUST_TARGET | LUST_USER 
 ///////FOOTSIE END/////////
 
 
 ////////////////////
 //Squeeze Leg 8A3///
 ////////////////////
-//Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/squeeze_leg
-	description = "Partner/Legs - Squeeze their leg."
+	description = "Partner/Head - Squeeze their leg."
 	require_user_hands = TRUE
-	simple_sounds = null
-	max_distance = 1
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently sqeuezes one of XT_NAME's legs.",
+	)
+	disarm_messages = list(
+		"XU_NAME softly sqeuezes one of XT_NAME's legs.",
+	)
+	grab_messages = list(
+		"XU_NAME firmly sqeuezes one of XT_NAME's legs.",
+	)
+	harm_messages = list(
+		"XU_NAME needily sqeuezes one of XT_NAME's legs.",
+	)
 
-////////////
-//VERBOSITY//
-////////////
-//Remember to change this                   VVVV
-/datum/interaction/lewd/partner/giving/squeeze_leg/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
-									//Pronoun storage//
-//You can comment these back in to use if you need to use them. This is the full list.
-//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
-
-			//To uncomment these vars just remove the first / on the far left!
-	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
-	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
-	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
-	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
-	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
-	
-	//A big example of this combined together follows.
-	// "[t_they] [t_have] [t_their] work cut out for [t_them]."
-	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
-	//It does require a bit of forethought, but there you have it.
-	var/message
-
-	//Message block A
-	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently sqeuezes one of <b>[partner]'s</b> legs.",
-			)]"
-
-			//Message block B
-	//disarm intent should be used for being particularly playful with the interaction
-	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick(
-			"softly sqeuezes one of <b>[partner]'s</b> legs.",
-			)]"
-	
-	//Message block C
-	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-	else if(user.a_intent == INTENT_GRAB)
-		message = "[pick(
-			"firmly sqeuezes one of <b>[partner]'s</b> legs.",
-			)]"
-
-		//Message block D
-	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
-	if(user.a_intent == INTENT_HARM)
-		message = "[pick(
-			"needily sqeuezes one of <b>[partner]'s</b> legs.",
-			)]"
-
-	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
-	partner.handle_post_sex(lust_amt[user.a_intent]*0.5) //You can put math before the parenthesis to adjust how much lust you want to give. ie *2), or /2) for twice or half as much.
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg', 
+	) // frumf, frumf
+	target_lust_mult = 0.5
+	lust_go_to = LUST_TARGET 
 ///////SQUEEZE LEG END/////////
 
 /////////////////////////
 // Spread Legs 8A4////////
 ///////////////////////
+/datum/interaction/lewd/partner/giving/spread_legs
+	description = "Partner/Head - Spread their legs."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently spreads XT_NAME's legs, gaining access to their lap.",
+	)
+	disarm_messages = list(
+		"XU_NAME playfully spreads XT_NAME's legs, gaining access to their lap.",
+	)
+	grab_messages = list(
+		"XU_NAME firmly spreads XT_NAME's legs, gaining access to their lap.",
+	)
+	harm_messages = list(
+		"XU_NAME aggressively spreads XT_NAME's legs, gaining access to their lap.",
+	)
 
-//Remember to change this                 VVVV
-/datum/interaction/lewd/partner/mutual/spread_legs
-	description = "Partner/Legs - Spread their legs."
-	simple_sounds = null
-	max_distance = 2
-
-////////////
-//VERBOSITY//
-////////////
-//Remember to change this                   VVVV
-/datum/interaction/lewd/partner/mutual/spread_legs/interaction_message(mob/living/user, mob/living/partner, show_message) //The main interaction system, this populates the information in the tgui window.
-									//Pronoun storage//
-//You can comment these back in to use if you need to use them. This is the full list.
-//Uses the 'temp_gender' system to determine if he or she, or they, should be used. Defined by characters GENDER, not body model.
-
-			//To uncomment these vars just remove the first / on the far left!
-	//var/t_they = user.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	//var/t_their = user.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/t_them = user.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
-	//var/t_have = user.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
-	//var/t_are = user.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
-	//var/t_were = user.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
-	//var/t_do = user.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
-	
-		//To uncomment these vars just remove the first / on the far left!
-	//var/p_they = partner.p_they() 	//example 'They shake their butt', if you use '[user.p_they] shake their butt' the code will print to chat 'He/she/they/it shake their butt.' Not the best example, but hopefully you get the idea.
-	//var/p_their = partner.p_their() 	//example 'They shake [user.p_their] butt.' becaomes 'They shake his/her/their butt.'
-	//var/p_them = partner.p_them()	 //example 'Them over there' becomes 'Her/him/them over there', probably not the most useful, but who knows.
-	//var/p_have = partner.p_have() 	// If gender is neuter then this sets 'has' to 'have'.  So you can have 'he/she/them has/have shaken his/her/their butt.'
-	//var/p_are = partner.p_are() 		// If gender is neuter then this sets is to are. 'He/she/them is/are cooking eggs.'
-	//var/p_were = partner.p_were()	// If gender is neuter then this sets was to were. 'He/she/them was/were cooking eggs.'
-	//var/p_do = partner.p_do() 		// If gender is neuter then this sets do to does.  'He/she/they/it do/does not know'
-
-	//A big example of this combined together follows.
-	// "[t_they] [t_have] [t_their] work cut out for [t_them]."
-	// This can print out as, "He has his work cut out for him." // Or // "She has her work cut out for her." // Or // "They have their work cut out for them."
-	//It does require a bit of forethought, but there you have it.
-	var/message
-	//Message block A
-	//help intent should be gentle, downright even loving and probably the opener for situations
-	if(user.a_intent == INTENT_HELP)	//The USER of the verbs intent, only the pitcher gets to determine how hard they throw.
-		message = "[pick( //The list of emotes it picks from, preferably stacked vertically
-			"gently spreads <b>[partner]'s</b> legs, gaining access to their lap.",
-			)]"
-
-			//Message block B
-	//disarm intent should be used for being particularly playful with the interaction
-	else if(user.a_intent == INTENT_DISARM)
-		message = "[pick(
-			"playfully spreads <b>[partner]'s</b> legs, gaining access to their lap.",
-			)]"
-	
-	//Message block C
-	//grab intent should be used for playing rough, without actually being particulalry cruel or aggressive in said action
-	else if(user.a_intent == INTENT_GRAB)
-		message = "[pick(
-			"firmly spreads <b>[partner]'s</b> legs, gaining access to their lap.",
-			)]"
-
-		//Message block D
-	//harm intent should be very aggressive, maybe even causing limited damage, even to ones self.  Probably stamina damage though, to avoid sexual self murder
-	if(user.a_intent == INTENT_HARM)
-		message = "[pick(
-			"aggressively spreads <b>[partner]'s</b> legs, gaining access to their lap.",
-			)]"
-
-	if(show_message) user.visible_message(span_love("<b>\The [user]</b> [message]."), ignored_mobs = user.get_unconsenting())	
-	playlewdinteractionsound(get_turf(user), 'sound/f13effects/sunsetsounds/blush.ogg', 50, 1, -1)
-	//				'sound/effects/kiss.ogg'
-	//				50, 1, -1)
-	partner.handle_post_sex(lust_amt[user.a_intent])
-	user.handle_post_sex(lust_amt[user.a_intent])
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg', 
+	) // frumf, frumf
+	target_lust_mult = 1.0
+	lust_go_to = LUST_TARGET 
 ///////SPREAD LEGS END/////////
 
 

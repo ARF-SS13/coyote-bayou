@@ -294,3 +294,10 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define ICAT_PENIS "Penis"
 #define ICAT_BREASTS "Breasts"
 /// Also here cus they know what they did
+
+#define LEWD_VERB_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_SOUND_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_MESSAGE_COOLDOWN 4 SECONDS
+#define LEWD_VERB_MOAN_COOLDOWN 5 SECONDS
+#define LUST_USER (1<<1)
+#define LUST_TARGET (1<<2)

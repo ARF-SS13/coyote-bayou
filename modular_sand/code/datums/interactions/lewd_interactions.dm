@@ -11,7 +11,7 @@
 	categories = list("All Interactions", "SEXFUCK")
 
 	is_lewd = TRUE
-	public = FALSE
+	is_visible_to_all = FALSE
 
 	write_log_user = "ass-slapped"
 	write_log_target = "was ass-slapped by"
@@ -88,9 +88,11 @@
 							INTENT_HARM = NORMAL_LUST
 							)
 	/// Multiplier to lust
-	var/lust_mult = 1
+	var/user_lust_mult = 1
+	var/target_lust_mult = 1
 	/// round added lust to this
 	var/lust_round = 0.25
+	var/lust_go_to = LUST_USER | LUST_TARGET
 
 	simple_sounds 	= 'sound/f13effects/sunsetsounds/blush.ogg'
 	int_sound_vol 		= 50
@@ -536,17 +538,25 @@
 /datum/interaction/lewd/moan(mob/living/user, mob/living/target, show_message, list/extra = list())
 	if(!user?.client || !target?.client)
 		return
+	if(!COOLDOWN_FINISHED(user, interaction_moan_cooldown) && !COOLDOWN_FINISHED(target, interaction_moan_cooldown))
+		return // nobody can moan yet
 	var/list/moanerz = list(user)
 	if(user != target)
 		moanerz += target
 	for(var/mob/living/mouns in moanerz) // moans (u mone too)
-		var/chance2moan = ((mouns.get_lust() / mouns.get_lust_tolerance()) * 5)
+		var/chance2moan = ((mouns.get_lust() / mouns.get_lust_max()) * 5)
 		if(prob(chance2moan))
+			if(!COOLDOWN_FINISHED(mouns, interaction_moan_cooldown))
+				continue
+			COOLDOWN_START(mouns, interaction_moan_cooldown, LEWD_VERB_MOAN_COOLDOWN)
 			var/moan = pick(moans)
 			var/mob/the_other_guy = mouns == user ? target : user
 			moan = format_message(mouns, the_other_guy, moan)
-			if(public) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
-				mouns.visible_message(moan)
+			if(is_visible_to_all) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
+				if(is_lewd) // we lewdin
+					mouns.visible_message(moan, pref_check = NOTMERP_LEWD_SOUNDS) // i guss????
+				else
+					mouns.visible_message(moan)
 				return TRUE
 			to_chat(mouns, moan)
 			if(is_self_action)
@@ -564,10 +574,11 @@
 /datum/interaction/lewd/adjust_lust(mob/living/user, mob/living/target, show_message, list/extra = list())
 	if(!user?.client || !target?.client)
 		return
-	var/lustmnt = ceil(LAZYACCESS(user, lust_amt[user.a_intent]) * lust_mult, lust_round)
-	user.handle_post_sex(lustmnt)
+	var/user_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * user_lust_mult, lust_round)
+	user.handle_post_sex(user_lustmnt)
 	if(user != target)
-		target.handle_post_sex(lustmnt)
+		var/target_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * target_lust_mult, lust_round)
+		target.handle_post_sex(target_lustmnt)
 	return TRUE
 
 /datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)

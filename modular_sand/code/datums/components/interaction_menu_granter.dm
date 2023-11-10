@@ -142,16 +142,16 @@
 	.["CanCum"] = self.ready_to_cum || FALSE // I AM NOT READY!!!!!!!!!!!!!
 	.["MTTC"] = mean_time_to_cum || 2 MINUTES // I will last 2 minutes, no more, no lest
 	.["MyLust"] = self.get_lust() || 0
-	.["MyMaxLust"] = self.get_lust_tolerance() || 0
+	.["MyMaxLust"] = self.get_lust_max() || 0
 	if(target != self && target.client)
 		// .["TheirCKEY"] = target.ckey || "Nobody"
 		// .["theirAttributes"] = target.list_interaction_attributes(self) || list()
 		if(HAS_TRAIT(user, TRAIT_IN_HEAT))
 			.["TheirLust"] = target.get_lust() || 0
-			.["TheirMaxLust"] = target.get_lust_tolerance() || 0
+			.["TheirMaxLust"] = target.get_lust_max() || 0
 		else
 			.["TheirLust"] = round(target.get_lust(), 25) || 0
-			.["TheirMaxLust"] = round(target.get_lust_tolerance(), 25) || 0
+			.["TheirMaxLust"] = round(target.get_lust_max(), 25) || 0
 
 
 	var/datum/preferences/prefs = self?.client.prefs
@@ -541,6 +541,16 @@
 	if(LAZYLEN(beep))
 		ret += list(beep)
 	return ret
+
+/mob/living/verb/move_to_top()
+	set name = "Interact with"
+	set category = "Private"
+	set src in oview(1)
+
+	if(!client || !ckey)
+		to_chat(usr, span_warning("You can't interact with them!"))
+		return
+	SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT, usr)
 
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD

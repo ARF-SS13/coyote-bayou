@@ -30,7 +30,10 @@ SUBSYSTEM_DEF(interactions)
 	QDEL_NULL_LIST(interactions)
 	interactions = list()
 	for(var/itype in subtypesof(/datum/interaction))
-		var/datum/interaction/I = new itype()
+		var/datum/interaction/I = itype
+		if(initial(I.description) == "PLSNOINIT")
+			continue
+		I = new itype()
 		interactions["[itype]"] = I
 		all_categories |= I.categories
 		interactions_tgui += list(I.format_for_tgui())
@@ -230,12 +233,12 @@ SUBSYSTEM_DEF(interactions)
 /datum/controller/subsystem/interactions/proc/can_squorch(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
 	if(!istype(squisher) || !squisher.ckey || !istype(splut))
 		return FALSE
-	if(!splut.has_sound())
+	if(!LAZYLEN(splut.help_sounds))
 		return TRUE // You really need to know 
-	if(!LAZYACCESS(splorch_cooldowns, squisher.ckey))
+	if(!LAZYACCESS(squorch_cooldowns, squisher.ckey))
 		set_cooldown_for_squorch(squisher)
 		return TRUE // SQUISHERS ARE REALLY COOL
-	if(world.time > LAZYACCESS(splorch_cooldowns, squisher.ckey))
+	if(world.time > LAZYACCESS(squorch_cooldowns, squisher.ckey))
 		if(do_cooldown)
 			set_cooldown_for_squorch(squisher)
 		return TRUE // SQUISHERS ARE SO MUCH FUN
@@ -244,7 +247,7 @@ SUBSYSTEM_DEF(interactions)
 /datum/controller/subsystem/interactions/proc/set_cooldown_for_squorch(mob/living/squisher)
 	if(!istype(squisher) || !squisher.ckey)
 		return FALSE
-	LAZYSET(splorch_cooldowns, squisher.ckey, world.time + splorch_cd)
+	LAZYSET(squorch_cooldowns, squisher.ckey, world.time + splorch_cd)
 	return TRUE
 
 /// gets everyone who creature consents to, and everyone who they consent to, and so on
@@ -265,7 +268,7 @@ SUBSYSTEM_DEF(interactions)
 		/// runs through the master consent list again
 		for(var/keyname in consents)
 			var/list/whowho = splittext(keyname, "!")
-			if(LAZYLEN(whowho) = 2)
+			if(LAZYLEN(whowho) != 2)
 				continue
 			if(!(whowho[2] in consent_chain))
 				keys_to_check |= whowho[2]
