@@ -146,6 +146,8 @@
 #define CAMERA_STATIC_PLANE 200
 #define CAMERA_STATIC_LAYER 19
 
+/// Plane for balloon text (text that fades up)
+#define BALLOON_CHAT_PLANE 251
 
 ///--------------- FULLSCREEN IMAGES ------------
 
