@@ -536,3 +536,84 @@
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
+
+////////////////////////
+//knottease them 6A19///
+////////////////////////\
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/giving/knottease_them
+	description = "Partner/Crotch - Tease their hole with your knot."
+	require_user_hands = TRUE
+	max_distance = 1
+	help_messages = list(
+		"XU_NAME gently presses XU_THEIR knot against whatever hole on XT_NAME that they've penetrated."
+	)
+	disarm_messages = list(
+		"XU_NAME teases XU_THEIR knot against whatever hole on XT_NAME that they've penetrated. Putting just a bit of pressure on it."
+	)
+	grab_messages = list(
+		"XU_NAME smushes XU_THEIR knot against whatever hole on XT_NAME that they've penetrated. Not quite slipping it in."
+	)
+	harm_messages = list(
+		"XU_NAME slides XU_THEIR knot into whatever hole on XT_NAME that they've penetrated.  Holding it for just a moment before pulling it out."
+	)
+
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg'
+	) // frumf, frumf
+	user_lust_mult = 1.1
+	target_lust_mult = 1.1
+
+///////////////////
+//knot them 6A19///
+///////////////////
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/giving/knot_them
+	description = "Partner/Crotch - Bury your knot in them."
+	require_user_hands = TRUE
+	max_distance = 1
+	help_messages = list(
+		"XU_NAME gently presses XU_THEIR knot against into whatever hole on XT_NAME that they've penetrated."
+	)
+	disarm_messages = list(
+		"XU_NAME softly presses XU_THEIR knot deeper into whatever hole on XT_NAME that they've penetrated."
+	)
+	grab_messages = list(
+		"XU_NAME smushes XU_THEIR knot down hard into whatever hole on XT_NAME that they've penetrated."
+	)
+	harm_messages = list(
+		"XU_NAME churns XT_NAME's insides up with XU_THEIR buried knot."
+	)
+
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg'
+	) // frumf, frumf
+	user_lust_mult = 1.1
+	target_lust_mult = 1.1
+
+////////////////////////////
+//force their knot in 6A19///
+////////////////////////////
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/giving/force_knot
+	description = "Partner/Crotch - Bury their knot in you."
+	require_user_hands = TRUE
+	max_distance = 1
+	help_messages = list(
+		"XU_NAME gently forces XT_NAME's knot into whatever hole they've been penetrated in."
+	)
+	disarm_messages = list(
+		"XU_NAME softly presses XT_NAME's knot deeper into whatever hole on themselves that's been penetrated."
+	)
+	grab_messages = list(
+		"XU_NAME smushes XT_NAME's knot down hard into whatever hole they have that's being penetrated."
+	)
+	harm_messages = list(
+		"XU_NAME downright buries XT_NAME's knot into whatever orifice that's being fucked."
+	)
+
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg'
+	) // frumf, frumf
+	user_lust_mult = 1.1
+	target_lust_mult = 1.1
