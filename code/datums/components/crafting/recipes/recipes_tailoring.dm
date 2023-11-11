@@ -35,6 +35,51 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+//-->Taur saddles
+/datum/crafting_recipe/taursaddle
+	name = "Taur Saddle"
+	result = /obj/item/clothing/suit/armor/taursaddle
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/weaponcrafting/string = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/taursaddle_light
+	name = "Light Armored Taur Saddle"
+	result = /obj/item/clothing/suit/armor/taursaddle/light
+	reqs = list(/obj/item/clothing/suit/armor/taursaddle = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/taursaddle_medium
+	name = "Medium Armored Taur Saddle"
+	result = /obj/item/clothing/suit/armor/taursaddle/medium
+	reqs = list(/obj/item/clothing/suit/armor/taursaddle = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 2,)
+	tools = list(TOOL_FORGE)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/taursaddle_heavy
+	name = "Heavy Armored Taur Saddle"
+	result = /obj/item/clothing/suit/armor/taursaddle/heavy
+	reqs = list(/obj/item/clothing/suit/armor/taursaddle = 1,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/sheet/metal = 10,)
+	tools = list(TOOL_FORGE)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+//<--end of taur saddles
+
 /*
 /datum/crafting_recipe/armor_plate_deathclaw
 	name = "Armor Plate"

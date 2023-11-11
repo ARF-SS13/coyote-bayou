@@ -525,6 +525,13 @@
 	build_path = /obj/item/ammo_box/magazine/d12g/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/shotgunmagazines
+	name = "empty shotgun magazine (12g)"
+	id = "saigamagazines"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/saiga
+	category = list("initial", "Intermediate Magazines")
+
 /datum/design/ammolathe/m44m
 	name = "empty handgun magazine (.44 magnum)"
 	id = "m44m"
@@ -537,6 +544,21 @@
 	id = "m127mm"
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/magazine/m14mm/empty
+	category = list("initial", "Intermediate Magazines")
+
+
+/datum/design/ammolathe/m14mmcustommagazine
+	name = "empty P-36 magazine (14mm)"
+	id = "14mmcustom"
+	materials = list(/datum/material/iron = 6000)
+	build_path = /obj/item/ammo_box/magazine/m14mmcustom/empty
+	category = list("initial", "Basic Magazines")
+
+/datum/design/ammolathe/m5mmpistol
+	name = "empty handgun magazine (5mm)"
+	id = "m5mmcustom"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m5mmcustom/empty
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/smg14

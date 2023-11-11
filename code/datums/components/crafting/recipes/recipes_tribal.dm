@@ -44,27 +44,6 @@
 				/obj/item/weaponcrafting/string = 1,
 				)
 
-/datum/crafting_recipe/tribalwar/lightxbow
-	name = "Light Crossbow"
-	result = /obj/item/gun/ballistic/bow/lightxbow
-	time = 120
-	reqs = list(/obj/item/stack/crafting/metalparts = 5, //more spendy but an easy step up
-				/obj/item/stack/rods = 1,
-				/obj/item/stack/sheet/mineral/wood = 15,
-				/obj/item/weaponcrafting/string = 1
-				)
-	tools = list(TOOL_WORKBENCH)
-
-/datum/crafting_recipe/tribalwar/recurvebow
-	name = "recurve bow"
-	result = /obj/item/gun/ballistic/bow/recurvebow
-	time = 120
-	reqs = list(/obj/item/stack/sheet/leather = 5, //more spendy but an easy step up
-				/obj/item/stack/sheet/mineral/wood = 15,
-				/obj/item/weaponcrafting/string = 2
-				)
-	tools = list(TOOL_WORKBENCH)
-
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
 	result = /obj/item/melee/onehanded/machete/training

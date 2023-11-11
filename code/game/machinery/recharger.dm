@@ -71,9 +71,12 @@
 		if(charging)
 			to_chat(user, span_notice("Remove the charging item first!"))
 			return
+/*
+// Till FIAT Power is fixed, no movin these around willy nilly. Put some effort into it and work for the milage of your 'non battery replacable' firearms. You can still full dissasemble after all
 		setAnchored(!anchored)
 		power_change()
-		to_chat(user, span_notice("You [anchored ? "attached" : "detached"] [src]."))
+*/
+		to_chat(user, span_notice("[src] seems to be stuck in place, it will need further disassembly to move."))
 		G.play_tool_sound(src)
 		return
 

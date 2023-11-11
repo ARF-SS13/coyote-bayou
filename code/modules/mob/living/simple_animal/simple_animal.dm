@@ -488,7 +488,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(health <= 0)
 			death()
 		else
-			set_stat(CONSCIOUS)
+			if(IsSleeping())
+				set_stat(UNCONSCIOUS)
+			else
+				set_stat(CONSCIOUS)
 	med_hud_set_status()
 
 
@@ -633,7 +636,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/atom/Tsec = drop_location()
 		for(var/path in butcher)
 			for(var/i in 1 to butcher[path])
-				new path(Tsec)
+				if(prob(25))
+					new path(Tsec)
 	..()
 
 /mob/living/simple_animal/gib_animation()
@@ -861,7 +865,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 
 	see_invisible = initial(see_invisible)
-	see_in_dark = initial(see_in_dark)
+	if(HAS_TRAIT(src, TRAIT_NIGHT_VISION_GREATER))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE_GREATER, see_in_dark)
+	else if(HAS_TRAIT(src, TRAIT_NIGHT_VISION))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE, see_in_dark)
+	else
+		see_in_dark = initial(see_in_dark)
+		lighting_alpha = initial(lighting_alpha)
 	sight = initial(sight)
 
 	if(client.eye != src)

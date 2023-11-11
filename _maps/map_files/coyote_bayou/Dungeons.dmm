@@ -4908,7 +4908,6 @@
 /area/f13/brotherhood/leisure)
 "crj" = (
 /obj/effect/decal/waste,
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
@@ -17709,7 +17708,6 @@
 /area/f13/building)
 "icz" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
 /obj/item/reagent_containers/dropper,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
@@ -19363,12 +19361,6 @@
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/grass,
 /area/f13/underground/cave/vault/fourfivefour)
-"iSI" = (
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
-/area/f13/bunker)
 "iSJ" = (
 /obj/item/statuebust,
 /obj/structure/cable{
@@ -26628,13 +26620,6 @@
 /obj/effect/gluttony,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
-"mnu" = (
-/obj/structure/spider/stickyweb,
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
 "mnx" = (
 /obj/machinery/door/poddoor/shutters{
 	id = 99;
@@ -39635,15 +39620,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,
 /area/f13/enclave)
-"saK" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
 "saL" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
@@ -44245,7 +44221,6 @@
 /area/f13/brotherhood/rnd)
 "uhJ" = (
 /obj/effect/decal/waste,
-/obj/item/reagent_containers/glass/bottle/FEV_solution,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "uhM" = (
@@ -97842,7 +97817,7 @@ whv
 whv
 whv
 brB
-saK
+sVf
 pHy
 nPM
 bRK
@@ -101709,7 +101684,7 @@ whv
 whv
 whv
 ctX
-iSI
+msl
 beD
 whv
 whv
@@ -102742,7 +102717,7 @@ whv
 whv
 whv
 whv
-mnu
+pHy
 ctX
 pHy
 pxD

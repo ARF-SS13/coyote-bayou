@@ -366,3 +366,9 @@
 	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
 	icon_state = "teppi"
 	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/sylveon
+	name = "sylveon"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "sylveon"
+	matrixed_sections = MATRIX_ALL

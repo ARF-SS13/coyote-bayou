@@ -25,9 +25,6 @@
 	if(stat != DEAD)
 		handle_liver()
 
-	if(stat != DEAD)
-		handle_healreservoir()
-
 /mob/living/carbon/PhysicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
@@ -745,17 +742,3 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 
 	heart.beating = !status
-
-////////////////////////////////
-//RESERVOIR FOR HEALING QUIRKS//
-////////////////////////////////
-
-/mob/living/carbon/proc/handle_healreservoir()
-	var/heal_max = 5
-	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
-		heal_max = 25
-	if(heal_reservoir < heal_max)
-		if(src.reagents.has_reagent(/datum/reagent/water))
-			heal_reservoir += 0.5
-		else
-			heal_reservoir += 0.25

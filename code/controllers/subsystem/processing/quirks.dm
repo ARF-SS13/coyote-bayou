@@ -102,6 +102,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		this_quirk[QUIRK_DESC] = "[Q2.desc]"
 		this_quirk[QUIRK_MECHANICS] = "[Q2.mechanics]"
 		this_quirk[QUIRK_CONFLICTS] = Q2.get_conflicts()
+		this_quirk[QUIRK_HUMANONLY] = "[Q2.human_only ? "👨 " : "👨🐺 "]"
 		if(debug_categories)
 			this_quirk[QUIRK_CATEGORY] = "[LAZYACCESS(debug_cats, debug_index)]"
 			all_categories |= "[LAZYACCESS(debug_cats, debug_index)]"

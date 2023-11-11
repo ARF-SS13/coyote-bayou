@@ -70,7 +70,12 @@
 /datum/gear/mask/gasmask
 	name= "gas mask"
 	path = /obj/item/clothing/mask/gas
-	
+
+/datum/gear/mask/gasmask
+	name = "voice changing mask"
+	path = /obj/item/clothing/mask/chameleon
+	cost = 1
+
 /// Bandanas ///
 
 /datum/gear/mask/bandana/
@@ -142,4 +147,15 @@
 /datum/gear/mask/sexy_clown
 	name = "sexy clown gas mask"
 	path = /obj/item/clothing/mask/gas/sexyclown
+
+/datum/gear/mask/kitsune
+	name = "white kitsune mask"
+	path = /obj/item/clothing/mask/kitsune
+
+/datum/gear/mask/kitsune/black
+	name = "black kitsune mask"
+	path = /obj/item/clothing/mask/kitsune/black
+
+
+
 

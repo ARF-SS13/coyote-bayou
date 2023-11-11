@@ -1260,7 +1260,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/c10mm(src)
 
 /obj/item/storage/box/gun/pistol/m3socom
-	name = "M3 Socom pistol case"
+	name = "M3 Special pistol case"
 
 /obj/item/storage/box/gun/pistol/m3socom/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom (src)
@@ -1336,7 +1336,6 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/pistol/cyberpunks/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/ticon(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
 
@@ -1582,25 +1581,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/bow/shortbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
-/obj/item/storage/box/gun/bow/handxbow
-	name = "hand crossbow case"
+/obj/item/storage/box/gun/bow/longbow
+	name = "longbow case"
 
-/obj/item/storage/box/gun/bow/handxbow/PopulateContents()
-	new /obj/item/gun/ballistic/bow/handxbow(src)
+/obj/item/storage/box/gun/bow/longbow/PopulateContents()
+	new /obj/item/gun/ballistic/bow/longbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-
-/obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
-	new /obj/item/gun/ballistic/bow/shortbow/yumi(src)
-	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-
-/*dunno if we should have roundstart crossbow simply cause we want a lil more progression
-/obj/item/storage/box/gun/bow/crossbow
-	name = "crossbow case"
-
-/obj/item/storage/box/gun/bow/crossbow/PopulateContents()
-	new /obj/item/gun/ballistic/bow/crossbow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
-*/
 
 /obj/item/storage/box/gun/tribal/warclub
 	name = "war club case"
@@ -2709,25 +2695,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
 
-/datum/loadout_box/shortbow/yumi
-	entry_tag = "Yumi Bow"
+/datum/loadout_box/longbow
+	entry_tag = "Longbow"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
-
-/datum/loadout_box/handxbow
-	entry_tag = "Hand crossbow"
-	entry_flags = LOADOUT_FLAG_TRIBAL
-	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/handxbow
-
-/*
-/datum/loadout_box/crossbow
-	entry_tag = "Crossbow"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/crossbow
-*/
+	spawn_thing = /obj/item/storage/box/gun/bow/longbow
 
 /// Preacher Stuff
 
@@ -2926,13 +2898,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_tag = "Sling"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 
 /datum/loadout_box/slingstaff
 	entry_tag = "Slingstaff"
 	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_HOBO
-	spawn_thing = /obj/item/gun/ballistic/revolver/sling/staff
+	spawn_thing = /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 
 /datum/loadout_box/riotweathered
 	entry_tag = "Weathered Riot Shield"
@@ -2961,7 +2933,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/bonewands
 
 /obj/item/storage/box/magic/bonewands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/bonewands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/magicmissile(src)
@@ -2974,11 +2946,23 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/rodwands
 
 /obj/item/storage/box/magic/rodwands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/rodwands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+
+/datum/loadout_box/healstaff
+	entry_tag = "Staff of Lesser Healing"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/storage/box/magic/healstaff
+
+/obj/item/storage/box/magic/healstaff
+	name = "staff storage case"
+
+/obj/item/storage/box/magic/healstaff/PopulateContents()
+	new /obj/item/gun/magic/staff/healing/triheal(src)
 
 // Putting this down here because it refuses to work. Needs to be fixed later.
 

@@ -21,6 +21,7 @@
 /datum/status_effect/incapacitating/on_remove()
 	. = ..()
 	owner.update_mobility()
+	owner.update_blindness()
 	if(needs_update_stat || issilicon(owner)) //silicons need stat updates in addition to normal canmove updates
 		owner.update_stat()
 
@@ -72,18 +73,27 @@
 	needs_update_stat = TRUE
 	var/mob/living/carbon/carbon_owner
 	var/mob/living/carbon/human/human_owner
+	var/mob/living/simple_animal/SA_owner
 
-/datum/status_effect/incapacitating/sleeping/on_creation(mob/living/new_owner, updating_canmove)
+/datum/status_effect/incapacitating/sleeping/on_creation(mob/living/new_owner, set_duration, updating_canmove)
 	. = ..()
-	if(.)
-		if(iscarbon(owner)) //to avoid repeated istypes
-			carbon_owner = owner
-		if(ishuman(owner))
-			human_owner = owner
+	if(iscarbon(owner)) //to avoid repeated istypes
+		carbon_owner = owner
+	if(ishuman(owner))
+		human_owner = owner
+	if(isanimal(owner))
+		SA_owner = owner
+		if(!SA_owner.resting)
+			SA_owner.lay_down()
+		SA_owner.eye_blind += 2
+
 
 /datum/status_effect/incapacitating/sleeping/Destroy()
 	carbon_owner = null
 	human_owner = null
+	if(SA_owner)//Automatically stand back up.
+		SA_owner.lay_down()
+	SA_owner = null
 	return ..()
 
 /datum/status_effect/incapacitating/sleeping/tick()
@@ -91,13 +101,17 @@
 		owner.adjustStaminaLoss(-0.5) //reduce stamina loss by 0.5 per tick, 10 per 2 seconds
 	if(human_owner && human_owner.drunkenness)
 		human_owner.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
-	if((carbon_owner.AmountSleeping() <= 40) && carbon_owner && !carbon_owner.dreaming && prob(2))
+	if(carbon_owner && (carbon_owner.AmountSleeping() <= 40) && !carbon_owner.dreaming && prob(2))
 		carbon_owner.dream()
-	if((carbon_owner.AmountSleeping() > 40) && carbon_owner && !carbon_owner.dreaming && prob(0.2))		//for sake of avoiding clutter, you dream less when sleeping longer
+	else if(carbon_owner && (carbon_owner.AmountSleeping() > 40) && !carbon_owner.dreaming && prob(0.2))//for sake of avoiding clutter, you dream less when sleeping longer
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds
 	if(prob((tick_interval+1) * 0.2) && owner.health > owner.crit_threshold)
 		owner.emote("snore")
+	if(SA_owner)
+		if(SA_owner.eye_blind < 2)
+			SA_owner.eye_blind += 1
+		SA_owner.update_blindness()
 
 /atom/movable/screen/alert/status_effect/asleep
 	name = "Asleep"
