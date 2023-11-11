@@ -1,7 +1,6 @@
 /////////////////////
 ///master spawners///
 /////////////////////
-
 /obj/effect/spawner/lootdrop/f13/trash
 	name = "trash loot, found everywhere BUT the trash"
 	delay_spawn = FALSE
@@ -27,6 +26,7 @@
 /obj/effect/spawner/lootdrop/f13/trash/pile
 	name = "trash loot, found ONLY IN the trash"
 	delay_spawn = TRUE
+	fan_out_turfs_range = 1
 
 /obj/effect/spawner/lootdrop/f13/common
 	name = "common loot, found everywhere"
