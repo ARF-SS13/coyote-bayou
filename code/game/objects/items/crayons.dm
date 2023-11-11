@@ -76,7 +76,7 @@
 	var/marking_area_borders = FALSE
 
 /obj/item/toy/crayon/proc/isValidSurface(surface)
-	return istype(surface, /turf/open/floor)
+	return ispaintableturf(surface)
 
 /obj/item/toy/crayon/Initialize()
 	. = ..()
@@ -597,7 +597,7 @@
 	post_noise = FALSE
 
 /obj/item/toy/crayon/spraycan/isValidSurface(surface)
-	return (istype(surface, /turf/open/floor) || istype(surface, /turf/closed/wall))
+	return ispaintableturf(surface)
 
 /obj/item/toy/crayon/spraycan/Initialize()
 	. = ..()
@@ -737,7 +737,7 @@
 	volume_multiplier = 5
 
 /obj/item/toy/crayon/spraycan/lubecan/isValidSurface(surface)
-	return istype(surface, /turf/open/floor)
+	return (isfloorturf(surface) || isindestructiblefloor(surface))
 
 #undef RANDOM_GRAFFITI
 #undef RANDOM_LETTER
