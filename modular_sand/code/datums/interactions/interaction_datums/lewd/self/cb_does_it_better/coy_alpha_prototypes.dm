@@ -76,7 +76,7 @@ Happy MERPING!  ~TK<3
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 
 
-help_messages = list(
+	help_messages = list(
 		"XU_NAME gently presses the tip of their cock to XT_NAME's lips.", 
 	)
 	disarm_messages = list(
