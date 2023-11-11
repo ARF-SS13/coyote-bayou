@@ -10,8 +10,8 @@
 	typing_indicator_enabled = TRUE
 
 	var/last_click_move = 0 // Stores the previous next_move value.
-
-	var/resize = 1 //Badminnery resize
+	/// Badminnery resize
+	var/resize = 1 
 	var/lastattacker = null
 	var/lastattackerckey = null
 

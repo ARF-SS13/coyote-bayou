@@ -231,6 +231,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_ooc = 			null
 	var/image/creature_image = null
 	var/creature_profilepic = null
+	var/creature_body_size = 1
+	var/creature_fuzzy = FALSE
 
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
@@ -560,6 +562,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
 			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			/*
+			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
+				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
+			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+			*/
 			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
 			if(length(creature_flavor_text) <= 40)
 				if(!length(creature_flavor_text))
@@ -3366,6 +3373,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_body_width)
 						new_body_width = clamp(new_body_width * 0.01, min, max)
 						features["body_width"] = new_body_width
+
+				if("creature_body_size")
+					var/min = CONFIG_GET(number/body_size_min)
+					var/max = CONFIG_GET(number/body_size_max)
+					var/danger = CONFIG_GET(number/threshold_body_size_slowdown)
+					var/new_body_size = input(user, "Choose your desired sprite size: ([min*100]%-[max*100]%)\nWarning: This may make your character look distorted[danger > min ? "! Additionally, a proportional movement speed penalty may be applied to characters smaller than [danger*100]%." : "!"]", "Character Preference", creature_body_size*100) as num|null
+					if (new_body_size)
+						new_body_size = clamp(new_body_size * 0.01, min, max)
+						creature_body_size = new_body_size
+
+				if("creature_toggle_fuzzy")
+					creature_fuzzy = !creature_fuzzy
 
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues

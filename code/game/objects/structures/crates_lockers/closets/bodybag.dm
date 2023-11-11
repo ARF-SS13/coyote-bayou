@@ -59,7 +59,7 @@
 /obj/structure/closet/body_bag/MouseDrop(over_object, src_location, over_location)
 	. = ..()
 	if(over_object == usr && Adjacent(usr) && (in_range(src, usr) || usr.contents.Find(src)))
-		if(!ishuman(usr))
+		if(!isliving(usr))
 			return 0
 		if(opened)
 			return 0
@@ -83,7 +83,7 @@
 /obj/structure/closet/body_bag/bluespace/MouseDrop(over_object, src_location, over_location)
 	. = ..()
 	if(over_object == usr && Adjacent(usr) && (in_range(src, usr) || usr.contents.Find(src)))
-		if(!ishuman(usr))
+		if(!isliving(usr))
 			return 0
 		if(opened)
 			return 0

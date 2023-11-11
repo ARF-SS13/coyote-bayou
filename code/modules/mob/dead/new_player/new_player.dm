@@ -652,6 +652,15 @@
 		C.oocnotes = P.creature_ooc
 		C.profilePicture = P.creature_profilepic
 		C.verbose_species = "[P.creature_species]"
+		C.special_s = P.special_s
+		C.special_p = P.special_p
+		C.special_e = P.special_e
+		C.special_c = P.special_c
+		C.special_i = P.special_i
+		C.special_a = P.special_a
+		C.special_l = P.special_l
+		//C.fuzzy = P.creature_fuzzy
+		//C.resize = P.creature_body_size
 		//Disable their mob's AI so they don't wander after the player ghosts out of them
 		C.AIStatus = AI_OFF
 		C.wander = FALSE
