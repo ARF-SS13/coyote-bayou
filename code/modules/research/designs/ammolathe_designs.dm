@@ -525,6 +525,13 @@
 	build_path = /obj/item/ammo_box/magazine/d12g/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/shotgunmagazines
+	name = "empty shotgun magazine (12g)"
+	id = "saigamagazines"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/saiga
+	category = list("initial", "Intermediate Magazines")
+
 /datum/design/ammolathe/m44m
 	name = "empty handgun magazine (.44 magnum)"
 	id = "m44m"

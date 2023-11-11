@@ -550,6 +550,7 @@
 #define QUIRK_MECHANICS "Qmechanics"
 #define QUIRK_CONFLICTS "Qconflicts"
 #define QUIRK_CATEGORY "Qcategory"
+#define QUIRK_HUMANONLY "Qhumanonly"
 
 #define QUIRK_CAT_DEFAULT "Misc"
 

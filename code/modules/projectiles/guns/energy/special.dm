@@ -124,6 +124,20 @@
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
+/obj/item/gun/energy/kinetic_accelerator/crossbow/kisser
+	name = "smoocher"
+	desc = "A pair of lips, perfect for blowing kisses."
+	icon_state = null
+	item_state = "kisser"
+	force = 0
+	force_unwielded = 0
+	force_wielded = 0
+	max_upgrades = 0 // I was sorely tempted to leave this at 1 for the meme.
+	overheat_time = 40 // 4.0 seconds
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/smooch)
+	fire_sound = 'sound/effects/kiss.ogg'
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
 /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 	name = "sling"
 	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."

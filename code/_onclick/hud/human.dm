@@ -374,6 +374,10 @@
 	newbie_hud_button.hud = src
 	infodisplay += newbie_hud_button
 
+	chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
+	chardir_hud_button.hud = src
+	infodisplay += chardir_hud_button
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src

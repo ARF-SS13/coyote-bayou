@@ -1181,3 +1181,91 @@
 	M.set_drugginess(0)
 	M.hallucination += 0
 	..()
+
+/datum/reagent/consumable/ethanol/salt_and_swell
+	name = "Salt and Swell"
+	description = "A bracing sour with an interesting salty taste."
+	boozepwr = 60
+	color = "#b4abd0"
+	taste_description = "salt and spice"
+	glass_icon_state = "salt_and_swell"
+
+/datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar
+	name = "Tiltällen"
+	description = "A lightly fermented yoghurt drink with salt and a light dash of vinegar. Has a distinct sour cheesy flavour."
+	boozepwr = 10
+	color = "#F4EFE2"
+	taste_description = "sour cheesy yoghurt"
+	glass_icon_state = "glass_yellow"
+
+/datum/reagent/consumable/ethanol/tich_toch
+	name = "Tich Toch"
+	description = "A mix of Tiltällen, Töchtaüse Syrup, and vodka. It's not exactly to everyones' tastes."
+	boozepwr = 75
+	color = "#b4abd0"
+	taste_description = "spicy sour cheesy yoghurt"
+	glass_icon_state = "tich_toch"
+
+/datum/reagent/consumable/ethanol/the_juice
+	name = "The Juice"
+	description = "Woah man, this like, feels familiar to you dude."
+	color = "#4c14be"
+	boozepwr = 50
+	taste_description = "like, the future, man"
+	glass_icon_state = "thejuice"
+
+/datum/reagent/consumable/ethanol/the_hat
+	name = "The Hat"
+	description = "A fancy drink, usually served in a man's hat."
+	color = "#b90a5c"
+	boozepwr = 80
+	taste_description = "something perfumy"
+	glass_icon_state = "thehatglass"
+
+/datum/reagent/consumable/ethanol/long_haul //Rum, Curacao, Sugar, dash of bitters, lengthened with soda water
+	name = "Long Haul"
+	description = "A favourite amongst freighter pilots, unscrupulous smugglers, and nerf herders."
+	boozepwr = 35
+	color = "#003153"
+	taste_description = "companionship"
+	glass_icon_state = "long_haul"
+
+/datum/reagent/consumable/ethanol/drunken_espatier
+	name = "Drunken Espatier"
+	description = "Look, if you had to get into a shootout in the cold vacuum of space, you'd want to be drunk too."
+	boozepwr = 65
+	color = "#A68340"
+	taste_description = "sorrow"
+	glass_icon_state = "drunken_espatier"
+
+/datum/reagent/consumable/ethanol/long_john_silver //navy rum, bitters, lemonade
+	name = "Long John Silver"
+	description = "A long drink of navy rum, bitters, and lemonade. Particularly popular aboard the Mothic Fleet as it's light on ration credits and heavy on flavour."
+	boozepwr = 50
+	color = "#c4b35c"
+	taste_description = "rum and spices"
+	glass_icon_state = "long_john_silver"
+
+/datum/reagent/consumable/ethanol/dark_and_stormy //rum and ginger beer- simple and classic
+	name = "Dark and Stormy"
+	description = "A classic drink arriving to thunderous applause." //thank you, thank you, I'll be here forever
+	boozepwr = 50
+	color = "#8c5046"
+	taste_description = "ginger and rum"
+	glass_icon_state = "dark_and_stormy"
+
+/datum/reagent/consumable/ethanol/sea_breeze
+	name = "Sea Breeze"
+	description = "Light and refreshing with a mint and cocoa hit- like mint choc chip ice cream you can drink!"
+	boozepwr = 15
+	color = "#CFFFE5"
+	taste_description = "mint choc chip"
+	glass_icon_state = "sea_breeze"
+
+/datum/reagent/consumable/ethanol/triumphal_arch
+	name = "Triumphal Arch"
+	description = "A drink celebrating the Lizard Empire and its military victories. It's popular at bars on Unification Day."
+	boozepwr = 60
+	color = "#FFD700"
+	taste_description = "victory"
+	glass_icon_state = "triumphal_arch"

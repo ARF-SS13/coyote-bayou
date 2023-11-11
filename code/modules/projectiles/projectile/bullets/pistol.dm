@@ -406,6 +406,7 @@
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "needle"
+	damage_list = list("14" = 5 , "16" = 40, "18" = 20, "20" = 10)
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE
 	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS

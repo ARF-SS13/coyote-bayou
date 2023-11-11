@@ -262,5 +262,23 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_ALL
 
+/datum/sprite_accessory/taur/nightstalker
+	name = "nightstalker"
+	icon_state = "stalker"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/leopard
+	name = "leopard"
+	icon_state = "leopard"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+
+
+
+
 
 

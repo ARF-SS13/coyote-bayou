@@ -1502,11 +1502,3 @@
  */
 /mob/living/carbon/proc/get_biological_state()
 	return BIO_FLESH_BONE
-
-/mob/living/carbon/get_status_tab_items()
-	. = ..()
-	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
-		. += ""
-		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
-
-

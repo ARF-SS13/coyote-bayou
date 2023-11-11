@@ -13,6 +13,11 @@
 	path = /obj/item/clothing/suit/hooded/robes/grey
 	cost = 2
 
+/datum/gear/suit/whitemagerobes
+	name = "White Mage Robes"
+	path = /obj/item/clothing/suit/hooded/robes/whitemage
+	cost = 2
+
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
 	path = /obj/item/clothing/suit/hooded/robes

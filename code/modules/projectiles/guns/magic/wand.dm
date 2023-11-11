@@ -399,7 +399,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 60 SECONDS
+	recharge_rate = 30 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand
