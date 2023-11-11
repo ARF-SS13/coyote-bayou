@@ -404,6 +404,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	)
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
+	human_only = FALSE
 
 /* Removed because it just sucks for RP. ~TK
 /datum/quirk/prosopagnosia
@@ -946,6 +947,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_CHUNKYFINGERS
 	gain_text = span_notice("Your fingers feel... thick.")
 	lose_text = span_notice("Your fingers feel normal again.")
+	human_only = FALSE
 
 /datum/quirk/illiterate
 	name = "Illiterate"
@@ -975,6 +977,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	medical_record_text = "Patient has low capacity for injury."
 	gain_text = "<span class='notice'>You feel like you could break with a single hit."
 	lose_text = "<span class='notice'>You feel more durable."
+	human_only = FALSE
 
 /datum/quirk/flimsy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -996,6 +999,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	medical_record_text = "Patient has abnormally low capacity for injury."
 	gain_text = "<span class='notice'>You feel like you could break with a single hit."
 	lose_text = "<span class='notice'>You feel more durable."
+	human_only = FALSE
 
 /datum/quirk/veryflimsy/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1102,6 +1106,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You feel like you don't really like smacking stuff.")
 	lose_text = span_danger("You feel like slapping the mess out of a gecko.")
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/wimpy
 	name = "Melee - Wimpy"
@@ -1119,6 +1124,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You feel like smacking things is just a waste of time.")
 	lose_text = span_danger("You feel like slapping the mess out of a Deathclaw!")
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/slow
 	name = "Mobility - Wasteland Slug"
@@ -1167,6 +1173,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You feel really... awkward?")
 	lose_text = span_danger("Your composure seems to return to you.")
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/dumb
 	name = "Dumb"
@@ -1181,6 +1188,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You brain just about shuts off, and for the first time in your life you feel truly free.")
 	lose_text = span_danger("Your brain turns back on, and you remember that Taxes are a thing.")
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/primitive
 	name = "Primitive"
@@ -1195,6 +1203,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("yOu reTurN tO MonKE")
 	lose_text = span_danger("I think, there for... I am?")
 	locked = FALSE
+	human_only = FALSE
 
 /datum/quirk/nosleep
 	name = "Can Not Sleep"
@@ -1254,6 +1263,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("All my homies hate machines.")
 	lose_text = span_danger("Maybe industrial society isn't so bad...")
 	locked =  FALSE
+	human_only = FALSE
 
 /datum/quirk/nodrugs
 	name = "Clean Veins"

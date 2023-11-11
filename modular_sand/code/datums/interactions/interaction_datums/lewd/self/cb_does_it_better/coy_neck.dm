@@ -98,7 +98,7 @@
 //Neck Sniff 2A4//
 ///////////////////
 /datum/interaction/lewd/partner/giving/neck_sniff
-	description = "Partner/Head - Sniff their neck."
+	description = "Partner/Neck - Sniff their neck."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(

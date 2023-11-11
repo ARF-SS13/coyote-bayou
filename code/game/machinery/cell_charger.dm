@@ -69,8 +69,8 @@
 			return
 		if(default_deconstruction_crowbar(W))
 			return
-		if(!charging && default_unfasten_wrench(user, W))
-			return
+//		if(!charging && default_unfasten_wrench(user, W))
+//			return
 		return ..()
 
 /obj/machinery/cell_charger/deconstruct()

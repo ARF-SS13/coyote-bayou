@@ -2,7 +2,7 @@
 	name = "arrow"
 	desc = "a simple arrow with a metal head."
 	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "metalarrow"
+	icon_state = "arrow"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
 	caliber = CALIBER_ARROW
 	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT*2)
@@ -12,45 +12,26 @@
 	is_pickable = FALSE
 	sound_properties = CSP_MISC
 
-/obj/item/ammo_casing/caseless/arrow/metal
-	name = "metal arrow"
-	desc = "a simple arrow with a metal head."
-	icon_state = "metalarrow"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/metal
-	caliber = CALIBER_ARROW
-	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT*2)
-	throwforce = 8 //good luck hitting someone with the pointy end of the arrow
-	throw_speed = 3
-	w_class = WEIGHT_CLASS_SMALL //why were arrows normal sized? that's cruel
-	is_pickable = FALSE
-
 /obj/item/ammo_casing/caseless/arrow/bone
 	name = "bone arrow"
-	desc = "an arrow made of bone and sinew."
+	desc = "A primitive arrow with a head made of knapped bone."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bone
-	icon_state = "bonearrow"
-	custom_materials = list(/datum/material/bone = MINERAL_MATERIAL_AMOUNT*2)
-
-/obj/item/ammo_casing/caseless/arrow/titanium
-	name = "titanium arrow"
-	desc = "a durable arrow with a sturdy titanium head."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/titanium
-	icon_state = "titaniumarrow"
-	custom_materials = list(/datum/material/titanium = MINERAL_MATERIAL_AMOUNT*2)
+	icon_state = "bone"
+	custom_materials = list(/datum/material/bone = MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/ammo_casing/caseless/arrow/flint
 	name = "flint arrow"
-	desc = "a primitive arrow with a head made of knapped flint."
+	desc = "A primitive arrow with a head made of knapped flint."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/flint
-	icon_state = "fieldarrow"
-	custom_materials = list(/datum/material/sandstone = MINERAL_MATERIAL_AMOUNT*2)
+	icon_state = "flint"
+	custom_materials = list(/datum/material/sandstone = MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/ammo_casing/caseless/arrow/glass
 	name = "glass arrow"
-	desc = "a primitive arrow with a head made of knapped glass."
+	desc = "A primitive arrow with a head made of knapped glass."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/glass
-	icon_state = "glassarrow"
-	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT*2)
+	icon_state = "glass"
+	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/ammo_casing/caseless/arrow/explosive
 	name = "explosive arrow"
@@ -60,51 +41,41 @@
 	custom_materials = list(/datum/material/blackpowder = MINERAL_MATERIAL_AMOUNT*5)
 	w_class = WEIGHT_CLASS_NORMAL //hefty, and can't carry tons. subject to change?
 
-/obj/item/ammo_casing/caseless/arrow/jagged
-	name = "jagged arrow"
-	desc = "a mean looking arrow made to shed blood and infection. it tends to stay stuck in the target and snap off, so good luck recovering it."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/jagged
-	icon_state = "jaggedarrow"
-	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT*5)
+/obj/item/ammo_casing/caseless/arrow/broadhead
+	name = "broadhead arrow"
+	desc = "An arrow made for creating large wounds, made to cut-up flesh and cause fatal bleeding."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/broadhead
+	icon_state = "broadhead"
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+
+/obj/item/ammo_casing/caseless/arrow/bodkin
+	name = "bodkin arrow"
+	desc = "Armor-piercing arrows."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bodkin
+	icon_state = "bodkin"
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/ammo_casing/caseless/arrow/field
 	name = "field arrow"
-	desc = "A simple arrow with a small, sturdy head."
+	desc = "Used primarily for small game and target practice, the tip is very narrow."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/field
 	icon_state = "fieldarrow"
 	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
 	w_class = WEIGHT_CLASS_TINY //lightweight, thin tip. can stow a lot in a bag
-
-/obj/item/ammo_casing/caseless/arrow/blunt
-	name = "blunt arrow"
-	desc = "an arrow with a wrapped leather tip, made for bruising."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/blunt
-	icon_state = "bluntammo"
-	custom_materials = list(/datum/material/leather = MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/ammo_casing/caseless/arrow/ion
 	name = "ion arrow"
 	desc = "an arrow containing an EMP warhead."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/ion
 	icon_state = "ionarrow"
-	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT*5)
+	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 
-/obj/item/ammo_casing/caseless/arrow/practice
-	name = "practice arrow"
+/obj/item/ammo_casing/caseless/arrow/bludgeon
+	name = "bludgeoning arrow"
 	desc = "a harmless arrow with a padded, fabric tip. for practice, not for annoying people with."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice
-	icon_state = "practicearrow"
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT) //haven't found a cloth material type
-	w_class = WEIGHT_CLASS_TINY //I mean, on the one hand, bulbous padded cloth tip. on the other hand, this arrow literally is a foam dart. let them have some ammo capacity
-
-/obj/item/ammo_casing/caseless/arrow/sticky
-	name = "sticky practice arrow"
-	desc = "a harmless arrow with soft tip made from layers of tape. for annoying people with."
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/practice/sticky
-	icon_state = "stickyarrow"
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT) //no sticky tape material type either. i cri
-	w_class = WEIGHT_CLASS_TINY
-
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bludgeon
+	icon_state = "bludgeon"
+	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT)
 
 /* //FO13 arrows
 /obj/item/ammo_casing/caseless/arrow
@@ -195,10 +166,4 @@
 	icon_state = "arrow_emp"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	projectile_type = /obj/item/projectile/ion/arrow
-
-/obj/item/ammo_casing/caseless/arrow/blunt
-	name = "blunt arrow"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	desc = "An arrow with a sturdy cloth sack at the end of it, meant to incapacitate and knock out instead of kill. How merciful you are, aristocrat!"
-	icon_state = "arrow_stam"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/blunt */
+*/

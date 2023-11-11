@@ -148,7 +148,7 @@
 
 /obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/sturdy(src)
-	new /obj/item/gun/ballistic/bow/recurvebow(src)
+	new /obj/item/gun/ballistic/bow/modern(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
@@ -164,7 +164,7 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
-	new /obj/item/gun/ballistic/automatic/aksmol/aldric(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -215,7 +215,7 @@
 
 /obj/item/storage/box/large/custom_kit/bladeburstninja/PopulateContents()
 	//new /obj/item/gun/ballistic/bow/silver(src)
-	new /obj/item/gun/ballistic/bow/recurvebow(src)
+	new /obj/item/gun/ballistic/bow/modern(src)
 	new /obj/item/clothing/head/helmet/f13/metalmask(src)
 	new /obj/item/clothing/suit/armor/light/leather/leathermk2(src)
 	new /obj/item/clothing/accessory/talisman(src)
@@ -1169,8 +1169,10 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/g11/tox(src)
+	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
+	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
@@ -1184,9 +1186,9 @@
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/smytheguy
-	name = "ARG Research group kit"
+	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
-	ckeywhitelist = list("smytheguy")
+	ckeywhitelist = list("Smytheguy")
 
 /obj/item/storage/box/large/custom_kit/smytheguy/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup(src)
@@ -1212,10 +1214,10 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
-	new /obj/item/ammo_box/needlercapsule(src)
 	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/gun/ballistic/automatic/w2000(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
-	new /obj/item/gun/ballistic/automatic/needlerrifle/tox(src)
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
@@ -1239,8 +1241,8 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00new/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/derringercustom(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/w2000(src)
-	new /obj/item/ammo_box/a308box(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/suit/armor/outfit/warriorcats/customshadow(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 
@@ -1252,6 +1254,15 @@
 	. = ..()
 	var/mob/living/simple_animal/pet/fox/paws/pet_paws = new(src)
 	add_occupant(pet_paws)
+
+/obj/item/pet_carrier/fluffy
+	name = "Fluffy's carrier"
+	desc = "Hey look who it is!"
+
+/obj/item/pet_carrier/fluffy/Initialize()
+	. = ..()
+	var/mob/living/simple_animal/pet/mothroach/tox/pet_fluffy = new(src)
+	add_occupant(pet_fluffy)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"

@@ -600,7 +600,7 @@
 		var/obj/structure/filingcabinet/employment/employmentCabinet = C
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
-	
+
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
 		var/datum/preferences/P = client.prefs
@@ -610,7 +610,7 @@
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
 			return FALSE
-		log_and_message_admins("joined as \an [P.creature_species] and spawned at [spawn_selection].")
+
 		spawning = 1
 		close_spawn_windows()
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
@@ -619,20 +619,22 @@
 		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
-		var/obj/item/storage/backpack/duffelbag/S = new(C)
-		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
 		C.possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 		//Give them some starting items
 		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
+		//Give them a backpack and fill it with the starter kit that everyone gets
+		var/obj/item/storage/backpack/duffelbag/S = new(C)
+		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		if(S)
 			new /obj/item/storage/wallet/stash/low(S)
 			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
 			new /obj/item/flashlight(S)//Give them a flashlight for seeing
 			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
 			new /obj/item/kit_spawner/townie(S)//And a weapon so they can play the game :tm:
+			new /obj/item/kit_spawner/tools(S)//And a toolkit for job stuffs
 			new /obj/item/pda(S)//And a PDA since everyone else spawns with one, too
 			new /obj/item/card/id/selfassign(S)//And an ID card to swipe into the PDA
 		//Assign the mob's information based on the player's client preferences
@@ -643,6 +645,7 @@
 				C.gender = FEMALE
 			else
 				C.gender = PLURAL
+		//Set up their name and what not
 		C.name = P.creature_name
 		C.real_name = P.creature_name
 		C.flavortext = P.creature_flavor_text
@@ -655,7 +658,8 @@
 		C.can_have_ai = FALSE
 		//Set them as a player-character simplemob so examine and such changes to show their character prefs
 		C.player_character = ckey
-		C.grant_all_languages()
+		//Grant them the english language just in case they don't have it.
+		C.grant_language(/datum/language/common)
 		//Prepare their spawnpoint
 		var/list/avail_spawns = list()
 		for(var/SP in GLOB.landmarks_list)
@@ -668,6 +672,10 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
+		//Log their arrival
+		log_and_message_admins("[ADMIN_PP(C)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
+		//Insert the quirks, do it now
+		SSquirks.AssignQuirks(C, C.client, TRUE, FALSE)
 
 /mob/dead/new_player/proc/PreLateChoices()
 	if(client.holder && check_rights(R_STEALTH, 0))

@@ -1579,3 +1579,9 @@
 	set desc = "Switch sharp/fuzzy scaling for current mob."
 	appearance_flags ^= PIXEL_SCALE
 	fuzzy = !fuzzy
+
+/mob/living/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"

@@ -75,3 +75,30 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
 
+/obj/item/ammo_box/magazine/internal/gewehrinternal
+	name = "magazine filled with 5mm."
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 15
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	name = "magazine filled with mauser ammo(308)."
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 10
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/selfloaderinternal //4 because the weird 4+1 mechanic
+	name = "magazine filled with mauser ammo(.30-06)."
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+

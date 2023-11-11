@@ -6,7 +6,6 @@
 #define CHAT_MESSAGE_APPROX_LHEIGHT	11 // Approximate height in pixels of an 'average' line, used for height decay
 #define CHAT_MESSAGE_WIDTH			100 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		200 // characters
-#define WXH_TO_HEIGHT(x)			text2num(copytext((x), findtextEx((x), "x") + 1)) // thanks lummox
 
 /**
  * # Chat Message Overlay

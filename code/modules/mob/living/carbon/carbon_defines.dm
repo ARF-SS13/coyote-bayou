@@ -77,6 +77,3 @@
 
 	/// Timer id of any transformation
 	var/transformation_timer
-
-	//reservoir for healing quirks
-	var/heal_reservoir = 0
