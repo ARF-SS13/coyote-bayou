@@ -2,7 +2,7 @@
 /datum/interaction/lewd
 	// Description can take in %COCK% as a wildcard to get replaced with a cock/strapon accordingly.
 	description = "Partner/Crotch - Slap their ass."
-	help_messages = "USER slaps TARGET right on the ass!"
+	help_messages = "XU_NAME slaps XT_NAME right on the ass!"
 	simple_span = "danger"
 	simple_sounds = 'sound/weapons/slap.ogg'
 	needs_physical_contact = TRUE
