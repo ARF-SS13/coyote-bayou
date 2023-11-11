@@ -38,45 +38,16 @@
 	/// Step 2 (actually 4) - the messages!
 	/// THis is a list of strings that are picked from
 	help_messages = list(
-		"XU_NAME {lightly, gently} {rubs, brushes} XU_THEIR {crotch., lap.}"
-	) // messages in help intent, MUST have something, or at least something in simple_messges
+		"XU_NAME gently rubs at the XU_THEIR own crotch.", 
+	)
 	disarm_messages = list(
-		"XU_NAME {is definitely, certainly} {rubbing, brushing} XU_THEIR {crotch., lap.}",
-		"XU_NAME {rubs, brushes} XU_THEIR {crotch, lap} {a bit briskly., a bit energetically.}"
-	) // if any of these are blank, they will be replaced with the help intent messages
+		"XU_NAME teasingly rubs at the XU_THEIR own crotch.", 
+	)
 	grab_messages = list(
-		"XU_NAME {massages, \
-		caresses, \
-		strokes, \
-		pats, \
-		grazes, \
-		rubs, \
-		fondles, \
-		gently touches, \
-		lightly brushes, \
-		tenderly feels, \
-		smoothly glides a hand across, \
-		affectionately handles} \
-		XU_THEIR \
-		{thigh, \
-		upper thighs, \
-		upper leg, \
-		crotch, \
-		leg area, \
-		lap space, \
-		cushioned lap} \
-		{openly, \
-		boldly, \
-		is_visible_to_allly, \
-		freely, \
-		frankly, \
-		without reservation, \
-		outwardly, \
-		unreservedly}"
-	) // yes it supports this many lines, and yes you can use the \ to make it more readable
+		"XU_NAME heavily rubs at the XU_THEIR own crotch.", 
+	)
 	harm_messages = list(
-		"XU_NAME rubs XU_THEIR crotch aggressively",
-		"XU_NAME mauls XU_THEIR crotch!",
+		"XU_NAME hornily rubs at the XU_THEIR own crotch.", 
 	)
 
 
@@ -118,24 +89,6 @@
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 
 
-//Pick System Prototype				 
-/*  This system that you see above here is very complex at first glance, but lets take a moment to break it down.  
-On line 70 you have the message = pick( call.  This is the call the code will do to figure out what it should put in chat.
-On line 71 we've placed the start of the first original message pick options. It's where the " starts at. 
-On line 71 we have the SECOND word of the thing that will be said. The first is always your characters name, or unknown.
-On line 71 we then have another pick call in brackets.  This pick call then picks between the words lightly and gently.
-On the end of line 71 we have a space, then a code line break. The code will read this as there not being an actual break there, it helps keep this legible.
-On line 72 we have the next word in the sentence we're building, in this case rubs or brushes.  Then that line break again. Same line break.
-On line 73 we have the pronoun call for their. It will be His/Her/Their depending on the character using the verb. Same line break.
-On line 74 we have the final word of the sentence, which is why a period is included in the pick calls. No line break here, then we close the original pick from line 70.
-
-What this does is build MULTIPLE possible sentences
-"Little Joey Toblerone [lightly] [brushes] his [crotch.]" - Remove the brackets of course
-Lightly, brushes, and crotch could all just as equally as gently, rubs, or crotch could have been.
-This allows for massively randomized text building!
-Enjoy!												*/
-//In the nightmare scenario of this post getting moved please feel free to use this Gyazo link for the original layout
-//https://gyazo.com/f9c8a8e639a49927976600db54bcbdee
 
 
 
