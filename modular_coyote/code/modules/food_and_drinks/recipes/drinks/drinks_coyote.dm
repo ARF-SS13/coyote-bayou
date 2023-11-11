@@ -239,3 +239,19 @@
 	id = /datum/reagent/consumable/peachshake
 	results = list(/datum/reagent/consumable/peachshake = 3)
 	required_reagents = list(/datum/reagent/consumable/peachjuice = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+
+/datum/reagent/consumable/ethanol/cloverclub
+	name = "Clover Club"
+	description = "A light and refreshing raspberry cocktail."
+	taste_description = "sweet raspberry and gin"
+	color = "#dd00a6" // rgb(221, 0, 166)
+	glass_icon_state = "cloverclub"
+	glass_name = "Clover Club"
+	glass_desc = "A light and refreshing cocktail garnished with skewered raspberries"
+
+/datum/chemical_reaction/drink/cloverclub
+	name = "Clover Club"
+	id = /datum/chemical_reaction/drink/cloverclub
+	results = list(/datum/chemical_reaction/drink/cloverclub = 3)
+	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/ethanol/gin = 3)
+
