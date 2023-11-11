@@ -27,7 +27,7 @@
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = FALSE
 	out["BitExtra"] = "Operating at %[fluid_efficiency] capacity."
-	out["BitEmoji"] = "🎱"
+	out["BitEmoji"] = "🍒"
 	return out
 
 /obj/item/organ/genital/testicles/generate_fluid()

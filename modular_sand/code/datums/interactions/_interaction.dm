@@ -125,6 +125,9 @@
 		help_sounds = simple_sounds.Copy()
 	if(simple_span && !help_span)
 		help_span = simple_span
+// 	exract_caegories()
+
+// /datum/interaction/proc/
 
 /// Checks if user can do an interaction, action_check is for whether you're actually doing it or not (useful for the menu and not removing the buttons)
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
@@ -481,7 +484,7 @@
 		var/words = copytext(message, charpos + 1, charpos2 - 1)
 		var/list/wordlist = splittext(words, ",")
 		var/word = trim(pick(wordlist))
-		message = splicetext(message, charpos - 1, charpos2 + 1, word)
+		message = splicetext(message, charpos, charpos2, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed
 	return capitalize(message)
 
