@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = !!aroused_state
 	out["BitExtra"] = "Operating at %100 capacity."
-	out["BitEmoji"] = "🍈"
+	out["BitEmoji"] = "🐄"
 	return out
 
 /obj/item/organ/genital/breasts/update_appearance()

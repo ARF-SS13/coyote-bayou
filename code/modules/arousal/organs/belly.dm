@@ -316,7 +316,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = !!aroused_state
 	out["BitExtra"] = "Operating at %100 capacity."
-	out["BitEmoji"] = "🥚"
+	out["BitEmoji"] = "🍔"
 	return out
 
 /obj/item/organ/genital/belly/modify_size(modifier, min = BELLY_SIZE_MIN, max = BELLY_SIZE_MAX)

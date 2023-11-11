@@ -36,11 +36,37 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 		return TRUE
 	var/datum/preferences/break_me_complitely = get_prefs(broken)
 	if(!break_me_complitely)
-		return TRUE // either no client, or something went fucky
+		return TRUE // either no client, or something went forky
 	var/datum/prefcheck/ultimate_breaker = prefs[index]
 	if(!ultimate_breaker)
 		return TRUE
 	return ultimate_breaker.allowed(break_me_complitely)
+
+/* *
+ * TGUI-formatted preference system thingy
+ * Takes in a prefs and a which to get, and returns a TGUI-compatible thingy
+ */ // todo: this
+
+// /datum/controller/subsystem/prefbreak/proc/get_tgui_pref_data(prefs, which)
+// 	if(!prefs)
+// 		return list()
+// 	if(!which)
+// 		return list()
+// 	var/datum/preferences/P = extract_prefs(prefs)
+// 	if(!P)
+// 		return list()
+// 	if(CHECK_BITFIELD(which, PREF_ERP_TOGGLES))
+// 		return get_tgui_erp_toggles(P)
+
+
+// /datum/controller/subsystem/prefbreak/proc/get_tgui_erp_toggles(datum/preferences/P)
+// 	if(!P)
+// 		return list()
+// 	var/list/erp_toggles = list()
+// 	operate_toggle(erp_toggles, "Hear Lewd Sounds", P.toggles, HEAR_LEWD_VERB_SOUNDS)
+// 	operate_toggle(erp_toggles, "Verb Consent", P.toggles, VERB_CONSENT)
+// 	operate_toggle(erp_toggles, "Auto Wag", P.cit_toggles, NO_AUTO_WAG)
+	
 
 /* 
  * Preference lookup table
@@ -201,6 +227,8 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 /datum/prefcheck/splurt/lewd_words/allowed(datum/preferences/consumer)
 	PREFBROKEN
 	return CHECK_BITFIELD(consumer.toggles, HEAR_LEWD_VERB_WORDS) // kinda vital here
+
+
 
 
 

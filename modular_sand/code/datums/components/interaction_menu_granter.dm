@@ -57,10 +57,12 @@
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
-	QDEL_LIST(autoplappers)
+	QDEL_LIST_ASSOC_VAL(autoplappers)
 	. = ..()
 
 /datum/component/interaction_menu_granter/UnregisterFromParent()
+	weaktarget = null
+	QDEL_LIST_ASSOC_VAL(autoplappers)
 	UnregisterSignal(parent, list(COMSIG_CLICK_CTRL_SHIFT, COMSIG_SPLURT_REQUEST, COMSIG_SPLURT_ADD_AUTOPLAPPER))
 	. = ..()
 
@@ -143,6 +145,8 @@
 	.["MTTC"] = mean_time_to_cum || 2 MINUTES // I will last 2 minutes, no more, no lest
 	.["MyLust"] = self.get_lust() || 0
 	.["MyMaxLust"] = self.get_lust_max() || 0
+	.["SeeLewdMessages"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS) || FALSE
+	.["HearLewdSounds"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS) || FALSE
 	if(target != self && target.client)
 		// .["TheirCKEY"] = target.ckey || "Nobody"
 		// .["theirAttributes"] = target.list_interaction_attributes(self) || list()
@@ -152,45 +156,6 @@
 		else
 			.["TheirLust"] = round(target.get_lust(), 25) || 0
 			.["TheirMaxLust"] = round(target.get_lust_max(), 25) || 0
-
-
-	var/datum/preferences/prefs = self?.client.prefs
-	if(prefs)
-	//Getting char prefs
-		.["erp_pref"] = 			pref_to_num(prefs.erppref)
-		.["noncon_pref"] = 			pref_to_num(prefs.nonconpref)
-		.["vore_pref"] = 			pref_to_num(prefs.vorepref)
-		.["extreme_pref"] = 		pref_to_num(prefs.extremepref)
-		.["extreme_harm"] = 		pref_to_num(prefs.extremeharm)
-		.["unholy_pref"] =		pref_to_num(prefs.unholypref)
-
-	//Getting preferences
-		.["verb_consent"] = 		!!CHECK_BITFIELD(prefs.toggles, VERB_CONSENT)
-		.["lewd_verb_sounds"] = 	!!CHECK_BITFIELD(prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
-		.["arousable"] = 			prefs.arousable
-		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-		.["forced_fem"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
-		.["forced_masc"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_MASC)
-		.["hypno"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, HYPNO)
-		.["bimbofication"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BIMBOFICATION)
-		.["breast_enlargement"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, BREAST_ENLARGEMENT)
-		.["penis_enlargement"] =	!!CHECK_BITFIELD(prefs.cit_toggles, PENIS_ENLARGEMENT)
-		.["butt_enlargement"] =		!!CHECK_BITFIELD(prefs.cit_toggles, BUTT_ENLARGEMENT)
-		.["belly_inflation"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BELLY_INFLATION)
-		.["never_hypno"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NEVER_HYPNO)
-		.["no_aphro"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_APHRO)
-		.["no_ass_slap"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
-		.["no_auto_wag"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
-		.["chastity_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
-		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
-		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
-		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
-		//Vore preferences
-		.["vore_toggle"] = 			prefs.master_vore_toggle
-		.["vore_examine"] = 		prefs.allow_vore_messages
-		.["eating_noises"] = 		prefs.allow_eating_sounds
-		.["digestion_noises"] =		prefs.allow_digestion_sounds
-		.["trash_forcefeed"] = 		prefs.allow_trash_messages
 
 /proc/num_to_pref(num)
 	switch(num)
@@ -304,104 +269,20 @@
 			else
 				to_chat(parent_mob, span_green("Extreme stuff disabled!"))
 			return TRUE
-
-		if("char_pref")
-			var/datum/preferences/prefs = parent_mob.client.prefs
-			var/value = num_to_pref(params["value"])
-			switch(params["char_pref"])
-				if("erp_pref")
-					if(prefs.erppref == value)
-						return FALSE
-					else
-						prefs.erppref = value
-				if("noncon_pref")
-					if(prefs.nonconpref == value)
-						return FALSE
-					else
-						prefs.nonconpref = value
-				if("vore_pref")
-					if(prefs.vorepref == value)
-						return FALSE
-					else
-						prefs.vorepref = value
-				if("unholy_pref")
-					if(prefs.unholypref == value)
-						return FALSE
-					else
-						prefs.unholypref = value
-				if("extreme_pref")
-					if(prefs.extremepref == value)
-						return FALSE
-					else
-						prefs.extremepref = value
-						if(prefs.extremepref == "No")
-							prefs.extremeharm = "No"
-				if("extreme_harm")
-					if(prefs.extremeharm == value)
-						return FALSE
-					else
-						prefs.extremeharm = value
-				else
-					return FALSE
+		if("ToggleSeeLewdMessages")
+			TOGGLE_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS)
+			if(CHECK_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS))
+				to_chat(parent_mob, span_green("You will now see lewd messages!"))
+			else
+				to_chat(parent_mob, span_green("You will no longer see lewd messages!"))
 			queue_save()
 			return TRUE
-		if("pref")
-			var/datum/preferences/prefs = parent_mob.client.prefs
-			switch(params["pref"])
-				if("verb_consent")
-					TOGGLE_BITFIELD(prefs.toggles, VERB_CONSENT)
-				if("lewd_verb_sounds")
-					TOGGLE_BITFIELD(prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
-				if("arousable")
-					prefs.arousable = !prefs.arousable
-				if("genital_examine")
-					TOGGLE_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-				if("forced_fem")
-					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_FEM)
-				if("forced_masc")
-					TOGGLE_BITFIELD(prefs.cit_toggles, FORCED_MASC)
-				if("hypno")
-					TOGGLE_BITFIELD(prefs.cit_toggles, HYPNO)
-				if("bimbofication")
-					TOGGLE_BITFIELD(prefs.cit_toggles, BIMBOFICATION)
-				if("breast_enlargement")
-					TOGGLE_BITFIELD(prefs.cit_toggles, BREAST_ENLARGEMENT)
-				if("penis_enlargement")
-					TOGGLE_BITFIELD(prefs.cit_toggles, PENIS_ENLARGEMENT)
-				if("butt_enlargement")
-					TOGGLE_BITFIELD(prefs.cit_toggles, BUTT_ENLARGEMENT)
-				if("belly_inflation")
-					TOGGLE_BITFIELD(prefs.cit_toggles, BELLY_INFLATION)
-				if("never_hypno")
-					TOGGLE_BITFIELD(prefs.cit_toggles, NEVER_HYPNO)
-				if("no_aphro")
-					TOGGLE_BITFIELD(prefs.cit_toggles, NO_APHRO)
-				if("no_ass_slap")
-					TOGGLE_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
-				if("no_auto_wag")
-					TOGGLE_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
-				if("chastity_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, CHASTITY)
-				if("stimulation_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, STIMULATION)
-				if("edging_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
-				if("cum_onto_pref")
-					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
-				if("vore_toggle")
-					prefs.master_vore_toggle = !prefs.master_vore_toggle
-				if("vore_examine")
-					TOGGLE_BITFIELD(prefs.cit_toggles, VOREALLOW_SEEING_BELLY_DESC)
-				if("eating_noises")
-					TOGGLE_BITFIELD(prefs.cit_toggles, EATING_NOISES)
-				if("digestion_noises")
-					prefs.allow_digestion_sounds = !prefs.allow_digestion_sounds
-				if("trash_forcefeed")
-					prefs.allow_trash_messages = !prefs.allow_trash_messages
-				else
-					return FALSE
-			//Todo: Just save when the player closes the menu or switches tabs when there are unsaved changes.
-			//Also add a save button.
+		if("ToggleHearLewdSounds")
+			TOGGLE_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
+			if(CHECK_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS))
+				to_chat(parent_mob, span_green("You will now hear lewd verb sounds!"))
+			else
+				to_chat(parent_mob, span_green("You will no longer hear lewd verb sounds!"))
 			queue_save()
 			return TRUE
 
@@ -511,12 +392,12 @@
 	switch(whose.client?.prefs.kisser)
 		if(KISS_BOYS)
 			beep["OriName"] = "Boykisser"
-			beep["OriDesc"] = "I like boys!"
-			beep["OriEmoji"] = "👨‍🌾"
+			beep["OriDesc"] = "I like guys!"
+			beep["OriEmoji"] = "♂️"
 		if(KISS_GIRLS)
 			beep["OriName"] = "Girlkisser"
-			beep["OriDesc"] = "I like girls!"
-			beep["OriEmoji"] = "👩‍💼"
+			beep["OriDesc"] = "I like gals!"
+			beep["OriEmoji"] = "♀️"
 		if(KISS_ANY)
 			beep["OriName"] = "Anykisser"
 			beep["OriDesc"] = "I like everyone!"

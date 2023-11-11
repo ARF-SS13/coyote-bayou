@@ -94,7 +94,7 @@
 		ball["BitColor"] = "#[LAZYACCESS(features, "balls_color")]"
 		ball["BitAroused"] = FALSE
 		ball["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
-		ball["BitEmoji"] = "🎱"
+		ball["BitEmoji"] = "🍒"
 		out += list(ball)
 	if(LAZYACCESS(features, "has_breasts")) // bawk bawk
 		var/list/boob = list()
@@ -108,7 +108,7 @@
 		boob["BitColor"] = "#[LAZYACCESS(features, "breasts_color")]"
 		boob["BitAroused"] = FALSE
 		boob["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
-		boob["BitEmoji"] = "🍈"
+		boob["BitEmoji"] = "🐄"
 		out += list(boob)
 	if(LAZYACCESS(features, "has_butt")) // bawk bawk
 		var/list/butt = list()
@@ -142,7 +142,7 @@
 		vadge["BitColor"] = "#[LAZYACCESS(features, "vag_color")]"
 		vadge["BitAroused"] = FALSE
 		vadge["BitExtra"] = "Operating at %[100 * LAZYACCESS(features, "balls_efficiency")] capacity."
-		vadge["BitEmoji"] = "🥠"
+		vadge["BitEmoji"] = "🥡"
 		out += list(vadge)
 	if(LAZYACCESS(features, "has_womb")) // bawk bawk
 		var/list/womb = list()
@@ -163,6 +163,7 @@
 	var/list/out = list()
 	for(var/obj/item/organ/genital/G in internal_organs)
 		out += list(G.format_for_tgui())
+	return out
 
 /mob/living/proc/get_lust_max()
 	. = lust_tolerance
@@ -545,7 +546,7 @@
 	// 	lastmoan = moan
 
 /mob/living/proc/cum(mob/living/partner, target_orifice)
-	ready_to_cum = FALSE
+	// ready_to_cum = FALSE // round 2, fight!
 	// var/cumpower = floor(get_lust() / get_lust_max()) // todo, rolling clummoxes
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
 		return FALSE

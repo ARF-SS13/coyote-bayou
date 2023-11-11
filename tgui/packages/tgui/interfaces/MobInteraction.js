@@ -30,7 +30,9 @@ export const MobInteraction = (props, context) => {
   const {
     SeeLewd,
   } = data;
-  const WindoHight = SeeLewd ? 625 : 400;
+  const WindoHight = SeeLewd ? 700 : 400;
+  // const TopBasis = SeeLewd ? "50%" : "0%";
+  // const BottomBasis = SeeLewd ? "50%" : "100%";
 
   return (
     <Window
@@ -40,7 +42,7 @@ export const MobInteraction = (props, context) => {
       <Window.Content>
         <Stack fill vertical>
           {!!SeeLewd && (
-            <Stack.Item shrink={1}>
+            <Stack.Item shrink={1} basis="40%">
               <TopPanel /> {/* The lewd stuff */}
             </Stack.Item>
           )}
@@ -65,29 +67,31 @@ const TopPanel = (props, context) => {
   } = data;
 
   return(
-    <Box>
+    <Box height="100%">
       <Stack fill>
         <Stack.Item basis="50%"> {/* Left Panel */}
-          <Stack fill vertical>
-            <Stack.Item>
-              <Stack fill>
-                <Stack.Item grow>
-                  <Nads Who={"me"}/>
-                </Stack.Item>
-                {!ItsJustMe && (
-                  <Stack.Item>
-                    <Nads Who={"them"}/>
+          <Box height="100%" overflowY="auto">
+            <Stack fill vertical>
+              <Stack.Item grow={1}>
+                <Stack fill>
+                  <Stack.Item grow>
+                    <Nads Who={"me"}/>
                   </Stack.Item>
-                )}
-              </Stack>
-            </Stack.Item>
-            <Stack.Item grow>
-              <Consent />
-            </Stack.Item>
-            <Stack.Item>
-              <Lust />
-            </Stack.Item>
-          </Stack>
+                  {!ItsJustMe && (
+                    <Stack.Item>
+                      <Nads Who={"them"}/>
+                    </Stack.Item>
+                  )}
+                </Stack>
+              </Stack.Item>
+              <Stack.Item>
+                <Consent />
+              </Stack.Item>
+              <Stack.Item>
+                <Lust />
+              </Stack.Item>
+            </Stack>
+          </Box>
         </Stack.Item>
         <Stack.Item basis="50%"> {/* Right Panel */}
           <AutoPLAPs />
@@ -127,20 +131,24 @@ const Nads = (props, context) => {
   return(
     <Section title={NameShow}>
       {GenitalObjs.length ? (
-        <Flex direction="column">
-          {GenitalObjs.map(genital => (
-            GuntButton(genital, NadName)
-          ))}
+        <Flex direction="row">
+          <Box textAlign={"center"} width="100%">
+            {GenitalObjs.map(genital => (
+              GuntButton(genital, context)
+            ))}
+          </Box>
         </Flex>
       ) : (
         "Nothing there!"
       )}
       <hr />
       {OritentationObjs.length ? (
-        <Flex direction="column">
-          {OritentationObjs.map(orientation => (
-            OrientationButton(orientation)
-          ))}
+        <Flex direction="row">
+          <Box textAlign={"center"} width="100%">
+            {OritentationObjs.map(orientation => (
+              OrientationButton(orientation)
+            ))}
+          </Box>
         </Flex>
       ) : (
         "Unsure!"
@@ -282,9 +290,9 @@ const Lust = (props, context) => {
               color={LustBGColor}
               minValue={0}
               maxValue={MyFixedMaxLust} >
-              <Box inline color={LustFGColor} textAlign="center">
+              {/* <Box inline color={LustFGColor} textAlign="center"> */}
                 {MyFixedLust} / {MyFixedMaxLust}
-              </Box>
+              {/* </Box> */}
             </ProgressBar>
           </Flex.Item>
           {!!!ItsJustMe && (
@@ -341,43 +349,38 @@ const AutoPLAPs = (props, context) => {
   const YesOrNo = AutoPlapAutoStart ? "YES" : "NO";
 
   return(
-    <Stack fill vertical>
-      <Stack.Item grow={1}>
-        <Section
-          title="Auto-Interactors"
-          overflowY="auto"
-          buttons={(
-            <Fragment>
-              <Button
-                icon={"pause"}
-                onClick={() => act('StopAllAutoPlappers')} />
-              <Button
-                icon={"play"}
-                onClick={() => act('StartAllAutoPlappers')} />
-            </Fragment>
-          )}>
-          {AutoPlapObjs.length ? (
-            <Stack fill vertical>
-              {AutoPlapObjs.map(autoPlap => (
-                <Stack.Item key={autoPlap.key} shrink={1}>
-                  <AutoPlapControl AutoPlapObj={autoPlap} />
-                </Stack.Item>
-              ))}
-            </Stack>
-          ) : (
-            "To add some, click the red dot by an interaction!"
-          )}
-        </Section>
-      </Stack.Item>
-      <Stack.Item shrink={1}>
-        <Button
-          fluid
-          mb={0.3}
-          content={"Auto-Start: " + YesOrNo}
-          color={AutoPlapAutoStart ? "green" : "default"}
-          onClick={() => act('ToggleAutoStart')} />
-      </Stack.Item>
-    </Stack>
+    <Section
+      title="Auto-Interaction"
+      height="100%"
+      minHeight="100%"
+      overflowY="scroll"
+      buttons={(
+        <Fragment>
+          <Button
+            icon={"pause"}
+            onClick={() => act('StopAllAutoPlappers')} />
+          <Button
+            icon={"play"}
+            onClick={() => act('StartAllAutoPlappers')} />
+          <Button
+            color={AutoPlapAutoStart ? "green" : "default"}
+            icon={AutoPlapAutoStart ? "toggle-on" : "toggle-off"}
+            tooltip={"Auto-Start: " + YesOrNo}
+            onClick={() => act('ToggleAutoStart')} />
+        </Fragment>
+      )}>
+      <Box>
+        {AutoPlapObjs.length ? (
+          AutoPlapObjs.map(autoPlap => (
+            <Box key={autoPlap.key}>
+              <AutoPlapControl AutoPlapObj={autoPlap} />
+            </Box>
+          ))
+        ) : (
+          "To add some, click the red dot by an interaction!"
+        )}
+      </Box>
+    </Section>
   );
 };
 
@@ -412,61 +415,82 @@ const AutoPlapControl = (props, context) => {
   const MyPartner = APPlapper === APPartner ? "Yourself" : APPartner;
 
   return(
-    <Section
-      title={APPlapName}
-      buttons={(
-        <Fragment>
-          {!!APRecording && (
-            <Button
-              icon={APRecordingIcon}
-              color={APRecordingColor}
-              onClick={() => act('StopRecording', {
-                APID: APApid,
-              })} />
-          )}
-          <Button
-            icon={APPlappingIcon}
-            color={APPlapColor}
-            onClick={() => act('ToggleAutoPlapper', {
-              APID: APApid,
-            })} />
-          <Button
-            icon="trash"
-            onClick={() => act('DeleteAutoPlapper', {
-              APID: APApid,
-            })} />
-        </Fragment>
-      )}>
+    <Box
+      mb="0.5em"
+      p="0.5em"
+      fontSize="0.8rem"
+      backgroundColor="#2f2f2f">
       <Stack fill vertical>
         <Stack.Item>
-          <NumberInput
-            animated={true}
-            unit="sec/PLAP"
-            width="4.5em"
-            minValue={2}
-            maxValue={50}
-            value={APInterval}
-            step={2}
-            stepPixelSize={3}
-            format={value => {
-              return toFixed((value * 0.1), 1);
-            }}
-            onDrag={(e, value) => act('SetAutoPlapperInterval', {
-              APID: APApid,
-              Interval: value, // 30 seconds
-            })} />
+          <Flex direction="row">
+            <Flex.Item grow={1}>
+              <Box
+                inline
+                bold>
+                {APPlapName}
+              </Box>
+            </Flex.Item>
+            {!!APRecording && (
+            <Flex.Item shrink={1}>
+              <Button
+                icon={APRecordingIcon}
+                color={APRecordingColor}
+                onClick={() => act('StopRecording', {
+                  APID: APApid,
+                })} />
+              </Flex.Item>
+            )}
+          </Flex>
         </Stack.Item>
         <Stack.Item>
-          {APPlapper} <Icon name="arrow-right" /> {MyPartner},  {APPlapcount} times!
+          <Flex direction="row">
+            <Flex.Item grow={1}>
+              <NumberInput
+                animated={true}
+                unit="sec/PLAP"
+                width="4.5em"
+                minValue={2}
+                maxValue={50}
+                value={APInterval}
+                step={2}
+                stepPixelSize={3}
+                format={value => {
+                  return toFixed((value * 0.1), 1);
+                }}
+                onDrag={(e, value) => act('SetAutoPlapperInterval', {
+                  APID: APApid,
+                  Interval: value, // 30 seconds
+                })} />
+            </Flex.Item>
+            <Flex.Item shrink={1}>
+              <Button
+                icon={APPlappingIcon}
+                color={APPlapColor}
+                onClick={() => act('ToggleAutoPlapper', {
+                  APID: APApid,
+                })} />
+              <Button
+                icon="trash"
+                onClick={() => act('DeleteAutoPlapper', {
+                  APID: APApid,
+                })} />
+            </Flex.Item>
+          </Flex>
+        </Stack.Item>
+        <Stack.Item>
+          <Box textColor="label">
+            {APPlapper} <Icon name="arrow-right" /> {MyPartner},  {APPlapcount} times!
+          </Box>
         </Stack.Item>
       </Stack>
-    </Section>
+    </Box>
   );
 };
 
 /// GuntButton! Takes in a genital object thing, and formats it into a button
 /// that shows a tooltip about the genital
-const GuntButton = (genital, NadName) => {
+const GuntButton = (genital, context) => {
+  const { act, data } = useBackend(context);
   const {
     BitKind,
     BitName,
@@ -487,22 +511,29 @@ const GuntButton = (genital, NadName) => {
 
   const ArousedText = BitAroused ? "Happens to be aroused" : "Happens to not be Aroused";
   const ToolTipText =
-    BitName + "\n" +
-    BitSize + "\n" +
-    ArousedText + "\n" +
-    BitExtra + "\n";
+    BitName + " " +
+    BitSize + " " +
+    BitExtra;
+    // ArousedText + "\n" +
 
   return(
     <Button
       tooltip={ToolTipText}
-      content={BitEmoji}
       color={BitColor}
       onClick={() => act('interact', {
         interaction: "poke",
         ExtraStuff: {
           PokeThing: BitName,
         },
-      })} />
+      })} >
+        <Box
+          inline
+          textColor={BitColor}
+          fontSize="1.5em"
+          textAlign="center">
+          {BitEmoji}
+        </Box>
+    </Button>
   );
 };
 
@@ -521,9 +552,16 @@ const OrientationButton = (orientation) => {
 
   return(
     <Button
-      content={OriEmoji}
-      color="green"
-      tooltip={OriName + "\n" + OriDesc} />
+      color="transparent"
+      tooltip={OriDesc} >
+        <Box
+          inline
+          fontSize="1.5em"
+          color="green"
+          textAlign="center">
+          {OriEmoji}
+        </Box>
+      </Button>
   );
 };
 
@@ -1013,8 +1051,8 @@ const GetInteractionsInCategory = (context) => {
 const InteractionPage = (props, context) => {
   const { act, data } = useBackend(context);
   const SeeLewd = data.SeeLewd || false;
-  const AllInteractions = data.AllInteractions || [];
-  const AllCategories = data.AllCategories || [];
+  const SeeLewdMessages = data.SeeLewdMessages || false;
+  const HearLewdSounds = data.HearLewdSounds || false;
   const [
     CurrentPage,
     setCurrentPage,
@@ -1059,6 +1097,24 @@ const InteractionPage = (props, context) => {
       {LewdText}
     </Button>
   );
+  const SeeMessages =(
+    <Button
+      inline
+      icon="comment"
+      selected={SeeLewdMessages}
+      tooltip={SeeLewdMessages ? "Hide Lewd Messages" : "Show Lewd Messages"}
+      onClick={() =>
+      { act('ToggleSeeLewdMessages'); }}/>
+  );
+  const HearSounds =(
+    <Button
+      inline
+      icon="volume-up"
+      selected={HearLewdSounds}
+      tooltip={HearLewdSounds ? "Mute Lewd Sounds" : "Hear Lewd Sounds"}
+      onClick={() =>
+      { act('ToggleHearLewdSounds'); }}/>
+  );
 
   return (
     <Flex>
@@ -1067,6 +1123,11 @@ const InteractionPage = (props, context) => {
           {LewdButton}
           <Box inline px="1em" />
         </Box>
+      </Flex.Item>
+      <Flex.Item>
+        {SeeMessages}
+        {HearSounds}
+        <Box inline px="1em" />
       </Flex.Item>
       <Flex.Item>
         {ShowPageButtons && (
