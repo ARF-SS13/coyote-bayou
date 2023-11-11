@@ -772,7 +772,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)
-		lying = 0
+		lying = FALSE
+		set_resting(FALSE, silent = TRUE, updating = TRUE)//get up, stand up, don't forget your rights
 		. = 1
 		setMovetype(initial(movement_type))
 
