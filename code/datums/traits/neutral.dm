@@ -1102,7 +1102,7 @@
 	category = "Language Quirks"
 	mechanics = ""
 	conflicts = list()
-	gain_text = span_notice("You remember how to sp eak the way of the bird")
+	gain_text = span_notice("You remember how to speak the way of the bird")
 	lose_text = span_notice("You've forgotten how to speak bird..")
 	human_only = FALSE
 
@@ -1122,7 +1122,7 @@
 	category = "Language Quirks"
 	mechanics = "Watership down, repeat, Watership down!"
 	conflicts = list()
-	gain_text = span_notice("You remember how to sp eak the way of the rabbit")
+	gain_text = span_notice("You remember how to speak the way of the rabbit")
 	lose_text = span_notice("You've forgotten how to speak rabbit..")
 	human_only = FALSE
 
@@ -1143,7 +1143,7 @@
 	category = "Language Quirks"
 	mechanics = "It really is A Bugs Life, eh?"
 	conflicts = list()
-	gain_text = span_notice("You remember how to sp eak the way of the insect")
+	gain_text = span_notice("You remember how to speak the way of the insect")
 	lose_text = span_notice("You've forgotten how to speak insect..")
 	human_only = FALSE
 

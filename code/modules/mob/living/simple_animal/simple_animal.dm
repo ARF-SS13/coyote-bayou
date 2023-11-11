@@ -431,7 +431,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
 				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
-		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+		//Personality and RP Preferences quirk display
+		dat += get_personality_traits(user)
+		//SPECIAL stats display
+		dat += "[print_special()]"
+		if(client && ((client.inactivity / 10) / 60 > 20)) //20 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
 			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
