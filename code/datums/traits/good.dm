@@ -1185,7 +1185,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 */
 
 /datum/quirk/whitelegstraditions
-	name = "Post Apocalytpic Tribal Traditions"
+	name = "Post Apocalyptic Tribal Traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
 	value = 0
 	category = "Crafting Quirks"
