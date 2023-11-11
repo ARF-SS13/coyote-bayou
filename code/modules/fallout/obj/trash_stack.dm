@@ -53,10 +53,10 @@
 	if(!do_mob(user, src, 3 SECONDS))
 		rifling = FALSE
 		return
+	rifling = FALSE
 	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
-	rifling = FALSE
 	loot_players += ukey
 	to_chat(user, span_notice("You scavenge through [src]."))
 	for(var/i in 1 to rand(1,4))
