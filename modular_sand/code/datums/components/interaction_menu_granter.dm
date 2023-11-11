@@ -226,7 +226,6 @@
 			remove_autoplap(AP.apid)
 			return TRUE
 		if("StartRecording")
-			SPLURT_ANTISPAM
 			if(is_recording())
 				perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"]) // try to finish it off
 				return FALSE
