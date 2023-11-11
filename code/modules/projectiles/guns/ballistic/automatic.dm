@@ -1336,7 +1336,7 @@
 
 /obj/item/gun/ballistic/automatic/matildar
 	name = "A11 'Matilda' Rifle"
-	desc = "A Latos Systems A11 Matilda battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in .308"
+	desc = "A Latos Systems A11 Matilda battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in .308 ammunition."
 	icon_state = "matilda"
 	item_state = "matilda"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2320,7 +2320,7 @@
 
 /obj/item/gun/ballistic/automatic/p47
 	name = "P47 Battle rifle"
-	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in .308 UNMC NATO rounds.. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
+	desc = "A P47 Battle Rifle or 'P47BR'. A collaboration between Jaeger company and Leo Armaments to appeal to the civilian and hunter markets, this rifle is chambered in .308 UNMC NATO rounds. The rifle has a bullpup configuration and has a built in ammo counter. It's also lightweight, allowing it to be holstered around the hip or the back for ease of carry."
 	icon_state = "p47"
 	item_state = "p47"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2855,7 +2855,7 @@
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle // Less damage dealing than the AK47 but has a high ROF and good recoil.
 	name = "G3M99"
-	desc = "A battle rifle chambered in 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308 ammo."
+	desc = "A battle rifle chambered in 7.62 NATO, this revised battle rifle was used extensively by West Germany and still in use today by wasters, wasteland PMCs, and raiders for being quite reliable. The charging handle needs to be pulled back after emptying a whole magazine. Rechambered for .308 ammunition."
 	icon_state = "g3"
 	item_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
