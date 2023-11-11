@@ -2,13 +2,17 @@
 /datum/interaction/lewd
 	// Description can take in %COCK% as a wildcard to get replaced with a cock/strapon accordingly.
 	description = "Partner/Crotch - Slap their ass."
-	help_messages = "USER slaps TARGET right on the ass!"
+	help_messages = list(
+		"XU_NAME slaps XT_NAME right on the ass!"
+	)
 	simple_span = "danger"
-	simple_sounds = 'sound/weapons/slap.ogg'
+	simple_sounds = list(
+		'sound/weapons/slap.ogg'
+	)
 	needs_physical_contact = TRUE
 	require_ooc_consent = TRUE
 	max_distance = 1
-	categories = list("All Interactions", "SEXFUCK")
+	categories = list("All Interactions")
 
 	is_lewd = TRUE
 	is_visible_to_all = FALSE
@@ -94,8 +98,9 @@
 	var/lust_round = 0.25
 	var/lust_go_to = LUST_USER | LUST_TARGET
 
-	simple_sounds 	= 'sound/f13effects/sunsetsounds/blush.ogg'
-	int_sound_vol 		= 50
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg'
+	)
 
 /datum/interaction/lewd/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
 	. = ..()
@@ -572,14 +577,14 @@
 
 /// adjusts ur lust
 /datum/interaction/lewd/adjust_lust(mob/living/user, mob/living/target, show_message, list/extra = list())
-	if(!user?.client || !target?.client)
-		return
-	var/user_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * user_lust_mult, lust_round)
-	user.handle_post_sex(user_lustmnt)
-	if(user != target)
+	if(user?.client)
+		. = TRUE
+		var/user_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * user_lust_mult, lust_round)
+		user.handle_post_sex(user_lustmnt)
+	if(!target?.client)
+		. = TRUE
 		var/target_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * target_lust_mult, lust_round)
 		target.handle_post_sex(target_lustmnt)
-	return TRUE
 
 /datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)
 	if(user_refractory_cost)

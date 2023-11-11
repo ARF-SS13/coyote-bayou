@@ -582,12 +582,6 @@ const BottomPanel = (props, context) => {
     MyName,
     SeeLewd,
   } = data;
-  const AllInteractions = data.AllInteractions || [];
-  const AllCategories = data.AllCategories || [];
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
   const [
     SearchTerm,
     setSearchTerm,
@@ -595,9 +589,7 @@ const BottomPanel = (props, context) => {
   const FilteredAllInteractions = GetInteractionsInCategory(context);
   const WhyIsItEmpty = SearchTerm
     ? "No interactions found!"
-    : SelectedCategory === AllInteractions[0]
-      ? "Congratulations! You've been selected to open an issue on Github!"
-      : "No interactions in this category!";
+    : "No interactions in this category!";
   const Tilda = SeeLewd ? "~" : "!";
 
   return (
@@ -1027,9 +1019,10 @@ const GetInteractionsInCategory = (context) => {
 
   if (SearchTerm.length > 0) {
     return FilteredInteractions.filter(Interactions => {
-      return Interactions.InteractionName.toLowerCase().includes(SearchTerm.toLowerCase()) || [];
+      return Interactions.InteractionName.toLowerCase().includes(SearchTerm.toLowerCase());
     });
   }
+
 
   if (!CategoryName || CategoryName === AllCategories[0]) {
     return FilteredInteractions; // return em all

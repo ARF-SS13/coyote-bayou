@@ -93,7 +93,7 @@
 	/// Bitfield for which bodyparts are required, if we're filtering that
 	var/target_required_parts = NONE // to be actually used later =3
 
-	var/int_sound_vol = 50
+	var/int_sound_vol = 35 // volume of the sound, 0-100
 
 	var/max_distance = 1
 	var/require_ooc_consent = FALSE
@@ -481,10 +481,10 @@
 		var/charpos2 = findtext(message, "}")
 		if(charpos2 < charpos)
 			break
-		var/words = copytext(message, charpos + 1, charpos2 - 1)
+		var/words = copytext(message, charpos + 1, charpos2)
 		var/list/wordlist = splittext(words, ",")
 		var/word = trim(pick(wordlist))
-		message = splicetext(message, charpos, charpos2, word)
+		message = splicetext(message, charpos, charpos2 + 1, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed
 	return capitalize(message)
 

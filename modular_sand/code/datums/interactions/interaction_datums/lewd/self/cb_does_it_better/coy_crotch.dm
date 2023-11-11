@@ -539,7 +539,7 @@
 
 ////////////////////////
 //knottease them 6A19///
-////////////////////////\
+////////////////////////
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/knottease_them
 	description = "Partner/Crotch - Tease their hole with your knot."

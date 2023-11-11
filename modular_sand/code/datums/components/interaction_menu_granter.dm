@@ -147,7 +147,7 @@
 	.["MyMaxLust"] = self.get_lust_max() || 0
 	.["SeeLewdMessages"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS) || FALSE
 	.["HearLewdSounds"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS) || FALSE
-	if(target != self && target.client)
+	if(target != self)
 		// .["TheirCKEY"] = target.ckey || "Nobody"
 		// .["theirAttributes"] = target.list_interaction_attributes(self) || list()
 		if(HAS_TRAIT(user, TRAIT_IN_HEAT))

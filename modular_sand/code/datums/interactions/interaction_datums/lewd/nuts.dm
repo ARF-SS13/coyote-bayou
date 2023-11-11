@@ -34,8 +34,10 @@
 
 /datum/interaction/lewd/nut_smack
 	description = "Partner/Crotch - Smack their nuts."
-	simple_sounds = 'modular_sand/sound/interactions/slap.ogg'
-	help_messages = "USER slaps TARGET's nuts!"
+	simple_sounds = list('modular_sand/sound/interactions/slap.ogg')
+	help_messages = list(
+		"XU_NAME slaps XT_NAME's nuts!"
+	)
 	require_target_balls = REQUIRE_ANY
 	needs_physical_contact = TRUE
 	max_distance = 1
