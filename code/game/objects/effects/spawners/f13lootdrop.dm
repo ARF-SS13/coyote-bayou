@@ -11,6 +11,7 @@
 /obj/effect/spawner/lootdrop/f13
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
+	fan_out_items = TRUE //Randomize pixel x and y
 
 /*	------------------------------------------------
 	----------------ARMOR SPAWNERS------------------
