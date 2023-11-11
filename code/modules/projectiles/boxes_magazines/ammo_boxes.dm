@@ -6,15 +6,15 @@
 ////////////////////
 
 
-//Shotguns
+//Shotguns; TODO - We NEED small-sized shotgun shell holders!
 /obj/item/ammo_box/shotgun
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	max_ammo = 12
+	max_ammo = 24
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_BOX)
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
 	caliber = list(CALIBER_SHOTGUN)
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/shotgun/slug
@@ -50,7 +50,8 @@
 /obj/item/ammo_box/shotgun/improvised
 	name = "homemade shotgun shells"
 	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
-	max_ammo = 8
+	w_class = WEIGHT_CLASS_SMALL // small because bad shotgun ammo is extra bad compared to other ammos
+	max_ammo = 32 // extra because the damage loss is painful for shotguns
 	multiple_sprites = 1
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	icon_state = "improvshotbag"
@@ -67,12 +68,12 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
 	icon_state = "trainshotbox"
 
-/obj/item/ammo_box/flintlock
+/obj/item/ammo_box/flintlock // stays small because muskets have enough problems
 	name = "powderbag and musket balls"
 	desc = "A sack full of musket balls and blackpowder."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "gunpowder_musket"
-	max_ammo = 16
+	max_ammo = 32
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock
 	multiple_sprites = 0
@@ -85,7 +86,6 @@
 	desc = "A sack full of musket balls and blackpowder."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "gunpowder_minie"
-	max_ammo = 16
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock/minie
 	multiple_sprites = 0
@@ -97,7 +97,6 @@
 	desc = "A sack full of superballs and blackpowder."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "gunpowder_rubber"
-	max_ammo = 16
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	ammo_type = /obj/item/ammo_casing/caseless/flintlock/rubber
 	multiple_sprites = 0
@@ -112,8 +111,8 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a22
 	caliber = list(CALIBER_22LR)
-	max_ammo = 60
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
@@ -138,7 +137,7 @@
 
 //needle ammo
 
-/obj/item/ammo_box/needlercapsule
+/obj/item/ammo_box/needlercapsule // unchanged because of how needle guns work
 	name = "Capsule full of needles"
 	icon_state = "needlecapsule"
 	desc = "A capsule filled to the brim with needles"
@@ -159,8 +158,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_9MM)
 	ammo_type = /obj/item/ammo_casing/c9mm
-	max_ammo = 45
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 90
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
@@ -222,8 +221,8 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list(CALIBER_10MM)
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
@@ -252,9 +251,9 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_357)
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 25
+	max_ammo = 50
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a357box/ratshot
@@ -264,7 +263,7 @@
 
 /obj/item/ammo_box/a357box/ricochet
 	name = "ammo box (.357 Magnum ricochet)"
-	desc = "Six shots...more than enough to kill anything that moves. This box has thirty, so you can kill five things."
+	desc = "Six shots... more than enough to kill anything that moves. And this has a lot more than six shots."
 	ammo_type = /obj/item/ammo_casing/a357/ricochet
 
 
@@ -288,8 +287,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_44)
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 21
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 42
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
@@ -306,14 +305,14 @@
 	ammo_type = /obj/item/ammo_casing/m44/improvised
 	multiple_sprites = 3
 
-/obj/item/ammo_box/a45lcbox
+/obj/item/ammo_box/a45lcbox // note to self -- .45 LC is basically unused outside of one gun. Might be worth removing this ammo down the line?
 	name = "ammo box (.45 Long Colt)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
 	caliber = list(CALIBER_45LC)
 	ammo_type = /obj/item/ammo_casing/a45lc
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 
 /obj/item/ammo_box/a45lcbox/improvised
@@ -331,8 +330,8 @@
 	multiple_sprites = 2
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
-	max_ammo = 25
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
@@ -364,8 +363,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_4570)
 	ammo_type = /obj/item/ammo_casing/c4570
-	max_ammo = 15
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
@@ -388,7 +387,7 @@
 	name = "bag with reloaded .45-70 bullets"
 	ammo_type = /obj/item/ammo_casing/c4570/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 20
+	max_ammo = 40
 	multiple_sprites = 3
 
 
@@ -401,8 +400,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_5MM)
 	ammo_type = /obj/item/ammo_casing/m5mm
-	max_ammo = 30
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
@@ -415,7 +414,7 @@
 	name = "bag with reloaded 5mm bullets"
 	ammo_type = /obj/item/ammo_casing/m5mm/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 30
+	max_ammo = 60
 	multiple_sprites = 3
 
 //5.56x45
@@ -426,8 +425,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_556)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 25
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 60 // making this 60 because it fits too neatly with the 10/20/30/60rnd 5.56 magazines, not because of balance
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 /*
@@ -469,7 +468,7 @@
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	ammo_type = /obj/item/ammo_casing/a556/improvised
 	multiple_sprites = 3
-	max_ammo = 25
+	max_ammo = 60
 	icon_state = "improvshotbag"
 
 //7.62x51, .308 Winchester
@@ -480,8 +479,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_308)
 	ammo_type = /obj/item/ammo_casing/a308
-	max_ammo = 20
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
@@ -489,7 +488,7 @@
 	name = "bag with reloaded .308 bullets"
 	ammo_type = /obj/item/ammo_casing/a308/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 20
+	max_ammo = 40
 	multiple_sprites = 3
 
 //7.62x51, .30-06
@@ -500,8 +499,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_3006)
 	ammo_type = /obj/item/ammo_casing/a3006
-	max_ammo = 15
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_MEDIUM_BOX)
 	randomize_ammo_count = FALSE
 
@@ -514,7 +513,7 @@
 	name = "bag with reloaded .30-06 bullets"
 	ammo_type = /obj/item/ammo_casing/a3006/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 15
+	max_ammo = 30
 	multiple_sprites = 3
 
 /*
@@ -566,8 +565,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_50MG)
 	ammo_type = /obj/item/ammo_casing/a50MG
-	max_ammo = 12
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 24
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
@@ -582,7 +581,7 @@
 	name = "bag with reloaded .50MG slugs"
 	ammo_type = /obj/item/ammo_casing/a50MG/improvised
 	icon_state = "improvshotbag"
-	max_ammo = 10
+	max_ammo = 24
 	multiple_sprites = 3
 
 /obj/item/ammo_box/a50MGbox/contam
@@ -606,8 +605,8 @@
 	multiple_sprites = 2
 	caliber = list(CALIBER_14MM)
 	ammo_type = /obj/item/ammo_casing/p14mm
-	max_ammo = 18
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 36
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
 
@@ -619,7 +618,7 @@
 /obj/item/ammo_box/m14mm/improvised
 	name = "bag with reloaded 14mm bullets"
 	icon_state = "improvshotbag"
-	max_ammo = 20
+	max_ammo = 36
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 	multiple_sprites = 3
 
@@ -631,8 +630,8 @@
 	caliber = list(CALIBER_CASELESS)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 100
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
@@ -667,6 +666,8 @@
 	name = "ammo box (4.73mm high-velocity)"
 	ammo_type = /obj/item/ammo_casing/caseless/g11/hv
 
+
+// Las musket/plas musket ammo. These NEED a small ammo holder variant!
 /obj/item/ammo_box/lasmusket
 	name = "Battery box (Laser musket)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -674,9 +675,9 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
 	caliber = list(CALIBER_MUSKET_LASER)
-	max_ammo = 18
+	max_ammo = 36
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/plasmamusket
@@ -685,20 +686,21 @@
 	icon_state = "plasmusketbox"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
-	max_ammo = 6
+	max_ammo = 12
 	caliber = list(CALIBER_MUSKET_PLASMA)
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	randomize_ammo_count = FALSE
 
+// Explosives
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm HE)"
 	caliber = "40mm"
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
 	custom_materials = list(/datum/material/iron = MATS_RIFLE_SMALL_BOX)
-	max_ammo = 4
-	w_class = WEIGHT_CLASS_SMALL
+	max_ammo = 8
+	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 1
 	randomize_ammo_count = FALSE
 
@@ -1150,8 +1152,8 @@
 	caliber = list(CALIBER_FUEL)
 	unloadable = TRUE
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 6 // 3 bursts, you need 2 cans
+	w_class = WEIGHT_CLASS_NORMAL
+	max_ammo = 12 // 3 bursts, you need 2 cans <- back when it was 6 per can. max_ammo of 12 means 1 can per refill, I think? This might also need adding to the ammobench.
 	custom_materials = list(/datum/material/iron = MATS_MISC)
 	randomize_ammo_count = FALSE
 
@@ -1227,7 +1229,7 @@
 	icon_state = "foambox"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	caliber = list(CALIBER_FOAM)
-	max_ammo = 40
+	max_ammo = 80 // for the meme?
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
