@@ -875,3 +875,130 @@
 		return
 	if(alert(usr, "Are you absolutely sure you want to reload the configuration from the default path on the disk, wiping any in-round modificatoins?", "Really reset?", "No", "Yes") == "Yes")
 		config.admin_reload()
+
+GLOBAL_LIST_EMPTY(gun_balance_list)
+
+/client/proc/print_gun_debug_information()
+	set category = "Debug"
+	set name = "Gun Debug Info"
+	set desc = "(LAG WARNING) Prints an enormous list of every weapon and its stats into your chatbox lol."
+	if(!check_rights(R_DEBUG))
+		return
+	if(alert(usr, "Are you absolutely sure you want to print a giant, laggy list of every gun's stats into your chatbox? Don't use this in a live round.", "Really do it?", "No", "Yes") == "No")
+		return
+	///printies
+	var/out = ""
+	var/list/bal_types = subtypesof(/obj/item/gun/ballistic)
+	for(var/gunthing in bal_types)
+		var/obj/item/gun/ballistic/G = gunthing
+		///mean (average) damage
+		var/avg_dam
+		var/min_dam
+		var/max_dam
+		///Most common (mode) damage
+		var/mode_dam
+		var/dam_mult
+		var/g_dps
+		//Derived from init_mag_type on gun
+		var/obj/item/ammo_box/magazine/mag
+		var/mag_cap
+		var/dam_per_mag
+		var/burst_length_seconds
+		//Derived from magazine
+		var/obj/item/ammo_casing/g_casing
+		//Derived from the casing
+		var/obj/item/projectile/g_bullet
+		//The highest rpm on the weapon divided by 60
+		var/g_rps
+		var/g_w_class
+		var/g_slowdown
+		var/g_force
+		var/g_draw_time
+		var/list/g_weapon_class = list()
+		mag = initial(G.init_mag_type)
+		g_casing = initial(mag.ammo_type)
+		if(!mag)
+			mag = initial(G.mag_type)
+		if(mag)
+			g_casing = initial(mag.ammo_type)
+			mag_cap = initial(mag.max_ammo)
+			g_bullet = initial(g_casing.projectile_type)
+		g_weapon_class = initial(G.weapon_class)
+		g_w_class = initial(G.w_class)
+		g_slowdown = initial(G.slowdown)
+		g_force = initial(G.force)
+		g_draw_time = initial(G.draw_time)
+		dam_mult = initial(G.damage_multiplier)
+		if(isnull(dam_mult) || dam_mult == 0)
+			dam_mult = 1
+		//Weapon class
+		if(islist(g_weapon_class))
+			if(isnull(g_w_class))
+				g_w_class = g_weapon_class["w_class"]
+			if(isnull(g_slowdown))
+				g_slowdown = g_weapon_class["slowdown"]
+			if(isnull(g_force))
+				g_force = g_weapon_class["force"]
+			if(isnull(g_draw_time))
+				g_draw_time = g_weapon_class["draw_time"]
+		//Firing speed
+		var/list/fire_modes = list()
+		if(G.init_firemodes)
+			fire_modes = G.init_firemodes
+		for(var/f in fire_modes)
+			var/datum/firemode/fm = f
+			var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+			if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+				g_rps = fm_rps
+		if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
+			var/datum/firemode/fm = fire_modes[1]
+			var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+			if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
+				g_rps = fm_rps
+		//Bullet damage calculations
+		var/list/dam_list = initial(g_bullet.damage_list)
+		if(LAZYLEN(dam_list))
+			var/tot_dam = 0 //sum of damage*weight
+			var/chonk = 0 //sum of weights
+			var/mode_w = 0
+			for(var/d in dam_list)
+				var/bdam = d*dam_mult
+				var/bweight = dam_list[d]
+				tot_dam += bdam
+				chonk += (bdam*bweight)
+				if(bdam > max_dam || isnull(max_dam))
+					max_dam = bdam
+				if(bdam < min_dam || isnull(min_dam))
+					min_dam = bdam
+				if(bweight > mode_w)
+					mode_dam = bdam
+					mode_w = bweight
+			if(tot_dam && chonk)
+				avg_dam = chonk / tot_dam
+		else
+			var/dd = initial(g_bullet.damage)
+			avg_dam = dd
+			min_dam = dd
+			max_dam = dd
+			mode_dam = dd
+		if(g_rps && avg_dam)
+			g_dps = avg_dam*g_rps
+		if(avg_dam && mag_cap)
+			dam_per_mag = avg_dam * mag_cap
+		if(mag_cap && g_rps)
+			burst_length_seconds = mag_cap / g_rps
+		/*
+		GLOB.gun_balance_list["[G.type]"]["name"] = G.name
+		GLOB.gun_balance_list["[G.type]"]["dps"] = g_dps
+		GLOB.gun_balance_list["[G.type]"]["avg_dam"] = avg_dam
+		GLOB.gun_balance_list["[G.type]"]["mag_capacity"] = mag_cap
+		*/
+		out = "<h3><b>[initial(G.name)]</b> <i>[G]</i></h3><br>"
+		out += "Size: [weightclass2text(g_w_class)], Slowdown: [g_slowdown], Melee Force: [g_force], Draw Time: [g_draw_time]</i><br>"
+		out += "Casing: [initial(g_casing.name)], Bullet: [initial(g_bullet.name)], Damage: [avg_dam ? avg_dam : initial(g_bullet.damage)], DPS: [g_dps]<br>"
+		out += "RPS/RPM: [g_rps]|[g_rps * 60], Avg Dam: [avg_dam], Min Dam: [min_dam], Max Dam: [max_dam], Mode Dam: [mode_dam]<br>"
+		out += "Mag Capacity: [mag_cap], Burst Length: [burst_length_seconds]s, Damage Per Mag: [dam_per_mag]<br>"
+		. += out
+		to_chat(usr, out)
+	log_admin("GUN_DEBUG: [.]")
+	to_chat(src, span_notice("Output copied to admin logs."))
