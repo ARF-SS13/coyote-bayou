@@ -2803,7 +2803,7 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 /obj/item/gun/ballistic/automatic/fnfal/ak47 //slow ROF, hits like a truck. Slow counterpart to the G3
 	name = "Retro AK-47"
-	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture. Comes with a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines."
+	desc = "This rifle is modeled after an older, reliable, and mass produced version of the AK-47. Comes with wood furniture and a Warsaw pact rail, which was mainly used for the PSO-1 sight. Sadly it seems to take only extended .308 magazines."
 	icon_state = "trueak"
 	item_state = "trueak"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
