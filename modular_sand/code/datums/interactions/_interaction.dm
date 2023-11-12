@@ -119,6 +119,16 @@
 
 /datum/interaction/New()
 	. = ..()
+	simple_messages = listify(simple_messages)
+	simple_sounds = listify(simple_sounds)
+	help_messages = listify(help_messages)
+	help_sounds = listify(help_sounds)
+	disarm_messages = listify(disarm_messages)
+	disarm_sounds = listify(disarm_sounds)
+	grab_messages = listify(grab_messages)
+	grab_sounds = listify(grab_sounds)
+	harm_messages = listify(harm_messages)
+	harm_sounds = listify(harm_sounds)
 	if(LAZYLEN(simple_messages) && !LAZYLEN(help_messages))
 		help_messages = simple_messages.Copy()
 	if(LAZYLEN(simple_sounds) && !LAZYLEN(help_sounds))
@@ -483,7 +493,9 @@
 			break
 		var/words = copytext(message, charpos + 1, charpos2)
 		var/list/wordlist = splittext(words, ",")
-		var/word = trim(pick(wordlist))
+		var/word = ""
+		if(LAZYLEN(wordlist))
+			word = trim(pick(wordlist))
 		message = splicetext(message, charpos, charpos2 + 1, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed
 	return capitalize(message)

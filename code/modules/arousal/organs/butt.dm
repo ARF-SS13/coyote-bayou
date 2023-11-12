@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	out["BitKind"] = "butt"
 	out["BitName"] = "A butt."
 	out["BitSize"] = "It is a category-[size]!"
-	out["BitColor"] = "#[color]"
+	out["BitColor"] = "[color]"
 	out["BitAroused"] = FALSE
 	out["BitExtra"] = "Operating at %100 capacity."
 	out["BitEmoji"] = "🍑"

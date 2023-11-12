@@ -935,8 +935,9 @@
 		out[ssa] = ass
 	return out
 
-
-
-
-
+/// takes in something that might be a list, and returns something that is a list
+/proc/listify(maybelist)
+	if(islist(maybelist))
+		return maybelist
+	return list(maybelist)
 

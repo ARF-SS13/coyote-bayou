@@ -70,24 +70,14 @@ const TopPanel = (props, context) => {
     <Box height="100%">
       <Stack fill>
         <Stack.Item basis="50%"> {/* Left Panel */}
-          <Box height="100%" overflowY="auto">
-            <Stack fill vertical>
+          <Box height="100%">
+            <Stack fill vertical alignItems="flex-end" justifyContent="flex-end">
               <Stack.Item grow={1}>
-                <Stack fill>
-                  <Stack.Item grow>
-                    <Nads Who={"me"}/>
-                  </Stack.Item>
-                  {!ItsJustMe && (
-                    <Stack.Item>
-                      <Nads Who={"them"}/>
-                    </Stack.Item>
-                  )}
-                </Stack>
+                <Section height="100%">
+                <Nads /> {/* Your and their NADs */}
+                </Section>
               </Stack.Item>
-              <Stack.Item>
-                <Consent />
-              </Stack.Item>
-              <Stack.Item>
+              <Stack.Item shrink={1}>
                 <Lust />
               </Stack.Item>
             </Stack>
@@ -109,51 +99,189 @@ const TopPanel = (props, context) => {
 // who they like to kiss, and such.
 const Nads = (props, context) => {
   const { act, data } = useBackend(context);
-  const GenitalObjs =
-    props.Who === "me"
-    ? data.MyGenitals
-    : data.TheirGenitals
-    || [];
-  const OritentationObjs =
-    props.Who === "me"
-    ? data.MyOrientations
-    : data.TheirOrientations
-    || [];
-  const NameShow =
-    props.Who === "me"
-    ? "Your NADs"
-    : data.TheirName + "'s NADs"
-  const NadName =
-    props.Who === "me"
-    ? "Your"
-    : data.TheirName + "'s"
+
+  const MyNads = data.MyGenitals || [];
+  const TheirNads = data.TheirGenitals || [];
+  const MyName = data.MyName || "You";
+  const TheirName = data.TheirName || "Them";
+  const MyOrientations = data.MyOrientations || [];
+  const TheirOrientations = data.TheirOrientations || [];
+  const ItsJustMe = data.ItsJustMe || false;
+
+  // const TheyGotNads = TheirNads && TheirNads.length > 0;
+  // const TheyGotOrientations = TheirOrientations && TheirOrientations.length > 0;
+  const ShowTheirSide = !ItsJustMe;
+  if(TheirNads.length === 0) {
+    TheirNads.push({
+      "BitKind": "Nothin!",
+      "BitName": "Nothing at all!",
+      "BitSize": "Small",
+      "BitColor": "#FFFFFF",
+      "BitAroused": false,
+      "BitExtra": "Minty",
+      "BitEmoji": ":)",
+    });
+  }
+  if(TheirOrientations.length === 0) {
+    TheirOrientations.push({
+      "OriName": "Non-aligned",
+      "OriDesc": "I'm cool beans",
+      "OriEmoji": ":)",
+    });
+  }
+
 
   return(
-    <Section title={NameShow}>
-      {GenitalObjs.length ? (
-        <Flex direction="row">
-          <Box textAlign={"center"} width="100%">
-            {GenitalObjs.map(genital => (
-              GuntButton(genital, context)
-            ))}
-          </Box>
-        </Flex>
-      ) : (
-        "Nothing there!"
+      <Section
+        height="100%"
+        minHeight="100%"
+        overflowY="auto">
+        <Flex direction="row" wrap="wrap" height="100%">
+      {/* the name row */}
+      <Flex.Item basis="50%" textAlign="center" bold>
+        {MyName}
+        <hr />
+      </Flex.Item>
+      <Flex.Item basis="50%" textAlign="center" bold>
+        {ShowTheirSide ? TheirName : "Yourself"}
+        {ShowTheirSide ? <hr /> : <Box />}
+      </Flex.Item>
+      {ShowTheirSide && (
+        <>
+            <Flex.Item basis="50%" textAlign="center" />
+            <Flex.Item basis="50%" textAlign="center">
+            <Consent />
+            </Flex.Item>
+            </>
       )}
-      <hr />
-      {OritentationObjs.length ? (
-        <Flex direction="row">
-          <Box textAlign={"center"} width="100%">
-            {OritentationObjs.map(orientation => (
-              OrientationButton(orientation)
-            ))}
-          </Box>
-        </Flex>
-      ) : (
-        "Unsure!"
-      )}
+      {/* the naughty bits row */}
+      <Flex.Item basis="50%" textAlign="center" bold>
+        {MyNads.map(Nad => (
+          <GuntButton
+            genital={Nad}
+            JustMe={ItsJustMe}
+            context={context}
+            key={Nad.BitName} />
+        ))}
+      </Flex.Item>
+      <Flex.Item basis="50%" textAlign="center">
+        {ShowTheirSide && (
+          TheirNads.map(Nad => (
+            <GuntButton
+              genital={Nad}
+              context={context}
+              key={Nad.BitName} />
+          ))
+        )}
+      </Flex.Item>
+      {/* the orientation row */}
+      <Flex.Item basis="50%" textAlign="center">
+        {MyOrientations.map(Ori => (
+          <OrientationButton
+            orientation={Ori}
+            JustMe={ItsJustMe}
+            context={context}
+            key={Ori.OriName} />
+        ))}
+      </Flex.Item>
+      <Flex.Item basis="50%" textAlign="center">
+        {ShowTheirSide && (
+          TheirOrientations.map(Ori => (
+            <OrientationButton orientation={Ori} context={context} key={Ori.OriName} />
+          ))
+        )}
+      </Flex.Item>
+    </Flex>
     </Section>
+
+  );
+};
+
+
+/// GuntButton! Takes in a genital object thing, and formats it into a button
+/// that shows a tooltip about the genital
+const GuntButton = (props, context) => {
+  const { act, data } = useBackend(context);
+  const {
+    BitKind,
+    BitName,
+    BitSize,
+    BitColor,
+    BitAroused,
+    BitExtra,
+    BitEmoji,
+  } = props.genital || {
+    BitKind: "muffin",
+    BitName: "Tuffy",
+    BitSize: "Small",
+    BitColor: "#FFFFFF",
+    BitAroused: false,
+    BitExtra: "Minty",
+    BitEmoji: ":)",
+  };
+  // const WinWidth = window.innerWidth;
+  // const WinHeight = window.innerHeight;
+  // const FontWindowSize = WinWidth * 0.001;
+  const FontWindowSize = "3vw";
+  const FSize = props.JustMe ? "2.5em" : "2em";
+
+  const ArousedText = BitAroused ? "Happens to be aroused" : "Happens to not be Aroused";
+  const ToolTipText =
+    BitName + " " +
+    BitSize + " " +
+    BitExtra;
+    // ArousedText + "\n" +
+
+  return(
+    <Button
+      tooltip={ToolTipText}
+      color="transparent"
+      onClick={() => act('interact', {
+        interaction: "poke",
+        ExtraStuff: {
+          PokeThing: BitName,
+        },
+      })} >
+        <Box
+          inline
+          textColor={BitColor}
+          fontSize={FontWindowSize}
+          textAlign="center">
+          {BitEmoji}
+        </Box>
+    </Button>
+  );
+};
+
+/// OrientationButton! Takes in an orientation object thing, and formats it into a button
+/// that shows a tooltip about the orientation
+const OrientationButton = (props) => {
+  const {
+    OriName,
+    OriDesc,
+    OriEmoji,
+  } = props.orientation || {
+    OriName: "Non-aligned",
+    OriDesc: "I'm cool beans",
+    OriEmoji: ":(",
+  };
+  const FSize = props.JustMe ? "2.5em" : "2em";
+  // const WinWidth = window.innerWidth;
+  // const WinHeight = window.innerHeight;
+  const FontWindowSize = "3vw";
+
+  return(
+    <Button
+      color="transparent"
+      tooltip={OriDesc} >
+        <Box
+          inline
+          fontSize={FontWindowSize}
+          color="green"
+          textAlign="center">
+          {OriEmoji}
+        </Box>
+      </Button>
   );
 };
 
@@ -190,22 +318,20 @@ const Consent = (props, context) => {
 // and a big cool button to make you CUM!
 const Lust = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    MyLust,
-    MyMaxLust,
-    TheirLust,
-    TheirMaxLust,
-    ItsJustMe,
-    MTTC, // Mean Time To Cum
-    CanCum,
-    MyName,
-    TheirName,
-  } = data;
+  const MyLust = data.MyLust || 0;
+  const MyMaxLust = data.MyMaxLust || 100;
+  const TheirLust = data.TheirLust || 0;
+  const TheirMaxLust = data.TheirMaxLust || 100;
+  const ItsJustMe = data.ItsJustMe  || false;
+  const MTTC = data.MTTC; // Mean Time To Cum
+  const CanCum = data.CanCum || false;
+  const MyName = data.MyName || "You";
+  const TheirName = data.TheirName || "Them";
 
   // dark lusty purple
-  const LustBGColor = "#4B0082";
+  const LustBGColor = "purple";
   // bright lusty pink
-  const LustFGColor = "#FF00FF";
+  const LustFGColor = "pink";
 
   const CumButtonText = "!! C U M !!";
   const AutocumText = CanCum ? "Autocum: ON" : "Autocum: OFF";
@@ -290,43 +416,48 @@ const Lust = (props, context) => {
               color={LustBGColor}
               minValue={0}
               maxValue={MyFixedMaxLust} >
-              {/* <Box inline color={LustFGColor} textAlign="center"> */}
+              <Box inline color={LustFGColor} textAlign="right">
                 {MyFixedLust} / {MyFixedMaxLust}
-              {/* </Box> */}
+              </Box>
             </ProgressBar>
           </Flex.Item>
           {!!!ItsJustMe && (
             <Flex.Item basis={CelWidth} textAlign="center">
               <ProgressBar
+                fromRight={true}
                 value={TheirFixedLust}
                 color={LustBGColor}
                 minValue={0}
                 maxValue={TheirFixedMaxLust} >
-                <Box inline color={LustFGColor} textAlign="center">
-                  {TheirFixedLust}
+                <Box fluid color={LustFGColor} textAlign="left">
+                  {TheirFixedLust} / {TheirFixedMaxLust}
                 </Box>
               </ProgressBar>
             </Flex.Item>
           )}
         {/* the cum button row */}
-        <Flex.Item basis="100%">
-          <Button
-            fluid
-            mb={0.3}
-            color={AutocumColor}
-            content={AutocumText}
-            bold={CanCum}
-            onClick={() => act('ToggleAutoCum')} />
-        </Flex.Item>
-        <Flex.Item basis="100%">
-          <Button
-            fluid
-            mb={0.3}
-            disabled={!CanCum}
-            color="pink"
-            content={CumButtonText}
-            bold={CanCum}
-            onClick={() => act('Cum')} />
+        <Flex.Item basis="50%">
+          <Flex direction="column">
+            <Flex.Item>
+            <Button
+              fluid
+              mb={0.3}
+              color={AutocumColor}
+              content={AutocumText}
+              bold={CanCum}
+              onClick={() => act('ToggleAutoCum')} />
+          </Flex.Item>
+          <Flex.Item>
+            <Button
+              fluid
+              mb={0.3}
+              disabled={!CanCum}
+              color="pink"
+              content={CumButtonText}
+              bold={CanCum}
+              onClick={() => act('Cum')} />
+          </Flex.Item>
+          </Flex>
         </Flex.Item>
       </Flex>
     </Section>
@@ -486,85 +617,6 @@ const AutoPlapControl = (props, context) => {
     </Box>
   );
 };
-
-/// GuntButton! Takes in a genital object thing, and formats it into a button
-/// that shows a tooltip about the genital
-const GuntButton = (genital, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    BitKind,
-    BitName,
-    BitSize,
-    BitColor,
-    BitAroused,
-    BitExtra,
-    BitEmoji,
-  } = genital || {
-    BitKind: "muffin",
-    BitName: "Tuffy",
-    BitSize: "Small",
-    BitColor: "#FFFFFF",
-    BitAroused: false,
-    BitExtra: "Minty",
-    BitEmoji: ":)",
-  };
-
-  const ArousedText = BitAroused ? "Happens to be aroused" : "Happens to not be Aroused";
-  const ToolTipText =
-    BitName + " " +
-    BitSize + " " +
-    BitExtra;
-    // ArousedText + "\n" +
-
-  return(
-    <Button
-      tooltip={ToolTipText}
-      color={BitColor}
-      onClick={() => act('interact', {
-        interaction: "poke",
-        ExtraStuff: {
-          PokeThing: BitName,
-        },
-      })} >
-        <Box
-          inline
-          textColor={BitColor}
-          fontSize="1.5em"
-          textAlign="center">
-          {BitEmoji}
-        </Box>
-    </Button>
-  );
-};
-
-/// OrientationButton! Takes in an orientation object thing, and formats it into a button
-/// that shows a tooltip about the orientation
-const OrientationButton = (orientation) => {
-  const {
-    OriName,
-    OriDesc,
-    OriEmoji,
-  } = orientation || {
-    OriName: "Non-aligned",
-    OriDesc: "I'm cool beans",
-    OriEmoji: ":(",
-  };
-
-  return(
-    <Button
-      color="transparent"
-      tooltip={OriDesc} >
-        <Box
-          inline
-          fontSize="1.5em"
-          color="green"
-          textAlign="center">
-          {OriEmoji}
-        </Box>
-      </Button>
-  );
-};
-
 
 const FavePlaps = 'Favorites';
 const PlapsPerPage = 10;
@@ -843,6 +895,8 @@ const InteractionButton = (props, context) => {
   const IExtreme = IOBJ.InteractionExtreme || false;
   const IAdditional = IOBJ.InteractionAdditional || "Oh no!";
 
+  const CantClick = ILewd && !WeConsent;
+
   const IsFave = Faves.includes(IKey);
 
   const BGColor = IExtreme ? 'red' : ILewd ? 'pink' : 'default';
@@ -853,7 +907,7 @@ const InteractionButton = (props, context) => {
         <Flex.Item grow={1}>
           <Button
             width="100%"
-            disabled={!WeConsent}
+            disabled={CantClick}
             textAlign="left"
             tooltip={IAdditional}
             tooltipPosition="top"
@@ -1005,6 +1059,19 @@ const GetInteractionsInCategory = (context) => {
       return !Interaction.InteractionExtreme;
     });
   }
+  /// and since we havent utterly destroyed performance by this point,
+  /// put all the non-lewd items at the top of the list
+  let LewdInteractions = [];
+  let NonLewdInteractions = [];
+  FilteredInteractions.forEach(Interaction => {
+    if (Interaction.InteractionLewd) {
+      LewdInteractions.push(Interaction);
+    } else {
+      NonLewdInteractions.push(Interaction);
+    }
+  }
+  );
+  FilteredInteractions = NonLewdInteractions.concat(LewdInteractions);
 
   /// If the category is favorites, we need to filter the list of all interactions
   /// to only include the ones that are in the user's favorites list.
