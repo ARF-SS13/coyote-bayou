@@ -92,7 +92,7 @@
 // Bite Thigh 7A4////////
 ///////////////////////
 /datum/interaction/lewd/partner/giving/bite_thigh
-	description = "Partner/Thighsl - Bite their thighs."
+	description = "Partner/Thighs - Bite their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
