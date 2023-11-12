@@ -11,7 +11,7 @@
 //Neck Bite 2A2//
 ////////////////////
 /datum/interaction/lewd/partner/giving/neck_bite
-	description = "Partner/Head - Bite their neck."
+	description = "Partner/Neck - Bite their neck."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -39,7 +39,7 @@
 //Throat Grab 2A2//
 ///////////////////
 /datum/interaction/lewd/partner/giving/throat_grab
-	description = "Partner/Head - Grab their throat."
+	description = "Partner/Neck - Grab their throat."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
