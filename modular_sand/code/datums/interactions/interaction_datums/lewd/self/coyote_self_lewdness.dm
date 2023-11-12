@@ -32,7 +32,6 @@
 	description = "Self/Crotch - Rub Crotch." //This naming convention is to help players who want to filter functions. In this case its Self, as in, yourSELF, and a function of the 'area' crotch.  Then it describes what you're doing to the area.
 	/// Step 1.5: Add in the categories its supposed to be in! you can find these in [code\__DEFINES\voreconstants.dm] (srsly)
 	/// Include ICAT_LEWD if it is lewd
-	categories = list(ICAT_LEWD, ICAT_SELF, ICAT_CROTCH)
 	// Self/Partner for the left hand side.
 	// Head/Neck/Body/Arms/Stomach/Crotch/Thighs/Legs/Tail for the right hand side.
 	/// Step 2 (actually 4) - the messages!

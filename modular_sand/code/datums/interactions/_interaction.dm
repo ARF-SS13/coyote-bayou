@@ -102,7 +102,7 @@
 	var/require_target_mouth
 	var/require_target_hands
 	var/needs_physical_contact
-	var/list/categories = list("All Interactions", "Bingus")
+	var/list/categories = list("All Interactions")
 
 	var/can_autoplap = TRUE
 
@@ -135,9 +135,23 @@
 		help_sounds = simple_sounds.Copy()
 	if(simple_span && !help_span)
 		help_span = simple_span
-// 	exract_caegories()
+	exract_caegories()
 
-// /datum/interaction/proc/
+/datum/interaction/proc/exract_caegories()
+	if(!findtext(description, " - "))
+		return
+	var/list/fore_and_aft = splittext(description, " - ")
+	if(LAZYLEN(fore_and_aft) != 2)
+		return
+	var/list/cattes = splittext(fore_and_aft[1], "/")
+	for(var/entry in cattes)
+		if(!entry)
+			continue
+		categories |= entry
+	if(is_lewd)
+		categories |= "Lewd"
+	if(extreme)
+		categories |= "Extreme"
 
 /// Checks if user can do an interaction, action_check is for whether you're actually doing it or not (useful for the menu and not removing the buttons)
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)

@@ -364,7 +364,7 @@ const Lust = (props, context) => {
   //   AutocumText += "you feel like it!";
   // }
 
-  const AutocumColor = AutocumFlags ? "green" : "default";
+  const AutocumColor = CanCum ? "green" : "default";
 
   const CelWidth = ItsJustMe ? "100%" : "50%";
 
