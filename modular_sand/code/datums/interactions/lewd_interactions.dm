@@ -577,14 +577,12 @@
 
 /// adjusts ur lust
 /datum/interaction/lewd/adjust_lust(mob/living/user, mob/living/target, show_message, list/extra = list())
-	if(user?.client)
-		. = TRUE
-		var/user_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * user_lust_mult, lust_round)
-		user.handle_post_sex(user_lustmnt)
-	if(!target?.client)
-		. = TRUE
-		var/target_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * target_lust_mult, lust_round)
-		target.handle_post_sex(target_lustmnt)
+	. = TRUE
+	var/user_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * user_lust_mult, lust_round)
+	user.handle_post_sex(user_lustmnt)
+	. = TRUE
+	var/target_lustmnt = CEILING(LAZYACCESS(lust_amt, user.a_intent) * target_lust_mult, lust_round)
+	target.handle_post_sex(target_lustmnt)
 
 /datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)
 	if(user_refractory_cost)

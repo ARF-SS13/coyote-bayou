@@ -38,8 +38,8 @@
 	/// Step 2 (actually 4) - the messages!
 	/// THis is a list of strings that are picked from
 	help_messages = list(
-		// "XU_NAME gently rubs at the XU_THEIR own crotch.", 
-		"Hi hey uh {bip, baap, fwiem, weem} BAAAA {du, 63748, .fwrvj, a}Spunk {Q}Scorn{}SCALES"
+		"XU_NAME gently rubs at the XU_THEIR own crotch.", 
+		// "Hi hey uh {bip, baap, fwiem, weem} BAAAA {du, 63748, .fwrvj, a}Spunk {Q}Scorn{}SCALES"
 	)
 	disarm_messages = list(
 		"XU_NAME teasingly rubs at the XU_THEIR own crotch.", 

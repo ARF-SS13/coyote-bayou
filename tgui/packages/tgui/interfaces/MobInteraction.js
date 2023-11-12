@@ -335,7 +335,36 @@ const Lust = (props, context) => {
 
   const CumButtonText = "!! C U M !!";
   const AutocumText = CanCum ? "Autocum: ON" : "Autocum: OFF";
-  const AutocumColor = CanCum ? "green" : "default";
+  // let AutocumArray = [];
+  // /// run through the bitfields in AutocumFlags and assemble the appropriate text
+  // if(AutocumFlags) {
+  //   if(AutocumFlags & 1) {
+  //     AutocumArray.push("they cum");
+  //   }
+  //   if(AutocumFlags & 2) {
+  //     AutocumArray.push("you're full of lust");
+  //   }
+  //   if(AutocumFlags & 4) {
+  //     AutocumArray.push("they're full of lust");
+  //   }
+  // }
+  // /// assembles them into a string, like:
+  // /// "You'll cum when they cum, you're full of lust, and they're full of lust"
+  // if(AutocumArray.length > 0) {
+  //   for(let i = 0; i < AutocumArray.length; i++) {
+  //     if(i === 0) {
+  //       AutocumText += AutocumArray[i];
+  //     } else if(i === AutocumArray.length - 1) {
+  //       AutocumText += ", and " + AutocumArray[i];
+  //     } else {
+  //       AutocumText += ", " + AutocumArray[i];
+  //     }
+  //   }
+  // } else {
+  //   AutocumText += "you feel like it!";
+  // }
+
+  const AutocumColor = AutocumFlags ? "green" : "default";
 
   const CelWidth = ItsJustMe ? "100%" : "50%";
 
@@ -436,27 +465,33 @@ const Lust = (props, context) => {
             </Flex.Item>
           )}
         {/* the cum button row */}
-        <Flex.Item basis="50%">
-          <Flex direction="column">
+        <Flex.Item basis="100%" wrap="wrap">
+          <Flex direction="row">
             <Flex.Item>
-            <Button
-              fluid
-              mb={0.3}
-              color={AutocumColor}
-              content={AutocumText}
-              bold={CanCum}
-              onClick={() => act('ToggleAutoCum')} />
-          </Flex.Item>
-          <Flex.Item>
-            <Button
-              fluid
-              mb={0.3}
-              disabled={!CanCum}
-              color="pink"
-              content={CumButtonText}
-              bold={CanCum}
-              onClick={() => act('Cum')} />
-          </Flex.Item>
+              <Button
+                fluid
+                mb={0.3}
+                disabled={!CanCum}
+                color="pink"
+                content={CumButtonText}
+                bold={CanCum}
+                onClick={() => act('Cum')} />
+            </Flex.Item>
+            <Flex.Item>
+              <Box
+                fluid>
+                {AutocumText}
+              </Box>
+            </Flex.Item>
+            <Flex.Item>
+              <Button
+                fluid
+                mb={0.3}
+                color={AutocumColor}
+                content={AutocumText}
+                bold={CanCum}
+                onClick={() => act('ToggleAutoCum')} />
+            </Flex.Item>
           </Flex>
         </Flex.Item>
       </Flex>
@@ -538,6 +573,9 @@ const AutoPlapControl = (props, context) => {
     APRecording, // If this is recording, meaning its still in its setup phase
   } = AutoPlapObj;
 
+  const MinAutoplapInterval = data.MinAutoplapInterval || 15;
+  const MaxAutoplapInterval = data.MaxAutoplapInterval || 300;
+
   const APPlappingIcon = APPlapping ? "pause" : "play";
   const APPlapColor = APPlapping ? "" : "green";
   const APRecordingIcon = APRecording ? "ban" : "circle";
@@ -580,10 +618,10 @@ const AutoPlapControl = (props, context) => {
                 animated={true}
                 unit="sec/PLAP"
                 width="4.5em"
-                minValue={2}
-                maxValue={50}
+                minValue={MinAutoplapInterval}
+                maxValue={MaxAutoplapInterval}
                 value={APInterval}
-                step={2}
+                step={1}
                 stepPixelSize={3}
                 format={value => {
                   return toFixed((value * 0.1), 1);
@@ -1061,17 +1099,17 @@ const GetInteractionsInCategory = (context) => {
   }
   /// and since we havent utterly destroyed performance by this point,
   /// put all the non-lewd items at the top of the list
-  let LewdInteractions = [];
-  let NonLewdInteractions = [];
-  FilteredInteractions.forEach(Interaction => {
-    if (Interaction.InteractionLewd) {
-      LewdInteractions.push(Interaction);
-    } else {
-      NonLewdInteractions.push(Interaction);
-    }
-  }
-  );
-  FilteredInteractions = NonLewdInteractions.concat(LewdInteractions);
+  // let LewdInteractions = [];
+  // let NonLewdInteractions = [];
+  // FilteredInteractions.forEach(Interaction => {
+  //   if (Interaction.InteractionLewd) {
+  //     LewdInteractions.push(Interaction);
+  //   } else {
+  //     NonLewdInteractions.push(Interaction);
+  //   }
+  // }
+  // );
+  // FilteredInteractions = NonLewdInteractions.concat(LewdInteractions);
 
   /// If the category is favorites, we need to filter the list of all interactions
   /// to only include the ones that are in the user's favorites list.

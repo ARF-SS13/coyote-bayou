@@ -737,6 +737,8 @@
 #define COMSIG_SPLURT_INTERACTION_CAUGHT "COMSIG_SPLURT_INTERACTION_CAUGHT" // (datum/source, mob/living/interactee, mob/living/interactee, datum/interaction/interaction)
 #define COMSIG_SPLURT_REMOVE_AUTOPLAPPER "COMSIG_SPLURT_REMOVE_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
 #define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
+#define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
 
 

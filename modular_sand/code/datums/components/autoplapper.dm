@@ -31,6 +31,9 @@
 	/// im listening
 	var/plap_listening = FALSE
 
+	// if SSinteractions.debug_store_plapper_weakref is set, this'll be our other guy
+	var/datum/weakref/debug_plappee
+
 
 /// Starts life with the current time as the first point of reference
 /// If new'd with a plap interval, will start plapping immediately with that time
@@ -58,7 +61,10 @@
 	plap_name = I.description
 	src.plap_key = "[I.type]"
 	src.plapper = plapper.ckey
-	src.plappee = plappee.ckey
+	if(SSinteractions.debug_store_plapper_weakref)
+		debug_plappee = WEAKREF(plappee)
+	else
+		src.plappee = plappee.ckey
 	var/mob/living/pLapper = ckey2mob(src.plapper)
 	plap_startpoint = world.time
 	apid = generate_unique_id()
@@ -68,10 +74,11 @@
 		to_chat(pLapper, span_notice("First action recorded! Perform it again to start looping that action!"))
 		plap_listening = TRUE
 		RegisterSignal(pLapper, COMSIG_SPLURT_INTERACTION_PITCHED, .proc/check_finalized) // quietly wait for anotehr plap of our kind
-		plap_ignore_timer = addtimer(CALLBACK(src, .proc/give_up), PLAP_GIVE_UP_TIME, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
+		plap_ignore_timer = addtimer(CALLBACK(src, .proc/give_up), SSinteractions.max_autoplap_interval, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
 	SEND_SIGNAL(pLapper, COMSIG_SPLURT_ADD_AUTOPLAPPER, src)
 
 /datum/autoplapper/Destroy(force, ...)
+	debug_plappee = null
 	var/mob/living/pLapper = ckey2mob(plapper)
 	if(pLapper)
 		SEND_SIGNAL(pLapper, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, src)
@@ -95,12 +102,13 @@
 	if(interval <= 0)
 		qdel(src)
 		return // we cant plap backwards
-	if(interval > PLAP_GIVE_UP_TIME)
-		qdel(src)
-		give_up()
-		return // took too long!
+	interval = clamp(interval, SSinteractions.min_autoplap_interval, SSinteractions.max_autoplap_interval)
 	var/mob/living/plappermob = ckey2mob(plapper)
-	var/mob/living/plappeemob = ckey2mob(plappee)
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)
 	if(!isliving(plappermob) || !isliving(plappeemob))
 		qdel(src)
 		return // well heck they died
@@ -113,7 +121,11 @@
 	if(plapping_active)
 		return // we're already plapping
 	var/mob/living/plappermob = ckey2mob(plapper)
-	var/mob/living/plappeemob = ckey2mob(plappee)
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)
 	if(!can_plap())
 		to_chat(plappermob, span_alert("You can't do that right now!"))
 		return // we cant plap
@@ -139,13 +151,13 @@
 
 /datum/autoplapper/proc/change_interval(interval)
 	var/mob/living/plappermob = ckey2mob(plapper)
-	if(interval <= 0)
+	if(interval <= SSinteractions.min_autoplap_interval)
 		to_chat(plappermob, span_alert("That's too short![prob(1)?" u-u":""]"))
 		return // we cant plap backwards
-	if(interval > PLAP_GIVE_UP_TIME)
+	if(interval > SSinteractions.max_autoplap_interval)
 		to_chat(plappermob, span_alert("That's too long![prob(1)?" OwO,,":""]"))
 		return // too long!
-	plap_interval = interval
+	plap_interval = round(interval, SSautoplap.wait)
 	to_chat(plappermob, span_green("Autointeraction interval changed to [DisplayTimeText(plap_interval)]!"))
 	COOLDOWN_START(src, last_plap, plap_interval)
 
@@ -179,7 +191,11 @@
 /// Okay now lets plap!
 /datum/autoplapper/proc/plap()
 	var/mob/living/plappermob = ckey2mob(plapper)
-	var/mob/living/plappeemob = ckey2mob(plappee)
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)
 	if(!isliving(plappermob) || !isliving(plappeemob))
 		return // well heck they died
 	if(get_dist(plappermob, plappeemob) > 2)
@@ -197,7 +213,12 @@
 		return TRUE // not that anyone's plapping
 	if(!lewd_plap)
 		return TRUE // dont need consent to play patty cake
-	return SSinteractions.check_consent(plapper, plappee)
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)
+	return SSinteractions.check_consent(plapper, plappeemob)
 
 /datum/autoplapper/proc/can_plap()
 	if(!plap_key)
@@ -205,7 +226,11 @@
 	if(!consented())
 		return FALSE // they dont want to plap
 	var/mob/living/plappermob = ckey2mob(plapper)
-	var/mob/living/plappeemob = ckey2mob(plappee)
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)
 	if(plappermob.incapacitated(FALSE, FALSE, TRUE))
 		return FALSE // they're in no shape to plap! 
 	if(get_dist(plappermob, plappeemob) > 2)
@@ -228,8 +253,12 @@
 	entry["APPlapName"] = plap_name || "Hold Handing"
 	var/mob/living/pLapper = ckey2mob(plapper)
 	entry["APPlapper"] = pLapper?.name || "Your Mom"
-	var/mob/living/pLappee = ckey2mob(plappee)
-	entry["APPartner"] = pLappee?.name || "Your Dad"
+	var/mob/living/plappeemob
+	if(SSinteractions.debug_store_plapper_weakref)
+		plappeemob = GET_WEAKREF(debug_plappee)
+	else
+		plappeemob = ckey2mob(plappee)	
+	entry["APPartner"] = plappeemob?.name || "Your Dad"
 	entry["APInterval"] = plap_interval || 10 SECONDS
 	entry["APPlapping"] = plapping_active || FALSE
 	entry["APPlapcount"] = plap_count || 0

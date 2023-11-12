@@ -892,6 +892,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	S["permanent_tattoos"]		>> permanent_tattoos
 
+	//Permanent Tattoos
+	S["faved_interactions"]		>> faved_interactions
+
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
@@ -1421,6 +1424,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
+
+	//permanent tattoos
+	WRITE_FILE(S["faved_interactions"], faved_interactions)
 
 	return 1
 
