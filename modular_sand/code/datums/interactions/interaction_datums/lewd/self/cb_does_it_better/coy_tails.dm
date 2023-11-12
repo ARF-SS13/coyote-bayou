@@ -26,7 +26,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', 
+		'modular_sand/sound/interactions/hug.ogg',
 	) // frumf, frumf
 	target_lust_mult = 0.5
 	lust_go_to = LUST_TARGET
@@ -53,7 +53,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', 
+		'modular_sand/sound/interactions/hug.ogg',
 	) // frumf, frumf
 	target_lust_mult = 0.5
 	lust_go_to = LUST_TARGET
@@ -80,7 +80,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', 
+		'sound/weapons/bite.ogg' 
 	) // frumf, frumf
 	target_lust_mult = 0.5
 	lust_go_to = LUST_TARGET
