@@ -12,7 +12,6 @@
 	needs_physical_contact = TRUE
 	require_ooc_consent = TRUE
 	max_distance = 1
-	categories = list("All Interactions")
 
 	is_lewd = TRUE
 	is_visible_to_all = FALSE

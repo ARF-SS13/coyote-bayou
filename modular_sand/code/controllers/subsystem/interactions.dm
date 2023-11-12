@@ -15,9 +15,9 @@ SUBSYSTEM_DEF(interactions)
 	var/list/guosh_cd = 1 SECONDS // the 7 is for good luck
 	var/list/guorch_cooldowns = list()
 	var/list/interactions_tgui = list()
-	var/min_autoplap_interval = 1.5 SECONDS
+	var/min_autoplap_interval = 3 SECONDS
 	var/max_autoplap_interval = 15 SECONDS
-	var/debug_store_plapper_weakref = TRUE
+	var/debug_store_plapper_weakref = FALSE
 
 	VAR_PROTECTED/list/blacklisted_mobs = list(
 		/mob/dead,
@@ -259,18 +259,19 @@ SUBSYSTEM_DEF(interactions)
  * A cooldown for guoshing, so you can't just spam it.
  */
 /datum/controller/subsystem/interactions/proc/can_squorch_sound(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
-	if(!istype(squisher) || !squisher.ckey || !istype(splut))
-		return FALSE
-	if(!LAZYLEN(splut.help_sounds))
-		return FALSE // not that it matters
-	if(!LAZYACCESS(guorch_cooldowns, squisher.ckey))
-		set_cooldown_for_guorch(squisher)
-		return TRUE // SQUISHERS ARE REALLY COOL
-	if(world.time > LAZYACCESS(guorch_cooldowns, squisher.ckey))
-		if(do_cooldown)
-			set_cooldown_for_guorch(squisher)
-		return TRUE // SQUISHERS ARE SO MUCH FUN
-	return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
+	return TRUE // yeah you cant spam it turns out
+	// if(!istype(squisher) || !squisher.ckey || !istype(splut))
+	// 	return FALSE
+	// if(!LAZYLEN(splut.help_sounds))
+	// 	return FALSE // not that it matters
+	// if(!LAZYACCESS(guorch_cooldowns, squisher.ckey))
+	// 	set_cooldown_for_guorch(squisher)
+	// 	return TRUE // SQUISHERS ARE REALLY COOL
+	// if(world.time > LAZYACCESS(guorch_cooldowns, squisher.ckey))
+	// 	if(do_cooldown)
+	// 		set_cooldown_for_guorch(squisher)
+	// 	return TRUE // SQUISHERS ARE SO MUCH FUN
+	// return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
 	
 /datum/controller/subsystem/interactions/proc/set_cooldown_for_guorch(mob/living/squisher)
 	if(!istype(squisher) || !squisher.ckey)
