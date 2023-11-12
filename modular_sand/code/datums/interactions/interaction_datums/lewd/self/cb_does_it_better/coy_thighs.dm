@@ -11,7 +11,7 @@
 //Fuck Thighs 7A1////
 //////////////////////
 /datum/interaction/lewd/partner/giving/sniff_crotch
-	description = "Partner/Tail - Sniff their crotch."
+	description = "Partner/Thighs - Sniff their crotch."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -38,7 +38,7 @@
 //Lick Thigh 7A2///
 ////////////////////
 /datum/interaction/lewd/partner/giving/lick_thigh
-	description = "Partner/Tail - Lick their thighs."
+	description = "Partner/Thighs - Lick their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -65,7 +65,7 @@
 //Grab Thigh 7A3///
 ////////////////////
 /datum/interaction/lewd/partner/giving/grab_thigh
-	description = "Partner/Tail - Grab their thighs."
+	description = "Partner/Thighs - Grab their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -92,7 +92,7 @@
 // Bite Thigh 7A4////////
 ///////////////////////
 /datum/interaction/lewd/partner/giving/bite_thigh
-	description = "Partner/Tail - Bite their thighs."
+	description = "Partner/Thighsl - Bite their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -120,7 +120,7 @@
 // Rest Thigh 7A5////////
 ///////////////////////
 /datum/interaction/lewd/partner/giving/rest_thigh
-	description = "Partner/Tail - Rest your head on their thighs."
+	description = "Partner/Thighs - Rest your head on their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(

@@ -15,7 +15,7 @@
 //Giving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/nipple_twist
-	description = "Partner/Neck - Twist their nipple."
+	description = "Partner/Body - Twist their nipple."
 	require_user_hands = TRUE
 	max_distance = 1
 	help_messages = list(
@@ -44,7 +44,7 @@
 //Giving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/nipple_bite
-	description = "Partner/Neck - Bite their nipple."
+	description = "Partner/Body - Bite their nipple."
 	require_user_hands = TRUE
 	help_messages = list(
 		"XU_NAME gently bites XT_NAME's nipple.",
@@ -79,7 +79,7 @@
 //Giving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/nipple_lick
-	description = "Partner/Neck - Lick their nipple."
+	description = "Partner/Body - Lick their nipple."
 	require_user_hands = TRUE
 	max_distance = 1
 	help_messages = list(
@@ -107,7 +107,7 @@
 //Giving Verb Prototype
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/nipple_pull
-	description = "Partner/Neck - Pull their nipple."
+	description = "Partner/Body - Pull their nipple."
 	require_user_hands = TRUE
 	max_distance = 1
 	help_messages = list(
@@ -189,3 +189,67 @@
 		'sound/effects/rustle5.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0
+
+////////////////
+// Titplay 3A7//
+////////////////
+//Recieving Verb Prototype
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/mutual/titplay
+	description = "Partner/Body - Play with their breasts."
+	max_distance = 1
+	help_messages = list(
+		"XU_NAME gently plays with  XT_NAME's breasts.", 
+	)
+	disarm_messages = list(
+		"XU_NAME playfully fondles XT_NAME's breasts.", 
+	)
+	grab_messages = list(
+		"XU_NAME firmly fondles XT_NAME's breasts.", 
+	)
+	harm_messages = list(
+		"XU_NAME squeezes XT_NAME's breasts.", 
+	)
+
+	simple_sounds = list(
+		'sound/effects/rustle1.ogg',
+		'sound/effects/rustle2.ogg',
+		'sound/effects/rustle3.ogg',
+		'sound/effects/rustle4.ogg',
+		'sound/effects/rustle5.ogg',
+	) // frumf, frumf
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+	lust_go_to = LUST_USER | LUST_TARGET
+
+////////////////
+// Titsqueeze 3A7//
+////////////////
+//Recieving Verb Prototype
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/mutual/titsqueeze
+	description = "Partner/Body - Squeeze their breasts."
+	max_distance = 1
+	help_messages = list(
+		"XU_NAME squeezes XT_NAME's breasts gently.", 
+	)
+	disarm_messages = list(
+		"XU_NAME squishes XT_NAME's breasts.", 
+	)
+	grab_messages = list(
+		"XU_NAME smushes XT_NAME's breasts possessively.", 
+	)
+	harm_messages = list(
+		"XU_NAME downright squashes XT_NAME's breasts.", 
+	)
+
+	simple_sounds = list(
+		'sound/effects/rustle1.ogg',
+		'sound/effects/rustle2.ogg',
+		'sound/effects/rustle3.ogg',
+		'sound/effects/rustle4.ogg',
+		'sound/effects/rustle5.ogg',
+	) // frumf, frumf
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+	lust_go_to = LUST_USER | LUST_TARGET

@@ -10,7 +10,7 @@
 //caress Leg 8A1///
 ////////////////////
 /datum/interaction/lewd/partner/giving/caress_leg
-	description = "Partner/Head - Caress their leg."
+	description = "Partner/Legs - Caress their leg."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -38,7 +38,7 @@
 // Footsie 8A2////////
 ///////////////////////
 /datum/interaction/lewd/partner/giving/play_footsie
-	description = "Partner/Head - Play footsie with them."
+	description = "Partner/Legs - Play footsie with them."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -67,7 +67,7 @@
 //Squeeze Leg 8A3///
 ////////////////////
 /datum/interaction/lewd/partner/giving/squeeze_leg
-	description = "Partner/Head - Squeeze their leg."
+	description = "Partner/Legs - Squeeze their leg."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -94,7 +94,7 @@
 // Spread Legs 8A4////////
 ///////////////////////
 /datum/interaction/lewd/partner/giving/spread_legs
-	description = "Partner/Head - Spread their legs."
+	description = "Partner/Legs - Spread their legs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(

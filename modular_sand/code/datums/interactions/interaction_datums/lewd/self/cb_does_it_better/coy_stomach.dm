@@ -9,7 +9,7 @@
 //Touch Belly 5A1//
 //////////////////
 /datum/interaction/lewd/partner/giving/touch_belly
-	description = "Partner/Head - Touch their tummy."
+	description = "Partner/Stomach - Touch their tummy."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -38,7 +38,7 @@
 //Touch Belly 5A2//
 //////////////////
 /datum/interaction/lewd/partner/giving/rub_belly
-	description = "Partner/Head - Rub their tummy."
+	description = "Partner/Stomach - Rub their tummy."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -65,7 +65,7 @@
 //Caress Belly 5A3//
 //////////////////
 /datum/interaction/lewd/partner/giving/caress_belly
-	description = "Partner/Head - Caress their tummy."
+	description = "Partner/Stomach - Caress their tummy."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
