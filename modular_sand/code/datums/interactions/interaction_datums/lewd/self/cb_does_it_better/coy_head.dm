@@ -56,6 +56,7 @@
 
 	simple_sounds = list(
 		'sound/weapons/bite.ogg'
+	)
 	target_lust_mult = 0.8
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 ///////EAR BITE END/////////
