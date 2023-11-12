@@ -317,7 +317,7 @@
 		"XU_NAME churns the insides XT_NAME's pussy with XU_THEIR cock.",
 	)
 	harm_messages = list(
-		"XU_NAME hammers at XT_NAME'S pussy with XU_THEIR cock.",
+		"XU_NAME hammers at XT_NAME's pussy with XU_THEIR cock.",
 	)
 
 	simple_sounds = list(
@@ -337,10 +337,10 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME gently rides on XT_NAME'S cock, letting them feel XU_THEIR warm and wet hole."
+		"XU_NAME gently rides on XT_NAME's cock, letting them feel XU_THEIR warm and wet hole."
 	)
 	disarm_messages = list(
-		"XU_NAME playfully bounces on XT_NAME'S cock, letting them feel XU_THEIR warm and wet hole."
+		"XU_NAME playfully bounces on XT_NAME's cock, letting them feel XU_THEIR warm and wet hole."
 	)
 	grab_messages = list(
 		"XU_NAME pushes XT_THEIR warm and wet hole down hard on XT_NAME's cock."
@@ -376,7 +376,7 @@
 		"XU_NAME churns the insides XT_NAME's ass with XU_THEIR cock.",
 	)
 	harm_messages = list(
-		"XU_NAME hammers at XT_NAME'S rear end with XU_THEIR cock.",
+		"XU_NAME hammers at XT_NAME's rear end with XU_THEIR cock.",
 	)
 
 	simple_sounds = list(
@@ -395,10 +395,10 @@
 	description = "Partner/Crotch - Fuck their cock with your butt."
 	require_user_hands = TRUE
 	help_messages = list(
-		"XU_NAME gently rides on XT_NAME'S cock, letting them feel XU_THEIR warm backhole."
+		"XU_NAME gently rides on XT_NAME's cock, letting them feel XU_THEIR warm backhole."
 	)
 	disarm_messages = list(
-		"XU_NAME playfully bounces on XT_NAME'S cock, letting them feel XU_THEIR bootyhole."
+		"XU_NAME playfully bounces on XT_NAME's cock, letting them feel XU_THEIR bootyhole."
 	)
 	grab_messages = list(
 		"XU_NAME pushes XT_THEIR tight rear end down hard on XT_NAME's cock."
