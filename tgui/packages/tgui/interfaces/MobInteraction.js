@@ -466,7 +466,7 @@ const Lust = (props, context) => {
           )}
         {/* the cum button row */}
         <Flex.Item basis="100%" wrap="wrap">
-          <Flex direction="row">
+          <Flex direction="column">
             <Flex.Item>
               <Button
                 fluid
@@ -476,12 +476,6 @@ const Lust = (props, context) => {
                 content={CumButtonText}
                 bold={CanCum}
                 onClick={() => act('Cum')} />
-            </Flex.Item>
-            <Flex.Item>
-              <Box
-                fluid>
-                {AutocumText}
-              </Box>
             </Flex.Item>
             <Flex.Item>
               <Button
