@@ -102,7 +102,7 @@
 	var/require_target_mouth
 	var/require_target_hands
 	var/needs_physical_contact
-	var/list/categories = list("All Interactions", "Bingus")
+	var/list/categories = list("All Interactions")
 
 	var/can_autoplap = TRUE
 
@@ -135,9 +135,23 @@
 		help_sounds = simple_sounds.Copy()
 	if(simple_span && !help_span)
 		help_span = simple_span
-// 	exract_caegories()
+	exract_caegories()
 
-// /datum/interaction/proc/
+/datum/interaction/proc/exract_caegories()
+	if(!findtext(description, " - "))
+		return
+	var/list/fore_and_aft = splittext(description, " - ")
+	if(LAZYLEN(fore_and_aft) != 2)
+		return
+	var/list/cattes = splittext(fore_and_aft[1], "/")
+	for(var/entry in cattes)
+		if(!entry)
+			continue
+		categories |= entry
+	if(is_lewd)
+		categories |= "Lewd"
+	if(extreme)
+		categories |= "Extreme"
 
 /// Checks if user can do an interaction, action_check is for whether you're actually doing it or not (useful for the menu and not removing the buttons)
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
@@ -264,18 +278,18 @@
 	var/message = get_message(user, target, extra)
 	var/span = get_span(user, target, extra)
 	message = "<span class='[span]'>[message]</span>"
-	if(is_visible_to_all) // pubic studly void main(Integer[] penis) { // I'm sorry, I had to. - Zuhayr
+	if(!is_lewd)
 		user.visible_message(message)
 		return TRUE
-	to_chat(user, message)
-	if(is_self_action)
-		return TRUE
+	/// now to broadcast to everyone in your private little circle
 	var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
-	for(var/mob/squish in ppl - user)
+	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		// if(is_lewd && !CHECK_PREFS(squish, HEAR_LEWD_VERB_WORDS))
-		// 	continue
+		if(!(squish in view(15, user)))
+			continue
+		if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS))
+			continue
 		to_chat(squish, message)
 	return TRUE
 	
@@ -294,6 +308,8 @@
 /// After the interaction, the base only plays the sound and only if it has one
 /datum/interaction/proc/interaction_sound(mob/living/user, mob/living/target, play_sound)
 	if(!user || !target)
+		return
+	if(!SSinteractions.can_squorch_sound(user, src))
 		return
 	var/sound2play
 	switch(user.a_intent)
@@ -317,23 +333,14 @@
 				sound2play = pick(help_sounds)
 	if(!sound2play)
 		return
-	if(is_visible_to_all)
-		if(is_lewd)
-			playlewdinteractionsound(get_turf(user), simple_sounds, int_sound_vol, 1)
-		else
-			playsound(user, sound2play, int_sound_vol, 1)
-	else
-		if(is_lewd)
-			var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
-			for(var/mob/squish in ppl)
-				if(!squish.client)
-					continue
-				// if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_SOUNDS))
-				// 	continue
-				squish.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
-		else
-			user.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
-			target.playsound_local(get_turf(user), sound2play, int_sound_vol, 1)
+	if(!is_lewd)
+		playsound(user, sound2play, int_sound_vol, 1)
+		return TRUE
+	var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
+	for(var/mob/squish in ppl)
+		if(!squish.client)
+			continue
+		squish.playsound_local(get_turf(user), sound2play, int_sound_vol, 1, soundpref_index = NOTMERP_LEWD_SOUNDS)
 	return TRUE
 
 /datum/interaction/proc/get_description(mob/living/user, mob/living/target)

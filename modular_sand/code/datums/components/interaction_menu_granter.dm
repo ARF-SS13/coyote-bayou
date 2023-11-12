@@ -1,12 +1,14 @@
 #define SPLURT_MAX_AUTOPLAPPERS 3
 #define SPLURT_ANTISPAM if(!click_refractory()) return FALSE
+#define AUTOCUM_PARTNER_CUMS (1 << 0)
+#define AUTOCUM_USER_FULL_LUST (1 << 1)
+#define AUTOCUM_PARTNER_FULL_LUST (1 << 2)
 
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
 	set name = "Interact With"
 	set desc = "Perform an interaction with someone."
 	set category = "IC"
-	set src in view(usr.client)
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
 	if(!menu)
@@ -19,12 +21,17 @@
 	if(!src)
 		to_chat(usr, span_warning("Your interaction target is gone!"))
 		return
-	menu.open_menu(usr, src)
+	SEND_SIGNAL(usr, COMSIG_CLICK_CTRL_SHIFT, src)
+
 
 #define INTERACTION_NORMAL 0
 #define INTERACTION_LEWD 1
 #define INTERACTION_EXTREME 2
 #define INTERACTION_CONSENT 3
+
+/// some day this humble component will hold all of the world's horniness
+/// taking it from the shoulders of /mob/living ones and for all
+/// Stay strong, /datum/component/interaction_menu_granter
 
 /// The menu itself, only var is target which is the mob you are interacting with
 /datum/component/interaction_menu_granter
@@ -39,6 +46,7 @@
 	var/SeeLewd = FALSE // show the lewd stuff?
 	var/SeeExtreme = FALSE // show the REALLY lewd stuff?
 	var/savetimer = 0
+	var/autocum_flags = NONE
 	COOLDOWN_DECLARE(click_refractory)
 
 /datum/component/interaction_menu_granter/Initialize(...)
@@ -54,6 +62,7 @@
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
 	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, .proc/kill_autoplapper)
 	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER, .proc/confirm_autoplap)
+	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED, .proc/sympathetic_detonation)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
@@ -109,6 +118,8 @@
 		return
 	var/list/data = list()
 	//Getting interactions
+	data["MinAutoplapInterval"] = SSinteractions.min_autoplap_interval || list()
+	data["MaxAutoplapInterval"] = SSinteractions.max_autoplap_interval || list()
 	data["AllCategories"] = SSinteractions.all_categories || list()
 	data["AllInteractions"] = SSinteractions.interactions_tgui || list()
 	data["MyGenitals"] = self.format_genitals_for_tgui() || list()
@@ -147,15 +158,8 @@
 	.["MyMaxLust"] = self.get_lust_max() || 0
 	.["SeeLewdMessages"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS) || FALSE
 	.["HearLewdSounds"] = !!CHECK_BITFIELD(self.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS) || FALSE
-	if(target != self)
-		// .["TheirCKEY"] = target.ckey || "Nobody"
-		// .["theirAttributes"] = target.list_interaction_attributes(self) || list()
-		if(HAS_TRAIT(user, TRAIT_IN_HEAT))
-			.["TheirLust"] = target.get_lust() || 0
-			.["TheirMaxLust"] = target.get_lust_max() || 0
-		else
-			.["TheirLust"] = round(target.get_lust(), 25) || 0
-			.["TheirMaxLust"] = round(target.get_lust_max(), 25) || 0
+	.["TheirLust"] = target.get_lust() || 0
+	.["TheirMaxLust"] = target.get_lust_max() || 0
 
 /proc/num_to_pref(num)
 	switch(num)
@@ -170,6 +174,7 @@
 	if(..())
 		return
 	var/mob/living/parent_mob = parent
+	var/datum/preferences/P = extract_prefs(parent_mob)
 
 	switch(action)
 		if("interact")
@@ -177,24 +182,28 @@
 			perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"])
 			return TRUE
 		if("Favorite")
-			var/datum/preferences/prefs = parent_mob.client.prefs
-			if(params["interaction"] in prefs.faved_interactions)
-				prefs.faved_interactions -= params["interaction"]
+			if(!P)
+				return FALSE
+			if(params["interaction"] in P.faved_interactions)
+				P.faved_interactions -= params["interaction"]
 			else
-				prefs.faved_interactions += params["interaction"]
+				P.faved_interactions += params["interaction"]
 			queue_save()
+			interface_sound(1)
 			return TRUE
 		if("DeleteAutoPlapper")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP)
 				return FALSE
 			remove_autoplap(AP.apid)
+			interface_sound(1)
 			return TRUE
 		if("StartRecording")
 			if(is_recording())
 				perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"]) // try to finish it off
 				return FALSE
 			new_autoplap(params["interaction"], GET_WEAKREF(weaktarget), null)
+			interface_sound(1)
 			return TRUE
 		if("StopRecording")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
@@ -203,6 +212,7 @@
 			to_chat(parent_mob, span_green("Aborted recording [AP.plap_key]!"))
 			autoplappers -= AP.apid
 			qdel(AP)
+			interface_sound(1)
 			return TRUE
 		if("SetAutoPlapperInterval")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
@@ -215,10 +225,13 @@
 			if(!AP)
 				return FALSE
 			AP.toggle_plapping()
+			interface_sound(1)
 			return TRUE
 		if("ConsentAct")
 			SPLURT_ANTISPAM
+			to_chat(parent_mob, span_notice("Requesting consent from [GET_WEAKREF(weaktarget)]..."))
 			SSinteractions.add_or_remove_consent(parent_mob, GET_WEAKREF(weaktarget))
+			interface_sound(2)
 			return TRUE
 		// if("MTTC")
 		// 	update_mean_time_to_cum(params["value"])
@@ -226,6 +239,7 @@
 		if("Cum")
 			SPLURT_ANTISPAM
 			parent_mob.cum()
+			interface_sound(3)
 			return TRUE
 		if("ToggleAutoCum")
 			TOGGLE_VAR(parent_mob.ready_to_cum)
@@ -233,8 +247,10 @@
 				to_chat(parent_mob, span_green("You will automatically cum when your arousal reaches 100%!"))
 			else
 				to_chat(parent_mob, span_green("You will no longer automatically cum when your arousal reaches 100%!"))
+			interface_sound(1)
 			return TRUE
 		if("ToggleAutoStart")
+			interface_sound(1)
 			TOGGLE_VAR(autoplapper_autostart)
 			return TRUE
 		if("StopAllAutoPlappers")
@@ -245,6 +261,7 @@
 					continue
 				AP.stop_plapping()
 			to_chat(parent_mob, span_green("Stopped all autoplappers!"))
+			interface_sound(1)
 			return TRUE
 		if("StartAllAutoPlappers")
 			SPLURT_ANTISPAM
@@ -254,6 +271,7 @@
 					continue
 				AP.start_plapping()
 			to_chat(parent_mob, span_green("Started all autoplappers!"))
+			interface_sound(1)
 			return TRUE
 		if("ToggleSeeLewd")
 			TOGGLE_VAR(SeeLewd)
@@ -261,6 +279,7 @@
 				to_chat(parent_mob, span_green("Lewd stuff enabled!"))
 			else
 				to_chat(parent_mob, span_green("Lewd stuff disabled!"))
+			interface_sound(1)
 			return TRUE
 		if("ToggleSeeExtreme")
 			TOGGLE_VAR(SeeExtreme)
@@ -268,22 +287,33 @@
 				to_chat(parent_mob, span_green("Extreme stuff enabled!"))
 			else
 				to_chat(parent_mob, span_green("Extreme stuff disabled!"))
+			interface_sound(1)
 			return TRUE
 		if("ToggleSeeLewdMessages")
-			TOGGLE_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS)
-			if(CHECK_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_WORDS))
+			if(!P)
+				return FALSE
+			TOGGLE_BITFIELD(P.toggles, HEAR_LEWD_VERB_WORDS)
+			if(CHECK_BITFIELD(P.toggles, HEAR_LEWD_VERB_WORDS))
 				to_chat(parent_mob, span_green("You will now see lewd messages!"))
 			else
 				to_chat(parent_mob, span_green("You will no longer see lewd messages!"))
 			queue_save()
+			interface_sound(1)
 			return TRUE
 		if("ToggleHearLewdSounds")
-			TOGGLE_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS)
-			if(CHECK_BITFIELD(parent_mob.client?.prefs.toggles, HEAR_LEWD_VERB_SOUNDS))
+			if(!P)
+				return FALSE
+			TOGGLE_BITFIELD(P.toggles, HEAR_LEWD_VERB_SOUNDS)
+			if(CHECK_BITFIELD(P.toggles, HEAR_LEWD_VERB_SOUNDS))
 				to_chat(parent_mob, span_green("You will now hear lewd verb sounds!"))
 			else
 				to_chat(parent_mob, span_green("You will no longer hear lewd verb sounds!"))
 			queue_save()
+			interface_sound(1)
+			return TRUE
+		if("AutocumFlagify")
+			change_autocum_flags()
+			interface_sound(1)
 			return TRUE
 
 /datum/component/interaction_menu_granter/proc/perform_action(mob/living/target, interaction_key, extras)
@@ -294,6 +324,11 @@
 	if(!o)
 		return FALSE
 	o.run_action(parent_mob, target, extra = extras)
+
+/datum/component/interaction_menu_granter/proc/interface_sound(which)
+	return // sike
+	// var/mob/living/self = parent
+	// self.playsound_local(get_turf(self), "sound/effects/pop.ogg", 40)
 
 //////// AUTOPLAPPER STUFF
 /datum/component/interaction_menu_granter/proc/new_autoplap(key, mob/living/partner, interval)
@@ -329,7 +364,7 @@
 	if(!AP)
 		return
 	AP.stop_plapping()
-	to_chat(parent, span_green("Removed auto-action for [AP.plap_key]!"))
+	to_chat(parent, span_green("Removed auto-action for [AP.plap_name]!"))
 	autoplappers -= AP.apid
 	qdel(AP)
 
@@ -371,7 +406,7 @@
 	if(!P)
 		return
 	P.save_character()
-	to_chat(parent, span_green("Saved preferences!"))
+	to_chat(parent, span_green("SAVE OK"))
 	savetimer = null
 
 /datum/component/interaction_menu_granter/proc/click_refractory() // sex is combat, didnt ya know?
@@ -383,6 +418,42 @@
 	// 	if(!parent_mob.CheckActionCooldown(0.8 SECONDS))
 	// 		return
 	// 	parent_mob.DelayNextAction(0.8 SECONDS)
+
+/datum/component/interaction_menu_granter/proc/sympathetic_detonation(mob/living/me, mob/living/coomer)
+	// SIGNAL_HANDLER
+	// if(me == coomer)
+	// 	return
+	// if(!isliving(me) || !isliving(coomer))
+	// 	return
+	// if(CHECK_BITFIELD(autocum_flags, AUTOCUM_PARTNER_CUMS))
+	// 	return FALSE // keep going they're close
+	// if(CHECK_BITFIELD(autocum_flags, AUTOCUM_USER_FULL_LUST))
+	// 	if(me.get_lust() < me.get_lust_max())
+	// 		return FALSE // keep going im close
+	// if(CHECK_BITFIELD(autocum_flags, AUTOCUM_PARTNER_FULL_LUST))
+	// 	if(coomer.get_lust() < coomer.get_lust_max())
+	// 		return FALSE // keep going they're close
+	// return me.try2cum(coomer)
+
+/datum/component/interaction_menu_granter/proc/output_autocum_string() // a long ropey string
+	var/mob/living/self = parent
+	if(autocum_flags == NONE)
+		to_chat(self, span_green("You'll cum when you feel like it!"))
+		return
+	var/list/strings = list()
+	if(CHECK_BITFIELD(autocum_flags, AUTOCUM_USER_FULL_LUST))
+		strings += "you reach full lust"
+	if(CHECK_BITFIELD(autocum_flags, AUTOCUM_PARTNER_FULL_LUST))
+		strings += "your partner reaches full lust"
+	if(CHECK_BITFIELD(autocum_flags, AUTOCUM_PARTNER_CUMS))
+		strings += "partner cums"
+	var/stuff = english_list(strings)
+	to_chat(self, span_green("You'll automatically cum when [stuff]!"))
+
+/datum/component/interaction_menu_granter/proc/change_autocum_flags()
+	// var/mob/living/self = parent
+	// output_autocum_string()
+
 
 /datum/component/interaction_menu_granter/proc/format_orientation(mob/living/whose)
 	if(!isliving(whose) || !whose.client)
@@ -421,16 +492,6 @@
 	if(LAZYLEN(beep))
 		ret += list(beep)
 	return ret
-
-/mob/living/verb/move_to_top()
-	set name = "Interact with"
-	set category = "Private"
-	set src in oview(1)
-
-	if(!client || !ckey)
-		to_chat(usr, span_warning("You can't interact with them!"))
-		return
-	SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT, usr)
 
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD
