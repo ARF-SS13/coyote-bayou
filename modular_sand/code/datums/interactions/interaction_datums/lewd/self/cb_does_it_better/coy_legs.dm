@@ -27,7 +27,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'sound/weapons/thudswoosh.ogg'
 	) // frumf, frumf
 	target_lust_mult = 0.5
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
@@ -55,7 +55,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', 
+		'sound/weapons/thudswoosh.ogg'
 	) // frumf, frumf
 	target_lust_mult = 0.3
 	user_lust_mult = 0.3
@@ -111,7 +111,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', 
+		'sound/weapons/thudswoosh.ogg'
 	) // frumf, frumf
 	target_lust_mult = 1.0
 	lust_go_to = LUST_TARGET 

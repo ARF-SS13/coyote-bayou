@@ -26,7 +26,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'sound/effects/kiss.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.5 // set this to how much lust should be given
 	target_lust_mult = 0.5
@@ -55,8 +55,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
-	) // frumf, frumf
+		'sound/weapons/bite.ogg'
 	target_lust_mult = 0.8
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 ///////EAR BITE END/////////
@@ -82,7 +81,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'sound/weapons/bite.ogg'
 	) // frumf, frumf
 	target_lust_mult = 0.8
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
@@ -140,7 +139,12 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/oral2.ogg',
+		'modular_sand/sound/interactions/bj2.ogg',
+		'modular_sand/sound/interactions/bj6.ogg',
+		'modular_sand/sound/interactions/bj7.ogg',
+		'modular_sand/sound/interactions/bj8.ogg',
+		'modular_sand/sound/interactions/bj9.ogg',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 0.2
@@ -167,7 +171,11 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/bj2.ogg',
+		'modular_sand/sound/interactions/bj6.ogg',
+		'modular_sand/sound/interactions/bj7.ogg',
+		'modular_sand/sound/interactions/bj8.ogg',
+		'modular_sand/sound/interactions/bj9.ogg',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 0.2
@@ -194,7 +202,12 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/oral2.ogg',
+		'modular_sand/sound/interactions/bj2.ogg',
+		'modular_sand/sound/interactions/bj6.ogg',
+		'modular_sand/sound/interactions/bj7.ogg',
+		'modular_sand/sound/interactions/bj8.ogg',
+		'modular_sand/sound/interactions/bj9.ogg',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 0.3
@@ -221,7 +234,11 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/bj2.ogg',
+		'modular_sand/sound/interactions/bj6.ogg',
+		'modular_sand/sound/interactions/bj7.ogg',
+		'modular_sand/sound/interactions/bj8.ogg',
+		'modular_sand/sound/interactions/bj9.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.8
 	target_lust_mult = 0.3
@@ -248,7 +265,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'sound/effects/kiss.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.1
 	target_lust_mult = 0.1
@@ -275,7 +292,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/foot_dry1.ogg',
+		'modular_sand/sound/interactions/foot_dry2.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.1
 	target_lust_mult = 0.1

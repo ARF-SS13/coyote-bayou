@@ -97,7 +97,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/weapons/thudswoosh.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.8
 	target_lust_mult = 1.2
@@ -182,7 +182,11 @@
 	)
 
 	simple_sounds = list(
-		'sound/weapons/thudswoosh.ogg'
+		'modular_sand/sound/interactions/bj2.ogg',
+		'modular_sand/sound/interactions/bj6.ogg',
+		'modular_sand/sound/interactions/bj7.ogg',
+		'modular_sand/sound/interactions/bj8.ogg',
+		'modular_sand/sound/interactions/bj9.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.3
 	lust_go_to = LUST_USER | LUST_TARGET

@@ -59,7 +59,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'sound/weapons/thudswoosh.ogg' // then set this to the sound you want to play (its alrady set)
 	) // frumf, frumf
 	user_lust_mult = 0.5 // set this to how much lust should be given
 	lust_go_to = LUST_USER // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
@@ -89,7 +89,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.5 // set this to how much lust should be given
 	lust_go_to = LUST_USER // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
@@ -116,7 +117,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 1.2
@@ -144,7 +146,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 1.2
@@ -173,7 +176,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		"sound/weapons/slap.ogg"
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -201,7 +204,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -229,7 +233,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -258,7 +263,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -286,7 +292,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.6 // set this to how much lust should be given
 	target_lust_mult = 0.6
@@ -314,7 +321,9 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/bang1.ogg',
+		'modular_sand/sound/interactions/bang2.ogg',
+		'modular_sand/sound/interactions/bang3.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -342,7 +351,9 @@
 
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/bang1.ogg',
+		'modular_sand/sound/interactions/bang2.ogg',
+		'modular_sand/sound/interactions/bang3.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -369,7 +380,9 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/bang1.ogg',
+		'modular_sand/sound/interactions/bang2.ogg',
+		'modular_sand/sound/interactions/bang3.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -395,7 +408,9 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg', // then set this to the sound you want to play (its alrady set)
+		'modular_sand/sound/interactions/bang1.ogg',
+		'modular_sand/sound/interactions/bang2.ogg',
+		'modular_sand/sound/interactions/bang3.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -423,7 +438,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/bang5.ogg',
+		'modular_sand/sound/interactions/bang6.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.8
 	target_lust_mult = 0.4
@@ -451,7 +467,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/bang5.ogg',
+		'modular_sand/sound/interactions/bang6.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.4
 	target_lust_mult = 0.8
@@ -478,7 +495,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -505,7 +523,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -532,7 +551,7 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'sound/effects/lick.ogg'
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -559,7 +578,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
@@ -586,7 +606,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
@@ -613,7 +634,8 @@
 	)
 
 	simple_sounds = list(
-		'sound/f13effects/sunsetsounds/blush.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg'
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
