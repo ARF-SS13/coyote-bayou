@@ -66,7 +66,7 @@ const TopPanel = (props, context) => {
     ItsJustMe,
   } = data;
 
-  return(
+  return (
     <Box height="100%">
       <Stack fill>
         <Stack.Item basis="50%"> {/* Left Panel */}
@@ -74,7 +74,7 @@ const TopPanel = (props, context) => {
             <Stack fill vertical alignItems="flex-end" justifyContent="flex-end">
               <Stack.Item grow={1}>
                 <Section height="100%">
-                <Nads /> {/* Your and their NADs */}
+                  <Nads /> {/* Your and their NADs */}
                 </Section>
               </Stack.Item>
               <Stack.Item shrink={1}>
@@ -111,7 +111,7 @@ const Nads = (props, context) => {
   // const TheyGotNads = TheirNads && TheirNads.length > 0;
   // const TheyGotOrientations = TheirOrientations && TheirOrientations.length > 0;
   const ShowTheirSide = !ItsJustMe;
-  if(TheirNads.length === 0) {
+  if (TheirNads.length === 0) {
     TheirNads.push({
       "BitKind": "Nothin!",
       "BitName": "Nothing at all!",
@@ -122,7 +122,7 @@ const Nads = (props, context) => {
       "BitEmoji": ":)",
     });
   }
-  if(TheirOrientations.length === 0) {
+  if (TheirOrientations.length === 0) {
     TheirOrientations.push({
       "OriName": "Non-aligned",
       "OriDesc": "I'm cool beans",
@@ -131,75 +131,75 @@ const Nads = (props, context) => {
   }
 
 
-  return(
-      <Section
-        height="100%"
-        minHeight="100%"
-        overflowY="auto">
-        <Flex direction="row" wrap="wrap" height="100%">
-      {/* the name row */}
-      <Flex.Item basis="50%" textAlign="center" bold>
-        {MyName}
-        <hr />
-      </Flex.Item>
-      <Flex.Item basis="50%" textAlign="center" bold>
-        {ShowTheirSide ? TheirName : "Yourself"}
-        {ShowTheirSide ? <hr /> : <Box />}
-      </Flex.Item>
-      {ShowTheirSide && (
-        <>
+  return (
+    <Section
+      height="100%"
+      minHeight="100%"
+      overflowY="auto">
+      <Flex direction="row" wrap="wrap" height="100%">
+        {/* the name row */}
+        <Flex.Item basis="50%" textAlign="center" bold>
+          {MyName}
+          <hr />
+        </Flex.Item>
+        <Flex.Item basis="50%" textAlign="center" bold>
+          {ShowTheirSide ? TheirName : "Yourself"}
+          {ShowTheirSide ? <hr /> : <Box />}
+        </Flex.Item>
+        {ShowTheirSide && (
+          <>
             <Flex.Item basis="50%" textAlign="center" />
             <Flex.Item basis="50%" textAlign="center">
-            <Consent />
+              <Consent />
             </Flex.Item>
-            </>
-      )}
-      {/* the naughty bits row */}
-      <Flex.Item basis="50%" textAlign="center" bold>
-        {MyNads.map(Nad => (
-          <GuntButton
-            genital={Nad}
-            JustMe={ItsJustMe}
-            context={context}
-            key={Nad.BitName} />
-        ))}
-      </Flex.Item>
-      <Flex.Item basis="50%" textAlign="center">
-        {ShowTheirSide && (
-          TheirNads.map(Nad => (
+          </>
+        )}
+        {/* the naughty bits row */}
+        <Flex.Item basis="50%" textAlign="center" bold>
+          {MyNads.map(Nad => (
             <GuntButton
               genital={Nad}
+              JustMe={ItsJustMe}
               context={context}
               key={Nad.BitName} />
-          ))
-        )}
-      </Flex.Item>
-      {/* the orientation row */}
-      <Flex.Item basis="50%" textAlign="center">
-        {MyOrientations.map(Ori => (
-          <OrientationButton
-            orientation={Ori}
-            JustMe={ItsJustMe}
-            context={context}
-            key={Ori.OriName} />
-        ))}
-      </Flex.Item>
-      <Flex.Item basis="50%" textAlign="center">
-        {ShowTheirSide && (
-          TheirOrientations.map(Ori => (
-            <OrientationButton orientation={Ori} context={context} key={Ori.OriName} />
-          ))
-        )}
-      </Flex.Item>
-    </Flex>
+          ))}
+        </Flex.Item>
+        <Flex.Item basis="50%" textAlign="center">
+          {ShowTheirSide && (
+            TheirNads.map(Nad => (
+              <GuntButton
+                genital={Nad}
+                context={context}
+                key={Nad.BitName} />
+            ))
+          )}
+        </Flex.Item>
+        {/* the orientation row */}
+        <Flex.Item basis="50%" textAlign="center">
+          {MyOrientations.map(Ori => (
+            <OrientationButton
+              orientation={Ori}
+              JustMe={ItsJustMe}
+              context={context}
+              key={Ori.OriName} />
+          ))}
+        </Flex.Item>
+        <Flex.Item basis="50%" textAlign="center">
+          {ShowTheirSide && (
+            TheirOrientations.map(Ori => (
+              <OrientationButton orientation={Ori} context={context} key={Ori.OriName} />
+            ))
+          )}
+        </Flex.Item>
+      </Flex>
     </Section>
 
   );
 };
 
 
-/// GuntButton! Takes in a genital object thing, and formats it into a button
-/// that shows a tooltip about the genital
+// / GuntButton! Takes in a genital object thing, and formats it into a button
+// / that shows a tooltip about the genital
 const GuntButton = (props, context) => {
   const { act, data } = useBackend(context);
   const {
@@ -226,13 +226,13 @@ const GuntButton = (props, context) => {
   const FSize = props.JustMe ? "2.5em" : "2em";
 
   const ArousedText = BitAroused ? "Happens to be aroused" : "Happens to not be Aroused";
-  const ToolTipText =
-    BitName + " " +
-    BitSize + " " +
-    BitExtra;
+  const ToolTipText
+    = BitName + " "
+    + BitSize + " "
+    + BitExtra;
     // ArousedText + "\n" +
 
-  return(
+  return (
     <Button
       tooltip={ToolTipText}
       color="transparent"
@@ -242,19 +242,19 @@ const GuntButton = (props, context) => {
           PokeThing: BitName,
         },
       })} >
-        <Box
-          inline
-          textColor={BitColor}
-          fontSize={FontWindowSize}
-          textAlign="center">
-          {BitEmoji}
-        </Box>
+      <Box
+        inline
+        textColor={BitColor}
+        fontSize={FontWindowSize}
+        textAlign="center">
+        {BitEmoji}
+      </Box>
     </Button>
   );
 };
 
-/// OrientationButton! Takes in an orientation object thing, and formats it into a button
-/// that shows a tooltip about the orientation
+// / OrientationButton! Takes in an orientation object thing, and formats it into a button
+// / that shows a tooltip about the orientation
 const OrientationButton = (props) => {
   const {
     OriName,
@@ -270,18 +270,18 @@ const OrientationButton = (props) => {
   // const WinHeight = window.innerHeight;
   const FontWindowSize = "3vw";
 
-  return(
+  return (
     <Button
       color="transparent"
       tooltip={OriDesc} >
-        <Box
-          inline
-          fontSize={FontWindowSize}
-          color="green"
-          textAlign="center">
-          {OriEmoji}
-        </Box>
-      </Button>
+      <Box
+        inline
+        fontSize={FontWindowSize}
+        color="green"
+        textAlign="center">
+        {OriEmoji}
+      </Box>
+    </Button>
   );
 };
 
@@ -299,7 +299,7 @@ const Consent = (props, context) => {
   const ButtHoverText = WeConsent ? "Revoke Consent?" : "Request Consent?";
   const ButtHoverColor = WeConsent ? "red" : "green";
 
-  return(
+  return (
     <Button
       fluid
       mb={0.3}
@@ -322,7 +322,7 @@ const Lust = (props, context) => {
   const MyMaxLust = data.MyMaxLust || 100;
   const TheirLust = data.TheirLust || 0;
   const TheirMaxLust = data.TheirMaxLust || 100;
-  const ItsJustMe = data.ItsJustMe  || false;
+  const ItsJustMe = data.ItsJustMe || false;
   const MTTC = data.MTTC; // Mean Time To Cum
   const CanCum = data.CanCum || false;
   const MyName = data.MyName || "You";
@@ -373,97 +373,44 @@ const Lust = (props, context) => {
   const MyFixedLust = toFixed(MyLust, 1);
   const MyFixedMaxLust = toFixed(MyMaxLust, 1);
 
-  return(
+  return (
     <Section>
-      {/* <Flex direction="row"> todo: makr it work
-        <Flex.Item grow={1}>
-          Lust Sensitivity:
-        </Flex.Item>
-        <Flex.Item basis="5rem">
-          <Input
-            value={Sensitivity}
-            width="5rem"
-            onInput={(e, value) => act('Sensitivity', {
-              value: clamp(value, 0, 100),
-            })} />
-        </Flex.Item>
-      </Flex>
-      <Flex direction="row">
-        <Flex.Item grow={1}>
-          Mean Time To Cum:
-        </Flex.Item>
-        <Flex.Item basis="5rem">
-          <Input
-            value={MTTC}
-            width="5rem"
-            onInput={(e, value) => act('MTTC', {
-              value: clamp(value, 0, 10000),
-            })} />
-        </Flex.Item>
-      </Flex>*/}
-      {/* <Flex direction="row">
-        <Flex.Item grow={1}>
-          Current Lust:
-        </Flex.Item>
-        <Flex.Item basis="5rem">
-          <Input
-            value={CurrLust}
-            width="5rem"
-            onInput={(e, value) => act('CurrLust', {
-              value: clamp(value, 0, MaxLust),
-            })} />
-        </Flex.Item>
-      </Flex>
-      <Flex>
-        <Flex.Item grow={1}>
-          Max Lust:
-        </Flex.Item>
-        <Flex.Item basis="5rem">
-          <Input
-            value={MaxLust}
-            width="5rem"
-            onInput={(e, value) => act('MaxLust', {
-              value: clamp(value, 0, 100000),
-            })} />
-        </Flex.Item>
-      </Flex>
-      <hr />*/}
       <Flex direction="row" wrap="wrap">
         {/* the name row */}
         <Flex.Item basis={CelWidth} textAlign="center">
           {MyName}
         </Flex.Item>
-          {!!!ItsJustMe && (
-            <Flex.Item basis={CelWidth} textAlign="center">
-              {TheirName} {/* Nobody's here but you and your hand~ */}
-            </Flex.Item>
-          )}
-          {/* the lust counter row */}
+        {!ItsJustMe && (
+          <Flex.Item basis={CelWidth} textAlign="center">
+            {TheirName} {/* Nobody's here but you and your hand~ */}
+          </Flex.Item>
+        )}
+        {/* the lust counter row */}
+        <Flex.Item basis={CelWidth} textAlign="center">
+          <ProgressBar
+            value={MyFixedLust}
+            color={LustBGColor}
+            minValue={0}
+            maxValue={MyFixedMaxLust} >
+            <Box inline color={LustFGColor} textAlign="right">
+              {MyFixedLust} / {MyFixedMaxLust}
+            </Box>
+          </ProgressBar>
+        </Flex.Item>
+        {!ItsJustMe && (
           <Flex.Item basis={CelWidth} textAlign="center">
             <ProgressBar
-              value={MyFixedLust}
+              fromRight
+              value={TheirFixedLust}
               color={LustBGColor}
               minValue={0}
-              maxValue={MyFixedMaxLust} >
-              <Box inline color={LustFGColor} textAlign="right">
-                {MyFixedLust} / {MyFixedMaxLust}
+              maxValue={TheirFixedMaxLust} >
+              <Box fluid color={LustFGColor} textAlign="left">
+                {TheirFixedLust} / {TheirFixedMaxLust}
               </Box>
             </ProgressBar>
           </Flex.Item>
-          {!!!ItsJustMe && (
-            <Flex.Item basis={CelWidth} textAlign="center">
-              <ProgressBar
-                fromRight={true}
-                value={TheirFixedLust}
-                color={LustBGColor}
-                minValue={0}
-                maxValue={TheirFixedMaxLust} >
-                <Box fluid color={LustFGColor} textAlign="left">
-                  {TheirFixedLust} / {TheirFixedMaxLust}
-                </Box>
-              </ProgressBar>
-            </Flex.Item>
-          )}
+        )}
         {/* the cum button row */}
         <Flex.Item basis="100%" wrap="wrap">
           <Flex direction="column">
@@ -508,7 +455,7 @@ const AutoPLAPs = (props, context) => {
 
   const YesOrNo = AutoPlapAutoStart ? "YES" : "NO";
 
-  return(
+  return (
     <Section
       title="Auto-Interaction"
       height="100%"
@@ -577,7 +524,7 @@ const AutoPlapControl = (props, context) => {
 
   const MyPartner = APPlapper === APPartner ? "Yourself" : APPartner;
 
-  return(
+  return (
     <Box
       mb="0.5em"
       p="0.5em"
@@ -594,13 +541,13 @@ const AutoPlapControl = (props, context) => {
               </Box>
             </Flex.Item>
             {!!APRecording && (
-            <Flex.Item shrink={1}>
-              <Button
-                icon={APRecordingIcon}
-                color={APRecordingColor}
-                onClick={() => act('StopRecording', {
-                  APID: APApid,
-                })} />
+              <Flex.Item shrink={1}>
+                <Button
+                  icon={APRecordingIcon}
+                  color={APRecordingColor}
+                  onClick={() => act('StopRecording', {
+                    APID: APApid,
+                  })} />
               </Flex.Item>
             )}
           </Flex>
@@ -609,7 +556,7 @@ const AutoPlapControl = (props, context) => {
           <Flex direction="row">
             <Flex.Item grow={1}>
               <NumberInput
-                animated={true}
+                animated
                 unit="sec/PLAP"
                 width="4.5em"
                 minValue={MinAutoplapInterval}
@@ -820,9 +767,7 @@ const InteractionTab = (props, context) => {
       { setSelectedCategory(CatName);
         setCurrentPage(1);
         setSearchTerm('');
-        /* act('Sound', {
-          'DoSound': 'TabClick',
-        });  */}}>
+      }}>
       <Box
         inline
         textAlign="center">
@@ -1000,8 +945,8 @@ const AutoPlapRecordButton = (props, context) => {
   const IOBJ = props.Iobj || {};
   // if something is being recorded, anything, this will be the key of it
   const RecordingObjs = data.Recording || {};
-  /// Searches through RecordingObjs and checks if APPlapKey matches
-  /// the interaction key of the interaction we're looking at
+  // / Searches through RecordingObjs and checks if APPlapKey matches
+  // / the interaction key of the interaction we're looking at
   const IsThisRecording = RecordingObjs.some(RecordingObj => {
     return RecordingObj.APPlapKey === IOBJ.InteractionKey;
   });
@@ -1025,7 +970,7 @@ const AutoPlapRecordButton = (props, context) => {
       <Button
         icon="ban"
         color="red"
-        disabled={true}
+        disabled
         tooltip="Something else is recording!!!" />
     );
   }
@@ -1068,8 +1013,8 @@ const GetInteractionsInCategory = (context) => {
 
   let FilteredInteractions = AllInteractions;
 
-  /// prefiltering, return self-interactions if its just me, otherwise
-  /// return interactions that are not just for me
+  // / prefiltering, return self-interactions if its just me, otherwise
+  // / return interactions that are not just for me
   if (ItsJustMe) {
     FilteredInteractions = FilteredInteractions.filter(Interaction => {
       return Interaction.InteractionSelf;
@@ -1080,7 +1025,7 @@ const GetInteractionsInCategory = (context) => {
     }
     );
   } // fun fact i dont know how expensive these are lol
-  /// prefiltering, remove all lewd and extreme things if it isnt enabled
+  // / prefiltering, remove all lewd and extreme things if it isnt enabled
   if (HideLewd) {
     FilteredInteractions = FilteredInteractions.filter(Interaction => {
       return !Interaction.InteractionLewd && !Interaction.InteractionExtreme;
@@ -1091,8 +1036,8 @@ const GetInteractionsInCategory = (context) => {
       return !Interaction.InteractionExtreme;
     });
   }
-  /// and since we havent utterly destroyed performance by this point,
-  /// put all the non-lewd items at the top of the list
+  // / and since we havent utterly destroyed performance by this point,
+  // / put all the non-lewd items at the top of the list
   // let LewdInteractions = [];
   // let NonLewdInteractions = [];
   // FilteredInteractions.forEach(Interaction => {
@@ -1105,10 +1050,10 @@ const GetInteractionsInCategory = (context) => {
   // );
   // FilteredInteractions = NonLewdInteractions.concat(LewdInteractions);
 
-  /// If the category is favorites, we need to filter the list of all interactions
-  /// to only include the ones that are in the user's favorites list.
+  // / If the category is favorites, we need to filter the list of all interactions
+  // / to only include the ones that are in the user's favorites list.
   if (SelectedCategory === FavePlaps) {
-    if(Faves.length === 0) {
+    if (Faves.length === 0) {
       return [];
     }
     return FilteredInteractions.filter(Interaction => {
@@ -1126,8 +1071,8 @@ const GetInteractionsInCategory = (context) => {
   if (!CategoryName || CategoryName === AllCategories[0]) {
     return FilteredInteractions; // return em all
   }
-  /// Otherwise, we need to filter the list of all interactions to only include
-  /// the ones that are in the selected category.
+  // / Otherwise, we need to filter the list of all interactions to only include
+  // / the ones that are in the selected category.
   return FilteredInteractions.filter(Interaction => {
     return Interaction.InteractionCategories.includes(CategoryName);
   }) || [];
@@ -1155,31 +1100,6 @@ const InteractionPage = (props, context) => {
 
   const TotalPageNum = Math.ceil(FilteredAllInteractions.length / PlapsPerPage);
 
-  const PrevButton = (ShowPageButtons &&
-    <Button
-      fluid
-      inline
-      px="0.5em"
-      py="0.25em"
-      disabled={CurrentPage === 1}
-      onClick={() =>
-      { act('sound', { 'DoSound': 'TabClick' });
-        setCurrentPage(CurrentPage - 1); }}>
-      <Icon name="chevron-left" />
-    </Button>
-  );
-  const NextButton = (ShowPageButtons &&
-    <Button
-      inline
-      px="0.5em"
-      py="0.25em"
-      disabled={CurrentPage >= TotalPageNum}
-      onClick={() =>
-      { act('sound', { 'DoSound': 'TabClick' });
-        setCurrentPage(CurrentPage + 1); }}>
-      <Icon name="chevron-right" />
-    </Button>
-  );
   const LewdText = SeeLewd ? "Hide Lewd Stuff" : "Show Lewd Stuff";
   const LewdButton = (
     <Button
@@ -1196,7 +1116,7 @@ const InteractionPage = (props, context) => {
       selected={SeeLewdMessages}
       tooltip={SeeLewdMessages ? "Hide Lewd Messages" : "Show Lewd Messages"}
       onClick={() =>
-      { act('ToggleSeeLewdMessages'); }}/>
+      { act('ToggleSeeLewdMessages'); }} />
   );
   const HearSounds =(
     <Button
@@ -1205,7 +1125,7 @@ const InteractionPage = (props, context) => {
       selected={HearLewdSounds}
       tooltip={HearLewdSounds ? "Mute Lewd Sounds" : "Hear Lewd Sounds"}
       onClick={() =>
-      { act('ToggleHearLewdSounds'); }}/>
+      { act('ToggleHearLewdSounds'); }} />
   );
 
   return (
@@ -1229,30 +1149,35 @@ const InteractionPage = (props, context) => {
         )}
       </Flex.Item>
       <Flex.Item shrink={0}>
-        {PrevButton}
-        {NextButton}
+        {!!ShowPageButtons && (
+          <>
+            <Button
+              fluid
+              inline
+              px="0.5em"
+              py="0.25em"
+              disabled={CurrentPage === 1}
+              onClick={() => {
+                act('sound', { 'DoSound': 'TabClick' });
+                setCurrentPage(CurrentPage - 1);
+              }}>
+              <Icon name="chevron-left" />
+            </Button>
+            <Button
+              inline
+              px="0.5em"
+              py="0.25em"
+              disabled={CurrentPage >= TotalPageNum}
+              onClick={() => {
+                act('sound', { 'DoSound': 'TabClick' });
+                setCurrentPage(CurrentPage + 1);
+              }}>
+              <Icon name="chevron-right" />
+            </Button>
+          </>
+        )}
         <Box inline px="1em" />
       </Flex.Item>
     </Flex>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
