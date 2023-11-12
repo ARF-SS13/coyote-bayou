@@ -451,8 +451,8 @@
 	to_chat(self, span_green("You'll automatically cum when [stuff]!"))
 
 /datum/component/interaction_menu_granter/proc/change_autocum_flags()
-	var/mob/living/self = parent
-	output_autocum_string()
+	// var/mob/living/self = parent
+	// output_autocum_string()
 
 
 /datum/component/interaction_menu_granter/proc/format_orientation(mob/living/whose)
