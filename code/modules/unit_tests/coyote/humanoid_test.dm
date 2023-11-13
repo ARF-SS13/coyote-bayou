@@ -24,6 +24,8 @@
 
 /// Provides a dummy that is consistently bald, white, naked, etc.
 /mob/living/carbon/human/dummy/consistent
+	initial_language_holder = null
+
 
 /mob/living/carbon/human/dummy/consistent/Initialize()
 	. = ..()
