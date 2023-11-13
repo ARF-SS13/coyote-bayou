@@ -1768,6 +1768,7 @@
 	name = "worn blue jumpsuit"
 	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
 	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
