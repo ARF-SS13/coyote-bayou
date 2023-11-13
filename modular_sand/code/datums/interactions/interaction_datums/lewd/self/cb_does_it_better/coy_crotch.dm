@@ -694,3 +694,59 @@
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 
+///////////////////////
+//	Suck cock 6A22///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/suck_cock
+	description = "Partner/Crotch - Suck their cock."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently suckles at XT_NAME's shaft.",
+	)
+	disarm_messages = list(
+		"XU_NAME sucks XT_NAME off.",
+	)
+	grab_messages = list(
+		"XU_NAME is really going down on XT_NAME's cock.",
+	)
+	harm_messages = list(
+		"XU_NAME is using their mouth like a pussy for XT_NAME's cock.",
+	)
+
+	simple_sounds = list(
+		'sound/effects/lick.ogg'
+	) // frumf, frumf
+	user_lust_mult = 0.2 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+
+///////////////////////
+//	Deepthroat 6A23///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/deepthroat
+	description = "Partner/Crotch - Deepthroat their cock."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME teases XT_NAME's cock into their throat.",
+	)
+	disarm_messages = list(
+		"XU_NAME bobs on XT_NAME's cock, letting them really feel their throat.",
+	)
+	grab_messages = list(
+		"XU_NAME is really going down on XT_NAME's cock, basically getting facefucked.",
+	)
+	harm_messages = list(
+		"XU_NAME is using their mouth like a pussy for XT_NAME's cock, taking it to the hilt on every downstroke.",
+	)
+
+	simple_sounds = list(
+		'sound/effects/lick.ogg'
+	) // frumf, frumf
+	user_lust_mult = 0.2 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+
