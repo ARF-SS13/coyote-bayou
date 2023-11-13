@@ -461,6 +461,8 @@
 	. = ..()
 	recenter_wide_sprite()
 
+//Start Advanced Mobs//
+
 /mob/living/simple_animal/advanced/tenderclawmale
 	name = "male tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
@@ -501,24 +503,7 @@
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
 
-//Actual chooseable mouse colors
-/* These are not set up correctly >:(
-/mob/living/simple_animal/advanced/mousewhite
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_white"
-
-/mob/living/simple_animal/advanced/mousegray
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_gray"
-
-/mob/living/simple_animal/advanced/mousebrown
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_brown"
-*/
-
 //The simple version of the dog borgs.
-
-
 /mob/living/simple_animal/advanced/blade//Yes they are pokemon, shut.
 	name = "blade borg"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
@@ -1129,6 +1114,10 @@
 	icon_state = "parrot"
 	icon_living = "parrot"
 	icon_dead = "parrot_dead"
+
+//End Advanced Mobs//
+
+// Start Pets //
 
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
