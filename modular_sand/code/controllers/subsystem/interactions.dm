@@ -78,9 +78,9 @@ SUBSYSTEM_DEF(interactions)
 	var/keyname = keyify(player1, player2)
 	if(!keyname)
 		return FALSE
-	if(!LAZYACCESS(consents, keyname))
-		return FALSE
-	check_consent_chain(player1, player2)
+	if(LAZYACCESS(consents, keyname))
+		return TRUE
+	return !!LAZYLEN(check_consent_chain(player1, player2))
 
 /datum/controller/subsystem/interactions/proc/is_same_person(player1, player2)
 	if(!player1 || !player2)

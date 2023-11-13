@@ -143,7 +143,7 @@
 	.["SeeLewd"] = SeeLewd || FALSE
 	.["SeeExtreme"] = SeeExtreme || FALSE
 	.["ItsJustMe"] = target == self
-	.["WeConsent"] = target == self ? TRUE : SSinteractions.check_consent(self, target)
+	.["WeConsent"] = SSinteractions.check_consent(self, target) || FALSE
 	.["MyName"] = self.name || "Nobody"
 	.["TheirName"] = target.name || "Nobody"
 	var/list/faves = self.client?.prefs.faved_interactions || list()
