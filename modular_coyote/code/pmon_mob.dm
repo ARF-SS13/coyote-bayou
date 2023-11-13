@@ -7,6 +7,8 @@
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
+	/// The default resting icon will always be "[icon_living]_rest" unless you set this variable, which will override it.
+	var/icon_resting
 	unsuitable_atmos_damage = 0
 	mob_armor = ARMOR_VALUE_MEDIUM
 	health = 200
@@ -71,7 +73,10 @@
 	if(stat == DEAD)
 		icon_state = icon_dead
 	else if(stat != DEAD && !CHECK_MOBILITY(src, MOBILITY_STAND))//Not dead but can't move
-		icon_state = "[icon_living]_rest"
+		if(isnull(icon_resting) || icon_resting == "")
+			icon_state = "[icon_living]_rest"
+		else
+			icon_state = icon_resting
 	else
 		icon_state = icon_living
 

@@ -461,6 +461,8 @@
 	. = ..()
 	recenter_wide_sprite()
 
+//Start Advanced Mobs//
+
 /mob/living/simple_animal/advanced/tenderclawmale
 	name = "male tenderclaw"
 	desc = "A..deathclaw? Or, well. It sort of looks like a deathclaw. Just, softer and friendler!"
@@ -501,24 +503,7 @@
 	icon_living = "wendigo"
 	icon_dead = "wendigo_dead"
 
-//Actual chooseable mouse colors
-/* These are not set up correctly >:(
-/mob/living/simple_animal/advanced/mousewhite
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_white"
-
-/mob/living/simple_animal/advanced/mousegray
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_gray"
-
-/mob/living/simple_animal/advanced/mousebrown
-	icon = 'icons/mob/animal.dmi'
-	icon_state = "mouse_brown"
-*/
-
 //The simple version of the dog borgs.
-
-
 /mob/living/simple_animal/advanced/blade//Yes they are pokemon, shut.
 	name = "blade borg"
 	icon = 'modular_coyote/icons/mob/dogborg.dmi'
@@ -1037,11 +1022,82 @@
 	icon_living = "alienq"
 	icon_dead = "alienq_dead"
 
-
 /mob/living/simple_animal/advanced/xenoq/Initialize()
     .=..()
     resize = 0.7
     update_transform()
+
+/mob/living/simple_animal/advanced/mousegrey
+	name = "grey mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_gray"
+	icon_living = "mouse_gray"
+	icon_dead = "mouse_gray_dead"
+
+/mob/living/simple_animal/advanced/mousebrown
+	name = "brown mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_brown"
+	icon_living = "mouse_brown"
+	icon_dead = "mouse_brown_dead"
+
+/mob/living/simple_animal/advanced/mousewhite
+	name = "white mouse"
+	desc = "Now you see it, now you don't."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mouse_white"
+	icon_living = "mouse_white"
+	icon_dead = "mouse_white_dead"
+
+/mob/living/simple_animal/advanced/opossum
+	name = "opossum"
+	desc = "It's an opossum, a small scavenging marsupial."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "possum"
+	icon_living = "possum"
+	icon_dead = "possum_dead"
+
+/mob/living/simple_animal/advanced/greensnake
+	name = "green snake"
+	desc = "A slithering, noodle-like thing with a mouth."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "snake"
+	icon_living = "snake"
+	icon_dead = "snake_dead"
+
+/mob/living/simple_animal/advanced/bee
+	name = "bee"
+	desc = "Bee yourself!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "bumbles"
+	icon_living = "bumbles"
+	icon_dead = "bumbles_dead"
+
+/mob/living/simple_animal/advanced/sophisticatedgorilla
+	name = "sophisticated gorilla"
+	desc = "The leg muscles!"
+	icon = 'icons/mob/gorilla.dmi'
+	icon_state = "standing"
+	icon_living = "standing"
+	icon_dead = "standing_dead"
+
+/mob/living/simple_animal/advanced/gorilla
+	name = "gorilla"
+	desc = "The muscles!"
+	icon = 'icons/mob/gorilla.dmi'
+	icon_state = "crawling"
+	icon_living = "crawling"
+	icon_dead = "crawling_dead"
+
+/mob/living/simple_animal/advanced/mothroach
+	name = "mothroach"
+	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "mothroach"
+	icon_living = "mothroach"
+	icon_dead = "mothroach_dead"
 
 /mob/living/simple_animal/advanced/bat
 	name = "bat"
@@ -1051,6 +1107,17 @@
 	icon_living = "bat"
 	icon_dead = "bat_dead"
 
+/mob/living/simple_animal/advanced/parrot
+	name = "parrot"
+	desc = "SQUAAAAWK!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "parrot"
+	icon_living = "parrot"
+	icon_dead = "parrot_dead"
+
+//End Advanced Mobs//
+
+// Start Pets //
 
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
