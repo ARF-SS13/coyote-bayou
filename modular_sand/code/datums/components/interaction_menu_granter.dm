@@ -1,6 +1,6 @@
 #define SPLURT_MAX_AUTOPLAPPERS 3
 #define SPLURT_ANTISPAM if(!click_refractory()) return FALSE
-#define AUTOCUM_PARTNER_CUMS (1 << 0)
+#define AUTOCUM_PARTNER_CUMS (1 << 0) // cums (u do too)
 #define AUTOCUM_USER_FULL_LUST (1 << 1)
 #define AUTOCUM_PARTNER_FULL_LUST (1 << 2)
 
@@ -407,6 +407,7 @@
 	if(!P)
 		return
 	P.save_character()
+	P.save_preferences()
 	to_chat(parent, span_green("SAVE OK"))
 	savetimer = null
 

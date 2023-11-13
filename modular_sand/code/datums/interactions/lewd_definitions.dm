@@ -912,17 +912,28 @@
 				LAZYADD(obscure_to, src)
 	if(!message) //todo: better self cum messages
 		message = "cums all over themselves!"
-	if(gender == MALE)
-		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
-							'modular_sand/sound/interactions/final_m2.ogg',
-							'modular_sand/sound/interactions/final_m3.ogg',
-							'modular_sand/sound/interactions/final_m4.ogg',
-							'modular_sand/sound/interactions/final_m5.ogg'), 90, 1, 0)
-	else
-		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_f1.ogg',
-							'modular_sand/sound/interactions/final_f2.ogg',
-							'modular_sand/sound/interactions/final_f3.ogg'), 70, 1, 0)
-	visible_message(message = span_userlove("<b>\The [src]</b> [message]"), ignored_mobs = get_unconsenting(ignored_mobs = obscure_to))
+	var/cumnoise = 'sound/f13effects/sunsetsounds/geck.ogg'
+	if(prob(98))
+		if(gender == MALE)
+			cumnoise = pick(
+				'modular_sand/sound/interactions/final_m1.ogg',
+				'modular_sand/sound/interactions/final_m2.ogg',
+				'modular_sand/sound/interactions/final_m3.ogg',
+				'modular_sand/sound/interactions/final_m4.ogg',
+				'modular_sand/sound/interactions/final_m5.ogg',
+			)
+		else
+			cumnoise = pick(
+				'modular_sand/sound/interactions/final_f1.ogg',
+				'modular_sand/sound/interactions/final_f2.ogg',
+				'modular_sand/sound/interactions/final_f3.ogg',
+			)
+	var/list/cumhearers = SSinteractions.get_consent_chain(src, partner)
+	for(var/mob/living/u_cum_2 in cumhearers)
+		if(CHECK_PREFS(u_cum_2, NOTMERP_LEWD_SOUNDS))
+			u_cum_2.playsound_local(get_turf(src), cumnoise, 70, 1, 0)
+		if(CHECK_PREFS(u_cum_2, NOTMERP_LEWD_WORDS))
+			to_chat(u_cum_2, span_love("<b>[src]</b> [message]"))
 	multiorgasms += 1
 
 	COOLDOWN_START(src, refractory_period, (rand(300, 900) - get_sexual_potency()))//sex cooldown

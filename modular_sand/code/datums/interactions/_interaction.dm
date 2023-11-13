@@ -53,7 +53,7 @@
 	/// alternatively you could just set help_messages and call it a day, but this is here for convenience
 	var/list/simple_messages = list()
 	var/list/simple_sounds = list()
-	var/simple_span = list()
+	var/list/simple_span = list()
 
 	/// Step 5 (actually 4) - is_visible_to_allity!
 	/// If is_visible_to_all is set to TRUE, it'll broadcast the message and sound to everyone in view range
@@ -125,20 +125,30 @@
 	. = ..()
 	simple_messages = listify(simple_messages)
 	simple_sounds = listify(simple_sounds)
+	simple_span = listify(simple_span)
+
 	help_messages = listify(help_messages)
 	help_sounds = listify(help_sounds)
+	help_span = listify(help_span)
+
 	disarm_messages = listify(disarm_messages)
 	disarm_sounds = listify(disarm_sounds)
+	disarm_span = listify(disarm_span)
+
 	grab_messages = listify(grab_messages)
 	grab_sounds = listify(grab_sounds)
+	grab_span = listify(grab_span)
+
 	harm_messages = listify(harm_messages)
 	harm_sounds = listify(harm_sounds)
+	harm_span = listify(harm_span)
+
 	if(LAZYLEN(simple_messages) && !LAZYLEN(help_messages))
 		help_messages = simple_messages.Copy()
 	if(LAZYLEN(simple_sounds) && !LAZYLEN(help_sounds))
 		help_sounds = simple_sounds.Copy()
-	if(simple_span && !help_span)
-		help_span = simple_span
+	if(LAZYLEN(simple_span) && !LAZYLEN(help_span))
+		help_span = simple_span.Copy()
 	exract_caegories()
 
 /datum/interaction/proc/exract_caegories()
@@ -392,28 +402,20 @@
 	if(!user || !target)
 		return "hypnophrase"
 	var/span
+	if(!LAZYLEN(help_span))
+		help_span = list("notice")
+	span = pick(help_span)
 	switch(user.a_intent)
-		if(INTENT_HELP)
-			span = help_span
 		if(INTENT_DISARM)
 			if(LAZYLEN(disarm_span))
-				span = disarm_span
-			else
-				span = help_span
+				span = list(disarm_span)
 		if(INTENT_GRAB)
 			if(LAZYLEN(grab_span))
-				span = grab_span
-			else
-				span = help_span
+				span = list(grab_span)
 		if(INTENT_HARM)
 			if(LAZYLEN(harm_span))
-				span = harm_span
-			else
-				span = help_span
-	if(!span)
-		stack_trace("Hey, you forgot to set a span for [type] - [description]! It needs to be something!!!")
-		span = "hypnophrase"
-	return span
+				span = list(harm_span)
+	return span || "notice"
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

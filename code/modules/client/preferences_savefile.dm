@@ -203,6 +203,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				S["feature_genital_whitelist"] >> genital_whitelist
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+			// if(PMC_LEWD_STUFF_FOR_ALL) // I made lewd stuff, but it doesnt visle
+			// 	S["toggles"] >> toggles
+			// 	ENABLE_BITFIELD(toggles, HEAR_LEWD_VERB_SOUNDS)
+			// 	ENABLE_BITFIELD(toggles, HEAR_LEWD_VERB_WORDS)
+			// 	WRITE_FILE(S["toggles"], toggles)
+			// 	current_version |= PMC_LEWD_STUFF_FOR_ALL /// wait does this proc even do anything?????
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")

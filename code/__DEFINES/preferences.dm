@@ -134,6 +134,7 @@
 #define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
 #define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
 #define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
+// #define PMC_LEWD_STUFF_FOR_ALL "tfw_when_dan_couldnt_figure_out_how_to_make_lewd_start_on" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
