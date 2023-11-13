@@ -883,17 +883,17 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 											/obj/item/gun/ballistic/m2flamethrower
 											))
 /// Numbers only! The sorting algorithm won't accept text inputs.
-#define GUN_BALANCE_SORTING_TPYES list("dps", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm")
+#define GUN_BALANCE_SORTING_TPYES list("dps", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm", "bonus_bane_dam")
 
 /client/proc/print_gun_debug_information()
 	set category = "Debug"
 	set name = "Gun Debug Info"
-	set desc = "(LAG WARNING) Prints an enormous list of every gun and its stats into your chatbox lol."
+	set desc = "(LAG & MEMORY WARNING) Makes an enormous list of every gun and its stats. Only intended to be used on a local server."
 	
 	if(!check_rights(R_DEBUG))
 		return
 
-	var/safety = alert(usr, "Are you absolutely sure you want to print a giant, laggy list of every gun's stats into your chatbox? DON'T USE THIS IN A LIVE ROUND.", "Really do it?", "No", "Yes", "Yes, Skip Runtimes")
+	var/safety = alert(usr, "Are you absolutely sure you want to make a giant, laggy, memory-hogging list of every gun's stats? DON'T USE THIS IN A LIVE ROUND. Will create some runtime errors.", "Really do it?", "No", "Yes")
 	if(safety == "No")
 		return
 
@@ -909,6 +909,8 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 	if(isnull(sorttype))
 		return
 
+	log_and_message_admins("[ADMIN_PP(usr)] is generating the huge gun balance list. If this is a live round, kill them and then run Gun-Debug-Info and select \"Clear it & Cancel\" after the safety check.")
+
 	var/static/list/ballistic_types = list()
 	if(!LAZYLEN(ballistic_types))
 		ballistic_types = subtypesof(/obj/item/gun/ballistic)
@@ -918,14 +920,13 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 		energy_types = subtypesof(/obj/item/gun/energy)
 	to_chat(usr, "Found [LAZYLEN(energy_types)] energy weapons...")
 	var/static/list/all_guns = list()
-	all_guns = ballistic_types + energy_types
-	if(safety == "Yes, Skip Runtimes")
-		all_guns -= GLOB.gun_balance_blacklist
+	if(!LAZYLEN(all_guns))
+		all_guns = ballistic_types + energy_types
 	to_chat(usr, "Processing [LAZYLEN(all_guns)] total weapons...")
 	if(!LAZYLEN(GLOB.gun_balance_list))
 		for(var/gunthing in all_guns)
 			if(gunthing in GLOB.gun_balance_list)
-				to_chat(usr, span_warning("ERROR: [gunthing] was skipped because it's a duplicate!"))
+				to_chat(usr, span_warning("ERROR: [gunthing] was skipped because it's a duplicate! How did that happen!"))
 				continue
 			gunthing = new gunthing()//We need to instantiate these guns because many of their stats don't exist until they've Init'd
 			if(istype(gunthing, /obj/item/gun/ballistic))
@@ -950,11 +951,6 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 				//The highest rpm on the weapon divided by 60
 				var/g_rps
 				var/g_draw_time = G.draw_time
-				/*
-				var/g_w_class = G.w_class
-				var/g_slowdown = G.slowdown
-				var/g_force = G.force
-				*/
 				if(G.init_mag_type)
 					mag = new G.init_mag_type()
 				if(!mag && G.mag_type)
@@ -1009,7 +1005,7 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 					if(tot_dam && chonk)
 						avg_dam = chonk / tot_weight //dividing the weighted sum by the total sum of the weights
 				else
-					var/dd = initial(g_bullet.damage)*dam_mult
+					var/dd = (initial(g_bullet.damage)*dam_mult)*g_casing.pellets
 					avg_dam = dd
 					min_dam = dd
 					max_dam = dd
@@ -1031,7 +1027,8 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 													"draw_time_sec" = g_draw_time/10,
 													"mag_capacity" = mag_cap,
 													"burst_length_sec" = burst_length_seconds,
-													"dam_per_mag" = dam_per_mag
+													"dam_per_mag" = dam_per_mag,
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets
 													)
 			//End ballistic code
 
@@ -1118,7 +1115,7 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 						if(tot_dam && chonk)
 							avg_dam = chonk / tot_weight //dividing the weighted sum by the total sum of the weights
 					else
-						var/dd = initial(g_bullet.damage)*dam_mult
+						var/dd = (initial(g_bullet.damage)*dam_mult)*g_casing.pellets
 						avg_dam = dd
 						min_dam = dd
 						max_dam = dd
@@ -1147,20 +1144,21 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 													"draw_time_sec" = g_draw_time/10,
 													"mag_capacity" = shots_per_cell,
 													"burst_length_sec" = burst_length_seconds,
-													"dam_per_mag" = dam_per_cell
+													"dam_per_mag" = dam_per_cell,
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets
 													)
 				//End energy weapons
 
 	if(LAZYLEN(GLOB.gun_balance_list))
 		to_chat(usr, "Sorting list by [sorttype]...")
 		var/list/sortinglist = list()
-		for(var/gg in GLOB.gun_balance_list)//Associate the DPS to the key
-			sortinglist[gg] = GLOB.gun_balance_list[gg][sorttype]
+		for(var/gg in GLOB.gun_balance_list)
+			sortinglist[gg] = GLOB.gun_balance_list[gg][sorttype]//Associate the sorting value to the key
 		sortTim(sortinglist, /proc/cmp_numeric_dsc, associative = TRUE)//Sort the DPS associations
 		for(var/gs in sortinglist)//Re-add the other variables
 			sortinglist[gs] = GLOB.gun_balance_list[gs]
 		GLOB.gun_balance_list = LAZYCOPY(sortinglist)//Copy the temporary sorted list into the global list
-	spawn(10) debug_variables(GLOB.gun_balance_list)
 	to_chat(usr, "[LAZYLEN(GLOB.gun_balance_list)] weapons sacrificed to the guns balance list!")
 	to_chat(usr, span_notice("Output saved to global list \"gun_balance_list\". To access, press \"Edit\" next to \"Globals\" in your MC tab \
 							and use the search bar. It will also open automatically in 1 second for your convenience, so if it never opens then something broke!"))
+	spawn(10) debug_variables(GLOB.gun_balance_list)
