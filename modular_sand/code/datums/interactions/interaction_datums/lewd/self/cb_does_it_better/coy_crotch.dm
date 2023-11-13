@@ -639,3 +639,58 @@
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
+
+///////////////////////
+//	Lick pussy 6A20////
+///////////////////////
+/datum/interaction/lewd/partner/mutual/lick_pussy
+	description = "Partner/Crotch - Lick their pussy."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently licks at XT_NAME's pussy.",
+	)
+	disarm_messages = list(
+		"XU_NAME licks playfully at XT_NAME's pussy.",
+	)
+	grab_messages = list(
+		"XU_NAME firmly mlems at XT_NAME's pussy.",
+	)
+	harm_messages = list(
+		"XU_NAME tongue dives XT_NAME's pussy.",
+	)
+
+	simple_sounds = list(
+		'sound/effects/lick.ogg'
+	) // frumf, frumf
+	user_lust_mult = 0.2 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Lick clit 6A21///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/lick_clit
+	description = "Partner/Crotch - Lick their clitoris."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently licks at XT_NAME's clitoris.",
+	)
+	disarm_messages = list(
+		"XU_NAME licks playfully at XT_NAME's clitoris.",
+	)
+	grab_messages = list(
+		"XU_NAME firmly mlems at XT_NAME's clitoris.",
+	)
+	harm_messages = list(
+		"XU_NAME tongue dives XT_NAME's pussy.",
+	)
+
+	simple_sounds = list(
+		'sound/effects/lick.ogg'
+	) // frumf, frumf
+	user_lust_mult = 0.2 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
