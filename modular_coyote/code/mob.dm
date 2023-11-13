@@ -1059,8 +1059,8 @@
 	icon_living = "possum"
 	icon_dead = "possum_dead"
 
-/mob/living/simple_animal/advanced/snake
-	name = "snake"
+/mob/living/simple_animal/advanced/greensnake
+	name = "green snake"
 	desc = "A slithering, noodle-like thing with a mouth."
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "snake"
