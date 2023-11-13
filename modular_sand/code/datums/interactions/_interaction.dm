@@ -282,7 +282,7 @@
 		user.visible_message(message)
 		return TRUE
 	/// now to broadcast to everyone in your private little circle
-	var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
+	var/list/ppl = SSinteractions.get_consent_chain(user) // send message to EVERYONE in the group!!!
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
@@ -336,7 +336,7 @@
 	if(!is_lewd)
 		playsound(user, sound2play, int_sound_vol, 1)
 		return TRUE
-	var/list/ppl = SSinteractions.get_consent_chain(user, TRUE) // send message to EVERYONE in the group!!!
+	var/list/ppl = SSinteractions.get_consent_chain(user) // send message to EVERYONE in the group!!!
 	for(var/mob/squish in ppl)
 		if(!squish.client)
 			continue

@@ -68,10 +68,10 @@ SUBSYSTEM_DEF(interactions)
 	var/key2 = extract_ckey(player2)
 	if(!key1 || !key2)
 		return FALSE
-	if(sorttext(key1, key2))
-		return "[key1]![key2]"
-	else
-		return "[key2]![key1]"
+	var/list/keys = sortList(list(key1, key2))
+	if(LAZYLEN(keys) != 2)
+		return FALSE
+	return "[LAZYACCESS(keys, 1)]![LAZYACCESS(keys, 2)]"
 
 /// consenting! check if consenting
 /datum/controller/subsystem/interactions/proc/check_consent(mob/player1, mob/player2)
@@ -82,7 +82,9 @@ SUBSYSTEM_DEF(interactions)
 	var/keyname = keyify(player1, player2)
 	if(!keyname)
 		return FALSE
-	return !!(LAZYACCESS(consents, keyname))
+	if(!LAZYACCESS(consents, keyname))
+		return FALSE
+	check_consent_chain(player1, player2)
 
 /// consenting! check if consenting
 /datum/controller/subsystem/interactions/proc/who_asked_who(keyname)
@@ -279,16 +281,23 @@ SUBSYSTEM_DEF(interactions)
 	LAZYSET(guorch_cooldowns, squisher.ckey, world.time + guosh_cd)
 	return TRUE
 
-/// gets everyone who creature consents to, and everyone who they consent to, and so on
+/// gets everyone who creature1 (and creature2) consents to, and everyone who they consent to, and so on
 /// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F
 /// would return A, B, C, D, E, F
-/datum/controller/subsystem/interactions/proc/get_consent_chain(mob/living/creature, mobs_pls = TRUE)
-	if(!istype(creature) || !creature.ckey)
+/datum/controller/subsystem/interactions/proc/get_consent_chain(creature1, creature2, mobs_pls = TRUE)
+	if(!creature1 && !creature2)
 		return FALSE
-	var/list/keys_to_check = list(creature.ckey)
+	var/ckey1 = extract_ckey(creature1)
+	var/ckey2 = extract_ckey(creature2)
+	if(!ckey1 && !ckey2)
+		return FALSE
+	var/list/keys_to_check = list()
+	if(ckey1) keys_to_check |= ckey1 // TG CANT TELL ME NOT TO DO THIS :D
+	if(ckey2) keys_to_check |= ckey2 // EVEN THOUGH THEYRE RIGHT ITS FUKCING STUPID AND I HATE IT
 	var/list/consent_chain = list() // also is the keys we checked, so we dont check em again
 	/// runs through the the master consent list
-	while(LAZYLEN(keys_to_check))
+	var/tries_left = 100 // juuuuuust in case
+	while(LAZYLEN(keys_to_check) && --tries_left)
 		var/key_to_check = keys_to_check[1]
 		keys_to_check -= key_to_check
 		if(key_to_check in consent_chain) // constant pain
@@ -311,6 +320,17 @@ SUBSYSTEM_DEF(interactions)
 		if(consent_mob)
 			mob_consent_chain |= consent_mob
 	return mob_consent_chain
+
+/// So, consent chains are a thing. This is a recursive function that checks if the target is in the consent chain of the source.
+/// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F
+/// If we're checking if B consents to F, it will return TRUE, because B and F exist in the same consent chain.
+/// (really its more a consent web, but I like chain better)
+/datum/controller/subsystem/interactions/proc/check_consent_chain(mob/source, mob/target)
+	if(!source || !target)
+		return FALSE
+	var/list/consent_chain_1 = get_consent_chain(source, mobs_pls = FALSE)
+	var/list/consent_chain_2 = get_consent_chain(target, mobs_pls = FALSE)
+	return consent_chain_1 & consent_chain_2
 
 // Splurt defines, because I'm a lazy shitbag. ~TK
 
@@ -349,11 +369,11 @@ GLOBAL_LIST_INIT(lewd_prefs_choices, list(
 #define THIGH_SMOTHERING "thigh_smother"
 #define NUTS_TO_FACE "nut_face"
 
-#define CRAZY_LUST 6
-#define MORE_LUST 5
-#define NORMAL_LUST 4
-#define SOME_MORE_LUST 3
-#define SOME_LUST 2
+#define CRAZY_LUST 20
+#define MORE_LUST 15
+#define NORMAL_LUST 10
+#define SOME_MORE_LUST 6
+#define SOME_LUST 3
 #define LOW_LUST 1
 
 #define REQUIRE_NONE 0

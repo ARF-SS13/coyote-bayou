@@ -565,7 +565,7 @@
 			to_chat(mouns, moan)
 			// if(is_self_action)
 			// 	return TRUE
-			var/list/ppl = SSinteractions.get_consent_chain(mouns, TRUE) // send message to EVERYONE in the group!!!
+			var/list/ppl = SSinteractions.get_consent_chain(mouns) // send message to EVERYONE in the group!!!
 			for(var/mob/squish in ppl - mouns)
 				if(!squish.client)
 					continue
