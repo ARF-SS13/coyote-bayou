@@ -8,7 +8,7 @@
 	name = "mixed berry tea"
 	id = "berrytea"
 	results = list(/datum/reagent/consumable/tea/berrytea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/berryjuice = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/pomtea
 	name = "Pomegranate Iced Tea"
@@ -20,7 +20,7 @@
 	name = "Portsville Mint Tea"
 	id = "portsvilleminttea"
 	results = list(/datum/reagent/drink/tea/portsvilleminttea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/ethanol/creme_de_menthe = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/potatotea
 	name = "Potato Tea"
@@ -32,7 +32,7 @@
 	name = "Securitea"
 	id = "securitea"
 	results = list(/datum/reagent/drink/tea/securitea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/vanilla = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/sleepytime_tea
 	name = "Sleepytime Tea"
@@ -86,7 +86,7 @@
 	name = "Kira Tea"
 	id = "kiratea"
 	results = list(/datum/reagent/drink/tea/kira_tea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/orangejuice = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/librarianspecial
 	name = "Librarian's Special Tea"
@@ -134,7 +134,7 @@
 	name = "Cofftea"
 	id = "cofftea"
 	results = list(/datum/reagent/drink/tea/cofftea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/coffee = 2)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/coffee = 2, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/trizkizkitea
 	name = "trizkizki tea"
