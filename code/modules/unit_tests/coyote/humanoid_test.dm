@@ -17,7 +17,7 @@
 
 /datum/unit_test/screenshot_humanoids/proc/make_dummy(species, job_outfit)
 	var/mob/living/carbon/human/dummy/consistent/dummy = allocate(/mob/living/carbon/human/dummy/consistent)
-	dummy.set_species(species)
+	dummy.set_species(species, no_lang = TRUE)
 	dummy.equipOutfit(job_outfit, visualsOnly = TRUE)
 	return dummy
 
