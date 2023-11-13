@@ -116,7 +116,7 @@
 	name = "Chocoate chai tea"
 	id = "chocochaitea"
 	results = list(/datum/reagent/drink/tea/coco_chaitea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/chemical_reaction/chaitea = 3,/datum/reagent/consumable/coco = 1 )
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/drink/tea/chaitea = 3,/datum/reagent/consumable/coco = 1 )
 
 /datum/chemical_reaction/chailatte
 	name = "Chai latte"
@@ -128,7 +128,7 @@
 	name = "Chocolate Chai latte"
 	id = "chocochailatte"
 	results = list(/datum/reagent/drink/tea/coco_chailatte = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/chemical_reaction/chailatte = 3,/datum/reagent/consumable/coco  = 1 )
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/drink/tea/chaitealatte = 3,/datum/reagent/consumable/coco  = 1 )
 
 /datum/chemical_reaction/coffetea
 	name = "Cofftea"
