@@ -199,7 +199,7 @@ datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what
 	help_messages = list(
 		"XU_NAME is gently rubbing XU_THEIR clit.",
 		"XU_NAME rubs XU_THEIR clit softly in small circles.",
-		"XU_NAME presses two fingers to XU_THEIR clit rubs gently.",
+		"XU_NAME presses two fingers to XU_THEIR clit and rubs gently.",
 		"XU_NAME softly rubs XU_THEIR clit.",
 	)
 	disarm_messages = list(
