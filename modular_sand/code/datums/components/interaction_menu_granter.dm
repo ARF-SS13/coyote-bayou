@@ -9,6 +9,7 @@
 	set name = "Interact With"
 	set desc = "Perform an interaction with someone."
 	set category = "IC"
+	set src in range(10)
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
 	if(!menu)
