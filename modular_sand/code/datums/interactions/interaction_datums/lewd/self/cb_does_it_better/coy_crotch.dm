@@ -337,16 +337,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME gently rides on XT_NAME's cock, letting them feel XU_THEIR warm and wet hole."
+		"XU_NAME gently rides on XT_NAME's cock, letting them feel their warm and wet hole."
 	)
 	disarm_messages = list(
-		"XU_NAME playfully bounces on XT_NAME's cock, letting them feel XU_THEIR warm and wet hole."
+		"XU_NAME playfully bounces on XT_NAME's cock, letting them feel their warm and wet hole."
 	)
 	grab_messages = list(
-		"XU_NAME pushes XT_THEIR warm and wet hole down hard on XT_NAME's cock."
+		"XU_NAME pushes their warm and wet hole down hard on XT_NAME's cock."
 	)
 	harm_messages = list(
-		"XU_NAME throws XT_THEIR needy pussy back on XT_NAME's cock so hard it might hurt them!"
+		"XU_NAME throws their needy pussy back on XT_NAME's cock so hard it might hurt them!"
 	)
 
 
