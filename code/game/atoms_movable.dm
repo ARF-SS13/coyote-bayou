@@ -764,7 +764,8 @@
 /// As a side effect, it also creates missing language holders in the process.
 /atom/movable/proc/update_atom_languages()
 	var/datum/language_holder/LH = get_language_holder()
-	return LH.update_atom_languages(src)
+	if(LH)
+		return LH.update_atom_languages(src)
 
 /* End language procs */
 

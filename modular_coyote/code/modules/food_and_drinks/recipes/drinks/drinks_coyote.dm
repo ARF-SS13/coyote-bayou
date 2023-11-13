@@ -20,7 +20,7 @@
 	name = "Portsville Mint Tea"
 	id = "portsvilleminttea"
 	results = list(/datum/reagent/drink/tea/portsvilleminttea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/ethanol/creme_de_menthe = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/potatotea
 	name = "Potato Tea"
@@ -32,7 +32,7 @@
 	name = "Securitea"
 	id = "securitea"
 	results = list(/datum/reagent/drink/tea/securitea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/vanilla = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/sleepytime_tea
 	name = "Sleepytime Tea"
@@ -86,7 +86,7 @@
 	name = "Kira Tea"
 	id = "kiratea"
 	results = list(/datum/reagent/drink/tea/kira_tea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/orangejuice = 1)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/librarianspecial
 	name = "Librarian's Special Tea"
@@ -116,7 +116,7 @@
 	name = "Chocoate chai tea"
 	id = "chocochaitea"
 	results = list(/datum/reagent/drink/tea/coco_chaitea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/chemical_reaction/chaitea = 3,/datum/reagent/consumable/coco = 1 )
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/drink/tea/chaitea = 3,/datum/reagent/consumable/coco = 1 )
 
 /datum/chemical_reaction/chailatte
 	name = "Chai latte"
@@ -128,13 +128,13 @@
 	name = "Chocolate Chai latte"
 	id = "chocochailatte"
 	results = list(/datum/reagent/drink/tea/coco_chailatte = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/chemical_reaction/chailatte = 3,/datum/reagent/consumable/coco  = 1 )
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/drink/tea/chaitealatte = 3,/datum/reagent/consumable/coco  = 1 )
 
 /datum/chemical_reaction/coffetea
 	name = "Cofftea"
 	id = "cofftea"
 	results = list(/datum/reagent/drink/tea/cofftea = 4)
-	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/coffee = 2)
+	required_reagents = list(/datum/reagent/consumable/tea = 2, /datum/reagent/consumable/coffee = 2, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/trizkizkitea
 	name = "trizkizki tea"
