@@ -1122,6 +1122,14 @@
 	icon_living = "bat"
 	icon_dead = "bat_dead"
 
+/mob/living/simple_animal/advanced/parrot
+	name = "parrot"
+	desc = "SQUAAAAWK!"
+	icon = 'icons/mob/animal.dmi'
+	icon_state = "parrot"
+	icon_living = "parrot"
+	icon_dead = "parrot_dead"
+
 /mob/living/simple_animal/pet/mothroach
 	name = "mothroach"
 	desc = "This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches."
