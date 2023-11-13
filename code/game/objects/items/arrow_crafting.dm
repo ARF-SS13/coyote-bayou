@@ -174,7 +174,7 @@
 	icon = 'icons/obj/arrow_crafting.dmi'
 	icon_state = "arrow_head_bodkin"
 	merge_type = /obj/item/stack/arrowhead/broadhead
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/broadhead
+	result_arrow = /obj/item/ammo_casing/caseless/arrow/bodkin
 
 /obj/item/stack/arrowhead/explosive
 	name = "explosive arrow heads"

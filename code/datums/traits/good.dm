@@ -627,7 +627,6 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem to have forgotten how to craft makeshift weapons...")
 	medical_record_text = "Patient appears to enjoy tinkering with custom guns."
-	human_only = FALSE
 
 /datum/quirk/gunsmith/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -655,7 +654,6 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
 	lose_text = span_danger("You seem less adept at crafting masterworks.")
 	medical_record_text = "Patient appears to be a well renowned gunsmith."
-	human_only = FALSE
 
 /datum/quirk/voracious
 	name = "Bottomless Stomach"
@@ -2435,7 +2433,6 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		/datum/quirk/gunsmith,
 		/datum/quirk/masterworksmith,
 	)
-	human_only = FALSE
 
 /datum/quirk/package/legendarywepsm/add()
 	var/mob/living/H = quirk_holder

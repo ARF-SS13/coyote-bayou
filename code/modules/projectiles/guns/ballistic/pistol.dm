@@ -121,7 +121,7 @@
 	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
 /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
 	name = "M3 Civillian Pistol"
-	desc = "This pistol is the civillian or police version of the M3 Magnum, uses common and abundant 9mm"
+	desc = "This pistol is the civillian version of the M3 Magnum, which uses common and abundant 9mm ammunition."
 	icon_state = "m3civ"
 	item_state = "m3civ"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -151,7 +151,7 @@
 //scorpion machine pistol. like the M93R, but full auto instead of burst, for better or worse
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
 	name = "Skorpion 9mm"
-	desc = "A Czech machine pistol developed in the 60s"
+	desc = "A Czech machine pistol developed in the 60s."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "skorpion"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -252,7 +252,7 @@ obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol
 //9mm coldwar-modern sidearms. Same as the browning hipower pistol
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
 	name = "Glock 19"
-	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter "
+	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
 	item_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'

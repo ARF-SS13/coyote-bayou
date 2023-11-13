@@ -62,7 +62,7 @@
 	var/icon/I = icon(icon)
 	var/icon_width = I.Width()
 	if(icon_width>32) //This proc only fixes sprites that are too wide.
-		var/matrix/M = matrix() //Use a fresh matrix so we start at 0,0
+		var/matrix/M = matrix(transform)
 		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
 		return TRUE
 	return FALSE

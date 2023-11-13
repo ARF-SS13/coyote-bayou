@@ -48,6 +48,9 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define istransparentturf(A) (istype(A, /turf/open/transparent))
 
+//Crayon and spray cannable turfs
+#define ispaintableturf(A) (isfloorturf(A) || isindestructiblefloor(A) || iswallturf(A) || isindestructiblewall(A))
+
 //Mobs
 #define isliving(A) (istype(A, /mob/living))
 

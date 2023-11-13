@@ -772,7 +772,7 @@
 	cost = 1
 
 /datum/gear/suit/armor/flagcapesclothing/tsar
-	name = "Armored Tsaraist flag cape"
+	name = "Armored Tsarist flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
