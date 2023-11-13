@@ -10,10 +10,6 @@ SUBSYSTEM_DEF(interactions)
 	/// format: list("ckey1!ckey2" = ASKER_ASKED, "ckey2!ckey1" = ASKED_ASKER)
 	var/list/consents = list()
 	var/list/deliberating_consent = list()
-	var/list/splorch_cd = 7 SECONDS // the 7 is for good luck
-	var/list/squorch_cooldowns = list()
-	var/list/guosh_cd = 1 SECONDS // the 7 is for good luck
-	var/list/guorch_cooldowns = list()
 	var/list/interactions_tgui = list()
 	var/min_autoplap_interval = 3 SECONDS
 	var/max_autoplap_interval = 15 SECONDS
@@ -77,7 +73,7 @@ SUBSYSTEM_DEF(interactions)
 /datum/controller/subsystem/interactions/proc/check_consent(mob/player1, mob/player2)
 	if(!player1 || !player2)
 		return FALSE
-	if(player1 == player2)
+	if(is_same_person(player1, player2))
 		return TRUE // you consent to yourself~
 	var/keyname = keyify(player1, player2)
 	if(!keyname)
@@ -85,6 +81,15 @@ SUBSYSTEM_DEF(interactions)
 	if(!LAZYACCESS(consents, keyname))
 		return FALSE
 	check_consent_chain(player1, player2)
+
+/datum/controller/subsystem/interactions/proc/is_same_person(player1, player2)
+	if(!player1 || !player2)
+		return TRUE // only one person? or none? sure, same person
+	var/key1 = extract_ckey(player1)
+	var/key2 = extract_ckey(player2)
+	if(key1 == key2)
+		return TRUE
+	return FALSE
 
 /// consenting! check if consenting
 /datum/controller/subsystem/interactions/proc/who_asked_who(keyname)
@@ -188,7 +193,7 @@ SUBSYSTEM_DEF(interactions)
 		"Yes!",
 		"Yes, and call an admin!",
 	)
-	deliberating_consent -= target.ckey
+	deliberating_consent -= requesting.ckey
 	switch(consent_choice)
 		if("Yes!")
 			remove_consent(requesting, target)
@@ -232,54 +237,6 @@ SUBSYSTEM_DEF(interactions)
 		return TRUE
 	if(is_type_in_typecache(creature, blacklisted_mobs))
 		return TRUE
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * A cooldown for squorching, so you can't just spam it.
- * Only applies if the squorch has a sound associated with it, otherwise you get to see every lovely message
- */
-/datum/controller/subsystem/interactions/proc/can_squorch_message(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
-	if(!istype(squisher) || !squisher.ckey || !istype(splut))
-		return FALSE
-	if(!LAZYLEN(splut.help_sounds))
-		return TRUE // You really need to know 
-	if(!LAZYACCESS(squorch_cooldowns, squisher.ckey))
-		set_cooldown_for_squorch(squisher)
-		return TRUE // SQUISHERS ARE REALLY COOL
-	if(world.time > LAZYACCESS(squorch_cooldowns, squisher.ckey))
-		if(do_cooldown)
-			set_cooldown_for_squorch(squisher)
-		return TRUE // SQUISHERS ARE SO MUCH FUN
-	return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
-	
-/datum/controller/subsystem/interactions/proc/set_cooldown_for_squorch(mob/living/squisher)
-	if(!istype(squisher) || !squisher.ckey)
-		return FALSE
-	LAZYSET(squorch_cooldowns, squisher.ckey, world.time + splorch_cd)
-	return TRUE
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * A cooldown for guoshing, so you can't just spam it.
- */
-/datum/controller/subsystem/interactions/proc/can_squorch_sound(mob/living/squisher, datum/interaction/splut, do_cooldown = TRUE)
-	return TRUE // yeah you cant spam it turns out
-	// if(!istype(squisher) || !squisher.ckey || !istype(splut))
-	// 	return FALSE
-	// if(!LAZYLEN(splut.help_sounds))
-	// 	return FALSE // not that it matters
-	// if(!LAZYACCESS(guorch_cooldowns, squisher.ckey))
-	// 	set_cooldown_for_guorch(squisher)
-	// 	return TRUE // SQUISHERS ARE REALLY COOL
-	// if(world.time > LAZYACCESS(guorch_cooldowns, squisher.ckey))
-	// 	if(do_cooldown)
-	// 		set_cooldown_for_guorch(squisher)
-	// 	return TRUE // SQUISHERS ARE SO MUCH FUN
-	// return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
-	
-/datum/controller/subsystem/interactions/proc/set_cooldown_for_guorch(mob/living/squisher)
-	if(!istype(squisher) || !squisher.ckey)
-		return FALSE
-	LAZYSET(guorch_cooldowns, squisher.ckey, world.time + guosh_cd)
-	return TRUE
 
 /// gets everyone who creature1 (and creature2) consents to, and everyone who they consent to, and so on
 /// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F

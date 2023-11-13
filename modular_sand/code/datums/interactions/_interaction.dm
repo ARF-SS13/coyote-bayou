@@ -79,6 +79,10 @@
 	 * It wont tell you if you misspell something, it'll just spit out the message with the malformed token innit
 	 * So be careful! See line 387ish for the tokens you can use
 	 */
+	var/list/splorch_cd = 7 SECONDS // the 7 is for good luck
+	var/list/squorch_cooldowns = list()
+	var/list/guosh_cd = 1 SECONDS // the 7 is for good luck
+	var/list/guorch_cooldowns = list()
 
 
 	var/write_log_user
@@ -273,7 +277,7 @@
 
 /// Display the message
 /datum/interaction/proc/interaction_message(mob/living/user, mob/living/target, show_message, list/extra = list())
-	if(!SSinteractions.can_squorch_message(user, src))
+	if(!can_squorch_message(user))
 		return
 	var/message = get_message(user, target, extra)
 	var/span = get_span(user, target, extra)
@@ -309,7 +313,7 @@
 /datum/interaction/proc/interaction_sound(mob/living/user, mob/living/target, play_sound)
 	if(!user || !target)
 		return
-	if(!SSinteractions.can_squorch_sound(user, src))
+	if(!can_squorch_sound(user, src))
 		return
 	var/sound2play
 	switch(user.a_intent)
@@ -410,6 +414,57 @@
 		stack_trace("Hey, you forgot to set a span for [type] - [description]! It needs to be something!!!")
 		span = "hypnophrase"
 	return span
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * A cooldown for squorching, so you can't just spam it.
+ * Only applies if the squorch has a sound associated with it, otherwise you get to see every lovely message
+ */
+/datum/interaction/proc/can_squorch_message(mob/living/squisher, do_cooldown = TRUE)
+	if(!istype(squisher) || !squisher.ckey)
+		return FALSE
+	if(!LAZYLEN(help_sounds))
+		return TRUE // You really need to know 
+	if(!LAZYACCESS(squorch_cooldowns, squisher.ckey))
+		set_cooldown_for_squorch(squisher)
+		return TRUE // SQUISHERS ARE REALLY COOL
+	if(world.time > LAZYACCESS(squorch_cooldowns, squisher.ckey))
+		if(do_cooldown)
+			set_cooldown_for_squorch(squisher)
+		return TRUE // SQUISHERS ARE SO MUCH FUN
+	return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
+	
+/datum/interaction/proc/set_cooldown_for_squorch(mob/living/squisher)
+	if(!istype(squisher) || !squisher.ckey)
+		return FALSE
+	LAZYSET(squorch_cooldowns, squisher.ckey, world.time + splorch_cd)
+	return TRUE
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * A cooldown for guoshing, so you can't just spam it.
+ */
+/datum/interaction/proc/can_squorch_sound(mob/living/squisher, do_cooldown = TRUE)
+	return TRUE // yeah you cant spam it turns out
+	// if(!istype(squisher) || !squisher.ckey || !istype(splut))
+	// 	return FALSE
+	// if(!LAZYLEN(splut.help_sounds))
+	// 	return FALSE // not that it matters
+	// if(!LAZYACCESS(guorch_cooldowns, squisher.ckey))
+	// 	set_cooldown_for_guorch(squisher)
+	// 	return TRUE // SQUISHERS ARE REALLY COOL
+	// if(world.time > LAZYACCESS(guorch_cooldowns, squisher.ckey))
+	// 	if(do_cooldown)
+	// 		set_cooldown_for_guorch(squisher)
+	// 	return TRUE // SQUISHERS ARE SO MUCH FUN
+	// return FALSE // SLIMY GOOEY ANIMALS GIRAFFES AND WOLVES AND SO MUCH MORE
+	
+/datum/interaction/proc/set_cooldown_for_guorch(mob/living/squisher)
+	if(!istype(squisher) || !squisher.ckey)
+		return FALSE
+	LAZYSET(guorch_cooldowns, squisher.ckey, world.time + guosh_cd)
+	return TRUE
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * THE MESSAGE FORMATTER! CONVERTS TOKENS TO ACTUAL TEXT
