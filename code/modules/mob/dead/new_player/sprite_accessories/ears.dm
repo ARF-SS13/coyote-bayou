@@ -501,6 +501,12 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MUTCOLORS3
 
+/datum/sprite_accessory/ears/mam_ears/umbreon
+	name = "Umbreon"
+	icon = 'icons/mob/mam/coyote/32x64_mam_ears.dmi'
+	icon_state = "umbreon"
+	matrixed_sections = MATRIX_RED_GREEN
+
 
 //Fenny makes insane earringed ears
 
@@ -534,7 +540,7 @@
 /datum/sprite_accessory/ears/human/fennec2rp
 	name = "Fennec (ALT) - right piercing"
 	icon_state = "fennec2rp"
-	matrixed_sections = MATRIX_ALL	
+	matrixed_sections = MATRIX_ALL
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 
 
