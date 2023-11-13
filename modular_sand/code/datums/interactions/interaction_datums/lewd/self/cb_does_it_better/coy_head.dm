@@ -97,16 +97,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME gently nuzzles XU_THEIR face against XU_NAME's face.",
+		"XU_NAME gently nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	disarm_messages = list(
-		"XU_NAME playfully nuzzles XU_THEIR face against XU_NAME's face.",
+		"XU_NAME playfully nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	grab_messages = list(
-		"XU_NAME possessibely nuzzles XU_THEIR face against XU_NAME's face.",
+		"XU_NAME possessibely nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	harm_messages = list(
-		"XU_NAME aggressively nuzzles XU_THEIR face against XU_NAME's face!",
+		"XU_NAME aggressively nuzzles XU_THEIR face against XT_NAME's face!",
 	)
 
 	simple_sounds = list(
