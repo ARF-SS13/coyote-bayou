@@ -878,7 +878,7 @@
 
 GLOBAL_LIST_EMPTY(gun_balance_list)
 
-#define GUN_BALANCE_SORTING_TPYES list("dps", "name", "avg_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag")
+#define GUN_BALANCE_SORTING_TPYES list("dps", "avg_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag","rpm")
 
 /client/proc/print_gun_debug_information()
 	set category = "Debug"
@@ -982,13 +982,15 @@ GLOBAL_LIST_EMPTY(gun_balance_list)
 				//Bullet damage calculations
 				var/list/dam_list = g_bullet.damage_list
 				if(LAZYLEN(dam_list))
-					var/tot_dam = 0 //sum of damage*weight
-					var/chonk = 0 //sum of weights
+					var/tot_dam = 0 //sum of damage
+					var/tot_weight = 0 //sum of the weights
+					var/chonk = 0 //sum of dam*weight
 					var/mode_w = 0
 					for(var/d in dam_list)
 						var/bdam = text2num(d)*dam_mult
 						var/bweight = dam_list[d]
 						tot_dam += bdam
+						tot_weight += bweight
 						chonk += (bdam*bweight)
 						if(bdam > max_dam || isnull(max_dam))
 							max_dam = bdam
@@ -998,9 +1000,9 @@ GLOBAL_LIST_EMPTY(gun_balance_list)
 							mode_dam = bdam
 							mode_w = bweight
 					if(tot_dam && chonk)
-						avg_dam = chonk / tot_dam
+						avg_dam = chonk / tot_weight //dividing the weighted sum by the total sum of the weights
 				else
-					var/dd = initial(g_bullet.damage)
+					var/dd = initial(g_bullet.damage)*dam_mult
 					avg_dam = dd
 					min_dam = dd
 					max_dam = dd
@@ -1022,6 +1024,8 @@ GLOBAL_LIST_EMPTY(gun_balance_list)
 													"burst_length_sec" = burst_length_seconds,
 													"dam_per_mag" = dam_per_mag
 													)
+
+				/*We don't need this because the list gets VV'd automatically
 				out = "<h3><b>[G.name]</b> <i>[G.type]</i></h3><br>"
 				out += "Size: [weightclass2text(g_w_class)], Slowdown: [g_slowdown], Melee Force: [g_force], Draw Time: [g_draw_time/10]s</i><br>"
 				out += "Casing: [initial(g_casing.name)], Bullet: [initial(g_bullet.name)], Damage: [g_bullet.damage], DPS: [g_dps]<br>"
@@ -1029,6 +1033,7 @@ GLOBAL_LIST_EMPTY(gun_balance_list)
 				out += "Mag Capacity: [mag_cap], Burst Length: [burst_length_seconds]s, Avg Dam Per Mag: [dam_per_mag]<br>"
 				. += out
 				to_chat(usr, out)
+				*/
 			//End ballistic code
 			//Start Energy Code
 			if(istype(gunthing, /obj/item/gun/energy))
