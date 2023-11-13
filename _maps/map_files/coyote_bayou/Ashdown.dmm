@@ -1657,6 +1657,12 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"aME" = (
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland/city)
 "aMG" = (
 /obj/structure/window/fulltile/ruins,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -3944,6 +3950,17 @@
 /obj/structure/sign/stop{
 	icon_state = "flag_arkansas";
 	pixel_y = 35
+	},
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An ancient ballistic turret - it looks rusted, yet stil functional. Safe to assume it's still operational, given the fact it's shooting at you.";
+	faction = list("wastebot");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "ancient turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -12052,10 +12069,19 @@
 /area/f13/building/abandoned)
 "ftl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An ancient ballistic turret - it looks rusted, yet stil functional. Safe to assume it's still operational, given the fact it's shooting at you.";
+	faction = list("wastebot");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "ancient turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city)
 "ftn" = (
@@ -12570,13 +12596,11 @@
 	},
 /area/f13/building/abandoned)
 "fFl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul,
-/turf/open/floor/f13{
-	icon_state = "dark"
+/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/building)
+/area/f13/wasteland/city)
 "fFt" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/cultist/ranged/tesla,
@@ -14105,7 +14129,6 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/structure/table,
-/mob/living/simple_animal/hostile/ghoul/soldier/armored,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -19748,7 +19771,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/office/dark,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul/soldier/armored,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -30316,8 +30338,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "nGx" = (
-/obj/structure/nest/ghoul,
-/turf/open/indestructible/ground/outside/gravel,
+/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
 /area/f13/wasteland/city)
 "nGJ" = (
 /obj/structure/flora/tallgrass7,
@@ -43860,6 +43884,13 @@
 	icon_state = "outerturn - S"
 	},
 /area/f13/wasteland)
+"tNd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright0"
+	},
+/area/f13/wasteland/city)
 "tNo" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/bars{
@@ -49472,6 +49503,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/abandoned)
+"wwf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland/city)
 "wws" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/trash,
@@ -84993,7 +85030,7 @@ rRL
 mXC
 ajY
 mXC
-mXC
+fFl
 qaH
 xHN
 kju
@@ -85250,7 +85287,7 @@ maU
 dXu
 mlc
 tCE
-vTw
+tNd
 eZu
 bvs
 vuA
@@ -85516,7 +85553,7 @@ raT
 gVD
 bQF
 jdn
-nGx
+dCD
 wuc
 lky
 hVn
@@ -86287,7 +86324,7 @@ kCs
 ryL
 lAC
 wuc
-ftl
+qxv
 xaZ
 cMz
 ahd
@@ -86532,7 +86569,7 @@ pnD
 ikx
 cwp
 maU
-dXu
+aME
 stO
 kXT
 eeA
@@ -86542,7 +86579,7 @@ inH
 lNi
 fOM
 bvs
-fmm
+ftl
 qxv
 ekO
 xaZ
@@ -87307,7 +87344,7 @@ shK
 dWA
 guq
 eeA
-mvE
+nGx
 gVD
 nfG
 wkD
@@ -88081,7 +88118,7 @@ dPy
 kPa
 bvs
 ugz
-fFl
+dIL
 aLa
 bvs
 bIH
@@ -89362,7 +89399,7 @@ cwA
 cMz
 eeA
 jAQ
-jAQ
+wwf
 mvE
 srk
 kgf
