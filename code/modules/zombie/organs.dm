@@ -30,7 +30,7 @@
 /obj/item/organ/zombie_infection/Remove(special = FALSE)
 	if(owner)
 		if(iszombie(owner) && old_species)
-			owner.set_species(old_species)
+			owner.set_species(old_species, no_lang = TRUE)
 		if(timer_id)
 			deltimer(timer_id)
 	. = ..()
@@ -74,7 +74,7 @@
 
 	if(!iszombie(owner))
 		old_species = owner.dna.species.type
-		owner.set_species(/datum/species/zombie/infectious)
+		owner.set_species(/datum/species/zombie/infectious, no_lang = TRUE)
 
 	var/stand_up = (owner.stat == DEAD) || (owner.stat == UNCONSCIOUS)
 
@@ -113,8 +113,8 @@
 
 	if(!iszombie(owner))
 		old_species = owner.dna.species.type
-		owner.set_species(/datum/species/ghoul) //The player becomes a regular ghoul before they become a zombie ghoul to make sure the sprites work
-		owner.set_species(/datum/species/zombie/infectious/ghoul)
+		owner.set_species(/datum/species/ghoul, no_lang = TRUE) //The player becomes a regular ghoul before they become a zombie ghoul to make sure the sprites work
+		owner.set_species(/datum/species/zombie/infectious/ghoul, no_lang = TRUE)
 
 	var/stand_up = (owner.stat == DEAD) || (owner.stat == UNCONSCIOUS)
 
