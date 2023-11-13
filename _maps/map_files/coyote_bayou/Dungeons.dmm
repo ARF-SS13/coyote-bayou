@@ -8197,13 +8197,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
-"dIg" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "Vault1"
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/tunnel)
 "dIh" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Armory";
@@ -21483,13 +21476,6 @@
 	name = "cool metal floor"
 	},
 /area/f13/brotherhood/rnd)
-"jTg" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "hell"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
 "jTl" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/turf_decal{
@@ -45444,10 +45430,6 @@
 /turf/open/water,
 /area/f13/enclave)
 "uJZ" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "bosdb"
-	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/operations)
 "uKa" = (
@@ -74044,7 +74026,7 @@ hrZ
 hrZ
 vXu
 sUw
-dIg
+sUw
 vXu
 hrZ
 hrZ
@@ -105182,7 +105164,7 @@ whv
 ltw
 pHT
 ble
-jTg
+ble
 ble
 ble
 ble
