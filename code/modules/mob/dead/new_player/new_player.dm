@@ -568,6 +568,9 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(humanc.client)
 			humanc.client.prefs.post_copy_to(humanc)
+	
+	if(character.client.prefs.waddle_amount > 0)
+		character.AddComponent(/datum/component/waddling, character.client.prefs.waddle_amount, character.client.prefs.up_waddle_time, character.client.prefs.side_waddle_time)
 
 	GLOB.joined_player_list += character.ckey
 	GLOB.latejoiners += character
@@ -685,6 +688,9 @@
 		log_and_message_admins("[ADMIN_PP(C)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
 		//Insert the quirks, do it now
 		SSquirks.AssignQuirks(C, C.client, TRUE, FALSE)
+		//Then he waddled away, waddle waddle. To the very next day.
+		if(P.waddle_amount > 0)
+			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
 	if(client.holder && check_rights(R_STEALTH, 0))
