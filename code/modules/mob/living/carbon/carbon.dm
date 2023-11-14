@@ -163,6 +163,7 @@
 
 /mob/living/carbon/throw_item(atom/target)
 	throw_mode_off()
+	update_mouse_pointer()
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /atom/movable/screen))
