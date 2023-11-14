@@ -197,10 +197,10 @@ datum/interaction/lewd/self/rub_clit //lewd makes it pink, the name is just what
 	is_self_action = TRUE //Is the user of this verb the target of it?  This is what defines if the verb is a 'self' verb.  If its for use on others you should set it to false.  Then remember to set range! Some things, like winking, can be done at a distance!
 	max_distance = 0 //The max distance you can use this verb on others, starts on the tiles AROUND the player, so thusly it includes the players own tile.
 	help_messages = list(
-		"XU_NAME is gently rubbing XU_THEIR clit.",
-		"XU_NAME rubs XU_THEIR clit softly in small circles.",
-		"XU_NAME presses two fingers to XU_THEIR clit and rubs gently.",
-		"XU_NAME softly rubs XU_THEIR clit.",
+		"XU_NAME is {gently, softly, lovingly, warmly} {rubbing, teasing, playing with} XU_THEIR {clit, love button, butterbean, clitoris, pleasure button}.",
+		"XU_NAME {rubs, teases, plays with} XU_THEIR {clit, love button, butterbean, clitoris, pleasure button} {gently, softly, lovingly, warmly} in small circles.",
+		"XU_NAME presses {two fingers, their fingers} to XU_THEIR {clit, love button, butterbean, clitoris, pleasure button} and {rubs, teases, plays with} {gently, softly, lovingly, warmly}.",
+		"XU_NAME {gently, softly, lovingly, warmly} {rubs, teases, plays with} XU_THEIR {clit, love button, butterbean, clitoris, pleasure button}.",
 	)
 	disarm_messages = list(
 		"XU_NAME rubs XU_THEIR clit teasingly",

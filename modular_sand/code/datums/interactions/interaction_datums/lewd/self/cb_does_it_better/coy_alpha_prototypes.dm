@@ -105,34 +105,32 @@ Happy MERPING!  ~TK<3
 	write_log_user = "is really into something someone is doing to them." //The log for the interactiont to show admins if, for some insane reason, they need to look up what you have done to yourself/others. Probably not needed with OUR community, but I can see the logic behind wanting it. 
 	write_log_target = null //There's no target in this case, because the user is the target. If there was you'd write it out the same as write_log_user, like 'was fingered by someone' or something similar.
 	help_messages = list(
-		"XU_NAME seems to like what XT_NAME's doing to XT_THEM", 
-		"XU_NAME is eager to recieve what XT_NAME's doing to XT_THEM",
+		"XU_NAME seems to like what XT_NAME's doing to them.", 
+		"XU_NAME is eager to recieve what XT_NAME's doing to them.",
 		"XU_NAME is seemingly down for whatever XT_NAME's doing",
 		"XU_NAME eagerly takes what XT_NAME's is serving up",
 	)
 	disarm_messages = list(
-		"XU_NAME definitely likes what XT_NAME's doing to XT_THEM",
-		"XU_NAME is very eager to take what XT_NAME's putting down on XT_THEM",
+		"XU_NAME definitely likes what XT_NAME's doing to them.",
+		"XU_NAME is very eager to take what XT_NAME's putting down on them.",
 		"XU_NAME is totally down for whatever XT_NAME's doing",
 		"XU_NAME eagerly takes what XT_NAME's is serving up",
 	)
 	grab_messages = list(
-		"XU_NAME <b>REALLY</b> likes what XT_NAME's doing to XT_THEM",
-		"XU_NAME is <b>DOWN BAD</b> to take what XT_NAME's putting down on XT_THEM",
+		"XU_NAME <b>REALLY</b> likes what XT_NAME's doing to them.",
+		"XU_NAME is <b>DOWN BAD</b> to take what XT_NAME's putting down on them.",
 		"XU_NAME is <b>absolutely losing it</b> for whatever XT_NAME's doing",
 		"XU_NAME is taking what XT_NAME is serving up like a <b>CHAMPION</b>",
 	)
 	harm_messages = list(
-		"XU_NAME <b>IS LOSING IT</b> from what XT_NAME's doing to XT_THEM",
+		"XU_NAME <b>IS LOSING IT</b> from what XT_NAME's doing to them.",
 		"XU_NAME is <b>NOT GONNA LAST LONG</b> taking it like that from XT_NAME",
 		"XU_NAME is <b>barely even mentally there</b> for whatever XT_NAME's doing",
 		"XU_NAME is <b>gonna checkout</b> quick from XT_NAME actions at this rate",
 	)
 
 	simple_sounds = list(
-		'modular_sand/sound/interactions/bang1.ogg',
-		'modular_sand/sound/interactions/bang2.ogg',
-		'modular_sand/sound/interactions/bang3.ogg'
+		'sound/f13effects/sunsetsounds/blush.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.5
 	lust_go_to = LUST_USER | LUST_TARGET
