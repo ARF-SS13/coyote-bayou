@@ -161,10 +161,13 @@
 	. = ..()
 	icon_state = "[icon_state][rand(1, 6)]"
 	setup_transparency()
+	color = random_foliage_color_greenbrown()
+
+/proc/random_foliage_color_greenbrown()
+	return "#[pick(GLOB.hex_6toc)][pick(GLOB.hex_6toc)][pick(GLOB.hex_6to9)][pick(GLOB.hex_6to9)]00"
 
 /obj/structure/flora/tree/jungle/proc/setup_transparency()
 	AddComponent(/datum/component/largetransparency, 1, 2, 1, 1)
-
 
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
