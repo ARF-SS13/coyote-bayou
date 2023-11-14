@@ -274,7 +274,7 @@
 	desc = "A simple, inconspicuous harness replacement for a jumpsuit."
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
-	body_parts_covered = CHEST|GROIN
+	body_parts_covered = 0
 	body_parts_hidden = 0 // nudie~
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
