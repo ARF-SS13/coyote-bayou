@@ -298,3 +298,75 @@
 	) // frumf, frumf
 	user_lust_mult = 0.1
 	target_lust_mult = 0.1
+
+////////////////////
+//Good Boy 1A10//
+////////////////////
+datum/interaction/lewd/mutual/good_boy
+	description = "Partner/Head - Call them a good boy."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Good Girl 1A11//
+////////////////////
+datum/interaction/lewd/mutual/good_girl
+	description = "Partner/Head - Call them a good girl."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Praise them 1A12//
+////////////////////
+datum/interaction/lewd/mutual/praise_them
+	description = "Partner/Head - Praise them."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
