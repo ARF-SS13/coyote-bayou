@@ -442,6 +442,12 @@
 #define SHOES_SPEED_SLIGHT  SHOES_SLOWDOWN - 1 // slightest speed boost to movement
 #define POCKET_STRIP_DELAY			40	//time taken (in deciseconds) to search somebody's pockets
 #define DOOR_CRUSH_DAMAGE	15	//the amount of damage that airlocks deal when they crush you
+#define WADDLE_MIN		0//waddling animation min/maxes for character creation
+#define WADDLE_MAX		6
+#define UP_WADDLE_MIN	0
+#define UP_WADDLE_MAX	3
+#define SIDE_WADDLE_MIN	0
+#define SIDE_WADDLE_MAX	4
 
 #define	HUNGER_FACTOR		0.1	//factor at which mob nutrition decreases
 #define	ETHEREAL_CHARGE_FACTOR	0.08 //factor at which ethereal's charge decreases

@@ -341,6 +341,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
+	/// Upwards waddle amount. Side to side is always double this.
+	var/waddle_amount = 0
+	/// How fast the mob wobbles upwards.
+	var/up_waddle_time = 1
+	/// How fast the mob wobbles side to side.
+	var/side_waddle_time = 2
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -721,7 +727,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 
+			//Waddling
+			dat += "<h3>Waddling</h3>"
+			dat += "<b>Waddle Amount:</b><a href='?_src_=prefs;preference=waddle_amount;task=input'>[waddle_amount]</a><br>"
+			if(waddle_amount > 0)
+				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
+				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
 			dat += "</td>"
+
+			//end column 5 or something
+			//start column 6
+
 			//Mutant stuff
 			var/mutant_category = 0
 			mutant_category++
@@ -3373,7 +3389,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_body_width)
 						new_body_width = clamp(new_body_width * 0.01, min, max)
 						features["body_width"] = new_body_width
-
+				
+				if("waddle_amount")
+					var/new_waddle_amount = input(user, "Choose how many pixels you want to move when walking(4 Recommended): ([WADDLE_MIN]-[WADDLE_MAX])", "Character Preference", waddle_amount) as num|null
+					if(isnum(new_waddle_amount))
+						new_waddle_amount = round(clamp(new_waddle_amount, WADDLE_MIN, WADDLE_MAX), 0.1)
+						waddle_amount = new_waddle_amount
+				
+				if("up_waddle_time")
+					var/new_up_waddle_time = input(user, "Choose how fast you want to move up & down while walking(1 Recommended): ([UP_WADDLE_MIN]-[UP_WADDLE_MAX])", "Character Preference", up_waddle_time) as num|null
+					if(isnum(new_up_waddle_time))
+						new_up_waddle_time = round(clamp(new_up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX), 0.1)
+						up_waddle_time = new_up_waddle_time
+				
+				if("side_waddle_time")
+					var/new_side_waddle_time = input(user, "Choose how fast you want to move side to side while walking(2 Recommended): ([SIDE_WADDLE_MIN]-[SIDE_WADDLE_MAX])", "Character Preference", side_waddle_time) as num|null
+					if(isnum(new_side_waddle_time))
+						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
+						side_waddle_time = new_side_waddle_time
+				
 				if("creature_body_size")
 					var/min = CONFIG_GET(number/body_size_min)
 					var/max = CONFIG_GET(number/body_size_max)

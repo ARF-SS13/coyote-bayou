@@ -832,6 +832,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["custom_pixel_x"]		>> custom_pixel_x
 	S["custom_pixel_y"]		>> custom_pixel_y
 
+	S["waddle_amount"]		>> waddle_amount
+	S["up_waddle_time"]		>> up_waddle_time
+	S["side_waddle_time"]	>> side_waddle_time
+
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVE FILE STUFF !!
@@ -935,12 +939,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	custom_pixel_x	= sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	custom_pixel_y	= sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	
+	waddle_amount	= sanitize_num_clamp(waddle_amount, WADDLE_MIN, WADDLE_MAX, 0, 0.1)
+	up_waddle_time	= sanitize_num_clamp(up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX, 0, 0.1)
+	side_waddle_time = sanitize_num_clamp(side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX, 0, 0.1)
 
-	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
-	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
-	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
-	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
-	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	hair_color			= sanitize_hexcolor(hair_color, 6, FALSE)
+	facial_hair_color	= sanitize_hexcolor(facial_hair_color, 6, FALSE)
+	eye_type			= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
+	left_eye_color		= sanitize_hexcolor(left_eye_color, 6, FALSE)
+	right_eye_color		= sanitize_hexcolor(right_eye_color, 6, FALSE)
 	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
 	//whoflags = initial(whoflags) // comment out before release
 
@@ -1301,8 +1309,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
+	
 	WRITE_FILE(S["custom_pixel_x"], custom_pixel_x)
 	WRITE_FILE(S["custom_pixel_y"], custom_pixel_y)
+
+	WRITE_FILE(S["waddle_amount"], waddle_amount)
+	WRITE_FILE(S["up_waddle_time"], up_waddle_time)
+	WRITE_FILE(S["side_waddle_time"], side_waddle_time)
 
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
