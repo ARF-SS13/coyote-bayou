@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(interactions)
 	var/min_autoplap_interval = 3 SECONDS
 	var/max_autoplap_interval = 15 SECONDS
 	var/debug_store_plapper_weakref = FALSE
+	var/interactions_per_page = 10
 
 	VAR_PROTECTED/list/blacklisted_mobs = list(
 		/mob/dead,
@@ -24,7 +25,8 @@ SUBSYSTEM_DEF(interactions)
 /datum/controller/subsystem/interactions/Initialize(timeofday)
 	prepare_interactions()
 	prepare_blacklisted_mobs()
-	return ..()
+	..()
+	to_chat(world, span_purple("Loaded [LAZYLEN(interactions_tgui)] interactions! =3"))
 
 /// Makes the interactions, they're also a global list because having it as a list and just hanging around there is stupid
 /datum/controller/subsystem/interactions/proc/prepare_interactions()
@@ -282,11 +284,11 @@ SUBSYSTEM_DEF(interactions)
 /// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F
 /// If we're checking if B consents to F, it will return TRUE, because B and F exist in the same consent chain.
 /// (really its more a consent web, but I like chain better)
-/datum/controller/subsystem/interactions/proc/check_consent_chain(mob/source, mob/target)
-	if(!source || !target)
+/datum/controller/subsystem/interactions/proc/check_consent_chain(mob/source, mob/target, c_1, c_2) // the c_1/2 are if you want to submit your own consent chains
+	if((!source || !target) && (!c_1 || !c_2))
 		return FALSE
-	var/list/consent_chain_1 = get_consent_chain(source, mobs_pls = FALSE)
-	var/list/consent_chain_2 = get_consent_chain(target, mobs_pls = FALSE)
+	var/list/consent_chain_1 = islist(c_1) ? c_1 : get_consent_chain(source, mobs_pls = FALSE)
+	var/list/consent_chain_2 = islist(c_2) ? c_2 : get_consent_chain(target, mobs_pls = FALSE)
 	return consent_chain_1 & consent_chain_2
 
 // Splurt defines, because I'm a lazy shitbag. ~TK

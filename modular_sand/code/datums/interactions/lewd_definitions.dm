@@ -233,12 +233,6 @@
 					return TRUE
 	return FALSE
 
-/mob/living/proc/has_penis(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_penis && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_PENIS, visibility)
-
 /mob/living/proc/has_strapon(visibility = REQUIRE_ANY)
 	if(get_strapon())
 		return TRUE
@@ -270,24 +264,6 @@
 
 /mob/living/proc/get_penetrating_genital_name(long = FALSE)
 	return has_penis() ? (long ? pick(GLOB.dick_nouns) : pick("cock", "dick")) : pick("strapon")
-
-/mob/living/proc/has_balls(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_balls && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_TESTICLES, visibility)
-
-/mob/living/proc/has_vagina(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_vagina && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_VAGINA, visibility)
-
-/mob/living/proc/has_breasts(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_breasts && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_BREASTS, visibility)
 
 /mob/living/proc/has_anus(visibility = REQUIRE_ANY)
 	if(has_anus && !iscarbon(src))
@@ -480,12 +456,6 @@
 				else
 					return TRUE
 	return FALSE
-
-/mob/living/proc/has_butt(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_butt && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_BUTT, visibility)
 
 ///Are we wearing something that covers our chest?
 /mob/living/proc/is_topless()

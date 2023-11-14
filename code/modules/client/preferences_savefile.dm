@@ -899,7 +899,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["permanent_tattoos"]		>> permanent_tattoos
 
 	//Permanent Tattoos
-	S["faved_interactions"]		>> faved_interactions
+	faved_interactions = safe_json_decode(S["faved_interactions"])
 
 
 	//sanitize data
@@ -907,6 +907,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions		= sanitize_islist(faved_interactions, list())
 
 	//Sanitize
 
@@ -1432,7 +1433,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
 	//permanent tattoos
-	WRITE_FILE(S["faved_interactions"], faved_interactions)
+	WRITE_FILE(S["faved_interactions"], safe_json_encode(modified_limbs))
 
 	return 1
 

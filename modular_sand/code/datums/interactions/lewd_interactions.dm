@@ -594,66 +594,66 @@
 	user.cleartimer = addtimer(CALLBACK(user, /mob/living/proc/clear_lewd_datum), 300, TIMER_STOPPABLE)
 	return ..()
 
-/mob/living/list_interaction_attributes(mob/living/LM)
-	. = ..()
-	if(!COOLDOWN_FINISHED(LM, refractory_period))
-		. += "...are sexually exhausted for the time being."
-	switch(a_intent)
-		if(INTENT_HELP)
-			. += "...are acting gentle."
-		if(INTENT_DISARM)
-			. += "...are acting playful."
-		if(INTENT_GRAB)
-			. += "...are acting rough."
-		if(INTENT_HARM)
-			. += "...are fighting anyone who comes near."
-	//Here comes the fucking weird shit.
-	if(client)
-		var/client/cli = client
-		var/client/ucli = LM.client
-		if(cli.prefs.extremepref != "No")
-			if(!ucli || (ucli.prefs.extremepref != "No"))
-				//if(!get_item_by_slot(SLOT_EARS_LEFT) && !get_item_by_slot(SLOT_EARS_RIGHT))
-				if(get_item_by_slot(SLOT_EARS))
-					if(has_ears())
-						. += "...have unprotected ears."
-					else
-						. += "...have a hole where their ears should be."
-				else
-					. += "...have covered ears."
-				if(!get_item_by_slot(SLOT_GLASSES))
-					if(has_eyes())
-						. += "...have exposed eyes."
-					else
-						. += "...have exposed eyesockets."
-				else
-					. += "...have covered eyes."
-	//
-	// check those loops only once, thanks
-	var/is_topless = is_topless()
-	var/is_bottomless = is_bottomless()
-	if(is_topless && is_bottomless)
-		. += "...are naked."
-	else
-		if((is_topless && !is_bottomless) || (!is_topless && is_bottomless))
-			. += "...are partially clothed."
-		else
-			. += "...are clothed."
-	if(has_breasts(REQUIRE_EXPOSED))
-		. += "...have breasts."
-	if(has_penis(REQUIRE_EXPOSED))
-		. += "...have a penis."
-	if(has_strapon(REQUIRE_EXPOSED))
-		. += "...have a strapon."
-	if(has_balls(REQUIRE_EXPOSED))
-		. += "...have a ballsack."
-	if(has_vagina(REQUIRE_EXPOSED))
-		. += "...have a vagina."
-	if(has_anus(REQUIRE_EXPOSED))
-		. += "...have an anus."
-	if(has_feet(REQUIRE_EXPOSED))
-		switch(has_feet(REQUIRE_EXPOSED))
-			if(2)
-				. += "...have a pair of feet."
-			if(1)
-				. += "...have a single foot."
+// /mob/living/list_interaction_attributes(mob/living/LM)
+// 	. = ..()
+// 	if(!COOLDOWN_FINISHED(LM, refractory_period))
+// 		. += "...are sexually exhausted for the time being."
+// 	switch(a_intent)
+// 		if(INTENT_HELP)
+// 			. += "...are acting gentle."
+// 		if(INTENT_DISARM)
+// 			. += "...are acting playful."
+// 		if(INTENT_GRAB)
+// 			. += "...are acting rough."
+// 		if(INTENT_HARM)
+// 			. += "...are fighting anyone who comes near."
+// 	//Here comes the fucking weird shit.
+// 	if(client)
+// 		var/client/cli = client
+// 		var/client/ucli = LM.client
+// 		if(cli.prefs.extremepref != "No")
+// 			if(!ucli || (ucli.prefs.extremepref != "No"))
+// 				//if(!get_item_by_slot(SLOT_EARS_LEFT) && !get_item_by_slot(SLOT_EARS_RIGHT))
+// 				if(get_item_by_slot(SLOT_EARS))
+// 					if(has_ears())
+// 						. += "...have unprotected ears."
+// 					else
+// 						. += "...have a hole where their ears should be."
+// 				else
+// 					. += "...have covered ears."
+// 				if(!get_item_by_slot(SLOT_GLASSES))
+// 					if(has_eyes())
+// 						. += "...have exposed eyes."
+// 					else
+// 						. += "...have exposed eyesockets."
+// 				else
+// 					. += "...have covered eyes."
+// 	//
+// 	// check those loops only once, thanks
+// 	var/is_topless = is_topless()
+// 	var/is_bottomless = is_bottomless()
+// 	if(is_topless && is_bottomless)
+// 		. += "...are naked."
+// 	else
+// 		if((is_topless && !is_bottomless) || (!is_topless && is_bottomless))
+// 			. += "...are partially clothed."
+// 		else
+// 			. += "...are clothed."
+// 	if(has_breasts(REQUIRE_EXPOSED))
+// 		. += "...have breasts."
+// 	if(has_penis(REQUIRE_EXPOSED))
+// 		. += "...have a penis."
+// 	if(has_strapon(REQUIRE_EXPOSED))
+// 		. += "...have a strapon."
+// 	if(has_balls(REQUIRE_EXPOSED))
+// 		. += "...have a ballsack."
+// 	if(has_vagina(REQUIRE_EXPOSED))
+// 		. += "...have a vagina."
+// 	if(has_anus(REQUIRE_EXPOSED))
+// 		. += "...have an anus."
+// 	if(has_feet(REQUIRE_EXPOSED))
+// 		switch(has_feet(REQUIRE_EXPOSED))
+// 			if(2)
+// 				. += "...have a pair of feet."
+// 			if(1)
+// 				. += "...have a single foot."

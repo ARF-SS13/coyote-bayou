@@ -227,6 +227,8 @@
 		return
 	if(!can_do_interaction(user, target, discrete, extra))
 		return
+	if(is_self_action)
+		target = user // they are I
 	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
 	do_action(user, target, discrete, extra)
 	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src, extra)
@@ -300,8 +302,8 @@
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		if(!(squish in view(15, user)))
-			continue
+		// if(!(squish in view(15, user)))
+		// 	continue
 		if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS))
 			continue
 		to_chat(squish, message)
@@ -477,6 +479,7 @@
  * * XOBJECT2 - NAME OF WHAT DEFINED IN extra["object2"]
  * * XU_THEY - USER'S HE/SHE/THEY
  * * XU_THEIR - USER'S HIS/HER/THEIR
+ * * XU_THEM - USER'S HIM/HER/THEM
  * * XU_THEMSELF - USER'S HIMSELF/HERSELF/THEMSELVES
  * * XU_HAVE - USER'S HAS/HAVE
  * * XU_ARE - USER'S IS/ARE
@@ -485,6 +488,7 @@
  * * XU_PENIS - USER'S PENIS
  * * XT_THEY - TARGET'S HE/SHE/THEY
  * * XT_THEIR - TARGET'S HIS/HER/THEIR
+ * * XT_THEM - TARGET'S HIM/HER/THEM
  * * XT_THEMSELF - TARGET'S HIMSELF/HERSELF/THEMSELVES
  * * XT_HAVE - TARGET'S HAS/HAVE
  * * XT_ARE - TARGET'S IS/ARE

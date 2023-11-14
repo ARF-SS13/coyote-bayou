@@ -108,30 +108,30 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 		if(!src.holder)	return
 		message_admins("[key_name_admin(usr)] manually reloaded mentors")
 
-/*
-/mob/living/carbon/proc/has_penis()
+
+/mob/living/proc/has_penis()
 	return getorganslot(ORGAN_SLOT_PENIS)
 
-/mob/living/carbon/proc/has_balls()
+/mob/living/proc/has_balls()
 	return getorganslot(ORGAN_SLOT_TESTICLES)
 
-/mob/living/carbon/proc/has_vagina()
+/mob/living/proc/has_vagina()
 	return getorganslot(ORGAN_SLOT_VAGINA)
 
-/mob/living/carbon/proc/has_breasts()
+/mob/living/proc/has_breasts()
 	return getorganslot(ORGAN_SLOT_BREASTS)
 
-/mob/living/carbon/proc/has_butt()
+/mob/living/proc/has_butt()
 	return getorganslot(ORGAN_SLOT_BUTT)
-*/
 
-/mob/living/carbon/proc/has_belly()
+
+/mob/living/proc/has_belly()
 	return getorganslot(ORGAN_SLOT_BELLY)
 
-/mob/living/carbon/proc/has_womb()
+/mob/living/proc/has_womb()
 	return getorganslot(ORGAN_SLOT_WOMB)
 
-/mob/living/carbon/proc/is_groin_exposed(list/L)
+/mob/living/proc/is_groin_exposed(list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)
@@ -140,7 +140,7 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 			return FALSE
 	return TRUE
 
-/mob/living/carbon/proc/is_chest_exposed(list/L)
+/mob/living/proc/is_chest_exposed(list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)

@@ -4,6 +4,9 @@
 #define AUTOCUM_USER_FULL_LUST (1 << 1)
 #define AUTOCUM_PARTNER_FULL_LUST (1 << 2)
 
+#define MERP_CAT_ALL "All Interactions"
+#define MERP_CAT_FAVES "Favorites"
+
 /// Attempts to open the tgui menu
 /mob/verb/interact_with()
 	set name = "Interact With"
@@ -49,6 +52,11 @@
 	var/savetimer = 0
 	var/autocum_flags = NONE
 	COOLDOWN_DECLARE(click_refractory)
+	var/durty = TRUE
+	var/current_page = 1
+	var/current_category = MERP_CAT_ALL
+	var/search_term = ""
+	var/list/cached_interactions = list() // optimizing my code is for nerds
 
 /datum/component/interaction_menu_granter/Initialize(...)
 	if(!ismob(parent))
@@ -57,6 +65,7 @@
 	if(!parent_mob.client)
 		return COMPONENT_INCOMPATIBLE
 	. = ..()
+	update_display_filter()
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
@@ -64,6 +73,7 @@
 	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, .proc/kill_autoplapper)
 	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER, .proc/confirm_autoplap)
 	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED, .proc/sympathetic_detonation)
+	RegisterSignal(parent, COMSIG_SPLURT_I_CAME, .proc/stop_all_autoplappers)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	weaktarget = null
@@ -122,7 +132,6 @@
 	data["MinAutoplapInterval"] = SSinteractions.min_autoplap_interval || list()
 	data["MaxAutoplapInterval"] = SSinteractions.max_autoplap_interval || list()
 	data["AllCategories"] = SSinteractions.all_categories || list()
-	data["AllInteractions"] = SSinteractions.interactions_tgui || list()
 	data["MyGenitals"] = self.format_genitals_for_tgui() || list()
 	data["MyOrientations"] = format_orientation(self) || list()
 	if(target != self)
@@ -141,6 +150,18 @@
 	if(!target)
 		return
 	//Getting info
+	durty = TRUE
+	update_display_filter()
+	.["CurrPage"] = current_page || 1
+	.["MaxPage"] = CEILING(LAZYLEN(cached_interactions) / SSinteractions.interactions_per_page, 1) || 1
+	.["CanPgDN"] = current_page > 0
+	.["CanPgUP"] = current_page < CEILING(LAZYLEN(cached_interactions) / SSinteractions.interactions_per_page, 1) - 1
+	.["CurrCategory"] = current_category || MERP_CAT_ALL
+	var/top_index = max((current_page - 1) * SSinteractions.interactions_per_page, 1)
+	var/bottom_index = min((current_page) * SSinteractions.interactions_per_page, LAZYLEN(cached_interactions))
+	var/list/stuff_in_this_page = cached_interactions.Copy(top_index, bottom_index)
+	.["AllInteractions"] = stuff_in_this_page || list()
+	.["SearchTerm"] = search_term || ""
 	.["SeeLewd"] = SeeLewd || FALSE
 	.["SeeExtreme"] = SeeExtreme || FALSE
 	.["ItsJustMe"] = target == self
@@ -181,7 +202,7 @@
 		if("interact")
 			SPLURT_ANTISPAM
 			perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"])
-			return TRUE
+
 		if("Favorite")
 			if(!P)
 				return FALSE
@@ -191,21 +212,21 @@
 				P.faved_interactions += params["interaction"]
 			queue_save()
 			interface_sound(1)
-			return TRUE
+
 		if("DeleteAutoPlapper")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP)
 				return FALSE
 			remove_autoplap(AP.apid)
 			interface_sound(1)
-			return TRUE
+
 		if("StartRecording")
 			if(is_recording())
 				perform_action(GET_WEAKREF(weaktarget), params["interaction"], params["extra"]) // try to finish it off
 				return FALSE
 			new_autoplap(params["interaction"], GET_WEAKREF(weaktarget), null)
 			interface_sound(1)
-			return TRUE
+
 		if("StopRecording")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP.plap_listening)
@@ -214,26 +235,26 @@
 			autoplappers -= AP.apid
 			qdel(AP)
 			interface_sound(1)
-			return TRUE
+
 		if("SetAutoPlapperInterval")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP)
 				return FALSE
 			AP.plap_interval = text2num(params["Interval"])
-			return TRUE
+
 		if("ToggleAutoPlapper")
 			var/datum/autoplapper/AP = autoplappers[params["APID"]]
 			if(!AP)
 				return FALSE
 			AP.toggle_plapping()
 			interface_sound(1)
-			return TRUE
+
 		if("ConsentAct")
 			SPLURT_ANTISPAM
 			to_chat(parent_mob, span_notice("Requesting consent from [GET_WEAKREF(weaktarget)]..."))
 			SSinteractions.add_or_remove_consent(parent_mob, GET_WEAKREF(weaktarget))
 			interface_sound(2)
-			return TRUE
+
 		// if("MTTC")
 		// 	update_mean_time_to_cum(params["value"])
 		// 	return TRUE
@@ -241,7 +262,7 @@
 			SPLURT_ANTISPAM
 			parent_mob.cum()
 			interface_sound(3)
-			return TRUE
+
 		if("ToggleAutoCum")
 			TOGGLE_VAR(parent_mob.ready_to_cum)
 			if(parent_mob.ready_to_cum)
@@ -249,21 +270,17 @@
 			else
 				to_chat(parent_mob, span_green("You will no longer automatically cum when your arousal reaches 100%!"))
 			interface_sound(1)
-			return TRUE
+
 		if("ToggleAutoStart")
 			interface_sound(1)
 			TOGGLE_VAR(autoplapper_autostart)
-			return TRUE
+
 		if("StopAllAutoPlappers")
 			SPLURT_ANTISPAM
-			for(var/ap in autoplappers)
-				var/datum/autoplapper/AP = autoplappers[ap]
-				if(!AP)
-					continue
-				AP.stop_plapping()
+			stop_all_autoplappers()
 			to_chat(parent_mob, span_green("Stopped all autoplappers!"))
 			interface_sound(1)
-			return TRUE
+
 		if("StartAllAutoPlappers")
 			SPLURT_ANTISPAM
 			for(var/ap in autoplappers)
@@ -273,7 +290,7 @@
 				AP.start_plapping()
 			to_chat(parent_mob, span_green("Started all autoplappers!"))
 			interface_sound(1)
-			return TRUE
+
 		if("ToggleSeeLewd")
 			TOGGLE_VAR(SeeLewd)
 			if(SeeLewd)
@@ -281,7 +298,8 @@
 			else
 				to_chat(parent_mob, span_green("Lewd stuff disabled!"))
 			interface_sound(1)
-			return TRUE
+			durty = TRUE
+
 		if("ToggleSeeExtreme")
 			TOGGLE_VAR(SeeExtreme)
 			if(SeeExtreme)
@@ -289,7 +307,8 @@
 			else
 				to_chat(parent_mob, span_green("Extreme stuff disabled!"))
 			interface_sound(1)
-			return TRUE
+			durty = TRUE
+
 		if("ToggleSeeLewdMessages")
 			if(!P)
 				return FALSE
@@ -300,7 +319,7 @@
 				to_chat(parent_mob, span_green("You will no longer see lewd messages!"))
 			queue_save()
 			interface_sound(1)
-			return TRUE
+
 		if("ToggleHearLewdSounds")
 			if(!P)
 				return FALSE
@@ -311,11 +330,43 @@
 				to_chat(parent_mob, span_green("You will no longer hear lewd verb sounds!"))
 			queue_save()
 			interface_sound(1)
-			return TRUE
+
 		if("AutocumFlagify")
 			change_autocum_flags()
 			interface_sound(1)
-			return TRUE
+		
+		if("PgUP")
+			var/nextpage = min(current_page + 1, CEILING(LAZYLEN(SSinteractions.interactions_tgui) / SSinteractions.interactions_per_page, 1))
+			if(nextpage != current_page)
+				current_page = nextpage
+				durty = TRUE
+				interface_sound(1)
+
+		if("PgDOWN")
+			var/nextpage = max(current_page - 1, 0)
+			if(nextpage != current_page)
+				current_page = nextpage
+				durty = TRUE
+				interface_sound(1)
+		
+		if("UpdateSearch") // so long, performance!!!!
+			if(params["SearchTerm"] != search_term)
+				search_term = params["SearchTerm"]
+				current_category = MERP_CAT_ALL
+				current_page = 1
+				durty = TRUE
+				interface_sound(1)
+		
+		if("UpdateCategory")
+			if(params["category"] != current_category)
+				search_term = ""
+				current_category = params["category"]
+				current_page = 1
+				durty = TRUE
+				interface_sound(1)
+
+	update_display_filter(params) // turns out js doesnt like having to sort a million things every frame
+	return TRUE
 
 /datum/component/interaction_menu_granter/proc/perform_action(mob/living/target, interaction_key, extras)
 	if(!target || !interaction_key || !isliving(parent))
@@ -380,6 +431,13 @@
 
 /datum/component/interaction_menu_granter/proc/is_recording()
 	return LAZYLEN(get_recording_autoplappers())
+
+/datum/component/interaction_menu_granter/proc/stop_all_autoplappers()
+	for(var/ap in autoplappers)
+		var/datum/autoplapper/AP = autoplappers[ap]
+		if(!AP)
+			continue
+		AP.stop_plapping()
 
 /datum/component/interaction_menu_granter/proc/get_recording_autoplappers()
 	var/list/ret = list()
@@ -494,6 +552,56 @@
 	if(LAZYLEN(beep))
 		ret += list(beep)
 	return ret
+
+/datum/component/interaction_menu_granter/proc/update_display_filter(list/params = list())
+	if(!durty)
+		return // no need to update if nothing changed
+	durty = FALSE
+	cached_interactions.Cut()
+	if(LAZYLEN(search_term))
+		current_category = MERP_CAT_ALL
+	var/mob/living/self = parent
+	if(current_category == MERP_CAT_FAVES)
+		var/list/faves = self.client?.prefs.faved_interactions || list()
+		for(var/list/nukeclownpubes in SSinteractions.interactions_tgui) // he said suika, TWICE
+			if(!islist(nukeclownpubes))
+				continue
+			if(nukeclownpubes["InteractionKey"] in faves)
+				cached_interactions += list(nukeclownpubes)
+		return TRUE
+	var/is_just_me = GET_WEAKREF(weaktarget) == self
+	var/list/cc_me = SSinteractions.get_consent_chain(self, FALSE)
+	var/list/cc_yu = SSinteractions.get_consent_chain(GET_WEAKREF(weaktarget), FALSE)
+	var/list/output_interactions = SSinteractions.interactions_tgui.Copy()
+	for(var/list/i_obj in output_interactions)
+		if(!islist(i_obj))
+			continue // something went hilariously wrong, and not the ha ha kind
+		if(!SeeExtreme && i_obj["InteractionExtreme"]) // me and the Capslock make it happen
+			output_interactions -= list(i_obj)
+			continue
+		if(!SeeLewd && i_obj["InteractionLewd"])
+			output_interactions -= list(i_obj)
+			continue
+		var/needconsent = !is_just_me && i_obj["InteractionLewd"] || i_obj["InteractionExtreme"] || FALSE
+		if(needconsent && !LAZYLEN(SSinteractions.check_consent_chain(c_1 = cc_me, c_2 = cc_yu)))
+			output_interactions -= list(i_obj)
+			continue
+		if(current_category != MERP_CAT_ALL && !(current_category in i_obj["InteractionCategories"]))
+			output_interactions -= list(i_obj)
+			continue
+		if(is_just_me && !i_obj["InteractionSelf"])
+			output_interactions -= list(i_obj)
+			continue
+		if(search_term)
+			if(findtext(lowertext(i_obj["InteractionName"]), lowertext(search_term)))
+				continue
+			if(findtext(lowertext(i_obj["InteractionDescription"]), lowertext(search_term)))
+				continue
+			output_interactions -= list(i_obj)
+			continue
+	cached_interactions = output_interactions.Copy()
+	update_static_data(usr) // imma update ur butt
+	return TRUE
 
 #undef INTERACTION_NORMAL
 #undef INTERACTION_LEWD

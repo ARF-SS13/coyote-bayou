@@ -613,14 +613,6 @@ const BottomPanel = (props, context) => {
     MyName,
     SeeLewd,
   } = data;
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
-  const FilteredAllInteractions = GetInteractionsInCategory(context);
-  const WhyIsItEmpty = SearchTerm
-    ? "No interactions found!"
-    : "No interactions in this category!";
   const Tilda = SeeLewd ? "~" : "!";
 
   return (
@@ -646,7 +638,7 @@ const BottomPanel = (props, context) => {
                 <InteractionCategoryList />
               </Flex.Item>
               <Flex.Item grow={1} basis={0}>
-                <InteractionJizz InteractionsInCat={FilteredAllInteractions} />
+                <InteractionJizz />
               </Flex.Item>
             </Flex>
           </Section>
@@ -668,51 +660,25 @@ const InteractionSearchBar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     DP,
-  } = data;
-  const [
     SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
+  } = data;
+
   const FillerText = DP ? "Dragon Pussy" : "Find-A-Plap 0.1b (tm)";
+
+  let SearchText = SearchTerm || "";
 
   return (
     <Box inline width="fit-content">
       <Input
         width="15em"
         placeholder={FillerText}
-        value={SearchTerm}
-        onInput={(e, value) => {
-          Searchificate(sanitizeText(value), context);
-        }} />
+        value={SearchText}
+        onInput={(e, value) =>
+          act('UpdateSearch', {
+            SearchTerm: value,
+          })} />
     </Box>
   );
-};
-
-// Does some search bar stuff
-const Searchificate = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    AllCategories,
-  } = data;
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
-  const [
-    CurrentPage,
-    setCurrentPage,
-  ] = useLocalState(context, 'CurrentPage', 1);
-
-  if (SearchTerm.length > 0) {
-    setCurrentPage(1);
-    setSelectedCategory(AllCategories[0]);
-  }
-  setSearchTerm(props);
-  // act('Sound', { 'DoSound': 'SearchType' });
 };
 
 // The big holder of the categories! Its a long column of tabs that
@@ -742,19 +708,7 @@ const InteractionCategoryList = (props, context) => {
 const InteractionTab = (props, context) => {
   const { act, data } = useBackend(context);
   const CatName = props.CatName || "Oh no";
-
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
-  const [
-    CurrentPage,
-    setCurrentPage,
-  ] = useLocalState(context, 'CurrentPage', 1);
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
+  const SelectedCategory = data.CurrCategory || "Oh no";
 
   return (
     <Button
@@ -762,12 +716,11 @@ const InteractionTab = (props, context) => {
       fluid
       px="0.5em"
       py="0.25em"
-      selected={SelectedCategory === CatName}
+      selected={SelectedCategory.toLowerCase() === CatName.toLowerCase()}
       onClick={() =>
-      { setSelectedCategory(CatName);
-        setCurrentPage(1);
-        setSearchTerm('');
-      }}>
+        act('UpdateCategory', {
+          category: CatName,
+        })}>
       <Box
         inline
         textAlign="center">
@@ -787,28 +740,8 @@ const InteractionTab = (props, context) => {
 const InteractionJizz = (props, context) => {
   const { act, data } = useBackend(context);
   const DP = data.DP || false;
-  const AllCategories = data.AllCategories || [];
+  const AllInteractions = data.AllInteractions || [];
 
-  const [
-    CurrentPage,
-    setCurrentPage,
-  ] = useLocalState(context, 'CurrentPage', 1);
-
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
-
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
-
-  const FilteredAllInteractions = GetInteractionsInCategory(context);
-
-
-  const ShowRange = [CurrentPage * PlapsPerPage - PlapsPerPage, CurrentPage * PlapsPerPage];
-  const ShowInteractions = FilteredAllInteractions.slice(ShowRange[0], ShowRange[1]);
 
   const WhyIsItEmpty = DP ? "You've been visited by the gunderful dragon pussy! \
     This only happens once every 4000 years! Yell DRAGON PUSSY in OOC in 30 seconds \
@@ -816,13 +749,13 @@ const InteractionJizz = (props, context) => {
 
   return (
     <Box>
-      {ShowInteractions.length === 0 && (
+      {AllInteractions.length === 0 && (
         <NoticeBox active>
           {WhyIsItEmpty}
         </NoticeBox>
       )}
 
-      {ShowInteractions.map(Plap => (
+      {AllInteractions.map(Plap => (
         <Box
           key={Plap}
           mr="0.5em"
@@ -988,96 +921,6 @@ const AutoPlapRecordButton = (props, context) => {
   );
 };
 
-// A helper function for InteractionList to get an array of interaction objects
-// that are in a given category. It takes a category name, and an array
-// of interaction objects, and returns an array of interaction objects.
-// bit more than just a helper, it works so hard~
-const GetInteractionsInCategory = (context) => {
-  const { data } = useBackend(context);
-  const AllInteractions = data.AllInteractions || [];
-  const AllCategories = data.AllCategories || [];
-  const ItsJustMe = data.ItsJustMe || false;
-  const WeConsent = data.WeConsent || ItsJustMe || false; // i consent to myself
-  const HideLewd = !data.SeeLewd || !WeConsent || false;
-  const HideExtreme = !data.SeeExtreme || !data.SeeLewd || false;
-  const Faves = data.Faves || [];
-  const [
-    SearchTerm,
-    setSearchTerm,
-  ] = useLocalState(context, 'SearchTerm', '');
-  const [
-    SelectedCategory,
-    setSelectedCategory,
-  ] = useLocalState(context, 'SelectedCategory', FavePlaps);
-  const CategoryName = SearchTerm ? AllInteractions[0] : SelectedCategory;
-
-  let FilteredInteractions = AllInteractions;
-
-  // / prefiltering, return self-interactions if its just me, otherwise
-  // / return interactions that are not just for me
-  if (ItsJustMe) {
-    FilteredInteractions = FilteredInteractions.filter(Interaction => {
-      return Interaction.InteractionSelf;
-    });
-  } else {
-    FilteredInteractions = FilteredInteractions.filter(Interaction => {
-      return !Interaction.InteractionSelf;
-    }
-    );
-  } // fun fact i dont know how expensive these are lol
-  // / prefiltering, remove all lewd and extreme things if it isnt enabled
-  if (HideLewd) {
-    FilteredInteractions = FilteredInteractions.filter(Interaction => {
-      return !Interaction.InteractionLewd && !Interaction.InteractionExtreme;
-    });
-  }
-  if (HideExtreme) {
-    FilteredInteractions = FilteredInteractions.filter(Interaction => {
-      return !Interaction.InteractionExtreme;
-    });
-  }
-  // / and since we havent utterly destroyed performance by this point,
-  // / put all the non-lewd items at the top of the list
-  // let LewdInteractions = [];
-  // let NonLewdInteractions = [];
-  // FilteredInteractions.forEach(Interaction => {
-  //   if (Interaction.InteractionLewd) {
-  //     LewdInteractions.push(Interaction);
-  //   } else {
-  //     NonLewdInteractions.push(Interaction);
-  //   }
-  // }
-  // );
-  // FilteredInteractions = NonLewdInteractions.concat(LewdInteractions);
-
-  // / If the category is favorites, we need to filter the list of all interactions
-  // / to only include the ones that are in the user's favorites list.
-  if (SelectedCategory === FavePlaps) {
-    if (Faves.length === 0) {
-      return [];
-    }
-    return FilteredInteractions.filter(Interaction => {
-      return Faves.includes(Interaction.InteractionKey);
-    }) || [];
-  }
-
-  if (SearchTerm.length > 0) {
-    return FilteredInteractions.filter(Interactions => {
-      return Interactions.InteractionName.toLowerCase().includes(SearchTerm.toLowerCase());
-    });
-  }
-
-
-  if (!CategoryName || CategoryName === AllCategories[0]) {
-    return FilteredInteractions; // return em all
-  }
-  // / Otherwise, we need to filter the list of all interactions to only include
-  // / the ones that are in the selected category.
-  return FilteredInteractions.filter(Interaction => {
-    return Interaction.InteractionCategories.includes(CategoryName);
-  }) || [];
-};
-
 
 // Gormless Kong
 // A helper function to make a page bar for the interaction list, so we dont have to
@@ -1090,15 +933,12 @@ const InteractionPage = (props, context) => {
   const SeeLewd = data.SeeLewd || false;
   const SeeLewdMessages = data.SeeLewdMessages || false;
   const HearLewdSounds = data.HearLewdSounds || false;
-  const [
-    CurrentPage,
-    setCurrentPage,
-  ] = useLocalState(context, 'CurrentPage', 1);
+  const CanPgUP = data.CanPgUP || false;
+  const CanPgDN = data.CanPgDN || false;
+  const CurrPage = data.CurrPage || 1;
+  const MaxPage = data.MaxPage || 1;
 
-  const FilteredAllInteractions = GetInteractionsInCategory(context);
-  const ShowPageButtons = FilteredAllInteractions.length > PlapsPerPage;
-
-  const TotalPageNum = Math.ceil(FilteredAllInteractions.length / PlapsPerPage);
+  const ShowPageButtons = MaxPage > 1;
 
   const LewdText = SeeLewd ? "Hide Lewd Stuff" : "Show Lewd Stuff";
   const LewdButton = (
@@ -1144,7 +984,7 @@ const InteractionPage = (props, context) => {
       <Flex.Item>
         {ShowPageButtons && (
           <Box inline px="1em" py={1}>
-            Page {CurrentPage} / {TotalPageNum}
+            Page {CurrPage} / {MaxPage}
           </Box>
         )}
       </Flex.Item>
@@ -1156,10 +996,9 @@ const InteractionPage = (props, context) => {
               inline
               px="0.5em"
               py="0.25em"
-              disabled={CurrentPage === 1}
+              disabled={CurrPage === 1}
               onClick={() => {
-                act('sound', { 'DoSound': 'TabClick' });
-                setCurrentPage(CurrentPage - 1);
+                act('PgDOWN');
               }}>
               <Icon name="chevron-left" />
             </Button>
@@ -1167,10 +1006,9 @@ const InteractionPage = (props, context) => {
               inline
               px="0.5em"
               py="0.25em"
-              disabled={CurrentPage >= TotalPageNum}
+              disabled={CurrPage >= MaxPage}
               onClick={() => {
-                act('sound', { 'DoSound': 'TabClick' });
-                setCurrentPage(CurrentPage + 1);
+                act('PgUP');
               }}>
               <Icon name="chevron-right" />
             </Button>
