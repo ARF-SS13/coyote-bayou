@@ -877,13 +877,21 @@
 		config.admin_reload()
 
 GLOBAL_LIST_EMPTY(gun_balance_list)
-/// Guns that runtime when we try and take their measurements because they don't have a home :(
-GLOBAL_LIST_INIT(gun_balance_blacklist, list(
-											/obj/item/gun/ballistic/minigunbal5mm,
-											/obj/item/gun/ballistic/m2flamethrower
-											))
+
 /// Numbers only! The sorting algorithm won't accept text inputs.
-#define GUN_BALANCE_SORTING_TPYES list("dps", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm", "bonus_bane_dam")
+#define GUN_BALANCE_SORTING_TPYES list("dps", "dps_with_bane", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm", "bonus_bane_dam", "loot_chance_%")
+
+GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_guns,
+										/obj/effect/spawner/lootdrop/f13/common_guns,
+										/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+										/obj/effect/spawner/lootdrop/f13/rare_guns,
+										/obj/effect/spawner/lootdrop/f13/common_cowboy,
+										/obj/effect/spawner/lootdrop/f13/uncommon_cowboy,
+										/obj/effect/spawner/lootdrop/f13/rare_cowboy,
+										/obj/effect/spawner/lootdrop/f13/common_energy,
+										/obj/effect/spawner/lootdrop/f13/uncommon_energy,
+										/obj/effect/spawner/lootdrop/f13/rare_energy
+										))
 
 /client/proc/print_gun_debug_information()
 	set category = "Debug"
@@ -897,31 +905,57 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 	if(safety == "No")
 		return
 
+	var/whatdo = "Use Existing List"
 	if(LAZYLEN(GLOB.gun_balance_list))
-		var/whatdo = input(usr, "How would you like to sort the list?", "Sorting Type", "dps") as null|anything in list("Clear it & Cancel", "Use Existing List", "Clear it & Continue")
+		whatdo = input(usr, "A gun balance list already exists, what do???", "Do what to the existing gun list", "Use Existing List") as null|anything in list("Clear it & Cancel", "Use Existing List", "Clear it & Continue")
 		if(whatdo == "Clear it & Cancel")
 			LAZYCLEARLIST(GLOB.gun_balance_list)
 			return
 		if(whatdo == "Clear it & Continue")
 			LAZYCLEARLIST(GLOB.gun_balance_list)
 
+	var/static/prev_loot
+	var/loot_table = input(usr, "Use a specific loot table?", "Loot Table", "All Guns") as null|anything in GLOB.gun_loot_tables+list("All Guns")
+	if(isnull(loot_table))
+		return
+	if(loot_table != prev_loot)
+		LAZYCLEARLIST(GLOB.gun_balance_list)
+
 	var/sorttype = input(usr, "How would you like to sort the list?", "Sorting Type", "dps") as null|anything in GUN_BALANCE_SORTING_TPYES
 	if(isnull(sorttype))
 		return
 
-	log_and_message_admins("[ADMIN_PP(usr)] is generating the huge gun balance list. If this is a live round, kill them and then run Gun-Debug-Info and select \"Clear it & Cancel\" after the safety check.")
-
-	var/static/list/ballistic_types = list()
-	if(!LAZYLEN(ballistic_types))
-		ballistic_types = subtypesof(/obj/item/gun/ballistic)
-	to_chat(usr, "Found [LAZYLEN(ballistic_types)] ballistic weapons...")
-	var/static/list/energy_types = list()
-	if(!LAZYLEN(energy_types))
-		energy_types = subtypesof(/obj/item/gun/energy)
-	to_chat(usr, "Found [LAZYLEN(energy_types)] energy weapons...")
-	var/static/list/all_guns = list()
-	if(!LAZYLEN(all_guns))
+	log_and_message_admins("[ADMIN_PP(usr)] is generating a huge gun balance list. If this is a live round, kill them and then run Gun-Debug-Info and select \"Clear it & Cancel\" after the safety check.")
+	
+	var/list/all_guns = list()
+	var/list/loot_chances = list()
+	if(loot_table == "All Guns")
+		var/static/list/ballistic_types = list()
+		if(!LAZYLEN(ballistic_types))
+			ballistic_types = subtypesof(/obj/item/gun/ballistic)
+		to_chat(usr, "Found [LAZYLEN(ballistic_types)] ballistic weapons...")
+		var/static/list/energy_types = list()
+		if(!LAZYLEN(energy_types))
+			energy_types = subtypesof(/obj/item/gun/energy)
+		to_chat(usr, "Found [LAZYLEN(energy_types)] energy weapons...")
 		all_guns = ballistic_types + energy_types
+
+	else if(ispath(loot_table, /obj/effect/spawner/lootdrop))
+		var/obj/effect/spawner/lootdrop/ld = new loot_table()
+		var/list/looties = ld.loot
+		if(!LAZYLEN(looties))
+			to_chat("ERROR: [ld]'s loot list was empty!")
+			return
+		var/tot_weight = 0
+		for(var/g in looties)
+			tot_weight += looties[g]
+			all_guns |= g
+		if(tot_weight < 1)
+			to_chat("ERROR: [ld] was skipped because it has no weights!")
+			return
+		for(var/g in looties)
+			loot_chances[g] = (looties[g]/tot_weight)*100//% chance for this specific loot drop
+
 	to_chat(usr, "Processing [LAZYLEN(all_guns)] total weapons...")
 	if(!LAZYLEN(GLOB.gun_balance_list))
 		for(var/gunthing in all_guns)
@@ -1019,6 +1053,7 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 				GLOB.gun_balance_list[G.type] = list(
 													"name" = G.name,
 													"dps" = g_dps,
+													"dps_with_bane" = (avg_dam+(g_bullet.supereffective_damage*dam_mult)*g_casing.pellets)*g_rps,
 													"rps" = g_rps,
 													"rpm" = g_rps*60,
 													"avg_dam" = avg_dam,
@@ -1028,7 +1063,8 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 													"mag_capacity" = mag_cap,
 													"burst_length_sec" = burst_length_seconds,
 													"dam_per_mag" = dam_per_mag,
-													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets,
+													"loot_chance_%" = LAZYLEN(loot_chances) ? loot_chances?[G.type] : 0
 													)
 			//End ballistic code
 
@@ -1036,7 +1072,7 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 
 			//Start energy code
 			//if(istype(gunthing, /obj/item/gun/energy))
-			else
+			else if(istype(gunthing, /obj/item/gun/energy))
 				var/obj/item/gun/energy/G = gunthing
 				var/avg_dam
 				var/min_dam
@@ -1136,6 +1172,7 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 				GLOB.gun_balance_list[G.type] = list(
 													"name" = G.name,
 													"dps" = g_dps,
+													"dps_with_bane" = (avg_dam+(g_bullet.supereffective_damage*dam_mult)*g_casing.pellets)*g_rps,
 													"rps" = g_rps,
 													"rpm" = g_rps*60,
 													"avg_dam" = avg_dam,
@@ -1145,9 +1182,13 @@ GLOBAL_LIST_INIT(gun_balance_blacklist, list(
 													"mag_capacity" = shots_per_cell,
 													"burst_length_sec" = burst_length_seconds,
 													"dam_per_mag" = dam_per_cell,
-													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets
+													"bonus_bane_dam" = (g_bullet.supereffective_damage*dam_mult)*g_casing.pellets,
+													"loot_chance_%" = LAZYLEN(loot_chances) ? loot_chances?[G.type] : 0
 													)
 				//End energy weapons
+			else
+				to_chat(usr, span_warning("ERROR: [gunthing] is not a supported weapon type and has been skipped."))
+				continue
 
 	if(LAZYLEN(GLOB.gun_balance_list))
 		to_chat(usr, "Sorting list by [sorttype]...")
