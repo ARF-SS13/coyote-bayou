@@ -1185,7 +1185,7 @@
 
 /obj/item/book/granter/trait/selection/tribal/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_GENERIC)
 
 /obj/item/book/granter/crafting_recipe/tribal
 	name = "Tribal traditions"
