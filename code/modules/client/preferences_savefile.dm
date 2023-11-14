@@ -940,9 +940,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	custom_pixel_x	= sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	custom_pixel_y	= sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	
-	waddle_amount	= sanitize_integer(waddle_amount, WADDLE_MIN, WADDLE_MAX, 0)
-	up_waddle_time	= sanitize_integer(up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX, 0)
-	side_waddle_time = sanitize_integer(side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX, 0)
+	waddle_amount	= sanitize_num_clamp(waddle_amount, WADDLE_MIN, WADDLE_MAX, 0, 0.1)
+	up_waddle_time	= sanitize_num_clamp(up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX, 0, 0.1)
+	side_waddle_time = sanitize_num_clamp(side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX, 0, 0.1)
 
 	hair_color			= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color	= sanitize_hexcolor(facial_hair_color, 6, FALSE)

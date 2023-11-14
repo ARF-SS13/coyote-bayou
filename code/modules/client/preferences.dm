@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
-	/// Upwards waddle amount.  Side to side is number times two.
+	/// Upwards waddle amount. Side to side is always double this.
 	var/waddle_amount = 0
 	/// How fast the mob wobbles upwards.
 	var/up_waddle_time = 1
@@ -3392,19 +3392,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				
 				if("waddle_amount")
 					var/new_waddle_amount = input(user, "Choose how many pixels you want to move when walking(4 Recommended): ([WADDLE_MIN]-[WADDLE_MAX])", "Character Preference", waddle_amount) as num|null
-					if(new_waddle_amount)
+					if(isnum(new_waddle_amount))
 						new_waddle_amount = round(clamp(new_waddle_amount, WADDLE_MIN, WADDLE_MAX), 0.1)
 						waddle_amount = new_waddle_amount
 				
 				if("up_waddle_time")
 					var/new_up_waddle_time = input(user, "Choose how fast you want to move up & down while walking(1 Recommended): ([UP_WADDLE_MIN]-[UP_WADDLE_MAX])", "Character Preference", up_waddle_time) as num|null
-					if(new_up_waddle_time)
+					if(isnum(new_up_waddle_time))
 						new_up_waddle_time = round(clamp(new_up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX), 0.1)
 						up_waddle_time = new_up_waddle_time
 				
 				if("side_waddle_time")
 					var/new_side_waddle_time = input(user, "Choose how fast you want to move side to side while walking(2 Recommended): ([SIDE_WADDLE_MIN]-[SIDE_WADDLE_MAX])", "Character Preference", side_waddle_time) as num|null
-					if(new_side_waddle_time)
+					if(isnum(new_side_waddle_time))
 						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
 						side_waddle_time = new_side_waddle_time
 				
