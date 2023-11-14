@@ -5,7 +5,7 @@
 	help_messages = list(
 		"XU_NAME slaps XT_NAME right on the ass!"
 	)
-	simple_span = "danger"
+	simple_span = "sciradio"
 	simple_sounds = list(
 		'sound/weapons/slap.ogg'
 	)
