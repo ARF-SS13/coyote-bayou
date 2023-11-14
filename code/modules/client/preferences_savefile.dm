@@ -1433,7 +1433,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
 
 	//permanent tattoos
-	WRITE_FILE(S["faved_interactions"], safe_json_encode(modified_limbs))
+	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
 
 	return 1
 

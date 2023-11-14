@@ -511,14 +511,16 @@
 	// if(LAZYACCESS(formatted_cache, cachekey))
 	// 	return LAZYACCESS(formatted_cache, cachekey)
 
+	var/user_color = user.client?.prefs.features["chat_color"] || "FF00FF"
+	var/target_color = target.client?.prefs.features["chat_color"] || "FF00FF"
 	if(extra["object1"])
 		if(istext(extra["object1"]))
 			message = replacetextEx(message, "XOBJECT1X", extra["object1"])
 		else if(isatom(extra["object1"]))
 			var/atom/thing = extra["object1"]
 			message = replacetextEx(message, "XOBJECT1X", thing.name)
-	message = replacetextEx(message, "XU_NAME", "<b>[user.name]</b>")
-	message = replacetextEx(message, "XT_NAME", "<b>[target.name]</b>")
+	message = replacetextEx(message, "XU_NAME", "<b><span style='color:#[user_color]'>[user.name]</span></b>")
+	message = replacetextEx(message, "XT_NAME", "<b><span style='color:#[target_color]'>[target.name]</span></b>")
 	var/user_they = user.p_they()
 	var/user_their = user.p_their()
 	var/user_themself = user.p_them()
