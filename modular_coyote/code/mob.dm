@@ -1115,6 +1115,72 @@
 	icon_living = "parrot"
 	icon_dead = "parrot_dead"
 
+/mob/living/simple_animal/advanced/purpledc
+	name = "purple cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "pur"
+	icon_living = "pur"
+	icon_dead = "pur_dead"
+
+/mob/living/simple_animal/advanced/whitedc
+	name = "white cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "whi"
+	icon_living = "whi"
+	icon_dead = "whi_dead"
+
+/mob/living/simple_animal/advanced/reddc
+	name = "red cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "red"
+	icon_living = "red"
+	icon_dead = "red_dead"
+
+/mob/living/simple_animal/advanced/grydc
+	name = "grey cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "gry"
+	icon_living = "gry"
+	icon_dead = "gry_dead"
+
+/mob/living/simple_animal/advanced/brodc
+	name = "brown cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "bro"
+	icon_living = "bro"
+	icon_dead = "bro_dead"
+
+/mob/living/simple_animal/advanced/hubdc
+	name = "black cloaked deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "hub"
+	icon_living = "hub"
+	icon_dead = "hub_dead"
+
+/mob/living/simple_animal/advanced/maidclaw
+	name = "maid deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "maidclaw"
+	icon_living = "maidclaw"
+	icon_dead = "maidclaw_dead"
+
+/mob/living/simple_animal/advanced/queenclaw
+	name = "Queen deathclaw"
+	desc = "Gonna rip and tear, in style."
+	icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_state = "deathclaw_queen"
+	icon_living = "deathclaw_queen"
+	icon_dead = "deathclaw_queen_dead"
+
+
+
 //End Advanced Mobs//
 
 // Start Pets //
