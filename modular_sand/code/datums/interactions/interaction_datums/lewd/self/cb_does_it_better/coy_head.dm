@@ -103,7 +103,7 @@
 		"XU_NAME playfully nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	grab_messages = list(
-		"XU_NAME possessibely nuzzles XU_THEIR face against XT_NAME's face.",
+		"XU_NAME needily nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	harm_messages = list(
 		"XU_NAME aggressively nuzzles XU_THEIR face against XT_NAME's face!",

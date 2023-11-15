@@ -288,7 +288,7 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 	)
 	grab_messages = list(
 		"XU_NAME grabs XU_THEIR own nipples and pulls",
-		"XU_NAME pinchesXU_THEIR nipples hard, their color changing slightly",
+		"XU_NAME pinches XU_THEIR nipples hard, their color changing slightly",
 		"XU_NAME twists XU_THEIR own nipples to the point of pain",
 	)
 	harm_messages = list(
