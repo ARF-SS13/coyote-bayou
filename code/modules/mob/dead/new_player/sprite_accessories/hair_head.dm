@@ -644,7 +644,7 @@
 	name = "Ponytail Side5"
 	icon_state = "hair_ponytailf"
 
-/datum/sprite_accessory/hair/spikytailalt
+/datum/sprite_accessory/hair/spikytail
 	name = "Ponytail (Spiky)"
 	icon_state = "hair_spikyponytail"
 
@@ -856,7 +856,7 @@
 
 
 /datum/sprite_accessory/hair/volajualt
-	name = "Volaju alt"
+	name = "Volaju (ears)"
 	icon_state = "hair_volajualt"
 
 /datum/sprite_accessory/hair/volajupompless
