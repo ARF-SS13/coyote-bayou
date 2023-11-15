@@ -394,3 +394,27 @@ datum/interaction/lewd/mutual/mouth_play
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
+
+////////////////////
+//Beg to be bred 1A14//
+////////////////////
+datum/interaction/lewd/mutual/nesting_behavior
+	description = "Partner/Head - Beg them to breed you, Feminine Edition."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	user_lust_mult = 0.6
+	target_lust_mult = 0.5
