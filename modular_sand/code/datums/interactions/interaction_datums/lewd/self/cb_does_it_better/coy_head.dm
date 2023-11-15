@@ -396,7 +396,7 @@ datum/interaction/lewd/mutual/mouth_play
 	target_lust_mult = 0.4
 
 ////////////////////
-//Beg to be bred 1A14//
+//Beg to be bred, FE 1A14//
 ////////////////////
 datum/interaction/lewd/mutual/nesting_behavior
 	description = "Partner/Head - Beg them to breed you, Feminine Edition."
@@ -415,6 +415,30 @@ datum/interaction/lewd/mutual/nesting_behavior
 	)
 	harm_messages = list(
 		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	user_lust_mult = 0.6
+	target_lust_mult = 0.5
+
+////////////////////
+//Beg to be bred, ME 1A15//
+////////////////////
+datum/interaction/lewd/mutual/nesting_behavior
+	description = "Partner/Head - Beg them to breed you, Butt Edition."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Breed me-\",\"Get me butt pregnant-\"}",
 	)
 	user_lust_mult = 0.6
 	target_lust_mult = 0.5
