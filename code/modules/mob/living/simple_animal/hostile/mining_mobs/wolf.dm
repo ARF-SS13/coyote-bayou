@@ -29,7 +29,6 @@
 	move_resist = MOVE_FORCE_WEAK
 	pull_force = MOVE_FORCE_WEAK
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
