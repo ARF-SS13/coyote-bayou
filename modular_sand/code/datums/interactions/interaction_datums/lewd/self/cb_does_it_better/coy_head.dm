@@ -370,3 +370,27 @@ datum/interaction/lewd/mutual/praise_them
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
+
+////////////////////
+//Play with their mouth 1A13//
+////////////////////
+datum/interaction/lewd/mutual/mouth_play
+	description = "Partner/Head - Play with their mouth."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME gently teases their fingers into XT_NAME's mouth.",
+	)
+	disarm_messages = list(
+		"XU_NAME gently plays inside XT_NAME's mouth with their fingers.",
+	)
+	grab_messages = list(
+		"XU_NAME pushes their fingers into XT_NAME's mouth.",
+	)
+	harm_messages = list(
+		"XU_NAME is mouth fucking XT_NAME with their fingers.",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
