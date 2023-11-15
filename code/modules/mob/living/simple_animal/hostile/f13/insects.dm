@@ -471,8 +471,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, /obj/item/stack/sheet/sinew = 1)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	guaranteed_butcher_results = list(
+				/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, 
+				/obj/item/stack/sheet/sinew = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"

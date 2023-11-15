@@ -15,6 +15,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1,
+		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/bone = 1
 		)
 	butcher_difficulty = 1
@@ -825,7 +826,11 @@
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(
+						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, 
+						/obj/item/stack/sheet/sinew = 1,
+						/obj/item/stack/sheet/animalhide/molerat = 1,
+						/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -885,8 +890,7 @@
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 10
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 3)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
@@ -946,8 +950,8 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
-		/obj/item/feather = 3)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
+		/obj/item/feather = 3,
+		/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
