@@ -140,6 +140,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/candle/tribal_torch,
 		/obj/item/toy/plush/mammal/fox/squishfox, // its too powerful
 	)
+	//These specific items, but not their subtypes, are not allowed
+	var/list/specific_unartifactable_items = list(
+		/obj/item/trash/f13,
+	)
 	
 	var/identify_time = ART_IDENT_TIME
 	var/identify_max_delta = ART_IDENT_MAX_DELTA
@@ -445,6 +449,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/randomitem = pick(artifactible_items)
 	if(!ispath(randomitem))
 		return
+	
 	var/obj/item/chunk = new randomitem(put_here)
 	for(var/atom/movable/AM in get_turf(chunk))
 		if(SEND_SIGNAL(AM, COMSIG_CONTAINS_STORAGE))
@@ -471,6 +476,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/list/ingrab = list()
 	for(var/thing in unartifactible_items)
 		ingrab |= typesof(thing)
+	for(var/thing in specific_unartifactable_items)
+		ingrab |= thing
 	output -= ingrab
 	artifactible_items = output
 	
