@@ -276,7 +276,7 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 	help_messages = list(
 		"XU_NAME is rubbing XU_THEIR nipples in small circles",
 		"XU_NAME rubs XU_THEIR nipples softly",
-		"XU_NAME gently pullsXU_THEIR own nipples",
+		"XU_NAME gently pulls XU_THEIR own nipples",
 		"XU_NAME gently pinches XU_THEIR own nipples",
 	)
 	disarm_messages = list(
