@@ -59,6 +59,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 //Carbon mobs
 #define iscarbon(A) (istype(A, /mob/living/carbon))
 
+#define isferal(A)	(istype(A, /mob/living/carbon/feral))
+
 #define ishuman(A) (istype(A, /mob/living/carbon/human))
 
 //Human sub-species
