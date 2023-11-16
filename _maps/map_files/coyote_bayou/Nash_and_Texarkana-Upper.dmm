@@ -176,7 +176,7 @@
 	},
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -3446,7 +3446,7 @@
 	},
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -4025,10 +4025,8 @@
 "dlr" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#B7ABAB";
-	footstep = "dirt";
-	name = "rocky dirt"
+/turf/open/floor/grass{
+	color = "#444444"
 	},
 /area/f13/building/tribal)
 "dlV" = (
@@ -5552,6 +5550,17 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building/mall)
+"ewZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "ext" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 10
@@ -7726,6 +7735,28 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"ghW" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8
+	},
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = -10
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_x = -15
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	pixel_x = 13
+	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "gix" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -13999,15 +14030,12 @@
 "kHW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/old{
-	pixel_y = 15
+	pixel_y = 12
 	},
 /obj/structure/bed/old,
-/obj/item/blanket{
-	pixel_y = 15
-	},
-/obj/item/blanket,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/bedsheet/doublesheetbrown,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -16270,7 +16298,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "mzi" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/obj/structure/simple_door/wood{
+	color = "#888888"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "mzq" = (
@@ -18812,6 +18845,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"ozI" = (
+/obj/structure/table/wood,
+/obj/item/lock_construct,
+/obj/item/key,
+/obj/structure/bed/old,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "ozK" = (
 /obj/structure/table,
 /obj/structure/fluff/railing{
@@ -19960,6 +20002,16 @@
 /obj/structure/window/fulltile/house,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"pzl" = (
+/obj/structure/bed/old{
+	pixel_y = 12
+	},
+/obj/structure/bed/old,
+/obj/item/bedsheet/doublesheetbrown,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "pzp" = (
 /obj/structure/closet/crate/footchest{
 	pixel_x = -8
@@ -21422,6 +21474,14 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"qFB" = (
+/obj/structure/table/wood,
+/obj/item/lock_construct,
+/obj/item/key,
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
+/area/f13/building/tribal)
 "qGe" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -25559,7 +25619,10 @@
 "tKy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/obj/structure/simple_door/wood,
 /turf/open/floor/wood_common,
 /area/f13/building/tribal)
 "tKR" = (
@@ -25751,6 +25814,7 @@
 /obj/structure/chair/wood/wings{
 	dir = 8
 	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "tQj" = (
@@ -25845,21 +25909,12 @@
 /turf/open/transparent/openspace,
 /area/f13/building/abandoned)
 "tST" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/old{
-	pixel_y = 15
+	pixel_y = 12
 	},
 /obj/structure/bed/old,
-/obj/item/blanket{
-	pixel_x = 8;
-	pixel_y = 15
-	},
-/obj/item/blanket{
-	pixel_x = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common,
+/obj/item/bedsheet/doublesheetbrown,
+/turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "tTA" = (
 /obj/structure/railing/corner{
@@ -27582,6 +27637,12 @@
 	icon_state = "bluedirtychess"
 	},
 /area/f13/building/mall)
+"vnw" = (
+/obj/structure/simple_door/wood{
+	color = "#888888"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "vnQ" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -27808,6 +27869,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"vxM" = (
+/obj/structure/stone_tile/slab{
+	color = "#997777"
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	light_color = "#f4e3b0"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building/tribal)
 "vxT" = (
 /obj/structure/bodycontainer/morgue,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -30390,11 +30461,7 @@
 	dir = 1;
 	pixel_x = 13
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#B7ABAB";
-	footstep = "dirt";
-	name = "rocky dirt"
-	},
+/turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "xHS" = (
 /obj/structure/stairs/north{
@@ -31776,14 +31843,14 @@ mvB
 pMg
 eWb
 tUY
-uWq
+vxM
 qgz
 mWj
 xGV
 mRp
 tST
 tUY
-xGV
+ghW
 mRp
 tST
 tUY
@@ -32029,24 +32096,24 @@ iqB
 gxb
 bPK
 bPK
-tKy
+ewZ
 fuX
 hYm
 tUY
 qgz
 uWq
-mzi
-qgz
-qgz
+mWj
 pzp
+qgz
+qgz
 tUY
-qgz
-qgz
 pzp
+qgz
+qgz
 tUY
-qgz
-qgz
 pzp
+qgz
+qgz
 tUY
 lvU
 lvU
@@ -32285,15 +32352,15 @@ oez
 xXK
 lcv
 kHW
-nPQ
+ozI
 jwh
 lDa
 hSQ
-tUY
+vnw
 uWq
 qgz
 mWj
-qgz
+myC
 qgz
 goT
 eIa
@@ -34856,8 +34923,8 @@ iHb
 izl
 iqB
 lcv
-kHW
-nPQ
+pzl
+qFB
 iqB
 biJ
 wTd
