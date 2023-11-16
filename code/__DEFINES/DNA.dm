@@ -150,6 +150,8 @@
 #define HAS_BONE		30 /// if we have bones (can suffer bone wounds)
 /// skips limb icon tomfoolery and uses simple sprites
 #define FERAL			31
+/// Todo - make this actually do something. Intended for humans who won't ever have inhand icons due to their sprite having movement animations or something like that.
+#define NO_INHAND		32
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

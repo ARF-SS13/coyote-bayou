@@ -606,6 +606,9 @@
 
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
+		if(alert("Better creature characters can now be made via the regular Species dropdown menu where you'd normally pick your human race. Are you sure you'd rather play the old-style simple creatures?", "Creature Update!", "I'll try them out!", "I still want to play as a simple creature.") == "I'll try them out!")
+			client.prefs.ShowChoices(src)
+			return
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
 			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))

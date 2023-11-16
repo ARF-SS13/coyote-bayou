@@ -8,11 +8,11 @@
 	simple_icon = 'modular_coyote/icons/mob/pokemon64.dmi'
 	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")//Lets you select digitgrade legs if you want the claw footstep sound.
 	icon_dead_suffix = "_dead"
-	icon_rest_suffix = "_r"
+	icon_rest_suffix = "_rest"
 	/// The width of the icon_limbs file. Used to auto-center your sprite.
 	icon_width = 64
 	roundstart = FALSE
-	species_traits = list(HAS_FLESH,HAS_BONE,NOZOMBIE,NO_UNDERWEAR,FERAL,NOEYES,CAN_SCAR)
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND)
 	inherent_biotypes = MOB_ORGANIC|MOB_BEAST
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab
 	gib_types = list(/obj/effect/gibspawner/human/bodypartless)
@@ -22,6 +22,7 @@
 	rotate_on_lying = FALSE
 	//We need this so that our limbs don't have null sprites when they get thrown off. (Should almost never happen because I glued them on, but just in case.)
 	limbs_id = "mammal"
+	damage_overlay_type = null
 
 //Start Pokemon//
 //Alphabetical Please//
@@ -31,8 +32,8 @@
 	roundstart = FALSE
 	liked_food = FRUIT
 	disliked_food = TOXIC | GROSS
-	icon_dead_suffix = "_dead"
-	icon_rest_suffix = "_r"
+	icon_dead_suffix = "_d"
+	icon_rest_suffix = "_rest"
 
 /datum/species/feral/pokemon/absol
 	name = "Feral Absol"
@@ -217,6 +218,13 @@
 /mob/living/carbon/human/species/glaceon
 	race = /datum/species/feral/pokemon/glaceon
 
+/datum/species/feral/pokemon/leafeon
+	name = "Feral Leafeon"
+	id = "leafeon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/leafeon
+	race = /datum/species/feral/pokemon/leafeon
+
 /datum/species/feral/pokemon/lycanroc
 	name = "Feral Lycanroc"
 	id = "lycanroc"
@@ -224,12 +232,47 @@
 /mob/living/carbon/human/species/lycanroc
 	race = /datum/species/feral/pokemon/lycanroc
 
+/datum/species/feral/pokemon/mew
+	name = "Feral Mew"
+	id = "mew"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mew
+	race = /datum/species/feral/pokemon/mew
+
+/datum/species/feral/pokemon/sprigatito
+	name = "Feral Sprigatito"
+	id = "sprigatito"
+	roundstart = TRUE
+/mob/living/carbon/human/species/sprigatito
+	race = /datum/species/feral/pokemon/sprigatito
+
 /datum/species/feral/pokemon/umbreon
 	name = "Feral Umbreon"
 	id = "umbreon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/umbreon
 	race = /datum/species/feral/pokemon/umbreon
+
+/datum/species/feral/pokemon/vaporeon
+	name = "Feral Vaporeon"
+	id = "vaporeon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/vaporeon
+	race = /datum/species/feral/pokemon/vaporeon
+
+/datum/species/feral/pokemon/zorua
+	name = "Feral Zorua"
+	id = "zorua"
+	roundstart = TRUE
+/mob/living/carbon/human/species/zorua
+	race = /datum/species/feral/pokemon/zorua
+
+/datum/species/feral/pokemon/zoroark
+	name = "Feral Zoroark"
+	id = "zoroark"
+	roundstart = TRUE
+/mob/living/carbon/human/species/zoroark
+	race = /datum/species/feral/pokemon/zoroark
 
 //^^^ Please keep these alphabetical. Don't just add to the bottom of the list. ^^^//
 //End Pokemon//
@@ -381,5 +424,115 @@
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/gecko_villager
 	race = /datum/species/feral/gecko_villager
+
+//start aliens
+
+/datum/species/feral/xeno
+	roundstart = FALSE //This is just the parent type, don't let players actually select it.
+	exotic_blood_color = BLOOD_COLOR_XENO
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
+	gib_types = list(/obj/effect/gibspawner/xeno/xenoperson, /obj/effect/gibspawner/xeno/xenoperson/bodypartless)
+	skinned_type = /obj/item/stack/sheet/animalhide/xeno
+	exotic_bloodtype = "X*"
+	liked_food = MEAT | RAW
+	default_color = "00FF00"
+	species_type = "alien"
+	say_mod = "hisses"
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+
+/datum/species/feral/xeno/drone
+	name = "Feral Xenomorph Drone"
+	id = "aliend"
+	simple_icon = 'icons/mob/alien.dmi'
+	icon_width = 32
+	roundstart = TRUE
+	rotate_on_lying = TRUE
+/mob/living/carbon/human/species/xenodrone
+	race = /datum/species/feral/xeno/drone
+
+/datum/species/feral/alien/hunter
+	name = "Feral Xenomorph Hunter"
+	id = "alienh"
+	simple_icon = 'icons/mob/alien.dmi'
+	icon_width = 32
+	roundstart = TRUE
+	rotate_on_lying = TRUE
+/mob/living/carbon/human/species/alienh
+	race = /datum/species/feral/alien/hunter
+
+/datum/species/feral/xeno/sentry
+	name = "Feral Xenomorph Sentry"
+	id = "aliens"
+	simple_icon = 'icons/mob/alien.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	rotate_on_lying = TRUE
+/mob/living/carbon/human/species/xenosentry
+	race = /datum/species/feral/xeno/sentry
+
+//end aliens
+
+/datum/species/feral/alien/praetorian
+	name = "Feral Xenomorph Praetorian"
+	id = "alienp"
+	simple_icon = 'icons/mob/alienqueen.dmi'
+	icon_width = 64
+	roundstart = TRUE
+/mob/living/carbon/human/species/alienp
+	race = /datum/species/feral/praetorian
+
+/datum/species/feral/alien/queen
+	name = "Feral Xenomorph Queen"
+	id = "alienq"
+	simple_icon = 'icons/mob/alienqueen.dmi'
+	icon_width = 64
+	roundstart = TRUE
+/mob/living/carbon/human/species/alienq
+	race = /datum/species/feral/queen
+
+/datum/species/feral/alien/maid
+	name = "Feral Xenomorph Maid"
+	id = "maid"
+	simple_icon = 'icons/mob/alien.dmi'
+	icon_width = 32
+	roundstart = TRUE
+/mob/living/carbon/human/species/alienh
+	race = /datum/species/feral/hunter
+
+/datum/species/feral/bigwolfblack
+	name = "Feral Giant Black Wolf"
+	id = "blackwolf"
+	simple_icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/bigwolfblack
+	race = /datum/species/feral/bigwolfblack
+
+/datum/species/feral/bigwolfsilver
+	name = "Feral Giant Silver Wolf"
+	id = "sifwolf"
+	simple_icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/bigwolfsilver
+	race = /datum/species/feral/alien/bigwolfsilver
+
+/datum/species/feral/bigwolfwhite
+	name = "Feral Giant White Wolf"
+	id = "whitewolf"
+	simple_icon = 'modular_coyote/icons/mob/vore128x64.dmi'
+	icon_width = 128
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+/mob/living/carbon/human/species/bigwolfblack
+	race = /datum/species/feral/bigwolfblack
 
 //End Other//
