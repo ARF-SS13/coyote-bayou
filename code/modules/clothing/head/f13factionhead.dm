@@ -1019,6 +1019,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	desc = "An old military grade pre-war reinforced combat helmet, repainted and re-purposed with bones and sinew."
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
