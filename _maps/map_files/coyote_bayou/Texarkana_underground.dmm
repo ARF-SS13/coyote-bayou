@@ -256,6 +256,41 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"aff" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/obj/machinery/shower{
+	dir = 8;
+	layer = 4.9
+	},
+/turf/open/indestructible/ground/outside/water{
+	name = "hot spring";
+	color = "#BBBBBB"
+	},
+/area/f13/building/tribal)
 "afo" = (
 /obj/structure/nest/raider/ranged{
 	pixel_y = -27
@@ -1413,7 +1448,7 @@
 "aTZ" = (
 /obj/structure/stone_tile/block{
 	dir = 1;
-	layer = 5
+	layer = 4.8
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/stone_tile{
@@ -3145,6 +3180,8 @@
 /area/f13/building)
 "bIV" = (
 /obj/structure/table/wood,
+/obj/item/key,
+/obj/item/lock_construct,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "bJb" = (
@@ -3541,7 +3578,7 @@
 "bLf" = (
 /obj/structure/stone_tile/block{
 	dir = 1;
-	layer = 5
+	layer = 4.8
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/leafybush,
@@ -4098,7 +4135,7 @@
 "bNv" = (
 /obj/structure/stone_tile/block{
 	dir = 1;
-	layer = 5
+	layer = 4.8
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -10504,10 +10541,12 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	dir = 1
+	dir = 1;
+	layer = 4.9
 	},
 /obj/machinery/shower{
-	dir = 4
+	dir = 4;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -12254,7 +12293,8 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	dir = 4
+	dir = 4;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -19890,7 +19930,8 @@
 	pixel_x = 12
 	},
 /obj/machinery/shower{
-	pixel_y = 16
+	pixel_y = 16;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -21876,10 +21917,12 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	dir = 8
+	dir = 8;
+	layer = 4.9
 	},
 /obj/machinery/shower{
-	dir = 1
+	dir = 1;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -22240,10 +22283,12 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	pixel_y = 16
+	pixel_y = 16;
+	layer = 4.9
 	},
 /obj/machinery/shower{
-	dir = 4
+	dir = 4;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -22648,10 +22693,12 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	pixel_y = 16
+	dir = 8;
+	layer = 4.9
 	},
 /obj/machinery/shower{
-	dir = 8
+	pixel_y = 16;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -31211,7 +31258,7 @@
 "rOw" = (
 /obj/structure/stone_tile/block{
 	dir = 1;
-	layer = 5
+	layer = 4.8
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/stone_tile{
@@ -34552,7 +34599,8 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	dir = 1
+	dir = 1;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -35054,7 +35102,8 @@
 	pixel_x = 17
 	},
 /obj/machinery/shower{
-	pixel_y = 16
+	pixel_y = 16;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -39621,15 +39670,9 @@
 	pixel_y = 0;
 	pixel_x = 19
 	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	pixel_y = 12;
-	pixel_x = 17
-	},
 /obj/machinery/shower{
-	dir = 8
+	dir = 8;
+	layer = 4.9
 	},
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
@@ -51234,8 +51277,8 @@ bNg
 bLf
 mHr
 wZm
-wZm
-wZm
+aff
+aff
 mlA
 qFR
 bJS
