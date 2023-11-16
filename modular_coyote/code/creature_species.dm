@@ -473,8 +473,6 @@
 /mob/living/carbon/human/species/xenosentry
 	race = /datum/species/feral/xeno/sentry
 
-//end aliens
-
 /datum/species/feral/alien/praetorian
 	name = "Feral Xenomorph Praetorian"
 	id = "alienp"
@@ -482,7 +480,7 @@
 	icon_width = 64
 	roundstart = TRUE
 /mob/living/carbon/human/species/alienp
-	race = /datum/species/feral/praetorian
+	race = /datum/species/feral/alien/praetorian
 
 /datum/species/feral/alien/queen
 	name = "Feral Xenomorph Queen"
@@ -491,7 +489,7 @@
 	icon_width = 64
 	roundstart = TRUE
 /mob/living/carbon/human/species/alienq
-	race = /datum/species/feral/queen
+	race = /datum/species/feral/alien/queen
 
 /datum/species/feral/alien/maid
 	name = "Feral Xenomorph Maid"
@@ -500,7 +498,9 @@
 	icon_width = 32
 	roundstart = TRUE
 /mob/living/carbon/human/species/alienh
-	race = /datum/species/feral/hunter
+	race = /datum/species/feral/alien/hunter
+
+//end aliens
 
 /datum/species/feral/bigwolfblack
 	name = "Feral Giant Black Wolf"
@@ -522,7 +522,7 @@
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 /mob/living/carbon/human/species/bigwolfsilver
-	race = /datum/species/feral/alien/bigwolfsilver
+	race = /datum/species/feral/bigwolfsilver
 
 /datum/species/feral/bigwolfwhite
 	name = "Feral Giant White Wolf"
