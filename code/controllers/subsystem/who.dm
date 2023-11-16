@@ -385,7 +385,7 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
 	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [name] as</span>"
+	out += "<span class='[name_span]'> [name]</span>"
 	/// the role slug
 	if(!admeme)
 		if(role_visible)
