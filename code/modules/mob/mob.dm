@@ -1801,7 +1801,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("React - Touch your hand to your bosom.")
 			to_chat(A, span_notice("[src] maybe just <span class='love'>put their hand to their chest, did someting about you cause that?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You reflexively put your hadn to your chest because [A] is just too much for you to handle.")
+			to_chat(user, "You reflexively put your hand to your chest because [A] is just too much for you to handle.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Leer - Arms akimbo.")
