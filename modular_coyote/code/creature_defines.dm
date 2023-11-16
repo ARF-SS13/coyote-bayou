@@ -4,4 +4,4 @@
 	desc = "That's a creature."
 	/// see /code/__DEFINES/mobs.dm for these
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	race = /datum/species/eevee
+	race = /datum/species/feral/eevee

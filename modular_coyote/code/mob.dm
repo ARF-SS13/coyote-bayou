@@ -941,7 +941,7 @@
 	icon_living = "andrews"
 	icon_dead = "andrews_dead"
 
-/mob/living/simple_animal/advanced/direwolf/black
+/mob/living/simple_animal/advanced/direwolf_black
 	name = "black direwolf"
 	desc = "Some kind of big black dog."
 	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
@@ -957,7 +957,7 @@
 	icon_living = "hellhound"
 	icon_dead = "hellhound_dead"
 
-/mob/living/simple_animal/advanced/hellhound/greater
+/mob/living/simple_animal/advanced/hellhound_greater
 	name = "greater hellound"
 	desc = "It's a fire doggo from hell."
 	icon = 'modular_coyote/icons/mob/paramob.dmi'

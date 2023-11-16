@@ -135,7 +135,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/icon_width = 32
 	/// The icon file to use if your species has a non-humanoid body. (FERAL species trait)
 	var/simple_icon
-
+	/// This is appended to the end of the "id" variable in order to set the DEAD icon state of species that use the simple_icon
+	var/icon_dead_suffix
+	/// This is appended to the end of the "id" variable in order to set the RESTING/PRONE icon state of species that use the simple_icon
+	var/icon_rest_suffix
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -618,16 +621,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		H.rotate_on_lying = rotate_on_lying
 		var/i_state
 		if(H.stat == DEAD)
-			i_state = "[id]_d"
+			i_state = "[id][icon_dead_suffix]"
 		else if(H.stat != DEAD && !CHECK_MOBILITY(H, MOBILITY_STAND))//Not dead but can't stand up or resting
-			if(isnull(H.icon_resting) || H.icon_resting == "")
-				H.icon_resting = "[id]_rest"
-			else
-				i_state = H.icon_resting
+			i_state = "[id][icon_rest_suffix]"
 		else
 			i_state = id
 		var/mutable_appearance/F = mutable_appearance(simple_icon, i_state, BODYPARTS_LAYER)
-		if(isnull(icon_width))//Their icon_width isn't set get it now!
+		if(isnull(icon_width))//Their icon_width isn't set so get it now!
 			var/icon/I = icon(simple_icon)
 			icon_width = I.Width()
 		if(icon_width != 32)//We need to recenter!
