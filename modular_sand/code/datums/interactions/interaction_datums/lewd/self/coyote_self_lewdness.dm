@@ -304,4 +304,26 @@ datum/interaction/lewd/self/nip_play //lewd makes it pink, the name is just what
 	) // frumf, frumf
 	user_lust_mult = 1.2
 
+//////////////////////////
+//Autofellate/////
+////////////////////////
+datum/interaction/lewd/self/autofellate
+	description = "Self/Crotch - Suck yourself off."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	is_self_action = TRUE
+	max_distance = 0
 
+	help_messages = list(
+		"XU_NAME drags XU_THEY tongue across the head of XU_THEY own endowment.",
+	)
+	disarm_messages = list(
+		"XU_NAME fills XU_THEY cheek out with the shape of XU_THEY own cock.",
+	)
+	grab_messages = list(
+		"XU_NAME noisily, messily bobs up and down XU_THEY own length",
+	)
+	harm_messages = list(
+		"XU_NAME gags themselves as XU_THEY deepthroats XU_THEY own cock",
+	)
+	user_lust_mult = 0.8
