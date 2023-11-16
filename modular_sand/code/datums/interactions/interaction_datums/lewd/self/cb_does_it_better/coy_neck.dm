@@ -122,3 +122,32 @@
 	lust_go_to = LUST_TARGET | LUST_USER
 ///////THROAT GRAB END/////////
 
+////////////////////
+//Neck Kiss 2A5//
+////////////////////
+//Giving Verb Prototype
+//Remember to change this                 VVVV
+/datum/interaction/lewd/partner/giving/neck_kiss
+	description = "Partner/Neck - Kiss their Neck."
+	require_user_hands = TRUE
+	simple_sounds = null
+	max_distance = 1
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME gently {kisses, nibbles, smooches, mouths} on the XT_NAME's neck.",
+	)
+	disarm_messages = list(
+		"XU_NAME playfully {kisses, nibbles, smooches, mouths} on the XT_NAME's neck.",
+	)
+	grab_messages = list(
+		"XU_NAME just adores XT_NAME's neck, covering it in {kisses, nibbles, smooches}!",
+	)
+	harm_messages = list(
+		"XU_NAME is kissing XT_NAME's neck s much they might leave a hickey!",
+	)
+
+	simple_sounds = list(
+		'sound/effects/kiss.ogg'
+	) // frumf, frumf
+	target_lust_mult = 0.5
+	lust_go_to = LUST_TARGET
