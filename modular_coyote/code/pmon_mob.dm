@@ -212,7 +212,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/advanced/dragonair/shiny
+/mob/living/simple_animal/advanced/dragonairshiny
 	name = "shiny dragonair"
 	icon_state = "shinydragonair"
 	icon_living = "shinydragonair"
