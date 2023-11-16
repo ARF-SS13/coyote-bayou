@@ -702,7 +702,7 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME gently suckles at XT_NAME's shaft.",
+		"XU_NAME {gently suckles, lightly sucks on, softly sucks} XT_NAME's {shaft, cockhead, dick, dipstick, cock, rod}.",
 	)
 	disarm_messages = list(
 		"XU_NAME sucks XT_NAME off.",
@@ -730,16 +730,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME teases XT_NAME's cock into their throat.",
+		"XU_NAME {teases, presses, slides, eagerly presses} XT_NAME's {cock, shaft, rod, dick, dipstick} {into, down, deep into} {their throat, the back of their mouth, their warm mouth hole}.",
 	)
 	disarm_messages = list(
-		"XU_NAME bobs on XT_NAME's cock, letting them really feel their throat.",
+		"XU_NAME {bobs on, bounces their head on, goes down on, eagerly throats} XT_NAME's {cock, shaft, rod, dick, dipstick}, {letting them really feel, pleasing them with, fucking them with, gagging on them with} their throat.",
 	)
 	grab_messages = list(
-		"XU_NAME is really going down on XT_NAME's cock, basically getting facefucked.",
+		"XU_NAME is {really, eagerly, aggressively, messily, noisily, wetly} {going down on, sucking off, schlorping, milking} XT_NAME's {cock, shaft, rod, dick, dipstick}, {basically getting facefucked, dribbling their own head like a basketball, fucking their own throat on it}.",
 	)
 	harm_messages = list(
-		"XU_NAME is using their mouth like a pussy for XT_NAME's cock, taking it to the hilt on every downstroke.",
+		"XU_NAME is {using their mouth like a pussy for, milking, trying to drain, emulate being an onahole for, trying to noisily get throatpied by} XT_NAME's {cock, shaft, rod, dick, dipstick}, {taking it to the hilt on every downstroke, bottoming out on every stroke, smushing their nose down into XT_NAME's crotch}.",
 	)
 
 	simple_sounds = list(

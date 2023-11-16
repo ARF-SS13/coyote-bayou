@@ -103,7 +103,7 @@
 		"XU_NAME playfully nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	grab_messages = list(
-		"XU_NAME possessibely nuzzles XU_THEIR face against XT_NAME's face.",
+		"XU_NAME needily nuzzles XU_THEIR face against XT_NAME's face.",
 	)
 	harm_messages = list(
 		"XU_NAME aggressively nuzzles XU_THEIR face against XT_NAME's face!",
@@ -298,3 +298,147 @@
 	) // frumf, frumf
 	user_lust_mult = 0.1
 	target_lust_mult = 0.1
+
+////////////////////
+//Good Boy 1A10//
+////////////////////
+datum/interaction/lewd/mutual/good_boy
+	description = "Partner/Head - Call them a good boy."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good boy-\",\"That a boy-\",\"Such a good boy-\",\"Good boy-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Good Girl 1A11//
+////////////////////
+datum/interaction/lewd/mutual/good_girl
+	description = "Partner/Head - Call them a good girl."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good girl-\",\"That a girl-\",\"Such a good girl-\",\"Good girl-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Praise them 1A12//
+////////////////////
+datum/interaction/lewd/mutual/praise_them
+	description = "Partner/Head - Praise them."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Good stuff-\",\"That's it-\",\"So good-\",\"Good-\"}",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Play with their mouth 1A13//
+////////////////////
+datum/interaction/lewd/mutual/mouth_play
+	description = "Partner/Head - Play with their mouth."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME gently teases their fingers into XT_NAME's mouth.",
+	)
+	disarm_messages = list(
+		"XU_NAME gently plays inside XT_NAME's mouth with their fingers.",
+	)
+	grab_messages = list(
+		"XU_NAME pushes their fingers into XT_NAME's mouth.",
+	)
+	harm_messages = list(
+		"XU_NAME is mouth fucking XT_NAME with their fingers.",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
+
+////////////////////
+//Beg to be bred, FE 1A14//
+////////////////////
+datum/interaction/lewd/mutual/nesting_behavior
+	description = "Partner/Head - Beg them to breed you, Feminine Edition."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Breed me-\",\"Get me pregnant-\",\"Make me a mother-\"}",
+	)
+	user_lust_mult = 0.6
+	target_lust_mult = 0.5
+
+////////////////////
+//Beg to be bred, ME 1A15//
+////////////////////
+datum/interaction/lewd/mutual/nesting_behavior
+	description = "Partner/Head - Beg them to breed you, Butt Edition."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {quietly, softly, gently, needily}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	disarm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {playfully, teasingly}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	grab_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	harm_messages = list(
+		"XU_NAME {praises, urges on} XT_NAME {loudly, noisily, lustfully, as if begging}, {\"Breed me-\",\"Get me butt pregnant-\"}",
+	)
+	user_lust_mult = 0.6
+	target_lust_mult = 0.5
