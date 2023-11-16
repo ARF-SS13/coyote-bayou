@@ -411,6 +411,9 @@
 		damage *= 1.5
 	if((woundtype in PAPER_SKIN_WOUNDS) && HAS_TRAIT(owner, TRAIT_PAPER_SKIN))
 		damage *= 1.5
+// Coyote Boyou replacement for glass bones & paper skin quirks.
+	if(HAS_TRAIT(owner, TRAIT_EASILY_WOUNDED))
+		damage *= 1.25
 
 	var/base_roll = rand(
 		min(damage * WOUND_DAMAGE_RANDOM_FLOOR_MULT, WOUND_MAX_CONSIDERED_DAMAGE),
