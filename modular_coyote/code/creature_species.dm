@@ -17,4 +17,5 @@
 	liked_food = FRUIT //Berries
 	disliked_food = TOXIC | GROSS //Ouchies and ewies
 	rotate_on_lying = FALSE
-	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	//We need this so that our limbs don't have null sprites when they get thrown off. (Should never happen because I glued them on, but just in case.)
+	limbs_id = "mammal"
