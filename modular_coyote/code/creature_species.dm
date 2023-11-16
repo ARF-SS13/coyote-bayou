@@ -77,6 +77,33 @@
 	icon_rest_suffix = "_rest"
 	roundstart = TRUE
 
+/datum/species/feral/black_cat
+	name = "Feral Black Cat"
+	id = "cat"
+	simple_icon = 'icons/mob/pets.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+
+/datum/species/feral/striped_cat
+	name = "Feral Striped Cat"
+	id = "pancake"
+	simple_icon = 'icons/mob/pets.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+
+/datum/species/feral/space_cat
+	name = "Feral Space Cat"
+	id = "spacecat"
+	simple_icon = 'icons/mob/pets.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+
 /datum/species/feral/wolf
 	name = "Feral Wolf"
 	id = "wolf"
@@ -97,7 +124,7 @@
 
 /datum/species/feral/hyotie
 	name = "Feral Hyotie"
-	id = "hyotie"
+	id = "andrews"
 	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
 	icon_width = 64
 	icon_dead_suffix = "_dead"
