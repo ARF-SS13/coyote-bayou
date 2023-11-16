@@ -422,7 +422,7 @@ datum/interaction/lewd/mutual/nesting_behavior
 ////////////////////
 //Beg to be bred, ME 1A15//
 ////////////////////
-datum/interaction/lewd/mutual/nesting_behavior
+datum/interaction/lewd/mutual/nesting_behavior_butt
 	description = "Partner/Head - Beg them to breed you, Butt Edition."
 	simple_sounds = null
 	require_user_hands = FALSE // yap yap
@@ -442,3 +442,27 @@ datum/interaction/lewd/mutual/nesting_behavior
 	)
 	user_lust_mult = 0.6
 	target_lust_mult = 0.5
+
+////////////////////
+//Play with their hair 1A16//
+////////////////////
+datum/interaction/lewd/mutual/hair_play
+	description = "Partner/Head - Play with their hair."
+	simple_sounds = null
+	require_user_hands = FALSE // yap yap
+	max_distance = 1
+
+	help_messages = list(
+		"XU_NAME gently teases their fingers through XT_NAME's hair.",
+	)
+	disarm_messages = list(
+		"XU_NAME gently plays with XT_NAME's hair.",
+	)
+	grab_messages = list(
+		"XU_NAME pushes their fingers through XT_NAME's hair.",
+	)
+	harm_messages = list(
+		"XU_NAME is absolutely grabbing at XT_NAME hair as they try to find a good hold.",
+	)
+	user_lust_mult = 0.4
+	target_lust_mult = 0.4
