@@ -898,12 +898,14 @@
 				'modular_sand/sound/interactions/final_f2.ogg',
 				'modular_sand/sound/interactions/final_f3.ogg',
 			)
-	var/list/cumhearers = SSinteractions.get_consent_chain(src, partner)
+	var/list/cumhearers = SSinteractions.get_consent_chain(src) // fun fact, every time I used this proc, I forgot what it did. I wrote this proc! =3
 	for(var/mob/living/u_cum_2 in cumhearers)
 		if(CHECK_PREFS(u_cum_2, NOTMERP_LEWD_SOUNDS))
 			u_cum_2.playsound_local(get_turf(src), cumnoise, 70, 1, 0)
 		if(CHECK_PREFS(u_cum_2, NOTMERP_LEWD_WORDS))
 			to_chat(u_cum_2, span_love("<b>[src]</b> [message]"))
+		SEND_SIGNAL(u_cum_2, COMSIG_SPLURT_SOMEONE_CUMMED, target_orifice, partner, cumin, last_genital)
+	SEND_SIGNAL(src, COMSIG_SPLURT_I_CAME)
 	multiorgasms += 1
 
 	COOLDOWN_START(src, refractory_period, (rand(300, 900) - get_sexual_potency()))//sex cooldown

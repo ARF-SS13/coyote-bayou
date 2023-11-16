@@ -41,7 +41,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
-	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
+	needs_updating = current_version ^ PREFERENCES_MASTER_CHANGELOG
 	if(LAZYLEN(needs_updating))
 		update_file(needs_updating, S)
 
@@ -203,12 +203,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				S["feature_genital_whitelist"] >> genital_whitelist
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
-			// if(PMC_LEWD_STUFF_FOR_ALL) // I made lewd stuff, but it doesnt visle
-			// 	S["toggles"] >> toggles
-			// 	ENABLE_BITFIELD(toggles, HEAR_LEWD_VERB_SOUNDS)
-			// 	ENABLE_BITFIELD(toggles, HEAR_LEWD_VERB_WORDS)
-			// 	WRITE_FILE(S["toggles"], toggles)
-			// 	current_version |= PMC_LEWD_STUFF_FOR_ALL /// wait does this proc even do anything?????
+			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
+				S["faved_interactions"] >> faved_interactions
+				faved_interactions = list()
+				WRITE_FILE(S["faved_interactions"], faved_interactions)
+				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")

@@ -72,7 +72,7 @@
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/open_menu)
 	RegisterSignal(parent, COMSIG_SPLURT_REMOVE_AUTOPLAPPER, .proc/kill_autoplapper)
 	RegisterSignal(parent, COMSIG_SPLURT_ADD_AUTOPLAPPER, .proc/confirm_autoplap)
-	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED, .proc/sympathetic_detonation)
+	RegisterSignal(parent, COMSIG_SPLURT_SOMEONE_CUMMED, .proc/stop_all_autoplappers)
 	RegisterSignal(parent, COMSIG_SPLURT_I_CAME, .proc/stop_all_autoplappers)
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
@@ -206,10 +206,11 @@
 		if("Favorite")
 			if(!P)
 				return FALSE
+			listify(P.faved_interactions)
 			if(params["interaction"] in P.faved_interactions)
 				P.faved_interactions -= params["interaction"]
 			else
-				P.faved_interactions += params["interaction"]
+				P.faved_interactions |= params["interaction"]
 			queue_save()
 			interface_sound(1)
 
@@ -561,6 +562,7 @@
 	if(LAZYLEN(search_term))
 		current_category = MERP_CAT_ALL
 	var/mob/living/self = parent
+	var/mob/living/target = GET_WEAKREF(weaktarget)
 	if(current_category == MERP_CAT_FAVES)
 		var/list/faves = self.client?.prefs.faved_interactions || list()
 		for(var/list/nukeclownpubes in SSinteractions.interactions_tgui) // he said suika, TWICE
@@ -569,9 +571,8 @@
 			if(nukeclownpubes["InteractionKey"] in faves)
 				cached_interactions += list(nukeclownpubes)
 		return TRUE
-	var/is_just_me = GET_WEAKREF(weaktarget) == self
-	var/list/cc_me = SSinteractions.get_consent_chain(self, FALSE)
-	var/list/cc_yu = SSinteractions.get_consent_chain(GET_WEAKREF(weaktarget), FALSE)
+	var/is_just_me = target == self
+	var/am_consent = SSinteractions.check_consent_chain(self, target)
 	var/list/output_interactions = SSinteractions.interactions_tgui.Copy()
 	for(var/list/i_obj in output_interactions)
 		if(!islist(i_obj))
@@ -583,7 +584,7 @@
 			output_interactions -= list(i_obj)
 			continue
 		var/needconsent = !is_just_me && i_obj["InteractionLewd"] || i_obj["InteractionExtreme"] || FALSE
-		if(needconsent && !LAZYLEN(SSinteractions.check_consent_chain(c_1 = cc_me, c_2 = cc_yu)))
+		if(needconsent && !am_consent)
 			output_interactions -= list(i_obj)
 			continue
 		if(current_category != MERP_CAT_ALL && !(current_category in i_obj["InteractionCategories"]))

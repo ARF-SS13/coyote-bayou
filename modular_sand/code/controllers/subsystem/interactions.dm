@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(interactions)
 	var/list/deliberating_consent = list()
 	var/list/interactions_tgui = list()
 	var/min_autoplap_interval = 3 SECONDS
-	var/max_autoplap_interval = 15 SECONDS
+	var/max_autoplap_interval = 45 SECONDS
 	var/debug_store_plapper_weakref = FALSE
 	var/interactions_per_page = 10
 
@@ -243,34 +243,31 @@ SUBSYSTEM_DEF(interactions)
 /// gets everyone who creature1 (and creature2) consents to, and everyone who they consent to, and so on
 /// A consents to B, B consents to C, D consents to A, B consents to E, E consents to F
 /// would return A, B, C, D, E, F
-/datum/controller/subsystem/interactions/proc/get_consent_chain(creature1, creature2, mobs_pls = TRUE)
-	if(!creature1 && !creature2)
+/datum/controller/subsystem/interactions/proc/get_consent_chain(creature, mobs_pls = TRUE)
+	if(!creature)
 		return FALSE
-	var/ckey1 = extract_ckey(creature1)
-	var/ckey2 = extract_ckey(creature2)
-	if(!ckey1 && !ckey2)
+	var/yeekey = extract_ckey(creature)
+	if(!yeekey)
 		return FALSE
-	var/list/keys_to_check = list()
-	if(ckey1) keys_to_check |= ckey1 // TG CANT TELL ME NOT TO DO THIS :D
-	if(ckey2) keys_to_check |= ckey2 // EVEN THOUGH THEYRE RIGHT ITS FUKCING STUPID AND I HATE IT
+	var/list/keys_to_check = list(yeekey) // TG CANT TELL ME NOT TO DO THIS :D
+	if(!LAZYLEN(keys_to_check)) return FALSE // EVEN THOUGH THEYRE RIGHT ITS FUKCING STUPID AND I HATE IT
 	var/list/consent_chain = list() // also is the keys we checked, so we dont check em again
 	/// runs through the the master consent list
 	var/tries_left = 100 // juuuuuust in case
 	while(LAZYLEN(keys_to_check) && --tries_left)
-		var/key_to_check = keys_to_check[1]
-		keys_to_check -= key_to_check
-		if(key_to_check in consent_chain) // constant pain
+		var/checking = keys_to_check[1]
+		keys_to_check -= checking
+		if(checking in consent_chain) // constant pain
 			continue
-		consent_chain |= key_to_check
+		consent_chain |= checking
 		/// runs through the master consent list again
 		for(var/keyname in consents)
 			var/list/whowho = splittext(keyname, "!")
 			if(LAZYLEN(whowho) != 2)
 				continue
-			if(!(whowho[2] in consent_chain))
-				keys_to_check |= whowho[2]
-			if(!(whowho[1] in consent_chain))
-				keys_to_check |= whowho[1]
+			if(!(checking in whowho))
+				continue
+			keys_to_check |= whowho
 	if(!mobs_pls)
 		return consent_chain
 	var/list/mob_consent_chain = list()

@@ -511,8 +511,8 @@
 	// if(LAZYACCESS(formatted_cache, cachekey))
 	// 	return LAZYACCESS(formatted_cache, cachekey)
 
-	var/user_color = user.client?.prefs.features["chat_color"] || "FF00FF"
-	var/target_color = target.client?.prefs.features["chat_color"] || "FF00FF"
+	var/user_color = user.chat_color || user.client?.prefs.features["chat_color"] || "FF00FF"
+	var/target_color = user.chat_color || target.client?.prefs.features["chat_color"] || "FF00FF"
 	if(extra["object1"])
 		if(istext(extra["object1"]))
 			message = replacetextEx(message, "XOBJECT1X", extra["object1"])
