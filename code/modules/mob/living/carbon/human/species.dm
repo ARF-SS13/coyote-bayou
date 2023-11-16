@@ -10,7 +10,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/default_color = "#FFFFFF"	// if alien colors are disabled, this is the color that will be used by that race
 	var/sexes = 1 // whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/has_field_of_vision = TRUE
-
+	/// If set to true, will force it into the roundstart races list regardless of what the config says (config file bloat prevention)
+	var/roundstart = FALSE
 	//Species Icon Drawing Offsets - Pixel X, Pixel Y, Aka X = Horizontal and Y = Vertical, from bottom left corner
 	var/list/offset_features = list(
 		OFFSET_UNIFORM = list(0,0),
@@ -129,6 +130,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//the type of eyes this species has
 	var/eye_type = "normal"
 
+	var/rotate_on_lying = TRUE
+	/// The width of the simple_icon file. Used to auto-center your sprite.
+	var/icon_width = 32
+	/// The icon file to use if your species has a non-humanoid body. (FERAL species trait)
+	var/simple_icon
+	/// This is appended to the end of the "id" variable in order to set the DEAD icon state of species that use the simple_icon
+	var/icon_dead_suffix
+	/// This is appended to the end of the "id" variable in order to set the RESTING/PRONE icon state of species that use the simple_icon
+	var/icon_rest_suffix
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -161,6 +171,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /datum/species/proc/check_roundstart_eligible()
 	if(id in (CONFIG_GET(keyed_list/roundstart_races)))
+		return TRUE
+	if(roundstart == TRUE)
 		return TRUE
 	return FALSE
 
@@ -601,11 +613,29 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.remove_overlay(UNDERWEAR_LAYER)
 	H.remove_overlay(UNDERWEAR_OVERHANDS_LAYER)
 
+
+
 	var/list/standing = list()
+	// creature characters don't need to do all this work, just display their icon.
+	if(H.IsFeral())
+		H.rotate_on_lying = rotate_on_lying
+		var/i_state
+		if(H.stat == DEAD)
+			i_state = "[id][icon_dead_suffix]"
+		else if(H.stat != DEAD && !CHECK_MOBILITY(H, MOBILITY_STAND))//Not dead but can't stand up or resting
+			i_state = "[id][icon_rest_suffix]"
+		else
+			i_state = id
+		var/mutable_appearance/F = mutable_appearance(simple_icon, i_state, BODYPARTS_LAYER)
+		if(isnull(icon_width))//Their icon_width isn't set so get it now!
+			var/icon/I = icon(simple_icon)
+			icon_width = I.Width()
+		if(icon_width != 32)//We need to recenter!
+			F.pixel_x += -((icon_width-32)/2)
+		standing += F
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
-
-	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)))
+	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)) && !H.IsFeral())
 		// lipstick
 		if(H.lip_style && (LIPS in species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -BODY_LAYER)
@@ -706,7 +736,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					standing_undies += MA
 
 	//Warpaint and tattoos
-	if(H.warpaint)
+	if(H.warpaint && !H.IsFeral())
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
 

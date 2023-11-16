@@ -940,7 +940,7 @@
 	icon_living = "andrews"
 	icon_dead = "andrews_dead"
 
-/mob/living/simple_animal/advanced/direwolf/black
+/mob/living/simple_animal/advanced/direwolf_black
 	name = "black direwolf"
 	desc = "Some kind of big black dog."
 	icon = 'modular_coyote/icons/mob/vore64x32.dmi'
@@ -956,7 +956,7 @@
 	icon_living = "hellhound"
 	icon_dead = "hellhound_dead"
 
-/mob/living/simple_animal/advanced/hellhound/greater
+/mob/living/simple_animal/advanced/hellhound_greater
 	name = "greater hellound"
 	desc = "It's a fire doggo from hell."
 	icon = 'modular_coyote/icons/mob/paramob.dmi'
@@ -982,7 +982,7 @@
 
 //By request, xenomorphs
 /mob/living/simple_animal/advanced/xeno
-	name = "Xenomoprh Drone"
+	name = "Xenomorph Drone"
 	desc = "Don't tell Riply..."
 	icon = 'modular_coyote/icons/mob/aliens.dmi'
 	icon_state = "aliend"
@@ -990,7 +990,7 @@
 	icon_dead = "aliend_dead"
 
 /mob/living/simple_animal/advanced/xenos
-	name = "Xenomoprh Sentry"
+	name = "Xenomorph Sentry"
 	desc = "Don't tell Riply..."
 	icon = 'modular_coyote/icons/mob/aliens.dmi'
 	icon_state = "alienq"
@@ -998,7 +998,7 @@
 	icon_dead = "alienq_dead"
 
 /mob/living/simple_animal/advanced/xenoh
-	name = "Xenomoprh Hunter"
+	name = "Xenomorph Hunter"
 	desc = "Don't tell Riply..."
 	icon = 'modular_coyote/icons/mob/aliens.dmi'
 	icon_state = "alienh"
@@ -1006,7 +1006,7 @@
 	icon_dead = "alienh_dead"
 
 /mob/living/simple_animal/advanced/xenop
-	name = "Xenomoprh Protector"
+	name = "Xenomorph Protector"
 	desc = "Don't tell Riply..."
 	icon = 'icons/mob/alienqueen.dmi'
 	icon_state = "alienp"
@@ -1014,7 +1014,7 @@
 	icon_dead = "alienp_dead"
 
 /mob/living/simple_animal/advanced/xenoq
-	name = "Xenomoprh Queen"
+	name = "Xenomorph Queen"
 	desc = "Don't tell Riply..."
 	icon = 'icons/mob/alienqueen.dmi'
 	icon_state = "alienq"

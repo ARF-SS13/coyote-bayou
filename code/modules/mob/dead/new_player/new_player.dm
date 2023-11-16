@@ -77,7 +77,7 @@
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
-		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Creature!</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
@@ -606,6 +606,9 @@
 
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
+		if(alert(src, "Better creature characters can now be made via the regular Species dropdown menu where you'd normally pick your human race. Are you sure you'd rather play the old-style simple creatures?", "Creature Update!", "I'll try them out!", "I still want to play as a simple creature.") == "I'll try them out!")
+			client.prefs.ShowChoices(src)
+			return
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
 			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
@@ -621,7 +624,7 @@
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
 		var/mob/living/simple_animal/C = new creature_type(src)
 		//Log their arrival
-		log_and_message_admins("[ADMIN_PP(src)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
+		log_and_message_admins("[ADMIN_PP(src)] joined as \a [P.creature_species] named [P.creature_name] and spawned at [spawn_selection].")
 		//Set up their HUD, hands, and intents.
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
 		C.dextrous = TRUE

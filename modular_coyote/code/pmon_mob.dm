@@ -8,7 +8,7 @@
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
 	/// The default resting icon will always be "[icon_living]_rest" unless you set this variable, which will override it.
-	var/icon_resting
+	icon_resting
 	unsuitable_atmos_damage = 0
 	mob_armor = ARMOR_VALUE_MEDIUM
 	health = 200
@@ -212,7 +212,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/advanced/dragonair/shiny
+/mob/living/simple_animal/advanced/dragonairshiny
 	name = "shiny dragonair"
 	icon_state = "shinydragonair"
 	icon_living = "shinydragonair"

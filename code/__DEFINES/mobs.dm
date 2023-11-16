@@ -198,6 +198,7 @@
 #define MOB_REPTILE		(1 << 8)
 #define MOB_SPIRIT		(1 << 9)
 #define MOB_INORGANIC 	(1 << 10)
+#define MOB_FERAL		(1 << 11)
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2
@@ -218,6 +219,7 @@
 #define ALIEN_BODYPART "alien"
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
+#define FERAL_BODYPART "feral"
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
 // Health/damage defines for carbon mobs
