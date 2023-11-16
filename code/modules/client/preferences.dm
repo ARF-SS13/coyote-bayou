@@ -230,7 +230,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
 	var/image/creature_image = null
-	var/creature_profilepic = null
+	var/creature_profilepic = ""
+	var/creature_pfphost = ""
 	var/creature_body_size = 1
 	var/creature_fuzzy = FALSE
 
@@ -470,10 +471,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			//Right column
 			dat +="<td width='30%' valign='top'>"
-			dat += "<h2>Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Creature Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"

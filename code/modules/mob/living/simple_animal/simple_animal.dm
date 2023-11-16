@@ -406,7 +406,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/list/dat = list()
 		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
-			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 		//Hands
 		for(var/obj/item/I in held_items)
 			if(!(I.item_flags & ABSTRACT))

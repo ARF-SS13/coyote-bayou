@@ -656,6 +656,7 @@
 		C.flavortext = P.creature_flavor_text
 		C.oocnotes = P.creature_ooc
 		C.profilePicture = P.creature_profilepic
+		C.pfphost = P.creature_pfphost
 		C.verbose_species = "[P.creature_species]"
 		C.special_s = P.special_s
 		C.special_p = P.special_p
