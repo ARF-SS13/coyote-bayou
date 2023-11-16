@@ -44,7 +44,7 @@
 	if(is_blind(owner))
 		return
 	if(world.time > next_check && world.time > next_scare)
-		next_check = world.time + 3 SECONDS
+		next_check = world.time + 10 SECONDS
 		var/list/seen_atoms = owner.fov_view(7)
 		var/mirror_seen = 0
 
@@ -112,7 +112,7 @@
 			speech_args[SPEECH_MESSAGE] = ""
 
 /datum/brain_trauma/mild/phobia/proc/freak_out(atom/reason, trigger_word)
-	next_scare = world.time + 3 SECONDS
+	next_scare = world.time + 10 SECONDS
 	if(owner.stat == DEAD)
 		return
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")

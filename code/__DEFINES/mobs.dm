@@ -44,11 +44,11 @@
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
-#define BLOOD_REFILL_NUTRITION_FAT 5 // Eat a lot for quicker blood regen!
+#define BLOOD_REFILL_NUTRITION_FAT 3 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 3
+#define BLOOD_REFILL_NUTRITION_FULL 2.5
 /// Nutrition spent for being well fed
-#define BLOOD_REFILL_NUTRITION_WELL_FED 2
+#define BLOOD_REFILL_NUTRITION_WELL_FED 1.5
 /// Nutrition spent for being fed
 #define BLOOD_REFILL_NUTRITION_FED 1
 /// Nutrition spent for being hungie

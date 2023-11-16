@@ -324,6 +324,8 @@
 #define TRAIT_ILLITERATE "illiterate"
 #define TRAIT_PAPER_SKIN "paper_skin"
 #define TRAIT_GLASS_BONES "glass_bones"
+/// Coyote Boyou trait that replaces paper skin and glass bones!
+#define TRAIT_EASILY_WOUNDED "easily_wounded"
 #define TRAIT_STEEL_ASS "steel_ass"
 #define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"

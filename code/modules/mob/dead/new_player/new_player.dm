@@ -619,8 +619,10 @@
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
 		//Create the new mob
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
-		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
+		//Log their arrival
+		log_and_message_admins("[ADMIN_PP(src)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
+		//Set up their HUD, hands, and intents.
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
@@ -654,6 +656,7 @@
 		C.flavortext = P.creature_flavor_text
 		C.oocnotes = P.creature_ooc
 		C.profilePicture = P.creature_profilepic
+		C.pfphost = P.creature_pfphost
 		C.verbose_species = "[P.creature_species]"
 		C.special_s = P.special_s
 		C.special_p = P.special_p
@@ -684,8 +687,7 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
-		//Log their arrival
-		log_and_message_admins("[ADMIN_PP(C)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
+
 		//Insert the quirks, do it now
 		SSquirks.AssignQuirks(C, C.client, TRUE, FALSE)
 		//Then he waddled away, waddle waddle. To the very next day.

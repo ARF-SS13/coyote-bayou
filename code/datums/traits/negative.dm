@@ -2,24 +2,25 @@
 
 /datum/quirk/blooddeficiency
 	name = "Acute Blood Deficiency"
-	desc = "Your body can't produce enough blood to sustain itself."
-	value = -20
+	desc = "Your body struggles to produce enough blood to sustain itself. Whilst not fatal, not treating your condition and getting wounded will send you into an un-recoverable death-spiral!"
+	value = -30
 	category = "Health Quirks"
-	mechanics = "You are constantly losing blood, even if you're not wounded."
+	mechanics = "Your blood will constantly drop to 30% of blood capacity. Replenishing your lost blood will also make you hungry!"
 	conflicts = list(
 		/datum/quirk/bloodpressure,
 	)
 	gain_text = span_danger("You feel your vigor slowly fading away.")
 	lose_text = span_notice("You feel vigorous again.")
 	antag_removal_text = "Your antagonistic nature has removed your blood deficiency."
-	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
+	medical_record_text = "Patient struggles to maintain an optimal blood volume, requires transfusions and iron supplements."
 
 /datum/quirk/blooddeficiency/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(NOBLOOD in H.dna.species.species_traits) //can't lose blood if your species doesn't have any
 		return
 	else
-		quirk_holder.blood_volume -= 0.2
+		if(H.blood_volume > BLOOD_VOLUME_SYMPTOMS_DEBILITATING) // If blood volume is higher than (30%), do stuff. You can survive with this blood level but it sucks.
+			H.blood_volume -= 0.275	//WARNING! PR #843 HAS DONE A LOT OF STUFF TO BLOOD SO CHECK IT BEFORE CHANGING THIS ! ! You regenerate 2.5 blood if you're fed.
 
 /datum/quirk/depression
 	name = "Mood - Depressive" //mood dude
@@ -184,7 +185,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
 	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
-	value = -15 // Constant brain DoT until 75 brain damage. Brains have 200 health
+	value = -30 // Constant brain DoT until 75 brain damage. Brains have 200 health
 	category = "Health Quirks"
 	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time. \
 				While not lethal in the scope of a single round, you will want to frequently take mannitol or \
@@ -237,8 +238,8 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/noglasses
 	name = "Nearsighted - No Glasses"
-	desc = "You are nearsighted and without prescription glasses, you might could find a pair."
-	value = -22
+	desc = "You are nearsighted and without prescription glasses, you should find a pair."
+	value = -15
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurred, but you either never had or lost your glasses.  Good luck!"
 	conflicts = list(
@@ -349,7 +350,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
-	value = -32
+	value = -40
 	category = "Health Quirks"
 	mechanics = "Your legs just flat out don't work."
 	conflicts = list(
@@ -819,7 +820,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
-	value = -22 //HALP MAINTS
+	value = -35 //HALP MAINTS
 	category = "Language Quirks"
 	mechanics = "You can't talk, big surprise."
 	conflicts = list(
@@ -885,7 +886,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/deafness
 	name = "Deaf"
 	desc = "You are completely deaf, nothing can counteract this."
-	value = -22
+	value = -40	//Kinda prevents you from RPing...
 	category = "Vision Quirks" // earballs
 	mechanics = "You can't hear."
 	conflicts = list(
@@ -964,19 +965,19 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/flimsy
 	name = "Health - Flimsy"
-	desc = "Your body is a little more fragile then most, decreasing total health some."
-	value = -11
+	desc = "Your body is a little more fragile than most, decreasing total health a little."
+	value = -18
 	category = "Health Quirks"
-	mechanics = "You go into crit 10 points of damage sooner than average."
+	mechanics = "Your maximum hitpoints are reduced to 90%."
 	conflicts = list(
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/lifegiver,
 		/datum/quirk/veryflimsy,
 	)
 	mob_trait = TRAIT_FLIMSY
-	medical_record_text = "Patient has low capacity for injury."
-	gain_text = "<span class='notice'>You feel like you could break with a single hit."
-	lose_text = "<span class='notice'>You feel more durable."
+	medical_record_text = "Patient is slightly less durable than average."
+	gain_text = "<span class='notice'>You feel less durable than those around you."
+	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
 
 /datum/quirk/flimsy/on_spawn()
@@ -986,19 +987,19 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/veryflimsy
 	name = "Health - Very Flimsy"
-	desc = "Your body is a lot more fragile then most, decreasing total health."
-	value = -22
+	desc = "Your body is a lot more fragile than most, decreasing total health a lot."
+	value = -36
 	category = "Health Quirks"
-	mechanics = "You go into crit 20 points sooner than average."
+	mechanics = "Your maximum hitpoints are reduced to 80%."
 	conflicts = list(
 		/datum/quirk/lifegiverplus,
 		/datum/quirk/lifegiver,
 		/datum/quirk/flimsy,
 	)
 	mob_trait = TRAIT_VERYFLIMSY
-	medical_record_text = "Patient has abnormally low capacity for injury."
-	gain_text = "<span class='notice'>You feel like you could break with a single hit."
-	lose_text = "<span class='notice'>You feel more durable."
+	medical_record_text = "Patient is considerably less durable than average."
+	gain_text = "<span class='notice'>You feel considerably less durable than those around you."
+	lose_text = "<span class='notice'>You start feeling as durable as your peers."
 	human_only = FALSE
 
 /datum/quirk/veryflimsy/on_spawn()
@@ -1037,36 +1038,19 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H.equip_to_slot(gas, SLOT_WEAR_MASK)
 	H.regenerate_icons()*/
 
-
-/datum/quirk/paper_skin
-	name = "Paper Skin"
-	desc = "Your flesh is weaker, resulting in receiving cuts more easily."
-	value = -22
+/datum/quirk/easily_wounded
+	name = "Easily Wounded"
+	desc = "Your body just isn't that robust. Attacks your peers can shrug off will brutalise you."
+	value = -25
 	category = "Health Quirks"
-	mechanics = "You take wounds much faster than normal."
+	mechanics = "You are 25% more likely to receive wounds from attacks."	//Combination of the old paper skin & glass bones quirks.
 	conflicts = list(
 
 	)
-	mob_trait = TRAIT_PAPER_SKIN
-	gain_text = span_notice("Your flesh feels weak!")
-	lose_text = span_notice("Your flesh feels more durable!")
-	medical_record_text = "Patient suffers from weak flesh, resulting in them receiving cuts far more easily."
-
-/*
-/datum/quirk/glass_bones
-	name = "Glass Bones"
-	desc = "Your bones are far more brittle, and more vulnerable to breakage."
-	value = -22
-	category = ""
-	mechanics = ""
-	conflicts = list(
-
-	)
-	mob_trait = TRAIT_GLASS_BONES
-	gain_text = span_notice("Your bones feels weak!")
-	lose_text = span_notice("Your bones feels more durable!")
-	medical_record_text = "Patient suffers from brittle bones, resulting in them receiving breakages far more easily."
-*/
+	mob_trait = TRAIT_EASILY_WOUNDED
+	gain_text = span_notice("Wounds feel especially fatal.")
+	lose_text = span_notice("Taking a wound doesn't feel as fatal anymore.")
+	medical_record_text = "Patient is vulnerable to wounding."
 
 /datum/quirk/noodle_fist
 	name = "Fists of Noodle"

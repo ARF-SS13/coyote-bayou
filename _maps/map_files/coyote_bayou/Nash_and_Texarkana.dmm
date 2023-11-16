@@ -4125,17 +4125,11 @@
 	},
 /area/f13/building/abandoned)
 "apF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/bedsheet/doublesheetbrown,
 /obj/structure/bed/old{
-	pixel_y = 15
+	pixel_y = 12
 	},
 /obj/structure/bed/old,
-/obj/item/blanket{
-	pixel_y = 15
-	},
-/obj/item/blanket,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -5265,7 +5259,9 @@
 	},
 /area/f13/building)
 "atA" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/machinery/door/unpowered/securedoor{
+	color = "#888888"
+	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
 "atB" = (
@@ -14483,11 +14479,18 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aXb" = (
-/obj/machinery/door/unpowered/securedoor,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/wood_common,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/obj/structure/simple_door/wood{
+	color = "#888888"
+	},
+/turf/open/floor/wood_common{
+	color = "#888888"
+	},
 /area/f13/building/tribal)
 "aXc" = (
 /obj/effect/decal/remains/human,
@@ -16590,7 +16593,9 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "beL" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/machinery/door/unpowered/securedoor{
+	color = "#888888"
+	},
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -50409,6 +50414,8 @@
 /obj/item/twohanded/spear/bonespear{
 	pixel_y = 8
 	},
+/obj/item/lock_construct,
+/obj/item/key,
 /turf/open/floor/wood_common{
 	color = "#888888"
 	},
@@ -115484,6 +115491,9 @@
 /area/f13/building/abandoned)
 "vSN" = (
 /obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 8
+	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
