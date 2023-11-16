@@ -294,6 +294,11 @@
 	desc = "Much meatier than monkey meat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 5) //Plenty of fat!
 
+/obj/item/reagent_containers/food/snacks/meat/slab/pokemon
+	name = "pokemon meat"
+	desc = "Gotta cook 'em all."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/cooking_oil = 2)
+
 /obj/item/reagent_containers/food/snacks/meat/rawbacon
 	name = "raw piece of bacon"
 	desc = "A raw piece of bacon."

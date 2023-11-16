@@ -57,6 +57,9 @@
 			to_chat(src, span_notice("You are now laying down."))
 		else
 			resist_a_rest()
+	if(iscarbon(src))
+		var/mob/living/carbon/C = src
+		C.update_body()
 
 /mob/living/proc/resist_a_rest(automatic = FALSE, ignoretimer = FALSE, silent = FALSE) //Lets mobs resist out of resting. Major QOL change with combat reworks.
 	set_resting(FALSE, TRUE)

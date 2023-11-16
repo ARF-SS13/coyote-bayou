@@ -1,2 +1,6 @@
-/mob/living/carbon/feral/Initialize()
-	. = ..()
+/// Quickly check if the FERAL flag is in the human's species traits
+/mob/living/carbon/proc/IsFeral()
+	var/is_feral = FALSE
+	if(FERAL in dna?.species?.species_traits)
+		is_feral = TRUE
+	return is_feral

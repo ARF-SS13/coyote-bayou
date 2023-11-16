@@ -41,12 +41,12 @@
 						if(!observers.len)
 							observers = null
 							break
+		if(!IsFeral())
+			var/icon_file = I.lefthand_file
+			if(get_held_index_of_item(I) % 2 == 0)
+				icon_file = I.righthand_file
 
-		var/icon_file = I.lefthand_file
-		if(get_held_index_of_item(I) % 2 == 0)
-			icon_file = I.righthand_file
-
-		hands += I.build_worn_icon(default_layer = HANDS_LAYER, default_icon_file = icon_file, isinhands = TRUE)
+			hands += I.build_worn_icon(default_layer = HANDS_LAYER, default_icon_file = icon_file, isinhands = TRUE)
 
 	overlays_standing[HANDS_LAYER] = hands
 	apply_overlay(HANDS_LAYER)
@@ -109,7 +109,7 @@
 		inv.update_icon()
 
 	if(wear_neck)
-		if(!(head && (head.flags_inv & HIDENECK)))
+		if(!(head && (head.flags_inv & HIDENECK)) && !IsFeral())
 			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = 'icons/mob/clothing/neck.dmi', override_state = wear_neck.icon_state)
 		update_hud_neck(wear_neck)
 
@@ -123,7 +123,8 @@
 		inv?.update_icon()
 
 	if(back)
-		overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', override_state = back.icon_state)
+		if(!IsFeral())
+			overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', override_state = back.icon_state)
 		update_hud_back(back)
 
 	apply_overlay(BACK_LAYER)

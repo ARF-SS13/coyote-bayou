@@ -8,7 +8,7 @@
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
 	/// The default resting icon will always be "[icon_living]_rest" unless you set this variable, which will override it.
-	var/icon_resting
+	icon_resting
 	unsuitable_atmos_damage = 0
 	mob_armor = ARMOR_VALUE_MEDIUM
 	health = 200
