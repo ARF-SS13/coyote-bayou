@@ -623,13 +623,19 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(H.IsFeral())
 		H.rotate_on_lying = rotate_on_lying
 		var/i_state
+		var/mycolor
 		if(H.stat == DEAD)
 			i_state = "[id][icon_dead_suffix]"
 		else if(H.stat != DEAD && !CHECK_MOBILITY(H, MOBILITY_STAND))//Not dead but can't stand up or resting
 			i_state = "[id][icon_rest_suffix]"
 		else
 			i_state = id
-		var/mutable_appearance/F = mutable_appearance(simple_icon, i_state, BODYPARTS_LAYER)
+		if(MUTCOLORS in species_traits)
+			mycolor = H?.client?.prefs?.features?["mcolor"]
+			if(isnull(mycolor))
+				mycolor = H?.dna?.features?["mcolor"]
+		var/mutable_appearance/F = mutable_appearance(simple_icon, i_state, BODYPARTS_LAYER, color = "#[mycolor]")
+		//Recentering
 		if(isnull(icon_width))//Their icon_width isn't set so get it now!
 			var/icon/I = icon(simple_icon)
 			icon_width = I.Width()
