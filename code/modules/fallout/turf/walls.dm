@@ -41,6 +41,58 @@
 	girder_type = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
 
+/turf/closed/wall/f13/wood/house
+	name = "house wall"
+	desc = "A weathered pre-War house wall."
+	icon = 'icons/fallout/turfs/walls/house.dmi'
+	icon_state = "house0"
+	icon_type_smooth = "house"
+	hardness = 50
+	var/broken = 0
+	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
+
+/turf/closed/wall/f13/wood/house/broken
+	broken = 1
+	damage = 21
+	icon_state = "house0-broken"
+
+/turf/closed/wall/f13/wood/house/broken/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/stack/sheet/mineral/wood))
+		var/obj/item/stack/sheet/mineral/wood/I = W
+		if(I.amount < 2)
+			return
+		if(!do_after(user, 5 SECONDS, FALSE, src))
+			to_chat(user, span_warning("You must stand still to fix the wall!"))
+			return
+		W.use(2)
+		ChangeTurf(/turf/closed/wall/f13/wood/house)
+	. = ..()
+
+
+/turf/closed/wall/f13/wood/house/take_damage(dam)
+	if(damage + dam > hardness/2)
+		broken = 1
+	..()
+
+/turf/closed/wall/f13/wood/house/relative()
+	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
+
+/turf/closed/wall/f13/wood/house/update_icon()
+	if(broken)
+		set_opacity(0)
+	..()
+
+turf/closed/wall/f13/wood/house/update_damage_overlay()
+	if(broken)
+		return
+	..()
+
+/turf/closed/wall/f13/wood/house/clean
+	icon_state = "house0-clean"
+
+/turf/closed/wall/f13/wood/house/clean/relative()
+	icon_state = "[icon_type_smooth][junction]-clean"
+
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
