@@ -1,7 +1,6 @@
 //Pokemon Start
 /datum/species/feral
 	name = "REPORT THIS AS A BUG"
-	id = "eevee"
 	//The id is the living and standing icon state of the creature.
 	//The dead icon state must be "id_d" in the .dmi file
 	//The resting icon state must be "id_rest" in the .dmi file
@@ -184,14 +183,14 @@
 	race = /datum/species/feral/pokemon/fennekin
 
 /datum/species/feral/pokemon/flaaffy
-	name = "Feral flaaffy"
+	name = "Feral Flaaffy"
 	id = "flaaffy"
 	roundstart = TRUE
 /mob/living/carbon/human/species/flaaffy
 	race = /datum/species/feral/pokemon/flaaffy
 
 /datum/species/feral/pokemon/flareon
-	name = "Feral flareon"
+	name = "Feral Flareon"
 	id = "flareon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/flareon
@@ -278,6 +277,22 @@
 //End Pokemon//
 
 //Start Other//
+
+/datum/species/feral/catslug
+	name = "Catslug"
+	id = "catslug"
+	simple_icon = 'modular_coyote/icons/mob/slugcat.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+	default_color = "FFFFFF"
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
+
+/mob/living/carbon/human/species/nightstalker
+	race = /datum/species/feral/nightstalker
 
 /datum/species/feral/nightstalker
 	name = "Feral Nightstalker"
@@ -448,6 +463,7 @@
 	icon_width = 32
 	roundstart = TRUE
 	rotate_on_lying = TRUE
+	icon_rest_suffix = "_sleep"
 /mob/living/carbon/human/species/xenodrone
 	race = /datum/species/feral/xeno/drone
 
@@ -458,6 +474,7 @@
 	icon_width = 32
 	roundstart = TRUE
 	rotate_on_lying = TRUE
+	icon_rest_suffix = "_sleep"
 /mob/living/carbon/human/species/alienh
 	race = /datum/species/feral/alien/hunter
 
@@ -466,10 +483,10 @@
 	id = "aliens"
 	simple_icon = 'icons/mob/alien.dmi'
 	icon_width = 32
-	icon_dead_suffix = "_dead"
-	icon_rest_suffix = "_rest"
 	roundstart = TRUE
 	rotate_on_lying = TRUE
+	icon_rest_suffix = "_sleep"
+
 /mob/living/carbon/human/species/xenosentry
 	race = /datum/species/feral/xeno/sentry
 
