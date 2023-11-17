@@ -683,7 +683,6 @@
 
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
-	desc = "If you're not a purple haired rabbit girl, you're not supposed to have this."
 	path = /obj/item/storage/box/large/custom_kit/jaeger
 	ckeywhitelist = list("kilment")
 
