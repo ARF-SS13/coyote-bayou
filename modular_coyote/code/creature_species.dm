@@ -1,7 +1,6 @@
 //Pokemon Start
 /datum/species/feral
 	name = "REPORT THIS AS A BUG"
-	id = "eevee"
 	//The id is the living and standing icon state of the creature.
 	//The dead icon state must be "id_d" in the .dmi file
 	//The resting icon state must be "id_rest" in the .dmi file
@@ -184,14 +183,14 @@
 	race = /datum/species/feral/pokemon/fennekin
 
 /datum/species/feral/pokemon/flaaffy
-	name = "Feral flaaffy"
+	name = "Feral Flaaffy"
 	id = "flaaffy"
 	roundstart = TRUE
 /mob/living/carbon/human/species/flaaffy
 	race = /datum/species/feral/pokemon/flaaffy
 
 /datum/species/feral/pokemon/flareon
-	name = "Feral flareon"
+	name = "Feral Flareon"
 	id = "flareon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/flareon
