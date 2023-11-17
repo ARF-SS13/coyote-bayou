@@ -1658,81 +1658,81 @@
 	item_color = "black_skirt"
 	can_adjust = TRUE
 // Notes below are for kuddles or anyone else that wants to learn. Love, peace, chicken grease! - Jaeger
-/obj/item/clothing/under/kuddles // In detail, this is an object, an item, a piece of clothing, a specific type of clothing, and the type of the type of clothing. This line here is the whole "obj(ect) path". You can go further in the layers by using a / and continuing. 
+/obj/item/clothing/under/kuddles // In detail, this is an object, an item, a piece of clothing, a specific type of clothing, and the type of the type of clothing. This line here is the whole "obj(ect) path". You can go further in the layers by using a / and continuing.
 	name = "racc flannel" // The name of the object.
 	desc = "A nonexistent racc flannel. Sick as hell if you ask me." // Description.
 	icon_state = null // You put the mob state (the name of the icon in icon/mob) here.
 	item_state = null // You put the item state (the name of the icon in icons/obj) here.
 	item_color = null // If it already has colors in the sprite, throw a null here. Otherwise, look at something like scarf code over at `/obj/item/clothing/neck/scarf/red`.
-	can_adjust = FALSE // If you have alt sprites, make sure the sprite sheet knows that and tick this to true. 
+	can_adjust = FALSE // If you have alt sprites, make sure the sprite sheet knows that and tick this to true.
 
-/obj/item/clothing/under/kuddles/redflannel // This "subobject" shares the same variables as the "object" a layer above it, but the difference is that we can edit them on layers below without a lot of consequence. This can save us time so we don't have to copy+paste everything.   
+/obj/item/clothing/under/kuddles/redflannel // This "subobject" shares the same variables as the "object" a layer above it, but the difference is that we can edit them on layers below without a lot of consequence. This can save us time so we don't have to copy+paste everything.
 	name = "Red Flannel"
 	desc = "It's a red flannel on jeans. How quaint can it get?"
 	icon_state = "redflannel"
 	item_state = "redflannel" // You've mastered the basics of CQC! (Clothing Qoding Content)
 
-/obj/item/clothing/under/kuddles/blueflannel    
+/obj/item/clothing/under/kuddles/blueflannel
 	name = "Blue Flannel"
 	desc = "It's a blue flannel on jeans. How quaint can it get?"
 	icon_state = "blueflannel"
-	item_state = "blueflannel" 
+	item_state = "blueflannel"
 
-/obj/item/clothing/under/kuddles/whiteflannel    
+/obj/item/clothing/under/kuddles/whiteflannel
 	name = "White Flannel"
 	desc = "It's a white flannel on jeans. How quaint can it get?"
 	icon_state = "whiteflannel"
-	item_state = "whiteflannel" 
+	item_state = "whiteflannel"
 
-/obj/item/clothing/under/kuddles/tealflannel    
+/obj/item/clothing/under/kuddles/tealflannel
 	name = "Teal Flannel"
 	desc = "It's a teal flannel on jeans. How quaint can it get?"
 	icon_state = "tealflannel"
-	item_state = "tealflannel" 
+	item_state = "tealflannel"
 
-/obj/item/clothing/under/kuddles/pinkflannel    
+/obj/item/clothing/under/kuddles/pinkflannel
 	name = "Pink Flannel"
 	desc = "It's a pink flannel on jeans. How quaint can it get?"
 	icon_state = "pinkflannel"
-	item_state = "pinkflannel" 
+	item_state = "pinkflannel"
 
-/obj/item/clothing/under/kuddles/purpleflannel    
+/obj/item/clothing/under/kuddles/purpleflannel
 	name = "Purple Flannel"
 	desc = "It's a purple flannel on jeans. How quaint can it get?"
 	icon_state = "purpleflannel"
-	item_state = "purpleflannel" 
+	item_state = "purpleflannel"
 
-/obj/item/clothing/under/kuddles/yellowflannel    
+/obj/item/clothing/under/kuddles/yellowflannel
 	name = "Yellow Flannel"
 	desc = "It's a yellow flannel on jeans. How quaint can it get?"
 	icon_state = "yellowflannel"
-	item_state = "yellowflannel" 
+	item_state = "yellowflannel"
 
-/obj/item/clothing/under/kuddles/orangeflannel    
+/obj/item/clothing/under/kuddles/orangeflannel
 	name = "Orange Flannel"
 	desc = "It's an orange flannel on jeans. How quaint can it get?"
 	icon_state = "orangeflannel"
-	item_state = "orangeflannel" 	
+	item_state = "orangeflannel"
 
-/obj/item/clothing/under/kuddles/greenflannel    
+/obj/item/clothing/under/kuddles/greenflannel
 	name = "Green Flannel"
 	desc = "It's a green flannel on jeans. How quaint can it get?"
 	icon_state = "greenflannel"
-	item_state = "greenflannel" 
+	item_state = "greenflannel"
 
-/obj/item/clothing/under/kuddles/rattyskirtgreen  
+/obj/item/clothing/under/kuddles/rattyskirtgreen
 	name = "Ratty Skirt"
 	desc = "A colored skirt with a undershirt and jacket. The skirt has holes that remind you of pest damage."
 	icon_state = "rattyskirtgreen"
 	item_state = "rattyskirtgreen"
 
-/obj/item/clothing/under/kuddles/rattyskirtyellow  
+/obj/item/clothing/under/kuddles/rattyskirtyellow
 	name = "Ratty Skirt"
 	desc = "A colored skirt with a undershirt and jacket. The skirt has holes that remind you of pest damage."
 	icon_state = "rattyskirtyellow"
 	item_state = "rattyskirtyellow"
 
-/obj/item/clothing/under/kuddles/rattyskirtpink 
+/obj/item/clothing/under/kuddles/rattyskirtpink
 	name = "Ratty Skirt"
 	desc = "A colored skirt with a undershirt and jacket. The skirt has holes that remind you of pest damage."
 	icon_state = "rattyskirtpink"
@@ -1755,3 +1755,14 @@
 	desc = "A pair of OD green cargopunk cargopants. Never enough pockets..."
 	icon_state = "olivecargopunk"
 	item_state = "olivecargopunk"
+
+/obj/item/clothing/under/tribalcustom
+	name = "tribal leaf dress"
+	desc = "A dress mostly made of leafs and vines."
+	icon_state = "tribal_custom"
+	item_state = "tribal_custom"
+	item_color = "tribal_custom"
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+

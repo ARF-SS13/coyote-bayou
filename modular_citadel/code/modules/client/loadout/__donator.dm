@@ -1362,6 +1362,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
 	new /obj/item/clothing/neck/customfleur(src)
+	new /obj/item/clothing/under/tribalcustom(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
