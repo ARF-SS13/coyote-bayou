@@ -478,11 +478,11 @@
 
 /datum/supply_pack/misc/carpet/premium/wmarble
 	name = "White Marble Single-Pack"
-	contains = list(/obj/item/stack/tile/blackmarblee/fifty)
+	contains = list(/obj/item/stack/tile/whitemarble/fifty)
 
 /datum/supply_pack/misc/carpet/premium/bmarble
 	name = "Black Marble Single-Pack"
-	contains = list(/obj/item/stack/tile/blackmarblee/fifty)
+	contains = list(/obj/item/stack/tile/blackmarble/fifty)
 
 ///Special supply crate that generates random syndicate gear up to a determined TC value
 
