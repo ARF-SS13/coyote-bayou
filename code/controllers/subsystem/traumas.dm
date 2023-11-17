@@ -60,9 +60,7 @@ SUBSYSTEM_DEF(traumas)
 	phobia_mobs = list(
 		"spiders"  = typecacheof(list(
 			/mob/living/simple_animal/hostile/poison/giant_spider,
-			/mob/living/simple_animal/hostile/mirelurk,
-			/mob/living/simple_animal/hostile/radscorpion,
-			/mob/living/simple_animal/hostile/bloatfly)
+			/mob/living/simple_animal/hostile/radscorpion)
 			),
 
 		"security" = typecacheof(list(

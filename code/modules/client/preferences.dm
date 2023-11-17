@@ -248,7 +248,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
 	var/image/creature_image = null
-	var/creature_profilepic = null
+	var/creature_profilepic = ""
+	var/creature_pfphost = ""
+	var/creature_body_size = 1
+	var/creature_fuzzy = FALSE
 
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
@@ -357,6 +360,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
+	/// Upwards waddle amount. Side to side is always double this.
+	var/waddle_amount = 0
+	/// How fast the mob wobbles upwards.
+	var/up_waddle_time = 1
+	/// How fast the mob wobbles side to side.
+	var/side_waddle_time = 2
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -480,10 +489,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			//Right column
 			dat +="<td width='30%' valign='top'>"
-			dat += "<h2>Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Creature Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
@@ -575,9 +584,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
 			//Start Creature Character
-			dat += "<h2>Creature Character</h2>"
+			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
 			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			/*
+			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
+				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
+			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+			*/
 			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
 			if(length(creature_flavor_text) <= 40)
 				if(!length(creature_flavor_text))
@@ -732,7 +746,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 
+			//Waddling
+			dat += "<h3>Waddling</h3>"
+			dat += "<b>Waddle Amount:</b><a href='?_src_=prefs;preference=waddle_amount;task=input'>[waddle_amount]</a><br>"
+			if(waddle_amount > 0)
+				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
+				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
 			dat += "</td>"
+
+			//end column 5 or something
+			//start column 6
+
 			//Mutant stuff
 			var/mutant_category = 0
 			mutant_category++
@@ -3384,6 +3408,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_body_width)
 						new_body_width = clamp(new_body_width * 0.01, min, max)
 						features["body_width"] = new_body_width
+				
+				if("waddle_amount")
+					var/new_waddle_amount = input(user, "Choose how many pixels you want to move when walking(4 Recommended): ([WADDLE_MIN]-[WADDLE_MAX])", "Character Preference", waddle_amount) as num|null
+					if(isnum(new_waddle_amount))
+						new_waddle_amount = round(clamp(new_waddle_amount, WADDLE_MIN, WADDLE_MAX), 0.1)
+						waddle_amount = new_waddle_amount
+				
+				if("up_waddle_time")
+					var/new_up_waddle_time = input(user, "Choose how fast you want to move up & down while walking(1 Recommended): ([UP_WADDLE_MIN]-[UP_WADDLE_MAX])", "Character Preference", up_waddle_time) as num|null
+					if(isnum(new_up_waddle_time))
+						new_up_waddle_time = round(clamp(new_up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX), 0.1)
+						up_waddle_time = new_up_waddle_time
+				
+				if("side_waddle_time")
+					var/new_side_waddle_time = input(user, "Choose how fast you want to move side to side while walking(2 Recommended): ([SIDE_WADDLE_MIN]-[SIDE_WADDLE_MAX])", "Character Preference", side_waddle_time) as num|null
+					if(isnum(new_side_waddle_time))
+						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
+						side_waddle_time = new_side_waddle_time
+				
+				if("creature_body_size")
+					var/min = CONFIG_GET(number/body_size_min)
+					var/max = CONFIG_GET(number/body_size_max)
+					var/danger = CONFIG_GET(number/threshold_body_size_slowdown)
+					var/new_body_size = input(user, "Choose your desired sprite size: ([min*100]%-[max*100]%)\nWarning: This may make your character look distorted[danger > min ? "! Additionally, a proportional movement speed penalty may be applied to characters smaller than [danger*100]%." : "!"]", "Character Preference", creature_body_size*100) as num|null
+					if (new_body_size)
+						new_body_size = clamp(new_body_size * 0.01, min, max)
+						creature_body_size = new_body_size
+
+				if("creature_toggle_fuzzy")
+					creature_fuzzy = !creature_fuzzy
 
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues

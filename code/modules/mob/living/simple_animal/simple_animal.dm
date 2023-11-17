@@ -406,7 +406,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/list/dat = list()
 		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
-			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 		//Hands
 		for(var/obj/item/I in held_items)
 			if(!(I.item_flags & ABSTRACT))
@@ -431,7 +431,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
 				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
-		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+		//Personality and RP Preferences quirk display
+		dat += get_personality_traits(user)
+		//SPECIAL stats display
+		dat += "[print_special()]"
+		if(client && ((client.inactivity / 10) / 60 > 20)) //20 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
 			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
@@ -772,7 +776,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)
-		lying = 0
+		lying = FALSE
+		set_resting(FALSE, silent = TRUE, updating = TRUE)//get up, stand up, don't forget your rights
 		. = 1
 		setMovetype(initial(movement_type))
 

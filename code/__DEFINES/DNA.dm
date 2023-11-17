@@ -146,8 +146,12 @@
 #define ROBOTIC_LIMBS	27 //has robotic limbs that render like organic ones
 #define CAN_SCAR		28 // If this species can be scarred (fleshy)
 /// Used for determining which wounds are applicable to this species.
-#define HAS_FLESH	29 /// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
-#define HAS_BONE	30 /// if we have bones (can suffer bone wounds)
+#define HAS_FLESH		29 /// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
+#define HAS_BONE		30 /// if we have bones (can suffer bone wounds)
+/// skips limb icon tomfoolery and uses simple sprites
+#define FERAL			31
+/// Todo - make this actually do something. Intended for humans who won't ever have inhand icons due to their sprite having movement animations or something like that.
+#define NO_INHAND		32
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"

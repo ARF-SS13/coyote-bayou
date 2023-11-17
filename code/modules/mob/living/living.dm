@@ -1,4 +1,6 @@
 /mob/living/Initialize()
+	add_verb(src, /mob/living/verb/subtle)
+	add_verb(src, /mob/living/verb/subtler)
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,

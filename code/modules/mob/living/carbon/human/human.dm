@@ -22,8 +22,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	add_verb(src, /mob/living/proc/toggle_mob_sleep)
 	add_verb(src, /mob/living/proc/lay_down)
 	add_verb(src, /mob/living/carbon/human/verb/underwear_toggle)
-	add_verb(src, /mob/living/verb/subtle)
-	add_verb(src, /mob/living/verb/subtler)
 	//initialize limbs first
 	create_bodyparts()
 
@@ -340,8 +338,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	// Gremling is just gonna do gremlin things and add this here > w> Cant be assed trying to fit this in somewhere else for now.
 	if(href_list["enlargeImage"])
-		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
+		var/dat = {"<img src='[PfpHostLink(profilePicture, pfphost)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
 		popup.set_content(dat)
 		popup.open()
 

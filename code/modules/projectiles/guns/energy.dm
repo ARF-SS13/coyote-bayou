@@ -23,7 +23,7 @@
 	var/cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	var/modifystate = 0
 	/// = TRUE/FALSE decides if the user can switch to it of their own accord
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy = TRUE)
+	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
 	/// The index of the ammo_types/firemodes which we're using right now !! has NOTHING to do with the gun's actual firemode
 	var/current_firemode_index = 1
 	var/can_charge = 1 //Can it be charged in a recharger?

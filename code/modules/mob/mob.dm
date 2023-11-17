@@ -653,8 +653,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
-		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
+		var/dat = {"<img src='[PfpHostLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
 		popup.set_content(dat)
 		popup.open()
 
@@ -1801,7 +1801,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("React - Touch your hand to your bosom.")
 			to_chat(A, span_notice("[src] maybe just <span class='love'>put their hand to their chest, did someting about you cause that?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You reflexively put your hadn to your chest because [A] is just too much for you to handle.")
+			to_chat(user, "You reflexively put your hand to your chest because [A] is just too much for you to handle.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Leer - Arms akimbo.")

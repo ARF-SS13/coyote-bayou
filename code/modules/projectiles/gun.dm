@@ -560,7 +560,7 @@ ATTACHMENTS
 	clear_cooldown_mods()
 
 	if(is_kelpwand)
-		if(iscarbon(user))
+		if(isliving(user))
 			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
 				if(HAS_TRAIT(user, TRAIT_MARTIAL_A))
 					to_chat(user, span_danger("You don't know how to use magic wands!"))

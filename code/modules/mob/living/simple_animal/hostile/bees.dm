@@ -34,6 +34,7 @@
 	health = 10
 	spacewalk = TRUE
 	faction = list("hostile")
+	dodge_prob = 0
 	move_to_delay = 0
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE

@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(typinginit)
 	name = "Typing Indicator Init"
 	wait = 6000
 	runlevels = RUNLEVEL_INIT
+	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/typinginit/Initialize()
 	var/list/typingPaths = typesof(/datum/typing_sound)

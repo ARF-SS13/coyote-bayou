@@ -7,6 +7,8 @@
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
+	/// The default resting icon will always be "[icon_living]_rest" unless you set this variable, which will override it.
+	icon_resting
 	unsuitable_atmos_damage = 0
 	mob_armor = ARMOR_VALUE_MEDIUM
 	health = 200
@@ -62,7 +64,7 @@
 	var/icon/I = icon(icon)
 	var/icon_width = I.Width()
 	if(icon_width>32) //This proc only fixes sprites that are too wide.
-		var/matrix/M = matrix() //Use a fresh matrix so we start at 0,0
+		var/matrix/M = matrix(transform)
 		transform = M.Translate(-((icon_width-32)/2),0) //Adjust pixel offset left by half of their icon's width past 32
 		return TRUE
 	return FALSE
@@ -71,7 +73,10 @@
 	if(stat == DEAD)
 		icon_state = icon_dead
 	else if(stat != DEAD && !CHECK_MOBILITY(src, MOBILITY_STAND))//Not dead but can't move
-		icon_state = "[icon_living]_rest"
+		if(isnull(icon_resting) || icon_resting == "")
+			icon_state = "[icon_living]_rest"
+		else
+			icon_state = icon_resting
 	else
 		icon_state = icon_living
 
@@ -207,7 +212,7 @@
 	p_traits = list(P_TRAIT_RIDEABLE)
 	mob_size = MOB_SIZE_LARGE
 
-/mob/living/simple_animal/advanced/dragonair/shiny
+/mob/living/simple_animal/advanced/dragonairshiny
 	name = "shiny dragonair"
 	icon_state = "shinydragonair"
 	icon_living = "shinydragonair"

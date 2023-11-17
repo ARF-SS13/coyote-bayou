@@ -712,6 +712,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["creature_flavor_text"]		>> creature_flavor_text
 	S["creature_ooc"]				>> creature_ooc
 	S["creature_profilepic"]		>> creature_profilepic
+	S["creature_pfphost"]			>> creature_pfphost
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -838,10 +839,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["custom_pixel_x"]		>> custom_pixel_x
 	S["custom_pixel_y"]		>> custom_pixel_y
 
+	S["waddle_amount"]		>> waddle_amount
+	S["up_waddle_time"]		>> up_waddle_time
+	S["side_waddle_time"]	>> side_waddle_time
+
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVE FILE STUFF !!
 	S["profilePicture"] >> profilePicture // Profile picklies
+	S["pfphost"] 		>> pfphost
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
@@ -946,12 +952,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	custom_pixel_x	= sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	custom_pixel_y	= sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	
+	waddle_amount	= sanitize_num_clamp(waddle_amount, WADDLE_MIN, WADDLE_MAX, 0, 0.1)
+	up_waddle_time	= sanitize_num_clamp(up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX, 0, 0.1)
+	side_waddle_time = sanitize_num_clamp(side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX, 0, 0.1)
 
-	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
-	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
-	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
-	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
-	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	hair_color			= sanitize_hexcolor(hair_color, 6, FALSE)
+	facial_hair_color	= sanitize_hexcolor(facial_hair_color, 6, FALSE)
+	eye_type			= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
+	left_eye_color		= sanitize_hexcolor(left_eye_color, 6, FALSE)
+	right_eye_color		= sanitize_hexcolor(right_eye_color, 6, FALSE)
 	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
 	//whoflags = initial(whoflags) // comment out before release
 
@@ -1126,8 +1136,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_list["5"] = sanitize_text(scars_list["5"])
 
 	// !! COYOTE SANITISATION !!
-	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	profilePicture 		= sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	pfphost 			= sanitize_inlist(pfphost, GLOB.pfp_filehosts, "")
 	creature_profilepic = sanitize_text(creature_profilepic)
+	creature_pfphost 	= sanitize_inlist(creature_pfphost, GLOB.pfp_filehosts, "")
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
@@ -1313,8 +1325,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
+	
 	WRITE_FILE(S["custom_pixel_x"], custom_pixel_x)
 	WRITE_FILE(S["custom_pixel_y"], custom_pixel_y)
+
+	WRITE_FILE(S["waddle_amount"], waddle_amount)
+	WRITE_FILE(S["up_waddle_time"], up_waddle_time)
+	WRITE_FILE(S["side_waddle_time"], side_waddle_time)
 
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
@@ -1360,7 +1377,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["creature_name"]				,creature_name)
 	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
 	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
-	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
+
 
 	//Quirks
 	WRITE_FILE(S["char_quirks"]			, char_quirks)
@@ -1385,7 +1402,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVEFILE STUFF !!
-	WRITE_FILE(S["profilePicture"],	profilePicture)
+	WRITE_FILE(S["profilePicture"],				profilePicture)
+	WRITE_FILE(S["pfphost"],					pfphost)
+
+	WRITE_FILE(S["creature_profilepic"],		creature_profilepic)
+	WRITE_FILE(S["creature_pfphost"],			creature_pfphost)
 
 	WRITE_FILE(S["gradient_color"]			, features_override["grad_color"])
 	WRITE_FILE(S["gradient_style"]			, features_override["grad_style"])

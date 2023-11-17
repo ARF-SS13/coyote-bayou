@@ -134,6 +134,63 @@
 	name = "desert scarf"
 	path = /obj/item/clothing/neck/scarf/cptpatriot
 
+/datum/gear/neck/scarf/laika
+	name = "Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika
+	cost = 2 // because it has a holster in it
+
+/datum/gear/neck/scarf/laika/redder
+	name = "Blood Red Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/redder
+
+/datum/gear/neck/scarf/laika/blue
+	name = "Blue Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/blue
+
+/datum/gear/neck/scarf/laika/bluer
+	name = "Vibrant Blue Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/bluer
+
+/datum/gear/neck/scarf/laika/cyan
+	name = "Cyan Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/cyan
+
+/datum/gear/neck/scarf/laika/tan
+	name = "Tactical Coyote Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/tan
+
+/datum/gear/neck/scarf/laika/brown
+	name = "Brown Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/brown
+
+/datum/gear/neck/scarf/laika/yellow
+	name = "Yellow Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/yellow
+
+/datum/gear/neck/scarf/laika/olive
+	name = "Tactical OD Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/olive
+
+/datum/gear/neck/scarf/laika/white
+	name = "White Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/white
+
+/datum/gear/neck/scarf/laika/black
+	name = "Black Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/black
+
+/datum/gear/neck/scarf/laika/tricolor
+	name = "Tricolor Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/tricolor
+
+/datum/gear/neck/scarf/laika/starspangledbanner
+	name = "Star Spangled Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/starspangledbanner
+
+/datum/gear/neck/scarf/laika/striped
+	name = "Striped Scarf-Cape + Holster"
+	path = /obj/item/clothing/neck/laika/striped
+
 /datum/gear/neck/medolier
 	name = "medolier"
 	path = /obj/item/storage/belt/medolier

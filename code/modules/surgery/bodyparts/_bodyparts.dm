@@ -411,6 +411,9 @@
 		damage *= 1.5
 	if((woundtype in PAPER_SKIN_WOUNDS) && HAS_TRAIT(owner, TRAIT_PAPER_SKIN))
 		damage *= 1.5
+// Coyote Boyou replacement for glass bones & paper skin quirks.
+	if(HAS_TRAIT(owner, TRAIT_EASILY_WOUNDED))
+		damage *= 1.25
 
 	var/base_roll = rand(
 		min(damage * WOUND_DAMAGE_RANDOM_FLOOR_MULT, WOUND_MAX_CONSIDERED_DAMAGE),
@@ -773,6 +776,9 @@
 
 	else if(animal_origin == MONKEY_BODYPART) //currently monkeys are the only non human mob to have damage overlays.
 		dmg_overlay_type = animal_origin
+
+	if(source?.IsFeral() || owner?.IsFeral())
+		dmg_overlay_type = null
 
 	if(status == BODYPART_ROBOTIC)
 		dmg_overlay_type = "robotic"

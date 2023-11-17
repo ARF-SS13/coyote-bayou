@@ -351,6 +351,10 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 GLOBAL_LIST_INIT(hex_muted, list("0","1","2","3"))
 GLOBAL_LIST_INIT(hex_muted2, list("2","3"))
 GLOBAL_LIST_INIT(hex_muted3, list("0","2"))
+/// Random hex digit between 6 and 9
+GLOBAL_LIST_INIT(hex_6to9, list("6","7","8","9"))
+/// Random hex digit from 6 to c
+GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 /proc/random_string(length, list/characters)
 	. = ""
 	for(var/i=1, i<=length, i++)

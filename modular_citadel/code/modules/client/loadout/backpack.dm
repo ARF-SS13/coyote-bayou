@@ -205,6 +205,7 @@
 /datum/gear/backpack/coinpouch
 	name = "coin pouch"
 	path = /obj/item/storage/wallet/stash/pouch
+	cost = 1
 
 /datum/gear/backpack/backpack/snailshell
 	name = "snail shell"
@@ -676,22 +677,24 @@
 	name = "Faded ID card"
 	path = /obj/item/card/id/rusted/fadedvaultid
 	cost = 0
-/* Since everyone starts with one
+
+/*Since everyone starts with one
 /datum/gear/backpack/pipboy
 	name = "Pipboy"
 	path = /obj/item/pda
 	cost = 2
-
-/datum/gear/backpack/id
-	name = "Reprogramable ID"
-	path =  /obj/item/card/id/selfassign
-	cost = 1
 
 /datum/gear/backpack/headset
 	name = "headset"
 	path = /obj/item/radio/headset
 	cost = 1
 */
+
+/datum/gear/backpack/id
+	name = "Reprogramable ID"
+	path =  /obj/item/card/id/selfassign
+	cost = 1
+
 /datum/gear/backpack/twocolorcollar
 	name = "Two Color Lockable Leather Collar"
 	path = /obj/item/clothing/neck/petcollar/choker
