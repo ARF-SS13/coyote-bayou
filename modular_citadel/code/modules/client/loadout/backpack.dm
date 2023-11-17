@@ -205,6 +205,7 @@
 /datum/gear/backpack/coinpouch
 	name = "coin pouch"
 	path = /obj/item/storage/wallet/stash/pouch
+	cost = 1
 
 /datum/gear/backpack/backpack/snailshell
 	name = "snail shell"
