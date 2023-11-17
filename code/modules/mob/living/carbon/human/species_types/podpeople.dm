@@ -18,9 +18,7 @@
 	var/light_oxyheal = -1
 	var/light_burnheal = -1
 	var/light_bruteheal = -1
-
 	species_type = "plant"
-
 	allowed_limb_ids = list("pod","mush")
 
 /datum/species/pod/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -74,6 +72,6 @@
 	light_bruteheal = -0.2
 	light_burnheal = -0.2
 	light_toxheal = -0.7
-
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
+	roundstart = TRUE
