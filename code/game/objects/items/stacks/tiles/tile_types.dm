@@ -613,6 +613,6 @@
 /obj/item/stack/tile/blackmarble/thirty
 	amount = 30
 
-/obj/item/stack/tile/blackmarblee/fifty
+/obj/item/stack/tile/blackmarble/fifty
 	amount = 50
 
