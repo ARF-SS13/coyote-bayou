@@ -1021,3 +1021,37 @@
 	user_lust_mult = 1.2 // set this to how much lust should be given
 	target_lust_mult = 1.2
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Ride Cock 6A23///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/ride_cock
+	description = "Partner/Crotch - Ride their cock."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {slowly, carefully, lovingly} {rolls, undulates, moves} XU_THEIR {hips, hindquarters, haunches, loins, posterior, rear} in {small, tight, controlled, easy} {circles, rotations, orbits, gyrations} on XT_NAME's {shaft, rocket, dick, dipstick, cock, rod}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, teasingly, eagerly, needily} {rolls, undulates, moves} XU_THEIR {hips, hindquarters, haunches, loins, posterior, rear} in {smart, calculated, joyous little} {circles, rotations, orbits, gyrations} on XT_NAME's {shaft, rocket, dick, dipstick, cock, rod}.",
+	)
+	grab_messages = list(
+		"XU_NAME {rolls, undulates, moves} XU_THEIR {hips, hindquarters, haunches, loins, posterior, rear} in {comfortable, pleasant, regular} {circles, rotations, orbits, gyrations} on XT_NAME's {shaft, rocket, dick, dipstick, cock, rod} {like they need it, like they own it, like they're riding a bull, aggressively}.",
+	)
+	harm_messages = list(
+		"XU_NAME {rolls, undulates, moves} XU_THEIR {hips, hindquarters, haunches, loins, posterior, rear} in {full, sloppy, noisy, grinding} {circles, rotations, orbits, gyrations} on XT_NAME's {shaft, rocket, dick, dipstick, cock, rod}.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.8 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
