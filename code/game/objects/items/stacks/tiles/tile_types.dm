@@ -575,3 +575,19 @@
 	turf_type = /turf/open/floor/bronze
 	custom_materials = list(/datum/material/bronze = 250)
 	merge_type = /obj/item/stack/tile/bronze
+
+/obj/item/stack/tile/whitemarble
+	name = "white marble floor tile"
+	singular_name = "white marble floor tile"
+	desc = "An easy to fit marble floor tile."
+	icon_state = "tile_wmarble"
+	turf_type = /turf/open/floor/plasteel/f13/whitemarble
+	merge_type = /obj/item/stack/tile/whitemarble
+
+/obj/item/stack/tile/blackmarble
+	name = "black marble floor tile"
+	singular_name = "black marble floor tile"
+	desc = "An easy to fit black floor tile."
+	icon_state = "tile_bmarble"
+	turf_type = /turf/open/floor/plasteel/f13/darkmarble
+	merge_type = /obj/item/stack/tile/blackmarble

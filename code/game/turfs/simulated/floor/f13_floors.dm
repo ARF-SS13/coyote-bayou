@@ -681,3 +681,11 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/circuit/f13_red/off
 	icon_state = "rcircuitoff1"
 	on = FALSE
+
+/turf/open/floor/plasteel/f13/whitemarble
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "lightmarble"
+
+/turf/open/floor/plasteel/f13/darkmarble
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "darkmarble"
