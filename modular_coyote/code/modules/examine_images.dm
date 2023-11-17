@@ -114,21 +114,28 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 	if(!client)
 		return
 
-	var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png. Preferred image size: 500x500 or smaller.", i_will_sanitize_dont_worry = TRUE)
-	if(length(input))
-		if(!SanitizePfpLink(input))
-			to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
-			return
-
-		profilePicture = StorePfpLink(input)
-		client.prefs.profilePicture = profilePicture
-		client.prefs.save_character()
-	else
-		if(profilePicture)
-			var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
-			if(deletePicture == "Yes")
-				RemoveProfilePic()
-
+	var/maybedeleteme = FALSE
+	var/host_select = input(usr, "Select your image hosting site:", "PFP Image Host", pfphost != "" ? pfphost : GLOB.pfp_filehosts[1]) as null|anything in GLOB.pfp_filehosts
+	if(!isnull(host_select) && (host_select in GLOB.pfp_filehosts))//You didn't press cancel
+		pfphost = host_select
+	else//you pressed Cancel
+		maybedeleteme = TRUE
+	if(pfphost && pfphost != "")
+		var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+		if(input && pfphost != "" && !isnull(pfphost))
+			if(SanitizePfpLink(input, pfphost))
+				profilePicture = StorePfpLink(input, host_select)
+				client.prefs.profilePicture = profilePicture
+				client.prefs.pfphost = host_select
+				client.prefs.save_character()
+			else
+				to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
+		else
+			maybedeleteme = TRUE
+	if(maybedeleteme)
+		var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
+		if(deletePicture == "Yes")
+			RemoveProfilePic()
 
 /mob/living/carbon/human/proc/RemoveProfilePic()
 	profilePicture = ""
@@ -192,7 +199,6 @@ GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
 					if(!isnull(host_select) && (host_select in GLOB.pfp_filehosts))//You didn't press cancel
 						pfphost = host_select
 					else//you pressed Cancel
-						pfphost = ""
 						maybedeleteme = TRUE
 					if(pfphost && pfphost != "")
 						var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
