@@ -689,3 +689,7 @@ turf/open/floor/plasteel/f13/tile/broken
 /turf/open/floor/plasteel/f13/darkmarble
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "darkmarble"
+
+/turf/open/floor/plasteel/f13/pizza //Why? Well, why do we do anything
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "pizza"
