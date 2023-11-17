@@ -239,6 +239,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		dickpoints = min(dickpoints + 11, 33)
 		out["UserProstheticObjs"] += list(limbdat)
 	out["UserQuirkPoints"] -= dickpoints
+	SanitizeUserQuirks(out["UserQuirksConflictingKeys"])
 	return out
 
 /// Returns the player's quirk balance

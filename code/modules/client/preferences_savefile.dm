@@ -41,7 +41,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
-	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
+	needs_updating = current_version ^ PREFERENCES_MASTER_CHANGELOG
 	if(LAZYLEN(needs_updating))
 		update_file(needs_updating, S)
 
@@ -203,6 +203,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				S["feature_genital_whitelist"] >> genital_whitelist
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
+				S["faved_interactions"] >> faved_interactions
+				faved_interactions = list()
+				WRITE_FILE(S["faved_interactions"], faved_interactions)
+				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -873,6 +879,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["allow_being_prey"]					>> allow_being_prey
 	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
 	S["allow_being_sniffed"]				>> allow_being_sniffed
+	S["allow_trash_messages"]				>> allow_trash_messages
 	if (S["belly_prefs"])
 		belly_prefs = safe_json_decode(S["belly_prefs"])
 	else
@@ -897,12 +904,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	S["permanent_tattoos"]		>> permanent_tattoos
 
+	//Permanent Tattoos
+	faved_interactions = safe_json_decode(S["faved_interactions"])
+
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions		= sanitize_islist(faved_interactions, list())
 
 	//Sanitize
 
@@ -1089,6 +1100,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	allow_being_prey				= sanitize_integer(allow_being_prey, 				FALSE, TRUE, initial(allow_being_prey))
 	allow_seeing_belly_descriptions	= sanitize_integer(allow_seeing_belly_descriptions, FALSE, TRUE, initial(allow_seeing_belly_descriptions))
 	allow_being_sniffed				= sanitize_integer(allow_being_sniffed, 			FALSE, TRUE, initial(allow_being_sniffed))
+	allow_trash_messages			= sanitize_integer(allow_trash_messages, 			FALSE, TRUE, initial(allow_trash_messages))
 
 	//load every advanced coloring mode thing in one go
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK
@@ -1426,7 +1438,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["allow_being_sniffed"]				, allow_being_sniffed)
 	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
-
+	WRITE_FILE(S["allow_trash_messages"]			, safe_json_encode(allow_trash_messages))
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
@@ -1440,6 +1452,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
+
+	//permanent tattoos
+	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
 
 	return 1
 

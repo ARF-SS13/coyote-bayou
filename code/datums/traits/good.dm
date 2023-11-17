@@ -768,7 +768,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/nukalover
 	name = "Cola Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Cosmic Cola heals you, sort of."
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healtheir alternatives. Cosmic Cola heals you, sort of."
 	value = 14
 	category = "Food Quirks"
 	mechanics = "You heal slowly when intaking Cosmic Cola."

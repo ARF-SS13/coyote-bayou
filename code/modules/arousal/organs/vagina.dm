@@ -24,6 +24,17 @@
 	hide_flag = HIDE_VAG // for hideflag stuff
 	pornhud_slot = PHUD_VAG
 
+/obj/item/organ/genital/vagina/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "pussy"
+	out["BitName"] = "A [lowertext(shape)] vagina."
+	out["BitSize"] = "It is 1.05 Vix in volume!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %[fluid_efficiency] capacity."
+	out["BitEmoji"] = "🌵"
+	return out
+
 /obj/item/organ/genital/vagina/update_appearance()
 	. = ..()
 	icon_state = "vagina"

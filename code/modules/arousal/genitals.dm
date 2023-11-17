@@ -40,6 +40,9 @@
 	linked_organ = null
 	. = ..()
 
+/obj/item/organ/genital/proc/format_for_tgui()
+	return
+
 /obj/item/organ/genital/proc/update_size()
 	return
 

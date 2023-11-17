@@ -1022,7 +1022,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_WEAR_MASK)
+	var/obj/item/clothing/mask = H.get_item_by_slot(SLOT_MASK)
 	if(istype(mask))
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "masked_mook_incomplete")
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "masked_mook", /datum/mood_event/masked_mook)
@@ -1035,7 +1035,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas = new(get_turf(quirk_holder))
-	H.equip_to_slot(gas, SLOT_WEAR_MASK)
+	H.equip_to_slot(gas, SLOT_MASK)
 	H.regenerate_icons()*/
 
 /datum/quirk/easily_wounded

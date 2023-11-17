@@ -167,7 +167,7 @@
 			Hydro.recent_bee_visit = FALSE
 
 	var/growth = health //Health also means how many bees are in the swarm, roughly.
-	//better healthier plants!
+	//better healtheir plants!
 	Hydro.adjustHealth(growth*0.5)
 	if(prob(BEE_POLLINATE_PEST_CHANCE))
 		Hydro.adjustPests(-10)

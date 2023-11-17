@@ -22,6 +22,7 @@ SUBSYSTEM_DEF(tgui)
 	var/list/open_uis_by_src = list()
 	/// The HTML base used for all UIs.
 	var/basehtml
+	
 
 /datum/controller/subsystem/tgui/PreInit()
 	basehtml = file2text('tgui/public/tgui.html')

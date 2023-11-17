@@ -96,6 +96,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/be_random_body = 0				//whether we'll have a random body every round
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	//Sandstorm CHANGES BEGIN
+	var/erppref = "Ask"
+	var/nonconpref = "Ask"
+	var/vorepref = "Ask"
+	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/see_chat_emotes = TRUE
+	var/view_pixelshift = FALSE
+	var/enable_personal_chat_color = FALSE
+	var/personal_chat_color = "#ffffff"
+	var/list/alt_titles_preferences = list()
+	var/lust_tolerance = 100
+	var/sexual_potency = 15
+	var/unholypref = "No" //Goin 2 hell fo dis one
+	// cum
+	var/list/faved_interactions = list() // list of stringed type paths
+	var/list/saved_plappers = list() // to do: this
+	//Sandstorm CHANGES END
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
