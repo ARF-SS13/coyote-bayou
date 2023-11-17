@@ -584,6 +584,18 @@
 	turf_type = /turf/open/floor/plasteel/f13/whitemarble
 	merge_type = /obj/item/stack/tile/whitemarble
 
+/obj/item/stack/tile/whitemarble/ten
+	amount = 10
+
+/obj/item/stack/tile/whitemarble/twenty
+	amount = 20
+
+/obj/item/stack/tile/whitemarble/thirty
+	amount = 30
+
+/obj/item/stack/tile/whitemarble/fifty
+	amount = 50
+
 /obj/item/stack/tile/blackmarble
 	name = "black marble floor tile"
 	singular_name = "black marble floor tile"
@@ -591,3 +603,16 @@
 	icon_state = "tile_bmarble"
 	turf_type = /turf/open/floor/plasteel/f13/darkmarble
 	merge_type = /obj/item/stack/tile/blackmarble
+
+/obj/item/stack/tile/blackmarble/ten
+	amount = 10
+
+/obj/item/stack/tile/blackmarble/twenty
+	amount = 20
+
+/obj/item/stack/tile/blackmarble/thirty
+	amount = 30
+
+/obj/item/stack/tile/blackmarblee/fifty
+	amount = 50
+
