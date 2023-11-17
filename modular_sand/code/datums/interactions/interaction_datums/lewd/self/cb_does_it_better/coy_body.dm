@@ -96,7 +96,12 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'sound/effects/lick.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.3
 	lust_go_to = LUST_USER | LUST_TARGET

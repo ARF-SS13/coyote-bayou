@@ -630,7 +630,7 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
 		'modular_coyote/sound/lewd/sexslide5.wav',
 		'modular_coyote/sound/lewd/sexslide7.wav',
 		'modular_coyote/sound/lewd/sexslide8.wav',

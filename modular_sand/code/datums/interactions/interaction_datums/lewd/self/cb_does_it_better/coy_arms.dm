@@ -97,7 +97,7 @@
 	)
 
 	simple_sounds = list(
-		'modular_sand/sound/interactions/champ_fingering.ogg'
+		'modular_sand/sound/interactions/champ_fingering.ogg',
 	) // frumf, frumf
 	user_lust_mult = 0.8
 	target_lust_mult = 1.2
@@ -187,6 +187,11 @@
 		'modular_sand/sound/interactions/bj7.ogg',
 		'modular_sand/sound/interactions/bj8.ogg',
 		'modular_sand/sound/interactions/bj9.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.3
 	lust_go_to = LUST_USER | LUST_TARGET
