@@ -315,15 +315,15 @@ datum/interaction/lewd/self/autofellate
 	max_distance = 0
 
 	help_messages = list(
-		"XU_NAME drags XU_THEY tongue across the head of XU_THEY own endowment.",
+		"XU_NAME drags XU_THEIR tongue across the head of XU_THEIR own endowment.",
 	)
 	disarm_messages = list(
-		"XU_NAME fills XU_THEY cheek out with the shape of XU_THEY own cock.",
+		"XU_NAME fills XU_THEIR cheek out with the shape of XU_THEIR own cock.",
 	)
 	grab_messages = list(
-		"XU_NAME noisily, messily bobs up and down XU_THEY own length",
+		"XU_NAME noisily, messily bobs up and down XU_THEIR own length",
 	)
 	harm_messages = list(
-		"XU_NAME gags themselves as XU_THEY deepthroats XU_THEY own cock",
+		"XU_NAME gags themselves as XU_THEIR deepthroats XU_THEIR own cock",
 	)
 	user_lust_mult = 0.8
