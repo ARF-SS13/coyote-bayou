@@ -924,3 +924,34 @@
 	name = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/testbullet
 	damage_multiplier = 30
+
+/* * * * * * * * * * *
+ * FR-12.7 Hebe
+ * +.50MG
+ * +/-Loadout item
+ * -Low mag size
+ * -Slow to fire
+ * -User isn't a boltworker (cheater) 
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/hebe
+	name = "FR-12.7 Hebe"
+	desc = "An anti-material rifle with a high efficiency muzzle break and a Stellite lined barrel. Despite the apparent lack of scope and scope mount, it features a robust adjustable stock for maximum accuracy. Lacks barrel threading."
+	icon = 'modular_coyote/icons/objects/guns/amr.dmi'
+	icon_state = "amr"
+	item_state = "amr"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hebe
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HMG_RECOIL(3, 3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	casing_ejector = FALSE
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_flashlight = TRUE
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
