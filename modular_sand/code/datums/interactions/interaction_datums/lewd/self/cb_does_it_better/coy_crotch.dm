@@ -90,7 +90,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.5 // set this to how much lust should be given
 	lust_go_to = LUST_USER // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
@@ -118,7 +126,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 1.2
@@ -147,7 +163,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 1.2
@@ -176,7 +200,18 @@
 	)
 
 	simple_sounds = list(
-		"sound/weapons/slap.ogg"
+		"sound/weapons/slap.ogg",
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -205,7 +240,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -234,7 +277,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -264,7 +315,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -293,7 +352,15 @@
 
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
-		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.6 // set this to how much lust should be given
 	target_lust_mult = 0.6
@@ -323,7 +390,18 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang1.ogg',
 		'modular_sand/sound/interactions/bang2.ogg',
-		'modular_sand/sound/interactions/bang3.ogg'
+		'modular_sand/sound/interactions/bang3.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -353,7 +431,18 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang1.ogg',
 		'modular_sand/sound/interactions/bang2.ogg',
-		'modular_sand/sound/interactions/bang3.ogg'
+		'modular_sand/sound/interactions/bang3.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -382,7 +471,18 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang1.ogg',
 		'modular_sand/sound/interactions/bang2.ogg',
-		'modular_sand/sound/interactions/bang3.ogg'
+		'modular_sand/sound/interactions/bang3.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -410,7 +510,18 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang1.ogg',
 		'modular_sand/sound/interactions/bang2.ogg',
-		'modular_sand/sound/interactions/bang3.ogg'
+		'modular_sand/sound/interactions/bang3.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.0 // set this to how much lust should be given
 	target_lust_mult = 1.0
@@ -440,6 +551,17 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang5.ogg',
 		'modular_sand/sound/interactions/bang6.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.8
 	target_lust_mult = 0.4
@@ -469,6 +591,18 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/bang5.ogg',
 		'modular_sand/sound/interactions/bang6.ogg',
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
+		
 	) // frumf, frumf
 	user_lust_mult = 0.4
 	target_lust_mult = 0.8
@@ -497,6 +631,14 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
 		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -525,6 +667,14 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
 		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -551,7 +701,14 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2
 	target_lust_mult = 0.8
@@ -580,6 +737,14 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
 		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
@@ -608,6 +773,14 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
 		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
@@ -636,6 +809,14 @@
 	simple_sounds = list(
 		'modular_sand/sound/interactions/champ_fingering.ogg',
 		'modular_sand/sound/interactions/champ2.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 1.1
 	target_lust_mult = 1.1
@@ -661,7 +842,14 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -688,7 +876,14 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -715,7 +910,14 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2 // set this to how much lust should be given
 	target_lust_mult = 0.8
@@ -743,10 +945,79 @@
 	)
 
 	simple_sounds = list(
-		'sound/effects/lick.ogg'
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
 	) // frumf, frumf
 	user_lust_mult = 0.2 // set this to how much lust should be given
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 
 
+///////////////////////
+//	Squeeze Pussy 6A24///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/squeezepuss
+	description = "Partner/Crotch - Squeeze your pussy around something."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, warmly} {squeezes, hugs, smushes, clenches} their {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	disarm_messages = list(
+		"XU_NAME {teasingly, playfully, happily} {squeezes, hugs, smushes, clenches} their {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	grab_messages = list(
+		"XU_NAME {fimrly, possessively, needily} {squeezes, hugs, smushes, clenches} their {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	harm_messages = list(
+		"XU_NAME uses their {pussy, snatch, love hole, love tunnel, cunt} to hold whatever XT_THEM's got inside of them {tightly, wetly, warmly}.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 1.2 // set this to how much lust should be given
+	target_lust_mult = 1.2
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+
+///////////////////////
+//	Cookie Capture 6A25///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/cookiecapture
+	description = "Partner/Crotch - Capture their knot in your cookie."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, warmly} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	disarm_messages = list(
+		"XU_NAME {teasingly, playfully, happily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	grab_messages = list(
+		"XU_NAME {fimrly, possessively, needily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+	)
+	harm_messages = list(
+		"XU_NAME uses their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} to hold whatever XT_THEM's got inside of them {tightly, wetly, warmly}.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 1.2 // set this to how much lust should be given
+	target_lust_mult = 1.2
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
