@@ -60,7 +60,7 @@
 ///////PULL TAIL END/////////
 
 ////////////////////
-//bites Tail 9A2/////
+//bites Tail 9A3/////
 ////////////////////
 /datum/interaction/lewd/partner/giving/bite_tail
 	description = "Partner/Tail - Bite their tail."
