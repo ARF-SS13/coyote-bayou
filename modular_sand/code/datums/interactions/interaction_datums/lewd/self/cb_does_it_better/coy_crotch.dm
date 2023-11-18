@@ -1055,3 +1055,41 @@
 	user_lust_mult = 0.8 // set this to how much lust should be given
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Spank Ass 6A24///
+////////////////////
+/datum/interaction/lewd/partner/giving/butt_drum
+	description = "Partner/Crotch - Drum their ass."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, gently, warmly} {drums, bongos, baps} a beat out on XT_NAME's {donk, butt, booty, rump, ass, backside}, making it {quake, jiggle, bounce, shake}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, teasingly, jokingly} {drums, bongos, baps} a beat out on XT_NAME's {donk, butt, booty, rump, ass, backside}, making it {quake, jiggle, bounce, shake}.",
+	)
+	grab_messages = list(
+		"XU_NAME {drums, bongos, baps} a beat out on XT_NAME's {donk, butt, booty, rump, ass, backside} {firmly, possessively, punishingly}, making it {quake, jiggle, bounce, shake}.",
+	)
+	harm_messages = list(
+		"XU_NAME {drums, bongos, baps} a beat out on XT_NAME's {donk, butt, booty, rump, ass, backside}, making it {quake, jiggle, bounce, shake} with each {strike, hit, smack, spank, whap}.",
+	)
+
+	simple_sounds = list(
+		"sound/weapons/slap.ogg",
+		'modular_coyote/sound/lewd/SexSlap13.wav',
+		'modular_coyote/sound/lewd/SexSlap14.wav',
+		'modular_coyote/sound/lewd/SexSlap18.wav',
+		'modular_coyote/sound/lewd/SexSlap19.wav',
+		'modular_coyote/sound/lewd/SexSlap20.wav',
+		'modular_coyote/sound/lewd/SexSlap21.wav',
+		'modular_coyote/sound/lewd/SexSlap22.wav',
+		'modular_coyote/sound/lewd/SexSlap23.wav',
+		'modular_coyote/sound/lewd/SexSlap26.wav',
+		'modular_coyote/sound/lewd/SexSlap27.wav',
+		'modular_coyote/sound/lewd/SexSlap34.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
