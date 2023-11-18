@@ -247,3 +247,7 @@ SUBSYSTEM_DEF(typinginit)
 /datum/typing_sound/wolfhowl
 	name = "Wolf Howl"
 	soundFile = 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
+
+/datum/typing_sound/xenohiss
+	name = "Xeno Hiss"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/xeno1.ogg'
