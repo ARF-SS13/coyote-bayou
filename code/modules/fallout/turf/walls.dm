@@ -1,14 +1,11 @@
 //Fallout 13 general destructible walls directory
-
 /turf/closed/wall/f13/
 	name = "glitch"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation.</font>"
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
-
 /turf/closed/wall/f13/ReplaceWithLattice()
 	ChangeTurf(baseturfs)
-
 /turf/closed/wall/f13/ruins
 	name = "ruins"
 	desc = "All what has left from the good old days."  //What is this fucking english? ~TK
@@ -24,8 +21,6 @@
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
 	unbreakable = 0
-
-
 /turf/closed/wall/f13/wood
 	name = "wooden wall"
 	desc = "A traditional wooden wall."
@@ -41,58 +36,6 @@
 	girder_type = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
 
-/turf/closed/wall/f13/wood/house
-	name = "house wall"
-	desc = "A weathered pre-War house wall."
-	icon = 'icons/fallout/turfs/walls/house.dmi'
-	icon_state = "house0"
-	icon_type_smooth = "house"
-	hardness = 50
-	var/broken = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
-
-/turf/closed/wall/f13/wood/house/broken
-	broken = 1
-	damage = 21
-	icon_state = "house0-broken"
-
-/turf/closed/wall/f13/wood/house/broken/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/stack/sheet/mineral/wood))
-		var/obj/item/stack/sheet/mineral/wood/I = W
-		if(I.amount < 2)
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, span_warning("You must stand still to fix the wall!"))
-			return
-		W.use(2)
-		ChangeTurf(/turf/closed/wall/f13/wood/house)
-	. = ..()
-
-
-/turf/closed/wall/f13/wood/house/take_damage(dam)
-	if(damage + dam > hardness/2)
-		broken = 1
-	..()
-
-/turf/closed/wall/f13/wood/house/relative()
-	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
-
-/turf/closed/wall/f13/wood/house/update_icon()
-	if(broken)
-		set_opacity(0)
-	..()
-
-turf/closed/wall/f13/wood/house/update_damage_overlay()
-	if(broken)
-		return
-	..()
-
-/turf/closed/wall/f13/wood/house/clean
-	icon_state = "house0-clean"
-
-/turf/closed/wall/f13/wood/house/clean/relative()
-	icon_state = "[icon_type_smooth][junction]-clean"
-
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
@@ -102,7 +45,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	hardness = 10
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
-
 /turf/closed/wall/f13/store
 	name = "store wall"
 	desc = "A pre-War store wall made of solid concrete."
@@ -116,7 +58,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
-
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
 	desc = "The walls of a portable tent."
@@ -131,7 +72,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
-
 /turf/closed/wall/f13/scrap
 	name = "scrap wall"
 	desc = "A wall held together by corrugated metal and prayers."
@@ -143,29 +83,24 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
 /turf/closed/wall/f13/scrap/red
 	icon = 'icons/fallout/turfs/walls/scrap_red.dmi'
 	icon_state = "scrapr0"
 	icon_type_smooth = "scrapr"
-
 /turf/closed/wall/f13/scrap/blue
 	icon = 'icons/fallout/turfs/walls/scrap_blue.dmi'
 	icon_state = "scrapb0"
 	icon_type_smooth = "scrapb"
-
 /turf/closed/wall/f13/scrap/white
 	icon = 'icons/fallout/turfs/walls/scrap_white.dmi'
 	icon_state = "scrapw0"
 	icon_type_smooth = "scrapw"
-
 /turf/closed/wall/f13/scrap/junk
 	name = "junk wall"
 	desc = "More a pile of debris and rust than a wall, but it'll hold for now."
 	icon = 'icons/fallout/turfs/walls/scrap_rough.dmi'
 	icon_state = "scrapro0"
 	icon_type_smooth = "scrapro"
-
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
 	desc = "A pre-War supermart wall made of reinforced concrete."
@@ -180,7 +115,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
-
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
 	desc = "A sturdy metal wall with various pipes and wiring set inside a special groove."
@@ -193,7 +127,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tunnel, /turf/closed/wall)
-
 /turf/closed/wall/f13/vault
 	name = "vault wall"
 	desc = "A sturdy and cold metal wall."
@@ -204,13 +137,11 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	explosion_block = 5
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
-
 /turf/closed/wall/r_wall/f13
 	name = "glitch"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation.</font>"
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
-
 /turf/closed/wall/r_wall/f13/vault
 	name = "vault reinforced wall"
 	desc = "A wall built to withstand an atomic explosion."
@@ -221,9 +152,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	explosion_block = 5
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
-
 //Sunset custom walls
-
 /turf/closed/wall/f13/sunset/brick_small
 	name = "brick wall"
 	desc = "A wall made out of solid brick."
@@ -235,7 +164,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
 /turf/closed/wall/f13/sunset/brick_small_dark
 	name = "brick wall"
 	desc = "A wall made out of solid brick."
@@ -247,7 +175,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
 /turf/closed/wall/f13/sunset/brick_small_light
 	name = "brick wall"
 	desc = "A wall made out of solid brick."
@@ -259,27 +186,22 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
 //Fallout 13 indestructible walls
-
 /turf/closed/indestructible/f13
 	name = "glitch"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation.</font>"
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
-
 /turf/closed/indestructible/f13/subway
 	name = "tunnel wall"
 	desc = "This wall is made of reinforced concrete.<br>Pre-War engineers knew how to build reliable things."
 	icon = 'icons/fallout/turfs/walls/subway.dmi'
 	icon_state = "subwaytop"
-
 /turf/closed/indestructible/f13/matrix //The Chosen One from Arroyo!
 	name = "matrix"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
 	icon_state = "matrix"
 	var/in_use = FALSE
-
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
 	if(!isliving(user) || user.incapacitated() || !isliving(dropping))
@@ -332,24 +254,19 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	else
 		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
 	departing_mob.despawn()
-
-
 /turf/closed/indestructible/f13/obsidian //Just like that one game studio that worked on the original game, or that block in Minecraft!
 	name = "obsidian"
 	desc = "No matter what you do with this rock, there's not even a scratch left on its surface.<br><font color='#7e0707'>You shall not pass!!!</font>"
 	icon = 'icons/fallout/turfs/mining.dmi'
 	icon_state = "rock1"
-
 /turf/closed/indestructible/f13/obsidian/New()
 	..()
 	icon_state = "rock[rand(1,6)]"
-
 //Splashscreen
 /*
 /turf/closed/indestructible/f13/splashscreen
 	var/tickerPeriod = 300 //in deciseconds
 	var/go/fullDark
-
 turf/closed/indestructible/f13/splashscreen/New()
 	.=..()
 	name = "Fallout 13"
@@ -367,17 +284,14 @@ turf/closed/indestructible/f13/splashscreen/New()
 	src.fullDark.plane = 1
 	spawn() src.ticker()
 	return
-
 turf/closed/indestructible/f13/splashscreen/proc/ticker()
 	while(src && istype(src,/turf/closed/indestructible/f13/splashscreen))
 		src.swapImage()
 		sleep(src.tickerPeriod)
 	to_chat(world, "Badmins spawn shit and the title screen was deleted.<br>You know... I'm out of here!")
 	return
-
 //Change the time to determine how short/long the fading animation is.
 //Change the easing to determine what interpolation it uses to change the value on a curve: good ones to try are CUBIC, BOUNCE, and ELASTIC as well as CIRCULAR. BOUNCE and ELASTIC both "bounce" or "flicker" a little bit at the end instead of just finishing straight at black.
-
 /turf/closed/indestructible/f13/splashscreen/proc/swapImage()
 	animate(src.fullDark,alpha=255,time=10,easing=CUBIC_EASING)
 	sleep(12) //buffer of about 1/5 of the time of the animation, since they are not synchronized: the sleep happens on the server, but the animation is played for each client using directX. It's good to leave a buffer, but most of the time the directX will be much faster than the server anyway so you probably wont have any problems.
