@@ -660,36 +660,37 @@
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
 		qdel(I)
+		update_handcuffed()
+		update_inv_legcuffed()
 		return
 	if(istype(I, /obj/item/restraints))
 		var/obj/item/restraints/R = I
 		if(R.del_on_remove)
 			if(handcuffed == R)
 				handcuffed = null
+				update_handcuffed()
 			if(legcuffed == R)
 				legcuffed = null
+				update_inv_legcuffed()
 			qdel(R)
-			update_handcuffed()
-			update_inv_legcuffed()
 			return
+	if(I == handcuffed)
+		handcuffed.forceMove(drop_location())
+		handcuffed = null
+		I.dropped(src)
+		if(buckled && buckled.buckle_requires_restraints)
+			buckled.unbuckle_mob(src)
+		update_handcuffed()
+		return
+	if(I == legcuffed)
+		legcuffed.forceMove(drop_location())
+		legcuffed = null
+		I.dropped(src)
+		update_inv_legcuffed()
+		return
 	else
-		if(I == handcuffed)
-			handcuffed.forceMove(drop_location())
-			handcuffed = null
-			I.dropped(src)
-			if(buckled && buckled.buckle_requires_restraints)
-				buckled.unbuckle_mob(src)
-			update_handcuffed()
-			return
-		if(I == legcuffed)
-			legcuffed.forceMove(drop_location())
-			legcuffed = null
-			I.dropped(src)
-			update_inv_legcuffed()
-			return
-		else
-			dropItemToGround(I)
-			return
+		dropItemToGround(I)
+		return
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	. = ..()
