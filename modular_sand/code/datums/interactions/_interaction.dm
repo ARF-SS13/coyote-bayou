@@ -225,10 +225,10 @@
 /datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	if(!user || !target)
 		return
-	if(!can_do_interaction(user, target, discrete, extra))
-		return
 	if(is_self_action)
 		target = user // they are I
+	if(!can_do_interaction(user, target, discrete, extra))
+		return
 	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
 	do_action(user, target, discrete, extra)
 	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src, extra)
