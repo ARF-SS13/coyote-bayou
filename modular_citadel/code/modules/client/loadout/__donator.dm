@@ -1179,7 +1179,7 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
+	new /obj/item/gun/ballistic/automatic/fg42tox(src)
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
@@ -1224,7 +1224,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/a308box(src)
-	new /obj/item/gun/ballistic/automatic/w2000(src)
+	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
