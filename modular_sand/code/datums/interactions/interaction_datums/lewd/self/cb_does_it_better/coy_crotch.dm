@@ -999,16 +999,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {gently, softly, warmly} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+		"XU_NAME {gently, softly, warmly} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_NAME's got inside them.",
 	)
 	disarm_messages = list(
-		"XU_NAME {teasingly, playfully, happily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+		"XU_NAME {teasingly, playfully, happily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_NAME's got inside them.",
 	)
 	grab_messages = list(
-		"XU_NAME {fimrly, possessively, needily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_THEM's got inside them.",
+		"XU_NAME {fimrly, possessively, needily} {squeezes, hugs, smushes, clenches} their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} around whatever XT_NAME's got inside them.",
 	)
 	harm_messages = list(
-		"XU_NAME uses their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} to hold whatever XT_THEM's got inside of them {tightly, wetly, warmly}.",
+		"XU_NAME uses their {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} to hold whatever XT_NAME's got inside of them {tightly, wetly, warmly}.",
 	)
 
 	simple_sounds = list(
