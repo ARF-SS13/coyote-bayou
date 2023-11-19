@@ -302,8 +302,8 @@
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		// if(!(squish in view(15, user)))
-		// 	continue
+		if(!(squish in view(15, user)))
+			continue
 		if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS))
 			continue
 		to_chat(squish, message)
@@ -566,6 +566,8 @@
 		var/word = ""
 		if(LAZYLEN(wordlist))
 			word = trim(pick(wordlist))
+		if(prob(0.01))
+			word = "bazinga" // required for linting
 		message = splicetext(message, charpos, charpos2 + 1, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed
 	return capitalize(message)
