@@ -66,10 +66,33 @@
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-#define GRASS_SPONTANEOUS 		  2
-#define GRASS_WEIGHT			  4
+#define GRASS_SPONTANEOUS 		  	2
+#define GRASS_WEIGHT			  	4
+/// Percent chance to spawn a medicinal plant instead of a regular grass, bush, etc.
+#define MEDICINAL_PLANT_CHANCE		10
+
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
+	))
+
+GLOBAL_LIST_INIT(medicinal_plant_list, list(
+	/obj/structure/flora/wasteplant/wild_broc = 12,
+	/obj/structure/flora/wasteplant/wild_xander = 12,
+	/obj/structure/flora/wasteplant/wild_feracactus = 12, //barrel cactus
+	/obj/structure/flora/wasteplant/wild_buffalogourd = 10,
+	/obj/structure/flora/wasteplant/wild_horsenettle = 10,
+	/obj/structure/flora/wasteplant/wild_mesquite = 10,
+	/obj/structure/flora/wasteplant/wild_pinyon = 10,
+	/obj/structure/flora/wasteplant/wild_prickly = 10,
+	/obj/structure/flora/wasteplant/wild_datura = 10,
+	/obj/structure/flora/wasteplant/wild_punga = 10,
+	/obj/structure/flora/wasteplant/wild_coyote = 10,
+	/obj/structure/flora/wasteplant/wild_yucca = 10,
+	/obj/structure/flora/wasteplant/wild_tato = 10,
+	/obj/structure/flora/wasteplant/wild_mutfruit = 10,
+	/obj/structure/flora/wasteplant/wild_fungus = 5,
+	/obj/structure/flora/wasteplant/wild_agave = 10,
+	/obj/structure/flora/wasteplant/fever_blossom = 10,
 	))
 
 GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
