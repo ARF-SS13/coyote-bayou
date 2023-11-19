@@ -36,7 +36,7 @@
 			"color" = "transparent"
 			)
 	)
-
+/*
 /datum/interaction/lewd/titgrope_self/do_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	var/obj/item/reagent_containers/liquid_container
 
@@ -67,7 +67,7 @@
 		// 			else
 		// 				modifier = 1
 		liquid_container.reagents.add_reagent(milktype, rand(1,3))
-
+*/
 
 /datum/interaction/lewd/self_nipsuck
 	description = "Self/Body - Suck your own nips."
