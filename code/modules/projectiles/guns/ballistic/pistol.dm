@@ -64,6 +64,35 @@
 	silenced = TRUE
 	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
+/* * * * * * * *
+* Derringers
+* Usually compact and easy to use.
+* * * * * * * * */
+/obj/item/gun/ballistic/automatic/pistol/derringercustom
+	name = "Custom engraved derringer"
+	desc = "A custom and engraved, albeit desert eagle sized, derringer. With 14mm in mind, four barrels, and modern mechanisms, it's a gun fit for the luxurious bunch. Enscribed on the top right barrel is the name 'Roses are forever'. It bears baroque like motifs around the barrels and reciever while also having a pearl ivory grip."
+	icon_state = "customderringer"
+	item_state = "customderringer"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = LMG_RECOIL(1.7,1.7)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_suppress = FALSE
+	can_scope = FALSE
+	can_bayonet = FALSE
+
+
+
+
 /* * * * * * * * * * *
  * Browning Hi-Power
  * Baseline Light pistol
@@ -89,17 +118,17 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
-	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol.
+	//M3 common 9mm pistol. Same as the browning but as a M3 series pistol. Slightly better damager at T1
 /obj/item/gun/ballistic/automatic/pistol/ninemil/m3civ
 	name = "M3 Civillian Pistol"
-	desc = "This pistol is the civillian or police version of the M3 Magnum, uses common and abundant 9mm"
+	desc = "This pistol is the civillian version of the M3 Magnum, which uses common and abundant 9mm ammunition."
 	icon_state = "m3civ"
 	item_state = "m3civ"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -122,7 +151,7 @@
 //scorpion machine pistol. like the M93R, but full auto instead of burst, for better or worse
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
 	name = "Skorpion 9mm"
-	desc = "A Czech machine pistol developed in the 60s"
+	desc = "A Czech machine pistol developed in the 60s."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "skorpion"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -135,13 +164,65 @@
 //ruby pistol. single stack bootgun, otherwise unexceptional
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby
 	name = "Ruby"
-	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s"
+	desc = "A petite pocket pistol designed by Colt and used extensively by the French Army until the late '50s."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "ruby"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 	weapon_class = WEAPON_CLASS_TINY
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov
+	name = "9mm Makarov pistol"
+	desc = "A easy to conceal Makarov pistol chambered in 9mm. Compact, easy to use, and stylish. This gun likes her enemies shaken, not stirred."
+	icon_state = "makarov"
+	item_state = "glock"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	weapon_class = WEAPON_CLASS_TINY
+
+obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
+	name = "Taurus 5mm 'Equalizer' pistol"
+	desc = "A not so well known 5mm chambered pistol. The Taurus 'Equalizer' is a pistol with a 20 round 5mm capacity and a decent hitting catridge."
+	icon_state = "5mm"
+	item_state = "handgonne"
+	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.4, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee
+	name = "RuBee"
+	desc = "A petite pocket pistol that has been modified to accept some rather unique ammunition."
+	init_mag_type = /obj/item/ammo_box/magazine/rubee
+	mag_type = /obj/item/ammo_box/magazine/rubee
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/mousegun
+	name = "mouse gun"
+	desc = "Did that gun just squeak?"
+	icon = 'icons/obj/guns/projectile.dmi'
+	icon_state = "aps"
+	init_mag_type = /obj/item/ammo_box/magazine/mousegun
+	mag_type = /obj/item/ammo_box/magazine/mousegun
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m9mm/doublestack)
 
 //C93 pistol. damage bonus but single stack magazine. not the best gun, but hey, it's old
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93
@@ -170,8 +251,8 @@
 
 //9mm coldwar-modern sidearms. Same as the browning hipower pistol
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
-	name = "glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster"
+	name = "Glock 19"
+	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
 	item_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -181,7 +262,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/pinkglock
 	name = "Pink glock Pistol"
-	desc = "A 9mm compact pistol, quite useful to have around in a holster or chest draw holster. This one is a very vibrant pink"
+	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig. This one hasnt seen much mud or sand, but it has fallen victim to a rather unusual colour choice. Is pink really 'tacticool?'"
 	icon_state = "plock"
 	item_state = "plock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -637,10 +718,11 @@
 ////////////////////////////////////
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom
-	name = "M3 SOCOM"
+	name = "M3 Special Operations."
 	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
 	icon_state = "M6SOCOM"
 	item_state = "M6SOCOM"
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
 	name = "Santa Muerte"
@@ -767,12 +849,13 @@
 * .44 automag copycats. same as the original one with or without added flavor * 
 * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/pistol/automag/m6
+/obj/item/gun/ballistic/automatic/pistol/automag/m6 //weaker .44, spawn tier.
 	name = "M3 Magnum"
 	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
 	icon_state = "m3magnum"
 	item_state = "m3magnum"
 	zoom_factor = 1.1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 /obj/item/gun/ballistic/automatic/pistol/goldendeag
 	name = "Aureum Tactum"
@@ -784,7 +867,7 @@
 	init_recoil = HMG_RECOIL (8, 8)
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
 	/datum/firemode/automatic/rpm300
 	)
@@ -849,9 +932,10 @@
 * Muh 14mm
 * * * * * * * * * * * * */
 
+//Custom pistol for a player, see above.
 /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
-	name = "Custom K8 Assault Pistol"
-	desc = "A custom K8 Assault pistol manufactured by the Sanroo Arms company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
+	name = "Custom P-36 Assault Pistol"
+	desc = "A custom P-36 Assault pistol manufactured by the Latos Systems company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
 	icon_state = "toxcyberplaceholder"
 	item_state = "toxcybergun"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -861,7 +945,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
@@ -869,6 +953,53 @@
 	can_scope = FALSE
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/ticon
+	name = "Latos Systems P-36 Assault Pistol"
+	desc = "A heavy caliber pistol manufactured by Latos Systems. Chambered in 12.7mm or 14mm in pistol caliber, this heavy hitting pistol packs a wallop but requires two hands to even remotely handle the insane recoil. Comes with a built in Smart-Tek mini-dot sight. The gun itself has the ability to take in a custom ammo counter should one choose."
+	icon_state = "ticon"
+	item_state = "ticon"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m14mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/cyberbang.ogg'
+
+
+
+/obj/item/gun/ballistic/automatic/pistol/needlerpistol
+	name = "NP-149/40"
+	desc = "A NP-149/40 pistol. This unique and odd prototype of a pistol was manufactured by Latos Systems before the way. It uses a peculiar type of ammunition. The ammo itself, when inserted, somehow turns into a set of pink glowing needles. How does Latos Systems do it? Who knows!"
+	icon_state = "needlerpistol"
+	item_state = "needlerpistol"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	force_unwielded = 30
+	force = 30
+	force_wielded = 35
+	fire_sound = 'sound/f13weapons/needler.ogg'
 
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
@@ -892,6 +1023,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
+
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
 /////////////////////////////////obsolete

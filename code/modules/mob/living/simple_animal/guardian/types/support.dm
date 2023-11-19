@@ -25,8 +25,9 @@
 
 /mob/living/simple_animal/hostile/guardian/healer/AttackingTarget()
 	. = ..()
-	if(is_deployed() && toggle && iscarbon(target))
-		var/mob/living/carbon/C = target
+	var/atom/my_target = get_target()
+	if(!is_deployed() || !toggle || !iscarbon(my_target))
+		var/mob/living/carbon/C = my_target
 		C.adjustBruteLoss(-5)
 		C.adjustFireLoss(-5)
 		C.adjustOxyLoss(-5)

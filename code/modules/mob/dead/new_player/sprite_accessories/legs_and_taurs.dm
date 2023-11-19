@@ -223,3 +223,62 @@
 	taur_mode = STYLE_PAW_TAURIC
 	color_src = MUTCOLORS
 	extra = TRUE
+
+/datum/sprite_accessory/taur/teppi
+	name = "Teppi"
+	icon = 'icons/mob/mam/coyote/taurs128x64_vr.dmi'
+	icon_state = "teppi"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+	dimension_x = -32
+	dimension_y= 11
+
+/datum/sprite_accessory/taur/spiderlong
+	name = "Long spider"
+	icon_state = "spiderlong"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/taur/fox
+	name = "Fox"
+	icon_state = "fox"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/drone
+	name = "Sect Drone"
+	icon_state = "drone"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/taur/redpanda
+	name = "Red Panda"
+	icon_state = "redpanda"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/nightstalker
+	name = "nightstalker"
+	icon_state = "stalker"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/leopard
+	name = "leopard"
+	icon_state = "leopard"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+
+
+
+
+
+

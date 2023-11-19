@@ -114,21 +114,13 @@
 /obj/item/stack/arrowhead
 	name = "arrow heads"
 	singular_name = "arrow head"
-	desc = "Some kind of pointy thing made to go fast."
+	desc = "A standard vanilla arrowhead."
 	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_metal"
+	icon_state = "arrow_head_arrow"
 	merge_type = /obj/item/stack/arrowhead
+	max_amount = 40
 	/// The head defines the resulting arrow
 	var/obj/item/ammo_casing/caseless/arrow/result_arrow = /obj/item/ammo_casing/caseless/arrow
-
-/obj/item/stack/arrowhead/metal
-	name = "metal arrow heads"
-	singular_name = "metal arrow head"
-	desc = "A sharpened piece of metal, filed down to an aerodynamic point."
-	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_metal"
-	merge_type = /obj/item/stack/arrowhead/metal
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/metal
 
 /obj/item/stack/arrowhead/field
 	name = "field arrow heads"
@@ -138,15 +130,6 @@
 	icon_state = "arrow_head_field"
 	merge_type = /obj/item/stack/arrowhead/field
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/field
-
-/obj/item/stack/arrowhead/titanium
-	name = "titanium arrow heads"
-	singular_name = "titanium arrow head"
-	desc = "A sharpened piece of titanium, filed down to an aerodynamic point."
-	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_titanium"
-	merge_type = /obj/item/stack/arrowhead/titanium
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/titanium
 
 /obj/item/stack/arrowhead/bone
 	name = "bone arrow heads"
@@ -175,14 +158,23 @@
 	merge_type = /obj/item/stack/arrowhead/glass
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/glass
 
-/obj/item/stack/arrowhead/jagged
-	name = "jagged arrow heads"
-	singular_name = "jagged arrow head"
-	desc = "A jagged shard of metal, ready to rearrange someone's guts all over the road."
+/obj/item/stack/arrowhead/broadhead
+	name = "broadhead arrow tips"
+	singular_name = "broadhead arrow tip"
+	desc = "An extra-sharp arrowhead made for slicing up exposed flesh."
 	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_jagged"
-	merge_type = /obj/item/stack/arrowhead/jagged
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/jagged
+	icon_state = "arrow_head_broadhead"
+	merge_type = /obj/item/stack/arrowhead/broadhead
+	result_arrow = /obj/item/ammo_casing/caseless/arrow/broadhead
+
+/obj/item/stack/arrowhead/bodkin
+	name = "bodkin arrow tips"
+	singular_name = "bodkin arrow tip"
+	desc = "An extra-pointy arrowhead made for penetrating armor."
+	icon = 'icons/obj/arrow_crafting.dmi'
+	icon_state = "arrow_head_bodkin"
+	merge_type = /obj/item/stack/arrowhead/broadhead
+	result_arrow = /obj/item/ammo_casing/caseless/arrow/bodkin
 
 /obj/item/stack/arrowhead/explosive
 	name = "explosive arrow heads"
@@ -202,30 +194,11 @@
 	merge_type = /obj/item/stack/arrowhead/ion
 	result_arrow = /obj/item/ammo_casing/caseless/arrow/ion
 
-/obj/item/stack/arrowhead/blunt
-	name = "blunt arrow heads"
-	singular_name = "blunt arrow head"
-	desc = "A blunt wad of leather, firm enough to knock someone over."
-	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_blunt"
-	merge_type = /obj/item/stack/arrowhead/blunt
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/blunt
-
-/obj/item/stack/arrowhead/practice
-	name = "practice arrow heads"
-	singular_name = "practice arrow head"
+/obj/item/stack/arrowhead/bludgeon
+	name = "bludgeoning arrow heads"
+	singular_name = "bludgeoning arrow head"
 	desc = "A blunt sack, ready to gently paff someone from across the road."
 	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_practice"
-	merge_type = /obj/item/stack/arrowhead/practice
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/practice
-
-/obj/item/stack/arrowhead/sticky
-	name = "sticky arrow heads"
-	singular_name = "sticky arrow head"
-	desc = "A sticky sack, ready to annoy someone."
-	icon = 'icons/obj/arrow_crafting.dmi'
-	icon_state = "arrow_head_sticky"
-	merge_type = /obj/item/stack/arrowhead/sticky
-	result_arrow = /obj/item/ammo_casing/caseless/arrow/sticky
-
+	icon_state = "arrow_head_bludgeon"
+	merge_type = /obj/item/stack/arrowhead/bludgeon
+	result_arrow = /obj/item/ammo_casing/caseless/arrow/bludgeon

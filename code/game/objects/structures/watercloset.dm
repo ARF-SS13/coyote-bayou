@@ -450,7 +450,7 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 	else
 		L.clean_blood()
 		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
-	
+	L.regenerate_icons()
 
 /obj/machinery/shower/proc/wash_mob(mob/living/L)
 	give_mob_washies(L)
@@ -486,10 +486,8 @@ proc/give_mob_washies(mob/living/L, obj/machinery/shower/S)
 
 /obj/machinery/shower/proc/check_heat(mob/living/carbon/C)
 	if(watertemp == "freezing")
-		C.adjust_bodytemperature(-80, 80)
 		to_chat(C, span_warning("The water is freezing!"))
 	else if(watertemp == "boiling")
-		C.adjust_bodytemperature(35, 0, 500)
 		C.adjustFireLoss(5)
 		to_chat(C, span_danger("The water is searing!"))
 

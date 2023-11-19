@@ -1,5 +1,4 @@
-#define ispokemon(A)		istype(A, /mob/living/simple_animal/pokemon)
-
+// Should make these into bitflags later if we want to use them for realsies
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
 #define P_TYPE_ICE 		"ice"
@@ -33,76 +32,39 @@
 //This pokemon can be buckled to, ridden, and steered like a vehicle
 #define P_TRAIT_RIDEABLE	"rideable"
 
-//List of pokemon subtypes that a player can choose from when spawning in. Exclude pokemon by giving them the P_TRAIT_BLACKLIST trait.
-GLOBAL_LIST_EMPTY(pokemon_selectable)
-/proc/generate_selectable_pokemon(clear = FALSE)
-	if(clear)
-		GLOB.pokemon_selectable = list()
-	for(var/I in subtypesof(/mob/living/simple_animal/pokemon))
-		var/mob/living/simple_animal/pokemon/P = I
-		var/list/traits = initial(P.p_traits)
-		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
-			GLOB.pokemon_selectable[capitalize("[initial(P.name)]")] = P
 
-///Creatures that players can select for creature characters
+///Creatures that players can select for creature characters. Exclude mobs by giving them the P_TRAIT_BLACKLIST trait (see Bud for example).
 GLOBAL_LIST_EMPTY(creature_selectable)
+///The same list, but with preview icons instead of typepaths
+GLOBAL_LIST_EMPTY(creature_selectable_icons)
 
 /proc/generate_selectable_creatures(clear = FALSE)
 	if(clear)
 		GLOB.creature_selectable = list()
-	if(!LAZYLEN(GLOB.pokemon_selectable))//Pokemon list hasn't been generated so do it now
-		generate_selectable_pokemon()
- 	GLOB.creature_selectable |= GLOB.pokemon_selectable //Merge pokemon into master creature list
-	for(var/T in typesof(/mob/living/simple_animal))
-		var/mob/living/simple_animal/SA = T
-		if(initial(SA.gold_core_spawnable) == FRIENDLY_SPAWN)
-			if(!(SA in GLOB.creature_blacklist))
-				GLOB.creature_selectable[capitalize(initial(SA.name))] = SA
+	for(var/I in subtypesof(/mob/living/simple_animal/advanced))
+		var/mob/living/simple_animal/advanced/P = I
+		var/list/traits = initial(P.p_traits)
+		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
+			GLOB.creature_selectable[capitalize("[initial(P.name)]")] = P
+			GLOB.creature_selectable_icons[capitalize("[initial(P.name)]")] = icon(initial(P.icon), initial(P.icon_living), frame = 1, moving = FALSE)
 	for(var/T in GLOB.creature_whitelist)
 		var/mob/living/simple_animal/SA = T
 		GLOB.creature_selectable[capitalize(initial(SA.name))] = T
+		GLOB.creature_selectable_icons[capitalize("[initial(SA.name)]")] = icon(initial(SA.icon), initial(SA.icon_living), frame = 1, moving = FALSE)
 
 ///List of all pokemon on the whole map.
-GLOBAL_LIST_EMPTY(pokemon_list)
+GLOBAL_LIST_EMPTY(advanced_mob_list)
 
 ///List of available spawnpoints for creatures to choose from when spawning
 GLOBAL_LIST_INIT(creature_spawnpoints, list(
 	"Nash" = /obj/effect/landmark/start/f13/settler,
-	"Wasteland" = /obj/effect/landmark/start/f13/wastelander
+	"Wasteland" = /obj/effect/landmark/start/f13/wastelander,
+	"Ashdown" = /obj/effect/landmark/start/f13/ashdown
 	))
 
-///Creatures that are not allowed for players to select for characters
-GLOBAL_LIST_INIT(creature_blacklist, list(
-	/mob/living/simple_animal/chick,
-	/mob/living/simple_animal/hostile/retaliate/goat,
-	/mob/living/simple_animal/cow/random,
-	/mob/living/simple_animal/opossum/poppy,
-	/mob/living/simple_animal/radstag/rudostag,
-	/mob/living/simple_animal/cow/brahmin/nightstalker,
-	/mob/living/simple_animal/cow/brahmin/sgtsillyhorn,
-	/mob/living/simple_animal/cow/brahmin/calf,
-	/mob/living/simple_animal/cow/brahmin,
-	/mob/living/simple_animal/cow/brahmin/motorbike,
-	/mob/living/simple_animal/cow/brahmin/horse/honse,
-	/mob/living/simple_animal/pet/cat/cak,
-	/mob/living/simple_animal/pet/cat/kitten,
-	/mob/living/simple_animal/pet/bumbles,
-	/mob/living/simple_animal/pet/redpanda/stinky,
-	/mob/living/simple_animal/pet/fox/paws,
-	/mob/living/simple_animal/hostile/asteroid/gutlunch/guthen,
-	/mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck
-	))
-
-///Creatures that should be added to the playable creature list. Only put mobs in here if they aren't gold slime core spawnable already.
+///Creatures that should be added to the playable creature list.
+///DO NOT ADD MOBS HERE UNLESS THEY ARE SUBTYPES OF /mob/living/simple_animal/advanced. CATSLUGS CAN STAY BECAUSE THEY ARE BASICALLY ALREADY ADVANCED MOBS.
 GLOBAL_LIST_INIT(creature_whitelist, list(
-	/mob/living/simple_animal/pet/catslug,
-	/mob/living/simple_animal/pet/wolf/direwolf,
-	/mob/living/simple_animal/raccoon,
-	/mob/living/simple_animal/armadillo,
-	/mob/living/simple_animal/pet/kiwi,
-	/mob/living/simple_animal/pet/sheep,
-	/mob/living/simple_animal/pokemon/tenderclawmale,
-	/mob/living/simple_animal/pokemon/tenderclawfemale,
-	/mob/living/simple_animal/pokemon/tenderclawherm,
-	/mob/living/simple_animal/pokemon/nightstalker
+	/mob/living/simple_animal/pet/catslug
 	))
+///DO NOT ADD MOBS HERE UNLESS THEY ARE SUBTYPES OF /mob/living/simple_animal/advanced. CATSLUGS CAN STAY BECAUSE THEY ARE BASICALLY ALREADY ADVANCED MOBS.

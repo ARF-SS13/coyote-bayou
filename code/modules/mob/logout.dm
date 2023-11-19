@@ -17,6 +17,8 @@
 	SSstatpanels.cached_tops -= ckey
 	SSstatpanels.cached_bottoms -= ckey
 	SSstatpanels.cached_switches -= ckey
+	remove_from_player_list()
+	clear_client_in_contents()
 
 	..()
 

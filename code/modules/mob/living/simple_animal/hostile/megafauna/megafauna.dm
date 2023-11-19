@@ -17,8 +17,8 @@
 	stat_attack = UNCONSCIOUS
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
-	minbodytemp = 0
-	maxbodytemp = INFINITY
+	//minbodytemp = 0
+	//maxbodytemp = INFINITY
 	vision_range = 4
 	aggro_vision_range = 15
 	move_force = MOVE_FORCE_OVERPOWERING
@@ -115,8 +115,9 @@
 	if(recovery_time >= world.time)
 		return
 	. = ..()
-	if(. && isliving(target))
-		var/mob/living/L = target
+	var/atom/my_target = get_target()
+	if(. && isliving(my_target))
+		var/mob/living/L = my_target
 		if(L.stat != DEAD)
 			if(!client && ranged && ranged_cooldown <= world.time)
 				OpenFire()

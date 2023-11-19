@@ -158,7 +158,7 @@
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
-//However, these 3 don't have corgi versions of their sprites
+//However, these 3 don't have corgi versions of their sprites - The purple haired princess saw this and decided to fucking toss the Laika sprites here. No dog fashion.  
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
@@ -173,6 +173,77 @@
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+
+/obj/item/clothing/neck/laika
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze."
+	icon_state = "laika"
+	pocket_storage_component_path = /datum/component/storage/concrete/belt/specialized/gun // Laika uses gun(s) and there's not a visible holster on her. I assume it's a hidden shoulder holster. Also, why skip out on mechanics for drip?
+
+/obj/item/clothing/neck/laika/redder
+	name = "Blood Red Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is awfully Red."
+	icon_state = "laika_redder"
+
+/obj/item/clothing/neck/laika/blue
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is a dull shade of Blue."
+	icon_state = "laika_blue"
+
+/obj/item/clothing/neck/laika/bluer
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is a vibrant Blue."
+	icon_state = "laika_bluer"
+
+/obj/item/clothing/neck/laika/cyan
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is the color of coastal waters."
+	icon_state = "laika_cyan"
+
+/obj/item/clothing/neck/laika/tan
+	name = "Tactical Coyote Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is a tacticool Coyote color."
+	icon_state = "laika_tan"
+
+/obj/item/clothing/neck/laika/brown
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is the color of dirt."
+	icon_state = "laika_brown"
+
+/obj/item/clothing/neck/laika/yellow
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is the color of.. Primula."
+	icon_state = "laika_yellow"
+
+/obj/item/clothing/neck/laika/olive
+	name = "Tactical OD Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is in a tacticool drabby green."
+	icon_state = "laika_olive"
+
+/obj/item/clothing/neck/laika/white
+	name = "Chilly Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is the color of snow."
+	icon_state = "laika_white"
+
+/obj/item/clothing/neck/laika/black
+	name = "Spooky Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is the color of spilled ink."
+	icon_state = "laika_black"
+
+/obj/item/clothing/neck/laika/tricolor
+	name = "Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one smells of baguettes or vodka."
+	icon_state = "laika_tricolor"
+
+/obj/item/clothing/neck/laika/starspangledbanner
+	name = "Loud Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one smells of burgers, beer, and gunpowder."
+	icon_state = "laika_ssb"
+
+/obj/item/clothing/neck/laika/striped
+	name = "Striped Scarf-Cape w/ Holster"
+	desc = "A stylish scarf.. and cape? The perfect winter accessory for those who ride motorcycles and just can't handle the cold breeze. This one is striped."
+	icon_state = "laika_striped"
 
 ///////////
 //COLLARS//

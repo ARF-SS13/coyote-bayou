@@ -25,6 +25,10 @@
 #define COMSIG_GLOB_RADIATION_SHOW "!debug_show_rads"				//Makes turfs that are radioactive green and show a number
 
 
+#define COMSIG_GLOB_PRE_RANDOM_EVENT "!pre_random_event"
+	/// Do not allow this random event to continue.
+	#define CANCEL_PRE_RANDOM_EVENT (1<<0)
+
 // signals from globally accessible objects
 /// from SSsun when the sun changes position : (azimuth)
 #define COMSIG_SUN_MOVED "sun_moved"
@@ -233,6 +237,7 @@
 
 // /mob signals
 #define COMSIG_MOB_CLICKED_SHIFT_ON "mob_shift_click_on"		//from base of /atom/ShiftClick(): (atom/A), for return values, see COMSIG_CLICK_SHIFT
+#define COMSIG_MOB_CTRLSHIFTCLICKON "mob_ctrlshiftclickon"
 #define COMSIG_MOB_FOV_VIEW "mob_visible_atoms"					//from base of /mob/fov_view(): (list/visible_atoms)
 #define COMSIG_MOB_POINTED "mob_pointed"						//from base of /mob/verb/pointed(): (atom/A)
 #define COMSIG_MOB_EXAMINATE "mob_examinate"					//from base of /mob/verb/examinate(): (atom/A), for return values, see COMSIG_CLICK_SHIFT
@@ -720,7 +725,20 @@
 
 /// Vore defines specifically for a belly
 /// Tells the belly trash happened
-#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" // (datum/source, obj/item/thetrash)
+#define COMSIG_BELLY_HANDLE_TRASH "i_got_trash" //
+
+#define COMSIG_SPLURT_REQUEST "splurt_request" //
+#define COMSIG_SPLURT_REPLY "splurt_reply" //
+#define COMSIG_SPLURT_IS_SPLURTING "splurt_do" //
+#define COMSIG_SPLURT_CLEAR_FROM_BLACKLIST "COMSIG_SPLURT_CLEAR_FROM_BLACKLIST" //
+#define COMSIG_SPLURT_IS_BLACKLISTED "COMSIG_SPLURT_IS_BLACKLISTED" //
+#define COMSIG_SPLURT_REVOKE "COMSIG_SPLURT_REVOKE" //
+#define COMSIG_SPLURT_INTERACTION_PITCHED "COMSIG_SPLURT_INTERACTION_PITCHED" // (datum/source, mob/living/interactor, mob/living/interactor, datum/interaction/interaction)
+#define COMSIG_SPLURT_INTERACTION_CAUGHT "COMSIG_SPLURT_INTERACTION_CAUGHT" // (datum/source, mob/living/interactee, mob/living/interactee, datum/interaction/interaction)
+#define COMSIG_SPLURT_REMOVE_AUTOPLAPPER "COMSIG_SPLURT_REMOVE_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
+#define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
+#define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
 
 
 

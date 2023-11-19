@@ -97,8 +97,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -129,7 +128,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	emote_hear = list("chitters")
 	speak_chance = 5
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -171,8 +170,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
+	guaranteed_butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"

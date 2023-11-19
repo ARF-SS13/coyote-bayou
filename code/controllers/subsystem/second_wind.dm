@@ -302,8 +302,8 @@ SUBSYSTEM_DEF(secondwind)
 	if(is_robot)
 		my_brute += ((my_tox * 0.5) + (my_oxy * 0.5)) // shouldnt happen, but just in case
 		my_burn += ((my_tox * 0.5) + (my_oxy * 0.5)) // shouldnt happen, but just in case
-		master.adjustToxLoss(-my_tox, TOX)
-		master.adjustOxyLoss(-my_oxy, TOX)
+		master.adjustToxLoss(-my_tox, TRUE)
+		master.adjustOxyLoss(-my_oxy, TRUE)
 		my_tox = 0
 	var/total_damage = my_brute + my_burn + my_tox + my_oxy
 	var/brute_heal = 0
@@ -341,8 +341,8 @@ SUBSYSTEM_DEF(secondwind)
 				my_oxy--
 				oxy_heal++
 				total_damage--
-	master.adjustBruteLoss(-brute_heal)
-	master.adjustFireLoss(-burn_heal)
+	master.adjustBruteLoss(-brute_heal, TRUE, include_roboparts = TRUE)
+	master.adjustFireLoss(-burn_heal, TRUE, include_roboparts = TRUE)
 	master.adjustToxLoss(-tox_heal)
 	master.adjustOxyLoss(-oxy_heal)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
@@ -373,11 +373,12 @@ SUBSYSTEM_DEF(secondwind)
 	if(master.stat == DEAD) // huh, still dead
 		BODY_PLAYED
 		to_chat(played, span_alert("Something went wrong and you're still dead!"))
-		master.apply_damages(
+		//No reason to damage the mob more if it can't be revived.
+		/*master.apply_damages(
 			brute = brute_heal,
 			burn = burn_heal,
 			tox = tox_heal,
-		)
+		)*/
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return

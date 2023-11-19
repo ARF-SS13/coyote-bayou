@@ -256,6 +256,48 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/banditmask
+	name = "bandit mask"
+	path = /obj/item/clothing/head/helmet/blbandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/psychomask
+	name = "psycho mask"
+	path = /obj/item/clothing/head/helmet/blpsycho
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/bandithelm
+	name = "bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/bandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/vbandithelm
+	name = "looter bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditv
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/stripedbandithelm
+	name = "striped bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditstripe
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/merchelm
+	name = "merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/merc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/promerchelm
+	name = "professional merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/promerc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/unmchelmetwinter
 	name = "Winterized UNMC helmet"
 	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
@@ -275,6 +317,12 @@
 /datum/gear/head/unmcstealthhelmet
 	name = "American infiltrator helmet"
 	path = /obj/item/clothing/head/helmet/unmcstealthhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/chinastealthhelm
+	name = "Chinese stealth helmet"
+	path = /obj/item/clothing/head/helmet/chinastealthhelm
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
@@ -820,6 +868,18 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
+/datum/gear/head/ancientusa
+	name = "Ancient ballistic American Helmet "
+	path = /obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets/imperiumhelmet
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/ancientwestgermany
+	name = "Armored Ancient West German cap "
+	path = /obj/item/clothing/head/kevlarhelmet/warhammerhatsandhelmets
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
 /datum/gear/head/steeljap
 	name = "Old Japanese Helmet "
 	path = /obj/item/clothing/head/kevlarhelmet/ww237jap
@@ -856,6 +916,55 @@ datum/gear/head/steelpot_bandolier
 	name = "Armored French cap "
 	path = /obj/item/clothing/head/kevlarhelmet/ww1capseries/french
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	cost = 2
+
+/datum/gear/head/spartanhelmets
+	name = "M-87 'EVA' assault helmet"
+	path = /obj/item/clothing/head/evaspartan
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetstwo
+	name = "M-87 'EVA' assault helmet 'Icebreaker'"
+	path = /obj/item/clothing/head/evaspartan2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetsthree
+	name = "M-87 'EVA' assault helmet 'Patriot'"
+	path = /obj/item/clothing/head/evaspartan3
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetfour
+	name = "M-87 'Odin' assault helmet 'Icebreaker'"
+	path = /obj/item/clothing/head/gungnirspartan2
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/spartanhelmetfive
+	name = "M-87 'Odin' assault helmet"
+	path = /obj/item/clothing/head/gungnirspartan
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/odsthelmet
+	name = "M-87 UNMC DropTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+
+/datum/gear/head/odsthelmet2
+	name = "M-87 Luchtmobiele Brigade assault helmet"
+	path = /obj/item/clothing/head/droptrooper/ice
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/odsthelmet3
+	name = "M-87 HellTrooper assault helmet"
+	path = /obj/item/clothing/head/droptrooper/special
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 
 /datum/gear/head/russianadrianhelmet
@@ -909,6 +1018,18 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/ballistichelmets/number4
 	name = "U.N Helmet"
 	path = /obj/item/clothing/head/kevlarhelmet/unitednation
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/infilrator
+	name = "Infiltrator Helmet"
+	path = /obj/item/clothing/head/helmet/infiltrator
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/contractor
+	name = "Contractor Helmet"
+	path = /obj/item/clothing/head/helmet/infiltrator/contractor
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 2
 

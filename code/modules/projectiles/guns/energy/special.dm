@@ -102,8 +102,8 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow
-	name = "mini energy crossbow"
-	desc = "A weapon favored by syndicate stealth specialists."
+	name = "small energy crossbow"
+	desc = "An ancient classic brought into the modern era. This weapon fires bolts of plasma that not only sear with an intense heat, but also hamper the victim's senses."
 	icon_state = "crossbow"
 	item_state = "crossbow"
 	custom_materials = list(/datum/material/iron=2000)
@@ -111,12 +111,68 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
+	w_class = WEIGHT_CLASS_SMALL
+	can_remove = 0
+	can_charge = 0
 	obj_flags = 0
-	overheat_time = 20
+	overheat_time = 25 // 2.5 seconds
 	holds_charge = TRUE
 	unique_frequency = TRUE
 	can_flashlight = 0
-	max_mod_capacity = 0
+	max_mod_capacity = 0 // TG Kinetic Accelerator Mods
+	max_upgrades = 1 // ERIS weapon mods
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
+	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/kisser
+	name = "smoocher"
+	desc = "A pair of lips, perfect for blowing kisses."
+	icon_state = null
+	item_state = "kisser"
+	force = 0
+	force_unwielded = 0
+	force_wielded = 0
+	max_upgrades = 0 // I was sorely tempted to leave this at 1 for the meme.
+	overheat_time = 40 // 4.0 seconds
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/smooch)
+	fire_sound = 'sound/effects/kiss.ogg'
+	init_recoil = LASER_HANDGUN_RECOIL(1, 1)
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/sling
+	name = "sling"
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/sling)
+	weapon_weight = GUN_ONE_HAND_ONLY
+	force = 5
+	force_unwielded = 5
+	force_wielded = 10
+	throwforce = 5
+	icon = 'modular_coyote/icons/objects/bows.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+	icon_state = "sling"
+	item_state = "utility"
+	pin = null
+	no_pin_required = TRUE
+	fire_sound = 'sound/weapons/punchmiss.ogg'
+	init_recoil = LASER_HANDGUN_RECOIL(1.2, 1)
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
+	name = "sling staff"
+	desc = "A simple piece of leather strapped to a staff allowing it greater damage both in melee and at range. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	force_unwielded = 25
+	force_wielded = 35
+	throwforce = 25
+	icon_state = "slingstaff"
+	overheat_time = 40 // 4.0 seconds
+	init_recoil = LASER_CARBINE_RECOIL(2, 1)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
 	name = "candy corn crossbow"
@@ -129,15 +185,18 @@
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/large
 	name = "energy crossbow"
-	desc = "A reverse engineered weapon using syndicate technology. This thing seems incredibly unwieldly, and seems to be using similar internals to the Proto-Kinetic Accelerator. It might not play nice when brought near weapons similar to it."
+	desc = "An ancient classic brought into the modern era. This weapon fires intense bolts of plasma that not only sear with an intense heat, but also hamper the victim's senses."
 	icon_state = "crossbowlarge"
 	custom_materials = list(/datum/material/iron=4000)
 	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	pin = null
-	unique_frequency = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	overheat_time = 35 // 3.5 seconds
+	init_recoil = LASER_CARBINE_RECOIL(2, 1)
+//	pin = null
+//	unique_frequency = FALSE
 
 /obj/item/gun/energy/plasmacutter
 	name = "plasma cutter"

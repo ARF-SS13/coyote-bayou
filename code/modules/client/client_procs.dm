@@ -432,6 +432,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	if (isnum(cached_player_age) && cached_player_age == -1) //first connection
 		if (nnpa >= 0)
 			message_admins("New user: [key_name_admin(src)] is connecting here for the first time.")
+			to_chat(world, "<font size='4' color='purple'>A new player is connecting for the first time, greet them in OOC/NEWBIE!  Lets get them set up!</font>")
 			if (CONFIG_GET(flag/irc_first_connection_alert))
 				send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
 	else if (isnum(cached_player_age) && cached_player_age < nnpa)
@@ -590,6 +591,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	)
 	if(!query_client_in_db.Execute())
 		qdel(query_client_in_db)
+		SSmouse_entered.hovers -= src
 		return
 
 	//If we aren't an admin, and the flag is set
@@ -988,6 +990,14 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		"sounds/f13weapons/",
 		"sounds/creatures/",
 		"sounds/voice/",
+		"sounds/ambience",
+		"sounds/f13",
+		"sounds/f13ambience",
+		"sounds/effects",
+		"sounds/f13items",
+		"sounds/f13music",
+		"sounds/weapons",
+		"sounds/block_parry",
 	)
 	for(var/folder in fucking_sound_folders)
 		GLOB.every_fucking_sound_file |= pathwalk(folder)

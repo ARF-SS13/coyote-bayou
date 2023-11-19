@@ -2,11 +2,12 @@
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
-	damage = BULLET_DAMAGE_PISTOL_10MM
+	damage = BULLET_DAMAGE_PISTOL_10MM //30
+	damage_list = list("5" = 5, "8" = 5, "10" = 5, "12" = 5, "15" = 10, "25" = 30, "30" = 40)
 	stamina = BULLET_STAMINA_PISTOL_10MM
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_10MM
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -22,11 +23,12 @@
 	name = "brick"
 	icon = 'modular_coyote/icons/objects/brick.dmi'
 	icon_state = "brick"
-	damage = BULLET_DAMAGE_PISTOL_44
+	damage = BULLET_DAMAGE_PISTOL_44 //45
+	damage_list = list("5" = 5, "8" = 5, "10" = 5, "15" = 5, "25" = 5, "35" = 45, "45" = 30)
 	stamina = BULLET_STAMINA_PISTOL_44
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_44
-	
+
 	pixels_per_second = BULLET_SPEED_PISTOL_22
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
@@ -41,7 +43,8 @@
 /obj/item/projectile/flintlock
 	name = "musket ball"
 	icon_state = "musket"
-	damage = BULLET_DAMAGE_FLINTLOCK_MATCH
+	damage = BULLET_DAMAGE_FLINTLOCK_MATCH //87.5
+	damage_list = list("40" = 10, "60" = 10, "70" = 10, "87.5" = 60, "100" = 9, "200" = 1)
 	stamina = BULLET_STAMINA_FLINTLOCK
 	spread = BULLET_SPREAD_FLINTLOCK
 	recoil = BULLET_RECOIL_FLINTLOCK
@@ -58,12 +61,13 @@
 
 /obj/item/projectile/flintlock/minie
 	name = "minie ball"
-	damage = BULLET_DAMAGE_FLINTLOCK
+	damage = BULLET_DAMAGE_FLINTLOCK //70
+	damage_list = list("40" = 10, "60" = 10, "70" = 70, "120" = 9, "150" = 1)
 	stamina = BULLET_STAMINA_FLINTLOCK
 	spread = BULLET_SPREAD_SURPLUS // shockingly accurate
 	recoil = BULLET_RECOIL_FLINTLOCK
 	wound_bonus = BULLET_WOUND_FLINTLOCK
-	
+
 	pixels_per_second = BULLET_SPEED_FLINTLOCK
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 

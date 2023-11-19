@@ -47,7 +47,8 @@
 	amount = 5
 
 GLOBAL_LIST_INIT(metalparts_recipes, list(\
-	new/datum/stack_recipe("jagged arrowhead", /obj/item/stack/arrowhead/jagged, 1, 1, 1 SECONDS),\
+	new/datum/stack_recipe("broadhead arrow tip", /obj/item/stack/arrowhead/broadhead, 1, 1, 1 SECONDS),\
+	new/datum/stack_recipe("bodkin arrow tip", /obj/item/stack/arrowhead/bodkin, 1, 1, 1 SECONDS),\
 	))
 
 /obj/item/stack/crafting/metalparts/get_main_recipes()

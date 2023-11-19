@@ -34,6 +34,7 @@
 	health = 10
 	spacewalk = TRUE
 	faction = list("hostile")
+	dodge_prob = 0
 	move_to_delay = 0
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -50,7 +51,7 @@
 
 	//Spaceborn beings don't get hurt by space
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
+	//minbodytemp = 0
 	del_on_death = 1
 
 	var/datum/reagent/beegent = null //hehe, beegent
@@ -67,17 +68,13 @@
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/poison/bees/Destroy()
-	if(beehome)
-		beehome.bees -= src
-		beehome = null
+	move_out()
 	beegent = null
 	return ..()
 
 
 /mob/living/simple_animal/hostile/poison/bees/death(gibbed)
-	if(beehome)
-		beehome.bees -= src
-		beehome = null
+	move_out()
 	beegent = null
 	..()
 
@@ -129,12 +126,13 @@
 
 /mob/living/simple_animal/hostile/poison/bees/AttackingTarget()
 	//Pollinate
-	if(istype(target, /obj/machinery/hydroponics))
-		var/obj/machinery/hydroponics/Hydro = target
+	var/atom/my_target = get_target()
+	if(istype(my_target, /obj/machinery/hydroponics))
+		var/obj/machinery/hydroponics/Hydro = my_target
 		pollinate(Hydro)
-	else if(istype(target, /obj/structure/beebox))
-		if(target == beehome)
-			var/obj/structure/beebox/BB = target
+	else if(istype(my_target, /obj/structure/beebox))
+		if(my_target == beehome)
+			var/obj/structure/beebox/BB = my_target
 			forceMove(BB)
 			toggle_ai(AI_IDLE)
 			LoseTarget()
@@ -142,8 +140,8 @@
 		return //no don't attack the goddamm box
 	else
 		. = ..()
-		if(. && beegent && isliving(target))
-			var/mob/living/L = target
+		if(. && beegent && isliving(my_target))
+			var/mob/living/L = my_target
 			if(L.reagents)
 				beegent.reaction_mob(L, INJECT)
 				L.reagents.add_reagent(beegent.type, rand(1,5))
@@ -169,7 +167,7 @@
 			Hydro.recent_bee_visit = FALSE
 
 	var/growth = health //Health also means how many bees are in the swarm, roughly.
-	//better healthier plants!
+	//better healtheir plants!
 	Hydro.adjustHealth(growth*0.5)
 	if(prob(BEE_POLLINATE_PEST_CHANCE))
 		Hydro.adjustPests(-10)
@@ -204,9 +202,22 @@
 		for(var/obj/structure/beebox/BB in view(vision_range, src))
 			if(reagent_incompatible(BB.queen_bee) || BB.bees.len >= BB.get_max_bees())
 				continue
-			BB.bees |= src
-			beehome = BB
+			move_in(BB)
 			break // End loop after the first compatible find.
+
+/mob/living/simple_animal/hostile/poison/bees/proc/move_in(obj/structure/beebox/BB)
+	if(!BB)
+		return
+	beehome = BB
+	BB.bees |= src
+	RegisterSignal(BB, COMSIG_PARENT_QDELETING, .proc/move_out)
+
+/mob/living/simple_animal/hostile/poison/bees/proc/move_out()
+	if(!beehome)
+		return
+	beehome.bees -= src
+	beehome = null
+	UnregisterSignal(src, COMSIG_PARENT_QDELETING)
 
 /mob/living/simple_animal/hostile/poison/bees/toxin/Initialize()
 	. = ..()
@@ -232,10 +243,12 @@
 //leave pollination for the peasent bees
 /mob/living/simple_animal/hostile/poison/bees/queen/AttackingTarget()
 	. = ..()
-	if(. && beegent && isliving(target))
-		var/mob/living/L = target
-		beegent.reaction_mob(L, TOUCH)
-		L.reagents.add_reagent(beegent.type, rand(1,5))
+	var/atom/my_target = get_target()
+	if(!. || !beegent || !isliving(my_target))
+		return
+	var/mob/living/L = my_target
+	beegent.reaction_mob(L, TOUCH)
+	L.reagents.add_reagent(beegent.type, rand(1,5))
 
 
 //PEASENT BEES

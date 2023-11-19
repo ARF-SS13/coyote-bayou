@@ -28,8 +28,7 @@
 	move_force = MOVE_FORCE_WEAK
 	move_resist = MOVE_FORCE_WEAK
 	pull_force = MOVE_FORCE_WEAK
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	loot = list()
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing
 	stat_attack = CONSCIOUS
 	robust_searching = TRUE
@@ -46,15 +45,16 @@
 	if(stat == DEAD || health > maxHealth*0.1)
 		retreat_distance = initial(retreat_distance)
 		return
-	if(!retreat_message_said && target)
-		visible_message(span_danger("The [name] tries to flee from [target]!"))
+	var/atom/my_target = get_target()
+	if(!retreat_message_said && my_target)
+		visible_message(span_danger("The [name] tries to flee from [my_target]!"))
 		retreat_message_said = TRUE
 	retreat_distance = 30
 
 /mob/living/simple_animal/hostile/asteroid/wolf/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		return
-	if(target)
+	if(get_target())
 		return
 	adjustHealth(-maxHealth*0.025)
 	retreat_message_said = FALSE

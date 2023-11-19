@@ -772,3 +772,9 @@
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "trikehorn_head"
 	covered_limbs = list("Head" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/umbreon
+	name = "Umbreon"
+	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
+	icon_state = "umbreon"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Head" = MATRIX_RED)

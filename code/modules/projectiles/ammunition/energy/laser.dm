@@ -241,10 +241,9 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	e_cost = 1500 // 20 shots, 2rnd burst
 
-/obj/item/ammo_casing/energy/laser/AK470M
-	projectile_type = /obj/item/projectile/beam/laser/pistol/AK470M
-	e_cost = 300 // 30 shots roughly.
-	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+/obj/item/ammo_casing/energy/laser/lasgun/ultra
+	projectile_type = /obj/item/projectile/beam/laser/ultra_rifle
+	e_cost = 1000 // 40 shots
 
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
@@ -388,6 +387,77 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/energy/teslacannon/oasis
 	fire_sound = 'sound/weapons/taser.ogg'
 	e_cost = 400 // 50 shots
+
+/obj/item/ammo_casing/energy/laser/mpc
+	projectile_type = /obj/item/projectile/beam/laser/mpc
+	e_cost = 333 // 60 shots. Ish.
+	fire_sound = 'sound/weapons/magpistol.ogg'
+
+/obj/item/ammo_casing/energy/laser/xcomufolaser
+	projectile_type = /obj/item/projectile/beam/laser/xcom
+	e_cost = 10 // 7 shots
+	fire_sound = 'modular_coyote/sound/items/xcom/LaserRifleFire.wav'
+
+// Kelp's TG blaster casings, internal cell has 5000 power units, CANNOT BE RELOADED IN THE FIELD KEEP THAT IN MIND.
+
+/obj/item/ammo_casing/energy/laser/tg
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 250 // 20 shots
+
+/obj/item/ammo_casing/energy/laser/tg/carbine
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 200 // 25 shots
+
+/obj/item/ammo_casing/energy/laser/tg/rifle
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 125 // 40 shots
+
+/obj/item/ammo_casing/energy/laser/tg/rifle/heavy
+	projectile_type = /obj/item/projectile/beam/laser/tg/heavy
+	e_cost = 208 // 24 shots
+	fire_sound = 'sound/weapons/pulse.ogg'
+
+/obj/item/ammo_casing/energy/laser/tg/rifle/auto
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 83 // 60 shots
+
+/obj/item/ammo_casing/energy/laser/tg/recharger
+	projectile_type = /obj/item/projectile/beam/laser/tg
+	e_cost = 312 // 16 shots
+
+/obj/item/ammo_casing/energy/laser/tg/nuclear
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
+	e_cost = 312 // 16 shots
+	fire_sound = 'sound/weapons/laser3.ogg'
+
+/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear
+	e_cost = 208 // 24 shots
+
+/obj/item/ammo_casing/energy/laser/tg/nuclear/rifle/worn
+	projectile_type = /obj/item/projectile/beam/laser/tg/nuclear/worn
+
+/obj/item/ammo_casing/energy/laser/tg/particle
+	projectile_type = /obj/item/projectile/beam/laser/tg/particle
+	e_cost = 1000 // 5 shots
+	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+
+//Laser AK casings
+/obj/item/ammo_casing/energy/laser/tg/kalashheavy
+	projectile_type = /obj/item/projectile/beam/laser/tg/kalashheavy
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+/obj/item/ammo_casing/energy/laser/tg/kalashlight
+	projectile_type = /obj/item/projectile/beam/laser/tg/kalashlight
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+// Halo casings
+/obj/item/ammo_casing/energy/laser/tg/covenantbrr
+	projectile_type = /obj/item/projectile/beam/laser/beam
+	e_cost = 3000 // 10 shots
+	fire_sound = 'sound/f13weapons/beamrifle.ogg'
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

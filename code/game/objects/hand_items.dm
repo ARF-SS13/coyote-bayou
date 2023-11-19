@@ -77,8 +77,8 @@
 /obj/item/hand_item/healable/attack_obj_nohit(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
-/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/carbon/user)
-	if(!iscarbon(user))
+/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/user)
+	if(!isliving(user))
 		return FALSE
 	if(working)
 		to_chat(user, span_alert("You're already [tend_word] something!"))
@@ -90,7 +90,7 @@
 	lick_atom(licked, user)
 	return cool_thing(source, user, licked)
 
-/obj/item/hand_item/healable/proc/cool_thing(mob/living/carbon/user, atom/licked)
+/obj/item/hand_item/healable/proc/cool_thing(mob/living/user, atom/licked)
 	return TRUE
 
 /obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
@@ -99,7 +99,7 @@
 	if(!HAS_TRAIT(user, needed_trait))
 		return FALSE
 	var/mob/living/mlemmed = target
-	if(!mlemmed.get_bodypart(user.zone_selected))
+	if(iscarbon(mlemmed) && !mlemmed.get_bodypart(user.zone_selected))
 		return FALSE
 	if(!istype(healthing))
 		healthing = new healthing(src)
@@ -115,7 +115,7 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_LICK_RETURN, .proc/start_licking)
 
-/obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/carbon/user)
+/obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
 	var/list/lick_words = get_lick_words(user)
 	if(isliving(licked))
 		user.visible_message(
@@ -131,28 +131,31 @@
 			span_notice("You hear [action_verb_ing]."),
 			LICK_SOUND_TEXT_RANGE
 		)
-	if(can_taste)
+	if(can_taste && iscarbon(user))
 		lick_flavor(atom_licked = licked, licker = user)
 
-/obj/item/hand_item/healable/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/carbon/licker)
+/obj/item/hand_item/healable/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/licker)
 	if(!atom_licked)
 		return
 	if(!licker)
-		var/mob/living/carbon/maybe_licker = loc
-		if(!maybe_licker)
+		var/mob/living/maybe_licker = loc
+		if(!isliving(maybe_licker))
 			return
 		licker = maybe_licker
-		
-	licker.taste(null, atom_licked)
+	if(iscarbon(licker))
+		var/mob/living/carbon/C = licker
+		C.taste(null, atom_licked)
 	playsound(get_turf(src), pokesound, 25, 1, SOUND_DISTANCE(LICK_SOUND_TEXT_RANGE))
 
-/obj/item/hand_item/healable/licker/tend_hurt(mob/living/licked, mob/living/carbon/user)
-	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)
-	if(!istype(our_tongue))
-		return FALSE
+/obj/item/hand_item/healable/licker/tend_hurt(mob/living/licked, mob/living/user)
+	if(iscarbon(user))
+		var/mob/living/carbon/C = user
+		var/obj/item/organ/tongue/our_tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
+		if(!istype(our_tongue))
+			return FALSE
 	. = ..()
 
-/obj/item/hand_item/healable/proc/get_lick_words(mob/living/carbon/user)
+/obj/item/hand_item/healable/proc/get_lick_words(mob/living/user)
 	if(!user)
 		return
 
@@ -270,7 +273,7 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/hand_item/biter/fast
-	name = "Big Biter"
+	name = "Fast Biter"
 	desc = "Talk shit, get SPEED bit."
 	color = "#448844"
 	force = 18
@@ -531,6 +534,42 @@
 	if(!istype(M))
 		return
 	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "melee"))
+
+
+
+/////////////
+//Cantrips//
+///////////
+
+
+/obj/item/hand_item/cantrip
+	name = "Cantrip"
+	desc = "it's magic yo."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "clawer"
+	w_class = WEIGHT_CLASS_TINY
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	force = 15
+	throwforce = 0
+	wound_bonus = 4
+	attack_speed = CLICK_CD_MELEE * 0.7
+	item_flags = DROPDEL | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+
+/obj/item/hand_item/cantrip/godhand
+	icon_state = "disintegrate"
+	item_state = "disintegrate"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	name = "Shocking Grasp"
+	desc = "A basic cantrip that allows the caster to inflict nasty shocks on touch"
+	item_flags = ABSTRACT | DROPDEL
+	force = 30
+	hitsound = 'sound/weapons/sear.ogg'
+	damtype = BURN
+	attack_verb = list("seared", "zapped", "fried", "shocked")
 
 // /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))

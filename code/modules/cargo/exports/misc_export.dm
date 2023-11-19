@@ -49,6 +49,8 @@
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun,
 		/obj/item/gun/ballistic/automatic/autopipe,
 		/obj/item/gun/ballistic/revolver/winchesterrebored,
+		/obj/item/gun/ballistic/rifle/mosin/mini,
+		/obj/item/gun/energy/laser/tg/scrap,
 		)
 
 /datum/export/item/commongun
@@ -102,8 +104,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/cowboy,
 		/obj/item/gun/ballistic/revolver/caravan_shotgun,
 		/obj/item/gun/ballistic/revolver/widowmaker,
-		/obj/item/gun/ballistic/bow/lightxbow,
-		/obj/item/gun/ballistic/bow/recurvebow,
+		/obj/item/gun/ballistic/bow/modern,
 		)
 
 /datum/export/item/uncommongun
@@ -141,8 +142,6 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
 		/obj/item/gun/ballistic/bow/longbow,
-		/obj/item/gun/ballistic/bow/crossbow,
-		/obj/item/gun/ballistic/bow/compositebow,
 		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22,
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
@@ -157,6 +156,8 @@
 		/obj/item/gun/energy/laser/retro,
 		/obj/item/gun/ballistic/revolver/grenadelauncher,
 		/obj/item/gun/ballistic/shotgun/grenade,
+		/obj/item/gun/energy/laser/tg/carbine,
+		/obj/item/gun/energy/laser/tg/rifle,
 		)
 
 /datum/export/item/raregun
@@ -219,6 +220,9 @@
 		/obj/item/gun/energy/laser/wattz2ks,
 		/obj/item/gun/ballistic/rocketlauncher,
 		/obj/item/gun/magic/,
+		/obj/item/gun/energy/laser/tg/rifle/heavy,
+		/obj/item/gun/energy/laser/tg/rifle/auto,
+		/obj/item/gun/energy/laser/tg/recharger,
 		)
 
 /datum/export/item/uniquegun
@@ -262,6 +266,9 @@
 		/obj/item/gun/ballistic/fatman,
 		/obj/item/gun/ballistic/rifle/hunting/paciencia,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun,
+		/obj/item/gun/energy/laser/tg/particlecannon,
+		/obj/item/gun/energy/laser/xcomufolaser,
+		/obj/item/gun/energy/laser/LaserAK,
 	)
 
 /datum/export/item/melee

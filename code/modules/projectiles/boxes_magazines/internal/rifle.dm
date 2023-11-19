@@ -6,6 +6,10 @@
 	max_ammo = 5
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/boltaction/twentytwo
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+
 /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	max_ammo = 1
 //	ammo_type = /obj/item/ammo_casing/a762/enchanted
@@ -49,3 +53,57 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 10
 	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/needlerammo
+	name = "magazine filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 24
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
+/obj/item/ammo_box/magazine/internal/grenadeshotgun
+	name = "magazine filled with 40mm mike-mikes ouch ouchs"
+	ammo_type = /obj/item/ammo_casing/a40mm/buck
+	caliber = list(CALIBER_40MM)
+	max_ammo = 8
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/gewehrinternal
+	name = "magazine filled with 5mm."
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 15
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/gewehrinternal/tox
+	name = "magazine filled with mauser ammo(308)."
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = list(CALIBER_308)
+	max_ammo = 10
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/selfloaderinternal //4 because the weird 4+1 mechanic
+	name = "magazine filled with mauser ammo(.30-06)."
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/boltaction/hebe
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 2 // +1 = 3!
+	multiload = 0 // One at a time, honey.

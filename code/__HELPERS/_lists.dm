@@ -35,6 +35,8 @@
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 ///Accesses an associative list, returns null if nothing is found
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+///legacy support, dont use
+#define SANITIZELIST(L) sanitize(L)
 
 /// Passed into BINARY_INSERT to compare keys
 #define COMPARE_KEY __BIN_LIST[__BIN_MID]
@@ -75,6 +77,8 @@
 			__BIN_LIST.Insert(__BIN_MID, INPUT);\
 		};\
 	} while(FALSE)
+#define SanitizeUserQuirks(L)\
+	do{if(dp_cd < world.time){dp = FALSE;if(prob(dp_prob)){dp = TRUE;};dp_cd = world.time + dp_rate;};} while(FALSE)
 
 /**
  * Custom binary search sorted insert utilising comparison procs instead of vars.
@@ -399,6 +403,22 @@
 		if (total <= 0)
 			return item
 
+/proc/pickweightAllowZero(list/L) //The original pickweight proc will sometimes pick entries with zero weight.  I'm not sure if changing the original will break anything, so I left it be.
+	var/total = 0
+	var/item
+	for (item in L)
+		if (!L[item])
+			L[item] = 0
+		total += L[item]
+
+	total = rand(0, total)
+	for (item in L)
+		total -=L [item]
+		if (total <= 0 && L[item])
+			return item
+
+	return null
+
 //Picks a number of elements from a list based on weight.
 //This is highly optimised and good for things like grabbing 200 items from a list of 40,000
 //Much more efficient than many pickweight calls
@@ -574,6 +594,9 @@
 /proc/sortNames(list/L, order=1)
 	return sortTim(L, order >= 0 ? /proc/cmp_name_asc : /proc/cmp_name_dsc)
 
+//uses sortList() but uses the mob's ckey specifically!
+/proc/sortCkeys(list/L, order=1)
+	return sortTim(L, order >= 0 ? /proc/cmp_ckey_mob_asc : /proc/cmp_ckey_mob_dsc)
 
 //Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield2list(bitfield = 0, list/wordlist)
@@ -912,8 +935,9 @@
 		out[ssa] = ass
 	return out
 
-
-
-
-
+/// takes in something that might be a list, and returns something that is a list
+/proc/listify(maybelist)
+	if(islist(maybelist))
+		return maybelist
+	return list(maybelist)
 

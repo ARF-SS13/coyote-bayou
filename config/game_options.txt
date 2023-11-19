@@ -38,7 +38,7 @@ WALK_DELAY 2.8
 ## This is subtracted from the run speed to get the final sprint speed.
 SPRINT_SPEED_INCREASE 0.65
 ## Size of sprint buffer, in tiles.
-SPRINT_BUFFER_MAX 13
+SPRINT_BUFFER_MAX 30
 ## Number of sprint buffer tiles regained per second.
 SPRINT_BUFFER_REGEN_PER_DS 0.08
 ## Cost in stamina per tile sprinted.
@@ -634,6 +634,9 @@ RATCAP 64
 #Replaces standard extended/secret dichotomy with extended and calm/chaotic votes for dynamic.
 #DYNAMIC_VOTING
 
+## Uncomment to enable dynamic ruleset config file.
+DYNAMIC_CONFIG_ENABLED
+
 ## Choose which Engine to start the round with. Weight is after the comma. Setting the weight to 0 removes the engine from rotation.
 BOX_RANDOM_ENGINE Box SM,3
 BOX_RANDOM_ENGINE Box Tesla,3
@@ -674,7 +677,7 @@ BREASTS_CUPS_PREFS o
 
 ## Minimum and maximum limits for penis length from the character creation menu.
 PENIS_MIN_INCHES_PREFS 1
-PENIS_MAX_INCHES_PREFS 24
+PENIS_MAX_INCHES_PREFS 50
 
 ## Minimum and maximum limits for butt size from the character creation menu.
 BUTT_MIN_SIZE_PREFS 1

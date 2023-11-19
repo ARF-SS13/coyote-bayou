@@ -217,6 +217,93 @@
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
+
+// plasma covenant pistol, starter weapon. Fairly weak, one haded only but small. Has added bane damage to make up for low damage.
+/obj/item/gun/energy/laser/plasma/covpistol
+	name = "Latos Systems EG-2A7 pistol"
+	desc = "A EG-2A7 prototype pistol manufactured by Latos Systems. It doesn't hurt hard against armor, but on unarmored or exposed bits, it can be quite painful to be hit by!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "energyhalo"
+	item_state = "energyhalo"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/gun/energy/laser/plasma/covpistol/Drekavacpistol
+	name = "Honorbounded Drekavac pistol"
+	desc = "A EG-2A7 prototype pistol manufactured by Latos Systems. On the handle is a slavic text, stating 'He who haunts the living'. It comes in a differing color scheme and hits much harder with a higher capacity than the original model."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "drekavac"
+	item_state = "drekavac"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol/screech)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+
+
+/obj/item/gun/energy/laser/plasma/plasmacov
+	name = "Latos Systems PR-M1A2 Rifle"
+	desc = "A PR-M1A2. The M1A2 plasma rifle seems to very weak in hitting just about anything, a seemingly failed prototype. Alien in appearance, this rifle has a slow ROF for automatic speed but seems to be able to hold its own with a rechargeable battery!"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "pr"
+	item_state = "pr"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantrifle)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow ,
+		/datum/firemode/automatic/rpm75
+	)
+
+// Non-spawnable version. Much more powerful than the original one. Loot only
+/obj/item/gun/energy/laser/plasma/plasmacov/demon
+	name = "Oni's Bane rifle"
+	desc = "A PR-M1A2. This one is marked by the markings of the Oni, which are demons in Japanese folklore. Enscribed onto the handle is Japanese text. For those that read, it reads out 'I am the bane of the demons'. This specific prototype plasma rifle from Latos Systems seems to fire much faster and hits way harder than usual. Armor? You mean butter,right?"
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "oni"
+	item_state = "oni"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/onirifle)
+	cell_type = /obj/item/stock_parts/cell/ammo/breeder
+	can_remove = 0
+	can_charge = 1
+	can_scope = FALSE
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm150
+	)
+
+
 /obj/item/gun/energy/laser/plasma/spear
 	name = "ergonomic plasmacaster"
 	icon = 'icons/fallout/objects/melee/twohanded.dmi'

@@ -193,6 +193,30 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 
+/obj/item/clothing/under/f13/warhammeruniforms
+	name = "Ancient West German uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform."
+	icon_state = "40krieg"
+	item_state = "40krieg"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/warhammeruniforms/kriegofficeruniform
+	name = "Ancient West German Officer uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled West german uniform. This one is quite fancy looking."
+	icon_state = "40kkriegofficer"
+	item_state = "40kkriegofficer"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
+/obj/item/clothing/under/f13/warhammeruniforms/imperiumguard
+	name = "Ancient American uniform"
+	desc = "An ancient albeit cleanly pressed and unwrinkled American uniform."
+	icon_state = "40kguard"
+	item_state = "40kguard"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+
 /obj/item/clothing/under/f13/ww2/japaneseuniforms
 	name = "Old Japanese uniform"
 	desc = "A cleanly pressed and brand new Japanese modeled uniform."
@@ -1744,6 +1768,7 @@
 	name = "worn blue jumpsuit"
 	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
 	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = TRUE
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
@@ -2395,3 +2420,31 @@
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = TRUE
+
+// Rin's commisioned uniforms
+
+/obj/item/clothing/under/f13/borderlands
+	name = "borderlands template"
+	desc = "Something has gone terribly wrong if you're seeing this. Call a coder!"
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform.dmi'
+	can_adjust = FALSE
+	mutantrace_variation = NONE
+
+/obj/item/clothing/under/f13/borderlands/marauder
+	name = "marauder outfit"
+	desc = "A snappy navy blue shirt paired with blood red pants. Stylish, yet comfortable, wear perfect for any thug."
+	icon_state = "marauder"
+	item_state = "marauder"
+
+/obj/item/clothing/under/f13/borderlands/bloodshot
+	name = "bloodshot outfit"
+	desc = "A light blue shirt paired with tank khaki pants makes for an intimidating outfit. Well, no, it doesn't. At least it looks nice?"
+	icon_state = "bloodshot"
+	item_state = "bloodshot"
+
+/obj/item/clothing/under/f13/borderlands/psycho
+	name = "psycho outfit"
+	desc = "It's just a pair of bright orange pants. What kind of maniac would run around just wearing these?"
+	icon_state = "psycho"
+	item_state = "psycho"

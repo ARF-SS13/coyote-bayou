@@ -21,7 +21,7 @@
 	response_disarm_simple = "shove"
 	response_harm_continuous = "hits"
 	response_harm_simple = "hit"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	speak_emote = list("hisses")
@@ -33,7 +33,7 @@
 	faction = list(ROLE_ALIEN)
 	footstep_type = FOOTSTEP_MOB_CLAW
 	status_flags = CANPUSH
-	minbodytemp = 0
+	//minbodytemp = 0
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	unique_name = 1
@@ -94,7 +94,7 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	move_to_delay = 4
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
 							/obj/item/stack/sheet/animalhide/xeno = 1)
 	projectiletype = /obj/item/projectile/neurotox
 	projectilesound = 'sound/weapons/pierce.ogg'
@@ -144,7 +144,7 @@
 	move_to_delay = 4
 	maxHealth = 400
 	health = 400
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 10,
 							/obj/item/stack/sheet/animalhide/xeno = 2)
 	mob_size = MOB_SIZE_LARGE
 	gold_core_spawnable = NO_SPAWN
@@ -154,12 +154,13 @@
 	damage = 30
 	icon_state = "toxin"
 
+/*
 /mob/living/simple_animal/hostile/alien/handle_temperature_damage()
-	if(bodytemperature < minbodytemp)
+	if(bodytemperature < //minbodytemp)
 		adjustBruteLoss(2)
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(20)
-
+*/
 
 /mob/living/simple_animal/hostile/alien/maid
 	name = "lusty xenomorph maid"
@@ -180,16 +181,18 @@
 	AddElement(/datum/element/cleaning)
 
 /mob/living/simple_animal/hostile/alien/maid/AttackingTarget()
-	if(ismovable(target))
-		if(istype(target, /obj/effect/decal/cleanable))
-			visible_message("[src] cleans up \the [target].")
-			qdel(target)
-			return TRUE
-		var/atom/movable/M = target
-		SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
-		M.clean_blood()
-		visible_message("[src] polishes \the [target].")
+	var/atom/my_target = get_target()
+	if(!ismovable(my_target))
+		return
+	if(istype(my_target, /obj/effect/decal/cleanable))
+		visible_message("[src] cleans up \the [my_target].")
+		qdel(my_target)
 		return TRUE
+	var/atom/movable/M = my_target
+	SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+	M.clean_blood()
+	visible_message("[src] polishes \the [my_target].")
+	return TRUE
 
 /mob/living/simple_animal/pet/catslug/roxy //Yes I'm making her a catslug
 	name = "Roxy"

@@ -1569,5 +1569,16 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
 
 
+/obj/item/clothing/suit/hooded/robes/whitemage
+	name = "White Mage Robes"
+	desc = "Hammer not included"
+	icon_state = "whitemagerobes"
+	item_state = "whitemagerobes"
+	hoodtype = /obj/item/clothing/head/hooded/robes/whitemage
 
+/obj/item/clothing/head/hooded/robes/whitemage
+	name = "grey hood"
+	desc = "Keeps the sun out of your face, so you can brood in peace."
+	item_state = "whitemagerobes"
+	icon_state = "whitemagerobes"
 

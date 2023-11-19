@@ -17,6 +17,18 @@
 		side_waddle_time = amount_to_bob_side
 	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/Waddle)
 
+/datum/component/waddling/proc/UpdateFromPrefs(datum/preferences/P)
+	if(!isnull(P))
+		if(isnull(P.waddle_amount) || P.waddle_amount <= 0)
+			return
+		else
+			if(!isnull(P.waddle_amount))
+				waddle_amount = P.waddle_amount
+			if(!isnull(P.up_waddle_time))
+				up_waddle_time = P.up_waddle_time
+			if(!isnull(P.side_waddle_time))
+				side_waddle_time = P.side_waddle_time
+
 /datum/component/waddling/proc/Waddle()
 	if(waddling)
 		return
@@ -24,6 +36,8 @@
 		var/mob/living/L = parent
 		if(L.incapacitated() || L.lying)
 			return
+		if(L?.client?.prefs)
+			UpdateFromPrefs(L?.client?.prefs)
 	var/atom/movable/jiggleboi = parent
 	waddling = TRUE
 	var/waddleturn = pick(-waddle_amount*2, 0, waddle_amount*2)

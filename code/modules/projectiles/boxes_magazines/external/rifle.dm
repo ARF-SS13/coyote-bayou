@@ -209,7 +209,7 @@
 /obj/item/ammo_box/magazine/m473/small
 	name = "4.7mm carbine magazine"
 	icon_state = "473small"
-	max_ammo = 20
+	max_ammo = 40 // Less than the P90 despite same damage
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m473/small/empty

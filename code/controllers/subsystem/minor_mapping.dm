@@ -20,9 +20,9 @@ SUBSYSTEM_DEF(minor_mapping)
 			M = new(proposed_turf)
 		else
 			M.forceMove(proposed_turf)
-		if(M.environment_is_safe())
-			num_mice -= 1
-			M = null
+		//if(M.environment_is_safe()) //Its always safe, you numpty. ~TK
+		//	num_mice -= 1
+		//	M = null
 
 /proc/find_exposed_wires()
 	var/list/exposed_wires = list()

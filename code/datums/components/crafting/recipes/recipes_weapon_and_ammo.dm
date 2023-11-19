@@ -264,46 +264,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/field_arrow
-	name = "Field Arrow"
-	result = /obj/item/stack/arrowhead/field
-	reqs = list(/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/metal_arrow
-	name = "Metal Arrow"
-	result = /obj/item/stack/arrowhead/metal
-	reqs = list(/obj/item/stack/sheet/metal = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bone_arrow
-	name = "Bone Arrow"
-	result = /obj/item/stack/arrowhead/bone
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/glass_arrow
-	name = "Glass Knapped Arrow"
-	result = /obj/item/stack/arrowhead/glass
-	reqs = list(/obj/item/stack/sheet/glass = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 /////////////////
 ///ammo        //
 /////////////////
@@ -1142,10 +1102,39 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-/datum/crafting_recipe/huntingshotgun/sawn
+/datum/crafting_recipe/huntingsawedoff
 	name = "Saw off Hunting Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/hunting/sawn
 	reqs = list(/obj/item/gun/ballistic/shotgun/hunting = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/rockworse
+	name = "9mm Rockwell Pistol"
+	result = /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockworse
+	reqs = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+/datum/crafting_recipe/gross
+	name = "Saw off Gras"
+	result = /obj/item/gun/ballistic/rifle/antique/gross
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/marty
+	name = "Saw off Martini Henry"
+	result = /obj/item/gun/ballistic/rifle/antique/gross/marty
+	reqs = list(/obj/item/gun/ballistic/rifle/antique/gras = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -1525,6 +1514,20 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+
+//scrap tg laser
+/datum/crafting_recipe/scraplaser
+	name = "improvised laser"
+	result = /obj/item/gun/energy/laser/tg/scrap
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/item/stack/crafting/electronicparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = TRUE
 
 //aer9
 /datum/crafting_recipe/AER9

@@ -34,14 +34,16 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
 	/*new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \ very easy to find already*/
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
-	new/datum/stack_recipe("metal arrowhead", /obj/item/stack/arrowhead/metal, 2, 1, time = 2.5 SECONDS), \
+	new/datum/stack_recipe("regular arrowhead", /obj/item/stack/arrowhead, 2, 1, time = 2.5 SECONDS), \
+	new/datum/stack_recipe("bludgeoning arrowhead", /obj/item/stack/arrowhead/bludgeon, 1, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("field arrowhead", /obj/item/stack/arrowhead/field, 1, 1, time = 1 SECONDS), \
 	null, \
 	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
-	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
-	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
 	new/datum/stack_recipe("key", /obj/item/key, 1), \
 	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
+	new/datum/stack_recipe("bolt lock", /obj/item/lock_bolt, 1), \
+	new/datum/stack_recipe("coffee pot", /obj/item/crafting/coffee_pot, 1), \
+	new/datum/stack_recipe("lunchbox", /obj/item/crafting/lunchbox, 1), \
 	null, \
 	new/datum/stack_recipe("seed extractor", /obj/structure/legion_extractor, 6, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
@@ -452,7 +454,6 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
-	new/datum/stack_recipe("practice arrowhead", /obj/item/stack/arrowhead/practice, 1, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("improvised gauze", /obj/item/stack/medical/gauze/improvised, 1, 2, 6), \
 	new/datum/stack_recipe("improvised suture", /obj/item/stack/medical/suture/emergency, 3), \
 	new/datum/stack_recipe("rag", /obj/item/reagent_containers/rag, 1), \
@@ -833,7 +834,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 GLOBAL_LIST_INIT(bone_recipes, list(
 	new /datum/stack_recipe("bone dagger", /obj/item/melee/onehanded/knife/bone, 2, time = 20),
-	new /datum/stack_recipe("bone arrowhead", /obj/item/stack/arrowhead/bone, 2, 1, time = 2 SECONDS),
+	new /datum/stack_recipe("bone arrowhead", /obj/item/stack/arrowhead/bone, 1, 1, time = 2 SECONDS),
 	null, \
 	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/light/tribal/bone, 6, time = 30),
 	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4, time = 30),

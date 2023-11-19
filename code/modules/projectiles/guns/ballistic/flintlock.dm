@@ -13,7 +13,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	trigger_guard = TRIGGER_GUARD_NORMAL //hate to break it to ya, flintlocks require more technical skill to operate than a cartridge loaded firearm
 	dryfire_text = "*not loaded*"
-	max_upgrades = 1
+	max_upgrades = 2
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
@@ -51,7 +51,7 @@
 	data["accepted_magazines"] = "powder, and ball"
 	data["magazine_name"] = "Metal Tube"
 	data["magazine_calibers"] = "powder, and ball"
-	data["shots_remaining"] = !!chambered
+	data["shots_remaining"] = !!chambered || 0
 	data["shots_max"] = 1
 
 /obj/item/gun/flintlock/attack_self(mob/living/user)
@@ -317,7 +317,7 @@
 
 /obj/item/gun/flintlock/musket/tanegashima
 	name = "ancient tanegashima"
-	desc = "A matchlock rifle handmade by a craftsman some time after the fall of the old world."
+	desc = "A matchlock rifle handmade by a craftsman some time after the fall of the old world. For a matchlock, its VERY high quality!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "tanegashima"
 	item_state = "308"
@@ -372,3 +372,195 @@
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+
+
+
+		//////////////
+		//Matchlocks//
+		//////////////
+/obj/item/gun/flintlock/matchlock/
+	name = "ancient hand cannon"
+	desc = "Are you sure this isn't for shooting fireworks?  Or maybe tennis balls...?"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "handcannon"
+	item_state = "flintlock"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_SUPERAWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	load_time = MATCHLOCK_PISTOL_RELOAD_TIME
+	prefire_time = MATCHLOCK_PISTOL_PREFIRE_TIME
+	prefire_randomness = MATCHLOCK_PISTOL_PREFIRE_STD
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
+/obj/item/gun/flintlock/matchlock/handcannon
+	name = "ancient hand cannon"
+	desc = "Are you sure this isn't for shooting fireworks?  Or maybe tennis balls...?"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "handcannon"
+	item_state = "flintlock"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_SUPERAWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+
+/obj/item/gun/flintlock/matchlock/handcannon/handgonne
+	name = "ancient matchlock handgonne"
+	desc = "Is that thing even real?  Does it actually even work?"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "matchlockhandgonne"
+	item_state = "flintlock"
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+
+/obj/item/gun/flintlock/matchlock/matchlockarquebus
+	name = "ancient fancy matchlock arquebus"
+	desc = "Don't put it near someones arquebussy."
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "matchlockarquebus"
+	item_state = "308"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_AWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	load_time = MATCHLOCK_MUSKET_RELOAD_TIME
+	prefire_time = MATCHLOCK_MUSKET_PREFIRE_TIME
+	prefire_randomness = MATCHLOCK_MUSKET_PREFIRE_STD
+
+/obj/item/gun/flintlock/matchlock/matchlockarquebus/arquebus
+	name = "ancient matchlock arquebus"
+	desc = "Don't put it near someones arquebussy."
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "arquebus"
+	item_state = "308"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_AWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	force = 28
+	force_unwielded = 28
+	force_wielded = 38
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	load_time = MATCHLOCK_MUSKET_RELOAD_TIME
+	prefire_time = MATCHLOCK_MUSKET_PREFIRE_TIME
+	prefire_randomness = MATCHLOCK_MUSKET_PREFIRE_STD
+
+/obj/item/gun/flintlock/matchlock/musketoon
+	name = "ancient matchlock musketoon"
+	desc = "An ancient but well kept blackpowder matchlock musketoon; just like the 30 years war would have had!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "matchlockmusketoon"
+	item_state = "308"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_AWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	force = 27
+	force_unwielded = 27
+	force_wielded = 37
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	load_time = MATCHLOCK_MINIMUSKET_RELOAD_TIME
+	prefire_time = MATCHLOCK_MINIMUSKET_PREFIRE_TIME
+	prefire_randomness = MATCHLOCK_MINIMUSKET_PREFIRE_STD
+
+/obj/item/gun/flintlock/matchlock/musketoon/espingole
+	name = "ancient matchlock espingole"
+	desc = "That's... almost a blunderbus. Crazy!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "espingole"
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+
+/obj/item/gun/flintlock/matchlock/musketoon/carabine
+	name = "ancient matchlock carbine"
+	desc = "An ancient but well kept blackpowder matchlock carbine; just like the 30 years war would have had!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "matchlock_carabine"
+
+/obj/item/gun/flintlock/matchlock/cavalier
+	name = "ancient cavaliers sharpshooting matchlock"
+	desc = "An ancient but well kept blackpowder sharpshooters rifle; fascinating!"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "matchlock_cavalier"
+	item_state = "308"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T6
+	load_time = MATCHLOCK_MUSKET_RELOAD_TIME
+	force = 23
+	force_unwielded = 23 //it's kind of long and awkward ~TK
+	force_wielded = 28
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NORMAL //Need fin dexterity to finger its trigger ~TK
+	dryfire_text = "*not loaded*"
+	can_scope = TRUE
+	max_upgrades = 2
+
+/obj/item/gun/flintlock/matchlock/handbombard //hahaha yes ~sickos in the crowd
+	name = "ancient hand bombard"
+	desc = "An ancient but well kept blackpowder bombard, what the FUCK!?"
+	icon = 'modular_coyote/icons/objects/ancient.dmi'
+	icon_state = "handbombard"
+	item_state = "308"
+	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
+	added_spread = GUN_SPREAD_SUPERAWFUL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T6
+	load_time = MATCHLOCK_MUSKET_RELOAD_TIME
+	force = 18 //kinda unweildy, unlike the culverin
+	force_unwielded = 18 
+	force_wielded = 28 //whonk
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	trigger_guard = TRIGGER_GUARD_NONE
+	dryfire_text = "*not loaded*"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
+	load_time = MATCHLOCK_BOMBARD_RELOAD_TIME
+	prefire_time = MATCHLOCK_BOMBARD_PREFIRE_TIME
+	prefire_randomness = MATCHLOCK_BOMBARD_PREFIRE_STD

@@ -41,7 +41,7 @@
 	speak_emote = list("sniffles","twitches")
 	emote_hear = list("hops.")
 	emote_see = list("hops around","bounces up and down")
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
 	egg_type = /obj/item/reagent_containers/food/snacks/egg/loaded
 	food_type = /obj/item/reagent_containers/food/snacks/grown/carrot
 	eggsleft = 10
@@ -56,8 +56,8 @@
 	icon_living = "s_rabbit_white"
 	icon_dead = "s_rabbit_white_dead"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	maxbodytemp = 1500
+	//minbodytemp = 0
+	//maxbodytemp = 1500
 	unsuitable_atmos_damage = 0
 
 //Easter Baskets

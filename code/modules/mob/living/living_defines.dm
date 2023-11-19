@@ -10,8 +10,8 @@
 	typing_indicator_enabled = TRUE
 
 	var/last_click_move = 0 // Stores the previous next_move value.
-
-	var/resize = 1 //Badminnery resize
+	/// Badminnery resize
+	var/resize = 1 
 	var/lastattacker = null
 	var/lastattackerckey = null
 
@@ -153,7 +153,8 @@
 	var/stambuffer = 20
 	var/stambufferregentime
 
-	//Sprint buffer---
+	//Sprint buffer
+	/// This is overwritten by SPRINT_BUFFER_MAX in game_options.txt 
 	var/sprint_buffer = 43					//Tiles
 	var/sprint_buffer_max = 43
 	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond
@@ -164,3 +165,9 @@
 	var/disconnect_time //how long have we been dc'd for
 
 	var/fuzzy = FALSE
+
+	//reservoir for healing quirks
+	var/heal_reservoir = 0
+
+	/// The icon state to use while resting.
+	var/icon_resting

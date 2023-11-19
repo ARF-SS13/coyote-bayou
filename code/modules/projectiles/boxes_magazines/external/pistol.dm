@@ -54,7 +54,7 @@
 
 //9mm
 /obj/item/ammo_box/magazine/m9mm
-	name = "9mm pistol magazine (9mm)"
+	name = "pistol magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
@@ -66,6 +66,28 @@
 
 /obj/item/ammo_box/magazine/m9mm/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/rubee
+	name = "pistol hive (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmp"
+	ammo_type = /obj/item/ammo_casing/bee
+	caliber = list(CALIBER_BEE, CALIBER_9MM)
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/mousegun
+	name = "pistol nest (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmp"
+	ammo_type = /obj/item/ammo_casing/mouse
+	caliber = list(CALIBER_MOUSE, CALIBER_9MM)
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
 
 //9mm doublestack
 /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -217,6 +239,19 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
+/obj/item/ammo_box/magazine/m5mmcustom
+	name = "handgun magazine for 5mm"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "5mmmag"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 20
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/ammo_box/magazine/m5mmcustom/empty
+	start_empty = 1
 
 /obj/item/ammo_box/magazine/m14mmcustom
 	name = "handgun magazine for 14mm"
@@ -240,3 +275,16 @@
 	ammo_type = /obj/item/ammo_casing/testcasing
 	caliber = list(CALIBER_9MM)
 	max_ammo = 100
+
+
+/obj/item/ammo_box/magazine/needlercapsule
+	name = "Capsule filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 24
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE

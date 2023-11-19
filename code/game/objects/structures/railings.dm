@@ -1,12 +1,14 @@
 /obj/structure/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/fallout/structures/fences.dmi'
+	icon = 'icons/obj/railings.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
 	density = TRUE
 	anchored = TRUE
 	pass_flags_self = LETPASSTHROW
+	layer = ABOVE_MOB_LAYER
+	plane = MOB_PLANE
 	/// armor more or less consistent with grille. max_integrity about one time and a half that of a grille.
 	armor = ARMOR_VALUE_MEDIUM
 
@@ -20,6 +22,12 @@
 	icon_state = "railing_corner"
 	density = FALSE
 	climbable = FALSE
+
+/obj/structure/railing/corner/end //end of a segment of railing without making a loop
+	icon_state = "railing_end"
+
+/obj/structure/railing/corner/end/flip //same as above but flipped around
+	icon_state = "railing_end_flip"
 
 /obj/structure/railing/Initialize(mapload)
 	. = ..()
@@ -157,13 +165,14 @@
 	close_sound = "sound/machines/door_close.ogg"
 	opacity = FALSE
 	base_opacity = FALSE
-	can_hold_padlock = TRUE
+	can_have_lock = TRUE
 
 
 //Yellow rail
 /obj/structure/railing/handrail
 	name = "handrail"
 	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "handrail_y"
 	layer = WALL_OBJ_LAYER
 
@@ -220,6 +229,7 @@
 /////////// For tents and such
 
 /obj/structure/railing/tent_pole
+	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "pole_tent"
 	density = FALSE
 

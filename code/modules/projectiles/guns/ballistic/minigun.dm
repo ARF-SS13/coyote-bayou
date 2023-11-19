@@ -52,8 +52,8 @@
 	. = ..()
 	if(armed)
 		return
-	if(iscarbon(usr))
-		var/mob/M = usr
+	if(isliving(usr))
+		var/mob/living/M = usr
 
 		if(!over_object)
 			return

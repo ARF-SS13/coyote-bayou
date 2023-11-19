@@ -370,11 +370,10 @@
 		"damage_threshold" = 11)
 
 /* Deathclaw Commonboy
- * Just about impervious to bullets
- * Melee is... okay ish
- * Lasers also kinda pathetic
- * Plasma fucks em to death
- * Lot of DT
+ * Mash 'em
+ * Blast 'em
+ * Put 'em in the microwave
+ * Bar for entry is low because of how many there are and how close they spawn to player spawns. No .22 or buckshot, basically.
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_COMMON list(\
 		"melee" = 0, \
@@ -387,34 +386,35 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 15)
+		"damage_threshold" = 18)
 
 /* Deathclaw Mommy
  * Just about impervious to bullets
  * Melee is... okay ish
  * Lasers are a bit better
  * Plasma fucks em to death
- * Lot of DT
+ * DT - Specifically 24 so no starting knives can counter it.
  * * * * * * * * * * * */
+// Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw. - Jaeger
 #define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
-		"melee" = 0, \
-		"bullet" = 0, \
-		"laser" = 0, \
-		"energy" = 0, \
+		"melee" = 20, \
+		"bullet" = 30, \
+		"laser" = 10, \
+		"energy" = 10, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 15)
+		"damage_threshold" = 24) // Bar for entry is much higher. You see yellow? You run. Also, shares stats with the legendary deathclaw.
 
-/* Deathclaw power armor - basically a suer boss fight
+/* Deathclaw power armor - basically a super boss fight
  * Power armor + deathclaw = yeah youre not killing this
- * Lot of DT
+ * Doesn't appear anywhere outside of super dangerous areas that DO NOT offer a power fantasy. Has stats to match it. Regular 5.56 will not do here, bring a melee weapon or something bigger.  
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_PA list(\
-		"melee" = 85, \
+		"melee" = 95, \
 		"bullet" = 85, \
 		"laser" = 95, \
 		"energy" = 10, \
@@ -424,7 +424,7 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 25)
+		"damage_threshold" = 37) 
 
 /* Raider leather jacket
  * Basically a leather jacket
@@ -916,7 +916,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"linemelee" = "ADD",
 		"linebullet" = "ADD",
 		"linelaser" = "ADD",
-		"energy" = "MULT",
+		"energy" = "ADD",
 		"bomb" = "MULT",
 		"bio" = "MULT",
 		"rad" = "MULT",

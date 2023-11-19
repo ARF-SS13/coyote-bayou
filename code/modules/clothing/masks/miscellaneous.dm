@@ -252,7 +252,7 @@
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_WEAR_MASK) == src))
+		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_MASK) == src))
 			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
 			return
 	if(slot_flags & INV_SLOTBIT_HEAD)
@@ -493,3 +493,15 @@
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/kitsune
+	name = "kitsune mask"
+	desc = "A mask made of plastic and paint."
+	icon_state = "whitekitsunemask"
+	item_state = "whitekitsunemask"
+
+/obj/item/clothing/mask/kitsune/black
+	name = "kitsune mask - black"
+	desc = "A mask made of plastic and paint."
+	icon_state = "blackkitsunemask"
+	item_state = "blackkitsunemask"

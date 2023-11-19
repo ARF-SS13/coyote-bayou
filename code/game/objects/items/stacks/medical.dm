@@ -134,10 +134,7 @@
 		else
 			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
 			return FALSE
-	var/mob/living/carbon/carbuser
-	if(iscarbon(user))
-		carbuser = user
-	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+	if(needs_reservoir && user && user.heal_reservoir < 1)
 		to_chat(user, span_warning("[too_dry]"))
 		return FALSE
 	if(just_check)
@@ -157,7 +154,7 @@
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
 	if(needs_reservoir)
-		carbuser.heal_reservoir -= 1
+		user.heal_reservoir -= 1
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
 		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
@@ -333,7 +330,7 @@
 /* * * * * * * * * * * * * * * * * * *
  * Proc that heals simplemobs
  * * * * * * * * * * * * * * * * * * */
-/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user, just_check)
+/obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/living/user, just_check)
 	if(!isanimal(M))
 		return
 	var/mob/living/simple_animal/critter = M
@@ -352,10 +349,7 @@
 	if (critter.health >= critter.maxHealth)
 		to_chat(user, span_notice("[M] is at full health."))
 		return FALSE
-	var/mob/living/carbon/carbuser
-	if(iscarbon(user))
-		carbuser = user
-	if(needs_reservoir && carbuser && carbuser.heal_reservoir < 1)
+	if(needs_reservoir && user && user.heal_reservoir < 1)
 		to_chat(user, span_warning("[too_dry]"))
 		return FALSE
 	if(just_check)
@@ -374,7 +368,7 @@
 	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	if(needs_reservoir)
-		carbuser.heal_reservoir -= 1
+		user.heal_reservoir -= 1
 	return TRUE
 
 /// Returns if the user is skilled enough to use this thing effectively (unused, currently)
@@ -903,10 +897,81 @@
 
 /obj/item/stack/medical/mesh/aloe/Initialize()
 	. = ..()
-	if(amount == max_amount)	 //aloe starts open lol
+	if(amount == max_amount)	 // suffer now as I do, code diver
 		is_open = TRUE
+		icon_state = "aloe_paste"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "aloe_paste"
 		update_icon()
 
+/obj/item/stack/medical/mesh/horsecream
+	name = "horsenettle cream"
+	desc = "A healing \"paste\" made by mashing up horsenettle with a |rock| to \"soothe\" bruises."
+
+	icon_state = "horse_cream_good" // It isn't white by the way
+	self_delay = 50
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 10
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 3)
+	merge_type = /obj/item/stack/medical/mesh/horsecream
+
+/obj/item/stack/medical/mesh/horsecream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // look upon my code and weep as I have
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream"
+		update_icon()
+
+// gonna try and get a little fancy here
+/obj/item/stack/medical/mesh/horsecream/do_medical_message(mob/living/M, mob/user)
+	if(M.getBruteLoss())
+		to_chat(user, span_danger("You feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
+		M.emote("scream")
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
+	return
+
+/obj/item/stack/medical/mesh/horsecream/goodcream
+	name = "horsenettle remedy"
+	desc = "A good healing concoction lovingly made by someone with decent knowledge on how to prepare such things. Doesn't hurt as much as straight horsenettle."
+
+	icon_state = "horse_cream" // This is how veggie dino nuggets are made
+	self_delay = 50
+	other_delay = 10
+	novariants = TRUE
+	is_open = TRUE
+	heal_brute = 20 // Might be a bit much, but only time will tell.
+	amount = 5
+	max_amount = 20
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 6, /datum/reagent/medicine/morphine = 2)
+
+/obj/item/stack/medical/mesh/horsecream/goodcream/Initialize()
+	. = ..()
+	if(amount == max_amount)	 // it took me like 2 weeks from start to finish to do all this and i was straight up not having a good time for the last day
+		icon_state = "horse_cream_good"
+		update_icon()
+	else
+		is_open = TRUE
+		icon_state = "horse_cream_good"
+		update_icon()
+
+
+// gonna try and get a little quirky here
+///obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
+//	if(M.getBruteLoss())
+//		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+//		M.emote("augh") // It was kinda getting a bit annoying, plus it makes you augh even if you're using it on someone else!
+//		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
+//	return
 
 // ------------------
 // MOURNING DUST   (should be repathed to be less misleading at some point)

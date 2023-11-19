@@ -228,7 +228,7 @@
 /obj/item/kinetic_crusher/glaive/update_icon_state()
 	item_state = "crusher[wielded]-glaive" // this is not icon_state and not supported by 2hcomponent
 
-//destablizing force
+
 /obj/item/projectile/destabilizer
 	name = "destabilizing force"
 	icon_state = "pulse1"
@@ -259,6 +259,7 @@
 		new /obj/effect/temp_visual/kinetic_blast(M)
 		M.gets_drilled(firer)
 	..()
+
 
 //trophies
 /obj/item/crusher_trophy

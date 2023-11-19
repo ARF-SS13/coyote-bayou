@@ -3,20 +3,18 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 
 /client/verb/aooc(msg as text)
 	set name = "AOOC"
-	set desc = "An OOC channel exclusive to antagonists."
+	set desc = "An OOC channel exclusive to anonymous communication."
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(src, span_danger("Speech is currently admin-disabled."))
 		return
 
-	if(!mob)
+	if(!(prefs.chat_toggles & CHAT_AOOC))
+		to_chat(src, span_danger(" You have AnonOOC muted."))
 		return
 
-	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, span_danger(" You have OOC muted."))
-		return
-	if(jobban_isbanned(mob, "OOC"))
+	if(mob && jobban_isbanned(mob, "OOC"))
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 
@@ -27,21 +25,13 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, span_danger("You cannot use AOOC (muted)."))
 			return
-		if(!is_special_character(mob))
-			to_chat(usr, span_danger("You aren't an antagonist!"))
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
 			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			return
-		if(mob.stat)
-			to_chat(usr, span_danger("You cannot use AOOC while unconscious or dead."))
-			return
-		if(isdead(mob))
-			to_chat(src, span_danger("You cannot use AOOC while ghosting."))
-			return
-		if(HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
+		if(mob && HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
 			to_chat(src, span_danger("You cannot use AOOC right now."))
 			return
 
@@ -64,55 +54,36 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			log_admin("[key_name(src)] has attempted to advertise in AOOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in AOOC: [msg]")
 			return
+	mob?.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
 
-	mob.log_talk(raw_msg,LOG_OOC, tag="(AOOC)")
+	var/clientstosendto = list()
+	for(var/client/C in GLOB.clients)
+		if((C.prefs.chat_toggles & CHAT_AOOC))
+			clientstosendto |= C
 
-	var/keyname = key
-	if(prefs.unlock_content)
-		if(prefs.toggles & MEMBER_PUBLIC)
-			keyname = "<font color='[prefs.aooccolor ? prefs.aooccolor : GLOB.normal_aooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
-	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
-
-	var/antaglisting = list()
-
-	for(var/datum/mind/M in get_antag_minds(/datum/antagonist))
-		if(!M.current || !M.current.client || isnewplayer(M.current))
-			continue
-		antaglisting |= M.current.client
-
-	for(var/mob/M in GLOB.player_list)
-		if(M.client && (M.stat == DEAD || M.client.holder) && !istype(M, /mob/dead/new_player))
-			antaglisting |= M.client
-
-	for(var/client/C in antaglisting)
+	for(var/client/C in clientstosendto)
 		if(!C || !istype(C))
 			continue
-		if(holder)
-			if(!holder.fakekey || C.holder)
-				if(check_rights_for(src, R_ADMIN))
-					to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>Antag OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-				else
-					to_chat(C, "<span class='adminobserverooc'><span class='prefix'>Antag OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
-			else
-				if(GLOB.AOOC_COLOR)
-					to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>Antag OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
-				else
-					to_chat(C, "<span class='antagooc'><span class='prefix'>Antag OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
-		else if(!(key in C.prefs.ignoring))
+		if(C.holder && check_rights_for(C, R_ADMIN))//If the listening client is a staff member with admin privs
 			if(GLOB.AOOC_COLOR)
-				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>Antag OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()]/[holder?.fakekey ? "/([holder.fakekey])" : "[key]"] [ADMIN_PP(src.mob)]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 			else
-				to_chat(C, "<span class='antagooc'><span class='prefix'>Antag OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>[GetOOCName()]/[holder?.fakekey ? "/([holder.fakekey])" : "[key]"] [ADMIN_PP(src.mob)]:</EM> <span class='message linkify'>[msg]</span></span></font>")
+		else
+			if(GLOB.AOOC_COLOR)
+				to_chat(C, "<font color='[GLOB.AOOC_COLOR]'><b><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></b></font>")
+			else
+				to_chat(C, "<span class='antagooc'><span class='prefix'>AnonOOC:</span> <EM>Somebody:</EM> <span class='message linkify'>[msg]</span></span>")
 
 /client/proc/set_aooc(newColor as color)
-	set name = "Set Antag OOC Color"
-	set desc = "Modifies antag OOC Color"
+	set name = "Set AnonOOC Color"
+	set desc = "Modifies AnonOOC Color"
 	set category = "Fun"
 	GLOB.AOOC_COLOR = sanitize_ooccolor(newColor)
 
 /client/proc/reset_aooc()
-	set name = "Reset Antag OOC Color"
-	set desc = "Returns antag OOC Color to default"
+	set name = "Reset AnonOOC Color"
+	set desc = "Returns AnonOOC Color to default"
 	set category = "Fun"
 	GLOB.AOOC_COLOR = null
 
@@ -125,18 +96,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	else //otherwise just toggle it
 		GLOB.aooc_allowed = !GLOB.aooc_allowed
 
-	var/antaglisting = list()	//Only those who have access to AOOC need to know if it's enabled or not.
-
-	for(var/datum/mind/M in get_antag_minds(/datum/antagonist))
-		if(!M.current || !M.current.client || isnewplayer(M.current))
-			continue
-		antaglisting |= M.current.client
-
-	for(var/mob/M in GLOB.player_list)
-		if(M.client && (M.stat == DEAD || M.client.holder || is_special_character(M)))
-			antaglisting |= M.client
-
-	for(var/client/C in antaglisting)
+	for(var/client/C in GLOB.clients)
 		if(!C || !istype(C))
 			continue
-		to_chat(C, "<B>The Antagonist OOC channel has been [GLOB.aooc_allowed ? "enabled. If you're an antagonist, you can access it through the \"AOOC\" verb." : "disabled"].</B>")
+		to_chat(C, "<B>The Anonymous OOC channel has been [GLOB.aooc_allowed ? "enabled. If you're seeking scenes or just shitposting you can access it through the \"AOOC\" verb." : "disabled"].</B>")

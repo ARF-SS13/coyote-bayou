@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/healable = 1
 
 	///Atmos effect - Yes, you can make creatures that require plasma or co2 to survive. N2O is a trace gas and handled separately, hence why it isn't here. It'd be hard to add it. Hard and me don't mix (Yes, yes make all the dick jokes you want with that.) - Errorage
-	var/list/atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
+	var/list/atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0) //Leaving something at 0 means it's off - has no maximum
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
@@ -192,6 +192,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	/// Sets up mob diversity
 	var/list/variation_list = list()
+	/// obey the variation requests
+	var/vary = TRUE
 	/// has the mob been lazarused?
 	var/lazarused = FALSE
 	/// Who lazarused this mob?
@@ -359,8 +361,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 	sever_link_to_nest()
 	if(make_a_nest)
 		QDEL_NULL(make_a_nest)
@@ -405,7 +406,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/list/dat = list()
 		dat += "<span class='info'>*---------*\n This is [icon2html(src, user)] <EM>[src.name]</EM>[verbose_species ? ", a <EM>[verbose_species]</EM>" : ""]!</span>"
 		if(profilePicture)
-			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+			dat += "<a href='?src=[REF(src)];enlargeImageCreature=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 		//Hands
 		for(var/obj/item/I in held_items)
 			if(!(I.item_flags & ABSTRACT))
@@ -430,7 +431,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 				dat += span_warning("[p_they(TRUE)] looks burned.")
 			else
 				dat += span_warning("<B>[p_they(TRUE)] looks severely burned.</B>")
-		if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
+		//Personality and RP Preferences quirk display
+		dat += get_personality_traits(user)
+		//SPECIAL stats display
+		dat += "[print_special()]"
+		if(client && ((client.inactivity / 10) / 60 > 20)) //20 Minutes
 			dat += "\[Inactive for [round((client.inactivity/10)/60)] minutes\]"
 		else if(disconnect_time)
 			dat += "\[Disconnected/ghosted [round(((world.realtime - disconnect_time)/10)/60)] minutes ago\]"
@@ -487,7 +492,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(health <= 0)
 			death()
 		else
-			set_stat(CONSCIOUS)
+			if(IsSleeping())
+				set_stat(UNCONSCIOUS)
+			else
+				set_stat(CONSCIOUS)
 	med_hud_set_status()
 
 
@@ -561,7 +569,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			else
 				emote("me", EMOTE_AUDIBLE, pick(emote_hear))
 
-
+/*
 /mob/living/simple_animal/proc/environment_is_safe(datum/gas_mixture/environment, check_temp = FALSE)
 	. = TRUE
 
@@ -620,13 +628,20 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
+*/
 
 /mob/living/simple_animal/gib()
-	if(butcher_results)
+	if(butcher_results || guaranteed_butcher_results)
+		var/list/butcher = list()
+		if(butcher_results)
+			butcher += butcher_results
+		if(guaranteed_butcher_results)
+			butcher += guaranteed_butcher_results
 		var/atom/Tsec = drop_location()
-		for(var/path in butcher_results)
-			for(var/i in 1 to butcher_results[path])
-				new path(Tsec)
+		for(var/path in butcher)
+			for(var/i in 1 to butcher[path])
+				if(prob(25))
+					new path(Tsec)
 	..()
 
 /mob/living/simple_animal/gib_animation()
@@ -710,6 +725,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
 		..(gibbed)
+		// if(prob(del_on_death*100))
+		// 	gib()
 		//Prevent infinite loops if the mob Destroy() is overridden in such
 		//a manner as to cause a call to death() again
 		del_on_death = FALSE
@@ -759,7 +776,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		icon = initial(icon)
 		icon_state = icon_living
 		density = initial(density)
-		lying = 0
+		lying = FALSE
+		set_resting(FALSE, silent = TRUE, updating = TRUE)//get up, stand up, don't forget your rights
 		. = 1
 		setMovetype(initial(movement_type))
 
@@ -852,7 +870,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 
 	see_invisible = initial(see_invisible)
-	see_in_dark = initial(see_in_dark)
+	if(HAS_TRAIT(src, TRAIT_NIGHT_VISION_GREATER))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE_GREATER, see_in_dark)
+	else if(HAS_TRAIT(src, TRAIT_NIGHT_VISION))
+		lighting_alpha = min(LIGHTING_PLANE_ALPHA_NV_TRAIT, lighting_alpha)
+		see_in_dark = max(NIGHT_VISION_DARKSIGHT_RANGE, see_in_dark)
+	else
+		see_in_dark = initial(see_in_dark)
+		lighting_alpha = initial(lighting_alpha)
 	sight = initial(sight)
 
 	if(client.eye != src)

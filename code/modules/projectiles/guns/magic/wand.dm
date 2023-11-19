@@ -233,9 +233,9 @@
 	name = "template projectile"
 	icon_state = "arcane_barrage"
 	damage = 0
-	damage_type = BURN
 	nodamage = 0
-	flag = "magic"
+	damage_type = BURN // Determines the health damage type; BRUTE, BURN, OXY, TOX.
+	flag = "magic"  // "magic" ignores all armor, "laser" checks laser, "bullet" is bullet, "energy" is plasma
 	hitsound = 'sound/weapons/sear.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	recoil = BULLET_RECOIL_LASER
@@ -260,8 +260,10 @@
 	name = "weak arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 15
+	damage_low = 10
+	damage_high = 30
 	damage_type = BURN
-	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
+	flag = "laser"
 
 /****************/
 //Improvised Zapper//
@@ -305,6 +307,8 @@
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 20
+	damage_low = 10
+	damage_high = 30
 	damage_type = BURN
 	flag = "laser"
 
@@ -333,6 +337,8 @@
 /obj/item/projectile/magic/kelpmagic/sparks
 	name = "spark"
 	damage = 10 // Don't want to go much higher than this, but 10 bane might be too much. May just need to give it better shots or charging.
+	damage_low = 5
+	damage_high = 15
 	damage_type = BURN
 	flag = "energy"
 	icon_state = "omnilaser"
@@ -376,6 +382,8 @@
 	name = "fire bolt"
 	icon_state = "fireball"
 	damage = 45
+	damage_low = 30
+	damage_high = 50
 	damage_type = BURN
 	flag = "energy"
 
@@ -391,7 +399,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // It's a source of infinite healing, it needs a downside; can carry two wands in a shoulder holster (~100 healing every 5 minutes)
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 5
-	recharge_rate = 60 SECONDS
+	recharge_rate = 30 SECONDS
 
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand

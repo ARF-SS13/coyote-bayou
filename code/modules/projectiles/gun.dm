@@ -179,6 +179,8 @@ ATTACHMENTS
 	var/is_kelpwand = FALSE
 	/// Allow quickdraw (delay to draw the gun is 0s)
 	var/allow_quickdraw = FALSE
+	/// This variable is used by crankable laser guns {/obj/item/gun/energy/laser/cranklasergun}
+	var/recharge_queued = 1
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
 
@@ -558,7 +560,7 @@ ATTACHMENTS
 	clear_cooldown_mods()
 
 	if(is_kelpwand)
-		if(iscarbon(user))
+		if(isliving(user))
 			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
 				if(HAS_TRAIT(user, TRAIT_MARTIAL_A))
 					to_chat(user, span_danger("You don't know how to use magic wands!"))
@@ -592,6 +594,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	/// recoil is read before a burst, so all subsequent shots in a burst will have the same recoil
+	/// This is the mob shooting's aggregate recoil
 	var/sprd = SSrecoil.get_offset(user) /// its still *added* with each shot, so the next burst will be higher
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
@@ -1088,8 +1091,8 @@ ATTACHMENTS
 	data["gun_melee_wielded"] = force_wielded || round(force * FALLBACK_FORCE) || 0
 	data["gun_armor_penetration"] = armour_penetration || 0
 	var/list/chambered_data = istype(chambered) ? chambered.get_statblock(TRUE) : ui_data_projectile(get_dud_projectile())
-	data["gun_chambered"] = chambered_data
-	data["gun_is_chambered"] = istype(chambered)
+	data["gun_chambered"] = chambered_data || list()
+	data["gun_is_chambered"] = istype(chambered) || FALSE
 	data["gun_chambered_loaded"] = chambered ? !!chambered.BB : 0
 	var/list/unmodded_recoil_data = SSrecoil.get_tgui_data(init_recoil)
 	var/list/modded_recoil_data = SSrecoil.get_tgui_data(recoil_tag)

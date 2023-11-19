@@ -51,14 +51,18 @@
 
 /obj/item/gun/magic/staff/healing/triheal
 	name = "staff of unstable blessings"
-	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
+	desc = "An artefact that spits bolts of restorative magic. This one has three spells of healing enchanted into its crystal, however the wielder cannot choose which shall be cast due to the artefact's wild nature."
 	fire_sound = 'sound/magic/mystical.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/chaos
 	icon_state = "triheal"
 	item_state = "broom"
-	max_charges = 3
-	recharge_rate = 30 SECONDS
+	max_charges = 30
+	recharge_rate = 6 SECONDS
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/gun/magic/staff/healing/triheal/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	chambered.projectile_type = pick(allowed_projectile_types)
@@ -91,11 +95,32 @@
 	max_charges = 4
 
 
+
 /obj/item/gun/magic/staff/spellblade/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	// Do not block projectiles.
 	if(attack_type & ATTACK_TYPE_PROJECTILE)
 		return BLOCK_NONE
 	return ..()
+
+//obj/item/gun/magic/staff/spellblade/weak
+	//name = "spellblade"
+	//desc = "A weapon summoned by the will of the user, it's capable of shooting magic arrows to soften up foes in close range"
+	//fire_sound = 'sound/magic/fireball.ogg'
+	//ammo_type = /obj/item/projectile/spellcard/sword
+	//icon_state = "spellblade"
+	//item_state = "spellblade"
+	//lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	//righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	//hitsound = 'sound/weapons/rapierhit.ogg'
+	//force_unwielded = 25
+	//force_wielded = 40
+	//block_parry_data = /datum/block_parry_data/bokken
+	//item_flags = ITEM_CAN_PARRY
+	//weapon_special_component = /datum/component/weapon_special/single_turf
+	//item_flags = DROPDEL
+	//sharpness = SHARP_EDGED
+	//max_charges = 1
+	//damage = 30
 
 /obj/item/gun/magic/staff/locker
 	name = "staff of the locker"
@@ -160,7 +185,7 @@
 	name = "staff of magic missile"
 	desc = "This staff's unusual design allows it to be easily aimed from the hip and be used as a slashing weapon. Attuned to this staff is an enhanced version of the Magic Missile spell."
 	icon_state = "mmstaff"
-	max_charges = 24
+	max_charges = 24 // CURRENTLY BUGGED. THIS ITEM CAN GO NEGATIVE CHARGES AND SHOOT INFINITELY. NEEDS BUGFIXING BY SOMEONE SMARTER THAN ME (KELP)
 	recharge_rate = 10 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/magicmissile/advanced
 	force_wielded = 37 // Practical all around! May change later.
@@ -179,6 +204,8 @@
 	name = "greater magic missile"
 	icon_state = "arcane_barrage"
 	damage = 25 // same as the tribeam
+	damage_low = 20
+	damage_high = 50
 	damage_type = BURN
 	flag = "laser" // "magic" ignores all armor, "laser" checks laser, "energy" is plasma
 
@@ -219,7 +246,10 @@
 
 /obj/item/projectile/magic/kelpmagic/sparks/thunder
 	name = "lightning bolt"
+	flag = "laser" // plasma OP
 	damage = 60
+	damage_low = 30
+	damage_high = 80
 
 /****************/
 //Staff of Healing//
@@ -232,7 +262,28 @@
 	icon_state = "medstaff"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
-	recharge_rate = 60 SECONDS
+	recharge_rate = 30 SECONDS
+
+/****************/
+//Upgraded Staff of Healing//
+//Literally just a bulky medbeam/
+/***************/
+
+/obj/item/gun/medbeam/magic
+	name = "perfected staff of healing"
+	desc = "Through mastery of arcane alchemy, this staff has been brought to the peak of its power... And yet it still can't heal the wielder. Don't cross the streams!"
+	icon = 'icons/obj/guns/magic.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	icon_state = "medstaff"
+	item_state = "staff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	force_unwielded = 20
+	force_wielded = 30
+	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
+	is_kelpwand = TRUE
+	pin = /obj/item/firing_pin/magic
 
 /****************/
 //Staff of Acid//
@@ -259,6 +310,8 @@
 	name = "acid spray"
 	icon_state = "toxin"
 	damage = 12
+	damage_low = 5
+	damage_high = 20
 	damage_type = BURN
 	flag = "laser"
 

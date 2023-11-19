@@ -60,12 +60,22 @@
 	blink.outer_tele_radius = 3
 	AddSpell(blink)
 
+/mob/living/simple_animal/hostile/wizard/Destroy()
+	if(fireball)
+		QDEL_NULL(fireball)
+	if(mm)
+		QDEL_NULL(mm)
+	if(blink)
+		QDEL_NULL(blink)
+	. = ..()
+
 /mob/living/simple_animal/hostile/wizard/handle_automated_action()
 	. = ..()
-	if(target && next_cast < world.time)
-		if((get_dir(src,target) in list(SOUTH,EAST,WEST,NORTH)) && fireball.cast_check(0,src)) //Lined up for fireball
-			src.setDir(get_dir(src,target))
-			fireball.perform(list(target), user = src)
+	var/atom/my_target = get_target()
+	if(my_target && next_cast < world.time)
+		if((get_dir(src,my_target) in list(SOUTH,EAST,WEST,NORTH)) && fireball.cast_check(0,src)) //Lined up for fireball
+			src.setDir(get_dir(src,my_target))
+			fireball.perform(list(my_target), user = src)
 			next_cast = world.time + 10 //One spell per second
 			return .
 		if(mm.cast_check(0,src))

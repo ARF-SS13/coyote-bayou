@@ -32,6 +32,16 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 /proc/cmp_ckey_dsc(client/a, client/b)
 	return sorttext(a.ckey, b.ckey)
 
+/proc/cmp_ckey_mob_asc(mob/a, mob/b)
+	if(!ismob(a) || !ismob(b))
+		return rand(-1,1) // sort this, runtime randy
+	return sorttext(b.ckey, a.ckey)
+
+/proc/cmp_ckey_mob_dsc(mob/a, mob/b)
+	if(!ismob(a) || !ismob(b))
+		return rand(-1,1) // sort this, runtime randy
+	return sorttext(a.ckey, b.ckey)
+
 /proc/cmp_subsystem_init(datum/controller/subsystem/a, datum/controller/subsystem/b)
 	return initial(b.init_order) - initial(a.init_order)	//uses initial() so it can be used on types
 

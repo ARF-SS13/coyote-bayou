@@ -40,16 +40,19 @@
 
 /mob/living/simple_animal/hostile/headcrab/AttackingTarget()
 	. = ..()
-	if(. && !egg_lain && iscarbon(target) && !ismonkey(target))
-		// Changeling egg can survive in aliens!
-		var/mob/living/carbon/C = target
-		if(C.stat == DEAD)
-			if(HAS_TRAIT(C, TRAIT_XENO_HOST))
-				to_chat(src, span_userdanger("A foreign presence repels us from this body. Perhaps we should try to infest another?"))
-				return
-			Infect(target)
-			to_chat(src, span_userdanger("With our egg laid, our death approaches rapidly..."))
-			addtimer(CALLBACK(src, .proc/death), 100)
+	var/atom/my_target = get_target()
+	if(!. || egg_lain || !iscarbon(my_target) || ismonkey(my_target))
+		return
+	// Changeling egg can survive in aliens!
+	var/mob/living/carbon/C = my_target
+	if(C.stat != DEAD)
+		return
+	if(HAS_TRAIT(C, TRAIT_XENO_HOST))
+		to_chat(src, span_userdanger("A foreign presence repels us from this body. Perhaps we should try to infest another?"))
+		return
+	Infect(my_target)
+	to_chat(src, span_userdanger("With our egg laid, our death approaches rapidly..."))
+	addtimer(CALLBACK(src, .proc/death), 100)
 
 /obj/item/organ/body_egg/changeling_egg
 	name = "changeling egg"

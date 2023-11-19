@@ -90,7 +90,7 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
 
 // Cargo-related stuff.
-#define MANIFEST_ERROR_CHANCE		5
+#define MANIFEST_ERROR_CHANCE		0
 #define MANIFEST_ERROR_NAME			1
 #define MANIFEST_ERROR_CONTENTS		2
 #define MANIFEST_ERROR_ITEM			4
@@ -497,7 +497,7 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 #define VARSET_TO_LIST(L, V) if(L) L[#V] = V
 #define VARSET_TO_LIST_IF(L, V, C...) if(L && (C)) L[#V] = V
 
-#define PREF_SAVELOAD_COOLDOWN 5
+#define PREF_SAVELOAD_COOLDOWN 3
 
 #define VOMIT_TOXIC 1
 #define VOMIT_PURPLE 2
@@ -549,3 +549,13 @@ GLOBAL_LIST_INIT(pda_reskins, list(PDA_SKIN_CLASSIC = 'icons/obj/pda.dmi'))
 #define SHOES_KNOTTED 2
 
 #define WANTED_FILE "wanted_message.json"
+
+
+
+//Maximum weight allowed for dual wielding.
+#define DUAL_WIELDING_MAX_WEIGHT_ALLOWED WEIGHT_CLASS_NORMAL
+
+#define DUAL_WIELDING_FALLBACK_FORCE	0.66
+#define DUAL_WIELDING_AGILE_FORCE		0.75
+#define DUAL_WIELDING_ENCUMBERED_FORCE	0.50
+#define DUAL_WIELDING_SPEED_DIVIDER 	3

@@ -522,11 +522,10 @@
 
 /datum/supply_pack/security/staves_basic // T1 Staves
 	name = "Magic - Basic Staves"
-	desc = "A crate containing three basic staves."
-	cost = 5000
-	num_contained = 3
+	desc = "A crate containing two basic staves."
+	cost = 3500
+	num_contained = 2
 	contains = list(
-		/obj/item/gun/magic/staff/kelpmagic/magicmissile,
 		/obj/item/gun/magic/staff/kelpmagic/acidstaff,
 		/obj/item/gun/magic/staff/kelpmagic/lightning
 		)

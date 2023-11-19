@@ -146,8 +146,7 @@ GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
 	/datum/admins/proc/toggleaban,
 	/client/proc/everyone_random,
 	/datum/admins/proc/toggleAI,
-	/datum/admins/proc/toggleMulticam,
-	/datum/admins/proc/toggledynamicvote,
+	/datum/admins/proc/toggleMulticam,		//CIT
 	/client/proc/cmd_admin_delete,		/*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
 	/client/proc/toggle_random_events,
@@ -195,6 +194,17 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
+	/client/proc/print_gun_debug_information,
+	// /client/proc/atmos_control,
+	// /client/proc/reload_cards,
+	// /client/proc/validate_cards,
+	// /client/proc/test_cardpack_distribution,
+	// /client/proc/print_cards,
+	#ifdef TESTING
+	// /client/proc/check_missing_sprites,
+	// /client/proc/export_dynamic_json,
+	/client/proc/run_dynamic_simulations,
+	#endif
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 #ifdef REFERENCE_TRACKING
