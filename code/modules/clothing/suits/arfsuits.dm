@@ -1704,6 +1704,14 @@
 	flags_inv = HIDEJUMPSUIT
 	permeability_coefficient = 0.5
 
+/obj/item/clothing/suit/armor/light/duster/peacecoat
+	name = "tattered peace coat"
+	desc = "An old overcoat with a crude peace symbol painted on the back in white with white spraypaint. Whatever symbols the coat originally came with have long since been worn away by time."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "ghostechoe"
+	item_state = "ghostechoe"
+	body_parts_hidden = ARMS
+
 /obj/item/clothing/suit/armor/light/duster/vaquero
 	name = "vaquero suit"
 	desc = "An ornate suit popularized by traders from the south, using tiny metal studs and plenty of silver thread wich serves as decoration and also reflects energy very well, useful when facing the desert sun or a rogue Eyebot."

@@ -551,12 +551,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "scloak"
 	item_state = "scloak"
 
-/obj/item/clothing/suit/armor/ghostechoe
-	name = "tattered peace coat"
-	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
-	icon_state = "ghostechoe"
-	item_state = "ghostechoe"
-
 /obj/item/clothing/suit/armor/medium/combat/vetranger
 	name = "veteran ranger combat armor"
 	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
