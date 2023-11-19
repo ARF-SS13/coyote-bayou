@@ -1093,3 +1093,30 @@
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Spread own legs 6A26///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/spreadeagle
+	description = "Partner/Crotch - Spread your legs."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME spreads their slowly legs, ready for XT_NAME to do whatever.",
+	)
+	disarm_messages = list(
+		"XU_NAME spreads their legs fully, ready for XT_NAME to do whatever as they put themselves on display.",
+	)
+	grab_messages = list(
+		"XU_NAME spreads their legs and pulls them up into their armpits, ready for XT_NAME to do whatever.",
+	)
+	harm_messages = list(
+		"XU_NAME puts their knees in their armpits. Ready for XT_NAME to dick them down hard.",
+	)
+
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.4
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
