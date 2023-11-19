@@ -569,6 +569,8 @@
 			for(var/mob/squish in ppl - mouns)
 				if(!squish.client)
 					continue
+				if(!(squish in view(15, user)))
+					continue
 				if(!CHECK_PREFS(squish, HEAR_LEWD_VERB_WORDS))
 					continue
 				to_chat(squish, moan)	
