@@ -739,9 +739,11 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
+/*This makes the round very impossible to balance. Just modify the damage multiplier per gun depending on the rate of fire.
 // Bane, handloads don't get it because you went cheap. Loser.
 	supereffective_damage = 95 // SPECIFICALLY 95 because 60 (min damage) + 95 (bane damage) = 155 (total min+bane damage) - 35% (combat armor value) = 100.75 
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+*/
 
 /* .50MG surplus
  * DAMAGE: 75

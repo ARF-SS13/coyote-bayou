@@ -184,7 +184,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	weapon_class = WEAPON_CLASS_TINY
 
-obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
+/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
 	name = "Taurus 5mm 'Equalizer' pistol"
 	desc = "A not so well known 5mm chambered pistol. The Taurus 'Equalizer' is a pistol with a 20 round 5mm capacity and a decent hitting catridge."
 	icon_state = "5mm"

@@ -631,7 +631,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	w_class = WEIGHT_CLASS_NORMAL // Kelp again, it's Normal once more but no more akimbo. Please actually edit relevant comments when you tweak pls.
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //260 dps
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -649,8 +649,7 @@
  * Light 10mm SMG
  * 10mm
  * Huge magazine
- * Even Less damage
- * Less accurate
+ * Less damage
  * One-handed
  * Akimbo!
  * Common
@@ -659,12 +658,7 @@
 /obj/item/gun/ballistic/automatic/smg/p90/worn
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	init_firemodes = list(
-		/datum/firemode/burst/five/slow,
-		/datum/firemode/semi_auto/fast
-	)
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //208 dps
 
 
 /* * * * * * * * * * *
@@ -711,7 +705,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/smg/mp5
+/obj/item/gun/ballistic/automatic/smg/mp5sd
 	name = "MP-5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
@@ -2048,7 +2042,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/w3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(/datum/firemode/semi_auto/slower)
@@ -2075,7 +2069,7 @@
 	item_state = "gold_sniper"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 
 /* * * * * * * * * * *
  * Explorer Sniper Rifle
@@ -2330,7 +2324,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1.6, 1.4)
 	init_firemodes = list(/datum/firemode/burst/three/slower ,
@@ -3146,7 +3140,7 @@
 	icon_state = "lsw"
 	item_state = "lsw"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/extended
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0

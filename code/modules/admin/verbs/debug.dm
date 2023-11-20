@@ -959,9 +959,6 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 	to_chat(usr, "Processing [LAZYLEN(all_guns)] total weapons...")
 	if(!LAZYLEN(GLOB.gun_balance_list))
 		for(var/gunthing in all_guns)
-			if(gunthing in GLOB.gun_balance_list)
-				to_chat(usr, span_warning("ERROR: [gunthing] was skipped because it's a duplicate! How did that happen!"))
-				continue
 			gunthing = new gunthing()//We need to instantiate these guns because many of their stats don't exist until they've Init'd
 			if(istype(gunthing, /obj/item/gun/ballistic))
 				var/obj/item/gun/ballistic/G = gunthing
