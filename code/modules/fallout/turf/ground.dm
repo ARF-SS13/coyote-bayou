@@ -818,3 +818,331 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	name = "thatch"
 	icon = 'icons/fallout/turfs/civfloor.dmi'
 	icon_state = "thatch2"
+
+
+//bamboo
+
+/turf/open/indestructible/ground/bamboo
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-255"
+
+/turf/open/indestructible/ground/bamboo/one
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-0"
+
+/turf/open/indestructible/ground/bamboo/two
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-1"
+
+/turf/open/indestructible/ground/bamboo/three
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-2"
+
+/turf/open/indestructible/ground/bamboo/four
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-3"
+
+/turf/open/indestructible/ground/bamboo/five
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-4"
+
+/turf/open/indestructible/ground/bamboo/six
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-5"
+
+/turf/open/indestructible/ground/bamboo/seven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-6"
+
+/turf/open/indestructible/ground/bamboo/eight
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-7"
+
+/turf/open/indestructible/ground/bamboo/nine
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-8"
+
+/turf/open/indestructible/ground/bamboo/ten
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-9"
+
+/turf/open/indestructible/ground/bamboo/eleven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-10"
+
+/turf/open/indestructible/ground/bamboo/twelve
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-11"
+
+/turf/open/indestructible/ground/bamboo/thirteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-12"
+
+/turf/open/indestructible/ground/bamboo/fourteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-13"
+
+/turf/open/indestructible/ground/bamboo/fifteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-14"
+
+/turf/open/indestructible/ground/bamboo/sixteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-15"
+
+/turf/open/indestructible/ground/bamboo/seventeen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-21"
+
+/turf/open/indestructible/ground/bamboo/eighteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-23"
+
+/turf/open/indestructible/ground/bamboo/nineteen
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-29"
+
+/turf/open/indestructible/ground/bamboo/twenty
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-31"
+
+/turf/open/indestructible/ground/bamboo/twentyone
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-38"
+
+/turf/open/indestructible/ground/bamboo/twentytwo
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-39"
+
+/turf/open/indestructible/ground/bamboo/twentythree
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-38"
+
+/turf/open/indestructible/ground/bamboo/twentyfour
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-39"
+
+/turf/open/indestructible/ground/bamboo/twentyfive
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-46"
+
+/turf/open/indestructible/ground/bamboo/twentysix
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-47"
+
+/turf/open/indestructible/ground/bamboo/twentyseven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-55"
+
+/turf/open/indestructible/ground/bamboo/twentyeight
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-63"
+
+/turf/open/indestructible/ground/bamboo/twentynine
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-74"
+
+/turf/open/indestructible/ground/bamboo/thirty
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-38"
+
+/turf/open/indestructible/ground/bamboo/thirtyone
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-39"
+
+/turf/open/indestructible/ground/bamboo/thirtytwo
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-46"
+
+/turf/open/indestructible/ground/bamboo/thirtythree
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-47"
+
+/turf/open/indestructible/ground/bamboo/thirtyfour
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-55"
+
+/turf/open/indestructible/ground/bamboo/thirtyfive
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-63"
+
+/turf/open/indestructible/ground/bamboo/thirtysix
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-74"
+
+/turf/open/indestructible/ground/bamboo/thirtyseven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-74"
+
+/turf/open/indestructible/ground/bamboo/thirtyeight
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-75"
+
+/turf/open/indestructible/ground/bamboo/thirtynine
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-78"
+
+/turf/open/indestructible/ground/bamboo/fourty
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-79"
+
+/turf/open/indestructible/ground/bamboo/fourtyone
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-95"
+
+/turf/open/indestructible/ground/bamboo/fourtytwo
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-95"
+
+/turf/open/indestructible/ground/bamboo/fourtythree
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-110"
+
+/turf/open/indestructible/ground/bamboo/fourtyfour
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-111"
+
+/turf/open/indestructible/ground/bamboo/fourtyfive
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-127"
+
+/turf/open/indestructible/ground/bamboo/fourtysix
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-137"
+
+/turf/open/indestructible/ground/bamboo/fourtyseven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-139"
+
+/turf/open/indestructible/ground/bamboo/fourtyeight
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-141"
+
+/turf/open/indestructible/ground/bamboo/fourtynine
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-143"
+
+/turf/open/indestructible/ground/bamboo/fifty
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-157"
+
+/turf/open/indestructible/ground/bamboo/fiftyone
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-159"
+
+/turf/open/indestructible/ground/bamboo/fiftytwo
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-159"
+
+/turf/open/indestructible/ground/bamboo/fiftythree
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-159"
+
+/turf/open/indestructible/ground/bamboo/fiftyfour
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-159"
+
+/turf/open/indestructible/ground/bamboo/fiftyfive
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-175"
+
+/turf/open/indestructible/ground/bamboo/fiftysix
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-191"
+
+/turf/open/indestructible/ground/bamboo/fiftyseven
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-191"
+
+/turf/open/indestructible/ground/bamboo/fiftyeight
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-203"
+
+/turf/open/indestructible/ground/bamboo/fiftynine
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-207"
+
+/turf/open/indestructible/ground/bamboo/sixty
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-223"
+
+/turf/open/indestructible/ground/bamboo/sixtyone
+	name = "bamboo"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "mat-239"
+
+/turf/open/indestructible/ground/bamboo/tatamipurple
+	name = "tatami"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "tatami_purple"
+
+/turf/open/indestructible/ground/bamboo/tatamigreen
+	name = "tatami"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "tatami_green"
+
+/turf/open/indestructible/ground/bamboo/tatamiblack
+	name = "tatami"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "tatami_black"
