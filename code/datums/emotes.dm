@@ -90,22 +90,12 @@
 	var/list/splitmsg = splittext(html_decode(msg), "\"")
 	var/initlen = splitmsg.len
 	if(initlen > 1)
-		var/idx = 1
-		var/msgedit = ""
 		var/mob/living/carbon/carbo = user
 		var/saycolor = carbo?.dna.features["chat_color"]
 		if(!saycolor)
 			saycolor = rgb(255, 0, 0)
 
-		for(var/section in splitmsg)
-			if(idx % 2)
-				msgedit += section
-				idx++
-				continue
-			msgedit += "<span style='color:#[saycolor];'>[html_encode("\"" + section + "\"")]</span>"
-			idx++
-
-		msg = msgedit
+		msg = alternating_color_span(msg,"#[saycolor]","\"",0)
 
 
 	msg = "<span class='emote'>[msg]</span>"
