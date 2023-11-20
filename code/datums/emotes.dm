@@ -87,6 +87,27 @@
 
 	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
 
+	var/list/splitmsg = splittext(html_decode(msg), "\"")
+	var/initlen = splitmsg.len
+	if(initlen > 1)
+		var/idx = 1
+		var/msgedit = ""
+		var/mob/living/carbon/carbo = user
+		var/saycolor = carbo?.dna.features["chat_color"]
+		if(!saycolor)
+			saycolor = rgb(255, 0, 0)
+
+		for(var/section in splitmsg)
+			if(idx % 2)
+				msgedit += section
+				idx++
+				continue
+			msgedit += "<span style='color:#[saycolor];'>[html_encode("\"" + section + "\"")]</span>"
+			idx++
+
+		msg = msgedit
+
+
 	msg = "<span class='emote'>[msg]</span>"
 	if(!omit_left_name)
 		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)

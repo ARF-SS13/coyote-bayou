@@ -119,7 +119,8 @@
 	\n\
 	- ! at the start of a radio comm to emote over the radio \n\
 	--example: say ;! sneezes! \n\
-	"
+	\n\
+	- Text between two quotation marks will be highlighted with your runechat color.\n\ "
 //Dan is the best, <3 ~TK
 //put space before the \ so it reads properly
 // use \ for readability, but one big line. \n for a new line. \n\ for a new line and readability.
