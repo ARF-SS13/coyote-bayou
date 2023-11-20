@@ -3656,6 +3656,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/wasteland)
+"bPL" = (
+/obj/structure/simple_door/wood,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "bPV" = (
 /obj/structure/closet/crate/bin/trashbin,
 /turf/open/indestructible/ground/outside/desert,
@@ -4498,7 +4507,9 @@
 	layer = 5
 	},
 /obj/structure/window/fulltile/wood,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "cov" = (
 /obj/machinery/mineral/wasteland_vendor/advcomponents,
@@ -4528,6 +4539,18 @@
 "cpS" = (
 /obj/structure/bloodsucker/candelabrum,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"cqt" = (
+/obj/structure/fireplace{
+	pixel_x = -15
+	},
+/obj/structure/rug/mat{
+	layer = 1;
+	pixel_x = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "cqK" = (
 /obj/machinery/door/airlock/hatch,
@@ -8571,6 +8594,17 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"evC" = (
+/obj/structure/chair/sofa/corner{
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = -7;
+	color = "green"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "evL" = (
 /turf/open/floor/f13{
 	dir = 10;
@@ -9164,6 +9198,12 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/f13,
+/area/f13/wasteland)
+"eId" = (
+/obj/structure/simple_door/tentflap_cloth,
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
 /area/f13/wasteland)
 "eIi" = (
 /obj/structure/railing{
@@ -9773,6 +9813,15 @@
 	icon_state = "housewood1-broken"
 	},
 /area/f13/building)
+"eWS" = (
+/obj/structure/chair/sofa/right{
+	pixel_y = 8;
+	color = "green"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "eXe" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -10504,26 +10553,14 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/wasteland)
 "fnj" = (
-/obj/structure/bed{
-	layer = 2.7
+/obj/structure/bed/mattress{
+	pixel_y = 12
 	},
-/obj/structure/bed{
-	pixel_y = 16;
-	layer = 3
+/obj/structure/bed/mattress,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
 	},
-/obj/structure/railing/corner{
-	icon_state = "straight";
-	pixel_x = 14;
-	name = "bedpost";
-	desc = "A metal bedpost."
-	},
-/obj/structure/railing/corner{
-	icon_state = "straight";
-	pixel_x = -14;
-	name = "bedpost";
-	desc = "A metal bedpost."
-	},
-/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "fnn" = (
 /obj/structure/bookshelf{
@@ -10545,6 +10582,14 @@
 	pixel_x = 0
 	},
 /turf/open/floor/wood_mosaic,
+/area/f13/wasteland)
+"fnO" = (
+/obj/structure/destructible/tribal_torch/wall{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "foc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11313,12 +11358,12 @@
 	},
 /area/f13/building/abandoned)
 "fKo" = (
-/obj/structure/curtain{
-	color = "#87A392";
-	layer = 5
+/obj/structure/closet/cabinet/anchored{
+	pixel_y = 10
 	},
-/obj/structure/window/fulltile/wood,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "fKu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11640,6 +11685,16 @@
 "fTL" = (
 /obj/structure/decoration/sign,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"fTX" = (
+/obj/structure/chair/sofa/left{
+	pixel_y = 7;
+	color = "green";
+	pixel_x = -8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "fTY" = (
 /obj/structure/bed{
@@ -12962,6 +13017,13 @@
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
+"gGO" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothcorner{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "gGS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -17366,6 +17428,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/wasteland)
+"iTR" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothcorner{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "iTX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/fridge/meat{
@@ -17501,6 +17570,16 @@
 /obj/structure/bookcase,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"iXq" = (
+/obj/structure/curtain{
+	color = "#4B724F";
+	layer = 5
+	},
+/obj/structure/window/fulltile/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "iXA" = (
 /obj/structure/falsewall/silver,
 /turf/open/indestructible/ground/outside/desert,
@@ -18281,6 +18360,13 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
+"jsm" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothedge,
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
+/area/f13/wasteland)
 "jss" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
@@ -18972,6 +19058,12 @@
 /obj/machinery/mineral/ore_redemption,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"jJy" = (
+/obj/structure/destructible/tribal_torch/wall,
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
+/area/f13/wasteland)
 "jJC" = (
 /obj/structure/dresser,
 /obj/machinery/light{
@@ -19128,11 +19220,9 @@
 /turf/open/floor/grass,
 /area/f13/wasteland)
 "jPO" = (
-/obj/structure/chair/booth{
-	dir = 4
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "oakfloor1"
+/obj/structure/table/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland)
 "jQh" = (
@@ -19258,6 +19348,20 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"jRN" = (
+/obj/structure/rug/big/rug_blue_shag{
+	dir = 4
+	},
+/obj/structure/chair/sofa/right{
+	pixel_y = 8;
+	color = "green";
+	dir = 4;
+	pixel_x = -7
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "jRR" = (
 /obj/structure/chair/stool,
 /turf/open/floor/f13/wood{
@@ -19306,6 +19410,15 @@
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop2"
+	},
+/area/f13/wasteland)
+"jTc" = (
+/obj/structure/chair/sofa/left{
+	pixel_y = 8;
+	color = "green"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland)
 "jTp" = (
@@ -20304,6 +20417,12 @@
 /obj/item/clothing/neck/apron/chef,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/wasteland)
+"krS" = (
+/obj/structure/chair/sofa/left,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "ksj" = (
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
@@ -20426,6 +20545,12 @@
 	icon_state = "interior7"
 	},
 /area/f13/building)
+"kwM" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "kwO" = (
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -20555,6 +20680,10 @@
 "kAt" = (
 /obj/structure/chair/sofa/corp/left,
 /turf/open/floor/carpet/red,
+/area/f13/wasteland)
+"kAv" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland)
 "kAz" = (
 /obj/structure/chair/stool/retro/backed{
@@ -22962,10 +23091,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "lLR" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/bed/mattress{
+	pixel_y = 12
 	},
-/turf/open/floor/carpet/purple,
+/obj/structure/bed/mattress,
+/obj/item/bedsheet/doublesheet,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "lMk" = (
 /obj/structure/destructible/tribal_torch/wall{
@@ -23700,6 +23833,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"mfR" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothedge{
+	dir = 1;
+	pixel_y = -3
+	},
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
+/area/f13/wasteland)
 "mfS" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-10";
@@ -25203,6 +25346,15 @@
 /obj/structure/sign/poster/wanted,
 /turf/closed/wall/mineral/brick,
 /area/f13/building)
+"mWp" = (
+/obj/structure/simple_door/wood,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "mWL" = (
 /obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/f13{
@@ -25542,11 +25694,9 @@
 	},
 /area/f13/bar/nash)
 "nfm" = (
-/obj/structure/chair/booth{
-	dir = 8
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "oakfloor1"
+/obj/structure/rack,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland)
 "nft" = (
@@ -25834,6 +25984,13 @@
 /obj/structure/simple_door/glass,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"nnJ" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothcorner{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "nnK" = (
 /obj/structure/curtain{
 	color = "#87A392";
@@ -25855,6 +26012,11 @@
 /area/f13/wasteland)
 "noR" = (
 /obj/mecha/medical/medigax,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"noS" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothcorner,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "npa" = (
@@ -26009,6 +26171,12 @@
 	icon_state = "verticalinnermain2bottom"
 	},
 /area/f13/wasteland/city)
+"nsg" = (
+/obj/structure/rug/big/rug_blue_shag,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "nsl" = (
 /obj/structure/table/wood/poker,
 /turf/open/indestructible/ground/outside/desert,
@@ -27601,6 +27769,12 @@
 "ohF" = (
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
 	dir = 8
+	},
+/area/f13/wasteland)
+"ohM" = (
+/obj/structure/rack,
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
 	},
 /area/f13/wasteland)
 "ohN" = (
@@ -29252,6 +29426,16 @@
 "oXI" = (
 /obj/structure/lamp_post/quadra,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"oYf" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain{
+	color = "#4B724F";
+	layer = 5
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "oYh" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -33021,6 +33205,15 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
+"qNq" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothedge{
+	dir = 4
+	},
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
+/area/f13/wasteland)
 "qNz" = (
 /turf/closed/wall/f13/wood/interior{
 	icon_state = "interior2"
@@ -33479,6 +33672,12 @@
 "rbo" = (
 /turf/closed/wall/rust,
 /area/f13/wasteland)
+"rbw" = (
+/obj/structure/destructible/tribal_torch/wall,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "rbD" = (
 /turf/open/floor/plasteel/neutral,
 /area/f13/wasteland)
@@ -33866,6 +34065,12 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
+	},
+/area/f13/wasteland)
+"rmI" = (
+/obj/structure/closet/crate/wicker,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland)
 "rmM" = (
@@ -37832,6 +38037,14 @@
 /obj/item/trash/candle,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"tye" = (
+/obj/structure/curtain{
+	color = "#1e549c"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "tyo" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
@@ -38952,7 +39165,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/wood,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
 /area/f13/wasteland)
 "ucY" = (
 /obj/structure/falsewall/plasma,
@@ -40721,6 +40936,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/wasteland)
+"uYh" = (
+/obj/structure/closet/cabinet/anchored,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "uYv" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/dirt,
@@ -41519,6 +41740,15 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/wasteland)
+"vvD" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/tentclothedge{
+	dir = 8
+	},
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
 /area/f13/wasteland)
 "vvK" = (
 /obj/structure/table/wood,
@@ -43682,6 +43912,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/coyote/nash/cornerdiner)
+"wIi" = (
+/obj/structure/fireplace{
+	pixel_x = 0
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "wIj" = (
 /obj/machinery/chem_master/condimaster,
 /turf/open/indestructible/ground/outside/desert,
@@ -44430,6 +44668,11 @@
 "xdY" = (
 /obj/structure/campfire/stove,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"xed" = (
+/turf/open/floor/wood_mosaic/wood_mosaic_light{
+	name = "reed flooring"
+	},
 /area/f13/wasteland)
 "xee" = (
 /obj/effect/decal/cleanable/dirt,
@@ -61677,11 +61920,11 @@ bAY
 bAY
 bAY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+nnJ
+vvD
+vvD
+vvD
+iTR
 jrY
 jrY
 jrY
@@ -62179,11 +62422,11 @@ wYD
 ght
 bAY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+mfR
+ohM
+xed
+jJy
+jsm
 jrY
 jrY
 jrY
@@ -62681,11 +62924,11 @@ iVX
 rHE
 bAY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+mfR
+ohM
+xed
+xed
+eId
 jrY
 jrY
 jrY
@@ -63183,11 +63426,11 @@ fWO
 kMJ
 bAY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+mfR
+ohM
+xed
+fnj
+jsm
 jrY
 jrY
 jrY
@@ -63685,11 +63928,11 @@ bAY
 bAY
 bAY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+gGO
+qNq
+qNq
+qNq
+noS
 jrY
 jrY
 jrY
@@ -69166,9 +69409,9 @@ nMy
 jrY
 jrY
 bAY
-jPO
-kbq
-tqI
+iVX
+iVX
+iVX
 iNr
 jrY
 jrY
@@ -69668,9 +69911,9 @@ bAY
 jrY
 jrY
 bAY
-ght
 iVX
-hgm
+iVX
+iVX
 ucQ
 jrY
 jrY
@@ -70170,7 +70413,7 @@ kbK
 jrY
 jrY
 bAY
-nfm
+iVX
 iVX
 iVX
 cnG
@@ -70672,10 +70915,10 @@ bAY
 jrY
 jrY
 bAY
-dRo
 iVX
 iVX
-fKo
+iVX
+cSJ
 jrY
 jrY
 kFS
@@ -71676,9 +71919,9 @@ bAY
 jrY
 jrY
 bAY
-aDL
-cjH
-cjH
+iVX
+iVX
+iVX
 bAY
 jrY
 jrY
@@ -72178,9 +72421,9 @@ jrY
 jrY
 jrY
 bAY
-fnj
-lLR
-fnj
+iVX
+iVX
+iVX
 bAY
 jrY
 jrY
@@ -114892,7 +115135,7 @@ sgX
 aeT
 thC
 sgX
-nKb
+kAv
 gHk
 aDL
 sgX
@@ -178202,10 +178445,10 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bAY
+bAY
 jrY
 jrY
 jrY
@@ -178700,14 +178943,14 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bAY
+bAY
+bAY
+fKo
+fwJ
+bAY
 jrY
 jrY
 jrY
@@ -179202,14 +179445,14 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+jPO
+fnO
+fwJ
+tye
+fwJ
+rbw
+bAY
 jrY
 jrY
 jrY
@@ -179704,14 +179947,14 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+oYf
+kwM
+nsg
+fwJ
+bAY
+nfm
+lLR
+bAY
 jrY
 jrY
 jrY
@@ -180206,14 +180449,14 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+oYf
+krS
+fwJ
+fwJ
+bAY
+bAY
+oYf
+bAY
 jrY
 jrY
 jrY
@@ -180708,11 +180951,11 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+jPO
+fwJ
+rmI
+bAY
 jrY
 jrY
 jrY
@@ -181210,11 +181453,11 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bPL
+bAY
+bAY
 jrY
 jrY
 jrY
@@ -183218,18 +183461,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+bAY
+bAY
+bAY
+bAY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bAY
+bAY
+bAY
 jrY
 jrY
 jrY
@@ -183720,18 +183963,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+evC
+jRN
+jPO
+oYf
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+jPO
+fwJ
+rmI
+bAY
 jrY
 jrY
 jrY
@@ -184222,18 +184465,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+fTX
+fwJ
+jPO
+oYf
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+eWS
+nsg
+fwJ
+iXq
 jrY
 jrY
 jrY
@@ -184724,18 +184967,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+wIi
+fwJ
+fwJ
+bAY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+jTc
+fwJ
+fwJ
+iXq
 jrY
 jrY
 jrY
@@ -185226,18 +185469,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+fwJ
+fwJ
+fwJ
+mWp
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+cqt
+fwJ
+fwJ
+mWp
 jrY
 jrY
 jrY
@@ -185728,18 +185971,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+bAY
+bAY
+tye
+bAY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+fKo
+fwJ
+nfm
+bAY
 jrY
 jrY
 jrY
@@ -186230,18 +186473,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+uYh
+fwJ
+rbw
+bAY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+lLR
+fwJ
+nfm
+bAY
 jrY
 jrY
 jrY
@@ -186732,18 +186975,18 @@ jrY
 jrY
 jrY
 jrY
+bAY
+lLR
+fwJ
+rmI
+bAY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bAY
+bAY
+bAY
 jrY
 jrY
 jrY
@@ -187234,11 +187477,11 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+bAY
+bAY
+bAY
+bAY
+bAY
 jrY
 jrY
 jrY
