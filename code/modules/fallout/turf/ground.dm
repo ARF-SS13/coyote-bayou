@@ -737,3 +737,84 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	name = "desertsand"
 	icon = 'modular_coyote/icons/turfs/desertsand.dmi'
 	icon_state = "sand1"
+
+//Light dirt readded
+/turf/open/indestructible/ground/outside/dirt/light
+	name = "dirt"
+	icon = 'icons/fallout/turfs/dirt.dmi'
+	icon_state = "dirt_light"
+
+/turf/open/indestructible/ground/outside/dirt/dirtgrasscorner
+	name = "grass"
+	icon = 'icons/fallout/turfs/dirt.dmi'
+	icon_state = "dirtgrasscorner"
+
+/turf/open/indestructible/ground/outside/dirt/dirtgrassline
+	name = "grass"
+	icon = 'icons/fallout/turfs/dirt.dmi'
+	icon_state = "dirtgrassline"
+
+/turf/open/indestructible/ground/outside/civ/grassdark
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark"
+
+/turf/open/indestructible/ground/outside/civ/grass0
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass0"
+
+/turf/open/indestructible/ground/outside/civ/grass1
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass1"
+
+/turf/open/indestructible/ground/outside/civ/grass2
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass2"
+
+/turf/open/indestructible/ground/outside/civ/grass3
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass3"
+
+/turf/open/indestructible/ground/outside/civ/drygrass
+	name = "dry grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "dry_grass"
+
+/turf/open/indestructible/ground/outside/civ/drygrass0
+	name = "dry grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "dead_grass0"
+
+/turf/open/indestructible/ground/outside/civ/drygrass1
+	name = "dry grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "dead_grass1"
+
+/turf/open/indestructible/ground/outside/civ/drygrass2
+	name = "dry grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "dead_grass2"
+
+/turf/open/indestructible/ground/outside/civ/drygrass3
+	name = "dry grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "dead_grass3"
+
+/turf/open/indestructible/ground/outside/civ/woodalt
+	name = "wood"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "woodalt"
+
+/turf/open/indestructible/ground/outside/civ/thatch1
+	name = "thatch"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "thatch1"
+
+/turf/open/indestructible/ground/outside/civ/thatch2
+	name = "thatch"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "thatch2"
