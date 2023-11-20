@@ -403,6 +403,19 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 
+//tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
+	name = ".22 machine pistol"
+	desc = "A compact, lightweight way to put a lot of bullets downrange."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "tec9"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
+	weapon_class = WEAPON_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	can_suppress = TRUE
+
 //MP40: a uzi but with different flavor
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40
 	name = "Maschinenpistole 40"
@@ -426,19 +439,6 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
-
-//tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
-	name = ".22 machine pistol"
-	desc = "A compact, lightweight way to put a lot of bullets downrange."
-	icon = 'modular_coyote/icons/objects/automatic.dmi'
-	icon_state = "tec9"
-	mag_type = /obj/item/ammo_box/magazine/m22
-	init_mag_type = /obj/item/ammo_box/magazine/m22
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
-	weapon_class = WEAPON_CLASS_SMALL
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	can_suppress = TRUE
 
 //rockwell: starter tier bad quality 9mm smg
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell

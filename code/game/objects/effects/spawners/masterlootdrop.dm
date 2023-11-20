@@ -193,53 +193,59 @@
 ///ballistic weapon spawners///
 ///////////////////////////////
 
+/// DPS should be 100 or less
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/trash_guns
 	name = "trash guns"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/hobo/zipgun = 10,
-		/obj/item/gun/ballistic/revolver/hobo/piperifle = 10,
+		/obj/item/gun/ballistic/automatic/hobo/zipgun = 10, //86 dps, 5 capacity. perfect trash gun. Others should strive to be like this.
+		/obj/item/gun/ballistic/revolver/winchesterrebored = 10, //138 dps but only 2 shots
+		/obj/item/gun/ballistic/revolver/hobo/piperifle = 10, //136 dps, but single shot
 		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,
-		/obj/item/gun/ballistic/rifle/mosin/mini = 10,
-		/obj/item/gun/ballistic/revolver/hobo/knifegun = 5,
-		/obj/item/gun/ballistic/revolver/shotpistol = 5,
-		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 3,
-		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 3,
-		/obj/item/gun/ballistic/automatic/autopipe = 3,
-		/obj/item/gun/ballistic/revolver/winchesterrebored = 1,
+		/obj/item/gun/ballistic/rifle/mosin/mini = 5, //112.5 dps, 5 shot bolt action.
+		/obj/item/gun/ballistic/revolver/hobo/knifegun = 5, //Quite bad
+		/obj/item/gun/ballistic/revolver/shotpistol = 5,					//
+		/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 5,			//
+		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 5,				// 
+		/obj/item/gun/ballistic/automatic/pistol/deagle= 5, 				// 96	8
+		/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol = 4,	// 78	20
+		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 4,			// 66	25
 	)
 
+/// DPS should be 100-200
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_guns
 	name = "common guns"
-	loot = list(
-		/obj/item/gun/ballistic/automatic/varmint = 10,
-		/obj/item/gun/ballistic/automatic/pistol/sig = 10,
-		/obj/item/gun/ballistic/automatic/pistol/deagle= 10,
-		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 4,
-		/obj/item/gun/ballistic/automatic/sportcarbine = 4,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 4,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 4,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 4,
-		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 4,
-		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 4,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,
-		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 3, // Pretty much the same gun but I felt like its fair keeping them here
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 3, // <- ^
-		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 2,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 2,
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 2,
-		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 1,
-		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1,
-		/obj/item/gun/ballistic/automatic/marksman/policerifle = 1,
-		/obj/item/gun/ballistic/automatic/pistol/automag = 1,
-		/obj/item/gun/ballistic/automatic/pistol/beretta = 1,
-		/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol = 4,
+	loot = list(															// dps	mag cap
+		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 2, 	// 252	15
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 2, 			// 227	32
+		/obj/item/gun/ballistic/automatic/sportcarbine = 2, 				// 186	32
+		/obj/item/gun/ballistic/automatic/marksman/policerifle = 2, 		// 180	20
+		/obj/item/gun/ballistic/automatic/pistol/sig = 2, 					// 180	8
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 2, 		// 168	15
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 1, 	// 157	30
+		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1, 				// 150	16
+		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 4, 		// 139	15
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 4, 			// 135	32			*
+		/obj/item/gun/ballistic/automatic/pistol/beretta = 1,				// 126	15
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,			// 125	10
+		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,					// 113	15
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 3, 		// 113	20
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 3, 		// 113	20
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22 = 2,		// 121	16
+		/obj/item/gun/ballistic/automatic/varmint = 10,						// 121	10
+		/obj/item/gun/ballistic/automatic/pistol/automag = 1,				// 106	7
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 4, 					// 104	12
+		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 4,	// 102	20
+
 	)
 
+/// DPS should be 200-300
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
 	name = "uncommon guns"
 	loot = list(
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, //265 dps, 24 mag capacity
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 10,
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
 		/obj/item/gun/ballistic/automatic/service = 10,
@@ -269,10 +275,11 @@
 		/obj/item/gun/ballistic/automatic/famas/pristine = 10,
 		/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm = 4,
 		/obj/item/gun/ballistic/automatic/saiga12k = 4,
-		// /obj/item/gun/ballistic/rifle/hunting/obrez = 1, // Commenting out until the sprite is fixed.
-		// /obj/item/gun/ballistic/automatic/wt550/worn = 1, // Commenting out until the sprite is fixed.
+		/obj/item/gun/ballistic/automatic/autopipe = 3, //244 dps
 	)
 
+/// DPS should be 250-325
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
 	loot = list(
@@ -302,6 +309,13 @@
 		/obj/item/gun/ballistic/automatic/rpd = 1,
 		/obj/item/gun/ballistic/automatic/aksmol = 1,
 		// /obj/item/gun/ballistic/automatic/wt550 = 2, // Commenting out until the sprite is fixed.
+
+	)
+
+/// DPS should be 325-400
+/obj/effect/spawner/lootdrop/f13/very_rare_guns
+	name = "very rare guns"
+	loot = list(
 
 	)
 
