@@ -2943,11 +2943,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"tv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "tx" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -3461,6 +3456,11 @@
 	},
 /turf/open/floor/grass,
 /area/f13/wasteland)
+"wV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "wX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -5028,13 +5028,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
-"Hz" = (
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "HC" = (
 /turf/open/floor/plasteel/cult,
 /area/f13/wasteland)
@@ -6759,6 +6752,13 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Su" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "Sw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15822,7 +15822,7 @@ hm
 hm
 hm
 hm
-hm
+NC
 Kz
 Kz
 Kz
@@ -17460,12 +17460,12 @@ bB
 Wr
 BW
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -17717,13 +17717,13 @@ Wr
 Wr
 Xv
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -17974,13 +17974,13 @@ bB
 Wr
 Xv
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 SP
@@ -18231,13 +18231,13 @@ bB
 Wr
 Xv
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 nO
@@ -18488,13 +18488,13 @@ Wr
 Wr
 Xv
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 nO
@@ -18745,13 +18745,13 @@ bB
 Wr
 Xv
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 nO
@@ -19002,13 +19002,13 @@ Mx
 Mx
 Fg
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 bC
@@ -19478,8 +19478,8 @@ cw
 zB
 FU
 zB
-tv
-Hz
+wV
+Su
 mX
 IY
 hm
