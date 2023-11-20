@@ -1146,3 +1146,243 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	name = "tatami"
 	icon = 'icons/turf/floors/carpet.dmi'
 	icon_state = "tatami_black"
+
+/turf/open/indestructible/ground/stellercarpet
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-0"
+
+/turf/open/indestructible/ground/stellercarpet/one
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-1"
+
+/turf/open/indestructible/ground/stellercarpet/two
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-2"
+
+/turf/open/indestructible/ground/stellercarpet/three
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-3"
+
+/turf/open/indestructible/ground/stellercarpet/four
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-4"
+
+/turf/open/indestructible/ground/stellercarpet/five
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-5"
+
+/turf/open/indestructible/ground/stellercarpet/six
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-6"
+
+/turf/open/indestructible/ground/stellercarpet/seven
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-7"
+
+/turf/open/indestructible/ground/stellercarpet/eight
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-8"
+
+/turf/open/indestructible/ground/stellercarpet/nine
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-9"
+
+/turf/open/indestructible/ground/stellercarpet/ten
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-10"
+
+/turf/open/indestructible/ground/stellercarpet/eleven
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-11"
+
+/turf/open/indestructible/ground/stellercarpet/twelve
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-12"
+
+/turf/open/indestructible/ground/stellercarpet/thirteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-13"
+
+/turf/open/indestructible/ground/stellercarpet/fourteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-14"
+
+/turf/open/indestructible/ground/stellercarpet/fiveteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-15"
+
+/turf/open/indestructible/ground/stellercarpet/sixteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-21"
+
+/turf/open/indestructible/ground/stellercarpet/seventeen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-23"
+
+/turf/open/indestructible/ground/stellercarpet/eightteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-29"
+
+/turf/open/indestructible/ground/stellercarpet/nineteen
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-31"
+
+/turf/open/indestructible/ground/stellercarpet/twenty
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-38"
+
+/turf/open/indestructible/ground/stellercarpet/twentyone
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-39"
+
+/turf/open/indestructible/ground/stellercarpet/twentythree
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-46"
+
+/turf/open/indestructible/ground/stellercarpet/twentyfour
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-47"
+
+/turf/open/indestructible/ground/stellercarpet/twentyfive
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-55"
+
+/turf/open/indestructible/ground/stellercarpet/twentysix
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-63"
+
+/turf/open/indestructible/ground/stellercarpet/twentyseven
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-74"
+
+/turf/open/indestructible/ground/stellercarpet/twentyeight
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-75"
+
+/turf/open/indestructible/ground/stellercarpet/twentynine
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-78"
+
+/turf/open/indestructible/ground/stellercarpet/thirty
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-79"
+
+/turf/open/indestructible/ground/stellercarpet/thirtyone
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-95"
+
+/turf/open/indestructible/ground/stellercarpet/thirtytwo
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-110"
+
+/turf/open/indestructible/ground/stellercarpet/thirtythree
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-111"
+
+/turf/open/indestructible/ground/stellercarpet/thirtyfour
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-127"
+
+/turf/open/indestructible/ground/stellercarpet/thirtyfive
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-127"
+
+/turf/open/indestructible/ground/stellercarpet/thirtysix
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-137"
+
+/turf/open/indestructible/ground/stellercarpet/thirtyseven
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-139"
+
+/turf/open/indestructible/ground/stellercarpet/thirtyeight
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-141"
+
+/turf/open/indestructible/ground/stellercarpet/thirtynine
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-143"
+
+/turf/open/indestructible/ground/stellercarpet/fourty
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-157"
+
+/turf/open/indestructible/ground/stellercarpet/fourtyone
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-159"
+
+/turf/open/indestructible/ground/stellercarpet/fourtytwo
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-175"
+
+/turf/open/indestructible/ground/stellercarpet/fourtythree
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-191"
+
+/turf/open/indestructible/ground/stellercarpet/fourtyfour
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-203"
+
+/turf/open/indestructible/ground/stellercarpet/fourtyfive
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-207"
+
+/turf/open/indestructible/ground/stellercarpet/fourtysix
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-223"
+
+/turf/open/indestructible/ground/stellercarpet/fourtyseven
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-239"
+
+/turf/open/indestructible/ground/stellercarpet/fourtyeight
+	name = "steller carpet"
+	icon = 'icons/turf/floors/carpet.dmi'
+	icon_state = "steller_carpet-255"
