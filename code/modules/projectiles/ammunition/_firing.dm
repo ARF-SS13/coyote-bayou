@@ -7,7 +7,7 @@
  * Final spread out, for shotguns, is the angle that the spray pattern will be centered on
  */
 /obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, atom/fired_from)
-	var/angle_out = calc_spread(user, spread, distro, (pellets == 1 ? variance : 0))
+	var/angle_out = calc_spread(user, spread, distro, (pellets == 1 ? variance : 0), fired_from)
 
 	var/targloc = get_turf(target)
 	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
