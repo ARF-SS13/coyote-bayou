@@ -158,6 +158,11 @@
 		return
 	hearers -= ignored_mobs
 
+	var/mob/living/carbon/carbo = src
+	var/saycolor = rgb(255, 0, 0)
+	if(istype(carbo,/mob/living/carbon))
+		saycolor = carbo.get_chat_color()
+
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
@@ -169,7 +174,7 @@
 			msg = blind_message
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				msg = "<b>[src]</b> [msg]"
+				msg = "<span style='color:[saycolor];'><b>[src]</b></span> [msg]"
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
@@ -194,7 +199,7 @@
 
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				msg = "<b>[src]</b> [msg]"
+				msg = "<span style='color:[saycolor];'><b>[src]</b></span> [msg]"
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.

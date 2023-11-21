@@ -48,8 +48,9 @@ And the base of the send_speech() proc, which is the core of saycode.
 	//End name span.
 	var/endspanpart = "</span>"
 
+	raw_message = span_color(raw_message, saycolor)
 	//Message
-	var/messagepart = " <span class='message' style='color:[saycolor];'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
+	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
 
 	var/languageicon = ""
 	var/datum/language/D = GLOB.language_datum_instances[message_language]
