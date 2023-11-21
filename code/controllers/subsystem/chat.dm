@@ -107,7 +107,10 @@ SUBSYSTEM_DEF(chat)
 			break
 	if(!E)
 		return
-	return E.verbify(sayer, message, messagemode, spans)
+	var/out = E.verbify(sayer, message, messagemode, spans)
+	for(var/key in emoticon_cache)
+		out = replacetext(out, key, "") // remove the rest of the emoticons
+	return out
 
 /datum/controller/subsystem/chat/fire()
 	for(var/key in payload_by_client)
@@ -273,7 +276,7 @@ SUBSYSTEM_DEF(chat)
 	/// also this case: "hi how are you? :)" would leave us with "hi how are you? ", with a space at the end
 	var/list/frontback = splittext(message, key) // split the message into two parts, before and after the emoticon
 	if(LAZYLEN(ckey(frontback[1])) < 1) // if the emoticon is at the start of the message, we need to remove the space at the start
-		frontback[1] = ckey(frontback[2]) // remove the space
+		frontback[1] = ckey(frontback[1]) // remove the space
 	if(LAZYLEN(ckey(frontback[2])) < 1) // if the emoticon is at the end of the message, we need to remove the space and punctuation at the end
 		frontback[2] = ckey(frontback[2]) // remove the space and punctuation
 	var/middlepart = "[frontback[1]][frontback[2]]"
