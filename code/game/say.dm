@@ -114,6 +114,9 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/quoteless_say_quote(input, list/spans = list(speech_span), message_mode)
 	if((input[1] == "!") && (length_char(input) > 1))
 		return ""
+	var/emoticontext = SSchat.emoticonify(src, input, message_mode, spans)
+	if(emoticontext)
+		return emoticontext
 	var/pos = findtext(input, "*")
 	return pos? copytext(input, pos + 1) : input
 
