@@ -5946,7 +5946,7 @@
 "eHz" = (
 /obj/structure/fans/tiny,
 /obj/structure/ladder/unbreakable{
-	height = 1;
+	height = 2;
 	id = "commsoperatoraccess";
 	pixel_y = -4;
 	pixel_x = -1
@@ -6160,9 +6160,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "eOe" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
@@ -16515,6 +16512,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building/massfusion)
 "mwA" = (
