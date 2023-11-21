@@ -164,29 +164,25 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/common_guns = 30, //can adjust these values as needed
 		/obj/effect/spawner/lootdrop/f13/common_melee = 30,
-		/obj/effect/spawner/lootdrop/f13/common_cowboy = 10,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 20,
-		/obj/effect/spawner/lootdrop/f13/common_unique = 10,
+		/obj/effect/spawner/lootdrop/f13/common_cowboy = 15,
+		/obj/effect/spawner/lootdrop/f13/common_energy = 30,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_weps
 	name = "uncommon weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 20, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 35,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 10,
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 5, // here as a test; rare classic guns aren't really endgame tier outside of like 1 or 2
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 20,
-		/obj/effect/spawner/lootdrop/f13/uncommon_unique = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 30, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 30,
+		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 15,
+		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 30,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_weps
 	name = "rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_guns = 35, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/rare_melee = 35,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 20,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_guns = 30, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 30,
+		/obj/effect/spawner/lootdrop/f13/rare_energy = 30,
 	)
 
 ///////////////////////////////
@@ -224,11 +220,13 @@
 /obj/effect/spawner/lootdrop/f13/common_guns
 	name = "common guns"
 	loot = list(                                                            // dps	mag cap     *staple
-		/obj/item/gun/ballistic/automatic/smg/american180 = 5,              //150 180
-		/obj/item/gun/ballistic/automatic/saiga12k = 6,                     //146 8
-		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 7,         //85(140) 24
-		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 8,       //139 15
-		/obj/item/gun/ballistic/automatic/rangemaster = 9,                  //138 7
+		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20	
+		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 5,            //151 10
+		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
+		/obj/item/gun/ballistic/automatic/saiga12k = 7,                     //146 8
+		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 8,         //85(140) 24
+		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 9,       //139 15
+		/obj/item/gun/ballistic/automatic/rangemaster = 10,                 //138 7
 		/obj/item/gun/ballistic/automatic/combat = 10,                      //138 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22 = 10,          //135 32        *
 		/obj/item/gun/ballistic/automatic/hobo/destroyer = 10,              //132 30
@@ -241,18 +239,19 @@
 		/obj/item/gun/ballistic/automatic/fnfal/ak47 = 10,                  //114 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell = 5,        //113 20 ECHO
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/owengun = 5,         //113 20 echo
+		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 10,          //110 32
 		/obj/item/gun/ballistic/automatic/l1a1 = 9,                         //104 10
 		/obj/item/gun/ballistic/automatic/slr = 8,                          //104 10
 		/obj/item/gun/ballistic/automatic/m1garand/sks = 7,                 //103 8
 		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 6,   //102 20
 		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 5,       //90 30
-
 		//sidearms
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 4,                   //104 12
+		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,          //104 12
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 3,                   //104 12
 	)
 
 /// DPS should be 150-250 ish
@@ -265,28 +264,33 @@
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 6, 	//252 15
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
 		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 9, 			//227 32
+		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 9                 //234 36
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
+		/obj/item/gun/ballistic/automatic/r93 = 10,                          //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
 		/obj/item/gun/ballistic/automatic/assault_carbine = 10,             //209 30
 		/obj/item/gun/ballistic/automatic/ak556 = 10,                       //209 30
 		/obj/item/gun/ballistic/automatic/smg/p90/worn = 10,                //208 50
 		/obj/item/gun/ballistic/automatic/fnfal = 10,                       //207 10
+		/obj/item/gun/ballistic/automatic/matildar = 5,                     //207 10
 		/obj/item/gun/ballistic/automatic/marksman = 10,                    //199 20
 		/obj/item/gun/ballistic/automatic/aksmol = 10,                      //199 20
 		/obj/item/gun/ballistic/automatic/sportcarbine = 10,                //186 32
 		/obj/item/gun/ballistic/automatic/service = 10,                     //181 20
 		/obj/item/gun/ballistic/automatic/service/r82 = 10,                 //181 20
+		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,            //185 32
+		/obj/item/gun/ballistic/automatic/type93 = 10,                      //181 20
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 9,  //157 30
-		/obj/item/gun/ballistic/automatic/famas/pristine = 10,               //154 20
-		/obj/item/gun/ballistic/automatic/rpd = 10,                          //152 40
+		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
+		/obj/item/gun/ballistic/automatic/rpd = 10,                         //152 40
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 9,                 //151 32
 		/obj/item/gun/ballistic/automatic/smg/american180 = 8,              //150 180
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 7,      //113 6
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 6,                 //beanbags loaded lol get fucked 8
-		/obj/item/gun/ballistic/automatic/type93 = 5,                       //90 20 (burst fire only looks weak on paper)
+
 
 		//sidearms
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 1,            //208 12
@@ -294,40 +298,49 @@
 		/obj/item/gun/ballistic/automatic/pistol/sig = 3,                   //180 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 3,      //168 15
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 3,              //150 16
-		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 3,              //130 7
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 3,          //138 8
+		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 2,              //130 7
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,      //130 7
 	)
 
-/// DPS should be 250-300
+/// DPS should be 250-300 ish
 /// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 7,                   //312 36
+		/obj/item/gun/ballistic/automatic/p47 = 5,                        //311 10
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 8,                //281 24
 		/obj/item/gun/ballistic/automatic/concussive = 9,                 //281 8
 		/obj/item/gun/ballistic/automatic/unmcamr = 10,                   //279 4
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
-		/obj/item/gun/ballistic/automatic/smg/p90 = 10,                   //260 50
-		/obj/item/gun/ballistic/automatic/r93 = 9,                        //217 20
-		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 8,           //185 32
-		/obj/item/gun/ballistic/automatic/marksman/sniper = 7,            //99 7
+		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                   //260 50
+		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
 
 		//wildcards
 		/obj/item/gun/ballistic/rifle/mag/antimaterial = 5,               //152 8
-		/obj/item/gun/ballistic/automatic/matildar = 5,                   //138 10 (fast 2-shot bursts for ~80 damage each)
+
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 5,  //113 12
-		/obj/item/gun/ballistic/automatic/p47 = 5,                        //93 10 (burst fire only looks weak on paper)
+
 	)
 
 /// DPS should be 300+
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
-	loot = list(
-		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                      //428 32
-
+	loot = list(                                                        //dps(bane) mag cap
+		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
+		/obj/item/gun/ballistic/automatic/m41br = 10,                   //341 10
+		/obj/item/gun/ballistic/automatic/smg/vss = 10,                 //340 30
+		/obj/item/gun/ballistic/automatic/assault_carbine/worn = 10,    //333 30
+		/obj/item/gun/ballistic/automatic/g11 = 10,                     //317 50
+		/obj/item/gun/ballistic/minigunbal5mm = 10,                     //314 480
+		/obj/item/gun/ballistic/automatic/smg/cg45 = 10,                //312 36
+		/obj/item/gun/ballistic/automatic/smg/ppsh = 10,                //252 71
+		//Sidearms
+		/obj/item/gun/ballistic/revolver/colt357/auto = 3,              //329 6
 	)
 
 ////////////////////
@@ -601,13 +614,9 @@
 /obj/effect/spawner/lootdrop/f13/common_unique
 	name = "common unique"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/sportcarbine/m1_22 = 10,
-		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 10,
-		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 10,
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
 		/obj/item/gun/energy/laser/LaserAK = 4,
-		/obj/item/gun/ballistic/revolver/colt357/lucky = 4,
-		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 4,
+		/obj/item/gun/ballistic/revolver/colt357/lucky = 4,//183 6
 		/obj/item/gun/ballistic/automatic/delisle/commando = 4,
 		/obj/item/gun/ballistic/automatic/m1carbine/compact = 4,
 		/obj/item/melee/onehanded/knife/trench = 4,
@@ -624,23 +633,19 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_unique
 	name = "uncommon unique"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 10,
-		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 10,
-		/obj/item/gun/ballistic/rifle/hunting/paciencia = 10,
-		/obj/item/gun/ballistic/automatic/service/alr = 10,
-		/obj/item/gun/ballistic/automatic/m1garand/oldglory = 10,
-		/obj/item/gun/ballistic/automatic/m41br = 10,
-		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 10,
-		/obj/item/gun/ballistic/automatic/service/carbine = 10,
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 10,
-		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 4,
-		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 4,
-		/obj/item/gun/ballistic/automatic/g11 = 4,
+		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 10, //208 20
+		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 10, //104 12
+		/obj/item/gun/ballistic/rifle/hunting/paciencia = 10, //110 2
+		/obj/item/gun/ballistic/automatic/service/alr = 10, //199 20
+		/obj/item/gun/ballistic/automatic/m1garand/oldglory = 10, //138 8
+		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 10, //149 7 
+		/obj/item/gun/ballistic/automatic/service/carbine = 10, //181 20
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 10, //143 7
+		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 4, //110 7
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 4,
 		/obj/item/melee/transforming/plasmacutter/sword/cx = 4,
 		/obj/item/gun/energy/laser/tg/recharger = 4,
 		/obj/item/gun/energy/laser/wattz2ks = 4,
-		/obj/item/gun/ballistic/automatic/smg/vss = 4,
 		// /obj/item/gun/ballistic/automatic/recoilessrifle = 1, //Will ask community on ideas of a revamped recoiless rifle. Needs a complete overhaul of its niche abilities.
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,
 		/obj/item/gun/energy/laser/wattz/recharger = 1,
@@ -651,6 +656,7 @@
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
 	name = "rare unique"
 	loot = list(
+		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 4, //426 7
 		/obj/item/gun/ballistic/automatic/bozar = 10,
 		/obj/item/gun/ballistic/automatic/r84 = 10,
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
@@ -682,6 +688,12 @@
 		/obj/item/sord = 1, //for the meme
 		/obj/item/gun/ballistic/automatic/compact14mmrifle = 4,
 		/obj/item/gun/ballistic/fatman = 0.5,
+	)
+
+/obj/effect/spawner/lootdrop/f13/very_rare_unique
+	name = "very rare unique"
+	loot = list(
+		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 4, //426 7
 	)
 
 ////////////////////////////
