@@ -254,8 +254,6 @@
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 3,                   //104 12
 	)
 
-/// DPS should be 150-250 ish
-/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
 	name = "uncommon guns"
 	loot = list(
@@ -264,9 +262,9 @@
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 6, 	//252 15
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
 		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
-		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 9                 //234 36
+		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 9,                //234 36
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
-		/obj/item/gun/ballistic/automatic/r93 = 10,                          //217 20
+		/obj/item/gun/ballistic/automatic/r93 = 10,                         //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
 		/obj/item/gun/ballistic/automatic/assault_carbine = 10,             //209 30
 		/obj/item/gun/ballistic/automatic/ak556 = 10,                       //209 30
@@ -289,7 +287,7 @@
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 9,                 //151 32
 		/obj/item/gun/ballistic/automatic/smg/american180 = 8,              //150 180
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 7,      //113 6
-		/obj/item/gun/ballistic/automatic/shotgun/riot = 6,                 //beanbags loaded lol get fucked 8
+		/obj/item/gun/ballistic/automatic/shotgun/riot = 6,                 //beanbags loaded lol get fucked 8 (good with buckshot)
 
 
 		//sidearms
@@ -320,10 +318,10 @@
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
 
-		//wildcards
-		/obj/item/gun/ballistic/rifle/mag/antimaterial = 5,               //152 8
-
-		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 5,  //113 12
+		//wildcards and sidearms
+		/obj/item/gun/ballistic/rifle/mag/antimaterial = 3,               //152 8
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
+		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 3,  //113 12
 
 	)
 
@@ -331,6 +329,7 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
+		/obj/item/gun/ballistic/automatic/autopipe/special = 10         //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/m41br = 10,                   //341 10
 		/obj/item/gun/ballistic/automatic/smg/vss = 10,                 //340 30
@@ -409,7 +408,7 @@
 		/obj/item/gun/ballistic/automatic/c96auto = 10,
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 10,
-		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,
+		/obj/item/gun/ballistic/automatic/smg/greasegun = 10, //360 30
 		/obj/item/gun/energy/kinetic_accelerator/crossbow = 4, // ebow
 		/obj/item/gun/ballistic/automatic/gewehr41civ = 4,
 		/obj/item/gun/ballistic/bow/compoundbow = 4,
@@ -471,13 +470,14 @@
 	name = "uncommon melee"
 	loot = list(
 		/obj/item/twohanded/sledgehammer/simple = 10,
-		/obj/item/melee/transforming/plasmacutter/sword/cx/broken = 4,
-		/obj/item/melee/onehanded/machete/spatha = 4,
-		/obj/item/melee/unarmed/tigerclaw = 4,
-		/obj/item/melee/unarmed/lacerator = 4,
-		/obj/item/melee/unarmed/maceglove = 4,
-		/obj/item/melee/unarmed/punchdagger = 4,
-		/obj/item/twohanded/baseball/louisville = 1,
+		/obj/item/melee/transforming/plasmacutter/sword/cx/broken = 10,
+		/obj/item/melee/onehanded/machete/spatha = 10,
+		/obj/item/melee/unarmed/tigerclaw = 10,
+		/obj/item/melee/unarmed/lacerator = 10,
+		/obj/item/melee/unarmed/maceglove = 10,
+		/obj/item/melee/unarmed/punchdagger = 10,
+		/obj/item/twohanded/baseball/louisville = 10,
+		/obj/item/melee/onehanded/knife/trench = 10,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_melee
@@ -498,42 +498,50 @@
 ///energy weapon spawners///
 ////////////////////////////
 
+/// DPS should be 150 or less
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz = 10,
-		/obj/item/gun/energy/laser/pistol = 10,
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,
-		/obj/item/gun/energy/laser/complianceregulator = 10,
-		/obj/item/gun/energy/laser/tg/carbine = 4,
-		/obj/item/gun/energy/ionrifle/compact = 4,
-		/obj/item/gun/energy/laser/wattzs = 4,
-		/obj/item/gun/energy/laser/auto = 1,
+		/obj/item/gun/energy/laser/wattz = 8, //130 12
+		/obj/item/gun/energy/laser/wattz2k = 8, //130 12
+		/obj/item/gun/energy/laser/pistol = 9, //80 25
+		/obj/item/gun/energy/laser/tg/carbine/pistol = 9, //90 20
+		/obj/item/gun/energy/ionrifle/carbine = 10, //107 12
+		/obj/item/gun/energy/ionrifle/compact = 10, //107 10
+		/obj/item/gun/energy/laser/tg/carbine = 9, //100 25
+		/obj/item/gun/energy/laser/plasma/pistol = 9, //88 10
+		/obj/item/gun/energy/laser/wattzs = 8, //83 30
+		/obj/item/gun/energy/laser/aer9 = 8, //80 20
+		//Others
+		/obj/item/gun/energy/laser/complianceregulator = 5, //330(690) 16 (stamina dam)
 	)
 
+/// DPS should be 150-250 ish
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
 	name = "uncommon energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz2k = 10,
-		/obj/item/gun/energy/laser/aer9 = 10,
-		/obj/item/gun/energy/laser/plasma/pistol = 10,
-		/obj/item/gun/energy/ionrifle/carbine = 10,
-		/obj/item/gun/energy/laser/tg/rifle = 4,
-		/obj/item/gun/energy/laser/solar = 4,
+		/obj/item/gun/energy/laser/auto = 10, //200 60
+		/obj/item/gun/energy/laser/tg/rifle = 10, //150 40
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10, //100 16
+		/obj/item/gun/energy/laser/solar = 10, //90 16
+		//how do I balance these lmfao
 		/obj/item/gun/magic/wand/kelpmagic/firebolt = 1,
 		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
 		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 1,
 		/obj/item/gun/magic/wand/kelpmagic/sparky = 1,
 		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 1,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 1,
 	)
 
+/// DPS should be 250-300 ish
+/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/rare_energy
 	name = "rare energy"
 	loot = list(
 		/obj/item/gun/energy/laser/scatter = 10,
 		/obj/item/gun/energy/laser/aer12 = 10,
-		/obj/item/gun/energy/laser/rcw = 10,
+		/obj/item/gun/energy/laser/rcw = 10, //190 50
 		/obj/item/gun/energy/laser/plasma/glock = 10,
 		/obj/item/gun/energy/laser/plasma = 10,
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,
@@ -552,6 +560,12 @@
 		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
 	)
 
+/// DPS should be 300+
+/obj/effect/spawner/lootdrop/f13/very_rare_energy
+	name = "very rare energy"
+	loot = list(
+
+	)
 
 ////////////////////
 ///cowboy weapons///		ensures we gett plenty of stylish guns and bows
@@ -617,17 +631,11 @@
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
 		/obj/item/gun/energy/laser/LaserAK = 4,
 		/obj/item/gun/ballistic/revolver/colt357/lucky = 4,//183 6
-		/obj/item/gun/ballistic/automatic/delisle/commando = 4,
-		/obj/item/gun/ballistic/automatic/m1carbine/compact = 4,
-		/obj/item/melee/onehanded/knife/trench = 4,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 1,
-		/obj/item/sord = 1,
+		/obj/item/gun/ballistic/automatic/delisle/commando = 4, // 138 12
+		/obj/item/gun/ballistic/automatic/m1carbine/compact = 4, //120 12
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/gun/energy/laser/retro = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/mousegun = 1,
 		/obj/item/gun/ballistic/automatic/autopipe/special = 1,
-		/obj/item/gun/ballistic/revolver/hobo/pepperbox/deal = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_unique
@@ -657,7 +665,7 @@
 	name = "rare unique"
 	loot = list(
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 4, //426 7
-		/obj/item/gun/ballistic/automatic/bozar = 10,
+		/obj/item/gun/ballistic/automatic/bozar = 10, //361 20
 		/obj/item/gun/ballistic/automatic/r84 = 10,
 		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
 		/obj/item/gun/ballistic/automatic/m1919 = 10,
@@ -667,11 +675,11 @@
 		/obj/item/melee/unarmed/deathclawgauntlet = 10,
 		/obj/item/gun/energy/laser/scatter/laserbuss = 10,
 		/obj/item/book/granter/martial/bass = 10,
-		/obj/item/gun/ballistic/automatic/fastlmg = 4,
+		/obj/item/gun/ballistic/automatic/fastlmg = 4, //416 60
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 4,
 		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 4,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 4,
-		/obj/item/gun/ballistic/automatic/smg/smg14 = 4,
+		/obj/item/gun/ballistic/automatic/smg/smg14 = 4, //260 21
 		/obj/item/dualsaber/hypereutactic = 4,
 		/obj/item/gun/energy/laser/aer14 = 4,
 		/obj/item/melee/powerfist/f13/satfist = 4,
