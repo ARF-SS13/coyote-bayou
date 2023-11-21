@@ -62,7 +62,11 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/say_mod(input, message_mode)
 	var/ending = copytext_char(input, -1)
-	if(copytext_char(input, -2) == "!!")
+	if(message_mode == MODE_WHISPER)
+		return verb_whisper
+	else if(message_mode == MODE_SING)
+		return verb_sing
+	else if(copytext_char(input, -2) == "!!")
 		return verb_yell
 	else if(ending == "?")
 		return verb_ask
@@ -78,6 +82,9 @@ And the base of the send_speech() proc, which is the core of saycode.
 	if(copytext_char(input, -2) == "!!")
 		spans |= SPAN_YELL
 
+	var/reformatted = SSchat.emoticonify(src, input, message_mode, spans)
+	if(reformatted)
+		return reformatted
 	var/spanned = attach_spans(input, spans)
 	return "[say_mod(input, message_mode)][spanned ? ", \"[spanned]\"" : ""]"
 	// Citadel edit [spanned ? ", \"[spanned]\"" : ""]"
