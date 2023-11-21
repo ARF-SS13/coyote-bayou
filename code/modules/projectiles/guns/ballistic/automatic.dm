@@ -231,7 +231,7 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/burst/three/slow,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -333,7 +333,7 @@
 	name = "worn-out 10mm submachine gun"
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Its grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	worn_out = TRUE //a lazy way to overlay the worn sprite variant onto the gun
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T3
 	init_recoil = SMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -559,7 +559,7 @@
 /obj/item/gun/ballistic/automatic/smg/cg45/worn
 	name = "Worn Carl Gustaf 10mm"
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T3 //234 DPS
 	init_recoil = SMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -2269,6 +2269,33 @@
 	suppressor_y_offset = 27
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+/* * * * * * * * * * *
+ * Worn Type 93 assault rifle
+ * Chinese 5.56mm autorifle
+ * .223 / 5.56mm
+ * Less damage
+ * Less accuracy
+ * Slower to shoot
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/type93/worn //156 dps
+	name = "\improper Worn Type 93"
+	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "type93"
+	item_state = "handmade_rifle"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/burst/two/fastest
+	)
+
+	can_suppress = FALSE
+
 ///////////////////////////////
 //// M41 Battle Rifle ///////
 /// + fast burst fire rate////
@@ -2360,33 +2387,6 @@
 	can_scope = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-/* * * * * * * * * * *
- * Worn Type 93 assault rifle
- * Chinese 5.56mm autorifle
- * .223 / 5.56mm
- * Less damage
- * Less accuracy
- * Slower to shoot
- * Uncommon
- * * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/type93/worn //24dmg
-	name = "\improper Worn Type 93"
-	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "type93"
-	item_state = "handmade_rifle"
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/burst/five/slow
-	)
-
-	can_suppress = FALSE
 
 /* * * * * * * * * * *
  * BOZAR
@@ -2715,6 +2715,7 @@
  * Baseline 7.62 autorifle
  * .308 / 7.62
  * Uncommon
+ * 207 dps
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/fnfal
@@ -2736,7 +2737,9 @@
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-
+//259 dps pristine version
+/obj/item/gun/ballistic/automatic/fnfal/pristine
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 
 
 /* * * * * * * * * * * *
