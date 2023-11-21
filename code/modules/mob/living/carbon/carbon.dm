@@ -538,7 +538,7 @@
 /mob/living/carbon/proc/get_chat_color()
 	var/color = get_feature("chat_color")
 	if(color == "whoopsie" || !color)
-		return null
+		return rgb(255, 0, 0)
 	return "#[get_feature("chat_color")]"
 
 /mob/living/carbon/fall(forced)
