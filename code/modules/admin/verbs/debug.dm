@@ -1005,7 +1005,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 						continue
 				for(var/f in fire_modes)
 					var/datum/firemode/fm = f
-					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
+					var/fm_rps = (fm.get_fire_delay(TRUE)*fm.burst_count)/60// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
 				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
