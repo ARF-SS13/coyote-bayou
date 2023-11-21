@@ -150,8 +150,7 @@
 	if(!target)
 		return
 	//Getting info
-	durty = TRUE
-	update_display_filter()
+	update_display_filter(TRUE)
 	.["CurrPage"] = current_page || 1
 	.["MaxPage"] = CEILING(LAZYLEN(cached_interactions) / SSinteractions.interactions_per_page, 1) || 1
 	.["CanPgDN"] = current_page > 0
@@ -554,10 +553,7 @@
 		ret += list(beep)
 	return ret
 
-/datum/component/interaction_menu_granter/proc/update_display_filter(list/params = list())
-	if(!durty)
-		return // no need to update if nothing changed
-	durty = FALSE
+/datum/component/interaction_menu_granter/proc/update_display_filter(block_data_update)
 	cached_interactions.Cut()
 	if(LAZYLEN(search_term))
 		current_category = MERP_CAT_ALL
@@ -601,6 +597,9 @@
 			output_interactions -= list(i_obj)
 			continue
 	cached_interactions = output_interactions.Copy()
+	if(block_data_update) // to keep tgui from going into an infinite loop
+		return TRUE // fun facgt, you used to runtime every time you did a menu action
+	durty = FALSE
 	update_static_data(usr) // imma update ur butt
 	return TRUE
 
