@@ -66,12 +66,21 @@ proc/get_top_level_mob(mob/S)
 	if(!can_run_emote(user))
 		return FALSE
 
+	var/mob/living/carbon/carbo = user
+	var/saycolor = rgb(255, 0, 0)
+	if(istype(carbo,/mob/living/carbon))
+		saycolor = carbo.get_chat_color()
+
 	user.log_message(message, subtler ? LOG_SUBTLER : LOG_SUBTLE)
 	var/msg_check = user.say_narrate_replace(message, user)
 	if(msg_check)
 		message = span_subtle("<i>[msg_check]</i>")
 	else
-		message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
+		message = span_subtle(span_color("<b>[user]</b> ", saycolor) + "<i>[user.say_emphasis(message)]</i>")
+
+	
+	
+	message = alternating_color_span(message, saycolor, "\"", 0)
 
 	var/list/non_admin_ghosts = list()
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*

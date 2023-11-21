@@ -234,8 +234,12 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		hearers -= src
 //	var/raw_msg = message
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
-		message = "<b>[src]</b> [message]"
-		deaf_message = "<b>[src]</b> [deaf_message]"
+		var/mob/living/carbon/carbo = src
+		var/saycolor = rgb(255, 0, 0)
+		if(istype(carbo,/mob/living/carbon))
+			saycolor = carbo.get_chat_color()
+		message = span_color("<b>[src]</b>", saycolor)  + "[message]"
+		deaf_message = span_color("<b>[src]</b>", saycolor)  + "[deaf_message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)

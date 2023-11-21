@@ -91,9 +91,9 @@
 	var/initlen = splitmsg.len
 	if(initlen > 1)
 		var/mob/living/carbon/carbo = user
-		var/saycolor = carbo?.dna.features["chat_color"]
-		if(!saycolor)
-			saycolor = rgb(255, 0, 0)
+		var/saycolor = rgb(255, 0, 0)
+		if(istype(carbo, /mob/living/carbon))
+			saycolor = carbo.dna.features["chat_color"]
 
 		msg = alternating_color_span(msg,"#[saycolor]","\"",0)
 
