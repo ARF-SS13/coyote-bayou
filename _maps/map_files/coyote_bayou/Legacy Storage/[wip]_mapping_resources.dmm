@@ -873,6 +873,12 @@
 /obj/structure/flora/ausbushes,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"avy" = (
+/obj/effect/decal/cleanable/dirt{
+	pixel_x = -25
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "avC" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1215,6 +1221,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
+"aEr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/right{
+	dir = 1
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "aEs" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/f13/wood,
@@ -2607,6 +2621,16 @@
 /obj/structure/simple_door/room,
 /obj/item/lock_bolt,
 /turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"brL" = (
+/obj/structure/table/wood/settler{
+	name = "Prosecution"
+	},
+/obj/structure/barricade/barswindow{
+	layer = 3.5;
+	dir = 2
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland)
 "bsd" = (
 /obj/structure/simple_door/house,
@@ -4873,6 +4897,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
+"cyL" = (
+/obj/structure/decoration/rag,
+/obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "cyW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing{
@@ -6355,6 +6387,12 @@
 /obj/structure/flora/tree_stump,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"dnA" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "dnI" = (
 /obj/structure/chair/comfy{
 	dir = 8
@@ -6421,6 +6459,11 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
+"doU" = (
+/obj/structure/simple_door/metal/barred,
+/obj/item/lock_construct,
+/turf/open/floor/wood_wide/wood_wide_dark,
+/area/f13/wasteland)
 "dpc" = (
 /obj/structure/curtain{
 	color = "#363636"
@@ -6708,6 +6751,14 @@
 /obj/item/storage/box/masks,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"dvM" = (
+/obj/structure/fence/end/wooden{
+	pixel_x = -6;
+	density = 0;
+	pixel_y = 20
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "dwh" = (
 /obj/structure/flora/grass/coyote/seventeen,
 /turf/open/indestructible/ground/outside/desert,
@@ -6719,6 +6770,13 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/nash)
+"dxd" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/tentwall,
+/area/f13/wasteland)
 "dxj" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -6952,6 +7010,12 @@
 "dEM" = (
 /turf/open/floor/carpet/purple,
 /area/f13/building/abandoned)
+"dEN" = (
+/obj/structure/chair/comfy/shuttle{
+	name = "Arbitrators Seat"
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
+/area/f13/wasteland)
 "dEP" = (
 /obj/structure/bed{
 	pixel_y = 12
@@ -6972,6 +7036,17 @@
 "dEY" = (
 /obj/structure/simple_door/metal,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"dFi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/right{
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
 /area/f13/wasteland)
 "dFu" = (
 /obj/structure/closet/fridge,
@@ -7005,6 +7080,10 @@
 "dGv" = (
 /obj/structure/sink/puddle,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"dGE" = (
+/obj/structure/decoration/rag,
+/turf/closed/wall/mineral/brick,
 /area/f13/wasteland)
 "dGN" = (
 /obj/structure/junk/locker,
@@ -7103,6 +7182,16 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city)
+"dKD" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -5
+	},
+/turf/closed/wall/mineral/brick,
+/area/f13/wasteland)
 "dKN" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
@@ -9110,6 +9199,17 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/building/abandoned)
+"eGz" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/chair/left{
+	dir = 1;
+	name = "Jury seats";
+	color = "#ff77ff"
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "eGD" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/ground/outside/desert,
@@ -9876,6 +9976,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/wasteland)
+"eYO" = (
+/obj/structure/decoration/rag,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -3
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/wasteland)
 "eYS" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13/wood,
@@ -10016,6 +10123,13 @@
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
+	},
+/area/f13/wasteland)
+"faH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland)
 "fbE" = (
@@ -10600,6 +10714,13 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"foH" = (
+/obj/structure/decoration/rag,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -10
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/wasteland)
 "foI" = (
 /obj/structure/guncase{
 	icon_state = "ecase";
@@ -10625,6 +10746,9 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
+"fpr" = (
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "fpz" = (
 /turf/open/floor/f13{
 	color = "#f7e8e1";
@@ -12205,6 +12329,17 @@
 	color = "#779999"
 	},
 /area/f13/building/trader)
+"gim" = (
+/obj/item/chair/stool/bar{
+	icon_state = "barbrass";
+	pixel_y = 10;
+	name = "The Defenses Stool"
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "gis" = (
 /obj/structure/wreck/trash/two_tire,
 /obj/structure/wreck/trash/five_tires{
@@ -12222,6 +12357,13 @@
 	icon_state = "interior12"
 	},
 /area/f13/building)
+"giO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/right{
+	dir = 1
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "giW" = (
 /obj/structure/window/fulltile/wood{
 	layer = 3
@@ -12466,6 +12608,12 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 8;
 	icon_state = "hole"
+	},
+/area/f13/wasteland)
+"gqJ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
 	},
 /area/f13/wasteland)
 "gqL" = (
@@ -13598,6 +13746,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/building/trader)
+"gSH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/wood_common{
+	icon_state = "common-broken2"
+	},
+/area/f13/wasteland)
 "gSO" = (
 /obj/machinery/grill,
 /turf/open/floor/f13/wood{
@@ -15007,6 +15162,13 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/wasteland)
+"hzK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/right{
+	dir = 1
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "hzL" = (
 /obj/structure/closet,
 /turf/open/floor/f13{
@@ -15115,6 +15277,12 @@
 	color = "#779999"
 	},
 /area/f13/building/trader)
+"hCs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "hCE" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/blue,
@@ -15405,6 +15573,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"hLU" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "hMh" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
@@ -15442,6 +15616,15 @@
 "hMW" = (
 /obj/machinery/computer/slot_machine,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"hNf" = (
+/obj/structure/bed/mattress{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "hNh" = (
 /obj/structure/sign/warning/enginesafety,
@@ -16603,6 +16786,12 @@
 "iug" = (
 /obj/item/clothing/suit/hooded/wintercoat,
 /turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"ius" = (
+/obj/structure/chair/wood{
+	name = "The Accused"
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland)
 "iuu" = (
 /obj/machinery/mineral/wasteland_vendor/ammo,
@@ -17893,6 +18082,16 @@
 /area/f13/wasteland)
 "jej" = (
 /turf/open/floor/plating/snowed/smoothed,
+/area/f13/wasteland)
+"jeC" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -10
+	},
+/turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "jeE" = (
 /obj/structure/rack,
@@ -19525,6 +19724,17 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
+"jWz" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/chair/left{
+	dir = 1;
+	name = "Jury seats";
+	color = "#ff77ff"
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "jWB" = (
 /obj/structure/sign/poster/ncr/loaded,
 /turf/open/indestructible/ground/outside/desert,
@@ -20086,6 +20296,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
+"klz" = (
+/obj/structure/decoration/rag,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -5
+	},
+/turf/closed/wall/f13/tentwall,
+/area/f13/wasteland)
 "klG" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/underground/cave/coyote/antmound)
@@ -20869,6 +21086,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"kHd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/plating/wooden2{
+	icon_state = "carpet"
+	},
+/area/f13/wasteland)
 "kHj" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21573,6 +21799,14 @@
 	},
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/building/church)
+"kXQ" = (
+/obj/structure/table/wood/settler{
+	name = "Prosecution"
+	},
+/turf/open/floor/wood_common{
+	icon_state = "common-broken5"
+	},
+/area/f13/wasteland)
 "kXR" = (
 /obj/item/clothing/gloves/f13/crudemedical,
 /obj/item/clothing/neck/apron/medical{
@@ -21710,6 +21944,13 @@
 "lbD" = (
 /obj/structure/sign/plaques/thunderdome,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"lbE" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "lbN" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -23012,6 +23253,18 @@
 /obj/item/toy/cards/deck,
 /obj/item/cigbutt,
 /turf/open/floor/wood_fancy,
+/area/f13/wasteland)
+"lKa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/chair/right{
+	dir = 1;
+	name = "Jury seats";
+	color = "#ff77ff"
+	},
+/turf/open/floor/wood_common,
 /area/f13/wasteland)
 "lKc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26309,6 +26562,10 @@
 	dir = 1
 	},
 /area/f13/wasteland)
+"nvh" = (
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_wide/wood_wide_dark,
+/area/f13/wasteland)
 "nvl" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/closed/wall/f13/wood/house,
@@ -26839,6 +27096,19 @@
 "nKS" = (
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/building/church)
+"nKX" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = 8
+	},
+/obj/structure/barricade/wooden/planks/pregame{
+	pixel_y = -10
+	},
+/turf/closed/wall/f13/tentwall,
+/area/f13/wasteland)
 "nLc" = (
 /obj/structure/table/wood,
 /obj/structure/barricade/bars,
@@ -27875,6 +28145,16 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/bar/heaven)
+"okW" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/structure/table/wood/poker{
+	name = "Defense"
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "olb" = (
 /obj/structure/table/booth,
 /obj/item/clothing/head/helmet/f13/raider/eyebot{
@@ -28980,6 +29260,14 @@
 	color = "#779999"
 	},
 /area/f13/bar/nash)
+"oNK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "oNL" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/f13{
@@ -29029,6 +29317,15 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"oOY" = (
+/obj/structure/table/wood/settler{
+	name = "Prosecution"
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
+/area/f13/wasteland)
 "oPd" = (
 /obj/structure/decoration/cells{
 	dir = 8
@@ -29101,6 +29398,12 @@
 /area/f13/wasteland)
 "oRc" = (
 /turf/open/lava,
+/area/f13/wasteland)
+"oRh" = (
+/obj/structure/chair/left{
+	dir = 1
+	},
+/turf/open/floor/plating/wooden3,
 /area/f13/wasteland)
 "oRn" = (
 /turf/closed/wall/mineral/brick,
@@ -29559,6 +29862,15 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/bar/heaven)
+"par" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table/wood/settler{
+	name = "Prosecution"
+	},
+/turf/open/floor/wood_common,
+/area/f13/wasteland)
 "pas" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -29906,6 +30218,17 @@
 /turf/open/floor/f13{
 	icon_state = "bluechess2"
 	},
+/area/f13/wasteland)
+"pky" = (
+/obj/item/chair/stool/alien{
+	icon_state = "baralien";
+	pixel_y = 11;
+	name = "The Peoples Stool"
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/wood_common,
 /area/f13/wasteland)
 "pkS" = (
 /obj/machinery/autolathe,
@@ -30403,6 +30726,14 @@
 "pwm" = (
 /obj/structure/simple_door/bunker/glass,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"pwu" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/obj/item/kirbyplants,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "pwB" = (
 /obj/machinery/light{
@@ -31986,6 +32317,18 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"qfh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/chair/right{
+	dir = 1;
+	name = "Jury seats";
+	color = "#ff77ff"
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "qfn" = (
 /obj/structure/chair/left{
 	dir = 4
@@ -32320,6 +32663,19 @@
 "qnl" = (
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc,
+/area/f13/wasteland)
+"qnE" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland)
 "qnY" = (
 /obj/structure/table/glass,
@@ -35543,6 +35899,22 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
+"sat" = (
+/obj/structure/table/wood/settler{
+	name = "Prosecution"
+	},
+/obj/structure/barricade/bars{
+	layer = 3.5
+	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_wide/wood_wide_dark,
+/area/f13/wasteland)
 "sav" = (
 /obj/structure/bookcase/manuals/medical,
 /obj/machinery/light{
@@ -37825,6 +38197,13 @@
 /obj/structure/closet/cabinet,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"tro" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	pixel_x = -25
+	},
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "trp" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright1"
@@ -38601,6 +38980,20 @@
 /obj/machinery/microwave/white_stove,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"tMj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/chair/middle{
+	dir = 1;
+	name = "Jury seats";
+	color = "#ff77ff"
+	},
+/turf/open/floor/wood_common{
+	icon_state = "common-broken4"
+	},
+/area/f13/wasteland)
 "tMs" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -38937,6 +39330,12 @@
 "tXf" = (
 /obj/structure/sign/poster/contraband/free_tonto,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"tXx" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "tXK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39716,6 +40115,15 @@
 	color = "#779999"
 	},
 /area/f13/building/church)
+"uuf" = (
+/obj/structure/campfire/stove{
+	pixel_y = 10
+	},
+/obj/item/grown/log/tree,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland)
 "uum" = (
 /obj/structure/table/glass,
 /obj/item/clothing/neck/stethoscope,
@@ -40548,6 +40956,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland)
+"uPA" = (
+/obj/structure/fence/end/wooden{
+	pixel_x = -6;
+	density = 0;
+	pixel_y = 20
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "uPC" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer{
@@ -40722,6 +41142,12 @@
 "uSA" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"uSC" = (
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "uSJ" = (
 /obj/structure/fence/wooden,
@@ -41511,6 +41937,17 @@
 	},
 /obj/machinery/computer/pandemic,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/wasteland)
+"vox" = (
+/obj/structure/fence/end/wooden{
+	pixel_x = -6;
+	density = 0;
+	pixel_y = 20
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
 /area/f13/wasteland)
 "voF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -42771,6 +43208,12 @@
 "vZs" = (
 /obj/structure/sign/plaques/long/paradise,
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"vZu" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "vZB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -44906,6 +45349,13 @@
 	icon_state = "oakfloor1"
 	},
 /area/f13/wasteland)
+"xls" = (
+/obj/structure/chair/stool/retro/black{
+	name = "Witness Stool"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/wooden3,
+/area/f13/wasteland)
 "xlz" = (
 /obj/structure/toilet{
 	pixel_y = 12
@@ -45021,6 +45471,15 @@
 	req_access_txt = "1"
 	},
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"xoh" = (
+/obj/effect/decal/cleanable/dirt{
+	pixel_x = -25
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/floor/plating/wooden3,
 /area/f13/wasteland)
 "xoi" = (
 /obj/structure/mecha_wreckage/gygax/dark,
@@ -46341,6 +46800,13 @@
 	pixel_y = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"xZy" = (
+/obj/structure/chair/wood{
+	dir = 4;
+	pixel_x = -7
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "xZA" = (
 /obj/structure/car/rubbish3,
@@ -89124,11 +89590,11 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fac
+nKX
+vZu
+vZu
+dKD
 jrY
 jrY
 jrY
@@ -89626,27 +90092,27 @@ jrY
 jrY
 jrY
 jrY
+sOO
+nfm
+tXx
+tXx
+klz
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+fzv
+fzv
+tkD
+fzv
+fzv
+fzv
+fzv
+fzv
+tkD
+qcv
+fzv
+fzv
+fzv
 jrY
 jrY
 jrY
@@ -90128,27 +90594,27 @@ jrY
 jrY
 jrY
 jrY
+uSC
+hNf
+tXx
+faH
+eYO
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+eSi
+wBl
+odw
+okW
+pky
+jWz
+kug
+rdt
+kug
+gMH
+uZY
+gSH
+fzv
 jrY
 jrY
 jrY
@@ -90630,27 +91096,27 @@ jrY
 jrY
 jrY
 jrY
+sOO
+uuf
+tXx
+vox
+jeC
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+uPr
+nvh
+fFT
+rLW
+hLU
+tMj
+sFl
+dpG
+mJB
+sEF
+fFT
+fFT
+fzv
 jrY
 jrY
 jrY
@@ -91132,27 +91598,27 @@ jrY
 jrY
 jrY
 jrY
+sOO
+dnA
+tXx
+fwJ
+foH
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+dEN
+nmQ
+avy
+nZL
+kHd
+qfh
+hzK
+aEr
+hzK
+nZL
+nZL
+nZL
+otA
 jrY
 jrY
 jrY
@@ -91634,27 +92100,27 @@ jrY
 jrY
 jrY
 jrY
+aav
+gqJ
+dxd
+cyL
+dGE
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+sat
+oOY
+fpr
+xls
+nZL
+oNK
+nZL
+nZL
+nZL
+tro
+tro
+nZL
+fzv
 jrY
 jrY
 jrY
@@ -92136,27 +92602,27 @@ jrY
 jrY
 jrY
 jrY
+lbE
+aEs
+xZy
+eIu
+pwu
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+ius
+brL
+fpr
+hCs
+xoh
+eGz
+oRh
+oRh
+oRh
+fpr
+nZL
+nZL
+otA
 jrY
 jrY
 jrY
@@ -92638,27 +93104,27 @@ jrY
 jrY
 jrY
 jrY
+lbE
+dvM
+eIu
+eIu
+uPA
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+eSi
+doU
+odw
+kXQ
+hLU
+tMj
+sFl
+dpG
+mJB
+fFT
+xaG
+mad
+fzv
 jrY
 jrY
 jrY
@@ -93147,20 +93613,20 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+eSi
+qnE
+mNW
+par
+gim
+lKa
+giO
+dFi
+giO
+odw
+fMX
+odw
+fKu
 jrY
 jrY
 jrY
@@ -93649,20 +94115,20 @@ jrY
 jrY
 jrY
 jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
-jrY
+fzv
+fzv
+fzv
+tkD
+fzv
+fzv
+fzv
+fzv
+fzv
+fzv
+fzv
+fzv
+fzv
+fzv
 jrY
 jrY
 jrY
