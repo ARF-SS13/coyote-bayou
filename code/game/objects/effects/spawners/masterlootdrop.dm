@@ -301,11 +301,9 @@
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,      //130 7
 	)
 
-/// DPS should be 250-300 ish
-/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/rare_guns
 	name = "rare guns"
-	loot = list(
+	loot = list(                                                          //dps mag cap
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 7,                   //312 36
 		/obj/item/gun/ballistic/automatic/p47 = 5,                        //311 10
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 8,                //281 24
@@ -314,9 +312,9 @@
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
-		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                   //260 50
+		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,            //99 7
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,        //249 20
 
 		//wildcards and sidearms
 		/obj/item/gun/ballistic/rifle/mag/antimaterial = 3,               //152 8
@@ -329,7 +327,7 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
-		/obj/item/gun/ballistic/automatic/autopipe/special = 10         //456 18
+		/obj/item/gun/ballistic/automatic/autopipe/special = 10,         //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/m41br = 10,                   //341 10
 		/obj/item/gun/ballistic/automatic/smg/vss = 10,                 //340 30
@@ -498,69 +496,74 @@
 ///energy weapon spawners///
 ////////////////////////////
 
-/// DPS should be 150 or less
+/// DPS should be 100 or less
 /// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
-		/obj/item/gun/energy/laser/wattz = 8, //130 12
-		/obj/item/gun/energy/laser/wattz2k = 8, //130 12
-		/obj/item/gun/energy/laser/pistol = 9, //80 25
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 9, //90 20
-		/obj/item/gun/energy/ionrifle/carbine = 10, //107 12
-		/obj/item/gun/energy/ionrifle/compact = 10, //107 10
-		/obj/item/gun/energy/laser/tg/carbine = 9, //100 25
-		/obj/item/gun/energy/laser/plasma/pistol = 9, //88 10
-		/obj/item/gun/energy/laser/wattzs = 8, //83 30
-		/obj/item/gun/energy/laser/aer9 = 8, //80 20
+
+		/obj/item/gun/energy/ionrifle/carbine = 10,         //107 12
+		/obj/item/gun/energy/ionrifle/compact = 10,         //107 10
+		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25
+		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,   //90 20
+		/obj/item/gun/energy/laser/aer12 = 10,              //90 20
+		/obj/item/gun/energy/laser/plasma/pistol = 10,      //88 10
+		/obj/item/gun/energy/laser/wattzs = 10,             //83 30
+		/obj/item/gun/energy/laser/pistol = 10,             //80 25
+		/obj/item/gun/energy/laser/aer9 = 10,               //80 20
+		/obj/item/gun/energy/laser/plasma = 10,             //80 12
 		//Others
-		/obj/item/gun/energy/laser/complianceregulator = 5, //330(690) 16 (stamina dam)
+		/obj/item/gun/energy/laser/complianceregulator = 5, //330(690) 16 (stamina)
 	)
 
-/// DPS should be 150-250 ish
-/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
+/// DPS should be <= 150 or lower with great battery capacity
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
 	name = "uncommon energy"
 	loot = list(
-		/obj/item/gun/energy/laser/auto = 10, //200 60
-		/obj/item/gun/energy/laser/tg/rifle = 10, //150 40
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10, //100 16
-		/obj/item/gun/energy/laser/solar = 10, //90 16
-		//how do I balance these lmfao
-		/obj/item/gun/magic/wand/kelpmagic/firebolt = 1,
-		/obj/item/gun/magic/wand/kelpmagic/healwand = 1,
-		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 1,
-		/obj/item/gun/magic/wand/kelpmagic/sparky = 1,
-		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 1,
-	)
+		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40
+		/obj/item/gun/energy/laser/LaserAK/worn = 10,               //133 30
+		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
+		/obj/item/gun/energy/laser/wattz2k = 10,                    //130 12
+		/obj/item/gun/energy/ionrifle = 10,                         //107 15
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 10, //100 24 self recharge
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,       //100 16 self recharge
+		/obj/item/gun/energy/laser/laer = 10,                       //113 16
+		/obj/item/gun/energy/laser/plasma/carbine = 10,             //100 20
+		/obj/item/gun/energy/laser/plasma/glock = 10,               //100 16
+		/obj/item/gun/energy/laser/wattz2k/extended = 10,           //100 16
+		/obj/item/gun/energy/laser/solar = 10,                      //90 16
+		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80 40
+		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80 24
+		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 
-/// DPS should be 250-300 ish
-/// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
+		//magic
+		/obj/item/gun/magic/wand/kelpmagic/firebolt = 2,
+		/obj/item/gun/magic/wand/kelpmagic/healwand = 2,
+		/obj/item/gun/magic/wand/kelpmagic/magicmissile/improved = 2,
+		/obj/item/gun/magic/wand/kelpmagic/sparky = 2,
+		/obj/item/gun/magic/staff/kelpmagic/acidstaff = 2,
+	)
+//dps <= 200 ish
 /obj/effect/spawner/lootdrop/f13/rare_energy
 	name = "rare energy"
-	loot = list(
-		/obj/item/gun/energy/laser/scatter = 10,
-		/obj/item/gun/energy/laser/aer12 = 10,
-		/obj/item/gun/energy/laser/rcw = 10, //190 50
-		/obj/item/gun/energy/laser/plasma/glock = 10,
-		/obj/item/gun/energy/laser/plasma = 10,
-		/obj/item/gun/energy/laser/wattz2k/extended = 10,
-		/obj/item/gun/energy/ionrifle = 4,
-		/obj/item/gun/energy/laser/laer = 4,
-		/obj/item/gun/energy/laser/plasma/carbine = 4,
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 4,
-		/obj/item/gun/energy/laser/tg/rifle/auto = 4,
-		/obj/item/gun/energy/laser/plasma/pistol/eve = 1,
-		/obj/item/gun/energy/laser/plasma/pistol/adam = 1,
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 1,
-		/obj/item/gun/energy/laser/LaserAK/worn = 1,
-		/obj/item/gun/energy/laser/ultra_rifle = 1,
-		/obj/item/gun/magic/staff/kelpmagic/fireball = 1,
-		/obj/item/gun/magic/staff/kelpmagic/lightning = 1,
-		/obj/item/gun/magic/staff/kelpmagic/healstaff = 1,
+	loot = list(                                 //dps magcap
+		/obj/item/gun/energy/laser/auto = 10,                       //200 60
+		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60
+		/obj/item/gun/energy/laser/LaserAK = 10,                     //200 30
+		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
+
+
+		//sidearms
+		/obj/item/gun/energy/laser/plasma/pistol/eve = 3,           //150 10
+		/obj/item/gun/energy/laser/plasma/pistol/adam = 3,          //138 8
+
+		//magic
+		/obj/item/gun/magic/staff/kelpmagic/fireball = 2,
+		/obj/item/gun/magic/staff/kelpmagic/lightning = 2,
+		/obj/item/gun/magic/staff/kelpmagic/healstaff = 2,
 	)
 
-/// DPS should be 300+
+/// DPS should be 250+
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
@@ -629,7 +632,6 @@
 	name = "common unique"
 	loot = list(
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,
-		/obj/item/gun/energy/laser/LaserAK = 4,
 		/obj/item/gun/ballistic/revolver/colt357/lucky = 4,//183 6
 		/obj/item/gun/ballistic/automatic/delisle/commando = 4, // 138 12
 		/obj/item/gun/ballistic/automatic/m1carbine/compact = 4, //120 12

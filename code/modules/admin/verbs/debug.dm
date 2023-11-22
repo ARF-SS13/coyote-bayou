@@ -1123,7 +1123,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 				else
 					g_casing = mycasing
 				g_bullet = new g_casing.projectile_type(G)
-				charge_per_shot = initial(g_casing.e_cost)*(G.get_charge_cost_mult())//This might be wrong if our first firemode isn't the highest RPM one
+				charge_per_shot = g_casing.e_cost*(G.get_charge_cost_mult())//This might be wrong if our first firemode isn't the highest RPM one
 				//Start avg, mode, min, & max calcs
 				if(g_bullet && g_rps)
 					var/list/dam_list = initial(g_bullet.damage_list)
