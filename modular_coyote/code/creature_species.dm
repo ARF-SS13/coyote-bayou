@@ -741,6 +741,30 @@
 /mob/living/carbon/human/species/mousebrown
 	race = /datum/species/feral/mousebrown
 
+/datum/species/feral/mousegrey
+	name = "Feral Grey Mouse"
+	id = "mouse_gray"
+	simple_icon = 'icons/mob/animal.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+/mob/living/carbon/human/species/mousegrey
+	race = /datum/species/feral/mousegrey
+
+/datum/species/feral/mousewhite
+	name = "Feral White Mouse"
+	id = "mouse_white"
+	simple_icon = 'icons/mob/animal.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = VEGETABLES
+/mob/living/carbon/human/species/mousewhite
+	race = /datum/species/feral/mousewhite
+
 /datum/species/feral/bat
 	name = "Feral Bat"
 	id = "bat"
@@ -901,6 +925,17 @@
 	simple_icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_width = 64
 
+/datum/species/feral/deathclaw/original
+	name = "Feral Deathclaw"
+	id = "deathclaw"
+	roundstart = TRUE
+	icon_rest_suffix = ""
+	rotate_on_lying = TRUE
+	simple_icon = 'icons/mob/deathclaw.dmi'
+	
+/mob/living/carbon/human/species/deathclaw_original
+	race = /datum/species/feral/deathclaw/original
+
 /datum/species/feral/deathclaw/purple
 	name = "Purple Cloaked Deathclaw"
 	id = "pur"
@@ -949,5 +984,14 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/deathclaw_maid
 	race = /datum/species/feral/deathclaw/maid
+
+/datum/species/feral/deathclaw/queen
+	name = "Queen Deathclaw"
+	id = "deathclaw_queen"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_queen
+	race = /datum/species/feral/deathclaw/queen
+
+
 
 //End Other//
