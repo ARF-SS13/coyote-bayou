@@ -36,7 +36,7 @@
 
 /datum/species/feral/pokemon/aerodactyl
 	name = "Feral Aerodactyl"
-	id = "aerodactyl"
+	id = "Aerodactyl"//randomly has a capital letter i guess
 	roundstart = TRUE
 /mob/living/carbon/human/species/aerodactyl
 	race = /datum/species/feral/pokemon/aerodactyl
@@ -272,6 +272,13 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/jolteon
 	race = /datum/species/feral/pokemon/jolteon
+
+/datum/species/feral/pokemon/kabuto
+	name = "Feral Kabuto"
+	id = "Kabuto"
+	roundstart = TRUE
+/mob/living/carbon/human/species/kabuto
+	race = /datum/species/feral/pokemon/kabuto
 
 /datum/species/feral/pokemon/kirlia
 	name = "Feral Kirlia"
@@ -881,5 +888,66 @@
 	icon_rest_suffix = "_rest"
 /mob/living/carbon/human/species/bigwolfblack
 	race = /datum/species/feral/bigwolfblack
+
+//start deathclaws
+/datum/species/feral/deathclaw
+	roundstart = FALSE //This is just the parent type, don't let players actually select it.
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
+	gib_types = list(/obj/effect/gibspawner/generic)
+	skinned_type = /obj/item/stack/sheet/animalhide/deathclaw
+	liked_food = MEAT | RAW
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	simple_icon = 'modular_coyote/icons/mob/deathclaw.dmi'
+	icon_width = 64
+
+/datum/species/feral/deathclaw/purple
+	name = "Purple Cloaked Deathclaw"
+	id = "pur"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_purple
+	race = /datum/species/feral/deathclaw/purple
+
+/datum/species/feral/deathclaw/white
+	name = "White Cloaked Deathclaw"
+	id = "whi"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_whi
+	race = /datum/species/feral/deathclaw/white
+
+/datum/species/feral/deathclaw/red
+	name = "Red Cloaked Deathclaw"
+	id = "red"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_red
+	race = /datum/species/feral/deathclaw/red
+
+/datum/species/feral/deathclaw/grey
+	name = "Grey Cloaked Deathclaw"
+	id = "gry"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_grey
+	race = /datum/species/feral/deathclaw/grey
+
+/datum/species/feral/deathclaw/black
+	name = "Black Cloaked Deathclaw"
+	id = "hub"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_black
+	race = /datum/species/feral/deathclaw/black
+
+/datum/species/feral/deathclaw/brown
+	name = "Brown Cloaked Deathclaw"
+	id = "bro"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_brown
+	race = /datum/species/feral/deathclaw/brown
+
+/datum/species/feral/deathclaw/maid
+	name = "Maid Deathclaw"
+	id = "maidclaw"
+	roundstart = TRUE
+/mob/living/carbon/human/species/deathclaw_maid
+	race = /datum/species/feral/deathclaw/maid
 
 //End Other//
