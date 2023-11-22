@@ -93,7 +93,7 @@
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	flags_inv = HIDESNOUT | HIDEHAIR | HIDEFACE | HIDEEYES
+	flags_inv = HIDESNOUT
 	var/requires_training = TRUE
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/dark

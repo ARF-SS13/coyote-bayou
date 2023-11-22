@@ -3692,10 +3692,8 @@
 	item_state = "arroyoapa"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
-	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
-	var/requires_training = TRUE
-	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 
 /obj/item/clothing/suit/armor/medium/combat/mk2
