@@ -450,6 +450,7 @@ obj/item/storage/bag/chemistry/tribal
 	var/mob/listeningTo
 	component_type = /datum/component/storage/concrete/bag/casing
 	var/last_inserted_type
+	var/last_was_empty = FALSE
 
 /obj/item/storage/bag/casings/dropped(mob/user)
 	. = ..()
@@ -477,8 +478,11 @@ obj/item/storage/bag/chemistry/tribal
 		return
 	var/list/loaded_casings = list()
 	var/obj/item/ammo_casing/out
+	var/should_stop = FALSE
 	for(var/obj/item/ammo_casing/bluuet in contents)
 		if(bluuet.BB)
+			if(last_was_empty)
+				should_stop = TRUE
 			if(last_inserted_type)
 				if(bluuet.type == last_inserted_type)
 					out = bluuet
@@ -487,7 +491,11 @@ obj/item/storage/bag/chemistry/tribal
 				loaded_casings |= bluuet
 		else
 			out = bluuet // ezpz
+			last_was_empty = TRUE
+			should_stop = FALSE
 			break
+	if(should_stop)
+		return FALSE
 	if(out)
 		return out
 	// if(last_inserted_type) // we didnt find a casing like the one we last inserted, so attempt to break the operation
