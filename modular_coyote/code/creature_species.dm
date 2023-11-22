@@ -34,6 +34,13 @@
 	icon_dead_suffix = "_d"
 	icon_rest_suffix = "_rest"
 
+/datum/species/feral/pokemon/aerodactyl
+	name = "Feral Aerodactyl"
+	id = "aerodactyl"
+	roundstart = TRUE
+/mob/living/carbon/human/species/aerodactyl
+	race = /datum/species/feral/pokemon/aerodactyl
+
 /datum/species/feral/pokemon/absol
 	name = "Feral Absol"
 	id = "absol"
@@ -54,13 +61,6 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/aggron
 	race = /datum/species/feral/pokemon/aggron
-
-/datum/species/feral/pokemon/alolanvulpix
-	name = "Feral Alolan Vulpix"
-	id = "alolanvulpix"
-	roundstart = TRUE
-/mob/living/carbon/human/species/alolanvulpix
-	race = /datum/species/feral/pokemon/alolanvulpix
 
 /datum/species/feral/pokemon/ampharos
 	name = "Feral Ampharos"
@@ -119,6 +119,13 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/charizard
 	race = /datum/species/feral/pokemon/charizard
+
+/datum/species/feral/pokemon/cubone
+	name = "Feral Cubone"
+	id = "cubone"
+	roundstart = TRUE
+/mob/living/carbon/human/species/cubone
+	race = /datum/species/feral/pokemon/cubone
 
 /datum/species/feral/pokemon/ditto
 	name = "Feral Ditto"
@@ -210,12 +217,82 @@
 /mob/living/carbon/human/species/furret
 	race = /datum/species/feral/pokemon/furret
 
+/datum/species/feral/pokemon/gallade
+	name = "Feral Gallade"
+	id = "gallade"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gallade
+	race = /datum/species/feral/pokemon/gallade
+
+/datum/species/feral/pokemon/gardevoir
+	name = "Feral Gardevoir"
+	id = "gardevoir"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gardevoir
+	race = /datum/species/feral/pokemon/gardevoir
+
+/datum/species/feral/pokemon/gastly
+	name = "Feral Gastly"
+	id = "gastly"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gastly
+	race = /datum/species/feral/pokemon/gastly
+
+/datum/species/feral/pokemon/gengar
+	name = "Feral Gengar"
+	id = "gengar"
+	roundstart = TRUE
+/mob/living/carbon/human/species/gengar
+	race = /datum/species/feral/pokemon/gengar
+
 /datum/species/feral/pokemon/glaceon
 	name = "Feral Glaceon"
 	id = "glaceon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/glaceon
 	race = /datum/species/feral/pokemon/glaceon
+
+/datum/species/feral/pokemon/haunter
+	name = "Feral Haunter"
+	id = "haunter"
+	roundstart = TRUE
+/mob/living/carbon/human/species/haunter
+	race = /datum/species/feral/pokemon/haunter
+
+/datum/species/feral/pokemon/jirachi
+	name = "Feral Jirachi"
+	id = "jirachi"
+	roundstart = TRUE
+/mob/living/carbon/human/species/jirachi
+	race = /datum/species/feral/pokemon/jirachi
+
+/datum/species/feral/pokemon/jolteon
+	name = "Feral Jolteon"
+	id = "jolteon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/jolteon
+	race = /datum/species/feral/pokemon/jolteon
+
+/datum/species/feral/pokemon/kirlia
+	name = "Feral Kirlia"
+	id = "kirlia"
+	roundstart = TRUE
+/mob/living/carbon/human/species/kirlia
+	race = /datum/species/feral/pokemon/kirlia
+
+/datum/species/feral/pokemon/larvitar
+	name = "Feral Larvitar"
+	id = "larvitar"
+	roundstart = TRUE
+/mob/living/carbon/human/species/larvitar
+	race = /datum/species/feral/pokemon/larvitar
+
+/datum/species/feral/pokemon/lapras
+	name = "Feral Lapras"
+	id = "lapras"
+	roundstart = TRUE
+/mob/living/carbon/human/species/lapras
+	race = /datum/species/feral/pokemon/lapras
 
 /datum/species/feral/pokemon/leafeon
 	name = "Feral Leafeon"
@@ -224,12 +301,63 @@
 /mob/living/carbon/human/species/leafeon
 	race = /datum/species/feral/pokemon/leafeon
 
+/datum/species/feral/pokemon/liepard
+	name = "Feral Liepard"
+	id = "liepard"
+	roundstart = TRUE
+/mob/living/carbon/human/species/liepard
+	race = /datum/species/feral/pokemon/liepard
+
+/datum/species/feral/pokemon/lickitung
+	name = "Feral Lickitung"
+	id = "lickitung"
+	roundstart = TRUE
+/mob/living/carbon/human/species/lickitung
+	race = /datum/species/feral/pokemon/lickitung
+
+/datum/species/feral/pokemon/lugia
+	name = "Feral Lugia"
+	id = "lugia"
+	roundstart = TRUE
+	simple_icon = 'modular_coyote/icons/mob/pokemon96.dmi'
+	icon_width = 96
+/mob/living/carbon/human/species/lugia
+	race = /datum/species/feral/pokemon/lugia
+
 /datum/species/feral/pokemon/lycanroc
 	name = "Feral Lycanroc"
 	id = "lycanroc"
 	roundstart = TRUE
 /mob/living/carbon/human/species/lycanroc
 	race = /datum/species/feral/pokemon/lycanroc
+
+/datum/species/feral/pokemon/growlithe
+	name = "Feral growlithe"
+	id = "growlithe"
+	roundstart = TRUE
+/mob/living/carbon/human/species/growlithe
+	race = /datum/species/feral/pokemon/growlithe
+
+/datum/species/feral/pokemon/magicarp
+	name = "Feral Magicarp"
+	id = "magicarp"
+	roundstart = TRUE
+/mob/living/carbon/human/species/magicarp
+	race = /datum/species/feral/pokemon/magicarp
+
+/datum/species/feral/pokemon/magmar
+	name = "Feral Magmar"
+	id = "magmar"
+	roundstart = TRUE
+/mob/living/carbon/human/species/magmar
+	race = /datum/species/feral/pokemon/magmar
+
+/datum/species/feral/pokemon/mareep
+	name = "Feral Mareep"
+	id = "mareep"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mareep
+	race = /datum/species/feral/pokemon/mareep
 
 /datum/species/feral/pokemon/mew
 	name = "Feral Mew"
@@ -238,12 +366,140 @@
 /mob/living/carbon/human/species/mew
 	race = /datum/species/feral/pokemon/mew
 
+/datum/species/feral/pokemon/mewtwo
+	name = "Feral Mewtwo"
+	id = "mewtwo"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mewtwo
+	race = /datum/species/feral/pokemon/mewtwo
+
+/datum/species/feral/pokemon/mightyena
+	name = "Feral Mightyena"
+	id = "mightyena"
+	roundstart = TRUE
+/mob/living/carbon/human/species/mightyena
+	race = /datum/species/feral/pokemon/mightyena
+
+/datum/species/feral/pokemon/miltank
+	name = "Feral Miltank"
+	id = "miltank"
+	roundstart = TRUE
+/mob/living/carbon/human/species/miltank
+	race = /datum/species/feral/pokemon/miltank
+
+/datum/species/feral/pokemon/ninetales
+	name = "Feral ninetales"
+	id = "ninetales"
+	roundstart = TRUE
+/mob/living/carbon/human/species/ninetales
+	race = /datum/species/feral/pokemon/ninetales
+
+/datum/species/feral/pokemon/omanyte
+	name = "Feral Omanyte"
+	id = "omanyte"
+	roundstart = TRUE
+/mob/living/carbon/human/species/omanyte
+	race = /datum/species/feral/pokemon/omanyte
+
+/datum/species/feral/pokemon/ponyta
+	name = "Feral Ponyta"
+	id = "ponyta"
+	roundstart = TRUE
+/mob/living/carbon/human/species/ponyta
+	race = /datum/species/feral/pokemon/ponyta
+
+/datum/species/feral/pokemon/poochyena
+	name = "Feral Poochyena"
+	id = "poochyena"
+	roundstart = TRUE
+/mob/living/carbon/human/species/poochyena
+	race = /datum/species/feral/pokemon/poochyena
+
+/datum/species/feral/pokemon/purrloin
+	name = "Feral Purrloin"
+	id = "purrloin"
+	roundstart = TRUE
+/mob/living/carbon/human/species/purrloin
+	race = /datum/species/feral/pokemon/purrloin
+
+/datum/species/feral/pokemon/ralts
+	name = "Feral Ralts"
+	id = "ralts"
+	roundstart = TRUE
+/mob/living/carbon/human/species/ralts
+	race = /datum/species/feral/pokemon/ralts
+
+/datum/species/feral/pokemon/raticate
+	name = "Feral Raticate"
+	id = "raticate"
+	roundstart = TRUE
+/mob/living/carbon/human/species/raticate
+	race = /datum/species/feral/pokemon/raticate
+
+/datum/species/feral/pokemon/rattata
+	name = "Feral Rattata"
+	id = "rattata"
+	roundstart = TRUE
+/mob/living/carbon/human/species/rattata
+	race = /datum/species/feral/pokemon/rattata
+
+/datum/species/feral/pokemon/rayquaza
+	name = "Feral Rayquaza"
+	id = "rayquaza"
+	roundstart = TRUE
+	simple_icon = 'modular_coyote/icons/mob/pokemon96.dmi'
+	icon_width = 96
+/mob/living/carbon/human/species/rayquaza
+	race = /datum/species/feral/pokemon/rayquaza
+
+/datum/species/feral/pokemon/skuntank
+	name = "Feral Skuntank"
+	id = "skuntank"
+	roundstart = TRUE
+/mob/living/carbon/human/species/skuntank
+	race = /datum/species/feral/pokemon/skuntank
+
+/datum/species/feral/pokemon/snivy
+	name = "Feral Snivy"
+	id = "snivy"
+	roundstart = TRUE
+/mob/living/carbon/human/species/snivy
+	race = /datum/species/feral/pokemon/snivy
+
+/datum/species/feral/pokemon/snorlax
+	name = "Feral Snorlax"
+	id = "snorlax"
+	roundstart = TRUE
+/mob/living/carbon/human/species/snorlax
+	race = /datum/species/feral/pokemon/snorlax
+
 /datum/species/feral/pokemon/sprigatito
 	name = "Feral Sprigatito"
 	id = "sprigatito"
 	roundstart = TRUE
 /mob/living/carbon/human/species/sprigatito
 	race = /datum/species/feral/pokemon/sprigatito
+
+/datum/species/feral/pokemon/sylveon
+	name = "Feral Sylveon"
+	id = "sylveon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/sylveon
+	race = /datum/species/feral/pokemon/sylveon
+
+/datum/species/feral/pokemon/tentacruel
+	name = "Feral Tentacruel"
+	id = "tentacruel"
+	roundstart = TRUE
+/mob/living/carbon/human/species/tentacruel
+	race = /datum/species/feral/pokemon/tentacruel
+
+/datum/species/feral/pokemon/thievul
+	name = "Feral Thievul"
+	id = "thievul"
+	roundstart = TRUE
+/mob/living/carbon/human/species/thievul
+	race = /datum/species/feral/pokemon/thievul
 
 /datum/species/feral/pokemon/umbreon
 	name = "Feral Umbreon"
@@ -252,12 +508,33 @@
 /mob/living/carbon/human/species/umbreon
 	race = /datum/species/feral/pokemon/umbreon
 
+/datum/species/feral/pokemon/vulpix
+	name = "Feral Vulpix"
+	id = "vulpix"
+	roundstart = TRUE
+/mob/living/carbon/human/species/vulpix
+	race = /datum/species/feral/pokemon/vulpix
+
+/datum/species/feral/pokemon/alolanvulpix
+	name = "Feral Alolan Vulpix"
+	id = "alolanvulpix"
+	roundstart = TRUE
+/mob/living/carbon/human/species/alolanvulpix
+	race = /datum/species/feral/pokemon/alolanvulpix
+
 /datum/species/feral/pokemon/vaporeon
 	name = "Feral Vaporeon"
 	id = "vaporeon"
 	roundstart = TRUE
 /mob/living/carbon/human/species/vaporeon
 	race = /datum/species/feral/pokemon/vaporeon
+
+/datum/species/feral/pokemon/zigzagoon
+	name = "Feral Zigzagoon"
+	id = "zigzagoon"
+	roundstart = TRUE
+/mob/living/carbon/human/species/zigzagoon
+	race = /datum/species/feral/pokemon/zigzagoon
 
 /datum/species/feral/pokemon/zorua
 	name = "Feral Zorua"
@@ -266,12 +543,26 @@
 /mob/living/carbon/human/species/zorua
 	race = /datum/species/feral/pokemon/zorua
 
+/datum/species/feral/pokemon/zorua_hisuian
+	name = "Feral Hisuian Zorua"
+	id = "zorua_hisuian"
+	roundstart = TRUE
+/mob/living/carbon/human/species/zorua_hisuian
+	race = /datum/species/feral/pokemon/zorua_hisuian
+
 /datum/species/feral/pokemon/zoroark
 	name = "Feral Zoroark"
 	id = "zoroark"
 	roundstart = TRUE
 /mob/living/carbon/human/species/zoroark
 	race = /datum/species/feral/pokemon/zoroark
+
+/datum/species/feral/pokemon/zubat
+	name = "Feral Zubat"
+	id = "zubat"
+	roundstart = TRUE
+/mob/living/carbon/human/species/zubat
+	race = /datum/species/feral/pokemon/zubat
 
 //^^^ Please keep these alphabetical. Don't just add to the bottom of the list. ^^^//
 //End Pokemon//
@@ -290,9 +581,24 @@
 	default_color = "FFFFFF"
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
 	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
+/mob/living/carbon/human/species/catslug
+	race = /datum/species/feral/catslug
 
-/mob/living/carbon/human/species/nightstalker
-	race = /datum/species/feral/nightstalker
+/datum/species/feral/chocobo
+	name = "Feral Chocobo"
+	id = "chocobo"
+	simple_icon = 'modular_coyote/icons/mob/raptor.dmi'
+	icon_width = 32
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = ""
+	rotate_on_lying = TRUE
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+	default_color = "FFFFFF"
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
+/mob/living/carbon/human/species/chocobo
+	race = /datum/species/feral/chocobo
 
 /datum/species/feral/nightstalker
 	name = "Feral Nightstalker"
@@ -391,6 +697,30 @@
 	liked_food = MEAT | RAW
 /mob/living/carbon/human/species/hyotie
 	race = /datum/species/feral/hyotie
+
+/datum/species/feral/direwolf
+	name = "Feral Direwolf"
+	id = "direwolf"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/direwolf
+	race = /datum/species/feral/direwolf
+
+/datum/species/feral/giantrat
+	name = "Feral Giant Rat"
+	id = "rous"
+	simple_icon = 'modular_coyote/icons/mob/vore64x32.dmi'
+	icon_width = 64
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	roundstart = TRUE
+	liked_food = MEAT | RAW
+/mob/living/carbon/human/species/giantrat
+	race = /datum/species/feral/giantrat
 
 /datum/species/feral/mousebrown
 	name = "Feral Brown Mouse"

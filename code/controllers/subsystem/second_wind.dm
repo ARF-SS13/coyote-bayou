@@ -360,13 +360,17 @@ SUBSYSTEM_DEF(secondwind)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
 	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          50)
-
-	if(ishuman(master))
-		var/mob/living/carbon/human/humaster = master
-		var/obj/item/stack/medical/gauze/second_wind/bandie = new()
-		for(var/obj/item/bodypart/limb in humaster.bodyparts)
-			limb.apply_gauze_to_limb(bandie)
-		qdel(bandie)
+	if(iscarbon(master))
+		var/mob/living/carbon/carbaster = master
+		for(var/thing in carbaster.all_wounds)
+			var/datum/wound/W = thing
+			W.remove_wound()
+		if(ishuman(master))
+			var/mob/living/carbon/human/humaster = carbaster
+			var/obj/item/stack/medical/gauze/second_wind/bandie = new()
+			for(var/obj/item/bodypart/limb in humaster.bodyparts)
+				limb.apply_gauze_to_limb(bandie)
+			qdel(bandie)
 
 	/// should be enough to get them up
 	master.revive(FALSE, FALSE, TRUE)
