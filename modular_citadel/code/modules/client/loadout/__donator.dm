@@ -446,6 +446,16 @@
 	new /obj/item/gun/energy/laser/pistol/phaser(src)
 	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
+/datum/gear/donator/kits/dirtyoldharry
+	name = "Custom loadout kit."
+	path = /obj/item/storage/box/large/custom_kit/dirtyoldharry
+	ckeywhitelist = list("DirtyOldHarry")
+
+/obj/item/storage/box/large/custom_kit/dirtyoldharry/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
 // E
 
 /datum/gear/donator/kits/esperkin
@@ -825,9 +835,18 @@
 	new /obj/item/ammo_box/a45lcbox(src)
 	new /obj/item/ammo_box/a45lcbox(src)
 
+/datum/gear/donator/kits/littleplayer0102
+	name = "The Brotherhood Specialist"
+	path = /obj/item/storage/box/large/custom_kit/littleplayer0102
+	ckeywhitelist = list("littleplayer0102")
 
-
-
+/obj/item/storage/box/large/custom_kit/littleplayer0102/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/ak556/custom(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/clothing/suit/armor/outfit/custompa(src)
+	new /obj/item/clothing/under/f13/recon(src)
+	new /obj/item/clothing/accessory/bos/paladin(src)
+	new /obj/item/clothing/head/droptrooper/custompahelmet(src)
 // M
 
 /datum/gear/donator/kits/mathiel
@@ -1193,6 +1212,14 @@
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
+/datum/gear/donator/kits/SilencedMP5A5
+	name = "Arroyo's Kit"
+	path = /obj/item/storage/box/large/custom_kit/SilencedMP5A5
+	ckeywhitelist = list("SilencedMP5A5")
+
+/obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/combat/mk2/custom(src)
+	new /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
