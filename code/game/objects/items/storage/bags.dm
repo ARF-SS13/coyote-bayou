@@ -483,6 +483,7 @@ obj/item/storage/bag/chemistry/tribal
 		if(bluuet.BB)
 			if(last_was_empty)
 				should_stop = TRUE
+				last_was_empty = FALSE
 			if(last_inserted_type)
 				if(bluuet.type == last_inserted_type)
 					out = bluuet
