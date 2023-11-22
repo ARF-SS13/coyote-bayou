@@ -71,7 +71,6 @@
 
 /obj/structure/flora/tree/pine/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency, y_size = 1, y_offset = 1)
 	if(length(icon_states))
 		icon_state = pick(icon_states)
 
@@ -129,8 +128,6 @@
 /obj/structure/flora/tree/tall/Initialize()
 	. = ..()
 	icon_state = "tree_[rand(1,3)]"
-	AddComponent(/datum/component/largetransparency, y_offset = 1, y_size = 2)
-
 
 /obj/structure/festivus
 	name = "festivus pole"
@@ -160,22 +157,15 @@
 /obj/structure/flora/tree/jungle/Initialize()
 	. = ..()
 	icon_state = "[icon_state][rand(1, 6)]"
-	setup_transparency()
 	color = random_foliage_color_greenbrown()
 
 /proc/random_foliage_color_greenbrown()
 	return "#[pick(GLOB.hex_6toc)][pick(GLOB.hex_6toc)][pick(GLOB.hex_6to9)][pick(GLOB.hex_6to9)]00"
 
-/obj/structure/flora/tree/jungle/proc/setup_transparency()
-	AddComponent(/datum/component/largetransparency, 1, 2, 1, 1)
-
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
 	pixel_x = -32
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
-
-/obj/structure/flora/tree/jungle/small/setup_transparency()
-	AddComponent(/datum/component/largetransparency, 1, 1, 0, 1)
 
 //grass
 /obj/structure/flora/grass
