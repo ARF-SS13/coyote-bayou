@@ -2621,6 +2621,28 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+/obj/item/gun/ballistic/automatic/ak556/custom // Custom
+	name = "Custom Ak-74 assault rifle"
+	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74"
+	icon_state = "ak74"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = AUTORIFLE_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100 ,
+		/datum/firemode/semi_auto
+		)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
 //Saiga 12 shotgun
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "Saiga-12 Assault shotgun"
