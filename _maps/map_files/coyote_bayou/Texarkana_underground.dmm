@@ -949,6 +949,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
+"aAX" = (
+/obj/structure/chair/comfy/purple{
+	dir = 8
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "aBg" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -1832,6 +1838,10 @@
 "bld" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
+"blC" = (
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "blM" = (
 /turf/closed/wall/f13/wood,
 /area/f13/building/sewers)
@@ -2394,6 +2404,12 @@
 /obj/structure/flora/wasteplant/fever_blossom,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
 /area/f13/caves)
+"bAN" = (
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "bAY" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -2651,6 +2667,27 @@
 /obj/structure/sign/warning,
 /turf/closed/wall/f13/ruins,
 /area/f13/tunnel)
+"bGi" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "bGl" = (
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/mountain,
@@ -7117,6 +7154,13 @@
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
 	},
 /area/f13/caves)
+"cUU" = (
+/obj/structure/chair/sofa/right{
+	dir = 4;
+	icon_state = "sofaend_left"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "cVq" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -14145,6 +14189,9 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"hEU" = (
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building)
 "hFl" = (
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/indestructible/ground/inside/subway,
@@ -15467,6 +15514,34 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"ivb" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "ivp" = (
 /obj/effect/overlay/junk/toilet{
 	dir = 8
@@ -16736,6 +16811,11 @@
 	dir = 8
 	},
 /area/f13/building)
+"jiG" = (
+/turf/open/indestructible/ground/bamboo/tatamiblack{
+	dir = 1
+	},
+/area/f13/building)
 "jiZ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17235,6 +17315,10 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"jBT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/indestructible/rock,
+/area/f13/tunnel)
 "jBV" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/effect/turf_decal/weather/dirt{
@@ -18849,6 +18933,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
+"kHK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/building)
 "kIe" = (
 /turf/open/floor/plasteel/f13{
@@ -20513,6 +20602,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating/miasma,
 /area/f13/caves)
+"lGf" = (
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "lGi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -20721,6 +20813,11 @@
 /obj/structure/girder/reinforced,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"lNf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/indestructible/rock,
+/area/f13/tunnel)
 "lNn" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/indestructible/ground/inside/subway,
@@ -21479,6 +21576,23 @@
 	dir = 1
 	},
 /area/f13/building)
+"mjY" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "mkr" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/building/sewers)
@@ -21692,6 +21806,13 @@
 	},
 /turf/open/floor/wood_fancy,
 /area/f13/caves)
+"mpI" = (
+/obj/structure/stairs/west{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "mpS" = (
 /obj/item/card/midbounty,
 /turf/closed/mineral/random/high_chance{
@@ -24230,6 +24351,10 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/caves)
+"nUD" = (
+/obj/structure/flora/chomp/potplant2,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "nUP" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/f13{
@@ -24521,6 +24646,21 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"ofn" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "ogq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -26065,6 +26205,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"pdP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building)
 "peA" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
@@ -32527,6 +32671,20 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/water,
 /area/f13/caves)
+"sVa" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "sWm" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/barricade/wooden/strong,
@@ -35031,6 +35189,34 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/caves)
+"uBo" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 0;
+	pixel_x = 19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 16
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	pixel_y = 12;
+	pixel_x = 17
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "uBu" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/subway{
@@ -37036,6 +37222,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/building/sewers)
+"vSN" = (
+/obj/structure/chair/comfy/purple{
+	dir = 4
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "vSO" = (
 /obj/structure/handrail/g_central{
 	pixel_y = -16
@@ -39261,6 +39453,14 @@
 	name = "cave"
 	},
 /area/f13/caves)
+"xnb" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam"
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/building)
 "xng" = (
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/tunnel)
@@ -40352,6 +40552,12 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/water,
 /area/f13/building/sewers)
+"xRC" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/building)
 "xSb" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubblepillar"
@@ -42703,10 +42909,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
 boU
 boU
 boU
@@ -42958,15 +43164,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-boU
-boU
-boU
-boU
-boU
+aaa
+aaa
+aaa
+hEU
+hEU
+hEU
+hEU
+hEU
+hEU
 boU
 boU
 boU
@@ -43215,15 +43421,15 @@ aae
 aal
 aal
 dXv
-aal
-aae
-aae
-aae
-boU
-boU
-boU
-aae
-aae
+cJr
+hEU
+hEU
+hEU
+cUU
+bAN
+xRC
+vSN
+hEU
 aae
 boU
 boU
@@ -43472,15 +43678,15 @@ tSb
 boU
 boU
 pWa
-ogB
-aal
-aae
-aae
-boU
-boU
-boU
-aae
-aae
+lNf
+hEU
+mpI
+lGf
+lGf
+lGf
+lGf
+blC
+hEU
 aae
 aae
 boU
@@ -43729,15 +43935,15 @@ boU
 pWa
 pWa
 pWa
-boU
-dXv
-aal
-aae
-boU
-boU
-aae
-aae
-aae
+rnh
+hEU
+nUD
+lGf
+lGf
+lGf
+lGf
+aAX
+hEU
 aae
 aae
 boU
@@ -43986,15 +44192,15 @@ pWa
 aal
 aae
 boU
-boU
-aae
-aal
-aal
-boU
-boU
-aae
-aae
-aae
+rnh
+hEU
+hEU
+hEU
+hEU
+lGf
+lGf
+lGf
+hEU
 aae
 boU
 boU
@@ -44242,16 +44448,16 @@ aae
 aae
 aae
 aae
-aae
-boU
-aae
-aal
-dXv
-boU
-boU
-aae
-aae
-aae
+aaB
+rnh
+aaa
+cJr
+kHK
+hEU
+jiG
+jiG
+jiG
+hEU
 aae
 boU
 boU
@@ -44502,13 +44708,13 @@ aae
 boU
 boU
 aae
-aae
-dXv
-boU
-boU
-boU
-aae
-aae
+aaa
+tJv
+hEU
+mjY
+uBo
+ivb
+hEU
 aae
 boU
 boU
@@ -44760,13 +44966,13 @@ aae
 boU
 aae
 aae
-aal
-dXv
-pWa
-pWa
-aae
-aae
-aae
+cJr
+kHK
+ofn
+uBo
+uBo
+hEU
+aaa
 boU
 boU
 boU
@@ -45017,13 +45223,13 @@ aae
 boU
 aae
 aae
-aae
-aal
-pWa
-boU
-aal
-aae
-boU
+aaa
+pdP
+xnb
+bGi
+sVa
+hEU
+rnh
 boU
 boU
 aae
@@ -45274,13 +45480,13 @@ aae
 boU
 boU
 aae
-aae
-aae
-pWa
-pWa
-aae
-aae
-boU
+aaa
+hEU
+pdP
+pdP
+hEU
+hEU
+rnh
 boU
 boU
 aae
@@ -45531,13 +45737,13 @@ aae
 boU
 boU
 aae
-aae
-aae
-pWa
-pWa
-aae
-aal
-boU
+aaa
+aaa
+jBT
+jBT
+aaa
+cJr
+rnh
 boU
 aae
 aae
@@ -46049,8 +46255,8 @@ boU
 boU
 boU
 boU
-aae
-dXv
+aal
+itV
 hRd
 hRd
 boU
