@@ -65,7 +65,7 @@
 //from SSatoms InitAtom - Only if the  atom was not deleted or failed initialization
 #define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE "atom_init_success"
 #define COMSIG_PARENT_ATTACKBY "atom_attackby"			        //from base of atom/attackby(): (/obj/item, /mob/living, params)
-	#define COMPONENT_NO_AFTERATTACK 1								//Return this in response if you don't want afterattack to be called
+	#define COMPONENT_NO_AFTERATTACK 2								//Return this in response if you don't want afterattack to be called
 #define COMSIG_ATOM_HULK_ATTACK "hulk_attack"					//from base of atom/attack_hulk(): (/mob/living/carbon/human)
 #define COMSIG_ATOM_ATTACK_ANIMAL "attack_animal"				//from base of atom/animal_attack(): (/mob/user)
 #define COMSIG_PARENT_EXAMINE "atom_examine"                    //from base of atom/examine(): (/mob, list/examine_return_text)
@@ -391,6 +391,7 @@
 #define COMSIG_MACHINE_EJECT_OCCUPANT "eject_occupant"			//from base of obj/machinery/dropContents() (occupant)
 
 // /obj/item signals
+#define COMSIG_PARENT_FORCEFEED "force_feed" // feed an item to a material hopper (obj/item/I, multiplier = 1, del_after)
 #define COMSIG_ITEM_ATTACK "item_attack"						//from base of obj/item/attack(): (/mob/living/target, /mob/living/user)
 #define COMSIG_MOB_APPLY_DAMAGE	"mob_apply_damage"				//from base of /mob/living/proc/apply_damage(): (damage, damagetype, def_zone)
 #define COMSIG_ITEM_ATTACK_SELF "item_attack_self"				//from base of obj/item/attack_self(): (/mob)
@@ -428,6 +429,8 @@
 #define COMSIG_CELL_CHECK_CHARGE "cell_check" 					// returns the charge of the cell
 #define COMSIG_CELL_CHECK_CHARGE_PERCENT "cell_check_percent" 	// returns the percent of the cell
 #define COMSIG_ITEM_RECYCLED "item_recycled"				//called on item when crossed by something (): (/atom/movable)
+#define COMSIG_TABLE_CLICKED_WITH_ITEM "table_click" // (obj/item, obj/structure/table, mob/user, params)
+	#define TABLE_NO_PLACE (1<<0)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
