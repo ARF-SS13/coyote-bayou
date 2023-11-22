@@ -143,3 +143,29 @@
 	lust_go_to = LUST_TARGET
 ///////BITE THIGH END/////////
 
+/////////////////////////
+// Fuck Thigh 7A4////////
+///////////////////////
+/datum/interaction/lewd/partner/giving/fuck_thigh
+	description = "Partner/Thighs - Fuck their thighs."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, eagerly} {humps, fucks, grinds on} XT_NAME's thighs.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, needily} {humps, fucks, grinds on} XT_NAME's thighs.",
+	)
+	grab_messages = list(
+		"XU_NAME {possessively, happily} {humps, fucks, grinds on} XT_NAME's thighs.",
+	)
+	harm_messages = list(
+		"XU_NAME {aggressively, hotly} {humps, fucks, grinds on} XT_NAME's thighs.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/hug.ogg', 
+	) // frumf, frumf
+	target_lust_mult = 0.5
+	user_lust_mult = 0.7
+	lust_go_to = LUST_TARGET | LUST_USER
