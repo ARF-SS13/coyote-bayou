@@ -290,9 +290,8 @@
 	default_color = "FFFFFF"
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "legs" = "Digitigrade", "meat_type" = "Mammalian")
 	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,MUTCOLORS)
-
-/mob/living/carbon/human/species/nightstalker
-	race = /datum/species/feral/nightstalker
+/mob/living/carbon/human/species/catslug
+	race = /datum/species/feral/catslug
 
 /datum/species/feral/nightstalker
 	name = "Feral Nightstalker"
