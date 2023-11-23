@@ -24150,7 +24150,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rYH" = (
-/obj/structure/campfire/stonefire,
+/obj/structure/campfire/stonefire{
+	density = 1
+	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
 "rZK" = (
