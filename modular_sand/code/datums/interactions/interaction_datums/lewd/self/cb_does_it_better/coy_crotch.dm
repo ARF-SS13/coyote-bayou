@@ -38,7 +38,7 @@
 
 
 ////////////////////
-//Wrist Grab 4A3//
+//Ball Grab 4A3//
 ////////////////////
 //Remember to change this                 VVVV
 /datum/interaction/lewd/partner/giving/grab_balls
@@ -1120,3 +1120,113 @@
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.4
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Sheath lick///
+////////////////////
+/datum/interaction/lewd/partner/mutual/sheath_lick
+	description = "Partner/Crotch - Lick their sheath."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, eagerly} {tongues, licks, laps at} XT_NAME's {sheath, cock holder, dipstick keeper}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, wetly, warmly} {tongues, licks, laps at} XT_NAME's {sheath, cock holder, dipstick keeper}.",
+	)
+	grab_messages = list(
+		"XU_NAME {tongues, licks, laps at} XT_NAME's {sheath, cock holder, dipstick keeper}, {pushing, sliding, inserting} XU_THEIR {warm, wet, exploring} {tongue, licker} within.",
+	)
+	harm_messages = list(
+		"XU_NAME {tongues, licks, laps at} XT_NAME's {sheath, cock holder, dipstick keeper} {like they're trying to find the answer to how many licks are needed to get to the center of a tootsie pop, like they're going crazy.}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Sheath suck///
+////////////////////
+/datum/interaction/lewd/partner/mutual/sheath_suck
+	description = "Partner/Crotch - Suck on their sheath."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, eagerly} {suckles on, sucks, slurps, splurps on} XT_NAME's {sheath, cock holder, dipstick keeper}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, wetly, warmly} {suckles on, sucks, slurps, splurps on} XT_NAME's {sheath, cock holder, dipstick keeper}.",
+	)
+	grab_messages = list(
+		"XU_NAME {suckles on, sucks, slurps, splurps on} XT_NAME's {sheath, cock holder, dipstick keeper}, using XU_THEIR {warm, wet, soft, inviting} mouth to {get their prize, urge them onwards}.",
+	)
+	harm_messages = list(
+		"XU_NAME {suckles on, sucks, slurps, splurps on} XT_NAME's {sheath, cock holder, dipstick keeper} {noisily, messily, wetly}, it's almost like they are {trying to suck them off still holstered, make them cum without getting free}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Sheath urge///
+////////////////////
+/datum/interaction/lewd/partner/mutual/sheath_urge
+	description = "Partner/Crotch - Urge them out of their sheath."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, eagerly} {teases, coaxes, urges} XT_NAME's {cock, rod, rocket, dick, dipstick, love-rocket} out of their {sheath, cock holder, dipstick keeper} with words, {\"I need it-\",\"I want it-\",\"Give it to me-\"}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, wetly, warmly} {teases, coaxes, urges} XT_NAME's {cock, rod, rocket, dick, dipstick, love-rocket} out of their {sheath, cock holder, dipstick keeper} with words, {\"I need it-\",\"I want it-\",\"Give it to me-\"}.",
+	)
+	grab_messages = list(
+		"XU_NAME  {teases, coaxes, urges} XT_NAME's {cock, rod, rocket, dick, dipstick, love-rocket} out of their {sheath, cock holder, dipstick keeper} with words, {\"I need it-\",\"I want it-\",\"Give it to me-\"}.",
+	)
+	harm_messages = list(
+		"XU_NAME {begs, moans, whines} and {teases, coaxes, urges} XT_NAME's {cock, rod, rocket, dick, dipstick, love-rocket} out of their {sheath, cock holder, dipstick keeper} with words, {\"I need it-\",\"I want it-\",\"Give it to me-\"}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+
