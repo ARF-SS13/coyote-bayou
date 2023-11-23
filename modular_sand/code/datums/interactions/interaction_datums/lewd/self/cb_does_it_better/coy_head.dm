@@ -322,7 +322,9 @@ datum/interaction/lewd/mutual/good_boy
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
-
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 ////////////////////
 //Good Girl 1A11//
 ////////////////////
@@ -346,7 +348,9 @@ datum/interaction/lewd/mutual/good_girl
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
-
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 ////////////////////
 //Praise them 1A12//
 ////////////////////
@@ -370,7 +374,9 @@ datum/interaction/lewd/mutual/praise_them
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
-
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 ////////////////////
 //Play with their mouth 1A13//
 ////////////////////
@@ -394,7 +400,9 @@ datum/interaction/lewd/mutual/mouth_play
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
-
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 ////////////////////
 //Beg to be bred, FE 1A14//
 ////////////////////
@@ -418,6 +426,9 @@ datum/interaction/lewd/mutual/nesting_behavior
 	)
 	user_lust_mult = 0.6
 	target_lust_mult = 0.5
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 
 ////////////////////
 //Beg to be bred, ME 1A15//
@@ -442,7 +453,9 @@ datum/interaction/lewd/mutual/nesting_behavior_butt
 	)
 	user_lust_mult = 0.6
 	target_lust_mult = 0.5
-
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
 ////////////////////
 //Play with their hair 1A16//
 ////////////////////
@@ -466,3 +479,64 @@ datum/interaction/lewd/mutual/hair_play
 	)
 	user_lust_mult = 0.4
 	target_lust_mult = 0.4
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
+
+////////////////////
+//Grab their ears//
+////////////////////
+/datum/interaction/lewd/partner/giving/ear_grab
+	description = "Partner/Head - Grab their ear."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {grabs, takes, grips} XT_NAME's ear.",
+	)
+	disarm_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {grabs, takes, grips} XT_NAME's ear.",
+	)
+	grab_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {grabs, takes, grips} XT_NAME's ear.",
+	)
+	harm_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {grabs, takes, grips} XT_NAME's ear.",
+	)
+
+	simple_sounds = list(
+		'sound/weapons/bite.ogg'
+	)
+	target_lust_mult = 0.8
+	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
+
+////////////////////
+//Pet their ear//
+////////////////////
+/datum/interaction/lewd/partner/giving/ear_pet
+	description = "Partner/Head - Pet their ear."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {pets, touches, rubs, carresses} XT_NAME's ear.",
+	)
+	disarm_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {pets, touches, rubs, carresses} XT_NAME's ear.",
+	)
+	grab_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {pets, touches, rubs, carresses} XT_NAME's ear.",
+	)
+	harm_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {pets, touches, rubs, carresses} XT_NAME's ear.",
+	)
+
+	simple_sounds = list(
+		'sound/weapons/bite.ogg'
+	)
+	target_lust_mult = 0.8
+	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+	simple_sounds = list(
+		'sound/f13effects/sunsetsounds/blush.ogg',
+	)
