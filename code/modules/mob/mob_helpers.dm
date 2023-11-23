@@ -293,7 +293,22 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			current_intent = 1
 
 		a_intent = possible_a_intents[current_intent]
-
+	if(prob(0.01))
+		playsound_local(get_turf(src), 'sound/effects/Huuu.ogg')
+	/* else
+		var/playthis
+		switch(a_intent)
+			if(INTENT_HELP)
+				playthis = ""
+			if(INTENT_DISARM)
+				playthis = ""
+			if(INTENT_GRAB)
+				playthis = ""
+			if(INTENT_HARM)
+				playthis = ""
+		if(playthis && playthis != "")
+			playsound_local(get_turf(src), playthis) */
+	
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 

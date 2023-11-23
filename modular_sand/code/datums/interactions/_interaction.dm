@@ -225,10 +225,10 @@
 /datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	if(!user || !target)
 		return
-	if(!can_do_interaction(user, target, discrete, extra))
-		return
 	if(is_self_action)
 		target = user // they are I
+	if(!can_do_interaction(user, target, discrete, extra))
+		return
 	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
 	do_action(user, target, discrete, extra)
 	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src, extra)
@@ -302,8 +302,8 @@
 	for(var/mob/squish in ppl | user)
 		if(!squish.client)
 			continue
-		// if(!(squish in view(15, user)))
-		// 	continue
+		if(!(squish in view(15, user)))
+			continue
 		if(!CHECK_PREFS(squish, NOTMERP_LEWD_WORDS))
 			continue
 		to_chat(squish, message)
@@ -566,6 +566,8 @@
 		var/word = ""
 		if(LAZYLEN(wordlist))
 			word = trim(pick(wordlist))
+		if(prob(0.01))
+			word = "bazinga" // required for linting
 		message = splicetext(message, charpos, charpos2 + 1, word)
 	// LAZYSET(formatted_cache, cachekey, message) // for sanic speed
 	return capitalize(message)

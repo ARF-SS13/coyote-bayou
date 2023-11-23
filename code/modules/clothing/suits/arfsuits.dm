@@ -206,6 +206,20 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	body_parts_hidden = 0 // has a bit of upper window stuff
 
+/obj/item/clothing/suit/armor/outfit/custompa
+	name = "Custom Midwestern B.O.S Power Armor"
+	desc = "A set of reftted custom Power Armor made to function akin to medium armor. Stylish and fitted well!"
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	var/requires_training = TRUE
+
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	name = "secondary gear harness"
 	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
@@ -1703,6 +1717,14 @@
 	item_state = "rusted_cowboy"
 	flags_inv = HIDEJUMPSUIT
 	permeability_coefficient = 0.5
+
+/obj/item/clothing/suit/armor/light/duster/peacecoat
+	name = "tattered peace coat"
+	desc = "An old overcoat with a crude peace symbol painted on the back in white with white spraypaint. Whatever symbols the coat originally came with have long since been worn away by time."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "ghostechoe"
+	item_state = "ghostechoe"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/duster/vaquero
 	name = "vaquero suit"
@@ -3659,6 +3681,21 @@
 /obj/item/clothing/suit/armor/medium/combat/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
+
+
+//custom loadout armor for someone
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout
+	name = "weathered deathclaw power armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	icon_state = "arroyoapa"
+	item_state = "arroyoapa"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	mutantrace_variation = STYLE_DIGITIGRADE |STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/armor/medium/combat/mk2
 	name = "reinforced combat armor"

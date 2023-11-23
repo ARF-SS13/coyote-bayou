@@ -1166,6 +1166,12 @@
 	name = "Vagabond's vest"
 	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
 
+/datum/gear/suit/coat/peacecoat
+	name = "Tattered peace coat"
+	path = /obj/item/clothing/suit/armor/light/duster/peacecoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket

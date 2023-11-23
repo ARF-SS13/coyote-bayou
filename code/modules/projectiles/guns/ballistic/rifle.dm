@@ -895,6 +895,31 @@
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
 
+/obj/item/gun/ballistic/rifle/mag/pz39custom //custom
+	name = "Custom Panzerbüchse 39"
+	desc = "A customized PzB.39 AT rifle. This rifle seems to be custom fitted to fire in a bolt-action mode instead of a falling-block action.The bolt is not really much of a bolt but it works, it also adds more weight to the rifle. From 27.78 lbs to 30 pounds! The rifle consists of premium grade parts. The stock itself, the part where one rests their shoulder, is extra padded for comfort and shock absorbing properties. Engraved on the reciever is baroque motifs while the rifle itself has a few moths and feline figures engraved on the reciever. A rifle fit for the Queen from the shadows."
+	icon_state = "pzb39"
+	item_state = "pzb39"
+	mag_type = /obj/item/ammo_box/magazine/pzb39magazne
+	init_mag_type = /obj/item/ammo_box/magazine/pzb39magazne
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
+	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (1.4 , 1.5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
 	name = "Boys anti-tank rifle"

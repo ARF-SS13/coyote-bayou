@@ -64,6 +64,8 @@ SUBSYSTEM_DEF(recoil)
 	var/recoil_softcap = 30
 	var/recoil_movement_spread_cap = 10
 
+	var/kick_to_recoil_mult = 1
+
 	var/use_movement_recoil = TRUE
 	var/use_shoot_recoil = TRUE
 
@@ -155,6 +157,7 @@ SUBSYSTEM_DEF(recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
 
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
+	spread += get_offset(shotter, FALSE, TRUE)
 	spread = clamp(spread, 0, recoil_max_spread)
 	if(spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
@@ -171,9 +174,9 @@ SUBSYSTEM_DEF(recoil)
 		else if(shoot.wielded) // yay you wielded it!
 			turboreward_wielded_spread = TRUE
 	/// turns out this proc is cheap as fuck
-	var/my_angle = gaussian(mean, std)
+	var/my_angle = gaussian(mean, std) * pick(1, -1)
 	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
-		my_angle += rand(1,15) * SIGN(my_angle)
+		my_angle += (rand(1,15) * SIGN(my_angle))
 	if(turboreward_wielded_spread) // give em a boost for wielding it
 		my_angle *= recoil_wielded_reward
 		my_angle -= (rand(1,my_angle) * SIGN(my_angle))
@@ -199,6 +202,7 @@ SUBSYSTEM_DEF(recoil)
 	var/datum/gun_recoil/gun_recoil = get_gun_recoil_datum(recoil_tag)
 	var/recoil_mod = gun_recoil ? gun_recoil.get_recoil_mod(user, my_weapon) : 1
 	recoil *= recoil_mod
+	recoil *= kick_to_recoil_mult
 	my_recoil.add_shoot_recoil(user, my_weapon, recoil, TRUE)
 	return TRUE
 
@@ -233,6 +237,9 @@ SUBSYSTEM_DEF(recoil)
 	return gun_recoil.index
 
 /datum/controller/subsystem/recoil/proc/get_gun_recoil_datum(recoil_tag = RECOIL_TAG_DEFAULT)
+	if(istype(recoil_tag, /obj/item/gun))
+		var/obj/item/gun/my_gun = recoil_tag
+		recoil_tag = my_gun?.recoil_tag
 	if(IS_RECOIL_LIST(recoil_tag))
 		recoil_tag = RECOIL_LIST2TAG(recoil_tag)
 	if(!IS_RECOIL_TAG(recoil_tag))

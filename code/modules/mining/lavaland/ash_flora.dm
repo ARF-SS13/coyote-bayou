@@ -193,6 +193,7 @@
 /obj/item/reagent_containers/glass/bowl/wooden_bowl
 	name = "wooden bowl"
 	desc = "A hand-carved wooden bowl, for all your bowl-related needs."
+	custom_materials = list(/datum/material/wood = 500) // So that they don't show as made of glass
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "wooden_bowl"
 	fill_icon = 'icons/obj/lavaland/ash_flora.dmi'

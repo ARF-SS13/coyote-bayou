@@ -5,28 +5,36 @@
 /turf/open/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/obj/structure/flora/randPlant = null
-
 	//spontaneously spawn grass
 	if(Plantforce || prob(GRASS_SPONTANEOUS))
 		randPlant = pickweight(GLOB.lush_plant_spawn_list) //Create a new grass object at this location, and assign var
 		new randPlant(src)
 		return TRUE
 
-	//loop through neighbouring desert turfs, if they have grass, then increase weight
-	for(var/turf/open/indestructible/ground/T in RANGE_TURFS(3, src))
-		if(istype(T, src))
-			if(locate(/obj/structure/flora) in T)
-				Weight += GRASS_WEIGHT
-
-	//use weight to try to spawn grass
-	if(prob(Weight))
-		//If surrounded on 5+ sides, pick from lush
-		if(Weight == (5 * GRASS_WEIGHT))
-			randPlant = pickweight(GLOB.lush_plant_spawn_list)
-		else
-			randPlant = pickweight(GLOB.desolate_plant_spawn_list)
+	// Check if we should just spawn a healing plant instead.
+	// Guarantees that there are enough foragables to sustain the players.
+	if(prob(MEDICINAL_PLANT_CHANCE))
+		randPlant = pickweight(GLOB.medicinal_plant_list)
 		new randPlant(src)
 		return TRUE
+	//If not, do the normal expensive checks
+	else
+		//loop through neighbouring desert turfs, if they have grass, then increase weight
+		for(var/turf/open/indestructible/ground/T in RANGE_TURFS(3, src))
+			if(istype(T, src))
+				if(locate(/obj/structure/flora) in T)
+					Weight += GRASS_WEIGHT
+
+
+		// use weight to try to spawn a plant
+		if(prob(Weight))
+			//If surrounded on 5+ sides, pick from lush
+			if(Weight == (5 * GRASS_WEIGHT))
+				randPlant = pickweight(GLOB.lush_plant_spawn_list)
+			else
+				randPlant = pickweight(GLOB.desolate_plant_spawn_list)
+			new randPlant(src)
+			return TRUE
 
 /turf/open/
 	var/spawnPlants = FALSE

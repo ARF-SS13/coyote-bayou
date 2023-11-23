@@ -328,6 +328,8 @@
 	return null
 
 /mob/living/proc/treat_message(message)
+	if(!LAZYLEN(message))
+		return message
 
 	if(HAS_TRAIT(src, TRAIT_UNINTELLIGIBLE_SPEECH))
 		message = unintelligize(message)
@@ -392,14 +394,10 @@
 /mob/living/say_mod(input, message_mode)
 	. = ..()
 	if(message_mode != MODE_CUSTOM_SAY)
-		if(message_mode == MODE_WHISPER)
-			. = verb_whisper
-		else if(stuttering)
+		if(stuttering)
 			. = "stammers"
 		else if(derpspeech)
 			. = "gibbers"
-		else if(message_mode == MODE_SING)
-			. = verb_sing
 		else if(InCritical())
 			. = "whines"
 

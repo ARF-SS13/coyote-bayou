@@ -62,6 +62,28 @@
 	anchored = TRUE
 
 //stuff from CIV 13
+/obj/structure/flora
+	/// Will auto-generate a transparency zone behind this plant when initialized.
+	var/do_transparency = TRUE
+
+/obj/structure/flora/Initialize()
+	. = ..()
+	if(icon && do_transparency == TRUE && ((layer > MOB_LAYER) || (layer == MOB_LAYER && plane >= ABOVE_ALL_MOB_LAYER)))
+		CreateTransparency()
+
+//Creates a generously sized transparency datum which covers the size of the sprite's icon + 1 tile around it.
+/obj/structure/flora/proc/CreateTransparency()
+	if(icon)
+		var/icon/i = icon(icon)
+		var/ih = i.Height()
+		var/iw = i.Width()
+		if(ih > 32 || iw > 32)
+			var/xsize = CEILING(iw/32, 1)
+			var/ysize = CEILING(ih/32, 1)
+			var/x_off = 0 //-(ih/2)/32 //Slide to the left (nvm it already slides automatically)
+			var/y_off = 1
+			AddComponent(/datum/component/largetransparency, x_off, y_off, xsize, ysize)
+
 /obj/structure/flora/tree/oak_one
 	name = "tree"
 	desc = "woody"

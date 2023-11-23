@@ -62,6 +62,12 @@ datum/chemical_reaction/rezadone
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/baked_banana_peel = 1)
 	mob_react = FALSE
 
+/datum/chemical_reaction/coagulant_weak_chemistry
+	results = list(/datum/reagent/medicine/coagulant/weak = 1) // Enjoy hitting four buttons for one unit.
+	required_temp = 465.00 // So you can't make it in plastic containers. 
+	required_reagents = list(/datum/reagent/oxygen = 1, /datum/reagent/silicon = 1, /datum/reagent/sodium = 1, /datum/reagent/aluminium = 1) // four parts, is the recipe of Quik-Clot minus the Magnesium. 
+	mob_react = FALSE // as funny as stopping a heart on seemingly innocent ingredients would be
+
 /datum/chemical_reaction/mine_salve
 	name = "Miner's Salve"
 	id = /datum/reagent/medicine/mine_salve

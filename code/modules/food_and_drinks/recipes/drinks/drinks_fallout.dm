@@ -74,6 +74,12 @@
 	results = list(/datum/reagent/consumable/nukaorange = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/orangejuice = 1)
 
+/datum/chemical_reaction/nukastrawberry
+	name = "Cosmic Strawberry"
+	id = "nukastrawberry"
+	results = list(/datum/reagent/consumable/nukastrawberry = 2)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/strawberryjuice = 1)
+
 /datum/chemical_reaction/nukawild
 	name = "Cosmic Wild"
 	id = "nukawild"
