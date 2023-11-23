@@ -366,6 +366,16 @@
 	new /obj/item/melee/unarmed/brass/spiked(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
 
+/datum/gear/donator/kits/calebc789
+	name = "The old fashioned"
+	path = /obj/item/storage/box/large/custom_kit/calebc789
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc789/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sovietantimaterial(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+
 // D
 
 /datum/gear/donator/kits/dameonowen
@@ -1257,16 +1267,18 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit004
-	name = "The Latos Agent G36 version"
+	name = "The Icelandic Latos Agent"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/g36custom(src)
-	new /obj/item/ammo_box/a556(src)
-	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/rifle/mag/pz39custom(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
