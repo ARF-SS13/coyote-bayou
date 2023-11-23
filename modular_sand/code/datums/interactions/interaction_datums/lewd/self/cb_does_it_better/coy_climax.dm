@@ -2,7 +2,7 @@
 //	Boygasm///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/boygasm
-	description = "Climax - Cum with your cock."
+	description = "Self/Climax - Cum with your cock."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -31,7 +31,7 @@
 //	Femgasm///
 //////////////
 /datum/interaction/lewd/partner/mutual/femgasm
-	description = "Climax - Make your pussy climax."
+	description = "Self/Climax - Make your pussy climax."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -60,7 +60,7 @@
 //	Creampie them///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktocunt
-	description = "Climax - Creampie their pussy."
+	description = "Self/Climax - Creampie their pussy."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -89,7 +89,7 @@
 //	Creampie Mouth///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktomouth
-	description = "Climax - Creampie their mouth."
+	description = "Self/Climax - Creampie their mouth."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -118,7 +118,7 @@
 //	Creampie Throat///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktothroat
-	description = "Climax - Throatpie them."
+	description = "Self/Climax - Throatpie them."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -147,7 +147,7 @@
 //	Creampie Cleavage///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktocleavage
-	description = "Climax - Creampie their breasts."
+	description = "Self/Climax - Creampie their breasts."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -176,7 +176,7 @@
 //	Creampie Thighs///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktothighs
-	description = "Climax - Creampie their thighs."
+	description = "Self/Climax - Creampie their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
@@ -205,7 +205,7 @@
 //	Creampie Butt///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktobutt
-	description = "Climax - Creampie their butt."
+	description = "Self/Climax - Creampie their butt."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
