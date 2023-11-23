@@ -86,6 +86,35 @@
 	user_lust_mult = 4 
 
 ///////////////////////
+//	Creampie womb///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/spunktowomb
+	description = "Self/Climax - Creampie their womb directly."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, lovingly} {spunks inside, creampies, tries to breed} XT_NAME's {womb, baby-cavity, uterus}, {painting, dousing, filling} it with {spunk, seed, cum}."
+	)
+	disarm_messages = list(
+		"XU_NAME {eagerly, needily, happily} {spunks inside, creampies, tries to breed} XT_NAME's {womb, baby-cavity, uterus}, {painting, dousing, filling} it with {spunk, seed, cum}."
+	)
+	grab_messages = list(
+		"XU_NAME {deeply, fully, possessively} {spunks inside, creampies, tries to breed} XT_NAME's {womb, baby-cavity, uterus}, {painting, dousing, filling} it with {spunk, seed, cum}."
+	)
+	harm_messages = list(
+		"XU_NAME {spunks inside, creampies, tries to breed} XT_NAME's {womb, baby-cavity, uterus} {aggressively, possessively}, {painting, dousing, filling} it with {spunk, seed, cum}."
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
+
+///////////////////////
 //	Creampie Mouth///
 ///////////////////////
 /datum/interaction/lewd/partner/mutual/spunktomouth
