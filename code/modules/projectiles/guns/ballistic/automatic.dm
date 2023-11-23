@@ -2690,7 +2690,7 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-/obj/item/gun/ballistic/automatic/aksmol/aldric
+/obj/item/gun/ballistic/automatic/aksmol/aldric //custom weapon, unused.
 	name = "Ak74u Custom"
 	desc = "A customized AK74u assault rifle. Rechambered in 5.45x39 NATO, this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -3029,7 +3029,7 @@
 	can_scope = TRUE
 
 // Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
-/obj/item/gun/ballistic/automatic/g36custom
+/obj/item/gun/ballistic/automatic/g36customtox //unused, note from Tox: Will redo entirely eventually
 	name = "Custom G36C Assault rifle"
 	desc = "A custom version of a G36C assault rifle. Chambered in 5.56 NATO, this customized G36C assault rifle is made from a more resistant and durable type of material. Sporting a black and white finish. Adorning the metal bits of the gun, including the exterior of the barrel, are engraved baroque motifs. The gun comes with a built in red dot sight manufactured into the carry handle. A reliable assault rifle that saw extensive use by West Germany. The charging handle can flip between left or right side. This one seems to be fitted to the right side for a more right-side handed charging handle."
 	icon_state = "g36"
@@ -3538,6 +3538,34 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+
+
+
+//custom ptrs rifle
+
+/obj/item/gun/ballistic/automatic/sovietantimaterial
+	name = "Big Bienvenue"
+	desc = "An old, pre-war American knockoff of an even older Soviet anti-tank rifle, sold as a big game hunting rifle before the bombs fell. This one appears to be well-maintained, and has what appear to be tally marks etched into the stock."
+	icon_state = "ptrs"
+	item_state = "ptrs"
+	mag_type = /obj/item/ammo_box/magazine/internal/ptrs
+	init_mag_type = /obj/item/ammo_box/magazine/internal/ptrs
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
+	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (1.4 , 1.5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	zoom_factor = 0.9
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
 
 // Bolter Assault rifle.
 // Has insane recoil but makes up for extreme damage
