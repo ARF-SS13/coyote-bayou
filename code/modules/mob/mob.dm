@@ -183,8 +183,8 @@
 			if(name)
 				msg = name + " " + msg
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
-	if(self_message)
-		hearers -= src
+	//if(self_message)
+		//hearers -= src
 
 	//var/raw_msg = message
 	//if(visible_message_flags & EMOTE_MESSAGE)
@@ -218,8 +218,8 @@
 ///Adds the functionality to self_message.
 mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message && target != src)
-		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
+	//if(self_message && target != src)
+		//show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -248,8 +248,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(!length(hearers))
 		return
 	hearers -= ignored_mobs
-	if(self_message)
-		hearers -= src
+	//if(self_message)
+		//hearers -= src
 //	var/raw_msg = message
 	var/name = ""
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
@@ -291,8 +291,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  */
 /mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message)
-		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
+	//if(self_message)
+		//show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.
