@@ -318,7 +318,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		return FALSE
 	if(O.tool_behaviour)
 		return TRUE // it's a tool, so it's probably important
-	if(LAZYLEN(O.contents))
+	if(SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return TRUE // it's got stuff innit, so it's probably important
 	if(istype(O, /obj/item/ammo_box))
 		return TRUE // it's an ammo box, so it's probably important
@@ -452,14 +452,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 /obj/machinery/autolathe/proc/gun_loop(mob/user, obj/item/gunammo)
 	if(!user || !user.Adjacent(src))
 		return FALSE
-	if(!isgun(gunammo) && !isammobox(gunammo) && !istype(gunammo, /obj/item/storage/bag/casings))
+	if(!isballistic(gunammo) && !isammobox(gunammo) && !istype(gunammo, /obj/item/storage/bag/casings))
 		return FALSE
-	else if(istype(gunammo, /obj/item/gun/ballistic))
+	else if(isballistic(gunammo))
 		gunammo = load_from_ballistic(user, gunammo)
 		if(!istype(gunammo)) // this one is special, cus it needs to shift focus to the magazine if it popped one out
 			to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
 			return FALSE
-	else if(istype(gunammo, /obj/item/ammo_box) && !load_from_ammo_box(user, gunammo))
+	else if(isammobox(gunammo) && !load_from_ammo_box(user, gunammo))
 		to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
 		return FALSE
 	else if(istype(gunammo, /obj/item/storage/bag/casings) && !load_from_bag(user, gunammo))
@@ -478,6 +478,8 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/obj/item/ammo_casing/bluuet = cbag.find_casing(user, TRUE, TRUE)
 	if(!bluuet)
 		return FALSE
+	bluuet.forceMove(get_turf(user))
+	playsound(src, 'sound/weapons/bulletinsert.ogg', 40, 1)
 	return recycle_casing(user, bluuet) // TRUE will tell the loop to queue up another cycle
 
 /obj/machinery/autolathe/proc/load_from_ballistic(mob/user, obj/item/gun/ballistic/ballgun)
@@ -488,10 +490,22 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	/// First, look for a loaded magazine
 	var/obj/item/ammo_box/mag = ballgun.magazine
 	if(istype(mag))
+		if(istype(mag, /obj/item/ammo_box/magazine/internal/cylinder)) /// everyone's gotta be special
+			C = mag.get_round()
+			if(C)
+				if(C == ballgun.chambered)
+					ballgun.chambered = null
+				C.forceMove(get_turf(C))
+				C.bounce_away(FALSE, 1, 0, 0, 0)
+				playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
+				if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
+					return ballgun // revolvers are special
 		// if its a fixed mag, using the gun in hand will eject a casing
-		if(mag.fixed_mag && ballgun.chambered) // usually the chambered one, so, lets do that
+		if((mag.fixed_mag || !ballgun.casing_ejector) && ballgun.chambered) // usually the chambered one, so, lets do that
 			C = ballgun.chambered
 			ballgun.attack_self(user)
+			if(ballgun.chambered == C) // Darn thing is still in there
+				return FALSE
 			if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
 				return ballgun
 			// recycle_gun(user, ballgun) // start loading the gun into the machine
@@ -508,8 +522,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	/// if we're here, we don't have a magazine loaded!
 	if(ballgun.chambered) // if we have a casing in the chamber, lets try to eject it
 		C = ballgun.chambered
-		if(!C) // no casing? maybe try eating the gun
-			ballgun.attack_self(user)
+		ballgun.attack_self(user)
+		if(ballgun.chambered == C) // Darn thing is still in there
+			return FALSE
 		if(C) // yay we have a casing!
 			if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
 				return ballgun
@@ -536,7 +551,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		return FALSE
 	if(!istype(casing, /obj/item/ammo_casing) || QDELETED(casing))
 		return FALSE
-	return recycle_item(user, casing, 0.1 SECONDS, TRUE)
+	if(istype(casing.loc, /obj/item/gun))
+		var/obj/item/gun/G = casing.loc
+		/// manually extract that drn bullet
+		if(G.chambered == casing)
+			G.attack_self(user)
+			if(G.chambered == casing) // Darn thing is still in there
+				return FALSE
+	return recycle_item(user, casing, 0 SECONDS, TRUE)
 
 /obj/machinery/autolathe/proc/recycle_ammo_box(mob/user, obj/item/ammo_box/mag)
 	if(!user)
@@ -560,11 +582,12 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(INTERACTING_WITH(user, src))
 		to_chat(user, span_alert("You're already doing something!"))
 		return FALSE
-	if(!silent)
-		to_chat(user, span_notice("You start loading \the [item] into \the [src]."))
-	if(time > 0 && !do_after(user, time, TRUE, src, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
-		to_chat(user, span_alert("You were interrupted!"))
-		return FALSE
+	if(time > 0)
+		if(!silent)
+			to_chat(user, span_notice("You start loading \the [item] into \the [src]."))
+		if(!do_after(user, time, TRUE, src, allow_movement = FALSE, stay_close = TRUE, public_progbar = TRUE))
+			to_chat(user, span_alert("You were interrupted!"))
+			return FALSE
 	if(SEND_SIGNAL(src, COMSIG_PARENT_FORCEFEED, item, user, TRUE, silent) == TRUE)
 		update_record(item)
 		return TRUE
@@ -1117,8 +1140,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 /datum/autolathe_loop_returns/proc/write_contents()
 	var/list/msg_out = list()
-	msg_out += "<tt><hr><br>"
+	msg_out += "<hr><br>"
 	msg_out += "[span_small(uppertext(STATION_TIME_TIMESTAMP(FALSE, world.time)))]<br>"
+	msg_out += "<hr><br>"
 	msg_out += "<center>- START REPORT -</center><br>"
 	msg_out += "<center><u><b>GekkerTek MicroFactory DELUX v1.23 PRO</b></u></center><br>"
 	msg_out += "Recycle batch process ID:[GLOB.lathe_reports_done]<br>"
@@ -1138,5 +1162,6 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	msg_out += "Thank you for choosing GekkerTek, Nash's favorite brand of fox-made machinery!<br>"
 	msg_out += "<br>"
 	msg_out += "<center>- END REPORT -</center><br>"
+	msg_out += "<hr><br>"
 	return msg_out.Join()
 

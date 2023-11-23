@@ -484,12 +484,12 @@ obj/item/storage/bag/chemistry/tribal
 			if(last_was_empty)
 				should_stop = TRUE
 				last_was_empty = FALSE
-			if(last_inserted_type)
-				if(bluuet.type == last_inserted_type)
-					out = bluuet
-					break
-			else
-				loaded_casings |= bluuet
+			// if(last_inserted_type)
+			// 	if(bluuet.type == last_inserted_type)
+			// 		out = bluuet
+			// 		break
+			// else
+			loaded_casings |= bluuet
 		else
 			out = bluuet // ezpz
 			last_was_empty = TRUE
