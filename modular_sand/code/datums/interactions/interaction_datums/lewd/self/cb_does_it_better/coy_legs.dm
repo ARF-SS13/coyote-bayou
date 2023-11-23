@@ -71,16 +71,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME gently sqeuezes one of XT_NAME's legs.",
+		"XU_NAME gently squeezes one of XT_NAME's legs.",
 	)
 	disarm_messages = list(
-		"XU_NAME softly sqeuezes one of XT_NAME's legs.",
+		"XU_NAME softly squeezes one of XT_NAME's legs.",
 	)
 	grab_messages = list(
-		"XU_NAME firmly sqeuezes one of XT_NAME's legs.",
+		"XU_NAME firmly squeezes one of XT_NAME's legs.",
 	)
 	harm_messages = list(
-		"XU_NAME needily sqeuezes one of XT_NAME's legs.",
+		"XU_NAME needily squeezes one of XT_NAME's legs.",
 	)
 
 	simple_sounds = list(
