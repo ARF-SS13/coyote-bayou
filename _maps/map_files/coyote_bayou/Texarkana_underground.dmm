@@ -16812,6 +16812,10 @@
 	},
 /area/f13/building)
 "jiG" = (
+/obj/structure/curtain{
+	color = "#363636";
+	layer = 5
+	},
 /turf/open/indestructible/ground/bamboo/tatamiblack{
 	dir = 1
 	},
@@ -28609,6 +28613,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
+"qxr" = (
+/obj/structure/campfire/wallfire,
+/turf/closed/wall/f13/coyote/darkwoodwall,
+/area/f13/building)
 "qxx" = (
 /obj/structure/chair/bench,
 /turf/open/floor/f13/wood{
@@ -44196,7 +44204,7 @@ rnh
 hEU
 hEU
 hEU
-hEU
+qxr
 lGf
 lGf
 lGf
