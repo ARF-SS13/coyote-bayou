@@ -229,3 +229,119 @@
 		'modular_coyote/sound/lewd/sexslide10.wav',
 	) // frumf, frumf
 	user_lust_mult = 4 
+
+//////////////
+//	Squirt on face///
+//////////////
+/datum/interaction/lewd/partner/mutual/face_squirt
+	description = "Self/Climax - Squirt on their face."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto XT_NAME's face."
+	)
+	disarm_messages = list(
+		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto XT_NAME's face."
+	)
+	grab_messages = list(
+		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} XT_NAME's face with their love."
+	)
+	harm_messages = list(
+		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} XT_NAME's face."
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
+
+//////////////
+//	Squirt on chest///
+//////////////
+/datum/interaction/lewd/partner/mutual/chest_squirt
+	description = "Self/Climax - Squirt on their chest."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto XT_NAME's chest."
+	)
+	disarm_messages = list(
+		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto XT_NAME's chest."
+	)
+	grab_messages = list(
+		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} XT_NAME's chest with their love."
+	)
+	harm_messages = list(
+		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} XT_NAME's chest."
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
+
+//////////////
+//	Squirt on lap///
+//////////////
+/datum/interaction/lewd/partner/mutual/lap_squirt
+	description = "Self/Climax - Squirt on their chest."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto XT_NAME's {lap, thighs}."
+	)
+	disarm_messages = list(
+		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto XT_NAME's {lap, thighs}."
+	)
+	grab_messages = list(
+		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} XT_NAME's {lap, thighs} with their love."
+	)
+	harm_messages = list(
+		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} XT_NAME's {lap, thighs}."
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
+
+//////////////
+//	Squirt on surface///
+//////////////
+/datum/interaction/lewd/partner/mutual/surface_squirt
+	description = "Self/Climax - Squirt on their surface."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto whatever they're sitting on.
+	)
+	disarm_messages = list(
+		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto whatever they're sitting on.
+	)
+	grab_messages = list(
+		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} whatever they're sitting on.
+	)
+	harm_messages = list(
+		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} whatever they're sitting on.
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
