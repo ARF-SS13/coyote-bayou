@@ -1531,3 +1531,189 @@
 	nutriment_factor = 2
 
 
+//Cave decor
+
+/obj/structure/cave/stalagmite
+	name = "stalagmite"
+	icon_state = "stalagmite"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/one
+	name = "stalagmite"
+	icon_state = "stalagmite1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/two
+	name = "stalagmite"
+	icon_state = "stalagmite2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/three
+	name = "stalagmite"
+	icon_state = "stalagmite3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/four
+	name = "stalagmite"
+	icon_state = "stalagmite4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/five
+	name = "stalagmite"
+	icon_state = "stalagmite5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/minecart_fallen
+	name = "fallen minecart"
+	icon_state = "minecart_fallen"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/signleft
+	name = "left pointed sign"
+	icon_state = "sign_left"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/signright
+	name = "right pointed sign"
+	icon_state = "sign_right"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards
+	name = "boards"
+	icon_state = "boards_drought_ns-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/one
+	name = "boards"
+	icon_state = "boards_drought_ns-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/two
+	name = "boards"
+	icon_state = "boards_drought_ns-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/three
+	name = "boards"
+	icon_state = "boards_drought_ns-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/four
+	name = "boards"
+	icon_state = "boards_drought_ns-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/five
+	name = "boards"
+	icon_state = "boards_drought_ns-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways
+	name = "boards"
+	icon_state = "boards_drought_we-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/one
+	name = "boards"
+	icon_state = "boards_drought_we-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/two
+	name = "boards"
+	icon_state = "boards_drought_we-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/three
+	name = "boards"
+	icon_state = "boards_drought_we-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/four
+	name = "boards"
+	icon_state = "boards_drought_we-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/five
+	name = "boards"
+	icon_state = "boards_drought_we-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards
+	name = "boards"
+	icon_state = "boards_mammoth_ns-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/one
+	name = "boards"
+	icon_state = "boards_mammoth_ns-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/two
+	name = "boards"
+	icon_state = "boards_mammoth_ns-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/three
+	name = "boards"
+	icon_state = "boards_mammoth_ns-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/four
+	name = "boards"
+	icon_state = "boards_mammoth_ns-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/five
+	name = "boards"
+	icon_state = "boards_mammoth_ns-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast
+	name = "boards"
+	icon_state = "boards_mammoth_we-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/one
+	name = "boards"
+	icon_state = "boards_mammoth_we-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/two
+	name = "boards"
+	icon_state = "boards_mammoth_we-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/three
+	name = "boards"
+	icon_state = "boards_mammoth_we-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/four
+	name = "boards"
+	icon_state = "boards_mammoth_we-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/five
+	name = "boards"
+	icon_state = "boards_mammoth_we-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/support
+	name = "support post"
+	icon_state = "support"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportbeams
+	name = "support beams"
+	icon_state = "support_beams"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportwall
+	name = "support wall"
+	icon_state = "support_wall"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportwallbroken
+	name = "support wall - broken"
+	icon_state = "support_wall_broken"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
