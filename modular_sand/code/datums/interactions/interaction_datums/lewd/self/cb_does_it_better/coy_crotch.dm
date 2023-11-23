@@ -1336,3 +1336,75 @@
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Cookie lick///
+////////////////////
+/datum/interaction/lewd/partner/mutual/cookie_lick
+	description = "Partner/Crotch - Lick their cookie."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+	)
+	grab_messages = list(
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
+	)
+	harm_messages = list(
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Cookie suck///
+////////////////////
+/datum/interaction/lewd/partner/mutual/cookie_suck
+	description = "Partner/Crotch - Suck their cookie."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, warmly} {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+	)
+	grab_messages = list(
+		"XU_NAME {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
+	)
+	harm_messages = list(
+		"XU_NAME {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
