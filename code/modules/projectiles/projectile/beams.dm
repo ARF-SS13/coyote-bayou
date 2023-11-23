@@ -663,7 +663,7 @@
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 40
 	damage_list = list( "39" = 30, "40" = 50, "55" = 20)
-	wound_bonus = 75 //being hit with plasma is horrific
+	wound_bonus = 35 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 35
