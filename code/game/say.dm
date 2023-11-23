@@ -37,18 +37,13 @@ And the base of the send_speech() proc, which is the core of saycode.
 	//Radio freq/name display
 	var/freqpart = radio_freq ? "\[[get_radio_name(radio_freq)]\] " : ""
 	//Speaker name
-	var/mob/living/carbon/carbo = speaker
-	var/saycolor = rgb(255, 0, 0)
-	if(istype(carbo,/mob/living/carbon))
-		saycolor = carbo.get_chat_color()
-	var/namepart = span_color("[speaker.GetVoice()][speaker.get_alt_name()]", saycolor)
+	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
 	if(face_name && ishuman(speaker))
 		var/mob/living/carbon/human/H = speaker
 		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
 	//End name span.
 	var/endspanpart = "</span>"
 
-	raw_message = span_color(raw_message, saycolor)
 	//Message
 	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
 
@@ -105,11 +100,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	if(!istype(thing))
 		return
 	if(findtext(input, "@"))
-		var/mob/living/carbon/carbo = thing
-		var/saycolor = rgb(255, 0, 0)
-		if(istype(carbo,/mob/living/carbon))
-			saycolor = carbo.get_chat_color()
-		. = replacetext(input, "@", span_color("<b>[thing.name]</b>",saycolor))
+		. = replacetext(input, "@", "<b>[thing.name]</b>")
 	return
 
 /// Quirky citadel proc for our custom sayverbs to strip the verb out. Snowflakey as hell, say rewrite 3.0 when?
