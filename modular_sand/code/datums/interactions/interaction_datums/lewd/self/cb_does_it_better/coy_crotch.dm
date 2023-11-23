@@ -1229,4 +1229,110 @@
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 
+////////////////////
+//Sniff balls///
+////////////////////
+/datum/interaction/lewd/partner/mutual/ball_sniff
+	description = "Partner/Crotch - Sniff their balls."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {carefully, gently, eagerly} {sniffs, snorfs, snuffles, sniffles, huffs} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, teasingly} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+	)
+	grab_messages = list(
+		"XU_NAME {needily, greedily, possessively} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+	)
+	harm_messages = list(
+		"XU_NAME {aggressively, vigoriously} {pushes, presses} XU_THEIR {nose, sniffer, snoot, face} into XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} and just {sniffs, snorfs, snuffles, sniffles, huffs}.",
+	)
 
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Lick balls///
+////////////////////
+/datum/interaction/lewd/partner/mutual/ball_lick
+	description = "Partner/Crotch - Lick their balls."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, wetly, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer}.",
+	)
+	grab_messages = list(
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer} like a {piece of candy, treat, lollipop}.",
+	)
+	harm_messages = list(
+		"XU_NAME {forcefully, aggressively} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} with their {tongue, licker, mlemmer} like a {piece of candy, treat, lollipop}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+////////////////////
+//Suck balls///
+////////////////////
+/datum/interaction/lewd/partner/mutual/ball_suck
+	description = "Partner/Crotch - Lick their balls."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {playfully, needily} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+	)
+	grab_messages = list(
+		"XU_NAME {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits} {like they need them, like they are drunk on them}.",
+	)
+	harm_messages = list(
+		"XU_NAME {aggressivelly, demandingly, overwhelmingly} {suckles, mouths} XU_NAME's {balls, orbs, sack, nuts, family jewels, testicles, boy-bits}.",
+	)
+
+	simple_sounds = list(
+		'modular_sand/sound/interactions/champ_fingering.ogg',
+		'modular_sand/sound/interactions/champ2.ogg',
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.4 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
