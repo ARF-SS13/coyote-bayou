@@ -22,8 +22,18 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
+	var/mob/living/carbon/carbo = src
+	var/saycolor = rgb(255, 0, 0)
+	if(istype(carbo, /mob/living/carbon))
+		saycolor = carbo.get_chat_color()
+	var/color_message = alternating_color_span(rendered, saycolor, "\"", FALSE)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
+		if(istype(AM,/mob/living/carbon))
+			var/mob/living/carbon/carbo = AM
+			if(carbo.client?.prefs.color_chat_log)
+				AM.Hear(color_message, src, message_language, message, , spans, message_mode, source, just_chat)
+				return
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)

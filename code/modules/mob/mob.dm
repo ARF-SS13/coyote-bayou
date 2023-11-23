@@ -256,7 +256,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		name = "<b>[src]</b>"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
-	
+
 	var/mob/living/carbon/carbo = src
 	var/saycolor = rgb(255, 0, 0)
 	if(istype(carbo,/mob/living/carbon))
@@ -268,8 +268,10 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		var/msg = M.can_hear() ? message : deaf_message
 		if(M.client?.prefs.color_chat_log)
 			if(name)
-				name = span_color(name,saycolor) + " "
-			msg = name + alternating_color_span(msg, saycolor, "\"", FALSE)
+				name = span_color(name,saycolor)
+			msg = alternating_color_span(msg, saycolor, "\"", FALSE)
+		if(name)
+			msg = name + " " + msg
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
 			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
