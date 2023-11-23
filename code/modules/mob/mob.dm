@@ -159,7 +159,7 @@
 	hearers -= ignored_mobs
 
 	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 0, 0)
+	var/saycolor = rgb(255, 255, 255)
 	if(istype(carbo,/mob/living/carbon))
 		saycolor = carbo.get_chat_color()
 
@@ -209,7 +209,9 @@
 				name = "<b>[src]</b>"
 			if(M.client.prefs.color_chat_log)
 				if(name)
-					name = span_color(name, saycolor)
+					name = span_color(name,saycolor)
+				else
+					msg = replacetext(msg, src.name, span_color(src.name, saycolor))
 				msg = alternating_color_span(msg, saycolor, "\"", FALSE)
 			if(name)
 				msg = name + " " + msg
@@ -258,7 +260,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
 	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 0, 0)
+	var/saycolor = rgb(255, 255, 255)
 	if(istype(carbo,/mob/living/carbon))
 		saycolor = carbo.get_chat_color()
 
@@ -269,6 +271,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		if(M.client?.prefs.color_chat_log)
 			if(name)
 				name = span_color(name,saycolor)
+			else
+				msg = replacetext(msg, src.name, span_color(src.name, saycolor))
 			msg = alternating_color_span(msg, saycolor, "\"", FALSE)
 		if(name)
 			msg = name + " " + msg

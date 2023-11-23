@@ -23,7 +23,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
 	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 0, 0)
+	var/saycolor = rgb(255, 255, 255)
 	if(istype(carbo, /mob/living/carbon))
 		saycolor = carbo.get_chat_color()
 	var/color_message = alternating_color_span(rendered, saycolor, "\"", FALSE)
@@ -40,7 +40,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	if(!source)
 		source = speaker
 	var/docolor = FALSE
-	var/saycolor = rgb(255, 0, 0)
+	var/saycolor = rgb(255, 255, 255)
 	if(istype(src, /mob/living/carbon))
 		var/mob/living/carbon/carbo = src
 		docolor = carbo.client?.prefs.color_chat_log
@@ -67,7 +67,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	//Message
 	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
 	if(docolor)
-		messagepart = span_color(messagepart, saycolor)
+		messagepart = alternating_color_span(messagepart, saycolor, "\"", FALSE)
 
 	var/languageicon = ""
 	var/datum/language/D = GLOB.language_datum_instances[message_language]
