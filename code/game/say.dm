@@ -30,8 +30,8 @@ And the base of the send_speech() proc, which is the core of saycode.
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
 		if(istype(AM,/mob/living/carbon))
-			var/mob/living/carbon/carbo = AM
-			if(carbo.client?.prefs.color_chat_log)
+			var/mob/living/carbon/AMcarb = AM
+			if(AMcarb.client?.prefs.color_chat_log)
 				AM.Hear(color_message, src, message_language, message, , spans, message_mode, source, just_chat)
 				return
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
