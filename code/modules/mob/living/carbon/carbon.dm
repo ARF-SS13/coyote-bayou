@@ -536,6 +536,12 @@
 		chat_color_darkened = "#[new_runecolor]"
 		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
+/mob/living/carbon/proc/get_chat_color()
+	var/color = get_feature("chat_color")
+	if(color == "whoopsie" || !color)
+		return rgb(255, 255, 255)
+	return "#[get_feature("chat_color")]"
+
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
@@ -1504,3 +1510,7 @@
  */
 /mob/living/carbon/proc/get_biological_state()
 	return BIO_FLESH_BONE
+
+///grab feature from DNA
+/mob/living/carbon/proc/get_feature(feat)
+	return dna?.features[feat]
