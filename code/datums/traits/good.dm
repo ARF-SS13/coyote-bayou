@@ -2170,7 +2170,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/telepathy
 	name = "Innate Telepathy"
-	desc = "You innately have the ability to project your thoughts directly into the minds of others via magic, technological device, or biological function."
+	desc = "You innately have the ability to project your thoughts directly into the minds of others."
 	value = 20 //A good chunk of the cost of being mute, if you decide to take both.
 	category = "Cantrips"
 	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
