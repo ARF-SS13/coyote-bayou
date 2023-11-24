@@ -39,7 +39,7 @@
 	action_icon_state = "telepathy"
 	action_background_icon_state = "bg_spell"
 	invocation = "glows softly with telepathic energy."
-	invocation_type = "emote"
+	invocation_type = "me"
 	clothes_req = FALSE
 	magic_check = FALSE
 	clothes_req = NONE

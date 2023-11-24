@@ -206,7 +206,9 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				else
 					user.whisper(replacetext(invocation," ","`"))
 		if("emote")
-			user.me_verb(invocation) //same style as in mob/living/emote.dm
+			user.visible_message(invocation, invocation_emote_self) //same style as in mob/living/emote.dm	
+		if("me")
+			user.me_verb(invocation)
 
 /obj/effect/proc_holder/spell/proc/playMagSound()
 	playsound(get_turf(usr), sound,50,1)
