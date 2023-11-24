@@ -529,6 +529,48 @@
 		/datum/firemode/semi_auto
 	)
 
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers //custom revolver
+	name = "'Cain' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second //custom revolver, comes with a revolver called cain
+	name = "'Abel' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /obj/item/gun/ballistic/revolver/Lemat/custom
 	name = "Engraved LeMat Revolver"
 	desc = "An engraved golden LeMat revolver with an ivory grip handle. Engraved onto the barrel of the gun is the phrase 'Bound by love' in Icelandic. The ivory grip has the face of a moth on both sides."
