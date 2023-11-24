@@ -1722,6 +1722,6 @@
 /obj/item/toy/scale
 	name = "snake scale"
 	desc = "A dark blue scale that shimmers in the sun. It has a faint scent of a certain naga."
-	icon = 'icons/obj/plushes.dmi'
-	icon_state = "modular_coyote/icons/objects/items.dmi"
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "scale"
 	w_class = WEIGHT_CLASS_TINY
