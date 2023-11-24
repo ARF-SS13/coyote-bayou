@@ -1717,3 +1717,11 @@
 	name = "support wall - broken"
 	icon_state = "support_wall_broken"
 	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+//Custom object
+/obj/item/toy/scale
+	name = "snake scale"
+	desc = "A dark blue scale that shimmers in the sun. It has a faint scent of a certain naga."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "modular_coyote/icons/objects/items.dmi"
+	w_class = WEIGHT_CLASS_TINY
