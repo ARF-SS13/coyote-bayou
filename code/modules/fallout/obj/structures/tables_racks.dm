@@ -42,7 +42,7 @@
 	anchored = TRUE
 	framestack = /obj/item/stack/sheet/mineral/wood
 	buildstack = /obj/item/stack/sheet/cloth
-	smooth = SMOOTH_FALSE
+	smoothing_flags = NONE
 
 /obj/structure/table/snooker/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))

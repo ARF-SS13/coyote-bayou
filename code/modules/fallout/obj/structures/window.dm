@@ -6,7 +6,7 @@
 	dir = 5
 	max_integrity = 20
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
 
 /obj/structure/window/fulltile/ruins/broken
@@ -19,7 +19,7 @@
 	dir = 5
 	max_integrity = 40
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
 
 /obj/structure/window/fulltile/house/broken
@@ -32,7 +32,7 @@
 	dir = 5
 	max_integrity = 50
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
 
 /obj/structure/window/fulltile/wood/broken
@@ -45,7 +45,7 @@
 	dir = 5
 	max_integrity = 100
 	fulltile = 1
-	smooth = 0
+	smoothing_flags = NONE
 	level = 3
 
 /obj/structure/window/fulltile/attackby(obj/item/W, mob/user, params)

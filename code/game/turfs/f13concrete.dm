@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	sheet_type = /obj/item/stack/sheet/mineral/concrete
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
 
@@ -210,7 +210,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	proj_pass_rate = 20
 	pass_flags = LETPASSTHROW
 	climbable = TRUE
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 
 /obj/structure/barricade/concrete/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/concrete))
@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	icon_state = "store"
 	icon_type_smooth = "store"
 	hardness = 80
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	girder_type = /obj/structure/barricade/concrete
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall/f13/store/constructed, /turf/closed/wall,)
