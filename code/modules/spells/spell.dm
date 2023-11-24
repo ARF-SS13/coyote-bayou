@@ -269,14 +269,14 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(action)
 		action.UpdateButtonIcon()
 
-/obj/effect/proc_holder/spell/proc/before_cast(list/targets)
-	do_overlays(targets)
+/obj/effect/proc_holder/spell/proc/before_cast(list/targets, mob/user)
+	do_overlays(targets, user)
 
-/obj/effect/proc_holder/spell/proc/do_overlays(list/targets)
+/obj/effect/proc_holder/spell/proc/do_overlays(list/targets, mob/user)
 	if(overlay)
 		var/overlay_targets = targets
-		if(overlay_self)
-			overlay_targets |= usr
+		if(overlay_self && user)
+			overlay_targets |= user
 		for(var/atom/target in overlay_targets)
 			var/location
 			if(isliving(target))
