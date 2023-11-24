@@ -446,6 +446,16 @@
 	new /obj/item/gun/energy/laser/pistol/phaser(src)
 	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
 
+/datum/gear/donator/kits/dirtyoldharry
+	name = "Custom loadout kit."
+	path = /obj/item/storage/box/large/custom_kit/dirtyoldharry
+	ckeywhitelist = list("DirtyOldHarry")
+
+/obj/item/storage/box/large/custom_kit/dirtyoldharry/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
 // E
 
 /datum/gear/donator/kits/esperkin
@@ -681,6 +691,14 @@
 	new /obj/item/voodoo(src)
 	new /obj/item/clothing/mask/chameleon(src)
 
+/datum/gear/donator/kits/jaeger
+	name = "Huntress Customs"
+	path = /obj/item/storage/box/large/custom_kit/jaeger
+	ckeywhitelist = list("kilment")
+
+/obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/hebe(src)
+
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi
@@ -817,9 +835,18 @@
 	new /obj/item/ammo_box/a45lcbox(src)
 	new /obj/item/ammo_box/a45lcbox(src)
 
+/datum/gear/donator/kits/littleplayer0102
+	name = "The Brotherhood Specialist"
+	path = /obj/item/storage/box/large/custom_kit/littleplayer0102
+	ckeywhitelist = list("littleplayer0102")
 
-
-
+/obj/item/storage/box/large/custom_kit/littleplayer0102/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/ak556/custom(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/clothing/suit/armor/outfit/custompa(src)
+	new /obj/item/clothing/under/f13/recon(src)
+	new /obj/item/clothing/accessory/bos/paladin(src)
+	new /obj/item/clothing/head/droptrooper/custompahelmet(src)
 // M
 
 /datum/gear/donator/kits/mathiel
@@ -1171,7 +1198,7 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
+	new /obj/item/gun/ballistic/automatic/fg42tox(src)
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
@@ -1185,6 +1212,14 @@
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
+/datum/gear/donator/kits/SilencedMP5A5
+	name = "Arroyo's Kit"
+	path = /obj/item/storage/box/large/custom_kit/SilencedMP5A5
+	ckeywhitelist = list("SilencedMP5A5")
+
+/obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/combat/mk2/custom(src)
+	new /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
@@ -1216,7 +1251,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/a308box(src)
-	new /obj/item/gun/ballistic/automatic/w2000(src)
+	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
@@ -1354,6 +1389,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
 	new /obj/item/clothing/neck/customfleur(src)
+	new /obj/item/clothing/under/tribalcustom(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"

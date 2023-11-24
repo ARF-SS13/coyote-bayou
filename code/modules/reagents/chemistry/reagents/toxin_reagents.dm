@@ -37,7 +37,7 @@
 	taste_description = "mushroom"
 	value = REAGENT_VALUE_UNCOMMON
 	pH = 13
-
+/*
 /* FEV reagents */
 /datum/reagent/toxin/FEV_solution
 	name = "master FEV solution"
@@ -108,7 +108,7 @@
 		overdose_process(H) // Disease
 		H.reagents.remove_reagent(src.type,100) // Our job here is done
 		return
-
+*/
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"
 	description = "Might cause unpredictable mutations. Keep away from children."

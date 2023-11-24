@@ -168,3 +168,6 @@
 
 	//reservoir for healing quirks
 	var/heal_reservoir = 0
+
+	/// The icon state to use while resting.
+	var/icon_resting

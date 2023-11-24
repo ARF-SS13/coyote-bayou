@@ -177,6 +177,23 @@
 	..()
 	. = TRUE
 
+/datum/reagent/consumable/nukastrawberry
+	name = "Cosmic Strawberry"
+	description = "Cosmic-Cola with a Strawberry Aftertaste."
+	color = "#B43528"
+	taste_description = "fizzy strawberry soda"
+	glass_icon_state = "nukastrawberryglass"
+	glass_name = "Cosmic Strawberry"
+	glass_desc = "Cosmic-Cola with a Strawberry Aftertaste."
+
+/datum/reagent/consumable/nukastrawberry/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.drowsyness = 0
+	M.AdjustSleeping(-40, FALSE)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	..()
+	. = TRUE
+
 /datum/reagent/consumable/nukaquartz
 	name = "Cosmic Quartz"
 	description = "An abomination of Americas favourite soda."

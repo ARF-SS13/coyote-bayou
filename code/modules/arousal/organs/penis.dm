@@ -23,6 +23,17 @@
 	hide_flag = HIDE_PENIS // for hideflag stuff
 	pornhud_slot = PHUD_PENIS
 
+/obj/item/organ/genital/penis/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "penis"
+	out["BitName"] = "A [lowertext(shape)] penis."
+	out["BitSize"] = "It is [length] inches long!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %100 capacity."
+	out["BitEmoji"] = "🍆"
+	return out
+
 /obj/item/organ/genital/penis/modify_size(modifier, min = -INFINITY, max = INFINITY)
 	var/new_value = clamp(length + modifier, min, max)
 	if(new_value == length)

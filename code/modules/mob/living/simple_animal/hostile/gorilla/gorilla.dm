@@ -7,7 +7,7 @@
 	icon = 'icons/mob/gorilla.dmi'
 	icon_state = "crawling"
 	icon_living = "crawling"
-	icon_dead = "dead"
+	icon_dead = "crawling_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 80
 	maxHealth = 220

@@ -395,6 +395,14 @@
 		var/mob/M = the_target
 		if(M.status_flags & GODMODE)
 			return FALSE
+		if(!M.client)
+			var/client_in_range = FALSE
+			for(var/client/C in GLOB.clients)
+				if(get_dist(M, C) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
+					client_in_range = TRUE
+					break
+			if(!client_in_range)
+				return FALSE
 
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE

@@ -496,7 +496,21 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDESNOUT | HIDEHAIR
-	
+
+/obj/item/clothing/head/droptrooper/custompahelmet
+	name = "Custom fitted MidWestern B.O.S helmet"
+	desc = "A custom fitted B.O.S themed helmet. Fitted to resemble that of medium ballistic helmets."
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+	var/requires_training = TRUE
+
 /obj/item/clothing/head/droptrooper/arghelmet/two
 	name = "ARG ARES Helmet"
 	desc = "ARES, meaning Armor - Research Enhancement Suite, is an extensively modified and computerized rendition of the M-87 'Odin' assault helmet. An additional camera has been added to the faceplate to give the user better depth perception, as well as the ability to broadcast video feed through encrypted channels. The heads-up display within the helmet now includes simple user biometrics and an analysis mode, giving real-time updates concerning objects and creatures in view of the cameras. It has extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."

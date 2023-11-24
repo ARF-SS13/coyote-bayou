@@ -365,7 +365,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, no_lang = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -378,13 +378,13 @@
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
 		dna.species.on_species_gain(src, old_species, pref_load)
-		if(ishuman(src))
+		if(ishuman(src)&& !no_lang)
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
-		update_atom_languages()
+			update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, no_lang = FALSE)
 	..()
 	if(icon_update)
 		update_body()

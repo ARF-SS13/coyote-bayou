@@ -653,8 +653,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(oocnotes, "\n", "<BR>")), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["enlargeImageCreature"])
-		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
+		var/dat = {"<img src='[PfpHostLink(profilePicture)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
 		popup.set_content(dat)
 		popup.open()
 
@@ -1115,14 +1115,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if (L)
 			L.alpha = lighting_alpha
 
-/mob/proc/update_mouse_pointer()
-	if (!client)
-		return
-	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-	if (ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.mouse_pointer)
-			client.mouse_pointer_icon = M.mouse_pointer
 
 /mob/proc/is_literate()
 	return 0
@@ -1439,7 +1431,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Gasp from something they did.",
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
-	"Leer - Sneak a peak at their assets."
+	"Leer - Sneak a peak at their assets.",
+	"React - Want to tell them something."
 	)
 	choices = sortList(choices)
 
@@ -1801,7 +1794,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 
 		if("React - Touch your hand to your bosom.")
 			to_chat(A, span_notice("[src] maybe just <span class='love'>put their hand to their chest, did someting about you cause that?</span> Remember to honor their OOC preferences. Maybe give them a response?"))
-			to_chat(user, "You reflexively put your hadn to your chest because [A] is just too much for you to handle.")
+			to_chat(user, "You reflexively put your hand to your chest because [A] is just too much for you to handle.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 		if("Leer - Arms akimbo.")
@@ -1967,6 +1960,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if("Touch - Put their HEAD between your breasts.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>put your HEAD between their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
 			to_chat(user, "You try to coyly place [A]\'s HEAD between your breasts.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("React - Want to tell them something.")
+			to_chat(A, span_notice("[src] maybe just <span class='love'>wants to tell you something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return

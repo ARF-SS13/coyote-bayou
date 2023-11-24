@@ -102,3 +102,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
 
+/obj/item/ammo_box/magazine/internal/boltaction/hebe
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
+	max_ammo = 2 // +1 = 3!
+	multiload = 0 // One at a time, honey.

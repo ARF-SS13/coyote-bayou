@@ -86,7 +86,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
 
 	if (profilePicture)
-		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[DiscordLink(profilePicture)]' width='125' height='auto' max-height='300'></a>"
+		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 
 
 	var/vampDesc = ReturnVampExamine(user) // Vamps recognize the names of other vamps.
@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		. += "[t_He] [t_is] wearing [shoes.get_examine_string(user)] on [t_his] feet."
 
 	//mask
-	if(wear_mask && !(SLOT_WEAR_MASK in obscured))
+	if(wear_mask && !(SLOT_MASK in obscured))
 		. += "[t_He] [t_has] [wear_mask.get_examine_string(user)] on [t_his] face."
 
 	if(wear_neck && !(SLOT_NECK in obscured))

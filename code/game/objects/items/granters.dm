@@ -360,7 +360,7 @@
 		var/obj/item/clothing/magichead = new /obj/item/clothing/mask/horsehead/cursed(user.drop_location())
 		if(!user.dropItemToGround(user.wear_mask))
 			qdel(user.wear_mask)
-		user.equip_to_slot_if_possible(magichead, SLOT_WEAR_MASK, TRUE, TRUE)
+		user.equip_to_slot_if_possible(magichead, SLOT_MASK, TRUE, TRUE)
 		qdel(src)
 	else
 		to_chat(user,span_notice("I say thee neigh")) //It still lives here
@@ -1182,10 +1182,6 @@
 		return FALSE
 
 	return ..()
-
-/obj/item/book/granter/trait/selection/tribal/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/book/granter/crafting_recipe/tribal
 	name = "Tribal traditions"

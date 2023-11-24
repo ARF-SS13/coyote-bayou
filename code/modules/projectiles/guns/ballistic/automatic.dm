@@ -2621,6 +2621,28 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+/obj/item/gun/ballistic/automatic/ak556/custom // Custom
+	name = "Custom Ak-74 assault rifle"
+	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74"
+	icon_state = "ak74"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = AUTORIFLE_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100 ,
+		/datum/firemode/semi_auto
+		)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
 //Saiga 12 shotgun
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "Saiga-12 Assault shotgun"
@@ -2878,34 +2900,6 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/tox
-	name = "Custom G3 Stjarnarriffill"
-	desc = "A custom and refined G3 battle rifle. With proper engravings, this G3 has a scene of a moth and feline under a crescent moon on the stock of the battle rifle. Still chambered in 7.62 NATO, it's owner's name, which is a 'Tox Mckit' is engraved onto the reciever's lower end."
-	icon_state = "g3"
-	item_state = "g3"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m308/ext
-	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower,
-		/datum/firemode/automatic/rpm100
-	)
-	can_scope = TRUE
-	can_suppress = TRUE
-	can_flashlight = FALSE
-	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-
-
-
 /* * * * * * * * * * *
  * AR-10 Armalite
  * .308 semi-auto rifle
@@ -2953,32 +2947,31 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-
-// Custom sniper rifle, loadout only, plans to change. ETA is TBA
-/obj/item/gun/ballistic/automatic/w2000 //Custom weapon, will be a loot gun eventually
-	name = "Custom Wa-2000 sniper rifle"
-	desc = "A custom version of a Wa-2000 rifle. This unique looking rifle has changed its wooden furniture for more pristine and cleaner looking wood. The metals are engraved with baroque motifs and on butt of the rifle is a small scene of a moth taking flight. It is chambered in 7.62 NATO but can be chambered in .300 magnum or 7.5mm. Etched on the grip portion of the butt is the name 'Tox Mckit'."
-	icon_state = "w2000"
-	item_state = "w2000"
+//custom gun
+/obj/item/gun/ballistic/automatic/fg42tox
+	name = "Custom FG-42 rifle"
+	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope!The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	icon_state = "fg42"
+	item_state = "fg42"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m308/ext , /obj/item/ammo_box/magazine/m308/ext/empty)
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T3
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.3, 1.3)
+	init_recoil = CARBINE_RECOIL(1.2, 1.3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto ,
+		/datum/firemode/automatic/rpm100
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
-	zoom_factor = 1.1
-	can_suppress = TRUE
+	can_scope = TRUE
+	can_suppress = FALSE
 	can_bayonet = FALSE
+	zoom_factor = 0.9
+	fire_sound = 'sound/f13weapons/fg42.ogg'
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle

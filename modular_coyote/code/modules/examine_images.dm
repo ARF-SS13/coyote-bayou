@@ -1,3 +1,18 @@
+GLOBAL_LIST_INIT(pfp_filehosts, list(
+									"catbox.moe",
+									"gyazo.com",
+))
+GLOBAL_LIST_INIT(pfp_filehost_prefix, list(
+									"catbox.moe" 	= "https://files.catbox.moe/",
+									"gyazo.com" 	= "https://i.gyazo.com/",
+))
+GLOBAL_LIST_INIT(pfp_filehost_suffix, list(
+									"catbox.moe" 	= ".png",
+									"gyazo.com" 	= ".png",
+))
+// To future devs, don't bother trying to add Discord or Imgur to these lists as they don't allow external embeds
+
+
 // Config Entries! Check discordURL
 /datum/config_entry/string/discordImage_p // Prefix, text going before the URL
 	config_entry_value = "https://cdn.discordapp.com/attachments/"
@@ -40,9 +55,57 @@
 
 	return output
 
+//Dynamic PFP Procs//
+
+/// Helper procs to help make sure the link is correct and to convert it with/without the url section.
+/proc/SanitizePfpLink(url,host)
+	if(!(host in GLOB.pfp_filehosts))//you dun guffed up bucko
+		return 0
+	var/startURL = GLOB.pfp_filehost_prefix[host]
+	var/endURL = GLOB.pfp_filehost_suffix[host]
+
+	var/result = 1
+
+	if(!findtext(url, startURL, 1, length(startURL) + 1))
+		result = 0
+
+	var/offset = (length(url) + 1) - (length(endURL) + 2)
+	if(!findtext(url, endURL, offset))
+		result = 0
+	
+	return result
+
+/// Applies the prefix and suffix to the link, makes things a liiiiitttle safer in terms of security as we're forcing a specific list of websites to be used.
+/proc/PfpHostLink(imageText, host)
+	if(!(host in GLOB.pfp_filehosts))
+		return ""
+	var/prefix = GLOB.pfp_filehost_prefix[host]
+	var/suffix = GLOB.pfp_filehost_suffix[host]
+
+	var/result = prefix + imageText + suffix
+	return result
+
+/// Removes the prefix and suffix from the url, pretty much to make sure things are safe if things go bad, idk.
+/proc/StorePfpLink(url, host)
+	if(!(host in GLOB.pfp_filehosts))
+		return ""
+	var/prefix = GLOB.pfp_filehost_prefix[host]
+	var/suffix = GLOB.pfp_filehost_suffix[host]
+
+	var/output = copytext(url, (length(prefix) + 1)) // Removes the beggining of the url.
+
+	var/offset = length(output) - length(suffix)
+	output = copytext(output, 1, offset + 1) // Removes the .png on the end.
+
+	return output
+
+// End Dynamic PFP Procs//
+
+
 // Mob definitions!!!
 /mob
 	var/profilePicture
+	var/pfphost
 
 /mob/living/carbon/human/verb/SetProfilePic()
 	set name = "Set Profile Picture"
@@ -50,33 +113,42 @@
 
 	if(!client)
 		return
-	
-	var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png. Preferred image size: 500x500 or smaller.", i_will_sanitize_dont_worry = TRUE)
-	if(length(input))	
-		if(!SanitizeDiscordLink(input))
-			to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
-			return
 
-		profilePicture = StoreDiscordLink(input)
-		client.prefs.profilePicture = profilePicture
-		client.prefs.save_character()
-	else
-		if(profilePicture)
-			var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
-			if(deletePicture == "Yes")
-				RemoveProfilePic()
-
+	var/maybedeleteme = FALSE
+	var/host_select = input(usr, "Select your image hosting site:", "PFP Image Host", pfphost != "" ? pfphost : GLOB.pfp_filehosts[1]) as null|anything in GLOB.pfp_filehosts
+	if(!isnull(host_select) && (host_select in GLOB.pfp_filehosts))//You didn't press cancel
+		pfphost = host_select
+	else//you pressed Cancel
+		maybedeleteme = TRUE
+	if(pfphost && pfphost != "")
+		var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+		if(input && pfphost != "" && !isnull(pfphost))
+			if(SanitizePfpLink(input, pfphost))
+				profilePicture = StorePfpLink(input, host_select)
+				client.prefs.profilePicture = profilePicture
+				client.prefs.pfphost = host_select
+				client.prefs.save_character()
+			else
+				to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
+		else
+			maybedeleteme = TRUE
+	if(maybedeleteme)
+		var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
+		if(deletePicture == "Yes")
+			RemoveProfilePic()
 
 /mob/living/carbon/human/proc/RemoveProfilePic()
 	profilePicture = ""
+	pfphost = ""
 	if(client)
 		client.prefs.profilePicture = ""
+		client.prefs.pfphost = ""
 		client.prefs.save_character()
 
 // Preference code + saving! The rest of the code is located in preferences.dm where the UI is.
 /datum/preferences
 	var/profilePicture = ""
-
+	var/pfphost = ""
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
@@ -122,31 +194,52 @@
 		if("input")
 			switch(href_list["preference"])
 				if("ProfilePicture")
-					var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png", i_will_sanitize_dont_worry = TRUE)
-					if(input)	
-						if(SanitizeDiscordLink(input))
-							profilePicture = StoreDiscordLink(input)
+					var/maybedeleteme = FALSE
+					var/host_select = input(usr, "Select your image hosting site:", "PFP Image Host", pfphost != "" ? pfphost : GLOB.pfp_filehosts[1]) as null|anything in GLOB.pfp_filehosts
+					if(!isnull(host_select) && (host_select in GLOB.pfp_filehosts))//You didn't press cancel
+						pfphost = host_select
+					else//you pressed Cancel
+						maybedeleteme = TRUE
+					if(pfphost && pfphost != "")
+						var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+						if(input && pfphost != "" && !isnull(pfphost))
+							if(SanitizePfpLink(input, pfphost))
+								profilePicture = StorePfpLink(input, pfphost)
+							else
+								to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
 						else
-							to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
-					else
+							maybedeleteme = TRUE
+					if(maybedeleteme)
 						var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
 						if(deletePicture == "Yes")
 							profilePicture = ""
+							pfphost = ""
 				if("CreatureProfilePicture")
-					var/input = stripped_input(usr,"Right click an image from discord (do not expand the image by clicking it) and click 'Copy Link' and paste it here. Must be a png", i_will_sanitize_dont_worry = TRUE)
-					if(input)	
-						if(SanitizeDiscordLink(input))
-							creature_profilepic = StoreDiscordLink(input)
+					var/maybedeleteme = FALSE
+					var/host_select = input(usr, "Select your image hosting site:", "PFP Image Host", creature_pfphost != "" ? creature_pfphost : GLOB.pfp_filehosts[1]) as null|anything in GLOB.pfp_filehosts
+					if(!isnull(host_select) && (host_select in GLOB.pfp_filehosts))//You didn't press cancel
+						creature_pfphost = host_select
+					else//you pressed Cancel
+						creature_pfphost = ""
+						maybedeleteme = TRUE
+					if(creature_pfphost && creature_pfphost != "")
+						var/input = stripped_input(usr,"Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'", i_will_sanitize_dont_worry = TRUE)
+						if(input && creature_pfphost != "" && !isnull(creature_pfphost))
+							if(SanitizePfpLink(input, creature_pfphost))
+								creature_profilepic = StorePfpLink(input, creature_pfphost)
+							else
+								to_chat(usr, span_warning("Link is incorrect. Right click a .png image in your browser and select 'Copy Image Address'. It should look like this: 'https://\[file host website\]/\[unique image ID\].png'"))
 						else
-							to_chat(usr, span_warning("Link is incorrect, make sure you just right click the image in discord and copy link, do NOT click it to expand the image. It must end in '.png'"))
-					else
+							maybedeleteme = TRUE
+					if(maybedeleteme)
 						var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
 						if(deletePicture == "Yes")
 							creature_profilepic = ""
+							creature_pfphost = ""
 
 	..()
-
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
 	..()
 	character.profilePicture = profilePicture
+	character.pfphost = pfphost

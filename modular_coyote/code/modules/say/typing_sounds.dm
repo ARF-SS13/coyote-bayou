@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(typinginit)
 	name = "Typing Indicator Init"
 	wait = 6000
 	runlevels = RUNLEVEL_INIT
+	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/typinginit/Initialize()
 	var/list/typingPaths = typesof(/datum/typing_sound)
@@ -246,3 +247,7 @@ SUBSYSTEM_DEF(typinginit)
 /datum/typing_sound/wolfhowl
 	name = "Wolf Howl"
 	soundFile = 'modular_coyote/sound/typing/arfs1sounds/wolf1.ogg'
+
+/datum/typing_sound/xenohiss
+	name = "Xeno Hiss"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/xeno1.ogg'

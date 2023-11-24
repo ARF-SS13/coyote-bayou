@@ -73,9 +73,9 @@
 
 /mob/living/carbon/human/proc/mob_climax_outside(obj/item/organ/genital/G, mb_time = 30) //This is used for forced orgasms and other hands-free climaxes
 	var/datum/reagents/fluid_source = G.climaxable(src, TRUE)
-	if(!fluid_source)
-		to_chat(src,span_userdanger("Your [G.name] cannot cum."))
-		return
+	//if(!fluid_source)
+		//to_chat(src,span_userdanger("Your [G.name] cannot cum."))
+		//return
 	if(mb_time) //as long as it's not instant, give a warning
 		to_chat(src,span_userlove("You feel yourself about to orgasm."))
 		if(!do_after(src, mb_time, target = src) || !G.climaxable(src, TRUE))

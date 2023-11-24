@@ -163,6 +163,7 @@
 
 /mob/living/carbon/throw_item(atom/target)
 	throw_mode_off()
+	update_mouse_pointer()
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /atom/movable/screen))
@@ -243,7 +244,7 @@
 	<B><FONT size=3>[name]</FONT></B>
 	<HR>
 	<BR><B>Head:</B> <A href='?src=[REF(src)];item=[SLOT_HEAD]'>				[(head && !(head.item_flags & ABSTRACT)) 			? head 		: "Nothing"]</A>
-	<BR><B>Mask:</B> <A href='?src=[REF(src)];item=[SLOT_WEAR_MASK]'>		[(wear_mask && !(wear_mask.item_flags & ABSTRACT))	? wear_mask	: "Nothing"]</A>
+	<BR><B>Mask:</B> <A href='?src=[REF(src)];item=[SLOT_MASK]'>		[(wear_mask && !(wear_mask.item_flags & ABSTRACT))	? wear_mask	: "Nothing"]</A>
 	<BR><B>Neck:</B> <A href='?src=[REF(src)];item=[SLOT_NECK]'>		[(wear_neck && !(wear_neck.item_flags & ABSTRACT))	? wear_neck	: "Nothing"]</A>"}
 
 	for(var/i in 1 to held_items.len)
@@ -660,36 +661,37 @@
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
 		qdel(I)
+		update_handcuffed()
+		update_inv_legcuffed()
 		return
 	if(istype(I, /obj/item/restraints))
 		var/obj/item/restraints/R = I
 		if(R.del_on_remove)
 			if(handcuffed == R)
 				handcuffed = null
+				update_handcuffed()
 			if(legcuffed == R)
 				legcuffed = null
+				update_inv_legcuffed()
 			qdel(R)
-			update_handcuffed()
-			update_inv_legcuffed()
 			return
+	if(I == handcuffed)
+		handcuffed.forceMove(drop_location())
+		handcuffed = null
+		I.dropped(src)
+		if(buckled && buckled.buckle_requires_restraints)
+			buckled.unbuckle_mob(src)
+		update_handcuffed()
+		return
+	if(I == legcuffed)
+		legcuffed.forceMove(drop_location())
+		legcuffed = null
+		I.dropped(src)
+		update_inv_legcuffed()
+		return
 	else
-		if(I == handcuffed)
-			handcuffed.forceMove(drop_location())
-			handcuffed = null
-			I.dropped(src)
-			if(buckled && buckled.buckle_requires_restraints)
-				buckled.unbuckle_mob(src)
-			update_handcuffed()
-			return
-		if(I == legcuffed)
-			legcuffed.forceMove(drop_location())
-			legcuffed = null
-			I.dropped(src)
-			update_inv_legcuffed()
-			return
-		else
-			dropItemToGround(I)
-			return
+		dropItemToGround(I)
+		return
 
 /mob/living/carbon/get_standard_pixel_y_offset(lying = 0)
 	. = ..()
@@ -1439,7 +1441,7 @@
 /mob/living/carbon/check_obscured_slots()
 	if(head)
 		if(head.flags_inv & HIDEMASK)
-			LAZYOR(., SLOT_WEAR_MASK)
+			LAZYOR(., SLOT_MASK)
 		if(head.flags_inv & HIDEEYES)
 			LAZYOR(., SLOT_GLASSES)
 		if(head.flags_inv & HIDEEARS)

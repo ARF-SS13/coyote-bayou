@@ -77,7 +77,7 @@
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
-		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Creature!</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
@@ -568,6 +568,9 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(humanc.client)
 			humanc.client.prefs.post_copy_to(humanc)
+	
+	if(character.client.prefs.waddle_amount > 0)
+		character.AddComponent(/datum/component/waddling, character.client.prefs.waddle_amount, character.client.prefs.up_waddle_time, character.client.prefs.side_waddle_time)
 
 	GLOB.joined_player_list += character.ckey
 	GLOB.latejoiners += character
@@ -603,6 +606,9 @@
 
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
+		if(alert(src, "Better creature characters can now be made via the regular Species dropdown menu where you'd normally pick your human race. Are you sure you'd rather play the old-style simple creatures?", "Creature Update!", "I'll try them out!", "I still want to play as a simple creature.") == "I'll try them out!")
+			client.prefs.ShowChoices(src)
+			return
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
 			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
@@ -616,8 +622,10 @@
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
 		//Create the new mob
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
-		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
+		//Log their arrival
+		log_and_message_admins("[ADMIN_PP(src)] joined as \a [P.creature_species] named [P.creature_name] and spawned at [spawn_selection].")
+		//Set up their HUD, hands, and intents.
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
@@ -651,6 +659,7 @@
 		C.flavortext = P.creature_flavor_text
 		C.oocnotes = P.creature_ooc
 		C.profilePicture = P.creature_profilepic
+		C.pfphost = P.creature_pfphost
 		C.verbose_species = "[P.creature_species]"
 		C.special_s = P.special_s
 		C.special_p = P.special_p
@@ -681,10 +690,12 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
-		//Log their arrival
-		log_and_message_admins("[ADMIN_PP(C)] joined as \a [P.creature_species] named [C.name] and spawned at [spawn_selection].")
+
 		//Insert the quirks, do it now
 		SSquirks.AssignQuirks(C, C.client, TRUE, FALSE)
+		//Then he waddled away, waddle waddle. To the very next day.
+		if(P.waddle_amount > 0)
+			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
 	if(client.holder && check_rights(R_STEALTH, 0))

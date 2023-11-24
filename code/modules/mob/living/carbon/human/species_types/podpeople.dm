@@ -1,6 +1,6 @@
 /datum/species/pod
 	// A mutation caused by a human being ressurected in a revival pod. These regain health in light, and begin to wither in darkness.
-	name = "Anthromorphic Plant"
+	name = "Anthromorphic Podperson"
 	id = "pod"
 	default_color = "59CE00"
 	species_traits = list(MUTCOLORS,EYECOLOR,CAN_SCAR,HAS_FLESH,HAS_BONE)
@@ -18,9 +18,7 @@
 	var/light_oxyheal = -1
 	var/light_burnheal = -1
 	var/light_bruteheal = -1
-
 	species_type = "plant"
-
 	allowed_limb_ids = list("pod","mush")
 
 /datum/species/pod/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -65,7 +63,7 @@
 			H.adjust_nutrition(30, NUTRITION_LEVEL_FULL)
 
 /datum/species/pod/pseudo_weak
-	name = "Anthropomorphic Plant"
+	name = "Anthromorphic Plant"
 	id = "podweak"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS,CAN_SCAR,HAS_FLESH,HAS_BONE)
 	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "mam_body_markings" = list(), "taur" = "None", "legs" = "Normal Legs")
@@ -74,6 +72,6 @@
 	light_bruteheal = -0.2
 	light_burnheal = -0.2
 	light_toxheal = -0.7
-
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
+	roundstart = TRUE

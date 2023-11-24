@@ -238,6 +238,11 @@
 
 #define MODE_SING "%"
 
+#define MODE_SAY "say"
+#define MODE_ASK "ask"
+#define MODE_EXCLAIM "exclaim"
+#define MODE_YELL "yell"
+
 GLOBAL_LIST_INIT(radiochannels, list(
 	RADIO_CHANNEL_COMMON = FREQ_COMMON,
 	RADIO_CHANNEL_SCIENCE = FREQ_SCIENCE,

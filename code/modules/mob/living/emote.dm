@@ -1245,7 +1245,7 @@
 
 /datum/emote/blep
 	key = "blep"
-	key_third_person = "bleps thier tongue out!"
+	key_third_person = "bleps their tongue out!"
 	message = "bleps their tongue out!"
 
 /datum/emote/eyeclean

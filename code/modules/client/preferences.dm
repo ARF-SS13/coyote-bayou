@@ -96,6 +96,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/be_random_body = 0				//whether we'll have a random body every round
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	//Sandstorm CHANGES BEGIN
+	var/erppref = "Ask"
+	var/nonconpref = "Ask"
+	var/vorepref = "Ask"
+	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/see_chat_emotes = TRUE
+	var/view_pixelshift = FALSE
+	var/enable_personal_chat_color = FALSE
+	var/personal_chat_color = "#ffffff"
+	var/list/alt_titles_preferences = list()
+	var/lust_tolerance = 100
+	var/sexual_potency = 15
+	var/unholypref = "No" //Goin 2 hell fo dis one
+	// cum
+	var/list/faved_interactions = list() // list of stringed type paths
+	var/list/saved_plappers = list() // to do: this
+	//Sandstorm CHANGES END
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
@@ -230,7 +248,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
 	var/image/creature_image = null
-	var/creature_profilepic = null
+	var/creature_profilepic = ""
+	var/creature_pfphost = ""
 	var/creature_body_size = 1
 	var/creature_fuzzy = FALSE
 
@@ -341,6 +360,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
+	/// Upwards waddle amount. Side to side is always double this.
+	var/waddle_amount = 0
+	/// How fast the mob wobbles upwards.
+	var/up_waddle_time = 1
+	/// How fast the mob wobbles side to side.
+	var/side_waddle_time = 2
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -464,10 +489,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			//Right column
 			dat +="<td width='30%' valign='top'>"
-			dat += "<h2>Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Creature Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
@@ -559,7 +584,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
 			//Start Creature Character
-			dat += "<h2>Creature Character</h2>"
+			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
 			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
 			/*
@@ -721,7 +746,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 
+			//Waddling
+			dat += "<h3>Waddling</h3>"
+			dat += "<b>Waddle Amount:</b><a href='?_src_=prefs;preference=waddle_amount;task=input'>[waddle_amount]</a><br>"
+			if(waddle_amount > 0)
+				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
+				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
 			dat += "</td>"
+
+			//end column 5 or something
+			//start column 6
+
 			//Mutant stuff
 			var/mutant_category = 0
 			mutant_category++
@@ -3373,7 +3408,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_body_width)
 						new_body_width = clamp(new_body_width * 0.01, min, max)
 						features["body_width"] = new_body_width
-
+				
+				if("waddle_amount")
+					var/new_waddle_amount = input(user, "Choose how many pixels you want to move when walking(4 Recommended): ([WADDLE_MIN]-[WADDLE_MAX])", "Character Preference", waddle_amount) as num|null
+					if(isnum(new_waddle_amount))
+						new_waddle_amount = round(clamp(new_waddle_amount, WADDLE_MIN, WADDLE_MAX), 0.1)
+						waddle_amount = new_waddle_amount
+				
+				if("up_waddle_time")
+					var/new_up_waddle_time = input(user, "Choose how fast you want to move up & down while walking(1 Recommended): ([UP_WADDLE_MIN]-[UP_WADDLE_MAX])", "Character Preference", up_waddle_time) as num|null
+					if(isnum(new_up_waddle_time))
+						new_up_waddle_time = round(clamp(new_up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX), 0.1)
+						up_waddle_time = new_up_waddle_time
+				
+				if("side_waddle_time")
+					var/new_side_waddle_time = input(user, "Choose how fast you want to move side to side while walking(2 Recommended): ([SIDE_WADDLE_MIN]-[SIDE_WADDLE_MAX])", "Character Preference", side_waddle_time) as num|null
+					if(isnum(new_side_waddle_time))
+						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
+						side_waddle_time = new_side_waddle_time
+				
 				if("creature_body_size")
 					var/min = CONFIG_GET(number/body_size_min)
 					var/max = CONFIG_GET(number/body_size_max)

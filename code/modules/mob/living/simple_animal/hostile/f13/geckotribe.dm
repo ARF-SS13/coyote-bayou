@@ -12,8 +12,8 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1,
-		/obj/item/clothing/under/f13/wayfarer = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+		/obj/item/clothing/under/f13/wayfarer = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -121,8 +121,9 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 1,
-		/obj/item/clothing/under/f13/wayfarer = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+		/obj/item/clothing/under/f13/wayfarer = 1,
+		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -192,8 +193,9 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1,
 		/obj/item/clothing/under/f13/wayfarer = 1,
-		/obj/item/twohanded/spear/bonespear = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+		/obj/item/twohanded/spear/bonespear = 1,
+		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -303,8 +305,9 @@
 		/obj/item/stack/sheet/animalhide/gecko = 1,
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/gun/ballistic/bow/shortbow = 1,
-		/obj/item/storage/bag/tribe_quiver/light/full = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+		/obj/item/storage/bag/tribe_quiver/light/full = 1,
+		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -435,8 +438,9 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1,
 		/obj/item/clothing/under/f13/tribe_shaman = 1,
-		/obj/effect/spawner/lootdrop/f13/trash_medicine = 3)
-	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+		/obj/effect/spawner/lootdrop/f13/trash_medicine = 3,
+		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -561,8 +565,9 @@
 		/obj/effect/spawner/lootdrop/f13/trash_medicine = 8,
 		/obj/item/gun/ballistic/bow/compoundbow = 1,
 		/obj/item/toy/plush/lizardplushie/kobold = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 1)
-	butcher_results = list(/obj/item/stack/sheet/bone = 3)
+		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
+		/obj/item/stack/sheet/bone = 2,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -712,12 +717,14 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 4,
 		/obj/item/stack/sheet/animalhide/gecko = 3,
+		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/clothing/under/f13/tribe_chief = 1,
 		/obj/item/restraints/legcuffs/bola = 3,
 		/obj/item/twohanded/spearaxe = 1,
 		/obj/item/toy/plush/lizardplushie = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,)
-	butcher_results = list(/obj/item/stack/sheet/bone = 3)
+		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
+		/obj/item/stack/sheet/bone = 1,
+		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
