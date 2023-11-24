@@ -1305,3 +1305,13 @@
 /// Preferred over MouseEntered if you do not need information such as the position of the mouse.
 /// Especially because this is deferred over a tick, do not trust that `client` is not null.
 /atom/proc/on_mouse_enter(client/client)
+
+///highest in hierarchy for retrieving runechat color prefs
+/atom/proc/get_chat_color()
+	if(istype(src, /mob/living/carbon))
+		var/mob/living/carbon/carbo = src
+		return carbo.get_chat_color()
+	if(istype(src, /atom/movable/virtualspeaker))
+		var/atom/movable/virtualspeaker/vs = src
+		return vs.get_chat_color()
+	return rgb(255, 255, 255)

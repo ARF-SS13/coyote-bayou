@@ -158,10 +158,7 @@
 		return
 	hearers -= ignored_mobs
 
-	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 255, 255)
-	if(istype(carbo,/mob/living/carbon))
-		saycolor = carbo.get_chat_color()
+	var/saycolor = src.get_chat_color()
 
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
@@ -259,10 +256,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
-	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 255, 255)
-	if(istype(carbo,/mob/living/carbon))
-		saycolor = carbo.get_chat_color()
+	var/saycolor = src.get_chat_color()
 
 	for(var/mob/M in hearers)
 		if(pref_check && !CHECK_PREFS(M, pref_check))

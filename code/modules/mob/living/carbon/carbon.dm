@@ -536,7 +536,7 @@
 		chat_color_darkened = "#[new_runecolor]"
 		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
-/mob/living/carbon/proc/get_chat_color()
+/mob/living/carbon/get_chat_color()
 	var/color = get_feature("chat_color")
 	if(color == "whoopsie" || !color)
 		return rgb(255, 255, 255)

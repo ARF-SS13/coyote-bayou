@@ -22,10 +22,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
-	var/mob/living/carbon/carbo = src
-	var/saycolor = rgb(255, 255, 255)
-	if(istype(carbo, /mob/living/carbon))
-		saycolor = carbo.get_chat_color()
+	var/saycolor = src.get_chat_color()
 	var/color_message = alternating_color_span(rendered, saycolor, "\"", FALSE)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
@@ -44,9 +41,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	if(istype(src, /mob/living/carbon))
 		var/mob/living/carbon/carbo = src
 		docolor = carbo.client?.prefs.color_chat_log
-		var/mob/living/carbon/speakercarbon = speaker
-		if(istype(speakercarbon, /mob/living/carbon))
-			saycolor = speakercarbon.get_chat_color()
+		saycolor = speaker.get_chat_color()
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
 	var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
@@ -230,6 +225,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/job
 	var/atom/movable/source
 	var/obj/item/radio/radio
+	var/chatcolor
 
 INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 /atom/movable/virtualspeaker/Initialize(mapload, atom/movable/M, radio)
@@ -242,6 +238,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
 		verb_yell = M.verb_yell
+		chatcolor = M.get_chat_color()
 
 	// The mob's job identity
 	if(ishuman(M))
@@ -278,3 +275,6 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 //To get robot span classes, stuff like that.
 /atom/movable/proc/get_spans()
 	return list()
+
+/atom/movable/virtualspeaker/get_chat_color()
+	return chatcolor
