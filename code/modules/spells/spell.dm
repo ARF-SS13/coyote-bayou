@@ -133,10 +133,11 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/cooldown_min = 0 //This defines what spell quickened four times has as a cooldown. Make sure to set this for every spell
 	var/player_lock = 1 //If it can be used by simple mobs
 
-	var/overlay = 0
+	var/overlay = FALSE
 	var/overlay_icon = 'icons/obj/wizard.dmi'
 	var/overlay_icon_state = "spell"
 	var/overlay_lifespan = 0
+	var/overlay_self = FALSE
 
 	var/sparks_spread = 0
 	var/sparks_amt = 0 //cropped at 10
@@ -205,7 +206,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				else
 					user.whisper(replacetext(invocation," ","`"))
 		if("emote")
-			user.visible_message(invocation, invocation_emote_self) //same style as in mob/living/emote.dm
+			user.me_verb(invocation) //same style as in mob/living/emote.dm
 
 /obj/effect/proc_holder/spell/proc/playMagSound()
 	playsound(get_turf(usr), sound,50,1)
@@ -267,8 +268,14 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		action.UpdateButtonIcon()
 
 /obj/effect/proc_holder/spell/proc/before_cast(list/targets)
+	do_overlays(targets)
+
+/obj/effect/proc_holder/spell/proc/do_overlays(list/targets)
 	if(overlay)
-		for(var/atom/target in targets)
+		var/overlay_targets = targets
+		if(overlay_self)
+			overlay_targets |= usr
+		for(var/atom/target in overlay_targets)
 			var/location
 			if(isliving(target))
 				location = target.loc
