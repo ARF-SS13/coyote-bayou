@@ -1168,13 +1168,13 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/combat/worn/brim
-	name = "Trusty Combat Carbine"
+	name = "Blessed Trusty Combat Carbine"
 	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
 		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
 		looks to be of high-quality crafting, the precision of such parts look a bit... off, like a master swordsmith were asked to forge a \
 		gun by hand. As such, the internal mechanisms and rifling are not <i>quite</i> the right size for a .45ACP round, and the sight \
 		picture is a bit <i>Fuzzy</i>. Every part is, however, built as rugged as its maker, and can be used as a very effective melee \
-		weapon without any risk of damaging it."
+		weapon without any risk of damaging it. Engraved at the stock is a shimmering green snake within a triangle"
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
