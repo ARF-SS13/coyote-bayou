@@ -1174,6 +1174,18 @@
 /obj/item/storage/box/large/custom_kit/rubeebee/PopulateContents()
     new /obj/item/clothing/suit/armor/light/leather/durathread(src)
 
+/datum/gear/donator/kits/ruinerk
+	name = "Custom revolver kit"
+	path = /obj/item/storage/box/large/custom_kit/ruinerk
+	ckeywhitelist = list("RUINEREK")
+
+/obj/item/storage/box/large/custom_kit/ruinerk/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+
+
 // S
 
 /datum/gear/donator/kits/sage1990

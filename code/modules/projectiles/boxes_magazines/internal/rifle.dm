@@ -51,7 +51,7 @@
 	desc = "Pew pew pew pew!"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = list(CALIBER_9MM)
-	max_ammo = 10
+	max_ammo = 9
 	multiload = FALSE
 
 /obj/item/ammo_box/magazine/internal/needlerammo
