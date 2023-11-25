@@ -1408,3 +1408,68 @@
 	user_lust_mult = 0.4 // set this to how much lust should be given
 	target_lust_mult = 0.8
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Cervix Mush///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/cervix_mush
+	description = "Partner/Crotch - Push against their cervix."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, warmly} {squeezes, pressures, pushes against, attempts to penetrate} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}.",
+		"XU_NAME is {knocking on, ringing the doorbell of} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus} {gently, softly, warmly}."
+	)
+	disarm_messages = list(
+		"XU_NAME {teasingly, needily} {squeezes, pressures, pushes against, attempts to penetrate} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}.",
+		"XU_NAME is {knocking on, ringing the doorbell of} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus} {teasingly, needily}."
+	)
+	grab_messages = list(
+		"XU_NAME {squeezes against, pressures, pushes against, attempts to penetrate} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}, trying to find entry.",
+		"XU_NAME is {trying to, attempting to, pressuring} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus} for entry, and maybe a delivery."
+	)
+	harm_messages = list(
+		"XU_NAME is downright trying to bludgeon XT_NAME's {cervix's, womb's, baby-cavity's, egg store's, uterus's} door down, they seem DETERMINED.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 1.2 // set this to how much lust should be given
+	target_lust_mult = 1.2
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Cervix penetration///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/cervix_fuck
+	description = "Partner/Crotch - Fuck their cervix."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, softly, warmly} {squeezes into, pressures past, pushes into, penetrates} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {needily, teasingly} {squeezes into, pressures past, pushes into, penetrates} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}.",
+	)
+	grab_messages = list(
+		"XU_NAME {squeezes into, pressures past, pushes into, penetrates} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}, using it as a second cocksock.",
+	)
+	harm_messages = list(
+		"XU_NAME is just downright {fucking, churning up, rearranging} XT_NAME's {cervix, womb, baby-cavity, egg store, uterus}.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 1.2 // set this to how much lust should be given
+	target_lust_mult = 1.2
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
