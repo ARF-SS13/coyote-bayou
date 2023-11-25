@@ -470,7 +470,7 @@
 	damage_high = 90
 	damage_type = BRUTE
 	nodamage = 0
-	supereffective_damage = 200
+	supereffective_damage = 150
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 	//explosion values
