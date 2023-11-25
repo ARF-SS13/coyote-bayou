@@ -1298,6 +1298,10 @@
 		usr_client.Click(src, loc, null, mouseparams)
 
 
+///Adds the debris element for projectile impacts
+/atom/proc/add_debris_element()
+	AddElement(/datum/element/debris, null, -15, 8, 0.7)
+
 /atom/MouseEntered(location, control, params)
 	SSmouse_entered.hovers[usr.client] = src
 

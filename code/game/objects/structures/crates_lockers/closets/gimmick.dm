@@ -9,6 +9,10 @@
 	cutting_tool = /obj/item/screwdriver
 	can_weld_shut = FALSE
 
+/obj/structure/closet/cabinet/add_debris_element()
+		AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/closet/cabinet/anchored
 	anchored = TRUE
 	storage_capacity = 30

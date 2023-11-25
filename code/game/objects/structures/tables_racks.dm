@@ -450,6 +450,10 @@
 	if(!total_override)
 		..()
 
+/obj/structure/table/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/table/wood/junk
 	name = "makeshift bar table"
 	desc = "An improvised table made from a wooden plank and as barrel. Try not to lean on it."
