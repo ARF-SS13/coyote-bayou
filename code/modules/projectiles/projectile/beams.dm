@@ -21,8 +21,9 @@
 
 /obj/item/projectile/f13plasma
 	name = "plasma template"
-	icon_state = "laser"
+	icon_state = "plasma_clot"
 	sharpness = SHARP_POINTY // Temporary fix for the Wound system. Makes lasers/plasma bleed you out per hit.
+	wound_bonus = 30 // plasma is horrific; should be overidden more often than not
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -577,14 +578,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/f13plasma //Plasma rifle
+/obj/item/projectile/f13plasma/rifle //Plasma rifle
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
 	damage = 60 //fucc you normies
 	damage_list = list( "55" = 30, "60" = 50, "65" = 20)
 	flag = "energy" //checks vs. energy protection
-	wound_bonus = 90 //being hit with plasma is horrific
+	wound_bonus = 40 //being hit with plasma is horrific
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
