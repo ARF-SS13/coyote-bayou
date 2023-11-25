@@ -1618,10 +1618,10 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/bowtrained
 	name = "Bow Trained"
-	desc = "QUIRK DISABLED FOR MAINTENANCE. HAS NO FUNCTION RIGHT NOW."//"You've trained quite a bit with bows of many types."
+	desc = "You've trained quite a bit with bows of many types."
 	value = 14
 	category = "Ranged Quirks"
-	mechanics = "(NON-FUNCTIONAL) You don't need to press z to pull the string back on a bow, instead you can just spam click to fire rapidly."
+	mechanics = "You don't need to press z to pull the string back on a bow, instead you can just spam click to fire rapidly."
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/masterrifleman,

@@ -364,7 +364,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			var/datum/material/MyMat = custom_materials[1]
 			if(MyMat.strength_modifier)
 				DamMult = MyMat.strength_modifier
-		var/InitialF = (force_on ? initial(force_on) : initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
+		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
 		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
 		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
 		var/InitialAS = initial(attack_speed)
