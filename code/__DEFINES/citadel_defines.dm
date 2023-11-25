@@ -75,9 +75,11 @@
 #define GENITAL_UNDER_UNDERWEAR   (1<<5) // If visible, is it above clothing?
 #define GENITAL_RESPECT_UNDERWEAR (1<<6) // Does it factor in underwear as coverage?
 #define GENITAL_RESPECT_CLOTHING  (1<<7) // Does it factor in uniform/suit as coverage?
+#define GENITAL_MAX               (1<<8) // The absolute maximum value that can be set
 
 #define GENITAL_FLAGS_MIN GENITAL_ALWAYS_HIDDEN // update this if you add/remove flags
-#define GENITAL_FLAGS_MAX GENITAL_RESPECT_CLOTHING // update this if you add/remove flags
+#define GENITAL_FLAGS_MAX GENITAL_MAX // update this if you add/remove flags
+//We cannot set the max to GENITAL_RESPECT_CLOTHING because if we respect clothing and do ANYTHING ELSE, we exceed the max and it gets reset
 
 #define GEN_VIS_FLAG_DEFAULT GENITAL_RESPECT_UNDERWEAR | GENITAL_RESPECT_CLOTHING
 #define GEN_VIS_OVERALL_FLAG_DEFAULT GENITAL_ABOVE_UNDERWEAR
