@@ -7,7 +7,7 @@
 */
 
 /obj/item/ammo_casing/energy/plasma
-	projectile_type = /obj/item/projectile/f13plasma
+	projectile_type = /obj/item/projectile/f13plasma/rifle
 	select_name = "plasma burst"
 	fire_sound = 'sound/f13weapons/plasma_rifle.ogg'
 	e_cost = 2500 // 12 shots
