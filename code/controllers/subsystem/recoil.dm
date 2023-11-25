@@ -163,10 +163,10 @@ SUBSYSTEM_DEF(recoil)
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
+	var/turbofuck_unwielded_spread = FALSE
+	var/turboreward_wielded_spread = FALSE
 	if(istype(shoot))
 		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
-		var/turbofuck_unwielded_spread = FALSE
-		var/turboreward_wielded_spread = FALSE
 		if(spread > turbofuck_threshold && istype(shoot))
 			if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
 				turbofuck_unwielded_spread = TRUE // hodl it right
