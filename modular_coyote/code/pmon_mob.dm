@@ -458,19 +458,19 @@
 	icon_living = "miltank"
 	icon_dead = "miltank_d"
 	p_types = list(P_TYPE_NORM)
-	var/datum/reagents/udder = null
+	var/obj/item/udder/udder = null
+	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 //	movement_cooldown = 3
 
 /mob/living/simple_animal/advanced/miltank/Initialize()
-	udder = new(50)
-	udder.my_atom = src
-	..()
+	. = ..()
+	udder = new(src, milk_reagent)
 
-/mob/living/simple_animal/advanced/miltank/Life()
+/mob/living/simple_animal/advanced/miltank/BiologicalLife(seconds, times_fired)
 	. = ..()
 	if(stat == CONSCIOUS)
-		if(udder && prob(5))
-			udder.add_reagent("milk", rand(5, 10))
+		if(prob(5))
+			udder?.generateMilk(milk_reagent)
 
 /* TODO fix milking i guess
 /mob/living/simple_animal/advanced/miltank/attackby(var/obj/item/O as obj, var/mob/user as mob)
