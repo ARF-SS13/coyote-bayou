@@ -503,9 +503,6 @@ datum/interaction/lewd/mutual/hair_play
 		"XU_NAME {gently, playfully, eagerly} {grabs, takes, grips} XT_NAME's ear.",
 	)
 
-	simple_sounds = list(
-		'sound/weapons/bite.ogg'
-	)
 	target_lust_mult = 0.8
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 	simple_sounds = list(
@@ -532,10 +529,33 @@ datum/interaction/lewd/mutual/hair_play
 		"XU_NAME {gently, playfully, eagerly} {pets, touches, rubs, carresses} XT_NAME's ear.",
 	)
 
+	target_lust_mult = 0.6
+	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 	simple_sounds = list(
-		'sound/weapons/bite.ogg'
+		'sound/f13effects/sunsetsounds/blush.ogg',
 	)
-	target_lust_mult = 0.8
+
+////////////////////
+//Pull their hair//
+////////////////////
+/datum/interaction/lewd/partner/giving/hair_pull
+	description = "Partner/Head - Pull their hair."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently, playfully, eagerly} {pulls, tugs, grasps} XT_NAME's {hair, locks}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {teasingly, deviously, meanly} {pulls, tugs, grasps} XT_NAME's {hair, locks}.",
+	)
+	grab_messages = list(
+		"XU_NAME possessively {yanks, pulls} XT_NAME's {hair, locks}.",
+	)
+	harm_messages = list(
+		"XU_NAME {pulls, tugs, grasps} XT_NAME's {hair, locks} like a leash.",
+	)
+
+	target_lust_mult = 0.6
 	lust_go_to = LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
 	simple_sounds = list(
 		'sound/f13effects/sunsetsounds/blush.ogg',

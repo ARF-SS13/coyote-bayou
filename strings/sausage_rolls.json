@@ -51,7 +51,8 @@
 		},
 		"ALIASES": [
 			":-)",
-			"'u'"
+			"'u'",
+			"))"
 		]
 	},
 	
@@ -105,7 +106,8 @@
 			]
 		},
 		"ALIASES": [
-			":-("
+			":-(",
+			"(("
 		]
 	},
 	
@@ -224,6 +226,14 @@
 				"sticks out THEIR tongue."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"jokingly WHISPERVERBS"
+			],
+			"EMOTE" : [
+				"gives a funny grin."
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"jokingly ASKVERBS"
@@ -269,6 +279,11 @@
 				"gasps?"
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"gasps and WHISPERVERBS"
+			]
+		},
 		"EXCLAIM": {
 			"MESSAGE" : [
 				"gasps"
@@ -296,6 +311,11 @@
 			],
 			"EMOTE" : [
 				"stares."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"stares blankly and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -335,6 +355,11 @@
 				"looks a bit upset."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks upsets and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"looks a bit upset, and ASKVERBS"
@@ -370,6 +395,11 @@
 			],
 			"EMOTE" : [
 				"gives a confused look."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks confused and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -417,6 +447,11 @@
 				"blows a kiss?...~"
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"blows a kiss and WHISPERVERBS"
+			]
+		},
 		"EXCLAIM": {
 			"MESSAGE" : [
 				"blows a kiss, and EXCLAIMVERBS"
@@ -444,6 +479,11 @@
 			],
 			"EMOTE" : [
 				"gives a cute little cattish smile."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"coyly smiles and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -483,6 +523,11 @@
 				"gives a sly grin."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"grins slyly and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"gives a sly grin, and ASKVERBS"
@@ -518,6 +563,11 @@
 			],
 			"EMOTE" : [
 				"looks defeated."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks defeated and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -557,6 +607,11 @@
 				"looks sad."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks sads and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"looks sad, and ASKVERBS"
@@ -592,6 +647,11 @@
 			],
 			"EMOTE" : [
 				"looks a little disappointed."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks disappointed and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -631,6 +691,11 @@
 				"has hearts in THEIR eyes."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks smitten and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"has hearts in THEIR eyes, and ASKVERBS"
@@ -666,6 +731,11 @@
 			],
 			"EMOTE" : [
 				"shuts their trap."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"shushes and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -705,6 +775,11 @@
 				"curses."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"curses and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"curses"
@@ -740,6 +815,11 @@
 			],
 			"EMOTE" : [
 				"blushes."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"blushes and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -779,6 +859,11 @@
 				"looks all kinds of messed up."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks a bit messed up and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"looks all kinds of messed up, and ASKVERBS"
@@ -816,6 +901,11 @@
 				"gives a big smug grin."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"smugly WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"gives a big smug grin, and ASKVERBS"
@@ -848,6 +938,11 @@
 			],
 			"EMOTE" : [
 				"looks a little sick."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"sickishly WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -887,6 +982,11 @@
 				"looks surprised."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks surprised, and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"looks surprised, and ASKVERBS"
@@ -922,6 +1022,11 @@
 			],
 			"EMOTE" : [
 				"looks confused."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"confusedly WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -995,6 +1100,11 @@
 				"bares THEIR teeth."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"bares THEIR teeth and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"bares THEIR teeth, and ASKVERBS"
@@ -1030,6 +1140,11 @@
 			],
 			"EMOTE" : [
 				"gives a sarcastic smile."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"sarcastically WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -1069,6 +1184,11 @@
 				"gives an angry frown."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"frowns angrily and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"gives an angry frown, and ASKVERBS"
@@ -1101,6 +1221,11 @@
 			],
 			"EMOTE" : [
 				"gives an evil grin."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"grins evily and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -1137,6 +1262,11 @@
 				"angrily sticks out THEIR tongue."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"angrily bleps and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"angrily sticks out THEIR tongue, and ASKVERBS"
@@ -1169,6 +1299,11 @@
 			],
 			"EMOTE" : [
 				"gives an evil cattish smile."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"gives an evil coy grin and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -1205,6 +1340,11 @@
 				"looks absolutely mortified."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks mortified and WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"looks absolutely mortified, and ASKVERBS"
@@ -1237,6 +1377,11 @@
 			],
 			"EMOTE" : [
 				"gives an angry blank stare."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"blankly stares with anger and WHISPERVERBS"
 			]
 		},
 		"ASK": {
@@ -1273,6 +1418,11 @@
 				"gives an angry, disappointed look."
 			]
 		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"looks angry and disappointed while WHISPERVERBS"
+			]
+		},
 		"ASK": {
 			"MESSAGE" : [
 				"gives an angry, disappointed look, and ASKVERBS"
@@ -1305,6 +1455,11 @@
 			],
 			"EMOTE" : [
 				"gives an angry confused look."
+			]
+		},
+		"WHISPER": {
+			"MESSAGE" : [
+				"gives an angry and confused look then WHISPERVERBS"
 			]
 		},
 		"ASK": {

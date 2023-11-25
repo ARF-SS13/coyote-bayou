@@ -9,13 +9,13 @@
 		"XU_NAME {gently, softly, lovingly} {cums, spunks, orgasms, climaxes} with XU_THEIR {cock, rod, rocket, dick, wiener}."
 	)
 	disarm_messages = list(
-		"XU_NAME {urges themselves, playfully forces themselves} {to cum, to spunk, to orgasm, to climaxe} with XU_THEIR {cock, rod, rocket, dick, wiener}."
+		"XU_NAME {urges themselves, playfully forces themselves} {to cum, to spunk, to orgasm, to climax} with XU_THEIR {cock, rod, rocket, dick, wiener}."
 	)
 	grab_messages = list(
-		"XU_NAME {twitches as, shakes as} they {cum, spunk, orgasm, climaxe} with XU_THEIR {cock, rod, rocket, dick, wiener}."
+		"XU_NAME {twitches as, shakes as} they {cum, spunk, orgasm, climax} with XU_THEIR {cock, rod, rocket, dick, wiener}."
 	)
 	harm_messages = list(
-		"XU_NAME {moans as, groans as, growls as} they {cum, spunk, orgasm, climaxe} with XU_THEIR {cock, rod, rocket, dick, wiener}."
+		"XU_NAME {moans as, groans as, growls as} they {cum, spunk, orgasm, climax} with XU_THEIR {cock, rod, rocket, dick, wiener}."
 	)
 
 	simple_sounds = list(
@@ -38,13 +38,13 @@
 		"XU_NAME {softly, warmly, gaspingly} {climaxes, orgasms, cums}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {softly, gently, lovingly} {squeezing, grabbing, gripping, holding onto} whatever was in it."
 	)
 	disarm_messages = list(
-		"XU_NAME {eagerly, needily, happily} {climaxes, orgasms, cums}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {squealching as it's, squishing as it's, milking as it's} {squeezing, grabbing, gripping, holding onto} whatever was in it.
+		"XU_NAME {eagerly, needily, happily} {climaxes, orgasms, cums}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {squealching as it's, squishing as it's, milking as it's} {squeezing, grabbing, gripping, holding onto} whatever was in it."
 	)
 	grab_messages = list(
-		"XU_NAME {firmly, hotly, breathily} {climaxes, orgasms, cums}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {squeezes down on, firmly squeezes, wetly grips} whatever was in it.
+		"XU_NAME {firmly, hotly, breathily} {climaxes, orgasms, cums}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {squeezes down on, firmly squeezes, wetly grips} whatever was in it."
 	)
 	harm_messages = list(
-		"XU_NAME {climaxes, orgasms, cums} {aggressively, hotly, possessively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {trying to claim, trying to own, trying to never let out, deathgripping} whatever was in it.
+		"XU_NAME {climaxes, orgasms, cums} {aggressively, hotly, possessively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {trying to claim, trying to own, trying to never let out, deathgripping} whatever was in it."
 	)
 
 	simple_sounds = list(
@@ -354,16 +354,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto whatever they're sitting on.
+		"XU_NAME {softly, warmly, needily} {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {leaking, dribbling} onto whatever they're sitting on."
 	)
 	disarm_messages = list(
-		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto whatever they're sitting on.
+		"XU_NAME {moans, bucks their hips, shakes their nethers} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {splashes, squirts} {juices, liquids, wetness} onto whatever they're sitting on."
 	)
 	grab_messages = list(
-		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} whatever they're sitting on.
+		"XU_NAME {vibrates, shakes, bucks their hips} and {gasps, inhales, tenses} as they {climax, orgasm, cum}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {soaking, coating} whatever they're sitting on."
 	)
 	harm_messages = list(
-		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} whatever they're sitting on.
+		"XU_NAME {shakes and, vibrates and, uncontrolably} {gasps, inhales, tenses} as they {climax, orgasm, cum} {hard, violently, aggressively}, XU_THEIR {pussy, snatch, love hole, love tunnel, cunt} {supersoakering, drowning, submerging} whatever they're sitting on."
 	)
 
 	simple_sounds = list(
