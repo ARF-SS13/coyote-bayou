@@ -477,6 +477,7 @@
 	pixel_y = -12
 	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
+	do_transparency = FALSE //Has a custom transparency zone
 
 /obj/structure/flora/junglebush/large/Initialize()
 	. = ..()
