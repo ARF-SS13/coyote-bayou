@@ -54,6 +54,10 @@
 	else
 		return ..()
 
+/obj/structure/flora/tree/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/flora/stump
 	name = "stump"
 	desc = "The mark of human progress."
@@ -416,6 +420,9 @@
 			new mineResult(get_turf(src), mineAmount)
 		SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 		qdel(src)
+
+/obj/structure/flora/rock/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
 
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
