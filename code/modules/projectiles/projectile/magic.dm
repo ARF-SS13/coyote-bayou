@@ -464,17 +464,20 @@
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"
 	icon_state = "fireball"
+	flag = "bomb"
 	damage = 75
+	damage_low = 40
+	damage_high = 90
 	damage_type = BRUTE
 	nodamage = 0
-	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_damage = 150
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 	//explosion values
 	var/exp_heavy = 0
 	var/exp_light = 1
 	var/exp_flash = 1
-	var/exp_fire = 1
+	var/exp_fire = 2
 
 /obj/item/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
