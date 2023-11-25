@@ -72,6 +72,11 @@ SUBSYSTEM_DEF(nightcycle)
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
 	var/new_time
 
+#ifdef DEBUG // kinda hard to debug things when the entire map is pitch black
+	new_time = CYCLE_DAYTIME
+	if (new_time == current_time)
+		return
+#else
 	if (!isnull(custom_cycle_wait))
 		if(last_custom_cycle + custom_cycle_wait >= world.time)
 			return
@@ -99,6 +104,7 @@ SUBSYSTEM_DEF(nightcycle)
 				new_time = NIGHTTIME
 		if (new_time == current_time)
 			return
+#endif
 
 	switch (new_time)
 		if (SUNRISE)

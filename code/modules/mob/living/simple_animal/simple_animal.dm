@@ -526,10 +526,19 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return TRUE
 	if(stop_automated_movement_when_pulled && pulledby) //Some animals don't move when pulled
 		return TRUE
-	var/anydir = pick(GLOB.cardinals)
-	if(Process_Spacemove(anydir))
-		Move(get_step(src, anydir), anydir)
-		turns_since_move = 0
+	var/list/dorections = list()
+	for(var/dirk in GLOB.cardinals) // run through them, and see if any are open space, and if so, dont stumble off the roofs you dope
+		var/turf/here = get_turf(src)
+		var/turf/there = get_step(here, dirk)
+		if(here.LinkBlockedWithAccess(there, src))
+			continue
+		else
+			dorections += dirk
+	if(!LAZYLEN(dorections))
+		return TRUE // good enough
+	var/anydir = pick(dorections)
+	Move(get_step(src, anydir), anydir)
+	turns_since_move = 0
 	return TRUE
 
 /mob/living/simple_animal/proc/handle_automated_speech(override)

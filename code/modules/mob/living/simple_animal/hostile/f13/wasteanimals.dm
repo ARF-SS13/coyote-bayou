@@ -556,6 +556,47 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
+/// Testing its ability to path to you
+/mob/living/simple_animal/hostile/gecko/debug/pathfinder
+	smartmover = TRUE
+	sound_pitch = 100
+	vary_pitches = list(-200, 200)
+	health = 2000
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 8
+	move_to_delay = 5
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 3),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 1)\
+		),
+		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
+		MOB_HEALTH_LIST(2000),
+	)
+
+/// Testing its ability to path all over around you
+/mob/living/simple_animal/hostile/gecko/debug/pathfinder/retreat
+	smartmover = TRUE
+	sound_pitch = 100
+	vary_pitches = list(-200, 200)
+	health = 2000
+	retreat_distance = 4
+	minimum_distance = 2
+	aggro_vision_range = 7
+	vision_range = 8
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 3),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 1)\
+		),
+		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
+		MOB_HEALTH_LIST(2000),
+	)
+
 /// Testing its randomness
 /mob/living/simple_animal/hostile/gecko/debug/stamcrit
 	variation_list = list(

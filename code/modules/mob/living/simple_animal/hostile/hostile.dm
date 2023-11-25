@@ -105,6 +105,9 @@
 	var/datum/weakref/targetting_origin = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
 	var/attack_all_objects = FALSE //if true, equivalent to having a wanted_objects list containing ALL objects.
 
+	var/smartmover = FALSE // makes the mob use expensive pathfinding to get to its target
+	var/datum/mobmover/mymover // the mymover we use for pathfinding
+
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
@@ -137,6 +140,7 @@
 		smoke.attach(src)
 	if(mapload && despawns_when_lonely)
 		unbirth_self(TRUE)
+	mymover = new(src)
 
 /mob/living/simple_animal/hostile/Destroy()
 	unset_origin()
@@ -146,14 +150,15 @@
 	GiveTarget(null)
 	if(smoke)
 		QDEL_NULL(smoke)
+	QDEL_NULL(mymover)
 	return ..()
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
-		walk(src, 0)
+		kpagu(src, 0)
 
 	if(!(. = ..()))
-		walk(src, 0) //stops walking
+		kpagu(src, 0) //stops walking
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
@@ -213,13 +218,7 @@
 		return
 	var/atom/my_target = get_target()
 	if(dodging && my_target && in_melee && isturf(loc) && isturf(my_target.loc))
-		var/datum/cb = CALLBACK(src,.proc/sidestep)
-		if(sidestep_per_cycle > 1) //For more than one just spread them equally - this could changed to some sensible distribution later
-			var/sidestep_delay = SSnpcpool.wait / sidestep_per_cycle
-			for(var/i in 1 to sidestep_per_cycle)
-				addtimer(cb, (i - 1)*sidestep_delay)
-		else //Otherwise randomize it to make the players guessing.
-			addtimer(cb,rand(1,SSnpcpool.wait))
+		sidestep(TRUE)
 
 /mob/living/simple_animal/hostile/toggle_ai(togglestatus)
 	. = ..()
@@ -263,25 +262,6 @@
 		lonely_timer_id = null	
 	unqueue_unbirth()
 	. = ..()
-
-
-/mob/living/simple_animal/hostile/proc/sidestep()
-	var/atom/my_target = get_target()
-	if(!my_target || !isturf(my_target.loc) || !isturf(loc) || stat == DEAD)
-		return
-	var/target_dir = get_dir(src,my_target)
-
-	var/static/list/cardinal_sidestep_directions = list(-90,-45,0,45,90)
-	var/static/list/diagonal_sidestep_directions = list(-45,0,45)
-	var/chosen_dir = 0
-	if (target_dir & (target_dir - 1))
-		chosen_dir = pick(diagonal_sidestep_directions)
-	else
-		chosen_dir = pick(cardinal_sidestep_directions)
-	if(chosen_dir)
-		chosen_dir = turn(target_dir,chosen_dir)
-		Move(get_step(src,chosen_dir))
-		face_atom(my_target) //Looks better if they keep looking at you when dodging
 
 /mob/living/simple_animal/hostile/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
 	if (peaceful == TRUE)
@@ -503,12 +483,12 @@
 			if(!my_target.Adjacent(origin) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
 				OpenFire(my_target)
 		if(!Process_Spacemove()) //Drifting
-			walk(src,0)
+			kpagu(src,0)
 			return 1
 		if(retreat_distance != null && !winding_up_melee) //If we have a retreat distance and aren't winding up an attack, check if we need to run from our targette
 			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If targette's closer than our retreat distance, run
 				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-				walk_away(src,my_target,retreat_distance,move_to_delay)
+				retreat(retreat_distance,move_to_delay)
 			else
 				Goto(my_target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
 		else
@@ -543,14 +523,13 @@
 	return 0
 
 /mob/living/simple_animal/hostile/proc/Goto(targette, delay, minimum_distance)
+	if(!CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		return FALSE
 	var/atom/my_target = get_target()
 	if(my_target == targette)
 		approaching_target = TRUE
 	else
 		approaching_target = FALSE
-	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
-		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-		walk_to(src, my_target, minimum_distance, delay)
 	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
 		if(winding_up_melee)//Stay in melee range for the whole attack
 			minimum_distance = 1
@@ -558,6 +537,30 @@
 			minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
 	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
 		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+	if(smartmover)
+		return mymover.update_path(my_target, minimum_distance, delay)
+	walk_to(src, my_target, minimum_distance, delay)
+
+/mob/living/simple_animal/hostile/proc/kpagu(and_give_up)
+	walk(src, 0)
+	mymover.kill_path(and_give_up)
+
+/mob/living/simple_animal/hostile/proc/retreat(retreat_distance)
+	if(!smartmover)
+		walk_away(src,get_target(),retreat_distance,move_to_delay)
+		return
+	var/atom/truetarget = get_target()
+	if(!truetarget)
+		return
+	var/turf/gohere = get_turf(truetarget)
+	if(retreat_distance > 1)
+		var/direction = pick(GLOB.alldirs)
+		for(var/dists in 1 to retreat_distance)
+			gohere = get_step(gohere, direction)
+			if(!gohere)
+				return
+	Goto(gohere, move_to_delay, 1)
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -635,7 +638,7 @@
 	GiveTarget(null)
 	approaching_target = FALSE
 	in_melee = FALSE
-	walk(src, 0)
+	kpagu(src, 0)
 	LoseAggro()
 
 //////////////END HOSTILE MOB TARGETTING AND AGGRESSION////////////
@@ -756,18 +759,45 @@
 
 /mob/living/simple_animal/hostile/Move(atom/newloc, dir , step_x , step_y)
 	if(!winding_up_melee && dodging && approaching_target && prob(dodge_prob) && moving_diagonally == 0 && isturf(loc) && isturf(newloc))
-		return dodge(newloc,dir)
+		return sidestep(TRUE)
 	else
 		return ..()
 
-/mob/living/simple_animal/hostile/proc/dodge(moving_to,move_direction)
-	var/cdir = turn(move_direction,90)
-	var/ccdir = turn(move_direction,-90)
-//	var/next_step_dir = pick(cdir,ccdir) sworddoggirl is way too cute ~Fenny
+/// gunts the mob in a direction parallelish to where its headed or pointed
+/mob/living/simple_animal/hostile/proc/sidestep(is_dodge)
+	var/atom/my_target = get_target()
+	if(!my_target || !isturf(my_target.loc) || !isturf(loc) || stat == DEAD)
+		return
+	var/target_dir = get_dir(src,my_target)
+	var/dir_out
+	for(var/tries in 1 to 3)
+		var/direction = turn(target_dir, (45 * rand(1,2) * pick(1, -1)))
+		var/turf/there = get_step(src, direction)
+		if(there.Adjacent(get_turf(src), my_target, src))
+			dir_out = direction
+	if(is_dodge)
+		dodge(!isnull(dir_out))
+	if(!dir_out)
+		return // cant!
+	step(src, dir_out, move_to_delay)
+	face_atom(my_target) //Looks better if they keep looking at you when dodging
 
+	// var/static/list/cardinal_sidestep_directions = list(-90,-45,0,45,90)
+	// var/static/list/diagonal_sidestep_directions = list(-45,0,45)
+	// var/chosen_dir = 0
+	// if (target_dir & (target_dir - 1))
+	// 	chosen_dir = pick(diagonal_sidestep_directions)
+	// else
+	// 	chosen_dir = pick(cardinal_sidestep_directions)
+	// if(chosen_dir)
+	// 	chosen_dir = turn(target_dir,chosen_dir)
+
+/mob/living/simple_animal/hostile/proc/dodge(could) // actual movement is handled in sidestep
+	// var/cdir = turn(move_direction,90)
+	// var/ccdir = turn(move_direction,-90)
+	// var/next_step_dir = pick(cdir,ccdir) sworddoggirl is way too cute ~Fenny
 	dodging = FALSE
-	. = Move(get_step(loc,pick(cdir,ccdir)))
-	if(!.) //Can't dodge there!
+	if(could) //Can't dodge there!
 		visible_message("<span class='notice'>[src] dodges!</span>")
 		playsound(loc, 'sound/effects/rustle3.ogg', 50, 1, -1)
 	else
@@ -1058,3 +1088,155 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	minimum_distance = rand(0, 10)
 	LoseTarget()
 	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))
+
+/// Worked for guardbuddies, should work for dickclaws
+/datum/mobmover
+	var/mob/living/simple_animal/parent
+	var/datum/weakref/targetcache
+	var/move_delay = 1
+	var/min_distance = 1
+	var/max_distance = 100
+	var/list/avoid_these = list()
+	var/last_move = 0
+	var/last_path_update = 0
+	var/list/path = list()
+	var/frustration = 0
+	var/prune_avoids_timer = 0
+
+/datum/mobmover/New(mob/living/simple_animal/parent)
+	if(!istype(parent))
+		return qdel(src)
+	src.parent = parent
+
+/datum/mobmover/Destroy(force, ...)
+	parent = null
+	targetcache = null
+	avoid_these.Cut()
+	path.Cut()
+	. = ..()
+
+/datum/mobmover/proc/update_path(atom/target, min_dist = 1, speed = 4, force, turf/avoidme)
+	if(!istype(target) || !istype(parent) || QDELETED(parent))
+		return kill_path(FALSE)
+	if(!isturf(get_turf(target)) || !isturf(get_turf(parent)))
+		return kill_path(FALSE)
+	min_distance = min_dist
+	move_delay = speed
+	targetcache = WEAKREF(target)
+	if(!force && !COOLDOWN_FINISHED(src, last_path_update))
+		if(LAZYLEN(path)) // still moving
+			return
+		walk_to(parent, target, min_dist, speed)
+		return kill_path(FALSE)
+	var/distance = get_dist(parent, target)
+	if(distance > max_distance)
+		return kill_path(FALSE) // too far away!
+	if(walking_simulator(target)) // if we can just walk to em, do it
+		walk_to(parent, target, min_dist, speed)
+		return kill_path(FALSE) // lets do everything we can to not pathfind
+	walk(parent, 0) // stop any byond movement
+	var/turf/gohere = get_turf(target)
+	if(min_dist > 1)
+		var/direction = pick(GLOB.alldirs)
+		for(var/dists in 1 to min_dist)
+			gohere = get_step(gohere, direction)
+	if(gohere == get_turf(parent))
+		return kill_path(FALSE) // already there!
+	/// now, make the path
+	var/list/avoids = list()
+	for(var/nono in avoid_these)
+		avoids |= coords2turf(nono)
+	var/list/coolpath = get_path_to(parent, gohere, 100, 1, exclude = avoids)
+	if(LAZYLEN(coolpath))
+		path = coolpath
+		if(SSmobs.debug_mob_pathfinding_flashers)
+			disco_vomit_nightmare()
+		START_PROCESSING(SSpathfinder, src)
+		return TRUE
+	walk_to(parent, target, min_dist, speed) // '_____________'
+
+/datum/mobmover/process()
+	if(LAZYLEN(avoid_these) && COOLDOWN_FINISHED(src, prune_avoids_timer))
+		avoid_these.Cut()
+		COOLDOWN_START(src, prune_avoids_timer, 5 SECONDS)
+	if(!LAZYLEN(path))
+		return
+	if(!parent || QDELETED(parent))
+		return qdel(src)
+	if(!COOLDOWN_FINISHED(src, last_move))
+		return
+	take_a_step()
+
+/datum/mobmover/proc/take_a_step()
+	if(!LAZYLEN(path))
+		return
+	var/turf/was_here = get_turf(parent)
+	var/turf/next_step = LAZYACCESS(path, 1)
+	if(!isturf(next_step))
+		return
+	if(next_step == was_here)
+		path.Cut(1,2)
+		if(!LAZYLEN(path))
+			return // okay then
+		next_step = LAZYACCESS(path, 1)
+	COOLDOWN_START(src, last_move, move_delay)
+	step_to(parent, next_step, move_delay)
+	var/turf/now_here = get_turf(parent)
+	if(was_here == now_here) /// blocked, or something
+		frustration++
+		step_rand(parent, move_delay)
+		avoid_these[atom2coords(next_step)] = TRUE // typecache!
+		if(frustration > 5)
+			kill_path(FALSE) // give up, but dont fire anyone
+			return update_path(GET_WEAKREF(targetcache), min_distance, move_delay, TRUE) // try again
+		if(frustration > 10)
+			return kill_path(TRUE) // thats it, everyone's fired
+		return
+	/// we made it! or something!
+	return TRUE
+
+/// simulates walking to a turf, to see if we can just hoof it there
+/// Doesnt support quarter steps, and can't be used for parallel universes
+/datum/mobmover/proc/walking_simulator(atom/target)
+	var/turf/here = get_turf(parent)
+	var/turf/there = get_turf(target)
+	for(var/i in 1 to 20)
+		var/turf/babystep = get_step_towards(here, target)
+		if(babystep == there)
+			return TRUE
+		if(here.LinkBlockedWithAccess(babystep, parent, parent.access_card))
+			return FALSE
+		here = babystep // keep going
+
+
+/// Welcome back, KPAGU, killer of many guardbuddy pathfinding procs
+/datum/mobmover/proc/kill_path(and_give_up)
+	path.Cut()
+	STOP_PROCESSING(SSpathfinder, src)
+	if(and_give_up)
+		walk(parent, 0)
+
+/datum/mobmover/proc/disco_vomit_nightmare()
+	var/col = randomColor()
+	var/offset_x = rand(-8, 8)
+	var/offset_y = rand(-8, 8)
+	for(var/i in 1 to LAZYLEN(path))
+		var/turf/this = LAZYACCESS(path, i)
+		var/turf/next = LAZYACCESS(path, i+1)
+		if(!next)
+			break // all done!
+		new /obj/effect/temp_visual/pathflasher(this, next, col, offset_x, offset_y)
+
+/obj/effect/temp_visual/pathflasher
+	name = "love heart"
+	icon = 'icons/mob/pathfinder.dmi'
+	icon_state = "arrow"
+	duration = 3 SECONDS
+
+/obj/effect/temp_visual/pathflasher/Initialize(mapload, turf/there, col, offset_x, offset_y)
+	. = ..()
+	color = col
+	var/pointdir = get_dir(get_turf(src), there)
+	dir = pointdir
+	pixel_x = offset_x
+	pixel_y = offset_y

@@ -40,7 +40,7 @@
  * Note that this can only be used inside the [datum/pathfind][pathfind datum] since it uses variables from said datum
  * If you really want to optimize things, optimize this, cuz this gets called a lot
  */
-#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !(simulated_only && SSpathfinder.space_type_cache[next.type]) && !cur_turf.LinkBlockedWithAccess(next,caller, id) && (next != avoid))
+#define CAN_STEP(cur_turf, next) (next && !next.density && cur_turf.Adjacent(next) && !cur_turf.LinkBlockedWithAccess(next,caller, id) && !(next in avoid))
 /// Another helper macro for JPS, for telling when a node has forced neighbors that need expanding
 #define STEP_NOT_HERE_BUT_THERE(cur_turf, dirA, dirB) ((!CAN_STEP(cur_turf, get_step(cur_turf, dirA)) && CAN_STEP(cur_turf, get_step(cur_turf, dirB))))
 
@@ -115,7 +115,7 @@
 	/// Space is big and empty, if this is TRUE then we ignore pathing through unsimulated tiles
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
-	var/turf/avoid
+	var/list/avoid = list()
 
 /datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid)
 	src.caller = caller
@@ -126,6 +126,7 @@
 	src.max_distance = max_distance
 	src.mintargetdist = mintargetdist
 	src.simulated_only = simulated_only
+	listify(avoid)
 	src.avoid = avoid
 
 /// The proc you use to run the search, returns FALSE if it's invalid, an empty list if no path could be found, or a valid path to the target
@@ -327,8 +328,15 @@
  * * ID: An ID card that decides if we can gain access to doors that would otherwise block a turf
  * * simulated_only: Do we only worry about turfs with simulated atmos, most notably things that aren't space?
 */
-/turf/proc/LinkBlockedWithAccess(turf/destination_turf, caller, ID)
+/turf/proc/LinkBlockedWithAccess(turf/destination_turf, atom/movable/caller, ID)
+	if(!destination_turf || destination_turf == src)
+		return FALSE
+	if(destination_turf.density)
+		return TRUE
 	var/actual_dir = get_dir(src, destination_turf)
+	if(istype(caller))
+		if(!CHECK_BITFIELD(caller.movement_type, FLYING|FLOATING) && (destination_turf.type in GLOB.avoid_these_turfs)) // hi lemme just sprint into lava real quick
+			return TRUE
 
 	for(var/obj/structure/window/iter_window in src)
 		if(!iter_window.CanAStarPass(ID, actual_dir))

@@ -1,10 +1,34 @@
 SUBSYSTEM_DEF(pathfinder)
 	name = "Pathfinder"
 	init_order = INIT_ORDER_PATH
-	flags = SS_NO_FIRE
+	wait = 1 // quick and dirty
 	var/datum/flowcache/mobs
 	var/datum/flowcache/circuits
 	var/static/space_type_cache
+	var/stat_tag = "P" //Used for logging
+	var/list/processing = list()
+	var/list/currentrun = list()
+
+/datum/controller/subsystem/pathfinder/stat_entry(msg)
+	msg = "[stat_tag]:[length(processing)]"
+	return ..()
+
+/datum/controller/subsystem/pathfinder/fire(resumed = 0)
+	if (!resumed)
+		currentrun = processing.Copy()
+	//cache for sanic speed (lists are references anyways)
+	var/list/current_run = currentrun
+
+	while(current_run.len)
+		var/datum/thing = current_run[current_run.len]
+		current_run.len--
+		if(QDELETED(thing))
+			processing -= thing
+		else if(thing.process(wait) == PROCESS_KILL)
+			// fully stop so that a future START_PROCESSING will work
+			STOP_PROCESSING(src, thing)
+		if (MC_TICK_CHECK)
+			return
 
 /datum/controller/subsystem/pathfinder/Initialize()
 	space_type_cache = typecacheof(/turf/open/space)
