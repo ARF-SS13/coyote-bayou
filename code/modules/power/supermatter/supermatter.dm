@@ -1168,7 +1168,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			target.zap_act(zap_str, zap_flags, list())
 			zap_str /= 2 // worse then living things, better then coils
 		//This gotdamn variable is a boomer and keeps giving me problems
-		var/turf/T = get_turf(target)
+	//	var/turf/T = get_turf(target)
 		var/pressure = 1
 	//	if(T && T.return_air())
 	//		pressure = max(1,T.return_air().return_pressure())
