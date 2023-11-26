@@ -19,20 +19,14 @@
 	var/broken = 0
 	var/burnt = 0
 	var/floor_tile = null //tile that this floor drops
-	var/list/broken_states
-	var/list/burnt_states
+	var/global_lookup = "generic"
 
 	tiled_dirt = FALSE
 
 /turf/open/floor/Initialize(mapload)
-	if (!broken_states)
-		broken_states = typelist("broken_states", list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5"))
-	else
-		broken_states = typelist("broken_states", broken_states)
-	burnt_states = typelist("burnt_states", burnt_states)
-	if(!broken && broken_states && (icon_state in broken_states))
+	if(!broken && GLOB.broken_floor_states[global_lookup] && (icon_state in GLOB.broken_floor_states[global_lookup]))
 		broken = TRUE
-	if(!burnt && burnt_states && (icon_state in burnt_states))
+	if(!burnt && GLOB.burnt_floor_states[global_lookup] && (icon_state in GLOB.burnt_floor_states[global_lookup]))
 		burnt = TRUE
 	. = ..()
 	//This is so damaged or burnt tiles or platings don't get remembered as the default tile
@@ -124,16 +118,16 @@
 /turf/open/floor/proc/break_tile()
 	if(broken)
 		return
-	icon_state = pick(broken_states)
+	icon_state = pick(GLOB.broken_floor_states[global_lookup])
 	broken = 1
 
 /turf/open/floor/burn_tile()
 	if(broken || burnt)
 		return
-	if(burnt_states.len)
-		icon_state = pick(burnt_states)
+	if(GLOB.burnt_floor_states[global_lookup] && GLOB.burnt_floor_states[global_lookup].len)
+		icon_state = pick(GLOB.burnt_floor_states[global_lookup])
 	else
-		icon_state = pick(broken_states)
+		icon_state = pick(GLOB.broken_floor_states[global_lookup])
 	burnt = 1
 
 /turf/open/floor/proc/make_plating()

@@ -16,14 +16,14 @@
 	icon = 'icons/fallout/turfs/ground.dmi'
 	floor_tile = /obj/item/stack/tile/wood
 	icon_plating = "housebase"
+	global_lookup = "housewood"
 //	step_sounds = list("human" = "woodfootsteps")
-	broken_states = list("housewood1-broken", "housewood2-broken", "housewood3-broken", "housewood4-broken")
 
 /turf/open/floor/f13/wood/New()
 	..()
 	if(prob(5))
 		broken = 1
-		icon_state = pick(broken_states)
+		icon_state = pick(GLOB.broken_floor_states["housewood"])
 	else
 		icon_state = "housewood[rand(1,4)]"
 

@@ -16,7 +16,7 @@
 	icon_state = "common1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("common-broken1","common-broken2","common-broken3","common-broken4","common-broken5","common-broken6",)
+	global_lookup = "common"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -34,7 +34,7 @@
 	icon_state = "common_light1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("common_light-broken1","common_light-broken2","common_light-broken3","common_light-broken4","common_light-broken5","common_light-broken6",)
+	global_lookup = "common_light"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -52,7 +52,7 @@
 	icon_state = "common_dark1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("common_dark-broken1","common_dark-broken2","common_dark-broken3","common_dark-broken4","common_dark-broken5","common_dark-broken6",)
+	global_lookup = "common_dark"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -65,14 +65,13 @@
 			icon_state = "common_dark[rand(1,3)]"
 
 
-
 /turf/open/floor/wood_worn
 	desc = "Wood cast in a sturdy standard pattern."
 	icon = 'modular_sunset/icons/turfs/wood_floor.dmi'
 	icon_state = "worn1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("worn-broken1","worn-broken2","worn-broken3","worn-broken4","worn-broken5","worn-broken6",)
+	global_lookup = "worn"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -90,7 +89,7 @@
 	icon_state = "worn_light1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("worn_light-broken1","worn_light-broken2","worn_light-broken3","worn_light-broken4","worn_light-broken5","worn_light-broken6",)
+	global_lookup = "worn_light"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -108,7 +107,7 @@
 	icon_state = "worn_dark1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("worn_dark-broken1","worn_dark-broken2","worn_dark-broken3","worn_dark-broken4","worn_dark-broken5","worn_dark-broken6",)
+	global_lookup = "worn_dark"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -121,14 +120,13 @@
 			icon_state = "worn_dark[rand(1,4)]"
 
 
-
 /turf/open/floor/wood_fancy
 	desc = "Wood cast in a fancy angled pattern."
 	icon = 'modular_sunset/icons/turfs/wood_floor.dmi'
 	icon_state = "fancy1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("fancy-broken1","fancy-broken2","fancy-broken3","fancy-broken4","fancy-broken5","fancy-broken6",)
+	global_lookup = "fancy"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -146,7 +144,7 @@
 	icon_state = "fancy_light1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("fancy_light-broken1","fancy_light-broken2","fancy_light-broken3","fancy_light-broken4","fancy_light-broken5","fancy_light-broken6",)
+	global_lookup = "fancy_light"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -165,7 +163,7 @@
 	icon_state = "fancy_dark1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("fancy_dark-broken1","fancy_dark-broken2","fancy_dark-broken3","fancy_dark-broken4","fancy_dark-broken5","fancy_dark-broken6",)
+	global_lookup = "fancy_dark"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -179,14 +177,13 @@
 
 
 
-
 /turf/open/floor/wood_wide
 	desc = "Wood cast in a sturdy standard pattern."
 	icon = 'modular_sunset/icons/turfs/wood_floor.dmi'
 	icon_state = "wide1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("wide-broken1","wide-broken2","wide-broken3","wide-broken4","wide-broken5","wide-broken6",)
+	global_lookup = "wide"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -204,7 +201,7 @@
 	icon_state = "wide_light1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("wide_light-broken1","wide_light-broken2","wide_light-broken3","wide_light-broken4","wide_light-broken5","wide_light-broken6",)
+	global_lookup = "wide_light"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -222,7 +219,7 @@
 	icon_state = "wide_dark1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("wide_dark-broken1","wide_dark-broken2","wide_dark-broken3","wide_dark-broken4","wide_dark-broken5","wide_dark-broken6",)
+	global_lookup = "wide_dark"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -235,14 +232,13 @@
 			icon_state = "wide_dark[rand(1,3)]"
 
 
-
 /turf/open/floor/wood_mosaic
 	desc = "Wood cast in a sturdy standard pattern."
 	icon = 'modular_sunset/icons/turfs/wood_floor.dmi'
 	icon_state = "mosaic1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("mosaic-broken1","mosaic-broken2","mosaic-broken3","mosaic-broken4","mosaic-broken5","mosaic-broken6",)
+	global_lookup = "mosaic"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -260,7 +256,7 @@
 	icon_state = "mosaic_light1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("mosaic_light-broken1","mosaic_light-broken2","mosaic_light-broken3","mosaic_light-broken4","mosaic_light-broken5","mosaic_light-broken6",)
+	global_lookup = "mosaic_light"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -278,7 +274,7 @@
 	icon_state = "mosaic_dark1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("mosaic_dark-broken1","mosaic_dark-broken2","mosaic_dark-broken3","mosaic_dark-broken4","mosaic_dark-broken5","mosaic_dark-broken6",)
+	global_lookup = "mosaic_dark"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
@@ -344,13 +340,12 @@
 
 
 
-
 /turf/open/floor/grass
 	name = "grass patch"
 	desc = "You can't tell if this is real grass or just cheap plastic imitation."
 	icon_state = "grass"
 	floor_tile = /obj/item/stack/tile/grass
-	broken_states = list("sand")
+	global_lookup = "grass"
 	flags_1 = NONE
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_GRASS
@@ -490,7 +485,7 @@
 	icon = 'icons/turf/floors/carpet.dmi'
 	icon_state = "carpet"
 	floor_tile = /obj/item/stack/tile/carpet
-	broken_states = list("damaged")
+	global_lookup = "carpet"
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/turf/open/floor/carpet, /turf/open/floor/carpet/airless)
 	flags_1 = NONE
@@ -666,7 +661,7 @@
 	icon = 'icons/turf/space.dmi'
 	icon_state = "0"
 	floor_tile = /obj/item/stack/tile/fakespace
-	broken_states = list("damaged")
+	global_lookup = "fakespace"
 	plane = PLANE_SPACE
 	tiled_dirt = FALSE
 

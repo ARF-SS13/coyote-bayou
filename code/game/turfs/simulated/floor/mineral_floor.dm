@@ -16,8 +16,6 @@
 
 
 /turf/open/floor/mineral/Initialize()
-	if(!broken_states)
-		broken_states = list("[initial(icon_state)]_dam")
 	. = ..()
 	icons = typelist("icons", icons)
 
@@ -34,6 +32,7 @@
 /turf/open/floor/mineral/plasma
 	name = "plasma floor"
 	icon_state = "plasma"
+	global_lookup = "plasma"
 	floor_tile = /obj/item/stack/tile/mineral/plasma
 	icons = list("plasma","plasma_dam")
 
@@ -69,6 +68,7 @@
 /turf/open/floor/mineral/gold
 	name = "gold floor"
 	icon_state = "gold"
+	global_lookup = "gold"
 	floor_tile = /obj/item/stack/tile/mineral/gold
 	icons = list("gold","gold_dam")
 
@@ -77,6 +77,7 @@
 /turf/open/floor/mineral/silver
 	name = "silver floor"
 	icon_state = "silver"
+	global_lookup = "silver"
 	floor_tile = /obj/item/stack/tile/mineral/silver
 	icons = list("silver","silver_dam")
 
@@ -86,7 +87,7 @@
 	name = "shuttle floor"
 	icon_state = "titanium"
 	floor_tile = /obj/item/stack/tile/mineral/titanium
-	broken_states = list("titanium_dam1","titanium_dam2","titanium_dam3","titanium_dam4","titanium_dam5")
+	global_lookup = "titanium"
 
 /turf/open/floor/mineral/titanium/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -120,7 +121,7 @@
 	name = "shuttle floor"
 	icon_state = "plastitanium"
 	floor_tile = /obj/item/stack/tile/mineral/plastitanium
-	broken_states = list("plastitanium_dam1","plastitanium_dam2","plastitanium_dam3","plastitanium_dam4","plastitanium_dam5")
+	global_lookup = "plastitanium"
 
 /turf/open/floor/mineral/plastitanium/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -139,6 +140,7 @@
 /turf/open/floor/mineral/diamond
 	name = "diamond floor"
 	icon_state = "diamond"
+	global_lookup = "diamond"
 	floor_tile = /obj/item/stack/tile/mineral/diamond
 	icons = list("diamond","diamond_dam")
 
@@ -150,6 +152,7 @@
 	icon_state = "uranium"
 	floor_tile = /obj/item/stack/tile/mineral/uranium
 	icons = list("uranium","uranium_dam")
+	global_lookup = "uranium"
 	var/last_event = 0
 	var/active = null
 

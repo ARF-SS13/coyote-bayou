@@ -1,10 +1,10 @@
-// OLD TITANIUM (titanium floor tiles before PR #50454)
+// OLD TITANIUM (titanium floor tiles before PR #50454)S
 /turf/open/floor/mineral/titanium/tiled
 	name = "titanium tile"
 	icon = 'modular_sand/icons/turf/floors.dmi'
 	icon_state = "titanium_tiled"
 	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled
-	broken_states = list("titanium_dam1_old","titanium_dam2_old","titanium_dam3_old","titanium_dam4_old","titanium_dam5_old")
+	global_lookup = "titanium_old"
 
 /turf/open/floor/mineral/titanium/tiled/airless
 	initial_gas_mix = AIRLESS_ATMOS

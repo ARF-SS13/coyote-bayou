@@ -12,6 +12,7 @@
 	icon_state = "plating"
 	intact = FALSE
 	baseturfs = /turf/open/indestructible/ground/outside/desert
+	global_lookup = "plating"
 	footstep = FOOTSTEP_PLATING
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
@@ -30,10 +31,6 @@
 		. += span_notice("You might be able to build ontop of it with some <i>tiles</i>...")
 
 /turf/open/floor/plating/Initialize()
-	if (!broken_states)
-		broken_states = list("platingdmg1", "platingdmg2", "platingdmg3")
-	if (!burnt_states)
-		burnt_states = list("panelscorched")
 	. = ..()
 	if(!attachment_holes || (!broken && !burnt))
 		icon_plating = icon_state
