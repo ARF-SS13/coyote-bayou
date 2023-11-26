@@ -358,7 +358,7 @@
 	if(!istype(deceasedturf,/turf/open))
 		return
 
-	// var/turf/open/miasma_turf = deceasedturf
+	var/turf/open/miasma_turf = deceasedturf
 
 	if (miasma_turf.air)
 		var/static/datum/gas_mixture/stank
