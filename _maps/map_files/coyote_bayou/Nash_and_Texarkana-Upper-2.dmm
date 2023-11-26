@@ -1896,6 +1896,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"jF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "jJ" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -8065,6 +8077,17 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"PE" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "PH" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -48199,7 +48222,7 @@ NV
 DI
 DI
 Li
-DI
+PE
 DI
 DI
 DI
@@ -48710,7 +48733,7 @@ dj
 DI
 DI
 dj
-DI
+PE
 DI
 Li
 DI
@@ -48961,7 +48984,7 @@ hm
 hm
 CU
 DI
-dj
+jF
 dj
 KI
 dj
@@ -50004,7 +50027,7 @@ DI
 sx
 KI
 Hj
-DI
+PE
 DI
 wJ
 hm
@@ -50258,7 +50281,7 @@ DI
 ac
 zK
 Go
-DI
+PE
 DI
 KI
 DI
@@ -51022,7 +51045,7 @@ hm
 hm
 CD
 DI
-DI
+PE
 Yc
 dj
 DI
@@ -51032,7 +51055,7 @@ DI
 DI
 dj
 KI
-DI
+PE
 DI
 wJ
 hm
@@ -51535,7 +51558,7 @@ hm
 hm
 hm
 CU
-DI
+PE
 DI
 dj
 kn
@@ -52049,7 +52072,7 @@ hm
 hm
 hm
 CU
-DI
+PE
 NV
 KI
 Dx
@@ -52061,7 +52084,7 @@ Ok
 dj
 DI
 sx
-DI
+PE
 DI
 if
 hm
@@ -52564,11 +52587,11 @@ hm
 hm
 CU
 KI
-dj
+jF
 DI
 dj
 zz
-DI
+PE
 Ok
 dj
 dj
@@ -53338,7 +53361,7 @@ DI
 yz
 dj
 IA
-DI
+PE
 dj
 Xj
 KI
@@ -54878,7 +54901,7 @@ DI
 DI
 DI
 DI
-DI
+PE
 DI
 DI
 NV
@@ -55386,7 +55409,7 @@ hm
 hm
 CU
 KI
-DI
+PE
 dj
 dj
 dj
@@ -56679,7 +56702,7 @@ dj
 dj
 dj
 DI
-dj
+jF
 dj
 DI
 DI
