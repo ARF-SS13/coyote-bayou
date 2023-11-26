@@ -214,6 +214,7 @@ SUBSYSTEM_DEF(listbank)
 	var/all_datums = 0
 	for(var/datum/thing)
 		all_datums++
+	all_datums += LAZYLEN(world.contents)
 	var/portion = 1
 	var/portion_amount = 0.01
 	var/next_milestone = round(all_datums * (portion * portion_amount))
@@ -223,19 +224,20 @@ SUBSYSTEM_DEF(listbank)
 	var/atoms_did = 0
 	var/list/rates = list()
 	for(var/datum/A) // terrifying I know
+		var/datum/list_tally/LT = LAZYACCESS(tally, "[A.type]")
+		if(!LT)
+			LT = new /datum/list_tally(A)
+			tally["[A.type]"] = LT
+		LT.add_instance()
 		for(var/V in A.vars)
 			if(!islist(A.vars[V]))
 				continue
-			var/datum/list_tally/LT = LAZYACCESS(tally, "[A.type]")
-			if(!LT)
-				LT = new /datum/list_tally(A)
-				tally["[A.type]"] = LT
 			LT.add_list(A.vars[V])
 		atoms_did++
 		this_batch++
-		CHECK_TICK
 		if(atoms_did % next_milestone != 0)
 			continue
+		CHECK_TICK
 		// all_datums = LAZYLEN(world.contents)
 		var/batch_end = REALTIMEOFDAY
 		var/batch_time = ((batch_end - batch_start) * 0.1)
@@ -249,6 +251,45 @@ SUBSYSTEM_DEF(listbank)
 		var/current_time = REALTIMEOFDAY - start_timery
 		var/batch_time_left = (current_time / atoms_did) * (all_datums - atoms_did)
 		to_chat(world, span_boldannounce("Catalogue'd [shorten_number(atoms_did, 2)]/[shorten_number(all_datums, 2)] ([round(batch_percent,portion_amount*100)]%) datums in [DisplayTimeText(current_time)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+	var/avrate = 0
+	for(var/r in rates)
+		avrate += r
+	avrate /= rates.len
+	to_chat(world, span_boldannounce("~Catalogued [shorten_number(atoms_did, 2)] datums! Average rate: [shorten_number(avrate, 1)]/sec.~"))
+	to_chat(world, span_boldannounce("~Catalogueing atoms!~"))
+	for(var/atom/A in world) // duplicated, but whatever
+		var/datum/list_tally/LT = LAZYACCESS(tally, "[A.type]")
+		if(!LT)
+			LT = new /datum/list_tally(A)
+			tally["[A.type]"] = LT
+		LT.add_instance()
+		for(var/V in A.vars)
+			if(!islist(A.vars[V]))
+				continue
+			LT.add_list(A.vars[V])
+		atoms_did++
+		this_batch++
+		if(atoms_did % next_milestone != 0)
+			continue
+		CHECK_TICK
+		// all_datums = LAZYLEN(world.contents)
+		var/batch_end = REALTIMEOFDAY
+		var/batch_time = ((batch_end - batch_start) * 0.1)
+		var/batch_rate = (this_batch / batch_time)
+		var/batch_percent = (atoms_did / all_datums) * 100
+		portion++
+		next_milestone = round(all_datums * (portion * portion_amount))
+		rates += batch_rate
+		batch_start = REALTIMEOFDAY
+		this_batch = 0
+		var/current_time = REALTIMEOFDAY - start_timery
+		var/batch_time_left = (current_time / atoms_did) * (all_datums - atoms_did)
+		to_chat(world, span_boldannounce("Catalogue'd [shorten_number(atoms_did, 2)]/[shorten_number(all_datums, 2)] ([round(batch_percent,portion_amount*100)]%) datums in [DisplayTimeText(current_time)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+	avrate = 0
+	for(var/r in rates)
+		avrate += r
+	avrate /= rates.len
+	to_chat(world, span_boldannounce("~Catalogued [shorten_number(atoms_did, 2)] atoms! Average rate: [shorten_number(avrate, 1)]/sec.~"))
 	to_chat(world, span_boldannounce("All done! Jut kidding, time to sort and cull."))
 	for(var/entry in tally)
 		var/datum/list_tally/LT = LAZYACCESS(tally, entry)
@@ -272,7 +313,7 @@ SUBSYSTEM_DEF(listbank)
 		var/datum/list_tally/LT = LAZYACCESS(rawtallies, i)
 		if(!LT)
 			break
-		var/msg = "[i]: [LT.thingpath] - [LT.num_populated] populated, [LT.num_empty] empty, [LT.num_entries] entries, [LT.total] total"
+		var/msg = "[i]: [LT.thingpath] - [LT.num_instances] instances, [LT.num_populated] populated, [LT.num_empty] empty, [LT.num_entries] entries, [LT.total] total"
 		tallies += msg
 	to_chat(world, span_boldannounce("Top [num2get] populated lists:"))
 	for(var/msg in tallies)
@@ -280,10 +321,11 @@ SUBSYSTEM_DEF(listbank)
 	to_chat(world, span_boldannounce("All done! =3"))
 
 /proc/cmp_list_tally_dec(datum/list_tally/A, datum/list_tally/B)
-	return A.total - B.total
+	return B.total - A.total 
 
 /datum/list_tally
 	var/thingpath
+	var/num_instances = 0
 	var/num_populated = 0
 	var/num_empty = 0
 	var/num_entries = 0
@@ -291,6 +333,9 @@ SUBSYSTEM_DEF(listbank)
 
 /datum/list_tally/New(datum/thing)
 	thingpath = thing.type
+	
+/datum/list_tally/proc/add_instance()
+	num_instances++
 
 /datum/list_tally/proc/add_list(list/mylist)
 	if(!islist(mylist))
