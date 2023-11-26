@@ -62,12 +62,6 @@
 	var/limb_integrity = 0
 	// How many zones (body parts, not precise) we have disabled so far, for naming purposes
 	var/zones_disabled
-	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/armor_list = list()
-	///These are armor values that protect the wearer from the environment, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/environmental_list = list()
-	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
-	var/list/durability_list = list()
 
 	/// Required tool behavior to salvage the item
 	var/salvage_tool_behavior = TOOL_SAW
@@ -280,42 +274,9 @@
 			how_cool_are_your_threads += "Adding or removing items from [src] makes no noise.\n"
 		how_cool_are_your_threads += "</span>"
 		. += how_cool_are_your_threads.Join()
-
-	if(LAZYLEN(armor_list))
-		armor_list.Cut()
-	if(armor.melee)
-		armor_list += list("MELEE" = armor.melee)
-	if(armor.bullet)
-		armor_list += list("BULLET" = armor.bullet)
-	if(armor.laser)
-		armor_list += list("LASER" = armor.laser)
-	if(armor.energy)
-		armor_list += list("ENERGY" = armor.energy)
-	if(armor.wound)
-		armor_list += list("WOUND" = armor.wound)
-	if(armor.damage_threshold)
-		armor_list += list("THRESHOLD" = armor.damage_threshold)
-
-	if(LAZYLEN(environmental_list))
-		environmental_list.Cut()
-	if(armor.bio)
-		environmental_list += list("TOXIN" = armor.bio)
-	if(armor.bomb)
-		environmental_list += list("EXPLOSIVE" = armor.bomb)
-	if(armor.rad)
-		environmental_list += list("RADIATION" = armor.rad)
-	if(armor.magic)
-		environmental_list += list("MAGIC" = armor.magic)
-
-	if(LAZYLEN(durability_list))
-		durability_list.Cut()
-	if(armor.fire)
-		durability_list += list("FIRE" = armor.fire)
-	if(armor.acid)
-		durability_list += list("ACID" = armor.acid)
-
-	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
+	if(armor)
+		if(armor.melee || armor.bullet || armor.laser || armor.energy || armor.wound || armor.damage_threshold || armor.bio || armor.bomb || armor.rad || armor.magic || armor.fire || armor.acid) // i can see my house from here
+			. += span_notice("It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.")
 	if(salvage_tool_behavior && LAZYLEN(salvage_loot))
 		. += span_notice("It can be recycled for materials using [salvage_tool_behavior].")
 
@@ -323,6 +284,39 @@
 	. = ..()
 
 	if(href_list["list_armor"])
+		///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/armor_list = list()
+		///These are armor values that protect the wearer from the environment, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/environmental_list = list()
+		///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+		var/list/durability_list = list()
+		if(armor.melee)
+			armor_list += list("MELEE" = armor.melee)
+		if(armor.bullet)
+			armor_list += list("BULLET" = armor.bullet)
+		if(armor.laser)
+			armor_list += list("LASER" = armor.laser)
+		if(armor.energy)
+			armor_list += list("ENERGY" = armor.energy)
+		if(armor.wound)
+			armor_list += list("WOUND" = armor.wound)
+		if(armor.damage_threshold)
+			armor_list += list("THRESHOLD" = armor.damage_threshold)
+
+		if(armor.bio)
+			environmental_list += list("TOXIN" = armor.bio)
+		if(armor.bomb)
+			environmental_list += list("EXPLOSIVE" = armor.bomb)
+		if(armor.rad)
+			environmental_list += list("RADIATION" = armor.rad)
+		if(armor.magic)
+			environmental_list += list("MAGIC" = armor.magic)
+
+		if(armor.fire)
+			durability_list += list("FIRE" = armor.fire)
+		if(armor.acid)
+			durability_list += list("ACID" = armor.acid)
+
 		var/list/readout = list("<span class='notice'><u><b>PROTECTION CLASSES</u></b>")
 		if(LAZYLEN(armor_list))
 			readout += "\n<b>ARMOR</b>"
