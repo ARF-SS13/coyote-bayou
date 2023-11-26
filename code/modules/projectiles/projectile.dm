@@ -373,10 +373,11 @@
 	//-->Pacifism Lesser Trait, most important section of it
 	if(iscarbon(target))
 		if(iscarbon(firer))  //is our firer a carbon that can have traits?
-			var/mob/living/carbon/C = target
-			if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
-				trait_pacifism_lesser_consequences(firer, TRUE)
-				visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
+			if(!nodamage)  //if the projectile is harmless by definition then there's no need for the trait to even trigger
+				var/mob/living/carbon/C = target
+				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+					trait_pacifism_lesser_consequences(firer, TRUE)
+					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
 				return FALSE
 	//<--
 	return TRUE
