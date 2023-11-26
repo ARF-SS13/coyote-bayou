@@ -374,3 +374,32 @@
 		'modular_coyote/sound/lewd/sexslide10.wav',
 	) // frumf, frumf
 	user_lust_mult = 4 
+
+//////////////
+//	Oral Fixation Climax///
+//////////////
+/datum/interaction/lewd/partner/mutual/borntoplease
+	description = "Self/Climax - Climax from giving oral sex."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {softly, warmly, gaspingly} {climaxes, orgasms, cums}, from {servicing, working over, pleasing} XT_NAME with their mouth."
+	)
+	disarm_messages = list(
+		"XU_NAME {eagerly, needily, happily} {climaxes, orgasms, cums}, from {servicing, working over, pleasing} XT_NAME with their mouth."
+	)
+	grab_messages = list(
+		"XU_NAME {nosily, sloppily shakily} {climaxes, orgasms, cums}, from {servicing, working over, pleasing} XT_NAME with their mouth."
+	)
+	harm_messages = list(
+		"XU_NAME {climaxes, orgasms, cums} {aggressively, hotly, loudly}, from {servicing, working over, pleasing} XT_NAME with their mouth."
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+	) // frumf, frumf
+	user_lust_mult = 4 
