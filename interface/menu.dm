@@ -114,3 +114,16 @@ GLOBAL_LIST_EMPTY(menulist)
 /datum/verbs/menu/Icon/Scaling/verb/BL()
 	set name = "@.winset \"mapwindow.map.zoom-mode=blur\""
 	set desc = "Bilinear"
+
+/datum/verbs/menu/Icon/verb/FreeScaleMode()	//In theory, this should work. I'm unsure if the way SS13 is coded will throw a piss fit, but we'll find out.
+	set hidden=1
+	winset(src,"MainWindow.MainMap","is-default=false;is-visible=false")
+	winset(src,"FreeScaleWindow.ScaleMap","is-default=true;is-visible=true")
+	winset(src,"FreeScaleWindow","pos=0,0;size=544x544;is-visible=true")
+
+/datum/verbs/menu/Icon/verb/CloseFullMap() //Makes it so the pop-out is closeable.
+	set hidden=1
+	winset(src,"MainWindow.MainMap","is-default=true;is-visible=true")
+	winset(src,"FreeScaleWindow.ScaleMap","is-default=false;is-visible=false")
+	winset(src,"FreeScaleWindow","is-visible=false")
+
