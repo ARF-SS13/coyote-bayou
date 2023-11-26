@@ -18,8 +18,6 @@
 	var/bare_wound_bonus = 0
 
 	var/datum/armor/armor
-	/// Additional armor modifiers that are applied to the actual armor value
-	var/armor_tokens = list()
 	var/obj_integrity	//defaults to max_integrity
 	var/max_integrity = 500
 	var/super_advanced_technology = FALSE
@@ -354,15 +352,3 @@
 		return
 	if(!islist(armor))
 		return
-	if(length(armor_tokens) < 1)
-		return // all done!
-	
-	for(var/list/token in armor_tokens)
-		for(var/modifier in token)
-			switch(GLOB.armor_token_operation_legend[modifier])
-				if("MULT")
-					armor[modifier] = round(armor[modifier] * token[modifier], 1)
-				if("ADD")
-					armor[modifier] = max(armor[modifier] + token[modifier], 0)
-				else
-					continue

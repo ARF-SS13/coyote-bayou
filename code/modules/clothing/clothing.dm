@@ -54,7 +54,8 @@
 	//Add a "exclude" string to do the opposite, making it only only species listed that can't wear it.
 	//You append this to clothing objects
 
-
+	/// Additional armor modifiers that are applied to the actual armor value
+	var/armor_tokens = list()
 
 	// How much clothing damage has been dealt to each of the limbs of the clothing, assuming it covers more than one limb
 	var/list/damage_by_parts
@@ -80,6 +81,22 @@
 		actions_types += /datum/action/item_action/toggle_voice_box
 	if(ispath(pocket_storage_component_path))
 		LoadComponent(pocket_storage_component_path)
+
+/obj/item/clothing/setup_armor_values()
+	. = ..()
+
+	if(length(armor_tokens) < 1)
+		return // all done!
+	
+	for(var/list/token in armor_tokens)
+		for(var/modifier in token)
+			switch(GLOB.armor_token_operation_legend[modifier])
+				if("MULT")
+					armor[modifier] = round(armor[modifier] * token[modifier], 1)
+				if("ADD")
+					armor[modifier] = max(armor[modifier] + token[modifier], 0)
+				else
+					continue
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
