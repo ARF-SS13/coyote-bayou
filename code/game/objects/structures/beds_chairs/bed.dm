@@ -281,7 +281,7 @@
 	icon_state = "bedroll"
 	anchored = FALSE
 	resistance_flags = NONE
-	var/foldabletype = /obj/item/roller
+	var/foldabletype = /obj/item/roller/bedroll
 	use_directionals = FALSE
 
 /obj/item/roller/bedroll
