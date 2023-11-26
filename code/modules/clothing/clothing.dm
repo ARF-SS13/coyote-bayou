@@ -66,7 +66,7 @@
 	/// Required tool behavior to salvage the item
 	var/salvage_tool_behavior = TOOL_SAW
 	/// Items that are dropped on salvage; If it's empty - item can't salvaged
-	var/list/salvage_loot = list()
+	var/list/salvage_loot
 
 /obj/item/clothing/Initialize()
 	. = ..()
@@ -487,7 +487,7 @@ BLIND     // can't see anything
 
 /// The results of salvaging the clothing
 /obj/item/clothing/proc/drop_salvage()
-	if(!salvage_loot.len)
+	if(!LAZYLEN(salvage_loot))
 		return
 	var/atom/dropTurf = drop_location()
 	for(var/drop in salvage_loot)
