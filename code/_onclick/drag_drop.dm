@@ -98,7 +98,6 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 
 /client/MouseMove(object,location,control,params)
 	mouseParams = params
-	mouseLocation = location
 	mouseObject = object
 	mouseControlObject = control
 	if(mob)
@@ -115,7 +114,6 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 			middragtime = 0
 			middragatom = null
 	mouseParams = params
-	mouseLocation = over_location
 	mouseObject = over_object
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())

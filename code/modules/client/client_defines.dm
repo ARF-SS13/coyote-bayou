@@ -122,8 +122,6 @@
 	var/obj/item/active_mousedown_item = null
 	///Used in MouseDrag to preserve the original mouse click parameters
 	var/mouseParams = ""
-	///Used in MouseDrag to preserve the last mouse-entered location.
-	var/mouseLocation = null
 	///Used in MouseDrag to preserve the last mouse-entered object.
 	var/mouseObject = null
 	var/mouseControlObject = null
