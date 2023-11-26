@@ -1896,6 +1896,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"jF" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "jJ" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -3814,17 +3826,6 @@
 	dir = 4
 	},
 /turf/open/floor/wood_wide,
-/area/f13/wasteland)
-"ui" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#11ff11"
-	},
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
-	},
-/turf/open/floor/f13/wood{
-	color = "#999999"
-	},
 /area/f13/wasteland)
 "uk" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -6316,18 +6317,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"GP" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#11ff11"
-	},
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
-	},
-/turf/open/floor/f13/wood{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "GQ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -8088,6 +8077,17 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"PE" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "PH" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -48222,7 +48222,7 @@ NV
 DI
 DI
 Li
-ui
+PE
 DI
 DI
 DI
@@ -48733,7 +48733,7 @@ dj
 DI
 DI
 dj
-ui
+PE
 DI
 Li
 DI
@@ -48984,7 +48984,7 @@ hm
 hm
 CU
 DI
-GP
+jF
 dj
 KI
 dj
@@ -50027,7 +50027,7 @@ DI
 sx
 KI
 Hj
-ui
+PE
 DI
 wJ
 hm
@@ -50281,7 +50281,7 @@ DI
 ac
 zK
 Go
-ui
+PE
 DI
 KI
 DI
@@ -51045,7 +51045,7 @@ hm
 hm
 CD
 DI
-ui
+PE
 Yc
 dj
 DI
@@ -51055,7 +51055,7 @@ DI
 DI
 dj
 KI
-ui
+PE
 DI
 wJ
 hm
@@ -51558,7 +51558,7 @@ hm
 hm
 hm
 CU
-ui
+PE
 DI
 dj
 kn
@@ -52072,7 +52072,7 @@ hm
 hm
 hm
 CU
-ui
+PE
 NV
 KI
 Dx
@@ -52084,7 +52084,7 @@ Ok
 dj
 DI
 sx
-ui
+PE
 DI
 if
 hm
@@ -52587,11 +52587,11 @@ hm
 hm
 CU
 KI
-GP
+jF
 DI
 dj
 zz
-ui
+PE
 Ok
 dj
 dj
@@ -53361,7 +53361,7 @@ DI
 yz
 dj
 IA
-ui
+PE
 dj
 Xj
 KI
@@ -54901,7 +54901,7 @@ DI
 DI
 DI
 DI
-ui
+PE
 DI
 DI
 NV
@@ -55409,7 +55409,7 @@ hm
 hm
 CU
 KI
-ui
+PE
 dj
 dj
 dj
@@ -56702,7 +56702,7 @@ dj
 dj
 dj
 DI
-GP
+jF
 dj
 DI
 DI
