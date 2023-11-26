@@ -12,6 +12,7 @@ SUBSYSTEM_DEF(listbank)
 
 /datum/controller/subsystem/listbank/Initialize(start_timeofday)
 	init_tastes()
+	return ..()
 
 /datum/controller/subsystem/listbank/fire(resumed)
 	for(var/index in bank)
