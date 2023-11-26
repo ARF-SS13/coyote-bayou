@@ -138,6 +138,24 @@ SUBSYSTEM_DEF(listbank)
 	new /obj/item/storage/box/party_pouch/drinks(src)
 	new /obj/item/storage/box/party_pouch/drinks(src)
 
+/datum/controller/subsystem/listbank/proc/catalogue_minerals(datum/thing, list/input, unique, init)
+	if(!LAZYLEN(input))
+		return // its not special, just make it default
+	var/uid = catalogue_list(thing, input, ROCK_MINERALS, unique, init)
+	if(istype(thing) && isnum(uid) && isnull(thing.thing_id))
+		thing.thing_id = uid
+
+/datum/controller/subsystem/listbank/proc/get_minerals(datum/thing)
+	var/list/out = get_list(thing, ROCK_MINERALS)
+	if(LAZYLEN(out))
+		return out
+	/// if they dont have a
+
+
+
+
+
+
 
 
 /datum/controller/subsystem/listbank/proc/generate_uid()
