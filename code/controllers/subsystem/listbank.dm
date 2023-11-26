@@ -202,3 +202,115 @@ SUBSYSTEM_DEF(listbank)
 	mylist.Cut()
 	. = ..()
 	
+
+
+
+
+
+/// this is a debug proc, it shouldnt be used in actual code
+/datum/controller/subsystem/listbank/proc/tally_all_lists()
+	to_chat(world, span_boldannounce("Tallying all lists, this make the game run like bbb for a bit."))
+	var/list/tally = list()
+	var/all_datums = 0
+	for(var/datum/thing)
+		all_datums++
+	var/portion = 1
+	var/portion_amount = 0.01
+	var/next_milestone = round(all_datums * (portion * portion_amount))
+	var/batch_start = REALTIMEOFDAY
+	var/start_timery = REALTIMEOFDAY
+	var/this_batch = 0
+	var/atoms_did = 0
+	var/list/rates = list()
+	for(var/datum/A) // terrifying I know
+		for(var/V in A.vars)
+			if(!islist(A.vars[V]))
+				continue
+			var/datum/list_tally/LT = LAZYACCESS(tally, "[A.type]")
+			if(!LT)
+				LT = new /datum/list_tally(A)
+				tally["[A.type]"] = LT
+			LT.add_list(A.vars[V])
+		atoms_did++
+		this_batch++
+		CHECK_TICK
+		if(atoms_did % next_milestone != 0)
+			continue
+		// all_datums = LAZYLEN(world.contents)
+		var/batch_end = REALTIMEOFDAY
+		var/batch_time = ((batch_end - batch_start) * 0.1)
+		var/batch_rate = (this_batch / batch_time)
+		var/batch_percent = (atoms_did / all_datums) * 100
+		portion++
+		next_milestone = round(all_datums * (portion * portion_amount))
+		rates += batch_rate
+		batch_start = REALTIMEOFDAY
+		this_batch = 0
+		var/current_time = REALTIMEOFDAY - start_timery
+		var/batch_time_left = (current_time / atoms_did) * (all_datums - atoms_did)
+		to_chat(world, span_boldannounce("Catalogue'd [shorten_number(atoms_did, 2)]/[shorten_number(all_datums, 2)] ([round(batch_percent,portion_amount*100)]%) datums in [DisplayTimeText(current_time)]. \nProjected time left at [shorten_number(batch_rate, 1)]/sec: [DisplayTimeText(batch_time_left)]!"))
+	to_chat(world, span_boldannounce("All done! Jut kidding, time to sort and cull."))
+	for(var/entry in tally)
+		var/datum/list_tally/LT = LAZYACCESS(tally, entry)
+		if(LT.num_populated < 100)
+			tally -= entry
+			continue
+	aaa_debug_list_tally = tally
+	to_chat(world, span_boldannounce("All done!"))
+	output_debug_list_tally()
+
+/datum/controller/subsystem/listbank/proc/output_debug_list_tally(num2get = 10)
+	if(!LAZYLEN(aaa_debug_list_tally))
+		return tally_all_lists()
+	var/list/rawtallies = list()
+	for(var/entry in aaa_debug_list_tally)
+		var/datum/list_tally/LT = LAZYACCESS(aaa_debug_list_tally, entry)
+		rawtallies += LT
+	rawtallies = sortTim(rawtallies.Copy(), /proc/cmp_list_tally_dec)
+	var/list/tallies = list()
+	for(var/i in 1 to num2get)
+		var/datum/list_tally/LT = LAZYACCESS(rawtallies, i)
+		if(!LT)
+			break
+		var/msg = "[i]: [LT.thingpath] - [LT.num_populated] populated, [LT.num_empty] empty, [LT.num_entries] entries, [LT.total] total"
+		tallies += msg
+	to_chat(world, span_boldannounce("Top [num2get] populated lists:"))
+	for(var/msg in tallies)
+		to_chat(world, span_green(msg))
+	to_chat(world, span_boldannounce("All done! =3"))
+
+/proc/cmp_list_tally_dec(datum/list_tally/A, datum/list_tally/B)
+	return A.total - B.total
+
+/datum/list_tally
+	var/thingpath
+	var/num_populated = 0
+	var/num_empty = 0
+	var/num_entries = 0
+	var/total = 0
+
+/datum/list_tally/New(datum/thing)
+	thingpath = thing.type
+
+/datum/list_tally/proc/add_list(list/mylist)
+	if(!islist(mylist))
+		return
+	if(LAZYLEN(mylist))
+		num_populated++
+	else
+		num_empty++
+	total++
+	/// and now to recursively search through the list and find every. single. entry.
+	var/list/to_search = mylist.Copy()
+	var/ops_left = 3000
+	while(LAZYLEN(to_search) && ops_left--)
+		var/list/entry = LAZYACCESS(to_search, 1)
+		to_search.len--
+		num_entries++
+		if(!islist(entry))
+			continue
+		to_search |= entry
+
+
+
+

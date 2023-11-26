@@ -26,6 +26,7 @@
 		return
 
 	var/datum/client_colour/CC = new colour_type()
+	LAZYINITLIST(client_colours)
 	client_colours |= CC
 	sortTim(client_colours, /proc/cmp_clientcolour_priority)
 	update_client_colour()
@@ -56,9 +57,9 @@
 	if(!client)
 		return
 	client.color = ""
-	if(!client_colours.len)
+	if(!LAZYLEN(client_colours))
 		return
-	var/datum/client_colour/CC = client_colours[1]
+	var/datum/client_colour/CC = LAZYACCESS(client_colours, 1)
 	if(CC)
 		client.color = CC.colour
 

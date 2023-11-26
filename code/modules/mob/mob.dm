@@ -13,7 +13,8 @@
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
 	qdel(hud_used)
-	QDEL_LIST(client_colours)
+	if(LAZYLEN(client_colours)) // frick 'u'
+		QDEL_LIST(client_colours)
 	clear_client_in_contents()
 	ghostize()
 	QDEL_LIST(actions)
@@ -964,6 +965,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
+	LAZYINITLIST(mob_spell_list)
 	mob_spell_list += S
 	S.action.Grant(src)
 
@@ -1215,6 +1217,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/vv_get_var(var_name)
 	switch(var_name)
 		if("logging")
+			LAZYINITLIST(logging)
 			return debug_variable(var_name, logging, 0, src, FALSE)
 	. = ..()
 
