@@ -14911,7 +14911,10 @@
 	icon_state = "2-4"
 	},
 /obj/structure/table,
-/obj/item/book/granter/trait/pa_wear,
+/obj/item/book/granter/trait/chemistry{
+	name = "Chemistry for Vault Dwellers";
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "gIa" = (
@@ -15477,17 +15480,6 @@
 /area/f13/bunker)
 "gXD" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/stack/sheet/plasteel/twenty,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "gXR" = (
@@ -15935,10 +15927,6 @@
 /area/f13/building)
 "hjw" = (
 /obj/structure/table,
-/obj/item/book/granter/trait/chemistry{
-	name = "Chemistry for Vault Dwellers";
-	pixel_y = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
 "hjF" = (
@@ -16511,7 +16499,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "hwN" = (
-/obj/machinery/rnd/production/protolathe,
+/obj/machinery/workbench/advanced,
+/obj/effect/turf_decal/bot,
+/obj/item/salvage/high,
+/obj/item/salvage/high,
+/obj/item/salvage/high,
+/obj/item/salvage/high,
+/obj/item/salvage/high,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
 	},
@@ -21983,7 +21977,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/building)
 "khf" = (
-/obj/machinery/workbench,
+/obj/structure/wreck/trash/machinepile,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 9
 	},
@@ -23429,6 +23423,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/vault)
+"kMN" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "Vault1"
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "kMO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -27418,8 +27419,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "mGx" = (
-/obj/machinery/autolathe,
-/obj/effect/turf_decal/bot,
+/obj/structure/rack,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/vault)
 "mGP" = (
@@ -30415,7 +30425,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/rd{
 	desc = "A fine quilted blanket, made with purple and yellow fabric.";
-	dream_messages = list("authority","a silvery ID","a bomb","a mech","a facehugger","maniacal laughter");
+	dream_messages = list("authority","a  silvery  ID","a  bomb","a  mech","a  facehugger","maniacal  laughter");
 	name = "fine bedsheet"
 	},
 /turf/open/floor/carpet/black,
@@ -38671,7 +38681,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "rCJ" = (
-/obj/machinery/workbench/advanced,
+/obj/structure/wreck/trash/machinepile{
+	pixel_x = -7
+	},
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
 	},
@@ -41142,7 +41154,7 @@
 	health = 1500;
 	maxHealth = 1500;
 	name = "Commander Dirsk";
-	speak = list("For the Enclave!","Long live America!","Die, mutie!","AAAAAGGH!!","AUGUHGHHH!");
+	speak = list("For  the  Enclave!","Long  live  America!","Die,  mutie!","AAAAAGGH!!","AUGUHGHHH!");
 	speak_chance = 10;
 	speed = -1;
 	unarmed_attack_speed = 2
@@ -42683,7 +42695,7 @@
 /area/f13/bunker)
 "twg" = (
 /mob/living/simple_animal/hostile/gelcube{
-	faction = list("the tungsten cube","supermutant")
+	faction = list("the  tungsten  cube","supermutant")
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -45825,10 +45837,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "uSO" = (
-/obj/machinery/computer/rdconsole/core/vault,
 /obj/structure/sign/poster/official/science{
 	pixel_y = 32
 	},
+/obj/machinery/autolathe,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
 	},
@@ -46178,7 +46191,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "vch" = (
-/obj/machinery/rnd/destructive_analyzer,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -49941,7 +49953,6 @@
 	},
 /area/f13/vault)
 "wPz" = (
-/obj/machinery/rnd/production/circuit_imprinter,
 /obj/item/radio/intercom{
 	frequency = 1361;
 	name = "Vault Intercom";
@@ -50529,7 +50540,7 @@
 /obj/structure/bed/pod,
 /obj/item/bedsheet/rd{
 	desc = "A fine quilted blanket, made with purple and yellow fabric.";
-	dream_messages = list("authority","a silvery ID","a bomb","a mech","a facehugger","maniacal laughter");
+	dream_messages = list("authority","a  silvery  ID","a  bomb","a  mech","a  facehugger","maniacal  laughter");
 	name = "fine bedsheet"
 	},
 /turf/open/floor/wood_common,
@@ -51598,7 +51609,7 @@
 /area/f13/building)
 "xEM" = (
 /mob/living/simple_animal/hostile/gelcube{
-	faction = list("the tungsten cube","supermutant")
+	faction = list("the  tungsten  cube","supermutant")
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
@@ -74026,7 +74037,7 @@ hrZ
 hrZ
 vXu
 sUw
-sUw
+kMN
 vXu
 hrZ
 hrZ
