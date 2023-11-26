@@ -42,6 +42,10 @@
 				if(istype(T, /turf/closed/mineral/random))
 					Spread(T)
 
+/turf/closed/mineral/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
+
+
 /turf/closed/mineral/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	if(turf_type)
 		underlay_appearance.icon = initial(turf_type.icon)

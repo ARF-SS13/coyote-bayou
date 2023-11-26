@@ -134,6 +134,10 @@
 	explosion_block = 0
 	canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood, /turf/closed/wall/mineral/wood/nonmetal)
 
+/turf/closed/wall/mineral/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.sharpness && W.force)
 		var/duration = (48/W.force) * 2 //In seconds, for now.
@@ -159,6 +163,9 @@
 	sheet_type = /obj/item/stack/rods
 	canSmoothWith = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
 
+/turf/closed/shuttle/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"
 	desc = "A wall made of densely packed snow blocks."
@@ -172,6 +179,9 @@
 	girder_type = null
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
+
+/turf/closed/wall/mineral/snow/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SNOW, -10, 5, 1)
 
 /turf/closed/wall/mineral/abductor
 	name = "alien wall"

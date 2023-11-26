@@ -5,6 +5,10 @@
 	material_drop_amount = 6
 	icon_state = "wooden"
 
+/obj/structure/closet/crate/large/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/closet/crate/wooden/toy
 	name = "toy box"
 	desc = "Its a toybox."

@@ -134,7 +134,7 @@ obj/item/ammo_casing/shotgun/executioner
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/bloatfly_chunk
 	pellets = 1
-	variance = SHOTGUN_SPREAD_BASE
+	variance = SHOTGUN_SPREAD_IMPROVISED
 
 /obj/item/ammo_casing/shotgun/bloatfly/two
 	pellets = 2
@@ -147,7 +147,7 @@ obj/item/ammo_casing/shotgun/executioner
 	icon_state = "magspear"
 	damage = 2
 	stamina = 2
-	spread = 3
+	spread = 20
 	recoil = 0
 
 	wound_bonus = -100
