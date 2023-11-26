@@ -13,7 +13,8 @@
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
 	qdel(hud_used)
-	QDEL_LIST(client_colours)
+	if(LAZYLEN(client_colours)) // frick 'u'
+		QDEL_LIST(client_colours)
 	clear_client_in_contents()
 	ghostize()
 	QDEL_LIST(actions)
@@ -72,15 +73,15 @@
 	if(!loc)
 		return 0
 
-	var/datum/gas_mixture/environment = loc.return_air()
+	// var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	span_notice("Coordinates: [x],[y] \n")
-	t +=	span_danger("Temperature: [environment.return_temperature()] \n")
-	for(var/id in environment.get_gases())
-		if(environment.get_moles(id))
-			t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
+	// var/t =	span_notice("Coordinates: [x],[y] \n")
+	// t +=	span_danger("Temperature: [environment.return_temperature()] \n")
+	// for(var/id in environment.get_gases())
+	// 	if(environment.get_moles(id))
+	// 		t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
 
-	to_chat(usr, t)
+	// to_chat(usr, t)
 
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
@@ -964,6 +965,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
+	LAZYINITLIST(mob_spell_list)
 	mob_spell_list += S
 	S.action.Grant(src)
 
@@ -1215,6 +1217,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/vv_get_var(var_name)
 	switch(var_name)
 		if("logging")
+			LAZYINITLIST(logging)
 			return debug_variable(var_name, logging, 0, src, FALSE)
 	. = ..()
 
@@ -1233,9 +1236,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	set name = "Set how you taste"
 	set category = "IC"
 
-	var/message = stripped_input(usr, "", "How do you taste?", "", 100, FALSE)
+	var/list/taste = SSlistbank.get_tastes(src)
+	var/myflavor = "Bingus"
+	for(var/i in taste)
+		myflavor = i
+	var/message = stripped_input(usr, "Yum", "How do you taste?", "[myflavor]", 100, FALSE)
 	if(message)
-		tastes = list("[message]" = 1)
+		var/list/newflavor = list("[message]" = 1)
+		SSlistbank.catalogue_tastes(src, newflavor, TRUE)
 		to_chat(usr, span_notice("You now taste like [message]"))
 
 ///Adjust the nutrition of a mob

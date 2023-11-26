@@ -181,7 +181,7 @@
 		if(!o2overloadtime)
 			o2overloadtime = world.time
 		else if(world.time - o2overloadtime > 120)
-			Dizzy(10)	// better than a minute of you're fucked KO, but certainly a wake up call. Honk.
+			Dizzy(10)	// better than a minute of you're fuced KO, but certainly a wake up call. Honk.
 			adjustOxyLoss(3)
 			if(world.time - o2overloadtime > 300)
 				adjustOxyLoss(8)
@@ -358,7 +358,7 @@
 	if(!istype(deceasedturf,/turf/open))
 		return
 
-	var/turf/open/miasma_turf = deceasedturf
+	// var/turf/open/miasma_turf = deceasedturf
 
 	if (miasma_turf.air)
 		var/static/datum/gas_mixture/stank
@@ -485,8 +485,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
 										"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
 										"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-										"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-										"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology.",
+										"I dunno about you guys, but IDs and PDAs being separate is clunky as frick. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
+										"Why the frick aren't we just making every pair of shoes into galoshes? We have the technology.",
 										"We can link the Ore Silo to our protolathes, so why don't we also link it to autolathes?",
 										"If we can make better bombs with heated plasma, oxygen, and tritium, then why do station nukes still use plutonium?",
 										"We should port all our NT programs to modular consoles and do away with computers. They're way more customizable, support cross-platform usage, and would allow crazy amounts of multitasking.",

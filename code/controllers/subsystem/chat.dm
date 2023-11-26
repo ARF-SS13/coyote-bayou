@@ -156,19 +156,27 @@ SUBSYSTEM_DEF(chat)
 
 /datum/emoticon_bank/New(smiley, list/emot)
 	. = ..()
+	if(!islist(emot))
+		return
 	key = smiley
-	say_messages = emot["SAY"]["MESSAGE"]
-	say_emotes = emot["SAY"]["EMOTE"]
-	whisper_messages = emot["WHISPER"]["MESSAGE"]
-	whisper_emotes = emot["WHISPER"]["EMOTE"]
-	sing_messages = emot["SING"]["MESSAGE"]
-	sing_emotes = emot["SING"]["EMOTE"]
-	ask_messages = emot["ASK"]["MESSAGE"]
-	ask_emotes = emot["ASK"]["EMOTE"]
-	exclaim_messages = emot["EXCLAIM"]["MESSAGE"]
-	exclaim_emotes = emot["EXCLAIM"]["EMOTE"]
-	yell_messages = emot["YELL"]["MESSAGE"]
-	yell_emotes = emot["YELL"]["EMOTE"]
+	var/list/saychunk = LAZYACCESS(emot, "SAY")
+	say_messages = LAZYACCESS(saychunk, "MESSAGE")
+	say_emotes = LAZYACCESS(saychunk, "EMOTE")
+	var/list/whisperchunk = LAZYACCESS(emot, "WHISPER")
+	whisper_messages = LAZYACCESS(whisperchunk, "MESSAGE")
+	whisper_emotes = LAZYACCESS(whisperchunk, "EMOTE")
+	var/list/singchunk = LAZYACCESS(emot, "SING")
+	sing_messages = LAZYACCESS(singchunk, "MESSAGE")
+	sing_emotes = LAZYACCESS(singchunk, "EMOTE")
+	var/list/askchunk = LAZYACCESS(emot, "ASK")
+	ask_messages = LAZYACCESS(askchunk, "MESSAGE")
+	ask_emotes = LAZYACCESS(askchunk, "EMOTE")
+	var/list/exclaimchunk = LAZYACCESS(emot, "EXCLAIM")
+	exclaim_messages = LAZYACCESS(exclaimchunk, "MESSAGE")
+	exclaim_emotes = LAZYACCESS(exclaimchunk, "EMOTE")
+	var/list/yellchunk = LAZYACCESS(emot, "YELL")
+	yell_messages = LAZYACCESS(yellchunk, "MESSAGE")
+	yell_emotes = LAZYACCESS(yellchunk, "EMOTE")
 
 /// takes in a message, extracts what the intent of the message is (say, ask, etc)
 /// removes the emoticon, and returns a prefix to be used in the message

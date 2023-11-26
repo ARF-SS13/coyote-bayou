@@ -8,6 +8,7 @@
 - >using var/ on everything, also TRUE
 - "TGUIzes" the panel because yes - SandPoot
 - Makes all the code good because yes as well - SandPoot
+- ripped out all the shitcode and made it good - Superlagg
 **/
 
 

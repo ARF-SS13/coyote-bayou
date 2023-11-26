@@ -330,9 +330,9 @@
 	name = initial(name)
 
 /obj/item/pet_carrier/bluespace/return_air()
-	if(!occupant_gas_supply)
-		occupant_gas_supply = new
-	return occupant_gas_supply
+	// if(!occupant_gas_supply)
+	// 	occupant_gas_supply = new
+	// return occupant_gas_supply
 
 /obj/item/pet_carrier/bluespace/process()
 	if(!reagents)

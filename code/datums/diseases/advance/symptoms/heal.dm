@@ -396,17 +396,17 @@
 
 /datum/symptom/heal/plasma/CanHeal(datum/disease/advance/A)
 	var/mob/living/M = A.affected_mob
-	var/datum/gas_mixture/environment
-	var/plasmamount
+	// var/datum/gas_mixture/environment
+	// var/plasmamount
 
 	. = 0
 
-	if(M.loc)
-		environment = M.loc.return_air()
-	if(environment)
-		plasmamount = environment.get_moles(GAS_PLASMA)
-		if(plasmamount && plasmamount > GLOB.gas_data.visibility[GAS_PLASMA]) //if there's enough plasma in the air to see
-			. += power * 0.5
+	// if(M.loc)
+	// 	environment = M.loc.return_air()
+	// if(environment)
+	// 	plasmamount = environment.get_moles(GAS_PLASMA)
+	// 	if(plasmamount && plasmamount > GLOB.gas_data.visibility[GAS_PLASMA]) //if there's enough plasma in the air to see
+	// 		. += power * 0.5
 	if(M.reagents.has_reagent(/datum/reagent/toxin/plasma))
 		. +=  power * 0.75
 

@@ -200,39 +200,39 @@
 			return
 
 	// Get air
-	var/datum/gas_mixture/env = T.return_air()
-	if(!env)
-		return
+	// var/datum/gas_mixture/env = T.return_air()
+	// if(!env)
+	// 	return
 
-	// Get temp
-	var/env_temp = env.return_temperature()
+	// // Get temp
+	// var/env_temp = env.return_temperature()
 
-	// Define temperature settings
-	var/temp_min = CRYPTO_TEMP_MIN // 225K equals approximately -55F or -48C
-	var/temp_mid = CRYPTO_TEMP_MID // 273K equals 32F or 0C
-	var/temp_max = CRYPTO_TEMP_MAX // 500K equals approximately 440F or 226C
+	// // Define temperature settings
+	// var/temp_min = CRYPTO_TEMP_MIN // 225K equals approximately -55F or -48C
+	// var/temp_mid = CRYPTO_TEMP_MID // 273K equals 32F or 0C
+	// var/temp_max = CRYPTO_TEMP_MAX // 500K equals approximately 440F or 226C
 
-	// Check for temperature effects
-	// Minimum (most likely)
-	if(env_temp <= temp_min)
-		produce_points(CRYPTO_MULT_MAX)
-	// Mid
-	else if((env_temp <= temp_mid) && (env_temp >= temp_min))
-		produce_points(CRYPTO_MULT_MID)
-	// Maximum
-	else if((env_temp <= temp_max) && (env_temp >= temp_mid))
-		produce_points(CRYPTO_MULT_MIN)
-	// Overheat
-	else if(env_temp >= temp_max)
-		say("Critical overheating detected! Shutting off!")
-		playsound(loc, 'sound/machines/beep.ogg', 50, TRUE, -1)
-		set_mining(FALSE)
+	// // Check for temperature effects
+	// // Minimum (most likely)
+	// if(env_temp <= temp_min)
+	// 	produce_points(CRYPTO_MULT_MAX)
+	// // Mid
+	// else if((env_temp <= temp_mid) && (env_temp >= temp_min))
+	// 	produce_points(CRYPTO_MULT_MID)
+	// // Maximum
+	// else if((env_temp <= temp_max) && (env_temp >= temp_mid))
+	// 	produce_points(CRYPTO_MULT_MIN)
+	// // Overheat
+	// else if(env_temp >= temp_max)
+	// 	say("Critical overheating detected! Shutting off!")
+	// 	playsound(loc, 'sound/machines/beep.ogg', 50, TRUE, -1)
+	// 	set_mining(FALSE)
 
-	// Increase heat by heating_power
-	env.set_temperature(env_temp + CRYPTO_HEATING_POWER)
+	// // Increase heat by heating_power
+	// env.set_temperature(env_temp + CRYPTO_HEATING_POWER)
 
 	// Update air
-	air_update_turf()
+	// air_update_turf()
 
 /obj/machinery/cryptominer/proc/produce_points(number)
 	playsound(loc, 'sound/machines/ping.ogg', 50, TRUE, -1)

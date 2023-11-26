@@ -266,7 +266,7 @@ obj/item/seeds/proc/is_gene_forbidden(typepath)
 			data = list("blood_type" = "O-")
 		if(rid == /datum/reagent/consumable/nutriment || rid == /datum/reagent/consumable/nutriment/vitamin)
 			// apple tastes of apple.
-			data = T.tastes
+			data = SSlistbank.get_tastes(T)
 
 		T.reagents.add_reagent(rid, amount, data)
 

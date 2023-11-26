@@ -270,7 +270,7 @@
 
 /turf/closed/wall/r_wall/syndicate/overspace
 	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
+	// fixed_underlay = list("space"=1)
 
 /////////////////////Pirate Ship walls/////////////////////
 
@@ -289,4 +289,4 @@
 
 /turf/closed/wall/r_wall/syndicate/pirate/overspace
 	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
+	// fixed_underlay = list("space"=1)

@@ -52,6 +52,7 @@
 
 	dat += "<hr style='background:#FFFFFF; border:0; height:1px'>"
 
+	LAZYINITLIST(M.logging)
 	var/log_source = M.logging;
 	if(source == LOGSRC_CLIENT && M.client) //if client doesn't exist just fall back to the mob log
 		log_source = M.client.player_details.logging //should exist, if it doesn't that's a bug, don't check for it not existing
