@@ -119,6 +119,7 @@ SUBSYSTEM_DEF(listbank)
 		thing.thing_id = uid
 
 /datum/controller/subsystem/listbank/proc/get_tastes(datum/thing)
+	. = list() // THEY EXPECT A LIST IN THE CRASH, BROTHER
 	var/list/out = get_list(thing, ATOM_TASTES)
 	if(LAZYLEN(out))
 		return out
@@ -146,7 +147,22 @@ SUBSYSTEM_DEF(listbank)
 		thing.thing_id = uid
 
 /datum/controller/subsystem/listbank/proc/get_minerals(datum/thing)
+	. = list() // THEY EXPECT A LIST IN THE CRASH, BROTHER
 	var/list/out = get_list(thing, ROCK_MINERALS)
+	if(LAZYLEN(out))
+		return out
+	/// if they dont have a
+
+/datum/controller/subsystem/listbank/proc/catalogue_cleanable_states(datum/thing, list/input, unique, init)
+	if(!LAZYLEN(input))
+		return // its not special, just make it default
+	var/uid = catalogue_list(thing, input, CLEANABLE_DECALS, unique, init)
+	if(istype(thing) && isnum(uid) && isnull(thing.thing_id))
+		thing.thing_id = uid
+
+/datum/controller/subsystem/listbank/proc/get_cleanable_states(datum/thing)
+	. = list() // THEY EXPECT A LIST IN THE CRASH, BROTHER
+	var/list/out = get_list(thing, CLEANABLE_DECALS)
 	if(LAZYLEN(out))
 		return out
 	/// if they dont have a

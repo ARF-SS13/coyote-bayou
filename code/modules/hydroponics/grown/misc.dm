@@ -57,8 +57,8 @@
 		return
 
 	var/turf/open/T = get_turf(parent)
-	if(abs(ONE_ATMOSPHERE - T.return_air().return_pressure()) > (potency/10 + 10)) // clouds can begin showing at around 50-60 potency in standard atmos
-		return
+	// if(abs(ONE_ATMOSPHERE - T.return_air().return_pressure()) > (potency/10 + 10)) // clouds can begin showing at around 50-60 potency in standard atmos
+	// 	return
 
 	var/datum/gas_mixture/stank = new
 	stank.adjust_moles(GAS_MIASMA,(yield + 6)*0.14) // 0.14 = 7*0.02, this process is only being called about 2/7 as much as corpses so this is 12-32 times a corpses

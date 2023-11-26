@@ -73,15 +73,15 @@
 	if(!loc)
 		return 0
 
-	var/datum/gas_mixture/environment = loc.return_air()
+	// var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	span_notice("Coordinates: [x],[y] \n")
-	t +=	span_danger("Temperature: [environment.return_temperature()] \n")
-	for(var/id in environment.get_gases())
-		if(environment.get_moles(id))
-			t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
+	// var/t =	span_notice("Coordinates: [x],[y] \n")
+	// t +=	span_danger("Temperature: [environment.return_temperature()] \n")
+	// for(var/id in environment.get_gases())
+	// 	if(environment.get_moles(id))
+	// 		t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
 
-	to_chat(usr, t)
+	// to_chat(usr, t)
 
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"

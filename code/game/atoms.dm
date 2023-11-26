@@ -327,10 +327,10 @@
 	return null
 
 /atom/proc/return_air()
-	if(loc)
-		return loc.return_air()
-	else
-		return null
+	// if(loc)
+	// 	return loc.return_air()
+	// else
+	// 	return null
 
 /atom/proc/check_eye(mob/user)
 	return

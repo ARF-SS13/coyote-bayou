@@ -120,18 +120,18 @@
 
 //Thanks to spaceheater.dm for inspiration :)
 /obj/machinery/shuttle/engine/proc/fireEngine()
-	var/turf/heatTurf = loc
-	if(!heatTurf)
-		return
-	var/datum/gas_mixture/env = heatTurf.return_air()
-	var/heat_cap = env.heat_capacity()
-	var/req_power = abs(env.return_temperature() - ENGINE_HEAT_TARGET) * heat_cap
-	req_power = min(req_power, ENGINE_HEATING_POWER)
-	var/deltaTemperature = req_power / heat_cap
-	if(deltaTemperature < 0)
-		return
-	env.set_temperature(env.return_temperature(),deltaTemperature)
-	air_update_turf()
+	// var/turf/heatTurf = loc
+	// if(!heatTurf)
+	// 	return
+	// var/datum/gas_mixture/env = heatTurf.return_air()
+	// var/heat_cap = env.heat_capacity()
+	// var/req_power = abs(env.return_temperature() - ENGINE_HEAT_TARGET) * heat_cap
+	// req_power = min(req_power, ENGINE_HEATING_POWER)
+	// var/deltaTemperature = req_power / heat_cap
+	// if(deltaTemperature < 0)
+	// 	return
+	// env.set_temperature(env.return_temperature(),deltaTemperature)
+	// air_update_turf()
 
 /obj/machinery/shuttle/engine/default_change_direction_wrench(mob/user, obj/item/I)
 	. = ..()
