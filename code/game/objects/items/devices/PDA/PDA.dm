@@ -444,25 +444,25 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if (3)
 				dat += "<h4>[PDAIMG(atmos)] Atmospheric Readings</h4>"
 
-				var/turf/T = user.loc
-				if (isnull(T))
-					dat += "Unable to obtain a reading.<br>"
-				else
-					var/datum/gas_mixture/environment = T.return_air()
+				// var/turf/T = user.loc
+				// if (isnull(T))
+				dat += "Unable to obtain a reading.<br>"
+				// else
+				// 	var/datum/gas_mixture/environment = T.return_air()
 
-					var/pressure = environment.return_pressure()
-					var/total_moles = environment.total_moles()
+				// 	var/pressure = environment.return_pressure()
+				// 	var/total_moles = environment.total_moles()
 
-					dat += "Air Pressure: [round(pressure,0.1)] kPa<br>"
+				// 	dat += "Air Pressure: [round(pressure,0.1)] kPa<br>"
 
-					if (total_moles)
-						for(var/id in environment.get_gases())
-							var/gas_level = environment.get_moles(id)/total_moles
-							if(gas_level > 0)
-								dat += "[GLOB.gas_data.names[id]]: [round(gas_level*100, 0.01)]%<br>"
+				// 	if (total_moles)
+				// 		for(var/id in environment.get_gases())
+				// 			var/gas_level = environment.get_moles(id)/total_moles
+				// 			if(gas_level > 0)
+				// 				dat += "[GLOB.gas_data.names[id]]: [round(gas_level*100, 0.01)]%<br>"
 
-					dat += "Temperature: [round(environment.return_temperature()-T0C)]&deg;C<br>"
-				dat += "<br>"
+				// 	dat += "Temperature: [round(environment.return_temperature()-T0C)]&deg;C<br>"
+				// dat += "<br>"
 
 			if (4)
 				dat += "<h4>Radio settings</h4>"

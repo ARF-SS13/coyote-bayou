@@ -4046,7 +4046,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.species.eye_type = eye_type
-	character.tastes = list(character.dna.features["taste"] = 1)
+	SSlistbank.catalogue_tastes(character, list(character.dna.features["taste"] = 1), TRUE) // unique and important
 	if(chosen_limb_id && (chosen_limb_id in character.dna.species.allowed_limb_ids))
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name

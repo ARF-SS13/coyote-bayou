@@ -159,13 +159,16 @@
 
 /turf/closed/mineral/random/Initialize()
 
-	mineralSpawnChanceList = typelist("mineralSpawnChanceList", mineralSpawnChanceList)
+	SSlistbank.catalogue_minerals(src, mineralSpawnChanceList)
+	mineralSpawnChanceList.Cut()
+	mineralSpawnChanceList = null // begone, list!
 
 	if (display_icon_state)
 		icon_state = display_icon_state
 	. = ..()
 	if (prob(mineralChance))
-		var/path = pickweight(mineralSpawnChanceList)
+		var/list/my_minerals = SSlistbank.get_minerals(src)
+		var/path = pickweight(my_minerals)
 		var/turf/T = ChangeTurf(path,null,CHANGETURF_IGNORE_AIR)
 
 		if(T && ismineralturf(T))

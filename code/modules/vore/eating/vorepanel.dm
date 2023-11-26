@@ -303,7 +303,8 @@
 			return TRUE
 		if("setflavor")
 			var/myflavor
-			for(var/tast in host.tastes)
+			var/list/mytastes = SSlistbank.get_tastes(host)
+			for(var/tast in mytastes)
 				myflavor = tast // im know list good
 				break
 			var/new_flavor = html_encode(input(usr,"What your character tastes like (400ch limit). This text will be printed to the pred after 'X tastes of...' so just put something like 'strawberries and cream':","Character Flavor",myflavor) as text|null)
@@ -314,8 +315,9 @@
 			if(length(new_flavor) > FLAVOR_MAX)
 				tgui_alert_async(usr, "Entered flavor/taste text too long. [FLAVOR_MAX] character limit.","Error!")
 				return FALSE
-			host.tastes = list("[new_flavor]" = 1)
-			myprefs.features["taste"] = "[new_flavor]"
+			var/list/newflavor = list("[new_flavor]" = 1)
+			SSlistbank.catalogue_tastes(host, newflavor, TRUE)
+			myprefs.features["taste"] = "[newflavor]"
 			unsaved_changes = TRUE
 			return TRUE
 		if("setsmell")

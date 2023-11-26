@@ -219,7 +219,7 @@
 
 /turf/closed/wall/mineral/titanium/overspace
 	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
+	// fixed_underlay = list("space"=1)
 
 //sub-type to be used for interior shuttle walls
 //won't get an underlay of the destination turf on shuttle move
@@ -281,7 +281,7 @@
 
 /turf/closed/wall/mineral/plastitanium/overspace
 	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
+	// fixed_underlay = list("space"=1)
 
 /turf/closed/wall/mineral/plastitanium/explosive/ex_act(severity)
 	var/datum/explosion/acted_explosion = null
