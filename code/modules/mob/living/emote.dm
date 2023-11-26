@@ -644,6 +644,12 @@
 	message = "waves."
 	message_param = "waves at %t."
 
+/datum/emote/living/squint
+	key = "squint"
+	key_third_person = "squints"
+	message = "squints."
+	message_param = "squints at %t."
+
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
