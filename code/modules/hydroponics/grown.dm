@@ -24,9 +24,6 @@
 
 /obj/item/reagent_containers/food/snacks/grown/Initialize(mapload, obj/item/seeds/new_seed)
 	. = ..()
-	if(!tastes)
-		tastes = list("[name]" = 1)
-
 	if(new_seed)
 		seed = new_seed.Copy()
 	else if(ispath(seed))
@@ -48,6 +45,11 @@
 		add_juice()
 
 
+
+/obj/item/reagent_containers/food/snacks/grown/InitTastes()
+	var/list/flavours = SSlistbank.get_tastes(src)
+	if(!LAZYLEN(flavours))
+		tastes = SSlistbank.catalogue_tastes(src, list("[name]" = 1))
 
 /obj/item/reagent_containers/food/snacks/grown/proc/add_juice()
 	if(reagents)

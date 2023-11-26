@@ -1233,9 +1233,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	set name = "Set how you taste"
 	set category = "IC"
 
-	var/message = stripped_input(usr, "", "How do you taste?", "", 100, FALSE)
+	var/list/taste = SSlistbank.get_tastes(src)
+	var/myflavor = "Bingus"
+	for(var/i in taste)
+		myflavor = i
+	var/message = stripped_input(usr, "Yum", "How do you taste?", "[myflavor]", 100, FALSE)
 	if(message)
-		tastes = list("[message]" = 1)
+		var/list/newflavor = list("[message]" = 1)
+		SSlistbank.catalogue_tastes(src, newflavor, TRUE)
 		to_chat(usr, span_notice("You now taste like [message]"))
 
 ///Adjust the nutrition of a mob

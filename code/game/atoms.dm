@@ -78,7 +78,7 @@
 	var/light_on = TRUE
 	///Bitflags to determine lighting-related atom properties.
 	var/light_flags = NONE
-	///Our light source. Don't fuck with this directly unless you have a good reason!
+	///Our light source. Don't fuc with this directly unless you have a good reason!
 	var/tmp/datum/light_source/light
 	///Any light sources that are "inside" of us, for example, if src here was a mob that's carrying a flashlight, that flashlight's light source would be part of this list.
 	var/tmp/list/light_sources
@@ -96,7 +96,7 @@
 	var/generic_canpass = TRUE
 
 	/// What does this creature taste like?
-	var/list/tastes = list("something" = 1) // for example list("crisps" = 2, "salt" = 1)
+	var/list/tastes
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -148,6 +148,8 @@
 
 	ComponentInitialize()
 
+	InitTastes()
+
 	return INITIALIZE_HINT_NORMAL
 
 //called if Initialize returns INITIALIZE_HINT_LATELOAD
@@ -157,6 +159,13 @@
 // Put your AddComponent() calls here
 /atom/proc/ComponentInitialize()
 	return
+
+// Put your taste stuff here
+/atom/proc/InitTastes()
+	if(LAZYLEN(tastes))
+		SSlistbank.catalogue_tastes(src, tastes)
+		tastes.Cut()
+		QDEL_NULL(tastes)
 
 /atom/Destroy()
 	if(alternate_appearances)
