@@ -1320,7 +1320,7 @@ GLOBAL_LIST_INIT(freon_color_matrix, list("#2E5E69", "#60A2A8", "#A1AFB1", rgb(0
 
 		return "<img class='icon icon-misc' src='data:image/png;base64,[icon_base64]'>"
 
-	// Either an atom or somebody fucked up and is gonna get a runtime, which I'm fine with.
+	// Either an atom or somebody fuked up and is gonna get a runtime, which I'm fine with.
 	var/atom/A = thing
 	var/key = "[istype(A.icon, /icon) ? "[REF(A.icon)]" : A.icon]:[A.icon_state]"
 
@@ -1362,4 +1362,22 @@ GLOBAL_LIST_INIT(freon_color_matrix, list("#2E5E69", "#60A2A8", "#A1AFB1", rgb(0
 	color[2] = color[1] * cm[4] + color[2] * cm[5] + color[3] * cm[6] + cm[11] * 255
 	color[3] = color[1] * cm[7] + color[2] * cm[8] + color[3] * cm[9] + cm[12] * 255
 	return rgb(color[1], color[2], color[3])
+
+// This proc converts a hex color value ("#420CAB") to an RGB list
+// Clamps each of the RGB values between 50 and 190
+/proc/fix_colors(hex) // Literally Goon's code that makes lizards look good
+	if(length(hex) != 7) // I love this proc
+		hex = fix_hex(hex) // even tho its broke :(
+	var/list/L = hex2num(hex)
+	if(isnull(L))
+		return rgb(22, 210, 22)
+	for (var/i in 1 to 3)
+		L[i] = min(L[i], 190)
+		L[i] = max(L[i], 50)
+	if (length(L) == 3)
+		return rgb(L[1], L[2], L[3])
+	return rgb(22, 210, 22)
+
+/proc/fix_hex(hex)
+	return copytext((copytext(hex, 1, 2) == "#" ? hex : "#") + "000000", 1, 8)
 

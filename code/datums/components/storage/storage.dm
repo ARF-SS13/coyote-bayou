@@ -279,12 +279,15 @@
 	A.add_fingerprint(M)
 	to_chat(M, span_notice("You start dumping out [parent]."))
 	var/turf/T = get_turf(A)
-	var/list/things = contents()
+	var/list/things = get_quickempty_list()
 	var/my_bar = SSprogress_bars.add_bar(T, list(), length(things), FALSE, FALSE)
 	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, .proc/mass_remove_from_storage, T, things, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
 	A.do_squish(0.8, 1.2)
+
+/datum/component/storage/proc/get_quickempty_list()
+	return contents()
 
 /datum/component/storage/proc/mass_remove_from_storage(atom/target, list/things, progress, trigger_on_found = TRUE)
 	var/atom/real_location = real_location()
