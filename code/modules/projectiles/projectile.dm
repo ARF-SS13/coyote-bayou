@@ -378,7 +378,7 @@
 				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
 					trait_pacifism_lesser_consequences(firer, TRUE)
 					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
-				return FALSE
+					return FALSE
 	//<--
 	return TRUE
 
