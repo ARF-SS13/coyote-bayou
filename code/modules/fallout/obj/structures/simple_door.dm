@@ -62,6 +62,8 @@
 
 /obj/structure/simple_door/examine(mob/user)
 	. = ..()
+	if(padlock)
+		. += span_notice("Ctrl-Click [src] to try and lock/unlock the padlock.")
 	if(deadbolt)
 		. += span_notice("Alt-Click [src] from \the [dir2text(deadbolt.dir)] to use the bolt lock.")
 
@@ -74,6 +76,26 @@
 			deadbolt.ToggleLock(user)
 			do_squish(0.9,0.9,0.25 SECONDS)
 			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
+
+/obj/structure/simple_door/CtrlClick(mob/user)
+	. = ..()
+	if(isliving(user) && istype(padlock))
+		var/mob/living/L = user
+		if(L?.mobility_flags & MOBILITY_USE)
+			var/obj/item/key/K
+			var/foundit
+			for(var/maybekey in L) //Search two layers deep for a matching key
+				if(istype(maybekey, /obj/item/key))
+					K = maybekey
+				else for(var/maybekey2 in maybekey)
+					if(istype(maybekey2, /obj/item/key))
+						K = maybekey2
+				if(K?.lock_data == padlock?.lock_data)
+					attackby(K, user)
+					foundit = TRUE
+					break
+			if(!foundit) //We can't find it :(
+				to_chat(user, span_warning("You can't find the right key to unlock \the [src]! Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
