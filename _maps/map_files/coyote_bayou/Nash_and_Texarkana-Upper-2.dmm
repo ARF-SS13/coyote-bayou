@@ -150,7 +150,7 @@
 "aS" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "aU" = (
@@ -1005,6 +1005,13 @@
 /obj/structure/butter_churn,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"fj" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland)
 "fk" = (
 /obj/item/clothing/gloves/color/red/insulated,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1070,7 +1077,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "fE" = (
@@ -1851,6 +1858,10 @@
 "jk" = (
 /turf/closed/indestructible/rock,
 /area/f13/caves)
+"jl" = (
+/obj/structure/bonfire/prelit,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "jm" = (
 /obj/effect/decal/cleanable/blood,
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
@@ -2513,7 +2524,7 @@
 	color = "#999999"
 	},
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "mM" = (
@@ -2819,9 +2830,9 @@
 /area/f13/building)
 "oj" = (
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "oo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -3495,7 +3506,7 @@
 	light_range = 2
 	},
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "rA" = (
@@ -6417,6 +6428,12 @@
 	color = "#779999"
 	},
 /area/f13/wasteland)
+"FN" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/building/tribal)
 "FR" = (
 /obj/effect/turf_decal/trimline/neutral{
 	icon_state = "trimline_fill";
@@ -6482,7 +6499,7 @@
 "Gf" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "Gg" = (
@@ -6593,9 +6610,9 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "GN" = (
 /obj/item/stock_parts/cell/super/empty,
 /obj/effect/decal/cleanable/blood,
@@ -7631,6 +7648,12 @@
 	color = "#779999"
 	},
 /area/f13/building/abandoned)
+"LF" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/building/tribal)
 "LG" = (
 /obj/structure/railing/corner{
 	color = "#A47449";
@@ -8288,7 +8311,7 @@
 "OR" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "OV" = (
@@ -8550,6 +8573,11 @@
 /obj/structure/fluff/beach_umbrella/cap,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"Qg" = (
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland)
 "Qh" = (
 /obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/plasteel/cult,
@@ -8986,6 +9014,23 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"RX" = (
+/obj/structure/stone_tile/surrounding/burnt,
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/turf/open/floor/grass{
+	color = "#444444"
+	},
+/area/f13/building/tribal)
 "RY" = (
 /obj/structure/bed,
 /turf/open/floor/f13/wood,
@@ -9311,7 +9356,7 @@
 	color = "#999999"
 	},
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
 /area/f13/wasteland)
 "SW" = (
@@ -9856,6 +9901,23 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Vr" = (
+/obj/structure/stone_tile/surrounding/burnt,
+/obj/structure/stone_tile/center,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland)
 "Vu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -16528,14 +16590,14 @@ hm
 hm
 NC
 OR
-oj
-oj
-oj
-oj
-oj
-oj
-oj
-oj
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
 rK
 hm
 hm
@@ -16784,15 +16846,15 @@ hm
 hm
 hm
 NC
-oj
-oj
-oj
+Qg
+Qg
+Qg
 hm
 YV
-oj
+Qg
 Gf
 mJ
-oj
+Qg
 rK
 hm
 hm
@@ -17041,12 +17103,12 @@ hm
 hm
 hm
 NC
-oj
+Qg
 mJ
 OR
-oj
+Qg
 rz
-oj
+Qg
 Gf
 Gf
 OR
@@ -17300,13 +17362,13 @@ hm
 NC
 oj
 oj
-Gf
+LF
 aS
-oj
-oj
+Qg
+Qg
 SU
 GL
-OR
+FN
 rK
 hm
 hm
@@ -17556,13 +17618,13 @@ hm
 hm
 NC
 oj
-YV
+RX
 oj
 Gf
 Gf
+Qg
 oj
-oj
-YV
+RX
 oj
 rK
 hm
@@ -18069,12 +18131,12 @@ hm
 hm
 hm
 NC
-oj
-oj
+Qg
+Qg
 rz
-oj
-oj
-oj
+Qg
+Qg
+Qg
 rz
 Gf
 Gf
@@ -18326,15 +18388,15 @@ hm
 hm
 hm
 NC
-oj
-GL
+Qg
+fj
 fC
-oj
-YV
-oj
+Qg
+Vr
+Qg
 mJ
 Gf
-oj
+Qg
 rK
 hm
 hm
@@ -18565,7 +18627,7 @@ hm
 NC
 Kz
 Kz
-Kz
+jl
 Kz
 Kz
 Kz
@@ -18583,15 +18645,15 @@ hm
 hm
 hm
 NC
-oj
-oj
-oj
-oj
-oj
-oj
-oj
-oj
-oj
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
+Qg
 rK
 hm
 hm
@@ -19875,14 +19937,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -20132,14 +20194,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -20386,17 +20448,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -20643,17 +20705,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 kW
 Sr
 GQ
@@ -20900,17 +20962,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 kW
 fe
 VP
@@ -21157,17 +21219,17 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
+Wr
 AR
 SF
 qe
