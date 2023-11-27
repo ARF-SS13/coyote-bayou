@@ -855,3 +855,12 @@
 	desc = "A versailles chest rig, this one seems to be used in long bread enviroments and such"
 	icon_state = "french_webbing"
 	item_state = "french_webbing"
+
+/obj/item/storage/belt/legholster/throwing
+	name = "garter rig"
+	desc = "A series of straps and clips that goes where you would typically wrap a garter belt. Leaves your (non-)lethal implements hanging snugly and discreetly!"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "holster_leg"
+	item_state = "holster_leg"
+	component_type = /datum/component/storage/concrete/pockets/magpouch
