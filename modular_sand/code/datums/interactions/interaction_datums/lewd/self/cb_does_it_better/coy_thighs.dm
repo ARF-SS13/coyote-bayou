@@ -10,8 +10,8 @@
 //////////////////////
 //Fuck Thighs 7A1////
 //////////////////////
-/datum/interaction/lewd/partner/giving/sniff_crotch
-	description = "Partner/Thighs - Sniff their crotch."
+/datum/interaction/lewd/partner/giving/hump_thigh
+	description = "Partner/Thighs - Hump their thighs."
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
