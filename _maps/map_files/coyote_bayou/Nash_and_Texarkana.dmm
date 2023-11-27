@@ -43286,6 +43286,11 @@
 "giP" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ruins)
+"gja" = (
+/obj/structure/bed/dogbed,
+/obj/item/toy/tennis/red,
+/turf/open/floor/carpet/red,
+/area/f13/bar/heaven)
 "gje" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -45653,6 +45658,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"gKr" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "innermaincornerinner - N"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "gKs" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "topshadowright"
@@ -64651,6 +64665,15 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city)
+"kTz" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "kTD" = (
 /obj/effect/spawner/lootdrop/low_tools,
 /obj/structure/rack/shelf_metal{
@@ -96967,6 +96990,13 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
+"rSx" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/roaddirt{
+	dir = 1;
+	icon_state = "innerpavement"
+	},
+/area/f13/wasteland/city/nash/theloop)
 "rSC" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
@@ -137282,7 +137312,7 @@ jwV
 thE
 trB
 dip
-mSh
+gja
 mWY
 wmE
 wmE
@@ -162183,19 +162213,19 @@ cpo
 cdD
 cpo
 cpo
-lox
+jZB
 pcG
 gQR
 fIK
-wne
+gKr
 dpt
 hBT
 ewJ
-nUA
+kTz
 fSq
 dpt
 lox
-tFM
+rSx
 hyv
 aOk
 hCc
