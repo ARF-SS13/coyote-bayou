@@ -165,7 +165,8 @@
 	if(LAZYLEN(tastes))
 		SSlistbank.catalogue_tastes(src, tastes)
 		tastes.Cut()
-		QDEL_NULL(tastes)
+		tastes = null
+		// QDEL_NULL(tastes)
 
 /atom/Destroy()
 	if(alternate_appearances)
