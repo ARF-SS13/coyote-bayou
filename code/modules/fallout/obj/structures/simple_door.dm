@@ -95,7 +95,7 @@
 					foundit = TRUE
 					break
 			if(!foundit) //We can't find it :(
-				to_chat(user, span_warning("You can't find the right key to unlock \the [src]! Maybe it's too deeply packed away?"))
+				to_chat(user, span_warning("You can't find the right key to unlock \the [src]! Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
