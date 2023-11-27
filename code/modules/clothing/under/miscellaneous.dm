@@ -1765,4 +1765,14 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
+/obj/item/clothing/under/tribaliris
+	name = "tribal loincloth"
+	desc = "A dress mostly made of what looks like a mixmatch of a loincloth and a swimsuit."
+	icon_state = "iris_tribal"
+	item_state = "iris_tribal"
+	item_color = "iris_tribal"
+	can_adjust = FALSE
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+
 
