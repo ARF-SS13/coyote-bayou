@@ -1320,7 +1320,7 @@
 	icon_state = "sink"
 
 /obj/structure/dvd_player
-	name = "Dvd Player"
+	name = "\improper DVD Player"
 	desc = "An old and dusty looking machine. Maybe it even still works.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd_player"
