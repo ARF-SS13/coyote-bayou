@@ -91,7 +91,7 @@ SUBSYSTEM_DEF(chat)
 			emoties |= emotie
 		for(var/emotie in emoties)
 			var/datum/emoticon_bank/E = new(emo, emotilist)
-			emoticon_cache[emotie] = E
+			emoticon_cache[html_decode(emotie)] = E
 
 /datum/controller/subsystem/chat/proc/emoticonify(atom/movable/sayer, message, messagemode, list/spans)
 	if(!sayer)
@@ -100,14 +100,18 @@ SUBSYSTEM_DEF(chat)
 		var/mob/they = sayer
 		if(!they.client)
 			return
+	var/out
 	var/datum/emoticon_bank/E
 	for(var/key in emoticon_cache) // if this gets laggy, lol idk
 		if(findtext(message, key))
-			E = emoticon_cache[key]
-			break
-	if(!E)
+			E = LAZYACCESS(emoticon_cache, key)
+			if(!E)
+				continue
+			out = E.verbify(sayer, message, messagemode, spans)
+			if(out)
+				break
+	if(!out)
 		return
-	var/out = E.verbify(sayer, message, messagemode, spans)
 	for(var/key in emoticon_cache)
 		out = replacetext(out, key, "") // remove the rest of the emoticons
 	return out
@@ -177,6 +181,55 @@ SUBSYSTEM_DEF(chat)
 	var/list/yellchunk = LAZYACCESS(emot, "YELL")
 	yell_messages = LAZYACCESS(yellchunk, "MESSAGE")
 	yell_emotes = LAZYACCESS(yellchunk, "EMOTE")
+
+	var/list/newsay_messages = list()
+	for(var/msg in say_messages)
+		newsay_messages += html_decode(msg)
+	say_messages = newsay_messages
+	var/list/newsay_emotes = list()
+	for(var/msg in say_emotes)
+		newsay_emotes += html_decode(msg)
+	say_emotes = newsay_messages
+	var/list/newwhisper_messages = list()
+	for(var/msg in whisper_messages)
+		newwhisper_messages += html_decode(msg)
+	whisper_messages = newsay_messages
+	var/list/newwhisper_emotes = list()
+	for(var/msg in whisper_emotes)
+		newwhisper_emotes += html_decode(msg)
+	whisper_emotes = newsay_messages
+	var/list/newsing_messages = list()
+	for(var/msg in sing_messages)
+		newsing_messages += html_decode(msg)
+	sing_messages = newsay_messages
+	var/list/newsing_emotes = list()
+	for(var/msg in sing_emotes)
+		newsing_emotes += html_decode(msg)
+	sing_emotes = newsay_messages
+	var/list/newask_messages = list()
+	for(var/msg in ask_messages)
+		newask_messages += html_decode(msg)
+	ask_messages = newsay_messages
+	var/list/newask_emotes = list()
+	for(var/msg in ask_emotes)
+		newask_emotes += html_decode(msg)
+	ask_emotes = newsay_messages
+	var/list/newexclaim_messages = list()
+	for(var/msg in exclaim_messages)
+		newexclaim_messages += html_decode(msg)
+	exclaim_messages = newsay_messages
+	var/list/newexclaim_emotes = list()
+	for(var/msg in exclaim_emotes)
+		newexclaim_emotes += html_decode(msg)
+	exclaim_emotes = newsay_messages
+	var/list/newyell_messages = list()
+	for(var/msg in yell_messages)
+		newyell_messages += html_decode(msg)
+	yell_messages = newsay_messages
+	var/list/newyell_emotes = list()
+	for(var/msg in yell_emotes)
+		newyell_emotes += html_decode(msg)
+	yell_emotes = newsay_messages
 
 /// takes in a message, extracts what the intent of the message is (say, ask, etc)
 /// removes the emoticon, and returns a prefix to be used in the message
@@ -283,6 +336,8 @@ SUBSYSTEM_DEF(chat)
 	/// so we need to remove the emoticon, and then remove any extra spaces, but not too many spaces!
 	/// also this case: "hi how are you? :)" would leave us with "hi how are you? ", with a space at the end
 	var/list/frontback = splittext(message, key) // split the message into two parts, before and after the emoticon
+	if(LAZYLEN(frontback) != 2)
+		return /// RRRRGH
 	if(LAZYLEN(ckey(frontback[1])) < 1) // if the emoticon is at the start of the message, we need to remove the space at the start
 		frontback[1] = ckey(frontback[1]) // remove the space
 	if(LAZYLEN(ckey(frontback[2])) < 1) // if the emoticon is at the end of the message, we need to remove the space and punctuation at the end
