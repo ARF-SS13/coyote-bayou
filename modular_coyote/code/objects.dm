@@ -1330,6 +1330,7 @@
 	desc = "A shiny disk! Don't scratch it."
 	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
+	custom_materials = list(/datum/material/glass = 250)
 
 /obj/item/storage/box/tools/locksmith
 	name = "locksmith tools"
