@@ -3,7 +3,7 @@
 	icon_state = "nash_on"
 	base_state = "nash_on"
 	icon = 'modular_coyote/icons/objects/sign.dmi'
-	density = 0
+	density = FALSE
 	desc = "So awful..."
 	light_color = LIGHT_COLOR_RED
 //Shopping Cart
@@ -1215,8 +1215,8 @@
 	desc = "A mic stand."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "micstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand
@@ -1224,8 +1224,8 @@
 	desc = "A night stand! Maybe even a one, night stand."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "nightstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand/small
