@@ -1142,8 +1142,11 @@
 	},
 /area/f13/wasteland)
 "aeD" = (
-/turf/closed/indestructible/opshuttle,
-/area/f13/store)
+/obj/effect/turf_decal/delivery,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2"
+	},
+/area/f13/wasteland/city)
 "aeE" = (
 /obj/structure/closet/crate/medical,
 /obj/item/reagent_containers/blood/radaway,
@@ -1524,8 +1527,10 @@
 	},
 /area/f13/ruins)
 "afX" = (
-/turf/closed/indestructible/fakeglass,
-/area/f13/store)
+/obj/structure/barricade/sandbags,
+/obj/effect/temp_visual/steam,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "afY" = (
 /obj/structure/table/wood,
 /obj/item/storage/backpack/satchel/leather,
@@ -6143,15 +6148,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/store)
 "awm" = (
-/turf/open/floor/plating/f13/inside,
-/area/f13/store)
+/obj/effect/temp_visual/steam,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "awn" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/effect/turf_decal/delivery,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain2bottom"
 	},
-/mob/living/simple_animal/pet/dog/protectron,
-/turf/open/floor/plating/f13/inside,
-/area/f13/store)
+/area/f13/wasteland/city)
 "awo" = (
 /obj/item/phone,
 /obj/structure/table,
@@ -6288,17 +6293,21 @@
 	},
 /area/f13/wasteland/city/nash/redriverdepotroad)
 "awM" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/effect/turf_decal/delivery,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermaintop"
+	icon_state = "verticaloutermain1"
 	},
-/area/f13/store)
+/area/f13/wasteland/city)
 "awN" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermaintop"
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/area/f13/store)
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/temp_visual/steam,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "awO" = (
 /obj/structure/table/rolling,
 /obj/item/trash/tray{
@@ -18509,7 +18518,7 @@
 /mob/living/simple_animal/pet/dog/eyebot{
 	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
 	name = "Bighorn eyebot";
-	speak = list("Need                                                                                                                                a                                                                                                                                drink?                                                                                                                                Want                                                                                                                                to                                                                                                                                trade?                                                                                                                                Need                                                                                                                                your                                                                                                                                cuts                                                                                                                                and                                                                                                                                bruises                                                                                                                                mended?                                                                                                                                Head                                                                                                                                on                                                                                                                                over                                                                                                                                to                                                                                                                                Bighorn!")
+	speak = list("Need                                                                                                                                                                                                                                                                a                                                                                                                                                                                                                                                                drink?                                                                                                                                                                                                                                                                Want                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                trade?                                                                                                                                                                                                                                                                Need                                                                                                                                                                                                                                                                your                                                                                                                                                                                                                                                                cuts                                                                                                                                                                                                                                                                and                                                                                                                                                                                                                                                                bruises                                                                                                                                                                                                                                                                mended?                                                                                                                                                                                                                                                                Head                                                                                                                                                                                                                                                                on                                                                                                                                                                                                                                                                over                                                                                                                                                                                                                                                                to                                                                                                                                                                                                                                                                Bighorn!")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -34690,6 +34699,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "eoZ" = (
@@ -87086,6 +87096,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/temp_visual/steam,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pFd" = (
@@ -91406,6 +91417,16 @@
 	name = "the watering hole"
 	},
 /area/f13/wasteland/city)
+"qCG" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/flora/chomp/thicket2{
+	color = "#224422"
+	},
+/obj/effect/temp_visual/steam,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "qCJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -155163,8 +155184,8 @@ kSL
 kSL
 hmN
 aeD
-aeD
-aeD
+awn
+awM
 hEX
 gQR
 iKD
@@ -155420,7 +155441,7 @@ kzk
 arj
 hmN
 aeD
-awm
+awn
 awM
 syi
 gQR
@@ -155678,7 +155699,7 @@ oZC
 hmN
 aeD
 awn
-afX
+awM
 syi
 gQR
 fSq
@@ -155933,9 +155954,9 @@ snl
 kSL
 kFy
 hmN
-aeD
-awm
-awN
+awM
+awM
+awM
 xgw
 iKD
 dpt
@@ -156190,9 +156211,9 @@ kSL
 kSL
 qlf
 hmN
-aeD
-aeD
-aeD
+awM
+awM
+awM
 pcG
 mfD
 dpt
@@ -168493,7 +168514,7 @@ tMc
 kFs
 kFs
 aOk
-aOk
+awm
 mgs
 aae
 aae
@@ -168753,7 +168774,7 @@ aOk
 www
 pFa
 yhg
-yhg
+awN
 nhS
 asS
 aae
@@ -169009,7 +169030,7 @@ kFs
 okJ
 ncM
 acD
-lDH
+qCG
 aON
 eoV
 uba
@@ -169270,7 +169291,7 @@ cFK
 cFK
 hDe
 etg
-kFs
+afX
 aOk
 aOk
 aae
@@ -169525,7 +169546,7 @@ cFK
 aOk
 gxt
 cFK
-aOk
+awm
 hrz
 wOt
 aOk
