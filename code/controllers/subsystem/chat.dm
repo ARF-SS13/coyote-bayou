@@ -334,7 +334,7 @@ SUBSYSTEM_DEF(chat)
 	/// so we need to remove the emoticon, and then remove any extra spaces, but not too many spaces!
 	/// also this case: "hi how are you? :)" would leave us with "hi how are you? ", with a space at the end
 	var/list/frontback = splittext(message, key) // split the message into two parts, before and after the emoticon
-	if(!LAZYLEN(frontback))
+	if(LAZYLEN(frontback) != 2)
 		return /// RRRRGH
 	if(LAZYLEN(ckey(frontback[1])) < 1) // if the emoticon is at the start of the message, we need to remove the space at the start
 		frontback[1] = ckey(frontback[1]) // remove the space
