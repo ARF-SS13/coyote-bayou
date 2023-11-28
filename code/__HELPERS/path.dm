@@ -116,6 +116,8 @@
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/list/avoid = list()
+	/// We encountered a turf that would be dangerous to even *try* to diagonal around. So, we are now banned from diagonals from here forward
+	var/diagonal_banned = FALSE
 
 /datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid)
 	src.caller = caller
@@ -229,17 +231,33 @@
 
 		switch(heading)
 			if(NORTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST))
-					interesting = TRUE
+				if(diagonal_banned)
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTH) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTH))
+						interesting = TRUE
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST))
+						interesting = TRUE
 			if(SOUTH)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST))
-					interesting = TRUE
+				if(diagonal_banned)
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTH) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTH))
+						interesting = TRUE
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST))
+						interesting = TRUE
 			if(EAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
-					interesting = TRUE
+				if(diagonal_banned)
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, EAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, EAST))
+						interesting = TRUE
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
+						interesting = TRUE
 			if(WEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
-					interesting = TRUE
+				if(diagonal_banned)
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, WEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, WEST))
+						interesting = TRUE
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
+						interesting = TRUE
 
 		if(interesting)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -269,6 +287,10 @@
 		lag_turf = current_turf
 		current_turf = get_step(current_turf, heading)
 		steps_taken++
+		/// So funny story, if a mob tries to path diagonally over a ledge, it'll fall, and we dont want that
+		/// So we check if the turf we're about to step into is a space or ledge turf, and if it is, we stop trying to diagonal
+		if(!diagonal_banned && current_turf && (GLOB.avoid_these_turfs[current_turf.type]))
+			diagonal_banned = TRUE
 		if(!CAN_STEP(lag_turf, current_turf))
 			return
 
@@ -290,25 +312,37 @@
 
 		switch(heading)
 			if(NORTHWEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
-					interesting = TRUE
-				else
+				if(diagonal_banned)
 					possible_child_node = (lateral_scan_spec(current_turf, WEST) || lateral_scan_spec(current_turf, NORTH))
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, NORTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHWEST))
+						interesting = TRUE
+					else
+						possible_child_node = (lateral_scan_spec(current_turf, WEST) || lateral_scan_spec(current_turf, NORTH))
 			if(NORTHEAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
-					interesting = TRUE
-				else
+				if(diagonal_banned)
 					possible_child_node = (lateral_scan_spec(current_turf, EAST) || lateral_scan_spec(current_turf, NORTH))
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, NORTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, SOUTH, SOUTHEAST))
+						interesting = TRUE
+					else
+						possible_child_node = (lateral_scan_spec(current_turf, EAST) || lateral_scan_spec(current_turf, NORTH))
 			if(SOUTHWEST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST))
-					interesting = TRUE
-				else
+				if(diagonal_banned)
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, WEST))
-			if(SOUTHEAST)
-				if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST))
-					interesting = TRUE
 				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, EAST, SOUTHEAST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHWEST))
+						interesting = TRUE
+					else
+						possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, WEST))
+			if(SOUTHEAST)
+				if(diagonal_banned)
 					possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, EAST))
+				else
+					if(STEP_NOT_HERE_BUT_THERE(current_turf, WEST, SOUTHWEST) || STEP_NOT_HERE_BUT_THERE(current_turf, NORTH, NORTHEAST))
+						interesting = TRUE
+					else
+						possible_child_node = (lateral_scan_spec(current_turf, SOUTH) || lateral_scan_spec(current_turf, EAST))
 
 		if(interesting || possible_child_node)
 			var/datum/jps_node/newnode = new(current_turf, parent_node, steps_taken)
@@ -319,6 +353,36 @@
 				if(possible_child_node.tile == end || (mintargetdist && (get_dist(possible_child_node.tile, end) <= mintargetdist)))
 					unwind_path(possible_child_node)
 			return
+
+/**
+ * Processes a path (list of turfs), removes any diagonal moves
+ *
+ * path - The path to process down
+ * pass_info - Holds all the info about what this path attempt can go through
+ * simulated_only - If we are not allowed to pass space turfs
+ * avoid - A turf to be avoided
+ */
+/proc/remove_diagonals(list/path, datum/can_pass_info/pass_info, simulated_only, turf/avoid)
+	if(length(path) < 2)
+		return path
+	var/list/modified_path = list()
+
+	for(var/i in 1 to length(path) - 1)
+		var/turf/current_turf = path[i]
+		modified_path += current_turf
+		var/turf/next_turf = path[i+1]
+		var/movement_dir = get_dir(current_turf, next_turf)
+		if(!(movement_dir & (movement_dir - 1))) //cardinal movement, no need to verify
+			continue
+		var/vertical_only = movement_dir & (NORTH|SOUTH)
+		// If we can't go directly north/south, we will first go to the side,
+		if(!CAN_STEP(current_turf,get_step(current_turf, vertical_only), simulated_only, pass_info, avoid))
+			modified_path += get_step(current_turf, movement_dir & ~vertical_only)
+		else // Otherwise, we'll first go north/south, then to the side
+			modified_path += get_step(current_turf, vertical_only)
+	modified_path += path[length(path)]
+
+	return modified_path
 
 /**
  * For seeing if we can actually move between 2 given turfs while accounting for our access and the caller's pass_flags

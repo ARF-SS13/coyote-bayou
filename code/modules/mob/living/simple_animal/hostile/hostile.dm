@@ -769,17 +769,23 @@
 	if(!my_target || !isturf(my_target.loc) || !isturf(loc) || stat == DEAD)
 		return
 	var/target_dir = get_dir(src,my_target)
-	var/dir_out
-	for(var/tries in 1 to 3)
-		var/direction = turn(target_dir, (45 * rand(1,2) * pick(1, -1)))
-		var/turf/there = get_step(src, direction)
-		if(there.Adjacent(get_turf(src), my_target, src))
-			dir_out = direction
+	var/turf/destination
+	var/list/anglez = list(-90, -45, 45, 90)
+	var/drindex = rand(1,4)
+	for(var/i in 1 to LAZYLEN(anglez))
+		var/ang = LAZYACCESS(anglez,drindex)
+		var/direction = turn(target_dir, ang)
+		var/turf/there = get_step(src, turn(target_dir, ang))
+		if(!isturf(there) || LAZYACCESS(GLOB.avoid_these_turfs, there.type) || !there.Adjacent(get_turf(src), my_target, src))
+			drindex = WRAP(drindex++, 1, LAZYLEN(anglez) + 1)
+			continue
+		destination = get_step(src, direction)
+		break
 	if(is_dodge)
-		dodge(!isnull(dir_out))
-	if(!dir_out)
-		return // cant!
-	step(src, dir_out, move_to_delay)
+		dodge(!isnull(destination))
+	if(!isturf(destination))
+		return
+	step_to(src, destination, 0, move_to_delay)
 	face_atom(my_target) //Looks better if they keep looking at you when dodging
 
 	// var/static/list/cardinal_sidestep_directions = list(-90,-45,0,45,90)
@@ -1102,6 +1108,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	var/list/path = list()
 	var/frustration = 0
 	var/prune_avoids_timer = 0
+	var/max_sim_distance = 10
 
 /datum/mobmover/New(mob/living/simple_animal/parent)
 	if(!istype(parent))
@@ -1170,6 +1177,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /datum/mobmover/proc/take_a_step()
 	if(!LAZYLEN(path))
 		return
+	COOLDOWN_START(src, last_move, move_delay)
 	var/turf/was_here = get_turf(parent)
 	var/turf/next_step = LAZYACCESS(path, 1)
 	if(!isturf(next_step))
@@ -1179,35 +1187,42 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		if(!LAZYLEN(path))
 			return // okay then
 		next_step = LAZYACCESS(path, 1)
-	COOLDOWN_START(src, last_move, move_delay)
-	step_to(parent, next_step, move_delay)
+	if(SSmobs.debug_mob_pathfinding_flashers)
+		var/obj/effect/temp_visual/debug_highlight/dh = new(next_step)
+		dh.color = "red"
+		var/obj/effect/temp_visual/debug_highlight/dyrmty = new(last_move)
+		dyrmty.color = "green"
+	step_to(parent, next_step, 0, move_delay)
 	var/turf/now_here = get_turf(parent)
-	if(was_here == now_here) /// blocked, or something
+	. = TRUE
+	if(now_here != next_step) /// blocked, or something
 		frustration++
 		step_rand(parent, move_delay)
 		avoid_these[atom2coords(next_step)] = TRUE // typecache!
 		if(frustration > 5)
 			kill_path(FALSE) // give up, but dont fire anyone
-			return update_path(GET_WEAKREF(targetcache), min_distance, move_delay, TRUE) // try again
+			update_path(GET_WEAKREF(targetcache), min_distance, move_delay, TRUE) // try again
 		if(frustration > 10)
-			return kill_path(TRUE) // thats it, everyone's fired
-		return
+			kill_path(TRUE) // thats it, everyone's fired
+		. = FALSE
 	/// we made it! or something!
-	return TRUE
+	path.Cut(1,2)
 
 /// simulates walking to a turf, to see if we can just hoof it there
 /// Doesnt support quarter steps, and can't be used for parallel universes
 /datum/mobmover/proc/walking_simulator(atom/target)
 	var/turf/here = get_turf(parent)
 	var/turf/there = get_turf(target)
-	for(var/i in 1 to 20)
+	for(var/i in 1 to max_sim_distance)
 		var/turf/babystep = get_step_towards(here, target)
 		if(babystep == there)
 			return TRUE
+		if(babystep == here) // blocked
+			return FALSE
 		if(here.LinkBlockedWithAccess(babystep, parent, parent.access_card))
 			return FALSE
 		here = babystep // keep going
-
+	return TRUE // ahh lets do it anyway
 
 /// Welcome back, KPAGU, killer of many guardbuddy pathfinding procs
 /datum/mobmover/proc/kill_path(and_give_up)

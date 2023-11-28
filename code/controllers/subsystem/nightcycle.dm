@@ -62,6 +62,8 @@ SUBSYSTEM_DEF(nightcycle)
 	var/atom/movable/sunlight/sunlight_source_object = new()
 	var/list/atom/movable/sunlight/sunlight_border_objects = list()
 
+	var/debug_cant_test_thing_with_my_mole_eyes = TRUE
+
 
 /datum/controller/subsystem/nightcycle/Initialize(start_timeofday)
 	. = ..()
@@ -72,11 +74,10 @@ SUBSYSTEM_DEF(nightcycle)
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
 	var/new_time
 
-#ifdef DEBUG // kinda hard to debug things when the entire map is pitch black
-	new_time = CYCLE_DAYTIME
-	if (new_time == current_time)
-		return
-#else
+	if(debug_cant_test_thing_with_my_mole_eyes)
+		new_time = CYCLE_DAYTIME
+		if (new_time == current_time)
+			return
 	if (!isnull(custom_cycle_wait))
 		if(last_custom_cycle + custom_cycle_wait >= world.time)
 			return
@@ -104,7 +105,6 @@ SUBSYSTEM_DEF(nightcycle)
 				new_time = NIGHTTIME
 		if (new_time == current_time)
 			return
-#endif
 
 	switch (new_time)
 		if (SUNRISE)
