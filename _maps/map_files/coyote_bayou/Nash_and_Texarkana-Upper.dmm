@@ -3214,13 +3214,13 @@
 	},
 /area/f13/wasteland)
 "bEr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/medical1{
 	req_access = null;
-	req_access_txt = "150"
+	req_access_txt = null
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/white/side{
+	dir = 10
+	},
 /area/f13/building/massfusion)
 "bEu" = (
 /obj/structure/table/wood,
@@ -10484,6 +10484,11 @@
 	icon_state = "common-broken2"
 	},
 /area/f13/building/abandoned)
+"fAN" = (
+/turf/open/floor/plasteel/white/side{
+	dir = 4
+	},
+/area/f13/building/massfusion)
 "fBl" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -18791,7 +18796,7 @@
 /obj/item/clothing/neck/stethoscope,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white/side{
-	dir = 10
+	dir = 8
 	},
 /area/f13/building/massfusion)
 "jHp" = (
@@ -99986,7 +99991,7 @@ lLt
 lLt
 nBq
 lLt
-vje
+lLt
 vje
 vje
 qZa
@@ -100242,8 +100247,8 @@ tem
 xPI
 ksH
 jGV
+bEr
 lLt
-vje
 vje
 vje
 vje
@@ -100498,9 +100503,9 @@ tem
 tem
 tQP
 cgj
+fAN
 gMF
 lLt
-vje
 vje
 vje
 vje
@@ -100754,7 +100759,7 @@ aYJ
 tem
 tem
 lLt
-bEr
+lLt
 lLt
 lLt
 lLt
