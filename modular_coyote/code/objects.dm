@@ -1326,7 +1326,7 @@
 	icon_state = "dvd_player"
 
 /obj/item/weapon/dvd
-	name = "Dvd"
+	name = "\improper DVD"
 	desc = "A shiny disk! Don't scratch it."
 	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
