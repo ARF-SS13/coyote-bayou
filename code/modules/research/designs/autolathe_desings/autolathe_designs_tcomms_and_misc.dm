@@ -98,7 +98,7 @@
 	name = "Tile Painter"
 	id = "tile_painter"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000) // = 1 sheet of both
 	build_path = /obj/item/airlock_painter/tile
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SERVICE
