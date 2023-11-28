@@ -100,14 +100,16 @@ SUBSYSTEM_DEF(chat)
 		var/mob/they = sayer
 		if(!they.client)
 			return
+	var/out
 	var/datum/emoticon_bank/E
 	for(var/key in emoticon_cache) // if this gets laggy, lol idk
 		if(findtext(message, key))
-			E = emoticon_cache[key]
-			break
-	if(!E)
-		return
-	var/out = E.verbify(sayer, message, messagemode, spans)
+			E = LAZYACCESS(emoticon_cache, key)
+			if(!E)
+				continue
+			out = E.verbify(sayer, message, messagemode, spans)
+			if(out)
+				break
 	if(!out)
 		return
 	for(var/key in emoticon_cache)
