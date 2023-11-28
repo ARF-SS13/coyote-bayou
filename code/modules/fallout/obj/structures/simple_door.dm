@@ -69,7 +69,7 @@
 
 /obj/structure/simple_door/AltClick(mob/user)
 	. = ..()
-	if(deadbolt && isliving(user) && Adjacent(user) && !user.incapacitated())
+	if(deadbolt && isliving(user) && Adjacent(user, src) && !user.incapacitated())
 		if(get_dir(src,user) != deadbolt.dir)
 			to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
 		else
