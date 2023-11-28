@@ -27,9 +27,9 @@
 	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
-
-// /turf/open/Initialize()
-// 	if(!blocks_air)
+/*
+/turf/open/Initialize()
+	if(!blocks_air)
 
 // 		air = new(2500,src)
 
@@ -129,7 +129,7 @@
 /turf/open/proc/eg_garbage_collect()
 /turf/open/proc/get_excited()
 /turf/open/proc/set_excited()
-
+*/
 /////////////////////////GAS OVERLAYS//////////////////////////////
 
 

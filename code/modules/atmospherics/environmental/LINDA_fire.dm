@@ -155,7 +155,7 @@
 		qdel(src)
 		return
 
-	location.eg_reset_cooldowns()
+//	location.eg_reset_cooldowns()
 
 	if((temperature < FIRE_MINIMUM_TEMPERATURE_TO_EXIST) || (volume <= 1))
 		qdel(src)

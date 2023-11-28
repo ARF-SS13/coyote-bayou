@@ -344,7 +344,9 @@
 			turfs[T2] = 1
 	if(turfs.len <= 10)
 		return 0 // not big enough to matter
-	return start_point.air.return_pressure() < 20 ? -1 : 1
+	if (start_point.air)
+		return start_point.air.return_pressure() < 20 ? -1 : 1
+	return 0
 
 /obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, border_dir)
 	..()
