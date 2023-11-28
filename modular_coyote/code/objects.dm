@@ -3,7 +3,7 @@
 	icon_state = "nash_on"
 	base_state = "nash_on"
 	icon = 'modular_coyote/icons/objects/sign.dmi'
-	density = 0
+	density = FALSE
 	desc = "So awful..."
 	light_color = LIGHT_COLOR_RED
 //Shopping Cart
@@ -1215,8 +1215,8 @@
 	desc = "A mic stand."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "micstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand
@@ -1224,8 +1224,8 @@
 	desc = "A night stand! Maybe even a one, night stand."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "nightstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand/small
@@ -1320,16 +1320,17 @@
 	icon_state = "sink"
 
 /obj/structure/dvd_player
-	name = "Dvd Player"
+	name = "\improper DVD Player"
 	desc = "An old and dusty looking machine. Maybe it even still works.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd_player"
 
 /obj/item/weapon/dvd
-	name = "Dvd"
+	name = "\improper DVD"
 	desc = "A shiny disk! Don't scratch it."
 	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
+	custom_materials = list(/datum/material/glass = 250)
 
 /obj/item/storage/box/tools/locksmith
 	name = "locksmith tools"
