@@ -81,7 +81,7 @@
 	. = ..()
 	if(isliving(user) && istype(padlock))
 		var/mob/living/L = user
-		if(L?.mobility_flags & MOBILITY_USE)
+		if(L?.mobility_flags & MOBILITY_USE && user.Adjacent(src))
 			var/obj/item/key/K
 			var/foundit
 			for(var/maybekey in L) //Search two layers deep for a matching key
