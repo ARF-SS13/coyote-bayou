@@ -1083,6 +1083,7 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					cell = new G.cell_type()
 				var/cell_max_charge = cell.maxcharge
 				var/charge_per_shot
+				var/g_shot_charge_mult = 1
 				var/shots_per_cell
 				var/dam_per_cell
 				var/burst_length_seconds
@@ -1097,6 +1098,14 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					to_chat(usr, span_warning("ERROR: [G] ([G.type]) has no ammo types and has been skipped."))
 					continue
 
+				//Energy Projectile Damage
+				var/mycasing = G.ammo_type[1]//This is probably the right one :)
+				if(!isobj(mycasing))
+					g_casing = new mycasing(G)
+				else
+					g_casing = mycasing
+				g_bullet = new g_casing.projectile_type(G)
+
 				//RPM & RPS
 				var/list/fire_modes = G.firemodes
 				if(!LAZYLEN(fire_modes))
@@ -1110,20 +1119,15 @@ GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_gu
 					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
 				if(!g_rps)//Fallback to using the first firemode in the list, which is usually the highest rpm one
 					var/datum/firemode/fm = fire_modes[1]
 					var/fm_rps = fm.get_fire_delay(TRUE)/60// rounds per minute / 60 = rounds per second
 					if(fm_rps > g_rps || isnull(g_rps))//We only care about the highest rounds per second achievable
 						g_rps = fm_rps
+						g_shot_charge_mult = max(G.charge_cost_multiplier * fm.shot_cost_multiplier, 0.1)
+				charge_per_shot = g_casing.e_cost*(g_shot_charge_mult)
 
-				//Energy Projectile Damage
-				var/mycasing = G.ammo_type[1]//This is probably the right one :)
-				if(!isobj(mycasing))
-					g_casing = new mycasing(G)
-				else
-					g_casing = mycasing
-				g_bullet = new g_casing.projectile_type(G)
-				charge_per_shot = g_casing.e_cost*(G.get_charge_cost_mult())//This might be wrong if our first firemode isn't the highest RPM one
 				//Start avg, mode, min, & max calcs
 				if(g_bullet && g_rps)
 					var/list/dam_list = initial(g_bullet.damage_list)
