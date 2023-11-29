@@ -69,19 +69,21 @@
 
 /obj/structure/simple_door/AltClick(mob/user)
 	. = ..()
-	if(deadbolt && isliving(user) && Adjacent(user, src) && !user.incapacitated())
-		if(get_dir(src,user) != deadbolt.dir)
-			to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
-		else
-			deadbolt.ToggleLock(user)
-			do_squish(0.9,0.9,0.25 SECONDS)
-			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
+	if(isliving(user) && istype(deadbolt))
+		var/mob/living/L = user
+		if(L.Adjacent(src) && L?.mobility_flags & MOBILITY_USE)
+			if(get_dir(src,user) != deadbolt.dir)
+				to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
+			else
+				deadbolt.ToggleLock(user)
+				do_squish(0.9,0.9,0.25 SECONDS)
+				playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
 
 /obj/structure/simple_door/CtrlClick(mob/user)
 	. = ..()
 	if(isliving(user) && istype(padlock))
 		var/mob/living/L = user
-		if(L?.mobility_flags & MOBILITY_USE)
+		if(L?.mobility_flags & MOBILITY_USE && L.Adjacent(src))
 			var/obj/item/key/K
 			var/foundit
 			for(var/maybekey in L) //Search two layers deep for a matching key
@@ -91,11 +93,11 @@
 					if(istype(maybekey2, /obj/item/key))
 						K = maybekey2
 				if(K?.lock_data == padlock?.lock_data)
-					attackby(K, user)
+					attackby(K, L)
 					foundit = TRUE
 					break
 			if(!foundit) //We can't find it :(
-				to_chat(user, span_warning("You can't find the right key to unlock \the [src]! Maybe it's too deeply packed away or you lost it?"))
+				to_chat(L, span_warning("You can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
