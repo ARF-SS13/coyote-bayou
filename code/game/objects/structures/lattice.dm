@@ -2,14 +2,15 @@
 	name = "lattice"
 	desc = "A lightweight support lattice. These hold our station together."
 	icon = 'icons/obj/smooth_structures/lattice.dmi'
-	icon_state = "lattice"
+	icon_state = "lattice-255"
+	base_icon_state = "lattice"
 	density = FALSE
 	anchored = TRUE
 	armor = ARMOR_VALUE_MEDIUM
 	max_integrity = 50
 	layer = LATTICE_LAYER //under pipes
 	plane = FLOOR_PLANE
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_LATTICE)
 	canSmoothWith = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_WALLS)
 	var/number_of_rods = 1
@@ -93,9 +94,11 @@
 	name = "catwalk"
 	desc = "A catwalk for easier EVA maneuvering and cable placement."
 	icon = 'icons/obj/smooth_structures/catwalk.dmi'
-	icon_state = "catwalk"
+	icon_state = "catwalk-0"
+	base_icon_state = "catwalk"
+	canSmoothWith = list(SMOOTH_GROUP_LATTICE)
 	number_of_rods = 2
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = null
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 
@@ -125,7 +128,7 @@
 	/turf/open/indestructible/clock_spawn_room,
 	/turf/closed/wall,
 	/obj/structure/falsewall)
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 
 /obj/structure/lattice/catwalk/clockwork/Initialize(mapload)
 	. = ..()
@@ -151,11 +154,13 @@
 	name = "heatproof support lattice"
 	desc = "A specialized support beam for building across lava. Watch your step."
 	icon = 'icons/obj/smooth_structures/catwalk.dmi'
-	icon_state = "catwalk"
+	icon_state = "catwalk-0"
+	base_icon_state = "catwalk"
 	number_of_rods = 1
 	color = "#5286b9ff"
-	smoothing_flags = SMOOTH_CORNERS
-	smoothing_groups = null
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_LATTICE, SMOOTH_GROUP_OPEN_FLOOR)
+	canSmoothWith = list(SMOOTH_GROUP_LATTICE)
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 

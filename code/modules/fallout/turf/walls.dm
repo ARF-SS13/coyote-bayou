@@ -9,6 +9,7 @@
 /turf/closed/wall/f13/ReplaceWithLattice()
 	ChangeTurf(baseturfs)
 
+/*
 /turf/closed/wall/f13/ruins
 	name = "ruins"
 	desc = "All what has left from the good old days."  //What is this fucking english? ~TK
@@ -17,7 +18,7 @@
 	icon_type_smooth = "ruins"
 	hardness = 70
 	explosion_block = 2
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	//	disasemblable = 0
 	girder_type = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
@@ -110,7 +111,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "store"
 	icon_type_smooth = "store"
 	hardness = 80
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
@@ -174,7 +175,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
-	smoothing_flags = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	//	disasemblable = 0
 	girder_type = 0
@@ -259,7 +260,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall)
-
+*/
 //Fallout 13 indestructible walls
 
 /turf/closed/indestructible/f13

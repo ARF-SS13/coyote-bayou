@@ -1,3 +1,4 @@
+/*
 /turf/closed/wall/f13/coyote/darkwoodwall
 	name = "darkwood wall"
 	desc = "A wall made out of darkwood."
@@ -46,3 +47,4 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/coyote/oldwood, /turf/closed/wall)
+*/

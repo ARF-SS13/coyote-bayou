@@ -191,7 +191,7 @@
 	desc = "A wall with an advanced polymer alloy plating."
 	icon = 'icons/turf/walls/abductor_wall.dmi'
 	icon_state = "abductor"
-	smoothing_flags = SMOOTH_TRUE|SMOOTH_DIAGONAL
+	smoothing_flags = SMOOTH_BITMASK
 	sheet_type = /obj/item/stack/sheet/mineral/abductor
 	slicing_duration = 200   //alien wall takes twice as much time to slice
 	explosion_block = 3

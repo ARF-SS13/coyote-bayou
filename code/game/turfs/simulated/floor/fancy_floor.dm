@@ -488,10 +488,11 @@
 	name = "carpet"
 	desc = "Soft velvet carpeting. Feels good between your toes."
 	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "carpet"
+	icon_state = "carpet-255"
+	base_icon_state = "carpet"
 	floor_tile = /obj/item/stack/tile/carpet
 	broken_states = list("damaged")
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET)
 	flags_1 = NONE
@@ -514,15 +515,17 @@
 	if(!..())
 		return 0
 	if(!broken && !burnt)
-		if(smoothing_flags)
+		if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 			QUEUE_SMOOTH(src)
 	else
 		make_plating()
-		if(smoothing_flags)
+		if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 			QUEUE_SMOOTH_NEIGHBORS(src)
 
 /turf/open/floor/carpet/black
 	icon = 'icons/turf/floors/carpet_black.dmi'
+	icon_state = "carpet_black-255"
+	base_icon_state = "carpet_black"
 	floor_tile = /obj/item/stack/tile/carpet/black
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_BLACK)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_BLACK)
@@ -538,60 +541,76 @@
 	icon = 'icons/turf/floors/carpet_blackred.dmi'
 	floor_tile = /obj/item/stack/tile/carpet/blackred
 	icon_state = "tile-carpet-blackred"
-	smoothing_flags = SMOOTH_MORE
+	smoothing_flags = SMOOTH_CORNERS
 	canSmoothWith = list(/turf/open/floor/carpet/black, /turf/open/floor/carpet/blackred, /turf/open/floor/carpet/monochrome)
 
 /turf/open/floor/carpet/monochrome
 	icon = 'icons/turf/floors/carpet_monochrome.dmi'
 	floor_tile = /obj/item/stack/tile/carpet/monochrome
 	icon_state = "tile-carpet-monochrome"
-	smoothing_flags = SMOOTH_MORE
+	smoothing_flags = SMOOTH_CORNERS
 	canSmoothWith = list(/turf/open/floor/carpet/black, /turf/open/floor/carpet/blackred, /turf/open/floor/carpet/monochrome)
 
 /turf/open/floor/carpet/blue
 	icon = 'icons/turf/floors/carpet_blue.dmi'
+	icon_state = "carpet_blue-255"
+	base_icon_state = "carpet_blue"
 	floor_tile = /obj/item/stack/tile/carpet/blue
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_BLUE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_BLUE)
 
 /turf/open/floor/carpet/cyan
 	icon = 'icons/turf/floors/carpet_cyan.dmi'
+	icon_state = "carpet_cyan-255"
+	base_icon_state = "carpet_cyan"
 	floor_tile = /obj/item/stack/tile/carpet/cyan
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_CYAN)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_CYAN)
 
 /turf/open/floor/carpet/green
 	icon = 'icons/turf/floors/carpet_green.dmi'
+	icon_state = "carpet_green-255"
+	base_icon_state = "carpet_green"
 	floor_tile = /obj/item/stack/tile/carpet/green
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_GREEN)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_GREEN)
 
 /turf/open/floor/carpet/orange
 	icon = 'icons/turf/floors/carpet_orange.dmi'
+	icon_state = "carpet_orange-255"
+	base_icon_state = "carpet_orange"
 	floor_tile = /obj/item/stack/tile/carpet/orange
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ORANGE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ORANGE)
 
 /turf/open/floor/carpet/purple
 	icon = 'icons/turf/floors/carpet_purple.dmi'
+	icon_state = "carpet_purple-255"
+	base_icon_state = "carpet_purple"
 	floor_tile = /obj/item/stack/tile/carpet/purple
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_PURPLE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_PURPLE)
 
 /turf/open/floor/carpet/red
 	icon = 'icons/turf/floors/carpet_red.dmi'
+	icon_state = "carpet_red-255"
+	base_icon_state = "carpet_red"
 	floor_tile = /obj/item/stack/tile/carpet/red
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_RED)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_RED)
 
 /turf/open/floor/carpet/royalblack
 	icon = 'icons/turf/floors/carpet_royalblack.dmi'
+	icon_state = "carpet_royalblack-255"
+	base_icon_state = "carpet_royalblack"
 	floor_tile = /obj/item/stack/tile/carpet/royalblack
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ROYAL_BLACK)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ROYAL_BLACK)
 
 /turf/open/floor/carpet/royalblue
 	icon = 'icons/turf/floors/carpet_royalblue.dmi'
+	icon_state = "carpet_royalblue-255"
+	base_icon_state = "carpet_royalblue"
 	floor_tile = /obj/item/stack/tile/carpet/royalblue
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_ROYAL_BLUE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_ROYAL_BLUE)
@@ -663,8 +682,12 @@
 	smoothing_flags = SMOOTH_CORNERS | SMOOTH_BORDER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_TURF_CHASM)
 	canSmoothWith = list(SMOOTH_GROUP_TURF_CHASM)
-	icon = 'icons/turf/floors/Chasms.dmi'
-	icon_state = "smooth"
+	icon = 'icons/turf/floors/chasms.dmi'
+	icon_state = "chasms-0"
+	base_icon_state = "chasms"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_TURF_CHASM)
+	canSmoothWith = list(SMOOTH_GROUP_TURF_CHASM)
 	tiled_dirt = FALSE
 
 /turf/open/floor/fakepit/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)

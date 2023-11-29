@@ -5,12 +5,6 @@
  use this menu so you can't var edit normally)
 */
 
-#define DEFINE_BITFIELD(_variable, _flags) /datum/bitfield/##_variable { \
-	flags = ##_flags; \
-	variable = #_variable; \
-}
-//lmao
-
 DEFINE_BITFIELD(flags_inv, list(
 	"HIDEACCESSORY" = HIDEACCESSORY,
 	"HIDEEARS" = HIDEEARS,

@@ -104,7 +104,7 @@
 	icon = 'icons/turf/floors/carpet.dmi'
 	icon_state = "carpet"
 	floor_tile = /obj/item/stack/tile/carpet
-	smoothing_flags = SMOOTH_CORNERS
+	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
 	bullet_bounce_sound = null
 	tiled_dirt = FALSE
@@ -115,7 +115,7 @@
 
 /turf/open/floor/holofloor/carpet/update_icon()
 	. = ..()
-	if(intact)
+	if(intact && smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
 /turf/open/floor/holofloor/wood
@@ -163,7 +163,7 @@
 
 /turf/open/floor/holofloor/ice/smooth
 	icon_state = "smooth"
-	smoothing_flags = SMOOTH_MORE | SMOOTH_BORDER
+	smoothing_flags = SMOOTH_CORNERS | SMOOTH_BORDER
 	canSmoothWith = list(/turf/open/floor/plating/ice/smooth, /turf/open/floor/plating/ice, /turf/open/floor/holofloor/ice)
 	baseturfs = /turf/open/floor/holofloor/ice/smooth
 

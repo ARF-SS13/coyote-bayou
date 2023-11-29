@@ -388,14 +388,6 @@
 			air_update_turf(TRUE)
 		loc.handle_atom_del(src)
 
-		// If we have opacity, make sure to tell (potentially) affected light sources.
-		if(opacity && isturf(loc))
-			var/turf/turf_loc = loc
-			var/old_has_opaque_atom = turf_loc.has_opaque_atom
-			turf_loc.recalc_atom_opacity()
-			if(old_has_opaque_atom != turf_loc.has_opaque_atom)
-				turf_loc.reconsider_lights()
-
 	invisibility = INVISIBILITY_ABSTRACT
 
 	if(pulledby)
