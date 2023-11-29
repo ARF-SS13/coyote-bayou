@@ -224,7 +224,8 @@
 		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20	
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 5,                 //151 32
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 6,            //151 10
-		/obj/item/gun/ballistic/automatic/smg/american180 = 7,              //150 180
+		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
+		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,         //150 180
 		/obj/item/gun/ballistic/automatic/saiga12k = 8,                     //146 8
 		/obj/item/gun/ballistic/automatic/pistol/needlerpistol = 9,         //85(140) 24
 		/obj/item/gun/ballistic/automatic/pistol/beretta/carbine = 10,      //139 15
@@ -255,18 +256,21 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
+		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,         //104 12
 		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,          //104 12
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 3,                   //104 12
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 2,                   //104 12
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_guns
 	name = "uncommon guns"
 	loot = list(
 		//primary weapon candidates                                         //dps mag cap
-		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 5, 			//265 24
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
-		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
-		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 9,                //234 36
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//265 24
+		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                      //265 20
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,         //249 20
+		/obj/item/gun/ballistic/automatic/autopipe = 10,                    //244 18
+		/obj/item/gun/ballistic/automatic/r84 = 10,                         //241 60
+		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 10,               //234 36
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
 		/obj/item/gun/ballistic/automatic/r93 = 10,                         //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
@@ -276,10 +280,13 @@
 		/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator = 10,   //208 20
 		/obj/item/gun/ballistic/automatic/fnfal = 10,                       //207 10
 		/obj/item/gun/ballistic/automatic/matildar = 5,                     //207 10
+		/obj/item/gun/ballistic/automatic/compact14mmrifle = 10,            //199 21
+		/obj/item/gun/ballistic/automatic/service/alr = 10,                 //199 20
 		/obj/item/gun/ballistic/automatic/marksman = 10,                    //199 20
 		/obj/item/gun/ballistic/automatic/aksmol = 10,                      //199 20
 		/obj/item/gun/ballistic/automatic/sportcarbine = 10,                //186 32
-		/obj/item/gun/ballistic/automatic/service = 10,                     //181 20
+		/obj/item/gun/ballistic/automatic/service/carbine = 5,              //181 20
+		/obj/item/gun/ballistic/automatic/service = 5,                      //181 20
 		/obj/item/gun/ballistic/automatic/service/r82 = 10,                 //181 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5 = 10,            //185 32
 		/obj/item/gun/ballistic/automatic/type93 = 10,                      //181 20
@@ -289,19 +296,20 @@
 		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 9,  //157 30
 		/obj/item/gun/ballistic/automatic/famas/pristine = 8,               //154 20
 		/obj/item/gun/ballistic/automatic/rpd = 7,                          //152 40
-		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
 		/obj/item/gun/ballistic/automatic/shotgun/riot = 5,                 //beanbags 8
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 7,        //97 8 multicaliber, deceiving stats
 
 		//sidearms
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 2,          //254 1
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 3, 	//252 15
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 1,            //208 12
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 3,                  //198 12
 		/obj/item/gun/ballistic/automatic/pistol/sig = 3,                   //180 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 3,      //168 15
 		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 3,              //150 16
+		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 1,     //143 7
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 3,          //138 8
-		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 2,              //130 7
+		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 1,              //130 7
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/compact = 1,      //130 7
 )
 
@@ -313,7 +321,9 @@
 		/obj/item/gun/ballistic/automatic/unmcamr = 9,                    //279 4
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,        //249 20
+		/obj/item/gun/ballistic/automatic/m1919 = 10,                     //276 80
+		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
@@ -333,6 +343,7 @@
 		/obj/item/gun/ballistic/automatic/autopipe/special = 10,        //456 18
 		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
 		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 5,        //426 7
+		/obj/item/gun/ballistic/automatic/fastlmg = 4,                  //416 60
 		/obj/item/gun/ballistic/automatic/bozar = 10,                   //361 20
 		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,           //360 30
 		/obj/item/gun/ballistic/automatic/m41br = 10,                   //341 10
@@ -342,6 +353,9 @@
 		/obj/item/gun/ballistic/minigunbal5mm = 5,                      //314 480
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 10,                //312 36
 		/obj/item/gun/ballistic/automatic/p47 = 10,                     //311 10
+		/obj/item/minigunpackbal5mm = 2,
+		/obj/item/minigunpack = 2,
+		/obj/item/gun/ballistic/fatman = 0.5,
 	)
 
 ////////////////////
@@ -424,6 +438,7 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,        //213 5
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 5,  //213 5
 		/obj/item/gun/ballistic/revolver/thatgun = 10,                            //207 5
+		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,                       //186 97
 		/obj/item/gun/ballistic/automatic/lewis = 10,                             //186 47
 	)
 
@@ -431,7 +446,7 @@
 ///energy weapon spawners///
 ////////////////////////////
 
-/// DPS should be 100 or less
+/// DPS should be 100 or less ish
 /// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
@@ -447,24 +462,30 @@
 		/obj/item/gun/energy/laser/plasma = 10,             //80 12
 	)
 
-/// DPS should be <= 150 or lower with great battery capacity
+/// DPS should be <= 150 ish
 /obj/effect/spawner/lootdrop/f13/uncommon_energy
 	name = "uncommon energy"
 	loot = list(
+		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
+		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
 		/obj/item/gun/energy/laser/LaserAK/worn = 10,               //133 30
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
 		/obj/item/gun/energy/laser/wattz2k = 10,                    //130 12
 		/obj/item/gun/energy/ionrifle = 10,                         //107 15
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 10, //100 24 self recharge
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,       //100 16 self recharge
+		/obj/item/gun/energy/laser/wattz2ks = 10,                   //113 25
 		/obj/item/gun/energy/laser/laer = 10,                       //113 16
 		/obj/item/gun/energy/ionrifle/carbine = 10,                 //107 12
 		/obj/item/gun/energy/ionrifle/compact = 10,                 //107 10
+		/obj/item/gun/energy/laser/aer14 = 10,                      //105 25
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 10, //100 24 self recharge
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,       //100 16 self recharge
+		/obj/item/gun/energy/laser/tg/recharger = 10,               //100 16 self recharge
 		/obj/item/gun/energy/laser/plasma/carbine = 10,             //100 20
 		/obj/item/gun/energy/laser/plasma/glock = 10,               //100 16
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,           //100 16
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 5,                       //100 8 //Spawns with the worst power cell, but isn't bad
+		/obj/item/gun/energy/laser/plasma/bouncy = 1,               //93 20
 		/obj/item/gun/energy/laser/solar = 10,                      //90 16
 		/obj/item/gun/energy/laser/wattz/recharger = 1,             //83 20
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80 40
@@ -485,10 +506,12 @@
 /obj/effect/spawner/lootdrop/f13/rare_energy
 	name = "rare energy"
 	loot = list(                                                    //dps magcap
+		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
 		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60
 		/obj/item/gun/energy/laser/LaserAK = 10,                    //200 30
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
+		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
 		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40
 		/obj/item/gun/energy/kinetic_accelerator/crossbow = 10,     //100 1
 
@@ -508,6 +531,7 @@
 	loot = list(
 		/obj/item/gun/energy/laser/scatter/nonlethal = 10,            //132(276) 20 insane for pve wtf
 		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 10, //200 1
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,           //225 4
 	)
 
 ///////////////////////////
@@ -568,6 +592,7 @@
 		/obj/item/melee/unarmed/punchdagger = 10,
 		/obj/item/twohanded/baseball/louisville = 10,
 		/obj/item/melee/onehanded/knife/trench = 10,
+		/obj/item/melee/transforming/plasmacutter/sword/cx = 4,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_melee
@@ -577,11 +602,23 @@
 		/obj/item/melee/powered/ripper = 10,
 		/obj/item/twohanded/legionaxe = 10,
 		/obj/item/melee/transforming/energy/axe/protonaxe = 10,
-		/obj/item/melee/unarmed/powerfist = 4,
-		/obj/item/twohanded/sledgehammer/supersledge = 4,
-		/obj/item/twohanded/sledgehammer/rockethammer = 4,
-		/obj/item/twohanded/thermic_lance = 1,
+		/obj/item/melee/unarmed/powerfist = 10,
+		/obj/item/twohanded/sledgehammer/supersledge = 10,
+		/obj/item/twohanded/sledgehammer/rockethammer = 10,
+		/obj/item/twohanded/thermic_lance = 10,
 		// /obj/item/melee/transforming/plasmacutter/sword = 5, // Commenting it out until its sprite is fixed.
+		
+		//uniques
+		/obj/item/melee/powerfist/f13/satfist = 5,
+		/obj/item/melee/unarmed/powerfist/goliath = 5,
+		/obj/item/melee/onehanded/dragonfire = 5, //edgy
+		/obj/item/melee/powered/ripper/prewar = 5,
+		/obj/item/twohanded/spear/bonespear/deathclaw = 5, //sure why not
+		/obj/item/melee/unarmed/deathclawgauntlet = 5,
+		/obj/item/book/granter/martial/bass = 5,
+		/obj/item/melee/transforming/plasmacutter/regular/adam = 5,
+		/obj/item/twohanded/sledgehammer/atomsjudgement = 5,
+		/obj/item/dualsaber/hypereutactic = 5,
 	)
 
 //////////////////////////
@@ -596,51 +633,14 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_unique
 	name = "uncommon unique"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 10, //104 12
-		/obj/item/gun/ballistic/automatic/service/alr = 10, //199 20
-		/obj/item/gun/ballistic/automatic/service/carbine = 10, //181 20
-		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil = 10, //143 7
-		/obj/item/melee/transforming/plasmacutter/sword/cx = 4,
-		/obj/item/gun/energy/laser/tg/recharger = 4,
-		/obj/item/gun/energy/laser/wattz2ks = 4,
 		// /obj/item/gun/ballistic/automatic/recoilessrifle = 1, //Will ask community on ideas of a revamped recoiless rifle. Needs a complete overhaul of its niche abilities.
-		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 1,
 		// /obj/item/gun/ballistic/automatic/m1garand/republicspride = 10, // Commenting out until its sprite is fixed.
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
 	name = "rare unique"
 	loot = list(
-		/obj/item/gun/ballistic/automatic/r84 = 10,
-		/obj/item/gun/ballistic/automatic/lewis/lanoe = 10,
-		/obj/item/gun/ballistic/automatic/m1919 = 10,
-		/obj/item/melee/powered/ripper/prewar = 10,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 10, //sure why not
-		/obj/item/gun/energy/laser/badlands = 10,
-		/obj/item/melee/unarmed/deathclawgauntlet = 10,
-		/obj/item/gun/energy/laser/scatter/laserbuss = 10,
-		/obj/item/book/granter/martial/bass = 10,
-		/obj/item/gun/ballistic/automatic/fastlmg = 4, //416 60
-		/obj/item/melee/transforming/plasmacutter/regular/adam = 4,
-		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 4,
-		/obj/item/twohanded/sledgehammer/atomsjudgement = 4,
-		/obj/item/gun/ballistic/automatic/smg/smg14 = 4, //260 21
-		/obj/item/dualsaber/hypereutactic = 4,
-		/obj/item/gun/energy/laser/aer14 = 4,
-		/obj/item/melee/powerfist/f13/satfist = 4,
-		/obj/item/gun/ballistic/automatic/m72 = 4,
-		/obj/item/gun/ballistic/automatic/xl70e3 = 4,
-		/obj/item/melee/unarmed/powerfist/goliath = 1,
-		/obj/item/minigunpackbal5mm = 1,
-		/obj/item/minigunpack = 1,
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,
-		/obj/item/gun/energy/laser/plasma/bouncy = 1, // basically the alien gun, but reloadable. Might make it literally an Alien cell gun later
-		/obj/item/gun/energy/laser/plasma/scatter = 1,
-		/obj/item/gun/energy/laser/tg/particlecannon = 1, // old tesla cannon was kind of... bad. In several ways.
-		/obj/item/melee/onehanded/dragonfire = 1, //edgy
-		/obj/item/sord = 1, //for the meme
-		/obj/item/gun/ballistic/automatic/compact14mmrifle = 4,
-		/obj/item/gun/ballistic/fatman = 0.5,
+//		/obj/item/gun/ballistic/automatic/m72 = 4, //31 10 beyond trash tier
 	)
 
 /obj/effect/spawner/lootdrop/f13/very_rare_unique
