@@ -1085,7 +1085,7 @@
 	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
 	icon_state = "lasrifle"
 	weapon_weight = GUN_TWO_HAND_ONLY
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_HUGE
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/rifle)
 	can_flashlight = 1
 	flight_x_offset = 20
