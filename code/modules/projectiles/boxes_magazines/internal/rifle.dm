@@ -51,7 +51,7 @@
 	desc = "Pew pew pew pew!"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = list(CALIBER_9MM)
-	max_ammo = 10
+	max_ammo = 9
 	multiload = FALSE
 
 /obj/item/ammo_box/magazine/internal/needlerammo
@@ -88,7 +88,7 @@
 	name = "magazine filled with mauser ammo(308)."
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = list(CALIBER_308)
-	max_ammo = 10
+	max_ammo = 9
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
@@ -97,6 +97,15 @@
 	name = "magazine filled with mauser ammo(.30-06)."
 	ammo_type = /obj/item/ammo_casing/a3006
 	caliber = list(CALIBER_3006)
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
+/obj/item/ammo_box/magazine/internal/ptrs //4 because the weird 4+1 mechanic
+	name = "magazine filled with 14.7mm ammo(50.cal)"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	caliber = list(CALIBER_50MG)
 	max_ammo = 4
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY

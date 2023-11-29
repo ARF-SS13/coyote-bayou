@@ -1179,7 +1179,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
 	value = -22
 	category = "Lifepath Quirks"
-	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns and many machines."
+	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns, PDAs, and many machines."
 	conflicts = list(
 
 	)

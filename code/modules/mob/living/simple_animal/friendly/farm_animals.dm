@@ -46,7 +46,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat/Initialize(/datum/reagent/milk_reagent)
 	if(milk_reagent)
 		src.milk_reagent = milk_reagent
-	udder = new (null, src.milk_reagent)
+	udder = new (src, src.milk_reagent)
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
@@ -183,7 +183,7 @@
 
 
 /mob/living/simple_animal/cow/Initialize()
-	udder = new(null, milk_reagent)
+	udder = new(src, milk_reagent)
 	. = ..()
 	recenter_wide_sprite()
 
@@ -329,7 +329,7 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new()
+				udder = new(src, milk_reagent)
 				if (name == "brahmin calf")
 					name = "brahmin"
 				else
@@ -675,8 +675,6 @@
 		user.visible_message("[user] milks [src] using \the [O].", span_notice("You milk [src] using \the [O]."))
 	else
 		to_chat(user, span_danger("The udder is dry. Wait a bit longer..."))
-
-
 
 /////////////
 // BRAHMIN //
@@ -1551,7 +1549,7 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new(null, milk_reagent)
+				udder = new(src, milk_reagent)
 				if(name == "bighorn lamb")
 					name = "bighorn"
 				else

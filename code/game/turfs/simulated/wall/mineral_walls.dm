@@ -166,6 +166,10 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
 
+/turf/closed/wall/mineral/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.sharpness && W.force)
 		var/duration = (48/W.force) * 2 //In seconds, for now.
@@ -196,6 +200,9 @@
 	canSmoothWith = list(SMOOTH_GROUP_IRON_WALLS)
 	custom_materials = list(/datum/material/iron = 5000)
 
+/turf/closed/shuttle/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /turf/closed/wall/mineral/snow
 	name = "packed snow wall"
 	desc = "A wall made of densely packed snow blocks."
@@ -212,6 +219,9 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	custom_materials = list(/datum/material/snow = 4000)
+
+/turf/closed/wall/mineral/snow/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SNOW, -10, 5, 1)
 
 /turf/closed/wall/mineral/abductor
 	name = "alien wall"
@@ -260,7 +270,7 @@
 /turf/closed/wall/mineral/titanium/overspace
 	icon_state = "map-overspace"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	fixed_underlay = list("space" = TRUE)
+	//fixed_underlay = list("space" = TRUE)
 
 //sub-type to be used for interior shuttle walls
 //won't get an underlay of the destination turf on shuttle move
@@ -332,8 +342,7 @@
 /turf/closed/wall/mineral/plastitanium/overspace
 	icon_state = "map-overspace"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	fixed_underlay = list("space" = TRUE)
-
+	//fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/mineral/plastitanium/explosive/ex_act(severity)
 	var/datum/explosion/acted_explosion = null

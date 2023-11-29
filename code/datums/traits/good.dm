@@ -2168,6 +2168,30 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	lose_text = span_danger("You no longer know how to cast shocking grasp!.")
 	human_only = FALSE
 
+/datum/quirk/telepathy
+	name = "Innate Telepathy"
+	desc = "You innately have the ability to project your thoughts directly into the minds of others."
+	value = 20 //A good chunk of the cost of being mute, if you decide to take both.
+	category = "Cantrips"
+	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
+	conflicts = list(
+
+					)
+	mob_trait = TRAIT_TELEPATHY
+	gain_text = span_notice("You suddenly don't feel the need to talk out loud anymore.")
+	lose_text = span_danger("Talking out loud suddenly feels like a much better idea.")
+	medical_record_text = "Patient appears to posess the ability to speak directly to the minds of others."
+	human_only = FALSE
+
+/datum/quirk/telepathy/add()
+	quirk_holder.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/quirk)
+
+/datum/quirk/telepathy/remove()
+	if(LAZYLEN(quirk_holder?.mind?.spell_list))
+		for(var/s in quirk_holder?.mind?.spell_list)
+			if(istype(s, /obj/effect/proc_holder/spell/targeted/telepathy/quirk))
+				quirk_holder.mind.RemoveSpell(s)
+
 //datum/quirk/booming
 	//name = "Booming Blade"
 	//desc = "You know how to cast the booming blade cantrip"

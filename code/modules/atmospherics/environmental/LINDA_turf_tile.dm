@@ -27,99 +27,99 @@
 	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
-
+/*
 /turf/open/Initialize()
 	if(!blocks_air)
 
-		air = new(2500,src)
+// 		air = new(2500,src)
 
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
-	. = ..()
+// 		air.copy_from_turf(src)
+// 		update_air_ref(planetary_atmos ? 1 : 2)
+// 	. = ..()
 
-/turf/open/Destroy()
-	if(active_hotspot)
-		QDEL_NULL(active_hotspot)
-	return ..()
+// /turf/open/Destroy()
+// 	if(active_hotspot)
+// 		QDEL_NULL(active_hotspot)
+// 	return ..()
 
 /turf/proc/update_air_ref()
 
 /////////////////GAS MIXTURE PROCS///////////////////
 
 /turf/open/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
-	return assume_air_ratio(giver, 1)
+	// return assume_air_ratio(giver, 1)
 
 /turf/open/assume_air_moles(datum/gas_mixture/giver, moles)
-	if(!giver)
-		return FALSE
-	if(SSair.thread_running())
+	// if(!giver)
+	// 	return FALSE
+	// if(SSair.thread_running())
 
-		SSair.deferred_airs += list(list(giver, air, moles / giver.total_moles()))
-	else
-		giver.transfer_to(air, moles)
-		update_visuals()
-	return TRUE
+	// 	SSair.deferred_airs += list(list(giver, air, moles / giver.total_moles()))
+	// else
+	// 	giver.transfer_to(air, moles)
+	// 	update_visuals()
+	// return TRUE
 
 /turf/open/assume_air_ratio(datum/gas_mixture/giver, ratio)
-	if(!giver)
-		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(giver, air, ratio))
-	else
-		giver.transfer_ratio_to(air, ratio)
-		update_visuals()
-	return TRUE
+	// if(!giver)
+	// 	return FALSE
+	// if(SSair.thread_running())
+	// 	SSair.deferred_airs += list(list(giver, air, ratio))
+	// else
+	// 	giver.transfer_ratio_to(air, ratio)
+	// 	update_visuals()
+	// return TRUE
 
 /turf/open/transfer_air(datum/gas_mixture/taker, moles)
-	if(!taker || !return_air()) // shouldn't transfer from space
-		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(air, taker, moles / air.total_moles()))
-	else
-		air.transfer_to(taker, moles)
-		update_visuals()
-	return TRUE
+	// if(!taker || !return_air()) // shouldn't transfer from space
+	// 	return FALSE
+	// if(SSair.thread_running())
+	// 	SSair.deferred_airs += list(list(air, taker, moles / air.total_moles()))
+	// else
+	// 	air.transfer_to(taker, moles)
+	// 	update_visuals()
+	// return TRUE
 
 /turf/open/transfer_air_ratio(datum/gas_mixture/taker, ratio)
-	if(!taker || !return_air())
-		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(air, taker, ratio))
-	else
-		air.transfer_ratio_to(taker, ratio)
+	// if(!taker || !return_air())
+	// 	return FALSE
+	// if(SSair.thread_running())
+	// 	SSair.deferred_airs += list(list(air, taker, ratio))
+	// else
+	// 	air.transfer_ratio_to(taker, ratio)
 
-		update_visuals()
-	return TRUE
+	// 	update_visuals()
+	// return TRUE
 
 /turf/open/remove_air(amount)
-	var/datum/gas_mixture/ours = return_air()
-	var/datum/gas_mixture/removed = ours.remove(amount)
-	update_visuals()
-	return removed
+	// var/datum/gas_mixture/ours = return_air()
+	// var/datum/gas_mixture/removed = ours.remove(amount)
+	// update_visuals()
+	// return removed
 
 /turf/open/remove_air_ratio(ratio)
-	var/datum/gas_mixture/ours = return_air()
-	var/datum/gas_mixture/removed = ours.remove_ratio(ratio)
-	update_visuals()
-	return removed
+	// var/datum/gas_mixture/ours = return_air()
+	// var/datum/gas_mixture/removed = ours.remove_ratio(ratio)
+	// update_visuals()
+	// return removed
 
 /turf/open/proc/copy_air_with_tile(turf/open/T)
-	if(istype(T))
-		air.copy_from(T.air)
+	// if(istype(T))
+	// 	air.copy_from(T.air)
 
 /turf/open/proc/copy_air(datum/gas_mixture/copy)
-	if(copy)
-		air.copy_from(copy)
+	// if(copy)
+	// 	air.copy_from(copy)
 
 /turf/return_air()
-	RETURN_TYPE(/datum/gas_mixture)
-	var/datum/gas_mixture/GM = new
-	GM.copy_from_turf(src)
-	return GM
+	// RETURN_TYPE(/datum/gas_mixture)
+	// var/datum/gas_mixture/GM = new
+	// GM.copy_from_turf(src)
+	// return GM
 
 /turf/open/return_air()
-	RETURN_TYPE(/datum/gas_mixture)
-	return air
+	// RETURN_TYPE(/datum/gas_mixture)
+	// return air
 
 /turf/temperature_expose()
 	if(return_temperature() > heat_capacity)
@@ -129,7 +129,7 @@
 /turf/open/proc/eg_garbage_collect()
 /turf/open/proc/get_excited()
 /turf/open/proc/set_excited()
-
+*/
 /////////////////////////GAS OVERLAYS//////////////////////////////
 
 

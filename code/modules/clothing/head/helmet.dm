@@ -740,7 +740,7 @@
 	icon_state = "unmch"
 	item_state = "unmch"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -750,7 +750,7 @@
 	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	icon_state = "custominfil"
 	item_state = "custominfil"
@@ -769,7 +769,7 @@
 	icon_state = "rhazhelm"
 	item_state = "rhazhelm"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -780,7 +780,7 @@
 	icon_state = "usainfilhelm"
 	item_state = "usainfilhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -791,7 +791,7 @@
 	icon_state = "chinastealthhelm"
 	item_state = "chinastealthhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -802,7 +802,7 @@
 	icon_state = "unmcwh"
 	item_state = "unmcwh"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -815,7 +815,7 @@
 	icon_state = "banditmask"
 	item_state = "banditmask"
 	flags_inv = HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/blpsycho
 	name = "psycho mask"
@@ -825,7 +825,7 @@
 	icon_state = "psychomask"
 	item_state = "psychomask"
 	flags_inv = HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/borderlandshelm
 	name = "borderlands helmet template"
@@ -833,7 +833,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDEMASK | HIDEEYES | HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
-	armor_list = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/item/clothing/head/helmet/borderlandshelm/bandit
 	name = "bandit helmet"

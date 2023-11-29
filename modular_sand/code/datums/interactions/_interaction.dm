@@ -8,6 +8,7 @@
 - >using var/ on everything, also TRUE
 - "TGUIzes" the panel because yes - SandPoot
 - Makes all the code good because yes as well - SandPoot
+- ripped out all the shitcode and made it good - Superlagg
 **/
 
 
@@ -512,7 +513,7 @@
 	// 	return LAZYACCESS(formatted_cache, cachekey)
 
 	var/user_color = user.chat_color || user.client?.prefs.features["chat_color"] || "FF00FF"
-	var/target_color = user.chat_color || target.client?.prefs.features["chat_color"] || "FF00FF"
+	var/target_color = target.chat_color || target.client?.prefs.features["chat_color"] || "FF00FF"
 	if(extra["object1"])
 		if(istext(extra["object1"]))
 			message = replacetextEx(message, "XOBJECT1X", extra["object1"])

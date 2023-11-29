@@ -533,6 +533,11 @@ obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol //5mm caliber pistol
 /obj/item/gun/ballistic/automatic/pistol/type17/tox
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "toxpistol"
+	item_state = "toxpistol"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)

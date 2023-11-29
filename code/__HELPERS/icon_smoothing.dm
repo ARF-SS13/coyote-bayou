@@ -53,7 +53,6 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define DEFAULT_UNDERLAY_ICON 			'icons/turf/floors.dmi'
 #define DEFAULT_UNDERLAY_ICON_STATE 	"plating"
 
-
 #define SET_ADJ_IN_DIR(source, junction, direction, direction_flag) \
 	do { \
 		var/turf/neighbor = get_step(source, direction); \
@@ -191,7 +190,6 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 	icon_state = ""
 	return TRUE
-
 
 /atom/proc/corners_cardinal_smooth(adjacencies)
 	//NW CORNER

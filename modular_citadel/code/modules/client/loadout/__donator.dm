@@ -265,6 +265,7 @@
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
+	new /obj/item/toy/scale(src)
 
 /datum/gear/donator/kits/bwoincognito
 	name = "Tasald's Kit"
@@ -365,6 +366,16 @@
 	new /obj/item/storage/belt/army/assault(src)
 	new /obj/item/melee/unarmed/brass/spiked(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
+
+/datum/gear/donator/kits/calebc789
+	name = "The old fashioned"
+	path = /obj/item/storage/box/large/custom_kit/calebc789
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc789/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sovietantimaterial(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/a50MGbox(src)
 
 // D
 
@@ -1164,6 +1175,18 @@
 /obj/item/storage/box/large/custom_kit/rubeebee/PopulateContents()
     new /obj/item/clothing/suit/armor/light/leather/durathread(src)
 
+/datum/gear/donator/kits/ruinerk
+	name = "Custom revolver kit"
+	path = /obj/item/storage/box/large/custom_kit/ruinerk
+	ckeywhitelist = list("RUINEREK")
+
+/obj/item/storage/box/large/custom_kit/ruinerk/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+
+
 // S
 
 /datum/gear/donator/kits/sage1990
@@ -1257,16 +1280,18 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit004
-	name = "The Latos Agent G36 version"
+	name = "The Icelandic Latos Agent"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/g36custom(src)
-	new /obj/item/ammo_box/a556(src)
-	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/rifle/mag/pz39custom(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
@@ -1390,6 +1415,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
 	new /obj/item/clothing/neck/customfleur(src)
 	new /obj/item/clothing/under/tribalcustom(src)
+	new /obj/item/clothing/under/tribaliris(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"

@@ -37,9 +37,10 @@
 /* Basic clothing armor values
  * Mild environmental resistances
  * No actual defense
+ * Bonus melee (lol) as pity -Kelprunner
  * * * * * * * * * * * */
 #define ARMOR_VALUE_CLOTHES list(\
-		"linemelee" = 0, \
+		"linemelee" = 5, \
 		"linebullet" = 0, \
 		"linelaser" = 0, \
 		"energy" = 0, \
@@ -56,7 +57,6 @@
  * Mild environmental resistances
  * Low defense
  * Low DT
- *
  * +20 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
@@ -69,7 +69,7 @@
 		"rad" = 10, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 5, \
+		"wound" = 7, \
 		"damage_threshold" = 1)
 
 /* Medium armor values
@@ -90,7 +90,7 @@
 		"rad" = 25, \
 		"fire" = 25, \
 		"acid" = 25, \
-		"wound" = 10, \
+		"wound" = 15, \
 		"damage_threshold" = 3)
 
 /* Heavy armor values
@@ -99,13 +99,13 @@
  * High defense
  * Lot of DT
  *
- * +45 effective HP
+ * +60 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_HEAVY list(\
-		"linemelee" = 45, \
-		"linebullet" = 45, \
-		"linelaser" = 45, \
-		"energy" = 0, \
+		"linemelee" = 60, \
+		"linebullet" = 60, \
+		"linelaser" = 60, \
+		"energy" = 10, \
 		"bomb" = 25, \
 		"bio" = 25, \
 		"rad" = 25, \
@@ -120,13 +120,13 @@
  * Great defense
  * Lots of DT
  *
- * +80 effective HP
- * +20 laser HP
+ * +110 effective HP
+ * +130 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_SALVAGE list(\
-		"linemelee" = 80, \
-		"linebullet" = 80, \
-		"linelaser" = 100, \
+		"linemelee" = 110, \
+		"linebullet" = 110, \
+		"linelaser" = 130, \
 		"energy" = 30, \
 		"bomb" = 60, \
 		"bio" = 80, \
@@ -141,17 +141,17 @@
  * Amazing environmental resistances
  * OP defense
  *
- * +125 effective HP
- * +25 laser HP
+ * +140 effective HP
+ * +160 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_PA list(\
-		"linemelee" = 125, \
-		"linebullet" = 125, \
-		"linelaser" = 150, \
+		"linemelee" = 140, \
+		"linebullet" = 140, \
+		"linelaser" = 160, \
 		"energy" = 40, \
 		"bomb" = 90, \
 		"bio" = 100, \
-		"rad" = 50, \
+		"rad" = 60, \
 		"fire" = 95, \
 		"acid" = 95, \
 		"wound" = 100, \
@@ -411,7 +411,7 @@
 
 /* Deathclaw power armor - basically a super boss fight
  * Power armor + deathclaw = yeah youre not killing this
- * Doesn't appear anywhere outside of super dangerous areas that DO NOT offer a power fantasy. Has stats to match it. Regular 5.56 will not do here, bring a melee weapon or something bigger.  
+ * Doesn't appear anywhere outside of super dangerous areas that DO NOT offer a power fantasy. Has stats to match it. Regular 5.56 will not do here, bring a melee weapon or something bigger.
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_PA list(\
 		"melee" = 95, \
@@ -424,7 +424,7 @@
 		"fire" = 0, \
 		"acid" = 0, \
 		"wound" = 0, \
-		"damage_threshold" = 37) 
+		"damage_threshold" = 37)
 
 /* Raider leather jacket
  * Basically a leather jacket
@@ -946,19 +946,19 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
  * Light Armor
  * Basically clothes, but more
 */
-#define ARMOR_SLOWDOWN_LIGHT 0
+#define ARMOR_SLOWDOWN_LIGHT 0.15
 
 /*
  * Medium Armor
  * Substantial armor
 */
-#define ARMOR_SLOWDOWN_MEDIUM 0.5
+#define ARMOR_SLOWDOWN_MEDIUM 0.4
 
 /*
  * Heavy Armor
  * Bulky suits of heavy armor
 */
-#define ARMOR_SLOWDOWN_HEAVY 1
+#define ARMOR_SLOWDOWN_HEAVY 0.80
 
 /*
  * Salvaged Power Armor

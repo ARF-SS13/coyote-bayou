@@ -52,6 +52,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_chat_non_mob = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
+	///Whether to apply mobs' runechat color to the chat log as well
+	var/color_chat_log = TRUE
 
 	var/list/aghost_squelches = list()
 
@@ -1210,6 +1212,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>See Runechat emotes:</b> <a href='?_src_=prefs;preference=see_rc_emotes'>[see_rc_emotes ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Use Runechat color in chat log:</b> <a href='?_src_=prefs;preference=color_chat_log'>[color_chat_log ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 			dat += "<br>"
@@ -3720,6 +3723,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					see_chat_non_mob = !see_chat_non_mob
 				if("see_rc_emotes")
 					see_rc_emotes = !see_rc_emotes
+				if("color_chat_log")
+					color_chat_log = !color_chat_log
 
 				if("action_buttons")
 					buttons_locked = !buttons_locked
@@ -4041,7 +4046,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.species.eye_type = eye_type
-	character.tastes = list(character.dna.features["taste"] = 1)
+	SSlistbank.catalogue_tastes(character, list(character.dna.features["taste"] = 1), TRUE) // unique and important
 	if(chosen_limb_id && (chosen_limb_id in character.dna.species.allowed_limb_ids))
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name

@@ -87,16 +87,6 @@
 
 	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
 
-	var/list/splitmsg = splittext(html_decode(msg), "\"")
-	var/initlen = splitmsg.len
-	if(initlen > 1)
-		var/mob/living/carbon/carbo = user
-		var/saycolor = carbo?.dna.features["chat_color"]
-		if(!saycolor)
-			saycolor = rgb(255, 0, 0)
-
-		msg = alternating_color_span(msg,"#[saycolor]","\"",0)
-
 
 	msg = "<span class='emote'>[msg]</span>"
 	if(!omit_left_name)

@@ -54,6 +54,10 @@
 	else
 		return ..()
 
+/obj/structure/flora/tree/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/flora/stump
 	name = "stump"
 	desc = "The mark of human progress."
@@ -417,6 +421,9 @@
 		SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 		qdel(src)
 
+/obj/structure/flora/rock/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
 	desc = "A pile of rocks."
@@ -477,6 +484,7 @@
 	pixel_y = -12
 	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
+	do_transparency = FALSE //Has a custom transparency zone
 
 /obj/structure/flora/junglebush/large/Initialize()
 	. = ..()

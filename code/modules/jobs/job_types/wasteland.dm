@@ -1315,6 +1315,12 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+
+/datum/job/wasteland/f13wastelander/den
+	title = "Den Waster"
+	flag = F13WASTEDEN
+	faction = FACTION_WASTELAND
+
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP

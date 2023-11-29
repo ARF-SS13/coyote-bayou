@@ -291,30 +291,30 @@ SUBSYSTEM_DEF(air)
 		pipenets_needing_rebuilt += atmos_machine
 
 /datum/controller/subsystem/air/proc/process_deferred_airs(resumed = 0)
-	cur_deferred_airs = deferred_airs.len
-	max_deferred_airs = max(cur_deferred_airs,max_deferred_airs)
-	while(deferred_airs.len)
-		var/list/cur_op = deferred_airs[deferred_airs.len]
-		deferred_airs.len--
-		var/datum/gas_mixture/air1
-		var/datum/gas_mixture/air2
-		if(isopenturf(cur_op[1]))
-			var/turf/open/T = cur_op[1]
-			air1 = T.return_air()
-		else
-			air1 = cur_op[1]
-		if(isopenturf(cur_op[2]))
-			var/turf/open/T = cur_op[2]
-			air2 = T.return_air()
-		else
-			air2 = cur_op[2]
-		if(istype(cur_op[3], /datum/callback))
-			var/datum/callback/cb = cur_op[3]
-			cb.Invoke(air1, air2)
-		else
-			air1.transfer_ratio_to(air2, cur_op[3])
-		if(MC_TICK_CHECK)
-			return
+	// cur_deferred_airs = deferred_airs.len
+	// max_deferred_airs = max(cur_deferred_airs,max_deferred_airs)
+	// while(deferred_airs.len)
+	// 	var/list/cur_op = deferred_airs[deferred_airs.len]
+	// 	deferred_airs.len--
+	// 	var/datum/gas_mixture/air1
+	// 	var/datum/gas_mixture/air2
+	// 	if(isopenturf(cur_op[1]))
+	// 		var/turf/open/T = cur_op[1]
+	// 		air1 = T.return_air()
+	// 	else
+	// 		air1 = cur_op[1]
+	// 	if(isopenturf(cur_op[2]))
+	// 		var/turf/open/T = cur_op[2]
+	// 		air2 = T.return_air()
+	// 	else
+	// 		air2 = cur_op[2]
+	// 	if(istype(cur_op[3], /datum/callback))
+	// 		var/datum/callback/cb = cur_op[3]
+	// 		cb.Invoke(air1, air2)
+	// 	else
+	// 		air1.transfer_ratio_to(air2, cur_op[3])
+	// 	if(MC_TICK_CHECK)
+	// 		return
 
 /datum/controller/subsystem/air/proc/process_atmos_machinery(resumed = 0)
 	var/seconds = wait * 0.1
@@ -509,18 +509,18 @@ SUBSYSTEM_DEF(air)
 	return pipe_init_dirs_cache[type]["[dir]"]
 
 /datum/controller/subsystem/air/proc/generate_atmos()
-	atmos_gen = list()
-	for(var/T in subtypesof(/datum/atmosphere))
-		var/datum/atmosphere/atmostype = T
-		atmos_gen[initial(atmostype.id)] = new atmostype
+	// atmos_gen = list()
+	// for(var/T in subtypesof(/datum/atmosphere))
+	// 	var/datum/atmosphere/atmostype = T
+	// 	atmos_gen[initial(atmostype.id)] = new atmostype
 
 /datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
-	if(!atmos_gen)
-		generate_atmos()
-	if(!atmos_gen[gas_string])
-		return gas_string
-	var/datum/atmosphere/mix = atmos_gen[gas_string]
-	return mix.gas_string
+	// if(!atmos_gen)
+	// 	generate_atmos()
+	// if(!atmos_gen[gas_string])
+	// 	return gas_string
+	// var/datum/atmosphere/mix = atmos_gen[gas_string]
+	// return mix.gas_string
 
 #undef SSAIR_PIPENETS
 #undef SSAIR_ATMOSMACHINERY

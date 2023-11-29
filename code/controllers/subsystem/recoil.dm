@@ -163,16 +163,17 @@ SUBSYSTEM_DEF(recoil)
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
-	var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
 	var/turbofuck_unwielded_spread = FALSE
 	var/turboreward_wielded_spread = FALSE
-	if(spread > turbofuck_threshold && istype(shoot))
-		if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
-			turbofuck_unwielded_spread = TRUE // hodl it right
-			mean = spread
-			std = spread //fuck you wield it
-		else if(shoot.wielded) // yay you wielded it!
-			turboreward_wielded_spread = TRUE
+	if(istype(shoot))
+		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
+		if(spread > turbofuck_threshold && istype(shoot))
+			if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
+				turbofuck_unwielded_spread = TRUE // hodl it right
+				mean = spread
+				std = spread //fuck you wield it
+			else if(shoot.wielded) // yay you wielded it!
+				turboreward_wielded_spread = TRUE
 	/// turns out this proc is cheap as fuck
 	var/my_angle = gaussian(mean, std) * pick(1, -1)
 	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
@@ -689,11 +690,11 @@ SUBSYSTEM_DEF(recoil)
 		stiffness_recoil = (total_stffness / num_stiff)
 	return stiffness_recoil
 
-/obj/item/storage/debug/debug_gun_mods
+/obj/item/storage/debug/debug_gun_sack
 	name = "Bag of Debug Gun Mods"
 	desc = "A cool bag of upgrades and guns for devs to test weapon mods, recoil, etc!"
 
-/obj/item/storage/debug/debug_gun_mods/PopulateContents()
+/obj/item/storage/debug/debug_gun_sack/PopulateContents()
 	. = ..()
 	new /obj/item/storage/debug_box/guns_ballistic_1(src)
 	new /obj/item/storage/debug_box/ammo_ballistic_1(src)

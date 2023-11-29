@@ -98,14 +98,10 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 
 /client/MouseMove(object,location,control,params)
 	mouseParams = params
-	mouseLocation = location
 	mouseObject = object
 	mouseControlObject = control
 	if(mob)
 		SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOUSEMOVE, object, location, control, params)
-		moused_over_objects[object] = world.time
-		if(moused_over_objects.len > 7)
-			moused_over_objects.Cut(1, 2)
 	..()
 
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
@@ -118,7 +114,6 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 			middragtime = 0
 			middragatom = null
 	mouseParams = params
-	mouseLocation = over_location
 	mouseObject = over_object
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())

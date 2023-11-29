@@ -22,13 +22,26 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
+	var/saycolor = src.get_chat_color()
+	var/color_message = alternating_color_span(rendered, saycolor, "\"", FALSE)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
+		if(istype(AM,/mob/living/carbon))
+			var/mob/living/carbon/AMcarb = AM
+			if(AMcarb.client?.prefs.color_chat_log)
+				AM.Hear(color_message, src, message_language, message, , spans, message_mode, source, just_chat)
+				return
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode, source, just_chat)
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)
 	if(!source)
 		source = speaker
+	var/docolor = FALSE
+	var/saycolor = rgb(255, 255, 255)
+	if(istype(src, /mob/living/carbon))
+		var/mob/living/carbon/carbo = src
+		docolor = carbo.client?.prefs.color_chat_log
+		saycolor = speaker.get_chat_color()
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
 	var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
@@ -38,6 +51,8 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/freqpart = radio_freq ? "\[[get_radio_name(radio_freq)]\] " : ""
 	//Speaker name
 	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
+	if(docolor)
+		namepart = span_color(namepart, saycolor)
 	if(face_name && ishuman(speaker))
 		var/mob/living/carbon/human/H = speaker
 		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
@@ -46,6 +61,8 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 	//Message
 	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
+	if(docolor)
+		messagepart = alternating_color_span(messagepart, saycolor, "\"", FALSE)
 
 	var/languageicon = ""
 	var/datum/language/D = GLOB.language_datum_instances[message_language]
@@ -208,6 +225,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/job
 	var/atom/movable/source
 	var/obj/item/radio/radio
+	var/chatcolor
 
 INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 /atom/movable/virtualspeaker/Initialize(mapload, atom/movable/M, radio)
@@ -220,6 +238,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
 		verb_yell = M.verb_yell
+		chatcolor = M.get_chat_color()
 
 	// The mob's job identity
 	if(ishuman(M))
@@ -256,3 +275,6 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 //To get robot span classes, stuff like that.
 /atom/movable/proc/get_spans()
 	return list()
+
+/atom/movable/virtualspeaker/get_chat_color()
+	return chatcolor

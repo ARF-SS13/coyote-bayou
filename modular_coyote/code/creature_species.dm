@@ -172,6 +172,7 @@
 /datum/species/feral/pokemon/eevee
 	name = "Feral Eevee"
 	id = "eevee"
+	roundstart = TRUE
 /mob/living/carbon/human/species/eevee
 	race = /datum/species/feral/pokemon/eevee
 
@@ -932,7 +933,7 @@
 	icon_rest_suffix = ""
 	rotate_on_lying = TRUE
 	simple_icon = 'icons/mob/deathclaw.dmi'
-	
+
 /mob/living/carbon/human/species/deathclaw_original
 	race = /datum/species/feral/deathclaw/original
 

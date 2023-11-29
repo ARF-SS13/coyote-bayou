@@ -18,8 +18,6 @@
 	//ricochet_chance_mod = 0.5
 
 /obj/structure/Initialize()
-	if (!armor)
-		armor = ARMOR_VALUE_LIGHT
 	. = ..()
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)

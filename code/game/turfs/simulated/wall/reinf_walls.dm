@@ -18,6 +18,9 @@
 	var/d_state = INTACT
 
 
+/turf/closed/wall/r_wall/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)
 		if(INTACT)
@@ -274,7 +277,7 @@
 /turf/closed/wall/r_wall/syndicate/overspace
 	icon_state = "map-overspace"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	fixed_underlay = list("space" = TRUE)
+
 
 /////////////////////Pirate Ship walls/////////////////////
 
@@ -293,4 +296,4 @@
 
 /turf/closed/wall/r_wall/syndicate/pirate/overspace
 	icon_state = "map-overspace"
-	fixed_underlay = list("space"=1)
+	// fixed_underlay = list("space"=1)

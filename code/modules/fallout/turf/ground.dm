@@ -229,7 +229,10 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	icon_state = "savannah1_dark"
 
 
-
+GLOBAL_LIST_INIT(dirt_loots, list(
+	/obj/item/stack/crafting/metalparts/five = 30,
+	/obj/item/stack/crafting/goodparts/five = 30,
+	/obj/item/stack/ore/blackpowder/twenty = 10,))
 // DESERT
 
 /turf/open/indestructible/ground/outside/desert
@@ -253,14 +256,6 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	var/pitcontents // Lazylist of pit contents. TODO: Replace with mypit.contents?
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
-	var/static/list/loots = list(
-						/obj/item/stack/crafting/metalparts/five = 30,
-						/obj/item/stack/crafting/goodparts/five = 30,
-						/obj/item/stack/ore/blackpowder/twenty = 10,
-						//obj/effect/spawner/lootdrop/f13/weapon/wasteland = 6,
-						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
-						//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
-						)
 
 //For sculpting with more precision, the random picking does not work very well. Slowdown 0.5 instead of 1. No random armor or gunpowder or titanium. Use directions for control. - Pebbles
 /turf/open/indestructible/ground/outside/desert/sonora
@@ -290,7 +285,7 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
 	if(prob(2))
-		var/obj/derp = pickweight(loots)
+		var/obj/derp = pickweight(GLOB.dirt_loots)
 		salvage = new derp()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
@@ -312,7 +307,7 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 /turf/open/indestructible/ground/outside/desert/harsh/Initialize()
 	. = ..()
 	if(prob(2))
-		var/obj/derp = pickweight(loots)
+		var/obj/derp = pickweight(GLOB.dirt_loots)
 		salvage = new derp()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
@@ -471,6 +466,7 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	update_icon()
 
 /turf/open/indestructible/ground/outside/water/Entered(atom/movable/AM, atom/oldloc)
+	. = ..()
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
@@ -479,9 +475,9 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
 			to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
-	..()
 
 /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
+	. = ..()	
 	if(istype(AM, /mob/living))
 		var/mob/living/L = AM
 		L.update_water()
@@ -489,7 +485,6 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 			return
 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
 			to_chat(L, span_warning("You climb out of \the [src]."))
-	..()
 
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()

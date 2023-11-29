@@ -435,6 +435,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	return user.silicon_privileges & (flags) || (user.siliconaccesstoggle && (get_area(src) in user.siliconaccessareas))
 
 /mob/proc/toggleSiliconAccessArea(area/area)
+	LAZYINITLIST(siliconaccessareas)
 	if (area in siliconaccessareas)
 		siliconaccessareas -= area
 		to_chat(src,span_warning("You lost control of [area]!"))
@@ -499,9 +500,12 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 // Logs a message in a mob's individual log, and in the global logs as well if log_globally is true
 /mob/log_message(message, message_type, color=null, log_globally = TRUE)
+	if(!client)
+		return // the chicken clucks, good to know
 	if(!LAZYLEN(message))
 		stack_trace("Empty message")
 		return
+	LAZYINITLIST(logging)
 
 	// Cannot use the list as a map if the key is a number, so we stringify it (thank you BYOND)
 	var/smessage_type = num2text(message_type)

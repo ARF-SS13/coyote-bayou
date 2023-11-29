@@ -26,6 +26,8 @@
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
 	unbreakable = 0
 
+/turf/closed/wall/f13/ruins/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
 
 /turf/closed/wall/f13/wood
 	name = "wooden wall"
@@ -41,6 +43,9 @@
 	sheet_amount = 2
 	girder_type = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
+
+/turf/closed/wall/f13/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
@@ -222,6 +227,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	explosion_block = 5
 	smoothing_flags = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
+
+/turf/closed/wall/r_wall/f13vault/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
 
 //Sunset custom walls
 

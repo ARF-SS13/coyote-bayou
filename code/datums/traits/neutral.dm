@@ -1157,6 +1157,46 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/bug)
 
+/datum/quirk/xeno_lang
+	name = "Xenomorph Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the Xenomorph language."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "Xenomorph pun here."
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak with Xenomorphs.")
+	lose_text = span_notice("You've forgotten how to speak with Xenomorphs.")
+	human_only = FALSE
+
+/datum/quirk/xeno_lang/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/xenocommon)
+
+/datum/quirk/xeno_lang/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/xenocommon)
+
+/datum/quirk/machine_lang
+	name = "Machine Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking machine language."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "Are you on or are you off?"
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak with televisions.")
+	lose_text = span_notice("You've forgotten how to speak with televisions.")
+	human_only = FALSE
+
+/datum/quirk/machine_lang/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/machine)
+
+/datum/quirk/machine_lang/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/machine)
+
 /datum/quirk/distinct
 	name = "Distinct"
 	desc = "Whether you've got horns, wings, a big ass tail, or maybe just your general vibe, something about you cannot be concealed"
