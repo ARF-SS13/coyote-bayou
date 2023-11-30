@@ -10655,6 +10655,7 @@
 "eDh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2right"
 	},
@@ -12018,10 +12019,11 @@
 	},
 /area/f13/building/abandoned)
 "fhh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/plating/rust,
-/area/f13/building/abandoned)
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland/city)
 "fhp" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -14673,7 +14675,6 @@
 "glb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
-/mob/living/simple_animal/hostile/trog/sporecarrier,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city)
 "glm" = (
@@ -20538,6 +20539,7 @@
 /area/f13/wasteland/city)
 "iQZ" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "innermiddle"
 	},
@@ -24517,10 +24519,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "kyP" = (
-/mob/living/simple_animal/hostile/trog/sporecarrier,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city)
 "kyQ" = (
 /obj/structure/filingcabinet,
@@ -28646,6 +28647,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/wasteland)
+"mri" = (
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalbottombordertop0"
+	},
+/area/f13/wasteland/city)
 "mrq" = (
 /obj/structure/chair/booth,
 /obj/effect/decal/cleanable/dirt,
@@ -42210,6 +42217,7 @@
 	},
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plating/rust,
 /area/f13/building/abandoned)
 "spe" = (
@@ -45922,10 +45930,6 @@
 /area/f13/wasteland/city)
 "tSc" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "oldhouse"
-	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -58185,7 +58189,7 @@ maU
 vSR
 dRv
 fPw
-nkg
+ebw
 uxM
 gud
 lRI
@@ -60498,7 +60502,7 @@ maU
 nOF
 lWZ
 kfA
-fhh
+nkg
 soQ
 uCA
 isi
@@ -63097,7 +63101,7 @@ bZb
 pdh
 oHf
 cMz
-qfF
+mri
 mvE
 ipV
 sbc
@@ -66438,7 +66442,7 @@ kcr
 btL
 gyI
 dXu
-kyP
+lAC
 dsV
 vSR
 hwj
@@ -66709,7 +66713,7 @@ wOb
 bcS
 oPS
 bgG
-cMz
+fhh
 qfF
 egJ
 hZR
@@ -77746,7 +77750,7 @@ wuc
 eoT
 wOb
 lAC
-jdn
+ghY
 hYe
 lFL
 guq
@@ -77761,7 +77765,7 @@ pdh
 snK
 xtQ
 dCD
-aQd
+kyP
 qxv
 qJv
 jdn

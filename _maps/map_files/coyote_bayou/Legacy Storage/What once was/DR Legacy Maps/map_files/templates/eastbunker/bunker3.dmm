@@ -1,0 +1,55 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/closed/wall/r_wall/rust,/area/f13/bunker)
+"c" = (/obj/structure/decoration/vent/rusty,/turf/closed/wall/rust,/area/f13/bunker)
+"d" = (/turf/closed/wall/rust,/area/f13/bunker)
+"e" = (/obj/structure/barricade/wooden/strong,/turf/open/water,/area/f13/bunker)
+"f" = (/obj/structure/mirelurkegg,/turf/open/water,/area/f13/bunker)
+"g" = (/obj/effect/spawner/lootdrop/f13/cash_random_low,/turf/open/water,/area/f13/bunker)
+"h" = (/turf/open/water,/area/f13/bunker)
+"i" = (/obj/structure/closet/crate/secure/loot,/turf/open/water,/area/f13/bunker)
+"j" = (/obj/structure/simple_door/metal/ventilation,/turf/open/water,/area/f13/bunker)
+"k" = (/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,/turf/open/water,/area/f13/bunker)
+"l" = (/obj/structure/nest/ghoul{mob_types = list(/mob/living/simple_animal/hostile/mirelurk = 5, /mob/living/simple_animal/hostile/mirelurk/baby = 3, /mob/living/simple_animal/hostile/mirelurk/hunter = 1); name = "mirelurk nesting ground"},/turf/open/water,/area/f13/bunker)
+"m" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = 6; pixel_y = -2},/turf/open/water,/area/f13/bunker)
+"n" = (/obj/structure/decoration/vent/rusty,/turf/closed/wall/r_wall/rust,/area/f13/bunker)
+"o" = (/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,/turf/open/water,/area/f13/bunker)
+"p" = (/obj/structure/flora/wasteplant/wild_fungus{pixel_x = 11; pixel_y = -8},/turf/open/water,/area/f13/bunker)
+"q" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = -3; pixel_y = 2},/turf/open/water,/area/f13/bunker)
+"r" = (/obj/effect/spawner/lootdrop/trash,/turf/open/water,/area/f13/bunker)
+"s" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = 9; pixel_y = 5},/turf/open/water,/area/f13/bunker)
+"t" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = -3; pixel_y = 4},/turf/open/water,/area/f13/bunker)
+"u" = (/obj/structure/flora/wasteplant/wild_fungus{pixel_x = -8; pixel_y = 4},/obj/structure/flora/wasteplant/wild_fungus,/turf/open/water,/area/f13/bunker)
+"v" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = 6; pixel_y = 6},/turf/open/water,/area/f13/bunker)
+"w" = (/obj/structure/lattice/catwalk,/turf/open/floor/pod/dark,/area/f13/bunker)
+"x" = (/obj/structure/lattice/catwalk,/obj/structure/campfire/barrel{pixel_x = 5; pixel_y = 10},/turf/open/floor/pod/dark,/area/f13/bunker)
+"y" = (/obj/structure/lattice/catwalk,/turf/open/floor/pod,/area/f13/bunker)
+"z" = (/obj/structure/lattice/catwalk,/obj/effect/spawner/lootdrop/f13/cash_random_low,/turf/open/floor/pod,/area/f13/bunker)
+"A" = (/obj/structure/simple_door/bunker,/turf/open/floor/pod,/area/f13/bunker)
+"B" = (/turf/open/floor/pod/light,/area/f13/bunker)
+"C" = (/obj/effect/spawner/lootdrop/trash,/turf/open/floor/pod/light,/area/f13/bunker)
+"D" = (/obj/machinery/light/small,/turf/open/floor/pod/dark,/area/f13/bunker)
+"E" = (/obj/machinery/light/small,/turf/open/floor/pod/light,/area/f13/bunker)
+"F" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = -4; pixel_y = -6},/turf/open/water,/area/f13/bunker)
+"G" = (/obj/structure/flora/wasteplant/wild_fungus{pixel_x = 7; pixel_y = 5},/turf/open/water,/area/f13/bunker)
+"H" = (/obj/item/claymore/machete/pipe/tireiron,/turf/open/floor/pod/light,/area/f13/bunker)
+"I" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = 2; pixel_y = -1},/turf/open/water,/area/f13/bunker)
+"J" = (/obj/machinery/light/small{brightness = 3; dir = 8},/turf/open/floor/pod/light,/area/f13/bunker)
+"K" = (/obj/structure/flora/ausbushes/reedbush{pixel_x = -5; pixel_y = -3},/turf/open/water,/area/f13/bunker)
+
+(1,1,1) = {"
+aabbcddcddedcda
+aabfghhhidjdkdd
+bbbhhlhmhdjdhfn
+bophqhhrhhhhshb
+bhhhhhhhhtfhruc
+bvhrhwwxbbnbnbd
+bhhhhwyzABBBCBA
+bfhhhDyyABCEBBA
+bhhFhbAAbbnbnbb
+bhshrbBBbaaaaaa
+bGhhhnBHnaaaaaa
+bhlhIbJBbaaaaaa
+bhhKhnCBnaaaaaa
+bghhfbBCbaaaaaa
+bbbbddAndaaaaaa
+"}

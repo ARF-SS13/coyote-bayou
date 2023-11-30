@@ -1,0 +1,61 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"c" = (/obj/structure/lattice,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"d" = (/turf/closed/wall{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface},/area/ruin/unpowered)
+"e" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"f" = (/obj/structure/table/wood,/obj/item/weapon/storage/box/cups,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"g" = (/obj/structure/reagent_dispensers/water_cooler{name = "punch cooler"; reagent_id = "bacchus_blessing"},/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"h" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"i" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"j" = (/obj/item/weapon/reagent_containers/food/snacks/pizzaslice/mushroom,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"k" = (/obj/structure/table/wood,/obj/effect/spawner/lootdrop{loot = list(/obj/item/pizzabox/margherita = 3, /obj/item/pizzabox/meat = 3, /obj/item/pizzabox/mushroom = 3, /obj/item/pizzabox/bomb = 1); lootdoubles = 0; name = "pizza spawner"},/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"l" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/structure/table/wood,/obj/effect/spawner/lootdrop{loot = list(/obj/item/pizzabox/margherita = 3, /obj/item/pizzabox/meat = 3, /obj/item/pizzabox/mushroom = 3, /obj/item/pizzabox/bomb = 1); lootdoubles = 0; name = "pizza spawner"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"m" = (/obj/structure/glowshroom/single,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"n" = (/obj/item/trash/plate,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"o" = (/obj/effect/decal/remains/human,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"p" = (/obj/structure/chair/wood/fancy,/obj/effect/decal/remains/human,/obj/item/clothing/head/festive{desc = "A festive party hat with the name 'timmy' scribbled on the front."; name = "party hat"},/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"q" = (/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"r" = (/obj/structure/chair/wood/fancy,/obj/effect/decal/remains/human,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"s" = (/obj/structure/glowshroom/single,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"t" = (/obj/item/weapon/kitchen/fork,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"u" = (/obj/structure/table/wood,/obj/effect/spawner/lootdrop{loot = list(/obj/item/pizzabox/margherita = 3, /obj/item/pizzabox/meat = 3, /obj/item/pizzabox/mushroom = 3, /obj/item/pizzabox/bomb = 1); lootdoubles = 0; name = "pizza spawner"},/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"v" = (/obj/structure/table/wood,/obj/item/trash/plate,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"w" = (/obj/structure/table/wood,/obj/structure/glowshroom/single,/obj/item/weapon/a_gift,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"x" = (/obj/structure/table/wood,/obj/item/trash/plate,/obj/item/weapon/kitchen/fork,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"y" = (/obj/structure/lattice,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating/asteroid/basalt/lava_land_surface,/area/lavaland/surface/outdoors)
+"z" = (/obj/structure/chair/wood/fancy{tag = "icon-wooden_chair_wings (EAST)"; icon_state = "wooden_chair_wings"; dir = 4},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"A" = (/obj/structure/table/wood,/obj/item/weapon/reagent_containers/food/snacks/pizzaslice/margherita,/obj/item/trash/plate,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"B" = (/obj/structure/table/wood,/obj/item/weapon/reagent_containers/food/snacks/pizzaslice/meat,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"C" = (/obj/structure/table/wood,/obj/item/weapon/reagent_containers/food/snacks/store/cake/birthday,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"D" = (/obj/structure/table/wood,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"E" = (/obj/item/weapon/kitchen/fork,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"F" = (/obj/structure/glowshroom/single,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"G" = (/obj/structure/chair/wood/fancy{tag = "icon-wooden_chair_wings (NORTH)"; icon_state = "wooden_chair_wings"; dir = 1},/obj/effect/decal/remains/human,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"H" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"I" = (/obj/effect/decal/cleanable/dirt,/obj/item/weapon/a_gift,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"J" = (/obj/item/weapon/kitchen/knife,/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"K" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/obj/effect/decal/cleanable/dirt,/turf/open/floor/wood{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+"L" = (/turf/open/floor/plating{baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface; initial_gas_mix = "o2=14;n2=23;TEMP=300"},/area/ruin/unpowered)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaa
+aabbbaabbbbbbbbbaaaa
+aabbbbbbbbbbbbbbbbaa
+abbbbbbbbbbbbbbbbbaa
+abbbbbbbbccbbbbbbbaa
+aabbddddeeeeddddbbba
+aabbbbfghijekkldbbba
+abbbcemnohhhhhiecbba
+abbbcehhhpqrqshecbba
+abbcethhuvwxqqeybbba
+abbchhczABCDqqEecbba
+abcehteFGhhhhnHebbba
+abceehIhIhyhJmKdbbba
+abbcLheddcccddddbbaa
+abbceecbbbbbbbbbbbaa
+aabbddbbbbbbbbbbbbaa
+aabbbbbbbbbbbbbbbaaa
+aaabbbbbbbbbbbbbbaaa
+aaaaabbbbbbbbaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+"}

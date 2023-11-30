@@ -1,0 +1,105 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/f13/vault,
+/area/shuttle/bos_foyer)
+"c" = (
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"e" = (
+/obj/machinery/computer/shuttle/bos,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"f" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"h" = (
+/turf/template_noop,
+/area/template_noop)
+"i" = (
+/obj/item/flag/bos,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"j" = (
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
+	},
+/obj/docking_port/mobile/elevator/bos,
+/turf/open/floor/plasteel/dark,
+/area/space)
+
+(1,1,1) = {"
+a
+j
+a
+h
+h
+h
+"}
+(2,1,1) = {"
+a
+c
+a
+h
+h
+h
+"}
+(3,1,1) = {"
+a
+c
+a
+a
+a
+a
+"}
+(4,1,1) = {"
+a
+c
+c
+c
+f
+a
+"}
+(5,1,1) = {"
+a
+c
+c
+c
+c
+a
+"}
+(6,1,1) = {"
+a
+c
+c
+c
+c
+a
+"}
+(7,1,1) = {"
+a
+c
+c
+c
+c
+a
+"}
+(8,1,1) = {"
+a
+i
+c
+c
+e
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}

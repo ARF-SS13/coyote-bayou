@@ -1,0 +1,1343 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"ab" = (
+/turf/closed/wall/f13/wood/house,
+/area/f13/wasteland)
+"ac" = (
+/turf/closed/wall/f13/wood/house,
+/area/f13/village)
+"ad" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"ae" = (
+/obj/structure/fence{
+	dir = 8;
+	icon_state = "straight"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/village)
+"af" = (
+/obj/structure/fence{
+	dir = 8;
+	icon_state = "straight"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"ag" = (
+/obj/structure/fence/corner{
+	dir = 6;
+	icon_state = "corner"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"ah" = (
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirtcorner"
+	},
+/area/f13/wasteland)
+"ai" = (
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"aj" = (
+/obj/structure/wreck/trash/engine,
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"ak" = (
+/obj/structure/wreck/car,
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"al" = (
+/obj/machinery/microwave/stove,
+/obj/effect/decal/cleanable/salt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"am" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/table/wood,
+/obj/item/stack/sheet/cardboard,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"an" = (
+/obj/structure/table/wood,
+/obj/item/kitchen/knife,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"ao" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 28
+	},
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/processor/chopping_block,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"ap" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/fridge,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/food,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aq" = (
+/obj/structure/closet/fridge,
+/obj/item/reagent_containers/food/condiment/yeast,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/crafting/wonderglue,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"ar" = (
+/turf/closed/wall/f13/wood/interior,
+/area/f13/village)
+"as" = (
+/obj/structure/table/wood/settler,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/phone,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"at" = (
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"au" = (
+/obj/structure/table/wood/settler,
+/obj/item/stack/sheet/cloth,
+/obj/item/candle/infinite,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"av" = (
+/obj/structure/chair/wood/modern{
+	dir = 8;
+	icon_state = "wooden_chair_settler"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"aw" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"ax" = (
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/village)
+"ay" = (
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"az" = (
+/obj/structure/fermenting_barrel,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirtcorner"
+	},
+/area/f13/farm)
+"aA" = (
+/obj/machinery/smartfridge/drying_rack,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/farm)
+"aB" = (
+/obj/structure/fence{
+	dir = 1;
+	icon_state = "straight"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"aC" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"aD" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"aE" = (
+/obj/item/chair/stool/retro/black,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"aF" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aG" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aH" = (
+/obj/effect/spawner/lootdrop/crafts,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aI" = (
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aJ" = (
+/obj/item/trash/cheesie,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aK" = (
+/obj/item/trash/can,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aL" = (
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"aM" = (
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"aN" = (
+/obj/structure/chair/wood/modern{
+	dir = 1;
+	icon_state = "wooden_chair_settler"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"aO" = (
+/obj/structure/sink/well,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
+"aP" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"aQ" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"aR" = (
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/farm)
+"aS" = (
+/obj/structure/bed/dogbed,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"aT" = (
+/obj/structure/wreck/trash/halftire,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"aU" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"aV" = (
+/turf/closed/wall/f13/wood/interior,
+/area/f13/wasteland)
+"aW" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aX" = (
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aY" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"aZ" = (
+/obj/item/poster/random_contraband,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"ba" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bb" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
+"bc" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"bd" = (
+/obj/structure/decoration/rag{
+	icon_state = "skulls"
+	},
+/turf/closed/wall/f13/wood/interior,
+/area/f13/village)
+"be" = (
+/obj/structure/table/wood,
+/obj/item/trash/waffles,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"bf" = (
+/obj/structure/table/wood,
+/obj/item/trash/candle,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"bg" = (
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/village)
+"bh" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/assembly/igniter,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bi" = (
+/obj/structure/fireplace{
+	layer = 2.1;
+	level = 1;
+	pixel_y = -10
+	},
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -11;
+	pixel_y = -7
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bj" = (
+/obj/effect/spawner/lootdrop/f13/seedspawner,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bk" = (
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/village)
+"bl" = (
+/obj/item/trash/can,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bm" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/village)
+"bn" = (
+/obj/structure/decoration/clock/old/active{
+	pixel_y = 32
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bo" = (
+/obj/structure/chair/stool/retro/black,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bp" = (
+/obj/item/trash/f13/cram_large,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bq" = (
+/obj/structure/chair/wood/modern{
+	icon_state = "wooden_chair_settler"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"br" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bs" = (
+/obj/structure/chair/bench,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bt" = (
+/obj/structure/chair/bench,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 10;
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"bu" = (
+/obj/structure/chair/bench,
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"bv" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirtcorner"
+	},
+/area/f13/farm)
+"bw" = (
+/obj/structure/fence{
+	dir = 1;
+	icon_state = "straight"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/farm)
+"bx" = (
+/obj/effect/spawner/lootdrop/crafts,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"by" = (
+/obj/item/stack/sheet/mineral/wood/five,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bz" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bA" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bB" = (
+/obj/structure/chair/wood/modern{
+	dir = 4;
+	icon_state = "wooden_chair_settler"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bC" = (
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bD" = (
+/obj/structure/table/wood/settler,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bE" = (
+/obj/structure/table/wood/settler,
+/obj/item/flashlight/lantern,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bF" = (
+/obj/structure/wreck/trash/five_tires,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"bG" = (
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bH" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bI" = (
+/obj/structure/table/wood/settler,
+/obj/item/paperplane,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bJ" = (
+/obj/item/trash/chips,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bK" = (
+/obj/structure/chair/bench{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bL" = (
+/obj/item/trash/pistachios,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bM" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 6;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"bN" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bO" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bP" = (
+/obj/machinery/grill,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
+"bQ" = (
+/obj/structure/easel,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"bR" = (
+/obj/structure/simple_door/house,
+/obj/structure/barricade/wooden/planks,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"bS" = (
+/obj/item/trash/cheesie,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bT" = (
+/obj/item/trash/f13/fancylads,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bU" = (
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/village)
+"bV" = (
+/obj/structure/simple_door/house,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"bW" = (
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bX" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"bY" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
+"bZ" = (
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"ca" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/effect/spawner/lootdrop/f13/crafting,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cb" = (
+/obj/machinery/workbench,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cc" = (
+/obj/structure/wreck/trash/two_tire,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"cd" = (
+/obj/structure/chair/booth{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"ce" = (
+/obj/structure/bonfire,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"cf" = (
+/obj/structure/chair/f13foldupchair{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"cg" = (
+/obj/structure/table/wood/settler,
+/obj/item/crafting/abraxo,
+/obj/item/crafting/duct_tape,
+/obj/structure/sink/kitchen{
+	pixel_y = 27
+	},
+/obj/structure/mirror{
+	pixel_x = -26;
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/village)
+"ch" = (
+/turf/open/floor/plasteel/dark,
+/area/f13/village)
+"ci" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cj" = (
+/obj/structure/closet/cabinet,
+/obj/item/dildo,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"ck" = (
+/obj/structure/table/wood/settler,
+/obj/item/dildo{
+	icon_state = "dildo";
+	layer = 1.1
+	},
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cl" = (
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/clothing_middle,
+/obj/effect/spawner/lootdrop/clothing_high,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cm" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cn" = (
+/obj/structure/bed,
+/obj/item/bedsheet{
+	icon_state = "sheetbrown"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"co" = (
+/obj/structure/chair/f13foldupchair{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/farm)
+"cp" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/item/storage/toolbox/mechanical/old,
+/turf/open/floor/plasteel/dark,
+/area/f13/village)
+"cq" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cr" = (
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbrokenvertical"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cs" = (
+/obj/item/trash/f13/sugarbombs,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/f13/village)
+"ct" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/f13/farm)
+"cu" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirtcorner"
+	},
+/area/f13/farm)
+"cv" = (
+/obj/machinery/shower{
+	dir = 4;
+	icon_state = "shower"
+	},
+/obj/structure/decoration/hatch,
+/obj/structure/window{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/village)
+"cw" = (
+/obj/structure/mopbucket,
+/obj/item/mop,
+/turf/open/floor/plasteel/dark,
+/area/f13/village)
+"cx" = (
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/village)
+"cy" = (
+/obj/structure/bed,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"cz" = (
+/obj/structure/dresser,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/village)
+"cA" = (
+/obj/structure/fence/corner,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ai
+aD
+bY
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ai
+aD
+bY
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+ah
+aC
+aC
+aC
+aC
+aC
+aC
+bM
+aD
+bY
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+ai
+aD
+aT
+aD
+aD
+aD
+aD
+aD
+aD
+bY
+cc
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aj
+aE
+aD
+aD
+aD
+aD
+bF
+aD
+aD
+bY
+aa
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+ak
+ab
+ab
+bc
+bc
+bc
+ab
+ab
+bR
+ab
+ab
+aa
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+ai
+ab
+aU
+aL
+bl
+aL
+aL
+bN
+aL
+aL
+ac
+aa
+aa
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+ab
+ab
+ab
+aV
+bd
+bm
+bx
+aL
+aM
+bS
+aL
+ac
+ab
+ab
+ab
+ab
+"}
+(9,1,1) = {"
+aa
+ac
+al
+aF
+aW
+ar
+bn
+aL
+bG
+bH
+bB
+aL
+ar
+cg
+cp
+cv
+ac
+"}
+(10,1,1) = {"
+aa
+ac
+am
+aG
+aI
+be
+bo
+bq
+bH
+bH
+aL
+bO
+ba
+ch
+ch
+cw
+ac
+"}
+(11,1,1) = {"
+aa
+ad
+an
+aH
+aI
+bf
+bo
+by
+bI
+bH
+aN
+bZ
+ar
+ar
+ar
+ar
+ac
+"}
+(12,1,1) = {"
+aa
+ac
+ao
+aI
+aI
+bg
+bo
+aL
+bH
+bH
+aL
+aL
+ar
+ci
+cq
+cx
+ac
+"}
+(13,1,1) = {"
+aa
+ac
+ap
+aJ
+aX
+aI
+aL
+bz
+bJ
+aL
+aM
+aL
+ba
+aL
+aL
+bH
+ad
+"}
+(14,1,1) = {"
+aa
+ac
+aq
+aK
+aY
+aI
+aL
+bA
+aL
+aL
+aL
+aL
+ar
+cj
+aL
+bH
+ac
+"}
+(15,1,1) = {"
+aa
+ac
+ar
+ar
+ar
+ar
+ar
+ar
+ar
+aM
+ar
+ar
+ar
+ar
+ar
+ar
+ac
+"}
+(16,1,1) = {"
+aa
+ac
+as
+aL
+aZ
+aL
+aL
+aL
+ar
+aL
+aL
+ca
+ar
+ck
+cq
+cy
+ac
+"}
+(17,1,1) = {"
+aa
+ac
+at
+aM
+aL
+aL
+bp
+aL
+ar
+bO
+aL
+cb
+ar
+cl
+aL
+aL
+ad
+"}
+(18,1,1) = {"
+aa
+ac
+ar
+ar
+ar
+bh
+aL
+aL
+ar
+aL
+aL
+bZ
+ar
+ar
+ba
+ar
+ac
+"}
+(19,1,1) = {"
+aa
+ac
+au
+aN
+ar
+bi
+aL
+aL
+aM
+aL
+bT
+aL
+ba
+aL
+aL
+aL
+ac
+"}
+(20,1,1) = {"
+aa
+ac
+av
+aL
+ba
+aL
+aL
+bB
+ar
+aL
+bU
+aM
+ar
+cm
+aL
+bO
+ad
+"}
+(21,1,1) = {"
+aa
+ac
+aw
+aL
+ar
+aL
+bq
+bC
+ar
+aL
+aL
+aL
+ar
+cn
+aL
+cz
+ac
+"}
+(22,1,1) = {"
+aa
+ac
+ac
+ac
+ac
+ac
+br
+ac
+ac
+br
+bV
+br
+ac
+ac
+cr
+ac
+ac
+"}
+(23,1,1) = {"
+aa
+ae
+ax
+aO
+bb
+bb
+bb
+bb
+bb
+bP
+bb
+bb
+bb
+bb
+cs
+ae
+bk
+"}
+(24,1,1) = {"
+aa
+af
+ay
+aP
+aP
+bj
+bs
+bD
+bK
+aP
+bW
+aP
+aP
+aP
+ct
+af
+aa
+"}
+(25,1,1) = {"
+aa
+af
+az
+aQ
+aQ
+aQ
+bt
+bE
+bK
+aP
+aP
+aP
+cd
+aP
+ct
+af
+aa
+"}
+(26,1,1) = {"
+aa
+af
+aA
+aR
+aR
+aR
+bu
+bD
+bK
+aP
+aP
+bs
+ce
+co
+ct
+af
+aa
+"}
+(27,1,1) = {"
+aa
+af
+ab
+ac
+ac
+bk
+ay
+aP
+aP
+aP
+aP
+aP
+cf
+aP
+ct
+af
+aa
+"}
+(28,1,1) = {"
+aa
+af
+ab
+aS
+aL
+bk
+ay
+aP
+bL
+aP
+bX
+aP
+aP
+aP
+ct
+af
+aa
+"}
+(29,1,1) = {"
+aa
+af
+ab
+ac
+ac
+bk
+bv
+aQ
+aQ
+bQ
+aQ
+aQ
+aQ
+aQ
+cu
+af
+aa
+"}
+(30,1,1) = {"
+aa
+ag
+aB
+aB
+aB
+aB
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+bw
+cA
+aa
+"}

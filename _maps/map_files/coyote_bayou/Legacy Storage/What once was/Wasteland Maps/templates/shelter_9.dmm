@@ -1,0 +1,232 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/floor/plating/f13/outside/desert,
+/area/f13/wasteland)
+"b" = (
+/obj/item/candle/tribal_torch,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/survivalpod)
+"c" = (
+/obj/structure/campfire,
+/turf/open/floor/plating/f13/outside/desert,
+/area/survivalpod)
+"e" = (
+/obj/structure/anvil/obtainable,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"f" = (
+/turf/closed/wall/f13/tentwall,
+/area/survivalpod)
+"h" = (
+/obj/structure/closet/crate/wicker,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"i" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/turf/open/floor/f13/wood,
+/area/survivalpod)
+"n" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirtcorner"
+	},
+/area/survivalpod)
+"o" = (
+/obj/structure/chair/folding,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirtcorner"
+	},
+/area/survivalpod)
+"u" = (
+/obj/machinery/workbench,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"w" = (
+/obj/machinery/workbench/forge,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"x" = (
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"z" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 9;
+	icon_state = "dirt"
+	},
+/area/survivalpod)
+"F" = (
+/obj/structure/chair/folding{
+	dir = 8
+	},
+/turf/open/floor/plating/f13/outside/desert,
+/area/survivalpod)
+"G" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/survivalpod)
+"H" = (
+/obj/structure/simple_door/tent,
+/turf/open/floor/f13/wood,
+/area/survivalpod)
+"J" = (
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 5;
+	icon_state = "dirt"
+	},
+/area/survivalpod)
+"K" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"M" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/f13/wood,
+/area/survivalpod)
+"N" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"O" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical/old,
+/obj/item/stack/crafting/goodparts/five,
+/obj/item/stack/crafting/metalparts/three,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/crafting/electronicparts/three,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"Q" = (
+/obj/structure/furnace,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"R" = (
+/obj/structure/chair/folding{
+	dir = 4;
+	icon_state = "f13foldupchair"
+	},
+/turf/open/floor/plating/f13/outside/desert,
+/area/survivalpod)
+"S" = (
+/turf/open/floor/plating/f13/outside/desert,
+/area/survivalpod)
+"W" = (
+/turf/open/floor/f13/wood,
+/area/survivalpod)
+"Y" = (
+/obj/structure/rack,
+/obj/machinery/autolathe/constructionlathe,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+
+(1,1,1) = {"
+f
+f
+f
+f
+f
+a
+a
+"}
+(2,1,1) = {"
+f
+w
+N
+N
+b
+S
+R
+"}
+(3,1,1) = {"
+f
+N
+N
+N
+J
+o
+c
+"}
+(4,1,1) = {"
+f
+Y
+N
+e
+K
+G
+F
+"}
+(5,1,1) = {"
+f
+h
+N
+Q
+x
+G
+a
+"}
+(6,1,1) = {"
+f
+u
+N
+N
+z
+n
+a
+"}
+(7,1,1) = {"
+f
+O
+N
+N
+b
+a
+a
+"}
+(8,1,1) = {"
+f
+f
+H
+f
+f
+a
+a
+"}
+(9,1,1) = {"
+f
+M
+W
+f
+a
+a
+a
+"}
+(10,1,1) = {"
+f
+i
+W
+f
+a
+a
+a
+"}
+(11,1,1) = {"
+f
+f
+f
+f
+a
+a
+a
+"}
