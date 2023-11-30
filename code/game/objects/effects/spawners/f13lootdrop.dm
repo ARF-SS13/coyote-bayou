@@ -2750,3 +2750,61 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/stack/ore/lead = 1,
 		/obj/item/stack/ore/titanium = 2)
 
+/obj/effect/spawner/lootdrop/f13/bounty
+	name = "f13 spawners - DO NOT USE THIS"
+	lootdoubles = FALSE	//making sure it will /not/ double
+	fan_out_items = TRUE //Randomize pixel x and y
+	downtier_chance = 50
+	lootcount = 1
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low
+	name = "none to low bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty)
+	color = "#00ff00"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low_to_med
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty, /obj/item/card/midbounty)
+	color = "#0000ff"
+
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_high
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/midbounty, /obj/item/card/highbounty)
+	color = "#ff0000"
+
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/highbounty, /obj/item/card/kingbounty)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/king
+	name = "king to none bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/kingbounty)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/any
+	name = "equal chance to spawn any kind of bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty,
+			/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			/obj/item/card/kingbounty,
+			)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low_to_high
+	name = "equal chance to spawn a low, med, or high bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty,
+			/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			)
+	color = "#ff0000"
+
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king
+	name = "equal chance to spawn a med, high, or king bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			/obj/item/card/kingbounty,
+			)
+	color = "#ffe600"
