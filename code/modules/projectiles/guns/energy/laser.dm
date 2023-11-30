@@ -1374,6 +1374,29 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
+/obj/item/gun/energy/laser/LaserAK
+	name = "Kalashnikov 470"
+	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
+	icon_state = "LaserAK"
+	item_state = null
+	selfchargerate = 40
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashheavy)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = LASER_AUTORIFLE_RECOIL(1.5, 1)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
 //Generic Laser AK, also loot
 /obj/item/gun/energy/laser/LaserAK/worn
 	name = "Kalashnikov 740"
@@ -1381,15 +1404,15 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashlight)
 	selfchargerate = 25
 	init_firemodes = list(
+	/datum/firemode/automatic/rpm200,
 	/datum/firemode/semi_auto,
-	/datum/firemode/automatic/rpm200
 	)
 
 //Jaggachi's Unique AK470M
-/obj/item/gun/energy/laser/LaserAK/jaggi
+/obj/item/gun/energy/laser/LaserAK/worn/jaggi
 	name = "Laser AK470M"
 	desc = "An AK470 that was rebuilt with spare parts found around the wastes."
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 
 //Generic nuclear rifle
 /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn
