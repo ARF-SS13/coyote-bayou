@@ -227,6 +227,16 @@
 	item_state = "gear_harness"
 	w_class = WEIGHT_CLASS_TINY
 
+	var/datum/action/item_action/chameleon/change/chameleon_action
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/Initialize()
+    . = ..()
+    chameleon_action = new(src)
+    chameleon_action.chameleon_type = /obj/item/clothing/suit
+    chameleon_action.chameleon_name = "Suit"
+    chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
+    chameleon_action.initialize_disguises()
+
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
 	name = "light harness"
 	desc = "A set of straps that, somehow, function as light armor but do nothing else."
@@ -243,6 +253,15 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 
+	var/datum/action/item_action/chameleon/change/chameleon_action
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light/Initialize()
+    . = ..()
+    chameleon_action = new(src)
+    chameleon_action.chameleon_type = /obj/item/clothing/suit
+    chameleon_action.chameleon_name = "Suit"
+    chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
+    chameleon_action.initialize_disguises()
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
 	name = "medium harness"
@@ -260,6 +279,16 @@
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
 
+	var/datum/action/item_action/chameleon/change/chameleon_action
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium/Initialize()
+    . = ..()
+    chameleon_action = new(src)
+    chameleon_action.chameleon_type = /obj/item/clothing/suit
+    chameleon_action.chameleon_name = "Suit"
+    chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
+    chameleon_action.initialize_disguises()
+
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
 	name = "heavy harness"
 	desc = "A set of straps that, somehow, function as heavy armor but do nothing else."
@@ -271,6 +300,16 @@
 	armor = ARMOR_VALUE_HEAVY
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	stiffness = HEAVY_STIFFNESS
+
+	var/datum/action/item_action/chameleon/change/chameleon_action
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy/Initialize()
+    . = ..()
+    chameleon_action = new(src)
+    chameleon_action.chameleon_type = /obj/item/clothing/suit
+    chameleon_action.chameleon_name = "Suit"
+    chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/clothing/suit/armor/abductor, /obj/item/clothing/suit/changeling), only_root_path = TRUE)
+    chameleon_action.initialize_disguises()
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
