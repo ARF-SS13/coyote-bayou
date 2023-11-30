@@ -596,12 +596,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/enclavehelipad)
-"and" = (
-/obj/structure/debris/v4,
-/obj/structure/debris/v2,
-/obj/structure/debris/v2,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "ane" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/dice{
@@ -2616,11 +2610,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
-"bke" = (
-/obj/structure/debris/v4,
-/obj/structure/debris/v2,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "bko" = (
 /turf/open/floor/carpet/royalblue,
 /area/f13/enclave)
@@ -5600,10 +5589,6 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/offices2nd)
-"cFi" = (
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "cFt" = (
 /obj/structure/closet/crate/rcd,
 /obj/effect/turf_decal/bot,
@@ -12938,10 +12923,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
-"fOu" = (
-/obj/structure/debris/v1,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "fOw" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -13442,10 +13423,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
-"fZb" = (
-/obj/structure/debris/v2,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/brotherhood/rnd)
 "fZj" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare_weps,
@@ -15099,10 +15076,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
-"gOl" = (
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/rnd)
 "gOq" = (
 /obj/structure/decoration/warning{
 	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
@@ -27975,11 +27948,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
-"mTm" = (
-/obj/structure/debris/v1,
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "mTn" = (
 /obj/structure/sign/poster/contraband/communist_state,
 /turf/closed/wall/r_wall/rust,
@@ -30269,10 +30237,6 @@
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker/bighornbunker)
-"nVq" = (
-/obj/structure/debris/v1,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/rnd)
 "nVJ" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker/bighornbunker)
@@ -30570,11 +30534,6 @@
 	pixel_y = -14
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood/rnd)
-"ocQ" = (
-/obj/structure/debris/v2,
-/obj/structure/debris/v2,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/brotherhood/rnd)
 "ocU" = (
 /obj/machinery/button/door{
@@ -33131,7 +33090,6 @@
 /obj/structure/window/fulltile/store{
 	layer = 2.9
 	},
-/obj/structure/debris/v2,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -34498,21 +34456,6 @@
 "pMF" = (
 /obj/structure/sign/poster/prewar/poster73,
 /turf/closed/wall/r_wall,
-/area/f13/brotherhood/operations)
-"pMY" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dir = 2;
-	dwidth = 1;
-	height = 4;
-	id = "bos_level_1";
-	name = "Level 1: Operations";
-	roundstart_template = /datum/map_template/shuttle/bos/elevator;
-	width = 5
-	},
-/obj/structure/debris/v1,
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/brotherhood/operations)
 "pNc" = (
 /obj/structure/destructible/clockwork/wall_gear{
@@ -37238,18 +37181,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/building)
-"qUH" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 1;
-	height = 4;
-	id = "bos_level_2";
-	name = "Level 2: Engineering";
-	width = 5
-	},
-/obj/structure/debris/v3,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/rnd)
 "qUN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -42828,11 +42759,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass,
 /area/f13/building)
-"tzf" = (
-/obj/structure/debris/v2,
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "tzo" = (
 /obj/structure/table{
 	layer = 2.9
@@ -45276,11 +45202,6 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/brotherhood/leisure)
-"uFM" = (
-/obj/structure/debris/v4,
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "uFT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -46001,19 +45922,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"uVV" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dwidth = 1;
-	height = 4;
-	id = "bos_entryway";
-	name = "Level 0: Entryway";
-	roundstart_template = /datum/map_template/shuttle/entrance_elevator;
-	width = 5
-	},
-/obj/structure/debris/v4,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/operations)
 "uWa" = (
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -47594,10 +47502,6 @@
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
-"vGS" = (
-/obj/structure/debris/v3,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/brotherhood/rnd)
 "vHf" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
@@ -110771,9 +110675,9 @@ cjn
 bJL
 fwX
 tnM
-and
-cFi
-uFM
+eus
+eus
+eus
 eQJ
 sHf
 owt
@@ -110816,9 +110720,9 @@ uMV
 pSO
 hiB
 hZr
-ocQ
 mnO
-vGS
+mnO
+mnO
 mnO
 hJK
 hJK
@@ -111028,9 +110932,9 @@ bJL
 cjn
 sBJ
 kgL
-mTm
-and
-bke
+eus
+eus
+eus
 eQJ
 sHf
 owt
@@ -111073,10 +110977,10 @@ nfB
 uMV
 obq
 pcH
-vGS
-gOl
 mnO
-gOl
+mnO
+mnO
+mnO
 hJK
 hJK
 tot
@@ -111285,9 +111189,9 @@ bJL
 cjn
 hNI
 eus
-kgL
-uFM
-uFM
+eus
+eus
+eus
 eQJ
 sHf
 owt
@@ -111330,9 +111234,9 @@ pSO
 uMV
 efq
 bVH
-fZb
+hZr
 mnO
-nVq
+mnO
 mnO
 hJK
 hJK
@@ -111541,9 +111445,9 @@ lct
 gnN
 bJL
 sBJ
-pMY
-cFi
-bke
+eus
+eus
+eus
 eus
 eQJ
 sHf
@@ -111587,10 +111491,10 @@ uMV
 dxi
 eKH
 ion
-qUH
-gOl
+hZr
 mnO
-gOl
+mnO
+mnO
 hJK
 hJK
 tot
@@ -111797,11 +111701,11 @@ nPA
 eQJ
 cjn
 bkt
-fwX
-tnM
+bJL
 eus
-cFi
-uFM
+eus
+eus
+eus
 eQJ
 sHf
 owt
@@ -111847,7 +111751,7 @@ thi
 cvi
 mnO
 mnO
-gOl
+mnO
 hJK
 hJK
 tot
@@ -112020,9 +111924,9 @@ iXy
 kzq
 eQJ
 eus
-bke
-kgL
-kgL
+eus
+eus
+eus
 eQJ
 wEY
 wEY
@@ -112276,10 +112180,10 @@ bEj
 viB
 nuW
 eQJ
-kgL
-fOu
-tzf
-uVV
+eus
+eus
+eus
+eus
 pjo
 bQH
 pvF
@@ -112534,9 +112438,9 @@ bpX
 egy
 eQJ
 eus
-fOu
-kgL
-mTm
+eus
+eus
+eus
 jmS
 nMq
 uRJ
@@ -112790,10 +112694,10 @@ lhV
 lqF
 mxg
 eQJ
-kgL
-fOu
-mTm
-cFi
+eus
+eus
+eus
+eus
 mOC
 wlO
 uok
@@ -113047,10 +112951,10 @@ iXy
 iMi
 xpQ
 eQJ
-cFi
 eus
-fOu
-mTm
+eus
+eus
+eus
 eQJ
 jHa
 jwj
