@@ -2749,11 +2749,6 @@
 	dir = 4
 	},
 /area/f13/tunnel)
-"bGY" = (
-/obj/docking_port/stationary/bosaway/three,
-/obj/structure/timeddoor/sixtyminute,
-/turf/closed/wall/f13/tunnel,
-/area/f13/tunnel)
 "bGZ" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
@@ -2974,10 +2969,6 @@
 "bHX" = (
 /obj/item/stack/rods/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
-"bHY" = (
-/obj/docking_port/stationary/bosaway/four,
-/turf/closed/wall/f13/ruins,
 /area/f13/tunnel)
 "bHZ" = (
 /obj/structure/table,
@@ -4589,10 +4580,6 @@
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
-/area/f13/bunker)
-"bPD" = (
-/obj/docking_port/stationary/bosaway/five,
-/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "bPE" = (
 /turf/closed/wall/r_wall/rust,
@@ -46968,7 +46955,7 @@ aae
 aae
 veW
 veW
-bGY
+veW
 veW
 veW
 veW
@@ -65489,7 +65476,7 @@ bHI
 bHI
 bFx
 bFx
-bHY
+bFx
 bFx
 bFx
 bFx
@@ -94076,7 +94063,7 @@ aae
 aae
 aaD
 aaD
-bPD
+aaD
 aaD
 aaD
 aae
