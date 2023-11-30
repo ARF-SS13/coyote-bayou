@@ -227,51 +227,6 @@
 	item_state = "gear_harness"
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
-	name = "light harness"
-	desc = "A set of straps that, somehow, function as light armor but do nothing else."
-	cold_protection = CHEST|GROIN
-	heat_protection = CHEST|GROIN
-	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	strip_delay = 10
-	equip_delay_other = 10
-	max_integrity = 100
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT
-	armor_tier_desc = ARMOR_CLOTHING_LIGHT
-	stiffness = LIGHT_STIFFNESS
-
-
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
-	name = "medium harness"
-	desc = "A set of straps that, somehow, function as medium armor but do nothing else."
-	cold_protection = CHEST|GROIN
-	heat_protection = CHEST|GROIN
-	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	strip_delay = 30
-	equip_delay_other = 50
-	max_integrity = 200
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_MEDIUM
-	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
-	stiffness = MEDIUM_STIFFNESS
-
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
-	name = "heavy harness"
-	desc = "A set of straps that, somehow, function as heavy armor but do nothing else."
-	strip_delay = 50
-	equip_delay_other = 50
-	max_integrity = 300
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_HEAVY
-	armor_tier_desc = ARMOR_CLOTHING_HEAVY
-	stiffness = HEAVY_STIFFNESS
-
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
 	desc = "A practical and armored vest with pockets for tools and such."
