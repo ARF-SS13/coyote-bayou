@@ -40,17 +40,17 @@
 
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	path = /obj/item/clothing/suit/chameleon/harness
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/medium
 	name = "medium harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	path = /obj/item/clothing/suit/chameleon/harness/medium
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/heavy
 	name = "heavy harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	path = /obj/item/clothing/suit/chameleon/harness/heavy
 	cost = 1
 
 /datum/gear/suit/labcoat
