@@ -1726,3 +1726,120 @@
 	icon = 'modular_coyote/icons/objects/items.dmi'
 	icon_state = "scale"
 	w_class = WEIGHT_CLASS_TINY
+
+//Christmas stuff
+
+/obj/structure/christmas
+	name = "Base"
+	icon_state = "base"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/garland
+	name = "garland"
+	icon_state = "garland_on"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakeone
+	name = "snowflakes"
+	icon_state = "snowflakes_1"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflaketwo
+	name = "snowflakes"
+	icon_state = "snowflakes_2"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakethree
+	name = "snowflakes"
+	icon_state = "snowflakes_3"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakefour
+	name = "snowflakes"
+	icon_state = "snowflakes_4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselred
+	name = "red tinsel"
+	icon_state = "tinsel_r"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselyellow
+	name = "yellow tinsel"
+	icon_state = "tinsel_y"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselwhite
+	name = "white tinsel"
+	icon_state = "tinsel_w"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowman
+	name = "snowman"
+	icon_state = "snowman_s"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowmanhat
+	name = "snowman with hat"
+	icon_state = "snowman_hat"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift4
+	name = "present"
+	icon_state = "gift4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift5
+	name = "present"
+	icon_state = "gift5"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift6
+	name = "present"
+	icon_state = "gift6"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/doorwreath
+	name = "door wreath"
+	icon_state = "doorwreath"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+
+/obj/structure/christmas/xmaslights
+	name = "xmaslights"
+	icon_state = "xmaslights"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinyxmastree
+	name = "tinyxmastree"
+	icon_state = "tinyxmastree"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/item/toy/candycaneballoon
+	name = "candycane balloon"
+	desc = "A candycane balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "candycaneballoon"
+
+/obj/item/toy/xmastreeballoon
+	name = "xmas tree balloon"
+	desc = "A christmas tree balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "xmastreeballoon"

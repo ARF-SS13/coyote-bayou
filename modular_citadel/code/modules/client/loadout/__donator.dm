@@ -763,7 +763,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
 	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
 	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
-	new /obj/item/gun/energy/laser/LaserAK/jaggi(src)
+	new /obj/item/gun/energy/laser/LaserAK/worn/jaggi(src)
 
 
 /datum/gear/donator/kits/jaggachi_7

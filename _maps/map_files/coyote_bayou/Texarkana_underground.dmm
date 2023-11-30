@@ -2750,9 +2750,11 @@
 	},
 /area/f13/tunnel)
 "bGY" = (
-/obj/docking_port/stationary/bosaway/three,
-/obj/structure/timeddoor/sixtyminute,
-/turf/closed/wall/f13/tunnel,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
 /area/f13/tunnel)
 "bGZ" = (
 /obj/item/storage/trash_stack,
@@ -2976,8 +2978,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bHY" = (
-/obj/docking_port/stationary/bosaway/four,
-/turf/closed/wall/f13/ruins,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
 /area/f13/tunnel)
 "bHZ" = (
 /obj/structure/table,
@@ -3377,8 +3382,19 @@
 	},
 /area/f13/building/tribal)
 "bKn" = (
-/obj/docking_port/stationary/bosaway/ten,
-/turf/closed/wall/f13/ruins,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
 /area/f13/tunnel)
 "bKo" = (
 /obj/item/storage/trash_stack,
@@ -4595,9 +4611,12 @@
 	},
 /area/f13/bunker)
 "bPD" = (
-/obj/docking_port/stationary/bosaway/five,
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
+/obj/structure/chair/stool,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
+/area/f13/tunnel)
 "bPE" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
@@ -8899,6 +8918,7 @@
 "efm" = (
 /obj/structure/chair/stool,
 /obj/item/candle/infinite,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -15979,6 +15999,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -17426,6 +17447,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -18499,6 +18521,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -27506,6 +27529,17 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/caves)
+"pPI" = (
+/mob/living/simple_animal/hostile/centaur{
+	color = "#00FF00";
+	name = "cuckhold council member"
+	},
+/obj/structure/chair/stool,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
+/area/f13/tunnel)
 "pPS" = (
 /obj/structure/closet,
 /obj/item/clothing/suit/bio_suit/hazmat,
@@ -34201,6 +34235,15 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"tSX" = (
+/obj/effect/decal/waste{
+	icon_state = "goo5"
+	},
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
+/area/f13/tunnel)
 "tTe" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/rare_weps,
@@ -41113,6 +41156,7 @@
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -46972,7 +47016,7 @@ aae
 aae
 veW
 veW
-bGY
+veW
 veW
 veW
 veW
@@ -65493,7 +65537,7 @@ bHI
 bHI
 bFx
 bFx
-bHY
+bFx
 bFx
 bFx
 bFx
@@ -73533,7 +73577,7 @@ aae
 bsC
 tax
 jFL
-gKN
+bKn
 bsC
 aae
 aae
@@ -74046,7 +74090,7 @@ aae
 aae
 bsC
 gKN
-lDV
+bGY
 yif
 bsC
 aae
@@ -74501,7 +74545,7 @@ aah
 aah
 bFx
 bFx
-bKn
+bFx
 bFx
 bFx
 bFx
@@ -75071,11 +75115,11 @@ rnh
 bsC
 rcD
 vsB
-vsB
+bPD
 vsB
 vsB
 efm
-vsB
+bPD
 vsB
 vsB
 vsB
@@ -75333,7 +75377,7 @@ wiP
 wiP
 wiP
 wiP
-wiP
+bHY
 xSV
 vsB
 rcD
@@ -75841,7 +75885,7 @@ bFF
 bFF
 bsC
 rcD
-vsB
+bPD
 wiP
 oid
 rcD
@@ -76098,7 +76142,7 @@ clS
 bFF
 bsC
 rcD
-luo
+pPI
 wiP
 luo
 rcD
@@ -76356,10 +76400,10 @@ bFF
 bsC
 rcD
 vsB
-wiP
+bHY
 wiP
 sfO
-rcD
+tSX
 rcD
 wiP
 xSV
@@ -76617,7 +76661,7 @@ vsB
 luo
 wiP
 oid
-wiP
+bHY
 luo
 vsB
 bQe
@@ -76875,7 +76919,7 @@ vsB
 wiP
 bQe
 wiP
-vsB
+bPD
 bQe
 bQe
 rcD
@@ -94080,7 +94124,7 @@ aae
 aae
 aaD
 aaD
-bPD
+aaD
 aaD
 aaD
 aae

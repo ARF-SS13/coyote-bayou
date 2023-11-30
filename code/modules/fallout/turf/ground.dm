@@ -348,6 +348,15 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 
+/turf/open/indestructible/ground/outside/dirt/Initialize()
+	. = ..()
+	if(icon_state == "dirtfull")
+		var/MM = text2num(time2text(world.timeofday, "MM"))
+		if(MM == 12 || MM == 1 || MM == 2)
+			name = "snow"
+			icon_state = "snow[rand(0,12)]"
+			update_icon()
+
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //same thing here, dirt absorbs the liquid... :(
 

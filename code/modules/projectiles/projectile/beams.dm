@@ -402,7 +402,7 @@
 	is_reflectable = FALSE
 
 	// This could be a bit overboard, if it actually worked.
-	supereffective_damage = BULLET_DAMAGE_PISTOL_38
+	supereffective_damage = BULLET_DAMAGE_PISTOL_10MM
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol

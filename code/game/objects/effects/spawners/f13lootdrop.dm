@@ -798,7 +798,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 20,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 5,
-		/obj/item/gun/ballistic/automatic/smg/mp5 = 5,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd = 5,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 20,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 1,
 		/obj/item/gun/ballistic/automatic/combat = 10,
@@ -877,7 +877,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 20, //pretty common cause we need cowboy guns
 		/obj/item/gun/ballistic/rifle/mag/boys = 10,
-		/obj/item/gun/ballistic/rifle/mag/antimateriel = 5,
+		/obj/item/gun/ballistic/rifle/mag/antimaterial = 5,
 		/obj/item/gun/ballistic/shotgun/police = 10,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
@@ -1862,7 +1862,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/mp5
 	name = "mp5 and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/smg/mp5,
+				/obj/item/gun/ballistic/automatic/smg/mp5sd,
 				/obj/item/ammo_box/magazine/uzim9mm/
 	)
 
@@ -1939,7 +1939,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/amr
 	name = "amr and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/rifle/mag/antimateriel,
+				/obj/item/gun/ballistic/rifle/mag/antimaterial,
 				/obj/item/ammo_box/magazine/amr/
 	)
 
