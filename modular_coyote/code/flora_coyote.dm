@@ -65,6 +65,8 @@
 /obj/structure/flora
 	/// Will auto-generate a transparency zone behind this plant when initialized.
 	var/do_transparency = TRUE
+	/// If do_transparency == TRUE, this is the target alpha that the plant will have.
+	var/transparency_alpha = 150
 
 /obj/structure/flora/Initialize()
 	. = ..()
@@ -82,7 +84,7 @@
 			var/ysize = CEILING(ih/32, 1)
 			var/x_off = 0 //-(ih/2)/32 //Slide to the left (nvm it already slides automatically)
 			var/y_off = 1
-			AddComponent(/datum/component/largetransparency, x_off, y_off, xsize, ysize)
+			AddComponent(/datum/component/largetransparency, x_off, y_off, xsize, ysize, target_alpha = transparency_alpha)
 
 /obj/structure/flora/tree/oak_one
 	name = "tree"

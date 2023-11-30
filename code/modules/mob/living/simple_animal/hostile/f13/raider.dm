@@ -800,7 +800,7 @@
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "cultist3_tesla"
 	icon_living = "cultist3_tesla"
-	icon_dead = "cultist3_dead"
+	icon_dead = "cultist3_tesla_dead"
 	ranged = TRUE
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150
