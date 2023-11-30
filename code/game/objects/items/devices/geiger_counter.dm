@@ -6,7 +6,7 @@
 
 #define RAD_MEASURE_SMOOTHING 5
 
-#define RAD_GRACE_PERIOD 2
+#define RAD_GRACE_PERIOD 10
 
 /obj/item/geiger_counter //DISCLAIMER: I know nothing about how real-life Geiger counters work. This will not be realistic. ~Xhuis
 	name = "\improper Geiger counter"
@@ -39,6 +39,7 @@
 /obj/item/geiger_counter/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(soundloop)
+	listeningTo = null
 	return ..()
 
 /obj/item/geiger_counter/process()
@@ -49,8 +50,9 @@
 		current_tick_amount = 0
 		return
 
-	radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
-	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
+	//radiation_count -= radiation_count/RAD_MEASURE_SMOOTHING
+	//radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
+	radiation_count = 0
 	var/area/this_area = get_area(src)
 	if(this_area?.rads_per_second)
 		radiation_count += this_area.rads_per_second / RAD_MEASURE_SMOOTHING
@@ -59,15 +61,15 @@
 	radiation_count += radz
 
 	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
+//		grace = RAD_GRACE_PERIOD
 		last_tick_amount = current_tick_amount
-
+	/*
 	else if(!(obj_flags & EMAGGED))
 		grace--
 		if(grace <= 0)
 			radiation_count = 0
-
 	current_tick_amount = 0
+	*/
 
 /obj/item/geiger_counter/examine(mob/user)
 	. = ..()
@@ -137,6 +139,9 @@
 
 /obj/item/geiger_counter/equipped(mob/user)
 	. = ..()
+	on_equip(user)
+
+/obj/item/geiger_counter/proc/on_equip(mob/user)
 	if(listeningTo == user)
 		return
 	if(listeningTo)
@@ -149,14 +154,26 @@
 	rad_act(amount)
 
 /obj/item/geiger_counter/dropped(mob/user)
-	if(!ishuman(loc))
+	on_drop(user)
+	. = ..()
+
+/obj/item/geiger_counter/proc/on_drop(mob/user)
+	if(istype(loc, /obj/item/pda))
+		if(listeningTo)
+			UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)	
+		listeningTo = null
+		if(isliving(loc.loc))
+			listeningTo = loc.loc
+	else if(!ishuman(loc))
 		if(listeningTo)
 			UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
 		listeningTo = null
-	. = ..()
 
 /obj/item/geiger_counter/pickup(mob/user)
 	. = ..()
+	on_pickup(user)
+
+/obj/item/geiger_counter/proc/on_pickup(mob/user)
 	if(listeningTo == user)
 		return
 	if(listeningTo)
@@ -164,7 +181,7 @@
 	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
 	listeningTo = user
 
-/obj/item/geiger_counter/attack_self(mob/user)
+/obj/item/geiger_counter/attack_self(mob/user, silent)
 	scanning = !scanning
 	if(scanning)
 		START_PROCESSING(SSobj, src)
@@ -172,7 +189,8 @@
 		STOP_PROCESSING(SSobj, src)
 	update_icon()
 	update_sound()
-	to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
+	if(!silent)
+		to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))
 
 /obj/item/geiger_counter/afterattack(atom/target, mob/user)
 	. = ..()
