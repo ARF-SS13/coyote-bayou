@@ -8,7 +8,7 @@
 	var/list/features = list("FFF") //first value is mutant color
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/custom_species	//siiiiigh I guess this is important
-	/// simple_icon species icon_state override
+	/// simple_icon species icon_state prefix
 	var/alt_appearance
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
