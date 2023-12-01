@@ -622,8 +622,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	// creature characters don't need to do all this work, just display their icon.
 	if(H.IsFeral())
 		var/prefix
-		if(H?.client?.prefs?.alt_appearance in alt_prefixes)//valid, allow it
-			prefix =  alt_prefixes?[H?.client?.prefs?.alt_appearance]
+		if(LAZYLEN(alt_prefixes))
+			prefix = alt_prefixes?[H?.dna?.alt_appearance]//Try to access the alternate sprite that was copied from the preferences onto the dna
+		if(prefix == "Default" || isnull(prefix))
+			prefix = ""
 		H.rotate_on_lying = rotate_on_lying
 		var/i_state
 		var/mycolor

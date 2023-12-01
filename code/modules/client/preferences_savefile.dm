@@ -996,7 +996,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["insect_fluff"]		= sanitize_inlist(features["insect_fluff"], GLOB.insect_fluffs_list)
 	features["insect_markings"] 	= sanitize_inlist(features["insect_markings"], GLOB.insect_markings_list, "None")
 	features["insect_wings"] 		= sanitize_inlist(features["insect_wings"], GLOB.insect_wings_list)
-	alt_appearance					= sanitize_inlist(alt_appearance, pref_species.alt_prefixes, initial(alt_appearance))
+	alt_appearance					= sanitize_inlist(alt_appearance, pref_species.alt_prefixes, "Default")
 
 	var/static/size_min
 	if(!size_min)
