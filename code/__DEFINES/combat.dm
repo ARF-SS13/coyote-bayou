@@ -365,7 +365,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_BASE (TILES_TO_PIXELS(30)) //960 (30 tiles per second, 32 pixels per tile)
 
 /// Arrow speed defines
-#define ARROW_SPEED_BASE (BULLET_SPEED_BASE * 0.90)
+#define ARROW_SPEED_BASE (BULLET_SPEED_BASE / 3)
 
 /// Bullet damage modifier defines
 #define BULLET_MATCH_MULT_DAMAGE 1.25 // rare, pack a punch
