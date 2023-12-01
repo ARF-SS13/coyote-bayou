@@ -138,6 +138,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tbs = TBS_DEFAULT // turner broadcasting system
 	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
+	/// If our species supports it, this will override our appearance. See species.dm
+	var/alt_appearance
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
 		"mcolor2" = "FFFFFF",
@@ -627,6 +629,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			
+			if(LAZYLEN(pref_species.alt_prefixes))
+				dat += "<b>Alt Appearance:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species_alt_prefix;task=input'>[alt_appearance ? alt_appearance : "Select"]</a><BR>"
+
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			
 			dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><br>"
@@ -2528,6 +2533,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						creature_species = result
 						var/creature_type = GLOB.creature_selectable["[result]"]
 						var/mob/living/M = new creature_type(user)
+						if(creature_image)
+							QDEL_NULL(creature_image)
 						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
 						qdel(M)
 
@@ -2752,7 +2759,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
-
+				if("species_alt_prefix")
+					if(LAZYLEN(pref_species.alt_prefixes))//if there are alt sprites to even pick from
+						var/result = input(user, "Select an alternate species appearance or press cancel to clear it. Effect will apply in-game only. If editing in-game, rest after saving to view new appearance. Do not abuse!", "Alternate Appearance") as null|anything in pref_species.alt_prefixes
+						if(isnull(result) || result == "")
+							alt_appearance = null
+						else
+							alt_appearance = result
+					else //this species has none so I'm not sure how you clicked this button but clear it anyway
+						alt_appearance = null
 				if("custom_species")
 					var/new_species = reject_bad_name(input(user, "Choose your species subtype, if unique. This will show up on examinations and health scans. Do not abuse this:", "Character Preference", custom_species) as null|text)
 					if(new_species)

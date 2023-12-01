@@ -705,8 +705,11 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	. += "[dna.features["color_scheme"]]"
 
 	var/is_feral = FALSE
+	var/alt_appearance
 	if(IsFeral())
 		is_feral = TRUE
+		if(client?.prefs?.alt_appearance in dna.species.alt_prefixes)
+			alt_appearance = dna.species.alt_prefixes[client?.prefs?.alt_appearance]
 
 	if(!IsFeral())
 		if(dna.check_mutation(HULK))
@@ -755,6 +758,8 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 
 	if(is_feral)
 		. += "-feral"
+		if(alt_appearance)
+			. += "-[alt_appearance]"
 
 	else if(HAS_TRAIT(src, TRAIT_HUSK))
 		. += "-husk"

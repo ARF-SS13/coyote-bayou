@@ -142,6 +142,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/icon_dead_suffix
 	/// This is appended to the end of the "id" variable in order to set the RESTING/PRONE icon state of species that use the simple_icon
 	var/icon_rest_suffix
+	/// simple_icon species will default to using the "id" variable for their icon state, but you can select one of these prefixes which will change your icon state to [alt_prefix][id]
+	var/list/alt_prefixes
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -616,20 +618,21 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	H.remove_overlay(UNDERWEAR_LAYER)
 	H.remove_overlay(UNDERWEAR_OVERHANDS_LAYER)
 
-
-
 	var/list/standing = list()
 	// creature characters don't need to do all this work, just display their icon.
 	if(H.IsFeral())
+		var/prefix
+		if(H?.client?.prefs?.alt_appearance in alt_prefixes)//valid, allow it
+			prefix =  alt_prefixes?[H?.client?.prefs?.alt_appearance]
 		H.rotate_on_lying = rotate_on_lying
 		var/i_state
 		var/mycolor
 		if(H.stat == DEAD)
-			i_state = "[id][icon_dead_suffix]"
-		else if(H.stat != DEAD && !CHECK_MOBILITY(H, MOBILITY_STAND))//Not dead but can't stand up or resting
-			i_state = "[id][icon_rest_suffix]"
+			i_state = "[prefix][id][icon_dead_suffix]"
+		else if(!CHECK_MOBILITY(H, MOBILITY_STAND) || H.resting)//Not dead but can't stand up or resting
+			i_state = "[prefix][id][icon_rest_suffix]"
 		else
-			i_state = id
+			i_state = "[prefix][id]"
 		if(MUTCOLORS in species_traits)
 			mycolor = H?.client?.prefs?.features?["mcolor"]
 			if(isnull(mycolor))

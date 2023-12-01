@@ -29,10 +29,11 @@
 /datum/species/feral/pokemon
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/pokemon
 	roundstart = FALSE
-	liked_food = FRUIT
+	liked_food = FRUIT //berries
 	disliked_food = TOXIC | GROSS
 	icon_dead_suffix = "_d"
 	icon_rest_suffix = "_rest"
+	icon_width = 64
 
 /datum/species/feral/pokemon/aerodactyl
 	name = "Feral Aerodactyl"
@@ -173,6 +174,7 @@
 	name = "Feral Eevee"
 	id = "eevee"
 	roundstart = TRUE
+	alt_prefixes = list("Old Color" = "old")
 /mob/living/carbon/human/species/eevee
 	race = /datum/species/feral/pokemon/eevee
 
@@ -180,6 +182,7 @@
 	name = "Feral Espeon"
 	id = "espeon"
 	roundstart = TRUE
+	alt_prefixes = list("Old Color" = "old")
 /mob/living/carbon/human/species/espeon
 	race = /datum/species/feral/pokemon/espeon
 
@@ -201,6 +204,7 @@
 	name = "Feral Flareon"
 	id = "flareon"
 	roundstart = TRUE
+	alt_prefixes = list("Old Color" = "old")
 /mob/living/carbon/human/species/flareon
 	race = /datum/species/feral/pokemon/flareon
 
@@ -252,6 +256,14 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/glaceon
 	race = /datum/species/feral/pokemon/glaceon
+
+/datum/species/feral/pokemon/growlithe
+	name = "Feral Growlithe"
+	id = "growlithe"
+	roundstart = TRUE
+	alt_prefixes = list("Old Color" = "old")
+/mob/living/carbon/human/species/growlithe
+	race = /datum/species/feral/pokemon/growlithe
 
 /datum/species/feral/pokemon/haunter
 	name = "Feral Haunter"
@@ -338,13 +350,6 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/lycanroc
 	race = /datum/species/feral/pokemon/lycanroc
-
-/datum/species/feral/pokemon/growlithe
-	name = "Feral growlithe"
-	id = "growlithe"
-	roundstart = TRUE
-/mob/living/carbon/human/species/growlithe
-	race = /datum/species/feral/pokemon/growlithe
 
 /datum/species/feral/pokemon/magicarp
 	name = "Feral Magicarp"
@@ -513,6 +518,7 @@
 	name = "Feral Umbreon"
 	id = "umbreon"
 	roundstart = TRUE
+	alt_prefixes = list("Old Color" = "old")
 /mob/living/carbon/human/species/umbreon
 	race = /datum/species/feral/pokemon/umbreon
 
