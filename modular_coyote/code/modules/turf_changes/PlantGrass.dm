@@ -43,13 +43,10 @@
 /turf/open/Initialize()
 	. = ..()
 	
-	if(!spawnPlants)
-		return
-	if((locate(/obj/structure) in src))
-		return
-	if(locate(/obj/machinery) in src)
-		return
-	plantGrass()
+	if(spawnPlants)
+		if(!(locate(/obj/structure) in src))
+			if(!(locate(/obj/machinery) in src))
+				plantGrass()
 
 /turf/open/ChangeTurf(path, new_baseturf, flags)
 	for(var/obj/structure/flora/turfPlant in contents)
