@@ -1774,5 +1774,30 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
 
+/obj/item/clothing/under/sun_skirt
+	name = "sun skirt, green"
+	desc = "A middrif skirt that's colored in forest green."
+	icon_state = "sun_skirt"
+	item_state = "sun_skirt"
+	item_color = "sun_skirt"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/sun_skirt_grey
+	name = "sun skirt, grey scaled"
+	desc = "A middrif skirt that's colorable."
+	icon_state = "sun_skirt_grey"
+	item_state = "sun_skirt_grey"
+	item_color = "sun_skirt_grey"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/half_skirt
+	name = "flowy midrif skirt"
+	desc = "A middrif skirt that's blue."
+	icon_state = "half_skirt"
+	item_state = "half_skirt"
+	item_color = "half_skirt"
+	can_adjust = FALSE
+
+
 
 

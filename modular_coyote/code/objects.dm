@@ -1843,3 +1843,10 @@
 	desc = "A christmas tree balloon!"
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "xmastreeballoon"
+
+//Custom gun
+
+/obj/item/gun/ballistic/shotgun/s163/thingblessed
+	name = "Blessed Gecko-Slayer"
+	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
+

@@ -1404,18 +1404,38 @@
 
 // T
 
-/datum/gear/donator/kits/thingpony
-	name = "The Ultra Cutie Kit"
-	path = /obj/item/storage/box/large/custom_kit/thingpony
+/datum/gear/donator/kits/thingpony/teras
+	name = "Teras gun"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/teras
 	ckeywhitelist = list("thingpony")
 
-/obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
-	new /obj/item/clothing/suit/hooded/outcast(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+/obj/item/storage/box/large/custom_kit/thingpony/teras/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
+
+/datum/gear/donator/kits/thingpony/fleur
+	name = "fleur's necklace"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/fleur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/fleur/PopulateContents()
 	new /obj/item/clothing/neck/customfleur(src)
+
+/datum/gear/donator/kits/thingpony/warmfur
+	name = "Warmfur's clothing"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/warmfur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/warmfur/PopulateContents()
 	new /obj/item/clothing/under/tribalcustom(src)
+
+/datum/gear/donator/kits/thingpony/iris
+	name = "Iris's pack"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/iris
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/iris/PopulateContents()
 	new /obj/item/clothing/under/tribaliris(src)
+	new /obj/item/gun/ballistic/shotgun/s163/thingblessed(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
