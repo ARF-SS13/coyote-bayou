@@ -4,6 +4,7 @@
 	icon = 'icons/obj/flora/twigs.dmi'
 	icon_state = "tree_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/tree_log
 	name = "tree log"
@@ -740,6 +741,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palmrs_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump1
 	name = "palm stump"
@@ -747,6 +749,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palmls_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump2
 	name = "palm stump"
@@ -754,6 +757,7 @@
 	icon = 'modular_coyote/icons/objects/desert_planet_160x160.dmi'
 	icon_state = "palml_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/palmstump3
 	name = "palm stump"
@@ -761,6 +765,7 @@
 	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
 	icon_state = "palmr_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/desertstump
 	name = "tree stump"
@@ -768,6 +773,7 @@
 	icon = 'modular_coyote/icons/objects/desert_plant.dmi'
 	icon_state = "desert_stump"
 	anchored = TRUE
+	density = FALSE
 
 /obj/structure/flora/chomp/potplant0
 	name = "Potted Plant"
