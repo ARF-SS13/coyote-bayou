@@ -26271,12 +26271,6 @@
 /obj/item/folder/documents{
 	pixel_x = 6
 	},
-/obj/machinery/button/door{
-	name = "scrapper lock";
-	id = "scrapperlockdown";
-	pixel_x = -7;
-	pixel_y = -3
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -36758,12 +36752,6 @@
 	},
 /obj/item/folder/documents{
 	pixel_x = 8
-	},
-/obj/machinery/button/door{
-	name = "scrapper lock";
-	id = "scrapperlockdown";
-	pixel_y = 8;
-	pixel_x = -7
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -76807,9 +76795,6 @@
 /area/f13/wasteland)
 "nCz" = (
 /obj/machinery/mineral/wasteland_trader,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "scrapperlockdown"
-	},
 /obj/machinery/camera/autoname{
 	dir = 5;
 	pixel_y = 14;
