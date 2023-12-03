@@ -356,6 +356,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 		var/MM = text2num(time2text(world.timeofday, "MM"))
 		if(MM == 12 || MM == 1 || MM == 2)
 			name = "snow"
+			icon = 'icons/fallout/turfs/dirt.dmi'
 			icon_state = "snow[rand(0,12)]"
 			update_icon()
 

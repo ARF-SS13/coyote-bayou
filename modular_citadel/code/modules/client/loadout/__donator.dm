@@ -377,6 +377,16 @@
 	new /obj/item/ammo_box/a50MGbox(src)
 	new /obj/item/ammo_box/a50MGbox(src)
 
+/datum/gear/donator/kits/calebc7892
+	name = "The Liberation"
+	path = /obj/item/storage/box/large/custom_kit/calebc7892
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc7892/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/z34rifle/needlercustom(src)
+	new /obj/item/ammo_box/needlercapsule(src)
+	new /obj/item/ammo_box/needlercapsule(src) //provided two given when I spawned some in for testing, some came empty or half of their capsule. Needs fixing when possible.
+
 // D
 
 /datum/gear/donator/kits/dameonowen
@@ -1489,6 +1499,18 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
+
+/datum/gear/donator/kits/thelasthosea2
+	name = "Bren loadout"
+	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
+	ckeywhitelist = list("The lastHoesa2")
+
+/obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/bren/custom(src)
+	new /obj/item/ammo_box/magazine/bren(src)
+	new /obj/item/ammo_box/a308box(src)
+
+
 
 /datum/gear/donator/kits/tonyburritos
 	name = "NCR Scout"

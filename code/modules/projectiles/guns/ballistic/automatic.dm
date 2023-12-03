@@ -2797,6 +2797,30 @@
 	zoom_factor = 1.1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+/obj/item/gun/ballistic/automatic/z34rifle/needlercustom
+	name = "The People's Rifle"
+	desc = "A Chinese-made Type 79 marksman rifle, a knockoff of the soviet Dragunov SVD produced for the PRC's army units and special forces. This one appears to be particularly weathered from time in the wastes, a faded red cloth wrapped around a scuffed stock, some scratches on the gun metal, and some text etched onto the PSO-1 scope in Chinese."
+	icon_state = "zastava"
+	item_state = "zastava"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlesvd
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlesvd
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 1.9)
+	init_firemodes = list (
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+	zoom_factor = 0.9
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
 /obj/item/gun/ballistic/automatic/z34rifle/custom
 	name = "Z34 Battle Rifle"
 	desc = "The Soviet Z34 battle rifle. Based off the SLR or FN FAL, it is chambered in 7.62 Soviet. Now rechambered in .308, the weapon itself comes with a scope and seems to have a much heavier trigger than most rifles."
@@ -3027,8 +3051,8 @@
 
 // Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
 /obj/item/gun/ballistic/automatic/g36customtox //unused, note from Tox: Will redo entirely eventually
-	name = "Custom G36C Assault rifle"
-	desc = "A custom version of a G36C assault rifle. Chambered in 5.56 NATO, this customized G36C assault rifle is made from a more resistant and durable type of material. Sporting a black and white finish. Adorning the metal bits of the gun, including the exterior of the barrel, are engraved baroque motifs. The gun comes with a built in red dot sight manufactured into the carry handle. A reliable assault rifle that saw extensive use by West Germany. The charging handle can flip between left or right side. This one seems to be fitted to the right side for a more right-side handed charging handle."
+	name = " G36C Assault rifle"
+	desc = "A G36C base"
 	icon_state = "g36"
 	item_state = "g36"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -3234,6 +3258,26 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
+	)
+
+/obj/item/gun/ballistic/automatic/bren/custom
+	name = "Custom Bren gun"
+	desc = "A rather heavy gun that served as the primary British infantry LMG throughout the second world war."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "bren"
+	item_state = "bren"
+	mag_type = /obj/item/ammo_box/magazine/bren
+	init_mag_type = /obj/item/ammo_box/magazine/bren
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	init_recoil = LMG_RECOIL(1.2, 1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75 ,
+		/datum/firemode/semi_auto/slower
 	)
 
 

@@ -6,7 +6,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	name = "Workshop Scrapper"
 	desc = "A vending machine that's been modified to accept various items in exchange for copper Edisons. \
 			A sign on it reads, 'Keep your workplace clean and get paid doing it!' \
-			It's better than a trash can, at least."
+			It's better than a trash can, at least. \
+			Make sure to check in with the shopkeep for a better deal!"
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "trade_idle"
 

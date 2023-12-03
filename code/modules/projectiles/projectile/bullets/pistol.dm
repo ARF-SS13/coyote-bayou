@@ -406,16 +406,15 @@
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "needle"
-	damage_list = list("14" = 5 , "16" = 40, "18" = 20, "20" = 10)
+	damage_list = list("16" = 80, "18" = 20, "20" = 5)
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE
 	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_NEEDLE
 
 	wound_bonus = BULLET_WOUND_PISTOL_NEEDLE
-	bare_wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_NAKED_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 	supereffective_damage = 11
