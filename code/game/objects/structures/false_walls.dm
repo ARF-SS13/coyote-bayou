@@ -282,6 +282,31 @@
 	walltype = /turf/closed/wall/mineral/wood
 	canSmoothWith = list(/obj/structure/falsewall/wood, /turf/closed/wall/mineral/wood)
 
+/obj/structure/falsewall/wood/f13
+	name = "wooden wall"
+	desc = "A traditional wooden wall."
+	icon = 'icons/fallout/turfs/walls/wood.dmi'
+	icon_state = "wood0"
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
+	icon_type_smooth = "wood"
+	smooth = SMOOTH_OLD
+
+/obj/structure/falsewall/wood/f13/update_icon_state()
+	if(opening)
+		if(density)
+			icon_state = "fwall_opening"
+			smooth = SMOOTH_FALSE
+			clear_smooth_overlays()
+		else
+			icon_state = "fwall_closing"
+	else
+		if(density)
+			icon_state = initial(icon_state)
+			smooth = SMOOTH_OLD
+			queue_smooth(src)
+		else
+			icon_state = "fwall_open"
+
 /obj/structure/falsewall/iron
 	name = "rough metal wall"
 	desc = "A wall with rough metal plating."

@@ -41,7 +41,7 @@
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
 	girder_type = 0
-	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
+	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall, /obj/structure/falsewall/wood/f13)
 
 /turf/closed/wall/f13/wood/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
