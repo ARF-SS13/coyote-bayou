@@ -54643,6 +54643,19 @@
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/vault,
 /area/f13/building/abandoned)
+"iLQ" = (
+/obj/structure/christmas/xmaslights{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_trader{
+	pixel_x = 28;
+	pixel_y = -6;
+	density = 0
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/nash)
 "iLS" = (
 /turf/closed/wall/f13/store,
 /area/f13/store)
@@ -76794,7 +76807,6 @@
 	},
 /area/f13/wasteland)
 "nCz" = (
-/obj/machinery/mineral/wasteland_trader,
 /obj/machinery/camera/autoname{
 	dir = 5;
 	pixel_y = 14;
@@ -133481,7 +133493,7 @@ fCi
 fCi
 fCi
 fCi
-uSB
+iLQ
 cuT
 lTS
 lTS
