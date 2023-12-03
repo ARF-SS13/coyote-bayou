@@ -54,30 +54,34 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	var/loot_type = LOOT_TRASH
 	var/loot_rolls_max = 10
 	var/loot_rolls_min = 5
+	/// Set to null to not randomize the name.
 	var/random_name_list = "cardboard"
 	var/random_sound_list = "cardboard"
+	/// Play an animation while/after looting this thing?
+	var/loot_animation = TRUE
 	///Is someone looting this right now?
 	var/being_looted = FALSE
 	///Players who have recently looted this container
 	var/list/loot_players = list()
+	/// If true, will try and fill up our inventory until we're full, then spit our loot out if we have to.
+	var/place_loot_inside = FALSE
 
-
-/obj/item/storage/lootableattack_hand(mob/user)
-	var/turf/trash_turf = get_turf(src)
+/obj/item/storage/lootable/attack_hand(mob/user)
+	var/turf/loot_turf = get_turf(src)
 	var/ukey = ckey(user?.ckey)
 	if(!ukey)
 		to_chat(user, span_alert("You need a ckey to search the trash! Gratz on not having a ckey, tell a coder about it!"))
 	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
-	if(!rifling)
+	if(!being_looted)
 		playsound(get_turf(src), 'sound/f13effects/loot_trash.ogg', 100, TRUE, 1)
 	to_chat(user, span_smallnoticeital("You start picking through [src]..."))
-	rifling = TRUE
+	being_looted = TRUE
 	if(!do_mob(user, src, 3 SECONDS))
-		rifling = FALSE
+		being_looted = FALSE
 		return
-	rifling = FALSE
+	being_looted = FALSE
 	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
@@ -85,7 +89,7 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	to_chat(user, span_notice("You scavenge through [src]."))
 	for(var/i in 1 to rand(1,4))
 		var/list/trash_passthru = list()
-		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(trash_turf)
+		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(loot_turf)
 		my_trash.spawn_the_stuff(trash_passthru) // fun fact, lists are references, so this'll be populated when the proc runs (cool huh?)
 		for(var/atom/movable/spawned in trash_passthru)
 			if(isitem(spawned))
