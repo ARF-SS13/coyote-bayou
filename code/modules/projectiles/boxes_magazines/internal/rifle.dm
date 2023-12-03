@@ -66,6 +66,18 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = TRUE
 
+/obj/item/ammo_box/magazine/internal/needlesvd
+	name = "magazine filled with needlers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "needlerpack"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	caliber = list(CALIBER_NEEDLE)
+	max_ammo = 10
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = TRUE
+
 /obj/item/ammo_box/magazine/internal/grenadeshotgun
 	name = "magazine filled with 40mm mike-mikes ouch ouchs"
 	ammo_type = /obj/item/ammo_casing/a40mm/buck
