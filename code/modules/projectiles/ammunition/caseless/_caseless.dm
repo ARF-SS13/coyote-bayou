@@ -28,6 +28,9 @@
 	icon_state = "needlecasing"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	caliber = CALIBER_NEEDLE
+	force = 2
+	throwforce = 1
+	embedding = list("embed_chance"= 25)
 	projectile_type = /obj/item/projectile/bullet/needle
 	var/reagent_amount = 15
 
