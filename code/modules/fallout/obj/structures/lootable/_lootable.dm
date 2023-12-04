@@ -1,8 +1,12 @@
-
+///Trash
 #define LOOT_TIER_LOWEST 1
+///Common
 #define LOOT_TIER_LOW 2
+///Uncommon
 #define LOOT_TIER_MID 3
+///Rare
 #define LOOT_TIER_HIGH 4
+///Very Rare
 #define LOOT_TIER_HIGHEST 5
 #define LOOT_TRASH "trash"
 
@@ -46,7 +50,6 @@
 							"ice box",
 							"fridge",
 							"freezer"))
-
 		else
 			return name
 
@@ -81,19 +84,32 @@
 							"factory new",
 							"sealed"))
 
+/obj/item/storage/lootable/proc/GetLootingSound()
+	switch(random_sound_list)
+		if("trash")
+			return 'sound/f13effects/loot_trash.ogg'
+		else
+			return 'sound/f13effects/loot_trash.ogg'
+
+
 GLOBAL_LIST_INIT(lootable_random_sounds, list(
 	"debug" = list(),
 	"cardboard" = list(),
 ))
 
 GLOBAL_LIST_INIT(ammo_loot_tiers, list(
-	LOOT_TIER_LOWEST = /obj/effect/spawner/lootdrop/f13/common_ammo,
-	LOOT_TIER_LOW = /obj/effect/spawner/lootdrop/f13/uncommon_ammo,
-	LOOT_TIER_MID = /obj/effect/spawner/lootdrop/f13/rare_ammo,
+	LOOT_TIER_LOWEST = list(/obj/effect/spawner/lootdrop/f13/common_ammo),
+
+	LOOT_TIER_LOW = list(/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
+						/obj/effect/spawner/lootdrop/f13/common_ammo = 5),
+
+	LOOT_TIER_MID = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 10,
+						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5),
+
 ))
 
 GLOBAL_LIST_INIT(trash_loot_tiers, list(
-	1 = /obj/effect/spawner/lootdrop/f13/trash,
+	LOOT_TIER_LOWEST = list(/obj/effect/spawner/lootdrop/f13/trash),
 ))
 
 GLOBAL_LIST_INIT(lootable_types, list(
@@ -120,7 +136,9 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	var/loot_rolls_min = 5
 	/// Set to null to not randomize the name.
 	var/random_name_list = "cardboard"
-	var/random_sound_list = "cardboard"
+	var/random_sound_list = "trash"
+	/// Probably set this close to the length of the sound files used.
+	var/time_to_loot = 3 SECONDS
 	/// Should we assign a random prefix depending on the loot tier of this lootable?
 	var/random_prefix = TRUE
 	/// Play an animation while/after looting this thing?
@@ -131,12 +149,14 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	var/list/loot_players = list()
 	/// If true, will try and fill up our inventory until we're full, then spit our loot out if we have to.
 	var/place_loot_inside = FALSE
+	///If not null, will subtract by 1 every time it's looted until it's depleted.
+	var/uses
 
 /obj/item/storage/lootable/Initialize(mapload)
 	. = ..()
 	//Do dynamic loot tier magic here
 
-	//Based on the tier selected, generate the name
+	//Based on the tier selected (or the static loot tier), generate the name
 	name = "[GetLootableNamePrefix()][GetLootableName()]"
 
 /obj/item/storage/lootable/attack_hand(mob/user)
@@ -148,18 +168,23 @@ GLOBAL_LIST_INIT(lootable_types, list(
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
 	if(!being_looted)
-		playsound(get_turf(src), 'sound/f13effects/loot_trash.ogg', 100, TRUE, 1)
+		playsound(get_turf(src), GetLootingSound(), 100, TRUE, 1)
 	to_chat(user, span_smallnoticeital("You start picking through [src]..."))
 	being_looted = TRUE
-	if(!do_mob(user, src, 3 SECONDS))
+	if(!do_mob(user, src, time_to_loot, public_progbar = TRUE))
 		being_looted = FALSE
 		return
 	being_looted = FALSE
 	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
-	loot_players += ukey
+	loot_players[ukey] = world.time
 	to_chat(user, span_notice("You scavenge through [src]."))
+	//Switch to the open icon state for a while.
+	icon_state = icon_state_open
+
+
+	/*
 	for(var/i in 1 to rand(1,4))
 		var/list/trash_passthru = list()
 		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(loot_turf)
@@ -180,3 +205,4 @@ GLOBAL_LIST_INIT(lootable_types, list(
 					if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
 						break
 					QDEL_NULL(trash_mod)
+		*/
