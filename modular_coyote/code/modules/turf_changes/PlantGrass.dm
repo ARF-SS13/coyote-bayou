@@ -3,8 +3,25 @@
 
 // pascal deez nuts
 /turf/open/proc/plantGrass(Plantforce = FALSE)
+	if(!prob(RAND_PLANT_CHANCE))
+		return FALSE
+	if(locate(/obj/structure/flora) in src)
+		return FALSE
+	var/obj/structure/flora/randPlant
+	var/floratype = pickweight(GLOB.plant_type_weighted)
+	switch(floratype)
+		if("medicinal")
+			randPlant = pickweight(GLOB.medicinal_plant_list)
+		if("tree")
+			randPlant = pickweight(GLOB.tree_plant_list)
+		if("grass")
+			randPlant = pickweight(GLOB.grass_plant_list)
+	if(randPlant)
+		new randPlant(src)
+		return TRUE
+
+	/*
 	var/Weight = 0
-	var/obj/structure/flora/randPlant = null
 	//spontaneously spawn grass
 	if(Plantforce || prob(GRASS_SPONTANEOUS))
 		randPlant = pickweight(GLOB.lush_plant_spawn_list) //Create a new grass object at this location, and assign var
@@ -35,6 +52,7 @@
 				randPlant = pickweight(GLOB.desolate_plant_spawn_list)
 			new randPlant(src)
 			return TRUE
+	*/
 
 /turf/open/
 	var/spawnPlants = FALSE
