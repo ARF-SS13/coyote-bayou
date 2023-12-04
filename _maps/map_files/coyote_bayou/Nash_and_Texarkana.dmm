@@ -10797,6 +10797,12 @@
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
+"aLQ" = (
+/obj/structure/flora/big_bush{
+	icon_state = "tree_3"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "aLR" = (
 /obj/effect/turf_decal/vg_decals/numbers/two,
 /obj/effect/decal/cleanable/dirt{
@@ -19182,6 +19188,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
+"brr" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "brs" = (
 /obj/structure/fermenting_barrel,
 /turf/open/indestructible/ground/inside/dirt,
@@ -87133,6 +87146,15 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/underground/cave/coyote/antmound)
+"qgh" = (
+/obj/structure/flora/big_bush{
+	icon_state = "thick_tree"
+	},
+/obj/structure/flora/big_bush{
+	icon_state = "thistle"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "qgk" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -89334,6 +89356,10 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building/abandoned)
+"qFl" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "qFm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -95448,6 +95474,15 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"sbr" = (
+/obj/structure/flora/big_bush{
+	icon_state = "thistle"
+	},
+/obj/structure/flora/big_bush{
+	icon_state = "burnedbush10"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "sbw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -118908,6 +118943,12 @@
 	icon_state = "verticalrightborderright2bottom"
 	},
 /area/f13/wasteland/city)
+"xkR" = (
+/obj/structure/flora/big_bush{
+	icon_state = "burnedbush10"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/nash)
 "xkT" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -137144,7 +137185,7 @@ brA
 bXh
 bvZ
 hxA
-gfx
+sbr
 aoB
 szh
 xMT
@@ -137401,8 +137442,8 @@ xul
 xul
 tFd
 hxf
-gfx
-gfx
+aLQ
+qgh
 eTY
 gfx
 gfx
@@ -137656,11 +137697,11 @@ mct
 mct
 eTM
 mct
-mES
+brr
+qFl
 gfx
-gfx
-gfx
-gfx
+aLQ
+xkR
 gfx
 gfx
 xMT
