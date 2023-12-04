@@ -51,7 +51,7 @@
 			return name
 
 /obj/item/storage/lootable/proc/GetLootableNamePrefix()
-	if(!random_prefixes)
+	if(!random_prefix)
 		return
 	switch(loot_tier)
 		if(LOOT_TIER_LOWEST)
@@ -121,6 +121,8 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	/// Set to null to not randomize the name.
 	var/random_name_list = "cardboard"
 	var/random_sound_list = "cardboard"
+	/// Should we assign a random prefix depending on the loot tier of this lootable?
+	var/random_prefix = TRUE
 	/// Play an animation while/after looting this thing?
 	var/loot_animation = TRUE
 	///Is someone looting this right now?
