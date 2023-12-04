@@ -85,9 +85,6 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
-	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_BASETURF = /turf/open/space/basic))
-
-/*no don't do that
 #ifndef LOWMEMORYMODE
 	// Create space ruin levels
 	while (space_levels_so_far < config.space_ruin_levels)
@@ -98,14 +95,15 @@ SUBSYSTEM_DEF(mapping)
 		++space_levels_so_far
 		empty_space = add_new_zlevel("Empty Area [space_levels_so_far]", list(ZTRAIT_LINKAGE = CROSSLINKED))
 	// and the transit level
-
+	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
+/*
 	// Pick a random away mission.
 	if(CONFIG_GET(flag/roundstart_away))
 		createRandomZlevel()
 	// Pick a random VR level.
 	if(CONFIG_GET(flag/roundstart_vr))
 		createRandomZlevel(VIRT_REALITY_NAME, list(ZTRAIT_AWAY = TRUE, ZTRAIT_VR = TRUE), GLOB.potential_vr_levels)
-
+*/
 	// Generate mining ruins
 	loading_ruins = TRUE
 	var/list/lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS)
@@ -139,7 +137,6 @@ SUBSYSTEM_DEF(mapping)
 	SSmapping.seedStation()
 	loading_ruins = FALSE
 #endif
-*/
 	repopulate_sorted_areas()
 	// Set up Z-level transitions.
 	setup_map_transitions()
