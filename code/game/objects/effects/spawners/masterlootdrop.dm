@@ -265,12 +265,11 @@
 	name = "uncommon guns"
 	loot = list(
 		//primary weapon candidates                                         //dps mag cap
-		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//265 24
-		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                      //265 20
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,         //249 20
 		/obj/item/gun/ballistic/automatic/autopipe = 10,                    //244 18
 		/obj/item/gun/ballistic/automatic/r84 = 10,                         //241 60
 		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 10,               //234 36
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//234 24
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
 		/obj/item/gun/ballistic/automatic/r93 = 10,                         //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
@@ -322,6 +321,7 @@
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
 		/obj/item/gun/ballistic/automatic/m1919 = 10,                     //276 80
+		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                    //265 20
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
