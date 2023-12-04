@@ -221,7 +221,7 @@
 /obj/effect/spawner/lootdrop/f13/common_guns
 	name = "common guns"
 	loot = list(                                                            // dps	mag cap     *staple
-		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20	
+		/obj/item/gun/ballistic/automatic/type93/worn = 4,                  //156 20
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 5,                 //151 32
 		/obj/item/gun/ballistic/automatic/varmint/ratslayer = 6,            //151 10
 		/obj/item/gun/ballistic/automatic/smg/american180 = 6,              //150 180
@@ -265,12 +265,11 @@
 	name = "uncommon guns"
 	loot = list(
 		//primary weapon candidates                                         //dps mag cap
-		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//265 24
-		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                      //265 20
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,         //249 20
-		/obj/item/gun/ballistic/automatic/autopipe = 10,                    //244 18
-		/obj/item/gun/ballistic/automatic/r84 = 10,                         //241 60
+		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
+		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
+		/obj/item/gun/ballistic/automatic/r84 = 9,                          //241 60
 		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 10,               //234 36
+		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//234 24
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
 		/obj/item/gun/ballistic/automatic/r93 = 10,                         //217 20
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5 = 10,        //213 4
@@ -293,14 +292,13 @@
 		/obj/item/gun/ballistic/automatic/marksman/policerifle = 10,        //180 20
 		/obj/item/gun/ballistic/automatic/needlerrifle = 10,                //106(175) 24
 		/obj/item/gun/ballistic/automatic/assault_carbine/m5a1 = 10,        //172 30
-		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 9,  //157 30
-		/obj/item/gun/ballistic/automatic/famas/pristine = 8,               //154 20
-		/obj/item/gun/ballistic/automatic/rpd = 7,                          //152 40
-		/obj/item/gun/ballistic/automatic/shotgun/riot = 5,                 //beanbags 8
+		/obj/item/gun/ballistic/automatic/assault_carbine/policerifle = 10, //157 30
+		/obj/item/gun/ballistic/automatic/famas/pristine = 10,              //154 20
+		/obj/item/gun/ballistic/automatic/rpd = 9,                          //152 40
+		/obj/item/gun/ballistic/automatic/shotgun/riot = 8,                 //beanbags 8
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 7,        //97 8 multicaliber, deceiving stats
 
 		//sidearms
-		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 2,          //254 1
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 3, 	//252 15
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 1,            //208 12
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 3,                  //198 12
@@ -322,6 +320,7 @@
 		/obj/item/gun/ballistic/automatic/assault_rifle = 10,             //277 20
 		/obj/item/gun/ballistic/automatic/smg/mp5sd = 10,                 //277 32
 		/obj/item/gun/ballistic/automatic/m1919 = 10,                     //276 80
+		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                    //265 20
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
@@ -332,6 +331,7 @@
 		//wildcards and sidearms
 		/obj/item/gun/ballistic/rifle/mag/antimaterial = 3,               //152 8
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria = 3,       //277 15
+		/obj/item/gun/ballistic/revolver/shotpistol/flair_gun = 1,        //254 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 3,  //113 12
 
 	)
@@ -621,32 +621,6 @@
 		/obj/item/dualsaber/hypereutactic = 5,
 	)
 
-//////////////////////////
-///unique weapon spawns///
-//////////////////////////
-
-/obj/effect/spawner/lootdrop/f13/common_unique
-	name = "common unique"
-	loot = list(
-	)
-
-/obj/effect/spawner/lootdrop/f13/uncommon_unique
-	name = "uncommon unique"
-	loot = list(
-		// /obj/item/gun/ballistic/automatic/recoilessrifle = 1, //Will ask community on ideas of a revamped recoiless rifle. Needs a complete overhaul of its niche abilities.
-		// /obj/item/gun/ballistic/automatic/m1garand/republicspride = 10, // Commenting out until its sprite is fixed.
-	)
-
-/obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
-	name = "rare unique"
-	loot = list(
-//		/obj/item/gun/ballistic/automatic/m72 = 4, //31 10 beyond trash tier
-	)
-
-/obj/effect/spawner/lootdrop/f13/very_rare_unique
-	name = "very rare unique"
-	loot = list(
-	)
 
 ////////////////////////////
 ///magazine ammo spawners///		each tier reflects the type of guns available in this tier

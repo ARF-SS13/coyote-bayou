@@ -769,7 +769,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the doctors grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
 	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
-	locked = FALSE
+	locked = TRUE
 
 /datum/quirk/doctorphobia/post_add()
 	. = ..()
