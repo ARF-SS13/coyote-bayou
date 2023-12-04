@@ -30,7 +30,7 @@
 			)
 		)
 	mid_length = 2
-	volume = 25
+	volume = 10
 	var/last_radiation
 
 /datum/looping_sound/geiger/get_sound(starttime)

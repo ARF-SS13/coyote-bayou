@@ -1,4 +1,5 @@
 GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdrop, new)
+GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all_but_higher, /atom/movable/openspace_backdrop/higher, new)
 
 /atom/movable/openspace_backdrop
 	name			= "openspace_backdrop"
@@ -10,6 +11,13 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	plane           = OPENSPACE_BACKDROP_PLANE
 	mouse_opacity 	= MOUSE_OPACITY_TRANSPARENT
 	layer           = SPLASHSCREEN_LAYER
+	color = list(
+		1.0, 0.2, 0.3, 0.0,
+		0.2, 1.1, 0.4, 0.0,
+		0.2, 0.2, 1.2, 0.0,
+		0.0, 0.0, 0.0, 1.0)
+
+/atom/movable/openspace_backdrop/higher
 
 /turf/open/transparent/openspace
 	name = "open space"
@@ -36,7 +44,10 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 /turf/open/transparent/openspace/Initialize() // handle plane and layer here so that they don't cover other obs/turfs in Dream Maker
 	. = ..()
 	is_wall_below()
-	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
+	if(z == Z_LEVEL_NASH_LVL3)
+		vis_contents += GLOB.openspace_backdrop_one_for_all_but_higher //Special grey square for projecting backdrop darkness filter on it.
+	else
+		vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
 
 /*
 Prevents players on higher Zs from seeing into buildings they arent meant to.
@@ -58,6 +69,11 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
  */
 /turf/open/transparent/openspace/Enter(atom/movable/mover, atom/oldloc)
 	. = ..()
+	if(isliving(mover))
+		var/mob/living/L = mover
+		if(L.m_intent == MOVE_INTENT_WALK)
+			to_chat(L, span_warning("Whoa! You nearly fell! Good thing you were careful!"))
+			return FALSE
 	if(.)
 		//higher priority than CURRENTLY_Z_FALLING so the movable doesn't fall on Entered()
 		mover.set_currently_z_moving(CURRENTLY_Z_FALLING_FROM_MOVE)

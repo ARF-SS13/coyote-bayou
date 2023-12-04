@@ -1096,6 +1096,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
 		maxHealth = our_health
 		health = our_health
+	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		var/speedpick = pick(variation_list[MOB_VARIED_SPEED])
+		set_varspeed(speedpick)
 	return TRUE
 
 /mob/living/simple_animal/proc/vary_from_list(which_list, weighted_list = FALSE)

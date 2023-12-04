@@ -993,7 +993,7 @@ Knight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/gun/ballistic/automatic/smg/mp5=1,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd=1,
 		/obj/item/ammo_box/magazine/uzim9mm=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,

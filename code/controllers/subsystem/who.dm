@@ -347,9 +347,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	lines += "<br>"
 	lines += "<hr>" // BRR BRR HURR!!~<3
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
-	if(admeme)
-		lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
-		lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
+	// if(admeme)
+	// 	lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
+	// 	lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
 	lines += span_notice("<br>You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
 	lines += "<br>"
 	lines += Me(whoer)

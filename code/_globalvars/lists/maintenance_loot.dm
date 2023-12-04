@@ -655,7 +655,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/brush,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/rifle/mag/antimateriel,
+	/obj/item/gun/ballistic/rifle/mag/antimaterial,
 	/obj/item/ammo_box/magazine/amr,
 	/obj/item/gun/ballistic/revolver/m2405,
 	/obj/item/ammo_box/rev308,

@@ -377,6 +377,16 @@
 	new /obj/item/ammo_box/a50MGbox(src)
 	new /obj/item/ammo_box/a50MGbox(src)
 
+/datum/gear/donator/kits/calebc7892
+	name = "The Liberation"
+	path = /obj/item/storage/box/large/custom_kit/calebc7892
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc7892/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/z34rifle/needlercustom(src)
+	new /obj/item/ammo_box/needlercapsule(src)
+	new /obj/item/ammo_box/needlercapsule(src) //provided two given when I spawned some in for testing, some came empty or half of their capsule. Needs fixing when possible.
+
 // D
 
 /datum/gear/donator/kits/dameonowen
@@ -763,7 +773,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
 	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
 	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
-	new /obj/item/gun/energy/laser/LaserAK/jaggi(src)
+	new /obj/item/gun/energy/laser/LaserAK/worn/jaggi(src)
 
 
 /datum/gear/donator/kits/jaggachi_7
@@ -1404,18 +1414,38 @@
 
 // T
 
-/datum/gear/donator/kits/thingpony
-	name = "The Ultra Cutie Kit"
-	path = /obj/item/storage/box/large/custom_kit/thingpony
+/datum/gear/donator/kits/thingpony/teras
+	name = "Teras gun"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/teras
 	ckeywhitelist = list("thingpony")
 
-/obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
-	new /obj/item/clothing/suit/hooded/outcast(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+/obj/item/storage/box/large/custom_kit/thingpony/teras/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
+
+/datum/gear/donator/kits/thingpony/fleur
+	name = "fleur's necklace"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/fleur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/fleur/PopulateContents()
 	new /obj/item/clothing/neck/customfleur(src)
+
+/datum/gear/donator/kits/thingpony/warmfur
+	name = "Warmfur's clothing"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/warmfur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/warmfur/PopulateContents()
 	new /obj/item/clothing/under/tribalcustom(src)
+
+/datum/gear/donator/kits/thingpony/iris
+	name = "Iris's pack"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/iris
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/iris/PopulateContents()
 	new /obj/item/clothing/under/tribaliris(src)
+	new /obj/item/gun/ballistic/shotgun/s163/thingblessed(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
@@ -1469,6 +1499,18 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
+
+/datum/gear/donator/kits/thelasthosea2
+	name = "Bren loadout"
+	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
+	ckeywhitelist = list("The lastHoesa2")
+
+/obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/bren/custom(src)
+	new /obj/item/ammo_box/magazine/bren(src)
+	new /obj/item/ammo_box/a308box(src)
+
+
 
 /datum/gear/donator/kits/tonyburritos
 	name = "NCR Scout"

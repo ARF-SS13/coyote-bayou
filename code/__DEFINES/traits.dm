@@ -502,6 +502,7 @@
 #define CURSED_MASK_TRAIT "cursed-mask"
 #define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
+#define FEET_REPLACEMENT_TRAIT "feet-replacer"
 #define HOT_POTATO_TRAIT "hot-potato"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
