@@ -539,8 +539,8 @@
 /mob/living/carbon/get_chat_color()
 	var/color = get_feature("chat_color")
 	if(color == "whoopsie" || !color)
-		return rgb(255, 255, 255)
-	return "#[get_feature("chat_color")]"
+		return rgb(127, 127, 127)
+	return "#[color]"
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing

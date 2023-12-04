@@ -1315,3 +1315,6 @@
 		var/atom/movable/virtualspeaker/vs = src
 		return vs.get_chat_color()
 	return rgb(255, 255, 255)
+
+/atom/proc/wingetproc(id, params)
+	return winget(src, id, params)

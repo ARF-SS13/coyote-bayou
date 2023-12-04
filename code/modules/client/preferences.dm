@@ -54,6 +54,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_rc_emotes = TRUE
 	///Whether to apply mobs' runechat color to the chat log as well
 	var/color_chat_log = TRUE
+	///Keeping track of chat bg color
+	var/chatbgcolor = "#131313"
 
 	var/list/aghost_squelches = list()
 
@@ -395,6 +397,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		save_preferences()
 	save_character()		//let's save this new random character so it doesn't keep generating new ones.
 	menuoptions = list()
+	spawn(0)
+		chatbgcolor = winget(C, "statbrowser", "background-color")
 	return
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='17%'>"

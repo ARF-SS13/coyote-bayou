@@ -169,16 +169,12 @@
 		//the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
 			msg = blind_message
-		var/name = ""
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				name = "<b>[src]</b>"
+				msg = "<b>[src.name]</b> [msg]"
 			if(target.client.prefs.color_chat_log)
-				if(name)
-					name = span_color(name, saycolor)
-				msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-			if(name)
-				msg = name + " " + msg
+				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	//if(self_message)
 		//hearers -= src
@@ -200,18 +196,12 @@
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
 			M.create_chat_message(src, raw_message = msg, runechat_flags = visible_message_flags)
-		var/name = ""
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				name = "<b>[src]</b>"
-			if(M.client.prefs.color_chat_log)
-				if(name)
-					name = span_color(name,saycolor)
-				else
-					msg = replacetext(msg, src.name, span_color(src.name, saycolor))
-				msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-			if(name)
-				msg = name + " " + msg
+				msg = "<b>[src]</b> [msg]"
+			if(target.client.prefs.color_chat_log)
+				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
@@ -250,9 +240,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	//if(self_message)
 		//hearers -= src
 //	var/raw_msg = message
-	var/name = ""
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
-		name = "<b>[src]</b>"
+		message = "<b>[src]</b> [message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
 
@@ -263,13 +252,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			continue
 		var/msg = M.can_hear() ? message : deaf_message
 		if(M.client?.prefs.color_chat_log)
-			if(name)
-				name = span_color(name,saycolor)
-			else
-				msg = replacetext(msg, src.name, span_color(src.name, saycolor))
-			msg = alternating_color_span(msg, saycolor, "\"", FALSE)
-		if(name)
-			msg = name + " " + msg
+			var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
+			msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
 			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))

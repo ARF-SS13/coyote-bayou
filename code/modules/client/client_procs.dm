@@ -1146,6 +1146,23 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		if (menuitem)
 			menuitem.Load_checked(src)
 
+///Make sure chat text color has enough contrast against the client's background color
+/client/proc/sanitize_chat_color(color)
+	var/bgcolor = src.prefs.chatbgcolor
+	var/bglum = rgb2num(bgcolor, COLORSPACE_HSL)[3]
+	var/colorHSL = rgb2num(color)
+	var/colorlum = colorHSL[3]
+	var/lumdiff = colorlum - bglum
+
+	if(lumdiff > 0 && lumdiff < 25)
+		colorlum = min(bglum + 25, 100)
+	else if(lumdiff <= 0 && lumdiff > -25)
+		colorlum = max(bglum - 25, 0)
+	else
+		return color
+
+	return rgb(colorHSL[1], colorHSL[2], colorlum, , COLORSPACE_HSL)
+
 /* 
 /client/proc/checkGonadDistaste(flag)
 	if(!flag || !prefs)
