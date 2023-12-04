@@ -85,8 +85,7 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
-	transit = get_level(Z_LEVEL_CENTCOM)
-	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
+	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE, ZTRAIT_BASETURF = /turf/open/space/basic))
 
 /*no don't do that
 #ifndef LOWMEMORYMODE
@@ -145,7 +144,7 @@ SUBSYSTEM_DEF(mapping)
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	initialize_reserved_level(Z_LEVEL_CENTCOM)
+	initialize_reserved_level(transit.z_value)
 	return ..()
 
 /*	Nuke threats, for making the blue tiles on the station go RED
