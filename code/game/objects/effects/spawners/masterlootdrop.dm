@@ -621,32 +621,6 @@
 		/obj/item/dualsaber/hypereutactic = 5,
 	)
 
-//////////////////////////
-///unique weapon spawns///
-//////////////////////////
-
-/obj/effect/spawner/lootdrop/f13/common_unique
-	name = "common unique"
-	loot = list(
-	)
-
-/obj/effect/spawner/lootdrop/f13/uncommon_unique
-	name = "uncommon unique"
-	loot = list(
-		// /obj/item/gun/ballistic/automatic/recoilessrifle = 1, //Will ask community on ideas of a revamped recoiless rifle. Needs a complete overhaul of its niche abilities.
-		// /obj/item/gun/ballistic/automatic/m1garand/republicspride = 10, // Commenting out until its sprite is fixed.
-	)
-
-/obj/effect/spawner/lootdrop/f13/rare_unique //most uniques gonna end up here: the epitome of high tier loot
-	name = "rare unique"
-	loot = list(
-//		/obj/item/gun/ballistic/automatic/m72 = 4, //31 10 beyond trash tier
-	)
-
-/obj/effect/spawner/lootdrop/f13/very_rare_unique
-	name = "very rare unique"
-	loot = list(
-	)
 
 ////////////////////////////
 ///magazine ammo spawners///		each tier reflects the type of guns available in this tier
