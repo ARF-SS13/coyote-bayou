@@ -58,10 +58,10 @@
 	var/spawnPlants = FALSE
 	// var/obj/structure/flora/turfPlant // jon, this dels harder than my dick in ur ass
 
-/turf/open/Initialize()
+/turf/open/Initialize(mapload)
 	. = ..()
 	
-	if(spawnPlants && (z != Z_LEVEL_TRANSIT))
+	if(mapload && spawnPlants && (z != Z_LEVEL_TRANSIT))
 		if(!(locate(/obj/structure) in src))
 			if(!(locate(/obj/machinery) in src))
 				plantGrass()
