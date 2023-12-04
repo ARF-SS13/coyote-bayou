@@ -611,7 +611,7 @@
 	category = list("initial", "Intermediate Magazines", "Handmade Magazines")
 
 /datum/design/ammolathe/amrmag
-	name = "empty anti-materiel rifle magazine (.50)"
+	name = "empty anti-material rifle magazine (.50)"
 	id = "amrmagazine"
 	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_box/magazine/amr/empty

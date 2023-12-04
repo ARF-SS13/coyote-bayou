@@ -61,7 +61,7 @@
 /turf/open/Initialize()
 	. = ..()
 	
-	if(spawnPlants)
+	if(spawnPlants && (z in VALIDBALL_Z_LEVELS))
 		if(!(locate(/obj/structure) in src))
 			if(!(locate(/obj/machinery) in src))
 				plantGrass()

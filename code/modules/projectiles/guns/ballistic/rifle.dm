@@ -864,7 +864,7 @@
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 /* * * * * * * * * * *
- * Anti-Materiel Rifle
+ * Anti-Material Rifle
  * Huge Bolt-Action Rifle
  * .50MG
  * Slow to fire
@@ -872,7 +872,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/mag/antimaterial
-	name = "anti-materiel rifle"
+	name = "anti-material rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "amr"
@@ -892,8 +892,8 @@
 	)
 	can_scope = FALSE
 	zoom_factor = 1
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 /obj/item/gun/ballistic/rifle/mag/pz39custom //custom
 	name = "Custom Panzerbüchse 39"
@@ -917,8 +917,8 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 	can_scope = TRUE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
@@ -941,8 +941,8 @@
 		/datum/firemode/semi_auto/slower
 	)
 	can_scope = FALSE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting
@@ -975,8 +975,8 @@
 	can_scope = FALSE
 	can_suppress = FALSE
 	can_flashlight = TRUE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)

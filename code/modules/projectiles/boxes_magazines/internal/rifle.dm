@@ -32,7 +32,7 @@
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
 	max_ammo = 2 //with 1 in the tube = 3 shots
 
-/obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+/obj/item/ammo_box/magazine/internal/boltaction/antimaterial
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = list(CALIBER_50MG)
 	max_ammo = 4
