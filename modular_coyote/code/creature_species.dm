@@ -435,6 +435,23 @@
 /mob/living/carbon/human/species/purrloin
 	race = /datum/species/feral/pokemon/purrloin
 
+/datum/species/feral/pokemon/raichu
+	name = "Feral Raichu"
+	id = "raichu"
+	roundstart = TRUE
+	alt_prefixes = list("Female" = "f")
+	simple_icon = 'modular_coyote/icons/mob/pmon/raichu.dmi'
+/mob/living/carbon/human/species/raichu
+	race = /datum/species/feral/pokemon/raichu
+
+/datum/species/feral/pokemon/alolanraichu
+	name = "Feral Alolan Raichu"
+	id = "alolanraichu"
+	roundstart = TRUE
+	simple_icon = 'modular_coyote/icons/mob/pmon/raichu.dmi'
+/mob/living/carbon/human/species/alolanraichu
+	race = /datum/species/feral/pokemon/alolanraichu
+
 /datum/species/feral/pokemon/ralts
 	name = "Feral Ralts"
 	id = "ralts"
