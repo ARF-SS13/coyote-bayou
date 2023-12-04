@@ -199,8 +199,8 @@
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
-			if(target.client.prefs.color_chat_log)
-				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+			if(M.client.prefs.color_chat_log)
+				var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
 				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
