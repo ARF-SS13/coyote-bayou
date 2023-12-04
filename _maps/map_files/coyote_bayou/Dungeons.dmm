@@ -138,6 +138,12 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"abC" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc,
+/area/f13/building)
 "abR" = (
 /obj/structure/fence/handrail{
 	density = 0;
@@ -3653,6 +3659,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"bLB" = (
+/obj/machinery/light{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc,
+/area/f13/building)
 "bLR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -18618,6 +18631,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/building)
+"iuU" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/fakespace,
+/area/f13/building)
 "iuV" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/necropolis,
@@ -26899,6 +26916,7 @@
 	pixel_y = 10
 	},
 /obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter/fusion,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mnO" = (
@@ -32123,6 +32141,7 @@
 	pixel_y = 10
 	},
 /obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter/fusion,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oFl" = (
@@ -39143,6 +39162,10 @@
 /obj/machinery/vending/wardrobe/engi_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
+"rEm" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/floor/plasteel/f13/vault_floor/misc,
+/area/f13/building)
 "rEo" = (
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13{
@@ -40293,9 +40316,7 @@
 	},
 /area/f13/building)
 "sgz" = (
-/obj/machinery/door/airlock/highsecurity{
-	id_tag = "OwenHideaway"
-	},
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "sgF" = (
@@ -70843,10 +70864,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv
@@ -71100,10 +71121,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+abC
+svH
+aEL
 whv
 whv
 whv
@@ -71357,10 +71378,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
 whv
 whv
 whv
@@ -71614,10 +71635,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -71871,10 +71892,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -72128,10 +72149,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -72385,10 +72406,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -72642,10 +72663,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -72899,10 +72920,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
 whv
 whv
 whv
@@ -73156,10 +73177,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -73413,10 +73434,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -73670,10 +73691,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -73927,10 +73948,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -74184,10 +74205,10 @@ rLB
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -74441,10 +74462,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
 whv
 whv
 whv
@@ -74698,10 +74719,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -74955,10 +74976,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -75212,10 +75233,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -75469,10 +75490,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -75726,10 +75747,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -75983,10 +76004,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
 whv
 whv
 whv
@@ -76240,10 +76261,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -76497,10 +76518,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -76754,10 +76775,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -77011,10 +77032,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -77268,11 +77289,11 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
+aEL
 whv
 whv
 bpQ
@@ -77525,12 +77546,12 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+svH
+aEL
+aEL
 whv
 bpQ
 pPM
@@ -77782,12 +77803,12 @@ aEL
 aEL
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+svH
+svH
+svH
+aEL
 whv
 bpQ
 pPM
@@ -78040,12 +78061,12 @@ aEL
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+svH
+svH
+svH
+aEL
 bpQ
 pPM
 iys
@@ -78298,11 +78319,11 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+svH
+aEL
 bpQ
 pPM
 cXJ
@@ -78555,11 +78576,11 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+svH
+svH
+aEL
 bpQ
 pPM
 iys
@@ -78813,10 +78834,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 bpQ
 pPM
 iys
@@ -79070,10 +79091,10 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+bLB
+svH
+aEL
 bpQ
 pPM
 cXJ
@@ -79327,10 +79348,10 @@ aEL
 whv
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 bpQ
 pPM
 pPM
@@ -79584,10 +79605,10 @@ ijC
 aEL
 whv
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 bpQ
 bpQ
 bpQ
@@ -79841,11 +79862,11 @@ ijC
 ijC
 aEL
 whv
-whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -80099,10 +80120,10 @@ ijC
 ijC
 aEL
 whv
-whv
-whv
-whv
-whv
+aEL
+svH
+svH
+aEL
 whv
 whv
 whv
@@ -80357,9 +80378,9 @@ ijC
 ijC
 aEL
 whv
-whv
-whv
-whv
+aEL
+bLB
+aEL
 whv
 whv
 whv
@@ -80614,9 +80635,9 @@ cCP
 ijC
 aEL
 whv
-whv
-ghS
-ghS
+aEL
+svH
+aEL
 ghS
 ghS
 ghS
@@ -80872,7 +80893,7 @@ ijC
 aEL
 aEL
 aEL
-aEL
+rEm
 aEL
 aEL
 aEL
@@ -82131,7 +82152,7 @@ ubw
 ubw
 ubw
 xOO
-ijC
+iuU
 ryW
 boV
 oPe
@@ -82388,7 +82409,7 @@ ubw
 cpM
 ubw
 rGu
-ijC
+iuU
 qYe
 boV
 oPe
@@ -82645,7 +82666,7 @@ ubw
 ubw
 ubw
 xOO
-ijC
+iuU
 ryW
 boV
 oPe
@@ -84713,7 +84734,7 @@ ijC
 ijC
 ijC
 ijC
-iQS
+oKn
 oKn
 ijC
 ijC

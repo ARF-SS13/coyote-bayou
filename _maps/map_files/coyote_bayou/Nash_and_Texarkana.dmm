@@ -10888,6 +10888,10 @@
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city)
+"aLQ" = (
+/obj/machinery/door/airlock/ckey/highsecurity/andy,
+/turf/open/floor/grass,
+/area/f13/wasteland/nash)
 "aLR" = (
 /obj/effect/turf_decal/vg_decals/numbers/two,
 /obj/effect/decal/cleanable/dirt{
@@ -96813,6 +96817,13 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"sbr" = (
+/obj/structure/ladder/unbreakable{
+	id = "andybase";
+	height = 1
+	},
+/turf/open/floor/grass,
+/area/f13/wasteland/nash)
 "sbw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -138888,7 +138899,7 @@ brA
 bXh
 bvZ
 hxA
-bQW
+imX
 koT
 szh
 xMT
@@ -139146,7 +139157,7 @@ xul
 tFd
 hxf
 imX
-bQW
+imX
 eTY
 bQW
 bQW
@@ -139400,11 +139411,11 @@ mct
 mct
 eTM
 mct
-rFt
-bQW
-bQW
-bQW
-bQW
+sbr
+aLQ
+imX
+imX
+imX
 bQW
 gfx
 xMT
