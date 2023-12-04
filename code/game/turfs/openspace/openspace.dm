@@ -44,10 +44,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all_but_higher, /atom/movable/opens
 /turf/open/transparent/openspace/Initialize() // handle plane and layer here so that they don't cover other obs/turfs in Dream Maker
 	. = ..()
 	is_wall_below()
-	if(z == Z_LEVEL_NASH_LVL3)
-		vis_contents += GLOB.openspace_backdrop_one_for_all_but_higher //Special grey square for projecting backdrop darkness filter on it.
-	else
-		vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
+	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
 
 /*
 Prevents players on higher Zs from seeing into buildings they arent meant to.
@@ -69,14 +66,23 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
  */
 /turf/open/transparent/openspace/Enter(atom/movable/mover, atom/oldloc)
 	. = ..()
-	if(isliving(mover))
-		var/mob/living/L = mover
-		if(L.m_intent == MOVE_INTENT_WALK)
-			to_chat(L, span_warning("Whoa! You nearly fell! Good thing you were careful!"))
-			return FALSE
+	if(be_careful(mover))
+		return FALSE
 	if(.)
 		//higher priority than CURRENTLY_Z_FALLING so the movable doesn't fall on Entered()
 		mover.set_currently_z_moving(CURRENTLY_Z_FALLING_FROM_MOVE)
+
+/turf/open/transparent/openspace/proc/be_careful(atom/movable/mover)
+	if(!isliving(mover))
+		return FALSE
+	var/turf/belome = SSmapping.get_turf_below(src)
+	for(var/atom/thing in belome)
+		if(thing.intercept_zImpact(mover) & FALL_INTERCEPTED)
+			return FALSE // no need to be careful, its just stairs
+	var/mob/living/L = mover
+	if(L.m_intent == MOVE_INTENT_WALK && (!HAS_TRAIT(L, TRAIT_CLUMSY) || !HAS_TRAIT(L, TRAIT_NORUNNING)))
+		to_chat(L, span_warning("Whoa! You nearly fell! Good thing you were careful!"))
+		return TRUE
 
 ///Makes movables fall when forceMove()'d to this turf.
 /turf/open/transparent/openspace/Entered(atom/movable/AM)
