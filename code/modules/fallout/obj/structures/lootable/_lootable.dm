@@ -6,16 +6,80 @@
 #define LOOT_TIER_HIGHEST 5
 #define LOOT_TRASH "trash"
 
-GLOBAL_LIST_INIT(lootable_random_names, list(
-	"debug" = list("report this as a bug"),
-	"cardboard" = list(	"cardboard box",
-							"rotten cardboard box",
-							"smelly paper box",
-							"forgotten cardboard box",
-							"pristine box",
-							"dusty box",
-							"damp box"),
-))
+/obj/item/storage/lootable/proc/GetLootableName()
+	if(!random_name_list)
+		return name
+	switch(random_name_list)
+		if("cardboard box")
+			return pick(list("cardboard box",
+							"paper box",
+							"cardboard crate",
+							"shoe box",
+							))
+		if("ammo box")
+			return pick(list("ammunition crate",
+							"crate of ammo",
+							"ammo box",
+							"ammunition storage",
+							"box of ammunition",
+							"crate of bullets"))
+		if("weapon box")
+			return pick(list("weapon box",
+							"weapon crate",
+							"gun crate",
+							"crate of weapons",
+							"box of weaponry",
+							))
+		if("magic box")
+			return pick(list("arcane crate",
+							"box of the arcane",
+							"wand storage",
+							"eldritch storage unit",
+							"scroll box",
+							"magic box"))
+		if("safe")
+			return pick(list("lockbox",
+							"safe",
+							"secure container"))
+		if("fridge")
+			return pick(list("refridgerator",
+							"ice box",
+							"fridge",
+							"freezer"))
+
+		else
+			return name
+
+/obj/item/storage/lootable/proc/GetLootableNamePrefix()
+	if(!random_prefixes)
+		return
+	switch(loot_tier)
+		if(LOOT_TIER_LOWEST)
+			return pick(list("smelly",
+							"gross",
+							"moldy",
+							"decrepit",
+							"ancient",
+							"bug infested"))
+		if(LOOT_TIER_LOW)
+			return pick(list("old",
+							"dusty",
+							"damp",
+							"crusty"))
+		if(LOOT_TIER_MID)
+			return
+		if(LOOT_TIER_HIGH)
+			return pick(list("new",
+							"brand new",
+							"clean",
+							"maintained",
+							"well kept",))
+		if(LOOT_TIER_HIGHEST)
+			return pick(list("pristine",
+							"glowing",
+							"radioactive",
+							"factory new",
+							"sealed"))
 
 GLOBAL_LIST_INIT(lootable_random_sounds, list(
 	"debug" = list(),
@@ -23,9 +87,9 @@ GLOBAL_LIST_INIT(lootable_random_sounds, list(
 ))
 
 GLOBAL_LIST_INIT(ammo_loot_tiers, list(
-	1 = /obj/effect/spawner/lootdrop/f13/common_ammo,
-	2 = /obj/effect/spawner/lootdrop/f13/uncommon_ammo,
-	3 = /obj/effect/spawner/lootdrop/f13/rare_ammo,
+	LOOT_TIER_LOWEST = /obj/effect/spawner/lootdrop/f13/common_ammo,
+	LOOT_TIER_LOW = /obj/effect/spawner/lootdrop/f13/uncommon_ammo,
+	LOOT_TIER_MID = /obj/effect/spawner/lootdrop/f13/rare_ammo,
 ))
 
 GLOBAL_LIST_INIT(trash_loot_tiers, list(
@@ -33,8 +97,8 @@ GLOBAL_LIST_INIT(trash_loot_tiers, list(
 ))
 
 GLOBAL_LIST_INIT(lootable_types, list(
-	"ammo" = GLOB.ammo_loot_tiers
-	"trash" = GLOB.trash_loot_tiers
+	"ammo" = GLOB.ammo_loot_tiers,
+	"trash" = GLOB.trash_loot_tiers,
 ))
 
 /// These are things in the world that a player could click on to pull loot out of. Lets more than one person loot a place rather than having static loot everywhere.
@@ -50,7 +114,7 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	/// Should this loot container automatically set its loot tier based on its area / z level / surrounding enemies / etc
 	var/dynamic_loot_tier = FALSE
 	/// Dynamic loot tiering will override this if it can, so this is just the fallback.
-	var/static_loot_tier = LOOT_TIER_LOWEST
+	var/loot_tier = LOOT_TIER_LOWEST
 	var/loot_type = LOOT_TRASH
 	var/loot_rolls_max = 10
 	var/loot_rolls_min = 5
@@ -65,6 +129,13 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	var/list/loot_players = list()
 	/// If true, will try and fill up our inventory until we're full, then spit our loot out if we have to.
 	var/place_loot_inside = FALSE
+
+/obj/item/storage/lootable/Initialize(mapload)
+	. = ..()
+	//Do dynamic loot tier magic here
+
+	//Based on the tier selected, generate the name
+	name = "[GetLootableNamePrefix()][GetLootableName()]"
 
 /obj/item/storage/lootable/attack_hand(mob/user)
 	var/turf/loot_turf = get_turf(src)
