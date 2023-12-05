@@ -28,6 +28,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_be_tied	= FALSE
 	rad_flags = RAD_NO_CONTAMINATE
+	body_parts_covered = 0
 
 /obj/item/clothing/shoes/f13/rag/pawb/Initialize()
 	. = ..()
