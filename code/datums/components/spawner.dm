@@ -256,6 +256,9 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return FALSE
 	if(has_mobs_left())
 		return FALSE
+	if(QDELETED(parent))
+		qdel(src)
+		return FALSE // nothing to delete
 	if(ismob(parent))
 		qdel(src)
 		return FALSE // no more self-destructing ant queens
