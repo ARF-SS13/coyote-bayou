@@ -72,6 +72,9 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A flying metal meatball with lasers."
+	variation_list = list(
+		MOB_SPEED_LIST(3.5, 4, 4.5),
+	)
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
@@ -98,7 +101,7 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = -1
+	speed = 2
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye
 	name = "floating eyebot"
@@ -177,7 +180,7 @@
 	del_on_death = FALSE
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	speed = 1
+	speed = 2
 
 /mob/living/simple_animal/pet/dog/eyebot/playable/become_the_mob(mob/user)
 	send_mobs = null
