@@ -64,7 +64,6 @@
 
 /turf/open/Initialize(mapload)
 	. = ..()
-	
 	if(mapload && spawnPlants && (z != Z_LEVEL_TRANSIT))
 		plantGrass()
 
