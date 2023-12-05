@@ -816,7 +816,7 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/tribeam_stun)
 
 /obj/item/book/granter/crafting_recipe/blueprint/am_rifle
-	name = "anti-material rifle blueprint"
+	name = "anti-materiel rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/am_rifle)
 
