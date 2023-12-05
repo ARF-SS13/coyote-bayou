@@ -167,7 +167,7 @@
 		..()
 
 /datum/reagent/medicine/longpork_stew/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(2*REM)
 	..()
 	. = TRUE
 
@@ -403,7 +403,7 @@
 				M.blur_eyes(10)
 				M.losebreath = clamp(M.losebreath + 1, 1, 8)
 				M.set_disgust(12)
-				M.adjustStaminaLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+				M.adjustStaminaLoss(5*REM)
 				M.adjustOrganLoss(ORGAN_SLOT_EYES, 2)
 				if(prob(5))
 					to_chat(M, span_danger("It takes conscious thought to continue breathing, thought continually interrupted by worrying throbs in your skull."))
@@ -417,7 +417,7 @@
 				M.adjustOrganLoss(ORGAN_SLOT_HEART, 1, 40)
 				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
 				M.set_disgust(25)
-				M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+				M.adjustStaminaLoss(10*REM)
 				M.Jitter(20)
 				M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 				if(prob(5))
@@ -454,7 +454,7 @@
 /datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(1*REM)
 		. = TRUE
 		M.Dizzy(3)
 		M.Jitter(3)
@@ -463,7 +463,7 @@
 /datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(2*REM)
 		. = TRUE
 		M.Dizzy(4)
 		M.Jitter(4)
@@ -472,7 +472,7 @@
 /datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(3*REM)
 		. = TRUE
 		M.Dizzy(5)
 		M.Jitter(5)
@@ -515,6 +515,7 @@
 		to_chat(M, span_warning("Your vision slowly returns to normal..."))
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1*REM)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM)
+	M.restoreEars() // yeah its a salt buff, what of it?
 	if (prob(5))
 		to_chat(M, span_notice("You feel a strange mental fortitude!"))
 	..()
@@ -541,7 +542,7 @@
 
 /datum/reagent/medicine/mentat/addiction_act_stage3(mob/living/M)
 	if(prob(33))
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(1*REM)
 //		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 //		. = TRUE
 		M.Dizzy(4)
@@ -551,7 +552,7 @@
 /datum/reagent/medicine/mentat/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(2*REM)
 //		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 //		. = TRUE
 		M.Dizzy(5)
@@ -648,16 +649,16 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 	var/list/misery_message = list(
-		"You feel miserable",
-		"A war wages on in your gut!",
-		"What have you put in your body?",
-		"It's working, but at what cost?",
-		"You feel ill.",
-		"Your insides hate you.",
-		"everything hurts.",
-		"You feel like you ate firecrackers.",
-		"It will all be over soon.",
-		"You feel like your intestines are dying.",
+		"You feel everything bad in your body spew out! Along with a bunch of other stuff!",
+		"A war on toxicity rages in your gut! A nuclear war, it feels like!",
+		"You feel everything you've ever eaten come right up!",
+		"You feel extremely sick! But oddly better? Mostly sick though.",
+		"Those toxins burn coming back up!",
+		"Radioactive sweat purges from every pore!",
+		"You emit ailing vomit!",
+		"You feel like you ate firecrackers!",
+		"IT BURNS!!! AND SPEWS!!!",
+		"You feel several decades' worth of spring cleaning in your guts!",
 		"Everything is purging in a fiery manner.",
 		"You're going to be severely dehydrated after this...")
 

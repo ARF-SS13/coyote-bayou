@@ -499,6 +499,10 @@
 	glass_name = "glass of Space Cola"
 	glass_desc = "A glass of refreshing Space Cola."
 	canbrew = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/space_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-5)
@@ -514,6 +518,10 @@
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of Space Mountain Wind"
 	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/spacemountainwind/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
@@ -532,6 +540,10 @@
 	glass_name = "glass of Dr. Gibb"
 	glass_desc = "Dr. Gibb. Not as dangerous as the glass_name might imply."
 	canbrew = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/dr_gibb/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-6)
@@ -547,6 +559,10 @@
 	glass_icon_state = "space-up_glass"
 	glass_name = "glass of Space-Up"
 	glass_desc = "Space-up. It helps you keep your cool."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 
 /datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
@@ -562,6 +578,10 @@
 	glass_icon_state = "glass_yellow"
 	glass_name = "glass of lemon-lime"
 	glass_desc = "You're pretty certain a real fruit has never actually touched this."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/lemon_lime/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -577,6 +597,10 @@
 	glass_name = "glass of Pwr Game"
 	glass_desc = "Goes well with a Vlad's salad."
 	canbrew = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/pwr_game/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -591,6 +615,10 @@
 	glass_icon_state = "glass_red"
 	glass_name = "glass of Shambler's juice"
 	glass_desc = "Mmm mm, shambly."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -663,6 +691,10 @@
 	value = REAGENT_VALUE_COMMON
 	synth_metabolism_use_human = TRUE
 	canbrew = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/grey_bull/on_mob_metabolize(mob/living/L)
 	..()
@@ -1045,6 +1077,10 @@
 	glass_name = "Sol Dry"
 	glass_desc = "A soothing, mellow drink made from ginger."
 	canbrew = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sol_dry/on_mob_life(mob/living/carbon/M)
 	M.adjust_disgust(-5)
@@ -1136,6 +1172,10 @@
 	glass_name = "glass of Monkey Energy"
 	glass_desc = "You can unleash the ape, but without the pop of the can?"
 	value = REAGENT_VALUE_COMMON
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/monkey_energy/on_mob_life(mob/living/carbon/M)
 	M.Jitter(20)
