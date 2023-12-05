@@ -439,11 +439,11 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
-	if(HAS_TRAIT(src, TRAIT_RADIMMUNE))
-		return FALSE
 	var/turf/T = get_turf(src)
 	if(T)
 		rad_act(T.radiation_turf)
+	if(HAS_TRAIT(src, TRAIT_RADIMMUNE))
+		return FALSE
 	//radiation -= min(radiation, RAD_LOSS_PER_TICK) nope, you need radx or radaway. small change to make rads *more*
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
