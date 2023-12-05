@@ -347,7 +347,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					if(istype(geiger))
 						var/extra = ""
 						if(g_on)
-							extra += " | AMBIENT: [geiger?.radiation_count ? round(geiger?.radiation_count, 0.1) : 0]"
+							extra += " | AMBIENT: [geiger?.current_tick_amount ? round(geiger?.current_tick_amount, 0.1) : 0]"
 							if(isliving(loc))
 								var/mob/living/L = user
 								extra += " | USER: [L.radiation ? round(L.radiation, 0.1) : 0]"
