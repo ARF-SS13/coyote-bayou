@@ -542,9 +542,9 @@
 	set desc = "Re-check chat BG color."
 
 	spawn(0)
-		var/color = winget(client, "statwindow", "background-color")
-		if(color == "none")
-			color = "#ffffff"
+		var/color = winget(src, "statwindow", "background-color") // So, this is technically the wrong color but I don't know where the right one is.
+		if(color == "none")												// If you change the chat bg color to be noticeably different from THIS color,
+			color = "#ffffff"										   // this will break.
 		client.prefs.chatbgcolor = color
 		to_chat(src, "Successfully re-checked chat BG color. ([color])")
 

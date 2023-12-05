@@ -4,8 +4,8 @@
 	set category = "OOC"
 
 	spawn(0)
-		var/color = winget(src, "statwindow", "background-color")
-		if(color == "none")
-			color = "#ffffff"
+		var/color = winget(src, "statwindow", "background-color") // So, this is technically the wrong color but I don't know where the right one is.
+		if(color == "none")												// If you change the chat bg color to be noticeably different from THIS color,
+			color = "#ffffff"										   // this will break.
 		prefs.chatbgcolor = color
 		to_chat(src, "Successfully re-checked chat background color. ([color])")
