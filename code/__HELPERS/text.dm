@@ -879,5 +879,6 @@ GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 
 ///does both of above, for chat log coloring of player messages.
 /proc/color_for_chatlog(text, color, name)
-	. = color_keyword(text, color, name)
-	. = alternating_color_span(., color, "\"", FALSE)
+	var/out = color_keyword(text, color, name)
+	out = alternating_color_span(out, color, "\"", FALSE)
+	return out

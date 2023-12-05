@@ -159,6 +159,9 @@
 	hearers -= ignored_mobs
 
 	var/saycolor = src.get_chat_color()
+	var/targetsaycolor = null
+	if(!!target)
+		targetsaycolor = target.get_chat_color()
 
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
@@ -174,7 +177,9 @@
 				msg = "<b>[src.name]</b> [msg]"
 			if(target.client.prefs.color_chat_log)
 				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+				var/sanitizedtargetsaycolor = target.client.sanitize_chat_color(targetsaycolor)
 				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
 	//if(self_message)
 		//hearers -= src
@@ -202,6 +207,9 @@
 			if(M.client.prefs.color_chat_log)
 				var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
 				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				if(!!target)
+					var/sanitizedtargetsaycolor = M.client.sanitize_chat_color(targetsaycolor)
+					msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
