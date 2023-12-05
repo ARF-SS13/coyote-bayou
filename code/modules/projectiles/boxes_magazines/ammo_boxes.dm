@@ -1096,7 +1096,7 @@
 
 //.50 BMG
 /obj/item/ammo_box/a50MG
-	name = "anti-materiel ammo rack (.50MG)"
+	name = "anti-material ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
@@ -1108,7 +1108,7 @@
 	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/a50MG/incendiary
-	name = "anti-materiel incendiary ammo rack (.50MG)"
+	name = "anti-material incendiary ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead... and also on fire."
 	icon_state = "50in"
 	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
@@ -1117,7 +1117,7 @@
 
 
 /obj/item/ammo_box/a50MG/explosive
-	name = "anti-materiel explosive ammo rack (.50MG)"
+	name = "anti-material explosive ammo rack (.50MG)"
 	desc = "5 rounds of explosive .50 MG. More then enough to kill anything that moves."
 	icon_state = "50ex"
 	ammo_type = /obj/item/ammo_casing/a50MG/explosive
@@ -1125,14 +1125,14 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_box/a50MG/penetrator
-	name = "anti-materiel penetrator ammo rack (.50MG)"
+	name = "anti-material penetrator ammo rack (.50MG)"
 	desc = "5 rounds of penetrator .50 MG, when you really want something dead and it's on the other side of a wall."
 	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
 	icon_state = "50ap"
 
 /*
 /obj/item/ammo_box/a50MG/uraniumtipped
-	name = "anti-materiel uranium-tipped ammo rack (.50MG)"
+	name = "anti-material uranium-tipped ammo rack (.50MG)"
 	desc = "5 rounds of uranium-tipped .50 MG, when you really want something to remember what it was like back in '77.'"
 	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
 	icon_state = "50ap"
@@ -1158,7 +1158,7 @@
 
 /*
 /obj/item/ammo_box/a50MG/AP
-	name = "anti-materiel armor piercing ammo rack (.50MG)"
+	name = "anti-material armor piercing ammo rack (.50MG)"
 	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
 	icon_state = "50ap"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP

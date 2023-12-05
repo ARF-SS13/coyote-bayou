@@ -73,6 +73,7 @@
 		neigbours |= grid[x][y][z-1]
 
 /datum/controller/subsystem/mapping/proc/setup_map_transitions() //listamania
+/*
 	var/list/SLS = list()
 	var/list/cached_z_list = z_list
 	var/conf_set_len = 0
@@ -173,3 +174,4 @@
 				S.destination_y = y_pos_transition[side] == 1 ? S.y : y_pos_transition[side]
 				S.destination_z = zdestination
 
+*/
