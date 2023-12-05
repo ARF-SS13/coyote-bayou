@@ -116,6 +116,8 @@ SUBSYSTEM_DEF(atoms)
 
 	if(late_loaders.len)
 		for(var/I in late_loaders)
+			if(log_the_atoms)
+				log_world("LATE initializing \an [A] ([A.type]) at [A.x], [A.y], [A.z]!")
 			var/atom/A = I
 			A.LateInitialize()
 		testing("Late initialized [late_loaders.len] atoms")
