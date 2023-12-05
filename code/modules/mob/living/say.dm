@@ -208,6 +208,9 @@
 		return
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode, FALSE, source)
+	if(client.prefs.color_chat_log)
+		var/sanitizedsaycolor = client.sanitize_chat_color(speaker.get_chat_color())
+		message = color_for_chatlog(message, sanitizedsaycolor, speaker.name)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	return message
 
