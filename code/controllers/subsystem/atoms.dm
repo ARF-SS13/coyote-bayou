@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(atoms)
 	var/list/late_loaders
 
 	var/list/BadInitializeCalls = list()
+	var/log_the_atoms = TRUE
 
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
@@ -64,6 +65,8 @@ SUBSYSTEM_DEF(atoms)
 			)
 #endif
 		for(var/atom/A in world)
+			if(log_the_atoms)
+				log_world("Initializing \an [A] ([A.type])")
 #ifdef PRINT_ATOM_STATS
 			atoms_did++
 #endif
