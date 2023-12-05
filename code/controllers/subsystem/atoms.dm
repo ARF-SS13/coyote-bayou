@@ -72,6 +72,8 @@ SUBSYSTEM_DEF(atoms)
 #endif
 			if(!(A.flags_1 & INITIALIZED_1))
 				InitAtom(A, mapload_arg)
+				if(log_the_atoms)
+					log_world("Initted!")
 				++count
 #ifdef PRINT_ATOM_STATS
 				this_batch++
@@ -120,6 +122,8 @@ SUBSYSTEM_DEF(atoms)
 			if(log_the_atoms)
 				log_world("LATE initializing \an [A] ([A.type]) at [A.x], [A.y], [A.z]!")
 			A.LateInitialize()
+			if(log_the_atoms)
+				log_world("Initted!")
 		testing("Late initialized [late_loaders.len] atoms")
 		late_loaders.Cut()
 
