@@ -536,6 +536,16 @@
 		chat_color_darkened = "#[new_runecolor]"
 		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
 
+/mob/living/carbon/verb/check_chat_bg_color()
+	set category = "IC"
+	set name = "Check Chat BG Color"
+	set desc = "Re-check chat BG color."
+
+	spawn(0)
+		client.prefs.chatbgcolor = winget(client, "statbrowser", "background-color")
+		to_chat(src, "Successfully re-checked chat BG color.")
+
+
 /mob/living/carbon/get_chat_color()
 	var/color = get_feature("chat_color")
 	if(color == "whoopsie" || !color)

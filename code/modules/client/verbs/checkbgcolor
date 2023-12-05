@@ -1,0 +1,8 @@
+/client/verb/checkbgcolor()
+	set category = "Preferences"
+	set name = "Check Chat BG Color"
+	set desc = "Re-check chat BG color."
+	spawn(0)
+		chatbgcolor = winget(src, "statbrowser", "background-color")
+		if(chatbgcolor == "none")
+			chatbgcolor = "#ffffff"

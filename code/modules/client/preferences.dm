@@ -374,6 +374,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/New(client/C)
 	parent = C
 
+	spawn(0)
+		chatbgcolor = winget(C, "statbrowser", "background-color")
+		if(chatbgcolor == "none")
+			chatbgcolor = "#ffffff"
+
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
 
@@ -397,8 +402,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		save_preferences()
 	save_character()		//let's save this new random character so it doesn't keep generating new ones.
 	menuoptions = list()
-	spawn(0)
-		chatbgcolor = winget(C, "statbrowser", "background-color")
 	return
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='17%'>"
