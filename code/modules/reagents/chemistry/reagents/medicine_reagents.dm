@@ -1915,7 +1915,7 @@
 			M.disgust = max(0, M.disgust+50)
 		if(7)
 			to_chat(M, span_danger("Your heart is beating so fast you can feel it in your throat!"))
-			M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+			M.adjustStaminaLoss(10*REM)
 		if(8)
 			M.Jitter(20)
 		if(9)

@@ -768,10 +768,12 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/nukalover
 	name = "Cola Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healtheir alternatives. Cosmic Cola heals you, sort of."
-	value = 14
+	desc = "You just can't get enough of that hyper-sweetened, tooth-rotting, waistline-widening, pancreas-pummeling sodapop! \
+		So much so that your body has adapted to the sugars and artificial flavorings, processing those calories into healing energy. \
+		Won't do much for that waistline, though."
+	value = 22
 	category = "Food Quirks"
-	mechanics = "You heal slowly when intaking Cosmic Cola."
+	mechanics = "Various sodapop-derived drinks will provide (usually minor) healing, typically based on their complexity."
 	conflicts = list(
 		/datum/quirk/vegetarian,
 		/datum/quirk/no_taste,
