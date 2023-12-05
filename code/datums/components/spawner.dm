@@ -292,8 +292,8 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(!range)
 		return TRUE
 	var/atom/P = parent
-	for(var/mob/living/butt in GLOB.player_list) // client-containing mobs, NOT clients
-		if(butt.z == P.z && get_dist(P, butt) <= range)
+	for(var/mob/living/butt in LAZYACCESS(SSmobs.clients_by_zlevel, P?.z)) // client-containing mobs, NOT clients
+		if(get_dist(P, butt) <= range)
 			return TRUE
 
 /// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
