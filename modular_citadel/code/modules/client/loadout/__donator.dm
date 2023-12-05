@@ -1503,7 +1503,7 @@
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
-	ckeywhitelist = list("The lastHoesa2")
+	ckeywhitelist = list("ThelastHoesa2")
 
 /obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/bren/custom(src)
@@ -1799,3 +1799,14 @@
 	new /obj/item/kit_spawner/townie/mayor(src)
 
 
+/datum/gear/donator/kits/fourty2
+	name = "Swamp star box"
+	path = /obj/item/storage/box/large/custom_kit/fourty2
+	ckeywhitelist = list("fourty2")
+
+/obj/item/storage/box/large/custom_kit/fourty2/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
+	new  /obj/item/reagent_containers/food/drinks/flask(src)
+	new  /obj/item/weldingtool/largetank(src)
+	new  /obj/item/clothing/suit/space/hardsuit/lavaknight(src)
+	new  /obj/item/clothing/glasses/welding(src)
