@@ -66,7 +66,7 @@ SUBSYSTEM_DEF(atoms)
 #endif
 		for(var/atom/A in world)
 			if(log_the_atoms)
-				log_world("Initializing \an [A] ([A.type])")
+				log_world("Initializing \an [A] ([A.type]) at [A.x], [A.y], [A.z]!")
 #ifdef PRINT_ATOM_STATS
 			atoms_did++
 #endif
