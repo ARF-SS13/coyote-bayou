@@ -375,7 +375,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	parent = C
 
 	spawn(0)
-		chatbgcolor = winget(C, "statbrowser", "background-color")
+		chatbgcolor = winget(src, "statbrowser", "background-color")
 		if(chatbgcolor == "none")
 			chatbgcolor = "#ffffff"
 
