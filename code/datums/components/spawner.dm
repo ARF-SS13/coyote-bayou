@@ -298,12 +298,12 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
 /datum/component/spawner/proc/old_spawn()
-	if(should_destroy_spawner())
-		qdel(parent)
+	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
 		return
 	if(COOLDOWN_FINISHED(src, spawn_until))
 		deactivate()
-	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
+	if(should_destroy_spawner())
+		qdel(parent)
 		return
 	if(!active)
 		if(!something_in_range())
