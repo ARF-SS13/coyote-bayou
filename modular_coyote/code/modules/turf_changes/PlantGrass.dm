@@ -61,7 +61,7 @@
 /turf/open/Initialize(mapload)
 	. = ..()
 	
-	if(mapload && spawnPlants && (z != Z_LEVEL_TRANSIT))
+	if(mapload && spawnPlants && !is_reserved_level(z))
 		if(!(locate(/obj/structure) in src))
 			if(!(locate(/obj/machinery) in src))
 				plantGrass()
