@@ -8,9 +8,19 @@
 #define LOOT_TIER_HIGH 4
 ///Very Rare
 #define LOOT_TIER_HIGHEST 5
-#define LOOT_TRASH "trash"
 
-/obj/item/storage/lootable/proc/GetLootableName()
+#define LOOT_TRASH "trash"
+#define LOOT_AMMO "ammo"
+#define LOOT_GUNS "guns"
+#define LOOT_LASERS "energy weapons"
+#define LOOT_KITCHEN "kitchen"
+#define LOOT_FARM "farm"
+#define LOOT_MECHANIC "mechanic"
+#define LOOT_SCIENCE "science"
+#define LOOT_FIRSTAID "first aid"
+#define LOOT_SURGERY "surgery"
+
+/obj/structure/lootable/proc/GetLootableName()
 	if(!random_name_list)
 		return name
 	switch(random_name_list)
@@ -53,38 +63,39 @@
 		else
 			return name
 
-/obj/item/storage/lootable/proc/GetLootableNamePrefix()
+/obj/structure/lootable/proc/GetLootableNamePrefix()
 	if(!random_prefix)
 		return
 	switch(loot_tier)
 		if(LOOT_TIER_LOWEST)
-			return pick(list("smelly",
-							"gross",
-							"moldy",
-							"decrepit",
-							"ancient",
-							"bug infested"))
+			return pick(list("smelly ",
+							"gross ",
+							"moldy ",
+							"decrepit ",
+							"ancient ",
+							"bug infested ",))
 		if(LOOT_TIER_LOW)
-			return pick(list("old",
-							"dusty",
-							"damp",
-							"crusty"))
+			return pick(list("old ",
+							"dusty ",
+							"damp ",
+							"crusty ",
+							"burned ",))
 		if(LOOT_TIER_MID)
 			return
 		if(LOOT_TIER_HIGH)
-			return pick(list("new",
-							"brand new",
-							"clean",
-							"maintained",
-							"well kept",))
+			return pick(list("new ",
+							"brand new ",
+							"clean ",
+							"maintained ",
+							"well kept ",))
 		if(LOOT_TIER_HIGHEST)
-			return pick(list("pristine",
-							"glowing",
-							"radioactive",
-							"factory new",
-							"sealed"))
+			return pick(list("pristine ",
+							"glowing ",
+							"radioactive ",
+							"factory new ",
+							"sealed ",))
 
-/obj/item/storage/lootable/proc/GetLootingSound()
+/obj/structure/lootable/proc/GetLootingSound()
 	switch(random_sound_list)
 		if("trash")
 			return 'sound/f13effects/loot_trash.ogg'
@@ -98,14 +109,21 @@ GLOBAL_LIST_INIT(lootable_random_sounds, list(
 ))
 
 GLOBAL_LIST_INIT(ammo_loot_tiers, list(
-	LOOT_TIER_LOWEST = list(/obj/effect/spawner/lootdrop/f13/common_ammo),
+	LOOT_TIER_LOWEST = list(
+						/obj/effect/spawner/lootdrop/f13/trash_ammo = 15,
+						/obj/effect/spawner/lootdrop/f13/common_ammo = 5,
+						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 2,
+						),
 
-	LOOT_TIER_LOW = list(/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 5),
+	LOOT_TIER_LOW = list(/obj/effect/spawner/lootdrop/f13/common_ammo = 15,
+						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 15,
+						/obj/effect/spawner/lootdrop/f13/trash_ammo = 5,
+						),
 
 	LOOT_TIER_MID = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5),
-
+						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
+						/obj/effect/spawner/lootdrop/f13/common_ammo = 10,
+						),
 ))
 
 GLOBAL_LIST_INIT(trash_loot_tiers, list(
@@ -113,12 +131,12 @@ GLOBAL_LIST_INIT(trash_loot_tiers, list(
 ))
 
 GLOBAL_LIST_INIT(lootable_types, list(
-	"ammo" = GLOB.ammo_loot_tiers,
-	"trash" = GLOB.trash_loot_tiers,
+	LOOT_AMMO = GLOB.ammo_loot_tiers,
+	LOOT_TRASH = GLOB.trash_loot_tiers,
 ))
 
 /// These are things in the world that a player could click on to pull loot out of. Lets more than one person loot a place rather than having static loot everywhere.
-/obj/item/storage/lootable
+/obj/structure/lootable
 	anchored = TRUE //Always keep this as TRUE
 	can_be_unanchored = FALSE //Always keep this as FALSE
 
@@ -126,14 +144,15 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	desc = "Some kind of cardboard box. I wonder what's inside?"
 	icon = 'icons/fallout/objects/crates.dmi'
 	icon_state = "smallbox"
+	var/icon_state_open = "smallboxopen"
 	density = FALSE //May be true depending on what kind of lootable object it is. Cardboard boxes are small and could be easily stepped over so this is FALSE by default.
 	/// Should this loot container automatically set its loot tier based on its area / z level / surrounding enemies / etc
 	var/dynamic_loot_tier = FALSE
 	/// Dynamic loot tiering will override this if it can, so this is just the fallback.
 	var/loot_tier = LOOT_TIER_LOWEST
 	var/loot_type = LOOT_TRASH
-	var/loot_rolls_max = 10
-	var/loot_rolls_min = 5
+	var/loot_rolls_max = 5
+	var/loot_rolls_min = 1
 	/// Set to null to not randomize the name.
 	var/random_name_list = "cardboard"
 	var/random_sound_list = "trash"
@@ -151,16 +170,17 @@ GLOBAL_LIST_INIT(lootable_types, list(
 	var/place_loot_inside = FALSE
 	///If not null, will subtract by 1 every time it's looted until it's depleted.
 	var/uses
+	///Can players come back to loot this after a while?
+	var/reusable = FALSE
 
-/obj/item/storage/lootable/Initialize(mapload)
-	. = ..()
+/obj/structure/lootable/Initialize(mapload)
 	//Do dynamic loot tier magic here
 
 	//Based on the tier selected (or the static loot tier), generate the name
 	name = "[GetLootableNamePrefix()][GetLootableName()]"
+	. = ..()
 
-/obj/item/storage/lootable/attack_hand(mob/user)
-	var/turf/loot_turf = get_turf(src)
+/obj/structure/lootable/attack_hand(mob/user)
 	var/ukey = ckey(user?.ckey)
 	if(!ukey)
 		to_chat(user, span_alert("You need a ckey to search the trash! Gratz on not having a ckey, tell a coder about it!"))
@@ -169,40 +189,32 @@ GLOBAL_LIST_INIT(lootable_types, list(
 		return
 	if(!being_looted)
 		playsound(get_turf(src), GetLootingSound(), 100, TRUE, 1)
-	to_chat(user, span_smallnoticeital("You start picking through [src]..."))
+	to_chat(user, span_smallnoticeital("You start looking through [src] for anything worth taking..."))
 	being_looted = TRUE
 	if(!do_mob(user, src, time_to_loot, public_progbar = TRUE))
 		being_looted = FALSE
 		return
 	being_looted = FALSE
-	if(ukey in loot_players)
-		to_chat(user, span_notice("You already have looted [src]."))
+	if(!reusable && (ukey in loot_players))
+		to_chat(user, span_notice("You have already looted [src]."))
 		return
 	loot_players[ukey] = world.time
-	to_chat(user, span_notice("You scavenge through [src]."))
 	//Switch to the open icon state for a while.
-	icon_state = icon_state_open
+	if(icon_state_open)
+		icon_state = icon_state_open
+	var/num_loot = rand(loot_rolls_min, loot_rolls_max)
+	if(num_loot < 1)
+		to_chat(user, span_notice("You didn't find anything useful in [src]."))
+		return
+	to_chat(user, span_notice("You finish looting through [src]."))
+	var/turf/loot_turf = get_turf(user)
+	for(var/i=0, i<num_loot, i++ )
+		var/list/ourlist = LAZYACCESS(GLOB.lootable_types, loot_type)
+		if(LAZYLEN(ourlist))
+			var/obj/effect/spawner/lootdrop/L = pickweight(LAZYACCESS(ourlist, loot_tier))
+			if(ispath(L))
+				L = new L(loot_turf)
 
+	//Inspect our loot pile
+	AltClickNoInteract(user, loot_turf)
 
-	/*
-	for(var/i in 1 to rand(1,4))
-		var/list/trash_passthru = list()
-		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(loot_turf)
-		my_trash.spawn_the_stuff(trash_passthru) // fun fact, lists are references, so this'll be populated when the proc runs (cool huh?)
-		for(var/atom/movable/spawned in trash_passthru)
-			if(isitem(spawned))
-				var/obj/item/newitem = spawned
-				newitem.from_trash = TRUE
-			if(isgun(spawned))
-				var/obj/item/gun/trash_gun = spawned
-				var/prob_trash = 80
-				for(var/tries in 1 to 3)
-					if(!prob(prob_trash))
-						continue
-					prob_trash -= 40
-					var/trash_mod_path = pick(GLOB.trash_gunmods)
-					var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
-					if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
-						break
-					QDEL_NULL(trash_mod)
-		*/

@@ -1,6 +1,6 @@
-/obj/item/storage/lootable/house
+/obj/structure/lootable/house
 	name = "do not use"
 	random_name_list = null
 
-/obj/item/storage/lootable/house/clothes
+/obj/structure/lootable/house/clothes
 	name = "dresser"

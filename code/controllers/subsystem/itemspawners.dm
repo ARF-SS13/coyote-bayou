@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(itemspawners)
 	///x,y,z of where I was looted, if at all. format: "x;y;z". Uses params2list to reduce memory usage
 	var/looted_coordinates
 	/// world.time that this item was looted
-	var/looted_at
+	var/looted_when
 
 /datum/controller/subsystem/itemspawners/proc/restock_trash_piles()
 	if(!COOLDOWN_FINISHED(src, next_trash_delivery))
