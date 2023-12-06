@@ -1503,7 +1503,7 @@
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
-	ckeywhitelist = list("The lastHoesa2")
+	ckeywhitelist = list("ThelastHoesa2")
 
 /obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/bren/custom(src)
@@ -1799,3 +1799,48 @@
 	new /obj/item/kit_spawner/townie/mayor(src)
 
 
+/datum/gear/donator/kits/fourty2
+	name = "Swamp star box"
+	path = /obj/item/storage/box/large/custom_kit/fourty2
+	ckeywhitelist = list("fourty2")
+
+/obj/item/storage/box/large/custom_kit/fourty2/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
+	new  /obj/item/reagent_containers/food/drinks/flask(src)
+	new  /obj/item/weldingtool/largetank(src)
+	new  /obj/item/clothing/suit/space/hardsuit/lavaknight(src)
+	new  /obj/item/clothing/glasses/welding(src)
+
+//for Gitts
+
+/obj/item/gun/ballistic/automatic/ww1selfloader/smelly
+	name = "Anti-Preservative"
+	desc = "A Mauser M1906 Selbstlader. Though many would call it a museum piece, this old firearm is surprisingly still in wonderful condition, and even appears to have some aftermarket modifications made to it, most notably its ability to accept .30-06 rounds. The letters 'FDH' are crudely carved onto the top of the stock in a vertical stack, clearly legible to anyone shouldering the rifle."
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly
+	name = "Migraine"
+	desc = "The PM Makarov, a compact pistol designed by the Soviet Union, though this one is modified to accept the more common 9x19mm round. It also has the letters 'FDH' crudely etched into the bakelite pistol grips on either side."
+
+/obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly
+	name = "DeHyde's Coat"
+	desc = "A custom-tailored armoured trench coat with extra length and a raised collar. There's a flower embroidered onto the back, somewhat faded, and the letters 'FDH' are scribbled onto an inside pocket."
+
+/obj/item/clothing/glasses/red/smelly
+	name = "Pristine Red Sunglasses"
+	desc = "A pair of shiny mirrored red spectacles which always seem to catch the light. On one of the earpieces, the letters 'FDH' are very carefully scratched into the plastic."
+
+/obj/item/clothing/collectable/tophat/smelly
+	name = "Smelly Tophat"
+	desc = "A tailor-made tophat that smells awfully of chemical preservative. The letters 'FDH' are written on the inner liner in permanent marker."
+
+/datum/gear/donator/kits/gittsy
+	name = "Smelly box"
+	path = /obj/item/storage/box/large/custom_kit/gittsy
+	ckeywhitelist = list("Gittsy")
+
+/obj/item/storage/box/large/custom_kit/gittsy/PopulateContents()
+	new /obj/item/clothing/collectable/tophat/smelly(src)
+	new  /obj/item/clothing/glasses/red/smelly(src)
+	new  /obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly(src)
+	new  /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly(src)
+	new  /obj/item/gun/ballistic/automatic/ww1selfloader/smelly(src)

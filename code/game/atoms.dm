@@ -1332,4 +1332,7 @@
 	if(istype(src, /atom/movable/virtualspeaker))
 		var/atom/movable/virtualspeaker/vs = src
 		return vs.get_chat_color()
-	return rgb(255, 255, 255)
+	return rgb(127, 127, 127)
+
+/atom/proc/wingetproc(id, params)
+	return winget(src, id, params)

@@ -54,6 +54,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_rc_emotes = TRUE
 	///Whether to apply mobs' runechat color to the chat log as well
 	var/color_chat_log = TRUE
+	///Keeping track of chat bg color
+	var/chatbgcolor = "#131313"
 
 	var/list/aghost_squelches = list()
 
@@ -373,6 +375,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/New(client/C)
 	parent = C
+
+	spawn(0)
+		if(C)
+			chatbgcolor = winget(C, "statbrowser", "background-color")
+			if(chatbgcolor == "none")
+				chatbgcolor = "#ffffff"
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)

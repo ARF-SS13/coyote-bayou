@@ -7,6 +7,10 @@
 		return FALSE
 	if(locate(/obj/structure/flora) in src)
 		return FALSE
+	if((locate(/obj/structure) in src))
+		return FALSE
+	if((locate(/obj/machinery) in src))
+		return FALSE
 	var/obj/structure/flora/randPlant
 	var/floratype = pickweight(GLOB.plant_type_weighted)
 	switch(floratype)
@@ -59,12 +63,9 @@
 	// var/obj/structure/flora/turfPlant // jon, this dels harder than my dick in ur ass
 
 /turf/open/Initialize(mapload)
-	. = ..()
-	
 	if(mapload && spawnPlants && !is_reserved_level(z))
-		if(!(locate(/obj/structure) in src))
-			if(!(locate(/obj/machinery) in src))
-				plantGrass()
+		plantGrass()
+	. = ..()
 
 /turf/open/ChangeTurf(path, new_baseturf, flags)
 	for(var/obj/structure/flora/turfPlant in contents)

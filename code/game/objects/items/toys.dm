@@ -1182,7 +1182,9 @@
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "snowball"
-	throwforce = 12 //pelt your enemies to death with lumps of snow
+	throwforce = 20 //pelt your enemies to death with lumps of snow
+	throw_speed = 1
+	throw_range = 10
 	damtype = STAMINA
 
 /obj/item/toy/snowball/afterattack(atom/target as mob|obj|turf|area, mob/user)
