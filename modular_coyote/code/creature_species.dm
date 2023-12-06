@@ -1,11 +1,10 @@
-//Pokemon Start
 /datum/species/feral
 	name = "REPORT THIS AS A BUG"
 	//The id is the living and standing icon state of the creature.
 	//The dead icon state must be "id_d" in the .dmi file
 	//The resting icon state must be "id_rest" in the .dmi file
 	simple_icon = 'modular_coyote/icons/mob/pokemon64.dmi'
-	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")//Lets you select digitgrade legs if you want the claw footstep sound.
+	mutant_bodyparts = list("legs" = "Digitigrade", "meat_type" = "Mammalian")
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 	/// The width of the icon_limbs file. Used to auto-center your sprite.
@@ -22,6 +21,12 @@
 	//We need this so that our limbs don't have null sprites when they get thrown off. (Should almost never happen because I glued them on, but just in case.)
 	limbs_id = "mammal"
 	damage_overlay_type = null
+	attack_verb = "slash"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 //Start Pokemon//
 //Alphabetical Please//
@@ -29,7 +34,7 @@
 /datum/species/feral/pokemon
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/pokemon
 	roundstart = FALSE
-	liked_food = FRUIT //berries
+	liked_food = FRUIT | MEAT //berries
 	disliked_food = TOXIC | GROSS
 	icon_dead_suffix = "_d"
 	icon_rest_suffix = "_rest"
@@ -39,6 +44,7 @@
 	name = "Feral Aerodactyl"
 	id = "Aerodactyl"//randomly has a capital letter i guess
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/aerodactyl
 	race = /datum/species/feral/pokemon/aerodactyl
 
@@ -104,6 +110,7 @@
 	name = "Feral Celebi"
 	id = "celebi"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/celebi
 	race = /datum/species/feral/pokemon/celebi
 
@@ -132,6 +139,7 @@
 	name = "Feral Ditto"
 	id = "ditto"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/ditto
 	race = /datum/species/feral/pokemon/ditto
 
@@ -139,6 +147,7 @@
 	name = "Feral Dragonair"
 	id = "dragonair"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/dragonair
 	race = /datum/species/feral/pokemon/dragonair
 
@@ -146,6 +155,7 @@
 	name = "Feral Shiny Dragonair"
 	id = "shinydragonair"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/shinydragonair
 	race = /datum/species/feral/pokemon/shinydragonair
 
@@ -167,6 +177,7 @@
 	name = "Feral Dratini"
 	id = "dratini"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/dratini
 	race = /datum/species/feral/pokemon/dratini
 
@@ -240,6 +251,7 @@
 	name = "Feral Gastly"
 	id = "gastly"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/gastly
 	race = /datum/species/feral/pokemon/gastly
 
@@ -247,6 +259,7 @@
 	name = "Feral Gengar"
 	id = "gengar"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/gengar
 	race = /datum/species/feral/pokemon/gengar
 
@@ -269,6 +282,7 @@
 	name = "Feral Haunter"
 	id = "haunter"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/haunter
 	race = /datum/species/feral/pokemon/haunter
 
@@ -276,6 +290,7 @@
 	name = "Feral Jirachi"
 	id = "jirachi"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/jirachi
 	race = /datum/species/feral/pokemon/jirachi
 
@@ -311,6 +326,7 @@
 	name = "Feral Lapras"
 	id = "lapras"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/lapras
 	race = /datum/species/feral/pokemon/lapras
 
@@ -341,6 +357,7 @@
 	roundstart = TRUE
 	simple_icon = 'modular_coyote/icons/mob/pokemon96.dmi'
 	icon_width = 96
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/lugia
 	race = /datum/species/feral/pokemon/lugia
 
@@ -376,6 +393,7 @@
 	name = "Feral Mew"
 	id = "mew"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/mew
 	race = /datum/species/feral/pokemon/mew
 
@@ -418,6 +436,7 @@
 	name = "Feral Ponyta"
 	id = "ponyta"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_HOOF
 /mob/living/carbon/human/species/ponyta
 	race = /datum/species/feral/pokemon/ponyta
 
@@ -449,6 +468,7 @@
 	id = "alolanraichu"
 	roundstart = TRUE
 	simple_icon = 'modular_coyote/icons/mob/pmon/raichu.dmi'
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/alolanraichu
 	race = /datum/species/feral/pokemon/alolanraichu
 
@@ -456,6 +476,7 @@
 	name = "Feral Ralts"
 	id = "ralts"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/ralts
 	race = /datum/species/feral/pokemon/ralts
 
@@ -479,6 +500,7 @@
 	roundstart = TRUE
 	simple_icon = 'modular_coyote/icons/mob/pokemon96.dmi'
 	icon_width = 96
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/rayquaza
 	race = /datum/species/feral/pokemon/rayquaza
 
@@ -592,6 +614,7 @@
 	name = "Feral Zubat"
 	id = "zubat"
 	roundstart = TRUE
+	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/zubat
 	race = /datum/species/feral/pokemon/zubat
 
@@ -948,6 +971,7 @@
 	icon_rest_suffix = "_rest"
 	simple_icon = 'modular_coyote/icons/mob/deathclaw.dmi'
 	icon_width = 64
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /datum/species/feral/deathclaw/original
 	name = "Feral Deathclaw"
@@ -956,7 +980,6 @@
 	icon_rest_suffix = ""
 	rotate_on_lying = TRUE
 	simple_icon = 'icons/mob/deathclaw.dmi'
-
 /mob/living/carbon/human/species/deathclaw_original
 	race = /datum/species/feral/deathclaw/original
 
@@ -1012,10 +1035,10 @@
 /datum/species/feral/deathclaw/queen
 	name = "Queen Deathclaw"
 	id = "deathclaw_queen"
+	rotate_on_lying = TRUE
+	icon_rest_suffix = ""
 	roundstart = TRUE
 /mob/living/carbon/human/species/deathclaw_queen
 	race = /datum/species/feral/deathclaw/queen
-
-
 
 //End Other//
