@@ -1085,10 +1085,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/verb/verb_toggle_geiger()
 	set category = "Object"
 	set name = "Toggle Geiger Counter"
-	toggle_geiger()
+	toggle_geiger(usr)
 
 /obj/item/pda/proc/toggle_geiger(mob/living/user)
-	if(!user.canUseTopic(src, BE_CLOSE) || !istype(user) || !istype(geiger))
+	if(!istype(user) || !istype(geiger) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	geiger?.attack_self(user)
 	g_on = geiger?.scanning
