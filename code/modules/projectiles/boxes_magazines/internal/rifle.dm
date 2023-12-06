@@ -105,6 +105,15 @@
 	w_class = WEIGHT_CLASS_TINY
 	multiload = FALSE
 
+/obj/item/ammo_box/magazine/internal/no3pistol //4+1 mechanic
+	name = "magazine filled with Bergmann 6.5mm(5mm closest)."
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = list(CALIBER_5MM)
+	max_ammo = 4
+	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+	multiload = FALSE
+
 /obj/item/ammo_box/magazine/internal/selfloaderinternal //4 because the weird 4+1 mechanic
 	name = "magazine filled with mauser ammo(.30-06)."
 	ammo_type = /obj/item/ammo_casing/a3006

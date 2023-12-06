@@ -1055,6 +1055,16 @@
 /obj/item/storage/box/large/custom_kit/pixelexip2/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
+/datum/gear/donator/kits/pappavol
+	name = "Bolter Kit"
+	path = /obj/item/storage/box/large/custom_kit/pappavol
+	ckeywhitelist = list("PappaVol")
+
+/obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
+	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+
 /datum/gear/donator/kits/planetary
 	name = "Collector"
 	path = /obj/item/storage/box/large/custom_kit/planetary
@@ -1295,13 +1305,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/pz39custom(src)
-	new /obj/item/ammo_box/a50MGbox(src)
-	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
+	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
