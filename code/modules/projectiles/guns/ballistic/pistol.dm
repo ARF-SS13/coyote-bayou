@@ -530,7 +530,7 @@
 
 
 // Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
-/obj/item/gun/ballistic/automatic/pistol/type17/tox
+/obj/item/gun/ballistic/automatic/pistol/type17/tox //custom
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -544,6 +544,20 @@
 	init_mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
 	mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+
+/obj/item/gun/ballistic/automatic/pistol/no3pistoltox //custom
+	name = "Tox's No.3 Pistol "
+	desc = "A unique Bergmann 1896, also known as a 'No.3 pistol', found and maintained by a sand-cat named Tox Mckit. The No.3 pistol seems to have a luxury finish to it. With baroque engravings and a ivory handle. The pistol seems to have only 5 rounds in a internal magazine. A etching of a moth's head is on the ivory handles while the side loading plate has an engraved picture of a cat's head. Below the cat's head, a text in Icelandic reads 'My love'. A pistol that is niche, forgotten, but now repurposed. "
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "no3custom"
+	item_state = "no3custom"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast
+	)
+	init_mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
+	mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
 
 /* * * * * * * * * * *
  * Sig P220
