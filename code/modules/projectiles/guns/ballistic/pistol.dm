@@ -558,7 +558,6 @@
 	)
 	init_mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
 	mag_type = /obj/item/ammo_box/magazine/internal/no3pistol
-	damage_multiplier = GUN_EXTRA_DAMAGE_T0
 
 /* * * * * * * * * * *
  * Sig P220

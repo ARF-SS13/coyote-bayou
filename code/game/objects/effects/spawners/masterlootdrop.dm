@@ -284,7 +284,7 @@
 		/obj/item/gun/ballistic/automatic/service/alr = 10,                 //199 20
 		/obj/item/gun/ballistic/automatic/marksman = 10,                    //199 20
 		/obj/item/gun/ballistic/automatic/aksmol = 10,                      //199 20
-		/obj/item/gun/ballistic/automatic/rifle47mm = 5,                    //196.25 35
+		/obj/item/gun/ballistic/automatic/rifle47mm = 10,                    //196.25 35
 		/obj/item/gun/ballistic/automatic/sportcarbine = 10,                //186 32
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,              //181 20
 		/obj/item/gun/ballistic/automatic/service = 5,                      //181 20
