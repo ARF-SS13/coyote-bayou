@@ -1321,6 +1321,11 @@ Raider
 	flag = F13WASTEDEN
 	faction = FACTION_WASTELAND
 
+/datum/job/wasteland/f13wastelander/gar
+	title = "Garland City Waster"
+	flag = F13WASTEGAR
+	faction = FACTION_WASTELAND
+
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP
