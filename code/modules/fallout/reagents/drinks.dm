@@ -56,12 +56,10 @@
 	ghoulfriendly = TRUE
 	soda_heal_brute = 0.075
 	soda_heal_burn = 0.075
-	soda_heal_toxin = 0.1
+	soda_heal_toxin = 0.5
 	soda_heal_brain = 1
 
 /datum/reagent/consumable/vim/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5, 0)
-	M.adjustOxyLoss(0.5, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	//310.15 is the normal bodytemp.
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -85,7 +83,6 @@
 
 /datum/reagent/consumable/vimquartz/on_mob_life(mob/living/carbon/M)
 	M.vomit(10)
-	M.adjustToxLoss(-1, 0)
 	M.adjustOxyLoss(2, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
@@ -135,7 +132,6 @@
 
 /datum/reagent/consumable/vimice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C)
-	M.adjustFireLoss(-0.2*REM, 0)
 	M.adjustOxyLoss(1, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
@@ -195,11 +191,10 @@
 	glass_desc = "Cosmic-Cola with a Orange Aftertaste."
 	soda_heal_brute = 0.075
 	soda_heal_burn = 0.075
-	soda_heal_toxin = 0.5
+	soda_heal_toxin = 0.25
 	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukaorange/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.1*REM, 0)
 	M.drowsyness = 0
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
@@ -419,9 +414,6 @@
 	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukafrutti/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REM, 0)
-	M.adjustFireLoss(-0.5*REM, 0)
-	M.adjustBruteLoss(-0.5*REM, 0)
 	M.drowsyness = 0
 	..()
 	. = TRUE
@@ -503,6 +495,10 @@
 	glass_icon_state = "sweetwaterfloatglass"
 	glass_name = "Sweetwater Float"
 	glass_desc = "The sweetest water."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sweetwaterfloat/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -520,9 +516,12 @@
 	glass_icon_state = "sunsetterglass"
 	glass_name = "Sunsetter"
 	glass_desc = "For when the days dawn, lest brings a brighter tommorrow."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sunsetter/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REM, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
