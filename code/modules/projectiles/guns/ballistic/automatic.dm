@@ -2895,7 +2895,7 @@
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/rifle47mm
-	name = "SIG SG 550"
+	name = "Sig Rifle 550"
 	desc = "A SIG SG 550 rechambered in 4.7mm caseless ammo. Despite the new caliber type, it performs as one would expect which is precise, quick, and customizable. The gun fires a bit quicker and feels a tad bit lighter to carry."
 	icon_state = "sigrifle"
 	item_state = "R82"
@@ -3681,7 +3681,7 @@
 	can_flashlight = FALSE
 
 /obj/item/gun/ballistic/automatic/compact14mmrifle/custom
-	name = "T55E1 Assault Rifle (10mm custom)"
+	name = "Custom T55E1 Assault Carbine"
 	desc = "A T55E1 assault compact assault rifle. Chambered in 10mm, it seems to be a custom assault carbine. It is much lighter than its bigger counterpart."
 	icon_state = "bolter"
 	item_state = "bolter"
