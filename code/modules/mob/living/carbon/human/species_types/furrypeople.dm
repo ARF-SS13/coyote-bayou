@@ -20,3 +20,30 @@
 	species_type = "furry"
 
 	allowed_limb_ids = list("mammal","aquatic","avian","shadekin")
+
+/datum/species/vox
+	name = "Vox"
+	id = "vox"
+	roundstart = TRUE
+	species_traits = list(MUTCOLORS,
+		EYECOLOR,
+		NO_UNDERWEAR,
+		HAIR,
+		FACEHAIR,
+		MARKINGS
+		)
+
+	exotic_blood_color = "#9066BD"
+	//flesh_color = "#808D11"
+
+
+	attack_verb = "claw"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+
+	say_mod = "shrieks"
+	eye_type = "vox"
+	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF", "mcolor3" = "FFFFFF", "mam_tail" = "teshari tail, colorable", "mam_ears" = "None", "mam_body_markings" = list())
+	allowed_limb_ids = null
+	damage_overlay_type = "vox"
+
