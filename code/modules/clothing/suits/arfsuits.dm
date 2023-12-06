@@ -4332,7 +4332,7 @@
 //////////////////////////
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa
-	name = "salvaged power armor"
+	name = "salvaged power armor template"
 	desc = "It's a set of early-model SS-13 power armor, except it isn't real. Stop looking at it, go ping coders or something. \
 	It's literally not meant to be here, you are just wasting your time reading some text that someone wrote for you \
 	because he thought it'd be funny, or expected someone to check GitHub for once, hello by the way. \
@@ -4425,6 +4425,8 @@
 /////////////////
 
 /obj/item/clothing/suit/armor/power_armor
+	name = "power armor template"
+	desc = "It's a template for PA. If you can see this, something's gone wrong."
 	w_class = WEIGHT_CLASS_HUGE
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -4894,6 +4896,16 @@
 	item_state = "advpowerarmor1"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
+/obj/item/clothing/suit/armor/power_armor/hellfire // Event only - Deathsquad tier
+	name = "Hellfire power armor"
+	desc = "This model of power armor is the ultimate expression of power armor technology, sporting some of the best protection physically possible. This protection comes at a cost, however. This model of power armor drains cells much quicker than standard suits. While this design is technically a prototype, it has seen limited production similar to more standard suits. However, it remains incredibly rare due to the vast majority of the suits being damaged or destroyed."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "hellfire"
+	item_state = "hellfire"
+	armor_tokens = null
+	armor = list("melee" = 80, "bullet" = 85, "laser" = 90, "energy" = 75, "bomb" = 75, "bio" = 80, "rad" = 75, "fire" = 60, "acid" = 60, "wound" = 120, "damage_threshold" = 15)
+	usage_cost = 15 // 3x the passive drain of normal PA, 11 minutes on a basic cell. Basically makes using e-guns with it impossible unless you have literal boxes of cells. But it's also Deathsquad tier armor so y'know.
 
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/power_armor/advanced/x02
