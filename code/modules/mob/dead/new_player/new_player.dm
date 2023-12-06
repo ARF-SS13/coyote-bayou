@@ -779,6 +779,7 @@
 
 	client.prefs.copy_to(H, initial_spawn = TRUE)
 	H.dna.update_dna_identity()
+	H.is_shifted = TRUE //On the player's first move, if their pixel shift isn't right it'll fix itself
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE

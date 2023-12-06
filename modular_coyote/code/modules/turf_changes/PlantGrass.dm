@@ -63,7 +63,7 @@
 	// var/obj/structure/flora/turfPlant // jon, this dels harder than my dick in ur ass
 
 /turf/open/Initialize(mapload)
-	if(mapload && spawnPlants && (z != Z_LEVEL_TRANSIT))
+	if(mapload && spawnPlants && !is_reserved_level(z))
 		plantGrass()
 	. = ..()
 

@@ -15,12 +15,16 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 /mob/proc/get_typing_indicator_icon_state()
 	return typing_indicator_state
 
+/mob/proc/get_typing_indicator_x_offset()
+	return 0
 /// Generates the mutable appearance for typing indicator. Should prevent stuck overlays.
 /mob/proc/generate_typing_indicator()
 	var/state = get_typing_indicator_icon_state()
 	if(ispath(state))
 		var/atom/thing = new state(null)
 		var/mutable_appearance/generated = new(thing)
+		generated.pixel_x = get_typing_indicator_x_offset()
+		generated.layer = BODY_FRONT_LAYER
 		return generated
 	else
 		CRASH("Unsupported typing indicator state: [state]")
