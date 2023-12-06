@@ -274,10 +274,14 @@
 	glass_name = "Cosmic Victory"
 	glass_desc = "Cosmic Cola with an AMERICAN twist."
 	ghoulfriendly = TRUE //too american for ghouls not to taste it
+	soda_heal_brute = 1.0
+	soda_heal_burn = 0.05
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 100
+
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
 	ADD_TRAIT(M, TRAIT_BIG_LEAGUES, "[type]")
-	M.adjustBruteLoss(-2.5*REM, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -349,7 +353,7 @@
 	glass_icon_state = "nukafancyglass"
 	glass_name = "Cosmic Fancy"
 	glass_desc = "A mixture of both Wild and cherry, making something absolutely tasty."
-	soda_heal_brute = 0.10
+	soda_heal_brute = 0.6
 	soda_heal_burn = 0.10
 	soda_heal_toxin = 0.5
 	soda_heal_brain = 1
@@ -358,7 +362,6 @@
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
 	if(prob(20))
 		to_chat(M, span_notice("[high_message]"))
-	M.adjustBruteLoss(-0.5*REM, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -424,7 +427,6 @@
 	soda_heal_toxin = 0.5
 
 /datum/reagent/consumable/ethanol/nukasunrise/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2.5*REM, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -597,11 +599,11 @@
 	..()
 	. = TRUE
 
-/datum/reagent/consumable/ethanol/vimcap/on_mob_delete(mob/living/M)
-	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
-	if(L)
-		L.damage += 50
-	..()
+// /datum/reagent/consumable/ethanol/vimcap/on_mob_delete(mob/living/M)
+// 	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
+// 	if(L)
+// 		L.damage += 50
+// 	..()
 
 //fallout cocktails - or "canon drinks i guess doe"
 
@@ -1071,7 +1073,7 @@
 		..()
 		. = TRUE
 
-/datum/reagent/consumable/ethanol/vaultgirl //praying to god this dosent become "femboy juice"
+/datum/reagent/consumable/ethanol/vaultgirl //praying to god this dosent become "femboy juice" //he aint listening
 	name = "Vault Girl"
 	description = "Gender equality! You have no idea what this is supposed to represent."
 	color = "#315585"
@@ -1105,6 +1107,18 @@
 		H.update_hair()
 		..()
 		. = TRUE
+
+/datum/reagent/consumable/ethanol/vaultgirl/femboy // couldnt resist
+	name = "Femboy Juice"
+	description = "//praying to god this dosent become \"femboy juice\" //he aint listening"
+	color = "#315585"
+	boozepwr = 40
+	taste_description = "your charisma stat increasing"
+	overdose_threshold = 60
+	glass_icon_state = "vaultgirlglass"
+	glass_name = "Femboy Juice"
+	glass_desc = "//praying to god this dosent become \"femboy juice\" //he aint listening"
+
 
 /datum/reagent/consumable/ethanol/fernet_cola
 	name = "Fernet Cola"
