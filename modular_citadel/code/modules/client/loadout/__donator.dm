@@ -1567,6 +1567,7 @@
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
+	new /obj/item/clothing/suit/armor/medium/combat/bos/cylphie(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
