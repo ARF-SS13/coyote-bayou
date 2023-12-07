@@ -36346,14 +36346,6 @@
 /obj/item/folder/documents{
 	pixel_x = 8
 	},
-/obj/machinery/button/door{
-	id = "scrapshutters";
-	name = "counter shutters";
-	pixel_x = -7;
-	pixel_y = 8;
-	req_one_access_txt = null;
-	layer = 4
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -38655,26 +38647,18 @@
 	},
 /area/f13/wasteland/massfusion)
 "fsz" = (
+/obj/structure/christmas/xmaslights{
+	dir = 4
+	},
 /obj/machinery/mineral/wasteland_trader{
-	pixel_x = 1;
-	pixel_y = -1;
+	pixel_x = 28;
+	pixel_y = 15;
 	density = 0
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "scrapshutters"
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
 	},
-/obj/structure/railing{
-	dir = 4;
-	color = "#bb3333"
-	},
-/obj/structure/railing{
-	dir = 1;
-	color = "#bb3333"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
+/area/f13/wasteland/nash)
 "fsE" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -75815,10 +75799,6 @@
 	layer = 3;
 	alpha = 0;
 	mouse_opacity = 0
-	},
-/obj/structure/railing{
-	dir = 4;
-	color = "#bb3333"
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -131793,7 +131773,7 @@ uSB
 lTS
 lTS
 fCi
-uSB
+fsz
 cuT
 lTS
 lTS
@@ -132306,7 +132286,7 @@ inE
 wfR
 iFl
 iFl
-fsz
+iFl
 nCz
 iFl
 iFl
