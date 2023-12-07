@@ -1056,14 +1056,16 @@
 	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
 /datum/gear/donator/kits/pappavol
-	name = "Bolter Kit"
+	name = "Bolter And Armor Kit"
 	path = /obj/item/storage/box/large/custom_kit/pappavol
-	ckeywhitelist = list("PappaVol")
+	ckeywhitelist = list("jademanique")
 
 /obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
 	new /obj/item/ammo_box/c10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/pappavol(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/pappavol(src)
 
 /datum/gear/donator/kits/planetary
 	name = "Collector"
