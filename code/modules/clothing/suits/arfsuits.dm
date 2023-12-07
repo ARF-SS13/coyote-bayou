@@ -3882,6 +3882,11 @@
 	desc = "An old set of pre-war combat armor, painted black."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
+/obj/item/clothing/suit/armor/medium/combat/enclave/aldric
+	name = "Intercessors Exoskeleton"
+	desc = "A lightly-armored full-body powered exoskeleton. Primarily designed for psionic officers, it features a multistage cascaded psionic amplifier that aids in focus and projection of their psionic abilities, especially those that require nuance and precision"
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
 
 /obj/item/clothing/suit/armor/medium/pilotcarapace
 	name = "pilot's combat carapace"

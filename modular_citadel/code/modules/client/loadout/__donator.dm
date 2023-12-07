@@ -159,12 +159,11 @@
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
-	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
+	new /obj/item/clothing/suit/armor/medium/combat/enclave/aldric(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
