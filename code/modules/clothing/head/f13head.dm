@@ -392,8 +392,8 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENERGY_T2)
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	deflect_damage = 5
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	requires_training = TRUE

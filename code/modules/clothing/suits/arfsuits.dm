@@ -4804,8 +4804,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENERGY_T2)
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	can_deflect = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
