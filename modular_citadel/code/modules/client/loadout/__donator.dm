@@ -1056,14 +1056,16 @@
 	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
 /datum/gear/donator/kits/pappavol
-	name = "Bolter Kit"
+	name = "Bolter And Armor Kit"
 	path = /obj/item/storage/box/large/custom_kit/pappavol
-	ckeywhitelist = list("PappaVol")
+	ckeywhitelist = list("jademanique")
 
 /obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
 	new /obj/item/ammo_box/c10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/pappavol(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/pappavol(src)
 
 /datum/gear/donator/kits/planetary
 	name = "Collector"
@@ -1261,8 +1263,8 @@
 	ckeywhitelist = list("SilencedMP5A5")
 
 /obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/combat/mk2/custom(src)
-	new /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/arroyo(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy

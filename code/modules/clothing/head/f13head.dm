@@ -385,6 +385,32 @@
 		if(2)
 			return span_warning("The connections ports have been <i>unanchored</i> and only <i>wires</i> remain.")
 
+/obj/item/clothing/head/helmet/f13/power_armor/fluff
+	name = "Placeholder Loadout Power Armor Helmet"
+	desc = "A placeholder block for personal and loadout power armors."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "t45bhelmet"
+	item_state = "t45bhelmet"
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	deflect_damage = 5
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	requires_training = TRUE
+
+/obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo
+	name = "Weathered Deathclaw Power Armor Helmet"
+	desc = "An Enclave 'Equalizer' Advanced power armor helmet-- though this one appears to be more like a mask, to accommodate a deathclaw's uniquely shaped skull. The polarized yellow lenses have long since stopped functioning, and one of the lenses is badly cracked. It's pretty hard to see out of, but it's something, at least."
+	icon_state = "arroyohelm"
+	item_state = "arroyohelm"
+	flags_inv = HIDESNOUT
+/obj/item/clothing/head/helmet/f13/power_armor/fluff/pappavol
+	name = "Decaying Power Armor Helmet"
+	desc = "Big and green with hints of rust that cover its decaying metal robotic frame. It looks like it was custom built... Roughly put together with shitty welding and crude rivets that hold the green rusty metal together."
+	icon_state = "pappavolhelm"
+	item_state = "pappavolhelm"
+	flags_inv = HIDESNOUT
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
 	name = "Refurbished T-45b helmet"
 	desc = "It's a refurbished T-45b power armor helmet."

@@ -4465,7 +4465,9 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
-	var/deflecting = TRUE
+	var/deflecting = FALSE
+	// Can deflect determines if you can toggle the deflection on armor. Intended for armors that shouldnt have the ability by default.
+	var/can_deflect = TRUE
 	var/deflect_power_mult = 20
 	COOLDOWN_DECLARE(emp_cooldown)
 	COOLDOWN_DECLARE(deflect_cd)
@@ -4675,6 +4677,9 @@
 	return
 
 /obj/item/clothing/suit/armor/power_armor/CtrlShiftClick(mob/user)
+	if(!can_deflect)
+		to_chat(user, span_warning("Your armor doesnt have deflector shields!"))
+		return ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return ..()
 	if(!COOLDOWN_FINISHED(src, emp_cooldown))
@@ -4791,6 +4796,30 @@
 	playsound(get_turf(src), "sound/effects/bworp.ogg", 75, TRUE)
 	COOLDOWN_START(src, deflect_cd, deflect_cooldown)
 	return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+
+/obj/item/clothing/suit/armor/power_armor/fluff
+	name = "Placeholder Loadout Power Armor"
+	desc = "A placeholder block for personal and loadout power armors."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	can_deflect = FALSE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	requires_training = TRUE
+/obj/item/clothing/suit/armor/power_armor/fluff/arroyo
+	name = "Weathered Deathclaw Power Armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	icon_state = "arroyoapa"
+	item_state = "arroyoapa"
+/obj/item/clothing/suit/armor/power_armor/fluff/pappavol
+	name = "Decaying Power Armor"
+	desc = "Large big and green with hints of rust that cover its decaying metal robotic frame. It looks like it was custom built... roughly put together with shitty welding and crude rivets that hold the green rusty armor together."
+	icon_state = "pappavolarmor"
+	item_state = "pappavolarmor"
 
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
