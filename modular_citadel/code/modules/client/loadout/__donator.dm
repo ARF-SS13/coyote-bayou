@@ -1261,8 +1261,8 @@
 	ckeywhitelist = list("SilencedMP5A5")
 
 /obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/combat/mk2/custom(src)
-	new /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/arroyo(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
