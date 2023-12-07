@@ -1513,7 +1513,7 @@
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
-	ckeywhitelist = list("ThelastHoesa2")
+	ckeywhitelist = list("ThelastHosea2")
 
 /obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/bren/custom(src)
