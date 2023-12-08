@@ -996,6 +996,16 @@
 /mob/living/carbon/human/species/warlock
 	race = /datum/species/feral/alien/warlock
 
+/datum/species/feral/xeno/warrior
+	name = "Feral Xenomorph Warrior"
+	id = "xeno_warrior"
+	roundstart = TRUE
+	default_color = "302239"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/warrior.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/warrior
+	race = /datum/species/feral/alien/warrior
+
 /datum/species/feral/xeno/widow
 	name = "Feral Xenomorph Widow"
 	id = "xeno_widow"
@@ -1015,17 +1025,6 @@
 	icon_width = 64
 /mob/living/carbon/human/species/wraith
 	race = /datum/species/feral/alien/wraith
-
-/datum/species/feral/xeno/warrior
-	name = "Feral Xenomorph Warrior"
-	id = "xeno_warrior"
-	roundstart = TRUE
-	default_color = "302239"
-	simple_icon = 'modular_coyote/icons/mob/tgmc/warrior.dmi'
-	icon_width = 64
-/mob/living/carbon/human/species/warrior
-	race = /datum/species/feral/alien/warrior
-
 
 //end aliens
 
