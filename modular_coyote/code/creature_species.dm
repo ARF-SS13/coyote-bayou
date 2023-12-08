@@ -894,7 +894,6 @@
 	roundstart = TRUE
 	rotate_on_lying = TRUE
 	icon_rest_suffix = "_sleep"
-
 /mob/living/carbon/human/species/xenosentry
 	race = /datum/species/feral/xeno/sentry
 
@@ -913,7 +912,8 @@
 	simple_icon = 'icons/mob/alienqueen.dmi'
 	icon_width = 64
 	roundstart = TRUE
-/mob/living/carbon/human/species/alienq
+	alt_prefixes = list("TGMC Queen" = "tgmc_")
+/mob/living/carbon/human/species/queen
 	race = /datum/species/feral/alien/queen
 
 /datum/species/feral/alien/maid
@@ -922,8 +922,110 @@
 	simple_icon = 'icons/mob/alien.dmi'
 	icon_width = 32
 	roundstart = TRUE
-/mob/living/carbon/human/species/alienh
-	race = /datum/species/feral/alien/hunter
+/mob/living/carbon/human/species/maid
+	race = /datum/species/feral/alien/maid
+
+//tgmc aliens
+/datum/species/feral/xeno/beetle
+	name = "Feral Xenomorph Beetle"
+	id = "xeno_beetle"
+	roundstart = TRUE
+	default_color = "302239"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/beetle.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/beetle
+	race = /datum/species/feral/alien/beetle
+
+/datum/species/feral/xeno/bull
+	name = "Feral Xenomorph Bull"
+	id = "xeno_bull"
+	roundstart = TRUE
+	default_color = "710E13"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/bull.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/bull
+	race = /datum/species/feral/alien/bull
+
+/datum/species/feral/xeno/defender
+	name = "Feral Xenomorph Defender"
+	id = "xeno_defender"
+	roundstart = TRUE
+	default_color = "302239"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/defender.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/defender
+	race = /datum/species/feral/alien/defender
+
+/datum/species/feral/xeno/defiler
+	name = "Feral Xenomorph Defiler"
+	id = "xeno_defiler"
+	roundstart = TRUE
+	default_color = "2C212B"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/defiler.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/defiler
+	race = /datum/species/feral/alien/defiler
+
+/datum/species/feral/xeno/nymph
+	name = "Feral Xenomorph Nymph"
+	id = "xeno_nymph"
+	roundstart = TRUE
+	default_color = "710E13"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/nymph.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/nymph
+	race = /datum/species/feral/alien/nymph
+
+/datum/species/feral/xeno/runner
+	name = "Feral Xenomorph Runner"
+	id = "xeno_runner"
+	roundstart = TRUE
+	default_color = "BC2929"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/runner.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/runner
+	race = /datum/species/feral/alien/runner
+
+/datum/species/feral/xeno/warlock
+	name = "Feral Xenomorph Warlock"
+	id = "xeno_warlock"
+	roundstart = TRUE
+	default_color = "514643"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/warlock.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/warlock
+	race = /datum/species/feral/alien/warlock
+
+/datum/species/feral/xeno/widow
+	name = "Feral Xenomorph Widow"
+	id = "xeno_widow"
+	roundstart = TRUE
+	default_color = "514643"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/widow.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/widow
+	race = /datum/species/feral/alien/widow
+
+/datum/species/feral/xeno/wraith
+	name = "Feral Xenomorph Wraith"
+	id = "xeno_wraith"
+	roundstart = TRUE
+	default_color = "302239"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/wraith.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/wraith
+	race = /datum/species/feral/alien/wraith
+
+/datum/species/feral/xeno/warrior
+	name = "Feral Xenomorph Warrior"
+	id = "xeno_warrior"
+	roundstart = TRUE
+	default_color = "302239"
+	simple_icon = 'modular_coyote/icons/mob/tgmc/warrior.dmi'
+	icon_width = 64
+/mob/living/carbon/human/species/warrior
+	race = /datum/species/feral/alien/warrior
+
 
 //end aliens
 
