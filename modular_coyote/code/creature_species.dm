@@ -432,6 +432,15 @@
 /mob/living/carbon/human/species/omanyte
 	race = /datum/species/feral/pokemon/omanyte
 
+/datum/species/feral/pokemon/pikachu
+	name = "Feral Pikachu"
+	id = "pikachu"
+	roundstart = TRUE
+	alt_prefixes = list("Female" = "f")
+	simple_icon = 'modular_coyote/icons/mob/pmon/pikachu.dmi'
+/mob/living/carbon/human/species/pikachu
+	race = /datum/species/feral/pokemon/pikachu
+
 /datum/species/feral/pokemon/ponyta
 	name = "Feral Ponyta"
 	id = "ponyta"
@@ -503,6 +512,14 @@
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/rayquaza
 	race = /datum/species/feral/pokemon/rayquaza
+
+/datum/species/feral/pokemon/salazzle
+	name = "Feral Salazzle"
+	id = "salazzle"
+	roundstart = TRUE
+	simple_icon = 'modular_coyote/icons/mob/pmon/salazzle.dmi'
+/mob/living/carbon/human/species/salazzle
+	race = /datum/species/feral/pokemon/salazzle
 
 /datum/species/feral/pokemon/skuntank
 	name = "Feral Skuntank"
