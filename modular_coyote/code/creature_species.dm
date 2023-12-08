@@ -432,6 +432,15 @@
 /mob/living/carbon/human/species/omanyte
 	race = /datum/species/feral/pokemon/omanyte
 
+/datum/species/feral/pokemon/pikachu
+	name = "Feral Pikachu"
+	id = "pikachu"
+	roundstart = TRUE
+	alt_prefixes = list("Female" = "f")
+	simple_icon = 'modular_coyote/icons/mob/pmon/pikachu.dmi'
+/mob/living/carbon/human/species/pikachu
+	race = /datum/species/feral/pokemon/pikachu
+
 /datum/species/feral/pokemon/ponyta
 	name = "Feral Ponyta"
 	id = "ponyta"
