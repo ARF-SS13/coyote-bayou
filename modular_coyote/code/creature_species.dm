@@ -513,6 +513,14 @@
 /mob/living/carbon/human/species/rayquaza
 	race = /datum/species/feral/pokemon/rayquaza
 
+/datum/species/feral/pokemon/salazzle
+	name = "Feral Salazzle"
+	id = "salazzle"
+	roundstart = TRUE
+	simple_icon = 'modular_coyote/icons/mob/pmon/salazzle.dmi'
+/mob/living/carbon/human/species/salazzle
+	race = /datum/species/feral/pokemon/salazzle
+
 /datum/species/feral/pokemon/skuntank
 	name = "Feral Skuntank"
 	id = "skuntank"
