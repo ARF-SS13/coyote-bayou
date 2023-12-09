@@ -28,7 +28,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	/// Can this bow link to a quiver?
-	var/can_link_to_quiver = FALSE
+	var/can_link_to_quiver = TRUE
 	/// Is this bow drawing from a quiver, if linked?
 	var/drawing_from_quiver = FALSE
 	/// The quiver the bow is drawing from
