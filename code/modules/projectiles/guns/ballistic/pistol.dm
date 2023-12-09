@@ -20,6 +20,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	can_suppress = TRUE
+	trigger_guard = TRIGGER_GUARD_NORMAL
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	init_recoil = HANDGUN_RECOIL(1, 1)
 	init_firemodes = list(
