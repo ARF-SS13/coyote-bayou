@@ -352,6 +352,7 @@
 		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
 		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 	cell = null
+	update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
