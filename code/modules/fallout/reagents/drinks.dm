@@ -568,10 +568,13 @@
 	glass_icon_state = "sunsetterglass"
 	glass_name = "Sunsetter"
 	glass_desc = "For when the days dawn, lest brings a brighter tommorrow."
-	soda_heal_brute = 0.1
-	soda_heal_burn = 0.1
-	soda_heal_toxin = 0.1
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_2 // I like floats, so they get a higher tier // idk what they do so they get a bonus tier
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_LOW) // they canonically made Dan fat, and so will you
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_HIGH)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_MED)
+
 
 /datum/reagent/consumable/sunsetter/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
