@@ -1057,7 +1057,7 @@
 /datum/gear/donator/kits/pappavol
 	name = "Bolter And Armor Kit"
 	path = /obj/item/storage/box/large/custom_kit/pappavol
-	ckeywhitelist = list("jademanique")
+	ckeywhitelist = list("PappaVol")
 
 /obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
