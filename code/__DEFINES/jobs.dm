@@ -165,6 +165,7 @@
 #define F13TRIBAL		(1<<9)
 #define F13RADIOOP		(1<<10)
 #define F13WASTEDEN		(1<<11)
+#define F13WASTEGAR		(1<<12)
 
 #define ENCLAVE			(1<<10)
 

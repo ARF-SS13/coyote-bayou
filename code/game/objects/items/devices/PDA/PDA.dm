@@ -347,7 +347,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					if(istype(geiger))
 						var/extra = ""
 						if(g_on)
-							extra += " | AMBIENT: [geiger?.radiation_count ? round(geiger?.radiation_count, 0.1) : 0]"
+							extra += " | AMBIENT: [geiger?.current_tick_amount ? round(geiger?.current_tick_amount, 0.1) : 0]"
 							if(isliving(loc))
 								var/mob/living/L = user
 								extra += " | USER: [L.radiation ? round(L.radiation, 0.1) : 0]"
@@ -1085,10 +1085,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/verb/verb_toggle_geiger()
 	set category = "Object"
 	set name = "Toggle Geiger Counter"
-	toggle_geiger()
+	toggle_geiger(usr)
 
 /obj/item/pda/proc/toggle_geiger(mob/living/user)
-	if(!user.canUseTopic(src, BE_CLOSE) || !istype(user) || !istype(geiger))
+	if(!istype(user) || !istype(geiger) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	geiger?.attack_self(user)
 	g_on = geiger?.scanning

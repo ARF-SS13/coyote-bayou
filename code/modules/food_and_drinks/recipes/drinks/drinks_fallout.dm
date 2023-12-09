@@ -233,6 +233,12 @@
 	results = list(/datum/reagent/consumable/ethanol/vaultgirl = 2)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vaulttech = 1, /datum/reagent/consumable/ethanol/between_the_sheets = 1)
 
+/datum/chemical_reaction/femboy
+	name = "Femboy Juice"
+	id = "femboi"
+	results = list(/datum/reagent/consumable/ethanol/vaultgirl/femboy = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vaultgirl = 1, /datum/reagent/consumable/bawls = 1)
+
 /datum/chemical_reaction/fernet_cola
 	name = "Fernet Cola"
 	id = "fernet_cola"

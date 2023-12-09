@@ -268,6 +268,7 @@
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 7,          //249 20
 		/obj/item/gun/ballistic/automatic/autopipe = 8,                     //244 18
 		/obj/item/gun/ballistic/automatic/r84 = 9,                          //241 60
+		/obj/item/gun/ballistic/automatic/rifle47mm/china = 10,            //240.73 35
 		/obj/item/gun/ballistic/automatic/smg/cg45/worn = 10,               //234 36
 		/obj/item/gun/ballistic/automatic/smg/smg10mm/worn = 10, 			//234 24
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10 = 10, 			//227 32
@@ -283,6 +284,7 @@
 		/obj/item/gun/ballistic/automatic/service/alr = 10,                 //199 20
 		/obj/item/gun/ballistic/automatic/marksman = 10,                    //199 20
 		/obj/item/gun/ballistic/automatic/aksmol = 10,                      //199 20
+		/obj/item/gun/ballistic/automatic/rifle47mm = 10,                    //196.25 35
 		/obj/item/gun/ballistic/automatic/sportcarbine = 10,                //186 32
 		/obj/item/gun/ballistic/automatic/service/carbine = 5,              //181 20
 		/obj/item/gun/ballistic/automatic/service = 5,                      //181 20

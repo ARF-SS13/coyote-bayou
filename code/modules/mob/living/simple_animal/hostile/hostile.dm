@@ -128,6 +128,8 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
+	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
+
 /mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 	set_origin(src)

@@ -159,12 +159,11 @@
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
-	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
+	new /obj/item/clothing/suit/armor/medium/combat/enclave/aldric(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -1055,6 +1054,18 @@
 /obj/item/storage/box/large/custom_kit/pixelexip2/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
+/datum/gear/donator/kits/pappavol
+	name = "Bolter And Armor Kit"
+	path = /obj/item/storage/box/large/custom_kit/pappavol
+	ckeywhitelist = list("jademanique")
+
+/obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
+	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/pappavol(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/pappavol(src)
+
 /datum/gear/donator/kits/planetary
 	name = "Collector"
 	path = /obj/item/storage/box/large/custom_kit/planetary
@@ -1251,8 +1262,8 @@
 	ckeywhitelist = list("SilencedMP5A5")
 
 /obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
-	new /obj/item/clothing/head/helmet/f13/combat/mk2/custom(src)
-	new /obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/arroyo(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
@@ -1295,13 +1306,12 @@
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/mag/pz39custom(src)
-	new /obj/item/ammo_box/a50MGbox(src)
-	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
+	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
@@ -1503,7 +1513,7 @@
 /datum/gear/donator/kits/thelasthosea2
 	name = "Bren loadout"
 	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
-	ckeywhitelist = list("ThelastHoesa2")
+	ckeywhitelist = list("ThelastHosea2")
 
 /obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/bren/custom(src)
@@ -1557,6 +1567,7 @@
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
+	new /obj/item/clothing/suit/armor/medium/combat/bos/cylphie(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"

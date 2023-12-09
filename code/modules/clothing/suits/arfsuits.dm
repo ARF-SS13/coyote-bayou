@@ -3882,6 +3882,11 @@
 	desc = "An old set of pre-war combat armor, painted black."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
+/obj/item/clothing/suit/armor/medium/combat/enclave/aldric
+	name = "Intercessors Exoskeleton"
+	desc = "A lightly-armored full-body powered exoskeleton. Primarily designed for psionic officers, it features a multistage cascaded psionic amplifier that aids in focus and projection of their psionic abilities, especially those that require nuance and precision"
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
 
 /obj/item/clothing/suit/armor/medium/pilotcarapace
 	name = "pilot's combat carapace"
@@ -4332,7 +4337,7 @@
 //////////////////////////
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa
-	name = "salvaged power armor"
+	name = "salvaged power armor template"
 	desc = "It's a set of early-model SS-13 power armor, except it isn't real. Stop looking at it, go ping coders or something. \
 	It's literally not meant to be here, you are just wasting your time reading some text that someone wrote for you \
 	because he thought it'd be funny, or expected someone to check GitHub for once, hello by the way. \
@@ -4425,6 +4430,8 @@
 /////////////////
 
 /obj/item/clothing/suit/armor/power_armor
+	name = "power armor template"
+	desc = "It's a template for PA. If you can see this, something's gone wrong."
 	w_class = WEIGHT_CLASS_HUGE
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -4463,7 +4470,9 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
-	var/deflecting = TRUE
+	var/deflecting = FALSE
+	// Can deflect determines if you can toggle the deflection on armor. Intended for armors that shouldnt have the ability by default.
+	var/can_deflect = TRUE
 	var/deflect_power_mult = 20
 	COOLDOWN_DECLARE(emp_cooldown)
 	COOLDOWN_DECLARE(deflect_cd)
@@ -4673,6 +4682,9 @@
 	return
 
 /obj/item/clothing/suit/armor/power_armor/CtrlShiftClick(mob/user)
+	if(!can_deflect)
+		to_chat(user, span_warning("Your armor doesnt have deflector shields!"))
+		return ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return ..()
 	if(!COOLDOWN_FINISHED(src, emp_cooldown))
@@ -4790,6 +4802,30 @@
 	COOLDOWN_START(src, deflect_cd, deflect_cooldown)
 	return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 
+/obj/item/clothing/suit/armor/power_armor/fluff
+	name = "Placeholder Loadout Power Armor"
+	desc = "A placeholder block for personal and loadout power armors."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	can_deflect = FALSE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	requires_training = TRUE
+/obj/item/clothing/suit/armor/power_armor/fluff/arroyo
+	name = "Weathered Deathclaw Power Armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	icon_state = "arroyoapa"
+	item_state = "arroyoapa"
+/obj/item/clothing/suit/armor/power_armor/fluff/pappavol
+	name = "Decaying Power Armor"
+	desc = "Large big and green with hints of rust that cover its decaying metal robotic frame. It looks like it was custom built... roughly put together with shitty welding and crude rivets that hold the green rusty armor together."
+	icon_state = "pappavolarmor"
+	item_state = "pappavolarmor"
+
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
@@ -4894,6 +4930,16 @@
 	item_state = "advpowerarmor1"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
+/obj/item/clothing/suit/armor/power_armor/hellfire // Event only - Deathsquad tier
+	name = "Hellfire power armor"
+	desc = "This model of power armor is the ultimate expression of power armor technology, sporting some of the best protection physically possible. This protection comes at a cost, however. This model of power armor drains cells much quicker than standard suits. While this design is technically a prototype, it has seen limited production similar to more standard suits. However, it remains incredibly rare due to the vast majority of the suits being damaged or destroyed."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "hellfire"
+	item_state = "hellfire"
+	armor_tokens = null
+	armor = list("melee" = 80, "bullet" = 85, "laser" = 90, "energy" = 75, "bomb" = 75, "bio" = 80, "rad" = 75, "fire" = 60, "acid" = 60, "wound" = 120, "damage_threshold" = 15)
+	usage_cost = 15 // 3x the passive drain of normal PA, 11 minutes on a basic cell. Basically makes using e-guns with it impossible unless you have literal boxes of cells. But it's also Deathsquad tier armor so y'know.
 
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/power_armor/advanced/x02

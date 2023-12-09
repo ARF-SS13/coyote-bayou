@@ -2894,6 +2894,52 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+/obj/item/gun/ballistic/automatic/rifle47mm
+	name = "Sig Rifle 550"
+	desc = "A SIG SG 550 rechambered in 4.7mm caseless ammo. Despite the new caliber type, it performs as one would expect which is precise, quick, and customizable. The gun fires a bit quicker and feels a tad bit lighter to carry."
+	icon_state = "sigrifle"
+	item_state = "R82"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	init_mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+
+/obj/item/gun/ballistic/automatic/rifle47mm/china
+	name = "Chinese 4.7mm assault rifle"
+	desc = "A QBZ-95-1 assault rifle rechambered in 4.7mm caseless ammo, a odd collab between West Germany's 4.7mm cartridge and the PLA. Despite the new caliber type, it performs like its own original caliber. The gun seems to fire quicker and is a shy bit more accurate with lesser recoil!"
+	icon_state = "chinarifle"
+	item_state = "famas"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	init_mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.4)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+
 
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle // Less damage dealing than the AK47 but has a high ROF and good recoil.
@@ -3634,6 +3680,28 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+/obj/item/gun/ballistic/automatic/compact14mmrifle/custom
+	name = "Custom T55E1 Assault Carbine"
+	desc = "A T55E1 assault compact assault rifle. Chambered in 10mm, it seems to be a custom assault carbine. It is much lighter than its bigger counterpart."
+	icon_state = "bolter"
+	item_state = "bolter"
+	mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = SMG_RECOIL (1.3 , 1.4)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 
 

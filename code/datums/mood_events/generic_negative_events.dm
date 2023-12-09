@@ -119,9 +119,9 @@
 	timeout = 30 SECONDS
 
 /datum/mood_event/phobia
-	description = span_warning("That really terrified me!")
+	description = span_warning("I saw something that I'm phobic of! That was terrifying!")
 	mood_change = -5
-	timeout = 30 SECONDS
+	timeout = 3 MINUTES
 
 /datum/mood_event/family_heirloom_missing
 	description = span_warning("I'm missing my family heirloom...")

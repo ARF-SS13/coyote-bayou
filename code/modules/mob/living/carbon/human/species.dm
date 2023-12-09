@@ -144,6 +144,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/icon_rest_suffix
 	/// simple_icon species will default to using the "id" variable for their icon state, but you can select one of these prefixes which will change your icon state to [alt_prefix][id]
 	var/list/alt_prefixes
+	/// doesn't override your taur body selection
+	var/footstep_type
 	COOLDOWN_DECLARE(ass) // dont ask
 
 ///////////
@@ -391,9 +393,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(STYLE_SNEK_TAURIC)
 						H.physiology.footstep_type = FOOTSTEP_MOB_CRAWL
 					else
-						H.physiology.footstep_type = null
+						H.physiology.footstep_type = H?.dna?.species?.footstep_type
 			else
-				H.physiology.footstep_type = null
+				H.physiology.footstep_type = H?.dna?.species?.footstep_type
 
 		if(H.client && has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 			H.LoadComponent(/datum/component/field_of_vision, H.field_of_vision_type)
