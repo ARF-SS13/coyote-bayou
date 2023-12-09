@@ -1949,7 +1949,7 @@
 		thresholdify()
 	M.adjustBruteLoss(-bruteheal, TRUE, include_roboparts = TRUE)
 	M.adjustFireLoss(-burnheal, TRUE, include_roboparts = TRUE)
-	M.adjustToxLoss(-toxheal)
+	M.adjustToxLoss(-toxheal, TRUE, FALSE, TRUE)
 	M.adjustOxyLoss(-oxyheal)
 	M.radiation = max(M.radiation - radheal, 0)
 	M.blood_volume = min(M.blood_volume + blood_regen, BLOOD_VOLUME_NORMAL)
