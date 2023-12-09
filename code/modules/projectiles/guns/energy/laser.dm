@@ -1018,6 +1018,7 @@
 	can_charge = 1
 	can_flashlight = 0
 	can_scope = TRUE
+	trigger_guard = TRIGGER_GUARD_NORMAL
 	max_upgrades = 6 // Super moddable, but remember you have to change guns when you run out because you can't reload these.
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
