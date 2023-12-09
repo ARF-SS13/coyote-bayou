@@ -535,7 +535,7 @@
 	loot = list()
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a308
 	projectile_sound_properties = list(
@@ -563,7 +563,7 @@
 	health = 180
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a308
 	projectile_sound_properties = list(
