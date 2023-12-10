@@ -2305,7 +2305,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive Big Leagues & Health - Tougher!"
 	conflicts = list(
 		/datum/quirk/bigleagues,
-		/datum/quirk/lifegiverplus
+		/datum/quirk/lifegiverplus,
+		/datum/quirk/flimsy,
+		/datum/quirk/veryflimsy
 		)
 	gain_text = span_notice("DAMN BRO YOU SWOLE!")
 	lose_text = span_notice("Maybe you could skip gym day...")
