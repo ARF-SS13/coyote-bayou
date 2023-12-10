@@ -1234,6 +1234,10 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = span_danger("You really feel like running all of a sudden!")
 	locked = FALSE
 
+/datum/quirk/on_spawn()
+	var/mob/living/L = quirk_holder
+	L.m_intent = MOVE_INTENT_WALK
+
 /datum/quirk/luddite
 	name = "Luddite"
 	desc = "You forgo some technology, like autolathes and some other machinery."
