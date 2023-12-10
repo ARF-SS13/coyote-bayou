@@ -13,7 +13,7 @@
 	damage_deflection = 38
 
 /obj/machinery/door/airlock/ckey/highsecurity/andy
-	req_one_ckey = list("andyman105", "dameonowen", "dwagin", "foxyrose", "thingpony", "brimcon")
+	req_one_ckey = list("andyman105", "dameonowen", "dwagin", "foxyrose", "thingpony", "brimcon", "aldrictalvalin")
 
 /obj/machinery/door/airlock/ckey/allowed(mob/M)
 	if(locked)
