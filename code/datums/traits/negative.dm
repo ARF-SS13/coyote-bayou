@@ -1236,7 +1236,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 
 /datum/quirk/on_spawn()
 	var/mob/living/L = quirk_holder
-	L.m_intent = MOVE_INTENT_WALK
+	L.toggle_move_intent()
 
 /datum/quirk/luddite
 	name = "Luddite"
