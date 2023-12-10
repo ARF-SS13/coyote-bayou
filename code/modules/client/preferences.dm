@@ -2568,13 +2568,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 				if("pixel_x")
-					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					var/newx = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
 					if(newx)
 						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_x = 0
 				if("pixel_y")
-					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					var/newy = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
 					if(newy)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
