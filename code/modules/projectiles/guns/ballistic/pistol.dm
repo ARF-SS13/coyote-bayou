@@ -994,6 +994,26 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/cyberbang.ogg'
 
+//4.7mm caseless pistol. Alternative ammo type to the 5mm with slight differences. Spawn tier with shy less damage than a baseline 5mm firearm.
+/obj/item/gun/ballistic/automatic/pistol/pistol47mm
+	name = "4.7mm A39 Pistol"
+	desc = "A rather strange caliber having pistol. Chambered in 4.7mm caseless ammo, this pistol seems to be a bit heavier to hold but is generally still the same as any pistol of its size and caliber range."
+	icon_state = "jericho"
+	item_state = "pistolchrome"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	init_mag_type = /obj/item/ammo_box/magazine/m47pistol
+	mag_type = /obj/item/ammo_box/magazine/m47pistol
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	init_recoil = HANDGUN_RECOIL(1.4, 1.7)
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = TRUE
 
 
 /obj/item/gun/ballistic/automatic/pistol/needlerpistol

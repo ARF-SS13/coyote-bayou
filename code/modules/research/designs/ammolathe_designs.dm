@@ -561,6 +561,13 @@
 	build_path = /obj/item/ammo_box/magazine/m5mmcustom/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/m47mmpistol
+	name = "empty handgun magazine (4.7mm caseless)"
+	id = "m47mmcustom"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m47pistol/empty
+	category = list("initial", "Intermediate Magazines")
+
 /datum/design/ammolathe/smg14
 	name = "empty smg magazine (14mm)"
 	id = "m127smg"
