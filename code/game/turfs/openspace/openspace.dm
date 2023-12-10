@@ -80,6 +80,10 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 		if(thing.intercept_zImpact(mover) & FALL_INTERCEPTED)
 			return FALSE // no need to be careful, its just stairs
 	var/mob/living/L = mover
+	if(istype(L, /mob/living/carbon)) // ignore tackling carbons
+		var/mob/living/carbon/C = mover
+		if(C.tackling)
+			return FALSE
 	if(L.m_intent == MOVE_INTENT_WALK && (!HAS_TRAIT(L, TRAIT_CLUMSY) || !HAS_TRAIT(L, TRAIT_NORUNNING)))
 		to_chat(L, span_warning("Whoa! You nearly fell! Good thing you were careful!"))
 		return TRUE
