@@ -2485,7 +2485,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive trait Primitive Tech & Chemwiz."
 	conflicts = list(
 		/datum/quirk/tribal_tech,
-		/datum/quirk/chemwhiz
+		/datum/quirk/chemwhiz,
+		/datum/quirk/dumb
 		)
 	gain_text = span_notice("The secrets of chemistry are all laid out before you...")
 	lose_text = span_notice("Sulphur?  I barely know her!")
@@ -2617,7 +2618,8 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	mechanics = "Grants access to positive trait Chem Whiz & Minor Surgery."
 	conflicts = list(
 		/datum/quirk/chemwhiz,
-		/datum/quirk/surgerylow
+		/datum/quirk/surgerylow,
+		/datum/quirk/dumb
 		)
 	gain_text = span_notice("Let's go practice medicine!")
 	lose_text = span_notice("I really think I need a true medical license...")
