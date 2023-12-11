@@ -214,7 +214,7 @@
 		/obj/item/reagent_containers/food/snacks/egg = 2,
 		/datum/reagent/consumable/coco = 5,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5
+		/datum/reagent/consumable/peanut_butter = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/brownie_sheet_peanut
 	subcategory = CAT_PASTRY
