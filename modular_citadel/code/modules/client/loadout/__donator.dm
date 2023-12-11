@@ -1520,7 +1520,15 @@
 	new /obj/item/ammo_box/magazine/bren(src)
 	new /obj/item/ammo_box/a308box(src)
 
+/datum/gear/donator/kits/triplewammy
+	name = "Service rifle doggo loadout"
+	path = /obj/item/storage/box/large/custom_kit/triplewammy
+	ckeywhitelist = list("Triple_Wammy")
 
+/obj/item/storage/box/large/custom_kit/triplewammy/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/service(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/a556(src)
 
 /datum/gear/donator/kits/tonyburritos
 	name = "NCR Scout"
