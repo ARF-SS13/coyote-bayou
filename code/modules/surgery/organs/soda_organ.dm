@@ -113,10 +113,12 @@
 	/// now, find the lowest priority heal to heal, and heal it
 	var/their_brain = owner.getOrganLoss(ORGAN_SLOT_BRAIN)
 	if(their_brain > 0)
-		if(banked_brain < healamt && prob(2)) // sliiiiight chance to convert some other type of banked squirt to this
+		if(banked_brain < healamt && prob(5)) // sliiiiight chance to convert some other type of banked squirt to this
 			convert_banked_to(SODIEHEAL_KIND_BRAIN, healamt)
 		if(banked_brain > 0)
-			owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -min(banked_brain, healamt))
+			var/healby = min(banked_brain, healamt)
+			owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healby)
+			banked_brain = max(banked_brain - healby, 0)
 			var/reat = SODIEHEAL_KIND_BRAIN | is_now_depleted(SODIEHEAL_KIND_BRAIN)
 			if(owner.health < 0)
 				. |= reat
@@ -124,10 +126,12 @@
 				return reat
 	var/their_oxy = owner.getOxyLoss()
 	if(their_oxy > 0)
-		if(!banked_oxy && prob(2)) // sliiiiight chance to convert some other type of banked squirt to this
+		if(!banked_oxy && prob(5)) // sliiiiight chance to convert some other type of banked squirt to this
 			convert_banked_to(SODIEHEAL_KIND_OXY, healamt)
 		if(banked_oxy > 0)
-			owner.adjustOxyLoss(-min(banked_oxy, healamt))
+			var/healby = min(banked_oxy, healamt)
+			owner.adjustOxyLoss(-healby)
+			banked_oxy = max(banked_oxy - healby, 0)
 			var/reat = SODIEHEAL_KIND_OXY | is_now_depleted(SODIEHEAL_KIND_OXY)
 			if(owner.health < 0)
 				. |= reat
@@ -135,24 +139,30 @@
 				return reat
 	var/their_tox = owner.getToxLoss()
 	if(their_tox > 0)
-		if(!banked_tox && prob(2)) // sliiiiight chance to convert some other type of banked squirt to this
+		if(!banked_tox && prob(5)) // sliiiiight chance to convert some other type of banked squirt to this
 			convert_banked_to(SODIEHEAL_KIND_TOX, healamt)
 		if(banked_tox > 0)
-			owner.adjustToxLoss(-min(banked_tox, healamt), force_be_heal = TRUE) // toxin lovers suffer (cutely)
+			var/healby = min(banked_tox, healamt)
+			owner.adjustToxLoss(-healby, force_be_heal = TRUE) // toxin lovers suffer (cutely)
+			banked_tox = max(banked_tox - healby, 0)
 			return SODIEHEAL_KIND_TOX | is_now_depleted(SODIEHEAL_KIND_TOX)
 	var/their_burn = owner.getFireLoss(FALSE)
 	if(their_burn > 0)
-		if(!banked_burn && prob(2)) // sliiiiight chance to convert some other type of banked squirt to this
+		if(!banked_burn && prob(5)) // sliiiiight chance to convert some other type of banked squirt to this
 			convert_banked_to(SODIEHEAL_KIND_BURN, healamt)
 		if(banked_burn > 0)
-			owner.adjustFireLoss(-min(banked_burn, healamt))
+			var/healby = min(banked_burn, healamt)
+			owner.adjustFireLoss(-healby)
+			banked_burn = max(banked_burn - healby, 0)
 			return SODIEHEAL_KIND_BURN | is_now_depleted(SODIEHEAL_KIND_BURN)
 	var/their_brute = owner.getBruteLoss(FALSE)
 	if(their_brute > 0)
-		if(!banked_brute && prob(2)) // sliiiiight chance to convert some other type of banked squirt to this
+		if(!banked_brute && prob(5)) // sliiiiight chance to convert some other type of banked squirt to this
 			convert_banked_to(SODIEHEAL_KIND_BRUTE, healamt)
 		if(banked_brute > 0)
+			var/healby = min(banked_brute, healamt)
 			owner.adjustBruteLoss(-min(banked_brute, healamt))
+			banked_brute = max(banked_brute - healby, 0)
 			return SODIEHEAL_KIND_BRUTE | is_now_depleted(SODIEHEAL_KIND_BRUTE)
 	return FALSE
 
@@ -243,7 +253,7 @@
 	if(!sodie.sodie_heal_brute && !sodie.sodie_heal_burn && !sodie.sodie_heal_toxin && !sodie.sodie_heal_brain && !sodie.sodie_heal_oxy)
 		return
 	var/tier = round(clamp(sodie.sodie_tier, 1, LAZYLEN(drank)))
-	var/amount = (sodie.metabolization_rate * (sodie.metabolization_rate / min(sodie.metabolization_rate, sodie.volume)))
+	var/amount = (sodie.metabolization_rate * (sodie.metabolization_rate / max(min(sodie.metabolization_rate, sodie.volume), 0.001)))
 	/// we also need to add the amount of sodie we're processing to the tier
 	drank[tier] += amount
 	/// check our total sodie drank
