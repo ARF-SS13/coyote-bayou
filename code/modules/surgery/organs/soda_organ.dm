@@ -6,7 +6,7 @@
 #define SODIEHEAL_KIND_CRIT  (1 << 5)
 #define SODIEHEAL_RETURN_DEPLETED (1 << 6)
 #define SODIE_MAX_AMOUNT 300 // max amount of sodie you can drink before further dranks subdract from th rest
-#define SODIE_MIN_TIER_FOR_CRIT 4
+#define SODIE_MIN_TIER_FOR_CRIT 2.1
 #define SODIE_MIN_AMOUNT_FOR_CRIT (SODIE_MAX_AMOUNT * 0.95) // little wiggle room
 #define SODIE_MAX_TIER 5 // sodie tiers are 1-5
 #define SODIE_MIN_TIER 1
