@@ -288,12 +288,17 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/lightscout
+	name = "Light Scout Armor"
+	path = /obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/bronzechestplate
 	name = "Bronze Chestplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-
 
 /datum/gear/suit/leatherarmor
 	name = "Leather Jerkin"
