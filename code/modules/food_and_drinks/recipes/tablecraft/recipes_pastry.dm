@@ -223,7 +223,7 @@
 	name = "Crunchy peanut butter tart"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
-		/obj/item/reagent_containers/food/condiment/peanut_butter = 5,
+		/datum/reagent/consumable/peanut_butter = 5,
 		/datum/reagent/consumable/cream = 5,
 	)
 	result = /obj/item/reagent_containers/food/snacks/crunchy_peanut_butter_tart
