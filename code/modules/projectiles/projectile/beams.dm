@@ -314,7 +314,6 @@
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = TRUE
-	pixels_per_second = TILES_TO_PIXELS(50)
 
 //Securitrons Beam
 /obj/item/projectile/beam/laser/pistol/ultraweak

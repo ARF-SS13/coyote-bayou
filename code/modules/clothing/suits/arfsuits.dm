@@ -4303,7 +4303,7 @@
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 
-/obj/item/clothing/suit/armor/heavy/riot/retrofitted
+/*/obj/item/clothing/suit/armor/heavy/riot/retrofitted
 	name = "retro fitted riot combat armor"
 	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, and has been heavily modified with extra pockets and armor-plates. Heavy as sin."
 	icon_state = "usmc_riot_gear"
@@ -4321,7 +4321,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'*/
 
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"
