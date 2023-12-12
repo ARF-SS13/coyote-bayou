@@ -693,7 +693,8 @@ Guardian
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/pda = 1,
-		/obj/item/kit_spawner/tools
+		/obj/item/kit_spawner/tools = 1,
+		/obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/job/tribal/f13dualcitizen/pre_equip(mob/living/carbon/human/H)
