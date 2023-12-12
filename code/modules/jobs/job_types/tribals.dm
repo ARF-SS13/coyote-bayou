@@ -690,8 +690,8 @@ Guardian
 	shoes = /obj/item/clothing/shoes/sandal
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/low = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
+		/obj/item/warpaint_bowl = 1,
 		/obj/item/pda = 1,
 		/obj/item/kit_spawner/tools = 1,
 		/obj/item/cool_book/villagerguide = 1
