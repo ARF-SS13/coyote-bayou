@@ -1236,7 +1236,16 @@
 	key_third_person = "merps"
 	message = "let out a merp!"
 	sound = 'sound/f13effects/sunsetsounds/merp.ogg'
-
+/datum/emote/mar
+	key = "mar"
+	key_third_person = "mars"
+	message = "lets out a mar!"
+	sound = 'sound/f13effects/sunsetsounds/mar.ogg'
+/datum/emote/wurble
+	key = "wurble"
+	key_third_person = "wurbles"
+	message = "wurbles contentedly."
+	sound = 'sound/f13effects/sunsetsounds/wurble.ogg'
 /datum/emote/squeak
 	key = "squeak"
 	key_third_person = "squeaks"
