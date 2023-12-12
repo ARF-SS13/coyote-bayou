@@ -293,7 +293,6 @@
 		/obj/item/clothing/head/helmet/f13/combat/mk2,
 		/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
 		/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted,
 		/obj/item/clothing/suit/armor/heavy/riot/vault,
 		/obj/item/clothing/suit/armor/heavy/riot/marine,
 		/obj/item/clothing/suit/armor/medium/odst,

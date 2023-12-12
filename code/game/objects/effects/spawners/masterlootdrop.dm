@@ -993,7 +993,6 @@
 		/obj/effect/spawner/bundle/f13/armor/riot = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
-		/obj/item/clothing/suit/armor/heavy/riot/retrofitted = 20,
 		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,

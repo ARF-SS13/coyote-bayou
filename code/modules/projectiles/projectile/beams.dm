@@ -314,7 +314,6 @@
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = TRUE
-	pixels_per_second = TILES_TO_PIXELS(50)
 
 //Securitrons Beam
 /obj/item/projectile/beam/laser/pistol/ultraweak
@@ -631,6 +630,7 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 35
+	damage_type = BURN
 	damage_list = list( "34" = 30, "35" = 50, "50" = 20)
 	wound_bonus = 70 //being hit with plasma is horrific
 
