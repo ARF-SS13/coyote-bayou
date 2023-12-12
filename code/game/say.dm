@@ -166,7 +166,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 		input = capitalize(copytext(input, customsayverb + length(input[customsayverb])))
 
 	if(!length(spans) || isnull(spans[1]) && !customsayverb)
-		return
+		return input
 	if((input[1] == "!") && (length(input) > 2))
 		return
 	if(input)
