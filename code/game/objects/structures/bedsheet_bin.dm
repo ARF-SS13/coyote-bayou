@@ -7,7 +7,7 @@ LINEN BINS
 
 /obj/item/blanket
 	name = "blanket"
-	desc = "A undyed rough blanket."
+	desc = "A undyed rough blanket. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "blanket1"
 	item_state = "bedsheet"
@@ -40,7 +40,7 @@ LINEN BINS
 
 /obj/item/bedsheet
 	name = "bedsheet"
-	desc = "A surprisingly soft linen bedsheet."
+	desc = "A surprisingly soft linen bedsheet. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "sheetwhite"
 	item_state = "bedsheet"
