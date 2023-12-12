@@ -901,6 +901,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Villager"
 	icon_state = "Tribal"
 
+/obj/effect/landmark/start/f13/dualcitizen
+	name = "Dual Citizen"
+	icon_state = "Tribal"
+
 /obj/effect/landmark/start/f13/hunter
 	name = "Hunter"
 	icon_state = "Tribal"
