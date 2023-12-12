@@ -18,6 +18,23 @@ LINEN BINS
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 
+/obj/item/blanket/attack_self(mob/user)
+	if(!user.can_reach(src))		//No telekenetic grabbing.
+		return
+	if(!user.dropItemToGround(src))
+		return
+	if(layer == initial(layer))
+		plane = MOB_PLANE // makes it render on the mob plane to overlay the mobs.
+		layer = ABOVE_MOB_LAYER
+		to_chat(user, span_notice("You cover yourself with [src]."))
+	else
+		plane = initial(plane) // sets it back!
+		layer = initial(layer)
+		to_chat(user, span_notice("You smooth [src] out beneath you."))
+	add_fingerprint(user)
+	return
+// Want something to do? Refactor blankets into bedsheets.
+
 /obj/item/blanket/blanketalt
 	icon_state = "blanket2"
 
