@@ -849,3 +849,36 @@ GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 	if(prob(15))
 		corrupted_text += pick(corruption_options)
 	return corrupted_text
+
+///Adds alternating colors to a string based on the delimiter. start_odd should be 1 or 0
+/proc/alternating_color_span(text,color,delimiter,start_odd)
+	var/list/splitmsg = splittext(html_decode(text), delimiter)
+	var/initlen = splitmsg.len
+	if(initlen < 2)
+		if(start_odd)
+			return span_color(text, color)
+		else
+			return text
+
+	var/idx = 1
+	var/msgedit = ""
+
+	for(var/section in splitmsg)
+		if(idx % 2 != start_odd)
+			msgedit += section
+			idx++
+			continue
+		msgedit += span_color("\"[section]\"", color)
+		idx++
+
+	return msgedit
+
+///change text color of keywords in a string.
+/proc/color_keyword(text, color, keyword)
+	return replacetext(text, keyword, span_color(keyword, color))
+
+///does both of above, for chat log coloring of player messages.
+/proc/color_for_chatlog(text, color, name)
+	var/out = color_keyword(text, color, name)
+	out = alternating_color_span(out, color, "\"", FALSE)
+	return out

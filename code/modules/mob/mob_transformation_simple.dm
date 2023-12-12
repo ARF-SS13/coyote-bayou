@@ -55,6 +55,8 @@
 	else
 		transfer_ckey(M)
 
+	SSquirks.AssignQuirks(M, M.client, TRUE, FALSE)
+
 	if(delete_old_mob)
 		QDEL_IN(src, 1)
 	return M

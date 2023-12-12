@@ -23,6 +23,9 @@
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
 	sharpness = SHARP_POINTY
 
+	supereffective_damage = 20
+	supereffective_flags = SE_ALL_SIMPLEMOBS
+
 /obj/item/projectile/bullet/reusable/arrow/bone
 	name = "bone arrow"
 	desc = "an arrow made of bone and sinew."
@@ -74,7 +77,7 @@
 	bare_wound_bonus = 35
 
 	sharpness = SHARP_EDGED
-	supereffective_damage = 0	//Stops broadheads being straight upgrades to default arrows in PvE.
+	supereffective_damage = 10	//Stops broadheads being straight upgrades to default arrows in PvE.
 	break_chance = 5
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/broadhead
 
@@ -148,7 +151,7 @@
 	bare_wound_bonus = -100
 
 	sharpness = SHARP_NONE
-	supereffective_damage = 45
+	supereffective_damage = 70	//You have to go well out of your way to collect electronic parts to craft these, prepare accordingly, rewarded accordingly.
 	supereffective_flags = SE_ROBOTS
 	break_chance = 100 //one zap and we done
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ion
@@ -167,7 +170,7 @@
 	name = "bludgeoning arrow"
 	desc = "Good at killing small game and birds without skewering them. Good at giving you nasty bruises and cracking your ribs."
 	damage = 0
-	stamina = 40
+	stamina = 60
 
 	wound_bonus = 0
 	bare_wound_bonus = 0

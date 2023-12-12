@@ -66,9 +66,9 @@ Concrete = Cement 1u + Water 2u + Silicon 7u
 
 /datum/reagent/cement/on_mob_life(mob/living/carbon/M)
 //Don't eat cement, kids!
-	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 1*REAGENTS_EFFECT_MULTIPLIER, 150)
-	M.adjustToxLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 1*REM, 150)
+	M.adjustToxLoss(0.2*REM, 0)
+	M.adjustFireLoss(0.2*REM, 0)
 	..()
 
 //////////////////
@@ -92,9 +92,9 @@ Concrete = Cement 1u + Water 2u + Silicon 7u
 
 /datum/reagent/consumable/concreteshake/on_mob_life(mob/living/carbon/M)
 //Don't eat cement, kids!
-	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 1*REAGENTS_EFFECT_MULTIPLIER, 150)
-	M.adjustToxLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 1*REM, 150)
+	M.adjustToxLoss(0.2*REM, 0)
+	M.adjustFireLoss(0.2*REM, 0)
 	..()
 
 

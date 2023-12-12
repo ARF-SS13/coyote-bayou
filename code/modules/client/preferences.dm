@@ -56,6 +56,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_chat_non_mob = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
+	///Whether to apply mobs' runechat color to the chat log as well
+	var/color_chat_log = TRUE
+	///Keeping track of chat bg color
+	var/chatbgcolor = "#131313"
 
 	var/list/aghost_squelches = list()
 
@@ -140,6 +144,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tbs = TBS_DEFAULT // turner broadcasting system
 	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
+	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
+	var/alt_appearance = "Default"
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
 		"mcolor2" = "FFFFFF",
@@ -373,6 +379,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/New(client/C)
 	parent = C
+
+	spawn(0)
+		if(C)
+			chatbgcolor = winget(C, "statbrowser", "background-color")
+			if(chatbgcolor == "none")
+				chatbgcolor = "#ffffff"
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
@@ -629,6 +641,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			
+			if(LAZYLEN(pref_species.alt_prefixes))
+				dat += "<b>Alt Appearance:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species_alt_prefix;task=input'>[alt_appearance ? alt_appearance : "Select"]</a><BR>"
+
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			
 			dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><br>"
@@ -1214,6 +1229,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>See Runechat emotes:</b> <a href='?_src_=prefs;preference=see_rc_emotes'>[see_rc_emotes ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Use Runechat color in chat log:</b> <a href='?_src_=prefs;preference=color_chat_log'>[color_chat_log ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 			dat += "<br>"
@@ -2529,6 +2545,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						creature_species = result
 						var/creature_type = GLOB.creature_selectable["[result]"]
 						var/mob/living/M = new creature_type(user)
+						if(creature_image)
+							QDEL_NULL(creature_image)
 						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
 						qdel(M)
 
@@ -2554,13 +2572,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 				if("pixel_x")
-					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					var/newx = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
 					if(newx)
 						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_x = 0
 				if("pixel_y")
-					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					var/newy = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
 					if(newy)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
@@ -2753,7 +2771,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
-
+				if("species_alt_prefix")
+					if(LAZYLEN(pref_species.alt_prefixes))//if there are alt sprites to even pick from
+						var/list/pickfrom = list("Default" = "")
+						pickfrom |= pref_species.alt_prefixes
+						var/result = input(user, "Select an alternate species appearance or press cancel to clear it.", "Alternate Appearance") as null|anything in pickfrom
+						if(isnull(result) || result == "")
+							alt_appearance = "Default"
+						else
+							alt_appearance = result
+					else //this species has none so I'm not sure how you clicked this button but clear it anyway
+						alt_appearance = "Default"
 				if("custom_species")
 					var/new_species = reject_bad_name(input(user, "Choose your species subtype, if unique. This will show up on examinations and health scans. Do not abuse this:", "Character Preference", custom_species) as null|text)
 					if(new_species)
@@ -3724,6 +3752,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					see_chat_non_mob = !see_chat_non_mob
 				if("see_rc_emotes")
 					see_rc_emotes = !see_rc_emotes
+				if("color_chat_log")
+					color_chat_log = !color_chat_log
 
 				if("action_buttons")
 					buttons_locked = !buttons_locked
@@ -4043,9 +4073,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/old_width = character.dna.features["body_width"]
 
 	character.dna.features = features.Copy()
+	character.dna.alt_appearance = alt_appearance
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.species.eye_type = eye_type
-	character.tastes = list(character.dna.features["taste"] = 1)
+	SSlistbank.catalogue_tastes(character, list(character.dna.features["taste"] = 1), TRUE) // unique and important
 	if(chosen_limb_id && (chosen_limb_id in character.dna.species.allowed_limb_ids))
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name

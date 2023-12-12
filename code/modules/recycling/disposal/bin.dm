@@ -69,12 +69,12 @@
 
 /obj/machinery/disposal/LateInitialize()
 	//this will get a copy of the air turf and take a SEND PRESSURE amount of air from it
-	var/atom/L = loc
-	var/datum/gas_mixture/env = new
-	env.copy_from(L.return_air())
-	var/datum/gas_mixture/removed = env.remove(SEND_PRESSURE + 1)
-	air_contents.merge(removed)
-	trunk_check()
+	// var/atom/L = loc
+	// var/datum/gas_mixture/env = new
+	// env.copy_from(L.return_air())
+	// var/datum/gas_mixture/removed = env.remove(SEND_PRESSURE + 1)
+	// air_contents.merge(removed)
+	// trunk_check()
 
 /obj/machinery/disposal/attackby(obj/item/I, mob/user, params)
 	add_fingerprint(user)
@@ -439,25 +439,25 @@
 	// otherwise charge
 	use_power(500) // charging power usage
 
-	var/atom/L = loc //recharging from loc turf
+	// var/atom/L = loc //recharging from loc turf
 
-	var/datum/gas_mixture/env = L.return_air()
-	var/pressure_delta = (SEND_PRESSURE*1.01) - air_contents.return_pressure()
+	// var/datum/gas_mixture/env = L.return_air()
+	// var/pressure_delta = (SEND_PRESSURE*1.01) - air_contents.return_pressure()
 
-	if(env.return_temperature() > 0)
-		var/transfer_moles = 0.1 * pressure_delta*air_contents.return_volume()/(env.return_temperature() * R_IDEAL_GAS_EQUATION)
+	// if(env.return_temperature() > 0)
+	// 	var/transfer_moles = 0.1 * pressure_delta*air_contents.return_volume()/(env.return_temperature() * R_IDEAL_GAS_EQUATION)
 
-		//Actually transfer the gas
-		var/datum/gas_mixture/removed = env.remove(transfer_moles)
-		air_contents.merge(removed)
-		air_update_turf()
+	// 	//Actually transfer the gas
+	// 	var/datum/gas_mixture/removed = env.remove(transfer_moles)
+	// 	air_contents.merge(removed)
+	// 	air_update_turf()
 
 
-	//if full enough, switch to ready mode
-	if(air_contents.return_pressure() >= SEND_PRESSURE)
-		full_pressure = TRUE
-		pressure_charging = FALSE
-		update_icon()
+	// //if full enough, switch to ready mode
+	// if(air_contents.return_pressure() >= SEND_PRESSURE)
+	full_pressure = TRUE
+	pressure_charging = FALSE
+	update_icon() // all done!
 	return
 
 /obj/machinery/disposal/bin/get_remote_view_fullscreens(mob/user)

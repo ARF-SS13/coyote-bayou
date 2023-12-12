@@ -769,7 +769,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the doctors grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
 	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
-	locked = FALSE
+	locked = TRUE
 
 /datum/quirk/doctorphobia/post_add()
 	. = ..()
@@ -1179,7 +1179,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
 	value = -22
 	category = "Lifepath Quirks"
-	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns and many machines."
+	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns, PDAs, and many machines."
 	conflicts = list(
 
 	)
@@ -1233,6 +1233,10 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("Running just isnt' worth the effort!")
 	lose_text = span_danger("You really feel like running all of a sudden!")
 	locked = FALSE
+
+/datum/quirk/cantrun/on_spawn()
+	var/mob/living/L = quirk_holder
+	L.toggle_move_intent()
 
 /datum/quirk/luddite
 	name = "Luddite"

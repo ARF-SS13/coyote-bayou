@@ -82,6 +82,10 @@
 	name = "hip holster"
 	path = /obj/item/storage/belt/legholster
 
+/datum/gear/belt/legholster/throwing
+	name = "garter rig"
+	path = /obj/item/storage/belt/legholster/throwing
+
 /datum/gear/belt/sword/twin
 	name = "twin sheath" //for hemidicks
 	path = /obj/item/storage/belt/sword/twin

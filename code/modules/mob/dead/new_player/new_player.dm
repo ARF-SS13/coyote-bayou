@@ -785,14 +785,13 @@
 		mind.active = 0					//we wish to transfer the key manually
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
-
-
 	H.name = real_name
 	client.init_verbs()
 	. = H
 	new_character = .
 	if(transfer_after)
 		transfer_character()
+	H.update_pixel_shifting(TRUE)
 
 /mob/dead/new_player/proc/transfer_character()
 	. = new_character

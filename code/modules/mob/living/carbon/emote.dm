@@ -509,6 +509,74 @@
 	timerEnabled = FALSE
 	damageMult = initial(damageMult)
 
+//snowball//
+/datum/emote/living/carbon/snowballer
+	key = "snowball"
+	key_third_person = "snowball"
+	restraint_check = TRUE
+	COOLDOWN_DECLARE(snowball_cooldown)
+	var/damageMult
+	var/hasPickedUp = FALSE
+	var/timerEnabled
+	var/damageNerf = 2.2
+
+
+/datum/emote/living/carbon/snowballer/run_emote(mob/user)
+	. = ..()
+	var/MM = text2num(time2text(world.timeofday, "MM"))
+	if(MM == 12 || MM == 1 || MM == 2)
+		if(!COOLDOWN_FINISHED(src, snowball_cooldown) && !HAS_TRAIT(user, TRAIT_MONKEYLIKE))
+			to_chat(user, span_warning("You cant find any snowballs yet!"))
+			return
+		if(user.get_active_held_item())
+			to_chat(user, span_warning("Your hands are too full to go looking for snowballs!"))
+			return
+		var/obj/item/toy/snowball/snowball = new(user)
+
+		if(hasPickedUp)
+			snowball.throwforce = damageMult / damageNerf
+
+		if(user.put_in_active_hand(snowball))
+			hasPickedUp = TRUE
+			damageMult = snowball.throwforce
+			if(!timerEnabled)
+				addtimer(CALLBACK(src, .proc/reset_damage), 2.5 SECONDS)
+				timerEnabled = TRUE
+			COOLDOWN_START(src, snowball_cooldown, 2.5 SECONDS)
+			to_chat(user, span_notice("You pack together a nice round snowball!"))
+		else
+			qdel(snowball)
+	else
+		to_chat(user, span_notice("It's the wrong season for snow..."))
+
+/datum/emote/living/carbon/snowballer/proc/reset_damage()
+	hasPickedUp = FALSE
+	timerEnabled = FALSE
+	damageMult = initial(damageMult)
+
+//snowblock//
+/datum/emote/living/carbon/snower
+	key = "snow"
+	key_third_person = "snow"
+	restraint_check = TRUE
+
+
+/datum/emote/living/carbon/snower/run_emote(mob/user)
+	. = ..()
+	var/MM = text2num(time2text(world.timeofday, "MM"))
+	if(MM == 12 || MM == 1 || MM == 2)
+		if(user.get_active_held_item())
+			to_chat(user, span_warning("Your hands are too full to gather up snow!"))
+			return
+		var/obj/item/stack/sheet/mineral/snow/snow = new(user)
+
+		if(user.put_in_active_hand(snow))
+			to_chat(user, span_notice("You gather up some snow!"))
+		else
+			qdel(snow)
+	else
+		to_chat(user, span_notice("It's the wrong season for snow..."))
+
 /datum/emote/living/carbon/tsk
 	key = "tsk"
 	message = "tsks audibly."

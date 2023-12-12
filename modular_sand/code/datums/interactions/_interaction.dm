@@ -8,6 +8,7 @@
 - >using var/ on everything, also TRUE
 - "TGUIzes" the panel because yes - SandPoot
 - Makes all the code good because yes as well - SandPoot
+- ripped out all the shitcode and made it good - Superlagg
 **/
 
 
@@ -225,10 +226,10 @@
 /datum/interaction/proc/run_action(mob/living/user, mob/living/target, discrete = FALSE, list/extra = list())
 	if(!user || !target)
 		return
-	if(!can_do_interaction(user, target, discrete, extra))
-		return
 	if(is_self_action)
 		target = user // they are I
+	if(!can_do_interaction(user, target, discrete, extra))
+		return
 	SEND_SIGNAL(user, COMSIG_SPLURT_INTERACTION_PITCHED, user, target, src, extra)
 	do_action(user, target, discrete, extra)
 	SEND_SIGNAL(target, COMSIG_SPLURT_INTERACTION_CAUGHT, target, user, src, extra)
@@ -512,7 +513,7 @@
 	// 	return LAZYACCESS(formatted_cache, cachekey)
 
 	var/user_color = user.chat_color || user.client?.prefs.features["chat_color"] || "FF00FF"
-	var/target_color = user.chat_color || target.client?.prefs.features["chat_color"] || "FF00FF"
+	var/target_color = target.chat_color || target.client?.prefs.features["chat_color"] || "FF00FF"
 	if(extra["object1"])
 		if(istext(extra["object1"]))
 			message = replacetextEx(message, "XOBJECT1X", extra["object1"])

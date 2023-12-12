@@ -163,6 +163,7 @@
 
 /mob/living/carbon/throw_item(atom/target)
 	throw_mode_off()
+	update_mouse_pointer()
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /atom/movable/screen))
@@ -534,6 +535,25 @@
 		chat_color = "#[new_runecolor]"
 		chat_color_darkened = "#[new_runecolor]"
 		to_chat(src, "<span style'color=#[new_runecolor]'>Your runechat color is now #[new_runecolor]!</span>")
+
+/mob/living/carbon/verb/check_chat_bg_color()
+	set category = "OOC"
+	set name = "Check Chat BG Color"
+	set desc = "Re-check chat BG color."
+
+	spawn(0)
+		var/color = winget(src, "statwindow", "background-color") // So, this is technically the wrong color but I don't know where the right one is.
+		if(color == "none")												// If you change the chat bg color to be noticeably different from THIS color,
+			color = "#ffffff"										   // this will break.
+		client.prefs.chatbgcolor = color
+		to_chat(src, "Successfully re-checked chat BG color. ([color])")
+
+
+/mob/living/carbon/get_chat_color()
+	var/color = get_feature("chat_color")
+	if(color == "whoopsie" || !color)
+		return rgb(127, 127, 127)
+	return "#[color]"
 
 /mob/living/carbon/fall(forced)
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
@@ -1503,3 +1523,7 @@
  */
 /mob/living/carbon/proc/get_biological_state()
 	return BIO_FLESH_BONE
+
+///grab feature from DNA
+/mob/living/carbon/proc/get_feature(feat)
+	return dna?.features[feat]

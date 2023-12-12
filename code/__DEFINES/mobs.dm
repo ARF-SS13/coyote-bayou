@@ -562,7 +562,7 @@
 /// Varied speed list
 #define MOB_SPEED_LIST(x...) MOB_VARIED_SPEED = list(x)
 /// Varied speed list chance
-#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED = x
+#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED_CHANCE = x
 
 /// Varied health define
 #define MOB_VARIED_HEALTH "varied_health"

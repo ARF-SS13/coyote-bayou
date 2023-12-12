@@ -27,7 +27,7 @@
 	var/list/out = list()
 	out["BitKind"] = "penis"
 	out["BitName"] = "A [lowertext(shape)] penis."
-	out["BitSize"] = "It is [size] inches long!"
+	out["BitSize"] = "It is [length] inches long!"
 	out["BitColor"] = "[color]"
 	out["BitAroused"] = FALSE
 	out["BitExtra"] = "Operating at %100 capacity."

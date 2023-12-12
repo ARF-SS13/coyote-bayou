@@ -181,7 +181,7 @@
 		if(!o2overloadtime)
 			o2overloadtime = world.time
 		else if(world.time - o2overloadtime > 120)
-			Dizzy(10)	// better than a minute of you're fucked KO, but certainly a wake up call. Honk.
+			Dizzy(10)	// better than a minute of you're fuced KO, but certainly a wake up call. Honk.
 			adjustOxyLoss(3)
 			if(world.time - o2overloadtime > 300)
 				adjustOxyLoss(8)
@@ -360,14 +360,15 @@
 
 	var/turf/open/miasma_turf = deceasedturf
 
-	var/static/datum/gas_mixture/stank
-	if(!stank) // Use a static mixture to avoid gas mixture churn.
-		stank = new
-		stank.set_moles(GAS_MIASMA,0.1)
-		stank.set_temperature(BODYTEMP_NORMAL)
+	if (miasma_turf.air)
+		var/static/datum/gas_mixture/stank
+		if(!stank) // Use a static mixture to avoid gas mixture churn.
+			stank = new
+			stank.set_moles(GAS_MIASMA,0.1)
+			stank.set_temperature(BODYTEMP_NORMAL)
 
-	miasma_turf.air.merge(stank)
-	miasma_turf.air_update_turf()
+		miasma_turf.air.merge(stank)
+		miasma_turf.air_update_turf()
 
 /mob/living/carbon/proc/handle_blood()
 	return
@@ -438,6 +439,9 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
+	var/turf/T = get_turf(src)
+	if(T)
+		rad_act(T.radiation_turf)
 	if(HAS_TRAIT(src, TRAIT_RADIMMUNE))
 		return FALSE
 	//radiation -= min(radiation, RAD_LOSS_PER_TICK) nope, you need radx or radaway. small change to make rads *more*
@@ -484,8 +488,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
 										"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
 										"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-										"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-										"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology.",
+										"I dunno about you guys, but IDs and PDAs being separate is clunky as frick. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
+										"Why the frick aren't we just making every pair of shoes into galoshes? We have the technology.",
 										"We can link the Ore Silo to our protolathes, so why don't we also link it to autolathes?",
 										"If we can make better bombs with heated plasma, oxygen, and tritium, then why do station nukes still use plutonium?",
 										"We should port all our NT programs to modular consoles and do away with computers. They're way more customizable, support cross-platform usage, and would allow crazy amounts of multitasking.",

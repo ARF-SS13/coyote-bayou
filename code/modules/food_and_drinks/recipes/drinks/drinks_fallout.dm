@@ -74,6 +74,12 @@
 	results = list(/datum/reagent/consumable/nukaorange = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/orangejuice = 1)
 
+/datum/chemical_reaction/nukastrawberry
+	name = "Cosmic Strawberry"
+	id = "nukastrawberry"
+	results = list(/datum/reagent/consumable/nukastrawberry = 2)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/strawberryjuice = 1)
+
 /datum/chemical_reaction/nukawild
 	name = "Cosmic Wild"
 	id = "nukawild"
@@ -226,6 +232,12 @@
 	id = "vaultgirl"
 	results = list(/datum/reagent/consumable/ethanol/vaultgirl = 2)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vaulttech = 1, /datum/reagent/consumable/ethanol/between_the_sheets = 1)
+
+/datum/chemical_reaction/femboy
+	name = "Femboy Juice"
+	id = "femboi"
+	results = list(/datum/reagent/consumable/ethanol/vaultgirl/femboy = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vaultgirl = 1, /datum/reagent/consumable/bawls = 1)
 
 /datum/chemical_reaction/fernet_cola
 	name = "Fernet Cola"

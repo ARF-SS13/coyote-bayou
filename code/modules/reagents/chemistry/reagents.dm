@@ -70,6 +70,12 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/effect_mult = 1
 	/// How much to divide non-full dose multipliers
 	var/fractional_mult_divisor = 1
+	/// Soda fiend stuff
+	var/soda_heal_brute = 0
+	var/soda_heal_burn = 0
+	var/soda_heal_toxin = 0
+	var/soda_heal_brain = 0
+	var/soda_heal_oxy = 0
 
 /datum/reagent/New()
 	. = ..()
@@ -120,10 +126,15 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	if(effect_mult < 1)
 		effect_mult /= fractional_mult_divisor
 
+/// for doing stuff after metabolization, stuff that would be common to many reagents
+/datum/reagent/proc/post_mob_life(mob/living/carbon/M)
+	soda_power(M)
+
 /datum/reagent/proc/on_mob_life(mob/living/carbon/M)
 	current_cycle++
 	if(holder)
 		holder.remove_reagent(type, metabolization_rate * M.metabolism_efficiency) //By default it slowly disappears.
+	return TRUE
 
 /datum/reagent/proc/on_mob_life_synth(mob/living/carbon/M)
 	current_cycle++
@@ -239,6 +250,26 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 // Called when the reagent container is hit by an explosion
 /datum/reagent/proc/on_ex_act(severity)
 	return
+
+/datum/reagent/proc/soda_power(mob/living/carbon/L)
+	if(!HAS_TRAIT(L, TRAIT_NUKA_LOVER) || !iscarbon(L))
+		return
+	if(soda_heal_brute)
+		. = TRUE
+		L.adjustBruteLoss(-abs(soda_heal_brute) * REM)
+	if(soda_heal_burn)
+		. = TRUE
+		L.adjustFireLoss(-abs(soda_heal_burn) * REM)
+	if(soda_heal_toxin)
+		. = TRUE
+		L.adjustToxLoss(-abs(soda_heal_toxin) * REM)
+	if(soda_heal_brain)
+		. = TRUE
+		L.adjustOrganLoss(ORGAN_SLOT_BRAIN, -abs(soda_heal_brain) * REM)
+	if(soda_heal_oxy)
+		. = TRUE
+		L.adjustOxyLoss(-abs(soda_heal_oxy) * REM)
+
 
 // Called if the reagent has passed the overdose threshold and is set to be triggering overdose effects
 /datum/reagent/proc/overdose_process(mob/living/M)

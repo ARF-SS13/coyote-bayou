@@ -529,6 +529,48 @@
 		/datum/firemode/semi_auto
 	)
 
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers //custom revolver
+	name = "'Cain' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second //custom revolver, comes with a revolver called cain
+	name = "'Abel' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
 /obj/item/gun/ballistic/revolver/Lemat/custom
 	name = "Engraved LeMat Revolver"
 	desc = "An engraved golden LeMat revolver with an ivory grip handle. Engraved onto the barrel of the gun is the phrase 'Bound by love' in Icelandic. The ivory grip has the face of a moth on both sides."
@@ -634,6 +676,48 @@
 	init_recoil = HMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+//4.7mm revolver. 6 shots, caseless ammo and shy extra damage. Spawn gun, fires faster
+/obj/item/gun/ballistic/revolver/revolver47mm
+	name = "4.7mm revolver 2190 edition."
+	desc = "A odd 6-cylinder 4.7mm caseless revolver. The cylinder is square-ish in nature while the revolver is a shy bit more heavy. Seems to hit about average, but fires slowly due to a heavy trigger and hammer."
+	icon_state = "47rev"
+	item_state = "lucky"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev47mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+//5mm revolver. More ammo than 4.7mm at 7 shots a cylinder, hits harder but fires slower. spawn gun
+/obj/item/gun/ballistic/revolver/revolver5mm
+	name = "5mm break-action revolver"
+	desc = "A 7-cylinder 5mm break action revolver. The revolver seems to be average in appearance. It also has a bit of a heavy trigger, affecting firerate!"
+	icon_state = "5rev"
+	item_state = "model29"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev5mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
 	)
 	can_scope = FALSE
 	can_suppress = FALSE

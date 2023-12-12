@@ -8,14 +8,15 @@
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 	overdose_threshold = 100
 	ghoulfriendly = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.075)
-		M.adjustFireLoss(-0.075)
 	..()
 
 /datum/reagent/consumable/nuka_cola/overdose_start(mob/living/M)
@@ -32,6 +33,10 @@
 	glass_name = "glass of Sunset Sarsaparilla"
 	glass_desc = "Beverage of the West Coast."
 	ghoulfriendly = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sunset/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -49,10 +54,12 @@
 	glass_name = "glass of Vim"
 	glass_desc = "Unrelated to Cosmic-Cola, Vim trademark Circa 2077."
 	ghoulfriendly = TRUE
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/vim/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5, 0)
-	M.adjustOxyLoss(0.5, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	//310.15 is the normal bodytemp.
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -69,10 +76,13 @@
 	glass_icon_state = "vimquartzglass"
 	glass_name = "Vim Quartz"
 	glass_desc = "You've Got Vim! Quartz edition, worse than the Imitation."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/vimquartz/on_mob_life(mob/living/carbon/M)
 	M.vomit(10)
-	M.adjustToxLoss(-1, 0)
 	M.adjustOxyLoss(2, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
@@ -91,11 +101,12 @@
 	glass_icon_state = "grasshopper"
 	glass_name = "Vim Refresh"
 	glass_desc = "You've Got Vim Refresh! Ooooh!"
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.15
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/vimrefresh/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustToxLoss(-0.1, 0)
-	M.adjustOxyLoss(1, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
@@ -114,10 +125,13 @@
 	glass_icon_state = "vimiceglass"
 	glass_name = "Iced Vim"
 	glass_desc = "You've Got Vim! Cold as the East."
+	soda_heal_brute = 0.125
+	soda_heal_burn = 0.25
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/vimice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C)
-	M.adjustFireLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustOxyLoss(1, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
@@ -135,9 +149,12 @@
 	glass_icon_state = "nukacherryglass"
 	glass_name = "Cosmic Cherry"
 	glass_desc = "Cosmic-Cola with a Cherry Aftertaste."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.2
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukacherry/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -152,9 +169,12 @@
 	glass_icon_state = "nukagrapeglass"
 	glass_name = "Cosmic Grape"
 	glass_desc = "Cosmic-Cola with a Grape Aftertaste."
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukagrape/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -169,10 +189,33 @@
 	glass_icon_state = "nukaorangeglass"
 	glass_name = "Cosmic Orange"
 	glass_desc = "Cosmic-Cola with a Orange Aftertaste."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.25
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukaorange/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	..()
+	. = TRUE
+
+/datum/reagent/consumable/nukastrawberry
+	name = "Cosmic Strawberry"
+	description = "Cosmic-Cola with a Strawberry Aftertaste."
+	color = "#B43528"
+	taste_description = "fizzy strawberry soda"
+	glass_icon_state = "nukastrawberryglass"
+	glass_name = "Cosmic Strawberry"
+	glass_desc = "Cosmic-Cola with a Strawberry Aftertaste."
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
+
+/datum/reagent/consumable/nukastrawberry/on_mob_life(mob/living/carbon/M)
+	M.drowsyness = 0
+	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
@@ -185,9 +228,12 @@
 	glass_icon_state = "nukaquartzglass"
 	glass_name = "Cosmic Quartz"
 	glass_desc = "An abomination of Americas favourite soda."
+	soda_heal_brute = 0.01
+	soda_heal_burn = 0.01
+	soda_heal_toxin = 0.01
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukaquartz/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -202,14 +248,14 @@
 	glass_icon_state = "nukaiceglass"
 	glass_name = "Iced Cosmic"
 	glass_desc = "Cosmic. Stay frosty."
+	soda_heal_brute = 0.05
+	soda_heal_burn = 0.15
+	soda_heal_toxin = 0.05
 
 /datum/reagent/consumable/nukaice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
 	M.drowsyness = 0
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.1)
-		M.adjustFireLoss(-0.1)
 	..()
 	. = TRUE
 
@@ -244,11 +290,12 @@
 	glass_icon_state = "nukarayglass"
 	glass_name = "Cosmic Ray"
 	glass_desc = "A Cosmic mixture of both Cosmic victory and orange."
+	soda_heal_brute = 2
+	soda_heal_burn = 2
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukaray/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -263,11 +310,12 @@
 	glass_icon_state = "nukarushglass"
 	glass_name = "Cosmic Rush"
 	glass_desc = "A Cosmic mixture of both Cosmic victory and wild."
+	soda_heal_brute = 1.5
+	soda_heal_burn = 1.5
+	soda_heal_toxin = 1.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukarush/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustBruteLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
 	M.drowsyness = 0
 	M.AdjustSleeping(-60, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -284,9 +332,12 @@
 	glass_icon_state = "nukanewglass"
 	glass_name = "New-Cosmic Cola"
 	glass_desc = "The tastiest Hybridisation of Cosmic-Colas."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.5
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukanew/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustStun(-3, 0)
 	M.AdjustKnockdown(-3, 0)
 	M.AdjustUnconscious(-3, 0)
@@ -303,6 +354,10 @@
 	glass_icon_state = "nukaberryglass"
 	glass_name = "Cosmic Berry"
 	glass_desc = "Cosmic-Cola with a Berry Aftertaste."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukacooler
 	name = "Cosmic Cooler"
@@ -312,6 +367,10 @@
 	glass_icon_state = "nukacoolerglass"
 	glass_name = "Cosmic Cooler"
 	glass_desc = "Insanely cold Cosmic-Cola, Freezing the air that surrounds it."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.35
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukacooler/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-60 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
@@ -327,10 +386,14 @@
 	glass_icon_state = "nukafreeglass"
 	glass_name = "Diet Cosmic"
 	glass_desc = "Cosmic-Cola with no added sugars!"
+	soda_heal_brute = 0.01
+	soda_heal_burn = 0.01
+	soda_heal_toxin = 0
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukafree/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(0.1*REM, 0)
 	M.nutrition = max(M.nutrition - 3, 0)
 	M.overeatduration = 0
 	M.drowsyness = 0
@@ -345,11 +408,12 @@
 	glass_icon_state = "nukafruttiglass"
 	glass_name = "Cosmic Frutti"
 	glass_desc = "The frutiest of Cosmic."
+	soda_heal_brute = 0.5
+	soda_heal_burn = 0.5
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/nukafrutti/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	..()
 	. = TRUE
@@ -365,11 +429,11 @@
 	glass_icon_state = "nukafloatglass"
 	glass_name = "Nuka Cosmic"
 	glass_desc = "A delicious blend of ice-cream and classic Cosmic-Cola!"
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.05
+	soda_heal_toxin = 0.1
 
 /datum/reagent/consumable/nukafloat/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.1)
-		M.adjustFireLoss(-0.1)
 	..()
 	. = 1
 
@@ -382,6 +446,10 @@
 	glass_icon_state = "sunsetfloatglass"
 	glass_name = "Sunset Float"
 	glass_desc = "A delicious blend of ice-cream and classic Sunset Sass!"
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.05
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/bawlsshake
 	name = "Bawls Shake"
@@ -392,6 +460,10 @@
 	glass_icon_state = "bawlsshakeglass"
 	glass_name = "Bawls Shake"
 	glass_desc = "A blended shake consumed by those on high energy blitz-lifestyles."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/jakeshake
 	name = "Jake Shake"
@@ -402,9 +474,12 @@
 	glass_icon_state = "jakeshakeglass"
 	glass_name = "Jake Shake"
 	glass_desc ="Jakes patented shake of Jake."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/jakeshake/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -420,9 +495,12 @@
 	glass_icon_state = "sweetwaterfloatglass"
 	glass_name = "Sweetwater Float"
 	glass_desc = "The sweetest water."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sweetwaterfloat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -438,9 +516,12 @@
 	glass_icon_state = "sunsetterglass"
 	glass_name = "Sunsetter"
 	glass_desc = "For when the days dawn, lest brings a brighter tommorrow."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/sunsetter/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -458,7 +539,7 @@
 	glass_desc = "A blended shake consisting of yucca and creamy goodness."
 
 /datum/reagent/consumable/yuccashake/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REM, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -473,6 +554,10 @@
 	glass_icon_state = "bawlsglass"
 	glass_name = "glass of Balls Guarana"
 	glass_desc = "Beverage of the Balls Guarana Company."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.075
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/bawls/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-2)
@@ -493,14 +578,15 @@
 	glass_icon_state = "bigred"
 	glass_name = "bottle of Atomic Red"
 	glass_desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk."
+	soda_heal_brute = 0.075
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.1
+	soda_heal_brain = 0.5
 
 /datum/reagent/consumable/big_red/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.05)
-		M.adjustFireLoss(-0.05)
 	..()
 	. = 1
 

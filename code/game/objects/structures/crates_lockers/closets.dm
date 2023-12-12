@@ -650,6 +650,9 @@
 	icon = 'icons/fallout/objects/furniture/closet.dmi'
 	icon_state = "gray"
 
+/obj/structure/closet/locker/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /obj/structure/closet/locker/oldstyle  //modded Eris sprite
 	icon_state = "oldstyle"
 

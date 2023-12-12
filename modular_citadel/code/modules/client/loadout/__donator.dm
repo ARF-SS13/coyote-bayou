@@ -159,12 +159,11 @@
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
 	new /obj/item/clothing/under/f13/enclave/peacekeeper(src)
-	new /obj/item/clothing/suit/armor/heavy/riot/retrofitted/worn(src)
+	new /obj/item/clothing/suit/armor/medium/combat/enclave/aldric(src)
 	new /obj/item/melee/transforming/plasmacutter/regular/eve(src)
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/gun/energy/laser/plasma/castereve(src)
 	new /obj/item/bedsheet/zebra(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/aldric(src)
 
 /datum/gear/donator/kits/rinpin
 	name = "Lee's stash"
@@ -265,6 +264,7 @@
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
+	new /obj/item/toy/scale(src)
 
 /datum/gear/donator/kits/bwoincognito
 	name = "Tasald's Kit"
@@ -366,6 +366,26 @@
 	new /obj/item/melee/unarmed/brass/spiked(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
 
+/datum/gear/donator/kits/calebc789
+	name = "The old fashioned"
+	path = /obj/item/storage/box/large/custom_kit/calebc789
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc789/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sovietantimaterial(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+	new /obj/item/ammo_box/a50MGbox(src)
+
+/datum/gear/donator/kits/calebc7892
+	name = "The Liberation"
+	path = /obj/item/storage/box/large/custom_kit/calebc7892
+	ckeywhitelist = list("calebc789")
+
+/obj/item/storage/box/large/custom_kit/calebc7892/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/z34rifle/needlercustom(src)
+	new /obj/item/ammo_box/needlercapsule(src)
+	new /obj/item/ammo_box/needlercapsule(src) //provided two given when I spawned some in for testing, some came empty or half of their capsule. Needs fixing when possible.
+
 // D
 
 /datum/gear/donator/kits/dameonowen
@@ -445,6 +465,16 @@
 	new /obj/item/clothing/under/trek/medsci/voy(src)
 	new /obj/item/gun/energy/laser/pistol/phaser(src)
 	new /obj/item/gun/energy/laser/pistol/phaser/disable(src)
+
+/datum/gear/donator/kits/dirtyoldharry
+	name = "Custom loadout kit."
+	path = /obj/item/storage/box/large/custom_kit/dirtyoldharry
+	ckeywhitelist = list("DirtyOldHarry")
+
+/obj/item/storage/box/large/custom_kit/dirtyoldharry/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
 
 // E
 
@@ -742,7 +772,7 @@
 	new /obj/item/clothing/suit/armor/light/duster/russian_coat(src)
 	new /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2(src)
 	new /obj/item/clothing/head/kevlarhelmet/rus1(src)
-	new /obj/item/gun/energy/laser/LaserAK/jaggi(src)
+	new /obj/item/gun/energy/laser/LaserAK/worn/jaggi(src)
 
 
 /datum/gear/donator/kits/jaggachi_7
@@ -825,9 +855,18 @@
 	new /obj/item/ammo_box/a45lcbox(src)
 	new /obj/item/ammo_box/a45lcbox(src)
 
+/datum/gear/donator/kits/littleplayer0102
+	name = "The Brotherhood Specialist"
+	path = /obj/item/storage/box/large/custom_kit/littleplayer0102
+	ckeywhitelist = list("littleplayer0102")
 
-
-
+/obj/item/storage/box/large/custom_kit/littleplayer0102/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/ak556/custom(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/clothing/suit/armor/outfit/custompa(src)
+	new /obj/item/clothing/under/f13/recon(src)
+	new /obj/item/clothing/accessory/bos/paladin(src)
+	new /obj/item/clothing/head/droptrooper/custompahelmet(src)
 // M
 
 /datum/gear/donator/kits/mathiel
@@ -1015,6 +1054,18 @@
 /obj/item/storage/box/large/custom_kit/pixelexip2/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/hunting/special(src)
 
+/datum/gear/donator/kits/pappavol
+	name = "Bolter And Armor Kit"
+	path = /obj/item/storage/box/large/custom_kit/pappavol
+	ckeywhitelist = list("PappaVol")
+
+/obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/compact14mmrifle/custom(src)
+	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/pappavol(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/pappavol(src)
+
 /datum/gear/donator/kits/planetary
 	name = "Collector"
 	path = /obj/item/storage/box/large/custom_kit/planetary
@@ -1145,6 +1196,18 @@
 /obj/item/storage/box/large/custom_kit/rubeebee/PopulateContents()
     new /obj/item/clothing/suit/armor/light/leather/durathread(src)
 
+/datum/gear/donator/kits/ruinerk
+	name = "Custom revolver kit"
+	path = /obj/item/storage/box/large/custom_kit/ruinerk
+	ckeywhitelist = list("RUINEREK")
+
+/obj/item/storage/box/large/custom_kit/ruinerk/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers(src)
+	new /obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/ammo_box/c9mm(src)
+
+
 // S
 
 /datum/gear/donator/kits/sage1990
@@ -1179,7 +1242,7 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
+	new /obj/item/gun/ballistic/automatic/fg42tox(src)
 	new /obj/item/ammo_box/a308box(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 /datum/gear/donator/kits/seermankhajiit002
@@ -1193,6 +1256,14 @@
 	new /obj/item/pet_carrier/paws(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
+/datum/gear/donator/kits/SilencedMP5A5
+	name = "Arroyo's Kit"
+	path = /obj/item/storage/box/large/custom_kit/SilencedMP5A5
+	ckeywhitelist = list("SilencedMP5A5")
+
+/obj/item/storage/box/large/custom_kit/SilencedMP5A5/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/arroyo(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/arroyo(src)
 /datum/gear/donator/kits/smytheguy
 	name = "Main ARG Research group kit"
 	path = /obj/item/storage/box/large/custom_kit/smytheguy
@@ -1224,22 +1295,23 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit003/PopulateContents()
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/a308box(src)
-	new /obj/item/gun/ballistic/automatic/w2000(src)
+	new /obj/item/gun/ballistic/automatic/gewehr41civ/tox(src)
 	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit004
-	name = "The Latos Agent G36 version"
+	name = "The Icelandic Latos Agent"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit004
 	ckeywhitelist = list("seermankhajiit00")
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit004/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/g36custom(src)
-	new /obj/item/ammo_box/a556(src)
-	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
+	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
@@ -1352,17 +1424,38 @@
 
 // T
 
-/datum/gear/donator/kits/thingpony
-	name = "The Ultra Cutie Kit"
-	path = /obj/item/storage/box/large/custom_kit/thingpony
+/datum/gear/donator/kits/thingpony/teras
+	name = "Teras gun"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/teras
 	ckeywhitelist = list("thingpony")
 
-/obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
-	new /obj/item/clothing/suit/hooded/outcast(src)
-	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+/obj/item/storage/box/large/custom_kit/thingpony/teras/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
+
+/datum/gear/donator/kits/thingpony/fleur
+	name = "fleur's necklace"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/fleur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/fleur/PopulateContents()
 	new /obj/item/clothing/neck/customfleur(src)
+
+/datum/gear/donator/kits/thingpony/warmfur
+	name = "Warmfur's clothing"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/warmfur
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/warmfur/PopulateContents()
 	new /obj/item/clothing/under/tribalcustom(src)
+
+/datum/gear/donator/kits/thingpony/iris
+	name = "Iris's pack"
+	path = /obj/item/storage/box/large/custom_kit/thingpony/iris
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/iris/PopulateContents()
+	new /obj/item/clothing/under/tribaliris(src)
+	new /obj/item/gun/ballistic/shotgun/s163/thingblessed(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
@@ -1417,6 +1510,26 @@
 /obj/item/storage/box/large/custom_kit/tk420634_4/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
+/datum/gear/donator/kits/thelasthosea2
+	name = "Bren loadout"
+	path = /obj/item/storage/box/large/custom_kit/thelasthosea2
+	ckeywhitelist = list("ThelastHosea2")
+
+/obj/item/storage/box/large/custom_kit/thelasthosea2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/bren/custom(src)
+	new /obj/item/ammo_box/magazine/bren(src)
+	new /obj/item/ammo_box/a308box(src)
+
+/datum/gear/donator/kits/triplewammy
+	name = "Service rifle doggo loadout"
+	path = /obj/item/storage/box/large/custom_kit/triplewammy
+	ckeywhitelist = list("Triple_Wammy")
+
+/obj/item/storage/box/large/custom_kit/triplewammy/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/service(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/a556(src)
+
 /datum/gear/donator/kits/tonyburritos
 	name = "NCR Scout"
 	path = /obj/item/storage/box/large/custom_kit/tonyburritos
@@ -1462,6 +1575,7 @@
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
+	new /obj/item/clothing/suit/armor/medium/combat/bos/cylphie(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -1704,3 +1818,48 @@
 	new /obj/item/kit_spawner/townie/mayor(src)
 
 
+/datum/gear/donator/kits/fourty2
+	name = "Swamp star box"
+	path = /obj/item/storage/box/large/custom_kit/fourty2
+	ckeywhitelist = list("fourty2")
+
+/obj/item/storage/box/large/custom_kit/fourty2/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
+	new  /obj/item/reagent_containers/food/drinks/flask(src)
+	new  /obj/item/weldingtool/largetank(src)
+	new  /obj/item/clothing/suit/space/hardsuit/lavaknight(src)
+	new  /obj/item/clothing/glasses/welding(src)
+
+//for Gitts
+
+/obj/item/gun/ballistic/automatic/ww1selfloader/smelly
+	name = "Anti-Preservative"
+	desc = "A Mauser M1906 Selbstlader. Though many would call it a museum piece, this old firearm is surprisingly still in wonderful condition, and even appears to have some aftermarket modifications made to it, most notably its ability to accept .30-06 rounds. The letters 'FDH' are crudely carved onto the top of the stock in a vertical stack, clearly legible to anyone shouldering the rifle."
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly
+	name = "Migraine"
+	desc = "The PM Makarov, a compact pistol designed by the Soviet Union, though this one is modified to accept the more common 9x19mm round. It also has the letters 'FDH' crudely etched into the bakelite pistol grips on either side."
+
+/obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly
+	name = "DeHyde's Coat"
+	desc = "A custom-tailored armoured trench coat with extra length and a raised collar. There's a flower embroidered onto the back, somewhat faded, and the letters 'FDH' are scribbled onto an inside pocket."
+
+/obj/item/clothing/glasses/red/smelly
+	name = "Pristine Red Sunglasses"
+	desc = "A pair of shiny mirrored red spectacles which always seem to catch the light. On one of the earpieces, the letters 'FDH' are very carefully scratched into the plastic."
+
+/obj/item/clothing/collectable/tophat/smelly
+	name = "Smelly Tophat"
+	desc = "A tailor-made tophat that smells awfully of chemical preservative. The letters 'FDH' are written on the inner liner in permanent marker."
+
+/datum/gear/donator/kits/gittsy
+	name = "Smelly box"
+	path = /obj/item/storage/box/large/custom_kit/gittsy
+	ckeywhitelist = list("Gittsy")
+
+/obj/item/storage/box/large/custom_kit/gittsy/PopulateContents()
+	new /obj/item/clothing/collectable/tophat/smelly(src)
+	new  /obj/item/clothing/glasses/red/smelly(src)
+	new  /obj/item/clothing/suit/armor/medium/duster/town/embroidered/smelly(src)
+	new  /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/smelly(src)
+	new  /obj/item/gun/ballistic/automatic/ww1selfloader/smelly(src)

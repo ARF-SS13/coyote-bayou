@@ -514,3 +514,67 @@
 	if(I.reagents)
 		I.reagents.trans_to(reagents, I.reagents.total_volume)
 	remove_object(I)
+
+
+// Wooden & stone cups and mugs, leather waterskin
+
+/obj/item/reagent_containers/glass/woodmug
+	name = "wooden mug"
+	desc = "A curved piece of wood with a hollow dug out of it. For those who prefer slightly more civilized means of alcoholism, but can't afford a glass."
+	custom_materials = list(/datum/material/wood = 500)
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "wooden_mug"
+
+// This is copied over from the bowl, just so that I could showcase a bit of the liquid inside
+
+	var/fill_icon = 'icons/obj/drinks.dmi'
+	var/fill_state = "wooden_mug_full"
+
+/obj/item/reagent_containers/glass/woodmug/on_reagent_change(changetype)
+	..()
+	update_icon()
+
+
+/obj/item/reagent_containers/glass/woodmug/update_icon_state()
+	if(!reagents || !reagents.total_volume)
+		icon_state = "wooden_mug"
+
+/obj/item/reagent_containers/glass/woodmug/update_overlays()
+	. = ..()
+	if(reagents && reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state)
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		. += filling
+
+/obj/item/reagent_containers/glass/woodmug/stone
+	name = "stone mug"
+	desc = "A drinking mug carved from a hefty river stone. Drink and strike the stone!"
+	custom_materials = list(/datum/material/sandstone = 500)
+	icon_state = "stone_mug"
+	fill_state = "stone_mug_full"
+
+
+/obj/item/reagent_containers/glass/woodmug/stone/update_icon_state()
+	if(!reagents || !reagents.total_volume)
+		icon_state = "stone_mug"
+
+/obj/item/reagent_containers/glass/woodmug/cup
+	name = "wooden cup"
+	desc = "A simple wooden cup hewn from a single piece of wood."
+	icon_state = "wooden_cup"
+	fill_state = "wooden_cup_full"
+
+
+/obj/item/reagent_containers/glass/woodmug/cup/update_icon_state()
+	if(!reagents || !reagents.total_volume)
+		icon_state = "wooden_cup"
+
+/obj/item/reagent_containers/glass/waterskin
+	name = "leather waterskin"
+	desc = "A large pouch made from animal bits, meant to hold water or other liquids. It's best not to think which part of the animal this is."
+	custom_materials = list(/datum/material/leather = 500)
+	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 60, 120)
+	volume = 120
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "waterskin"
+	slot_flags = INV_SLOTBIT_BELT // Tie it to your belt

@@ -231,7 +231,7 @@
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
 		/datum/firemode/burst/three/slow,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/semi_auto
 	)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -333,7 +333,7 @@
 	name = "worn-out 10mm submachine gun"
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Its grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	worn_out = TRUE //a lazy way to overlay the worn sprite variant onto the gun
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T3
 	init_recoil = SMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -403,6 +403,19 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 
+//tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
+	name = ".22 machine pistol"
+	desc = "A compact, lightweight way to put a lot of bullets downrange."
+	icon = 'modular_coyote/icons/objects/automatic.dmi'
+	icon_state = "tec9"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
+	weapon_class = WEAPON_CLASS_SMALL
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	can_suppress = TRUE
+
 //MP40: a uzi but with different flavor
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp40
 	name = "Maschinenpistole 40"
@@ -426,19 +439,6 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
-
-//tec-9 but in .22, compared to .22 pistol, is automatic, but less damage, not silenced
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22/tec22
-	name = ".22 machine pistol"
-	desc = "A compact, lightweight way to put a lot of bullets downrange."
-	icon = 'modular_coyote/icons/objects/automatic.dmi'
-	icon_state = "tec9"
-	mag_type = /obj/item/ammo_box/magazine/m22
-	init_mag_type = /obj/item/ammo_box/magazine/m22
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended, /obj/item/ammo_box/magazine/m22/extended/empty)
-	weapon_class = WEAPON_CLASS_SMALL
-	damage_multiplier = GUN_LESS_DAMAGE_T1
-	can_suppress = TRUE
 
 //rockwell: starter tier bad quality 9mm smg
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/rockwell
@@ -559,7 +559,7 @@
 /obj/item/gun/ballistic/automatic/smg/cg45/worn
 	name = "Worn Carl Gustaf 10mm"
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design. This one has seen better days"
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T3 //234 DPS
 	init_recoil = SMG_RECOIL(1.2, 1.2)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
@@ -631,7 +631,7 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	w_class = WEIGHT_CLASS_NORMAL // Kelp again, it's Normal once more but no more akimbo. Please actually edit relevant comments when you tweak pls.
 	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //260 dps
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200,
@@ -649,8 +649,7 @@
  * Light 10mm SMG
  * 10mm
  * Huge magazine
- * Even Less damage
- * Less accurate
+ * Less damage
  * One-handed
  * Akimbo!
  * Common
@@ -659,12 +658,7 @@
 /obj/item/gun/ballistic/automatic/smg/p90/worn
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	init_firemodes = list(
-		/datum/firemode/burst/five/slow,
-		/datum/firemode/semi_auto/fast
-	)
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 //208 dps
 
 
 /* * * * * * * * * * *
@@ -711,7 +705,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/smg/mp5
+/obj/item/gun/ballistic/automatic/smg/mp5sd
 	name = "MP-5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
@@ -1168,13 +1162,13 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/combat/worn/brim
-	name = "Trusty Combat Carbine"
+	name = "Blessed Trusty Combat Carbine"
 	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
 		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
 		looks to be of high-quality crafting, the precision of such parts look a bit... off, like a master swordsmith were asked to forge a \
 		gun by hand. As such, the internal mechanisms and rifling are not <i>quite</i> the right size for a .45ACP round, and the sight \
 		picture is a bit <i>Fuzzy</i>. Every part is, however, built as rugged as its maker, and can be used as a very effective melee \
-		weapon without any risk of damaging it."
+		weapon without any risk of damaging it. Engraved at the stock is a shimmering green snake within a triangle"
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
@@ -2048,7 +2042,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/w3006
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(/datum/firemode/semi_auto/slower)
@@ -2075,7 +2069,7 @@
 	item_state = "gold_sniper"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 
 /* * * * * * * * * * *
  * Explorer Sniper Rifle
@@ -2275,6 +2269,33 @@
 	suppressor_y_offset = 27
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+/* * * * * * * * * * *
+ * Worn Type 93 assault rifle
+ * Chinese 5.56mm autorifle
+ * .223 / 5.56mm
+ * Less damage
+ * Less accuracy
+ * Slower to shoot
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/type93/worn //156 dps
+	name = "\improper Worn Type 93"
+	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "type93"
+	item_state = "handmade_rifle"
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/burst/two/fastest
+	)
+
+	can_suppress = FALSE
+
 ///////////////////////////////
 //// M41 Battle Rifle ///////
 /// + fast burst fire rate////
@@ -2330,7 +2351,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = AUTORIFLE_RECOIL(1.6, 1.4)
 	init_firemodes = list(/datum/firemode/burst/three/slower ,
@@ -2366,33 +2387,6 @@
 	can_scope = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-/* * * * * * * * * * *
- * Worn Type 93 assault rifle
- * Chinese 5.56mm autorifle
- * .223 / 5.56mm
- * Less damage
- * Less accuracy
- * Slower to shoot
- * Uncommon
- * * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/type93/worn //24dmg
-	name = "\improper Worn Type 93"
-	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "type93"
-	item_state = "handmade_rifle"
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/burst/five/slow
-	)
-
-	can_suppress = FALSE
 
 /* * * * * * * * * * *
  * BOZAR
@@ -2621,6 +2615,28 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
+/obj/item/gun/ballistic/automatic/ak556/custom // Custom
+	name = "Custom Ak-74 assault rifle"
+	desc = "A AK74 assault rifle. Rechambered in 5mm Rifle NATO , this assault rifle was the answer for a more lighter and far more easier to carry. Even allows for being able to be slung around or against the back or hip of someone. This one seems to be an all black version, no wooden furniture in sight it seems."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	item_state = "ak74"
+	icon_state = "ak74"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = AUTORIFLE_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100 ,
+		/datum/firemode/semi_auto
+		)
+	can_flashlight = FALSE
+	can_bayonet = FALSE
+	can_suppress = TRUE
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+
 //Saiga 12 shotgun
 /obj/item/gun/ballistic/automatic/saiga12k
 	name = "Saiga-12 Assault shotgun"
@@ -2668,7 +2684,7 @@
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-/obj/item/gun/ballistic/automatic/aksmol/aldric
+/obj/item/gun/ballistic/automatic/aksmol/aldric //custom weapon, unused.
 	name = "Ak74u Custom"
 	desc = "A customized AK74u assault rifle. Rechambered in 5.45x39 NATO, this assault rifle was the answer for a more lighter assault rifle. This one comes with wood furniture and has no stock, allowing much easier carry at the cost of higher recoil."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -2721,6 +2737,7 @@
  * Baseline 7.62 autorifle
  * .308 / 7.62
  * Uncommon
+ * 207 dps
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/fnfal
@@ -2742,7 +2759,9 @@
 	)
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
-
+//259 dps pristine version
+/obj/item/gun/ballistic/automatic/fnfal/pristine
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 
 
 /* * * * * * * * * * * *
@@ -2776,6 +2795,30 @@
 	can_suppress = FALSE
 	can_flashlight = FALSE
 	zoom_factor = 1.1
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+
+/obj/item/gun/ballistic/automatic/z34rifle/needlercustom
+	name = "The People's Rifle"
+	desc = "A Chinese-made Type 79 marksman rifle, a knockoff of the soviet Dragunov SVD produced for the PRC's army units and special forces. This one appears to be particularly weathered from time in the wastes, a faded red cloth wrapped around a scuffed stock, some scratches on the gun metal, and some text etched onto the PSO-1 scope in Chinese."
+	icon_state = "zastava"
+	item_state = "zastava"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlesvd
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlesvd
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(2, 1.9)
+	init_firemodes = list (
+		/datum/firemode/semi_auto/slower
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+	zoom_factor = 0.9
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 /obj/item/gun/ballistic/automatic/z34rifle/custom
@@ -2851,6 +2894,52 @@
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
+/obj/item/gun/ballistic/automatic/rifle47mm
+	name = "Sig Rifle 550"
+	desc = "A SIG SG 550 rechambered in 4.7mm caseless ammo. Despite the new caliber type, it performs as one would expect which is precise, quick, and customizable. The gun fires a bit quicker and feels a tad bit lighter to carry."
+	icon_state = "sigrifle"
+	item_state = "R82"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	init_mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.7, 1.6)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm150 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+
+/obj/item/gun/ballistic/automatic/rifle47mm/china
+	name = "Chinese 4.7mm assault rifle"
+	desc = "A QBZ-95-1 assault rifle rechambered in 4.7mm caseless ammo, a odd collab between West Germany's 4.7mm cartridge and the PLA. Despite the new caliber type, it performs like its own original caliber. The gun seems to fire quicker and is a shy bit more accurate with lesser recoil!"
+	icon_state = "chinarifle"
+	item_state = "famas"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	init_mag_type = /obj/item/ammo_box/magazine/rifle47mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = AUTORIFLE_RECOIL(1.5, 1.4)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_flashlight = FALSE
+
 
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle // Less damage dealing than the AK47 but has a high ROF and good recoil.
@@ -2877,34 +2966,6 @@
 	can_suppress = TRUE
 	can_flashlight = FALSE
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/tox
-	name = "Custom G3 Stjarnarriffill"
-	desc = "A custom and refined G3 battle rifle. With proper engravings, this G3 has a scene of a moth and feline under a crescent moon on the stock of the battle rifle. Still chambered in 7.62 NATO, it's owner's name, which is a 'Tox Mckit' is engraved onto the reciever's lower end."
-	icon_state = "g3"
-	item_state = "g3"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/m308/ext
-	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T3
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = AUTORIFLE_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slower,
-		/datum/firemode/automatic/rpm100
-	)
-	can_scope = TRUE
-	can_suppress = TRUE
-	can_flashlight = FALSE
-	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-
-
-
 
 /* * * * * * * * * * *
  * AR-10 Armalite
@@ -2953,32 +3014,31 @@
 		/datum/firemode/semi_auto/slow
 	)
 
-
-// Custom sniper rifle, loadout only, plans to change. ETA is TBA
-/obj/item/gun/ballistic/automatic/w2000 //Custom weapon, will be a loot gun eventually
-	name = "Custom Wa-2000 sniper rifle"
-	desc = "A custom version of a Wa-2000 rifle. This unique looking rifle has changed its wooden furniture for more pristine and cleaner looking wood. The metals are engraved with baroque motifs and on butt of the rifle is a small scene of a moth taking flight. It is chambered in 7.62 NATO but can be chambered in .300 magnum or 7.5mm. Etched on the grip portion of the butt is the name 'Tox Mckit'."
-	icon_state = "w2000"
-	item_state = "w2000"
+//custom gun
+/obj/item/gun/ballistic/automatic/fg42tox
+	name = "Custom FG-42 rifle"
+	desc = "A customized FG-42 rifle. This rifle was developed for paratroopers during WW2. A rather nifty and reliable rifle if not unbalanced due to a heavier magazine located on the left side. Comes witha a right-sided charging handle and a foldable bipod. This one seems to come with a scope!The rifle itself is made of a lovingly made and polished maple wood. A scene of a moth and cat is etched into the stock of the rifle. The metal is engraved with baroque motifs. A weapon fit, for the Queen."
+	icon_state = "fg42"
+	item_state = "fg42"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
-	init_mag_type = /obj/item/ammo_box/magazine/m308
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m308/ext , /obj/item/ammo_box/magazine/m308/ext/empty)
+	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T3
-	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.3, 1.3)
+	init_recoil = CARBINE_RECOIL(1.2, 1.3)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto ,
+		/datum/firemode/automatic/rpm100
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
-	zoom_factor = 1.1
-	can_suppress = TRUE
+	can_scope = TRUE
+	can_suppress = FALSE
 	can_bayonet = FALSE
+	zoom_factor = 0.9
+	fire_sound = 'sound/f13weapons/fg42.ogg'
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
@@ -3036,9 +3096,9 @@
 	can_scope = TRUE
 
 // Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
-/obj/item/gun/ballistic/automatic/g36custom
-	name = "Custom G36C Assault rifle"
-	desc = "A custom version of a G36C assault rifle. Chambered in 5.56 NATO, this customized G36C assault rifle is made from a more resistant and durable type of material. Sporting a black and white finish. Adorning the metal bits of the gun, including the exterior of the barrel, are engraved baroque motifs. The gun comes with a built in red dot sight manufactured into the carry handle. A reliable assault rifle that saw extensive use by West Germany. The charging handle can flip between left or right side. This one seems to be fitted to the right side for a more right-side handed charging handle."
+/obj/item/gun/ballistic/automatic/g36customtox //unused, note from Tox: Will redo entirely eventually
+	name = " G36C Assault rifle"
+	desc = "A G36C base"
 	icon_state = "g36"
 	item_state = "g36"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -3175,7 +3235,7 @@
 	icon_state = "lsw"
 	item_state = "lsw"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/extended
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -3244,6 +3304,26 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm200
+	)
+
+/obj/item/gun/ballistic/automatic/bren/custom
+	name = "Custom Bren gun"
+	desc = "A rather heavy gun that served as the primary British infantry LMG throughout the second world war."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
+	icon_state = "bren"
+	item_state = "bren"
+	mag_type = /obj/item/ammo_box/magazine/bren
+	init_mag_type = /obj/item/ammo_box/magazine/bren
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T3
+	init_recoil = LMG_RECOIL(1.2, 1.2)
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75 ,
+		/datum/firemode/semi_auto/slower
 	)
 
 
@@ -3546,6 +3626,34 @@
 	can_flashlight = FALSE
 
 
+
+
+//custom ptrs rifle
+
+/obj/item/gun/ballistic/automatic/sovietantimaterial
+	name = "Big Bienvenue"
+	desc = "An old, pre-war American knockoff of an even older Soviet anti-tank rifle, sold as a big game hunting rifle before the bombs fell. This one appears to be well-maintained, and has what appear to be tally marks etched into the stock."
+	icon_state = "ptrs"
+	item_state = "ptrs"
+	mag_type = /obj/item/ammo_box/magazine/internal/ptrs
+	init_mag_type = /obj/item/ammo_box/magazine/internal/ptrs
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
+	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (1.4 , 1.5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	zoom_factor = 0.9
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+
 // Bolter Assault rifle.
 // Has insane recoil but makes up for extreme damage
 // low ROF but the damage makes up for it witha T2. Unique tier, might be too stronk
@@ -3572,6 +3680,28 @@
 	can_bayonet = FALSE
 	can_flashlight = FALSE
 
+/obj/item/gun/ballistic/automatic/compact14mmrifle/custom
+	name = "Custom T55E1 Assault Carbine"
+	desc = "A T55E1 assault compact assault rifle. Chambered in 10mm, it seems to be a custom assault carbine. It is much lighter than its bigger counterpart."
+	icon_state = "bolter"
+	item_state = "bolter"
+	mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = SMG_RECOIL (1.3 , 1.4)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100 ,
+		/datum/firemode/semi_auto/fast
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
 
 
 

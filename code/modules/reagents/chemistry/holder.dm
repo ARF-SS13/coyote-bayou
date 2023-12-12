@@ -329,6 +329,7 @@
 					need_mob_update += R.on_mob_life_synth(C)
 				else
 					need_mob_update += R.on_mob_life(C)
+				need_mob_update += R.post_mob_life(C)
 
 	if(can_overdose)
 		if(addiction_tick == 6)

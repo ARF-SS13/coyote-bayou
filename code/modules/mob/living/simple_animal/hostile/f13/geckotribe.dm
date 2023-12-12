@@ -99,7 +99,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -164,7 +164,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(10, 15, 20),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -281,7 +281,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -397,7 +397,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -531,7 +531,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -565,7 +565,7 @@
 		/obj/effect/spawner/lootdrop/f13/trash_medicine = 8,
 		/obj/item/gun/ballistic/bow/compoundbow = 1,
 		/obj/item/toy/plush/lizardplushie/kobold = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 1,
 		/obj/item/stack/sheet/bone = 2,
 		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
@@ -575,8 +575,8 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 2000
-	health = 2000
+	maxHealth = 1000
+	health = 1000
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -660,7 +660,7 @@
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(2000),
 		MOB_RETREAT_DISTANCE_LIST(3, 5, 7),
@@ -722,7 +722,7 @@
 		/obj/item/restraints/legcuffs/bola = 3,
 		/obj/item/twohanded/spearaxe = 1,
 		/obj/item/toy/plush/lizardplushie = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_unique = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 1,
 		/obj/item/stack/sheet/bone = 1,
 		/obj/item/stack/sheet/sinew = 1,)
 	butcher_difficulty = 1
@@ -732,8 +732,8 @@
 	peaceful = TRUE
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 3000
-	health = 3000
+	maxHealth = 1500
+	health = 1500
 	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -819,7 +819,7 @@
 
 	variation_list = list(
 		//MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(3000),
 		MOB_RETREAT_DISTANCE_LIST(0, 0, 0, 3, 3),

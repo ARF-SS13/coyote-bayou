@@ -1199,6 +1199,28 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a308(src)
 	new /obj/item/ammo_box/a308box(src)
 
+/obj/item/storage/box/gun/revolver/rev47
+	name = "4.7mm caseless revolver case"
+
+/obj/item/storage/box/gun/revolver/rev47/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver47mm(src)
+	new /obj/item/ammo_box/m473(src)
+
+/obj/item/storage/box/gun/revolver/rev5
+	name = "5mm revolver case"
+
+/obj/item/storage/box/gun/revolver/rev5/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver5mm(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+
+/obj/item/storage/box/gun/pistol/pistol47
+	name = "4.7mm pistol case"
+
+/obj/item/storage/box/gun/pistol/pistol47/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/pistol47mm(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/magazine/m47pistol(src)
+
 /// Semiauto pistols!
 
 /obj/item/storage/box/gun/pistol
@@ -1908,6 +1930,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
+
+/datum/loadout_box/revolver47
+	entry_tag = "4.7mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev47
+
+/datum/loadout_box/revolver5
+	entry_tag = "5mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev5
+
+/datum/loadout_box/pistol47mmm
+	entry_tag = "4.7mm caseless pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/pistol47
 
 /* /datum/loadout_box/sidewinder_magnum
 	entry_tag = "Multicaliber Magnum"

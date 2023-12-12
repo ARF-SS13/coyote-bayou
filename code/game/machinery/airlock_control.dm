@@ -132,18 +132,18 @@
 	flick("airlock_sensor_cycle", src)
 
 /obj/machinery/airlock_sensor/process()
-	if(on)
-		var/datum/gas_mixture/air_sample = return_air()
-		var/pressure = round(air_sample.return_pressure(),0.1)
-		alert = (pressure < ONE_ATMOSPHERE*0.8)
+	// if(on)
+		// var/datum/gas_mixture/air_sample = return_air()
+		// var/pressure = round(air_sample.return_pressure(),0.1)
+		// alert = (pressure < ONE_ATMOSPHERE*0.8)
 
-		var/datum/signal/signal = new(list(
-			"tag" = id_tag,
-			"timestamp" = world.time,
-			"pressure" = num2text(pressure)
-		))
+		// var/datum/signal/signal = new(list(
+		// 	"tag" = id_tag,
+		// 	"timestamp" = world.time,
+		// 	"pressure" = num2text(pressure)
+		// ))
 
-		radio_connection.post_signal(src, signal, range = AIRLOCK_CONTROL_RANGE, filter = RADIO_AIRLOCK)
+		// radio_connection.post_signal(src, signal, range = AIRLOCK_CONTROL_RANGE, filter = RADIO_AIRLOCK)
 
 	update_icon()
 

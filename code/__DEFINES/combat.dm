@@ -365,7 +365,7 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_BASE (TILES_TO_PIXELS(30)) //960 (30 tiles per second, 32 pixels per tile)
 
 /// Arrow speed defines
-#define ARROW_SPEED_BASE (BULLET_SPEED_BASE * 0.90)
+#define ARROW_SPEED_BASE (BULLET_SPEED_BASE / 3)
 
 /// Bullet damage modifier defines
 #define BULLET_MATCH_MULT_DAMAGE 1.25 // rare, pack a punch
@@ -816,8 +816,6 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define BULLET_SPEED_ARROW ARROW_SPEED_BASE
 #define BULLET_WOUND_ARROW 5
 #define BULLET_WOUND_ARROW_NAKED_MULT 10
-#define BULLET_BANE_DAMAGE_ARROW 10
-#define BULLET_BANE_FLAGS_ARROW SE_ALL_SIMPLEMOBS
 
 #define BULLET_DAMAGE_ARROW_EXPLOSIVE 0
 #define BULLET_STAMINA_ARROW_EXPLOSIVE 0

@@ -67,12 +67,7 @@
 /proc/generate_taste_message(minimum_percent=15, atom/thing_tasted, datum/reagents/reagent_thing)
 	// the lower the minimum percent, the more sensitive the message is.
 	var/list/out = list()
-	var/list/flavors = list() //descriptor = strength
-	if(thing_tasted)
-		if(!islist(thing_tasted.tastes))
-			flavors = list("[thing_tasted.tastes]" = 1)
-		else
-			flavors = thing_tasted.tastes
+	var/list/flavors = istype(thing_tasted) ? SSlistbank.get_tastes(thing_tasted) : list() //descriptor = strength
 	var/datum/reagents/reagents_in = reagent_thing
 	if(minimum_percent <= 100)
 		if(reagents_in)

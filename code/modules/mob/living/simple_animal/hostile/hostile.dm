@@ -128,6 +128,8 @@
 	/// timer for despawning when lonely
 	var/lonely_timer_id
 
+	speed = 3//The default hostile mob speed. If you ever speed the mob ss again please raise this to compensate.
+
 /mob/living/simple_animal/hostile/Initialize(mapload)
 	. = ..()
 	set_origin(src)
@@ -395,6 +397,14 @@
 		var/mob/M = the_target
 		if(M.status_flags & GODMODE)
 			return FALSE
+		if(!M.client)
+			var/client_in_range = FALSE
+			for(var/client/C in GLOB.clients)
+				if(get_dist(M, C) < SSmobs.distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs)
+					client_in_range = TRUE
+					break
+			if(!client_in_range)
+				return FALSE
 
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
@@ -548,8 +558,12 @@
 			minimum_distance = 1
 		else
 			minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
-	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
-		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		if(prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+			move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+		if(prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+			set_varspeed(pick(variation_list[MOB_VARIED_SPEED]))
+
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

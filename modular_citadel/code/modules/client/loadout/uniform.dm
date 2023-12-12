@@ -3216,7 +3216,7 @@
 	path = /obj/item/clothing/under/syndicate/bloodred/sleepytime
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/greekdress 
+/datum/gear/uniform/greekdress
 	name = "Greek Dress"
 	cost = 0
 	path = /obj/item/clothing/under/greek_dress
@@ -3450,11 +3450,11 @@
 	path = /obj/item/clothing/under/kuddles/redflannel
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/kudds/blue 
+/datum/gear/uniform/kudds/blue
 	name = "Blue Flannel"
 	path = /obj/item/clothing/under/kuddles/blueflannel
 
-/datum/gear/uniform/kudds/white 
+/datum/gear/uniform/kudds/white
 	name = "White Flannel"
 	path = /obj/item/clothing/under/kuddles/whiteflannel
 
@@ -3462,7 +3462,7 @@
 	name = "Teal Flannel"
 	path = /obj/item/clothing/under/kuddles/tealflannel
 
-/datum/gear/uniform/kudds/blue 
+/datum/gear/uniform/kudds/blue
 	name = "Pink Flannel"
 	path = /obj/item/clothing/under/kuddles/pinkflannel
 
@@ -3470,7 +3470,7 @@
 	name = "Purple Flannel"
 	path = /obj/item/clothing/under/kuddles/purpleflannel
 
-/datum/gear/uniform/kudds/yellow 
+/datum/gear/uniform/kudds/yellow
 	name = "Yellow Flannel"
 	path = /obj/item/clothing/under/kuddles/yellowflannel
 
@@ -3505,3 +3505,21 @@
 /datum/gear/uniform/kudds/brownpunkpants
 	name = "Brown Punk Pants"
 	path = /obj/item/clothing/under/kuddles/olivecargopunk
+
+/datum/gear/uniform/wasteland/loincloth/sunskirt
+	name = "Green Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/sunskirtgrey
+	name = "Grey scaled Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt_grey
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/halfskirt
+	name = "blue mid-rif skirt"
+	path = /obj/item/clothing/under/half_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL

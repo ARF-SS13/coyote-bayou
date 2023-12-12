@@ -87,7 +87,7 @@
 	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 
 /datum/reagent/consumable/ethanol/brocbrew/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-5*REM, 0)
 	..()
 	. = TRUE
 
@@ -101,8 +101,8 @@
 		last_added = new_blood_level - M.blood_volume
 		M.blood_volume = new_blood_level */
 	if(prob(33))
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
 		. = TRUE
 	..()
 
@@ -121,7 +121,7 @@
 	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 
 /datum/reagent/consumable/ethanol/yellowpulque/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-5*REM, 0)
 	..()
 	. = TRUE
 
@@ -135,8 +135,8 @@
 		last_added = new_blood_level - M.blood_volume
 		M.blood_volume = new_blood_level */
 	if(prob(33))
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
 	. = TRUE
 	..()
 
@@ -157,7 +157,7 @@
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-0.5*REM, 0)
 	..()
 	. = TRUE
 
@@ -216,7 +216,7 @@
 		if(R != src)
 			M.reagents.remove_reagent(R.type,2.5)
 	if(M.health > 20)
-		M.adjustToxLoss(0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(0.5*REM, 0)
 		. = TRUE
 	M.radiation += 0.1
 	return ..()
@@ -233,10 +233,10 @@
 
 /datum/reagent/consumable/ethanol/salgam/on_mob_life(mob/living/carbon/M)
 	if(prob(33))
-		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-1*REM, 0)
+		M.adjustFireLoss(-1*REM, 0)
 		. = TRUE
-	M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-2*REM, 0)
 	for(var/datum/reagent/toxin/R in M.reagents.reagent_list)
 		M.reagents.remove_reagent(R.type,1)
 	..()
@@ -252,6 +252,10 @@
 	glass_icon_state = "nukadarkglass"
 	glass_name = "Cosmic Dark"
 	glass_desc = "Cosmic Cola with a alcoholic twist."
+	soda_heal_brute = 0.1
+	soda_heal_burn = 0.1
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/ethanol/nukadark/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -270,10 +274,14 @@
 	glass_name = "Cosmic Victory"
 	glass_desc = "Cosmic Cola with an AMERICAN twist."
 	ghoulfriendly = TRUE //too american for ghouls not to taste it
+	soda_heal_brute = 1.0
+	soda_heal_burn = 0.05
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 100
+
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
 	ADD_TRAIT(M, TRAIT_BIG_LEAGUES, "[type]")
-	M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -293,12 +301,15 @@
 	glass_icon_state = "nukabombglass"
 	glass_name = "Cosmic Bombdrop"
 	glass_desc = "More spirit than Cosmic at this Rate."
+	soda_heal_brute = 1.5
+	soda_heal_burn = 0.05
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 100
 
 /datum/reagent/consumable/ethanol/nukabomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
 	if(prob(50))
 		to_chat(M, span_notice("[high_message]"))
-	M.adjustBruteLoss(-6*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -319,6 +330,10 @@
 	glass_icon_state = "nukacideglass"
 	glass_name = "Cosmiccide"
 	glass_desc = "The drink of a goddamn madman, say your sorrows when you drink this."
+	soda_heal_brute = 0.5
+	soda_heal_burn = 0.5
+	soda_heal_toxin = 2
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/ethanol/nukacide/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
@@ -338,12 +353,15 @@
 	glass_icon_state = "nukafancyglass"
 	glass_name = "Cosmic Fancy"
 	glass_desc = "A mixture of both Wild and cherry, making something absolutely tasty."
+	soda_heal_brute = 0.6
+	soda_heal_burn = 0.10
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
 	if(prob(20))
 		to_chat(M, span_notice("[high_message]"))
-	M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -359,9 +377,12 @@
 	glass_icon_state = "nukaloveglass"
 	glass_name = "Cosmic Love"
 	glass_desc = "A Cosmic-Cola twist on a passionate classic."
+	soda_heal_brute = 0.05
+	soda_heal_burn = 0.50
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/ethanol/nukalove/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -377,13 +398,13 @@
 	glass_icon_state = "nukapunchglass"
 	glass_name = "Cosmic Punch"
 	glass_desc = "A fruit punch mixture with a Cosmic kick."
+	soda_heal_brute = 4
+	soda_heal_burn = 4
+	soda_heal_toxin = 4
+	soda_heal_brain = 4
 
 /datum/reagent/consumable/ethanol/nukapunch/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustToxLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
 	if(prob(10))
 		M.vomit(20)
 	M.drowsyness = 0
@@ -401,9 +422,11 @@
 	glass_icon_state = "nukasunriseglass"
 	glass_name = "Cosmic Sunrise"
 	glass_desc = "A Cosmic-Cola original drink, totally original and first of its kind!"
+	soda_heal_brute = 0.05
+	soda_heal_burn = 0.25
+	soda_heal_toxin = 0.5
 
 /datum/reagent/consumable/ethanol/nukasunrise/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -421,7 +444,9 @@
 	glass_desc = "An extremely blue and glowing combination of Cosmic-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
-
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.25
+	soda_heal_toxin = 0.1
 
 /datum/reagent/consumable/ethanol/nukaquantum/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -434,14 +459,11 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
-		M.adjustBruteLoss(-0.2)
-		M.adjustFireLoss(-0.2)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 	. = TRUE
 
@@ -454,7 +476,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 
 /datum/reagent/consumable/ethanol/nukaxtreme //this is hell
@@ -468,6 +490,9 @@
 	glass_desc = "Like Quantum, but <BIG>EXTREME<BIG>."
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
+	soda_heal_brute = 0.15
+	soda_heal_burn = 0.15
+	soda_heal_toxin = 0.1
 
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>EXTREME</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
@@ -487,7 +512,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 	. = TRUE
 
@@ -514,7 +539,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 
 /* GO FUCK YOURSELF - Skewium
@@ -541,7 +566,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 */
 
@@ -556,18 +581,17 @@
 	glass_icon_state = "vimcapglass"
 	glass_name = "Vim Captains Blend"
 	glass_desc = "A glass of special vim holding the taste of the sea, Far from here."
+	soda_heal_brute = 0.25
+	soda_heal_burn = 0.25
+	soda_heal_toxin = 0.5
+	soda_heal_brain = 1
 
 /datum/reagent/consumable/ethanol/vimcap/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,0))
-	M.adjustBruteLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(0.2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustStaminaLoss(-0.5*REM, 0)
 	M.AdjustStun(-2, 0)
-	M.adjustToxLoss(-0.3, 0)
 
 	M.adjustStaminaLoss(-1, 0)
 	if(holder.has_reagent(/datum/reagent/consumable/frostoil))
@@ -575,11 +599,11 @@
 	..()
 	. = TRUE
 
-/datum/reagent/consumable/ethanol/vimcap/on_mob_delete(mob/living/M)
-	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
-	if(L)
-		L.damage += 50
-	..()
+// /datum/reagent/consumable/ethanol/vimcap/on_mob_delete(mob/living/M)
+// 	var/obj/item/organ/liver/L = M.getorganslot(ORGAN_SLOT_LIVER)
+// 	if(L)
+// 		L.damage += 50
+// 	..()
 
 //fallout cocktails - or "canon drinks i guess doe"
 
@@ -614,7 +638,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 	. = TRUE
 
@@ -623,7 +647,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()*/
 
 /datum/reagent/consumable/ethanol/bbrew
@@ -645,7 +669,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 	. = TRUE
 
@@ -654,7 +678,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 
 /datum/reagent/consumable/ethanol/bbrew2
@@ -668,7 +692,7 @@
 	glass_desc = "Underground river wine, stewed from logs and food poisoning."
 
 /datum/reagent/consumable/ethanol/bbrew2/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-0.4*REM, 0)
 	..()
 
 /datum/reagent/consumable/ethanol/dwastelander
@@ -682,7 +706,7 @@
 	glass_desc = "A wastelanders second favourite."
 
 /datum/reagent/consumable/ethanol/dwastelander/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.3*REM, 0)
 	..()
 
 /datum/reagent/consumable/ethanol/firebelly
@@ -718,7 +742,7 @@
 			if(isslime(M))
 				heating = rand(20,25)
 	M.adjust_bodytemperature(heating)
-	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-1*REM, 0)
 	if(prob(50))
 		M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
@@ -735,8 +759,8 @@
 
 /datum/reagent/consumable/ethanol/firecracker/on_mob_life(mob/living/carbon/M)
 	if(prob(33))
-		M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.4*REM, 0)
+		M.adjustFireLoss(-0.4*REM, 0)
 		. = TRUE
 	..()
 
@@ -854,14 +878,14 @@
 
 /datum/reagent/consumable/ethanol/species_drink/sludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
-		M.adjustFireLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustToxLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.25*REM, 0)
+		M.adjustBruteLoss(-0.25*REM, 0)
+		M.adjustToxLoss(-0.25*REM, 0)
 	else
 		if(ishuman(M))
 			if(prob(80))
 				M.vomit(10)
-				M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)
+				M.adjustToxLoss(4*REM, 0)
 			..()
 
 /datum/reagent/consumable/ethanol/species_drink/strongsludge
@@ -878,14 +902,14 @@
 
 /datum/reagent/consumable/ethanol/species_drink/strongsludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
-		M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustToxLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.4*REM, 0)
+		M.adjustBruteLoss(-0.4*REM, 0)
+		M.adjustToxLoss(-0.4*REM, 0)
 	else
 		if(ishuman(M))
 			if(prob(98))
 				M.vomit(50)
-				M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER, 0)
+				M.adjustToxLoss(10*REM, 0)
 		..()
 
 /datum/reagent/consumable/ethanol/sweetwater
@@ -932,7 +956,7 @@
 		M.playsound_local(M, 'sound/f13effects/explosion_fire.ogg', 100, 0)
 	if(prob(50))
 		M.playsound_local(M, 'sound/f13effects/alarm.ogg', 100, 0)
-	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-3*REM, 0)
 	M.dizziness +=1.5
 	M.drowsyness = 0
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -964,19 +988,19 @@
 	M.hallucination += 100
 	switch(current_cycle)
 		if(1 to 10)
-			M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
+			M.adjustToxLoss(1*REM, 0)
 		if(11 to 25)
-			M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
+			M.adjustToxLoss(2*REM, 0)
 		if(26 to 40)
-			M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
+			M.adjustToxLoss(3*REM, 0)
 		if(41 to INFINITY)
-			M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)
+			M.adjustToxLoss(4*REM, 0)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	ADD_TRAIT(M, TRAIT_IRONFIST, "[type]")
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 	. = TRUE
 
@@ -990,7 +1014,7 @@
 		QDEL_NULL(rage)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
-		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_BASIC)
 	..()
 
 /datum/reagent/consumable/ethanol/vaulttech
@@ -1027,8 +1051,8 @@
 
 /datum/reagent/consumable/ethanol/vaultboy/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
-	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.4*REM, 0)
+	M.adjustFireLoss(-0.4*REM, 0)
 	M.adjustToxLoss(-0.2, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
@@ -1049,7 +1073,7 @@
 		..()
 		. = TRUE
 
-/datum/reagent/consumable/ethanol/vaultgirl //praying to god this dosent become "femboy juice"
+/datum/reagent/consumable/ethanol/vaultgirl //praying to god this dosent become "femboy juice" //he aint listening
 	name = "Vault Girl"
 	description = "Gender equality! You have no idea what this is supposed to represent."
 	color = "#315585"
@@ -1062,8 +1086,8 @@
 
 /datum/reagent/consumable/ethanol/vaultgirl/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
-	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.4*REM, 0)
+	M.adjustFireLoss(-0.4*REM, 0)
 	M.adjustToxLoss(-0.2, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
@@ -1084,6 +1108,18 @@
 		..()
 		. = TRUE
 
+/datum/reagent/consumable/ethanol/vaultgirl/femboy // couldnt resist
+	name = "Femboy Juice"
+	description = "//praying to god this dosent become \"femboy juice\" //he aint listening"
+	color = "#315585"
+	boozepwr = 40
+	taste_description = "your charisma stat increasing"
+	overdose_threshold = 60
+	glass_icon_state = "vaultgirlglass"
+	glass_name = "Femboy Juice"
+	glass_desc = "//praying to god this dosent become \"femboy juice\" //he aint listening"
+
+
 /datum/reagent/consumable/ethanol/fernet_cola
 	name = "Fernet Cola"
 	description = "A very popular and bittersweet digestif, ideal after a heavy meal. Best served on a sawed-off cola bottle as per tradition."
@@ -1096,7 +1132,7 @@
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(1*REM, 0)
 	M.nutrition = max(M.nutrition - 5, 0)
 	M.overeatduration = 0
 	return ..()
@@ -1146,8 +1182,8 @@
 	if(prob(50))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
-	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.4*REM, 0)
+	M.adjustFireLoss(-0.4*REM, 0)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	if(prob(10))
 		M.emote("sigh")
@@ -1171,7 +1207,7 @@
 	if(prob(50))
 		M.playsound_local(M, 'sound/effects/his_grace_awaken.ogg', 100, 0)
 	M.radiation = max(M.radiation-5,0)
-	M.adjustToxLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-4*REM, 0)
 	M.set_drugginess(100)
 	M.hallucination += 100
 	..()

@@ -195,7 +195,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "tile_sprayer"
 	item_state = "tilesprayer"
-	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=2000) // = one sheet of both
 	var/stored_dir = 2
 	var/stored_color = ""
 	var/stored_decal = "floor"

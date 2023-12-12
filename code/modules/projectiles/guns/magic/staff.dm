@@ -219,10 +219,10 @@
 	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
 	icon_state = "firestaff"
 	max_charges = 1
-	recharge_rate = 60 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	recharge_rate = 120 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/fireball // 75 brute damage + a knockdown + always blinds a square around the impact point + bonus dmg vs mobs
+	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
 
 /****************/
 //Staff of Lightning//
@@ -235,7 +235,7 @@
 	icon_state = "lightningstaff"
 	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
 	max_charges = 12
-	recharge_rate = 20 SECONDS
+	recharge_rate = 30 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -248,8 +248,8 @@
 	name = "lightning bolt"
 	flag = "laser" // plasma OP
 	damage = 60
-	damage_low = 30
-	damage_high = 80
+	damage_low = 40
+	damage_high = 70
 
 /****************/
 //Staff of Healing//

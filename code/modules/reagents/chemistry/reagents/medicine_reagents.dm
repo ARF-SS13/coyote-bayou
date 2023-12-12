@@ -1915,7 +1915,7 @@
 			M.disgust = max(0, M.disgust+50)
 		if(7)
 			to_chat(M, span_danger("Your heart is beating so fast you can feel it in your throat!"))
-			M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+			M.adjustStaminaLoss(10*REM)
 		if(8)
 			M.Jitter(20)
 		if(9)
@@ -1929,7 +1929,7 @@
 	description = "Unidentifiable substance - 0x000000"
 	reagent_state = LIQUID
 	color = "#000000"
-	metabolization_rate = 0.1 * REAGENTS_METABOLISM
+	metabolization_rate = 0.01 * REAGENTS_METABOLISM
 	overdose_threshold = 2000
 	pH = 7.45
 	value = REAGENT_VALUE_COMMON
@@ -1997,19 +1997,19 @@
 	name = "UNKNOWN SUBSTANCE ERROR: 0x037037"
 	description = "Unidentifiable substance - 0x037037"
 	color = "#037037"
-	bruteheal = 2
+	bruteheal = 4
 
 /datum/reagent/medicine/critmed/burn
 	name = "UNKNOWN SUBSTANCE ERROR: 0xFDED5E"
 	description = "Unidentifiable substance - 0xFDED5E"
 	color = "#FDED5E"
-	burnheal = 2
+	burnheal = 4
 
 /datum/reagent/medicine/critmed/toxin
 	name = "UNKNOWN SUBSTANCE ERROR: 0x121212"
 	description = "Unidentifiable substance - 0x121212"
 	color = "#121212"
-	toxheal = 2
+	toxheal = 4
 
 /datum/reagent/medicine/critmed/toxin_lover
 	name = "UNKNOWN SUBSTANCE ERROR: 0xFAE123"
@@ -2021,24 +2021,24 @@
 	name = "UNKNOWN SUBSTANCE ERROR: 0x00FF00"
 	description = "Unidentifiable substance - 0x00FF00"
 	color = "#00FF00"
-	radheal = 10
+	radheal = 100
 
 /datum/reagent/medicine/critmed/blood
 	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0000"
 	description = "Unidentifiable substance - 0xFF0000"
 	color = "#FF0000"
-	var/blood_threshold = BLOOD_VOLUME_SYMPTOMS_DEBILITATING
-	blood_regen = 5
-	effective_blood_multiplier = 15
+	var/blood_threshold = BLOOD_VOLUME_SAFE
+	blood_regen = 15
+	effective_blood_multiplier = 50
 	effective_blood_max = 1000
 
 /datum/reagent/medicine/critmed/blood/stabilizer
 	name = "UNKNOWN SUBSTANCE ERROR: 0xFF0E00"
 	description = "Unidentifiable substance - 0xFF0E00"
 	color = "#FF0E00"
-	blood_threshold = BLOOD_VOLUME_SYMPTOMS_ANNOYING
-	blood_regen = 5
-	bleed_mult = 0.05
+	blood_threshold = BLOOD_VOLUME_SAFE
+	blood_regen = 10
+	bleed_mult = 0.000001
 	effective_blood_multiplier = 15
 	effective_blood_max = 1000
 

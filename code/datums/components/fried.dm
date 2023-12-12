@@ -46,7 +46,8 @@ GLOBAL_LIST_INIT(frying_bad_chems, list(
 	else
 		if(isfood(owner))
 			var/obj/item/reagent_containers/food/snacks/food_item = owner
-			fried_tastes += food_item.tastes
+			var/list/flaves = SSlistbank.get_tastes(food_item)
+			fried_tastes += flaves
 			fried_foodtypes |= food_item.foodtype
 
 	var/fried_eat_time = 0

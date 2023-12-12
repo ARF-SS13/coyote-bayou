@@ -185,7 +185,7 @@
 	icon_state = "Aldric-Plasma-CasterEve"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_scope = FALSE
@@ -193,7 +193,8 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
-		/datum/firemode/burst/five
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 
@@ -205,7 +206,7 @@
 	icon_state = "Aldric-Plasma-Caster"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/caster)
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	can_scope = FALSE
@@ -213,7 +214,8 @@
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_firemodes = list(
-		/datum/firemode/burst/five
+		/datum/firemode/semi_auto/slow,
+		/datum/firemode/burst/three/slower
 	)
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 

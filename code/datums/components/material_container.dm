@@ -38,6 +38,7 @@
 	precondition = _precondition
 	after_insert = _after_insert
 
+	RegisterSignal(parent, COMSIG_PARENT_FORCEFEED, .proc/OnAttackBy)
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
 	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/OnExamine)
 
@@ -54,7 +55,7 @@
 				examine_list += span_notice("It has [amt] units of [lowertext(M.name)] stored.")
 
 /// Proc that allows players to fill the parent with mats
-/datum/component/material_container/proc/OnAttackBy(datum/source, obj/item/I, mob/living/user)
+/datum/component/material_container/proc/OnAttackBy(datum/source, obj/item/I, mob/living/user, silent)
 	var/list/tc = allowed_typecache
 	if(disable_attackby)
 		return
@@ -63,7 +64,8 @@
 	if(I.item_flags & ABSTRACT)
 		return
 	if((I.item_flags & NO_MAT_REDEMPTION) || (tc && !is_type_in_typecache(I, tc)))
-		to_chat(user, span_warning("[parent] won't accept [I]!"))
+		if(!silent)
+			to_chat(user, span_warning("[parent] won't accept [I]!"))
 		return
 	. = COMPONENT_NO_AFTERATTACK
 	var/datum/callback/pc = precondition
@@ -71,15 +73,17 @@
 		return
 	var/material_amount = get_item_material_amount(I)
 	if(!material_amount)
-		to_chat(user, span_warning("[I] does not contain sufficient materials to be accepted by [parent]."))
+		if(!silent)
+			to_chat(user, span_warning("[I] does not contain sufficient materials to be accepted by [parent]."))
 		return
 	if((!precise_insertion || !GLOB.typecache_stack[I.type]) && !has_space(material_amount))
-		to_chat(user, span_warning("[parent] has not enough space. Please remove materials from [parent] in order to insert more."))
+		if(!silent)
+			to_chat(user, span_warning("[parent] has not enough space. Please remove materials from [parent] in order to insert more."))
 		return
-	user_insert(I, user)
+	return user_insert(I, user, null, silent)
 
 /// Proc used for when player inserts materials
-/datum/component/material_container/proc/user_insert(obj/item/I, mob/living/user, datum/component/remote_materials/remote = null)
+/datum/component/material_container/proc/user_insert(obj/item/I, mob/living/user, datum/component/remote_materials/remote = null, silent)
 	set waitfor = FALSE
 	var/active_held = user.get_active_held_item()  // differs from I when using TK
 	var/inserted = 0
@@ -109,10 +113,15 @@
 			to_chat(user, span_warning("[I] is stuck to you and cannot be placed into [parent]."))
 			return
 		inserted = insert_item(I)
-		qdel(I)
+		if(!QDELETED(I))
+			qdel(I)
 
 	if(inserted)
-		to_chat(user, span_notice("You insert a material total of [inserted] into [parent]."))
+		. = TRUE
+		if(silent) // okay maybe not silent, but less spammy
+			to_chat(user, span_notice("You insert something into [parent]."))
+		else
+			to_chat(user, span_notice("You insert a material total of [inserted] into [parent]."))
 		if(after_insert)
 			after_insert.Invoke(I, last_inserted_id, inserted)
 		if(remote && remote.after_insert)
@@ -159,7 +168,7 @@
 	return total_added
 
 /// Proc specifically for inserting items, returns the amount of materials entered.
-/datum/component/material_container/proc/insert_item(obj/item/I, multiplier = 1)
+/datum/component/material_container/proc/insert_item(obj/item/I, multiplier = 1, del_after)
 	if(QDELETED(I))
 		return FALSE
 
@@ -170,6 +179,8 @@
 		return FALSE
 
 	last_inserted_id = insert_item_materials(I, multiplier)
+	if(del_after)
+		qdel(I)
 	return material_amount
 
 /datum/component/material_container/proc/insert_item_materials(obj/item/I, multiplier = 1)

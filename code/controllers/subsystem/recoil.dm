@@ -64,6 +64,8 @@ SUBSYSTEM_DEF(recoil)
 	var/recoil_softcap = 30
 	var/recoil_movement_spread_cap = 10
 
+	var/kick_to_recoil_mult = 1
+
 	var/use_movement_recoil = TRUE
 	var/use_shoot_recoil = TRUE
 
@@ -155,25 +157,27 @@ SUBSYSTEM_DEF(recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
 
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
+	spread += get_offset(shotter, FALSE, TRUE)
 	spread = clamp(spread, 0, recoil_max_spread)
 	if(spread <= recoil_offset_low_spread_threshold) // low spread is tightened up a bit
 		return (rand(-spread * recoil_offset_premult, spread * recoil_offset_premult) * recoil_offset_postmult)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
-	var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
 	var/turbofuck_unwielded_spread = FALSE
 	var/turboreward_wielded_spread = FALSE
-	if(spread > turbofuck_threshold && istype(shoot))
-		if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
-			turbofuck_unwielded_spread = TRUE // hodl it right
-			mean = spread
-			std = spread //fuck you wield it
-		else if(shoot.wielded) // yay you wielded it!
-			turboreward_wielded_spread = TRUE
+	if(istype(shoot))
+		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
+		if(spread > turbofuck_threshold && istype(shoot))
+			if(!shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
+				turbofuck_unwielded_spread = TRUE // hodl it right
+				mean = spread
+				std = spread //fuck you wield it
+			else if(shoot.wielded) // yay you wielded it!
+				turboreward_wielded_spread = TRUE
 	/// turns out this proc is cheap as fuck
-	var/my_angle = gaussian(mean, std)
+	var/my_angle = gaussian(mean, std) * pick(1, -1)
 	if(turbofuck_unwielded_spread) // and tack on some extra spread, just for good measure
-		my_angle += rand(1,15) * SIGN(my_angle)
+		my_angle += (rand(1,15) * SIGN(my_angle))
 	if(turboreward_wielded_spread) // give em a boost for wielding it
 		my_angle *= recoil_wielded_reward
 		my_angle -= (rand(1,my_angle) * SIGN(my_angle))
@@ -199,6 +203,7 @@ SUBSYSTEM_DEF(recoil)
 	var/datum/gun_recoil/gun_recoil = get_gun_recoil_datum(recoil_tag)
 	var/recoil_mod = gun_recoil ? gun_recoil.get_recoil_mod(user, my_weapon) : 1
 	recoil *= recoil_mod
+	recoil *= kick_to_recoil_mult
 	my_recoil.add_shoot_recoil(user, my_weapon, recoil, TRUE)
 	return TRUE
 
@@ -233,6 +238,9 @@ SUBSYSTEM_DEF(recoil)
 	return gun_recoil.index
 
 /datum/controller/subsystem/recoil/proc/get_gun_recoil_datum(recoil_tag = RECOIL_TAG_DEFAULT)
+	if(istype(recoil_tag, /obj/item/gun))
+		var/obj/item/gun/my_gun = recoil_tag
+		recoil_tag = my_gun?.recoil_tag
 	if(IS_RECOIL_LIST(recoil_tag))
 		recoil_tag = RECOIL_LIST2TAG(recoil_tag)
 	if(!IS_RECOIL_TAG(recoil_tag))
@@ -682,11 +690,11 @@ SUBSYSTEM_DEF(recoil)
 		stiffness_recoil = (total_stffness / num_stiff)
 	return stiffness_recoil
 
-/obj/item/storage/debug/debug_gun_mods
+/obj/item/storage/debug/debug_gun_sack
 	name = "Bag of Debug Gun Mods"
 	desc = "A cool bag of upgrades and guns for devs to test weapon mods, recoil, etc!"
 
-/obj/item/storage/debug/debug_gun_mods/PopulateContents()
+/obj/item/storage/debug/debug_gun_sack/PopulateContents()
 	. = ..()
 	new /obj/item/storage/debug_box/guns_ballistic_1(src)
 	new /obj/item/storage/debug_box/ammo_ballistic_1(src)

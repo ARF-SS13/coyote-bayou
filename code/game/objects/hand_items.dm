@@ -11,6 +11,9 @@
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	rad_flags = RAD_NO_CONTAMINATE
+	slot_flags = INV_SLOTBIT_DENYPOCKET
 
 /obj/item/hand_item/Initialize(mapload)
 	. = ..()

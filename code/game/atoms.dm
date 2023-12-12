@@ -78,7 +78,7 @@
 	var/light_on = TRUE
 	///Bitflags to determine lighting-related atom properties.
 	var/light_flags = NONE
-	///Our light source. Don't fuck with this directly unless you have a good reason!
+	///Our light source. Don't fuc with this directly unless you have a good reason!
 	var/tmp/datum/light_source/light
 	///Any light sources that are "inside" of us, for example, if src here was a mob that's carrying a flashlight, that flashlight's light source would be part of this list.
 	var/tmp/list/light_sources
@@ -96,7 +96,7 @@
 	var/generic_canpass = TRUE
 
 	/// What does this creature taste like?
-	var/list/tastes = list("something" = 1) // for example list("crisps" = 2, "salt" = 1)
+	var/list/tastes
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -148,6 +148,8 @@
 
 	ComponentInitialize()
 
+	InitTastes()
+
 	return INITIALIZE_HINT_NORMAL
 
 //called if Initialize returns INITIALIZE_HINT_LATELOAD
@@ -157,6 +159,14 @@
 // Put your AddComponent() calls here
 /atom/proc/ComponentInitialize()
 	return
+
+// Put your taste stuff here
+/atom/proc/InitTastes()
+	if(LAZYLEN(tastes))
+		SSlistbank.catalogue_tastes(src, tastes)
+		tastes.Cut()
+		tastes = null
+		// QDEL_NULL(tastes)
 
 /atom/Destroy()
 	if(alternate_appearances)
@@ -318,10 +328,10 @@
 	return null
 
 /atom/proc/return_air()
-	if(loc)
-		return loc.return_air()
-	else
-		return null
+	// if(loc)
+	// 	return loc.return_air()
+	// else
+	// 	return null
 
 /atom/proc/check_eye(mob/user)
 	return
@@ -879,6 +889,7 @@
 		if(curturf)
 			. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[curturf.x];Y=[curturf.y];Z=[curturf.z]'>Jump To</option>"
 	VV_DROPDOWN_OPTION(VV_HK_MODIFY_TRANSFORM, "Modify Transform")
+	VV_DROPDOWN_OPTION(VV_HK_EDIT_COLOR_MATRIX, "Edit Color as Matrix")
 	VV_DROPDOWN_OPTION(VV_HK_SPIN_ANIMATION, "SpinAnimation")
 	VV_DROPDOWN_OPTION(VV_HK_STOP_ALL_ANIMATIONS, "Stop All Animations")
 	VV_DROPDOWN_OPTION(VV_HK_ADD_REAGENT, "Add Reagent")
@@ -927,6 +938,9 @@
 		var/newname = input(usr, "What do you want to rename this to?", "Automatic Rename") as null|text
 		if(newname)
 			vv_auto_rename(newname)
+	if(href_list[VV_HK_EDIT_COLOR_MATRIX] && check_rights(R_VAREDIT))
+		var/client/C = usr.client
+		C?.open_color_matrix_editor(src)
 
 /atom/vv_get_header()
 	. = ..()
@@ -1298,6 +1312,10 @@
 		usr_client.Click(src, loc, null, mouseparams)
 
 
+///Adds the debris element for projectile impacts
+/atom/proc/add_debris_element()
+	AddElement(/datum/element/debris, null, -15, 8, 0.7)
+
 /atom/MouseEntered(location, control, params)
 	SSmouse_entered.hovers[usr.client] = src
 
@@ -1305,3 +1323,16 @@
 /// Preferred over MouseEntered if you do not need information such as the position of the mouse.
 /// Especially because this is deferred over a tick, do not trust that `client` is not null.
 /atom/proc/on_mouse_enter(client/client)
+
+///highest in hierarchy for retrieving runechat color prefs
+/atom/proc/get_chat_color()
+	if(istype(src, /mob/living/carbon))
+		var/mob/living/carbon/carbo = src
+		return carbo.get_chat_color()
+	if(istype(src, /atom/movable/virtualspeaker))
+		var/atom/movable/virtualspeaker/vs = src
+		return vs.get_chat_color()
+	return rgb(127, 127, 127)
+
+/atom/proc/wingetproc(id, params)
+	return winget(src, id, params)

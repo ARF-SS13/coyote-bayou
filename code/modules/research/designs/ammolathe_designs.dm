@@ -561,6 +561,13 @@
 	build_path = /obj/item/ammo_box/magazine/m5mmcustom/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/m47mmpistol
+	name = "empty handgun magazine (4.7mm caseless)"
+	id = "m47mmcustom"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m47pistol/empty
+	category = list("initial", "Intermediate Magazines")
+
 /datum/design/ammolathe/smg14
 	name = "empty smg magazine (14mm)"
 	id = "m127smg"
@@ -611,7 +618,7 @@
 	category = list("initial", "Intermediate Magazines", "Handmade Magazines")
 
 /datum/design/ammolathe/amrmag
-	name = "empty anti-materiel rifle magazine (.50)"
+	name = "empty anti-material rifle magazine (.50)"
 	id = "amrmagazine"
 	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_box/magazine/amr/empty
@@ -705,6 +712,14 @@
 	materials = list(/datum/material/iron = 8000,
 		/datum/material/titanium = 8000)
 	build_path = /obj/item/ammo_box/magazine/m5mm/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/rifleassault47mm
+	name = "empty 35 round rifle magazine (4.7mm)"
+	id = "rifleassault47mm"
+	materials = list(/datum/material/iron = 8000,
+		/datum/material/titanium = 8000)
+	build_path = /obj/item/ammo_box/magazine/rifle47mm/empty
 	category = list("initial", "Advanced Magazines")
 
 
@@ -827,16 +842,16 @@
 /datum/design/ammolathe/m473fmj
 	name = "4.73mm caseless ammo box"
 	id = "m473fmj"
-	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
+	materials = list(/datum/material/iron = 18000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473
-	category = list("initial", "Advanced Ammo")
+	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/m473rubber
 	name = "4.73mm caseless rubber ammo box"
 	id = "m473rubber"
 	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/m473/rubber
-	category = list("initial", "Advanced Ammo")
+	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a40mmbuck
 	name = "40mm buckshot ammo box"

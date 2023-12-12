@@ -6,7 +6,8 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	name = "Workshop Scrapper"
 	desc = "A vending machine that's been modified to accept various items in exchange for copper Edisons. \
 			A sign on it reads, 'Keep your workplace clean and get paid doing it!' \
-			It's better than a trash can, at least."
+			It's better than a trash can, at least. \
+			Make sure to check in with the shopkeep for a better deal!"
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "trade_idle"
 
@@ -69,7 +70,12 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/clothing/head/helmet/f13/power_armor = 75,
 		/obj/item/gun/ballistic/shotgun/toy = 5,
 		/obj/item/gun/ballistic/automatic/toy = 5,
-		/obj/item/toy = 5,
+		/obj/item/toy/plush = 5,
+		/obj/item/toy/talking = 5,
+		/obj/item/toy/toy_xeno = 5,
+		/obj/item/toy/cattoy = 5,
+		/obj/item/toy/figure = 5,
+		/obj/item/toy/eightball = 5,
 		/obj/item/melee = 5,
 		/obj/item/melee/transforming = 5,
 		/obj/item/twohanded = 5,

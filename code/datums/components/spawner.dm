@@ -41,12 +41,12 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	/// use the old spawner player-is-close check
 	var/old_spawner_check = FALSE
 	/// All our turfs that we're listening to
-	var/list/my_turfs = list() // its a list of coords
-	/// All our turfs that somehow got destroyed, and we need to reconnect with
-	var/list/disconnected = list() // its a list of coords
+	// var/list/my_turfs = list() // its a list of coords
+	// /// All our turfs that somehow got destroyed, and we need to reconnect with
+	// var/list/disconnected = list() // its a list of coords
 	var/active = FALSE
 	/// When tripped, when do we stop trying to spawn things?
-	var/spawn_until = 0
+	COOLDOWN_DECLARE(spawn_until)
 	COOLDOWN_DECLARE(spawner_cooldown)
 	var/covered = FALSE
 
@@ -112,7 +112,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	RegisterSignal(parent, COMSIG_SPAWNER_COVERED, .proc/coverme)
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED, .proc/uncoverme)
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, .proc/unbirth_mob)
-	RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
+	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS, .proc/has_spawner)
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
 		if(nest.spawned_by_ckey)
@@ -120,63 +120,69 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(istype(parent, /obj/structure/nest/special))
 		am_special = TRUE
 		RegisterSignal(parent, COMSIG_SPAWNER_SPAWN_NOW, .proc/spawn_mob_special)
-	register_turfs()
+	// if(SSspawners.use_turf_registration)
+	// 	register_turfs()
+	// else
+	old_spawner_check = TRUE
+	if(!delay_start)
+		start_spawning()
 
-/datum/component/spawner/proc/register_turfs()
-	var/atom/dad = parent
-	if(!dad.loc)
-		return
-	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
-	for(var/turf/trip in range(range, dad.loc))
-		connect_to_turf(trip, debug_color)
+// /datum/component/spawner/proc/register_turfs()
+// 	var/atom/dad = parent
+// 	if(!dad.loc)
+// 		return
+// 	var/debug_color = SSspawners.debug_spawner_turfs ? "#[random_color()]" : null
+// 	for(var/turf/trip in range(range, dad.loc))
+// 		connect_to_turf(trip, debug_color)
 
-/datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
-	my_turfs |= atom2coords(trip)
-	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
-	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
-	if(SSspawners.debug_spawner_turfs && debug_color)
-		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
+// /datum/component/spawner/proc/connect_to_turf(turf/trip, debug_color)
+// 	my_turfs |= atom2coords(trip)
+// 	RegisterSignal(trip, COMSIG_ATOM_ENTERED, .proc/turf_trip)
+// 	RegisterSignal(trip, COMSIG_TURF_CHANGE, .proc/turf_changed)
+// 	if(SSspawners.debug_spawner_turfs && debug_color)
+// 		trip.add_atom_colour(debug_color, ADMIN_COLOUR_PRIORITY)
 
-/datum/component/spawner/proc/turf_changed(turf/changed)
-	if(!isturf(changed))
-		return
-	disconnected |= atom2coords(changed)
-	start_spawning()
+// /datum/component/spawner/proc/turf_changed(turf/changed)
+// 	if(!isturf(changed))
+// 		return
+// 	disconnected |= atom2coords(changed)
+// 	start_spawning()
 
-/datum/component/spawner/proc/unregister_turfs()
-	for(var/coords in my_turfs)
-		var/turf/trip = coords2turf(coords)
-		if(!trip)
-			continue
-		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
-		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
-	my_turfs = list()
-	disconnected = list()
+// /datum/component/spawner/proc/unregister_turfs()
+// 	for(var/coords in my_turfs)
+// 		var/turf/trip = coords2turf(coords)
+// 		if(!trip)
+// 			continue
+// 		trip.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
+// 		UnregisterSignal(trip, COMSIG_ATOM_ENTERED, COMSIG_TURF_CHANGE)
+// 	my_turfs = list()
+// 	disconnected = list()
 
-/datum/component/spawner/proc/reconnect()
-	if(!LAZYLEN(disconnected))
-		return
-	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
-	for(var/coord in disconnected)
-		var/turf/trip = coords2turf(coord)
-		if(!trip)
-			continue
-		connect_to_turf(trip, debug_color)
+// /datum/component/spawner/proc/reconnect()
+// 	if(!LAZYLEN(disconnected))
+// 		return
+// 	var/debug_color = SSspawners.debug_spawner_turfs ? "#[randomColor()]" : null
+// 	for(var/coord in disconnected)
+// 		var/turf/trip = coords2turf(coord)
+// 		if(!trip)
+// 			continue
+// 		connect_to_turf(trip, debug_color)
 
-/datum/component/spawner/proc/still_there()
-	return TRUE // hi
+// /datum/component/spawner/proc/still_there()
+// 	return TRUE // hi
 
 /datum/component/spawner/process()
-	if(old_spawner_check)
-		try_to_spawn()
-		return
-	if(COOLDOWN_FINISHED(src, spawn_until))
-		stop_spawning(null, FALSE)
-		return
-	if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
-		try_to_spawn()
-	else
-		reconnect()
+	old_spawn()
+	// if(old_spawner_check)
+	// 	old_spawn()
+	// 	return
+	// if(COOLDOWN_FINISHED(src, spawn_until))
+	// 	stop_spawning(null, FALSE)
+	// 	return
+	// if(spawn_until && !COOLDOWN_FINISHED(src, spawn_until))
+	// 	try_to_spawn()
+	// else
+	// 	reconnect()
 
 /// something entered one of our turfs, check if we should spawn something
 /datum/component/spawner/proc/turf_trip(datum/source, atom/movable/arrived)
@@ -203,10 +209,15 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// Something told us to restart spawning
 /datum/component/spawner/proc/start_spawning()
+	if(covered)
+		return
+	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+	active = TRUE
 	START_PROCESSING(SSspawners, src)
 
 /datum/component/spawner/proc/stop_spawning(datum/source, clear_spawned_mobs = TRUE)
 	STOP_PROCESSING(SSspawners, src)
+	COOLDOWN_RESET(src, spawn_until)
 	if(!clear_spawned_mobs)
 		return
 	for(var/datum/weakref/mob_ref as anything in spawned_mobs)
@@ -245,6 +256,9 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return FALSE
 	if(has_mobs_left())
 		return FALSE
+	if(QDELETED(parent))
+		qdel(src)
+		return FALSE // nothing to delete
 	if(ismob(parent))
 		qdel(src)
 		return FALSE // no more self-destructing ant queens
@@ -252,7 +266,7 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 
 /// Do we have any mobs left?
 /datum/component/spawner/proc/has_mobs_left()
-	return counterlist_sum(mob_types) + LAZYLEN(special_mobs)
+	return LAZYLEN(mob_types) || LAZYLEN(special_mobs)
 
 /datum/component/spawner/proc/check_mob(mob/living/check)
 	if(!isliving(check))
@@ -271,8 +285,6 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 		return FALSE
 	if(something_covering_us())
 		return FALSE
-	if(old_spawner_check && !something_in_range())
-		return FALSE
 	spawn_mob()
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 	if(should_destroy_spawner())
@@ -283,10 +295,36 @@ GLOBAL_VAR_INIT(debug_spawner_turfs, FALSE)
 	if(!range)
 		return TRUE
 	var/atom/P = parent
-	for(var/mob/living in GLOB.player_list) // client-containing mobs, NOT clients
-		if(get_dist(P, living) <= range)
+	for(var/mob/living/butt in LAZYACCESS(SSmobs.clients_by_zlevel, P?.z)) // client-containing mobs, NOT clients
+		if(get_dist(P, butt) <= range)
 			return TRUE
-	
+
+/// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
+/datum/component/spawner/proc/old_spawn()
+	if(!COOLDOWN_FINISHED(src, spawner_cooldown))
+		return
+	if(COOLDOWN_FINISHED(src, spawn_until))
+		deactivate()
+	if(should_destroy_spawner())
+		qdel(parent)
+		return
+	if(!active)
+		if(!something_in_range())
+			return
+		activate()
+	if(active)
+		try_to_spawn()
+
+/// turns itself on for another 20ish seconds
+/datum/component/spawner/proc/activate()
+	active = TRUE
+	COOLDOWN_START(src, spawn_until, SSspawners.active_duration)
+
+/// turns itself off
+/datum/component/spawner/proc/deactivate()
+	active = FALSE
+	COOLDOWN_RESET(src, spawn_until)
+
 /// is something covering us?
 /datum/component/spawner/proc/something_covering_us()
 	if(!coverable_by_dense_things)

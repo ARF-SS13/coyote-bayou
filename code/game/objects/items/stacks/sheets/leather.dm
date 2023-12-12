@@ -189,6 +189,8 @@ GLOBAL_LIST_INIT(leather_recipes, list (
 	new/datum/stack_recipe("tribal medicine pouch", /obj/item/storage/survivalkit/medical/tribal/empty, 5),
 	new/datum/stack_recipe("extra large pouch", /obj/item/storage/survivalkit/triple, 25),
 	new/datum/stack_recipe("sack", /obj/item/storage/bag/trash/sack, 15),
+	null, 
+	new /datum/stack_recipe("leather waterskin", /obj/item/reagent_containers/glass/waterskin, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), 
 ))
 
 /obj/item/stack/sheet/leather/get_main_recipes()

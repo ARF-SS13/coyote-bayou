@@ -38,7 +38,8 @@
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 	var/charge_cost_multiplier = 1
-	var/selfchargerate = 0 // set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
+	/// set on the specific weapon you want to autocharge; X*2 = seconds to full charge.
+	var/selfchargerate = 3 SECONDS 
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -351,6 +352,7 @@
 		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
 		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 	cell = null
+	update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()

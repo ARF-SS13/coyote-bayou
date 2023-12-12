@@ -21,8 +21,9 @@
 
 /obj/item/projectile/f13plasma
 	name = "plasma template"
-	icon_state = "laser"
+	icon_state = "plasma_clot"
 	sharpness = SHARP_POINTY // Temporary fix for the Wound system. Makes lasers/plasma bleed you out per hit.
+	wound_bonus = 30 // plasma is horrific; should be overidden more often than not
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -313,7 +314,6 @@
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = TRUE
-	pixels_per_second = TILES_TO_PIXELS(50)
 
 //Securitrons Beam
 /obj/item/projectile/beam/laser/pistol/ultraweak
@@ -401,7 +401,7 @@
 	is_reflectable = FALSE
 
 	// This could be a bit overboard, if it actually worked.
-	supereffective_damage = BULLET_DAMAGE_PISTOL_38
+	supereffective_damage = BULLET_DAMAGE_PISTOL_10MM
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
@@ -577,14 +577,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/f13plasma //Plasma rifle
+/obj/item/projectile/f13plasma/rifle //Plasma rifle
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
 	damage = 60 //fucc you normies
 	damage_list = list( "55" = 30, "60" = 50, "65" = 20)
 	flag = "energy" //checks vs. energy protection
-	wound_bonus = 90 //being hit with plasma is horrific
+	wound_bonus = 40 //being hit with plasma is horrific
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
@@ -630,6 +630,7 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 35
+	damage_type = BURN
 	damage_list = list( "34" = 30, "35" = 50, "50" = 20)
 	wound_bonus = 70 //being hit with plasma is horrific
 
@@ -663,7 +664,7 @@
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 40
 	damage_list = list( "39" = 30, "40" = 50, "55" = 20)
-	wound_bonus = 75 //being hit with plasma is horrific
+	wound_bonus = 35 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 35

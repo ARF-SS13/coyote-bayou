@@ -644,6 +644,12 @@
 	message = "waves."
 	message_param = "waves at %t."
 
+/datum/emote/living/squint
+	key = "squint"
+	key_third_person = "squints"
+	message = "squints."
+	message_param = "squints at %t."
+
 /datum/emote/living/whimper
 	key = "whimper"
 	key_third_person = "whimpers"
@@ -1230,7 +1236,16 @@
 	key_third_person = "merps"
 	message = "let out a merp!"
 	sound = 'sound/f13effects/sunsetsounds/merp.ogg'
-
+/datum/emote/mar
+	key = "mar"
+	key_third_person = "mars"
+	message = "lets out a mar!"
+	sound = 'sound/f13effects/sunsetsounds/mar.ogg'
+/datum/emote/wurble
+	key = "wurble"
+	key_third_person = "wurbles"
+	message = "wurbles contentedly."
+	sound = 'sound/f13effects/sunsetsounds/wurble.ogg'
 /datum/emote/squeak
 	key = "squeak"
 	key_third_person = "squeaks"
@@ -2000,5 +2015,55 @@ datum/emote/living/flirt/oopstouch
 	message_param = "<span class='love'>accidently brushes against</span> %t, <span class='love'>oops!</span>"
 
 
+//Bubber Theft :)//
 
+
+datum/emote/living/chirp
+	key = "chirp"
+	key_third_person = "chirps"
+	message = "chirps!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/chirp.ogg'
+
+datum/emote/living/caw
+	key = "caw"
+	key_third_person = "caws"
+	message = "caws!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/caw.ogg'
+
+datum/emote/living/caw2
+	key = "caw2"
+	key_third_person = "caws twice"
+	message = "caws twice!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/caw2.ogg'
+
+datum/emote/living/mrrp //you play like a cat
+	key = "mrrp"
+	key_third_person = "mrrps"
+	message = "mrrps!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/mrrp.ogg'
+
+datum/emote/living/fpurr
+	key = "fpurr"
+	key_third_person = "purrs!"
+	message = "purrs!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/fox_purr.ogg'
+
+datum/emote/living/prbt //all tesh players will love me
+	key = "prbt"
+	key_third_person = "prbts!"
+	message = "prbts!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/prbt.ogg'
+
+datum/emote/living/gecker
+	key = "gecker"
+	key_third_person = "geckers"
+	message = "geckers!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/foxgecker.ogg'
 

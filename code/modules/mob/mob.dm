@@ -13,7 +13,8 @@
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
 	qdel(hud_used)
-	QDEL_LIST(client_colours)
+	if(LAZYLEN(client_colours)) // frick 'u'
+		QDEL_LIST(client_colours)
 	clear_client_in_contents()
 	ghostize()
 	QDEL_LIST(actions)
@@ -72,15 +73,15 @@
 	if(!loc)
 		return 0
 
-	var/datum/gas_mixture/environment = loc.return_air()
+	// var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	span_notice("Coordinates: [x],[y] \n")
-	t +=	span_danger("Temperature: [environment.return_temperature()] \n")
-	for(var/id in environment.get_gases())
-		if(environment.get_moles(id))
-			t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
+	// var/t =	span_notice("Coordinates: [x],[y] \n")
+	// t +=	span_danger("Temperature: [environment.return_temperature()] \n")
+	// for(var/id in environment.get_gases())
+	// 	if(environment.get_moles(id))
+	// 		t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
 
-	to_chat(usr, t)
+	// to_chat(usr, t)
 
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
@@ -158,6 +159,11 @@
 		return
 	hearers -= ignored_mobs
 
+	var/saycolor = src.get_chat_color()
+	var/targetsaycolor = null
+	if(!!target)
+		targetsaycolor = target.get_chat_color()
+
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
 		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
@@ -169,10 +175,15 @@
 			msg = blind_message
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
-				msg = "<b>[src]</b> [msg]"
+				msg = "<b>[src.name]</b> [msg]"
+			if(target.client.prefs.color_chat_log)
+				var/sanitizedsaycolor = target.client.sanitize_chat_color(saycolor)
+				var/sanitizedtargetsaycolor = target.client.sanitize_chat_color(targetsaycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			target.show_message(msg, MSG_VISUAL,msg, MSG_AUDIBLE)
-	if(self_message)
-		hearers -= src
+	//if(self_message)
+		//hearers -= src
 
 	//var/raw_msg = message
 	//if(visible_message_flags & EMOTE_MESSAGE)
@@ -191,17 +202,22 @@
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags)) // blind people can see emotes, sorta
 			M.create_chat_message(src, raw_message = msg, runechat_flags = visible_message_flags)
-
 		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			if(CHECK_BITFIELD(visible_message_flags, PUT_NAME_IN))
 				msg = "<b>[src]</b> [msg]"
+			if(M.client.prefs.color_chat_log)
+				var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
+				msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
+				if(!!target)
+					var/sanitizedtargetsaycolor = M.client.sanitize_chat_color(targetsaycolor)
+					msg = color_keyword(msg, sanitizedtargetsaycolor, target.name)
 			M.show_message(msg, MSG_VISUAL, msg, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
 mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message && target != src)
-		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
+	//if(self_message && target != src)
+		//show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE, pref_check)
 
 /**
  * Show a message to all mobs in earshot of this atom
@@ -230,18 +246,23 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	if(!length(hearers))
 		return
 	hearers -= ignored_mobs
-	if(self_message)
-		hearers -= src
+	//if(self_message)
+		//hearers -= src
 //	var/raw_msg = message
 	if(CHECK_BITFIELD(audible_message_flags, PUT_NAME_IN))
 		message = "<b>[src]</b> [message]"
-		deaf_message = "<b>[src]</b> [deaf_message]"
 	//if(audible_message_flags & EMOTE_MESSAGE)
 	//	message = "<span class='emote'><b>[src]</b> [message]</span>"
+
+	var/saycolor = src.get_chat_color()
+
 	for(var/mob/M in hearers)
 		if(pref_check && !CHECK_PREFS(M, pref_check))
 			continue
 		var/msg = M.can_hear() ? message : deaf_message
+		if(M.client?.prefs.color_chat_log)
+			var/sanitizedsaycolor = M.client.sanitize_chat_color(saycolor)
+			msg = color_for_chatlog(msg, sanitizedsaycolor, src.name)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
 			M.create_chat_message(src, raw_message = msg, runechat_flags = audible_message_flags)
 		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
@@ -261,8 +282,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
  */
 /mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs, audible_message_flags = NONE, pref_check)
 	. = ..()
-	if(self_message)
-		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
+	//if(self_message)
+		//show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL, pref_check)
 
 
 ///Returns the client runechat visible messages preference according to the message type.
@@ -936,6 +957,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
+	LAZYINITLIST(mob_spell_list)
 	mob_spell_list += S
 	S.action.Grant(src)
 
@@ -1115,14 +1137,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if (L)
 			L.alpha = lighting_alpha
 
-/mob/proc/update_mouse_pointer()
-	if (!client)
-		return
-	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-	if (ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.mouse_pointer)
-			client.mouse_pointer_icon = M.mouse_pointer
 
 /mob/proc/is_literate()
 	return 0
@@ -1195,6 +1209,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/vv_get_var(var_name)
 	switch(var_name)
 		if("logging")
+			LAZYINITLIST(logging)
 			return debug_variable(var_name, logging, 0, src, FALSE)
 	. = ..()
 
@@ -1213,9 +1228,14 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	set name = "Set how you taste"
 	set category = "IC"
 
-	var/message = stripped_input(usr, "", "How do you taste?", "", 100, FALSE)
+	var/list/taste = SSlistbank.get_tastes(src)
+	var/myflavor = "Bingus"
+	for(var/i in taste)
+		myflavor = i
+	var/message = stripped_input(usr, "Yum", "How do you taste?", "[myflavor]", 100, FALSE)
 	if(message)
-		tastes = list("[message]" = 1)
+		var/list/newflavor = list("[message]" = 1)
+		SSlistbank.catalogue_tastes(src, newflavor, TRUE)
 		to_chat(usr, span_notice("You now taste like [message]"))
 
 ///Adjust the nutrition of a mob
@@ -1439,7 +1459,8 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"React - Gasp from something they did.",
 	"React - Moan at them.",
 	"Leer - Lid your eyes and watch them.",
-	"Leer - Sneak a peak at their assets."
+	"Leer - Sneak a peak at their assets.",
+	"React - Want to tell them something."
 	)
 	choices = sortList(choices)
 
@@ -1967,6 +1988,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if("Touch - Put their HEAD between your breasts.")
 			to_chat(A, span_notice("[src] is trying to <span class='love'>put your HEAD between their breasts.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
 			to_chat(user, "You try to coyly place [A]\'s HEAD between your breasts.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("React - Want to tell them something.")
+			to_chat(A, span_notice("[src] maybe just <span class='love'>wants to tell you something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
+			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return
