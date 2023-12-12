@@ -33390,12 +33390,6 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland/massfusion/entrance)
-"eid" = (
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/caves)
 "eik" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -37577,12 +37571,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland/massfusion)
-"feY" = (
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/caves)
 "ffb" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -88673,10 +88661,6 @@
 	smooth = 1
 	},
 /area/f13/building)
-"qxi" = (
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/caves)
 "qxo" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -104277,13 +104261,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/city/nash/theloop)
-"tSo" = (
-/obj/effect/decal/marking{
-	icon_state = "singlehorizontal"
-	},
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
 "tSp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -106483,14 +106460,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/suburbs)
-"uvU" = (
-/obj/effect/decal/marking{
-	icon_state = "singlehorizontal";
-	pixel_y = 23
-	},
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
 "uvV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -116701,10 +116670,6 @@
 	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland/city/nash/downtown)
-"wLg" = (
-/obj/structure/timeddoor/sixtyminute,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/caves)
 "wLl" = (
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
@@ -188101,7 +188066,7 @@ aQB
 gvO
 cdo
 aue
-rVd
+bao
 aOk
 aOk
 aOk
@@ -188605,17 +188570,17 @@ aae
 blg
 blg
 blg
-qxi
-eid
-wLg
-wLg
-wLg
-tSo
-uvU
-wLg
-wLg
-feY
-qxi
+bao
+vyG
+cdo
+cdo
+cdo
+uaE
+aQB
+cdo
+cdo
+aue
+bao
 aae
 aae
 aae
