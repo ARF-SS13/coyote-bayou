@@ -14,7 +14,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// this is a unique identifier for the specific character of this slot of this preferences file
 	/// basically the per-character ckey. generated once when the character is created and never changes. hopefully!
-	var/uid // uberping identification device
+	var/prefs_uid // uberping identification device
+	var/xp_directory_name // xylophone pretty directory name
 
 	//non-preference stuff
 	var/muted = 0

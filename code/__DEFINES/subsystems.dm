@@ -166,6 +166,7 @@
 #define FIRE_PRIORITY_OVERLAYS		500
 #define FIRE_PRIORITY_CALLBACKS		600
 #define FIRE_PRIORITY_TIMER			700
+#define FIRE_PRIORITY_XP			800 // give the game a good long chance to not up and crash before we give out xp
 #define FIRE_PRIORITY_INPUT			1000 // This must always always be the max highest priority. Player input must never be lost.
 
 // SS runlevels

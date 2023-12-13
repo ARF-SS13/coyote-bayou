@@ -642,7 +642,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_index = rand(1,5) // WHY
 
 	//Character
-	S["uid"]					>> uid
+	S["prefs_uid"]					>> prefs_uid
+	S["xp_directory_name"]			>> xp_directory_name
 
 	S["real_name"]				>> real_name
 	S["custom_species"]			>> custom_species
@@ -921,13 +922,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
 	faved_interactions		= sanitize_islist(faved_interactions, list())
 
-	if(isnull(uid))
-		uid = generate_uid()
-		WRITE_FILE(S["uid"], uid) // =3
+	if(isnull(prefs_uid))
+		prefs_uid = SSexperience.generate_uid(src)
+		WRITE_FILE(S["prefs_uid"], prefs_uid) // =3
 
 	//Sanitize
 
-	uid			= ckey(uid)
+	prefs_uid			= ckey(prefs_uid)
+	xp_directory_name	= ckey(xp_directory_name)
 	real_name	= reject_bad_name(real_name)
 	gender		= sanitize_gender(gender, TRUE, TRUE)
 	features["body_model"] = sanitize_gender(features["body_model"], FALSE, FALSE, gender == FEMALE ? FEMALE : MALE)
