@@ -87,6 +87,7 @@
 #define TRAIT_KNOCKEDOUT		"knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
+#define TRAIT_SOFTSPOKEN		"softspoken"
 #define TRAIT_EMOTEMUTE			"emotemute"
 #define TRAIT_LOOC_MUTE			"looc_mute" //Just like unconsciousness, it disables LOOC salt.
 #define TRAIT_AOOC_MUTE			"aooc_mute" //Same as above but for AOOC.
@@ -267,6 +268,7 @@
 #define TRAIT_FREERUNNING		"freerunning"
 #define TRAIT_SKITTISH			"skittish"
 #define TRAIT_POOR_AIM			"poor_aim"
+#define	TRAIT_LIGHT_SENSITIVITY			"light_sensitivity"
 #define TRAIT_CRIT_SHOT		"crit_shot" //Crits are cool, but have you ever critted 3 times in a row?
 #define SPREAD_CONTROL		"spread_control"
 #define TRAIT_PROSOPAGNOSIA		"prosopagnosia"

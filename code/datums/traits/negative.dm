@@ -276,7 +276,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
-	value = -7 //Flashlight batteries don't exist lmfao.
+	value = -11 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "You must walk carefully through dark areas and will feel a sense of panic when you do. Don't turn the lights out."
 	conflicts = list(/datum/quirk/lightless)
@@ -297,13 +297,13 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/lightless
 	name = "Light Sensitivity"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
-	value = -7 //Just don't unequip your sunglasses. It's literally free points.
+	value = -22
 	category = "Vision Quirks"
 	mechanics = "While in bright light without sunglasses, you get a negative moodlet and your eyes go blurry. Are you part molerat?"
 	conflicts = list(/datum/quirk/nyctophobia)
-	gain_text = span_danger("The safety of light feels off...")
-	lose_text = span_notice("Enlightening.")
-	medical_record_text = "Patient has acute phobia of light, and insists it is physically harmful."
+	gain_text = span_danger("The light begins to hurt your eyes...")
+	lose_text = span_notice("Your eyes no longer sting in the light.")
+	medical_record_text = "Patient has acute light sensitivity, and insists it is physically harmful."
 
 /datum/quirk/lightless/on_process()
 	var/turf/T = get_turf(quirk_holder)
@@ -311,11 +311,15 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/sunglasses = H.get_item_by_slot(SLOT_GLASSES)
 
-	if(lums >= 0.8)
+	if(lums >= 0.8) // Eyeblur for those ill prepared
 		if(!istype(sunglasses, /obj/item/clothing) || sunglasses?.tint < 1)
 			if(quirk_holder.eye_blurry < 20)
 				quirk_holder.eye_blurry = 20
 			SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "brightlight", /datum/mood_event/brightlight)
+	if(lums >= 0.6) // Accuracy gets kicked in the teeth regardless of sunglasses. A bit stronger than regular poor aim. Also stacks.
+		ADD_TRAIT(quirk_holder, TRAIT_LIGHT_SENSITIVITY, TRAIT_GENERIC)
+	if(lums <= 0.6)
+		REMOVE_TRAIT(quirk_holder, TRAIT_LIGHT_SENSITIVITY, TRAIT_GENERIC)
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
@@ -534,7 +538,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/catphobia
 	name = "Phobia - Cats"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
-	value = -11 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
+	value = -11 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of cats, dog."
 	conflicts = list(
@@ -659,7 +663,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/birdphobia
 	name = "Phobia - Birds"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with birds."
-	value = -11
+	value = -11 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = ""
 	conflicts = list(
@@ -684,7 +688,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/dogphobia
 	name = "Phobia - Dogs"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with dogs."
-	value = -11 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. This one gets the lottery because apparently most of our players play canines.
+	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "You're scared of dogs, cat."
 	conflicts = list(
@@ -709,7 +713,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
-	value = -11 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
+	value = -11 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "You really hate it when shit gets spooky."
 	conflicts = list(
@@ -732,9 +736,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/skeletons, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/maskphobia
-	name = "Phobia - Masked People"
-	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask."
-	value = -11 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. Literally everyone wears some manner of mask. You'd be better off with pacifist.
+	name = "Phobia - Strangers" // Turns out this trait doesnt search for a mask, but if there's an 'unknown' or 'as unknown'. Which means, if someone's identity is hidden at all, it will trigger.
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask. You no longer feel comfortable around people whose face you cant see."
+	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "Chic chicy boom?  No thanks."
 	conflicts = list(
@@ -759,7 +763,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/doctorphobia
 	name = "Phobia - Doctors"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
-	value = -11 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be. This accounts for everything medical. Red crosses, medical clothes, medical tools, surgery, etc. If its expected in medical treatment, it will trigger this.
+	value = -33 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "Healthcare really is way too expensive these days."
 	conflicts = list(
