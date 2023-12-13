@@ -1469,6 +1469,13 @@
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
 	icon_state = "sportscar"
 
+/obj/vehicle/sealed/car/caddy
+	name = "Personal full sized luxury SUV"
+	desc = "a refitted, redone, customized, and restored old relic of the early 2000s. This full sized luxury SUV comes with state of the art infotainment while also containing all the settings and whatnot one would find in such a vehicle."
+	icon_state = "caddy"
+	key_type = /obj/item/key/security
+	icon = 'icons/fallout/vehicles/medium_vehicles.dmi'
+
 /obj/vehicle/sealed/car/jeep
 	name = "jeep"
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
