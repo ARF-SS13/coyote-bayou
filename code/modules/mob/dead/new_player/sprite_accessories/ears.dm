@@ -217,7 +217,7 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
-	/datum/sprite_accessory/ears/human/fox/foxsplayed
+/datum/sprite_accessory/ears/human/fox/foxsplayed
 	name = "Fox - Splayed"
 	icon_state = "foxsplayed"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
