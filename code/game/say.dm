@@ -161,13 +161,14 @@ And the base of the send_speech() proc, which is the core of saycode.
 	
 
 /atom/movable/proc/attach_spans(input, list/spans)
-	if(!length(spans) || isnull(spans[1]))
-		return input
-	if((input[1] == "!") && (length(input) > 2))
-		return
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
 		input = capitalize(copytext(input, customsayverb + length(input[customsayverb])))
+
+	if(!length(spans) || isnull(spans[1]) && !customsayverb)
+		return input
+	if((input[1] == "!") && (length(input) > 2))
+		return
 	if(input)
 		return "[message_spans_start(spans)][input]</span>"
 	else
