@@ -46,12 +46,12 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
-/datum/gear/donator/risingstarslash
+/datum/gear/donator/prismaticnova
 	name = "Slime Cookie Recipe Book"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/book/granter/crafting_recipe/slimecookie
 	category = LOADOUT_CATEGORY_BACKPACK
-	ckeywhitelist = list("risingstarslash")
+	ckeywhitelist = list("prismaticnova")
 	cost = 0
 
 /obj/item/clothing/mask/surgical/sloaff
@@ -73,7 +73,7 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
-/obj/item/card/id/dogtag/risingstarslash
+/obj/item/card/id/dogtag/prismaticnova
 	name = "holo dogtag"
 	icon_state = "holodogtag"
 	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 234-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
@@ -1097,6 +1097,54 @@
 	new /obj/item/clothing/under/f13/recon/outcast(src)
 	new /obj/item/book/granter/crafting_recipe/blueprint/plasmarifle(src)
 
+/datum/gear/donator/kits/prismaticnova
+	name = "Blue's Kit"
+	path = /obj/item/storage/box/large/custom_kit/prismaticnova
+	ckeywhitelist = list("prismaticnova")
+
+/obj/item/storage/box/large/custom_kit/prismaticnova/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
+	new /obj/item/lighter/fusion(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/clothing/glasses/prism_glasses(src)
+	new /obj/item/stealthboy(src)
+	new /obj/item/stock_parts/cell/high/slime/blue(src)
+
+/datum/gear/donator/kits/prismaticnova2
+	name = "Slime Cookie Kit"
+	path = /obj/item/storage/box/large/custom_kit/prismaticnova2
+	ckeywhitelist = list("prismaticnova")
+
+/obj/item/storage/box/large/custom_kit/prismaticnova2/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
+	new /obj/item/lighter/slime(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
+	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
+	new /obj/item/clothing/glasses/prism_glasses(src)
+
+/datum/gear/donator/kits/prismaticnova3
+	name = "Head Paladin Kit"
+	path = /obj/item/storage/box/large/custom_kit/prismaticnova3
+	ckeywhitelist = list("prismaticnova")
+
+/obj/item/storage/box/large/custom_kit/prismaticnova3/PopulateContents()
+	new /obj/item/lighter/gold(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/card/id/dogtag/prismaticnova(src)
+
+/datum/gear/donator/kits/prismaticnova4
+	name = "Trueshot's Kit"
+	path = /obj/item/storage/box/large/custom_kit/prismaticnova4
+	ckeywhitelist = list("prismaticnova")
+
+/obj/item/storage/box/large/custom_kit/prismaticnova4/PopulateContents()
+//	new /obj/item/gun/ballistic/bow/gold(src)
+	new /obj/item/storage/bag/tribe_quiver/light/full(src)
+	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/reagent_containers/pill/fiery_purgative(src)
+	new /obj/item/reagent_containers/pill/antivenom(src)
+
 // Q
 
 // R
@@ -1131,54 +1179,6 @@
 	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/melee/powered/ripper/dull(src)
-
-/datum/gear/donator/kits/risingstarslash
-	name = "Blue's Kit"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash
-	ckeywhitelist = list("risingstarslash")
-
-/obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
-	new /obj/item/lighter/fusion(src)
-	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/clothing/glasses/prism_glasses(src)
-	new /obj/item/stealthboy(src)
-	new /obj/item/stock_parts/cell/high/slime/blue(src)
-
-/datum/gear/donator/kits/risingstarslash2
-	name = "Slime Cookie Kit"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash2
-	ckeywhitelist = list("risingstarslash")
-
-/obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
-	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
-	new /obj/item/lighter/slime(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
-	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
-	new /obj/item/clothing/glasses/prism_glasses(src)
-
-/datum/gear/donator/kits/risingstarslash3
-	name = "Head Paladin Kit"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash3
-	ckeywhitelist = list("risingstarslash")
-
-/obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
-	new /obj/item/lighter/gold(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/card/id/dogtag/risingstarslash(src)
-
-/datum/gear/donator/kits/risingstarslash4
-	name = "Trueshot's Kit"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash4
-	ckeywhitelist = list("risingstarslash")
-
-/obj/item/storage/box/large/custom_kit/risingstarslash4/PopulateContents()
-//	new /obj/item/gun/ballistic/bow/gold(src)
-	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-	new /obj/item/smelling_salts/wayfarer(src)
-	new /obj/item/reagent_containers/pill/fiery_purgative(src)
-	new /obj/item/reagent_containers/pill/antivenom(src)
 
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
