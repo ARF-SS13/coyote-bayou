@@ -49,6 +49,10 @@
 	name = "grey cloak"
 	path = /obj/item/clothing/neck/mantle/gray
 
+/datum/gear/neck/mantle/red
+	name = "red cloak"
+	path = /obj/item/clothing/neck/mantle/red
+
 /datum/gear/neck/mantle/ragged
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged

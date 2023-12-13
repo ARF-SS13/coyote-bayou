@@ -784,7 +784,6 @@
 	name = "Hood cowl"
 	desc = "A dirty, worn-down rag with crudely cut-out eyeholes that barely qualifies as clothing."
 	icon = 'icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = '/icons/mob/clothing/head.dmi'
 	icon_state = "hoodcowl"
 	item_state = "hoodcowl"
 	flags_inv = HIDEHAIR
