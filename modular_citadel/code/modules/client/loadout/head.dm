@@ -1465,4 +1465,6 @@ datum/gear/head/steelpot_bandolier
 	name = "blue witch hat"
 	path = /obj/item/clothing/head/nt_witch
 
-
+/datum/gear/head/hoodcowl
+	name = "Hood cowl"
+	path= /obj/item/clothing/head/hoodcowl
