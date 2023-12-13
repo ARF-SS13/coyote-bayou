@@ -219,6 +219,12 @@
 	icon_state = "rodent"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/snouts/mam_snouts/rodent_thick
+	name = "Rodent (Thick)"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "rodentthick"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/snouts/mam_snouts/lcanid
 	name = "Mammal, Long"
 	icon_state = "lcanid"
