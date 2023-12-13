@@ -474,6 +474,12 @@
 	icon_state = "fish"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/mam_ears/foldedback
+	name = "Folded Back"
+	icon_state = "foldedback"
+	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
+	color_src = MUTCOLORS
+
 /datum/sprite_accessory/ears/mam_ears/fox
 	name = "Fox"
 	icon_state = "fox"
