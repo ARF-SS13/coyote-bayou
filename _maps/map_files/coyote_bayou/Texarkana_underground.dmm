@@ -7327,7 +7327,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating/miasma,
 /area/f13/caves)
 "dau" = (
-/obj/structure/barricade/sandbags,
+/obj/structure/barricade/bars,
+/obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -7575,9 +7576,10 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "dkY" = (
-/obj/structure/barricade/bars,
+/obj/structure/alien/weeds/node,
+/obj/structure/bed/nest,
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/building)
+/area/f13/caves)
 "dlb" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13{
@@ -16623,6 +16625,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jaX" = (
+/obj/item/caution,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/building/sewers)
 "jbv" = (
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -17112,6 +17120,11 @@
 /obj/machinery/telecomms/server/presets/vault,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"jrB" = (
+/obj/structure/alien/weeds,
+/obj/structure/alien/resin/wall,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "jrO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -24799,7 +24812,7 @@
 /area/f13/building/sewers)
 "oht" = (
 /obj/structure/alien/weeds,
-/obj/structure/simple_door/room,
+/obj/structure/simple_door/metal/iron,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "ohA" = (
@@ -56788,7 +56801,7 @@ bOb
 bOb
 bOb
 bOb
-dkY
+bOb
 bOb
 bPE
 poS
@@ -57045,7 +57058,7 @@ iVu
 iVu
 iVu
 iVu
-xAw
+iVu
 iVu
 bPE
 bPE
@@ -57309,9 +57322,9 @@ lfP
 iVu
 iVu
 iVu
-aae
-aae
-aae
+dkY
+rJB
+mLq
 bOb
 vUb
 nmE
@@ -57558,7 +57571,7 @@ tkH
 rJB
 ibB
 suY
-iVu
+jrB
 nCd
 rJB
 rJB
@@ -57566,9 +57579,9 @@ uiP
 pQo
 vnz
 iVu
-iVu
-aae
-aae
+xAw
+rJB
+mLq
 bOb
 rGs
 adE
@@ -57809,7 +57822,7 @@ tkZ
 xRB
 hAD
 oWX
-kyV
+eFN
 eFN
 iVu
 iVu
@@ -57823,9 +57836,9 @@ rJB
 pQo
 rJB
 suY
-iVu
-lRe
-aae
+rJB
+rJB
+suY
 bOb
 bOb
 cfj
@@ -58081,7 +58094,7 @@ pQo
 iVu
 rJB
 rJB
-lRe
+xAw
 lRe
 bOb
 sUn
@@ -61674,8 +61687,8 @@ gcv
 dHk
 dHk
 gcv
-gcv
-lUP
+jaX
+dau
 oht
 rJB
 rJB
@@ -61932,7 +61945,7 @@ dHk
 dHk
 gcv
 gcv
-dau
+jGk
 lRe
 lRe
 rJB
