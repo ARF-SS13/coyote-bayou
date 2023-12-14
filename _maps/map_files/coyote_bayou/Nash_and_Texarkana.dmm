@@ -41229,6 +41229,12 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland/city/nash/starterroad)
+"fUG" = (
+/obj/effect/landmark/start/bartender,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/bar/nash)
 "fUI" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -127954,7 +127960,7 @@ mkb
 fJj
 szs
 mkb
-mkb
+fUG
 dFE
 hor
 vNv

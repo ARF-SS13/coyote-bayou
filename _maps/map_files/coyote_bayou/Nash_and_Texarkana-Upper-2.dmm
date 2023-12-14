@@ -159,7 +159,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "aT" = (
 /obj/machinery/vending/boozeomat{
 	pixel_y = -5
@@ -1077,13 +1077,6 @@
 /obj/structure/butter_churn,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"fj" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/wasteland)
 "fk" = (
 /obj/item/clothing/gloves/color/red/insulated,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1151,7 +1144,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "fE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
@@ -2637,7 +2630,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "mM" = (
 /obj/machinery/light{
 	dir = 4
@@ -3663,7 +3656,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "rA" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -6801,10 +6794,11 @@
 /area/f13/wasteland)
 "Gf" = (
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/rug/carpet,
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "Gg" = (
 /obj/structure/chair/comfy/plywood{
 	dir = 4
@@ -8706,12 +8700,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"OR" = (
-/obj/structure/flora/ausbushes/stalkybush,
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/wasteland)
 "OV" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -8972,10 +8960,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "Qg" = (
-/turf/open/floor/grass{
-	color = "#777777"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/right{
+	dir = 4
 	},
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Qh" = (
 /obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/plasteel/cult,
@@ -9436,22 +9426,12 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "RX" = (
-/obj/structure/stone_tile/surrounding/burnt,
-/obj/structure/stone_tile/center,
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile/surrounding_tile,
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile/surrounding_tile{
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa{
 	dir = 4
 	},
-/turf/open/floor/grass{
-	color = "#444444"
-	},
-/area/f13/building/tribal)
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "RY" = (
 /obj/structure/bed,
 /turf/open/floor/f13/wood,
@@ -9788,7 +9768,7 @@
 /turf/open/floor/grass{
 	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "SW" = (
 /obj/structure/dresser{
 	pixel_y = 10
@@ -10357,22 +10337,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vr" = (
-/obj/structure/stone_tile/surrounding/burnt,
-/obj/structure/stone_tile/center,
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 1
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/right{
+	dir = 4;
+	icon_state = "sofaend_left"
 	},
-/obj/structure/stone_tile/surrounding_tile,
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 4
-	},
-/turf/open/floor/grass{
-	color = "#777777"
-	},
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "Vu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
@@ -11104,9 +11075,9 @@
 	dir = 4
 	},
 /turf/open/floor/grass{
-	color = "#444444"
+	color = "#777777"
 	},
-/area/f13/wasteland)
+/area/f13/building/tribal)
 "YX" = (
 /obj/structure/simple_door/wood,
 /obj/item/lock_bolt{
@@ -17076,15 +17047,15 @@ hm
 hm
 hm
 NC
-OR
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
+FN
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
 rK
 hm
 hm
@@ -17333,15 +17304,15 @@ hm
 hm
 hm
 NC
-Qg
-Qg
-Qg
-hm
+oj
+oj
+oj
+oj
 YV
-Qg
-Gf
+oj
+LF
 mJ
-Qg
+oj
 rK
 hm
 hm
@@ -17590,15 +17561,15 @@ hm
 hm
 hm
 NC
-Qg
+oj
 mJ
-OR
-Qg
+FN
+oj
 rz
-Qg
-Gf
-Gf
-OR
+oj
+LF
+LF
+FN
 rK
 hm
 hm
@@ -17851,8 +17822,8 @@ oj
 oj
 LF
 aS
-Qg
-Qg
+oj
+oj
 SU
 GL
 FN
@@ -18105,13 +18076,13 @@ hm
 hm
 NC
 oj
-RX
+YV
 oj
 Gf
-Gf
-Qg
+LF
 oj
-RX
+oj
+YV
 oj
 rK
 hm
@@ -18364,9 +18335,9 @@ NC
 oj
 oj
 SU
-OR
-Gf
-Gf
+oj
+LF
+LF
 oj
 oj
 oj
@@ -18598,12 +18569,12 @@ hm
 hm
 hm
 NC
-Kz
+iA
 Kz
 iE
 qq
 qq
-Kz
+iA
 rK
 hm
 hm
@@ -18618,15 +18589,15 @@ hm
 hm
 hm
 NC
-Qg
-Qg
+oj
+oj
 rz
-Qg
-Qg
-Qg
+oj
+oj
+oj
 rz
-Gf
-Gf
+LF
+LF
 rK
 hm
 hm
@@ -18875,15 +18846,15 @@ hm
 hm
 hm
 NC
-Qg
-fj
+oj
+GL
 fC
-Qg
-Vr
-Qg
+oj
+YV
+oj
 mJ
-Gf
-Qg
+LF
+oj
 rK
 hm
 hm
@@ -19132,15 +19103,15 @@ hm
 hm
 hm
 NC
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
-Qg
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
 rK
 hm
 hm
@@ -19626,12 +19597,12 @@ hm
 hm
 hm
 NC
-Kz
+iA
 iE
 iE
 Kz
 iE
-Kz
+iA
 rK
 hm
 hm
@@ -19884,9 +19855,9 @@ hm
 hm
 NC
 al
-iE
-iE
-iE
+Vr
+RX
+Qg
 Kz
 al
 rK
