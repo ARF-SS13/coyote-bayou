@@ -190,6 +190,9 @@ SUBSYSTEM_DEF(recoil)
 			my_angle *= 4 // Pack tactics wont save your aim here.
 		if(HAS_TRAIT(shotter,TRAIT_FEV)) //You really shouldn't try this at home.
 			my_angle *= 5 //YOU AINT HITTING SHIT BROTHA. REALLY.
+		if(HAS_TRAIT(shotter,TRAIT_PHOBIC)) // Panicking!
+			my_angle *= 6 // RUN OR SHOOT?!?1
+
 	return round(clamp(my_angle, 0, recoil_max_spread), 0.1)
 
 ////////////// MOB RECOIL STUFF //////////////
