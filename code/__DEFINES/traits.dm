@@ -87,7 +87,6 @@
 #define TRAIT_KNOCKEDOUT		"knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
-#define TRAIT_SOFTSPOKEN		"softspoken"
 #define TRAIT_EMOTEMUTE			"emotemute"
 #define TRAIT_LOOC_MUTE			"looc_mute" //Just like unconsciousness, it disables LOOC salt.
 #define TRAIT_AOOC_MUTE			"aooc_mute" //Same as above but for AOOC.
