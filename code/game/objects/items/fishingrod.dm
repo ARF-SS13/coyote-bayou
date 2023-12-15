@@ -52,6 +52,16 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	//customization, some rods catch trash better than others, if you really want that I guess
 	//default is 40, which is 40 percent chance
 	var/trash_chance = 40
+	/// Changes alert sound when a fish is biting the line.
+	var/alert_sound = 1
+
+/obj/item/fishingrod/AltClick(mob/user)
+	if(alert_sound == 1)
+		alert_sound = 2
+		balloon_alert(user, "You feel like you could catch a Legend!")
+	else
+		alert_sound = 1
+		balloon_alert(user, "Perhaps we shouldn't take this so seriously...")
 
 /obj/item/fishingrod/equipped(mob/user, slot)
 	. = ..()
@@ -74,22 +84,23 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))
 		return ..()
 	if(!(target in range(fish_range, user)))
-		to_chat(current_user, span_warning("The line cannot reach that far, move closer!"))
+		balloon_alert(user, "Too far away, move closer!")
 		return
 	if(inuse)
 		if(current_wait <= world.time && world.time <= current_waitfail)
 			var/fish_result = complete_fishing()
 			switch(fish_result)
 				if(1)
-					to_chat(current_user, span_warning("You got trash, lame..."))
+					balloon_alert(user, "You got trash, lame.")
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(2)
-					to_chat(current_user, span_warning("You got nothing, lame..."))
+					balloon_alert(user, "You got nothing!")
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(3)
-					to_chat(current_user, span_green("You got a fish, nice!"))
+					balloon_alert(user, "You caught a fish!")
 					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
-		to_chat(current_user, span_notice("You pull back your line!"))
+		else	// If we catch trash, a fish, or nothing, we know we reel our line back in.
+			balloon_alert(user, "You reel your line back in.")
 		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
@@ -98,7 +109,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
-	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
+	balloon_alert(user, "You cast out your fishing line!")
 	playsound(src.loc, 'sound/f13items/youcastyourfishingline.ogg', 100, TRUE, -1)
 	current_turf = get_turf(current_user)
 
@@ -107,8 +118,12 @@ GLOBAL_LIST_INIT(fish_rates, list(
 
 /obj/item/fishingrod/proc/play_readysound()
 	if(inuse)
-		playsound(src.loc, 'sound/f13items/youvegotsomething.ogg', 100, TRUE, -1)
+		if(alert_sound == 1)
+			playsound(src.loc, 'sound/f13items/youvegotsomething.ogg', 100, TRUE, -1)
+		else
+			playsound(src.loc, 'sound/f13items/fishing_alert.ogg', 100, TRUE, -1)
 		to_chat(current_user,"You've got something...")
+		balloon_alert(current_user, "Something is biting!")
 
 /obj/item/fishingrod/proc/complete_fishing()
 	var/fish_got = prob(trash_chance)
@@ -141,7 +156,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 
 /obj/item/fishingrod/sleepyrod
 	name = "fishing rod"
-	desc = "A long pole that was once used to capture mighty beasts from the sea. Or it would be, but you didn't put any bait on it and are just wasting time."
+	desc = "A long pole that was once used to capture mighty beasts from the sea. Or it would be, but you didn't put any bait on it and are just wasting time. <span class='bold'>Alt-Click to change alert sound. Ctrl-Shift-Click to vibe.</span>"
 	icon = 'icons/obj/fish/fish_items.dmi'
 	icon_state = "fishingrod"
 	color = "#6666FF"
@@ -161,36 +176,6 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	//default is 40, which is 40 percent chance
 	trash_chance = 40
 
-/obj/item/fishingrod/sleepyrod/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))
-		return ..()
-	if(!(target in range(fish_range, user)))
-		to_chat(current_user, span_warning("The line cannot reach that far, move closer!"))
-		return
-	if(inuse)
-		if(current_wait <= world.time && world.time <= current_waitfail)
-			var/fish_result = complete_fishing()
-			switch(fish_result)
-				if(1)
-					to_chat(current_user, span_warning("You got trash, lame..."))
-					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
-				if(2)
-					to_chat(current_user, span_warning("You got nothing, lame..."))
-					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
-				if(3)
-					to_chat(current_user, span_green("You got a fish, nice!"))
-					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
-		to_chat(current_user, span_notice("You pull back your line!"))
-		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
-		inuse = FALSE
-		return //yea, we aren't terraria with a fishing rod that has multiple lines
-	inuse = TRUE
-	var/random_fishtime = rand(min_fishtime, max_fishtime)
-	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
-	current_wait = world.time + random_fishtime
-	current_waitfail = current_wait + max_afterfish
-	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
+/obj/item/fishingrod/sleepyrod/CtrlShiftClick(mob/user)
+	balloon_alert(user, "Time to vibe...")
 	playsound(src.loc, 'sound/f13items/fishing.ogg', 60, TRUE, -1)
-	current_turf = get_turf(current_user)
-
-
