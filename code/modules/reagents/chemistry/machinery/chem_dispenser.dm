@@ -678,7 +678,8 @@
 		/datum/reagent/consumable/ethanol/sake,
 		/datum/reagent/consumable/ethanol/applejack,
 		/datum/reagent/consumable/ethanol/champagne,
-		/datum/reagent/consumable/ethanol/fernet
+		/datum/reagent/consumable/ethanol/fernet,
+		/datum/reagent/consumable/ethanol/amaretto
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/ethanol,
