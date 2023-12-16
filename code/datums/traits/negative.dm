@@ -550,6 +550,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_CATPHOBIA
@@ -583,6 +584,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_RATPHOBIA
@@ -616,6 +618,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_SPIDERPHOBIA
@@ -649,6 +652,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_LIZARDPHOBIA
@@ -682,6 +686,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_ROBOTPHOBIA
@@ -715,6 +720,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_BIRDPHOBIA
@@ -748,6 +754,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/birdphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_DOGPHOBIA
@@ -766,10 +773,44 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
 
+/datum/quirk/alienphobia
+	name = "Phobia - Aliens"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with aliens."
+	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
+	category = "Phobia Quirks"
+	mechanics = "You're scared of aliens."
+	conflicts = list(
+		/datum/quirk/catphobia,
+		/datum/quirk/ratphobia,
+		/datum/quirk/spiderphobia,
+		/datum/quirk/lizardphobia,
+		/datum/quirk/robotphobia,
+		/datum/quirk/birdphobia,
+		/datum/quirk/skelephobia,
+		/datum/quirk/maskphobia,
+		/datum/quirk/eyephobia,
+		/datum/quirk/dogphobia
+	)
+	mob_trait = TRAIT_ALIENPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of creatures from beyond your terrestrial comprehension.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you!")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/alienphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/alienphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
+
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
-	value = -11 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
+	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
 	category = "Phobia Quirks"
 	mechanics = "You really hate it when shit gets spooky."
 	conflicts = list(
@@ -781,6 +822,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/maskphobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_BONERPHOBIA
@@ -814,6 +856,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
+		/datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_MASKPHOBIA
@@ -882,7 +925,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
-		/datum/quirk/maskphobia
+		/datum/quirk/alienphobia
 	)
 	mob_trait = TRAIT_EYEPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of your eyes being stabbed grips your mind.")
