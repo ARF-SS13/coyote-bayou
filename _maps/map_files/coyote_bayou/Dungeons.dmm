@@ -6710,6 +6710,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
+"cYq" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "cYC" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -27836,6 +27845,16 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"mEw" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
+/area/f13/building)
 "mEz" = (
 /obj/structure/sign/directions/cells{
 	dir = 1
@@ -37869,6 +37888,7 @@
 /area/f13/bunker)
 "qUW" = (
 /obj/machinery/light,
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "qVo" = (
@@ -39400,6 +39420,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/armory)
+"rEG" = (
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "rEQ" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -77768,7 +77794,7 @@ vRf
 cNx
 vRf
 vRf
-vRf
+rEG
 ijC
 aEL
 whv
@@ -78540,8 +78566,8 @@ vRf
 umx
 vRf
 bNu
-tCL
-tCL
+wpu
+cYq
 ijC
 roY
 plC
@@ -79055,17 +79081,17 @@ dYv
 vRf
 vRf
 vRf
-wpu
+tCL
 ijC
 gNn
 gNn
-sAU
+mEw
 ijC
 vRf
 ijC
 gNn
 gNn
-sAU
+mEw
 ijC
 aEL
 whv
