@@ -427,6 +427,14 @@
 	message = "nibbles on something."
 	message_param = "nibbles on %t."
 
+/datum/emote/living/oof
+	key = "oof"
+	key_third_person = "oofs"
+	message = "makes pained sounds."
+	message_param = "makes pained sounds at %t."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/oof.ogg'
+
 /datum/emote/living/fenfrantic
 	key = "fenfrantic"
 	key_third_person = "geckers frantically!"
