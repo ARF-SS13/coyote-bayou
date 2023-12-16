@@ -674,6 +674,17 @@
 	mob_trait = TRAIT_DOG
 	human_only = FALSE
 
+/datum/quirk/alien
+	name = "An alien!"
+	desc = "You identify as some manner of wierd, uncanny alien! Maybe you're a xenomorph, youre a grey skinned big headded creature, or you're just otherwise otherworldly!"
+	value = 0
+	category = "Identification Quirks"
+	mechanics = "You trigger the alien phobia."
+	conflicts = list()
+	mob_trait = TRAIT_ALIEN
+	human_only = FALSE
+
+
 /datum/quirk/photographer
 	name = "Photographer"
 	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."

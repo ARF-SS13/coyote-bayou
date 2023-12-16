@@ -5006,6 +5006,10 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operations)
+"cqY" = (
+/obj/machinery/sleeper/clockwork,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "cre" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/junker/creator,
@@ -6706,6 +6710,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
+"cYq" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "cYC" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -14444,6 +14457,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker/bighornbunker)
+"gsz" = (
+/obj/machinery/clonepod{
+	internal_radio = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "gsI" = (
 /mob/living/simple_animal/hostile/enclave/scientist,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -21912,6 +21931,12 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/building)
+"jYm" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "jYs" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -27820,6 +27845,16 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"mEw" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
+/area/f13/building)
 "mEz" = (
 /obj/structure/sign/directions/cells{
 	dir = 1
@@ -30714,6 +30749,10 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
+/area/f13/building)
+"nSQ" = (
+/obj/machinery/computer/cloning,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "nTf" = (
 /obj/structure/cable{
@@ -37849,6 +37888,7 @@
 /area/f13/bunker)
 "qUW" = (
 /obj/machinery/light,
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "qVo" = (
@@ -39380,6 +39420,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/armory)
+"rEG" = (
+/obj/structure/mirror{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "rEQ" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -45512,6 +45558,10 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/cult,
+/area/f13/building)
+"uvV" = (
+/obj/machinery/dna_scannernew,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "uvZ" = (
 /obj/item/storage/trash_stack,
@@ -76965,17 +77015,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
+aEL
 whv
 whv
 whv
@@ -77222,17 +77272,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+ijC
+ijC
+ijC
+ijC
+ijC
+ijC
+ijC
+ijC
+ijC
+aEL
 whv
 whv
 whv
@@ -77479,17 +77529,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+ijC
+gsz
+jYm
+vRf
+ijC
+cqY
+jYm
+vRf
+ijC
+aEL
 whv
 whv
 whv
@@ -77736,17 +77786,17 @@ whv
 whv
 whv
 whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
-whv
+aEL
+ijC
+nSQ
+vRf
+vRf
+cNx
+vRf
+vRf
+rEG
+ijC
+aEL
 whv
 whv
 whv
@@ -77993,16 +78043,16 @@ whv
 whv
 whv
 whv
-whv
 aEL
-aEL
-aEL
-aEL
-aEL
-aEL
-aEL
-aEL
-aEL
+ijC
+uvV
+lFP
+vRf
+ijC
+cqY
+vRf
+vRf
+ijC
 aEL
 aEL
 aEL
@@ -78250,7 +78300,6 @@ whv
 whv
 whv
 whv
-whv
 aEL
 ijC
 ijC
@@ -78258,6 +78307,7 @@ ijC
 ijC
 ijC
 ijC
+cNx
 ijC
 ijC
 ijC
@@ -78507,7 +78557,7 @@ whv
 whv
 whv
 whv
-whv
+aEL
 aEL
 ijC
 kae
@@ -78516,8 +78566,8 @@ vRf
 umx
 vRf
 bNu
-tCL
-tCL
+wpu
+cYq
 ijC
 roY
 plC
@@ -79031,17 +79081,17 @@ dYv
 vRf
 vRf
 vRf
-wpu
+tCL
 ijC
 gNn
 gNn
-sAU
+mEw
 ijC
 vRf
 ijC
 gNn
 gNn
-sAU
+mEw
 ijC
 aEL
 whv

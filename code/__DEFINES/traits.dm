@@ -208,6 +208,7 @@
 #define TRAIT_ROBOTPHOBIA		"robotphobia"
 #define TRAIT_BIRDPHOBIA		"birdphobia"
 #define TRAIT_DOGPHOBIA			"dogphobia"
+#define TRAIT_ALIENPHOBIA		"alienphobia"
 #define TRAIT_BONERPHOBIA		"skelephobia"
 #define TRAIT_MASKPHOBIA		"maskphobia"
 #define TRAIT_DOCTORPHOBIA		"doctorphobia"
@@ -219,6 +220,7 @@
 #define TRAIT_ROBOT				"robots"
 #define TRAIT_BIRD				"birds"
 #define TRAIT_DOG				"dogs"
+#define TRAIT_ALIEN				"aliens"
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
@@ -267,6 +269,8 @@
 #define TRAIT_FREERUNNING		"freerunning"
 #define TRAIT_SKITTISH			"skittish"
 #define TRAIT_POOR_AIM			"poor_aim"
+#define	TRAIT_LIGHT_SENSITIVITY			"light_sensitivity"
+#define	TRAIT_PHOBIC			"trait_phobic"
 #define TRAIT_CRIT_SHOT		"crit_shot" //Crits are cool, but have you ever critted 3 times in a row?
 #define SPREAD_CONTROL		"spread_control"
 #define TRAIT_PROSOPAGNOSIA		"prosopagnosia"
