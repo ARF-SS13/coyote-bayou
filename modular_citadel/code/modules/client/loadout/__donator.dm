@@ -391,7 +391,7 @@
 /datum/gear/donator/kits/dameonowen
 	name = "Dragon Stash"
 	path = /obj/item/storage/box/large/custom_kit/dameonowen
-	ckeywhitelist = list("dameonowen")
+	ckeywhitelist = list("dameonowen", "andyman105")
 
 /obj/item/storage/box/large/custom_kit/dameonowen/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
@@ -414,13 +414,13 @@
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
 	path = /obj/item/clothing/suit/armor/light/duster/town/leather
-	ckeywhitelist = list("dameonowen")
+	ckeywhitelist = list("dameonowen", "andyman105")
 	cost = 1
 
 /datum/gear/donator/kits/dameonowencart
 	name = "Experimental Nanite Factory Cartridge"
 	path = /obj/item/cartridge/resize
-	ckeywhitelist = list("dameonowen")
+	ckeywhitelist = list("dameonowen", "andyman105")
 
 /datum/gear/donator/kits/darknova92
 	name = "Nikolatz BoS"
