@@ -1494,6 +1494,7 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dex",
 		"speed",
 		"speediness",
+		"initiative",
 		"athleticism",
 		"acrobatics",
 		"escape",
@@ -1785,6 +1786,9 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			self_message = message_second,
 			blind_message = message_second)
 		user.emote_for_ghost_sight(message_second)
+
+/datum/emote/living/special/rollfor
+	key = "rollfor"
 
 /datum/emote/help
 	key = "helpme"
