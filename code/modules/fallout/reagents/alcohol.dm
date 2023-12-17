@@ -252,10 +252,12 @@
 	glass_icon_state = "nukadarkglass"
 	glass_name = "Cosmic Dark"
 	glass_desc = "Cosmic Cola with a alcoholic twist."
-	soda_heal_brute = 0.1
-	soda_heal_burn = 0.1
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_3 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukadark/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -274,10 +276,12 @@
 	glass_name = "Cosmic Victory"
 	glass_desc = "Cosmic Cola with an AMERICAN twist."
 	ghoulfriendly = TRUE //too american for ghouls not to taste it
-	soda_heal_brute = 1.0
-	soda_heal_burn = 0.05
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 100
+	sodie_tier = SODIE_TIER_3 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_LOW)
 
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
@@ -301,10 +305,12 @@
 	glass_icon_state = "nukabombglass"
 	glass_name = "Cosmic Bombdrop"
 	glass_desc = "More spirit than Cosmic at this Rate."
-	soda_heal_brute = 1.5
-	soda_heal_burn = 0.05
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 100
+	sodie_tier = SODIE_TIER_3 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukabomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
@@ -330,10 +336,12 @@
 	glass_icon_state = "nukacideglass"
 	glass_name = "Cosmiccide"
 	glass_desc = "The drink of a goddamn madman, say your sorrows when you drink this."
-	soda_heal_brute = 0.5
-	soda_heal_burn = 0.5
-	soda_heal_toxin = 2
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_5 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_5, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_5, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_5, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukacide/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
@@ -353,10 +361,12 @@
 	glass_icon_state = "nukafancyglass"
 	glass_name = "Cosmic Fancy"
 	glass_desc = "A mixture of both Wild and cherry, making something absolutely tasty."
-	soda_heal_brute = 0.6
-	soda_heal_burn = 0.10
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_3 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_LOW)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_HIGH) // kinda bubbly
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
@@ -377,10 +387,12 @@
 	glass_icon_state = "nukaloveglass"
 	glass_name = "Cosmic Love"
 	glass_desc = "A Cosmic-Cola twist on a passionate classic."
-	soda_heal_brute = 0.05
-	soda_heal_burn = 0.50
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_3 // pretty dangerous too!
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_3, SODIE_HEALRANK_HIGH) // stimulates blood flow
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_3, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_3, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_3, SODIE_HEALRANK_HIGH) // breathtaking!
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_3, SODIE_HEALRANK_HIGH) // stimulates at least one of your brains
 
 /datum/reagent/consumable/ethanol/nukalove/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -398,10 +410,12 @@
 	glass_icon_state = "nukapunchglass"
 	glass_name = "Cosmic Punch"
 	glass_desc = "A fruit punch mixture with a Cosmic kick."
-	soda_heal_brute = 4
-	soda_heal_burn = 4
-	soda_heal_toxin = 4
-	soda_heal_brain = 4
+	sodie_tier = SODIE_TIER_4 // lotta booze innit
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_4, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_4, SODIE_HEALRANK_LOW) // fruity
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_4, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_4, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukapunch/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(-4*REM, 0)
@@ -422,9 +436,12 @@
 	glass_icon_state = "nukasunriseglass"
 	glass_name = "Cosmic Sunrise"
 	glass_desc = "A Cosmic-Cola original drink, totally original and first of its kind!"
-	soda_heal_brute = 0.05
-	soda_heal_burn = 0.25
-	soda_heal_toxin = 0.5
+	sodie_tier = SODIE_TIER_2 // alcoholic, but pretty mild and easy to make
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukasunrise/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -444,9 +461,12 @@
 	glass_desc = "An extremely blue and glowing combination of Cosmic-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
-	soda_heal_brute = 0.15
-	soda_heal_burn = 0.25
-	soda_heal_toxin = 0.1
+	sodie_tier = SODIE_TIER_2 // turns out its super easy to make
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_2, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_2, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_2, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukaquantum/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -490,9 +510,12 @@
 	glass_desc = "Like Quantum, but <BIG>EXTREME<BIG>."
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
-	soda_heal_brute = 0.15
-	soda_heal_burn = 0.15
-	soda_heal_toxin = 0.1
+	sodie_tier = SODIE_TIER_5 // hard to make a lot of, and will probably end up hurting you a lot
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_MED)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_5, SODIE_HEALRANK_MED)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_5, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_5, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>EXTREME</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
@@ -581,10 +604,12 @@
 	glass_icon_state = "vimcapglass"
 	glass_name = "Vim Captains Blend"
 	glass_desc = "A glass of special vim holding the taste of the sea, Far from here."
-	soda_heal_brute = 0.25
-	soda_heal_burn = 0.25
-	soda_heal_toxin = 0.5
-	soda_heal_brain = 1
+	sodie_tier = SODIE_TIER_5 // needs gold and fermented broccolli
+	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_HIGHER)
+	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_toxin = SODIE_TOXIN(SODIE_TIER_5, SODIE_HEALRANK_NONE)
+	sodie_heal_oxy =   SODIE_OXY(  SODIE_TIER_5, SODIE_HEALRANK_LOW)
+	sodie_heal_brain = SODIE_BRAIN(SODIE_TIER_5, SODIE_HEALRANK_LOW)
 
 /datum/reagent/consumable/ethanol/vimcap/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
