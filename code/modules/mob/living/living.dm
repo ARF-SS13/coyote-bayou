@@ -1,4 +1,6 @@
 /mob/living/Initialize()
+	add_verb(src, /mob/living/verb/subtle)
+	add_verb(src, /mob/living/verb/subtler)
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
@@ -1579,3 +1581,9 @@
 	set desc = "Switch sharp/fuzzy scaling for current mob."
 	appearance_flags ^= PIXEL_SCALE
 	fuzzy = !fuzzy
+
+/mob/living/get_status_tab_items()
+	. = ..()
+	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
+		. += ""
+		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"

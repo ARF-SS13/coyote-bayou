@@ -54,8 +54,6 @@
 	if(pipe_flags & PIPING_CARDINAL_AUTONORMALIZE)
 		normalize_cardinal_directions()
 	nodes = new(device_type)
-	if (!armor)
-		armor = ARMOR_VALUE_GENERIC_ITEM
 	..()
 	if(process)
 		if(interacts_with_air)

@@ -408,7 +408,7 @@
 		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
 	)
-	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/mothic_white_pie
@@ -418,7 +418,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/mothic_pesto
@@ -429,7 +429,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_pesto
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/mothic_garlic
@@ -440,7 +440,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 2,
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
+	result = /obj/item/reagent_containers/food/snacks/pizza/mothic_garlic
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/sloppyjoe

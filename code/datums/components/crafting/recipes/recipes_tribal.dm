@@ -44,27 +44,6 @@
 				/obj/item/weaponcrafting/string = 1,
 				)
 
-/datum/crafting_recipe/tribalwar/lightxbow
-	name = "Light Crossbow"
-	result = /obj/item/gun/ballistic/bow/lightxbow
-	time = 120
-	reqs = list(/obj/item/stack/crafting/metalparts = 5, //more spendy but an easy step up
-				/obj/item/stack/rods = 1,
-				/obj/item/stack/sheet/mineral/wood = 15,
-				/obj/item/weaponcrafting/string = 1
-				)
-	tools = list(TOOL_WORKBENCH)
-
-/datum/crafting_recipe/tribalwar/recurvebow
-	name = "recurve bow"
-	result = /obj/item/gun/ballistic/bow/recurvebow
-	time = 120
-	reqs = list(/obj/item/stack/sheet/leather = 5, //more spendy but an easy step up
-				/obj/item/stack/sheet/mineral/wood = 15,
-				/obj/item/weaponcrafting/string = 2
-				)
-	tools = list(TOOL_WORKBENCH)
-
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
 	result = /obj/item/melee/onehanded/machete/training
@@ -547,18 +526,6 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/stack/sheet/mineral/gold = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
 
-// Staff of Magic Missile (Generalist staff, single shot/burst medium projectiles, okay-ish melee weapon)
-/datum/crafting_recipe/magic/missilestaff
-	name = "Staff of Magic Missile"
-	result = /obj/item/gun/magic/staff/kelpmagic/magicmissile
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,
-				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/crafting/goodparts = 3,
-				/obj/item/stack/sheet/mineral/plasma = 2)
-	tools = list(TOOL_WORKBENCH, TOOL_RITUAL)
-
-
 // T1 Sparks Wand (anti-swarm sidearm)
 /datum/crafting_recipe/magic/lightningrod
 	name = "Wand of Sparks"
@@ -639,7 +606,7 @@ datum/crafting_recipe/tribalwar/bone
 
 // Perfected Staff of Healing (Literally just the medbeam but Bulky and needs magic)
 /datum/crafting_recipe/magic/healstaff/perfected
-	name = "Staff of Healing"
+	name = "Perfected Staff of Healing"
 	result = /obj/item/gun/medbeam/magic
 	time = 30
 	reqs = list(/obj/item/stack/crafting/metalparts = 20,

@@ -30,7 +30,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/saveshot_rate = 1 HOURS
 
 	var/debug_categories = FALSE // makes up a bunch of categories for us
-	var/debug_migration = FALSE // fucks with our savefile
+	var/debug_migration = FALSE // fucs with our savefile
 	var/debug_conflicts = FALSE
 
 	var/dp = FALSE
@@ -102,6 +102,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		this_quirk[QUIRK_DESC] = "[Q2.desc]"
 		this_quirk[QUIRK_MECHANICS] = "[Q2.mechanics]"
 		this_quirk[QUIRK_CONFLICTS] = Q2.get_conflicts()
+		this_quirk[QUIRK_HUMANONLY] = "[Q2.human_only ? "👨 " : "👨🐺 "]"
 		if(debug_categories)
 			this_quirk[QUIRK_CATEGORY] = "[LAZYACCESS(debug_cats, debug_index)]"
 			all_categories |= "[LAZYACCESS(debug_cats, debug_index)]"
@@ -238,6 +239,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		dickpoints = min(dickpoints + 11, 33)
 		out["UserProstheticObjs"] += list(limbdat)
 	out["UserQuirkPoints"] -= dickpoints
+	SanitizeUserQuirks(out["UserQuirksConflictingKeys"])
 	return out
 
 /// Returns the player's quirk balance
@@ -712,7 +714,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			continue // shruggo
 		var/file = QUIRK_PLAYER2FILENAME(to_jsonify[1], to_jsonify[2])
 		text2file(json_string, file)
-	message_admins("Saved [LAZYLEN(cocklist)] quirks to [my_directory]. should match the last message! if not everything is fucked!")
+	message_admins("Saved [LAZYLEN(cocklist)] quirks to [my_directory]. should match the last message! if not everything is fuced!")
 
 /datum/controller/subsystem/processing/quirks/proc/LoadStatsFromHardDrive()
 	return // I'll make this later

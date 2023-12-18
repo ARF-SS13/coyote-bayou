@@ -3,6 +3,9 @@
 	density = 1
 	layer = MOB_LAYER + 1
 
+/obj/structure/wreck/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
+
 /obj/structure/wreck/car
 	name = "wrecked car"
 	desc = "An old pre-war car, rusted and destroyed with age and weathering."

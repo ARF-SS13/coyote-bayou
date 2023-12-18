@@ -73,6 +73,7 @@ proc/get_top_level_mob(mob/S)
 	else
 		message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
+
 	var/list/non_admin_ghosts = list()
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
 	if(subtler)

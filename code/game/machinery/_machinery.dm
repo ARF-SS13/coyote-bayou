@@ -135,8 +135,6 @@ Class Procs:
 	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
-	if(!armor)
-		armor = ARMOR_VALUE_LIGHT
 	. = ..()
 	var/obj/machinery/hydroponics/T = src
 	if(!istype(T))

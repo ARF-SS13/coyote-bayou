@@ -19,6 +19,17 @@
 	hide_flag = HIDE_BALLS // for hideflag stuff
 	pornhud_slot = PHUD_BALLS
 
+/obj/item/organ/genital/testicles/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "ballsack"
+	out["BitName"] = "A [lowertext(shape)]."
+	out["BitSize"] = "It is [size] decigrundles in mass!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = FALSE
+	out["BitExtra"] = "Operating at %[fluid_efficiency] capacity."
+	out["BitEmoji"] = "🍒"
+	return out
+
 /obj/item/organ/genital/testicles/generate_fluid()
 	if(!linked_organ && !update_link())
 		return FALSE

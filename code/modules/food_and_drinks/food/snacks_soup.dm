@@ -174,11 +174,9 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	foodtype = VEGETABLES
 
-/obj/item/reagent_containers/food/snacks/soup/beet/Initialize()
-	. = ..()
+/obj/item/reagent_containers/food/snacks/soup/beet/InitTastes()
 	name = pick("borsch","bortsch","borstch","borsh","borshch","borscht")
-	tastes = list(name = 1)
-
+	SSlistbank.catalogue_tastes(src, list("[name]" = 1), TRUE)
 
 /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
 	name = "spacy liberty duff"

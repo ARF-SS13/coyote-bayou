@@ -354,8 +354,10 @@
 	Unused except for AI
 */
 /mob/proc/CtrlShiftClickOn(atom/A)
+	. = SEND_SIGNAL(src, COMSIG_CLICK_CTRL_SHIFT, A)
+	if(. & COMSIG_MOB_CANCEL_CLICKON)
+		return
 	A.CtrlShiftClick(src)
-	return
 
 /mob/proc/ShiftMiddleClickOn(atom/A)
 	src.pointed(A)

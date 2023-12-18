@@ -67,52 +67,52 @@
 		. += "sheater-open"
 
 /obj/machinery/space_heater/process_atmos()
-	if(!on || !is_operational())
-		if (on) // If it's broken, turn it off too
-			on = FALSE
-		return PROCESS_KILL
+	// if(!on || !is_operational())
+	// 	if (on) // If it's broken, turn it off too
+	// 		on = FALSE
+	// 	return PROCESS_KILL
 
-	if(cell && cell.charge > 0)
-		var/turf/L = loc
-		if(!istype(L))
-			if(mode != HEATER_MODE_STANDBY)
-				mode = HEATER_MODE_STANDBY
-				update_icon()
-			return
+	// if(cell && cell.charge > 0)
+	// 	var/turf/L = loc
+	// 	if(!istype(L))
+	// 		if(mode != HEATER_MODE_STANDBY)
+	// 			mode = HEATER_MODE_STANDBY
+	// 			update_icon()
+	// 		return
 
-		var/datum/gas_mixture/env = L.return_air()
+	// 	var/datum/gas_mixture/env = L.return_air()
 
-		var/newMode = HEATER_MODE_STANDBY
-		if(setMode != HEATER_MODE_COOL && env.return_temperature() < targetTemperature - temperatureTolerance)
-			newMode = HEATER_MODE_HEAT
-		else if(setMode != HEATER_MODE_HEAT && env.return_temperature() > targetTemperature + temperatureTolerance)
-			newMode = HEATER_MODE_COOL
+	// 	var/newMode = HEATER_MODE_STANDBY
+	// 	if(setMode != HEATER_MODE_COOL && env.return_temperature() < targetTemperature - temperatureTolerance)
+	// 		newMode = HEATER_MODE_HEAT
+	// 	else if(setMode != HEATER_MODE_HEAT && env.return_temperature() > targetTemperature + temperatureTolerance)
+	// 		newMode = HEATER_MODE_COOL
 
-		if(mode != newMode)
-			mode = newMode
-			update_icon()
+	// 	if(mode != newMode)
+	// 		mode = newMode
+	// 		update_icon()
 
-		if(mode == HEATER_MODE_STANDBY)
-			return
+	// 	if(mode == HEATER_MODE_STANDBY)
+	// 		return
 
-		var/heat_capacity = env.heat_capacity()
-		var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
-		requiredPower = min(requiredPower, heatingPower)
+	// 	var/heat_capacity = env.heat_capacity()
+	// 	var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
+	// 	requiredPower = min(requiredPower, heatingPower)
 
-		if(requiredPower < 1)
-			return
+	// 	if(requiredPower < 1)
+	// 		return
 
-		var/deltaTemperature = requiredPower / heat_capacity
-		if(mode == HEATER_MODE_COOL)
-			deltaTemperature *= -1
-		if(deltaTemperature)
-			env.set_temperature(env.return_temperature() + deltaTemperature)
-			air_update_turf()
-		cell.use(requiredPower / efficiency)
-	else
-		on = FALSE
-		update_icon()
-		return PROCESS_KILL
+	// 	var/deltaTemperature = requiredPower / heat_capacity
+	// 	if(mode == HEATER_MODE_COOL)
+	// 		deltaTemperature *= -1
+	// 	if(deltaTemperature)
+	// 		env.set_temperature(env.return_temperature() + deltaTemperature)
+	// 		air_update_turf()
+	// 	cell.use(requiredPower / efficiency)
+	// else
+	// 	on = FALSE
+	// 	update_icon()
+	// 	return PROCESS_KILL
 
 /obj/machinery/space_heater/RefreshParts()
 	var/laser = 2
@@ -188,17 +188,17 @@
 	data["minTemp"] = max(settableTemperatureMedian - settableTemperatureRange - T0C, TCMB)
 	data["maxTemp"] = settableTemperatureMedian + settableTemperatureRange - T0C
 
-	var/turf/L = get_turf(loc)
-	var/curTemp
-	if(istype(L))
-		var/datum/gas_mixture/env = L.return_air()
-		curTemp = env.return_temperature()
-	else if(isturf(L))
-		curTemp = L.return_temperature()
-	if(isnull(curTemp))
-		data["currentTemp"] = "N/A"
-	else
-		data["currentTemp"] = round(curTemp - T0C, 1)
+	// var/turf/L = get_turf(loc)
+	// var/curTemp
+	// if(istype(L))
+	// 	var/datum/gas_mixture/env = L.return_air()
+	// 	curTemp = env.return_temperature()
+	// else if(isturf(L))
+	// 	curTemp = L.return_temperature()
+	// if(isnull(curTemp))
+	// 	data["currentTemp"] = "N/A"
+	// else
+	data["currentTemp"] = round(INFINITY, 1)
 	return data
 
 /obj/machinery/space_heater/ui_act(action, params)

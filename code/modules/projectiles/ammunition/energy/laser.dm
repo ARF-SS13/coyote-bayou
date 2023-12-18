@@ -245,11 +245,6 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/ultra_rifle
 	e_cost = 1000 // 40 shots
 
-/obj/item/ammo_casing/energy/laser/AK470M
-	projectile_type = /obj/item/projectile/beam/laser/pistol/AK470M
-	e_cost = 1000 // 30 shots
-	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
-
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
 	e_cost = 1875 // same as the hitscan, though this is unused
@@ -285,7 +280,7 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/pistol/freeblade
 	pellets = 3
 	variance = 35
-	e_cost = 5000 //6 shots
+	e_cost = 1666 // 6 shots
 	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/rcw
@@ -447,6 +442,22 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
+//Laser AK casings
+/obj/item/ammo_casing/energy/laser/tg/kalashheavy
+	projectile_type = /obj/item/projectile/beam/laser/tg/kalashheavy
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+/obj/item/ammo_casing/energy/laser/tg/kalashlight
+	projectile_type = /obj/item/projectile/beam/laser/tg/kalashlight
+	e_cost = 1000 // 30 shots
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+// Halo casings
+/obj/item/ammo_casing/energy/laser/tg/covenantbrr
+	projectile_type = /obj/item/projectile/beam/laser/beam
+	e_cost = 3000 // 10 shots
+	fire_sound = 'sound/f13weapons/beamrifle.ogg'
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

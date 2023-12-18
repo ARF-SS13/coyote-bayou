@@ -43,7 +43,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
 	//End name span.
 	var/endspanpart = "</span>"
-
+	
 	//Message
 	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
 
@@ -62,7 +62,11 @@ And the base of the send_speech() proc, which is the core of saycode.
 
 /atom/movable/proc/say_mod(input, message_mode)
 	var/ending = copytext_char(input, -1)
-	if(copytext_char(input, -2) == "!!")
+	if(message_mode == MODE_WHISPER)
+		return verb_whisper
+	else if(message_mode == MODE_SING)
+		return verb_sing
+	else if(copytext_char(input, -2) == "!!")
 		return verb_yell
 	else if(ending == "?")
 		return verb_ask
@@ -78,6 +82,9 @@ And the base of the send_speech() proc, which is the core of saycode.
 	if(copytext_char(input, -2) == "!!")
 		spans |= SPAN_YELL
 
+	var/reformatted = SSchat.emoticonify(src, input, message_mode, spans)
+	if(reformatted)
+		return reformatted
 	var/spanned = attach_spans(input, spans)
 	return "[say_mod(input, message_mode)][spanned ? ", \"[spanned]\"" : ""]"
 	// Citadel edit [spanned ? ", \"[spanned]\"" : ""]"
@@ -107,6 +114,9 @@ And the base of the send_speech() proc, which is the core of saycode.
 /atom/movable/proc/quoteless_say_quote(input, list/spans = list(speech_span), message_mode)
 	if((input[1] == "!") && (length_char(input) > 1))
 		return ""
+	var/emoticontext = SSchat.emoticonify(src, input, message_mode, spans)
+	if(emoticontext)
+		return emoticontext
 	var/pos = findtext(input, "*")
 	return pos? copytext(input, pos + 1) : input
 
@@ -151,11 +161,14 @@ And the base of the send_speech() proc, which is the core of saycode.
 	
 
 /atom/movable/proc/attach_spans(input, list/spans)
-	if((input[1] == "!") && (length(input) > 2))
-		return
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
 		input = capitalize(copytext(input, customsayverb + length(input[customsayverb])))
+
+	if((input[1] == "!") && (length(input) > 2))
+		return
+	if(!length(spans) || isnull(spans[1]) && !customsayverb)
+		return input
 	if(input)
 		return "[message_spans_start(spans)][input]</span>"
 	else
@@ -198,6 +211,7 @@ And the base of the send_speech() proc, which is the core of saycode.
 	var/job
 	var/atom/movable/source
 	var/obj/item/radio/radio
+	var/chatcolor
 
 INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 /atom/movable/virtualspeaker/Initialize(mapload, atom/movable/M, radio)
@@ -210,6 +224,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
 		verb_yell = M.verb_yell
+		chatcolor = M.get_chat_color()
 
 	// The mob's job identity
 	if(ishuman(M))
@@ -246,3 +261,6 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 //To get robot span classes, stuff like that.
 /atom/movable/proc/get_spans()
 	return list()
+
+/atom/movable/virtualspeaker/get_chat_color()
+	return chatcolor

@@ -208,6 +208,8 @@
 	I.gun_loc_tag = GUN_UNDERBARREL
 	I.prefix = "laser-guided"
 
+
+
 //Fits onto generally small tools that require precision, especially surgical tools
 //Doesn't work onlarger things like crowbars and drills
 /obj/item/tool_upgrade/refinement/stabilized_grip
@@ -261,11 +263,12 @@
 	UPGRADE_HEALTH_THRESHOLD = 10
 	)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.95,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.05,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 0.9,
+		GUN_UPGRADE_DAMAGE_MULT = 0.9,
 		GUN_UPGRADE_MUZZLEFLASH = 0.8,
 		GUN_UPGRADE_RECOIL_1H = 0.9,
-		GUN_UPGRADE_RECOIL_2H = 0.9,
+		GUN_UPGRADE_RECOIL_2H = 0.8,
 	)
 	I.req_gun_tags = list(GUN_PROJECTILE)
 	I.gun_loc_tag = GUN_MUZZLE
@@ -315,8 +318,8 @@
 		GUN_UPGRADE_RECOIL_1H = 0.9,
 		GUN_UPGRADE_RECOIL_2H = 0.9,
 		//GUN_UPGRADE_DAMAGE_MULT = 1.1,
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.95,
-		GUN_UPGRADE_MUZZLEFLASH = 0.8,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+		GUN_UPGRADE_MUZZLEFLASH = 0.9,
 		//GUN_UPGRADE_CHARGECOST = 0.9
 	)
 	I.prefix = "intelligent"

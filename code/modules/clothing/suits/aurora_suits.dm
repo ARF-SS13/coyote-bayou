@@ -101,7 +101,7 @@
 
 /obj/item/clothing/suit/toggle/labcoat/aurora/bomberlong
 	name = "Domina Bomber long"
-	desc = "A short brown bomber jacket"
+	desc = "A long brown bomber jacket"
 	icon_state = "dominia_bomber_long"
 	item_state = "dominia_bomber_long"
 	armor = ARMOR_VALUE_LIGHT

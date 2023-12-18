@@ -753,12 +753,22 @@
 /datum/sprite_accessory/tails/mam_tails/fox
 	name = "Fox"
 	icon_state = "fox"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/fox
 	name = "Fox"
 	icon_state = "fox"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/double
+	name = "Double Fox"
+	icon_state = "doublefox"
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/doublefox
+	name = "Double Fox"
+	icon_state = "doublefox"
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/tails/mam_tails/hawk
 	name = "Hawk"
@@ -1054,3 +1064,13 @@ datum/sprite_accessory/tails/mam_tails/insect
 	color_src = MATRIXED
 	icon = 'icons/mob/mam/citadel/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/umbreon
+	name = "Umbreon"
+	icon_state = "umbreon"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/umbreon
+	name = "Umbreon"
+	icon_state = "umbreon"
+	matrixed_sections = MATRIX_RED_GREEN

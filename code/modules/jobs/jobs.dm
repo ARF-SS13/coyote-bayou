@@ -99,6 +99,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "High Alderperson",
 "Sheriff",
 "Deputy",
+"Deputy Mayor",
 "Texarkana Quartermaster",
 "Texarkana Trade Worker",
 "Doctor",
@@ -157,6 +158,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Councilperson",
 	"Sheriff",
 	"Deputy",
+	"Deputy Mayor",
 //	"Farmer",
 //	"Prospector",
 	"Doctor",
@@ -242,6 +244,8 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Vigilante",
 	"Far-Lands Tribals",
 	"Wastelander",
+	"Den Waster",
+	"Garland City Waster",
 	"Radio Operator",
 ))
 
@@ -290,6 +294,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Hunter",
 	"Spirit-Pledged",
 	"Guardian",
+	"Dual Citizen"
 ))
 //bikrs
 GLOBAL_LIST_INIT(biker_positions, list(

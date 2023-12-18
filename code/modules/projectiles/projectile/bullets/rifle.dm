@@ -39,7 +39,7 @@
  * RECOIL: 1
  * WOUNDS: 6.5
  * WNAKED: 3.75
- 
+
 /obj/item/projectile/bullet/a556/sport
 	name = "surplus .223 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_223
@@ -187,7 +187,7 @@
 /obj/item/projectile/bullet/a473
 	name = "4.73 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_473 //30
-	damage_list = list("25" = 25, "30" = 35, "35" = 30, "40" = 5, "41" = 1, "42" = 1, "43" = 1, "44" = 1, "45" = 1,) 
+	damage_list = list("25" = 25, "30" = 35, "35" = 30, "40" = 5, "41" = 1, "42" = 1, "43" = 1, "44" = 1, "45" = 1,)
 	stamina = BULLET_STAMINA_RIFLE_473
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_473
@@ -550,7 +550,7 @@
 /obj/item/projectile/bullet/a308
 	name = ".308 bullet"
 	damage = BULLET_DAMAGE_RIFLE_308 //45
-	damage_list = list("25" = 40, "30" = 45, "48" = 30, "50" = 5, "52" = 3, "55"= 2)
+	damage_list = list("30" = 20, "40" = 50, "48" = 30, "50" = 5, "52" = 3, "55"= 2)
 	stamina = BULLET_STAMINA_RIFLE_308
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_308
@@ -583,6 +583,18 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_308_HANDLOAD
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+/* 7.62mm simple mob projectile
+ * DAMAGE: 45
+ * STAMIN: 45
+ * RECOIL: 2
+ * WOUNDS: 25
+ * WNAKED: 15
+ */
+/obj/item/projectile/bullet/a308/improvised/simple //for simple mobs, separate to allow balancing
+	name = ".308 bullet"
+	damage_list = list("22" = 40, "28" = 45, "45" = 30, "48" = 5, "50" = 3, "55" = 2)
+	spread = BULLET_SPREAD_HANDLOAD*15 //30 degree firing arc, might miss at long range
 
 /* 7.62mm rubber
  * DAMAGE: 4.5
@@ -631,17 +643,6 @@
 
 	embed_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	embedding = list(embed_chance=12, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.3, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a762/microshrapnel)
-
-/* 7.62mm simple
- * DAMAGE: 45
- * STAMIN: 45
- * RECOIL: 2
- * WOUNDS: 25
- * WNAKED: 15
- */
-/obj/item/projectile/bullet/a762/sport/simple //for simple mobs, separate to allow balancing
-	name = ".308 bullet"
-	damage_list = list("22" = 40, "28" = 45, "45" = 30, "48" = 5, "50" = 3, "55" = 2)
 
 /*
 /obj/item/projectile/bullet/a762/uraniumtipped
@@ -727,7 +728,7 @@
 /obj/item/projectile/bullet/a50MG
 	name = ".50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG //75
-	damage_list = list("50" = 40, "75" = 45, "80" = 5, "90" = 5, "100" = 5)
+	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 5)
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_50MG
@@ -738,6 +739,12 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+/*This makes the round very impossible to balance. Just modify the damage multiplier per gun depending on the rate of fire.
+// Bane, handloads don't get it because you went cheap. Loser.
+	supereffective_damage = 95 // SPECIFICALLY 95 because 60 (min damage) + 95 (bane damage) = 155 (total min+bane damage) - 35% (combat armor value) = 100.75 
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+*/
 
 /* .50MG surplus
  * DAMAGE: 75
@@ -1152,7 +1159,7 @@
 	tracer_type = /obj/effect/projectile/tracer/laser/blue
 	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
 	impact_type = /obj/effect/projectile/impact/laser/blue
-	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
+	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH // hmm
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	/// Reduces damage by this much when it hits a thing
 	var/per_wall_mult = 0.8

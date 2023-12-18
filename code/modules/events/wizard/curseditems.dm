@@ -25,14 +25,14 @@
 		if("swords")
 			loadout[SLOT_HANDS] = /obj/item/katana/cursed
 		if("bigfatdoobie")
-			loadout[SLOT_WEAR_MASK] = /obj/item/clothing/mask/cigarette/rollie/trippy
+			loadout[SLOT_MASK] = /obj/item/clothing/mask/cigarette/rollie/trippy
 			ruins_spaceworthiness = 1
 		if("boxing")
-			loadout[SLOT_WEAR_MASK] = /obj/item/clothing/mask/luchador
+			loadout[SLOT_MASK] = /obj/item/clothing/mask/luchador
 			loadout[SLOT_GLOVES] = /obj/item/clothing/gloves/boxing
 			ruins_spaceworthiness = 1
 		if("voicemodulators")
-			loadout[SLOT_WEAR_MASK] = /obj/item/clothing/mask/chameleon
+			loadout[SLOT_MASK] = /obj/item/clothing/mask/chameleon
 		if("catgirls2015")
 			loadout[SLOT_HEAD] = /obj/item/clothing/head/kitty
 			ruins_spaceworthiness = 1

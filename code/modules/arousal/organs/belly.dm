@@ -302,6 +302,23 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	hide_flag = HIDE_BELLY // for hideflag stuff
 	pornhud_slot = PHUD_BELLY
 
+/obj/item/organ/genital/belly/format_for_tgui()
+	var/list/out = list()
+	out["BitKind"] = "belly"
+	switch(shape)
+		if(BELLY_SHAPE_TUMMY)
+			out["BitName"] = "A cute cushy tummy."
+		if(BELLY_SHAPE_OBESE)
+			out["BitName"] = "A big fat belly."
+		if(BELLY_SHAPE_UDDERS)
+			out["BitName"] = "A set of saggy udders."
+	out["BitSize"] = "It is \a [size]-XL!"
+	out["BitColor"] = "[color]"
+	out["BitAroused"] = !!aroused_state
+	out["BitExtra"] = "Operating at %100 capacity."
+	out["BitEmoji"] = "🍔"
+	return out
+
 /obj/item/organ/genital/belly/modify_size(modifier, min = BELLY_SIZE_MIN, max = BELLY_SIZE_MAX)
 	var/new_value = clamp(cached_size + modifier, min, max)
 	if(new_value == cached_size)

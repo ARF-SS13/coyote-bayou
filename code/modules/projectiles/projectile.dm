@@ -187,6 +187,10 @@
 	/// Mobs that shoot a thing wont have it hit friendlies!
 	var/list/faction = list()
 
+	var/bonus_crit_rolls = 1
+
+	var/is_crit_above = 9999
+
 /obj/item/projectile/Initialize()
 	. = ..()
 	permutated = list()
@@ -369,11 +373,12 @@
 	//-->Pacifism Lesser Trait, most important section of it
 	if(iscarbon(target))
 		if(iscarbon(firer))  //is our firer a carbon that can have traits?
-			var/mob/living/carbon/C = target
-			if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
-				trait_pacifism_lesser_consequences(firer, TRUE)
-				visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
-				return FALSE
+			if(!nodamage)  //if the projectile is harmless by definition then there's no need for the trait to even trigger
+				var/mob/living/carbon/C = target
+				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+					trait_pacifism_lesser_consequences(firer, TRUE)
+					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
+					return FALSE
 	//<--
 	return TRUE
 
@@ -419,7 +424,7 @@
 		if(damage && L.blood_volume && damage_type == BRUTE)
 			var/splatter_dir = dir
 			if(starting)
-				splatter_dir = get_dir(starting, target_loca)
+				splatter_dir = round(Get_Angle(starting, target_loca), 1)
 			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
 			if(B && B.status == BODYPART_ROBOTIC) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)
@@ -462,6 +467,9 @@
 		// 	var/playdink = rand(1, 10)
 		// 	if(playdink <= 3)
 		// 		playsound(src, 'sound/weapons/dink.ogg', 30, 1)
+		if(damage > is_crit_above)
+			playsound(src, crit_sound, 100, 1)
+
 		L.on_hit(src)
 
 	var/reagent_note
@@ -853,7 +861,7 @@
  * It's complicated, so probably just don't mess with this unless you know what you're doing.
  */
 /obj/item/projectile/proc/pixel_move(times, hitscanning = FALSE, deciseconds_equivalent = world.tick_lag, trajectory_multiplier = 1, allow_animation = TRUE)
-	if(!loc || !trajectory)
+	if(!loc)
 		return
 	if(!nondirectional_sprite && !hitscanning)
 		var/matrix/M = new
@@ -872,6 +880,8 @@
 			var/max_turn = homing_turn_speed * deciseconds_equivalent * 0.1
 			setAngle(Angle + clamp(angle, -max_turn, max_turn))
 		// HOMING END
+		if(!trajectory)
+			return
 		trajectory.increment(trajectory_multiplier)
 		var/turf/T = trajectory.return_turf()
 		if(!istype(T))
@@ -896,7 +906,7 @@
 				if(!--safety)
 					CRASH("[type] took too long (allowed: [CEILING(pixel_increment_amount/world.icon_size,1)*2] moves) to get to its location.")
 				step_towards(src, T)
-				if(QDELETED(src) || pixel_move_interrupted)		// this doesn't take into account with pixel_move_interrupted the portion of the move cut off by any forcemoves, but we're opting to ignore that for now
+				if(isnull(loc) || pixel_move_interrupted)		// this doesn't take into account with pixel_move_interrupted the portion of the move cut off by any forcemoves, but we're opting to ignore that for now
 				// the reason is the entire point of moving to pixel speed rather than tile speed is smoothness, which will be crucial when pixel movement is done in the future
 				// reverting back to tile is more or less the only way of fixing this issue.
 					return
@@ -1088,18 +1098,64 @@
 
 /obj/item/projectile/proc/randomize_damage()
 	if(LAZYLEN(damage_list))
-		var/newdam = pickweight(damage_list)
-		if(istext(newdam) && isnum(text2num(newdam)))
-			damage = text2num(newdam)
-		var/critdam = LAZYACCESS(damage_list, LAZYLEN(damage_list))
-		if(istext(critdam) && isnum(text2num(newdam)))
-			critdam = text2num(critdam)
-		if(damage == critdam)
-			playsound(src, crit_sound, 100, 1, 30)
+		prep_list_crits()
+		pick_damage_from_list()
 	else if(!isnull(damage_low) && !isnull(damage_high))
-		damage = rand(damage_low, damage_high)
-		if(damage == damage_high)
+		prep_rand_crits()
+		pick_damage_from_rand()
+
+/obj/item/projectile/proc/prep_rand_crits()
+	if(!isnum(damage_low) || !isnum(damage_high))
+		return
+	var/total_range = damage_high - damage_low
+	if(total_range < 1)
+		return // fine, dont crit, see if I care
+	is_crit_above = damage_high - (total_range * 0.05)
+
+/obj/item/projectile/proc/pick_damage_from_rand()
+	if(!isnum(damage_low) || !isnum(damage_high))
+		return
+	var/dam_out = 0
+	var/num_rolls = 1
+	if(isatom(firer))
+		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
+			num_rolls += bonus_crit_rolls
+	for(var/i in 1 to num_rolls)
+		var/newdam = rand(damage_low, damage_high)
+		if(newdam > dam_out)
+			dam_out = newdam
+	
+
+/obj/item/projectile/proc/prep_list_crits()
+	var/highest = 0
+	var/second_highest = 0
+	for(var/damnum in damage_list)
+		var/numb = text2num(damnum)
+		if(numb > highest)
+			second_highest = highest
+			highest = numb
+		else if(numb > second_highest)
+			second_highest = numb
+	if(highest - second_highest > 100) // some dork keeps making the crit damage be, like, 40000000000000000000000000, and thats the crit
+		highest = second_highest
+	is_crit_above = highest
+
+/obj/item/projectile/proc/pick_damage_from_list()
+	var/damage_out = 0
+	var/num_rolls = 1
+	if(isatom(firer))
+		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
+			num_rolls += bonus_crit_rolls
+	for(var/i in 1 to num_rolls)
+		var/newdam = text2num(pickweight(damage_list))
+		if(!isnum(newdam))
+			continue
+		if(newdam > damage_out)
+			damage_out = newdam
+		if(damage >= is_crit_above)
 			playsound(src, crit_sound, 100, 1, 30)
+	damage = damage_out
+
 
 /////// MISC HELPERS ////////
 /// Is this atom reflectable with ""standardized"" reflection methods like you know eshields and deswords and similar

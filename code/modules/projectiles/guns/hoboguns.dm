@@ -78,9 +78,9 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 5, 15, BRUTELOSS),
-		GUN_MISFIRE_THROWS_GUN(2),
-		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+		GUN_MISFIRE_HURTS_USER(10, 5, 15, BRUTELOSS),
+		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_UNLOADS_GUN(3, 50)	
 	)
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -117,9 +117,9 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
-		GUN_MISFIRE_THROWS_GUN(0.5),
-		GUN_MISFIRE_UNLOADS_GUN(5, 50)
+		GUN_MISFIRE_HURTS_USER(20, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(1),
+		GUN_MISFIRE_UNLOADS_GUN(10, 50)
 	)
 
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -184,9 +184,9 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
-		GUN_MISFIRE_THROWS_GUN(0.5),
-		GUN_MISFIRE_UNLOADS_GUN(2, 50)
+		GUN_MISFIRE_HURTS_USER(10, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(1),
+		GUN_MISFIRE_UNLOADS_GUN(5, 50)
 	)
 
 /obj/item/gun/ballistic/revolver/hobo/pepperbox/deal
@@ -283,9 +283,9 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 5, 10, BRUTELOSS | FIRELOSS),
-		GUN_MISFIRE_THROWS_GUN(10),
-		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+		GUN_MISFIRE_HURTS_USER(15, 5, 10, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(15),
+		GUN_MISFIRE_UNLOADS_GUN(1, 50)
 	)
 
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -318,9 +318,9 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(1, 10, 25, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_HURTS_USER(5, 10, 25, BRUTELOSS | FIRELOSS),
 		GUN_MISFIRE_THROWS_GUN(5),
-		GUN_MISFIRE_UNLOADS_GUN(5, 50)
+		GUN_MISFIRE_UNLOADS_GUN(25, 50)
 	)
 
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -359,7 +359,7 @@
 	)
 	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	misfire_possibilities = list(
-		GUN_MISFIRE_UNLOADS_GUN(1, 1),
+		GUN_MISFIRE_UNLOADS_GUN(3, 20),
 	)
 	// Gives a fairly low chance to misfire with anything short of .357 FMJ, or the special 9mm rounds.
 	// Misfire chance is still low enough that you can run entire belts of .357 FMJ without issues occassionally.
@@ -373,11 +373,11 @@
 
 /obj/item/gun/ballistic/automatic/autopipe/special
 		name = "Redwater Special"
-		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of complete loss of control as soon as you pull the trigger."
+		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of not being able to take it off of full auto."
 		color = "#FF0000"
-		damage_multiplier = GUN_EXTRA_DAMAGE_T5
+		damage_multiplier = GUN_EXTRA_DAMAGE_T3
 		init_firemodes = list(
-			/datum/firemode/burst/twenty/slower
+			/datum/firemode/automatic/rpm300
 		)
 
 /////////////////////
@@ -415,7 +415,7 @@
 		/datum/firemode/semi_auto/slow
 	)
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(2, 5, 10, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
+		GUN_MISFIRE_HURTS_USER(3, 5, 10, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
 	)
 
 
@@ -472,9 +472,9 @@
 		/datum/firemode/semi_auto
 	)
 	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
-		GUN_MISFIRE_THROWS_GUN(0.5),
-		GUN_MISFIRE_UNLOADS_GUN(2, 50)
+		GUN_MISFIRE_HURTS_USER(10, 10, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(1),
+		GUN_MISFIRE_UNLOADS_GUN(3, 50)
 	)
 
 //Obrez, sawn off bolt action rifle						Keywords: .308, 5 round internal

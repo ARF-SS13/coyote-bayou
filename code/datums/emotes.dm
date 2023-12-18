@@ -87,6 +87,7 @@
 
 	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
 
+
 	msg = "<span class='emote'>[msg]</span>"
 	if(!omit_left_name)
 		ENABLE_BITFIELD(message_flags, PUT_NAME_IN)

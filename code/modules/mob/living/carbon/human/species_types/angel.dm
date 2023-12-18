@@ -61,10 +61,10 @@
 	if(!T)
 		return FALSE
 
-	var/datum/gas_mixture/environment = T.return_air()
-	if(environment && !(environment.return_pressure() > 30))
-		to_chat(H, span_warning("The atmosphere is too thin for you to fly!"))
-		return FALSE
+	// var/datum/gas_mixture/environment = T.return_air()
+	// if(environment && !(environment.return_pressure() > 30))
+	// 	to_chat(H, span_warning("The atmosphere is too thin for you to fly!"))
+	// 	return FALSE
 	return TRUE
 
 /datum/action/innate/flight

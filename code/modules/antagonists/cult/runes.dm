@@ -625,12 +625,12 @@ structure_check() searches for nearby cultist structures required for the invoca
 	. = ..()
 	GLOB.wall_runes += src
 
-/obj/effect/rune/wall/examine(mob/user)
-	. = ..()
-	if(density && iscultist(user))
-		var/datum/timedevent/TMR = active_timers[1]
-		if(TMR)
-			. += span_cultitalic("The air above this rune has hardened into a barrier that will last [DisplayTimeText(TMR.timeToRun - world.time)].")
+// /obj/effect/rune/wall/examine(mob/user)
+// 	. = ..()
+// 	if(density && iscultist(user))
+// 		var/datum/timedevent/TMR = active_timers[1]
+// 		if(TMR)
+// 			. += span_cultitalic("The air above this rune has hardened into a barrier that will last [DisplayTimeText(TMR.timeToRun - world.time)].")
 
 /obj/effect/rune/wall/Destroy()
 	GLOB.wall_runes -= src

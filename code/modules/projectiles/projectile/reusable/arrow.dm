@@ -1,114 +1,46 @@
+//////////////////////
+//		Arrows!		//
+//////////////////////
+// Unless otherwise defined, arrows get +10 damage against all simplemobs, making them more viable.
+
 /obj/item/projectile/bullet/reusable/arrow
 	name = "arrow"
 	desc = "a simple arrow."
 	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_METAL //40
-	damage_low = 30
-	damage_high = 50
-	stamina = BULLET_STAMINA_ARROW_METAL
+	damage = BULLET_DAMAGE_ARROW //40
+	damage_low = 39
+	damage_high = 41
+	stamina = BULLET_STAMINA_ARROW
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_METAL
+	recoil = BULLET_RECOIL_ARROW
 
-	wound_bonus = BULLET_WOUND_ARROW_METAL
-	bare_wound_bonus = BULLET_WOUND_ARROW_METAL_NAKED_MULT
+	wound_bonus = BULLET_WOUND_ARROW
+	bare_wound_bonus = BULLET_WOUND_ARROW_NAKED_MULT
 	
-	pixels_per_second = BULLET_SPEED_ARROW_METAL
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 25
+	pixels_per_second = BULLET_SPEED_ARROW
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT	//If you can hit a target that far away you deserve it.
+	break_chance = 5
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	sharpness = SHARP_POINTY
 
-/obj/item/projectile/bullet/reusable/arrow/metal
-	name = "metal arrow"
-	desc = "a simple arrow with a metal head."
-	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_METAL
-	damage_low = 30
-	damage_high = 50
-	stamina = BULLET_STAMINA_ARROW_METAL
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_METAL
-
-	wound_bonus = BULLET_WOUND_ARROW_METAL
-	bare_wound_bonus = BULLET_WOUND_ARROW_METAL_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_METAL
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 25
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/metal
+	supereffective_damage = 20
+	supereffective_flags = SE_ALL_SIMPLEMOBS
 
 /obj/item/projectile/bullet/reusable/arrow/bone
 	name = "bone arrow"
 	desc = "an arrow made of bone and sinew."
-	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_BONE
-	damage_low = 20
-	damage_high = 45
-	stamina = BULLET_STAMINA_ARROW_BONE
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_BONE
-
-	wound_bonus = BULLET_WOUND_ARROW_BONE
-	bare_wound_bonus = BULLET_WOUND_ARROW_BONE_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_BONE
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 25
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone
-
-/obj/item/projectile/bullet/reusable/arrow/titanium
-	name = "titanium arrow"
-	desc = "a durable arrow with a sturdy titanium head."
-	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_TITANIUM
-	damage_low = 40
-	damage_high = 60
-	stamina = BULLET_STAMINA_ARROW_TITANIUM
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_TITANIUM
-
-	wound_bonus = BULLET_WOUND_ARROW_TITANIUM
-	bare_wound_bonus = BULLET_WOUND_ARROW_TITANIUM_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_TITANIUM
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 10  //premium material just means durable. don't need to make as many
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/titanium
+	break_chance = 10
 
 /obj/item/projectile/bullet/reusable/arrow/flint
 	name = "flint arrow"
 	desc = "a primitive arrow with a head made of knapped flint."
-	icon_state = "arrow"
-	damage = BULLET_DAMAGE_ARROW_FLINT
-	damage_low = 35
-	damage_high = 75
-	stamina = BULLET_STAMINA_ARROW_FLINT
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_FLINT
-
-	wound_bonus = BULLET_WOUND_ARROW_FLINT
-	bare_wound_bonus = BULLET_WOUND_ARROW_FLINT_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_FLINT
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 45
+	break_chance = 10
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/flint
 
-/obj/item/projectile/bullet/reusable/arrow/glass //glass arrows behave very similar to flint irl
+/obj/item/projectile/bullet/reusable/arrow/glass
 	name = "glass arrow"
 	desc = "a primitive arrow with a head made of knapped glass."
-	damage = BULLET_DAMAGE_ARROW_GLASS
-	damage_low = 40
-	damage_high = 65
-	stamina = BULLET_STAMINA_ARROW_GLASS
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_GLASS
-
-	wound_bonus = BULLET_WOUND_ARROW_GLASS
-	bare_wound_bonus = BULLET_WOUND_ARROW_GLASS_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_GLASS
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	break_chance = 35
+	break_chance = 10
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/glass
 
 /obj/item/projectile/bullet/reusable/arrow/explosive //possibly OP
@@ -116,14 +48,10 @@
 	desc = "a heavy arrow containing an explosive payload."
 	damage = BULLET_DAMAGE_ARROW_EXPLOSIVE
 	stamina = BULLET_STAMINA_ARROW_EXPLOSIVE
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_EXPLOSIVE
 
 	wound_bonus = BULLET_WOUND_ARROW_EXPLOSIVE
 	bare_wound_bonus = BULLET_WOUND_ARROW_EXPLOSIVE_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_EXPLOSIVE
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
 	break_chance = 100
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/explosive
 
@@ -132,95 +60,99 @@
 	explosion(target, 0, 0, 2, 0, adminlog = FALSE, flame_range = 0) //dynamite sized explosion, no cruel flash or fire to make pvp miserable
 
 
-/obj/item/projectile/bullet/reusable/arrow/jagged //oldcode serrated and broadhead combined
-	name = "jagged arrow"
-	desc = "a mean looking arrow made to shed blood and infection. it tends to stay stuck in the target and snap off, so good luck recovering it."
-	damage = BULLET_DAMAGE_ARROW_BARBED
-	damage_low = 10
-	damage_high = 30
-	stamina = BULLET_STAMINA_ARROW_BARBED
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_BARBED
+//////////////////////
+//	Broadhead Arrow	//
+//////////////////////
+// Wounding/Cutting Arrow
+// High Damage, Low AP
+/obj/item/projectile/bullet/reusable/arrow/broadhead
+	name = "broadhead arrow"
+	damage = 50
+	damage_low = 45
+	damage_high = 50
+	stamina = 10
+	armour_penetration = -0.2	//Made to kill large animals by creating the biggest wound possible, not to stick inside.
 
-	wound_bonus = BULLET_WOUND_ARROW_BARBED
-	bare_wound_bonus = BULLET_WOUND_ARROW_BARBED_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_BARBED
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	wound_bonus = 10
+	bare_wound_bonus = 35
 
 	sharpness = SHARP_EDGED
-	supereffective_damage = BULLET_BANE_DAMAGE_ARROW_BARBED
-	supereffective_flags = BULLET_BANE_FLAGS_ARROW_BARBED
-	break_chance = 100 //high power, costly
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/jagged
+	supereffective_damage = 10	//Stops broadheads being straight upgrades to default arrows in PvE.
+	break_chance = 5
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/broadhead
+
+
+//////////////////////
+//	Bodkin Arrow	//
+//////////////////////
+// Piercing/Embedding Arrow
+// Low Damage, High AP
+/obj/item/projectile/bullet/reusable/arrow/bodkin
+	name = "bodkin arrow"
+	damage = 35
+	damage_low = 35
+	damage_high = 40
+	stamina = 20
+	armour_penetration = 0.2	//Made to punch through chainmail, limited penetration through thin plate armor.
+
+	wound_bonus = -10
+	bare_wound_bonus = 40	//Adds up to a 30 total if the target has no armor.
+
+	sharpness = SHARP_EDGED
+	break_chance = 5
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/bodkin
 	embedding = list(
-		embed_chance= 60, 
-		fall_chance= 5, 
-		jostle_chance= 40, 
-		ignore_throwspeed_threshold=FALSE, 
-		pain_stam_pct= 0.2, 
-		pain_mult= 2, 
-		jostle_pain_mult= 1, 
-		rip_time= 3 SECONDS, 
-		projectile_payload = /obj/item/projectile/bullet/reusable/arrow/jagged
+		embed_chance= 40,
+		fall_chance= 15,
+		jostle_chance= 10,
+		ignore_throwspeed_threshold=FALSE,
+		pain_stam_pct= 0.2,
+		pain_mult= 2,
+		jostle_pain_mult= 1,
+		rip_time= 3 SECONDS,
+		projectile_payload = /obj/item/projectile/bullet/reusable/arrow/bodkin
 		) 
 
+
+//////////////////////
+//	Field	Arrow	//
+//////////////////////
+// Low Tier Arrow
+// Low Damage, Cheap, Low Break Chance
 /obj/item/projectile/bullet/reusable/arrow/field
 	name = "field arrow"
 	desc = "a simple arrow with a small, sturdy head."
-	damage = BULLET_DAMAGE_ARROW_FIELD
-	damage_low = 15
-	damage_high = 45
-	stamina = BULLET_STAMINA_ARROW_FIELD
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_FIELD
+	damage = 30
+	damage_low = 30
+	damage_high = 35
+	stamina = 15
 
-	wound_bonus = BULLET_WOUND_ARROW_FIELD
-	bare_wound_bonus = BULLET_WOUND_ARROW_FIELD_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_FIELD
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	wound_bonus = 0
+	bare_wound_bonus = 5
 
-	break_chance = 5 //real sturdy. this is the easy to make and supply "handload" of the arrow world
+	break_chance = 1
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/field
 
-/* I...don't really wanna touch this till nonlethal ammo is looked at, or I understand it. but should be sorta equivalent to a .308?
-*/
-/obj/item/projectile/bullet/reusable/arrow/blunt
-	name = "blunt arrow"
-	desc = "an arrow with a wrapped leather tip, made for bruising."
-	damage = BULLET_DAMAGE_ARROW_BLUNT
-	stamina = BULLET_STAMINA_ARROW_BLUNT
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_BLUNT
 
-	wound_bonus = BULLET_WOUND_ARROW_BLUNT
-	bare_wound_bonus = BULLET_WOUND_ARROW_BLUNT_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_BLUNT
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	sharpness = SHARP_NONE
-	break_chance = 20
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
-
+//////////////////////
+//	Ion		Arrow	//
+//////////////////////
+// Anti-Robot Arrow
+// Useless against non-robots, rewards players for specifically prepping against robot foes
 /obj/item/projectile/bullet/reusable/arrow/ion  //the original was written strangely for some reason. think it was a simple mimicry of ion gun projectile
 	name = "ion arrow"
-	desc = "an arrow containing an EMP warhead."
-	damage = BULLET_DAMAGE_ARROW_ION
-	damage_low = 5
-	damage_high = 15
-	stamina = BULLET_STAMINA_ARROW_ION
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_ION
+	desc = "An arrow containing an EMP device. Pretty uselss against "
+	damage = 15
+	damage_low = 10
+	damage_high = 20
+	stamina = 25	//We do pitiful damage against anything that isn't a robot, so why not?
 
-	wound_bonus = BULLET_WOUND_ARROW_ION
-	bare_wound_bonus = BULLET_WOUND_ARROW_ION_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_ION
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	wound_bonus = -100
+	bare_wound_bonus = -100
+
 	sharpness = SHARP_NONE
-	supereffective_damage = BULLET_BANE_DAMAGE_ARROW_ION //lets try something new
-	supereffective_flags = BULLET_BANE_FLAGS_ARROW_ION
+	supereffective_damage = 70	//You have to go well out of your way to collect electronic parts to craft these, prepare accordingly, rewarded accordingly.
+	supereffective_flags = SE_ROBOTS
 	break_chance = 100 //one zap and we done
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ion
 
@@ -228,48 +160,25 @@
 	..()
 	target.emp_act(15)//5 severity is very, very low
 
-/obj/item/projectile/bullet/reusable/arrow/practice
-	name = "practice arrow"
-	desc = "a harmless arrow with a padded, fabric tip. for practice, not for annoying people with."
-	damage = BULLET_DAMAGE_ARROW_PRACTICE
-	damage_list = list("1" = 99.999, "92745" = 0.001) //haha poke your eye out kid ~TK
-	stamina = BULLET_STAMINA_ARROW_PRACTICE
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_ARROW_PRACTICE
 
-	wound_bonus = BULLET_WOUND_ARROW_PRACTICE
-	bare_wound_bonus = BULLET_WOUND_ARROW_PRACTICE_NAKED_MULT
-	
-	pixels_per_second = BULLET_SPEED_ARROW_PRACTICE
-	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+//////////////////////
+//	Bludgeon Arrow	//
+//////////////////////
+// Stamina Arrow
+// No damage, exclusively for stamina attacks. Hits very hard, but don't forget your fire rate ain't gonna be so great.
+/obj/item/projectile/bullet/reusable/arrow/bludgeon
+	name = "bludgeoning arrow"
+	desc = "Good at killing small game and birds without skewering them. Good at giving you nasty bruises and cracking your ribs."
+	damage = 0
+	stamina = 60
+
+	wound_bonus = 0
+	bare_wound_bonus = 0
+
 	sharpness = SHARP_NONE
-	break_chance = 5 //simple and sturdy
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/practice
-
-/obj/item/projectile/bullet/reusable/arrow/practice/sticky
-	name = "sticky practice arrow"
-	desc = "a harmless arrow with soft tip made from layers of tape. for annoying people with."
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/sticky
-	break_chance = 0
-	embedding = list(
-		embed_chance = 100, 
-		fall_chance = 10, 
-		pain_mult = 0, 
-		jostle_pain_mult = 0, 
-		ignore_throwspeed_threshold = TRUE,
-		)
-
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/bludgeon
 
 /* 
-
-/obj/item/projectile/bullet/reusable/arrow
-	name = "metal arrow"
-	desc = "a simple arrow with a metal head."
-	damage = 40
-	armour_penetration = 0.2
-	icon_state = "arrow"
-	ammo_type = /obj/item/ammo_casing/caseless/arrow
-
 //CIT ARROWS
 /obj/item/projectile/bullet/reusable/arrow/ash
 	name = "ashen arrow"
@@ -372,17 +281,6 @@
 	armour_penetration = 0.05
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
-
-/obj/item/projectile/bullet/reusable/arrow/blunt
-	name = "knockout arrow"
-	desc = "An arrow with a thick cloth sack at the end, filled with rocks."
-	wound_bonus = 0
-	bare_wound_bonus = 0
-	wound_falloff_tile = 0
-	armour_penetration = 0.10
-	damage = 15
-	stamina = 70
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
 
 // Special Arrows
 

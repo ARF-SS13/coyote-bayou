@@ -201,7 +201,7 @@
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
 	inv_box.screen_loc = ui_mask
-	inv_box.slot_id = SLOT_WEAR_MASK
+	inv_box.slot_id = SLOT_MASK
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
@@ -365,6 +365,18 @@
 	sleep_hud_button = new /atom/movable/screen/sleep_hud_button()
 	sleep_hud_button.hud = src
 	infodisplay += sleep_hud_button
+
+	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
+	aooc_hud_button.hud = src
+	infodisplay += aooc_hud_button
+
+	newbie_hud_button = new /atom/movable/screen/newbie_hud_button()
+	newbie_hud_button.hud = src
+	infodisplay += newbie_hud_button
+
+	chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
+	chardir_hud_button.hud = src
+	infodisplay += chardir_hud_button
 
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style

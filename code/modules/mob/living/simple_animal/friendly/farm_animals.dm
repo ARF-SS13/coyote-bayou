@@ -46,7 +46,7 @@
 /mob/living/simple_animal/hostile/retaliate/goat/Initialize(/datum/reagent/milk_reagent)
 	if(milk_reagent)
 		src.milk_reagent = milk_reagent
-	udder = new (null, src.milk_reagent)
+	udder = new (src, src.milk_reagent)
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
@@ -183,7 +183,7 @@
 
 
 /mob/living/simple_animal/cow/Initialize()
-	udder = new(null, milk_reagent)
+	udder = new(src, milk_reagent)
 	. = ..()
 	recenter_wide_sprite()
 
@@ -329,7 +329,7 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new()
+				udder = new(src, milk_reagent)
 				if (name == "brahmin calf")
 					name = "brahmin"
 				else
@@ -676,8 +676,6 @@
 	else
 		to_chat(user, span_danger("The udder is dry. Wait a bit longer..."))
 
-
-
 /////////////
 // BRAHMIN //
 /////////////
@@ -727,10 +725,6 @@
 		/obj/item/stack/sheet/animalhide/brahmin = 3,
 		/obj/item/stack/sheet/bone = 2
 		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
-		)
 	butcher_difficulty = 1
 
 /mob/living/simple_animal/cow/brahmin/molerat
@@ -769,10 +763,6 @@
 		"2" = list(0, 8),
 		"4" = list(0, 8),
 		"8" = list(0, 8)
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
@@ -818,10 +808,6 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/stack/sheet/bone = 2
 		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
-		)
 	butcher_difficulty = 1
 
 /mob/living/simple_animal/cow/brahmin/horse/honse //wuzzle
@@ -859,12 +845,8 @@
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
-		/obj/item/stack/sheet/bone = 3
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
 		/obj/item/crafting/wonderglue = 3,
-		/obj/item/stack/sheet/bone = 2
+		/obj/item/stack/sheet/bone = 3
 		)
 	butcher_difficulty = 1
 
@@ -910,10 +892,6 @@
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
 		/obj/item/stack/sheet/metal/ten = 1,
-		/obj/structure/tires/two = 1
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/stack/sheet/metal/ten = 1,
 		/obj/item/reagent_containers/glass/bottle/welding_fuel = 1,
 		/obj/structure/tires/two = 1
 		)
@@ -955,11 +933,7 @@
 	young_type = /mob/living/simple_animal/cow/brahmin/horse
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab = 6,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -1014,12 +988,10 @@
 		)
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/clothing/head/f13/stalkerpelt = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1,
 		/obj/item/stack/sheet/sinew = 2,
 		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/clothing/head/f13/stalkerpelt = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
 	butcher_difficulty = 1
 
@@ -1069,13 +1041,11 @@
 		"8" = list(-2, 9)
 		)
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
+		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 3,
 		/obj/item/stack/sheet/sinew = 2,
-		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
+		/obj/item/stack/sheet/bone = 2,
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
+
 		)
 	butcher_difficulty = 1
 //Bear
@@ -1125,11 +1095,8 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
 		/obj/item/stack/sheet/sinew = 2,
-		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
+		/obj/item/stack/sheet/bone = 2,
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
-		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1
 		)
 	butcher_difficulty = 1
 
@@ -1185,12 +1152,8 @@
 		/obj/item/reagent_containers/food/snacks/f13/canned/dog
 		)
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab = 5,
 		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 2,
-		/obj/item/stack/sheet/bone = 1
 		)
 	butcher_difficulty = 1
 	ride_offsets = list(
@@ -1249,11 +1212,7 @@
 		"8" = list(-3, 22)
 		)
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab = 6,
 		/obj/item/stack/sheet/bone = 2
 		)
 	butcher_difficulty = 1
@@ -1292,11 +1251,7 @@
 	young_type = /mob/living/simple_animal/cow/brahmin/horse/choco
 	footstep_type = FOOTSTEP_MOB_HOOF
 	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-		/obj/item/stack/sheet/bone = 2
-		)
-	guaranteed_butcher_results = list(
-		/obj/item/reagent_containers/food/snacks/meat/slab = 4,
+		/obj/item/reagent_containers/food/snacks/meat/slab = 8,
 		/obj/item/crafting/wonderglue = 1,
 		/obj/item/stack/sheet/bone = 2
 		)
@@ -1392,7 +1347,7 @@
 	new /obj/item/brahminsaddle(src)
 	new /obj/item/brahminbrand(src)
 	new /obj/item/choice_beacon/pet(src)
-	new /obj/item/gun/ballistic/rifle/mag/antimateriel(src)
+	new /obj/item/gun/ballistic/rifle/mag/antimaterial(src)
 
 /*
 /datum/crafting_recipe/brahminbags
@@ -1503,7 +1458,6 @@
 	turns_per_move = 5
 	see_in_dark = 6
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/radstag = 2, /obj/item/stack/sheet/bone = 2)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 
 	response_help_simple  = "pets"
@@ -1544,8 +1498,7 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 3)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 3)
 	butcher_difficulty = 1
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -1596,7 +1549,7 @@
 		if(is_calf)
 			if((prob(3)))
 				is_calf = 0
-				udder = new(null, milk_reagent)
+				udder = new(src, milk_reagent)
 				if(name == "bighorn lamb")
 					name = "bighorn"
 				else

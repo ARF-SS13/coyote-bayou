@@ -118,21 +118,21 @@
 			return TRUE
 		return (organ_flags & ORGAN_FROZEN) //Incase something else toggles it
 
-	var/local_temp
-	if(istype(loc, /turf/))//Only concern is adding an organ to a freezer when the area around it is cold.
-		var/turf/T = loc
-		var/datum/gas_mixture/enviro = T.return_air()
-		local_temp = enviro.return_temperature()
+	var/local_temp = -INFINITY
+	// if(istype(loc, /turf/))//Only concern is adding an organ to a freezer when the area around it is cold.
+	// 	var/turf/T = loc
+	// 	var/datum/gas_mixture/enviro = T.return_air()
+	// 	local_temp = enviro.return_temperature()
 
-	else if(!owner && ismob(loc))
-		var/mob/M = loc
-		if(is_type_in_typecache(M.loc, GLOB.freezing_objects))
-			if(!(organ_flags & ORGAN_FROZEN))
-				organ_flags |= ORGAN_FROZEN
-			return TRUE
-		var/turf/T = M.loc
-		var/datum/gas_mixture/enviro = T.return_air()
-		local_temp = enviro.return_temperature()
+	// else if(!owner && ismob(loc))
+	// 	var/mob/M = loc
+	// 	if(is_type_in_typecache(M.loc, GLOB.freezing_objects))
+	// 		if(!(organ_flags & ORGAN_FROZEN))
+	// 			organ_flags |= ORGAN_FROZEN
+	// 		return TRUE
+	// 	var/turf/T = M.loc
+	// 	var/datum/gas_mixture/enviro = T.return_air()
+	// 	local_temp = enviro.return_temperature()
 
 	if(owner)
 		//Don't interfere with bodies frozen by structures.

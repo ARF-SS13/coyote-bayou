@@ -471,7 +471,7 @@ Hunter
 	total_positions = 5
 	spawn_positions = 2
 	exp_type = EXP_TYPE_TRIBAL
-	supervisors = "The chief and Hunt Master.  Failing their appearance you fall back on the Shaman and Druid for task management."
+	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Shaman and Druid for task management."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. While a protector you are also the arm of the tribe in the world, performing tasks from the Shamans and Druids."
@@ -536,8 +536,8 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		///obj/item/gun/ballistic/bow/sturdy = 1,
-		///obj/item/storage/bag/tribe_quiver/light = 1,
+		/obj/item/gun/ballistic/bow/composite = 1,
+		/obj/item/storage/bag/tribe_quiver/light/full/flint = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
@@ -565,7 +565,7 @@ Spirit-Pledged
 	spawn_positions = 3
 	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All other tribals."
-	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to joint he tribe, but its not a requirement."
+	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
 	selection_color = "#006666"
 
 	outfit = /datum/outfit/job/tribal/f13spiritpledged
@@ -643,3 +643,75 @@ Guardian
 		/obj/item/restraints/legcuffs/bola/tactical=1,
 		/obj/item/cool_book/warriorguide = 1
 	)
+
+/datum/job/tribal/f13dualcitizen
+	title = "Dual Citizen"
+	flag = F13VILLAGER
+	department_flag = TRIBAL | DEP_OASIS
+	faction = FACTION_TRIBE
+	total_positions = 10
+	spawn_positions = 10
+	exp_type = EXP_TYPE_TRIBAL
+	supervisors = "Nash's laws and all tribe members aside from other villagers"
+	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	selection_color = "#006666"
+	exp_requirements = 0
+
+	outfit = /datum/outfit/job/den/f13dualcitizen
+
+	access = list(ACCESS_TRIBE, ACCESS_BAR)
+	minimal_access = list(ACCESS_TRIBE, ACCESS_BAR)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/tribal,
+			/datum/job/oasis
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13spiritpledged,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/tribal/f13druid,
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13hunter,
+		),
+	)
+
+/datum/outfit/job/den/f13dualcitizen
+	name = "Dual Citizen"
+	jobtype = /datum/job/tribal/f13dualcitizen
+	belt = /obj/item/kit_spawner/townie
+	uniform = /obj/item/clothing/under/f13/wayfarer
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	id = /obj/item/card/id/tribetattoo
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/healingpowder = 1,
+		/obj/item/warpaint_bowl = 1,
+		/obj/item/pda = 1,
+		/obj/item/kit_spawner/tools = 1,
+		/obj/item/cool_book/villagerguide = 1
+	)
+
+/datum/outfit/job/tribal/f13dualcitizen/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
+		/obj/item/clothing/under/f13/cowboyt)
+
+/datum/outfit/job/tribal/f13dualcitizen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BEASTFRIEND_SMALLCRITTER, src)

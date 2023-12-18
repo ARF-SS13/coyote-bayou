@@ -56,6 +56,14 @@
 	name = "heavy laser"
 	icon_state = "beam_heavy"
 
+/obj/effect/projectile/tracer/covbeamlaser
+	name = "beam laser"
+	icon_state = "beamrifletracer"
+	icon = 'icons/obj/projectiles_tracer.dmi'
+/obj/effect/projectile/tracer/covpistolprojectile
+	name = "plasma ball"
+	icon_state = "plasmapistol"
+	icon = 'icons/obj/projectiles_tracer.dmi'
 //BEAM RIFLE
 /obj/effect/projectile/tracer/tracer/beam_rifle
 	icon_state = "tracer_beam"

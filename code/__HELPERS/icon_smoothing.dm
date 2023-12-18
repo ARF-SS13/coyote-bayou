@@ -63,7 +63,7 @@
 /atom/var/bottom_right_corner
 /atom/var/list/canSmoothWith = null // TYPE PATHS I CAN SMOOTH WITH~~~~~ If this is null and atom is smooth, it smooths only with itself
 /atom/movable/var/can_be_unanchored = FALSE
-/turf/var/list/fixed_underlay = null
+// /turf/var/list/fixed_underlay = null
 
 /proc/calculate_adjacencies(atom/A)
 	if(!A.loc)
@@ -174,25 +174,25 @@
 	if(adjacencies)
 		var/mutable_appearance/underlay_appearance = mutable_appearance(layer = TURF_LAYER, plane = FLOOR_PLANE)
 		var/list/U = list(underlay_appearance)
-		if(fixed_underlay)
-			if(fixed_underlay["space"])
-				underlay_appearance.icon = 'icons/turf/space.dmi'
-				underlay_appearance.icon_state = SPACE_ICON_STATE
-				underlay_appearance.plane = PLANE_SPACE
-			else
-				underlay_appearance.icon = fixed_underlay["icon"]
-				underlay_appearance.icon_state = fixed_underlay["icon_state"]
-		else
-			var/turned_adjacency = turn(adjacencies, 180)
-			var/turf/T = get_step(src, turned_adjacency)
+		// if(fixed_underlay)
+		// 	if(fixed_underlay["space"])
+		// 		underlay_appearance.icon = 'icons/turf/space.dmi'
+		// 		underlay_appearance.icon_state = SPACE_ICON_STATE
+		// 		underlay_appearance.plane = PLANE_SPACE
+		// 	else
+		// 		underlay_appearance.icon = fixed_underlay["icon"]
+		// 		underlay_appearance.icon_state = fixed_underlay["icon_state"]
+		// else
+		var/turned_adjacency = turn(adjacencies, 180)
+		var/turf/T = get_step(src, turned_adjacency)
+		if(!T.get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency))
+			T = get_step(src, turn(adjacencies, 135))
 			if(!T.get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency))
-				T = get_step(src, turn(adjacencies, 135))
-				if(!T.get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency))
-					T = get_step(src, turn(adjacencies, 225))
-			//if all else fails, ask our own turf
-			if(!T.get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency) && !get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency))
-				underlay_appearance.icon = DEFAULT_UNDERLAY_ICON
-				underlay_appearance.icon_state = DEFAULT_UNDERLAY_ICON_STATE
+				T = get_step(src, turn(adjacencies, 225))
+		//if all else fails, ask our own turf
+		if(!T.get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency) && !get_smooth_underlay_icon(underlay_appearance, src, turned_adjacency))
+			underlay_appearance.icon = DEFAULT_UNDERLAY_ICON
+			underlay_appearance.icon_state = DEFAULT_UNDERLAY_ICON_STATE
 		underlays = U
 
 		// Drop posters which were previously placed on this wall.

@@ -50,6 +50,8 @@
 	///Lazylist of movable atoms providing opacity sources.
 	var/list/atom/movable/opacity_sources
 
+	var/radiation_turf = 0
+
 
 /turf/vv_edit_var(var_name, var_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -119,10 +121,10 @@
 	// apply materials properly from the default custom_materials value
 	set_custom_materials(custom_materials)
 
-	ComponentInitialize()
-	if(density)
-		update_air_ref(-1)
-	__auxtools_update_turf_temp_info(FALSE)
+	//ComponentInitialize()
+	//if(density)
+	//	update_air_ref(-1)
+	//__auxtools_update_turf_temp_info(FALSE)
 
 	return INITIALIZE_HINT_NORMAL
 

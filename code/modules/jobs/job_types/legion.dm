@@ -257,7 +257,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Ranger-Hunter Centurion"
 	suit = /obj/item/clothing/suit/armor/legion/rangercent
 	head = /obj/item/clothing/head/helmet/f13/legion/rangercent
-	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
+	suit_store = /obj/item/gun/ballistic/rifle/mag/antimaterial
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/amr = 2,
 		/obj/item/ammo_box/c4570 = 3,
@@ -693,7 +693,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/expambusher
 	name = "Ambusher"
-	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
+	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5sd
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
