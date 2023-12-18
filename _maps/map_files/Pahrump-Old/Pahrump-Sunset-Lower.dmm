@@ -1561,10 +1561,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"bjZ" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
-/turf/open/water,
-/area/f13/radiation)
 "bkI" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -23485,12 +23481,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/tunnel)
-"oTM" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "oTQ" = (
 /obj/machinery/light/small{
@@ -46989,7 +46979,7 @@ aah
 aah
 aah
 pwE
-oTM
+bQS
 aah
 jja
 aah
@@ -89926,7 +89916,7 @@ dOG
 ltl
 wNg
 kBK
-bjZ
+bWq
 pua
 aae
 aae
