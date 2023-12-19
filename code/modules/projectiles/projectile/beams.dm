@@ -991,6 +991,12 @@
 	muzzle_type = /obj/effect/projectile/muzzle/xray
 	impact_type = /obj/effect/projectile/impact/xray
 
+/obj/item/projectile/beam/laser/tg/spam //ultra weak but spammy, duh
+	name = "blaster bolt"
+	damage = 10
+	damage_list = list("7" = 10, "8" = 10, "10" = 75, "15" = 5)
+	recoil = BULLET_RECOIL_HEAVY_LASER
+
 //Laser AK projectiles
 /obj/item/projectile/beam/laser/tg/kalashheavy
 	name = "heavy laser bolt"
