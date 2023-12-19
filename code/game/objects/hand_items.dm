@@ -272,8 +272,8 @@
 	name = "Sabre Toothed Biter"
 	desc = "Damn bitch, you eat with them teeth?"
 	color = "#FF4444"
-	force = 30
-	attack_speed = CLICK_CD_MELEE * 0.7
+	force = 40
+	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/biter/fast
 	name = "Fast Biter"
@@ -388,7 +388,7 @@
 	name = "Razor Sharp Clawers"
 	desc = "RIP AND TEAR."
 	color = "#FF4444"
-	force = 30
+	force = 40
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/fast
@@ -435,6 +435,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
+	attack_speed = CLICK_CD_MELEE * 0.8
 	wound_bonus = 0
 	bare_wound_bonus = 20
 	weapon_special_component = /datum/component/weapon_special/single_turf
@@ -515,7 +516,7 @@
 	desc = "A god damn mighty tail that would kill an allosaurus.  Maybe."
 	icon_state = "proboscis"
 	color = "#FF4444"
-	force = 30
+	force = 40
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/beans
