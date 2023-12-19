@@ -72,7 +72,7 @@
 /obj/item/gun/energy/laser/retro //lets see if these changes don't break horribly
 	name ="retro laser gun"
 	icon_state = "retro"
-	desc = "A compact laser gun in a stylish old Design. its smooth edges make it perfect for fitting in a boot."
+	desc = "A classic and compact laser gun. Powerful and compact, it'll fit anywhere from a pocket to a boot. The design, however, means it's less efficient than other energy handguns."
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
