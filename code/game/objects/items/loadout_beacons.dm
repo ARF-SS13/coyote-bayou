@@ -3018,3 +3018,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/tglaser/PopulateContents()
 	new /obj/item/gun/energy/laser/tg/carbine(src)
 	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
+
+// Spamlaser
+/datum/loadout_box/energy/tglaser/spammer
+	entry_tag = "Repeating Blaster"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser/spammer
+
+/obj/item/storage/box/gun/energy/tglaser/spammer
+	name = "repeating blaster case"
+
+/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/spamlaser(src)

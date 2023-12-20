@@ -559,11 +559,11 @@
 /turf/open/transparent/openspace,
 /area/f13/building/abandoned)
 "amX" = (
-/obj/structure/simple_door,
-/obj/item/lock_bolt,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/structure/simple_door/room/dirty,
+/obj/item/lock_bolt{
+	dir = 1
 	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "amZ" = (
 /obj/effect/turf_decal/trimline/neutral{
@@ -809,11 +809,11 @@
 /area/f13/wasteland/massfusion)
 "atR" = (
 /obj/structure/simple_door/room,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/item/lock_bolt{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital/clinic/nash)
 "auo" = (
@@ -20264,6 +20264,14 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"krP" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress2"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluerustychess"
 	},
 /area/f13/building)
 "ksd" = (
@@ -39870,7 +39878,6 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/vomit,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/building/hospital/clinic/nash)
 "uwI" = (
@@ -40996,10 +41003,9 @@
 "vdF" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Clinic";
-	req_access_txt = null;
-	req_one_access_txt = "124"
+	req_access_txt = null
 	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "vdI" = (
 /obj/structure/bed/double,
@@ -43802,6 +43808,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/building/massfusion)
+"wBM" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "wBT" = (
 /obj/structure/window/fulltile/wood_window,
 /turf/open/floor/f13{
@@ -108827,17 +108839,17 @@ oez
 oez
 oez
 aKa
-hsd
-hsd
-hsd
-hsd
-hsd
-hsd
 aKa
 aKa
 aKa
-vje
-vje
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 vje
 vje
 oez
@@ -109084,14 +109096,14 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-hsd
-hsd
-hsd
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 aKa
 aKa
 aKa
@@ -109341,16 +109353,16 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
-hsd
-hsd
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 aKa
 vje
 vje
@@ -109598,19 +109610,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
 aKa
-vje
-vje
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -109855,19 +109867,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
 aKa
-vje
-vje
+aKa
+cRp
+cRp
+hSc
+dcr
+dcr
+hwp
+hwp
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -110112,19 +110124,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
 aKa
-vje
-vje
+aKa
+cRp
+okO
+eAu
+oBj
+nBH
+mmH
+bQP
+cRp
+cRp
+cRp
+cRp
 vje
 vje
 vje
@@ -110369,19 +110381,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
-hsd
-hsd
-hsd
 aKa
-vje
-vje
+aKa
+cRp
+bxk
+eAu
+eAu
+eAu
+rEd
+eAu
+cRp
+oez
+wBM
+cRp
 vje
 vje
 vje
@@ -110626,19 +110638,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
 aKa
 aKa
+cRp
+bxk
+rEd
+gFd
+rEd
+eAu
+eAu
+hSc
 aKa
 aKa
-vje
-vje
+cRp
 vje
 vje
 vje
@@ -110883,19 +110895,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-wqF
-wqF
-hsd
 aKa
-vje
-vje
-vje
-vje
-vje
+aKa
+cRp
+krP
+rEd
+gFd
+gFd
+eAu
+alf
+cRp
+cRp
+cRp
+cRp
 vje
 vje
 vje
@@ -111140,19 +111152,19 @@ oez
 oez
 oez
 aKa
-hsd
-wqF
-wqF
-wqF
-hsd
-hsd
-hsd
 aKa
-vje
-vje
-vje
-vje
-vje
+aKa
+cRp
+krP
+rEd
+eAu
+eAu
+eAu
+jWd
+cRp
+aKa
+aKa
+aKa
 vje
 vje
 vje
@@ -111397,19 +111409,19 @@ oez
 oez
 oez
 aKa
-hsd
-hsd
-hsd
-hsd
-hsd
+aKa
+aKa
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
+cRp
 aKa
 aKa
 aKa
-vje
-vje
-vje
-vje
-vje
 vje
 vje
 vje

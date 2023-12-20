@@ -72,7 +72,7 @@
 /obj/item/gun/energy/laser/retro //lets see if these changes don't break horribly
 	name ="retro laser gun"
 	icon_state = "retro"
-	desc = "A compact laser gun in a stylish old Design. its smooth edges make it perfect for fitting in a boot."
+	desc = "A classic and compact laser gun. Powerful and compact, it'll fit anywhere from a pocket to a boot. The design, however, means it's less efficient than other energy handguns."
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -848,9 +848,31 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+// Laser AKM
+/obj/item/gun/energy/laser/LaserAK
+	name = "Kalashnikov 470"
+	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
+	can_remove = 0
+	can_charge = 0
+	selfcharge = 1
+	icon_state = "LaserAK"
+	item_state = null
+	selfchargerate = 6 SECONDS
+	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
+	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashheavy)
+	ammo_x_offset = 4
+	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
+	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_ONE_HAND_ONLY
+	init_recoil = LASER_AUTORIFLE_RECOIL(1.5, 1)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
 //Gatling Laser
-
-
 //The ammo/gun is stored in a back slot item
 /obj/item/minigunpack
 	name = "backpack power source"
@@ -1264,6 +1286,28 @@
 	)
 
 /* * * * * *
+ * TG Not-Calico
+ * Compact RCW but TG blaster style, and not so compact
+ * No gunlight
+ * Rare
+ * * * * * */
+
+/obj/item/gun/energy/laser/tg/spamlaser
+	name = "repeating blaster"
+	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
+	icon_state = "spamlaser"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	can_flashlight = 0
+	can_scope = FALSE
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/spam)
+	init_recoil = AUTOCARBINE_RECOIL(1.5, 1.5)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm150,
+	/datum/firemode/semi_auto,
+	)
+
+/* * * * * *
  * XCOM UFO Defense Lasrifle
  * Self-charging RNG heavy gun
  * Unique
@@ -1375,30 +1419,7 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = LASER_HANDGUN_RECOIL(2, 1)
 
-/obj/item/gun/energy/laser/LaserAK
-	name = "Kalashnikov 470"
-	desc = "An experimental soviet energy weapon with an integrated uranium based breeder cell. Death solves all problems -- No man, no problem."
-	can_remove = 0
-	can_charge = 0
-	selfcharge = 1
-	icon_state = "LaserAK"
-	item_state = null
-	selfchargerate = 6 SECONDS
-	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
-	cell_type = "/obj/item/stock_parts/cell/ammo/breeder"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/tg/kalashheavy)
-	ammo_x_offset = 4
-	lefthand_file = 'modular_citadel/icons/mob/citadel/guns_lefthand.dmi'
-	righthand_file = 'modular_citadel/icons/mob/citadel/guns_righthand.dmi'
-	weapon_class = WEAPON_CLASS_RIFLE
-	weapon_weight = GUN_ONE_HAND_ONLY
-	init_recoil = LASER_AUTORIFLE_RECOIL(1.5, 1)
-	init_firemodes = list(
-	/datum/firemode/automatic/rpm150,
-	/datum/firemode/semi_auto,
-	)
-
-//Generic Laser AK, also loot
+//Generic Laser AK; is also loot
 /obj/item/gun/energy/laser/LaserAK/worn
 	name = "Kalashnikov 740"
 	desc = "An attempt by the Soviet Union to update the AK470's design for the modern era. While it's easier to control and recharges quicker, most users lament the loss in firepower."

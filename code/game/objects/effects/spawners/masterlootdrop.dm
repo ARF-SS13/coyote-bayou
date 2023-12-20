@@ -202,7 +202,7 @@
 		/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,                   //78          4
 		/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol = 10,      // 78         20          *
 		/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle = 8,               // 66         25
-		
+
 		//Single shot or meme weapons
 		/obj/item/gun/ballistic/revolver/hobo/piperifle = 2,                    //136         1
 //		/obj/item/gun/flintlock/musket/jezail = 3,                              //131         1
@@ -251,7 +251,7 @@
 		/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun = 8,   //102 20
 		/obj/item/gun/ballistic/automatic/assault_carbine/psg5mm = 6,       //90 30
 		//sidearms
-		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7 
+		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
@@ -462,6 +462,7 @@
 		/obj/item/gun/energy/laser/pistol = 10,             //80 25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80 20
 		/obj/item/gun/energy/laser/plasma = 10,             //80 12
+		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50 125
 	)
 
 /// DPS should be <= 150 ish
@@ -609,7 +610,7 @@
 		/obj/item/twohanded/sledgehammer/rockethammer = 10,
 		/obj/item/twohanded/thermic_lance = 10,
 		// /obj/item/melee/transforming/plasmacutter/sword = 5, // Commenting it out until its sprite is fixed.
-		
+
 		//uniques
 		/obj/item/melee/powerfist/f13/satfist = 5,
 		/obj/item/melee/unarmed/powerfist/goliath = 5,
