@@ -293,7 +293,7 @@
 	filling_color = "#967117"
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
-	name = "radscoropion roast"
+	name = "radscorpion roast"
 	desc = "Meat from a radscorpion's chitin, cracked open and carefully roasted to perfection in its own posion."
 	icon = 'icons/fallout/objects/food&drinks/food.dmi'
 	icon_state = "mirelurk_roast"
