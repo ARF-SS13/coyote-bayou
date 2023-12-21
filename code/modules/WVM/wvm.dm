@@ -1067,6 +1067,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Experimental welding tool",		/obj/item/weldingtool/experimental,							200),
 		new /datum/data/wasteland_equipment("Hand drill",						/obj/item/screwdriver/power,								200),
 		new /datum/data/wasteland_equipment("Jaws of life",						/obj/item/crowbar/power,									200),
+		new /datum/data/wasteland_equipment("1000 Mining Points",				/obj/item/card/mining_point_card/mp1000,					250),
 		new /datum/data/wasteland_equipment("ORM Board",						/obj/item/circuitboard/machine/ore_redemption,				50)
 		)
 	highpop_list = list(
@@ -1082,6 +1083,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Experimental welding tool",		/obj/item/weldingtool/experimental,							200),
 		new /datum/data/wasteland_equipment("Hand drill",						/obj/item/screwdriver/power,								200),
 		new /datum/data/wasteland_equipment("Jaws of life",						/obj/item/crowbar/power,									200),
+		new /datum/data/wasteland_equipment("1000 Mining Points",				/obj/item/card/mining_point_card/mp1000,					250),
 		new /datum/data/wasteland_equipment("ORM Board",						/obj/item/circuitboard/machine/ore_redemption,				50)
 		)
 
