@@ -233,6 +233,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
@@ -274,6 +275,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
 	can_charge = 1
+	selfcharge = 1
 	can_scope = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	weapon_class = WEAPON_CLASS_CARBINE
