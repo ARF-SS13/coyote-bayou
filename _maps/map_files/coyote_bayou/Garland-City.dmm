@@ -8247,12 +8247,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "gyK" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/dropper{
-	pixel_x = -5;
-	pixel_y = -6
+/obj/structure/table/glass{
+	pixel_y = 1
 	},
-/obj/machinery/reagentgrinder,
+/obj/item/storage/box/beakers,
 /turf/open/floor/f13,
 /area/f13/city)
 "gzb" = (
@@ -16194,7 +16192,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/trading_machine/medical,
 /turf/open/floor/f13,
 /area/f13/city)
 "mnc" = (
@@ -19497,6 +19494,16 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"oFK" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/table/glass{
+	pixel_y = 1
+	},
+/obj/item/storage/box/syringes,
+/turf/open/floor/f13,
+/area/f13/city)
 "oFQ" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -22662,9 +22669,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qXg" = (
-/obj/structure/bed/roller,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/table/glass{
+	pixel_y = 1
+	},
+/obj/machinery/reagentgrinder,
+/obj/item/reagent_containers/dropper{
+	pixel_x = -5;
+	pixel_y = -6
 	},
 /turf/open/floor/f13,
 /area/f13/city)
@@ -23375,6 +23386,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/bed/roller,
 /turf/open/floor/f13,
 /area/f13/city)
 "rAq" = (
@@ -23476,6 +23488,10 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
+"rGh" = (
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/open/floor/f13,
+/area/f13/city)
 "rGr" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/backpack,
@@ -31253,7 +31269,6 @@
 /turf/closed/indestructible/rock,
 /area/f13/caves)
 "xuA" = (
-/obj/machinery/smartfridge/chemistry/preloaded,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -31976,6 +31991,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ycn" = (
+/obj/machinery/trading_machine/medical,
+/turf/open/floor/f13,
+/area/f13/city)
 "ycp" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -65981,7 +66000,7 @@ kCH
 nOw
 nOw
 nOw
-nOw
+ehT
 wKl
 wKl
 ehT
@@ -66238,14 +66257,14 @@ kCH
 nOw
 nOw
 nOw
-nOw
-tng
+ehT
+qXg
 gyK
-lPf
+oFK
 toV
 ehT
-gnq
-qXg
+toV
+lPf
 ehT
 naG
 qPg
@@ -66495,9 +66514,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
-wKl
+ehT
 fla
+toV
 toV
 toV
 mXk
@@ -66752,9 +66771,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
-wKl
+ehT
 rSe
+toV
 toV
 ePs
 ehT
@@ -67009,9 +67028,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
-wKl
+ehT
 vig
+toV
 toV
 ubA
 ehT
@@ -67266,8 +67285,8 @@ kCH
 nOw
 nOw
 nOw
-nOw
 ehT
+rGh
 xuA
 toV
 ePs
@@ -67523,12 +67542,12 @@ kCH
 nOw
 nOw
 nOw
-nOw
 ehT
 qxU
 toV
+toV
 ubA
-ehT
+ycn
 toV
 toV
 toV
@@ -67780,9 +67799,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
 ehT
 cUY
+toV
 toV
 aYk
 odc
@@ -68037,9 +68056,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
-wKl
+ehT
 qRa
+toV
 toV
 aYk
 odc
@@ -68294,9 +68313,9 @@ kCH
 nOw
 nOw
 nOw
-nOw
-wKl
+ehT
 tdh
+gnq
 rzG
 ial
 ehT
@@ -68551,7 +68570,7 @@ kCH
 nOw
 nOw
 nOw
-nOw
+ehT
 ehT
 ehT
 ehT
