@@ -11774,6 +11774,13 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/caves)
+"gbt" = (
+/mob/living/carbon/monkey,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "gbu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
@@ -12630,6 +12637,14 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"gyo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "gyt" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/rack,
@@ -19889,6 +19904,9 @@
 	desc = "Used to grind things up into raw materials and liquids.";
 	pixel_x = 4
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "lhc" = (
@@ -26757,6 +26775,9 @@
 /area/f13/building/sewers)
 "ppY" = (
 /obj/machinery/chem_heater,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "pqj" = (
@@ -41331,6 +41352,16 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"ygH" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/sink{
+	pixel_x = -12;
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
+/area/f13/building)
 "ygR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -48415,7 +48446,7 @@ tkZ
 tkZ
 tkZ
 bPE
-wQj
+gbt
 wQj
 rvw
 bPE
@@ -48677,7 +48708,7 @@ tyx
 tyx
 pQT
 oov
-pLF
+ygH
 sXp
 omO
 hJP
@@ -49186,7 +49217,7 @@ tkZ
 tkZ
 tkZ
 bPE
-eHs
+gyo
 pLF
 pLF
 pLF
