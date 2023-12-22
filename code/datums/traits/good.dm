@@ -794,6 +794,26 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	var/obj/item/organ/sodie_organ/gibb = new(H)
 	gibb.Insert(H)
 
+/datum/quirk/prisonpocket
+	name = "Sleight of Hand"
+	desc = "You're really good with your hands. You can even conceal some objects on your person without them being found, kind of good."
+	value = 8
+	category = "Functional Quirks"
+	mechanics = "You get an innate storage that can contain up to two normal sized items. This storage is untracable."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_SOH
+	gain_text = span_notice("You feel sneaky!")
+	lose_text = span_danger("You feel less sneaky.")
+
+/datum/quirk/nukalover/add()
+	if(!ishuman(quirk_holder))
+		to_chat(quirk_holder, span_warning("Your lack of hands makes it impossible to stealthily hide items."))
+		return
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/implant/storage/soh = new(H)
+	soh.Insert(H)
+
 /datum/quirk/nukalover/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
