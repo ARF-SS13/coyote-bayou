@@ -1318,10 +1318,6 @@
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"aOI" = (
-/obj/structure/spacevine,
-/turf/closed/wall/r_wall/rust,
-/area/f13/building)
 "aOY" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
@@ -1695,10 +1691,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
-"bfr" = (
-/obj/machinery/chem_master,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "bgb" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt{
@@ -13348,6 +13340,7 @@
 	},
 /area/f13/building)
 "gWe" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/structure/spacevine,
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/inside/mountain,
@@ -13929,10 +13922,6 @@
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"hrx" = (
-/obj/structure/reagent_dispensers/virusfood,
-/turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "hsb" = (
 /obj/structure/spider/stickyweb,
@@ -16454,10 +16443,9 @@
 /area/f13/tunnel)
 "iUT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/glass,
-/obj/item/storage/box/beakers,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/item/storage/trash_stack,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "iUU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -17891,10 +17879,6 @@
 	dir = 4
 	},
 /area/f13/caves)
-"jQQ" = (
-/obj/machinery/door/window/brigdoor/right,
-/turf/open/floor/engine,
-/area/f13/building)
 "jQV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19884,13 +19868,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lgX" = (
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder{
-	desc = "Used to grind things up into raw materials and liquids.";
-	pixel_x = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "lhc" = (
 /obj/effect/decal/cleanable/blood{
 	icon_state = "gib2";
@@ -22760,9 +22741,9 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "mNi" = (
-/obj/machinery/chem_dispenser,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "mNI" = (
 /mob/living/simple_animal/hostile/raider/junker/boss,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -23239,10 +23220,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building/museum)
-"neB" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/closed/wall/r_wall/rust,
-/area/f13/building)
 "neC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -24478,9 +24455,11 @@
 /area/f13/caves)
 "nUd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/smartfridge/chemistry/virology/preloaded,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/item/storage/trash_stack{
+	icon_state = "Junk_11"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "nUm" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -25055,9 +25034,11 @@
 	},
 /area/f13/building/massfusion)
 "oov" = (
-/obj/structure/closet/l3closet/scientist,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "ooQ" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human{
@@ -26755,10 +26736,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water,
 /area/f13/building/sewers)
-"ppY" = (
-/obj/machinery/chem_heater,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "pqj" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plasteel/f13/vault_floor/plating/miasma,
@@ -27698,11 +27675,6 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf2,
 /area/f13/caves)
-"pQT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/engine,
-/area/f13/building)
 "pQY" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -28100,10 +28072,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"qeo" = (
-/obj/machinery/computer/pandemic,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "qet" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13{
@@ -28255,10 +28223,9 @@
 /area/f13/caves)
 "qjf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/glass,
-/obj/item/stack/sheet/mineral/plasma/twentyfive,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "qjm" = (
 /obj/structure/rack,
 /obj/item/electropack/shockcollar{
@@ -30330,10 +30297,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"rvw" = (
-/obj/structure/bed,
-/turf/open/floor/engine,
-/area/f13/building)
 "rvD" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/wasteplant/wild_mesquite,
@@ -31890,6 +31853,7 @@
 	layer = 4;
 	pixel_y = -2
 	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
 "ssl" = (
@@ -32968,11 +32932,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
-"sXp" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/monkeycubes,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "sYn" = (
 /obj/structure/disposalpipe/broken{
 	dir = 4
@@ -33869,9 +33828,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "tyx" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/engine,
-/area/f13/building)
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/structure/spacevine,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "tyB" = (
 /obj/structure/lattice/catwalk,
 /turf/open/water{
@@ -35866,10 +35826,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"uNq" = (
-/obj/structure/sign/warning/biohazard,
-/turf/closed/wall/r_wall/rust,
-/area/f13/building)
 "uNC" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1
@@ -37188,13 +37144,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"vJa" = (
-/obj/machinery/door/airlock/science/glass{
-	req_one_access_txt = "136";
-	name = "Research & Development"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
-/area/f13/building)
 "vJe" = (
 /obj/structure/chair/stool/retro,
 /mob/living/simple_animal/hostile/raider/sulphite,
@@ -39034,10 +38983,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
-"wQj" = (
-/mob/living/carbon/monkey,
-/turf/open/floor/engine,
-/area/f13/building)
 "wQZ" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plasteel/f13,
@@ -41421,9 +41366,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "yjc" = (
-/obj/structure/sign/warning/biohazard,
-/turf/closed/wall/r_wall,
-/area/f13/building)
+/obj/item/storage/trash_stack{
+	icon_state = "Junk_8"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/sewers)
 "yjd" = (
 /obj/effect/turf_decal/vg_decals/numbers/nine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -47131,7 +47078,7 @@ tkZ
 xRB
 gWe
 sGP
-taG
+yjc
 weN
 bPE
 gxj
@@ -47387,7 +47334,7 @@ tkZ
 tkZ
 iUE
 taG
-oqd
+lgX
 taG
 srU
 iUf
@@ -47644,7 +47591,7 @@ tkZ
 iUE
 tkZ
 tkZ
-taG
+sGP
 taG
 fmc
 weN
@@ -47902,7 +47849,7 @@ tkZ
 tkZ
 tkZ
 taG
-taG
+tyx
 ulg
 iUf
 isj
@@ -48157,10 +48104,10 @@ ozx
 iUE
 tkZ
 tkZ
-aOI
-neB
-bPE
-bPE
+ozx
+iUE
+taG
+taG
 bPE
 tsH
 xgl
@@ -48414,10 +48361,10 @@ xRB
 tkZ
 tkZ
 tkZ
-bPE
-wQj
-wQj
-rvw
+tkZ
+ozx
+taG
+mNi
 bPE
 weN
 weN
@@ -48671,14 +48618,14 @@ iUE
 tkZ
 tkZ
 tkZ
-bPE
-jQQ
-tyx
-tyx
-pQT
+ozx
+rMU
+sGP
+taG
+oqd
 oov
-pLF
-sXp
+rHB
+rHB
 omO
 hJP
 pLF
@@ -48928,15 +48875,15 @@ vOn
 tkZ
 tkZ
 tkZ
-bPE
-pLF
-pLF
-eHs
-pLF
-eHs
-pLF
+tkZ
+sGP
+sGP
+taG
+sGP
+sGP
+mNi
 iUT
-uNq
+bPE
 lBp
 pLF
 eHs
@@ -49185,15 +49132,15 @@ vOn
 tkZ
 tkZ
 tkZ
-bPE
-eHs
-pLF
-pLF
-pLF
-pLF
-eHs
-pLF
-vJa
+tkZ
+sGP
+sGP
+taG
+mNi
+taG
+taG
+mNi
+omO
 hFx
 eHs
 eHs
@@ -49442,15 +49389,15 @@ vOn
 tkZ
 tkZ
 tkZ
-bPE
-pLF
-pLF
-pLF
-eHs
-pLF
+taG
+sGP
+sGP
+taG
+oqd
+sGP
 nUd
 omO
-yjc
+omO
 uYE
 eHs
 eHs
@@ -49699,13 +49646,13 @@ vOn
 tkZ
 ozx
 ozx
-bPE
-qeo
-qjf
-ppY
+taG
 mNi
-bfr
-lgX
+qjf
+mNi
+mNi
+rHB
+rHB
 omO
 ggV
 eHs
@@ -49956,13 +49903,13 @@ vOn
 vOn
 rMU
 bOb
-bPE
-bPE
-bPE
-bPE
-bPE
-hrx
-bPE
+bOb
+bOb
+bOb
+bOb
+bOb
+aae
+aae
 omO
 sIr
 tqF
@@ -50218,8 +50165,8 @@ jLS
 jYO
 kXg
 bOb
-bPE
-bPE
+aae
+aae
 omO
 wkP
 sHR
