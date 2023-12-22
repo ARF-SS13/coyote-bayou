@@ -804,6 +804,25 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		if(gibb)
 			qdel(gibb)
 
+/datum/quirk/prisonpocket
+	name = "Sleight of Hand"
+	desc = "You're really good with your hands. You can even conceal some objects on your person without them being found, kind of good."
+	value = 8
+	category = "Functional Quirks"
+	mechanics = "You get an innate storage that can contain up to two normal sized items. This storage is untracable. Just implant it, first."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_SOH
+
+/datum/quirk/prisonpocket/on_spawn()
+	if(!ishuman(quirk_holder))
+		to_chat(quirk_holder, span_warning("Your lack of hands makes it impossible to stealthily hide items."))
+		return
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/implanter/storage/soh = new(get_turf(H))
+	H.put_in_hands(soh)
+	H.equip_to_slot_if_possible(soh, SLOT_IN_BACKPACK)
+
 /datum/quirk/trapper
 	name = "Trapper"
 	desc = "As an experienced hunter and trapper you know your way around butchering animals for their products."
