@@ -1205,6 +1205,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// permanent tattoos
 	permanent_tattoos = sanitize_text(permanent_tattoos)
 
+	SSexperience.check_in(src)
+
 	return 1
 
 /datum/preferences/proc/save_character()
