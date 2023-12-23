@@ -36728,6 +36728,14 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland/city/nash/theloop)
+"eVy" = (
+/obj/machinery/processor,
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/bar/heaven)
 "eVH" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/road{
@@ -44734,6 +44742,18 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/nash/theloop)
+"gKc" = (
+/obj/machinery/microwave/stove,
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
+	},
+/area/f13/bar/heaven)
 "gKg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -49099,7 +49119,16 @@
 	},
 /area/f13/underground/cave/coyote/antmound)
 "hLB" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/kitchen/knife,
+/obj/item/toy/crayon/spraycan{
+	pixel_x = 7
+	},
+/obj/item/toy/crayon/purple{
+	pixel_x = -7
+	},
+/obj/item/storage/fancy/cigarettes/cigars,
+/obj/item/kitchen/knife,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13{
 	color = "#ffe9de";
@@ -57615,16 +57644,6 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "jGj" = (
-/obj/item/kitchen/knife,
-/obj/structure/rack,
-/obj/item/storage/fancy/cigarettes/cigars,
-/obj/item/kitchen/knife,
-/obj/item/toy/crayon/purple{
-	pixel_x = -7
-	},
-/obj/item/toy/crayon/spraycan{
-	pixel_x = 7
-	},
 /turf/open/floor/f13{
 	color = "#ffe9de";
 	icon_state = "darkrusty";
@@ -134588,13 +134607,13 @@ aOk
 bun
 vVy
 vVy
-vVy
-vVy
-vVy
 wmE
-jGj
-hLB
 jwa
+jGj
+jGj
+jGj
+sMP
+jGj
 sMP
 wmE
 vVy
@@ -134845,10 +134864,10 @@ aOk
 xbz
 vVy
 vVy
-vVy
-vVy
-vVy
 wmE
+eVy
+gKc
+hLB
 iSM
 jdl
 mVj
@@ -135102,9 +135121,9 @@ aOk
 lpw
 vVy
 vVy
-vVy
-vVy
-vVy
+wmE
+wmE
+wmE
 wmE
 wmE
 wmE
@@ -135359,8 +135378,8 @@ aOk
 stw
 vVy
 vVy
-ezS
-ezS
+vVy
+vVy
 vVy
 vVy
 vVy
