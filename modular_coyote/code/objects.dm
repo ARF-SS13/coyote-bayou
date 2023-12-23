@@ -1129,26 +1129,39 @@
 
 //Rugs
 
+/obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
+	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
+		user.visible_message("[user] begins cutting the [src] apart.", \
+				span_notice("You begin cutting the [src] into strips."), \
+				span_italic("You hear faint sounds of ripping cloth."))
+		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/stack/sheet/cloth (drop_location(), 10)
+		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		qdel(src)
+		return TRUE
+
 /obj/structure/rug/carpet
-	name = "run carpet"
+	name = "black and red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
 
 /obj/structure/rug/carpet2
-	name = "run carpet"
+	name = "royal purple run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet2"
 
 /obj/structure/rug/carpet3
-	name = "run carpet"
+	name = "red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet3"
 
 /obj/structure/rug/carpet4
-	name = "run carpet"
+	name = "turquoise run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet4"
