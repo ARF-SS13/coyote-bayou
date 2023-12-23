@@ -3029,5 +3029,5 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/tglaser/spammer
 	name = "repeating blaster case"
 
-/obj/item/storage/box/gun/energy/tglaser/PopulateContents()
+/obj/item/storage/box/gun/energy/tglaser/spammer/PopulateContents()
 	new /obj/item/gun/energy/laser/tg/spamlaser(src)
