@@ -519,6 +519,23 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 			new/datum/stack_recipe("brown double bedsheet", /obj/item/bedsheet/doublesheetbrown, 3), \
 			new/datum/stack_recipe("yellow double bedsheet", /obj/item/bedsheet/doublesheetyellow, 3), \
 		)), \
+		new/datum/stack_recipe_list("rugs and mats", list( \
+			new /datum/stack_recipe("black and red run carpet", /obj/structure/rug/carpet, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("royal purple run carpet", /obj/structure/rug/carpet2, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("red run carpet", /obj/structure/rug/carpet3, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("turquoise run carpet", /obj/structure/rug/carpet4, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			null, \
+			new /datum/stack_recipe("rubber rug", /obj/structure/rug/big/rug_rubber, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("fancy rug", /obj/structure/rug/big/rug_fancy, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("red rug", /obj/structure/rug/big/rug_red, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("yellow rug", /obj/structure/rug/big/rug_yellow, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("blue shag rug", /obj/structure/rug/big/rug_blue_shag, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("blue rug", /obj/structure/rug/big/rug_blue, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			null, \
+			new /datum/stack_recipe("blank mat", /obj/structure/rug/mat, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("welcome mat", /obj/structure/rug/mat/welcome, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+		)), \
+	null, \
 	))
 
 /obj/item/stack/sheet/cloth
