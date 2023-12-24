@@ -448,21 +448,27 @@
 ///energy weapon spawners///
 ////////////////////////////
 
+
+/// Note: Energy guns are weird. Please try and consider unique features (self recharging, shots per battery, Plasma/EMP, etc) along with DPS.
 /// DPS should be 100 or less ish
 /// If it's on the higher or lower side, it should have another stat lowered or raised such as magazine capacity.
 /obj/effect/spawner/lootdrop/f13/common_energy
 	name = "common energy"
 	loot = list(
 
-		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90 20
-		/obj/item/gun/energy/laser/aer12 = 10,              //90 20
-		/obj/item/gun/energy/laser/plasma/pistol = 10,      //88 10
-		/obj/item/gun/energy/laser/wattzs = 10,             //83 30
-		/obj/item/gun/energy/laser/pistol = 10,             //80 25
-		/obj/item/gun/energy/laser/aer9 = 10,               //80 20
-		/obj/item/gun/energy/laser/plasma = 10,             //80 12
-		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50 125
+		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25 internal cell
+		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/pistol = 10,             //80  25
+		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
+		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50  125 internal cell
+
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/laser/plasma/pistol = 8,      //88 10 plasma
+		/obj/item/gun/energy/laser/plasma = 8,             //80 12 plasma
+		/obj/item/gun/energy/laser/aer12 = 8,              //90 20 efficient
+		/obj/item/gun/energy/laser/wattzs = 8,             //83 30 efficient
+		/obj/item/gun/energy/gammagun = 8,                 //62 25 rad damage
 	)
 
 /// DPS should be <= 150 ish
@@ -471,28 +477,29 @@
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
 		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
-		/obj/item/gun/energy/laser/LaserAK/worn = 10,               //133 30
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
-		/obj/item/gun/energy/laser/wattz2k = 10,                    //130 12
-		/obj/item/gun/energy/ionrifle = 10,                         //107 15
-		/obj/item/gun/energy/laser/wattz2ks = 10,                   //113 25
-		/obj/item/gun/energy/laser/laer = 10,                       //113 16
-		/obj/item/gun/energy/ionrifle/carbine = 10,                 //107 12
-		/obj/item/gun/energy/ionrifle/compact = 10,                 //107 10
+		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
+		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
+		/obj/item/gun/energy/ionrifle/carbine = 10,                 //107 12 EMP
+		/obj/item/gun/energy/ionrifle/compact = 10,                 //107 10 EMP
 		/obj/item/gun/energy/laser/aer14 = 10,                      //105 25
-		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 10, //100 24 self recharge
-		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,       //100 16 self recharge
-		/obj/item/gun/energy/laser/tg/recharger = 10,               //100 16 self recharge
-		/obj/item/gun/energy/laser/plasma/carbine = 10,             //100 20
-		/obj/item/gun/energy/laser/plasma/glock = 10,               //100 16
 		/obj/item/gun/energy/laser/wattz2k/extended = 10,           //100 16
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
-		/obj/item/gun/energy/laser/retro = 5,                       //100 8 //Spawns with the worst power cell, but isn't bad
-		/obj/item/gun/energy/laser/plasma/bouncy = 1,               //93 20
-		/obj/item/gun/energy/laser/solar = 10,                      //90 16
-		/obj/item/gun/energy/laser/wattz/recharger = 1,             //83 20
-		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80 40
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80 24
+		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
+		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
+		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40 internal cell
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
+		/obj/item/gun/energy/laser/wattz/magneto = 8,              //87  16 efficient
+		/obj/item/gun/energy/laser/wattz2ks = 1,                   //113 25 AP, self recharge
+		/obj/item/gun/energy/laser/wattz/recharger = 5,            //83  20 recharger pistol, has fast recharge
+		/obj/item/gun/energy/laser/tg/recharger/nuclear/rifle = 8, //100 24 self recharge, EMP weakness, rad damage
+		/obj/item/gun/energy/laser/tg/recharger/nuclear = 10,      //100 16 self recharge, EMP weakness, rad damage
+		/obj/item/gun/energy/laser/tg/recharger = 7,               //100 16 self recharge
+		/obj/item/gun/energy/laser/LaserAK/worn = 8,               //133 30 self recharge
+		/obj/item/gun/energy/laser/solar = 8,                      //90  16 self recharge
+		/obj/item/gun/energy/laser/plasma/bouncy = 1,              //93  20 plasma, bouncy shots
 
 		//others
 		/obj/item/gun/energy/laser/complianceregulator = 5,         //330(690) 16 nonlethal
@@ -511,16 +518,18 @@
 	loot = list(                                                    //dps magcap
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
-		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60
-		/obj/item/gun/energy/laser/LaserAK = 10,                    //200 30
+		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80  24 internal cell
+		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
-		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40
-		/obj/item/gun/energy/kinetic_accelerator/crossbow = 10,     //100 1
 
 		//sidearms
-		/obj/item/gun/energy/laser/plasma/pistol/eve = 5,           //150 10
-		/obj/item/gun/energy/laser/plasma/pistol/adam = 5,          //138 8
+		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
+		/obj/item/gun/energy/laser/plasma/pistol/adam = 8,          //138 8  plasma
+
+		// Better in some way (self charge, plasma, more efficient)
+		/obj/item/gun/energy/kinetic_accelerator/crossbow = 5,     //100 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/LaserAK = 5,                    //200 30 self charge
 
 		//magic
 		/obj/item/gun/magic/staff/kelpmagic/fireball = 2,
@@ -532,9 +541,11 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/scatter/nonlethal = 10,            //132(276) 20 insane for pve wtf
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 10, //200 1
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 1,           //225 4
+		/obj/item/gun/energy/laser/scatter/nonlethal = 500,            //132(276) 20 insane for pve wtf
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500, //200 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,           //225 4
+		/obj/item/gun/medbeam/magic = 400,                             //000 inf medbeam
+		/obj/item/minigunpack = 1,                                     //??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
 	)
 
 ///////////////////////////
