@@ -989,7 +989,7 @@
 /obj/item/toy/plush/braixen
 	name = "braixen plush"
 	desc = "An adorable plushie"
-	icon = 'icons/obj/plushies.dmi'
+	icon = 'icons/obj/plushes.dmi'
 	icon_state = "braixen"
 
 
