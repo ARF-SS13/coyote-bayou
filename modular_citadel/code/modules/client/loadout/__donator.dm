@@ -430,6 +430,8 @@
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
 	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
