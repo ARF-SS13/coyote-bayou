@@ -2512,8 +2512,8 @@
 	reskinnable_component = null
 
 /obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof //slightly slower than the m5a1
-	name = "Standard Issue M5A1 rifle"
-	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It's made in a bullpup configuration and takes a rifle version of 5mm but makes up for such a odd ordeal with an increased fire rate."
+	name = "Custom Standard Issue M5A1 rifle"
+	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It's made in a bullpup configuration and takes a rifle version of 5mm but makes up for such a odd ordeal with an increased fire rate. This particular m5a1 has particular work done to its stabilizer to prevent a good chunk of the recoil, at the cost of its fire rate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
