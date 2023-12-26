@@ -32,7 +32,6 @@
 	jobtype = /datum/job/biker
 	suit = /obj/item/clothing/suit/armor/light/duster/brahmin/biker
 	ears = /obj/item/radio/headset/headset_biker
-	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack = /obj/item/storage/backpack/satchel/explorer
