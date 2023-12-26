@@ -69,7 +69,7 @@
 /obj/item/card/id/dogtag/darknova
 	name = "holo dogtag"
 	icon_state = "holodogtag"
-	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Nikolatz, J. S  with a rank of Knight. The sex is listed as male, the blood type is listed as O positive, A serial number is written of 242-355-179-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	desc = "An advanced holographic dogtag that seems to have a coded pattern imprinted on its side, as if implying it can be interfaced with certain devices. This one in particular denotes the owner being Nikolatz, J. S with an identifier of Ship Captain, Eyes of Dorian. The sex is listed as male, the blood type is listed as O positive, and a serial number is written of 242-355-179-22. The text ends at the end of the serial number, a duplicate tag is joined with the same information using a small chain."
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
@@ -423,16 +423,15 @@
 	ckeywhitelist = list("dameonowen", "andyman105")
 
 /datum/gear/donator/kits/darknova92
-	name = "Nikolatz BoS"
+	name = "Nikolatz Military Set"
 	path = /obj/item/storage/box/large/custom_kit/darknova92
 	ckeywhitelist = list("darknova92")
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
-	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
-	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
@@ -1106,9 +1105,7 @@
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
 	new /obj/item/lighter/fusion(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/clothing/glasses/prism_glasses(src)
-	new /obj/item/stealthboy(src)
-	new /obj/item/stock_parts/cell/high/slime/blue(src)
+	new /obj/item/storage/box/tools/ranching(src)
 
 /datum/gear/donator/kits/prismaticnova2
 	name = "Slime Cookie Kit"
