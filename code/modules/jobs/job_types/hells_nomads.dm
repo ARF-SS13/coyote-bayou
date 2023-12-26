@@ -32,6 +32,7 @@
 	jobtype = /datum/job/biker
 	suit = /obj/item/clothing/suit/armor/light/duster/brahmin/biker
 	ears = /obj/item/radio/headset/headset_biker
+	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -42,6 +43,7 @@
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools = 1,
 		/obj/item/cool_book/ashdowncit = 1
