@@ -21296,13 +21296,16 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "pUI" = (
+/obj/effect/spawner/lootdrop/trash,
 /obj/structure/nest/ghoul{
 	layer = 2.7;
 	max_mobs = 1;
 	radius = 3
 	},
-/turf/closed/wall/f13/wood/interior,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "pUS" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meatsalted,
@@ -29523,6 +29526,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"whd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul{
+	layer = 2.7;
+	max_mobs = 1;
+	radius = 3
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "wht" = (
 /obj/structure/table/wood/settler,
 /obj/item/mining_scanner,
@@ -39821,7 +39835,7 @@ cON
 qTT
 ugt
 rcT
-bHy
+uhp
 kqO
 ntb
 bHy
@@ -40337,7 +40351,7 @@ gmt
 bHy
 bHy
 bHy
-ama
+pUI
 viN
 dHT
 let
@@ -40852,7 +40866,7 @@ neA
 deJ
 bHy
 snE
-mom
+whd
 mom
 snE
 ugt
@@ -41110,7 +41124,7 @@ snE
 viN
 bHy
 snE
-pUI
+viN
 neA
 ugt
 sZw
