@@ -7,11 +7,12 @@
 
 /atom/movable/screen/autowhisper/Click(location,control,params)
 	var/mob/M = usr
-	to_chat(M, span_notice("You'll now whisper everything you say."))
 	M.is_autowhisper = M.is_autowhisper ? FALSE : TRUE
 	if(M.is_autowhisper)
+		to_chat(M, span_notice("You'll now whisper everything you say."))
 		icon_state = "autowhisper1"
 	else
+		to_chat(M, span_notice("You'll no longer whisper everything you say."))
 		icon_state = "autowhisper0"
 
 
