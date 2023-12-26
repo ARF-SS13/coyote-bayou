@@ -986,6 +986,12 @@
 	icon = 'icons/obj/plushies_big.dmi'
 	icon_state = "registeel"
 
+/obj/item/toy/plush/braixen
+	name = "braixen plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "braixen"
+
 
 
 
