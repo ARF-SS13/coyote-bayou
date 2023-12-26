@@ -8785,6 +8785,17 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/caves)
+"gWK" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/structure/nest/ghoul{
+	layer = 2.7;
+	max_mobs = 1;
+	radius = 3
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "gXs" = (
 /obj/structure/chair{
 	dir = 4
@@ -20734,6 +20745,17 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"pzE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul{
+	layer = 2.7;
+	max_mobs = 1;
+	radius = 3
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "pzM" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
@@ -39821,7 +39843,7 @@ cON
 qTT
 ugt
 rcT
-bHy
+uhp
 kqO
 ntb
 bHy
@@ -40337,7 +40359,7 @@ gmt
 bHy
 bHy
 bHy
-ama
+gWK
 viN
 dHT
 let
@@ -40852,8 +40874,8 @@ neA
 deJ
 bHy
 snE
-mom
-mom
+pzE
+pzE
 snE
 ugt
 rUq
