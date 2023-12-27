@@ -809,7 +809,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "You're really good with your hands. You can even conceal some objects on your person without them being found, kind of good."
 	value = 8
 	category = "Functional Quirks"
-	mechanics = "You get an innate storage that can contain up to two normal sized items. This storage is untracable. Just implant it, first."
+	mechanics = "You have an innate, untraceable storage that can contain up to two normal sized items."
+	gain_text = span_notice("You feel like you could make a couple things... disappear!")
+	lose_text = span_warning("Your hands feel a little slower.")
 	conflicts = list(
 	)
 	mob_trait = TRAIT_SOH
@@ -819,9 +821,13 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		to_chat(quirk_holder, span_warning("Your lack of hands makes it impossible to stealthily hide items."))
 		return
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/implanter/storage/soh = new(get_turf(H))
-	H.put_in_hands(soh)
-	H.equip_to_slot_if_possible(soh, SLOT_IN_BACKPACK)
+	var/obj/item/implant/storage/soh = new(get_turf(H))
+	soh.implant(H, null, TRUE)
+
+/datum/quirk/prisonpocket/remove()
+	var/obj/item/implant/storage/soh = quirk_holder.getImplant(/obj/item/implant/storage)
+	if(soh)
+		Destroy(soh)
 
 /datum/quirk/trapper
 	name = "Trapper"

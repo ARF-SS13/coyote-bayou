@@ -965,6 +965,7 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	flags_1 = CONDUCT_1
+	can_charge = 0 // Fixes a bug where you can stick the gun in a recharger but magically pull it out, letting you infinitely charge the weapon on the go
 	slot_flags = null
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -976,6 +977,7 @@
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpack/ammo_pack
 	init_firemodes = list(
+		/datum/firemode/semi_auto,
 		/datum/firemode/automatic/rpm300
 	)
 	init_recoil = HMG_RECOIL(1, 1)

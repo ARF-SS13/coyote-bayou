@@ -2511,6 +2511,29 @@
 	can_flashlight = FALSE
 	reskinnable_component = null
 
+/obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof //slightly slower than the m5a1
+	name = "Custom Standard Issue M5A1 rifle"
+	desc = "A pristine looking assault rifle created by Leo Arments for PMC companies and squadrons, named after a WW2 tank.It comes with a built in ammo counter. It's made in a bullpup configuration and takes a rifle version of 5mm but makes up for such a odd ordeal with an increased fire rate. This particular m5a1 has particular work done to its stabilizer to prevent a good chunk of the recoil, at the cost of its fire rate."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "m5a1"
+	item_state = "m5a1"
+	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = AUTOCARBINE_RECOIL(1.4 , 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto
+	)
+	can_scope = TRUE
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	reskinnable_component = null
 
 
 /obj/item/gun/ballistic/automatic/assault_carbine/scarrifle
