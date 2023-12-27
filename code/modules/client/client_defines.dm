@@ -184,3 +184,4 @@
 	var/is_fullscreen = 0
 	/// ckeys of mobs we'd like to see the genitals of
 	var/list/genital_exceptions = list()
+	var/ahelpspam = FALSE
