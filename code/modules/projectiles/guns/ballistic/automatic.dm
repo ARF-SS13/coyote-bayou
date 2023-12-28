@@ -3119,7 +3119,7 @@
 	can_scope = TRUE
 
 // Custom rifle, loadout only. ETA to becoming a 5mm or 5.56 rifle TBA
-/obj/item/gun/ballistic/automatic/g36customtox //unused, note from Tox: Will redo entirely eventually
+/obj/item/gun/ballistic/automatic/g36 //unused, note from Tox: Will redo entirely eventually
 	name = " G36C Assault rifle"
 	desc = "A G36C base"
 	icon_state = "g36"
@@ -3611,6 +3611,33 @@
 		/datum/firemode/semi_auto/fast
 	)
 	zoom_factor = 1.2
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+/obj/item/gun/ballistic/automatic/needlerrifle/custom
+	name = "Advanced Violet Needler Rifle"
+	desc = "A custom and violet colored NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.'."
+	icon_state = "needles"
+	item_state = "needles"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needlerammo
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = CARBINE_RECOIL (1 , 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	zoom_factor = 0.9
 	can_suppress = FALSE
 	can_bayonet = FALSE
 	can_flashlight = FALSE

@@ -1129,6 +1129,8 @@
 	new /obj/item/lighter/gold(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/prismaticnova(src)
+	new /obj/item/gun/ballistic/automatic/needlerrifle/custom(src)
+	new /obj/item/ammo_box/needlercapsule(src)
 
 /datum/gear/donator/kits/prismaticnova4
 	name = "Trueshot's Kit"
@@ -1309,6 +1311,18 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
+
+/datum/gear/donator/kits/seermankhajiit006
+	name = "The Icelandic G11"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit006
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit006/PopulateContents()
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
