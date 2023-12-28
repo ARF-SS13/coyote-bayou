@@ -3592,7 +3592,7 @@
 
 /obj/item/gun/ballistic/automatic/needlerrifle
 	name = "NR-43 Turán"
-	desc = "A NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.'."
+	desc = "A NR-43 prototype needle rifle also known as the 'Turan' in its country of origin. Manufactured by Latos Systems in a facility in Miskolc,Hungary. While this carbine is quick and lightweight, what it likes in firepower, it makes up for a rather peculiar design, built in scope, and expansive ammo capsules. A wise soldier once said.. 'Tell 'em to make it count.' Sadly the user of this weapon is a big dork."
 	icon_state = "needles"
 	item_state = "needles"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
