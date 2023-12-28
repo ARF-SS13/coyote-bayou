@@ -581,10 +581,10 @@
 
 /datum/emote/living/snore/get_sound(mob/living/M)
 	if(ishuman(M))
-		if(M.gender == FEMALE)
-			return 'sound/effects/femalesnore1.ogg'
+		if(rand() % 500 + 1 == 1) //While rand() isn't a true random number generator, it'll work fine for this. This statement checks if the number generated in range of 1 to 500 is equal to 1
+			return 'sound/effects/snoremimi.ogg' //if it is it plays a funny sound. The chance to play it is 1 in 500
 		else
-			return 'sound/effects/malesnore1.ogg'
+			return 'sound/effects/femalesnore1.ogg' //if it isn't, it plays this sound. By design, this sound will be heard more often.
 
 /datum/emote/living/stare
 	key = "stare"
