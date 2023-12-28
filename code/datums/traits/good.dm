@@ -827,7 +827,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 /datum/quirk/prisonpocket/remove()
 	var/obj/item/implant/storage/soh = quirk_holder.getImplant(/obj/item/implant/storage)
 	if(soh)
-		Destroy(soh)
+		qdel(soh)
 
 /datum/quirk/trapper
 	name = "Trapper"
