@@ -256,12 +256,16 @@
 	new /obj/item/flashlight/lantern(src)
 	new /obj/item/toy/plush/mammal/fox/squishfox(src)
 
-//datum/gear/donator/kits/bound2theground/abbey/PopulateContents()
-	//new 
+/datum/gear/donator/kits/bound2theground/strike
+	name = "A Box for the Shadow"
+	path = /obj/item/storage/box/large/custom_kit/strike
+	ckeywhitelist = list("bound2theground")
 
-//datum/gear/donator/kits/bound2theground/strike/PopulateContents()
-	//new /obj/item/book/granter/crafting_recipe/blueprint/infiltrator(src)
-	//new /obj/item/melee/onehanded/knife/switchblade(src)
+/obj/item/storage/box/large/custom_kit/strike/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/blueprint/infiltrator(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 
 /datum/gear/donator/kits/brimcon
@@ -634,7 +638,7 @@
 /datum/gear/donator/kits/icefistthunderdick
 	name = "Sindy Kit"
 	path = /obj/item/storage/box/large/custom_kit/icefistthunderdick
-	ckeywhitelist = list("bound2theground")
+	ckeywhitelist = list("icefistthunderdick")
 
 /obj/item/storage/box/large/custom_kit/icefistthunderdick/PopulateContents()
 	name = "Sindy Kit"
@@ -981,7 +985,7 @@
 /datum/gear/donator/kits/neskah
 	name = "IV items for Errant-XIV"
 	path = /obj/item/storage/box/large/custom_kit/neskah
-	ckeywhitelist = list("bound2theground")
+	ckeywhitelist = list("neskah")
 
 /obj/item/storage/box/large/custom_kit/neskah/PopulateContents()
 	name = "IV items for Errant-XIV"
@@ -1449,8 +1453,6 @@
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaberry(src)
 	new /obj/item/reagent_containers/food/snacks/jellysandwich/pbj/cherry(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault13(src)
-
-//datum/gear/donator/kits/smokeyocity
 
 /datum/gear/donator/kits/soulwinter446
 	name = "Shocome's relic cross"
