@@ -76,7 +76,7 @@
 /obj/item/card/id/dogtag/prismaticnova
 	name = "holo dogtag"
 	icon_state = "holodogtag"
-	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 234-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	desc = "An advanced holographic dogtag that seems to have a coded pattern imprinted on its side, as if implying it can be interfaced with certain devices. This one in particular denotes the owner being Amethyst with an identifier of Ship Pilot, Eyes of Dorian. The sex is listed as female, the blood type is listed as A positive, and a serial number is written of 234-331-173-22. The text ends at the end of the serial number, a duplicate tag is joined with the same information using a small chain."
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
@@ -1118,16 +1118,14 @@
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
-	new /obj/item/clothing/glasses/prism_glasses(src)
 
 /datum/gear/donator/kits/prismaticnova3
-	name = "Head Paladin Kit"
+	name = "Military Pilot Kit"
 	path = /obj/item/storage/box/large/custom_kit/prismaticnova3
 	ckeywhitelist = list("prismaticnova")
 
 /obj/item/storage/box/large/custom_kit/prismaticnova3/PopulateContents()
 	new /obj/item/lighter/gold(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/prismaticnova(src)
 	new /obj/item/gun/ballistic/automatic/needlerrifle/custom(src)
 	new /obj/item/ammo_box/needlercapsule(src)
