@@ -512,6 +512,14 @@
 	color = "#779999"
 	},
 /area/f13/bar/heaven)
+"cB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d"
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/building/tribal)
 "cD" = (
 /obj/structure/wreck/trash/machinepiletwo{
 	icon_state = "technical_pile1"
@@ -6693,6 +6701,15 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
+"FH" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 8
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/building/tribal)
 "FI" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/roof,
@@ -8695,6 +8712,17 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"OO" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 9
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/tribal)
 "OQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -10632,6 +10660,15 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Wy" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#a98c5d";
+	dir = 4
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/building/tribal)
 "WA" = (
 /obj/structure/railing{
 	dir = 4
@@ -17050,7 +17087,7 @@ NC
 FN
 oj
 oj
-oj
+Wy
 oj
 oj
 oj
@@ -17306,8 +17343,8 @@ hm
 NC
 oj
 oj
-oj
-oj
+cB
+OO
 YV
 oj
 LF
@@ -17564,7 +17601,7 @@ NC
 oj
 mJ
 FN
-oj
+FH
 rz
 oj
 LF
