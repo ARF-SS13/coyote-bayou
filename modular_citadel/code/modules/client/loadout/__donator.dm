@@ -259,7 +259,7 @@
 /datum/gear/donator/kits/bound2theground/strike
 	name = "A Box for the Shadow"
 	path = /obj/item/storage/box/large/custom_kit/strike
-	ckeywhitelist = list("bound2theground")
+	ckeywhitelist = list("Bound2theground")
 
 /obj/item/storage/box/large/custom_kit/strike/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/blueprint/infiltrator(src)
