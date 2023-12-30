@@ -989,13 +989,23 @@
 
 /obj/item/storage/box/large/custom_kit/neskah/PopulateContents()
 	name = "IV items for Errant-XIV"
-	var/obj/item/clothing/head/evaspartan3/helm = new /obj/item/clothing/head/evaspartan3(src)
+	var/obj/item/clothing/head/helmet/f13/power_armor/fluff/helm = new /obj/item/clothing/head/helmet/f13/power_armor/fluff(src)
 	helm.name = "heavy robotic visor"
 	helm.desc = "A remarkably heavy helmet fitted for a square OVRmind cranium, with cables that link the wearer to an advanced observational visor."
+	helm.mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	helm.icon = 'icons/fallout/clothing/helmets.dmi'
+	helm.icon_state = "eva3"
+	helm.item_state = "eva3"
+	helm.flags_inv = HIDESNOUT | HIDEHAIR
 
-	var/obj/item/clothing/suit/armor/medium/spartanmarkviarmor3/suit = new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3(src)
+	var/obj/item/clothing/suit/armor/power_armor/fluff/suit = new /obj/item/clothing/suit/armor/power_armor/fluff(src)
 	suit.name = "servo-lined exoplating"
 	suit.desc = "A remarkably heavy set of plates designed to be bolted to an OVRmind-compatible cybernetic frame."
+	suit.icon_state = "markvi3"
+	suit.item_state = "markvi3"
+	suit.mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	suit.icon = 'icons/fallout/clothing/armored_light.dmi'
+	suit.flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 
 	var/obj/item/gun/energy/laser/wattz2ks/wattz = new /obj/item/gun/energy/laser/wattz2ks(src)
 	wattz.name = "Staccato"
