@@ -200,9 +200,19 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/amanita_pie
 	subcategory = CAT_PIE
 
+/datum/crafting_recipe/food/berrytart
+	name = "Berry tart"
+	reqs = list(
+			/datum/reagent/consumable/milk = 5,
+			/datum/reagent/consumable/sugar = 5,
+			/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+			/obj/item/reagent_containers/food/snacks/grown/berries = 3
+			)
+	result = /obj/item/reagent_containers/food/snacks/pie/berrytart
+	subcategory = CAT_PIE
+
 /datum/crafting_recipe/food/cocolavatart
 	name = "Chocolate Lava tart"
-	always_available = FALSE
 	reqs = list(
 			/datum/reagent/consumable/milk = 5,
 			/datum/reagent/consumable/sugar = 5,
