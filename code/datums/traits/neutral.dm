@@ -1239,3 +1239,36 @@
 	mob_trait = TRAIT_NOHIDEFACE
 	gain_text = span_notice("You feel seen!")
 	lose_text = span_notice("You feel hidden")
+
+/datum/quirk/wreckingballs
+	name = "Big Balls"
+	desc = "You have a hard time finding clothes that fit."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while by TODO, or you'll suffer a speed penalty."
+	conflicts = list()
+	mob_trait = TRAIT_FATNUTS
+	gain_text = span_notice("The heavy swingers between your legs strain your clothes.")
+	lost_text = span_notice("Your clothes feel looser.")
+
+/datum/quirk/hugecock
+	name = "Big Dick"
+	desc = "You have a HARD time finding clothes that fit."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while by TODO, or your clothes will be too tight to reach into your pockets."
+	conflicts = list()
+	mob_trait = TRAIT_FATCOCK
+	gain_text = span_notice("You feel your clothes stretch around your extra leg.")
+	lose_text = span_notice("Your clothes feel looser.")
+
+/datum/quirk/bigboobs
+	name = "Big Boobs"
+	desc = "If the internet was a thing, people would be looking you up on google."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "You need to adjust your clothes every once in a while by TODO, or your breathing will be restricted enough to slightly lower your maximum health"
+	conflicts = list()
+	mob_trait = TRAIT_BIGBOOBS
+	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
+	lose_text = span_notice("The urge to find a tailor disappears.")
