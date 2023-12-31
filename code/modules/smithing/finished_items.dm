@@ -619,6 +619,10 @@
 	icon_state = "lance_smith"
 	icon_prefix = "lance_smith"
 	overlay_state = "shaft_lance"
+	force = 28
+	block_chance = 8
+	force_wielded = 56
+	force_unwielded = 28
 	attack_speed = CLICK_CD_MELEE
 
 /obj/item/melee/smith/twohand/spear/trident

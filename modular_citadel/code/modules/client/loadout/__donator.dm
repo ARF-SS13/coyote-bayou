@@ -76,7 +76,7 @@
 /obj/item/card/id/dogtag/prismaticnova
 	name = "holo dogtag"
 	icon_state = "holodogtag"
-	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 234-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	desc = "An advanced holographic dogtag that seems to have a coded pattern imprinted on its side, as if implying it can be interfaced with certain devices. This one in particular denotes the owner being Amethyst with an identifier of Ship Pilot, Eyes of Dorian. The sex is listed as female, the blood type is listed as A positive, and a serial number is written of 243-331-173-49. The text ends at the end of the serial number, a duplicate tag is joined with the same information using a small chain."
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
@@ -255,6 +255,18 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/flashlight/lantern(src)
 	new /obj/item/toy/plush/mammal/fox/squishfox(src)
+
+/datum/gear/donator/kits/bound2theground/strike
+	name = "A Box for the Shadow"
+	path = /obj/item/storage/box/large/custom_kit/strike
+	ckeywhitelist = list("Bound2theground")
+
+/obj/item/storage/box/large/custom_kit/strike/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/blueprint/infiltrator(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+
 
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
@@ -623,6 +635,35 @@
 
 // I
 
+/datum/gear/donator/kits/icefistthunderdick
+	name = "Sindy Kit"
+	path = /obj/item/storage/box/large/custom_kit/icefistthunderdick
+	ckeywhitelist = list("icefistthunderdick")
+
+/obj/item/storage/box/large/custom_kit/icefistthunderdick/PopulateContents()
+	name = "Sindy Kit"
+	var/obj/item/lighter/zippo = new /obj/item/lighter(src)
+	zippo.overlay_state = "snake"
+	zippo.update_icon()
+
+	var/obj/item/melee/transforming/plasmacutter/sword/esword = new /obj/item/melee/transforming/plasmacutter/sword(src)
+	esword.sword_color = "red"
+	
+	var/obj/item/clothing/suit/space/hardsuit/syndi/suit = new /obj/item/clothing/suit/space/hardsuit/syndi(src)
+	qdel(suit.jetpack)
+	suit.armor = suit.armor.modifyRating(rad = -5)
+
+	var/obj/item/card = new /obj/item(src)
+	card.icon = 'icons/obj/card.dmi'
+	card.icon_state = "emag"
+	card.name = "cryptographic sequencer"
+	card.desc = "The cryptographic sequencer, electromagnetic card, or emag, is a small card that unlocks hidden functions \
+			in electronic devices, subverts intended functions, and easily breaks security mechanisms. \
+			However, this one seems non-functional."
+	card.AddComponent(/datum/component/squeak)
+	card.w_class = WEIGHT_CLASS_SMALL
+
+
 /datum/gear/donator/kits/imbubbl101
 	name = "Magnum Kit"
 	path = /obj/item/storage/box/large/custom_kit/imbubbl101
@@ -941,6 +982,29 @@
 
 // N
 
+/datum/gear/donator/kits/neskah
+	name = "IV items for Errant-XIV"
+	path = /obj/item/storage/box/large/custom_kit/neskah
+	ckeywhitelist = list("neskah")
+
+/obj/item/storage/box/large/custom_kit/neskah/PopulateContents()
+	name = "IV items for Errant-XIV"
+	var/obj/item/clothing/head/evaspartan3/helm = new /obj/item/clothing/head/evaspartan3(src)
+	helm.name = "heavy robotic visor"
+	helm.desc = "A remarkably heavy helmet fitted for a square OVRmind cranium, with cables that link the wearer to an advanced observational visor."
+
+	var/obj/item/clothing/suit/armor/medium/spartanmarkviarmor3/suit = new /obj/item/clothing/suit/armor/medium/spartanmarkviarmor3(src)
+	suit.name = "servo-lined exoplating"
+	suit.desc = "A remarkably heavy set of plates designed to be bolted to an OVRmind-compatible cybernetic frame."
+
+	var/obj/item/gun/energy/laser/wattz2ks/wattz = new /obj/item/gun/energy/laser/wattz2ks(src)
+	wattz.name = "Staccato"
+	wattz.desc = "A heavy self-charging pulse weapon kept in perfect operating condition, fitted with an OVRseer sensor-plug optical scope dialed for midrange encounters. 'XIV' is stamped onto the left side of its upper receiver."
+
+	var/obj/item/gun/energy/laser/tg/recharger/pistol = new /obj/item/gun/energy/laser/tg/recharger(src)
+	pistol.name = "Prelude"
+	pistol.desc = "A bulky laser pistol, just small enough to be concealable. Coils and exposed wiring adorn what appear to be an extremely old experimental laser pistol design. Its cell seems to siphon electrical energy from the wearer, perfect for cybernetic individuals. XIV is etched into the left side of its grip."
+
 /datum/gear/donator/kits/nightmare6669
 	name = "Chadsune"
 	path = /obj/item/storage/box/large/custom_kit/nightmare6669
@@ -1118,17 +1182,17 @@
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukagrape(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukaorange(src)
 	new /obj/item/reagent_containers/food/drinks/drinkingglass/filled/nukacherry(src)
-	new /obj/item/clothing/glasses/prism_glasses(src)
 
 /datum/gear/donator/kits/prismaticnova3
-	name = "Head Paladin Kit"
+	name = "Military Pilot Kit"
 	path = /obj/item/storage/box/large/custom_kit/prismaticnova3
 	ckeywhitelist = list("prismaticnova")
 
 /obj/item/storage/box/large/custom_kit/prismaticnova3/PopulateContents()
 	new /obj/item/lighter/gold(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/card/id/dogtag/prismaticnova(src)
+	new /obj/item/gun/ballistic/automatic/needlerrifle/custom(src)
+	new /obj/item/ammo_box/needlercapsule(src)
 
 /datum/gear/donator/kits/prismaticnova4
 	name = "Trueshot's Kit"
@@ -1309,6 +1373,18 @@
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/pistol/no3pistoltox(src)
+
+/datum/gear/donator/kits/seermankhajiit006
+	name = "The Icelandic G11"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit006
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit006/PopulateContents()
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/automatic/g11/tox(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
 
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
