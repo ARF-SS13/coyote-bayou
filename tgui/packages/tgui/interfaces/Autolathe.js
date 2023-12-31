@@ -48,8 +48,9 @@ export const Autolathe = (props, context) => {
     current_category,
     setCategory,
   ] = useLocalState(context, 'current_category', "None");
-  const filteredmaterials = materials.filter(material =>
-    material.mineral_amount > 0);
+  const filteredmaterials = materials.length
+    ? materials.filter(material => material.mineral_amount > 0)
+    : [];
   return (
     <Window
       width={800}

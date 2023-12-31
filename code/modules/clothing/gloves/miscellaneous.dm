@@ -252,3 +252,10 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+
+/obj/item/clothing/gloves/fingerlessevening
+	name = "fingerless evening gloves"
+	desc = "A pair of long, white gloves with fingerlips tips.."
+	icon_state = "long_fingerless"
+	item_state = "long_fingerless"
+

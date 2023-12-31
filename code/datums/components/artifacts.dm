@@ -794,7 +794,7 @@
 	switch(slut)
 		if(SLOT_BACK)
 			return "on your back"
-		if(SLOT_WEAR_MASK)
+		if(SLOT_MASK)
 			return "on your face"
 		if(SLOT_HANDCUFFED)
 			return "somehow handcuffed to you"

@@ -42,6 +42,7 @@
 	box = /obj/item/storage/survivalkit
 	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
+		/obj/item/pda = 1,
 		/obj/item/storage/wallet/stash/low = 1,
 		/obj/item/kit_spawner/tools = 1,
 		/obj/item/cool_book/ashdowncit = 1

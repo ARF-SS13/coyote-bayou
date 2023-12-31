@@ -491,3 +491,10 @@
 	icon = 'modular_coyote/eris/icons/tool_upgrades.dmi'
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
+
+//Coyote Maint Tag 
+//All of our mods for weapons hdel, we don't know why. ~10/30/2023 ~Fenny
+/obj/item/tool_upgrade/Destroy()
+  . = ..()
+  moveToNullspace()
+  return QDEL_HINT_LETMELIVE

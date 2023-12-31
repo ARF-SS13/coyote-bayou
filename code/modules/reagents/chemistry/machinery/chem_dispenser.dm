@@ -610,7 +610,8 @@
 		/datum/reagent/consumable/aloejuice,
 		/datum/reagent/consumable/peachjuice,
 		/datum/reagent/consumable/blumpkinjuice,
-		/datum/reagent/consumable/cherryjelly
+		/datum/reagent/consumable/cherryjelly,
+		/datum/reagent/consumable/cucumberjuice
 	)
 	upgrade_reagents2 = list(
 		/datum/reagent/consumable/vanilla,
@@ -677,7 +678,8 @@
 		/datum/reagent/consumable/ethanol/sake,
 		/datum/reagent/consumable/ethanol/applejack,
 		/datum/reagent/consumable/ethanol/champagne,
-		/datum/reagent/consumable/ethanol/fernet
+		/datum/reagent/consumable/ethanol/fernet,
+		/datum/reagent/consumable/ethanol/amaretto
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/ethanol,

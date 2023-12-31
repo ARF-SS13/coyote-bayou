@@ -373,11 +373,12 @@
 	//-->Pacifism Lesser Trait, most important section of it
 	if(iscarbon(target))
 		if(iscarbon(firer))  //is our firer a carbon that can have traits?
-			var/mob/living/carbon/C = target
-			if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
-				trait_pacifism_lesser_consequences(firer, TRUE)
-				visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
-				return FALSE
+			if(!nodamage)  //if the projectile is harmless by definition then there's no need for the trait to even trigger
+				var/mob/living/carbon/C = target
+				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+					trait_pacifism_lesser_consequences(firer, TRUE)
+					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
+					return FALSE
 	//<--
 	return TRUE
 
@@ -423,7 +424,7 @@
 		if(damage && L.blood_volume && damage_type == BRUTE)
 			var/splatter_dir = dir
 			if(starting)
-				splatter_dir = get_dir(starting, target_loca)
+				splatter_dir = round(Get_Angle(starting, target_loca), 1)
 			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
 			if(B && B.status == BODYPART_ROBOTIC) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)
@@ -860,7 +861,7 @@
  * It's complicated, so probably just don't mess with this unless you know what you're doing.
  */
 /obj/item/projectile/proc/pixel_move(times, hitscanning = FALSE, deciseconds_equivalent = world.tick_lag, trajectory_multiplier = 1, allow_animation = TRUE)
-	if(!loc || !trajectory)
+	if(!loc)
 		return
 	if(!nondirectional_sprite && !hitscanning)
 		var/matrix/M = new
@@ -879,6 +880,8 @@
 			var/max_turn = homing_turn_speed * deciseconds_equivalent * 0.1
 			setAngle(Angle + clamp(angle, -max_turn, max_turn))
 		// HOMING END
+		if(!trajectory)
+			return
 		trajectory.increment(trajectory_multiplier)
 		var/turf/T = trajectory.return_turf()
 		if(!istype(T))
@@ -903,7 +906,7 @@
 				if(!--safety)
 					CRASH("[type] took too long (allowed: [CEILING(pixel_increment_amount/world.icon_size,1)*2] moves) to get to its location.")
 				step_towards(src, T)
-				if(QDELETED(src) || pixel_move_interrupted)		// this doesn't take into account with pixel_move_interrupted the portion of the move cut off by any forcemoves, but we're opting to ignore that for now
+				if(isnull(loc) || pixel_move_interrupted)		// this doesn't take into account with pixel_move_interrupted the portion of the move cut off by any forcemoves, but we're opting to ignore that for now
 				// the reason is the entire point of moving to pixel speed rather than tile speed is smoothness, which will be crucial when pixel movement is done in the future
 				// reverting back to tile is more or less the only way of fixing this issue.
 					return

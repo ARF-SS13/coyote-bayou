@@ -22,7 +22,7 @@
 	var/replace_spent_rounds = 0
 	var/multiload = 1
 	var/fixed_mag = FALSE
-	var/unloadable = FALSE
+	var/unloadable = FALSE // UNLOADABLE MEANS NOT UNLOADABLE? WHAT A COUNTRY
 	/// Can this magazine have its caliber changed?
 	var/can_change_caliber = FALSE
 	var/caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
@@ -340,16 +340,23 @@
 			to_chat(user, span_alert("\The [src] is already hot! Quick, put a casing in there!"))
 
 /obj/item/ammo_box/attack_self(mob/user)
-	var/obj/item/ammo_casing/A = get_round()
-	if (unloadable == TRUE)
+	pop_casing(user)
+
+/obj/item/ammo_box/proc/pop_casing(mob/user, to_ground, silent)
+	if(unloadable)
 		to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
-	else
-		if(A)
-			if(!user.put_in_hands(A))
-				A.bounce_away(FALSE, NONE)
-			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
-			to_chat(user, span_notice("You remove a round from \the [src]!"))
-			update_icon()
+		return FALSE
+	var/obj/item/ammo_casing/A = get_round()
+	if(!A)
+		to_chat(user, span_alert("There's nothing in \the [src]!"))
+		return FALSE
+	if(to_ground || !user.put_in_hands(A))
+		A.bounce_away(FALSE, NONE)
+	playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
+	if(!silent)
+		to_chat(user, span_notice("You remove a round from \the [src]!"))
+	update_icon()
+	return A
 
 /obj/item/ammo_box/update_icon()
 	. = ..()

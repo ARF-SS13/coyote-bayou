@@ -1,3 +1,12 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//// THIS ISNT THE RIGHT FILE! THIS IS JUST THE ONE WE USE TO CONFUSE DAN! ////////////
+//// THE CORRECT FILE IS code\modules\fallout\obj\structures\mob_spawners.dm //////////
+//// NOTE THE STRUCTURES/MOB_SPAWNERS.DM INSTEAD OF SPAWNERS/MOB_SPAWNER.DM ///////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 /obj/structure/spawner
 	name = "monster nest"
 	icon = 'icons/mob/animal.dmi'

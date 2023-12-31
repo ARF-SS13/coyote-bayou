@@ -1267,15 +1267,10 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	if(!SSticker)
 		return
 
-	SSticker.selected_tip = input
+	SSticker.send_midround_tip(input)
 
-	// If we've already tipped, then send it straight away.
-	if(SSticker.tipped)
-		SSticker.send_tip_of_the_round()
-
-
-	message_admins("[key_name_admin(usr)] sent a tip of the round.")
-	log_admin("[key_name(usr)] sent \"[input]\" as the Tip of the Round.")
+	message_admins("[key_name_admin(usr)] sent a tip.")
+	log_admin("[key_name(usr)] sent \"[input]\" as the Tip.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Tip")
 
 /client/proc/modify_goals()

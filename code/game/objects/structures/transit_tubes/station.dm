@@ -147,12 +147,12 @@
 		open_animation()
 		sleep(OPEN_DURATION + 2)
 		pod_moving = 0
-		if(!QDELETED(pod))
-			var/datum/gas_mixture/floor_mixture = loc.return_air()
+		// if(!QDELETED(pod))
+		// 	var/datum/gas_mixture/floor_mixture = loc.return_air()
 
-			equalize_all_gases_in_list(list(pod.air_contents,floor_mixture))
+		// 	equalize_all_gases_in_list(list(pod.air_contents,floor_mixture))
 
-			air_update_turf()
+		// 	air_update_turf()
 
 /obj/structure/transit_tube/station/init_tube_dirs()
 	switch(dir)

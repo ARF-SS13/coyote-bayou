@@ -40,6 +40,9 @@
 	linked_organ = null
 	. = ..()
 
+/obj/item/organ/genital/proc/format_for_tgui()
+	return
+
 /obj/item/organ/genital/proc/update_size()
 	return
 
@@ -549,7 +552,7 @@ GLOBAL_LIST_INIT(genital_layers, list(
 
 /// clears all genital overlays, and reapplies them
 /mob/living/carbon/human/proc/update_genitals(signal = TRUE)
-	if(QDELETED(src))
+	if(QDELETED(src) || IsFeral())
 		return
 	for(var/layernum in GLOB.genital_layers["layers"]) // Clear all our genital overlays
 		remove_overlay(layernum)

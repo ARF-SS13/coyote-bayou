@@ -194,6 +194,7 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
+	/client/proc/print_gun_debug_information,
 	// /client/proc/atmos_control,
 	// /client/proc/reload_cards,
 	// /client/proc/validate_cards,

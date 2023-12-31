@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//// THIS ISNT THE RIGHT FILE! THIS IS JUST THE ONE WE USE TO CONFUSE DAN! ////////////
+//// THE CORRECT FILE IS code\modules\fallout\obj\structures\mob_spawners.dm //////////
+//// NOTE THE STRUCTURES/MOB_SPAWNERS.DM INSTEAD OF SPAWNERS/MOB_SPAWNER.DM ///////////
+///////////////////////////////////////////////////////////////////////////////////////
+
 /obj/effect/mob_spawner
 	name = "mob spawner"
 	icon = 'icons/mob/screen_gen.dmi'

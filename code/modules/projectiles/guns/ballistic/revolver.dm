@@ -506,7 +506,7 @@
 * -9mm chambering
 * + 9 shot cylinder
 * + Common revolver
-* + Slightly better damage than 9mm
+* + 9mm but is on par with most revolvers. Hopefully
 * * * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/Lemat
 	name = "Grapeshot Revolver"
@@ -516,7 +516,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	init_recoil = HANDGUN_RECOIL (1 , 0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = FALSE
@@ -526,7 +526,49 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers //custom revolver
+	name = "'Cain' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+
+/obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second //custom revolver, comes with a revolver called cain
+	name = "'Abel' 9mm revolver"
+	desc = "A custom 9 shot revolver!"
+	item_state = "crevolver"
+	icon_state = "lucky"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL (1 , 0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = FALSE
+	can_suppress = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto
 	)
 
 /obj/item/gun/ballistic/revolver/Lemat/custom
@@ -596,16 +638,16 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/buntline
 	name = "Colt Buntline"
-	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .357 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
+	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
 	item_state = "coltcarbine"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = SMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
@@ -616,10 +658,7 @@
 
 /* * * * * * * * * * *
 * Judge revolver
-* + 3 shot shotgun revolver for balance
-* - less damage
-* - Two handed only
-* + Lightweight, compact, and rare uncommon
+* + 3 shot shotgun revolver
 * * * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/taurjudge
@@ -632,11 +671,53 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/judge
 	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	init_recoil = HMG_RECOIL(2, 2)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+//4.7mm revolver. 6 shots, caseless ammo and shy extra damage. Spawn gun, fires faster
+/obj/item/gun/ballistic/revolver/revolver47mm
+	name = "4.7mm revolver 2190 edition."
+	desc = "A odd 6-cylinder 4.7mm caseless revolver. The cylinder is square-ish in nature while the revolver is a shy bit more heavy. Seems to hit about average, but fires slowly due to a heavy trigger and hammer."
+	icon_state = "47rev"
+	item_state = "lucky"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev47mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.4, 1.6)
+	init_firemodes = list(
+		/datum/firemode/semi_auto
+	)
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_bayonet = FALSE
+
+//5mm revolver. More ammo than 4.7mm at 7 shots a cylinder, hits harder but fires slower. spawn gun
+/obj/item/gun/ballistic/revolver/revolver5mm
+	name = "5mm break-action revolver"
+	desc = "A 7-cylinder 5mm break action revolver. The revolver seems to be average in appearance. It also has a bit of a heavy trigger, affecting firerate!"
+	icon_state = "5rev"
+	item_state = "model29"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev5mm
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	init_recoil = HANDGUN_RECOIL(1.2, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
 	)
 	can_scope = FALSE
 	can_suppress = FALSE

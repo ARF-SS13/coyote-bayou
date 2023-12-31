@@ -256,6 +256,48 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 1
 
+/datum/gear/head/banditmask
+	name = "bandit mask"
+	path = /obj/item/clothing/head/helmet/blbandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/psychomask
+	name = "psycho mask"
+	path = /obj/item/clothing/head/helmet/blpsycho
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 1
+
+/datum/gear/head/bandithelm
+	name = "bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/bandit
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/vbandithelm
+	name = "looter bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditv
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/stripedbandithelm
+	name = "striped bandit helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/banditstripe
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/merchelm
+	name = "merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/merc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
+/datum/gear/head/promerchelm
+	name = "professional merc helmet"
+	path = /obj/item/clothing/head/helmet/borderlandshelm/promerc
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 2
+
 /datum/gear/head/unmchelmetwinter
 	name = "Winterized UNMC helmet"
 	path = /obj/item/clothing/head/helmet/unmcwinterhelmet
@@ -1423,4 +1465,6 @@ datum/gear/head/steelpot_bandolier
 	name = "blue witch hat"
 	path = /obj/item/clothing/head/nt_witch
 
-
+/datum/gear/head/hoodcowl
+	name = "Hood cowl"
+	path= /obj/item/clothing/head/hoodcowl

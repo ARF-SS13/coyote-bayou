@@ -59,9 +59,9 @@ All ShuttleMove procs go here
 	newT.air_update_turf(TRUE)
 	blocks_air = TRUE
 	air_update_turf(TRUE)
-	if(isopenturf(newT))
-		var/turf/open/new_open = newT
-		new_open.copy_air_with_tile(src)
+	//if(isopenturf(newT))
+	//	var/turf/open/new_open = newT
+	//	new_open.copy_air_with_tile(src)
 
 	return TRUE
 

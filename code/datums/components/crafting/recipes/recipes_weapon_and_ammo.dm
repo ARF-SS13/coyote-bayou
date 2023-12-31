@@ -264,46 +264,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/field_arrow
-	name = "Field Arrow"
-	result = /obj/item/stack/arrowhead/field
-	reqs = list(/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/metal_arrow
-	name = "Metal Arrow"
-	result = /obj/item/stack/arrowhead/metal
-	reqs = list(/obj/item/stack/sheet/metal = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/bone_arrow
-	name = "Bone Arrow"
-	result = /obj/item/stack/arrowhead/bone
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/glass_arrow
-	name = "Glass Knapped Arrow"
-	result = /obj/item/stack/arrowhead/glass
-	reqs = list(/obj/item/stack/sheet/glass = 2,
-				/obj/item/stack/sheet/mineral/wood = 1,
-	)
-	time = 30
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 /////////////////
 ///ammo        //
 /////////////////
@@ -1688,8 +1648,8 @@
 
 //AM rifle
 /datum/crafting_recipe/am_rifle
-	name = "Anti-Materiel Rifle"
-	result = /obj/item/gun/ballistic/rifle/mag/antimateriel
+	name = "Anti-material Rifle"
+	result = /obj/item/gun/ballistic/rifle/mag/antimaterial
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,

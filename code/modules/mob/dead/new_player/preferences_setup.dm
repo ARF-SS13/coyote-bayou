@@ -56,10 +56,11 @@
 			previewJob.equip(mannequin, TRUE, preference_source = parent)
 
 	mannequin.regenerate_icons()
-
 	COMPILE_OVERLAYS(mannequin)
+
 	parent.show_character_previews(new /mutable_appearance(mannequin))
 	SSdummy.return_dummy(mannequin)
+	mannequin.cut_overlays()
 
 /datum/preferences/proc/get_highest_job()
 	var/highest_pref = 0

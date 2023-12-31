@@ -3,6 +3,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	var/trippy = TRUE //Does this drug make you trip?
+	var/isdrug = TRUE
 
 /datum/reagent/drug/on_mob_end_metabolize(mob/living/M)
 	if(trippy)
@@ -10,6 +11,8 @@
 
 /datum/reagent/drug/proc/dont_do_drugs(mob/living/carbon/M)
 	if(!iscarbon(M))
+		return
+	if(!isdrug)
 		return
 	if(NODRUGS(M))
 		switch(rand(1,20))
@@ -691,6 +694,7 @@
 	color = "#FFADFF"//PINK, rgb(255, 173, 255)
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE // robots can honry too
+	isdrug = FALSE
 
 /datum/reagent/drug/aphrodisiac/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
@@ -722,6 +726,7 @@
 	overdose_threshold = 20
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE
+	isdrug = FALSE
 
 /datum/reagent/drug/aphrodisiacplus/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
@@ -783,6 +788,7 @@
 	reagent_state = SOLID
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE // robots can horno too
+	isdrug = FALSE
 
 /datum/reagent/drug/anaphrodisiac/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))
@@ -806,6 +812,7 @@
 	overdose_threshold = 20
 	can_synth = FALSE
 	synth_metabolism_use_human = TRUE
+	isdrug = FALSE
 
 /datum/reagent/drug/anaphrodisiacplus/on_mob_life(mob/living/M)
 	if(dont_do_drugs(M))

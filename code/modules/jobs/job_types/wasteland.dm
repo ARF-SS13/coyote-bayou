@@ -1315,6 +1315,17 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)*/
 */
+
+/datum/job/wasteland/f13wastelander/den
+	title = "Den Waster"
+	flag = F13WASTEDEN
+	faction = FACTION_WASTELAND
+
+/datum/job/wasteland/f13wastelander/gar
+	title = "Garland City Waster"
+	flag = F13WASTEGAR
+	faction = FACTION_WASTELAND
+
 /datum/job/wasteland/f13radioop
 	title = "Radio Operator"
 	flag = F13RADIOOP
@@ -2582,7 +2593,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/suit/armor/light/duster/battlecoat = 1,
 	//	/obj/item/ammo_box/magazine/amr = 1,
 		/obj/item/circuitboard/machine/autolathe/ammo/improvised = 1)
-	//	/obj/item/gun/ballistic/rifle/mag/antimateriel = 1)
+	//	/obj/item/gun/ballistic/rifle/mag/antimaterial = 1)
 
 //Sex
 /datum/outfit/loadout/overbossranged

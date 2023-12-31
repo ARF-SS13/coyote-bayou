@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(research)
 	/obj/item/gun/energy/laser/plasma/pistol       = list(TECHWEB_POINT_TYPE_GENERIC = 1500), // Low weight uncommon energy. Rare but not THAT rare.
 	/obj/item/gun/energy/laser/aer9                = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 	/obj/item/gun/energy/laser/plasma/pistol/alien = list(TECHWEB_POINT_TYPE_GENERIC = 7500), // Low weight rare unique. Maybe as rare as they come.
-	/obj/item/melee/onehanded/dragonfire           = list(TECHWEB_POINT_TYPE_GENERIC = 7500), 
+	/obj/item/melee/onehanded/dragonfire           = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 	/obj/item/gun/energy/laser/laer                = list(TECHWEB_POINT_TYPE_GENERIC = 6750), // Medium weight rare unique
 	/obj/item/gun/energy/laser/plasma/pistol/adam  = list(TECHWEB_POINT_TYPE_GENERIC = 6750),
 	/obj/item/gun/energy/laser/plasma/scatter      = list(TECHWEB_POINT_TYPE_GENERIC = 6750),
@@ -67,13 +67,13 @@ SUBSYSTEM_DEF(research)
 	/obj/item/gun_upgrade/scope/better             = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 	/obj/item/gun_upgrade/mechanism/battery_shunt  = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 	/obj/item/tool_upgrade/augment/ai_tool         = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
-	/obj/item/reagent_containers/glass/bottle/FEV_solution = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
-	/obj/item/reagent_containers/glass/bottle/FEV_solution/two = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
-	/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/reagent_containers/glass/bottle/FEV_solution = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/reagent_containers/glass/bottle/FEV_solution/two = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
+//	/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = list(TECHWEB_POINT_TYPE_GENERIC = 7500),
 	/obj/item/documents/syndicate/blue             = list(TECHWEB_POINT_TYPE_GENERIC = 15000),	// Super rare tech-faction documents item. Very limited.
 	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 3750),
 	/obj/item/scrap/research                       = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
-	/obj/item/stock_parts/chem_cartridge/pristine  = list(TECHWEB_POINT_TYPE_GENERIC = 5000), 
+	/obj/item/stock_parts/chem_cartridge/pristine  = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/assembly/signaler/anomaly            = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	//   -   Artifacts!   (Placeholder)
 	/obj/item/artifact/common                      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),

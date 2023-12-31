@@ -95,10 +95,11 @@
 	//-->Pacifism Lesser Trait, most important section of it
 	if(iscarbon(M))
 		if(iscarbon(user))  //is our firer a carbon that can have traits?
-			var/mob/living/carbon/C = M
-			if(HAS_TRAIT(user, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the user actually has the PACIFISM_LESSER trait? And is the target sapient?
-				trait_pacifism_lesser_consequences(user)
-				return FALSE
+			if(force)  //if the item is harmless, there's no need for pacifism lesser to even begin the query.
+				var/mob/living/carbon/C = M
+				if(HAS_TRAIT(user, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the user actually has the PACIFISM_LESSER trait? And is the target sapient?
+					trait_pacifism_lesser_consequences(user)
+					return FALSE
 	//<--
 
 	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))

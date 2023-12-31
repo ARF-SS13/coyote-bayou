@@ -86,6 +86,10 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
+/datum/crafting_recipe/legholster/throwing
+	name = "Garter Rig"
+	result = /obj/item/storage/belt/legholster/throwing
+
 /datum/crafting_recipe/medolier
 	name = "Medolier"
 	result =  /obj/item/storage/belt/medolier

@@ -26,7 +26,7 @@ export class TimeDisplay extends Component {
   componentDidUpdate() {
     if (this.props.auto !== undefined) {
       clearInterval(this.timer);
-      this.timer = setInterval(() => this.tick(), 1000); // every 1 s
+      this.timer = setInterval(() => this.tick(), 100); // every 0.1 s
     }
   }
 
@@ -36,14 +36,14 @@ export class TimeDisplay extends Component {
       this.last_seen_value = this.props.value;
       current = this.props.value;
     }
-    const mod = this.props.auto === "up" ? 10 : -10; // Time down by default.
+    const mod = this.props.auto === "up" ? 1 : -1; // Time down by default.
     const value = Math.max(0, current + mod); // one sec tick
     this.setState({ value });
   }
 
   componentDidMount() {
     if (this.props.auto !== undefined) {
-      this.timer = setInterval(() => this.tick(), 1000); // every 1 s
+      this.timer = setInterval(() => this.tick(), 100); // every 1 s
     }
   }
 

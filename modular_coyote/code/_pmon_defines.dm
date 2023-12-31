@@ -1,5 +1,3 @@
-#define isadvancedmob(A)		istype(A, /mob/living/simple_animal/advanced)
-
 // Should make these into bitflags later if we want to use them for realsies
 #define P_TYPE_FIRE 	"fire"
 #define P_TYPE_WATER 	"water"
@@ -37,6 +35,8 @@
 
 ///Creatures that players can select for creature characters. Exclude mobs by giving them the P_TRAIT_BLACKLIST trait (see Bud for example).
 GLOBAL_LIST_EMPTY(creature_selectable)
+///The same list, but with preview icons instead of typepaths
+GLOBAL_LIST_EMPTY(creature_selectable_icons)
 
 /proc/generate_selectable_creatures(clear = FALSE)
 	if(clear)
@@ -46,9 +46,11 @@ GLOBAL_LIST_EMPTY(creature_selectable)
 		var/list/traits = initial(P.p_traits)
 		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
 			GLOB.creature_selectable[capitalize("[initial(P.name)]")] = P
+			GLOB.creature_selectable_icons[capitalize("[initial(P.name)]")] = icon(initial(P.icon), initial(P.icon_living), frame = 1, moving = FALSE)
 	for(var/T in GLOB.creature_whitelist)
 		var/mob/living/simple_animal/SA = T
 		GLOB.creature_selectable[capitalize(initial(SA.name))] = T
+		GLOB.creature_selectable_icons[capitalize("[initial(SA.name)]")] = icon(initial(SA.icon), initial(SA.icon_living), frame = 1, moving = FALSE)
 
 ///List of all pokemon on the whole map.
 GLOBAL_LIST_EMPTY(advanced_mob_list)

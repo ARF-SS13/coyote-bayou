@@ -359,6 +359,19 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/primitive_defib
+	name = "Improvised Defibrillator"
+	result = /obj/item/defibrillator/primitive
+	reqs = list(
+	/obj/item/wirecutters = 2,
+	/obj/item/stock_parts/cell = 6,
+	/obj/item/storage/bag/plants/lunchbox = 1,
+	/obj/item/stack/cable_coil = 30
+	)
+	time = 75
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/refill_chem_cartridge
 	name = "Refill chemical Cartridge"
 	result = /obj/item/stock_parts/chem_cartridge/crafted

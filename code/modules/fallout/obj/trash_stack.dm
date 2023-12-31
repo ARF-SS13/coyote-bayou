@@ -5,6 +5,8 @@
 	icon_state = "trash_1"
 	anchored = TRUE
 	density = FALSE
+	///Is someone rifling through this trash pile?
+	var/rifling = FALSE
 	var/list/loot_players = list()
 	var/list/lootable_trash = list()
 	var/list/garbage_list = list()
@@ -44,13 +46,23 @@
 	if(ukey in loot_players)
 		to_chat(user, span_notice("You already have looted [src]."))
 		return
+	if(!rifling)
+		playsound(get_turf(src), 'sound/f13effects/loot_trash.ogg', 100, TRUE, 1)
+	to_chat(user, span_smallnoticeital("You start picking through [src]...."))
+	rifling = TRUE
+	if(!do_mob(user, src, 3 SECONDS))
+		rifling = FALSE
+		return
+	rifling = FALSE
+	if(ukey in loot_players)
+		to_chat(user, span_notice("You already have looted [src]."))
+		return
 	loot_players += ukey
+	to_chat(user, span_notice("You scavenge through [src]."))
 	for(var/i in 1 to rand(1,4))
 		var/list/trash_passthru = list()
-		to_chat(user, span_notice("You scavenge through [src]."))
 		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(trash_turf)
 		my_trash.spawn_the_stuff(trash_passthru) // fun fact, lists are references, so this'll be populated when the proc runs (cool huh?)
-		
 		for(var/atom/movable/spawned in trash_passthru)
 			if(isitem(spawned))
 				var/obj/item/newitem = spawned
@@ -67,6 +79,7 @@
 					if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
 						break
 					QDEL_NULL(trash_mod)
+
 // lov dan
 /obj/item/storage/money_stack
 	name = "payroll safe"

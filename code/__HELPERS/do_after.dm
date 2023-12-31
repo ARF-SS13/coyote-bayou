@@ -252,6 +252,8 @@
 		checked_health["health"] = health
 	return ..()
 
+#define DIE . = FALSE; break
+
 /proc/do_after(
 		mob/user, 
 		delay, 
@@ -267,19 +269,14 @@
 		)
 	if(!user)
 		return 0
-	var/atom/Tloc = null
-	if(target && !isturf(target))
-		Tloc = target.loc
+	var/usercoords = atom2coords(user)
+	if(!usercoords)
+		CRASH("do_after: user has no coordsable loc!!!")
+	var/targetcoords = target ? atom2coords(target) : usercoords
 
 	if(target)
 		LAZYADD(user.do_afters, target)
 		LAZYADD(target.targeted_by, user)
-
-	var/atom/Uloc = user.loc
-
-	var/drifting = 0
-	if(SSmove_manager.processing_on(user, SSspacedrift))
-		drifting = TRUE
 
 	var/holding = user.get_active_held_item()
 
@@ -298,46 +295,40 @@
 
 	var/endtime = world.time + delay
 	. = 1
-	var/mob/living/L = isliving(user) && user			//evals to last thing eval'd
+	var/mob/living/L = isliving(user) && user			//evals to last thing eval'd // this proc right here changed my life, thank you kevinz000
 	while (world.time + resume_time < endtime)
 		stoplag(1)
-
-		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
-			drifting = FALSE
-			Uloc = user.loc */ // we aint in spess
-
 		if(L && !CHECK_ALL_MOBILITY(L, required_mobility_flags))
-			. = 0
-			break
-
-		if(QDELETED(user) || user.stat || (!allow_movement && !drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
-			. = 0
-			break
-
-		if(!QDELETED(Tloc) && (QDELETED(target) || Tloc != target.loc))
-			if((Uloc != Tloc || Tloc != user) && (!drifting || !allow_movement))
-				. = 0
-				break
-
+			DIE
+		if(QDELETED(user))
+			DIE
+		if(isatom(target) && QDELETED(target))
+			DIE
+		if(user.stat)
+			DIE
+		if(extra_checks && !extra_checks.Invoke())
+			DIE
+		if(!allow_movement && usercoords && targetcoords)
+			var/mycoords = atom2coords(user)
+			if(mycoords != usercoords)
+				DIE
+			if(targetcoords != usercoords)
+				var/theircoords = atom2coords(target)
+				if(theircoords != targetcoords)
+					DIE
 		// mrs Byondley's first grade class teaches you that the loc of a turf is an area.
 		if(stay_close && get_dist(get_turf(user), get_turf(target)) > 1) // I dropped out in kindergarten
-			. = 0
-			break
-
+			DIE
 		if(target && !(target in user.do_afters))
-			. = FALSE
-			break
-
+			DIE // DIE DIE DIE DIE DI
 		if(needhand)
 			//This might seem like an odd check, but you can still need a hand even when it's empty
 			//i.e the hand is used to pull some item/tool out of the construction
 			if(!holdingnull)
 				if(!holding)
-					. = 0
-					break
+					DIE
 			if(user.get_active_held_item() != holding)
-				. = 0
-				break
+				DIE
 	SSprogress_bars.remove_bar(my_bar)
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
@@ -345,6 +336,8 @@
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
 		LAZYREMOVE(target.targeted_by, user)
+
+#undef DIE
 
 /mob/proc/do_after_coefficent() // This gets added to the delay on a do_after, default 1
 	. = 1

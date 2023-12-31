@@ -16,10 +16,12 @@
 #define DISABLE_ARRIVALRATTLE	(1<<13)
 #define COMBOHUD_LIGHTING		(1<<14)
 #define SOUND_SI				(1<<15)
-// Gap in prefs between tg and fortune13 prefs.
-#define SPLIT_ADMIN_TABS (1<<23)
+#define SPLIT_ADMIN_TABS 		(1<<16)
+#define VERB_CONSENT			(1<<17)
+#define HEAR_LEWD_VERB_SOUNDS		(1<<18)
+#define HEAR_LEWD_VERB_WORDS		(1<<19)
 
-#define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS|SOUND_SI )
+#define TOGGLES_DEFAULT (SOUND_ADMINHELP|SOUND_MIDI|SOUND_AMBIENCE|SOUND_LOBBY|MEMBER_PUBLIC|INTENT_STYLE|MIDROUND_ANTAG|SOUND_INSTRUMENTS|SOUND_SHIP_AMBIENCE|SOUND_PRAYERS|SOUND_ANNOUNCEMENTS|SOUND_SI|VERB_CONSENT|HEAR_LEWD_VERB_WORDS)
 
 //Chat toggles
 #define CHAT_OOC			(1<<0)
@@ -132,6 +134,7 @@
 #define PMC_QUIRK_OVERHAUL_2K23 "updated_ur_quirks" // Player Master Changelog
 #define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
 #define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
+#define PMC_UNBREAK_FAVORITE_PLAPS "/datum/interaction/bang/datum/interaction/funch" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
@@ -139,4 +142,5 @@
 	PMC_OOC_NOTES_UPDATE, \
 	PMC_QUIRK_OVERHAUL_2K23,\
 	PMC_DAN_MESSED_UP_WHO_STUFF,\
+	PMC_UNBREAK_FAVORITE_PLAPS,\
 	)

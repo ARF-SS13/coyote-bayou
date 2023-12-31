@@ -990,6 +990,14 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		"sounds/f13weapons/",
 		"sounds/creatures/",
 		"sounds/voice/",
+		"sounds/ambience",
+		"sounds/f13",
+		"sounds/f13ambience",
+		"sounds/effects",
+		"sounds/f13items",
+		"sounds/f13music",
+		"sounds/weapons",
+		"sounds/block_parry",
 	)
 	for(var/folder in fucking_sound_folders)
 		GLOB.every_fucking_sound_file |= pathwalk(folder)
@@ -1137,6 +1145,23 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 		var/datum/verbs/menu/menuitem = GLOB.menulist[thing]
 		if (menuitem)
 			menuitem.Load_checked(src)
+
+///Make sure chat text color has enough contrast against the client's background color
+/client/proc/sanitize_chat_color(color)
+	var/bgcolor = src.prefs.chatbgcolor
+	var/bglum = rgb2num(bgcolor, COLORSPACE_HSL)[3]
+	var/colorHSL = rgb2num(color, COLORSPACE_HSL)
+	var/colorlum = colorHSL[3]
+	var/lumdiff = colorlum - bglum
+
+	if(bglum < 50 && lumdiff < 25)
+		colorlum = min(bglum + 25, 100)
+	else if(bglum >= 50 && lumdiff > -25)
+		colorlum = max(bglum - 25, 0)
+	else
+		return color
+
+	return rgb(colorHSL[1], colorHSL[2], colorlum, , COLORSPACE_HSL)
 
 /* 
 /client/proc/checkGonadDistaste(flag)

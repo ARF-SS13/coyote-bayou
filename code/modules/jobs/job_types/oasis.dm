@@ -152,14 +152,14 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13secretary
-	title = "Councilperson"
+	title = "Deputy Mayor"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "your constituents, your greed, and realpolitik"
-	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place on the Parliamentary Council of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, and just maybe they'll vote you back in...or won't, you know, toss you into the moat."
-	enforces = "You serve as the de-facto leader of Nash with your co-Council, if another is awake."
+	description = "Welcome to the show, kid. Through nepotism, Edisons, or genuine democracy, you've gotten a place as one of the Deputy Mayors of Nash. Keep the town running smoothly; help your constituents without stepping on their toes, or don't.  They'll probably only shoot you some."
+	enforces = "You serve as the de-facto leader of Nash, but you have very little actual power. Good luck with that!"
 	selection_color = "#d7b088"
 	exp_requirements = 0
 

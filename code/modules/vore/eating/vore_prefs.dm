@@ -33,21 +33,23 @@
 	/// to be moved to a better method
 	var/vore_smell = "nothing in particular"
 	//Actual preferences
-	var/allow_dogborgs = FALSE
-	var/allow_eating_sounds = FALSE
+	var/allow_dogborgs = TRUE
+	var/allow_eating_sounds = TRUE
 	var/allow_digestion_sounds = FALSE
 	var/allow_digestion_damage = FALSE
 	var/allow_digestion_death = FALSE
-	var/allow_absorbtion = FALSE
-	var/allow_healbelly_healing = FALSE
-	var/allow_vore_messages = FALSE
+	var/allow_absorbtion = TRUE
+	var/allow_healbelly_healing = TRUE
+	var/allow_vore_messages = TRUE
 	var/allow_death_messages = FALSE
-	var/allow_being_prey = FALSE
-	var/allow_being_fed_to_others = FALSE
-	var/allow_being_fed_prey = FALSE
-	var/allow_seeing_belly_descriptions = FALSE
-	var/allow_being_sniffed = FALSE
+	var/allow_being_prey = TRUE
+	var/allow_being_fed_to_others = TRUE
+	var/allow_being_fed_prey = TRUE
+	var/allow_seeing_belly_descriptions = TRUE
+	var/allow_being_sniffed = TRUE
 	var/allow_trash_messages = FALSE
+	//Save us the trouble of reloading the preferences menu 15 times when someone turns all
+	//of the vore shit on one at a time by just having most of them start on and the master off
 	var/master_vore_toggle = FALSE
 
 

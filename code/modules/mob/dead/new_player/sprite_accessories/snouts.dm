@@ -205,7 +205,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/husky
 	name = "Husky"
 	icon_state = "husky"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/rhino
 	name = "Horn"
@@ -219,6 +219,12 @@
 	icon_state = "rodent"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/snouts/mam_snouts/rodent_thick
+	name = "Rodent (Thick)"
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
+	icon_state = "rodentthick"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/snouts/mam_snouts/lcanid
 	name = "Mammal, Long"
 	icon_state = "lcanid"
@@ -227,7 +233,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/lcanidalt
 	name = "Mammal, Long ALT"
 	icon_state = "lcanidalt"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/lcanidalt2
 	name = "Mammal, Long ALT 2"
@@ -238,27 +244,27 @@
 /datum/sprite_accessory/snouts/mam_snouts/scanid
 	name = "Mammal, Short"
 	icon_state = "scanid"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/scanidalt
 	name = "Mammal, Short ALT"
 	icon_state = "scanidalt"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/scanidalt2
 	name = "Mammal, Short ALT 2"
 	icon_state = "scanidalt2"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/snouts/mam_snouts/wolf
 	name = "Mammal, Thick"
 	icon_state = "wolf"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/wolfalt
 	name = "Mammal, Thick ALT"
 	icon_state = "wolfalt"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/otie
 	name = "Otie"
@@ -435,7 +441,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/frodent
 	name = "Rodent (Top)"
 	icon_state = "frodent"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/snouts/mam_snouts/fround
 	name = "Round (Top)"
@@ -515,27 +521,27 @@
 /datum/sprite_accessory/snouts/mam_snouts/fox
 	name = "fox"
 	icon_state = "fox"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/snub
 	name = "snub"
 	icon_state = "snub"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/foxalt
 	name = "fox alt"
 	icon_state = "foxalt"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/shortalt
 	name = "short, alt"
 	icon_state = "short"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/rabbit
 	name = "rabbit"
 	icon_state = "rabbit"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/zebra
 	name = "zebra"
@@ -545,12 +551,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/anubus
 	name = "anubus"
 	icon_state = "hanubus"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/panda
 	name = "panda"
 	icon_state = "hpanda"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/jackal
 	name = "jackal"
@@ -580,7 +586,7 @@
 /datum/sprite_accessory/snouts/mam_snouts/stubby
 	name = "stubby alt"
 	icon_state = "stubby"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/bigmandible
 	name = "big mandible"
@@ -625,12 +631,12 @@
 /datum/sprite_accessory/snouts/mam_snouts/vulp
 	name = "vulp"
 	icon_state = "vulp"
-	matrixed_sections = MATRIX_RED
+	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/snouts/mam_snouts/vulp2
 	name = "vulp alt"
 	icon_state = "vulp2"
-	matrixed_sections = MATRIX_RED_GREEN
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/easterndw
 	name = "eastern dragon"

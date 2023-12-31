@@ -127,6 +127,14 @@
 	icon_state = "pair"
 	name = "Pair"
 
+/datum/sprite_accessory/breasts/quadlite
+	icon_state = "quadlite"
+	name = "Pair + Teats (x2)"
+
+/datum/sprite_accessory/breasts/quadplus
+	icon_state = "quadplus"
+	name = "Pair + Teats (x4)"
+
 /datum/sprite_accessory/breasts/quad
 	icon_state = "quad"
 	name = "Quad"
