@@ -1659,7 +1659,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					)
 					return
 				else
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/butt_slap)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
 					// var/vol = 40
 					// var/dist = 15
