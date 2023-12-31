@@ -1696,7 +1696,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(user == target)
 					to_chat(user, span_alert("Your ass is still jiggling about way too much to get a good smack!"))
 				else
-					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
+					to_chat(user, span_alert("[target]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
 			else
 				COOLDOWN_START(src, ass, 5 SECONDS)
 				target.Dizzy(5)
