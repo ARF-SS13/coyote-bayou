@@ -16691,14 +16691,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "htp" = (
-/mob/living/simple_animal/hostile/supermutant/meleemutant{
-	desc = "A large, docile supermutant. Adopted by Bighorn as a sort of watch dog for their brahmin herd.";
-	faction = list("neutral");
-	health = 1250;
-	icon_living = "hulk_brahmin_s";
-	icon_state = "hulk_brahmin_s";
-	name = "Brah-Min"
-	},
+/mob/living/simple_animal/pet/dog/mutant,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "htr" = (
