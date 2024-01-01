@@ -177,7 +177,6 @@
 		if(!isliving(M)) //ghosts ain't people
 			continue
 		if(M.is_monophobia_pet || M.ckey)
-			to_chat(world, span_clown("found in view!"))
 			return FALSE
 
 	//secondly let's check if our pet is actually in our backpack
@@ -187,13 +186,11 @@
 			if(storage.contents.len)  //if it has no items, don't even bother checking!
 				for(var/obj/item/I in storage.contents)  //Is an animal hiding in our backpack????
 					if(istype(I, /obj/item/clothing/head/mob_holder))
-						to_chat(world, span_clown("found in backpack!"))
 						return FALSE
 	
 	//thirdly let's actually check if the mob is being held in the hands
 	for(var/obj/item/I in owner.held_items)  //Is an animal hiding on our hands????
 		if(istype(I, /obj/item/clothing/head/mob_holder))
-			to_chat(world, span_clown("found in hands!"))
 			return FALSE
 
 	return TRUE
