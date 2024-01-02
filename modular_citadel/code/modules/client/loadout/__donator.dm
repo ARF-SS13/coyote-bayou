@@ -420,8 +420,10 @@
 	ckeywhitelist = list("DeadWolf411")
 
 /obj/item/storage/box/large/custom_kit/DeadWolf411/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom/m6socom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol(src)
+	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/ammo_box/m5mmbox(src)
 
 /datum/gear/donator/kits/dameonowencoat
 	name = "Dragon Coat"
