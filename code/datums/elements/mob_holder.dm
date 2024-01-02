@@ -203,7 +203,8 @@
 		L.forceMove(istype(here) && here != held_mob ? here : get_turf(L))
 		L.reset_perspective()
 		L.setDir(SOUTH)
-		L.SetAllImmobility(5 SECONDS, TRUE, TRUE)
+		if(!L.is_monophobia_pet)  //if it's a pet, don't stun it
+			L.SetAllImmobility(5 SECONDS, TRUE, TRUE)
 	if(!QDELETED(src))
 		qdel(src)
 
