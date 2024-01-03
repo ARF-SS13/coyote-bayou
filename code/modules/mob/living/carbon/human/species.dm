@@ -1696,7 +1696,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(user == target)
 					to_chat(user, span_alert("Your ass is still jiggling about way too much to get a good smack!"))
 				else
-					to_chat(user, span_alert("[user]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
+					to_chat(user, span_alert("[target]'s big blubbery ass is still jiggling about way too much to get a good smack!"))
 			else
 				COOLDOWN_START(src, ass, 5 SECONDS)
 				target.Dizzy(5)
@@ -1709,7 +1709,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					)
 					return
 				else
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/hot)
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/butt_slap)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy ass
 					// var/vol = 40
 					// var/dist = 15
