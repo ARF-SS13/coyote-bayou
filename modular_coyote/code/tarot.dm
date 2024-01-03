@@ -4,6 +4,7 @@
 /obj/item/toy/cards/deck/tarot
 	name = "deck of tarot cards"
 	desc = "For all your occult needs!"
+	icon = "icons/obj/playing_cards.dmi"
 	icon_state = "deck_tarot"
 	deckstyle = "tarot"
 
