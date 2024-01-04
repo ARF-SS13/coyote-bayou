@@ -991,23 +991,9 @@
 
 /obj/item/storage/box/large/custom_kit/neskah/PopulateContents()
 	name = "IV items for Errant-XIV"
-	var/obj/item/clothing/head/helmet/f13/power_armor/fluff/helm = new /obj/item/clothing/head/helmet/f13/power_armor/fluff(src)
-	helm.name = "heavy robotic visor"
-	helm.desc = "A remarkably heavy helmet fitted for a square OVRmind cranium, with cables that link the wearer to an advanced observational visor."
-	helm.mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
-	helm.icon = 'icons/fallout/clothing/helmets.dmi'
-	helm.icon_state = "eva3"
-	helm.item_state = "eva3"
-	helm.flags_inv = HIDESNOUT | HIDEHAIR
 
-	var/obj/item/clothing/suit/armor/power_armor/fluff/suit = new /obj/item/clothing/suit/armor/power_armor/fluff(src)
-	suit.name = "servo-lined exoplating"
-	suit.desc = "A remarkably heavy set of plates designed to be bolted to an OVRmind-compatible cybernetic frame."
-	suit.icon_state = "markvi3"
-	suit.item_state = "markvi3"
-	suit.mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	suit.icon = 'icons/fallout/clothing/armored_light.dmi'
-	suit.flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+	new /obj/item/clothing/head/helmet/f13/power_armor/fluff/errant(src)
+	new /obj/item/clothing/suit/armor/power_armor/fluff/errant(src)
 
 	var/obj/item/gun/energy/laser/wattz2ks/wattz = new /obj/item/gun/energy/laser/wattz2ks(src)
 	wattz.name = "Staccato"
@@ -1016,6 +1002,35 @@
 	var/obj/item/gun/energy/laser/tg/recharger/pistol = new /obj/item/gun/energy/laser/tg/recharger(src)
 	pistol.name = "Prelude"
 	pistol.desc = "A bulky laser pistol, just small enough to be concealable. Coils and exposed wiring adorn what appear to be an extremely old experimental laser pistol design. Its cell seems to siphon electrical energy from the wearer, perfect for cybernetic individuals. XIV is etched into the left side of its grip."
+
+/obj/item/clothing/head/helmet/f13/power_armor/fluff/errant
+	name = "heavy robotic visor"
+	desc = "A remarkably heavy helmet fitted for a square OVRmind cranium, with cables that link the wearer to an advanced observational visor."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	icon_state = "eva3"
+	item_state = "eva3"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT|HIDESNOUT
+
+/obj/item/clothing/head/helmet/f13/power_armor/fluff/errant/obj_break(damage_flag)
+	return
+
+/obj/item/clothing/head/helmet/f13/power_armor/fluff/errant/obj_destruction(damage_flag)
+	return
+
+/obj/item/clothing/suit/armor/power_armor/fluff/errant
+	name = "servo-lined exoplating"
+	desc = "A remarkably heavy set of plates designed to be bolted to an OVRmind-compatible cybernetic frame."
+	icon_state = "markvi3"
+	item_state = "markvi3"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+
+/obj/item/clothing/suit/armor/power_armor/fluff/errant/obj_break(damage_flag)
+	return
+
+/obj/item/clothing/suit/armor/power_armor/fluff/errant/obj_destruction(damage_flag)
+	return
 
 /datum/gear/donator/kits/nightmare6669
 	name = "Chadsune"
