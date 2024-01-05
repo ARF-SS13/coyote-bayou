@@ -1620,7 +1620,9 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	desc = "When you hit your target, you frequently hit your target's vital points more often than not."
 	value = 65
 	category = "Ranged Quirks"
-	mechanics = "You have advantage on all random ranged damage rolls. (roll twice and take the highest)"
+	mechanics = "You have advantage on all random ranged damage rolls. (roll twice and take the highest). \
+				On top of that your shots have better chances of hitting simple mobs on their vital spots, aiming your shots on the head, arms and legs trigger gimmicks \
+				more often. Gimmicks that vary between stunning a mob temporarely to dealing more damage."
 	conflicts = list(
 		/datum/quirk/clumsy,
 		/datum/quirk/straightshooter,
