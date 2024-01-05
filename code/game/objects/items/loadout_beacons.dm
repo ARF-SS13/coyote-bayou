@@ -2594,7 +2594,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldcutlass
 
-/*
+
 /datum/loadout_box/crudeblade
 	entry_tag = "Crude Blade"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2606,7 +2606,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/melee/coyote/mauler
-*/
+
 
 /datum/loadout_box/club
 	entry_tag = "Club"
