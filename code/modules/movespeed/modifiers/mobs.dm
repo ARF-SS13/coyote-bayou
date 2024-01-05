@@ -149,3 +149,7 @@
 /datum/movespeed_modifier/artifact
 	flags = IGNORE_NOSLOW
 	variable = TRUE
+
+/datum/movespeed_modifier/mob_crippled
+	movetypes = GROUND
+	multiplicative_slowdown = 1.5
