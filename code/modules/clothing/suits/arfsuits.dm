@@ -206,57 +206,26 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	body_parts_hidden = 0 // has a bit of upper window stuff
 
+/obj/item/clothing/suit/armor/outfit/custompa
+	name = "Custom Midwestern B.O.S Power Armor"
+	desc = "A set of reftted custom Power Armor made to function akin to medium armor. Stylish and fitted well!"
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	var/requires_training = TRUE
+
 /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness
 	name = "secondary gear harness"
 	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
 	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
-	name = "light harness"
-	desc = "A set of straps that, somehow, function as light armor but do nothing else."
-	cold_protection = CHEST|GROIN
-	heat_protection = CHEST|GROIN
-	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	strip_delay = 10
-	equip_delay_other = 10
-	max_integrity = 100
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT
-	armor_tier_desc = ARMOR_CLOTHING_LIGHT
-	stiffness = LIGHT_STIFFNESS
-
-
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
-	name = "medium harness"
-	desc = "A set of straps that, somehow, function as medium armor but do nothing else."
-	cold_protection = CHEST|GROIN
-	heat_protection = CHEST|GROIN
-	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	strip_delay = 30
-	equip_delay_other = 50
-	max_integrity = 200
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_MEDIUM
-	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
-	stiffness = MEDIUM_STIFFNESS
-
-/obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
-	name = "heavy harness"
-	desc = "A set of straps that, somehow, function as heavy armor but do nothing else."
-	strip_delay = 50
-	equip_delay_other = 50
-	max_integrity = 300
-	pocket_storage_component_path = null
-	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_HEAVY
-	armor_tier_desc = ARMOR_CLOTHING_HEAVY
-	stiffness = HEAVY_STIFFNESS
 
 /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
@@ -1704,6 +1673,14 @@
 	flags_inv = HIDEJUMPSUIT
 	permeability_coefficient = 0.5
 
+/obj/item/clothing/suit/armor/light/duster/peacecoat
+	name = "tattered peace coat"
+	desc = "An old overcoat with a crude peace symbol painted on the back in white with white spraypaint. Whatever symbols the coat originally came with have long since been worn away by time."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "ghostechoe"
+	item_state = "ghostechoe"
+	body_parts_hidden = ARMS
+
 /obj/item/clothing/suit/armor/light/duster/vaquero
 	name = "vaquero suit"
 	desc = "An ornate suit popularized by traders from the south, using tiny metal studs and plenty of silver thread wich serves as decoration and also reflects energy very well, useful when facing the desert sun or a rogue Eyebot."
@@ -2056,6 +2033,13 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
 	icon_state = "scrapheavy"
 	item_state = "scrapheavy"
+
+/obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+	name = "light scout armor"
+	desc = "A makeshift set of pauldrons made of leather and scrap metal. It offers minimal protection, but is pretty light."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	icon_state = "lightscout"
+	item_state = "lightscout"
 
 //-->Taur armored saddles
 //the main gimmick about taur saddles is that obviously only taurs can equip it
@@ -3660,6 +3644,21 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
+
+//custom loadout armor for someone
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/funniloadout
+	name = "weathered deathclaw power armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	icon_state = "arroyoapa"
+	item_state = "arroyoapa"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	mutantrace_variation = STYLE_DIGITIGRADE |STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/suit/armor/medium/combat/mk2
 	name = "reinforced combat armor"
 	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates."
@@ -3888,6 +3887,11 @@
 /obj/item/clothing/suit/armor/medium/combat/enclave
 	name = "enclave combat armor"
 	desc = "An old set of pre-war combat armor, painted black."
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
+/obj/item/clothing/suit/armor/medium/combat/enclave/aldric
+	name = "Intercessors Exoskeleton"
+	desc = "A lightly-armored full-body powered exoskeleton. Primarily designed for psionic officers, it features a multistage cascaded psionic amplifier that aids in focus and projection of their psionic abilities, especially those that require nuance and precision"
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 
@@ -4299,7 +4303,7 @@
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 
-/obj/item/clothing/suit/armor/heavy/riot/retrofitted
+/*/obj/item/clothing/suit/armor/heavy/riot/retrofitted
 	name = "retro fitted riot combat armor"
 	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, and has been heavily modified with extra pockets and armor-plates. Heavy as sin."
 	icon_state = "usmc_riot_gear"
@@ -4317,7 +4321,7 @@
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'*/
 
 /obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"
@@ -4340,7 +4344,7 @@
 //////////////////////////
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa
-	name = "salvaged power armor"
+	name = "salvaged power armor template"
 	desc = "It's a set of early-model SS-13 power armor, except it isn't real. Stop looking at it, go ping coders or something. \
 	It's literally not meant to be here, you are just wasting your time reading some text that someone wrote for you \
 	because he thought it'd be funny, or expected someone to check GitHub for once, hello by the way. \
@@ -4433,6 +4437,8 @@
 /////////////////
 
 /obj/item/clothing/suit/armor/power_armor
+	name = "power armor template"
+	desc = "It's a template for PA. If you can see this, something's gone wrong."
 	w_class = WEIGHT_CLASS_HUGE
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -4471,7 +4477,9 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
-	var/deflecting = TRUE
+	var/deflecting = FALSE
+	// Can deflect determines if you can toggle the deflection on armor. Intended for armors that shouldnt have the ability by default.
+	var/can_deflect = TRUE
 	var/deflect_power_mult = 20
 	COOLDOWN_DECLARE(emp_cooldown)
 	COOLDOWN_DECLARE(deflect_cd)
@@ -4681,6 +4689,9 @@
 	return
 
 /obj/item/clothing/suit/armor/power_armor/CtrlShiftClick(mob/user)
+	if(!can_deflect)
+		to_chat(user, span_warning("Your armor doesnt have deflector shields!"))
+		return ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return ..()
 	if(!COOLDOWN_FINISHED(src, emp_cooldown))
@@ -4798,6 +4809,30 @@
 	COOLDOWN_START(src, deflect_cd, deflect_cooldown)
 	return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 
+/obj/item/clothing/suit/armor/power_armor/fluff
+	name = "Placeholder Loadout Power Armor"
+	desc = "A placeholder block for personal and loadout power armors."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	can_deflect = FALSE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	requires_training = TRUE
+/obj/item/clothing/suit/armor/power_armor/fluff/arroyo
+	name = "Weathered Deathclaw Power Armor"
+	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a deathclaw, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
+	icon_state = "arroyoapa"
+	item_state = "arroyoapa"
+/obj/item/clothing/suit/armor/power_armor/fluff/pappavol
+	name = "Decaying Power Armor"
+	desc = "Large big and green with hints of rust that cover its decaying metal robotic frame. It looks like it was custom built... roughly put together with shitty welding and crude rivets that hold the green rusty armor together."
+	icon_state = "pappavolarmor"
+	item_state = "pappavolarmor"
+
 /obj/item/clothing/suit/armor/power_armor/t45b
 	name = "Refurbished T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
@@ -4902,6 +4937,16 @@
 	item_state = "advpowerarmor1"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
+/obj/item/clothing/suit/armor/power_armor/hellfire // Event only - Deathsquad tier
+	name = "Hellfire power armor"
+	desc = "This model of power armor is the ultimate expression of power armor technology, sporting some of the best protection physically possible. This protection comes at a cost, however. This model of power armor drains cells much quicker than standard suits. While this design is technically a prototype, it has seen limited production similar to more standard suits. However, it remains incredibly rare due to the vast majority of the suits being damaged or destroyed."
+	icon = 'icons/fallout/clothing/armored_power.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
+	icon_state = "hellfire"
+	item_state = "hellfire"
+	armor_tokens = null
+	armor = list("melee" = 80, "bullet" = 85, "laser" = 90, "energy" = 75, "bomb" = 75, "bio" = 80, "rad" = 75, "fire" = 60, "acid" = 60, "wound" = 120, "damage_threshold" = 15)
+	usage_cost = 15 // 3x the passive drain of normal PA, 11 minutes on a basic cell. Basically makes using e-guns with it impossible unless you have literal boxes of cells. But it's also Deathsquad tier armor so y'know.
 
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/power_armor/advanced/x02

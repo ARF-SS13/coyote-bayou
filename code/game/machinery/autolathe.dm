@@ -6,6 +6,8 @@
 #define AUTOLATHE_INSERT_CONTAINER_TOO "YES"
 #define AUTOLATHE_INSERT_OK TRUE
 
+GLOBAL_VAR_INIT(lathe_reports_done, 0)
+
 /obj/machinery/autolathe
 	name = "autolathe"
 	desc = "It produces items using metal and glass."
@@ -44,6 +46,12 @@
 
 	var/DRM = 0 //determines if DRM is active, preventing you from making ammo
 
+	/// If someone is loop-feeding us, let em know what they put in when it stops looping
+	var/datum/autolathe_loop_returns/report_card
+	var/report_timer
+	var/datum/autolathe_loop_returns/big_report_card
+	var/big_report_timer
+
 	var/datum/techweb/specialized/autounlocking/stored_research = /datum/techweb/specialized/autounlocking/autolathe
 	var/list/categories = list(
 							"Tools",
@@ -73,6 +81,12 @@
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
+	QDEL_NULL(report_card)
+	QDEL_NULL(big_report_card)
+	if(report_timer)
+		deltimer(report_timer)
+	if(big_report_timer)
+		deltimer(big_report_timer)
 	return ..()
 
 /obj/machinery/autolathe/ui_interact(mob/user, datum/tgui/ui)
@@ -101,35 +115,12 @@
 	for(var/mat_id in materials.materials)
 		var/datum/material/M = mat_id
 		var/mineral_count = materials.materials[mat_id]
+		if(mineral_count < 1)
+			continue
 		var/list/material_data = list(
-			name = M.name,
-			mineral_amount = mineral_count,
-			matcolour = M.color,
-		)
-		data["materials"] += list(material_data)
-	if(selected_category != "None" && !length(matching_designs))
-		data["designs"] = handle_designs(stored_research.researched_designs, TRUE)
-	else
-		data["designs"] = handle_designs(matching_designs, FALSE)
-	return data
-
-/obj/machinery/autolathe/ui_data(mob/user)
-	var/list/data = list()
-	data["materials"] = list()
-	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
-	data["materialtotal"] = materials.total_amount
-	data["materialsmax"] = materials.max_amount
-	data["categories"] = categories
-	data["designs"] = list()
-	data["active"] = busy
-
-	for(var/mat_id in materials.materials)
-		var/datum/material/M = mat_id
-		var/mineral_count = materials.materials[mat_id]
-		var/list/material_data = list(
-			name = M.name,
-			mineral_amount = mineral_count,
-			matcolour = M.color,
+			name = M.name || "Stuff",
+			mineral_amount = mineral_count || 0,
+			matcolour = M.color || "#FF00FF",
 		)
 		data["materials"] += list(material_data)
 	if(selected_category != "None" && !length(matching_designs))
@@ -283,7 +274,7 @@
 		return TRUE
 
 	if(default_deconstruction_screwdriver(user, icon_state_open, icon_state_base, O))
-		updateUsrDialog()
+		// updateUsrDialog()
 		return TRUE
 
 	if(default_deconstruction_crowbar(O))
@@ -293,7 +284,7 @@
 		wires.interact(user)
 		return TRUE
 
-	if(user.a_intent == INTENT_HARM) //so we can hit the machine
+	if(user.a_intent != INTENT_HELP) //so we can hit the machine
 		return ..()
 
 	if(stat)
@@ -312,7 +303,29 @@
 		busy = FALSE
 		return TRUE
 
-	return ..()
+	if(gun_loop(user, O)) // it'll eat the gun or the magazine or whatever
+		return TRUE
+
+	if(is_probably_important(user, O)) 
+		return recycle_item(user, O, 5 SECONDS, FALSE)
+	recycle_item(user, O, 0, FALSE)
+	// return ..()
+
+/obj/machinery/autolathe/proc/is_probably_important(mob/user, obj/item/O)
+	if(!user || !O)
+		return FALSE
+	if(!istype(O, /obj/item))
+		return FALSE
+	if(O.tool_behaviour)
+		return TRUE // it's a tool, so it's probably important
+	if(SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
+		return TRUE // it's got stuff innit, so it's probably important
+	if(istype(O, /obj/item/ammo_box))
+		return TRUE // it's an ammo box, so it's probably important
+	if(istype(O, /obj/item/gun))
+		return TRUE // it's a gun, so it's probably important
+	return FALSE
+
 
 /obj/machinery/autolathe/proc/AfterMaterialInsert(obj/item/item_inserted, id_inserted, amount_inserted)
 	if(istype(item_inserted, /obj/item/stack/ore/bluespace_crystal))
@@ -323,7 +336,7 @@
 		flick(icon_state_loading_other,src)//plays metal insertion animation
 
 		use_power(min(1000, amount_inserted / 100))
-	updateUsrDialog()
+	// updateUsrDialog()
 
 /obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
@@ -428,6 +441,190 @@
 				stored_research.add_design(D)
 			else
 				stored_research.remove_design(D)
+
+/obj/machinery/autolathe/proc/run_gun_loop(mob/user, obj/item/gunammo)
+	if(!user)
+		return FALSE
+	if(!isgun(gunammo) && !isammobox(gunammo))
+		return FALSE
+	return gun_loop(user, gunammo) // one test loop to see if we can load it
+
+/obj/machinery/autolathe/proc/gun_loop(mob/user, obj/item/gunammo)
+	if(!user || !user.Adjacent(src))
+		return FALSE
+	if(!isballistic(gunammo) && !isammobox(gunammo) && !istype(gunammo, /obj/item/storage/bag/casings))
+		return FALSE
+	else if(isballistic(gunammo))
+		gunammo = load_from_ballistic(user, gunammo)
+		if(!istype(gunammo)) // this one is special, cus it needs to shift focus to the magazine if it popped one out
+			to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+			return FALSE
+	else if(isammobox(gunammo) && !load_from_ammo_box(user, gunammo))
+		to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+		return FALSE
+	else if(istype(gunammo, /obj/item/storage/bag/casings) && !load_from_bag(user, gunammo))
+		to_chat(user, span_warning("You can't load anything in \the [gunammo] into \the [src]!"))
+		return FALSE
+	// else if(istype(gunammo, /obj/item/gun/energy) && !load_from_energy(user, gunammo))
+	// 	to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+	// 	return FALSE // screw energy guns
+	/// if we're here, we loaded something, so lets queue up another cycle
+	addtimer(CALLBACK(src, .proc/gun_loop, user, gunammo), 0.1 SECONDS)
+	return TRUE
+
+/obj/machinery/autolathe/proc/load_from_bag(mob/user, obj/item/storage/bag/casings/cbag) // BIG BAG, BIG BAG, BIGABIGABIGBAG
+	if(!user || !istype(cbag, /obj/item/storage/bag/casings))
+		return FALSE
+	var/obj/item/ammo_casing/bluuet = cbag.find_casing(user, TRUE, TRUE)
+	if(!bluuet)
+		return FALSE
+	bluuet.forceMove(get_turf(user))
+	playsound(src, 'sound/weapons/bulletinsert.ogg', 40, 1)
+	return recycle_casing(user, bluuet) // TRUE will tell the loop to queue up another cycle
+
+/obj/machinery/autolathe/proc/load_from_ballistic(mob/user, obj/item/gun/ballistic/ballgun)
+	if(!istype(ballgun, /obj/item/gun/ballistic))
+		return FALSE
+	/// our goal here, find a casing, remove it, and toss it in the machine
+	var/obj/item/ammo_casing/C
+	/// First, look for a loaded magazine
+	var/obj/item/ammo_box/mag = ballgun.magazine
+	if(istype(mag))
+		if(istype(mag, /obj/item/ammo_box/magazine/internal/cylinder)) /// everyone's gotta be special
+			C = mag.get_round()
+			if(C)
+				if(C == ballgun.chambered)
+					ballgun.chambered = null
+				C.forceMove(get_turf(C))
+				C.bounce_away(FALSE, 1, 0, 0, 0)
+				playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
+				if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
+					return ballgun // revolvers are special
+		// if its a fixed mag, using the gun in hand will eject a casing
+		if((mag.fixed_mag || !ballgun.casing_ejector) && ballgun.chambered) // usually the chambered one, so, lets do that
+			C = ballgun.chambered
+			ballgun.attack_self(user)
+			if(ballgun.chambered == C) // Darn thing is still in there
+				return FALSE
+			if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
+				return ballgun
+			// recycle_gun(user, ballgun) // start loading the gun into the machine
+			return FALSE
+		// otherwise, we need to remove the magazine, and eject a casing
+		ballgun.attack_self(user)
+		if(mag.loc == ballgun) // if it's still in the gun, we failed to remove it
+			return FALSE
+		// otherwise, we have a magazine, and it's not in the gun
+		if(load_from_ammo_box(user, mag))
+			return mag // shift focus to the magazine
+		// recycle_gun(user, ballgun) // one way or another, something is getting loaded
+		return FALSE
+	/// if we're here, we don't have a magazine loaded!
+	if(ballgun.chambered) // if we have a casing in the chamber, lets try to eject it
+		C = ballgun.chambered
+		ballgun.attack_self(user)
+		if(ballgun.chambered == C) // Darn thing is still in there
+			return FALSE
+		if(C) // yay we have a casing!
+			if(recycle_casing(user, C)) // TRUE will tell the loop to queue up another cycle
+				return ballgun
+		// return recycle_gun(user, ballgun) // start loading the gun into the machine
+
+/obj/machinery/autolathe/proc/load_from_ammo_box(mob/user, obj/item/ammo_box/mag)
+	if(!istype(mag, /obj/item/ammo_box))
+		return FALSE
+	/// our goal here, find a casing, remove it, and toss it in the machine
+	var/obj/item/ammo_casing/C = mag.pop_casing(user, TRUE, TRUE)
+	if(C)
+		C.forceMove(get_turf(C))
+		C.bounce_away(FALSE, 1, 0, 0, 0)
+		playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
+
+	return recycle_casing(user, C) // TRUE will tell the loop to queue up another cycle
+
+// /obj/machinery/autolathe/proc/load_from_energy(mob/user, obj/item/gun/energy/energygun)
+// 	if(!user || !istype(energygun, /obj/item/gun/energy))
+// 		return FALSE
+
+/obj/machinery/autolathe/proc/recycle_casing(mob/user, obj/item/casing) // doesnt really matter if its a casing
+	if(!user)
+		return FALSE
+	if(!istype(casing, /obj/item/ammo_casing) || QDELETED(casing))
+		return FALSE
+	if(istype(casing.loc, /obj/item/gun))
+		var/obj/item/gun/G = casing.loc
+		/// manually extract that drn bullet
+		if(G.chambered == casing)
+			G.attack_self(user)
+			if(G.chambered == casing) // Darn thing is still in there
+				return FALSE
+	return recycle_item(user, casing, 0 SECONDS, TRUE)
+
+/obj/machinery/autolathe/proc/recycle_ammo_box(mob/user, obj/item/ammo_box/mag)
+	if(!user)
+		return FALSE
+	if(!istype(mag, /obj/item/ammo_box) || QDELETED(mag))
+		return FALSE
+	return recycle_item(user, mag, 3 SECONDS, FALSE)
+
+/obj/machinery/autolathe/proc/recycle_gun(mob/user, obj/item/gun/ballistic/ballgun)
+	if(!user)
+		return FALSE
+	if(!istype(ballgun, /obj/item/gun/ballistic) || QDELETED(ballgun))
+		return FALSE
+	return recycle_item(user, ballgun, 8 SECONDS, FALSE)
+
+/obj/machinery/autolathe/proc/recycle_item(mob/user, obj/item/item, time = 0.1 SECONDS, silent)
+	if(!user)
+		return FALSE
+	if(!istype(item, /obj/item) || QDELETED(item))
+		return FALSE
+	if(INTERACTING_WITH(user, src))
+		to_chat(user, span_alert("You're already doing something!"))
+		return FALSE
+	if(time > 0)
+		if(!silent)
+			to_chat(user, span_notice("You start loading \the [item] into \the [src]."))
+		if(!do_after(user, time, TRUE, src, allow_movement = FALSE, stay_close = TRUE, public_progbar = TRUE))
+			to_chat(user, span_alert("You were interrupted!"))
+			return FALSE
+	if(SEND_SIGNAL(src, COMSIG_PARENT_FORCEFEED, item, user, TRUE, silent) == TRUE)
+		update_record(item)
+		return TRUE
+
+/obj/machinery/autolathe/proc/update_record(obj/item/item)
+	if(!istype(item, /obj/item))
+		return FALSE
+
+	if(!istype(report_card))
+		report_card = new()
+	report_card.inserted_something(item)
+	if(report_timer)
+		deltimer(report_timer)
+	report_timer = addtimer(CALLBACK(src, .proc/print_record), 30 SECONDS, TIMER_STOPPABLE) // save in 4 seconds
+
+	if(!istype(big_report_card))
+		big_report_card = new()
+	big_report_card.inserted_something(item)
+	if(big_report_timer)
+		deltimer(big_report_timer)
+	big_report_timer = addtimer(CALLBACK(src, .proc/print_big_record), 15 MINUTES, TIMER_STOPPABLE) // save in 4 seconds
+
+/obj/machinery/autolathe/proc/print_record()
+	if(!istype(report_card, /datum/autolathe_loop_returns))
+		return FALSE
+	if(!report_card.should_output_report(src))
+		return FALSE
+	playsound(src, 'sound/machines/printer_thermal.ogg', 50, 1)
+	report_card.output_report(src)
+	QDEL_NULL(report_card)
+
+/obj/machinery/autolathe/proc/print_big_record()
+	if(!istype(big_report_card, /datum/autolathe_loop_returns))
+		return FALSE
+	playsound(src, 'sound/machines/printer_thermal.ogg', 50, 1)
+	big_report_card.output_report(src)
+	QDEL_NULL(big_report_card)
 
 /obj/machinery/autolathe/hacked/Initialize()
 	. = ..()
@@ -536,7 +733,7 @@
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	if(!busy && !stat)
+/* 	if(!busy && !stat)
 		if(istype(O, /obj/item/storage/bag/casings))
 			insert_things_from_bag(user, O)
 			return
@@ -554,7 +751,7 @@
 				return ..()
 			if(pre_insert_check(user, O))
 				insert_magazine_from_gun(user, O)
-			return
+			return */
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
@@ -577,7 +774,7 @@
 			qdel(O)
 			return
 	return ..()
-
+/* 
 /obj/machinery/autolathe/ammo/proc/insert_thing(obj/item/thing, obj/item/thing_bag, datum/component/material_container/mat_box)
 	var/mat_amount = mat_box.get_item_material_amount(thing)
 	if(!mat_amount)
@@ -693,7 +890,7 @@
 		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
 	else
 		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
-
+ */
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Handloaded Ammo" in D.category)
 		return ..()
@@ -810,8 +1007,38 @@
 	var/wooded = TRUE
 	/// someone stuck us into a machine frame for some reason
 	var/framed = TRUE
+	/// weakref to our table, so we can unregister signals
+	var/datum/weakref/mytable
+	/// you can deconstruct it if you use any of these on it
+	var/list/decon_tools = list(
+		TOOL_CROWBAR,
+		TOOL_MULTITOOL,
+		TOOL_SCREWDRIVER,
+		TOOL_WIRECUTTER,
+		TOOL_WRENCH,
+		TOOL_WELDER,
+		TOOL_SHOVEL,
+		TOOL_DRILL,
+	)
 
-/obj/machinery/autolathe/ammo/improvised/proc/tableize()
+/obj/machinery/autolathe/ammo/improvised/Initialize()
+	var/obj/structure/table/T = locate(/obj/structure/table) in get_turf(src)
+	if(T)
+		tableize(T)
+	. = ..()
+
+/obj/machinery/autolathe/ammo/improvised/Destroy()
+	var/obj/structure/table/T = GET_WEAKREF(mytable)
+	if(T)
+		UnregisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED))
+		mytable = null
+	. = ..()
+
+/obj/machinery/autolathe/ammo/improvised/examine(mob/user)
+	. += ..()
+	. += span_notice("You can disassemble this thing by [span_notice("Ctrl-Shift Clicking")] it, or using just about any [span_notice("tool")] on it.")
+
+/obj/machinery/autolathe/ammo/improvised/proc/tableize(obj/structure/table/T)
 	icon_state_base = "autolathe_tabletop"
 	icon_state_open = "autolathe_tabletop_t"
 	icon_state_busy = "autolathe_tabletop_n"
@@ -819,10 +1046,36 @@
 	icon_state_loading_other = "autolathe_tabletop_o"
 	icon_state = icon_state_base
 	wooded = FALSE
-	frament()
-
-/obj/machinery/autolathe/ammo/improvised/proc/frament()
 	framed = FALSE
+	RegisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED), .proc/self_destruct)
+
+/obj/machinery/autolathe/ammo/improvised/proc/self_destruct(disassembled)
+	var/obj/structure/table/T = GET_WEAKREF(mytable)
+	if(T)
+		UnregisterSignal(T, list(COMSIG_OBJ_DECONSTRUCT, COMSIG_OBJ_BREAK, COMSIG_PARENT_PREQDELETED))
+		mytable = null
+	deconstruct(disassembled)
+
+/obj/machinery/autolathe/ammo/improvised/CtrlShiftClick(mob/user)
+	. = ..()
+	take_it_apart(user)
+
+/obj/machinery/autolathe/ammo/improvised/attackby(obj/item/O, mob/user, params)
+	if(O.tool_behaviour in decon_tools)
+		take_it_apart(user)
+		return
+	return ..()
+
+/obj/machinery/autolathe/ammo/improvised/proc/take_it_apart(mob/user)
+	if(!user)
+		return
+	if(!user.Adjacent(src))
+		return
+	if(!do_after(user, 2 SECONDS, TRUE, src, allow_movement = TRUE))
+		to_chat(user, span_notice("You stop taking apart \the [src]."))
+		return
+	to_chat(user, span_notice("You take apart \the [src]!"))
+	self_destruct(TRUE)
 
 /obj/machinery/autolathe/ammo/improvised/deconstruct(disassembled = TRUE)
 	if(framed)
@@ -837,4 +1090,78 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.max_amount = max_mats
 	prod_coeff = STANDARD_PART_LEVEL_LATHE_COEFFICIENT(default_workspeed)
+
+/datum/autolathe_loop_returns
+	/// FORMAT: list("/obj/item/eaten" = 3)
+	var/list/things_inserted = list()
+	/// total mats inserted
+	/// FORMAT: list("/datum/material/iron" = 3)
+	var/list/total_mats = list()
+
+/datum/autolathe_loop_returns/proc/inserted_something(obj/item/thing)
+	if(!istype(thing))
+		return
+	if(!things_inserted["[thing]"])
+		things_inserted["[thing]"] = 0
+	things_inserted["[thing]"] += 1
+	for(var/mat in thing.custom_materials)
+		if(!total_mats["[mat]"])
+			total_mats["[mat]"] = 0
+		total_mats["[mat]"] += thing.custom_materials[mat]
+
+/datum/autolathe_loop_returns/proc/should_output_report(obj/machinery/autolathe/lathe)
+	var/stuff_recycled = 0
+	for(var/thing in things_inserted)
+		stuff_recycled += things_inserted[thing]
+	if(stuff_recycled > 30)
+		return TRUE
+
+/datum/autolathe_loop_returns/proc/output_report(obj/machinery/autolathe/lathe)
+	var/obj/item/paper/our_paper = new(get_turf(lathe))
+	if(!our_paper)
+		return FALSE
+	GLOB.lathe_reports_done += 1
+	our_paper.name = "recycling report #[GLOB.lathe_reports_done]"
+	our_paper.info = write_contents()
+	our_paper.update_icon_state()
+	var/list/ppl = list()
+	for(var/mob/m in view(15, get_turf(lathe)))
+		ppl += m
+	var/mob/M = pick(ppl)
+	if(M)
+		our_paper.throw_at(M, 100, 1, M, TRUE)
+	else
+		bingus:
+			for(var/turf/T in oview(2, get_turf(lathe)))
+				for(var/atom/movable/thing in T.contents)
+					if(thing.density)
+						continue bingus
+				our_paper.throw_at(T, 100, 1, null, TRUE)
+
+/datum/autolathe_loop_returns/proc/write_contents()
+	var/list/msg_out = list()
+	msg_out += "<hr><br>"
+	msg_out += "[span_small(uppertext(STATION_TIME_TIMESTAMP(FALSE, world.time)))]<br>"
+	msg_out += "<hr><br>"
+	msg_out += "<center>- START REPORT -</center><br>"
+	msg_out += "<center><u><b>GekkerTek MicroFactory DELUX v1.23 PRO</b></u></center><br>"
+	msg_out += "Recycle batch process ID:[GLOB.lathe_reports_done]<br>"
+	msg_out += "<br>"
+	msg_out += "Well done! You recycled:<br>"
+	for(var/thing in things_inserted)
+		msg_out += "[FOURSPACES][thing] x [things_inserted[thing]]<br>"
+	msg_out += "<br>For a total of:<br>"
+	for(var/mat in total_mats)
+		var/datum/material/matty = SSmaterials.GetMaterialRef(mat)
+		if(!matty)
+			continue
+		msg_out += "[FOURSPACES][matty] x [total_mats[mat]] units<br>"
+	msg_out += "<br>"
+	msg_out += "Please keep this report for your records.<br>"
+	msg_out += "<br>"
+	msg_out += "Thank you for choosing GekkerTek, Nash's favorite brand of fox-made machinery!<br>"
+	msg_out += "<br>"
+	msg_out += "<center>- END REPORT -</center><br>"
+	msg_out += "<hr><br>"
+	return msg_out.Join()
 

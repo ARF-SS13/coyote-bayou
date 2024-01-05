@@ -106,7 +106,7 @@
 	/// The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
 	var/datum/weakref/LAssailant
 
-	var/list/mob_spell_list = list() //construct spells. Spells that do not transfer from one mob to another and can not be lost in mindswap.
+	var/list/mob_spell_list //construct spells. Spells that do not transfer from one mob to another and can not be lost in mindswap.
 
 
 	var/status_flags = CANSTUN|CANKNOCKDOWN|CANUNCONSCIOUS|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canknockdown, canstun, etc)
@@ -134,15 +134,13 @@
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 
-	var/list/mousemove_intercept_objects
-
 	var/datum/click_intercept
 
 	var/registered_z
 
 	var/list/alerts = list() // contains /atom/movable/screen/alert only // On /mob so clientless mobs will throw alerts properly
 	var/list/screens = list()
-	var/list/client_colours = list()
+	var/list/client_colours
 	var/hud_type = /datum/hud
 	var/logout_time = 0 //for despawn and general logging
 
@@ -150,7 +148,7 @@
 
 	var/mob/audiovisual_redirect //Mob to redirect messages, speech, and sounds to
 
-	var/siliconaccessareas = list()
+	var/list/siliconaccessareas
 	var/siliconaccesstoggle = FALSE
 
 	var/voluntary_ghosted = FALSE		//whether or not they voluntarily ghosted.

@@ -449,6 +449,8 @@ obj/item/storage/bag/chemistry/tribal
 	var/spam_protection = FALSE
 	var/mob/listeningTo
 	component_type = /datum/component/storage/concrete/bag/casing
+	var/last_inserted_type
+	var/last_was_empty = FALSE
 
 /obj/item/storage/bag/casings/dropped(mob/user)
 	. = ..()
@@ -465,6 +467,45 @@ obj/item/storage/bag/chemistry/tribal
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_casings)
 	listeningTo = user
 
+/// finds a casing and return it
+/// returns null if none found, OR, and this is a big OR
+/// OR if we've previously inserted a loaded casing, and there were no other empty casings, and the next casing would be different
+/// than the last inserted casing. This is so that, by default, it'll load only one type of casng per click
+/obj/item/storage/bag/casings/proc/find_casing(mob/living/user)
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!LAZYLEN(contents))
+		return
+	var/list/loaded_casings = list()
+	var/obj/item/ammo_casing/out
+	var/should_stop = FALSE
+	for(var/obj/item/ammo_casing/bluuet in contents)
+		if(bluuet.BB)
+			if(last_was_empty)
+				should_stop = TRUE
+				last_was_empty = FALSE
+			// if(last_inserted_type)
+			// 	if(bluuet.type == last_inserted_type)
+			// 		out = bluuet
+			// 		break
+			// else
+			loaded_casings |= bluuet
+		else
+			out = bluuet // ezpz
+			last_was_empty = TRUE
+			should_stop = FALSE
+			break
+	if(should_stop)
+		return FALSE
+	if(out)
+		return out
+	// if(last_inserted_type) // we didnt find a casing like the one we last inserted, so attempt to break the operation
+	// 	last_inserted_type = null
+	// 	return
+	out = LAZYACCESS(loaded_casings, 1)
+	if(out)
+		last_inserted_type = out.type
+		return out
 
 /obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
 	var/show_message = FALSE
@@ -493,6 +534,21 @@ obj/item/storage/bag/chemistry/tribal
 		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \
 			span_notice("You scoop up the casings beneath you with your [name]."))
 	spam_protection = FALSE
+
+/obj/item/storage/bag/casings/debug_casings
+	name = "debug casing bag"
+	color = "#FF00FF"
+
+/obj/item/storage/bag/casings/debug_casings/PopulateContents()
+	var/list/bullet_types = list()
+	bullet_types |= typesof(/obj/item/ammo_casing/m44)
+	bullet_types |= typesof(/obj/item/ammo_casing/c10mm)
+	bullet_types |= typesof(/obj/item/ammo_casing/c9mm)
+
+	for(var/i in 1 to 200)
+		var/obj/item/ammo_casing/out = pick(bullet_types)
+		new out(src, pick(1,0))
+	new /obj/machinery/autolathe/ammo/improvised(get_turf(src))
 
 /obj/item/storage/bag/tribe_quiver //tribal quiver as opposed to nontribal quiver? 
 	name = "belt quiver"
@@ -528,6 +584,10 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/tribe_quiver/light/full/PopulateContents()
 	for(var/i in 1 to 12)
 		new /obj/item/ammo_casing/caseless/arrow/field(src)//12 total for now. just need one full one defined, for starting kits
+
+/obj/item/storage/bag/tribe_quiver/light/full/flint/PopulateContents()
+	for(var/i in 1 to 12)
+		new /obj/item/ammo_casing/caseless/arrow/flint(src)//Little more applicable for tribals.
 
 /obj/item/storage/bag/tribe_quiver/heavy
 	name = "back quiver"

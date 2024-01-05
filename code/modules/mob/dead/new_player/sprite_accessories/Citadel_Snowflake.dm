@@ -2,11 +2,13 @@
 	name = "DataShark"
 	icon_state = "datashark"
 	ckeys_allowed = list("rubyflamewing")
+	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/shark/datashark
 	name = "DataShark"
 	icon_state = "datashark"
 	ckeys_allowed = list("rubyflamewing")
+	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/mam_body_markings/shark/datashark
 	name = "DataShark"
@@ -18,24 +20,20 @@
 /datum/sprite_accessory/ears/mam_ears/sabresune
 	name = "Sabresune"
 	icon_state = "sabresune"
-	ckeys_allowed = list("poojawa")
 	extra = TRUE
 	extra_color_src = MUTCOLORS3
 
 /datum/sprite_accessory/tails/mam_tails/sabresune
 	name = "Sabresune"
 	icon_state = "sabresune"
-	ckeys_allowed = list("poojawa")
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/sabresune
 	name = "Sabresune"
 	icon_state = "sabresune"
-	ckeys_allowed = list("poojawa")
 
 /datum/sprite_accessory/mam_body_markings/sabresune
 	name = "Sabresune"
 	icon_state = "sabresune"
-	ckeys_allowed = list("poojawa")
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
 
 //Lunasune

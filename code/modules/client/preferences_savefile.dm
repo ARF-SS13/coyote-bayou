@@ -41,7 +41,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(S["current_version"])
 		current_version = safe_json_decode(S["current_version"])
 	var/list/needs_updating = list()
-	needs_updating ^= PREFERENCES_MASTER_CHANGELOG
+	needs_updating = current_version ^ PREFERENCES_MASTER_CHANGELOG
 	if(LAZYLEN(needs_updating))
 		update_file(needs_updating, S)
 
@@ -203,6 +203,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				S["feature_genital_whitelist"] >> genital_whitelist
 				WRITE_FILE(S["genital_whitelist"], genital_whitelist)
 				current_version |= PMC_PORNHUD_WHITELIST_RELOCATION
+			if(PMC_UNBREAK_FAVORITE_PLAPS) // i broke it =3
+				S["faved_interactions"] >> faved_interactions
+				faved_interactions = list()
+				WRITE_FILE(S["faved_interactions"], faved_interactions)
+				current_version |= PMC_UNBREAK_FAVORITE_PLAPS
+
 	WRITE_FILE(S["current_version"], safe_json_encode(current_version))
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
@@ -249,6 +255,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["max_chat_length"]	>> max_chat_length
 	S["see_chat_non_mob"]	>> see_chat_non_mob
 	READ_FILE(S["see_rc_emotes"] , see_rc_emotes)
+	S["color_chat_log"] >> color_chat_log
 	S["tgui_fancy"]			>> tgui_fancy
 	S["tgui_lock"]			>> tgui_lock
 	S["buttons_locked"]		>> buttons_locked
@@ -325,6 +332,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	max_chat_length = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
 	see_chat_non_mob	= sanitize_integer(see_chat_non_mob, 0, 1, initial(see_chat_non_mob))
 	see_rc_emotes = sanitize_integer(see_rc_emotes, FALSE, TRUE, initial(see_rc_emotes))
+	color_chat_log = sanitize_integer(color_chat_log, FALSE, TRUE, initial(color_chat_log))
 	tgui_fancy		= sanitize_integer(tgui_fancy, 0, 1, initial(tgui_fancy))
 	tgui_lock		= sanitize_integer(tgui_lock, 0, 1, initial(tgui_lock))
 	buttons_locked	= sanitize_integer(buttons_locked, 0, 1, initial(buttons_locked))
@@ -424,6 +432,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["max_chat_length"], max_chat_length)
 	WRITE_FILE(S["see_chat_non_mob"], see_chat_non_mob)
 	WRITE_FILE(S["see_rc_emotes"], see_rc_emotes)
+	WRITE_FILE(S["color_chat_log"], color_chat_log)
 	WRITE_FILE(S["tgui_fancy"], tgui_fancy)
 	WRITE_FILE(S["tgui_lock"], tgui_lock)
 	WRITE_FILE(S["buttons_locked"], buttons_locked)
@@ -635,6 +644,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	S["real_name"]				>> real_name
 	S["custom_species"]			>> custom_species
+	S["alt_appearance"]			>> alt_appearance
 	S["name_is_always_random"]	>> be_random_name
 	S["body_is_always_random"]	>> be_random_body
 	S["gender"]					>> gender
@@ -706,6 +716,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["creature_flavor_text"]		>> creature_flavor_text
 	S["creature_ooc"]				>> creature_ooc
 	S["creature_profilepic"]		>> creature_profilepic
+	S["creature_pfphost"]			>> creature_pfphost
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -832,10 +843,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["custom_pixel_x"]		>> custom_pixel_x
 	S["custom_pixel_y"]		>> custom_pixel_y
 
+	S["waddle_amount"]		>> waddle_amount
+	S["up_waddle_time"]		>> up_waddle_time
+	S["side_waddle_time"]	>> side_waddle_time
+
 	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVE FILE STUFF !!
 	S["profilePicture"] >> profilePicture // Profile picklies
+	S["pfphost"] 		>> pfphost
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
@@ -867,6 +883,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["allow_being_prey"]					>> allow_being_prey
 	S["allow_seeing_belly_descriptions"]	>> allow_seeing_belly_descriptions
 	S["allow_being_sniffed"]				>> allow_being_sniffed
+	S["allow_trash_messages"]				>> allow_trash_messages
 	if (S["belly_prefs"])
 		belly_prefs = safe_json_decode(S["belly_prefs"])
 	else
@@ -891,12 +908,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Permanent Tattoos
 	S["permanent_tattoos"]		>> permanent_tattoos
 
+	//Permanent Tattoos
+	faved_interactions = safe_json_decode(S["faved_interactions"])
+
 
 	//sanitize data
 	show_in_directory		= sanitize_integer(show_in_directory, 0, 1, initial(show_in_directory))
 	directory_tag			= sanitize_inlist(directory_tag, GLOB.char_directory_tags, initial(directory_tag))
 	directory_erptag		= sanitize_inlist(directory_erptag, GLOB.char_directory_erptags, initial(directory_erptag))
 	directory_ad			= strip_html_simple(directory_ad, MAX_FLAVOR_LEN)
+	faved_interactions		= sanitize_islist(faved_interactions, list())
 
 	//Sanitize
 
@@ -935,12 +956,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	custom_pixel_x	= sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	custom_pixel_y	= sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
+	
+	waddle_amount	= sanitize_num_clamp(waddle_amount, WADDLE_MIN, WADDLE_MAX, 0, 0.1)
+	up_waddle_time	= sanitize_num_clamp(up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX, 0, 0.1)
+	side_waddle_time = sanitize_num_clamp(side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX, 0, 0.1)
 
-	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
-	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
-	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
-	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
-	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
+	hair_color			= sanitize_hexcolor(hair_color, 6, FALSE)
+	facial_hair_color	= sanitize_hexcolor(facial_hair_color, 6, FALSE)
+	eye_type			= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
+	left_eye_color		= sanitize_hexcolor(left_eye_color, 6, FALSE)
+	right_eye_color		= sanitize_hexcolor(right_eye_color, 6, FALSE)
 	whoflags			= sanitize_integer(whoflags, 0, 16777215, initial(whoflags)) // uncomment before release
 	//whoflags = initial(whoflags) // comment out before release
 
@@ -971,6 +996,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["insect_fluff"]		= sanitize_inlist(features["insect_fluff"], GLOB.insect_fluffs_list)
 	features["insect_markings"] 	= sanitize_inlist(features["insect_markings"], GLOB.insect_markings_list, "None")
 	features["insect_wings"] 		= sanitize_inlist(features["insect_wings"], GLOB.insect_wings_list)
+	alt_appearance					= sanitize_inlist(alt_appearance, pref_species.alt_prefixes, "Default")
 
 	var/static/size_min
 	if(!size_min)
@@ -1079,6 +1105,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	allow_being_prey				= sanitize_integer(allow_being_prey, 				FALSE, TRUE, initial(allow_being_prey))
 	allow_seeing_belly_descriptions	= sanitize_integer(allow_seeing_belly_descriptions, FALSE, TRUE, initial(allow_seeing_belly_descriptions))
 	allow_being_sniffed				= sanitize_integer(allow_being_sniffed, 			FALSE, TRUE, initial(allow_being_sniffed))
+	allow_trash_messages			= sanitize_integer(allow_trash_messages, 			FALSE, TRUE, initial(allow_trash_messages))
 
 	//load every advanced coloring mode thing in one go
 	//THIS MUST BE DONE AFTER ALL FEATURE SAVES OR IT WILL NOT WORK
@@ -1114,8 +1141,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_list["5"] = sanitize_text(scars_list["5"])
 
 	// !! COYOTE SANITISATION !!
-	profilePicture = sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	profilePicture 		= sanitize_text(profilePicture) // If we still have issues loading save files with this then comment this out, IT SHOULD BE A STRING REEEE
+	pfphost 			= sanitize_inlist(pfphost, GLOB.pfp_filehosts, "")
 	creature_profilepic = sanitize_text(creature_profilepic)
+	creature_pfphost 	= sanitize_inlist(creature_pfphost, GLOB.pfp_filehosts, "")
 
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
@@ -1188,6 +1217,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Character
 	WRITE_FILE(S["real_name"]				, real_name)
 	WRITE_FILE(S["custom_species"]			, custom_species)
+	WRITE_FILE(S["alt_appearance"]			, alt_appearance)
 	WRITE_FILE(S["name_is_always_random"]	, be_random_name)
 	WRITE_FILE(S["body_is_always_random"]	, be_random_body)
 	WRITE_FILE(S["gender"]					, gender)
@@ -1301,8 +1331,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["special_l"]		,special_l)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
+	
 	WRITE_FILE(S["custom_pixel_x"], custom_pixel_x)
 	WRITE_FILE(S["custom_pixel_y"], custom_pixel_y)
+
+	WRITE_FILE(S["waddle_amount"], waddle_amount)
+	WRITE_FILE(S["up_waddle_time"], up_waddle_time)
+	WRITE_FILE(S["side_waddle_time"], side_waddle_time)
 
 	//save every advanced coloring mode thing in one go
 	for(var/feature in features)
@@ -1348,7 +1383,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["creature_name"]				,creature_name)
 	WRITE_FILE(S["creature_flavor_text"]		,creature_flavor_text)
 	WRITE_FILE(S["creature_ooc"]				,creature_ooc)
-	WRITE_FILE(S["creature_profilepic"]			,creature_profilepic)
+
 
 	//Quirks
 	WRITE_FILE(S["char_quirks"]			, char_quirks)
@@ -1373,7 +1408,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	// !! COYOTE SAVEFILE STUFF !!
-	WRITE_FILE(S["profilePicture"],	profilePicture)
+	WRITE_FILE(S["profilePicture"],				profilePicture)
+	WRITE_FILE(S["pfphost"],					pfphost)
+
+	WRITE_FILE(S["creature_profilepic"],		creature_profilepic)
+	WRITE_FILE(S["creature_pfphost"],			creature_pfphost)
 
 	WRITE_FILE(S["gradient_color"]			, features_override["grad_color"])
 	WRITE_FILE(S["gradient_style"]			, features_override["grad_style"])
@@ -1405,7 +1444,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["allow_being_sniffed"]				, allow_being_sniffed)
 	WRITE_FILE(S["belly_prefs"]						, safe_json_encode(belly_prefs))
 	WRITE_FILE(S["current_version"]					, safe_json_encode(current_version))
-
+	WRITE_FILE(S["allow_trash_messages"]			, safe_json_encode(allow_trash_messages))
 	WRITE_FILE(S["underwear_overhands"]				, underwear_overhands) // not vore, dont worry its not eating anyones hands
 	WRITE_FILE(S["whoflags"]						, whoflags) // not vore, dont worry its not eating anyones who
 
@@ -1419,6 +1458,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//permanent tattoos
 	WRITE_FILE(S["permanent_tattoos"], permanent_tattoos)
+
+	//permanent tattoos
+	WRITE_FILE(S["faved_interactions"], safe_json_encode(faved_interactions))
 
 	return 1
 

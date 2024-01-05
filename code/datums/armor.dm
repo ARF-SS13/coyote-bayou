@@ -1,5 +1,7 @@
 #define ARMORID "armor-[tier]-[linemelee]-[linebullet]-[linelaser]-[melee]-[bullet]-[laser]-[energy]-[bomb]-[bio]-[rad]-[fire]-[acid]-[magic]-[wound]-[damage_threshold]"
 
+GLOBAL_LIST_INIT(armor_tierline, list(25, 50, 75, 100, 125, 150, 200, 250, 300, 350, 400, 500, 600))
+
 /proc/getArmor(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0, damage_threshold = 0)
 	. = locate(ARMORID)
 	if (!.)
@@ -23,15 +25,13 @@
 	var/magic
 	var/wound
 	var/damage_threshold
-	//var/tierline = list(10, 20, 45, 60, 75, 90, 105, 125, 210, 235, 260) //old
-	var/tierline = list(25, 50, 75, 100, 125, 150, 200, 250, 300, 350, 400, 500, 600) //new
 
 /datum/armor/New(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0,  energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0, damage_threshold = 0)
 
 	if(tier) //ASSIGNS ARMOR VALUES BASED ON TIER, IT WILL USE ARMOR VALUES INSTEAD OF THE TIER FOR THAT VALUE IF THE ARMOR VALUE IS PRESENT
-		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
-		linebullet = linebullet+tierline[tier]
-		linelaser = linelaser+tierline[tier]
+		linemelee = linemelee+GLOB.armor_tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
+		linebullet = linebullet+GLOB.armor_tierline[tier]
+		linelaser = linelaser+GLOB.armor_tierline[tier]
 		wound = wound+(tier*5)
 
 	src.linemelee = linemelee

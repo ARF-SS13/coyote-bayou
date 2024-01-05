@@ -77,7 +77,7 @@
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
-		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Creature!</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 
@@ -568,6 +568,9 @@
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 		if(humanc.client)
 			humanc.client.prefs.post_copy_to(humanc)
+	
+	if(character.client.prefs.waddle_amount > 0)
+		character.AddComponent(/datum/component/waddling, character.client.prefs.waddle_amount, character.client.prefs.up_waddle_time, character.client.prefs.side_waddle_time)
 
 	GLOB.joined_player_list += character.ckey
 	GLOB.latejoiners += character
@@ -600,9 +603,12 @@
 		var/obj/structure/filingcabinet/employment/employmentCabinet = C
 		if(!employmentCabinet.virgin)
 			employmentCabinet.addFile(employee)
-	
+
 /mob/dead/new_player/proc/CreatureSpawn()
 	if(ckey && client && client.prefs.creature_species)
+		if(alert(src, "Better creature characters can now be made via the regular Species dropdown menu where you'd normally pick your human race. Are you sure you'd rather play the old-style simple creatures?", "Creature Update!", "I'll try them out!", "I still want to play as a simple creature.") == "I'll try them out!")
+			client.prefs.ShowChoices(src)
+			return
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
 			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
@@ -610,29 +616,33 @@
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
 			return FALSE
-		log_and_message_admins("joined as \an [P.creature_species] and spawned at [spawn_selection].")
+
 		spawning = 1
 		close_spawn_windows()
 		var/spawntype = GLOB.creature_spawnpoints["[spawn_selection]"]
 		//Create the new mob
 		var/creature_type = GLOB.creature_selectable["[P.creature_species]"]
-		//Give them a better HUD and change their starting backpack
 		var/mob/living/simple_animal/C = new creature_type(src)
+		//Log their arrival
+		log_and_message_admins("[ADMIN_PP(src)] joined as \a [P.creature_species] named [P.creature_name] and spawned at [spawn_selection].")
+		//Set up their HUD, hands, and intents.
 		C.dextrous_hud_type = /datum/hud/dextrous/drone
-		var/obj/item/storage/backpack/duffelbag/S = new(C)
-		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		C.dextrous = TRUE
 		C.held_items = list(null, null)
 		C.possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 		//Give them some starting items
 		var/obj/item/implant/radio/slime/imp = new//Implant with a radio
 		imp.implant(C, src)
+		//Give them a backpack and fill it with the starter kit that everyone gets
+		var/obj/item/storage/backpack/duffelbag/S = new(C)
+		C.equip_to_slot(S, SLOT_GENERIC_DEXTROUS_STORAGE)
 		if(S)
 			new /obj/item/storage/wallet/stash/low(S)
 			new /obj/item/stack/medical/gauze(S)//Give them some gauze for healing
 			new /obj/item/flashlight(S)//Give them a flashlight for seeing
 			new /obj/item/melee/onehanded/knife/hunting(S)//And a knife for crafting/gutting
 			new /obj/item/kit_spawner/townie(S)//And a weapon so they can play the game :tm:
+			new /obj/item/kit_spawner/tools(S)//And a toolkit for job stuffs
 			new /obj/item/pda(S)//And a PDA since everyone else spawns with one, too
 			new /obj/item/card/id/selfassign(S)//And an ID card to swipe into the PDA
 		//Assign the mob's information based on the player's client preferences
@@ -643,19 +653,31 @@
 				C.gender = FEMALE
 			else
 				C.gender = PLURAL
+		//Set up their name and what not
 		C.name = P.creature_name
 		C.real_name = P.creature_name
 		C.flavortext = P.creature_flavor_text
 		C.oocnotes = P.creature_ooc
 		C.profilePicture = P.creature_profilepic
+		C.pfphost = P.creature_pfphost
 		C.verbose_species = "[P.creature_species]"
+		C.special_s = P.special_s
+		C.special_p = P.special_p
+		C.special_e = P.special_e
+		C.special_c = P.special_c
+		C.special_i = P.special_i
+		C.special_a = P.special_a
+		C.special_l = P.special_l
+		//C.fuzzy = P.creature_fuzzy
+		//C.resize = P.creature_body_size
 		//Disable their mob's AI so they don't wander after the player ghosts out of them
 		C.AIStatus = AI_OFF
 		C.wander = FALSE
 		C.can_have_ai = FALSE
 		//Set them as a player-character simplemob so examine and such changes to show their character prefs
 		C.player_character = ckey
-		C.grant_all_languages()
+		//Grant them the english language just in case they don't have it.
+		C.grant_language(/datum/language/common)
 		//Prepare their spawnpoint
 		var/list/avail_spawns = list()
 		for(var/SP in GLOB.landmarks_list)
@@ -668,6 +690,12 @@
 		//Alert deadchat of their arrival
 		var/dsay_message = "<span class='game deadsay'><span class='name'>[C.real_name]</span> ([P.creature_species]) has entered the wasteland at <span class='name'>[spawn_selection]</span>.</span>"
 		deadchat_broadcast(dsay_message, follow_target = C, message_type=DEADCHAT_ARRIVALRATTLE)
+
+		//Insert the quirks, do it now
+		SSquirks.AssignQuirks(C, C.client, TRUE, FALSE)
+		//Then he waddled away, waddle waddle. To the very next day.
+		if(P.waddle_amount > 0)
+			C.AddComponent(/datum/component/waddling, P.waddle_amount, P.up_waddle_time, P.side_waddle_time)
 
 /mob/dead/new_player/proc/PreLateChoices()
 	if(client.holder && check_rights(R_STEALTH, 0))
@@ -757,14 +785,13 @@
 		mind.active = 0					//we wish to transfer the key manually
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 		mind.original_character = H
-
-
 	H.name = real_name
 	client.init_verbs()
 	. = H
 	new_character = .
 	if(transfer_after)
 		transfer_character()
+	H.update_pixel_shifting(TRUE)
 
 /mob/dead/new_player/proc/transfer_character()
 	. = new_character

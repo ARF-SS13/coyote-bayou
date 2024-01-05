@@ -15,6 +15,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
 		/obj/item/stack/sheet/animalhide/gecko = 1,
+		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/bone = 1
 		)
 	butcher_difficulty = 1
@@ -103,12 +104,12 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
 		MOB_HEALTH_LIST(30, 35, 40, 45),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
-		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 0, 2, 4),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
@@ -438,7 +439,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(180, 255, 255, 255, 255, 255), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_LIST(2, 2.2, 2.4, 2.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(30, 35, 40),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -506,7 +507,7 @@
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(120, 80, 80, 250, 100, 100), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2.5, 2.8, 3.0),
+		MOB_SPEED_LIST(2.5, 2.8, 3.0, 3.2),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(100, 110, 120),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -546,7 +547,7 @@
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 5)\
 		),
 		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
-		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_LIST(2.0, 2.2, 2.6, 2.8, 3, 3.2, 3.4, 3.6),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
 		MOB_HEALTH_LIST(2, 3, 5, 7, 30, 35, 37, 38, 40, 45, 48, 49, 49, 49, 49, 2000),
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
@@ -825,7 +826,11 @@
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(
+						/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, 
+						/obj/item/stack/sheet/sinew = 1,
+						/obj/item/stack/sheet/animalhide/molerat = 1,
+						/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -860,7 +865,7 @@
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
 		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
-		MOB_SPEED_CHANGE_PER_TURN_CHANCE(5),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(25),
 		MOB_HEALTH_LIST(15, 20, 25, 26),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
@@ -885,8 +890,7 @@
 	can_ghost_into = TRUE
 	speak_chance = 0
 	turns_per_move = 10
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 2)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 3)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/stack/f13Cash/random/med)
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
@@ -946,8 +950,8 @@
 	turns_per_move = 5
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 4,
-		/obj/item/feather = 3)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 2)
+		/obj/item/feather = 3,
+		/obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"

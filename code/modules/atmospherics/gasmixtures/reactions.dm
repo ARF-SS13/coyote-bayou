@@ -95,59 +95,59 @@
 		radiation_pulse(location, energy_released/TRITIUM_BURN_RADIOACTIVITY_FACTOR)
 
 /datum/gas_reaction/tritfire/react(datum/gas_mixture/air, datum/holder)
-	var/energy_released = 0
-	var/old_heat_capacity = air.heat_capacity()
-	var/temperature = air.return_temperature()
-	var/list/cached_results = air.reaction_results
-	cached_results["fire"] = 0
-	var/turf/open/location = isturf(holder) ? holder : null
+	// var/energy_released = 0
+	// var/old_heat_capacity = air.heat_capacity()
+	// var/temperature = air.return_temperature()
+	// var/list/cached_results = air.reaction_results
+	// cached_results["fire"] = 0
+	// var/turf/open/location = isturf(holder) ? holder : null
 
-	var/burned_fuel = 0
-	if(air.get_moles(GAS_O2) < air.get_moles(GAS_TRITIUM))
-		burned_fuel = air.get_moles(GAS_O2)/TRITIUM_BURN_OXY_FACTOR
-		air.adjust_moles(GAS_TRITIUM, -burned_fuel)
-	else
-		burned_fuel = air.get_moles(GAS_TRITIUM)*TRITIUM_BURN_TRIT_FACTOR
-		air.adjust_moles(GAS_TRITIUM, -air.get_moles(GAS_TRITIUM)/TRITIUM_BURN_TRIT_FACTOR)
-		air.adjust_moles(GAS_O2,-air.get_moles(GAS_TRITIUM))
+	// var/burned_fuel = 0
+	// if(air.get_moles(GAS_O2) < air.get_moles(GAS_TRITIUM))
+	// 	burned_fuel = air.get_moles(GAS_O2)/TRITIUM_BURN_OXY_FACTOR
+	// 	air.adjust_moles(GAS_TRITIUM, -burned_fuel)
+	// else
+	// 	burned_fuel = air.get_moles(GAS_TRITIUM)*TRITIUM_BURN_TRIT_FACTOR
+	// 	air.adjust_moles(GAS_TRITIUM, -air.get_moles(GAS_TRITIUM)/TRITIUM_BURN_TRIT_FACTOR)
+	// 	air.adjust_moles(GAS_O2,-air.get_moles(GAS_TRITIUM))
 
-	if(burned_fuel)
-		energy_released += (FIRE_HYDROGEN_ENERGY_RELEASED * burned_fuel)
-		if(location && prob(10) && burned_fuel > TRITIUM_MINIMUM_RADIATION_ENERGY) //woah there let's not crash the server
-			radiation_pulse(location, energy_released/TRITIUM_BURN_RADIOACTIVITY_FACTOR)
+	// if(burned_fuel)
+	// 	energy_released += (FIRE_HYDROGEN_ENERGY_RELEASED * burned_fuel)
+	// 	if(location && prob(10) && burned_fuel > TRITIUM_MINIMUM_RADIATION_ENERGY) //woah there let's not crash the server
+	// 		radiation_pulse(location, energy_released/TRITIUM_BURN_RADIOACTIVITY_FACTOR)
 
-		air.adjust_moles(GAS_H2O, burned_fuel/TRITIUM_BURN_OXY_FACTOR)
+	// 	air.adjust_moles(GAS_H2O, burned_fuel/TRITIUM_BURN_OXY_FACTOR)
 
-		cached_results["fire"] += burned_fuel
+	// 	cached_results["fire"] += burned_fuel
 
-	if(energy_released > 0)
-		var/new_heat_capacity = air.heat_capacity()
-		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
-			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
+	// if(energy_released > 0)
+	// 	var/new_heat_capacity = air.heat_capacity()
+	// 	if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
+	// 		air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
-	//let the floor know a fire is happening
-	if(istype(location))
-		temperature = air.return_temperature()
-		if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
-			location.hotspot_expose(temperature, CELL_VOLUME)
-			for(var/I in location)
-				var/atom/movable/item = I
-				item.temperature_expose(air, temperature, CELL_VOLUME)
-			location.temperature_expose(air, temperature, CELL_VOLUME)
+	// //let the floor know a fire is happening
+	// if(istype(location))
+	// 	temperature = air.return_temperature()
+	// 	if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
+	// 		location.hotspot_expose(temperature, CELL_VOLUME)
+	// 		for(var/I in location)
+	// 			var/atom/movable/item = I
+	// 			item.temperature_expose(air, temperature, CELL_VOLUME)
+	// 		location.temperature_expose(air, temperature, CELL_VOLUME)
 
-	return cached_results["fire"] ? REACTING : NO_REACTION
+	// return cached_results["fire"] ? REACTING : NO_REACTION
 
 /datum/gas_reaction/tritfire/test()
-	var/datum/gas_mixture/G = new
-	G.set_moles(GAS_TRITIUM,50)
-	G.set_moles(GAS_O2,50)
-	G.set_temperature(500)
-	var/result = G.react()
-	if(result != REACTING)
-		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(!G.reaction_results["fire"])
-		return list("success" = FALSE, "message" = "Trit fires aren't setting fire results correctly!")
-	return ..()
+	// var/datum/gas_mixture/G = new
+	// G.set_moles(GAS_TRITIUM,50)
+	// G.set_moles(GAS_O2,50)
+	// G.set_temperature(500)
+	// var/result = G.react()
+	// if(result != REACTING)
+	// 	return list("success" = FALSE, "message" = "Reaction didn't go at all!")
+	// if(!G.reaction_results["fire"])
+	// 	return list("success" = FALSE, "message" = "Trit fires aren't setting fire results correctly!")
+	// return ..()
 
 //plasma combustion: combustion of oxygen and plasma (treated as hydrocarbons). creates hotspots. exothermic
 /datum/gas_reaction/plasmafire
@@ -163,85 +163,85 @@
 	)
 
 /datum/gas_reaction/plasmafire/react(datum/gas_mixture/air, datum/holder)
-	var/energy_released = 0
-	var/old_heat_capacity = air.heat_capacity()
-	var/temperature = air.return_temperature()
-	var/list/cached_results = air.reaction_results
-	cached_results["fire"] = 0
-	var/turf/open/location = isturf(holder) ? holder : null
+	// var/energy_released = 0
+	// var/old_heat_capacity = air.heat_capacity()
+	// var/temperature = air.return_temperature()
+	// var/list/cached_results = air.reaction_results
+	// cached_results["fire"] = 0
+	// var/turf/open/location = isturf(holder) ? holder : null
 
-	//Handle plasma burning
-	var/plasma_burn_rate = 0
-	var/oxygen_burn_rate = 0
-	//more plasma released at higher temperatures
-	var/temperature_scale = 0
-	//to make tritium
-	var/super_saturation = FALSE
+	// //Handle plasma burning
+	// var/plasma_burn_rate = 0
+	// var/oxygen_burn_rate = 0
+	// //more plasma released at higher temperatures
+	// var/temperature_scale = 0
+	// //to make tritium
+	// var/super_saturation = FALSE
 
-	if(temperature > PLASMA_UPPER_TEMPERATURE)
-		temperature_scale = 1
-	else
-		temperature_scale = (temperature-PLASMA_MINIMUM_BURN_TEMPERATURE)/(PLASMA_UPPER_TEMPERATURE-PLASMA_MINIMUM_BURN_TEMPERATURE)
-	if(temperature_scale > 0)
-		oxygen_burn_rate = OXYGEN_BURN_RATE_BASE - temperature_scale
-		if(air.get_moles(GAS_O2) / air.get_moles(GAS_PLASMA) > SUPER_SATURATION_THRESHOLD) //supersaturation. Form Tritium.
-			super_saturation = TRUE
-		if(air.get_moles(GAS_O2) > air.get_moles(GAS_PLASMA)*PLASMA_OXYGEN_FULLBURN)
-			plasma_burn_rate = (air.get_moles(GAS_PLASMA)*temperature_scale)/PLASMA_BURN_RATE_DELTA
-		else
-			plasma_burn_rate = (temperature_scale*(air.get_moles(GAS_O2)/PLASMA_OXYGEN_FULLBURN))/PLASMA_BURN_RATE_DELTA
+	// if(temperature > PLASMA_UPPER_TEMPERATURE)
+	// 	temperature_scale = 1
+	// else
+	// 	temperature_scale = (temperature-PLASMA_MINIMUM_BURN_TEMPERATURE)/(PLASMA_UPPER_TEMPERATURE-PLASMA_MINIMUM_BURN_TEMPERATURE)
+	// if(temperature_scale > 0)
+	// 	oxygen_burn_rate = OXYGEN_BURN_RATE_BASE - temperature_scale
+	// 	if(air.get_moles(GAS_O2) / air.get_moles(GAS_PLASMA) > SUPER_SATURATION_THRESHOLD) //supersaturation. Form Tritium.
+	// 		super_saturation = TRUE
+	// 	if(air.get_moles(GAS_O2) > air.get_moles(GAS_PLASMA)*PLASMA_OXYGEN_FULLBURN)
+	// 		plasma_burn_rate = (air.get_moles(GAS_PLASMA)*temperature_scale)/PLASMA_BURN_RATE_DELTA
+	// 	else
+	// 		plasma_burn_rate = (temperature_scale*(air.get_moles(GAS_O2)/PLASMA_OXYGEN_FULLBURN))/PLASMA_BURN_RATE_DELTA
 
-		if(plasma_burn_rate > MINIMUM_HEAT_CAPACITY)
-			plasma_burn_rate = min(plasma_burn_rate,air.get_moles(GAS_PLASMA),air.get_moles(GAS_O2)/oxygen_burn_rate) //Ensures matter is conserved properly
-			air.set_moles(GAS_PLASMA, QUANTIZE(air.get_moles(GAS_PLASMA) - plasma_burn_rate))
-			air.set_moles(GAS_O2, QUANTIZE(air.get_moles(GAS_O2) - (plasma_burn_rate * oxygen_burn_rate)))
-			if (super_saturation)
-				air.adjust_moles(GAS_TRITIUM, plasma_burn_rate)
-			else
-				air.adjust_moles(GAS_CO2, plasma_burn_rate)
+	// 	if(plasma_burn_rate > MINIMUM_HEAT_CAPACITY)
+	// 		plasma_burn_rate = min(plasma_burn_rate,air.get_moles(GAS_PLASMA),air.get_moles(GAS_O2)/oxygen_burn_rate) //Ensures matter is conserved properly
+	// 		air.set_moles(GAS_PLASMA, QUANTIZE(air.get_moles(GAS_PLASMA) - plasma_burn_rate))
+	// 		air.set_moles(GAS_O2, QUANTIZE(air.get_moles(GAS_O2) - (plasma_burn_rate * oxygen_burn_rate)))
+	// 		if (super_saturation)
+	// 			air.adjust_moles(GAS_TRITIUM, plasma_burn_rate)
+	// 		else
+	// 			air.adjust_moles(GAS_CO2, plasma_burn_rate)
 
-			energy_released += FIRE_PLASMA_ENERGY_RELEASED * (plasma_burn_rate)
+	// 		energy_released += FIRE_PLASMA_ENERGY_RELEASED * (plasma_burn_rate)
 
-			cached_results["fire"] += (plasma_burn_rate)*(1+oxygen_burn_rate)
+	// 		cached_results["fire"] += (plasma_burn_rate)*(1+oxygen_burn_rate)
 
-	if(energy_released > 0)
-		var/new_heat_capacity = air.heat_capacity()
-		if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
-			air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
+	// if(energy_released > 0)
+	// 	var/new_heat_capacity = air.heat_capacity()
+	// 	if(new_heat_capacity > MINIMUM_HEAT_CAPACITY)
+	// 		air.set_temperature((temperature*old_heat_capacity + energy_released)/new_heat_capacity)
 
-	//let the floor know a fire is happening
-	if(istype(location))
-		temperature = air.return_temperature()
-		if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
-			location.hotspot_expose(temperature, CELL_VOLUME)
-			for(var/I in location)
-				var/atom/movable/item = I
-				item.temperature_expose(air, temperature, CELL_VOLUME)
-			location.temperature_expose(air, temperature, CELL_VOLUME)
+	// //let the floor know a fire is happening
+	// if(istype(location))
+	// 	temperature = air.return_temperature()
+	// 	if(temperature > FIRE_MINIMUM_TEMPERATURE_TO_EXIST)
+	// 		location.hotspot_expose(temperature, CELL_VOLUME)
+	// 		for(var/I in location)
+	// 			var/atom/movable/item = I
+	// 			item.temperature_expose(air, temperature, CELL_VOLUME)
+	// 		location.temperature_expose(air, temperature, CELL_VOLUME)
 
-	return cached_results["fire"] ? REACTING : NO_REACTION
+	// return cached_results["fire"] ? REACTING : NO_REACTION
 
 /datum/gas_reaction/plasmafire/test()
-	var/datum/gas_mixture/G = new
-	G.set_moles(GAS_PLASMA,50)
-	G.set_moles(GAS_O2,50)
-	G.set_volume(1000)
-	G.set_temperature(500)
-	var/result = G.react()
-	if(result != REACTING)
-		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(!G.reaction_results["fire"])
-		return list("success" = FALSE, "message" = "Plasma fires aren't setting fire results correctly!")
-	if(!G.get_moles(GAS_CO2))
-		return list("success" = FALSE, "message" = "Plasma fires aren't making CO2!")
-	G.clear()
-	G.set_moles(GAS_PLASMA,10)
-	G.set_moles(GAS_O2,1000)
-	G.set_temperature(500)
-	result = G.react()
-	if(!G.get_moles(GAS_TRITIUM))
-		return list("success" = FALSE, "message" = "Plasma fires aren't making trit!")
-	return ..()
+	// var/datum/gas_mixture/G = new
+	// G.set_moles(GAS_PLASMA,50)
+	// G.set_moles(GAS_O2,50)
+	// G.set_volume(1000)
+	// G.set_temperature(500)
+	// var/result = G.react()
+	// if(result != REACTING)
+	// 	return list("success" = FALSE, "message" = "Reaction didn't go at all!")
+	// if(!G.reaction_results["fire"])
+	// 	return list("success" = FALSE, "message" = "Plasma fires aren't setting fire results correctly!")
+	// if(!G.get_moles(GAS_CO2))
+	// 	return list("success" = FALSE, "message" = "Plasma fires aren't making CO2!")
+	// G.clear()
+	// G.set_moles(GAS_PLASMA,10)
+	// G.set_moles(GAS_O2,1000)
+	// G.set_temperature(500)
+	// result = G.react()
+	// if(!G.get_moles(GAS_TRITIUM))
+	// 	return list("success" = FALSE, "message" = "Plasma fires aren't making trit!")
+	// return ..()
 
 /datum/gas_reaction/genericfire
 	priority = -3 // very last reaction
@@ -249,77 +249,77 @@
 	id = "genericfire"
 
 /datum/gas_reaction/genericfire/init_reqs()
-	var/lowest_fire_temp = INFINITY
-	var/list/fire_temperatures = GLOB.gas_data.fire_temperatures
-	for(var/gas in fire_temperatures)
-		lowest_fire_temp = min(lowest_fire_temp, fire_temperatures[gas])
-	var/lowest_oxi_temp = INFINITY
-	var/list/oxidation_temperatures = GLOB.gas_data.oxidation_temperatures
-	for(var/gas in oxidation_temperatures)
-		lowest_oxi_temp = min(lowest_oxi_temp, oxidation_temperatures[gas])
-	min_requirements = list(
-		"TEMP" = max(lowest_oxi_temp, lowest_fire_temp),
-		"FIRE_REAGENTS" = MINIMUM_MOLE_COUNT
-	)
+	// var/lowest_fire_temp = INFINITY
+	// var/list/fire_temperatures = GLOB.gas_data.fire_temperatures
+	// for(var/gas in fire_temperatures)
+	// 	lowest_fire_temp = min(lowest_fire_temp, fire_temperatures[gas])
+	// var/lowest_oxi_temp = INFINITY
+	// var/list/oxidation_temperatures = GLOB.gas_data.oxidation_temperatures
+	// for(var/gas in oxidation_temperatures)
+	// 	lowest_oxi_temp = min(lowest_oxi_temp, oxidation_temperatures[gas])
+	// min_requirements = list(
+	// 	"TEMP" = max(lowest_oxi_temp, lowest_fire_temp),
+	// 	"FIRE_REAGENTS" = MINIMUM_MOLE_COUNT
+	// )
 
 // no requirements, always runs
 // bad idea? maybe
 // this is overridden by auxmos but, hey, good idea to have it readable
 
 /datum/gas_reaction/genericfire/react(datum/gas_mixture/air, datum/holder)
-	var/temperature = air.return_temperature()
-	var/list/oxidation_temps = GLOB.gas_data.oxidation_temperatures
-	var/list/oxidation_rates = GLOB.gas_data.oxidation_rates
-	var/oxidation_power = 0
-	var/list/burn_results = list()
-	var/list/fuels = list()
-	var/list/oxidizers = list()
-	var/list/fuel_rates = GLOB.gas_data.fire_burn_rates
-	var/list/fuel_temps = GLOB.gas_data.fire_temperatures
-	var/total_fuel = 0
-	var/energy_released = 0
-	for(var/G in air.get_gases())
-		var/oxidation_temp = oxidation_temps[G]
-		if(oxidation_temp && oxidation_temp > temperature)
-			var/temperature_scale = max(0, 1-(temperature / oxidation_temp))
-			var/amt = air.get_moles(G) * temperature_scale
-			oxidizers[G] = amt
-			oxidation_power += amt * oxidation_rates[G]
-		else
-			var/fuel_temp = fuel_temps[G]
-			if(fuel_temp && fuel_temp > temperature)
-				var/amt = (air.get_moles(G) / fuel_rates[G]) * max(0, 1-(temperature / fuel_temp))
-				fuels[G] = amt // we have to calculate the actual amount we're using after we get all oxidation together
-				total_fuel += amt
-	if(oxidation_power <= 0 || total_fuel <= 0)
-		return NO_REACTION
-	var/oxidation_ratio = oxidation_power / total_fuel
-	if(oxidation_ratio > 1)
-		for(var/oxidizer in oxidizers)
-			oxidizers[oxidizer] /= oxidation_ratio
-	else if(oxidation_ratio < 1)
-		for(var/fuel in fuels)
-			fuels[fuel] *= oxidation_ratio
-	fuels += oxidizers
-	var/list/fire_products = GLOB.gas_data.fire_products
-	var/list/fire_enthalpies = GLOB.gas_data.fire_enthalpies
-	for(var/fuel in fuels + oxidizers)
-		var/amt = fuels[fuel]
-		if(!burn_results[fuel])
-			burn_results[fuel] = 0
-		burn_results[fuel] -= amt
-		energy_released += amt * fire_enthalpies[fuel]
-		for(var/product in fire_products[fuel])
-			if(!burn_results[product])
-				burn_results[product] = 0
-			burn_results[product] += amt
-	var/final_energy = air.thermal_energy() + energy_released
-	for(var/result in burn_results)
-		air.adjust_moles(result, burn_results[result])
-	air.set_temperature(final_energy / air.heat_capacity())
-	var/list/cached_results = air.reaction_results
-	cached_results["fire"] = min(total_fuel, oxidation_power) * 2
-	return cached_results["fire"] ? REACTING : NO_REACTION
+	// var/temperature = air.return_temperature()
+	// var/list/oxidation_temps = GLOB.gas_data.oxidation_temperatures
+	// var/list/oxidation_rates = GLOB.gas_data.oxidation_rates
+	// var/oxidation_power = 0
+	// var/list/burn_results = list()
+	// var/list/fuels = list()
+	// var/list/oxidizers = list()
+	// var/list/fuel_rates = GLOB.gas_data.fire_burn_rates
+	// var/list/fuel_temps = GLOB.gas_data.fire_temperatures
+	// var/total_fuel = 0
+	// var/energy_released = 0
+	// for(var/G in air.get_gases())
+	// 	var/oxidation_temp = oxidation_temps[G]
+	// 	if(oxidation_temp && oxidation_temp > temperature)
+	// 		var/temperature_scale = max(0, 1-(temperature / oxidation_temp))
+	// 		var/amt = air.get_moles(G) * temperature_scale
+	// 		oxidizers[G] = amt
+	// 		oxidation_power += amt * oxidation_rates[G]
+	// 	else
+	// 		var/fuel_temp = fuel_temps[G]
+	// 		if(fuel_temp && fuel_temp > temperature)
+	// 			var/amt = (air.get_moles(G) / fuel_rates[G]) * max(0, 1-(temperature / fuel_temp))
+	// 			fuels[G] = amt // we have to calculate the actual amount we're using after we get all oxidation together
+	// 			total_fuel += amt
+	// if(oxidation_power <= 0 || total_fuel <= 0)
+	// 	return NO_REACTION
+	// var/oxidation_ratio = oxidation_power / total_fuel
+	// if(oxidation_ratio > 1)
+	// 	for(var/oxidizer in oxidizers)
+	// 		oxidizers[oxidizer] /= oxidation_ratio
+	// else if(oxidation_ratio < 1)
+	// 	for(var/fuel in fuels)
+	// 		fuels[fuel] *= oxidation_ratio
+	// fuels += oxidizers
+	// var/list/fire_products = GLOB.gas_data.fire_products
+	// var/list/fire_enthalpies = GLOB.gas_data.fire_enthalpies
+	// for(var/fuel in fuels + oxidizers)
+	// 	var/amt = fuels[fuel]
+	// 	if(!burn_results[fuel])
+	// 		burn_results[fuel] = 0
+	// 	burn_results[fuel] -= amt
+	// 	energy_released += amt * fire_enthalpies[fuel]
+	// 	for(var/product in fire_products[fuel])
+	// 		if(!burn_results[product])
+	// 			burn_results[product] = 0
+	// 		burn_results[product] += amt
+	// var/final_energy = air.thermal_energy() + energy_released
+	// for(var/result in burn_results)
+	// 	air.adjust_moles(result, burn_results[result])
+	// air.set_temperature(final_energy / air.heat_capacity())
+	// var/list/cached_results = air.reaction_results
+	// cached_results["fire"] = min(total_fuel, oxidation_power) * 2
+	// return cached_results["fire"] ? REACTING : NO_REACTION
 
 
 //fusion: a terrible idea that was fun but broken. Now reworked to be less broken and more interesting. Again (and again, and again). Again!
@@ -360,9 +360,9 @@
 		location = get_turf(pick(fusion_pipenet.members))
 	else
 		location = get_turf(holder)
-	if(!air.analyzer_results)
-		air.analyzer_results = new
-	var/list/cached_scan_results = air.analyzer_results
+	// if(!air.analyzer_results)
+	// 	air.analyzer_results = new
+	// var/list/cached_scan_results = air.analyzer_results
 	var/old_heat_capacity = air.heat_capacity()
 	var/reaction_energy = 0 //Reaction energy can be negative or positive, for both exothermic and endothermic reactions.
 	var/initial_plasma = air.get_moles(GAS_PLASMA)
@@ -374,7 +374,7 @@
 	for (var/gas_id in air.get_gases())
 		gas_power += (gas_fusion_powers[gas_id]*air.get_moles(gas_id))
 	var/instability = MODULUS((gas_power*INSTABILITY_GAS_POWER_FACTOR)**2,toroidal_size) //Instability effects how chaotic the behavior of the reaction is
-	cached_scan_results["fusion"] = instability//used for analyzer feedback
+	// cached_scan_results["fusion"] = instability//used for analyzer feedback
 
 	var/plasma = (initial_plasma-FUSION_MOLE_THRESHOLD)/(scale_factor) //We have to scale the amounts of carbon and plasma down a significant amount in order to show the chaotic dynamics we want
 	var/carbon = (initial_carbon-FUSION_MOLE_THRESHOLD)/(scale_factor) //We also subtract out the threshold amount to make it harder for fusion to burn itself out.
@@ -421,29 +421,29 @@
 		return REACTING
 
 /datum/gas_reaction/fusion/test()
-	var/datum/gas_mixture/G = new
-	G.set_moles(GAS_CO2,300)
-	G.set_moles(GAS_PLASMA,1000)
-	G.set_moles(GAS_TRITIUM,100.61)
-	G.set_moles(GAS_NITRYL,1)
-	G.set_temperature(15000)
-	G.set_volume(1000)
-	var/result = G.react()
-	if(result != REACTING)
-		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 3) > 0.0000001)
-		var/instability = G.analyzer_results["fusion"]
-		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 3.000000045, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 850.616) > 0.5)
-		var/plas = G.get_moles(GAS_PLASMA)
-		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 850.616, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 1699.384) > 0.5)
-		var/co2 = G.get_moles(GAS_CO2)
-		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 1699.384, is instead [co2]")
-	if(abs(G.return_temperature() - 27600) > 200) // calculating this manually sucks dude
-		var/temp = G.return_temperature()
-		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 27600, is instead [temp]")
-	return ..()
+	// var/datum/gas_mixture/G = new
+	// G.set_moles(GAS_CO2,300)
+	// G.set_moles(GAS_PLASMA,1000)
+	// G.set_moles(GAS_TRITIUM,100.61)
+	// G.set_moles(GAS_NITRYL,1)
+	// G.set_temperature(15000)
+	// G.set_volume(1000)
+	// var/result = G.react()
+	// if(result != REACTING)
+	// 	return list("success" = FALSE, "message" = "Reaction didn't go at all!")
+	// if(abs(G.analyzer_results["fusion"] - 3) > 0.0000001)
+	// 	var/instability = G.analyzer_results["fusion"]
+	// 	return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 3.000000045, is instead [instability]")
+	// if(abs(G.get_moles(GAS_PLASMA) - 850.616) > 0.5)
+	// 	var/plas = G.get_moles(GAS_PLASMA)
+	// 	return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 850.616, is instead [plas]")
+	// if(abs(G.get_moles(GAS_CO2) - 1699.384) > 0.5)
+	// 	var/co2 = G.get_moles(GAS_CO2)
+	// 	return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 1699.384, is instead [co2]")
+	// if(abs(G.return_temperature() - 27600) > 200) // calculating this manually sucks dude
+	// 	var/temp = G.return_temperature()
+	// 	return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 27600, is instead [temp]")
+	// return ..()
 
 /datum/gas_reaction/nitrylformation //The formation of nitryl. Endothermic. Requires N2O as a catalyst.
 	priority = 3

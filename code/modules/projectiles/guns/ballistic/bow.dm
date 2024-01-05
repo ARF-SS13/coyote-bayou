@@ -1,6 +1,7 @@
 /obj/item/gun/ballistic/bow
 	name = "base bow"
 	desc = "base type of bow used to define features for multiple-loading bows"
+	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -192,26 +193,34 @@
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 
-//the main stats we have to work with making each bow different, is size, (normal versus belt, versus back only), damage multiplier, and fire rate
-//NOT ALL BOWS SHOULD BE CRAFTABLE. there's no point in having more types of bows and a variety in their stats and power levels if you just rush to craft your max tier bow and ignore all progression
-
-//Tier 1 bow, starter bow
-//shortbow. fits in bags, but otherwise minimum stats.
+//////////////////////////////
+//	Coyote Boyou Additions	//
+//////////////////////////////
+/obj/item/gun/ballistic/bow
+	force = 15
+	force_wielded = 35 
+	damtype = STAMINA
+//	When you think about it, aren't bows just extra-long wooden batons?
+//	So let's have attacking people with bows deal stamina damage.
+//////////////
+//	Tier 1	//
+//////////////
+// Shortbow - Loadout bow, fits in bags.
 /obj/item/gun/ballistic/bow/shortbow
-	name = "shortbow"
-	desc = "A lightweight bow, rather lacking in firepower. Alt click to attach to a quiver on your belt slot."
-	icon_state = "bow"
+	name = "Shortbow"
+	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "shortbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 	init_firemodes = list(
-			/datum/firemode/semi_auto/slower
+			/datum/firemode/semi_auto/slow
 	)
 
 /obj/item/gun/ballistic/bow/shortbow/yumi
 	name = "yumi bow"
-	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this? Alt click to attach to a quiver on your belt slot."
-	//icon_state = "yumi"		//temporary fix
+	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"	//temporary fix
 	icon_state = "tribalbow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -220,36 +229,40 @@
 			/datum/firemode/semi_auto/slower
 	)	
 
-	//weak pocket xbow meant to shoot special arrows rather than pure damage//
-/obj/item/gun/ballistic/bow/handxbow
-	name = "hand crossbow"
-	desc = "A compact, pocket sized crossbow, what it lacks in power makes up in concealment."
-	icon_state = "crossbow"
-	item_state = "crossbow"
-	trigger_guard = TRIGGER_GUARD_NONE
-	weapon_class = WEAPON_CLASS_SMALL
-	damage_multiplier = GUN_LESS_DAMAGE_T2
-	init_firemodes = list(
-			/datum/firemode/semi_auto/slow
-	)
 //dunno if you want to include more information for each bow, but this is the basics
 
-//tier 2 bows. craftable bows
-//recurve bow. +fire rate, but bulky. fits on belts
-/obj/item/gun/ballistic/bow/recurvebow
-	name = "recurve bow"
-	desc = "A light bow designed for ease of draw. Alt click to attach to a quiver on your belt slot."
-	icon_state = "tribalbow"
+//////////////
+//	Tier 2	//
+//////////////
+//	Modern Recurve Bow - The sort of thing you'd get at a sports shop, made with modern materials. Not craftable (Pre-War, duh) loot-drop.
+//	Light Crossbow - Currently one player's exclusive loadout item. Needs removing and re-implementing properly!
+
+/obj/item/gun/ballistic/bow/modern
+	name = "Modern Recurve Bow"
+	desc = "A recurve bow manufactured with modern tools and materials."
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "modern"
 	item_state = "bow"
-	weapon_class = WEAPON_CLASS_CARBINE
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_firemodes = list(
-			/datum/firemode/semi_auto/slow
+			/datum/firemode/semi_auto
 	)
 
-//light crossbow. +damage, bulky but fits on belt
+/obj/item/gun/ballistic/bow/longbow
+	name = "Longbow"
+	desc = "Large, bulky and powerful. "
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "longbow"
+	item_state = "bow"
+	weapon_class = WEAPON_CLASS_RIFLE
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	init_firemodes = list(
+			/datum/firemode/semi_auto/slower
+	)
+
 /obj/item/gun/ballistic/bow/lightxbow
-	name = "light crossbow"
+	name = "Light Crossbow"
 	desc = "A compact crossbow, with decent firepower."
 	icon_state = "xbow"
 	item_state = "xbow"
@@ -259,46 +272,30 @@
 	init_firemodes = list(
 			/datum/firemode/semi_auto/slower
 	)
-	can_scope = TRUE //?
 
-//tier 3 bows. looted only? mid tier loot pools, but marked as common. bow gear progression is lacking, especially when you can just make the highest tier weapon from the communal materal pile
-//composite bow. fire rate++ but bulky and back slot only. max potential drawn out with bow trained quirk. will see if it's too wimpy
-/obj/item/gun/ballistic/bow/compositebow
-	name = "Composite bow"
-	desc = "A finely crafted bow with an excellent draw. Alt click to attach to a quiver on your belt slot."
-	icon_state = "tribalbow"
+//////////////
+//	Tier 3	//
+//////////////
+// Composite Bow - Best bow that can fit into a bag.
+
+/obj/item/gun/ballistic/bow/composite
+	name = "Composite Bow"
+	desc = "An amalgamation of different materials - wood, animal horn and sinew, allows for more tension to be stored in a smaller bow. Can be stored within bags."
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "composite"
 	item_state = "bow"
-	weapon_class = WEAPON_CLASS_RIFLE
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	weapon_class = WEAPON_CLASS_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	init_firemodes = list(
-			/datum/firemode/semi_auto //fast bow. skilled archers will make the most use out of this. mebbe needs buff iuno
+			/datum/firemode/semi_auto
 	)
 
-//longbow, damage+, speed+, back slot only
-/obj/item/gun/ballistic/bow/longbow
-	name = "longbow"
-	desc = "A tall, elegant bow, with a good balance of firepower and draw speed. Alt click to attach to a quiver on your belt slot."
-	icon_state = "ashenbow"
-	item_state = "bow"
-	weapon_class = WEAPON_CLASS_RIFLE
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
-	init_firemodes = list(
-			/datum/firemode/semi_auto/slow //a bit faster
-	)
-
-//crossbow. damage++. the brush gun of bows.
-/obj/item/gun/ballistic/bow/crossbow
-	name = "crossbow"
-	desc = "A large crossbow with a heavy draw, for maximum killing power."
-	icon_state = "crossbow"
-	item_state = "crossbow"
-	trigger_guard = TRIGGER_GUARD_NONE
-	weapon_class = WEAPON_CLASS_RIFLE
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5 //60 damage, brush gun power level
-	init_firemodes = list(
-			/datum/firemode/semi_auto/slower
-	)
-	can_scope = TRUE //?
+/obj/item/gun/ballistic/bow/composite/masterwork
+	name = "Masterwork Composite Bow"
+	desc = "A work of art produced by a seasoned bowyer, addorned with gold leaf."
+	icon_state = "composite_gold"
+	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	obj_flags = UNIQUE_RENAME
 
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
@@ -308,100 +305,7 @@
 	icon_state = "pipebow"
 	item_state = "bow"
 	weapon_class = WEAPON_CLASS_RIFLE
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	init_firemodes = list(
 			/datum/firemode/semi_auto
 	)
-
-// Special bows?
-/* maybe at some point
-/obj/item/gun/ballistic/bow/gold
-	name = "golden bow"
-	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
-	icon_state = "goldbow"
-	item_state = "goldbow"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = INV_SLOTBIT_BACK
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_firemodes = list(
-			/datum/firemode/semi_auto/slow
-	)
-*/
-/* old bows, stinky, like fenny
-/obj/item/gun/ballistic/bow/xbow
-	name = "magazine-fed crossbow"
-	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
-	icon_state = "xbow"
-	item_state = "xbow"
-	trigger_guard = TRIGGER_GUARD_NONE
-	zoom_factor = 1
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
-	extra_speed = 400
-
-
-//Regular Bow
-/obj/item/gun/ballistic/bow/tribal
-	name = "short bow"
-	desc = "A simple wooden bow with small pieces of turquiose, cheaply made and small enough to fit most bags, better then nothing I guess."
-	icon_state = "tribalbow"
-	item_state = "tribalbow"
-	w_class = WEIGHT_CLASS_NORMAL
-	force = 10
-
-
-//Bone Bow
-/obj/item/gun/ballistic/bow/claw
-	name = "deathclaw bow"
-	desc = "A bone bow, made of pieces of sinew and deathclaw skin for extra structure, it is a fierce weapon that all expert hunters and bowmen carry, allowing for ease of firing many arrows."
-	icon_state = "ashenbow"
-	item_state = "ashenbow"
-	force = 20
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/claw
-	fire_delay = 2
-	extra_speed = 100
-
-//Sturdy Bow
-/obj/item/gun/ballistic/bow/sturdy
-	name = "sturdy bow"
-	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra stopping power in the shot speed of the arrows."
-	icon_state = "bow"
-	force = 15
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/sturdy
-	extra_speed = 300
-
-//Silver Bow
-/obj/item/gun/ballistic/bow/silver
-	name = "silver bow"
-	desc = "A firm sturdy silver bow created by the earth, its durability and rather strong material allow it to be an excellent option for those looking for the ability to fire more arrows than normally."
-	icon_state = "pipebow"
-	item_state = "pipebow"
-	force = 15
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/silver
-	fire_delay = 1.5
-
-//Golden Bow
-/obj/item/gun/ballistic/bow/gold
-	name = "golden bow"
-	desc = "A firm sturdy golden bow created by the earth, its smooth metal and strong grip allows for swift firing rates."
-	icon_state = "goldbow"
-	item_state = "goldbow"
-	force = 10
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/gold
-	fire_delay = 1.5
-	extra_speed = 100
-
-//Crossbow
-/obj/item/gun/ballistic/bow/crossbow
-	name = "crossbow"
-	desc = "A crossbow."
-	icon_state = "crossbow"
-	trigger_guard = TRIGGER_GUARD_NONE
-	force = 10
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross
-	fire_delay = 1.5
-	extra_speed = 400
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
-*/

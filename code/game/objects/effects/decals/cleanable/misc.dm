@@ -67,6 +67,7 @@
 		icon_state = ""
 		queue_smooth(src)
 	queue_smooth_neighbors(src)
+	CollapseIntoOne()
 
 /obj/effect/decal/cleanable/dirt/Destroy()
 	queue_smooth_neighbors(src)
@@ -76,6 +77,18 @@
 	name = "flour"
 	desc = "It's still good. Four second rule!"
 	icon_state = "flour"
+
+///Finds the first other dirt on this turf and adds itself as an overlay to that one instead of keeping itself around for no reason.
+/obj/effect/decal/cleanable/dirt/proc/CollapseIntoOne()
+	for(var/dirt in loc.contents)
+		if(!istype(dirt, type))
+			continue
+		if(dirt == src)
+			continue
+		var/obj/effect/decal/cleanable/D = dirt
+		var/image/I = icon(icon, icon_state, dir)
+		D.add_overlay(I)
+		qdel(src)
 
 /obj/effect/decal/cleanable/dirt/dust
 	name = "dust"

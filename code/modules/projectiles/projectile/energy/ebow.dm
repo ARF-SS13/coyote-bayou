@@ -8,8 +8,8 @@
 	nodamage = 0
 	eyeblur = 10
 	slur = 5
-//	knockdown = 160
 	stamina = 60
+//	knockdown = 160
 //	knockdown_stamoverride = 0
 
 /obj/item/projectile/energy/bolt/halloween
@@ -32,3 +32,16 @@
 	name = "rock"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
+
+/obj/item/projectile/energy/bolt/smooch // fucking cursed
+	name = "smooch"
+	icon_state = "love"
+	damage = 0
+	damage_list = null
+	damage_type = OXY
+	nodamage = 1
+	eyeblur = 0
+	slur = 0
+	stamina = 0
+	hitsound = 'sound/effects/kiss.ogg'
+	hitsound_wall = 'sound/effects/kiss.ogg'

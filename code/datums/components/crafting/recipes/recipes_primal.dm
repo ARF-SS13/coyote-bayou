@@ -432,18 +432,6 @@
 				/obj/item/stack/rods = 2)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
-
-/datum/crafting_recipe/tribalwar/arrowblunt
-	name = "Blunt Arrow (Nonlethal)"
-	result = /obj/item/ammo_casing/caseless/arrow/blunt
-	time = 10
-	reqs = list(
-		/obj/item/stack/sheet/mineral/wood = 1,
-		/obj/item/stack/sheet/cloth = 1
-		)
-	category = CAT_PRIMAL
-	tools = list(TOOL_WORKBENCH)
-	always_available = TRUE
  */
 //MELEE
 

@@ -173,13 +173,14 @@
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
 			return
-
 		if(istype(I, /obj/item/wrench) && deconstruction_ready)
 			to_chat(user, span_notice("You start deconstructing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 				deconstruct(TRUE, 1)
 			return
+	if(SEND_SIGNAL(I, COMSIG_TABLE_CLICKED_WITH_ITEM, src, user, params) & TABLE_NO_PLACE)
+		return
 
 	if(istype(I, /obj/item/storage/bag/tray))
 		var/obj/item/storage/bag/tray/T = I
@@ -192,16 +193,6 @@
 			return
 		// If the tray IS empty, continue on (tray will be placed on the table like other items)
 
-	if(istype(I, /obj/item/circuitboard/machine/autolathe/ammo/improvised))
-		var/obj/item/circuitboard/machine/autolathe/ammo/improvised/ammothing = I
-		if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE))
-			to_chat(user, span_alert("You were interrupted!"))
-			return
-		var/obj/machinery/autolathe/ammo/improvised/thebench = new(get_turf(src))
-		thebench.tableize()
-		qdel(ammothing)
-		to_chat(user, span_notice("You set up a reloading bench on [src]!"))
-		return
 
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location()))
@@ -247,6 +238,7 @@
 			new frame(T)
 		else
 			new framestack(T, framestackamount)
+	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled, wrench_disassembly)
 	qdel(src)
 
 /obj/structure/table/greyscale
@@ -360,6 +352,7 @@
 		if(istype(AM, /obj/item/shard))
 			AM.throw_impact(L)
 	L.DefaultCombatKnockdown(100)
+	SEND_SIGNAL(src, COMSIG_OBJ_BREAK)
 	qdel(src)
 
 /obj/structure/table/glass/deconstruct(disassembled = TRUE, wrench_disassembly = 0)
@@ -449,6 +442,10 @@
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
 		..()
+
+/obj/structure/table/wood/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
 
 /obj/structure/table/wood/junk
 	name = "makeshift bar table"

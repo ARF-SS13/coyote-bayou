@@ -18,8 +18,6 @@
 	var/bare_wound_bonus = 0
 
 	var/datum/armor/armor
-	/// Additional armor modifiers that are applied to the actual armor value
-	var/armor_tokens = list()
 	var/obj_integrity	//defaults to max_integrity
 	var/max_integrity = 500
 	var/super_advanced_technology = FALSE
@@ -42,6 +40,9 @@
 	//Was this item rotated? if so, how much? (only working with Edit Vars verb for now)
 	var/is_tilted
 
+	/// Was this item 
+	var/was_looted = FALSE
+
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("anchored")
@@ -56,11 +57,12 @@
 	setup_armor_values()
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
+	/*
 	else if (!armor)
 		armor = getArmor()
 	else if (!istype(armor, /datum/armor))
 		stack_trace("Invalid type [armor.type] found in .armor during /obj Initialize()")
-
+	*/
 	if(obj_integrity == null)
 		obj_integrity = max_integrity
 
@@ -79,6 +81,7 @@
 		var/turf/T = loc
 		T.add_blueprints_preround(src)
 
+	add_debris_element()
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
@@ -352,15 +355,3 @@
 		return
 	if(!islist(armor))
 		return
-	if(length(armor_tokens) < 1)
-		return // all done!
-	
-	for(var/list/token in armor_tokens)
-		for(var/modifier in token)
-			switch(GLOB.armor_token_operation_legend[modifier])
-				if("MULT")
-					armor[modifier] = round(armor[modifier] * token[modifier], 1)
-				if("ADD")
-					armor[modifier] = max(armor[modifier] + token[modifier], 0)
-				else
-					continue

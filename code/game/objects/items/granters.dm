@@ -3,6 +3,7 @@
 /obj/item/book/granter
 	due_date = 0 // Game time in deciseconds
 	unique = 1   // 0  Normal book, 1  Should not be treated as normal book, unable to be copied, unable to be modified
+	w_class = WEIGHT_CLASS_SMALL 
 	var/list/remarks = list() //things to read about while learning.
 	var/pages_to_mastery = 3 //Essentially controls how long a mob must keep the book in his hand to actually successfully learn
 	var/reading = FALSE //sanity
@@ -360,7 +361,7 @@
 		var/obj/item/clothing/magichead = new /obj/item/clothing/mask/horsehead/cursed(user.drop_location())
 		if(!user.dropItemToGround(user.wear_mask))
 			qdel(user.wear_mask)
-		user.equip_to_slot_if_possible(magichead, SLOT_WEAR_MASK, TRUE, TRUE)
+		user.equip_to_slot_if_possible(magichead, SLOT_MASK, TRUE, TRUE)
 		qdel(src)
 	else
 		to_chat(user,span_notice("I say thee neigh")) //It still lives here
@@ -816,7 +817,7 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/tribeam_stun)
 
 /obj/item/book/granter/crafting_recipe/blueprint/am_rifle
-	name = "anti-materiel rifle blueprint"
+	name = "anti-material rifle blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/am_rifle)
 
@@ -1182,10 +1183,6 @@
 		return FALSE
 
 	return ..()
-
-/obj/item/book/granter/trait/selection/tribal/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/book/granter/crafting_recipe/tribal
 	name = "Tribal traditions"

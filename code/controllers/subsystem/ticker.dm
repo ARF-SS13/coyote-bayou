@@ -41,7 +41,9 @@ SUBSYSTEM_DEF(ticker)
 	var/triai = 0							//Global holder for Triumvirate
 	var/tipped = 0							//Did we broadcast the tip of the day yet?
 	var/selected_tip						// What will be the tip of the day?
-
+	///Tips will send anywhere from -50% and +50% of this time.
+	var/midround_tip_interval = 30 MINUTES //~2 tips every hour
+	var/list/tips_list = list()
 	var/timeLeft						//pregame timer
 	var/start_at
 
@@ -133,6 +135,8 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
+	if(!LAZYLEN(tips_list))
+		tips_list = world.file2list("strings/tips.txt")
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -191,10 +195,6 @@ SUBSYSTEM_DEF(ticker)
 				return
 			timeLeft -= wait
 
-			if(timeLeft <= 300 && !tipped)
-				send_tip_of_the_round()
-				tipped = TRUE
-
 			if(timeLeft <= 0)
 				if(SSvote.mode && (SSvote.mode == "roundtype" || SSvote.mode == "dynamic" || SSvote.mode == "mode tiers"))
 					SSvote.result()
@@ -202,6 +202,7 @@ SUBSYSTEM_DEF(ticker)
 					for(var/client/C in SSvote.voting)
 						C << browse(null, "window=vote;can_close=0")
 					SSvote.reset()
+				addtimer(CALLBACK(src, .proc/send_midround_tip), 1 MINUTES)//Send out first tip
 				current_state = GAME_STATE_SETTING_UP
 				Master.SetRunLevel(RUNLEVEL_SETUP)
 				if(start_immediately)
@@ -221,7 +222,7 @@ SUBSYSTEM_DEF(ticker)
 			check_maprotate()
 			scripture_states = scripture_unlock_alert(scripture_states)
 			//SSshuttle.autoEnd()
-
+			
 			if(!roundend_check_paused && mode.check_finished(force_ending) || force_ending)
 				current_state = GAME_STATE_FINISHED
 				toggle_ooc(TRUE) // Turn it on
@@ -427,17 +428,37 @@ SUBSYSTEM_DEF(ticker)
 		var/mob/living/L = I
 		L.mob_transforming = FALSE
 
+/// Use send_midround_tip instead :)
 /datum/controller/subsystem/ticker/proc/send_tip_of_the_round()
+	if(tipped)
+		return
+	tipped = TRUE
 	var/m
 	if(selected_tip)
 		m = selected_tip
 	else
-		var/list/randomtips = world.file2list("strings/tips.txt")
-		if(randomtips.len)
-			m = pick(randomtips)
-
+		if(!LAZYLEN(tips_list))
+			tips_list = world.file2list("strings/tips.txt")
+		if(tips_list.len)
+			m = pick(tips_list)
 	if(m)
 		to_chat(world, "<span class='purple'><b>Tip of the round: </b>[html_encode(m)]</span>")
+
+///Sends a game tip to everyone and then queues up another tip.
+/datum/controller/subsystem/ticker/proc/send_midround_tip(override)
+	if(!LAZYLEN(tips_list))
+		tips_list = world.file2list("strings/tips.txt")
+	var/m
+	if(isnull(override) && IsRoundInProgress())//Only send the tip if the round has started. Shouldn't ever be a problem unless something broke.
+		if(LAZYLEN(tips_list))
+			m = pick(tips_list)
+	else if(override)
+		m = override
+	if(m)
+		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
+	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
+	if(isnull(override))
+		addtimer(CALLBACK(src, .proc/send_midround_tip), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)

@@ -507,9 +507,9 @@
 		// if(!A.CanPass(user, get_dir(AboveT, targetDest)))
 		// 	bad = TRUE
 		// 	break
-		if(istype(A, /obj/structure)) // stop climbing into railings and stuff
-			bad = TRUE
-			break
+		// if(istype(A, /obj/structure) && A.density) // stop climbing into railings and stuff
+		// 	bad = TRUE
+		// 	break
 	if(bad)
 		to_chat(user, span_warning("There's [thingelephant] in the way! You can't go there!"))
 		return

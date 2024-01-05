@@ -551,12 +551,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "scloak"
 	item_state = "scloak"
 
-/obj/item/clothing/suit/armor/ghostechoe
-	name = "tattered peace coat"
-	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
-	icon_state = "ghostechoe"
-	item_state = "ghostechoe"
-
 /obj/item/clothing/suit/armor/medium/combat/vetranger
 	name = "veteran ranger combat armor"
 	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
@@ -663,6 +657,13 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	desc = "An old military grade pre war combat armor, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor"
 	item_state = "brotherhood_armor"
+
+/obj/item/clothing/suit/armor/medium/combat/bos/cylphie
+	name = "Singed Brotherhood Armor"
+	desc = "A suit of scrap brotherhood combat armor with burn marks across every piece. There are broken holotags welded across the numerous plates, and a scratched to shit dogtag with the name 'Blue Blaze' cut into it."
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "cylphieexilearmor"
+	item_state = "cylphieexilearmor"
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/bos
 	name = "reinforced initiate armor"

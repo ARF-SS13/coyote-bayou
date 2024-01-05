@@ -71,11 +71,15 @@ GLOBAL_LIST_INIT(dildo_shapes, list(
 		"Plain"		= "plain",
 		"Flared"	= "flared"
 		))
+
 GLOBAL_LIST_INIT(dildo_sizes, list(
 		"Small"		= 1,
 		"Medium"	= 2,
 		"Big"		= 3
 		))
+
+GLOBAL_LIST_INIT(dildo_size_names, list("small", "medium", "big", "huge", "gigantic"))
+
 GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 		"Cyan"		= "#00f9ff",//cyan
 		"Green"		= "#49ff00",//green
@@ -104,28 +108,30 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 		if(!src.holder)	return
 		message_admins("[key_name_admin(usr)] manually reloaded mentors")
 
-/mob/living/carbon/proc/has_penis()
+
+/mob/living/proc/has_penis()
 	return getorganslot(ORGAN_SLOT_PENIS)
 
-/mob/living/carbon/proc/has_balls()
+/mob/living/proc/has_balls()
 	return getorganslot(ORGAN_SLOT_TESTICLES)
 
-/mob/living/carbon/proc/has_vagina()
+/mob/living/proc/has_vagina()
 	return getorganslot(ORGAN_SLOT_VAGINA)
 
-/mob/living/carbon/proc/has_breasts()
+/mob/living/proc/has_breasts()
 	return getorganslot(ORGAN_SLOT_BREASTS)
 
-/mob/living/carbon/proc/has_butt()
+/mob/living/proc/has_butt()
 	return getorganslot(ORGAN_SLOT_BUTT)
 
-/mob/living/carbon/proc/has_belly()
+
+/mob/living/proc/has_belly()
 	return getorganslot(ORGAN_SLOT_BELLY)
 
-/mob/living/carbon/proc/has_womb()
+/mob/living/proc/has_womb()
 	return getorganslot(ORGAN_SLOT_WOMB)
 
-/mob/living/carbon/proc/is_groin_exposed(list/L)
+/mob/living/proc/is_groin_exposed(list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)
@@ -134,7 +140,7 @@ GLOBAL_VAR_INIT(miscreants_allowed, FALSE)
 			return FALSE
 	return TRUE
 
-/mob/living/carbon/proc/is_chest_exposed(list/L)
+/mob/living/proc/is_chest_exposed(list/L)
 	if(!L)
 		L = get_equipped_items()
 	for(var/A in L)

@@ -34,19 +34,28 @@
 #define DEF_COCKSTRING "has_butt:has_vag:has_balls:has_cock:has_belly:has_breasts"
 
 //genital flags
-#define GENITAL_BLACKLISTED      (1<<0) //for genitals that shouldn't be added to GLOB.genitals_list.
-#define GENITAL_INTERNAL         (1<<1) //no visibility options~
-#define GENITAL_FLUID_PRODUCTION (1<<2)
-#define CAN_MASTURBATE_WITH      (1<<3)
-#define MASTURBATE_LINKED_ORGAN	 (1<<4) //used to pass our mission to the linked organ
-#define CAN_CLIMAX_WITH          (1<<5)
-#define GENITAL_CAN_AROUSE       (1<<6)
-#define UPDATE_OWNER_APPEARANCE  (1<<7)
-#define GENITAL_CAN_TAUR         (1<<8)
-#define GENITAL_CAN_RECOLOR      (1<<9)
-#define GENITAL_CAN_RESIZE       (1<<10)
-#define GENITAL_CAN_RESHAPE      (1<<11)
-#define GENITAL_CAN_HAVE         (1<<12)
+#define GENITAL_BLACKLISTED      	(1<<0) //for genitals that shouldn't be added to GLOB.genitals_list.
+#define GENITAL_INTERNAL         	(1<<1) //no visibility options~
+#define GENITAL_FLUID_PRODUCTION 	(1<<2)
+#define CAN_MASTURBATE_WITH      	(1<<3)
+#define MASTURBATE_LINKED_ORGAN	 	(1<<4) //used to pass our mission to the linked organ
+#define CAN_CLIMAX_WITH          	(1<<5)
+#define GENITAL_CAN_AROUSE       	(1<<6)
+#define UPDATE_OWNER_APPEARANCE  	(1<<7)
+#define GENITAL_CAN_TAUR        	(1<<8)
+#define GENITAL_CAN_RECOLOR      	(1<<9)
+#define GENITAL_CAN_RESIZE       	(1<<10)
+#define GENITAL_CAN_RESHAPE      	(1<<11)
+#define GENITAL_CAN_HAVE         	(1<<12) //Sandstorm change
+#define HAS_EQUIPMENT				(1<<13) //nother sandstorm change
+#define GENITAL_CAN_STUFF       	(1<<14) //Splurt edit, used for pregnancy
+#define GENITAL_CHASTENED			(1<<15) //SPLURT edit
+#define GENITAL_IMPOTENT			(1<<16) //SPLURT edit
+#define GENITAL_EDGINGONLY			(1<<17) //SPLURT edit
+#define GENITAL_DISAPPOINTING		(1<<18)	//SPLURT edit
+#define GENITAL_OVERSTIM			(1<<19) //SPLURT edit
+#define GENITAL_HYPERSENS			(1<<20) //SPLURT edit
+#define CAN_CUM_INTO 				(1<<21)
 
 //DEfault genital flags, for preferences
 #define DEF_BUTT_FLAGS GENITAL_CAN_RECOLOR | GENITAL_CAN_RESIZE | GENITAL_CAN_HAVE
@@ -66,9 +75,11 @@
 #define GENITAL_UNDER_UNDERWEAR   (1<<5) // If visible, is it above clothing?
 #define GENITAL_RESPECT_UNDERWEAR (1<<6) // Does it factor in underwear as coverage?
 #define GENITAL_RESPECT_CLOTHING  (1<<7) // Does it factor in uniform/suit as coverage?
+#define GENITAL_MAX               (1<<8) // The absolute maximum value that can be set
 
 #define GENITAL_FLAGS_MIN GENITAL_ALWAYS_HIDDEN // update this if you add/remove flags
-#define GENITAL_FLAGS_MAX GENITAL_RESPECT_CLOTHING // update this if you add/remove flags
+#define GENITAL_FLAGS_MAX GENITAL_MAX // update this if you add/remove flags
+//We cannot set the max to GENITAL_RESPECT_CLOTHING because if we respect clothing and do ANYTHING ELSE, we exceed the max and it gets reset
 
 #define GEN_VIS_FLAG_DEFAULT GENITAL_RESPECT_UNDERWEAR | GENITAL_RESPECT_CLOTHING
 #define GEN_VIS_OVERALL_FLAG_DEFAULT GENITAL_ABOVE_UNDERWEAR
@@ -155,24 +166,29 @@
 #define XENOBIO_UPGRADE_SLIMEADV			4
 
 //Citadel toggles because bitflag memes
-//#define VOREALLOW_DOGBORGS	(1<<0)
-//#define VOREALLOW_EATING_NOISES		(1<<1)
-//#define VOREALLOW_DIGESTION_NOISES	(1<<2)
-#define BREAST_ENLARGEMENT	(1<<3)
-#define PENIS_ENLARGEMENT	(1<<4)
-#define FORCED_FEM			(1<<5)
-#define FORCED_MASC			(1<<6)
-#define HYPNO				(1<<7)
-#define NEVER_HYPNO			(1<<8)
-#define NO_APHRO			(1<<9)
-#define NO_ASS_SLAP			(1<<10)
-#define BIMBOFICATION		(1<<11)
-#define NO_AUTO_WAG			(1<<12)
-#define GENITAL_EXAMINE		(1<<13)
-//#define VOREALLOW_SEEING_BELLY_DESC		(1<<14)
-#define BUTT_ENLARGEMENT	(1<<15) // the butt is in the rear lol
-#define BELLY_ENLARGEMENT	(1<<16) // nope the belly is bro
-#define TOGGLES_CITADEL 0
+#define TOGGLES_CITADEL 0 //Master toggle
+#define VOREALLOW_DOGBORGS			(1<<0)
+#define EATING_NOISES				(1<<1)
+#define DIGESTION_NOISES			(1<<2)
+#define BREAST_ENLARGEMENT			(1<<3)
+#define PENIS_ENLARGEMENT			(1<<4)
+#define FORCED_FEM					(1<<5)
+#define FORCED_MASC					(1<<6)
+#define HYPNO						(1<<7)
+#define NEVER_HYPNO					(1<<8)
+#define NO_APHRO					(1<<9)
+#define NO_ASS_SLAP					(1<<10)
+#define BIMBOFICATION				(1<<11)
+#define NO_AUTO_WAG					(1<<12)
+#define GENITAL_EXAMINE				(1<<13)
+#define VOREALLOW_SEEING_BELLY_DESC	(1<<14)
+#define BUTT_ENLARGEMENT			(1<<15)
+#define BELLY_ENLARGEMENT			(1<<16)
+#define BELLY_INFLATION				(1<<17)
+#define CHASTITY					(1<<18)
+#define STIMULATION					(1<<19)
+#define EDGING						(1<<20)
+#define CUM_ONTO					(1<<21)
 
 //icon states for the default eyes and for a state for no eye
 #define DEFAULT_EYES_TYPE			"normal"

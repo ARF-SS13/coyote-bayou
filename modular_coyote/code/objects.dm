@@ -3,7 +3,7 @@
 	icon_state = "nash_on"
 	base_state = "nash_on"
 	icon = 'modular_coyote/icons/objects/sign.dmi'
-	density = 0
+	density = FALSE
 	desc = "So awful..."
 	light_color = LIGHT_COLOR_RED
 //Shopping Cart
@@ -986,6 +986,12 @@
 	icon = 'icons/obj/plushies_big.dmi'
 	icon_state = "registeel"
 
+/obj/item/toy/plush/braixen
+	name = "braixen plush"
+	desc = "An adorable plushie"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "braixen"
+
 
 
 
@@ -1129,26 +1135,39 @@
 
 //Rugs
 
+/obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
+	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
+		user.visible_message("[user] begins cutting the [src] apart.", \
+				span_notice("You begin cutting the [src] into strips."), \
+				span_italic("You hear faint sounds of ripping cloth."))
+		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/stack/sheet/cloth (drop_location(), 10)
+		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		qdel(src)
+		return TRUE
+
 /obj/structure/rug/carpet
-	name = "run carpet"
+	name = "black and red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet"
 
 /obj/structure/rug/carpet2
-	name = "run carpet"
+	name = "royal purple run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet2"
 
 /obj/structure/rug/carpet3
-	name = "run carpet"
+	name = "red run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet3"
 
 /obj/structure/rug/carpet4
-	name = "run carpet"
+	name = "turquoise run carpet"
 	desc = "Roll around on it!"
 	icon = 'modular_coyote/icons/objects/run_carpets.dmi'
 	icon_state = "carpet4"
@@ -1215,8 +1234,8 @@
 	desc = "A mic stand."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "micstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand
@@ -1224,8 +1243,8 @@
 	desc = "A night stand! Maybe even a one, night stand."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "nightstand"
-	density = TRUE
-	opacity = TRUE
+	density = FALSE
+	opacity = FALSE
 	anchored = TRUE
 
 /obj/structure/nightstand/small
@@ -1320,16 +1339,17 @@
 	icon_state = "sink"
 
 /obj/structure/dvd_player
-	name = "Dvd Player"
+	name = "\improper DVD Player"
 	desc = "An old and dusty looking machine. Maybe it even still works.."
 	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd_player"
 
 /obj/item/weapon/dvd
-	name = "Dvd"
+	name = "\improper DVD"
 	desc = "A shiny disk! Don't scratch it."
 	icon =  'modular_coyote/icons/objects/miscellaneous.dmi'
 	icon_state = "dvd"
+	custom_materials = list(/datum/material/glass = 250)
 
 /obj/item/storage/box/tools/locksmith
 	name = "locksmith tools"
@@ -1468,6 +1488,13 @@
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
 	icon_state = "sportscar"
 
+/obj/vehicle/sealed/car/caddy
+	name = "Personal full sized luxury SUV"
+	desc = "a refitted, redone, customized, and restored old relic of the early 2000s. This full sized luxury SUV comes with state of the art infotainment while also containing all the settings and whatnot one would find in such a vehicle."
+	icon_state = "caddy"
+	key_type = /obj/item/key/security
+	icon = 'icons/fallout/vehicles/medium_vehicles.dmi'
+
 /obj/vehicle/sealed/car/jeep
 	name = "jeep"
 	icon = 'modular_coyote/icons/objects/civ_vehicles.dmi'
@@ -1514,4 +1541,338 @@
 			var/atom/A = V
 			car[initial(A.name)] = A
 	return car
+
+//Yogurt
+
+
+/datum/chemical_reaction/food/yoghurt
+	required_reagents = list(/datum/reagent/consumable/cream = 10, /datum/reagent/consumable/vinegar = 2)
+	results = list(/datum/reagent/consumable/yoghurt = 10)
+	mix_message = "The mixture thickens into yoghurt."
+
+/datum/reagent/consumable/yoghurt
+	name = "Yoghurt"
+	description = "Creamy natural yoghurt, with applications in both food and drinks."
+	taste_description = "yoghurt"
+	color = "#efeff0"
+	nutriment_factor = 2
+
+
+//Cave decor
+
+/obj/structure/cave/stalagmite
+	name = "stalagmite"
+	icon_state = "stalagmite"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/one
+	name = "stalagmite"
+	icon_state = "stalagmite1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/two
+	name = "stalagmite"
+	icon_state = "stalagmite2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/three
+	name = "stalagmite"
+	icon_state = "stalagmite3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/four
+	name = "stalagmite"
+	icon_state = "stalagmite4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/stalagmite/five
+	name = "stalagmite"
+	icon_state = "stalagmite5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/minecart_fallen
+	name = "fallen minecart"
+	icon_state = "minecart_fallen"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/signleft
+	name = "left pointed sign"
+	icon_state = "sign_left"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/signright
+	name = "right pointed sign"
+	icon_state = "sign_right"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards
+	name = "boards"
+	icon_state = "boards_drought_ns-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/one
+	name = "boards"
+	icon_state = "boards_drought_ns-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/two
+	name = "boards"
+	icon_state = "boards_drought_ns-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/three
+	name = "boards"
+	icon_state = "boards_drought_ns-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/four
+	name = "boards"
+	icon_state = "boards_drought_ns-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/five
+	name = "boards"
+	icon_state = "boards_drought_ns-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways
+	name = "boards"
+	icon_state = "boards_drought_we-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/one
+	name = "boards"
+	icon_state = "boards_drought_we-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/two
+	name = "boards"
+	icon_state = "boards_drought_we-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/three
+	name = "boards"
+	icon_state = "boards_drought_we-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/four
+	name = "boards"
+	icon_state = "boards_drought_we-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/boards/sideways/five
+	name = "boards"
+	icon_state = "boards_drought_we-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards
+	name = "boards"
+	icon_state = "boards_mammoth_ns-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/one
+	name = "boards"
+	icon_state = "boards_mammoth_ns-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/two
+	name = "boards"
+	icon_state = "boards_mammoth_ns-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/three
+	name = "boards"
+	icon_state = "boards_mammoth_ns-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/four
+	name = "boards"
+	icon_state = "boards_mammoth_ns-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/five
+	name = "boards"
+	icon_state = "boards_mammoth_ns-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast
+	name = "boards"
+	icon_state = "boards_mammoth_we-1"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/one
+	name = "boards"
+	icon_state = "boards_mammoth_we-2"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/two
+	name = "boards"
+	icon_state = "boards_mammoth_we-3"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/three
+	name = "boards"
+	icon_state = "boards_mammoth_we-4"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/four
+	name = "boards"
+	icon_state = "boards_mammoth_we-5"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/bigboards/westeast/five
+	name = "boards"
+	icon_state = "boards_mammoth_we-6"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/support
+	name = "support post"
+	icon_state = "support"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportbeams
+	name = "support beams"
+	icon_state = "support_beams"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportwall
+	name = "support wall"
+	icon_state = "support_wall"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+/obj/structure/cave/supportwallbroken
+	name = "support wall - broken"
+	icon_state = "support_wall_broken"
+	icon = 'modular_coyote/icons/objects/cave_decor.dmi'
+
+//Custom object
+/obj/item/toy/scale
+	name = "snake scale"
+	desc = "A dark blue scale that shimmers in the sun. It has a faint scent of a certain naga."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "scale"
+	w_class = WEIGHT_CLASS_TINY
+
+//Christmas stuff
+
+/obj/structure/christmas
+	name = "Base"
+	icon_state = "base"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/garland
+	name = "garland"
+	icon_state = "garland_on"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakeone
+	name = "snowflakes"
+	icon_state = "snowflakes_1"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflaketwo
+	name = "snowflakes"
+	icon_state = "snowflakes_2"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakethree
+	name = "snowflakes"
+	icon_state = "snowflakes_3"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowflakefour
+	name = "snowflakes"
+	icon_state = "snowflakes_4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselred
+	name = "red tinsel"
+	icon_state = "tinsel_r"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselyellow
+	name = "yellow tinsel"
+	icon_state = "tinsel_y"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinselwhite
+	name = "white tinsel"
+	icon_state = "tinsel_w"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowman
+	name = "snowman"
+	icon_state = "snowman_s"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/snowmanhat
+	name = "snowman with hat"
+	icon_state = "snowman_hat"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift4
+	name = "present"
+	icon_state = "gift4"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift5
+	name = "present"
+	icon_state = "gift5"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/gift6
+	name = "present"
+	icon_state = "gift6"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/doorwreath
+	name = "door wreath"
+	icon_state = "doorwreath"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+
+/obj/structure/christmas/xmaslights
+	name = "xmaslights"
+	icon_state = "xmaslights"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/structure/christmas/tinyxmastree
+	name = "tinyxmastree"
+	icon_state = "tinyxmastree"
+	icon = 'icons/obj/christmas.dmi'
+	density = 0
+
+/obj/item/toy/candycaneballoon
+	name = "candycane balloon"
+	desc = "A candycane balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "candycaneballoon"
+
+/obj/item/toy/xmastreeballoon
+	name = "xmas tree balloon"
+	desc = "A christmas tree balloon!"
+	icon = 'icons/obj/christmas.dmi'
+	icon_state = "xmastreeballoon"
+
+//Custom gun
+
+/obj/item/gun/ballistic/shotgun/s163/thingblessed
+	name = "Blessed Gecko-Slayer"
+	desc = "A S163 Minotaur shotgun, This one looks rather blessed. Small white paw prints dot along the butt of the gun."
 

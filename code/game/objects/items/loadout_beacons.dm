@@ -1199,6 +1199,28 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/a308(src)
 	new /obj/item/ammo_box/a308box(src)
 
+/obj/item/storage/box/gun/revolver/rev47
+	name = "4.7mm caseless revolver case"
+
+/obj/item/storage/box/gun/revolver/rev47/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver47mm(src)
+	new /obj/item/ammo_box/m473(src)
+
+/obj/item/storage/box/gun/revolver/rev5
+	name = "5mm revolver case"
+
+/obj/item/storage/box/gun/revolver/rev5/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver5mm(src)
+	new /obj/item/ammo_box/m5mmbox(src)
+
+/obj/item/storage/box/gun/pistol/pistol47
+	name = "4.7mm pistol case"
+
+/obj/item/storage/box/gun/pistol/pistol47/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/pistol47mm(src)
+	new /obj/item/ammo_box/m473(src)
+	new /obj/item/ammo_box/magazine/m47pistol(src)
+
 /// Semiauto pistols!
 
 /obj/item/storage/box/gun/pistol
@@ -1581,25 +1603,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/gun/ballistic/bow/shortbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
 
-/obj/item/storage/box/gun/bow/handxbow
-	name = "hand crossbow case"
+/obj/item/storage/box/gun/bow/longbow
+	name = "longbow case"
 
-/obj/item/storage/box/gun/bow/handxbow/PopulateContents()
-	new /obj/item/gun/ballistic/bow/handxbow(src)
+/obj/item/storage/box/gun/bow/longbow/PopulateContents()
+	new /obj/item/gun/ballistic/bow/longbow(src)
 	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-
-/obj/item/storage/box/gun/bow/shortbow/yumi/PopulateContents()
-	new /obj/item/gun/ballistic/bow/shortbow/yumi(src)
-	new /obj/item/storage/bag/tribe_quiver/light/full(src)
-
-/*dunno if we should have roundstart crossbow simply cause we want a lil more progression
-/obj/item/storage/box/gun/bow/crossbow
-	name = "crossbow case"
-
-/obj/item/storage/box/gun/bow/crossbow/PopulateContents()
-	new /obj/item/gun/ballistic/bow/crossbow(src)
-	new /obj/item/storage/bag/tribe_quiver/light(src)
-*/
 
 /obj/item/storage/box/gun/tribal/warclub
 	name = "war club case"
@@ -1921,6 +1930,24 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
+
+/datum/loadout_box/revolver47
+	entry_tag = "4.7mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev47
+
+/datum/loadout_box/revolver5
+	entry_tag = "5mm revolver"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/rev5
+
+/datum/loadout_box/pistol47mmm
+	entry_tag = "4.7mm caseless pistol"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_PISTOL
+	spawn_thing = /obj/item/storage/box/gun/pistol/pistol47
 
 /* /datum/loadout_box/sidewinder_magnum
 	entry_tag = "Multicaliber Magnum"
@@ -2567,7 +2594,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_MELEE_ONE
 	spawn_thing = /obj/item/melee/coyote/oldcutlass
 
-/*
+
 /datum/loadout_box/crudeblade
 	entry_tag = "Crude Blade"
 	entry_flags = LOADOUT_FLAG_WASTER
@@ -2579,7 +2606,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_MELEE_TWO
 	spawn_thing = /obj/item/melee/coyote/mauler
-*/
+
 
 /datum/loadout_box/club
 	entry_tag = "Club"
@@ -2708,25 +2735,11 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_class = LOADOUT_CAT_BOW
 	spawn_thing = /obj/item/storage/box/gun/bow/shortbow
 
-/datum/loadout_box/shortbow/yumi
-	entry_tag = "Yumi Bow"
+/datum/loadout_box/longbow
+	entry_tag = "Longbow"
 	entry_flags = LOADOUT_FLAG_TRIBAL
 	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/shortbow/yumi
-
-/datum/loadout_box/handxbow
-	entry_tag = "Hand crossbow"
-	entry_flags = LOADOUT_FLAG_TRIBAL
-	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/handxbow
-
-/*
-/datum/loadout_box/crossbow
-	entry_tag = "Crossbow"
-	entry_flags = LOADOUT_FLAG_WASTER
-	entry_class = LOADOUT_CAT_BOW
-	spawn_thing = /obj/item/storage/box/gun/bow/crossbow
-*/
+	spawn_thing = /obj/item/storage/box/gun/bow/longbow
 
 /// Preacher Stuff
 
@@ -2960,7 +2973,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/bonewands
 
 /obj/item/storage/box/magic/bonewands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/bonewands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/magicmissile(src)
@@ -2973,11 +2986,23 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	spawn_thing = /obj/item/storage/box/magic/rodwands
 
 /obj/item/storage/box/magic/rodwands
-	name = "Wand storage case"
+	name = "wand storage case"
 
 /obj/item/storage/box/magic/rodwands/PopulateContents()
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
 	new /obj/item/gun/magic/wand/kelpmagic/basiczappies(src)
+
+/datum/loadout_box/healstaff
+	entry_tag = "Staff of Lesser Healing"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/storage/box/magic/healstaff
+
+/obj/item/storage/box/magic/healstaff
+	name = "staff storage case"
+
+/obj/item/storage/box/magic/healstaff/PopulateContents()
+	new /obj/item/gun/magic/staff/healing/triheal(src)
 
 // Putting this down here because it refuses to work. Needs to be fixed later.
 
@@ -2993,3 +3018,16 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/energy/tglaser/PopulateContents()
 	new /obj/item/gun/energy/laser/tg/carbine(src)
 	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
+
+// Spamlaser
+/datum/loadout_box/energy/tglaser/spammer
+	entry_tag = "Repeating Blaster"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/tglaser/spammer
+
+/obj/item/storage/box/gun/energy/tglaser/spammer
+	name = "repeating blaster case"
+
+/obj/item/storage/box/gun/energy/tglaser/spammer/PopulateContents()
+	new /obj/item/gun/energy/laser/tg/spamlaser(src)

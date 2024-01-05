@@ -146,8 +146,12 @@
 #define ROBOTIC_LIMBS	27 //has robotic limbs that render like organic ones
 #define CAN_SCAR		28 // If this species can be scarred (fleshy)
 /// Used for determining which wounds are applicable to this species.
-#define HAS_FLESH	29 /// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
-#define HAS_BONE	30 /// if we have bones (can suffer bone wounds)
+#define HAS_FLESH		29 /// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
+#define HAS_BONE		30 /// if we have bones (can suffer bone wounds)
+/// skips limb icon tomfoolery and uses simple sprites
+#define FERAL			31
+/// Todo - make this actually do something. Intended for humans who won't ever have inhand icons due to their sprite having movement animations or something like that.
+#define NO_INHAND		32
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -156,6 +160,7 @@
 #define ORGAN_SLOT_LEFT_ARM_AUG "l_arm_device"
 #define ORGAN_SLOT_STOMACH "stomach"
 #define ORGAN_SLOT_STOMACH_AID "stomach_aid"
+#define ORGAN_SLOT_SODIE_ORGAN "sodie_organ"
 #define ORGAN_SLOT_BREATHING_TUBE "breathing_tube"
 #define ORGAN_SLOT_EARS "ears"
 #define ORGAN_SLOT_EYES "eye_sight"
@@ -180,8 +185,9 @@
 #define ORGAN_SLOT_BUTT "butt"
 #define ORGAN_SLOT_BELLY "belly"
 #define ORGAN_CHEST_GENITALS ORGAN_SLOT_BREASTS
-#define ORGAN_GROIN_GENITALS ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_TESTICLES, ORGAN_SLOT_BUTT
+#define ORGAN_GROIN_GENITALS ORGAN_SLOT_PENIS, ORGAN_SLOT_WOMB, ORGAN_SLOT_VAGINA, ORGAN_SLOT_TESTICLES, ORGAN_SLOT_BUTT, ORGAN_SLOT_ANUS
 #define ORGAN_BELLY_GENITALS ORGAN_SLOT_BELLY
+#define ORGAN_SLOT_ANUS "anus"
 
 ////organ defines
 #define STANDARD_ORGAN_THRESHOLD 	100

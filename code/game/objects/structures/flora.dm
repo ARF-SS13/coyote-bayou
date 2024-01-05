@@ -54,6 +54,10 @@
 	else
 		return ..()
 
+/obj/structure/flora/tree/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_WOOD, -10, 5)
+
+
 /obj/structure/flora/stump
 	name = "stump"
 	desc = "The mark of human progress."
@@ -71,7 +75,6 @@
 
 /obj/structure/flora/tree/pine/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency, y_size = 1, y_offset = 1)
 	if(length(icon_states))
 		icon_state = pick(icon_states)
 
@@ -129,8 +132,6 @@
 /obj/structure/flora/tree/tall/Initialize()
 	. = ..()
 	icon_state = "tree_[rand(1,3)]"
-	AddComponent(/datum/component/largetransparency, y_offset = 1, y_size = 2)
-
 
 /obj/structure/festivus
 	name = "festivus pole"
@@ -160,19 +161,15 @@
 /obj/structure/flora/tree/jungle/Initialize()
 	. = ..()
 	icon_state = "[icon_state][rand(1, 6)]"
-	setup_transparency()
+	color = random_foliage_color_greenbrown()
 
-/obj/structure/flora/tree/jungle/proc/setup_transparency()
-	AddComponent(/datum/component/largetransparency, 1, 2, 1, 1)
-
+/proc/random_foliage_color_greenbrown()
+	return "#[pick(GLOB.hex_6toc)][pick(GLOB.hex_6toc)][pick(GLOB.hex_6to9)][pick(GLOB.hex_6to9)]00"
 
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
 	pixel_x = -32
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
-
-/obj/structure/flora/tree/jungle/small/setup_transparency()
-	AddComponent(/datum/component/largetransparency, 1, 1, 0, 1)
 
 //grass
 /obj/structure/flora/grass
@@ -424,6 +421,9 @@
 		SSblackbox.record_feedback("tally", "pick_used_mining", 1, W.type)
 		qdel(src)
 
+/obj/structure/flora/rock/add_debris_element()
+	AddElement(/datum/element/debris, DEBRIS_ROCK, -10, 5, 1)
+
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
 	desc = "A pile of rocks."
@@ -484,6 +484,7 @@
 	pixel_y = -12
 	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
+	do_transparency = FALSE //Has a custom transparency zone
 
 /obj/structure/flora/junglebush/large/Initialize()
 	. = ..()

@@ -62,3 +62,18 @@
 
 /obj/item/ammo_box/magazine/d12g/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/saiga
+	name = "shotgun magazine"
+	desc = "A 12g magazine."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "shotgunmag"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 8
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/saiga/empty
+	start_empty = 1

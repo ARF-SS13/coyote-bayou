@@ -512,11 +512,15 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	adminhelptimerid = 0
 
 // Used for methods where input via arg doesn't work
-/client/proc/get_adminhelp()
-	message_admins("X-----A user is making an ahelp shortly, hold onto your butts.-----X")
-	for(var/client/X in GLOB.admins)
-		if(X.prefs.toggles & SOUND_ADMINHELP)
-			SEND_SOUND(X, sound('sound/effects/adminnotification.ogg'))
+/client/proc/get_adminhelp(client/user)
+	if(!ahelpspam)
+		message_admins("X-----[key_name_admin(user)] is making an ahelp shortly, hold onto your butts.-----X")
+		for(var/client/X in GLOB.admins)
+			if(X.prefs.toggles & SOUND_ADMINHELP)
+				SEND_SOUND(X, sound('sound/effects/adminnotification.ogg'))
+		ahelpspam = TRUE
+		spawn(1800)
+			ahelpspam = FALSE
 	var/msg = input(src, "Please describe your problem concisely and an admin will help as soon as they're able.", "Adminhelp contents") as text
 	adminhelp(msg)
 

@@ -13,6 +13,11 @@
 	path = /obj/item/clothing/suit/hooded/robes/grey
 	cost = 2
 
+/datum/gear/suit/whitemagerobes
+	name = "White Mage Robes"
+	path = /obj/item/clothing/suit/hooded/robes/whitemage
+	cost = 2
+
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
 	path = /obj/item/clothing/suit/hooded/robes
@@ -35,17 +40,17 @@
 
 /datum/gear/suit/suit_gear_harness/light
 	name = "light harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/light
+	path = /obj/item/clothing/suit/chameleon/harness
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/medium
 	name = "medium harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/medium
+	path = /obj/item/clothing/suit/chameleon/harness/medium
 	cost = 1
 
 /datum/gear/suit/suit_gear_harness/heavy
 	name = "heavy harness"
-	path = /obj/item/clothing/suit/armor/outfit/vest/utility/gear_harness/heavy
+	path = /obj/item/clothing/suit/chameleon/harness/heavy
 	cost = 1
 
 /datum/gear/suit/labcoat
@@ -283,12 +288,17 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
+/datum/gear/suit/lightscout
+	name = "Light Scout Armor"
+	path = /obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
 /datum/gear/suit/bronzechestplate
 	name = "Bronze Chestplate"
 	path = /obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
-
 
 /datum/gear/suit/leatherarmor
 	name = "Leather Jerkin"
@@ -767,7 +777,7 @@
 	cost = 1
 
 /datum/gear/suit/armor/flagcapesclothing/tsar
-	name = "Armored Tsaraist flag cape"
+	name = "Armored Tsarist flag cape"
 	path = /obj/item/clothing/suit/armor/outfit/flagcapes/tsaristrussia
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1
@@ -1160,6 +1170,12 @@
 /datum/gear/suit/coat/marlow/masonsuit
 	name = "Vagabond's vest"
 	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
+
+/datum/gear/suit/coat/peacecoat
+	name = "Tattered peace coat"
+	path = /obj/item/clothing/suit/armor/light/duster/peacecoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
 
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"

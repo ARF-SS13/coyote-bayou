@@ -261,7 +261,7 @@
 	ask_verb = "asks"
 	exclaim_verb = "exclaims"
 	whisper_verb = "whispers"
-	key = "`"
+	key = "P"
 	icon_state = "poke"
 	syllables = list(
 		"pika", "chu", "dra", "tini", "vul", "pix", "zora", "glac", "eon", "ee", "vee",

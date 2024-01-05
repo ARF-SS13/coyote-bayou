@@ -196,8 +196,8 @@
 /mob/living/simple_animal/hostile/megafauna/dragon{
 	name = "Osto";
 	health = 4000;
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique,/obj/effect/spawner/lootdrop/f13/rare_unique);
-	crusher_loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique);
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare,/obj/effect/spawner/lootdrop/f13/rare,/obj/effect/spawner/lootdrop/f13/rare);
+	crusher_loot = list(/obj/effect/spawner/lootdrop/f13/rare);
 	loot_amount_random = 3
 	},
 /turf/open/floor/plasteel/cult,
@@ -1737,7 +1737,7 @@
 "hA" = (
 /mob/living/simple_animal/hostile/deathclaw/power_armor{
 	name = "Anthony";
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique)
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
 	},
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2737,7 +2737,7 @@
 /area/awaymission/wildwest)
 "lx" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "ly" = (
@@ -3424,7 +3424,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "om" = (
@@ -3504,7 +3504,7 @@
 /mob/living/simple_animal/hostile/jungle/leaper{
 	faction = list("jungle","hostile");
 	health = 1000;
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare_unique);
+	loot = list(/obj/effect/spawner/lootdrop/f13/rare);
 	name = "Frogger's Revenge"
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -7287,7 +7287,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/asteroid,
 /area/f13/underground/cave)
 "Ey" = (
@@ -8028,7 +8028,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/common_unique,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "Hn" = (
@@ -8164,7 +8164,7 @@
 "HR" = (
 /obj/structure/chair/comfy/shuttle,
 /mob/living/simple_animal/banana_spider,
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest)
@@ -8435,7 +8435,7 @@
 "IL" = (
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/f13,
 /area/f13/underground/cave)
 "IM" = (
@@ -9642,7 +9642,7 @@
 "NT" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/common_unique,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/dark,
 /area/medical/abandoned)
 "NU" = (
@@ -10716,7 +10716,7 @@
 /obj/effect/decal/cleanable/blood/gibs/human,
 /obj/effect/spawner/lootdrop/f13/rare,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/awaymission/wildwest/refine)
 "SG" = (
@@ -10946,7 +10946,7 @@
 /area/awaymission/wildwest)
 "Tx" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/floor/plating/asteroid,
 /area/awaymission/wildwest/mines)
 "Ty" = (
@@ -12239,7 +12239,7 @@
 	alpha = 80;
 	icon_state = "mound_medium"
 	},
-/obj/effect/spawner/lootdrop/f13/rare_unique,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/desertsand,
 /area/awaymission/wildwest)
 "Zf" = (

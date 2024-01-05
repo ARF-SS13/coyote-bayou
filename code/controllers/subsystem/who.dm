@@ -288,7 +288,10 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	Who(whoer)
 	to_chat(whoer, span_alertalien("WhoPlus is broken cus its awful, so heres the normal who!"))
 
-/datum/controller/subsystem/who/proc/Who(client/whoer, admeme)
+/datum/controller/subsystem/who/proc/Who(client/whoer)
+	if(!whoer)
+		return
+	var/admeme = check_rights_for(whoer, admin_level_to_see_all) && !(whoer.holder in GLOB.deadmins) // so deadmins can see the normal stuff
 	var/list/lines = list()
 	///the first line, you!
 	/// now, set up the lists of people to show
@@ -344,9 +347,9 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	lines += "<br>"
 	lines += "<hr>" // BRR BRR HURR!!~<3
 	lines += "<b>Total Players Online: [length(GLOB.clients)]</b>"
-	if(admeme)
-		lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
-		lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
+	// if(admeme)
+	// 	lines += "<br><b>Total Mobs Played: [length(GLOB.has_played_list)]</b>"
+	// 	lines += "<br><b>NOTE:</b> Count may be inaccurate if admins keep hopping in and out of mobs."
 	lines += span_notice("<br>You can set your OOC Status with the 'You' verb in OOC Tab. Use it to help find roleplay/let people know you're afk!")
 	lines += "<br>"
 	lines += Me(whoer)
@@ -372,49 +375,48 @@ SUBSYSTEM_DEF(who) // SS who? SS you!
 	var/where_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_WHERE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
 	var/pose = GetPose(M, TRUE)
 	var/pose_visible = (CHECK_BITFIELD(P.whoflags, WHO_SHOWS_POSE) && CHECK_BITFIELD(P.whoflags, WHO_SHOWS_ME)) || admeme
-	var/M_is_admin = check_rights_for(M.client, admin_level_to_see_all) && !(M.client.holder in GLOB.deadmins)
 	var/list/throbber = Throb(M, admeme)
 	var/list/out = list()
 	out += "<br>"
 	out += "<span class='[throbber["span"]];color:[throbber["color"]]'>[throbber["icon"]]</span>"
-	if(admeme && M_is_admin)
-		name_span = "brass"
 	/// the ckey, if we're an admin
-	if(admeme || check_rights(admin_level_to_see_all, FALSE))
+	if(admeme)
 		out += span_notice(" ([M.ckey])")
 		if(M.client?.holder?.fakekey)
 			out += " (as [M.client.holder.fakekey])"
+		if(M.client?.holder)
+			out += " \[[M.client.holder.rank]\]"
+			name_span = "brass"
 	/// the name slug, anonymization has been handled elsewhere
-	out += "<span class='[name_span]'> [name] as</span>"
+	out += "<span class='[name_span]'> [name]</span>"
 	/// the role slug
-	if(!admeme)
-		if(role_visible)
-			out += " the <span class='[role_span]'>[role]</span>"
-		if(where_visible)
-			out += ", in <span class='[where_span]'>[where]</span>"
-		if(pose_visible && pose && trim(pose) != "")
-			out += "'[pose]'"
-		var/msgout = out.Join()
-		return msgout
-	out += "[FOURSPACES] <span class='[role_span]'>[role]</span> - <span class='[where_span]'>[where]</span>"
-	out += "<br>[FOURSPACES]'[pose]'"
-	// var/second_line_visible = where_visible || pose_visible
-	// if(second_line_visible)
-	// 	out += "<br>[FOURSPACES]"
-	// 	var/dash = where_visible && pose_visible ? " - " : ""
-	// 	var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
-	// 	/// the where and pose slug
-	//	out += "[where_formatted][dash][pose]"
-	/// Okay so i lied, verbose is an admin command that piles in a lot more info
-	/// we are an admeme from here forward
-	/// The status slug
-	var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
-	out += "<br>[FOURSPACES]They are \a [admin_rank]! [throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
-	/// the admin slug
-	out += "<br>[FOURSPACES][ADMIN_QUARTERMONTY(M)]"
-	var/spanifiy = out.Join()
-	spanifiy = "<table style='border: 2px outset #00ffff; padding: 0px; margin: 1px;'><tr><td>" + spanifiy + "</td></tr></table>"
-	return spanifiy
+	if(role_visible)
+		out += " the <span class='[role_span]'>[role]</span>"
+	if(where_visible)
+		out += ", in <span class='[where_span]'>[where]</span>"
+	if(pose_visible && pose && trim(pose) != "")
+		out += "'[pose]'"
+	var/msgout = out.Join()
+	return msgout
+	// out += "[FOURSPACES] <span class='[role_span]'>[role]</span> - <span class='[where_span]'>[where]</span>"
+	// out += "<br>[FOURSPACES]'[pose]'"
+	// // var/second_line_visible = where_visible || pose_visible
+	// // if(second_line_visible)
+	// // 	out += "<br>[FOURSPACES]"
+	// // 	var/dash = where_visible && pose_visible ? " - " : ""
+	// // 	var/where_formatted = where_visible ? "Currently in <span class='[where_span]'>[where]</span>" : ""
+	// // 	/// the where and pose slug
+	// //	out += "[where_formatted][dash][pose]"
+	// /// Okay so i lied, verbose is an admin command that piles in a lot more info
+	// /// we are an admeme from here forward
+	// /// The status slug
+	// var/admin_rank = M_is_admin ? span_purple("[M.client.holder.rank]") : span_brass("(Player)")
+	// out += "<br>[FOURSPACES]They are \a [admin_rank]! [throbber["status"]] - ([throbber["hp"]]/[throbber["maxhp"]] HP)"
+	// /// the admin slug
+	// out += "<br>[FOURSPACES][ADMIN_QUARTERMONTY(M)]"
+	// var/spanifiy = out.Join()
+	// spanifiy = "<table style='border: 2px outset #00ffff; padding: 0px; margin: 1px;'><tr><td>" + spanifiy + "</td></tr></table>"
+	// return spanifiy
 
 /datum/controller/subsystem/who/proc/Throb(mob/M, admeme)
 	var/list/throb = list()

@@ -2,7 +2,7 @@
 /datum/material/iron
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
-	color = "#878687"
+	color = "#9a8782"
 	strength_modifier = 0.9
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/metal
@@ -32,7 +32,7 @@
 /datum/material/blackpowder
 	name = "blackpowder"
 	desc = "blackpowder"
-	color = "#000000"
+	color = "#252530"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/ore/blackpowder

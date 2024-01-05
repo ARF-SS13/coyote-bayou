@@ -168,13 +168,31 @@
 		stress = max(stress - 4, 0)
 
 /datum/brain_trauma/severe/monophobia/proc/check_alone()
+	//is... the owner of the pet blind..? because if yes... then they may not see the pet.
 	if(HAS_TRAIT(owner, TRAIT_BLIND))
 		return TRUE
+
+	//firstly let's check if this pet is within our viewrange
 	for(var/mob/M in oview(owner, 7))
 		if(!isliving(M)) //ghosts ain't people
 			continue
 		if(M.is_monophobia_pet || M.ckey)
 			return FALSE
+
+	//secondly let's check if our pet is actually in our backpack
+	var/obj/item/storage = owner.get_item_by_slot(SLOT_BACK)
+	if(storage)  //Are we actually wearing a backpack?
+		if(SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is the thing we are wearing on the back an actual storage item?
+			if(storage.contents.len)  //if it has no items, don't even bother checking!
+				for(var/obj/item/I in storage.contents)  //Is an animal hiding in our backpack????
+					if(istype(I, /obj/item/clothing/head/mob_holder))
+						return FALSE
+	
+	//thirdly let's actually check if the mob is being held in the hands
+	for(var/obj/item/I in owner.held_items)  //Is an animal hiding on our hands????
+		if(istype(I, /obj/item/clothing/head/mob_holder))
+			return FALSE
+
 	return TRUE
 
 /datum/brain_trauma/severe/monophobia/proc/stress_reaction()

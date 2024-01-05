@@ -280,7 +280,7 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/pistol/freeblade
 	pellets = 3
 	variance = 35
-	e_cost = 5000 //6 shots
+	e_cost = 1666 // 6 shots
 	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/rcw
@@ -441,6 +441,10 @@ Avoid decimals when possible when it comes to e_cost!
 	projectile_type = /obj/item/projectile/beam/laser/tg/particle
 	e_cost = 1000 // 5 shots
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
+
+/obj/item/ammo_casing/energy/laser/tg/spam
+	projectile_type = /obj/item/projectile/beam/laser/tg/spam
+	e_cost = 40 // 125 shots; might need adjustment. Half the DPS of a compact RCW
 
 //Laser AK casings
 /obj/item/ammo_casing/energy/laser/tg/kalashheavy

@@ -8,6 +8,7 @@
 	light_range = 3
 	light_color = LIGHT_COLOR_GREEN
 	recoil = BULLET_RECOIL_PLASMA
+	sharpness = SHARP_POINTY // Temporary fix for the Wound system. Makes lasers/plasma bleed you out per hit.
 
 /obj/item/projectile/energy/plasmabolt/on_hit(atom/target, blocked = FALSE)
 	. = ..()

@@ -11,6 +11,7 @@
 /obj/effect/spawner/lootdrop/f13
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
+	fan_out_items = TRUE //Randomize pixel x and y
 
 /*	------------------------------------------------
 	----------------ARMOR SPAWNERS------------------
@@ -797,7 +798,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/american180 = 10,
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 20,
 		/obj/item/gun/ballistic/automatic/m1carbine/m2 = 5,
-		/obj/item/gun/ballistic/automatic/smg/mp5 = 5,
+		/obj/item/gun/ballistic/automatic/smg/mp5sd = 5,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder = 20,
 		/obj/item/gun/ballistic/automatic/smg/sidewinder/magnum = 1,
 		/obj/item/gun/ballistic/automatic/combat = 10,
@@ -843,7 +844,6 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/transforming/plasmacutter/regular = 5,
 		/obj/item/gun/ballistic/bow/longbow = 20,
 		/obj/item/gun/ballistic/bow/crossbow = 10,
-		/obj/item/gun/ballistic/bow/compositebow = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/boss
@@ -877,7 +877,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/revolver/sequoia = 10,
 		/obj/item/gun/ballistic/rifle/repeater/brush = 20, //pretty common cause we need cowboy guns
 		/obj/item/gun/ballistic/rifle/mag/boys = 10,
-		/obj/item/gun/ballistic/rifle/mag/antimateriel = 5,
+		/obj/item/gun/ballistic/rifle/mag/antimaterial = 5,
 		/obj/item/gun/ballistic/shotgun/police = 10,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
@@ -1862,7 +1862,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/mp5
 	name = "mp5 and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/smg/mp5,
+				/obj/item/gun/ballistic/automatic/smg/mp5sd,
 				/obj/item/ammo_box/magazine/uzim9mm/
 	)
 
@@ -1939,7 +1939,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 /obj/effect/spawner/bundle/f13/amr
 	name = "amr and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/rifle/mag/antimateriel,
+				/obj/item/gun/ballistic/rifle/mag/antimaterial,
 				/obj/item/ammo_box/magazine/amr/
 	)
 
@@ -2750,3 +2750,61 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/stack/ore/lead = 1,
 		/obj/item/stack/ore/titanium = 2)
 
+/obj/effect/spawner/lootdrop/f13/bounty
+	name = "f13 spawners - DO NOT USE THIS"
+	lootdoubles = FALSE	//making sure it will /not/ double
+	fan_out_items = TRUE //Randomize pixel x and y
+	downtier_chance = 50
+	lootcount = 1
+	icon = 'icons/obj/card.dmi'
+	icon_state = "data_1"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low
+	name = "none to low bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty)
+	color = "#00ff00"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low_to_med
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty, /obj/item/card/midbounty)
+	color = "#0000ff"
+
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_high
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/midbounty, /obj/item/card/highbounty)
+	color = "#ff0000"
+
+/obj/effect/spawner/lootdrop/f13/bounty/high_to_king
+	name = "low to medium bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/highbounty, /obj/item/card/kingbounty)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/king
+	name = "king to none bounty ticket spawner, 50% chance for nothing"
+	loot = list(/obj/item/card/kingbounty)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/any
+	name = "equal chance to spawn any kind of bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty,
+			/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			/obj/item/card/kingbounty,
+			)
+	color = "#ffe600"
+
+/obj/effect/spawner/lootdrop/f13/bounty/low_to_high
+	name = "equal chance to spawn a low, med, or high bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/lowbounty,
+			/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			)
+	color = "#ff0000"
+
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king
+	name = "equal chance to spawn a med, high, or king bounty ticket, 50% chance for nothing"
+	loot = list(/obj/item/card/midbounty,
+			/obj/item/card/highbounty,
+			/obj/item/card/kingbounty,
+			)
+	color = "#ffe600"

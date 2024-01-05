@@ -196,6 +196,7 @@
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
 #define TRAIT_NUKA_LOVER		"nukalover"
+#define TRAIT_SOH				"soh"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
 #define TRAIT_SIXTHSENSE		"sixthsense"
@@ -208,6 +209,7 @@
 #define TRAIT_ROBOTPHOBIA		"robotphobia"
 #define TRAIT_BIRDPHOBIA		"birdphobia"
 #define TRAIT_DOGPHOBIA			"dogphobia"
+#define TRAIT_ALIENPHOBIA		"alienphobia"
 #define TRAIT_BONERPHOBIA		"skelephobia"
 #define TRAIT_MASKPHOBIA		"maskphobia"
 #define TRAIT_DOCTORPHOBIA		"doctorphobia"
@@ -219,6 +221,7 @@
 #define TRAIT_ROBOT				"robots"
 #define TRAIT_BIRD				"birds"
 #define TRAIT_DOG				"dogs"
+#define TRAIT_ALIEN				"aliens"
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
@@ -267,6 +270,8 @@
 #define TRAIT_FREERUNNING		"freerunning"
 #define TRAIT_SKITTISH			"skittish"
 #define TRAIT_POOR_AIM			"poor_aim"
+#define	TRAIT_LIGHT_SENSITIVITY			"light_sensitivity"
+#define	TRAIT_PHOBIC			"trait_phobic"
 #define TRAIT_CRIT_SHOT		"crit_shot" //Crits are cool, but have you ever critted 3 times in a row?
 #define SPREAD_CONTROL		"spread_control"
 #define TRAIT_PROSOPAGNOSIA		"prosopagnosia"
@@ -292,6 +297,7 @@
 #define TRAIT_TRAPPER			"trapper"
 #define TRAIT_SHOCKINGGRASP		"shocking_grasp"
 //#define //TRAIT_BOOMING			//"booming_blade"
+#define TRAIT_TELEPATHY			"telepathy"
 #define TRAIT_IRONFIST			"iron_fist"
 #define TRAIT_STEELFIST			"steel_fist"
 #define TRAIT_NOODLEFIST			"noodle_fist"
@@ -324,6 +330,8 @@
 #define TRAIT_ILLITERATE "illiterate"
 #define TRAIT_PAPER_SKIN "paper_skin"
 #define TRAIT_GLASS_BONES "glass_bones"
+/// Coyote Boyou trait that replaces paper skin and glass bones!
+#define TRAIT_EASILY_WOUNDED "easily_wounded"
 #define TRAIT_STEEL_ASS "steel_ass"
 #define TRAIT_JIGGLY_ASS "jiggly_ass"
 #define TRAIT_DISTANT "distant"
@@ -499,6 +507,7 @@
 #define CURSED_MASK_TRAIT "cursed-mask"
 #define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
+#define FEET_REPLACEMENT_TRAIT "feet-replacer"
 #define HOT_POTATO_TRAIT "hot-potato"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
@@ -550,6 +559,7 @@
 #define QUIRK_MECHANICS "Qmechanics"
 #define QUIRK_CONFLICTS "Qconflicts"
 #define QUIRK_CATEGORY "Qcategory"
+#define QUIRK_HUMANONLY "Qhumanonly"
 
 #define QUIRK_CAT_DEFAULT "Misc"
 

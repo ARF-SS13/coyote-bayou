@@ -1730,12 +1730,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return mobby.client.prefs
 	if(istext(something))
 		if(!(something in GLOB.directory))
-			CRASH("extract_prefs() was given a ckey that wasn't in the directory. This is a bug, please report it.")
+			return
+			// CRASH("extract_prefs() was given a ckey that wasn't in the directory. This is a bug, please report it.")
 		var/client/clont = LAZYACCESS(GLOB.directory, something)
 		if(!clont)
 			return // probably... disconnected? v0v
 		return clont.prefs
-	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+	// CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Takes in a mob, client, or even prefs, and returns their ckey
 /proc/extract_ckey(something) // one way or another, im getting your ckey (to break)
@@ -1750,7 +1751,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(ismob(something))
 		var/mob/mobby = something
 		return mobby.ckey
-	CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
+	// CRASH("extract_prefs() was given something that wasn't a client, mob, or ckey. I mean seriously this is about as forgiving as it gets!")
 
 /// Makes a gaussian distribution, returning a positive integer
 /proc/GaussianReacharound(mean, stddev, min, max)

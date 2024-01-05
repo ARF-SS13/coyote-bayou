@@ -250,7 +250,7 @@
 	contains = list(/obj/item/book/granter/crafting_recipe/blueprint/tribeam_stun)
 
 /datum/supply_pack/skillbooks/amrifle
-	name = "Blueprint - Anti-Materiel Rifle"
+	name = "Blueprint - Anti-Material Rifle"
 	desc = "Schematics of a quality weapon for a quality customer."
 	cost = 2500
 	contains = list(/obj/item/book/granter/crafting_recipe/blueprint/am_rifle)

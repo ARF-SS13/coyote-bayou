@@ -373,11 +373,11 @@
 
 /obj/item/gun/ballistic/automatic/autopipe/special
 		name = "Redwater Special"
-		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of complete loss of control as soon as you pull the trigger."
+		desc = "Either a product of passion or product of insanity, it seems that someone modified this pipe rifle to conserve more muzzle pressure, at the cost of not being able to take it off of full auto."
 		color = "#FF0000"
-		damage_multiplier = GUN_EXTRA_DAMAGE_T5
+		damage_multiplier = GUN_EXTRA_DAMAGE_T3
 		init_firemodes = list(
-			/datum/firemode/burst/twenty/slower
+			/datum/firemode/automatic/rpm300
 		)
 
 /////////////////////

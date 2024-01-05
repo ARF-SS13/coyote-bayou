@@ -73,6 +73,7 @@
 			var/list/recent_speech = list()
 			var/list/say_log = list()
 			var/log_source = M.logging
+			LAZYINITLIST(log_source)
 			for(var/log_type in log_source)//this whole loop puts the read-ee's say logs into say_log in an easy to access way
 				var/nlog_type = text2num(log_type)
 				if(nlog_type & LOG_SAY)

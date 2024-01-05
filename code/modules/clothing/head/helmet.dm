@@ -496,7 +496,21 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDESNOUT | HIDEHAIR
-	
+
+/obj/item/clothing/head/droptrooper/custompahelmet
+	name = "Custom fitted MidWestern B.O.S helmet"
+	desc = "A custom fitted B.O.S themed helmet. Fitted to resemble that of medium ballistic helmets."
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_MEDIUM
+	dog_fashion = null
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
+	icon = 'icons/fallout/clothing/helmets.dmi'
+	flags_inv = HIDESNOUT | HIDEHAIR
+	var/requires_training = TRUE
+
 /obj/item/clothing/head/droptrooper/arghelmet/two
 	name = "ARG ARES Helmet"
 	desc = "ARES, meaning Armor - Research Enhancement Suite, is an extensively modified and computerized rendition of the M-87 'Odin' assault helmet. An additional camera has been added to the faceplate to give the user better depth perception, as well as the ability to broadcast video feed through encrypted channels. The heads-up display within the helmet now includes simple user biometrics and an analysis mode, giving real-time updates concerning objects and creatures in view of the cameras. It has extra helmet padding and an 'anomaly-resistant coating,' whatever that means. The helmet is developed and produced by the Augur Research Group."
@@ -726,7 +740,7 @@
 	icon_state = "unmch"
 	item_state = "unmch"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -736,7 +750,7 @@
 	desc = "A third generation Leo Armaments MIRAGE Helmet. This helmet has no visor due to the fact the visor was not 'anthromorphic' friendly. The area around the eyes allows the installiation of gun-spec, or G.S, eyewear."
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	icon_state = "custominfil"
 	item_state = "custominfil"
@@ -755,7 +769,7 @@
 	icon_state = "rhazhelm"
 	item_state = "rhazhelm"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -766,7 +780,7 @@
 	icon_state = "usainfilhelm"
 	item_state = "usainfilhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -777,7 +791,7 @@
 	icon_state = "chinastealthhelm"
 	item_state = "chinastealthhelm"
 	flags_inv = HIDEHAIR|HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -788,7 +802,7 @@
 	icon_state = "unmcwh"
 	item_state = "unmcwh"
 	flags_inv = HIDEHAIR
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BOMB_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
@@ -801,7 +815,7 @@
 	icon_state = "banditmask"
 	item_state = "banditmask"
 	flags_inv = HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/blpsycho
 	name = "psycho mask"
@@ -811,7 +825,7 @@
 	icon_state = "psychomask"
 	item_state = "psychomask"
 	flags_inv = HIDESNOUT
-	armor_list = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/head/helmet/borderlandshelm
 	name = "borderlands helmet template"
@@ -819,7 +833,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	flags_inv = HIDEMASK | HIDEEYES | HIDEHAIR | HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
-	armor_list = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/item/clothing/head/helmet/borderlandshelm/bandit
 	name = "bandit helmet"

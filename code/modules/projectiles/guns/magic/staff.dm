@@ -51,14 +51,18 @@
 
 /obj/item/gun/magic/staff/healing/triheal
 	name = "staff of unstable blessings"
-	desc = "An artefact that spits bolts of restorative magic. This one has three spells echanted into its crystal. One to heal simple bruises, one that soothes burns, and the other that can heal even the most complex of toxins and cellular damage."
+	desc = "An artefact that spits bolts of restorative magic. This one has three spells of healing enchanted into its crystal, however the wielder cannot choose which shall be cast due to the artefact's wild nature."
 	fire_sound = 'sound/magic/mystical.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/chaos
 	icon_state = "triheal"
 	item_state = "broom"
-	max_charges = 3
-	recharge_rate = 30 SECONDS
+	max_charges = 30
+	recharge_rate = 6 SECONDS
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm100,
+		/datum/firemode/semi_auto/faster
+	)
 
 /obj/item/gun/magic/staff/healing/triheal/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	chambered.projectile_type = pick(allowed_projectile_types)
@@ -109,7 +113,7 @@
 	//righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	//hitsound = 'sound/weapons/rapierhit.ogg'
 	//force_unwielded = 25
-	//force_wielded = 40 
+	//force_wielded = 40
 	//block_parry_data = /datum/block_parry_data/bokken
 	//item_flags = ITEM_CAN_PARRY
 	//weapon_special_component = /datum/component/weapon_special/single_turf
@@ -215,10 +219,10 @@
 	desc = "A simple staff topped with a giant ruby. It appears utterly mundane at a glance, and yet when held one can feel the flames roiling within. Devastation awaits whoever should be on the receiving end of this staff."
 	icon_state = "firestaff"
 	max_charges = 1
-	recharge_rate = 60 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
+	recharge_rate = 120 SECONDS // With delimbing disabled this is much less dangerous than it used to be.
 	slowdown = 1
 	fire_sound = 'sound/magic/fireball.ogg'
-	ammo_type = /obj/item/ammo_casing/magic/fireball // 75 brute damage + a knockdown + always blinds a square around the impact point + bonus dmg vs mobs
+	ammo_type = /obj/item/ammo_casing/magic/fireball // 40 to 90 bomb + knockdown + always blinds a square around the impact point + bonus dmg vs mobs
 
 /****************/
 //Staff of Lightning//
@@ -231,7 +235,7 @@
 	icon_state = "lightningstaff"
 	fire_sound = 'sound/f13weapons/TeslaCannonFire.ogg'
 	max_charges = 12
-	recharge_rate = 20 SECONDS
+	recharge_rate = 30 SECONDS
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/thunder
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
@@ -244,8 +248,8 @@
 	name = "lightning bolt"
 	flag = "laser" // plasma OP
 	damage = 60
-	damage_low = 30
-	damage_high = 80
+	damage_low = 40
+	damage_high = 70
 
 /****************/
 //Staff of Healing//
@@ -258,7 +262,7 @@
 	icon_state = "medstaff"
 	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/mending
 	max_charges = 25 // 5x the capacity than the wand, but it is Bulky; heals 15/10/20/20/20/5 Bru/Brn/Tox/Oxy/Stm/Cln damage per shot; as a projectile it CAN miss and heal an enemy instead
-	recharge_rate = 60 SECONDS
+	recharge_rate = 30 SECONDS
 
 /****************/
 //Upgraded Staff of Healing//

@@ -1,3 +1,8 @@
+// WANNA CUM?
+#define NOTMERP_AUTOCLIMAX "lol_this_wishes_it_were_merp"
+#define NOTMERP_LEWD_SOUNDS "squish_plsorkioefer"
+#define NOTMERP_LEWD_WORDS "youthingthething"
+
 // Overhauled vore system
 #define DM_HOLD "Hold"
 #define DM_DIGEST "Digest"
@@ -272,3 +277,28 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define WHO_LOCKOUT_POSE (1<<3)
 
 #define MAX_STATUS_LEN 86
+
+/////////////////////////
+// Interaction Categories
+#define ICAT_LEWD "Lewd"
+#define ICAT_SELF "Solo"
+#define ICAT_CROTCH "Crotch"
+#define ICAT_BUTT "Butt"
+#define ICAT_BELLY "Belly"
+#define ICAT_CHEST "Chest"
+#define ICAT_MOUTH "Mouth"
+#define ICAT_HANDS "Hands"
+#define ICAT_FEET "Feet"
+#define ICAT_TAIL "Tail"
+#define ICAT_OTHER "Other"
+#define ICAT_VAGINA "Vagina"
+#define ICAT_PENIS "Penis"
+#define ICAT_BREASTS "Breasts"
+/// Also here cus they know what they did
+
+#define LEWD_VERB_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_SOUND_COOLDOWN 0.25 SECONDS
+#define LEWD_VERB_MESSAGE_COOLDOWN 4 SECONDS
+#define LEWD_VERB_MOAN_COOLDOWN 5 SECONDS
+#define LUST_USER (1<<1)
+#define LUST_TARGET (1<<2)

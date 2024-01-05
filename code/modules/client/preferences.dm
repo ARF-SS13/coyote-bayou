@@ -52,6 +52,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_chat_non_mob = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
+	///Whether to apply mobs' runechat color to the chat log as well
+	var/color_chat_log = TRUE
+	///Keeping track of chat bg color
+	var/chatbgcolor = "#131313"
 
 	var/list/aghost_squelches = list()
 
@@ -96,6 +100,24 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/be_random_body = 0				//whether we'll have a random body every round
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
+	//Sandstorm CHANGES BEGIN
+	var/erppref = "Ask"
+	var/nonconpref = "Ask"
+	var/vorepref = "Ask"
+	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/see_chat_emotes = TRUE
+	var/view_pixelshift = FALSE
+	var/enable_personal_chat_color = FALSE
+	var/personal_chat_color = "#ffffff"
+	var/list/alt_titles_preferences = list()
+	var/lust_tolerance = 100
+	var/sexual_potency = 15
+	var/unholypref = "No" //Goin 2 hell fo dis one
+	// cum
+	var/list/faved_interactions = list() // list of stringed type paths
+	var/list/saved_plappers = list() // to do: this
+	//Sandstorm CHANGES END
 	var/underwear_overhands = FALSE		//whether we'll have underwear over our hands
 	var/underwear = "Nude"				//underwear type
 	var/undie_color = "FFFFFF"
@@ -118,6 +140,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tbs = TBS_DEFAULT // turner broadcasting system
 	var/kisser = KISS_DEFAULT // Kiss this (  Y  )
 	var/datum/species/pref_species = new /datum/species/mammal()	//Mutant race
+	/// If our species supports it, this will override our appearance. See species.dm. "Default" will just use the base icon
+	var/alt_appearance = "Default"
 	var/list/features = list(
 		"mcolor" = "FFFFFF",
 		"mcolor2" = "FFFFFF",
@@ -230,7 +254,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_flavor_text = 	null
 	var/creature_ooc = 			null
 	var/image/creature_image = null
-	var/creature_profilepic = null
+	var/creature_profilepic = ""
+	var/creature_pfphost = ""
+	var/creature_body_size = 1
+	var/creature_fuzzy = FALSE
 
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
@@ -339,9 +366,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/fuzzy = FALSE //Fuzzy scaling
 
+	/// Upwards waddle amount. Side to side is always double this.
+	var/waddle_amount = 0
+	/// How fast the mob wobbles upwards.
+	var/up_waddle_time = 1
+	/// How fast the mob wobbles side to side.
+	var/side_waddle_time = 2
 
 /datum/preferences/New(client/C)
 	parent = C
+
+	spawn(0)
+		if(C)
+			chatbgcolor = winget(C, "statbrowser", "background-color")
+			if(chatbgcolor == "none")
+				chatbgcolor = "#ffffff"
 
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
@@ -462,10 +501,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			//Right column
 			dat +="<td width='30%' valign='top'>"
-			dat += "<h2>Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Creature Profile Picture:</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[DiscordLink(creature_profilepic)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
@@ -557,9 +596,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
 			//Start Creature Character
-			dat += "<h2>Creature Character</h2>"
+			dat += "<h2>Simple Creature Character</h2>"
 			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
 			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			/*
+			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
+				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
+			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+			*/
 			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
 			if(length(creature_flavor_text) <= 40)
 				if(!length(creature_flavor_text))
@@ -593,6 +637,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			
+			if(LAZYLEN(pref_species.alt_prefixes))
+				dat += "<b>Alt Appearance:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species_alt_prefix;task=input'>[alt_appearance ? alt_appearance : "Select"]</a><BR>"
+
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
 			
 			dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><br>"
@@ -714,7 +761,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 
+			//Waddling
+			dat += "<h3>Waddling</h3>"
+			dat += "<b>Waddle Amount:</b><a href='?_src_=prefs;preference=waddle_amount;task=input'>[waddle_amount]</a><br>"
+			if(waddle_amount > 0)
+				dat += "</b><a href='?_src_=prefs;preference=up_waddle_time;task=input'>&harr; Speed:[up_waddle_time]</a><br>"
+				dat += "</b><a href='?_src_=prefs;preference=side_waddle_time;task=input'>&#8597 Speed:[side_waddle_time]</a><br>"
 			dat += "</td>"
+
+			//end column 5 or something
+			//start column 6
+
 			//Mutant stuff
 			var/mutant_category = 0
 			mutant_category++
@@ -1168,6 +1225,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>See Runechat emotes:</b> <a href='?_src_=prefs;preference=see_rc_emotes'>[see_rc_emotes ? "Enabled" : "Disabled"]</a><br>"
+			dat += "<b>Use Runechat color in chat log:</b> <a href='?_src_=prefs;preference=color_chat_log'>[color_chat_log ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
 			dat += "<br>"
@@ -2483,6 +2541,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						creature_species = result
 						var/creature_type = GLOB.creature_selectable["[result]"]
 						var/mob/living/M = new creature_type(user)
+						if(creature_image)
+							QDEL_NULL(creature_image)
 						creature_image = image(icon=M.icon,icon_state=M.icon_state,dir=2)
 						qdel(M)
 
@@ -2508,13 +2568,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_age)
 						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 				if("pixel_x")
-					var/newx = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
+					var/newx = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_x) as num|null
 					if(newx)
 						custom_pixel_x = round(clamp(newx, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
 						custom_pixel_x = 0
 				if("pixel_y")
-					var/newy = input(user, "A new left/right pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
+					var/newy = input(user, "A new up/down pixel offset:\n([PIXELSHIFT_MAX] - [PIXELSHIFT_MIN])", "Character Preference", custom_pixel_y) as num|null
 					if(newy)
 						custom_pixel_y = round(clamp(newy, PIXELSHIFT_MIN, PIXELSHIFT_MAX), 1)
 					else
@@ -2707,7 +2767,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						//switch to the type of eyes the species uses
 						eye_type = pref_species.eye_type
-
+				if("species_alt_prefix")
+					if(LAZYLEN(pref_species.alt_prefixes))//if there are alt sprites to even pick from
+						var/list/pickfrom = list("Default" = "")
+						pickfrom |= pref_species.alt_prefixes
+						var/result = input(user, "Select an alternate species appearance or press cancel to clear it.", "Alternate Appearance") as null|anything in pickfrom
+						if(isnull(result) || result == "")
+							alt_appearance = "Default"
+						else
+							alt_appearance = result
+					else //this species has none so I'm not sure how you clicked this button but clear it anyway
+						alt_appearance = "Default"
 				if("custom_species")
 					var/new_species = reject_bad_name(input(user, "Choose your species subtype, if unique. This will show up on examinations and health scans. Do not abuse this:", "Character Preference", custom_species) as null|text)
 					if(new_species)
@@ -3366,6 +3436,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (new_body_width)
 						new_body_width = clamp(new_body_width * 0.01, min, max)
 						features["body_width"] = new_body_width
+				
+				if("waddle_amount")
+					var/new_waddle_amount = input(user, "Choose how many pixels you want to move when walking(4 Recommended): ([WADDLE_MIN]-[WADDLE_MAX])", "Character Preference", waddle_amount) as num|null
+					if(isnum(new_waddle_amount))
+						new_waddle_amount = round(clamp(new_waddle_amount, WADDLE_MIN, WADDLE_MAX), 0.1)
+						waddle_amount = new_waddle_amount
+				
+				if("up_waddle_time")
+					var/new_up_waddle_time = input(user, "Choose how fast you want to move up & down while walking(1 Recommended): ([UP_WADDLE_MIN]-[UP_WADDLE_MAX])", "Character Preference", up_waddle_time) as num|null
+					if(isnum(new_up_waddle_time))
+						new_up_waddle_time = round(clamp(new_up_waddle_time, UP_WADDLE_MIN, UP_WADDLE_MAX), 0.1)
+						up_waddle_time = new_up_waddle_time
+				
+				if("side_waddle_time")
+					var/new_side_waddle_time = input(user, "Choose how fast you want to move side to side while walking(2 Recommended): ([SIDE_WADDLE_MIN]-[SIDE_WADDLE_MAX])", "Character Preference", side_waddle_time) as num|null
+					if(isnum(new_side_waddle_time))
+						new_side_waddle_time = round(clamp(new_side_waddle_time, SIDE_WADDLE_MIN, SIDE_WADDLE_MAX), 0.1)
+						side_waddle_time = new_side_waddle_time
+				
+				if("creature_body_size")
+					var/min = CONFIG_GET(number/body_size_min)
+					var/max = CONFIG_GET(number/body_size_max)
+					var/danger = CONFIG_GET(number/threshold_body_size_slowdown)
+					var/new_body_size = input(user, "Choose your desired sprite size: ([min*100]%-[max*100]%)\nWarning: This may make your character look distorted[danger > min ? "! Additionally, a proportional movement speed penalty may be applied to characters smaller than [danger*100]%." : "!"]", "Character Preference", creature_body_size*100) as num|null
+					if (new_body_size)
+						new_body_size = clamp(new_body_size * 0.01, min, max)
+						creature_body_size = new_body_size
+
+				if("creature_toggle_fuzzy")
+					creature_fuzzy = !creature_fuzzy
 
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
@@ -3648,6 +3748,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					see_chat_non_mob = !see_chat_non_mob
 				if("see_rc_emotes")
 					see_rc_emotes = !see_rc_emotes
+				if("color_chat_log")
+					color_chat_log = !color_chat_log
 
 				if("action_buttons")
 					buttons_locked = !buttons_locked
@@ -3967,9 +4069,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/old_width = character.dna.features["body_width"]
 
 	character.dna.features = features.Copy()
+	character.dna.alt_appearance = alt_appearance
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.species.eye_type = eye_type
-	character.tastes = list(character.dna.features["taste"] = 1)
+	SSlistbank.catalogue_tastes(character, list(character.dna.features["taste"] = 1), TRUE) // unique and important
 	if(chosen_limb_id && (chosen_limb_id in character.dna.species.allowed_limb_ids))
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name

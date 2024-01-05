@@ -72,6 +72,16 @@
 	can_hold = typecacheof(list(/obj/item/ammo_casing))
 	cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
 
+/datum/component/storage/concrete/bag/casing/get_quickempty_list()
+	var/list/insides = contents()
+	var/list/empties = list()
+	for(var/obj/item/ammo_casing/AC in insides)
+		if(!AC.BB)
+			empties += AC
+	if(LAZYLEN(empties))
+		return empties
+	return insides
+
 /// Quiver
 /datum/component/storage/concrete/bag/quiver
 	max_items = STORAGE_QUIVER_MAX_ITEMS

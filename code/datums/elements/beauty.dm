@@ -1,9 +1,11 @@
 /datum/element/beauty
+/*
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
 	id_arg_index = 2
 	var/beauty = 0
 
 /datum/element/beauty/Attach(datum/target, beautyamount)
+
 	. = ..()
 	if(. == ELEMENT_INCOMPATIBLE || !isatom(target) || isarea(target))
 		return ELEMENT_INCOMPATIBLE
@@ -35,3 +37,4 @@
 		return
 	A.totalbeauty -= beauty
 	A.update_beauty()
+*/

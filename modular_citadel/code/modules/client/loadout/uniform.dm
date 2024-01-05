@@ -3210,18 +3210,6 @@
 	path = /obj/item/clothing/under/dress/coyote/bluedress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 
-/datum/gear/uniform/flannel/green
-	name = "Green Flannel"
-	cost = 0
-	path = /obj/item/clothing/under/flannelgreen
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/flannel/red
-	name = "Red Flannel"
-	cost = 0
-	path = /obj/item/clothing/under/flannelred
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/bloodred/pyjama
 	name = "Blood Red Pyjama"
 	cost = 0
@@ -3455,3 +3443,83 @@
 	cost = 0
 	path = /obj/item/clothing/under/trek/Q
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/kudds
+	name = "Red Flannel"
+	cost = 0
+	path = /obj/item/clothing/under/kuddles/redflannel
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
+
+/datum/gear/uniform/kudds/blue
+	name = "Blue Flannel"
+	path = /obj/item/clothing/under/kuddles/blueflannel
+
+/datum/gear/uniform/kudds/white
+	name = "White Flannel"
+	path = /obj/item/clothing/under/kuddles/whiteflannel
+
+/datum/gear/uniform/kudds/teal
+	name = "Teal Flannel"
+	path = /obj/item/clothing/under/kuddles/tealflannel
+
+/datum/gear/uniform/kudds/blue
+	name = "Pink Flannel"
+	path = /obj/item/clothing/under/kuddles/pinkflannel
+
+/datum/gear/uniform/kudds/purple
+	name = "Purple Flannel"
+	path = /obj/item/clothing/under/kuddles/purpleflannel
+
+/datum/gear/uniform/kudds/yellow
+	name = "Yellow Flannel"
+	path = /obj/item/clothing/under/kuddles/yellowflannel
+
+/datum/gear/uniform/kudds/orange
+	name = "Orange Flannel"
+	path = /obj/item/clothing/under/kuddles/orangeflannel
+
+/datum/gear/uniform/kudds/green
+	name = "Green Flannel"
+	path = /obj/item/clothing/under/kuddles/greenflannel
+
+/datum/gear/uniform/kudds/rattygreenskirt
+	name = "Ratty Green Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtgreen
+
+/datum/gear/uniform/kudds/rattyyellowskirt
+	name = "Ratty Yellow Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtyellow
+
+/datum/gear/uniform/kudds/rattypinkskirt
+	name = "Ratty Pink Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtpink
+
+/datum/gear/uniform/kudds/rattycyberpunkskirt
+	name = "Ratty Cyberpunk Skirt"
+	path = /obj/item/clothing/under/kuddles/rattyskirtcyberpunk
+
+/datum/gear/uniform/kudds/brownpunkpants
+	name = "Brown Punk Pants"
+	path = /obj/item/clothing/under/kuddles/brownpunkpants
+
+/datum/gear/uniform/kudds/brownpunkpants
+	name = "Brown Punk Pants"
+	path = /obj/item/clothing/under/kuddles/olivecargopunk
+
+/datum/gear/uniform/wasteland/loincloth/sunskirt
+	name = "Green Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/sunskirtgrey
+	name = "Grey scaled Sun-skirt"
+	path = /obj/item/clothing/under/sun_skirt_grey
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+/datum/gear/uniform/wasteland/loincloth/halfskirt
+	name = "blue mid-rif skirt"
+	path = /obj/item/clothing/under/half_skirt
+	cost = 0
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL

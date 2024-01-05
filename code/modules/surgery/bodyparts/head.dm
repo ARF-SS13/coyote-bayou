@@ -222,6 +222,11 @@
 	max_damage = 5000
 	animal_origin = DEVIL_BODYPART
 
+/obj/item/bodypart/head/feral
+	dismemberable = 0
+	animal_origin = FERAL_BODYPART
+	dmg_overlay_type = null
+
 /obj/item/bodypart/head/larva
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "larva_head"

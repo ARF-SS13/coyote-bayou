@@ -10,7 +10,8 @@
 		"Redwater.dmm",
 		"Redwater-Upper.dmm",
 		"Ashdown.dmm",
-		"Ashdown-Upper.dmm"
+		"Ashdown-Upper.dmm",
+		"Garland-City.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -142,6 +143,21 @@
 			"Force X": 2,
 			"Force Y": 3,
 			"Force Z": 2
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force East": 1,
+			"Name": "Garland City",
+			"Force X": 3,
+			"Force Y": 2,
+			"Force Z": 1
 		}
 	],
 	"minetype": "none"

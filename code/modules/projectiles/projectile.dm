@@ -373,11 +373,12 @@
 	//-->Pacifism Lesser Trait, most important section of it
 	if(iscarbon(target))
 		if(iscarbon(firer))  //is our firer a carbon that can have traits?
-			var/mob/living/carbon/C = target
-			if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
-				trait_pacifism_lesser_consequences(firer, TRUE)
-				visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
-				return FALSE
+			if(!nodamage)  //if the projectile is harmless by definition then there's no need for the trait to even trigger
+				var/mob/living/carbon/C = target
+				if(HAS_TRAIT(firer, TRAIT_PACIFISM_LESSER) && C.last_mind)  //does the firer actually has the PACIFISM_LESSER trait? And is the target sapient?
+					trait_pacifism_lesser_consequences(firer, TRUE)
+					visible_message(span_warning("\the [src] almost hits [C], but [firer] purposely misses \his target!"))
+					return FALSE
 	//<--
 	return TRUE
 
@@ -423,7 +424,7 @@
 		if(damage && L.blood_volume && damage_type == BRUTE)
 			var/splatter_dir = dir
 			if(starting)
-				splatter_dir = get_dir(starting, target_loca)
+				splatter_dir = round(Get_Angle(starting, target_loca), 1)
 			var/obj/item/bodypart/B = L.get_bodypart(def_zone)
 			if(B && B.status == BODYPART_ROBOTIC) // So if you hit a robotic, it sparks instead of bloodspatters
 				do_sparks(2, FALSE, target.loc)

@@ -122,8 +122,6 @@
 	var/obj/item/active_mousedown_item = null
 	///Used in MouseDrag to preserve the original mouse click parameters
 	var/mouseParams = ""
-	///Used in MouseDrag to preserve the last mouse-entered location.
-	var/mouseLocation = null
 	///Used in MouseDrag to preserve the last mouse-entered object.
 	var/mouseObject = null
 	var/mouseControlObject = null
@@ -178,8 +176,6 @@
 	var/last_asset_job = 0
 	var/last_completed_asset_job = 0
 
-	var/list/moused_over_objects = list()
-
 	//world.time of when the crew manifest can be accessed
 	var/crew_manifest_delay
 
@@ -188,3 +184,4 @@
 	var/is_fullscreen = 0
 	/// ckeys of mobs we'd like to see the genitals of
 	var/list/genital_exceptions = list()
+	var/ahelpspam = FALSE

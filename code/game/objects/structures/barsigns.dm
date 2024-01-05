@@ -301,6 +301,16 @@
 	icon = "sun"
 	desc = "This diner is sure to shine bright!"
 
+/datum/barsign/orange
+	name = "Orange Juice"
+	icon = "orangejuice"
+	desc = "For the ones that can't handle their drink!"
+
+/datum/barsign/lecafesilenciexu
+	name = "le cafe"
+	icon = "le_cafe_silencieux"
+	desc = "A fancy diner for sure!"
+
 /datum/barsign/hiddensigns
 	hidden = TRUE
 

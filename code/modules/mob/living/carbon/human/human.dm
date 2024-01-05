@@ -22,8 +22,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	add_verb(src, /mob/living/proc/toggle_mob_sleep)
 	add_verb(src, /mob/living/proc/lay_down)
 	add_verb(src, /mob/living/carbon/human/verb/underwear_toggle)
-	add_verb(src, /mob/living/verb/subtle)
-	add_verb(src, /mob/living/verb/subtler)
 	//initialize limbs first
 	create_bodyparts()
 
@@ -148,10 +146,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	dat += "<tr><td><B>Head:</B></td><td><A href='?src=[REF(src)];item=[SLOT_HEAD]'>[(head && !(head.item_flags & ABSTRACT)) ? head : "<font color=grey>Empty</font>"]</A></td></tr>"
 
-	if(SLOT_WEAR_MASK in obscured)
+	if(SLOT_MASK in obscured)
 		dat += "<tr><td><font color=grey><B>Mask:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><B>Mask:</B></td><td><A href='?src=[REF(src)];item=[SLOT_WEAR_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT)) ? wear_mask : "<font color=grey>Empty</font>"]</A></td></tr>"
+		dat += "<tr><td><B>Mask:</B></td><td><A href='?src=[REF(src)];item=[SLOT_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT)) ? wear_mask : "<font color=grey>Empty</font>"]</A></td></tr>"
 
 	if(SLOT_NECK in obscured)
 		dat += "<tr><td><font color=grey><B>Neck:</B></font></td><td><font color=grey>Obscured</font></td></tr>"
@@ -340,8 +338,8 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	// Gremling is just gonna do gremlin things and add this here > w> Cant be assed trying to fit this in somewhere else for now.
 	if(href_list["enlargeImage"])
-		var/dat = {"<img src='[DiscordLink(profilePicture)]'>"}
-		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",500,500)
+		var/dat = {"<img src='[PfpHostLink(profilePicture, pfphost)]'>"}
+		var/datum/browser/popup = new(usr, "enlargeImage", "Full Sized Picture!",1024,1024)
 		popup.set_content(dat)
 		popup.open()
 

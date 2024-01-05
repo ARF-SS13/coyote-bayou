@@ -864,15 +864,15 @@
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 /* * * * * * * * * * *
- * Anti-Materiel Rifle
+ * Anti-Material Rifle
  * Huge Bolt-Action Rifle
  * .50MG
  * Slow to fire
  * Uncommon
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/rifle/mag/antimateriel
-	name = "anti-materiel rifle"
+/obj/item/gun/ballistic/rifle/mag/antimaterial
+	name = "anti-material rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "amr"
@@ -884,7 +884,7 @@
 	mag_type = /obj/item/ammo_box/magazine/amr
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T6
 	init_recoil = HMG_RECOIL(3, 3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
@@ -892,8 +892,33 @@
 	)
 	can_scope = FALSE
 	zoom_factor = 1
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+
+/obj/item/gun/ballistic/rifle/mag/pz39custom //custom
+	name = "Custom Panzerbüchse 39"
+	desc = "A customized PzB.39 AT rifle. This rifle seems to be custom fitted to fire in a bolt-action mode instead of a falling-block action.The bolt is not really much of a bolt but it works, it also adds more weight to the rifle. From 27.78 lbs to 30 pounds! The rifle consists of premium grade parts. The stock itself, the part where one rests their shoulder, is extra padded for comfort and shock absorbing properties. Engraved on the reciever is baroque motifs while the rifle itself has a few moths and feline figures engraved on the reciever. A rifle fit for the Queen from the shadows."
+	icon_state = "pzb39"
+	item_state = "pzb39"
+	mag_type = /obj/item/ammo_box/magazine/pzb39magazne
+	init_mag_type = /obj/item/ammo_box/magazine/pzb39magazne
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/objects/guns/ww2gunsleft.dmi'
+	righthand_file = 'icons/fallout/objects/guns/ww2gunsright.dmi'
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T4
+	init_recoil = HMG_RECOIL (1.4 , 1.5)
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 //no scope, less capacity, more common
 /obj/item/gun/ballistic/rifle/mag/boys
@@ -916,11 +941,42 @@
 		/datum/firemode/semi_auto/slower
 	)
 	can_scope = FALSE
-	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	cock_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting
 	name = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/testbullet
 	damage_multiplier = 30
+
+/* * * * * * * * * * *
+ * FR-12.7 Hebe
+ * +.50MG
+ * +/-Loadout item
+ * -Low mag size
+ * -Slow to fire
+ * -User isn't a boltworker (cheater) 
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/hebe
+	name = "FR-12.7 Hebe"
+	desc = "An anti-material rifle with a high efficiency muzzle break and a Stellite lined barrel. Despite the apparent lack of scope and scope mount, it features a robust adjustable stock for maximum accuracy. Lacks barrel threading."
+	icon = 'modular_coyote/icons/objects/guns/amr.dmi'
+	icon_state = "amr"
+	item_state = "amr"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hebe
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HMG_RECOIL(3, 3)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	casing_ejector = FALSE
+	can_scope = FALSE
+	can_suppress = FALSE
+	can_flashlight = TRUE
+	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
+	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)

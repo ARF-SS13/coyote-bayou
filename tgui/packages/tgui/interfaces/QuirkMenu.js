@@ -24,7 +24,8 @@ const QuirksPerPage = 10;
 // /      'Qdesc' : string,
 // /      'Qmechanics' : string,
 // /      'Qconflicts' : array,
-// /      'Qcategory' : string
+// /      'Qcategory' : string,
+// /      'Qhumanonly' : string
 // /    },
 // /  ], ...
 // and here's the format of UserQuirks:
@@ -483,7 +484,8 @@ const QuirkJizz = (props, context) => {
 // /      'Qdesc' : string,
 // /      'Qmechanics' : string,
 // /      'Qconflicts' : array,
-// /      'Qcategory' : string
+// /      'Qcategory' : string,
+// /      'Qhumanonly' : string
 // /    },
 // /  ], ...
 const QuirkButton = (props, context) => {
@@ -503,6 +505,7 @@ const QuirkButton = (props, context) => {
     'Qmechanics': 'Makes Dan go augh. Report for expensive dragon pussy.',
     'Qconflicts': [],
     'Qcategory': 'All Quirks',
+    'Qhumanonly' : '👨',
   };
 
   const QuirkKey = QuirkObj.Qkey || "!";
@@ -512,6 +515,7 @@ const QuirkButton = (props, context) => {
   const QuirkDesc = QuirkObj.Qdesc || "This is a quirk! Not much is known about it!";
   const QuirkMechanics = QuirkObj.Qmechanics || "Supposedly does something!";
   const QuirkConflicts = QuirkObj.Qconflicts || [];
+  const QuirkHumanOnly = QuirkObj.Qhumanonly || "Hmmm";
 
   const QuirkConflictsObjs = QKeyArray2ObjArray(QuirkConflicts, context) || [];
 
@@ -654,7 +658,7 @@ const QuirkButton = (props, context) => {
           textAlign="left"
           fontSize="11px"
           color={MiniTextColor}
-          dangerouslySetInnerHTML={{ __html: QuirkMechanics }} />
+          dangerouslySetInnerHTML={{ __html: QuirkHumanOnly + QuirkMechanics }} />
         {QuirkConflictsObjs.length > 0 && (
           <Box>
             <ConflictReadout QConflict={QuirkConflictsObjs} TextCol={MiniTextColor} />
@@ -825,6 +829,7 @@ const QuirkKey2Obj = (QuirkKey, context) => {
     'Qmechanics': 'Makes Dan go augh. Report for discount erp.',
     'Qconflicts': [],
     'Qcategory': 'All Quirks',
+    'Qhumanonly' : '👨',
   };
 };
 
@@ -858,6 +863,7 @@ const GetQuirksInCategory = (props, context) => {
         'Qmechanics': 'They\'re pretty cool!',
         'Qconflicts': [],
         'Qcategory': 'All Quirks',
+        'Qhumanonly' : '👨',
       },
     ];
   }

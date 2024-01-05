@@ -71,6 +71,7 @@
 		//Recent as opposed to all because rounds tend to have a LOT of text.
 		var/list/recent_speech = list()
 
+		LAZYINITLIST(target.logging)
 		var/list/say_log = target.logging[LOG_SAY]
 
 		if(LAZYLEN(say_log) > LING_ABSORB_RECENT_SPEECH)

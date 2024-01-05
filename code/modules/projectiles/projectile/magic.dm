@@ -464,17 +464,20 @@
 /obj/item/projectile/magic/aoe/fireball
 	name = "bolt of fireball"
 	icon_state = "fireball"
+	flag = "bomb"
 	damage = 75
+	damage_low = 40
+	damage_high = 90
 	damage_type = BRUTE
 	nodamage = 0
-	supereffective_damage = BULLET_DAMAGE_RIFLE_50MG_MATCH
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	supereffective_damage = 100
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
 
 	//explosion values
 	var/exp_heavy = 0
 	var/exp_light = 1
 	var/exp_flash = 1
-	var/exp_fire = 1
+	var/exp_fire = 2
 
 /obj/item/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
@@ -547,13 +550,12 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-35) //HEALS
-		M.adjustOxyLoss(-20)
-		M.adjustBruteLoss(-15)
-		M.adjustFireLoss(-5)
-		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustBruteLoss(-3) //HEALS
+		M.adjustOxyLoss(-10)
+		M.adjustFireLoss(-1)
+		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
-		M.adjustStaminaLoss(-20)
+		M.adjustStaminaLoss(-10)
 		return
 
 /obj/item/projectile/magic/healburn
@@ -570,14 +572,14 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-5) //HEALS
-		M.adjustOxyLoss(-20)
-		M.adjustBruteLoss(-35)
-		M.adjustFireLoss(-35)
-		M.adjustToxLoss(-0, TRUE) //heals TOXINLOVERs
+		M.adjustBruteLoss(-1) //HEALS
+		M.adjustOxyLoss(-10)
+		M.adjustFireLoss(-3)
+		M.adjustToxLoss(-1, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-5)
 		M.adjustStaminaLoss(-10)
 		return
+
 /obj/item/projectile/magic/healtoxin
 	icon_state = "toxinheal"
 	damage = 0
@@ -592,13 +594,12 @@
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
 		M.visible_message(span_warning("[src] mends [target]!"))
-		M.adjustBruteLoss(-5) //HEALS
+		M.adjustBruteLoss(-1) //HEALS
 		M.adjustOxyLoss(-50)
-		M.adjustBruteLoss(-15)
-		M.adjustFireLoss(-5)
-		M.adjustToxLoss(-50, TRUE) //heals TOXINLOVERs
-		M.adjustCloneLoss(-50)
-		M.adjustStaminaLoss(-0)
+		M.adjustFireLoss(-1)
+		M.adjustToxLoss(-5, TRUE) //heals TOXINLOVERs
+		M.adjustCloneLoss(-25)
+		M.adjustStaminaLoss(-50)
 		return
 
 /obj/item/projectile/magic/tenderwand
