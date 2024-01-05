@@ -124,11 +124,12 @@
 	name = "rare but less valuable loot, found in dangerous dungeons or as a rare upgrade to uncommon loot"
 	icon_state = "x7"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_mags = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_ammo = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_medicine = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_drugs = 1,
-		/obj/effect/spawner/lootdrop/f13/rare_mats = 1,
+		/obj/effect/spawner/lootdrop/f13/rare_medicine = 20,
+		/obj/effect/spawner/lootdrop/f13/rare_mods = 20,
+		/obj/effect/spawner/lootdrop/f13/rare_drugs = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_mats = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_parts = 10,
+		/obj/effect/spawner/lootdrop/f13/rare_tools = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_money = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_bombs = 10,
 		/obj/effect/spawner/lootdrop/f13/rare_artifacts = 5,
@@ -137,6 +138,7 @@
 /// Generally decent stuff, but are mostly consumables or stuff mainly just valuable for selling. Shouldnt affect tiering if given in uncommon loot rarely.
 /obj/effect/spawner/lootdrop/f13/rare_tertiary
 	name = "rare but generally trash loot, found in dangerous dungeons or as a rare additional drop to uncommon+ loot"
+	icon_state = "x7"
 	loot = list(
 		/obj/effect/spawner/lootdrop/f13/rare_medicine = 15,
 		/obj/effect/spawner/lootdrop/f13/rare_drugs = 10,
@@ -610,6 +612,7 @@
 /obj/effect/spawner/lootdrop/f13/rare_melee
 	name = "rare melee"
 	loot = list(
+		/obj/item/gun/ballistic/revolver/ballisticfist = 10,
 		/obj/item/melee/powered/ripper = 10,
 		/obj/item/twohanded/legionaxe = 10,
 		/obj/item/melee/transforming/energy/axe/protonaxe = 10,
