@@ -5,6 +5,7 @@
 
 //master constants
 #define MCPHB_MASTER_VOLUME 100		//playsounds volume
+#define MCPHB_CRIT_SHOT 1.5			//+50% of chances to hit the mob IF it's a dead eye user
 
 //probabilities of an event to happen
 #define PROB_HEADSHOT_HIT 50		//Chances of dealing extra damage to the mob when aiming head
@@ -18,22 +19,26 @@
 #define DAM_MULT_HEADSHOT_HIT 1.5   //headshots deal more damage
 #define DAM_MULT_ARMS_HIT 0.85      //shooting on the arms deals less damage
 #define DAM_MULT_LEGS_HIT 0.75		//shooting on the legs deals less damage
+#define SPEED_MULT_LEGS_HIT 1.5		//shooting on the legs makes the mob chase you slowly
 
 //target debuffs
 #define TRGT_DEBUFF_MULT_DAM_ARMS_HIT 0.75			//After being shot on the arms, the mob deals less damage, because it can't swing its claws just as good!
 #define TRGT_DEBUFF_TIMEOUT_ARMS_HIT 3 SECONDS		//How long does this debuff last? and at the same time how long do we have to wait before triggering it again? (basically this constant is doubled)
 #define TRGT_KNOCKDOWN_TIMEOUT_ARMS_HIT 2 SECONDS 	//if we actually manage to knock the mob on its butt (hehe) how long should it stay down?
-#define TRGT_DEBUFF_TIMEOUT_LEGS_HIT 5 SECONDS      //How long does this debuff last?
+#define TRGT_DEBUFF_TIMEOUT_LEGS_HIT 6 SECONDS      //How long does this debuff last?
 
 
 //main function
 /proc/multichance_projectile_hit_behaviour(obj/item/projectile/P, atom/movable/firer, atom/target, status)
 	if(!status)  //status needs to be 0, otherwise it means that bullet has missed already
+		var/firer_has_crit_shot = 0
+		if(HAS_TRAIT(firer, TRAIT_CRIT_SHOT))
+
 		//Let's check if what we are shooting is a mob
 		if(ismob(target) && !iscarbon(target))  //if the target is a simplemob or anything beyond but not an actual playable carbon
 			if(iscarbon(firer))  //we need to make sure that our firer is a carbon
 				var/mob/living/carbon/C = firer
-				var/mob/living/simple_animal/T = target
+				var/mob/living/simple_animal/hostile/T = target
 
 				//Headshot hit:
 				//1. prob of 40% landing a headshot --> +50% raw damage on the projectile
@@ -41,7 +46,7 @@
 				if(C.zone_selected == "head")  //if the firer is aiming for the head of the simplemob
 					if(prob(PROB_HEADSHOT_HIT))
 						to_chat(firer, span_green("The [P] flies with a perfect trajectory to hit [T] in the head, dealing more damage!"))
-						P.damage = P.damage * DAM_MULT_HEADSHOT_HIT
+						P.damage *= DAM_MULT_HEADSHOT_HIT
 						playsound(T.loc, 'sound/weapons/crit_headshot.ogg', MCPHB_MASTER_VOLUME, TRUE)
 					else if(prob(PROB_HEADSHOT_MISS))
 						to_chat(firer, span_warning("The [P] misses [T] completely!"))	
@@ -59,12 +64,12 @@
 							to_chat(firer, span_green("The [P] hits [T] on their arm, making it jitter and forcing it to move inconsistently!"))
 							INVOKE_ASYNC(T, /mob.proc/emote, "me", EMOTE_VISIBLE, "'s arms jitter in pain!")
 							T.mcphb_arms_hit = TRUE  //arms got hit, so for a while don't do damage 
-							T.melee_damage_lower = T.melee_damage_lower * TRGT_DEBUFF_MULT_DAM_ARMS_HIT
-							T.melee_damage_upper = T.melee_damage_upper * TRGT_DEBUFF_MULT_DAM_ARMS_HIT
+							T.melee_damage_lower *= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
+							T.melee_damage_upper *= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
 
 							spawn(TRGT_DEBUFF_TIMEOUT_ARMS_HIT)
-								T.melee_damage_lower = T.melee_damage_lower / TRGT_DEBUFF_MULT_DAM_ARMS_HIT
-								T.melee_damage_upper = T.melee_damage_upper / TRGT_DEBUFF_MULT_DAM_ARMS_HIT
+								T.melee_damage_lower /= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
+								T.melee_damage_upper /= TRGT_DEBUFF_MULT_DAM_ARMS_HIT
 
 								spawn(TRGT_DEBUFF_TIMEOUT_ARMS_HIT)
 									T.mcphb_arms_hit = FALSE
@@ -87,7 +92,7 @@
 											T.set_resting(FALSE, silent = TRUE, updating = TRUE)
 											T.setMovetype(initial(T.movement_type))
 					
-						P.damage = P.damage * DAM_MULT_ARMS_HIT  //this has to be the last calculation done
+						P.damage *= DAM_MULT_ARMS_HIT  //this has to be the last calculation done
 						playsound(T.loc, 'sound/weapons/bullet_flesh_1.ogg', MCPHB_MASTER_VOLUME, TRUE)
 
 				//Legs hit:
@@ -100,15 +105,15 @@
 							to_chat(firer, span_green("The [P] hits [T] on their legs, forcing them to trudge along!"))
 							INVOKE_ASYNC(T, /mob.proc/emote, "me", EMOTE_VISIBLE, "'s legs jitter in pain!")
 							T.mcphb_legs_hit = TRUE
-							T.add_movespeed_modifier(/datum/movespeed_modifier/mob_crippled)
+							T.move_to_delay *= SPEED_MULT_LEGS_HIT
 
 							spawn(TRGT_DEBUFF_TIMEOUT_LEGS_HIT)
-								T.remove_movespeed_modifier(/datum/movespeed_modifier/mob_crippled)
+								T.move_to_delay /= SPEED_MULT_LEGS_HIT
 
 								spawn(TRGT_DEBUFF_TIMEOUT_LEGS_HIT)
 									T.mcphb_legs_hit = FALSE
 
-						P.damage = P.damage * DAM_MULT_LEGS_HIT  //this has to be the last calculation done
+						P.damage *= DAM_MULT_LEGS_HIT  //this has to be the last calculation done
 						playsound(T.loc, 'sound/weapons/bullet_flesh_1.ogg', MCPHB_MASTER_VOLUME, TRUE)
 
 					else if(prob(PROB_LEGS_MISS))  //chance of missing the mob's legs
