@@ -513,7 +513,7 @@
 	cost = 15000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
 	num_contained = 1
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/rare_unique
+		/obj/effect/spawner/lootdrop/f13/very_rare
 		)
 	crate_name = "Premium weapon crate"
 
