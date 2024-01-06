@@ -507,7 +507,7 @@
 		)
 	crate_name = "quality weapon crate"
 
-/datum/supply_pack/security/weapon_unique
+/datum/supply_pack/security/weapon_dungeon_unique
 	name = "Weapons - Uncommon Premium"
 	desc = "A single weapon of high rarity. There's no telling what was packed into this crate"
 	cost = 10000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1000 coins
@@ -517,7 +517,7 @@
 		)
 	crate_name = "Premium weapon crate"
 
-/datum/supply_pack/security/weapon_unique
+/datum/supply_pack/security/weapon_plus_unique
 	name = "Weapons - Rare Premium"
 	desc = "A single weapon of incredible rarity. There's no telling what was packed into this crate"
 	cost = 15000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
