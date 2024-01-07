@@ -169,6 +169,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_snouts" = "None",
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
+		"derg_belly" = "None",
+		"derg_horns" = "None",
+		"derg_mane" = "None",
+		"derg_ears" = "None",
+		"derg_eyes" = "None",
 		"xenodorsal" = "Standard",
 		"xenohead" = "Standard",
 		"xenotail" = "Xenomorph Tail",
@@ -3105,6 +3110,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_dors = input(user, "Choose your character's dorsal tube type:", "Character Preference") as null|anything in GLOB.xeno_dorsal_list
 					if(new_dors)
 						features["xenodorsal"] = new_dors
+
+				//Dragon Bodyparts
+				if("derg_belly") //dragon underside
+					var/new_belly
+					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
+					if(new_belly)
+						features["derg_belly"] = new_belly
+
+				if("derg_horns")
+					var/new_horn
+					new_horn = input(user, "Choose your character's horn type:", "Character Preference") as null|anything in GLOB.derg_horn_list
+					if(new_horn)
+						features["derg_horns"] = new_horn
+
+				if("derg_ears")
+					var/new_ears
+					new_ears = input(user, "Choose your character's ear type:", "Character Preference") as null|anything in GLOB.derg_ear_list
+					if(new_ears)
+						features["derg_ears"] = new_ears
+
+				if("derg_mane")
+					var/new_mane
+					new_mane = input(user, "Choose your character's mane type:", "Character Preference") as null|anything in GLOB.derg_mane_list
+					if(new_mane)
+						features["derg_mane"] = new_mane
+
+				if("derg_eyes")
+					var/new_eye
+					new_eye = input(user, "Choose your character's eye type:", "Character Preference") as null|anything in GLOB.derg_eye_list
+					if(new_eye)
+						features["derg_eyes"] = new_eye
 
 				//every single primary/secondary/tertiary colouring done at once
 				if("xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary","xhead_primary","xhead_secondary","xhead_tertiary","tail_primary","tail_secondary","tail_tertiary","insect_markings_primary","insect_markings_secondary","insect_markings_tertiary","insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary","ears_primary","ears_secondary","ears_tertiary","frills_primary","frills_secondary","frills_tertiary","ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary","taur_primary","taur_secondary","taur_tertiary","snout_primary","snout_secondary","snout_tertiary","spines_primary","spines_secondary","spines_tertiary", "mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
