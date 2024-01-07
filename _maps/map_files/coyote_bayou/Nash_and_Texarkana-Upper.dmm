@@ -2113,10 +2113,9 @@
 /area/f13/caves)
 "bbB" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/rare_weps,
-/obj/effect/spawner/lootdrop/f13/rare_weps,
-/obj/effect/spawner/lootdrop/f13/rare_armor,
-/obj/effect/spawner/lootdrop/f13/rare_armor,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bbR" = (
@@ -17720,6 +17719,10 @@
 	color = "#775555"
 	},
 /area/f13/building)
+"iXo" = (
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/caves)
 "iXG" = (
 /obj/effect/decal/waste{
 	pixel_x = 18;
@@ -21566,6 +21569,49 @@
 /obj/structure/table/glass,
 /turf/open/floor/wood_common,
 /area/f13/building/hospital)
+"kRU" = (
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = 4;
+	pixel_y = -7
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = -6;
+	pixel_y = -7
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/structure/barricade/wooden/planks{
+	density = 0;
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "kSa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -24440,8 +24486,9 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "msV" = (
-/obj/structure/closet/crate/trashcart,
-/turf/open/indestructible/ground/inside/subway,
+/obj/effect/spawner/lootdrop/f13/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mta" = (
 /obj/machinery/photocopier,
@@ -33283,7 +33330,6 @@
 "qSg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/wasteplant/wild_xander,
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
@@ -35712,6 +35758,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
 	},
+/obj/structure/flora/wasteplant/wild_xander,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "shp" = (
@@ -66478,7 +66525,7 @@ gJP
 gJP
 gJP
 dOR
-bbB
+msV
 gJP
 gJP
 gJP
@@ -66488,9 +66535,9 @@ gJP
 hFx
 gJP
 gJP
-msV
+gfz
 dOR
-gJP
+hLx
 gJP
 dOR
 oez
@@ -67255,7 +67302,7 @@ gJP
 hFx
 hFx
 dOR
-msV
+gfz
 gJP
 hFx
 hFx
@@ -67269,10 +67316,10 @@ dOR
 hFx
 hFx
 hFx
-hFx
+wDO
 dOR
 hFx
-hFx
+wDO
 cnr
 hFx
 gJP
@@ -67780,7 +67827,7 @@ gXH
 hFx
 gJP
 gJP
-hFx
+wDO
 hFx
 dOR
 dOR
@@ -68031,7 +68078,7 @@ ikj
 dOR
 gfz
 gJP
-hFx
+wDO
 gJP
 gJP
 hFx
@@ -68302,7 +68349,7 @@ gJP
 hFx
 sEM
 igb
-ikj
+iXo
 dOR
 dOR
 hFx
@@ -68563,8 +68610,8 @@ hJO
 ikj
 nxa
 ikj
-ikj
-hFx
+iXo
+wDO
 oqG
 hFx
 hFx
@@ -69076,7 +69123,7 @@ ikj
 bCc
 igb
 ikj
-ikj
+iXo
 ikj
 gJP
 dOR
@@ -69579,13 +69626,13 @@ gJP
 dOR
 vje
 dOR
-msV
+gfz
 hFx
 hFx
 hFx
 dOR
 hFx
-hFx
+wDO
 grY
 ikj
 jgF
@@ -69596,9 +69643,9 @@ qfZ
 dOR
 sEM
 ikj
+iXo
 ikj
-ikj
-ikj
+iXo
 kKD
 dOR
 vje
@@ -69827,7 +69874,7 @@ gJP
 dOR
 dOR
 gJP
-msV
+gfz
 dOR
 dOR
 dOR
@@ -70094,7 +70141,7 @@ dOR
 vje
 dOR
 hFx
-hFx
+wDO
 hFx
 eAD
 hFx
@@ -70631,7 +70678,7 @@ vje
 vje
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -70888,7 +70935,7 @@ vje
 vje
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -71145,7 +71192,7 @@ vje
 vje
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -71402,7 +71449,7 @@ vje
 vje
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -71659,7 +71706,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -71916,7 +71963,7 @@ oez
 oez
 oez
 oez
-oez
+tRd
 tRd
 oez
 oez
@@ -72173,7 +72220,7 @@ oez
 oez
 oez
 vje
-vje
+kRU
 tRd
 oez
 oez
@@ -72430,7 +72477,7 @@ oez
 oez
 oez
 vje
-vje
+hFx
 hFx
 oez
 oez
