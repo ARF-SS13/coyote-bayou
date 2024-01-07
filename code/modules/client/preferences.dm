@@ -170,6 +170,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
 		"derg_belly" = "None",
+		"derg_belly_color" = "FFF",
 		"derg_horns" = "None",
 		"derg_mane" = "None",
 		"derg_ears" = "None",
@@ -3117,6 +3118,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
 					if(new_belly)
 						features["derg_belly"] = new_belly
+				
+				if("derg_belly_color")
+					var/new_input = input(user, "Choose your character's belly colour:", "Character Preference","#"+features["derg_belly_color"]) as color|null
+					if(new_input)
+						if (new_input == "#000000")
+							features["derg_belly_color"] = "FFF"
+						else
+							features["derg_belly_color"] = sanitize_hexcolor(new_input, 6)
 
 				if("derg_horns")
 					var/new_horn
