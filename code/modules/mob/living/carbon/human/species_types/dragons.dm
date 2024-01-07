@@ -31,10 +31,9 @@
 	inert_mutation = FIREBREATH
 	species_language_holder = /datum/language_holder/lizard
 	species_type = "dragon"
-	allowed_limb_ids = list("dragon", "mammal", "aquatic", "avian")
+	allowed_limb_ids = list("dragon")
 	damage_overlay_type = null
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
+	limbs_id = "dragon"
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 	icon_width = 128

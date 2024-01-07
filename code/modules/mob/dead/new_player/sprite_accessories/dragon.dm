@@ -4,11 +4,15 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	color_src = MUTCOLORS2
 	mutant_part_string = "derg_belly"
+	center = TRUE
+	dimension_x = 128
 
 /datum/sprite_accessory/derg_belly/none
 	name = "None"	
 	icon_state = "none"
 	relevant_layers = null
+	dimension_x = 32
+	center = FALSE
 
 /datum/sprite_accessory/derg_belly/smooth
 	name = "Dragon Under Smooth"	
@@ -32,11 +36,16 @@
 	relevant_layers = list(HORNS_LAYER)
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_horns"
+	recommended_species = list("dragon")
+	center = TRUE
+	dimension_x = 128
 
 /datum/sprite_accessory/derg_horns/smooth
 	name = "None"	
 	icon_state = "none"
 	relevant_layers = null
+	dimension_x = 32
+	center = FALSE
 
 /datum/sprite_accessory/derg_horns/pointy
 	name = "Pointy"
