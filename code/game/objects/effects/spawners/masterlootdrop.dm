@@ -189,8 +189,8 @@
 /obj/effect/spawner/lootdrop/f13/very_rare
 	name = "very rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/very_rare_guns = 30, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/very_rare_energy = 30,
+		/obj/effect/spawner/lootdrop/f13/very_rare_guns = 50, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/very_rare_energy = 50,
 	)
 
 ///////////////////////////////
