@@ -1,5 +1,7 @@
 // Wizards's dumb attempt at dragon porting
 // yoinked icons and idea from Chompers/Virgo
+#define SPECIES_DRAGON dragon
+
 /datum/species/dragon
 	simple_icon = 'icons/mob/dragon/dragon_parts_greyscaled.dmi'
 	icon_rest_suffix = "-rest"
