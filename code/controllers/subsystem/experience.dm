@@ -40,22 +40,23 @@ SUBSYSTEM_DEF(experience)
 /datum/controller/subsystem/experience/proc/fire(resumed)
 	save_loaded_exp()
 
-/// Does the initial loading of all the EXP datas
-/datum/controller/subsystem/experience/proc/load_wave(startup)
-	if(startup)
-		for(var/ck in GLOB.directory) // ckey2client
-			var/client/C = GLOB.directory[ck]
-			if(!C)
-				continue
-			var/datum/preferences/P = C.prefs
-			if(!P)
-				continue
+/// Does the initial loading of all the EXP datas of everyone connected before the game started
+/datum/controller/subsystem/experience/proc/load_wave(forceit)
+	if(!initialized && !forceit)
+		return
+	for(var/ck in GLOB.directory) // ckey2client
+		var/client/C = GLOB.directory[ck]
+		if(!C)
+			continue
+		var/datum/preferences/P = C.prefs
+		if(!P)
+			continue
 			
 			
 
 
 /// gets the EXP directory for the character, yeah uhhhh so theres player and character, player holds the various character files, which hold the actual exp data
-/datum/controller/subsystem/experience/proc/get_directory(c_key, uid, backup) // yup
+/datum/controller/subsystem/experience/proc/get_character_directory(c_key, uid, backup) // yup
 	if(!c_key)
 		return
 	if(!uid)
@@ -66,6 +67,16 @@ SUBSYSTEM_DEF(experience)
 		return "[_XP_ROOT_PATH]/[_XP_BACKUP_PATH]-[GLOB.round_id]/[c_key]/[uid]/"
 	return "[_XP_ROOT_PATH]/[_XP_CURRENT_PATH]/[c_key]/[uid]/"
 
+/// gets the EXP directory for the PLAYER
+/datum/controller/subsystem/experience/proc/get_player_directory(c_key, backup) // yup
+	if(!c_key)
+		return
+	if(backup)
+		if(backup <= TRUE)
+			backup = GLOB.round_id
+		return "[_XP_ROOT_PATH]/[_XP_BACKUP_PATH]-[GLOB.round_id]/[c_key]/"
+	return "[_XP_ROOT_PATH]/[_XP_CURRENT_PATH]/[c_key]/"
+
 /datum/controller/subsystem/experience/proc/allowed_exps(datum/exp/pat, c_key)
 	if(!c_key)
 		return FALSE
@@ -73,68 +84,78 @@ SUBSYSTEM_DEF(experience)
 		return FALSE
 	return TRUE
 
-/datum/controller/subsystem/experience/proc/init_player_xp(datum/preferences/P)
-	if(!istype(P))
-		P = extract_prefs(P)
-	if(!P)
-		CRASH("Failed to extract prefs from [P]!!!!!!!!!!!! Error code: HOT-SINGLE-MEGA-FLOUNDER") // yes
-		return FALSE
-	if(!P.parent)
-		return FALSE // disconnected or something, clients be fickle
-	var/myckey = P.parent.ckey // get it while its hot!!
-	if(!P.prefs_uid) // hasnt been set yet
-		give_new_uid(P)
-		if(!P.prefs_uid)
-			to_chat(P.parent, span_userdanger())
-			CRASH("Failed to generate a UID for [P.parent.ckey]!!!!!!!!!!!! Error code: CURVY-JIGGLY-TURBO-EEL")
-			return FALSE
-	var/myuid = P.prefs_uid
-	if(istype(LAZYACCESS(all_lvls, myuid), /datum/exp_holder))
-		return TRUE // already there!
-	var/datum/exp_holder/my_holder = new /datum/exp_holder(myckey, myuid)
-	all_lvls[myuid] = my_holder // virginity will be set, awaiting the first load when we're good and ready
-	to_chat(P.parent, span_notice("Loading character data for [P.real_name]..."))
-	to_load |= myuid
-	catalogue_uid(myckey, myuid)
+// /datum/controller/subsystem/experience/proc/init_player_xp(datum/preferences/P)
+// 	if(!istype(P))
+// 		P = extract_prefs(P)
+// 	if(!P)
+// 		CRASH("Failed to extract prefs from [P]!!!!!!!!!!!! Error code: HOT-SINGLE-MEGA-FLOUNDER") // yes
+// 		return FALSE
+// 	if(!P.parent)
+// 		return FALSE // disconnected or something, clients be fickle
+// 	var/myckey = P.parent.ckey // get it while its hot!!
+// 	if(!P.prefs_uid) // hasnt been set yet
+// 		give_new_uid(P)
+// 		if(!P.prefs_uid)
+// 			to_chat(P.parent, span_userdanger("Oh no! Something went wrong with your EXP data! Contact an admin with this error code: CURVY-JIGGLY-TURBO-EEL"))
+// 			CRASH("Failed to generate a UID for [P.parent.ckey]!!!!!!!!!!!! Error code: CURVY-JIGGLY-TURBO-EEL")
+// 	var/myuid = P.prefs_uid
+// 	if(istype(LAZYACCESS(all_lvls, myuid), /datum/exp_holder))
+// 		return TRUE // already there!
+// 	var/datum/exp_holder/my_holder = new /datum/exp_holder(myckey, myuid)
+// 	all_lvls[myuid] = my_holder // virginity will be set, awaiting the first load when we're good and ready
+// 	to_chat(P.parent, span_notice("Loading character data for [P.real_name]..."))
+// 	to_load |= myuid
+// 	catalogue_uid(myckey, myuid)
 
-
-/// loads a player-level save file and loads in all the characters' datas
-/datum/controller/subsystem/experience/proc/load_player_save(datum/preferences/P, force_update)
-	if(!critter)
-		return
+/////////////////////////////////////////////////////
+/// LOADING BLOCK ///////////////////////////////////
+/*
+ * Loads the EXP data for a player
+ * First is fed something with a prefs datum
+ * If there no prefs_uid, they're a new chaaracter! Lets make a new folder for them!
+ * */
+/datum/controller/subsystem/experience/proc/load_player(critter, defer, getbackup)
 	var/datum/preferences/P = extract_prefs(critter)
-	if(!P)
+	if(!P || !P.parent)
 		return
-	if(!P.parent)
-		return
-	if(!P.prefs_uid)
-		generate_uid(critter)
-		if(!P.prefs_uid)
-			to_chat(P.parent, span_userdanger())
-			CRASH("Failed to generate a UID for [P.parent.ckey]!!!!!!!!!!!!")
-	var/myckey = P.parent.ckey
-	var/myuid = P.prefs_uid
-	if(LAZYACCESS(all_lvls, myuid) && !force_update)
-		return // already there!
-	var/ckeydirectory = "data/exp/current/[myckey]/"
-	/// should give us a list in this format:
-	/// var/list/folders = list("dir_uid1/", "dir_uid2/", ...)
+	var/myckey = P.parent.ckey // get it while its hot
+	var/ckeydirectory = get_player_directory(myckey, getbackup)
 	var/list/folders = flist(ckeydirectory)
 	if(!LAZYLEN(folders)) // oh they're a new player? lets make a new folder for them!
-		build_new_player_save(P)
-		return .(critter) // try again!!!
+		return load_character(critter, P.prefs_uid, defer, getbackup) // this will also load the player
+	/// should give us a list in this format:
+	/// var/list/folders = list("dir_uid1/", "dir_uid2/", ...)
 	for(var/uid in folders) // characters
-		var/datum/exp_holder/my_holder = new /datum/exp_holder(P.parent.ckey, uid)
-		all_lvls[P.prefs_uid] = my_holder
-		/// formt: var/list/idaho = list("exp-<key>.json", "exp-<key>.json", ...)
-		var/list/idaho = flist("[ckeydirectory][uid]/")
-		if(!LAZYLEN(idaho))
-			continue
-		for(var/expfile in idaho)
-			if(!findtext(expfile, "exp-") || !findtext(expfile, ".json"))
-				stack_trace("Invalid EXP file found! [expfile]!!!!!!!!!!")
-			if(!my_holder.load_exp_file("[ckeydirectory][uid][expfile]"))
-				stack_trace("Failed to load EXP file! [expfile]!!!!!!!!!!")
+		load_character(critter, uid, defer, getbackup)
+
+/*
+ * Loads the EXP data for a character
+ * Starts a long intricate game of hot potato with your mom
+ * */
+/datum/controller/subsystem/experience/proc/load_character(critter, uid, defer, getbackup)
+	var/datum/preferences/P = extract_prefs(critter) // how bout you performance on my dich?
+	if(!P || !P.parent)
+		return
+	var/my_uid = uid || P.prefs_uid
+	if(!my_uid) // no uid? lets make em a new one!
+		give_new_uid(P)
+		if(!P.prefs_uid)
+			to_chat(P.parent, span_userdanger("Oh no! Something went wrong with your EXP data! Contact an admin with this error code: CURVY-JIGGLY-TURBO-EEL"))
+			CRASH("Failed to generate a UID for [P.parent.ckey]!!!!!!!!!!!! Error code: CURVY-JIGGLY-TURBO-EEL")
+		my_uid = P.prefs_uid
+	to_chat(P.parent, span_notice("Loading character data for [P.real_name]..."))
+	var/datum/exp_holder/my_holder = LAZYACCESS(all_lvls, my_uid) // check if its there first
+	if(my_holder)
+		return my_holder.load_from_disk(force_update) // your turn with the potato
+	my_holder = new /datum/exp_holder(P.parent.ckey, my_uid, defer) // get potatatoed, dork
+	if(my_holder.c_key != P.parent.ckey)
+		to_chat(P.parent, span_userdanger("Oh no! Something went wrong with your EXP data! Contact an admin with this error code: LOUD-GANGLY-SEA-URCHIN"))
+		CRASH("CKEY mismatch! [P.parent.ckey], [my_holder.c_key]!!!!!!!!!!!! Error code: LOUD-GANGLY-SEA-URCHIN")
+	all_lvls[my_uid] = my_holder
+	return TRUE
+
+/////////////////////////////////////////////////////
+/// SAVING BLOCK ////////////////////////////////////
 
 /// Saves All the EXP datas!
 /datum/controller/subsystem/experience/proc/save_loaded_exp()
@@ -220,17 +241,20 @@ SUBSYSTEM_DEF(experience)
 	/// Whether or not we've received our first load of data
 	var/virgin = TRUE
 
-/datum/exp_holder/New(c_key, uid)
+/datum/exp_holder/New(c_key, uid, defer)
 	. = ..()
-	src.c_key = c_key
-	src.uid = uid
+	if(defer)
+		SSexperience.to_load |= uid
 	/// initial loading of blank xp data
 	for(var/xp in subtypesof(/datum/exp))
-		var/datum/exp/my_xp = new xp(c_key, uid)
+		var/datum/exp/my_xp = new xp(c_key, uid, defer) // your turn with the potato
 		lvls[my_xp.kind] = my_xp
+	/// loaded at the end cus error checking
+	src.c_key = c_key
+	src.uid = uid
 
-/datum/adjust_xp/proc/get_master_file(backup = FALSE)
-	var/r00t = SSexperience.get_directory(c_key, uid, backup)
+/datum/exp_holder/proc/get_master_file(backup = FALSE)
+	var/r00t = SSexperience.get_character_directory(c_key, uid, backup)
 	return "[r00t][_XP_MASTER_FILENAME]" // /data/exp/current/<ckey>/<uid>/master.json
 
 /datum/exp_holder/proc/adjust_xp(key, amount, list/data = list())
@@ -239,50 +263,36 @@ SUBSYSTEM_DEF(experience)
 		return
 	my_xp.adjust_xp(amount, data)
 
-/datum/exp_holder/proc/load_from_disk(force)
-	if(!file(get_master_file())) // nothing to load!
-		init_master() // so lets make a new one!
-	var/mydirectory = SSexperience.get_directory(c_key, uid, FALSE)
-	var/list/xps = flist(mydirectory)
-	if(!LAZYLEN(xps)) // by now we should have at least the master file, so, something went wrong
-		var/client/C = ckey2client(c_key)
-		if(C)
-			to_chat(C, span_userdanger("Something went wrong with loading your EXP data! Contact an admin with this error code: LUMPY-SPINY-SEA-URCHIN"))
-		CRASH("Failed to load EXP files for [c_key]!!!!!!!!!!!! Error code: LUMPY-SPINY-SEA-URCHIN")
-	for(var/xpfile in xps)
-		. = load_from_file(xpfile, force)
+/////////////////////////////////////////
+/// LOADING BLOCK for holder ////////////
+/// Mostly used for defereffding load ///
 
-/datum/exp_holder/proc/load_from_file(xpfile, force)
-	var/xppath = XP_CHAR_FILE(c_key, uid, xpfile)
-	if(!file(xppath))
-		CRASH("Failed to find EXP file! [c_key], [uid], [xppath]!!!!!!!!!! Error code: SUPER-DUPER-SCOOPER-GROUPER")
-	if(!findtext(xppath, "exp-") || !findtext(xppath, ".json"))
-		CRASH("Invalid EXP file found! [c_key], [uid], [xppath]!!!!!!!!!! Error code: SUPER-DUPER-SCOOPER-GROUPER")
-	var/list/xpdata = safe_json_decode(file2text(xppath))
-	if(!xpdata)
-		CRASH("Failed to read EXP file! [c_key], [uid], [xppath]!!!!!!!!!! Error code: SUPER-DUPER-SCOOPER-GROUPER")
-	var/datum/exp/my_xp = LAZYACCESS(lvls, xpdata["kind"])
-	if(!my_xp)
-		var/datum/exp/pat = text2path(xpdata["type"])
-		if(!ispath(pat, /datum/exp))
-			CRASH("Invalid EXP file found! [c_key], [uid], [xppath]!!!!!!!!!! Error code: SUPER-DUPER-SCOOPER-GROUPER")
-		if(SSexperience.allowed_exps(pat, c_key))
-			my_xp = new pat(xpdata["type"], c_key, uid)
-			lvls[my_xp.key] = my_xp
-		else
-			CRASH("Invalid EXP file found! [c_key], [uid], [xppath]!!!!!!!!!! Error code: SUPER-DUPER-SCOOPER-GROUPER")
-	return my_xp.load_from_json(xpdata, force)
+/datum/exp_holder/proc/load_from_disk(force)
+	for(var/xp in lvls)
+		var/datum/exp/my_xp = xp
+		my_xp.load_from_disk(force)
+
+/////////////////////////////////////////
+/// SAVING BLOCK for holder /////////////
 
 /datum/exp_holder/proc/save_to_disk(soft)
-	var/list/failed = list()
+	var/list/failed = list() // you know a proc is good when it starts with a list of failures (oh look you're at the top)
 	for(var/xp in lvls)
-		if(!xp.save_to_disk(soft))
+		var/datum/exp/my_xp = xp
+		if(!my_xp.save_to_disk(soft))
 			failed |= xp
 	if(LAZYLEN(failed))
-		var/client/C = ckey2client(c_key)
-		if(C)
-			to_chat(C, span_userdanger("Something went wrong with saving your EXP data! [LAZYLEN(failed)] EXPs failed!!! Contact an admin with this error code: MEGA-MINI-FLAT-FLUKE"))
+		to_chat(ckey2client(c_key), span_userdanger("Something went wrong with saving your EXP data! [LAZYLEN(failed)] EXPs failed!!! Contact an admin with this error code: MEGA-MINI-FLAT-FLUKE"))
+		message_admins("Something went wrong with saving [c_key]'s EXP data! [LAZYLEN(failed)] EXPs failed!!! Error code: MEGA-MINI-FLAT-FLUKE")
 		CRASH("Failed to save EXP files for [c_key]!!!!!!!!!!!! [LAZYLEN(failed)] EXPs failed!!! Error code: MEGA-MINI-FLAT-FLUKE")
+	to_chat(ckey2client(c_key), span_good("Character data successfully saved! =3"))
+	return update_master_file()
+
+/*
+ * Updates the master file
+ * */
+/datum/exp_holder/proc/update_master_file()
+	/// individual xp files are saved, now save the master file
 	/// now update the master file
 	var/masterpath = get_master_file()
 	var/list/currmaster = safe_json_decode(file2text(masterpath))
@@ -298,9 +308,6 @@ SUBSYSTEM_DEF(experience)
 		CRASH("Failed to encode EXP master file! [c_key], [uid], [masterpath]!!!!!!!!!! Error code: CUTE-DOMMY-SPERM-MOMMY")
 	fdel(masterpath)
 	WRITE_FILE(masterpath, jsontext)
-	var/client/C = ckey2client(c_key)
-	if(C)
-		to_chat(C, span_good("Character data successfully saved! =3"))
 
 /// Creates a new player save file, mainly to designate that this charaacter is a new player
 /datum/exp_holder/proc/init_master()
@@ -317,9 +324,12 @@ SUBSYSTEM_DEF(experience)
 	currmaster["cute_shark"] = SSexperience.my_shark // uwu
 	var/jsontext = safe_json_encode(currmaster)
 	if(!jsontext)
+		to_chat(ckey2client(c_key), span_userdanger("Something went wrong with saving your EXP data! Contact an admin with this error code: CUTE-DOMMY-SPERM-MOMMY"))
 		CRASH("Failed to encode EXP master file! [c_key], [uid], [masterpath]!!!!!!!!!! Error code: CUTE-DOMMY-SPERM-MOMMY")
-	fdel(masterpath)
 	WRITE_FILE(masterpath, jsontext)
+	if(!file(masterpath))
+		to_chat(ckey2client(c_key), span_userdanger("Something went wrong with saving your EXP data! Contact an admin with this error code: CUTE-DOMMY-SPERM-MOMMY"))
+		CRASH("Failed to create EXP master file! [c_key], [uid], [masterpath]!!!!!!!!!! Error code: CUTE-DOMMY-SPERM-MOMMY")
 	return TRUE
 
 //////////////////////////
@@ -350,8 +360,9 @@ SUBSYSTEM_DEF(experience)
 	var/virginity = TRUE
 	var/durty = FALSE
 	var/dont_save_me = FALSE // daddy
+	var/newplayer = FALSE
 
-/datum/exp/New(c_key, uid)
+/datum/exp/New(c_key, uid, defer)
 	. = ..()
 	if(!c_key)
 		return
@@ -363,15 +374,86 @@ SUBSYSTEM_DEF(experience)
 	today_month = text2num(time2text(world.timeofday, "MM"))
 	today_day = text2num(time2text(world.timeofday, "DD"))
 	currentround = GLOB.round_id
-	// last_updated = round(world.time, 1)
-	// last_saved = round(world.time, 1)
+	if(defer)
+		return
+	load_from_disk()
 
-/// Gets the file path for the XP data
+/*
+ * Gets the filepath for the EXP data
+ */
 /datum/exp/proc/get_filepath(backup = FALSE)
-	// /data/exp/current/<ckey>/<uid>/
-	var/r00t = SSexperience.get_directory(c_key, uid, FALSE)
+	var/r00t = SSexperience.get_character_directory(c_key, uid, FALSE)
 	var/myfile = XP2FILE(kind)
-	return "[r00t][myfile]" // /data/exp/current/<ckey>/<uid>/<char_uid>/exp-<key>.json
+	return "[r00t][myfile]" // data/exp/current/<ckey>/<uid>/<char_uid>/exp-<kind>.json
+
+/////////////////////////////////////////////////////
+/// LOADING BLOCK ///////////////////////////////////
+
+/*
+ * Loads the XP data from our file
+ * */
+/datum/exp/proc/load_from_disk(force)
+	var/xppath = get_filepath()
+	if(!file(xppath)) // likely a new character
+		newplayer = TRUE
+		return TRUE // nothing to load!
+	var/list/xpdata = safe_json_decode(file2text(xppath))
+	if(!xpdata)
+		CRASH("Failed to read EXP file! [c_key], [uid], [xppath]!!!!!!!!!! Error code: LANKY-SPANKY-GORILLA-FLUKE")
+	return load_from_json(xpdata, force)
+
+/* 
+ * Loads the XP data from json (jk its a list)
+ * */
+/datum/exp/proc/load_from_json(list/xpdata, force)
+	if(!LAZYLEN(xpdata))
+		return FALSE // nothing to load!
+	if(!verify_save(xpdata))
+		to_chat(ckey2client(c_key), span_userdanger("Your [name] EXP data is corrupted! Contact an admin with this error code: LICKY-STICKY-SPUNK-FLUKE"))
+		CRASH("Failed to verify EXP data! [c_key], [uid], [filepath]!!!!!!!!!! Error code: LICKY-STICKY-SPUNK-FLUKE")
+	if(!read_data(xpdata))
+		to_chat(ckey2client(c_key), span_userdanger("Your [name] EXP data is corrupted! Contact an admin with this error code: LANKY-SPANKY-GORILLA-FLUKE"))
+		CRASH("Failed to read EXP data! [c_key], [uid], [filepath]!!!!!!!!!! Error code: LANKY-SPANKY-GORILLA-FLUKE")
+	post_load(xpdata)
+	virginity = FALSE // thanks for that hot load, uwu
+	return TRUE
+
+/* 
+ * COnverts a list of data into our data
+ * If you do fancy stuff with the data, you should make polymorphically
+ */
+/datum/exp/proc/read_data(list/xpdata)
+	total_xp = LAZYACCESS(xpdata, "total_xp")
+	current_xp = LAZYACCESS(xpdata, "current_xp")
+	highest_xp = LAZYACCESS(xpdata, "highest_xp")
+	return TRUE
+
+/*
+ * Does things after loading the data
+ * Like recaculating the level from the total XP
+ */
+/datum/exp/proc/post_load(list/xpdata, announce = TRUE)
+	if(check_level(FALSE))
+		to_chat(ckey2client(c_key), span_notice("Sucessfully loaded [name] EXP data! [prob(5) ? "=3" : ""]"))
+
+/*
+ * Verifies the save data
+ * Checks a couple static values to make sure the file is legit
+ */
+/datum/exp/proc/verify_save(list/savedata)
+	if(!LAZYLEN(savedata))
+		return FALSE // nothing to load!
+	var/verification_can =   (LAZYACCESS(savedata, _XPVERIFICATION_FGLAND_KEY) == _XPVERIFICATION_FGLAND_VAL)
+	var/verification_juice = (LAZYACCESS(savedata, _XPVERIFICATION_BGLAND_KEY) == _XPVERIFICATION_BGLAND_VAL)
+	if(!verification_can ||verification_juice)
+		message_admins(span_userdanger(("WEEEOOOWEEEOO THE [c_key]'s [type] FILE IS CORRUPTED! IT BAD AND YOU NEED TO FIX IT OR GET DAN TO DO IT!!!!! Feel free to tell this player their hard earned videogame numbers are GONE FOREVER!!!!")))
+		to_chat(ckey2client(c_key), span_userdanger("Your [name] EXP data is corrupted! Contact an admin! This set of XP will not change until it's fixed!"))
+		dont_save_me = TRUE // Something went wrong with saving, lets stop saving until its fixed
+		return FALSE
+	return TRUE
+
+/////////////////////////////////////////////////////
+/// SAVING BLOCK ////////////////////////////////////
 
 /// Saves the XP data to a file
 /datum/exp/proc/save_to_disk(only_progress, soft)
@@ -460,62 +542,6 @@ SUBSYSTEM_DEF(experience)
 	// if(only_progress)
 	// 	if(total_xp <= LAZYACCESS(the_save, "total_xp"))
 	// 		return FALSE // We haven't gained any XP, don't save
-
-/// Loads the XP data from a file
-/datum/exp/proc/load_from_file(xpfile, force)
-	var/xppath = XP_CHAR_FILE(c_key, uid, xpfile)
-	if(!file(xppath))
-		CRASH("Failed to find EXP file! [c_key], [uid], [xppath]!!!!!!!!!! Error code: KOOKIE-RANDOM-SPIDER-FLOUNDER")
-	if(!findtext(xppath, "exp-") || !findtext(xppath, ".json"))
-		CRASH("Invalid EXP file found! [c_key], [uid], [xppath]!!!!!!!!!! Error code: KOOKIE-RANDOM-SPIDER-FLOUNDER")
-	var/list/xpdata = safe_json_decode(file2text(xppath))
-	if(!xpdata)
-		CRASH("Failed to read EXP file! [c_key], [uid], [xppath]!!!!!!!!!! Error code: KOOKIE-RANDOM-SPIDER-FLOUNDER")
-	return load_from_json(xpdata, force)
-
-/// Loads the XP data from a list
-/datum/exp/proc/load_from_json(list/xpdata, force)
-	if(!virginity && !force)
-		return TRUE // already loaded!
-	if(!LAZYLEN(xpdata))
-		return FALSE // nothing to load!
-	if(!verify_save(xpdata))
-		CRASH("Empty EXP file found! [type]!!!!!!!!!!")
-	if(!read_data(xpdata))
-		CRASH("Failed to read EXP file! [type]!!!!!!!!!!")
-	post_load(xpdata)
-	return TRUE
-
-/// Reads the XP data from a file
-/datum/exp/proc/read_data(list/xpdata)
-	total_xp = LAZYACCESS(xpdata, "total_xp")
-	return TRUE
-
-/// Post load stuff
-/datum/exp/proc/post_load(list/xpdata, announce = TRUE)
-	check_level(FALSE)
-	virginity = FALSE // thanks for that hot load, uwu
-	if(announce)
-		var/client/C = ckey2client(c_key)
-		if(C)
-			to_chat(C, span_notice("Sucessfully loaded [name] EXP data! [prob(5) ? "=3" : ""]"))
-
-/// Checks if the contents of the save file are valid
-/// okay it just checks if the first and last entries are valid
-/// returns nothing if it's valid, returns a backup save file if it's not
-/datum/exp/proc/verify_save(list/savedata)
-	if(!LAZYLEN(savedata))
-		return FALSE // nothing to load!
-	var/list/verification_can = LAZYACCESS(savedata, _XPVERIFICATION_FGLAND_KEY)
-	var/list/verification_juice = LAZYACCESS(savedata, _XPVERIFICATION_BGLAND_KEY)
-	if(!LAZYACCESS(verification_can, _XPVERIFICATION_FGLAND_VAL) || !LAZYACCESS(verification_juice, _XPVERIFICATION_BGLAND_VAL))
-		message_admins(span_userdanger(("WEEEOOOWEEEOO THE [c_key]'s [type] FILE IS CORRUPTED! IT BAD AND YOU NEED TO FIX IT OR GET DAN TO DO IT!!!!! Feel free to tell this player their hard earned videogame numbers are GONE FOREVER!!!!")))
-		var/client/C = ckey2client(c_key)
-		if(C)
-			to_chat(C, span_userdanger("Your [name] EXP data is corrupted! Contact an admin! This set of XP will not change until it's fixed!"))
-		dont_save_me = TRUE // Something went wrong with saving, lets stop saving until its fixed
-		return FALSE
-	return TRUE
 
 /// Takes the total XP we had saved, and figures out what level we are
 /// Also sets the current XP to the amount we have left over

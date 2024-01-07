@@ -1721,6 +1721,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /// Takes in a ckey, a mob, client, or even prefs, and finds the prefs, one way or another
 /proc/extract_prefs(something) // one way or another, im getting your prefs (to break)
+	if(!something)
+		return
 	if(isclient(something))
 		var/client/clint = something
 		return clint.prefs
@@ -1743,6 +1745,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /// Takes in a mob, client, or even prefs, and returns their ckey
 /proc/extract_ckey(something) // one way or another, im getting your ckey (to break)
+	if(!something)
+		return
 	if(istext(something))
 		return something
 	if(isclient(something))

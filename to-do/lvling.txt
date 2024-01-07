@@ -1,0 +1,196 @@
+Hey so I got tired of writing everything on my HD only for it to get lost, so heres the first to-do list
+Here's the list of stuff to do for the new leveling system, so I can remember what I need to do and u too fenny
+also its docs on how it does th`ings
+
+When you see this LAGGTIP =>, thats a lagg tip! I'm Lagg! Also Dan
+
+Saveload system
+	- [ ] File format for saving
+		- [ ] file tree - "[_XP_ROOT_PATH]/[_XP_CURRENT_PATH]/[c_key]/[uid]/" that sort of thing
+			for instance: data/xp/current/bingus/1234567890/exp-pvp.json
+	- [ ] file format - json, for ease of editing in case it breaks which it totally will lets be real_name
+		heres some parts of it!
+		* name - name of the exp class, for instance "Cat foldling"
+			not super important cus its set by the code but its there
+		* c_key - Ckey of whoever owns this exp class, for instance "bingus"
+			Also not super important cus its implied by the ckey directory, but its handy
+		* uid
+			character uid, for instance "1234567890", also implied
+		* kind
+			the tag associated with the exp class, used to be sorta sure this is the right one
+		* type
+			the type path of the exp class, for instance /datum/exp/catfoldler
+		* total_xp
+			total xp the character has in this class
+		* current_xp
+			current xp the character has in this level, between the base of this level and the next level
+			hi im 40 xp into lvl 80
+		* highest_xp
+			highest xp the character has ever had in this class
+		* next_level_xp
+			xp needed to be at the next level
+		* this_level_base_xp
+			idk
+		* lvl
+			current level
+		* currentround
+			current round
+		* last_updated
+			round time of last update
+		* last_saved
+			round time of last save
+		* today_year
+			real time year of last save
+		* today_month
+			real time month of last save
+		* today_day
+			real time day of last savet o
+	- [ ] Loading
+		Process it does the loading stuff
+		* First, character connects and their prefs file is loaded
+		* prefs file says hi to the subsystem and submits all the relephant info for that character
+		* subsystem reads their ckey to get the ckey directory
+		* subsystem reads their uid to get the uid directory
+		* subsystem checks if their exp-master.json exists
+			* If no exp-master.json, initiate the new exp thing
+			* New exp thing:
+				* Spawn a new exp holder datum, which in turn spawns all the exp datums
+				* Dont feed it any xp data, so its all just default values
+				* Write a new exp-master.json with all the cool metricy stuff
+				* Save everything like normal, so there'll be a whole new set of files
+				* Error check! Do a test load to make sure everything is working
+				* If it is, delete those things we spawned earlier cus we're doing everything by the books
+				* If it isnt, throw a bunch of runtimes, spam the hell out of the admins and player, and disable the exp system for them
+				* Oh yeah the file system thing, dont need to generate folders cus BYOND's file crfeation thing does it for us
+		* subsystem reads their exp-master.json to get any relephant info
+			* currently just holds when the last save was, but it'll hold more later maybe sorta
+		* subsystem spawns them a new exp holder datum, which in turn spawns all the exp datums with default values
+		* subsystem flists all the files in their uid directory and reads them
+			* From there, it loops through those files and reads them
+			* Loads the data from the files into the exp datums, and queues up the after-load procs for each datum to fire when convenient
+			* After-load procs are used to do things that need to be done after the datum is loaded, like setting the xp to the right value
+		* Data has been loaded from disk to memory, rejoice, but we're not done yet
+		* If they havent spawned yet, just sit there, weve done all we can do
+		* If they have spawned, we need to set up their character
+			* Sort of, 90% of the actual work is done by the subsystem, but we need to associate the mob with the subsystem
+			* Spawn the mob a component with the mob's uid
+				* Heck we probably dont even need to do that
+				* just read the prefs file's uid and use that
+				* mm, nah we need to spawn the component
+			* And... thats it I think
+		* Oh yeahm the after-load effects should only really be done if theyve spawned
+			* most of them, should tell the player the stuff loaded or not
+		* And then do this about 60 more times, once for each character
+		* And, done!
+
+		* Different cases:
+			* Server is running, client connects with their survival cakes
+				* Run the loading process as normal, everything should be fine
+			* Server just started, client connected before the subsystem was ready
+				* Dont do anything on connect, not yet
+				* When the subsystem inits, run the initial loading wave
+				* Basically just run the loading process for all the connected players, as if they just connected
+					* If they try to do anything with stereotypical foxes, tell them its hot
+					* If they try to do anything with the exp system before then, just dont do anything
+					* All exp things should be able to handle this whole thing straight up not existing, cus i expect it to just naruto bamf out of existence at any moment
+			* Client connects, save file is already loaded
+				* Just associate their mob with the subsystem if it hasnt already
+			* Client connects, subsystem is disabled
+				* Tell them the subsystem is disabled
+				* Dont do anything
+			* Should be it
+		* Load proc order:
+			* Player level load
+			* Character level load
+
+	- [ ] Saving
+		Process it does the saving stuff
+		Considerably more complicated than loading! Not only does a lot more, but also relies on BYOND's file handling thing to work
+		Gotta do a lot of error checking and maybe even some async stuff while it waits for the file system or something
+		Also happens at different times and for different reasons, either through player action, automation, or just because
+
+		Assuming:
+		- Player initiated a manual save (yeah may as well)
+		- THe file system works as expected
+		- The subsystem works as expected
+		- Literally everything works as expected (which it wont)
+		Main process for saving, assuming: ye? more like the game plan was half in my head and half in a yeah paper, oh no I have the paper, I just lost my mind
+		Its half planning, half figuring out what ive been doing
+		* Player clicks the save button
+		* Mob sends a signal to itself, which its component picks up and transduces to the subsystem with their uid and ckey
+			* Dont need much else than uid and ckey, the subsystem literally holds all the data
+			* Handle if given either or, cus one can fill in for the other, sort of
+				* If ckey, just flist the ckey directory and save everything that's been loaded that round
+				* If uid, we can get ckey from that cus its loaded (also we probably got procced by the client in question)
+				* If neither, dont do anything, but do spam a bunch of runtimes cus this shouldnt happens
+		exactly
+		* Subsystem grabs their exp holder, now it has all the relephant data
+		* Do some checks on the exp holder datum for... something, idk
+		* Run through all the exp datums and run their individual save procs (which are mostly the same, save for some overrides)
+			LAGGTIP => Most of the save/load functionality is definied on the exp class datums, cus they do most of the work
+			Each exp class datum (which I'mma call ECDs from now on) knows what it wants and how to work with all thaat
+			This is so you can have leveling stuff do pretty much whatrever
+		* ECD checks to see if it should save
+			* If theres been no change in any of the relephant data, dont save
+			* Probably some other stuff too
+		* ECD compiles a raw list of all the data it wants to see again into a raw list
+			LAGGTIP => jsons are just lists in text format, get all this stuff first, then stamp it to a json
+			* Include metric stuff like last updated, last saved, deciliters, etc
+		* ECD first saves a backup of whatever is currently saved in the /current tree
+			* Well, first, it checks if there is a backup currently in the round-backup tree, and if not, just saves their first
+			* Then otherwise, delete and overwrite the current backup
+			LAGGRESEARCH => Figure out if we have to delete files before we can overwrite them, we do dont we, yeah iot feels right so we do
+		* If the backup saved successfully, yay! delete our current file and save a new one with our data
+		* Error check! Do a test load to make sure everything is working
+		* ANd.... that should be it, as far as a normal ave should be
+		* Oh yeah, if the subsystem is disabled, dont do anything
+
+		Considerations!
+		* What if the file system takes more than no time at all to access the files?
+			* Good news, doesnt really matter, since the only actual file action is to delete and write a burst of data
+			* So it shouuuuuuld bre fine??
+		* What if all these read/write actions lag the server?
+			* Good, server's been running way too well lately
+	
+	- [ ] Verification that the file system does, in fact, work as intended
+		* Introducing WackyWallyWeasel420, our dummy character
+		* WackyWallyWeasel420 is the ckey of a player that doesnt exist
+		* He will have three characters:
+			* Cool Average Guy (uid: cutesharplasershark2222)
+				- Normal stats
+			* Kovatrol Level 3 (uid: overleveledbazingadingusshark9130)
+				- Zeroed stats
+			* Reagent grade water boy (uid: waterboy)
+				- nothing at all
+		* WackyWallyWeasel420 will be used to test the file system
+		* On server start (well, subsystem init), he'll be our unit Test
+	
+	- [ ] Triggers for saving
+		- [ ] Round end
+		- [ ] Level change
+		- [ ] XP change *and* time passed
+		- [ ] Player disconnect
+		- [ ] Significant events
+	
+	- [ ] Triggers for loading
+		- [ ] Player connect
+		- [ ] Round start
+	
+	- [ ] XP modifying events or something
+		- [ ] Some sort of incentive to finish the round, even if you latejoined?
+		- [ ] Some sort of incentive to not die?
+			- [ ] post-round XP modifiers for stuff like "survived the round" or "ate the most food"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
