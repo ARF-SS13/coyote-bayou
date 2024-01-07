@@ -323,8 +323,8 @@ GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","g
 //body ids that have non-gendered bodyparts
 GLOBAL_LIST_INIT(nongendered_limb_types, list(
 	"fly",
-	"zombie"
-	,"synth",
+	"zombie",
+	"synth",
 	"shadow",
 	"cultgolem",
 	"agent",
@@ -353,8 +353,7 @@ GLOBAL_LIST_INIT(eye_types, list(
 	"heterochromic-eyebrow",
 	"heterochromic-raccoon",
 	"heterochromic-leftsplotch",
-	"heterochromic-rightsplotch",
-	"dragon"
+	"heterochromic-rightsplotch"
 	))
 
 //list linking bodypart bitflags to their actual names
