@@ -1229,6 +1229,26 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/machine)
 
+/datum/quirk/spanish
+	name = "Spanish Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking spanish language."
+	value = 0
+	category = "Language Quirks"
+	mechanics = ""
+	conflicts = list()
+	gain_text = span_notice("You speak spanish.")
+	lose_text = span_notice("You've forgotten how to speak spanish.")
+	human_only = FALSE
+
+/datum/quirk/spanish/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/spanish)
+
+/datum/quirk/spanish/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/spanish)
+
 /datum/quirk/distinct
 	name = "Distinct"
 	desc = "Whether you've got horns, wings, a big ass tail, or maybe just your general vibe, something about you cannot be concealed"
