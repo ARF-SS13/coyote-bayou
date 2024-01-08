@@ -514,6 +514,26 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/pokemon)
 
+/datum/quirk/oldnorsecommon
+	name = "Combined Common Nordic-Germanic Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the Combined Common Nordic Germanic language!"
+	value = 0
+	category = "Language Quirks"
+	mechanics = "You can speak the Combined Common Nordic-Germanic language, or at least understand it. Maybe you really are the very best."
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak to Combined Nordic-Germanic.")
+	lose_text = span_notice("You've forgotten how to speak Combined Nordic-Germanic.")
+	human_only = FALSE
+
+/datum/quirk/oldnorsecommon/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/fictionalnorse)
+
+/datum/quirk/oldnorsecommon/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/fictionalnorse)
+
 /datum/quirk/in_heat
 	name = "ERP Receptive"
 	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
