@@ -501,12 +501,21 @@
 	cost = 5000
 	num_contained = 3
 	contains = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps,
 		/obj/effect/spawner/lootdrop/f13/rare_weps
 		)
 	crate_name = "quality weapon crate"
+
+/datum/supply_pack/security/weapon_plus_unique
+	name = "Weapons - Rare Premium"
+	desc = "A single weapon of incredible rarity. There's no telling what was packed into this crate"
+	cost = 15000 //Nothing you get here will sell remotely close to this number, so chances to exploit are null. Honestly it's already a net loss for the trader unless they sell this at literally 1500 coins
+	num_contained = 1
+	contains = list(
+		/obj/effect/spawner/lootdrop/f13/very_rare
+		)
+	crate_name = "Premium weapon crate"
 
 /datum/supply_pack/security/wands // Wands
 	name = "Magic - Wands"
@@ -741,16 +750,6 @@
 )
 	crate_name = "Rare weapon crate"
 */
-
-/* /datum/supply_pack/security/weapon_unique
-	name = "Weapons - Premium"
-	desc = "A single weapon of incredible rarity. there's no telling what was packed into this crate"
-	cost = 50000
-	num_contained = 1
-	contains = list(
-		/obj/effect/spawner/lootdrop/f13/weapon/unique
-)
-	crate_name = "Premium weapon crate" */
 
 /*needs reworked
 /datum/supply_pack/security/weapon_milsurplus
