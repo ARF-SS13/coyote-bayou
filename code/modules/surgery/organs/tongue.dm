@@ -38,6 +38,7 @@
 		/datum/language/birdsong,
 		/datum/language/rabbit,
 		/datum/language/bug,
+		/datum/language/fictionalnorse,
 		/datum/language/xenocommon,	//just let it happen
 		/datum/language/machine,	//who cares
 	))
