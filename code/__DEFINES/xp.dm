@@ -22,6 +22,8 @@
 #define _XP_CURRENT_PATH "current"
 #define _XP_MASTER_FILENAME "master.json"
 
+#define _XP_PLAYER_KERNAL "kernal.json" // This is the file that signifies that this player has already been brought into the future
+
 #define _XP_BACKUP_PATH "backup"
 
 #define _XP_FILE_PREFIX "exp-"
