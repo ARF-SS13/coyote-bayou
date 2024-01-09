@@ -334,12 +334,12 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL_1H = rand(-10,10) * 0.01,
-		GUN_UPGRADE_RECOIL_2H = rand(-10,10) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-10,10) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT = rand(-10,10) * 0.01,
-		GUN_UPGRADE_CHARGECOST = rand(-5,5) * 0.01,
-		GUN_UPGRADE_DAMAGE_MULT = rand(-10,10) * 0.01,
+		GUN_UPGRADE_RECOIL_1H = rand(-4,4) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = rand(-4,4) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-4,4) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = rand(-4,4) * 0.01,
+		GUN_UPGRADE_CHARGECOST = rand(-2,2) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT = rand(-4,4) * 0.01,
 		UPGRADE_COLOR = "#59788E"
 	)
 	I.prefix = "blue"
