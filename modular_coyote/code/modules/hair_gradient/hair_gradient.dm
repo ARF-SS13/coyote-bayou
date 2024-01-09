@@ -70,18 +70,6 @@ randomize_human(mob/living/carbon/human/H)
 	update_hair()
 	return 1
 
-// /mob/living/carbon/human/proc/change_hair_2_style(var/second_hair_style)
-// 	if(dna.features["hair_style_2"] == second_hair_style)
-// 		return
-
-// 	if(!(second_hair_style in GLOB.hair_styles_list))
-// 		return
-
-// 	dna.features["hair_style_2"] = second_hair_style
-
-// 	update_hair()
-// 	return 1
-
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
 	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
