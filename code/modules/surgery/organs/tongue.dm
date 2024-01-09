@@ -42,6 +42,7 @@
 		/datum/language/xenocommon,	//just let it happen
 		/datum/language/machine,	//who cares
 		/datum/language/spanish,
+		/datum/language/serbian,
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
