@@ -70,6 +70,17 @@ randomize_human(mob/living/carbon/human/H)
 	update_hair()
 	return 1
 
+// /mob/living/carbon/human/proc/change_hair_2_style(var/second_hair_style)
+// 	if(dna.features["hair_style_2"] == second_hair_style)
+// 		return
+
+// 	if(!(second_hair_style in GLOB.hair_styles_list))
+// 		return
+
+// 	dna.features["hair_style_2"] = second_hair_style
+
+// 	update_hair()
+// 	return 1
 
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
@@ -130,6 +141,17 @@ randomize_human(mob/living/carbon/human/H)
 					new_grad_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_gradients
 					if(new_grad_style)
 						features_override["grad_style"] = new_grad_style
+				
+				if("hair_color_2")
+					var/new_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["hair_color_2"]) as color|null
+					if(new_color)
+						features_override["hair_color_2"] = sanitize_hexcolor(new_color, 6, default = COLOR_ALMOST_BLACK)
+
+				if("hair_style_2")
+					var/new_style
+					new_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_styles_list
+					if(new_style)
+						features_override["hair_style_2"] = new_style
 	..()
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)

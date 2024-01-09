@@ -549,6 +549,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!hair_hidden || dynamic_hair_suffix)
 		var/mutable_appearance/hair_overlay = mutable_appearance(layer = -HAIR_LAYER)
 		var/mutable_appearance/gradient_overlay = mutable_appearance(layer = -HAIR_LAYER) // Coyote ADD: Gradient hairs!
+		var/mutable_appearance/hair_2_overlay = mutable_appearance(layer = -HAIR_LAYER)
 
 		if(!hair_hidden && !H.getorgan(/obj/item/organ/brain)) //Applies the debrained overlay if there is no brain
 			if(!(NOBLOOD in species_traits))
@@ -606,9 +607,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					gradient_overlay.icon = grad_s
 				// Coyote ADD: End
 
+				//Hair 2
+				var/icon/hair_2_temp = null
+				var/datum/sprite_accessory/hair_2_style_ref = GLOB.hair_styles_list[H.dna.features["hair_style_2"]]
+				if(hair_2_style_ref)
+					hair_2_temp = new/icon("icon" = 'icons/mob/hair.dmi' | 'icons/mob/hair2.dmi', "icon_state" = hair_2_style_ref.icon_state)
+					var/icon/hair_sprite = new/icon("icon" = hair_file, "icon_state" = hair_state)
+					//hair_2_temp.Blend("#[H.dna.features["hair_color_2"]]", ICON_MULTIPLY)
+					hair_2_temp.Blend(hair_sprite, ICON_OVERLAY)
+
+				if(!isnull(hair_2_temp))
+					hair_2_overlay.icon = hair_2_temp
+
 		if(hair_overlay.icon)
 			standing += hair_overlay
 			standing += gradient_overlay // Coyote Add: Actual MA which renders onto the sprite!
+			standing += hair_2_overlay
 
 	if(standing.len)
 		H.overlays_standing[HAIR_LAYER] = standing
