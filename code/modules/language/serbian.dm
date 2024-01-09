@@ -1,6 +1,6 @@
 /datum/language/serbian
     name = "Serbian"
-    desc = "A language native to the pre-war slavs of the Balkans. How speakers of it got to Texarkana is anyone's guess.
+    desc = "A language native to the pre-war slavs of the Balkans. How speakers of it got to Texarkana is anyone's guess."
     key = "sr"
     icon = "serbian"
     syllables = list("zdravo", "hvala", "dobro jutro", "dobar dan", "laku noć", "molim", "izvinite", "da", "ne", "kako si?", "ime", "grad", "planina", "reka", "more", "sunce", \
