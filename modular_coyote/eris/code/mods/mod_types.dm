@@ -324,3 +324,41 @@
 	)
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
+
+/obj/item/tool_upgrade/augment/randomizer/ballistic
+	name = "Bluespace Paint"
+	desc = "A mysterious blue and ever shifting liquid paint. Anything that it's put on seems to meld and change instantly to be better...or worse!"
+	icon_state = "randomizer"
+
+/obj/item/tool_upgrade/augment/randomizer/ballistic/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_1H = rand(-40,40) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = rand(-40,40) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-40,40) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = rand(-40,40) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT = rand(-40,40) * 0.01,
+		UPGRADE_COLOR = "#59788E"
+	)
+	I.prefix = "blue"
+	I.req_gun_tags = list(GUN_PROJECTILE)
+
+/obj/item/tool_upgrade/augment/randomizer/energy
+	name = "Bluespace Paint"
+	desc = "A mysterious blue and ever shifting liquid paint. Anything that it's put on seems to meld and change instantly to be better...or worse!"
+	icon_state = "randomizer"
+
+/obj/item/tool_upgrade/augment/randomizer/energy/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_1H = rand(-40,40) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = rand(-40,40) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = rand(-40,40) * 0.01,
+		GUN_UPGRADE_CHARGECOST = rand(-20,20) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT = rand (-40, 40) * 0.01,
+		UPGRADE_COLOR = "#59788E"
+	)
+	I.prefix = "blue"
+	I.req_fuel_cell = REQ_CELL

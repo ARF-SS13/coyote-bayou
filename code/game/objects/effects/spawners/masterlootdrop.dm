@@ -1223,6 +1223,9 @@
 		/obj/item/tool_upgrade/refinement/laserguide = 1,
 		/obj/item/tool_upgrade/reinforcement/heatsink = 1,
 		/obj/item/gun_upgrade/trigger/raidertrigger = 1,
+		/obj/item/tool_upgrade/augment/randomizer/energy = 1,
+		/obj/item/tool_upgrade/augment/randomizer/ballistic = 1,
+		/obj/item/gun_upgrade/cosmetic/gold = 1,
 		/obj/item/gun_upgrade/trigger/boom = 1,
 
 	)
