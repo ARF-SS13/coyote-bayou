@@ -61,8 +61,6 @@
 	STOP_PROCESSING(SSquirks, src)
 	remove()
 	if(quirk_holder)
-		if(lose_text)
-			to_chat(quirk_holder, lose_text)
 		quirk_holder.mob_quirks -= src
 		if(mob_trait)
 			if(!islist(mob_trait))
@@ -82,6 +80,12 @@
 // 	var/static/regex/misctoken = regex(@"$MISC\(([^\w!?,.=%#&+\/\-]*?)\)", "g")
 // 	mechanics = misctoken.Replace_char(mechanics, "[span_monkeylead("$1")]")
 // 	mechanics = span_suppradio(mechanics)
+
+/datum/quirk/proc/preremove(words)
+	if(!words)
+		return
+	if(lose_text)
+		to_chat(quirk_holder, lose_text)
 
 /datum/quirk/proc/get_conflicts()
 	var/returnlist = list() // so now we're gonna convert the list of paths to string names, like it was before, but better cus I did it
