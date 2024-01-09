@@ -17,6 +17,22 @@
 	flags = TONGUELESS_SPEECH
 	restricted = FALSE
 
+/datum/language/modular_sand/fictionalnorse
+	name = LANGUAGE_OLDCOMMONNORSE
+	desc = "A combination of a few germanic and norse languages. Used in the 2100s as a new and recent language between the Scandinavian countries of the old world."
+	speech_verb = "says"
+	ask_verb = "questions"
+	exclaim_verb = "exclaims"
+	key = "g"
+	space_chance = 40
+	syllables = list("errð", "rréö", "klúþk", "háðlofmifáéng", "arálúbitae", "stueþming", "infélðming", "jávéþa", "asølo", "chåsørr", "sanæ", "elomøt", "Bluidd", "hvorre", "javoot", "pånseelo", "hanso",
+		"sårrð", "ånð", "detðrk", "attalof", "nåbð", "göð", "brað", "inteð", "tyckaeð", "omð", "närð",
+		"tvåsa", "måerð", "dag", "sjäk", "viið", "vuð", "eilso", "tunerre", "käyt", "teherrok", "vähake",
+		"heighð", "huerro", "soðklok", "äsðple", "tenð", "jað", "heurro", "sturre", "uhrkree", "könokree", "wekree", "hönsð")
+	icon_state = "cheese"
+	flags = TONGUELESS_SPEECH
+	restricted = FALSE
+
 /datum/language/modular_sand/buggy
 	name = "Buggy"
 	desc = "A barely comprehensible language, spoken by insectoid-like races."

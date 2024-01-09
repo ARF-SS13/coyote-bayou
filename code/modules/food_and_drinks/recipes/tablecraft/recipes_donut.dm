@@ -293,7 +293,6 @@
 
 /datum/crafting_recipe/food/dessert/vanillacake
 	name = "Vanilla cake"
-	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
 		/obj/item/reagent_containers/food/snacks/grown/vanillapod = 2

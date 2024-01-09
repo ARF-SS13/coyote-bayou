@@ -2079,3 +2079,10 @@ datum/emote/living/gecker
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_coyote/sound/verbs/foxgecker.ogg'
 
+	datum/emote/living/mow //cat looking ass playing brick game looking ass cat i swear to god I'm taking you to the vet merek
+	key = "mow"
+	key_third_person = "mows like an insane cat."
+	message = "mows!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/mow.ogg'
+

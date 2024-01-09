@@ -253,6 +253,7 @@
 #define LANGUAGE_BIRDSONG "Birdsong Language"
 #define LANGUAGE_RABBIT "Rabbit Language"
 #define LANGUAGE_INSECT "Insect Language"
+#define LANGUAGE_OLDCOMMONNORSE "fictional norse language"
 
 /datum/language/pokemon
 	name = LANGUAGE_POKEMON
@@ -306,6 +307,21 @@
 	key = "T"
 	icon_state = "cheese"
 	syllables = list ("grr", "gah", "woof", "arf", "arra", "rah", "wor", "sarg")
+
+//scandanavian. Icelandic, Norway, etc etc. A mix of languages to make one fictional one.
+/datum/language/fictionalnorse
+	name = LANGUAGE_OLDCOMMONNORSE
+	desc = "A combination of a few germanic and norse languages. Used in the 2100s as a new and recent language between the Scandinavian countries of the old world."
+	speech_verb = "says"
+	syllables = list("errð", "rréö", "klúþk", "háðlofmifáéng", "arálúbitae", "stueþming", "infélðming", "jávéþa", "asølo", "chåsørr", "sanæ", "elomøt", "Bluidd", "hvorre", "javoot", "pånseelo", "hanso",
+		"sårrð", "ånð", "detðrk", "attalof", "nåbð", "göð", "brað", "inteð", "tyckaeð", "omð", "närð",
+		"tvåsa", "måerð", "dag", "sjäk", "viið", "vuð", "eilso", "tunf", "käyt", "teherrok", "vähake",
+		"heighð", "huelf", "soðklok", "äsðple", "tenð", "jað", "heust", "sturf", "uhrkree", "könokree", "wekree", "hönsð")
+	whisper_verb = "whispers"
+	key = "G"
+	icon_state = "combinednorse"
+	icon = 'icons/misc/language.dmi'
+
 
 //Mouse
 
