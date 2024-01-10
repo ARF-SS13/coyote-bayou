@@ -130,6 +130,17 @@ randomize_human(mob/living/carbon/human/H)
 					if(new_grad_style)
 						features_override["grad_style"] = new_grad_style
 				
+				if("grad_color_2")
+					var/new_grad_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["grad_color_2"]) as color|null
+					if(new_grad_color)
+						features_override["grad_color_2"] = sanitize_hexcolor(new_grad_color, 6, default = COLOR_ALMOST_BLACK)
+
+				if("grad_style_2")
+					var/new_grad_style
+					new_grad_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_gradients
+					if(new_grad_style)
+						features_override["grad_style_2"] = new_grad_style
+				
 				if("hair_color_2")
 					var/new_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["hair_color_2"]) as color|null
 					if(new_color)
