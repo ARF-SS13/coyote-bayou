@@ -39,6 +39,7 @@
 		/datum/language/rabbit,
 		/datum/language/bug,
 		/datum/language/fictionalnorse,
+		/datum/language/technorussian,
 		/datum/language/xenocommon,	//just let it happen
 		/datum/language/machine,	//who cares
 		/datum/language/spanish,

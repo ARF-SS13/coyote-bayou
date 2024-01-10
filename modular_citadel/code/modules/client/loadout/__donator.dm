@@ -1444,6 +1444,16 @@
 	var/mob/living/simple_animal/pet/mothroach/tox/pet_fluffy = new(src)
 	add_occupant(pet_fluffy)
 
+
+/datum/gear/donator/kits/sampletex
+	name = "The Aug Loadout"
+	path = /obj/item/storage/box/large/custom_kit/sampletex
+	ckeywhitelist = list("SampleTex")
+
+/obj/item/storage/box/large/custom_kit/sampletex/PopulateContents()
+	new /obj/item/ammo_box/m5mmbox(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/custom(src)
+
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
 	path = /obj/item/storage/box/large/custom_kit/sloaff
