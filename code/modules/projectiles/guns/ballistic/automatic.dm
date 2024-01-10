@@ -2590,6 +2590,20 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/custom
+	name = "R-varlden mock bullpup "
+	desc = "A modified Aug 5mm rifle, it's rate of fire has been altered compared to a stock rifle of it's kind, this one has some alien letters painted in a teal blue on it, with their english counter parts underneath it reading 'Erik CDXCII'"
+	init_recoil = AUTOCARBINE_RECOIL(1.4, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "augc"
+	item_state = "augc"
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
