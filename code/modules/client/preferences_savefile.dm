@@ -855,6 +855,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["gradient_color"]		>> features_override["grad_color"] // Hair gradients!
 	S["gradient_style"]		>> features_override["grad_style"] // Hair gradients electric boogaloo 2!!
+	S["gradient_color_2"]	>> features_override["grad_color_2"] // Hair gradients!
+	S["gradient_style_2"]	>> features_override["grad_style_2"] // Hair gradients electric boogaloo 2!!
+	S["s_hair_color_2"]		>> features_override["hair_color_2"] // Hair color 2
+	S["s_hair_style_2"]		>> features_override["hair_style_2"] // Hair style 2
 	S["typing_indicator_sound"]					>> features_speech["typing_indicator_sound"] // Typing sounds!
 	S["typing_indicator_sound_play"]			>> features_speech["typing_indicator_sound_play"] // Typing sounds electric- you know what I'm gonna stop its not funny anymore.
 	S["typing_indicator_speed"]					>> features_speech["typing_indicator_speed"]
@@ -1149,6 +1153,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
+	features_override["grad_color_2"]		= sanitize_hexcolor(features_override["grad_color_2"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["grad_style_2"]		= sanitize_inlist(features_override["grad_style_2"], GLOB.hair_gradients, "none")
+
+	features_override["hair_color_2"]	= sanitize_hexcolor(features_override["hair_color_2"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["hair_style_2"]	= sanitize_inlist(features_override["hair_style_2"], GLOB.hair_styles_list, "Bald")
+
 	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_sounds, "Default")//
 	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
 	features_speech["typing_indicator_speed"]				= sanitize_inlist(features_speech["typing_indicator_speed"], GLOB.typing_indicator_speeds, "Speed: Average (2)")
@@ -1416,6 +1426,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["gradient_color"]			, features_override["grad_color"])
 	WRITE_FILE(S["gradient_style"]			, features_override["grad_style"])
+
+	WRITE_FILE(S["gradient_color_2"]		, features_override["grad_color_2"])
+	WRITE_FILE(S["gradient_style_2"]		, features_override["grad_style_2"])
+
+	WRITE_FILE(S["s_hair_color_2"]			, features_override["hair_color_2"])
+	WRITE_FILE(S["s_hair_style_2"]			, features_override["hair_style_2"])
 
 	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
 	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
