@@ -147,6 +147,13 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"aO" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "aR" = (
 /obj/structure/ladder/unbreakable{
 	id = "bunnyden";
@@ -201,15 +208,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
-"ba" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#11ff11"
-	},
-/obj/effect/validball_spawner,
-/turf/open/floor/f13/wood{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "bc" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -553,6 +551,7 @@
 "cG" = (
 /obj/item/binoculars,
 /obj/structure/table/wood,
+/obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "cH" = (
@@ -606,7 +605,6 @@
 /area/f13/building/abandoned)
 "cQ" = (
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/automatic/marksman/sniper,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "cR" = (
@@ -688,6 +686,16 @@
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
+/area/f13/wasteland)
+"dm" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "dn" = (
 /obj/structure/railing{
@@ -908,6 +916,19 @@
 	},
 /obj/structure/flora/tree/oak_five,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"eq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
 /area/f13/wasteland)
 "er" = (
 /obj/structure/railing{
@@ -1430,6 +1451,17 @@
 	layer = 3
 	},
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"gE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "gG" = (
 /obj/structure/flora/tree/jungle{
@@ -2270,6 +2302,14 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"kC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "kH" = (
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken6"
@@ -2694,6 +2734,15 @@
 	color = "#777777"
 	},
 /area/f13/building/tribal)
+"mL" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "mM" = (
 /obj/machinery/light{
 	dir = 4
@@ -2712,6 +2761,10 @@
 	icon_state = "1-4"
 	},
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"mS" = (
+/obj/item/gun/ballistic/automatic/marksman/sniper,
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "mT" = (
 /obj/structure/flora/chomp/thicket5,
@@ -2867,6 +2920,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nx" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "nz" = (
 /obj/structure/flora/tree/jungle{
 	color = "#999999"
@@ -3543,6 +3606,11 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"qE" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "qF" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
@@ -5749,6 +5817,10 @@
 	color = "#6D6D6D"
 	},
 /area/f13/wasteland)
+"Aw" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "Ax" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/rag{
@@ -6789,16 +6861,6 @@
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/indestructible,
 /area/f13/tcoms)
-"Fm" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#11ff11"
-	},
-/obj/effect/validball_spawner,
-/turf/open/floor/f13/wood{
-	color = "#999999"
-	},
-/area/f13/wasteland)
 "Fn" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -7052,6 +7114,14 @@
 "Gy" = (
 /turf/closed/indestructible/vaultdoor,
 /area/f13/building/massfusion)
+"GC" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "GD" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d"
@@ -7218,6 +7288,16 @@
 "Hn" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
+"Ho" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "Hr" = (
 /obj/structure/fence/wooden{
 	pixel_x = 13
@@ -7302,6 +7382,13 @@
 /obj/structure/fluff/beach_umbrella/science,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"HH" = (
+/obj/machinery/light/broken{
+	dir = 8
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "HI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7680,6 +7767,15 @@
 /turf/open/transparent/openspace{
 	name = "air";
 	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"Jh" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
 "Jk" = (
@@ -11080,6 +11176,11 @@
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"XD" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building)
 "XF" = (
 /obj/structure/bonfire/prelit,
 /turf/open/indestructible/ground/outside/roof,
@@ -33753,7 +33854,7 @@ hm
 hm
 ah
 VC
-VC
+uZ
 VC
 VC
 VC
@@ -33767,7 +33868,7 @@ zC
 zC
 zC
 zC
-zC
+mS
 zC
 hm
 hm
@@ -50028,7 +50129,7 @@ DI
 DI
 dj
 PE
-ba
+mL
 Li
 DI
 DI
@@ -50539,7 +50640,7 @@ DI
 DI
 DI
 dj
-ba
+mL
 Wm
 dj
 DI
@@ -50804,7 +50905,7 @@ Li
 DI
 KI
 DI
-Fm
+Ho
 Li
 DI
 KI
@@ -52086,7 +52187,7 @@ Ok
 DI
 zz
 dj
-ba
+mL
 Ql
 DI
 dj
@@ -52860,7 +52961,7 @@ DI
 BV
 JP
 DI
-ba
+mL
 rn
 zK
 qV
@@ -53112,7 +53213,7 @@ CU
 DI
 dj
 sx
-ba
+mL
 DI
 BV
 DI
@@ -53892,7 +53993,7 @@ dj
 DI
 DI
 dj
-Fm
+Ho
 DI
 Ok
 AU
@@ -54915,7 +55016,7 @@ zK
 qV
 NV
 KI
-ba
+mL
 Ok
 BD
 hm
@@ -55141,7 +55242,7 @@ lg
 yu
 Ja
 ez
-ez
+aO
 AZ
 hm
 hm
@@ -55394,7 +55495,7 @@ ez
 ez
 ez
 ez
-ez
+aO
 ez
 gn
 gn
@@ -55425,7 +55526,7 @@ hc
 DI
 DI
 DI
-ba
+mL
 KI
 DI
 Zh
@@ -56189,7 +56290,7 @@ hm
 hm
 CU
 DI
-ba
+mL
 DI
 DI
 DI
@@ -56712,7 +56813,7 @@ zK
 qV
 Ok
 DI
-ba
+mL
 DI
 dj
 DI
@@ -56929,7 +57030,7 @@ xs
 xs
 ez
 BF
-Ga
+gE
 rj
 aU
 Vb
@@ -57435,7 +57536,7 @@ NT
 ez
 ES
 Qm
-ez
+aO
 ez
 ri
 WP
@@ -57473,20 +57574,20 @@ hm
 hm
 hm
 CD
-ba
+mL
 dj
 DI
 DI
 DI
 yz
-ba
+mL
 DI
 dj
 DI
 DI
 DI
 NV
-DI
+mL
 DI
 AU
 hm
@@ -57964,7 +58065,7 @@ Sp
 Px
 Ja
 nf
-gn
+dm
 gn
 ez
 xj
@@ -58210,7 +58311,7 @@ Pz
 Tt
 ce
 Pz
-AH
+nx
 VF
 oA
 Pv
@@ -58463,7 +58564,7 @@ NT
 ez
 ts
 Yg
-St
+eq
 cI
 lD
 gT
@@ -58481,7 +58582,7 @@ id
 ze
 nm
 id
-ez
+aO
 VL
 AZ
 hm
@@ -59233,7 +59334,7 @@ hm
 NT
 ez
 ZD
-ce
+Jh
 AH
 ce
 Ic
@@ -60263,18 +60364,18 @@ ez
 VL
 VL
 Ln
-rj
+GC
 Ja
 gn
 gn
-ez
+aO
 qI
 Ga
 ez
 ni
 ez
 ez
-ez
+aO
 ez
 ez
 VL
@@ -61300,7 +61401,7 @@ ez
 GU
 GU
 GU
-ez
+aO
 ez
 ez
 Ga
@@ -62827,12 +62928,12 @@ ty
 RS
 NX
 Op
-ty
+Aw
 RB
 Ga
 ez
 VG
-VL
+kC
 ez
 RB
 RB
@@ -62852,7 +62953,7 @@ ez
 nL
 RB
 DL
-ty
+Aw
 Wk
 fx
 hm
@@ -63593,7 +63694,7 @@ NT
 Rz
 VL
 Bz
-wo
+XD
 wo
 tg
 ty
@@ -63616,7 +63717,7 @@ ty
 DP
 ty
 hp
-wo
+XD
 DL
 Bz
 Ja
@@ -64116,7 +64217,7 @@ Bz
 Bz
 ez
 Ga
-VL
+kC
 sn
 sn
 sn
@@ -65431,7 +65532,7 @@ ez
 fx
 gr
 ty
-ty
+Aw
 bV
 wo
 eZ
@@ -66200,7 +66301,7 @@ ez
 tl
 ez
 Bz
-ty
+Aw
 AM
 wo
 ty
@@ -66446,7 +66547,7 @@ ty
 uT
 ty
 wo
-ty
+Aw
 ty
 DL
 ty
@@ -67220,7 +67321,7 @@ AM
 tg
 AM
 AM
-wo
+XD
 wo
 tg
 Zy
@@ -67232,7 +67333,7 @@ ty
 ty
 DP
 wo
-ty
+Aw
 lG
 fx
 ez
@@ -67457,7 +67558,7 @@ VL
 wO
 Hu
 wo
-wo
+XD
 ty
 NX
 ty
@@ -67469,7 +67570,7 @@ Ja
 gn
 fx
 ty
-ty
+Aw
 tg
 tg
 ty
@@ -67973,7 +68074,7 @@ Rm
 ty
 ty
 DP
-ty
+Aw
 wo
 XI
 fx
@@ -67989,7 +68090,7 @@ ty
 ty
 ty
 ty
-ty
+Aw
 ty
 ty
 ty
@@ -69545,7 +69646,7 @@ ty
 CF
 ty
 ty
-CF
+HH
 wo
 ek
 fx
@@ -69790,7 +69891,7 @@ wo
 wO
 wo
 ty
-ty
+Aw
 CF
 Hu
 fx
@@ -70313,7 +70414,7 @@ Ja
 wO
 sE
 tg
-xm
+qE
 jm
 wo
 DP
@@ -71076,7 +71177,7 @@ wO
 wo
 NX
 wo
-wo
+XD
 yT
 fx
 ez
