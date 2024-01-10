@@ -201,6 +201,15 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"ba" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "bc" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -6780,6 +6789,16 @@
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/indestructible,
 /area/f13/tcoms)
+"Fm" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood{
+	color = "#999999"
+	},
+/area/f13/wasteland)
 "Fn" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -50009,7 +50028,7 @@ DI
 DI
 dj
 PE
-DI
+ba
 Li
 DI
 DI
@@ -50520,7 +50539,7 @@ DI
 DI
 DI
 dj
-DI
+ba
 Wm
 dj
 DI
@@ -50785,7 +50804,7 @@ Li
 DI
 KI
 DI
-dj
+Fm
 Li
 DI
 KI
@@ -52067,7 +52086,7 @@ Ok
 DI
 zz
 dj
-DI
+ba
 Ql
 DI
 dj
@@ -52841,7 +52860,7 @@ DI
 BV
 JP
 DI
-DI
+ba
 rn
 zK
 qV
@@ -53093,7 +53112,7 @@ CU
 DI
 dj
 sx
-DI
+ba
 DI
 BV
 DI
@@ -53873,7 +53892,7 @@ dj
 DI
 DI
 dj
-dj
+Fm
 DI
 Ok
 AU
@@ -54896,7 +54915,7 @@ zK
 qV
 NV
 KI
-DI
+ba
 Ok
 BD
 hm
@@ -55406,7 +55425,7 @@ hc
 DI
 DI
 DI
-DI
+ba
 KI
 DI
 Zh
@@ -56170,7 +56189,7 @@ hm
 hm
 CU
 DI
-DI
+ba
 DI
 DI
 DI
@@ -56693,7 +56712,7 @@ zK
 qV
 Ok
 DI
-DI
+ba
 DI
 dj
 DI
@@ -57454,13 +57473,13 @@ hm
 hm
 hm
 CD
-DI
+ba
 dj
 DI
 DI
 DI
 yz
-DI
+ba
 DI
 dj
 DI
