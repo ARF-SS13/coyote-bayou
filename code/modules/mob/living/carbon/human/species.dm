@@ -611,18 +611,23 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				var/icon/hair_2_temp = null
 				var/datum/sprite_accessory/hair_2_style_ref = GLOB.hair_styles_list[H.dna.features["hair_style_2"]]
 				if(hair_2_style_ref)
-					hair_2_temp = new/icon("icon" = 'icons/mob/hair.dmi' | 'icons/mob/hair2.dmi', "icon_state" = hair_2_style_ref.icon_state)
+					hair_2_temp = new/icon("icon" = hair_2_style_ref.icon, "icon_state" = hair_2_style_ref.icon_state)
+					// if(isnull(hair_2_temp))
+					// 	hair_2_temp = new/icon("icon" = 'icons/mob/hair2.dmi', "icon_state" = hair_2_style_ref.icon_state)
+					// else if(isnull(hair_2_temp))
+					// 	hair_2_temp = new/icon("icon" = 'icons/mob/human_face.dmi', "icon_state" = hair_2_style_ref.icon_state)
+
+					hair_2_temp.Blend("#[H.dna.features["hair_color_2"]]", ICON_MULTIPLY)
 					var/icon/hair_sprite = new/icon("icon" = hair_file, "icon_state" = hair_state)
-					//hair_2_temp.Blend("#[H.dna.features["hair_color_2"]]", ICON_MULTIPLY)
 					hair_2_temp.Blend(hair_sprite, ICON_OVERLAY)
 
 				if(!isnull(hair_2_temp))
 					hair_2_overlay.icon = hair_2_temp
 
 		if(hair_overlay.icon)
+			standing += hair_2_overlay
 			standing += hair_overlay
 			standing += gradient_overlay // Coyote Add: Actual MA which renders onto the sprite!
-			standing += hair_2_overlay
 
 	if(standing.len)
 		H.overlays_standing[HAIR_LAYER] = standing

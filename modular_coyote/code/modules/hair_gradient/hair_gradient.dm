@@ -140,6 +140,12 @@ randomize_human(mob/living/carbon/human/H)
 					new_style = input(user, "Choose your character's hair fade style:", "Character Preference")  as null|anything in GLOB.hair_styles_list
 					if(new_style)
 						features_override["hair_style_2"] = new_style
+				
+				if("previous_hair_style_2")
+					features_override["hair_style_2"] = previous_list_item(features_override["hair_style_2"], GLOB.hair_styles_list)
+				
+				if("next_hair_style_2")
+					features_override["hair_style_2"] = next_list_item(features_override["hair_style_2"], GLOB.hair_styles_list)
 	..()
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
