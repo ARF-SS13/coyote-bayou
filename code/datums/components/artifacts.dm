@@ -960,7 +960,7 @@
 	var/custom_prefix = "Trait"
 	var/custom_suffix = "Giver"
 	var/custom_desc = "Gives you a trait when stored somewhere."
-	var/trait_to_give
+	var/trait_to_give // doesnt really work.......... yet
 	var/datum/quirk/quirk_to_give
 
 /datum/artifact_effect/trait_giver/penance
@@ -986,7 +986,7 @@
 	if(trait_to_give)
 		ADD_TRAIT(target, trait_to_give, src)
 	if(ispath(quirk_to_give))
-		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, holder)
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
 		if(!SSquirks.HasQuirk(target, quirk_to_give) && !HAS_TRAIT(target, my_unique_trait_id))
 			SSquirks.AddQuirkToMob(target, quirk_to_give, words = tell_em)
 	return TRUE
@@ -995,43 +995,53 @@
 	if(trait_to_give)
 		REMOVE_TRAIT(target, trait_to_give, src)
 	if(ispath(quirk_to_give))
-		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, holder)
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
 		if(HAS_TRAIT(target, my_unique_trait_id)) // only ONLY remove it if we gave it to them
 			SSquirks.RemoveQuirkFromMob(target, quirk_to_give, words = tell_em)
 			REMOVE_TRAIT(target, my_unique_trait_id, src)
 	return TRUE
 
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
-	var/quirk = prob(50) // either a quirk, or a trait!
-	if(quirk)
-		if(force_buff)
-			switch(rarity)
-				if(ART_RARITY_COMMON)
-					quirk_to_give = pick(SSartifacts.quirks_good_common)
-				if(ART_RARITY_UNCOMMON)
-					quirk_to_give = pick(SSartifacts.quirks_good_uncommon)
-				if(ART_RARITY_RARE)
-					quirk_to_give = pick(SSartifacts.quirks_good_rare)
-		else
-			switch(rarity)
-					trait_to_give = pick(SSartifacts.traits_good_common)
-				if(ART_RARITY_UNCOMMON)
-					trait_to_give = pick(SSartifacts.traits_good_uncommon)
-				if(ART_RARITY_RARE)
-					trait_to_give = pick(SSartifacts.traits_good_rare)
+	// var/quirk = prob(50) // either a quirk, or a trait!
+	// if(quirk)
+	// 	if(force_buff)
+	switch(rarity)
+		if(ART_RARITY_COMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_common)
+		if(ART_RARITY_UNCOMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_uncommon)
+		if(ART_RARITY_RARE)
+			quirk_to_give = pick(SSartifacts.quirks_good_rare)
+		// else
+		// 	switch(rarity)
+		// 			trait_to_give = pick(SSartifacts.traits_good_common)
+		// 		if(ART_RARITY_UNCOMMON)
+		// 			trait_to_give = pick(SSartifacts.traits_good_uncommon)
+		// 		if(ART_RARITY_RARE)
+		// 			trait_to_give = pick(SSartifacts.traits_good_rare)
 	. = ..()
 
 /datum/artifact_effect/trait_giver/get_affix_index(isprefix)
 	return 1
 
 /datum/artifact_effect/trait_giver/update_prefix()
-	return custom_prefix
+	return pick(SSartifacts.prefixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_suffix()
-	return custom_suffix
+	return pick(SSartifacts.suffixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_desc()
-	descriptions = list(custom_desc)
+	//if(trait_to_give) // todo: this
+	if(ispath(quirk_to_give))
+		var/datum/quirk/myquirk = SSquirks.GetQuirk(quirk_to_give)
+		var/mesage = "Confers [myquirk.name] while worn on/in [translate_slots()]."
+		if(is_buff)
+			mesage = span_good(mesage)
+		else
+			mesage = span_alert(mesage)
+		descriptions = list(mesage)
+	else
+		descriptions = list(span_notice("Confers a vague feeling of importance to the wearer."))
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////

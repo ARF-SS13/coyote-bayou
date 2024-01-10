@@ -20,7 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
-	var/spawn_chance = 0.5 // chance for an artifact to spawn per tick
+	var/spawn_chance = 1 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(
@@ -29,9 +29,9 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_RARE = 3,
 	)
 	var/list/max_effects_by_rarity = list(
-		ART_RARITY_COMMON = 2,
-		ART_RARITY_UNCOMMON = 4,
-		ART_RARITY_RARE = 6,
+		ART_RARITY_COMMON = 1,
+		ART_RARITY_UNCOMMON = 2,
+		ART_RARITY_RARE = 4,
 	)
 	var/list/min_effects_by_rarity = list(
 		ART_RARITY_COMMON = 1,
@@ -339,12 +339,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/heal_max_types_rare = 3
 
 	var/list/traits_good_common = list(
-		/datum/quirk/empath,
-		/datum/quirk/alcohol_tolerance,
-		/datum/quirk/nukalover,
-		/datum/quirk/nohunger,
-		
 	)
+
 	var/list/traits_good_uncommon = list(
 
 	)
@@ -352,12 +348,62 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	)
 	var/list/quirks_good_common = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
 
 	)
 	var/list/quirks_good_uncommon = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
+		/datum/quirk/shocking,
+		/datum/quirk/telepathy,
+		/datum/quirk/armblader,
+		/datum/quirk/tentaclearm,
 
 	)
 	var/list/quirks_good_rare = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
+		/datum/quirk/shocking,
+		/datum/quirk/telepathy,
+		/datum/quirk/armblader,
+		/datum/quirk/tentaclearm,
+		/datum/quirk/bowtrained,
+		/datum/quirk/masterrifleman,
+		/datum/quirk/wandproficient,
+		/datum/quirk/night_vision_greater,
+		/datum/quirk/nohunger,
+		/datum/quirk/artifact_identify,
 
 	)
 
