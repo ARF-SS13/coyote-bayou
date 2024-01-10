@@ -998,7 +998,7 @@
 		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, holder)
 		if(HAS_TRAIT(target, my_unique_trait_id)) // only ONLY remove it if we gave it to them
 			SSquirks.RemoveQuirkFromMob(target, quirk_to_give, words = tell_em)
-			REMOVE_TRAIT(target, my_unique_trait_id)
+			REMOVE_TRAIT(target, my_unique_trait_id, src)
 	return TRUE
 
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)

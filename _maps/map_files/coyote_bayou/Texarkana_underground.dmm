@@ -20346,10 +20346,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "lte" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/rnd/production/protolathe,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 4
-	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "ltl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43755,7 +43755,7 @@ aae
 bPE
 qyE
 cBh
-lte
+cBh
 lRH
 mMz
 bOb
@@ -48397,7 +48397,7 @@ hiR
 hdY
 dKY
 cGW
-tqF
+lte
 eHs
 dIC
 bOb

@@ -28,7 +28,7 @@
 	var/datum/controller/subsystem/processing/quirks/livesfrombased // Just a dummy reference so that the GC will think this thing is being used, when really its actually totally being used
 	var/reference //If this is just a reference template used by the subsystem, so it'll stop randomly dying for no raisin
 
-/datum/quirk/New(mob/living/quirk_mob, spawn_effects)
+/datum/quirk/New(mob/living/quirk_mob, spawn_effects, words = TRUE)
 	key = "[type]" // this is the key that will be used to identify the quirk in the quirk list
 	// parse_mechanics()
 	for(var/q in conflicts)
@@ -41,7 +41,7 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	if(gain_text)
+	if(gain_text && words)
 		to_chat(quirk_holder, gain_text)
 	quirk_holder.mob_quirks += src
 	if(mob_trait)
