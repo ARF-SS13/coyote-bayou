@@ -162,8 +162,13 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 				if(!disabled && can_build(D, 10))
 					m10 = TRUE
 				var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+				var/iter_max_multiplier = 50
 				for(var/datum/material/mat in D.materials)
-					max_multiplier = min(50, round(mats.get_material_amount(mat)/(D.materials[mat] * prod_coeff)))
+					if (D.materials[mat] == 0)
+						continue // We aren't actually using the material, let's skip the divide by zero error and get on with our lives
+					var/local_max_multiplier = min(50, round(mats.get_material_amount(mat)/(D.materials[mat] * prod_coeff)))
+					iter_max_multiplier = min(local_max_multiplier, iter_max_multiplier) // Use the lesser of the two since there is a limiting factor
+				max_multiplier = iter_max_multiplier
 
 		var/list/design = list(
 			name = D.name,

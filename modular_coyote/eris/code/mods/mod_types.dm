@@ -324,3 +324,22 @@
 	)
 	I.prefix = "intelligent"
 	I.req_fuel_cell = REQ_FUEL_OR_CELL
+
+/obj/item/tool_upgrade/augment/randomizer
+	name = "Bluespace Paint"
+	desc = "A mysterious blue and ever shifting liquid paint. Anything that it's put on seems to meld and change instantly to be better...or worse!"
+	icon_state = "randomizer"
+
+/obj/item/tool_upgrade/augment/randomizer/New()
+	..()
+	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
+	I.weapon_upgrades = list(
+		GUN_UPGRADE_RECOIL_1H =1 + rand(-35,45) * 0.01,
+		GUN_UPGRADE_RECOIL_2H =1 + rand(-35,45) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT =1 + rand(-35,45) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT =1 + rand(-35,45) * 0.01,
+		GUN_UPGRADE_CHARGECOST =1 + rand(-15,25) * 0.01,
+		GUN_UPGRADE_DAMAGE_MULT =1 + rand(-35,45) * 0.01,
+		UPGRADE_COLOR = "#59788E"
+	)
+	I.prefix = "blue"

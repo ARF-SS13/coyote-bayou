@@ -260,10 +260,15 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_GILDED = TRUE
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.7,
+		//GUN_UPGRADE_PROJ_SPEED_MULT = 1.25,
+		//GUN_UPGRADE_OFFSET = 3,
+		GUN_UPGRADE_RECOIL_1H = 1.2,
+		GUN_UPGRADE_RECOIL_2H = 1.2,
+		UPGRADE_COLOR = "#FFD700"
 		)
-	I.gun_loc_tag = GUN_COSMETIC
-	I.req_gun_tags = list(GUN_GILDABLE)
+	I.prefix = "gold"
+	I.removable = FALSE
 
 //Trash mods, for putting on old guns
 
