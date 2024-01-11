@@ -20,7 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
-	var/spawn_chance = 0.5 // chance for an artifact to spawn per tick
+	var/spawn_chance = 1 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(
@@ -29,9 +29,9 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_RARE = 3,
 	)
 	var/list/max_effects_by_rarity = list(
-		ART_RARITY_COMMON = 2,
-		ART_RARITY_UNCOMMON = 4,
-		ART_RARITY_RARE = 6,
+		ART_RARITY_COMMON = 1,
+		ART_RARITY_UNCOMMON = 2,
+		ART_RARITY_RARE = 4,
 	)
 	var/list/min_effects_by_rarity = list(
 		ART_RARITY_COMMON = 1,
@@ -92,6 +92,8 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNCOMMON = 25,
 		ART_RARITY_RARE = 15,
 	)
+
+	var/allow_bads = FALSE // no b ad, only good
 
 	// 200 ** 200 = 4e+120
 	var/list/rare_prefixes = list()
@@ -165,12 +167,12 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/blood_target_bad_uncommon_max = BLOOD_VOLUME_SYMPTOMS_WARN
 	var/blood_target_bad_rare_min = BLOOD_VOLUME_SYMPTOMS_WORST
 	var/blood_target_bad_rare_max = BLOOD_VOLUME_SYMPTOMS_ANNOYING
-	var/blood_rate_common_min = 1
-	var/blood_rate_common_max = 3
-	var/blood_rate_uncommon_min = 3
-	var/blood_rate_uncommon_max = 4
-	var/blood_rate_rare_min = 5
-	var/blood_rate_rare_max = 10
+	var/blood_rate_common_min = 0.1
+	var/blood_rate_common_max = 0.25
+	var/blood_rate_uncommon_min = 0.5
+	var/blood_rate_uncommon_max = 2
+	var/blood_rate_rare_min = 3
+	var/blood_rate_rare_max = 5
 	var/blood_discrete = 0.1
 
 	var/radiation_target_bad_common_min = 600
@@ -185,10 +187,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/radiation_target_good_uncommon_max = 400
 	var/radiation_target_good_rare_min = 0
 	var/radiation_target_good_rare_max = 400
-	var/radiation_rate_common_min = 10
-	var/radiation_rate_common_max = 15
-	var/radiation_rate_uncommon_min = 15
-	var/radiation_rate_uncommon_max = 20
+	var/radiation_rate_common_min = 3
+	var/radiation_rate_common_max = 7
+	var/radiation_rate_uncommon_min = 9
+	var/radiation_rate_uncommon_max = 15
 	var/radiation_rate_rare_min = 5
 	var/radiation_rate_rare_max = 100
 	var/radiation_discrete = 1
@@ -203,7 +205,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/health_good_common_min = 5
 	var/health_good_uncommon_min = 5
 	var/health_good_uncommon_max = 15
-	var/health_good_rare_min = 5
+	var/health_good_rare_min = 50
 	var/health_good_rare_max = 75
 	var/health_discrete = 1
 
@@ -246,7 +248,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/nutrition_rate_good_uncommon_min = 3
 	var/nutrition_rate_good_uncommon_max = 5
 	var/nutrition_rate_good_rare_min = 10
-	var/nutrition_rate_good_rare_max = 20
+	var/nutrition_rate_good_rare_max = 20 // YUM YUM YUM YUM YUM YUM YUM YUM GET FATTER GET FATTER GET FATTER GET FATTER GET FATTER GET FATTER
 	var/nutrition_discrete = 1
 
 	var/damage_common_cutoff_min = 50
@@ -300,11 +302,11 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/damage_dps_brain_rare_max = 2
 	var/damage_dps_brain_rare_min = 0.5
 
-	var/heal_common_min_health = 50
+	var/heal_common_min_health = 5
 	var/heal_common_max_health = 100
-	var/heal_uncommon_min_health = 25
+	var/heal_uncommon_min_health = 5
 	var/heal_uncommon_max_health = 100
-	var/heal_rare_min_health = 10
+	var/heal_rare_min_health = 5
 	var/heal_rare_max_health = 100
 	var/heal_discrete = 0.1
 
@@ -335,6 +337,75 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/heal_max_types_common = 1
 	var/heal_max_types_uncommon = 2
 	var/heal_max_types_rare = 3
+
+	var/list/traits_good_common = list(
+	)
+
+	var/list/traits_good_uncommon = list(
+
+	)
+	var/list/traits_good_rare = list(
+
+	)
+	var/list/quirks_good_common = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
+
+	)
+	var/list/quirks_good_uncommon = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
+		/datum/quirk/shocking,
+		/datum/quirk/telepathy,
+		/datum/quirk/armblader,
+		/datum/quirk/tentaclearm,
+
+	)
+	var/list/quirks_good_rare = list(
+		/datum/quirk/night_vision,
+		/datum/quirk/empath,
+		/datum/quirk/spiritual,
+		/datum/quirk/alcohol_tolerance,
+		/datum/quirk/nukalover,
+		/datum/quirk/drunkhealing,
+		/datum/quirk/playdead,
+		/datum/quirk/improved_heal,
+		/datum/quirk/builder,
+		/datum/quirk/brickwall,
+		/datum/quirk/freerunning,
+		/datum/quirk/light_step,
+		/datum/quirk/shocking,
+		/datum/quirk/telepathy,
+		/datum/quirk/armblader,
+		/datum/quirk/tentaclearm,
+		/datum/quirk/bowtrained,
+		/datum/quirk/masterrifleman,
+		/datum/quirk/wandproficient,
+		/datum/quirk/night_vision_greater,
+		/datum/quirk/nohunger,
+		/datum/quirk/artifact_identify,
+
+	)
 
 	var/list/prefixes_speed_good = list()
 	var/list/prefixes_speed_bad = list()
@@ -648,10 +719,10 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(!LAZYLEN(effect_pool)) // we... ran out?
 			overrides[ARTMOD_RADIATION] = list() // fuck it, its radioactive
 			break
-		var/rolled_effect = buffs >= 1 ? pickweight(good_pool) : pickweight(effect_pool)
+		var/rolled_effect = (buffs < 1 && allow_bads) ? pickweight(effect_pool) : pickweight(good_pool)
 		if(!islist(LAZYACCESS(overrides, rolled_effect)))
 			overrides[rolled_effect] = list()
-		overrides[rolled_effect][ARTVAR_IS_BUFF] = !!buffs
+		overrides[rolled_effect][ARTVAR_IS_BUFF] = allow_bads ? !!buffs : TRUE
 		buffs = max(buffs - 1, 0)
 		effect_pool -= rolled_effect
 		good_pool -= rolled_effect

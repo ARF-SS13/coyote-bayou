@@ -1,3 +1,4 @@
+
 #define ART_MASTER var/obj/item/master = parent; if(!isitem(master)) CRASH("Artifact component has no master!!!")
 
 #define ART_EQUIP "art_equip"
@@ -75,8 +76,8 @@
 		colorwobble(master, my_color)
 		if(isitem(current_holder))
 			colorwobble(current_holder, current_holder.color)
-		if(isliving(current_target))
-			colorwobble(current_target, current_target.color)
+		// if(isliving(current_target))
+		// 	colorwobble(current_target, current_target.color)
 	update_identification()
 
 /datum/component/artifact/proc/colorwobble(atom/target, orig_color)
@@ -954,18 +955,19 @@
 /datum/artifact_effect/trait_giver
 	kind = ARTMOD_TRAIT_GIVER
 	base_value = 300
-	chance_weight = 0
-	special_spawn_only = TRUE
+	chance_weight = 2
 	var/custom_prefix = "Trait"
 	var/custom_suffix = "Giver"
 	var/custom_desc = "Gives you a trait when stored somewhere."
-	var/trait_to_give
+	var/trait_to_give // doesnt really work.......... yet
+	var/datum/quirk/quirk_to_give
+	var/even_more_special_trait_id
 
 /datum/artifact_effect/trait_giver/penance
-	kind = ARTMOD_TRAIT_GIVER_PENANCE
-	base_value = 300
-	custom_desc = span_alert("Causes intense suffering to the wearer.")
-	trait_to_give = TRAIT_PENANCE
+	// kind = ARTMOD_TRAIT_GIVER_PENANCE
+	// base_value = 300
+	// custom_desc = span_alert("Causes intense suffering to the wearer.")
+	// trait_to_give = TRAIT_PENANCE
 
 /datum/artifact_effect/trait_giver/apply_parameters(list/parameters = list())
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_TRAIT_TO_GIVE)))
@@ -981,27 +983,70 @@
 	. = ..()
 
 /datum/artifact_effect/trait_giver/on_equipped(obj/item/master, mob/living/target, obj/item/holder)
-	ADD_TRAIT(target, trait_to_give, src)
+	if(trait_to_give)
+		ADD_TRAIT(target, trait_to_give, src)
+	if(ispath(quirk_to_give))
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
+		if(!SSquirks.HasQuirk(target, quirk_to_give) && !HAS_TRAIT(target, even_more_special_trait_id))
+			ADD_TRAIT(target, even_more_special_trait_id, src)
+			SSquirks.AddQuirkToMob(target, quirk_to_give, words = tell_em)
 	return TRUE
 
 /datum/artifact_effect/trait_giver/on_unequipped(obj/item/master, mob/living/target, obj/item/holder)
-	REMOVE_TRAIT(target, trait_to_give, src)
+	if(trait_to_give)
+		REMOVE_TRAIT(target, trait_to_give, src)
+	if(ispath(quirk_to_give))
+		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
+		if(HAS_TRAIT(target, even_more_special_trait_id)) // only ONLY remove it if we gave it to them
+			SSquirks.RemoveQuirkFromMob(target, quirk_to_give, words = tell_em)
+			REMOVE_TRAIT(target, even_more_special_trait_id, src)
 	return TRUE
 
+/datum/artifact_effect/trait_giver/generate_trait()
+	. = ..()
+	even_more_special_trait_id = "[my_unique_trait_id]_but_even_more_special"
+
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
+	// var/quirk = prob(50) // either a quirk, or a trait!
+	// if(quirk)
+	// 	if(force_buff)
+	switch(rarity)
+		if(ART_RARITY_COMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_common)
+		if(ART_RARITY_UNCOMMON)
+			quirk_to_give = pick(SSartifacts.quirks_good_uncommon)
+		if(ART_RARITY_RARE)
+			quirk_to_give = pick(SSartifacts.quirks_good_rare)
+		// else
+		// 	switch(rarity)
+		// 			trait_to_give = pick(SSartifacts.traits_good_common)
+		// 		if(ART_RARITY_UNCOMMON)
+		// 			trait_to_give = pick(SSartifacts.traits_good_uncommon)
+		// 		if(ART_RARITY_RARE)
+		// 			trait_to_give = pick(SSartifacts.traits_good_rare)
 	. = ..()
 
 /datum/artifact_effect/trait_giver/get_affix_index(isprefix)
 	return 1
 
 /datum/artifact_effect/trait_giver/update_prefix()
-	return custom_prefix
+	return pick(SSartifacts.prefixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_suffix()
-	return custom_suffix
+	return pick(SSartifacts.suffixes_heal_brain) // todo: affixes
 
 /datum/artifact_effect/trait_giver/update_desc()
-	descriptions = list(custom_desc)
+	//if(trait_to_give) // todo: this
+	if(ispath(quirk_to_give))
+		var/datum/quirk/myquirk = SSquirks.GetQuirk(quirk_to_give)
+		var/mesage = "Confers [myquirk.name] while worn on/in [translate_slots()]."
+		if(is_buff)
+			mesage = span_green(mesage)
+		else
+			mesage = span_alert(mesage)
+		descriptions = list(mesage)
+	else
+		descriptions = list(span_notice("Confers a vague feeling of importance to the wearer."))
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -1208,7 +1253,7 @@
 /// All values are in damage per second     ///
 /datum/artifact_effect/passive_damage
 	kind = ARTMOD_PASSIVE_DOT
-	chance_weight = 5
+	chance_weight = 0
 	/// Stop doing damage if their health is below this
 	var/min_health = 5
 	/// Damage to do to brute
@@ -1735,36 +1780,46 @@
 	if(implanted || !in_desired_slot())
 		mult *= undesirable_mult
 	if(d_brute)
+		if(d_brute > 0)
+			d_brute = -d_brute
 		target.apply_damage(
-			-abs(d_brute) * mult,
+			d_brute * mult,
 			BRUTE,
 			blocked = dr,
 			spread_damage = TRUE
 		)
 	if(d_burn)
+		if(d_burn > 0)
+			d_burn = -d_burn
 		target.apply_damage(
-			-abs(d_burn) * mult,
+			d_burn * mult,
 			BURN,
 			blocked = dr,
 			spread_damage = TRUE
 		)
 	if(d_toxin)
+		if(d_toxin > 0)
+			d_toxin = -d_toxin
 		target.apply_damage(
-			-abs(d_toxin) * mult,
+			d_toxin * mult,
 			TOX,
 			blocked = dr,
 			spread_damage = TRUE
 		)
 	if(d_oxy)
+		if(d_oxy > 0)
+			d_oxy = -d_oxy
 		target.apply_damage(
-			-abs(d_oxy) * mult,
+			d_oxy * mult,
 			OXY,
 			blocked = dr,
 			spread_damage = TRUE
 		)
 	if(d_clone)
+		if(d_clone > 0)
+			d_clone = -d_clone
 		target.apply_damage(
-			-abs(d_clone) * mult,
+			d_clone * mult,
 			CLONE,
 			blocked = dr,
 			spread_damage = TRUE
