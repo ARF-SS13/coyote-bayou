@@ -825,8 +825,10 @@
 	},
 /area/f13/building)
 "da" = (
-/obj/machinery/door/poddoor/gate/bunker{
-	id = TexGarageSouth
+/obj/machinery/door/poddoor/shutters{
+	id = TexGarageSouth;
+	name = "Garage";
+	max_integrity = 999999
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -4216,6 +4218,11 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "qp" = (
+/obj/machinery/door/poddoor/shutters{
+	id = TexGarageSouth;
+	name = "Garage";
+	max_integrity = 999999
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -5876,8 +5883,9 @@
 "wE" = (
 /obj/machinery/button/door{
 	name = "Machine-Shop Door";
-	pixel_y = -27;
-	pixel_x = 8
+	id = TexGarageSouth;
+	pixel_x = 9;
+	pixel_y = -25
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -10265,10 +10273,12 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "MX" = (
-/obj/machinery/door/poddoor/gate/bunker{
-	id = TexGarageSouth
-	},
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/door/poddoor/shutters{
+	id = TexGarageSouth;
+	name = "Garage";
+	max_integrity = 999999
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -73089,7 +73099,7 @@ hm
 hm
 hm
 FS
-FS
+da
 FS
 oS
 jk
