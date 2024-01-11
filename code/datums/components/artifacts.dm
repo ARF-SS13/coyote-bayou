@@ -955,19 +955,19 @@
 /datum/artifact_effect/trait_giver
 	kind = ARTMOD_TRAIT_GIVER
 	base_value = 300
-	chance_weight = 0
-	special_spawn_only = TRUE
+	chance_weight = 2
 	var/custom_prefix = "Trait"
 	var/custom_suffix = "Giver"
 	var/custom_desc = "Gives you a trait when stored somewhere."
 	var/trait_to_give // doesnt really work.......... yet
 	var/datum/quirk/quirk_to_give
+	var/even_more_special_trait_id
 
 /datum/artifact_effect/trait_giver/penance
-	kind = ARTMOD_TRAIT_GIVER_PENANCE
-	base_value = 300
-	custom_desc = span_alert("Causes intense suffering to the wearer.")
-	trait_to_give = TRAIT_PENANCE
+	// kind = ARTMOD_TRAIT_GIVER_PENANCE
+	// base_value = 300
+	// custom_desc = span_alert("Causes intense suffering to the wearer.")
+	// trait_to_give = TRAIT_PENANCE
 
 /datum/artifact_effect/trait_giver/apply_parameters(list/parameters = list())
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_TRAIT_TO_GIVE)))
@@ -987,7 +987,8 @@
 		ADD_TRAIT(target, trait_to_give, src)
 	if(ispath(quirk_to_give))
 		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
-		if(!SSquirks.HasQuirk(target, quirk_to_give) && !HAS_TRAIT(target, my_unique_trait_id))
+		if(!SSquirks.HasQuirk(target, quirk_to_give) && !HAS_TRAIT(target, even_more_special_trait_id))
+			ADD_TRAIT(target, even_more_special_trait_id, src)
 			SSquirks.AddQuirkToMob(target, quirk_to_give, words = tell_em)
 	return TRUE
 
@@ -996,10 +997,14 @@
 		REMOVE_TRAIT(target, trait_to_give, src)
 	if(ispath(quirk_to_give))
 		var/tell_em = SEND_SIGNAL(master, COMSIG_ITEM_ARTIFACT_IDENTIFIED, target)
-		if(HAS_TRAIT(target, my_unique_trait_id)) // only ONLY remove it if we gave it to them
+		if(HAS_TRAIT(target, even_more_special_trait_id)) // only ONLY remove it if we gave it to them
 			SSquirks.RemoveQuirkFromMob(target, quirk_to_give, words = tell_em)
-			REMOVE_TRAIT(target, my_unique_trait_id, src)
+			REMOVE_TRAIT(target, even_more_special_trait_id, src)
 	return TRUE
+
+/datum/artifact_effect/trait_giver/generate_trait()
+	. = ..()
+	even_more_special_trait_id = "[my_unique_trait_id]_but_even_more_special"
 
 /datum/artifact_effect/trait_giver/randomize(rarity, force_buff)
 	// var/quirk = prob(50) // either a quirk, or a trait!
@@ -1036,7 +1041,7 @@
 		var/datum/quirk/myquirk = SSquirks.GetQuirk(quirk_to_give)
 		var/mesage = "Confers [myquirk.name] while worn on/in [translate_slots()]."
 		if(is_buff)
-			mesage = span_good(mesage)
+			mesage = span_green(mesage)
 		else
 			mesage = span_alert(mesage)
 		descriptions = list(mesage)
