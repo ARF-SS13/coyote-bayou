@@ -86,6 +86,16 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"az" = (
+/obj/structure/chair/bench,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/mob/living/simple_animal/advanced/dog{
+	name = "Buddy"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "aA" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/locked_box/weapon/range/tier1_3,
@@ -180,6 +190,14 @@
 	color = "#11ff11"
 	},
 /obj/effect/validball_spawner,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"aQ" = (
+/obj/structure/table/wood/bar,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#11ff11"
+	},
+/obj/item/razor,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "aR" = (
@@ -629,6 +647,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood/junk,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/caves)
 "cv" = (
@@ -3143,6 +3162,11 @@
 	color = "#888888"
 	},
 /area/f13/building)
+"me" = (
+/obj/structure/lattice/catwalk,
+/obj/effect/validball_spawner,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "mf" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -4592,6 +4616,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/building)
+"rQ" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
 	},
 /area/f13/building)
 "rR" = (
@@ -6216,6 +6246,7 @@
 /area/f13/building)
 "xO" = (
 /obj/machinery/workbench,
+/obj/effect/validball_spawner,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xQ" = (
@@ -10504,7 +10535,7 @@
 /area/f13/wasteland)
 "NJ" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/caves)
 "NM" = (
@@ -11109,6 +11140,11 @@
 	color = "#845f58";
 	layer = 5
 	},
+/turf/open/floor/wood_common,
+/area/f13/building)
+"PU" = (
+/obj/structure/table/wood,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "PW" = (
@@ -12438,6 +12474,10 @@
 /obj/structure/spacevine,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"TY" = (
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "Uc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -50035,8 +50075,8 @@ YS
 Ez
 gn
 lM
-lN
-sy
+aQ
+az
 fh
 hm
 hm
@@ -65133,7 +65173,7 @@ bS
 oJ
 bS
 bS
-Va
+PU
 mR
 jk
 "}
@@ -74383,7 +74423,7 @@ hm
 hm
 jk
 su
-FS
+TY
 zY
 zY
 kS
@@ -76425,7 +76465,7 @@ hm
 hm
 YM
 kR
-kR
+me
 kR
 kR
 kR
@@ -76440,7 +76480,7 @@ hm
 tR
 mx
 yZ
-mx
+rQ
 VB
 tR
 jk
@@ -77723,7 +77763,7 @@ mx
 mx
 bd
 qp
-mx
+rQ
 mx
 mx
 sZ
@@ -77846,7 +77886,7 @@ FS
 FS
 EB
 FS
-FS
+TY
 ed
 ed
 Xr
@@ -78234,7 +78274,7 @@ tR
 Qz
 mx
 mx
-mx
+rQ
 dd
 ST
 jk
