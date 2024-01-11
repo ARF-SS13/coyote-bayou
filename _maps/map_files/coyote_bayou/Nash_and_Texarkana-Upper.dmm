@@ -4088,7 +4088,7 @@
 /area/f13/wasteland)
 "caJ" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = DenGate
+	id = "DenGate"
 	},
 /turf/open/floor/plating/dirt,
 /area/f13/building)
@@ -7997,7 +7997,7 @@
 /obj/machinery/button/door{
 	pixel_x = -32;
 	name = "Pharmacy Window";
-	id = DenPharma
+	id = "DenPharma"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -17502,7 +17502,7 @@
 "iNh" = (
 /obj/machinery/button/door{
 	pixel_x = -32;
-	id = DenGate;
+	id = "DenGate";
 	name = "Den Gate"
 	},
 /obj/effect/decal/cleanable/dirt/dust{
@@ -26351,7 +26351,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/barricade/barswindow,
 /obj/machinery/door/poddoor/shutters{
-	id = DenPharma
+	id = "DenPharma"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -33959,7 +33959,7 @@
 "rfh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = DenPharma
+	id = "DenPharma"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -38552,7 +38552,7 @@
 "tzz" = (
 /obj/machinery/button/door{
 	pixel_x = -32;
-	id = DenGate;
+	id = "DenGate";
 	name = "Den Gate"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -43368,7 +43368,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
 /obj/machinery/door/poddoor/shutters{
-	id = DenPharma
+	id = "DenPharma"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"

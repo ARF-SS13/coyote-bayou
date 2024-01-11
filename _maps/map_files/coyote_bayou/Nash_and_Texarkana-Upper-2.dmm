@@ -420,7 +420,7 @@
 "bJ" = (
 /obj/machinery/button/door{
 	name = "Machine-Shop Door";
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	pixel_y = 25;
 	pixel_x = 9
 	},
@@ -826,7 +826,7 @@
 /area/f13/building)
 "da" = (
 /obj/machinery/door/poddoor/shutters{
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	name = "Garage";
 	max_integrity = 999999
 	},
@@ -1195,7 +1195,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	name = "Machine-Shop Door";
-	id = TexGarageSouth
+	id = "TexGarageSouth"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -4219,7 +4219,7 @@
 /area/f13/wasteland)
 "qp" = (
 /obj/machinery/door/poddoor/shutters{
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	name = "Garage";
 	max_integrity = 999999
 	},
@@ -5883,7 +5883,7 @@
 "wE" = (
 /obj/machinery/button/door{
 	name = "Machine-Shop Door";
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	pixel_x = 9;
 	pixel_y = -25
 	},
@@ -9401,7 +9401,7 @@
 "JQ" = (
 /obj/machinery/button/door{
 	name = "Machine-Shop Door";
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	pixel_x = -23;
 	pixel_y = 7
 	},
@@ -10275,7 +10275,7 @@
 "MX" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/door/poddoor/shutters{
-	id = TexGarageSouth;
+	id = "TexGarageSouth";
 	name = "Garage";
 	max_integrity = 999999
 	},
