@@ -29642,7 +29642,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindowdestroyed"
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "doO" = (
@@ -31470,7 +31472,9 @@
 	icon_state = "housewindow"
 	},
 /obj/structure/barricade/bars,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/building/abandoned)
 "dJa" = (
@@ -36789,7 +36793,9 @@
 	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/bars,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/building/abandoned)
 "eVs" = (
@@ -43417,7 +43423,9 @@
 /obj/structure/simple_door/metal/store{
 	icon_state = "brokenstore"
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "guH" = (
@@ -51335,7 +51343,9 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/bars,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building/abandoned)
 "iiZ" = (
@@ -76652,7 +76662,9 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindowbroken"
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nLU" = (
@@ -78250,7 +78262,9 @@
 /area/f13/building/coyote/nash/firestation)
 "odx" = (
 /obj/structure/simple_door/metal/dirtystore,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "odA" = (
@@ -98793,7 +98807,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "sLJ" = (
@@ -108976,7 +108992,9 @@
 	pixel_x = -12;
 	pixel_y = -8
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	id = DenPharma
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "uYT" = (
