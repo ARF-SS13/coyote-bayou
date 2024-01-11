@@ -18,8 +18,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_BIPOD = TRUE,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(90,120) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-15,-40) * 0.01
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(90,120) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-15,-40) * 0.01
 		)
 	I.gun_loc_tag = GUN_UNDERBARREL
 
@@ -37,8 +37,8 @@
 		GUN_UPGRADE_SILENCER = TRUE,
 		GUN_UPGRADE_MUZZLEFLASH=1 + rand(-15,-40) * 0.01,
 		GUN_UPGRADE_DAMAGE_PLUS = -0.1,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(15,30) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(-5,-25) * 0.01
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(15,30) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(-5,-25) * 0.01
 		)
 	I.gun_loc_tag = GUN_MUZZLE
 	I.req_gun_tags = list(GUN_SILENCABLE)
@@ -53,8 +53,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-25) * 0.01,
-		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(-5,-20) * 0.01
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(-5,-25) * 0.01,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1 + rand(-5,-20) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -71,8 +71,8 @@
 	//	GUN_UPGRADE_PEN_MULT = 0.2,
 		GUN_UPGRADE_RICO_MULT=1 + rand(-10,-60) * 0.01,
 		GUN_UPGRADE_PROJ_SPEED_MULT=1 + rand(15,50) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(10,30) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(5,15) * 0.01
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(10,30) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(5,15) * 0.01
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_PROJECTILE)
@@ -88,9 +88,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(15,45) * 0.01,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(25,80) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(25,60) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(40,60) * 0.01 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,80) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,60) * 0.01,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 1 + rand(40,60) * 0.01 // This can stack with the Heatsink. Makes the jet-cooled one practically required.
 		//GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -111,8 +111,8 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-5,-25) * 0.01,
 		GUN_UPGRADE_FORCESAFETY = FALSE,
-		GUN_UPGRADE_RECOIL_1H=1 + rand(25,35) * 0.01,
-		GUN_UPGRADE_RECOIL_2H=1 + rand(25,35) * 0.01
+		GUN_UPGRADE_RECOIL_1H = 1 + rand(25,35) * 0.01,
+		GUN_UPGRADE_RECOIL_2H = 1 + rand(25,35) * 0.01
 		)
 	I.gun_loc_tag = GUN_TRIGGER
 
