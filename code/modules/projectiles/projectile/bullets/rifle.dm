@@ -728,7 +728,7 @@
 /obj/item/projectile/bullet/a50MG
 	name = ".50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_50MG //75
-	damage_list = list("60" = 15, "75" = 55, "80" = 15, "90" = 10, "100" = 5)
+	damage_list = list("85" = 15, "96" = 55, "110" = 15, "120" = 10, "140" = 5)
 	stamina = BULLET_STAMINA_RIFLE_50MG
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_50MG
@@ -739,12 +739,6 @@
 
 	pixels_per_second = BULLET_SPEED_RIFLE_50MG
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-
-//This makes the round very impossible to balance*. Just modify the damage multiplier per gun depending on the rate of fire**.
-//*It really doesn't, and besides when has the bayou been properly balanced***? ***Just look at magic guns. **This makes very specific guns (I.E, just the AMR since the other .50 options were untouched) almost not useless. The ammo costs for .50 are prohibitive, though, so it ends up being a worse off .30-06. 
-// Bane, handloads/surplus cartridges don't get it because you went cheap.
-	supereffective_damage = 95 // SPECIFICALLY 95 because 60 (min damage) + 95 (bane damage) = 155 (total min+bane damage) - 35% (combat armor value) = 100.75 
-	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
 /* .50MG surplus
  * DAMAGE: 75
