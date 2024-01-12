@@ -420,8 +420,8 @@
 	ckeywhitelist = list("DeadWolf411")
 
 /obj/item/storage/box/large/custom_kit/DeadWolf411/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol(src)
-	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol(src)
+	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom2(src)
+	new /obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 
@@ -1328,11 +1328,10 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/toxspartanarmors(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
-	new /obj/item/pet_carrier/fluffy(src)
-	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/gun/ballistic/automatic/fg42tox(src)
 	new /obj/item/ammo_box/a308box(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 /datum/gear/donator/kits/seermankhajiit002
 	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
@@ -1342,6 +1341,7 @@
 	new /obj/item/storage/box/hobo_tox(src)
 	new /obj/item/gun/ballistic/automatic/fnfal/ak47/custom(src)
 	new /obj/item/pet_carrier/paws(src)
+	new /obj/item/pet_carrier/fluffy(src)
 	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
 
 /datum/gear/donator/kits/SilencedMP5A5
@@ -1575,6 +1575,9 @@
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/card/lowbounty(src)
+	new /obj/item/ammo_box/magazine/m308/ext(src)
+	new /obj/item/ammo_box/magazine/m308/ext(src)
+	new /obj/item/gun/ballistic/automatic/slr/stinki(src)
 	new /obj/item/gun_upgrade/scope/killer(src)
 
 /datum/gear/donator/kits/tk420634_2
