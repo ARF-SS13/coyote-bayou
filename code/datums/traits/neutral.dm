@@ -1309,6 +1309,26 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/spanish)
 
+/datum/quirk/freljordian
+	name = "Freljordian Language Comprehension"
+	desc = "You're capable of understanding and speaking Freljordian."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "For the Freljord!"
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak Freljordian.")
+	lose_text = span_notice("You've forgotten how to speak Freljordian.")
+	human_only = FALSE
+
+/datum/quirk/freljordian/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/freljordian)
+
+/datum/quirk/freljordian/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/freljordian)
+
 /datum/quirk/distinct
 	name = "Distinct"
 	desc = "Whether you've got horns, wings, a big ass tail, or maybe just your general vibe, something about you cannot be concealed"

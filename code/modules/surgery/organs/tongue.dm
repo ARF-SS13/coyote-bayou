@@ -44,6 +44,7 @@
 		/datum/language/machine,	//who cares
 		/datum/language/spanish,
 		/datum/language/serbian,
+		/datum/language/freljordian,
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
