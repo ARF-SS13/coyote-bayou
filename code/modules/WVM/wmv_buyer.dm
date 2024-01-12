@@ -123,6 +123,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/gun/ballistic/automatic/xl70e3 = 15,
 		// magic shit:tm:
 		/obj/item/gun/magic/ = 15,
+		// weapon mods
+		/obj/item/tool_upgrade/ = 5,
+		/obj/item/gun_upgrade/ = 5,
 	)
 	/// List of things it buys, but does NOT allow any of its children into the buy list
 	var/list/buyables_tight = list(
@@ -347,6 +350,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	dat += "Salvaged Power Armor: 30¢<br>"
 	dat += "Power Armor: 75¢<br>"
 	dat += "Melee Weapons: 10¢<br>"
+	dat += "Weapon Mods: 5¢<br>"
 	dat += "<br>"
 	dat += "<b>Turn your kills into coins today!</b><br>"
 	dat += "Small Roller Bounty Ticket: 75¢<br>"
