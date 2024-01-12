@@ -268,7 +268,6 @@
 		UPGRADE_COLOR = "#FFD700"
 		)
 	I.prefix = "gold"
-	I.removable = FALSE
 
 //Trash mods, for putting on old guns
 
