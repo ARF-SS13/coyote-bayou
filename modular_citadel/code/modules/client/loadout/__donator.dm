@@ -443,7 +443,7 @@
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/dogtag/darknova(src)
-	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1(src)
+	new /obj/item/gun/ballistic/automatic/assault_carbine/m5a1/woof(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 	new /obj/item/ammo_box/m5mmbox(src)
 
@@ -650,7 +650,7 @@
 
 	var/obj/item/melee/transforming/plasmacutter/sword/esword = new /obj/item/melee/transforming/plasmacutter/sword(src)
 	esword.sword_color = "red"
-	
+
 	var/obj/item/clothing/suit/space/hardsuit/syndi/suit = new /obj/item/clothing/suit/space/hardsuit/syndi(src)
 	qdel(suit.jetpack)
 	suit.armor = suit.armor.modifyRating(rad = -5)

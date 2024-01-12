@@ -268,7 +268,6 @@
 		UPGRADE_COLOR = "#FFD700"
 		)
 	I.prefix = "gold"
-	I.removable = FALSE
 
 //Trash mods, for putting on old guns
 
@@ -490,7 +489,7 @@
 		GUN_UPGRADE_RECOIL_1H=1 + rand(40,60) * 0.01,
 		GUN_UPGRADE_RECOIL_2H=1 + rand(15,30) * 0.01,
 		GUN_UPGRADE_DAMAGE_MULT=1 + rand(-10,-30) * 0.01,
-		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(-25,60) * 0.01
+		GUN_UPGRADE_FIRE_DELAY_MULT=1 + rand(25,60) * 0.01
 		//GUN_UPGRADE_CHARGECOST = 0.65
 		//GUN_UPGRADE_FULLAUTO = TRUE
 	)
