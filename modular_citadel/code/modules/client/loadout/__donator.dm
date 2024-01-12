@@ -840,6 +840,14 @@
 
 // L
 
+/datum/gear/donator/kits/leomybeloved
+	name = "sprawaobwodusergala customs"
+	path = /obj/item/storage/box/large/custom_kit/sos
+	ckeywhitelist = list("Matter7")
+
+/obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
+
 /datum/gear/donator/kits/LilKuddles
 	name = "MelMels Belongings"
 	path = /obj/item/storage/box/large/custom_kit/kuddles2
