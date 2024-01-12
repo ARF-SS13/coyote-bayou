@@ -1782,47 +1782,41 @@
 	if(d_brute)
 		if(d_brute > 0)
 			d_brute = -d_brute
-		target.apply_damage(
-			d_brute * mult,
-			BRUTE,
-			blocked = dr,
-			spread_damage = TRUE
+		target.adjustBruteLoss(
+			((d_brute * mult * dr) - dt),
+			TRUE,
+			FALSE,
 		)
 	if(d_burn)
 		if(d_burn > 0)
 			d_burn = -d_burn
-		target.apply_damage(
-			d_burn * mult,
-			BURN,
-			blocked = dr,
-			spread_damage = TRUE
+		target.adjustFireLoss(
+			((d_burn * mult * dr) - dt),
+			TRUE,
+			FALSE,
 		)
 	if(d_toxin)
 		if(d_toxin > 0)
 			d_toxin = -d_toxin
-		target.apply_damage(
-			d_toxin * mult,
-			TOX,
-			blocked = dr,
-			spread_damage = TRUE
+		target.adjustToxLoss(
+			((d_toxin * mult * dr) - dt),
+			TRUE,
+			FALSE,
+			TRUE
 		)
 	if(d_oxy)
 		if(d_oxy > 0)
 			d_oxy = -d_oxy
-		target.apply_damage(
-			d_oxy * mult,
-			OXY,
-			blocked = dr,
-			spread_damage = TRUE
+		target.adjustOxyLoss(
+			((d_oxy * mult * dr) - dt),
+			TRUE,
 		)
 	if(d_clone)
 		if(d_clone > 0)
 			d_clone = -d_clone
-		target.apply_damage(
-			d_clone * mult,
-			CLONE,
-			blocked = dr,
-			spread_damage = TRUE
+		target.adjustCloneLoss(
+			((d_clone * mult * dr) - dt),
+			TRUE,
 		)
 	if(d_brain)
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, (((-abs(d_brain) * mult) - dt) * dr))

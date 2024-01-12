@@ -209,18 +209,18 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/health_good_rare_max = 75
 	var/health_discrete = 1
 
-	var/stamina_bad_common_min = 6
-	var/stamina_bad_common_max = 8
-	var/stamina_bad_uncommon_min = 8
-	var/stamina_bad_uncommon_max = 10
-	var/stamina_bad_rare_min = 5
-	var/stamina_bad_rare_max = 65
-	var/stamina_good_common_min = -3
-	var/stamina_good_common_max = -1
-	var/stamina_good_uncommon_min = -5
-	var/stamina_good_uncommon_max = -3
-	var/stamina_good_rare_min = -65
-	var/stamina_good_rare_max = -3
+	var/stamina_bad_common_min = -6
+	var/stamina_bad_common_max = -8
+	var/stamina_bad_uncommon_min = -8
+	var/stamina_bad_uncommon_max = -10
+	var/stamina_bad_rare_min = -5
+	var/stamina_bad_rare_max = -65
+	var/stamina_good_common_min = 3
+	var/stamina_good_common_max = 1
+	var/stamina_good_uncommon_min = 5
+	var/stamina_good_uncommon_max = 3
+	var/stamina_good_rare_min = 65
+	var/stamina_good_rare_max = 3
 	var/stamina_discrete = 0.1
 
 	var/speed_bad_common_min = 0.2
