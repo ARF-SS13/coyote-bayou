@@ -267,6 +267,12 @@
 	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
+/datum/gear/donator/kits/matter7
+	path = /obj/item/storage/box/large/custom_kit/matter7
+	ckeywhitelist = list("Matter7")
+
+/obj/item/storage/box/large/custom_kit/matter7/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
