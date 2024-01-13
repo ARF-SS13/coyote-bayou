@@ -1031,6 +1031,10 @@
 	name = "Astolfo"
 	icon_state = "hair_astolfo"
 
+/datum/sprite_accessory/hair/astolfonobow
+	name = "Astolfo - No Bow"
+	icon_state = "hair_astolfonobow"
+
 /datum/sprite_accessory/hair/afropuffdouble
 	name = "Afro Puff Double"
 	icon_state = "hair_afropuffdouble"
