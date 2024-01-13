@@ -840,12 +840,12 @@
 
 // L
 
-/datum/gear/donator/kits/leomybeloved
+/datum/gear/donator/kits/leomybeloved  //thank you Jaeger!
 	name = "sprawaobwodusergala customs"
 	path = /obj/item/storage/box/large/custom_kit/sos
 	ckeywhitelist = list("Matter7")
 
-/obj/item/storage/box/large/custom_kit/kuddles2/PopulateContents()
+/obj/item/storage/box/large/custom_kit/sos/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 
 /datum/gear/donator/kits/LilKuddles
