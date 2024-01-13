@@ -3004,6 +3004,15 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/magic/healstaff/PopulateContents()
 	new /obj/item/gun/magic/staff/healing/triheal(src)
 
+/datum/loadout_box/lesserfireball
+	entry_tag = "Lesser Fireball Staff"
+	entry_flags = LOADOUT_FLAG_WASTER | LOADOUT_FLAG_TRIBAL
+	entry_class = LOADOUT_CAT_MAGIC
+	spawn_thing = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
+
+
+
+
 // Putting this down here because it refuses to work. Needs to be fixed later.
 
 /datum/loadout_box/energy/tglaser
