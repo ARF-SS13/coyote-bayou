@@ -184,6 +184,7 @@
 		/obj/effect/spawner/lootdrop/f13/rare_melee = 30,
 		/obj/effect/spawner/lootdrop/f13/rare_energy = 30,
 		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
+		/obj/effect/spawner/lootdrop/f13/uncommon_weps = 20
 	)
 
 /obj/effect/spawner/lootdrop/f13/very_rare
@@ -1021,6 +1022,7 @@
 		/obj/item/clothing/suit/armor/medium/odstlead = 1,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
 		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 20
 	)
 
 //////////////////
