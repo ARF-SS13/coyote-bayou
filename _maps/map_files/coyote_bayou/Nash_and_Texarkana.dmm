@@ -11107,13 +11107,6 @@
 	pixel_x = 28;
 	pixel_y = 6
 	},
-/obj/structure/christmas/garland{
-	pixel_x = 33;
-	pixel_y = -2
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = 33
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -30166,12 +30159,6 @@
 	dir = 1;
 	icon_state = "sofacorner"
 	},
-/obj/structure/christmas/garland{
-	pixel_x = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = -33
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -35121,18 +35108,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"eBL" = (
-/obj/structure/christmas/garland{
-	pixel_x = 33;
-	pixel_y = -2
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = 33
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "eBS" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "topshadowright"
@@ -39115,12 +39090,6 @@
 /obj/machinery/libraryscanner{
 	pixel_x = 3;
 	pixel_y = 11
-	},
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -49094,12 +49063,6 @@
 	pixel_x = 10;
 	pixel_y = -3
 	},
-/obj/structure/christmas/garland{
-	pixel_x = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = -33
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -52192,19 +52155,6 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-10";
 	layer = 2.9
-	},
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
-	},
-/obj/structure/christmas/garland{
-	pixel_x = 33;
-	pixel_y = -2
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = 33
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -61092,12 +61042,6 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -66414,12 +66358,6 @@
 	icon_state = "sofaend_right_armrest";
 	pixel_y = -11
 	},
-/obj/structure/christmas/garland{
-	pixel_x = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = -33
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -69306,18 +69244,6 @@
 	},
 /obj/item/pen,
 /obj/structure/table/wood,
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
-	},
-/obj/structure/christmas/garland{
-	pixel_x = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = -33
-	},
 /obj/structure/christmas/tinyxmastree{
 	pixel_y = 11;
 	pixel_x = 9
@@ -70600,12 +70526,6 @@
 	pixel_y = 13
 	},
 /obj/structure/bookcase,
-/obj/structure/christmas/garland{
-	pixel_y = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = -31
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -75226,19 +75146,6 @@
 	pixel_y = 16
 	},
 /obj/structure/bookcase,
-/obj/structure/christmas/garland{
-	pixel_y = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = -31
-	},
-/obj/structure/christmas/garland{
-	pixel_x = 33;
-	pixel_y = -2
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = 33
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -78197,12 +78104,6 @@
 	pixel_y = 16
 	},
 /obj/structure/bookcase,
-/obj/structure/christmas/garland{
-	pixel_y = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = -31
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -96309,17 +96210,6 @@
 "skx" = (
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/redriverdepotroad)
-"skA" = (
-/obj/structure/christmas/garland{
-	pixel_x = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_x = -33
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/library)
 "skB" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -96403,12 +96293,6 @@
 	pixel_y = 11
 	},
 /obj/effect/spawner/lootdrop/f13/common,
-/obj/structure/christmas/garland{
-	pixel_y = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = -31
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -97975,12 +97859,6 @@
 /obj/structure/table/wood,
 /obj/machinery/bookbinder{
 	pixel_x = -3
-	},
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
@@ -111254,12 +111132,6 @@
 	pixel_y = 15
 	},
 /obj/structure/bookcase,
-/obj/structure/christmas/garland{
-	pixel_y = -33
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = -31
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -111632,12 +111504,6 @@
 /area/f13/wasteland/nash)
 "vEe" = (
 /obj/machinery/photocopier,
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -116598,12 +116464,6 @@
 	light_color = "#f5f5f5"
 	},
 /obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/christmas/garland{
-	pixel_y = 29
-	},
-/obj/structure/christmas/tinselyellow{
-	pixel_y = 30
-	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -128752,7 +128612,7 @@ vIr
 icw
 nmt
 mgl
-skA
+gVe
 lBl
 hJz
 duM
@@ -130294,7 +130154,7 @@ wDf
 wVa
 mBh
 irB
-eBL
+gVe
 gVe
 aMI
 nuO
