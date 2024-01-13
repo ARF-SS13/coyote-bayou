@@ -905,6 +905,14 @@
 		)
 	butcher_difficulty = 5
 
+/mob/living/simple_animal/cow/brahmin/motorbike/tractor //fast as fuck boiii-- costs welding fuel
+	name = "tractor"
+	desc = "A tractor! Is it a John Deer? Or a Kubota?" //I don't care. ~gob
+	icon = 'modular_coyote/icons/mob/tractor.dmi'
+	icon_state = "tractor"
+	icon_living = "tractor"
+	icon_dead = "tractor_dead"
+
 //Horse
 
 /mob/living/simple_animal/cow/brahmin/horse //faster than a brahmin, but much less tanky
