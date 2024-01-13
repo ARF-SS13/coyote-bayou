@@ -529,7 +529,7 @@
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
-	if(!istype(M))
+	if(!istype(M) || !CheckAttackCooldown(user, M))
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute"))
 
