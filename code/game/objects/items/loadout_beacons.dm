@@ -1360,6 +1360,13 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	new /obj/item/ammo_box/m14mm(src)
 	new /obj/item/ammo_box/magazine/m14mmcustom(src)
 
+/obj/item/storage/box/gun/rifle/needler
+	name = "NR-43 Turán rifle case"
+
+/obj/item/storage/box/gun/rifle/needler/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/needlerrifle(src)
+	new /obj/item/ammo_box/needlercapsule(src)
+
 
 /obj/item/storage/box/gun/pistol/nineshotrevolver
 	name = "LeMat revolver case"
@@ -1984,6 +1991,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	entry_flags = LOADOUT_FLAG_WASTER
 	entry_class = LOADOUT_CAT_LONGGUN
 	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
+
+/datum/loadout_box/needlergobrr
+	entry_tag = "Turan Prototype Needler Rifle"
+	entry_flags = LOADOUT_FLAG_WASTER
+	entry_class = LOADOUT_CAT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/needler
 
 /datum/loadout_box/trainer
 	entry_tag = "Training Repeater"

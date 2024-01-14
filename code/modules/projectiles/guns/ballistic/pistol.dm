@@ -573,10 +573,12 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
+	can_scope = TRUE
+	can_suppress = TRUE
 
 
 
-// Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil
+// Tox's C96. slightly less damage for a 9mm pistol, but bigger magazine and better recoil ----> Updated note: Uses 10 magazine only now, can be buffed slightly.
 /obj/item/gun/ballistic/automatic/pistol/type17/tox //custom
 	name = "Tox's C96"
 	desc = "A unique C96 Mauser found and maintained by a sand-cat named Tox Mckit. The C96 depicted is engraved with silver Baroque Motifs. The handle is made of ivory and on the bolt is an engraving that says 'Ange'."
@@ -585,12 +587,16 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "toxpistol"
 	item_state = "toxpistol"
+	init_recoil = HANDGUN_RECOIL(0.4, 0.4)
 	init_firemodes = list(
-		/datum/firemode/semi_auto/fast
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm75
 	)
 	init_mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
 	mag_type = /obj/item/ammo_box/magazine/internal/mauserinternal
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
+	can_scope = TRUE
+	can_suppress = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/no3pistoltox //custom
 	name = "Tox's No.3 Pistol "
