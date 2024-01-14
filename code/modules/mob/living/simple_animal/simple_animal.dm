@@ -209,6 +209,11 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/ignore_other_mobs = TRUE // If TRUE, the mob will fight other mobs, if FALSE, it will only fight players
 	var/override_ignore_other_mobs = FALSE // If TRUE, it'll ignore the idnore other mobs flag, for mobs that are supposed to be hostile to everything
 
+	///multichance projectile hit behaviour (MCPHB)
+	var/mcphb_arms_hit = FALSE
+	var/mcphb_legs_hit = FALSE
+		
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src

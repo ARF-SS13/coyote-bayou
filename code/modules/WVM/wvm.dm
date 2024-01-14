@@ -992,9 +992,11 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
+		new /datum/data/wasteland_equipment("Gold Paint",					/obj/item/gun_upgrade/cosmetic/gold,							80),
+		new /datum/data/wasteland_equipment("Bluespace Paint",				/obj/item/tool_upgrade/augment/randomizer,						50)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								25),
@@ -1006,9 +1008,11 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				60),
 		new /datum/data/wasteland_equipment("Improvised Laser Guide",		/obj/item/tool_upgrade/refinement/laserguide,					60),
 		new /datum/data/wasteland_equipment("Raider Trigger",				/obj/item/gun_upgrade/trigger/raidertrigger,					60),
-		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
 		new /datum/data/wasteland_equipment("Heatsink",						/obj/item/tool_upgrade/reinforcement/heatsink,					60),
-		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60)
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							60),
+		new /datum/data/wasteland_equipment("Red Paint",					/obj/item/tool_upgrade/productivity/red_paint,					60),
+		new /datum/data/wasteland_equipment("Gold Paint",					/obj/item/gun_upgrade/cosmetic/gold,							80),
+		new /datum/data/wasteland_equipment("Bluespace Paint",				/obj/item/tool_upgrade/augment/randomizer,						50)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting

@@ -165,7 +165,9 @@ GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything
 	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,
 	"Bone Satchel" = /obj/item/storage/backpack/satchel/bone,
 	"Old Satchel" = /obj/item/storage/backpack/satchel/old,
-	"Service Satchel" = /obj/item/storage/backpack/satchel/enclave
+	"Service Satchel" = /obj/item/storage/backpack/satchel/enclave,
+	"Chameleon Backpack" = /obj/item/storage/backpack/chameleon,
+	"Inconspicuous Backpack" = /obj/item/storage/backpack/satchel/invisible
 	))
 
 //Suit/Skirt

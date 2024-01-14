@@ -565,3 +565,7 @@
 
 #define QUIRK_STATISTICS_DIRECTORY "data/quirk_stats/round_"
 #define QUIRK_PLAYER2FILENAME(ckey, playername) "[ckey]_[playername]_is_cool.json" // my code my filenames
+
+GLOBAL_LIST_INIT(quirk2name, list(
+	
+))

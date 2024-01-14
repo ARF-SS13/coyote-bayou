@@ -275,7 +275,7 @@
 #define RANDOM(min, max) (rand(min*1000, max*1000)*0.001)
 
 /proc/pad_number(number, decimals = 0) // this proc doesnt work, lol
-	if(decimals <= 0)
+	if(decimals <= 0) // actually it works just fine, wtf dan
 		return "[number]"
 	var/digits_in_number = 0
 	var/number_copy = number

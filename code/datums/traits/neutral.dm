@@ -514,6 +514,46 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/pokemon)
 
+/datum/quirk/oldnorsecommon
+	name = "Combined Common Nordic-Germanic Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the Combined Common Nordic Germanic language!"
+	value = 0
+	category = "Language Quirks"
+	mechanics = "You can speak the Combined Common Nordic-Germanic language, or at least understand it. Maybe you really are the very best."
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak to Combined Nordic-Germanic.")
+	lose_text = span_notice("You've forgotten how to speak Combined Nordic-Germanic.")
+	human_only = FALSE
+
+/datum/quirk/oldnorsecommon/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/fictionalnorse)
+
+/datum/quirk/oldnorsecommon/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/fictionalnorse)
+
+/datum/quirk/ancienttechnorussian
+	name = "Eastern Slavic Spacer Comprehension"
+	desc = "You're somehow capable of understanding and speaking the Eastern Slavic Spacer language!"
+	value = 0
+	category = "Language Quirks"
+	mechanics = "You can speak the Eastern Slavic Spacer language or at least understand it. Maybe you really are the very best."
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak Eastern Slavic Spacer!")
+	lose_text = span_notice("You've forgotten how to speak Eastern Slavic Spacer!")
+	human_only = FALSE
+
+/datum/quirk/ancienttechnorussian/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/technorussian)
+
+/datum/quirk/ancienttechnorussian/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/technorussian)
+
 /datum/quirk/in_heat
 	name = "ERP Receptive"
 	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
@@ -1209,6 +1249,26 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/xenocommon)
 
+/datum/quirk/serbian
+	name = "Serbian Language Comprehension"
+	desc = "You're capable of understanding and speaking Serbian."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "Insert slav meme here"
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak Serbian.")
+	lose_text = span_notice("You've forgotten how to speak Serbian.")
+	human_only = FALSE
+
+/datum/quirk/serbian/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/serbian)
+
+/datum/quirk/serbian/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/serbian)
+
 /datum/quirk/machine_lang
 	name = "Machine Language Comprehension"
 	desc = "You're somehow capable of understanding and speaking machine language."
@@ -1228,6 +1288,46 @@
 	var/mob/living/H = quirk_holder
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/machine)
+
+/datum/quirk/spanish
+	name = "Spanish Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking spanish language."
+	value = 0
+	category = "Language Quirks"
+	mechanics = ""
+	conflicts = list()
+	gain_text = span_notice("You speak spanish.")
+	lose_text = span_notice("You've forgotten how to speak spanish.")
+	human_only = FALSE
+
+/datum/quirk/spanish/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/spanish)
+
+/datum/quirk/spanish/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/spanish)
+
+/datum/quirk/freljordian
+	name = "Freljordian Language Comprehension"
+	desc = "You're capable of understanding and speaking Freljordian."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "For the Freljord!"
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak Freljordian.")
+	lose_text = span_notice("You've forgotten how to speak Freljordian.")
+	human_only = FALSE
+
+/datum/quirk/freljordian/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/freljordian)
+
+/datum/quirk/freljordian/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/freljordian)
 
 /datum/quirk/distinct
 	name = "Distinct"

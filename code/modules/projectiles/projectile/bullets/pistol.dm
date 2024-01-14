@@ -417,21 +417,22 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
-	supereffective_damage = 11
+	supereffective_damage = 14
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 
-	var/piercing = FALSE // not sure what this does
-
 /obj/item/projectile/bullet/needle/improvised
-	name = "nail flechette"
-	icon_state = "cbbolt"
+	name = "Jade needle"
+	icon_state = "needleimprov"
+	damage_list = list("12" = 80, "14" = 20, "16" = 5)
+	supereffective_damage = 8
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	damage = BULLET_DAMAGE_PISTOL_NEEDLE_HANDLOAD
 	stamina = BULLET_STAMINA_PISTOL_NEEDLE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_PISTOL_NEEDLE
 
-	wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_HANDLOAD
-	bare_wound_bonus = BULLET_WOUND_PISTOL_NEEDLE_NAKED_MULT
+	wound_bonus = BULLET_WOUND_PISTOL_NEEDLE
+	bare_wound_bonus = BULLET_WOUND_PISTOL_10MM_NAKED_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
 	pixels_per_second = BULLET_SPEED_PISTOL_NEEDLE_HANDLOAD

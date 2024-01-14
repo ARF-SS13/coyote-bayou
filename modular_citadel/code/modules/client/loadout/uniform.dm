@@ -3337,12 +3337,6 @@
 	path = /obj/item/clothing/under/trek/engsec
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/trek/medsci
-	name = "medsci uniform"
-	cost = 0
-	path = /obj/item/clothing/under/trek/medsci
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/trek/command/next
 	name = "command uniform, alt"
 	cost = 0
@@ -3361,22 +3355,10 @@
 	path = /obj/item/clothing/under/trek/command/ent
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/trek/medsci/next
-	name = "Med science uniform"
-	cost = 0
-	path = /obj/item/clothing/under/trek/medsci/next
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/trek/engsec/ent
 	name = "ent operations uniform"
 	cost = 0
 	path = /obj/item/clothing/under/trek/engsec/ent
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/trek/medsci/ent
-	name = "ent medsci"
-	cost = 0
-	path = /obj/item/clothing/under/trek/medsci/ent
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/trek/command/voy
@@ -3391,28 +3373,10 @@
 	path = /obj/item/clothing/under/trek/engsec/voy
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-/datum/gear/uniform/trek/medsci/voy
-	name = "voy medsci"
-	cost = 0
-	path = /obj/item/clothing/under/trek/medsci/voy
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/trek/command/ds9
-	name = "commanding uniform"
-	cost = 0
-	path = /obj/item/clothing/under/trek/command/ds9
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
 /datum/gear/uniform/trek/engsecds9
 	name = "engineering section unifrom"
 	cost = 0
 	path = /obj/item/clothing/under/trek/engsec/ds9
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/trek/medsci/ds9
-	name = "medical section unifrom"
-	cost = 0
-	path = /obj/item/clothing/under/trek/medsci/ds9
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/trek/orv/captain
@@ -3425,12 +3389,6 @@
 	name = "orville operations command uniform"
 	cost = 0
 	path = /obj/item/clothing/under/trek/command/orv/engsec
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
-
-/datum/gear/uniform/trek/orv/medsci
-	name = "orville medsci command uniform"
-	cost = 0
-	path = /obj/item/clothing/under/trek/command/orv/medsci
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
 /datum/gear/uniform/trek/orv
@@ -3548,3 +3506,107 @@
 	path = /obj/item/clothing/under/half_skirt
 	cost = 0
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_TRIBAL
+
+//Medical/Sci
+
+/datum/gear/uniform/trek/medsci
+	name = "medsci uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/ds9
+	name = "medical section unifrom"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ds9
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/next
+	name = "Med science uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/next
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/ent
+	name = "ent medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/ent
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/medsci/voy
+	name = "voy medsci"
+	cost = 0
+	path = /obj/item/clothing/under/trek/medsci/voy
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/trek/orv/medsci
+	name = "orville medsci command uniform"
+	cost = 0
+	path = /obj/item/clothing/under/trek/command/orv/medsci
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/nurse
+	name = "Nurse's Suit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/nurse
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/skirt
+	name = "Medical Doctor's Jumpskirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/jumpsuit
+	name = "Medical Doctor's Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic
+	name = "Paramedic Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/red
+	name = "Red Paramedic Jumpsuit"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/red
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/light
+	name = "Paramedic Jumpsuit Light"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/light
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/jumpskirt
+	name = "Paramedic Jumpskirt"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/skirt
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/paramedic/jumpskirt/light
+	name = "Paramedic Jumpskirt light"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/paramedic/skirt/light
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/costume/maid
+	name = "Maid Costume"
+	cost = 0
+	path = /obj/item/clothing/under/costume/maid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/costume/janimaid
+	name = "Maid Uniform"
+	cost = 0
+	path = /obj/item/clothing/under/janimaid
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
+
+/datum/gear/uniform/doctor/medical/doctor/util
+	name = "Medical Utility Uniform"
+	cost = 0
+	path = /obj/item/clothing/under/rank/medical/doctor/util
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_MEDICAL
