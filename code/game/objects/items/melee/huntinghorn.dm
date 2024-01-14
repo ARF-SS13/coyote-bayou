@@ -13,21 +13,32 @@
 	sharpness = SHARP_NONE
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
-	var/readytoplay = FALSE
+	var/readytoplay = TRUE
 	var/list/notes = list()
 	var/currentnote = 1
-	var/list/datum/huntinghornsong/songlist = list()
+	var/list/datum/huntinghornsong/songlist = list(/datum/huntinghornsong)
 	var/list/datum/status_effect/music/currenteffects = list()
 	var/datum/song/handheld/intrument
 	var/allowed_instrument_ids = "guitar"
 
 /obj/item/twohanded/huntinghorn/Initialize()
-	. = ..()
+	..()
 	intrument = new(src, allowed_instrument_ids)
+	// RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	// RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+
+/obj/item/twohanded/huntinghorn/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands = FALSE)
+
+/obj/item/twohanded/huntinghorn/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_TWOHANDED_WIELD)
+	UnregisterSignal(src, COMSIG_TWOHANDED_UNWIELD)
 
 /obj/item/twohanded/huntinghorn/attack_self(mob/user)
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-		set_note(user, ++currentnote)
+		set_note(user, currentnote)
 		return
 
 	if(!isliving(user) || user.stat || user.restrained())
@@ -49,16 +60,17 @@
 		if(3)
 			to_chat(user, span_info("You prepare a high note."))
 			return
-	
-/obj/item/twohanded/huntinghorn/on_wield(obj/item/source, mob/user)
-	. = ..()
-	spawn(HH_WIELD_TIME)
-		if(user.get_active_held_item() == src && wielded)
-			set_ready_to_play(user, TRUE)
 
-/obj/item/twohanded/huntinghorn/on_unwield(obj/item/source, mob/user)
-	. = ..()
-	set_ready_to_play(user, FALSE)
+	
+// /obj/item/twohanded/huntinghorn/on_wield(mob/user)
+// 	. = ..()
+// 	spawn(HH_WIELD_TIME)
+// 		if((user.get_active_held_item() == src) && wielded)
+// 			set_ready_to_play(user, TRUE)
+
+// /obj/item/twohanded/huntinghorn/on_wield(mob/user)
+// 	. = ..()
+// 	set_ready_to_play(user, FALSE)
 
 /obj/item/twohanded/huntinghorn/proc/set_ready_to_play(mob/user, set_to)
 	if(readytoplay == set_to)
@@ -73,11 +85,11 @@
 
 /obj/item/twohanded/huntinghorn/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	if(!readytoplay || !CheckAttackCooldown(user, target))
-		return
+	//if(!readytoplay || !CheckAttackCooldown(user, target))
+	//	return
 	notes.Add(currentnote)
 	if(length(notes) > 3)
-		notes.Cut(1,1)
+		notes.Cut(1,2)
 	for(var/datum/huntinghornsong/song in songlist)
 		if(song.check_notes(notes))
 			add_song_effect(user, song)
