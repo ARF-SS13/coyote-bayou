@@ -290,7 +290,7 @@
 
 /datum/gear/suit/lightscout
 	name = "Light Scout Armor"
-	path = /obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
+	path = /obj/item/clothing/suit/armor/light/leather/lightscoutarmor
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
@@ -568,6 +568,12 @@
 /datum/gear/suit/coat/leatherbattlecoat
 	name = "Leather battle coat"
 	path = /obj/item/clothing/suit/armor/light/duster/breastplate/khan
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
+	cost = 2
+
+/datum/gear/suit/coat/rustedcowboy
+	name = "Rusted Cowboy Outfit"
+	path = /obj/item/clothing/suit/armor/light/duster/rustedcowboy
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_ARMOR
 	cost = 2
 
