@@ -1,4 +1,4 @@
-#define HH_STATUS_DEFAULT_DURATION 120
+#define HH_STATUS_DEFAULT_DURATION (60 SECONDS)
 
 
 /datum/status_effect/music
