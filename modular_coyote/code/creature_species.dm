@@ -942,15 +942,6 @@
 /mob/living/carbon/human/species/maid
 	race = /datum/species/feral/xeno/maid
 
-/datum/species/feral/werewolf/rogue
-	name = "Black Werewolf"
-	id = "were"
-	simple_icon = 'modular_roguetown/mob/monster/werewolf.dmi'
-	icon_width = 32
-	roundstart = TRUE
-/mob/living/carbon/human/species/werewolfrogue
-	race = /datum/species/feral/werewolf/rogue
-
 //tgmc aliens
 /datum/species/feral/xeno/beetle
 	name = "Feral Xenomorph Beetle"
