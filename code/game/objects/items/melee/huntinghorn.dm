@@ -5,6 +5,14 @@
 	icon_state = "louisville"
 	icon_prefix = "louisville"
 	wielded_icon = "louisville2"
+
+	force = 20
+	throwforce = 20
+	force_unwielded = 20
+	force_wielded = 40
+	sharpness = SHARP_NONE
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
 	var/readytoplay = FALSE
 	var/list/notes = list()
 	var/currentnote = 1
@@ -19,7 +27,7 @@
 
 /obj/item/twohanded/huntinghorn/attack_self(mob/user)
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-		set_note(user, currentnote++)
+		set_note(user, ++currentnote)
 		return
 
 	if(!isliving(user) || user.stat || user.restrained())
@@ -31,7 +39,6 @@
 	currentnote = to_set
 	if(currentnote > 3)
 		currentnote = 1
-		return
 	switch(currentnote)
 		if(1)
 			to_chat(user, span_info("You prepare a low note."))
@@ -68,7 +75,7 @@
 	. = ..()
 	if(!readytoplay || !CheckAttackCooldown(user, target))
 		return
-	notes += currentnote
+	notes.Add(currentnote)
 	if(length(notes) > 3)
 		notes.Cut(1,1)
 	for(var/datum/huntinghornsong/song in songlist)
