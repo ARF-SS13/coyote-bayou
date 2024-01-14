@@ -6,7 +6,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "flowerskirt"
 	body_parts_covered = CHEST|GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/skirt/brownstrap
@@ -16,7 +16,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "brownskirt_strap"
 	body_parts_covered = GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
 
@@ -27,7 +27,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "blackskirt"
 	body_parts_covered = GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/skirt/brown
@@ -37,7 +37,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "brownskirt"
 	body_parts_covered = GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 
 //// Dresses ////
@@ -48,7 +48,7 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "blackdress"
 	body_parts_covered = CHEST|GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 
 /obj/item/clothing/under/dress/brown
@@ -58,6 +58,6 @@
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/under/misc.dmi'
 	icon_state = "browndress"
 	body_parts_covered = CHEST|GROIN
-	fitted = FEMALE_UNIFORM_TOP
+	fitted = NO_FEMALE_UNIFORM
 	can_adjust = TRUE
 
