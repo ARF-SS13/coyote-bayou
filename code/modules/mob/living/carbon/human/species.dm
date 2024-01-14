@@ -877,7 +877,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		"[BODY_ADJ_UPPER_LAYER]" = "ADJUP",
 		"[BODY_FRONT_LAYER]" = "FRONT",
 		"[HORNS_LAYER]" = "HORNS",
-		"[BODYPARTS_LAYER]" = "BODY",
 		)
 
 	var/g = (H.dna.features["body_model"] == FEMALE) ? "f" : "m"

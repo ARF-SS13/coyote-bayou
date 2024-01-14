@@ -1,7 +1,7 @@
 //MAIN BODY
 /datum/sprite_accessory/derg_body
 	icon = 'icons/mob/dragon/dragon_body.dmi'	
-	relevant_layers = list(BODYPARTS_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER)
 	color_src = MUTCOLORS2
 	mutant_part_string = "derg_body"
 	dimension_x = 128
