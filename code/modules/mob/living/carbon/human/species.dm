@@ -854,7 +854,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/list/dna_feature_as_text_string = list()
 
 	for(var/bodypart in bodyparts_to_add)
-		var/reference_list = GLOB.mutant_reference_list[bodypart]
+		var/reference_list = GLOB.mutant_reference_list[bodypart] //WHY INSECT FLUFF ALL THE TIME WHY - WIZARD
 		if(reference_list)
 			var/datum/sprite_accessory/S
 			var/transformed_part = GLOB.mutant_transform_list[bodypart]

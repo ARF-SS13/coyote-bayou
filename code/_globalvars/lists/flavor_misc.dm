@@ -41,10 +41,10 @@ GLOBAL_LIST_EMPTY(caps_list)
 
 	//Dragon bits
 GLOBAL_LIST_EMPTY(derg_belly_list)
-GLOBAL_LIST_EMPTY(derg_horn_list)
 GLOBAL_LIST_EMPTY(derg_mane_list)
 GLOBAL_LIST_EMPTY(derg_ear_list)
 GLOBAL_LIST_EMPTY(derg_eye_list)
+GLOBAL_LIST_EMPTY(derg_horn_list)
 
 
 //a way to index the right bodypart list given the type of bodypart
@@ -311,13 +311,69 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 //locked parts are those that your picked species requires to have
 //unlocked parts are those that anyone can choose on customisation regardless
 //parts not in unlocked, but in all, are thus locked
-GLOBAL_LIST_INIT(all_mutant_parts, list("tail_lizard" = "Tail", "mam_tail" = "Tail", "tail_human" = "Tail", "snout" = "Snout", "frills" = "Frills", "spines" = "Spines", "mam_body_markings" = "Species Markings" , "mam_ears" = "Ears", "ears" = "Ears", "mam_snouts" = "Snout", "legs" = "Legs", "deco_wings" = "Decorative Wings", "insect_wings" = "Insect Wings", "insect_fluff" = "Insect Fluff", "taur" = "Tauric Body", "insect_markings" = "Insect Markings", "wings" = "Wings", "arachnid_legs" = "Arachnid Legs", "arachnid_spinneret" = "Spinneret", "arachnid_mandibles" = "Mandibles", "xenohead" = "Caste Head", "xenotail" = "Tail", "xenodorsal" = "Dorsal Spines", "ipc_screen" = "Screen", "ipc_antenna" = "Antenna", "meat_type" = "Meat Type", "horns" = "Horns", "derg_belly" = "Dragon Under", "derg_horns" = "Dragon Horns", "derg_mane" = "Dragon Mane", "derg_ears" = "Dragon Ears", "derg_eyes" = "Dragon Eyes"))
+GLOBAL_LIST_INIT(all_mutant_parts, list(
+	"tail_lizard" = "Tail", 
+	"mam_tail" = "Tail", 
+	"tail_human" = "Tail", 
+	"snout" = "Snout", 
+	"frills" = "Frills", 
+	"spines" = "Spines", 
+	"mam_body_markings" = "Species Markings", 
+	"mam_ears" = "Ears", "ears" = "Ears", 
+	"mam_snouts" = "Snout", "legs" = "Legs", 
+	"deco_wings" = "Decorative Wings", 
+	"insect_wings" = "Insect Wings", 
+	"insect_fluff" = "Insect Fluff", 
+	"taur" = "Tauric Body", 
+	"insect_markings" = "Insect Markings", 
+	"wings" = "Wings", 
+	"arachnid_legs" = "Arachnid Legs", 
+	"arachnid_spinneret" = "Spinneret", 
+	"arachnid_mandibles" = "Mandibles", 
+	"xenohead" = "Caste Head", 
+	"xenotail" = "Tail", 
+	"xenodorsal" = "Dorsal Spines", 
+	"ipc_screen" = "Screen", 
+	"ipc_antenna" = "Antenna", 
+	"meat_type" = "Meat Type", 
+	"horns" = "Horns", 
+	"derg_belly" = "Dragon Under", 
+	"derg_horns" = "Dragon Horns", 
+	"derg_mane" = "Dragon Mane", 
+	"derg_ears" = "Dragon Ears", 
+	"derg_eyes" = "Dragon Eyes"))
+
 GLOBAL_LIST_INIT(unlocked_mutant_parts, list("horns", "insect_fluff"))
 //parts in either of the above two lists that require a second option that allows them to be coloured
 GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color", "derg_belly" = "derg_belly_color"))
 
 //body ids that have greyscale sprites
-GLOBAL_LIST_INIT(greyscale_limb_types, list("human","moth","lizard","pod","plant","jelly","slime","golem","lum","stargazer","mush","ethereal","snail","c_golem","b_golem","mammal","xeno","ipc","insect","synthliz","avian","aquatic","shadekin","spider","dragon"))
+GLOBAL_LIST_INIT(greyscale_limb_types, list(
+	"human",
+	"moth",
+	"lizard",
+	"pod",
+	"plant",
+	"jelly",
+	"slime",
+	"golem",
+	"lum",
+	"stargazer",
+	"mush",
+	"ethereal",
+	"snail",
+	"c_golem",
+	"b_golem",
+	"mammal",
+	"xeno",
+	"ipc",
+	"insect",
+	"synthliz",
+	"avian",
+	"aquatic",
+	"shadekin",
+	"spider",
+	"dragon"))
 
 //body ids that have prosthetic sprites
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))

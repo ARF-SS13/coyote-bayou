@@ -6,6 +6,8 @@
 	mutant_part_string = "derg_belly"
 	center = TRUE
 	dimension_x = 128
+	dimension_y = 92
+
 
 /datum/sprite_accessory/derg_belly/none
 	name = "None"	
@@ -39,6 +41,7 @@
 	recommended_species = list("dragon")
 	center = TRUE
 	dimension_x = 128
+	dimension_y = 92
 
 /datum/sprite_accessory/derg_horns/smooth
 	name = "None"	
@@ -76,11 +79,16 @@
 	icon = 'icons/mob/dragon/dragon_manes.dmi'
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_mane"
+	center = TRUE
+	dimension_x = 128
+	dimension_y = 92
 
 /datum/sprite_accessory/derg_mane/none
 	name = "None"
 	icon_state = "dragon_maneNone"	
 	relevant_layers = null
+	dimension_x = 32
+	center = FALSE
 	
 /datum/sprite_accessory/derg_mane/shaggy
 	name = "Shaggy"
@@ -96,11 +104,16 @@
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_ears"
+	center = TRUE
+	dimension_x = 128
+	dimension_y = 92
 
 /datum/sprite_accessory/derg_ears/none
 	name = "None"
 	icon_state = "none"
 	relevant_layers = null
+	dimension_x = 32
+	center = FALSE
 
 /datum/sprite_accessory/derg_ears/normal
 	name = "Normal"
@@ -111,12 +124,17 @@
 	icon = 'icons/mob/dragon/dragon_eyes.dmi'
 	color_src = MUTCOLORS3
 	mutant_part_string = "derg_eyes"
+	center = TRUE
+	dimension_x = 128
+	dimension_y = 92
 
 /datum/sprite_accessory/derg_eyes/none
 	name = "None"
 	icon_state = "none"
 	relevant_layers = null
-
+	dimension_x = 32
+	center = FALSE
+	
 /datum/sprite_accessory/derg_eyes/normal
 	name = "Normal"
 	icon_state = "dragon_eyesNormal"
