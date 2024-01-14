@@ -1,10 +1,13 @@
 #define HH_WIELD_TIME (2 SECONDS)
 
-/obj/item/twohanded/huntinghorn
+/obj/item/huntinghorn
 	name = "hunting horn"
 	icon_state = "louisville"
-	icon_prefix = "louisville"
 	wielded_icon = "louisville2"
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 
 	force = 20
 	throwforce = 20
@@ -16,29 +19,29 @@
 	var/readytoplay = TRUE
 	var/list/notes = list()
 	var/currentnote = 1
-	var/list/datum/huntinghornsong/songlist = list(/datum/huntinghornsong)
+	var/list/datum/huntinghornsong/songlist = list(/datum/huntinghornsong,)
 	var/list/datum/status_effect/music/currenteffects = list()
 	var/datum/song/handheld/intrument
 	var/allowed_instrument_ids = "guitar"
 
-/obj/item/twohanded/huntinghorn/Initialize()
+/obj/item/huntinghorn/Initialize()
 	..()
 	intrument = new(src, allowed_instrument_ids)
-	// RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	// RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/wield_horn)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/unwield_horn)
 
-/obj/item/twohanded/huntinghorn/ComponentInitialize()
+/obj/item/huntinghorn/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, require_twohands = FALSE)
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=40)
 
-/obj/item/twohanded/huntinghorn/Destroy()
+/obj/item/huntinghorn/Destroy()
 	. = ..()
 	UnregisterSignal(src, COMSIG_TWOHANDED_WIELD)
 	UnregisterSignal(src, COMSIG_TWOHANDED_UNWIELD)
 
-/obj/item/twohanded/huntinghorn/attack_self(mob/user)
+/obj/item/huntinghorn/attack_self(mob/user)
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-		set_note(user, currentnote)
+		set_note(user, ++currentnote)
 		return
 
 	if(!isliving(user) || user.stat || user.restrained())
@@ -46,7 +49,7 @@
 	//user.set_machine(instrument)
 	intrument.ui_interact(user)
 
-/obj/item/twohanded/huntinghorn/proc/set_note(mob/user, to_set)
+/obj/item/huntinghorn/proc/set_note(mob/user, to_set)
 	currentnote = to_set
 	if(currentnote > 3)
 		currentnote = 1
@@ -62,17 +65,19 @@
 			return
 
 	
-// /obj/item/twohanded/huntinghorn/on_wield(mob/user)
-// 	. = ..()
-// 	spawn(HH_WIELD_TIME)
-// 		if((user.get_active_held_item() == src) && wielded)
-// 			set_ready_to_play(user, TRUE)
+/obj/item/huntinghorn/proc/wield_horn(mob/user)
+	SIGNAL_HANDLER
 
-// /obj/item/twohanded/huntinghorn/on_wield(mob/user)
-// 	. = ..()
-// 	set_ready_to_play(user, FALSE)
+	spawn(HH_WIELD_TIME)
+		if((user.get_active_held_item() == src) && wielded)
+			set_ready_to_play(user, TRUE)
 
-/obj/item/twohanded/huntinghorn/proc/set_ready_to_play(mob/user, set_to)
+/obj/item/huntinghorn/proc/unwield_horn(mob/user)
+	SIGNAL_HANDLER
+
+	set_ready_to_play(user, FALSE)
+
+/obj/item/huntinghorn/proc/set_ready_to_play(mob/user, set_to)
 	if(readytoplay == set_to)
 		return
 	readytoplay = set_to
@@ -83,18 +88,18 @@
 	currenteffects.Cut()
 	notes.Cut()
 
-/obj/item/twohanded/huntinghorn/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+/obj/item/huntinghorn/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
-	//if(!readytoplay || !CheckAttackCooldown(user, target))
-	//	return
+	if(!readytoplay || !CheckAttackCooldown(user, target))
+		return
 	notes.Add(currentnote)
 	if(length(notes) > 3)
-		notes.Cut(1,2)
+		notes.Cut(1,length(notes)-2)
 	for(var/datum/huntinghornsong/song in songlist)
 		if(song.check_notes(notes))
 			add_song_effect(user, song)
 
-/obj/item/twohanded/huntinghorn/proc/add_song_effect(mob/user, datum/huntinghornsong/song)
+/obj/item/huntinghorn/proc/add_song_effect(mob/user, datum/huntinghornsong/song)
 	var/datum/status_effect/music/effect = song.effect
 	if(currenteffects.Find(effect))
 		return
