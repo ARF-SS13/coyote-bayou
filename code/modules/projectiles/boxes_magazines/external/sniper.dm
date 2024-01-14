@@ -10,6 +10,17 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/ammo_box/magazine/amr/bifrost
+	name = "MK-18 MOD 1 Mjolnir 10 round Aluminum magazine"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "50mag"
+	max_ammo = 10
+	randomize_ammo_count = FALSE
+	ammo_type = /obj/item/ammo_casing/a3006
+	caliber = list(CALIBER_3006)
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/spaagrifle
 	name = "reloadable recoiless rifle magazine"

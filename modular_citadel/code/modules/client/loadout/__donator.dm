@@ -755,11 +755,11 @@
 
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
-	path = /obj/item/storage/box/large/custom_kit/jaeger
+	path = /obj/item/storage/box/large/custom_kit/jaeger // bookmark from JSC
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/hebe(src)
+	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
 
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
