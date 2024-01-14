@@ -507,6 +507,19 @@
 	for(var/i=0, i<50, i+=10)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
 
+/obj/item/projectile/magic/aoe/fireball/lowpower
+	name = "bolt of fireball"
+	icon_state = "fireball"
+	flag = "bomb"
+	damage = 35
+	damage_low = 30
+	damage_high = 47
+	damage_type = BRUTE
+	nodamage = 0
+	supereffective_damage = 40
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
+
+
 /obj/item/projectile/magic/nuclear
 	name = "\proper blazing manliness"
 	icon_state = "nuclear"

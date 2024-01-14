@@ -550,17 +550,17 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		P.save_character()
 
 /// Adds a quirk to a mob
-/datum/controller/subsystem/processing/quirks/proc/AddQuirkToMob(mob/user, Qany, spawn_effects)
+/datum/controller/subsystem/processing/quirks/proc/AddQuirkToMob(mob/user, Qany, spawn_effects, words = TRUE)
 	if(!user || !Qany)
 		return
 	var/datum/quirk/T = GetQuirk(Qany)
 	if(!T)
 		return
-	new T.type(user, spawn_effects)
+	new T.type(user, spawn_effects, words)
 	return TRUE
 
 /// Removes a quirk from a mob
-/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromMob(mob/user, Qany, cus_antag)
+/datum/controller/subsystem/processing/quirks/proc/RemoveQuirkFromMob(mob/user, Qany, cus_antag, words = TRUE)
 	if(!user || !Qany)
 		return
 	var/datum/quirk/U = HasQuirk(user, Qany)
@@ -568,6 +568,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		return // no deleting *our* quirks
 	if(cus_antag)
 		U.removed_cus_antag(user)
+	U.preremove(words)
 	qdel(U)
 	return TRUE
 

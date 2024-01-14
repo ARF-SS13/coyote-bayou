@@ -912,6 +912,13 @@
 	sound = 'sound/f13effects/sunsetsounds/moo.ogg'
 
 
+/datum/emote/living/meow
+	key = "meow"
+	key_third_person = "meows"
+	message = "meows!"
+	sound = 'sound/f13effects/meow.ogg'
+
+
 /datum/emote/mrowl
 	key = "mrowl"
 	key_third_person = "mrowls"
@@ -2078,4 +2085,11 @@ datum/emote/living/gecker
 	message = "geckers!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_coyote/sound/verbs/foxgecker.ogg'
+
+	datum/emote/living/mow //cat looking ass playing brick game looking ass cat i swear to god I'm taking you to the vet merek
+	key = "mow"
+	key_third_person = "mows like an insane cat."
+	message = "mows!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_coyote/sound/verbs/mow.ogg'
 

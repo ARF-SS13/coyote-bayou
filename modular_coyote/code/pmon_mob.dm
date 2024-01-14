@@ -381,7 +381,7 @@
 /mob/living/simple_animal/advanced/jolteon/bud
 	name = "Bud"
 	p_active_moves = list(M_SHOCK) //Shocks you by default
-
+/*
 /mob/living/simple_animal/advanced/kirlia
 	name = "kirlia"
 	icon_state = "kirlia"
@@ -389,7 +389,7 @@
 	icon_dead = "kirlia_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
-
+*/
 /mob/living/simple_animal/advanced/larvitar
 	name = "larvitar"
 	desc = "It is born deep underground. It can't emerge until it has entirely consumed the soil around it."
@@ -700,7 +700,7 @@
 	icon_dead = "purrloin_d"
 	p_types = list(P_TYPE_DARK)
 	mob_size = MOB_SIZE_SMALL
-
+/*
 /mob/living/simple_animal/advanced/ralts
 	name = "ralts"
 	icon_state = "ralts"
@@ -708,7 +708,7 @@
 	icon_dead = "ralts_d"
 	p_types = list(P_TYPE_PSYCH, P_TYPE_FAIRY)
 	mob_size = MOB_SIZE_SMALL
-
+*/
 /mob/living/simple_animal/advanced/raticate
 	name = "raticate"
 	icon_state = "raticate"

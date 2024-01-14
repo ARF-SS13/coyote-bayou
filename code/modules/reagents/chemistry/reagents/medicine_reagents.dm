@@ -2110,7 +2110,7 @@
 	if(LAZYLEN(hurt_parts))
 		hurts += "wound"
 	if(!LAZYLEN(hurts))
-		tap_toes(M, songpower, FALSE)
+		//tap_toes(M, songpower, FALSE)
 		return
 	var/winner = pick(hurts)
 	switch(winner)

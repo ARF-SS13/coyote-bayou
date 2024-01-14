@@ -207,6 +207,52 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
+
+//loadout 5mms, mirrored but with different names.
+/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom1 //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
+	name = "Ensamvarg "
+	desc = "A 5mm Taurus pistol. This one seems custom!"
+	icon_state = "5mm"
+	item_state = "handgonne"
+	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.4, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/fivemilimeterpistol/custom2 //5mm caliber pistol. flat 5mm viarable damage, but slower ROF
+	name = "Fuil"
+	desc = "A 5mm custom Taurus pistol!"
+	icon_state = "5mm"
+	item_state = "handgonne"
+	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.4, 1.4)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
 /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/rubee
 	name = "RuBee"
 	desc = "A petite pocket pistol that has been modified to accept some rather unique ammunition."

@@ -1897,6 +1897,35 @@
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
+/obj/item/gun/ballistic/automatic/slr/stinki
+	name = "Custom Enfield SLR"
+	desc = "A custom self-loading rifle in .308. Semi-auto only."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "slr"
+	item_state = "slr"
+	mag_type = /obj/item/ammo_box/magazine/m308
+	init_mag_type = /obj/item/ammo_box/magazine/m308
+	weapon_class = WEAPON_CLASS_RIFLE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(1, 1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	can_scope = TRUE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 24
+	knife_y_offset = 21
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 11
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
 /* * * * * * * * * * *
  * M1 Garand Rifle
  * Heavy semi-auto 7.62mm rifle
@@ -2590,6 +2619,20 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
+/obj/item/gun/ballistic/automatic/assault_carbine/aug5mm/custom
+	name = "R-varlden mock bullpup "
+	desc = "A modified Aug 5mm rifle, it's rate of fire has been altered compared to a stock rifle of it's kind, this one has some alien letters painted in a teal blue on it, with their english counter parts underneath it reading 'Erik CDXCII'"
+	init_recoil = AUTOCARBINE_RECOIL(1.4, 1.2)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm75,
+		/datum/firemode/semi_auto
+	)
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "augc"
+	item_state = "augc"
+
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
 	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
@@ -2805,7 +2848,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308
 	init_mag_type = /obj/item/ammo_box/magazine/m308
-	disallowed_mags = list(/obj/item/ammo_box/magazine/m308/ext , /obj/item/ammo_box/magazine/m308/ext/empty)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -2877,7 +2919,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -2975,7 +3016,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
-	disallowed_mags = /obj/item/ammo_box/magazine/m308
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
