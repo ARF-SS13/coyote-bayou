@@ -18784,6 +18784,16 @@
 	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland)
+"ios" = (
+/obj/structure/curtain,
+/obj/item/defibrillator/primitive{
+	pixel_y = 6
+	},
+/obj/structure/table,
+/turf/open/floor/f13{
+	icon_state = "bluechess2"
+	},
+/area/f13/building/hospital/clinic/ashdown)
 "ioy" = (
 /obj/structure/decoration/rag,
 /obj/structure/sign/poster/ripped,
@@ -23185,6 +23195,7 @@
 "kew" = (
 /obj/structure/table/reinforced,
 /obj/machinery/processor/chopping_block,
+/obj/item/paper/secretrecipe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bar/ashdown)
 "keN" = (
@@ -104000,7 +104011,7 @@ tfn
 iKf
 aCW
 dxm
-dBr
+ios
 dBr
 dBr
 hMC
