@@ -34,6 +34,7 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/deco_wings, GLOB.deco_wings_list)
 
 	//dragons
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_body, GLOB.derg_body_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_belly, GLOB.derg_belly_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_ears, GLOB.derg_ear_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_horns, GLOB.derg_horn_list)

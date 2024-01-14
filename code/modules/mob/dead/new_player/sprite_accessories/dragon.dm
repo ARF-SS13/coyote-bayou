@@ -1,3 +1,21 @@
+//MAIN BODY
+/datum/sprite_accessory/derg_body
+	icon = 'icons/mob/dragon/dragon_body.dmi'	
+	relevant_layers = list(BODYPARTS_LAYER)
+	color_src = MUTCOLORS2
+	mutant_part_string = "derg_body"
+	dimension_x = 128
+	center = TRUE
+
+/datum/sprite_accessory/derg_body/smooth
+	name = "Smooth Dragon Body"	
+	icon_state = "dragon_bodySmooth"
+
+/datum/sprite_accessory/derg_body/scaled
+	name = "Scaled Dragon Body"	
+	icon_state = "dragon_bodyScaled"
+
+
 //BELLY
 /datum/sprite_accessory/derg_belly
 	icon = 'icons/mob/dragon/dragon_belly.dmi'	
@@ -5,8 +23,7 @@
 	color_src = MUTCOLORS2
 	mutant_part_string = "derg_belly"
 	dimension_x = 128
-	dimension_y = 92
-
+	center = TRUE
 
 /datum/sprite_accessory/derg_belly/none
 	name = "None"	
@@ -38,9 +55,8 @@
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_horns"
 	recommended_species = list("dragon")
-	center = TRUE
 	dimension_x = 128
-	dimension_y = 92
+	center = TRUE
 
 /datum/sprite_accessory/derg_horns/smooth
 	name = "None"	
@@ -78,9 +94,8 @@
 	icon = 'icons/mob/dragon/dragon_manes.dmi'
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_mane"
-	center = TRUE
 	dimension_x = 128
-	dimension_y = 92
+	center = TRUE
 	relevant_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/derg_mane/none
@@ -104,9 +119,8 @@
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_ears"
-	center = TRUE
 	dimension_x = 128
-	dimension_y = 92
+	center = TRUE
 
 /datum/sprite_accessory/derg_ears/none
 	name = "None"
@@ -124,9 +138,8 @@
 	icon = 'icons/mob/dragon/dragon_eyes.dmi'
 	color_src = MUTCOLORS3
 	mutant_part_string = "derg_eyes"
-	center = TRUE
 	dimension_x = 128
-	dimension_y = 92
+	center = TRUE
 	relevant_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/derg_eyes/none

@@ -515,6 +515,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		"frills" = "None",
 		"deco_wings" = "None",
 		"spines" = "None",
+		"derg_body" = "None",
 		"derg_belly" = "None",
 		"derg_ears" = "None",
 		"derg_mane" = "None",
@@ -700,6 +701,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_wings_color"]			>> features["wings_color"]
 	S["feature_color_scheme"]			>> features["color_scheme"]
 	S["feature_chat_color"]				>> features["chat_color"]
+	S["feature_derg_body"]				>> features["derg_body"]
 	S["feature_derg_belly"]				>> features["derg_belly"]
 	S["feature_derg_ears"]				>> features["derg_ears"]
 	S["feature_derg_mane"]				>> features["derg_mane"]
@@ -1010,6 +1012,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["insect_fluff"]		= sanitize_inlist(features["insect_fluff"], GLOB.insect_fluffs_list)
 	features["insect_markings"] 	= sanitize_inlist(features["insect_markings"], GLOB.insect_markings_list, "None")
 	features["insect_wings"] 		= sanitize_inlist(features["insect_wings"], GLOB.insect_wings_list)
+	features["derg_body"] 			= sanitize_inlist(features["derg_body"], GLOB.derg_body_list, "Smooth Dragon Body")
 	features["derg_belly"] 			= sanitize_inlist(features["derg_belly"], GLOB.derg_belly_list, "Dragon Under Smooth")
 	features["derg_horns"] 			= sanitize_inlist(features["derg_horns"], GLOB.derg_horn_list)
 	features["derg_mane"] 			= sanitize_inlist(features["derg_mane"], GLOB.derg_mane_list)
@@ -1295,6 +1298,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
 	WRITE_FILE(S["feature_insect_markings"]			, features["insect_markings"])
 	WRITE_FILE(S["feature_meat"]					, features["meat_type"])
+	WRITE_FILE(S["feature_derg_body"]				, features["derg_body"])
 	WRITE_FILE(S["feature_derg_belly"]				, features["derg_belly"])
 	WRITE_FILE(S["feature_derg_ears"]				, features["derg_ears"])
 	WRITE_FILE(S["feature_derg_mane"]				, features["derg_mane"])

@@ -170,6 +170,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_snouts" = "None",
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
+		"derg_body" = "Smooth Dragon Body",
 		"derg_belly" = "None",
 		"derg_horns" = "None",
 		"derg_mane" = "None",
@@ -3124,6 +3125,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["xenodorsal"] = new_dors
 
 				//Dragon Bodyparts
+				if("derg_body") //dragon main body
+					var/new_body
+					new_body = input(user, "Choose your character's body type:", "Character Preference") as null|anything in GLOB.derg_body_list
+					if(new_body)
+						features["derg_body"] = new_body
+
 				if("derg_belly") //dragon underside
 					var/new_belly
 					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
@@ -3155,7 +3162,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["derg_eyes"] = new_eye
 
 				//every single primary/secondary/tertiary colouring done at once
-				if("derg_belly_primary","derg_belly_secondary","derg_belly_tertiary",
+				if(
+				"derg_body_primary","derg_body_secondary","derg_body_tertiary",
+				"derg_belly_primary","derg_belly_secondary","derg_belly_tertiary",
 				"derg_horns_primary","derg_horns_secondary","derg_horns_tertiary",
 				"derg_ears_primary","derg_ears_secondary","derg_ears_tertiary",
 				"derg_mane_primary","derg_mane_secondary","derg_mane_tertiary",

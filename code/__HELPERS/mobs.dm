@@ -76,6 +76,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/insect_markings, GLOB.insect_markings_list)
 
 	//Dragons
+	if(!GLOB.derg_body_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_body, GLOB.derg_body_list)
 	if(!GLOB.derg_belly_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/derg_belly, GLOB.derg_belly_list)
 	if(!GLOB.derg_horn_list.len)
@@ -182,7 +184,8 @@
 		"insect_fluff"		= "None",
 		"insect_markings"	= pick(GLOB.insect_markings_list),
 		"taur"				= "None",
-		"derg_belly"		= "None",
+		"derg_body"			= pick(GLOB.derg_body_list),
+		"derg_belly"		= pick(GLOB.derg_belly_list),
 		"derg_ears"			= "None",
 		"derg_mane"			= "None",
 		"derg_horns"		= "None",

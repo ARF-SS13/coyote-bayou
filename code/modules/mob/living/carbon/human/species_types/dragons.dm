@@ -6,9 +6,10 @@
 	simple_icon = 'icons/mob/dragon/dragon_parts_greyscaled.dmi'
 	icon_rest_suffix = "-rest"
 	icon_dead_suffix = "-dead"
-	roundstart = FALSE
+	roundstart = TRUE
+	id = "dragon_bodyEmpty" //This is correct, the base icon must be empty, everything else are mutant body parts
 
-	name = "REPORT THIS AS A BUG"
+	name = "Feral Dragon"
 	say_mod = "hisses"
 	default_color = "00FF00"
 	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,MUTCOLORS,NOEYES,CAN_SCAR,LIPS,HAS_FLESH,HAS_BONE,NO_INHAND)
@@ -16,8 +17,8 @@
 	coldmod = 1.5
 	heatmod = 0.67
 	gib_types = list(/obj/effect/gibspawner/human/bodypartless)
-	mutant_bodyparts = list("mcolor" = "0F0", "mcolor2" = "0F0", "mcolor3" = "0F0", "derg_belly" = "Dragon Under Smooth",
-							"derg_horns" = "Pointy", "derg_mane" = "None", "derg_ears" = "None", "derg_eyes" = "None", "frills" = "None")
+	mutant_bodyparts = list("mcolor" = "0F0", "mcolor2" = "0F0", "mcolor3" = "0F0", "derg_body" = "Smooth Dragon Body", "derg_belly" = "Dragon Under Smooth",
+							"derg_horns" = "Pointy", "derg_mane" = "None", "derg_ears" = "None", "derg_eyes" = "Normal", "frills" = "None")
 							 
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
@@ -38,16 +39,5 @@
 
 	icon_width = 128
 
-/datum/species/dragon/smooth
-	name = "Smooth Feral Dragon"
-	id = "dragon_bodySmooth"
-	roundstart = TRUE
-/mob/living/carbon/human/species/smoothDragon
-	race = /datum/species/dragon/smooth
-
-/datum/species/dragon/scaled
-	name = "Scaled Feral Dragon"
-	id = "dragon_bodyScaled"
-	roundstart = TRUE
-/mob/living/carbon/human/species/scaledDragon
-	race = /datum/species/dragon/scaled
+/mob/living/carbon/human/species/dragon
+	race = /datum/species/dragon

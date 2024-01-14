@@ -40,6 +40,7 @@ GLOBAL_LIST_EMPTY(insect_markings_list)
 GLOBAL_LIST_EMPTY(caps_list)
 
 	//Dragon bits
+GLOBAL_LIST_EMPTY(derg_body_list)
 GLOBAL_LIST_EMPTY(derg_belly_list)
 GLOBAL_LIST_EMPTY(derg_mane_list)
 GLOBAL_LIST_EMPTY(derg_ear_list)
@@ -66,6 +67,7 @@ GLOBAL_LIST_INIT(mutant_reference_list, list(
 	"insect_wings" = GLOB.insect_wings_list,
 	"insect_fluff" = GLOB.insect_fluffs_list,
 	"insect_markings" = GLOB.insect_markings_list,
+	"derg_body" = GLOB.derg_body_list,
 	"derg_belly" = GLOB.derg_belly_list,
 	"derg_horns" = GLOB.derg_horn_list,
 	"derg_mane" = GLOB.derg_mane_list,
@@ -337,6 +339,7 @@ GLOBAL_LIST_INIT(all_mutant_parts, list(
 	"ipc_antenna" = "Antenna", 
 	"meat_type" = "Meat Type", 
 	"horns" = "Horns", 
+	"derg_body" = "Dragon Body",
 	"derg_belly" = "Dragon Under", 
 	"derg_horns" = "Dragon Horns", 
 	"derg_mane" = "Dragon Mane", 
