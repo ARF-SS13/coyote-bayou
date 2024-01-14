@@ -6,11 +6,12 @@
 	icon_prefix = "louisville"
 	wielded_icon = "louisville2"
 	var/readytoplay = FALSE
+	var/list/notes = list()
 	var/currentnote = 1
 	var/list/datum/huntinghornsong/songlist = list()
 	var/list/datum/status_effect/music/currenteffects = list()
 	var/datum/song/handheld/intrument
-	allowed_instrument_ids = "guitar"
+	var/allowed_instrument_ids = "guitar"
 
 /obj/item/twohanded/huntinghorn/Initialize()
 	. = ..()
@@ -57,7 +58,7 @@
 		return
 	readytoplay = set_to
 	if(readytoplay)
-		to_chat(user, span_info("You're ready to perform!")).
+		to_chat(user, span_info("You're ready to perform!"))
 	else
 		to_chat(user, span_info("You relax, finished with your performance for now."))
 	currenteffects.Cut()
@@ -82,7 +83,7 @@
 	to_chat(user, span_info("You've prepared the [capitalize(song.name)]!"))
 
 /datum/huntinghornsong
-	name = "indescribable song"
+	var/name = "indescribable song"
 	var/list/required_notes = list(1, 1, 1)
 	var/datum/status_effect/music/effect = /datum/status_effect/music
 
