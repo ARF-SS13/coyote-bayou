@@ -782,7 +782,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
 
-	if(standing.len)
+	if(standing.len) // MAYBE - WIZARD
 		H.overlays_standing[BODY_LAYER] = standing
 
 	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies
@@ -854,7 +854,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/list/dna_feature_as_text_string = list()
 
 	for(var/bodypart in bodyparts_to_add)
-		var/reference_list = GLOB.mutant_reference_list[bodypart] //WHY INSECT FLUFF ALL THE TIME WHY - WIZARD
+		var/reference_list = GLOB.mutant_reference_list[bodypart]
 		if(reference_list)
 			var/datum/sprite_accessory/S
 			var/transformed_part = GLOB.mutant_transform_list[bodypart]

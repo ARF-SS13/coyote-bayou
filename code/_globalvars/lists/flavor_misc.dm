@@ -345,7 +345,7 @@ GLOBAL_LIST_INIT(all_mutant_parts, list(
 
 GLOBAL_LIST_INIT(unlocked_mutant_parts, list("horns", "insect_fluff"))
 //parts in either of the above two lists that require a second option that allows them to be coloured
-GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color", "derg_belly" = "derg_belly_color"))
+GLOBAL_LIST_INIT(colored_mutant_parts, list("insect_wings" = "wings_color", "deco_wings" = "wings_color", "horns" = "horns_color"))
 
 //body ids that have greyscale sprites
 GLOBAL_LIST_INIT(greyscale_limb_types, list(

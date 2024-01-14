@@ -171,7 +171,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"mam_tail" = "None",
 		"mam_tail_animated" = "None",
 		"derg_belly" = "None",
-		"derg_belly_color" = "FFF",
 		"derg_horns" = "None",
 		"derg_mane" = "None",
 		"derg_ears" = "None",
@@ -3130,14 +3129,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_belly = input(user, "Choose your character's belly type:", "Character Preference") as null|anything in GLOB.derg_belly_list
 					if(new_belly)
 						features["derg_belly"] = new_belly
-				
-				if("derg_belly_color")
-					var/new_input = input(user, "Choose your character's belly colour:", "Character Preference","#"+features["derg_belly_color"]) as color|null
-					if(new_input)
-						if (new_input == "#000000")
-							features["derg_belly_color"] = "FFF"
-						else
-							features["derg_belly_color"] = sanitize_hexcolor(new_input, 6)
 
 				if("derg_horns")
 					var/new_horn
@@ -3164,7 +3155,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["derg_eyes"] = new_eye
 
 				//every single primary/secondary/tertiary colouring done at once
-				if("xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary","xhead_primary","xhead_secondary","xhead_tertiary","tail_primary","tail_secondary","tail_tertiary","insect_markings_primary","insect_markings_secondary","insect_markings_tertiary","insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary","ears_primary","ears_secondary","ears_tertiary","frills_primary","frills_secondary","frills_tertiary","ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary","taur_primary","taur_secondary","taur_tertiary","snout_primary","snout_secondary","snout_tertiary","spines_primary","spines_secondary","spines_tertiary", "mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
+				if("derg_belly_primary","derg_belly_secondary","derg_belly_tertiary",
+				"derg_horns_primary","derg_horns_secondary","derg_horns_tertiary",
+				"derg_ears_primary","derg_ears_secondary","derg_ears_tertiary",
+				"derg_mane_primary","derg_mane_secondary","derg_mane_tertiary",
+				"derg_eyes_primary","derg_eyes_secondary","derg_eyes_tertiary",
+				"xenodorsal_primary","xenodorsal_secondary","xenodorsal_tertiary",
+				"xhead_primary","xhead_secondary","xhead_tertiary",
+				"tail_primary","tail_secondary","tail_tertiary",
+				"insect_markings_primary","insect_markings_secondary","insect_markings_tertiary",
+				"insect_fluff_primary","insect_fluff_secondary","insect_fluff_tertiary",
+				"ears_primary","ears_secondary","ears_tertiary",
+				"frills_primary","frills_secondary","frills_tertiary",
+				"ipc_antenna_primary","ipc_antenna_secondary","ipc_antenna_tertiary",
+				"taur_primary","taur_secondary","taur_tertiary",
+				"snout_primary","snout_secondary","snout_tertiary",
+				"spines_primary","spines_secondary","spines_tertiary",
+				"mam_body_markings_primary", "mam_body_markings_secondary", "mam_body_markings_tertiary")
 					var/the_feature = features[href_list["preference"]]
 					if(!the_feature)
 						features[href_list["preference"]] = "FFFFFF"

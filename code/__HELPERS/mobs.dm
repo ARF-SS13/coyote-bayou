@@ -183,7 +183,6 @@
 		"insect_markings"	= pick(GLOB.insect_markings_list),
 		"taur"				= "None",
 		"derg_belly"		= "None",
-		"derg_belly_color"	= "FFF",
 		"derg_ears"			= "None",
 		"derg_mane"			= "None",
 		"derg_horns"		= "None",

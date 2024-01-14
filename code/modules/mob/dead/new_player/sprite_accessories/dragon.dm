@@ -1,10 +1,9 @@
 //BELLY
 /datum/sprite_accessory/derg_belly
 	icon = 'icons/mob/dragon/dragon_belly.dmi'	
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	color_src = MUTCOLORS2
 	mutant_part_string = "derg_belly"
-	center = TRUE
 	dimension_x = 128
 	dimension_y = 92
 
@@ -82,6 +81,7 @@
 	center = TRUE
 	dimension_x = 128
 	dimension_y = 92
+	relevant_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/derg_mane/none
 	name = "None"
@@ -101,7 +101,7 @@
 //EARS
 /datum/sprite_accessory/derg_ears
 	icon = 'icons/mob/dragon/dragon_ears.dmi'
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	color_src = MUTCOLORS
 	mutant_part_string = "derg_ears"
 	center = TRUE
@@ -127,6 +127,7 @@
 	center = TRUE
 	dimension_x = 128
 	dimension_y = 92
+	relevant_layers = list(BODY_ADJ_LAYER)
 
 /datum/sprite_accessory/derg_eyes/none
 	name = "None"
@@ -134,7 +135,7 @@
 	relevant_layers = null
 	dimension_x = 32
 	center = FALSE
-	
+
 /datum/sprite_accessory/derg_eyes/normal
 	name = "Normal"
 	icon_state = "dragon_eyesNormal"
