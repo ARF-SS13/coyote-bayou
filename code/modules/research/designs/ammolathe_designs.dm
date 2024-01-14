@@ -487,6 +487,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Simple Ammo")
 
+
 /datum/design/ammolathe/a762rubber
 	name = ".308 rubber ammo box"
 	id = "a762_lathe_rubber"
@@ -924,6 +925,13 @@
 	id = "handloader_m22rubber"
 	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/m22/rubber
+	category = list("initial", "Handloaded Ammo")
+
+/datum/design/ammolathe/needlercapsule/handloaded
+	name = "Capsule full of jade needle ammo"
+	id = "needlerhandloadedcapsule"
+	build_path = /obj/item/ammo_box/needlercapsule/handloaded
+	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Handloaded Ammo")
 
 /datum/design/ammolathe/improvised/a9mmfmj
