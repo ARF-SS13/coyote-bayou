@@ -660,11 +660,36 @@
 	path = /obj/item/clothing/under/f13/erpdress
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_ESCORT
 
+/datum/gear/uniform/dress/blacktribal
+	name = "black dress"
+	path = /obj/item/clothing/under/dress/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
+/datum/gear/uniform/dress/browntribal
+	name = "jute dress"
+	path = /obj/item/clothing/under/dress/brown
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+
 //Skirts
 
 /datum/gear/uniform/skirt/swept
 	name = "swept skirt"
 	path = /obj/item/clothing/under/dress/skirt/swept
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/brownstrap
+	name = "jute skirt"
+	path = /obj/item/clothing/under/dress/skirt/brownstrap
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/flower
+	name = "gilded black skirt"
+	path = /obj/item/clothing/under/dress/skirt/black
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+/datum/gear/uniform/skirt/flower
+	name = "gilded jute skirt"
+	path = /obj/item/clothing/under/dress/skirt/brown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
 /datum/gear/uniform/pants
