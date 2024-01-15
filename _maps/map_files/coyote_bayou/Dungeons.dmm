@@ -156,6 +156,13 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
+"abW" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_worn/wood_worn_dark,
+/area/f13/building)
 "acg" = (
 /obj/structure/fireplace{
 	dir = 8
@@ -348,6 +355,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
+"ahB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/necropolis,
 /area/f13/building)
 "ahN" = (
 /obj/structure/chair,
@@ -826,6 +840,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"arR" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
+/turf/open/floor/wood_worn/wood_worn_dark,
+/area/f13/building)
 "arS" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -2675,6 +2696,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood/dorms)
+"bjg" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "bjl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7530,6 +7561,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
+"dmQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "dmU" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -8446,6 +8484,16 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
+/area/f13/building)
+"dIA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/plasteel/cult,
 /area/f13/building)
 "dIN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12030,6 +12078,13 @@
 	color = "#4c4c4c"
 	},
 /area/f13/underground/cave/tunnelertemple)
+"flr" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "fls" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/hooded/cloak/goliath,
@@ -15978,7 +16033,8 @@
 	color = "#363636"
 	},
 /obj/machinery/smartfridge/bottlerack/alchemy_rack,
-/obj/item/reagent_containers/glass/bottle/potion/flight,
+/obj/effect/spawner/lootdrop/f13/uncommon_energy,
+/obj/effect/spawner/lootdrop/f13/rare_energy,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "gXZ" = (
@@ -17767,6 +17823,17 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"hPB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/ladder/unbreakable{
+	name = "Ladder to Hell";
+	id = "laddertohell";
+	icon_state = "ladder10"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "hPQ" = (
 /obj/structure/chair/left{
 	dir = 8
@@ -18024,6 +18091,13 @@
 	icon_state = "grass2"
 	},
 /area/f13/bunker)
+"hXs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building)
 "hXB" = (
 /obj/structure/chair{
 	dir = 1
@@ -18919,6 +18993,7 @@
 	color = "#363636"
 	},
 /obj/structure/table/wood/fancy/royalblack,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "itX" = (
@@ -20919,6 +20994,15 @@
 	icon_state = "2-i"
 	},
 /area/f13/vault)
+"jqe" = (
+/obj/structure/ladder/unbreakable{
+	icon_state = "ladder10";
+	id = "brotherhoodfun"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating{
+	name = "plating"
+	},
+/area/f13/building)
 "jqf" = (
 /obj/effect/decal/cleanable/shreds{
 	pixel_x = -6;
@@ -22267,6 +22351,13 @@
 	smooth = 1
 	},
 /area/f13/brotherhood/operating)
+"jZX" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/indestructible/necropolis,
+/area/f13/building)
 "kac" = (
 /obj/structure/spider/stickyweb,
 /obj/machinery/light/small,
@@ -23354,10 +23445,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "kxa" = (
-/mob/living/simple_animal/hostile/bs/knight,
-/turf/open/floor/plasteel/f13/vault_floor/plating{
-	name = "plating"
+/obj/structure/ladder/unbreakable{
+	name = "Ladder to Hell";
+	id = "laddertohell";
+	icon_state = "manhole_open"
 	},
+/turf/open/floor/plasteel/cult,
 /area/f13/building)
 "kxi" = (
 /obj/structure/decoration/vent,
@@ -23643,6 +23736,7 @@
 	color = "#363636"
 	},
 /obj/machinery/smartfridge/bottlerack,
+/obj/item/book/granter/spell/forcewall,
 /turf/open/floor/wood_worn,
 /area/f13/building)
 "kDq" = (
@@ -26586,6 +26680,13 @@
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
+/area/f13/building)
+"lWu" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_worn,
 /area/f13/building)
 "lWw" = (
 /obj/effect/overlay/junk/toilet{
@@ -35354,6 +35455,7 @@
 	color = "#363636"
 	},
 /obj/structure/table/wood/fancy/red,
+/obj/effect/validball_spawner,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "pIE" = (
@@ -35753,6 +35855,13 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"pRP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pRW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -35902,6 +36011,13 @@
 	icon_state = "redmark"
 	},
 /area/f13/brotherhood/operations)
+"pVT" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pWx" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -36764,6 +36880,13 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
+"qne" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building)
 "qnf" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -39089,6 +39212,16 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/radiation)
+"rkU" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "rkV" = (
 /obj/machinery/door/window/left/directional/north,
 /obj/machinery/shower{
@@ -43467,6 +43600,16 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"tlg" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/rare_artifacts,
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "tlB" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -43577,6 +43720,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"tom" = (
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "ton" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -45650,6 +45797,13 @@
 	icon_state = "redmark"
 	},
 /area/f13/building)
+"ukE" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/validball_spawner,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "ukL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -45912,6 +46066,13 @@
 "urM" = (
 /turf/closed/indestructible/necropolis,
 /area/f13/underground/cave/tunnelertemple)
+"urP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/bounty/med_to_king,
+/turf/open/floor/plasteel/cult,
+/area/f13/building)
 "urQ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -70712,7 +70873,7 @@ nLk
 nLk
 eZz
 nLk
-nLk
+kxa
 lKd
 jyT
 nLk
@@ -101167,7 +101328,7 @@ vtT
 rip
 aVC
 vyO
-jMq
+jqe
 vtT
 vtT
 rip
@@ -101424,7 +101585,7 @@ vtT
 rip
 rVm
 jMq
-kxa
+jMq
 jMq
 sSq
 rvr
@@ -105638,7 +105799,7 @@ ltw
 ltw
 dkJ
 dkJ
-iHQ
+hXs
 iHQ
 iHQ
 iHQ
@@ -106150,7 +106311,7 @@ fUU
 fUU
 fUU
 kyF
-dsN
+hPB
 dsN
 mXm
 rBR
@@ -106649,7 +106810,7 @@ ble
 ble
 ble
 ble
-nLk
+bpo
 dsN
 dsN
 kyF
@@ -107712,7 +107873,7 @@ dsN
 dsN
 dsN
 dsN
-dsN
+dmQ
 dsN
 dsN
 nLk
@@ -108450,7 +108611,7 @@ kyF
 xsB
 kyF
 mWV
-qpS
+tlg
 qpS
 qpS
 qpS
@@ -108700,14 +108861,14 @@ whv
 ltw
 rLB
 cYX
-gzv
+lWu
 nin
 erJ
 toL
 kyF
 kyF
-qpS
-qpS
+bjg
+dIA
 qpS
 qpS
 qpS
@@ -108964,14 +109125,14 @@ toL
 kyF
 kyF
 mWV
+tlg
 qpS
 qpS
 qpS
 qpS
 qpS
 qpS
-qpS
-qpS
+dIA
 qpS
 dsN
 dsN
@@ -109737,7 +109898,7 @@ cYX
 uFH
 mXm
 mXm
-qpS
+dIA
 grT
 mXm
 qpS
@@ -110017,7 +110178,7 @@ jAY
 hkr
 qpS
 qpS
-qpS
+dIA
 qpS
 qpS
 eJY
@@ -110508,7 +110669,7 @@ xMT
 oBX
 sIT
 mXm
-qpS
+dIA
 grT
 mXm
 qpS
@@ -112042,7 +112203,7 @@ ltw
 rLB
 toL
 toL
-gzv
+lWu
 gzv
 gzv
 gzv
@@ -112853,7 +113014,7 @@ bVY
 uCz
 bVY
 bVY
-bVY
+ukE
 bVY
 pxw
 rLB
@@ -114096,7 +114257,7 @@ whv
 whv
 ltw
 kdK
-gMg
+jZX
 gMg
 gMg
 nrw
@@ -114126,7 +114287,7 @@ riC
 riC
 riC
 riC
-riC
+qne
 riC
 riC
 riC
@@ -114619,7 +114780,7 @@ gMg
 gMg
 gMg
 gMg
-dsN
+urP
 dsN
 dsN
 naA
@@ -114871,7 +115032,7 @@ gMg
 gMg
 gMg
 nbl
-gMg
+ahB
 dsN
 nbl
 gMg
@@ -115166,7 +115327,7 @@ toL
 toL
 plQ
 bVY
-niP
+rkU
 bTS
 xSR
 rLB
@@ -115678,7 +115839,7 @@ jzR
 pEe
 pEe
 bVY
-pEe
+tom
 bVY
 pEe
 bVY
@@ -115929,7 +116090,7 @@ bVY
 bVY
 pEe
 pEe
-pEe
+tom
 rLB
 pEe
 pEe
@@ -116430,7 +116591,7 @@ byr
 bVY
 bVY
 bVY
-bVY
+flr
 riC
 riC
 bDP
@@ -116928,7 +117089,7 @@ aTC
 nrw
 nrw
 nrw
-gMg
+ahB
 gMg
 gMg
 gMg
@@ -117993,7 +118154,7 @@ toW
 uyM
 uyM
 uyM
-uyM
+pRP
 uyM
 uyM
 rLB
@@ -118218,7 +118379,7 @@ toL
 toL
 iBB
 iBB
-iBB
+abW
 iBB
 iBB
 iBB
@@ -118506,7 +118667,7 @@ fUU
 toL
 iPA
 uyM
-uyM
+pVT
 uyM
 uyM
 hjv
@@ -118763,7 +118924,7 @@ fUU
 fUU
 uqO
 uyM
-uyM
+pRP
 uyM
 uyM
 wXn
@@ -119237,7 +119398,7 @@ whv
 ltw
 rLB
 fle
-iBB
+abW
 iBB
 enW
 iBB
@@ -119257,7 +119418,7 @@ iBB
 rzd
 iBB
 iBB
-iBB
+arR
 iBB
 ryA
 iBB
