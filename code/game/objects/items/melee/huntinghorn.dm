@@ -113,6 +113,8 @@
 		for(var/mob/living/L in range(src, HH_PERFORMANCE_RANGE))
 			if(L.client)
 				L.apply_status_effect(effect)
+	currenteffects = list()
+	notes = list()
 
 	/// HUNTING HORN SUBTYPES ///
 	
