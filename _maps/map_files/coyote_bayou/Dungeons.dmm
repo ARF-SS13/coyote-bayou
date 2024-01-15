@@ -17830,7 +17830,8 @@
 /obj/structure/ladder/unbreakable{
 	name = "Ladder to Hell";
 	id = "laddertohell";
-	icon_state = "ladder10"
+	icon_state = "ladder10";
+	height = 1
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -23448,7 +23449,8 @@
 /obj/structure/ladder/unbreakable{
 	name = "Ladder to Hell";
 	id = "laddertohell";
-	icon_state = "manhole_open"
+	icon_state = "manhole_open";
+	height = 2
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)

@@ -32933,7 +32933,8 @@
 /obj/structure/ladder/unbreakable{
 	name = "Odd Vent";
 	id = "brotherhoodfun";
-	icon_state = "manhole_open"
+	icon_state = "manhole_open";
+	height = 2
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
