@@ -28296,6 +28296,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/bar/nash)
+"cYJ" = (
+/turf/closed/indestructible/wood,
+/area/f13/building)
 "cYN" = (
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -29248,6 +29251,9 @@
 	color = "#9c9c9c"
 	},
 /area/f13/underground/cave/coyote/antmound)
+"djy" = (
+/turf/open/floor/plasteel/airless/white,
+/area/f13/building)
 "djC" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -44171,6 +44177,15 @@
 /obj/structure/simple_door/repaired,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"gCz" = (
+/obj/structure/flora/ausbushes/grassybush,
+/mob/living/simple_animal/opossum,
+/turf/open/indestructible/ground/outside/water{
+	light_color = null;
+	color = "#FFBB77";
+	name = "the watering hole"
+	},
+/area/f13/wasteland)
 "gCA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -89242,13 +89257,17 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "qDT" = (
-/mob/living/simple_animal/opossum,
-/turf/open/indestructible/ground/outside/water{
-	light_color = null;
-	color = "#FFBB77";
-	name = "the watering hole"
+/obj/structure/ladder/unbreakable{
+	icon_state = "manhole_open";
+	height = 2;
+	id = "toxbeachfun"
 	},
-/area/f13/caves)
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/airless/white,
+/area/f13/building)
 "qEc" = (
 /obj/structure/flora/chomp/bones/lbone,
 /turf/open/indestructible/ground/outside/desert,
@@ -108214,6 +108233,10 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/city/nash/suburbs)
+"uQM" = (
+/obj/machinery/door/airlock/ckey/highsecurity/tox,
+/turf/open/floor/plasteel/airless/white,
+/area/f13/building)
 "uQO" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -146988,9 +147011,9 @@ iZj
 iZj
 iZj
 aaa
-aaa
-aaa
-aaa
+cYJ
+cYJ
+cYJ
 "}
 (93,1,1) = {"
 aaa
@@ -147245,9 +147268,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aaa
+cYJ
+qDT
+cYJ
 "}
 (94,1,1) = {"
 aaa
@@ -147502,9 +147525,9 @@ aak
 aak
 aak
 aak
-aae
-qDT
-aaa
+cYJ
+djy
+cYJ
 "}
 (95,1,1) = {"
 aaa
@@ -147759,9 +147782,9 @@ aae
 aae
 aae
 aak
-aae
-aae
-aaa
+cYJ
+djy
+cYJ
 "}
 (96,1,1) = {"
 aaa
@@ -148016,9 +148039,9 @@ fCt
 ixP
 aae
 aak
-aae
-aae
-aaa
+cYJ
+uQM
+cYJ
 "}
 (97,1,1) = {"
 aaa
@@ -148273,7 +148296,7 @@ fCt
 fCt
 aae
 aae
-aae
+aJN
 aJN
 kEE
 "}
@@ -150532,7 +150555,7 @@ cOH
 aHF
 nuE
 bpt
-uEl
+gCz
 fCt
 ovK
 nhE
