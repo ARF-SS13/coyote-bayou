@@ -1,4 +1,5 @@
 #define HH_WIELD_TIME (2 SECONDS)
+#define HH_PERFORMANCE_RANGE 8 //tiles
 
 /obj/item/huntinghorn
 	name = "hunting horn"
@@ -99,12 +100,31 @@
 		if(song.check_notes(notes))
 			add_song_effect(user, song)
 
+
+	// SONG HANDLING //
+
 /obj/item/huntinghorn/proc/add_song_effect(mob/user, datum/huntinghornsong/song)
 	var/datum/status_effect/music/effect = song.effect
 	if(currenteffects.Find(effect))
 		return
 	currenteffects += effect
 	to_chat(user, span_info("You've prepared the [capitalize(song.name)]!"))
+
+/obj/item/huntinghorn/proc/perform()
+	for(var/datum/status_effect/music/effect in currenteffects)
+		for(mob/living/L in range(src, HH_PERFORMANCE_RANGE))
+			if(L.client)
+				L.apply_status_effect(effect)
+
+	/// HUNTING HORN SUBTYPES ///
+
+/obj/item/huntinghorn/healing
+	name = "hunting horn - healing"
+	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
+
+
+
+/// SONG DATUMS ///
 
 /datum/huntinghornsong
 	var/name = "indescribable song"
@@ -115,3 +135,8 @@
 	if(notes ~= required_notes)
 		return TRUE
 	return FALSE
+
+/datum/huntinghornsong/instaheal
+	name = "song of instant heal"
+	required_notes = list(3, 3, 3)
+	effect = /datum/status_effect/music/instaheal
