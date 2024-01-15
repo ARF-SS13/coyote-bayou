@@ -21010,7 +21010,8 @@
 "jqe" = (
 /obj/structure/ladder/unbreakable{
 	icon_state = "ladder10";
-	id = "brotherhoodfun"
+	id = "brotherhoodfun";
+	height = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating{
 	name = "plating"
