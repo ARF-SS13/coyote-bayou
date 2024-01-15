@@ -17528,6 +17528,18 @@
 /obj/item/am_containment/loot,
 /turf/open/floor/plasteel,
 /area/f13/vault)
+"hIM" = (
+/obj/structure/simple_door/bunker,
+/obj/structure/ladder/unbreakable{
+	name = "Odd Vent";
+	id = "brotherhoodfun";
+	icon_state = "manhole_open";
+	height = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/bunker)
 "hIR" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/structure/spider/stickyweb,
@@ -58369,7 +58381,7 @@ lzR
 lzR
 lzR
 lzR
-cYW
+hIM
 lzR
 wvF
 lzR
