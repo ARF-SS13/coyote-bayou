@@ -123,6 +123,8 @@
 	. = ..()
 	if(!readytoplay || !CheckAttackCooldown(user, target))
 		return
+	if(user.a_intent != INTENT_HARM)
+		return
 	notes.Add(currentnote)
 	if(length(notes) > 3)
 		notes.Cut(1,length(notes)-2)
