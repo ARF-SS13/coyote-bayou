@@ -16,10 +16,10 @@
 	sharpness = SHARP_NONE
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
-	var/readytoplay = TRUE
+	var/readytoplay = FALSE
 	var/list/notes = list()
 	var/currentnote = 1
-	var/list/datum/huntinghornsong/songlist = list(/datum/huntinghornsong,)
+	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong,)
 	var/list/datum/status_effect/music/currenteffects = list()
 	var/datum/song/handheld/intrument
 	var/allowed_instrument_ids = "guitar"
@@ -27,8 +27,8 @@
 /obj/item/huntinghorn/Initialize()
 	..()
 	intrument = new(src, allowed_instrument_ids)
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/wield_horn)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/unwield_horn)
+	RegisterSignal(src, SIG_ITEM_WIELD, .proc/wield_horn)
+	RegisterSignal(src, SIG_ITEM_UNWIELD, .proc/unwield_horn)
 
 /obj/item/huntinghorn/ComponentInitialize()
 	. = ..()
@@ -36,8 +36,8 @@
 
 /obj/item/huntinghorn/Destroy()
 	. = ..()
-	UnregisterSignal(src, COMSIG_TWOHANDED_WIELD)
-	UnregisterSignal(src, COMSIG_TWOHANDED_UNWIELD)
+	UnregisterSignal(src, SIG_ITEM_WIELD)
+	UnregisterSignal(src, SIG_ITEM_UNWIELD)
 
 /obj/item/huntinghorn/attack_self(mob/user)
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
@@ -65,14 +65,14 @@
 			return
 
 	
-/obj/item/huntinghorn/proc/wield_horn(mob/user)
+/obj/item/huntinghorn/proc/wield_horn(obj/item/this, mob/user)
 	SIGNAL_HANDLER
 
 	spawn(HH_WIELD_TIME)
 		if((user.get_active_held_item() == src) && wielded)
 			set_ready_to_play(user, TRUE)
 
-/obj/item/huntinghorn/proc/unwield_horn(mob/user)
+/obj/item/huntinghorn/proc/unwield_horn(obj/item/this, mob/user)
 	SIGNAL_HANDLER
 
 	set_ready_to_play(user, FALSE)
