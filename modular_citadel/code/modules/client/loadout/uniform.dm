@@ -677,17 +677,22 @@
 	path = /obj/item/clothing/under/dress/skirt/swept
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
+/datum/gear/uniform/skirt/flower
+	name = "flower skirt"
+	path = /obj/item/clothing/under/dress/skirt/flower
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
 /datum/gear/uniform/skirt/brownstrap
 	name = "jute skirt"
 	path = /obj/item/clothing/under/dress/skirt/brownstrap
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
-/datum/gear/uniform/skirt/flower
+/datum/gear/uniform/skirt/gildedblack
 	name = "gilded black skirt"
 	path = /obj/item/clothing/under/dress/skirt/black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
 
-/datum/gear/uniform/skirt/flower
+/datum/gear/uniform/skirt/gildedbrown
 	name = "gilded jute skirt"
 	path = /obj/item/clothing/under/dress/skirt/brown
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
