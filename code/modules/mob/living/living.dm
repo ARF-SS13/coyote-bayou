@@ -1590,7 +1590,7 @@
 
 
 //-->alt+click on mob for autotriage
-/mob/living/carbon/AltClickOn(atom/A, params)
+/mob/living/carbon/CtrlShiftClickOn(atom/A, params)
 	. = ..()
 	if(iscarbon(A))
 		if(view(1).Find(A))
@@ -1605,4 +1605,3 @@
 					
 					var/obj/item/I = get_active_held_item()
 					I.melee_attack_chain(src, A, params)
-//<--
