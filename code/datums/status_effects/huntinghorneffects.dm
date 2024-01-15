@@ -11,14 +11,14 @@
 // OFFENSE //
 
 /datum/status_effect/music/attack_up_xs
-	id = "Strength"
+	id = "strength"
 	var/had_little_leagues = FALSE
 
 /datum/status_effect/music/attack_up_xs/on_apply()
 	. = ..()
 	if(HAS_TRAIT(owner, TRAIT_LITTLE_LEAGUES))
 		had_little_leagues = TRUE
-		REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES)
+		REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES, src)
 		ADD_TRAIT(owner, TRAIT_BIG_LEAGUES, "Melee - Big Leagues")
 		return
 	ADD_TRAIT(owner, TRAIT_LITTLE_LEAGUES, "Melee - Little Leagues")
@@ -26,14 +26,14 @@
 /datum/status_effect/music/attack_up_xs/on_remove()
 	. = ..()
 	if(had_little_leagues)
-		REMOVE_TRAIT(owner, TRAIT_BIG_LEAGUES)
+		REMOVE_TRAIT(owner, TRAIT_BIG_LEAGUES, src)
 		ADD_TRAIT(owner, TRAIT_LITTLE_LEAGUES, "Melee - Little Leagues")
 		return
-	REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES)
+	REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES, src)
 
 
 /datum/status_effect/music/speed_up
-	id = "Agility"
+	id = "agility"
 
 /datum/status_effect/music/speed_up/on_apply()
 	. = ..()
@@ -50,37 +50,37 @@
 
 
 /datum/status_effect/music/cooldown_ignore
-	id = "Ruthlessness"
+	id = "ruthlessness"
 
 
 
 // DEFENSE //
 
 /datum/status_effect/music/iron_skin
-	id = "Endurance"
+	id = "endurance"
 
 
 /datum/status_effect/music/knockdown_res
-	id = "Steadiness"
+	id = "steadiness"
 
 
 /datum/status_effect/music/divine_blessing
-	id = "Luck"
+	id = "luck"
 
 
 
 // UTILITY //
 
 /datum/status_effect/music/draw_speed
-	id = "Alertness"
+	id = "alertness"
 
 
 /datum/status_effect/music/fast_actions
-	id = "Dexterity"
+	id = "dexterity"
 
 
 /datum/status_effect/music/stamina_up
-	id = "Persistence"
+	id = "persistence"
 
 /datum/status_effect/music/stamina_up/on_apply()
 	. = ..()
@@ -97,7 +97,7 @@
 // HEALING //
 
 /datum/status_effect/music/instaheal
-	id = "Health"
+	id = "health"
 
 /datum/status_effect/music/instaheal/on_apply()
 	. = ..()
@@ -106,15 +106,15 @@
 
 
 /datum/status_effect/music/recovery
-	id = "Tenacity"
+	id = "tenacity"
 
 /datum/status_effect/music/recovery/tick()
 	. = ..()
-	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE, bleed = 1, include_roboparts = FALSE)
+	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE, include_roboparts = FALSE)
 
 
 /datum/status_effect/music/maxhp_up
-	id = "Vigor"
+	id = "vigor"
 
 /datum/status_effect/music/maxhp_up/on_apply()
 	. = ..()
