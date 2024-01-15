@@ -110,7 +110,7 @@
 
 /datum/status_effect/music/recovery/tick()
 	. = ..()
-	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE, include_roboparts = FALSE)
+	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE)
 
 
 /datum/status_effect/music/maxhp_up
