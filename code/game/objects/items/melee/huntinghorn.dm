@@ -19,7 +19,7 @@
 	var/list/notes = list()
 	var/currentnote = 1
 	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong,)
-	var/list/datum/status_effect/music/currenteffects = list()
+	var/list/datum/huntinghornsong/currentsongs = list()
 	var/datum/song/handheld/intrument
 	var/allowed_instrument_ids = "guitar"
 
@@ -40,13 +40,45 @@
 
 /obj/item/huntinghorn/attack_self(mob/user)
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
-		set_note(user, ++currentnote)
-		return
+		var/choice = show_radial_menu(
+			user,
+			src,
+			list(
+				"low" = image(icon = 'icons/misc/mark.dmi', icon_state = "b1"),
+				"medium" = image(icon = 'icons/misc/mark.dmi', icon_state = "b2"),
+				"high" = image(icon = 'icons/misc/mark.dmi', icon_state = "b3"),
+				"performance" = image(icon = 'icons/misc/mark.dmi', icon_state = "X"),
+			),
+			"huntinghornradial",
+			CALLBACK(src, .proc/radial_check, user),
+			radius = 42,
+			require_near = TRUE,
+			tooltips = TRUE,
+		)
+		switch(choice)
+			if("low")
+				currentnote = 1
+				return
+			if("medium")
+				currentnote = 2
+				return
+			if("high")
+				currentnote = 3
+				return
+			else
+				perform()
+				return
 
 	if(!isliving(user) || user.stat || user.restrained())
 		return
 	//user.set_machine(instrument)
 	intrument.ui_interact(user)
+
+/obj/item/huntinghorn/proc/radial_check(mob/user)
+	if(!isliving(user) || user.stat || user.restrained())
+		return FALSE
+	if(QDELETED(src) || user.is_holding(src))
+		return FALSE
 
 /obj/item/huntinghorn/proc/set_note(mob/user, to_set)
 	currentnote = to_set
@@ -84,7 +116,7 @@
 		to_chat(user, span_info("You're ready to perform!"))
 	else
 		to_chat(user, span_info("You relax, finished with your performance for now."))
-	currenteffects.Cut()
+	currentsongs.Cut()
 	notes.Cut()
 
 /obj/item/huntinghorn/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -102,18 +134,18 @@
 	// SONG HANDLING //
 
 /obj/item/huntinghorn/proc/add_song_effect(mob/user, datum/huntinghornsong/song)
-	var/datum/status_effect/music/effect = song.effect
-	if(currenteffects.Find(effect))
+	if(currentsongs.Find(song))
 		return
-	currenteffects += effect
+	currentsongs += song
 	to_chat(user, span_info("You've prepared the [capitalize(song.name)]!"))
 
 /obj/item/huntinghorn/proc/perform()
-	for(var/datum/status_effect/music/effect in currenteffects)
+	for(var/datum/huntinghornsong/song in currentsongs)
 		for(var/mob/living/L in range(src, HH_PERFORMANCE_RANGE))
 			if(L.client)
+				var/datum/status_effect/music/effect = new song.effect()
 				L.apply_status_effect(effect)
-	currenteffects = list()
+	currentsongs = list()
 	notes = list()
 
 	/// HUNTING HORN SUBTYPES ///
