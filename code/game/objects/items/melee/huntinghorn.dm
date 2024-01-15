@@ -20,12 +20,12 @@
 	var/currentnote = 1
 	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong,)
 	var/list/datum/huntinghornsong/currentsongs = list()
-	var/datum/song/handheld/intrument
+	var/datum/song/huntinghorn/instrument
 	var/allowed_instrument_ids = "guitar"
 
 /obj/item/huntinghorn/Initialize()
 	..()
-	intrument = new(src, allowed_instrument_ids)
+	instrument = new(src, allowed_instrument_ids)
 	RegisterSignal(src, SIG_ITEM_WIELD, .proc/wield_horn)
 	RegisterSignal(src, SIG_ITEM_UNWIELD, .proc/unwield_horn)
 
@@ -57,22 +57,22 @@
 		)
 		switch(choice)
 			if("low")
-				currentnote = 1
+				set_note(user, 1)
 				return
 			if("medium")
-				currentnote = 2
+				set_note(user, 2)
 				return
 			if("high")
-				currentnote = 3
+				set_note(user, 3)
 				return
 			else
-				perform()
+				perform(user)
 				return
 
 	if(!isliving(user) || user.stat || user.restrained())
 		return
-	//user.set_machine(instrument)
-	intrument.ui_interact(user)
+	user.set_machine(src)
+	instrument.ui_interact(user)
 
 /obj/item/huntinghorn/proc/radial_check(mob/user)
 	if(!isliving(user) || user.stat || user.restrained())
@@ -141,12 +141,12 @@
 	currentsongs += song
 	to_chat(user, span_info("You've prepared the [capitalize(song.name)]!"))
 
-/obj/item/huntinghorn/proc/perform()
+/obj/item/huntinghorn/proc/perform(mob/user)
 	for(var/datum/huntinghornsong/song in currentsongs)
+		to_chat(user, span_info("You play the [capitalize(song.name)]!"))
 		for(var/mob/living/L in range(src, HH_PERFORMANCE_RANGE))
 			if(L.client)
-				var/datum/status_effect/music/effect = new song.effect()
-				L.apply_status_effect(effect)
+				L.apply_status_effect(song.effect)
 	currentsongs = list()
 	notes = list()
 
@@ -169,6 +169,18 @@
 	songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
 
 
+/// THE ACTUAL INSTRUMENT DATUM ///
+
+/datum/song/huntinghorn
+
+/datum/song/huntinghorn/should_stop_playing(mob/user)
+	. = ..()
+	var/obj/item/huntinghorn/horn = parent
+	if(!isliving(user) || user.stat || user.restrained())
+		return TRUE
+	if(QDELETED(horn) || !user.is_holding(horn))
+		return TRUE
+	return FALSE
 
 /// SONG DATUMS ///
 
@@ -181,7 +193,6 @@
 	if(notes ~= required_notes)
 		return TRUE
 	return FALSE
-
 
 
 	// OFFENSE //
