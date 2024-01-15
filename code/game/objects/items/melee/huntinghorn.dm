@@ -3,12 +3,10 @@
 
 /obj/item/huntinghorn
 	name = "hunting horn"
-	icon_state = "louisville"
-	wielded_icon = "louisville2"
-	icon = 'icons/fallout/objects/melee/twohanded.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "guitar"
+	icon = 'icons/obj/musician.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/instruments_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/instruments_righthand.dmi'
 
 	force = 20
 	throwforce = 20
@@ -117,6 +115,18 @@
 				L.apply_status_effect(effect)
 
 	/// HUNTING HORN SUBTYPES ///
+	
+/obj/item/huntinghorn/offense
+	name = "hunting horn - offense"
+	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/attack_up_xs, /datum/huntinghornsong/speed_up, /datum/huntinghornsong/cooldown_ignore)
+
+/obj/item/huntinghorn/defense
+	name = "hunting horn - defense"
+	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/iron_skin, /datum/huntinghornsong/knockdown_res, /datum/huntinghornsong/divine_blessing)
+
+/obj/item/huntinghorn/utility
+	name = "hunting horn - utility"
+	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/draw_speed, /datum/huntinghornsong/fast_actions, /datum/huntinghornsong/stamina_up)
 
 /obj/item/huntinghorn/healing
 	name = "hunting horn - healing"
