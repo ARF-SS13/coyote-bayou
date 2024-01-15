@@ -17828,7 +17828,8 @@
 	color = "#363636"
 	},
 /obj/structure/ladder/unbreakable{
-	name = "Ladder to Hell"
+	name = "Ladder to Hell";
+	id = "laddertohell";
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -20994,7 +20995,8 @@
 /area/f13/vault)
 "jqe" = (
 /obj/structure/ladder/unbreakable{
-	icon_state = "ladder10"
+	icon_state = "ladder10";
+	id = "brotherhoodfun"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating{
 	name = "plating"
@@ -23443,7 +23445,9 @@
 /area/f13/building)
 "kxa" = (
 /obj/structure/ladder/unbreakable{
-	name = "Ladder to Hell"
+	name = "Ladder to Hell";
+	id = "laddertohell";
+	icon_state = "manhole_open"
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)

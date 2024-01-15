@@ -32931,7 +32931,9 @@
 	},
 /obj/structure/curtain,
 /obj/structure/ladder/unbreakable{
-	name = "Odd Vent"
+	name = "Odd Vent";
+	id = "brotherhoodfun";
+	icon_state = "manhole_open"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
