@@ -1587,3 +1587,22 @@
 	if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH) || HAS_TRAIT(src, TRAIT_HEAL_TONGUE) || HAS_TRAIT(src, TRAIT_HEAL_TEND))
 		. += ""
 		. += "Healing Charges: [FLOOR(heal_reservoir, 1)]"
+
+
+//-->alt+click on mob for autotriage
+/mob/living/carbon/AltClickOn(atom/A, params)
+	. = ..()
+	if(iscarbon(A))
+		if(view(1).Find(A))
+			if(src.a_intent == INTENT_HELP)
+				if(isnull(src.get_active_held_item()))
+					if(HAS_TRAIT(src, TRAIT_HEAL_TONGUE))
+						src.emote("lick")
+					else if(HAS_TRAIT(src, TRAIT_HEAL_TOUCH))
+						src.emote("touch")
+					else if(HAS_TRAIT(src, TRAIT_HEAL_TEND))
+						src.emote("tend")
+					
+					var/obj/item/I = get_active_held_item()
+					I.melee_attack_chain(src, A, params)
+//<--
