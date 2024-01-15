@@ -6,6 +6,8 @@
 	duration = HH_STATUS_DEFAULT_DURATION
 	alert_type = /atom/movable/screen/alert/status_effect
 
+
+
 // OFFENSE //
 
 /datum/status_effect/music/attack_up_xs
@@ -29,6 +31,7 @@
 		return
 	REMOVE_TRAIT(owner, TRAIT_LITTLE_LEAGUES)
 
+
 /datum/status_effect/music/speed_up
 	id = "Agility"
 
@@ -45,8 +48,10 @@
 	variable = TRUE
 	multiplicative_slowdown = -0.1
 
+
 /datum/status_effect/music/cooldown_ignore
 	id = "Ruthlessness"
+
 
 
 // DEFENSE //
@@ -54,11 +59,14 @@
 /datum/status_effect/music/iron_skin
 	id = "Endurance"
 
+
 /datum/status_effect/music/knockdown_res
 	id = "Steadiness"
 
+
 /datum/status_effect/music/divine_blessing
 	id = "Luck"
+
 
 
 // UTILITY //
@@ -66,8 +74,10 @@
 /datum/status_effect/music/draw_speed
 	id = "Alertness"
 
+
 /datum/status_effect/music/fast_actions
 	id = "Dexterity"
+
 
 /datum/status_effect/music/stamina_up
 	id = "Persistence"
@@ -82,6 +92,8 @@
 	owner.sprint_buffer_max -= 20
 	owner.sprint_buffer_regen_ds -= 0.05
 
+
+
 // HEALING //
 
 /datum/status_effect/music/instaheal
@@ -92,12 +104,14 @@
 	owner.health += 10
 	owner.remove_status_effect(src)
 
+
 /datum/status_effect/music/recovery
 	id = "Tenacity"
 
 /datum/status_effect/music/recovery/tick()
 	. = ..()
 	owner.heal_overall_damage(brute = 1, burn = 1, only_organic = FALSE, bleed = 1, include_roboparts = FALSE)
+
 
 /datum/status_effect/music/maxhp_up
 	id = "Vigor"
