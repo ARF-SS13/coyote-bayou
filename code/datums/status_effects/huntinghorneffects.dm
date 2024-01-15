@@ -5,7 +5,7 @@
 	id = "AAAHH!!!!!! MUSIC!!!!!"
 	duration = HH_STATUS_DEFAULT_DURATION
 	alert_type = /atom/movable/screen/alert/status_effect
-
+	status_type = STATUS_EFFECT_REFRESH
 
 
 // OFFENSE //
