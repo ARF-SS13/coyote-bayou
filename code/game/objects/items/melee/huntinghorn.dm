@@ -110,7 +110,7 @@
 
 /obj/item/huntinghorn/proc/perform()
 	for(var/datum/status_effect/music/effect in currenteffects)
-		for(mob/living/L in range(src, HH_PERFORMANCE_RANGE))
+		for(var/mob/living/L in range(src, HH_PERFORMANCE_RANGE))
 			if(L.client)
 				L.apply_status_effect(effect)
 
@@ -118,19 +118,19 @@
 	
 /obj/item/huntinghorn/offense
 	name = "hunting horn - offense"
-	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/attack_up_xs, /datum/huntinghornsong/speed_up, /datum/huntinghornsong/cooldown_ignore)
+	songlist = newlist(/datum/huntinghornsong/attack_up_xs, /datum/huntinghornsong/speed_up, /datum/huntinghornsong/cooldown_ignore)
 
 /obj/item/huntinghorn/defense
 	name = "hunting horn - defense"
-	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/iron_skin, /datum/huntinghornsong/knockdown_res, /datum/huntinghornsong/divine_blessing)
+	songlist = newlist(/datum/huntinghornsong/iron_skin, /datum/huntinghornsong/knockdown_res, /datum/huntinghornsong/divine_blessing)
 
 /obj/item/huntinghorn/utility
 	name = "hunting horn - utility"
-	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/draw_speed, /datum/huntinghornsong/fast_actions, /datum/huntinghornsong/stamina_up)
+	songlist = newlist(/datum/huntinghornsong/draw_speed, /datum/huntinghornsong/fast_actions, /datum/huntinghornsong/stamina_up)
 
 /obj/item/huntinghorn/healing
 	name = "hunting horn - healing"
-	var/list/datum/huntinghornsong/songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
+	songlist = newlist(/datum/huntinghornsong/instaheal, /datum/huntinghornsong/recovery, /datum/huntinghornsong/maxhp_up)
 
 
 
@@ -146,7 +146,72 @@
 		return TRUE
 	return FALSE
 
+
+
+	// OFFENSE //
+
+/datum/huntinghornsong/attack_up_xs
+	name = "song of strength"
+	required_notes = list(2, 2, 2)
+	effect = /datum/status_effect/music/attack_up_xs
+
+/datum/huntinghornsong/speed_up
+	name = "song of agility"
+	required_notes = list(3, 2, 1)
+	effect = /datum/status_effect/music/speed_up
+
+/datum/huntinghornsong/cooldown_ignore
+	name = "song of ruthlessness"
+	required_notes = list(1, 1, 1)
+	effect = /datum/status_effect/music/cooldown_ignore
+
+	// DEFENSE //
+
+/datum/huntinghornsong/iron_skin
+	name = "song of endurance"
+	required_notes = list(2, 1, 2)
+	effect = /datum/status_effect/music/iron_skin
+
+/datum/huntinghornsong/knockdown_res
+	name = "song of steadiness"
+	required_notes = list(1, 2, 1)
+	effect = /datum/status_effect/music/knockdown_res
+
+/datum/huntinghornsong/divine_blessing
+	name = "song of luck"
+	required_notes = list(3, 2, 1)
+	effect = /datum/status_effect/music/divine_blessing
+
+	// UTILITY //
+
+/datum/huntinghornsong/draw_speed
+	name = "song of alertness"
+	required_notes = list(2, 2, 3)
+	effect = /datum/status_effect/music/draw_speed
+
+/datum/huntinghornsong/fast_actions
+	name = "song of dexterity"
+	required_notes = list(1, 2, 3)
+	effect = /datum/status_effect/music/fast_actions
+
+/datum/huntinghornsong/stamina_up
+	name = "song of persistence"
+	required_notes = list(3, 2, 3)
+	effect = /datum/status_effect/music/stamina_up
+
+	// HEALING //
+
 /datum/huntinghornsong/instaheal
-	name = "song of instant heal"
+	name = "song of health"
 	required_notes = list(3, 3, 3)
 	effect = /datum/status_effect/music/instaheal
+
+/datum/huntinghornsong/recovery
+	name = "song of recovery"
+	required_notes = list(1, 2, 3)
+	effect = /datum/status_effect/music/instaheal
+
+/datum/huntinghornsong/maxhp_up
+	name = "song of vigor"
+	required_notes = list(1, 1, 1)
+	effect = /datum/status_effect/music/maxhp_up
