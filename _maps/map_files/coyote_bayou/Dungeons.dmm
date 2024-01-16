@@ -2360,7 +2360,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/enclave)
 "bbu" = (
-/obj/structure/fluff/railing{
+/obj/structure/fluff/beach_towel{
 	dir = 9
 	},
 /turf/open/floor/plating/beach/sand,
@@ -6017,6 +6017,10 @@
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
+/area/f13/building)
+"cHY" = (
+/obj/machinery/light,
+/turf/open/floor/plating/beach/water,
 /area/f13/building)
 "cIa" = (
 /obj/structure/closet/firecloset/full,
@@ -15164,6 +15168,11 @@
 /obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
+"gBi" = (
+/obj/structure/table/wood,
+/obj/item/slime_cookie/cerulean,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "gBk" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/f13/dandyapples,
@@ -16455,6 +16464,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"hgp" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating/beach/water,
+/area/f13/building)
 "hgw" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -29014,7 +29029,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
 "mSm" = (
-/obj/structure/fluff/railing{
+/obj/structure/fluff/beach_towel{
 	dir = 6
 	},
 /turf/open/floor/plating/beach/sand,
@@ -30405,7 +30420,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "nwS" = (
-/obj/structure/fluff/railing{
+/obj/structure/fluff/beach_towel{
 	dir = 8
 	},
 /turf/open/floor/plating/beach/sand,
@@ -32576,7 +32591,7 @@
 	},
 /area/f13/brotherhood/offices1st)
 "owC" = (
-/obj/structure/fluff/railing{
+/obj/structure/fluff/beach_towel{
 	dir = 4
 	},
 /turf/open/floor/plating/beach/sand,
@@ -41774,7 +41789,7 @@
 	},
 /area/f13/bunker)
 "spB" = (
-/obj/structure/fluff/railing,
+/obj/structure/fluff/beach_towel,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "spQ" = (
@@ -44958,6 +44973,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
+"tLf" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = 0
+	},
+/turf/open/floor/plating/beach/water,
+/area/f13/building)
 "tLA" = (
 /obj/machinery/plantgenes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -46968,6 +46990,12 @@
 /mob/living/simple_animal/hostile/vault/dweller,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"uGd" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating/beach/water,
+/area/f13/building)
 "uGv" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/barber{
@@ -47298,6 +47326,11 @@
 /obj/effect/turf_decal/big,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"uOB" = (
+/obj/structure/fluff/beach_towel,
+/obj/structure/fluff/beach_towel,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uOD" = (
 /obj/structure/curtain{
 	color = "#5c131b"
@@ -52259,6 +52292,10 @@
 	dir = 4;
 	pixel_x = 12
 	},
+/obj/structure/mirror/magic/badmin{
+	pixel_x = 25;
+	name = "Tox's Magic Mirror"
+	},
 /turf/open/floor/plasteel/f13/whitemarble,
 /area/f13/building)
 "wYV" = (
@@ -52895,7 +52932,7 @@
 	},
 /area/f13/bunker)
 "xrO" = (
-/obj/structure/fluff/railing{
+/obj/structure/fluff/beach_towel{
 	dir = 10
 	},
 /turf/open/floor/plating/beach/sand,
@@ -53964,7 +54001,7 @@
 /area/f13/brotherhood/leisure)
 "xQo" = (
 /obj/structure/curtain,
-/turf/closed/indestructible/rock,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "xQp" = (
 /obj/structure/window/reinforced{
@@ -115384,7 +115421,7 @@ rLB
 rLB
 rLB
 rLB
-ubw
+vag
 rLB
 mSm
 ubw
@@ -115900,18 +115937,18 @@ nsp
 nsp
 nwS
 xrO
-spB
+ubw
 cuN
 nsp
 vtf
 tdb
+tLf
 qWX
 qWX
+uGd
 qWX
 qWX
-qWX
-qWX
-qWX
+uGd
 pLB
 pLB
 vtT
@@ -116412,7 +116449,7 @@ rLB
 dSj
 ePY
 dQV
-wTe
+gBi
 rLB
 spB
 nsp
@@ -116425,7 +116462,7 @@ qWX
 qWX
 qWX
 qWX
-qWX
+cHY
 pLB
 pLB
 vtT
@@ -116928,7 +116965,7 @@ ePY
 ubw
 shM
 rLB
-spB
+uOB
 nsp
 nsp
 vtf
@@ -116939,7 +116976,7 @@ qWX
 qWX
 qWX
 qWX
-qWX
+cHY
 pLB
 pLB
 pLB
@@ -117447,13 +117484,13 @@ svD
 nsp
 vtf
 tdb
+hgp
 qWX
 qWX
+hgp
 qWX
 qWX
-qWX
-qWX
-qWX
+hgp
 pLB
 vtT
 vtT
