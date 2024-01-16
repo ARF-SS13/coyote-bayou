@@ -307,14 +307,14 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/kabuto
 	race = /datum/species/feral/pokemon/kabuto
-
+/*
 /datum/species/feral/pokemon/kirlia
 	name = "Feral Kirlia"
 	id = "kirlia"
 	roundstart = TRUE
 /mob/living/carbon/human/species/kirlia
 	race = /datum/species/feral/pokemon/kirlia
-
+*/
 /datum/species/feral/pokemon/larvitar
 	name = "Feral Larvitar"
 	id = "larvitar"
@@ -480,7 +480,7 @@
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/alolanraichu
 	race = /datum/species/feral/pokemon/alolanraichu
-
+/*
 /datum/species/feral/pokemon/ralts
 	name = "Feral Ralts"
 	id = "ralts"
@@ -488,7 +488,7 @@
 	footstep_type = FOOTSTEP_MOB_CRAWL
 /mob/living/carbon/human/species/ralts
 	race = /datum/species/feral/pokemon/ralts
-
+*/
 /datum/species/feral/pokemon/raticate
 	name = "Feral Raticate"
 	id = "raticate"
@@ -941,15 +941,6 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/maid
 	race = /datum/species/feral/xeno/maid
-
-/datum/species/feral/werewolf/rogue
-	name = "Black Werewolf"
-	id = "were"
-	simple_icon = 'modular_roguetown/mob/monster/werewolf.dmi'
-	icon_width = 32
-	roundstart = TRUE
-/mob/living/carbon/human/species/werewolfrogue
-	race = /datum/species/feral/werewolf/rogue
 
 //tgmc aliens
 /datum/species/feral/xeno/beetle

@@ -761,11 +761,38 @@
 
 /datum/gear/donator/kits/jaeger
 	name = "Huntress Customs"
-	path = /obj/item/storage/box/large/custom_kit/jaeger
+	path = /obj/item/storage/box/large/custom_kit/jaeger // bookmark from JSC
 	ckeywhitelist = list("kilment")
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/hebe(src)
+	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
+
+/datum/gear/donator/kits/palpapus
+	name = "Huntress Customs"
+	path = /obj/item/storage/box/large/custom_kit/palpapus
+	ckeywhitelist = list("lordpapalus", "Lord_Papalus")
+
+/obj/item/storage/box/large/custom_kit/palpapus/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
+	new /obj/item/clothing/suit/armor/harpercoat(src)
+	new /obj/item/clothing/under/f13/eighties(src)
+	new /obj/item/clothing/shoes/f13/rag/pawb(src)
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal(src)
+	new /obj/item/kit_spawner/tools(src)
+	new /obj/item/clothing/gloves/f13/military(src)
+	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
+	new /obj/item/storage/backpack/trekker(src)
+
+/datum/gear/donator/kits/werediggy
+	name = "Huntress Customs"
+	path = /obj/item/storage/box/large/custom_kit/werediggy // bookmark from JSC
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/werediggy/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/peach(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+	new /obj/item/seeds/grass/fairy(src)
+	new /obj/item/storage/daki(src)
 
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"

@@ -3218,9 +3218,9 @@
 	name = "WT-550 PDW"
 	desc = "The WT-550 is a Personal Defense Weapon manufactured by West-Tek. Similar to the P90, it was intended to be a concealable weapon able to penetrate body armor. Considering how rare this weapon is, it seems it wasn't very popular."
 	item_state = "m90"
-	icon_state = "WT550"
-	mag_type = /obj/item/ammo_box/magazine/m473/small
-	init_mag_type = /obj/item/ammo_box/magazine/m473/small
+	icon_state = "wt550"
+	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2

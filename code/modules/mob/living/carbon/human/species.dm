@@ -782,7 +782,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
 
 
-	if(standing.len)
+	if(standing.len) // MAYBE - WIZARD
 		H.overlays_standing[BODY_LAYER] = standing
 
 	H.overlays_standing[UNDERWEAR_LAYER] = standing_undies

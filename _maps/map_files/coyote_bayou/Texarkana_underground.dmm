@@ -32925,6 +32925,21 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
+"sGS" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/structure/curtain,
+/obj/structure/ladder/unbreakable{
+	name = "Odd Vent";
+	id = "brotherhoodfun";
+	icon_state = "manhole_open";
+	height = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/hospital)
 "sHy" = (
 /obj/machinery/door/airlock/wood{
 	id_tag = "vaultd1";
@@ -89828,7 +89843,7 @@ dEX
 pnQ
 fnO
 dEX
-pRe
+sGS
 ylq
 bVE
 boq

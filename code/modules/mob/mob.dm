@@ -1438,6 +1438,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	"Touch - Poke their breast.",
 	"Touch - Poke their tummy.",
 	"Touch - Poke their thigh.",
+	"Touch - Grab their hips.",
 	"Touch - Put a finger over their mouth.",
 	"React - Dare them to 'make you' do something.",
 	"Leer - Stare defiantly.",
@@ -1993,6 +1994,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if("React - Want to tell them something.")
 			to_chat(A, span_notice("[src] maybe just <span class='love'>wants to tell you something.</span> Remember to honor their OOC preferences. Maybe give them a response?"))
 			to_chat(user, "[A] makes you make a face, you really want to tell them something important.")
+			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
+
+		if("Touch - Grab their hips.")
+			to_chat(A, span_notice("[src] is maybe reaching to <span class='love'>grab your hips?</span> Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"))
+			to_chat(user, "You try to grab [A]'s hips, but will they let you catch them so easily?")
 			SEND_SOUND(A, 'sound/f13effects/sunsetsounds/blush.ogg')
 
 			return
