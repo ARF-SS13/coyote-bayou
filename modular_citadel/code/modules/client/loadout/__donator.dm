@@ -777,6 +777,17 @@
 	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
 	new /obj/item/storage/backpack/trekker(src)
 
+/datum/gear/donator/kits/werediggy
+	name = "Huntress Customs"
+	path = /obj/item/storage/box/large/custom_kit/werediggy // bookmark from JSC
+	ckeywhitelist = list("weredoggo")
+
+/obj/item/storage/box/large/custom_kit/werediggy/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/peach(src)
+	new /obj/item/gun/energy/laser/auto/oasis(src)
+	new /obj/item/seeds/grass/fairy(src)
+	new /obj/item/storage/daki(src)
+
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi
