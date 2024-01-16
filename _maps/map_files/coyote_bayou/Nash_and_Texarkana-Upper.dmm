@@ -5184,7 +5184,9 @@
 	},
 /area/f13/building)
 "cFp" = (
-/obj/item/mine/shrapnel,
+/obj/item/mine/shrapnel{
+	name = "maldmine"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "cFB" = (
