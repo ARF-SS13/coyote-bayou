@@ -959,7 +959,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/mag/bifrost
-	name = "MK-18 MOD 1 Bifrost"
+	name = "\improper MK-18 MOD 1 Bifrost"
 	desc = "A curious rifle in anodized black coated aluminum ultra lightweight furniture. The barrel is 20 inches in length, the twists and grooves covered with a thin layer of Stellite leading up to an externally threaded black cerakote barrel. It's chambered in .338 Lapua Magnum (8.6×70 mm), the unsuppressed firing sound more like a warning bell to the coming Ragnarök."
 	icon = 'modular_coyote/icons/objects/guns/fortysixtimesthirtytwo.dmi'
 	icon_state = "bifrost"
@@ -969,6 +969,9 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/amr/bifrost
+	cock_wording = "cycle"
+	casing_ejector = TRUE
+	handedness = GUN_EJECTOR_LEFT
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
@@ -978,13 +981,15 @@
 		/datum/firemode/semi_auto/slower
 	)
 	can_scope = TRUE
-	zoom_factor = 1
-	scope_state = "scope_short"
+	scope_state = "revolver_scope"
 	scope_x_offset = 16
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/antimaterialfire.ogg'
 	cock_sound = 'sound/f13weapons/antimaterialreload.ogg'
 	can_suppress = TRUE
-	suppressor_state = "rifle_suppressor"
+	suppressor_state = "n99_suppressor"
 	suppressor_x_offset = 46
 	suppressor_y_offset = 14
+	can_bayonet = TRUE
+	knife_x_offset = 24
+	knife_y_offset = 14
