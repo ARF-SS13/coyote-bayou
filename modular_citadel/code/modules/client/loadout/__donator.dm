@@ -761,6 +761,22 @@
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/mag/bifrost(src)
 
+/datum/gear/donator/kits/palpapus
+	name = "Huntress Customs"
+	path = /obj/item/storage/box/large/custom_kit/palpapus
+	ckeywhitelist = list("lordpapalus", "Lord_Papalus")
+
+/obj/item/storage/box/large/custom_kit/palpapus/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
+	new /obj/item/clothing/suit/armor/harpercoat(src)
+	new /obj/item/clothing/under/f13/eighties(src)
+	new /obj/item/clothing/shoes/f13/rag/pawb(src)
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy/tribal(src)
+	new /obj/item/kit_spawner/tools(src)
+	new /obj/item/clothing/gloves/f13/military(src)
+	new /obj/item/clothing/neck/tie/aurora/strelitz_cape(src)
+	new /obj/item/storage/backpack/trekker(src)
+
 /datum/gear/donator/kits/jaggachi
 	name = "Scug Industries Kit"
 	path = /obj/item/storage/box/large/custom_kit/jaggachi
