@@ -1590,7 +1590,7 @@
 
 
 //-->alt+click on mob for autotriage
-/mob/living/carbon/CtrlShiftClickOn(atom/A, params)
+/mob/living/carbon/ShiftMiddleClickOn(atom/A, params)
 	. = ..()
 	if(iscarbon(A))
 		if(view(1).Find(A))
