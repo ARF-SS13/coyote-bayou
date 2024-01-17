@@ -778,3 +778,87 @@
 	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	icon_state = "umbreon"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Head" = MATRIX_RED)
+
+
+
+//Fenny goes totally insane and tries to add a shitton of the virgo markings in. :)  Oh, also, I hate Poojawa.
+//For those that come behind me to add more, remember. Our system uses iconstate_location. Virgo used iconstate-location. This means you need to rename the icon state in the redscaled dmi.
+//You can thank Poojawa for this lack of foresight. Imagine wanting to be able to just scoop another servers icons without needing to cock and ball torture your spriters.
+
+/datum/sprite_accessory/mam_body_markings/virgo/lips
+	name = "virgo - lips"
+	icon_state = "lips"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/blush
+	name = "virgo - blush"
+	icon_state = "blush"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" =MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/bindi
+	name = "virgo - bindi"
+	icon_state = "bindi"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/skullhead
+	name = "virgo - skull head"
+	icon_state = "skull"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/cheekspot_l
+	name = "virgo - cheekspot (left)"
+	icon_state = "cheekspot_l"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/cheekspot_r
+	name = "virgo - cheekspot (right)"
+	icon_state = "cheekspot_r"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/bridge
+	name = "virgo - bridge"
+	icon_state = "bridge"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/nosetape
+	name = "virgo - nosetape"
+	icon_state = "nosetape"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/nosestripe
+	name = "virgo - nosestripe"
+	icon_state = "nosestripe"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/brow_l
+	name = "virgo - brow (left)"
+	icon_state = "brow_l"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/brow_r
+	name = "virgo - brow (right)"
+	icon_state = "brow_r"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/neck
+	name = "virgo - neck"
+	icon_state = "neck"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/virgo/neckthick
+	name = "virgo - neckthick"
+	icon_state = "neckthick"
+	icon = 'modular_coyote/icons/mob/markings/markings_redscale.dmi'
+	covered_limbs = list("Head" = MATRIX_RED)
