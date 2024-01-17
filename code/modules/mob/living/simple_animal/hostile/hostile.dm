@@ -92,9 +92,15 @@
 	//COOLDOWN_DECLARE(decomposition_schedule)
 
 //These vars are related to how mobs locate and target
+	/// Will a mob attempt to target you even if you've so cleverly hidden yourself in a locker?
+	var/understands_lockers = TRUE // only really makes sense for ultradumb robots
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
-	var/vision_range = 9 //How big of an area to search for targets in, a vision of 9 attempts to find targets as soon as they walk into screen view
-	var/aggro_vision_range = 9 //If a mob is aggro, we search in this radius. Defaults to 9 to keep in line with original simple mob aggro radius
+	/// Will the mob continue to hunt you down forever and ever, even if they cant see you?
+	var/even_robuster_searching = FALSE // okay maybe just 30 seconds
+	/// Distance that a mob can detect a non-hidden target
+	var/vision_range = 9
+	/// Distance that a mob can track a target its mad at
+	var/aggro_vision_range = 9 // try to keep this at or aboove vision_range, otherwise they might get stuck getting mad at nothing
 	var/search_objects = 0 //If we want to consider objects when searching around, set this to 1. If you want to search for objects while also ignoring mobs until hurt, set it to 2. To completely ignore mobs, even when attacked, set it to 3
 	var/search_objects_timer_id //Timer for regaining our old search_objects value after being attacked
 	var/search_objects_regain_time = 30 //the delay between being attacked and gaining our old search_objects value back
@@ -190,24 +196,57 @@
 	return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
-	if(AIStatus == AI_OFF)
+	if(AIStatus == AI_OFF) // hard off switch
 		return 0
+	/// first try to kick our way free of whatever
+	if(Confined())
+		return EscapeConfinement()
 
-	var/list/possible_targets = ListTargets() //we look around for potential targets and make it a list for later use.
+	/// find us a target, or retrieve our current one, either'll do
+	var/atom/mytarget = PollTarget()
+	/// If we're in the middle of something, do the stuff we're in the middle of
+	if(mytarget)
+		return ActiveHostile(mytarget)
+	else
+		return SleepyHostile()
 
-	if(environment_smash)
-		EscapeConfinement()
+
+
+
+
 
 	if(AICanContinue(possible_targets))
 		var/atom/my_origin = get_origin()
 		var/atom/my_target = get_target()
 		if(my_target && !QDELETED(target) && my_origin && !my_origin.Adjacent(target))
 			DestroyPathToTarget()
-		if(!MoveToTarget(possible_targets))     //if we lose our target
+		if(!MoveToTarget())     //if we lose our target
 			if(AIShouldSleep(possible_targets))	// we try to acquire a new one
 				toggle_ai(AI_IDLE)			// otherwise we go idle
 	consider_despawning()
 	return 1
+
+/// returns either our current target, or a new one, or nothing at all!
+/mob/living/simple_animal/hostile/proc/PollTarget()
+	var/atom/targa = get_target()
+	if(istype(targa))
+		return targa
+	return FindTarget(possible_targets)
+
+/mob/living/simple_animal/hostile/proc/ActiveHostile(atom/my_target)
+	/// first, do we have a target? if so, good!
+	if(!isatom(my_target))
+		if(target)
+			my_target = get_target()
+			if(!target)
+				return FALSE
+	// target locked, now do things
+	/// first, can we punch em?
+
+
+
+
+
 
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
@@ -337,6 +376,7 @@
 			CHECK_TICK
 			. += A
 
+/// Takes in a list of targets (or gets one) and returns a target!
 /mob/living/simple_animal/hostile/proc/FindTarget(list/possible_targets, HasTargetsList = 0)//Step 2, filter down possible targets to things we actually care about
 	. = list()
 	if (peaceful == FALSE)
@@ -406,8 +446,6 @@
 			if(!client_in_range)
 				return FALSE
 
-	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
-		return FALSE
 	if(search_objects < 2)
 		if(isliving(the_target))
 			var/mob/living/L = the_target
@@ -483,66 +521,65 @@
 	if(my_target && origin && isturf(origin.loc) && my_target.Adjacent(origin) && !incapacitated())	
 		AttackingTarget()
 
-/mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our targette
+/mob/living/simple_animal/hostile/proc/MoveToTarget()//Step 5, handle movement between us and our targette
 	stop_automated_movement = 1
 	if (peaceful == TRUE)
 		LoseTarget()
-		return 0
+		return FALSE
+	if(winding_up_melee)
+		return FALSE
 	var/atom/my_target = get_target()
-	if(!my_target || !CanAttack(my_target))
+	if(!my_target || !CanAttack(my_target) || !CanSeeTarget(my_target, TRUE))
 		LoseTarget()
-		return 0
+		return FALSE
+	/// by now we've determined that we can see our target and are allowed to attack it, lets go get em
 	var/atom/origin = get_origin()
-	if(my_target in possible_targets)
-		var/turf/T = get_turf(src)
-		if(my_target.z != T.z)
-			LoseTarget()
-			return 0
-		if(winding_up_melee)
-			return 0
-		var/target_distance = get_dist(origin,my_target)
-		if(ranged) //We ranged? Shoot at em
-			if(!my_target.Adjacent(origin) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
-				OpenFire(my_target)
-		if(!Process_Spacemove()) //Drifting
-			walk(src,0)
-			return 1
-		if(retreat_distance != null && !winding_up_melee) //If we have a retreat distance and aren't winding up an attack, check if we need to run from our targette
-			if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If targette's closer than our retreat distance, run
-				set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
-				walk_away(src,my_target,retreat_distance,move_to_delay)
-			else
-				Goto(my_target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
+	var/target_distance = get_dist(origin,my_target)
+	if(ranged) //We ranged? Shoot at em
+		if(!my_target.Adjacent(origin) && ranged_cooldown <= world.time) //But make sure they're not in range for a melee attack and our range attack is off cooldown
+			OpenFire(my_target)
+	if(!Process_Spacemove()) //Drifting
+		walk(src,0)
+		return 1
+	if(retreat_distance != null && !winding_up_melee) //If we have a retreat distance and aren't winding up an attack, check if we need to run from our targette
+		if(target_distance <= retreat_distance && CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE)) //If targette's closer than our retreat distance, run
+			set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+			walk_away(src,my_target,retreat_distance,move_to_delay)
 		else
-			Goto(my_target,move_to_delay,minimum_distance)
-		/// roll to randomize this thing... if its an option
-		if(!winding_up_melee && variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
-			retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
-		if(my_target)
-			if(COOLDOWN_TIMELEFT(src, melee_cooldown))
-				return TRUE
-			COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
-			if(!winding_up_melee && origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
-				MeleeAction()
-			else
-				if(!winding_up_melee && rapid_melee > 1 && target_distance <= melee_queue_distance)
-					MeleeAction(FALSE)
-				in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
-			return 1
-		return 0
-	if(environment_smash && !winding_up_melee)
-		if(my_target.loc != null && get_dist(origin, my_target.loc) <= vision_range) //We can't see our targette, but he's in our vision range still
-			if(ranged_ignores_vision && ranged_cooldown <= world.time) //we can't see our targette... but we can fire at them!
-				OpenFire(my_target)
-			if((environment_smash & ENVIRONMENT_SMASH_WALLS) || (environment_smash & ENVIRONMENT_SMASH_RWALLS)) //If we're capable of smashing through walls, forget about vision completely after finding our targette
-				Goto(my_target,move_to_delay,minimum_distance)
-				FindHidden()
-				return 1
-			else
-				if(FindHidden())
-					return 1
-	LoseTarget()
-	return 0
+			Goto(my_target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
+	else
+		Goto(my_target,move_to_delay,minimum_distance)
+	/// roll to randomize this thing... if its an option
+	if(!winding_up_melee && variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
+		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
+	if(my_target)
+		if(COOLDOWN_TIMELEFT(src, melee_cooldown))
+			return TRUE
+		COOLDOWN_START(src, melee_cooldown, melee_attack_cooldown)
+		if(!winding_up_melee && origin && isturf(origin.loc) && my_target.Adjacent(origin)) //If they're next to us, attack
+			MeleeAction()
+		else
+			if(!winding_up_melee && rapid_melee > 1 && target_distance <= melee_queue_distance)
+				MeleeAction(FALSE)
+			in_melee = FALSE //If we're just preparing to strike do not enter sidestep mode
+		return TRUE
+	if(!FindHidden()) // calls Goto
+		Goto(my_target,move_to_delay,minimum_distance)
+		return TRUE
+	return FALSE
+
+
+/mob/living/simple_animal/hostile/proc/CanSeeTarget(atom/my_target, already_targetted)
+	if(!istype(my_target))
+		return FALSE
+	if(see_invisible < my_target.invisibility)//Target's invisible to us, forget it
+		return FALSE
+	var/turf/T = get_turf(src)
+	if(my_target.z != T.z)
+		return FALSE
+	if(already_targetted && even_robuster_searching) // smart mobs can chase you through walls!
+		return (get_dist(get_turf(src), get_turf(my_target)) <= aggro_vision_range)
+	return (my_target in view(vision_range, get_turf(src)))
 
 /mob/living/simple_animal/hostile/proc/Goto(targette, delay, minimum_distance)
 	var/atom/my_target = get_target()
@@ -818,6 +855,9 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		for(var/dir in GLOB.cardinals)
 			DestroyObjectsInDirection(dir)
 
+
+/mob/living/simple_animal/hostile/proc/Confined()
+	if()
 
 /mob/living/simple_animal/hostile/proc/EscapeConfinement()
 	if(buckled)
