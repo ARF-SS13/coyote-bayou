@@ -183,17 +183,17 @@
 	else
 		qdel(bean)
 
-/datum/emote/living/carbon/bean/war
+/datum/emote/living/carbon/bean_war
 	key = "warbean"
 	key_third_person = "warbeans"
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/bean/war/run_emote(mob/user)
+/datum/emote/living/carbon/bean_war/run_emote(mob/user)
 	. = ..()
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
 		return
-	var/obj/item/hand_item/beans/bean/war = new(user)
+	var/obj/item/hand_item/beans_war/warbean = new(user)
 	if(user.put_in_active_hand(warbean))
 		to_chat(user, span_notice("You ready your warbeans for REAL WAR!!"))
 	else

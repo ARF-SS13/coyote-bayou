@@ -534,7 +534,7 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
-/obj/item/hand_item/beans/war
+/obj/item/hand_item/beans_war
 	name = "war beans"
 	desc = "Them's ya' war beans. Touch em' to things you want dead."
 	icon = 'icons/obj/in_hands.dmi'
