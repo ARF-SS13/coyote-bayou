@@ -716,23 +716,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			if(HAIR in pref_species.species_traits)
 				dat += "<h3>Hair</h3>"
-				dat += "<b>Style:</b><br>"
+				dat += "<b>Style Up:</b><br>"
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]<br>"
 				dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><br>"
 				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><br><BR>"
 
 				// Coyote ADD: Hair gradients
-				dat += "<b>Gradient:</b><br>"
+				dat += "<b>Gradient Up:</b><br>"
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
 				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><br><BR>"
 				// Coyote ADD: End
 
-				dat += "<b>Style 2:</b><br>"
+				dat += "<b>Style Down:</b><br>"
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style_2;task=input'>[features_override["hair_style_2"]]</a>"
 				dat += "<a href='?_src_=prefs;preference=previous_hair_style_2;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style_2;task=input'>&gt;</a><br>"
 				dat += "<span style='border:1px solid #161616; background-color: #[features_override["hair_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair_color_2;task=input'>Change</a><br><BR>"
 
-				dat += "<b>Gradient 2:</b><br>"
+				dat += "<b>Gradient Down:</b><br>"
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style_2;task=input'>[features_override["grad_style_2"]]</a>"
 				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color_2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color_2;task=input'>Change</a><br><BR>"
 
