@@ -51,3 +51,19 @@
 	name = "fingerless evening gloves"
 	path = /obj/item/clothing/gloves/fingerlessevening
 
+/datum/gear/gloves/fingerlessleather
+	name = "fingerless leather gloves"
+	path = /obj/item/clothing/gloves/f13/leather/fingerless
+
+/datum/gear/gloves/patrol
+	name = "patrol ranger gloves"
+	path = /obj/item/clothing/gloves/patrol
+
+/datum/gear/glvoes/modifpatrolburned
+	name = "wrapped patrol gloves"
+	path = /obj/item/clothing/gloves/patrol/burned
+
+/datum/gear/glvoes/modifpatrol
+	name = "modified patrol gloves"
+	path = /obj/item/clothing/gloves/modif_patrol
+
