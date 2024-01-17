@@ -48,3 +48,77 @@
 	var/mob/living/L = user.mob
 	L.keybind_parry()
 	return TRUE
+
+/datum/keybinding/living/attack_north
+	hotkey_keys = list("Unbound")
+	name = "attack_north"
+	full_name = "Attack North"
+	category = CATEGORY_COMBAT
+	description = "Press to enter harm intent and attack to the north."
+
+/datum/keybinding/living/attack_north/down(client/user)
+	harm_towards(user, NORTH)
+
+/datum/keybinding/living/attack_south
+	hotkey_keys = list("Unbound")
+	name = "attack_south"
+	full_name = "Attack South"
+	category = CATEGORY_COMBAT
+	description = "Press to enter harm intent and attack to the south."
+
+/datum/keybinding/living/attack_south/down(client/user)
+	harm_towards(user, SOUTH)
+
+/datum/keybinding/living/attack_east
+	hotkey_keys = list("Unbound")
+	name = "attack_east"
+	full_name = "Attack East"
+	category = CATEGORY_COMBAT
+	description = "Press to enter harm intent and attack to the east."
+
+/datum/keybinding/living/attack_east/down(client/user)
+	harm_towards(user, EAST)
+
+/datum/keybinding/living/attack_west
+	hotkey_keys = list("Unbound")
+	name = "attack_west"
+	full_name = "Attack West"
+	category = CATEGORY_COMBAT
+	description = "Press to enter harm intent and attack to the west."
+
+/datum/keybinding/living/attack_west/down(client/user)
+	harm_towards(user, WEST)
+
+/proc/harm_towards(client/user, direction)
+	var/mob/living/murderer = user.mob
+
+	// [steve harvey voice]: KILL!!!
+	murderer.a_intent_change(INTENT_HARM)
+	murderer.setDir(direction)
+
+	//get offsets from the direction
+	var/xdiff = 0
+	var/ydiff = 0
+	switch(direction)
+		if(NORTH)
+			ydiff = 1
+		if(SOUTH)
+			ydiff = -1
+		if(EAST)
+			xdiff = 1
+		if(WEST)
+			xdiff = -1
+
+	//let's find someone to kill.
+	var/turf/crimescene = locate(murderer.x + xdiff, murderer.y + ydiff, murderer.z)
+	var/mob/living/victim = locate(crimescene)
+	if(!istype(victim))
+		crimescene = locate(murderer.x + xdiff * 2, murderer.y + ydiff * 2, murderer.z)
+		victim = locate(crimescene)
+
+		//so no victim?
+		if(!istype(victim))
+			murderer.ClickOn(crimescene)
+			return
+	murderer.ClickOn(victim)
+	return
