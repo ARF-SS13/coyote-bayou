@@ -1446,6 +1446,20 @@
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
+
+/datum/gear/donator/kits/seermankhajiit00last
+	name = "The Finale"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00last
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit00last/PopulateContents()
+	new /obj/item/ammo_box/a3006box(src)
+	new /obj/item/ammo_box/magazine/stg(src)
+	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
+	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/stg44custom(src)
+	new /obj/item/clothing/shoes/customtoxboots(src)
+
 /datum/gear/donator/kits/seermankhajiit00new
 	name = "The Shadowtribe"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00new
