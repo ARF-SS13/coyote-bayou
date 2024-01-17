@@ -1011,6 +1011,12 @@ GLOBAL_LIST_INIT(main_body_parts2words, list(
 #define GUN_LESS_DAMAGE_T6 0.35
 #define GUN_LESS_DAMAGE_T7 0.25
 
+//custom gun damage debuffs for later usage if gun needs a fine tuning.
+#define GUN_LESS_DAMAGE_C1 0.55
+#define GUN_LESS_DAMAGE_C2 0.45
+#define GUN_LESS_DAMAGE_C3 0.40
+#define GUN_LESS_DAMAGE_C4 0.30
+
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
 

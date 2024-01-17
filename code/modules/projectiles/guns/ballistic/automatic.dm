@@ -3684,6 +3684,63 @@
 	can_scope = TRUE
 	fire_sound = 'sound/f13weapons/needler.ogg'
 
+
+/obj/item/gun/ballistic/automatic/needlerhmg
+	name = "KF-21 Black Panther Needler LMG"
+	desc = "A heavy 30 pound KF-21 Black Panther LMG. This prototype needler weapon was created by Latos Systems in collaboration with the South Korean government. It fires heavier needle projectiles at the cost of recoil and weight. Let the pink mist blot out the sun."
+	icon_state = "needlelmg"
+	item_state = "needlelmg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
+	init_mag_type = /obj/item/ammo_box/magazine/internal/needleshmg
+	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_weight = GUN_TWO_HAND_ONLY
+	slowdown = GUN_SLOWDOWN_REPEATER
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_LONG
+	init_recoil = HMG_RECOIL (1.4 , 4.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm400
+	)
+	can_suppress = FALSE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = FALSE
+	fire_sound = 'sound/f13weapons/needler.ogg'
+
+/obj/item/gun/ballistic/automatic/stg44custom
+	name = "Custom Engraved STG-44"
+	desc = "A customized and engraved STG-44. The STG-44 is a German assault rifle, champered in 8mm kurz, or .30-06 for similiar caliber, it is a striking piece of creation. The wood stock is replaced with proper and sturdy birch wood, the metal engraved with baroque motifs. On the barrel is the name 'Freyja'. Seems this gun is able to have a scope on it alongside supressor."
+	icon_state = "stg"
+	item_state = "stg"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mag_type = /obj/item/ammo_box/magazine/stg
+	init_mag_type = /obj/item/ammo_box/magazine/stg
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	damage_multiplier = GUN_LESS_DAMAGE_C1
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
+	casing_ejector = TRUE
+	handedness = GUN_EJECTOR_RIGHT
+	cock_delay = GUN_COCK_RIFLE_BASE
+	draw_time = GUN_DRAW_NORMAL
+	init_recoil = CARBINE_RECOIL (1.7 , 1.2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/fast ,
+		/datum/firemode/automatic/rpm100
+	)
+	can_suppress = TRUE
+	can_bayonet = FALSE
+	can_flashlight = FALSE
+	can_scope = TRUE
+	fire_sound = 'sound/f13weapons/fg42.ogg'
+
 /* * * * * * * * * *
 * TG78 Anti Material Rifle.
 * Uses .50 cal

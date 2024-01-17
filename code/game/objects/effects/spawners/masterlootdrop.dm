@@ -333,6 +333,7 @@
 		/obj/item/gun/ballistic/automatic/xl70e3 = 10,                    //265 20
 		/obj/item/gun/ballistic/automatic/smg/smg14 = 10,                 //260 21
 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle = 10,       //249 20
+		/obj/item/gun/ballistic/automatic/needlerhmg = 1,                 //243(448) 72
 		/obj/item/gun/ballistic/automatic/lsw = 10,                       //241 50
 		/obj/item/gun/ballistic/automatic/smg/p90 = 9,                    //260 50
 		/obj/item/gun/ballistic/automatic/marksman/sniper/gold = 1,       //110 7
