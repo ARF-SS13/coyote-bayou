@@ -37,7 +37,7 @@
 
 /datum/status_effect/music/speed_up/on_apply()
 	. = ..()
-	owner.add_movespeed_modifier(/datum/movespeed_modifier/huntinghorn, update = TRUE, cool_id = "huntinghornspeed")
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/huntinghorn, update = TRUE, "huntinghornspeed")
 
 /datum/status_effect/music/speed_up/on_remove()
 	. = ..()
