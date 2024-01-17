@@ -786,21 +786,30 @@
 	name = "cream sweater"
 	path = /obj/item/clothing/under/sweater
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
+
 /datum/gear/uniform/sweater/black
 	name = "black sweater"
 	path = /obj/item/clothing/under/sweater/black
+
 /datum/gear/uniform/sweater/blue
 	name = "blue sweater"
 	path = /obj/item/clothing/under/sweater/blue
+
 /datum/gear/uniform/sweater/purple
 	name = "purple sweater"
 	path = /obj/item/clothing/under/sweater/purple
+
 /datum/gear/uniform/sweater/green
 	name = "green sweater"
 	path = /obj/item/clothing/under/sweater/green
+
 /datum/gear/uniform/sweater/red
 	name = "red sweater"
 	path = /obj/item/clothing/under/sweater/red
+
+/datum/gear/uniform/sweater/keyhole
+	name =  "Keyhole Sweater"
+	path = /obj/item/clothing/under/misc/keyholesweater
 
 /datum/gear/uniform/skirt/blueschool
 	name = "blue schoolgirl uniform"
