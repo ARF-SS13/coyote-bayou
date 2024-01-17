@@ -534,12 +534,30 @@
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/hand_item/beans_war
+	name = "war beans"
+	desc = "Them's ya' war beans. Touch em' to things you want dead."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "bean"
+	color = "#ff4444"
+	attack_verb = list()
+	hitsound = "sound/effects/attackblob.ogg"
+	force = 6
+	force_wielded = 10
+	throwforce = 0
+	attack_speed = 0
+	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
 /obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
 	M.apply_damage(1, STAMINA, "chest", M.run_armor_check("chest", "melee"))
-
+	// would need to be something that can be easily applied to other things
+	// without copypasting code
+	// probably a component
+	// massage beans
 
 
 /////////////
