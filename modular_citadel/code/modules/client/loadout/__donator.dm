@@ -268,6 +268,7 @@
 	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /datum/gear/donator/kits/matter7
+	name = "A Box for the Smelly Circuit Sergal"
 	path = /obj/item/storage/box/large/custom_kit/matter7
 	ckeywhitelist = list("Matter7")
 
